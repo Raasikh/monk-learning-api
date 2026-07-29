@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     SUPABASE_URL: str = ""
     SUPABASE_SECRET_KEY: str = ""
-    SUPABASE_JWT_SECRET: str = ""
+    SUPABASE_JWKS_URL: str = "https://tgbknrmnjwiokraddurx.supabase.co/auth/v1/.well-known/jwks.json"
     ALLOWED_ORIGINS: str = "http://localhost:3000"
 
     model_config = SettingsConfigDict(

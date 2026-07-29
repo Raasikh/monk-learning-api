@@ -1,10 +1,27 @@
 import jwt
+from jwt import PyJWKClient
 from typing import Optional
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from app.config import settings
 
 security = HTTPBearer(auto_error=False)
+
+# Shared PyJWKClient instance with key caching enabled.
+# PyJWKClient matches token 'kid', caches keys, and automatically refetches on unknown 'kid'.
+_jwk_client: Optional[PyJWKClient] = None
+
+
+def get_jwk_client() -> PyJWKClient:
+    global _jwk_client
+    if _jwk_client is None:
+        if not settings.SUPABASE_JWKS_URL:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Server authentication misconfiguration (SUPABASE_JWKS_URL not set)",
+            )
+        _jwk_client = PyJWKClient(settings.SUPABASE_JWKS_URL, cache_keys=True)
+    return _jwk_client
 
 
 def get_current_user_id(
@@ -19,17 +36,13 @@ def get_current_user_id(
 
     token = credentials.credentials
 
-    if not settings.SUPABASE_JWT_SECRET:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Server authentication misconfiguration (SUPABASE_JWT_SECRET not set)",
-        )
-
     try:
+        jwk_client = get_jwk_client()
+        signing_key = jwk_client.get_signing_key_from_jwt(token)
         payload = jwt.decode(
             token,
-            settings.SUPABASE_JWT_SECRET,
-            algorithms=["HS256"],
+            signing_key.key,
+            algorithms=["ES256", "HS256", "RS256"],
             options={"verify_aud": False}  # Supabase tokens carry aud='authenticated'
         )
 
@@ -49,7 +62,7 @@ def get_current_user_id(
             detail="Authorization token has expired",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    except jwt.InvalidTokenError as e:
+    except (jwt.PyJWKClientError, jwt.InvalidTokenError) as e:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail=f"Invalid authorization token: {str(e)}",
