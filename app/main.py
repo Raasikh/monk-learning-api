@@ -49,6 +49,13 @@ async def log_request_latency(request: Request, call_next):
 app.include_router(practice.router)
 
 
+import os
+
+@app.get("/version", tags=["version"])
+def version():
+    return {"commit": os.getenv("RAILWAY_GIT_COMMIT_SHA", "unknown")}
+
+
 @app.get("/health", tags=["health"])
 def health():
     return {"status": "ok"}
