@@ -59,19 +59,37 @@ def get_next_question(
         if profile_res.data and profile_res.data[0].get("enrolled_class"):
             effective_class = profile_res.data[0]["enrolled_class"]
 
-    # 2. Determine valid chapter IDs based on filters
+    # 2. Determine valid chapter IDs and names based on filters
     valid_chapter_ids: Optional[List[str]] = None
+    valid_chapter_names: Optional[List[str]] = None
+
     if req.chapter_id:
         valid_chapter_ids = [req.chapter_id]
-    elif effective_class:
-        chapters_res = (
+        c_name_res = (
             supabase.table("chapters")
-            .select("id")
-            .ilike("subject", target_subject)
-            .eq("class_level", effective_class)
+            .select("name")
+            .eq("id", req.chapter_id)
+            .limit(1)
             .execute()
         )
-        valid_chapter_ids = [row["id"] for row in chapters_res.data]
+        if c_name_res.data and c_name_res.data[0].get("name"):
+            valid_chapter_names = [c_name_res.data[0]["name"]]
+    elif effective_class:
+        try:
+            class_int = int(effective_class)
+        except (ValueError, TypeError):
+            class_int = None
+
+        if class_int is not None:
+            chapters_res = (
+                supabase.table("chapters")
+                .select("id, name")
+                .ilike("subject", target_subject)
+                .eq("class_level", class_int)
+                .execute()
+            )
+            valid_chapter_ids = [row["id"] for row in chapters_res.data]
+            valid_chapter_names = [row["name"] for row in chapters_res.data if row.get("name")]
 
     # 3. Fetch list of seen question IDs for this user
     attempts_res = (
@@ -109,11 +127,20 @@ def get_next_question(
         if q["id"] in seen_ids:
             continue
 
-        # Class/Chapter filtering constraint:
-        # Questions with a null chapter_id are only served when no class/chapter filter is applied.
-        q_chap_id = q.get("chapter_id")
+        # Class/Chapter filtering constraint (matching by chapter_id OR by chapter_name)
         if valid_chapter_ids is not None:
-            if not q_chap_id or q_chap_id not in valid_chapter_ids:
+            q_chap_id = q.get("chapter_id")
+            q_chap_name = q.get("chapter_name")
+
+            match_by_id = bool(q_chap_id and q_chap_id in valid_chapter_ids)
+            match_by_name = False
+            if valid_chapter_names and q_chap_name:
+                match_by_name = any(
+                    q_chap_name.strip().lower().replace("&", "and") == v_name.strip().lower().replace("&", "and")
+                    for v_name in valid_chapter_names
+                )
+
+            if not (match_by_id or match_by_name):
                 continue
 
         candidates.append(q)
