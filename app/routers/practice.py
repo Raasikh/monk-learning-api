@@ -41,6 +41,11 @@ def get_next_question(
     Selects 1 unseen practice question from non-mock, non-quarantined pool.
     Answer fields (correct_option, correct_value, solution, etc.) are strictly omitted.
     """
+    # 0. Normalize subject string (lowercase and map 'math'/'maths' to 'mathematics')
+    target_subject = (req.subject or "").strip().lower()
+    if target_subject in ["math", "maths"]:
+        target_subject = "mathematics"
+
     # 1. Determine target class_level if not explicitly supplied
     effective_class = req.class_level
     if not effective_class:
@@ -62,7 +67,7 @@ def get_next_question(
         chapters_res = (
             supabase.table("chapters")
             .select("id")
-            .eq("subject", req.subject)
+            .ilike("subject", target_subject)
             .eq("class_level", effective_class)
             .execute()
         )
@@ -86,7 +91,7 @@ def get_next_question(
     query = (
         supabase.table("questions")
         .select("id, question_text, question_type, options, chapter_id, chapter_name, concept, difficulty, source, needs_manual")
-        .eq("subject", req.subject)
+        .ilike("subject", target_subject)
         .is_("needs_manual", "null")
     )
 
