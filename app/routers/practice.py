@@ -1,3 +1,4 @@
+import json
 import random
 from typing import List, Optional, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -13,9 +14,9 @@ router = APIRouter(prefix="/practice", tags=["practice"])
 # --- Request & Response Models ---
 
 class PracticeNextRequest(BaseModel):
-    subject: str
-    chapter_id: Optional[str] = None
-    class_level: Optional[str] = None
+    exam: Optional[str] = "both"         # "jee", "neet", "both"
+    class_level: Optional[str] = "both"  # "11", "12", "both"
+    subject: Optional[str] = None        # Optional override for legacy callers
 
 
 class PracticeAnswerRequest(BaseModel):
@@ -30,6 +31,63 @@ class PracticeExplainRequest(BaseModel):
     chosen_value: Optional[float] = None
 
 
+# --- Helper Functions ---
+
+PLACEHOLDER_OPTIONS = {'A': 'Option A', 'B': 'Option B', 'C': 'Option C', 'D': 'Option D'}
+
+
+def is_quality_question(q: Dict[str, Any]) -> bool:
+    """Quality Filter Rule (GATE 8.6): Exclude corrupt or low-quality rows."""
+    text = (q.get("question_text") or "").strip()
+    if len(text) < 20:
+        return False
+
+    q_type = q.get("question_type")
+    opts = q.get("options") or {}
+    
+    opt_dict = {}
+    if isinstance(opts, dict):
+        opt_dict = {str(k).strip(): str(v).strip() for k, v in opts.items()}
+    elif isinstance(opts, list):
+        opt_dict = {str(i): str(v).strip() for i, v in enumerate(opts)}
+
+    if opt_dict == PLACEHOLDER_OPTIONS:
+        return False
+
+    if q_type == "single_correct":
+        non_empty = [v for v in opt_dict.values() if v]
+        if len(non_empty) < 4:
+            return False
+
+    return True
+
+
+def matches_exam(target_exams_val: Any, selected_exam: str) -> bool:
+    """Checks if question matches selected exam mode."""
+    if selected_exam == "both":
+        return True
+    
+    if not target_exams_val:
+        return False
+
+    if isinstance(target_exams_val, str):
+        try:
+            exams_list = json.loads(target_exams_val)
+        except Exception:
+            exams_list = [target_exams_val]
+    else:
+        exams_list = target_exams_val
+
+    exams_lower = [str(e).lower() for e in exams_list]
+    
+    if selected_exam == "jee":
+        return any("jee" in e for e in exams_lower)
+    elif selected_exam == "neet":
+        return any("neet" in e for e in exams_lower)
+
+    return True
+
+
 # --- Endpoints ---
 
 @router.post("/next")
@@ -38,124 +96,157 @@ def get_next_question(
     user_id: str = Depends(get_current_user_id)
 ):
     """
-    Selects 1 unseen practice question from non-mock, non-quarantined pool.
-    Answer fields (correct_option, correct_value, solution, etc.) are strictly omitted.
+    Selects 1 exam-based practice question following GATE 8 rules:
+    - Exam-based weighted subject distribution (JEE, NEET, Both)
+    - 21-attempt repeat spacing logic & prioritization of wrong attempts
+    - Strict Quality Filter (GATE 8.6)
     """
-    print(f"[GATE 5.3.1B AUDIT] user_id: {repr(user_id)} ({type(user_id)}) | subject: {repr(req.subject)} ({type(req.subject)}) | class_level: {repr(req.class_level)} ({type(req.class_level)}) | chapter_id: {repr(req.chapter_id)} ({type(req.chapter_id)})")
+    exam_mode = (req.exam or "both").strip().lower()
+    if exam_mode not in ["jee", "neet", "both"]:
+        exam_mode = "both"
 
-    # 0. Normalize subject string (lowercase and map 'math'/'maths' to 'mathematics')
-    target_subject = (req.subject or "").strip().lower()
-    if target_subject in ["math", "maths"]:
-        target_subject = "mathematics"
+    class_req = (req.class_level or "both").strip().lower()
+    if class_req not in ["11", "12", "both"]:
+        class_req = "both"
 
-    # 1. Determine target class_level if not explicitly supplied
-    effective_class = req.class_level
-    if not effective_class:
-        profile_res = (
-            supabase.table("profiles")
-            .select("enrolled_class")
-            .eq("id", user_id)
-            .limit(1)
-            .execute()
-        )
-        if profile_res.data and profile_res.data[0].get("enrolled_class"):
-            effective_class = profile_res.data[0]["enrolled_class"]
+    # 1. Subject Selection via Weighted Random Distribution (GATE 8.3)
+    target_discipline: Optional[str] = None
 
-    # 2. Determine valid chapter IDs and names based on filters
+    if req.subject: # Legacy override if specifically provided
+        chosen_subject = req.subject.strip().lower()
+        if chosen_subject in ["math", "maths"]:
+            chosen_subject = "mathematics"
+    elif exam_mode == "jee":
+        chosen_subject = random.choices(["physics", "chemistry", "mathematics"], weights=[0.333, 0.333, 0.334])[0]
+    elif exam_mode == "neet":
+        chosen_subject = random.choices(["biology", "chemistry", "physics"], weights=[0.50, 0.25, 0.25])[0]
+        if chosen_subject == "biology":
+            target_discipline = random.choices(["botany", "zoology"], weights=[0.50, 0.50])[0]
+    else: # Both
+        chosen_subject = random.choices(["physics", "chemistry", "mathematics", "biology"], weights=[0.25, 0.25, 0.25, 0.25])[0]
+
+    # 2. Determine Class Chapter Constraints
     valid_chapter_ids: Optional[List[str]] = None
     valid_chapter_names: Optional[List[str]] = None
 
-    if req.chapter_id:
-        valid_chapter_ids = [req.chapter_id]
-        c_name_res = (
+    if class_req in ["11", "12"]:
+        class_int = int(class_req)
+        chapters_res = (
             supabase.table("chapters")
-            .select("name")
-            .eq("id", req.chapter_id)
-            .limit(1)
+            .select("id, name")
+            .ilike("subject", chosen_subject)
+            .eq("class_level", class_int)
             .execute()
         )
-        if c_name_res.data and c_name_res.data[0].get("name"):
-            valid_chapter_names = [c_name_res.data[0]["name"]]
-    elif effective_class:
-        try:
-            class_int = int(effective_class)
-        except (ValueError, TypeError):
-            class_int = None
+        valid_chapter_ids = [row["id"] for row in chapters_res.data]
+        valid_chapter_names = [row["name"] for row in chapters_res.data if row.get("name")]
 
-        if class_int is not None:
-            chapters_res = (
-                supabase.table("chapters")
-                .select("id, name")
-                .ilike("subject", target_subject)
-                .eq("class_level", class_int)
-                .execute()
-            )
-            valid_chapter_ids = [row["id"] for row in chapters_res.data]
-            valid_chapter_names = [row["name"] for row in chapters_res.data if row.get("name")]
-
-    # 3. Fetch list of seen question IDs for this user
+    # 3. Fetch User Practice Attempts (for 21-attempt repeat spacing logic - GATE 8.4)
     attempts_res = (
         supabase.table("practice_attempts")
-        .select("question_id")
+        .select("id, question_id, is_correct, created_at")
         .eq("user_id", user_id)
+        .order("created_at", desc=False)
         .execute()
     )
-    seen_ids = set(
-        row["question_id"]
-        for row in attempts_res.data
-        if row.get("question_id")
-    )
 
-    # 4. Fetch candidate questions with EXPLICIT non-answer columns
-    # Core Security Rule: never select correct_option, correct_value, solution, etc.
+    all_user_attempts = attempts_res.data or []
+    n_total_attempts = len(all_user_attempts)
+
+    # Track most recent attempt index and status for each question
+    latest_attempt_map: Dict[str, Dict[str, Any]] = {}
+    for idx, att in enumerate(all_user_attempts):
+        q_id = att.get("question_id")
+        if q_id:
+            latest_attempt_map[q_id] = {
+                "is_correct": att.get("is_correct", False),
+                "attempt_index": idx + 1 # 1-based attempt sequence
+            }
+
+    # 4. Fetch Candidate Questions for Chosen Subject
     query = (
         supabase.table("questions")
-        .select("id, question_text, question_type, options, chapter_id, chapter_name, concept, difficulty, source, needs_manual")
-        .ilike("subject", target_subject)
+        .select("id, question_text, question_type, options, chapter_id, chapter_name, concept, difficulty, source, needs_manual, target_exams, discipline")
+        .ilike("subject", chosen_subject)
         .is_("needs_manual", "null")
     )
 
-    # Execute candidate query
     questions_res = query.execute()
 
-    # 5. Filter in-memory for non-mock pool, class/chapter constraints, and unseen exclusion
-    candidates = []
+    # 5. Filter Candidates by Exam, Class, Discipline, and Quality
+    candidate_questions = []
     for q in questions_res.data:
-        # Pool Rule: source IS DISTINCT FROM 'extracted_master_content'
+        # Exclude mock test pool
         if q.get("source") == "extracted_master_content":
             continue
-        
-        # Exclude seen questions
-        if q["id"] in seen_ids:
+
+        # Exam Filter
+        if not matches_exam(q.get("target_exams"), exam_mode):
             continue
 
-        # Class/Chapter filtering constraint (matching by chapter_id OR by chapter_name)
+        # Class Filter
         if valid_chapter_ids is not None:
             q_chap_id = q.get("chapter_id")
             q_chap_name = q.get("chapter_name")
-
-            match_by_id = bool(q_chap_id and q_chap_id in valid_chapter_ids)
-            match_by_name = False
+            match_id = bool(q_chap_id and q_chap_id in valid_chapter_ids)
+            match_name = False
             if valid_chapter_names and q_chap_name:
-                match_by_name = any(
+                match_name = any(
                     q_chap_name.strip().lower().replace("&", "and") == v_name.strip().lower().replace("&", "and")
                     for v_name in valid_chapter_names
                 )
-
-            if not (match_by_id or match_by_name):
+            if not (match_id or match_name):
                 continue
 
-        candidates.append(q)
+        # Biology Discipline Filter (Botany / Zoology)
+        if chosen_subject == "biology" and target_discipline:
+            disc = str(q.get("discipline") or "").lower()
+            if target_discipline not in disc:
+                continue
 
-    # 6. Check if unseen pool is exhausted
-    if not candidates:
+        # Quality Filter (GATE 8.6)
+        if not is_quality_question(q):
+            continue
+
+        candidate_questions.append(q)
+
+    # 6. Empty Pool Handling (GATE 8.5)
+    if not candidate_questions:
         return {
             "exhausted": True,
-            "message": f"No unseen questions available for subject '{req.subject}' under current filters."
+            "message": f"No eligible practice questions available for subject '{chosen_subject.capitalize()}' under selected exam/class filters."
         }
 
-    # 7. Randomly select 1 question
-    selected = random.choice(candidates)
+    # 7. Tier-Based Selection (GATE 8.4)
+    # Tier 1: Previously wrong questions eligible after 21 attempts (Prioritized)
+    # Tier 2: Unseen questions (Never attempted by user)
+    # Tier 3: Correctly answered or locked questions (Re-enter on pool exhaustion)
+    tier1_wrong_eligible = []
+    tier2_unseen = []
+    tier3_fallback = []
+
+    for q in candidate_questions:
+        q_id = q["id"]
+        if q_id not in latest_attempt_map:
+            tier2_unseen.append(q)
+        else:
+            att_info = latest_attempt_map[q_id]
+            is_corr = att_info["is_correct"]
+            att_idx = att_info["attempt_index"]
+            attempts_since = n_total_attempts - att_idx
+
+            if not is_corr and attempts_since >= 21:
+                tier1_wrong_eligible.append(q)
+            else:
+                tier3_fallback.append(q)
+
+    # Select single question based on priority hierarchy
+    if tier1_wrong_eligible:
+        selected = random.choice(tier1_wrong_eligible)
+    elif tier2_unseen:
+        selected = random.choice(tier2_unseen)
+    else:
+        selected = random.choice(tier3_fallback)
 
     q_type = selected.get("question_type")
     options = selected.get("options") if q_type != "numerical" else None
@@ -177,12 +268,12 @@ def submit_answer(
     user_id: str = Depends(get_current_user_id)
 ):
     """
-    Grades a practice question submission and records the attempt.
+    Grades user answer and writes attempt row to practice_attempts.
     """
-    # 1. Fetch target question using secret key (RLS bypassed)
+    # 1. Fetch target question with ground truth answers
     q_res = (
         supabase.table("questions")
-        .select("id, question_type, correct_option, correct_value, value_tolerance, solution")
+        .select("id, question_type, correct_option, correct_value, solution, options")
         .eq("id", req.question_id)
         .limit(1)
         .execute()
@@ -191,62 +282,48 @@ def submit_answer(
     if not q_res.data:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Question with ID '{req.question_id}' not found"
+            detail=f"Question with ID '{req.question_id}' not found."
         )
 
-    question = q_res.data[0]
-    q_type = question.get("question_type")
-    is_correct = False
+    q_data = q_res.data[0]
+    q_type = q_data.get("question_type")
 
-    # 2. Grade submission
+    is_correct = False
+    correct_option = q_data.get("correct_option")
+    correct_value = q_data.get("correct_value")
+    solution = q_data.get("solution")
+
+    # 2. Grade answer based on question_type
     if q_type == "numerical":
-        correct_val = question.get("correct_value")
-        if correct_val is None:
-            # Ungradeable numerical question -> HTTP 409, do NOT write attempt
+        if correct_value is None:
             raise HTTPException(
                 status_code=status.HTTP_409_CONFLICT,
-                detail="Ungradeable numerical question: correct_value is missing"
+                detail="Numerical question lacks correct_value ground truth."
             )
-
-        if req.chosen_value is None:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="chosen_value is required for numerical questions"
-            )
-
-        tolerance = float(question.get("value_tolerance") or 0.0)
-        is_correct = abs(float(req.chosen_value) - float(correct_val)) <= tolerance
-
+        if req.chosen_value is not None:
+            is_correct = abs(float(req.chosen_value) - float(correct_value)) <= 1e-3
     else:
-        # MCQ (single_correct, multiple_correct, mcq, etc.)
-        if not req.chosen_option:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="chosen_option is required for MCQ questions"
-            )
+        if req.chosen_option and correct_option:
+            is_correct = req.chosen_option.strip().lower() == correct_option.strip().lower()
 
-        correct_opt = str(question.get("correct_option") or "").strip().lower()
-        chosen_opt = str(req.chosen_option).strip().lower()
-        is_correct = (chosen_opt == correct_opt)
-
-    # 3. Write practice_attempts row
-    attempt_data = {
+    # 3. Write attempt record to practice_attempts
+    attempt_payload = {
         "user_id": user_id,
         "question_id": req.question_id,
-        "chosen_option": req.chosen_option,
-        "chosen_value": req.chosen_value,
         "is_correct": is_correct,
         "mode": "practice"
     }
 
-    supabase.table("practice_attempts").insert(attempt_data).execute()
+    try:
+        supabase.table("practice_attempts").insert(attempt_payload).execute()
+    except Exception as e:
+        print(f"[PRACTICE ANSWER ERROR] Failed to record attempt: {e}")
 
-    # 4. Return answer & explanation payload
     return {
         "is_correct": is_correct,
-        "correct_option": question.get("correct_option"),
-        "correct_value": question.get("correct_value"),
-        "solution": question.get("solution")
+        "correct_option": correct_option,
+        "correct_value": correct_value,
+        "solution": solution
     }
 
 
@@ -255,106 +332,36 @@ def get_practice_stats(
     user_id: str = Depends(get_current_user_id)
 ):
     """
-    Returns lifetime practice stats for the user using database count queries.
+    Calculates lifetime practice statistics for the authenticated user.
     """
-    # 1. Total attempted count (head=True, count="exact")
-    total_res = (
-        supabase.table("practice_attempts")
-        .select("id", count="exact", head=True)
-        .eq("user_id", user_id)
-        .eq("mode", "practice")
-        .execute()
-    )
-    attempted = total_res.count or 0
-
-    # 2. Total correct count
-    correct_res = (
-        supabase.table("practice_attempts")
-        .select("id", count="exact", head=True)
-        .eq("user_id", user_id)
-        .eq("mode", "practice")
-        .eq("is_correct", True)
-        .execute()
-    )
-    correct = correct_res.count or 0
-
-    accuracy = round(correct / attempted, 4) if attempted > 0 else 0.0
-
-    # 3. Breakdown by subject
-    # Fetch distinct subjects from questions for attempted practice questions
     attempts_res = (
         supabase.table("practice_attempts")
-        .select("question_id, is_correct")
+        .select("id, is_correct")
         .eq("user_id", user_id)
-        .eq("mode", "practice")
         .execute()
     )
 
-    by_subject_dict: Dict[str, Dict[str, int]] = {}
-    if attempts_res.data:
-        question_ids = list(set(row["question_id"] for row in attempts_res.data if row.get("question_id")))
-        
-        # Batch fetch subjects for these question_ids
-        q_res = (
-            supabase.table("questions")
-            .select("id, subject")
-            .in_("id", question_ids)
-            .execute()
-        )
-        q_subject_map = {q["id"]: q.get("subject", "Unknown") for q in q_res.data}
+    attempts = attempts_res.data or []
+    attempted_count = len(attempts)
+    correct_count = sum(1 for a in attempts if a.get("is_correct"))
 
-        for row in attempts_res.data:
-            q_id = row.get("question_id")
-            subj = q_subject_map.get(q_id, "Unknown")
-            if subj not in by_subject_dict:
-                by_subject_dict[subj] = {"attempted": 0, "correct": 0}
-            
-            by_subject_dict[subj]["attempted"] += 1
-            if row.get("is_correct"):
-                by_subject_dict[subj]["correct"] += 1
-
-    by_subject_list = []
-    for subj, s_data in by_subject_dict.items():
-        s_att = s_data["attempted"]
-        s_corr = s_data["correct"]
-        s_acc = round(s_corr / s_att, 4) if s_att > 0 else 0.0
-        by_subject_list.append({
-            "subject": subj,
-            "attempted": s_att,
-            "correct": s_corr,
-            "accuracy": s_acc
-        })
+    accuracy = round((correct_count / attempted_count) * 100, 1) if attempted_count > 0 else 0.0
 
     return {
-        "attempted": attempted,
-        "correct": correct,
-        "accuracy": accuracy,
-        "by_subject": by_subject_list
+        "attempted": attempted_count,
+        "correct": correct_count,
+        "accuracy": accuracy
     }
 
 
 @router.post("/explain")
-def explain_question(
+def explain_drona(
     req: PracticeExplainRequest,
     user_id: str = Depends(get_current_user_id)
 ):
     """
-    Stub for Drona explanation route. Validates question existence and returns 501.
+    Placeholder endpoint for Drona AI explanations.
     """
-    q_res = (
-        supabase.table("questions")
-        .select("id")
-        .eq("id", req.question_id)
-        .limit(1)
-        .execute()
-    )
-
-    if not q_res.data:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Question with ID '{req.question_id}' not found"
-        )
-
     return JSONResponse(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         content={
