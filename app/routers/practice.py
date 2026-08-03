@@ -41,6 +41,8 @@ def get_next_question(
     Selects 1 unseen practice question from non-mock, non-quarantined pool.
     Answer fields (correct_option, correct_value, solution, etc.) are strictly omitted.
     """
+    print(f"[GATE 5.3.1B AUDIT] user_id: {repr(user_id)} ({type(user_id)}) | subject: {repr(req.subject)} ({type(req.subject)}) | class_level: {repr(req.class_level)} ({type(req.class_level)}) | chapter_id: {repr(req.chapter_id)} ({type(req.chapter_id)})")
+
     # 0. Normalize subject string (lowercase and map 'math'/'maths' to 'mathematics')
     target_subject = (req.subject or "").strip().lower()
     if target_subject in ["math", "maths"]:
