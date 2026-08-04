@@ -6,9 +6,10 @@ from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple
 import websockets
 
 # Configuration constants
-SARVAM_API_KEY = os.getenv("SARVAM_API_KEY", "mock-sarvam-key")
-SARVAM_STT_ENDPOINT = os.getenv("SARVAM_STT_ENDPOINT", "wss://api.sarvam.ai/v1/stt/stream")
-RUMIK_TTS_ENDPOINT = os.getenv("RUMIK_TTS_ENDPOINT", "https://api.rumik.ai/v1/tts/stream")
+SARVAM_API_KEY = os.getenv("SARVAM_API_KEY", "")
+SARVAM_STT_ENDPOINT = os.getenv("SARVAM_STT_ENDPOINT", "")
+RUMIK_TTS_ENDPOINT = os.getenv("RUMIK_TTS_ENDPOINT", "")
+RUMIK_API_KEY = os.getenv("RUMIK_API_KEY", "")
 
 # Devanagari to Romanized Hinglish Mapping Dictionary for STT Normalization (§3)
 DEVANAGARI_ROMAN_MAP = {

@@ -59,6 +59,38 @@ app.include_router(drona_ws_router)
 
 import os
 
+@app.on_event("startup")
+def validate_environment_startup():
+    missing_always = []
+    
+    # Always required
+    always_vars = [
+        "ALLOWED_ORIGINS",
+        "SUPABASE_URL",
+        "SUPABASE_SECRET_KEY",
+        "SUPABASE_JWKS_URL",
+        "DEEPSEEK_API_KEY",
+        "OPENAI_API_KEY",
+    ]
+    for var in always_vars:
+        if not os.getenv(var, "").strip():
+            missing_always.append(var)
+
+    # Voice mode required (if VOICE_ENABLED == "true")
+    missing_voice = []
+    if os.getenv("VOICE_ENABLED", "").lower() == "true":
+        voice_vars = ["SARVAM_API_KEY", "SARVAM_STT_ENDPOINT", "RUMIK_API_KEY", "RUMIK_TTS_ENDPOINT"]
+        for var in voice_vars:
+            if not os.getenv(var, "").strip():
+                missing_voice.append(var)
+
+    total_missing = missing_always + missing_voice
+    if total_missing:
+        error_msg = f"CRITICAL BUILD/DEPLOY FAILURE: Missing environment variables on Railway startup: {', '.join(total_missing)}"
+        logger.error(error_msg)
+        raise RuntimeError(error_msg)
+    logger.info("Startup environment validation passed successfully.")
+
 @app.get("/version", tags=["version"])
 def version():
     return {"commit": os.getenv("RAILWAY_GIT_COMMIT_SHA", "unknown")}

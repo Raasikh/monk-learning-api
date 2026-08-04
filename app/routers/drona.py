@@ -12,7 +12,11 @@ import os
 
 router = APIRouter(prefix="/drona", tags=["drona"])
 
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+def get_llm_client() -> OpenAI:
+    api_key = os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise RuntimeError("DEEPSEEK_API_KEY or OPENAI_API_KEY must be set in environment")
+    return OpenAI(api_key=api_key)
 
 @router.get("/catalogue")
 def get_catalogue(user_id: str = Depends(get_current_user_id)):
@@ -112,7 +116,7 @@ def scope_session_endpoint(session_id: str, payload: Dict[str, Any], user_id: st
 
     # Perform scoping call
     scoping_prompt = load_prompt("scoping.md")
-    res = openai_client.chat.completions.create(
+    res = get_llm_client().chat.completions.create(
         model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": scoping_prompt},
@@ -150,7 +154,7 @@ async def turn_session_endpoint(session_id: str, payload: Dict[str, Any], user_i
         ]
 
         # Call OpenAI with JSON response format
-        res = openai_client.chat.completions.create(
+        res = get_llm_client().chat.completions.create(
             model="gpt-4o-mini",
             messages=messages,
             response_format={"type": "json_object"},
