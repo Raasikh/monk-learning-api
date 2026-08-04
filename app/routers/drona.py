@@ -6,7 +6,7 @@ from fastapi.responses import StreamingResponse
 from app.auth import get_current_user_id
 from app.db import supabase
 from app.drona.prompt_loader import load_prompt
-from app.drona.retrieval import two_stage_free_text_gate, retrieve_master_pdf_chunks
+from app.drona.retrieval import evaluate_free_text_gate, retrieve_pdf_chunks
 from openai import OpenAI
 import os
 

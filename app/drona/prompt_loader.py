@@ -57,6 +57,12 @@ def get_prompt_template(name: str) -> Template:
         raise KeyError(f"Prompt template '{name}' not found. Available: {list(_PROMPTS_CACHE.keys())}")
     return _PROMPTS_CACHE[name]
 
+def load_prompt(name: str) -> str:
+    """Loads and returns raw prompt markdown text by name (e.g. 'scoping.md' or 'scoping')."""
+    clean_name = os.path.splitext(name)[0]
+    tmpl = get_prompt_template(clean_name)
+    return tmpl.template
+
 def get_prompt_version() -> str:
     """Returns the prompt_version git short SHA."""
     global _PROMPT_VERSION
