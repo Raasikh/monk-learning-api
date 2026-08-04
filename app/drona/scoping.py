@@ -36,10 +36,20 @@ def scope_student_session(session_id: str, user_id: str, utterance: str) -> Dict
     history = session.get("history_summary") or []
     scoping_round = sum(1 for h in history if "scoping:" in str(h)) + 1
 
-    subtopic_key = None
+    # Fast path: if utterance directly matches a subtopic key or name, skip LLM scoping latency
+    norm_utt = utterance.strip().lower()
+    for s in subtopics:
+        s_key = s.get("subtopic_key", "")
+        s_name = s.get("subtopic", "").lower()
+        if norm_utt == s_key.lower() or norm_utt == s_name or (len(norm_utt) > 3 and (norm_utt in s_name or s_name in norm_utt)):
+            subtopic_key = s_key
+            logger.info(f"Fast-path direct match for subtopic_key: '{subtopic_key}'")
+            break
 
     # Max two rounds check: on 3rd round, default to first subtopic
-    if scoping_round >= 3 and subtopics:
+    if subtopic_key:
+        pass
+    elif scoping_round >= 3 and subtopics:
         subtopic_key = subtopics[0]["subtopic_key"]
         logger.info(f"Max scoping rounds (3) reached. Defaulting to first subtopic: '{subtopic_key}'")
     else:
