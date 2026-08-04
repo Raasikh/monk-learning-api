@@ -21,6 +21,11 @@ def get_llm_client() -> OpenAI:
         return OpenAI(api_key=openai_key)
     raise RuntimeError("Neither DEEPSEEK_API_KEY nor OPENAI_API_KEY is set in environment")
 
+def get_llm_model() -> str:
+    if os.getenv("DEEPSEEK_API_KEY"):
+        return os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
+    return "gpt-4o-mini"
+
 @router.get("/catalogue")
 def get_catalogue(user_id: str = Depends(get_current_user_id)):
     """GET /drona/catalogue — returns subject groups, chapters, and subtopics."""
@@ -131,7 +136,7 @@ def scope_session_endpoint(session_id: str, payload: Dict[str, Any], user_id: st
     # Perform scoping call
     scoping_prompt = load_prompt("scoping.md")
     res = get_llm_client().chat.completions.create(
-        model="gpt-4o-mini",
+        model=get_llm_model(),
         messages=[
             {"role": "system", "content": scoping_prompt},
             {"role": "user", "content": f"Student scoping input: '{utterance}'"}
@@ -169,7 +174,7 @@ async def turn_session_endpoint(session_id: str, payload: Dict[str, Any], user_i
 
         # Call OpenAI with JSON response format
         res = get_llm_client().chat.completions.create(
-            model="gpt-4o-mini",
+            model=get_llm_model(),
             messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0
