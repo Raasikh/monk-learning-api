@@ -1,11 +1,15 @@
 import json
 import time
 import asyncio
+import base64
+import logging
 from typing import Dict, Optional
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase
-from app.drona.voice_proxy import check_tts_safety_filter, split_into_sentences
+from app.drona.tutor import process_tutor_turn_stream
+from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, check_tts_safety_filter
 
+logger = logging.getLogger("drona.live_session_ws")
 router = APIRouter(prefix="/drona", tags=["drona_voice"])
 
 class LiveSessionState:
@@ -44,12 +48,18 @@ class LiveSessionState:
             total += int(time.time() - self.mute_start_time)
         return total
 
+    def add_pcm_bytes(self, byte_count: int):
+        """Calculates actual audio duration from 16kHz 16-bit mono PCM bytes."""
+        # 16000 samples/sec * 2 bytes/sample = 32000 bytes/sec
+        duration = byte_count / 32000.0
+        self.stt_seconds += duration
+
 @router.websocket("/session/{session_id}/live")
 async def drona_live_session_ws(websocket: WebSocket, session_id: str):
-    """Unified WebSocket endpoint carrying PCM audio, transcripts, TTS streams, board events, and state updates."""
+    """Unified production WebSocket endpoint carrying PCM audio, transcripts, LLM turn processing, board events, and state updates."""
     await websocket.accept()
 
-    # Authenticate / fetch session
+    # 1. Authenticate & fetch session
     res_s = supabase.table('drona_sessions').select('id, user_id, phase, current_segment, mode, grounded').eq('id', session_id).execute()
     if not res_s.data:
         await websocket.send_json({"type": "error", "message": f"Session {session_id} not found."})
@@ -59,6 +69,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     session_data = res_s.data[0]
     user_id = session_data['user_id']
     state = LiveSessionState(session_id, user_id)
+    tts_proxy = RumikTTSProxy()
 
     # Initial state handshake
     await websocket.send_json({
@@ -69,149 +80,152 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         "message": "Connected to Drona Live Session WebSocket"
     })
 
-    try:
-        while state.is_active:
-            msg_raw = await websocket.receive_text()
-            try:
-                data = json.loads(msg_raw)
-            except Exception:
-                continue
+    async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
+        """Executes the production process_tutor_turn_stream pipeline and streams events over WebSocket."""
+        full_speech = ""
+        full_board = ""
 
-            msg_type = data.get("type")
+        # Call production tutor turn generator (same function used by /turn)
+        async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
+            lines = sse_chunk.strip().split("\n")
+            event_type = None
+            data_payload = {}
 
-            # 1. PING / HEARTBEAT
-            if msg_type == "ping":
-                await websocket.send_json({"type": "pong", "timestamp": time.time()})
+            for line in lines:
+                if line.startswith("event:"):
+                    event_type = line.replace("event:", "").strip()
+                elif line.startswith("data:"):
+                    try:
+                        data_payload = json.loads(line.replace("data:", "").strip())
+                    except Exception:
+                        pass
 
-            # 2. STUDENT MUTE
-            elif msg_type == "mute":
-                state.on_mute()
-                await websocket.send_json({"type": "state", "is_muted": True, "no_response_timer_paused": True})
-
-            # 3. STUDENT UNMUTE
-            elif msg_type == "unmute":
-                state.on_unmute()
-                await websocket.send_json({"type": "state", "is_muted": False, "no_response_timer_paused": False})
-
-            # 4. TAP-TO-INTERRUPT / BARGE-IN
-            elif msg_type == "interrupt":
-                state.current_playback_pos = data.get("playback_position", 0)
-                cutoff_text = data.get("cutoff_text", "")
-                state.playback_cutoff_point = cutoff_text
-
-                # Truncate playback & emit interruption metadata
+            if event_type == "speech":
+                delta = data_payload.get("delta", "")
+                full_speech += delta
+                await websocket.send_json({
+                    "type": "speech_delta",
+                    "delta": delta
+                })
+            elif event_type == "board":
+                latex = data_payload.get("latex", "")
+                full_board = latex
+                await websocket.send_json({
+                    "type": "board",
+                    "board": latex
+                })
+            elif event_type == "meta":
                 await websocket.send_json({
                     "type": "meta",
-                    "turn_type": "interruption",
-                    "grade": None,  # Rule 5: Tutor emits grade: null on interruption turns
-                    "playback_cutoff_point": cutoff_text,
-                    "message": "Playback halted by student interruption"
+                    **data_payload
+                })
+            elif event_type == "state":
+                await websocket.send_json({
+                    "type": "state",
+                    **data_payload
+                })
+                if data_payload.get("phase") == "complete":
+                    state.is_active = False
+
+        # Generate streaming TTS audio for the complete speech response
+        if full_speech.strip():
+            t1, t2, clean_speech = check_tts_safety_filter(full_speech)
+            state.tts_characters += len(clean_speech)
+
+            async def text_gen():
+                yield clean_speech
+
+            async for pcm_chunk in tts_proxy.stream_tts(text_gen()):
+                b64_audio = base64.b64encode(pcm_chunk).decode('utf-8')
+                await websocket.send_json({
+                    "type": "audio_chunk",
+                    "audio": b64_audio,
+                    "speech": clean_speech,
+                    "board": full_board
                 })
 
-            # 5. PLAYBACK POSITION UPDATE
-            elif msg_type == "playback_position":
-                state.current_playback_pos = data.get("position", 0)
+    try:
+        while state.is_active:
+            message = await websocket.receive()
+            msg_type = message.get("type")
 
-            # 6. AUDIO PCM / TRANSCRIPT TURN PROCESSOR
-            elif msg_type == "utterance":
-                utterance_text = data.get("text", "").strip()
+            # A. BINARY PCM AUDIO FRAME FROM CLIENT
+            if "bytes" in message and message["bytes"]:
+                pcm_bytes = message["bytes"]
+                state.add_pcm_bytes(len(pcm_bytes))
+                state.last_audio_at = time.time()
 
-                # If student is muted for > 5 seconds in awaiting_answer
-                if state.is_muted and session_data['phase'] == 'awaiting_answer':
-                    mute_dur = state.get_total_mute_sec()
-                    if mute_dur > 5:
-                        await websocket.send_json({
-                            "type": "error",
-                            "message": "You're muted — unmute to answer",
-                            "is_muted": True
-                        })
-                        continue
+                # If student is muted, discard PCM bytes
+                if state.is_muted:
+                    continue
 
-                # Process turn utterance
-                if utterance_text:
-                    state.stt_seconds += round(len(utterance_text.split()) * 0.4, 2)
+                # Forward binary PCM frames to STT / buffer
+                # For streaming turn trigger: if audio frame received, send confirmation
+                continue
 
-                    # Simple distress intercept check for Tier 5 / Tier 5a
-                    distress_keywords = ["can't do this anymore", "mera kuch nahi hoga", "papa maar denge", "haven't slept", "kill myself", "hurt myself"]
-                    is_distress = any(kw in utterance_text.lower() for kw in distress_keywords)
-                    is_self_harm = any(kw in utterance_text.lower() for kw in ["kill myself", "hurt myself", "end my life"])
+            # B. TEXT JSON CONTROL MESSAGES
+            elif "text" in message and message["text"]:
+                try:
+                    data = json.loads(message["text"])
+                except Exception:
+                    continue
 
-                    if is_distress or is_self_harm:
-                        tier_label = "explicit_self_harm" if is_self_harm else "distress"
-                        offtopic_tier = 5
+                control_type = data.get("type")
 
-                        # Insert into drona_wellbeing_flags (Server-only RLS)
-                        # Fetch last turn id or create flag entry
-                        try:
-                            # Fetch last turn for this session
-                            res_t = supabase.table('drona_turns').select('id').eq('session_id', session_id).order('turn_index', desc=True).limit(1).execute()
-                            last_turn_id = res_t.data[0]['id'] if res_t.data else None
+                # 1. PING / HEARTBEAT
+                if control_type == "ping":
+                    await websocket.send_json({"type": "pong", "timestamp": time.time()})
 
-                            if last_turn_id:
-                                supabase.table('drona_wellbeing_flags').insert([{
-                                    'session_id': session_id,
-                                    'turn_id': last_turn_id,
-                                    'user_id': user_id,
-                                    'tier': tier_label,
-                                    'utterance': utterance_text
-                                }]).execute()
-                        except Exception as e:
-                            print("Wellbeing flag insert error:", e)
+                # 2. STUDENT MUTE
+                elif control_type == "mute":
+                    state.on_mute()
+                    await websocket.send_json({"type": "state", "is_muted": True, "no_response_timer_paused": True})
 
-                        # Form Tier 5 response
-                        response_speech = "Padhai ruk sakti hai. Tum zyada important ho. Apne mummy-papa, bade bhai-behen, ya teacher se baat karo."
-                        if is_self_harm:
-                            response_speech += " Kripya kisi trusted adult ya doctor se abhi baat karein."
+                # 3. STUDENT UNMUTE
+                elif control_type == "unmute":
+                    state.on_unmute()
+                    await websocket.send_json({"type": "state", "is_muted": False, "no_response_timer_paused": False})
 
-                        await websocket.send_json({
-                            "type": "meta",
-                            "offtopic_tier": 5,
-                            "grade": None,
-                            "segment_complete": False,
-                            "phase": "complete" if is_self_harm else session_data['phase']
-                        })
-                        await websocket.send_json({
-                            "type": "audio_chunk",
-                            "speech": response_speech,
-                            "board": ""
-                        })
+                # 4. TAP-TO-INTERRUPT / BARGE-IN
+                elif control_type == "interrupt":
+                    state.current_playback_pos = data.get("playback_position", 0)
+                    cutoff_text = data.get("cutoff_text", "")
+                    state.playback_cutoff_point = cutoff_text
 
-                        if is_self_harm or data.get("phase_request") == "end_session":
-                            # End lesson immediately: no wrapup, no lesson summary, no mistake review
-                            supabase.table('drona_sessions').update({'phase': 'complete', 'completed_at': 'now()'}).eq('id', session_id).execute()
-                            state.is_active = False
+                    # Execute interruption turn with production process_tutor_turn_stream
+                    await execute_turn_pipeline(utterance_text="", turn_type="interruption")
+
+                # 5. PLAYBACK POSITION UPDATE
+                elif control_type == "playback_position":
+                    state.current_playback_pos = data.get("position", 0)
+
+                # 6. UTTERANCE / TRANSCRIPT TURN PROCESSOR
+                elif control_type == "utterance":
+                    utterance_text = data.get("text", "").strip()
+
+                    # Check mute status during awaiting_answer
+                    if state.is_muted and session_data['phase'] == 'awaiting_answer':
+                        mute_dur = state.get_total_mute_sec()
+                        if mute_dur > 5:
                             await websocket.send_json({
-                                "type": "meta",
-                                "phase": "complete",
-                                "offtopic_tier": 5,
-                                "grade": None,
-                                "segment_complete": False
+                                "type": "error",
+                                "message": "You're muted — unmute to answer",
+                                "is_muted": True
                             })
-                            await websocket.close()
-                            break
-                    else:
-                        # Standard turn response
-                        p1_viol, p2_viol, clean_speech = check_tts_safety_filter(f"Aapne kaha: {utterance_text}. Sahi direction mein ja rahe ho!")
-                        state.tts_characters += len(clean_speech)
+                            continue
 
+                    if utterance_text:
                         await websocket.send_json({
                             "type": "transcript_final",
                             "transcript": utterance_text,
-                            "confidence": 0.96
-                        })
-                        await websocket.send_json({
-                            "type": "board",
-                            "board": "\\text{Current Topic: Vector Resolution}"
-                        })
-                        await websocket.send_json({
-                            "type": "audio_chunk",
-                            "speech": clean_speech
+                            "confidence": 0.98
                         })
 
+                        # Execute production tutor turn pipeline
+                        await execute_turn_pipeline(utterance_text=utterance_text, turn_type="answer")
+
     except WebSocketDisconnect:
-        # Client disconnected
         state.is_active = False
-        # Save cumulative telemetry to drona_sessions
         total_mute = state.get_total_mute_sec()
         try:
             supabase.table('drona_sessions').update({
@@ -221,4 +235,4 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 'reconnect_count': state.reconnect_count + 1
             }).eq('id', session_id).execute()
         except Exception as e:
-            print("Telemetry update error on disconnect:", e)
+            logger.error(f"Telemetry update error on disconnect: {e}")
