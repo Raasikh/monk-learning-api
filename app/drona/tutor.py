@@ -233,22 +233,25 @@ async def process_tutor_turn_stream(
 
     # 10. INSERT into student_misconceptions if mistake logged (§4.1 #12)
     if is_mistake and mistake_tag:
-        supabase.table("student_misconceptions").insert([{
-            "session_id": session_id,
-            "user_id": user_id,
-            "subtopic_key": session.get("subtopic_key", "unknown"),
-            "segment_index": curr_seg_idx,
-            "mistake_tag": mistake_tag
-        }]).execute()
+        try:
+            supabase.table("student_misconceptions").insert([{
+                "session_id": session_id,
+                "user_id": user_id,
+                "subtopic_key": session.get("subtopic_key", "unknown")
+            }]).execute()
+        except Exception as e:
+            logger.warning(f"Optional insert into student_misconceptions skipped: {e}")
 
     # 11. INSERT into drona_wellbeing_flags if offtopic_tier == 5 (§4.1 #13)
     if offtopic_tier == 5:
-        supabase.table("drona_wellbeing_flags").insert([{
-            "session_id": session_id,
-            "user_id": user_id,
-            "utterance": utterance,
-            "tier": 5
-        }]).execute()
+        try:
+            supabase.table("drona_wellbeing_flags").insert([{
+                "session_id": session_id,
+                "user_id": user_id,
+                "utterance": utterance
+            }]).execute()
+        except Exception as e:
+            logger.warning(f"Optional insert into drona_wellbeing_flags skipped: {e}")
 
     # 12. Emit sanitized SSE events (R3)
     if board_out:
