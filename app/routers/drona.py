@@ -57,6 +57,7 @@ def get_catalogue(user_id: str = Depends(get_current_user_id)):
         subjects_map[subj].append({
             "id": cid,
             "name": c_name,
+            "class_level": c.get("class_level", 11),
             "subtopics": subs
         })
 
@@ -73,6 +74,7 @@ def get_catalogue(user_id: str = Depends(get_current_user_id)):
             "chapters": [{
                 "id": "c11-ch01",
                 "name": "Units and Measurement",
+                "class_level": 11,
                 "subtopics": [
                     {"id": "s1", "name": "SI Units & Standards", "grounding_status": "grounded"},
                     {"id": "s2", "name": "Dimensional Analysis", "grounding_status": "grounded"}
@@ -88,6 +90,15 @@ def start_session_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_c
     chapter_id = payload.get("chapter_id", "custom")
     language = payload.get("language", "hinglish")
 
+    chapter_name = "this topic"
+    if len(chapter_id) == 36:
+        chap_data = supabase.table("chapters").select("name, subject, class_level").eq("id", chapter_id).execute()
+        if chap_data.data:
+            c = chap_data.data[0]
+            subj = (c.get("subject") or "").capitalize()
+            cls = c.get("class_level")
+            chapter_name = f"{c['name']}, Class {cls} {subj}" if cls and subj else c['name']
+
     sess_res = supabase.table("drona_sessions").insert([{
         "user_id": user_id,
         "chapter_id": chapter_id if len(chapter_id) == 36 else None,
@@ -101,7 +112,7 @@ def start_session_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_c
         raise HTTPException(status_code=500, detail="Failed to create Drona session")
 
     session_id = sess_res.data[0]["id"]
-    confirmation_speech = f"Oh, so you want to learn {chapter_id}? What specific topic or concept do you want to focus on today?"
+    confirmation_speech = f"Oh, so you want to learn {chapter_name}? What specific topic or concept do you want to focus on today?"
 
     return {
         "session_id": session_id,
