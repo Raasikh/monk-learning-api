@@ -25,8 +25,8 @@ def get_catalogue(user_id: str = Depends(get_current_user_id)):
     chap_res = supabase.table("chapters").select("id, name, subject, class_level").execute()
     chapters_data = chap_res.data or []
 
-    # Fetch subtopics
-    sub_res = supabase.table("lesson_sections").select("id, chapter_id, title").execute()
+    # Fetch subtopics from subtopic_index (canonical scoping unit)
+    sub_res = supabase.table("subtopic_index").select("id, chapter_id, subtopic").execute()
     sub_data = sub_res.data or []
 
     # Map subtopics by chapter_id
@@ -37,7 +37,7 @@ def get_catalogue(user_id: str = Depends(get_current_user_id)):
             subtopics_by_chap[cid] = []
         subtopics_by_chap[cid].append({
             "id": s["id"],
-            "name": s["title"],
+            "name": s["subtopic"],
             "grounding_status": "grounded"
         })
 
@@ -57,7 +57,7 @@ def get_catalogue(user_id: str = Depends(get_current_user_id)):
         subjects_map[subj].append({
             "id": cid,
             "name": c_name,
-            "class_level": c.get("class_level", 11),
+            "class_level": c.get("class_level"),
             "subtopics": subs
         })
 
