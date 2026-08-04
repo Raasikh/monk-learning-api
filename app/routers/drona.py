@@ -13,10 +13,13 @@ import os
 router = APIRouter(prefix="/drona", tags=["drona"])
 
 def get_llm_client() -> OpenAI:
-    api_key = os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("DEEPSEEK_API_KEY or OPENAI_API_KEY must be set in environment")
-    return OpenAI(api_key=api_key)
+    deepseek_key = os.getenv("DEEPSEEK_API_KEY")
+    if deepseek_key:
+        return OpenAI(api_key=deepseek_key, base_url="https://api.deepseek.com")
+    openai_key = os.getenv("OPENAI_API_KEY")
+    if openai_key:
+        return OpenAI(api_key=openai_key)
+    raise RuntimeError("Neither DEEPSEEK_API_KEY nor OPENAI_API_KEY is set in environment")
 
 @router.get("/catalogue")
 def get_catalogue(user_id: str = Depends(get_current_user_id)):
