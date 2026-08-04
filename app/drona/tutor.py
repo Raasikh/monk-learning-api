@@ -119,7 +119,7 @@ async def process_tutor_turn_stream(
     model_name = get_model_name("tutor")
     client = get_drona_client()
 
-    # 4. LLM Streaming call with JSON robustness (§4.4)
+    # 4. LLM call with JSON robustness (§4.4)
     raw_response_text = ""
     input_tokens = 0
     output_tokens = 0
@@ -131,26 +131,21 @@ async def process_tutor_turn_stream(
             messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0,
-            stream=True
+            stream=False
         )
 
-        for chunk in res:
-            if chunk.choices and chunk.choices[0].delta.content:
-                delta = chunk.choices[0].delta.content
-                raw_response_text += delta
-                # Stream speech deltas as they arrive
-                yield f"event: speech\ndata: {json.dumps({'delta': delta})}\n\n"
-            
-            # Capture usage if emitted by provider
-            if hasattr(chunk, "usage") and chunk.usage:
-                input_tokens = getattr(chunk.usage, "prompt_tokens", 0)
-                output_tokens = getattr(chunk.usage, "completion_tokens", 0)
-                details = getattr(chunk.usage, "prompt_tokens_details", None)
-                if details:
-                    cache_hit_tokens = getattr(details, "cached_tokens", 0)
+        if res.choices and res.choices[0].message.content:
+            raw_response_text = res.choices[0].message.content
+
+        if hasattr(res, "usage") and res.usage:
+            input_tokens = getattr(res.usage, "prompt_tokens", 0)
+            output_tokens = getattr(res.usage, "completion_tokens", 0)
+            details = getattr(res.usage, "prompt_tokens_details", None)
+            if details:
+                cache_hit_tokens = getattr(details, "cached_tokens", 0)
 
     except Exception as e:
-        logger.error(f"Error during LLM streaming turn: {e}")
+        logger.error(f"Error during LLM turn: {e}")
         raw_response_text = json.dumps({
             "speech": "Let's pause for a moment and review what we've covered on the board.",
             "board": curr_segment.get("board_content", ""),
@@ -253,15 +248,28 @@ async def process_tutor_turn_stream(
         except Exception as e:
             logger.warning(f"Optional insert into drona_wellbeing_flags skipped: {e}")
 
-    # 12. Emit sanitized SSE events (R3)
+    # 12. Strict R3 assertion helper
+    def assert_no_forbidden_keys(payload: dict):
+        for k in FORBIDDEN_SSE_KEYS:
+            if k in payload:
+                raise ValueError(f"R3 VIOLATION: Forbidden server-side key '{k}' in client payload: {payload}")
+
+    # 13. Emit sanitized SSE events (R3)
+    speech_payload = {"delta": speech_out}
+    assert_no_forbidden_keys(speech_payload)
+    yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
+
     if board_out:
-        yield f"event: board\ndata: {json.dumps({'latex': board_out})}\n\n"
+        board_payload = {"latex": board_out}
+        assert_no_forbidden_keys(board_payload)
+        yield f"event: board\ndata: {json.dumps(board_payload)}\n\n"
 
     meta_payload = {
         "segment_index": next_seg if next_phase != "complete" else total_segments,
         "total_segments": total_segments,
         "session_complete": (next_phase == "complete")
     }
+    assert_no_forbidden_keys(meta_payload)
     yield f"event: meta\ndata: {json.dumps(meta_payload)}\n\n"
 
     state_payload = {
@@ -269,6 +277,7 @@ async def process_tutor_turn_stream(
     }
     if next_phase == "complete":
         state_payload["reason"] = "session_ended"
+    assert_no_forbidden_keys(state_payload)
     yield f"event: state\ndata: {json.dumps(state_payload)}\n\n"
 
     yield "event: done\ndata: {}\n\n"

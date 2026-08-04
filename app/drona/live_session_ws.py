@@ -80,6 +80,13 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         "message": "Connected to Drona Live Session WebSocket"
     })
 
+    FORBIDDEN_WS_KEYS = {"model_answer", "rubric", "expected_misconceptions", "grade", "mistake_tag", "phase_request", "segment_complete"}
+
+    def assert_no_forbidden_keys(payload: dict):
+        for k in FORBIDDEN_WS_KEYS:
+            if k in payload:
+                raise ValueError(f"R3 VIOLATION: Forbidden server-side key '{k}' in client WebSocket payload: {payload}")
+
     async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
         """Executes the production process_tutor_turn_stream pipeline and streams events over WebSocket."""
         full_speech = ""
@@ -103,27 +110,35 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             if event_type == "speech":
                 delta = data_payload.get("delta", "")
                 full_speech += delta
-                await websocket.send_json({
+                out_msg = {
                     "type": "speech_delta",
                     "delta": delta
-                })
+                }
+                assert_no_forbidden_keys(out_msg)
+                await websocket.send_json(out_msg)
             elif event_type == "board":
                 latex = data_payload.get("latex", "")
                 full_board = latex
-                await websocket.send_json({
+                out_msg = {
                     "type": "board",
                     "board": latex
-                })
+                }
+                assert_no_forbidden_keys(out_msg)
+                await websocket.send_json(out_msg)
             elif event_type == "meta":
-                await websocket.send_json({
+                out_msg = {
                     "type": "meta",
                     **data_payload
-                })
+                }
+                assert_no_forbidden_keys(out_msg)
+                await websocket.send_json(out_msg)
             elif event_type == "state":
-                await websocket.send_json({
+                out_msg = {
                     "type": "state",
                     **data_payload
-                })
+                }
+                assert_no_forbidden_keys(out_msg)
+                await websocket.send_json(out_msg)
                 if data_payload.get("phase") == "complete":
                     state.is_active = False
 
@@ -137,12 +152,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
             async for pcm_chunk in tts_proxy.stream_tts(text_gen()):
                 b64_audio = base64.b64encode(pcm_chunk).decode('utf-8')
-                await websocket.send_json({
+                out_msg = {
                     "type": "audio_chunk",
                     "audio": b64_audio,
                     "speech": clean_speech,
                     "board": full_board
-                })
+                }
+                assert_no_forbidden_keys(out_msg)
+                await websocket.send_json(out_msg)
 
     try:
         while state.is_active:
