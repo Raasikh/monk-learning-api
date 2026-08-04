@@ -49,6 +49,10 @@ async def log_request_latency(request: Request, call_next):
 # Register routers
 app.include_router(practice.router)
 
+from app.drona.live_session_ws import router as drona_ws_router
+app.include_router(drona_ws_router)
+
+
 
 import os
 
