@@ -221,18 +221,14 @@ async def process_tutor_turn_stream(
     supabase.table("drona_turns").insert([{
         "session_id": session_id,
         "turn_index": turn_index,
+        "segment_index": curr_seg_idx,
         "phase_in": phase_in,
-        "phase_out": next_phase,
         "utterance": utterance,
-        "speech_out": speech_out,
-        "board_out": board_out,
+        "raw_response": raw_response_text,
         "grade": grade_out,
-        "mistake_tag": mistake_tag,
-        "offtopic_tier": offtopic_tier,
         "input_tokens": input_tokens,
         "cache_hit_tokens": cache_hit_tokens,
-        "output_tokens": output_tokens,
-        "model_name": model_name
+        "output_tokens": output_tokens
     }]).execute()
 
     # 10. INSERT into student_misconceptions if mistake logged (§4.1 #12)
