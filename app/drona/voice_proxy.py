@@ -155,9 +155,48 @@ class SaarasSTTProxy:
                 break
 
 class RumikTTSProxy:
-    """Streaming TTS synthesis via Rumik Silk (preset voice 'Ira')."""
-    def __init__(self, voice_preset: str = "Ira"):
-        self.voice_preset = voice_preset
+    """Streaming TTS synthesis via Sarvam / Rumik Silk (speaker 'anushka', model 'bulbul:v2')."""
+    def __init__(self, speaker: str = "anushka", model: str = "bulbul:v2"):
+        self.speaker = speaker
+        self.model = model
+
+    async def synthesize_text(self, text: str) -> bytes:
+        """Calls Sarvam TTS API and returns raw decoded audio bytes (WAV/PCM)."""
+        import requests
+
+        sarvam_key = os.getenv("SARVAM_API_KEY", "").strip("\"'")
+        if not sarvam_key or "mock" in sarvam_key:
+            raise RuntimeError("Invalid or missing SARVAM_API_KEY for TTS synthesis")
+
+        url = os.getenv("RUMIK_TTS_ENDPOINT", "https://api.sarvam.ai/text-to-speech")
+        headers = {
+            "api-subscription-key": sarvam_key,
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "inputs": [text],
+            "target_language_code": "hi-IN",
+            "speaker": self.speaker,
+            "pitch": 0,
+            "pace": 1.05,
+            "loudness": 1.5,
+            "speech_sample_rate": 16000,
+            "enable_preprocessing": True,
+            "model": self.model
+        }
+
+        def _call_http():
+            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+            if resp.status_code != 200:
+                raise RuntimeError(f"Sarvam TTS HTTP {resp.status_code} Error: {resp.text}")
+            data = resp.json()
+            audios = data.get("audios", [])
+            if not audios:
+                raise RuntimeError(f"Sarvam TTS returned empty audios array: {data}")
+            return base64.b64decode(audios[0])
+
+        loop = asyncio.get_event_loop()
+        return await loop.run_in_executor(None, _call_http)
 
     async def stream_tts(self, text_stream: AsyncGenerator[str, None]) -> AsyncGenerator[bytes, None]:
         buffer = ""
@@ -168,12 +207,12 @@ class RumikTTSProxy:
                 for sentence in sentences[:-1]:
                     t1_viol, t2_viol, clean_text = check_tts_safety_filter(sentence)
                     if clean_text:
-                        audio_pcm = f"AUDIO_PCM({clean_text[:30]})".encode('utf-8')
+                        audio_pcm = await self.synthesize_text(clean_text)
                         yield audio_pcm
                 buffer = sentences[-1]
 
         if buffer.strip():
             t1_viol, t2_viol, clean_text = check_tts_safety_filter(buffer)
             if clean_text:
-                audio_pcm = f"AUDIO_PCM({clean_text[:30]})".encode('utf-8')
+                audio_pcm = await self.synthesize_text(clean_text)
                 yield audio_pcm

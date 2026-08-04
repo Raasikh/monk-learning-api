@@ -7,10 +7,17 @@ from typing import Dict, Optional
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase
 from app.drona.tutor import process_tutor_turn_stream
-from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, check_tts_safety_filter
+from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, check_tts_safety_filter, split_into_sentences
 
 logger = logging.getLogger("drona.live_session_ws")
 router = APIRouter(prefix="/drona", tags=["drona_voice"])
+
+FORBIDDEN_WS_KEYS = {"model_answer", "rubric", "expected_misconceptions", "grade", "mistake_tag", "phase_request", "segment_complete"}
+
+def assert_no_forbidden_keys(payload: dict):
+    for k in FORBIDDEN_WS_KEYS:
+        if k in payload:
+            raise ValueError(f"R3 VIOLATION: Forbidden server-side key '{k}' in client WebSocket payload: {payload}")
 
 class LiveSessionState:
     """In-memory session state manager for a live WebSocket voice session."""
@@ -29,13 +36,11 @@ class LiveSessionState:
         self.is_active = True
 
     def on_mute(self):
-        """Student clicked mute."""
         if not self.is_muted:
             self.is_muted = True
             self.mute_start_time = time.time()
 
     def on_unmute(self):
-        """Student clicked unmute."""
         if self.is_muted:
             if self.mute_start_time:
                 self.cumulative_mute_sec += int(time.time() - self.mute_start_time)
@@ -49,14 +54,12 @@ class LiveSessionState:
         return total
 
     def add_pcm_bytes(self, byte_count: int):
-        """Calculates actual audio duration from 16kHz 16-bit mono PCM bytes."""
-        # 16000 samples/sec * 2 bytes/sample = 32000 bytes/sec
         duration = byte_count / 32000.0
         self.stt_seconds += duration
 
 @router.websocket("/session/{session_id}/live")
 async def drona_live_session_ws(websocket: WebSocket, session_id: str):
-    """Unified production WebSocket endpoint carrying PCM audio, transcripts, LLM turn processing, board events, and state updates."""
+    """Unified WebSocket endpoint streaming binary PCM, Saaras STT transcripts, sentence-level TTS synthesis, board events, and state updates."""
     await websocket.accept()
 
     # 1. Authenticate & fetch session
@@ -69,7 +72,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     session_data = res_s.data[0]
     user_id = session_data['user_id']
     state = LiveSessionState(session_id, user_id)
-    tts_proxy = RumikTTSProxy()
+    tts_proxy = RumikTTSProxy(speaker="anushka", model="bulbul:v2")
+    stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast")
+
+    # Queue for incoming client binary PCM audio frames
+    pcm_queue: asyncio.Queue[bytes] = asyncio.Queue()
 
     # Initial state handshake
     await websocket.send_json({
@@ -80,19 +87,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         "message": "Connected to Drona Live Session WebSocket"
     })
 
-    FORBIDDEN_WS_KEYS = {"model_answer", "rubric", "expected_misconceptions", "grade", "mistake_tag", "phase_request", "segment_complete"}
-
-    def assert_no_forbidden_keys(payload: dict):
-        for k in FORBIDDEN_WS_KEYS:
-            if k in payload:
-                raise ValueError(f"R3 VIOLATION: Forbidden server-side key '{k}' in client WebSocket payload: {payload}")
-
     async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
-        """Executes the production process_tutor_turn_stream pipeline and streams events over WebSocket."""
-        full_speech = ""
-        full_board = ""
+        """Executes process_tutor_turn_stream and synthesizes TTS sentence-by-sentence (W3 fix)."""
+        speech_buffer = ""
 
-        # Call production tutor turn generator (same function used by /turn)
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")
             event_type = None
@@ -109,75 +107,116 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
             if event_type == "speech":
                 delta = data_payload.get("delta", "")
-                full_speech += delta
-                out_msg = {
-                    "type": "speech_delta",
-                    "delta": delta
-                }
+                speech_buffer += delta
+
+                # W3 Fix: Synthesize TTS sentence-by-sentence as speech completes
+                sentences = split_into_sentences(speech_buffer)
+                if len(sentences) > 1:
+                    for sentence in sentences[:-1]:
+                        t1_v, t2_v, clean_text = check_tts_safety_filter(sentence)
+                        if clean_text:
+                            state.tts_characters += len(clean_text)
+                            try:
+                                audio_bytes = await tts_proxy.synthesize_text(clean_text)
+                                b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
+                                out_msg = {
+                                    "type": "audio_chunk",
+                                    "audio": b64_audio,
+                                    "speech": clean_text
+                                }
+                                assert_no_forbidden_keys(out_msg)
+                                await websocket.send_json(out_msg)
+                            except Exception as tts_err:
+                                logger.error(f"TTS synthesis error on sentence: {tts_err}")
+                    speech_buffer = sentences[-1]
+
+                out_msg = {"type": "speech_delta", "delta": delta}
                 assert_no_forbidden_keys(out_msg)
                 await websocket.send_json(out_msg)
+
             elif event_type == "board":
                 latex = data_payload.get("latex", "")
-                full_board = latex
-                out_msg = {
-                    "type": "board",
-                    "board": latex
-                }
+                out_msg = {"type": "board", "board": latex}
                 assert_no_forbidden_keys(out_msg)
                 await websocket.send_json(out_msg)
+
             elif event_type == "meta":
-                out_msg = {
-                    "type": "meta",
-                    **data_payload
-                }
+                out_msg = {"type": "meta", **data_payload}
                 assert_no_forbidden_keys(out_msg)
                 await websocket.send_json(out_msg)
+
             elif event_type == "state":
-                out_msg = {
-                    "type": "state",
-                    **data_payload
-                }
+                out_msg = {"type": "state", **data_payload}
                 assert_no_forbidden_keys(out_msg)
                 await websocket.send_json(out_msg)
                 if data_payload.get("phase") == "complete":
                     state.is_active = False
 
-        # Generate streaming TTS audio for the complete speech response
-        if full_speech.strip():
-            t1, t2, clean_speech = check_tts_safety_filter(full_speech)
-            state.tts_characters += len(clean_speech)
+        # Synthesize remaining sentence buffer
+        if speech_buffer.strip():
+            t1_v, t2_v, clean_text = check_tts_safety_filter(speech_buffer)
+            if clean_text:
+                state.tts_characters += len(clean_text)
+                try:
+                    audio_bytes = await tts_proxy.synthesize_text(clean_text)
+                    b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
+                    out_msg = {
+                        "type": "audio_chunk",
+                        "audio": b64_audio,
+                        "speech": clean_text
+                    }
+                    assert_no_forbidden_keys(out_msg)
+                    await websocket.send_json(out_msg)
+                except Exception as tts_err:
+                    logger.error(f"TTS synthesis error on final sentence: {tts_err}")
 
-            async def text_gen():
-                yield clean_speech
+    # W2 Fix: Callback for Saaras STT transcript streaming
+    def handle_stt_transcript(raw_t: str, norm_t: str, is_final: bool, confidence: float):
+        if not norm_t.strip():
+            return
 
-            async for pcm_chunk in tts_proxy.stream_tts(text_gen()):
-                b64_audio = base64.b64encode(pcm_chunk).decode('utf-8')
-                out_msg = {
-                    "type": "audio_chunk",
-                    "audio": b64_audio,
-                    "speech": clean_speech,
-                    "board": full_board
-                }
-                assert_no_forbidden_keys(out_msg)
-                await websocket.send_json(out_msg)
+        if not is_final:
+            asyncio.create_task(websocket.send_json({
+                "type": "transcript_partial",
+                "transcript": norm_t
+            }))
+        else:
+            asyncio.create_task(websocket.send_json({
+                "type": "transcript_final",
+                "transcript": norm_t,
+                "confidence": confidence
+            }))
+            # Automatically fire turn pipeline on final STT transcript
+            asyncio.create_task(execute_turn_pipeline(utterance_text=norm_t, turn_type="answer"))
+
+    # W2 Fix: Audio stream generator feeding SaarasSTTProxy
+    async def audio_stream_generator():
+        while state.is_active:
+            try:
+                chunk = await asyncio.wait_for(pcm_queue.get(), timeout=1.0)
+                yield chunk
+            except asyncio.TimeoutError:
+                continue
+
+    # Start background Saaras STT streaming task
+    stt_task = asyncio.create_task(stt_proxy.connect_and_stream(
+        audio_stream=audio_stream_generator(),
+        on_transcript=handle_stt_transcript,
+        on_barge_in=lambda: asyncio.create_task(execute_turn_pipeline(utterance_text="", turn_type="interruption"))
+    ))
 
     try:
         while state.is_active:
             message = await websocket.receive()
-            msg_type = message.get("type")
 
-            # A. BINARY PCM AUDIO FRAME FROM CLIENT
+            # W2 Fix: BINARY PCM AUDIO FRAME FORWARDED TO SAARAS STT QUEUE
             if "bytes" in message and message["bytes"]:
                 pcm_bytes = message["bytes"]
                 state.add_pcm_bytes(len(pcm_bytes))
                 state.last_audio_at = time.time()
 
-                # If student is muted, discard PCM bytes
-                if state.is_muted:
-                    continue
-
-                # Forward binary PCM frames to STT / buffer
-                # For streaming turn trigger: if audio frame received, send confirmation
+                if not state.is_muted:
+                    pcm_queue.put_nowait(pcm_bytes)
                 continue
 
             # B. TEXT JSON CONTROL MESSAGES
@@ -189,38 +228,29 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
                 control_type = data.get("type")
 
-                # 1. PING / HEARTBEAT
                 if control_type == "ping":
                     await websocket.send_json({"type": "pong", "timestamp": time.time()})
 
-                # 2. STUDENT MUTE
                 elif control_type == "mute":
                     state.on_mute()
                     await websocket.send_json({"type": "state", "is_muted": True, "no_response_timer_paused": True})
 
-                # 3. STUDENT UNMUTE
                 elif control_type == "unmute":
                     state.on_unmute()
                     await websocket.send_json({"type": "state", "is_muted": False, "no_response_timer_paused": False})
 
-                # 4. TAP-TO-INTERRUPT / BARGE-IN
                 elif control_type == "interrupt":
                     state.current_playback_pos = data.get("playback_position", 0)
                     cutoff_text = data.get("cutoff_text", "")
                     state.playback_cutoff_point = cutoff_text
-
-                    # Execute interruption turn with production process_tutor_turn_stream
                     await execute_turn_pipeline(utterance_text="", turn_type="interruption")
 
-                # 5. PLAYBACK POSITION UPDATE
                 elif control_type == "playback_position":
                     state.current_playback_pos = data.get("position", 0)
 
-                # 6. UTTERANCE / TRANSCRIPT TURN PROCESSOR
                 elif control_type == "utterance":
                     utterance_text = data.get("text", "").strip()
 
-                    # Check mute status during awaiting_answer
                     if state.is_muted and session_data['phase'] == 'awaiting_answer':
                         mute_dur = state.get_total_mute_sec()
                         if mute_dur > 5:
@@ -232,17 +262,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             continue
 
                     if utterance_text:
-                        await websocket.send_json({
-                            "type": "transcript_final",
-                            "transcript": utterance_text,
-                            "confidence": 0.98
-                        })
-
-                        # Execute production tutor turn pipeline
                         await execute_turn_pipeline(utterance_text=utterance_text, turn_type="answer")
 
     except WebSocketDisconnect:
         state.is_active = False
+        stt_task.cancel()
         total_mute = state.get_total_mute_sec()
         try:
             supabase.table('drona_sessions').update({
