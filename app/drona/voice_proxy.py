@@ -2,6 +2,7 @@ import os
 import re
 import json
 import asyncio
+import base64
 from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple
 import websockets
 
@@ -155,48 +156,62 @@ class SaarasSTTProxy:
                 break
 
 class RumikTTSProxy:
-    """Streaming TTS synthesis via Sarvam / Rumik Silk (speaker 'anushka', model 'bulbul:v2')."""
-    def __init__(self, speaker: str = "anushka", model: str = "bulbul:v2"):
-        self.speaker = speaker
+    """Streaming TTS synthesis via Rumik Silk WebSocket API (voice preset 'Ira', model 'mulberry')."""
+    def __init__(self, voice_preset: str = "Ira", model: str = "mulberry"):
+        self.voice_preset = voice_preset
         self.model = model
 
     async def synthesize_text(self, text: str) -> bytes:
-        """Calls Sarvam TTS API and returns raw decoded audio bytes (WAV/PCM)."""
+        """Connects to Rumik Silk API (https://silk-api.rumik.ai) and returns raw binary PCM audio bytes."""
         import requests
 
-        sarvam_key = os.getenv("SARVAM_API_KEY", "").strip("\"'")
-        if not sarvam_key or "mock" in sarvam_key:
-            raise RuntimeError("Invalid or missing SARVAM_API_KEY for TTS synthesis")
+        rumik_key = os.getenv("RUMIK_API_KEY", "").strip("\"'")
+        if not rumik_key or "mock" in rumik_key:
+            raise RuntimeError("Invalid or missing RUMIK_API_KEY for Rumik Silk TTS synthesis")
 
-        url = os.getenv("RUMIK_TTS_ENDPOINT", "https://api.sarvam.ai/text-to-speech")
-        headers = {
-            "api-subscription-key": sarvam_key,
-            "Content-Type": "application/json"
-        }
-        payload = {
-            "inputs": [text],
-            "target_language_code": "hi-IN",
-            "speaker": self.speaker,
-            "pitch": 0,
-            "pace": 1.05,
-            "loudness": 1.5,
-            "speech_sample_rate": 16000,
-            "enable_preprocessing": True,
-            "model": self.model
-        }
+        base_url = os.getenv("RUMIK_TTS_ENDPOINT", "https://silk-api.rumik.ai")
 
-        def _call_http():
-            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+        def _mint():
+            resp = requests.post(
+                f"{base_url}/v1/tts/ws-connect",
+                headers={"Authorization": f"Bearer {rumik_key}", "Content-Type": "application/json"},
+                json={"model": self.model, "text": text},
+                timeout=10
+            )
             if resp.status_code != 200:
-                raise RuntimeError(f"Sarvam TTS HTTP {resp.status_code} Error: {resp.text}")
-            data = resp.json()
-            audios = data.get("audios", [])
-            if not audios:
-                raise RuntimeError(f"Sarvam TTS returned empty audios array: {data}")
-            return base64.b64decode(audios[0])
+                raise RuntimeError(f"Rumik Silk Handshake HTTP {resp.status_code} Error: {resp.text}")
+            return resp.json()
 
         loop = asyncio.get_event_loop()
-        return await loop.run_in_executor(None, _call_http)
+        handshake_data = await loop.run_in_executor(None, _mint)
+
+        ws_url = handshake_data["ws_url"]
+        token = handshake_data["token"]
+
+        pcm_bytes = bytearray()
+        async with websockets.connect(f"{ws_url}?token={token}") as ws:
+            await ws.send(json.dumps({
+                "text": text,
+                "speaker": self.voice_preset
+            }))
+
+            async for msg in ws:
+                if isinstance(msg, bytes):
+                    pcm_bytes.extend(msg)
+                else:
+                    try:
+                        parsed = json.loads(msg)
+                        if parsed.get("type") == "done":
+                            break
+                        elif parsed.get("type") == "error":
+                            raise RuntimeError(f"Rumik Silk WS error: {parsed}")
+                    except Exception:
+                        pass
+
+        if not pcm_bytes:
+            raise RuntimeError(f"Rumik Silk returned 0 PCM audio bytes for text: '{text[:40]}...'")
+
+        return bytes(pcm_bytes)
 
     async def stream_tts(self, text_stream: AsyncGenerator[str, None]) -> AsyncGenerator[bytes, None]:
         buffer = ""

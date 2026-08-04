@@ -72,7 +72,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     session_data = res_s.data[0]
     user_id = session_data['user_id']
     state = LiveSessionState(session_id, user_id)
-    tts_proxy = RumikTTSProxy(speaker="anushka", model="bulbul:v2")
+    tts_proxy = RumikTTSProxy(voice_preset="Ira", model="mulberry")
     stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast")
 
     # Queue for incoming client binary PCM audio frames
