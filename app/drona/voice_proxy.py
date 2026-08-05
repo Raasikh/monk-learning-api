@@ -3,14 +3,54 @@ import re
 import json
 import asyncio
 import base64
+import logging
 from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple
 import websockets
 
-# Configuration constants
-SARVAM_API_KEY = os.getenv("SARVAM_API_KEY", "")
-SARVAM_STT_ENDPOINT = os.getenv("SARVAM_STT_ENDPOINT", "")
-RUMIK_TTS_ENDPOINT = os.getenv("RUMIK_TTS_ENDPOINT", "")
-RUMIK_API_KEY = os.getenv("RUMIK_API_KEY", "")
+logger = logging.getLogger("drona.voice_proxy")
+
+# Fixed Base Endpoints (Constant across environments)
+RUMIK_TTS_ENDPOINT = "https://silk-api.rumik.ai"
+SARVAM_STT_ENDPOINT = "wss://api.sarvam.ai/speech-to-text-translate-ws"
+
+# Read API Keys strictly without silent fallbacks
+SARVAM_API_KEY = os.environ.get("SARVAM_API_KEY", "").strip("\"'")
+RUMIK_API_KEY = os.environ.get("RUMIK_API_KEY", "").strip("\"'")
+
+# Secret Redacting Regular Expressions
+SECRET_PATTERNS = [
+    re.compile(r'rk_live_[A-Za-z0-9_\-]+'),
+    re.compile(r'sk_[A-Za-z0-9_\-]+'),
+    re.compile(r'Bearer\s+[A-Za-z0-9_\-\.\=]+', re.IGNORECASE),
+]
+
+def sanitize_secret(text: str) -> str:
+    """Sanitizes sensitive keys and bearer tokens from logs and exception messages."""
+    if not text:
+        return ""
+    res = str(text)
+    for pat in SECRET_PATTERNS:
+        res = pat.sub("***REDACTED***", res)
+    return res
+
+# Startup Assertion Checks
+if not SARVAM_API_KEY:
+    raise RuntimeError("FATAL BOOT FAILURE: SARVAM_API_KEY environment variable is not set!")
+
+if not RUMIK_API_KEY:
+    raise RuntimeError("FATAL BOOT FAILURE: RUMIK_API_KEY environment variable is not set!")
+
+if SARVAM_API_KEY.startswith("http://") or SARVAM_API_KEY.startswith("https://") or SARVAM_API_KEY.startswith("wss://"):
+    raise RuntimeError("FATAL BOOT FAILURE: SARVAM_API_KEY appears to be a URL string, not an API key!")
+
+if RUMIK_API_KEY.startswith("http://") or RUMIK_API_KEY.startswith("https://") or RUMIK_API_KEY.startswith("wss://"):
+    raise RuntimeError("FATAL BOOT FAILURE: RUMIK_API_KEY appears to be a URL string, not an API key!")
+
+if not RUMIK_TTS_ENDPOINT.startswith("https://"):
+    raise RuntimeError("FATAL BOOT FAILURE: RUMIK_TTS_ENDPOINT must start with https://")
+
+if not (SARVAM_STT_ENDPOINT.startswith("wss://") or SARVAM_STT_ENDPOINT.startswith("https://")):
+    raise RuntimeError("FATAL BOOT FAILURE: SARVAM_STT_ENDPOINT must start with wss:// or https://")
 
 # Devanagari to Romanized Hinglish Mapping Dictionary for STT Normalization (§3)
 DEVANAGARI_ROMAN_MAP = {
@@ -165,22 +205,26 @@ class RumikTTSProxy:
         """Connects to Rumik Silk API (https://silk-api.rumik.ai) and returns raw binary PCM audio bytes."""
         import requests
 
-        rumik_key = os.getenv("RUMIK_API_KEY", "").strip("\"'")
-        if not rumik_key or "mock" in rumik_key:
+        rumik_key = RUMIK_API_KEY
+        if not rumik_key:
             raise RuntimeError("Invalid or missing RUMIK_API_KEY for Rumik Silk TTS synthesis")
 
-        base_url = os.getenv("RUMIK_TTS_ENDPOINT", "https://silk-api.rumik.ai")
+        base_url = RUMIK_TTS_ENDPOINT
 
         def _mint():
-            resp = requests.post(
-                f"{base_url}/v1/tts/ws-connect",
-                headers={"Authorization": f"Bearer {rumik_key}", "Content-Type": "application/json"},
-                json={"model": self.model, "text": text},
-                timeout=10
-            )
-            if resp.status_code != 200:
-                raise RuntimeError(f"Rumik Silk Handshake HTTP {resp.status_code} Error: {resp.text}")
-            return resp.json()
+            try:
+                resp = requests.post(
+                    f"{base_url}/v1/tts/ws-connect",
+                    headers={"Authorization": f"Bearer {rumik_key}", "Content-Type": "application/json"},
+                    json={"model": self.model, "text": text},
+                    timeout=10
+                )
+                if resp.status_code != 200:
+                    sanitized_err = sanitize_secret(resp.text)
+                    raise RuntimeError(f"Rumik Silk Handshake HTTP {resp.status_code} Error: {sanitized_err}")
+                return resp.json()
+            except Exception as exc:
+                raise RuntimeError(sanitize_secret(str(exc)))
 
         loop = asyncio.get_event_loop()
         handshake_data = await loop.run_in_executor(None, _mint)
@@ -189,25 +233,24 @@ class RumikTTSProxy:
         token = handshake_data["token"]
 
         pcm_bytes = bytearray()
-        async with websockets.connect(f"{ws_url}?token={token}") as ws:
-            await ws.send(json.dumps({
-                "text": text,
-                "speaker": self.voice_preset
-            }))
+        try:
+            async with websockets.connect(f"{ws_url}?token={token}") as ws:
+                await ws.send(json.dumps({
+                    "text": text,
+                    "speaker": self.voice_preset
+                }))
 
-            async for msg in ws:
-                if isinstance(msg, bytes):
-                    pcm_bytes.extend(msg)
-                else:
-                    try:
-                        parsed = json.loads(msg)
-                        if parsed.get("type") == "done":
-                            break
-                        elif parsed.get("type") == "error":
-                            raise RuntimeError(f"Rumik Silk WS error: {parsed}")
-                    except Exception:
-                        pass
+                async for msg in ws:
+                    if isinstance(msg, bytes):
+                        pcm_bytes.extend(msg)
+                    elif isinstance(msg, str):
+                        data = json.loads(msg)
+                        if data.get("type") == "error":
+                            raise RuntimeError(f"Rumik TTS WebSocket Error: {data.get('message')}")
+        except Exception as ws_err:
+            raise RuntimeError(sanitize_secret(str(ws_err)))
 
+        logger.info(f"[RUMIK TTS SUCCESS] Synthesized {len(pcm_bytes)} PCM bytes from silk-api.rumik.ai for text: '{text[:30]}...'")
         if not pcm_bytes:
             raise RuntimeError(f"Rumik Silk returned 0 PCM audio bytes for text: '{text[:40]}...'")
 
