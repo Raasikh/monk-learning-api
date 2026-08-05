@@ -48,8 +48,8 @@ def validate_plan_json(data: Dict[str, Any]) -> None:
                 raise ValueError(f"Segment {idx} checkpoint missing field '{cp_field}'")
         
         misconceptions = cp.get("expected_misconceptions")
-        if not isinstance(misconceptions, list) or not (2 <= len(misconceptions) <= 3):
-            raise ValueError(f"Segment {idx} checkpoint must have 2-3 expected_misconceptions")
+        if not isinstance(misconceptions, list) or not (1 <= len(misconceptions) <= 5):
+            raise ValueError(f"Segment {idx} checkpoint must have 1 to 5 expected_misconceptions")
 
     wrapup = data.get("wrapup_points")
     if not isinstance(wrapup, list) or len(wrapup) != len(segments):
