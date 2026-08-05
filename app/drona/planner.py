@@ -68,11 +68,21 @@ def strip_fences(text: str) -> str:
     return text
 
 def repair_json_escapes(text: str) -> str:
-    """Repairs unescaped LaTeX backslashes inside JSON string literals before json.loads."""
+    """
+    Repairs LaTeX backslashes inside JSON string literals before json.loads.
+    1. Escapes known LaTeX commands (including \\text, \\frac, \\vec, \\theta, \\times, \\alpha, \\bullet).
+    2. Escapes remaining unescaped single backslashes.
+    """
+    if not text:
+        return ""
     import re
-    # Match single backslashes that are NOT valid JSON escape sequences (\", \\, \/, \b, \f, \n, \r, \t, \uXXXX)
+    # Stage 1: Explicitly double-escape known LaTeX commands (especially \text and \frac which start with \t or \f)
+    latex_cmds = r'\\(text|frac|vec|begin|end|alpha|beta|theta|delta|gamma|sigma|lambda|pi|mu|rho|tau|phi|psi|omega|Delta|Gamma|Theta|Lambda|Pi|Sigma|Omega|times|cdot|bullet|sqrt|approx|equiv|leq|geq|neq|pm|infty|partial|nabla|int|sum|prod|lim|log|ln|sin|cos|tan|cot|sec|csc|sinh|cosh|tanh|hat|bar|tilde|overline|underline|overbrace|underbrace|left|right|quad|qquad|bold|mathbf|mathrm|mathit|mathsf|mathcal|Rightarrow|Leftarrow|rightarrow|leftarrow|to|implies)\b'
+    text = re.sub(latex_cmds, r'\\\\\1', text)
+
+    # Stage 2: Double-escape any remaining single backslashes not followed by valid JSON escape sequence
     pattern = re.compile(r'\\(?!["\\/bfnrt]|u[0-9a-fA-F]{4})')
-    return pattern.sub(r'\\\\', text)
+    return pattern.sub(lambda m: '\\\\' + m.group(0)[1:], text)
 
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""
@@ -102,17 +112,14 @@ Author a complete lesson plan JSON following the instructions in the system prom
 
     client = get_drona_client()
     attempts = 0
-    last_err = None
+    messages = [
+        {"role": "system", "content": planner_prompt},
+        {"role": "user", "content": user_prompt}
+    ]
+    raw_response_content = ""
 
     while attempts < 2:
         attempts += 1
-        messages = [
-            {"role": "system", "content": planner_prompt},
-            {"role": "user", "content": user_prompt}
-        ]
-        if attempts > 1 and last_err:
-            messages.append({"role": "user", "content": f"Previous JSON failed validation: {last_err}. Please output strictly valid JSON matching the schema."})
-
         res = client.chat.completions.create(
             model=model_name,
             messages=messages,
@@ -120,8 +127,8 @@ Author a complete lesson plan JSON following the instructions in the system prom
             temperature=0.0
         )
 
-        content = res.choices[0].message.content or ""
-        cleaned = strip_fences(content)
+        raw_response_content = res.choices[0].message.content or ""
+        cleaned = strip_fences(raw_response_content)
         repaired = repair_json_escapes(cleaned)
 
         try:
@@ -156,7 +163,32 @@ Author a complete lesson plan JSON following the instructions in the system prom
             raise RuntimeError("Failed to insert lesson plan into DB")
         except Exception as e:
             last_err = str(e)
-            logger.warning(f"Planner validation attempt {attempts} failed: {e}")
+            # Detailed Offset Logging
+            logger.error(f"[PLANNER PARSE ERROR - Attempt {attempts}] Exception: {e}")
+            logger.error(f"[PLANNER RAW RESPONSE FIRST 2000 CHARS]:\n{cleaned[:2000]}")
+            
+            if isinstance(e, json.JSONDecodeError):
+                pos = e.pos
+                snippet_before = cleaned[max(0, pos - 50):pos]
+                failing_char = cleaned[pos] if pos < len(cleaned) else ""
+                snippet_after = cleaned[pos + 1:min(len(cleaned), pos + 50)]
+                logger.error(f"[PARSE OFFSET INFO] pos={pos}, line={e.lineno}, col={e.colno}")
+                logger.error(f"[CHAR AT OFFSET]: repr={repr(failing_char)}")
+                logger.error(f"[SNIPPET AROUND OFFSET]: '{snippet_before}>>> {failing_char} <<<{snippet_after}'")
+                
+                repaired_before = repaired[max(0, pos - 50):pos]
+                repaired_failing = repaired[pos] if pos < len(repaired) else ""
+                repaired_after = repaired[pos + 1:min(len(repaired), pos + 50)]
+                logger.error(f"[REPAIRED SNIPPET AROUND OFFSET]: '{repaired_before}>>> {repaired_failing} <<<{repaired_after}'")
+
+            # Lightweight Re-emission instead of fresh authoring turn from scratch
+            if attempts < 2:
+                logger.info("Attempting lightweight JSON re-emission turn (preserving generated content)...")
+                messages.append({"role": "assistant", "content": raw_response_content})
+                messages.append({
+                    "role": "user",
+                    "content": f"The generated JSON failed validation/parsing with error: {e}. Please re-emit the exact same plan JSON, ensuring ALL backslashes in LaTeX strings are written as double backslashes (\\\\frac, \\\\vec, \\\\text, \\\\theta)."
+                })
 
     raise RuntimeError(f"Planner failed validation after 2 attempts: {last_err}")
 
