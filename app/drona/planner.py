@@ -48,8 +48,8 @@ def validate_plan_json(data: Dict[str, Any]) -> None:
                 raise ValueError(f"Segment {idx} checkpoint missing field '{cp_field}'")
         
         misconceptions = cp.get("expected_misconceptions")
-        if not isinstance(misconceptions, list) or not (1 <= len(misconceptions) <= 5):
-            raise ValueError(f"Segment {idx} checkpoint must have 1 to 5 expected_misconceptions")
+        if not isinstance(misconceptions, list) or not (2 <= len(misconceptions) <= 3):
+            raise ValueError(f"Segment {idx} checkpoint must have 2-3 expected_misconceptions")
 
     wrapup = data.get("wrapup_points")
     if not isinstance(wrapup, list) or len(wrapup) != len(segments):
@@ -119,7 +119,8 @@ Author a complete lesson plan JSON following the instructions in the system prom
             model=model_name,
             messages=messages,
             response_format={"type": "json_object"},
-            temperature=0.0
+            temperature=0.0,
+            extra_body={"thinking": {"type": "disabled"}}
         )
 
         raw_response_content = res.choices[0].message.content or ""
@@ -132,6 +133,7 @@ Author a complete lesson plan JSON following the instructions in the system prom
             
             segment_count = len(plan_json["segments"])
             prompt_ver = get_prompt_version()
+            source_model_tag = f"{model_name}-thinking-off"
 
             # INSERT into lesson_plans table (§3.5) with 409 conflict handling
             try:
@@ -141,7 +143,7 @@ Author a complete lesson plan JSON following the instructions in the system prom
                     "plan_json": plan_json,
                     "grounded": is_grounded,
                     "segment_count": segment_count,
-                    "source_model": model_name,
+                    "source_model": source_model_tag,
                     "prompt_version": prompt_ver
                 }]).execute()
                 if ins_res.data:

@@ -58,9 +58,12 @@ def retrieve_pdf_chunks(chapter_id: str, query_text: str, top_k: int = 12) -> Li
             "match_count": top_k
         }).execute()
         if rpc_res.data:
+            import logging
+            logging.getLogger("uvicorn").info(f"[VECTOR RPC MATCH] match_pdf_chunks returned {len(rpc_res.data)} chunks for chapter {chapter_id}")
             return rpc_res.data
-    except Exception:
-        pass
+    except Exception as rpc_err:
+        import logging
+        logging.getLogger("uvicorn").info(f"[VECTOR RPC FALLBACK] match_pdf_chunks RPC not present ({rpc_err}), using in-memory cosine fallback.")
 
     # Fallback: In-memory vector similarity ranking over chapter chunks
     res = supabase.table('pdf_chunks').select('id, chapter_id, content, embedding, source_file, chunk_index').eq('chapter_id', chapter_id).execute()
