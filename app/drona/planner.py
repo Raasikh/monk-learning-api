@@ -69,20 +69,15 @@ def strip_fences(text: str) -> str:
 
 def repair_json_escapes(text: str) -> str:
     """
-    Repairs LaTeX backslashes inside JSON string literals before json.loads.
-    1. Escapes known LaTeX commands (including \\text, \\frac, \\vec, \\theta, \\times, \\alpha, \\bullet).
-    2. Escapes remaining unescaped single backslashes.
+    Robust JSON LaTeX escape repair:
+    Doubles any backslash in JSON string values that is NOT already double-escaped (\\\\) or an escaped quote (\\").
+    This fixes \\Delta, \\text, \\frac, \\neq, \\vec, etc. without breaking valid JSON string structure.
     """
     if not text:
         return ""
     import re
-    # Stage 1: Explicitly double-escape known LaTeX commands (especially \text and \frac which start with \t or \f)
-    latex_cmds = r'\\(text|frac|vec|begin|end|alpha|beta|theta|delta|gamma|sigma|lambda|pi|mu|rho|tau|phi|psi|omega|Delta|Gamma|Theta|Lambda|Pi|Sigma|Omega|times|cdot|bullet|sqrt|approx|equiv|leq|geq|neq|pm|infty|partial|nabla|int|sum|prod|lim|log|ln|sin|cos|tan|cot|sec|csc|sinh|cosh|tanh|hat|bar|tilde|overline|underline|overbrace|underbrace|left|right|quad|qquad|bold|mathbf|mathrm|mathit|mathsf|mathcal|Rightarrow|Leftarrow|rightarrow|leftarrow|to|implies)\b'
-    text = re.sub(latex_cmds, r'\\\\\1', text)
-
-    # Stage 2: Double-escape any remaining single backslashes not followed by valid JSON escape sequence
-    pattern = re.compile(r'\\(?!["\\/bfnrt]|u[0-9a-fA-F]{4})')
-    return pattern.sub(lambda m: '\\\\' + m.group(0)[1:], text)
+    pattern = re.compile(r'(?<!\\)\\(?!["\\])')
+    return pattern.sub(r'\\\\', text)
 
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""
