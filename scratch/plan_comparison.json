@@ -1,0 +1,196 @@
+{
+  "lat_on": 114.62,
+  "lat_off": 40.31,
+  "plan_on": {
+    "topic": "First Law of Thermodynamics & Internal Energy",
+    "grounded": true,
+    "estimated_minutes": 15,
+    "segments": [
+      {
+        "id": 1,
+        "title": "System, Surroundings and the Three Types",
+        "objective": "Define system, surroundings, and classify systems as open, closed, or isolated.",
+        "teaching_notes": "Start by drawing an imaginary boundary around the part we care about. Explain that the system is what we study; the surroundings are everything else. Then introduce open, closed, and isolated systems with everyday examples: an open kadhai (matter and energy exchange), a sealed pressure cooker before whistle (energy only), and a thermos flask (neither). Emphasise that the type of system determines how energy and matter can be accounted for. Common pitfall: students confuse closed and isolated systems.",
+        "board_content": "System = part of universe under study.\\nSurroundings = everything else.\\nTypes:\\n\u2022 Open: exchanges matter & energy (e.g., boiling milk in open pan)\\n\u2022 Closed: exchanges energy only (e.g., sealed pressure cooker)\\n\u2022 Isolated: exchanges neither (e.g., ideal thermos flask)",
+        "checkpoint": {
+          "question": "Consider a perfectly sealed and insulated thermos flask containing hot tea. Classify this as a system: open, closed, or isolated?",
+          "model_answer": "Isolated system because it exchanges neither matter nor energy with the surroundings.",
+          "rubric": "Correct: isolated with justification. Partial: isolated without justification or closed with reasoning.",
+          "expected_misconceptions": [
+            "confuses closed and isolated systems",
+            "thinks heat can pass through vacuum insulation",
+            "thinks matter exchange occurs through the lid"
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "title": "State Functions, Path Functions and the First Law",
+        "objective": "Distinguish state and path functions, introduce internal energy (U), and state the first law with sign conventions.",
+        "teaching_notes": "Use the hill\u2011temple analogy: altitude gain (state function) depends only on start and end, while steps walked (path function) depends on route. Explain that U and H are state functions; q and w are path functions. Then introduce internal energy as total stored energy and give the first law: \u0394U = q + w. Emphasise the IUPAC sign convention: q > 0 for heat absorbed, w > 0 for work done on the system. Note that for an isothermal ideal gas, \u0394U = 0 because U depends only on T. Common misconception: treating q or w as state functions or saying a system 'contains heat'.",
+        "board_content": "First Law: $\\Delta U = q + w$\\nState functions: $U, H, T, P, V$ (depend only on end\u2011points)\\nPath functions: $q, w$ (depend on route)\\nFor ideal gas, $U$ depends only on $T$: isothermal $\\Rightarrow \\Delta U = 0$",
+        "checkpoint": {
+          "question": "For the isothermal expansion of an ideal gas, what is the change in internal energy (\u0394U)? Briefly explain.",
+          "model_answer": "\u0394U = 0, because the internal energy of an ideal gas depends only on temperature, and temperature remains constant.",
+          "rubric": "Correct: states zero and mentions temperature dependence. Partial: states zero without explanation.",
+          "expected_misconceptions": [
+            "thinks \u0394U > 0 because work is done by the gas",
+            "confuses isothermal with adiabatic (q = 0)",
+            "believes internal energy depends on volume"
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "title": "Expansion Work: Reversible vs Irreversible",
+        "objective": "Derive expressions for pressure\u2013volume work and contrast reversible and irreversible paths.",
+        "teaching_notes": "Explain that work is done when a gas expands against an external pressure. For constant external pressure, w = \u2013p_ext \u0394V. Then show that if the expansion is carried out reversibly (p_ext \u2248 p_int at every step), integration gives w = \u2013nRT ln(V2/V1). Emphasise that reversible work is the maximum possible work for a given change, and that in a cyclic process \u0394U = 0 so q = \u2013w. Use physical reasoning: in a reversible process, the gas pushes against the largest possible opposing pressure. Common pitfalls: sign of w (negative for expansion), mixing up ln and log10, and forgetting that free expansion (p_ext = 0) gives w = 0.",
+        "board_content": "Expansion work:\\n\u2022 Irreversible (constant $p_{ext}$): $w = -p_{ext}\\Delta V$\\n\u2022 Reversible isothermal (ideal gas): $w = -nRT \\ln\\frac{V_2}{V_1}$\\n\u2022 Cyclic process: $\\Delta U = 0 \\Rightarrow q = -w$",
+        "checkpoint": {
+          "question": "Calculate the work done on the system when 1 mole of an ideal gas expands reversibly and isothermally at 300 K from 2.0 L to 6.0 L. (R = 8.314 J/mol\u00b7K)",
+          "model_answer": "w = \u2013nRT ln(V2/V1) = \u20131 \u00d7 8.314 \u00d7 300 \u00d7 ln(3) \u2248 \u20132740 J (or \u20132.74 kJ).",
+          "rubric": "Correct: correct magnitude and negative sign. Partial: correct magnitude but wrong sign, or uses log10 instead of ln.",
+          "expected_misconceptions": [
+            "forgets negative sign for expansion",
+            "uses log10 instead of natural log",
+            "uses wrong value of R (e.g., 0.0821 L\u00b7atm)"
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "title": "Enthalpy and the \u0394H\u2013\u0394U Connection",
+        "objective": "Define enthalpy, relate \u0394H to \u0394U, and introduce heat capacities.",
+        "teaching_notes": "Introduce enthalpy as H = U + PV, a state function useful for constant\u2011pressure processes. Derive \u0394H = \u0394U + \u0394(PV) and, for reactions involving ideal gases at constant T, \u0394H = \u0394U + \u0394n_g RT. Emphasise that only gaseous species count in \u0394n_g. Also mention that q_V = \u0394U and q_P = \u0394H, and give Mayer\u2019s relation C_P \u2013 C_V = R for an ideal gas. Common traps: including solids/liquids in \u0394n_g, thinking \u0394H and \u0394U are always different, and forgetting that for isothermal ideal gas processes both \u0394U and \u0394H are zero.",
+        "board_content": "Enthalpy: $H = U + PV$\\n$\\Delta H = \\Delta U + \\Delta n_g RT$  (ideal gases, constant $T$)\\nAt constant $V$: $q_V = \\Delta U$\\nAt constant $P$: $q_P = \\Delta H$\\nIdeal gas: $C_P - C_V = R$",
+        "checkpoint": {
+          "question": "For the reaction C(s) + O\u2082(g) \u2192 CO\u2082(g), what is the difference (\u0394H \u2013 \u0394U) at temperature T? Explain.",
+          "model_answer": "Zero, because \u0394n_g = (moles of gaseous products) \u2013 (moles of gaseous reactants) = 1 \u2013 1 = 0, and \u0394H \u2013 \u0394U = \u0394n_g RT.",
+          "rubric": "Correct: zero and mentions \u0394n_g. Partial: zero without mentioning \u0394n_g.",
+          "expected_misconceptions": [
+            "counts solid carbon as a gaseous species",
+            "thinks the difference is always RT",
+            "confuses sign of \u0394n_g (thinks it is 1)"
+          ]
+        }
+      }
+    ],
+    "wrapup_points": [
+      "The system is the part we study; surroundings are everything else. Systems are classified by what crosses the boundary: open (matter + energy), closed (energy only), isolated (nothing).",
+      "State functions like U and H care only about the initial and final states; path functions like q and w depend on the route taken.",
+      "Expansion work depends on the path: reversible work is the maximum for a given change, and its formula is w = \u2013nRT ln(V\u2082/V\u2081) for an isothermal ideal gas.",
+      "Enthalpy (H = U + PV) is tailored for constant\u2011pressure processes. The relation \u0394H = \u0394U + \u0394n_g RT helps convert between bomb\u2011calorimeter (\u0394U) and open\u2011beaker (\u0394H) measurements."
+    ]
+  },
+  "plan_off": {
+    "topic": "First Law of Thermodynamics & Internal Energy",
+    "grounded": true,
+    "estimated_minutes": 15,
+    "segments": [
+      {
+        "id": 1,
+        "title": "System, Surroundings, and Types of Systems",
+        "objective": "Define system, surroundings, and boundary; classify systems as open, closed, or isolated.",
+        "teaching_notes": "Start with the pressure cooker analogy: draw an imaginary boundary around the steam inside. The system is what we study; surroundings are everything else. Boundary can be real or imaginary. Three types: open (exchange matter and energy, like boiling milk), closed (exchange energy only, like sealed cooker), isolated (no exchange, like ideal thermos). Emphasize that classification depends on what crosses the boundary.",
+        "board_content": "$$\\text{System} = \\text{part under study}$$ $$\\text{Surroundings} = \\text{everything else}$$ $$\\text{Open: matter + energy}$$ $$\\text{Closed: energy only}$$ $$\\text{Isolated: nothing}$$",
+        "checkpoint": {
+          "question": "A sealed pressure cooker on a stove is an example of which type of system?",
+          "model_answer": "Closed system, because it can exchange energy (heat) but not matter (steam cannot escape).",
+          "rubric": "Correct: closed system with reasoning about energy exchange but no matter exchange. Partial: just 'closed' without explanation.",
+          "expected_misconceptions": [
+            "confuses closed with isolated",
+            "thinks any sealed container is isolated"
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "title": "State Functions vs Path Functions",
+        "objective": "Distinguish state functions (like U, H) from path functions (like q, w) using the hill-temple analogy.",
+        "teaching_notes": "Use the trek to a hill temple: altitude gain depends only on start and end, not the path\u2014that's a state function. Steps walked and water drunk depend on the route\u2014path functions. Internal energy (U) and enthalpy (H) are state functions; heat (q) and work (w) are path functions. Stress that we can only measure changes in U, not absolute values. Mention that for a cyclic process, \u0394U = 0 because U is a state function.",
+        "board_content": "$$\\text{State function: depends only on state}$$ $$\\text{Path function: depends on route}$$ $$U, H, T, P, V \\text{ are state functions}$$ $$q, w \\text{ are path functions}$$ $$\\text{Cyclic process: } \\Delta U = 0$$",
+        "checkpoint": {
+          "question": "Why is internal energy a state function while heat is not?",
+          "model_answer": "Internal energy depends only on the current state (T, P, composition), not how the system got there. Heat is energy in transit and depends on the path taken between states.",
+          "rubric": "Correct: explains that U depends on state variables, while heat is a process quantity. Partial: only says U is a state function without contrasting with heat.",
+          "expected_misconceptions": [
+            "thinks heat is stored in the system",
+            "confuses state function with conserved quantity"
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "title": "The First Law and Sign Convention",
+        "objective": "State the first law (\u0394U = q + w) and apply the sign convention for heat and work.",
+        "teaching_notes": "Present the first law as energy conservation: energy entering as heat or work increases internal energy. Explain the IUPAC/NCERT sign convention: q > 0 if heat is absorbed by the system, w > 0 if work is done on the system. Use the memory aid 'on is plus, by is minus' for work. Walk through a simple example: if a system absorbs 250 J of heat and does 80 J of work, \u0394U = 250 + (-80) = 170 J.",
+        "board_content": "$$\\Delta U = q + w$$ $$q > 0: \\text{heat absorbed}$$ $$w > 0: \\text{work done ON system}$$ $$w < 0: \\text{work done BY system}$$ $$\\text{Example: } q = +250 \\text{ J}, w = -80 \\text{ J} \\Rightarrow \\Delta U = +170 \\text{ J}$$",
+        "checkpoint": {
+          "question": "A system releases 120 J of heat and has 200 J of work done on it. What is \u0394U?",
+          "model_answer": "\u0394U = q + w = (-120 J) + (+200 J) = +80 J.",
+          "rubric": "Correct: +80 J with correct sign handling. Partial: correct magnitude but wrong sign.",
+          "expected_misconceptions": [
+            "confuses sign of work done by vs on system",
+            "forgets to include sign of heat released"
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "title": "Expansion Work: Reversible vs Irreversible",
+        "objective": "Calculate pressure-volume work for irreversible and reversible isothermal processes.",
+        "teaching_notes": "Explain that when a gas expands against an external pressure, work done on the system is w = -p_ext \u0394V. For irreversible expansion against constant external pressure, use this directly. For reversible isothermal expansion of an ideal gas, p_ext is adjusted to be only infinitesimally less than internal pressure, leading to w_rev = -nRT ln(V2/V1). Emphasize that reversible work is the maximum possible work. Contrast with free expansion (p_ext = 0, w = 0).",
+        "board_content": "$$w_{\\text{irr}} = -p_{\\text{ext}} \\Delta V$$ $$w_{\\text{rev}} = -nRT \\ln\\frac{V_2}{V_1}$$ $$\\text{Reversible work is maximum}$$ $$\\text{Free expansion: } w = 0$$",
+        "checkpoint": {
+          "question": "0.5 mol of an ideal gas at 290 K doubles its volume reversibly and isothermally. Calculate the work done. (R = 8.314 J/mol\u00b7K)",
+          "model_answer": "w = -nRT ln(V2/V1) = -(0.5)(8.314)(290) ln(2) \u2248 -836 J.",
+          "rubric": "Correct: -836 J (or close) with correct formula and sign. Partial: correct formula but arithmetic error.",
+          "expected_misconceptions": [
+            "uses wrong sign for work",
+            "forgets to use natural log"
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "title": "Enthalpy and the \u0394H to \u0394U Bridge",
+        "objective": "Define enthalpy (H = U + PV) and relate \u0394H to \u0394U using \u0394n_g RT.",
+        "teaching_notes": "Introduce enthalpy as a state function useful for constant pressure processes. Derive \u0394H = \u0394U + \u0394(PV). For ideal gases at constant T, \u0394(PV) = \u0394n_g RT, where \u0394n_g = moles of gaseous products minus moles of gaseous reactants. Emphasize that only gases count; solids and liquids are ignored. Show example: N2(g) + 3H2(g) \u2192 2NH3(g), \u0394n_g = 2 - 4 = -2, so \u0394H = \u0394U - 2RT.",
+        "board_content": "$$H = U + PV$$ $$\\Delta H = \\Delta U + \\Delta n_g RT$$ $$\\Delta n_g = n_{\\text{gas products}} - n_{\\text{gas reactants}}$$ $$\\text{Only gases count!}$$",
+        "checkpoint": {
+          "question": "For the reaction C(s) + O2(g) \u2192 CO2(g), what is \u0394H - \u0394U at temperature T?",
+          "model_answer": "\u0394H - \u0394U = \u0394n_g RT. \u0394n_g = 1 - 1 = 0 (C is solid, ignored). So \u0394H - \u0394U = 0.",
+          "rubric": "Correct: 0 with explanation that \u0394n_g = 0. Partial: correct answer but no reasoning.",
+          "expected_misconceptions": [
+            "counts solid carbon in \u0394n_g",
+            "thinks \u0394H - \u0394U is always RT"
+          ]
+        }
+      },
+      {
+        "id": 6,
+        "title": "Applying the First Law: Isothermal and Cyclic Processes",
+        "objective": "Apply the first law to isothermal ideal gas processes and cyclic processes.",
+        "teaching_notes": "For an ideal gas, U and H depend only on T. So in any isothermal process, \u0394U = 0 and \u0394H = 0. Then from first law, q = -w. For a cyclic process, the system returns to initial state, so \u0394U = 0, and thus q_cycle = -w_cycle. Use JEE example: 2 mol ideal gas, isothermal reversible expansion from 5 L to 20 L at 300 K. Calculate w, q, \u0394U, \u0394H. w = -nRT ln(V2/V1) = -6.92 kJ, q = +6.92 kJ, \u0394U = \u0394H = 0.",
+        "board_content": "$$\\text{Isothermal ideal gas: } \\Delta U = 0, \\Delta H = 0$$ $$\\Rightarrow q = -w$$ $$\\text{Cyclic process: } \\Delta U = 0 \\Rightarrow q_{\\text{cycle}} = -w_{\\text{cycle}}$$",
+        "checkpoint": {
+          "question": "In an isothermal expansion of an ideal gas, the gas absorbs 500 J of heat. What is the work done by the gas?",
+          "model_answer": "Since \u0394U = 0, q = -w. Heat absorbed q = +500 J, so w = -500 J. Work done by the gas is 500 J.",
+          "rubric": "Correct: 500 J with sign explanation. Partial: correct magnitude but wrong sign.",
+          "expected_misconceptions": [
+            "thinks isothermal means q = 0",
+            "confuses sign of work done by gas"
+          ]
+        }
+      }
+    ],
+    "wrapup_points": [
+      "System classification depends on what crosses the boundary: open (matter+energy), closed (energy only), isolated (nothing).",
+      "State functions (U, H) depend only on state; path functions (q, w) depend on the route.",
+      "First law: \u0394U = q + w. Sign convention: heat absorbed and work done on system are positive.",
+      "Expansion work: irreversible w = -p_ext \u0394V; reversible isothermal w = -nRT ln(V2/V1). Reversible work is maximum.",
+      "Enthalpy H = U + PV; \u0394H = \u0394U + \u0394n_g RT. Only gaseous moles count in \u0394n_g.",
+      "For isothermal ideal gas processes, \u0394U = 0 and \u0394H = 0, so q = -w. For cyclic processes, \u0394U = 0."
+    ]
+  }
+}

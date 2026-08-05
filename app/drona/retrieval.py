@@ -50,7 +50,19 @@ def retrieve_pdf_chunks(chapter_id: str, query_text: str, top_k: int = 12) -> Li
     """Queries pdf_chunks for top_k similar chunks by cosine similarity to query_text."""
     query_emb = get_embedding(query_text)
     
-    # In-memory vector similarity ranking over chapter chunks
+    # Attempt Postgres pgvector RPC match first to return top_k directly without fetching all embeddings
+    try:
+        rpc_res = supabase.rpc("match_pdf_chunks", {
+            "query_embedding": query_emb,
+            "filter_chapter_id": chapter_id,
+            "match_count": top_k
+        }).execute()
+        if rpc_res.data:
+            return rpc_res.data
+    except Exception:
+        pass
+
+    # Fallback: In-memory vector similarity ranking over chapter chunks
     res = supabase.table('pdf_chunks').select('id, chapter_id, content, embedding, source_file, chunk_index').eq('chapter_id', chapter_id).execute()
     chunks = res.data or []
     if not chunks:
