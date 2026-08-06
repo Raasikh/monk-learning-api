@@ -54,47 +54,103 @@ if not RUMIK_TTS_ENDPOINT.startswith("https://"):
 if not (SARVAM_STT_ENDPOINT.startswith("wss://") or SARVAM_STT_ENDPOINT.startswith("https://")):
     raise RuntimeError("FATAL BOOT FAILURE: SARVAM_STT_ENDPOINT must start with wss:// or https://")
 
-# Devanagari to Romanized Hinglish Mapping Dictionary for STT Normalization (§3)
-DEVANAGARI_ROMAN_MAP = {
-    'इसका': 'iska', 'इंटीग्रेशन': 'integration', 'कैसे': 'kaise', 'करें': 'karein',
-    'वेक्टर': 'vector', 'रेजोल्यूशन': 'resolution', 'फार्मूला': 'formula', 'क्या': 'kya', 'है': 'hai',
+# Technical Terms & Common Hinglish Words Devanagari Mapping Dictionary
+TECHNICAL_TERMS_MAP = {
+    'इंटीग्रेशन': 'integration', 'डिफरेंशियल': 'differential', 'डिफरेंसिएशन': 'differentiation',
+    'इक्वेशन': 'equation', 'डेरिवेटिव': 'derivative', 'वेक्टर': 'vector', 'कैपेसिटर': 'capacitor',
+    'इलेक्ट्रॉन': 'electron', 'प्रोटॉन': 'proton', 'न्यूट्रॉन': 'neutron', 'न्यूक्लियस': 'nucleus',
+    'ऑक्सीडेशन': 'oxidation', 'रिडक्शन': 'reduction', 'इलेक्ट्रोस्टैटिक्स': 'electrostatics',
+    'थर्मोडायनामिक्स': 'thermodynamics', 'इक्विलिब्रियम': 'equilibrium', 'हाइब्रिडाइजेशन': 'hybridisation',
+    'फ्रीक्वेंसी': 'frequency', 'वेवलेंth': 'wavelength', 'रेजिस्टेंस': 'resistance', 'इंडक्टेंस': 'inductance',
+    'कैपेसिटेंस': 'capacitance', 'ग्रेविटेशन': 'gravitation', 'वेलोसिटी': 'velocity', 'एक्सीलरेशन': 'acceleration',
+    'मोमेंटम': 'momentum', 'पोटेंशियल': 'potential', 'मैग्नेटिक': 'magnetic', 'फील्ड': 'field',
     'फोटोसिंथेसिस': 'photosynthesis', 'लाइट': 'light', 'रिएक्शन': 'reaction', 'मैकेनिज्म': 'mechanism',
-    'डिफरेंस': 'difference', 'करेंट': 'current', 'इलेक्ट्रिसिटी': 'electricity', 'ओहम्स': 'ohms',
-    'लॉ': 'law', 'इक्वल': 'equals', 'डेरिवेटिव': 'derivative', 'ऑफ': 'of', 'पावर': 'power',
-    'लिमिट': 'limit', 'टेंड्स': 'tends', 'टु': 'to', 'जीरो': 'zero', 'साइन': 'sine', 'बाय': 'by',
-    'मैट्रिक्स': 'matrix', 'मल्टीप्लिकेशन': 'multiplication', 'रो': 'row', 'इंतु': 'into', 'कॉलम': 'column',
-    'बायोलॉजिकल': 'biological', 'क्लासिफिकेशन': 'classification', 'फाइव': 'five', 'किंगडम': 'kingdom', 'सिस्टम': 'system',
-    'प्लांट': 'plant', 'एंजियोस्पर्म्स': 'angiosperms', 'जिम्नोस्पर्म्स': 'gymnosperms',
+    'डिफरेंस': 'difference', 'करेंट': 'current', 'इलेक्ट्रिसिटी': 'electricity', 'ओहम्स': 'ohms', 'लॉ': 'law',
+    'इक्वल': 'equals', 'ऑफ': 'of', 'पावर': 'power', 'लिमिट': 'limit', 'टेंड्स': 'tends', 'टु': 'to', 'जीरो': 'zero',
+    'साइन': 'sine', 'बाय': 'by', 'मैट्रिक्स': 'matrix', 'मल्टीप्लिकेशन': 'multiplication', 'रो': 'row', 'इंतु': 'into',
+    'कॉलम': 'column', 'बायोलॉजिकल': 'biological', 'क्लासिफिकेशन': 'classification', 'फाइव': 'five', 'किंगडम': 'kingdom',
+    'सिस्टम': 'system', 'प्लांट': 'plant', 'एंजियोस्पर्म्स': 'angiosperms', 'जिम्नोस्पर्म्स': 'gymnosperms',
     'ह्यूमन': 'human', 'फिजियोलॉजी': 'physiology', 'डाइजेशन': 'digestion', 'स्टमक': 'stomach',
-    'थर्मोडायनामिक्स': 'thermodynamics', 'फर्स्ट': 'first', 'डेल्टा': 'delta', 'प्लस': 'plus',
-    'एटॉमिक': 'atomic', 'स्ट्रक्चर': 'structure', 'बोहर': 'bohr', 'रेडियस': 'radius',
-    'केमिकल': 'chemical', 'बॉन्डिंग': 'bonding', 'हाइब्रिडाइजेशन': 'hybridisation',
-    'इक्विलिब्रियम': 'equilibrium', 'डिफरेंसिएशन': 'differentiation', 'वेलोसिटी': 'velocity', 'ऑक्सीडेशन': 'oxidation',
-    'रेडिएशन': 'radiation', 'न्यूक्लियस': 'nucleus', 'इलेक्ट्रॉन': 'electron', 'प्रोटॉन': 'proton', 'न्यूट्रॉन': 'neutron',
-    'कैपेसिटेंस': 'capacitance', 'इंडक्टेंस': 'inductance', 'रेजिस्टेंस': 'resistance', 'फ्रीक्वेंसी': 'frequency', 'वेवलेंथ': 'wavelength',
-    'सॉल्यूशंस': 'solutions', 'राउल्ट्स': 'raoults', 'वेपर': 'vapor', 'प्रेशर': 'pressure',
-    'हेलोएल्केन्स': 'haloalkanes', 'न्यूक्लियोफिलिक': 'nucleophilic', 'सबस्टिट्यूशन': 'substitution',
-    'प्रोबेबिलिटी': 'probability', 'यूनियन': 'union', 'डायरेक्शन': 'direction', 'कोसाइन': 'cosines',
-    'ग्रेविटेशन': 'gravitation', 'यूनिवर्सल': 'universal', 'फोर्स': 'force', 'वेव': 'waves', 'डॉपलर': 'doppler',
-    'इफेक्ट': 'effect', 'फ्रीक्वेंसी': 'frequency', 'शिफ्ट': 'shift', 'इलेक्ट्रोस्टैटिक्स': 'electrostatics', 'कूलम्ब': 'coulomb'
+    'फर्स्ट': 'first', 'डेल्टा': 'delta', 'प्लस': 'plus', 'एटॉमिक': 'atomic', 'स्ट्रक्चर': 'structure',
+    'बोहर': 'bohr', 'रेडियस': 'radius', 'केमिकल': 'chemical', 'बॉन्डिंग': 'bonding', 'सॉल्यूशंस': 'solutions',
+    'राउल्ट्स': 'raoults', 'वेपर': 'vapor', 'प्रेशर': 'pressure', 'हेलोएल्केन्स': 'haloalkanes',
+    'न्यूक्लियोफिलिक': 'nucleophilic', 'सबस्टिट्यूशन': 'substitution', 'प्रोबेबिलिटी': 'probability',
+    'यूनियन': 'union', 'डायरेक्शन': 'direction', 'कोसाइन': 'cosines', 'यूनिवर्सल': 'universal', 'फोर्स': 'force',
+    'वेव': 'waves', 'डॉपलर': 'doppler', 'इफेक्ट': 'effect', 'शिफ्ट': 'shift', 'कूलम्ब': 'coulomb',
+    'हाँ': 'haan', 'है': 'hai', 'कया': 'kya', 'क्या': 'kya', 'कैसे': 'kaise', 'करें': 'karein', 'इसका': 'iska'
 }
 
+# Devanagari Unicode Phonetic Mapping Tables
+DEV_VOWELS = {
+    'अ': 'a', 'आ': 'aa', 'इ': 'i', 'ई': 'ee', 'उ': 'u', 'ऊ': 'oo', 'ऋ': 'ri',
+    'ए': 'e', 'ऐ': 'ai', 'ओ': 'o', 'औ': 'au', 'अं': 'am', 'अः': 'ah'
+}
+DEV_MATRAS = {
+    'ा': 'a', 'ि': 'i', 'ी': 'ee', 'ु': 'u', 'ू': 'oo', 'ृ': 'ri',
+    'े': 'e', 'ै': 'ai', 'ो': 'o', 'ौ': 'au', 'ं': 'n', 'ँ': 'n', 'ः': 'h', '्': ''
+}
+DEV_CONSONANTS = {
+    'क': 'k', 'ख': 'kh', 'ग': 'g', 'घ': 'gh', 'ङ': 'ng',
+    'च': 'ch', 'छ': 'chh', 'ज': 'j', 'झ': 'jh', 'ञ': 'ny',
+    'ट': 't', 'ठ': 'th', 'ड': 'd', 'ढ': 'dh', 'ण': 'n',
+    'त': 't', 'थ': 'th', 'द': 'd', 'ध': 'dh', 'न': 'n',
+    'प': 'p', 'फ': 'f', 'ब': 'b', 'भ': 'bh', 'म': 'm',
+    'य': 'y', 'र': 'r', 'ल': 'l', 'व': 'v', 'श': 'sh',
+    'ष': 'sh', 'स': 's', 'ह': 'h', 'क्ष': 'ksh', 'त्र': 'tr', 'ज्ञ': 'gy'
+}
+
+def transliterate_devanagari_word(word: str) -> str:
+    import re
+    clean_w = re.sub(r'[^\u0900-\u097F]', '', word)
+    if not clean_w:
+        return word
+
+    if clean_w in TECHNICAL_TERMS_MAP:
+        return TECHNICAL_TERMS_MAP[clean_w]
+
+    res = []
+    i = 0
+    n = len(clean_w)
+    while i < n:
+        char = clean_w[i]
+        next_char = clean_w[i+1] if i + 1 < n else ""
+
+        if char in DEV_CONSONANTS:
+            base = DEV_CONSONANTS[char]
+            if next_char in DEV_MATRAS:
+                res.append(base + DEV_MATRAS[next_char])
+                i += 2
+            else:
+                if next_char in DEV_CONSONANTS or not next_char:
+                    res.append(base + ("a" if i + 1 < n else ""))
+                else:
+                    res.append(base)
+                i += 1
+        elif char in DEV_VOWELS:
+            res.append(DEV_VOWELS[char])
+            i += 1
+        elif char in DEV_MATRAS:
+            res.append(DEV_MATRAS[char])
+            i += 1
+        else:
+            res.append(char)
+            i += 1
+
+    out = "".join(res)
+    return out if out else word
+
 def normalize_devanagari_to_roman(text: str) -> str:
-    """Normalizes Devanagari script returned by Saaras v3 to Romanized Hinglish."""
+    """Normalizes Devanagari script returned by Saaras STT into Romanized Hinglish."""
+    import re
     if not text:
         return ""
     words = text.split()
     norm_words = []
     for w in words:
-        clean_w = w.strip()
-        if clean_w in DEVANAGARI_ROMAN_MAP:
-            norm_words.append(DEVANAGARI_ROMAN_MAP[clean_w])
+        if re.search(r'[\u0900-\u097F]', w):
+            norm_words.append(transliterate_devanagari_word(w))
         else:
-            # Simple fallback character mapping for unmapped Devanagari words
-            translated = clean_w
-            for k, v in DEVANAGARI_ROMAN_MAP.items():
-                translated = translated.replace(k, v)
-            norm_words.append(translated)
+            norm_words.append(w)
     return " ".join(norm_words)
 
 # Tier-1 and Tier-2 TTS Safety Filters
