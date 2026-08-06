@@ -159,15 +159,16 @@ class SaarasSTTProxy:
         backoff = 1.0
         max_backoff = 15.0
 
-        headers = {"api-subscription-key": SARVAM_API_KEY, "api-key": SARVAM_API_KEY}
+        headers = {"api-subscription-key": SARVAM_API_KEY}
+        endpoint = "wss://api.sarvam.ai/speech-to-text-ws"
         params = f"?model={self.model}&mode={self.mode}&latency={self.latency_profile}"
-        uri = f"{SARVAM_STT_ENDPOINT}{params}"
+        uri = f"{endpoint}{params}"
 
-        logger.info(f"[SARVAM STT CONNECTING] Establishing WebSocket stream to {SARVAM_STT_ENDPOINT}...")
+        logger.info(f"[SARVAM STT CONNECTING] Establishing stream to {endpoint} (Headers: {list(headers.keys())})...")
 
         while True:
             try:
-                if SARVAM_API_KEY == "mock-sarvam-key" or "mock" in SARVAM_STT_ENDPOINT:
+                if SARVAM_API_KEY == "mock-sarvam-key" or "mock" in endpoint:
                     self.is_connected = True
                     async for chunk in audio_stream:
                         if len(chunk) > 0:
@@ -176,77 +177,14 @@ class SaarasSTTProxy:
                     break
 
                 try:
-                    async with websockets.connect(uri, extra_headers=headers) as ws:
-                        self.is_connected = True
-                        self.active_ws = ws
-                        logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
-                        backoff = 1.0
-
-                        async def send_audio():
-                            chunk_count = 0
-                            total_bytes = 0
-                            async for chunk in audio_stream:
-                                if chunk:
-                                    chunk_count += 1
-                                    total_bytes += len(chunk)
-                                    logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{chunk_count}: {len(chunk)} bytes (Total: {total_bytes} bytes)")
-                                    await ws.send(chunk)
-
-                        async def receive_transcripts():
-                            async for msg in ws:
-                                logger.info(f"[SARVAM STT FRAME RECEIVED] {repr(msg[:200])}")
-                                data = json.loads(msg)
-                                raw_transcript = data.get("transcript", "")
-                                norm_transcript = normalize_devanagari_to_roman(raw_transcript)
-                                is_final = data.get("is_final", False)
-                                confidence = data.get("confidence", 0.95)
-
-                                if raw_transcript.strip():
-                                    logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final={is_final}")
-
-                                if data.get("speech_onset"):
-                                    on_barge_in()
-
-                                on_transcript(raw_transcript, norm_transcript, is_final, confidence)
-
-                        await asyncio.gather(send_audio(), receive_transcripts())
-                        break
+                    ws_ctx = websockets.connect(uri, additional_headers=headers)
                 except TypeError:
-                    async with websockets.connect(uri, additional_headers=headers) as ws:
-                        self.is_connected = True
-                        self.active_ws = ws
-                        logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
-                        backoff = 1.0
+                    ws_ctx = websockets.connect(uri, extra_headers=headers)
 
-                        async def send_audio():
-                            chunk_count = 0
-                            total_bytes = 0
-                            async for chunk in audio_stream:
-                                if chunk:
-                                    chunk_count += 1
-                                    total_bytes += len(chunk)
-                                    logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{chunk_count}: {len(chunk)} bytes (Total: {total_bytes} bytes)")
-                                    await ws.send(chunk)
-
-                        async def receive_transcripts():
-                            async for msg in ws:
-                                logger.info(f"[SARVAM STT FRAME RECEIVED] {repr(msg[:200])}")
-                                data = json.loads(msg)
-                                raw_transcript = data.get("transcript", "")
-                                norm_transcript = normalize_devanagari_to_roman(raw_transcript)
-                                is_final = data.get("is_final", False)
-                                confidence = data.get("confidence", 0.95)
-
-                                if raw_transcript.strip():
-                                    logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final={is_final}")
-
-                                if data.get("speech_onset"):
-                                    on_barge_in()
-
-                                on_transcript(raw_transcript, norm_transcript, is_final, confidence)
-
-                        await asyncio.gather(send_audio(), receive_transcripts())
-                        break
+                async with ws_ctx as ws:
+                    self.is_connected = True
+                    self.active_ws = ws
+                    logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
                     backoff = 1.0
 
                     async def send_audio():
@@ -279,17 +217,53 @@ class SaarasSTTProxy:
                     await asyncio.gather(send_audio(), receive_transcripts())
                     break
 
-            except websockets.exceptions.ConnectionClosed as e:
-                self.is_connected = False
-                logger.warning(f"⚠️ [SARVAM STT DISCONNECTED] Code {e.code}: {e.reason}")
-                if 4000 <= e.code < 5000:
-                    raise RuntimeError(f"Saaras STT 4xxx error (code {e.code}): {e.reason}")
-                else:
                     await asyncio.sleep(backoff)
                     backoff = min(backoff * 2.0, max_backoff)
             except Exception as e:
                 self.is_connected = False
-                logger.error(f"❌ [SARVAM STT CONNECTION FAILURE] Could not establish stream: {e}")
+                logger.warning(f"⚠️ [SARVAM STT WS CONNECTION FAILURE] {e}. Switching to REST STT audio buffer pipeline...")
+                
+                # Buffer incoming PCM audio chunks and send to Sarvam REST STT
+                pcm_chunks = []
+                chunk_count = 0
+                total_bytes = 0
+                async for chunk in audio_stream:
+                    if chunk:
+                        chunk_count += 1
+                        total_bytes += len(chunk)
+                        pcm_chunks.append(chunk)
+                        logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{chunk_count}: {len(chunk)} bytes (Total: {total_bytes} bytes)")
+
+                if pcm_chunks and total_bytes >= 3200:
+                    import io, wave, requests
+                    all_bytes = b"".join(pcm_chunks)
+                    buf = io.BytesIO()
+                    with wave.open(buf, 'wb') as wf:
+                        wf.setnchannels(1)
+                        wf.setsampwidth(2)
+                        wf.setframerate(16000)
+                        wf.writeframes(all_bytes)
+                    buf.seek(0)
+
+                    files = {'file': ('speech.wav', buf, 'audio/wav')}
+                    data = {'model': self.model, 'mode': self.mode, 'language_code': 'hi-IN'}
+
+                    try:
+                        loop = asyncio.get_event_loop()
+                        def _do_rest_call():
+                            return requests.post("https://api.sarvam.ai/speech-to-text", headers=headers, data=data, files=files, timeout=10)
+                        
+                        resp = await loop.run_in_executor(None, _do_rest_call)
+                        if resp.status_code == 200:
+                            res_data = resp.json()
+                            raw_transcript = res_data.get("transcript", "")
+                            norm_transcript = normalize_devanagari_to_roman(raw_transcript)
+                            logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final=True")
+                            on_transcript(raw_transcript, norm_transcript, True, 0.98)
+                        else:
+                            logger.error(f"❌ [SARVAM STT REST ERROR] HTTP {resp.status_code}: {resp.text}")
+                    except Exception as rest_err:
+                        logger.error(f"❌ [SARVAM STT REST EXCEPTION] {rest_err}")
                 break
 
 class RumikTTSProxy:
