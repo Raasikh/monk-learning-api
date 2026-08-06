@@ -130,6 +130,13 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 chunks_sent += 1
                                 total_audio_bytes += len(audio_bytes)
                                 await websocket.send_json(out_msg)
+
+                                # Pace synthesis delivery so client lead time stays strictly under 3.0s
+                                duration_sec = len(audio_bytes) / 48000.0
+                                if chunks_sent > 1:
+                                    sleep_dur = max(0.0, duration_sec - 1.5)
+                                    logger.info(f"[AUDIO PACING] Sentence #{chunks_sent} ({duration_sec:.2f}s audio). Pacing next chunk by {sleep_dur:.2f}s...")
+                                    await asyncio.sleep(sleep_dur)
                             except Exception as tts_err:
                                 logger.error(f"TTS synthesis error on sentence: {tts_err}")
                     speech_buffer = sentences[-1]
@@ -173,6 +180,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     chunks_sent += 1
                     total_audio_bytes += len(audio_bytes)
                     await websocket.send_json(out_msg)
+
+                    duration_sec = len(audio_bytes) / 48000.0
+                    if chunks_sent > 1:
+                        sleep_dur = max(0.0, duration_sec - 1.5)
+                        logger.info(f"[AUDIO PACING FINAL] Sentence #{chunks_sent} ({duration_sec:.2f}s audio). Pacing by {sleep_dur:.2f}s...")
+                        await asyncio.sleep(sleep_dur)
                 except Exception as tts_err:
                     logger.error(f"TTS synthesis error on final sentence: {tts_err}")
 
