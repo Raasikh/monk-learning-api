@@ -253,25 +253,28 @@ class RumikTTSProxy:
                 t_ws_connected = time.time()
                 ws_connect_ms = round((t_ws_connected - t_ws_start) * 1000, 2)
 
-                await ws.send(json.dumps({
-                    "text": text,
-                    "speaker": self.voice_preset
-                }))
+                payload = {"text": text, "speaker": self.voice_preset}
+                logger.info(f"[RUMIK WS PAYLOAD VERBATIM] url={ws_url}?token={token[:10]}... | payload={json.dumps(payload)}")
+                await ws.send(json.dumps(payload))
 
                 while True:
                     try:
                         msg = await asyncio.wait_for(ws.recv(), timeout=4.0)
                         if isinstance(msg, bytes):
+                            logger.info(f"[RUMIK WS FRAME BINARY] Received binary audio chunk of {len(msg)} bytes")
                             if t_first_byte is None:
                                 t_first_byte = time.time()
                             pcm_bytes.extend(msg)
                         elif isinstance(msg, str):
+                            logger.info(f"[RUMIK WS FRAME TEXT] Received text frame: {msg}")
                             data = json.loads(msg)
-                            if data.get("type") in ("done", "complete", "finish", "end"):
+                            msg_type = data.get("type") or data.get("event") or data.get("status")
+                            if msg_type in ("done", "complete", "finish", "end"):
                                 break
-                            elif data.get("type") == "error":
-                                raise RuntimeError(f"Rumik TTS WebSocket Error: {data.get('message')}")
+                            elif msg_type == "error":
+                                raise RuntimeError(f"Rumik TTS WebSocket Error: {data.get('message') or data}")
                     except asyncio.TimeoutError:
+                        logger.warning(f"[RUMIK WS TIMEOUT] ws.recv() timed out after 4.0s for text='{text[:30]}...' (pcm_bytes={len(pcm_bytes)})")
                         break
         except Exception as ws_err:
             raise RuntimeError(sanitize_secret(str(ws_err)))
