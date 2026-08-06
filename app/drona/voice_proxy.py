@@ -148,9 +148,11 @@ class SaarasSTTProxy:
         backoff = 1.0
         max_backoff = 15.0
 
-        headers = {"api-key": SARVAM_API_KEY}
+        headers = {"api-subscription-key": SARVAM_API_KEY, "api-key": SARVAM_API_KEY}
         params = f"?model={self.model}&mode={self.mode}&latency={self.latency_profile}"
         uri = f"{SARVAM_STT_ENDPOINT}{params}"
+
+        logger.info(f"[SARVAM STT CONNECTING] Establishing WebSocket stream to {SARVAM_STT_ENDPOINT}...")
 
         while True:
             try:
@@ -164,6 +166,7 @@ class SaarasSTTProxy:
 
                 async with websockets.connect(uri, extra_headers=headers) as ws:
                     self.is_connected = True
+                    logger.info(f"[SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
                     backoff = 1.0
 
                     async def send_audio():
@@ -177,6 +180,9 @@ class SaarasSTTProxy:
                             norm_transcript = normalize_devanagari_to_roman(raw_transcript)
                             is_final = data.get("is_final", False)
                             confidence = data.get("confidence", 0.95)
+
+                            if raw_transcript.strip():
+                                logger.info(f"[SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final={is_final}")
 
                             if data.get("speech_onset"):
                                 on_barge_in()
