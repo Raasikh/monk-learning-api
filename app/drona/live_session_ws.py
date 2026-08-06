@@ -243,18 +243,24 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         on_barge_in=lambda: asyncio.create_task(execute_turn_pipeline(utterance_text="", turn_type="interruption"))
     ))
 
+    # PTT PCM Buffer state
+    is_ptt_active = False
+    ptt_pcm_chunks = []
+
     try:
         while state.is_active:
             message = await websocket.receive()
 
-            # W2 Fix: BINARY PCM AUDIO FRAME FORWARDED TO SAARAS STT QUEUE
+            # BINARY PCM AUDIO FRAME FORWARDED TO STT BUFFER
             if "bytes" in message and message["bytes"]:
                 pcm_bytes = message["bytes"]
                 state.add_pcm_bytes(len(pcm_bytes))
                 state.last_audio_at = time.time()
 
-                if not state.is_muted:
-                    pcm_queue.put_nowait(pcm_bytes)
+                if is_ptt_active:
+                    ptt_pcm_chunks.append(pcm_bytes)
+                    total_bytes = sum(len(x) for x in ptt_pcm_chunks)
+                    logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{len(ptt_pcm_chunks)}: {len(pcm_bytes)} bytes (Total: {total_bytes} bytes)")
                 continue
 
             # B. TEXT JSON CONTROL MESSAGES
@@ -268,6 +274,35 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
                 if control_type == "ping":
                     await websocket.send_json({"type": "pong", "timestamp": time.time()})
+
+                elif control_type == "ptt_start":
+                    is_ptt_active = True
+                    ptt_pcm_chunks = []
+                    logger.info("[SARVAM STT PTT START] Microphone active. Buffering PCM audio frames...")
+
+                elif control_type == "ptt_stop":
+                    is_ptt_active = False
+                    full_pcm = b"".join(ptt_pcm_chunks)
+                    ptt_pcm_chunks = []
+                    duration_s = len(full_pcm) / 32000.0
+
+                    logger.info(f"[SARVAM STT PTT STOP] Captured {len(full_pcm)} total bytes ({duration_s:.2f}s audio)")
+
+                    if duration_s < 0.5:
+                        logger.info(f"[SARVAM STT PTT TOO SHORT] Duration {duration_s:.2f}s < 0.5s. Skipping STT.")
+                        await websocket.send_json({
+                            "type": "stt_too_short",
+                            "message": "Hold the button while you speak"
+                        })
+                    else:
+                        raw_t, norm_t = await stt_proxy.transcribe_audio_rest(full_pcm)
+                        if norm_t.strip():
+                            logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_t}', norm='{norm_t}'")
+                            await websocket.send_json({
+                                "type": "transcript_final",
+                                "transcript": norm_t
+                            })
+                            asyncio.create_task(execute_turn_pipeline(utterance_text=norm_t, turn_type="answer"))
 
                 elif control_type == "mute":
                     state.on_mute()

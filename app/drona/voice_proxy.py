@@ -206,6 +206,48 @@ class SaarasSTTProxy:
             self.active_ws = None
         self.is_connected = False
 
+    async def transcribe_audio_rest(self, pcm_bytes: bytes) -> Tuple[str, str]:
+        """Sends accumulated 16kHz PCM audio bytes directly to Sarvam REST STT API."""
+        if not pcm_bytes or len(pcm_bytes) < 3200:
+            return "", ""
+
+        duration_s = len(pcm_bytes) / 32000.0
+        logger.info(f"[SARVAM STT REST REQUEST] Sending {len(pcm_bytes)} PCM bytes ({duration_s:.2f}s audio) to https://api.sarvam.ai/speech-to-text...")
+
+        import io, wave, requests
+        buf = io.BytesIO()
+        with wave.open(buf, 'wb') as wf:
+            wf.setnchannels(1)
+            wf.setsampwidth(2)
+            wf.setframerate(16000)
+            wf.writeframes(pcm_bytes)
+        buf.seek(0)
+
+        headers = {"api-subscription-key": SARVAM_API_KEY}
+        files = {'file': ('speech.wav', buf, 'audio/wav')}
+        data = {'model': self.model, 'mode': self.mode, 'language_code': 'hi-IN'}
+
+        try:
+            loop = asyncio.get_event_loop()
+            def _do_rest_call():
+                return requests.post("https://api.sarvam.ai/speech-to-text", headers=headers, data=data, files=files, timeout=12)
+
+            resp = await loop.run_in_executor(None, _do_rest_call)
+            logger.info(f"[SARVAM STT REST HTTP RESPONSE] Status: {resp.status_code}, Body: {resp.text[:300]}")
+
+            if resp.status_code == 200:
+                res_data = resp.json()
+                raw_transcript = res_data.get("transcript", "")
+                norm_transcript = normalize_devanagari_to_roman(raw_transcript)
+                logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}'")
+                return raw_transcript, norm_transcript
+            else:
+                logger.error(f"❌ [SARVAM STT REST ERROR] HTTP {resp.status_code}: {resp.text}")
+                return "", ""
+        except Exception as err:
+            logger.error(f"❌ [SARVAM STT REST EXCEPTION] {err}")
+            return "", ""
+
     async def connect_and_stream(
         self,
         audio_stream: AsyncGenerator[bytes, None],
