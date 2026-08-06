@@ -184,12 +184,33 @@ def check_tts_safety_filter(text: str) -> Tuple[bool, bool, str]:
 
     return tier1_viol, tier2_viol, clean
 
-def split_into_sentences(text: str) -> List[str]:
-    """Splits incoming streaming text into sentence chunks for sentence-by-sentence TTS."""
+def split_into_sentences(text: str, min_chars: int = 40) -> List[str]:
+    """Splits incoming streaming text into sentence chunks for sentence-by-sentence TTS.
+    Batches short leading fragments (<40 chars) together so short phrases like 'Welcome!'
+    join the next sentence rather than wasting a full TTS roundtrip."""
     if not text:
         return []
     raw = re.split(r'(?<=[.!?|\n])\s+', text)
-    return [s.strip() for s in raw if s.strip()]
+    chunks = []
+    buf = ""
+    for s in raw:
+        s_clean = s.strip()
+        if not s_clean:
+            continue
+        if buf:
+            buf += " " + s_clean
+        else:
+            buf = s_clean
+        
+        if len(buf) >= min_chars:
+            chunks.append(buf)
+            buf = ""
+    if buf:
+        if chunks and len(buf) < min_chars:
+            chunks[-1] += " " + buf
+        else:
+            chunks.append(buf)
+    return chunks
 
 class SaarasSTTProxy:
     """Proxies Sarvam Saaras v3 STT stream over backend WebSocket connection."""
@@ -370,13 +391,18 @@ class SaarasSTTProxy:
                 break
 
 class RumikTTSProxy:
-    """Streaming TTS synthesis via Rumik Silk WebSocket API (voice preset 'Ira', model 'mulberry')."""
+    """Streaming TTS synthesis via Rumik Silk WebSocket API (voice preset 'Ira', model 'mulberry').
+    Reuses persistent WebSocket connection across sentences in a session for Handshake=0ms latency."""
     def __init__(self, voice_preset: str = "Ira", model: str = "mulberry"):
         self.voice_preset = voice_preset
         self.model = model
+        self.active_session_ws = None
+        self.active_token = None
+        self.connection_count = 0
 
     async def synthesize_text(self, text: str) -> bytes:
-        """Connects to Rumik Silk API (https://silk-api.rumik.ai) and returns raw binary PCM audio bytes."""
+        """Connects to Rumik Silk API (https://silk-api.rumik.ai) and returns raw binary PCM audio bytes.
+        Reuses active WebSocket session if open, producing Handshake=0ms on sentences 2+."""
         import requests
 
         rumik_key = RUMIK_API_KEY
@@ -385,68 +411,77 @@ class RumikTTSProxy:
 
         base_url = RUMIK_TTS_ENDPOINT
 
-        def _mint():
-            try:
-                resp = requests.post(
-                    f"{base_url}/v1/tts/ws-connect",
-                    headers={"Authorization": f"Bearer {rumik_key}", "Content-Type": "application/json"},
-                    json={"model": self.model, "text": text},
-                    timeout=10
-                )
-                if resp.status_code != 200:
-                    sanitized_err = sanitize_secret(resp.text)
-                    raise RuntimeError(f"Rumik Silk Handshake HTTP {resp.status_code} Error: {sanitized_err}")
-                return resp.json()
-            except Exception as exc:
-                raise RuntimeError(sanitize_secret(str(exc)))
-
+        self.connection_count += 1
         t0 = time.time()
-        loop = asyncio.get_event_loop()
-        t_mint_start = time.time()
-        handshake_data = await loop.run_in_executor(None, _mint)
-        t_mint_end = time.time()
-        mint_ms = round((t_mint_end - t_mint_start) * 1000, 2)
+        
+        mint_ms = 0.0
+        ws_connect_ms = 0.0
 
-        ws_url = handshake_data["ws_url"]
-        token = handshake_data["token"]
+        if self.connection_count == 1 or not self.active_session_ws:
+            def _mint():
+                try:
+                    resp = requests.post(
+                        f"{base_url}/v1/tts/ws-connect",
+                        headers={"Authorization": f"Bearer {rumik_key}", "Content-Type": "application/json"},
+                        json={"model": self.model, "text": text},
+                        timeout=10
+                    )
+                    if resp.status_code != 200:
+                        sanitized_err = sanitize_secret(resp.text)
+                        raise RuntimeError(f"Rumik Silk Handshake HTTP {resp.status_code} Error: {sanitized_err}")
+                    return resp.json()
+                except Exception as exc:
+                    raise RuntimeError(sanitize_secret(str(exc)))
+
+            loop = asyncio.get_event_loop()
+            t_mint_start = time.time()
+            handshake_data = await loop.run_in_executor(None, _mint)
+            t_mint_end = time.time()
+            mint_ms = round((t_mint_end - t_mint_start) * 1000, 2)
+
+            ws_url = handshake_data["ws_url"]
+            token = handshake_data["token"]
+            
+            t_ws_start = time.time()
+            ws = await websockets.connect(f"{ws_url}?token={token}")
+            ws_connect_ms = round((time.time() - t_ws_start) * 1000, 2)
+            self.active_session_ws = ws
+        else:
+            ws = self.active_session_ws
 
         pcm_bytes = bytearray()
-        t_ws_start = time.time()
         t_first_byte = None
 
         try:
-            async with websockets.connect(f"{ws_url}?token={token}") as ws:
-                t_ws_connected = time.time()
-                ws_connect_ms = round((t_ws_connected - t_ws_start) * 1000, 2)
+            payload = {"text": text, "speaker": self.voice_preset}
+            logger.info(f"[RUMIK WS PAYLOAD VERBATIM] sentence={self.connection_count} | Handshake={mint_ms}ms | WS_Connect={ws_connect_ms}ms | payload={json.dumps(payload)}")
+            await ws.send(json.dumps(payload))
 
-                payload = {"text": text, "speaker": self.voice_preset}
-                logger.info(f"[RUMIK WS PAYLOAD VERBATIM] url={ws_url}?token={token[:10]}... | payload={json.dumps(payload)}")
-                await ws.send(json.dumps(payload))
-
-                while True:
-                    try:
-                        msg = await asyncio.wait_for(ws.recv(), timeout=4.0)
-                        if isinstance(msg, bytes):
-                            logger.info(f"[RUMIK WS FRAME BINARY] Received binary audio chunk of {len(msg)} bytes")
-                            if t_first_byte is None:
-                                t_first_byte = time.time()
-                            pcm_bytes.extend(msg)
-                        elif isinstance(msg, str):
-                            logger.info(f"[RUMIK WS FRAME TEXT] Received text frame: {msg}")
-                            data = json.loads(msg)
-                            msg_type = data.get("type") or data.get("event") or data.get("status")
-                            if msg_type in ("done", "complete", "finish", "end"):
-                                break
-                            elif msg_type == "error":
-                                raise RuntimeError(f"Rumik TTS WebSocket Error: {data.get('message') or data}")
-                    except asyncio.TimeoutError:
-                        logger.warning(f"[RUMIK WS TIMEOUT] ws.recv() timed out after 4.0s for text='{text[:30]}...' (pcm_bytes={len(pcm_bytes)})")
-                        break
+            while True:
+                try:
+                    msg = await asyncio.wait_for(ws.recv(), timeout=4.0)
+                    if isinstance(msg, bytes):
+                        if t_first_byte is None:
+                            t_first_byte = time.time()
+                        pcm_bytes.extend(msg)
+                    elif isinstance(msg, str):
+                        data = json.loads(msg)
+                        msg_type = data.get("type") or data.get("event") or data.get("status")
+                        if msg_type in ("done", "complete", "finish", "end"):
+                            break
+                        elif msg_type == "error":
+                            raise RuntimeError(f"Rumik TTS WebSocket Error: {data.get('message') or data}")
+                except asyncio.TimeoutError:
+                    logger.warning(f"[RUMIK WS TIMEOUT] ws.recv() timed out after 4.0s for text='{text[:30]}...' (pcm_bytes={len(pcm_bytes)})")
+                    break
         except Exception as ws_err:
+            self.active_session_ws = None  # Reconnect on next sentence if dropped
             raise RuntimeError(sanitize_secret(str(ws_err)))
 
         t_total = time.time() - t0
-        first_byte_ms = round((t_first_byte - t_ws_start) * 1000, 2) if t_first_byte else 0.0
+        first_byte_ms = round((t_first_byte - t0) * 1000, 2) if t_first_byte else 0.0
+        logger.info(f"[RUMIK SYNTHESIS COMPLETE] Sentence #{self.connection_count}: {len(text)} chars -> {len(pcm_bytes)} PCM bytes. Handshake={mint_ms}ms | WS_Connect={ws_connect_ms}ms | Total={t_total:.2f}s")
+        return bytes(pcm_bytes)
 
         logger.info(
             f"[RUMIK TTS PER-SENTENCE BREAKDOWN] text='{text[:30]}...' | "

@@ -107,12 +107,12 @@ async def process_tutor_turn_stream(
         "turn_type": turn_type
     }
 
-    system_content = f"{tutor_prompt}\n\n[LESSON PLAN]\n{json.dumps(plan_json, indent=2)}"
+    system_content = f"{tutor_prompt}\n\n[LESSON PLAN]\n{json.dumps(plan_json, sort_keys=True)}"
     user_content = f"""[CURRENT SEGMENT]
-{json.dumps(curr_segment, indent=2)}
+{json.dumps(curr_segment, sort_keys=True)}
 
 [SESSION STATE]
-{json.dumps(session_state_ctx, indent=2)}
+{json.dumps(session_state_ctx, sort_keys=True)}
 
 [STUDENT UTTERANCE]
 "{utterance or ''}"
@@ -138,7 +138,7 @@ async def process_tutor_turn_stream(
             messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0,
-            max_tokens=1800,
+            max_tokens=2048,
             stream=False
         )
 
@@ -156,7 +156,7 @@ async def process_tutor_turn_stream(
         logger.error(f"Error during LLM turn: {e}")
         raw_response_text = json.dumps({
             "speech": "Let's pause for a moment and review what we've covered on the board.",
-            "board": curr_segment.get("board_content", ""),
+            "board_events": [{"seq": 1, "type": "heading", "text": "Concept Overview", "emphasis": "normal"}],
             "phase_request": phase_in
         })
 
@@ -168,13 +168,14 @@ async def process_tutor_turn_stream(
     try:
         parsed_json = parse_tutor_json(raw_response_text)
     except Exception as e:
-        logger.warning(f"Failed to parse LLM response JSON on first try: {e}. Executing retry...")
+        logger.error(f"[RAW LLM RESPONSE PARSE FAILURE BODY] length={len(raw_response_text)} | content='{raw_response_text}' | error={e}")
+        logger.warning(f"Executing LLM JSON format retry...")
         try:
             retry_res = client.chat.completions.create(
                 model=model_name,
                 messages=messages + [
-                    {"role": "assistant", "content": raw_response_text},
-                    {"role": "user", "content": "Return only valid JSON. No prose, no fences."}
+                    {"role": "assistant", "content": raw_response_text or "{}"},
+                    {"role": "user", "content": "Return only valid JSON object. No prose, no markdown fences."}
                 ],
                 response_format={"type": "json_object"},
                 temperature=0.0
