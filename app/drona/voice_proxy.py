@@ -137,6 +137,17 @@ class SaarasSTTProxy:
         self.model = "saaras:v3"  # Non-negotiable Rule V1
         self.latency_profile = latency_profile
         self.is_connected = False
+        self.active_ws = None
+
+    def close(self):
+        """Closes active Sarvam WebSocket connection cleanly."""
+        if self.active_ws:
+            try:
+                asyncio.create_task(self.active_ws.close())
+            except Exception:
+                pass
+            self.active_ws = None
+        self.is_connected = False
 
     async def connect_and_stream(
         self,
@@ -166,15 +177,23 @@ class SaarasSTTProxy:
 
                 async with websockets.connect(uri, extra_headers=headers) as ws:
                     self.is_connected = True
-                    logger.info(f"[SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
+                    self.active_ws = ws
+                    logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
                     backoff = 1.0
 
                     async def send_audio():
+                        chunk_count = 0
+                        total_bytes = 0
                         async for chunk in audio_stream:
-                            await ws.send(chunk)
+                            if chunk:
+                                chunk_count += 1
+                                total_bytes += len(chunk)
+                                logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{chunk_count}: {len(chunk)} bytes (Total: {total_bytes} bytes)")
+                                await ws.send(chunk)
 
                     async def receive_transcripts():
                         async for msg in ws:
+                            logger.info(f"[SARVAM STT FRAME RECEIVED] {repr(msg[:200])}")
                             data = json.loads(msg)
                             raw_transcript = data.get("transcript", "")
                             norm_transcript = normalize_devanagari_to_roman(raw_transcript)
@@ -182,7 +201,7 @@ class SaarasSTTProxy:
                             confidence = data.get("confidence", 0.95)
 
                             if raw_transcript.strip():
-                                logger.info(f"[SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final={is_final}")
+                                logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final={is_final}")
 
                             if data.get("speech_onset"):
                                 on_barge_in()
@@ -194,6 +213,7 @@ class SaarasSTTProxy:
 
             except websockets.exceptions.ConnectionClosed as e:
                 self.is_connected = False
+                logger.warning(f"⚠️ [SARVAM STT DISCONNECTED] Code {e.code}: {e.reason}")
                 if 4000 <= e.code < 5000:
                     raise RuntimeError(f"Saaras STT 4xxx error (code {e.code}): {e.reason}")
                 else:
@@ -201,6 +221,7 @@ class SaarasSTTProxy:
                     backoff = min(backoff * 2.0, max_backoff)
             except Exception as e:
                 self.is_connected = False
+                logger.error(f"❌ [SARVAM STT CONNECTION FAILURE] Could not establish stream: {e}")
                 break
 
 class RumikTTSProxy:

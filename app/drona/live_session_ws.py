@@ -289,9 +289,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     if utterance_text:
                         await execute_turn_pipeline(utterance_text=utterance_text, turn_type="answer")
 
-    except WebSocketDisconnect:
+    except (WebSocketDisconnect, RuntimeError) as disconnect_err:
+        logger.info(f"[WS DISCONNECT CLEANUP] Session {session_id} WebSocket client disconnected cleanly: {disconnect_err}")
         state.is_active = False
         stt_task.cancel()
+        stt_proxy.close()
         total_mute = state.get_total_mute_sec()
         try:
             supabase.table('drona_sessions').update({
@@ -302,3 +304,6 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             }).eq('id', session_id).execute()
         except Exception as e:
             logger.error(f"Telemetry update error on disconnect: {e}")
+    finally:
+        stt_task.cancel()
+        stt_proxy.close()
