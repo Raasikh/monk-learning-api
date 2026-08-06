@@ -175,7 +175,12 @@ class SaarasSTTProxy:
                             await asyncio.sleep(0.01)
                     break
 
-                async with websockets.connect(uri, extra_headers=headers) as ws:
+                try:
+                    ws_ctx = websockets.connect(uri, additional_headers=headers)
+                except TypeError:
+                    ws_ctx = websockets.connect(uri, extra_headers=headers)
+
+                async with ws_ctx as ws:
                     self.is_connected = True
                     self.active_ws = ws
                     logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
