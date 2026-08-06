@@ -13,7 +13,8 @@ logger = logging.getLogger("drona.voice_proxy")
 
 # Fixed Base Endpoints (Constant across environments)
 RUMIK_TTS_ENDPOINT = "https://silk-api.rumik.ai"
-SARVAM_STT_ENDPOINT = "wss://api.sarvam.ai/speech-to-text-translate-ws"
+SARVAM_STT_ENDPOINT = "wss://api.sarvam.ai/speech-to-text-ws"
+SARVAM_STT_REST_ENDPOINT = "https://api.sarvam.ai/speech-to-text"
 
 # Read API Keys strictly without silent fallbacks
 SARVAM_API_KEY = os.environ.get("SARVAM_API_KEY", "").strip("\"'")
