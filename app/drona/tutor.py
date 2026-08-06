@@ -1,4 +1,5 @@
 import json
+import time
 import asyncio
 import logging
 from typing import Dict, Any, AsyncGenerator
@@ -258,29 +259,6 @@ async def process_tutor_turn_stream(
     speech_payload = {"delta": speech_out}
     assert_no_forbidden_keys(speech_payload)
     yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
-
-    from app.drona.voice_proxy import RumikTTSProxy, check_tts_safety_filter, split_into_sentences
-    import base64
-
-    tts = RumikTTSProxy(voice_preset="Ira", model="mulberry")
-    sentences = split_into_sentences(speech_out)
-    chunks_sent = 0
-    total_bytes = 0
-    for sentence in sentences:
-        t1_v, t2_v, clean_text = check_tts_safety_filter(sentence)
-        if clean_text:
-            try:
-                audio_bytes = await tts.synthesize_text(clean_text)
-                b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
-                audio_payload = {"audio": b64_audio, "speech": clean_text}
-                assert_no_forbidden_keys(audio_payload)
-                chunks_sent += 1
-                total_bytes += len(audio_bytes)
-                yield f"event: audio_chunk\ndata: {json.dumps(audio_payload)}\n\n"
-            except Exception as tts_err:
-                logger.error(f"SSE TTS synthesis error on sentence: {tts_err}")
-
-    logger.info(f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames ({total_bytes} total PCM bytes) for session {session_id}")
 
     if board_out:
         board_payload = {"latex": board_out}

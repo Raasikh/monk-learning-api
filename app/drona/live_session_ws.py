@@ -88,8 +88,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     })
 
     async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
-        """Executes process_tutor_turn_stream and synthesizes TTS sentence-by-sentence (W3 fix)."""
+        """Executes process_tutor_turn_stream and synthesizes TTS sentence-by-sentence over WebSocket."""
         speech_buffer = ""
+        chunks_sent = 0
+        total_audio_bytes = 0
 
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")
@@ -109,7 +111,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 delta = data_payload.get("delta", "")
                 speech_buffer += delta
 
-                # W3 Fix: Synthesize TTS sentence-by-sentence as speech completes
+                # Synthesize TTS sentence-by-sentence as speech completes
                 sentences = split_into_sentences(speech_buffer)
                 if len(sentences) > 1:
                     for sentence in sentences[:-1]:
@@ -125,6 +127,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                     "speech": clean_text
                                 }
                                 assert_no_forbidden_keys(out_msg)
+                                chunks_sent += 1
+                                total_audio_bytes += len(audio_bytes)
                                 await websocket.send_json(out_msg)
                             except Exception as tts_err:
                                 logger.error(f"TTS synthesis error on sentence: {tts_err}")
@@ -166,9 +170,30 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                         "speech": clean_text
                     }
                     assert_no_forbidden_keys(out_msg)
+                    chunks_sent += 1
+                    total_audio_bytes += len(audio_bytes)
                     await websocket.send_json(out_msg)
                 except Exception as tts_err:
                     logger.error(f"TTS synthesis error on final sentence: {tts_err}")
+
+        if chunks_sent == 0 and speech_buffer.strip():
+            logger.error(f"[SERVER TURN AUDIO FAILURE] Emitted 0 audio_chunk frames (0 total PCM bytes) for session {session_id}")
+            await websocket.send_json({
+                "type": "error",
+                "message": "TTS Synthesis Failed: zero audio frames generated for turn."
+            })
+            try:
+                # Track tts_failure_count in DB if turn exists
+                turns = supabase.table('drona_turns').select('id, tts_failure_count').eq('session_id', session_id).order('turn_index', desc=True).limit(1).execute()
+                if turns.data:
+                    curr_fail = turns.data[0].get('tts_failure_count') or 0
+                    supabase.table('drona_turns').update({'tts_failure_count': curr_fail + 1}).eq('id', turns.data[0]['id']).execute()
+            except Exception as db_err:
+                logger.warning(f"Failed to increment tts_failure_count in drona_turns: {db_err}")
+        else:
+            logger.info(f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames ({total_audio_bytes} total PCM bytes) for session {session_id}")
+
+        await websocket.send_json({"type": "turn_complete"})
 
     # W2 Fix: Callback for Saaras STT transcript streaming
     def handle_stt_transcript(raw_t: str, norm_t: str, is_final: bool, confidence: float):
