@@ -401,13 +401,47 @@ class RumikTTSProxy:
         self.lock = asyncio.Lock()
 
     async def prewarm(self):
-        """Pre-warms Rumik Silk API during planner wait so sentence #1 TTFB is ~300ms."""
-        try:
-            logger.info("[RUMIK PRE-WARM] Pre-warming Rumik TTS connection in background...")
-            await self.synthesize_text("Ready.")
-            logger.info("✅ [RUMIK PRE-WARM COMPLETE] Rumik Silk connection warm and ready.")
-        except Exception as e:
-            logger.warning(f"⚠️ [RUMIK PRE-WARM NON-FATAL] Pre-warm failed: {e}")
+        """Pre-warms Rumik Silk WebSocket connection without sending synthesis payload (Zero Quota Consumed)."""
+        async with self.lock:
+            try:
+                def _is_ws_closed(ws_obj):
+                    if ws_obj is None:
+                        return True
+                    if hasattr(ws_obj, "closed") and isinstance(ws_obj.closed, bool):
+                        return ws_obj.closed
+                    if hasattr(ws_obj, "state"):
+                        from websockets.protocol import State
+                        return ws_obj.state != State.OPEN
+                    return False
+
+                if _is_ws_closed(self.active_session_ws):
+                    logger.info("[RUMIK PRE-WARM] Minting token and establishing WebSocket connection (0 quota used)...")
+                    rumik_key = RUMIK_API_KEY
+                    if not rumik_key:
+                        return
+                    base_url = RUMIK_TTS_ENDPOINT
+                    import requests
+                    def _mint():
+                        return requests.post(
+                            f"{base_url}/v1/tts/ws-connect",
+                            headers={"Authorization": f"Bearer {rumik_key}", "Content-Type": "application/json"},
+                            json={"model": self.model, "text": "Init"},
+                            timeout=10
+                        ).json()
+                    loop = asyncio.get_event_loop()
+                    handshake = await loop.run_in_executor(None, _mint)
+                    ws_url = handshake.get("ws_url")
+                    token = handshake.get("token")
+                    if ws_url and token:
+                        self.active_session_ws = await websockets.connect(
+                            f"{ws_url}?token={token}",
+                            ping_interval=15.0,
+                            ping_timeout=10.0,
+                            close_timeout=5.0
+                        )
+                        logger.info("✅ [RUMIK PRE-WARM COMPLETE] WebSocket connected & ready. 0 synthesis quota consumed.")
+            except Exception as e:
+                logger.warning(f"⚠️ [RUMIK PRE-WARM NON-FATAL] Pre-warm failed: {e}")
 
     async def synthesize_text(self, text: str) -> bytes:
         """Connects to Rumik Silk API (https://silk-api.rumik.ai) and returns raw binary PCM audio bytes.

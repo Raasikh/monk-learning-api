@@ -298,7 +298,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 "type": "transcript_final",
                                 "transcript": norm_t
                             })
-                            asyncio.create_task(execute_turn_pipeline(utterance_text=norm_t, turn_type="answer"))
+                            await execute_turn_pipeline(utterance_text=norm_t, turn_type="answer")
 
                 elif control_type == "mute":
                     state.on_mute()
