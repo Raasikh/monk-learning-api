@@ -113,6 +113,10 @@ def scope_session_endpoint(session_id: str, payload: Dict[str, Any], user_id: st
 @router.post("/session/{session_id}/turn")
 async def turn_session_endpoint(session_id: str, payload: Dict[str, Any], user_id: str = Depends(get_current_user_id)):
     """POST /drona/session/{session_id}/turn — streams SSE events (`speech`, `board`, `meta`, `state`, `done`)."""
+    logger.warning(
+        f"🚨 [DUAL TRANSPORT GUARD WARNING] POST /drona/session/{session_id}/turn called! "
+        f"Frontend must use WebSocket /drona/session/{session_id}/live exclusively for live turns."
+    )
     utterance = payload.get("utterance")
     turn_type = payload.get("turn_type", "answer")
 
