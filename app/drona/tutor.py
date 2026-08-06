@@ -29,7 +29,13 @@ def strip_fences(text: str) -> str:
             lines = lines[1:]
         if lines and lines[-1].strip().startswith("```"):
             lines = lines[:-1]
-        return "\n".join(lines).strip()
+        text = "\n".join(lines).strip()
+    
+    # Extract JSON object substring between first { and last }
+    first_brace = text.find("{")
+    last_brace = text.rfind("}")
+    if first_brace != -1 and last_brace > first_brace:
+        return text[first_brace:last_brace + 1]
     return text
 
 def parse_tutor_json(raw_text: str) -> Dict[str, Any]:
