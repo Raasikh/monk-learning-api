@@ -297,12 +297,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         total_mute = state.get_total_mute_sec()
         try:
             supabase.table('drona_sessions').update({
-                'mute_duration_sec': total_mute,
                 'stt_seconds': round(state.stt_seconds, 2),
                 'tts_characters': state.tts_characters,
                 'reconnect_count': state.reconnect_count + 1
             }).eq('id', session_id).execute()
         except Exception as e:
+            logger.warning(f"Telemetry update on disconnect: {e}")
             logger.error(f"Telemetry update error on disconnect: {e}")
     finally:
         stt_task.cancel()
