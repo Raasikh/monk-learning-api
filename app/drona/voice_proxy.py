@@ -399,6 +399,15 @@ class RumikTTSProxy:
         self.connection_count = 0
         self.lock = asyncio.Lock()
 
+    async def prewarm(self):
+        """Pre-warms Rumik Silk API during planner wait so sentence #1 TTFB is ~300ms."""
+        try:
+            logger.info("[RUMIK PRE-WARM] Pre-warming Rumik TTS connection in background...")
+            await self.synthesize_text("Ready.")
+            logger.info("✅ [RUMIK PRE-WARM COMPLETE] Rumik Silk connection warm and ready.")
+        except Exception as e:
+            logger.warning(f"⚠️ [RUMIK PRE-WARM NON-FATAL] Pre-warm failed: {e}")
+
     async def synthesize_text(self, text: str) -> bytes:
         """Connects to Rumik Silk API (https://silk-api.rumik.ai) and returns raw binary PCM audio bytes.
         Guarded by asyncio.Lock to ensure serialized sentence delivery (sentence N+1 waits for sentence N done frame)."""
@@ -466,8 +475,13 @@ class RumikTTSProxy:
                             if msg_type in ("done", "complete", "finish", "end"):
                                 logger.info(f"[RUMIK WS DONE FRAME] Received done frame for sentence #{self.connection_count}")
                                 break
-                            elif msg_type == "error":
-                                raise RuntimeError(f"Rumik TTS WebSocket Error: {data.get('message') or data}")
+                            elif data.get("code") == "RATE_LIMITED" or data.get("error"):
+                                retry_after = float(data.get("retry_after", 3.0))
+                                logger.warning(f"[RUMIK RATE LIMITED] Received rate limit from Rumik API. Sleeping {retry_after}s before retry...")
+                                await asyncio.sleep(retry_after + 0.5)
+                                if attempt < 3:
+                                    return await self._synthesize_text_locked(text, attempt=attempt+1)
+                                raise RuntimeError(f"Rumik TTS Rate Limited: {data.get('message')}")
                     except asyncio.TimeoutError:
                         logger.warning(f"[RUMIK WS TIMEOUT] ws.recv() timed out after 10.0s for text='{text[:30]}...' (pcm_bytes={len(pcm_bytes)})")
                         break

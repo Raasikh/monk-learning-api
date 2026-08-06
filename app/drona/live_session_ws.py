@@ -89,6 +89,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
     async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
         """Executes process_tutor_turn_stream and synthesizes TTS sentence-by-sentence over WebSocket."""
+        # Pre-warm Rumik TTS concurrently in background while LLM generates tokens
+        asyncio.create_task(tts_proxy.prewarm())
+
         speech_buffer = ""
         chunks_sent = 0
         total_audio_bytes = 0
