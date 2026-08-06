@@ -176,14 +176,77 @@ class SaarasSTTProxy:
                     break
 
                 try:
-                    ws_ctx = websockets.connect(uri, additional_headers=headers)
-                except TypeError:
-                    ws_ctx = websockets.connect(uri, extra_headers=headers)
+                    async with websockets.connect(uri, extra_headers=headers) as ws:
+                        self.is_connected = True
+                        self.active_ws = ws
+                        logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
+                        backoff = 1.0
 
-                async with ws_ctx as ws:
-                    self.is_connected = True
-                    self.active_ws = ws
-                    logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
+                        async def send_audio():
+                            chunk_count = 0
+                            total_bytes = 0
+                            async for chunk in audio_stream:
+                                if chunk:
+                                    chunk_count += 1
+                                    total_bytes += len(chunk)
+                                    logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{chunk_count}: {len(chunk)} bytes (Total: {total_bytes} bytes)")
+                                    await ws.send(chunk)
+
+                        async def receive_transcripts():
+                            async for msg in ws:
+                                logger.info(f"[SARVAM STT FRAME RECEIVED] {repr(msg[:200])}")
+                                data = json.loads(msg)
+                                raw_transcript = data.get("transcript", "")
+                                norm_transcript = normalize_devanagari_to_roman(raw_transcript)
+                                is_final = data.get("is_final", False)
+                                confidence = data.get("confidence", 0.95)
+
+                                if raw_transcript.strip():
+                                    logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final={is_final}")
+
+                                if data.get("speech_onset"):
+                                    on_barge_in()
+
+                                on_transcript(raw_transcript, norm_transcript, is_final, confidence)
+
+                        await asyncio.gather(send_audio(), receive_transcripts())
+                        break
+                except TypeError:
+                    async with websockets.connect(uri, additional_headers=headers) as ws:
+                        self.is_connected = True
+                        self.active_ws = ws
+                        logger.info(f"✅ [SARVAM STT CONNECTED] Successfully connected to api.sarvam.ai ({self.model}, mode={self.mode})")
+                        backoff = 1.0
+
+                        async def send_audio():
+                            chunk_count = 0
+                            total_bytes = 0
+                            async for chunk in audio_stream:
+                                if chunk:
+                                    chunk_count += 1
+                                    total_bytes += len(chunk)
+                                    logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{chunk_count}: {len(chunk)} bytes (Total: {total_bytes} bytes)")
+                                    await ws.send(chunk)
+
+                        async def receive_transcripts():
+                            async for msg in ws:
+                                logger.info(f"[SARVAM STT FRAME RECEIVED] {repr(msg[:200])}")
+                                data = json.loads(msg)
+                                raw_transcript = data.get("transcript", "")
+                                norm_transcript = normalize_devanagari_to_roman(raw_transcript)
+                                is_final = data.get("is_final", False)
+                                confidence = data.get("confidence", 0.95)
+
+                                if raw_transcript.strip():
+                                    logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}', is_final={is_final}")
+
+                                if data.get("speech_onset"):
+                                    on_barge_in()
+
+                                on_transcript(raw_transcript, norm_transcript, is_final, confidence)
+
+                        await asyncio.gather(send_audio(), receive_transcripts())
+                        break
                     backoff = 1.0
 
                     async def send_audio():
