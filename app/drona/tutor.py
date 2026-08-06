@@ -132,6 +132,7 @@ async def process_tutor_turn_stream(
             messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0,
+            max_tokens=650,
             stream=False
         )
 
