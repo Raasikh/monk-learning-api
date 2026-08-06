@@ -236,11 +236,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             except asyncio.TimeoutError:
                 continue
 
-    # Start background Saaras STT streaming task
+    # Start background Saaras STT streaming task (barge-in disabled to prevent premature audio cutoffs)
     stt_task = asyncio.create_task(stt_proxy.connect_and_stream(
         audio_stream=audio_stream_generator(),
         on_transcript=handle_stt_transcript,
-        on_barge_in=lambda: asyncio.create_task(execute_turn_pipeline(utterance_text="", turn_type="interruption"))
+        on_barge_in=lambda: None
     ))
 
     # PTT PCM Buffer state

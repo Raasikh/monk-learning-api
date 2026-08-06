@@ -78,7 +78,11 @@ TECHNICAL_TERMS_MAP = {
     'न्यूक्लियोफिलिक': 'nucleophilic', 'सबस्टिट्यूशन': 'substitution', 'प्रोबेबिलिटी': 'probability',
     'यूनियन': 'union', 'डायरेक्शन': 'direction', 'कोसाइन': 'cosines', 'यूनिवर्सल': 'universal', 'फोर्स': 'force',
     'वेव': 'waves', 'डॉपलर': 'doppler', 'इफेक्ट': 'effect', 'शिफ्ट': 'shift', 'कूलम्ब': 'coulomb',
-    'हाँ': 'haan', 'है': 'hai', 'कया': 'kya', 'क्या': 'kya', 'कैसे': 'kaise', 'करें': 'karein', 'इसका': 'iska'
+    'हाँ': 'haan', 'है': 'hai', 'हैं': 'hain', 'कया': 'kya', 'क्या': 'kya', 'कैसे': 'kaise', 'करें': 'karein', 'इसका': 'iska',
+    'भाई': 'bhai', 'नेक्स्ट': 'next', 'टॉपिक': 'topic', 'कांसेप्ट': 'concept', 'कंटिन्यू': 'continue', 'डाउट': 'doubt',
+    'क्लियर': 'clear', 'चलो': 'chalo', 'आगे': 'aage', 'बढ़ो': 'badho', 'समझ': 'samajh', 'बताओ': 'batao', 'फिर': 'fir',
+    'लोग': 'log', 'हम': 'ham', 'उत्तर': 'answer', 'प्रश्न': 'question', 'डिफरेंशियल': 'differential', 'प्रेशर': 'pressure',
+    'इक्वेशन': 'equation'
 }
 
 # Devanagari Unicode Phonetic Mapping Tables

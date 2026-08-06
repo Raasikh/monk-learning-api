@@ -31,7 +31,12 @@ grading_test_cases = [
     ("12. Fully Correct Physics", "Acceleration is the time derivative of velocity, dv by dt", "correct"),
     ("13. Fully Correct Chemistry", "SN2 reaction is a one-step bimolecular process with inversion of configuration", "correct"),
     ("14. Fully Correct Biology", "Photosynthesis light reaction occurs in the thylakoid membrane", "correct"),
-    ("15. Fully Correct Physics", "Work done by a conservative force along a closed path is zero", "correct")
+    ("15. Fully Correct Physics", "Work done by a conservative force along a closed path is zero", "correct"),
+
+    # Ungraded Fixtures (Procedural / Mismatched / Lightweight Checks MUST be graded None / null)
+    ("16. Correct Answer to Different Question", "It is a closed system because heat can exchange but matter cannot", None),
+    ("17. Yes to Procedural Question", "Haan aage badho, ready hain", None),
+    ("18. Answer to Lightweight Check", "Option B", None)
 ]
 
 def run_halt3_grading_honesty_suite():
