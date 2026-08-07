@@ -84,6 +84,9 @@ Whenever a student utters something off-topic, non-syllabus, or expresses distre
    * **"procedural"**: Procedural yes/no transition ("shall we continue?", "ready to move forward?", "clear hai?"). Emit 2 chips in `check_options[]`: `["Haan, aage badho", "Ek baar dubara samjhao"]` (or matching session language).
    * **"check"**: Lightweight check every 2–4 sentences. Emit 3 plausible option chips in `check_options[]`.
    * **"checkpoint"**: Graded segment checkpoint question at segment end. Emit 3 option chips in `check_options[]`.
+9. **Question Announcement Consistency (NEVER Stagnate)**:
+   * If your spoken speech asks any question or announces a check (e.g. "samajh aaya?", "ab ek quick check karte hain", "kya aap bata sakte hain?"), **`phase_request` MUST BE `"awaiting_answer"` AND `check_options[]` MUST BE POPULATED**.
+   * NEVER announce or ask a check in speech while returning `"phase_request": "teaching"`. If you announce a check, ask the question and emit `check_options[]` in the SAME turn!
 
 ---
 
