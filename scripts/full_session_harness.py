@@ -217,7 +217,7 @@ class FullSessionHarness:
                                     print(f"❌ [RETRY CAP EXCEEDED] Question attempt count exceeded 2 at Segment {self.current_segment}!", flush=True)
                                     self.violations["retry_cap_exceeded"] += 1
                                 
-                                wrong_ans = "Deliberately Wrong Choice Test Payload"
+                                wrong_ans = options[1] if len(options) > 1 else (options[0] if options else "Incorrect choice")
                                 print(f"  ⚡ [WRONG RETRY] Submitting wrong answer (Attempt #{self.attempts_on_current_question}): '{wrong_ans}'", flush=True)
                                 await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
                             else:
@@ -261,7 +261,11 @@ class FullSessionHarness:
                                         if self.attempts_on_current_question > 2:
                                             print(f"❌ [RETRY CAP EXCEEDED] Attempt count exceeded 2 at Segment {self.current_segment}!", flush=True)
                                             self.violations["retry_cap_exceeded"] += 1
-                                        wrong_ans = "Deliberately Wrong Choice Test Payload"
+                                        wrong_ans = "Incorrect option choice"
+                                        if hasattr(self, 'check_options') and self.check_options and len(self.check_options) > 1:
+                                            wrong_ans = self.check_options[1]
+                                        elif hasattr(self, 'check_options') and self.check_options and len(self.check_options) > 0:
+                                            wrong_ans = self.check_options[-1]
                                         print(f"  ⚡ [WRONG RETRY] Submitting wrong answer for Segment #{self.current_segment} (Attempt #{self.attempts_on_current_question}): '{wrong_ans}'", flush=True)
                                         await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
                                     else:
