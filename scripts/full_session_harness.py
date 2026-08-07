@@ -225,12 +225,28 @@ class FullSessionHarness:
                                 print(f"  ⚡ [WRONG RETRY] Submitting wrong answer (Attempt #{self.attempts_on_current_question}): '{wrong_ans}'", flush=True)
                                 await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
                             else:
-                                correct_ans = options[0] if options else "Standard Correct Choice"
-                                print(f"  ⚡ [STANDARD CORRECT] Submitting correct choice: '{correct_ans}'", flush=True)
+                                correct_ans = options[0] if options else None
+                                if not correct_ans and hasattr(self, 'plan_id') and self.plan_id:
+                                    try:
+                                        sp_url = "https://tgbknrmnjwiokraddurx.supabase.co"
+                                        sp_key = os.getenv("SUPABASE_SECRET_KEY", "")
+                                        sp_h = {"apikey": sp_key, "Authorization": f"Bearer {sp_key}"}
+                                        plan_res = requests.get(f"{sp_url}/rest/v1/lesson_plans?select=plan_json&id=eq.{self.plan_id}", headers=sp_h).json()
+                                        if plan_res and plan_res[0].get("plan_json"):
+                                            segs = plan_res[0]["plan_json"].get("segments", [])
+                                            if self.current_segment <= len(segs):
+                                                cp = segs[self.current_segment - 1].get("checkpoint", {})
+                                                correct_ans = cp.get("question") or cp.get("rubric") or cp.get("model_answer")
+                                    except Exception:
+                                        pass
+                                if not correct_ans:
+                                    correct_ans = "Haan, main samajh gaya"
+                                print(f"  ⚡ [STANDARD CORRECT] Submitting correct choice: '{correct_ans[:60]}'", flush=True)
                                 await ws.send(json.dumps({"type": "utterance", "text": correct_ans}))
 
                         elif self.current_phase == "teaching" and prev_phase == "awaiting_answer":
                             self.attempts_on_current_question = 0
+                            self.check_options = []
                             print(f"  🚀 [AUTO ADVANCE] Phase advanced to 'teaching' for Segment {self.current_segment}!", flush=True)
 
                     elif msg_type in ("board_event", "audio_chunk"):
@@ -274,19 +290,21 @@ class FullSessionHarness:
                                         await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
                                     else:
                                         # Retrieve actual checkpoint question / options for current segment from DB plan
-                                        ans_text = "Correct answer"
-                                        try:
-                                            plan_res = requests.get(f"{sp_url}/rest/v1/lesson_plans?select=plan_json&id=eq.{self.plan_id}", headers=sp_h).json()
-                                            if plan_res and plan_res[0].get("plan_json"):
-                                                segs = plan_res[0]["plan_json"].get("segments", [])
-                                                if db_seg <= len(segs):
-                                                    cp = segs[db_seg - 1].get("checkpoint", {})
-                                                    ans_text = cp.get("question") or cp.get("rubric") or f"Correct answer for segment {db_seg}"
-                                        except Exception:
-                                            pass
-
+                                        ans_text = None
                                         if hasattr(self, 'check_options') and self.check_options and len(self.check_options) > 0:
                                             ans_text = self.check_options[0]
+                                        if not ans_text:
+                                            try:
+                                                plan_res = requests.get(f"{sp_url}/rest/v1/lesson_plans?select=plan_json&id=eq.{self.plan_id}", headers=sp_h).json()
+                                                if plan_res and plan_res[0].get("plan_json"):
+                                                    segs = plan_res[0]["plan_json"].get("segments", [])
+                                                    if db_seg <= len(segs):
+                                                        cp = segs[db_seg - 1].get("checkpoint", {})
+                                                        ans_text = cp.get("question") or cp.get("rubric") or cp.get("model_answer")
+                                            except Exception:
+                                                pass
+                                        if not ans_text:
+                                            ans_text = f"Haan, segment {db_seg} samajh gaya"
 
                                         print(f"  ⚡ [STANDARD CORRECT] Submitting answer for Segment #{self.current_segment}: '{ans_text[:60]}'", flush=True)
                                         await ws.send(json.dumps({"type": "utterance", "text": ans_text}))
