@@ -26,6 +26,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.on_event("startup")
+async def verify_models_on_startup():
+    from app.drona.models import get_drona_client, get_model_name
+    client = get_drona_client()
+    for service in ("planner", "scoping", "tutor"):
+        model_name = get_model_name(service)
+        logger.info(f"[STARTUP MODEL CHECK] Verifying model for '{service}': '{model_name}'...")
+        try:
+            res = client.chat.completions.create(
+                model=model_name,
+                messages=[{"role": "user", "content": "ping"}],
+                max_tokens=1,
+                extra_body={"thinking": {"type": "disabled"}}
+            )
+            returned_model = getattr(res, "model", "")
+            if returned_model != model_name:
+                raise RuntimeError(f"FATAL STARTUP MODEL MISMATCH: Requested '{model_name}', API returned '{returned_model}'")
+            logger.info(f"✅ [STARTUP MODEL CONFIRMED] Service '{service}' model '{returned_model}' verified successfully.")
+        except Exception as err:
+            logger.error(f"❌ [FATAL STARTUP MODEL FAILURE] {service} model check failed: {err}")
+            raise err
+
 
 @app.middleware("http")
 async def log_request_latency(request: Request, call_next):

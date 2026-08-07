@@ -132,6 +132,8 @@ async def process_tutor_turn_stream(
     output_tokens = 0
     cache_hit_tokens = 0
 
+    turn_failed = False
+
     try:
         res = client.chat.completions.create(
             model=model_name,
@@ -159,10 +161,12 @@ async def process_tutor_turn_stream(
 
     except Exception as e:
         logger.error(f"Error during LLM turn: {e}")
+        turn_failed = True
         raw_response_text = json.dumps({
-            "speech": "Let's pause for a moment and review what we've covered on the board.",
-            "board_events": [{"seq": 1, "type": "heading", "text": "Concept Overview", "emphasis": "normal"}],
-            "phase_request": phase_in
+            "speech": "Aapki awaaz thodi kat gayi thi — kya aap ek baar dubara bol sakte hain?",
+            "board_events": [],
+            "phase_request": phase_in,
+            "turn_failed": True
         })
 
     # Log cache hit tokens (§R4) and assert model string (§R1)
@@ -183,19 +187,22 @@ async def process_tutor_turn_stream(
                     {"role": "user", "content": "Return only valid JSON object. No prose, no markdown fences."}
                 ],
                 response_format={"type": "json_object"},
-                temperature=0.0
+                temperature=0.0,
+                extra_body={"thinking": {"type": "disabled"}}
             )
             parsed_json = json.loads(strip_fences(retry_res.choices[0].message.content or "{}"))
         except Exception as retry_err:
             logger.error(f"Second JSON parse failure: {retry_err}")
+            turn_failed = True
             parsed_json = {
-                "speech": "Let's focus on the step on the board.",
-                "board": curr_segment.get("board_content", r"\text{Focus}"),
-                "phase_request": phase_in
+                "speech": "Aapki awaaz thodi clear nahi aayi — kya aap ek baar dubara bol sakte hain?",
+                "board_events": [],
+                "phase_request": phase_in,
+                "turn_failed": True
             }
 
-    speech_out = parsed_json.get("speech") or "Let me explain this step."
-    board_out = parsed_json.get("board") or curr_segment.get("board_content", "")
+    speech_out = parsed_json.get("speech") or "Aapki awaaz thodi clear nahi aayi — kya aap ek baar dubara bol sakte hain?"
+    board_out = parsed_json.get("board") or ""
     grade_out = parsed_json.get("grade")
     mistake_tag = parsed_json.get("mistake_tag")
     offtopic_tier = parsed_json.get("offtopic_tier")
@@ -227,7 +234,7 @@ async def process_tutor_turn_stream(
     turns_res = supabase.table("drona_turns").select("turn_index").eq("session_id", session_id).execute()
     turn_index = len(turns_res.data or []) + 1
 
-    supabase.table("drona_turns").insert([{
+    turn_data = {
         "session_id": session_id,
         "turn_index": turn_index,
         "segment_index": curr_seg_idx,
@@ -238,7 +245,14 @@ async def process_tutor_turn_stream(
         "input_tokens": input_tokens,
         "cache_hit_tokens": cache_hit_tokens,
         "output_tokens": output_tokens
-    }]).execute()
+    }
+    if turn_failed:
+        turn_data["turn_failed"] = True
+
+    try:
+        supabase.table("drona_turns").insert([turn_data]).execute()
+    except Exception as db_ins_err:
+        logger.warning(f"Insert into drona_turns warning: {db_ins_err}")
 
     # 10. INSERT into student_misconceptions if mistake logged (§4.1 #12)
     if is_mistake and mistake_tag:
@@ -267,6 +281,11 @@ async def process_tutor_turn_stream(
         for k in FORBIDDEN_SSE_KEYS:
             if k in payload:
                 raise ValueError(f"R3 VIOLATION: Forbidden server-side key '{k}' in client payload: {payload}")
+
+    if turn_failed:
+        err_payload = {"type": "turn_error", "message": "Something went wrong — retrying turn", "turn_failed": True}
+        assert_no_forbidden_keys(err_payload)
+        yield f"event: turn_error\ndata: {json.dumps(err_payload)}\n\n"
 
     # 13. Emit sanitized SSE events (R3) with sentence-by-sentence Rumik Silk TTS audio
     speech_payload = {"delta": speech_out}

@@ -96,6 +96,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         chunks_sent = 0
         total_audio_bytes = 0
         turn_board_events = []
+        state_data = {}
+        segment_complete_flag = False
 
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")
@@ -114,6 +116,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             if event_type == "board_events":
                 turn_board_events = data_payload.get("events", [])
                 out_msg = {"type": "board_events", "events": turn_board_events}
+                assert_no_forbidden_keys(out_msg)
+                await websocket.send_json(out_msg)
+
+            elif event_type == "turn_error":
+                out_msg = {"type": "turn_error", **data_payload}
                 assert_no_forbidden_keys(out_msg)
                 await websocket.send_json(out_msg)
 
@@ -171,6 +178,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 await websocket.send_json(out_msg)
 
             elif event_type == "state":
+                state_data = data_payload
+                if data_payload.get("segment_complete"):
+                    segment_complete_flag = True
                 out_msg = {"type": "state", **data_payload}
                 assert_no_forbidden_keys(out_msg)
                 await websocket.send_json(out_msg)
@@ -224,7 +234,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             sess_res = supabase.table('drona_sessions').select('phase, current_segment').eq('id', session_id).single().execute()
             if sess_res.data:
                 curr_phase = sess_res.data.get('phase')
-                if curr_phase == 'teaching' and state_data.get('segment_complete'):
+                if curr_phase == 'teaching' and (segment_complete_flag or state_data.get('segment_complete')):
                     logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Segment complete. Automatically firing teaching turn for Segment #{sess_res.data.get('current_segment')}...")
                     await execute_turn_pipeline(utterance_text="", turn_type="teaching")
         except Exception as auto_adv_err:

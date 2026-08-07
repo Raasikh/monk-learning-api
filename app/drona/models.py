@@ -2,9 +2,9 @@ import os
 from openai import OpenAI
 
 # R1 — Non-negotiable Model Strings
-MODEL_PLANNER = "deepseek-chat"
-MODEL_SCOPING = "deepseek-chat"
-MODEL_TUTOR = "deepseek-chat"
+MODEL_PLANNER = "deepseek-v4-flash"
+MODEL_SCOPING = "deepseek-v4-flash"
+MODEL_TUTOR = "deepseek-v4-flash"
 
 def get_drona_client() -> OpenAI:
     api_key = os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")
