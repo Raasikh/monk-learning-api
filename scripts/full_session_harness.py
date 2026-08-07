@@ -93,6 +93,7 @@ class FullSessionHarness:
         self.violations = {
             "zero_board_events": 0,
             "under_density_segments": 0,
+            "over_density_segments": 0,
             "double_escaped_latex": 0,
             "raw_latex_in_text": 0,
             "awaiting_answer_zero_options": 0,
@@ -288,6 +289,13 @@ class FullSessionHarness:
 
         except Exception as ws_err:
             print(f"❌ [{subj.upper()} WEBSOCKET ERROR] {ws_err}", flush=True)
+
+        # Calculate per-segment board density violations (<6 under_density, >12 over_density)
+        for seg_k, count in self.per_segment_board_stats.items():
+            if count < 6:
+                self.violations["under_density_segments"] += 1
+            if count > 12:
+                self.violations["over_density_segments"] += 1
 
         total_dur = time.time() - t_ws_0
         status_symbol = "✓" if self.current_phase in ("wrapup", "complete") else "❌"
