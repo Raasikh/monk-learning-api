@@ -18,19 +18,19 @@ SUBJECT_HARNESS_SPECS = [
     },
     {
         "subject": "Chemistry",
-        "chapter_id": "31feae2e-e5d8-57d6-8eb5-98547b7ecf77", # Chemical Bonding
-        "chapter_name": "Chemical Bonding and Molecular Structure",
+        "chapter_id": "862ab5f0-4fa8-5e6f-98d5-74fe5b10ab8e", # Chemical Bonding
+        "chapter_name": "Chemical Bonding",
         "base_subtopic": "VSEPR Theory and Molecular Shapes"
     },
     {
         "subject": "Maths",
-        "chapter_id": "aa1c91ee-00ed-5df3-9cf6-0428a2a0dca0", # Integrals
+        "chapter_id": "c663b4f9-59fd-5253-8c06-a1743f126ad9", # Integrals
         "chapter_name": "Integrals",
         "base_subtopic": "Definite Integration by Substitution"
     },
     {
         "subject": "Biology",
-        "chapter_id": "50c608f5-93ec-51d0-a083-d56b3e7bc8c9", # Neural Control
+        "chapter_id": "d202ecdf-13b0-58db-8aff-2c511b68d009", # Neural Control and Coordination
         "chapter_name": "Neural Control and Coordination",
         "base_subtopic": "Generation and Conduction of Nerve Impulse"
     }
