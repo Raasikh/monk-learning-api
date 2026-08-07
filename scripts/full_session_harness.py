@@ -256,6 +256,7 @@ class FullSessionHarness:
                     elif msg_type == "turn_complete":
                         self.turns_executed += 1
                         self.answered_current_await = False
+                        self.check_options = []
                         print(f"  ✓ Turn #{self.turns_executed} Complete!", flush=True)
 
                         # Check DB state for current phase to drive next turn if in awaiting_answer
