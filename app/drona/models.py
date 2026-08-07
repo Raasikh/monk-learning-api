@@ -2,7 +2,7 @@ import os
 from openai import OpenAI
 
 # R1 — Non-negotiable Model Strings
-MODEL_PLANNER = "deepseek-v4-flash"
+MODEL_PLANNER = "deepseek-v4-pro"
 MODEL_SCOPING = "deepseek-v4-flash"
 MODEL_TUTOR = "deepseek-v4-flash"
 
