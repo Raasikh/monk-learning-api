@@ -209,10 +209,10 @@ def check_tts_safety_filter(text: str) -> Tuple[bool, bool, str]:
 
     return tier1_viol, tier2_viol, clean
 
-def split_into_sentences(text: str, min_chars: int = 40) -> List[str]:
+def split_into_sentences(text: str, min_chars: int = 100) -> List[str]:
     """Splits incoming streaming text into sentence chunks for sentence-by-sentence TTS.
-    Batches short leading fragments (<40 chars) together so short phrases like 'Welcome!'
-    join the next sentence rather than wasting a full TTS roundtrip."""
+    Batches short leading fragments (<100 chars) together so short phrases join
+    the next sentence rather than wasting a full TTS roundtrip and RPM quota."""
     if not text:
         return []
     raw = re.split(r'(?<=[.!?|\n])\s+', text)
@@ -423,6 +423,7 @@ class RumikTTSProxy:
         self.model = model
         self.active_session_ws = None
         self.connection_count = 0
+        self.last_synthesis_at = 0.0
         self.lock = asyncio.Lock()
 
     async def prewarm(self):
@@ -460,8 +461,7 @@ class RumikTTSProxy:
                     if ws_url and token:
                         self.active_session_ws = await websockets.connect(
                             f"{ws_url}?token={token}",
-                            ping_interval=15.0,
-                            ping_timeout=10.0,
+                            ping_interval=None,
                             close_timeout=5.0
                         )
                         logger.info("✅ [RUMIK PRE-WARM COMPLETE] WebSocket connected & ready. 0 synthesis quota consumed.")
@@ -489,7 +489,6 @@ class RumikTTSProxy:
         mint_ms = 0.0
         ws_connect_ms = 0.0
 
-        # Detect closed or dead socket BEFORE sending, not after
         def _is_ws_closed(ws_obj):
             if ws_obj is None:
                 return True
@@ -500,6 +499,17 @@ class RumikTTSProxy:
                 return ws_obj.state != State.OPEN
             return False
 
+        # Proactive 50s idle reconnect check
+        now = time.time()
+        if self.active_session_ws and self.last_synthesis_at > 0 and (now - self.last_synthesis_at > 50.0):
+            logger.info(f"🕒 [RUMIK PROACTIVE RECONNECT] Idle time {now - self.last_synthesis_at:.1f}s > 50.0s. Closing socket proactively before send...")
+            try:
+                await self.active_session_ws.close()
+            except Exception:
+                pass
+            self.active_session_ws = None
+
+        # Pre-send closed-socket fallback check
         if _is_ws_closed(self.active_session_ws):
             logger.info("[RUMIK PRE-SEND CHECK] Active WebSocket detected closed prior to send. Reconnecting silently...")
             self.active_session_ws = None
@@ -532,8 +542,7 @@ class RumikTTSProxy:
             t_ws_start = time.time()
             ws = await websockets.connect(
                 f"{ws_url}?token={token}",
-                ping_interval=15.0,  # Send WebSocket ping every 15s during student answer idle time
-                ping_timeout=10.0,
+                ping_interval=None,  # Disabled ping-based keepalive per architecture directive
                 close_timeout=5.0
             )
             ws_connect_ms = round((time.time() - t_ws_start) * 1000, 2)
@@ -589,6 +598,7 @@ class RumikTTSProxy:
 
         t_total = time.time() - t0
         first_byte_ms = round((t_first_byte - t0) * 1000, 2) if t_first_byte else 0.0
+        self.last_synthesis_at = time.time()
         logger.info(f"[RUMIK SYNTHESIS COMPLETE] Sentence #{self.connection_count}: {len(text)} chars -> {len(pcm_bytes)} PCM bytes ({len(pcm_bytes)/48000.0:.2f}s audio). Handshake={mint_ms}ms | WS_Connect={ws_connect_ms}ms | Total={t_total:.2f}s")
         return bytes(pcm_bytes)
 

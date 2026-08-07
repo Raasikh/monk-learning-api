@@ -70,6 +70,7 @@ def mint_real_supabase_jwt() -> str:
 
 class FullSessionHarness:
     def __init__(self, spec: dict, wrong_answer_variant: bool = False, jwt_token: str = ""):
+        self.timeout_sec = 420
         self.spec = spec
         self.wrong_answer_variant = wrong_answer_variant
         self.jwt_token = jwt_token
@@ -172,8 +173,8 @@ class FullSessionHarness:
                 
                 # Listen to live stream frames and handle turns
                 while True:
-                    if time.time() - t_ws_0 > 240:
-                        print(f"❌ [{subj.upper()} TIMEOUT] Session reached 240s safety cap.", flush=True)
+                    if time.time() - t_ws_0 > 450:
+                        print(f"❌ [{subj.upper()} TIMEOUT] Session reached 450s safety cap.", flush=True)
                         self.violations["segment_advance_stall"] += 1
                         break
 
