@@ -1,3 +1,4 @@
+import re
 import json
 import time
 import asyncio
@@ -293,6 +294,12 @@ async def process_tutor_turn_stream(
     speech_payload = {"delta": speech_out}
     assert_no_forbidden_keys(speech_payload)
     yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
+
+    # Word count bounds validation (60-120 words)
+    speech_words = [w for w in speech_out.split() if w.strip()]
+    word_count = len(speech_words)
+    if turn_type in ("teaching", "answer") and not (45 <= word_count <= 135):
+        logger.warning(f"⚠️ [PROMPT VIOLATION] Turn speech word count out of target range: {word_count} words (Target: 60-120 words).")
 
     board_events_out = parsed_json.get("board_events") or []
     sanitized_board_events = []

@@ -72,6 +72,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     session_data = res_s.data[0]
     user_id = session_data['user_id']
     state = LiveSessionState(session_id, user_id)
+    skip_tts_flag = websocket.query_params.get("skip_tts") == "1"
     tts_proxy = RumikTTSProxy(voice_preset="Ira", model="mulberry")
     stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast")
 
@@ -111,8 +112,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 elif line.startswith("data:"):
                     try:
                         data_payload = json.loads(line.replace("data:", "").strip())
-                    except Exception:
-                        pass
+                    except Exception as parse_err:
+                        logger.warning(f"Failed to parse SSE data line '{line[:50]}...': {parse_err}")
 
             if event_type == "board_events":
                 turn_board_events = data_payload.get("events", [])
@@ -137,7 +138,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                         if clean_text:
                             state.tts_characters += len(clean_text)
                             try:
-                                audio_bytes = await tts_proxy.synthesize_text(clean_text)
+                                if skip_tts_flag:
+                                    audio_bytes = b"\x00" * 3200
+                                else:
+                                    audio_bytes = await tts_proxy.synthesize_text(clean_text)
                                 b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
                                 chunks_sent += 1
                                 sentence_id = f"{turn_id}_s{chunks_sent}"
@@ -194,7 +198,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             if clean_text:
                 state.tts_characters += len(clean_text)
                 try:
-                    audio_bytes = await tts_proxy.synthesize_text(clean_text)
+                    if skip_tts_flag:
+                        audio_bytes = b"\x00" * 3200
+                    else:
+                        audio_bytes = await tts_proxy.synthesize_text(clean_text)
                     b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
                     chunks_sent += 1
                     sentence_id = f"{turn_id}_s{chunks_sent}"
@@ -238,13 +245,13 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
         await websocket.send_json({"type": "turn_complete"})
 
-        # BUG 2 FIX: Automatically fire teaching turn for next segment when current segment completes
+        # Automatically fire teaching turn for next segment when current segment advances to teaching phase
         try:
             sess_res = supabase.table('drona_sessions').select('phase, current_segment').eq('id', session_id).single().execute()
             if sess_res.data:
                 curr_phase = sess_res.data.get('phase')
-                if curr_phase == 'teaching' and (segment_complete_flag or state_data.get('segment_complete')):
-                    logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Segment complete. Automatically firing teaching turn for Segment #{sess_res.data.get('current_segment')}...")
+                if curr_phase == 'teaching':
+                    logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Phase is teaching for Segment #{sess_res.data.get('current_segment')}. Automatically firing teaching turn...")
                     await execute_turn_pipeline(utterance_text="", turn_type="teaching")
         except Exception as auto_adv_err:
             logger.warning(f"Auto-segment advance check skipped: {auto_adv_err}")
@@ -288,9 +295,18 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     is_ptt_active = False
     ptt_pcm_chunks = []
 
+    # Auto-trigger turn 1 teaching if session is in teaching phase upon connect
+    if session_data['phase'] == 'teaching':
+        logger.info(f"🚀 [WS CONNECT AUTO-START] Triggering turn 1 teaching for Segment #{session_data['current_segment']}...")
+        asyncio.create_task(execute_turn_pipeline(utterance_text="", turn_type="teaching"))
+
     try:
         while state.is_active:
-            message = await websocket.receive()
+            try:
+                message = await websocket.receive()
+            except (WebSocketDisconnect, RuntimeError):
+                state.is_active = False
+                break
 
             # BINARY PCM AUDIO FRAME FORWARDED TO STT BUFFER
             if "bytes" in message and message["bytes"]:

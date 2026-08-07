@@ -36,6 +36,8 @@ def scope_student_session(session_id: str, user_id: str, utterance: str) -> Dict
     history = session.get("history_summary") or []
     scoping_round = sum(1 for h in history if "scoping:" in str(h)) + 1
 
+    subtopic_key = None
+
     # Fast path: if utterance directly matches a subtopic key or name, skip LLM scoping latency
     norm_utt = utterance.strip().lower()
     for s in subtopics:

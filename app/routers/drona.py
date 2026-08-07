@@ -70,19 +70,27 @@ def start_session_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_c
     chapter_id = payload.get("chapter_id", "custom")
     language = payload.get("language", "hinglish")
 
+    valid_chap_id = None
     chapter_name = "this topic"
+
     if len(chapter_id) == 36:
-        chap_data = supabase.table("chapters").select("name, subject, class_level").eq("id", chapter_id).execute()
+        chap_data = supabase.table("chapters").select("id, name, subject, class_level").eq("id", chapter_id).execute()
         if chap_data.data:
             c = chap_data.data[0]
+            valid_chap_id = c["id"]
             subj = (c.get("subject") or "").capitalize()
             cls = c.get("class_level")
             chapter_name = f"{c['name']}, Class {cls} {subj}" if cls and subj else c['name']
+        else:
+            sub_res = supabase.table("subtopic_index").select("chapter_id, subtopic").eq("id", chapter_id).execute()
+            if sub_res.data:
+                valid_chap_id = sub_res.data[0]["chapter_id"]
+                chapter_name = sub_res.data[0]["subtopic"]
 
     sess_res = supabase.table("drona_sessions").insert([{
         "user_id": user_id,
-        "chapter_id": chapter_id if len(chapter_id) == 36 else None,
-        "mode": "chapter" if len(chapter_id) == 36 else "free_text",
+        "chapter_id": valid_chap_id,
+        "mode": "chapter" if valid_chap_id else "free_text",
         "language": language,
         "phase": "scoping",
         "prompt_version": "v1.0"
