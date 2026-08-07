@@ -334,6 +334,8 @@ async def process_tutor_turn_stream(
         board_payload = {"events": sanitized_board_events}
         assert_no_forbidden_keys(board_payload)
         yield f"event: board_events\ndata: {json.dumps(board_payload)}\n\n"
+    elif turn_type in ("teaching", "answer"):
+        logger.warning(f"⚠️ [PROMPT VIOLATION] Teaching turn in session {session_id} emitted 0 board_events! Tutor LLM omitted board_events array.")
 
     question_type = parsed_json.get("question_type")
     check_options = parsed_json.get("check_options") or []

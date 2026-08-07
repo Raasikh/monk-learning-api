@@ -79,18 +79,27 @@ def repair_json_escapes(text: str) -> str:
     pattern = re.compile(r'(?<!\\)\\(?!["\\])')
     return pattern.sub(r'\\\\', text)
 
-def sanitize_double_escaped_latex(obj: Any) -> Any:
+def sanitize_double_escaped_latex(obj: Any, count_acc: Optional[List[int]] = None) -> Any:
     """Recursively cleans double-escaped backslashes (\\\\\\\\) in parsed plan JSON strings."""
+    is_top_level = False
+    if count_acc is None:
+        count_acc = [0]
+        is_top_level = True
+
+    res_obj = obj
     if isinstance(obj, dict):
-        return {k: sanitize_double_escaped_latex(v) for k, v in obj.items()}
+        res_obj = {k: sanitize_double_escaped_latex(v, count_acc) for k, v in obj.items()}
     elif isinstance(obj, list):
-        return [sanitize_double_escaped_latex(v) for v in obj]
+        res_obj = [sanitize_double_escaped_latex(v, count_acc) for v in obj]
     elif isinstance(obj, str):
         if "\\\\" in obj:
-            logger.warning(f"⚠️ [DOUBLE ESCAPE DETECTED] Found double-escaped backslashes in JSON string: '{obj[:60]}...' -> sanitizing.")
-            return obj.replace("\\\\", "\\")
-        return obj
-    return obj
+            count_acc[0] += 1
+            res_obj = obj.replace("\\\\", "\\")
+
+    if is_top_level and count_acc[0] > 0:
+        logger.warning(f"⚠️ [DOUBLE ESCAPE SANITIZED] Cleaned {count_acc[0]} double-escaped LaTeX fields in lesson plan payload.")
+
+    return res_obj
 
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""

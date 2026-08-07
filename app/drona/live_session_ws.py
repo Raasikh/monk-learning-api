@@ -378,21 +378,23 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     if utterance_text:
                         await execute_turn_pipeline(utterance_text=utterance_text, turn_type="answer")
 
-    except (WebSocketDisconnect, RuntimeError) as disconnect_err:
+    except WebSocketDisconnect as disconnect_err:
         logger.info(f"[WS DISCONNECT CLEANUP] Session {session_id} WebSocket client disconnected cleanly: {disconnect_err}")
         state.is_active = False
         stt_task.cancel()
         stt_proxy.close()
-        total_mute = state.get_total_mute_sec()
+    except Exception as unhandled_err:
+        logger.error(f"❌ [UNHANDLED ASGI WEBSOCKET EXCEPTION] Session {session_id}: {unhandled_err}", exc_info=True)
+        state.is_active = False
+        stt_task.cancel()
+        stt_proxy.close()
         try:
-            supabase.table('drona_sessions').update({
-                'stt_seconds': round(state.stt_seconds, 2),
-                'tts_characters': state.tts_characters,
-                'reconnect_count': state.reconnect_count + 1
-            }).eq('id', session_id).execute()
-        except Exception as e:
-            logger.warning(f"Telemetry update on disconnect: {e}")
-            logger.error(f"Telemetry update error on disconnect: {e}")
+            await websocket.send_json({
+                "type": "error",
+                "message": f"Server Error: {str(unhandled_err)}"
+            })
+        except Exception:
+            pass
     finally:
         stt_task.cancel()
         stt_proxy.close()
