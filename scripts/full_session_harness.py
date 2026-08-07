@@ -239,7 +239,8 @@ class FullSessionHarness:
                             self.current_segment = extracted_seg
                         print(f"  [STATE FRAME] Segment {self.current_segment}/{self.segment_count} | Phase: {self.current_phase}", flush=True)
 
-                        if self.current_phase == "scoping":
+                        if not getattr(self, 'initial_trigger_sent', False) and self.current_phase not in ("wrapup", "complete"):
+                            self.initial_trigger_sent = True
                             print("  🚀 [INITIAL TURN TRIGGER] Sending initial utterance to start teaching phase...", flush=True)
                             await ws.send(json.dumps({"type": "utterance", "text": "Begin lesson"}))
 
