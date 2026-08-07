@@ -292,12 +292,32 @@ async def process_tutor_turn_stream(
     history_entry = f"S{curr_seg_idx} {phase_in}: {first_words}"
     updated_history = (history + [history_entry])[-10:]
 
-    # 8. UPDATE drona_sessions
+    # Evaluate turn violations for persistence in drona_turns.violations
+    board_events = parsed_json.get("board_events", [])
+    board_cnt = len(board_events)
+    word_cnt = len(speech_out.split())
+
+    rule_violations = {
+        "zero_board_events": 1 if board_cnt == 0 and phase_in == "teaching" else 0,
+        "under_density": 1 if board_cnt > 0 and board_cnt < 6 else 0,
+        "over_density": 1 if board_cnt > 12 else 0,
+        "missing_options": 1 if parsed_json.get("phase_request") == "awaiting_answer" and not parsed_json.get("check_options") else 0,
+        "word_count_exceeded": 1 if word_cnt > 120 else 0,
+        "raw_latex_in_text": 1 if any(pat in speech_out for pat in ["\\frac", "\\sqrt", "$$", "^", "_"]) else 0
+    }
+
+    # 8. UPDATE drona_sessions with persistent telemetry
+    pool = RumikConnectionPool.get_instance()
+    ended_reason_val = "complete" if next_phase in ("wrapup", "complete") else None
+
     supabase.table("drona_sessions").update({
         "phase": next_phase,
         "current_segment": next_seg,
         "attempts_on_current_question": next_attempts,
-        "history_summary": updated_history
+        "history_summary": updated_history,
+        "segments_completed": curr_seg_idx if seg_advanced else curr_seg_idx - 1,
+        "pool_exhaustion_count": pool.pool_exhaustion_count,
+        "ended_reason": ended_reason_val
     }).eq("id", session_id).execute()
 
     # 9. Get turn count and INSERT into drona_turns
@@ -314,7 +334,11 @@ async def process_tutor_turn_stream(
         "grade": grade_out,
         "input_tokens": input_tokens,
         "cache_hit_tokens": cache_hit_tokens,
-        "output_tokens": output_tokens
+        "output_tokens": output_tokens,
+        "board_event_count": board_cnt,
+        "rumik_requests": len(split_into_sentences(speech_out)),
+        "rumik_chars": len(speech_out),
+        "violations": rule_violations
     }
     if turn_failed:
         turn_data["turn_failed"] = True

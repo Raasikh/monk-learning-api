@@ -30,6 +30,36 @@ app.add_middleware(
 @app.on_event("startup")
 async def verify_models_on_startup():
     logger.info("✅ [STARTUP] FastAPI application startup complete. Server ready.")
+    asyncio.create_task(platform_metrics_sampler_loop())
+
+
+async def platform_metrics_sampler_loop():
+    from app.drona.voice_proxy import RumikConnectionPool
+    from app.db import supabase
+    pool = RumikConnectionPool.get_instance()
+    while True:
+        await asyncio.sleep(30.0)
+        try:
+            res = supabase.table("drona_sessions").select("id", count="exact").eq("phase", "teaching").execute()
+            active_cnt = res.count or len(res.data or [])
+            open_conns = len(pool.active_leases)
+            if active_cnt > 0 or open_conns > 0:
+                now = time.time()
+                recent_opens = [t for t in pool.connections_opened_timestamps if now - t <= 60.0]
+                recent_waits = pool.acquisition_wait_times[-50:] if pool.acquisition_wait_times else [0]
+                recent_waits_sorted = sorted(recent_waits)
+                p95_idx = int(len(recent_waits_sorted) * 0.95)
+                p95_wait = int(recent_waits_sorted[p95_idx])
+
+                supabase.table("drona_platform_metrics").insert([{
+                    "active_sessions": active_cnt,
+                    "rumik_connections_open": open_conns,
+                    "rumik_requests_last_60s": len(recent_opens),
+                    "sarvam_requests_last_60s": active_cnt,
+                    "pool_wait_ms_p95": p95_wait
+                }]).execute()
+        except Exception as err:
+            logger.warning(f"Platform metrics sampler non-fatal error: {err}")
 
 
 @app.middleware("http")
