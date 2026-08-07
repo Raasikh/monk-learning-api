@@ -273,8 +273,8 @@ class FullSessionHarness:
                                         except Exception:
                                             pass
 
-                                        if self.last_check_options and len(self.last_check_options) > 0:
-                                            ans_text = self.last_check_options[0]
+                                        if hasattr(self, 'check_options') and self.check_options and len(self.check_options) > 0:
+                                            ans_text = self.check_options[0]
 
                                         print(f"  ⚡ [STANDARD CORRECT] Submitting answer for Segment #{self.current_segment}: '{ans_text[:60]}'", flush=True)
                                         await ws.send(json.dumps({"type": "utterance", "text": ans_text}))
