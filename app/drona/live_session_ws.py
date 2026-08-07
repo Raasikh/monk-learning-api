@@ -95,6 +95,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         speech_buffer = ""
         chunks_sent = 0
         total_audio_bytes = 0
+        turn_board_events = []
 
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")
@@ -110,7 +111,13 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     except Exception:
                         pass
 
-            if event_type == "speech":
+            if event_type == "board_events":
+                turn_board_events = data_payload.get("events", [])
+                out_msg = {"type": "board_events", "events": turn_board_events}
+                assert_no_forbidden_keys(out_msg)
+                await websocket.send_json(out_msg)
+
+            elif event_type == "speech":
                 delta = data_payload.get("delta", "")
                 speech_buffer += delta
 
@@ -124,13 +131,21 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             try:
                                 audio_bytes = await tts_proxy.synthesize_text(clean_text)
                                 b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
+                                chunks_sent += 1
+
+                                # Match board event for this sentence index (seq)
+                                matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
+                                if not matching_evt and chunks_sent <= len(turn_board_events):
+                                    matching_evt = turn_board_events[chunks_sent - 1]
+
                                 out_msg = {
                                     "type": "audio_chunk",
+                                    "sentence_index": chunks_sent,
                                     "audio": b64_audio,
-                                    "speech": clean_text
+                                    "speech": clean_text,
+                                    "board_event": matching_evt
                                 }
                                 assert_no_forbidden_keys(out_msg)
-                                chunks_sent += 1
                                 total_audio_bytes += len(audio_bytes)
                                 await websocket.send_json(out_msg)
 
@@ -203,6 +218,17 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             logger.info(f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames ({total_audio_bytes} total PCM bytes) for session {session_id}")
 
         await websocket.send_json({"type": "turn_complete"})
+
+        # BUG 2 FIX: Automatically fire teaching turn for next segment when current segment completes
+        try:
+            sess_res = supabase.table('drona_sessions').select('phase, current_segment').eq('id', session_id).single().execute()
+            if sess_res.data:
+                curr_phase = sess_res.data.get('phase')
+                if curr_phase == 'teaching' and state_data.get('segment_complete'):
+                    logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Segment complete. Automatically firing teaching turn for Segment #{sess_res.data.get('current_segment')}...")
+                    await execute_turn_pipeline(utterance_text="", turn_type="teaching")
+        except Exception as auto_adv_err:
+            logger.warning(f"Auto-segment advance check skipped: {auto_adv_err}")
 
     # W2 Fix: Callback for Saaras STT transcript streaming
     def handle_stt_transcript(raw_t: str, norm_t: str, is_final: bool, confidence: float):
