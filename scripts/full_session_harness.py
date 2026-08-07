@@ -185,14 +185,25 @@ class FullSessionHarness:
                         # Check DB state for current phase & segment if WS is quiet
                         try:
                             sp_url = "https://tgbknrmnjwiokraddurx.supabase.co"
-                            sp_key = os.getenv("SUPABASE_SECRET_KEY", "")
+                            sp_key = os.getenv("SUPABASE_SECRET_KEY", "").strip()
+                            if not sp_key:
+                                try:
+                                    from dotenv import dotenv_values
+                                    env_vals = dotenv_values('/Users/raasikhnaveed/Desktop/dronav1project/.env')
+                                    sp_key = env_vals.get("SUPABASE_SECRET_KEY", "").strip()
+                                except Exception:
+                                    pass
                             sp_h = {"apikey": sp_key, "Authorization": f"Bearer {sp_key}"}
-                            s_db = requests.get(f"{sp_url}/rest/v1/drona_sessions?select=phase,current_segment&id=eq.{self.session_id}", headers=sp_h).json()
-                            if s_db:
-                                db_ph = s_db[0].get("phase")
-                                db_sg = s_db[0].get("current_segment")
-                                if db_ph: self.current_phase = db_ph
-                                if db_sg: self.current_segment = db_sg
+                            s_res = requests.get(f"{sp_url}/rest/v1/drona_sessions?select=phase,current_segment,check_options&id=eq.{self.session_id}", headers=sp_h)
+                            if s_res.status_code == 200:
+                                s_db = s_res.json()
+                                if isinstance(s_db, list) and len(s_db) > 0:
+                                    db_ph = s_db[0].get("phase")
+                                    db_sg = s_db[0].get("current_segment")
+                                    db_opts = s_db[0].get("check_options") or []
+                                    if db_opts: self.check_options = db_opts
+                                    if db_ph: self.current_phase = db_ph
+                                    if db_sg: self.current_segment = db_sg
 
                                 if self.current_phase in ("wrapup", "complete"):
                                     print(f"  🎉 [{subj.upper()} SUCCESS] Session reached final phase: '{self.current_phase}'!", flush=True)
