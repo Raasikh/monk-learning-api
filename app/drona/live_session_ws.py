@@ -252,7 +252,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 curr_phase = sess_res.data.get('phase')
                 if curr_phase == 'teaching':
                     logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Phase is teaching for Segment #{sess_res.data.get('current_segment')}. Automatically firing teaching turn...")
-                    await execute_turn_pipeline(utterance_text="", turn_type="teaching")
+                    launch_background_turn(utterance_text="", turn_type="teaching")
         except Exception as auto_adv_err:
             logger.warning(f"Auto-segment advance check skipped: {auto_adv_err}")
 
@@ -273,7 +273,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 "confidence": confidence
             }))
             # Automatically fire turn pipeline on final STT transcript
-            asyncio.create_task(execute_turn_pipeline(utterance_text=norm_t, turn_type="answer"))
+            launch_background_turn(utterance_text=norm_t, turn_type="answer")
 
     # W2 Fix: Audio stream generator feeding SaarasSTTProxy
     async def audio_stream_generator():
@@ -291,14 +291,41 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         on_barge_in=lambda: None
     ))
 
-    # PTT PCM Buffer state
-    is_ptt_active = False
-    ptt_pcm_chunks = []
+    active_turn_tasks = set()
+
+    def launch_background_turn(utterance_text: str, turn_type: str = "answer"):
+        """Launches execute_turn_pipeline as a background task with held reference and 20s heartbeat."""
+        async def _turn_runner():
+            hb_task = None
+            try:
+                # 20s Heartbeat task while turn is executing
+                async def _heartbeat_loop():
+                    try:
+                        while True:
+                            await asyncio.sleep(20.0)
+                            if state.is_active:
+                                logger.info(f"💓 [APPLICATION HEARTBEAT] Sending 20s ping frame for session {session_id}...")
+                                await websocket.send_json({"type": "ping", "heartbeat": True})
+                    except asyncio.CancelledError:
+                        pass
+
+                hb_task = asyncio.create_task(_heartbeat_loop())
+                await execute_turn_pipeline(utterance_text=utterance_text, turn_type=turn_type)
+            except Exception as turn_err:
+                logger.error(f"❌ [BACKGROUND TURN ERROR] Session {session_id}: {turn_err}")
+            finally:
+                if hb_task and not hb_task.done():
+                    hb_task.cancel()
+
+        t_task = asyncio.create_task(_turn_runner())
+        active_turn_tasks.add(t_task)
+        t_task.add_done_callback(active_turn_tasks.discard)
+        return t_task
 
     # Auto-trigger turn 1 teaching if session is in teaching phase upon connect
     if session_data['phase'] == 'teaching':
         logger.info(f"🚀 [WS CONNECT AUTO-START] Triggering turn 1 teaching for Segment #{session_data['current_segment']}...")
-        asyncio.create_task(execute_turn_pipeline(utterance_text="", turn_type="teaching"))
+        launch_background_turn(utterance_text="", turn_type="teaching")
 
     try:
         while state.is_active:
@@ -359,7 +386,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 "type": "transcript_final",
                                 "transcript": norm_t
                             })
-                            await execute_turn_pipeline(utterance_text=norm_t, turn_type="answer")
+                            launch_background_turn(utterance_text=norm_t, turn_type="answer")
 
                 elif control_type == "mute":
                     state.on_mute()
@@ -373,7 +400,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     state.current_playback_pos = data.get("playback_position", 0)
                     cutoff_text = data.get("cutoff_text", "")
                     state.playback_cutoff_point = cutoff_text
-                    await execute_turn_pipeline(utterance_text="", turn_type="interruption")
+                    launch_background_turn(utterance_text="", turn_type="interruption")
 
                 elif control_type == "playback_position":
                     state.current_playback_pos = data.get("position", 0)
@@ -392,7 +419,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             continue
 
                     if utterance_text:
-                        await execute_turn_pipeline(utterance_text=utterance_text, turn_type="answer")
+                        launch_background_turn(utterance_text=utterance_text, turn_type="answer")
 
     except WebSocketDisconnect as disconnect_err:
         logger.info(f"[WS DISCONNECT CLEANUP] Session {session_id} WebSocket client disconnected cleanly: {disconnect_err}")

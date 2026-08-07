@@ -57,11 +57,8 @@ def compute_next_session_state(
                     return "wrapup", current_segment, 0, True, True
                 return "teaching", next_seg, 0, True, True
         else:
-            # Fallback if grade is absent/unrecognized during awaiting_answer: default to correct & advance segment
-            next_seg = current_segment + 1
-            if next_seg > total_segments:
-                return "wrapup", current_segment, 0, True, False
-            return "teaching", next_seg, 0, True, False
+            # Reverted: An unparsed/absent grade must NEVER default to correct or advance segment.
+            return current_phase, current_segment, attempts, False, False
 
     # 3. State: Teaching
     if current_phase == "teaching":
