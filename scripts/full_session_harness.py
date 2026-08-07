@@ -349,6 +349,8 @@ class FullSessionHarness:
             "created_at": self.created_at,
             "reached_phase": self.current_phase,
             "reached_segment": f"{self.current_segment}/{self.segment_count}",
+            "turns": self.turns_executed,
+            "duration_seconds": total_dur,
             "complete": self.current_phase in ("wrapup", "complete"),
             "board_events": self.per_segment_board_stats,
             "violations": self.violations
@@ -370,19 +372,17 @@ async def run_all_harnesses():
         res_std = await harness_std.run()
         results.append(res_std)
 
-        # Wrong Answer Retry Run
-        harness_wrong = FullSessionHarness(spec, wrong_answer_variant=True, jwt_token=jwt_token)
-        res_wrong = await harness_wrong.run()
-        results.append(res_wrong)
-
-    print("\n=================================================================", flush=True)
-    print("                      FINAL HARNESS SUMMARY MATRIX", flush=True)
-    print("=================================================================", flush=True)
-    print(f"{'Subject':<10} | {'Variant':<16} | {'Plan Created At':<28} | {'Planner Latency':<15} | {'Reached':<10} | {'Phase Complete?':<16}", flush=True)
-    print("-" * 110, flush=True)
+    print("\n========================================================================================================================", flush=True)
+    print("                                     FINAL 4-SUBJECT PRODUCTION HARNESS MATRIX", flush=True)
+    print("========================================================================================================================", flush=True)
+    print(f"{'Subject':<10} | {'Reached seg':<11} | {'Phase':<10} | {'Turns':<6} | {'Duration':<9} | {'Board events per segment':<35} | {'Violations':<10}", flush=True)
+    print("-" * 120, flush=True)
     for r in results:
-        status_txt = "YES ✓" if r["complete"] else "NO ❌"
-        print(f"{r['subject']:<10} | {r['variant']:<16} | {str(r['created_at'])[:28]:<28} | {r['planner_latency']:<15} | {r['reached_segment']:<10} | {status_txt:<16}", flush=True)
+        dur_str = f"{int(r['duration_seconds'] // 60)}m{int(r['duration_seconds'] % 60):02d}s"
+        total_viols = sum(r["violations"].values())
+        b_str = str(r["board_events"])
+        if len(b_str) > 35: b_str = b_str[:32] + "..."
+        print(f"{r['subject']:<10} | {r['reached_segment']:<11} | {r['reached_phase']:<10} | {r['turns']:<6} | {dur_str:<9} | {b_str:<35} | {total_viols:<10}", flush=True)
 
 
 if __name__ == "__main__":
