@@ -253,7 +253,8 @@ class FullSessionHarness:
                                     print(f"  🎉 [{subj.upper()} SUCCESS] Session reached final phase: '{db_phase}'!", flush=True)
                                     break
                                 
-                                if db_phase == "awaiting_answer":
+                                if db_phase == "awaiting_answer" and not getattr(self, 'answered_current_await', False):
+                                    self.answered_current_await = True
                                     if self.wrong_answer_variant:
                                         self.attempts_on_current_question += 1
                                         if self.attempts_on_current_question > 2:
@@ -280,6 +281,10 @@ class FullSessionHarness:
 
                                         print(f"  ⚡ [STANDARD CORRECT] Submitting answer for Segment #{self.current_segment}: '{ans_text[:60]}'", flush=True)
                                         await ws.send(json.dumps({"type": "utterance", "text": ans_text}))
+                                
+                                if db_phase != "awaiting_answer":
+                                    self.answered_current_await = False
+
                         except Exception as check_err:
                             print(f"  (DB check error: {check_err})", flush=True)
 
