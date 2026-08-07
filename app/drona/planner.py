@@ -17,8 +17,8 @@ def validate_plan_json(data: Dict[str, Any]) -> None:
     if not isinstance(segments, list):
         raise ValueError("Plan missing 'segments' array")
 
-    if not (2 <= len(segments) <= 6):
-        raise ValueError(f"Segment count must be between 2 and 6, got {len(segments)}")
+    if not (6 <= len(segments) <= 9):
+        raise ValueError(f"Segment count must be between 6 and 9, got {len(segments)}")
 
     for idx, seg in enumerate(segments, 1):
         if not isinstance(seg, dict):
@@ -79,6 +79,19 @@ def repair_json_escapes(text: str) -> str:
     pattern = re.compile(r'(?<!\\)\\(?!["\\])')
     return pattern.sub(r'\\\\', text)
 
+def sanitize_double_escaped_latex(obj: Any) -> Any:
+    """Recursively cleans double-escaped backslashes (\\\\\\\\) in parsed plan JSON strings."""
+    if isinstance(obj, dict):
+        return {k: sanitize_double_escaped_latex(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [sanitize_double_escaped_latex(v) for v in obj]
+    elif isinstance(obj, str):
+        if "\\\\" in obj:
+            logger.warning(f"⚠️ [DOUBLE ESCAPE DETECTED] Found double-escaped backslashes in JSON string: '{obj[:60]}...' -> sanitizing.")
+            return obj.replace("\\\\", "\\")
+        return obj
+    return obj
+
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""
     # Lookup chapter name & subtopic title
@@ -125,10 +138,18 @@ Author a complete lesson plan JSON following the instructions in the system prom
 
         raw_response_content = res.choices[0].message.content or ""
         cleaned = strip_fences(raw_response_content)
-        repaired = repair_json_escapes(cleaned)
+
+        # Try raw json.loads FIRST (§2 requirement: execute repair ONLY in exception path)
+        try:
+            plan_json = json.loads(cleaned)
+        except json.JSONDecodeError as decode_err:
+            logger.warning(f"⚠️ [JSON DECODE FAIL] Direct json.loads failed: {decode_err}. Trying repair_json_escapes fallback...")
+            repaired = repair_json_escapes(cleaned)
+            plan_json = json.loads(repaired)
 
         try:
-            plan_json = json.loads(repaired)
+            # Post-parsing validation & double-escape sanitization step
+            plan_json = sanitize_double_escaped_latex(plan_json)
             validate_plan_json(plan_json)
             
             segment_count = len(plan_json["segments"])
