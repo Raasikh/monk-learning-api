@@ -139,8 +139,13 @@ async def process_tutor_turn_stream(
             response_format={"type": "json_object"},
             temperature=0.0,
             max_tokens=2048,
-            stream=False
+            stream=False,
+            extra_body={"thinking": {"type": "disabled"}}
         )
+
+        returned_model = getattr(res, "model", "")
+        if returned_model and returned_model != model_name:
+            raise RuntimeError(f"STRICT R1 MODEL VIOLATION: Requested '{model_name}', but API returned '{returned_model}'")
 
         if res.choices and res.choices[0].message.content:
             raw_response_text = res.choices[0].message.content
@@ -160,8 +165,8 @@ async def process_tutor_turn_stream(
             "phase_request": phase_in
         })
 
-    # Log cache hit tokens (§R4)
-    logger.info(f"TURN LLM CALL: model={model_name}, input={input_tokens}, cache_hit={cache_hit_tokens}, output={output_tokens}")
+    # Log cache hit tokens (§R4) and assert model string (§R1)
+    logger.info(f"TURN LLM CALL: requested_model={model_name}, returned_model={getattr(res, 'model', 'unknown')}, input={input_tokens}, cache_hit={cache_hit_tokens}, output={output_tokens}")
 
     # 5. Parse complete JSON with robustness (§4.4)
     parsed_json = {}
