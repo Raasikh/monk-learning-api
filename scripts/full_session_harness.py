@@ -196,7 +196,7 @@ class FullSessionHarness:
                         self.check_options = msg.get("check_options", [])
                         prev_phase = self.current_phase
                         self.current_phase = msg.get("phase", "scoping")
-                        self.current_segment = msg.get("segment_index", 1)
+                        self.current_segment = msg.get("current_segment") or msg.get("segment_index", 1)
                         print(f"  [STATE FRAME] Segment {self.current_segment}/{self.segment_count} | Phase: {self.current_phase}", flush=True)
 
                         if self.current_phase == "scoping":
