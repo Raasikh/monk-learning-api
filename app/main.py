@@ -30,6 +30,8 @@ app.add_middleware(
 @app.on_event("startup")
 async def verify_models_on_startup():
     logger.info("✅ [STARTUP] FastAPI application startup complete. Server ready.")
+    from app.drona.voice_proxy import FillerAudioCache
+    asyncio.create_task(FillerAudioCache.get_instance().prewarm_all())
     asyncio.create_task(platform_metrics_sampler_loop())
 
 

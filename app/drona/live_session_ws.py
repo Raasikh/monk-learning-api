@@ -155,7 +155,21 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 if skip_tts_flag:
                                     audio_bytes = b"\x00" * 3200
                                 else:
-                                    audio_bytes = await tts_proxy.synthesize_text(clean_text)
+                                    async def _on_filler(filler_pcm: bytes):
+                                        b64_f = base64.b64encode(filler_pcm).decode('utf-8')
+                                        f_msg = {
+                                            "type": "audio_chunk",
+                                            "sentence_id": f"{turn_id}_filler_{int(time.time()*1000)}",
+                                            "audio": b64_f,
+                                            "speech": "Ek second...",
+                                            "board_event": None
+                                        }
+                                        await safe_send_json(f_msg)
+                                        logger.info(f"🔊 [FILLER AUDIO TRANSMITTED] Sent pre-synthesized filler chunk ({len(filler_pcm)} bytes) over WebSocket.")
+
+                                    audio_bytes = await tts_proxy.synthesize_text(
+                                        clean_text, on_filler_cb=_on_filler, segment_index=state.current_segment
+                                    )
                                 b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
                                 chunks_sent += 1
                                 sentence_id = f"{turn_id}_s{chunks_sent}"

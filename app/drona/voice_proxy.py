@@ -6,7 +6,7 @@ import asyncio
 import base64
 import logging
 import requests
-from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple
+from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple, Any
 import websockets
 
 logger = logging.getLogger("drona.voice_proxy")
@@ -447,15 +447,107 @@ class RumikTurnLease:
         return time.time() - self.start_time
 
 
-class RumikConnectionPool:
-    """Connection Pool for Rumik Silk TTS with Per-Turn Leases & 4s Grace Period.
-    - Max 50 active leased slots.
-    - Leased per turn across sentence 1..N.
-    - 4s grace period idle timer after last sentence of turn before releasing slot.
-    - 3s queue timeout on pool exhaustion with 'ek second…' fallback.
-    - 100-300ms jitter and exponential backoff on connection opens.
-    - Continuous instrumentation telemetry (held connections, opens/sec, wait times)."""
+FEMALE_FILLER_PHRASES = [
+    "Ek second, soch rahi hoon…",
+    "Ruko zara, main dekh rahi hoon…",
+    "Hmm, ek minute…"
+]
 
+MALE_FILLER_PHRASES = [
+    "Ek second, soch raha hoon…",
+    "Ruko zara, main dekh raha hoon…",
+    "Hmm, ek minute…"
+]
+
+class FillerAudioCache:
+    """Pre-synthesizes filler audio phrases at startup and caches raw PCM bytes in memory.
+    Zero runtime synthesis requests for filler audio."""
+    _instance = None
+    _lock = asyncio.Lock()
+
+    def __init__(self):
+        self.cache: Dict[str, List[bytes]] = {}
+        self.is_prewarmed = False
+
+    @classmethod
+    def get_instance(cls) -> "FillerAudioCache":
+        if cls._instance is None:
+            cls._instance = FillerAudioCache()
+        return cls._instance
+
+    async def prewarm_all(self):
+        """Synthesizes all female & male filler phrases once on server boot."""
+        if self.is_prewarmed:
+            return
+
+        logger.info("🎙️ [FILLER AUDIO PREWARM] Pre-synthesizing filler audio cache for zero-latency rate limit handling...")
+        
+        # Female presets: Ira, Veda
+        for v in ["Ira", "Veda"]:
+            self.cache[v] = []
+            for phrase in FEMALE_FILLER_PHRASES:
+                pcm = await self._synthesize_direct(phrase, v)
+                self.cache[v].append(pcm)
+
+        # Male presets: Lucas, Drona
+        for v in ["Lucas", "Drona"]:
+            self.cache[v] = []
+            for phrase in MALE_FILLER_PHRASES:
+                pcm = await self._synthesize_direct(phrase, v)
+                self.cache[v].append(pcm)
+
+        self.is_prewarmed = True
+        logger.info(f"✅ [FILLER AUDIO PREWARM] Pre-synthesized & cached filler audio across {len(self.cache)} voice presets in memory!")
+
+    async def _synthesize_direct(self, text: str, voice_preset: str) -> bytes:
+        """Direct synthesis without recursion for boot pre-warming."""
+        import json, asyncio
+        try:
+            pool = RumikConnectionPool.get_instance()
+            lease, is_ex = await pool.acquire_lease("boot_prewarm", voice_preset, "mulberry")
+            if lease and lease.ws:
+                await lease.ws.send(json.dumps({"text": text, "speaker": voice_preset}))
+                buf = bytearray()
+                while True:
+                    msg = await asyncio.wait_for(lease.ws.recv(), timeout=6.0)
+                    if isinstance(msg, bytes):
+                        buf.extend(msg)
+                    elif isinstance(msg, str):
+                        d = json.loads(msg)
+                        if d.get("type") in ("done", "complete", "finish", "end"):
+                            break
+                await pool.release_lease("boot_prewarm", immediate=True)
+                if len(buf) > 0:
+                    return bytes(buf)
+        except Exception as e:
+            logger.warning(f"⚠️ [FILLER PREWARM WARN] Could not pre-synthesize '{text}' for '{voice_preset}': {e}")
+        
+        # Silent 24kHz PCM fallback (zero runtime requests)
+        return b"\x00" * 57600
+
+    def get_random_filler(self, voice_preset: str, exclude_idx: Optional[int] = None) -> Tuple[int, bytes]:
+        """Returns (index, pcm_bytes) of a cached filler phrase in memory for zero-request delivery."""
+        import random
+        phrases_pcm = self.cache.get(voice_preset)
+        if not phrases_pcm:
+            if voice_preset in ("Lucas", "Drona"):
+                phrases_pcm = self.cache.get("Lucas") or self.cache.get("Drona")
+            else:
+                phrases_pcm = self.cache.get("Ira") or self.cache.get("Veda")
+
+        if not phrases_pcm:
+            return 0, b"\x00" * 48000
+
+        indices = [i for i in range(len(phrases_pcm)) if i != exclude_idx]
+        if not indices:
+            indices = list(range(len(phrases_pcm)))
+
+        chosen_idx = random.choice(indices)
+        return chosen_idx, phrases_pcm[chosen_idx]
+
+
+class RumikConnectionPool:
+    """Connection Pool for Rumik Silk TTS with Per-Turn Leases & 4s Grace Period."""
     _instance = None
 
     def __init__(self, max_slots: int = 50):
@@ -463,7 +555,6 @@ class RumikConnectionPool:
         self.semaphore = asyncio.Semaphore(max_slots)
         self.active_leases: Dict[str, RumikTurnLease] = {}
         
-        # Telemetry metrics counters
         self.concurrent_held_history: List[int] = []
         self.connections_opened_timestamps: List[float] = []
         self.lease_durations: List[float] = []
@@ -477,9 +568,12 @@ class RumikConnectionPool:
             cls._instance = RumikConnectionPool(max_slots=50)
         return cls._instance
 
+    def get_requests_in_last_60s(self) -> int:
+        now = time.time()
+        cutoff = now - 60.0
+        return sum(1 for ts in self.connections_opened_timestamps if ts >= cutoff)
+
     async def acquire_lease(self, session_id: str, voice_preset: str = "Ira", model: str = "mulberry") -> Tuple[Optional[RumikTurnLease], bool]:
-        """Acquires or reuses a leased connection slot for a teaching turn.
-        Returns (lease_object, is_exhausted_fallback)."""
         t0 = time.time()
         
         async with self.lock:
@@ -527,7 +621,6 @@ class RumikConnectionPool:
         return lease, False
 
     async def _open_connection_with_jitter(self, voice_preset: str, model: str) -> Optional[websockets.WebSocketClientProtocol]:
-        """Opens a new Rumik WebSocket with 100-300ms jitter and exponential backoff retry."""
         import random, requests
         jitter = random.uniform(0.1, 0.3)
         await asyncio.sleep(jitter)
@@ -568,7 +661,6 @@ class RumikConnectionPool:
         return None
 
     async def release_lease(self, session_id: str, immediate: bool = False):
-        """Triggers 4s grace period timer or immediately releases connection lease."""
         async with self.lock:
             if session_id not in self.active_leases:
                 return
@@ -604,18 +696,44 @@ class RumikTTSProxy:
         self.lock = asyncio.Lock()
 
     async def prewarm(self):
-        """Pre-warms connection lease via pool without sending synthesis payload."""
         pool = RumikConnectionPool.get_instance()
         await pool.acquire_lease(self.session_id, self.voice_preset, self.model)
 
-    async def synthesize_text(self, text: str) -> bytes:
-        """Synthesizes text using per-turn leased WebSocket from pool.
-        Guarded by asyncio.Lock to ensure serialized sentence delivery."""
+    async def synthesize_text(
+        self,
+        text: str,
+        on_filler_cb: Optional[Any] = None,
+        segment_index: int = 1
+    ) -> bytes:
+        """Synthesizes text using per-turn leased WebSocket from pool with zero-gap rate-limit fillers."""
         text = sanitize_tts_phonetics(text)
         async with self.lock:
-            return await self._synthesize_text_locked(text)
+            return await self._synthesize_text_locked(
+                text, attempt=1, on_filler_cb=on_filler_cb, segment_index=segment_index
+            )
 
-    async def _synthesize_text_locked(self, text: str, attempt: int = 1) -> bytes:
+    def _record_rate_limit_hit_async(self):
+        """Asynchronously increments rate_limit_hits in drona_sessions."""
+        try:
+            async def _update():
+                s_res = supabase.table("drona_sessions").select("rate_limit_hits").eq("id", self.session_id).execute()
+                current_hits = 0
+                if s_res.data and len(s_res.data) > 0 and s_res.data[0].get("rate_limit_hits") is not None:
+                    current_hits = s_res.data[0]["rate_limit_hits"]
+                supabase.table("drona_sessions").update({
+                    "rate_limit_hits": current_hits + 1
+                }).eq("id", self.session_id).execute()
+            asyncio.create_task(_update())
+        except Exception as e:
+            logger.warning(f"Failed to record rate limit hit in drona_sessions: {e}")
+
+    async def _synthesize_text_locked(
+        self,
+        text: str,
+        attempt: int = 1,
+        on_filler_cb: Optional[Any] = None,
+        segment_index: int = 1
+    ) -> bytes:
         self.connection_count += 1
         t0 = time.time()
 
@@ -623,24 +741,15 @@ class RumikTTSProxy:
         lease, is_exhausted = await pool.acquire_lease(self.session_id, self.voice_preset, self.model)
 
         if is_exhausted or lease is None:
-            logger.warning(f"⚠️ [RUMIK POOL EXHAUSTION FALLBACK] Surfacing brief 'ek second...' phrase for text='{text[:30]}...'")
-            # Synthesize fallback phrase quickly or return fast PCM
-            fallback_text = "Ek second..."
-            lease_fallback, _ = await pool.acquire_lease(f"fallback_{self.session_id}", self.voice_preset, self.model)
-            if lease_fallback and lease_fallback.ws:
+            logger.warning(f"⚠️ [RUMIK POOL EXHAUSTION FALLBACK] Surfacing cached filler phrase for text='{text[:30]}...'")
+            filler_cache = FillerAudioCache.get_instance()
+            _, filler_pcm = filler_cache.get_random_filler(self.voice_preset)
+            if on_filler_cb:
                 try:
-                    await lease_fallback.ws.send(json.dumps({"text": fallback_text, "speaker": self.voice_preset}))
-                    fb_bytes = bytearray()
-                    while True:
-                        msg = await asyncio.wait_for(lease_fallback.ws.recv(), timeout=5.0)
-                        if isinstance(msg, bytes): fb_bytes.extend(msg)
-                        elif isinstance(msg, str) and json.loads(msg).get("type") in ("done", "complete", "finish", "end"): break
-                    if len(fb_bytes) > 0:
-                        return bytes(fb_bytes)
+                    await on_filler_cb(filler_pcm)
                 except Exception:
                     pass
-            # Final fallback: generate 1000ms silent 24kHz PCM bytes (NEVER 0 bytes!)
-            return b"\x00" * 48000
+            return filler_pcm
 
         ws = lease.ws
         pcm_bytes = bytearray()
@@ -665,29 +774,65 @@ class RumikTTSProxy:
                             logger.info(f"[RUMIK WS DONE FRAME] Sentence #{self.connection_count} complete")
                             break
                         elif data.get("code") == "RATE_LIMITED" or data.get("error"):
-                            retry_after = float(data.get("retry_after", 3.0))
-                            logger.warning(f"[RUMIK RATE LIMITED] Sleeping {retry_after}s...")
-                            await asyncio.sleep(retry_after + 0.5)
+                            retry_after = float(data.get("retry_after", 5.0))
+                            reqs_60s = pool.get_requests_in_last_60s()
+
+                            logger.warning(
+                                f"🚨 [RUMIK RATE LIMITED] session={self.session_id} | seg={segment_index} | "
+                                f"retry_after={retry_after}s | req_last_60s={reqs_60s} | attempt={attempt}/3"
+                            )
+
+                            self._record_rate_limit_hit_async()
+                            filler_cache = FillerAudioCache.get_instance()
+
+                            # 1. Play first cached filler immediately (0 requests, no gap!)
+                            idx1, filler1_pcm = filler_cache.get_random_filler(self.voice_preset)
+                            if on_filler_cb:
+                                try:
+                                    await on_filler_cb(filler1_pcm)
+                                except Exception:
+                                    pass
+
+                            # 2. Smart mid-wait filler: if retry_after > 15s, play second filler mid-way
+                            if retry_after > 15.0:
+                                await asyncio.sleep(10.0)
+                                idx2, filler2_pcm = filler_cache.get_random_filler(self.voice_preset, exclude_idx=idx1)
+                                logger.info(f"⏳ [RUMIK MID-WAIT FILLER] Playing 2nd filler for session {self.session_id[:8]} (retry_after={retry_after}s)")
+                                if on_filler_cb:
+                                    try:
+                                        await on_filler_cb(filler2_pcm)
+                                    except Exception:
+                                        pass
+                                await asyncio.sleep(max(0.1, retry_after - 10.0 + 0.5))
+                            else:
+                                await asyncio.sleep(retry_after + 0.5)
+
+                            # 3. Retry synthesis (up to 3 attempts)
                             if attempt < 3:
-                                return await self._synthesize_text_locked(text, attempt=attempt+1)
-                            raise RuntimeError(f"Rumik TTS Rate Limited: {data.get('message')}")
+                                await pool.release_lease(self.session_id, immediate=True)
+                                return await self._synthesize_text_locked(
+                                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index
+                                )
+
+                            raise RuntimeError(f"Rumik TTS Rate Limited (Attempt {attempt}/3): {data.get('message') or 'Rate limit exceeded'}")
                 except asyncio.TimeoutError:
                     logger.warning(f"[RUMIK WS TIMEOUT] ws.recv() timed out for text='{text[:30]}...'")
                     break
 
         except Exception as ws_err:
             logger.warning(f"[RUMIK WS ERROR] Exception during synthesis: {ws_err}")
-            # Invalidate lease on socket error
             await pool.release_lease(self.session_id, immediate=True)
-            if attempt < 2:
-                return await self._synthesize_text_locked(text, attempt=attempt+1)
+            if attempt < 3:
+                return await self._synthesize_text_locked(
+                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index
+                )
             raise RuntimeError(sanitize_secret(str(ws_err)))
 
-        # Rule 2: Zero bytes MUST raise error — never treat 0 bytes as success!
         if len(pcm_bytes) == 0:
-            if attempt < 2:
-                return await self._synthesize_text_locked(text, attempt=attempt+1)
-            # Return silent PCM fallback rather than 0 bytes
+            if attempt < 3:
+                return await self._synthesize_text_locked(
+                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index
+                )
             return b"\x00" * 24000
 
         t_total = time.time() - t0
@@ -713,7 +858,7 @@ class RumikTTSProxy:
                 audio_pcm = await self.synthesize_text(clean_text)
                 yield audio_pcm
 
-        # Turn finished! Trigger 4.0s grace period idle timer on lease
         pool = RumikConnectionPool.get_instance()
         await pool.release_lease(self.session_id, immediate=False)
+
 
