@@ -104,7 +104,9 @@ async def process_tutor_turn_stream(
         "total_segments": total_segments,
         "attempts_on_current_question": attempts,
         "history_summary": history[-10:],
-        "turn_type": turn_type
+        "turn_type": turn_type,
+        "tutor_gender": "female",
+        "tutor_name": "Veda"
     }
 
     system_content = f"{tutor_prompt}\n\n[LESSON PLAN]\n{json.dumps(plan_json, sort_keys=True)}"
@@ -294,18 +296,39 @@ async def process_tutor_turn_stream(
 
     board_events_out = parsed_json.get("board_events") or []
     sanitized_board_events = []
+    seen_contents = set()
+
     for idx, evt in enumerate(board_events_out, 1):
         e_type = evt.get("type", "text")
+        raw_text = evt.get("text") or ""
+        raw_latex = evt.get("latex") or ""
+
+        # Auto-convert text events containing LaTeX commands into formula events
+        if e_type in ("text", "heading", "note") and re.search(r"\\(frac|sqrt|text|vec|dfrac|Rightarrow|times|cdot)", raw_text):
+            logger.warning(f"⚠️ [PROMPT VIOLATION] LaTeX command found in text event '{raw_text}' -> auto-converted to formula event.")
+            e_type = "formula"
+            raw_latex = raw_text
+            raw_text = ""
+
         clean_evt = {
             "seq": evt.get("seq", idx),
             "type": e_type,
             "emphasis": evt.get("emphasis", "normal")
         }
+
         if e_type == "formula":
-            clean_evt["latex"] = evt.get("latex") or evt.get("text") or ""
+            content_key = (raw_latex or raw_text).strip()
+            clean_evt["latex"] = content_key
         else:
-            clean_evt["text"] = evt.get("text") or evt.get("latex") or ""
-        sanitized_board_events.append(clean_evt)
+            content_key = (raw_text or raw_latex).strip()
+            clean_evt["text"] = content_key
+
+        # Deduplicate board events within turn
+        if content_key and content_key.lower() not in seen_contents:
+            seen_contents.add(content_key.lower())
+            sanitized_board_events.append(clean_evt)
+        elif content_key:
+            logger.warning(f"⚠️ [PROMPT VIOLATION] Dropped duplicate board_event content: '{content_key}'")
 
     if sanitized_board_events:
         board_payload = {"events": sanitized_board_events}
@@ -315,8 +338,18 @@ async def process_tutor_turn_stream(
     question_type = parsed_json.get("question_type")
     check_options = parsed_json.get("check_options") or []
 
-    if next_phase == "awaiting_answer" and not check_options:
-        logger.warning(f"⚠️ [PROMPT VIOLATION] Session {session_id} phase_request='awaiting_answer' emitted 0 check_options!")
+    # HARD FAIL-SAFE GUARDRAIL: Every question MUST trigger the Ask Sheet with option chips
+    speech_asks_question = bool(re.search(r"\?|samajh aaya|clear hai|quick check|kya hoga|bataiye|option", speech_out, re.IGNORECASE))
+    if speech_asks_question or phase_in == "awaiting_answer":
+        next_phase = "awaiting_answer"
+        if not check_options:
+            logger.warning(f"⚠️ [HARD PROMPT VIOLATION] Speech asked question but 0 check_options emitted. Auto-populating check_options server-side.")
+            if re.search(r"samajh aaya|clear hai|aage badh", speech_out, re.IGNORECASE):
+                question_type = "procedural"
+                check_options = ["Haan, samajh aaya", "Ek baar dubara samjhao"]
+            else:
+                question_type = "check"
+                check_options = ["Option A", "Option B", "Option C"]
 
     meta_payload = {
         "segment_index": next_seg if next_phase != "complete" else total_segments,
@@ -331,6 +364,8 @@ async def process_tutor_turn_stream(
         "question_type": question_type,
         "check_options": check_options
     }
+    assert_no_forbidden_keys(state_payload)
+    yield f"event: state\ndata: {json.dumps(state_payload)}\n\n"
     if next_phase == "complete":
         state_payload["reason"] = "session_ended"
     assert_no_forbidden_keys(state_payload)

@@ -36,6 +36,31 @@ def sanitize_secret(text: str) -> str:
         res = pat.sub("***REDACTED***", res)
     return res
 
+# Single Latin Letter Variable Phonetic Substitutions for Rumik Silk TTS
+SINGLE_LETTER_PRONUNCIATIONS = {
+    r"\bh\b": "aitch",
+    r"\be\b": "ee",
+    r"\bv\b": "vee",
+    r"\bu\b": "yoo",
+    r"\bt\b": "tee",
+    r"\bm\b": "em",
+    r"\bL\b": "el",
+    r"\bT\b": "tee",
+    r"\bM\b": "em",
+    r"\bg\b": "jee",
+    r"\br\b": "ar",
+    r"\bs\b": "es"
+}
+
+def sanitize_tts_phonetics(text: str) -> str:
+    """Substitutes single Latin letter variable names with explicit phonetic spellings for Rumik TTS."""
+    if not text:
+        return ""
+    res = text
+    for pattern, replacement in SINGLE_LETTER_PRONUNCIATIONS.items():
+        res = re.sub(pattern, replacement, res)
+    return res
+
 # Startup Assertion Checks
 if not SARVAM_API_KEY:
     raise RuntimeError("FATAL BOOT FAILURE: SARVAM_API_KEY environment variable is not set!")
@@ -446,6 +471,7 @@ class RumikTTSProxy:
     async def synthesize_text(self, text: str) -> bytes:
         """Connects to Rumik Silk API (https://silk-api.rumik.ai) and returns raw binary PCM audio bytes.
         Guarded by asyncio.Lock to ensure serialized sentence delivery (sentence N+1 waits for sentence N done frame)."""
+        text = sanitize_tts_phonetics(text)
         async with self.lock:
             return await self._synthesize_text_locked(text)
 
