@@ -261,9 +261,23 @@ class FullSessionHarness:
                                         print(f"  ⚡ [WRONG RETRY] Submitting wrong answer for Segment #{self.current_segment} (Attempt #{self.attempts_on_current_question}): '{wrong_ans}'", flush=True)
                                         await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
                                     else:
-                                        correct_ans = "Standard Correct Choice"
-                                        print(f"  ⚡ [STANDARD CORRECT] Submitting answer for Segment #{self.current_segment}: '{correct_ans}'", flush=True)
-                                        await ws.send(json.dumps({"type": "utterance", "text": correct_ans}))
+                                        # Retrieve actual checkpoint question / options for current segment from DB plan
+                                        ans_text = "Correct answer"
+                                        try:
+                                            plan_res = requests.get(f"{sp_url}/rest/v1/drona_lesson_plans?select=scope&id=eq.{self.plan_id}", headers=sp_h).json()
+                                            if plan_res and plan_res[0].get("scope"):
+                                                scope = plan_res[0]["scope"]
+                                                if db_seg <= len(scope):
+                                                    cp = scope[db_seg - 1].get("checkpoint", {})
+                                                    ans_text = cp.get("question") or cp.get("rubric") or f"Correct answer for segment {db_seg}"
+                                        except Exception:
+                                            pass
+
+                                        if self.last_check_options and len(self.last_check_options) > 0:
+                                            ans_text = self.last_check_options[0]
+
+                                        print(f"  ⚡ [STANDARD CORRECT] Submitting answer for Segment #{self.current_segment}: '{ans_text[:60]}'", flush=True)
+                                        await ws.send(json.dumps({"type": "utterance", "text": ans_text}))
                         except Exception as check_err:
                             print(f"  (DB check error: {check_err})", flush=True)
 
