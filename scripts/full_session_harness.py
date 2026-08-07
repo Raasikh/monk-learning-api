@@ -208,6 +208,7 @@ class FullSessionHarness:
 
                         if self.current_phase == "awaiting_answer" and prev_phase != "awaiting_answer":
                             options = msg.get("check_options", [])
+                            self.check_options = options
                             if not options:
                                 self.violations["awaiting_answer_zero_options"] += 1
                             
@@ -289,6 +290,7 @@ class FullSessionHarness:
                                 
                                 if db_phase != "awaiting_answer":
                                     self.answered_current_await = False
+                                    self.check_options = []
 
                         except Exception as check_err:
                             print(f"  (DB check error: {check_err})", flush=True)
