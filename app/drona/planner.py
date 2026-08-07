@@ -153,8 +153,17 @@ Author a complete lesson plan JSON following the instructions in the system prom
             plan_json = json.loads(cleaned)
         except json.JSONDecodeError as decode_err:
             logger.warning(f"⚠️ [JSON DECODE FAIL] Direct json.loads failed: {decode_err}. Trying repair_json_escapes fallback...")
-            repaired = repair_json_escapes(cleaned)
-            plan_json = json.loads(repaired)
+            try:
+                repaired = repair_json_escapes(cleaned)
+                plan_json = json.loads(repaired, strict=False)
+            except Exception as repair_err:
+                logger.error(f"❌ [REPAIR JSON FAIL] Both raw and repaired JSON parse failed: {repair_err}")
+                if attempts < 2:
+                    messages.append({"role": "assistant", "content": raw_response_content})
+                    messages.append({"role": "user", "content": f"Your previous response had invalid JSON formatting: {repair_err}. Please output strictly valid JSON."})
+                    continue
+                else:
+                    raise HTTPException(status_code=500, detail=f"LLM produced unparseable JSON: {repair_err}")
 
         try:
             # Post-parsing validation & double-escape sanitization step
