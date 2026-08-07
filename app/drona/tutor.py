@@ -293,8 +293,22 @@ async def process_tutor_turn_stream(
     yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
 
     board_events_out = parsed_json.get("board_events") or []
-    if board_events_out:
-        board_payload = {"events": board_events_out}
+    sanitized_board_events = []
+    for idx, evt in enumerate(board_events_out, 1):
+        e_type = evt.get("type", "text")
+        clean_evt = {
+            "seq": evt.get("seq", idx),
+            "type": e_type,
+            "emphasis": evt.get("emphasis", "normal")
+        }
+        if e_type == "formula":
+            clean_evt["latex"] = evt.get("latex") or evt.get("text") or ""
+        else:
+            clean_evt["text"] = evt.get("text") or evt.get("latex") or ""
+        sanitized_board_events.append(clean_evt)
+
+    if sanitized_board_events:
+        board_payload = {"events": sanitized_board_events}
         assert_no_forbidden_keys(board_payload)
         yield f"event: board_events\ndata: {json.dumps(board_payload)}\n\n"
 

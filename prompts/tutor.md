@@ -111,8 +111,8 @@ Return ONLY valid JSON. The `"speech"` key MUST be the very first key.
     {
       "seq": 1,
       "type": "heading | text | formula | note",
-      "text": "Exact text carrying fact, definition, or unit matching spoken words",
-      "latex": "\\text{speed} = \\dfrac{L}{T}",
+      "text": "For heading, text, note ONLY: plain text with $...$ for inline math. Do NOT include text for formula events.",
+      "latex": "For formula ONLY: bare KaTeX string without text field. Do NOT include latex for heading/text/note events.",
       "emphasis": "normal | key"
     }
   ],

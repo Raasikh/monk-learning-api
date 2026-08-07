@@ -92,6 +92,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         # Pre-warm Rumik TTS concurrently in background while LLM generates tokens
         asyncio.create_task(tts_proxy.prewarm())
 
+        turn_id = f"t_{int(time.time() * 1000)}"
         speech_buffer = ""
         chunks_sent = 0
         total_audio_bytes = 0
@@ -139,25 +140,25 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 audio_bytes = await tts_proxy.synthesize_text(clean_text)
                                 b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
                                 chunks_sent += 1
+                                sentence_id = f"{turn_id}_s{chunks_sent}"
 
-                                # Match board event for this sentence index (seq)
                                 matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
                                 if not matching_evt and chunks_sent <= len(turn_board_events):
                                     matching_evt = turn_board_events[chunks_sent - 1]
 
                                 out_msg = {
                                     "type": "audio_chunk",
-                                    "sentence_index": chunks_sent,
+                                    "sentence_id": sentence_id,
                                     "audio": b64_audio,
                                     "speech": clean_text,
                                     "board_event": matching_evt
                                 }
                                 assert_no_forbidden_keys(out_msg)
                                 total_audio_bytes += len(audio_bytes)
+                                logger.info(f"🔊 [AUDIO SYNTHESIZED] sentence_id={sentence_id} ({len(clean_text)} chars)")
                                 await websocket.send_json(out_msg)
+                                logger.info(f"🚀 [AUDIO TRANSMITTED] sentence_id={sentence_id} sent over WebSocket.")
 
-                                duration_sec = len(audio_bytes) / 48000.0
-                                logger.info(f"[AUDIO SYNTHESIZED] Sentence #{chunks_sent} ({len(clean_text)} chars, {duration_sec:.2f}s audio). Transmitted to client immediately.")
                             except Exception as tts_err:
                                 logger.error(f"TTS synthesis error on sentence: {tts_err}")
                     speech_buffer = sentences[-1]
@@ -195,18 +196,26 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 try:
                     audio_bytes = await tts_proxy.synthesize_text(clean_text)
                     b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
+                    chunks_sent += 1
+                    sentence_id = f"{turn_id}_s{chunks_sent}"
+
+                    matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
+                    if not matching_evt and chunks_sent <= len(turn_board_events):
+                        matching_evt = turn_board_events[chunks_sent - 1]
+
                     out_msg = {
                         "type": "audio_chunk",
+                        "sentence_id": sentence_id,
                         "audio": b64_audio,
-                        "speech": clean_text
+                        "speech": clean_text,
+                        "board_event": matching_evt
                     }
                     assert_no_forbidden_keys(out_msg)
-                    chunks_sent += 1
                     total_audio_bytes += len(audio_bytes)
+                    logger.info(f"🔊 [AUDIO SYNTHESIZED FINAL] sentence_id={sentence_id} ({len(clean_text)} chars)")
                     await websocket.send_json(out_msg)
+                    logger.info(f"🚀 [AUDIO TRANSMITTED FINAL] sentence_id={sentence_id} sent over WebSocket.")
 
-                    duration_sec = len(audio_bytes) / 48000.0
-                    logger.info(f"[AUDIO SYNTHESIZED FINAL] Sentence #{chunks_sent} ({len(clean_text)} chars, {duration_sec:.2f}s audio). Transmitted to client immediately.")
                 except Exception as tts_err:
                     logger.error(f"TTS synthesis error on final sentence: {tts_err}")
 
