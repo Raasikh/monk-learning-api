@@ -169,7 +169,7 @@ class FullSessionHarness:
         
         t_ws_0 = time.time()
         try:
-            async with websockets.connect(ws_url, ping_interval=20.0, ping_timeout=15.0, close_timeout=5.0) as ws:
+            async with websockets.connect(ws_url, max_size=10_000_000, ping_interval=20.0, ping_timeout=15.0, close_timeout=5.0) as ws:
                 print(f"  ✓ WebSocket Connected! Driving session with REAL CLIENT PROTOCOL...", flush=True)
                 
                 # Listen to live stream frames and handle turns
@@ -266,11 +266,11 @@ class FullSessionHarness:
                                         # Retrieve actual checkpoint question / options for current segment from DB plan
                                         ans_text = "Correct answer"
                                         try:
-                                            plan_res = requests.get(f"{sp_url}/rest/v1/drona_lesson_plans?select=scope&id=eq.{self.plan_id}", headers=sp_h).json()
-                                            if plan_res and plan_res[0].get("scope"):
-                                                scope = plan_res[0]["scope"]
-                                                if db_seg <= len(scope):
-                                                    cp = scope[db_seg - 1].get("checkpoint", {})
+                                            plan_res = requests.get(f"{sp_url}/rest/v1/lesson_plans?select=plan_json&id=eq.{self.plan_id}", headers=sp_h).json()
+                                            if plan_res and plan_res[0].get("plan_json"):
+                                                segs = plan_res[0]["plan_json"].get("segments", [])
+                                                if db_seg <= len(segs):
+                                                    cp = segs[db_seg - 1].get("checkpoint", {})
                                                     ans_text = cp.get("question") or cp.get("rubric") or f"Correct answer for segment {db_seg}"
                                         except Exception:
                                             pass
