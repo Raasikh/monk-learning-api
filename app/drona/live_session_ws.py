@@ -79,8 +79,22 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     # Queue for incoming client binary PCM audio frames
     pcm_queue: asyncio.Queue[bytes] = asyncio.Queue()
 
+    ws_send_lock = asyncio.Lock()
+
+    async def safe_send_json(data: dict):
+        """Task-safe WebSocket JSON sender guarded by asyncio.Lock to prevent concurrent send collisions."""
+        if not state.is_active:
+            return
+        async with ws_send_lock:
+            try:
+                await websocket.send_json(data)
+            except (WebSocketDisconnect, RuntimeError):
+                state.is_active = False
+            except Exception as send_err:
+                logger.warning(f"WebSocket send error: {send_err}")
+
     # Initial state handshake
-    await websocket.send_json({
+    await safe_send_json({
         "type": "state",
         "phase": session_data['phase'],
         "current_segment": session_data['current_segment'],
@@ -119,12 +133,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 turn_board_events = data_payload.get("events", [])
                 out_msg = {"type": "board_events", "events": turn_board_events}
                 assert_no_forbidden_keys(out_msg)
-                await websocket.send_json(out_msg)
+                await safe_send_json(out_msg)
 
             elif event_type == "turn_error":
                 out_msg = {"type": "turn_error", **data_payload}
                 assert_no_forbidden_keys(out_msg)
-                await websocket.send_json(out_msg)
+                await safe_send_json(out_msg)
 
             elif event_type == "speech":
                 delta = data_payload.get("delta", "")
@@ -160,7 +174,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 assert_no_forbidden_keys(out_msg)
                                 total_audio_bytes += len(audio_bytes)
                                 logger.info(f"🔊 [AUDIO SYNTHESIZED] sentence_id={sentence_id} ({len(clean_text)} chars)")
-                                await websocket.send_json(out_msg)
+                                await safe_send_json(out_msg)
                                 logger.info(f"🚀 [AUDIO TRANSMITTED] sentence_id={sentence_id} sent over WebSocket.")
 
                             except Exception as tts_err:
@@ -169,18 +183,18 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
                 out_msg = {"type": "speech_delta", "delta": delta}
                 assert_no_forbidden_keys(out_msg)
-                await websocket.send_json(out_msg)
+                await safe_send_json(out_msg)
 
             elif event_type == "board":
                 latex = data_payload.get("latex", "")
                 out_msg = {"type": "board", "board": latex}
                 assert_no_forbidden_keys(out_msg)
-                await websocket.send_json(out_msg)
+                await safe_send_json(out_msg)
 
             elif event_type == "meta":
                 out_msg = {"type": "meta", **data_payload}
                 assert_no_forbidden_keys(out_msg)
-                await websocket.send_json(out_msg)
+                await safe_send_json(out_msg)
 
             elif event_type == "state":
                 state_data = data_payload
@@ -188,7 +202,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     segment_complete_flag = True
                 out_msg = {"type": "state", **data_payload}
                 assert_no_forbidden_keys(out_msg)
-                await websocket.send_json(out_msg)
+                await safe_send_json(out_msg)
                 if data_payload.get("phase") == "complete":
                     state.is_active = False
 
@@ -220,7 +234,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     assert_no_forbidden_keys(out_msg)
                     total_audio_bytes += len(audio_bytes)
                     logger.info(f"🔊 [AUDIO SYNTHESIZED FINAL] sentence_id={sentence_id} ({len(clean_text)} chars)")
-                    await websocket.send_json(out_msg)
+                    await safe_send_json(out_msg)
                     logger.info(f"🚀 [AUDIO TRANSMITTED FINAL] sentence_id={sentence_id} sent over WebSocket.")
 
                 except Exception as tts_err:
@@ -228,7 +242,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
         if chunks_sent == 0 and speech_buffer.strip():
             logger.error(f"[SERVER TURN AUDIO FAILURE] Emitted 0 audio_chunk frames (0 total PCM bytes) for session {session_id}")
-            await websocket.send_json({
+            await safe_send_json({
                 "type": "error",
                 "message": "TTS Synthesis Failed: zero audio frames generated for turn."
             })
@@ -243,7 +257,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         else:
             logger.info(f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames ({total_audio_bytes} total PCM bytes) for session {session_id}")
 
-        await websocket.send_json({"type": "turn_complete"})
+        await safe_send_json({"type": "turn_complete"})
 
         # Automatically fire teaching turn for next segment when current segment advances to teaching phase
         try:
@@ -305,7 +319,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             await asyncio.sleep(20.0)
                             if state.is_active:
                                 logger.info(f"💓 [APPLICATION HEARTBEAT] Sending 20s ping frame for session {session_id}...")
-                                await websocket.send_json({"type": "ping", "heartbeat": True})
+                                await safe_send_json({"type": "ping", "heartbeat": True})
                     except asyncio.CancelledError:
                         pass
 
