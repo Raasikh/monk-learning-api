@@ -193,9 +193,10 @@ class FullSessionHarness:
                     msg_type = msg.get("type")
 
                     if msg_type == "state":
+                        self.check_options = msg.get("check_options", [])
                         prev_phase = self.current_phase
-                        self.current_phase = msg.get("phase", self.current_phase)
-                        self.current_segment = msg.get("current_segment", self.current_segment)
+                        self.current_phase = msg.get("phase", "scoping")
+                        self.current_segment = msg.get("segment_index", 1)
                         print(f"  [STATE FRAME] Segment {self.current_segment}/{self.segment_count} | Phase: {self.current_phase}", flush=True)
 
                         if self.current_phase == "scoping":
@@ -207,8 +208,7 @@ class FullSessionHarness:
                             break
 
                         if self.current_phase == "awaiting_answer" and prev_phase != "awaiting_answer":
-                            options = msg.get("check_options", [])
-                            self.check_options = options
+                            options = self.check_options
                             if not options:
                                 self.violations["awaiting_answer_zero_options"] += 1
                             
