@@ -268,10 +268,17 @@ async def process_tutor_turn_stream(
     assert_no_forbidden_keys(speech_payload)
     yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
 
-    if board_out:
-        board_payload = {"latex": board_out}
+    board_events_out = parsed_json.get("board_events") or []
+    if board_events_out:
+        board_payload = {"events": board_events_out}
         assert_no_forbidden_keys(board_payload)
-        yield f"event: board\ndata: {json.dumps(board_payload)}\n\n"
+        yield f"event: board_events\ndata: {json.dumps(board_payload)}\n\n"
+
+    question_type = parsed_json.get("question_type")
+    check_options = parsed_json.get("check_options") or []
+
+    if next_phase == "awaiting_answer" and not check_options:
+        logger.warning(f"⚠️ [PROMPT VIOLATION] Session {session_id} phase_request='awaiting_answer' emitted 0 check_options!")
 
     meta_payload = {
         "segment_index": next_seg if next_phase != "complete" else total_segments,
@@ -282,7 +289,9 @@ async def process_tutor_turn_stream(
     yield f"event: meta\ndata: {json.dumps(meta_payload)}\n\n"
 
     state_payload = {
-        "phase": next_phase
+        "phase": next_phase,
+        "question_type": question_type,
+        "check_options": check_options
     }
     if next_phase == "complete":
         state_payload["reason"] = "session_ended"
