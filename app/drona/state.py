@@ -25,9 +25,9 @@ def compute_next_session_state(
     if phase_req == "end_session" or offtopic_tier == 5:
         return "complete", current_segment, 0, False, False
 
-    # Ignore wrapup phase_request unless on final segment
-    if phase_req == "wrapup" and current_segment < total_segments:
-        phase_req = current_phase
+    # Transition to wrapup when phase_req is wrapup
+    if phase_req == "wrapup":
+        return "wrapup", current_segment, 0, False, False
 
     # 1. State: Wrapup
     if current_phase == "wrapup":

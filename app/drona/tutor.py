@@ -86,6 +86,65 @@ async def process_tutor_turn_stream(
     segments = plan_json.get("segments") or []
     total_segments = len(segments) if segments else 1
 
+    # Calculate elapsed_minutes from session created_at
+    created_at_str = session.get("created_at")
+    elapsed_minutes = 0.0
+    if created_at_str:
+        try:
+            from datetime import datetime, timezone
+            created_dt = datetime.fromisoformat(created_at_str.replace("Z", "+00:00"))
+            now_dt = datetime.now(timezone.utc)
+            elapsed_minutes = round((now_dt - created_dt).total_seconds() / 60.0, 1)
+        except Exception:
+            elapsed_minutes = 0.0
+
+    # Calculate rolling understanding_signal from drona_turns
+    correct_first_attempt = 0
+    partial_count = 0
+    incorrect_count = 0
+    hints_used = 0
+    try:
+        turns_res = supabase.table("drona_turns").select("segment_index, grade").eq("session_id", session_id).execute()
+        turns = turns_res.data or []
+        seg_grades = {}
+        for t in turns:
+            g = (t.get("grade") or "").lower().strip()
+            s_idx = t.get("segment_index")
+            if g in ("correct", "partial", "incorrect"):
+                if s_idx not in seg_grades:
+                    seg_grades[s_idx] = []
+                seg_grades[s_idx].append(g)
+        
+        for s_idx, g_list in seg_grades.items():
+            if g_list[0] == "correct":
+                correct_first_attempt += 1
+            elif "correct" in g_list:
+                partial_count += 1
+                hints_used += 1
+            elif "partial" in g_list:
+                partial_count += 1
+            elif "incorrect" in g_list:
+                incorrect_count += 1
+    except Exception as sig_err:
+        logger.warning(f"Failed to calculate understanding_signal: {sig_err}")
+
+    total_graded = max(1, correct_first_attempt + partial_count + incorrect_count)
+    mastery_rate = correct_first_attempt / total_graded
+    overall_mastery = "high" if mastery_rate >= 0.8 else ("moderate" if mastery_rate >= 0.5 else "needs_practice")
+
+    # In-memory plan extension: append consolidation segment if weak understanding at end of plan
+    if curr_seg_idx == total_segments and overall_mastery in ("moderate", "needs_practice") and len(segments) > 0:
+        if not any(s.get("is_consolidation") for s in segments):
+            consolidation_seg = {
+                "objective": "Consolidation & Worked Examples",
+                "teaching_notes": "Review weakest graded concepts with extra worked examples.",
+                "board_content": r"\text{Consolidation}",
+                "checkpoint": {"question": "Are you confident with these concepts?", "model_answer": "Yes", "rubric": "Confirm understanding"},
+                "is_consolidation": True
+            }
+            segments.append(consolidation_seg)
+            total_segments = len(segments)
+
     # Clamp current segment index
     curr_seg_idx = max(1, min(curr_seg_idx, total_segments))
     curr_segment = segments[curr_seg_idx - 1] if segments else {
@@ -106,6 +165,14 @@ async def process_tutor_turn_stream(
         "attempts_on_current_question": attempts,
         "history_summary": history[-10:],
         "turn_type": turn_type,
+        "elapsed_minutes": elapsed_minutes,
+        "understanding_signal": {
+            "correct_first_attempt": correct_first_attempt,
+            "partial": partial_count,
+            "incorrect": incorrect_count,
+            "hints_used": hints_used,
+            "overall_mastery": overall_mastery
+        },
         "tutor_gender": "female",
         "tutor_name": "Veda"
     }
