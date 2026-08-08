@@ -158,6 +158,25 @@ async def process_tutor_turn_stream(
     # 3. Assemble R4 prefix order: [1] tutor.md [2] plan [3] current segment [4] state [5] utterance
     tutor_prompt = load_prompt("tutor.md")
 
+    # Collect board events emitted so far in current segment to enforce progressive arc
+    current_segment_board_events = []
+    try:
+        seg_turns_res = supabase.table("drona_turns").select("raw_response").eq("session_id", session_id).eq("segment_index", curr_seg_idx).execute()
+        for t in (seg_turns_res.data or []):
+            raw = t.get("raw_response")
+            if isinstance(raw, str):
+                try:
+                    raw = json.loads(raw)
+                except Exception:
+                    raw = {}
+            if isinstance(raw, dict):
+                for b in raw.get("board_events", []):
+                    txt = (b.get("text") or b.get("latex") or "").strip()
+                    if txt and txt not in current_segment_board_events:
+                        current_segment_board_events.append(txt)
+    except Exception as b_err:
+        logger.warning(f"Failed to load segment board events: {b_err}")
+
     session_state_ctx = {
         "language": language,
         "phase": phase_in,
@@ -181,6 +200,15 @@ async def process_tutor_turn_stream(
     system_content = f"{tutor_prompt}\n\n[LESSON PLAN]\n{json.dumps(plan_json, sort_keys=True)}"
     user_content = f"""[CURRENT SEGMENT]
 {json.dumps(curr_segment, sort_keys=True)}
+
+[BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT]
+{json.dumps(current_segment_board_events, indent=2)}
+
+[PROGRESSIVE ARC DIRECTIVE]
+1. DO NOT re-explain or re-emit any items listed in [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT].
+2. Advance to teach the NEXT UNTAUGHT sub-concept from `board_content` and `teaching_notes`.
+3. If student answered correctly, give 1 short sentence of praise and IMMEDIATELY teach the NEXT sub-concept.
+4. Any check or options asked in this turn MUST test ONLY concepts explained in THIS turn or previous turns of this segment.
 
 [SESSION STATE]
 {json.dumps(session_state_ctx, sort_keys=True)}
