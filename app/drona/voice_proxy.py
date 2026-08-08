@@ -480,7 +480,7 @@ class FillerAudioCache:
         if self.is_prewarmed:
             return
 
-        logger.info("🎙️ [FILLER AUDIO PREWARM] Pre-synthesizing filler audio cache for zero-latency rate limit handling...")
+        t_start = time.time()
         
         # Female presets: Ira, Veda
         for v in ["Ira", "Veda"]:
@@ -497,7 +497,8 @@ class FillerAudioCache:
                 self.cache[v].append(pcm)
 
         self.is_prewarmed = True
-        logger.info(f"✅ [FILLER AUDIO PREWARM] Pre-synthesized & cached filler audio across {len(self.cache)} voice presets in memory!")
+        elapsed = time.time() - t_start
+        logger.info(f"✅ [FILLER PREWARM] {len(self.cache)} voices cached in {elapsed:.1f}s")
 
     async def _synthesize_direct(self, text: str, voice_preset: str) -> bytes:
         """Direct synthesis without recursion for boot pre-warming."""

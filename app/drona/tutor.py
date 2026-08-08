@@ -263,6 +263,9 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         {"role": "user", "content": user_content}
     ]
 
+    stag = f"[s:{session_id[:8]}]"
+    logger.info(f"{stag} TURN START   seg={curr_seg_idx}/{total_segments}  turn_in_seg={turn_within_segment}/3  phase={phase_in}")
+
     model_name = get_model_name("tutor")
     client = get_drona_client()
 
@@ -273,6 +276,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     cache_hit_tokens = 0
 
     turn_failed = False
+    llm_t0 = time.time()
 
     try:
         res = client.chat.completions.create(
@@ -300,7 +304,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 cache_hit_tokens = getattr(details, "cached_tokens", 0)
 
     except Exception as e:
-        logger.error(f"Error during LLM turn: {e}")
+        logger.error(f"{stag} Error during LLM turn: {e}")
         turn_failed = True
         raw_response_text = json.dumps({
             "speech": "Aapki awaaz thodi kat gayi thi — kya aap ek baar dubara bol sakte hain?",
@@ -309,8 +313,9 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             "turn_failed": True
         })
 
-    # Log cache hit tokens (§R4) and assert model string (§R1)
-    logger.info(f"TURN LLM CALL: requested_model={model_name}, returned_model={getattr(res, 'model', 'unknown')}, input={input_tokens}, cache_hit={cache_hit_tokens}, output={output_tokens}")
+    llm_dur = time.time() - llm_t0
+    logger.info(f"{stag}   LLM          model={model_name} in={input_tokens} cache={cache_hit_tokens} out={output_tokens} ({llm_dur:.1f}s)")
+    logger.info(f"{stag}   ASSIGNED     {len(assigned_items_text)} board items: {assigned_items_text}")
 
     # 5. Parse complete JSON with robustness (§4.4)
     parsed_json = {}
@@ -389,6 +394,12 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     board_events = parsed_json.get("board_events", [])
     board_cnt = len(board_events)
     word_cnt = len(speech_out.split())
+    opts_cnt = len(parsed_json.get("check_options") or [])
+
+    match_symbol = "✓ matches assignment" if board_cnt == len(assigned_items_text) else f"❌ mismatch (assigned {len(assigned_items_text)}, emitted {board_cnt})"
+    logger.info(f"{stag}   EMITTED      {board_cnt} board events  {match_symbol}")
+    logger.info(f"{stag}   PHASE REQ    phase_request={parsed_json.get('phase_request')} | question_type={parsed_json.get('question_type')} | check_options={opts_cnt}")
+    logger.info(f"{stag}   SPEECH       ({word_cnt} words) \"{speech_out[:60]}...\"")
 
     rule_violations = {
         "zero_board_events": 1 if (board_cnt == 0 and phase_in == "teaching") or did_fallback_board else 0,

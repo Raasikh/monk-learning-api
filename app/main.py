@@ -11,6 +11,10 @@ from app.routers import practice
 logger = logging.getLogger("monk_api")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
+# Silence noisy HTTP & platform libraries (§2.1)
+for noisy_logger in ["httpx", "httpcore", "postgrest", "supabase", "gunicorn.access", "uvicorn.access"]:
+    logging.getLogger(noisy_logger).setLevel(logging.WARNING)
+
 app = FastAPI(
     title="Monk Learning API",
     description="FastAPI backend service for Monk Learning practice questions & auth",
@@ -39,8 +43,10 @@ async def platform_metrics_sampler_loop():
     from app.drona.voice_proxy import RumikConnectionPool
     from app.db import supabase
     pool = RumikConnectionPool.get_instance()
+    sample_counter = 0
     while True:
         await asyncio.sleep(30.0)
+        sample_counter += 1
         try:
             res = supabase.table("drona_sessions").select("id", count="exact").eq("phase", "teaching").execute()
             active_cnt = res.count or len(res.data or [])
@@ -58,8 +64,12 @@ async def platform_metrics_sampler_loop():
                     "rumik_connections_open": open_conns,
                     "rumik_requests_last_60s": len(recent_opens),
                     "sarvam_requests_last_60s": active_cnt,
-                    "pool_wait_ms_p95": p95_wait
+                    "p95_lease_acquisition_ms": p95_wait
                 }]).execute()
+                
+                # Log summary ONLY once every 20 samples (10 minutes)
+                if sample_counter % 20 == 0:
+                    logger.info(f"📊 [PLATFORM METRICS 10m SUMMARY] Active Sessions: {active_cnt} | Rumik Conns: {open_conns} | P95 Lease Wait: {p95_wait}ms")
         except Exception as err:
             logger.warning(f"Platform metrics sampler non-fatal error: {err}")
 
