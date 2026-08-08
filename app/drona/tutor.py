@@ -350,8 +350,10 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         parsed_json["check_options"] = []
 
     # If board_events is empty in a teaching turn, auto-populate from assigned items
+    did_fallback_board = False
     if not parsed_json.get("board_events") and assigned_items_text:
-        logger.warning(f"⚠️ [BOARD EVENT AUTO-FALLBACK] board_events was empty. Populating {len(assigned_items_text)} assigned board items.")
+        logger.warning(f"⚠️ [VIOLATION: ZERO BOARD EVENTS EMITTED] Tutor emitted 0 events despite assigned items. Auto-populating {len(assigned_items_text)} board items.")
+        did_fallback_board = True
         auto_events = []
         for idx, text_str in enumerate(assigned_items_text, 1):
             event_type = "heading" if idx == 1 and turn_within_segment == 1 else "text"
@@ -389,7 +391,8 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     word_cnt = len(speech_out.split())
 
     rule_violations = {
-        "zero_board_events": 1 if board_cnt == 0 and phase_in == "teaching" else 0,
+        "zero_board_events": 1 if (board_cnt == 0 and phase_in == "teaching") or did_fallback_board else 0,
+        "fallback_board_events": 1 if did_fallback_board else 0,
         "under_density": 1 if board_cnt > 0 and board_cnt < 6 else 0,
         "over_density": 1 if board_cnt > 12 else 0,
         "missing_options": 1 if parsed_json.get("phase_request") == "awaiting_answer" and not parsed_json.get("check_options") else 0,

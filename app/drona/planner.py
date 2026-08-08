@@ -238,8 +238,7 @@ Author a complete lesson plan JSON following the instructions in the system prom
     raise RuntimeError(f"Planner failed validation after 2 attempts: {last_err}")
 
 def get_or_create_plan(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
-    """Lazy cache lookup (§3.1): Hit -> return from DB. Miss -> LLM authoring + INSERT."""
-    # 1. SELECT * FROM lesson_plans WHERE chapter_id = %s AND subtopic_key = %s
+    """Lazy cache lookup (§3.1): Hit -> return from DB (if valid). Miss/Invalid -> LLM authoring + INSERT."""
     plan_res = (
         supabase.table("lesson_plans")
         .select("*")
@@ -248,8 +247,18 @@ def get_or_create_plan(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
         .execute()
     )
     if plan_res.data:
-        logger.info(f"CACHE HIT for plan chapter_id={chapter_id}, subtopic_key={subtopic_key}")
-        return plan_res.data[0]
+        cached_plan = plan_res.data[0]
+        plan_json = cached_plan.get("plan_json", {})
+        try:
+            validate_plan_json(plan_json)
+            logger.info(f"CACHE HIT (VALIDATED) for plan chapter_id={chapter_id}, subtopic_key={subtopic_key}")
+            return cached_plan
+        except Exception as val_err:
+            logger.warning(f"⚠️ [CACHED PLAN INVALID] Plan {cached_plan.get('id')} for subtopic '{subtopic_key}' failed schema validation: {val_err}. Purging cached plan and regenerating...")
+            try:
+                supabase.table("lesson_plans").delete().eq("id", cached_plan["id"]).execute()
+            except Exception as del_err:
+                logger.error(f"Failed to delete invalid plan: {del_err}")
 
-    logger.info(f"CACHE MISS for plan chapter_id={chapter_id}, subtopic_key={subtopic_key} — calling planner LLM...")
+    logger.info(f"CACHE MISS / REGENERATE for plan chapter_id={chapter_id}, subtopic_key={subtopic_key} — calling planner LLM...")
     return create_plan_with_llm(chapter_id, subtopic_key)
