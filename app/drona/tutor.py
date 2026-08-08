@@ -421,7 +421,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         "segment_index": curr_seg_idx,
         "phase_in": phase_in,
         "utterance": utterance,
-        "raw_response": raw_response_text,
+        "raw_response": json.dumps(parsed_json),
         "grade": grade_out,
         "input_tokens": input_tokens,
         "cache_hit_tokens": cache_hit_tokens,
