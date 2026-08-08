@@ -273,13 +273,26 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
         await safe_send_json({"type": "turn_complete"})
 
-        # Automatically fire teaching turn for next segment when current segment advances to teaching phase
+        # Emit updated state frame & auto-advance if next segment is in teaching phase
         try:
-            sess_res = supabase.table('drona_sessions').select('phase, current_segment').eq('id', session_id).single().execute()
+            sess_res = supabase.table('drona_sessions').select('phase, current_segment, check_options').eq('id', session_id).single().execute()
             if sess_res.data:
                 curr_phase = sess_res.data.get('phase')
+                curr_seg = sess_res.data.get('current_segment')
+                opts = sess_res.data.get('check_options') or []
+                
+                state_frame = {
+                    "type": "state",
+                    "phase": curr_phase,
+                    "current_segment": curr_seg,
+                    "check_options": opts
+                }
+                assert_no_forbidden_keys(state_frame)
+                await safe_send_json(state_frame)
+                logger.info(f"📡 [STATE FRAME EMITTED] phase='{curr_phase}', segment={curr_seg}, check_options_cnt={len(opts)}")
+
                 if curr_phase == 'teaching':
-                    logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Phase is teaching for Segment #{sess_res.data.get('current_segment')}. Automatically firing teaching turn...")
+                    logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Phase is teaching for Segment #{curr_seg}. Automatically firing teaching turn...")
                     launch_background_turn(utterance_text="", turn_type="teaching")
         except Exception as auto_adv_err:
             logger.warning(f"Auto-segment advance check skipped: {auto_adv_err}")
