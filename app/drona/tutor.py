@@ -342,32 +342,12 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             }
 
     # 5b. First-Turn Teaching Rule Enforcement & Board Content Fallback
-    if turn_within_segment == 1 and parsed_json.get("phase_request") == "awaiting_answer":
-        logger.warning(f"⚠️ [FIRST TURN VIOLATION] Turn 1 returned phase_request='awaiting_answer'. Executing LLM retry turn...")
-        try:
-            retry_turn1_res = client.chat.completions.create(
-                model=model_name,
-                messages=messages + [
-                    {"role": "assistant", "content": json.dumps(parsed_json)},
-                    {
-                        "role": "user",
-                        "content": "REJECTED: This is Turn 1 of a segment. You MUST teach the assigned sub-concept FIRST. You CANNOT set phase_request to awaiting_answer or ask a question on Turn 1 of a segment. Re-emit valid JSON with phase_request: 'teaching', question_type: null, check_options: [], and emit your assigned board items."
-                    }
-                ],
-                response_format={"type": "json_object"},
-                temperature=0.0,
-                extra_body={"thinking": {"type": "disabled"}}
-            )
-            parsed_json = json.loads(strip_fences(retry_turn1_res.choices[0].message.content or "{}"))
-        except Exception as t1_retry_err:
-            logger.error(f"Turn 1 retry failed: {t1_retry_err}")
-        
-        # Hard override fallback if retry still failed or returned awaiting_answer
+    if turn_within_segment == 1:
         if parsed_json.get("phase_request") == "awaiting_answer":
-            logger.warning(f"⚠️ [FIRST TURN HARD OVERRIDE] Forcing phase_request='teaching' for Turn 1.")
-            parsed_json["phase_request"] = "teaching"
-            parsed_json["question_type"] = None
-            parsed_json["check_options"] = []
+            logger.warning(f"⚠️ [FIRST TURN HARD OVERRIDE] Turn 1 cannot ask a question. Forcing phase_request='teaching'.")
+        parsed_json["phase_request"] = "teaching"
+        parsed_json["question_type"] = None
+        parsed_json["check_options"] = []
 
     # If board_events is empty in a teaching turn, auto-populate from assigned items
     if not parsed_json.get("board_events") and assigned_items_text:
