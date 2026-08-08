@@ -487,7 +487,9 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         yield f"event: turn_error\ndata: {json.dumps(err_payload)}\n\n"
 
     # 13. Emit sanitized SSE events (R3) with sentence-by-sentence Rumik Silk TTS audio
-    speech_payload = {"delta": speech_out}
+    # ends_in_checkpoint tells the WS layer to skip TTS for the trailing question
+    # sentence — the checkpoint question is shown as text only, never voiced.
+    speech_payload = {"delta": speech_out, "ends_in_checkpoint": next_phase == "awaiting_answer"}
     assert_no_forbidden_keys(speech_payload)
     yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
 

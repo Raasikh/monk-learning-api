@@ -114,6 +114,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         turn_board_events = []
         state_data = {}
         segment_complete_flag = False
+        ends_in_checkpoint = False
 
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")
@@ -143,6 +144,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             elif event_type == "speech":
                 delta = data_payload.get("delta", "")
                 speech_buffer += delta
+                ends_in_checkpoint = bool(data_payload.get("ends_in_checkpoint"))
 
                 # Synthesize TTS sentence-by-sentence as speech completes
                 sentences = split_into_sentences(speech_buffer)
@@ -223,7 +225,26 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         # Synthesize remaining sentence buffer
         if speech_buffer.strip():
             t1_v, t2_v, clean_text = check_tts_safety_filter(speech_buffer)
-            if clean_text:
+            if clean_text and ends_in_checkpoint:
+                # Checkpoint question: deliver as text only, never voiced. No network
+                # call involved, so this cannot fail the way TTS synthesis can.
+                chunks_sent += 1
+                sentence_id = f"{turn_id}_s{chunks_sent}"
+                matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
+                if not matching_evt and chunks_sent <= len(turn_board_events):
+                    matching_evt = turn_board_events[chunks_sent - 1]
+
+                out_msg = {
+                    "type": "audio_chunk",
+                    "sentence_id": sentence_id,
+                    "audio": None,
+                    "speech": clean_text,
+                    "board_event": matching_evt
+                }
+                assert_no_forbidden_keys(out_msg)
+                logger.info(f"🔇 [CHECKPOINT QUESTION - AUDIO SUPPRESSED] sentence_id={sentence_id} sent as silent caption ({len(clean_text)} chars)")
+                await safe_send_json(out_msg)
+            elif clean_text:
                 state.tts_characters += len(clean_text)
                 try:
                     if skip_tts_flag:
