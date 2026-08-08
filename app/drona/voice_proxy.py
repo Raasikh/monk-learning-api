@@ -8,6 +8,7 @@ import logging
 import requests
 from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple, Any
 import websockets
+from app.db import supabase
 
 logger = logging.getLogger("drona.voice_proxy")
 
