@@ -277,8 +277,8 @@ class FullSessionHarness:
                                     print(f"  ⚡ [WRONG RETRY] Submitting wrong answer (Attempt #{self.attempts_on_current_question}): '{wrong_ans}'", flush=True)
                                     await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
                                 else:
-                                    correct_ans = options[0] if options else None
-                                    if not correct_ans and hasattr(self, 'plan_id') and self.plan_id:
+                                    model_ans = None
+                                    if hasattr(self, 'plan_id') and self.plan_id:
                                         try:
                                             sp_url = "https://tgbknrmnjwiokraddurx.supabase.co"
                                             sp_key = os.getenv("SUPABASE_SECRET_KEY", "").strip()
@@ -295,13 +295,23 @@ class FullSessionHarness:
                                                 segs = plan_res[0]["plan_json"].get("segments", [])
                                                 if self.current_segment <= len(segs):
                                                     cp = segs[self.current_segment - 1].get("checkpoint", {})
-                                                    correct_ans = cp.get("model_answer") or cp.get("rubric") or cp.get("question")
+                                                    model_ans = cp.get("model_answer") or cp.get("rubric")
                                         except Exception:
                                             pass
-                                    if not correct_ans:
+
+                                    correct_ans = None
+                                    if options and model_ans:
+                                        m_words = set(re.findall(r'\w+', model_ans.lower()))
+                                        best_opt = max(options, key=lambda opt: len(set(re.findall(r'\w+', opt.lower())).intersection(m_words)))
+                                        correct_ans = best_opt
+                                    elif model_ans:
+                                        correct_ans = model_ans
+                                    elif options:
+                                        correct_ans = options[0]
+                                    else:
                                         correct_ans = f"Haan, segment {self.current_segment} clear hai"
 
-                                    print(f"  ⚡ [ANSWER SUBMISSION] Submitting answer for Segment #{self.current_segment}: '{correct_ans[:60]}'", flush=True)
+                                    print(f"  ⚡ [STANDARD CORRECT] Submitting answer for Segment #{self.current_segment}: '{correct_ans[:60]}'", flush=True)
                                     await ws.send(json.dumps({"type": "utterance", "text": correct_ans}))
 
                         elif self.current_phase == "teaching" and prev_phase == "awaiting_answer":
