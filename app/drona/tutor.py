@@ -181,9 +181,14 @@ async def process_tutor_turn_stream(
         logger.warning(f"Failed to load segment board events: {b_err}")
 
     # Compute exact board item assignment for this turn
-    board_content_list = curr_segment.get("board_content", [])
-    if not isinstance(board_content_list, list):
+    board_content_raw = curr_segment.get("board_content", [])
+    if isinstance(board_content_raw, str):
+        board_content_list = [line.strip() for line in board_content_raw.split("\n") if line.strip()]
+    elif isinstance(board_content_raw, list):
+        board_content_list = board_content_raw
+    else:
         board_content_list = []
+
     N = len(board_content_list)
     items_per_turn = math.ceil(N / 3) if N > 0 else 0
     
@@ -335,6 +340,47 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 "phase_request": phase_in,
                 "turn_failed": True
             }
+
+    # 5b. First-Turn Teaching Rule Enforcement & Board Content Fallback
+    if turn_within_segment == 1 and parsed_json.get("phase_request") == "awaiting_answer":
+        logger.warning(f"⚠️ [FIRST TURN VIOLATION] Turn 1 returned phase_request='awaiting_answer'. Executing LLM retry turn...")
+        try:
+            retry_turn1_res = client.chat.completions.create(
+                model=model_name,
+                messages=messages + [
+                    {"role": "assistant", "content": json.dumps(parsed_json)},
+                    {
+                        "role": "user",
+                        "content": "REJECTED: This is Turn 1 of a segment. You MUST teach the assigned sub-concept FIRST. You CANNOT set phase_request to awaiting_answer or ask a question on Turn 1 of a segment. Re-emit valid JSON with phase_request: 'teaching', question_type: null, check_options: [], and emit your assigned board items."
+                    }
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                extra_body={"thinking": {"type": "disabled"}}
+            )
+            parsed_json = json.loads(strip_fences(retry_turn1_res.choices[0].message.content or "{}"))
+        except Exception as t1_retry_err:
+            logger.error(f"Turn 1 retry failed: {t1_retry_err}")
+        
+        # Hard override fallback if retry still failed or returned awaiting_answer
+        if parsed_json.get("phase_request") == "awaiting_answer":
+            logger.warning(f"⚠️ [FIRST TURN HARD OVERRIDE] Forcing phase_request='teaching' for Turn 1.")
+            parsed_json["phase_request"] = "teaching"
+            parsed_json["question_type"] = None
+            parsed_json["check_options"] = []
+
+    # If board_events is empty in a teaching turn, auto-populate from assigned items
+    if not parsed_json.get("board_events") and assigned_items_text:
+        logger.warning(f"⚠️ [BOARD EVENT AUTO-FALLBACK] board_events was empty. Populating {len(assigned_items_text)} assigned board items.")
+        auto_events = []
+        for idx, text_str in enumerate(assigned_items_text, 1):
+            event_type = "heading" if idx == 1 and turn_within_segment == 1 else "text"
+            if "\\" in text_str or "{" in text_str or "^" in text_str:
+                event_type = "formula"
+                auto_events.append({"seq": idx, "type": event_type, "latex": text_str, "emphasis": "normal"})
+            else:
+                auto_events.append({"seq": idx, "type": event_type, "text": text_str, "emphasis": "normal"})
+        parsed_json["board_events"] = auto_events
 
     speech_out = parsed_json.get("speech") or "Aapki awaaz thodi clear nahi aayi — kya aap ek baar dubara bol sakte hain?"
     board_out = parsed_json.get("board") or ""
