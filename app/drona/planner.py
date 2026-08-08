@@ -1,6 +1,7 @@
 import json
 import logging
 from typing import Dict, Any, List, Optional
+from fastapi import HTTPException
 from app.db import supabase
 from app.drona.models import get_drona_client, get_model_name
 from app.drona.prompt_loader import load_prompt, get_prompt_version

@@ -3,7 +3,7 @@ import time
 import asyncio
 import base64
 import logging
-from typing import Dict, Optional
+from typing import Dict, List, Optional, Tuple
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase
 from app.drona.tutor import process_tutor_turn_stream
@@ -398,6 +398,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     if session_data['phase'] == 'teaching':
         logger.info(f"🚀 [WS CONNECT AUTO-START] Triggering turn 1 teaching for Segment #{session_data['current_segment']}...")
         launch_background_turn(utterance_text="", turn_type="teaching")
+
+    is_ptt_active = False
+    ptt_pcm_chunks: List[bytes] = []
 
     try:
         while state.is_active:
