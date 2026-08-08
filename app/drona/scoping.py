@@ -40,14 +40,26 @@ def scope_student_session(session_id: str, user_id: str, utterance: str) -> Dict
 
     # Fast path: if utterance directly matches a subtopic key or name, skip LLM scoping latency
     norm_utt = utterance.strip().lower().replace("-", " ")
+    # Pass 1: Exact match on key or title
     for s in subtopics:
         s_key = s.get("subtopic_key", "")
         s_name = s.get("subtopic", "").lower().replace("-", " ")
         s_key_norm = s_key.lower().replace("-", " ")
-        if norm_utt == s_key_norm or norm_utt == s_name or (len(norm_utt) > 3 and (norm_utt in s_name or s_name in norm_utt or norm_utt in s_key_norm or s_key_norm in norm_utt)):
+        if norm_utt == s_key_norm or norm_utt == s_name:
             subtopic_key = s_key
-            logger.info(f"Fast-path direct match for subtopic_key: '{subtopic_key}'")
+            logger.info(f"Fast-path exact match for subtopic_key: '{subtopic_key}'")
             break
+
+    # Pass 2: Substring fallback if no exact match
+    if not subtopic_key:
+        for s in subtopics:
+            s_key = s.get("subtopic_key", "")
+            s_name = s.get("subtopic", "").lower().replace("-", " ")
+            s_key_norm = s_key.lower().replace("-", " ")
+            if len(norm_utt) > 3 and (norm_utt in s_name or s_name in norm_utt or norm_utt in s_key_norm or s_key_norm in norm_utt):
+                subtopic_key = s_key
+                logger.info(f"Fast-path substring match for subtopic_key: '{subtopic_key}'")
+                break
 
     # Max two rounds check: on 3rd round, default to first subtopic
     if subtopic_key:
