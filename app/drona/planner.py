@@ -29,6 +29,15 @@ def validate_plan_json(data: Dict[str, Any]) -> None:
             if not val or not str(val).strip():
                 raise ValueError(f"Segment {idx} missing required field '{req_field}'")
 
+        # Board content item count validation (hard floor: 6-9)
+        bc = seg.get("board_content", [])
+        if not isinstance(bc, list):
+            raise ValueError(f"Segment {idx} board_content must be an array, got {type(bc).__name__}")
+        if len(bc) < 6:
+            raise ValueError(f"Segment {idx} board_content has {len(bc)} items (minimum 6 required)")
+        if len(bc) > 9:
+            raise ValueError(f"Segment {idx} board_content has {len(bc)} items (maximum 9 allowed)")
+
         # Balanced $ and $$ check in board_content
         board_text = str(seg.get("board_content", ""))
         double_dollars = board_text.count("$$")
