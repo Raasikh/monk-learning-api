@@ -1,4 +1,5 @@
 import re
+import math
 import json
 import time
 import asyncio
@@ -160,8 +161,10 @@ async def process_tutor_turn_stream(
 
     # Collect board events emitted so far in current segment to enforce progressive arc
     current_segment_board_events = []
+    turn_within_segment = 1
     try:
         seg_turns_res = supabase.table("drona_turns").select("raw_response").eq("session_id", session_id).eq("segment_index", curr_seg_idx).execute()
+        turn_within_segment = len(seg_turns_res.data or []) + 1  # This will be the Nth turn in segment
         for t in (seg_turns_res.data or []):
             raw = t.get("raw_response")
             if isinstance(raw, str):
@@ -176,6 +179,31 @@ async def process_tutor_turn_stream(
                         current_segment_board_events.append(txt)
     except Exception as b_err:
         logger.warning(f"Failed to load segment board events: {b_err}")
+
+    # Compute exact board item assignment for this turn
+    board_content_list = curr_segment.get("board_content", [])
+    if not isinstance(board_content_list, list):
+        board_content_list = []
+    N = len(board_content_list)
+    items_per_turn = math.ceil(N / 3) if N > 0 else 0
+    
+    if turn_within_segment == 1:
+        assigned_start = 0
+        assigned_end = min(items_per_turn, N)
+    elif turn_within_segment == 2:
+        assigned_start = min(items_per_turn, N)
+        assigned_end = min(2 * items_per_turn, N)
+    else:
+        assigned_start = min(2 * items_per_turn, N)
+        assigned_end = N
+    
+    assigned_items = board_content_list[assigned_start:assigned_end]
+    assigned_items_text = []
+    for item in assigned_items:
+        if isinstance(item, dict):
+            assigned_items_text.append(item.get("text") or item.get("latex", ""))
+        else:
+            assigned_items_text.append(str(item))
 
     session_state_ctx = {
         "language": language,
@@ -201,18 +229,22 @@ async def process_tutor_turn_stream(
     user_content = f"""[CURRENT SEGMENT]
 {json.dumps(curr_segment, sort_keys=True)}
 
+[TURN WITHIN SEGMENT]
+This is Turn {turn_within_segment} of 3 in this segment.
+
 [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT]
 {json.dumps(current_segment_board_events, indent=2)}
 
-[SEGMENT BOARD CONTENT COUNT]
-This segment has {len(curr_segment.get('board_content', [])) if isinstance(curr_segment.get('board_content'), list) else 0} authored board_content items. Emit EXACTLY these items across all turns — no more, no fewer. Do NOT invent new board items.
+[YOUR ASSIGNED BOARD ITEMS FOR THIS TURN]
+You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — no more, no fewer, no substitutions:
+{json.dumps(assigned_items_text, indent=2)}
 
 [PROGRESSIVE ARC DIRECTIVE]
-1. DO NOT re-explain or re-emit any items listed in [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT].
-2. Emit ONLY your assigned board_content items for this turn (see Sub-concept Pacing rule). NEVER emit items from future segments.
-3. Advance to teach the NEXT UNTAUGHT sub-concept from the CURRENT segment's `board_content` and `teaching_notes`.
-4. If student answered correctly, give 1 short sentence of praise and IMMEDIATELY teach the NEXT sub-concept within THIS segment.
-5. Any check or options asked in this turn MUST test ONLY concepts explained in THIS turn or previous turns of this segment.
+1. Emit ONLY the items listed in [YOUR ASSIGNED BOARD ITEMS FOR THIS TURN]. Do NOT emit items assigned to other turns.
+2. DO NOT re-emit any items from [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT].
+3. Teach ONLY the sub-concept(s) covered by your assigned board items.
+4. If student answered correctly, give 1 short sentence of praise, then teach your assigned sub-concept(s).
+5. Any check must test ONLY concepts explained in THIS turn or previous turns of this segment.
 
 [SESSION STATE]
 {json.dumps(session_state_ctx, sort_keys=True)}
