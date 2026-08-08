@@ -303,14 +303,17 @@ class FullSessionHarness:
                                     correct_ans = None
                                     if options and model_ans:
                                         m_words = set(re.findall(r'\w+', model_ans.lower()))
-                                        best_opt = max(options, key=lambda opt: len(set(re.findall(r'\w+', opt.lower())).intersection(m_words)))
-                                        correct_ans = best_opt
-                                    elif model_ans:
-                                        correct_ans = model_ans
+                                        word_matches = [len(set(re.findall(r'\w+', opt.lower())).intersection(m_words)) for opt in options]
+                                        if max(word_matches) > 0:
+                                            correct_ans = options[word_matches.index(max(word_matches))]
+                                        else:
+                                            correct_ans = options[0]
                                     elif options:
                                         correct_ans = options[0]
+                                    elif model_ans:
+                                        correct_ans = model_ans
                                     else:
-                                        correct_ans = f"Haan, segment {self.current_segment} clear hai"
+                                        correct_ans = f"Haan, segment {self.current_segment} ka yeh concept bilkul clear hai. Aage continue kijiye."
 
                                     print(f"  ⚡ [STANDARD CORRECT] Submitting answer for Segment #{self.current_segment}: '{correct_ans[:60]}'", flush=True)
                                     await ws.send(json.dumps({"type": "utterance", "text": correct_ans}))
