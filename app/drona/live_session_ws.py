@@ -322,11 +322,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     active_turn_tasks = set()
 
     def launch_background_turn(utterance_text: str, turn_type: str = "answer"):
-        """Launches execute_turn_pipeline as a background task with held reference and 20s heartbeat."""
+        """Launches execute_turn_pipeline as a background task with concurrency guard and 20s heartbeat."""
+        if len(active_turn_tasks) > 0:
+            logger.warning(f"⚠️ [CONCURRENCY GUARD] Turn already active for session {session_id}. Skipping duplicate trigger for utterance='{utterance_text[:30]}'")
+            return None
+
         async def _turn_runner():
             hb_task = None
             try:
-                # 20s Heartbeat task while turn is executing
                 async def _heartbeat_loop():
                     try:
                         while True:
