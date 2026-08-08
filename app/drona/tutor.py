@@ -204,11 +204,15 @@ async def process_tutor_turn_stream(
 [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT]
 {json.dumps(current_segment_board_events, indent=2)}
 
+[SEGMENT BOARD CONTENT COUNT]
+This segment has {len(curr_segment.get('board_content', [])) if isinstance(curr_segment.get('board_content'), list) else 0} authored board_content items. Emit EXACTLY these items across all turns — no more, no fewer. Do NOT invent new board items.
+
 [PROGRESSIVE ARC DIRECTIVE]
 1. DO NOT re-explain or re-emit any items listed in [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT].
-2. Advance to teach the NEXT UNTAUGHT sub-concept from `board_content` and `teaching_notes`.
-3. If student answered correctly, give 1 short sentence of praise and IMMEDIATELY teach the NEXT sub-concept.
-4. Any check or options asked in this turn MUST test ONLY concepts explained in THIS turn or previous turns of this segment.
+2. Emit ONLY your assigned board_content items for this turn (see Sub-concept Pacing rule). NEVER emit items from future segments.
+3. Advance to teach the NEXT UNTAUGHT sub-concept from the CURRENT segment's `board_content` and `teaching_notes`.
+4. If student answered correctly, give 1 short sentence of praise and IMMEDIATELY teach the NEXT sub-concept within THIS segment.
+5. Any check or options asked in this turn MUST test ONLY concepts explained in THIS turn or previous turns of this segment.
 
 [SESSION STATE]
 {json.dumps(session_state_ctx, sort_keys=True)}
