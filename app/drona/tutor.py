@@ -486,19 +486,10 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         assert_no_forbidden_keys(err_payload)
         yield f"event: turn_error\ndata: {json.dumps(err_payload)}\n\n"
 
-    # 13. Emit sanitized SSE events (R3) with sentence-by-sentence Rumik Silk TTS audio
-    # ends_in_checkpoint tells the WS layer to skip TTS for the trailing question
-    # sentence — the checkpoint question is shown as text only, never voiced.
-    speech_payload = {"delta": speech_out, "ends_in_checkpoint": next_phase == "awaiting_answer"}
-    assert_no_forbidden_keys(speech_payload)
-    yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
-
-    # Word count bounds validation (60-120 words)
-    speech_words = [w for w in speech_out.split() if w.strip()]
-    word_count = len(speech_words)
-    if turn_type in ("teaching", "answer") and not (45 <= word_count <= 135):
-        logger.warning(f"⚠️ [PROMPT VIOLATION] Turn speech word count out of target range: {word_count} words (Target: 60-120 words).")
-
+    # 13. Compute board events and finalize phase/check_options BEFORE emitting
+    # anything. board_events must reach the client before speech/audio so the
+    # whiteboard isn't a beat behind the voice, and ends_in_checkpoint (below)
+    # needs the FINAL next_phase, not the pre-guardrail one.
     board_events_out = parsed_json.get("board_events") or []
     sanitized_board_events = []
     seen_contents = set()
@@ -535,13 +526,6 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         elif content_key:
             logger.warning(f"⚠️ [PROMPT VIOLATION] Dropped duplicate board_event content: '{content_key}'")
 
-    if sanitized_board_events:
-        board_payload = {"events": sanitized_board_events}
-        assert_no_forbidden_keys(board_payload)
-        yield f"event: board_events\ndata: {json.dumps(board_payload)}\n\n"
-    elif turn_type in ("teaching", "answer"):
-        logger.warning(f"⚠️ [PROMPT VIOLATION] Teaching turn in session {session_id} emitted 0 board_events! Tutor LLM omitted board_events array.")
-
     question_type = parsed_json.get("question_type")
     check_options = parsed_json.get("check_options") or []
 
@@ -557,6 +541,25 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             else:
                 question_type = "check"
                 check_options = ["Option A", "Option B", "Option C"]
+
+    if sanitized_board_events:
+        board_payload = {"events": sanitized_board_events}
+        assert_no_forbidden_keys(board_payload)
+        yield f"event: board_events\ndata: {json.dumps(board_payload)}\n\n"
+    elif turn_type in ("teaching", "answer"):
+        logger.warning(f"⚠️ [PROMPT VIOLATION] Teaching turn in session {session_id} emitted 0 board_events! Tutor LLM omitted board_events array.")
+
+    # ends_in_checkpoint tells the WS layer to skip TTS for the trailing question
+    # sentence — the checkpoint question is shown as text only, never voiced.
+    speech_payload = {"delta": speech_out, "ends_in_checkpoint": next_phase == "awaiting_answer"}
+    assert_no_forbidden_keys(speech_payload)
+    yield f"event: speech\ndata: {json.dumps(speech_payload)}\n\n"
+
+    # Word count bounds validation (60-120 words)
+    speech_words = [w for w in speech_out.split() if w.strip()]
+    word_count = len(speech_words)
+    if turn_type in ("teaching", "answer") and not (45 <= word_count <= 135):
+        logger.warning(f"⚠️ [PROMPT VIOLATION] Turn speech word count out of target range: {word_count} words (Target: 60-120 words).")
 
     meta_payload = {
         "segment_index": next_seg if next_phase != "complete" else total_segments,

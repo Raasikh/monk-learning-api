@@ -34,6 +34,7 @@ class LiveSessionState:
         self.tts_characters = 0
         self.reconnect_count = 0
         self.is_active = True
+        self.current_segment: int = 1
 
     def on_mute(self):
         if not self.is_muted:
@@ -72,6 +73,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     session_data = res_s.data[0]
     user_id = session_data['user_id']
     state = LiveSessionState(session_id, user_id)
+    state.current_segment = session_data.get('current_segment') or 1
     skip_tts_flag = websocket.query_params.get("skip_tts") == "1"
     tts_proxy = RumikTTSProxy(voice_preset="Ira", model="mulberry")
     stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast")
@@ -208,6 +210,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 await safe_send_json(out_msg)
 
             elif event_type == "meta":
+                if data_payload.get("segment_index"):
+                    state.current_segment = data_payload["segment_index"]
                 out_msg = {"type": "meta", **data_payload}
                 assert_no_forbidden_keys(out_msg)
                 await safe_send_json(out_msg)
@@ -296,21 +300,25 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
         # Emit updated state frame & auto-advance if next segment is in teaching phase
         try:
-            sess_res = supabase.table('drona_sessions').select('phase, current_segment, check_options').eq('id', session_id).single().execute()
+            # NOTE: drona_sessions has no check_options column — check_options is
+            # computed fresh per-turn in tutor.py and already delivered to the
+            # client via the primary "state" SSE event earlier in this stream.
+            # This re-fetch is only for the post-turn_complete state frame and
+            # the auto-advance decision below; selecting check_options here
+            # threw (42703) on every turn, aborting before auto-advance ever ran.
+            sess_res = supabase.table('drona_sessions').select('phase, current_segment').eq('id', session_id).single().execute()
             if sess_res.data:
                 curr_phase = sess_res.data.get('phase')
                 curr_seg = sess_res.data.get('current_segment')
-                opts = sess_res.data.get('check_options') or []
-                
+
                 state_frame = {
                     "type": "state",
                     "phase": curr_phase,
                     "current_segment": curr_seg,
-                    "check_options": opts
                 }
                 assert_no_forbidden_keys(state_frame)
                 await safe_send_json(state_frame)
-                logger.info(f"📡 [STATE FRAME EMITTED] phase='{curr_phase}', segment={curr_seg}, check_options_cnt={len(opts)}")
+                logger.info(f"📡 [STATE FRAME EMITTED] phase='{curr_phase}', segment={curr_seg}")
 
                 if curr_phase == 'teaching':
                     logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Phase is teaching for Segment #{curr_seg}. Automatically firing teaching turn...")
@@ -462,6 +470,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 "transcript": norm_t
                             })
                             launch_background_turn(utterance_text=norm_t, turn_type="answer")
+                        else:
+                            logger.warning(f"[SARVAM STT REST EMPTY] No transcript recovered from {duration_s:.2f}s of PTT audio for session {session_id}")
+                            await websocket.send_json({
+                                "type": "error",
+                                "message": "Couldn't catch that — try holding the mic a little longer, or type your answer instead."
+                            })
 
                 elif control_type == "mute":
                     state.on_mute()
