@@ -259,39 +259,50 @@ class FullSessionHarness:
                             print(f"  🎉 [{subj.upper()} SUCCESS] Session reached final phase: '{self.current_phase}'!", flush=True)
                             break
 
-                        if self.current_phase == "awaiting_answer" and prev_phase != "awaiting_answer":
-                            options = self.check_options
-                            if not options:
-                                self.violations["awaiting_answer_zero_options"] += 1
-                            
-                            if self.wrong_answer_variant:
-                                self.attempts_on_current_question += 1
-                                if self.attempts_on_current_question > 2:
-                                    print(f"❌ [RETRY CAP EXCEEDED] Question attempt count exceeded 2 at Segment {self.current_segment}!", flush=True)
-                                    self.violations["retry_cap_exceeded"] += 1
+                        if self.current_phase == "awaiting_answer":
+                            answer_key = f"seg_{self.current_segment}_att_{self.attempts_on_current_question}"
+                            if getattr(self, 'last_answered_key', None) != answer_key:
+                                self.last_answered_key = answer_key
+                                options = self.check_options
+                                if not options:
+                                    self.violations["awaiting_answer_zero_options"] += 1
                                 
-                                wrong_ans = options[1] if len(options) > 1 else (options[0] if options else "Incorrect choice")
-                                print(f"  ⚡ [WRONG RETRY] Submitting wrong answer (Attempt #{self.attempts_on_current_question}): '{wrong_ans}'", flush=True)
-                                await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
-                            else:
-                                correct_ans = options[0] if options else None
-                                if not correct_ans and hasattr(self, 'plan_id') and self.plan_id:
-                                    try:
-                                        sp_url = "https://tgbknrmnjwiokraddurx.supabase.co"
-                                        sp_key = os.getenv("SUPABASE_SECRET_KEY", "")
-                                        sp_h = {"apikey": sp_key, "Authorization": f"Bearer {sp_key}"}
-                                        plan_res = requests.get(f"{sp_url}/rest/v1/lesson_plans?select=plan_json&id=eq.{self.plan_id}", headers=sp_h).json()
-                                        if plan_res and plan_res[0].get("plan_json"):
-                                            segs = plan_res[0]["plan_json"].get("segments", [])
-                                            if self.current_segment <= len(segs):
-                                                cp = segs[self.current_segment - 1].get("checkpoint", {})
-                                                correct_ans = cp.get("question") or cp.get("rubric") or cp.get("model_answer")
-                                    except Exception:
-                                        pass
-                                if not correct_ans:
-                                    correct_ans = "Haan, main samajh gaya"
-                                print(f"  ⚡ [STANDARD CORRECT] Submitting correct choice: '{correct_ans[:60]}'", flush=True)
-                                await ws.send(json.dumps({"type": "utterance", "text": correct_ans}))
+                                if self.wrong_answer_variant:
+                                    self.attempts_on_current_question += 1
+                                    if self.attempts_on_current_question > 2:
+                                        print(f"❌ [RETRY CAP EXCEEDED] Question attempt count exceeded 2 at Segment {self.current_segment}!", flush=True)
+                                        self.violations["retry_cap_exceeded"] += 1
+                                    
+                                    wrong_ans = options[1] if len(options) > 1 else (options[0] if options else "Incorrect choice")
+                                    print(f"  ⚡ [WRONG RETRY] Submitting wrong answer (Attempt #{self.attempts_on_current_question}): '{wrong_ans}'", flush=True)
+                                    await ws.send(json.dumps({"type": "utterance", "text": wrong_ans}))
+                                else:
+                                    correct_ans = options[0] if options else None
+                                    if not correct_ans and hasattr(self, 'plan_id') and self.plan_id:
+                                        try:
+                                            sp_url = "https://tgbknrmnjwiokraddurx.supabase.co"
+                                            sp_key = os.getenv("SUPABASE_SECRET_KEY", "").strip()
+                                            if not sp_key:
+                                                try:
+                                                    from dotenv import dotenv_values
+                                                    env_vals = dotenv_values('/Users/raasikhnaveed/Desktop/dronav1project/.env')
+                                                    sp_key = env_vals.get("SUPABASE_SECRET_KEY", "").strip()
+                                                except Exception:
+                                                    pass
+                                            sp_h = {"apikey": sp_key, "Authorization": f"Bearer {sp_key}"}
+                                            plan_res = requests.get(f"{sp_url}/rest/v1/lesson_plans?select=plan_json&id=eq.{self.plan_id}", headers=sp_h).json()
+                                            if plan_res and plan_res[0].get("plan_json"):
+                                                segs = plan_res[0]["plan_json"].get("segments", [])
+                                                if self.current_segment <= len(segs):
+                                                    cp = segs[self.current_segment - 1].get("checkpoint", {})
+                                                    correct_ans = cp.get("question") or cp.get("rubric") or cp.get("model_answer")
+                                        except Exception:
+                                            pass
+                                    if not correct_ans:
+                                        correct_ans = f"Haan, segment {self.current_segment} clear hai"
+
+                                    print(f"  ⚡ [ANSWER SUBMISSION] Submitting answer for Segment #{self.current_segment}: '{correct_ans[:60]}'", flush=True)
+                                    await ws.send(json.dumps({"type": "utterance", "text": correct_ans}))
 
                         elif self.current_phase == "teaching" and prev_phase == "awaiting_answer":
                             self.attempts_on_current_question = 0
