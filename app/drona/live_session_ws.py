@@ -320,11 +320,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     ))
 
     active_turn_tasks = set()
+    pending_turn_queue: List[Tuple[str, str]] = []
 
     def launch_background_turn(utterance_text: str, turn_type: str = "answer"):
-        """Launches execute_turn_pipeline as a background task with concurrency guard and 20s heartbeat."""
+        """Launches execute_turn_pipeline as a background task with utterance queueing and 20s heartbeat."""
         if len(active_turn_tasks) > 0:
-            logger.warning(f"⚠️ [CONCURRENCY GUARD] Turn already active for session {session_id}. Skipping duplicate trigger for utterance='{utterance_text[:30]}'")
+            if utterance_text.strip():
+                logger.info(f"📥 [TURN QUEUED] Turn active for session {session_id}. Queueing utterance='{utterance_text[:30]}'")
+                pending_turn_queue.append((utterance_text, turn_type))
             return None
 
         async def _turn_runner():
@@ -347,6 +350,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             finally:
                 if hb_task and not hb_task.done():
                     hb_task.cancel()
+                if pending_turn_queue and state.is_active:
+                    next_utt, next_ttype = pending_turn_queue.pop(0)
+                    logger.info(f"🚀 [DRAINING TURN QUEUE] Executing queued turn: utterance='{next_utt[:30]}'")
+                    launch_background_turn(utterance_text=next_utt, turn_type=next_ttype)
 
         t_task = asyncio.create_task(_turn_runner())
         active_turn_tasks.add(t_task)
