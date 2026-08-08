@@ -8,6 +8,7 @@ from app.db import supabase
 from app.drona.models import get_drona_client, get_model_name
 from app.drona.prompt_loader import load_prompt
 from app.drona.state import compute_next_session_state
+from app.drona.voice_proxy import RumikConnectionPool, split_into_sentences
 
 logger = logging.getLogger("drona.tutor")
 
