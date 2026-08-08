@@ -295,7 +295,7 @@ class FullSessionHarness:
                                                 segs = plan_res[0]["plan_json"].get("segments", [])
                                                 if self.current_segment <= len(segs):
                                                     cp = segs[self.current_segment - 1].get("checkpoint", {})
-                                                    correct_ans = cp.get("question") or cp.get("rubric") or cp.get("model_answer")
+                                                    correct_ans = cp.get("model_answer") or cp.get("rubric") or cp.get("question")
                                         except Exception:
                                             pass
                                     if not correct_ans:
