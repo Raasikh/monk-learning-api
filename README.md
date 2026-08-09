@@ -21,6 +21,46 @@ Drona delivers structured 30-minute spoken lessons supported by a live, dynamic 
 
 ---
 
+## 1.5 Directory & Folder Breakdown
+
+Here is an explanatory guide to every primary directory in the backend repository and what it does:
+
+```text
+monk-learning-api/
+ ├── app/                      # Main FastAPI application source code
+ │    ├── routers/             # API HTTP route controllers (practice questions, Drona sessions)
+ │    ├── drona/               # Core Drona AI Tutor engine modules
+ │    │    ├── planner.py      # Authors 6–9 segment lesson plans using DeepSeek V4 Pro
+ │    │    ├── tutor.py        # Spoken turn streaming engine & board item assignment
+ │    │    ├── state.py        # Session state machine (phase, segment, attempts counter)
+ │    │    ├── voice_proxy.py  # Sarvam STT & Rumik Silk TTS WebSocket connection pool
+ │    │    ├── live_session_ws.py # Live WebSocket endpoint streaming PCM audio & board events
+ │    │    └── scoping.py      # Out-of-topic safety tier classification
+ │    ├── auth.py              # Supabase JWT authentication middleware & user verification
+ │    ├── config.py            # Environment settings (API keys, models, DB connections)
+ │    ├── db.py                # Supabase PostgreSQL client initialization
+ │    └── main.py              # FastAPI app initialization, CORS, & platform metrics sampler
+ ├── .agents/                  # Agentic standing rules (AGENTS.md repository root instructions)
+ ├── prompts/                  # System prompts driving LLM behaviors (planner.md, tutor.md, scoping.md)
+ ├── migrations/               # PostgreSQL SQL schema DDL migrations (0001 to 0011 SQL scripts)
+ ├── scripts/                  # Official CLI diagnostic & maintenance tools (session_log.py, etc.)
+ ├── scratch/                  # Temporary data files, trial scripts, and local audit utilities
+ └── tests/                    # Automated Pytest suite for API endpoints and guardrails
+```
+
+### Folder Explanations
+
+- **`app/`**: Contains all Python application code executed by Uvicorn / Gunicorn in production.
+  - **`app/routers/`**: Handles incoming HTTP REST requests (e.g., `/drona/session/start`, `/practice`).
+  - **`app/drona/`**: The core intelligence hub of Drona. Manages the LLM prompt construction, JSON parsing, TTS voice connection pool, and real-time WebSocket protocol.
+- **`prompts/`**: Houses markdown prompt templates (`planner.md`, `tutor.md`, `scoping.md`). Changing these files immediately alters Drona's spoken persona, whiteboard rules, or plan structures.
+- **`migrations/`**: Raw SQL migration files executed on Supabase PostgreSQL. Contains DDL statements for RLS policies, `lesson_plans`, `drona_sessions`, `drona_turns`, `drona_platform_metrics`, and `drona_wellbeing_flags`.
+- **`scripts/`**: Verified CLI utilities for developers (e.g., `scripts/session_log.py` for dumping live turn execution traces from DB, `scripts/drive_full_9_segments.py` for driving 9-segment test sessions).
+- **`scratch/`**: Workspace scratchpad for temporary data dumps, standalone test runners, and one-off database inspection scripts. Not deployed to production.
+- **`tests/`**: Unit and integration test suites validating API contracts, RLS policies, and prompt guardrails.
+
+---
+
 ## 1. Architecture & Session Lifecycle
 
 Drona structures learning hierarchically into subtopics, segments, and turns:
