@@ -17,19 +17,32 @@ The `app/drona/` directory is the core intelligence hub of **Drona**. It manages
 
 ---
 
-## ⚡ Execution Architecture
+## ⚡ Execution Sequence Flowchart
 
-```text
-WebSocket Connection (/drona/session/{id}/live)
- ├── 1. Audio Stream Receiver (PCM 16kHz Queue)
- ├── 2. Saaras STT Proxy (Transcribes Audio -> Text)
- ├── 3. Tutor Engine (process_tutor_turn_stream)
- │      ├── Computes turn_within_segment & board slices (ceil(N/3))
- │      ├── Invokes DeepSeek V4 Flash with system prompt
- │      └── Sanitizes JSON, forces Turn-1 teaching override
- └── 4. Voice Proxy Streamer
-        ├── Sentence-by-sentence Rumik Silk TTS WebSocket synthesis
-        └── Streams binary PCM audio + board_events + state frames over WS
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Client as Client Browser
+    participant WS as WebSocket Handler
+    participant Tutor as Tutor Engine (tutor.py)
+    participant LLM as DeepSeek V4 Flash
+    participant State as State Machine (state.py)
+    participant TTS as Rumik Connection Pool
+
+    Client->>WS: Sends Student Audio (16kHz PCM)
+    WS->>Tutor: Dispatches Utterance Transcript
+    Tutor->>Tutor: Computes turn_within_segment & Slices Board Items (ceil N/3)
+    Tutor->>LLM: Sends System Prompt + Assigned Items + State Context
+    LLM-->>Tutor: Returns JSON Response (speech, board_events, phase_request)
+    
+    alt Turn == 1
+        Tutor->>Tutor: Hard Override phase_request = "teaching" (No Questions)
+    end
+    
+    Tutor->>State: Evaluates next_phase, next_seg, next_attempts
+    Tutor->>TTS: Acquires Lease & Synthesizes Sentence Audio Chunks
+    TTS-->>WS: Streams Audio PCM Chunks + Board Events + State Frames
+    WS-->>Client: Renders Spoken Speech + Whiteboard Notes + Ask Sheet Chips
 ```
 
 ---

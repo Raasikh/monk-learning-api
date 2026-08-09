@@ -19,14 +19,25 @@ The `prompts/` directory contains the core system prompt templates that define D
 > [!IMPORTANT]
 > **ANY SPEECH ENDING IN `?` GETS AN ASK SHEET BOX.** Only pure transitions without a question mark return `phase_request: "teaching"`.
 
-```text
-       Spoken Speech Ends in Question Mark?
-                      │
-        ┌─────────────┴─────────────┐
-       YES                         NO
-        │                           │
-  [awaiting_answer]             [teaching]
-  Emit Option Chips             Question Type: null
+```mermaid
+flowchart TD
+    Start[Tutor Generates Spoken Speech] --> CheckQuestion{Does Speech End in '?' or Contain Question?}
+    
+    CheckQuestion -- NO --> Teaching[phase_request: 'teaching']
+    Teaching --> NullType[question_type: null]
+    NullType --> EmptyOpts[check_options: []]
+
+    CheckQuestion -- YES --> Awaiting[phase_request: 'awaiting_answer']
+    Awaiting --> Classify{Classify Question Intent}
+    
+    Classify -- Understanding Check-in --> UndType[question_type: 'understanding']
+    UndType --> UndOpts["check_options: ['Haan, samajh aaya', 'Thoda dubara samjhao'] (2 chips)"]
+
+    Classify -- Procedural Transition --> ProcType[question_type: 'procedural']
+    ProcType --> ProcOpts["check_options: ['Haan, aage badho', 'Ek baar dubara samjhao'] (2 chips)"]
+
+    Classify -- Content Check / Checkpoint --> ContentType[question_type: 'check' or 'checkpoint']
+    ContentType --> ContentOpts["check_options: 3 plausible option chips"]
 ```
 
 ### Classification Taxonomy Table

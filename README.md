@@ -71,9 +71,48 @@ SESSION (One Subtopic, ~25–35 minutes)
       └── TURN × 2–4  (Drona teaches & writes board events; student responds)
 ```
 
-### Core Execution Flow
+### 🔄 End-to-End System Flowchart
+
+```mermaid
+flowchart TD
+    subgraph Client["Next.js Web Client"]
+        Student[Student User]
+        AudioRec[Mic Recording 16kHz PCM]
+        WSClient[WebSocket Connection]
+        UIBoard[Whiteboard KaTeX Render]
+        AskSheet[Ask Sheet Option Chips]
+    end
+
+    subgraph Backend["FastAPI Backend (monk-learning-api)"]
+        WSHandler["live_session_ws.py Endpoint"]
+        STTProxy["Saaras STT Proxy Engine"]
+        Planner["planner.py (DeepSeek V4 Pro)"]
+        TutorEngine["tutor.py Engine (DeepSeek V4 Flash)"]
+        StateMachine["state.py State Machine"]
+        TTSPool["voice_proxy.py (Rumik Connection Pool)"]
+        DB[(Supabase PostgreSQL)]
+    end
+
+    Student -->|1. Select Subtopic| WSHandler
+    WSHandler -->|2. Check Cache| DB
+    DB -- Cache Miss --> Planner -->|Save 6-9 Segment Plan| DB
+    WSHandler -->|3. Stream Binary PCM| STTProxy
+    STTProxy -->|4. Text Transcript| TutorEngine
+    TutorEngine -->|5. Slices board_content ceil N/3| TutorEngine
+    TutorEngine -->|6. Call LLM| LLM[DeepSeek Flash]
+    LLM -->|7. JSON Response| TutorEngine
+    TutorEngine -->|8. Evaluate Next State| StateMachine
+    TutorEngine -->|9. Acquire Rumik Lease| TTSPool
+    TTSPool -->|10. Sentence Audio Chunks| WSHandler
+    WSHandler -->|11. Binary Audio PCM| WSClient
+    WSHandler -->|12. Board Events| UIBoard
+    WSHandler -->|13. Phase & Chips State| AskSheet
+    WSClient -->|14. Play Spoken Audio| Student
+```
+
+### ⚡ Sequential Execution Flow
 1. **Planner Phase**: `app/drona/planner.py` invokes `deepseek-v4-pro` to author a 6 to 9 segment plan grounded in vector retrieval chunks.
-2. **Tutor Turn Stream**: `app/drona/tutor.py` processes student utterances using `deepseek-v4-flash`, computing exact per-turn board item slices and state transitions.
+2. **Tutor Turn Stream**: `app/drona/tutor.py` processes student utterances using `deepseek-v4-flash`, computing exact per-turn board item slices (`ceil(N/3)`) and state transitions.
 3. **Voice Proxy Pipeline**: `app/drona/voice_proxy.py` manages audio STT (Sarvam) and sentence-by-sentence TTS synthesis (Rumik Silk WS API) using a per-turn connection leasing pool.
 4. **WebSocket Handler**: `app/drona/live_session_ws.py` streams binary PCM audio, board events, state frames, and Ask Sheet chips to the Next.js frontend over a single WebSocket connection.
 
