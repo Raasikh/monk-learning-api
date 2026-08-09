@@ -35,6 +35,50 @@ class PracticeExplainRequest(BaseModel):
 
 PLACEHOLDER_OPTIONS = {'A': 'Option A', 'B': 'Option B', 'C': 'Option C', 'D': 'Option D'}
 
+# --- Numerical grading tolerance -------------------------------------------
+# `value_tolerance` on the row is authoritative when set. It is currently NULL
+# on all 391 servable numerical rows, so the fallback below decides every
+# numerical grade in production today.
+#
+#   accept  <=>  abs(given - key) <= max(NUMERIC_ABS_FLOOR, abs(key) * NUMERIC_REL_FRACTION)
+#
+# A purely ABSOLUTE tolerance cannot work across this corpus. Measured range of
+# correct_value over the 390 non-null servable numerical rows: min 0 (11 rows are
+# exactly 0), smallest non-zero 0.06, median 10, max 65544. The previous
+# hardcoded 1e-3 rejected a student answer of 9.8 against a key of 9.81.
+#
+# 0.5% is the tightest relative band that still absorbs 2-3 significant-figure
+# rounding. The absolute floor only binds when the key is exactly 0.
+#
+# For INTEGER-valued keys at or above 200, an unbounded 0.5% band would exceed 1
+# and start accepting the adjacent integer (201 against a key of 200). Those keys
+# are capped at 0.5 so neighbouring integers stay distinct. The cap is bounded
+# above by NUMERIC_INT_CAP_MAX because at very large magnitudes integer adjacency
+# is not a meaningful distinction -- 6.02e23 is integer-valued as a float, and
+# capping it at 0.5 would demand an exact match to 24 significant figures.
+NUMERIC_REL_FRACTION = 0.005   # 0.5%
+NUMERIC_ABS_FLOOR = 1e-6
+NUMERIC_INT_CAP = 0.5
+NUMERIC_INT_CAP_MIN = 200
+NUMERIC_INT_CAP_MAX = 1e6      # corpus max is 65544, so every live row is covered
+
+
+def grade_numerical(given: float, key: float, tolerance: Optional[float] = None) -> bool:
+    """True when `given` matches `key`.
+
+    Uses the per-row `value_tolerance` when it is present and positive;
+    otherwise falls back to a relative band, capped for large integer keys.
+    """
+    given = float(given)
+    key = float(key)
+    if tolerance is not None and float(tolerance) > 0:
+        return abs(given - key) <= float(tolerance)
+
+    tol = max(NUMERIC_ABS_FLOOR, abs(key) * NUMERIC_REL_FRACTION)
+    if NUMERIC_INT_CAP_MIN <= abs(key) < NUMERIC_INT_CAP_MAX and key.is_integer():
+        tol = min(tol, NUMERIC_INT_CAP)
+    return abs(given - key) <= tol
+
 
 def is_quality_question(q: Dict[str, Any]) -> bool:
     """Quality Filter Rule (GATE 8.6): Exclude corrupt or low-quality rows."""
@@ -273,7 +317,7 @@ def submit_answer(
     # 1. Fetch target question with ground truth answers
     q_res = (
         supabase.table("questions")
-        .select("id, question_type, correct_option, correct_value, solution, options")
+        .select("id, question_type, correct_option, correct_value, value_tolerance, solution, options")
         .eq("id", req.question_id)
         .limit(1)
         .execute()
@@ -301,7 +345,9 @@ def submit_answer(
                 detail="Numerical question lacks correct_value ground truth."
             )
         if req.chosen_value is not None:
-            is_correct = abs(float(req.chosen_value) - float(correct_value)) <= 1e-3
+            is_correct = grade_numerical(
+                req.chosen_value, correct_value, q_data.get("value_tolerance")
+            )
     else:
         if req.chosen_option and correct_option:
             is_correct = req.chosen_option.strip().lower() == correct_option.strip().lower()
