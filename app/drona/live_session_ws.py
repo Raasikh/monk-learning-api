@@ -7,12 +7,19 @@ from typing import Dict, List, Optional, Tuple
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase
 from app.drona.tutor import process_tutor_turn_stream
-from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, check_tts_safety_filter, split_into_sentences
+from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
+from app.drona.persona import normalize_language, persona_for
 
 logger = logging.getLogger("drona.live_session_ws")
 router = APIRouter(prefix="/drona", tags=["drona_voice"])
 
 FORBIDDEN_WS_KEYS = {"model_answer", "rubric", "expected_misconceptions", "grade", "mistake_tag", "phase_request", "segment_complete"}
+
+# Ceiling for one complete turn: LLM (capped at TUTOR_TIMEOUT_S) plus
+# sentence-by-sentence TTS, which can legitimately retry on a Rumik rate limit.
+# Set above that worst case so it only fires on a genuine wedge, not on a slow
+# but healthy turn.
+TURN_WATCHDOG_S = 180.0
 
 def assert_no_forbidden_keys(payload: dict):
     for k in FORBIDDEN_WS_KEYS:
@@ -35,6 +42,10 @@ class LiveSessionState:
         self.reconnect_count = 0
         self.is_active = True
         self.current_segment: int = 1
+        # Refreshed from every "state" SSE event a turn emits — the mute gate
+        # used to check the phase snapshot fetched once at connect time, which
+        # goes stale the moment the first turn changes it.
+        self.current_phase: Optional[str] = None
 
     def on_mute(self):
         if not self.is_muted:
@@ -64,7 +75,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     await websocket.accept()
 
     # 1. Authenticate & fetch session
-    res_s = supabase.table('drona_sessions').select('id, user_id, phase, current_segment, mode, grounded').eq('id', session_id).execute()
+    # select('*') rather than a column list: tutor_voice only exists once
+    # migrations/0011 is applied, and naming a missing column here 42703s the
+    # whole connection (the same failure documented further down this file).
+    res_s = supabase.table('drona_sessions').select('*').eq('id', session_id).execute()
     if not res_s.data:
         await websocket.send_json({"type": "error", "message": f"Session {session_id} not found."})
         await websocket.close(code=4004)
@@ -74,9 +88,21 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     user_id = session_data['user_id']
     state = LiveSessionState(session_id, user_id)
     state.current_segment = session_data.get('current_segment') or 1
+    state.current_phase = session_data.get('phase')
     skip_tts_flag = websocket.query_params.get("skip_tts") == "1"
-    tts_proxy = RumikTTSProxy(voice_preset="Ira", model="mulberry")
+
+    persona = persona_for(session_data.get('tutor_voice'))
+    session_language = normalize_language(session_data.get('language'))
+    # session_id must be passed: RumikConnectionPool keys leases by it and
+    # returns an existing lease on a key match *without* checking the requested
+    # preset. Left at the "default_session" default, every concurrent student
+    # shares one connection and inherits whichever voice opened it first.
+    tts_proxy = RumikTTSProxy(voice_preset=persona['voice_preset'], model="mulberry", session_id=session_id, language=session_language)
     stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast")
+    logger.info(
+        f"🎙️ [SESSION PERSONA] session={session_id[:8]} tutor={persona['name']} "
+        f"voice_preset={persona['voice_preset']} language={session_language}"
+    )
 
     # Queue for incoming client binary PCM audio frames
     pcm_queue: asyncio.Queue[bytes] = asyncio.Queue()
@@ -101,6 +127,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         "phase": session_data['phase'],
         "current_segment": session_data['current_segment'],
         "is_muted": False,
+        "tutor_name": persona['name'],
+        "tutor_voice": persona['gender'],
+        "language": session_language,
         "message": "Connected to Drona Live Session WebSocket"
     })
 
@@ -117,6 +146,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         state_data = {}
         segment_complete_flag = False
         ends_in_checkpoint = False
+        session_ending = False
 
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")
@@ -165,7 +195,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                             "type": "audio_chunk",
                                             "sentence_id": f"{turn_id}_filler_{int(time.time()*1000)}",
                                             "audio": b64_f,
-                                            "speech": "Ek second...",
+                                            "speech": "One moment…" if session_language == "english" else "Ek second…",
                                             "board_event": None
                                         }
                                         await safe_send_json(f_msg)
@@ -218,13 +248,21 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
             elif event_type == "state":
                 state_data = data_payload
+                if data_payload.get("phase"):
+                    state.current_phase = data_payload["phase"]
                 if data_payload.get("segment_complete"):
                     segment_complete_flag = True
                 out_msg = {"type": "state", **data_payload}
                 assert_no_forbidden_keys(out_msg)
                 await safe_send_json(out_msg)
                 if data_payload.get("phase") == "complete":
-                    state.is_active = False
+                    # Deferred, not set here: the trailing sentence buffer and
+                    # turn_complete are still to come after this loop ends, and
+                    # safe_send_json no-ops once is_active is False — flipping
+                    # it here silently dropped the turn's last spoken line and
+                    # the turn_complete signal for every session that reaches
+                    # a natural end.
+                    session_ending = True
 
         # Synthesize remaining sentence buffer
         if speech_buffer.strip():
@@ -296,6 +334,20 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         else:
             logger.info(f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames ({total_audio_bytes} total PCM bytes) for session {session_id}")
 
+        # Hand the Rumik slot back. Without this the lease is held for the life
+        # of the process and the pool runs out after max_slots sessions have
+        # ever started.
+        #
+        # Keep the grace only when another teaching turn auto-advances straight
+        # after this one — that turn's prewarm() reuses the socket. If we are
+        # stopping on a question, the student is about to think for 20-60s and
+        # the slot should go back now.
+        next_turn_is_immediate = state_data.get("phase") == "teaching"
+        try:
+            await tts_proxy.end_turn(next_turn_is_immediate=next_turn_is_immediate)
+        except Exception as release_err:
+            logger.warning(f"Rumik lease release at turn end failed: {release_err}")
+
         await safe_send_json({"type": "turn_complete"})
 
         # Emit updated state frame & auto-advance if next segment is in teaching phase
@@ -325,6 +377,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     launch_background_turn(utterance_text="", turn_type="teaching")
         except Exception as auto_adv_err:
             logger.warning(f"Auto-segment advance check skipped: {auto_adv_err}")
+
+        # Now that the trailing sentence, turn_complete, and the post-turn
+        # state frame have all actually been sent, it's safe to stop the loop.
+        if session_ending:
+            state.is_active = False
 
     # W2 Fix: Callback for Saaras STT transcript streaming
     def handle_stt_transcript(raw_t: str, norm_t: str, is_final: bool, confidence: float):
@@ -363,14 +420,37 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
     active_turn_tasks = set()
     pending_turn_queue: List[Tuple[str, str]] = []
+    # Explicit in-flight flag rather than len(active_turn_tasks). The task is
+    # only discarded from that set by its done-callback, which fires *after*
+    # the runner's finally block — so a set-based guard is still truthy while
+    # the finishing turn tries to drain the queue, and nothing ever starts.
+    turn_in_flight = {"value": False}
+    MAX_QUEUED_TURNS = 4
 
     def launch_background_turn(utterance_text: str, turn_type: str = "answer"):
-        """Launches execute_turn_pipeline as a background task with utterance queueing and 20s heartbeat."""
-        if len(active_turn_tasks) > 0:
-            if utterance_text.strip():
-                logger.info(f"📥 [TURN QUEUED] Turn active for session {session_id}. Queueing utterance='{utterance_text[:30]}'")
-                pending_turn_queue.append((utterance_text, turn_type))
+        """Launches execute_turn_pipeline as a background task with turn queueing and 20s heartbeat."""
+        if turn_in_flight["value"]:
+            # Queue teaching turns too. Auto-advance calls this with an empty
+            # utterance, and the old `if utterance_text.strip()` guard dropped
+            # those on the floor: the segment logged "AUTO SEGMENT ADVANCE" and
+            # then simply never produced a turn, stalling the session after
+            # turn 1 until the student typed something.
+            if len(pending_turn_queue) >= MAX_QUEUED_TURNS:
+                logger.warning(f"⚠️ [TURN QUEUE FULL] Dropping {turn_type} turn for session {session_id}; {len(pending_turn_queue)} already queued.")
+                # Previously just logged and returned — the student's input
+                # (an interrupt, an answer, an auto-advance) vanished with no
+                # on-screen sign anything was lost.
+                if turn_type != "teaching":
+                    asyncio.create_task(safe_send_json({
+                        "type": "error",
+                        "message": "That's a lot at once — give the current turn a moment to finish.",
+                    }))
+                return None
+            logger.info(f"📥 [TURN QUEUED] Turn active for session {session_id}. Queueing {turn_type} turn utterance='{utterance_text[:30]}'")
+            pending_turn_queue.append((utterance_text, turn_type))
             return None
+
+        turn_in_flight["value"] = True
 
         async def _turn_runner():
             hb_task = None
@@ -386,15 +466,53 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                         pass
 
                 hb_task = asyncio.create_task(_heartbeat_loop())
-                await execute_turn_pipeline(utterance_text=utterance_text, turn_type=turn_type)
+                # Hard ceiling on a turn. Per-call timeouts cover a slow LLM or
+                # TTS response, but anything that wedges between them would
+                # otherwise hang forever: the heartbeat keeps pinging, the
+                # socket stays open, and the student watches nothing happen with
+                # no error and no recovery. Observed as a 12-minute silence.
+                await asyncio.wait_for(
+                    execute_turn_pipeline(utterance_text=utterance_text, turn_type=turn_type),
+                    timeout=TURN_WATCHDOG_S,
+                )
+            except asyncio.TimeoutError:
+                logger.error(
+                    f"❌ [TURN WATCHDOG FIRED] Session {session_id} exceeded {TURN_WATCHDOG_S}s. "
+                    f"Aborting the turn and returning the Rumik slot."
+                )
+                await safe_send_json({
+                    "type": "error",
+                    "message": "That took too long on our side — tap the mic or an option to continue.",
+                })
+                await safe_send_json({"type": "turn_complete"})
+                try:
+                    await tts_proxy.abandon()
+                except Exception:
+                    pass
             except Exception as turn_err:
-                logger.error(f"❌ [BACKGROUND TURN ERROR] Session {session_id}: {turn_err}")
+                # This used to just log — unlike the TimeoutError branch above,
+                # it never told the client anything or sent turn_complete, so
+                # any unhandled exception (a DB write failing mid-turn, a bad
+                # Supabase response) left the student staring at a screen that
+                # would never move again, with no error and nothing to retry.
+                logger.error(f"❌ [BACKGROUND TURN ERROR] Session {session_id}: {turn_err}", exc_info=True)
+                await safe_send_json({
+                    "type": "error",
+                    "message": "Something went wrong on our side — tap the mic or an option to continue.",
+                })
+                await safe_send_json({"type": "turn_complete"})
+                try:
+                    await tts_proxy.abandon()
+                except Exception:
+                    pass
             finally:
                 if hb_task and not hb_task.done():
                     hb_task.cancel()
+                # Clear before draining, or the next turn hits its own guard.
+                turn_in_flight["value"] = False
                 if pending_turn_queue and state.is_active:
                     next_utt, next_ttype = pending_turn_queue.pop(0)
-                    logger.info(f"🚀 [DRAINING TURN QUEUE] Executing queued turn: utterance='{next_utt[:30]}'")
+                    logger.info(f"🚀 [DRAINING TURN QUEUE] Executing queued {next_ttype} turn: utterance='{next_utt[:30]}'")
                     launch_background_turn(utterance_text=next_utt, turn_type=next_ttype)
 
         t_task = asyncio.create_task(_turn_runner())
@@ -497,7 +615,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 elif control_type == "utterance":
                     utterance_text = data.get("text", "").strip()
 
-                    if state.is_muted and session_data['phase'] == 'awaiting_answer':
+                    if state.is_muted and state.current_phase == 'awaiting_answer':
                         mute_dur = state.get_total_mute_sec()
                         if mute_dur > 5:
                             await websocket.send_json({
@@ -530,3 +648,23 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     finally:
         stt_task.cancel()
         stt_proxy.close()
+        # Only stt_task was ever cancelled here — any turn still generating
+        # (LLM call, TTS synthesis, DB writes) for a student who just left
+        # kept running to completion regardless, burning LLM/TTS spend and
+        # writing turns to a session nobody will read.
+        for t_task in list(active_turn_tasks):
+            if not t_task.done():
+                t_task.cancel()
+        # The student is gone — there is no next sentence to reuse the socket
+        # for, so skip the grace period and return the slot now. Omitting this
+        # leaks one of max_slots per session that ever connected.
+        try:
+            await tts_proxy.abandon()
+        except Exception as abandon_err:
+            logger.warning(f"Rumik lease release on disconnect failed: {abandon_err}")
+        pool = RumikConnectionPool.get_instance()
+        opens_60s, sends_60s = pool.get_rate_usage()
+        logger.info(
+            f"🔚 [SESSION CLOSED] session={session_id[:8]} | open_leases={len(pool.active_leases)}/{pool.max_slots} "
+            f"| rumik_opens_60s={opens_60s} | rumik_sends_60s={sends_60s} | pool_exhaustions={pool.pool_exhaustion_count}"
+        )

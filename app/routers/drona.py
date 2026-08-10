@@ -7,6 +7,13 @@ from app.auth import get_current_user_id
 from app.db import supabase
 from app.drona.scoping import scope_student_session
 from app.drona.tutor import process_tutor_turn_stream
+from app.drona.persona import (
+    SCOPING_PROMPT,
+    copy_for,
+    normalize_language,
+    normalize_voice,
+    tutor_name,
+)
 
 logger = logging.getLogger("drona.router")
 
@@ -64,11 +71,34 @@ def get_catalogue(user_id: str = Depends(get_current_user_id)):
 
     return catalogue
 
+@router.post("/topic/check")
+def check_topic_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_current_user_id)):
+    """POST /drona/topic/check — validates a topic BEFORE any session is created.
+
+    Lets the UI show a loading card and then either open the lesson or say
+    "that's in Gravitation" with a link, instead of dropping the student into a
+    session that was never going to work. Creates no rows.
+    """
+    from app.drona.topic_router import route_topic
+    chapter_id = payload.get("chapter_id") or None
+    if chapter_id and len(str(chapter_id)) != 36:
+        chapter_id = None  # 'free_text' and friends are not chapter ids
+    try:
+        return route_topic(payload.get("utterance", ""), chapter_id)
+    except Exception as e:
+        logger.error(f"Topic check failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @router.post("/session/start")
 def start_session_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_current_user_id)):
     """POST /drona/session/start — initializes session and returns initial scoping speech."""
     chapter_id = payload.get("chapter_id", "custom")
-    language = payload.get("language", "hinglish")
+    # Both axes are student-selectable and arrive from the picker. Normalize
+    # rather than trust: `language` is CHECK-constrained in the DB, and an
+    # unknown `voice` would leave the tutor with no persona at all.
+    language = normalize_language(payload.get("language"))
+    voice = normalize_voice(payload.get("voice"))
 
     valid_chap_id = None
     chapter_name = "this topic"
@@ -87,25 +117,48 @@ def start_session_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_c
                 valid_chap_id = sub_res.data[0]["chapter_id"]
                 chapter_name = sub_res.data[0]["subtopic"]
 
-    sess_res = supabase.table("drona_sessions").insert([{
+    session_row = {
         "user_id": user_id,
         "chapter_id": valid_chap_id,
         "mode": "chapter" if valid_chap_id else "free_text",
         "language": language,
+        "tutor_voice": voice,
         "phase": "scoping",
         "prompt_version": "v1.0"
-    }]).execute()
+    }
+
+    try:
+        sess_res = supabase.table("drona_sessions").insert([session_row]).execute()
+    except Exception as insert_err:
+        # migrations/0011 adds drona_sessions.tutor_voice. If it has not been
+        # applied yet, fall back to the pre-0011 shape so sessions still start —
+        # but say so loudly. Silently degrading is how 0007 and 0008 went
+        # unnoticed for days.
+        if "tutor_voice" not in str(insert_err):
+            raise
+        logger.error(
+            "❌ [MIGRATION 0011 NOT APPLIED] drona_sessions.tutor_voice is missing; "
+            "falling back to the default '%s' persona for this session. Apply "
+            "migrations/0011_drona_tutor_voice.sql — the student's tutor choice is "
+            "being ignored until you do.",
+            voice,
+        )
+        session_row.pop("tutor_voice")
+        sess_res = supabase.table("drona_sessions").insert([session_row]).execute()
 
     if not sess_res.data:
         raise HTTPException(status_code=500, detail="Failed to create Drona session")
 
     session_id = sess_res.data[0]["id"]
-    confirmation_speech = f"Oh, so you want to learn {chapter_name}? What specific topic or concept do you want to focus on today?"
+    confirmation_speech = copy_for(SCOPING_PROMPT, language, chapter=chapter_name)
 
     return {
         "session_id": session_id,
         "phase": "scoping",
-        "speech": confirmation_speech
+        "speech": confirmation_speech,
+        "language": language,
+        "tutor_voice": voice,
+        "tutor_name": tutor_name(voice)
     }
 
 @router.post("/session/{session_id}/scope")
@@ -142,15 +195,24 @@ def end_session_endpoint(session_id: str, user_id: str = Depends(get_current_use
     }).eq("id", session_id).execute()
 
     # Load session & plan data for real summary
-    sess_res = supabase.table("drona_sessions").select("plan_id").eq("id", session_id).execute()
-    plan_id = sess_res.data[0].get("plan_id") if sess_res.data else None
+    sess_res = supabase.table("drona_sessions").select("plan_id, current_segment, segments_completed").eq("id", session_id).execute()
+    session_row = sess_res.data[0] if sess_res.data else {}
+    plan_id = session_row.get("plan_id")
 
     summary_points = []
     if plan_id:
         p_res = supabase.table("lesson_plans").select("plan_json").eq("id", plan_id).execute()
         if p_res.data:
             pj = p_res.data[0].get("plan_json") or {}
-            summary_points = pj.get("wrapup_points") or [s.get("objective") for s in pj.get("segments", []) if s.get("objective")]
+            all_points = pj.get("wrapup_points") or [s.get("objective") for s in pj.get("segments", []) if s.get("objective")]
+            # Summarise only what was actually TAUGHT. Returning every wrapup
+            # point meant a student who stopped at segment 2 of 9 was handed
+            # takeaways for seven segments they never saw.
+            covered = session_row.get("segments_completed") or 0
+            if not covered:
+                covered = max(0, (session_row.get("current_segment") or 1) - 1)
+            covered = max(1, min(covered, len(all_points))) if all_points else 0
+            summary_points = all_points[:covered]
 
     if not summary_points:
         summary_points = ["Reviewed core concept step-by-step", "Solved checkpoint question on the board"]

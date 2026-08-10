@@ -102,6 +102,12 @@ app.include_router(drona_http_router)
 from app.drona.live_session_ws import router as drona_ws_router
 app.include_router(drona_ws_router)
 
+from app.routers.notes import router as notes_router
+app.include_router(notes_router)
+
+from app.routers.doubts import router as doubts_router
+app.include_router(doubts_router)
+
 
 
 import os

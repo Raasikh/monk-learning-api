@@ -33,31 +33,41 @@ def compute_next_session_state(
     if current_phase == "wrapup":
         return "complete", current_segment, 0, False, False
 
-    # 2. State: Awaiting Answer (Checkpoint evaluation)
+    # 2. State: Awaiting Answer (end-of-segment quiz)
+    #
+    # A segment ends with a short 3-question quiz. Every answer moves straight
+    # on to the next question — right or wrong, the tutor says so and explains,
+    # but never re-asks; the quiz is meant to be quick. Only the LAST question
+    # closes the segment.
+    #
+    # `_final_quiz_question` is set by the backend in tutor.py, not by the model.
+    # Without it, grading question 1 advanced the segment and questions 2 and 3
+    # were never asked.
     if current_phase == "awaiting_answer":
-        if grade == "correct":
+        if grade in ("correct", "partial", "incorrect"):
+            is_mistake = grade in ("partial", "incorrect")
+
+            if not bool(tutor_output.get("_final_quiz_question")):
+                # More quiz questions to come — hold the segment, keep asking.
+                return "awaiting_answer", current_segment, 0, False, is_mistake
+
             next_seg = current_segment + 1
             if next_seg > total_segments:
-                return "wrapup", current_segment, 0, True, False
-            return "teaching", next_seg, 0, True, False
-
-        elif grade == "partial":
-            next_seg = current_segment + 1
-            if next_seg > total_segments:
-                return "wrapup", current_segment, 0, True, True
-            return "teaching", next_seg, 0, True, True
-
-        elif grade == "incorrect":
-            if attempts == 0:
-                return "awaiting_answer", current_segment, 1, False, True
-            else:
-                # Max 1 attempt reached -> advance segment
-                next_seg = current_segment + 1
-                if next_seg > total_segments:
-                    return "wrapup", current_segment, 0, True, True
-                return "teaching", next_seg, 0, True, True
+                return "wrapup", current_segment, 0, True, is_mistake
+            return "teaching", next_seg, 0, True, is_mistake
         else:
-            # Reverted: An unparsed/absent grade must NEVER default to correct or advance segment.
+            # No grade. An unparsed grade must NEVER default to correct or
+            # advance the segment — that rule is absolute and still holds here.
+            #
+            # But a *deliberate* null (the reply was to a lightweight check or
+            # a procedural question, not to the graded checkpoint) has to hand
+            # control back to teaching. Leaving the phase at awaiting_answer
+            # meant every ungraded check re-entered this branch, so the segment
+            # sat on turn 1 forever posting new checks and never reached its
+            # checkpoint. Returning to teaching does not advance the segment
+            # and does not record a grade.
+            if phase_req == "teaching":
+                return "teaching", current_segment, attempts, False, False
             return current_phase, current_segment, attempts, False, False
 
     # 3. State: Teaching

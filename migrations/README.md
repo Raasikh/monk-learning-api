@@ -16,6 +16,17 @@ The `migrations/` directory contains all PostgreSQL database DDL migration scrip
 | `0009_telemetry.sql` | Persistent telemetry columns | `pool_exhaustion_count`, `ended_reason`, `violations` |
 | `0010_rate_limit_hits.sql` | `drona_rate_limit_hits` | Telemetry table for Rumik/Sarvam vendor rate limits |
 | `0011_drona_tutor_voice.sql` | `tutor_voice` column | Adds `female` (Veda/Ira) vs `male` (Drona/Lucas) persona choice |
+| `0012_notes_and_doubts.sql` | `drona_notes`, `doubts`, `doubt_reports` | Notes saved from sessions; Snap a Doubt results; wrong-answer reports |
+
+> [!WARNING]
+> **`0012` reconciles a pre-existing `doubts` stub.** The table already existed
+> with `image_url`, `transcribed_question`, `question_latex`, `answer_json` and
+> `solved`. `create table if not exists` would have silently skipped every new
+> column, so `0012` uses `alter table ... add column if not exists` and drops the
+> superseded columns behind a guard that refuses to run if the table has rows.
+> Snap a Doubt images live in **Cloudflare R2**, not Postgres and not Supabase
+> Storage — the row stores the object key (`doubts/{user_id}/{doubt_id}.jpg`),
+> never a public URL.
 
 ---
 

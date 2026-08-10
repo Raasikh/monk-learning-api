@@ -448,17 +448,40 @@ class RumikTurnLease:
         return time.time() - self.start_time
 
 
-FEMALE_FILLER_PHRASES = [
-    "Ek second, soch rahi hoon…",
-    "Ruko zara, main dekh rahi hoon…",
-    "Hmm, ek minute…"
-]
+# Filler phrases must follow the SESSION LANGUAGE. These played as hardcoded
+# Hinglish in English sessions — an English-speaking student suddenly heard
+# "Ek second, soch rahi hoon…" mid-lesson.
+#
+# Keyed (gender, language). Only Ira and Lucas are prewarmed because those are
+# the only two presets a persona ever maps to, so the boot cost is unchanged.
+FILLER_PHRASES = {
+    ("female", "hinglish"): [
+        "Ek second, soch rahi hoon…",
+        "Ruko zara, main dekh rahi hoon…",
+        "Hmm, ek minute…",
+    ],
+    ("male", "hinglish"): [
+        "Ek second, soch raha hoon…",
+        "Ruko zara, main dekh raha hoon…",
+        "Hmm, ek minute…",
+    ],
+    ("female", "english"): [
+        "One moment, let me think…",
+        "Just a second…",
+        "Hmm, give me a moment…",
+    ],
+    ("male", "english"): [
+        "One moment, let me think…",
+        "Just a second…",
+        "Hmm, give me a moment…",
+    ],
+}
 
-MALE_FILLER_PHRASES = [
-    "Ek second, soch raha hoon…",
-    "Ruko zara, main dekh raha hoon…",
-    "Hmm, ek minute…"
-]
+PRESET_GENDER = {"Ira": "female", "Veda": "female", "Lucas": "male", "Drona": "male"}
+
+
+def filler_cache_key(voice_preset: str, language: str) -> str:
+    return f"{voice_preset}:{(language or 'hinglish').lower()}"
 
 class FillerAudioCache:
     """Pre-synthesizes filler audio phrases at startup and caches raw PCM bytes in memory.
@@ -483,19 +506,13 @@ class FillerAudioCache:
 
         t_start = time.time()
         
-        # Female presets: Ira, Veda
-        for v in ["Ira", "Veda"]:
-            self.cache[v] = []
-            for phrase in FEMALE_FILLER_PHRASES:
-                pcm = await self._synthesize_direct(phrase, v)
-                self.cache[v].append(pcm)
-
-        # Male presets: Lucas, Drona
-        for v in ["Lucas", "Drona"]:
-            self.cache[v] = []
-            for phrase in MALE_FILLER_PHRASES:
-                pcm = await self._synthesize_direct(phrase, v)
-                self.cache[v].append(pcm)
+        for preset in ("Ira", "Lucas"):
+            gender = PRESET_GENDER[preset]
+            for lang in ("hinglish", "english"):
+                key = filler_cache_key(preset, lang)
+                self.cache[key] = []
+                for phrase in FILLER_PHRASES[(gender, lang)]:
+                    self.cache[key].append(await self._synthesize_direct(phrase, preset))
 
         self.is_prewarmed = True
         elapsed = time.time() - t_start
@@ -527,15 +544,15 @@ class FillerAudioCache:
         # Silent 24kHz PCM fallback (zero runtime requests)
         return b"\x00" * 57600
 
-    def get_random_filler(self, voice_preset: str, exclude_idx: Optional[int] = None) -> Tuple[int, bytes]:
-        """Returns (index, pcm_bytes) of a cached filler phrase in memory for zero-request delivery."""
+    def get_random_filler(self, voice_preset: str, language: str = "hinglish",
+                          exclude_idx: Optional[int] = None) -> Tuple[int, bytes]:
+        """Returns (index, pcm_bytes) of a cached filler for this voice AND language."""
         import random
-        phrases_pcm = self.cache.get(voice_preset)
+        phrases_pcm = self.cache.get(filler_cache_key(voice_preset, language))
         if not phrases_pcm:
-            if voice_preset in ("Lucas", "Drona"):
-                phrases_pcm = self.cache.get("Lucas") or self.cache.get("Drona")
-            else:
-                phrases_pcm = self.cache.get("Ira") or self.cache.get("Veda")
+            fallback_preset = "Lucas" if PRESET_GENDER.get(voice_preset) == "male" else "Ira"
+            phrases_pcm = (self.cache.get(filler_cache_key(fallback_preset, language))
+                           or self.cache.get(filler_cache_key(fallback_preset, "hinglish")))
 
         if not phrases_pcm:
             return 0, b"\x00" * 48000
@@ -559,6 +576,12 @@ class RumikConnectionPool:
         
         self.concurrent_held_history: List[int] = []
         self.connections_opened_timestamps: List[float] = []
+        # Two different things can count against Rumik's 100 RPM: opening a
+        # connection (one POST to /v1/tts/ws-connect) and sending text down an
+        # already-open socket. We do not know which one Rumik meters, and they
+        # differ by roughly 6x per turn, so track both and plan against the
+        # larger. See get_rate_usage().
+        self.synthesis_requests_timestamps: List[float] = []
         self.lease_durations: List[float] = []
         self.acquisition_wait_times: List[float] = []
         self.pool_exhaustion_count: int = 0
@@ -570,10 +593,31 @@ class RumikConnectionPool:
             cls._instance = RumikConnectionPool(max_slots=50)
         return cls._instance
 
+    def record_synthesis_request(self):
+        """One text frame sent down an open socket. Counted separately from opens."""
+        self.synthesis_requests_timestamps.append(time.time())
+
+    def get_rate_usage(self) -> Tuple[int, int]:
+        """Returns (connection_opens, synthesis_sends) in the trailing 60s."""
+        cutoff = time.time() - 60.0
+        opens = sum(1 for ts in self.connections_opened_timestamps if ts >= cutoff)
+        sends = sum(1 for ts in self.synthesis_requests_timestamps if ts >= cutoff)
+        # Keep the windows from growing without bound over a long-lived process.
+        if len(self.connections_opened_timestamps) > 5000:
+            self.connections_opened_timestamps = [t for t in self.connections_opened_timestamps if t >= cutoff]
+        if len(self.synthesis_requests_timestamps) > 5000:
+            self.synthesis_requests_timestamps = [t for t in self.synthesis_requests_timestamps if t >= cutoff]
+        return opens, sends
+
     def get_requests_in_last_60s(self) -> int:
-        now = time.time()
-        cutoff = now - 60.0
-        return sum(1 for ts in self.connections_opened_timestamps if ts >= cutoff)
+        """Worst-case RPM against Rumik's 100/min cap.
+
+        Deliberately the max of the two counters rather than opens alone: if
+        Rumik meters text frames we would otherwise under-report by ~6x and
+        only find out via RATE_LIMITED frames.
+        """
+        opens, sends = self.get_rate_usage()
+        return max(opens, sends)
 
     async def acquire_lease(self, session_id: str, voice_preset: str = "Ira", model: str = "mulberry") -> Tuple[Optional[RumikTurnLease], bool]:
         t0 = time.time()
@@ -690,8 +734,10 @@ class RumikConnectionPool:
 
 class RumikTTSProxy:
     """Streaming TTS synthesis via Rumik Silk WebSocket API using Per-Turn Connection Pool."""
-    def __init__(self, voice_preset: str = "Ira", model: str = "mulberry", session_id: str = "default_session"):
+    def __init__(self, voice_preset: str = "Ira", model: str = "mulberry", session_id: str = "default_session",
+                 language: str = "hinglish"):
         self.voice_preset = voice_preset
+        self.language = language
         self.model = model
         self.session_id = session_id
         self.connection_count = 0
@@ -700,6 +746,26 @@ class RumikTTSProxy:
     async def prewarm(self):
         pool = RumikConnectionPool.get_instance()
         await pool.acquire_lease(self.session_id, self.voice_preset, self.model)
+
+    async def end_turn(self, next_turn_is_immediate: bool = False):
+        """Hand the slot back once a turn's last sentence has been synthesized.
+
+        Sentences *within* a turn already reuse the lease, so at a turn boundary
+        the grace period only pays for itself if another turn is about to start
+        right now — i.e. an auto-advanced teaching turn, whose prewarm() lands
+        within a second or two and reuses the socket instead of re-handshaking.
+
+        When the turn ends on a checkpoint the student is about to spend 20-60s
+        reading and answering. Holding the slot through that is pure waste, so
+        release immediately and let someone else have it.
+        """
+        pool = RumikConnectionPool.get_instance()
+        await pool.release_lease(self.session_id, immediate=not next_turn_is_immediate)
+
+    async def abandon(self):
+        """Drop the slot immediately — student disconnected, nothing to reuse."""
+        pool = RumikConnectionPool.get_instance()
+        await pool.release_lease(self.session_id, immediate=True)
 
     async def synthesize_text(
         self,
@@ -745,7 +811,7 @@ class RumikTTSProxy:
         if is_exhausted or lease is None:
             logger.warning(f"⚠️ [RUMIK POOL EXHAUSTION FALLBACK] Surfacing cached filler phrase for text='{text[:30]}...'")
             filler_cache = FillerAudioCache.get_instance()
-            _, filler_pcm = filler_cache.get_random_filler(self.voice_preset)
+            _, filler_pcm = filler_cache.get_random_filler(self.voice_preset, self.language)
             if on_filler_cb:
                 try:
                     await on_filler_cb(filler_pcm)
@@ -760,6 +826,7 @@ class RumikTTSProxy:
         try:
             payload = {"text": text, "speaker": self.voice_preset}
             logger.info(f"[RUMIK WS PAYLOAD] session={self.session_id[:8]} | sentence={self.connection_count} | payload={json.dumps(payload)}")
+            pool.record_synthesis_request()
             await ws.send(json.dumps(payload))
 
             while True:
@@ -777,18 +844,20 @@ class RumikTTSProxy:
                             break
                         elif data.get("code") == "RATE_LIMITED" or data.get("error"):
                             retry_after = float(data.get("retry_after", 5.0))
-                            reqs_60s = pool.get_requests_in_last_60s()
+                            opens_60s, sends_60s = pool.get_rate_usage()
 
                             logger.warning(
                                 f"🚨 [RUMIK RATE LIMITED] session={self.session_id} | seg={segment_index} | "
-                                f"retry_after={retry_after}s | req_last_60s={reqs_60s} | attempt={attempt}/3"
+                                f"retry_after={retry_after}s | opens_last_60s={opens_60s} | "
+                                f"sends_last_60s={sends_60s} | open_leases={len(pool.active_leases)}/{pool.max_slots} | "
+                                f"attempt={attempt}/3"
                             )
 
                             self._record_rate_limit_hit_async()
                             filler_cache = FillerAudioCache.get_instance()
 
                             # 1. Play first cached filler immediately (0 requests, no gap!)
-                            idx1, filler1_pcm = filler_cache.get_random_filler(self.voice_preset)
+                            idx1, filler1_pcm = filler_cache.get_random_filler(self.voice_preset, self.language)
                             if on_filler_cb:
                                 try:
                                     await on_filler_cb(filler1_pcm)
@@ -798,7 +867,7 @@ class RumikTTSProxy:
                             # 2. Smart mid-wait filler: if retry_after > 15s, play second filler mid-way
                             if retry_after > 15.0:
                                 await asyncio.sleep(10.0)
-                                idx2, filler2_pcm = filler_cache.get_random_filler(self.voice_preset, exclude_idx=idx1)
+                                idx2, filler2_pcm = filler_cache.get_random_filler(self.voice_preset, self.language, exclude_idx=idx1)
                                 logger.info(f"⏳ [RUMIK MID-WAIT FILLER] Playing 2nd filler for session {self.session_id[:8]} (retry_after={retry_after}s)")
                                 if on_filler_cb:
                                     try:

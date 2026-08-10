@@ -2,9 +2,17 @@ import json
 import logging
 from typing import Dict, Any, List
 from app.db import supabase
-from app.drona.models import get_drona_client, get_model_name
+from app.drona.models import get_drona_client, get_model_name, SCOPING_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.planner import get_or_create_plan
+from app.drona.persona import (
+    SCOPING_AMBIGUOUS,
+    SCOPING_RESOLVED,
+    copy_for,
+    normalize_language,
+    normalize_voice,
+    tutor_name,
+)
 
 logger = logging.getLogger("drona.scoping")
 
@@ -16,6 +24,8 @@ def scope_student_session(session_id: str, user_id: str, utterance: str) -> Dict
         raise ValueError(f"Session '{session_id}' not found for user '{user_id}'")
     session = sess_res.data[0]
     chapter_id = session.get("chapter_id")
+    language = normalize_language(session.get("language"))
+    voice = normalize_voice(session.get("tutor_voice"))
 
     # 2. Load chapter name & subtopics from subtopic_index
     chap_name = "this chapter"
@@ -88,7 +98,8 @@ Student Utterance: "{utterance}"
                 {"role": "user", "content": user_content}
             ],
             response_format={"type": "json_object"},
-            temperature=0.0
+            temperature=0.0,
+            timeout=SCOPING_TIMEOUT_S
         )
 
         content = res.choices[0].message.content or ""
@@ -120,14 +131,17 @@ Student Utterance: "{utterance}"
             "history_summary": new_history
         }).eq("id", session_id).execute()
 
-        tutor_speech = f"Awesome! Let's dive into {sub_title}. I'll guide you step-by-step on the board."
+        tutor_speech = copy_for(SCOPING_RESOLVED, language, subtopic=sub_title)
 
         return {
             "phase": "teaching",
             "speech": tutor_speech,
             "subtopic": sub_title,
             "subtopic_key": subtopic_key,
-            "plan_ready": True
+            "plan_ready": True,
+            "language": language,
+            "tutor_voice": voice,
+            "tutor_name": tutor_name(voice)
         }
 
     # Case B: Subtopic ambiguous / null -> return options[]
@@ -137,11 +151,14 @@ Student Utterance: "{utterance}"
     }).eq("id", session_id).execute()
 
     options = [s["subtopic"] for s in subtopics] if subtopics else ["General Overview"]
-    tutor_speech = f"Got it! Which of these subtopics in {chap_name} would you like to cover?"
+    tutor_speech = copy_for(SCOPING_AMBIGUOUS, language, chapter=chap_name)
 
     return {
         "phase": "scoping",
         "speech": tutor_speech,
         "options": options,
-        "plan_ready": False
+        "plan_ready": False,
+        "language": language,
+        "tutor_voice": voice,
+        "tutor_name": tutor_name(voice)
     }
