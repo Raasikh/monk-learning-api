@@ -1,10 +1,11 @@
 import re
 import json
 import time
+import uuid
 import asyncio
 import base64
 import logging
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase
 from app.drona.tutor import process_tutor_turn_stream
@@ -70,6 +71,15 @@ class LiveSessionState:
         duration = byte_count / 32000.0
         self.stt_seconds += duration
 
+# One live connection per session. A browser refresh, a resume, or a
+# reconnect opens a NEW socket while the old one is often still open server
+# side (a dropped tab is only noticed when TCP times out). Both connections
+# auto-start a teaching turn and both stream TTS, so the student hears two
+# lessons at once — audio that overlaps no matter how carefully each stream
+# is ordered. The newest connection wins; the previous one is retired.
+ACTIVE_SESSION_CONNECTIONS: Dict[str, Dict[str, Any]] = {}
+
+
 @router.websocket("/session/{session_id}/live")
 async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     """Unified WebSocket endpoint streaming binary PCM, Saaras STT transcripts, sentence-level TTS synthesis, board events, and state updates."""
@@ -87,7 +97,26 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
     session_data = res_s.data[0]
     user_id = session_data['user_id']
+
+    # Retire any previous connection for this session BEFORE this one starts
+    # teaching, so only one stream of audio is ever in flight. Its turn is
+    # aborted too: left running it keeps synthesizing into a socket nobody is
+    # listening to, and it shares this session's Rumik lease key — its
+    # eventual cleanup would close the connection the NEW turn is using.
+    previous = ACTIVE_SESSION_CONNECTIONS.get(session_id)
+    if previous is not None and previous["state"].is_active:
+        previous["state"].is_active = False
+        logger.info(f"🔁 [SESSION TAKEOVER] Newer connection for session {session_id[:8]} — retiring the previous one.")
+        prev_abort = previous.get("abort")
+        if prev_abort is not None:
+            try:
+                await prev_abort("session_takeover")
+            except Exception as takeover_err:
+                logger.warning(f"Could not abort the previous connection's turn: {takeover_err}")
+
     state = LiveSessionState(session_id, user_id)
+    conn_record: Dict[str, Any] = {"state": state, "abort": None}
+    ACTIVE_SESSION_CONNECTIONS[session_id] = conn_record
     state.current_segment = session_data.get('current_segment') or 1
     state.current_phase = session_data.get('phase')
     skip_tts_flag = websocket.query_params.get("skip_tts") == "1"
@@ -98,7 +127,13 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     # returns an existing lease on a key match *without* checking the requested
     # preset. Left at the "default_session" default, every concurrent student
     # shares one connection and inherits whichever voice opened it first.
-    tts_proxy = RumikTTSProxy(voice_preset=persona['voice_preset'], model="mulberry", session_id=session_id, language=session_language)
+    # pool_key is per CONNECTION, not per session: during a takeover (refresh
+    # / resume) two connections exist briefly for one session, and a shared
+    # key meant the retiring one's release closed the socket the new one was
+    # mid-sentence on. Keeps the session prefix so pool logs stay readable.
+    conn_pool_key = f"{session_id}#{uuid.uuid4().hex[:4]}"
+    tts_proxy = RumikTTSProxy(voice_preset=persona['voice_preset'], model="mulberry", session_id=session_id,
+                              language=session_language, pool_key=conn_pool_key)
     stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast", language=session_language)
     logger.info(
         f"🎙️ [SESSION PERSONA] session={session_id[:8]} tutor={persona['name']} "
@@ -634,6 +669,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             pass
         logger.info(f"✋ [TURN ABORTED] reason={reason} — student took the floor for session {session_id[:8]}")
 
+    # Expose the abort to whichever connection replaces this one.
+    conn_record["abort"] = abort_active_turn
+
     # Auto-trigger turn 1 teaching if session is in teaching phase upon connect
     if session_data['phase'] == 'teaching':
         logger.info(f"🚀 [WS CONNECT AUTO-START] Triggering turn 1 teaching for Segment #{session_data['current_segment']}...")
@@ -765,6 +803,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         except Exception:
             pass
     finally:
+        # Only clear the registry if THIS connection is still the current one.
+        # A newer connection that took over must keep its entry.
+        superseded = ACTIVE_SESSION_CONNECTIONS.get(session_id) is not conn_record
+        if not superseded:
+            ACTIVE_SESSION_CONNECTIONS.pop(session_id, None)
         stt_task.cancel()
         stt_proxy.close()
         # Only stt_task was ever cancelled here — any turn still generating
@@ -777,10 +820,18 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         # The student is gone — there is no next sentence to reuse the socket
         # for, so skip the grace period and return the slot now. Omitting this
         # leaks one of max_slots per session that ever connected.
-        try:
-            await tts_proxy.abandon()
-        except Exception as abandon_err:
-            logger.warning(f"Rumik lease release on disconnect failed: {abandon_err}")
+        #
+        # Unless a newer connection took this session over: the pool keys
+        # leases by session_id, so abandoning here would close the connection
+        # the LIVE turn is currently synthesizing on. The new connection owns
+        # the lease now and will release it itself.
+        if superseded:
+            logger.info(f"[SUPERSEDED CLEANUP] Session {session_id[:8]} was taken over — leaving the Rumik lease to the newer connection.")
+        else:
+            try:
+                await tts_proxy.abandon()
+            except Exception as abandon_err:
+                logger.warning(f"Rumik lease release on disconnect failed: {abandon_err}")
         pool = RumikConnectionPool.get_instance()
         opens_60s, sends_60s = pool.get_rate_usage()
         logger.info(

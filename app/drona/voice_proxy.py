@@ -894,17 +894,24 @@ class RumikConnectionPool:
 class RumikTTSProxy:
     """Streaming TTS synthesis via Rumik Silk WebSocket API using Per-Turn Connection Pool."""
     def __init__(self, voice_preset: str = "Ira", model: str = "mulberry", session_id: str = "default_session",
-                 language: str = "hinglish"):
+                 language: str = "hinglish", pool_key: Optional[str] = None):
         self.voice_preset = voice_preset
         self.language = language
         self.model = model
         self.session_id = session_id
+        # Pool leases are keyed separately from the DB session id. Two
+        # connections can briefly exist for ONE session (a refresh or resume
+        # taking over), and with a shared key the retiring connection's
+        # release closed the very socket the new one was synthesizing on —
+        # "sent 1000 (OK); then received 1000 (OK)" mid-sentence. session_id
+        # stays the DB identity (rate_limit_hits writes use it).
+        self.pool_key = pool_key or session_id
         self.connection_count = 0
         self.lock = asyncio.Lock()
 
     async def prewarm(self):
         pool = RumikConnectionPool.get_instance()
-        await pool.acquire_lease(self.session_id, self.voice_preset, self.model)
+        await pool.acquire_lease(self.pool_key, self.voice_preset, self.model)
 
     async def end_turn(self, next_turn_is_immediate: bool = False):
         """Hand the slot back once a turn's last sentence has been synthesized.
@@ -919,12 +926,12 @@ class RumikTTSProxy:
         release immediately and let someone else have it.
         """
         pool = RumikConnectionPool.get_instance()
-        await pool.release_lease(self.session_id, immediate=not next_turn_is_immediate)
+        await pool.release_lease(self.pool_key, immediate=not next_turn_is_immediate)
 
     async def abandon(self):
         """Drop the slot immediately — student disconnected, nothing to reuse."""
         pool = RumikConnectionPool.get_instance()
-        await pool.release_lease(self.session_id, immediate=True)
+        await pool.release_lease(self.pool_key, immediate=True)
 
     async def synthesize_text(
         self,
@@ -975,7 +982,7 @@ class RumikTTSProxy:
         t0 = time.time()
 
         pool = RumikConnectionPool.get_instance()
-        lease, is_exhausted = await pool.acquire_lease(self.session_id, self.voice_preset, self.model)
+        lease, is_exhausted = await pool.acquire_lease(self.pool_key, self.voice_preset, self.model)
 
         if is_exhausted or lease is None:
             logger.warning(f"⚠️ [RUMIK POOL EXHAUSTION FALLBACK] Surfacing cached filler phrase for text='{text[:30]}...'")
@@ -1043,7 +1050,7 @@ class RumikTTSProxy:
                                 # retrying would speak its opening twice. Keep
                                 # what was delivered and move on.
                                 logger.warning(f"🚨 [RUMIK ERROR MID-STREAM] Sentence #{self.connection_count} errored after {emitted_parts} parts played — not retrying to avoid double speech.")
-                                await pool.release_lease(self.session_id, immediate=True)
+                                await pool.release_lease(self.pool_key, immediate=True)
                                 return b""
                             retry_after = float(data.get("retry_after", 5.0))
                             opens_60s, sends_60s = pool.get_rate_usage()
@@ -1082,7 +1089,7 @@ class RumikTTSProxy:
 
                             # 3. Retry synthesis (up to 3 attempts)
                             if attempt < 3:
-                                await pool.release_lease(self.session_id, immediate=True)
+                                await pool.release_lease(self.pool_key, immediate=True)
                                 return await self._synthesize_text_locked(
                                     text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index,
                                     on_audio_part=on_audio_part,
@@ -1095,7 +1102,7 @@ class RumikTTSProxy:
 
         except Exception as ws_err:
             logger.warning(f"[RUMIK WS ERROR] Exception during synthesis: {ws_err}")
-            await pool.release_lease(self.session_id, immediate=True)
+            await pool.release_lease(self.pool_key, immediate=True)
             if emitted_parts > 0:
                 # Same double-speech guard as the rate-limit path.
                 logger.warning(f"[RUMIK WS ERROR MID-STREAM] Sentence #{self.connection_count} died after {emitted_parts} parts played — not retrying.")
@@ -1142,6 +1149,6 @@ class RumikTTSProxy:
                 yield audio_pcm
 
         pool = RumikConnectionPool.get_instance()
-        await pool.release_lease(self.session_id, immediate=False)
+        await pool.release_lease(self.pool_key, immediate=False)
 
 
