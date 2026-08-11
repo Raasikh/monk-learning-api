@@ -345,15 +345,17 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "transcribe", REMEDY_RETAKE, "ocr_failed",
         )
 
+    # The confidence floor is gone, deliberately. Watermarked scans — exactly
+    # what students photograph — scored 0.8177 while reading perfectly (1,748
+    # clean chars), so the floor produced false refusals. Bad reads are caught
+    # downstream instead, where they actually show: an answer matching no
+    # option is flagged 'unsure', a bare MCQ stem is refused, and the score is
+    # logged so drift stays measurable.
     if not mathpix.confidence_is_usable(page["confidence"]):
         logger.warning(
-            "[SNAP TRANSCRIBE] doubt=%s confidence_rate %.4f below %.2f — refusing",
-            doubt_id[:8], page["confidence"], mathpix.MIN_CONFIDENCE_RATE,
-        )
-        raise SnapError(
-            "That photo came out too unclear to read reliably. Try again with "
-            "more light, the page flat, and the question filling the frame.",
-            "transcribe", REMEDY_RETAKE, "photo_unclear",
+            "[SNAP TRANSCRIBE] doubt=%s low confidence_rate %.4f — proceeding, "
+            "downstream gates will judge the read",
+            doubt_id[:8], page["confidence"],
         )
 
     # 2. Structure. Text only — no image — so the maths cannot be re-read wrong.

@@ -685,19 +685,18 @@ def test_shared_fragment_does_not_count_as_a_match(monkeypatch):
 
 # --- Mathpix OCR gate -------------------------------------------------------
 
-def test_low_ocr_confidence_is_refused(monkeypatch):
-    """A read the OCR itself doubts must not be reasoned on.
-
-    Gated on confidence_rate, not confidence: perfect reads scored 0.43-0.94 on
-    `confidence`, so it separates nothing. See app/mathpix.py for the table.
-    """
+def test_low_ocr_confidence_proceeds_with_a_warning(monkeypatch):
+    """The confidence floor is gone: a watermarked scan scored 0.8177 while
+    reading perfectly, so the floor refused good pages. Low scores are logged
+    and the downstream gates judge the read instead."""
     monkeypatch.setattr(snap.mathpix, "read_page",
-                        lambda *_a, **_k: {"text": "blurry", "confidence": 0.62})
+                        lambda *_a, **_k: {"text": "watermarked scan", "confidence": 0.62})
     structurer = stub_transcriber(monkeypatch, mcq_transcription())
-    with pytest.raises(SnapError) as err:
-        transcribe_questions(b"img", "image/jpeg", "d1")
-    print(f"  structuring model called {structurer.calls}x; {str(err.value)[:64]}")
-    assert structurer.calls == 0
+    read = transcribe_questions(b"img", "image/jpeg", "d1")
+    print(f"  0.62 proceeded -> {len(read['questions'])} question(s), "
+          f"structurer called {structurer.calls}x")
+    assert structurer.calls == 1
+    assert len(read["questions"]) == 1
 
 
 def test_usable_confidence_proceeds(monkeypatch):
