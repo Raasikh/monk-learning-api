@@ -882,13 +882,25 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
     }
 
 
-# ─── Experiment knobs (eval harness only) ───────────────────────────────────
-# Defaults preserve AGENTS.md Rule 5 exactly: deepseek-v4-pro, thinking
-# disabled. The eval harness overrides these module attributes to A/B other
-# configurations; production never sets them, and any non-default value logs a
-# loud warning on every solve.
+# ─── Solver configuration ────────────────────────────────────────────────────
+# The snap solver runs with thinking ENABLED — a measured exception to the
+# blanket Rule 5 default, sanctioned 2026-08-11 after a harness A/B:
+#
+#     thinking OFF   24/27 rounds correct (89%), a different question wobbling
+#                    every run, and rambling steps triggering rewrite retries
+#     thinking ON    53/54 rounds correct (98%), and CHEAPER on the hard case —
+#                    1,487/878 tokens in 9s where OFF spent 4,124/1,288 in 16s
+#                    failing (the reasoning pass replaces the retry machinery)
+#
+# Rule 5's rationale (thinking eats the budget, returns an empty string) is
+# about the tutor's live per-turn latency; a ~10-20s async solve is a different
+# workload. Tutor, planner and scoping remain thinking-OFF.
+#
+# The env knobs remain for the eval harness; anything other than the sanctioned
+# configuration logs loudly on every solve.
 SOLVE_MODEL_OVERRIDE = os.getenv("SNAP_SOLVE_MODEL_OVERRIDE", "").strip()
-SOLVE_THINKING = os.getenv("SNAP_SOLVE_THINKING", "disabled").strip()
+SOLVE_THINKING = os.getenv("SNAP_SOLVE_THINKING", "enabled").strip()
+SANCTIONED_THINKING = "enabled"
 
 # How many independent solves to run per question, majority-voted. Measured
 # need: an identical photo produced 13 on one run and 14 on the next at
@@ -1011,10 +1023,10 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     solve_model = SOLVE_MODEL_OVERRIDE or MODEL_SOLVE
     use_openai = solve_model.startswith("gpt")
     solve_client = _openai_client() if use_openai else client
-    if SOLVE_MODEL_OVERRIDE or SOLVE_THINKING != "disabled":
+    if SOLVE_MODEL_OVERRIDE or SOLVE_THINKING != SANCTIONED_THINKING:
         logger.warning(
             "[SNAP SOLVE] EXPERIMENT CONFIG ACTIVE: model=%s thinking=%s — "
-            "outside AGENTS.md Rule 5; eval use only",
+            "differs from the sanctioned configuration; eval use only",
             solve_model, SOLVE_THINKING,
         )
 
@@ -1068,8 +1080,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         )
 
         def retry_call(_corrective: Optional[str] = None):
-            return client.chat.completions.create(
-                model=MODEL_SOLVE,
+            kwargs: Dict[str, Any] = dict(
+                model=solve_model,
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
@@ -1080,8 +1092,12 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 temperature=0.0,
                 max_tokens=1500,
                 timeout=SOLVE_TIMEOUT_S,
-                extra_body={"thinking": {"type": "disabled"}},
             )
+            if not use_openai:
+                kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
+                if SOLVE_THINKING != "disabled":
+                    kwargs["max_tokens"] = 8000
+            return solve_client.chat.completions.create(**kwargs)
 
         try:
             retried = _call_with_one_retry("solve", retry_call,

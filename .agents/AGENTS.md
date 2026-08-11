@@ -58,7 +58,18 @@ returned → student sees something plausible → nobody notices for days.
 | Planner | `deepseek-v4-pro` | OFF |
 | Tutor | `deepseek-v4-flash` | OFF |
 | Scoping | `deepseek-v4-flash` | OFF |
-| Snap It Out transcription | `gpt-4o-mini` | — |
+| Snap It Out structuring/matching | `gpt-4o-mini` | — |
+| Snap It Out OCR | Mathpix | — |
+| Snap It Out diagram description | `gpt-4o` | — |
+| Snap It Out solver | `deepseek-v4-pro` | **ON** |
+
+- **Snap solver exception, measured 2026-08-11**: thinking ON scored 53/54
+  rounds (98%) against 24/27 (89%) for OFF on the hand-verified eval set, and
+  was *cheaper and faster* on the hard case (1,487/878 tokens in 9s where OFF
+  spent 4,124/1,288 in 16s failing). The OFF rule protects the tutor's live
+  per-turn latency; a ~10-20s async solve is a different workload. `gpt-4o` as
+  solver was tested and eliminated: 3/9, stably wrong on JEE maths. Re-run
+  `scratch/eval_solver.py` before changing this row again.
 
 - **Never** `deepseek-chat` or `deepseek-reasoner`. Legacy aliases, and
   V4-Flash defaults to chain-of-thought unless explicitly disabled — it will

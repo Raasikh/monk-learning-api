@@ -205,8 +205,8 @@ def test_solver_receives_only_the_transcribed_json(monkeypatch):
     print(f"  solver user message: {user_msg[:90]}…")
     assert "image_url" not in json.dumps(sent["messages"])
     assert "base64" not in json.dumps(sent["messages"])
-    assert sent["extra_body"] == {"thinking": {"type": "disabled"}}
-    print("  no image reached the solver; thinking disabled")
+    assert sent["extra_body"] == {"thinking": {"type": snap.SOLVE_THINKING}}
+    print(f"  no image reached the solver; thinking={snap.SOLVE_THINKING}")
 
 
 def test_illegible_question_is_never_solved(monkeypatch):
