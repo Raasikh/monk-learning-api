@@ -45,7 +45,23 @@ async def verify_models_on_startup():
 
 
 async def platform_metrics_sampler_loop():
-    from app.drona.voice_proxy import RumikConnectionPool
+    """Samples real provider load every 30s.
+
+    This is the evidence behind any request to raise a provider's limits, so
+    every field has to mean what its name says. Three did not:
+
+    - active_sessions counted drona_sessions rows still in phase 'teaching',
+      which includes every session ever abandoned mid-lesson (143 of them,
+      against at most one live student). Now counts live WebSocket
+      connections.
+    - rumik_requests_last_60s counted connection OPENS, not synthesis
+      requests — roughly a 4x undercount, since one connection carries a
+      turn's several sentences. Now counts actual sends.
+    - sarvam_requests_last_60s was assigned the session count, measuring
+      nothing about Sarvam at all. Now counts real STT calls.
+    """
+    from app.drona.voice_proxy import RumikConnectionPool, stt_requests_last_60s
+    from app.drona.live_session_ws import ACTIVE_SESSION_CONNECTIONS
     from app.db import supabase
     pool = RumikConnectionPool.get_instance()
     sample_counter = 0
@@ -53,28 +69,35 @@ async def platform_metrics_sampler_loop():
         await asyncio.sleep(30.0)
         sample_counter += 1
         try:
-            res = supabase.table("drona_sessions").select("id", count="exact").eq("phase", "teaching").execute()
-            active_cnt = res.count or len(res.data or [])
+            live_sessions = sum(
+                1 for rec in list(ACTIVE_SESSION_CONNECTIONS.values())
+                if rec["state"].is_active
+            )
             open_conns = len(pool.active_leases)
-            if active_cnt > 0 or open_conns > 0:
-                now = time.time()
-                recent_opens = [t for t in pool.connections_opened_timestamps if now - t <= 60.0]
+            opens_60s, sends_60s = pool.get_rate_usage()
+            stt_60s = stt_requests_last_60s()
+
+            if live_sessions > 0 or open_conns > 0 or sends_60s > 0:
                 recent_waits = pool.acquisition_wait_times[-50:] if pool.acquisition_wait_times else [0]
                 recent_waits_sorted = sorted(recent_waits)
-                p95_idx = int(len(recent_waits_sorted) * 0.95)
+                p95_idx = min(int(len(recent_waits_sorted) * 0.95), len(recent_waits_sorted) - 1)
                 p95_wait = int(recent_waits_sorted[p95_idx])
 
                 supabase.table("drona_platform_metrics").insert([{
-                    "active_sessions": active_cnt,
+                    "active_sessions": live_sessions,
                     "rumik_connections_open": open_conns,
-                    "rumik_requests_last_60s": len(recent_opens),
-                    "sarvam_requests_last_60s": active_cnt,
+                    "rumik_requests_last_60s": sends_60s,
+                    "sarvam_requests_last_60s": stt_60s,
                     "p95_lease_acquisition_ms": p95_wait
                 }]).execute()
-                
+
                 # Log summary ONLY once every 20 samples (10 minutes)
                 if sample_counter % 20 == 0:
-                    logger.info(f"📊 [PLATFORM METRICS 10m SUMMARY] Active Sessions: {active_cnt} | Rumik Conns: {open_conns} | P95 Lease Wait: {p95_wait}ms")
+                    logger.info(
+                        f"📊 [PLATFORM METRICS 10m] live_sessions={live_sessions} | rumik_conns_open={open_conns} "
+                        f"| rumik_sends_60s={sends_60s} | rumik_opens_60s={opens_60s} | stt_60s={stt_60s} "
+                        f"| p95_lease_wait={p95_wait}ms"
+                    )
         except Exception as err:
             logger.warning(f"Platform metrics sampler non-fatal error: {err}")
 

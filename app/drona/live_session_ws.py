@@ -48,6 +48,9 @@ class LiveSessionState:
         # used to check the phase snapshot fetched once at connect time, which
         # goes stale the moment the first turn changes it.
         self.current_phase: Optional[str] = None
+        # Highest Rumik sends-per-minute observed while this session ran —
+        # the per-student peak a provider asks for when sizing limits.
+        self.peak_rumik_rpm: int = 0
 
     def on_mute(self):
         if not self.is_muted:
@@ -453,6 +456,15 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         else:
             logger.info(f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames ({total_audio_bytes} total PCM bytes) for session {session_id}")
 
+        # Peak TTS rate seen while this session was running — sampled at the
+        # busiest moment of a turn (its end), which is when a turn's sentences
+        # have all been synthesized.
+        try:
+            _, sends_60s_now = RumikConnectionPool.get_instance().get_rate_usage()
+            state.peak_rumik_rpm = max(state.peak_rumik_rpm, sends_60s_now)
+        except Exception:
+            pass
+
         # Hand the Rumik slot back. Without this the lease is held for the life
         # of the process and the pool runs out after max_slots sessions have
         # ever started.
@@ -838,3 +850,21 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             f"🔚 [SESSION CLOSED] session={session_id[:8]} | open_leases={len(pool.active_leases)}/{pool.max_slots} "
             f"| rumik_opens_60s={opens_60s} | rumik_sends_60s={sends_60s} | pool_exhaustions={pool.pool_exhaustion_count}"
         )
+
+        # Persist this session's usage rollup. These columns existed but were
+        # never written — every one read 0, so per-student TTS load was
+        # invisible even though the per-turn numbers were being recorded.
+        # This is the per-student evidence for a provider limit review.
+        if not superseded:
+            try:
+                turn_rows = supabase.table('drona_turns').select('rumik_requests, rumik_chars') \
+                    .eq('session_id', session_id).execute().data or []
+                supabase.table('drona_sessions').update({
+                    'rumik_requests_total': sum((t.get('rumik_requests') or 0) for t in turn_rows),
+                    'tts_characters': sum((t.get('rumik_chars') or 0) for t in turn_rows) or state.tts_characters,
+                    'stt_seconds': round(state.stt_seconds, 1),
+                    'rumik_peak_rpm': state.peak_rumik_rpm,
+                    'mute_duration_sec': state.get_total_mute_sec(),
+                }).eq('id', session_id).execute()
+            except Exception as rollup_err:
+                logger.warning(f"Session usage rollup write failed: {rollup_err}")

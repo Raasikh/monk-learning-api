@@ -318,6 +318,7 @@ class SaarasSTTProxy:
         try:
             loop = asyncio.get_event_loop()
             def _do_rest_call():
+                record_stt_request()
                 return requests.post("https://api.sarvam.ai/speech-to-text", headers=headers, data=data, files=files, timeout=12)
 
             resp = await loop.run_in_executor(None, _do_rest_call)
@@ -438,6 +439,7 @@ class SaarasSTTProxy:
                     try:
                         loop = asyncio.get_event_loop()
                         def _do_rest_call():
+                            record_stt_request()
                             return requests.post("https://api.sarvam.ai/speech-to-text", headers=headers, data=data, files=files, timeout=10)
                         
                         resp = await loop.run_in_executor(None, _do_rest_call)
@@ -494,6 +496,23 @@ class RumikTurnLease:
 # Pool key the boot-time filler prewarm leases under. Distinct from any real
 # session id so live-session accounting can tell the two apart.
 PREWARM_SESSION_KEY = "boot_prewarm"
+
+# Sarvam STT calls, for the platform metrics sampler. The sampler used to
+# report the count of DB rows in phase='teaching' as its "Sarvam requests",
+# which measured nothing of the sort.
+_STT_REQUEST_TIMESTAMPS: List[float] = []
+
+
+def record_stt_request():
+    _STT_REQUEST_TIMESTAMPS.append(time.time())
+
+
+def stt_requests_last_60s() -> int:
+    cutoff = time.time() - 60.0
+    recent = [t for t in _STT_REQUEST_TIMESTAMPS if t >= cutoff]
+    if len(_STT_REQUEST_TIMESTAMPS) > 5000:
+        _STT_REQUEST_TIMESTAMPS[:] = recent
+    return len(recent)
 
 # No trailing ellipses and no leading "Hmm" — measured, Rumik renders both as
 # long drawn-out pauses ("Hmm, ek minute…" came back 4.6s for 15 characters,
