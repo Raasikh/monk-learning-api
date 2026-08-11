@@ -36,9 +36,12 @@ class PracticeExplainRequest(BaseModel):
 PLACEHOLDER_OPTIONS = {'A': 'Option A', 'B': 'Option B', 'C': 'Option C', 'D': 'Option D'}
 
 # --- Numerical grading tolerance -------------------------------------------
-# `value_tolerance` on the row is authoritative when set. It is currently NULL
-# on all 391 servable numerical rows, so the fallback below decides every
-# numerical grade in production today.
+# `value_tolerance` on the row is authoritative when set. Nothing has ever
+# populated it with a usable value: measured 2026-08-10 against production, it
+# is 0 on 377 of the 383 servable numerical rows and NULL on the other 6. Zero
+# fails the `> 0` guard below just as NULL does, so the fallback still decides
+# every numerical grade in production today. Do not read "tolerance is set" as
+# "a per-row tolerance is in force" -- check that it is greater than zero.
 #
 #   accept  <=>  abs(given - key) <= max(NUMERIC_ABS_FLOOR, abs(key) * NUMERIC_REL_FRACTION)
 #
