@@ -566,6 +566,10 @@ async def snap_doubt_stream(
                         "daily_limit": DAILY_QUESTION_LIMIT,
                         "questions_used_today": used_today,
                     })
+                elif kind in ("thinking", "step", "steps_reset"):
+                    # Live progress while a solve runs. Steps only — never an
+                    # answer, which waits for the validated "question" event.
+                    yield event(kind, item)
                 elif kind == "question":
                     row = _row_from_question(item, user_id, submission_id, key, meta)
                     remedy = row.pop("_remedy")

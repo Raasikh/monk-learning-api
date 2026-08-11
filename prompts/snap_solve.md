@@ -8,16 +8,20 @@ Return ONLY valid JSON:
 ```json
 {
   "answerable": true,
-  "answer": "…the final answer, stated plainly…",
-  "option_labels": ["D"],
   "steps": [
     { "n": 1, "text": "…one step, with math in $…$…" }
   ],
+  "answer": "…the final answer, stated plainly…",
+  "option_labels": ["D"],
   "key_idea": "…one line: the insight that unlocks this question…",
   "subject": "…",
   "topic": "…"
 }
 ```
+
+Write the fields in exactly this order — `steps` before `answer`. The steps are
+shown to the student as you write them, like working on a board; the answer is
+stated once the working is done.
 
 ---
 

@@ -647,6 +647,89 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
     return description
 
 
+# A completed step object inside a *partial* JSON buffer. Streaming shows the
+# student each step as the solver writes it; the answer is never streamed — it
+# waits for the validated final card.
+_STREAM_STEP_RE = re.compile(
+    r'\{\s*"n"\s*:\s*(\d+)\s*,\s*"text"\s*:\s*"((?:[^"\\]|\\.)*)"\s*\}'
+)
+
+
+def _emit_new_steps(buffer: str, emitted: set, on_event) -> None:
+    """Fires on_event('step', ...) for every step object now complete in buffer."""
+    for match in _STREAM_STEP_RE.finditer(buffer):
+        n = int(match.group(1))
+        if n in emitted:
+            continue
+        try:
+            text = json.loads(f'"{match.group(2)}"')
+        except json.JSONDecodeError:
+            continue
+        emitted.add(n)
+        on_event("step", {"n": n, "text": _repair_latex(text)})
+
+
+def _streamed_solve(make_kwargs, on_event, doubt_id: str,
+                    usage_acc: Optional[Dict[str, int]]) -> Dict[str, Any]:
+    """One solve, streamed: thinking ticks and steps go out live, the parsed
+    JSON comes back for the same validation as the non-streamed path.
+
+    Same one-retry contract as _call_with_one_retry; a retry resets the
+    student's view first so attempt 2 does not append to attempt 1's steps.
+    """
+    client_kwargs = make_kwargs()
+    client_kwargs["stream"] = True
+    client_kwargs["stream_options"] = {"include_usage": True}
+    solve_client = client_kwargs.pop("_client")
+
+    last_err = None
+    for attempt in (1, 2):
+        if attempt == 2:
+            client_kwargs["messages"] = client_kwargs["messages"] + [
+                {"role": "user", "content": _PARSE_CORRECTIVE}]
+            on_event("steps_reset", {})
+        buffer, emitted = "", set()
+        thinking_chars, last_tick = 0, time.time()
+        started = time.time()
+        try:
+            for chunk in solve_client.chat.completions.create(**client_kwargs):
+                usage = getattr(chunk, "usage", None)
+                if usage and usage_acc is not None:
+                    usage_acc["input"] = usage_acc.get("input", 0) + int(usage.prompt_tokens or 0)
+                    usage_acc["output"] = usage_acc.get("output", 0) + int(usage.completion_tokens or 0)
+                if not chunk.choices:
+                    continue
+                delta = chunk.choices[0].delta
+                reasoning = getattr(delta, "reasoning_content", None)
+                if reasoning:
+                    thinking_chars += len(reasoning)
+                    if time.time() - last_tick >= 2.5:
+                        last_tick = time.time()
+                        on_event("thinking", {
+                            "seconds": int(time.time() - started),
+                        })
+                if delta.content:
+                    buffer += delta.content
+                    _emit_new_steps(buffer, emitted, on_event)
+        except Exception as err:
+            last_err = err
+            logger.warning("[SNAP SOLVE] stream attempt %d/2 failed (%s): %s",
+                           attempt, doubt_id[:8], str(err)[:160])
+            continue
+        try:
+            return _parse_json(buffer, "solve")
+        except (json.JSONDecodeError, SnapError) as err:
+            last_err = err
+            logger.warning(
+                "[SNAP SOLVE] streamed JSON unparseable on attempt %d/2 (%s): %s",
+                attempt, doubt_id[:8], err,
+            )
+    raise SnapError(
+        "Something went wrong at Monk's end reading that back. Please try again.",
+        "solve", REMEDY_OUR_SIDE, "model_unparseable",
+    )
+
+
 # ─── Pass 3: match a blind answer to the options ─────────────────────────────
 
 def match_answer_to_options(answer: str, options: List[Dict[str, str]],
@@ -984,8 +1067,15 @@ def _solve_with_consensus(make_call, doubt_id: str,
 
 
 def solve_question(question: Dict[str, Any], doubt_id: str = "-",
-                   usage_acc: Optional[Dict[str, int]] = None) -> Dict[str, Any]:
-    """Solves ONE transcribed question. The solver never sees the image."""
+                   usage_acc: Optional[Dict[str, int]] = None,
+                   on_event=None) -> Dict[str, Any]:
+    """Solves ONE transcribed question. The solver never sees the image.
+
+    With `on_event`, thinking progress and each completed step are emitted live
+    ("thinking" / "step" / "steps_reset") while the solve runs. The ANSWER is
+    never emitted this way: it goes through the same validation as ever and
+    arrives only in the returned, gated solution.
+    """
     if not question.get("legible"):
         # Belt and braces: the caller already filters these out.
         raise SnapError("That question was not legible enough to solve.",
@@ -1061,8 +1151,29 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             return solve_client.chat.completions.create(**kwargs)
         return call
 
-    parsed = _solve_with_consensus(make_call, doubt_id, usage_acc,
-                                   expect_model=solve_model)
+    if on_event is not None and SOLVE_SAMPLES <= 1:
+        def make_kwargs():
+            kwargs: Dict[str, Any] = dict(
+                model=solve_model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                max_tokens=1500,
+                timeout=SOLVE_TIMEOUT_S,
+                _client=solve_client,
+            )
+            if not use_openai:
+                kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
+                if SOLVE_THINKING != "disabled":
+                    kwargs["max_tokens"] = 8000
+            return kwargs
+        parsed = _streamed_solve(make_kwargs, on_event, doubt_id, usage_acc)
+    else:
+        parsed = _solve_with_consensus(make_call, doubt_id, usage_acc,
+                                       expect_model=solve_model)
 
     # Steps are what the student reads. A rambling one is both unreadable and
     # the thing that breaks the JSON, so it earns one corrective retry.
@@ -1309,10 +1420,41 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                 )
 
         if question["legible"]:
-            try:
-                question["solution"] = solve_question(question, doubt_id, sv_usage)
+            # The solve runs in a thread; its live events drain through a queue
+            # so the student sees thinking ticks and each step AS IT IS WRITTEN
+            # instead of a silent 20-30s gap. The final "question" event stays
+            # authoritative — nothing streamed carries an answer.
+            import queue as _queue
+            import threading as _threading
+            events: "_queue.Queue" = _queue.Queue()
+            outcome: Dict[str, Any] = {}
+
+            def _run(q=question):
+                try:
+                    outcome["solution"] = solve_question(
+                        q, doubt_id, sv_usage,
+                        on_event=lambda kind, data: events.put((kind, data)),
+                    )
+                except SnapError as err:
+                    outcome["error"] = err
+                finally:
+                    events.put(None)
+
+            worker = _threading.Thread(target=_run, daemon=True)
+            worker.start()
+            while True:
+                item = events.get()
+                if item is None:
+                    break
+                kind, data = item
+                yield kind, {**data, "question_index": question["n"]}
+            worker.join()
+
+            if "solution" in outcome:
+                question["solution"] = outcome["solution"]
                 solved_count += 1
-            except SnapError as err:
+            elif "error" in outcome:
+                err = outcome["error"]
                 logger.error("[SNAP SOLVE FAILED] doubt=%s q%d: %s",
                              doubt_id[:8], question["n"], err)
                 question["solve_error"] = str(err)
