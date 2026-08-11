@@ -468,8 +468,12 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # has to infer one from wording — which it missed on a real page whose
         # stem said "two arrangements of wires" without saying "as shown".
         # Mathpix reporting a diagram region is the authoritative signal.
-        needs_diagram = (item.get("requires_diagram") is True
-                         or parsed.get("_diagram_regions", 0) > 0)
+        # Per-question, from the question's own text. The page-level count is a
+        # hint to the structuring model, NOT a verdict on every question: a page
+        # with one figure was OR'ing `requires_diagram` onto all of them, so a
+        # thermodynamics question and a de Broglie ratio were both refused as
+        # "needs the board" because a bob-on-a-string question shared the page.
+        needs_diagram = item.get("requires_diagram") is True
         if needs_diagram:
             logger.info(
                 "[SNAP TRANSCRIBE] doubt=%s q%d needs a diagram — will describe it",
@@ -656,6 +660,13 @@ _DELIBERATION_MARKERS = (
     "however,", "re-evaluat", "perhaps", "let's check", "let me check",
     "not among the options", "matches option", "wait,", "actually,",
     "on second thought", "this suggests the answer is", "looking at the options",
+    # Seen leaking through on a real page: "The ratio is undefined, but
+    # interpreting the question as ... The only plausible answer among the
+    # options is 2." That is the model reasoning towards a choice, in front of
+    # the student.
+    "plausible answer", "among the options", "the only option", "closest option",
+    "interpreting the question as", "if we assume the question means",
+    "which is impossible", "but if we", "assuming instead",
 )
 
 
@@ -930,13 +941,22 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         labels = match_answer_to_options(solution["answer"], options, q_type,
                                          doubt_id, usage_acc)
         if not labels:
-            logger.error("[SNAP SOLVE] doubt=%s blind answer %r is not among the options",
-                         doubt_id[:8], solution["answer"][:100])
-            raise SnapError(
-                "Monk worked this out and its answer is not any of the options on "
-                "the page, so it is not showing you a guess. Worth asking in a "
-                "live session.",
-                "solve", REMEDY_OUR_SIDE, "no_matching_option",
+            # Not a refusal. The student gets the working and the result, clearly
+            # flagged as not matching — that is more useful than nothing, and it
+            # is honest in a way that silently picking the nearest option is not.
+            # Throwing away a correct derivation because the OCR mangled an
+            # option would be the worst of both.
+            logger.warning(
+                "[SNAP SOLVE] doubt=%s derived %r matches no option — flagging, not refusing",
+                doubt_id[:8], solution["answer"][:100],
+            )
+            solution["option_labels"] = []
+            solution["unmatched"] = True
+            solution["unmatched_note"] = (
+                f"Monk worked this out as \u201c{solution['answer']}\u201d, which is not "
+                "one of the options on the page. Either an option was misread from "
+                "the photo, or Monk has this one wrong \u2014 the working is below so "
+                "you can judge, and it is worth checking in a session."
             )
         if q_type == "single_correct":
             labels = labels[:1]

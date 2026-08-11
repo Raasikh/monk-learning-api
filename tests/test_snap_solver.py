@@ -410,16 +410,26 @@ def test_options_imply_a_choice_question(monkeypatch):
     assert q["question_type"] == "single_correct"
 
 
-def test_answer_outside_the_options_is_refused(monkeypatch):
-    """THE regression: an invented answer must not be stored as solved."""
+def test_answer_outside_the_options_is_flagged(monkeypatch):
+    """THE regression, updated: an answer on no option is flagged, not invented.
+
+    It used to be refused outright, which threw away a correct derivation
+    whenever the OCR had mangled an option. Now the working is shown and the
+    mismatch is stated.
+    """
     stub_solver(monkeypatch, [json.dumps({
-        "answer": "Sodium azide (NaN_3)", "option_labels": [],
+        "answerable": True, "answer": "Sodium azide (NaN_3)",
         "steps": [{"n": 1, "text": "Azides decompose to nitrogen."},
                   {"n": 2, "text": "So sodium azide gives pure $N_2$."}],
-        "key_idea": "Azide decomposition."})] * 2)
-    with pytest.raises(SnapError) as err:
-        solve_question(question(options=MCQ_OPTIONS), "d1")
-    print(f"  refused: {err.value}")
+        "key_idea": "Azide decomposition."})])
+    stub_matcher(monkeypatch, [], equivalent=False)
+    out = solve_question(question(options=MCQ_OPTIONS), "d1")
+    print(f"  unmatched={out['unmatched']} labels={out['option_labels']}")
+    assert out["unmatched"] is True
+    assert out["option_labels"] == []
+    # Never silently promoted to one of the real options.
+    assert out["answer"] not in [o["text"] for o in MCQ_OPTIONS]
+
 
 
 def test_answer_matching_an_option_label_is_accepted(monkeypatch):
@@ -655,15 +665,22 @@ def test_subjective_question_needs_no_options(monkeypatch):
 
 
 def test_shared_fragment_does_not_count_as_a_match(monkeypatch):
-    """(pi+2)/pi must NOT match the option `pi + 2`. The exact Q3 failure."""
+    """(pi+2)/pi must NOT be matched to the option `pi + 2`.
+
+    A shared numerator is not equality; that near-miss is what produced a
+    confident wrong answer on a real page.
+    """
     options = [{"label": "A", "text": "$\\pi + 2$"},
                {"label": "B", "text": "$\\pi + 1$"}]
     stub_solver(monkeypatch, [json.dumps({
         "answerable": True, "answer": "$\\dfrac{\\pi + 2}{\\pi}$",
-        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})] * 2)
-    with pytest.raises(SnapError) as err:
-        solve_question(question(options=options), "d1")
-    print(f"  refused: {str(err.value)[:80]}")
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    stub_matcher(monkeypatch, [], equivalent=False)
+    out = solve_question(question(options=options), "d1")
+    print(f"  labels={out['option_labels']} unmatched={out['unmatched']}")
+    assert out["option_labels"] == []
+    assert out["unmatched"] is True
+
 
 
 # --- Mathpix OCR gate -------------------------------------------------------
@@ -813,18 +830,23 @@ def test_cut_off_options_say_retake(monkeypatch):
     assert q["remedy"] == snap.REMEDY_RETAKE
 
 
-def test_no_matching_option_is_our_side_not_theirs(monkeypatch):
-    """THE case: page read perfectly, derived answer is not on the list."""
+def test_unmatched_answer_is_flagged_not_thrown_away(monkeypatch):
+    """A derived answer that is on no option is SHOWN, flagged — not refused.
+
+    Refusing threw away a correct derivation whenever the OCR mangled an option,
+    and left the student with nothing to judge.
+    """
     stub_solver(monkeypatch, [json.dumps({
         "answerable": True, "answer": "$\\dfrac{\\pi+2}{\\pi}$",
-        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})] * 2)
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
     stub_matcher(monkeypatch, [], equivalent=False)
-    with pytest.raises(SnapError) as err:
-        solve_question(question(options=MCQ_OPTIONS), "d1")
-    print(f"  reason={err.value.reason} remedy={err.value.remedy}")
-    print(f"  message: {str(err.value)[:96]}…")
-    assert err.value.remedy == snap.REMEDY_OUR_SIDE
-    assert err.value.reason == "no_matching_option"
+    out = solve_question(question(options=MCQ_OPTIONS), "d1")
+    print(f"  unmatched={out['unmatched']} labels={out['option_labels']}")
+    print(f"  note: {out['unmatched_note'][:88]}…")
+    assert out["unmatched"] is True
+    assert out["option_labels"] == []
+    # The derived answer survives, so the student can see what it got.
+    assert "pi+2" in out["answer"].replace("\\\\", "")
 
 
 def test_model_failure_is_our_side(monkeypatch):

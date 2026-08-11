@@ -303,6 +303,12 @@ async def snap_doubt(
             status = "illegible" if remedy == REMEDY_RETAKE else "failed"
         elif question.get("solve_error"):
             status = "failed"
+        elif solution.get("unmatched"):
+            # Derived an answer that is not on the list: show the working,
+            # withhold the answer, say why. Refusing would throw away a
+            # correct derivation whenever an option was misread.
+            status = "unsure"
+            withheld_reason = solution.get("unmatched_note")
         elif solution.get("agrees_with_printed_answer") is False:
             # The page printed an answer key, the solver never saw it, and the
             # two disagree. One of them is wrong and we cannot tell which, so
@@ -432,6 +438,12 @@ def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: st
         status = "illegible" if remedy == REMEDY_RETAKE else "failed"
     elif question.get("solve_error"):
         status = "failed"
+    elif solution.get("unmatched"):
+        # Derived an answer that is not on the list. Same treatment as a
+        # disagreement with a printed key: show the working, withhold the
+        # answer, say why.
+        status = "unsure"
+        withheld_reason = solution.get("unmatched_note")
     elif solution.get("agrees_with_printed_answer") is False:
         status = "unsure"
         withheld_reason = (
