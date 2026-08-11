@@ -6,8 +6,11 @@ objects verbatim (see its step 13 — the model is deliberately not allowed to
 retype them). So the plan is the source of truth for *what* the board said.
 
 `drona_turns` is the source of truth for *how much* of it the student actually
-reached. A session abandoned in segment 2 of 9 must not produce a note holding
-all nine segments — the same mistake the /end summary already had to fix.
+reached. The note carries the FULL lesson either way — ending early must not
+cost the student their revision material — with the class-end boundary marked
+so covered and yet-to-come segments stay distinguishable. What actually
+happened in the session (minutes, questions answered) is the /end summary's
+job, not the note's.
 
 This module reads only. It adds no behaviour to the live session path.
 """
@@ -83,6 +86,11 @@ def _segment_reach(session_id: str) -> Tuple[Dict[int, int], int]:
     return reach, max_segment
 
 
+# Divider written into the flat content where the live class stopped. The
+# structuring pass keys off it to split covered material from what remains.
+CLASS_END_MARKER = "——— class ended here — everything below is the rest of the lesson, for self-study ———"
+
+
 def _flatten_board(board_items: List[Dict[str, Any]]) -> str:
     """Renders the board as readable text for `notes.content`.
 
@@ -92,7 +100,12 @@ def _flatten_board(board_items: List[Dict[str, Any]]) -> str:
     the KaTeX renderer.
     """
     lines: List[str] = []
+    marker_written = False
     for group in board_items:
+        if not group.get("covered", True) and not marker_written and lines:
+            lines.append("")
+            lines.append(CLASS_END_MARKER)
+            marker_written = True
         if lines:
             lines.append("")
         lines.append(group["segment_title"])
@@ -161,58 +174,41 @@ def assemble_session_note(session_id: str, user_id: str) -> Dict[str, Any]:
 
     reach, max_turn_segment = _segment_reach(session_id)
 
-    # How many segments to include. `segments_completed` is authoritative when
-    # set; the turn log covers sessions that ended mid-segment, where the
-    # student still saw part of a segment that was never marked complete.
+    # How far the CLASS got. The note now always carries the FULL lesson —
+    # a student who ends early still gets complete revision notes for the
+    # topic — and this boundary only marks where the live class stopped, so
+    # covered and yet-to-come material stay distinguishable. (The /end summary
+    # is the record of what actually happened; the note is the study
+    # material.)
     completed = session.get("segments_completed") or 0
-    last_segment = max(completed, max_turn_segment, 0)
-    if last_segment <= 0:
-        raise NoteAssemblyError(
-            "Nothing was written on the board in this session yet."
-        )
-    last_segment = min(last_segment, len(segments))
+    last_segment = min(max(completed, max_turn_segment, 0), len(segments))
 
     board_items: List[Dict[str, Any]] = []
     segments_covered = 0
 
-    for seg_index in range(1, last_segment + 1):
+    for seg_index in range(1, len(segments) + 1):
         segment = segments[seg_index - 1]
         content = segment.get("board_content") or []
         if not isinstance(content, list):
             continue
 
-        # A segment below the last one was taught through to its checkpoint, so
-        # its whole board was written. The last one is trimmed to what the
-        # student actually reached.
-        if seg_index < last_segment:
-            reached = len(content)
-        else:
-            reached = reach.get(seg_index, 0)
-            if reached <= 0:
-                # Entered but nothing recorded — drop it rather than invent a
-                # board the student never saw.
-                continue
-
-        kept = [
-            item for item in content
-            if isinstance(item, dict) and (item.get("seq") or 0) <= reached
-        ]
-        # Plans whose items carry no seq fall back to position.
-        if not kept:
-            kept = [item for item in content[:reached] if isinstance(item, dict)]
+        kept = [item for item in content if isinstance(item, dict)]
         if not kept:
             continue
 
-        segments_covered += 1
+        covered = seg_index <= last_segment
+        if covered:
+            segments_covered += 1
         board_items.append({
             "segment_index": seg_index,
             "segment_title": segment.get("title") or segment.get("objective") or f"Part {seg_index}",
+            "covered": covered,
             "items": kept,
         })
 
     if not board_items:
         raise NoteAssemblyError(
-            "Nothing was written on the board in this session yet."
+            "The lesson plan for this session has no board content to save."
         )
 
     meta = _chapter_meta(session.get("chapter_id"))
@@ -239,6 +235,45 @@ def assemble_session_note(session_id: str, user_id: str) -> Dict[str, Any]:
     }
 
 
+def _structure_text(client: Any, subject: str, chapter: str, topic: str,
+                    text: str, quick_revision: bool) -> Optional[str]:
+    """One gpt-4o-mini structuring pass over one block of board transcript."""
+    tail_rule = (
+        "- End with a section 'QUICK REVISION' — the 3-6 most exam-relevant points/formulas.\n"
+        if quick_revision else
+        "- Do NOT add a QUICK REVISION or summary section.\n"
+    )
+    res = client.chat.completions.create(
+        model="gpt-4o-mini",
+        temperature=0.3,
+        max_tokens=2400,
+        messages=[
+            {"role": "system", "content": (
+                "You reorganise a class-11/12 lesson board transcript into clean revision notes.\n"
+                "Rules:\n"
+                "- PLAIN TEXT only. No markdown symbols (no #, *, **, backticks). They will be shown literally.\n"
+                "- Structure: a SECTION HEADING IN CAPS per topic, short bullet lines starting with '• ', "
+                "and formulas on their own lines kept EXACTLY as given (keep the $...$ delimiters untouched).\n"
+                f"{tail_rule}"
+                "- Keep every formula and every exam trap/mnemonic from the input. Do not invent new content. "
+                "Do not drop content — condense wording, never coverage.\n"
+                "- Same language as the input."
+            )},
+            {"role": "user", "content": (
+                f"Subject: {subject}\nChapter: {chapter}\nTopic: {topic}\n\n"
+                f"Board transcript:\n{text}"
+            )},
+        ],
+    )
+    structured = (res.choices[0].message.content or "").strip()
+    # A structuring pass that LOST material is worse than the flat dump.
+    # Cheap sanity floor: it should not come back dramatically shorter than
+    # the source.
+    if not structured or len(structured) < 0.5 * len(text):
+        return None
+    return structured
+
+
 def structure_note_content(note: Dict[str, Any]) -> Optional[str]:
     """Rewrites the flat board dump into organised revision notes with gpt-4o-mini.
 
@@ -249,6 +284,11 @@ def structure_note_content(note: Dict[str, Any]) -> Optional[str]:
     honest flat content — a note must never fail to save because a
     restructuring call did.
 
+    The covered and not-yet-covered halves of an early-ended session are
+    structured in SEPARATE calls. A single call with a "keep these apart"
+    instruction measurably blended the unreached segments into the main
+    sections and left the self-study section reading "None".
+
     Plain text only: the note page renders `content` inside whitespace-pre-wrap
     with no markdown parser, so markdown syntax would show up literally.
     """
@@ -258,39 +298,44 @@ def structure_note_content(note: Dict[str, Any]) -> Optional[str]:
         api_key = os.getenv("OPENAI_API_KEY")
         if not api_key:
             return None
-        client = OpenAI(api_key=api_key, timeout=25.0, max_retries=1)
-        res = client.chat.completions.create(
-            model="gpt-4o-mini",
-            temperature=0.3,
-            max_tokens=1800,
-            messages=[
-                {"role": "system", "content": (
-                    "You reorganise a class-11/12 lesson board transcript into clean revision notes.\n"
-                    "Rules:\n"
-                    "- PLAIN TEXT only. No markdown symbols (no #, *, **, backticks). They will be shown literally.\n"
-                    "- Structure: a SECTION HEADING IN CAPS per topic, short bullet lines starting with '• ', "
-                    "and formulas on their own lines kept EXACTLY as given (keep the $...$ delimiters untouched).\n"
-                    "- End with a section 'QUICK REVISION' — the 3-6 most exam-relevant points/formulas.\n"
-                    "- Keep every formula and every exam trap/mnemonic from the input. Do not invent new content. "
-                    "Do not drop content — condense wording, never coverage.\n"
-                    "- Same language as the input."
-                )},
-                {"role": "user", "content": (
-                    f"Subject: {note.get('subject') or 'unknown'}\n"
-                    f"Chapter: {note.get('chapter') or 'unknown'}\n"
-                    f"Topic: {note.get('concept') or 'unknown'}\n\n"
-                    f"Board transcript:\n{note.get('content') or ''}"
-                )},
-            ],
-        )
-        structured = (res.choices[0].message.content or "").strip()
-        # A structuring pass that LOST material is worse than the flat dump.
-        # Cheap sanity floor: it should not come back dramatically shorter
-        # than the source.
-        if not structured or len(structured) < 0.5 * len(note.get("content") or ""):
-            logger.warning("Note structuring output too short — keeping flat board content.")
-            return None
-        return structured
+        client = OpenAI(api_key=api_key, timeout=45.0, max_retries=1)
+
+        subject = note.get("subject") or "unknown"
+        chapter = note.get("chapter") or "unknown"
+        topic = note.get("concept") or "unknown"
+        flat = note.get("content") or ""
+
+        covered_text, _, remaining_text = flat.partition(CLASS_END_MARKER)
+        covered_text = covered_text.strip()
+        remaining_text = remaining_text.strip()
+
+        # Both halves in parallel: a full 9-segment self-study half measurably
+        # blew a sequential 25s budget, and the student is watching a spinner
+        # on "Save board to notes" the whole time.
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            fut_covered = pool.submit(
+                _structure_text, client, subject, chapter, topic, covered_text, True
+            ) if covered_text else None
+            fut_rest = pool.submit(
+                _structure_text, client, subject, chapter, topic, remaining_text, False
+            ) if remaining_text else None
+
+            parts: List[str] = []
+            if fut_covered is not None:
+                structured = fut_covered.result()
+                if structured is None:
+                    logger.warning("Note structuring output too short — keeping flat board content.")
+                    return None
+                parts.append(structured)
+            if fut_rest is not None:
+                structured_rest = fut_rest.result()
+                if structured_rest is None:
+                    logger.warning("Note structuring (self-study half) too short — keeping flat board content.")
+                    return None
+                parts.append("NOT COVERED IN CLASS YET — SELF-STUDY\n\n" + structured_rest)
+
+        return "\n\n\n".join(parts) if parts else None
     except Exception as err:
         logger.warning("Note structuring failed (%s) — keeping flat board content.", err)
         return None
