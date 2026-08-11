@@ -54,6 +54,10 @@ Return ONLY valid JSON:
    If the page holds more, return the first ones in order and say so in the
    top-level `note` — the student needs to know the rest were not read.
 5. Skip page furniture: headers, watermarks, page numbers, exam names.
+5a. **`<smiles>…</smiles>` tags are the question's molecule**, converted from a
+    drawn structure. Keep the tag in `text` AND in `stem`, verbatim — a
+    stereochemistry question without its molecule is unanswerable, and dropping
+    this tag has produced a confabulated answer.
 
 ## ━━━ STEM AND SELF-CONTAINMENT ━━━
 

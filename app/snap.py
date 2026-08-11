@@ -26,6 +26,7 @@ import logging
 import os
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Dict, List, Optional, Tuple
 
 from openai import OpenAI
@@ -822,6 +823,85 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
     }
 
 
+# How many independent solves to run per question, majority-voted. Measured
+# need: an identical photo produced 13 on one run and 14 on the next at
+# temperature 0 — a single sample asserts a coin flip as fact. 1 = old
+# behaviour; the default is set by eval results, not taste.
+SOLVE_SAMPLES = max(1, int(os.getenv("SNAP_SOLVE_SAMPLES", "1")))
+# Diversity for the extra samples. The first sample stays at 0.0.
+CONSENSUS_TEMP = 0.5
+
+
+def _answer_key_of(parsed: Dict[str, Any]) -> str:
+    """The vote a sample casts: its normalised answer."""
+    if parsed.get("answerable") is False:
+        return "__unanswerable__"
+    return _norm(parsed.get("answer") or "") or "__empty__"
+
+
+def _solve_with_consensus(make_call, doubt_id: str,
+                          usage_acc: Optional[Dict[str, int]],
+                          samples: Optional[int] = None) -> Dict[str, Any]:
+    """Runs N independent solves in parallel and majority-votes the answer.
+
+    The winning parse is returned for validation/step-checking; losers are
+    logged. If every sample disagrees, the temp-0 parse is returned carrying
+    `_no_consensus`, which downstream turns into an 'unsure' doubt — an
+    unstable answer is flagged, not asserted.
+    """
+    n = samples if samples is not None else SOLVE_SAMPLES
+    if n <= 1:
+        return _call_with_one_retry("solve", make_call(0.0),
+                                    f"doubt={doubt_id[:8]}", usage_acc)
+
+    temps = [0.0] + [CONSENSUS_TEMP] * (n - 1)
+    results: List[Optional[Dict[str, Any]]] = [None] * n
+    usages = [{"input": 0, "output": 0} for _ in range(n)]
+
+    def run(i: int) -> None:
+        try:
+            results[i] = _call_with_one_retry(
+                "solve", make_call(temps[i]), f"doubt={doubt_id[:8]} s{i + 1}",
+                usages[i],
+            )
+        except SnapError as err:
+            logger.warning("[SNAP CONSENSUS] doubt=%s sample %d failed: %s",
+                           doubt_id[:8], i + 1, err)
+
+    with ThreadPoolExecutor(max_workers=n) as pool:
+        list(pool.map(run, range(n)))
+
+    if usage_acc is not None:
+        for u in usages:
+            usage_acc["input"] = usage_acc.get("input", 0) + u["input"]
+            usage_acc["output"] = usage_acc.get("output", 0) + u["output"]
+
+    ok = [(i, p) for i, p in enumerate(results) if p is not None]
+    if not ok:
+        raise SnapError("Monk could not produce a solution for this one. "
+                        "Please try again.", "solve")
+
+    groups: Dict[str, List] = {}
+    for i, parsed in ok:
+        groups.setdefault(_answer_key_of(parsed), []).append((i, parsed))
+    votes = {k: len(v) for k, v in groups.items()}
+
+    # Largest group wins; the earliest (lowest-temperature) sample breaks ties.
+    best_key = max(groups, key=lambda k: (len(groups[k]), -groups[k][0][0]))
+    best = groups[best_key]
+    winner = next((p for i, p in best if i == 0), best[0][1])
+    winner["_consensus_votes"] = votes
+
+    if len(best) < 2 and len(ok) >= 2:
+        winner["_no_consensus"] = True
+        logger.warning("[SNAP CONSENSUS] doubt=%s NO MAJORITY across %d samples: %s",
+                       doubt_id[:8], len(ok), votes)
+    elif len(votes) > 1:
+        logger.info("[SNAP CONSENSUS] doubt=%s votes=%s -> %r",
+                    doubt_id[:8], votes, (winner.get("answer") or "")[:60])
+    return winner
+
+
 def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                    usage_acc: Optional[Dict[str, int]] = None) -> Dict[str, Any]:
     """Solves ONE transcribed question. The solver never sees the image."""
@@ -859,30 +939,32 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         payload_obj["diagram_description"] = question["diagram_description"]
     payload = json.dumps(payload_obj, ensure_ascii=False)
 
-    def call(corrective: Optional[str] = None):
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
-        ]
-        if corrective:
-            messages.append({"role": "user", "content": corrective})
-        return client.chat.completions.create(
-            model=MODEL_SOLVE,
-            messages=messages,
-            response_format={"type": "json_object"},
-            temperature=0.0,
-            # 5 steps of 220 characters plus the answer and key idea is well
-            # under 700 tokens. The budget is the enforcement: given 4096 the
-            # model wrote a single 5,445-character step, broke its own JSON, and
-            # failed the question twice. It cannot do that in 1500.
-            max_tokens=1500,
-            timeout=SOLVE_TIMEOUT_S,
-            # Rule 5 — V4 defaults to chain-of-thought and will spend the
-            # whole budget thinking, returning an empty string.
-            extra_body={"thinking": {"type": "disabled"}},
-        )
+    def make_call(temperature: float):
+        def call(corrective: Optional[str] = None):
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+            ]
+            if corrective:
+                messages.append({"role": "user", "content": corrective})
+            return client.chat.completions.create(
+                model=MODEL_SOLVE,
+                messages=messages,
+                response_format={"type": "json_object"},
+                temperature=temperature,
+                # 5 steps of 220 characters plus the answer and key idea is well
+                # under 700 tokens. The budget is the enforcement: given 4096 the
+                # model wrote a single 5,445-character step, broke its own JSON,
+                # and failed the question twice. It cannot do that in 1500.
+                max_tokens=1500,
+                timeout=SOLVE_TIMEOUT_S,
+                # Rule 5 — V4 defaults to chain-of-thought and will spend the
+                # whole budget thinking, returning an empty string.
+                extra_body={"thinking": {"type": "disabled"}},
+            )
+        return call
 
-    parsed = _call_with_one_retry("solve", call, f"doubt={doubt_id[:8]}", usage_acc)
+    parsed = _solve_with_consensus(make_call, doubt_id, usage_acc)
 
     # Steps are what the student reads. A rambling one is both unreadable and
     # the thing that breaks the JSON, so it earns one corrective retry.
@@ -938,6 +1020,16 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         question_type=q_type,
         had_diagram=bool(question.get("diagram_description")),
     )
+    if parsed.get("_consensus_votes"):
+        solution["consensus_votes"] = parsed["_consensus_votes"]
+    if parsed.get("_no_consensus"):
+        # Repeated attempts, different answers. Flag it rather than assert one.
+        solution["no_consensus"] = True
+        solution["consensus_note"] = (
+            "Monk tried this question several times and reached different "
+            "answers, so it is not stating one as fact \u2014 the most likely "
+            "working is below. Worth checking in a live session."
+        )
 
     if solve_blind:
         labels = match_answer_to_options(solution["answer"], options, q_type,

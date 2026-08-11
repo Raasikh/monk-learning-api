@@ -303,6 +303,11 @@ async def snap_doubt(
             status = "illegible" if remedy == REMEDY_RETAKE else "failed"
         elif question.get("solve_error"):
             status = "failed"
+        elif solution.get("no_consensus"):
+            # Unstable across repeated solves: show the working, withhold
+            # certainty.
+            status = "unsure"
+            withheld_reason = solution.get("consensus_note")
         elif solution.get("unmatched"):
             # Derived an answer that is not on the list: show the working,
             # withhold the answer, say why. Refusing would throw away a
@@ -438,6 +443,10 @@ def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: st
         status = "illegible" if remedy == REMEDY_RETAKE else "failed"
     elif question.get("solve_error"):
         status = "failed"
+    elif solution.get("no_consensus"):
+        # Unstable across repeated solves: show the working, withhold certainty.
+        status = "unsure"
+        withheld_reason = solution.get("consensus_note")
     elif solution.get("unmatched"):
         # Derived an answer that is not on the list. Same treatment as a
         # disagreement with a printed key: show the working, withhold the

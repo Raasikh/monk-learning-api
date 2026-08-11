@@ -1057,3 +1057,60 @@ def test_rambling_steps_earn_one_rewrite(monkeypatch):
         print(f"    {st['n']}. [{len(st['text'])} chars] {st['text'][:60]}")
     assert client.calls == 2
     assert len(out["steps"]) == 2
+
+
+# --- self-consistency: an unstable answer is flagged, not asserted ----------
+#
+# Measured need: an identical photo produced 13 on one run and 14 on the next
+# at temperature 0. A single sample asserts a coin flip as fact.
+
+def _solution(ans, answerable=True):
+    return json.dumps({
+        "answerable": answerable, "answer": ans,
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})
+
+
+def test_majority_vote_picks_the_stable_answer(monkeypatch):
+    """2 of 3 samples say 14 -> 14 wins, the 13 is outvoted."""
+    monkeypatch.setattr(snap, "SOLVE_SAMPLES", 3)
+    stub_solver(monkeypatch, [_solution("13"), _solution("14"), _solution("14")])
+    out = solve_question(question(), "d1")
+    print(f"  votes={out.get('consensus_votes')} -> {out['answer']!r}")
+    assert out["answer"] == "14"
+    assert out.get("no_consensus") is None
+
+
+def test_three_way_split_is_flagged_not_asserted(monkeypatch):
+    monkeypatch.setattr(snap, "SOLVE_SAMPLES", 3)
+    stub_solver(monkeypatch, [_solution("13"), _solution("14"), _solution("15")])
+    out = solve_question(question(), "d1")
+    print(f"  votes={out.get('consensus_votes')} no_consensus={out.get('no_consensus')}")
+    assert out.get("no_consensus") is True
+    assert "different" in out["consensus_note"]
+
+
+def test_unanimous_is_clean(monkeypatch):
+    monkeypatch.setattr(snap, "SOLVE_SAMPLES", 3)
+    stub_solver(monkeypatch, [_solution("42")] * 3)
+    out = solve_question(question(), "d1")
+    print(f"  votes={out.get('consensus_votes')}")
+    assert out["answer"] == "42"
+    assert out.get("no_consensus") is None
+
+
+def test_one_sample_keeps_the_old_behaviour(monkeypatch):
+    monkeypatch.setattr(snap, "SOLVE_SAMPLES", 1)
+    client = stub_solver(monkeypatch, [_solution("42")])
+    out = solve_question(question(), "d1")
+    print(f"  {client.calls} call(s), votes={out.get('consensus_votes')}")
+    assert client.calls == 1
+    assert "consensus_votes" not in out
+
+
+def test_failed_samples_do_not_sink_the_vote(monkeypatch):
+    """One sample dies (bad JSON twice); the other two still decide."""
+    monkeypatch.setattr(snap, "SOLVE_SAMPLES", 3)
+    stub_solver(monkeypatch, ["{broken", "{broken", _solution("7"), _solution("7")])
+    out = solve_question(question(), "d1")
+    print(f"  votes={out.get('consensus_votes')} -> {out['answer']!r}")
+    assert out["answer"] == "7"

@@ -104,6 +104,13 @@ def read_page(image_bytes: bytes, mime_type: str,
         "math_inline_delimiters": ["$", "$"],
         "math_display_delimiters": ["$$", "$$"],
         "rm_spaces": True,
+        # Chemical structures are drawn, so plain OCR files them as diagram
+        # regions and DROPS them from the text. Measured: a stereoisomer
+        # question reached the solver as "the given molecule" with no molecule,
+        # and it confabulated an answer. include_smiles converts the structure
+        # to SMILES inline — <smiles>CC=CC(C)O</smiles> — so the molecule
+        # travels with the question.
+        "include_smiles": True,
         # Line data tells us whether the page actually contains a figure. That
         # is a hard signal from the OCR engine: a text-only model downstream
         # cannot see a diagram, and inferring one from wording alone missed a

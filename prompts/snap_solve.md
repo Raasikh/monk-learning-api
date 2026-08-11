@@ -70,6 +70,15 @@ Return ONLY valid JSON:
    question itself — "which of the following is NOT true". Judge each choice on
    its own merits and say in the steps why the others fail.
 
+## ━━━ CHEMICAL STRUCTURES ━━━
+
+9a. `<smiles>…</smiles>` in the question is the molecule, in SMILES notation,
+    converted from the drawn structure. Read it as the structure itself —
+    e.g. `<smiles>CC=CC(C)O</smiles>` is pent-3-en-2-ol. If a question says
+    "the given molecule" and there is no SMILES tag and no structure in the
+    text, the molecule is missing: set `answerable: false` and say so. Never
+    invent a molecule.
+
 ## ━━━ WHEN `diagram_description` IS PRESENT ━━━
 
 10. The question depends on a figure you cannot see. Another model looked at it
