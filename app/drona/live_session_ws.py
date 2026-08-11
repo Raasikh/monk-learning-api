@@ -123,11 +123,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     state.current_segment = session_data.get('current_segment') or 1
     state.current_phase = session_data.get('phase')
     skip_tts_flag = websocket.query_params.get("skip_tts") == "1"
-    # A/B switch for the streamed-TTS change: ?stream_tts=0 sends each
-    # sentence as ONE audio frame (the behaviour before streaming) instead of
-    # ~1s parts. Same lesson, same voice — only the delivery differs, so it
-    # isolates whether an audio artifact comes from part-splitting.
-    stream_tts_parts = websocket.query_params.get("stream_tts") != "0"
+    # Whole-sentence audio is the DEFAULT. The A/B run settled it: with
+    # ?stream_tts=0 the overlap/stutter the student heard was gone, so the
+    # artifact lives in the ~1s part-splitting, not in scheduling. Streaming
+    # stays as an explicit ?stream_tts=1 opt-in for working on those seams —
+    # it must not be what students get until the seams are actually fixed.
+    # Cost of the default: ~4s of synthesis before a turn's first sentence
+    # plays; sentences after that synthesize while the previous one plays.
+    stream_tts_parts = websocket.query_params.get("stream_tts") == "1"
 
     # A raised hand pauses the lesson; it does not delete it.
     #
