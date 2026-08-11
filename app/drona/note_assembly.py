@@ -237,3 +237,60 @@ def assemble_session_note(session_id: str, user_id: str) -> Dict[str, Any]:
         "item_count": item_count,
         "session_started_at": session.get("created_at"),
     }
+
+
+def structure_note_content(note: Dict[str, Any]) -> Optional[str]:
+    """Rewrites the flat board dump into organised revision notes with gpt-4o-mini.
+
+    The raw board is a faithful transcript of what was written, but it reads as
+    a list of lines in teaching order — fine during class, weak as revision
+    material. This pass groups it, orders it for review, and surfaces the key
+    formulas and traps. Returns None on ANY failure so the caller keeps the
+    honest flat content — a note must never fail to save because a
+    restructuring call did.
+
+    Plain text only: the note page renders `content` inside whitespace-pre-wrap
+    with no markdown parser, so markdown syntax would show up literally.
+    """
+    import os
+    try:
+        from openai import OpenAI
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            return None
+        client = OpenAI(api_key=api_key, timeout=25.0, max_retries=1)
+        res = client.chat.completions.create(
+            model="gpt-4o-mini",
+            temperature=0.3,
+            max_tokens=1800,
+            messages=[
+                {"role": "system", "content": (
+                    "You reorganise a class-11/12 lesson board transcript into clean revision notes.\n"
+                    "Rules:\n"
+                    "- PLAIN TEXT only. No markdown symbols (no #, *, **, backticks). They will be shown literally.\n"
+                    "- Structure: a SECTION HEADING IN CAPS per topic, short bullet lines starting with '• ', "
+                    "and formulas on their own lines kept EXACTLY as given (keep the $...$ delimiters untouched).\n"
+                    "- End with a section 'QUICK REVISION' — the 3-6 most exam-relevant points/formulas.\n"
+                    "- Keep every formula and every exam trap/mnemonic from the input. Do not invent new content. "
+                    "Do not drop content — condense wording, never coverage.\n"
+                    "- Same language as the input."
+                )},
+                {"role": "user", "content": (
+                    f"Subject: {note.get('subject') or 'unknown'}\n"
+                    f"Chapter: {note.get('chapter') or 'unknown'}\n"
+                    f"Topic: {note.get('concept') or 'unknown'}\n\n"
+                    f"Board transcript:\n{note.get('content') or ''}"
+                )},
+            ],
+        )
+        structured = (res.choices[0].message.content or "").strip()
+        # A structuring pass that LOST material is worse than the flat dump.
+        # Cheap sanity floor: it should not come back dramatically shorter
+        # than the source.
+        if not structured or len(structured) < 0.5 * len(note.get("content") or ""):
+            logger.warning("Note structuring output too short — keeping flat board content.")
+            return None
+        return structured
+    except Exception as err:
+        logger.warning("Note structuring failed (%s) — keeping flat board content.", err)
+        return None

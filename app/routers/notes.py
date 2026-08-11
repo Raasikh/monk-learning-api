@@ -13,7 +13,7 @@ from pydantic import BaseModel
 
 from app.auth import get_current_user_id
 from app.db import supabase
-from app.drona.note_assembly import NoteAssemblyError, assemble_session_note
+from app.drona.note_assembly import NoteAssemblyError, assemble_session_note, structure_note_content
 
 logger = logging.getLogger("notes")
 
@@ -60,6 +60,13 @@ def save_note(payload: SaveNoteRequest, user_id: str = Depends(get_current_user_
     except Exception as err:
         logger.error("Note assembly failed for session %s: %s", payload.session_id, err)
         raise HTTPException(status_code=500, detail="Could not assemble this session's board.")
+
+    # Reorganise the raw board transcript into revision-ready notes. Best
+    # effort by design: on any failure the note saves with the flat board,
+    # which is always honest — just less organised.
+    structured = structure_note_content(note)
+    if structured:
+        note["content"] = structured
 
     existing = (
         supabase.table("notes")

@@ -195,9 +195,39 @@ def end_session_endpoint(session_id: str, user_id: str = Depends(get_current_use
     }).eq("id", session_id).execute()
 
     # Load session & plan data for real summary
-    sess_res = supabase.table("drona_sessions").select("plan_id, current_segment, segments_completed").eq("id", session_id).execute()
+    sess_res = supabase.table("drona_sessions").select(
+        "plan_id, current_segment, segments_completed, chapter_id, created_at"
+    ).eq("id", session_id).execute()
     session_row = sess_res.data[0] if sess_res.data else {}
     plan_id = session_row.get("plan_id")
+
+    # Real session length: created_at -> now. The summary card used to show a
+    # hardcoded "~10m" for every session regardless of length.
+    duration_minutes = 0
+    try:
+        from datetime import datetime, timezone
+        started = datetime.fromisoformat(str(session_row.get("created_at", "")).replace("Z", "+00:00"))
+        duration_minutes = max(1, round((datetime.now(timezone.utc) - started).total_seconds() / 60))
+    except Exception:
+        pass
+
+    # Checkpoint questions actually ANSWERED (graded turns). The summary card
+    # used to display the misconception count under this label, so a clean
+    # session always read "0 checkpoint questions".
+    questions_answered = 0
+    try:
+        graded = supabase.table("drona_turns").select("grade").eq("session_id", session_id).execute()
+        questions_answered = sum(1 for t in (graded.data or []) if t.get("grade") in ("correct", "partial", "incorrect"))
+    except Exception:
+        pass
+
+    chapter_name = None
+    if session_row.get("chapter_id"):
+        try:
+            ch_res = supabase.table("chapters").select("name").eq("id", session_row["chapter_id"]).execute()
+            chapter_name = ch_res.data[0]["name"] if ch_res.data else None
+        except Exception:
+            pass
 
     summary_points = []
     if plan_id:
@@ -222,5 +252,8 @@ def end_session_endpoint(session_id: str, user_id: str = Depends(get_current_use
 
     return {
         "summary_points": summary_points,
-        "mistakes_count": mistakes_count
+        "mistakes_count": mistakes_count,
+        "duration_minutes": duration_minutes,
+        "questions_answered": questions_answered,
+        "chapter_name": chapter_name,
     }
