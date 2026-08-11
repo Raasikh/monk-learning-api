@@ -211,6 +211,89 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         ends_in_checkpoint = False
         session_ending = False
 
+        async def _on_filler(filler_pcm: bytes):
+            b64_f = base64.b64encode(filler_pcm).decode('utf-8')
+            f_msg = {
+                "type": "audio_chunk",
+                "sentence_id": f"{turn_id}_filler_{int(time.time()*1000)}",
+                "audio": b64_f,
+                "speech": "One moment…" if session_language == "english" else "Ek second…",
+                "board_event": None
+            }
+            await safe_send_json(f_msg)
+            logger.info(f"🔊 [FILLER AUDIO TRANSMITTED] Sent pre-synthesized filler chunk ({len(filler_pcm)} bytes) over WebSocket.")
+
+        async def send_sentence_streamed(clean_text: str):
+            """Synthesizes one sentence, forwarding audio to the client in ~1s
+            parts AS RUMIK PRODUCES IT. The old flow buffered the whole
+            sentence (4-6s) before the first byte left the server — dead air
+            the student sat through on every single sentence. Part 1 carries
+            the caption text and board event; continuation parts are audio
+            only so the client doesn't re-arm reveals."""
+            nonlocal chunks_sent, total_audio_bytes
+            chunks_sent += 1
+            sentence_id = f"{turn_id}_s{chunks_sent}"
+            matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
+            if not matching_evt and chunks_sent <= len(turn_board_events):
+                matching_evt = turn_board_events[chunks_sent - 1]
+
+            part_count = 0
+
+            async def _on_part(pcm: bytes):
+                nonlocal part_count, total_audio_bytes
+                part_count += 1
+                out = {
+                    "type": "audio_chunk",
+                    "sentence_id": sentence_id,
+                    "audio": base64.b64encode(pcm).decode('utf-8'),
+                    "speech": clean_text if part_count == 1 else "",
+                    "board_event": matching_evt if part_count == 1 else None,
+                    "continuation": part_count > 1,
+                }
+                assert_no_forbidden_keys(out)
+                total_audio_bytes += len(pcm)
+                await safe_send_json(out)
+
+            if skip_tts_flag:
+                audio_bytes = b"\x00" * 3200
+            else:
+                audio_bytes = await tts_proxy.synthesize_text(
+                    clean_text, on_filler_cb=_on_filler, segment_index=state.current_segment,
+                    on_audio_part=_on_part,
+                )
+
+            if part_count > 0:
+                logger.info(f"🔊 [AUDIO STREAMED] sentence_id={sentence_id} ({len(clean_text)} chars, {part_count} parts)")
+            elif audio_bytes:
+                # Fallback single frame: skip_tts, a pool-exhaustion filler, or
+                # a synthesis path that produced no streamed parts.
+                out_msg = {
+                    "type": "audio_chunk",
+                    "sentence_id": sentence_id,
+                    "audio": base64.b64encode(audio_bytes).decode('utf-8'),
+                    "speech": clean_text,
+                    "board_event": matching_evt
+                }
+                assert_no_forbidden_keys(out_msg)
+                total_audio_bytes += len(audio_bytes)
+                await safe_send_json(out_msg)
+                logger.info(f"🔊 [AUDIO SYNTHESIZED] sentence_id={sentence_id} ({len(clean_text)} chars, single frame)")
+
+        # Instant acknowledgment: the student just answered and the LLM +
+        # first TTS are still 6-10s away — a short pre-synthesized "let me
+        # think" fills the void the moment their words land, like a teacher
+        # nodding before responding.
+        if turn_type == "answer" and utterance_text.strip() and not skip_tts_flag:
+            try:
+                from app.drona.voice_proxy import FillerAudioCache
+                _, ack_pcm = FillerAudioCache.get_instance().get_random_filler(
+                    persona['voice_preset'], session_language
+                )
+                if ack_pcm:
+                    await _on_filler(ack_pcm)
+            except Exception as ack_err:
+                logger.warning(f"Acknowledgment filler skipped: {ack_err}")
+
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")
             event_type = None
@@ -249,45 +332,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                         if clean_text:
                             state.tts_characters += len(clean_text)
                             try:
-                                if skip_tts_flag:
-                                    audio_bytes = b"\x00" * 3200
-                                else:
-                                    async def _on_filler(filler_pcm: bytes):
-                                        b64_f = base64.b64encode(filler_pcm).decode('utf-8')
-                                        f_msg = {
-                                            "type": "audio_chunk",
-                                            "sentence_id": f"{turn_id}_filler_{int(time.time()*1000)}",
-                                            "audio": b64_f,
-                                            "speech": "One moment…" if session_language == "english" else "Ek second…",
-                                            "board_event": None
-                                        }
-                                        await safe_send_json(f_msg)
-                                        logger.info(f"🔊 [FILLER AUDIO TRANSMITTED] Sent pre-synthesized filler chunk ({len(filler_pcm)} bytes) over WebSocket.")
-
-                                    audio_bytes = await tts_proxy.synthesize_text(
-                                        clean_text, on_filler_cb=_on_filler, segment_index=state.current_segment
-                                    )
-                                b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
-                                chunks_sent += 1
-                                sentence_id = f"{turn_id}_s{chunks_sent}"
-
-                                matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
-                                if not matching_evt and chunks_sent <= len(turn_board_events):
-                                    matching_evt = turn_board_events[chunks_sent - 1]
-
-                                out_msg = {
-                                    "type": "audio_chunk",
-                                    "sentence_id": sentence_id,
-                                    "audio": b64_audio,
-                                    "speech": clean_text,
-                                    "board_event": matching_evt
-                                }
-                                assert_no_forbidden_keys(out_msg)
-                                total_audio_bytes += len(audio_bytes)
-                                logger.info(f"🔊 [AUDIO SYNTHESIZED] sentence_id={sentence_id} ({len(clean_text)} chars)")
-                                await safe_send_json(out_msg)
-                                logger.info(f"🚀 [AUDIO TRANSMITTED] sentence_id={sentence_id} sent over WebSocket.")
-
+                                await send_sentence_streamed(clean_text)
                             except Exception as tts_err:
                                 logger.error(f"TTS synthesis error on sentence: {tts_err}")
                     speech_buffer = sentences[-1]
@@ -338,42 +383,29 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 # sentence; only genuine TTS failure falls back to a silent
                 # caption, so the question still reaches the student either way.
                 state.tts_characters += len(clean_text)
-                audio_bytes = None
                 try:
-                    if skip_tts_flag:
-                        audio_bytes = b"\x00" * 3200
-                    else:
-                        audio_bytes = await tts_proxy.synthesize_text(clean_text)
+                    await send_sentence_streamed(clean_text)
                 except Exception as tts_err:
                     if ends_in_checkpoint:
+                        # The question must still reach the student even when
+                        # its audio can't: silent caption fallback.
                         logger.warning(f"TTS synthesis failed on checkpoint question, falling back to silent caption: {tts_err}")
+                        sentence_id = f"{turn_id}_s{chunks_sent}"
+                        matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
+                        if not matching_evt and chunks_sent <= len(turn_board_events):
+                            matching_evt = turn_board_events[chunks_sent - 1]
+                        out_msg = {
+                            "type": "audio_chunk",
+                            "sentence_id": sentence_id,
+                            "audio": None,
+                            "speech": clean_text,
+                            "board_event": matching_evt
+                        }
+                        assert_no_forbidden_keys(out_msg)
+                        logger.info(f"🔇 [CHECKPOINT QUESTION - TTS FAILED] sentence_id={sentence_id} sent as silent caption ({len(clean_text)} chars)")
+                        await safe_send_json(out_msg)
                     else:
                         logger.error(f"TTS synthesis error on final sentence: {tts_err}")
-
-                if audio_bytes is None and not ends_in_checkpoint:
-                    pass  # matches prior behaviour: a non-checkpoint synthesis failure emits nothing
-                else:
-                    chunks_sent += 1
-                    sentence_id = f"{turn_id}_s{chunks_sent}"
-
-                    matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
-                    if not matching_evt and chunks_sent <= len(turn_board_events):
-                        matching_evt = turn_board_events[chunks_sent - 1]
-
-                    out_msg = {
-                        "type": "audio_chunk",
-                        "sentence_id": sentence_id,
-                        "audio": base64.b64encode(audio_bytes).decode('utf-8') if audio_bytes else None,
-                        "speech": clean_text,
-                        "board_event": matching_evt
-                    }
-                    assert_no_forbidden_keys(out_msg)
-                    if audio_bytes:
-                        total_audio_bytes += len(audio_bytes)
-                        logger.info(f"🔊 [AUDIO SYNTHESIZED FINAL] sentence_id={sentence_id} ({len(clean_text)} chars)")
-                    else:
-                        logger.info(f"🔇 [CHECKPOINT QUESTION - TTS FAILED] sentence_id={sentence_id} sent as silent caption ({len(clean_text)} chars)")
-                    await safe_send_json(out_msg)
 
         if chunks_sent == 0 and speech_buffer.strip():
             logger.error(f"[SERVER TURN AUDIO FAILURE] Emitted 0 audio_chunk frames (0 total PCM bytes) for session {session_id}")

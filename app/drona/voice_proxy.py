@@ -808,13 +808,22 @@ class RumikTTSProxy:
         self,
         text: str,
         on_filler_cb: Optional[Any] = None,
-        segment_index: int = 1
+        segment_index: int = 1,
+        on_audio_part: Optional[Any] = None,
     ) -> bytes:
-        """Synthesizes text using per-turn leased WebSocket from pool with zero-gap rate-limit fillers."""
+        """Synthesizes text using per-turn leased WebSocket from pool with zero-gap rate-limit fillers.
+
+        With `on_audio_part`, PCM is flushed to the callback in ~1s batches AS
+        RUMIK SYNTHESIZES instead of buffered until the sentence is done —
+        the student hears the first second of a sentence while the rest is
+        still being generated. When anything was emitted through the callback
+        the return value is b"" so the caller doesn't send the audio twice.
+        """
         text = sanitize_tts_phonetics(text)
         async with self.lock:
             return await self._synthesize_text_locked(
-                text, attempt=1, on_filler_cb=on_filler_cb, segment_index=segment_index
+                text, attempt=1, on_filler_cb=on_filler_cb, segment_index=segment_index,
+                on_audio_part=on_audio_part,
             )
 
     def _record_rate_limit_hit_async(self):
@@ -837,7 +846,8 @@ class RumikTTSProxy:
         text: str,
         attempt: int = 1,
         on_filler_cb: Optional[Any] = None,
-        segment_index: int = 1
+        segment_index: int = 1,
+        on_audio_part: Optional[Any] = None,
     ) -> bytes:
         self.connection_count += 1
         t0 = time.time()
@@ -860,6 +870,28 @@ class RumikTTSProxy:
         pcm_bytes = bytearray()
         t_first_byte = None
 
+        # Progressive flush state. ~1s of 24kHz 16-bit mono per part: small
+        # enough that the first part reaches the student seconds before the
+        # sentence finishes synthesizing, big enough not to spam frames.
+        PART_BYTES = 48000
+        part_buf = bytearray()
+        emitted_parts = 0
+
+        async def _flush_part(force: bool = False):
+            nonlocal emitted_parts
+            if on_audio_part is None:
+                return
+            if len(part_buf) >= PART_BYTES or (force and part_buf):
+                chunk = bytes(part_buf)
+                part_buf.clear()
+                emitted_parts += 1
+                if emitted_parts == 1:
+                    logger.info(f"⚡ [RUMIK FIRST PART] Sentence #{self.connection_count}: first {len(chunk)} bytes flushed {time.time() - t0:.2f}s in (sentence still synthesizing)")
+                try:
+                    await on_audio_part(chunk)
+                except Exception as part_err:
+                    logger.warning(f"on_audio_part callback failed: {part_err}")
+
         try:
             payload = {"text": text, "speaker": self.voice_preset}
             logger.info(f"[RUMIK WS PAYLOAD] session={self.session_id[:8]} | sentence={self.connection_count} | payload={json.dumps(payload)}")
@@ -873,13 +905,24 @@ class RumikTTSProxy:
                         if t_first_byte is None:
                             t_first_byte = time.time()
                         pcm_bytes.extend(msg)
+                        if on_audio_part is not None:
+                            part_buf.extend(msg)
+                            await _flush_part()
                     elif isinstance(msg, str):
                         data = json.loads(msg)
                         msg_type = data.get("type") or data.get("event") or data.get("status")
                         if msg_type in ("done", "complete", "finish", "end"):
                             logger.info(f"[RUMIK WS DONE FRAME] Sentence #{self.connection_count} complete")
+                            await _flush_part(force=True)
                             break
                         elif data.get("code") == "RATE_LIMITED" or data.get("error"):
+                            if emitted_parts > 0:
+                                # Part of this sentence has already PLAYED —
+                                # retrying would speak its opening twice. Keep
+                                # what was delivered and move on.
+                                logger.warning(f"🚨 [RUMIK ERROR MID-STREAM] Sentence #{self.connection_count} errored after {emitted_parts} parts played — not retrying to avoid double speech.")
+                                await pool.release_lease(self.session_id, immediate=True)
+                                return b""
                             retry_after = float(data.get("retry_after", 5.0))
                             opens_60s, sends_60s = pool.get_rate_usage()
 
@@ -919,7 +962,8 @@ class RumikTTSProxy:
                             if attempt < 3:
                                 await pool.release_lease(self.session_id, immediate=True)
                                 return await self._synthesize_text_locked(
-                                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index
+                                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index,
+                                    on_audio_part=on_audio_part,
                                 )
 
                             raise RuntimeError(f"Rumik TTS Rate Limited (Attempt {attempt}/3): {data.get('message') or 'Rate limit exceeded'}")
@@ -930,21 +974,30 @@ class RumikTTSProxy:
         except Exception as ws_err:
             logger.warning(f"[RUMIK WS ERROR] Exception during synthesis: {ws_err}")
             await pool.release_lease(self.session_id, immediate=True)
+            if emitted_parts > 0:
+                # Same double-speech guard as the rate-limit path.
+                logger.warning(f"[RUMIK WS ERROR MID-STREAM] Sentence #{self.connection_count} died after {emitted_parts} parts played — not retrying.")
+                return b""
             if attempt < 3:
                 return await self._synthesize_text_locked(
-                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index
+                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index,
+                    on_audio_part=on_audio_part,
                 )
             raise RuntimeError(sanitize_secret(str(ws_err)))
 
         if len(pcm_bytes) == 0:
             if attempt < 3:
                 return await self._synthesize_text_locked(
-                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index
+                    text, attempt=attempt + 1, on_filler_cb=on_filler_cb, segment_index=segment_index,
+                    on_audio_part=on_audio_part,
                 )
             return b"\x00" * 24000
 
         t_total = time.time() - t0
         logger.info(f"[RUMIK SYNTHESIS COMPLETE] Sentence #{self.connection_count}: {len(text)} chars -> {len(pcm_bytes)} PCM bytes in {t_total:.2f}s")
+        if emitted_parts > 0:
+            # Everything already went out through on_audio_part.
+            return b""
         return bytes(pcm_bytes)
 
     async def stream_tts(self, text_stream: AsyncGenerator[str, None]) -> AsyncGenerator[bytes, None]:
