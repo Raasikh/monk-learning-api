@@ -491,6 +491,10 @@ class RumikTurnLease:
 #
 # Keyed (gender, language). Only Ira and Lucas are prewarmed because those are
 # the only two presets a persona ever maps to, so the boot cost is unchanged.
+# Pool key the boot-time filler prewarm leases under. Distinct from any real
+# session id so live-session accounting can tell the two apart.
+PREWARM_SESSION_KEY = "boot_prewarm"
+
 FILLER_PHRASES = {
     ("female", "hinglish"): [
         "Ek second, soch rahi hoon…",
@@ -536,50 +540,128 @@ class FillerAudioCache:
             cls._instance = FillerAudioCache()
         return cls._instance
 
+    def _live_lease_count(self) -> int:
+        """Student sessions currently holding a Rumik connection."""
+        pool = RumikConnectionPool.get_instance()
+        return sum(1 for sid in list(pool.active_leases) if sid != PREWARM_SESSION_KEY)
+
+    async def _wait_for_idle_pool(self, max_wait_s: float = 900.0) -> bool:
+        """Blocks until no student session holds a connection."""
+        t0 = time.time()
+        announced = False
+        while time.time() - t0 < max_wait_s:
+            if self._live_lease_count() == 0:
+                return True
+            if not announced:
+                logger.info("⏸️ [FILLER PREWARM DEFERRED] A live session is using the pool — waiting for it to finish.")
+                announced = True
+            await asyncio.sleep(2.0)
+        return False
+
     async def prewarm_all(self):
-        """Synthesizes all female & male filler phrases once on server boot."""
+        """Synthesizes all female & male filler phrases once on server boot.
+
+        Two rules, both learned from a live session sharing a container with a
+        fresh deploy's prewarm:
+
+        1. ONE connection for all 12 phrases. This used to open and close a
+           connection per phrase — 12 opens against Rumik's rate budget, and
+           the churn showed up as a second concurrent slot right through a
+           student's turn.
+        2. Never run while a student is being taught. Prewarm is a
+           nice-to-have (fillers only cover rate limits and the answer
+           acknowledgment); a live class always gets the pool to itself, so
+           one session means exactly one connection.
+        """
         if self.is_prewarmed:
             return
 
+        if not await self._wait_for_idle_pool():
+            logger.warning("⚠️ [FILLER PREWARM SKIPPED] Pool stayed busy with live sessions; fillers will stay uncached.")
+            return
+
         t_start = time.time()
-        
+        jobs: List[Tuple[str, str, str]] = []
         for preset in ("Ira", "Lucas"):
             gender = PRESET_GENDER[preset]
             for lang in ("hinglish", "english"):
                 key = filler_cache_key(preset, lang)
-                self.cache[key] = []
+                self.cache.setdefault(key, [])
                 for phrase in FILLER_PHRASES[(gender, lang)]:
-                    self.cache[key].append(await self._synthesize_direct(phrase, preset))
+                    jobs.append((key, preset, phrase))
 
-        self.is_prewarmed = True
-        elapsed = time.time() - t_start
-        logger.info(f"✅ [FILLER PREWARM] {len(self.cache)} voices cached in {elapsed:.1f}s")
-
-    async def _synthesize_direct(self, text: str, voice_preset: str) -> bytes:
-        """Direct synthesis without recursion for boot pre-warming."""
-        import json, asyncio
+        pool = RumikConnectionPool.get_instance()
+        synthesized = 0
         try:
-            pool = RumikConnectionPool.get_instance()
-            lease, is_ex = await pool.acquire_lease("boot_prewarm", voice_preset, "mulberry")
-            if lease and lease.ws:
-                await lease.ws.send(json.dumps({"text": text, "speaker": voice_preset}))
-                buf = bytearray()
-                while True:
-                    msg = await asyncio.wait_for(lease.ws.recv(), timeout=6.0)
-                    if isinstance(msg, bytes):
-                        buf.extend(msg)
-                    elif isinstance(msg, str):
-                        d = json.loads(msg)
-                        if d.get("type") in ("done", "complete", "finish", "end"):
-                            break
-                await pool.release_lease("boot_prewarm", immediate=True)
-                if len(buf) > 0:
-                    return bytes(buf)
+            for key, preset, phrase in jobs:
+                # A student who arrives mid-prewarm takes priority: hand the
+                # connection back, wait them out, then pick up where we left off.
+                if self._live_lease_count() > 0:
+                    await pool.release_lease(PREWARM_SESSION_KEY, immediate=True)
+                    if not await self._wait_for_idle_pool():
+                        break
+
+                lease, is_exhausted = await pool.acquire_lease(PREWARM_SESSION_KEY, preset, "mulberry")
+                if is_exhausted or lease is None or not lease.ws:
+                    logger.warning("⚠️ [FILLER PREWARM WARN] No connection available; stopping prewarm.")
+                    break
+                pcm = await self._synthesize_on_ws(lease.ws, phrase, preset)
+                if pcm:
+                    self.cache[key].append(pcm)
+                    synthesized += 1
+        finally:
+            try:
+                await pool.release_lease(PREWARM_SESSION_KEY, immediate=True)
+            except Exception:
+                pass
+
+        self.is_prewarmed = synthesized > 0
+        elapsed = time.time() - t_start
+        logger.info(
+            f"✅ [FILLER PREWARM] {synthesized}/{len(jobs)} phrases cached across "
+            f"{len(self.cache)} voices in {elapsed:.1f}s (1 connection)"
+        )
+
+    async def _synthesize_on_ws(self, ws, text: str, voice_preset: str) -> bytes:
+        """Synthesizes one phrase over an already-open connection.
+
+        Returns b"" on failure — an uncached filler is simply absent, never a
+        block of silence pretending to be speech.
+        """
+        try:
+            await ws.send(json.dumps({"text": text, "speaker": voice_preset}))
+            buf = bytearray()
+            while True:
+                msg = await asyncio.wait_for(ws.recv(), timeout=6.0)
+                if isinstance(msg, bytes):
+                    buf.extend(msg)
+                elif isinstance(msg, str):
+                    d = json.loads(msg)
+                    if d.get("type") in ("done", "complete", "finish", "end"):
+                        break
+                    if d.get("code") == "RATE_LIMITED" or d.get("error"):
+                        logger.warning(f"⚠️ [FILLER PREWARM WARN] Rumik refused '{text[:24]}…': {d.get('message') or d.get('code')}")
+                        return b""
+            return bytes(buf)
         except Exception as e:
-            logger.warning(f"⚠️ [FILLER PREWARM WARN] Could not pre-synthesize '{text}' for '{voice_preset}': {e}")
-        
-        # Silent 24kHz PCM fallback (zero runtime requests)
-        return b"\x00" * 57600
+            logger.warning(f"⚠️ [FILLER PREWARM WARN] Could not pre-synthesize '{text[:24]}…' for '{voice_preset}': {e}")
+            return b""
+
+    def has_cached_fillers(self, voice_preset: str, language: str = "hinglish") -> bool:
+        """Whether a REAL filler exists for this voice/language.
+
+        get_random_filler() falls back to two seconds of silence so a
+        rate-limit gap is never dead air. That is wrong for the answer
+        acknowledgment, where silence would just delay the real reply — those
+        callers check here first.
+        """
+        if self.cache.get(filler_cache_key(voice_preset, language)):
+            return True
+        fallback_preset = "Lucas" if PRESET_GENDER.get(voice_preset) == "male" else "Ira"
+        return bool(
+            self.cache.get(filler_cache_key(fallback_preset, language))
+            or self.cache.get(filler_cache_key(fallback_preset, "hinglish"))
+        )
 
     def get_random_filler(self, voice_preset: str, language: str = "hinglish",
                           exclude_idx: Optional[int] = None) -> Tuple[int, bytes]:

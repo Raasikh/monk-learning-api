@@ -286,11 +286,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         if turn_type == "answer" and utterance_text.strip() and not skip_tts_flag:
             try:
                 from app.drona.voice_proxy import FillerAudioCache
-                _, ack_pcm = FillerAudioCache.get_instance().get_random_filler(
-                    persona['voice_preset'], session_language
-                )
-                if ack_pcm:
-                    await _on_filler(ack_pcm)
+                cache = FillerAudioCache.get_instance()
+                # Only a REAL cached phrase. get_random_filler() pads with two
+                # seconds of silence when nothing is cached, which would delay
+                # the actual answer instead of acknowledging it.
+                if cache.has_cached_fillers(persona['voice_preset'], session_language):
+                    _, ack_pcm = cache.get_random_filler(persona['voice_preset'], session_language)
+                    if ack_pcm:
+                        await _on_filler(ack_pcm)
             except Exception as ack_err:
                 logger.warning(f"Acknowledgment filler skipped: {ack_err}")
 
