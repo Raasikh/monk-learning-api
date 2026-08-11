@@ -295,6 +295,36 @@ def _strip_printed_answer(text: str) -> Tuple[str, Optional[str]]:
     return cleaned, found
 
 
+# Comparison form for the fidelity gate. Keeps signs and structure — snap._norm
+# strips '+'/'-', which would let a 3+e/3-e mutation pass as identical.
+_LATEX_NOISE = ("\\mathrm", "\\text", "\\left", "\\right", "\\operatorname",
+                "\\dfrac", "\\frac", "\\;", "\\,")
+
+
+def _canon_fidelity(text: str) -> str:
+    t = (text or "").lower()
+    for cmd in _LATEX_NOISE:
+        t = t.replace(cmd, "")
+    return re.sub(r"[${}\\ ,_~]", "", t)
+
+
+def _options_found_in_ocr(options: List[Dict[str, str]], ocr_text: str) -> List[str]:
+    """Labels of options whose text does NOT appear in the OCR page.
+
+    The structuring model is told to copy options verbatim; this is the check
+    that it did. An option it invented, completed, or sign-flipped is not on
+    the page — measured failures include a fabricated fourth option and
+    "3-e" arriving as "3+e".
+    """
+    page = _canon_fidelity(ocr_text)
+    missing = []
+    for opt in options:
+        body = _canon_fidelity(opt["text"])
+        if body and body not in page:
+            missing.append(opt["label"])
+    return missing
+
+
 def _clean_options(raw: Any) -> List[Dict[str, str]]:
     """Normalises the transcriber's `options` into [{label, text}].
 
@@ -384,6 +414,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
 
     parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}", usage_acc)
     parsed["_ocr_confidence"] = page["confidence"]
+    parsed["_ocr_text"] = page["text"]
     parsed["_diagram_regions"] = page.get("diagram_regions", 0)
 
     raw_questions = parsed.get("questions")
@@ -444,6 +475,27 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                 "[SNAP TRANSCRIBE] doubt=%s q%d %s with %d option(s) — refusing to solve",
                 doubt_id[:8], idx, q_type, len(options),
             )
+
+        # Fidelity gate: every option must exist, verbatim, in what the OCR
+        # read. The structuring model is INSTRUCTED to copy; this enforces it.
+        # An option it invented or mutated is not on the page, and a solver
+        # picking from a corrupted list produces a confident wrong answer no
+        # later gate can catch.
+        if is_choice and options and parsed.get("_ocr_text"):
+            missing = _options_found_in_ocr(options, parsed["_ocr_text"])
+            if missing:
+                legible = False
+                q_note = q_note or (
+                    "Monk could not match all the answer choices it read to the "
+                    "photo, so it is not solving from a possibly-garbled list. "
+                    "Retake the photo with the options sharp and fully in frame."
+                )
+                q_remedy, q_reason = REMEDY_RETAKE, "options_fidelity"
+                logger.error(
+                    "[SNAP TRANSCRIBE] doubt=%s q%d option(s) %s not found in the "
+                    "OCR text — structured output does not match the page",
+                    doubt_id[:8], idx, missing,
+                )
 
         # A truncated option list is the same defect one step later: the solver
         # picks from a list that is missing the right answer. Measured on a real
@@ -1031,6 +1083,21 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             "working is below. Worth checking in a live session."
         )
 
+    if not solve_blind and options and solution.get("option_labels"):
+        # This solve SAW its options, which is where answers detach from their
+        # own reasoning. Cross-check: the steps must conclude the same option.
+        steps_say = _steps_support_label(solution, options, doubt_id, usage_acc)
+        if steps_say and set(steps_say) != set(solution["option_labels"]):
+            logger.warning(
+                "[SNAP STEPCHECK] doubt=%s answer says %s but the steps conclude "
+                "%s — trusting the derivation",
+                doubt_id[:8], solution["option_labels"], steps_say,
+            )
+            chosen = [o for o in options if o["label"] in steps_say]
+            solution["option_labels"] = steps_say
+            solution["answer"] = " and ".join(o["text"] for o in chosen)
+            solution["answer_from_steps"] = True
+
     if solve_blind:
         labels = match_answer_to_options(solution["answer"], options, q_type,
                                          doubt_id, usage_acc)
@@ -1085,6 +1152,61 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     )
     solution["topic"] = solution["topic"] or question.get("topic")
     return solution
+
+
+def _steps_support_label(solution: Dict[str, Any],
+                         options: List[Dict[str, str]],
+                         doubt_id: str,
+                         usage_acc: Optional[Dict[str, int]]) -> Optional[List[str]]:
+    """Which option the STEPS conclude, judged by a model that sees only them.
+
+    Exists because a solver that was shown its options returned an answer
+    contradicting its own reasoning: steps derived tetrahedral / square planar /
+    octahedral (option B) and the answer said option D. The steps are the
+    derivation; an answer at odds with them is the back-fitting failure in a
+    new coat. Returns the steps-supported labels, or None when unclear.
+    """
+    client = _openai_client()
+
+    def call(corrective: Optional[str] = None):
+        messages = [
+            {"role": "system", "content": (
+                "You are given the worked steps of a solution and a list of "
+                "options. Say which option the STEPS conclude. Judge only from "
+                "the steps — do not solve the question yourself, and do not "
+                "judge whether the steps are correct. Return ONLY JSON: "
+                '{"option_labels": ["B"], "clear": true}. If the steps do not '
+                'clearly conclude any option, return {"option_labels": [], '
+                '"clear": false}.'
+            )},
+            {"role": "user", "content": json.dumps({
+                "steps": [st["text"] for st in solution.get("steps") or []],
+                "options": options,
+            }, ensure_ascii=False)},
+        ]
+        if corrective:
+            messages.append({"role": "user", "content": corrective})
+        return client.chat.completions.create(
+            model=MODEL_TRANSCRIBE,
+            messages=messages,
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=200,
+            timeout=TRANSCRIBE_TIMEOUT_S,
+        )
+
+    try:
+        parsed = _call_with_one_retry("transcribe", call,
+                                      f"stepcheck={doubt_id[:8]}", usage_acc)
+    except SnapError:
+        return None
+    if not parsed.get("clear"):
+        return None
+    valid = {o["label"] for o in options}
+    labels = [str(l).strip().strip(".)(").upper()
+              for l in (parsed.get("option_labels") or [])]
+    labels = [l for l in labels if l in valid]
+    return labels or None
 
 
 # ─── The pipeline ────────────────────────────────────────────────────────────

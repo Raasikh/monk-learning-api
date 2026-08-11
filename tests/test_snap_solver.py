@@ -72,9 +72,21 @@ def stub_mathpix_ocr(monkeypatch):
     These tests exercise what we do with the structured result, so the OCR is
     stubbed to a confident read. The gate itself is tested explicitly below.
     """
+    # The page text must CONTAIN the options the tests structure out of it —
+    # the fidelity gate (rightly) refuses options that are not on the page.
+    page_text = (
+        "OCR TEXT OF THE PAGE\n"
+        "Extra pure $N_2$ can be obtained by heating\n"
+        "(A) NH_3 with CuO (B) NH_4NO_3 (C) (NH_4)_2Cr_2O_7 (D) Ba(N_3)_2\n"
+        "first second third\n"
+        "octahedral, tetrahedral and square planar; "
+        "tetrahedral, square planar and octahedral; "
+        "square planar, tetrahedral and octahedral; "
+        "octahedral, square planar and octahedral"
+    )
     monkeypatch.setattr(
         snap.mathpix, "read_page",
-        lambda *_a, **_k: {"text": "OCR TEXT OF THE PAGE", "confidence": 0.9},
+        lambda *_a, **_k: {"text": page_text, "confidence": 0.9},
     )
 
 
@@ -1114,3 +1126,77 @@ def test_failed_samples_do_not_sink_the_vote(monkeypatch):
     out = solve_question(question(), "d1")
     print(f"  votes={out.get('consensus_votes')} -> {out['answer']!r}")
     assert out["answer"] == "7"
+
+
+# --- extraction fidelity: options must exist on the page --------------------
+
+OCR_PAGE = ("Q2. Let $x=x(y)$ solve the equation. If $x(1)=1$, then:\n"
+            "(1) $\\frac{1}{2}+e$\n(2) $3+e$\n(3) $3-e$\n(4) $\\frac{3}{2}+e$")
+
+
+def test_invented_option_is_caught(monkeypatch):
+    """An option the structuring model made up is not on the page -> refused."""
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": OCR_PAGE, "confidence": 0.99})
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "text": "…", "stem": "…", "question_type": "single_correct", "legible": True,
+        "options": [{"label": "1", "text": "$\\frac{1}{2}+e$"},
+                    {"label": "2", "text": "$3+e$"},
+                    {"label": "3", "text": "$3-e$"},
+                    {"label": "4", "text": "$\\pi + 4$"}]}]}))   # invented
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legible={q['legible']} reason={q['reason']}")
+    assert q["legible"] is False and q["reason"] == "options_fidelity"
+
+
+def test_sign_flip_is_caught(monkeypatch):
+    """The measured mutation: page says 3-e, structure says 3+e twice."""
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": OCR_PAGE.replace("(2) $3+e$", "(2) $1+e$"),
+                                           "confidence": 0.99})
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "text": "…", "stem": "…", "question_type": "single_correct", "legible": True,
+        "options": [{"label": "1", "text": "$\\frac{1}{2}+e$"},
+                    {"label": "2", "text": "$3+e$"},        # page says 1+e
+                    {"label": "3", "text": "$3-e$"},
+                    {"label": "4", "text": "$\\frac{3}{2}+e$"}]}]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legible={q['legible']} reason={q['reason']}")
+    assert q["legible"] is False
+
+
+def test_faithful_options_pass(monkeypatch):
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": OCR_PAGE, "confidence": 0.99})
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "text": "…", "stem": "…", "question_type": "single_correct", "legible": True,
+        "options": [{"label": "1", "text": "$\\frac{1}{2}+\\mathrm{e}$"},
+                    {"label": "2", "text": "$3+e$"},
+                    {"label": "3", "text": "$3-e$"},
+                    {"label": "4", "text": "$\\frac{3}{2}+e$"}]}]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legible={q['legible']} (LaTeX-wrapper differences tolerated)")
+    assert q["legible"] is True
+
+
+def test_answer_contradicting_its_own_steps_is_corrected(monkeypatch):
+    """Solver saw options, steps derived B, answer said D -> derivation wins."""
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True,
+        "answer": "octahedral, square planar and octahedral",
+        "option_labels": ["D"],
+        "steps": [{"n": 1, "text": "Cl gives tetrahedral."},
+                  {"n": 2, "text": "CN gives square planar."},
+                  {"n": 3, "text": "H2O gives octahedral."}],
+        "key_idea": "k"})])
+    stub_transcriber(monkeypatch, json.dumps({"option_labels": ["B"], "clear": True}))
+    opts = [{"label": "A", "text": "octahedral, tetrahedral and square planar"},
+            {"label": "B", "text": "tetrahedral, square planar and octahedral"},
+            {"label": "C", "text": "square planar, tetrahedral and octahedral"},
+            {"label": "D", "text": "octahedral, square planar and octahedral"}]
+    q = question(options=opts)
+    q["self_contained"] = False
+    out = solve_question(q, "d1")
+    print(f"  corrected to {out['option_labels']} ({out['answer'][:44]!r})")
+    assert out["option_labels"] == ["B"]
+    assert out.get("answer_from_steps") is True

@@ -69,10 +69,18 @@ Return ONLY valid JSON:
     alone, and the options are just candidate answers to compare against:
     "find the value of x", "the major product is", "the ratio is".
 
-6c. `self_contained` is `false` when the options ARE the question — the stem
-    cannot be answered without reading them. "Which of the following is NOT
-    true", "which statement is correct", "match List I with List II", or any
-    stem that only makes sense once the choices are known.
+6c. `self_contained` is `false` ONLY when the stem literally cannot be answered
+    without reading the options: "which of the following is NOT true", "which
+    statement is correct", "match List I with List II". The test: could a
+    student write the answer on a blank line with the options covered up? If
+    yes, it is self-contained.
+
+6c'. A stem asking for several things "respectively" IS self-contained — the
+    student derives each part and writes the tuple; the options are just
+    candidate tuples. Measured failure: "shapes of the complexes with Cl⁻, CN⁻
+    and H₂O respectively are" was marked not-self-contained, the solver was
+    shown the options, and its final answer contradicted its own correct
+    reasoning. Default to `true` whenever in doubt.
 
 6d. This decides whether the solver sees the options while it works. A solver
     shown the options can talk itself into one; on a real page it derived

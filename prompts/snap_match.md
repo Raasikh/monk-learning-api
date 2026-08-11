@@ -28,6 +28,9 @@ Return ONLY valid JSON:
    - `but-2-ene` matches `CH_3-CH=CH-CH_3`
    - `288/5` matches `$\dfrac{288}{5}$`
    - `-1.51 eV` matches `- 1.51 ev`
+   - **Convert units before comparing**: `30000 cm/s` matches `300 m/s`,
+     `0.5 kg` matches `500 g`. The solver answers in the units its working
+     produced; an option in different units is still the same value.
 2. They do **not** match when the value differs, however similar they look.
    `$\dfrac{\pi+2}{\pi}$` does **not** match `$\pi+2$`, and it does not match
    `$\dfrac{\pi+2}{\pi+1}$`. A shared numerator, a shared constant or a similar

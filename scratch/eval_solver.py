@@ -106,7 +106,8 @@ def main() -> int:
         try:
             sol = solve_question(dict(q), f"{image[:4]}r{rnd}")
             return (image, q["n"], expected, sol.get("answer") or "",
-                    bool(sol.get("no_consensus")), None)
+                    bool(sol.get("no_consensus") or sol.get("unmatched")
+                         or sol.get("answer_from_steps")), None)
         except SnapError as err:
             return (image, q["n"], expected, None, False, str(err)[:70])
 
