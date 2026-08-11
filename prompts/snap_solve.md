@@ -9,7 +9,7 @@ Return ONLY valid JSON:
 {
   "answerable": true,
   "answer": "…the final answer, stated plainly…",
-  "option_label": "D",
+  "option_labels": ["D"],
   "steps": [
     { "n": 1, "text": "…one step, with math in $…$…" }
   ],
@@ -35,22 +35,38 @@ Return ONLY valid JSON:
    `answerable: false` is a normal, useful outcome. It is reported to the
    student as an incomplete photo they can retake, never as a solved question.
 
-## ━━━ WHEN `options` IS PRESENT ━━━
+## ━━━ SOLVE FIRST, THEN MATCH ━━━
 
-6. **The answer MUST be one of the given options.** Set `option_label` to that
-   option's label and `answer` to that option's text. Do not answer with
-   anything outside the list.
-7. Work out the answer yourself first, then match it to an option. Do not pick
-   by elimination alone.
-8. **If your reasoning does not land on any of the options**, do not substitute
-   the closest-sounding one and do not invent a better answer. Say exactly that
-   in `answer`, set `option_label` to `null`, and use the steps to show what you
-   got instead. A visible disagreement is useful; a confident wrong option is
-   not.
-9. Judge each option on its merits. "Extra pure", "major product", "most stable"
-   and similar wording usually means several options are partly right and one is
-   best — say in the steps why the others fall short.
-10. Leave `option_label` out (or `null`) for questions with no options.
+6. **Work the question out from the physics or chemistry before you look at the
+   options.** Reach your own result, then find which option equals it.
+7. **Never pick the closest-looking option.** If your result does not equal any
+   option, that is a real signal — one of these is true: you made an error, or
+   the transcription is wrong, or the option list is incomplete. Set
+   `answerable: false`, put your own result in `answer`, and say it matches none
+   of the given options. Do not round, reshape, or reinterpret your result to
+   reach one of them.
+8. A worked example of the failure to avoid: a ratio came out as
+   $\dfrac{\pi + 2}{\pi}$, the options offered `$\pi + 2$`, and the wrong answer
+   was chosen because it shared a numerator. The correct response was
+   `answerable: false`.
+9. If your reasoning contradicts the question's own data — you derive $n = 1$ but
+   only $n = 3$ answers are offered — trust your derivation and report the
+   mismatch. Do not silently adopt whichever option looks plausible.
+
+## ━━━ BY QUESTION TYPE ━━━
+
+10. `single_correct` — exactly one option is right. `option_labels` holds one
+    label; `answer` is that option's text.
+11. `multi_correct` — one or more options are right. `option_labels` holds every
+    correct label in order, e.g. `["A", "C"]`; `answer` states them plainly.
+    Check every option on its own merits — do not stop at the first that works.
+12. `numerical` — there are no options. `option_labels` is `[]`, and `answer` is
+    the value with its unit, at the precision the question asks for.
+13. `subjective` — there are no options. `option_labels` is `[]`, and `answer` is
+    the result, statement, or conclusion the question asks for.
+14. Wording like "most stable", "major product" or "extra pure" usually means
+    several options are partly right and one is best — say in the steps why the
+    others fall short.
 
 ---
 

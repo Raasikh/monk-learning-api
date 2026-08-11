@@ -24,6 +24,41 @@ begin;
 alter table doubts alter column question_text drop not null;
 
 -- ─────────────────────────────────────────────────────────────────────────────
+-- 1b. A third outcome: 'unsure'.
+--
+--     When a page prints its own answer key, the solver is deliberately not
+--     shown it, and the two are compared afterwards. On a real page they
+--     disagreed — the solver picked D where the key said B. One of them is
+--     wrong and we cannot tell which, so the answer is WITHHELD and the working
+--     is shown instead. `solved` stays false, so nothing shows a green tick.
+--
+--     Without this the row could only be 'solved' (a possibly-wrong answer
+--     presented as fact) or 'failed' (which it is not — the reasoning is sound
+--     and worth reading).
+--
+--     `question_type` records what shape the question was, so multi-correct and
+--     numerical questions are distinguishable in the data rather than all
+--     looking like single-correct MCQs.
+-- ─────────────────────────────────────────────────────────────────────────────
+alter table doubts add column if not exists question_type   text;
+alter table doubts add column if not exists printed_answer  text;
+alter table doubts add column if not exists option_labels   jsonb not null default '[]'::jsonb;
+
+alter table doubts drop constraint if exists doubts_status_check;
+alter table doubts add constraint doubts_status_check
+  check (status in ('solved', 'failed', 'illegible', 'unsure'));
+
+-- `solved` must still mean exactly "there is an answer to trust".
+alter table doubts drop constraint if exists doubts_solved_matches_status;
+alter table doubts add constraint doubts_solved_matches_status
+  check (solved = (status = 'solved'));
+
+alter table doubts drop constraint if exists doubts_question_type_check;
+alter table doubts add constraint doubts_question_type_check
+  check (question_type is null or question_type in
+         ('single_correct', 'multi_correct', 'numerical', 'subjective'));
+
+-- ─────────────────────────────────────────────────────────────────────────────
 -- 2. Remove client-side write access to notes and doubts.
 --
 --    supabase/schema_v2.sql (web repo) created insert/update/delete policies on

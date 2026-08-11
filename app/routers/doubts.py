@@ -38,8 +38,8 @@ router = APIRouter(prefix="/doubts", tags=["doubts"])
 
 LIST_COLUMNS = (
     "id, submission_id, question_index, question_text, subject, chapter, concept, "
-    "legible, legibility_note, answer, key_idea, solved, status, failure_reason, "
-    "created_at"
+    "question_type, legible, legibility_note, answer, key_idea, option_labels, "
+    "solved, status, failure_reason, created_at"
 )
 DETAIL_COLUMNS = LIST_COLUMNS + ", explanation, steps, image_key"
 
@@ -55,7 +55,8 @@ class ReportRequest(BaseModel):
     comment: Optional[str] = None
 
 
-def _flatten_solution(solution: Dict[str, Any]) -> Optional[str]:
+def _flatten_solution(solution: Dict[str, Any],
+                      withheld: bool = False) -> Optional[str]:
     """Renders the solution as readable text for `doubts.explanation`.
 
     The doubt page shows `explanation` as a plain string, so the structured
@@ -63,12 +64,17 @@ def _flatten_solution(solution: Dict[str, Any]) -> Optional[str]:
     delimiters so the same text renders correctly through KaTeX.
     """
     steps = solution.get("steps") or []
-    if not steps and not solution.get("answer"):
+    if not steps and not solution.get("answer") and not withheld:
         return None
 
     lines = [f"{step.get('n', i)}. {step.get('text', '')}".strip()
              for i, step in enumerate(steps, 1)]
-    if solution.get("answer"):
+    if withheld:
+        lines.append(
+            "Answer: withheld \u2014 Monk's working disagrees with the answer "
+            "printed on the page, so it is not stating one it might have wrong."
+        )
+    elif solution.get("answer"):
         lines.append(f"Answer: {solution['answer']}")
     if solution.get("key_idea"):
         lines.append(f"Key idea: {solution['key_idea']}")
@@ -167,10 +173,28 @@ async def snap_doubt(
     rows: List[Dict[str, Any]] = []
     for question in result["questions"][:MAX_QUESTIONS]:
         solution = question.get("solution") or {}
+        withheld_reason = None
         if not question["legible"]:
             status = "illegible"
         elif question.get("solve_error"):
             status = "failed"
+        elif solution.get("agrees_with_printed_answer") is False:
+            # The page printed an answer key, the solver never saw it, and the
+            # two disagree. One of them is wrong and we cannot tell which, so
+            # the answer is withheld rather than shown as fact. The reasoning is
+            # still worth reading, so the steps stay.
+            status = "unsure"
+            withheld_reason = (
+                f"Monk worked this out as \u201c{solution.get('answer')}\u201d, but the "
+                f"answer printed on the page is \u201c{solution.get('printed_answer')}\u201d. "
+                "Since they disagree, Monk is not showing an answer it might have "
+                "wrong \u2014 check the working below and ask in a session if unsure."
+            )
+            logger.warning(
+                "[DOUBT UNSURE] doubt=%s printed=%r solver=%r — answer withheld",
+                submission_id[:8], solution.get("printed_answer"),
+                solution.get("answer"),
+            )
         else:
             status = "solved"
 
@@ -188,15 +212,19 @@ async def snap_doubt(
             # `answer` and `key_idea` keep the structure for the rich panel.
             "chapter": solution.get("topic") or question.get("topic"),
             "concept": _concept(solution, question),
+            "question_type": question.get("question_type"),
+            "printed_answer": question.get("printed_answer"),
+            "option_labels": solution.get("option_labels") or [],
             "legible": question["legible"],
             "legibility_note": question.get("note"),
-            "answer": solution.get("answer"),
+            # Withheld on disagreement: the working stays, the answer does not.
+            "answer": None if status == "unsure" else solution.get("answer"),
             "steps": solution.get("steps") or [],
             "key_idea": solution.get("key_idea"),
-            "explanation": _flatten_solution(solution),
+            "explanation": _flatten_solution(solution, withheld=status == "unsure"),
             "solved": status == "solved",
             "status": status,
-            "failure_reason": question.get("solve_error"),
+            "failure_reason": withheld_reason or question.get("solve_error"),
             "transcriber_model": result["transcriber_model"],
             "solver_model": result["solver_model"],
             "transcribe_ms": result["transcribe_ms"],
@@ -206,8 +234,21 @@ async def snap_doubt(
     try:
         res = supabase.table("doubts").insert(rows).execute()
     except Exception as err:
-        logger.error("Doubt insert failed for %s: %s", submission_id[:8], err)
-        raise HTTPException(status_code=500, detail="Could not save that doubt.")
+        # A missing column here means a migration has not been applied. Saying
+        # so beats "Could not save that doubt", which sent me looking at the
+        # pipeline when the schema was the problem.
+        missing_column = "PGRST204" in str(err) or "schema cache" in str(err)
+        logger.error(
+            "Doubt insert failed for %s%s: %s",
+            submission_id[:8],
+            " (is migration 0013 applied?)" if missing_column else "",
+            err,
+        )
+        raise HTTPException(
+            status_code=503 if missing_column else 500,
+            detail=("Snap a Doubt is not fully set up on this server yet."
+                    if missing_column else "Could not save that doubt."),
+        )
 
     if not res.data:
         raise HTTPException(status_code=500, detail="Could not save that doubt.")

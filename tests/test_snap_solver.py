@@ -86,9 +86,11 @@ def transcription(*questions, note=None):
 
 def question(text="Find the acceleration when $F = 10$ N and $m = 2$ kg.",
              subject="Physics", topic="Laws of Motion", legible=True, note=None,
-             options=None, is_mcq=False, printed_answer=None):
+             options=None, question_type=None, printed_answer=None):
+    if question_type is None:
+        question_type = "single_correct" if options else "subjective"
     q = {"text": text, "subject": subject, "topic": topic, "legible": legible,
-         "is_multiple_choice": is_mcq, "options": options or [],
+         "question_type": question_type, "options": options or [],
          "printed_answer": printed_answer}
     if note:
         q["note"] = note
@@ -103,12 +105,14 @@ MCQ_OPTIONS = [
 ]
 
 
-def mcq_transcription(options=MCQ_OPTIONS, printed_answer=None, legible=True):
+def mcq_transcription(options=MCQ_OPTIONS, printed_answer=None, legible=True,
+                      question_type="single_correct", **extra):
     q = {"text": "Extra pure $N_2$ can be obtained by heating",
-         "is_multiple_choice": True, "options": options,
+         "question_type": question_type, "options": options,
          "subject": "Chemistry", "topic": "p-Block", "legible": legible}
     if printed_answer:
         q["printed_answer"] = printed_answer
+    q.update(extra)
     return json.dumps({"questions": [q]})
 
 
@@ -371,43 +375,43 @@ def test_options_present_stays_legible(monkeypatch):
 def test_bare_string_options_are_labelled(monkeypatch):
     """Some responses return plain strings; they get A, B, C, D in order."""
     stub_transcriber(monkeypatch, json.dumps({"questions": [{
-        "text": "Pick one", "is_multiple_choice": True,
+        "text": "Pick one", "question_type": "single_correct",
         "options": ["first", "second", "third"], "legible": True}]}))
     q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
     print(f"  {[(o['label'], o['text']) for o in q['options']]}")
     assert [o["label"] for o in q["options"]] == ["A", "B", "C"]
 
 
-def test_options_imply_multiple_choice(monkeypatch):
-    """Two or more options make it an MCQ even if the flag is missing."""
+def test_options_imply_a_choice_question(monkeypatch):
+    """Two or more options make it a choice question even with no type given."""
     stub_transcriber(monkeypatch, json.dumps({"questions": [{
         "text": "Pick one", "options": MCQ_OPTIONS, "legible": True}]}))
     q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
-    print(f"  is_multiple_choice={q['is_multiple_choice']}")
-    assert q["is_multiple_choice"] is True
+    print(f"  question_type={q['question_type']}")
+    assert q["question_type"] == "single_correct"
 
 
 def test_answer_outside_the_options_is_refused(monkeypatch):
     """THE regression: an invented answer must not be stored as solved."""
     stub_solver(monkeypatch, [json.dumps({
-        "answer": "Sodium azide (NaN_3)", "option_label": None,
+        "answer": "Sodium azide (NaN_3)", "option_labels": [],
         "steps": [{"n": 1, "text": "Azides decompose to nitrogen."},
                   {"n": 2, "text": "So sodium azide gives pure $N_2$."}],
         "key_idea": "Azide decomposition."})] * 2)
     with pytest.raises(SnapError) as err:
-        solve_question(question(options=MCQ_OPTIONS, is_mcq=True), "d1")
+        solve_question(question(options=MCQ_OPTIONS), "d1")
     print(f"  refused: {err.value}")
 
 
 def test_answer_matching_an_option_label_is_accepted(monkeypatch):
     stub_solver(monkeypatch, [json.dumps({
-        "answer": "Barium azide", "option_label": "D",
+        "answer": "Barium azide", "option_labels": ["D"],
         "steps": [{"n": 1, "text": "Ba azide decomposes cleanly."},
                   {"n": 2, "text": "It leaves only $N_2$."}],
         "key_idea": "No gaseous by-products."})])
-    out = solve_question(question(options=MCQ_OPTIONS, is_mcq=True), "d1")
-    print(f"  option_label={out['option_label']} answer={out['answer']!r}")
-    assert out["option_label"] == "D"
+    out = solve_question(question(options=MCQ_OPTIONS), "d1")
+    print(f"  option_label={out['option_labels']} answer={out['answer']!r}")
+    assert out["option_labels"] == ["D"]
     # The stored answer is the option's own text, not the model's paraphrase.
     assert out["answer"] == "Ba(N_3)_2"
 
@@ -416,16 +420,16 @@ def test_answer_matching_option_text_without_a_label_is_accepted(monkeypatch):
     stub_solver(monkeypatch, [json.dumps({
         "answer": "Ba(N_3)_2", "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}],
         "key_idea": "k"})])
-    out = solve_question(question(options=MCQ_OPTIONS, is_mcq=True), "d1")
-    print(f"  matched by text -> option_label={out['option_label']}")
-    assert out["option_label"] == "D"
+    out = solve_question(question(options=MCQ_OPTIONS), "d1")
+    print(f"  matched by text -> option_label={out['option_labels']}")
+    assert out["option_labels"] == ["D"]
 
 
 def test_non_mcq_answer_is_not_constrained(monkeypatch):
     stub_solver(monkeypatch, [GOOD_SOLUTION])
     out = solve_question(question(), "d1")
     print(f"  free-form answer accepted: {out['answer']!r}")
-    assert out["option_label"] is None
+    assert out["option_labels"] == []
 
 
 # --- the printed answer key is withheld, then used as a check ---------------
@@ -439,13 +443,13 @@ def test_printed_answer_never_reaches_the_solver(monkeypatch):
                 def create(self, **kwargs):
                     sent.update(kwargs)
                     return _Response(json.dumps({
-                        "answer": "Ba(N_3)_2", "option_label": "D",
+                        "answer": "Ba(N_3)_2", "option_labels": ["D"],
                         "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}],
                         "key_idea": "k"}), MODEL_SOLVE)
             self.chat = type("Chat", (), {"completions": _Completions()})()
 
     monkeypatch.setattr(snap, "_deepseek_client", lambda: _Capturing())
-    solve_question(question(options=MCQ_OPTIONS, is_mcq=True, printed_answer="D"), "d1")
+    solve_question(question(options=MCQ_OPTIONS, printed_answer="D"), "d1")
 
     blob = json.dumps(sent["messages"])
     print(f"  solver payload: {sent['messages'][-1]['content'][:110]}…")
@@ -455,18 +459,18 @@ def test_printed_answer_never_reaches_the_solver(monkeypatch):
 
 def test_agreement_with_the_printed_key_is_recorded(monkeypatch):
     stub_solver(monkeypatch, [json.dumps({
-        "answer": "Ba(N_3)_2", "option_label": "D",
+        "answer": "Ba(N_3)_2", "option_labels": ["D"],
         "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
-    out = solve_question(question(options=MCQ_OPTIONS, is_mcq=True, printed_answer="D"), "d1")
+    out = solve_question(question(options=MCQ_OPTIONS, printed_answer="D"), "d1")
     print(f"  printed=D solver=D -> agrees={out['agrees_with_printed_answer']}")
     assert out["agrees_with_printed_answer"] is True
 
 
 def test_disagreement_with_the_printed_key_is_recorded(monkeypatch):
     stub_solver(monkeypatch, [json.dumps({
-        "answer": "NH_4NO_3", "option_label": "B",
+        "answer": "NH_4NO_3", "option_labels": ["B"],
         "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
-    out = solve_question(question(options=MCQ_OPTIONS, is_mcq=True, printed_answer="D"), "d1")
+    out = solve_question(question(options=MCQ_OPTIONS, printed_answer="D"), "d1")
     print(f"  printed=D solver=B -> agrees={out['agrees_with_printed_answer']}")
     assert out["agrees_with_printed_answer"] is False
 
@@ -487,7 +491,7 @@ def test_printed_answer_is_stripped_from_the_transcription(monkeypatch):
     """The prompt asks for this; a real exam page ignored it. Code enforces it."""
     stub_transcriber(monkeypatch, json.dumps({"questions": [{
         "text": "1. Extra pure $N_2$ is obtained by heating\n(A) a (B) b\n(C) c (D) d\n\nANSWER : D",
-        "is_multiple_choice": True, "options": MCQ_OPTIONS, "legible": True}]}))
+        "question_type": "single_correct", "options": MCQ_OPTIONS, "legible": True}]}))
     q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
     print(f"  text tail={q['text'].splitlines()[-1]!r}")
     print(f"  printed_answer={q['printed_answer']!r}")
@@ -547,3 +551,93 @@ def test_unanswerable_marks_the_row_failed_not_solved(monkeypatch):
     with pytest.raises(SnapError) as err:
         solve_snapped_image(b"img", "image/jpeg", "d1")
     print(f"  pipeline refused: {str(err.value)[:70]}")
+
+
+# --- new gates: diagrams, truncated options, multi-correct, numerical -------
+#
+# Each closes a failure measured on a real page:
+#   Q3 magnetic field — options flattened, a 4th invented, diagram ignored.
+#   Q1 hydrogen       — reasoning said n=1, answer picked the n=3 option.
+
+def test_diagram_dependent_question_is_refused(monkeypatch):
+    """The solver never sees the image, so a figure question cannot be solved."""
+    stub_transcriber(monkeypatch, mcq_transcription(requires_diagram=True))
+    solver = stub_solver(monkeypatch, [GOOD_SOLUTION])
+    with pytest.raises(SnapError) as err:
+        solve_snapped_image(b"img", "image/jpeg", "d1")
+    print(f"  solver called {solver.calls}x; {str(err.value)[:70]}")
+    assert solver.calls == 0
+
+
+def test_truncated_option_list_is_refused(monkeypatch):
+    """Three options read, a fourth cut off — do not let the solver choose."""
+    stub_transcriber(monkeypatch, mcq_transcription(
+        options=MCQ_OPTIONS[:3], options_complete=False))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legible={q['legible']} note={(q['note'] or '')[:60]!r}")
+    assert q["legible"] is False
+
+
+def test_complete_option_list_is_kept(monkeypatch):
+    stub_transcriber(monkeypatch, mcq_transcription(options_complete=True))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legible={q['legible']} with a complete list")
+    assert q["legible"] is True
+
+
+def test_multi_correct_accepts_several_labels(monkeypatch):
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "A and C", "option_labels": ["A", "C"],
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    out = solve_question(question(options=MCQ_OPTIONS,
+                                  question_type="multi_correct"), "d1")
+    print(f"  option_labels={out['option_labels']} answer={out['answer']!r}")
+    assert out["option_labels"] == ["A", "C"]
+
+
+def test_single_correct_keeps_only_one_label(monkeypatch):
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "A and C", "option_labels": ["A", "C"],
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    out = solve_question(question(options=MCQ_OPTIONS,
+                                  question_type="single_correct"), "d1")
+    print(f"  narrowed to {out['option_labels']}")
+    assert out["option_labels"] == ["A"]
+
+
+def test_numerical_question_needs_no_options(monkeypatch):
+    """NAT: a value answer, no options, and no option gate applied."""
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "text": "Find the value of $x$ to two decimal places.",
+        "question_type": "numerical", "options": [], "legible": True}]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legible={q['legible']} type={q['question_type']}")
+    assert q["legible"] is True
+
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "3.14", "option_labels": [],
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    out = solve_question(q, "d1")
+    print(f"  answer={out['answer']!r} labels={out['option_labels']}")
+    assert out["answer"] == "3.14"
+
+
+def test_subjective_question_needs_no_options(monkeypatch):
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "text": "Derive the expression for escape velocity.",
+        "question_type": "subjective", "options": [], "legible": True}]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legible={q['legible']} type={q['question_type']}")
+    assert q["legible"] is True
+
+
+def test_shared_fragment_does_not_count_as_a_match(monkeypatch):
+    """(pi+2)/pi must NOT match the option `pi + 2`. The exact Q3 failure."""
+    options = [{"label": "A", "text": "$\\pi + 2$"},
+               {"label": "B", "text": "$\\pi + 1$"}]
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "$\\dfrac{\\pi + 2}{\\pi}$",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})] * 2)
+    with pytest.raises(SnapError) as err:
+        solve_question(question(options=options), "d1")
+    print(f"  refused: {str(err.value)[:80]}")

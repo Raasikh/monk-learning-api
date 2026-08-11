@@ -42,6 +42,11 @@ TRANSCRIBE_TIMEOUT_S = 45.0
 SOLVE_TIMEOUT_S = 120.0
 
 MAX_QUESTIONS = 2                    # enforced server-side, per the directive
+
+# Question shapes the transcriber may report. Anything else is treated as
+# single_correct when options exist, subjective when they do not.
+CHOICE_TYPES = {"single_correct", "multi_correct"}
+QUESTION_TYPES = CHOICE_TYPES | {"numerical", "subjective"}
 MAX_IMAGE_BYTES = 10 * 1024 * 1024
 ALLOWED_MIME = {"image/jpeg", "image/png", "image/webp", "image/heic"}
 
@@ -264,21 +269,54 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             legible = False
 
         options = _clean_options(item.get("options"))
-        is_mcq = bool(item.get("is_multiple_choice")) or len(options) >= 2
+
+        q_type = (item.get("question_type") or "").strip().lower()
+        if q_type not in QUESTION_TYPES:
+            # Legacy/loose responses: infer from what actually came back.
+            q_type = "single_correct" if len(options) >= 2 else "subjective"
+        is_choice = q_type in CHOICE_TYPES
 
         # A multiple-choice question without its choices is not answerable, and
         # the prompt saying so is not enough — a bare stem reached the solver
         # once and it invented an answer that was not among the options. This is
         # the gate that makes that impossible.
-        if is_mcq and len(options) < 2:
+        if is_choice and len(options) < 2:
             legible = False
             q_note = q_note or (
                 "This looks like a multiple-choice question, but the options "
                 "could not be read. Retake the photo with all the choices in frame."
             )
             logger.warning(
-                "[SNAP TRANSCRIBE] doubt=%s q%d MCQ with %d option(s) — refusing to solve",
+                "[SNAP TRANSCRIBE] doubt=%s q%d %s with %d option(s) — refusing to solve",
+                doubt_id[:8], idx, q_type, len(options),
+            )
+
+        # A truncated option list is the same defect one step later: the solver
+        # picks from a list that is missing the right answer. Measured on a real
+        # page whose fourth option was out of frame and got invented.
+        if is_choice and item.get("options_complete") is False:
+            legible = False
+            q_note = q_note or (
+                "Some of the answer choices are cut off. Retake the photo with "
+                "the whole list of options in frame."
+            )
+            logger.warning(
+                "[SNAP TRANSCRIBE] doubt=%s q%d option list incomplete (%d read)",
                 doubt_id[:8], idx, len(options),
+            )
+
+        # The solver never sees the image. A question that depends on a figure
+        # cannot be answered from its transcription, however complete the words
+        # look — one was answered blind from the words "two arrangements".
+        if item.get("requires_diagram") is True:
+            legible = False
+            q_note = q_note or (
+                "This question depends on a diagram, and Monk solves from the "
+                "text it reads. Ask this one in a live session instead."
+            )
+            logger.warning(
+                "[SNAP TRANSCRIBE] doubt=%s q%d requires a diagram — refusing to solve",
+                doubt_id[:8], idx,
             )
 
         questions.append({
@@ -286,8 +324,11 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "text": text,
             "subject": (item.get("subject") or "unknown"),
             "topic": item.get("topic") or None,
-            "is_multiple_choice": is_mcq,
+            "question_type": q_type,
+            "is_multiple_choice": is_choice,
             "options": options,
+            "options_complete": item.get("options_complete") is not False,
+            "requires_diagram": bool(item.get("requires_diagram")),
             # Held back from the solver on purpose; used to check it afterwards.
             # `stripped_key` is what the code removed from the text, which is
             # authoritative over the model's own `printed_answer` field.
@@ -312,33 +353,52 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
 
 # ─── Pass 2: solve ───────────────────────────────────────────────────────────
 
-def _match_option(parsed: Dict[str, Any],
-                  options: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
-    """The option the solver chose, by label or by answer text. None if neither."""
-    label = str(parsed.get("option_label") or "").strip().strip(".)(").upper()
-    if label:
-        for opt in options:
-            if opt["label"] == label:
-                return opt
+def _match_options(parsed: Dict[str, Any],
+                   options: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    """Every option the solver chose, by label or by answer text.
 
+    Returns [] when nothing matches — which is a refusal, not a near miss. A
+    ratio that came out as (pi+2)/pi was once stored as the option `pi + 2`
+    because they shared a numerator; matching is exact-ish on purpose.
+    """
+    raw_labels = parsed.get("option_labels")
+    if raw_labels is None and parsed.get("option_label") is not None:
+        raw_labels = [parsed.get("option_label")]        # older single-label shape
+    if isinstance(raw_labels, str):
+        raw_labels = [raw_labels]
+    if not isinstance(raw_labels, list):
+        raw_labels = []
+
+    by_label = {o["label"]: o for o in options}
+    chosen: List[Dict[str, str]] = []
+    for raw in raw_labels:
+        label = str(raw or "").strip().strip(".)(").upper()
+        opt = by_label.get(label)
+        if opt and opt not in chosen:
+            chosen.append(opt)
+    if chosen:
+        return chosen
+
+    # No usable labels — fall back to matching the answer text against an
+    # option, requiring equality rather than containment so a shared fragment
+    # cannot pass.
     answer_key = _norm(parsed.get("answer") or "")
     if answer_key:
         for opt in options:
-            opt_key = _norm(opt["text"])
-            if opt_key and (opt_key == answer_key or opt_key in answer_key):
-                return opt
-    return None
+            if _norm(opt["text"]) == answer_key:
+                return [opt]
+    return []
 
 
 def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
-                       options: Optional[List[Dict[str, str]]] = None) -> Dict[str, Any]:
+                       options: Optional[List[Dict[str, str]]] = None,
+                       question_type: str = "subjective") -> Dict[str, Any]:
     """A solution without an answer or steps is not a solution.
 
-    When the question is multiple-choice, the answer must be one of the given
-    options. A solve that lands outside them is recorded as a failure rather
-    than shown to the student as though it were the answer — that exact case
-    (a bare stem, an invented answer, stored as 'solved') is why this check
-    exists.
+    For a choice question the answer must be one of the given options, and for
+    `single_correct` exactly one of them. A solve that lands outside the list is
+    recorded as a failure rather than shown as the answer — picking the
+    closest-looking option is the specific behaviour this blocks.
     """
     answer = (parsed.get("answer") or "").strip()
     if not answer:
@@ -346,8 +406,7 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
 
     # The solver saying "this question is incomplete" is an honest outcome, but
     # it is NOT a solved doubt. Stored as one, the student sees a green "Solved"
-    # chip above a non-answer — measured on a cropped photo whose options were
-    # out of frame.
+    # chip above a non-answer.
     if parsed.get("answerable") is False:
         logger.warning("[SNAP SOLVE] marked unanswerable: %s", answer[:160])
         raise SnapError(
@@ -356,20 +415,27 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
             stage,
         )
 
-    chosen: Optional[Dict[str, str]] = None
-    if options:
-        chosen = _match_option(parsed, options)
-        if chosen is None:
+    chosen: List[Dict[str, str]] = []
+    if options and question_type in CHOICE_TYPES:
+        chosen = _match_options(parsed, options)
+        if not chosen:
             labels = ", ".join(o["label"] for o in options)
             logger.error(
                 "[SNAP SOLVE] answer %r matches none of the options (%s)",
                 answer[:120], labels,
             )
             raise SnapError(
-                "Monk worked through this one but could not settle on any of "
-                "the given options. Rather than guess, it is flagged for review.",
+                "Monk worked through this one but its result does not match any "
+                "of the given options, so it is not showing a guess. The photo "
+                "may be missing an option, or the question needs a closer look.",
                 stage,
             )
+        if question_type == "single_correct" and len(chosen) > 1:
+            logger.warning(
+                "[SNAP SOLVE] %d options chosen for a single_correct question; keeping the first",
+                len(chosen),
+            )
+            chosen = chosen[:1]
 
     raw_steps = parsed.get("steps")
     if not isinstance(raw_steps, list):
@@ -393,10 +459,10 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
         logger.warning("[SNAP SOLVE] %d steps returned, target is 3-6", len(steps))
 
     return {
-        # For an MCQ the stored answer is the option's own text, so it always
-        # reads as one of the printed choices.
-        "answer": chosen["text"] if chosen else answer,
-        "option_label": chosen["label"] if chosen else None,
+        # For a choice question the stored answer is the option text itself, so
+        # it always reads as one of the printed choices.
+        "answer": " and ".join(o["text"] for o in chosen) if chosen else answer,
+        "option_labels": [o["label"] for o in chosen],
         "steps": steps,
         "key_idea": (parsed.get("key_idea") or "").strip() or None,
         "subject": (parsed.get("subject") or "").strip() or None,
@@ -423,7 +489,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-") -> Dict[str, A
         "text": question.get("text"),
         "subject": question.get("subject"),
         "topic": question.get("topic"),
-        "is_multiple_choice": question.get("is_multiple_choice", False),
+        "question_type": question.get("question_type") or "subjective",
         "options": question.get("options") or [],
     }, ensure_ascii=False)
 
@@ -444,7 +510,11 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-") -> Dict[str, A
         )
 
     parsed = _call_with_one_retry("solve", call, f"doubt={doubt_id[:8]}")
-    solution = _validate_solution(parsed, options=question.get("options") or [])
+    solution = _validate_solution(
+        parsed,
+        options=question.get("options") or [],
+        question_type=question.get("question_type") or "subjective",
+    )
 
     # Free correctness signal: the page's own answer key, which the solver never
     # saw. A disagreement does not change what the student is shown — the key
@@ -452,7 +522,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-") -> Dict[str, A
     printed = question.get("printed_answer")
     if printed:
         printed_key = _norm(printed)
-        chosen_label = _norm(solution.get("option_label") or "")
+        chosen_label = _norm("".join(solution.get("option_labels") or []))
         agrees = bool(chosen_label) and printed_key == chosen_label
         if not agrees:
             agrees = printed_key in _norm(solution["answer"]) or _norm(solution["answer"]) in printed_key
@@ -461,7 +531,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-") -> Dict[str, A
         logger.log(
             logging.WARNING if not agrees else logging.INFO,
             "[SNAP ANSWER CHECK] doubt=%s printed=%r solver=%r (%s) -> %s",
-            doubt_id[:8], printed, solution.get("option_label"),
+            doubt_id[:8], printed, solution.get("option_labels"),
             solution["answer"][:60],
             "AGREES" if agrees else "DISAGREES",
         )

@@ -34,7 +34,8 @@ EXPECTED = {
         "id, user_id, subject, chapter, concept, question_text, explanation, solved, "
         "created_at, submission_id, question_index, image_key, legible, "
         "legibility_note, answer, steps, key_idea, status, failure_reason, "
-        "transcriber_model, solver_model, transcribe_ms, latency_ms"
+        "transcriber_model, solver_model, transcribe_ms, latency_ms, "
+        "question_type, printed_answer, option_labels"
     ),
     "doubt_reports": "id, doubt_id, user_id, comment, created_at",
 }
