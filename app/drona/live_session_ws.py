@@ -267,33 +267,29 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         # Synthesize remaining sentence buffer
         if speech_buffer.strip():
             t1_v, t2_v, clean_text = check_tts_safety_filter(speech_buffer)
-            if clean_text and ends_in_checkpoint:
-                # Checkpoint question: deliver as text only, never voiced. No network
-                # call involved, so this cannot fail the way TTS synthesis can.
-                chunks_sent += 1
-                sentence_id = f"{turn_id}_s{chunks_sent}"
-                matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
-                if not matching_evt and chunks_sent <= len(turn_board_events):
-                    matching_evt = turn_board_events[chunks_sent - 1]
-
-                out_msg = {
-                    "type": "audio_chunk",
-                    "sentence_id": sentence_id,
-                    "audio": None,
-                    "speech": clean_text,
-                    "board_event": matching_evt
-                }
-                assert_no_forbidden_keys(out_msg)
-                logger.info(f"🔇 [CHECKPOINT QUESTION - AUDIO SUPPRESSED] sentence_id={sentence_id} sent as silent caption ({len(clean_text)} chars)")
-                await safe_send_json(out_msg)
-            elif clean_text:
+            if clean_text:
+                # Checkpoint questions used to be delivered as text only, never
+                # voiced — a real teacher asks the question out loud, and
+                # silently popping a question onto the sheet with nothing said
+                # felt abrupt and broken. Now attempted like any other
+                # sentence; only genuine TTS failure falls back to a silent
+                # caption, so the question still reaches the student either way.
                 state.tts_characters += len(clean_text)
+                audio_bytes = None
                 try:
                     if skip_tts_flag:
                         audio_bytes = b"\x00" * 3200
                     else:
                         audio_bytes = await tts_proxy.synthesize_text(clean_text)
-                    b64_audio = base64.b64encode(audio_bytes).decode('utf-8')
+                except Exception as tts_err:
+                    if ends_in_checkpoint:
+                        logger.warning(f"TTS synthesis failed on checkpoint question, falling back to silent caption: {tts_err}")
+                    else:
+                        logger.error(f"TTS synthesis error on final sentence: {tts_err}")
+
+                if audio_bytes is None and not ends_in_checkpoint:
+                    pass  # matches prior behaviour: a non-checkpoint synthesis failure emits nothing
+                else:
                     chunks_sent += 1
                     sentence_id = f"{turn_id}_s{chunks_sent}"
 
@@ -304,18 +300,17 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     out_msg = {
                         "type": "audio_chunk",
                         "sentence_id": sentence_id,
-                        "audio": b64_audio,
+                        "audio": base64.b64encode(audio_bytes).decode('utf-8') if audio_bytes else None,
                         "speech": clean_text,
                         "board_event": matching_evt
                     }
                     assert_no_forbidden_keys(out_msg)
-                    total_audio_bytes += len(audio_bytes)
-                    logger.info(f"🔊 [AUDIO SYNTHESIZED FINAL] sentence_id={sentence_id} ({len(clean_text)} chars)")
+                    if audio_bytes:
+                        total_audio_bytes += len(audio_bytes)
+                        logger.info(f"🔊 [AUDIO SYNTHESIZED FINAL] sentence_id={sentence_id} ({len(clean_text)} chars)")
+                    else:
+                        logger.info(f"🔇 [CHECKPOINT QUESTION - TTS FAILED] sentence_id={sentence_id} sent as silent caption ({len(clean_text)} chars)")
                     await safe_send_json(out_msg)
-                    logger.info(f"🚀 [AUDIO TRANSMITTED FINAL] sentence_id={sentence_id} sent over WebSocket.")
-
-                except Exception as tts_err:
-                    logger.error(f"TTS synthesis error on final sentence: {tts_err}")
 
         if chunks_sent == 0 and speech_buffer.strip():
             logger.error(f"[SERVER TURN AUDIO FAILURE] Emitted 0 audio_chunk frames (0 total PCM bytes) for session {session_id}")
