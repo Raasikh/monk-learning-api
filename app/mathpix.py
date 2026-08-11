@@ -104,6 +104,11 @@ def read_page(image_bytes: bytes, mime_type: str,
         "math_inline_delimiters": ["$", "$"],
         "math_display_delimiters": ["$$", "$$"],
         "rm_spaces": True,
+        # Line data tells us whether the page actually contains a figure. That
+        # is a hard signal from the OCR engine: a text-only model downstream
+        # cannot see a diagram, and inferring one from wording alone missed a
+        # real figure question ("two arrangements of wires" with no "as shown").
+        "include_line_data": True,
     }
 
     try:
@@ -124,6 +129,9 @@ def read_page(image_bytes: bytes, mime_type: str,
     if payload.get("error"):
         raise MathpixError(f"Mathpix error: {payload['error']}")
 
+    line_types = [ln.get("type") for ln in (payload.get("line_data") or [])]
+    diagram_regions = sum(1 for t in line_types if t in ("diagram", "chart"))
+
     text = (payload.get("text") or "").strip()
     rate = payload.get("confidence_rate")
     rate = float(rate) if rate is not None else None
@@ -134,12 +142,12 @@ def read_page(image_bytes: bytes, mime_type: str,
         raise MathpixError("Mathpix read nothing from that image.")
 
     logger.info(
-        "[MATHPIX] doubt=%s read %d chars, confidence_rate=%s (whole-page confidence=%s)",
+        "[MATHPIX] doubt=%s read %d chars, confidence_rate=%s, diagram_regions=%d",
         doubt_id[:8], len(text),
-        f"{rate:.4f}" if rate is not None else "n/a",
-        f"{whole_page:.2f}" if whole_page is not None else "n/a",
+        f"{rate:.4f}" if rate is not None else "n/a", diagram_regions,
     )
-    return {"text": text, "confidence": rate, "page_confidence": whole_page}
+    return {"text": text, "confidence": rate, "page_confidence": whole_page,
+            "diagram_regions": diagram_regions}
 
 
 def confidence_is_usable(confidence_rate: Optional[float]) -> bool:

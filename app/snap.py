@@ -4,6 +4,8 @@ Two models, two prompts, one direction of travel:
 
   read        Mathpix OCR            reads the image. Cannot invent anything.
   structure   gpt-4o-mini (TEXT)     splits the OCR text into questions/options.
+  describe    gpt-4o (VISION)        only for figure questions: puts the diagram
+                                     into words. Describes, never solves.
   solve       deepseek-v4-pro        solves the text. NEVER sees the image.
 
 Mathpix goes first because the failures were math-OCR failures, not reasoning
@@ -38,6 +40,16 @@ logger = logging.getLogger("snap")
 
 # AGENTS.md Rule 5 — non-negotiable model strings.
 MODEL_TRANSCRIBE = "gpt-4o-mini"
+# Diagram description is the one job gpt-4o-mini measurably cannot do. On a real
+# two-arrangement figure it called the arc's centre "a straight wire labeled C1",
+# merged the two arrangements, and invented a current direction. gpt-4o read the
+# same figure correctly, including the structural difference the question turns
+# on.
+#
+# It is not the cost jump it looks like: mini spent 14,871 input tokens on that
+# image against gpt-4o's 1,129, so the calls land within ~2x of each other. It
+# is also paid only on figure questions, not on every snap.
+MODEL_DIAGRAM = "gpt-4o"
 # V4-Pro, not Flash: a snap is one shot with no second chance, and a wrong solve
 # is silently wrong. Accuracy beats latency here — it is one call per question,
 # not one per turn.
@@ -190,7 +202,8 @@ def _usage_of(res: Any) -> Dict[str, int]:
 
 
 def _call_with_one_retry(stage: str, call, describe: str,
-                         usage_acc: Optional[Dict[str, int]] = None) -> Dict[str, Any]:
+                         usage_acc: Optional[Dict[str, int]] = None,
+                         expect_model: Optional[str] = None) -> Dict[str, Any]:
     """Runs `call()` and parses its JSON, retrying once on a parse failure.
 
     Every failure is logged with the stage that produced it. After the retry the
@@ -206,9 +219,11 @@ def _call_with_one_retry(stage: str, call, describe: str,
             counted = _usage_of(res)
             usage_acc["input"] = usage_acc.get("input", 0) + counted["input"]
             usage_acc["output"] = usage_acc.get("output", 0) + counted["output"]
-        _assert_model(getattr(res, "model", None),
-                      MODEL_TRANSCRIBE if stage == "transcribe" else MODEL_SOLVE,
-                      stage)
+        _assert_model(
+            getattr(res, "model", None),
+            expect_model or (MODEL_TRANSCRIBE if stage == "transcribe" else MODEL_SOLVE),
+            stage,
+        )
         last_raw = res.choices[0].message.content or ""
         try:
             return _parse_json(last_raw, stage)
@@ -350,6 +365,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
 
     parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}", usage_acc)
     parsed["_ocr_confidence"] = page["confidence"]
+    parsed["_diagram_regions"] = page.get("diagram_regions", 0)
 
     raw_questions = parsed.get("questions")
     if not isinstance(raw_questions, list) or not raw_questions:
@@ -428,16 +444,19 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # The solver never sees the image. A question that depends on a figure
         # cannot be answered from its transcription, however complete the words
         # look — one was answered blind from the words "two arrangements".
-        if item.get("requires_diagram") is True:
-            legible = False
-            q_note = q_note or (
-                "This question depends on a diagram, and Monk solves from the "
-                "text it reads. A clearer photo will not help — ask this one in "
-                "a live session, where the board can be used."
-            )
-            q_remedy, q_reason = REMEDY_NOT_PHOTO, "needs_diagram"
-            logger.warning(
-                "[SNAP TRANSCRIBE] doubt=%s q%d requires a diagram — refusing to solve",
+        # Figure questions are no longer refused here. They go to the describing
+        # pass, which puts the diagram into words for the solver. If that pass
+        # cannot make the figure out, THEN they are refused — see
+        # solve_snapped_image below.
+        # The structuring model reads text only, so it cannot see a figure and
+        # has to infer one from wording — which it missed on a real page whose
+        # stem said "two arrangements of wires" without saying "as shown".
+        # Mathpix reporting a diagram region is the authoritative signal.
+        needs_diagram = (item.get("requires_diagram") is True
+                         or parsed.get("_diagram_regions", 0) > 0)
+        if needs_diagram:
+            logger.info(
+                "[SNAP TRANSCRIBE] doubt=%s q%d needs a diagram — will describe it",
                 doubt_id[:8], idx,
             )
 
@@ -450,7 +469,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "is_multiple_choice": is_choice,
             "options": options,
             "options_complete": item.get("options_complete") is not False,
-            "requires_diagram": bool(item.get("requires_diagram")),
+            "requires_diagram": needs_diagram,
             # Held back from the solver on purpose; used to check it afterwards.
             # `stripped_key` is what the code removed from the text, which is
             # authoritative over the model's own `printed_answer` field.
@@ -474,6 +493,70 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     )
     return {"questions": questions, "note": note,
             "ocr_confidence": parsed.get("_ocr_confidence")}
+
+
+# ─── Pass 1c: describe the figure ────────────────────────────────────────────
+
+def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
+                     doubt_id: str = "-",
+                     usage_acc: Optional[Dict[str, int]] = None) -> Optional[str]:
+    """Puts a figure into words so the solver can use it.
+
+    The solver still never sees the image — this is transcription extended to
+    the diagram, exactly as the OCR pass is transcription extended to the maths.
+    The describing model is told not to solve, for the same reason the OCR pass
+    exists: a model that both reads and answers cannot be checked.
+
+    Returns the description, or None when the figure could not be made out well
+    enough to solve from. None is a refusal, not an empty string.
+    """
+    client = _openai_client()
+    data_url = f"data:{mime_type};base64,{base64.b64encode(image_bytes).decode()}"
+
+    def call():
+        return client.chat.completions.create(
+            model=MODEL_DIAGRAM,
+            messages=[
+                {"role": "system", "content": load_prompt("snap_diagram.md")},
+                {"role": "user", "content": [
+                    {"type": "text",
+                     "text": f"The question that needs this figure:\n{question_text}"},
+                    {"type": "image_url",
+                     "image_url": {"url": data_url, "detail": "high"}},
+                ]},
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=1200,
+            timeout=TRANSCRIBE_TIMEOUT_S,
+        )
+
+    try:
+        parsed = _call_with_one_retry("transcribe", call, f"diagram={doubt_id[:8]}",
+                                      usage_acc, expect_model=MODEL_DIAGRAM)
+    except SnapError as err:
+        logger.warning("[SNAP DIAGRAM] doubt=%s describe failed: %s", doubt_id[:8], err)
+        return None
+
+    if not parsed.get("has_diagram", True):
+        logger.info("[SNAP DIAGRAM] doubt=%s no figure found in the image", doubt_id[:8])
+        return None
+    if parsed.get("sufficient") is False:
+        logger.warning("[SNAP DIAGRAM] doubt=%s figure not clear enough: %s",
+                       doubt_id[:8], (parsed.get("note") or "")[:160])
+        return None
+
+    description = (parsed.get("description") or "").strip()
+    if len(description) < 40:
+        # A one-line description of a physics figure is not something to solve
+        # from; treat it as a failed read rather than pass it on.
+        logger.warning("[SNAP DIAGRAM] doubt=%s description too thin (%d chars)",
+                       doubt_id[:8], len(description))
+        return None
+
+    logger.info("[SNAP DIAGRAM] doubt=%s described in %d chars",
+                doubt_id[:8], len(description))
+    return description
 
 
 # ─── Pass 2: solve ───────────────────────────────────────────────────────────
@@ -517,7 +600,8 @@ def _match_options(parsed: Dict[str, Any],
 
 def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
                        options: Optional[List[Dict[str, str]]] = None,
-                       question_type: str = "subjective") -> Dict[str, Any]:
+                       question_type: str = "subjective",
+                       had_diagram: bool = False) -> Dict[str, Any]:
     """A solution without an answer or steps is not a solution.
 
     For a choice question the answer must be one of the given options, and for
@@ -534,6 +618,16 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
     # chip above a non-answer.
     if parsed.get("answerable") is False:
         logger.warning("[SNAP SOLVE] marked unanswerable: %s", answer[:160])
+        if had_diagram:
+            # The figure was described and the solver still could not use it.
+            # Blaming the photo would send the student to retake a picture that
+            # was read correctly.
+            raise SnapError(
+                "Monk could read this question but could not work reliably from "
+                "the figure, so it is not guessing. Ask this one in a live "
+                "session, where the diagram can be worked through on the board.",
+                stage, REMEDY_NOT_PHOTO, "diagram_insufficient",
+            )
         raise SnapError(
             answer if len(answer) < 300 else
             "That question is incomplete — some of it is missing from the photo.",
@@ -613,13 +707,17 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     # `printed_answer` is deliberately NOT included. When the page carries an
     # answer key, handing it over turns solving into copying and makes a wrong
     # solve indistinguishable from a right one.
-    payload = json.dumps({
+    payload_obj = {
         "text": question.get("text"),
         "subject": question.get("subject"),
         "topic": question.get("topic"),
         "question_type": question.get("question_type") or "subjective",
         "options": question.get("options") or [],
-    }, ensure_ascii=False)
+    }
+    if question.get("diagram_description"):
+        # Words, not pixels: the solver still never sees the image.
+        payload_obj["diagram_description"] = question["diagram_description"]
+    payload = json.dumps(payload_obj, ensure_ascii=False)
 
     def call():
         return client.chat.completions.create(
@@ -630,7 +728,11 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             ],
             response_format={"type": "json_object"},
             temperature=0.0,
-            max_tokens=2048,
+            # 2048 truncated a real answer mid-JSON: a figure question produced
+            # longer steps, the response was cut off, and two parse failures
+            # were reported as "something went wrong" when the solve had in fact
+            # reached the right option.
+            max_tokens=4096,
             timeout=SOLVE_TIMEOUT_S,
             # Rule 5 — V4 defaults to chain-of-thought and will spend the
             # whole budget thinking, returning an empty string.
@@ -642,6 +744,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         parsed,
         options=question.get("options") or [],
         question_type=question.get("question_type") or "subjective",
+        had_diagram=bool(question.get("diagram_description")),
     )
 
     # Free correctness signal: the page's own answer key, which the solver never
@@ -693,6 +796,26 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
 
     solved_count = 0
     for question in read["questions"]:
+        # A figure question gets its diagram put into words first. Only if that
+        # fails is it refused — and then honestly, as "the figure could not be
+        # made out", not as "your photo is bad".
+        if question.get("requires_diagram") and question["legible"]:
+            description = describe_diagram(
+                image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
+            )
+            if description:
+                question["diagram_description"] = description
+            else:
+                question["legible"] = False
+                question["remedy"] = REMEDY_NOT_PHOTO
+                question["reason"] = "diagram_unreadable"
+                question["note"] = (
+                    "This question needs its diagram, and Monk could not make the "
+                    "figure out clearly enough to solve from. If the figure is cut "
+                    "off, retake the photo with all of it in frame — otherwise ask "
+                    "this one in a live session, where the board can be used."
+                )
+
         if not question["legible"]:
             logger.info(
                 "[SNAP] doubt=%s q%d illegible, not sent to solver: %s",
@@ -709,6 +832,8 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             )
             question["legible"] = True
             question["solve_error"] = str(err)
+            question["solve_remedy"] = err.remedy
+            question["solve_reason"] = err.reason
 
     if solved_count == 0:
         # Nothing was solved. Surface the most specific reason we have rather
@@ -719,7 +844,18 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             or first.get("note")
             or "Monk could not read that question clearly enough to solve it."
         )
-        raise SnapError(reason, "solve" if first.get("solve_error") else "transcribe")
+        # Carry the question's own remedy through. Defaulting to our_side here
+        # threw away "retake the photo" and "this needs a diagram", so the
+        # client saw a generic failure for every cause.
+        if first.get("solve_error"):
+            # The solve failed: its remedy describes the cause, not the
+            # question's transcribe-time default.
+            raise SnapError(reason, "solve",
+                            first.get("solve_remedy") or REMEDY_OUR_SIDE,
+                            first.get("solve_reason") or "unknown")
+        raise SnapError(reason, "transcribe",
+                        first.get("remedy") or REMEDY_OUR_SIDE,
+                        first.get("reason") or "unknown")
 
     latency_ms = int((time.time() - started) * 1000)
     logger.info(

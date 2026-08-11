@@ -786,14 +786,13 @@ def test_unclear_photo_says_retake(monkeypatch):
     assert err.value.remedy == snap.REMEDY_RETAKE
 
 
-def test_diagram_question_does_not_blame_the_photo(monkeypatch):
-    """A perfect photo of a figure question is still unanswerable."""
+def test_diagram_question_is_flagged_not_refused(monkeypatch):
+    """Figure questions go to the describing pass rather than being refused."""
     stub_transcriber(monkeypatch, mcq_transcription(requires_diagram=True))
     q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
-    print(f"  reason={q['reason']} remedy={q['remedy']}")
-    print(f"  note={q['note'][:72]}…")
-    assert q["remedy"] == snap.REMEDY_NOT_PHOTO
-    assert "will not help" in q["note"]
+    print(f"  legible={q['legible']} requires_diagram={q['requires_diagram']}")
+    assert q["legible"] is True
+    assert q["requires_diagram"] is True
 
 
 def test_cut_off_options_say_retake(monkeypatch):
@@ -824,3 +823,74 @@ def test_model_failure_is_our_side(monkeypatch):
     print(f"  reason={err.value.reason} remedy={err.value.remedy}")
     assert err.value.remedy == snap.REMEDY_OUR_SIDE
     assert "Monk's end" in str(err.value)
+
+
+# --- figures: describe them, and only refuse when that fails ---------------
+
+DIAGRAM_JSON = json.dumps({
+    "has_diagram": True, "sufficient": True,
+    "description": ("A semicircular arc of radius $R$ carrying current $I$, with "
+                    "two straight semi-infinite wires entering along the diameter "
+                    "from opposite sides, meeting at the centre $C_1$."),
+})
+
+
+def test_diagram_is_described_and_reaches_the_solver(monkeypatch):
+    """The description goes to the solver; the IMAGE still does not."""
+    stub_transcriber(monkeypatch, [mcq_transcription(requires_diagram=True),
+                                   DIAGRAM_JSON])
+    sent = {}
+
+    class _Capturing:
+        def __init__(self):
+            class _Completions:
+                def create(self, **kwargs):
+                    sent.update(kwargs)
+                    return _Response(json.dumps({
+                        "answerable": True, "answer": "Ba(N_3)_2",
+                        "option_labels": ["D"],
+                        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}],
+                        "key_idea": "k"}), MODEL_SOLVE)
+            self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    monkeypatch.setattr(snap, "_deepseek_client", lambda: _Capturing())
+    out = solve_snapped_image(b"img", "image/jpeg", "d1")
+
+    payload = sent["messages"][-1]["content"]
+    print(f"  solver payload includes diagram: {'diagram_description' in payload}")
+    assert "diagram_description" in payload
+    assert "semicircular arc" in payload
+    # The image itself must still never reach the solver.
+    blob = json.dumps(sent["messages"])
+    assert "image_url" not in blob and "base64" not in blob
+    assert out["solved_count"] == 1
+    print("  described, solved, and no pixels reached the solver")
+
+
+def test_unreadable_figure_is_refused_honestly(monkeypatch):
+    """When the figure cannot be made out, say THAT — not 'bad photo'."""
+    stub_transcriber(monkeypatch, [
+        mcq_transcription(requires_diagram=True),
+        json.dumps({"has_diagram": True, "sufficient": False,
+                    "note": "The current direction is not visible."}),
+    ])
+    solver = stub_solver(monkeypatch, [GOOD_SOLUTION])
+    with pytest.raises(SnapError) as err:
+        solve_snapped_image(b"img", "image/jpeg", "d1")
+    print(f"  solver called {solver.calls}x; {str(err.value)[:90]}…")
+    assert solver.calls == 0
+    assert "figure" in str(err.value)
+
+
+def test_thin_description_is_not_solved_from(monkeypatch):
+    """'A curvy wire shape' is not something to solve a physics question from."""
+    stub_transcriber(monkeypatch, [
+        mcq_transcription(requires_diagram=True),
+        json.dumps({"has_diagram": True, "sufficient": True,
+                    "description": "Some wires."}),
+    ])
+    solver = stub_solver(monkeypatch, [GOOD_SOLUTION])
+    with pytest.raises(SnapError):
+        solve_snapped_image(b"img", "image/jpeg", "d1")
+    print(f"  solver called {solver.calls}x on a 11-char description")
+    assert solver.calls == 0

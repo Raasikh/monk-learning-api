@@ -53,18 +53,29 @@ Return ONLY valid JSON:
    only $n = 3$ answers are offered — trust your derivation and report the
    mismatch. Do not silently adopt whichever option looks plausible.
 
+## ━━━ WHEN `diagram_description` IS PRESENT ━━━
+
+10. The question depends on a figure you cannot see. Another model looked at it
+    and described it for you. Treat that description as the figure: every
+    labelled quantity, connection and direction in it is what is drawn.
+11. **Work only from what the description states.** If it does not mention
+    something you need — a direction, a length, which way a current flows — do
+    not assume the usual case. Set `answerable: false` and say precisely what
+    the description is missing. It is a description, not the drawing, and the
+    gap may be real.
+
 ## ━━━ BY QUESTION TYPE ━━━
 
-10. `single_correct` — exactly one option is right. `option_labels` holds one
+12. `single_correct` — exactly one option is right. `option_labels` holds one
     label; `answer` is that option's text.
-11. `multi_correct` — one or more options are right. `option_labels` holds every
+13. `multi_correct` — one or more options are right. `option_labels` holds every
     correct label in order, e.g. `["A", "C"]`; `answer` states them plainly.
     Check every option on its own merits — do not stop at the first that works.
-12. `numerical` — there are no options. `option_labels` is `[]`, and `answer` is
+14. `numerical` — there are no options. `option_labels` is `[]`, and `answer` is
     the value with its unit, at the precision the question asks for.
-13. `subjective` — there are no options. `option_labels` is `[]`, and `answer` is
+15. `subjective` — there are no options. `option_labels` is `[]`, and `answer` is
     the result, statement, or conclusion the question asks for.
-14. Wording like "most stable", "major product" or "extra pure" usually means
+16. Wording like "most stable", "major product" or "extra pure" usually means
     several options are partly right and one is best — say in the steps why the
     others fall short.
 

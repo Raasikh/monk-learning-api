@@ -289,7 +289,10 @@ async def snap_doubt(
     for question in result["questions"][:allowed_this_submission]:
         solution = question.get("solution") or {}
         withheld_reason = None
-        remedy = question.get("remedy") or REMEDY_OUR_SIDE
+        # A failed solve reports its own cause; the question-level remedy only
+        # describes how it was read.
+        remedy = (question.get("solve_remedy") if question.get("solve_error")
+                  else question.get("remedy")) or REMEDY_OUR_SIDE
         if not question["legible"]:
             # A diagram question was read perfectly; the photo is not at fault,
             # so it is 'failed' (ours) rather than 'illegible' (theirs).
