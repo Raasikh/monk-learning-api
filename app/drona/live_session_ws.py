@@ -129,6 +129,21 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     # isolates whether an audio artifact comes from part-splitting.
     stream_tts_parts = websocket.query_params.get("stream_tts") != "0"
 
+    # A raised hand pauses the lesson; it does not delete it.
+    #
+    # Barge-in used to cancel the in-flight turn outright, so the part of the
+    # explanation the student had not heard yet — and the board lines that went
+    # with it — were gone for good. Ask a question three sentences into a
+    # segment and the other three sentences were simply never taught.
+    # Whatever was still unspoken when the student took the floor is parked
+    # here and replayed once their question has been answered.
+    interrupted_turn: Dict[str, Any] = {"remainder": "", "board_events": []}
+    # What the turn currently in flight still owes the student. Kept out here
+    # rather than inside the pipeline because the abort runs in the receive
+    # loop while the pipeline task is being cancelled — it cannot ask a
+    # cancelled coroutine what it had left to say.
+    live_turn: Dict[str, Any] = {"unsent": [], "board_events": [], "revealed": 0}
+
     persona = persona_for(session_data.get('tutor_voice'))
     session_language = normalize_language(session_data.get('language'))
     # session_id must be passed: RumikConnectionPool keys leases by it and
@@ -253,6 +268,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         segment_complete_flag = False
         ends_in_checkpoint = False
         session_ending = False
+        # Sentences this turn has produced but not yet delivered. abort_active_turn
+        # reads it to park the unheard remainder when the student cuts in.
+        live_turn["unsent"] = []
+        live_turn["board_events"] = []
+        live_turn["revealed"] = 0
+        live_turn["asked"] = False
 
         async def _on_filler(filler_pcm: bytes):
             b64_f = base64.b64encode(filler_pcm).decode('utf-8')
@@ -322,6 +343,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 await safe_send_json(out_msg)
                 logger.info(f"🔊 [AUDIO SYNTHESIZED] sentence_id={sentence_id} ({len(clean_text)} chars, single frame)")
 
+            live_turn["revealed"] = chunks_sent
+
         # No canned acknowledgment on a healthy connection. Playing a
         # pre-recorded "let me think" on EVERY answer meant the same handful
         # of clips on loop, and each one costs 1-3s of playback BEFORE the
@@ -331,7 +354,20 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         # for: covering a rate limit or an exhausted pool, where there is no
         # real audio to play.
 
-        async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
+        # A "resume" turn has no tutor turn to generate — its words already
+        # exist, parked by a barge-in. It borrows this pipeline purely for the
+        # heartbeat, the watchdog, the Rumik lease and the turn queue, then
+        # falls through to the resume block below.
+        async def _no_stream():
+            return
+            yield  # pragma: no cover — makes this an async generator
+
+        turn_stream = (
+            _no_stream() if turn_type == "resume"
+            else process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type)
+        )
+
+        async for sse_chunk in turn_stream:
             lines = sse_chunk.strip().split("\n")
             event_type = None
             data_payload = {}
@@ -347,6 +383,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
             if event_type == "board_events":
                 turn_board_events = data_payload.get("events", [])
+                live_turn["board_events"] = turn_board_events
                 out_msg = {"type": "board_events", "events": turn_board_events}
                 assert_no_forbidden_keys(out_msg)
                 await safe_send_json(out_msg)
@@ -360,11 +397,20 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 delta = data_payload.get("delta", "")
                 speech_buffer += delta
                 ends_in_checkpoint = bool(data_payload.get("ends_in_checkpoint"))
+                live_turn["unsent"] = [speech_buffer]
 
-                # Synthesize TTS sentence-by-sentence as speech completes
+                # Synthesize TTS sentence-by-sentence as speech completes.
+                # The queue is drained from the FRONT, popping only after a
+                # sentence has actually been sent, so live_turn["unsent"] is
+                # always exactly what the student has not heard yet — including
+                # the sentence mid-synthesis when a barge-in lands.
                 sentences = split_into_sentences(speech_buffer)
                 if len(sentences) > 1:
-                    for sentence in sentences[:-1]:
+                    speech_buffer = sentences[-1]
+                    live_turn["unsent"] = sentences[:-1] + [speech_buffer]
+                    queue = live_turn["unsent"]
+                    while len(queue) > 1:
+                        sentence = queue[0]
                         t1_v, t2_v, clean_text = check_tts_safety_filter(sentence)
                         if clean_text:
                             state.tts_characters += len(clean_text)
@@ -372,7 +418,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 await send_sentence_streamed(clean_text)
                             except Exception as tts_err:
                                 logger.error(f"TTS synthesis error on sentence: {tts_err}")
-                    speech_buffer = sentences[-1]
+                        queue.pop(0)
 
                 out_msg = {"type": "speech_delta", "delta": delta}
                 assert_no_forbidden_keys(out_msg)
@@ -395,6 +441,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 state_data = data_payload
                 if data_payload.get("phase"):
                     state.current_phase = data_payload["phase"]
+                    # Per-TURN, not per-session. state.current_phase still holds
+                    # the PREVIOUS turn's phase while this one generates, so
+                    # using it to tell "answering" from "interrupting" misread
+                    # every barge-in during the turn that follows a question —
+                    # and silently dropped the explanation instead of parking it.
+                    live_turn["asked"] = data_payload["phase"] == "awaiting_answer"
                 if data_payload.get("segment_complete"):
                     segment_complete_flag = True
                 out_msg = {"type": "state", **data_payload}
@@ -408,6 +460,73 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     # the turn_complete signal for every session that reaches
                     # a natural end.
                     session_ending = True
+
+        # ── Pick the lesson back up where the student interrupted it ──
+        #
+        # Placed HERE, between the reply's explanation and its closing question,
+        # because the order the student experiences is the whole point:
+        #
+        #     answer their question → finish the lesson they interrupted → ask
+        #
+        # Resuming after the closing question instead put 30 seconds of teaching
+        # between hearing the question and being able to answer it, with the
+        # chips held back that whole time (measured: question at 63.8s, chips at
+        # 101.6s). The closing question has been its own audio chunk since the
+        # splitter change, so it drops cleanly to the end.
+        #
+        # Replay the parked text verbatim — it was already generated, and
+        # re-running the LLM would produce a different explanation than the one
+        # the board items were written for.
+        parked_text = str(interrupted_turn.get("remainder") or "").strip()
+        if parked_text and state.is_active:
+            interrupted_turn["remainder"] = ""
+            parked_board = interrupted_turn.get("board_events") or []
+            interrupted_turn["board_events"] = []
+            logger.info(
+                f"▶️ [LESSON RESUMED] Replaying {len(parked_text)} parked chars and "
+                f"{len(parked_board)} board items for session {session_id[:8]}"
+            )
+
+            # Saved and restored so the closing question below keeps its own
+            # turn's chunk numbering and board matching — it belongs to this
+            # turn, not to the resumed one.
+            base_turn_id, base_chunks, base_board = turn_id, chunks_sent, turn_board_events
+            turn_id = f"{turn_id}_resume"
+            chunks_sent = 0
+            turn_board_events = parked_board
+            if parked_board:
+                out_msg = {"type": "board_events", "events": parked_board}
+                assert_no_forbidden_keys(out_msg)
+                await safe_send_json(out_msg)
+
+            resume_sentences = split_into_sentences(parked_text)
+            if resume_sentences:
+                # Folded into the first sentence rather than spoken as its own
+                # chunk: a standalone lead-in would take audio slot 1 and shift
+                # every board item one sentence out of step with its line.
+                lead_in = "Right — back to where we were." if session_language == "english" else "Chalo, wapas wahin se."
+                resume_sentences[0] = f"{lead_in} {resume_sentences[0]}"
+
+            # Interruptible in turn: a student can stop the resumed explanation
+            # to ask a follow-up, and what is left of it parks again.
+            live_turn["unsent"] = resume_sentences
+            live_turn["board_events"] = parked_board
+            live_turn["revealed"] = 0
+            queue = live_turn["unsent"]
+            while queue:
+                t1_v, t2_v, clean_text = check_tts_safety_filter(queue[0])
+                if clean_text:
+                    state.tts_characters += len(clean_text)
+                    try:
+                        await send_sentence_streamed(clean_text)
+                    except Exception as tts_err:
+                        logger.error(f"TTS synthesis error on resumed sentence: {tts_err}")
+                queue.pop(0)
+
+            turn_id, chunks_sent, turn_board_events = base_turn_id, base_chunks, base_board
+            live_turn["unsent"] = [speech_buffer] if speech_buffer.strip() else []
+            live_turn["board_events"] = base_board
+            live_turn["revealed"] = base_chunks
 
         # Synthesize remaining sentence buffer
         if speech_buffer.strip():
@@ -443,6 +562,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                         await safe_send_json(out_msg)
                     else:
                         logger.error(f"TTS synthesis error on final sentence: {tts_err}")
+
+        # Everything this turn had to say has now been sent — nothing left for
+        # a barge-in to park.
+        live_turn["unsent"] = []
 
         if chunks_sent == 0 and speech_buffer.strip():
             logger.error(f"[SERVER TURN AUDIO FAILURE] Emitted 0 audio_chunk frames (0 total PCM bytes) for session {session_id}")
@@ -484,6 +607,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         except Exception as release_err:
             logger.warning(f"Rumik lease release at turn end failed: {release_err}")
 
+        # Exactly one per turn, once every sentence the turn owes — resumed
+        # ones included — is on the wire. Two turn_completes raced each other:
+        # the first armed the checkpoint countdown against a queue missing the
+        # resumed audio, and only got superseded if the second happened to
+        # arrive before it elapsed.
         await safe_send_json({"type": "turn_complete"})
 
         # Emit updated state frame & auto-advance if next segment is in teaching phase
@@ -508,6 +636,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 await safe_send_json(state_frame)
                 logger.info(f"📡 [STATE FRAME EMITTED] phase='{curr_phase}', segment={curr_seg}")
 
+                # Runs after a resume too, and must: the resume replays the
+                # interrupted turn's own lines, so the lesson still needs its
+                # next turn fired or the session stalls on a silent board.
                 if curr_phase == 'teaching':
                     logger.info(f"🚀 [AUTO SEGMENT ADVANCE] Phase is teaching for Segment #{curr_seg}. Automatically firing teaching turn...")
                     launch_background_turn(utterance_text="", turn_type="teaching")
@@ -667,6 +798,36 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         """
         if not turn_in_flight["value"] and not pending_turn_queue:
             return
+
+        # Park whatever the student has not heard yet, so the explanation can
+        # pick up where it stopped once their question is answered.
+        #
+        # Not once THIS turn has asked its question: there, taking the floor is
+        # the student ANSWERING, not interrupting an explanation. Nothing is
+        # owed to them — resuming would re-teach the tail of a turn they had
+        # already finished listening to, and re-ask a question they just
+        # answered.
+        leftover_sentences = [s for s in live_turn["unsent"] if s and s.strip()]
+        # Park the EXPLANATION, never a trailing question. The turn that answers
+        # the student ends with a question of its own, so replaying this one put
+        # two different questions back to back — the second with no chips of its
+        # own, since the chips on screen belong to the first. Observed live:
+        # "...which one hits the ground first?" asked, answered, then asked
+        # again in different words by the resume.
+        while leftover_sentences and leftover_sentences[-1].strip().endswith("?"):
+            dropped = leftover_sentences.pop()
+            logger.info(f"🚫 [PARK SKIPS QUESTION] Not replaying a question the reply turn will re-ask: {dropped[:60]!r}")
+        leftover = " ".join(leftover_sentences).strip()
+        if leftover and not live_turn.get("asked"):
+            interrupted_turn["remainder"] = leftover
+            interrupted_turn["board_events"] = live_turn["board_events"][live_turn["revealed"]:]
+            logger.info(
+                f"⏸️ [LESSON PARKED] {len(leftover)} chars and "
+                f"{len(interrupted_turn['board_events'])} board items held for resume "
+                f"(reason={reason}, session {session_id[:8]})"
+            )
+        live_turn["unsent"] = []
+
         # Queued turns die with the interrupted one — they were reactions to a
         # world the student just changed.
         pending_turn_queue.clear()
@@ -685,6 +846,20 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         except Exception:
             pass
         logger.info(f"✋ [TURN ABORTED] reason={reason} — student took the floor for session {session_id[:8]}")
+
+    def resume_parked_lesson(reason: str):
+        """Replays a parked explanation when no reply turn is going to run.
+
+        The normal path resumes at the end of the turn that answers the
+        student's question. But a barge-in that produces no question — a
+        mis-tapped mic, silence, an unintelligible recording — leaves the
+        lesson aborted with nobody to pick it back up, so this fires a
+        turn whose only job is to say the parked words.
+        """
+        if not str(interrupted_turn.get("remainder") or "").strip():
+            return
+        logger.info(f"↩️ [RESUME REQUESTED] reason={reason} for session {session_id[:8]}")
+        launch_background_turn(utterance_text="", turn_type="resume")
 
     # Expose the abort to whichever connection replaces this one.
     conn_record["abort"] = abort_active_turn
@@ -750,6 +925,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             "type": "stt_too_short",
                             "message": "Hold the button while you speak"
                         })
+                        # A mis-tap still aborted the turn. Without this the
+                        # parked explanation had nothing coming to replay it and
+                        # the lesson stopped dead on a silent board.
+                        resume_parked_lesson("ptt_too_short")
                     else:
                         raw_t, norm_t = await stt_proxy.transcribe_audio_rest(full_pcm)
                         if norm_t.strip():
@@ -765,6 +944,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 "type": "error",
                                 "message": "Couldn't catch that — try holding the mic a little longer, or type your answer instead."
                             })
+                            resume_parked_lesson("stt_empty")
 
                 elif control_type == "mute":
                     state.on_mute()

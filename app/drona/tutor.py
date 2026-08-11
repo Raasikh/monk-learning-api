@@ -601,12 +601,6 @@ application of it.
 You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — no more, no fewer, no substitutions:
 {json.dumps(assigned_items_text, indent=2)}
 
-[TEACHING TURN — ASK NOTHING]
-Explain your assigned board items and stop. Do NOT ask a question, a check, or a
-check-in this turn. No question marks in `speech`. All questions for this segment
-are asked at the end of the segment, not between explanations.
-End with a short bridging line into the next idea.
-
 [PROGRESSIVE ARC DIRECTIVE]
 1. Emit ONLY the items listed in [YOUR ASSIGNED BOARD ITEMS FOR THIS TURN]. Do NOT emit items assigned to other turns.
 2. DO NOT re-emit any items from [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT].
@@ -843,17 +837,20 @@ End with a short bridging line into the next idea.
                 "turn_failed": True
             }
 
-    # 5b. First-Turn Teaching Rule Enforcement & Board Content Fallback
-    # Teaching turns before the segment's final turn must not ask anything. The
-    # lesson explains straight through, and all questions come at the end of the
-    # segment. Previously only turn 1 was guarded, so turn 2 popped a quiz mid-
-    # explanation and the Ask Sheet sat over the board the whole lesson.
+    # 5b. Ask cadence — ONE question at the end of EVERY teaching turn, so
+    # three per segment including the segment's opening turn.
     #
-    # Skipped on a re-teach: that turn is *supposed* to end with "did that make
-    # sense now?", which this rule would otherwise strip.
-    # Every teaching turn now ends with one question, so there is no
-    # teaching-only override any more. The closing turn (after the last
-    # question is graded) is the only one that must stay silent.
+    # This replaced the older "teach straight through, ask once at the end of
+    # the segment" rule, which is why there is no teaching-only override left.
+    # The user prompt carried a stale [TEACHING TURN — ASK NOTHING] block
+    # stating the OLD rule alongside the new [TEACH, THEN ASK QUESTION n OF 3]
+    # directive — two contradictory orders in one prompt, with which one the
+    # model obeyed varying turn to turn. The stale block is gone; if the
+    # cadence should go back to one question per segment, change it here and in
+    # the checkpoint_directive, not by reinstating a contradiction.
+    #
+    # The closing turn (after the last question is graded) is the only one that
+    # must stay silent.
     is_teaching_only_turn = False
     is_segment_closing_turn = phase_in == "awaiting_answer" and effective_turn > QUIZ_QUESTIONS_PER_SEGMENT
     if is_segment_closing_turn:

@@ -244,7 +244,16 @@ def check_tts_safety_filter(text: str) -> Tuple[bool, bool, str]:
 def split_into_sentences(text: str, min_chars: int = 100) -> List[str]:
     """Splits incoming streaming text into sentence chunks for sentence-by-sentence TTS.
     Batches short leading fragments (<100 chars) together so short phrases join
-    the next sentence rather than wasting a full TTS roundtrip and RPM quota."""
+    the next sentence rather than wasting a full TTS roundtrip and RPM quota.
+
+    A question is the one thing that is never batched. The client mounts the
+    answer chips against the chunk carrying the question, so gluing the
+    checkpoint question onto the statement before it (the batching rule did
+    exactly that: "...free fall under g. Now, here's a quick check: ...?"
+    arrived as ONE 226-char chunk) put the question on screen 14 seconds before
+    it was spoken and left the chips with no sentence of their own to fire on.
+    One extra TTS roundtrip per turn is the price; rumik_requests already
+    accounts for the trailing question chunk separately."""
     if not text:
         return []
     raw = re.split(r'(?<=[.!?|\n])\s+', text)
@@ -254,16 +263,22 @@ def split_into_sentences(text: str, min_chars: int = 100) -> List[str]:
         s_clean = s.strip()
         if not s_clean:
             continue
+        if s_clean.endswith("?"):
+            if buf:
+                chunks.append(buf)
+                buf = ""
+            chunks.append(s_clean)
+            continue
         if buf:
             buf += " " + s_clean
         else:
             buf = s_clean
-        
+
         if len(buf) >= min_chars:
             chunks.append(buf)
             buf = ""
     if buf:
-        if chunks and len(buf) < min_chars:
+        if chunks and len(buf) < min_chars and not chunks[-1].endswith("?"):
             chunks[-1] += " " + buf
         else:
             chunks.append(buf)
