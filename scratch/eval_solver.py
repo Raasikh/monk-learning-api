@@ -67,11 +67,18 @@ def main() -> int:
     ap.add_argument("--samples", type=int, default=1,
                     help="solver samples per solve (1=single, 3=majority vote)")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--thinking", default="disabled",
+                    choices=["disabled", "enabled"],
+                    help="EXPERIMENT: solver chain-of-thought (Rule 5 default: disabled)")
+    ap.add_argument("--model", default="",
+                    help="EXPERIMENT: override solver model (e.g. gpt-4o)")
     args = ap.parse_args()
 
     snap.SOLVE_SAMPLES = args.samples
-    print(f"solver={snap.MODEL_SOLVE}  samples/solve={args.samples}  "
-          f"rounds={args.rounds}\n")
+    snap.SOLVE_THINKING = args.thinking
+    snap.SOLVE_MODEL_OVERRIDE = args.model
+    print(f"solver={args.model or snap.MODEL_SOLVE}  thinking={args.thinking}  "
+          f"samples/solve={args.samples}  rounds={args.rounds}\n")
 
     # 1. Transcribe each image once; collect (question, expected) pairs.
     tasks = []

@@ -238,7 +238,14 @@ def _call_with_one_retry(stage: str, call, describe: str,
             expect_model or (MODEL_TRANSCRIBE if stage == "transcribe" else MODEL_SOLVE),
             stage,
         )
-        last_raw = res.choices[0].message.content or ""
+        message = res.choices[0].message
+        last_raw = message.content or ""
+        if not last_raw.strip() and getattr(message, "reasoning_content", None):
+            logger.warning(
+                "[SNAP %s] response was ALL reasoning, no content (%d chars of "
+                "thinking) — the Rule 5 failure mode, observed live",
+                stage.upper(), len(message.reasoning_content or ""),
+            )
         try:
             return _parse_json(last_raw, stage)
         except (json.JSONDecodeError, SnapError) as err:
@@ -875,6 +882,14 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
     }
 
 
+# ─── Experiment knobs (eval harness only) ───────────────────────────────────
+# Defaults preserve AGENTS.md Rule 5 exactly: deepseek-v4-pro, thinking
+# disabled. The eval harness overrides these module attributes to A/B other
+# configurations; production never sets them, and any non-default value logs a
+# loud warning on every solve.
+SOLVE_MODEL_OVERRIDE = os.getenv("SNAP_SOLVE_MODEL_OVERRIDE", "").strip()
+SOLVE_THINKING = os.getenv("SNAP_SOLVE_THINKING", "disabled").strip()
+
 # How many independent solves to run per question, majority-voted. Measured
 # need: an identical photo produced 13 on one run and 14 on the next at
 # temperature 0 — a single sample asserts a coin flip as fact. 1 = old
@@ -893,7 +908,8 @@ def _answer_key_of(parsed: Dict[str, Any]) -> str:
 
 def _solve_with_consensus(make_call, doubt_id: str,
                           usage_acc: Optional[Dict[str, int]],
-                          samples: Optional[int] = None) -> Dict[str, Any]:
+                          samples: Optional[int] = None,
+                          expect_model: Optional[str] = None) -> Dict[str, Any]:
     """Runs N independent solves in parallel and majority-votes the answer.
 
     The winning parse is returned for validation/step-checking; losers are
@@ -904,7 +920,8 @@ def _solve_with_consensus(make_call, doubt_id: str,
     n = samples if samples is not None else SOLVE_SAMPLES
     if n <= 1:
         return _call_with_one_retry("solve", make_call(0.0),
-                                    f"doubt={doubt_id[:8]}", usage_acc)
+                                    f"doubt={doubt_id[:8]}", usage_acc,
+                                    expect_model=expect_model)
 
     temps = [0.0] + [CONSENSUS_TEMP] * (n - 1)
     results: List[Optional[Dict[str, Any]]] = [None] * n
@@ -914,7 +931,7 @@ def _solve_with_consensus(make_call, doubt_id: str,
         try:
             results[i] = _call_with_one_retry(
                 "solve", make_call(temps[i]), f"doubt={doubt_id[:8]} s{i + 1}",
-                usages[i],
+                usages[i], expect_model=expect_model,
             )
         except SnapError as err:
             logger.warning("[SNAP CONSENSUS] doubt=%s sample %d failed: %s",
@@ -991,6 +1008,16 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         payload_obj["diagram_description"] = question["diagram_description"]
     payload = json.dumps(payload_obj, ensure_ascii=False)
 
+    solve_model = SOLVE_MODEL_OVERRIDE or MODEL_SOLVE
+    use_openai = solve_model.startswith("gpt")
+    solve_client = _openai_client() if use_openai else client
+    if SOLVE_MODEL_OVERRIDE or SOLVE_THINKING != "disabled":
+        logger.warning(
+            "[SNAP SOLVE] EXPERIMENT CONFIG ACTIVE: model=%s thinking=%s — "
+            "outside AGENTS.md Rule 5; eval use only",
+            solve_model, SOLVE_THINKING,
+        )
+
     def make_call(temperature: float):
         def call(corrective: Optional[str] = None):
             messages = [
@@ -999,8 +1026,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             ]
             if corrective:
                 messages.append({"role": "user", "content": corrective})
-            return client.chat.completions.create(
-                model=MODEL_SOLVE,
+            kwargs: Dict[str, Any] = dict(
+                model=solve_model,
                 messages=messages,
                 response_format={"type": "json_object"},
                 temperature=temperature,
@@ -1010,13 +1037,20 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 # and failed the question twice. It cannot do that in 1500.
                 max_tokens=1500,
                 timeout=SOLVE_TIMEOUT_S,
-                # Rule 5 — V4 defaults to chain-of-thought and will spend the
-                # whole budget thinking, returning an empty string.
-                extra_body={"thinking": {"type": "disabled"}},
             )
+            if not use_openai:
+                # Rule 5 — V4 defaults to chain-of-thought and will spend the
+                # whole budget thinking, returning an empty string. The
+                # experiment arm re-enables it WITH a budget big enough that the
+                # answer still fits after the reasoning.
+                kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
+                if SOLVE_THINKING != "disabled":
+                    kwargs["max_tokens"] = 8000
+            return solve_client.chat.completions.create(**kwargs)
         return call
 
-    parsed = _solve_with_consensus(make_call, doubt_id, usage_acc)
+    parsed = _solve_with_consensus(make_call, doubt_id, usage_acc,
+                                   expect_model=solve_model)
 
     # Steps are what the student reads. A rambling one is both unreadable and
     # the thing that breaks the JSON, so it earns one corrective retry.
