@@ -2,8 +2,14 @@
 
 Two models, two prompts, one direction of travel:
 
-  transcribe  gpt-4o-mini (vision)   reads the image. NEVER solves.
+  read        Mathpix OCR            reads the image. Cannot invent anything.
+  structure   gpt-4o-mini (TEXT)     splits the OCR text into questions/options.
   solve       deepseek-v4-pro        solves the text. NEVER sees the image.
+
+Mathpix goes first because the failures were math-OCR failures, not reasoning
+failures: a vision model flattened `(pi+3)/(pi-1)` into `pi+3`, invented a
+fourth option, and turned `3 - e` into `3 + e`. OCR cannot invent an option, and
+the structuring model works from its text rather than from pixels.
 
 Mixing those two roles is what produced the original LaTeX bug, so they share
 no prompt, no call, and no state beyond the transcribed JSON.
@@ -22,6 +28,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from openai import OpenAI
 
+from app import mathpix
 from app.drona.prompt_loader import load_prompt
 # The repair path the rest of the codebase already uses: json.loads first,
 # repair only on failure. Imported, not reimplemented, and not modified.
@@ -41,7 +48,18 @@ TRANSCRIBE_TIMEOUT_S = 45.0
 # the tutor's, since nothing here has to feel live.
 SOLVE_TIMEOUT_S = 120.0
 
-MAX_QUESTIONS = 2                    # enforced server-side, per the directive
+# Per-submission cap: how many questions are read from ONE photo.
+#
+# Measured: a solve takes ~23s, so this is a latency ceiling as much as a
+# quality one. At 5 a request is ~2 minutes, which is already near what a
+# synchronous HTTP request through Vercel and Railway will tolerate. Raising it
+# further needs a job queue, not a bigger number.
+MAX_QUESTIONS = 5
+
+# Per-student daily cap, counted over a rolling 24 hours. This is the cost and
+# abuse control; MAX_QUESTIONS above is the per-photo one. They are different
+# axes and both are needed.
+DAILY_QUESTION_LIMIT = 50
 
 # Question shapes the transcriber may report. Anything else is treated as
 # single_correct when options exist, subjective when they do not.
@@ -97,26 +115,77 @@ def _assert_model(returned: Optional[str], expected: str, stage: str) -> None:
         raise SnapError("Snap a Doubt is misconfigured on this server.", stage)
 
 
+# LaTeX commands that begin with a JSON escape letter get eaten by json.loads:
+#   "\\text{e}"  written as "\text{e}"  -> TAB + "ext{e}"
+#   "\\frac{1}{y}" written as "\frac..." -> FORM FEED + "rac{1}{y}"
+#   "\\bigg("     written as "\bigg("    -> BACKSPACE + "igg("
+# The JSON parses cleanly, so the existing repair path never fires — the damage
+# is in the value, not the syntax. Measured on a real page: `$3-<TAB>ext{e}$`,
+# which KaTeX cannot render.
+#
+# Newline is deliberately excluded: it separates options legitimately.
+# The escape swallowed BOTH the backslash and the command's first letter, so
+# each control character restores to backslash + the letter it came from:
+#   TAB -> "\t", giving "\text", "\times", "\theta", "\tan"
+#   FF  -> "\f", giving "\frac"
+#   BS  -> "\b", giving "\bigg", "\beta"
+_CONTROL_TO_LETTER = {
+    "\x08": "b", "\x09": "t", "\x0b": "v", "\x0c": "f", "\x0d": "r",
+}
+_MANGLED_LATEX_RE = re.compile(r"[\x08\x09\x0b\x0c\x0d](?=[a-zA-Z])")
+
+
+def _repair_latex(value: Any) -> Any:
+    """Restores backslashes that JSON escaping ate out of LaTeX commands."""
+    if isinstance(value, str):
+        return _MANGLED_LATEX_RE.sub(
+            lambda m: "\\" + _CONTROL_TO_LETTER[m.group(0)], value
+        )
+    if isinstance(value, list):
+        return [_repair_latex(v) for v in value]
+    if isinstance(value, dict):
+        return {k: _repair_latex(v) for k, v in value.items()}
+    return value
+
+
 def _parse_json(raw: str, stage: str) -> Dict[str, Any]:
     """json.loads first; repair only on failure. Raises if both fail."""
     text = strip_fences(raw or "")
     if not text.strip():
         raise SnapError("The model returned an empty response.", stage)
     try:
-        return json.loads(text)
+        parsed = json.loads(text)
     except json.JSONDecodeError:
-        return json.loads(repair_json_escapes(text), strict=False)
+        parsed = json.loads(repair_json_escapes(text), strict=False)
+    return _repair_latex(parsed)
 
 
-def _call_with_one_retry(stage: str, call, describe: str) -> Dict[str, Any]:
+def _usage_of(res: Any) -> Dict[str, int]:
+    """Token counts as the provider reported them. Zeros when absent."""
+    usage = getattr(res, "usage", None)
+    return {
+        "input": int(getattr(usage, "prompt_tokens", 0) or 0),
+        "output": int(getattr(usage, "completion_tokens", 0) or 0),
+    }
+
+
+def _call_with_one_retry(stage: str, call, describe: str,
+                         usage_acc: Optional[Dict[str, int]] = None) -> Dict[str, Any]:
     """Runs `call()` and parses its JSON, retrying once on a parse failure.
 
     Every failure is logged with the stage that produced it. After the retry the
     error is visible to the student — there is no canned answer.
+
+    Token usage accumulates into `usage_acc` including retries, so the cost of a
+    snap is measured rather than estimated.
     """
     last_raw = ""
     for attempt in (1, 2):
         res = call()
+        if usage_acc is not None:
+            counted = _usage_of(res)
+            usage_acc["input"] = usage_acc.get("input", 0) + counted["input"]
+            usage_acc["output"] = usage_acc.get("output", 0) + counted["output"]
         _assert_model(getattr(res, "model", None),
                       MODEL_TRANSCRIBE if stage == "transcribe" else MODEL_SOLVE,
                       stage)
@@ -205,34 +274,60 @@ def _clean_options(raw: Any) -> List[Dict[str, str]]:
 # ─── Pass 1: transcribe ──────────────────────────────────────────────────────
 
 def transcribe_questions(image_bytes: bytes, mime_type: str,
-                         doubt_id: str = "-") -> Dict[str, Any]:
+                         doubt_id: str = "-",
+                         usage_acc: Optional[Dict[str, int]] = None,
+                         max_questions: int = MAX_QUESTIONS) -> Dict[str, Any]:
     """Reads up to MAX_QUESTIONS questions off the photo.
 
     Returns {"questions": [...], "note": str|None}. Each question carries
     `text`, `subject`, `topic`, `legible`, and `note`. Illegible questions are
     returned as-is — the caller decides what to show — and are never solved.
     """
+    # 1. OCR. A bad read is detectable here, before any model reasons on it.
+    try:
+        page = mathpix.read_page(image_bytes, mime_type, doubt_id)
+    except mathpix.MathpixNotConfigured as err:
+        logger.error("[SNAP] %s", err)
+        raise SnapError("Snap a Doubt is not configured on this server.", "config")
+    except mathpix.MathpixError as err:
+        logger.error("[SNAP TRANSCRIBE] doubt=%s OCR failed: %s", doubt_id[:8], err)
+        raise SnapError(
+            "Could not read that photo. Try a clearer, well-lit shot.", "transcribe"
+        )
+
+    if not mathpix.confidence_is_usable(page["confidence"]):
+        logger.warning(
+            "[SNAP TRANSCRIBE] doubt=%s confidence_rate %.4f below %.2f — refusing",
+            doubt_id[:8], page["confidence"], mathpix.MIN_CONFIDENCE_RATE,
+        )
+        raise SnapError(
+            "That photo came out too unclear to read reliably. Try again with "
+            "more light, the page flat, and the question filling the frame.",
+            "transcribe",
+        )
+
+    # 2. Structure. Text only — no image — so the maths cannot be re-read wrong.
     client = _openai_client()
-    data_url = f"data:{mime_type};base64,{base64.b64encode(image_bytes).decode()}"
-    system_prompt = load_prompt("snap_transcribe.md")
+    system_prompt = load_prompt("snap_structure.md")
 
     def call():
         return client.chat.completions.create(
             model=MODEL_TRANSCRIBE,
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": [
-                    {"type": "text", "text": "Transcribe the question(s) in this image."},
-                    {"type": "image_url", "image_url": {"url": data_url, "detail": "high"}},
-                ]},
+                {"role": "user", "content": (
+                    f"Return at most {max_questions} question(s).\n\n"
+                    f"OCR TEXT OF THE PAGE:\n{page['text']}"
+                )},
             ],
             response_format={"type": "json_object"},
             temperature=0.0,
-            max_tokens=1500,
+            max_tokens=4096,
             timeout=TRANSCRIBE_TIMEOUT_S,
         )
 
-    parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}")
+    parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}", usage_acc)
+    parsed["_ocr_confidence"] = page["confidence"]
 
     raw_questions = parsed.get("questions")
     if not isinstance(raw_questions, list) or not raw_questions:
@@ -244,14 +339,14 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         )
 
     note = (parsed.get("note") or "").strip() or None
-    if len(raw_questions) > MAX_QUESTIONS:
+    if len(raw_questions) > max_questions:
         # Rule 4 is enforced here as well as in the prompt — a prompt is not a
         # constraint.
         note = note or (
-            f"More than {MAX_QUESTIONS} questions were visible. Monk read the "
-            f"first {MAX_QUESTIONS}."
+            f"More than {max_questions} questions were visible. Monk read the "
+            f"first {max_questions}."
         )
-        raw_questions = raw_questions[:MAX_QUESTIONS]
+        raw_questions = raw_questions[:max_questions]
 
     questions: List[Dict[str, Any]] = []
     for idx, item in enumerate(raw_questions, 1):
@@ -348,7 +443,8 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         "[SNAP TRANSCRIBE] doubt=%s read %d question(s), %d legible",
         doubt_id[:8], len(questions), sum(1 for q in questions if q["legible"]),
     )
-    return {"questions": questions, "note": note}
+    return {"questions": questions, "note": note,
+            "ocr_confidence": parsed.get("_ocr_confidence")}
 
 
 # ─── Pass 2: solve ───────────────────────────────────────────────────────────
@@ -470,7 +566,8 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
     }
 
 
-def solve_question(question: Dict[str, Any], doubt_id: str = "-") -> Dict[str, Any]:
+def solve_question(question: Dict[str, Any], doubt_id: str = "-",
+                   usage_acc: Optional[Dict[str, int]] = None) -> Dict[str, Any]:
     """Solves ONE transcribed question. The solver never sees the image."""
     if not question.get("legible"):
         # Belt and braces: the caller already filters these out.
@@ -509,7 +606,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-") -> Dict[str, A
             extra_body={"thinking": {"type": "disabled"}},
         )
 
-    parsed = _call_with_one_retry("solve", call, f"doubt={doubt_id[:8]}")
+    parsed = _call_with_one_retry("solve", call, f"doubt={doubt_id[:8]}", usage_acc)
     solution = _validate_solution(
         parsed,
         options=question.get("options") or [],
@@ -548,7 +645,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-") -> Dict[str, A
 # ─── The pipeline ────────────────────────────────────────────────────────────
 
 def solve_snapped_image(image_bytes: bytes, mime_type: str,
-                        doubt_id: str = "-") -> Dict[str, Any]:
+                        doubt_id: str = "-",
+                        max_questions: int = MAX_QUESTIONS) -> Dict[str, Any]:
     """Transcribe, then solve each legible question.
 
     Returns {"questions": [...], "note": str|None, ...timings}. Each entry has
@@ -556,7 +654,10 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     transcriber's `note` saying what was unclear and are never solved.
     """
     started = time.time()
-    read = transcribe_questions(image_bytes, mime_type, doubt_id)
+    tx_usage: Dict[str, int] = {"input": 0, "output": 0}
+    sv_usage: Dict[str, int] = {"input": 0, "output": 0}
+    read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
+                                max_questions)
     transcribe_ms = int((time.time() - started) * 1000)
 
     solved_count = 0
@@ -568,7 +669,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             )
             continue
         try:
-            question["solution"] = solve_question(question, doubt_id)
+            question["solution"] = solve_question(question, doubt_id, sv_usage)
             solved_count += 1
         except SnapError as err:
             # One question failing must not lose the other one.
@@ -594,13 +695,20 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
         "[SNAP] doubt=%s solved %d/%d in %dms (transcribe %dms)",
         doubt_id[:8], solved_count, len(read["questions"]), latency_ms, transcribe_ms,
     )
+    logger.info(
+        "[SNAP TOKENS] doubt=%s transcribe in=%d out=%d | solve in=%d out=%d",
+        doubt_id[:8], tx_usage["input"], tx_usage["output"],
+        sv_usage["input"], sv_usage["output"],
+    )
 
     return {
         "questions": read["questions"],
         "note": read["note"],
+        "ocr_confidence": read.get("ocr_confidence"),
         "solved_count": solved_count,
         "transcriber_model": MODEL_TRANSCRIBE,
         "solver_model": MODEL_SOLVE,
         "transcribe_ms": transcribe_ms,
         "latency_ms": latency_ms,
+        "usage": {"transcribe": tx_usage, "solve": sv_usage},
     }

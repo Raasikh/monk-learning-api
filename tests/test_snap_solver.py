@@ -65,6 +65,19 @@ class _Client:
         self.chat = type("Chat", (), {"completions": _Completions()})()
 
 
+@pytest.fixture(autouse=True)
+def stub_mathpix_ocr(monkeypatch):
+    """Mathpix now reads the page before the structuring model sees it.
+
+    These tests exercise what we do with the structured result, so the OCR is
+    stubbed to a confident read. The gate itself is tested explicitly below.
+    """
+    monkeypatch.setattr(
+        snap.mathpix, "read_page",
+        lambda *_a, **_k: {"text": "OCR TEXT OF THE PAGE", "confidence": 0.9},
+    )
+
+
 def stub_transcriber(monkeypatch, contents, model=MODEL_TRANSCRIBE):
     client = _Client(contents if isinstance(contents, list) else [contents], model)
     monkeypatch.setattr(snap, "_openai_client", lambda: client)
@@ -202,13 +215,13 @@ def test_pipeline_skips_illegible_and_solves_the_rest(monkeypatch):
 
 # --- max 2 questions, enforced server-side ----------------------------------
 
-def test_more_than_two_questions_are_truncated(monkeypatch):
+def test_more_than_the_cap_is_truncated(monkeypatch):
+    """The cap is MAX_QUESTIONS per photo, enforced in code not just the prompt."""
+    over = MAX_QUESTIONS + 2
     stub_transcriber(monkeypatch, transcription(
-        question(text="One."), question(text="Two."),
-        question(text="Three."), question(text="Four."),
-    ))
+        *[question(text=f"Q{i}.") for i in range(over)]))
     read = transcribe_questions(b"img", "image/jpeg", "d1")
-    print(f"  kept {len(read['questions'])} of 4; note={read['note']!r}")
+    print(f"  kept {len(read['questions'])} of {over}; note={read['note']!r}")
     assert len(read["questions"]) == MAX_QUESTIONS
     assert read["note"]
 
@@ -641,3 +654,117 @@ def test_shared_fragment_does_not_count_as_a_match(monkeypatch):
     with pytest.raises(SnapError) as err:
         solve_question(question(options=options), "d1")
     print(f"  refused: {str(err.value)[:80]}")
+
+
+# --- Mathpix OCR gate -------------------------------------------------------
+
+def test_low_ocr_confidence_is_refused(monkeypatch):
+    """A read the OCR itself doubts must not be reasoned on.
+
+    Gated on confidence_rate, not confidence: perfect reads scored 0.43-0.94 on
+    `confidence`, so it separates nothing. See app/mathpix.py for the table.
+    """
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": "blurry", "confidence": 0.62})
+    structurer = stub_transcriber(monkeypatch, mcq_transcription())
+    with pytest.raises(SnapError) as err:
+        transcribe_questions(b"img", "image/jpeg", "d1")
+    print(f"  structuring model called {structurer.calls}x; {str(err.value)[:64]}")
+    assert structurer.calls == 0
+
+
+def test_usable_confidence_proceeds(monkeypatch):
+    """0.9697 was a hand-checked perfect read; it must not be refused."""
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": "clean", "confidence": 0.9697})
+    stub_transcriber(monkeypatch, mcq_transcription())
+    read = transcribe_questions(b"img", "image/jpeg", "d1")
+    print(f"  confidence 0.67 accepted -> {len(read['questions'])} question(s)")
+    assert len(read["questions"]) == 1
+
+
+def test_missing_confidence_is_not_a_refusal(monkeypatch):
+    """Mathpix omits the score on some responses; that is not evidence of a bad read."""
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": "clean", "confidence": None})
+    stub_transcriber(monkeypatch, mcq_transcription())
+    read = transcribe_questions(b"img", "image/jpeg", "d1")
+    print(f"  no confidence reported -> proceeded with {len(read['questions'])}")
+    assert len(read["questions"]) == 1
+
+
+def test_ocr_failure_is_a_transcribe_error(monkeypatch):
+    def _boom(*_a, **_k):
+        raise snap.mathpix.MathpixError("Mathpix returned HTTP 500")
+    monkeypatch.setattr(snap.mathpix, "read_page", _boom)
+    with pytest.raises(SnapError) as err:
+        transcribe_questions(b"img", "image/jpeg", "d1")
+    print(f"  stage={err.value.stage}: {err.value}")
+    assert err.value.stage == "transcribe"
+
+
+def test_structuring_model_never_receives_the_image(monkeypatch):
+    """The whole point of OCR-first: no pixels reach the structuring model."""
+    sent = {}
+
+    class _Capturing:
+        def __init__(self):
+            class _Completions:
+                def create(self, **kwargs):
+                    sent.update(kwargs)
+                    return _Response(mcq_transcription(), MODEL_TRANSCRIBE)
+            self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    monkeypatch.setattr(snap, "_openai_client", lambda: _Capturing())
+    transcribe_questions(b"img", "image/jpeg", "d1")
+    blob = json.dumps(sent["messages"])
+    print(f"  structuring input: {sent['messages'][-1]['content'][:70]}…")
+    assert "image_url" not in blob and "base64" not in blob
+    print("  no image reached the structuring model")
+
+
+def test_max_questions_is_per_call_overridable(monkeypatch):
+    """The daily quota shrinks one submission by passing max_questions."""
+    stub_transcriber(monkeypatch, transcription(
+        question(text="One."), question(text="Two."), question(text="Three.")))
+    read = transcribe_questions(b"img", "image/jpeg", "d1", None, max_questions=1)
+    print(f"  capped to {len(read['questions'])}; note={read['note']!r}")
+    assert len(read["questions"]) == 1
+    assert read["note"]
+
+
+def test_json_eaten_latex_backslashes_are_restored():
+    """`"\\text{e}"` written as `"\text{e}"` parses to TAB+"ext{e}" — valid JSON,
+    broken LaTeX. Measured on a real page as `$3-<TAB>ext{e}$`, which KaTeX
+    cannot render, and which the existing repair path never saw because the
+    JSON itself was well-formed."""
+    from app.snap import _repair_latex
+    assert _repair_latex("$3-\text{e}$") == "$3-\\text{e}$"
+    assert _repair_latex("$\frac{1}{y}$") == "$\\frac{1}{y}$"
+    assert _repair_latex("$\bigg($") == "$\\bigg($"
+    assert _repair_latex("$\times \theta$") == "$\\times \\theta$"
+    # Real newlines separate options and must survive.
+    assert _repair_latex("(1) a\n(2) b") == "(1) a\n(2) b"
+    print("  control chars restored to LaTeX commands, newlines untouched")
+
+
+def test_repair_reaches_nested_structures():
+    from app.snap import _repair_latex
+    out = _repair_latex({"options": [{"text": "$\frac{1}{2}$"}]})
+    print(f"  {out}")
+    assert out["options"][0]["text"] == "$\\frac{1}{2}$"
+
+
+def test_perfect_reads_from_real_pages_are_not_refused():
+    """Every hand-checked-perfect page must clear the floor.
+
+    A confidence_rate gate set snugly above the single known-bad sample would
+    refuse real students' photos; these are the measured good ones.
+    """
+    from app.mathpix import confidence_is_usable
+    for label, rate in [("JEE Q11-Q18", 0.9936), ("JEE Q1-Q8", 0.9975),
+                        ("chemistry", 0.9697), ("magnetic field", 0.9982),
+                        ("wave equation", 0.9936), ("stem-only crop", 0.9997)]:
+        ok = confidence_is_usable(rate)
+        print(f"  {label:16} rate={rate} -> {'accepted' if ok else 'REFUSED'}")
+        assert ok, f"{label} was a perfect read and must not be refused"

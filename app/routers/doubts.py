@@ -10,6 +10,7 @@ reason, and both are reported to the client with the stage that failed.
 """
 import logging
 import uuid
+from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile
@@ -19,6 +20,7 @@ from app.auth import get_current_user_id
 from app.db import supabase
 from app.snap import (
     ALLOWED_MIME,
+    DAILY_QUESTION_LIMIT,
     MAX_IMAGE_BYTES,
     MAX_QUESTIONS,
     SnapError,
@@ -87,6 +89,60 @@ def _concept(solution: Dict[str, Any], question: Dict[str, Any]) -> Optional[str
             or solution.get("subject") or question.get("subject") or None)
 
 
+def _quota_resets_in(user_id: str) -> Optional[Dict[str, Any]]:
+    """When the next question comes back, on a rolling 24-hour window.
+
+    The allowance is not a midnight reset — each question frees its own slot 24
+    hours after it was asked, so a student who used everything at 9pm gets one
+    back at 9pm tomorrow, then the rest as they age out. This returns the wait
+    until the OLDEST question in the window expires, which is the first slot to
+    return.
+    """
+    since = datetime.now(timezone.utc) - timedelta(hours=24)
+    res = (
+        supabase.table("doubts")
+        .select("created_at")
+        .eq("user_id", user_id)
+        .gte("created_at", since.isoformat())
+        .order("created_at")
+        .limit(1)
+        .execute()
+    )
+    if not res.data:
+        return None
+
+    oldest = datetime.fromisoformat(res.data[0]["created_at"].replace("Z", "+00:00"))
+    frees_at = oldest + timedelta(hours=24)
+    seconds = max(0, int((frees_at - datetime.now(timezone.utc)).total_seconds()))
+    hours, minutes = divmod(seconds // 60, 60)
+    if hours >= 1:
+        human = f"about {hours} hour{'s' if hours != 1 else ''}"
+    elif minutes >= 1:
+        human = f"about {minutes} minute{'s' if minutes != 1 else ''}"
+    else:
+        human = "a moment"
+    return {"seconds": seconds, "hours": hours, "human": human,
+            "at": frees_at.isoformat()}
+
+
+def _questions_used_today(user_id: str) -> int:
+    """Questions this student has had read in the last rolling 24 hours.
+
+    Counts every row, not only solved ones: a refused or unreadable question
+    still cost an OCR read and, usually, a solve attempt. Counting only
+    successes would let a stream of bad photos run up an unbounded bill.
+    """
+    since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+    res = (
+        supabase.table("doubts")
+        .select("id", count="exact")
+        .eq("user_id", user_id)
+        .gte("created_at", since)
+        .execute()
+    )
+    return res.count if res.count is not None else len(res.data or [])
+
+
 def _scrap(question_text: Optional[str]) -> str:
     """The few words shown on the little notepad thumbnail in the list."""
     words = (question_text or "").split()
@@ -115,6 +171,45 @@ async def snap_doubt(
             detail=f"That photo is larger than {MAX_IMAGE_BYTES // (1024 * 1024)} MB.",
         )
 
+    # Daily quota, checked before anything is spent — no OCR, no upload, no
+    # model call. 429 is the honest status: the request is fine, the allowance
+    # is not.
+    try:
+        used_today = _questions_used_today(user_id)
+    except Exception as err:
+        logger.error("Could not read the daily quota for %s: %s", user_id[:8], err)
+        raise HTTPException(
+            status_code=503, detail="Snap a Doubt is not available right now."
+        )
+
+    remaining = DAILY_QUESTION_LIMIT - used_today
+    if remaining <= 0:
+        resets = _quota_resets_in(user_id)
+        wait = f" Your next one unlocks in {resets['human']}." if resets else ""
+        logger.info("[SNAP QUOTA] user=%s used %d/%d — refusing, next slot in %s",
+                    user_id[:8], used_today, DAILY_QUESTION_LIMIT,
+                    resets["human"] if resets else "n/a")
+        raise HTTPException(
+            status_code=429,
+            detail={
+                "message": (
+                    f"You have used all {DAILY_QUESTION_LIMIT} of today's questions."
+                    f"{wait} The allowance is rolling, so questions come back "
+                    "through the day rather than all at once."
+                ),
+                "stage": "quota",
+                "used_today": used_today,
+                "daily_limit": DAILY_QUESTION_LIMIT,
+                "retry_after_seconds": resets["seconds"] if resets else None,
+                "resets_at": resets["at"] if resets else None,
+            },
+            headers={"Retry-After": str(resets["seconds"])} if resets else None,
+        )
+
+    # Never read more than the student has left — a page of 8 with 2 remaining
+    # reads 2, rather than solving 8 and billing for questions over the cap.
+    allowed_this_submission = min(MAX_QUESTIONS, remaining)
+
     submission_id = str(uuid.uuid4())
     key = object_key(user_id, submission_id, EXT_BY_MIME.get(mime, "jpg"))
 
@@ -133,7 +228,8 @@ async def snap_doubt(
         raise HTTPException(status_code=502, detail="Could not save that photo. Try again.")
 
     try:
-        result = solve_snapped_image(image_bytes, mime, submission_id)
+        result = solve_snapped_image(image_bytes, mime, submission_id,
+                                     allowed_this_submission)
     except SnapError as err:
         # Store the failure honestly against the submission, then tell the
         # client which stage failed. The photo stays so the student can see what
@@ -171,7 +267,7 @@ async def snap_doubt(
         )
 
     rows: List[Dict[str, Any]] = []
-    for question in result["questions"][:MAX_QUESTIONS]:
+    for question in result["questions"][:allowed_this_submission]:
         solution = question.get("solution") or {}
         withheld_reason = None
         if not question["legible"]:
@@ -253,10 +349,19 @@ async def snap_doubt(
     if not res.data:
         raise HTTPException(status_code=500, detail="Could not save that doubt.")
 
+    note = result.get("note")
+    if allowed_this_submission < MAX_QUESTIONS:
+        note = (note + " " if note else "") + (
+            f"Only {allowed_this_submission} of today's {DAILY_QUESTION_LIMIT} "
+            "questions were left, so that many were read."
+        )
+
     return {
         "submission_id": submission_id,
-        "note": result.get("note"),
+        "note": note,
         "solved_count": result["solved_count"],
+        "questions_used_today": used_today + len(rows),
+        "daily_limit": DAILY_QUESTION_LIMIT,
         "questions": [
             {
                 "id": row["id"],
@@ -265,6 +370,8 @@ async def snap_doubt(
                 "subject": row["subject"],
                 "chapter": row["chapter"],
                 "concept": row["concept"],
+                "question_type": row["question_type"],
+                "option_labels": row["option_labels"],
                 "legible": row["legible"],
                 "legibility_note": row["legibility_note"],
                 "answer": row["answer"],
