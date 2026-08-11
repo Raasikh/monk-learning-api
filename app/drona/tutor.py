@@ -1234,6 +1234,15 @@ End with a short bridging line into the next idea.
         asked = [s for s in sentences if s.endswith("?")]
         question_text = asked[-1] if asked else (sentences[-1] if sentences else None)
 
+    # Full turn transcript in one place, for diagnosing speech/checkpoint
+    # mismatches straight from the server log: exactly what was said, then
+    # exactly which question+chips the client was told to mount.
+    logger.info(f"{stag}   🗣️ SAID       {json.dumps(speech_out)}")
+    logger.info(
+        f"{stag}   ❓ MOUNTS     question={json.dumps(question_text)} "
+        f"chips={json.dumps(check_options)} phase={next_phase} type={question_type}"
+    )
+
     state_payload = {
         "phase": next_phase,
         "question_type": question_type,
