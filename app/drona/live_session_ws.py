@@ -166,6 +166,36 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         except Exception as resume_err:
             logger.warning(f"Question resume on reconnect skipped: {resume_err}")
 
+    # Board replay: a page refresh used to blank the whiteboard for good — the
+    # session lived on server-side but every line already written was gone from
+    # the client. Re-send everything the board has shown so far; the client
+    # paints it immediately (no reveal timing — it's history, not narration).
+    # appendBoardEvent dedupes by content, so a same-tab auto-reconnect that
+    # still has the board is unaffected.
+    try:
+        prior_turns = supabase.table('drona_turns').select('raw_response') \
+            .eq('session_id', session_id).order('turn_index').execute()
+        replay_events: List[Dict] = []
+        seen_replay = set()
+        for t in (prior_turns.data or []):
+            raw = t.get('raw_response')
+            if isinstance(raw, str):
+                try:
+                    raw = json.loads(raw)
+                except Exception:
+                    raw = {}
+            if isinstance(raw, dict):
+                for evt in raw.get('board_events', []):
+                    key = ((evt.get('text') or evt.get('latex') or '').strip().lower())
+                    if key and key not in seen_replay:
+                        seen_replay.add(key)
+                        replay_events.append(evt)
+        if replay_events:
+            await safe_send_json({"type": "board_replay", "events": replay_events})
+            logger.info(f"🧾 [BOARD REPLAY] Re-sent {len(replay_events)} board items on connect for session {session_id[:8]}")
+    except Exception as replay_err:
+        logger.warning(f"Board replay on connect skipped: {replay_err}")
+
     async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
         """Executes process_tutor_turn_stream and synthesizes TTS sentence-by-sentence over WebSocket."""
         # Pre-warm Rumik TTS concurrently in background while LLM generates tokens
@@ -548,6 +578,36 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         t_task.add_done_callback(active_turn_tasks.discard)
         return t_task
 
+    async def abort_active_turn(reason: str):
+        """True barge-in: kill the in-flight turn's generation and TTS.
+
+        Before this, taking the floor (holding the mic, typing) only flushed
+        the CLIENT's audio queue — the server kept synthesizing and sending
+        the rest of the turn, so the teacher talked over the student and then
+        resumed the stale explanation. A real teacher stops mid-sentence when
+        a student speaks up; this makes the pipeline do the same.
+        """
+        if not turn_in_flight["value"] and not pending_turn_queue:
+            return
+        # Queued turns die with the interrupted one — they were reactions to a
+        # world the student just changed.
+        pending_turn_queue.clear()
+        tasks = [t for t in list(active_turn_tasks) if not t.done()]
+        for t in tasks:
+            t.cancel()
+        if tasks:
+            try:
+                await asyncio.wait(tasks, timeout=3.0)
+            except Exception:
+                pass
+        turn_in_flight["value"] = False
+        # The cancelled synthesize call cannot release its own lease.
+        try:
+            await tts_proxy.abandon()
+        except Exception:
+            pass
+        logger.info(f"✋ [TURN ABORTED] reason={reason} — student took the floor for session {session_id[:8]}")
+
     # Auto-trigger turn 1 teaching if session is in teaching phase upon connect
     if session_data['phase'] == 'teaching':
         logger.info(f"🚀 [WS CONNECT AUTO-START] Triggering turn 1 teaching for Segment #{session_data['current_segment']}...")
@@ -591,6 +651,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 elif control_type == "ptt_start":
                     is_ptt_active = True
                     ptt_pcm_chunks = []
+                    # Student took the floor — the teacher stops mid-thought.
+                    await abort_active_turn("barge_in_mic")
                     logger.info("[SARVAM STT PTT START] Microphone active. Buffering PCM audio frames...")
 
                 elif control_type == "ptt_stop":
@@ -654,6 +716,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             continue
 
                     if utterance_text:
+                        # A typed message mid-explanation is a hand raised in
+                        # class: stop teaching, read it, respond.
+                        await abort_active_turn("barge_in_text")
                         launch_background_turn(utterance_text=utterance_text, turn_type="answer")
 
     except WebSocketDisconnect as disconnect_err:
