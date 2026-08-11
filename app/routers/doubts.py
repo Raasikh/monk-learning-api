@@ -14,12 +14,16 @@ from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from app.auth import get_current_user_id
 from app.db import supabase
+import json
+
 from app.snap import (
     ALLOWED_MIME,
+    iter_snapped_questions,
     DAILY_QUESTION_LIMIT,
     REMEDY_NOT_PHOTO,
     REMEDY_OUR_SIDE,
@@ -414,6 +418,195 @@ async def snap_doubt(
             for row in rows
         ],
     }
+
+
+def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: str,
+                       image_key: str, meta: Dict[str, Any]) -> Dict[str, Any]:
+    """One `doubts` row, and the remedy the client should act on."""
+    solution = question.get("solution") or {}
+    withheld_reason = None
+    remedy = (question.get("solve_remedy") if question.get("solve_error")
+              else question.get("remedy")) or REMEDY_OUR_SIDE
+
+    if not question["legible"]:
+        status = "illegible" if remedy == REMEDY_RETAKE else "failed"
+    elif question.get("solve_error"):
+        status = "failed"
+    elif solution.get("agrees_with_printed_answer") is False:
+        status = "unsure"
+        withheld_reason = (
+            f"Monk worked this out as \u201c{solution.get('answer')}\u201d, but the "
+            f"answer printed on the page is \u201c{solution.get('printed_answer')}\u201d. "
+            "Since they disagree, Monk is not showing an answer it might have "
+            "wrong \u2014 check the working below and ask in a session if unsure."
+        )
+    else:
+        status = "solved"
+
+    return {
+        "id": str(uuid.uuid4()),
+        "user_id": user_id,
+        "submission_id": submission_id,
+        "question_index": question["n"],
+        "image_key": image_key,
+        "question_text": question.get("text") or None,
+        "subject": solution.get("subject") or (
+            question.get("subject") if question.get("subject") != "unknown" else None
+        ),
+        "chapter": solution.get("topic") or question.get("topic"),
+        "concept": _concept(solution, question),
+        "question_type": question.get("question_type"),
+        "printed_answer": question.get("printed_answer"),
+        "option_labels": solution.get("option_labels") or [],
+        "legible": question["legible"],
+        "legibility_note": question.get("note"),
+        "answer": None if status == "unsure" else solution.get("answer"),
+        "steps": solution.get("steps") or [],
+        "key_idea": solution.get("key_idea"),
+        "explanation": _flatten_solution(solution, withheld=status == "unsure"),
+        "solved": status == "solved",
+        "status": status,
+        "failure_reason": withheld_reason or question.get("solve_error"),
+        "transcriber_model": meta.get("transcriber_model"),
+        "solver_model": meta.get("solver_model"),
+        "transcribe_ms": meta.get("transcribe_ms"),
+        "latency_ms": meta.get("latency_ms"),
+        "_remedy": remedy,
+    }
+
+
+@router.post("/stream")
+async def snap_doubt_stream(
+    file: UploadFile = File(..., description="Photo of up to 5 questions"),
+    user_id: str = Depends(get_current_user_id),
+):
+    """POST /doubts/stream — same pipeline, delivered question by question.
+
+    A solve takes ~25s. Waiting for a page of five meant two minutes of spinner
+    before anything appeared; this sends each answer the moment it exists.
+    Events: `meta`, `question` (one per question), `done`, or `error`.
+    """
+    mime = (file.content_type or "").lower().split(";")[0].strip()
+    if mime not in ALLOWED_MIME:
+        raise HTTPException(
+            status_code=415,
+            detail="That file type is not supported. Send a JPEG, PNG, WebP or HEIC photo.",
+        )
+    image_bytes = await file.read()
+    if not image_bytes:
+        raise HTTPException(status_code=400, detail="That file was empty.")
+    if len(image_bytes) > MAX_IMAGE_BYTES:
+        raise HTTPException(
+            status_code=413,
+            detail=f"That photo is larger than {MAX_IMAGE_BYTES // (1024 * 1024)} MB.",
+        )
+
+    used_today = _questions_used_today(user_id)
+    remaining = DAILY_QUESTION_LIMIT - used_today
+    if remaining <= 0:
+        resets = _quota_resets_in(user_id)
+        raise HTTPException(status_code=429, detail={
+            "message": (
+                f"You have used all {DAILY_QUESTION_LIMIT} of today's questions."
+                + (f" Your next one unlocks in {resets['human']}." if resets else "")
+            ),
+            "stage": "quota", "used_today": used_today,
+            "daily_limit": DAILY_QUESTION_LIMIT,
+            "retry_after_seconds": resets["seconds"] if resets else None,
+        })
+
+    allowed = min(MAX_QUESTIONS, remaining)
+    submission_id = str(uuid.uuid4())
+    key = object_key(user_id, submission_id, EXT_BY_MIME.get(mime, "jpg"))
+
+    try:
+        upload_image(key, image_bytes, mime)
+    except R2NotConfigured:
+        raise HTTPException(status_code=503, detail="Snap a Doubt is not available right now.")
+    except Exception as err:
+        logger.error("[SNAP] R2 upload failed for %s: %s", user_id[:8], err)
+        raise HTTPException(status_code=502, detail="Could not save that photo. Try again.")
+
+    def event(name: str, payload: Dict[str, Any]) -> str:
+        return f"event: {name}\ndata: {json.dumps(payload)}\n\n"
+
+    def stream():
+        meta: Dict[str, Any] = {}
+        emitted = 0
+        try:
+            for kind, item in iter_snapped_questions(image_bytes, mime,
+                                                     submission_id, allowed):
+                if kind == "meta":
+                    meta.update(item)
+                    yield event("meta", {
+                        "submission_id": submission_id,
+                        "question_count": item["question_count"],
+                        "note": item.get("note"),
+                        "daily_limit": DAILY_QUESTION_LIMIT,
+                        "questions_used_today": used_today,
+                    })
+                elif kind == "question":
+                    row = _row_from_question(item, user_id, submission_id, key, meta)
+                    remedy = row.pop("_remedy")
+                    try:
+                        supabase.table("doubts").insert([row]).execute()
+                    except Exception as err:
+                        logger.error("Doubt insert failed for %s: %s",
+                                     submission_id[:8], err)
+                    emitted += 1
+                    yield event("question", {
+                        **{k: row[k] for k in (
+                            "id", "question_index", "question_text", "subject",
+                            "chapter", "concept", "question_type", "legible",
+                            "legibility_note", "answer", "steps", "key_idea",
+                            "option_labels", "status", "failure_reason")},
+                        "remedy": remedy,
+                        "retake_helps": remedy == REMEDY_RETAKE,
+                    })
+                elif kind == "summary":
+                    meta.update(item)
+        except SnapError as err:
+            # Nothing could be read at all: record it and say which stage failed.
+            student_fixable = err.remedy == REMEDY_RETAKE
+            try:
+                supabase.table("doubts").insert([{
+                    "id": submission_id, "user_id": user_id,
+                    "submission_id": submission_id, "question_index": 1,
+                    "image_key": key, "legible": not student_fixable,
+                    "legibility_note": str(err) if student_fixable else None,
+                    "status": "illegible" if student_fixable else "failed",
+                    "solved": False, "failure_reason": str(err),
+                    "concept": "Unreadable photo" if student_fixable else "Unsolved question",
+                }]).execute()
+            except Exception as db_err:
+                logger.error("Failed to record failed doubt: %s", db_err)
+            logger.warning("[SNAP FAILED stage=%s] doubt=%s: %s",
+                           err.stage, submission_id[:8], err)
+            yield event("error", {
+                "message": str(err), "stage": err.stage, "reason": err.reason,
+                "remedy": err.remedy, "retake_helps": err.remedy == REMEDY_RETAKE,
+                "doubt_id": submission_id,
+            })
+            return
+        except Exception as err:
+            logger.error("[SNAP UNEXPECTED] doubt=%s: %s", submission_id[:8], err)
+            yield event("error", {
+                "message": "Something went wrong while reading that question.",
+                "stage": "unknown", "remedy": REMEDY_OUR_SIDE,
+                "retake_helps": False,
+            })
+            return
+
+        yield event("done", {
+            "submission_id": submission_id,
+            "solved_count": meta.get("solved_count", 0),
+            "questions_used_today": used_today + emitted,
+            "daily_limit": DAILY_QUESTION_LIMIT,
+        })
+
+    return StreamingResponse(stream(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache",
+                                      "X-Accel-Buffering": "no"})
 
 
 @router.get("")

@@ -644,8 +644,11 @@ def match_answer_to_options(answer: str, options: List[Dict[str, str]],
 # 1,062-character step that argued with itself, and a 5,445-character one that
 # broke the JSON outright — the rambling and the parse failures are the same
 # problem.
-MAX_STEP_CHARS = 400
-MAX_STEPS = 6
+# A step is one line on a board. 220 characters is roughly two short sentences,
+# which is all a student needs per move — and the ceiling is what stops the
+# model using the steps as scratch paper.
+MAX_STEP_CHARS = 220
+MAX_STEPS = 5
 
 # Phrases that only appear when a model is thinking out loud rather than
 # explaining. A student should not be able to tell it was ever uncertain.
@@ -855,11 +858,11 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0,
-            # 2048 truncated a real answer mid-JSON: a figure question produced
-            # longer steps, the response was cut off, and two parse failures
-            # were reported as "something went wrong" when the solve had in fact
-            # reached the right option.
-            max_tokens=4096,
+            # 5 steps of 220 characters plus the answer and key idea is well
+            # under 700 tokens. The budget is the enforcement: given 4096 the
+            # model wrote a single 5,445-character step, broke its own JSON, and
+            # failed the question twice. It cannot do that in 1500.
+            max_tokens=1500,
             timeout=SOLVE_TIMEOUT_S,
             # Rule 5 — V4 defaults to chain-of-thought and will spend the
             # whole budget thinking, returning an empty string.
@@ -894,7 +897,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 ],
                 response_format={"type": "json_object"},
                 temperature=0.0,
-                max_tokens=4096,
+                max_tokens=1500,
                 timeout=SOLVE_TIMEOUT_S,
                 extra_body={"thinking": {"type": "disabled"}},
             )
@@ -971,6 +974,90 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
 
 
 # ─── The pipeline ────────────────────────────────────────────────────────────
+
+def iter_snapped_questions(image_bytes: bytes, mime_type: str,
+                           doubt_id: str = "-",
+                           max_questions: int = MAX_QUESTIONS):
+    """Yields each question as soon as IT is done, rather than after all of them.
+
+    A solve takes ~25s, so a page of five kept the student watching a spinner for
+    over two minutes before anything appeared. The work is identical; only the
+    delivery changes.
+
+    Yields ("meta", {...}) first, then ("question", {...}) per question, then
+    ("summary", {...}). Raises SnapError if the page cannot be read at all —
+    that failure happens before any question exists.
+    """
+    started = time.time()
+    tx_usage: Dict[str, int] = {"input": 0, "output": 0}
+    sv_usage: Dict[str, int] = {"input": 0, "output": 0}
+
+    read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
+                                max_questions)
+    transcribe_ms = int((time.time() - started) * 1000)
+
+    yield "meta", {
+        "question_count": len(read["questions"]),
+        "note": read["note"],
+        "ocr_confidence": read.get("ocr_confidence"),
+        "transcribe_ms": transcribe_ms,
+    }
+
+    solved_count = 0
+    for question in read["questions"]:
+        if question.get("requires_diagram") and question["legible"]:
+            description = describe_diagram(
+                image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
+            )
+            if description:
+                question["diagram_description"] = description
+            else:
+                question["legible"] = False
+                question["remedy"] = REMEDY_NOT_PHOTO
+                question["reason"] = "diagram_unreadable"
+                question["note"] = (
+                    "This question needs its diagram, and Monk could not make the "
+                    "figure out clearly enough to solve from. If the figure is cut "
+                    "off, retake the photo with all of it in frame — otherwise ask "
+                    "this one in a live session, where the board can be used."
+                )
+
+        if question["legible"]:
+            try:
+                question["solution"] = solve_question(question, doubt_id, sv_usage)
+                solved_count += 1
+            except SnapError as err:
+                logger.error("[SNAP SOLVE FAILED] doubt=%s q%d: %s",
+                             doubt_id[:8], question["n"], err)
+                question["solve_error"] = str(err)
+                question["solve_remedy"] = err.remedy
+                question["solve_reason"] = err.reason
+        else:
+            logger.info("[SNAP] doubt=%s q%d not solvable: %s",
+                        doubt_id[:8], question["n"], question.get("note"))
+
+        yield "question", question
+
+    latency_ms = int((time.time() - started) * 1000)
+    logger.info(
+        "[SNAP] doubt=%s solved %d/%d in %dms (transcribe %dms)",
+        doubt_id[:8], solved_count, len(read["questions"]), latency_ms, transcribe_ms,
+    )
+    logger.info(
+        "[SNAP TOKENS] doubt=%s transcribe in=%d out=%d | solve in=%d out=%d",
+        doubt_id[:8], tx_usage["input"], tx_usage["output"],
+        sv_usage["input"], sv_usage["output"],
+    )
+    yield "summary", {
+        "solved_count": solved_count,
+        "note": read["note"],
+        "transcriber_model": MODEL_TRANSCRIBE,
+        "solver_model": MODEL_SOLVE,
+        "transcribe_ms": transcribe_ms,
+        "latency_ms": latency_ms,
+        "usage": {"transcribe": tx_usage, "solve": sv_usage},
+    }
+
 
 def solve_snapped_image(image_bytes: bytes, mime_type: str,
                         doubt_id: str = "-",

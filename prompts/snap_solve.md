@@ -24,7 +24,9 @@ Return ONLY valid JSON:
 ## ━━━ RULES ━━━
 
 1. `$…$` inline, `$$…$$` display. Escape backslashes as `\\`.
-2. 3–6 steps. Each step is ONE move and at most about two sentences.
+2. **3 to 5 steps, each at most two short sentences (under 220 characters).**
+   This is a hard limit, not a target. If a solution seems to need more, you are
+   writing out your working rather than the method — compress it.
 3. `key_idea` is the thing a student would need to spot — a trap, a rule, a
    shortcut. Not a restatement of the answer.
 4. Show the reasoning, not just the arithmetic.
@@ -44,6 +46,9 @@ Return ONLY valid JSON:
 
 4d. A student reading step 3 should learn how to do this kind of question. They
     should not be able to tell that you were ever uncertain.
+
+4e. Skip the algebra a student can do themselves. "Solving the quadratic gives
+    $x = 28$" is a step; three lines of expanding and factorising is not.
 5. If the question is ambiguous or under-specified — a stem with its data or its
    options missing, a cut-off diagram, a value never given — set
    `answerable: false`, say in `answer` exactly what is missing, and never
