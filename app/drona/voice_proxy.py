@@ -495,26 +495,30 @@ class RumikTurnLease:
 # session id so live-session accounting can tell the two apart.
 PREWARM_SESSION_KEY = "boot_prewarm"
 
+# No trailing ellipses and no leading "Hmm" — measured, Rumik renders both as
+# long drawn-out pauses ("Hmm, ek minute…" came back 4.6s for 15 characters,
+# four times its natural length), which is exactly the dragged, stretched
+# delivery these clips were criticised for. Plain short sentences instead.
 FILLER_PHRASES = {
     ("female", "hinglish"): [
-        "Ek second, soch rahi hoon…",
-        "Ruko zara, main dekh rahi hoon…",
-        "Hmm, ek minute…",
+        "Ek second, soch rahi hoon.",
+        "Ruko zara, main dekh rahi hoon.",
+        "Ek minute.",
     ],
     ("male", "hinglish"): [
-        "Ek second, soch raha hoon…",
-        "Ruko zara, main dekh raha hoon…",
-        "Hmm, ek minute…",
+        "Ek second, soch raha hoon.",
+        "Ruko zara, main dekh raha hoon.",
+        "Ek minute.",
     ],
     ("female", "english"): [
-        "One moment, let me think…",
-        "Just a second…",
-        "Hmm, give me a moment…",
+        "One moment, let me think.",
+        "Just a second.",
+        "Give me a moment.",
     ],
     ("male", "english"): [
-        "One moment, let me think…",
-        "Just a second…",
-        "Hmm, give me a moment…",
+        "One moment, let me think.",
+        "Just a second.",
+        "Give me a moment.",
     ],
 }
 
@@ -533,6 +537,7 @@ class FillerAudioCache:
     def __init__(self):
         self.cache: Dict[str, List[bytes]] = {}
         self.is_prewarmed = False
+        self._synth_in_flight: set = set()
 
     @classmethod
     def get_instance(cls) -> "FillerAudioCache":
@@ -558,43 +563,48 @@ class FillerAudioCache:
             await asyncio.sleep(2.0)
         return False
 
-    async def prewarm_all(self):
-        """Synthesizes all female & male filler phrases once on server boot.
+    async def prewarm_all(self, presets: Tuple[str, ...] = ("Ira", "Lucas"),
+                          languages: Tuple[str, ...] = ("hinglish", "english")):
+        """Synthesizes filler phrases for the given voices/languages.
+
+        No longer runs at boot — see app/main.py. Called lazily by
+        ensure_cached() the first time a filler is actually wanted, and by
+        then usually for ONE voice and ONE language rather than all four
+        combinations.
 
         Two rules, both learned from a live session sharing a container with a
         fresh deploy's prewarm:
 
-        1. ONE connection for all 12 phrases. This used to open and close a
+        1. ONE connection for all phrases. This used to open and close a
            connection per phrase — 12 opens against Rumik's rate budget, and
            the churn showed up as a second concurrent slot right through a
            student's turn.
-        2. Never run while a student is being taught. Prewarm is a
-           nice-to-have (fillers only cover rate limits and the answer
-           acknowledgment); a live class always gets the pool to itself, so
-           one session means exactly one connection.
+        2. Never run while a student is being taught. A live class always gets
+           the pool to itself, so one session means exactly one connection.
         """
-        if self.is_prewarmed:
-            return
-
         if not await self._wait_for_idle_pool():
-            logger.warning("⚠️ [FILLER PREWARM SKIPPED] Pool stayed busy with live sessions; fillers will stay uncached.")
+            logger.warning("⚠️ [FILLER SYNTH SKIPPED] Pool stayed busy with live sessions; fillers stay uncached.")
             return
 
         t_start = time.time()
         jobs: List[Tuple[str, str, str]] = []
-        for preset in ("Ira", "Lucas"):
+        for preset in presets:
             gender = PRESET_GENDER[preset]
-            for lang in ("hinglish", "english"):
+            for lang in languages:
                 key = filler_cache_key(preset, lang)
+                if self.cache.get(key):
+                    continue  # already have this voice/language
                 self.cache.setdefault(key, [])
                 for phrase in FILLER_PHRASES[(gender, lang)]:
                     jobs.append((key, preset, phrase))
+        if not jobs:
+            return
 
         pool = RumikConnectionPool.get_instance()
         synthesized = 0
         try:
             for key, preset, phrase in jobs:
-                # A student who arrives mid-prewarm takes priority: hand the
+                # A student who arrives mid-synthesis takes priority: hand the
                 # connection back, wait them out, then pick up where we left off.
                 if self._live_lease_count() > 0:
                     await pool.release_lease(PREWARM_SESSION_KEY, immediate=True)
@@ -603,7 +613,7 @@ class FillerAudioCache:
 
                 lease, is_exhausted = await pool.acquire_lease(PREWARM_SESSION_KEY, preset, "mulberry")
                 if is_exhausted or lease is None or not lease.ws:
-                    logger.warning("⚠️ [FILLER PREWARM WARN] No connection available; stopping prewarm.")
+                    logger.warning("⚠️ [FILLER SYNTH WARN] No connection available; stopping.")
                     break
                 pcm = await self._synthesize_on_ws(lease.ws, phrase, preset)
                 if pcm:
@@ -615,12 +625,39 @@ class FillerAudioCache:
             except Exception:
                 pass
 
-        self.is_prewarmed = synthesized > 0
+        if synthesized:
+            self.is_prewarmed = True
         elapsed = time.time() - t_start
         logger.info(
-            f"✅ [FILLER PREWARM] {synthesized}/{len(jobs)} phrases cached across "
-            f"{len(self.cache)} voices in {elapsed:.1f}s (1 connection)"
+            f"✅ [FILLER CACHED] {synthesized}/{len(jobs)} phrases synthesized "
+            f"in {elapsed:.1f}s (1 connection, lazy)"
         )
+
+    def ensure_cached(self, voice_preset: str, language: str):
+        """Kicks off background synthesis for this voice/language if missing.
+
+        Fire-and-forget by design: the caller needing a filler RIGHT NOW is
+        usually mid-rate-limit, when synthesizing is exactly what we cannot
+        do. That first occurrence degrades to a brief silence; this makes
+        sure the next one has a real phrase.
+        """
+        key = filler_cache_key(voice_preset, language)
+        if self.cache.get(key) or key in self._synth_in_flight:
+            return
+        self._synth_in_flight.add(key)
+
+        async def _run():
+            try:
+                await self.prewarm_all(presets=(voice_preset,), languages=(language,))
+            except Exception as err:
+                logger.warning(f"Lazy filler synthesis failed for {key}: {err}")
+            finally:
+                self._synth_in_flight.discard(key)
+
+        try:
+            asyncio.create_task(_run())
+        except RuntimeError:
+            self._synth_in_flight.discard(key)
 
     async def _synthesize_on_ws(self, ws, text: str, voice_preset: str) -> bytes:
         """Synthesizes one phrase over an already-open connection.
@@ -674,6 +711,9 @@ class FillerAudioCache:
                            or self.cache.get(filler_cache_key(fallback_preset, "hinglish")))
 
         if not phrases_pcm:
+            # Nothing cached yet (fillers are synthesized lazily now). Cover
+            # this gap with silence and get the clips made for next time.
+            self.ensure_cached(voice_preset, language)
             return 0, b"\x00" * 48000
 
         indices = [i for i in range(len(phrases_pcm)) if i != exclude_idx]

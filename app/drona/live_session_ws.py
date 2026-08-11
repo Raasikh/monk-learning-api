@@ -279,23 +279,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 await safe_send_json(out_msg)
                 logger.info(f"🔊 [AUDIO SYNTHESIZED] sentence_id={sentence_id} ({len(clean_text)} chars, single frame)")
 
-        # Instant acknowledgment: the student just answered and the LLM +
-        # first TTS are still 6-10s away — a short pre-synthesized "let me
-        # think" fills the void the moment their words land, like a teacher
-        # nodding before responding.
-        if turn_type == "answer" and utterance_text.strip() and not skip_tts_flag:
-            try:
-                from app.drona.voice_proxy import FillerAudioCache
-                cache = FillerAudioCache.get_instance()
-                # Only a REAL cached phrase. get_random_filler() pads with two
-                # seconds of silence when nothing is cached, which would delay
-                # the actual answer instead of acknowledging it.
-                if cache.has_cached_fillers(persona['voice_preset'], session_language):
-                    _, ack_pcm = cache.get_random_filler(persona['voice_preset'], session_language)
-                    if ack_pcm:
-                        await _on_filler(ack_pcm)
-            except Exception as ack_err:
-                logger.warning(f"Acknowledgment filler skipped: {ack_err}")
+        # No canned acknowledgment on a healthy connection. Playing a
+        # pre-recorded "let me think" on EVERY answer meant the same handful
+        # of clips on loop, and each one costs 1-3s of playback BEFORE the
+        # real reply — it delayed the thing the student was waiting for. With
+        # TTS now streaming (first audio ~0.8s into synthesis), the honest gap
+        # is short enough to stand on its own. Fillers stay for what they were
+        # for: covering a rate limit or an exhausted pool, where there is no
+        # real audio to play.
 
         async for sse_chunk in process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type):
             lines = sse_chunk.strip().split("\n")

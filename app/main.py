@@ -34,8 +34,13 @@ app.add_middleware(
 @app.on_event("startup")
 async def verify_models_on_startup():
     logger.info("✅ [STARTUP] FastAPI application startup complete. Server ready.")
-    from app.drona.voice_proxy import FillerAudioCache
-    asyncio.create_task(FillerAudioCache.get_instance().prewarm_all())
+    # Filler audio is NOT pre-warmed here any more. It only plays when Rumik
+    # rate-limits or the connection pool is exhausted — rare enough that
+    # synthesizing 12 clips on every boot cost more than it saved: ~20-45s of
+    # Rumik connections competing with whoever was already in class on a
+    # redeploy. FillerAudioCache now synthesizes lazily, in the background,
+    # the first time a filler is actually asked for (that first occurrence
+    # falls back to a brief silence).
     asyncio.create_task(platform_metrics_sampler_loop())
 
 
