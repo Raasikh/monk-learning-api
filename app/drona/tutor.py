@@ -338,6 +338,7 @@ async def process_tutor_turn_stream(
 
     # Collect board events emitted so far in current segment to enforce progressive arc
     current_segment_board_events = []
+    questions_already_asked = []
     turn_within_segment = 1
     try:
         seg_turns_res = supabase.table("drona_turns").select("raw_response").eq("session_id", session_id).eq("segment_index", curr_seg_idx).execute()
@@ -354,6 +355,16 @@ async def process_tutor_turn_stream(
                     txt = (b.get("text") or b.get("latex") or "").strip()
                     if txt and txt not in current_segment_board_events:
                         current_segment_board_events.append(txt)
+                # Every question sentence already voiced this segment. The
+                # prompt's "never re-ask a checkpoint question" rule had no
+                # data to check against — the model can't avoid repeating a
+                # question it was never shown. Measured: turn 2 re-asking turn
+                # 1's bullet-drop question in fresh words.
+                prior_speech = raw.get("speech") or ""
+                for sent in re.split(r"(?<=[.!?])\s+", prior_speech):
+                    sent = sent.strip()
+                    if sent.endswith("?") and sent not in questions_already_asked:
+                        questions_already_asked.append(sent)
     except Exception as b_err:
         logger.warning(f"Failed to load segment board events: {b_err}")
 
@@ -578,6 +589,13 @@ This is Turn {turn_within_segment} of 3 in this segment.
 
 [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT]
 {json.dumps(current_segment_board_events, indent=2)}
+
+[QUESTIONS ALREADY ASKED IN THIS SEGMENT — NEVER RE-ASK THESE]
+{json.dumps(questions_already_asked, indent=2)}
+Your question this turn must test something NOT covered by any question above —
+not the same fact reworded, not the same scenario with new objects. If the list
+already covers your assigned sub-concept, ask about a different consequence or
+application of it.
 
 [YOUR ASSIGNED BOARD ITEMS FOR THIS TURN]
 You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — no more, no fewer, no substitutions:
