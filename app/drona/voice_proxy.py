@@ -53,14 +53,45 @@ SINGLE_LETTER_PRONUNCIATIONS = {
     r"\bs\b": "es"
 }
 
+# The prompt forbids LaTeX in speech, but the model still emits plain-notation
+# formulas ("H = u² sin²θ / (2g)") — and raw math symbols reach the TTS engine,
+# which reads them unpredictably ("=" swallowed, "E" + subscript "k" rendered
+# as "eek"). Spell them out before synthesis. Ordered: multi-char first.
+MATH_SYMBOL_PRONUNCIATIONS = [
+    (r"\s*≈\s*", " approximately "),
+    (r"\s*±\s*", " plus or minus "),
+    (r"\s*=\s*", " equals "),
+    (r"\s*×\s*", " times "),
+    (r"\s+/\s+", " over "),
+    (r"\^2\b", " squared"),
+    (r"\^3\b", " cubed"),
+    (r"²", " squared"),
+    (r"³", " cubed"),
+    (r"√\s*", " root "),
+    (r"θ", " theta"),
+    (r"π", " pi"),
+    (r"Δ", " delta "),
+    (r"μ", " mu"),
+    (r"λ", " lambda"),
+    (r"ω", " omega"),
+    (r"α", " alpha"),
+    (r"β", " beta"),
+    (r"°", " degrees"),
+    # Subscripts: "a_x" / "E_k" → "a x" / "E k" so the letters are spoken
+    # separately instead of fused into a nonsense word.
+    (r"(\w)_(\w)", r"\1 \2"),
+]
+
 def sanitize_tts_phonetics(text: str) -> str:
-    """Substitutes single Latin letter variable names with explicit phonetic spellings for Rumik TTS."""
+    """Substitutes math symbols and single Latin letter variable names with explicit phonetic spellings for Rumik TTS."""
     if not text:
         return ""
     res = text
+    for pattern, replacement in MATH_SYMBOL_PRONUNCIATIONS:
+        res = re.sub(pattern, replacement, res)
     for pattern, replacement in SINGLE_LETTER_PRONUNCIATIONS.items():
         res = re.sub(pattern, replacement, res)
-    return res
+    return re.sub(r"\s{2,}", " ", res).strip()
 
 # Startup Assertion Checks
 if not SARVAM_API_KEY:
@@ -240,10 +271,16 @@ def split_into_sentences(text: str, min_chars: int = 100) -> List[str]:
 
 class SaarasSTTProxy:
     """Proxies Sarvam Saaras v3 STT stream over backend WebSocket connection."""
-    def __init__(self, mode: str = "codemix", latency_profile: str = "Fast"):
+    def __init__(self, mode: str = "codemix", latency_profile: str = "Fast", language: str = "hinglish"):
         self.mode = "codemix"  # Non-negotiable Rule V2
         self.model = "saaras:v3"  # Non-negotiable Rule V1
         self.latency_profile = latency_profile
+        # language_code was hardcoded to hi-IN for every session, so a student
+        # speaking English in an English session got their answer transcribed
+        # into Devanagari Hindi — the tutor then graded a transliteration of
+        # what they never said. Hinglish keeps hi-IN (codemix handles the mix);
+        # English sessions transcribe as Indian English.
+        self.language_code = "en-IN" if language == "english" else "hi-IN"
         self.is_connected = False
         self.active_ws = None
 
@@ -276,7 +313,7 @@ class SaarasSTTProxy:
 
         headers = {"api-subscription-key": SARVAM_API_KEY}
         files = {'file': ('speech.wav', buf, 'audio/wav')}
-        data = {'model': self.model, 'mode': self.mode, 'language_code': 'hi-IN'}
+        data = {'model': self.model, 'mode': self.mode, 'language_code': self.language_code}
 
         try:
             loop = asyncio.get_event_loop()
@@ -396,7 +433,7 @@ class SaarasSTTProxy:
                     buf.seek(0)
 
                     files = {'file': ('speech.wav', buf, 'audio/wav')}
-                    data = {'model': self.model, 'mode': self.mode, 'language_code': 'hi-IN'}
+                    data = {'model': self.model, 'mode': self.mode, 'language_code': self.language_code}
 
                     try:
                         loop = asyncio.get_event_loop()

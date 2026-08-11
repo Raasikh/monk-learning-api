@@ -99,7 +99,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     # preset. Left at the "default_session" default, every concurrent student
     # shares one connection and inherits whichever voice opened it first.
     tts_proxy = RumikTTSProxy(voice_preset=persona['voice_preset'], model="mulberry", session_id=session_id, language=session_language)
-    stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast")
+    stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast", language=session_language)
     logger.info(
         f"🎙️ [SESSION PERSONA] session={session_id[:8]} tutor={persona['name']} "
         f"voice_preset={persona['voice_preset']} language={session_language}"
