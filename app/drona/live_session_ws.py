@@ -123,6 +123,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     state.current_segment = session_data.get('current_segment') or 1
     state.current_phase = session_data.get('phase')
     skip_tts_flag = websocket.query_params.get("skip_tts") == "1"
+    # A/B switch for the streamed-TTS change: ?stream_tts=0 sends each
+    # sentence as ONE audio frame (the behaviour before streaming) instead of
+    # ~1s parts. Same lesson, same voice — only the delivery differs, so it
+    # isolates whether an audio artifact comes from part-splitting.
+    stream_tts_parts = websocket.query_params.get("stream_tts") != "0"
 
     persona = persona_for(session_data.get('tutor_voice'))
     session_language = normalize_language(session_data.get('language'))
@@ -297,7 +302,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             else:
                 audio_bytes = await tts_proxy.synthesize_text(
                     clean_text, on_filler_cb=_on_filler, segment_index=state.current_segment,
-                    on_audio_part=_on_part,
+                    on_audio_part=_on_part if stream_tts_parts else None,
                 )
 
             if part_count > 0:
