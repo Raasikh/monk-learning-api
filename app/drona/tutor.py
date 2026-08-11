@@ -1119,10 +1119,17 @@ End with a short bridging line into the next idea.
     # 10. INSERT into student_misconceptions if mistake logged (§4.1 #12)
     if is_mistake and mistake_tag:
         try:
+            # tag_raw and was_seeded are NOT NULL — omitting them made every
+            # insert here fail its constraint, so no misconception was ever
+            # recorded and the summary's mistakes_count was permanently 0.
+            seeded_tags = [str(t).strip().lower() for t in (curr_segment.get("expected_misconceptions") or [])]
             supabase.table("student_misconceptions").insert([{
                 "session_id": session_id,
                 "user_id": user_id,
-                "subtopic_key": session.get("subtopic_key", "unknown")
+                "chapter_id": session.get("chapter_id"),
+                "subtopic_key": session.get("subtopic_key", "unknown"),
+                "tag_raw": str(mistake_tag),
+                "was_seeded": str(mistake_tag).strip().lower() in seeded_tags,
             }]).execute()
         except Exception as e:
             logger.warning(f"Optional insert into student_misconceptions skipped: {e}")
