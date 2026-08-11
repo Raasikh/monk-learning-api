@@ -289,8 +289,12 @@ def structure_note_content(note: Dict[str, Any]) -> Optional[str]:
     instruction measurably blended the unreached segments into the main
     sections and left the self-study section reading "None".
 
-    Plain text only: the note page renders `content` inside whitespace-pre-wrap
-    with no markdown parser, so markdown syntax would show up literally.
+    The output vocabulary is a CONTRACT with the web app's NoteContent
+    renderer (src/components/NoteContent.tsx): ALL-CAPS section headings,
+    "• " bullets, formulas alone on a line in $...$, short mixed-case
+    sub-heading lines, and the SELF-STUDY heading emitted below. The renderer
+    parses exactly these shapes into styled sections with real KaTeX — no
+    markdown, so markdown syntax would still show up literally.
     """
     import os
     try:
