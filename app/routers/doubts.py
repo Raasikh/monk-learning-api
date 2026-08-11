@@ -565,7 +565,13 @@ async def snap_doubt_stream(
                     except Exception as err:
                         logger.error("Doubt insert failed for %s: %s",
                                      submission_id[:8], err)
-                    emitted += 1
+                    # Count against the quota exactly what _questions_used_today
+                    # counts: 'failed' is ours and free. The done event was
+                    # reporting used_today + every row, so a page with one
+                    # failed question showed 2/50 while the student was actually
+                    # charged 1 — the number on screen must be the real one.
+                    if row["status"] in ("solved", "unsure", "illegible"):
+                        emitted += 1
                     yield event("question", {
                         **{k: row[k] for k in (
                             "id", "question_index", "question_text", "subject",
