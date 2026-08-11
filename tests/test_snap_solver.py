@@ -84,6 +84,12 @@ def stub_transcriber(monkeypatch, contents, model=MODEL_TRANSCRIBE):
     return client
 
 
+def stub_matcher(monkeypatch, labels, equivalent=True):
+    """Stubs pass 3. A blind solve derives, then this decides which option it equals."""
+    return stub_transcriber(monkeypatch, json.dumps(
+        {"option_labels": labels, "equivalent": equivalent}))
+
+
 def stub_solver(monkeypatch, contents, model=MODEL_SOLVE):
     client = _Client(contents if isinstance(contents, list) else [contents], model)
     monkeypatch.setattr(snap, "_deepseek_client", lambda: client)
@@ -599,9 +605,11 @@ def test_complete_option_list_is_kept(monkeypatch):
 
 
 def test_multi_correct_accepts_several_labels(monkeypatch):
+    """Blind solve, then the matcher may return more than one label."""
     stub_solver(monkeypatch, [json.dumps({
-        "answerable": True, "answer": "A and C", "option_labels": ["A", "C"],
+        "answerable": True, "answer": "NH_3 with CuO and (NH_4)_2Cr_2O_7",
         "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    stub_matcher(monkeypatch, ["A", "C"])
     out = solve_question(question(options=MCQ_OPTIONS,
                                   question_type="multi_correct"), "d1")
     print(f"  option_labels={out['option_labels']} answer={out['answer']!r}")
@@ -609,12 +617,14 @@ def test_multi_correct_accepts_several_labels(monkeypatch):
 
 
 def test_single_correct_keeps_only_one_label(monkeypatch):
+    """Blind solve, then the matcher; single_correct keeps one label."""
     stub_solver(monkeypatch, [json.dumps({
-        "answerable": True, "answer": "A and C", "option_labels": ["A", "C"],
+        "answerable": True, "answer": "NH_3 with CuO",
         "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    stub_matcher(monkeypatch, ["A", "C"])
     out = solve_question(question(options=MCQ_OPTIONS,
                                   question_type="single_correct"), "d1")
-    print(f"  narrowed to {out['option_labels']}")
+    print(f"  matcher said A,C -> narrowed to {out['option_labels']}")
     assert out["option_labels"] == ["A"]
 
 
@@ -804,16 +814,17 @@ def test_cut_off_options_say_retake(monkeypatch):
 
 
 def test_no_matching_option_is_our_side_not_theirs(monkeypatch):
-    """THE case: page read perfectly, solver could not land on an option."""
+    """THE case: page read perfectly, derived answer is not on the list."""
     stub_solver(monkeypatch, [json.dumps({
         "answerable": True, "answer": "$\\dfrac{\\pi+2}{\\pi}$",
         "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})] * 2)
+    stub_matcher(monkeypatch, [], equivalent=False)
     with pytest.raises(SnapError) as err:
         solve_question(question(options=MCQ_OPTIONS), "d1")
     print(f"  reason={err.value.reason} remedy={err.value.remedy}")
     print(f"  message: {str(err.value)[:96]}…")
     assert err.value.remedy == snap.REMEDY_OUR_SIDE
-    assert "will not change this" in str(err.value)
+    assert err.value.reason == "no_matching_option"
 
 
 def test_model_failure_is_our_side(monkeypatch):
@@ -894,3 +905,134 @@ def test_thin_description_is_not_solved_from(monkeypatch):
         solve_snapped_image(b"img", "image/jpeg", "d1")
     print(f"  solver called {solver.calls}x on a 11-char description")
     assert solver.calls == 0
+
+
+# --- back-fitting is now structurally impossible -----------------------------
+#
+# Measured failure this closes: shown the options, the solver derived
+# pi/(pi+1), wrote "that is not among options", changed its assumption, and
+# picked (pi+2)/(pi+1) because it matched. It cannot do that if it never sees
+# the options.
+
+def test_solver_is_not_shown_the_options(monkeypatch):
+    """A self-contained choice question is solved blind, from the stem only."""
+    sent = {}
+
+    class _Capturing:
+        def __init__(self):
+            class _Completions:
+                def create(self, **kwargs):
+                    sent.update(kwargs)
+                    return _Response(json.dumps({
+                        "answerable": True, "answer": "Ba(N_3)_2",
+                        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}],
+                        "key_idea": "k"}), MODEL_SOLVE)
+            self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    monkeypatch.setattr(snap, "_deepseek_client", lambda: _Capturing())
+    stub_matcher(monkeypatch, ["D"])
+    q = question(options=MCQ_OPTIONS)
+    q["stem"] = "Extra pure $N_2$ is obtained by heating"
+    out = solve_question(q, "d1")
+
+    payload = sent["messages"][-1]["content"]
+    print(f"  solver saw: {payload[:96]}…")
+    assert '"options": []' in payload
+    for opt in MCQ_OPTIONS:
+        assert opt["text"] not in payload, f"{opt['text']} leaked to the solver"
+    print("  no option text reached the solver; matcher assigned", out["option_labels"])
+    assert out["option_labels"] == ["D"]
+
+
+def test_statement_questions_still_see_their_options(monkeypatch):
+    """"Which of the following is NOT true" IS its options -- withholding them
+    would make it unanswerable."""
+    sent = {}
+
+    class _Capturing:
+        def __init__(self):
+            class _Completions:
+                def create(self, **kwargs):
+                    sent.update(kwargs)
+                    return _Response(json.dumps({
+                        "answerable": True, "answer": "NH_4NO_3",
+                        "option_labels": ["B"],
+                        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}],
+                        "key_idea": "k"}), MODEL_SOLVE)
+            self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    monkeypatch.setattr(snap, "_deepseek_client", lambda: _Capturing())
+    q = question(options=MCQ_OPTIONS)
+    q["self_contained"] = False
+    out = solve_question(q, "d1")
+    payload = sent["messages"][-1]["content"]
+    print(f"  options supplied: {'NH_4NO_3' in payload}")
+    assert "NH_4NO_3" in payload
+    assert out["option_labels"] == ["B"]
+
+
+def test_answer_becomes_the_option_text_after_matching(monkeypatch):
+    """The stored answer reads as the printed choice, not the solver's phrasing."""
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "barium azide",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    stub_matcher(monkeypatch, ["D"])
+    out = solve_question(question(options=MCQ_OPTIONS), "d1")
+    print(f"  {out['option_labels']} -> {out['answer']!r}")
+    assert out["answer"] == "Ba(N_3)_2"
+
+
+# --- steps must be readable by a student, not a record of thinking ---------
+
+def test_long_steps_are_flagged():
+    from app.snap import _step_problems, MAX_STEP_CHARS
+    problems = _step_problems([{"n": 1, "text": "x" * (MAX_STEP_CHARS + 50)}])
+    print(f"  {problems}")
+    assert problems and "characters" in problems[0]
+
+
+def test_deliberation_in_steps_is_flagged():
+    """The measured failure: a step that argued with itself and named the options."""
+    from app.snap import _step_problems
+    problems = _step_problems([{"n": 5, "text":
+        "The ratio is 1/2. However, that is not among the options. "
+        "Re-evaluating: perhaps the wires also contribute."}])
+    print(f"  {problems}")
+    assert problems and "thinks out loud" in problems[0]
+
+
+def test_too_many_steps_are_flagged():
+    from app.snap import _step_problems, MAX_STEPS
+    problems = _step_problems([{"n": i, "text": "clean"} for i in range(MAX_STEPS + 2)])
+    print(f"  {problems}")
+    assert problems and "steps" in problems[0]
+
+
+def test_clean_steps_pass():
+    from app.snap import _step_problems
+    problems = _step_problems([
+        {"n": 1, "text": "Newton's second law gives $F = ma$."},
+        {"n": 2, "text": "Rearranging, $a = F/m = 10/2 = 5$ m s$^{-2}$."},
+    ])
+    print(f"  problems: {problems or 'none'}")
+    assert problems == []
+
+
+def test_rambling_steps_earn_one_rewrite(monkeypatch):
+    """A poor first answer is rewritten, not discarded — the answer was fine."""
+    rambling = json.dumps({
+        "answerable": True, "answer": "$a = 5$",
+        "steps": [{"n": 1, "text": "First. However, re-evaluating: " + "x" * 500}],
+        "key_idea": "k"})
+    clean = json.dumps({
+        "answerable": True, "answer": "$a = 5$",
+        "steps": [{"n": 1, "text": "Newton's second law gives $F = ma$."},
+                  {"n": 2, "text": "So $a = 10/2 = 5$ m s$^{-2}$."}],
+        "key_idea": "k"})
+    client = stub_solver(monkeypatch, [rambling, clean])
+    out = solve_question(question(), "d1")
+    print(f"  {client.calls} solve calls; final steps: {len(out['steps'])}")
+    for st in out["steps"]:
+        print(f"    {st['n']}. [{len(st['text'])} chars] {st['text'][:60]}")
+    assert client.calls == 2
+    assert len(out["steps"]) == 2

@@ -13,6 +13,8 @@ Return ONLY valid JSON:
   "questions": [
     {
       "text": "…the full question, stem AND every option, copied verbatim…",
+      "stem": "…the question WITHOUT its options…",
+      "self_contained": true,
       "question_type": "single_correct",
       "options": [
         { "label": "1", "text": "$\\dfrac{1}{2}+e$" },
@@ -52,6 +54,27 @@ Return ONLY valid JSON:
    If the page holds more, return the first ones in order and say so in the
    top-level `note` — the student needs to know the rest were not read.
 5. Skip page furniture: headers, watermarks, page numbers, exam names.
+
+## ━━━ STEM AND SELF-CONTAINMENT ━━━
+
+6a. `stem` is the question with the options removed — everything needed to work
+    the answer out, and nothing that lists the choices. `text` keeps both, for
+    display; `stem` is what the solver reasons from.
+
+6b. `self_contained` is `true` when the question can be answered from the stem
+    alone, and the options are just candidate answers to compare against:
+    "find the value of x", "the major product is", "the ratio is".
+
+6c. `self_contained` is `false` when the options ARE the question — the stem
+    cannot be answered without reading them. "Which of the following is NOT
+    true", "which statement is correct", "match List I with List II", or any
+    stem that only makes sense once the choices are known.
+
+6d. This decides whether the solver sees the options while it works. A solver
+    shown the options can talk itself into one; on a real page it derived
+    $\dfrac{\pi}{\pi+1}$, saw that was not offered, changed its assumption and
+    picked $\dfrac{\pi+2}{\pi+1}$ because it matched. Getting `self_contained`
+    right is what prevents that.
 
 ## ━━━ CLASSIFY ━━━
 

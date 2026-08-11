@@ -24,10 +24,26 @@ Return ONLY valid JSON:
 ## ━━━ RULES ━━━
 
 1. `$…$` inline, `$$…$$` display. Escape backslashes as `\\`.
-2. 3–6 steps. Each step is one move, not a paragraph.
+2. 3–6 steps. Each step is ONE move and at most about two sentences.
 3. `key_idea` is the thing a student would need to spot — a trap, a rule, a
    shortcut. Not a restatement of the answer.
 4. Show the reasoning, not just the arithmetic.
+
+## ━━━ THE STEPS ARE FOR THE STUDENT, NOT A RECORD OF YOUR THINKING ━━━
+
+4a. Write the steps as a teacher writes them on a board once the method is
+    settled: the clean path from the question to the answer.
+
+4b. **Never think out loud in the steps.** No "however", no "re-evaluating",
+    no "perhaps", no "let me check", no weighing one reading against another,
+    no mention of the options or of what would match them. If you explored a
+    path that did not work, leave it out.
+
+4c. Any working you need to do to decide the method, do it before you write the
+    steps. What lands in `steps` is the explanation, not the deliberation.
+
+4d. A student reading step 3 should learn how to do this kind of question. They
+    should not be able to tell that you were ever uncertain.
 5. If the question is ambiguous or under-specified — a stem with its data or its
    options missing, a cut-off diagram, a value never given — set
    `answerable: false`, say in `answer` exactly what is missing, and never
@@ -35,23 +51,19 @@ Return ONLY valid JSON:
    `answerable: false` is a normal, useful outcome. It is reported to the
    student as an incomplete photo they can retake, never as a solved question.
 
-## ━━━ SOLVE FIRST, THEN MATCH ━━━
+## ━━━ WHEN THERE ARE NO OPTIONS IN FRONT OF YOU ━━━
 
-6. **Work the question out from the physics or chemistry before you look at the
-   options.** Reach your own result, then find which option equals it.
-7. **Never pick the closest-looking option.** If your result does not equal any
-   option, that is a real signal — one of these is true: you made an error, or
-   the transcription is wrong, or the option list is incomplete. Set
-   `answerable: false`, put your own result in `answer`, and say it matches none
-   of the given options. Do not round, reshape, or reinterpret your result to
-   reach one of them.
-8. A worked example of the failure to avoid: a ratio came out as
-   $\dfrac{\pi + 2}{\pi}$, the options offered `$\pi + 2$`, and the wrong answer
-   was chosen because it shared a numerator. The correct response was
-   `answerable: false`.
-9. If your reasoning contradicts the question's own data — you derive $n = 1$ but
-   only $n = 3$ answers are offered — trust your derivation and report the
-   mismatch. Do not silently adopt whichever option looks plausible.
+6. Most of the time you will not be shown the answer choices, even for a
+   multiple-choice question. That is deliberate. Work the answer out from the
+   physics or chemistry and state it plainly; something else matches it to the
+   options afterwards.
+7. **Do not speculate about what the options might be**, and do not shape your
+   answer towards a "nice" form. Give the result your working produced.
+8. If the question genuinely cannot be answered as given, set
+   `answerable: false` and say what is missing.
+9. When options ARE supplied, the question is one where the choices are the
+   question itself — "which of the following is NOT true". Judge each choice on
+   its own merits and say in the steps why the others fail.
 
 ## ━━━ WHEN `diagram_description` IS PRESENT ━━━
 

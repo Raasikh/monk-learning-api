@@ -192,6 +192,15 @@ def _parse_json(raw: str, stage: str) -> Dict[str, Any]:
     return _repair_latex(parsed)
 
 
+_PARSE_CORRECTIVE = (
+    "Your previous response was not valid JSON — it ran on and broke its own "
+    "escaping. Answer the same question again, but keep every step under 400 "
+    "characters and use at most 6 steps. One move per step, no thinking out "
+    "loud. Escape every backslash as \\\\ and every quote inside a string. "
+    "Return only the JSON object."
+)
+
+
 def _usage_of(res: Any) -> Dict[str, int]:
     """Token counts as the provider reported them. Zeros when absent."""
     usage = getattr(res, "usage", None)
@@ -214,7 +223,11 @@ def _call_with_one_retry(stage: str, call, describe: str,
     """
     last_raw = ""
     for attempt in (1, 2):
-        res = call()
+        # The retry says WHY the first attempt failed. Repeating the identical
+        # prompt just produced the identical unusable response: a diagram
+        # question rambled into a 5,445-character step and broke its own JSON
+        # twice in a row.
+        res = call(_PARSE_CORRECTIVE if attempt == 2 else None)
         if usage_acc is not None:
             counted = _usage_of(res)
             usage_acc["input"] = usage_acc.get("input", 0) + counted["input"]
@@ -347,16 +360,19 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     client = _openai_client()
     system_prompt = load_prompt("snap_structure.md")
 
-    def call():
+    def call(corrective: Optional[str] = None):
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": (
+                f"Return at most {max_questions} question(s).\n\n"
+                f"OCR TEXT OF THE PAGE:\n{page['text']}"
+            )},
+        ]
+        if corrective:
+            messages.append({"role": "user", "content": corrective})
         return client.chat.completions.create(
             model=MODEL_TRANSCRIBE,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": (
-                    f"Return at most {max_questions} question(s).\n\n"
-                    f"OCR TEXT OF THE PAGE:\n{page['text']}"
-                )},
-            ],
+            messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0,
             max_tokens=4096,
@@ -465,6 +481,9 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "text": text,
             "subject": (item.get("subject") or "unknown"),
             "topic": item.get("topic") or None,
+            "stem": (item.get("stem") or "").strip() or text,
+            # Options are withheld from the solver unless they ARE the question.
+            "self_contained": item.get("self_contained") is not False,
             "question_type": q_type,
             "is_multiple_choice": is_choice,
             "options": options,
@@ -513,18 +532,21 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
     client = _openai_client()
     data_url = f"data:{mime_type};base64,{base64.b64encode(image_bytes).decode()}"
 
-    def call():
+    def call(corrective: Optional[str] = None):
+        messages = [
+            {"role": "system", "content": load_prompt("snap_diagram.md")},
+            {"role": "user", "content": [
+                {"type": "text",
+                 "text": f"The question that needs this figure:\n{question_text}"},
+                {"type": "image_url",
+                 "image_url": {"url": data_url, "detail": "high"}},
+            ]},
+        ]
+        if corrective:
+            messages.append({"role": "user", "content": corrective})
         return client.chat.completions.create(
             model=MODEL_DIAGRAM,
-            messages=[
-                {"role": "system", "content": load_prompt("snap_diagram.md")},
-                {"role": "user", "content": [
-                    {"type": "text",
-                     "text": f"The question that needs this figure:\n{question_text}"},
-                    {"type": "image_url",
-                     "image_url": {"url": data_url, "detail": "high"}},
-                ]},
-            ],
+            messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0,
             max_tokens=1200,
@@ -559,7 +581,101 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
     return description
 
 
+# ─── Pass 3: match a blind answer to the options ─────────────────────────────
+
+def match_answer_to_options(answer: str, options: List[Dict[str, str]],
+                            question_type: str, doubt_id: str = "-",
+                            usage_acc: Optional[Dict[str, int]] = None) -> List[str]:
+    """Which options equal `answer`. [] when none do.
+
+    Runs only after a blind solve, and only ever compares — it does not solve,
+    and it never sees the working. Splitting equality from reasoning is what
+    stops a solver bending its result to fit a choice.
+    """
+    exact = _match_options({"answer": answer}, options)
+    if exact:
+        return [o["label"] for o in exact]
+
+    client = _openai_client()
+
+    def call(corrective: Optional[str] = None):
+        messages = [
+            {"role": "system", "content": load_prompt("snap_match.md")},
+            {"role": "user", "content": json.dumps({
+                "solver_answer": answer,
+                "question_type": question_type,
+                "options": options,
+            }, ensure_ascii=False)},
+        ]
+        if corrective:
+            messages.append({"role": "user", "content": corrective})
+        return client.chat.completions.create(
+            model=MODEL_TRANSCRIBE,
+            messages=messages,
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=500,
+            timeout=TRANSCRIBE_TIMEOUT_S,
+        )
+
+    try:
+        parsed = _call_with_one_retry("transcribe", call, f"match={doubt_id[:8]}",
+                                      usage_acc)
+    except SnapError as err:
+        logger.warning("[SNAP MATCH] doubt=%s matcher failed: %s", doubt_id[:8], err)
+        return []
+
+    if parsed.get("equivalent") is False:
+        logger.info("[SNAP MATCH] doubt=%s answer %r matches no option: %s",
+                    doubt_id[:8], answer[:80], (parsed.get("note") or "")[:120])
+        return []
+
+    valid = {o["label"] for o in options}
+    labels = [str(l).strip().strip(".)(").upper()
+              for l in (parsed.get("option_labels") or [])]
+    labels = [l for l in labels if l in valid]
+    logger.info("[SNAP MATCH] doubt=%s %r -> %s", doubt_id[:8], answer[:60], labels)
+    return labels
+
+
 # ─── Pass 2: solve ───────────────────────────────────────────────────────────
+
+# A step is one move on a board, not a paragraph of thinking. Measured: a
+# 1,062-character step that argued with itself, and a 5,445-character one that
+# broke the JSON outright — the rambling and the parse failures are the same
+# problem.
+MAX_STEP_CHARS = 400
+MAX_STEPS = 6
+
+# Phrases that only appear when a model is thinking out loud rather than
+# explaining. A student should not be able to tell it was ever uncertain.
+_DELIBERATION_MARKERS = (
+    "however,", "re-evaluat", "perhaps", "let's check", "let me check",
+    "not among the options", "matches option", "wait,", "actually,",
+    "on second thought", "this suggests the answer is", "looking at the options",
+)
+
+
+def _step_problems(steps: List[Dict[str, Any]]) -> List[str]:
+    """What is wrong with these steps, student-readability-wise. [] if nothing."""
+    problems: List[str] = []
+    if len(steps) > MAX_STEPS:
+        problems.append(f"{len(steps)} steps; use at most {MAX_STEPS}")
+    for step in steps:
+        text = step.get("text") or ""
+        if len(text) > MAX_STEP_CHARS:
+            problems.append(
+                f"step {step.get('n')} is {len(text)} characters; keep each under "
+                f"{MAX_STEP_CHARS}"
+            )
+        lowered = text.lower()
+        found = [m for m in _DELIBERATION_MARKERS if m in lowered]
+        if found:
+            problems.append(
+                f"step {step.get('n')} thinks out loud ({', '.join(found[:2])})"
+            )
+    return problems
+
 
 def _match_options(parsed: Dict[str, Any],
                    options: List[Dict[str, str]]) -> List[Dict[str, str]]:
@@ -701,31 +817,42 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     client = _deepseek_client()
     system_prompt = load_prompt("snap_solve.md")
 
+
     # The solver receives the transcription as JSON, exactly as the directive
     # specifies — not a prose paraphrase of it.
     #
     # `printed_answer` is deliberately NOT included. When the page carries an
     # answer key, handing it over turns solving into copying and makes a wrong
     # solve indistinguishable from a right one.
+    options = question.get("options") or []
+    q_type = question.get("question_type") or "subjective"
+    # Options reach the solver ONLY when they are the question itself. For
+    # everything else it derives blind and a separate pass matches the result,
+    # so there is nothing to talk itself into.
+    solve_blind = bool(options) and question.get("self_contained", True)
+
     payload_obj = {
-        "text": question.get("text"),
+        "text": question.get("stem") if solve_blind else question.get("text"),
         "subject": question.get("subject"),
         "topic": question.get("topic"),
-        "question_type": question.get("question_type") or "subjective",
-        "options": question.get("options") or [],
+        "question_type": q_type,
+        "options": [] if solve_blind else options,
     }
     if question.get("diagram_description"):
         # Words, not pixels: the solver still never sees the image.
         payload_obj["diagram_description"] = question["diagram_description"]
     payload = json.dumps(payload_obj, ensure_ascii=False)
 
-    def call():
+    def call(corrective: Optional[str] = None):
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+        ]
+        if corrective:
+            messages.append({"role": "user", "content": corrective})
         return client.chat.completions.create(
             model=MODEL_SOLVE,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
-            ],
+            messages=messages,
             response_format={"type": "json_object"},
             temperature=0.0,
             # 2048 truncated a real answer mid-JSON: a figure question produced
@@ -740,12 +867,79 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         )
 
     parsed = _call_with_one_retry("solve", call, f"doubt={doubt_id[:8]}", usage_acc)
+
+    # Steps are what the student reads. A rambling one is both unreadable and
+    # the thing that breaks the JSON, so it earns one corrective retry.
+    problems = _step_problems(parsed.get("steps") or [])
+    if problems:
+        logger.warning("[SNAP SOLVE] doubt=%s poor steps: %s — retrying once",
+                       doubt_id[:8], "; ".join(problems[:3]))
+        corrective = (
+            "Your steps are not usable by a student: " + "; ".join(problems) + ". "
+            "Rewrite the SAME solution with the same answer, as at most "
+            f"{MAX_STEPS} steps of under {MAX_STEP_CHARS} characters each. Each "
+            "step is one move on a board. Remove every trace of deliberation — "
+            "no weighing readings, no corrections, no mention of the options. "
+            "Return the full JSON again."
+        )
+
+        def retry_call(_corrective: Optional[str] = None):
+            return client.chat.completions.create(
+                model=MODEL_SOLVE,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+                    {"role": "assistant", "content": json.dumps(parsed)[:6000]},
+                    {"role": "user", "content": corrective},
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                max_tokens=4096,
+                timeout=SOLVE_TIMEOUT_S,
+                extra_body={"thinking": {"type": "disabled"}},
+            )
+
+        try:
+            retried = _call_with_one_retry("solve", retry_call,
+                                           f"doubt={doubt_id[:8]} steps", usage_acc)
+            still = _step_problems(retried.get("steps") or [])
+            if len(still) < len(problems):
+                parsed = retried
+                logger.info("[SNAP SOLVE] doubt=%s steps rewritten (%d problems left)",
+                            doubt_id[:8], len(still))
+            else:
+                logger.warning("[SNAP SOLVE] doubt=%s rewrite did not improve the steps",
+                               doubt_id[:8])
+        except SnapError as err:
+            # The first answer is still good; keep it rather than lose the solve.
+            logger.warning("[SNAP SOLVE] doubt=%s step rewrite failed: %s",
+                           doubt_id[:8], err)
     solution = _validate_solution(
         parsed,
-        options=question.get("options") or [],
-        question_type=question.get("question_type") or "subjective",
+        # A blind solve has no options to validate against; the matcher below
+        # does that instead.
+        options=[] if solve_blind else options,
+        question_type=q_type,
         had_diagram=bool(question.get("diagram_description")),
     )
+
+    if solve_blind:
+        labels = match_answer_to_options(solution["answer"], options, q_type,
+                                         doubt_id, usage_acc)
+        if not labels:
+            logger.error("[SNAP SOLVE] doubt=%s blind answer %r is not among the options",
+                         doubt_id[:8], solution["answer"][:100])
+            raise SnapError(
+                "Monk worked this out and its answer is not any of the options on "
+                "the page, so it is not showing you a guess. Worth asking in a "
+                "live session.",
+                "solve", REMEDY_OUR_SIDE, "no_matching_option",
+            )
+        if q_type == "single_correct":
+            labels = labels[:1]
+        chosen = [o for o in options if o["label"] in labels]
+        solution["option_labels"] = labels
+        solution["answer"] = " and ".join(o["text"] for o in chosen) or solution["answer"]
 
     # Free correctness signal: the page's own answer key, which the solver never
     # saw. A disagreement does not change what the student is shown — the key
