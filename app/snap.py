@@ -69,12 +69,32 @@ MAX_IMAGE_BYTES = 10 * 1024 * 1024
 ALLOWED_MIME = {"image/jpeg", "image/png", "image/webp", "image/heic"}
 
 
-class SnapError(Exception):
-    """A snap that cannot be completed. Carries student-facing text and a stage."""
+# What the student should actually DO about a refusal. Telling someone to
+# retake a photo that was already read perfectly sends them round a loop they
+# cannot win — measured: two JEE questions were refused on a page Mathpix read
+# at confidence_rate 0.9936, where the photo was never the problem.
+#
+#   retake        their photo — a better one fixes it
+#   not_photo     the question needs a figure; no photo fixes it
+#   our_side      we read it fine and still could not answer
+REMEDY_RETAKE = "retake"
+REMEDY_NOT_PHOTO = "not_photo"
+REMEDY_OUR_SIDE = "our_side"
 
-    def __init__(self, message: str, stage: str):
+
+class SnapError(Exception):
+    """A snap that cannot be completed.
+
+    Carries student-facing text, the stage that failed, and — the part the UI
+    needs — what the student can actually do about it.
+    """
+
+    def __init__(self, message: str, stage: str, remedy: str = REMEDY_OUR_SIDE,
+                 reason: str = "unknown"):
         super().__init__(message)
         self.stage = stage
+        self.remedy = remedy
+        self.reason = reason
 
 
 def _openai_client() -> OpenAI:
@@ -199,7 +219,8 @@ def _call_with_one_retry(stage: str, call, describe: str,
             )
     logger.error("[SNAP %s] gave up after 2 attempts (%s)", stage.upper(), describe)
     raise SnapError(
-        "Monk could not read that back properly. Please try again.", stage
+        "Something went wrong at Monk's end reading that back. Please try again.",
+        stage, REMEDY_OUR_SIDE, "model_unparseable",
     )
 
 
@@ -292,7 +313,8 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     except mathpix.MathpixError as err:
         logger.error("[SNAP TRANSCRIBE] doubt=%s OCR failed: %s", doubt_id[:8], err)
         raise SnapError(
-            "Could not read that photo. Try a clearer, well-lit shot.", "transcribe"
+            "Could not read that photo. Try a clearer, well-lit shot.",
+            "transcribe", REMEDY_RETAKE, "ocr_failed",
         )
 
     if not mathpix.confidence_is_usable(page["confidence"]):
@@ -303,7 +325,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         raise SnapError(
             "That photo came out too unclear to read reliably. Try again with "
             "more light, the page flat, and the question filling the frame.",
-            "transcribe",
+            "transcribe", REMEDY_RETAKE, "photo_unclear",
         )
 
     # 2. Structure. Text only — no image — so the maths cannot be re-read wrong.
@@ -335,7 +357,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         raise SnapError(
             "Monk could not find a question in that photo. Try a clearer, "
             "well-lit shot.",
-            "transcribe",
+            "transcribe", REMEDY_RETAKE, "no_question_found",
         )
 
     note = (parsed.get("note") or "").strip() or None
@@ -358,6 +380,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # and shadowing it here silently replaced "a 3rd question was cut off"
         # with the last question's own note.
         q_note = (item.get("note") or "").strip() or None
+        q_remedy, q_reason = REMEDY_RETAKE, "illegible"
 
         # A question with nothing in it is not legible, whatever the flag says.
         if not text:
@@ -381,6 +404,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                 "This looks like a multiple-choice question, but the options "
                 "could not be read. Retake the photo with all the choices in frame."
             )
+            q_remedy, q_reason = REMEDY_RETAKE, "options_unreadable"
             logger.warning(
                 "[SNAP TRANSCRIBE] doubt=%s q%d %s with %d option(s) — refusing to solve",
                 doubt_id[:8], idx, q_type, len(options),
@@ -395,6 +419,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                 "Some of the answer choices are cut off. Retake the photo with "
                 "the whole list of options in frame."
             )
+            q_remedy, q_reason = REMEDY_RETAKE, "options_cut_off"
             logger.warning(
                 "[SNAP TRANSCRIBE] doubt=%s q%d option list incomplete (%d read)",
                 doubt_id[:8], idx, len(options),
@@ -407,8 +432,10 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             legible = False
             q_note = q_note or (
                 "This question depends on a diagram, and Monk solves from the "
-                "text it reads. Ask this one in a live session instead."
+                "text it reads. A clearer photo will not help — ask this one in "
+                "a live session, where the board can be used."
             )
+            q_remedy, q_reason = REMEDY_NOT_PHOTO, "needs_diagram"
             logger.warning(
                 "[SNAP TRANSCRIBE] doubt=%s q%d requires a diagram — refusing to solve",
                 doubt_id[:8], idx,
@@ -430,13 +457,15 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "printed_answer": stripped_key or (item.get("printed_answer") or "").strip() or None,
             "legible": legible,
             "note": q_note,
+            "remedy": q_remedy,
+            "reason": q_reason,
         })
 
     if not questions:
         raise SnapError(
             "Monk could not find a question in that photo. Try a clearer, "
             "well-lit shot.",
-            "transcribe",
+            "transcribe", REMEDY_RETAKE, "no_question_found",
         )
 
     logger.info(
@@ -508,7 +537,7 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
         raise SnapError(
             answer if len(answer) < 300 else
             "That question is incomplete — some of it is missing from the photo.",
-            stage,
+            stage, REMEDY_RETAKE, "question_incomplete",
         )
 
     chosen: List[Dict[str, str]] = []
@@ -521,10 +550,11 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
                 answer[:120], labels,
             )
             raise SnapError(
-                "Monk worked through this one but its result does not match any "
-                "of the given options, so it is not showing a guess. The photo "
-                "may be missing an option, or the question needs a closer look.",
-                stage,
+                "Monk worked through this one and its answer did not match any "
+                "of the options, so it is not showing you a guess. Retaking the "
+                "photo will not change this — the question is worth asking in a "
+                "live session.",
+                stage, REMEDY_OUR_SIDE, "no_matching_option",
             )
         if question_type == "single_correct" and len(chosen) > 1:
             logger.warning(
@@ -571,7 +601,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     """Solves ONE transcribed question. The solver never sees the image."""
     if not question.get("legible"):
         # Belt and braces: the caller already filters these out.
-        raise SnapError("That question was not legible enough to solve.", "solve")
+        raise SnapError("That question was not legible enough to solve.",
+                        "solve", REMEDY_RETAKE, "illegible")
 
     client = _deepseek_client()
     system_prompt = load_prompt("snap_solve.md")

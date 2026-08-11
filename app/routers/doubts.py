@@ -21,6 +21,9 @@ from app.db import supabase
 from app.snap import (
     ALLOWED_MIME,
     DAILY_QUESTION_LIMIT,
+    REMEDY_NOT_PHOTO,
+    REMEDY_OUR_SIDE,
+    REMEDY_RETAKE,
     MAX_IMAGE_BYTES,
     MAX_QUESTIONS,
     SnapError,
@@ -128,9 +131,12 @@ def _quota_resets_in(user_id: str) -> Optional[Dict[str, Any]]:
 def _questions_used_today(user_id: str) -> int:
     """Questions this student has had read in the last rolling 24 hours.
 
-    Counts every row, not only solved ones: a refused or unreadable question
-    still cost an OCR read and, usually, a solve attempt. Counting only
-    successes would let a stream of bad photos run up an unbounded bill.
+    Counts answers delivered and photos we could not read, because both are
+    about the student's own input and both cost an OCR read. Does NOT count
+    'failed' — that is where the page was read fine and we still could not
+    answer, or the question needed a diagram. Charging a student for our
+    inability to solve a question they photographed perfectly is not a quota,
+    it is a penalty.
     """
     since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
     res = (
@@ -138,6 +144,7 @@ def _questions_used_today(user_id: str) -> int:
         .select("id", count="exact")
         .eq("user_id", user_id)
         .gte("created_at", since)
+        .in_("status", ["solved", "unsure", "illegible"])
         .execute()
     )
     return res.count if res.count is not None else len(res.data or [])
@@ -234,17 +241,20 @@ async def snap_doubt(
         # Store the failure honestly against the submission, then tell the
         # client which stage failed. The photo stays so the student can see what
         # was rejected and retake it.
+        # 'illegible' means the student's photo was the problem and counts
+        # against their quota; 'failed' means it was ours and does not.
+        student_fixable = err.remedy == REMEDY_RETAKE
         row = {
             "id": submission_id,
             "user_id": user_id,
             "submission_id": submission_id,
             "question_index": 1,
             "image_key": key,
-            "legible": err.stage != "transcribe",
-            "legibility_note": str(err) if err.stage == "transcribe" else None,
-            "status": "illegible" if err.stage == "transcribe" else "failed",
+            "legible": not student_fixable,
+            "legibility_note": str(err) if student_fixable else None,
+            "status": "illegible" if student_fixable else "failed",
             "solved": False,
-            "concept": "Unreadable photo" if err.stage == "transcribe" else "Unsolved question",
+            "concept": "Unreadable photo" if student_fixable else "Unsolved question",
             "failure_reason": str(err),
         }
         try:
@@ -257,7 +267,15 @@ async def snap_doubt(
         )
         raise HTTPException(
             status_code=422,
-            detail={"message": str(err), "stage": err.stage, "doubt_id": submission_id},
+            detail={
+                "message": str(err),
+                "stage": err.stage,
+                "reason": err.reason,
+                # What the student should DO: retake / not_photo / our_side.
+                "remedy": err.remedy,
+                "retake_helps": err.remedy == REMEDY_RETAKE,
+                "doubt_id": submission_id,
+            },
         )
     except Exception as err:
         logger.error("[SNAP UNEXPECTED] doubt=%s user=%s: %s",
@@ -267,11 +285,15 @@ async def snap_doubt(
         )
 
     rows: List[Dict[str, Any]] = []
+    question_remedies: Dict[str, str] = {}
     for question in result["questions"][:allowed_this_submission]:
         solution = question.get("solution") or {}
         withheld_reason = None
+        remedy = question.get("remedy") or REMEDY_OUR_SIDE
         if not question["legible"]:
-            status = "illegible"
+            # A diagram question was read perfectly; the photo is not at fault,
+            # so it is 'failed' (ours) rather than 'illegible' (theirs).
+            status = "illegible" if remedy == REMEDY_RETAKE else "failed"
         elif question.get("solve_error"):
             status = "failed"
         elif solution.get("agrees_with_printed_answer") is False:
@@ -294,8 +316,10 @@ async def snap_doubt(
         else:
             status = "solved"
 
+        row_id = str(uuid.uuid4())
+        question_remedies[row_id] = remedy
         rows.append({
-            "id": str(uuid.uuid4()),
+            "id": row_id,
             "user_id": user_id,
             "submission_id": submission_id,
             "question_index": question["n"],
@@ -374,6 +398,8 @@ async def snap_doubt(
                 "option_labels": row["option_labels"],
                 "legible": row["legible"],
                 "legibility_note": row["legibility_note"],
+                "remedy": question_remedies.get(row["id"], REMEDY_OUR_SIDE),
+                "retake_helps": question_remedies.get(row["id"]) == REMEDY_RETAKE,
                 "answer": row["answer"],
                 "steps": row["steps"],
                 "key_idea": row["key_idea"],

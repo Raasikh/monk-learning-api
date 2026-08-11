@@ -768,3 +768,59 @@ def test_perfect_reads_from_real_pages_are_not_refused():
         ok = confidence_is_usable(rate)
         print(f"  {label:16} rate={rate} -> {'accepted' if ok else 'REFUSED'}")
         assert ok, f"{label} was a perfect read and must not be refused"
+
+
+# --- refusals must say what the student can actually DO -------------------
+#
+# "Upload a better photo" is right for some refusals and actively wrong for
+# others. Two JEE questions were refused on a page Mathpix read at
+# confidence_rate 0.9936 — telling that student to retake sends them round a
+# loop they cannot win, and (before this) charged them quota each time.
+
+def test_unclear_photo_says_retake(monkeypatch):
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": "blurry", "confidence": 0.62})
+    with pytest.raises(SnapError) as err:
+        transcribe_questions(b"img", "image/jpeg", "d1")
+    print(f"  reason={err.value.reason} remedy={err.value.remedy}")
+    assert err.value.remedy == snap.REMEDY_RETAKE
+
+
+def test_diagram_question_does_not_blame_the_photo(monkeypatch):
+    """A perfect photo of a figure question is still unanswerable."""
+    stub_transcriber(monkeypatch, mcq_transcription(requires_diagram=True))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  reason={q['reason']} remedy={q['remedy']}")
+    print(f"  note={q['note'][:72]}…")
+    assert q["remedy"] == snap.REMEDY_NOT_PHOTO
+    assert "will not help" in q["note"]
+
+
+def test_cut_off_options_say_retake(monkeypatch):
+    stub_transcriber(monkeypatch, mcq_transcription(
+        options=MCQ_OPTIONS[:3], options_complete=False))
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  reason={q['reason']} remedy={q['remedy']}")
+    assert q["remedy"] == snap.REMEDY_RETAKE
+
+
+def test_no_matching_option_is_our_side_not_theirs(monkeypatch):
+    """THE case: page read perfectly, solver could not land on an option."""
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "$\\dfrac{\\pi+2}{\\pi}$",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})] * 2)
+    with pytest.raises(SnapError) as err:
+        solve_question(question(options=MCQ_OPTIONS), "d1")
+    print(f"  reason={err.value.reason} remedy={err.value.remedy}")
+    print(f"  message: {str(err.value)[:96]}…")
+    assert err.value.remedy == snap.REMEDY_OUR_SIDE
+    assert "will not change this" in str(err.value)
+
+
+def test_model_failure_is_our_side(monkeypatch):
+    stub_solver(monkeypatch, ["{broken", "{still broken"])
+    with pytest.raises(SnapError) as err:
+        solve_question(question(), "d1")
+    print(f"  reason={err.value.reason} remedy={err.value.remedy}")
+    assert err.value.remedy == snap.REMEDY_OUR_SIDE
+    assert "Monk's end" in str(err.value)
