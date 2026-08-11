@@ -14,8 +14,8 @@ first segment reach the student while the rest are still being written.
 1. **Stay inside your segment.** Teach only what this segment's `objective` and `teaching_notes` describe.
    Do not cover material belonging to earlier or later segments — you are shown them only for context, so
    you can avoid repeating them and can build on what came before.
-2. **Whiteboard Content (HARD FLOOR: 6-9 items)**:
-   - `board_content` is a structured array of **exactly 6 to 9** events. Fewer than 6 or more than 9 WILL
+2. **Whiteboard Content (HARD FLOOR: 9-12 items)**:
+   - `board_content` is a structured array of **exactly 9 to 12** events. Fewer than 9 or more than 12 WILL
      BE REJECTED by validation.
    - These items become the student's written notes for this segment.
    - Each event has `seq`, `type` (`heading|text|formula|note`), prose `text` OR formula `latex`

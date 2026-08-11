@@ -1,3 +1,4 @@
+import re
 import json
 import time
 import asyncio
@@ -132,6 +133,38 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         "language": session_language,
         "message": "Connected to Drona Live Session WebSocket"
     })
+
+    # Resume an interrupted question. If the connection died mid-turn (backend
+    # restart, network drop) after the turn had already advanced the DB to
+    # awaiting_answer, the question and its chips died with the old socket —
+    # the reconnecting client sat idle ("Ready") with nothing on screen and
+    # nothing ever arriving. Re-send them from the last turn's record so the
+    # student can simply answer and continue.
+    if session_data['phase'] == 'awaiting_answer':
+        try:
+            last_turn_res = supabase.table('drona_turns').select('raw_response') \
+                .eq('session_id', session_id).order('turn_index', desc=True).limit(1).execute()
+            if last_turn_res.data:
+                last_parsed = json.loads(last_turn_res.data[0].get('raw_response') or '{}')
+                resume_options = last_parsed.get('check_options') or []
+                speech_text = last_parsed.get('speech') or ''
+                sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", speech_text) if s.strip()]
+                asked = [s for s in sentences if s.endswith('?')]
+                resume_question = asked[-1] if asked else (sentences[-1] if sentences else None)
+                if resume_options:
+                    resume_frame = {
+                        "type": "state",
+                        "phase": "awaiting_answer",
+                        "question_type": last_parsed.get('question_type'),
+                        "check_options": resume_options,
+                        "question_text": resume_question,
+                        "answer_result": None,
+                    }
+                    assert_no_forbidden_keys(resume_frame)
+                    await safe_send_json(resume_frame)
+                    logger.info(f"🔁 [RESUME QUESTION] Re-sent pending question + {len(resume_options)} chips on reconnect for session {session_id[:8]}")
+        except Exception as resume_err:
+            logger.warning(f"Question resume on reconnect skipped: {resume_err}")
 
     async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
         """Executes process_tutor_turn_stream and synthesizes TTS sentence-by-sentence over WebSocket."""

@@ -31,14 +31,16 @@ def validate_plan_json(data: Dict[str, Any]) -> None:
             if not val or not str(val).strip():
                 raise ValueError(f"Segment {idx} missing required field '{req_field}'")
 
-        # Board content item count validation (hard floor: 6-9)
+        # Board content item count validation. Min stays at 6 so plans authored
+        # under the old 6-9 target (including every cached plan) still validate;
+        # newly authored segments target 9-12 (see planner_segment.md).
         bc = seg.get("board_content", [])
         if not isinstance(bc, list):
             raise ValueError(f"Segment {idx} board_content must be an array, got {type(bc).__name__}")
         if len(bc) < 6:
             raise ValueError(f"Segment {idx} board_content has {len(bc)} items (minimum 6 required)")
-        if len(bc) > 9:
-            raise ValueError(f"Segment {idx} board_content has {len(bc)} items (maximum 9 allowed)")
+        if len(bc) > 12:
+            raise ValueError(f"Segment {idx} board_content has {len(bc)} items (maximum 12 allowed)")
 
         # Balanced $ and $$ check in board_content
         board_text = str(seg.get("board_content", ""))
@@ -375,14 +377,15 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
         seg["id"] = index + 1
         bc = seg.get("board_content")
         cp = seg.get("checkpoint") or {}
-        if isinstance(bc, list) and 6 <= len(bc) <= 9 and cp.get("question") and cp.get("model_answer") and cp.get("rubric"):
+        # Prompt asks for 9-12; accept 8 so a near-miss doesn't burn a retry.
+        if isinstance(bc, list) and 8 <= len(bc) <= 12 and cp.get("question") and cp.get("model_answer") and cp.get("rubric"):
             return seg
         last_err = f"segment {index+1}: board_content={len(bc) if isinstance(bc, list) else 'n/a'}, checkpoint keys={list(cp)}"
         logger.warning(f"⚠️ [SEGMENT RETRY] {last_err} (attempt {attempt}/2)")
         messages += [
             {"role": "assistant", "content": raw},
             {"role": "user", "content": (
-                f"That segment failed validation: {last_err}. Re-author it with EXACTLY 6-9 "
+                f"That segment failed validation: {last_err}. Re-author it with EXACTLY 9-12 "
                 "board_content items and a complete checkpoint (question, model_answer, rubric, "
                 "2-3 expected_misconceptions)."
             )},
