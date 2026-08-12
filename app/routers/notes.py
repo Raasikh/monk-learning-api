@@ -13,7 +13,13 @@ from pydantic import BaseModel
 
 from app.auth import get_current_user_id
 from app.db import supabase
-from app.drona.note_assembly import NoteAssemblyError, assemble_session_note, structure_note_content
+from app.drona.note_assembly import (
+    NoteAssemblyError,
+    assemble_session_note,
+    build_mistakes_section,
+    structure_note_content,
+    weave_mistakes_into_content,
+)
 
 logger = logging.getLogger("notes")
 
@@ -67,6 +73,16 @@ def save_note(payload: SaveNoteRequest, user_id: str = Depends(get_current_user_
     structured = structure_note_content(note)
     if structured:
         note["content"] = structured
+
+    # Personal rework section from this session's graded answers. Placed with
+    # the class material (before self-study) since these are answers the
+    # student gave in class. Best effort like the structuring pass — and it
+    # runs AFTER it, so the student's quoted answers are never fed through a
+    # model rewrite. Every student on the same topic gets the same QUICK
+    # REVISION; this section is the only part of the note that is theirs.
+    mistakes = build_mistakes_section(payload.session_id)
+    if mistakes:
+        note["content"] = weave_mistakes_into_content(note["content"], mistakes)
 
     existing = (
         supabase.table("notes")

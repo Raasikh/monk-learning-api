@@ -16,6 +16,7 @@ This module reads only. It adds no behaviour to the live session path.
 """
 import json
 import logging
+import re
 from typing import Any, Dict, List, Optional, Tuple
 
 from app.db import supabase
@@ -89,6 +90,11 @@ def _segment_reach(session_id: str) -> Tuple[Dict[int, int], int]:
 # Divider written into the flat content where the live class stopped. The
 # structuring pass keys off it to split covered material from what remains.
 CLASS_END_MARKER = "——— class ended here — everything below is the rest of the lesson, for self-study ———"
+
+# Section headings that are part of the renderer contract (NoteContent.tsx
+# special-cases both).
+SELF_STUDY_HEADING = "NOT COVERED IN CLASS YET — SELF-STUDY"
+MISTAKES_HEADING = "FROM YOUR CLASS — WHAT TO REWORK"
 
 
 def _flatten_board(board_items: List[Dict[str, Any]]) -> str:
@@ -337,9 +343,119 @@ def structure_note_content(note: Dict[str, Any]) -> Optional[str]:
                 if structured_rest is None:
                     logger.warning("Note structuring (self-study half) too short — keeping flat board content.")
                     return None
-                parts.append("NOT COVERED IN CLASS YET — SELF-STUDY\n\n" + structured_rest)
+                parts.append(SELF_STUDY_HEADING + "\n\n" + structured_rest)
 
         return "\n\n\n".join(parts) if parts else None
     except Exception as err:
         logger.warning("Note structuring failed (%s) — keeping flat board content.", err)
         return None
+
+
+def _last_question(speech: str) -> Optional[str]:
+    """The question a turn asked: its last sentence ending in '?'."""
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", speech or "") if s.strip()]
+    asked = [s for s in sentences if s.endswith("?")]
+    return asked[-1] if asked else None
+
+
+def _first_sentences(speech: str, count: int = 2, cap: int = 240) -> str:
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", speech or "") if s.strip()]
+    text = " ".join(sentences[:count]).strip()
+    return text if len(text) <= cap else text[: cap - 1].rstrip() + "…"
+
+
+def mistakes_section_from_turns(turns: List[Dict[str, Any]]) -> Optional[str]:
+    """Builds the MISTAKES_HEADING section from a session's turn rows.
+
+    Everything needed is already recorded per turn: the question is the last
+    '?' sentence of the PREVIOUS turn's speech, the student's answer is this
+    turn's utterance, and the correction is the opening of this turn's speech
+    (the tutor states the verdict and the right answer up front — the prompt
+    demands it). Deterministic on purpose: a student's mistakes must be quoted,
+    never paraphrased by another model call.
+
+    Returns None when every graded answer was correct — a clean run gets no
+    section rather than an empty one.
+    """
+    blocks: List[str] = []
+    correct_count = 0
+    checkpoint_no = 0
+
+    for idx, turn in enumerate(turns):
+        if turn.get("phase_in") != "awaiting_answer":
+            continue
+        grade = (turn.get("grade") or "").strip().lower()
+        if grade == "correct":
+            correct_count += 1
+            continue
+        if grade not in ("incorrect", "partial"):
+            continue
+
+        answer = " ".join((turn.get("utterance") or "").split()).strip()
+        if not answer:
+            continue
+        if len(answer) > 120:
+            answer = answer[:119].rstrip() + "…"
+
+        try:
+            this_speech = _as_dict(json.loads(turn.get("raw_response") or "{}")).get("speech") or ""
+        except Exception:
+            this_speech = ""
+        correction = _first_sentences(this_speech)
+
+        question = None
+        if idx > 0:
+            try:
+                prev_speech = _as_dict(json.loads(turns[idx - 1].get("raw_response") or "{}")).get("speech") or ""
+                question = _last_question(prev_speech)
+            except Exception:
+                question = None
+
+        checkpoint_no += 1
+        lines = [f"Checkpoint {checkpoint_no}:"]
+        if question:
+            lines.append(f"• Asked: {question}")
+        lines.append(f"• You said: {answer}" + (" (partly right)" if grade == "partial" else ""))
+        if correction:
+            lines.append(f"• {correction}")
+        blocks.append("\n".join(lines))
+
+    if not blocks:
+        return None
+
+    if correct_count:
+        blocks.append(
+            f"• You answered {correct_count} other checkpoint{'s' if correct_count != 1 else ''} correctly."
+        )
+    return MISTAKES_HEADING + "\n\n" + "\n\n".join(blocks)
+
+
+def build_mistakes_section(session_id: str) -> Optional[str]:
+    """Fetches the session's turns and builds the rework section.
+
+    Best effort like the structuring pass: a note must never fail to save
+    because this did, so any error returns None.
+    """
+    try:
+        res = (
+            supabase.table("drona_turns")
+            .select("turn_index, phase_in, utterance, grade, raw_response")
+            .eq("session_id", session_id)
+            .order("turn_index")
+            .execute()
+        )
+        return mistakes_section_from_turns(res.data or [])
+    except Exception as err:
+        logger.warning("Mistakes section skipped (%s) — saving the note without it.", err)
+        return None
+
+
+def weave_mistakes_into_content(content: str, section: str) -> str:
+    """Places the rework section with the class material, not the self-study
+    tail — these are answers the student gave IN class, so they sit right
+    before the not-yet-covered half in both content shapes."""
+    for marker in (SELF_STUDY_HEADING, CLASS_END_MARKER):
+        pos = content.find(marker)
+        if pos != -1:
+            return content[:pos].rstrip() + "\n\n\n" + section + "\n\n\n" + content[pos:]
+    return content.rstrip() + "\n\n\n" + section
