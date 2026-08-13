@@ -1,4 +1,3 @@
-import asyncio
 import json
 from dotenv import load_dotenv
 load_dotenv('/Users/raasikhnaveed/Desktop/dronav1project/.env')
@@ -6,7 +5,7 @@ load_dotenv('/Users/raasikhnaveed/Desktop/dronav1project/.env')
 from app.db import supabase
 from app.drona.tutor import compute_next_session_state
 
-async def test_auto_segment_advance():
+def test_auto_segment_advance():
     print("=== TESTING AUTO-SEGMENT ADVANCE LOGIC & VARIABLE SCOPING ===")
     
     # Test 1: Verify compute_next_session_state advances current_segment when segment_complete: True
@@ -42,4 +41,4 @@ async def test_auto_segment_advance():
     print("✅ Test 2 Passed: Variable state_data and segment_complete_flag scoped without NameError")
 
 if __name__ == "__main__":
-    asyncio.run(test_auto_segment_advance())
+    test_auto_segment_advance()

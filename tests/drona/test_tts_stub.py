@@ -53,7 +53,11 @@ class TestRumikTTSProxyStub(unittest.TestCase):
 
         self.assertIsInstance(audio_bytes, bytes)
         self.assertGreater(len(audio_bytes), 0)
-        self.assertEqual(len(audio_bytes), 16000)
+        # 0.5s of 16-bit mono at 48 kHz. The 16000 this asserted before dates
+        # from the 16 kHz era; the proxy has resampled to 48 kHz for a while,
+        # and the stale constant kept this test red long enough that a red
+        # suite stopped meaning anything.
+        self.assertEqual(len(audio_bytes), 48000)
 
 if __name__ == "__main__":
     unittest.main()

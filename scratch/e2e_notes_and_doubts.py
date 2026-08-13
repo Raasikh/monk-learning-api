@@ -1,4 +1,8 @@
-"""End-to-end exercise of the Notes / Snap a Doubt / My Doubts HTTP surface.
+"""STALE — predates streaming, remedies, quota and per-question rows.
+Trust scratch/eval_solver.py and the /doubts/stream smoke instead; the /notes
+assertions here are still valid.
+
+End-to-end exercise of the Notes / Snap a Doubt / My Doubts HTTP surface.
 
 AGENTS.md Rule 2: calling backend functions directly proves nothing about the
 app. This drives the real HTTP endpoints with a real Supabase JWT, exactly as
