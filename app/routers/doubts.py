@@ -25,7 +25,6 @@ from app.snap import (
     ALLOWED_MIME,
     iter_snapped_questions,
     DAILY_QUESTION_LIMIT,
-    REMEDY_NOT_PHOTO,
     REMEDY_OUR_SIDE,
     REMEDY_RETAKE,
     MAX_IMAGE_BYTES,
@@ -33,31 +32,20 @@ from app.snap import (
     SnapError,
     solve_snapped_image,
 )
-from app.storage_r2 import (
-    R2NotConfigured,
-    delete_image,
-    object_key,
-    signed_url,
-    upload_image,
-)
+from app.storage_r2 import delete_image, signed_url
 
 logger = logging.getLogger("doubts")
 
 router = APIRouter(prefix="/doubts", tags=["doubts"])
 
 LIST_COLUMNS = (
-    "id, submission_id, question_index, question_text, subject, chapter, concept, "
-    "question_type, legible, legibility_note, answer, key_idea, option_labels, "
-    "solved, status, failure_reason, created_at"
+    "id, submission_id, question_index, question_text, stem, options, subject, "
+    "chapter, concept, question_type, legible, legibility_note, answer, key_idea, "
+    "option_labels, solved, status, failure_reason, created_at"
 )
+# image_key is selected only for legacy doubts saved before images stopped being
+# stored; signed_url() below returns None for a row that never had one.
 DETAIL_COLUMNS = LIST_COLUMNS + ", explanation, steps, image_key"
-
-EXT_BY_MIME = {
-    "image/jpeg": "jpg",
-    "image/png": "png",
-    "image/webp": "webp",
-    "image/heic": "heic",
-}
 
 
 class ReportRequest(BaseModel):
@@ -162,7 +150,7 @@ def _scrap(question_text: Optional[str]) -> str:
 
 @router.post("", status_code=201)
 async def snap_doubt(
-    file: UploadFile = File(..., description="Photo of up to 2 questions"),
+    file: UploadFile = File(..., description="Photo of up to 3 questions"),
     user_id: str = Depends(get_current_user_id),
 ):
     """POST /doubts — snap a photo, get its questions read and solved."""
@@ -222,22 +210,11 @@ async def snap_doubt(
     allowed_this_submission = min(MAX_QUESTIONS, remaining)
 
     submission_id = str(uuid.uuid4())
-    key = object_key(user_id, submission_id, EXT_BY_MIME.get(mime, "jpg"))
 
-    # Upload first. A photo we could not keep is not a doubt we should solve —
-    # the student would get an explanation attached to nothing.
-    try:
-        upload_image(key, image_bytes, mime)
-    except R2NotConfigured as err:
-        logger.error("[SNAP] R2 not configured: %s", err)
-        raise HTTPException(
-            status_code=503,
-            detail="Snap a Doubt is not available right now.",
-        )
-    except Exception as err:
-        logger.error("[SNAP] R2 upload failed for user %s: %s", user_id[:8], err)
-        raise HTTPException(status_code=502, detail="Could not save that photo. Try again.")
-
+    # The photo itself is NOT kept. Once it is read, the question text and
+    # options ARE the stored record — a second copy of the image is redundant
+    # storage that also means a student's photographed page sits on a server
+    # indefinitely for no benefit the transcript does not already provide.
     try:
         result = solve_snapped_image(image_bytes, mime, submission_id,
                                      allowed_this_submission)
@@ -253,7 +230,6 @@ async def snap_doubt(
             "user_id": user_id,
             "submission_id": submission_id,
             "question_index": 1,
-            "image_key": key,
             "legible": not student_fixable,
             "legibility_note": str(err) if student_fixable else None,
             "status": "illegible" if student_fixable else "failed",
@@ -341,8 +317,12 @@ async def snap_doubt(
             "user_id": user_id,
             "submission_id": submission_id,
             "question_index": question["n"],
-            "image_key": key,
             "question_text": question.get("text") or None,
+            # Stored separately so the detail page can render "Q: <stem>" and a
+            # clean options list, instead of one run-on paragraph. `text`
+            # (stem + options concatenated) is kept for search/legacy display.
+            "stem": question.get("stem") or question.get("text") or None,
+            "options": question.get("options") or [],
             "subject": solution.get("subject") or (
                 question.get("subject") if question.get("subject") != "unknown" else None
             ),
@@ -409,6 +389,8 @@ async def snap_doubt(
                 "id": row["id"],
                 "question_index": row["question_index"],
                 "question_text": row["question_text"],
+                "stem": row["stem"],
+                "options": row["options"],
                 "subject": row["subject"],
                 "chapter": row["chapter"],
                 "concept": row["concept"],
@@ -432,7 +414,7 @@ async def snap_doubt(
 
 
 def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: str,
-                       image_key: str, meta: Dict[str, Any]) -> Dict[str, Any]:
+                       meta: Dict[str, Any]) -> Dict[str, Any]:
     """One `doubts` row, and the remedy the client should act on."""
     solution = question.get("solution") or {}
     withheld_reason = None
@@ -469,8 +451,9 @@ def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: st
         "user_id": user_id,
         "submission_id": submission_id,
         "question_index": question["n"],
-        "image_key": image_key,
         "question_text": question.get("text") or None,
+        "stem": question.get("stem") or question.get("text") or None,
+        "options": question.get("options") or [],
         "subject": solution.get("subject") or (
             question.get("subject") if question.get("subject") != "unknown" else None
         ),
@@ -538,15 +521,9 @@ async def snap_doubt_stream(
 
     allowed = min(MAX_QUESTIONS, remaining)
     submission_id = str(uuid.uuid4())
-    key = object_key(user_id, submission_id, EXT_BY_MIME.get(mime, "jpg"))
-
-    try:
-        upload_image(key, image_bytes, mime)
-    except R2NotConfigured:
-        raise HTTPException(status_code=503, detail="Snap a Doubt is not available right now.")
-    except Exception as err:
-        logger.error("[SNAP] R2 upload failed for %s: %s", user_id[:8], err)
-        raise HTTPException(status_code=502, detail="Could not save that photo. Try again.")
+    # No upload: the photo is read (Mathpix, then gpt-4o for any diagram) and
+    # then discarded. The transcript IS the record; a second copy of the image
+    # adds storage cost with no benefit once the question is captured as text.
 
     def event(name: str, payload: Dict[str, Any]) -> str:
         return f"event: {name}\ndata: {json.dumps(payload)}\n\n"
@@ -571,7 +548,7 @@ async def snap_doubt_stream(
                     # answer, which waits for the validated "question" event.
                     yield event(kind, item)
                 elif kind == "question":
-                    row = _row_from_question(item, user_id, submission_id, key, meta)
+                    row = _row_from_question(item, user_id, submission_id, meta)
                     remedy = row.pop("_remedy")
                     try:
                         supabase.table("doubts").insert([row]).execute()
@@ -587,10 +564,11 @@ async def snap_doubt_stream(
                         emitted += 1
                     yield event("question", {
                         **{k: row[k] for k in (
-                            "id", "question_index", "question_text", "subject",
-                            "chapter", "concept", "question_type", "legible",
-                            "legibility_note", "answer", "steps", "key_idea",
-                            "option_labels", "status", "failure_reason")},
+                            "id", "question_index", "question_text", "stem",
+                            "options", "subject", "chapter", "concept",
+                            "question_type", "legible", "legibility_note",
+                            "answer", "steps", "key_idea", "option_labels",
+                            "status", "failure_reason")},
                         "remedy": remedy,
                         "retake_helps": remedy == REMEDY_RETAKE,
                     })
@@ -603,7 +581,7 @@ async def snap_doubt_stream(
                 supabase.table("doubts").insert([{
                     "id": submission_id, "user_id": user_id,
                     "submission_id": submission_id, "question_index": 1,
-                    "image_key": key, "legible": not student_fixable,
+                    "legible": not student_fixable,
                     "legibility_note": str(err) if student_fixable else None,
                     "status": "illegible" if student_fixable else "failed",
                     "solved": False, "failure_reason": str(err),

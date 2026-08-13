@@ -63,11 +63,12 @@ SOLVE_TIMEOUT_S = 120.0
 
 # Per-submission cap: how many questions are read from ONE photo.
 #
-# Measured: a solve takes ~23s, so this is a latency ceiling as much as a
-# quality one. At 5 a request is ~2 minutes, which is already near what a
-# synchronous HTTP request through Vercel and Railway will tolerate. Raising it
-# further needs a job queue, not a bigger number.
-MAX_QUESTIONS = 5
+# Measured: a solve takes ~23-30s (thinking-on), so this is a latency ceiling
+# as much as a quality one. At 3, a full page is ~90s streamed live (steps
+# print as each question is worked, so the wait is never silent) — 5 pushed
+# past what a synchronous HTTP request through Vercel and Railway comfortably
+# tolerates. Raising it further needs a job queue, not a bigger number.
+MAX_QUESTIONS = 3
 
 # Per-student daily cap, counted over a rolling 24 hours. This is the cost and
 # abuse control; MAX_QUESTIONS above is the per-photo one. They are different
@@ -793,11 +794,14 @@ def match_answer_to_options(answer: str, options: List[Dict[str, str]],
 # 1,062-character step that argued with itself, and a 5,445-character one that
 # broke the JSON outright — the rambling and the parse failures are the same
 # problem.
-# A step is one line on a board. 220 characters is roughly two short sentences,
-# which is all a student needs per move — and the ceiling is what stops the
-# model using the steps as scratch paper.
-MAX_STEP_CHARS = 220
-MAX_STEPS = 5
+# A step is one line of working, not a paragraph. 320 characters is roughly
+# three short sentences — enough room for a real explanation (the "how" as
+# well as the "what") without going back to the failure this replaced: an
+# earlier, higher ceiling let the model use the steps as scratch paper and
+# write a single 5,445-character step that broke its own JSON. The ceiling is
+# the enforcement; raise it, don't remove it.
+MAX_STEP_CHARS = 320
+MAX_STEPS = 7
 
 # Phrases that only appear when a model is thinking out loud rather than
 # explaining. A student should not be able to tell it was ever uncertain.
@@ -1133,11 +1137,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 messages=messages,
                 response_format={"type": "json_object"},
                 temperature=temperature,
-                # 5 steps of 220 characters plus the answer and key idea is well
-                # under 700 tokens. The budget is the enforcement: given 4096 the
-                # model wrote a single 5,445-character step, broke its own JSON,
-                # and failed the question twice. It cannot do that in 1500.
-                max_tokens=1500,
+                max_tokens=2200,
                 timeout=SOLVE_TIMEOUT_S,
             )
             if not use_openai:
@@ -1161,7 +1161,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 ],
                 response_format={"type": "json_object"},
                 temperature=0.0,
-                max_tokens=1500,
+                max_tokens=2200,
                 timeout=SOLVE_TIMEOUT_S,
                 _client=solve_client,
             )
@@ -1201,7 +1201,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 ],
                 response_format={"type": "json_object"},
                 temperature=0.0,
-                max_tokens=1500,
+                max_tokens=2200,
                 timeout=SOLVE_TIMEOUT_S,
             )
             if not use_openai:
