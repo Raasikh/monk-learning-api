@@ -694,6 +694,30 @@ def test_shared_fragment_does_not_count_as_a_match(monkeypatch):
     assert out["unmatched"] is True
 
 
+def test_restated_equation_still_matches_its_option(monkeypatch):
+    """`$x(1/2)=3-e$` must match the option `3 - e` — real bug, real page.
+
+    The prompt asks for the value alone, but the solver restated the equation
+    it satisfies. The normalised full string ("x123e") does not equal the
+    option's ("3e"), so this fell through to the LLM matcher — which also
+    missed it, flagging a correct answer as unmatched. The fix tries the text
+    after the LAST '=' too. The matcher is stubbed to refuse the match (a
+    trap): if this test passes, the exact path caught it and the matcher was
+    never even called.
+    """
+    options = [{"label": "1", "text": "1/2 + e"}, {"label": "2", "text": "3 + e"},
+               {"label": "3", "text": "3 - e"}, {"label": "4", "text": "3/2 + e"}]
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "$x(1/2)=3-e$",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    matcher = stub_matcher(monkeypatch, [], equivalent=False)
+    out = solve_question(question(options=options), "d1")
+    print(f"  labels={out['option_labels']} answer={out['answer']!r} "
+          f"matcher_calls={matcher.calls}")
+    assert out["option_labels"] == ["3"]
+    assert out["answer"] == "3 - e"
+    assert matcher.calls == 0
+
 
 # --- Mathpix OCR gate -------------------------------------------------------
 

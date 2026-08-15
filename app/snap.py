@@ -868,11 +868,26 @@ def _match_options(parsed: Dict[str, Any],
 
     # No usable labels — fall back to matching the answer text against an
     # option, requiring equality rather than containment so a shared fragment
-    # cannot pass.
-    answer_key = _norm(parsed.get("answer") or "")
-    if answer_key:
+    # cannot pass. _canon_fidelity, not _norm: _norm strips '+'/'-' entirely,
+    # which would let "3-e" and "3+e" collide as the same key — exactly the
+    # sign-collapsing _canon_fidelity's own docstring warns about, and which a
+    # first version of this fallback (using _norm) hit immediately below.
+    answer_text = parsed.get("answer") or ""
+    candidates = [answer_text]
+    if "=" in answer_text:
+        # The prompt asks for the value alone, but a real solve restated the
+        # equation instead — "$x(1/2)=3-e$" for an option whose text is
+        # "3 - e" — which flagged a correct answer as unmatched because the
+        # full strings differ (the "x(1/2)" prefix pollutes it). The value is
+        # what follows the LAST '=', so try that too before falling through to
+        # the LLM matcher (or refusing outright).
+        candidates.append(answer_text.rsplit("=", 1)[-1])
+    for candidate in candidates:
+        answer_key = _canon_fidelity(candidate)
+        if not answer_key:
+            continue
         for opt in options:
-            if _norm(opt["text"]) == answer_key:
+            if _canon_fidelity(opt["text"]) == answer_key:
                 return [opt]
     return []
 

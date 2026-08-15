@@ -72,6 +72,11 @@ stated once the working is done.
    options afterwards.
 7. **Do not speculate about what the options might be**, and do not shape your
    answer towards a "nice" form. Give the result your working produced.
+7a. **State the value alone — never restate the variable or the equation it
+    satisfies.** Write `3-e`, not `x(1/2)=3-e`; write `52`, not `n=52`. Something
+    else compares `answer` against option text afterwards, and it checks
+    equality, not equivalence — restating the equation broke a match against an
+    option that was, in fact, correct.
 8. If the question genuinely cannot be answered as given, set
    `answerable: false` and say what is missing.
 9. When options ARE supplied, the question is one where the choices are the
