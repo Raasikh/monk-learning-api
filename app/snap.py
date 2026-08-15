@@ -1377,14 +1377,22 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                            max_questions: int = MAX_QUESTIONS):
     """Yields each question as soon as IT is done, rather than after all of them.
 
-    A solve takes ~25s, so a page of five kept the student watching a spinner for
-    over two minutes before anything appeared. The work is identical; only the
-    delivery changes.
+    A solve takes ~25s. Every legible question's solve is launched CONCURRENTLY
+    (the loop below that starts one thread per question) rather than one after
+    another, so a page of three no longer costs 3x one solve's time — it costs
+    roughly 1x, the slowest of the three. Live thinking/step events are still
+    only forwarded for the question currently "in front" (matching the
+    single-panel UI), but the others are already solving in the background, so
+    their card tends to appear moments after the previous one instead of
+    another full 20-30s later.
 
     Yields ("meta", {...}) first, then ("question", {...}) per question, then
     ("summary", {...}). Raises SnapError if the page cannot be read at all —
     that failure happens before any question exists.
     """
+    import queue as _queue
+    import threading as _threading
+
     started = time.time()
     tx_usage: Dict[str, int] = {"input": 0, "output": 0}
     sv_usage: Dict[str, int] = {"input": 0, "output": 0}
@@ -1400,8 +1408,13 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         "transcribe_ms": transcribe_ms,
     }
 
-    solved_count = 0
-    for question in read["questions"]:
+    questions = read["questions"]
+
+    # Diagram description must finish before its question can be solved — the
+    # solver reads diagram_description off the question dict — so this stays
+    # sequential. It is per-page rare (only figure questions) and fast next to
+    # a solve.
+    for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             description = describe_diagram(
                 image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
@@ -1419,37 +1432,59 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                     "this one in a live session, where the board can be used."
                 )
 
+    # Launch every legible question's solve now, all at once. Each gets its own
+    # event queue and its own usage accumulator — solve_question mutates
+    # usage_acc with plain (non-atomic) dict reads+writes, so sharing sv_usage
+    # directly across concurrent threads would race and silently drop token
+    # counts. Merged into sv_usage below, after that question's None sentinel
+    # confirms its thread is done (Queue's internal lock makes that write
+    # visible here, the same guarantee the outcome dict below already relied
+    # on before this change).
+    event_queues: Dict[int, "_queue.Queue"] = {}
+    outcomes: Dict[int, Dict[str, Any]] = {}
+    usages: Dict[int, Dict[str, int]] = {}
+    threads: List[_threading.Thread] = []
+
+    for question in questions:
+        if not question["legible"]:
+            continue
+        n = question["n"]
+        q_events: "_queue.Queue" = _queue.Queue()
+        event_queues[n] = q_events
+        outcomes[n] = {}
+        usages[n] = {"input": 0, "output": 0}
+
+        def _run(q=question, events=q_events, outcome=outcomes[n], usage=usages[n]):
+            try:
+                outcome["solution"] = solve_question(
+                    q, doubt_id, usage,
+                    on_event=lambda kind, data: events.put((kind, data)),
+                )
+            except SnapError as err:
+                outcome["error"] = err
+            finally:
+                events.put(None)
+
+        worker = _threading.Thread(target=_run, daemon=True)
+        worker.start()
+        threads.append(worker)
+
+    solved_count = 0
+    for question in questions:
+        n = question["n"]
         if question["legible"]:
-            # The solve runs in a thread; its live events drain through a queue
-            # so the student sees thinking ticks and each step AS IT IS WRITTEN
-            # instead of a silent 20-30s gap. The final "question" event stays
-            # authoritative — nothing streamed carries an answer.
-            import queue as _queue
-            import threading as _threading
-            events: "_queue.Queue" = _queue.Queue()
-            outcome: Dict[str, Any] = {}
-
-            def _run(q=question):
-                try:
-                    outcome["solution"] = solve_question(
-                        q, doubt_id, sv_usage,
-                        on_event=lambda kind, data: events.put((kind, data)),
-                    )
-                except SnapError as err:
-                    outcome["error"] = err
-                finally:
-                    events.put(None)
-
-            worker = _threading.Thread(target=_run, daemon=True)
-            worker.start()
+            events = event_queues[n]
             while True:
                 item = events.get()
                 if item is None:
                     break
                 kind, data = item
-                yield kind, {**data, "question_index": question["n"]}
-            worker.join()
+                yield kind, {**data, "question_index": n}
 
+            sv_usage["input"] += usages[n]["input"]
+            sv_usage["output"] += usages[n]["output"]
+
+            outcome = outcomes[n]
             if "solution" in outcome:
                 question["solution"] = outcome["solution"]
                 solved_count += 1
@@ -1465,6 +1500,9 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                         doubt_id[:8], question["n"], question.get("note"))
 
         yield "question", question
+
+    for worker in threads:
+        worker.join()
 
     latency_ms = int((time.time() - started) * 1000)
     logger.info(
@@ -1490,11 +1528,15 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
 def solve_snapped_image(image_bytes: bytes, mime_type: str,
                         doubt_id: str = "-",
                         max_questions: int = MAX_QUESTIONS) -> Dict[str, Any]:
-    """Transcribe, then solve each legible question.
+    """Transcribe, then solve every legible question CONCURRENTLY.
 
     Returns {"questions": [...], "note": str|None, ...timings}. Each entry has
     `legible`; legible ones also carry `solution`. Illegible ones carry the
     transcriber's `note` saying what was unclear and are never solved.
+
+    Solves run in parallel (see iter_snapped_questions's docstring for why), so
+    a multi-question page's wall time is roughly its slowest single solve
+    rather than their sum.
     """
     started = time.time()
     tx_usage: Dict[str, int] = {"input": 0, "output": 0}
@@ -1503,11 +1545,13 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                                 max_questions)
     transcribe_ms = int((time.time() - started) * 1000)
 
-    solved_count = 0
-    for question in read["questions"]:
-        # A figure question gets its diagram put into words first. Only if that
-        # fails is it refused — and then honestly, as "the figure could not be
-        # made out", not as "your photo is bad".
+    questions = read["questions"]
+
+    # A figure question gets its diagram put into words first. Only if that
+    # fails is it refused — and then honestly, as "the figure could not be made
+    # out", not as "your photo is bad". Sequential: per-page rare and fast next
+    # to a solve, and must finish before that question can be dispatched below.
+    for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             description = describe_diagram(
                 image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
@@ -1525,17 +1569,43 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                     "this one in a live session, where the board can be used."
                 )
 
+    to_solve: List[Dict[str, Any]] = []
+    for question in questions:
         if not question["legible"]:
             logger.info(
                 "[SNAP] doubt=%s q%d illegible, not sent to solver: %s",
                 doubt_id[:8], question["n"], question.get("note"),
             )
             continue
+        to_solve.append(question)
+
+    # One usage dict per solve, not the shared sv_usage — solve_question
+    # mutates it with plain (non-atomic) dict reads+writes, which would race
+    # across threads. Summed into sv_usage once every solve has returned.
+    solve_usages = [{"input": 0, "output": 0} for _ in to_solve]
+    solve_results: List[Optional[Dict[str, Any]]] = [None] * len(to_solve)
+    solve_errors: List[Optional[SnapError]] = [None] * len(to_solve)
+
+    def _solve_one(i: int) -> None:
         try:
-            question["solution"] = solve_question(question, doubt_id, sv_usage)
-            solved_count += 1
+            solve_results[i] = solve_question(to_solve[i], doubt_id, solve_usages[i])
         except SnapError as err:
-            # One question failing must not lose the other one.
+            solve_errors[i] = err
+
+    if to_solve:
+        with ThreadPoolExecutor(max_workers=len(to_solve)) as pool:
+            list(pool.map(_solve_one, range(len(to_solve))))
+
+    solved_count = 0
+    for i, question in enumerate(to_solve):
+        sv_usage["input"] += solve_usages[i]["input"]
+        sv_usage["output"] += solve_usages[i]["output"]
+        if solve_results[i] is not None:
+            question["solution"] = solve_results[i]
+            solved_count += 1
+        else:
+            # One question failing must not lose the others.
+            err = solve_errors[i]
             logger.error(
                 "[SNAP SOLVE FAILED] doubt=%s q%d: %s", doubt_id[:8], question["n"], err
             )
