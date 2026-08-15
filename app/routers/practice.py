@@ -7,6 +7,7 @@ from pydantic import BaseModel
 from app.auth import get_current_user_id
 from app.db import supabase
 from app.drona.persona import normalize_language, normalize_voice, tutor_name
+from app.progress_scoring import apply_answer_scoring, record_serve
 
 router = APIRouter(prefix="/practice", tags=["practice"])
 
@@ -300,6 +301,13 @@ def get_next_question(
     q_type = selected.get("question_type")
     options = selected.get("options") if q_type != "numerical" else None
 
+    # question.served — burns the item and starts the silent pace timer.
+    # Never allowed to break serving.
+    try:
+        record_serve(user_id, selected["id"], context="practice")
+    except Exception as e:
+        print(f"[PRACTICE SERVE ERROR] Failed to record serve: {e}")
+
     return {
         "question_id": selected["id"],
         "question_text": selected.get("question_text"),
@@ -322,7 +330,7 @@ def submit_answer(
     # 1. Fetch target question with ground truth answers
     q_res = (
         supabase.table("questions")
-        .select("id, question_type, correct_option, correct_value, value_tolerance, solution, options")
+        .select("id, question_type, correct_option, correct_value, value_tolerance, solution, options, difficulty")
         .eq("id", req.question_id)
         .limit(1)
         .execute()
@@ -357,7 +365,22 @@ def submit_answer(
         if req.chosen_option and correct_option:
             is_correct = req.chosen_option.strip().lower() == correct_option.strip().lower()
 
-    # 3. Write attempt record to practice_attempts
+    # 3. Score concept mastery BEFORE inserting the attempt row — the
+    #    first-attempt gate counts prior attempts, so the current one must
+    #    not be in the table yet. Scoring must never break grading.
+    scoring = None
+    try:
+        scoring = apply_answer_scoring(
+            user_id=user_id,
+            question_id=req.question_id,
+            is_correct=is_correct,
+            raw_difficulty=q_data.get("difficulty"),
+            mode="practice",
+        )
+    except Exception as e:
+        print(f"[PRACTICE SCORING ERROR] Failed to score answer: {e}")
+
+    # 4. Write attempt record to practice_attempts
     attempt_payload = {
         "user_id": user_id,
         "question_id": req.question_id,
@@ -374,7 +397,8 @@ def submit_answer(
         "is_correct": is_correct,
         "correct_option": correct_option,
         "correct_value": correct_value,
-        "solution": solution
+        "solution": solution,
+        "scoring": scoring
     }
 
 
