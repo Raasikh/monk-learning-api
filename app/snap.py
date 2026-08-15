@@ -1485,16 +1485,44 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         threads.append(worker)
 
     solved_count = 0
+    first_live = True
     for question in questions:
         n = question["n"]
         if question["legible"]:
             events = event_queues[n]
-            while True:
-                item = events.get()
-                if item is None:
-                    break
-                kind, data = item
-                yield kind, {**data, "question_index": n}
+
+            # The FIRST question is drained the moment its thread starts, so
+            # whatever is sitting in its queue is genuinely fresh — nothing has
+            # been generated while the student was watching something else.
+            # Every question after it may have been solving in the background
+            # since before its turn came up, and may already be finished:
+            # anything already sitting in ITS queue is stale, and replaying it
+            # live would flash through several seconds of "thinking" ticks and
+            # steps in an instant, which reads as a glitch, not as fast. Drain
+            # it without yielding; if that drain reaches the done sentinel, the
+            # solve already finished — go straight to the result. If the queue
+            # runs dry before the sentinel, it is still running: forward events
+            # from here on exactly as they happen (below), so what the student
+            # sees is genuinely live, not a replay.
+            done_already = False
+            if not first_live:
+                while True:
+                    try:
+                        item = events.get_nowait()
+                    except _queue.Empty:
+                        break
+                    if item is None:
+                        done_already = True
+                        break
+            first_live = False
+
+            if not done_already:
+                while True:
+                    item = events.get()
+                    if item is None:
+                        break
+                    kind, data = item
+                    yield kind, {**data, "question_index": n}
 
             sv_usage["input"] += usages[n]["input"]
             sv_usage["output"] += usages[n]["output"]

@@ -18,6 +18,7 @@ Runs under pytest, or standalone:  python3 tests/test_snap_solver.py
 import json
 import os
 import sys
+import threading
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -33,6 +34,7 @@ from app.snap import (  # noqa: E402
     SnapError,
     _assert_model,
     _validate_solution,
+    iter_snapped_questions,
     solve_question,
     solve_snapped_image,
     transcribe_questions,
@@ -229,6 +231,93 @@ def test_pipeline_skips_illegible_and_solves_the_rest(monkeypatch):
     assert out["solved_count"] == 1
     assert solver.calls == 1
     assert "solution" not in out["questions"][1]
+
+
+# --- questions solve concurrently, not one after another --------------------
+
+def test_questions_solve_concurrently(monkeypatch):
+    """Every legible question's solve starts at once, not after the previous
+    one finishes. A page of solves that each block until released must all be
+    mid-flight together, or this would hang until the timeout."""
+    releases = {1: threading.Event(), 2: threading.Event()}
+    entered = {1: threading.Event(), 2: threading.Event()}
+
+    monkeypatch.setattr(snap, "transcribe_questions", lambda *a, **k: {
+        "questions": [
+            {"n": 1, "text": "q1", "legible": True, "options": [], "question_type": "subjective"},
+            {"n": 2, "text": "q2", "legible": True, "options": [], "question_type": "subjective"},
+        ],
+        "note": None, "ocr_confidence": 0.99,
+    })
+
+    def fake_solve_question(question, doubt_id="-", usage_acc=None, on_event=None):
+        n = question["n"]
+        entered[n].set()
+        assert releases[n].wait(timeout=5), f"q{n} was never released"
+        return {"answer": f"a{n}", "option_labels": [], "steps": [{"n": 1, "text": "x"}],
+                "key_idea": None, "subject": None, "topic": None}
+
+    monkeypatch.setattr(snap, "solve_question", fake_solve_question)
+
+    result_holder = {}
+
+    def run():
+        result_holder["out"] = solve_snapped_image(b"img", "image/jpeg", "d1", 2)
+
+    t = threading.Thread(target=run, daemon=True)
+    t.start()
+    assert entered[1].wait(timeout=3), "q1 never started"
+    assert entered[2].wait(timeout=3), "q2 never started while q1 was still blocked"
+    releases[1].set()
+    releases[2].set()
+    t.join(timeout=5)
+    assert not t.is_alive(), "solve_snapped_image did not finish"
+    out = result_holder["out"]
+    print(f"  solved_count={out['solved_count']}")
+    assert out["solved_count"] == 2
+
+
+def test_background_question_already_done_skips_replay(monkeypatch):
+    """A question solving in the background can finish before its turn comes.
+
+    Its queued step events must not replay all at once when it becomes
+    "front" — that reads as a glitch, not as fast. Q2 finishes (and queues its
+    own step event) while Q1 is still working; Q1's step must stream, but
+    Q2's must never appear as a "step" event at all — its card should just
+    appear once Q1 is done.
+    """
+    monkeypatch.setattr(snap, "transcribe_questions", lambda *a, **k: {
+        "questions": [
+            {"n": 1, "text": "q1", "legible": True, "options": [], "question_type": "subjective"},
+            {"n": 2, "text": "q2", "legible": True, "options": [], "question_type": "subjective"},
+        ],
+        "note": None, "ocr_confidence": 0.99,
+    })
+
+    q2_done = threading.Event()
+
+    def fake_solve_question(question, doubt_id="-", usage_acc=None, on_event=None):
+        n = question["n"]
+        if n == 1:
+            if on_event:
+                on_event("step", {"n": 1, "text": "q1 step"})
+            # Block until q2 has genuinely finished in the background, so its
+            # events are sitting in its queue — unread — once q1 ends.
+            assert q2_done.wait(timeout=5), "q2 never finished"
+        else:
+            if on_event:
+                on_event("step", {"n": 1, "text": "q2 step"})
+            q2_done.set()
+        return {"answer": f"a{n}", "option_labels": [], "steps": [{"n": 1, "text": "x"}],
+                "key_idea": None, "subject": None, "topic": None}
+
+    monkeypatch.setattr(snap, "solve_question", fake_solve_question)
+
+    events = [(kind, data.get("question_index"))
+              for kind, data in iter_snapped_questions(b"img", "image/jpeg", "d1", 2)]
+    print(f"  events: {events}")
+    assert ("step", 1) in events
+    assert ("step", 2) not in events, "q2's stale step was replayed instead of skipped"
 
 
 # --- max 2 questions, enforced server-side ----------------------------------
