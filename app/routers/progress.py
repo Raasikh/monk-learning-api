@@ -208,9 +208,11 @@ def get_progress(user_id: str = Depends(get_current_user_id)):
         oldest = min(flagged, key=lambda r: r.get("flagged_at") or "9999")
         c_meta = next((c for c in concepts if c["id"] == oldest["concept_id"]), None)
         if c_meta:
+            # persona-neutral: the tutor's display name (Drona/Veda) follows the
+            # client's voice preference, which only the frontend knows.
             recs.append({
                 "role": "clear_flag",
-                "title": f"Refresh {c_meta['name']} with Drona",
+                "title": f"Refresh {c_meta['name']}",
                 "concept_id": c_meta["id"],
                 "reason": "Oldest revision flag — clearing it lifts your score cap.",
             })
