@@ -136,6 +136,9 @@ app.include_router(notes_router)
 from app.routers.doubts import router as doubts_router
 app.include_router(doubts_router)
 
+from app.routers.progress import router as progress_router
+app.include_router(progress_router)
+
 
 
 import os
