@@ -9,6 +9,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase
 from app.drona.tutor import process_tutor_turn_stream
+from app.drona.practice_explain import process_practice_explain_turn_stream
 from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
 from app.drona.persona import normalize_language, persona_for
 
@@ -82,6 +83,15 @@ class LiveSessionState:
 # is ordered. The newest connection wins; the previous one is retired.
 ACTIVE_SESSION_CONNECTIONS: Dict[str, Dict[str, Any]] = {}
 
+# How long ptt_stop waits for the live stream's closing transcript before
+# giving up and paying for the REST call. Sized to cover Saaras finalizing the
+# tail of an utterance, not to cover transcribing one from scratch.
+STREAM_STT_GRACE_S = 0.7
+
+# Consecutive holds the live stream may fail to transcribe before the session
+# stops waiting on it altogether and goes straight to REST.
+STREAM_STT_MAX_MISSES = 2
+
 
 @router.websocket("/session/{session_id}/live")
 async def drona_live_session_ws(websocket: WebSocket, session_id: str):
@@ -100,6 +110,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
     session_data = res_s.data[0]
     user_id = session_data['user_id']
+    session_mode = session_data.get('mode')
 
     # Retire any previous connection for this session BEFORE this one starts
     # teaching, so only one stream of audio is ever in flight. Its turn is
@@ -168,6 +179,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
     # Queue for incoming client binary PCM audio frames
     pcm_queue: asyncio.Queue[bytes] = asyncio.Queue()
+
+    # What the live Saaras stream has transcribed for the hold in progress.
+    # The stream runs while the student is still speaking, so by the time they
+    # release the mic the transcript is usually already here and the REST call
+    # — a full upload-and-wait after release — can be skipped entirely.
+    stt_stream: Dict[str, object] = {"raw": "", "norm": "", "final": asyncio.Event(), "misses": 0}
 
     ws_send_lock = asyncio.Lock()
 
@@ -365,10 +382,18 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             return
             yield  # pragma: no cover — makes this an async generator
 
-        turn_stream = (
-            _no_stream() if turn_type == "resume"
-            else process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type)
-        )
+        if turn_type == "resume":
+            turn_stream = _no_stream()
+        elif session_mode == "practice_explain":
+            # process_practice_explain_turn_stream takes the session row
+            # directly rather than re-querying it (practice_explain.py:29) —
+            # state.current_phase is this connection's up-to-date view of it,
+            # kept in sync by the "state" event handler below on every turn.
+            turn_stream = process_practice_explain_turn_stream(
+                {**session_data, "phase": state.current_phase}, user_id, utterance_text, turn_type
+            )
+        else:
+            turn_stream = process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type)
 
         async for sse_chunk in turn_stream:
             lines = sse_chunk.strip().split("\n")
@@ -615,6 +640,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         # the first armed the checkpoint countdown against a queue missing the
         # resumed audio, and only got superseded if the second happened to
         # arrive before it elapsed.
+        #
+        # The countdown is released here and nowhere earlier: it measures a
+        # student who heard the question and said nothing back, so it may only
+        # start once the tutor has stopped talking — never while they were
+        # still answering the previous one.
+        await safe_send_json({"type": "state", "no_response_timer_paused": False})
         await safe_send_json({"type": "turn_complete"})
 
         # Emit updated state frame & auto-advance if next segment is in teaching phase
@@ -655,22 +686,25 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
     # W2 Fix: Callback for Saaras STT transcript streaming
     def handle_stt_transcript(raw_t: str, norm_t: str, is_final: bool, confidence: float):
+        """Live transcripts arriving while the student holds the mic.
+
+        Deliberately never launches a turn. Audio only reaches this stream
+        during a hold, and ptt_stop is what decides the hold produced an
+        answer — launching here too would run the turn twice on one answer.
+        """
         if not norm_t.strip():
             return
 
         if not is_final:
-            asyncio.create_task(websocket.send_json({
+            asyncio.create_task(safe_send_json({
                 "type": "transcript_partial",
                 "transcript": norm_t
             }))
-        else:
-            asyncio.create_task(websocket.send_json({
-                "type": "transcript_final",
-                "transcript": norm_t,
-                "confidence": confidence
-            }))
-            # Automatically fire turn pipeline on final STT transcript
-            launch_background_turn(utterance_text=norm_t, turn_type="answer")
+            return
+
+        stt_stream["raw"] = f"{stt_stream['raw']} {raw_t}".strip()
+        stt_stream["norm"] = f"{stt_stream['norm']} {norm_t}".strip()
+        stt_stream["final"].set()
 
     # W2 Fix: Audio stream generator feeding SaarasSTTProxy
     async def audio_stream_generator():
@@ -754,6 +788,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     "type": "error",
                     "message": "That took too long on our side — tap the mic or an option to continue.",
                 })
+                await safe_send_json({"type": "state", "no_response_timer_paused": False})
                 await safe_send_json({"type": "turn_complete"})
                 try:
                     await tts_proxy.abandon()
@@ -770,6 +805,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     "type": "error",
                     "message": "Something went wrong on our side — tap the mic or an option to continue.",
                 })
+                await safe_send_json({"type": "state", "no_response_timer_paused": False})
                 await safe_send_json({"type": "turn_complete"})
                 try:
                     await tts_proxy.abandon()
@@ -864,6 +900,34 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         logger.info(f"↩️ [RESUME REQUESTED] reason={reason} for session {session_id[:8]}")
         launch_background_turn(utterance_text="", turn_type="resume")
 
+    async def streamed_transcript() -> str:
+        """The transcript the live stream produced for the hold that just ended.
+
+        Returns "" when the stream is dead or silent, and the caller falls back
+        to the REST call. The short wait is only ever paid on a connected
+        stream that is still producing transcripts: a socket that opens but
+        never returns a final would otherwise add STREAM_STT_GRACE_S to every
+        single answer, which is the opposite of the point.
+        """
+        if not stt_proxy.is_connected or int(stt_stream["misses"]) >= STREAM_STT_MAX_MISSES:
+            return ""
+        if not stt_stream["final"].is_set():
+            try:
+                await asyncio.wait_for(stt_stream["final"].wait(), timeout=STREAM_STT_GRACE_S)
+            except asyncio.TimeoutError:
+                pass
+        transcript = str(stt_stream["norm"]).strip()
+        if transcript:
+            stt_stream["misses"] = 0
+        else:
+            stt_stream["misses"] = int(stt_stream["misses"]) + 1
+            if int(stt_stream["misses"]) == STREAM_STT_MAX_MISSES:
+                logger.warning(
+                    f"[SARVAM STT STREAM GIVING UP] Session {session_id[:8]}: stream connected but "
+                    f"returned nothing {STREAM_STT_MAX_MISSES}x — REST only from here."
+                )
+        return transcript
+
     # Expose the abort to whichever connection replaces this one.
     conn_record["abort"] = abort_active_turn
 
@@ -891,6 +955,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
 
                 if is_ptt_active:
                     ptt_pcm_chunks.append(pcm_bytes)
+                    # Also hand it to the live stream so transcription happens
+                    # WHILE the student speaks. Kept as a buffer too: the REST
+                    # fallback needs the whole recording if the stream fails.
+                    pcm_queue.put_nowait(pcm_bytes)
                     total_bytes = sum(len(x) for x in ptt_pcm_chunks)
                     logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{len(ptt_pcm_chunks)}: {len(pcm_bytes)} bytes (Total: {total_bytes} bytes)")
                 continue
@@ -910,8 +978,15 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 elif control_type == "ptt_start":
                     is_ptt_active = True
                     ptt_pcm_chunks = []
+                    stt_stream["raw"] = ""
+                    stt_stream["norm"] = ""
+                    stt_stream["final"].clear()
                     # Student took the floor — the teacher stops mid-thought.
                     await abort_active_turn("barge_in_mic")
+                    # The countdown is for a student who said nothing. This one
+                    # is mid-sentence, and the clock must not run out on them
+                    # while they speak, while STT resolves, or while we grade.
+                    await safe_send_json({"type": "state", "no_response_timer_paused": True})
                     logger.info("[SARVAM STT PTT START] Microphone active. Buffering PCM audio frames...")
 
                 elif control_type == "ptt_stop":
@@ -931,11 +1006,16 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                         # A mis-tap still aborted the turn. Without this the
                         # parked explanation had nothing coming to replay it and
                         # the lesson stopped dead on a silent board.
+                        await safe_send_json({"type": "state", "no_response_timer_paused": False})
                         resume_parked_lesson("ptt_too_short")
                     else:
-                        raw_t, norm_t = await stt_proxy.transcribe_audio_rest(full_pcm)
+                        norm_t = await streamed_transcript()
+                        if norm_t:
+                            logger.info(f"⚡ [SARVAM STT STREAMED] Transcript ready at release, REST call skipped: '{norm_t}'")
+                        else:
+                            _, norm_t = await stt_proxy.transcribe_audio_rest(full_pcm)
                         if norm_t.strip():
-                            logger.info(f"🎯 [SARVAM STT TRANSCRIPT] raw='{raw_t}', norm='{norm_t}'")
+                            logger.info(f"🎯 [SARVAM STT TRANSCRIPT] norm='{norm_t}'")
                             await websocket.send_json({
                                 "type": "transcript_final",
                                 "transcript": norm_t
@@ -947,6 +1027,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 "type": "error",
                                 "message": "Couldn't catch that — try holding the mic a little longer, or type your answer instead."
                             })
+                            await safe_send_json({"type": "state", "no_response_timer_paused": False})
                             resume_parked_lesson("stt_empty")
 
                 elif control_type == "mute":
@@ -983,6 +1064,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                         # A typed message mid-explanation is a hand raised in
                         # class: stop teaching, read it, respond.
                         await abort_active_turn("barge_in_text")
+                        await safe_send_json({"type": "state", "no_response_timer_paused": True})
                         launch_background_turn(utterance_text=utterance_text, turn_type="answer")
 
     except WebSocketDisconnect as disconnect_err:

@@ -2,11 +2,11 @@ import json
 import random
 from typing import List, Optional, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from app.auth import get_current_user_id
 from app.db import supabase
+from app.drona.persona import normalize_language, normalize_voice, tutor_name
 
 router = APIRouter(prefix="/practice", tags=["practice"])
 
@@ -29,6 +29,8 @@ class PracticeExplainRequest(BaseModel):
     question_id: str
     chosen_option: Optional[str] = None
     chosen_value: Optional[float] = None
+    language: Optional[str] = None
+    voice: Optional[str] = None
 
 
 # --- Helper Functions ---
@@ -409,12 +411,75 @@ def explain_drona(
     user_id: str = Depends(get_current_user_id)
 ):
     """
-    Placeholder endpoint for Drona AI explanations.
+    Creates a practice_explain Drona session seeded with this question's full
+    context (stem, options, the student's answer, the correct answer, the
+    solution). The live tutor turn itself is generated over the WebSocket
+    (POST /drona/session/{id}/live), not here — this endpoint only creates
+    the session row and returns the session_id the frontend needs to open it.
     """
-    return JSONResponse(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        content={
-            "status": "not_implemented",
-            "message": "Drona explanations coming soon"
-        }
+    q_res = (
+        supabase.table("questions")
+        .select("id, question_text, question_type, options, correct_option, correct_value, value_tolerance, solution, chapter_id")
+        .eq("id", req.question_id)
+        .limit(1)
+        .execute()
     )
+    if not q_res.data:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Question with ID '{req.question_id}' not found."
+        )
+
+    q = q_res.data[0]
+    q_type = q.get("question_type")
+    correct_option = q.get("correct_option")
+    correct_value = q.get("correct_value")
+
+    # Re-derive correctness with the same rule /practice/answer grades with,
+    # rather than trusting the client — also makes this endpoint work even if
+    # /practice/answer was never called for this question_id.
+    is_correct = False
+    if q_type == "numerical" and correct_value is not None and req.chosen_value is not None:
+        is_correct = grade_numerical(req.chosen_value, correct_value, q.get("value_tolerance"))
+    elif req.chosen_option and correct_option:
+        is_correct = req.chosen_option.strip().lower() == correct_option.strip().lower()
+
+    language = normalize_language(req.language)
+    voice = normalize_voice(req.voice)
+
+    practice_seed = {
+        "question_text": q.get("question_text"),
+        "question_type": q_type,
+        "options": q.get("options"),
+        "chosen_option": req.chosen_option,
+        "chosen_value": req.chosen_value,
+        "correct_option": correct_option,
+        "correct_value": correct_value,
+        "solution": q.get("solution"),
+        "is_correct": is_correct,
+    }
+
+    session_row = {
+        "user_id": user_id,
+        "mode": "practice_explain",
+        "question_id": req.question_id,
+        "chapter_id": q.get("chapter_id"),
+        "practice_seed": practice_seed,
+        "language": language,
+        "tutor_voice": voice,
+        "phase": "teaching",  # WS auto-fires turn 1 on connect when phase == "teaching"
+        "prompt_version": "practice_explain_v1",
+    }
+
+    sess_res = supabase.table("drona_sessions").insert([session_row]).execute()
+    if not sess_res.data:
+        raise HTTPException(status_code=500, detail="Failed to create practice-explain session")
+
+    session_id = sess_res.data[0]["id"]
+    return {
+        "session_id": session_id,
+        "phase": "teaching",
+        "language": language,
+        "tutor_voice": voice,
+        "tutor_name": tutor_name(voice),
+    }
