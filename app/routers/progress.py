@@ -71,13 +71,19 @@ def concept_state(mastery: float, flagged: bool, attempts: int, cfg: Dict[str, A
 
 
 @router.get("")
-def get_progress(user_id: str = Depends(get_current_user_id)):
+def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str] = None):
     cfg = get_active_config()
 
-    # target exam decides subject set and weights
-    settings_rows = supabase.table("user_settings").select("target_exam").eq("user_id", user_id).limit(1).execute().data
-    target_exam = (settings_rows[0]["target_exam"] if settings_rows else "jee")
-    exam = "jee" if target_exam not in ("jee", "neet") else target_exam
+    # The exam is an ENTITLEMENT, not a preference: it's what the student paid
+    # for, written to profiles.target_exam at onboarding/purchase ('JEE',
+    # 'NEET', or 'both'). Progress always scores against the entitled exam.
+    # The ?exam= param only selects a view for 'both'-entitled students.
+    prof = supabase.table("profiles").select("target_exam").eq("id", user_id).limit(1).execute().data
+    raw = str((prof[0].get("target_exam") if prof else "") or "").strip().lower()
+    entitlement = "both" if "both" in raw else ("neet" if "neet" in raw else "jee")
+    allowed = ("jee", "neet") if entitlement == "both" else (entitlement,)
+    requested = str(exam or "").strip().lower()
+    exam = requested if requested in allowed else allowed[0]
     subjects = SUBJECTS_BY_EXAM[exam]
     subject_marks = cfg.get("subject_marks", {}).get(exam, {s: 1 for s in subjects})
 
@@ -225,6 +231,7 @@ def get_progress(user_id: str = Depends(get_current_user_id)):
 
     return {
         "exam": exam,
+        "entitlement": entitlement,
         "monk_score": {
             "display": round(ms_display),
             "raw": round(ms_raw, 1),
