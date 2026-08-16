@@ -33,6 +33,7 @@ import os
 import re
 import sqlite3
 import sys
+import time
 
 import requests
 from dotenv import load_dotenv
@@ -43,6 +44,7 @@ load_dotenv(os.path.join(REPO, '.env'))
 load_dotenv('/Users/raasikhnaveed/Desktop/dronav1project/.env')
 
 from app.drona.models import get_drona_async_client  # noqa: E402
+from app.drona.usage import record_call  # noqa: E402
 
 U = (os.getenv('SUPABASE_URL') or 'https://tgbknrmnjwiokraddurx.supabase.co').rstrip('/')
 K = (os.getenv('SUPABASE_SECRET_KEY') or '').strip('"\'')
@@ -173,25 +175,44 @@ solution's unless the solution is unambiguously wrong.
 Return ONLY JSON: {"verdict":"VALID"|"HANDWAVE"|"CONTRADICTS","why":"<= 20 words"}"""
 
 
-async def ask(client, system, user, model=None):
-    """One JSON call with the empty-object/truncation retry the audit needed."""
-    for no_think in (False, True):
+async def ask(client, system, user, model=None, service="gate", ref=None):
+    """One JSON call with the empty-object/truncation retry the audit needed.
+
+    Every attempt is recorded to `llm_calls` — including the ones whose result
+    was discarded (exceptions, empty JSON), which billed and were invisible
+    before. `ref` (the question id) lands in subtopic_key so spend is
+    attributable per row. Recording runs off the event loop and never raises.
+    """
+    mdl = model or MODEL
+    for attempt, no_think in enumerate((False, True), start=1):
         kw = {'extra_body': {"thinking": {"type": "disabled"}}} if no_think else {}
+        t0 = time.monotonic()
         try:
             r = await client.chat.completions.create(
-                model=model or MODEL,
+                model=mdl,
                 messages=[{"role": "system", "content": system},
                           {"role": "user", "content": user}],
                 response_format={"type": "json_object"},
                 temperature=0.0, max_tokens=3000, timeout=180.0, **kw)
-            try:
-                d = json.loads(r.choices[0].message.content or "")
-            except Exception:
-                d = {}
-            if d:
-                return d
         except Exception as e:
             last = str(e)[:100]
+            await asyncio.to_thread(
+                record_call, mdl, service, ok=False, attempt=attempt,
+                latency_ms=int((time.monotonic() - t0) * 1000),
+                subtopic_key=ref, error=str(e))
+            continue
+        try:
+            d = json.loads(r.choices[0].message.content or "")
+        except Exception:
+            d = {}
+        # ok=False here means "billed but the result was discarded" — the
+        # empty-object/truncation case this function's retry exists for.
+        await asyncio.to_thread(
+            record_call, mdl, service, ok=bool(d), attempt=attempt, res=r,
+            latency_ms=int((time.monotonic() - t0) * 1000),
+            subtopic_key=ref, error=None if d else "empty or unparseable JSON")
+        if d:
+            return d
     return {"error": locals().get('last', 'empty response')}
 
 
@@ -229,7 +250,8 @@ async def gate_one(client, sem, q, lock):
         key = q.get('correct_value') if is_num else (q.get('correct_option') or '').strip().upper()
 
         # 1. blind solve
-        b = await ask(client, BLIND_NUM if is_num else BLIND_MCQ, stem_block(q))
+        b = await ask(client, BLIND_NUM if is_num else BLIND_MCQ, stem_block(q),
+                      service="gate_blind", ref=q['id'])
         if is_num:
             blind_ok = b.get('status') == 'SOLVED' and values_match(b.get('value'), key, q.get('value_tolerance'))
             unread = b.get('status') == 'UNREADABLE'
@@ -242,7 +264,7 @@ async def gate_one(client, sem, q, lock):
             # while the printed key was confirmable by geometry. One retry on
             # the dispute tier before quarantining.
             b = await ask(client, BLIND_NUM if is_num else BLIND_MCQ, stem_block(q),
-                          model=MODEL_DISPUTE)
+                          model=MODEL_DISPUTE, service="gate_blind_dispute", ref=q['id'])
             if is_num:
                 blind_ok = b.get('status') == 'SOLVED' and values_match(b.get('value'), key, q.get('value_tolerance'))
                 unread = b.get('status') == 'UNREADABLE'
@@ -254,7 +276,8 @@ async def gate_one(client, sem, q, lock):
             return await _emit(rec, lock)
 
         # 2. adversarial defence
-        d = await ask(client, DEFEND, stem_block(q) + f"\n\nStored answer key: {key}")
+        d = await ask(client, DEFEND, stem_block(q) + f"\n\nStored answer key: {key}",
+                      service="gate_defend", ref=q['id'])
         defend_ok = d.get('verdict') == 'VALID'
 
         if defend_ok and not blind_ok:
@@ -268,7 +291,7 @@ async def gate_one(client, sem, q, lock):
             # audit_wrong_key, because "two passes disagree" is a triage state,
             # not a finding that the key is wrong.
             b2 = await ask(client, BLIND_NUM if is_num else BLIND_MCQ, stem_block(q),
-                           model=MODEL_DISPUTE)
+                           model=MODEL_DISPUTE, service="gate_blind_dispute", ref=q['id'])
             if is_num:
                 blind_ok = b2.get('status') == 'SOLVED' and values_match(b2.get('value'), key, q.get('value_tolerance'))
             else:
@@ -287,7 +310,8 @@ async def gate_one(client, sem, q, lock):
             return await _emit(rec, lock)
 
         # 3. honest solution
-        w = await ask(client, WRITE_SOL, stem_block(q) + f"\n\nVerified correct answer: {key}")
+        w = await ask(client, WRITE_SOL, stem_block(q) + f"\n\nVerified correct answer: {key}",
+                      service="gate_write_sol", ref=q['id'])
         steps = w.get('steps') or []
         # The writer names its destination however it likes: "B. Zygotene",
         # "0.044", "120 V", "3100 Å, option D". The old leading-letter regex
@@ -322,7 +346,8 @@ async def gate_one(client, sem, q, lock):
                         "why": w.get('problem') or f"writer reached {reaches or '?'}"})
             return await _emit(rec, lock)
         c = await ask(client, CHECK_SOL,
-                      stem_block(q) + f"\n\nStated answer: {key}\n\nProposed solution:\n" + "\n".join(steps))
+                      stem_block(q) + f"\n\nStated answer: {key}\n\nProposed solution:\n" + "\n".join(steps),
+                      service="gate_check_sol", ref=q['id'])
         if c.get('verdict') != 'VALID':
             rec.update({"stage": "solution", "pass": False, "reason": "audit_bad_solution",
                         "why": f"check={c.get('verdict')}: {c.get('why')}"})
@@ -431,20 +456,39 @@ def fetch_staging(db_path):
     return rows
 
 
-def apply_staging(db_path, passed, failed):
-    """Write verdicts back to staging. Never touches `questions`."""
+def apply_staging(db_path, passed, failed, dupes=None):
+    """Write verdicts back to staging. Never touches `questions`.
+
+    `dupes` maps staging id -> (questions_twin_id, twin_servable, jaccard) from
+    the twin check. A servable twin means the promote step must NOT insert this
+    row (gate_verdict='pass_duplicate'); a quarantined twin means insert as
+    normal but retire the old questions row (duplicate_of carries its id).
+    """
+    dupes = dupes or {}
     conn = sqlite3.connect(db_path)
     cols = {r[1] for r in conn.execute("pragma table_info(staging_questions)")}
     if "solution_text" not in cols:
         conn.execute("alter table staging_questions add column solution_text text")
     if "gate_verdict" not in cols:
         conn.execute("alter table staging_questions add column gate_verdict text")
+    if "duplicate_of" not in cols:
+        conn.execute("alter table staging_questions add column duplicate_of text")
     n_ok = n_bad = 0
     for r in passed:
+        hit = dupes.get(r["id"])
+        if hit and hit[1]:
+            conn.execute(
+                "update staging_questions set solution_text=?, "
+                "needs_manual='duplicate_of_servable', gate_verdict='pass_duplicate', "
+                "duplicate_of=? where id=?",
+                (json.dumps({"steps": r["steps"]}, ensure_ascii=False), hit[0], r["id"]))
+            n_ok += 1
+            continue
         conn.execute(
             "update staging_questions set solution_text=?, needs_manual=NULL, "
-            "gate_verdict='pass' where id=?",
-            (json.dumps({"steps": r["steps"]}, ensure_ascii=False), r["id"]))
+            "gate_verdict='pass', duplicate_of=? where id=?",
+            (json.dumps({"steps": r["steps"]}, ensure_ascii=False),
+             hit[0] if hit else None, r["id"]))
         n_ok += 1
     for r in failed:
         conn.execute(
@@ -454,6 +498,108 @@ def apply_staging(db_path, passed, failed):
     conn.commit()
     conn.close()
     return n_ok, n_bad
+
+
+# ---------------------------------------------------------------- dedupe ----
+# Re-extraction recovers quarantined questions as NEW rows, so without a twin
+# check at promotion time the bank accumulates duplicates: a re-extracted copy
+# of an already-servable question would double-serve, and the stale quarantined
+# original would sit in triage piles forever after its clean twin ships.
+#
+# Matching is token-set Jaccard over normalised stems with an inverted-index
+# block (rare tokens only) so a full-bank pass stays O(rows x candidates), not
+# O(rows^2). Numbers are load-bearing: "x+y+z=8" and "x+y+z=20" share almost
+# every word, so a high word overlap with DIFFERENT number sets is treated as a
+# different question unless the overlap is near-total (OCR noise can perturb a
+# digit, hence the escape hatch at 0.92 rather than a hard veto).
+
+STOPWORDS = frozenset(
+    "the a an of in on for is are be to and or with which following from by at "
+    "as its this that then will can what when correct incorrect option options "
+    "given find value statement statements respectively".split())
+
+TWIN_STRONG = 0.85   # Jaccard at/above which same-number stems are twins
+TWIN_WEAK = 0.70     # floor when the number sets also match exactly
+TWIN_NUM_MISMATCH = 0.92  # overlap needed to call twins DESPITE differing numbers
+
+
+def stem_tokens(text):
+    toks = re.findall(r"[a-z]+|\d+(?:\.\d+)?", (text or '').lower())
+    return frozenset(t for t in toks if t not in STOPWORDS and (len(t) > 1 or t.isdigit()))
+
+
+class TwinIndex:
+    """Token-blocked twin lookup over the live questions table."""
+
+    def __init__(self, rows):
+        self.meta = {}     # id -> (tokens, numbers, servable)
+        df = collections.Counter()
+        for q in rows:
+            toks = stem_tokens(q.get('question_text'))
+            nums = frozenset(t for t in toks if t[0].isdigit())
+            self.meta[q['id']] = (toks, nums, q.get('needs_manual') is None)
+            for t in toks:
+                df[t] += 1
+        # Block on discriminative tokens only; ubiquitous ones pull in everything.
+        self.inverted = collections.defaultdict(set)
+        for qid, (toks, _, _) in self.meta.items():
+            for t in toks:
+                if df[t] <= 50:
+                    self.inverted[t].add(qid)
+
+    def find_twin(self, text, exclude_id=None):
+        """Best (twin_id, servable, jaccard) above threshold, else None."""
+        toks = stem_tokens(text)
+        if len(toks) < 6:
+            return None            # too little signal to call anything a twin
+        nums = frozenset(t for t in toks if t[0].isdigit())
+        shared = collections.Counter()
+        for t in toks:
+            for qid in self.inverted.get(t, ()):
+                shared[qid] += 1
+        best = None
+        for qid, n_shared in shared.most_common(30):
+            if qid == exclude_id or n_shared < 2:
+                continue
+            o_toks, o_nums, servable = self.meta[qid]
+            union = len(toks | o_toks)
+            j = len(toks & o_toks) / union if union else 0.0
+            if nums == o_nums:
+                threshold = TWIN_WEAK if len(toks) >= 10 else TWIN_STRONG
+            else:
+                threshold = TWIN_NUM_MISMATCH
+            if j >= threshold and (best is None or j > best[2]):
+                best = (qid, servable, round(j, 3))
+        return best
+
+
+def build_twin_index():
+    return TwinIndex(fetch(None, None))
+
+
+def dedupe_report():
+    """Read-only scan of the whole bank for twin pairs."""
+    rows = fetch(None, None)
+    idx = TwinIndex(rows)
+    pairs, seen = [], set()
+    for q in rows:
+        hit = idx.find_twin(q.get('question_text'), exclude_id=q['id'])
+        if not hit:
+            continue
+        a, b = sorted((q['id'], hit[0]))
+        if (a, b) in seen:
+            continue
+        seen.add((a, b))
+        me_servable = q.get('needs_manual') is None
+        kind = ('servable+servable' if me_servable and hit[1]
+                else 'servable+quarantined' if me_servable or hit[1]
+                else 'quarantined+quarantined')
+        pairs.append((kind, hit[2], a, b))
+    counts = collections.Counter(k for k, *_ in pairs)
+    print(f"twin pairs found: {len(pairs)}  {dict(counts)}")
+    for kind, j, a, b in sorted(pairs, key=lambda p: -p[1])[:15]:
+        print(f"  {kind:24s} J={j}  {a[:8]} ~ {b[:8]}")
+    return pairs
 
 
 def already_done():
@@ -482,7 +628,14 @@ async def main():
                                       'default journal interleave rows and contaminate any '
                                       'aggregate computed over the raw file — give each run '
                                       'its own journal.')
+    ap.add_argument('--no-dedupe', action='store_true',
+                    help='skip the twin check at promotion (not recommended)')
+    ap.add_argument('--dedupe-report', action='store_true',
+                    help='read-only: scan the whole questions table for twin pairs and exit')
     args = ap.parse_args()
+    if args.dedupe_report:
+        dedupe_report()
+        return
     if not args.where and not args.ids and not args.staging:
         ap.error('need --where, --ids, or --staging')
 
@@ -530,14 +683,45 @@ async def main():
         print("\nDRY RUN — nothing written. Re-run with --apply.")
         return
 
+    # Twin check at promotion time. Skipped only with --no-dedupe: a promotion
+    # that double-serves an existing question is a defect even when the row
+    # itself is flawless.
+    twin_idx = None if args.no_dedupe else build_twin_index()
+    row_text = {q['id']: q.get('question_text') for q in rows}
+
     if args.staging:
-        n_ok, n_bad = apply_staging(args.staging, passed, failed)
+        dupes = {}
+        if twin_idx:
+            for r in passed:
+                hit = twin_idx.find_twin(row_text.get(r['id']))
+                if hit:
+                    dupes[r['id']] = hit
+        n_ok, n_bad = apply_staging(args.staging, passed, failed, dupes)
+        n_dup = sum(1 for h in dupes.values() if h[1])
         print(f"APPLIED to staging: {n_ok} passed (solution stored, needs_manual cleared); "
-              f"{n_bad} tagged needs_manual. `questions` untouched.")
+              f"{n_bad} tagged needs_manual; {n_dup} held as duplicate_of_servable; "
+              f"{len(dupes) - n_dup} marked supersedes_quarantined. `questions` untouched.")
         return
 
-    n_ok = n_bad = 0
+    n_ok = n_bad = n_dup = n_super = 0
     for r in passed:
+        if twin_idx:
+            hit = twin_idx.find_twin(row_text.get(r['id']), exclude_id=r['id'])
+            if hit and hit[1]:
+                # A servable twin already covers this question — promoting would
+                # double-serve it. Park this copy instead.
+                resp = requests.patch(U + '/rest/v1/questions', headers=HW,
+                                      params={'id': f"eq.{r['id']}"},
+                                      data=json.dumps({"needs_manual": "duplicate_of_servable"}))
+                n_dup += resp.status_code in (200, 204)
+                continue
+            if hit and not hit[1]:
+                # This row supersedes a stale quarantined copy of the same
+                # question — retire the old one so it leaves the triage piles.
+                resp = requests.patch(U + '/rest/v1/questions', headers=HW,
+                                      params={'id': f"eq.{hit[0]}"},
+                                      data=json.dumps({"needs_manual": "superseded_by_reextraction"}))
+                n_super += resp.status_code in (200, 204)
         resp = requests.patch(U + '/rest/v1/questions', headers=HW, params={'id': f"eq.{r['id']}"},
                               data=json.dumps({"solution": {"steps": r['steps']}, "needs_manual": None}))
         n_ok += resp.status_code in (200, 204)
@@ -550,7 +734,8 @@ async def main():
                                   params={'id': 'in.(' + ','.join(idlist[i:i+100]) + ')'},
                                   data=json.dumps({"needs_manual": reason}))
             n_bad += (resp.status_code in (200, 204)) * len(idlist[i:i+100])
-    print(f"APPLIED: {n_ok} rows passed and serving with verified solutions; {n_bad} rows tagged needs_manual")
+    print(f"APPLIED: {n_ok} rows passed and serving with verified solutions; {n_bad} rows tagged needs_manual; "
+          f"{n_dup} held as duplicate_of_servable; {n_super} stale twins retired as superseded_by_reextraction")
 
 
 if __name__ == '__main__':
