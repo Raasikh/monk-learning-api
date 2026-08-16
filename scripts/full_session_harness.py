@@ -107,6 +107,35 @@ class FullSessionHarness:
             "retry_cap_exceeded": 0
         }
 
+    def _cleanup_synthetic_fixture(self, sp_url: str, sp_headers: dict):
+        """Deletes everything this run wrote to the real production DB.
+
+        Every prior run of this harness left its synthetic subtopic_index row
+        (and the lesson_plans/drona_sessions it produced) behind forever —
+        those rows have no separate test/staging home, they were written
+        straight into the same tables Learn with Drona reads for its real
+        subtopic picker. 104 of them had accumulated across 4 chapters and
+        were showing up as pickable "subtopics" with names like
+        "Torque and Angular Momentum RW-909755". Called from `finally`, so it
+        runs even when the driven session itself errors or times out.
+        """
+        try:
+            if self.session_id:
+                # drona_turns/student_misconceptions/wellbeing_flags cascade
+                # off drona_sessions (migrations/0005_drona.sql), so this alone
+                # clears the turn history this run produced.
+                requests.delete(f"{sp_url}/rest/v1/drona_sessions?id=eq.{self.session_id}", headers=sp_headers)
+            if self.subtopic_key:
+                requests.delete(
+                    f"{sp_url}/rest/v1/lesson_plans?subtopic_key=eq.{self.subtopic_key}", headers=sp_headers
+                )
+                requests.delete(
+                    f"{sp_url}/rest/v1/subtopic_index?subtopic_key=eq.{self.subtopic_key}", headers=sp_headers
+                )
+            print(f"  🧹 Cleaned up synthetic fixture (subtopic_key='{self.subtopic_key}')", flush=True)
+        except Exception as cleanup_err:
+            print(f"  ⚠️ Fixture cleanup failed — manual cleanup needed for subtopic_key='{self.subtopic_key}': {cleanup_err}", flush=True)
+
     async def run(self):
         subj = self.spec["subject"]
         chap_id = self.spec["chapter_id"]
@@ -117,17 +146,23 @@ class FullSessionHarness:
         print(f"=================================================================", flush=True)
 
         # Force fresh cache-miss subtopic key
-        nonce = int(time.time() * 1000) % 1000000
-        self.subtopic_key = f"{self.spec['base_subtopic'].lower().replace(' ', '-')}-rw-{nonce}"
-        
+        self.nonce = int(time.time() * 1000) % 1000000
+        self.subtopic_key = f"{self.spec['base_subtopic'].lower().replace(' ', '-')}-rw-{self.nonce}"
+
         # 1. Register subtopic_index entry in Supabase REST
         sp_url = "https://tgbknrmnjwiokraddurx.supabase.co"
         sp_key = os.getenv("SUPABASE_SECRET_KEY", "")
         sp_headers = {"apikey": sp_key, "Authorization": f"Bearer {sp_key}", "Content-Type": "application/json"}
-        
+
+        try:
+            return await self._run_inner(subj, chap_id, variant_lbl, sp_url, sp_headers)
+        finally:
+            self._cleanup_synthetic_fixture(sp_url, sp_headers)
+
+    async def _run_inner(self, subj, chap_id, variant_lbl, sp_url, sp_headers):
         reg_res = requests.post(f"{sp_url}/rest/v1/subtopic_index", json={
             "chapter_id": chap_id,
-            "subtopic": f"{self.spec['base_subtopic']} RW-{nonce}",
+            "subtopic": f"{self.spec['base_subtopic']} RW-{self.nonce}",
             "subtopic_key": self.subtopic_key
         }, headers=sp_headers)
         print(f"  ✓ Subtopic Index Registered: unique_subtopic_key = '{self.subtopic_key}'", flush=True)

@@ -24,6 +24,32 @@ def get_jwk_client() -> PyJWKClient:
     return _jwk_client
 
 
+def decode_supabase_jwt(token: str) -> str:
+    """Verifies a Supabase access token and returns its user_id ('sub').
+
+    Shared by the REST dependency below and the WebSocket handshake in
+    live_session_ws.py — a WebSocket has no Authorization header to hang a
+    Depends() off, so it calls this directly on the token it pulls from
+    ?token= and translates the raised jwt exceptions into a close code
+    itself. Raises the same jwt.* exceptions get_current_user_id catches;
+    callers must handle jwt.ExpiredSignatureError / jwt.PyJWKClientError /
+    jwt.InvalidTokenError (or let them propagate, for REST).
+    """
+    jwk_client = get_jwk_client()
+    signing_key = jwk_client.get_signing_key_from_jwt(token)
+    payload = jwt.decode(
+        token,
+        signing_key.key,
+        algorithms=["ES256", "HS256", "RS256"],
+        options={"verify_aud": False}  # Supabase tokens carry aud='authenticated'
+    )
+
+    user_id: Optional[str] = payload.get("sub")
+    if not user_id:
+        raise jwt.InvalidTokenError("Token payload missing user_id ('sub')")
+    return user_id
+
+
 def get_current_user_id(
     credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)
 ) -> str:
@@ -34,28 +60,8 @@ def get_current_user_id(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    token = credentials.credentials
-
     try:
-        jwk_client = get_jwk_client()
-        signing_key = jwk_client.get_signing_key_from_jwt(token)
-        payload = jwt.decode(
-            token,
-            signing_key.key,
-            algorithms=["ES256", "HS256", "RS256"],
-            options={"verify_aud": False}  # Supabase tokens carry aud='authenticated'
-        )
-
-        user_id: Optional[str] = payload.get("sub")
-        if not user_id:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid token payload: missing user_id ('sub')",
-                headers={"WWW-Authenticate": "Bearer"},
-            )
-
-        return user_id
-
+        return decode_supabase_jwt(credentials.credentials)
     except jwt.ExpiredSignatureError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
