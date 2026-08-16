@@ -62,6 +62,13 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gate_results.jso
 # billed on the small disputed subset rather than the whole batch.
 MODEL = os.getenv("QUALITY_GATE_MODEL", "deepseek-v4-flash")
 MODEL_DISPUTE = os.getenv("QUALITY_GATE_MODEL_DISPUTE", MODEL)
+# llm_calls accounting needs the Supabase key. A --staging run on a machine
+# without it must not print one ERROR per model call trying to record; say so
+# once and skip recording instead.
+RECORD_CALLS = bool(K)
+if not RECORD_CALLS:
+    print("NOTE: llm_calls recording disabled - SUPABASE_SECRET_KEY is not set",
+          file=sys.stderr)
 CONCURRENCY = 12
 COLS = ('id,question_text,question_type,options,correct_option,correct_value,'
         'value_tolerance,solution,chapter_name,needs_manual,source')
@@ -581,6 +588,7 @@ def dedupe_report():
     """Read-only scan of the whole bank for twin pairs."""
     rows = fetch(None, None)
     idx = TwinIndex(rows)
+    by_id = {r['id']: r for r in rows}
     pairs, seen = [], set()
     for q in rows:
         hit = idx.find_twin(q.get('question_text'), exclude_id=q['id'])
@@ -591,14 +599,29 @@ def dedupe_report():
             continue
         seen.add((a, b))
         me_servable = q.get('needs_manual') is None
-        kind = ('servable+servable' if me_servable and hit[1]
-                else 'servable+quarantined' if me_servable or hit[1]
-                else 'quarantined+quarantined')
+        # A pair is RESOLVED when its quarantined side is parked precisely
+        # because of the twin relation — one copy serves, the other is retired.
+        RESOLVED_TAGS = ('duplicate_of_servable', 'superseded_by_reextraction')
+        other_tag = by_id[hit[0]].get('needs_manual')
+        my_tag = q.get('needs_manual')
+        if me_servable and hit[1]:
+            kind = 'UNRESOLVED servable+servable (double-serving!)'
+        elif me_servable or hit[1]:
+            tag = other_tag if me_servable else my_tag
+            kind = ('resolved (twin parked)' if tag in RESOLVED_TAGS
+                    else 'servable+quarantined (twin awaiting triage)')
+        else:
+            kind = 'quarantined+quarantined (informational)'
         pairs.append((kind, hit[2], a, b))
     counts = collections.Counter(k for k, *_ in pairs)
-    print(f"twin pairs found: {len(pairs)}  {dict(counts)}")
-    for kind, j, a, b in sorted(pairs, key=lambda p: -p[1])[:15]:
-        print(f"  {kind:24s} J={j}  {a[:8]} ~ {b[:8]}")
+    print(f"twin pairs found: {len(pairs)}")
+    for k, v in counts.most_common():
+        print(f"  {v:4d}  {k}")
+    unresolved = [p for p in pairs if p[0].startswith('UNRESOLVED')]
+    for kind, j, a, b in sorted(unresolved, key=lambda p: -p[1])[:15]:
+        print(f"    !! J={j}  {a[:8]} ~ {b[:8]}")
+    print("CLEAN: no question double-serves." if not unresolved
+          else f"ATTENTION: {len(unresolved)} double-serving pairs need cleanup.")
     return pairs
 
 
