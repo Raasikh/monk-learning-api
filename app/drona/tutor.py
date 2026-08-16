@@ -101,6 +101,10 @@ async def process_tutor_turn_stream(
     6. Emits sanitized SSE events (R3)
     """
 
+    # Defined first thing: used in a log line as early as the reteach check
+    # below, well before the "TURN START" log this originally lived next to.
+    stag = f"[s:{session_id[:8]}]"
+
     # 1. SELECT * FROM drona_sessions
     sess_res = supabase.table("drona_sessions").select("*").eq("id", session_id).eq("user_id", user_id).execute()
     if not sess_res.data:
@@ -525,7 +529,6 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         {"role": "user", "content": user_content}
     ]
 
-    stag = f"[s:{session_id[:8]}]"
     logger.info(f"{stag} TURN START   seg={curr_seg_idx}/{total_segments}  turn_in_seg={turn_within_segment}/3  phase={phase_in}")
 
     model_name = get_model_name("tutor")

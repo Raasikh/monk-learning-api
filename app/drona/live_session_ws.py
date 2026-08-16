@@ -5,9 +5,11 @@ import uuid
 import asyncio
 import base64
 import logging
+import jwt
 from typing import Any, Dict, List, Optional, Tuple
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase
+from app.auth import decode_supabase_jwt
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.practice_explain import process_practice_explain_turn_stream
 from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
@@ -111,6 +113,32 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     session_data = res_s.data[0]
     user_id = session_data['user_id']
     session_mode = session_data.get('mode')
+
+    # Every REST endpoint verifies a Supabase JWT (app/auth.py); this socket
+    # did not — anyone who obtained or guessed a session_id could join
+    # someone else's live class with no token at all. The mobile client
+    # already sends ?token=<access_token> in anticipation of this check.
+    ws_token = websocket.query_params.get("token")
+    if not ws_token:
+        await websocket.send_json({"type": "error", "message": "Missing authentication token."})
+        await websocket.close(code=4401)
+        return
+    try:
+        token_user_id = decode_supabase_jwt(ws_token)
+    except jwt.ExpiredSignatureError:
+        await websocket.send_json({"type": "error", "message": "Authentication token has expired."})
+        await websocket.close(code=4401)
+        return
+    except (jwt.PyJWKClientError, jwt.InvalidTokenError):
+        await websocket.send_json({"type": "error", "message": "Invalid authentication token."})
+        await websocket.close(code=4401)
+        return
+    # A token proves identity, not ownership of THIS session — without this
+    # check any signed-in student could still join anyone else's session.
+    if token_user_id != user_id:
+        await websocket.send_json({"type": "error", "message": "Not authorized for this session."})
+        await websocket.close(code=4403)
+        return
 
     # Retire any previous connection for this session BEFORE this one starts
     # teaching, so only one stream of audio is ever in flight. Its turn is
