@@ -7,6 +7,13 @@ from app.db import supabase
 from app.drona.models import get_drona_client, get_model_name, PLANNER_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt, get_prompt_version
 from app.drona.retrieval import retrieve_dual_blocks
+from app.drona.usage import record_call
+
+# Hard ceiling on segments authored for one plan. validate_plan_json accepts
+# 6-9, so anything above this is a malformed outline rather than a long lesson,
+# and authoring against it bills one call per phantom segment in a detached
+# thread. Set above the validator's max so a legitimate plan is never refused.
+MAX_SEGMENTS_PER_PLAN = 12
 
 logger = logging.getLogger("drona.planner")
 
@@ -311,23 +318,34 @@ def _plan_is_complete(plan_json: Dict[str, Any]) -> bool:
 def _author_outline(chap_data: Dict[str, Any], sub_title: str, subtopic_key: str,
                     structure_block: str, depth_block: str) -> Dict[str, Any]:
     client = get_drona_client()
-    res = client.chat.completions.create(
-        model=get_model_name("planner"),
-        messages=[
-            {"role": "system", "content": load_prompt("planner_outline.md")},
-            {"role": "user", "content": (
-                f"Chapter: {chap_data['name']} ({chap_data.get('subject')})\n"
-                f"Subtopic: {sub_title} (Key: {subtopic_key})\n\n"
-                f"{structure_block}\n\n{depth_block}\n\n"
-                "Produce the outline JSON."
-            )},
-        ],
-        response_format={"type": "json_object"},
-        temperature=0.0,
-        max_tokens=4096,
-        timeout=PLANNER_TIMEOUT_S,
-        extra_body={"thinking": {"type": "disabled"}},
-    )
+    model_name = get_model_name("planner")
+    t0 = time.time()
+    try:
+        res = client.chat.completions.create(
+            model=model_name,
+            messages=[
+                {"role": "system", "content": load_prompt("planner_outline.md")},
+                {"role": "user", "content": (
+                    f"Chapter: {chap_data['name']} ({chap_data.get('subject')})\n"
+                    f"Subtopic: {sub_title} (Key: {subtopic_key})\n\n"
+                    f"{structure_block}\n\n{depth_block}\n\n"
+                    "Produce the outline JSON."
+                )},
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=4096,
+            timeout=PLANNER_TIMEOUT_S,
+            extra_body={"thinking": {"type": "disabled"}},
+        )
+    except Exception as exc:
+        record_call(model_name, "outline", ok=False,
+                    latency_ms=int((time.time() - t0) * 1000),
+                    chapter_id=chap_data.get("id"), subtopic_key=subtopic_key, error=str(exc))
+        raise
+    record_call(model_name, "outline", ok=True, res=res,
+                latency_ms=int((time.time() - t0) * 1000),
+                chapter_id=chap_data.get("id"), subtopic_key=subtopic_key)
     outline = sanitize_double_escaped_latex(json.loads(strip_fences(res.choices[0].message.content or "{}")))
     segs = outline.get("segments") or []
     if not (6 <= len(segs) <= 9):
@@ -359,16 +377,29 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
         )},
     ]
     last_err = None
+    model_name = get_model_name("segment")
     for attempt in (1, 2):
-        res = client.chat.completions.create(
-            model=get_model_name("planner"),
-            messages=messages,
-            response_format={"type": "json_object"},
-            temperature=0.0,
-            max_tokens=4096,
-            timeout=PLANNER_TIMEOUT_S,
-            extra_body={"thinking": {"type": "disabled"}},
-        )
+        t0 = time.time()
+        try:
+            res = client.chat.completions.create(
+                model=model_name,
+                messages=messages,
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                max_tokens=4096,
+                timeout=PLANNER_TIMEOUT_S,
+                extra_body={"thinking": {"type": "disabled"}},
+            )
+        except Exception as exc:
+            # Recorded even though nothing usable came back: a call that threw
+            # after the provider began work is still billed, and calls exactly
+            # like this one were the invisible spend of 2026-08-15.
+            record_call(model_name, "segment", ok=False, attempt=attempt,
+                        latency_ms=int((time.time() - t0) * 1000),
+                        subtopic_key=sub_title, error=str(exc))
+            raise
+        record_call(model_name, "segment", ok=True, attempt=attempt, res=res,
+                    latency_ms=int((time.time() - t0) * 1000), subtopic_key=sub_title)
         raw = res.choices[0].message.content or ""
         try:
             seg = sanitize_double_escaped_latex(json.loads(strip_fences(raw)))
@@ -397,9 +428,29 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
                              outline: Dict[str, Any], first_segment: Dict[str, Any],
                              depth_block: str) -> None:
     """Authors segments 2..N in parallel and writes the completed plan. Runs in a
-    background thread while the student is being taught segment 1."""
+    background thread while the student is being taught segment 1.
+
+    This runs DETACHED: nothing awaits it and the HTTP response has already been
+    returned, so every call it makes is spent before anything is persisted. On
+    2026-08-15 that property made a day of planner spend untraceable. Two guards
+    follow from it - a hard ceiling on how many segments may be authored, and a
+    record written for the fan-out whatever the outcome.
+    """
     from concurrent.futures import ThreadPoolExecutor
     total = len(outline["segments"])
+
+    # An outline is validated at 6-9 segments before it reaches here, so a
+    # larger `total` means the outline itself is malformed. Authoring against it
+    # would bill one Pro-or-Flash call per phantom segment, in a thread nobody
+    # is watching. Refuse instead: the plan stays partial and regenerates.
+    if total > MAX_SEGMENTS_PER_PLAN:
+        logger.error(
+            f"❌ [PLAN FAN-OUT REFUSED] plan={plan_id[:8]} outline claims {total} segments, "
+            f"ceiling is {MAX_SEGMENTS_PER_PLAN}. Authoring nothing rather than billing "
+            f"{total - 1} calls against a malformed outline."
+        )
+        return
+
     try:
         with ThreadPoolExecutor(max_workers=4) as ex:
             rest = list(ex.map(

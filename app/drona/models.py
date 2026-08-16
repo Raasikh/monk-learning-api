@@ -6,6 +6,24 @@ MODEL_PLANNER = "deepseek-v4-pro"
 MODEL_SCOPING = "deepseek-v4-flash"
 MODEL_TUTOR = "deepseek-v4-flash"
 
+# Segment authoring, split out from the planner 2026-08-15.
+#
+# The outline is one call and genuinely wants the stronger model: it decides how
+# a subtopic is broken into segments, and everything downstream inherits that
+# judgement. Segment authoring is the other 6-9 calls per plan, and it does not
+# make that judgement - it fills in a structure the outline already fixed, from
+# a stub naming the title, objective and teaching notes, into a hard-specified
+# output shape (9-12 board items; checkpoint with question, model_answer,
+# rubric). Those calls are ~85-90% of plan-authoring spend.
+#
+# Reversible in one environment variable, with no deploy:
+#     DEEPSEEK_SEGMENT_MODEL=deepseek-v4-pro
+#
+# and measurable against the 115 plans already authored on Pro. _author_segment
+# validates every segment and retries on failure, so a weaker model surfaces as
+# retries in llm_calls rather than as quietly worse lessons.
+MODEL_SEGMENT = "deepseek-v4-flash"
+
 # Per-call timeout budgets, in seconds.
 #
 # The `openai` package is the HTTP client for DeepSeek as well as for OpenAI
@@ -66,6 +84,8 @@ def get_model_name(service: str) -> str:
     # Allow environment override if specific provider requires alias mapping
     if service == "planner":
         return os.getenv("DEEPSEEK_PLANNER_MODEL", MODEL_PLANNER)
+    elif service == "segment":
+        return os.getenv("DEEPSEEK_SEGMENT_MODEL", MODEL_SEGMENT)
     elif service in ("scoping", "tutor"):
         return os.getenv("DEEPSEEK_FLASH_MODEL", MODEL_SCOPING)
     return MODEL_TUTOR
