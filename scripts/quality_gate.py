@@ -73,15 +73,42 @@ def lint(q):
     """Structural reject-at-sight. Returns a reason string or None."""
     text = (q.get('question_text') or '').strip()
     if len(text) < 20:
-        return 'stem_too_short'
+        # Completion stems are legitimately tiny - "Sponges exhibit",
+        # "Notochord is" - and answerable when four real options follow.
+        # Verified: 3 of 4 stem_too_short failures were exactly this. Short
+        # only rejects when the options cannot carry the question either.
+        opts = q.get('options') or {}
+        real = [v for v in opts.values() if str(v or '').strip()]
+        if len(real) < 4:
+            return 'stem_too_short'
     if re.search(r"\(\s*\)\s*\d", text) or re.search(r"[,\s]\+\s*\+\s*=", text):
         return 'broken_extraction'
-    singles = re.findall(r"(?<![\w])[a-zA-Z](?![\w])", text)
-    if len(singles) >= 8 and len(text) < 400:
+    # Scramble singles - counted on MATH-STRIPPED text only. Adversarially
+    # verified triage of the 2026-08-15 sample: this check produced 55 false
+    # positives and 0 true ones, because the "isolated single letters" were
+    # $..$ math variables, \mathbf letter-spacing (A g I), electron configs,
+    # unit vectors, list labels and the article "a" - two rows crossed the
+    # threshold on articles alone. Real scramble shows marooned letters in
+    # PROSE, so math spans are removed first, the article/list letters a/A/I
+    # are ignored, and at least 5 DISTINCT letters are required (scramble is
+    # diverse; repeated unit letters are not).
+    nomath = re.sub(r"\$\$.*?\$\$|\$[^$]*\$", " ", text, flags=re.S)
+    singles = [s for s in re.findall(r"(?<![\w\\])[a-zA-Z](?![\w])", nomath)
+               if s not in ('a', 'A', 'I')]
+    if len(singles) >= 8 and len(set(s.lower() for s in singles)) >= 5 and len(nomath) < 400:
         return 'broken_extraction'
     if FIGURE_REF.search(text) and not q.get('options'):
         # figure-dependent numerical with no figure extracted
         return 'missing_diagram'
+    # A row whose stem needs a figure, or whose options are image-only blanks,
+    # cannot be judged by a text-only gate at all - blind solve fails it as
+    # unreadable and burns two model calls first (17 rows in the verified
+    # sample, the single largest REAL defect class). Routed out here instead.
+    if q.get('has_figure'):
+        opts = q.get('options') or {}
+        blank = [k for k, v in opts.items() if not str(v or '').strip()]
+        if FIGURE_REF.search(text) or blank:
+            return 'figure_dependent'
     for frag in (text, json.dumps(q.get('options') or {})):
         if frag.count('$') % 2 == 1:
             return 'unrenderable_latex'
@@ -92,7 +119,11 @@ def lint(q):
         vals = [str(v).strip() for v in opts.values() if str(v).strip()]
         if len(vals) < 4:
             return 'options_destroyed'
-        norm = [re.sub(r'\W+', '', v.lower()) for v in vals]
+        # \W+ stripped every operator, so log(m+n) and log(m-n) normalised to
+        # the same string and 8 verified-distinct option sets were failed as
+        # duplicates. Sign, comparison, arrows and grouping survive; only
+        # whitespace and decorative punctuation are dropped.
+        norm = [re.sub(r'[^\w+\-<>=/()^→√]', '', v.lower()) for v in vals]
         if len(set(norm)) < len(norm):
             return 'options_destroyed'
         if any(META_TEXT.search(v) for v in vals):
@@ -318,7 +349,13 @@ def fetch_staging(db_path):
             "solution": None,
             "chapter_name": r["chapter"],
             "needs_manual": r["needs_manual"],
-            "source": r["source_pdf"],
+            # Batch tag, not the individual filename: the spec's rule 3 wants a
+            # single value per batch so the gate can target it and a bad batch
+            # can be rolled back as a unit. run_id is exactly that
+            # ("full-2026-08-10", "batch2-2026-08-15"); the per-paper filename
+            # stays available separately.
+            "source": r["run_id"],
+            "source_pdf": r["source_pdf"],
         })
     conn.close()
     return rows
@@ -370,14 +407,35 @@ async def main():
     ap.add_argument('--staging', help='path to an extraction staging.db; reads and '
                                       'writes there instead of the questions table')
     ap.add_argument('--limit', type=int, help='judge at most N rows (sampling)')
+    ap.add_argument('--journal', help='verdict journal path (default: gate_results.jsonl '
+                                      'next to this script). Concurrent runs sharing the '
+                                      'default journal interleave rows and contaminate any '
+                                      'aggregate computed over the raw file — give each run '
+                                      'its own journal.')
     args = ap.parse_args()
     if not args.where and not args.ids and not args.staging:
         ap.error('need --where, --ids, or --staging')
 
+    global OUT
+    if args.journal:
+        OUT = args.journal
+
     ids = json.load(open(args.ids)) if args.ids else None
     rows = fetch_staging(args.staging) if args.staging else fetch(args.where, ids)
-    if args.limit:
-        rows = rows[:args.limit]
+    if args.staging and ids:
+        # --ids used to be silently ignored under --staging: an intended 60-row
+        # sample became a full-bank run (found by the biology-set session).
+        # Honour it as a filter over the staging rows instead.
+        idset = set(ids)
+        rows = [q for q in rows if q['id'] in idset]
+    if args.limit and args.limit < len(rows):
+        # Spread the sample across the corpus. Rows come out in insertion order,
+        # so a plain rows[:N] slice draws from whichever papers happened to be
+        # processed first - measured: the first 300 of 6,683 span only 6 of 78
+        # papers, which measures those papers rather than the bank. Fixed seed so
+        # the sample is reproducible and the journal stays resumable.
+        import random
+        rows = random.Random(0).sample(rows, args.limit)
     done = already_done()
     todo = [q for q in rows if q['id'] not in done]
     print(f"candidates={len(rows)} judged_previously={len(done)} to_judge={len(todo)}", flush=True)
