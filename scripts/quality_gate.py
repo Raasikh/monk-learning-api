@@ -164,16 +164,22 @@ CHECK_SOL = """You are checking a worked solution for internal honesty. Decide:
 VALID — the steps genuinely derive the stated answer.
 HANDWAVE — the steps assert or assume the answer rather than deriving it.
 CONTRADICTS — the steps actually derive a DIFFERENT answer.
+
+A pure recall question (a textbook classification, constant, or named fact) has
+nothing to derive: for those, correctly STATING the standard fact and matching
+it to the answer IS a valid solution — do not demand a derivation that cannot
+exist, and do not substitute your own recollection of the fact for the
+solution's unless the solution is unambiguously wrong.
 Return ONLY JSON: {"verdict":"VALID"|"HANDWAVE"|"CONTRADICTS","why":"<= 20 words"}"""
 
 
-async def ask(client, system, user):
+async def ask(client, system, user, model=None):
     """One JSON call with the empty-object/truncation retry the audit needed."""
     for no_think in (False, True):
         kw = {'extra_body': {"thinking": {"type": "disabled"}}} if no_think else {}
         try:
             r = await client.chat.completions.create(
-                model=MODEL,
+                model=model or MODEL,
                 messages=[{"role": "system", "content": system},
                           {"role": "user", "content": user}],
                 response_format={"type": "json_object"},
@@ -230,6 +236,19 @@ async def gate_one(client, sem, q, lock):
         else:
             blind_ok = (str(b.get('answer') or '').strip().upper() == key)
             unread = b.get('answer') == 'UNREADABLE'
+        if unread and MODEL_DISPUTE != MODEL:
+            # One refusal on the cheap tier is not evidence the stem is broken:
+            # a verified case called a well-posed flux question "ambiguous"
+            # while the printed key was confirmable by geometry. One retry on
+            # the dispute tier before quarantining.
+            b = await ask(client, BLIND_NUM if is_num else BLIND_MCQ, stem_block(q),
+                          model=MODEL_DISPUTE)
+            if is_num:
+                blind_ok = b.get('status') == 'SOLVED' and values_match(b.get('value'), key, q.get('value_tolerance'))
+                unread = b.get('status') == 'UNREADABLE'
+            else:
+                blind_ok = (str(b.get('answer') or '').strip().upper() == key)
+                unread = b.get('answer') == 'UNREADABLE'
         if unread:
             rec.update({"stage": "blind", "pass": False, "reason": "audit_unreadable_stem", "why": b.get('why')})
             return await _emit(rec, lock)
@@ -237,6 +256,29 @@ async def gate_one(client, sem, q, lock):
         # 2. adversarial defence
         d = await ask(client, DEFEND, stem_block(q) + f"\n\nStored answer key: {key}")
         defend_ok = d.get('verdict') == 'VALID'
+
+        if defend_ok and not blind_ok:
+            # The two passes disagree: the defender (who saw the key) endorses
+            # it, the blind solver names something else. In the verified sample
+            # every such row had a correct key and a WRONG blind answer - the
+            # solver mis-solved, or the item needs a figure the text never
+            # carried. Disagreement is settled by a fresh blind attempt on the
+            # dispute tier, not by letting the weaker pass veto: agree -> the
+            # key stands; still apart -> quarantine as DISPUTED, distinct from
+            # audit_wrong_key, because "two passes disagree" is a triage state,
+            # not a finding that the key is wrong.
+            b2 = await ask(client, BLIND_NUM if is_num else BLIND_MCQ, stem_block(q),
+                           model=MODEL_DISPUTE)
+            if is_num:
+                blind_ok = b2.get('status') == 'SOLVED' and values_match(b2.get('value'), key, q.get('value_tolerance'))
+            else:
+                blind_ok = (str(b2.get('answer') or '').strip().upper() == key)
+            if not blind_ok:
+                rec.update({"stage": "key", "pass": False, "reason": "audit_key_disputed",
+                            "blind": b.get('answer', b.get('value')),
+                            "blind_retry": b2.get('answer', b2.get('value')),
+                            "defend": d.get('verdict'), "why": b2.get('why') or b.get('why')})
+                return await _emit(rec, lock)
 
         if not (blind_ok and defend_ok):
             rec.update({"stage": "key", "pass": False, "reason": "audit_wrong_key",
@@ -247,11 +289,34 @@ async def gate_one(client, sem, q, lock):
         # 3. honest solution
         w = await ask(client, WRITE_SOL, stem_block(q) + f"\n\nVerified correct answer: {key}")
         steps = w.get('steps') or []
-        # The writer often answers "B. Zygotene" rather than the bare letter —
-        # compare on the leading option letter, not the literal string.
+        # The writer names its destination however it likes: "B. Zygotene",
+        # "0.044", "120 V", "3100 Å, option D". The old leading-letter regex
+        # matched none of the value forms, compared the raw string against a
+        # one-letter key, and failed 31 rows whose keys had ALREADY passed
+        # blind AND defend - the largest single false-positive source after
+        # the scramble lint. Resolution order: leading letter, then
+        # "option X" anywhere, then the value matched against the keyed
+        # option's own text (numeric-aware).
         reaches = str(w.get('reaches') or '').strip().upper()
-        m = re.match(r'^([A-D])\b', reaches)
-        reaches_letter = m.group(1) if m else reaches
+        m = re.match(r'^([A-D])\b', reaches) or re.search(r'\bOPTION\s+([A-D])\b', reaches)
+        reaches_letter = m.group(1) if m else None
+        if reaches_letter is None and not is_num and isinstance(q.get('options'), dict):
+            keyed_text = str(q['options'].get(key) or '').strip().upper()
+            if keyed_text:
+                norm = lambda s: re.sub(r'[\s$\\{}]', '', s)
+                if norm(reaches) and (norm(reaches) == norm(keyed_text)
+                                      or norm(reaches) in norm(keyed_text)
+                                      or norm(keyed_text) in norm(reaches)):
+                    reaches_letter = key
+                else:
+                    try:  # "0.044" vs "$0.044$" / "0.0444"
+                        if values_match(float(re.sub(r'[^\d.eE+-]', '', reaches) or 'x'),
+                                        float(re.sub(r'[^\d.eE+-]', '', keyed_text) or 'x'), None):
+                            reaches_letter = key
+                    except (TypeError, ValueError):
+                        pass
+        if reaches_letter is None:
+            reaches_letter = reaches
         if not steps or w.get('problem') or (not is_num and reaches_letter != key):
             rec.update({"stage": "solution", "pass": False, "reason": "audit_bad_solution",
                         "why": w.get('problem') or f"writer reached {reaches or '?'}"})
@@ -332,6 +397,10 @@ def fetch_staging(db_path):
     """
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
+    # figure-bearing rows cannot be judged by a text-only gate; lint routes
+    # them out as figure_dependent instead of letting blind-solve fail them
+    # as unreadable after two paid model calls
+    figq = {r[0] for r in conn.execute("select distinct question_id from staging_figures")}
     rows = []
     for r in conn.execute("select * from staging_questions where gate_status='staged'"):
         options = json.loads(r["options"]) if r["options"] else None
@@ -356,6 +425,7 @@ def fetch_staging(db_path):
             # stays available separately.
             "source": r["run_id"],
             "source_pdf": r["source_pdf"],
+            "has_figure": r["id"] in figq,
         })
     conn.close()
     return rows
