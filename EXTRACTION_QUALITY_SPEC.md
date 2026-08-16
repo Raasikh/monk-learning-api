@@ -102,6 +102,17 @@ own arithmetic). The gate that worked:
 `audit_unreadable_stem`, `audit_bad_solution`, `audit_options_defective`,
 `audit_broken_latex`, `audit_ambiguous_stem`.
 
+## The pending_gate rule (non-negotiable insert discipline)
+
+**Every new row is inserted with `needs_manual = 'pending_gate'` — never NULL.**
+`/practice/next` serves only rows where `needs_manual` is NULL, so this makes
+"unverified" the default state instead of "live". The gate is the ONLY thing
+that clears the tag, and it does so per-row only after every stage passes.
+Without this rule there is a window between insert and verification where a
+bad row is servable; with it, a crashed or half-run gate fails safe. Also tag
+every batch with a distinct `source` value so the gate can target it and a bad
+batch can be rolled back as a unit.
+
 ## Runnable gate
 
 `scripts/quality_gate.py` in monk-learning-api implements the full pipeline

@@ -31,6 +31,7 @@ import collections
 import json
 import os
 import re
+import sqlite3
 import sys
 
 import requests
@@ -49,7 +50,16 @@ H = {'apikey': K, 'Authorization': f'Bearer {K}'}
 HW = {**H, 'Content-Type': 'application/json', 'Prefer': 'return=minimal'}
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gate_results.jsonl')
-MODEL = "deepseek-v4-pro"
+# Overridable so the gate can run on a cheap tier. Note the tradeoff the spec
+# itself measured: on NUMERICAL disputes a strong model was wrong 62% of the
+# time, which is why two passes exist at all. MCQ items are far more forgiving
+# because the options constrain the answer space; numerical items have nothing
+# to collide with, which is why their key error rate was 2.7x higher.
+# QUALITY_GATE_MODEL sets the default tier; QUALITY_GATE_MODEL_DISPUTE is used
+# only to re-judge items the two passes disagreed on, so the expensive tier is
+# billed on the small disputed subset rather than the whole batch.
+MODEL = os.getenv("QUALITY_GATE_MODEL", "deepseek-v4-flash")
+MODEL_DISPUTE = os.getenv("QUALITY_GATE_MODEL_DISPUTE", MODEL)
 CONCURRENCY = 12
 COLS = ('id,question_text,question_type,options,correct_option,correct_value,'
         'value_tolerance,solution,chapter_name,needs_manual,source')
@@ -258,6 +268,87 @@ def fetch(where=None, ids=None):
     return rows
 
 
+LETTERS = "ABCDEFGH"
+
+
+def _relabel(options, correct_option):
+    """Staging keeps the labels the PAPER printed; this gate assumes A-D.
+
+    Papers are split between "1..4" and "A..D", so feeding staging rows in raw
+    would have the blind solver answer "B" against a stored key of "3" and score
+    every such row as a disagreement. Relabelled by POSITION, exactly as
+    extraction/to_production_shape.py does for the served rows, so the gate
+    judges what a student would actually see.
+    """
+    if not options:
+        return None, correct_option
+    keys = list(options)
+    if all(k.isdigit() for k in keys):
+        ordered = sorted(keys, key=int)
+    else:
+        return options, correct_option
+    mapping = {old: LETTERS[i] for i, old in enumerate(ordered)}
+    return ({mapping[k]: options[k] for k in ordered},
+            mapping.get(correct_option, correct_option))
+
+
+def fetch_staging(db_path):
+    """Read candidate rows from the extraction staging store.
+
+    The extraction directive halts before promotion - nothing may be written to
+    `questions` - so the gate reads the SQLite staging DB directly instead of
+    PostgREST. Same row shape either way, so every downstream stage is unchanged.
+    """
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    rows = []
+    for r in conn.execute("select * from staging_questions where gate_status='staged'"):
+        options = json.loads(r["options"]) if r["options"] else None
+        options, correct_option = _relabel(options, r["correct_option"])
+        rows.append({
+            "id": r["id"],
+            "question_text": r["question_text"],
+            "question_type": r["question_type"],
+            "options": options,
+            "correct_option": correct_option,
+            "correct_value": r["correct_value"],
+            # staging has no tolerance column yet; None makes values_match fall
+            # back to its default band rather than silently comparing exactly
+            "value_tolerance": None,
+            "solution": None,
+            "chapter_name": r["chapter"],
+            "needs_manual": r["needs_manual"],
+            "source": r["source_pdf"],
+        })
+    conn.close()
+    return rows
+
+
+def apply_staging(db_path, passed, failed):
+    """Write verdicts back to staging. Never touches `questions`."""
+    conn = sqlite3.connect(db_path)
+    cols = {r[1] for r in conn.execute("pragma table_info(staging_questions)")}
+    if "solution_text" not in cols:
+        conn.execute("alter table staging_questions add column solution_text text")
+    if "gate_verdict" not in cols:
+        conn.execute("alter table staging_questions add column gate_verdict text")
+    n_ok = n_bad = 0
+    for r in passed:
+        conn.execute(
+            "update staging_questions set solution_text=?, needs_manual=NULL, "
+            "gate_verdict='pass' where id=?",
+            (json.dumps({"steps": r["steps"]}, ensure_ascii=False), r["id"]))
+        n_ok += 1
+    for r in failed:
+        conn.execute(
+            "update staging_questions set needs_manual=?, gate_verdict='fail' where id=?",
+            (r.get("reason") or "audit_remove_verdict", r["id"]))
+        n_bad += 1
+    conn.commit()
+    conn.close()
+    return n_ok, n_bad
+
+
 def already_done():
     if not os.path.exists(OUT):
         return {}
@@ -276,12 +367,17 @@ async def main():
     ap.add_argument('--where', help='PostgREST filter, e.g. source=eq.batch_2026_08')
     ap.add_argument('--ids', help='JSON file containing a list of question ids')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--staging', help='path to an extraction staging.db; reads and '
+                                      'writes there instead of the questions table')
+    ap.add_argument('--limit', type=int, help='judge at most N rows (sampling)')
     args = ap.parse_args()
-    if not args.where and not args.ids:
-        ap.error('need --where or --ids')
+    if not args.where and not args.ids and not args.staging:
+        ap.error('need --where, --ids, or --staging')
 
     ids = json.load(open(args.ids)) if args.ids else None
-    rows = fetch(args.where, ids)
+    rows = fetch_staging(args.staging) if args.staging else fetch(args.where, ids)
+    if args.limit:
+        rows = rows[:args.limit]
     done = already_done()
     todo = [q for q in rows if q['id'] not in done]
     print(f"candidates={len(rows)} judged_previously={len(done)} to_judge={len(todo)}", flush=True)
@@ -304,6 +400,12 @@ async def main():
 
     if not args.apply:
         print("\nDRY RUN — nothing written. Re-run with --apply.")
+        return
+
+    if args.staging:
+        n_ok, n_bad = apply_staging(args.staging, passed, failed)
+        print(f"APPLIED to staging: {n_ok} passed (solution stored, needs_manual cleared); "
+              f"{n_bad} tagged needs_manual. `questions` untouched.")
         return
 
     n_ok = n_bad = 0
