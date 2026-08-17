@@ -9,6 +9,32 @@ from app.db import supabase
 from app.drona.persona import normalize_language, normalize_voice, tutor_name
 from app.progress_scoring import apply_answer_scoring, record_serve
 
+
+def resolve_display_concept(question_id: str, raw_concept: Optional[str]) -> Optional[str]:
+    """The name shown during practice must match what Progress scores and
+    displays for the same question — otherwise a student sees one concept
+    name while answering and a different one on their Progress page for the
+    identical question. Resolves through question_concepts (primary role) to
+    the curated concepts.name; falls back to the legacy free-text tag for
+    subjects not yet curated, so nothing breaks for them."""
+    try:
+        qc = (
+            supabase.table("question_concepts")
+            .select("concept_id")
+            .eq("question_id", question_id)
+            .eq("role", "primary")
+            .limit(1)
+            .execute()
+            .data
+        )
+        if qc:
+            row = supabase.table("concepts").select("name").eq("id", qc[0]["concept_id"]).limit(1).execute().data
+            if row:
+                return row[0]["name"]
+    except Exception as e:
+        print(f"[CONCEPT RESOLVE ERROR] {e}")
+    return raw_concept
+
 router = APIRouter(prefix="/practice", tags=["practice"])
 
 
@@ -314,7 +340,7 @@ def get_next_question(
         "question_type": q_type,
         "options": options,
         "chapter_name": selected.get("chapter_name"),
-        "concept": selected.get("concept"),
+        "concept": resolve_display_concept(selected["id"], selected.get("concept")),
         "difficulty": selected.get("difficulty")
     }
 
