@@ -81,6 +81,13 @@ FIGURE_REF = re.compile(r"\b(figure|graph shown|following table|diagram|shown be
 def lint(q):
     """Structural reject-at-sight. Returns a reason string or None."""
     text = (q.get('question_text') or '').strip()
+    if q.get('question_type') == 'multi_correct':
+        # The blind/defend prompts answer with a single letter, so judging a
+        # multi-label key ("A,B,D") through them can only produce false
+        # disagreement. Routed out before any model call until the gate grows
+        # multi-answer prompts; the extraction-side gates have already checked
+        # every named label exists among the printed options.
+        return 'multi_correct_unjudged'
     if len(text) < 20:
         # Completion stems are legitimately tiny - "Sponges exhibit",
         # "Notochord is" - and answerable when four real options follow.
@@ -203,10 +210,11 @@ async def ask(client, system, user, model=None, service="gate", ref=None):
                 temperature=0.0, max_tokens=3000, timeout=180.0, **kw)
         except Exception as e:
             last = str(e)[:100]
-            await asyncio.to_thread(
-                record_call, mdl, service, ok=False, attempt=attempt,
-                latency_ms=int((time.monotonic() - t0) * 1000),
-                subtopic_key=ref, error=str(e))
+            if RECORD_CALLS:
+                await asyncio.to_thread(
+                    record_call, mdl, service, ok=False, attempt=attempt,
+                    latency_ms=int((time.monotonic() - t0) * 1000),
+                    subtopic_key=ref, error=str(e))
             continue
         try:
             d = json.loads(r.choices[0].message.content or "")
@@ -214,10 +222,11 @@ async def ask(client, system, user, model=None, service="gate", ref=None):
             d = {}
         # ok=False here means "billed but the result was discarded" — the
         # empty-object/truncation case this function's retry exists for.
-        await asyncio.to_thread(
-            record_call, mdl, service, ok=bool(d), attempt=attempt, res=r,
-            latency_ms=int((time.monotonic() - t0) * 1000),
-            subtopic_key=ref, error=None if d else "empty or unparseable JSON")
+        if RECORD_CALLS:
+            await asyncio.to_thread(
+                record_call, mdl, service, ok=bool(d), attempt=attempt, res=r,
+                latency_ms=int((time.monotonic() - t0) * 1000),
+                subtopic_key=ref, error=None if d else "empty or unparseable JSON")
         if d:
             return d
     return {"error": locals().get('last', 'empty response')}
