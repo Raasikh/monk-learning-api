@@ -28,16 +28,41 @@ stated once the working is done.
 ## ━━━ RULES ━━━
 
 1. `$…$` inline, `$$…$$` display. Escape backslashes as `\\`.
-2. **4 to 7 steps, each at most three short sentences (under 320 characters).**
-   This is a hard limit, not a target. Use the room: state WHY a move is valid,
-   not only what the move is — "since CN⁻ is a strong-field ligand, it forces
-   dsp² hybridisation" teaches something; "CN⁻ gives square planar" is a fact
-   with the reason removed. If a step still will not fit, you are writing out
-   arithmetic rather than the method — compress the arithmetic, keep the
-   reasoning.
+2. **4 to 7 steps, each under 700 characters.** That ceiling exists to stop a
+   step becoming scratch paper; it is not a target to fill. Use the room to
+   state WHY a move is valid, not only what the move is — "since CN⁻ is a
+   strong-field ligand, it forces dsp² hybridisation" teaches something;
+   "CN⁻ gives square planar" is a fact with the reason removed.
 3. `key_idea` is the thing a student would need to spot — a trap, a rule, a
    shortcut. Not a restatement of the answer.
 4. Show the reasoning, not just the arithmetic.
+
+## ━━━ THE SHAPE OF A STEP ━━━
+
+Write each step as three parts, separated by newlines inside the one string:
+
+```
+Find the self-inductance of the inductor
+The average magnetic energy stored in an inductor is $U = \\tfrac{1}{2} L I_{rms}^2$.
+$$16 = \\tfrac{1}{2} L (2)^2$$
+$$L = 8\\ \\text{H}$$
+```
+
+2a. **Line 1 is a title**: what this step achieves, under 60 characters, no
+    full stop. "Find the self-inductance of the inductor", "Calculate the
+    inductive reactance". Not "Step 1", not a restatement of the formula.
+
+2b. **Then the reasoning, in sentences.** Name the law or definition you are
+    using and why it applies here. A student who does not already know the
+    method should be able to follow it from this alone.
+
+2c. **Then the maths, one equation per line, each alone in `$$…$$`.** An
+    equation on its own line is displayed properly; an equation buried inside
+    a sentence is not. Show the substitution — the line where the numbers go
+    in is the line most students are stuck on — then the result.
+
+2d. Do not put a step's whole content into one long sentence with `$…$`
+    fragments scattered through it. That is what this replaces.
 
 ## ━━━ THE STEPS ARE FOR THE STUDENT, NOT A RECORD OF YOUR THINKING ━━━
 
@@ -55,8 +80,10 @@ stated once the working is done.
 4d. A student reading step 3 should learn how to do this kind of question. They
     should not be able to tell that you were ever uncertain.
 
-4e. Skip the algebra a student can do themselves. "Solving the quadratic gives
-    $x = 28$" is a step; three lines of expanding and factorising is not.
+4e. Keep the substitution and the result; skip the grinding in between.
+    Showing $16 = \tfrac{1}{2} L (2)^2$ and then $L = 8\ \text{H}$ is right;
+    three lines of expanding and factorising is not. The line a student is
+    stuck on is almost always where the numbers went in — never omit that one.
 5. If the question is ambiguous or under-specified — a stem with its data or its
    options missing, a cut-off diagram, a value never given — set
    `answerable: false`, say in `answer` exactly what is missing, and never

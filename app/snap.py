@@ -196,7 +196,7 @@ def _parse_json(raw: str, stage: str) -> Dict[str, Any]:
 
 _PARSE_CORRECTIVE = (
     "Your previous response was not valid JSON — it ran on and broke its own "
-    "escaping. Answer the same question again, but keep every step under 400 "
+    "escaping. Answer the same question again, but keep every step under 700 "
     "characters and use at most 6 steps. One move per step, no thinking out "
     "loud. Escape every backslash as \\\\ and every quote inside a string. "
     "Return only the JSON object."
@@ -794,13 +794,15 @@ def match_answer_to_options(answer: str, options: List[Dict[str, str]],
 # 1,062-character step that argued with itself, and a 5,445-character one that
 # broke the JSON outright — the rambling and the parse failures are the same
 # problem.
-# A step is one line of working, not a paragraph. 320 characters is roughly
-# three short sentences — enough room for a real explanation (the "how" as
-# well as the "what") without going back to the failure this replaced: an
-# earlier, higher ceiling let the model use the steps as scratch paper and
-# write a single 5,445-character step that broke its own JSON. The ceiling is
-# the enforcement; raise it, don't remove it.
-MAX_STEP_CHARS = 320
+# A step is a title, the reasoning behind the move, and the equations that
+# carry it out (see prompts/snap_solve.md, "THE SHAPE OF A STEP"). 320
+# characters could not hold that — it forced one dense sentence with the maths
+# inline, which is what the app was showing students and what a competitor's
+# output beat us on. 700 is enough for a title, two or three sentences and
+# three display equations, and still nowhere near the failure this ceiling
+# exists for: an unbounded step once ran to 5,445 characters and broke its own
+# JSON. The ceiling is the enforcement; raise it, don't remove it.
+MAX_STEP_CHARS = 700
 MAX_STEPS = 7
 
 # Phrases that only appear when a model is thinking out loud rather than
@@ -1200,9 +1202,10 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             "Your steps are not usable by a student: " + "; ".join(problems) + ". "
             "Rewrite the SAME solution with the same answer, as at most "
             f"{MAX_STEPS} steps of under {MAX_STEP_CHARS} characters each. Each "
-            "step is one move on a board. Remove every trace of deliberation — "
-            "no weighing readings, no corrections, no mention of the options. "
-            "Return the full JSON again."
+            "step keeps its shape: a short title line, then the reasoning, then "
+            "each equation alone on its own line in $$…$$. Remove every trace of "
+            "deliberation — no weighing readings, no corrections, no mention of "
+            "the options. Return the full JSON again."
         )
 
         def retry_call(_corrective: Optional[str] = None):
