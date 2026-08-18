@@ -1,0 +1,3065 @@
+[
+ {
+  "chapter_id": "16bf043d-bc59-5ebb-93ad-7b0fddf484c9",
+  "concepts": [
+   {
+    "name": "Bohr's Model of the Hydrogen Atom",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Bohr's Model & Wave-Particle Duality",
+     "Chapter Close: Formula Recap & Cheat Sheet"
+    ],
+    "question_tag_aliases": [
+     "Bohr's Model & Wave-Particle Duality",
+     "General",
+     "Atomic Structure"
+    ]
+   },
+   {
+    "name": "Electronic Configuration of Atoms and Ions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Quantum Model, Orbitals & Electron Configurations"
+    ],
+    "question_tag_aliases": [
+     "Quantum Model, Orbitals & Electron Configurations",
+     "Chemical Bonding"
+    ]
+   },
+   {
+    "name": "Quantum Numbers and Orbital Designation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Quantum Chemistry"
+    ]
+   },
+   {
+    "name": "Hydrogen Spectrum and Spectral Series",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Photoelectric Effect",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Photoelectric Effect"
+    ]
+   },
+   {
+    "name": "de Broglie Wavelength and Wave-Particle Duality",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Discovery and Properties of Subatomic Particles",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Subatomic Particles & Early Atomic Models"
+    ],
+    "question_tag_aliases": [
+     "Subatomic Particles & Early Atomic Models"
+    ]
+   },
+   {
+    "name": "Early Atomic Models: Thomson and Rutherford",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Heisenberg Uncertainty Principle",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Quantum Mechanics"
+    ]
+   },
+   {
+    "name": "Shapes and Nodes of Atomic Orbitals",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Electromagnetic Radiation and Planck's Quantum Theory",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Electromagnetic Radiation, Planck's Quantum Theory & the Photoelectric Effect"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Atomic Number, Mass Number, Isotopes and Isobars",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "862ab5f0-4fa8-5e6f-98d5-74fe5b10ab8e",
+  "concepts": [
+   {
+    "name": "VSEPR Theory and Molecular Geometry",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Chapter Close (all subtopics)"
+    ],
+    "question_tag_aliases": [
+     "Molecular Geometry",
+     "General",
+     "Chemical Bonding",
+     "VSEPR & Lone Pairs",
+     "Molecular Structure"
+    ]
+   },
+   {
+    "name": "Hybridization and Valence Bond Theory",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "VSEPR Theory, Valence Bond Theory & Hybridization"
+    ],
+    "question_tag_aliases": [
+     "VSEPR Theory, VBT & Hybridization",
+     "Hybridization"
+    ]
+   },
+   {
+    "name": "Molecular Orbital Theory: MO Diagrams, Bond Order and Magnetic Behaviour",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Molecular Orbital Theory (MOT) & Hydrogen Bonding"
+    ],
+    "question_tag_aliases": [
+     "Molecular Orbital Theory (MOT) & Hydrogen Bonding",
+     "Molecular Orbital Theory",
+     "Bond Order",
+     "Magnetism"
+    ]
+   },
+   {
+    "name": "Lewis Structures, Octet Rule and Formal Charge",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Kossel-Lewis Approach, Ionic & Covalent Bonds, and Dipole Moment"
+    ],
+    "question_tag_aliases": [
+     "Kossel-Lewis Approach, Ionic/Covalent Bonds & Dipole Moments",
+     "Ionic and Covalent Bonds",
+     "Covalency & Stable Oxidation States"
+    ]
+   },
+   {
+    "name": "Dipole Moment and Molecular Polarity",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Molecular Properties"
+    ]
+   },
+   {
+    "name": "Hydrogen Bonding",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Fajans' Rules and Covalent Character of Ionic Bonds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Periodic Trends"
+    ]
+   },
+   {
+    "name": "Ionic Bond Formation, Lattice Enthalpy and Born-Haber Cycle",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Bond Parameters: Bond Length, Bond Angle and Bond Enthalpy",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Resonance and Resonance Energy",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Back Bonding and Anomalous Bond Angles",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Coordinate Bonding, Back Bonding & Advanced Bond-Angle Concepts"
+    ],
+    "question_tag_aliases": [
+     "Inorganic Chemistry"
+    ]
+   },
+   {
+    "name": "Coordinate (Dative) Bond Formation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Coordination Chemistry"
+    ]
+   },
+   {
+    "name": "Intermolecular Forces and Physical Properties",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Intermolecular Forces"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "aac04619-0e94-5a09-99bb-abdc2b688290",
+  "concepts": [
+   {
+    "name": "Ionization Enthalpy: Trends and Anomalies",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Ionization Energy",
+     "Periodic Trends",
+     "Periodic Properties",
+     "Periodic trends",
+     "General",
+     "Thermodynamics"
+    ]
+   },
+   {
+    "name": "Atomic and Ionic Radii",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Periodic Trends in Physical Properties"
+    ],
+    "question_tag_aliases": [
+     "Periodic Trends in Physical Properties",
+     "Ionic and Metallic Radii"
+    ]
+   },
+   {
+    "name": "Modern Periodic Law and Structure of the Periodic Table",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Development of the Periodic Table & the Modern Periodic Law"
+    ],
+    "question_tag_aliases": [
+     "Periodic Table Development & Modern Law",
+     "Periodic Table",
+     "Classification of Elements"
+    ]
+   },
+   {
+    "name": "Position and Block of an Element from Electronic Configuration",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Electronic Configuration & the s, p, d, f Blocks"
+    ],
+    "question_tag_aliases": [
+     "Electronic Configuration",
+     "Atomic Structure",
+     "Coordination Chemistry"
+    ]
+   },
+   {
+    "name": "Electronegativity and Ionic Character",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Electronegativity",
+     "Ionic Character",
+     "Ionic Compounds",
+     "Chemical Bonding"
+    ]
+   },
+   {
+    "name": "Periodic Trends in Valency and Oxidation States",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Periodic Trends in Chemical Properties & Anomalous Behaviour"
+    ],
+    "question_tag_aliases": [
+     "Periodic Trends in Chemical Properties & Anomalous Behavior"
+    ]
+   },
+   {
+    "name": "Electron Gain Enthalpy and Electron Affinity",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Electron Gain Enthalpy"
+    ]
+   },
+   {
+    "name": "Metallic Character, Reactivity and Nature of Oxides",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Acid-Base Chemistry",
+     "Acids and Bases",
+     "Kinetics"
+    ]
+   },
+   {
+    "name": "Anomalous Behaviour of Second-Period Elements and Diagonal Relationship",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Inorganic Chemistry",
+     "Group Properties"
+    ]
+   },
+   {
+    "name": "Effective Nuclear Charge and Shielding Effect",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Early Attempts at Classification: Dobereiner, Newlands and Mendeleev",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Nomenclature of Elements with Atomic Number Greater than 100",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "f111ba16-c07d-5237-b2dd-eab22645f161",
+  "concepts": [
+   {
+    "name": "Equilibrium Constant: Kc, Kp and Their Relationship",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Physical & Chemical Equilibrium — Kc and Kp",
+     "Chapter Close — Formula Recap & Cheat Sheet"
+    ],
+    "question_tag_aliases": [
+     "Physical/Chemical Equilibrium & equilibrium constants (Kc, Kp)",
+     "Chemical Equilibrium",
+     "General",
+     "Equilibrium",
+     "Equilibrium Constants"
+    ]
+   },
+   {
+    "name": "pH, pOH and Strength of Acids and Bases",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Ionic Equilibrium — Acid-Base Concepts, pH & the Common-Ion Effect"
+    ],
+    "question_tag_aliases": [
+     "Ionic Equilibrium, pH, Acid-Base Dissociation & Common Ion Effect",
+     "Acid-Base Chemistry",
+     "Acid-Base Equilibrium",
+     "Acid-Base Equilibria"
+    ]
+   },
+   {
+    "name": "Le Chatelier's Principle and Factors Affecting Equilibrium",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Le Chatelier's Principle & Factors Affecting Equilibria"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Solubility Product and Precipitation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Solubility Product",
+     "Solubility Products",
+     "Precipitation Reactions",
+     "Qualitative Analysis"
+    ]
+   },
+   {
+    "name": "Buffer Solutions and the Henderson-Hasselbalch Equation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Buffers, Solubility Product (Ksp) & Salt Hydrolysis"
+    ],
+    "question_tag_aliases": [
+     "Buffer Solutions, Solubility Product (Ksp) & Salt Hydrolysis",
+     "Buffer Solutions"
+    ]
+   },
+   {
+    "name": "Ionization Constants (Ka, Kb) and Ostwald's Dilution Law",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Base Ionization"
+    ]
+   },
+   {
+    "name": "Salt Hydrolysis and pH of Salt Solutions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Common Ion Effect",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Common Ion Effect & Salt Analysis"
+    ]
+   },
+   {
+    "name": "Reaction Quotient and Predicting the Direction of Reaction",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Relation Between Gibbs Energy and the Equilibrium Constant",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Equilibrium Constant, Reaction Quotient & Gibbs Energy"
+    ],
+    "question_tag_aliases": [
+     "Thermodynamics"
+    ]
+   },
+   {
+    "name": "Acid-Base Concepts: Arrhenius, Bronsted-Lowry and Lewis",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Acid-Base Theory",
+     "Acid-Base Reactions",
+     "Acid-Base Neutralization"
+    ]
+   },
+   {
+    "name": "Ionic Product of Water and Autoionization",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Acid-Base Titration Curves and Indicators",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Titration",
+     "Acid-Base Titration"
+    ]
+   },
+   {
+    "name": "Physical Equilibria and Characteristics of the Equilibrium State",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 14,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Physical Chemistry"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "15bf6c7a-ff09-5741-93b8-e48e8a915273",
+  "concepts": [
+   {
+    "name": "IUPAC Nomenclature of Organic Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Hybridization & IUPAC Nomenclature",
+     "Chapter Review & Cheat Sheet"
+    ],
+    "question_tag_aliases": [
+     "Hybridization, Nomenclature of IUPAC compounds",
+     "Nomenclature",
+     "General",
+     "Organic Chemistry",
+     "Chemistry"
+    ]
+   },
+   {
+    "name": "Structural Isomerism: Chain, Position, Functional, Metamerism and Tautomerism",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Isomerism"
+    ],
+    "question_tag_aliases": [
+     "Isomerism"
+    ]
+   },
+   {
+    "name": "Inductive, Resonance, Hyperconjugation and Electromeric Effects",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Stability of Reaction Intermediates: Carbocations, Carbanions and Free Radicals",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Reaction Mechanisms — Fundamental Concepts"
+    ],
+    "question_tag_aliases": [
+     "Reaction Mechanisms & Purification/Quantitative Analysis"
+    ]
+   },
+   {
+    "name": "Optical Isomerism: Chirality, Optical Activity and R/S Configuration",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Optical Activity"
+    ]
+   },
+   {
+    "name": "Geometrical Isomerism: Cis-Trans and E-Z Configuration",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Stereochemistry"
+    ]
+   },
+   {
+    "name": "Acidity and Basicity of Organic Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Acidity"
+    ]
+   },
+   {
+    "name": "Types of Organic Reactions and Fundamentals of Reaction Mechanisms",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Hybridization, Shape and Bond Parameters in Organic Molecules",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Classification of Organic Compounds and Functional Groups",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Foundations: Structure & Classification"
+    ],
+    "question_tag_aliases": [
+     "Coordination Chemistry"
+    ]
+   },
+   {
+    "name": "Quantitative Analysis and Determination of Empirical Formula",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Stoichiometry"
+    ]
+   },
+   {
+    "name": "Purification of Organic Compounds: Crystallisation, Distillation and Chromatography",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [
+     "Purification, Qualitative & Quantitative Analysis"
+    ],
+    "question_tag_aliases": [
+     "Chromatography",
+     "Adsorption Chromatography",
+     "Analytical Chemistry"
+    ]
+   },
+   {
+    "name": "Qualitative Analysis: Detection of Elements by Lassaigne's Test",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "388fccf5-9390-50aa-b678-5800a9e4fffa",
+  "concepts": [
+   {
+    "name": "Electrophilic Addition Reactions of Alkenes (Markovnikov and Peroxide Effect)",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Alkenes"
+    ],
+    "question_tag_aliases": [
+     "Alkenes",
+     "General",
+     "Organic Chemistry"
+    ]
+   },
+   {
+    "name": "Electrophilic Substitution in Benzene and Directive Influence of Substituents",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Aromatic Hydrocarbons"
+    ],
+    "question_tag_aliases": [
+     "Aromatic Hydrocarbons"
+    ]
+   },
+   {
+    "name": "Free Radical Halogenation and Reactions of Alkanes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Alkanes"
+    ],
+    "question_tag_aliases": [
+     "Alkanes",
+     "Reactivity of Alkanes"
+    ]
+   },
+   {
+    "name": "Reactions and Acidity of Terminal Alkynes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Alkynes"
+    ],
+    "question_tag_aliases": [
+     "Alkynes"
+    ]
+   },
+   {
+    "name": "Aromaticity and Huckel's Rule",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Chemical Bonding"
+    ]
+   },
+   {
+    "name": "Preparation of Alkenes and Elimination Reactions (Saytzeff Rule)",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Preparation of Alkanes: Wurtz, Kolbe, Decarboxylation and Hydrogenation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Oxidation and Ozonolysis of Alkenes and Alkynes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Preparation of Alkynes and Alkane-Alkene-Alkyne Interconversion",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Conformational Analysis of Alkanes (Newman Projections)",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Conformers"
+    ]
+   },
+   {
+    "name": "Classification, General Formulae and Nomenclature of Hydrocarbons",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Classification of Hydrocarbons"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Carcinogenicity and Toxicity of Polynuclear Aromatic Hydrocarbons",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "c6da3467-e267-576e-9999-a2687ffe9200",
+  "concepts": [
+   {
+    "name": "Oxidation Number: Rules and Calculation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Classical & Electronic Concepts and Oxidation Numbers",
+     "Redox Reactions — Consolidation"
+    ],
+    "question_tag_aliases": [
+     "Classical/Electronic Concepts & Oxidation Numbers",
+     "General",
+     "Redox Reactions",
+     "Oxidation States",
+     "Coordination Compounds"
+    ]
+   },
+   {
+    "name": "Balancing Redox Equations: Oxidation-Number and Half-Reaction Methods",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Balancing Redox Equations"
+    ],
+    "question_tag_aliases": [
+     "Balancing Redox Equations",
+     "Chemical Reactions"
+    ]
+   },
+   {
+    "name": "Redox Titrations, Equivalent Mass and n-Factor Calculations",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Redox Titrations & Electrochemical Cells"
+    ],
+    "question_tag_aliases": [
+     "Redox Titrations & Electrochemical Cells",
+     "Titration",
+     "Stoichiometry",
+     "Solubility Product"
+    ]
+   },
+   {
+    "name": "Identifying Oxidising and Reducing Agents",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Inorganic Chemistry",
+     "Inorganic chemistry"
+    ]
+   },
+   {
+    "name": "Types of Redox Reactions: Combination, Decomposition and Displacement",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Types of Redox Reactions & Redox in Action"
+    ],
+    "question_tag_aliases": [
+     "Chemical properties",
+     "Acid-Base Reactions"
+    ]
+   },
+   {
+    "name": "Disproportionation and Comproportionation Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Disproportionation Reactions"
+    ]
+   },
+   {
+    "name": "Redox Couples, Electrode Potential and Electrochemical Cells",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Reactivity Series and Metal Displacement Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Reactivity of metals"
+    ]
+   },
+   {
+    "name": "Classical and Electronic Concepts of Oxidation and Reduction",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Redox Reactions in Everyday Life and Industry",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Gas Laws",
+     "Gas Solubility"
+    ]
+   },
+   {
+    "name": "Stock Notation and Naming Compounds by Oxidation Number",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "fa37da68-46a0-562f-9c75-2967215b8893",
+  "concepts": [
+   {
+    "name": "Mole Concept: Mass, Mole, Particle and Gas-Volume Interconversion",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Atomic/Molecular Masses & Mole Concept",
+     "Chapter Close: Master Revision"
+    ],
+    "question_tag_aliases": [
+     "Atomic/Molecular Masses & Mole Concept",
+     "General",
+     "Mole concept",
+     "Mole Concept"
+    ]
+   },
+   {
+    "name": "Stoichiometric Calculations and Limiting Reagent",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Stoichiometry & Limiting Reagent"
+    ],
+    "question_tag_aliases": [
+     "Stoichiometry",
+     "Stoichiometry, Concentrations & Limiting Reagents",
+     "Acid-Base Reactions",
+     "Thermal Decomposition",
+     "Reactivity of metals with water",
+     "Combustion Reactions",
+     "Combustion reactions",
+     "Chemical equilibrium",
+     "Thermochemistry"
+    ]
+   },
+   {
+    "name": "Concentration Terms: Molarity, Molality, Mole Fraction and ppm",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Concentration Terms"
+    ],
+    "question_tag_aliases": [
+     "Molarity",
+     "Molality"
+    ]
+   },
+   {
+    "name": "Empirical and Molecular Formula from Percentage Composition",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Percentage Composition, Empirical & Molecular Formula"
+    ],
+    "question_tag_aliases": [
+     "Empirical Formula",
+     "Combustion Analysis",
+     "Stoichiometry & Formula Determination",
+     "Reaction Mechanisms & Purification/Quantitative Analysis",
+     "Hybridization, Nomenclature of IUPAC compounds"
+    ]
+   },
+   {
+    "name": "Atomic Mass, Average Atomic Mass and Isotopic Abundance",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Molecular Weight",
+     "Molar Mass Calculation",
+     "Atomic Structure"
+    ]
+   },
+   {
+    "name": "Laws of Chemical Combination",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Laws of Chemical Combination & Atomic Theory"
+    ],
+    "question_tag_aliases": [
+     "Laws of Chemical Combination & Atomic Theory"
+    ]
+   },
+   {
+    "name": "Volumetric Analysis: Normality, Equivalent Weight and Titration Calculations",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Acid-Base Titration"
+    ]
+   },
+   {
+    "name": "Percentage Yield and Theoretical Yield",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Reaction Yield"
+    ]
+   },
+   {
+    "name": "Significant Figures and Uncertainty in Measurement",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Uncertainty in Measurement & Significant Figures"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "SI Units and Dimensional Analysis",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Measurement & SI Units"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Dilution and Mixing of Solutions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Dalton's Atomic Theory",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Nature of Matter: Classification of Pure Substances and Mixtures",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [
+     "Nature of Matter"
+    ],
+    "question_tag_aliases": [
+     "Water Chemistry"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "a6961d73-9ca9-5716-8e0c-61c69c5e343f",
+  "concepts": [
+   {
+    "name": "First Law of Thermodynamics: Internal Energy, Work and Heat",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Thermodynamic Terms, First Law, Internal Energy & Enthalpy",
+     "Chapter Formula Recap",
+     "Chapter Cheat Sheet"
+    ],
+    "question_tag_aliases": [
+     "Thermodynamic Terms, First Law, Internal Energy & Enthalpy",
+     "Thermodynamics",
+     "General",
+     "Work in Thermodynamics"
+    ]
+   },
+   {
+    "name": "Hess's Law and Enthalpy of Reaction Calculations",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Thermochemistry, Enthalpy of Reactions & Hess's Law"
+    ],
+    "question_tag_aliases": [
+     "Thermochemistry, Enthalpy of Reactions & Hess's Law",
+     "Thermochemistry",
+     "thermochemistry"
+    ]
+   },
+   {
+    "name": "Gibbs Free Energy and Spontaneity",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Entropy, Gibbs Free Energy, Spontaneity & the Second/Third Laws"
+    ],
+    "question_tag_aliases": [
+     "Entropy, Gibbs Free Energy, Spontaneity & Second/Third Laws",
+     "Chemical Equilibrium"
+    ]
+   },
+   {
+    "name": "Entropy Change and the Second Law of Thermodynamics",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Enthalpy Change and the Relationship Between Delta-H and Delta-U",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Standard Enthalpies of Formation, Combustion and Neutralisation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Thermodynamic Processes: Isothermal, Adiabatic, Isobaric and Isochoric",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Thermodynamic processes",
+     "Isothermal Processes",
+     "Matching"
+    ]
+   },
+   {
+    "name": "Bond Enthalpy and Lattice Enthalpy Calculations",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Calorimetry and Measurement of Heat Changes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Calorimetry, Thermodynamic Processes & Additional Enthalpy Changes"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Heat Capacity, Specific Heat and the Cp-Cv Relationship",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Specific heat ratios"
+    ]
+   },
+   {
+    "name": "State Functions, Path Functions and Extensive/Intensive Properties",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Third Law of Thermodynamics and Absolute Entropy",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "7f0847a6-736a-5b04-8626-3978781672eb",
+  "concepts": [
+   {
+    "name": "Electrophilic Substitution and Named Reactions of Phenols",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "General",
+     "Organic Chemistry"
+    ]
+   },
+   {
+    "name": "Chemical Reactions of Alcohols",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Physical & Chemical Properties of Alcohols and Phenols"
+    ],
+    "question_tag_aliases": [
+     "Physical & Chemical Properties of Alcohols/Phenols",
+     "Organic Reactions"
+    ]
+   },
+   {
+    "name": "Acidity of Alcohols and Phenols",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Acid-Base Chemistry"
+    ]
+   },
+   {
+    "name": "Preparation of Alcohols from Alkenes and Carbonyl Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Reactions of Ethers: C-O Cleavage and Ring Substitution",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Ethers: Preparation & Properties"
+    ],
+    "question_tag_aliases": [
+     "Ethers: Preparation & Properties"
+    ]
+   },
+   {
+    "name": "Williamson Ether Synthesis",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Dehydration of Alcohols and Carbocation Rearrangement",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Preparation of Phenols",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Distinguishing Tests for Alcohols and Phenols",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Nomenclature and Classification of Alcohols, Phenols and Ethers",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Classification, Nomenclature & Preparation"
+    ],
+    "question_tag_aliases": [
+     "Classification, Nomenclature & Preparation"
+    ]
+   },
+   {
+    "name": "Physical Properties and Hydrogen Bonding Trends",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Commercially Important Alcohols",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [
+     "Some Commercially Important Alcohols"
+    ],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "62483989-6f22-51ab-8ca1-f687ec124a9d",
+  "concepts": [
+   {
+    "name": "Nucleophilic Addition Reactions of Aldehydes and Ketones",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Aldehydes & Ketones: Chemical Reactions"
+    ],
+    "question_tag_aliases": [
+     "Chemical Reactions of Aldehydes & Ketones",
+     "General",
+     "Organic Chemistry",
+     "Chemical Properties"
+    ]
+   },
+   {
+    "name": "Aldol Condensation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Oxidation and Reduction of Aldehydes and Ketones",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Reduction Reactions"
+    ]
+   },
+   {
+    "name": "Cannizzaro Reaction",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Distinguishing Tests for Aldehydes, Ketones and Acids",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Chemical Tests",
+     "Reactions and Tests"
+    ]
+   },
+   {
+    "name": "Acidity of Carboxylic Acids and Substituent Effects",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Acid-Base Reactions"
+    ]
+   },
+   {
+    "name": "Preparation of Aldehydes and Ketones",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Aldehydes & Ketones: Structure, Naming & Preparation"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Reactions of Carboxylic Acids",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Carboxylic Acids: Structure, Preparation & Properties"
+    ],
+    "question_tag_aliases": [
+     "Carboxylic Acids: Structure, Preparation & Properties",
+     "Organic reactions"
+    ]
+   },
+   {
+    "name": "Reactions of Carbonyl Compounds with Ammonia Derivatives",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Preparation of Carboxylic Acids",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Alpha-Halogenation and Hell-Volhard-Zelinsky Reaction",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Nomenclature and Structure of Carbonyl Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Nomenclature, Structure & Preparation"
+    ]
+   },
+   {
+    "name": "Physical Properties and Hydrogen Bonding in Carbonyl Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [
+     "Physical Properties & Uses of Carbonyl Compounds"
+    ],
+    "question_tag_aliases": [
+     "Chemical bonding"
+    ]
+   },
+   {
+    "name": "Multi-step Conversions and Reaction Maps",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 14,
+    "subtopic_aliases": [
+     "Aldehydes, Ketones & Carboxylic Acids: Chapter Close"
+    ],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "64cfe65f-4cd9-52be-b436-f18793383afd",
+  "concepts": [
+   {
+    "name": "Basicity and Comparison of Amine Strength",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Physical & Chemical Properties"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Acid-Base Chemistry",
+     "Physical & Chemical Properties of Amines",
+     "Equilibrium"
+    ]
+   },
+   {
+    "name": "Preparation of Amines by Reduction and Ammonolysis",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Organic Chemistry"
+    ]
+   },
+   {
+    "name": "Reactions of Diazonium Salts: Sandmeyer, Gattermann and Coupling",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Diazonium Salts"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Gabriel Phthalimide and Hofmann Bromamide Synthesis",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Organic Synthesis"
+    ]
+   },
+   {
+    "name": "Distinguishing Tests for Primary, Secondary and Tertiary Amines",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Electrophilic Substitution in Aromatic Amines",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Acylation and Alkylation of Amines",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Organic Reactions"
+    ]
+   },
+   {
+    "name": "Preparation and Structure of Diazonium Salts",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Diazonium Salts: Preparation & Reactions"
+    ]
+   },
+   {
+    "name": "Nomenclature and Classification of Amines",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Nomenclature, Classification & Preparation"
+    ],
+    "question_tag_aliases": [
+     "Aliphatic Amines"
+    ]
+   },
+   {
+    "name": "Hofmann Elimination of Quaternary Ammonium Salts",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Physical Properties and Hydrogen Bonding in Amines",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+  "concepts": [
+   {
+    "name": "Structure and Classification of Carbohydrates",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Carbohydrates"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Carbohydrates"
+    ]
+   },
+   {
+    "name": "Amino Acids: Structure, Classification and Zwitterions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Amino Acids"
+    ]
+   },
+   {
+    "name": "Peptide Bond and Protein Structure",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Proteins & Amino Acids"
+    ],
+    "question_tag_aliases": [
+     "Proteins & Amino Acids",
+     "Biochemistry",
+     "Peptide Bonds & Hydrolysis"
+    ]
+   },
+   {
+    "name": "Glucose and Fructose: Structure and Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Nucleic Acids: DNA and RNA Structure",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Enzymes, Vitamins & Nucleic Acids"
+    ],
+    "question_tag_aliases": [
+     "Enzymes, Vitamins & Nucleic Acids"
+    ]
+   },
+   {
+    "name": "Vitamins: Classification and Deficiency Diseases",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Disaccharides and Glycosidic Linkage",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Enzymes and Enzyme Catalysis",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Polysaccharides: Starch, Cellulose and Glycogen",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Anomers, Epimers and Mutarotation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Isomerism",
+     "Stereochemistry"
+    ]
+   },
+   {
+    "name": "Hormones and Their Functions",
+    "exams": [
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Hormones"
+    ],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+  "concepts": [
+   {
+    "name": "First Order Kinetics and Half-Life",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Integrated Rate Equations & Half-Life",
+     "Full-Chapter Revision"
+    ],
+    "question_tag_aliases": [
+     "Chemical Kinetics",
+     "General",
+     "Integrated Rate Equations & Half-Life",
+     "First Order Reactions",
+     "Half-Life"
+    ]
+   },
+   {
+    "name": "Rate Law, Order and Molecularity",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Rate of Reaction & Rate Law",
+     "Reaction Kinetics",
+     "Kinetics",
+     "Reaction Orders"
+    ]
+   },
+   {
+    "name": "Arrhenius Equation and Temperature Dependence of Rate",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Collision Theory & Temperature Dependence"
+    ]
+   },
+   {
+    "name": "Rate of Reaction and Rate Expressions from Stoichiometry",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Rate of Reaction & Rate Law"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Zero Order Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Collision Theory and Activation Energy",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Collision Theory & Temperature Dependence"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Determination of Order from Experimental Data",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Electrochemistry",
+     "Conductivity and Cell Constant"
+    ]
+   },
+   {
+    "name": "Pseudo First Order Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Pseudo First Order Reactions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Reaction Mechanism and Rate-Determining Step",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Radioactive Decay Kinetics",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Radioactive Decay"
+    ]
+   },
+   {
+    "name": "Effect of Catalyst on Reaction Rate",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+  "concepts": [
+   {
+    "name": "Crystal Field Theory and d-Orbital Splitting",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Chapter Close: Formula Recap & Cheat Sheet"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Bonding in Coordination Compounds (VBT & CFT)",
+     "Coordination Chemistry",
+     "Crystal Field Theory"
+    ]
+   },
+   {
+    "name": "Valence Bond Theory and Hybridisation of Complexes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Bonding in Coordination Compounds (VBT & CFT)"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Geometrical and Optical Isomerism in Complexes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Isomerism in Coordination Compounds"
+    ],
+    "question_tag_aliases": [
+     "Isomerism in Coordination Compounds",
+     "Stereochemistry"
+    ]
+   },
+   {
+    "name": "IUPAC Nomenclature of Coordination Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Werner's Theory, Ligands & Nomenclature",
+     "Coordination Compounds"
+    ]
+   },
+   {
+    "name": "Magnetic Behaviour and Spin-Only Magnetic Moment",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Magnetic Properties"
+    ]
+   },
+   {
+    "name": "Structural Isomerism in Coordination Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Oxidation State, Coordination Number and EAN",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Oxidation States"
+    ]
+   },
+   {
+    "name": "Werner's Theory and the Coordination Sphere",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Werner's Theory, Ligands & Nomenclature"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Ligands, Denticity and Chelation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Colour of Complexes and d-d Transitions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Metal Carbonyls and Synergic Bonding",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Bonding in Metal Carbonyls"
+    ],
+    "question_tag_aliases": [
+     "Metal Carbonyls & Back-bonding"
+    ]
+   },
+   {
+    "name": "Stability of Complexes and Stability Constants",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [
+     "Stability of Coordination Compounds"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Applications of Coordination Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [
+     "Importance & Applications of Coordination Compounds"
+    ],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+  "concepts": [
+   {
+    "name": "Nernst Equation and Cell Potential Calculations",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Electrochemical Cells & Nernst Equation",
+     "Chapter 2 Complete Revision"
+    ],
+    "question_tag_aliases": [
+     "Electrochemical Cells & Nernst Equation",
+     "Electrochemistry",
+     "General",
+     "Physical Chemistry"
+    ]
+   },
+   {
+    "name": "Kohlrausch's Law and Limiting Molar Conductivity",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Conductance of Electrolytic Solutions"
+    ]
+   },
+   {
+    "name": "Standard Electrode Potential and Feasibility of Redox Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Electrode potentials",
+     "Electrochemical reactions"
+    ]
+   },
+   {
+    "name": "EMF, Gibbs Energy and Equilibrium Constant",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Thermodynamics"
+    ]
+   },
+   {
+    "name": "Electrolysis and Faraday's Laws",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Electrolytic Cells, Electrolysis & Batteries/Corrosion"
+    ],
+    "question_tag_aliases": [
+     "Electrolysis"
+    ]
+   },
+   {
+    "name": "Molar Conductivity and Its Variation with Dilution",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Conductance of Electrolytic Solutions"
+    ],
+    "question_tag_aliases": [
+     "Molar Conductivity"
+    ]
+   },
+   {
+    "name": "Galvanic Cells and Cell Representation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Electrochemical Cells",
+     "Electrochemical cells"
+    ]
+   },
+   {
+    "name": "Conductivity, Cell Constant and Conductance Measurement",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Conductivity",
+     "Ionic Conductance"
+    ]
+   },
+   {
+    "name": "Batteries and Fuel Cells",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Lead Storage Battery & Equivalent Weight"
+    ]
+   },
+   {
+    "name": "Concentration Cells",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Concentration Cells"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Degree of Dissociation of Weak Electrolytes from Conductance",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Colligative Properties"
+    ]
+   },
+   {
+    "name": "Conductometric Titration and Solubility from Conductance",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Solubility and Conductivity",
+     "Titration"
+    ]
+   },
+   {
+    "name": "Corrosion and Its Prevention",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Corrosion"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+  "concepts": [
+   {
+    "name": "SN1 and SN2 Mechanisms",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Chemical Reactions & Mechanisms"
+    ],
+    "question_tag_aliases": [
+     "Chemical Reactions & Mechanisms",
+     "General",
+     "Reaction Mechanisms",
+     "Nucleophiles"
+    ]
+   },
+   {
+    "name": "Reactivity Order of Alkyl and Aryl Halides",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Reactivity of Halides"
+    ]
+   },
+   {
+    "name": "Elimination Reactions and Saytzeff Rule",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Organic Reactions"
+    ]
+   },
+   {
+    "name": "Stereochemistry of Nucleophilic Substitution",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Preparation of Haloalkanes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Organic Chemistry"
+    ]
+   },
+   {
+    "name": "Nucleophilic Substitution in Haloarenes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Reactions with Metals: Grignard, Wurtz and Fittig",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Electrophilic Substitution in Haloarenes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Polyhalogen Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Polyhalogen Compounds"
+    ],
+    "question_tag_aliases": [
+     "Polyhalogen Compounds"
+    ]
+   },
+   {
+    "name": "Preparation of Haloarenes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Nomenclature and Classification of Halogen Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Nomenclature, Preparation & Physical Properties"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Physical Properties of Haloalkanes and Haloarenes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Multi-step Conversions and Reaction Map",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [
+     "The Complete Reaction Map"
+    ],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+  "concepts": [
+   {
+    "name": "Relative Lowering of Vapour Pressure and Raoult's Law",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Vapour Pressure & Raoult's Law",
+     "Chapter Close: Recap & Cheat Sheet"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Vapor Pressure & Raoult's Law",
+     "Physical Chemistry",
+     "Raoult's Law",
+     "Vapor Pressure"
+    ]
+   },
+   {
+    "name": "Van't Hoff Factor, Association and Dissociation",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Colligative Properties & Van't Hoff Factor"
+    ],
+    "question_tag_aliases": [
+     "Colligative Properties & Van 't Hoff Factor",
+     "Physical chemistry",
+     "Mole Fraction with Association/Dissociation"
+    ]
+   },
+   {
+    "name": "Depression of Freezing Point",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Colligative Properties",
+     "Freezing Point Depression"
+    ]
+   },
+   {
+    "name": "Osmotic Pressure and Osmosis",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "colligative properties",
+     "Osmotic Pressure & van't Hoff Factor",
+     "Osmotic Pressure"
+    ]
+   },
+   {
+    "name": "Elevation of Boiling Point",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Colligative properties",
+     "Phase transitions"
+    ]
+   },
+   {
+    "name": "Concentration Terms and Their Interconversion",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Expressing the Concentration of Solutions"
+    ],
+    "question_tag_aliases": [
+     "Solutions",
+     "Mole Fraction",
+     "Stoichiometry"
+    ]
+   },
+   {
+    "name": "Ideal and Non-ideal Solutions and Azeotropes",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Azeotropes",
+     "Thermodynamics"
+    ]
+   },
+   {
+    "name": "Henry's Law and Solubility of Gases",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Solubility & Henry's Law"
+    ],
+    "question_tag_aliases": [
+     "Solubility & Henry's Law",
+     "Gas Laws"
+    ]
+   },
+   {
+    "name": "Vapour Pressure of Binary Liquid Mixtures and Vapour-Phase Composition",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Solubility of Solids in Liquids and Effect of Temperature",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Solubility",
+     "Solubility Trends of Group-2 Salts"
+    ]
+   },
+   {
+    "name": "Types of Solutions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Types of Solutions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Reverse Osmosis and Water Purification",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Reverse Osmosis"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+  "concepts": [
+   {
+    "name": "Electronic Configuration of Transition Elements",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Chapter Review"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Transition Metals"
+    ]
+   },
+   {
+    "name": "Magnetic Moment and Magnetic Behaviour of Transition Ions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Magnetism",
+     "Magnetic properties of ions"
+    ]
+   },
+   {
+    "name": "Variable Oxidation States and Their Stability",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "d-Block Properties & Trends"
+    ]
+   },
+   {
+    "name": "Colour of Transition Metal Ions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Inorganic Chemistry"
+    ]
+   },
+   {
+    "name": "Lanthanoid Contraction and Its Consequences",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Potassium Permanganate: Preparation, Structure and Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Potassium Dichromate & Potassium Permanganate",
+     "stoichiometry",
+     "Organic Chemistry"
+    ]
+   },
+   {
+    "name": "Standard Electrode Potentials and Redox Behaviour of Transition Metals",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Capstone Reference: Potentials, Colours, Series and Applications"
+    ],
+    "question_tag_aliases": [
+     "Redox Reactions"
+    ]
+   },
+   {
+    "name": "Potassium Dichromate: Preparation, Structure and Reactions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Potassium Dichromate & Permanganate"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Actinoids and Their Comparison with Lanthanoids",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "f-Block (Lanthanoids and Actinoids)"
+    ]
+   },
+   {
+    "name": "Lanthanoids: Configuration, Oxidation States and Properties",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "The f-Block: Lanthanoids and Actinoids"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Atomic Radii, Density and Melting Point Trends",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "d-Block Properties & Trends"
+    ],
+    "question_tag_aliases": [
+     "Periodic Table",
+     "Inorganic chemistry"
+    ]
+   },
+   {
+    "name": "Catalytic Activity, Alloys and Interstitial Compounds",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Complex Formation and Qualitative Tests for Transition Metal Ions",
+    "exams": [
+     "jee",
+     "neet"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Coordination Chemistry",
+     "Tests for Transition Metal Ions",
+     "Qualitative Analysis",
+     "Qualitative Analysis of Cations",
+     "Solubility Product"
+    ]
+   }
+  ]
+ }
+]
