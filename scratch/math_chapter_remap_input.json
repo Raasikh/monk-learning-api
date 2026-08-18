@@ -1,0 +1,1685 @@
+{
+ "Limits & Continuity": {
+  "candidate_chapters": [
+   {
+    "chapter_id": "b5fa886e-012b-5425-9399-a8249254a151",
+    "chapter": "Limits and Derivatives",
+    "class_level": 11,
+    "concepts": [
+     {
+      "concept_id": "d4b31345-a4a5-43a1-b938-b6df0b916661",
+      "name": "Evaluating Limits by Factorisation and Rationalisation"
+     },
+     {
+      "concept_id": "250c9d38-40ae-4c11-9a5a-58a91bf86329",
+      "name": "Standard Trigonometric, Exponential and Logarithmic Limits"
+     },
+     {
+      "concept_id": "f29821d7-6643-435b-b038-2f23906a7779",
+      "name": "Limits at Infinity and Limits of Rational Functions"
+     },
+     {
+      "concept_id": "0a2fec0d-6ee8-4c39-835a-dc21d1e3687a",
+      "name": "Derivative from First Principles"
+     },
+     {
+      "concept_id": "e8e827c6-97c3-43d8-ba2b-1b46b4ee41ca",
+      "name": "Product and Quotient Rules of Differentiation"
+     },
+     {
+      "concept_id": "6f5015f6-1428-425c-9633-36fd401d5358",
+      "name": "Indeterminate Form 1^infinity and Exponential Limits"
+     },
+     {
+      "concept_id": "b74c9dfb-f7e7-43b5-8804-f66f926baa04",
+      "name": "Left-Hand, Right-Hand Limits and Existence of a Limit"
+     },
+     {
+      "concept_id": "b09957ac-446c-4d0b-98ed-fd5b5b704fc6",
+      "name": "Limits of Greatest Integer and Modulus Functions"
+     },
+     {
+      "concept_id": "50d25292-155b-4310-aeb4-6cff8bfe2de8",
+      "name": "Derivatives of Trigonometric Functions"
+     },
+     {
+      "concept_id": "cf73d9e1-ba18-470e-9890-354ab2efe600",
+      "name": "Derivative as Slope of a Tangent and Rate of Change"
+     },
+     {
+      "concept_id": "aeba8be6-8ec8-47dc-ad52-76a163a52e86",
+      "name": "Sandwich Theorem"
+     }
+    ]
+   },
+   {
+    "chapter_id": "ec4d9f55-c416-51a4-ae90-2d1b2cb685aa",
+    "chapter": "Continuity and Differentiability",
+    "class_level": 12,
+    "concepts": [
+     {
+      "concept_id": "bc5f3116-4b97-420a-a38a-5f73e85d889f",
+      "name": "Continuity and Differentiability of Piecewise and Modulus Functions"
+     },
+     {
+      "concept_id": "2b070ac3-35c3-45d9-8c21-8254a1b8e49b",
+      "name": "Differentiability and Existence of the Derivative"
+     },
+     {
+      "concept_id": "da64a2c6-b3fe-4924-b6e4-bbf2ac8c136a",
+      "name": "Continuity at a Point and on an Interval"
+     },
+     {
+      "concept_id": "b46c6fd3-c062-4e4c-933f-0a4f82383c1b",
+      "name": "Chain Rule and Derivatives of Composite Functions"
+     },
+     {
+      "concept_id": "9f214f65-ade1-410e-90f9-2471a896c4ad",
+      "name": "Standard Derivatives with the Product and Quotient Rules"
+     },
+     {
+      "concept_id": "c6c3f517-bc06-4bc2-90c3-dd707168dae7",
+      "name": "Derivatives of Inverse Trigonometric Functions"
+     },
+     {
+      "concept_id": "80d0efd8-3ee6-46c7-b3d3-3111b2474121",
+      "name": "Implicit Differentiation"
+     },
+     {
+      "concept_id": "95da5561-e4dd-492b-be26-7ad1b602b95d",
+      "name": "Logarithmic Differentiation"
+     },
+     {
+      "concept_id": "824ea566-b2fb-4eb1-b130-4ed50b0f4856",
+      "name": "Parametric Differentiation"
+     },
+     {
+      "concept_id": "3c274d07-dbbc-4c66-95d1-ab36e721445e",
+      "name": "Second and Higher Order Derivatives"
+     },
+     {
+      "concept_id": "8b4c13b3-8a59-48a4-8918-6db379d14421",
+      "name": "Rolle's Theorem and Lagrange's Mean Value Theorem"
+     },
+     {
+      "concept_id": "8ba586c4-247e-496f-89d8-d6abe6ecbfac",
+      "name": "Differentiation of One Function with Respect to Another"
+     }
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "question_id": "519e4811-fff9-521d-a868-20f68e3d9e94",
+    "legacy_tag": "Functions",
+    "servable": true,
+    "stem": "Let $S = \\{1, 2, 3, 4, 5, 6, 7\\}$. Then the number of possible functions $f: S \\to S$ such that $f(m \\cdot n) = f(m) \\cdot f(n)$ for every $m, n \\in S$ and $m \\cdot n \\in S$ is equal to _____."
+   },
+   {
+    "question_id": "97276422-3f42-5d55-ba1b-d172c81f4074",
+    "legacy_tag": "Continuity & Differentiability",
+    "servable": true,
+    "stem": "The greatest integer function f(x) = ⌊x⌋is discontinuous at how many points in the interval (0, 3)?"
+   },
+   {
+    "question_id": "249898df-2599-5502-975d-303d7a45e9ae",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "0 2sin lim x x x → is equal to :"
+   },
+   {
+    "question_id": "1530abd7-edeb-56b3-a6f7-c3b806612f8d",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The number of points where the function () ( ) 2 2 2 3 7 if 1 4 1 if 1 1 1 2 if 1 x x x f x x x x x x − − ≤− = − −< < + + − ≥ []t denotes the greatest integer t, ≤ is discontinuous is_____"
+   },
+   {
+    "question_id": "36209d84-d254-553c-99d6-cc76346476ee",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "1 1 3 3 2 4 2 2 2 2 8 x x x x x Lim x x x − − → − + − − − − − is equal to"
+   },
+   {
+    "question_id": "af030a14-3496-52c1-b20b-cac2c4f3f8fa",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "0 xLim → 2 1 1 sin tan x x k x − = , then the value of 48 loge k is"
+   },
+   {
+    "question_id": "ccccbcb3-e028-5c70-833e-3cb0f9220b07",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "If $f(x) = 2|x + 1| - |x - 1| + 3|x - 2| + 2x + 1$ and $h(x) = \\text{...}$, then choose the correct statements:"
+   },
+   {
+    "question_id": "56e5060c-e817-518c-9727-d6531cd6362a",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "For some a , b , let f (x) = sin 1 sin 1 sin 1 x a b x x a b x x a b x − + − 0 x ≠ , if () 1 2 3 0 lim x f x a b λ λ λ → = + + then ( ) 2 1 2 3 λ λ λ + + is"
+   },
+   {
+    "question_id": "96911b7e-95a0-5349-8c7d-a52833861965",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let () f x be a continuous function which takes positive values for all 0 x ≥ and satisfy () () 0 x f t dt x f x = ∫ where () 1 1 2 f = . If ( ) 2 1 a f b + = where a and b are positive coprime numbers, then the value of a b + is equal to"
+   },
+   {
+    "question_id": "a5bdb157-1c19-5249-aec3-51bf61037267",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If 1 5 4 5 4 5 5 4 20 x log x x log L lim log x → = then [] L ___, = where [.] is greatest integer function."
+   },
+   {
+    "question_id": "0472856d-269b-541b-8ede-9402c452104b",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If 3 0 lim 1 ( )( sin ) x x a x bx x → = + − , 0 a > Then a b + is equal to"
+   },
+   {
+    "question_id": "df479d1f-6a14-5b2e-92c7-164be2dd2a9b",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "For the function the number of points of discontinuity of the function are (where [x], {x} represent G.I.F. and fractional part respectively)."
+   },
+   {
+    "question_id": "6f6b2c31-8262-5069-a6f5-6aad083120a2",
+    "legacy_tag": "Functions",
+    "servable": false,
+    "stem": "The number of points where the function $f(x) = |x + [x]| - 3[2x] + 4[3x]$ is discontinuous in the interval $[-1, 1]$ is:"
+   },
+   {
+    "question_id": "ffdd50b9-80ce-5d2c-b939-4ce1ed2f27e9",
+    "legacy_tag": "Differential Equations",
+    "servable": false,
+    "stem": "Given the equation $f(x) = 1 + \\ldots$ [Note: $f(0) = 1$], differentiate both sides with respect to $x$. We find that $\\frac{d}{dx} f(x) = \\ldots$ and $f(-2) = \\ldots$."
+   },
+   {
+    "question_id": "31c98698-2c12-5b33-a4d4-a9b2ece349a3",
+    "legacy_tag": "Continuity and Differentiability",
+    "servable": false,
+    "stem": "Given that the function is continuous at $x = 0$, we have $f(0+) = 0$. The derivative at this point is given by $f'(0+) = k_2 - 3k - 1$. Since the function is differentiable at $x = 0$, we can set up the equation: $$k_2 - 3k - 1 = 0$$ along with the conditions: $$k_1 + k_2 = 3$$ and $$k_1 k_2 = -1$$. Solve these equations to find the values of $k_1$ and $k_2$."
+   },
+   {
+    "question_id": "5551aa98-b5fb-5d15-b99a-87bfdcfbf06e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let a function ' f ' satisfies ( ) () f x f x − = and ( ) ( ) f 3 x f 1 x x R + = − ∀∈ and () ; 0 1 1 2 ; 1 2 x x f x x x =− < . The number of points where function () f x is discontinuous in [ ] 0,100 is equal to D and value of () 100 0 f x dx ∫ is equal to I , then the value of ( ) 2D I + is equal to"
+   },
+   {
+    "question_id": "20872045-f183-56b1-af0e-bd65acebbce5",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ƒ(x) be a continuous function in [–1, 1] such that , then (p + q + r) is equal to"
+   },
+   {
+    "question_id": "e4e6f899-0a9c-5d74-ae39-d46bcab13b67",
+    "legacy_tag": "Limits (Concepts & Algebra)",
+    "servable": false,
+    "stem": "Match the List-I with List-II and choose the correct option. List - I List - II (A) lim ( √ x 2 + 1 − √ x 2 −1 ) (I) 5 x→∞ 2 [ 1 −cos 5x ] (B) lim (II) 0 x→0 25 3x 2 (C) x + 5 x 1 (III) −1 lim (4 ) x x→∞ 3 ( 1 1 ) 1 (D) lim − (IV) x→0 sin 2 x x 2 3 (A) (A) – II, (B) – IV, (C) – I, (D) – III (B) (A) – I, (B) – IV, (C) – III, (D) – II (C) (A) – II, (B) – III, (C) – II, (D) – IV (D)"
+   },
+   {
+    "question_id": "6051f210-b6e4-5286-8af7-022d64d5bb8e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If the value of 2 2 2 2 3 3 3 3 4 4 4 4 2 n n(1 2 3 ... n)(1 2 3 ..... n )(1 2 3 ... n ) lim (1 2 3 .... n ) →∞ + + + + + + + + + + + + + + + + is k p (where k and p are coprime) then value of k + p is ___________."
+   },
+   {
+    "question_id": "1357db5c-5010-5c1f-81ba-40a21c76fe28",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The number of points () [ ] [ ] cos , 0 1 2 3 2 , 1 2 x x f x x x x π ≤ ≤ = − − < ≤ is discontinuous is___ ([.] denotes the greatest integral function)"
+   },
+   {
+    "question_id": "f7be2ea9-e439-526c-b8f7-953add07e12b",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If () ( ) ( ) ( ) ( ) 2 2 1 cos 1 tan 1 sin 8 4 lim , 0 1 n n n x x n n n x f x x x x x π μ →∞ − − − + + − − = ≠ + + is continuous at 0 x = , then find the value of () 0 2 f μ +"
+   },
+   {
+    "question_id": "de2b1715-cfa9-57cd-87eb-629d8eeaa9e8",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If 0 sin cos tan lim n x x x x x x x → + − − exists and is non zero finite value, then the value of n is"
+   },
+   {
+    "question_id": "ffc4ce74-97dc-51b0-8148-08e7ee5cb851",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let () () () 2 1 2 f x x xg g ′ + ′′ = + and () () () () 2 1 g x x f xf x f x = + ′ ′′ + , then () () 1 3 1 2 f g − − ′ ′ ′ ′ equals"
+   },
+   {
+    "question_id": "8b446e4b-1f1b-580f-9ddb-0f71cb896ea2",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "() 2 f :[ 2,2] R,f x [x] x − → = + If m = number of integer in the range of () f x n=number of points at which the function is discontinuous (where [.] represents greatest integer function) then ( m n + ) equals"
+   },
+   {
+    "question_id": "d0e467e2-ebae-5825-a2e5-c2447e49ab7e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let : f R R → be defined as () 3 4 (2 3 ) cos 3 x f x x x π = − + + and 1 g f − = then the value of ( ) ( ) 7 2 3 2 g g π π ′ ′ + ′ is (where g′ and g′′ represent the st 1 and nd 2 order derivatives of g )"
+   },
+   {
+    "question_id": "a536d423-51ca-5984-96e8-3d718d4692a0",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "Given that $g(f(x)) = x$ and the derivatives are $f'(x) = e^{x-1} + 3x^2 + 1$ and $f''(x) = e^{x-1} + 6x$. At $x = 1$, we have $f(1) = 3$ and $f'(1) = 5$. Use L'Hôpital's Rule to find the limit as $x$ approaches a certain value."
+   },
+   {
+    "question_id": "ecfd1a6b-6ddf-5ab4-aec3-75cd08eb76b7",
+    "legacy_tag": "Continuity & Differentiability",
+    "servable": false,
+    "stem": "Which of the following functions is continuous everywhere but differentiable everywhere except at exactly one point?"
+   },
+   {
+    "question_id": "e83f4159-c391-53ce-9bda-eb53ce1d301e",
+    "legacy_tag": "Polynomials",
+    "servable": false,
+    "stem": "Let $f(x)$ be a polynomial of degree 3 such that $f(k) = -2k^2 + 5$ for $k = 2, 3, 4, 5$. Then the value of $f(10)$ is equal to _____."
+   },
+   {
+    "question_id": "3a010075-debc-5590-a85d-44f03a918beb",
+    "legacy_tag": "Differential Equations",
+    "servable": false,
+    "stem": "Solve the equation $$y^{2/3} - 2xy^{1/3} + 1 = 0$$ for $y^{1/3}$. Given that $y^{1/3} = \\frac{(x^2 - 1)y^2}{9y^2}$, differentiate both sides with respect to $x$ and find the relationship between $x$ and $y$."
+   },
+   {
+    "question_id": "7a60eb9a-abe0-5ea4-a188-f83d594e6373",
+    "legacy_tag": "Limits",
+    "servable": false,
+    "stem": "Let $$f(x) = \\begin{cases} x - 1, & x \\in \\mathbb{N} \\text{ and } x \\text{ is even} \\\\ 2x, & x \\text{ is odd} \\end{cases}$$. If for some $$a \\in \\mathbb{N}$$, $$\\lim_{x \\to a} \\left( |x|^3 - [x^a] \\right) = 21$$, where $$[t]$$ denotes the greatest integer less than or equal to $$t$$, then find the value of $$a$$."
+   },
+   {
+    "question_id": "3d7480a2-a2a1-5216-b4c6-bffd890992fc",
+    "legacy_tag": "Second Order Derivatives & Mean Value Theorems",
+    "servable": false,
+    "stem": "d dx sin(2x) ="
+   },
+   {
+    "question_id": "3522520a-1ffd-5851-a0a5-3df0c1e5d7a6",
+    "legacy_tag": "Second Order Derivatives & Mean Value Theorems",
+    "servable": true,
+    "stem": "\\frac{d}{dx}\\left(e^{x^2}\\right) ="
+   },
+   {
+    "question_id": "44503e99-c514-5711-a296-7cb5a7e67658",
+    "legacy_tag": "Logarithmic & Parametric Differentiation",
+    "servable": false,
+    "stem": "d dx(ex x) ="
+   },
+   {
+    "question_id": "0dac9d5d-41fe-5c0f-8b72-13382f2eed09",
+    "legacy_tag": "Logarithmic & Parametric Differentiation",
+    "servable": true,
+    "stem": "d dx tan xequals:"
+   },
+   {
+    "question_id": "aa1659f1-f447-5a29-9f78-a90ae7dfdbac",
+    "legacy_tag": "Logarithmic & Parametric Differentiation",
+    "servable": true,
+    "stem": "Which statement about continuity is false?"
+   },
+   {
+    "question_id": "23a9034a-c248-534f-a172-73c0b2f00c10",
+    "legacy_tag": "Logarithmic & Parametric Differentiation",
+    "servable": false,
+    "stem": "d dx(x2 cos x) ="
+   },
+   {
+    "question_id": "2fe7c668-ba98-5cbe-bf08-e0de68d01340",
+    "legacy_tag": "Limits",
+    "servable": false,
+    "stem": "Evaluate the limit: $$\\lim_{x \\to 0^+} \\frac{\\tan(5(x)^3) \\log_e(1 + 3x^2)}{(\\tan^{-1}(3\\sqrt{x}))^2 (e^{5(x)^3} - 1)}$$."
+   },
+   {
+    "question_id": "513acde8-2554-54b9-bcf4-6143cdfad867",
+    "legacy_tag": "Piecewise Functions",
+    "servable": false,
+    "stem": "Suppose $f(x) = \\begin{cases} ax^2 + bx + c & \\text{if } x < 1 \\\\ x^3 & \\text{if } x \\geq 1 \\end{cases}$. If $f(1)$ exists, then find the value of $a + b + c$."
+   },
+   {
+    "question_id": "3fd7d69a-fc70-50b1-b4cd-4327500dccc4",
+    "legacy_tag": "Limits",
+    "servable": false,
+    "stem": "Evaluate the limit: $$\\lim_{x \\to 2} \\left( \\sum_{n=1}^{9} \\frac{n(n+1)x^2 + 2(2n+1)}{x + 4} \\right)$$ is equal to:"
+   },
+   {
+    "question_id": "9b6fa904-adaa-5a30-9954-f6a035a2b862",
+    "legacy_tag": "Limits",
+    "servable": false,
+    "stem": "Evaluate the limit: $$\\lim_{x \\to 0} \\frac{2(1 - \\cos x)\\sqrt{\\cos 2x} + 3\\sqrt{\\cos 3x} + \\ldots + 10\\sqrt{\\cos 10x}}{x^2}$$."
+   },
+   {
+    "question_id": "a01af3ba-6a2f-5928-a46d-fd2d83a8dbae",
+    "legacy_tag": "Limits",
+    "servable": true,
+    "stem": "Evaluate the limit: $$\\lim_{x \\to 0} \\frac{e^{2|\\sin x|} - 2|\\sin x| - 1}{x^2}$$."
+   },
+   {
+    "question_id": "9dd35af0-47b3-562d-9ead-7641f7df0272",
+    "legacy_tag": "Functions",
+    "servable": true,
+    "stem": "If $f(x) = \\{x + \\sin x\\} + [x - \\sin x] + [x]$ where $[y]$ and $\\,{y}$ denote the greatest integer function and fractional part function of $y$ respectively, then find the number of points of discontinuity in $[0, \\pi]$."
+   },
+   {
+    "question_id": "b51345c9-4195-56f3-b070-fa381cc5940d",
+    "legacy_tag": "Second Order Derivatives & Mean Value Theorems",
+    "servable": false,
+    "stem": "d dx ln(cos x) ="
+   },
+   {
+    "question_id": "5cd4a4d1-830d-55f4-8b38-07b24b77b3c6",
+    "legacy_tag": "Second Order Derivatives & Mean Value Theorems",
+    "servable": true,
+    "stem": "If y= (1 + x2)10, then y′ at x= 1 is:"
+   },
+   {
+    "question_id": "97dcc36d-e0bf-5c0e-9a45-6314813f8d6d",
+    "legacy_tag": "Continuity & Differentiability",
+    "servable": true,
+    "stem": "If a function fis differentiable at x= c, which statement is necessarily true?"
+   },
+   {
+    "question_id": "60a11f04-0cfb-562a-a5de-b6772d885e2e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Number of points of discontinuity of the function x x x f (x) sin({2 [2 ] [3 ]}) − = + + for x ∈ [0, 2] is (where [⋅] and {⋅} represent the greatest integer function and fractional part function respectively)"
+   },
+   {
+    "question_id": "22d23312-3083-5902-9639-b0b8006ef9b7",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The value of sin lim x x x →∞ , is"
+   },
+   {
+    "question_id": "9c7d5042-a02a-5023-acc7-0a28b9e39193",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let m and n be the number of points for which the function f(x) = [x] + 1/(x - 1), –2 < x < 3 is not continuous and non-differentiable respectively then m + n is ([.] is GIF)"
+   },
+   {
+    "question_id": "51dc4c91-cb9b-5035-b74d-ffcfdb9a1e16",
+    "legacy_tag": "General",
+    "servable": true,
+    "stem": "Let : f R R → satisfy the equation ( ) () () . f x y f x f y + = for all ,x y R ∈ and () 0 f x ≠ for any x R ∈ . If the function f is differentiable at 0 x = and () ' 0 3, f = then () ( ) 0 1 lim 1 h f h h → − is equal to"
+   },
+   {
+    "question_id": "751463d5-6287-5867-8f06-c642d06b0205",
+    "legacy_tag": "Limits",
+    "servable": false,
+    "stem": "Evaluate the limit: $$\\lim_{x \\to \\infty} \\frac{(2x^2 - 3x + 5)(3x - 1)x^2}{(3x^2 + 5x + 4)\\sqrt{(3x + 2)x}}$$."
+   },
+   {
+    "question_id": "3e327c9d-8a6e-5230-b1f6-12d01ea0081c",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The value of ( ) ( ) secx x 0 secx sec x lim1 sec x ln sec x → − − + is equal to"
+   },
+   {
+    "question_id": "b408e560-d2b6-58dd-a592-4e2edb358a65",
+    "legacy_tag": "Differential Calculus",
+    "servable": false,
+    "stem": "If $$f$$ and $$g$$ are two real-valued differentiable functions such that $$f(x) = x^2 + g'(0)x + g''(1)$$ and $$g(y) = y^2 + f''(y) + f'(y) - 2$$, then $$f(3) + g(2)$$ is equal to (Round off the answer to the nearest integer)."
+   },
+   {
+    "question_id": "0ac8b844-a70b-5e80-ad24-1981a93c4049",
+    "legacy_tag": "Continuity & Differentiability",
+    "servable": false,
+    "stem": "Suppose function f(x) is continuous and differentiable at x = 0, and function g(x) is continuous but non-differentiable at x = 0. If the function h(x) = e^{g(x)} · f(x) · g(x) is differentiable at x = 0, then which of the following is CORRECT?"
+   },
+   {
+    "question_id": "57044113-f9df-5234-8546-1683c10d3a43",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If 1 1 1 0 10sin 8sin 2 12 lim tan 2 x x x x x x x − − − → + + = λ, then λ is equal to (where [.] denotes greatest integer function)"
+   },
+   {
+    "question_id": "7c37abc7-d13b-5c15-8aeb-b3dd76b8d5ee",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let : f R R → be a function defined by ( ) 3 1 f x x x = + − and ‘g’ is the inverse of f, then the value of ( ) ( ) 9 ' 9 g g is ( 'g is the derivative of g)"
+   },
+   {
+    "question_id": "ed749385-d81f-59cb-9968-67dad222dd01",
+    "legacy_tag": "Limits",
+    "servable": false,
+    "stem": "Evaluate the limit: $$\\lim_{n \\to \\infty} \\left\\{ (2^2 - 2)(2^2 - 3)(2^2 - 5) \\ldots (2^2 - (2n + 1)) \\right\\}$$."
+   },
+   {
+    "question_id": "5d638ef6-4432-57eb-ba34-49228a2dda5e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If f is differentiable function defined over R, () () 5 7 5 7 f and f ′ = = , then () () 5 5 5 lim 5 x xf f x x → − − is given by"
+   },
+   {
+    "question_id": "53928406-6ea7-552c-b8cc-c14159fd469c",
+    "legacy_tag": "Continuity and Differentiability",
+    "servable": true,
+    "stem": "Let \\( f(x) = \\begin{cases} 3x, & x < 0 \\\\ \\min\\{1 + x + [x], x + 2[x]\\}, & 0 \\leq x \\leq 2 \\\\ 5, & x > 2 \\end{cases} \\) where \\([.]\\) denotes the greatest integer function. If \\( \\alpha \\) and \\( \\beta \\) are the number of points where \\( f \\) is not continuous and is not differentiable, respectively, then \\( \\alpha + \\beta \\) equals __________."
+   },
+   {
+    "question_id": "439d1068-dd23-5273-8cbf-424dc21a5e62",
+    "legacy_tag": "Limits",
+    "servable": false,
+    "stem": "Let \\( \\beta = \\lim_{x \\to 0} \\frac{\\alpha x - (e^{3x} - 1)}{\\alpha x (e^{3x} - 1)} \\) for some \\( \\alpha \\in \\mathbb{R} \\). Then the value of \\( \\alpha + \\beta \\) is:"
+   },
+   {
+    "question_id": "03152380-4062-51b8-80b0-a9dc78722aa1",
+    "legacy_tag": "General",
+    "servable": true,
+    "stem": "If the function $f(x) = \\frac{\\sin(\\tan x) - \\tan(\\sin x)}{\\sin(\\tan x) - \\sin x}$ is continuous at $x = 0$, then $f(0)$ is equal to _______."
+   },
+   {
+    "question_id": "8d19966f-3af3-5f73-b86c-e3737d5bf55c",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ( ) : 2,1 nf R − → be defined by () [ ] [] nf x x n x x = + + − and na denotes number of points of discontinuity of the function () nf x . Then 2026 0 r r a =∑ is equal to (where [.] denotes Greatest Integer Function)"
+   }
+  ]
+ },
+ "Differentiation": {
+  "candidate_chapters": [
+   {
+    "chapter_id": "ec4d9f55-c416-51a4-ae90-2d1b2cb685aa",
+    "chapter": "Continuity and Differentiability",
+    "class_level": 12,
+    "concepts": [
+     {
+      "concept_id": "bc5f3116-4b97-420a-a38a-5f73e85d889f",
+      "name": "Continuity and Differentiability of Piecewise and Modulus Functions"
+     },
+     {
+      "concept_id": "2b070ac3-35c3-45d9-8c21-8254a1b8e49b",
+      "name": "Differentiability and Existence of the Derivative"
+     },
+     {
+      "concept_id": "da64a2c6-b3fe-4924-b6e4-bbf2ac8c136a",
+      "name": "Continuity at a Point and on an Interval"
+     },
+     {
+      "concept_id": "b46c6fd3-c062-4e4c-933f-0a4f82383c1b",
+      "name": "Chain Rule and Derivatives of Composite Functions"
+     },
+     {
+      "concept_id": "9f214f65-ade1-410e-90f9-2471a896c4ad",
+      "name": "Standard Derivatives with the Product and Quotient Rules"
+     },
+     {
+      "concept_id": "c6c3f517-bc06-4bc2-90c3-dd707168dae7",
+      "name": "Derivatives of Inverse Trigonometric Functions"
+     },
+     {
+      "concept_id": "80d0efd8-3ee6-46c7-b3d3-3111b2474121",
+      "name": "Implicit Differentiation"
+     },
+     {
+      "concept_id": "95da5561-e4dd-492b-be26-7ad1b602b95d",
+      "name": "Logarithmic Differentiation"
+     },
+     {
+      "concept_id": "824ea566-b2fb-4eb1-b130-4ed50b0f4856",
+      "name": "Parametric Differentiation"
+     },
+     {
+      "concept_id": "3c274d07-dbbc-4c66-95d1-ab36e721445e",
+      "name": "Second and Higher Order Derivatives"
+     },
+     {
+      "concept_id": "8b4c13b3-8a59-48a4-8918-6db379d14421",
+      "name": "Rolle's Theorem and Lagrange's Mean Value Theorem"
+     },
+     {
+      "concept_id": "8ba586c4-247e-496f-89d8-d6abe6ecbfac",
+      "name": "Differentiation of One Function with Respect to Another"
+     }
+    ]
+   },
+   {
+    "chapter_id": "48503325-cfe9-5bfd-8533-bb6f9cc53251",
+    "chapter": "Applications of Derivatives",
+    "class_level": 12,
+    "concepts": [
+     {
+      "concept_id": "8ef8cb9e-4601-4be2-bb2b-03dd36793b6d",
+      "name": "Maxima and Minima Using the Derivative Tests"
+     },
+     {
+      "concept_id": "bc3a6228-c5ea-4dfb-b1e0-2fba33b7d151",
+      "name": "Increasing and Decreasing Functions"
+     },
+     {
+      "concept_id": "8ccaa81f-7ec9-452b-80d4-a10ce5a4d6d9",
+      "name": "Tangents and Normals to a Curve"
+     },
+     {
+      "concept_id": "0d443773-e109-4f41-b336-0a3da5ba1ffa",
+      "name": "Applied Optimization Problems"
+     },
+     {
+      "concept_id": "76e04650-0d99-41f1-9ef8-362592b9af23",
+      "name": "Absolute Maximum and Minimum on a Closed Interval"
+     },
+     {
+      "concept_id": "26d26659-f001-40a8-ae7b-c17cc018a535",
+      "name": "Rate of Change and Related Rates"
+     },
+     {
+      "concept_id": "d7f2a9a0-9416-494d-a9b0-a2d09091a51e",
+      "name": "Angle of Intersection of Two Curves"
+     },
+     {
+      "concept_id": "892edeaa-51af-4afe-930e-f6ff6c45975d",
+      "name": "Proving Inequalities Using Monotonicity"
+     },
+     {
+      "concept_id": "bbed07f5-478f-43d4-bf85-46d2740e90c4",
+      "name": "Number of Roots of an Equation Using Derivatives"
+     },
+     {
+      "concept_id": "cc8db8e5-fe55-4e5a-b60a-2ebdd9594085",
+      "name": "Concavity, Inflection Points and Curve Sketching"
+     },
+     {
+      "concept_id": "9f87ab28-af42-4f73-82f5-6144a77b96a6",
+      "name": "Approximations and Errors Using Differentials"
+     }
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "question_id": "50e57221-1c29-52c2-bf5b-1a766932cadf",
+    "legacy_tag": "Rate of Change & Monotonicity",
+    "servable": false,
+    "stem": "For y= x3 −6x2, the rate of change of ywith respect to xis zero at:"
+   },
+   {
+    "question_id": "83fc4bd1-597a-58f3-b298-748da1b836cf",
+    "legacy_tag": "Functions",
+    "servable": false,
+    "stem": "Let $M$ be the largest value of $x$ for which the function $f(x)$ is increasing for all $x$. Then $M$ is equal to:"
+   },
+   {
+    "question_id": "c36e3d90-12f8-5c5c-9cea-19e20a8e899c",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The minimum value of the function 4 3 2 3 x x 3x x 1 f(x) , x 0 x x + + + + = > + lies in the interval"
+   },
+   {
+    "question_id": "2c70feab-9504-5c06-aa99-d81df287a456",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If all the real values of m for which the function () ( ) 3 2 3 2013 3 2 x x f x m mx = − − + − is strictly increasing in [ ) 0 x , ∈ ∞ is [ ] 0,k , then the value of k is____"
+   },
+   {
+    "question_id": "1f0758d2-5610-576b-b964-f35929b2fea6",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let (2 , 3) be the largest open interval in which the function () ( ) 2 2 2 2 3 f x ln x x ax = − − + + is Strictly increasing and (b , c) be the largest open interval, in which the function. () ( )( ) 3 2 1 8 g x x x a = − + − is strictly decreasing. Then value of 10(a + b – 3c) is"
+   },
+   {
+    "question_id": "461cf271-46d1-5886-9439-edee86e12fd2",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If () f x is a polynomial of degree 6 which satisfies () 1 2 3 0 lim 1 x x f x e x → + = and has local maximum at 1 x = and local minimum at 0 x = and 2 x = , then the value of 4 5 18 9 5 f"
+   },
+   {
+    "question_id": "4ba22e76-9967-5305-ad5b-38238dde5e9c",
+    "legacy_tag": "Maxima & Minima",
+    "servable": false,
+    "stem": "Let f (x) = + + x + 2 and 3 2 g ′ (x) = x 2 −9 x 2 −4x + 3 2 2 . ( )( ) ( x −3x + 2 ) ( x −2x −3 ) If n & n respectively denote the number of points 1 2 of local minima and the number of points of local maxima of the function f(g(x)) then the value of (n + n ). 1 2"
+   },
+   {
+    "question_id": "25b6d2df-8883-5c40-8bb6-552339f92086",
+    "legacy_tag": "Rate of Change & Monotonicity",
+    "servable": false,
+    "stem": "Consider the function ( x 2 ) g (x) = 4.f + f ( 125 −x 2 ) ∀ x ∈ R and 4 , then the interval in which g(x) increases is"
+   },
+   {
+    "question_id": "f4e146d8-9373-51dc-9425-00fe3feb84da",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "A differentiable function f : R+ → R satisfies the condition x f (x) f (y) ln x y y − ≥ + − for all x, y ∈ R+. If g(x) = f′(x), then the value of 100 n 1 1 g n = ∑ is"
+   },
+   {
+    "question_id": "5b0fac14-690e-53eb-a3af-e07e0fb00090",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The local minimum value of 2 250 x x + is λ, then 15 λ is equal to ___________."
+   },
+   {
+    "question_id": "bb7f10fc-ee12-53e7-8ccf-aff37f4d0d8f",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let : f R R → be a function defined by ( ) 2 3 1 f x x x = + − − . If k is the number of points of local maxima of () f x and L is the number of points of local minima of () f x , then 3 4 k L + is (1) 14 (2) 11 (3) 7 (4) 13"
+   },
+   {
+    "question_id": "52b4a11f-70ca-5bd1-8d52-a6cc1ca58e13",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If () P x be a polynomial of degree 3, with () () () 3 0 3 3 P P P ′ ′′ = = = . If () 3 12 P′′′ = , then value of () 8 P is equal to :"
+   },
+   {
+    "question_id": "3955b75f-d625-533a-8da4-6c17a92b8f71",
+    "legacy_tag": "Monotonicity & Function Mapping",
+    "servable": false,
+    "stem": "The function f : [0, 2] → [1, 4], defined by f(x) = x 3– 5x + 7x + 1, is2"
+   },
+   {
+    "question_id": "23456cb4-2c57-5ce3-861d-3b32437f31f1",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Number of solution(s) of the equation () ( ) f f x 0 = if () 3 2 1 3 2 x x f x = − + is"
+   },
+   {
+    "question_id": "c24fe267-b07b-581d-b98a-286bf64b9279",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let the function ( ) : 0,2 f R π→ be defined as () ( ) sin 2 sin sin 2 ( ) 0 sin cos x x t f x e x e t t dt = + − ∫ and n be the number of points of local maximum and local minimum of () f x respectively, then ( ) m n + is equal to"
+   },
+   {
+    "question_id": "2807df68-aabd-55eb-8ca5-904bd40b6d09",
+    "legacy_tag": "Optimization",
+    "servable": false,
+    "stem": "The minimum value of $$3(a + 1)^2 + 2(b + 1)^2 + (c + 1)^2 + (3c + 1)^2$$ where $$0 < a, b, c \\\\leq 9$$, is $$p + q \\sqrt{r}$$; $$p, q, r \\in \\mathbb{I}$$ and $$q, r$$ are coprimes. Then $$(p + q + r)$$ is equal to."
+   },
+   {
+    "question_id": "2e29ec0d-fe43-5e29-92d1-261856d9cb8c",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "Minimum integral value of $k$ for which the equation $e^x = k x^2$ has exactly three real distinct solutions is."
+   },
+   {
+    "question_id": "41a65d1e-112f-5971-85f1-1b6b9d39392b",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The curve ( ) x y ln x y 2x 5 + − + = + has a vertical tangent at the point ( ) , αβ. Then α β + is equal to :"
+   },
+   {
+    "question_id": "44ed1fc4-a1b9-52e1-8b51-a5db124a2dff",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "If $m$ and $n$ respectively are the number of local maximum and local minimum points of the function, then the ordered pair $(m, n)$ is equal to ____."
+   },
+   {
+    "question_id": "4f731d08-2280-5a5b-9ca2-5acad01dd750",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let a and b be real numbers such that 2 2 9 8 7 6 a ab b + + ≤ , then the maximum possible value of the expression ( ) 7 5 12 a b ab + + is"
+   },
+   {
+    "question_id": "d456beea-2026-53c5-834a-d8622056be46",
+    "legacy_tag": "Functions and their properties",
+    "servable": false,
+    "stem": "Let \\( f(x) = \\cos(2x) \\) and \\( g(x) = e^x \\). Determine the nature of the functions in the intervals: \\( (I) \\; f(x) \\; x \\in (-\\infty, 0], \\; (II) \\; h(x) = e^x + 1 \\; (III) \\; h(x) \\in (1, 2] \\; (IV) \\; \\cos(2x) = \\) in \\([0, 3]\\) has 2 solutions."
+   },
+   {
+    "question_id": "bc5fdd9d-2a8e-5c95-9a19-c78569954a9d",
+    "legacy_tag": "Maxima & Minima",
+    "servable": false,
+    "stem": "The absolute maximum value of f(x) = sin x+ cos xon [0, π 2] is:"
+   },
+   {
+    "question_id": "d7eeb20d-bd8a-536e-9410-3e59e543741d",
+    "legacy_tag": "Maxima & Minima",
+    "servable": false,
+    "stem": "If f(x) = x3 −3kxhas a local minimum at x= 2, then k= 21"
+   },
+   {
+    "question_id": "ea733a0e-1027-5a52-a7b6-40bab93a6137",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "Let $f(x) = 2x^3 - 3(2 + p)x^2 + 12px + \\ln(16 - p^2)$. If $f(x)$ has exactly one local maxima and one local minima, then the number of integral values of $p$ is:"
+   },
+   {
+    "question_id": "7d2bdb5d-81e2-53bd-b7e6-03fb15047c46",
+    "legacy_tag": "Rate of Change & Monotonicity",
+    "servable": true,
+    "stem": "The radius of a circle increases at 0.7 cm/s. The rate of increase of its circumfer- ence is:"
+   },
+   {
+    "question_id": "98ec4a38-2328-5722-a87e-ad25bab53860",
+    "legacy_tag": "Rate of Change & Monotonicity",
+    "servable": true,
+    "stem": "A ladder slides down a wall. At the instant the foot is far from the wall and the top is near the ground, the top is moving:"
+   },
+   {
+    "question_id": "35e78f04-28bf-5ce9-8aaf-5829fd1e857f",
+    "legacy_tag": "Rate of Change & Monotonicity",
+    "servable": true,
+    "stem": "A balloon’s volume increases at a constant rate. As it grows, the rate at which its radius increases:"
+   },
+   {
+    "question_id": "d8a16261-602b-5e46-bd44-55944b927bed",
+    "legacy_tag": "Tangents & Normals",
+    "servable": false,
+    "stem": "The function f(x) = 2x3 + 9x2 + 12x−4 is decreasing on:"
+   },
+   {
+    "question_id": "e53029c1-41fe-5a15-8a63-8173f2affe40",
+    "legacy_tag": "Tangents & Normals",
+    "servable": true,
+    "stem": "Which of the following is strictly increasing on R?"
+   },
+   {
+    "question_id": "0a9a88f5-917d-5d3f-be64-730a97a1360d",
+    "legacy_tag": "Tangents & Normals",
+    "servable": true,
+    "stem": "f(x) = x(x−3)2 is decreasing for x∈:"
+   },
+   {
+    "question_id": "3f60768e-c176-5dfd-b860-4bebbd312799",
+    "legacy_tag": "Tangents & Normals",
+    "servable": true,
+    "stem": "If f(x) = x3 + bx2 + 3x+ 5 is strictly increasing on R, then blies in:"
+   },
+   {
+    "question_id": "a9ec1c4c-0dba-5880-ab75-3c7ff1ca083c",
+    "legacy_tag": "Maxima & Minima",
+    "servable": true,
+    "stem": "The function f(x) = x3 −3x2 + 3x+ 7 has:"
+   },
+   {
+    "question_id": "5d66531b-2f78-593f-8ce1-bd6de3e664f5",
+    "legacy_tag": "Maxima & Minima",
+    "servable": false,
+    "stem": "For f(x) = x4, at x= 0 the Second Derivative Test:"
+   },
+   {
+    "question_id": "2c7d7655-0836-5607-a921-9bf247771fc3",
+    "legacy_tag": "Polynomial roots",
+    "servable": false,
+    "stem": "If the curve $f(x) = 3x^3 + ax^2 + bx$ where $a, b$ are non-negative integers, cuts the x-axis at 3 distinct points, find the minimum value of $(a + b)$."
+   },
+   {
+    "question_id": "644fea07-cb25-59f9-85be-2d7a71f53d16",
+    "legacy_tag": "Inequalities",
+    "servable": true,
+    "stem": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be a function defined by $f(x) = -x^3 - 3x^2 - 6x + 1$. Number of integers in the solution set of $x$ satisfying the inequality $f(f(x^3 + f(x))) \\geq f(f(-f(x) - x^3))$ is _______."
+   },
+   {
+    "question_id": "2c0e7bec-4486-527c-8a1c-234a8a9ccfe1",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The volume of greatest cone obtained by rotating a right angle triangle of hypotenuse 2 about a side is k 9 3 π cubic units, then the value of k is"
+   },
+   {
+    "question_id": "8dd8c500-7d66-569d-8549-1043a84db38f",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ( ) f : 0,1 →ϒ be a function defined by ( ) ( ) ( ) ( ) ( ) x 1 f x and g x f x f x 1 e− = = − − − . Consider two statements Statement-I: ‘g’ is an increasing function in (0,1) Statement-II: ‘g’ is one-one in (0,1) Then."
+   },
+   {
+    "question_id": "64d8ff01-e362-55d3-b6a8-25f8eb170438",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "Let \\( F \\) be given by \\( \\text{Define } F \\). Then which of the following options is incorrect?"
+   },
+   {
+    "question_id": "28b07e1f-fc06-5f79-91c5-703c2ad9a373",
+    "legacy_tag": "Optimization",
+    "servable": false,
+    "stem": "If $x, y$ are positive real numbers and $3x + 4y = 5$, then the largest possible value of $16x^2 y^3$ is."
+   },
+   {
+    "question_id": "c6dc918a-74f4-5cb3-9dc2-d9df45d2aaa1",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If () x x 2 e k, x 0 f x e 1, 0 x 1 ex , x 1 λ − − + = + < < + ,one-one and monotonically increasing for all x R ∈ , then difference of maximum value of k and minimum value of λ is"
+   },
+   {
+    "question_id": "efa1eb87-862c-5c5d-8c60-e968a7e8fd54",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Statement-1 : ( ) tanx 2x sin2x 6x x 0, 4 π + > ∀∈ and Statement-2 : If () f x and () g x are continuous in [ ] a,b , differentiable in ( ) () () a,b ,f a g a = and () () ( ) f x g x x a,b ∀∈ ′ < ′ , then () () f x g x x < ∀∈ (a,b)"
+   },
+   {
+    "question_id": "632828c2-01a8-58f3-93c3-fab2a2f3722e",
+    "legacy_tag": "Polynomial Equations",
+    "servable": false,
+    "stem": "Find the sum of all integral values of $a$ for which all the roots of the equation $x^4 - 4x^3 - 8x^2 + a = 0$ are real."
+   }
+  ]
+ },
+ "Integration": {
+  "candidate_chapters": [
+   {
+    "chapter_id": "c663b4f9-59fd-5253-8c06-a1743f126ad9",
+    "chapter": "Integrals",
+    "class_level": 12,
+    "concepts": [
+     {
+      "concept_id": "986b53e8-fdba-4117-b716-6d4a632db0b6",
+      "name": "Integration by Substitution"
+     },
+     {
+      "concept_id": "507f4a82-c904-4728-9334-9c4a6e46c849",
+      "name": "Integration by Parts"
+     },
+     {
+      "concept_id": "f783100f-3374-4df4-b592-a44b0326edf1",
+      "name": "Integrals with Quadratic Denominators and Radicals"
+     },
+     {
+      "concept_id": "2ff67aff-a64c-4277-8d6a-506ca4cb5172",
+      "name": "Integration by Partial Fractions"
+     },
+     {
+      "concept_id": "4dc5729b-ffff-4c43-ad4b-e42ea3d118a1",
+      "name": "Properties of Definite Integrals and Symmetry"
+     },
+     {
+      "concept_id": "6e905242-7aca-4d09-9c90-f0da41c33845",
+      "name": "Integration Using Trigonometric Identities"
+     },
+     {
+      "concept_id": "c20422d9-876c-46b6-9ec1-415569e2d89e",
+      "name": "Indefinite Integrals of Standard Forms"
+     },
+     {
+      "concept_id": "70e1460a-6684-4a63-8cfb-df7cec115325",
+      "name": "Definite Integrals and the Fundamental Theorem of Calculus"
+     },
+     {
+      "concept_id": "43a5352a-a80b-45f2-bdd2-38de225f9bab",
+      "name": "Definite Integration by Substitution"
+     },
+     {
+      "concept_id": "cdbeb881-f31c-4aec-90fe-78492013de6c",
+      "name": "Integration of Rational Functions of sin x and cos x"
+     },
+     {
+      "concept_id": "2611b9a4-5a5d-4388-a113-e72dcf1f5d34",
+      "name": "Definite Integrals of Modulus, Greatest Integer and Periodic Functions"
+     },
+     {
+      "concept_id": "a60889e0-6b87-4c07-8e61-c747852680ae",
+      "name": "Definite Integral as the Limit of a Sum"
+     },
+     {
+      "concept_id": "7b76b2de-172c-45d9-ac56-8d535ceb08a8",
+      "name": "Definite Integrals with Variable Limits and Leibniz Rule"
+     }
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "question_id": "693b0ec9-3970-5549-b4b0-8b806b56ed69",
+    "legacy_tag": "Calculus",
+    "servable": true,
+    "stem": "A real valued continuous function $y = f(x)$ is increasing or decreasing in an interval if $\\frac{dy}{dx} > 0$ or $\\frac{dy}{dx} < 0$ respectively. Also, if $f$ is continuous in $[a, b]$, differentiable in $(a, b)$ and $f(a) = f(b)$, then the equation $f'(x) = 0$ has at least one value of $x$ (i.e. root of $f'(x) = 0$) in $(a, b)$. Based upon the above information, answer the following question: If a function $y = f(x)$ is such that $f'(x)$ is a continuous function and satisfies $(f(x))^2 = m^2 + \\int_0^x ((f(t))^2 + (f'(t))^2) dt$, where $m \\in \\mathbb{R}^+$, then:"
+   },
+   {
+    "question_id": "5ceb2c46-e8eb-5d41-85d1-66304dc1fbae",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "If the area of the bounded region is given by the integral $\\int_a^b f(x) \\, dx$, then the value of the area is equal to:"
+   },
+   {
+    "question_id": "d61fc46a-d723-5e1b-88af-5ad9dbae5a49",
+    "legacy_tag": "Integration",
+    "servable": false,
+    "stem": "If the integral \\( \\int F(x) \\, dx \\) is equal to (where C is a constant of integration), then a is equal to:"
+   },
+   {
+    "question_id": "760bf304-c057-5383-9490-242e0fe88529",
+    "legacy_tag": "Integration",
+    "servable": false,
+    "stem": "It is given that $$ I = \\int_{0}^{\\infty} e^{-t} \\cdot t^{s-1} dt, \\ (s > 0) $$ and $$ I \\cdot I = \\pi $$ (where $$ 0 < p \\leq q < 1 \\ & \\ p + q = 1 $$). Let $$ A = \\int_{0}^{\\infty} x^2 e^{-x^4} dx $$ and $$ B = \\int_{0}^{\\infty} e^{-x^4} dx $$. If the value of $$ AB = 1 $$, then $$ [k] $$ is the greatest integer less than or equal to $$ k $$."
+   },
+   {
+    "question_id": "54b2535f-4c0b-5419-ab1b-227c15a0fa6c",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If () 6 2025 2026 2025 2026 2025 cos sin sec tan 10 20 x x x e f x x x x x = then the value of () 2 2 f x dx π π −∫ is equal to"
+   },
+   {
+    "question_id": "089d5658-8599-5cf0-a0f6-6f6f19eed805",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The value of ( ) 1 1/3 3 2 0 2x 3x x 1 − − + ∫ dx is equal to"
+   },
+   {
+    "question_id": "bb7cc707-12c0-565e-a405-77f709ffd45a",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If 2 1 e 3 3 sin x 2tan x 1 dx .log 1 tan x 1 tan x tan x .tan C 3 sin x cos x − − = α + + β − + + γ + + ∫ where C is constant of integration, then the value of ( ) 2 18 ........... α + β + γ = SECTION-I ONLY ONE option can be correct."
+   },
+   {
+    "question_id": "978e7cdd-8c59-5b94-a8c8-dd58f333c6cd",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The value of 0 1 cos8x dx 1 cosx π− − ∫ is"
+   },
+   {
+    "question_id": "a8e48a45-4c03-5b08-bb49-ef50fc6c06e0",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "2 2 2 5 9 1 x x dx x x + + + + ∫ = 2 2 2 1 1 1 log 1 2 e x x x x x x x x c α β + ++ + ++ + + + + + , where c is constant of integration then the value of 6 4 α β + is____"
+   },
+   {
+    "question_id": "de26db43-bb1e-5487-ac36-d7161e8e991e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let 2 2 0 2 , 8sin cos xdx I x x = + ∫ π then the value of 6 2 I is____ (1) 2 6π (2) 2 3 π (3) 2 3 2 π (4) 2 3π"
+   },
+   {
+    "question_id": "52e66d96-6376-5b7b-95fc-7d64b2450ff3",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let [t] denotes the greatest integer function. If 1 2 4 0 1 x x dx a + + = ∫ , then the value of 2 3 4 36a 25a 8a a − + − is equal to"
+   },
+   {
+    "question_id": "2f1367bd-b27b-5fee-9ed0-d48b690fcb2b",
+    "legacy_tag": "Methods of Integration",
+    "servable": false,
+    "stem": "∫ 3 sin x −1 3 If dx = f(x) − g(x) + C 4 + sin x ⋅ cos x 2 √ 7 ( π ) ( − π ) and f = 0 , g = 0 then 4 4 ( 5 π ) ( 3 π ) f + g is equal to : 4 4"
+   },
+   {
+    "question_id": "c04546be-0102-521b-9606-964aff686502",
+    "legacy_tag": "Definite Integrals",
+    "servable": false,
+    "stem": "Find the value of is : 1 3 ∫ x dx 0 e x4−1 ( 2−x 4 )"
+   },
+   {
+    "question_id": "1cc2d735-c747-5153-85e7-9aa6f7c96141",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ( ) ( ) ( ) ( ) ( ) cot2 cot3 tan2 tan7 tan5 a n tan2x b n sin3x c n sec5x d n cos7x x x x x xdx ∫ ⋅ − ⋅ = + + + λ λ λ λ +C and a,b,c,d Q ∈ and C is constant of integration. If ( ) a b c d + ++ can be expressed as m n in the simplest form, then ( ) m n + equals (where m,n N ∈ )"
+   },
+   {
+    "question_id": "53fbcc98-90c4-5bdb-ab07-62b53e9533b8",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The integral ( ) ( ) log 1 2 8 0 /4 9 0 sec t t e e dt xdx π + − + ∫ ∫ simplifies to"
+   },
+   {
+    "question_id": "6a149fdd-44c4-5ff6-a76c-cb982f364d37",
+    "legacy_tag": "Integration",
+    "servable": false,
+    "stem": "If \\( \\int s e^{cx}(2+s e^{cx})dx = f(x) + C \\), where \\( C \\) is the constant of integration and \\( f(0) = 0 \\), then \\( \\int_0^{\\pi} f(x)dx \\) is equal to \\( (1 + 2s e^{cx})^2 \\)."
+   },
+   {
+    "question_id": "f07a449b-35f3-5255-9c4b-e08cb30d6e9f",
+    "legacy_tag": "Analytic Geometry",
+    "servable": false,
+    "stem": "Let the two lines $$L_1: \\int 2t(\\sin x + 1) \\, dx + y = 3t$$ and $$L_2: 2tx + y = 0$$ intersect at a point $$A$$. If the x-coordinate of the point $$A$$ as $$t \\to 0$$ is expressed as $$\\frac{p}{q}$$ (where $$p$$ and $$q$$ are relatively prime), then $$(p + q)$$ is."
+   },
+   {
+    "question_id": "0924acfe-fde2-5da8-9f57-89c0b633c73e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The value of ( ) 2 0 4 0 1 ln x x dx 1 x ln 1 tanx dx ∞ π + + + ∫ ∫ is equal to :"
+   },
+   {
+    "question_id": "3324f095-c8a4-5918-ac17-3f4d482e1be0",
+    "legacy_tag": "Properties of Definite Integrals",
+    "servable": false,
+    "stem": "If f(x) is an even function such that f(12 – x) = f(x) 6 12 and ∫ f(x)dx = 9 then ∫ f(x)dx is : 0 0"
+   },
+   {
+    "question_id": "f31aba9e-7985-5a00-8966-fd672491a545",
+    "legacy_tag": "Definite Integrals",
+    "servable": false,
+    "stem": "If I = ∫ |sin x| [sin x]dx ∀ α ∈ N (where [·] α −4απ denotes greatest integer function) then value of ∑ 20 I α is : α=1"
+   },
+   {
+    "question_id": "8ad91a68-de75-5d15-814e-7111eaaa2ed0",
+    "legacy_tag": "Methods of Integration",
+    "servable": false,
+    "stem": "∫ 1 + sin x ⎷ dx is equal to : cos ( 3 π + x ) 2"
+   },
+   {
+    "question_id": "6172e5be-f457-5852-b413-116a601b6d5f",
+    "legacy_tag": "Definite Integrals",
+    "servable": false,
+    "stem": "Let f(x) = 12 be defined for x > 0 e 2x −1 and g(x) be the inverse of f(x). 27 If ∫ g(x)dx = a ℓ n3 −b ℓ n2 −c then the value of 8 (a – (b + c)) is"
+   },
+   {
+    "question_id": "f4677d8b-9ce5-55b5-803e-7d74814e3228",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let /2 2 2 /2 m sin x cos x(sinx cosx)dx , n π −π ⋅ + = ∫ where m, n are coprime positive integers, then (m + n) is equal to ___________."
+   },
+   {
+    "question_id": "60bac004-8945-5c90-87ea-9247e16de914",
+    "legacy_tag": "Definite Integral Symmetry Properties",
+    "servable": false,
+    "stem": "If f(x) is an even function such that f(12 – x) = f(x) 612 and ∫f(x)dx = 9 then ∫f(x)dx is : 00/2−y^{2}y^{2} 3 yx dy – xdx = edx is Kxe= Cx−2 then value of K is : (where C is integration constant) 1"
+   },
+   {
+    "question_id": "bf48ddb9-4134-5f87-b753-ceda40656267",
+    "legacy_tag": "Functional Equations",
+    "servable": false,
+    "stem": "If \\( \\begin{pmatrix} 1 & 0 & 0 \\ 6 & 2 & 0 \\ 5 & 4 & 3 \\end{pmatrix} \\begin{pmatrix} x \\end{pmatrix} = \\begin{pmatrix} 2a x + b x^2 \\end{pmatrix} \\forall x \\in \\mathbb{R} \\) and \\( f(x) \\) is a differentiable function satisfying \\( f(x) + f(y) = f(1 - xy) \\) for all \\( x,y \\in \\mathbb{R} \\) (\\( xy eq 1 \\)) and \\( \\lim_{x \\to 0} x = 2 \\), then find the value of \\( \\left[ \\int_{0}^{1} f(1) dx \\right] \\), where \\([.] ext{ denotes the greatest integer function.}\\)"
+   },
+   {
+    "question_id": "7bdac3e5-e508-508a-8589-210225babaa5",
+    "legacy_tag": "Definite Integrals",
+    "servable": false,
+    "stem": "Let f n : R → R be a continuous function such that ∫ x f n (x) = t n sin t dt . 0 Then the value of ∣ 1 ∣∣∣ ∫ ∣ d ∣ f 2025 (x) dx ∣∣ + (f 2026 (x)) ∣∣ + |f 0 (π/2)| is dx x=π ∣ −1"
+   },
+   {
+    "question_id": "04218bfa-48d7-5bca-a523-f74441b150b5",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let 1 2 0 1 n nI x x = − ∫ dx, then 2 lim n n n I I →∞ − ="
+   },
+   {
+    "question_id": "ca1d5660-508e-5c64-b103-122f0b40dcfc",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If ( )( ) 1 2010 804 402 1608 402 402 2 5 10 x x x x x dx + + + + ∫ ( ) 2010 804 402 402 1 2 5 10 10 x x x α α = + + then find the value of α"
+   },
+   {
+    "question_id": "c39f6a8c-198a-55d4-9eef-a5c6fd365693",
+    "legacy_tag": "Constants in Integration",
+    "servable": false,
+    "stem": "If $k$ is a constant such that the equation $k = c'$ (where $c'$ is a constant of integration) holds, then the value of $k$ is:"
+   },
+   {
+    "question_id": "d6329966-1296-55b3-8b0c-c1653126d222",
+    "legacy_tag": "Integration",
+    "servable": false,
+    "stem": "Let f: \\mathbb{R} \\to \\mathbb{R} be a function defined as f(x) = \\begin{cases} |x - [x]| & : [x] \\( \\text{ is odd} \\) \\\\ |x - [x + 1]| & : [x] \\( \\text{ is even} \\) \\end{cases} where [.] denotes the greatest integer function. Then \\( \\int \\)\\( _{-2}^{4} \\) f(x) \\, dx is equal to ____________."
+   },
+   {
+    "question_id": "39d0cefe-d68b-52d9-8edc-e2461602d7a2",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "For , 0 m n > , let ( ) ( ) 2 0 , 1 3 . n m m n t t dt α = + ∫ If ( ) ( ) ( ) 6 11 10,6 18 11,5 14 p α α + = , then ‘ p ’ is equal to"
+   },
+   {
+    "question_id": "2940fee6-e56f-5ad7-ae8f-53944c634725",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "Given two curves: \\( y = f(x) \\) passing through \\( (0,1) \\) and \\( y = \\int_{-\\infty}^{x} f(t) dt \\) passing through \\( (0,1) \\). The tangents drawn to both the curves at the points with equal abscissas intersect on the x-axis. Find the value of \\( \\ln f(3) \\)."
+   },
+   {
+    "question_id": "2b73edf3-6c82-5145-ac11-5347b1d12210",
+    "legacy_tag": "Probability Distributions",
+    "servable": false,
+    "stem": "Continuous probability distributions, a continuous distribution is one in which the variate may take any value between certain limits $a$ and $b$, where $a < b$. Suppose that the probability of the variate $X$ falling in the infinitesimal interval $x - 1 \\, dx$ to $x + 1 \\, dx$ is expressible as $f(x) \\, dx$, where $f(x)$ is a continuous function of $x$. Symbolically, $P(x - 1 \\, dx \\leq X \\leq x + 1 \\, dx) = f(x) \\, dx$, where $f(x)$ is called the probability density function (abbreviated as p.d.f.) or simply density function. The continuous curve $y = f(x)$ is called the probability curve; a"
+   },
+   {
+    "question_id": "4b6dc37f-4342-55c7-91d5-2dad91688616",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If n sin nx I dx, n N, sin x π −π = ∈ ∫ then the value of 20 i i 1 I =∑ is equal to"
+   },
+   {
+    "question_id": "d3353554-817c-5444-a71e-ccdf014737bd",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ( ) ( ) ( ) ( ) 2, 2 x 0 f x and h x f | x | | f x |. x 2, 0 x 2 − −≤ ≤ = = + − < ≤ Then ( ) 2 2 h x dx −∫ is equal to :"
+   },
+   {
+    "question_id": "da3b40d9-6515-54f7-8802-ebff4c5af147",
+    "legacy_tag": "Calculus",
+    "servable": false,
+    "stem": "Evaluate the integral $I = \\int \\ln(1 + e^x + e^{2x} + \\ldots + e^{2nx}) \\, dx$ given by equation (1)."
+   },
+   {
+    "question_id": "2cfe8185-115a-541a-aa78-18e146419e3b",
+    "legacy_tag": "Definite Integrals",
+    "servable": false,
+    "stem": "If I = ∫ x 5 (1 −x) 7 dx, I = ∫ 2 2 dx 1 2 2 2 (7 + x) 8 0 0 and I = 7(n) 7 . I where n ∈ N, then the value of n is 1 2 2"
+   },
+   {
+    "question_id": "55373280-0bcd-5027-9777-252156485cd3",
+    "legacy_tag": "Integration",
+    "servable": false,
+    "stem": "If \\( f(x) = \\frac{x}{x^2 + x + 1} \\), then on the basis of the above information, answer the following: If \\( \\int f(x) \\, dx + \\int f(x^2) \\, d(x) = \\lambda \\ln |x^2 + x + 1| + c \\), then \\( \\lambda \\) is -"
+   },
+   {
+    "question_id": "77650612-81fb-54a8-95d4-341e3a9a304b",
+    "legacy_tag": "Definite Integrals",
+    "servable": true,
+    "stem": "If $f(x) = (1 - x^5)^{1/2}$ and $f^{-1}(x) = (1 - x^2)^{1/5}$, then the value of $\\int_0^1 f(x) dx + \\int_{f(0)}^{f(1)} f^{-1}(x) dx$ is equal to _______."
+   },
+   {
+    "question_id": "9482fffa-4c2a-5b01-ae7b-03ec12b9c595",
+    "legacy_tag": "Integration and properties of Gamma functions",
+    "servable": false,
+    "stem": "It is given that $$ I_s = \\int_{0}^{\\infty} e^{-t} \\, t^{s-1} \\, dt, \\ (s > 0) $$ and $$ I_p \\cdot I_q = \\pi $$ (where $$ 0 < p \\leq q < 1 \\ & \\ p + q = 1 $$). If $$ \\prod_{i=1}^{9} I_i = k \\left( \\sqrt{\\pi \\alpha} \\right) $$, where $$ k $$ and $$ \\alpha $$ are natural numbers, then the value of $$ (\\alpha + k) $$ is -"
+   }
+  ]
+ },
+ "Vectors & 3D Geometry": {
+  "candidate_chapters": [
+   {
+    "chapter_id": "f516713d-c4ae-43ee-a7b3-91b68e709cbf",
+    "chapter": "Introduction to Three Dimensional Geometry",
+    "class_level": 11,
+    "concepts": [
+     {
+      "concept_id": "157b81fb-4c07-4f72-82a1-6bd46b5f428a",
+      "name": "Distance Formula in Three Dimensions"
+     },
+     {
+      "concept_id": "8ceb0549-3d6f-45ec-b2fc-de54b48f7252",
+      "name": "Section Formula: Internal and External Division"
+     },
+     {
+      "concept_id": "384db5e8-faa2-45aa-a137-50bca6043c44",
+      "name": "Coordinate Axes, Planes and Octants"
+     },
+     {
+      "concept_id": "f68e3934-bc65-4880-8069-7fc6d3b6b8f6",
+      "name": "Midpoint and Centroid of Triangles and Tetrahedra"
+     },
+     {
+      "concept_id": "1d39e2fb-45cd-435e-a075-9ec096a044b3",
+      "name": "Collinearity of Three Points in Space"
+     },
+     {
+      "concept_id": "e53f61d1-8f0a-4f12-ab12-208330143224",
+      "name": "Classifying Triangles and Quadrilaterals from Given Vertices"
+     },
+     {
+      "concept_id": "f804b965-539a-4f81-98f0-813b8b01d379",
+      "name": "Distance of a Point from the Coordinate Axes and Planes"
+     },
+     {
+      "concept_id": "d9591ea4-c624-44ba-83c0-b02caae2d2c8",
+      "name": "Locus of a Point in Space"
+     },
+     {
+      "concept_id": "2395e257-997e-445e-9348-d951e6a62ec9",
+      "name": "Image and Foot of Perpendicular on the Coordinate Planes"
+     }
+    ]
+   },
+   {
+    "chapter_id": "a02626b5-2eac-51f6-b406-22f0df7bd955",
+    "chapter": "Three Dimensional Geometry",
+    "class_level": 12,
+    "concepts": [
+     {
+      "concept_id": "4695336e-e5fe-44d9-8933-633c54feee8d",
+      "name": "Equation of a Plane in Various Forms"
+     },
+     {
+      "concept_id": "ad6e62d2-2bd4-4eae-a7a4-934d0413d33f",
+      "name": "Equation of a Line in Vector and Cartesian Form"
+     },
+     {
+      "concept_id": "1e1db51f-8f02-4fea-90ee-2e5ec4cda0b7",
+      "name": "Direction Cosines and Direction Ratios"
+     },
+     {
+      "concept_id": "36502ea7-7325-4a9b-beb3-0380c4a7ce25",
+      "name": "Shortest Distance Between Two Skew Lines"
+     },
+     {
+      "concept_id": "a3dfc585-1887-4798-8126-5ed19fb6d7d0",
+      "name": "Angle Between Two Planes and Between a Line and a Plane"
+     },
+     {
+      "concept_id": "eec2b6f2-21f3-4713-9614-0314fca79884",
+      "name": "Foot of Perpendicular and Image of a Point in a Plane"
+     },
+     {
+      "concept_id": "1aa5e4bb-09d9-40e0-838c-08ba0a44b535",
+      "name": "Distance of a Point from a Plane"
+     },
+     {
+      "concept_id": "12d4ae2a-e0ee-4543-8151-f4d107918dd2",
+      "name": "Angle Between Two Lines"
+     },
+     {
+      "concept_id": "cea2292a-3cb5-4a5f-a4bf-940422fd89b2",
+      "name": "Point of Intersection of a Line and a Plane"
+     },
+     {
+      "concept_id": "908962f3-d4a3-4782-a38c-226a61c7a06f",
+      "name": "Perpendicular Distance, Foot and Image of a Point with Respect to a Line"
+     },
+     {
+      "concept_id": "8def6835-d97a-49e2-9edc-51a4dc8b565b",
+      "name": "Family of Planes Through the Line of Intersection"
+     },
+     {
+      "concept_id": "0b41ef34-f652-4166-bff2-36a63998ee09",
+      "name": "Intersection and Coplanarity of Two Lines"
+     },
+     {
+      "concept_id": "9457907d-0f84-4e33-bb7e-6503f51c3af0",
+      "name": "Coordinates in Space: Distance, Section Formula and Projections"
+     }
+    ]
+   },
+   {
+    "chapter_id": "e6db6ba6-3d6e-55fc-af55-34eaa2638788",
+    "chapter": "Vector Algebra",
+    "class_level": 12,
+    "concepts": [
+     {
+      "concept_id": "d6bdbc36-3516-48d6-b127-f5d1dec61626",
+      "name": "Scalar (Dot) Product and Its Properties"
+     },
+     {
+      "concept_id": "fc3c5809-7bf0-45f8-aba3-e3837d55786b",
+      "name": "Vector (Cross) Product and Its Properties"
+     },
+     {
+      "concept_id": "937f8717-0649-4a15-9808-93bb46de62ec",
+      "name": "Scalar Triple Product and Volume of a Parallelepiped"
+     },
+     {
+      "concept_id": "a9dc8b01-ec06-4518-a5d2-be6a785849f1",
+      "name": "Position Vectors, Section Formula and Collinearity"
+     },
+     {
+      "concept_id": "7e77acd8-f5e5-4820-a2ce-3b4a90c1f46b",
+      "name": "Projection of a Vector and Angle Between Two Vectors"
+     },
+     {
+      "concept_id": "974970c1-1df7-4d3d-b34b-9582b395f842",
+      "name": "Types of Vectors and Vector Addition"
+     },
+     {
+      "concept_id": "1d912e63-173d-44a5-b0c4-20598e5300f0",
+      "name": "Components, Direction Cosines and Unit Vectors"
+     },
+     {
+      "concept_id": "51a3594d-f9b8-4d77-b45b-9ef8913687df",
+      "name": "Area of Triangles and Parallelograms Using Cross Product"
+     },
+     {
+      "concept_id": "e35245fc-fe2d-43e0-9f8b-b12fc25cc0aa",
+      "name": "Coplanarity of Vectors Using the Scalar Triple Product"
+     },
+     {
+      "concept_id": "076dd26c-f7cc-4ca4-9a19-61a7760b4335",
+      "name": "Vector Triple Product"
+     },
+     {
+      "concept_id": "eddabbbf-43aa-4ae1-8919-3c069d9b6d34",
+      "name": "Linear Dependence and Independence of Vectors"
+     },
+     {
+      "concept_id": "2f284af3-e403-482f-98df-fb39af6f5cd6",
+      "name": "Vector Applications: Work, Moment and Geometric Proofs"
+     }
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "question_id": "1f7e4bb5-e739-510c-ab82-491f3f97192f",
+    "legacy_tag": "Vector Operations & Components",
+    "servable": true,
+    "stem": "The points P(1, 2, 3), Q(3, 6, 9), S(2, 4, 6) are:"
+   },
+   {
+    "question_id": "e80e9b8a-14a7-5658-a268-f937002ed8b1",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ( ) P 1,7, 2 ≡ be a point and line L is ( ) 2 2 x 1 y 2,z 0 − = − =. If PQ is the distance of the plane 2 1 x y z + − = from point P measured along a line inclined at an angle 45ο with the line L and is minimum, then value of PQ equals"
+   },
+   {
+    "question_id": "373ec68b-e16b-5ab1-9561-418ea0ff354d",
+    "legacy_tag": "Vectors",
+    "servable": false,
+    "stem": "Let $\\mathbf{a}$ and $\\mathbf{b}$ be vectors such that $\\mathbf{a} \\cdot \\mathbf{b} = 20$. If $\\|\\mathbf{a}\\| = 5$ and $\\|\\mathbf{b}\\| = 4$, then $\\mathbf{a} \\times \\mathbf{b}$ is equal to:"
+   },
+   {
+    "question_id": "1d6d854d-9d5e-58ef-a6b0-cb21c62b3ea3",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let lines 1 x 1 y a z L : 1 1 2 − − = = − & 2 x a y 1 z 2 L : 1 2 1 − − − = = − . If shortest distance between 1 L & 2 L is 6 35 then the sum of possible values of a is :"
+   },
+   {
+    "question_id": "3c5967f1-b701-5314-a0c0-37d127eb0b22",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ˆ ˆ ˆ ˆ ˆ ˆ ˆ ˆ ˆ 2 , 2 2 , 2 2 a i j k b i j k c i j k = + − =− + = + − ρ ρ ρ and d ρ be a vector such that b d c d × = × ρ ρ ρ ρ and . 9 a d = ρ ρ , then 2 a d × ρ ρ is"
+   },
+   {
+    "question_id": "9ceac18a-4487-5e1e-be9e-2a0721595683",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let P be image of point Q (1, 2, –3) with respect to the line 1 3 : 2 2 1 x y z L + − = = − − and ( ) 1, , R a b − be a point on L = 0. Then square of area of ∆PQR is____"
+   },
+   {
+    "question_id": "45edb144-8a8b-5e42-b970-cd76261eaff1",
+    "legacy_tag": "Geometry",
+    "servable": false,
+    "stem": "A line L passing through the point P(0, 1, -1), and is perpendicular to both the lines and . If the position vector of point Q on L is (a, b, c) such that $(PQ)^2 = 357$, then $a + 2b + 3c$ is equal to:"
+   },
+   {
+    "question_id": "f9a7fd54-6f47-5918-b871-4285a889fcfa",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If S be the set of all values of λ , for which the shortest distance between the lines 3 6 0 4 1 x y z λ − − + = = and 6 3 4 0 x y z λ + − = = − is 13 then the value of 4 S λ λ ∈ ∑ is equal to"
+   },
+   {
+    "question_id": "b48ca3ec-54cb-5208-b7c6-b4e6e6fc33fa",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let three vectors ,a b ρρ and c ρ be such that c ρ is coplanar with a ρ and , 7 b a c ⋅= ρρρ and b ρ is perpendicular to c ρ , where ∃ ∃ a i j k = −+ + ρ ∃ and ∃ 2 b i k = + ρ ∃ , then the value of 2 2 b c + ρ ρ is_____."
+   },
+   {
+    "question_id": "aa25c2c8-2a42-5878-9ccd-9deb305d5283",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The shortest distance between the skew lines x 3 y 6 z x 2 y z 7 and 4 3 2 4 1 1 + − + − = = = = − − is equal to"
+   },
+   {
+    "question_id": "d7d1d758-ce4e-5cdc-9010-ebf50e49d977",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Each of the angles βand γthat a given line makes with the positive y and z axes respectively is half the angle that the line makes with positive x-axis. If 1 2 , ββand 1 2 , γγare respectively different values of βand γ obtained then the value of 1 2 1 2 β β γ γ − + − is (1) 3 4 π (2) π (3) 2 3 π (4) 2 π"
+   },
+   {
+    "question_id": "f638fa3c-65d3-57ea-8119-efc9158dd1a7",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Shortest distance between the lines 3 8 3 3 1 1 x y z − − − = = − and 3 7 6 2 5 1 x y z + + − = =− is :"
+   },
+   {
+    "question_id": "96fab36f-e6ab-5429-9030-b1f9e877f89c",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let P be the foot of perpendicular from the point ( ) 10, 3, 1 Q −− on the line 3 2 1 7 1 2 x y z − − + = = − − , such that the area of triangle PQR , where R is the point ( ) 3, 2,1 − , is a b ; where ,a b N ∈ , then the product ‘ab ’ is equal to____"
+   },
+   {
+    "question_id": "707983ec-699b-54d9-a149-ebeb473d7766",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let 2 a i j k =− + ρ ∃∃ ∃ and b ρ be a vector such that 2 a b i k × = − ρ ρ ∃∃ and . 3 a b = ρρ such that the projection of b ρ on the vector a b − ρ ρ is λ μ ; λand μare co-prime naturals, then μis equal to ______"
+   },
+   {
+    "question_id": "b800f87b-a181-584f-b85c-bdf36133968a",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Shortest distance between the lines 1 1 1 1 1 1 x y z − − − = = and 2 3 4 1 1 1 x y z − − − = = is equal to"
+   },
+   {
+    "question_id": "d5fa8d2f-35a1-5371-bb1f-875bef8a8d0f",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If a line with direction ratios 0,2, 1 − meet the lines 3 1 4 5 2 3 x y z + − + = = and 1 2 2 1 3 2 x y z − + − = =− at A and B respectively, then the length of the line segment AB is given by"
+   },
+   {
+    "question_id": "9c991602-01f1-5717-a4b3-a41eeccb0e75",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The point on the line 2 3 5 1 2 2 x y z − + + = = − − at a distance of 6 from the point ( ) 2 3 5 , , −− is( ) 1 1 0, , y z then the value of ( ) 2 1 1 y z + is"
+   },
+   {
+    "question_id": "c7a62cb0-7e98-5be8-a63e-6c5185f508d0",
+    "legacy_tag": "Linear Equations",
+    "servable": false,
+    "stem": "Given the equation $(\\alpha - 1)(3) - (\\beta - 2)(-1) + 1(-5) = 0$, we can simplify this to $3\\alpha + \\beta = 10$. The point $(\\alpha, \\beta, 2)$ lies on the plane defined by $3x + y - z - \\ell = 0$, where $\\ell = 3\\alpha + \\beta - 2 = 8$. Find the values of $\\alpha$ and $\\beta$."
+   },
+   {
+    "question_id": "11baa6dc-d846-5f20-9250-50caa61cdeba",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "( ) ( ) ( ) 1, 2, 3 , , 4, 6 , 1, 2, A B C α β = = = are three position vectors of ABC ∆ . If median AD is equally inclined with positive , , x y z axes then ____ + = α β"
+   },
+   {
+    "question_id": "ec1d7958-6a6c-5b01-8fcf-5dcf2faf2b05",
+    "legacy_tag": "Geometry",
+    "servable": false,
+    "stem": "Given the points $P(2, 4, -1)$ and $N(-4, 1, -3)$, find the equations of the line passing through these points. The direction ratios are given as follows: $x - 2 = y - 4 = z + 1$ with ratios $6, 3, 2$ respectively."
+   },
+   {
+    "question_id": "4e1a5353-19ba-53a0-8790-d4047526eb62",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let d be the distance of the point of intersection of the lines x 6 y z 1 x 7 y 9 z 4 and 3 2 1 4 3 2 + + − − − = = = = from the point (7, 8, 9) then 2 d 6 + is equal to"
+   },
+   {
+    "question_id": "f8866e3a-1132-5929-b576-757b8f9271c1",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let S be the set of all values of λ, for which the shortest distance between the lines x y 3 z 6 0 4 1 − − + = = λ and x y z 6 3 4 0 + − = = − λ is 13 . Then 8 S λ∈∑λ is equal to"
+   },
+   {
+    "question_id": "c5114f76-702c-5209-8f63-2f324e722c23",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Distance of the point A ( ) 7,4,9 to a line passing through ( ) 1,2,3 and whose direction ratios are 2,1,2Measured parallel to the line 5 1 2 7 3 2 6 x y z + + − = = is ‘d’ then the value of 2 d is equal to (1) 76 (2) 88 (3) 44 (4) 66"
+   },
+   {
+    "question_id": "c76650eb-1b45-5046-b95c-7d200294ac95",
+    "legacy_tag": "Product of Two Vectors",
+    "servable": false,
+    "stem": "The ^ → ^ → ^ , ^ ^ ^ , ^ ^ A = i −2j + 3k B = 2i + j −k C = j + k If the vector → → can be expressed as a linear → → → B × C combination B × C = x A + y B + z C where x, y, z are scalars, then find the value of (100x + 10y + 8z). 1 1 x 5 (1 −x) 7"
+   },
+   {
+    "question_id": "c8038b2d-9ded-50ed-a5a1-a1bc60908e96",
+    "legacy_tag": "Direction Cosines, Ratios & Line Equations",
+    "servable": false,
+    "stem": "The angle between line x = y = z and plane – −1 √ a – 4x 3y + 5z = 2 is sin then b a is b (Where H.C.F. (a, b) = 1)"
+   },
+   {
+    "question_id": "f094c1c0-925a-5b25-b1c6-d47956d05f88",
+    "legacy_tag": "Product of Two Vectors",
+    "servable": false,
+    "stem": "Let and be two unit vectors such that a ^ b ^ ∣ ( a + b ^ ^ ) + 2 ( a × b ^ ^ ) ∣ = 2 . If θ ∈ (0, π ) is the ∣ ∣ angle between a ^ and , then among the statements : b ^ (S1) : 2 ∣ a × b ^ ^ ∣ = ∣ a −b ^ ^ ∣ ∣ ∣ ∣ ∣ ^ ( ^ ^ ) 1 (S2) : The projection of on a a + b is 2"
+   },
+   {
+    "question_id": "9dac0af0-e957-547c-abf9-d12aba78b7a2",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "A line passing through origin cuts the lines 1 2 1 1 1 2 x y z + − − = =− and 1 3 8 3 1 6 1 x y z − − + = =− at A and B. Then 2 AB = ________"
+   },
+   {
+    "question_id": "8128f600-006c-5422-b46f-f56929b6bb19",
+    "legacy_tag": "Geometry of Lines and Points",
+    "servable": false,
+    "stem": "Given the points P(0, 3, -2), Q(3, 7, -1), and R(1, -3, -1), let L_1 be the line passing through P and Q, and L_2 be the line through R and parallel to the vector. Calculate the following: \\begin{tabular}{|c|c|} \\hline \\textbf{List - I} & \\textbf{List - II} \\\\ \\hline I. Perpendicular distance of P from L_2 & P \\\\ II. Shortest distance between L_1 and L_2 & Q \\\\ III. Area of the \\Delta PQR & R \\\\ IV. Distance of P from the centroid of triangle QRS, where S(-4, -4, 2) & T \\\\ \\hline \\end{tabular}"
+   },
+   {
+    "question_id": "b8e10c8e-fca3-5826-b8d8-a5ebd1d151fa",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If the shortest distance between the lines ( ) ( ) 3 r i k i a j λ =−+ + − ρ ∃ ∃ ∃ ∃ and ( ) ( ) 2 r j k i j k μ =−+ + − + ρ ∃ ∃ ∃∃ ∃ is 2 3 , then the integral value of ‘a ’ is equal to"
+   },
+   {
+    "question_id": "8dc2bc39-677f-516e-ae79-b4a9383513ca",
+    "legacy_tag": "Vector Operations & Components",
+    "servable": false,
+    "stem": "A vector of magnitude 10 in the direction opposite to ⃗a = 3 ̂i + 4 ̂k is:"
+   },
+   {
+    "question_id": "8df4d68e-b007-54ef-9e00-3ac90683cd0e",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The position vectors of three vertices of triangle be 3 2 p q r + − ; 4 2 p q r − + + and 2 p q r − + . If the Position vector of orthocentre and circumcentre be 4 p q r + + and p q r α β γ + + respectively then 3 4 α β γ + + is"
+   },
+   {
+    "question_id": "2b9cf3ed-fdb0-5040-bd12-845fbb8a762d",
+    "legacy_tag": "Vector Operations & Components",
+    "servable": true,
+    "stem": "The direction cosines of the vector \\(\\hat{i} - 2\\hat{j} + 2\\hat{k}\\) are:"
+   },
+   {
+    "question_id": "3f70b298-86d6-5386-96d1-ebfb00694e11",
+    "legacy_tag": "Product of Two Vectors",
+    "servable": false,
+    "stem": "The projection of \\(\\vec{a} = 4\\hat{i} - 3\\hat{j} + \\hat{k}\\) on \\(\\vec{b} = 2\\hat{i} + \\hat{j} - 2\\hat{k}\\) is:"
+   },
+   {
+    "question_id": "add248f5-575c-5c82-aeaf-4685db0486ab",
+    "legacy_tag": "Vector Operations & Components",
+    "servable": false,
+    "stem": "If R divides A(⃗a) and B(⃗b) externally in the ratio 3 ∶ 1, then ⃗OR ="
+   },
+   {
+    "question_id": "fbb5739b-f0d2-56af-9c71-2a38b57a09e5",
+    "legacy_tag": "Product of Two Vectors",
+    "servable": false,
+    "stem": "The area of the triangle with vertices O(0, 0, 0), A(1, 2, 2), B(2, 1, −2) is:"
+   },
+   {
+    "question_id": "c51d7930-32aa-5626-89e9-8f334f8f3c67",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The vector ˆ ˆ ˆ a i 2j k = −+ + ρ is rotated through a right angle, passing through the y-axis in its way and the resulting vector is b ρ . Then the projection of ˆ ˆ ˆ 3a 2 b on c 5i 4j 3k + = + + ρ ρ ρ is"
+   },
+   {
+    "question_id": "a9e25e78-9895-5b0b-981a-47c4529a2f1c",
+    "legacy_tag": "Product of Two Vectors",
+    "servable": true,
+    "stem": "If ⃗a⋅⃗b= | ⃗a× ⃗b|, the angle between ⃗aand ⃗bis:"
+   },
+   {
+    "question_id": "f3833606-47c8-5470-a5f6-ed51b64e0e48",
+    "legacy_tag": "General",
+    "servable": true,
+    "stem": "Let ' P ' be the image of origin ( ) 0,0,0 w.r.t. the line x 1 y 2 z 3 1 1 1 − − − = =− , then distance of point P from origin equals"
+   },
+   {
+    "question_id": "08e4dc52-6caf-540e-b337-1c5a71ff8ecf",
+    "legacy_tag": "General",
+    "servable": true,
+    "stem": "If 1 2 ˆ ˆ ˆ ˆ ˆ ˆ , V i j k V ai bj ck =+ + = + + ρ ρ where { } a,b,c 2, 1,0,1,2 ∈− − , then the number of non-zero vectors 2 V ρ which are perpendicular to 1 V ρ are"
+   },
+   {
+    "question_id": "ad868615-008f-5ec9-a6e0-a245f65f0051",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let ' L ' be a line passing through A(1,1,1) and intersects lines x + y = 1, z = 0 and x - y = 2, y + z = 3. If 'θ' be the acute angle between the line L and line (x - 1)/1 = y/2 = z/3 and the value of cosθ is 3√14/8n, then [n] is (where [ . ] denotes the greatest integer function)"
+   },
+   {
+    "question_id": "25d54b83-059b-5235-b67d-ec52c15d4f77",
+    "legacy_tag": "Product of Two Vectors",
+    "servable": true,
+    "stem": "If a 2 + b 2 + c 2 = 1 where a, b, c ∈ R then maximum value of (4a −3b) 2 + (5b −4c) 2 + (3c −5a) 2 is"
+   },
+   {
+    "question_id": "5d60e1c5-e913-5cdb-8ccc-e0a5a44602e2",
+    "legacy_tag": "Quadrilaterals",
+    "servable": false,
+    "stem": "Let $\\lambda$ be such that $|\\lambda| \\leq 5$ and $d_1$ and $d_2$ are diagonals of quadrilateral $ABCD$. If its area is 18 square units, then the value of $15 - 10\\lambda$ is:"
+   },
+   {
+    "question_id": "b3644c4f-60c2-5188-b5d7-bb9b50e51333",
+    "legacy_tag": "Geometry",
+    "servable": false,
+    "stem": "From a moving point P lying on the plane, perpendiculars PA, PB, PC are drawn to the three coordinate planes. The locus of the foot of the perpendicular drawn from the origin to the plane passing through points A, B, and C is:"
+   },
+   {
+    "question_id": "fa0472d2-303d-5f65-ae5b-b7607630215f",
+    "legacy_tag": "Geometry of Tetrahedrons",
+    "servable": true,
+    "stem": "Let $A_1, A_2, A_3, A_4$ be the areas of the triangular faces of a tetrahedron, and $h_1, h_2, h_3, h_4$ be the corresponding altitudes of the tetrahedron. If the volume of the tetrahedron is $\\frac{1}{6}$ cubic units, then find the minimum value of $(A_1 + A_2 + A_3 + A_4)(h_1 + h_2 + h_3 + h_4)$ (in cubic units)."
+   },
+   {
+    "question_id": "a42341ce-bfc8-532e-818f-dbfd74089b7d",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Given below are two statements : Statement-I : In a triangle ABC , let D be mid-point of side BC then it follows ( ) 2 2 2 2 1 AB AC 2AD BC 2 + = + . Statement-II : Image of orthocentre in any side of the triangle will always lies on the circumcircle of the triangle. Choose the most appropriate answer from the options."
+   },
+   {
+    "question_id": "b48c0755-1b06-56f4-947b-f5d77ab18069",
+    "legacy_tag": "Geometry",
+    "servable": false,
+    "stem": "Consider the following equations related to the volume of tetrahedron AXYZ: $$x^2 + y^2 - xy = 72 \\quad ...(1)$$ $$y^2 + z^2 - yz = 72 \\quad ...(2)$$ $$x^2 + z^2 - xz = 52 \\quad ...(3)$$ On solving these three equations, we find that $xz = 12$ and $y = x + z$. Calculate the volume of the tetrahedron."
+   }
+  ]
+ },
+ "Inverse Trigonometry": {
+  "candidate_chapters": [
+   {
+    "chapter_id": "8dcd67fd-ec13-5797-8dc5-4f91150ba056",
+    "chapter": "Inverse Trigonometric Functions",
+    "class_level": 12,
+    "concepts": [
+     {
+      "concept_id": "68a1a976-988f-4173-8674-4284ed1a7a10",
+      "name": "Principal Values and Principal Value Branches"
+     },
+     {
+      "concept_id": "da44dde2-905e-41e4-bb2b-99b9cc38e431",
+      "name": "Evaluating Composites of Trigonometric and Inverse Trigonometric Functions"
+     },
+     {
+      "concept_id": "09616376-51b0-4e72-8ab2-11d856849772",
+      "name": "Sum and Difference Formulae for tan Inverse"
+     },
+     {
+      "concept_id": "724c7650-241a-4088-a56d-528d1fb7198f",
+      "name": "Complementary and Negative-Argument Identities"
+     },
+     {
+      "concept_id": "6227f6f5-d9e1-418b-8538-cc51d80f271b",
+      "name": "Domain and Range of Inverse Trigonometric Functions"
+     },
+     {
+      "concept_id": "aaf52cf2-fe73-474d-bfc2-b22df5e6af24",
+      "name": "Solving Equations Involving Inverse Trigonometric Functions"
+     },
+     {
+      "concept_id": "c150f9d6-b859-45eb-9b3c-b0732c542df1",
+      "name": "Sum and Difference Formulae for sin Inverse and cos Inverse"
+     },
+     {
+      "concept_id": "943a630f-6378-4475-a1d4-ae496c207b5f",
+      "name": "Multiple-Angle Formulae and Their Validity Conditions"
+     },
+     {
+      "concept_id": "0c202471-79e4-4790-9901-72c75b473ec1",
+      "name": "Summation of Inverse Trigonometric Series"
+     },
+     {
+      "concept_id": "89c776a8-dfb1-4157-8555-9482577c9ec2",
+      "name": "Substitution Techniques for Simplifying Inverse Trigonometric Expressions"
+     },
+     {
+      "concept_id": "70db331a-f955-438b-b168-f535dd517379",
+      "name": "Reciprocal Relations Between Inverse Trigonometric Functions"
+     },
+     {
+      "concept_id": "1dd1054e-f7d1-44da-bd8a-f164e8bbb151",
+      "name": "Graphs of Inverse Trigonometric Functions"
+     }
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "question_id": "6acdaa2b-7e06-571c-9a1d-aa653d8af293",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "The value of 2 1 1 15 tan cot 2 8 r r ∞ − = + ∑ is equal to"
+   },
+   {
+    "question_id": "441b5350-8daa-5710-ae70-fc3d6a153b96",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Let () ( )( ) ( ) n 2 1 n j 1 f x cot 1 x j x j − = = − + + + ∑ for all x 0 ≥ . Then the value of ( ) () ( ) 10 2 2 j j 1 j 1 sin f 0 = + ∑ is equal to"
+   },
+   {
+    "question_id": "8600ec3f-bbb0-556f-ab76-6da648a4c702",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "Evaluate the following expression : 2025 1 1 3/2 1 1 2 16 2 3 2 3sin sin 25 (8 ) 8 k k k k − − = + − + + ∑"
+   },
+   {
+    "question_id": "dd6a8346-b447-5d69-a6a8-5e87863ba191",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If exhaustive set of values of x satisfying the equation ( ) 1 1 2 8 cos 2tan 4 1 16 2 x x x π − − =− + + is [ ) a,∞, then 1 a is"
+   },
+   {
+    "question_id": "eca5e323-a915-5e0f-9952-8ee5739f96a6",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If , , R αβγ + ∈ such that 3 α β γ + + = , then minimum value of 1 1 1 tan tan tan π α β γ − − − + + is"
+   },
+   {
+    "question_id": "c2c8c68c-d4cd-56c1-a363-db214b2843fd",
+    "legacy_tag": "General",
+    "servable": false,
+    "stem": "If [ ] 1 2 1 2 tan tan 4 x y xy π − − + = , then sum of maximum and minimum integral value of ( ) 2 2 x y + is (where x,y 0 > and [.] denotes greatest integer function)"
+   }
+  ]
+ }
+}

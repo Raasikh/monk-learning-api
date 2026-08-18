@@ -1,0 +1,2540 @@
+{
+ "subject": "physics",
+ "batch": 1,
+ "chapters": [
+  {
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "350afd6f-c6b1-4a5f-a08d-cc99dceba8d4",
+     "name": "Series LCR Circuit: Impedance and Phase"
+    },
+    {
+     "concept_id": "23835c67-44b4-48e3-842e-7e8608b8add4",
+     "name": "Resonance and Q-Factor"
+    },
+    {
+     "concept_id": "7e94446f-1117-4227-8ff0-d55cb2c396aa",
+     "name": "Average and RMS Values of AC"
+    },
+    {
+     "concept_id": "2cf84b45-284e-428b-8580-7108f17f8c12",
+     "name": "Power in AC Circuits and Power Factor"
+    },
+    {
+     "concept_id": "4caef46a-d3df-4c78-8c3e-27e29e070c4c",
+     "name": "Transformers"
+    },
+    {
+     "concept_id": "c0c2f81a-798c-4d1e-bfcb-269186704a77",
+     "name": "Phasors and Phase Relationships"
+    },
+    {
+     "concept_id": "381fe696-cf50-4c45-bcff-ddffcd5aecf9",
+     "name": "LC Oscillations"
+    },
+    {
+     "concept_id": "72e56ef0-8ce4-49fe-9650-7da2b8b118f8",
+     "name": "Series LR Circuit"
+    },
+    {
+     "concept_id": "4564f1c4-e738-4ef2-8e6e-56a2dcc9c49e",
+     "name": "Series RC Circuit"
+    },
+    {
+     "concept_id": "45fc4c39-a797-456c-811b-3217f27c1c7e",
+     "name": "AC through Pure Inductor"
+    },
+    {
+     "concept_id": "1b60a910-9b98-4bb4-94c8-169a9b6fe19e",
+     "name": "AC through Pure Capacitor"
+    },
+    {
+     "concept_id": "3206d918-400a-4b40-86e2-e19fd84471f0",
+     "name": "AC through Pure Resistor"
+    }
+   ]
+  },
+  {
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "8092830f-53c7-4895-b598-114efbca3cb3",
+     "name": "Bohr's Model and Energy Levels"
+    },
+    {
+     "concept_id": "f9d6cd86-2eec-4a0e-ac12-e8d6fdf1b68a",
+     "name": "Hydrogen Spectrum and Spectral Series"
+    },
+    {
+     "concept_id": "063b765f-6628-4c06-91fd-835052ad3fe6",
+     "name": "Alpha-particle Scattering and Rutherford's Nuclear Model"
+    },
+    {
+     "concept_id": "ae678379-f2b7-46e1-9792-d47b2d7e52de",
+     "name": "Ionization and Excitation Energy"
+    },
+    {
+     "concept_id": "77066294-f774-42ab-90d6-05cc7785b555",
+     "name": "Atomic Collisions and Excitation"
+    },
+    {
+     "concept_id": "69fceb7f-d1f4-494a-9d66-e2bcc5668be6",
+     "name": "de Broglie's Explanation of Bohr's Quantisation"
+    },
+    {
+     "concept_id": "c51a7974-877c-4a13-9e99-fcbec7fa636d",
+     "name": "Limitations of Bohr's Model"
+    },
+    {
+     "concept_id": "a99d583e-0ba6-4bd7-a0fb-8eccab9876d5",
+     "name": "X-ray Production"
+    }
+   ]
+  },
+  {
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "8dcad9f8-8159-4c57-b003-ded2c863f8bd",
+     "name": "Gravitational Potential Energy"
+    },
+    {
+     "concept_id": "d909cce9-7288-4429-a8a9-39a815132da9",
+     "name": "Satellite Motion and Orbital Mechanics"
+    },
+    {
+     "concept_id": "f10f3f71-c074-4231-b7b5-f565ab650995",
+     "name": "Acceleration due to Gravity and Its Variation"
+    },
+    {
+     "concept_id": "c02d7ff0-a31a-4a0b-bcbf-d37c5bfe74a0",
+     "name": "Escape Velocity"
+    },
+    {
+     "concept_id": "62034b95-4ff8-49c0-b7d1-7b42a1adcc08",
+     "name": "Newton's Law of Gravitation"
+    },
+    {
+     "concept_id": "7ebd5d52-c4ab-40b5-a1bd-36915fe40167",
+     "name": "Gravitational Field Intensity"
+    },
+    {
+     "concept_id": "01d7fe0f-5da6-44b2-a418-d771e246a8ed",
+     "name": "Gravitational Potential"
+    },
+    {
+     "concept_id": "eec20bc8-80ce-483a-92f5-79e80be4ead4",
+     "name": "Kepler's Laws of Planetary Motion"
+    },
+    {
+     "concept_id": "8a3ad111-b0ed-4bdd-8fa7-631056b54340",
+     "name": "The Gravitational Constant and Two-Body Systems"
+    },
+    {
+     "concept_id": "d3510909-a123-4880-98a0-bb1fa6bdb79a",
+     "name": "Weightlessness"
+    }
+   ]
+  },
+  {
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "062cc39b-d3d3-41cd-98ab-88b03e09df02",
+     "name": "Kinetic Theory: Assumptions and Molecular Nature"
+    },
+    {
+     "concept_id": "7b3c9877-16df-45d1-89be-b562e7469f83",
+     "name": "RMS Speed and Maxwell Distribution"
+    },
+    {
+     "concept_id": "611a6c6c-ac36-4349-a924-1a5d894600cc",
+     "name": "Ideal Gas and Gas Laws"
+    },
+    {
+     "concept_id": "5d7bff82-96f3-46e9-b7c7-3a36f86242be",
+     "name": "Kinetic Theory and Gas Pressure"
+    },
+    {
+     "concept_id": "d40b6dcb-4336-4a4f-b030-e79c87d00f4c",
+     "name": "Internal Energy and Specific Heat Capacities"
+    },
+    {
+     "concept_id": "e50b315f-847a-4ed7-bbc0-30dfbced30b0",
+     "name": "Degrees of Freedom and Equipartition of Energy"
+    },
+    {
+     "concept_id": "c232ddde-628c-4084-aa5b-6403a4b2d18e",
+     "name": "Mean Free Path"
+    }
+   ]
+  },
+  {
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "18d53fbe-faeb-4695-9670-3cf409ca08a4",
+     "name": "Newton's Laws and Impulse"
+    },
+    {
+     "concept_id": "2edce4be-3c3c-4c6e-a6af-a0466f088b4a",
+     "name": "Friction"
+    },
+    {
+     "concept_id": "401bcd8b-597c-4a62-b270-801aaabc745d",
+     "name": "Connected Bodies, Pulleys and Constraint Relations"
+    },
+    {
+     "concept_id": "20c5ca66-1653-4588-9169-9921ef2152b0",
+     "name": "Momentum Conservation"
+    },
+    {
+     "concept_id": "77d38235-d3f8-4f70-a0fb-590e9f5609f9",
+     "name": "Concurrent Forces and Equilibrium"
+    },
+    {
+     "concept_id": "35888281-0271-4bec-a4a0-23f2b668f60c",
+     "name": "Circular Motion Dynamics (Banking)"
+    },
+    {
+     "concept_id": "a87dd7f6-b654-453b-8fe5-d99b6af9d613",
+     "name": "Vertical Circular Motion"
+    },
+    {
+     "concept_id": "b22984e7-77c9-4c3a-a572-bf0cbf21dbca",
+     "name": "Common Forces in Mechanics and Free-Body Diagrams"
+    }
+   ]
+  },
+  {
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "f5a5bc71-3dd7-45fe-9d80-a25958e66c03",
+     "name": "Bernoulli's Theorem"
+    },
+    {
+     "concept_id": "2386f37b-ba01-45ce-bd5d-8fd351af81f1",
+     "name": "Equation of Continuity"
+    },
+    {
+     "concept_id": "d8b76a10-a707-40ad-858b-9f3a9fbeea1d",
+     "name": "Fluid Pressure and Pascal's Law"
+    },
+    {
+     "concept_id": "7ea415f8-ac70-49d1-ba68-4904ee0050d7",
+     "name": "Buoyancy and Floatation"
+    },
+    {
+     "concept_id": "6a75c631-95e0-4640-8448-52aaa47a4beb",
+     "name": "Viscosity and Newton's Law of Viscosity"
+    },
+    {
+     "concept_id": "0e8daf2e-0cac-48e2-b157-aa63881ade69",
+     "name": "Stokes' Law and Terminal Velocity"
+    },
+    {
+     "concept_id": "5f745958-11aa-41b6-aab9-a13adf19b2df",
+     "name": "Surface Tension"
+    },
+    {
+     "concept_id": "1213ffec-88e9-459e-ae95-b5aa2ee926db",
+     "name": "Capillarity"
+    },
+    {
+     "concept_id": "8230a26d-f8ae-4a7c-875f-d72e95e6af8b",
+     "name": "Poiseuille's Law and Viscous Flow Resistance"
+    },
+    {
+     "concept_id": "7df01017-ea68-4860-ad26-8dc393005e1f",
+     "name": "Fluids in Accelerated and Rotating Frames"
+    }
+   ]
+  },
+  {
+   "chapter_id": "39bfe6d1-bd93-5157-a29c-b8ee68c3676b",
+   "chapter": "Mechanical Properties of Solids",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "871b8619-ee78-4f68-bec5-f6ba19ed248c",
+     "name": "Stress, Strain and Hooke's Law"
+    },
+    {
+     "concept_id": "4c87c283-4fb3-4c7e-b625-dfda37370dd4",
+     "name": "Young's Modulus"
+    },
+    {
+     "concept_id": "a0729d1a-e2a8-4a24-a838-19ed8e294c7e",
+     "name": "Stress-Strain Curve and Yielding"
+    },
+    {
+     "concept_id": "ca2c0c8a-ecba-4771-9fb1-5f6065be7bd2",
+     "name": "Bulk Modulus and Compressibility"
+    },
+    {
+     "concept_id": "dca7bbbc-063e-440c-8443-244d22db7f75",
+     "name": "Elastic Potential Energy"
+    },
+    {
+     "concept_id": "ed0dae69-8e9d-4970-9fd5-04c4f297638d",
+     "name": "Relations Among Elastic Constants"
+    },
+    {
+     "concept_id": "2865506b-53e6-45f8-ad2f-e258df2ec2b5",
+     "name": "Shear Modulus"
+    },
+    {
+     "concept_id": "966b84f5-4595-4958-afe3-2b45b86be8d9",
+     "name": "Poisson's Ratio"
+    },
+    {
+     "concept_id": "93f2dbb0-2aa9-4e71-95be-f01254600dd4",
+     "name": "Thermal Stress and Thermal Expansion"
+    },
+    {
+     "concept_id": "32bc55c8-d7f2-4403-8542-8a719625ee5e",
+     "name": "Applications of Elastic Behaviour"
+    }
+   ]
+  },
+  {
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "808c1add-2e53-46a5-a4de-f4e821bd2ebe",
+     "name": "Projectile Motion"
+    },
+    {
+     "concept_id": "95847f2c-fca5-46e4-a4a8-1242b2b79ddf",
+     "name": "Motion in Two Dimensions"
+    },
+    {
+     "concept_id": "da827d72-d25c-48be-80c4-f8d3f3054eb2",
+     "name": "Vector Algebra and Resolution"
+    },
+    {
+     "concept_id": "dee8046e-a05e-4a4b-9f77-08cce51071ad",
+     "name": "Circular Motion Dynamics"
+    },
+    {
+     "concept_id": "24f200e6-9aa1-40b2-a8b7-cc92f05d62c5",
+     "name": "Vector Products (Dot and Cross)"
+    },
+    {
+     "concept_id": "9782a90c-6e69-4ec5-ab13-f013412add26",
+     "name": "Circular Motion Kinematics"
+    },
+    {
+     "concept_id": "c9b4dbd8-44a1-41b3-81f1-b6385a86442f",
+     "name": "Relative Velocity in a Plane"
+    }
+   ]
+  },
+  {
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "34c4a239-dd0e-4987-b3cc-242c5c40e655",
+     "name": "Equations of Motion"
+    },
+    {
+     "concept_id": "b39c4653-6fd5-49a4-b6dd-6908cead5985",
+     "name": "Kinematic Quantities"
+    },
+    {
+     "concept_id": "1d891a3f-d1a9-412a-800c-7cb6d8747c4c",
+     "name": "Free Fall"
+    },
+    {
+     "concept_id": "27a38a54-1484-4522-a856-e274e2a56a0c",
+     "name": "Graphical Analysis"
+    },
+    {
+     "concept_id": "65591164-386a-4357-9809-ade0cbdbd41f",
+     "name": "Average and Instantaneous Quantities"
+    },
+    {
+     "concept_id": "010ae25e-478f-4c3a-8a06-33c8ad3aefda",
+     "name": "Relative Velocity"
+    },
+    {
+     "concept_id": "aee654a3-9767-454b-88e3-865af088b375",
+     "name": "Motion with Variable Acceleration"
+    }
+   ]
+  },
+  {
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "739938d3-f6de-4712-9453-5ad312197502",
+     "name": "SHM Kinematics and Equations"
+    },
+    {
+     "concept_id": "02ea5268-7eec-4092-937b-ab1760672173",
+     "name": "Spring-Mass Systems"
+    },
+    {
+     "concept_id": "d0e2e27b-550f-4c57-91a0-6f8338cc665d",
+     "name": "Simple Pendulum"
+    },
+    {
+     "concept_id": "ae5d8130-340c-4a5c-a802-d223653e4d0d",
+     "name": "SHM Energy"
+    },
+    {
+     "concept_id": "60d0621c-0d15-46f6-b177-303c106a22f0",
+     "name": "Damped and Forced Oscillations"
+    },
+    {
+     "concept_id": "0c51f03b-99eb-464f-a774-9158432e99f0",
+     "name": "Superposition of SHMs"
+    },
+    {
+     "concept_id": "710b0a9c-233c-4dfc-ac41-c1ad4a1c5ac7",
+     "name": "Physical and Torsional Pendulum"
+    },
+    {
+     "concept_id": "9c2696b8-5643-4e9c-9950-8279feded77c",
+     "name": "Reference Circle and Phasor Representation"
+    },
+    {
+     "concept_id": "bfcafad0-c510-4b8b-b378-cedb866683da",
+     "name": "SHM in Fluid Systems"
+    }
+   ]
+  },
+  {
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "a70071bc-412e-4004-8256-843871e23c89",
+     "name": "Moment of Inertia"
+    },
+    {
+     "concept_id": "fb20be7a-d014-441a-a317-e25d81157980",
+     "name": "Torque and Angular Momentum"
+    },
+    {
+     "concept_id": "3ab4f387-dfec-4290-b713-e7b24c491e0d",
+     "name": "Center of Mass"
+    },
+    {
+     "concept_id": "c10017fd-47eb-4fd8-8469-130ed4c3bbc2",
+     "name": "Rotational Dynamics"
+    },
+    {
+     "concept_id": "eb53d98f-ba5a-4cd5-8550-27ca7a26a77d",
+     "name": "Rolling Motion"
+    },
+    {
+     "concept_id": "ce5a3a33-ed38-4d8f-966c-785897c761ec",
+     "name": "Rotational Kinematics"
+    },
+    {
+     "concept_id": "2eff9955-d261-48dc-83e8-207ffb9b8306",
+     "name": "Motion of Center of Mass and Linear Momentum"
+    },
+    {
+     "concept_id": "3c1e79fb-e9f0-4bc8-92d5-9050bb3b7122",
+     "name": "Equilibrium of Rigid Bodies"
+    },
+    {
+     "concept_id": "829d1f7f-8277-41b5-8f8f-c3ea3c5f16f7",
+     "name": "Vector Product of Two Vectors"
+    },
+    {
+     "concept_id": "49c3f912-ca6c-4657-8a59-0c4839c9c12e",
+     "name": "Rigid Bodies & Types of Motion"
+    }
+   ]
+  },
+  {
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "f857c573-e423-468f-8610-f307fbe258b1",
+     "name": "Calorimetry and Specific Heat"
+    },
+    {
+     "concept_id": "0fe264c6-de7f-4bae-905b-6d868917fd65",
+     "name": "Thermal Expansion"
+    },
+    {
+     "concept_id": "7cc5773d-a935-47a5-8b36-769ef2c2fc0c",
+     "name": "Heat Conduction and Thermal Conductivity"
+    },
+    {
+     "concept_id": "1d2a2cbf-812b-4c6f-aa23-82645b26ad3c",
+     "name": "Newton's Law of Cooling"
+    },
+    {
+     "concept_id": "57d14e3a-a3b3-4690-a906-30a684d0d43f",
+     "name": "Radiation and Stefan's Law"
+    },
+    {
+     "concept_id": "b9ba2cd0-cffd-4b55-929b-1c0ea30742c5",
+     "name": "Change of State and Latent Heat"
+    },
+    {
+     "concept_id": "6c894fbf-a30a-4b0b-b7cc-ed2c849a8fe7",
+     "name": "Temperature and Thermometry"
+    },
+    {
+     "concept_id": "3b7bf514-62b1-41c1-8faf-1455396971b1",
+     "name": "Ideal Gas Equation and Absolute Temperature"
+    },
+    {
+     "concept_id": "ad2c82c8-b3b1-465c-b2eb-138d61d2201f",
+     "name": "Convection"
+    }
+   ]
+  },
+  {
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "5edc6f7c-848c-44ef-b292-3fd965577f7b",
+     "name": "First Law of Thermodynamics"
+    },
+    {
+     "concept_id": "3550f7a0-3c9f-40ee-8879-a2db96e9a93f",
+     "name": "Thermodynamic Processes"
+    },
+    {
+     "concept_id": "9df1a0b4-99e8-4703-8b86-7cd4e02ad859",
+     "name": "Heat Engines, Refrigerators and Heat Pumps"
+    },
+    {
+     "concept_id": "c579d6f5-e2fb-4e09-bc12-31ef01e08c4e",
+     "name": "Carnot Engine and Carnot's Theorem"
+    },
+    {
+     "concept_id": "eef5378e-e96a-46da-bad6-b69c60fc4d90",
+     "name": "Specific Heat Capacity and Mayer's Relation"
+    },
+    {
+     "concept_id": "38c37b0a-f4fe-47cc-9ef0-3bf4e4dcc75c",
+     "name": "Second Law of Thermodynamics and Reversibility"
+    },
+    {
+     "concept_id": "dc697d15-79d9-435c-9960-f1cccb3929e2",
+     "name": "Entropy and the Quantified Second Law"
+    },
+    {
+     "concept_id": "e09ea74c-7018-47e4-b9c3-5f22ca944843",
+     "name": "Thermodynamic Variables and State Functions"
+    },
+    {
+     "concept_id": "a5452ca9-b059-4772-8f23-b17d3f5e896d",
+     "name": "Zeroth Law and Thermal Equilibrium"
+    },
+    {
+     "concept_id": "8649c156-2500-437b-91cb-ea017610f4ee",
+     "name": "Ideal Gas Law"
+    }
+   ]
+  },
+  {
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "59ae394e-9a6d-4656-aeca-36b5cd730061",
+     "name": "Dimensions and Dimensional Formulae"
+    },
+    {
+     "concept_id": "66e325b6-f776-4f5a-ab03-a4eebc6679cc",
+     "name": "Dimensional Analysis and Its Applications"
+    },
+    {
+     "concept_id": "66bd5af1-5c5a-4196-8d7a-f27be9138cdd",
+     "name": "Errors in Measurement"
+    },
+    {
+     "concept_id": "0f79d328-c912-4f49-ac65-436bb0f83892",
+     "name": "Propagation of Errors"
+    },
+    {
+     "concept_id": "7e3b8896-b25f-467d-8b6a-e73f141765d7",
+     "name": "Systems of Units and SI Units"
+    },
+    {
+     "concept_id": "8b4e4613-a1a4-4e88-b25b-f441de7395a8",
+     "name": "Measuring Instruments: Vernier Callipers and Screw Gauge"
+    },
+    {
+     "concept_id": "c8eacf0a-508f-4ee0-9bca-def183f5e656",
+     "name": "Significant Figures"
+    },
+    {
+     "concept_id": "5b2516c1-6ac7-4c82-8fff-ea72f24facdf",
+     "name": "Measurement of Length, Mass and Time"
+    }
+   ]
+  },
+  {
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "805e78a2-fd94-4289-8525-9cff86d97dc9",
+     "name": "Wave Characteristics and Speed"
+    },
+    {
+     "concept_id": "1e2b6ef8-d5fe-4537-b565-3414350f05d1",
+     "name": "Standing Waves in Air Columns and Acoustics"
+    },
+    {
+     "concept_id": "740f457e-7e4a-464e-a854-b2ff288744c8",
+     "name": "Standing Waves in Strings"
+    },
+    {
+     "concept_id": "0edf5654-936c-4cea-a343-37fb6b23423c",
+     "name": "Doppler Effect"
+    },
+    {
+     "concept_id": "ababbf49-72bf-435c-a362-c2001cfda1c9",
+     "name": "Beats"
+    },
+    {
+     "concept_id": "94f9a977-a2bb-4b01-9c38-5aaa050f89ce",
+     "name": "Progressive Wave Equation"
+    },
+    {
+     "concept_id": "1b81a89f-6de8-4119-ae76-92c3594bd39d",
+     "name": "Interference of Waves"
+    },
+    {
+     "concept_id": "efc63ba7-66a1-42c1-a587-2c6ccf608e0d",
+     "name": "Electromagnetic Spectrum and Properties"
+    },
+    {
+     "concept_id": "29abe013-f659-4faa-a988-b461cf4fbc18",
+     "name": "Mach Cone and Sonic Boom"
+    },
+    {
+     "concept_id": "a2a666a3-e211-47e4-8c94-033585e07482",
+     "name": "Maxwell's Equations and Displacement Current"
+    }
+   ]
+  },
+  {
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "concepts": [
+    {
+     "concept_id": "cc86686c-8267-47d7-9590-52bd55eda0a6",
+     "name": "Work-Energy Theorem"
+    },
+    {
+     "concept_id": "b5d87494-33ad-4ccb-93c1-f9e1b50c4c23",
+     "name": "Work Done by a Force"
+    },
+    {
+     "concept_id": "e53a463a-ca4d-4333-bd33-e1bbcba244bd",
+     "name": "Power"
+    },
+    {
+     "concept_id": "942d0959-8a0a-4be4-8d78-91396c41da95",
+     "name": "Kinetic Energy"
+    },
+    {
+     "concept_id": "42fc3bac-e3b6-4193-87d2-322e4c1dd0d7",
+     "name": "Potential Energy"
+    },
+    {
+     "concept_id": "fd4cf813-f12b-4281-a57c-7161eddf3c9a",
+     "name": "Conservation of Mechanical Energy"
+    },
+    {
+     "concept_id": "1c57a8fd-b0a9-4d3f-925d-0d685588acab",
+     "name": "Collisions"
+    },
+    {
+     "concept_id": "dd9d20bb-2a12-42db-9e8d-a8d1087ebabf",
+     "name": "Conservative and Non-Conservative Forces"
+    },
+    {
+     "concept_id": "2cf0a90f-0529-4b23-a358-3bbc1e883e23",
+     "name": "Motion in a Vertical Circle"
+    },
+    {
+     "concept_id": "60ce3ea8-1f3c-43ed-a027-3d2ec5a90ae4",
+     "name": "Various Forms of Energy and Law of Conservation of Energy"
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "question_id": "0e434285-5296-46e0-b098-b2a437e03fb7",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Statement(A) : Comets move around the sun in highly elliptical orbits. The gravitational force on the comet due to the sun is not normal to the comet's velocity in general. Yet the work done by the gravitational force over every complete orbit of the comet is zero.\nStatement(B) : An artificial satellite orbiting the earth in very thin atmosphere loses its energy gradually due to dissipation against atmospheric resistance, however small. Itsspeed increase progressively as it comes closer and closer to the earth."
+  },
+  {
+   "question_id": "15af9dad-dbd0-42ec-926f-36548139cd7c",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Select correct statement regarding gravitational potential and gravitational field intensity inside a hollow sphere of mass $M$, radius $R$."
+  },
+  {
+   "question_id": "aab2163c-5f75-425c-9325-a63e3d042c72",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Maximum height reached by a rocket fired with a speed equal to 50\\% of the escape velocity from earth's surface is:"
+  },
+  {
+   "question_id": "fa17b0f8-b78d-46d4-9f7d-57c6b54f950a",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Two bodies of different masses are dropped simultaneously from the top of a tower. If air resistance is negligible"
+  },
+  {
+   "question_id": "5a60d4c5-b215-4fcd-8b3e-f8496a8add8d",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A hydrogen balloon released on the moon from a height will"
+  },
+  {
+   "question_id": "b20a386a-f4c6-4e2f-a955-3b9a04535bc5",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A hydrogen balloon released on the moon from a height will"
+  },
+  {
+   "question_id": "19f68811-1cf5-436c-bcfd-6273ce0dadb6",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Assume the earth to be a sphere of radius $R$, rotating with angular velocity $\\omega$. If $g_{30}$ is the value of acceleration due to gravity at latitude 30° and $g$ at the equator, then the value of $\\left|g-g_{30}\\right|$ is"
+  },
+  {
+   "question_id": "a3e3ad77-09fc-4560-a05a-a49a9e2dc765",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Three masses, 200 kg, 300 kg, and 400 kg, are placed at the vertices of an equilateral triangle with sides 20 m. They are rearranged on the vertices of a bigger triangle of side 25 m and the same centre. The work done in this process is $\\_\\_\\_\\_$ J. (Gravitational constant $\\mathrm{G}=6.7 \\times 10^{-11}$ $\\mathrm{Nm}^{2} / \\mathrm{kg}^{2}$ )"
+  },
+  {
+   "question_id": "8a988ee0-d271-49c4-ad90-dfc1c15823e6",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Find the work done to take a particle of mass $m$ from surface of the earth to a height equal to 2R"
+  },
+  {
+   "question_id": "208f7c45-fb16-4ec7-8ba1-5f432dd0e8ae",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The minimum energy required to launch a satellite of mass m from the surface of earth of radius R in a circular orbit of radius 2 R is (mass of earth is M)"
+  },
+  {
+   "question_id": "085c6e30-85ee-41d3-9670-493f60f626a6",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The value of escape velocity on a certain planet is 2 km/s. Then the value of orbital speed for a satellite orbiting close to its surface is :"
+  },
+  {
+   "question_id": "0fb8c487-4dd0-4faa-8036-813e94f2d06f",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A satellite S is moving in an elliptical orbit around the Earth. The mass of the satellite is very small compared to the mass of the Earth."
+  },
+  {
+   "question_id": "1c2c098f-4752-4ccd-98b7-3c9fccc2b9b3",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A satellite is moving with a constant speed $v$ in a circular orbital about the Earth. An object of mass m is ejected from the satellite such that it just escapes from the gravitational pull of the Earth. At the time of its ejection, the kinetic energy of the object is"
+  },
+  {
+   "question_id": "a420d0f9-78ba-480f-a4dc-e7c4340ba58a",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If A is areal velocity of a planet of mass M, its angular momentum is"
+  },
+  {
+   "question_id": "6b0c5833-c3b8-468f-9b96-c06254ba502d",
+   "chapter_id": "29b5be47-3b75-550d-9636-ad45a901d4dd",
+   "chapter": "Gravitation",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "At what height from the surface of the earth will the value of acceleration due to gravity fall to half that on the surface of earth?"
+  },
+  {
+   "question_id": "6a974e30-394b-4590-8ad3-badc6afcbb0b",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The kinetic energy of translation of the molecules in 50 g of $\\mathrm{CO}_{2}$ gas at $17^{\\circ} \\mathrm{C}$ is"
+  },
+  {
+   "question_id": "49d3952a-add0-49e8-8150-77dac54284d7",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The r.m.s. speed of oxygen molecules at 47°C is the same as hydrogen molecules kept at $\\_\\_\\_\\_$ (mass of oxygen molecule/mass of hydrogen molecule = 32/2)"
+  },
+  {
+   "question_id": "fd30a3a5-92dd-4e08-afba-bde1dd467c8d",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "On increasing the temperature of a gas filled in a closed container by 1 °C its pressure increases by 0.4\\% , initial temperature of the gas is"
+  },
+  {
+   "question_id": "0ec69b20-4c71-4c7d-bbd4-02a573af1f2a",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The rms velocity of gas molecules of a given amount of a gas at 27 °C and $1.0 \\times 10^{5} \\mathrm{Nm}^{-2}$ pressure is 200 m/s. If temperature and pressure are respectively $127^{\\circ} \\mathrm{C}$ and $0.5 \\times 10^{5} \\mathrm{Nm}^{-2}$, the rms velocity will be"
+  },
+  {
+   "question_id": "df4f768c-665e-44a3-9a9f-cf210bf80800",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "In gases the particles are free to move about randomly moving in straight line between any two successive collisions. The velocity of particles in a gas is stated under different names and different conditions in column I and its values are given in column II. Match the correct values\n\n| Column I | Column II |\n| :--- | :--- |\n| (A) Mean velocity | (p) $\\sqrt{\\frac{2 \\mathrm{RT}}{\\mathrm{M}}}$ |\n| (B) Mean speed | (q) $\\sqrt{\\frac{3 \\mathrm{RT}}{\\mathrm{M}}}$ |\n| (C) Most probable speed | (r) $\\sqrt{\\frac{8 \\mathrm{RT}}{\\pi \\mathrm{M}}}$ |\n| (D) Root mean square velocity | (s) 0 |"
+  },
+  {
+   "question_id": "cc6f304c-40d0-409f-8bcc-f511c76fe127",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The expression of mean free path, if we consider that only one molecule is moving, for whom we are considering mean free path"
+  },
+  {
+   "question_id": "00254da0-29fa-445f-9355-995d290ee976",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A spherical balloon of volume V contains helium at pressure P. How many moles of helium are in the balloon if the average kinetic energy of the helium atoms is K?"
+  },
+  {
+   "question_id": "1aecc2fa-09ed-426d-ad8f-7c21ecc0125b",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : Molecules of air in a room do not fall and settle on the ground due to gravity.\nReason (R) : Air molecules possess high kinetic energy and undergo incessant collisions, due to which their average kinetic energy is much greater than the gravitational potential energy over room heights.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "5d0d2967-12cc-4f1c-9a32-667ba06022cc",
+   "chapter_id": "8300dbf9-d9f7-505b-82c6-ad8d236eaff1",
+   "chapter": "Kinetic Theory",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Statement(A):- In kinetic theory of gases , if we imagine that only one molecule is moving and all the other molecules to be at rest then the average distance between two successive collisions , called the mean free path is given by $\\lambda=\\frac{1}{\\pi n d^{2}}$\nStatement(B):- The average kinetic energy (per molecule) of any (ideal) gas (be it monatomic like argon, diatomic like chlorine or polyatomic) is always equal to $\\frac{3}{2} K_{B} T$. It depends only on temperature, and is independent of the nature of the gas."
+  },
+  {
+   "question_id": "3e4313f5-8638-42f0-b39c-be4f71c63ac1",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Speed of two identical cars are 'u' and 4u at a specific instant. The ratio of the respective distances in which the two cars are stopped from that instant is"
+  },
+  {
+   "question_id": "31932de9-bb6e-44d4-a0ba-2bb55d799ff9",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A bullet moving at 20m/sec. strikes a wooden plank and penetrates 4cm before coming to stop. The time taken to stop is"
+  },
+  {
+   "question_id": "501658ef-8eaa-4b12-88b5-30b143c8df22",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "When an object is in translational equilibrium, which of the following statements is NOT true?"
+  },
+  {
+   "question_id": "90855dd3-1b11-43ad-9d00-6a866af429f8",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Statement-A: Frictional force and elastic forces arise fundamentally of electromagnetic source.\nStatement-B: Frictional force, viscous force and buoyant forces are contact forces.\nChoose the correct answer from the options given below"
+  },
+  {
+   "question_id": "dec57eb2-44e4-440e-93e4-6c2da381e170",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following set of forces can give zero resultant ?"
+  },
+  {
+   "question_id": "9341e64d-5911-4a04-96cb-280f16aa9b34",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A block of mass ' $m$ ' is placed on a rough horizontal surface. Coefficient of friction between the surfaces is $\\mu$\n    A) Minimum force that can slide the block is $=\\mu m g$\n    B) It is easy to pull the block than to push (when force acts at an angle with the horizontal)"
+  },
+  {
+   "question_id": "2b7f0448-1756-4bb6-ab34-a8aafc84aa92",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An elevator whose floor to the ceiling distance is 2.50 m, starts ascending with a constant acceleration of $1.25 \\mathrm{~ms}^{-2}$. One second after the start, a bolt begins falling from the ceiling of elevator. The free fall time of the bolt is $\\left[\\mathrm{g}=10 \\mathrm{~ms}^{-2}\\right]$"
+  },
+  {
+   "question_id": "dc9dc09e-8677-4db4-a397-4b0916028c52",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following is correct about principle of conservation of momentum?"
+  },
+  {
+   "question_id": "c68e7c14-ca59-4753-9e10-8e3903db1089",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "One end of the string of length $\\ell$ is connected to a particle of mass m and the other end is connected to a small peg on a smooth horizontal table. If the particle moves in circle with speed $v$, the net force on the particle (directed towards centre) will be (T represents the tension in the string)"
+  },
+  {
+   "question_id": "feb61f0f-6d23-4209-9c20-0b5c383b10cd",
+   "chapter_id": "50ae6550-951b-599c-b352-1d6e5f84bc3b",
+   "chapter": "Laws of Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If force, $\\mathrm{F}=500-100 \\mathrm{t}$, then function of impulse with time will be"
+  },
+  {
+   "question_id": "080b4295-f3a3-4d02-9241-10f91dc35f20",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Two mercury drops, each of radius $r$, merge to form a bigger drop. If $\\sigma$ is the surface tension of mercury, then the surface energy released is"
+  },
+  {
+   "question_id": "29aeab71-fc23-40c0-bb94-5acecc351b35",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A liquid is kept in a cylindrical vessel which is being rotated about a vertical axis through the centre of the circular base. If the radius of the vessel is ' $r$ ' and angular velocity of rotation is $\\omega$, then the difference in the heights of the liquid at the centre of the vessel and the edge is"
+  },
+  {
+   "question_id": "5ab1e5a6-6694-456a-8bef-4827ae2bfd0d",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The amount of work done in forming a soap bubble of radius $\\mathrm{r}=1 \\mathrm{~cm}$ (surface tension $\\left.T=3 \\times 10^{-2} N / m\\right)$ is $($ Take $\\pi=3.14)$"
+  },
+  {
+   "question_id": "aa0726fa-6fe2-4663-bb01-ce357f02d0ca",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A 12 cm long capillary tube is dipped in water so that 9 cm is outside water. The water rises up to 7 cm in the tube. Now if entire arrangement is kept in a freely falling lift, then the increase in the length of water column in the capillary tube, is"
+  },
+  {
+   "question_id": "aef31f59-5bec-4310-b002-54220ccfae9a",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Two small drops of mercury, each of radius $R$, coalesce to form a single large drop. The ratio of the total surface energies before and after the change is"
+  },
+  {
+   "question_id": "ba755327-8f39-4794-bd04-234318379423",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Pressure at a point inside a liquid does not depend on"
+  },
+  {
+   "question_id": "8f50db30-0ef9-44b9-8263-7a380e8db156",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Match List I with List II.\n\nList I\nExcess pressure\n\n    A. inside a liquid drop\n    Excess pressure\n    B. inside a soap bubble\n    Pressure inside an\n    air bubble in\nC. air bubble in water at depth ' $h$ ' water at depth ' $h$ '\nList II\n\n\n    I. $P_{0}+\\frac{2 T}{R}$\n    II. $\\frac{2 T}{R}$\n    III. $\\frac{4 T}{R}$\n    Pressure inside a\n    D. liquid drop\n    IV. $P_{0}+h d g+\\frac{2 T}{R}$\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "c7211195-2186-47bc-9d75-757c0b4a3e59",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A capillary tube of radius $r$ is immersed in water, and the water rises in it to a height $h$. The mass of the water in the capillary is 10 g . Another capillary tube of radius $2 r$ is immersed in water. The mass of the water that will rise in this tube is"
+  },
+  {
+   "question_id": "be960d80-74d3-4389-9cf3-b528756711f7",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body floats in a liquid of relative density 1.5 with 40\\% of its volume outside the liquid. If 50\\% of the volume of the same body remains in an oil, the relative density of the oil is"
+  },
+  {
+   "question_id": "10d9812b-9345-4207-95e9-ccf01abdc321",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "When a solid ball of volume V falls through a viscous liquid, a viscous force F acts on it. If another ball of volume 2V of the same material falls through the same liquid, then the viscous force experienced by it will be (both fall with terminal velocities)"
+  },
+  {
+   "question_id": "7155ba7d-e368-478c-b455-74f40f799274",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An object of mass m and density $\\rho$ is falling in a viscous liquid of density $\\frac{\\rho}{4}$. When it attains terminal velocity, then viscous force acting on it will be:"
+  },
+  {
+   "question_id": "561d74b8-aece-499c-8e7b-cb03cbc02524",
+   "chapter_id": "33795397-f8fe-5ef6-ba2d-64549905ecd3",
+   "chapter": "Mechanical Properties of Fluids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Several spherical drops of a liquid of density 'd' and radius 'r' coalesce to form a single drop of radius 'R'. If all the energy released is converted into K.E. Then the velocity acquired by the drop is"
+  },
+  {
+   "question_id": "6aecc299-3f77-483a-905c-702df1803e76",
+   "chapter_id": "39bfe6d1-bd93-5157-a29c-b8ee68c3676b",
+   "chapter": "Mechanical Properties of Solids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Two wires of the same material and same length but with diameters in the ratio 1:2 are stretched by the same force. The potential energy per unit volume of the two wires will be in the ratio"
+  },
+  {
+   "question_id": "6e951e3d-3a5a-47a8-8d72-1aed076c8e52",
+   "chapter_id": "39bfe6d1-bd93-5157-a29c-b8ee68c3676b",
+   "chapter": "Mechanical Properties of Solids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : Steel used in the construction of buildings and bridges\n\nReason (R) : Steel is more elastic and its elastic limit is high\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "b6b13a83-616e-4d72-a523-d93fbc3004ca",
+   "chapter_id": "39bfe6d1-bd93-5157-a29c-b8ee68c3676b",
+   "chapter": "Mechanical Properties of Solids",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A catapult consists of a rubber string of length 20 cm and cross-sectional area 10 $\\mathrm{mm}^{2}$. When stretched by 5 cm, it can throw a stone of mass 100 g to a vertical height of 25m. Determine Young's modulus of elasticity of rubber $\\left(\\mathrm{g}=10 \\mathrm{~ms}^{-2}\\right)$."
+  },
+  {
+   "question_id": "36d9f2a1-875a-42d8-9a08-5162911a4854",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "For a ground - to - ground projectile, an object is at point A at $t=T / 3$, and reaches the ground at $t=T$. The height of point A is"
+  },
+  {
+   "question_id": "414e8f55-496c-4438-81ca-45143cf59712",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Angle between position vector and acceleration vector of a particle in uniform circular motion (center of circle is taken as origin) is"
+  },
+  {
+   "question_id": "87f57d0a-f1a8-40b5-a790-7258e7553c9e",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If the equation of trajectory of a particle in vertical plane is $\\mathrm{y}=\\mathrm{ax}-\\mathrm{bx}^{2}$, where a and b are positive constants, then angle of elevation of highest point from the point of projection is"
+  },
+  {
+   "question_id": "cbf1c1ad-7080-4705-887a-beed02339645",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Assertion(A): When a body is projected at an angle $45^{0}$ with horizontal its horizontal range is maximum.\nReason (R): With a given speed of projection for maximum range, the value of $\\sin 2 \\theta$ should be equal to one (where $\\theta$ is angle of projection with horizontal).\nIn the light of the above statements, choose the correct answer from the options given below :"
+  },
+  {
+   "question_id": "d02c7d19-bb21-41f4-9875-f1898ad48afa",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a cyclist takes two minutes to compete half revolution on a circular path of 120m radius. What is the average speed ?"
+  },
+  {
+   "question_id": "d60de387-933e-4202-8240-8ba318eecc9f",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "When a particle moves in a circle with a uniform speed"
+  },
+  {
+   "question_id": "c8f1b11a-672b-4043-be51-0ba62fee07df",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a cyclist takes two minutes to compete half revolution on a circular path of 120m radius. What is the average speed ?"
+  },
+  {
+   "question_id": "c246c1e5-4b7a-4272-b3d9-ac4ddcaed554",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A cyclist completes half revolution of a circular path of radius R. The ratio of the displacement to the distance travelled is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "609df086-aa15-4dba-a55a-01f627003d24",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body is thrown with velocity $(4 \\hat{i}+3 \\hat{j})$ metre per second. Its maximum height is $\\left(\\mathrm{g}=10 \\mathrm{~ms}^{-2}\\right)$"
+  },
+  {
+   "question_id": "68cef94a-8857-4468-93f3-9446156c00e7",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle of mass ' $m$ ' is projected with a velocity $v$ making an angle of 30° with the horizontal. The magnitude of angular momentum of the projectile about the point of projection when the particle is at its maximum height ' $h$ ' is"
+  },
+  {
+   "question_id": "b5fc0d18-82a0-403b-a152-ab8bbe1a4e89",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A shell following a parabolic path explodes somewhere in its flight. Then the center of mass of fragments will continue to move in"
+  },
+  {
+   "question_id": "5cb25a9c-e19d-4bbd-92e9-15780b72382f",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A ball is rolled off the edge of a horizontal table at a speed of 4 m/second. It hits the ground after 0.4 second. Which statement given below is true"
+  },
+  {
+   "question_id": "09f64854-0a27-4d5e-b19f-d8679c2f3555",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle is moving with uniform speed along the circumference of a circle of radius R, under the action of a central fictitious force F which is inversely proportional to $R^{3}$. Its time period of revolution will be given by"
+  },
+  {
+   "question_id": "58eb43dd-70f5-4957-b060-c5a7c0e77038",
+   "chapter_id": "a5970ed6-3b48-55f9-9b80-8abdd3d4c336",
+   "chapter": "Motion in a Plane",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle moving in a circle of radius 10 m at a uniform speed takes time $\\pi \\sec$ to complete one revolution. If this particle is projected with the same speed at an angle $\\theta$ with the horizontal, the maximum height attained by it is equal to 10 m, then the angle of projection $\\theta$ is given by :"
+  },
+  {
+   "question_id": "4daa27b6-cdac-46b2-a22a-fe2896b2f716",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An object starts from rest and moves with uniform acceleration 'a'. The velocity of the particle when it covers a distance 's' is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "55b90421-d380-4468-a7fd-c80fe6f346ea",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The area under velocity time graph represents"
+  },
+  {
+   "question_id": "7c781f98-0301-46fe-ba3f-bbb053c6235a",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Average velocity of a freely falling body dropped from height 'h' is"
+  },
+  {
+   "question_id": "8c9ee1ef-73b0-49ab-9f5f-709836015638",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A stone projected vertically up with velocity 'v' from the top of a tower reaches the ground with velocity 2v. The height of the tower is"
+  },
+  {
+   "question_id": "0cd10dc2-12f3-4ac4-bad5-eef59d0f8b2d",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A stone, dropped from the top of a tower, travels 35 m in the last second of its journey. The height of the tower is $\\left(\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}\\right)$"
+  },
+  {
+   "question_id": "19fef2f7-3a73-4078-9a53-f23d0d87de4f",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body is thrown up with a velocity $29.23 \\mathrm{~ms}^{-1}$. The distance traveled in last second of upward motion is"
+  },
+  {
+   "question_id": "3ae7fa60-16fb-4290-8eed-473ea0e6fbd0",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A parachutist after bailing out falls 80 m without friction. When the parachute opens, it decelerates at $2 \\mathrm{~m} / \\mathrm{s}^{2}$. He reaches the ground with a speed of 20 m/s. At what height, did he bail out ?"
+  },
+  {
+   "question_id": "3ecf135a-8ac6-427b-91c5-8f5cce89c993",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The ratio of the numerical values of the average velocity and average speed of a body is always"
+  },
+  {
+   "question_id": "1300dda7-4401-4988-b09a-37fdc229cc11",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following equation represents velocity of a body as a function of time in uniform accelerated motion"
+  },
+  {
+   "question_id": "791f94a0-7a4a-46da-826f-b7221bcc6337",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The area under velocity time graph represents"
+  },
+  {
+   "question_id": "215aaedb-cc49-4701-9385-8983821f8490",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A freely falling body travels $\\_\\_\\_\\_$ of total distance in $5^{\\text {th }}$ second"
+  },
+  {
+   "question_id": "ff44e2d1-a350-464b-8965-a8971b0358bc",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Average velocity of a freely falling body dropped from height 'h' is"
+  },
+  {
+   "question_id": "5787717e-3cd4-4e28-a143-c4087b51b5d6",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body starts from rest. What is the ratio of the distance traveled by the body during the $4^{\\text {th }}$ and $3^{\\text {rd }}$ seconds"
+  },
+  {
+   "question_id": "0968bfbb-a234-4f57-976b-79d36711362f",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a ball is thrown vertically upwards with speed u, the distance covered during the last ' $t$ ' second of its ascent is"
+  },
+  {
+   "question_id": "f2f84749-75ee-49d7-948f-2bfc4d6682d2",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body is thrown up with a velocity $29.23 \\mathrm{~ms}^{-1}$. The distance traveled in last second of upward motion is"
+  },
+  {
+   "question_id": "a9f2962c-f20d-423b-b795-38bd5b4386a9",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a body travelling some distance comes back to its starting point then which is correct"
+  },
+  {
+   "question_id": "f0667d09-ef06-4dbb-93c3-5270586c5f05",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following is a vector ?"
+  },
+  {
+   "question_id": "3da4a9f8-f654-437d-902a-ece9ddd02e4a",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Displacement of a particle with time (in s) is given by $x=\\left(2 t^{3}-3 t^{2}+4\\right) \\mathrm{m}$. Acceleration of the particle, when its velocity is zero, $\\mathrm{in} \\mathrm{ms}^{-2}$ is"
+  },
+  {
+   "question_id": "aecc6a84-0673-49c0-9aa0-274025cc0cae",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a number of bullets are fired horizontally with different velocities from the top of a tower, they will reach the ground"
+  },
+  {
+   "question_id": "45da6830-6acc-4240-9f23-d66fdc8d807a",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body starts with initial velocity $64 \\mathrm{~ms}^{-1}$ moves with retardation $(a)=-4 \\sqrt{v}$ where $a$ is in $\\mathrm{ms}^{-2}$ and $v$ in $\\mathrm{ms}^{-1}$, then the time required to stop it is"
+  },
+  {
+   "question_id": "6a7d15c2-49f4-4f29-b5ff-4ec642b05cbd",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A juggler juggling with 5 balls project a ball up after every 0.4 sec maximum height attained by each ball is"
+  },
+  {
+   "question_id": "8430b10a-9004-4940-966c-d6e00c3e57b6",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A car moving with constant acceleration covers the distance between two points 180 m apart in 6 sec. Its speed as it passes the second point is 45 m/s. What is its acceleration?"
+  },
+  {
+   "question_id": "0178f280-a5f0-48b9-91ba-e560ee5dd07c",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The acceleration of a particle changes when"
+  },
+  {
+   "question_id": "138024dd-0428-4059-8eb8-e590e9595956",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A car travelling with a speed 126 Kmph along a straight line comes to rest after travelling a distance 245m. The time taken by the car to come to rest, in second is"
+  },
+  {
+   "question_id": "165485b8-f59b-4059-b7fe-d2c9c30d8e3d",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Distance travelled by a body in the $\\mathrm{n}^{\\text {th }}$ sec is $S_{n}=2+0.4 n \\mathrm{~m}$. It's initial velocity and acceleration respectively are"
+  },
+  {
+   "question_id": "25e2314c-69f5-4984-a302-d16edc199b5c",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A stone projected vertically up with velocity 'v' from the top of a tower reaches the ground with velocity 2v. The height of the tower is"
+  },
+  {
+   "question_id": "29e00455-4555-4ceb-9d27-a07ed57a5b8d",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The acceleration of a particle moving with uniform velocity is"
+  },
+  {
+   "question_id": "2ad01b7f-93d4-4a66-ac88-786070bca6e8",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body is projected up with velocity u. It reaches a point in its path at time $t_{1}$ and $t_{2}$ seconds from the time of projection. Then $\\left(t_{1}+t_{2}\\right)$ is"
+  },
+  {
+   "question_id": "2ba25794-1705-48e0-ba7b-9e2e377bb4ef",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The ratio of the numerical values of the average velocity and the average speed of a body is always"
+  },
+  {
+   "question_id": "376b8ca6-1360-432a-af15-05bfb2ce7ded",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The slope of position - time graph represents"
+  },
+  {
+   "question_id": "990f6c57-2e40-480a-8968-9e43b49d6bc3",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following statements are correct?\nA: Stopping distance of a vehicle under constant retardation is directly proportional to square of the initial velocity\nB: A scalar quantity may be dimensionless\nC: With zero speed at an instant may have non-zero acceleration at that instant\nD: A scalar quantity has the same value for observers with different orientation of axes\nE: If speed of a boat relative to water is less than speed of water flow in a stream, then it can't cross the river in shortest path"
+  },
+  {
+   "question_id": "aeb7b800-190d-43b1-9894-328518b4a39f",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Displacement is a $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "37be5a5e-f328-4ba8-ae57-e3e4dd9dd258",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The ratio of the numerical values of the average velocity and the average speed of a body is always"
+  },
+  {
+   "question_id": "48866eae-aded-4358-850f-ab6125e79e16",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body starting with a velocity 'v' returns to its initial position after 't' second with the same speed, along the same line. Acceleration of the particle is"
+  },
+  {
+   "question_id": "4c50cdd3-f70b-4edc-a523-785a80c7d09a",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A point traversed half a circle of radius r during a time interval $t_{0}$, its mean speed and magnitude of mean velocity are"
+  },
+  {
+   "question_id": "4ecc67d6-cd7e-4678-b2b5-9562b72f7c6a",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a ball is thrown vertically upwards with speed u, the distance covered during the last ' $t$ ' second of its ascent is"
+  },
+  {
+   "question_id": "52e4b95b-6137-43ed-beff-f304f4511c08",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a car covers $2 / 5^{\\text {th }}$ of the total distance with $\\mathrm{v}_{1}$ speed and $3 / 5^{\\text {th }}$ distance with $\\mathrm{v}_{2}$ then average speed is"
+  },
+  {
+   "question_id": "57c94735-895e-46fa-b0b5-7bc3704ee3da",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body is projected vertically up with u. Its velocity at half its maximum height is"
+  },
+  {
+   "question_id": "5ac6bbde-8d7e-4f2f-8d73-cc3bd378e0a6",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body is projected up with velocity u. It reaches a point in its path at time $t_{1}$ and $t_{2}$ seconds from the time of projection. Then ( $t_{1}+t_{2}$ ) is"
+  },
+  {
+   "question_id": "5d084b88-5712-4f34-955c-f695f62ffe61",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A vehicle moving on a straight road has its speed changed from 5m/s to 8m/s in 2sec.What is its average acceleration ?"
+  },
+  {
+   "question_id": "6294c021-3e84-4f92-870f-f2a2b998d143",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle moves with uniform velocity of 20m/s along a straight line. Then the time to cover a distance of 200m is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "68b99857-3987-43a2-9c85-9340c7f8e2f6",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body covers 100m in 20s, then the speed of a body is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "73b01a4f-2757-40f8-9970-4a79b3ef552a",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The acceleration of a particle moving with uniform velocity is"
+  },
+  {
+   "question_id": "75db26ca-f1ea-4fb4-9965-717606413f7c",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A car, starting from rest, accelerates at the rate $\\alpha$ through a distance d , then continues at a constant speed for time t and then decelerates at the rate of $\\alpha / 2$ to come to rest. If the total distance traveled is 15 d, then"
+  },
+  {
+   "question_id": "76474399-d0fb-4f7d-9028-a94ade504f37",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Distance travelled by a body in the $\\mathrm{n}^{\\text {th }}$ sec is $S_{n}=2+0.4 n \\mathrm{~m}$. It's initial velocity and acceleration respectively are"
+  },
+  {
+   "question_id": "804490dc-be20-4117-95ea-62970669df39",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A person travels along a straight road for half the distance with velocity $\\mathrm{V}_{1}$ and the remaining half distance with velocity $\\mathrm{V}_{2}$ the average velocity is given by"
+  },
+  {
+   "question_id": "813cebb8-43c9-4ad9-a59e-524f0143231e",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following equation represents velocity of a body as a function of time in uniform accelerated motion"
+  },
+  {
+   "question_id": "82cc38c9-fe67-4a9b-a08f-485468d65620",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A point traversed half a circle of radius r during a time interval $t_{0}$, its mean speed and magnitude of mean velocity are"
+  },
+  {
+   "question_id": "83021ab1-2279-4687-88fa-435ce687fa09",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body falls from 80m. Its time of descent is $\\left(g=10 \\mathrm{~m} / \\mathrm{s}^{2}\\right)$"
+  },
+  {
+   "question_id": "8673f34c-7ca4-4348-aafa-7ca0251d0fff",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The area under an acceleration-time graph gives"
+  },
+  {
+   "question_id": "94c179a3-bf74-415d-9de4-8e9938bdc9f4",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The area under an acceleration-time graph gives"
+  },
+  {
+   "question_id": "9d66a28a-1a10-4cb6-b3a0-5f0898663333",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A car starts from rest and moving with uniform acceleration of $2 m / s^{2}$. Distance travelled by it in 10sec is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "9e005555-2e7b-4ca3-9ffc-f5bb3dd31404",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of following statements is incorrect ?"
+  },
+  {
+   "question_id": "aab3b9aa-aae7-4ff6-817c-efe9f707b049",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle starts moving from rest with uniform acceleration. It travels a distance x in the first 2 sec and a distance y in the next 2 sec. Then"
+  },
+  {
+   "question_id": "b74b38f3-ffd4-4b0a-b2af-85d4f7bec449",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body starting with a velocity 'v' returns to its initial position after 't' second with the same speed, along the same line. Acceleration of the particle is"
+  },
+  {
+   "question_id": "cc9a2c5d-4126-4b3e-b014-246b52322b7c",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "One car moving on a straight road covers one third of the distance with 20 km/h and the rest with 60 km/h. The average speed is"
+  },
+  {
+   "question_id": "cf7a66b2-2894-4759-9610-e9ef360621b9",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The slope of position - time graph represents"
+  },
+  {
+   "question_id": "d0d974a6-4296-4287-b128-2ded4637e020",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An object starts from rest and moves with uniform acceleration 'a'. The velocity of the particle when it covers a distance 's' is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "d428d75e-a48f-4d26-91ce-e69dbb28feb7",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If a car covers $2 / 5^{\\text {th }}$ of the total distance with $\\mathrm{v}_{1}$ speed and $3 / 5^{\\text {th }}$ distance with $\\mathrm{v}_{2}$ then average speed is"
+  },
+  {
+   "question_id": "d6a9424a-f320-4f87-855c-7577cf0f29e2",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "At the maximum height of a body thrown vertically up"
+  },
+  {
+   "question_id": "e2e3eece-b681-4b54-99f2-0d9ae4cafc5e",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body starts from rest and accelerates uniformly at $5 \\mathrm{~m} / \\mathrm{s}^{2}$ for 10s. Its final velocity is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "ef7e0d0c-5db8-41e3-bb09-78fa963c2c6b",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The ratio of the numerical values of the average velocity and average speed of a body is always"
+  },
+  {
+   "question_id": "f06df777-4391-44e4-b340-7e1ac58c8bff",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of following statements is incorrect ?"
+  },
+  {
+   "question_id": "f8a7fbce-ddf6-43f2-bb17-482e4fe062d3",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "For a body travelling with uniform acceleration, its final velocity is $V=\\sqrt{180-7 x}$, where x is the distance travelled by the body. Then the acceleration is"
+  },
+  {
+   "question_id": "fd24f90b-bc84-4586-8b9f-403b05ba6081",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle is thrown vertically upward from the ground with some velocity and it strikes the ground attain in time 2 s. The maximum height achieved by the particle is $(\\mathrm{g}=10$ $\\mathrm{m} / \\mathrm{s}^{2}$ )"
+  },
+  {
+   "question_id": "fd7e5f36-a226-438c-9501-24490f265917",
+   "chapter_id": "563ae2b1-3427-537a-afde-f7fbc193731f",
+   "chapter": "Motion in a Straight Line",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The acceleration of a particle changes when"
+  },
+  {
+   "question_id": "64c08994-4ec0-4525-a248-2a2743ac1ff1",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle executes simple harmonic motion with a frequency $f$. The frequency with which its kinetic energy oscillates is"
+  },
+  {
+   "question_id": "58418c8c-841f-4603-b7aa-b19dd4c92091",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The displacement of a particle executing simple harmonic motion is given by $y=A_{0}+A \\sin \\omega t+B \\cos \\omega t$. Then, the amplitude of its oscillation is given by"
+  },
+  {
+   "question_id": "e6755035-93c9-4659-8282-9deb93f8cdc4",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The equation of motion of a particle is given by $x=a \\sin (50 t+\\pi / 3) \\mathrm{cm}$. The particle will come to rest at time $t_{1}$, and it will have zero acceleration at time $t_{2}$. $t_{1}$ and $t_{2}$ respectively are $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "764e36aa-4b49-43fb-a4e5-f4b8aecee35c",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following is NOT correct for a particle in simple harmonic motion?"
+  },
+  {
+   "question_id": "0bc19603-7ffc-4bf8-8bc0-19e4433451e0",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle is executing simple harmonic motion with frequency $f$. Then"
+  },
+  {
+   "question_id": "4b193131-e9a0-4916-897b-85a648d27f5e",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The bob of a simple pendulum of mass ' $m$ ' and total energy $E$ will have maximum linear momentum equal to"
+  },
+  {
+   "question_id": "7b5408b1-fa00-4833-8a33-6ce530b29bdf",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A particle is executing an SHM of time period 4 s, amplitude 10 cm with its mean position at the origin of coordinates axes. The minimum time taken by the particle to go from $\\mathrm{x}=-6 \\mathrm{~cm}$ to $\\mathrm{x}=8 \\mathrm{~cm}$ is"
+  },
+  {
+   "question_id": "bc50ed9c-24ea-4706-8876-967297052662",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Two simple pendulums of lengths 100 m and 121 m start swinging together. They will swing together again after"
+  },
+  {
+   "question_id": "5b8bfe46-7447-421c-8363-a9c8ec35bd39",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Two particles are oscillating along two close parallel straight lines side by side, with the same frequency and amplitudes. They pass each other, moving in opposite directions, when their displacement is half of the amplitude. The phase difference is"
+  },
+  {
+   "question_id": "efc7e2e5-e2c8-4793-9c89-eed78b4aa8cb",
+   "chapter_id": "c1bc937e-5ff5-5ecb-a67b-89053c386c23",
+   "chapter": "Oscillations",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A simple pendulum is subjected to different accelerations. The time period of a stationary pendulum is ' $T$ ' and the modified period ' $T^{1}$ '. Match the ratio $T^{1} / T$ for various situations.\n$$\nT^{1} / T\n$$\nSituation\nA. $\\sqrt{\\frac{g}{g-a}}$\nI. Free fall of a lift\nB. $\\sqrt{\\frac{g}{g+a}}$\nC. $\\infty$\nIII. acceleration moving up\nD. $\\sqrt{\\frac{g}{\\sqrt{g^{2}+a^{2}}}}$\nIV. acceleration moving down\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "2c4ee757-1210-49fb-9150-2912a6d03693",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A thin rod of length 2 m is placed along xaxis between $(0,0)$ and $(2,0)$. If linear mass density of rod is given as $\\lambda=(2 \\mathrm{x}+3) \\mathrm{kg} / \\mathrm{m}$. It's moment of inertia about x-axis will be"
+  },
+  {
+   "question_id": "1558454c-a96b-4121-a069-085c3c3c391c",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A 6.5 m ladder rests against a vertical wall reaching a height of 6 m. A 60 kg man stands halfway up the ladder. The torque of the force exerted by the man on the ladder about the upper end of the ladder is"
+  },
+  {
+   "question_id": "f37190b7-3216-4d76-9d96-534c6d7e3d05",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A thin wire of mass M and length L is turned into a ring. The moment of inertia about its axis will be"
+  },
+  {
+   "question_id": "6aaa6c1b-7fc6-4b75-b6e8-702f3ea06979",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A bullet of mass 10 g and speed 500 m/s is fired into a door and gets embedded exactly at the centre of the door. The door is 1.0 m wide and weighs 12 kg. It is hinged at one end and rotates about a vertical axis practically without friction. The angular speed of the door just after the bullet embeds into it will be"
+  },
+  {
+   "question_id": "8b1ea1fe-05df-4abc-948f-2e30cc06da0c",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The second's hand of a watch has length 6 $c m$. Speed of end point and magnitude of difference of velocities of the point at two perpendicular positions will be"
+  },
+  {
+   "question_id": "81ebefe2-1f26-4598-b447-738c0a934017",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A horizontal heavy uniform bar of weight W is supported at its ends by two men. At the instant, one of the men lets go off his end of the rod, the other feels the force on his hand changed to"
+  },
+  {
+   "question_id": "5f1b6541-9ce3-4266-8355-d18e0715a8a6",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Select correct statements of the following :\na) Algebraic sum of moments of masses about centre of mass is zero\n    b) For small bodies, centre of mass coincides with centre of gravity\n    c) Position of centre of mass of a body depends on co-ordinate system\n    d) Position of centre of mass is independent of mass distribution"
+  },
+  {
+   "question_id": "a4675ba6-d4f0-4665-97b5-e7839bd8ae87",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A constant power is supplied to a rotating disc. The relationship of angular velocity (  $\\omega$ ) of disc and number of rotations (n) made by the disc is governed by"
+  },
+  {
+   "question_id": "d6670271-51da-43e6-a775-b37782feb246",
+   "chapter_id": "262da95c-2f3a-56da-905e-003fa8f0e4dc",
+   "chapter": "Rotational Motion",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion(A) : Machines such as the steam engine, the automobile engine, etc., which produce rotational motion, have a disc with a large moment of inertia, called a flywheel.\nReason (R) : Because of its large moment of inertia, the flywheel resists the sudden increase or decrease of the speed of the vehicle and prevents jerky motions, thereby ensuring a smooth ride.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "81705c03-130d-4e94-b300-3ce08533004c",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Name the physical quantity which has unit as kelvin"
+  },
+  {
+   "question_id": "d20d51be-fb5e-40a7-b843-14b32969f666",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The two ends of a metal rod are maintained at temperatures $100^{\\circ} \\mathrm{C}$ and $110^{\\circ} \\mathrm{C}$. The rate of heat flow in the rod is found to be 4.0 J/s. If the ends are maintained at temperatures $200^{\\circ} \\mathrm{C}$ and $210^{\\circ} \\mathrm{C}$, the rate of heat flow will be"
+  },
+  {
+   "question_id": "68c61a9a-fc73-4967-8cbf-8f3650a316c0",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A black body has a maximum-intensity wavelength of $\\lambda_{\\mathrm{m}}$ at 500 K . The wavelength of maximum intensity at 3000 K is"
+  },
+  {
+   "question_id": "a0cacdc4-6c09-4c26-b003-7506a0fc0cdc",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Given below are three statements.\nStatement I :The earth without its atmosphere would be inhospitable.\n\n\nStatement II : A brass tumbler feels much colder than a wooden tray on a chilly day.\nStatement III : Heating systems based on circulation of steam are more efficient in warming a building than those based on circulation of hot water."
+  },
+  {
+   "question_id": "124a5539-f329-4b56-83fb-1663d8688b44",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "In heat transfer, which method is based on gravitation"
+  },
+  {
+   "question_id": "a550db65-251a-4114-969e-97bcd322d949",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An iron bar of length $10 ~ m$ is heated from 0°C to 100°C. If the coefficient of cubical expansion of iron is $3 \\times 10^{-5} /{ }^{\\circ} \\mathrm{C}$, the increase in the length of bar is."
+  },
+  {
+   "question_id": "b43d5f81-c2f5-4c58-9926-3305b981ed99",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A solid sphere of radius ' $r$ ' made of a material of bulk modulus $K$ and coefficient of linear expansion ' $\\alpha$ ' is surrounded by a liquid in a cylindrical container. A massless piston of area of A floats on the surface of the liquid, covering entire cross-section of cylindrical container. When a mass $m$ is placed on the surface of the piston, for size of the sphere to remain same, the rise in temperature of the system should be"
+  },
+  {
+   "question_id": "9270a260-3895-4b72-8a23-e4b7f90b2715",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Coefficient of linear expansion of brass and steel rods are $\\alpha_{1}$ and $\\alpha_{2}$. Length of brass and steel rods are $l_{1}$ and $l_{2}$, respectively. If $\\left(l_{1}-l_{2}\\right) \\quad$ is maintained same all temperatures, which one of the following relation holds goods?"
+  },
+  {
+   "question_id": "d474057b-8277-4762-902a-5fa4be51b6c7",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Four spheres A, B, C and D of different metals but of same radius are kept at same temperature. The ratio of their densities and specific heats are 2 : 3 : 5 : 1 and 3 : 6 : 2 : 4. Which sphere will show the fastest rate of cooling (initially) (assume black body radiation for all of them)"
+  },
+  {
+   "question_id": "186cdd6f-105c-403e-986b-ea003d9a7fae",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Largest enthalpy change among phase transitions is"
+  },
+  {
+   "question_id": "daead5f9-2974-4bf9-aa6c-ee835ce4ed3f",
+   "chapter_id": "087ea53b-681c-51a2-92ef-5ea77f6bdf8b",
+   "chapter": "Thermal Properties of Matter",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A black body has maximum wavelength $\\lambda_{m}$ at temperature 2000 K. Its corresponding wavelength at temperature 3000 K will be"
+  },
+  {
+   "question_id": "0a61dafb-4d21-4e87-a085-270f080f1c7b",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A thermally insulated vessel contains an ideal gas of molecular mass M and ratio of specific heats $\\gamma$. It is moving with speed v and is suddenly brought to rest. Assuming no heat is lost to the surroundings, its temperature increases by (In kelvin)"
+  },
+  {
+   "question_id": "28ace846-a33a-4949-becc-3163b1736310",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "In thermodynamic processes which of the following statements is not true?"
+  },
+  {
+   "question_id": "50ea9374-10d3-412b-8696-8d571b1f1e6e",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Statement (A): Zeroth law of thermodynamics led us to the concept of temperature\nStatement (B): First law of thermodynamics is the general law of conservation of energy applied to any system in which energy transfer from or to the surroundings (through heat and work) is taken into account\n'Statement (C) : Second law of thermodynamics implies that no heat engine can have efficiency $\\eta$ equal to 1 or no refrigerator can have co-efficient of performance $\\alpha$ equal to infinity"
+  },
+  {
+   "question_id": "5fd501d8-76bb-423e-8b90-8683a147800e",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The source and sink temperature of a Carnot engine are 427°C and 77°C respectively. The efficiency of the engine is"
+  },
+  {
+   "question_id": "9f0d4510-c528-4ad7-824e-4db834aed8df",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Statement(A):- The Second Law of thermodynamics implies that no heat engine can have efficiency equal to 1 or no refrigerator can have co-efficient of performance equal to 1 .\nStatement(B):- No engine operating between two temperatures can have efficiency greater than that of the Carnot engine."
+  },
+  {
+   "question_id": "b26a7184-8e8b-46a5-9d94-d2808881100f",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The internal energy ( $U$ ), pressure ( $P$ ), and volume ( $V$ ) of an ideal gas are related as $U=3 P V+4$. The gas is"
+  },
+  {
+   "question_id": "b90e615b-dd50-4b00-9d8f-936bd6aef823",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Two moles of a diatomic gas is heated at a constant pressure of 1 atmosphere from 100K to 200K. If the gas constant is $\\mathrm{R}=8.32 \\mathrm{~J} / \\mathrm{mol} \\mathrm{K}$, the change in internal energy of the gas is approximately"
+  },
+  {
+   "question_id": "e0088d5a-3cbf-45de-8e27-ed94495ddd0a",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An ideal gas is taken through a cyclic thermodynamic process through four steps. The heat energies involved in these steps are 5960J, -5585J, -2980J and 3645J respectively. The corresponding works done are 2200J, -825J, -1100J and $W_{4}$ respectively. The efficiency of the cycle is nearly"
+  },
+  {
+   "question_id": "c8ae5cdb-85ff-4b0c-b894-570e91dced06",
+   "chapter_id": "58c19132-676f-5dfb-b84e-e3a34b34a48e",
+   "chapter": "Thermodynamics",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I :The idealised reversible process is a quasi-static process with no dissipative factors such as friction, viscosity, etc.\nStatement II: The spontaneous process of nature is irreversible.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "0137d8cd-2588-4039-92d8-f683cd1895dc",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "You measure two quantities as $\\mathrm{A}=1.0 \\mathrm{~m} \\pm 0.2 \\mathrm{~m}, \\mathrm{~B}=2.0 \\mathrm{~m} \\pm 0.2 \\mathrm{~m}$. We should report correct value for $\\sqrt{\\mathrm{AB}}$ as"
+  },
+  {
+   "question_id": "0f762e91-56e6-4a6f-8073-1e9977736bc8",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The dimensions of power are"
+  },
+  {
+   "question_id": "2fe23aa1-d7d8-4b86-b7a0-f1ddee4161d9",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The unit of mass in SI system is"
+  },
+  {
+   "question_id": "4adc94ba-d32b-461f-9195-4f455a335d24",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Of the following the vector quantity is"
+  },
+  {
+   "question_id": "5cc64686-490d-4a03-866e-a6576b99ffde",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The unit of mass in CGS system is"
+  },
+  {
+   "question_id": "712db466-134a-4a8d-a1a2-946e796f444a",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Power in terms of distance x and time t is given by $P=\\frac{a-t^{2}}{b x}$. The dimensional formula of 'ab' from the equation is"
+  },
+  {
+   "question_id": "8785a57f-1a8c-4fc0-9e05-fba72f283181",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "If radius of circle is 1m, then area of the circle is $\\_\\_\\_\\_$ $\\mathrm{m}^{2}$"
+  },
+  {
+   "question_id": "9c16ee5b-0077-4d9d-8707-5a26ecc03650",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The dimensional formula of force is"
+  },
+  {
+   "question_id": "b7d5877a-6b82-4098-8b06-d26b6fa5800d",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The expression $\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{-2}\\right]$ represents"
+  },
+  {
+   "question_id": "c858bbba-a4e7-43d2-9c02-4153022e0eb9",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The dimensional formula for velocity is"
+  },
+  {
+   "question_id": "d58c69cf-33c0-44bc-999a-e1117b027294",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An angle of $120^{0}$ is equal to $\\_\\_\\_\\_$ radians"
+  },
+  {
+   "question_id": "dbc3404e-b8b6-4b7d-b248-1911c5b2785e",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "For an experimental expression $y=\\frac{32.3 \\times 1125}{27.4}$, where all the digits are significant, the reported value of y would be"
+  },
+  {
+   "question_id": "e8c907be-c1a2-45a5-b4ae-66cff809ae15",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Among the following which is supplementary physical quantity"
+  },
+  {
+   "question_id": "a62f8a0a-f1b9-4235-8d66-6a01205538f2",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A vernier calliper has 20 divisions on the vernier scale, which coincide with 19 divisions on the main scale. The least count of the instrument is 0.1 mm. The main scale divisions are"
+  },
+  {
+   "question_id": "57b5157a-6279-426b-9479-7855aee58017",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following is not the unit of length ?"
+  },
+  {
+   "question_id": "ab4bb9ec-e4db-47f0-b340-5e5d042a874b",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "SI unit of solid angle is"
+  },
+  {
+   "question_id": "2bc79187-e85b-45c5-ad82-a7943c453a18",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the following groups have different dimensions?"
+  },
+  {
+   "question_id": "2a1d3ce4-e84f-4158-8399-aa1f1f3ea7f6",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The pitch and the number of divisions, on the circular scale, for a given screw gauge are 0.5 mm and 100, respectively. When the screw gauge is fully tightened without any object, the zero of its circular scale lies 3 divisions below the mean line. If the readings of the main scale and the circular scale, for a thin sheet, are 5.5 mm and 48, respectively, the thickness of this sheet is"
+  },
+  {
+   "question_id": "4234ca5b-ff49-4338-9120-2a4766856785",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "In an experiment on simple pendulum to determine the acceleration due to gravity, a student measures the length of the thread 63.2 cm and diameter of the pendulum bob as 2.256 cm . The student should take the length of the pendulum to be"
+  },
+  {
+   "question_id": "9c30b205-01ef-44df-8676-614a4ec447fc",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "In famous story of Guliver's Travels, one Gulliver was trapped in an island of Lilliputians were very small - sized people. Every linear dimension of Gulliver's body was 10 times that of a Lilliputian's body. If daily food need of a person is proportional to his body volume, how many times of their daily food should Lilliputians feed Gulliver ?"
+  },
+  {
+   "question_id": "1fc80d93-5d7f-4927-844c-4cf9a74a6d38",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The pitch of a screw gauge is 0.5 mm. Its head scale contains 50 divisions. The least count of the screw gauge is"
+  },
+  {
+   "question_id": "73aef989-5c8a-4089-bc14-b5ccfe786979",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A force defined by $\\mathrm{F}=\\alpha \\mathrm{t}^{2}+\\beta \\mathrm{t}$ acts on a particle at a given time t. The factor which is dimensionless, if $\\alpha$ and $\\beta$ are constants, is"
+  },
+  {
+   "question_id": "ed0b0cf2-d3b3-4689-b5c9-2848fa48eaa2",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "In a Vernier Callipers, 50 VSD coincides with 48 MSD and 1 MSD is 0.5 mm. Least count of Vernier callipers is"
+  },
+  {
+   "question_id": "d9539558-e23b-4352-98ab-957951ecf277",
+   "chapter_id": "8d7ccfaa-af16-53e4-9f28-823c8ea923d1",
+   "chapter": "Units & Measurements",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The least count of the main scale of a screw gauge is $1 m m$. The minimum number of divisions on its circular scale required to measure $5 \\mu m$ diameter of a wire is"
+  },
+  {
+   "question_id": "b16ae287-4690-41f5-888a-69415f26ceba",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A tuning fork A of frequency 200 Hz is sounded with fork B; the number of beats per second is 5. By putting some wax on A, the number of beats increases to 8. The frequency of fork B is"
+  },
+  {
+   "question_id": "e4bf2f77-0537-4470-b5fa-759e28fe99bf",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An organ pipe filled with oxygen gas at 47°C resonates in its fundamental mode at frequency 300 Hz. If it is now filled with nitrogen gas, at what temperature will it resonate at the same frequency in the fundamental mode?"
+  },
+  {
+   "question_id": "05bfb9a2-6f5d-4986-b2a2-aaa48c7c6065",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A string of length 'L' having a linear density ' $\\mu$ ' is kept under a tension ' $T$ '. The time taken for a transverse pulse to travel from one end of the string to the other end is"
+  },
+  {
+   "question_id": "7c8ea91c-79c6-46a9-935e-107dbe0172b9",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "An open pipe is suddenly closed at one end with the result that the frequency of third harmonic of the closed pipe is found to be higher by 100 Hz than the fundamental frequency of the open pipe. The frequency of the first overtone of open pipe is"
+  },
+  {
+   "question_id": "0c5bebce-ff3b-496e-9f14-4fd6dab01648",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Which of the phenomenon is not common to sound"
+  },
+  {
+   "question_id": "25fb0abf-5d27-4e6d-9a37-dc7f96a9b974",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The transverse wave represented by the equation $y=4 \\sin \\frac{\\pi}{6} \\sin (15 \\mathrm{t}-3 x)$"
+  },
+  {
+   "question_id": "ebc08652-e44d-4f24-829c-b8561844f755",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "In a resonance tube, first and third resonance are obtained at length 22.5 cm and 116.5 cm respectively. Then end correction will be"
+  },
+  {
+   "question_id": "6a4d9eca-ee93-4bff-a6e6-2f8d7897d49e",
+   "chapter_id": "7dca7b5a-e77c-530d-bbe8-01a3518dc5d0",
+   "chapter": "Waves",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A pipe of length 85 cm is closed at one end. The velocity of sound in air is 340 m/s. If the air column in the pipe resonates in its $2{ }^{\\text {nd }}$ overtone, then the closest distance from open end, at which pressure variation is maximum is"
+  },
+  {
+   "question_id": "1eb6b916-bb0d-4bf6-8db5-4bdcae60d20d",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Speed of two identical cars are 'u' and 4u at a specific instant. The ratio of the respective distances in which the two cars are stopped from that instant is"
+  },
+  {
+   "question_id": "1f041f4d-ec32-4535-85db-6b01881f2d04",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The potential energy of a particle under a conservative force is given by $U(x)=\\left(x^{2}-3 x\\right) \\mathrm{J}$. The equilibrium position of the particle is at"
+  },
+  {
+   "question_id": "f4e10840-b828-4f93-bbe3-ce6b459e1922",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A ball moving with speed $v$ hits another identical ball at rest. The two balls stick together after a collision. If the specific heat of the material of the balls is $S$, the rise in temperature resulting from the collision is"
+  },
+  {
+   "question_id": "c9c2b63d-d711-41fe-b240-43bf23b696fd",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A bomb of mass 20 kg at rest explodes into two fragments whose masses are in the ratio 2:3. The smaller fragment moves with a velocity of 6 m/s. Then, the kinetic energy of the larger fragment is"
+  },
+  {
+   "question_id": "2ad19658-e409-42d6-8d24-2c75b0679267",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "The potential energy of a system increases if work is done"
+  },
+  {
+   "question_id": "5a82a0bd-9842-4301-83fa-20635fea9be2",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A lorry and a car moving with same KE are brought to rest by applying the same retarding force. Then"
+  },
+  {
+   "question_id": "384ea546-e20d-4b89-b629-c8d0ceeafd1c",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A body of mass 10 g moving with velocity $5 \\mathrm{~ms}^{-1}$ collides with another body of mass 15 g moving with $3 \\mathrm{~ms}^{-1}$ in the same direction. After collision if they stick and move together, the loss in kinetic energy of the system is"
+  },
+  {
+   "question_id": "f74d4a85-fd94-4d91-a5f7-9bbfee72078c",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A helicopter of power P can rise vertically up with maximum uniform speed $v_{1}$ and can move horizontally with uniform speed $v_{2}$. If air friction is k times the velocity in each case and g is the acceleration due to gravity then the mass of the helicopter is"
+  },
+  {
+   "question_id": "f6a42ee6-d787-4dfb-ba22-2b8bea31ce3a",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Instantaneous power of a constant force acting on a particle moving in a straight line under the action of this force"
+  },
+  {
+   "question_id": "2f520235-aa6f-4f84-97bf-382704fc3433",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A bullet of mass 'm' when fired on to a wooden plank. Its momentum decreases by 20\\% on penetrating through 4.5cm thickness. Further thickness of (same uniform plank) required to stop the bullet is"
+  },
+  {
+   "question_id": "c7261a5d-b315-428c-9a5c-cd71b9b86453",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A ball collides elastically with a massive wall moving horizontally with a velocity 'v' towards it, and the velocity of the ball just before collision is 2v in horizontal direction. The collision occurs at a height of 'h' above ground level. The distance between the foot of the wall and the point on the ground where the ball lands is"
+  },
+  {
+   "question_id": "6d8bd904-f5e4-4c12-a3f8-b136b189f695",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Statement-I: The slope of the kinetic energy-displacement graph of a particlemoving under a constant force is equal to the magnitude of that force.\nStatement-II: If the same constant force acts on two bodies of different masses starting from rest and moving through the same distance, their final speeds will be the same.\nWhich of the following is correct ?"
+  },
+  {
+   "question_id": "619644d0-18c7-4baa-a1ee-02dabed1b661",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "During an elastic collision\nStatement I : The total linear momentum is conserved at each instant of the collision\nStatement II : The kinetic energy conservation applies after the collision is over and does not hold at every instant of the collision.\nStatement III : When two equal masses undergo a glancing elastic collision with one of them at rest then after the collision, they will move at right angles to each other.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "d23eb62d-4f1e-45f0-9fd3-ddeee28d1eee",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "Water falls from a height of 60 m at the rate of $15 \\mathrm{kgs}^{-1}$ to operate a turbine. The losses due to frictional forces are 10\\% of the energy. How much power is generated by the turbine? (Take, $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$ )"
+  },
+  {
+   "question_id": "e9488786-8881-4ca9-9fac-159964240d5b",
+   "chapter_id": "a88de5d2-84e4-5489-878a-f17a195e3267",
+   "chapter": "Work, Energy & Power",
+   "class_level": 11,
+   "legacy_tag": null,
+   "stem": "A ball hits the floor and rebounds after an inelastic collision. In this case"
+  },
+  {
+   "question_id": "213059bf-e028-4a97-94b1-0d94b5e686da",
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A transformer has 100 turns in the primary coil and carries 8A current. If input power is one kilowatt, the number of turns in the secondary coil to have 500 V output will be"
+  },
+  {
+   "question_id": "c20ff457-96cd-4fee-8f30-4f6da6378151",
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A capacitor of capacitance C, is connected across an AC source of voltage V, given by $\\mathrm{V}=\\mathrm{V}_{\\mathrm{o}} \\sin \\omega \\mathrm{t}$. The displacement current between the plates of the capacitor would then be given by"
+  },
+  {
+   "question_id": "09dc1510-39b2-4b8a-a407-b59d0a9f0b71",
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The voltage of an AC source is given by the equation, $V=100 \\sin 100 \\pi t \\cos 100 \\pi t$ where t is in second and V is in volt. Then"
+  },
+  {
+   "question_id": "d495eeb8-4362-46bd-8ae9-7feb7de0e476",
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : An electric lamp is connected in series with a variable capacitor and an AC source. Its brightness increases with an increase in capacitance.\nReason (R) : Capacitive reactance decreases with an increase in the capacitance of the capacitor.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "118e50e1-5ad3-4551-9fee-c5f4b4f94a93",
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Statement - I: In any a.c. circuit, the applied instantaneous voltage is equal to the algebraic sum of the instantaneous voltages across the series elements of the circuit. Statement - II: In any a.c. circuit, the applied rms voltage is equal to the algebraic sum of the instantaneous voltages across the series elements of the rms voltage."
+  },
+  {
+   "question_id": "4d899898-aae4-4b7e-877d-b314cedabb56",
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An electric bulb designed to operate at 10 V DC source gives same brightness when connected to an AC source. The peak value of AC source is"
+  },
+  {
+   "question_id": "5945b2ea-b5f6-477b-a8cc-097aad06b890",
+   "chapter_id": "69dbf2ca-bc1d-514e-a033-de1eefec09c9",
+   "chapter": "Alternating Current",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An electric lamp designed for operation on 110 V, AC is connected to a 220 V, AC supply, through a choke coil of inductance 2H, for a proper operation. The angular frequency of the AC is $200 \\sqrt{2} \\mathrm{rad} / \\mathrm{s}$. If a capacitor is to be used in place of the choke coil, its capacitance must be"
+  },
+  {
+   "question_id": "001f3da6-f53c-4257-85b7-8aed3da68129",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Of the various series of the hydrogen spectrum, the one that lies wholly in the ultraviolet region is"
+  },
+  {
+   "question_id": "057a171f-293f-41a6-b556-894d4acfd74b",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\n\nAssertion (A) : Absorption lines corresponding to Balmer series do not exist in the hydrogen atom.\n\nReason (R) : Hydrogen atoms are capable of having an electron knocked from only the ground state to higher states.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "07dae553-b0d3-4c2f-9ff7-680e0ec4dc32",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Magnetic moment of an electron in nth orbit of hydrogen atom is"
+  },
+  {
+   "question_id": "25a1175a-c6eb-418d-b6a1-c70baea748a4",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following statements related to the hydrogen emission spectrum:\nA. A transition from $n=3$ to $n=2$ corresponds to a line of the Balmer series.\nB. The transition from $n=4$ to $n=1$ gives the longest wavelength line of the Lyman series.\nC. The limiting line of any spectral series is obtained when the electron falls from $n=\\infty$ to the lowest energy level of that series.\nD. A transition from $n=2$ to $n=1$ belongs to the Lyman series.\nWhich of the above statements are correct?"
+  },
+  {
+   "question_id": "2689cd0d-1cd5-424d-aada-8416b3eee778",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The shortest wavelength of the bracket series of a hydrogen-like atom (atomic number = Z) is the same as the shortest wavelength of the Balmer series of hydrogen atom. The value of Z is"
+  },
+  {
+   "question_id": "4d4dfa42-8f15-48ac-a282-a54c949a8d8d",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Radiation of energy 12.1 eV is passed through hydrogen gas, then H-atom may be excited to"
+  },
+  {
+   "question_id": "50eeded9-510b-463b-8964-f9ce9681ca2e",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "According to Bohr's theory of hydrogen atom, for an electron in nth allowed orbit, which among the following is incorrect."
+  },
+  {
+   "question_id": "b9be05bc-50b4-4366-837e-a615e16a88c1",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements are true regarding Bohr's model of hydrogen atom?\n(I) Orbiting speed of electron decreases as it shifts to discrete orbits away from the nucleus\n(II) Radii of allowed orbits of electron are proportional to the principal quantum number (III) Frequency with which electrons orbits around the nucleus in discrete orbits is inversely proportional to the cube of principal quantum number\n(IV) Binding force with which the electron is bound to the nucleus increases as it shifts to outer orbits.\nSelect correct answer using the codes given below"
+  }
+ ]
+}

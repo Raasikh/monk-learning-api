@@ -1,0 +1,2083 @@
+{
+ "subject": "biology",
+ "batch": 6,
+ "chapters": [
+  {
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "d8a50abd-5848-43cc-9544-47b64d1cfbfe",
+     "name": "Structure of DNA: Double Helix and Chargaff's Rules"
+    },
+    {
+     "concept_id": "c700f34b-eb03-462a-93b8-2cda2c2ffaa6",
+     "name": "Transcription in Prokaryotes and Eukaryotes"
+    },
+    {
+     "concept_id": "11a5f65e-8a95-4ddf-bbb1-52e1a8eb6988",
+     "name": "Translation: Ribosomes, tRNA and Protein Synthesis"
+    },
+    {
+     "concept_id": "eac26e20-b23f-4622-ab1b-1042376e80ad",
+     "name": "Genetic Code and Its Properties"
+    },
+    {
+     "concept_id": "2d914070-6145-495a-a72b-767e1e2de382",
+     "name": "DNA Replication: Semiconservative Mechanism and Enzymes"
+    },
+    {
+     "concept_id": "a85c379e-6b20-4a1e-851f-9143f929a7b8",
+     "name": "lac Operon and Regulation of Gene Expression"
+    },
+    {
+     "concept_id": "39ec2675-6ba6-403c-81c7-583711a3e1ee",
+     "name": "Search for Genetic Material: Griffith's Transformation and Avery-MacLeod-McCarty"
+    },
+    {
+     "concept_id": "3d5d88a5-8dae-4cb4-990f-8a1ad05021b1",
+     "name": "Hershey-Chase Experiment"
+    },
+    {
+     "concept_id": "e2530cc6-80a2-49ff-bdd8-92c7404d20af",
+     "name": "DNA Packaging: Nucleosome, Chromatin and Histones"
+    },
+    {
+     "concept_id": "0883151b-f94a-4c54-bd44-3aa2e5b619ca",
+     "name": "DNA Fingerprinting and VNTR Polymorphism"
+    },
+    {
+     "concept_id": "0f82b6e2-f176-4ccf-8f46-b01d30ba58a7",
+     "name": "Human Genome Project: Goals, Methods and Findings"
+    },
+    {
+     "concept_id": "86464b36-aaf4-4eff-b130-917e3043994c",
+     "name": "Types and Structure of RNA (mRNA, tRNA, rRNA)"
+    },
+    {
+     "concept_id": "1b851d10-badf-4c02-84c3-74f76ea6d3c8",
+     "name": "Meselson-Stahl Experiment"
+    },
+    {
+     "concept_id": "5b496a50-d921-4450-9709-8cd856bf4d3f",
+     "name": "RNA World and Properties of Genetic Material"
+    }
+   ]
+  },
+  {
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "1e5e6dd6-8fce-4b60-bea8-06d399aa83a4",
+     "name": "Population Growth: Exponential and Logistic Models"
+    },
+    {
+     "concept_id": "83c15fb7-57d3-41d0-ac69-109bc4951a4c",
+     "name": "Predation and Prey Defences"
+    },
+    {
+     "concept_id": "28a08200-4b3c-49ee-8cd8-f8fe5e9e8993",
+     "name": "Population Attributes: Density, Natality, Mortality, Sex Ratio and Age Pyramids"
+    },
+    {
+     "concept_id": "55fc6820-acb5-4a83-90f0-a586286b70c0",
+     "name": "Responses to Abiotic Stress and Adaptations"
+    },
+    {
+     "concept_id": "7f416139-5153-4f43-b427-53d9b968979e",
+     "name": "Mutualism and Commensalism"
+    },
+    {
+     "concept_id": "5f0c78e2-3d25-43e0-916b-40b2a0b5bab9",
+     "name": "Competition, Competitive Exclusion and Resource Partitioning"
+    },
+    {
+     "concept_id": "95b18e28-7be3-4e38-993e-37d497c3b42e",
+     "name": "Major Abiotic Factors: Temperature, Water, Light and Soil"
+    },
+    {
+     "concept_id": "081b6d82-4727-482b-8641-9dd44eef155c",
+     "name": "Parasitism and Brood Parasitism"
+    },
+    {
+     "concept_id": "41f64752-b53d-4259-b59e-ce4c71d67be0",
+     "name": "Ecological Niche and Habitat"
+    },
+    {
+     "concept_id": "91860e36-396e-43c6-bd12-9d68c72af262",
+     "name": "Levels of Ecological Organisation (Organism to Biome)"
+    },
+    {
+     "concept_id": "42715f77-fa83-45fa-90ad-e20d082faa8b",
+     "name": "Life History Variation and Reproductive Strategies"
+    }
+   ]
+  },
+  {
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "a0ea0dba-ef1f-4987-8d15-9bef814ac097",
+     "name": "Mendel's Laws: Monohybrid, Dihybrid and Test Cross"
+    },
+    {
+     "concept_id": "e99e0f7f-1616-42b9-af26-88060dbb30d6",
+     "name": "Deviations from Mendelism: Incomplete Dominance, Codominance and Multiple Allelism"
+    },
+    {
+     "concept_id": "5a1a9773-3c78-43c9-9a64-a1e376a294f1",
+     "name": "Mendelian Genetic Disorders (Haemophilia, Colour Blindness, Sickle-Cell Anaemia, Thalassaemia)"
+    },
+    {
+     "concept_id": "fb57fe7b-554f-4fa6-a44e-8cd1c803596d",
+     "name": "Linkage and Recombination"
+    },
+    {
+     "concept_id": "33649e30-4421-4b68-b6db-3a1a2bc98743",
+     "name": "Sex Determination in Humans, Insects and Birds"
+    },
+    {
+     "concept_id": "3b147430-dbba-47ad-9e12-a14854b6ae56",
+     "name": "Chromosomal Disorders: Down, Turner and Klinefelter Syndromes"
+    },
+    {
+     "concept_id": "b212a6b8-64bb-4a20-9ffa-74ccd0a1910d",
+     "name": "Pedigree Analysis"
+    },
+    {
+     "concept_id": "f91e0626-0967-48ab-be07-164aa059d771",
+     "name": "Mutation: Types, Mutagens and Chromosomal Aberrations"
+    },
+    {
+     "concept_id": "5d881949-a3ac-4f91-ae03-48651ae2f01f",
+     "name": "Chromosomal Theory of Inheritance and Morgan's Drosophila Experiments"
+    },
+    {
+     "concept_id": "5eb8d968-2d9a-44aa-b197-bd2fa6cb39d2",
+     "name": "Polygenic Inheritance"
+    },
+    {
+     "concept_id": "1cfe5c01-3e32-455d-8bdb-3196c113de79",
+     "name": "Pleiotropy"
+    },
+    {
+     "concept_id": "ae063d2f-8940-4dc3-89c3-0ce983db7605",
+     "name": "Gene Interaction and Epistasis"
+    }
+   ]
+  },
+  {
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "23e185cb-fee3-4038-84f7-83c9f170a320",
+     "name": "Hormonal Contraceptives, IUDs and Emergency Contraception"
+    },
+    {
+     "concept_id": "162553a6-f2ec-4a4c-98f9-8ccf942e2b3c",
+     "name": "Infertility and Assisted Reproductive Technologies (IVF, ZIFT, GIFT, ICSI)"
+    },
+    {
+     "concept_id": "fa3af64c-45f9-48d1-bd3a-58fda1ff5466",
+     "name": "Sexually Transmitted Infections"
+    },
+    {
+     "concept_id": "233ec52d-e94b-4417-bd22-eae051608a13",
+     "name": "Natural and Barrier Methods of Contraception"
+    },
+    {
+     "concept_id": "b0e40411-a809-4b57-93b5-7887a55cf3bb",
+     "name": "Sterilisation: Vasectomy and Tubectomy"
+    },
+    {
+     "concept_id": "982cd3be-4cdb-4dc0-bb55-ca5cb6c5a2b3",
+     "name": "Medical Termination of Pregnancy (MTP)"
+    },
+    {
+     "concept_id": "fd9ca550-c52d-4ee8-96bd-837045a24946",
+     "name": "Reproductive Health Programmes and Strategies (RCH, Family Planning)"
+    },
+    {
+     "concept_id": "7e34ff98-b9c9-4a95-a2dd-60cfa31cdf87",
+     "name": "Amniocentesis and Prenatal Sex-Determination Misuse"
+    },
+    {
+     "concept_id": "d00479e9-30a2-4e19-96cf-fdb7853f57fb",
+     "name": "Population Explosion and Population Stabilisation Measures"
+    },
+    {
+     "concept_id": "dd8dcd81-1262-4a71-bd34-f6f48d6cf72d",
+     "name": "Adolescent Sexual Health and Sex Education"
+    }
+   ]
+  },
+  {
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "5f4e23c1-c682-4e9f-83a4-cd2824199bc8",
+     "name": "Megasporogenesis and Embryo Sac Development"
+    },
+    {
+     "concept_id": "aed84489-663a-48d8-9c04-f27201746760",
+     "name": "Pollen Grain Structure and Male Gametophyte"
+    },
+    {
+     "concept_id": "c3bdc217-c32f-4079-8ea9-373a26653e8f",
+     "name": "Double Fertilisation and Triple Fusion"
+    },
+    {
+     "concept_id": "269e93e8-0435-4335-b6ec-e0aefb41a9c8",
+     "name": "Pollination: Types and Agents"
+    },
+    {
+     "concept_id": "c79d3622-1d96-454a-8303-eadba93e6e77",
+     "name": "Ovule (Megasporangium) Structure and Types"
+    },
+    {
+     "concept_id": "fa0329cf-826a-4542-bbea-9452271410a0",
+     "name": "Endosperm Development and Types"
+    },
+    {
+     "concept_id": "14eace9f-6e74-4883-a0d7-04ce85b43449",
+     "name": "Anther Structure and Microsporogenesis"
+    },
+    {
+     "concept_id": "8c05bc30-4593-422c-9c81-28895d495fa2",
+     "name": "Embryogeny: Dicot and Monocot Embryo Development"
+    },
+    {
+     "concept_id": "630b8593-ec9b-4407-932e-eb20cde8e9fc",
+     "name": "Seed and Fruit Formation (Parthenocarpy, Seed Structure)"
+    },
+    {
+     "concept_id": "343feb73-b6af-40c2-8697-0e68652067bb",
+     "name": "Apomixis and Polyembryony"
+    },
+    {
+     "concept_id": "13c49658-77bb-4929-996f-e36be652ec56",
+     "name": "Pollen-Pistil Interaction and Pollen Tube Growth"
+    },
+    {
+     "concept_id": "9a81ee35-5093-4596-ab95-71a32bff36db",
+     "name": "Outbreeding Devices and Self-Incompatibility"
+    },
+    {
+     "concept_id": "e10ab191-c5be-41d7-8cfd-d29989a0b6c7",
+     "name": "Artificial Hybridisation: Emasculation and Bagging"
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "question_id": "e9593461-5058-4352-b7f1-afc364624ea3",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Griffith used a bacterium in his transformation experiment. Which of the following statements are correct regarding this organism?"
+  },
+  {
+   "question_id": "690ea8e6-e877-4e04-9e3f-9bf23426073d",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following characteristics of an enzyme.\n    A. Operation: S phase\n    B. Activity: Highly accurate\n    C. Speed: 2000 bp/sec\n    D. Substrate: Deoxyribonucleotides\n    E. Polymerisation\n    F. Limitation: Link nucleotides to end of the existing nucleotide These attributes are characteristic of"
+  },
+  {
+   "question_id": "52994dba-9bce-4ee4-be04-c9dd6257728a",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "During DNA replication, Okazaki fragments are formed on"
+  },
+  {
+   "question_id": "1033f036-4ae1-4b83-b5d7-475711f51679",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Replication on the $3^{\\prime} \\rightarrow 5^{\\prime}$ template strand is continuous.\nStatement II: Replication on the $5^{\\prime} \\rightarrow 3^{\\prime}$ template strand is discontinuous.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "3226ad1c-438c-45ab-acb1-2ab26322787e",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In a typical B-DNA double helix, the rise per base pair along the helical axis is approximately:"
+  },
+  {
+   "question_id": "55916e38-5561-49ac-884f-13aee8a58d59",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements and choose the correct option given below.\n(A) Nucleotides of opposite strands are linked by phosphodiester bonds.\n(B) The pitch of the DNA is 36 nm of length.\n(C) The distance between the successive base pairs would be 3.4 nm\n(D) B-DNA consists of ten purines and ten pyrimidines in each helix"
+  },
+  {
+   "question_id": "2a7c358f-ab68-4721-ab25-27e2454327e8",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In eukaryotes, DNA replication, transcription and translation respectively occur in"
+  },
+  {
+   "question_id": "6540e10f-3eb7-4de8-bc0a-e09108758514",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : DNA fingerprinting involves identifying differences in some specific regions in DNA sequence called as repetitive DNA.\nReason (R) : In these sequences (repetitive DNA), a small stretch of DNA is repeated many times and they show high degree of polymorphism.\nIn light of the above statements, choose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "29792ff9-fe70-4f80-b1cd-0eeff4bbb7f0",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Monocistronic genes are present in"
+  },
+  {
+   "question_id": "8425730c-13ec-4622-89da-2a3c8d5771e0",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Choose the incorrect statement."
+  },
+  {
+   "question_id": "f3e51d8f-62d5-4190-9691-b4561dd96597",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "During DNA replication, why are deoxynucleoside triphosphates used as raw material despite the fact that only deoxynucleoside monophosphates are to be incorporated in the newly formed polynucleotide chain?"
+  },
+  {
+   "question_id": "030c2264-72a8-46d8-9f1d-4e0900f69ee4",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "5'-UACGUACGUACGUAC-3' is the sequence of an mRNA molecule. Which of the following DNA sequences would produce this mRNA during transcription?"
+  },
+  {
+   "question_id": "2eb98a62-be27-40bb-86ca-05afaaea93ce",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The number of strands of DNA that act as template in the process of transcription and replication respectively are"
+  },
+  {
+   "question_id": "a066c88e-f685-4034-b5e1-17cc10b62b11",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Autoradiography in molecular diagnosis works by"
+  },
+  {
+   "question_id": "44c78ede-e740-4a48-ae2e-6ac20f9a5d11",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : In the lac operon, the z gene codes for beta-galactosidase, which is primarily responsible for the hydrolysis of lactose into galactose and glucose.\nStatement II : In addition to lactose, glucose or galactose can also induce lac operon.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "e6cbed10-1c57-4eb4-982a-a91b27d5469d",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the following and choose the correct option.\n\n| List - I | List - II |\n| :--- | :--- |\n| A.dNTP's | Act as substrates and provide energy during replication |\n\nB. Ligase II.\nPolarity of continuous strand\nC. Polyploidy III. Failure in cell division after DNA replication\n3' to 5' IV. Sealing of nicks in DNA"
+  },
+  {
+   "question_id": "e44a3cb1-b60a-4342-b952-b010e6b65453",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\n\nStatement I : The transcription is the process of copying genetic information from one strand of the DNA into RNA.\n\nStatement II : A transcription unit in DNA is defined by the three regions in the DNA, namely a promoter, the structural gene and a terminator.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "20bf5e74-d83f-4487-a375-77de2349b9a9",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below is the sequence of amino acids from N-terminus to C-terminus coded by mRNA in an organism.\nHistidine - Cysteine - Methionine - Tryptophan - Aspartic acid\nCodons for the given amino acids are as follows.\nHis - CAU or CAC, Cys - UGU or UGC, Met - AUG, Trp - UGG, Asp - GAU or GAC\nWhich among the following can be a sequence of the template in DNA that codes for mRNA for the given peptide?"
+  },
+  {
+   "question_id": "614f970f-8c22-4ebd-93c0-875cc099f7bd",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements related to HGP.\nA. One approach focussed on identifying all the genes that are expressed as RNA.\nB. Sequence of chromosome 1 was completed in 2003.\nC. The genome sequencing method was developed by Alec Jeffreys.\nD. Automated DNA sequencers were used for sequencing the DNA fragments.\nE. The commonly used vectors are BAC and YAC.\n\nWhich of the above statements are correct?"
+  },
+  {
+   "question_id": "6c793853-6657-481d-bcfa-9bed2fd639f8",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : The template strand of DNA has polarity $3^{\\prime} \\rightarrow 5^{\\prime}$ and is used by RNA polymerase during transcription.\nStatement II: The coding strand has the same sequence as that of RNA produced (except thymine in place of uracil).\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "7161be2a-5ff2-4fc4-9dfa-c2cefce733cf",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : In replication unit of the DNA, one strand acts as a template while another acts as a coding strand.\nStatement II: Nucleic acid polymerases enzymes can be classified on the basis of chemical nature of the template and the nature of nucleic acids synthesised from it.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "8276de72-1e85-4366-8ce3-bd348479e606",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The first three nucleotides in a six nucleotide recognition sequence cleaved by Hind II is $5^{\\prime}$ GTC $3^{\\prime}$ ? What are the next three nucleotides in its palindrome?"
+  },
+  {
+   "question_id": "8c4afbc9-3f95-4b82-8f51-96f7e9c65a99",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II.\n\n| List I | List II |\n| :--- | :--- |\n| A. Capping and Tailing | I. Removal of introns and joining of exons |\n| B. Splicing | II. Reads codon and brings cognate amino acid to site of protein synthesis |\n| C. Sigma ( $\\sigma$ )factor | III. Initiation factor in prokaryotic transcription |\n| D. Rho ( $\\rho$ ) factor | IV.Template independent post transcriptional modifications |\n| E. Adapter molecule | V. Termination factor in prokaryotic transcription |\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "ad1bf13a-0d45-448b-b57c-6275e81da536",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Severo Ochoa enzyme (Polynucleotide phosphorylase) can help in polymerising RNA with a defined sequence in a template independent manner.\n\nStatement II: Complementarity exists between nucleotides and amino acids.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "cf381258-def4-4dee-8566-8bd1bd3383bb",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements is false in relation to the salient features of human genome?"
+  },
+  {
+   "question_id": "d3fbb46a-7235-4c7d-a1b6-e4095e79127e",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : The process of translation is easy to conceptualise on the basis of complementarity.\nStatement II : Nirenberg's cell-free system for protein synthesis finally helped the code to be deciphered.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "d5d53a21-4f1d-4fca-a000-6641e4afe553",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements.\n(i) Prokaryotic mRNA is capless and tailless whereas eukaryotic mRNA has both cap and tail\n(ii) The precursor of prokaryotic mRNA is hnRNA (exons and introns)\n(iii) In eukaryotes transcription occurs in nucleus and translation in cytoplasm.\nWhich of the above statements are correct"
+  },
+  {
+   "question_id": "de595446-f5c5-4c8d-a9e3-bae902080c42",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is NOT a feature of the genetic code?"
+  },
+  {
+   "question_id": "fcbbe491-0eff-4a94-a908-0018f591b8ee",
+   "chapter_id": "982f12a9-ff64-56f6-8d68-644ea515e1b6",
+   "chapter": "Molecular Basis of Inheritance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In sickle cell anaemia, defective / altered mRNA has which genetic codon for amino acid valine?"
+  },
+  {
+   "question_id": "a9500a0f-2888-4230-b8b5-a7a08cb05704",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Who demonstrated competitive release in barnacles experimentally?"
+  },
+  {
+   "question_id": "41cc0a45-7307-4a06-bc95-87a89d5d3302",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I: Competition between species always results in extinction of one of the competing species.\nStatement II: According to Gause's principle, species with identical niches can coexist indefinitely in the same habitat.\nIn light of the above statements, choose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "a2957002-8aeb-4c58-aaff-96172d3f4abb",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In a population growth curve plotting population density (N) against time (t), what does a sigmoid (S-shaped) curve indicate?"
+  },
+  {
+   "question_id": "df89d3a1-b541-4d2d-a553-bd2bfec4a826",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Evaluate these 5 statements on Parasitism:\nI. Parasites always have simple life cycles without intermediate hosts.\nII. Many parasites are host-specific and tend to co-evolve with the host.\nIII. Parasites might render the host more vulnerable to predation.\nIV. Ectoparasites live inside the host body at different sites.\nV. Brood parasitism is seen in birds like the cuckoo.\nChoose the correct ones."
+  },
+  {
+   "question_id": "2e8ac532-4532-4906-8455-34ce6ab32360",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "What is the magnitude of the intrinsic rate of natural increase ('r' value) for the Norway rat?"
+  },
+  {
+   "question_id": "989ff87e-d6e3-4266-a373-debbbc4ad7a8",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Nature's carrying capacity (K) for a species in a habitat refers to:"
+  },
+  {
+   "question_id": "62163703-75ad-42a3-a211-bb4cccb0a0a3",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Gause's principle of competitive exclusion states that"
+  },
+  {
+   "question_id": "d50e682d-35a1-4516-8e23-903f3880b5e9",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II.\n\n|  | List I | List II |\n| :--- | :--- | :--- |\n| A. | Predation | I. One species benefits without affecting the other |\n| B. | Competition | II. Detrimental to both species due to shared limited resources |\n| C. | Mutualism | III. One organism kills another for food |\n| D. | Commensal ism | IV. Both species show increased fitness and survival |\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "45054cd2-8b12-43fb-afe7-379724392384",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two butterfly species are competing for the same nectar of a flower in a garden. To survive and co-exist together, they may avoid competition in the same garden by"
+  },
+  {
+   "question_id": "bbd22811-8b32-4ab7-96f2-c576af1b0518",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : A population growing in a habitat with limited resources initially shows a lag phase, followed by phases of acceleration and deceleration and finally an asymptote.\nStatement II: Every population in nature has at its disposal unlimited resources to permit exponential growth.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "5407b55e-665d-4321-8206-62cc50fe7896",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$\\frac{d N}{d t}=r N$\nThe ' $r$ ' in this equation represents"
+  },
+  {
+   "question_id": "18a58cf1-218a-4d46-a8c5-4f6ed8474f51",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which one of the following statements is not true about competition?"
+  },
+  {
+   "question_id": "44453c91-e186-439b-abac-91424f5f0f9c",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is NOT a significance of predators?"
+  },
+  {
+   "question_id": "dd41dbeb-5161-4e13-a29c-bbf88640a932",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following best describes resource partitioning?"
+  },
+  {
+   "question_id": "8a90e1d1-efc4-429b-bd13-8b12c2202d20",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the correct option for the given situation.\n\"A species, whose distribution is restricted to a small geographical area due to the presence of a competitively superior species, is found to expand its distributional range dramatically when the competing species is experimentally removed.\""
+  },
+  {
+   "question_id": "13a601d1-3544-4907-958f-10edb8b85d0a",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the statements given are correct for the sigmoid growth?\n    A. Population suddenly crashes due to mass mortality.\n    B. It occurs when resources are limited.\n    C. Population grows far beyond the carrying capacity.\n    D. The growth curve has four phases - lag phase, acceleration, deceleration and an asymptote."
+  },
+  {
+   "question_id": "a06b3dc0-6729-4582-a197-8bb8f44ce5fe",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following population interactions is not represented by '+' and '0'?"
+  },
+  {
+   "question_id": "fcfb7387-b317-446b-9432-a55c9bb26037",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not appropriate in relation to population density?"
+  },
+  {
+   "question_id": "88268827-4d59-4967-8aaf-d5eee63c5226",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which one of the following population interactions is widely used in medical science for the production of antibiotics?"
+  },
+  {
+   "question_id": "5b6af98f-8d19-4d0f-b290-cd6b20d479e5",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\n\nStatement I : When resources in the habitat are unlimited, each species has the ability to realise fully its innate potential to grow in number.\n\nStatement II : When resources are unlimited, the population grows in an exponential or geometric fashion, resulting in a J-shaped curve when N is plotted in relation to time.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "11d05ea0-1e45-47ce-9b06-18963a746e1d",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\n\nStatement I : Nicotine, caffeine, quinine, strychnine and opium are produced by plants as chemical defences.\n\nStatement II : Defensive chemicals produced by plants may make herbivores sick, inhibit feeding or digestion, disrupt reproduction or even kill them.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "a4424828-85e0-4d17-8154-a85f5479bb1f",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is an attribute of a population but not of an individual?"
+  },
+  {
+   "question_id": "3f186a5b-218b-4d2f-a1ce-1e97291f8bc4",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is the classic example of competitive release?"
+  },
+  {
+   "question_id": "481937fb-9b85-4c4f-af92-52d2fa59dc79",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is a correct example of a population?"
+  },
+  {
+   "question_id": "74bb7f30-3a72-499b-aaf0-21f6a09751e4",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "You rarely observe cattle or goats browsing on Calotropis plants because"
+  },
+  {
+   "question_id": "8e0dee5e-334b-43f3-b2d6-adfa41929993",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not a population attribute?"
+  },
+  {
+   "question_id": "5c4d8903-7112-4cc4-92dd-8281a979df08",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is an example of camouflage?"
+  },
+  {
+   "question_id": "b1e5790d-748b-4caf-81c3-6003be73be85",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following uses cardiac glycosides as a chemical defense againstherbivores?"
+  },
+  {
+   "question_id": "336c10ef-db92-47e8-8b1b-8142960dcbe7",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Math the following and choose the correct option.\n\n| List - I | List- II |\n| :--- | :--- |\n| A Cuscuta | Keeps away predators by producing poison |\n| B Pisaster | Attracts male bees to get pollinated |\n| C Ophrys | III Lacks chlorophyll and leaves |\n| D Calotropis IV | Maintains prey species diversity |"
+  },
+  {
+   "question_id": "05753695-ab49-4d18-a305-5a1913ce7b8a",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements about population interactions is FALSE?"
+  },
+  {
+   "question_id": "2efd4a07-f976-447b-ae7c-6ec733a4abb6",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Ecology is basically concerned with which of the following levels of biological organisation?"
+  },
+  {
+   "question_id": "3402df04-2b8c-41a9-8b39-50a6926fbc22",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If an age pyramid has a narrow base with a few number of pre-reproductive individuals, a moderate number of reproductive individuals, and very few post-reproductive individuals, the population is:"
+  },
+  {
+   "question_id": "45237f06-7216-4ce6-b3cb-202dd81baa7a",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "You never see any cattle or goats browsing on the weed Calotropis growing in abandoned fields. What is the reason for this?"
+  },
+  {
+   "question_id": "55b06712-f782-4116-b7d4-ba5d44b6d749",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following statements regarding adaptations of parasites.\nA. Parasites evolved special adaptations such as the loss of unnecessary sense organs and presence of adhesive organs or suckers to cling on to the host.\nB. The human liver fluke depends on two intermediate hosts - a snail and a fish - to complete its life cycle.\nC. The malarial parasite needs a vector (mosquito) to spread to other hosts.\nD. Endoparasites are those that feed on the external surface of the host organism.\nWhich of the above statements are correct?"
+  },
+  {
+   "question_id": "5cd02ab9-9821-4af3-9883-9f6120f35922",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is characteristic of a stable population?"
+  },
+  {
+   "question_id": "64735bca-8e09-4f85-ba86-6506dad95380",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following equations correctly represents exponential population growth under unlimited resources?"
+  },
+  {
+   "question_id": "6550f932-2637-42ba-b438-a1ded47c7284",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following interspecific interactions is detrimental to both species involved?"
+  },
+  {
+   "question_id": "67839c4a-0bed-48be-9042-3ca5247ef86f",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two species that depend on the same limiting resources cannot survive together indefinitely and one species eventually eliminates the other. This phenomenon is termed"
+  },
+  {
+   "question_id": "67e8f9ee-c81a-4045-a2b6-c4b5afaee0a4",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The prickly pear cactus introduced into Australia in the early 1920s caused havoc by spreading rapidly. How was it finally brought under control?"
+  },
+  {
+   "question_id": "6e90ac96-b560-469f-9681-04c5d8b32a3f",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the statements given below.\nI. Lichens represent a mutualistic relationship between fungi and algae/ cyanobacteria.\nII. Mycorrhizae are associations between algae and roots of higher plants.\nIII. Plants offer nectar and pollen as rewards for pollinators.\nIV. The Mediterranean orchid Ophrys employs sexual deceit.\nV. Mutualists do not need to safeguard against cheaters.\nCorrect statements are:"
+  },
+  {
+   "question_id": "71fa0d39-48f4-4b99-9107-976ef3f8db18",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Biological control methods adopted in agricultural pest control are primarily based on which ecological role of predators?"
+  },
+  {
+   "question_id": "78c51a74-a5a5-4447-8f70-43a227ed18f2",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two species competing for the same resources can continue to coexist when they differ in their feeding or activity patterns, thereby avoiding direct competition. This phenomenon is termed"
+  },
+  {
+   "question_id": "790aa75b-2dd1-43db-9269-9b749ada2665",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following breed only once in lifetime?"
+  },
+  {
+   "question_id": "817f8457-d64f-4e4f-a28f-05483d839940",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A bacterial population grows exponentially. Its intrinsic rate of natural increase (r) is 0.5 per hour. If the initial population ( $\\mathrm{N}_{0}$ ) is 1000, what will be the population growth rate (dN/dt) at that very instant?"
+  },
+  {
+   "question_id": "829d6b20-4273-4e41-aa58-1d6640725968",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following can be regarded as an example of predation in a broad ecological sense?"
+  },
+  {
+   "question_id": "83bcb65a-1bf3-4d58-acb1-ddc3434e9d77",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A population growing in a habitat with limited resources shows which of the following sequence of phases correctly?"
+  },
+  {
+   "question_id": "86ad48c6-50a7-4def-9d2b-1cc62db673d8",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is the most common morphological means of defence evolved by plants against herbivores?"
+  },
+  {
+   "question_id": "98f5855b-8d33-4e6f-8fe4-c1c69698913a",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Analyze these 5 statements.\nI. Totally unrelated species cannot compete for the same resource.\nII. Interference competition can occur even if resources are abundant.\nIII. Gause's Competitive Exclusion Principle always applies regardless of resource limitation.\nIV. The Abingdon tortoise became extinct due to competition with goats.\nV. Resource partitioning promotes coexistence rather than exclusion.\nWhich are correct?"
+  },
+  {
+   "question_id": "9a1bfad0-33c8-4d88-b66e-1506dadcdb4a",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List- I with List-II.\n\n|  | List I |  | List II |\n| :--- | :--- | :--- | :--- |\n| (A) | Competitive release | (I) | Barnacles |\n| (B) | Competitive exclusion | (II) | Abingdon tortoise |\n| (C) | Resource partitioning | (III) | Warbler birds |\n| (D) | Biological control | (IV) | Cactus feeding moth |\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "aac5f8b1-857c-4266-b19b-6fc92fb5442f",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : The logistic growth model is considered a more realistic one.\nReason (R) : Resources for growth for most animal populations are finite and become limited sooner or later.\nIn light of the above statements, choose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "b1344390-4cf9-4063-a5c3-2a5ba1f24591",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the organisms in Column I with their specific trait/defense in Column II.\n\n|  | Column I |  | Column - II |\n| :--- | :--- | :--- | :--- |\n| A | Monarch butterfly | i | Thorns |\n| B | Acacia | ii | Breeds only once in lifetime |\n| C | Calotropis | iii | Loss of chlorophyll and leaves |\n| D | Pacific salmon | iv | Highly distasteful chemical |\n| E | Cuscuta | v | Poisonous cardiac glycosides |"
+  },
+  {
+   "question_id": "b747c961-e28d-4e31-8c0f-c6c197e2083b",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Populations evolve to maximize their reproductive fitness (Darwinian fitness) in their habitat. According to ecologists, life history traits of organisms evolve in relation to:"
+  },
+  {
+   "question_id": "b96ff63d-93b1-4fec-9534-1ffbbaaa21cc",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following phases are characteristic of a logistic growth curve but are absent in an exponential growth curve?"
+  },
+  {
+   "question_id": "b988a590-c0a8-4af0-a717-d064dd4bdc66",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An age pyramid primarily depicts the"
+  },
+  {
+   "question_id": "bbc697e1-d3ef-491b-9c2a-06090c506d13",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The number of individuals of the same species that have come into a habitat from\n\nelsewhere during the time period under consideration is called"
+  },
+  {
+   "question_id": "d5b9405a-56c6-444c-8bb5-c6fa7ea1fb1b",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In a new habitat that is just being colonised, which of the following factors contributes more significantly to population growth?"
+  },
+  {
+   "question_id": "dccf0235-27c9-42e5-b0ed-7a11f8e3c1c3",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is an example of mutualism?"
+  },
+  {
+   "question_id": "ff416a36-207b-4a73-827f-0ccaa3f07ad3",
+   "chapter_id": "1c4ee0fe-830f-5338-ad2b-50f829127956",
+   "chapter": "Organisms and Populations",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\n\nStatement I : Brood parasitism is a fascinating example of parasitism in which the parasitic bird lays its eggs in the nest of its host and lets the host incubate them.\n\nStatement II : During the course of evolution, the eggs of the parasitic bird have evolved to resemble the host's egg in size and colour to reduce the chances of the host bird detecting the foreign eggs and ejecting them from the nest.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "78330360-7778-44e0-8e60-0cfa777933ab",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "For the first time in biology, Mendel applied\n$\\_\\_\\_\\_$ to study inheritance patterns."
+  },
+  {
+   "question_id": "e870e6df-c077-45e5-862c-2247eedf1ff9",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The greater credibility of Mendel's experimental data was mainly due to:"
+  },
+  {
+   "question_id": "fd72ba1f-3829-49bd-be18-89dd6ef85259",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the incorrect statement regarding polygenic inheritance"
+  },
+  {
+   "question_id": "084abf7e-350f-4db1-95c1-a0f5a51f1622",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Verification of chromosomal theory of inheritance was done by"
+  },
+  {
+   "question_id": "d8baab8f-368e-46fc-a325-cf0ea858d3bd",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If a colour-blind man marries a woman who is homozygous for normal colour vision, the probability of their sons being colour-blind is"
+  },
+  {
+   "question_id": "aa2e1bd1-dbae-48ec-9d46-9635d7676e20",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion(A) : The possibility of a female becoming a haemophilic is extremely rare.\nReason (R) : Mother of such a female has to be at least carrier and the father should be haemophilic (unviable in the later stage of life).\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "f3108073-3561-4d56-9586-31e53659f3cb",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements regarding sex determination is INCORRECT?"
+  },
+  {
+   "question_id": "dca177a5-d743-4d48-a01f-18ab379b8459",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following disorders are considered Mendelian disorders?\n    A. Cystic fibrosis\n    B. Klinefelter's syndrome\n    C. Sickle cell anaemia\n    D. Thalassemia\n    E. Myotonic dystrophy\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "50a59986-a23a-4139-9037-1ff4aded3a6c",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Mendel's study found that the factors independently assort and combine in all permutations and combinations.\nStatement II: Mendel's law of independent assortment does not hold true for the genes located on the same chromosomes.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "d4ad832c-de41-4bfe-8870-aa48cc77641b",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II.\n\nList I\n\nList II\n    A. Flower colour in\nI. Codominance garden pea garden pea\n    B. Flower colour in Antirrhinum\nII. Complete dominance\nC. Human blood group AB\nIII. Incomplete dominance\nD. Skin colour in human\nIV. Polygenic Inheritance\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "2a5748a1-2a85-441f-b3f2-aa625fc501f2",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Mendel's concept of factors as stable and discrete units that controlled the expression of traits and, of the pair of alleles which did not blend with each other, was not accepted by his contemporaries as an explanation for apparently continuous variations seen in nature.\nStatement II : Alfred Sturtevant used the frequency of recombination between gene pairs on the same chromosome as a measure of the distance between genes.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "24b16d71-717d-4604-a9e5-079bbbfd952d",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "ZW-ZZ type of sex determination can be observed in"
+  },
+  {
+   "question_id": "3ec36150-a82b-4b43-8e20-0616cb032473",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : Mendel's law of segregation is universally applicable.\nReason (R) : In all sexually reproducing organisms, meiosis is compulsory, by which the chromosome number is reduced to half."
+  },
+  {
+   "question_id": "bd3e656b-4d41-466f-8b59-2a2009635ffb",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Down's syndrome is due to"
+  },
+  {
+   "question_id": "33c604ee-6b66-47cf-9eeb-cac2029e71ab",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In which of the following organisms is the female heterogametic?\nA. Grasshopper\nB. Human\nC. Drosophila\nD. Bird\nE. Honeybee\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "5544825b-8db7-4951-a69a-51f596d7a858",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is correct regarding phenylketonuria and Down's syndrome?"
+  },
+  {
+   "question_id": "fc8b450e-34f6-4ef1-aaa4-19c50e9e4c7a",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The number of chromosomes present in a somatic cell of a person with Down syndrome is"
+  },
+  {
+   "question_id": "c74139d6-76ae-4444-a7ed-9ae193e7f2cf",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Choose incorrect statement about haemophilia."
+  },
+  {
+   "question_id": "d2de53ed-e671-45af-ae01-b6137cc39719",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements correctly describes Mendel's Law of Segregation?"
+  },
+  {
+   "question_id": "570b004d-18d3-4de4-8baa-5af172f86830",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following are sex-linked recessive and autosomal recessive disorders respectively?"
+  },
+  {
+   "question_id": "94ae9fd9-4083-4168-b4c8-928b973d6ef3",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Genetic disorder caused due to the presence of an additional copy of the chromosome number 21 was first described by"
+  },
+  {
+   "question_id": "e81e9efb-985a-44ff-b5f9-cd6bb9365113",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the disorders in List I with their description in List II and choose the correct option.\n\n| List I | List II |\n| :--- | :--- |\n| A. Haemophilia | I. Affected individual is with furrowed tongue and partially open mouth |\n| B. Down's syndrome | II. Feminine development is also expressed in addition to masculine development |\n| C. Phenyl ketonuria | III. Heterozygous female transmit to sons |\n| D. Klinefelter's syndrome | IV. Inborn error of metabolism leads to mental retardation. |"
+  },
+  {
+   "question_id": "88c3ff4f-eab7-4153-b703-0b76f491cf50",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A normal girl, whose mother is haemophilic marries a male with no ancestral history of haemophilia. What will be the possible phenotypes of the offsprings?\nA. Haemophilic son and haemophilic\n\n\nB. Haemophilic son and carrier daughter\nC. Normal daughter and normal son\nD. Normal son and haemophilic daughter.\n\nChoose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "a0e74e59-5606-48bc-ab20-08c031e328c2",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The ratio between phenotypic recombinants that are formed in a Mendelian dihybrid cross $F_{2}$ generation is"
+  },
+  {
+   "question_id": "8b9f5f87-d034-4c7c-bcbb-fca96057570b",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the wrong statement w,r,t Mendel' experiments."
+  },
+  {
+   "question_id": "b83a218e-9982-46b0-888e-12c78c7e3325",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select odd one out w.r.t. recessive trait in pea plant."
+  },
+  {
+   "question_id": "3cf6d572-0d66-4ef2-a56a-a7db3971feba",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The hereditary variations are due to\n    A) asexual reproduction\n    B) sexual reproduction\n    C) vegetative reproduction"
+  },
+  {
+   "question_id": "76c939bc-21c3-4080-96d7-1bee531cc6f9",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When Mendel carried out various crosses with respect to single gene inheritance, the traits of pea plant that did not appear in $F_{1}$ generation were\n    A. Height-Dwarf\n    B. Violet flowers\n    C. Inflated pods\n    D. Terminal flowers"
+  },
+  {
+   "question_id": "998fd83f-c1ba-4e68-989f-fba2f21180d0",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Number/types of gametes produced by a homozygous and a heterozygous individuals of genotype AA and Aa, respectively are"
+  },
+  {
+   "question_id": "2a9b52b0-fa3c-4537-b1c0-279d469978ca",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not a recessive Mendelian disorder?"
+  },
+  {
+   "question_id": "56b41b79-0d2e-44e9-a959-a3a524a63ab4",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Besides mental retardation, what other effect is seen in phenylketonuria patients?"
+  },
+  {
+   "question_id": "137769ea-82b3-497b-bb0f-24a0ba9e3c13",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which statement best explains the fundamental difference between the Law of\n\nSegregation and the Law of Independent Assortment?"
+  },
+  {
+   "question_id": "90b22687-5f4b-45b9-9566-8d8b3cfb72b2",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In a certain population, the genotypic frequencies are as follows:\n\n| Genotype | $A A$ | Aa | aa |\n| :--- | :--- | :--- | :--- |\n| Frequency | 32\\% | 38\\% | 30\\% |\n\nWhat are the allelic frequencies of $A$ and $a$ alleles in the population?"
+  },
+  {
+   "question_id": "2ae78926-f29f-44c8-aaad-60f7678777a2",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Mendel published his work on the inheritance of characters in 1865, but it remained unrecognized until 1900. Choose the correct reasons for this from the options below.\na) He could not provide any physical proof for the existence of factors.\nb) His concept of factors being stable,\n\ndiscrete units that controlled the expression of traits did not find acceptance by his contemporaries.\n    c) Mendel's approach of using mathematics to explain biological phenomena was not new.\n    d) Communication was not as easy as it is now."
+  },
+  {
+   "question_id": "4343b35a-bc9e-43ee-a60b-0e4071664838",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following crosses and their corresponding phenotypic ratios in the offspring are incorrectly matched?"
+  },
+  {
+   "question_id": "68875c7c-88c0-4e4e-8db5-206a34d8ac5c",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Independent assortment is shown by the genes present on heterologous chromosomes.\nStatement II : Linkage is shown by the genes present on same chromosome. In light of the given statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "c71387d3-d0ea-456a-b855-f73b5b575b79",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which statement about a dihybrid test cross is not true?"
+  },
+  {
+   "question_id": "073fb43e-e022-4582-81f1-be112480f03c",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the following and choose the correct option.\n\n| List - I | List - II |\n| :--- | :--- |\n| A.Dominance | I. |\n| B. Codominance | II. |\n| C. Pleiotropy | III. |\n| D. | A single gene IV. influences many characters |"
+  },
+  {
+   "question_id": "403be799-f600-4492-a8a0-fb49a7c2b072",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The trait which is generally controlled by two or more genes, inheritance of such traits is called"
+  },
+  {
+   "question_id": "5a38c20b-4cb0-462a-a00e-6bea3fcb6d9b",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If a man exhibits sickle cell anaemia and his wife is a carrier, then"
+  },
+  {
+   "question_id": "e7731c98-ee37-486e-ad7f-a91e843bae7b",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Linkage refers to the physical association of genes located on the same chromosome, which prevents their independent assortment.\nStatement II : The frequency of recombination between two genes on the same chromosome is always 50\\%, irrespective of their distance from each other.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "07025c37-d522-4ab5-b737-927d3a0ed7f9",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Law of independent assortment states that"
+  },
+  {
+   "question_id": "0f5ce06f-fd7a-4501-807a-ab5d175208ab",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In the Punnett square for a dihybrid cross (RrYy x RrYy), what proportion of the gametes will have the genotype Ry?"
+  },
+  {
+   "question_id": "214ae1b7-af20-435f-84eb-028d334538e2",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion(A) : In Drosophila, genes of body colour and eye colour did not segregate independently of each other, and the $\\mathrm{F}_{2}$ ratio deviated very significantly from Mendelian ratios.\nReason (R) : In Drosophila, genes of body colour and eye colour are showing physical association.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "2b8d1507-3119-4674-abb8-fc266d600fd8",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II.\n\n|  | List I |  | List II |\n| :--- | :--- | :--- | :--- |\n| (A) | Monohybrid Cross | (I) | 2 genotypes and 2 phenotypes |\n| (B) | Dihybrid Cross | (II) | 3 phenotypes and 3 genotypes |\n| (C) | Incomplete dominance | (III) | 2 phenotypes and 3 genotypes |\n| (D) | Monohybrid Test Cross | (IV) | 4 phenotypes and 9 genotypes |\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "46f78fe2-f1ae-42d8-8fa6-5d7137f3dc42",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements.\n    a) Occur in pairs\n    b) Segregate at the time of gamete\nformation such that only one of each pair is transmitted to a gamete\nThe above statements are applicable to"
+  },
+  {
+   "question_id": "4fc29634-4071-4029-baa6-ed0b6289d242",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Arrange the following in the increasing order based on the combinations obtained in the $\\mathrm{F}_{2}$ progeny of dihybrid cross in a garden pea\nI. Number of parental phenotype plants\nII. Number of recombination plants in phenotype\nIII. Types of phenotypes\nIV. Types of genotypes"
+  },
+  {
+   "question_id": "58b7ec5b-9d9a-4674-b8f9-4f191a98a199",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I: Not all characters show true dominance.\nStatement II: ABO blood group shows dominance, incomplete dominance and multiple allelism.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "62595aea-ea4f-4b17-85e2-71b74fb21246",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following best describes Mendel's Law of segregation?"
+  },
+  {
+   "question_id": "68604091-7498-4966-bcce-7a377080f5b7",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II and choose the correct option.\n|  | List I |  | List II |\n| :--- | :--- | :--- | :--- |\n| (A) | Independent assortment | (I) | Physical association of genes enhancing parental phenotype percentage |\n| (B) | Pleiotropy | (II) | Separation of linked gene during prophase - I of meiosis |\n| (C) | Crossing over | (III) | A single gene controlling multiple unrelated phenotypes |\n| (D) | Linkage |  | (IV) chromosome pairs |\nalign randomly at the metaphase plate during metaphase I"
+  },
+  {
+   "question_id": "71059c1b-7205-4492-a29d-a293e548d7a1",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The fact that the alleles donot show any blending and that both the characters are recovered as such in $\\mathrm{F}_{2}$ generation, become the basis of"
+  },
+  {
+   "question_id": "795687d9-9b15-41f4-8b14-fd31b29a912e",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the following and choose the correct option.\n\n|  | List I |  | List II |\n| :--- | :--- | :--- | :--- |\n|  | Chromosomal (A)theory of inheritance | (I) | Chromosomes |\n| (B) | Mapping of genes on a chromosome | (II) | Genes on heterologous chromosomes |\n| (C) | One pair segregates independently of another pair. | (III) | Sutton and Boveri |\n| (D) | Independent pairs segregate independently of each other | (IV) | Alfred Sturtevant |"
+  },
+  {
+   "question_id": "80758959-e138-48e1-890d-4b91d565fee1",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When red flowered and pink flowered plants are crossed in Snapdragon, how many pink flowered plants would be obtained in the progeny of 400 plants?"
+  },
+  {
+   "question_id": "81afb694-1cdb-4962-ab92-04e27ff398b0",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "What is the ratio observed between the number of phenotypes and that of genotypes in a typical dihybrid cross ?"
+  },
+  {
+   "question_id": "a1e336e3-e28e-404a-bdc7-4a0c359fcfa7",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In Morgan's experiments on Drosophila linkage, the percentage of white-eyed, brown-body recombinants and the percentage of red-eyed, miniature-winged recombinants in $\\mathrm{F}_{2}$ generation, respectively"
+  },
+  {
+   "question_id": "b69ea808-3f88-4de0-b0dc-9d7f2ce30d50",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Mendel's law of independent assortment is applicable for"
+  },
+  {
+   "question_id": "bb9794ab-4cef-47bf-b521-744aeef05ae0",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is responsible for the genetic recombination observed in Mendel's dihybrid crosses?"
+  },
+  {
+   "question_id": "d118c54c-272f-49fe-a14e-7e4ec79769af",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II. w.r.t. $\\mathrm{F}_{2}$ generation of Mendel's dihybrid cross, considering seed shape and seed colour.\n\n| List I (Genotype) |  | List II (Probability) |\n| :--- | :--- | :--- |\n| (A)RRYy | (I) | 6.25\\% (wrinkled and yellow) |\n| (B) RrYy | (II) | 25\\% (round and yellow) |\n| (C)rryy | (III) | 6.25\\% (wrinkled and green) |\n| (D) rrYY | (IV) | 12.5\\% (round and yellow) |\n\nChoose the correct answer form the options given below."
+  },
+  {
+   "question_id": "d451fd9c-94d0-474c-8914-4ddb1216a158",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the incorrect statement regarding linkage and recombination."
+  },
+  {
+   "question_id": "d65495aa-2529-4653-8645-e619d0f6768c",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I: Independent pairs of chromosomes segregate independently of each other.\nStatement II: One pair of genes always segregates independently of another pair.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "e564500d-931c-4f1d-9442-f84e7b82bfa8",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the types of crosses in List I with their characteristic phenotypic ratios and test cross ratios in List II.\n\n| List I (Criteria of Growth) |  | List II (Example) |\n| :--- | :--- | :--- |\n| (A) $F_{2}$ phenotypic ratio in a monohybrid | (I) | 1 : 1 : 1 : 1 |\n\n\ncross\n    (B) $F_{2}$ phenotypic ratio in a dihybrid cross (II) 1 : 1\n    (C) Test cross ratio in a monohybrid cross (III) 3 : 1\n    Test cross ratio in a\n(D) dihybrid cross (IV) $9: 3: 3: 1$"
+  },
+  {
+   "question_id": "edb823da-be19-48a3-890f-fed398ae1562",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "What is the main aim of performing a test cross in genetics?"
+  },
+  {
+   "question_id": "f71d16e6-80ab-4bd4-8d26-30d61025e555",
+   "chapter_id": "92bfedfe-30d7-5a7a-8566-d8b7b0c3ac20",
+   "chapter": "Principles of Inheritance and Variation",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I (cross) with List II (phenotypic ratio).\n\n|  | List I |  | List II |\n| :--- | :--- | :--- | :--- |\n| A) |  |  | 9 : 3 : 3 : |\n|  | Monohybrid test cross | I) | 1 |\n| B) | $\\mathrm{F}_{2}$ complete dominance | II) | 1 : 1 |\n| C) | $\\mathrm{F}_{2}$ incomplete dominance | III) | 1 : 2 : 1 |\n| D) | $\\mathrm{F}_{2}$ dihybrid cross | IV) | 3 : 1 |\n\nChoose the correct answer from the following options."
+  },
+  {
+   "question_id": "35fbf0d9-2f4d-4b91-ae03-b974f87cb968",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A specialist is consulted for the management of pregnancy, childbirth, and menstrual disorders. This specialist belongs to the field of:"
+  },
+  {
+   "question_id": "8f13d9ef-a51d-4173-b97c-e473a56f5ff6",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\n\nAssertion(A) : Oral contraceptive pills which contain progestogen - oestrogen combination inhibit ovulation.\n\nReason (R) : Such oral contraceptive pills inhibit secretion of gonadotropins.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "93fb8a02-56bd-43c3-85fe-58bc0e320b8f",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following represents a limitation or drawback of Assisted Reproductive Technologies?"
+  },
+  {
+   "question_id": "ad11a2b6-5e22-4f64-a3bc-8ba1c73681c2",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is NOT a function of intrauterine devices?"
+  },
+  {
+   "question_id": "c9a2b032-92f8-4013-8ae2-b62ab6652a99",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the barrier methods of contraception.\n    A. Condoms\n    B. Diaphragm\n    C. Vaults\n    D. Multiload-375\n    E. LNG - 20"
+  },
+  {
+   "question_id": "04d01525-f9ca-4106-9b7c-794f741ef734",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the incorrect statement."
+  },
+  {
+   "question_id": "6a40eb5d-a54c-4d2b-9e70-ef6835eb6c9f",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Amniocentesis is a procedure that can be used to test for the presence of certain genetic disorders such as sickle-cell anaemia and haemophilia to determine the survivability of the foetus.\nStatement II : In amniocentesis, some of the amniotic fluid of the developing foetus is taken to analyse the foetal cells and dissolved substances.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "430e0ea0-6b76-4d84-8f2d-1798242a7885",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Itching, fluid discharge, slight pain, swellings, etc., in the genital region, are the minor and early symptoms of"
+  },
+  {
+   "question_id": "78b42453-3828-4428-98a7-f72013ad0767",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements about medical termination of pregnancy and select the incorrect statements.\n    A. Nearly 45 to 50 million MTPs are performed in a year all over the world, which accounts for $1 / 5^{\\text {th }}$ of the total number of conceived pregnancies in a year.\n    B. The Government of India legalised MTP in 1951.\n    C. MTPs are essential in certain cases where continuation of the pregnancy could be harmful or even fatal either to the mother or to the foetus or both.\n    D. According to MTP (Amendment) Act, 2017, if the pregnancy has lasted more than 12 weeks but fewer th"
+  },
+  {
+   "question_id": "515b61a5-95e0-4461-a4e8-5c806c2921f2",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Copper ions released from IUDs"
+  },
+  {
+   "question_id": "a895e392-d46d-4551-b244-67528a3f0deb",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements and choose the correct ones.\n    A. Widespread use of contraceptive methods plays a significant role in controlling population growth.\n    B. If untreated, sexually transmitted diseases may lead to breast cancer and other complications.\n    C. The causes of infertility could be physical, congenital, diseases, drugs, immunological or even psychological."
+  },
+  {
+   "question_id": "a69ca635-855b-43dd-b8e1-76f201e1b2ff",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : Contraceptives are used to prevent conception, a natural reproductive event.\nReason (R) : Contraceptives are regular requirements for the maintenance of reproductive health.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "8545dfa8-8dc2-4b9e-89a2-755abd681ef6",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following contraceptive methods does not involve hormonal role?"
+  },
+  {
+   "question_id": "c2d556c8-71f7-4324-90fd-9b181241044b",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following STIs is NOT completely curable even if detected early and treated properly?"
+  },
+  {
+   "question_id": "d6165c8c-9183-4533-ad46-57876cad4786",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following methods of contraception do not interrupt gametogenesis and also coitus?\n    A. Lactational amenorrhea\n    B. Implants\n    C. Sterilisation\n    D. Hormonal oral pills\n    E. Periodic abstinence\n    F. Cervical caps"
+  },
+  {
+   "question_id": "ae9f460b-1d8d-4027-a55f-32d9bdae04ae",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II.\n\nList I\n    A. GIFT\n    B. IUI\n    C. ZIFT\n    D. IVF\nList II\n    I. Transfer of early embryo into fallopian tube\n    II. Transfer of donor ovum into fallopian tube\n    III. Transfer of semen of donor into uterus\n    IV. Fertilisation of gametes in vitro\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "82f43306-6465-485b-bc64-2aca82bf5987",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A) : Oral pills have small doses of either progestogens (or) progestogen - oestrogen combinations.\nReason (R) : Pills have to be taken daily for 21 days starting preferably within the first 5-days of menstrual cycle."
+  },
+  {
+   "question_id": "45abb145-91b9-487c-81a0-5b46415f1239",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is incorrectly matched?"
+  },
+  {
+   "question_id": "6af28277-157b-4416-9de3-778a69febf3d",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not a category of contraceptive method?"
+  },
+  {
+   "question_id": "44a223a8-a1cb-45d7-80ed-b008c9c033e8",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the contraceptive whose mode of action is similar to that of pills."
+  },
+  {
+   "question_id": "a1eb2847-bfaa-4aa6-8151-ebc789e13855",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A woman is able to produce eggs but her fallopian tubes are blocked and the uterus is unsuitable for implantation. Which of the following ART can assist her?"
+  },
+  {
+   "question_id": "5e399a5a-d9cb-43a4-9569-ab7d89cca207",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following measures can help a person remain free of sexually transmitted infections (STIs)?\n    A. Use of condoms\n    B. Avoid sex with unknown partners/multiple partners\nC. Visit a qualified doctor for early detection\nD. Avoid eating contaminated food\nE Get regular exercise"
+  },
+  {
+   "question_id": "77a5dc0b-3601-422d-95f3-d579793a2f80",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Periodic abstinence involves avoiding coitus during the 'fertile period', which is generally considered to be"
+  },
+  {
+   "question_id": "d3c015db-12f4-47b1-bcd1-ae8f1207cdcb",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements are correct?\nA. Introduction of sex education in schools helps discourage myths about sex-related aspects.\nB. Amniocentesis for sex determination is banned in India to check female foeticide.\nC. Creating awareness about contraception, maternal care, and child health is part of RCH programmes.\nD. All genetic disorders can be detected by amniocentesis.\nChoose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "1b8cda7b-5112-45a2-b9a2-744284b4b874",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following contraceptive methods is not used for spacing of births?"
+  },
+  {
+   "question_id": "4b6d23af-9dd1-4a78-8049-de7044be3738",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is an assisted reproductive technology in which the semen is directly introduced into a woman's womb?"
+  },
+  {
+   "question_id": "8d7620e9-9d7c-4310-95be-b264f823865d",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which among the following methods of birth control has maximum failure rate?"
+  },
+  {
+   "question_id": "b0548f23-9f43-42a2-8ad2-c50c448e894d",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which natural reproductive processes are bypassed when sperm is directly introduced into the ovum during ICSI?\""
+  },
+  {
+   "question_id": "15f935d2-2add-446b-9b79-7fe00cbfba6d",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements about diaphragms and select the correct option.\nA. They are inserted by doctors or expert nurses into the uterus.\nB. They are a barrier method of contraception.\nC. They are cheap and reusable.\nD. They release progestogens that inhibit ovulation."
+  },
+  {
+   "question_id": "97893994-2121-42cd-9158-25129198bd8e",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I and List II and select the correct option.\n\n|  | List I | List II |\n| :--- | :--- | :--- |\n| A. | Initiation of family planning program | I. 2021 |\n|  | B. Legalisation of MTP | II. 2017 |\n|  | C. Amendment of MTP Act | III. 1951 |\n| D. | Assisted Reproductive technologies (regulation) bill | IV. 1971 |\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "22c70eb9-f623-44c1-a865-fbabe7384d39",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements is/are true with regard to lactational amenorrhea?\nA. Menstruation does not occur during intense lactation.\nB. This method is of the highest contraceptive efficiency.\nC. It is a natural method of contraception with no side effects.\nD. The chances of conception are nil for at least six years after parturition."
+  },
+  {
+   "question_id": "2991f7db-7a6f-4f09-822c-5bd75e0668cf",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Administration of which of the following within 72 hours of coitus could avoid possible pregnancy due to rape or casual unprotected intercourse?\n    A. Progestogens\n    B. Progestogen-estrogen combinations\n    C. IUDs"
+  },
+  {
+   "question_id": "323e072a-3ce2-45e5-b444-58273e438566",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the correct reasons for India's population crossing 1.2 billion in May 2011 from the following.\n    A. Increase in health care facilities\n    B. Decrease in population at reproducible\n    age\n    C. Decrease in maternal mortality rate\n    D. Increase in Infant mortality rate"
+  },
+  {
+   "question_id": "3810be1d-c01c-4b6b-8d29-a0dfc99de269",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following are potential reasons for infertility in a couple?\n    A. Physical or congenital diseases\n    B. Use of certain drugs\n    C. Immunological factors\n    D. Psychological factors\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "698b0aed-3b00-4c34-829e-1c18f9058b0a",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements.\nStatement I: Surgical methods of contraceptives are available for both males and females.\nStatement II: Barrier methods of contraceptives are available only for males.\nIn the light of given statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "c55a14e7-b8fa-41a1-93de-80304ee81c23",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is the major difference between GIFT and ZIFT?"
+  },
+  {
+   "question_id": "c600bcb8-14cb-43a2-93e7-5abddfb41f8e",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the correct statements regarding contraceptive methods.\nA. Hormonal pills may cause side effects like nausea and weight gain.\nB. Barrier methods provide complete protection against all infections.\nC. Surgical methods are highly effective, but their reversibility is very poor\nD. Contraceptive methods eliminate the need for reproductive awareness.\nE. Copper-releasing IUDs suppress ovulation in females.\nF. Their improper or inconsistent use can lead to contraceptive failure.\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "cc6ca9b4-47b8-49c9-a291-7a62be15fd2c",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match list I with list II and choose the correct option.\n\nList I\n| A. Non-medicated IUD | I. Vaults |\n| :--- | :--- |\n| B. Copper releasing IUD | II. Lippes loop |\n| C. | III. 375 |\n| D. Barrier | IV. LNG - 20 |"
+  },
+  {
+   "question_id": "de73670a-7667-415b-b6f7-db30b1baa793",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assisted reproductive technologies (ARTs)"
+  },
+  {
+   "question_id": "e9de4e2b-c082-4de8-8de3-d5cf1a3ad1e3",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the following and select the correct option.\n\n| List I | List II |\n| :--- | :--- |\n| ALNG-20 | I |\n| B Nirodh | II Made from latex |\n| C Multiload 375 | III Releases progestin |\n| D | IV Releases copper |"
+  },
+  {
+   "question_id": "ec89454f-332b-4128-b681-208575aefc90",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following statements.\n\nStatement I : Amniocentesis is used to test for the presence of certain genetic\n\ndisorders.\nStatement II : In aminocentesis, some of the amniotic fluid of the developing foetus is taken to analyse the foetal cells and dissolved substances.\nOf the above statements, which one of the following options is correct?"
+  },
+  {
+   "question_id": "eede1194-5cdc-42ac-a2a5-c4e31498a5e1",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The mode of action of which of the following is similar to that of pills?"
+  },
+  {
+   "question_id": "f09b07f9-bc5d-42cd-acff-69ec9df29a88",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Even though second trimester abortions are much more riskier, they are advised in case of life threat to the pregnant woman.\nStatement II: Amniocentesis is a prenatal diagnostic test for genetic disorders of foetus.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "fc195a6d-fad7-49bf-b825-39e8fa3b0314",
+   "chapter_id": "0a60009a-c9ac-52d9-9fc9-88e363e1252e",
+   "chapter": "Reproductive Health",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following are hormonal methods of contraception?"
+  },
+  {
+   "question_id": "c3b855b7-7f3a-4a1d-85a1-257ab4f1ba2b",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is an outbreeding device to avoid self-pollination?"
+  },
+  {
+   "question_id": "103f383b-9065-4361-b057-ac4734ad8985",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Pollen grains are light and non-sticky, single ovule in ovary, large feathery stigma are the characteristics of"
+  },
+  {
+   "question_id": "5a98e5e6-f7fd-4975-b2ba-d466763232a6",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "What is the function of silky hairs in corn cob?"
+  },
+  {
+   "question_id": "c19957aa-15bd-4807-a88d-53b79f3f9edc",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the pair of heterosporous flowering plants"
+  },
+  {
+   "question_id": "f151d86f-3944-4afa-95e6-884e2e36675f",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In papaya, dioecious condition prevents"
+  },
+  {
+   "question_id": "ab517b09-5d45-444b-8370-05198dbe6abe",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : Each cell of sporogenous tissue in a microsporangium is a potential pollen or microspore mother cell.\nReason (R) : Each cell of the sporogenous tissue is capable of giving rise to a microspore tetrad.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "7eba1c2d-95bc-4c40-832a-62aae44a6a9a",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\n\nAssertion(A) : Continued self-pollination results in inbreeding depression.\n\nReason (R) : Majority of flowering plants produce unisexual flowers, and pollen grains are likely to come in contact with the stigma of the same flowers.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "0d9dddd4-edfd-4acf-ba26-c040f1971e57",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In flowers where the ovules are one or few, and the pollen grains are dry and numerous, pollination occurs by"
+  },
+  {
+   "question_id": "8d22eaab-9f90-40e6-8c39-6caf720da866",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements carefully.\n    A. The egg apparatus consists of two synergids and one antipodal cell.\n    B. Transfer of pollen grains from the anther to the stigma of another flower of the same plant is called geitonogamy\n    C. Pollen grains coming in contact with the stigma is a chance factor in both wind and water pollination.\n    D. Pollination by water is more common.\n\nHow many of the above statements are correct?"
+  },
+  {
+   "question_id": "69147604-cff5-4129-a84f-4e61a2d4496c",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Bagging in artificial hybridisation is done to"
+  },
+  {
+   "question_id": "f875d652-b929-4ff9-ad51-b4ffeb3f0676",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Pollen banks are used to store pollen for long periods in"
+  },
+  {
+   "question_id": "d0ce525e-3f46-4eb2-a4b1-249515304c40",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : In angiosperms, a single pollen grain is usually sufficient to fertilize an ovule, whereas in gymnosperms more than one pollen grains may be required for fertilizing a single ovule.\nReason (R) : Angiosperms possess a single functional embryo sac with one egg cell (along with secondary nucleus), while gymnosperms have multiple archegonia, each with an egg cell capable of forming an embryo in each ovule.\nIn light of the above statements, choose the correct answer from the options "
+  },
+  {
+   "question_id": "45eef36e-aebf-49d0-8836-5bee490ed2c8",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match Column I (Mode of pollination/agent) with Column II (Representative example) and choose the correct option:\n\n| Column I |  | Column II |  |\n| :--- | :--- | :--- | :--- |\n| A. | Hydrophily | I. | Maize / wheat |\n| B. | Anemophily | II. | Yucca and its moth |\n| C. | Entomophily (specific co-evolved) | III. | Vallisneria |\n| D. | Ornithophily | IV. | Bombax (red silk cotton) |"
+  },
+  {
+   "question_id": "0fbfd415-1917-44d6-b7f4-b1c4157c70ff",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "What type of pollination takes place in Vallisneria?"
+  },
+  {
+   "question_id": "b85e2aa9-ab95-44f2-8b69-271bd5120794",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In which one of the following both autogamy and geitonogamy are prevented?"
+  },
+  {
+   "question_id": "ad239b27-591f-4333-8665-71a46f2084a7",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Study the following and select the correct statement."
+  },
+  {
+   "question_id": "0028075b-587c-4662-a8b3-d686fafe88a9",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\n\nStatement I: Formation of fruit without fertilisation is called parthenocarpy.\n\nStatement II: Formation of seed without fertilisation is called apomixis.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "bcc40154-c618-4130-93e0-0c8d8af5859e",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Liquid endosperm in coconut results due to"
+  },
+  {
+   "question_id": "70dc4353-e644-4d7e-931c-78b1fbb6a9a7",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The ploidy of apomictic embryos developing from the nucellus and antipodal cells respectively would be"
+  },
+  {
+   "question_id": "859d4ec8-3b74-4046-b2f6-bc815917d16e",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements is/are incorrect?\n    A. Endosperm formation starts prior to the first division of the zygote.\nB. Angiospermic endosperm is mostly 3n while the gymnospermic one is n.\nC. The most common type of endosperm is nuclear type.\nD. Coconut has both liquid nuclear (multinucleate) and cellular endosperm.\nE. Milky water of green tender coconut is a liquid female gametophyte."
+  },
+  {
+   "question_id": "16a22692-dfa4-4470-ab41-2197c51f5fc6",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the total number of plants, from the following, having non endospermic seeds.\n\nGram, Moong, Arhar, Mustard, China rose, Soyabean, Tomato, Brinjal"
+  },
+  {
+   "question_id": "07991a75-3dbd-412e-861a-10a8ee7cca9f",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Sexual deceit in Ophrys is associated with which of the following?\n    A. Mimicry, where a male wasp resembles a flower\n    B. Uncanny resemblance of a petal of the flower to the female bee\n    C. Pseudocopulation\n    D. Entomophily\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "0ad51f25-2867-46ab-b494-65f2e886d968",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : Embryo develops at the micropylar end of the embryo sac.\nStatement II: The central cell after triple fusion becomes the primary endosperm cell.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "68226dcb-6094-4841-8922-008cc47a9e2d",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "From the following, identify haploid, diploid and triploid nutritive tissues respectively\n    A. Nucellus of pea ovule\n    B. Endosperm of Pinus\n    C. Endosperm of rice\n    D. Egg cell of female gametophyte in mango\n    E. Cells of endothecium in Solanum anther"
+  },
+  {
+   "question_id": "6de0bbf0-8aa3-4a0b-84b6-a5bf7ee6e74d",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Study the following statements.\n    A. Epicotyl of monocot embryo has a shoot apex and a few leaf primordia enclosed in a hollow foliar structure, the coleoptile.\n    B. Mendel investigated characters in garden pea plants that were manifested as two opposite traits.\n    C. When a phosphate group is linked to OH of $5^{\\prime} C$ of a nucleoside through phosphoester linkage, a corresponding nucleotide is formed.\n    D. The beads on a string structure in chromatin are packaged to form chromatin fibres that are further coiled and condensed at metaphase stage of cell division to form chromosomes.\n"
+  },
+  {
+   "question_id": "75879237-f2c9-4dd0-a87a-c5e796eb4a2c",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Pick the correct statement from the following."
+  },
+  {
+   "question_id": "966214a0-256a-4878-93b0-166ef757c45d",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Arrange the following terms in the correct developmental sequence in angiosperms\n    A. Pollen grain\n    B. Sporogenous tissue\n    C. Microspore tetrad\n    D. Pollen mother cell\n    E. Male gametes\n\nChoose the correct answer."
+  },
+  {
+   "question_id": "a4aa6ba0-e674-4537-83fa-1841b501dd78",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Epigeal seed germination is seen in"
+  },
+  {
+   "question_id": "b4389b98-70ef-45ac-b2f2-47f87c27d725",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements is false?\nA. Vallisneria and Hydrilla are fresh water plants, while sea-grasses (e.g., Zostera) are marine plant.\nB. Vallisneria is epihydrophilous, while Zostera is hypohydrophilous.\nC. Pollination in water lily/lotus (Nymphea) and Eichhornia (water hyacinth) takes place by insects.\nD. In majority of aquatic plants, flowers emerge above the level of water and are pollinated by insects or wind.\nE. In most of the water pollinated species, pollen grains are protected from wetting due to absence of mucilaginous covering.\nF. In hydrophilous plants, pollen grains a"
+  },
+  {
+   "question_id": "c77c1591-a6a0-4077-a8d6-d25bf002250a",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : Gymnosperms show direct pollination.\nReason (R) : In Gymnosperms ovary is absent.\nIn light of the above statements, choose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "da5574a9-53a9-4f28-ad92-08bb7abd0528",
+   "chapter_id": "7e5cbd62-185d-57d2-b127-b373b830ca64",
+   "chapter": "Sexual Reproduction in Flowering Plants",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the statement that is not related to anemophily."
+  }
+ ]
+}

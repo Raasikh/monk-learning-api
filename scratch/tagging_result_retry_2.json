@@ -1,0 +1,636 @@
+{
+  "assignments": [
+    {
+      "question_id": "1d9fd1a5-1ec2-4670-bea2-2ab98589f3ca",
+      "concept_id": "224f4a7d-9700-4089-897a-50c5efe5249b"
+    },
+    {
+      "question_id": "256060e7-6e7c-4a59-8148-1146859244e1",
+      "concept_id": "d4893c4a-04a1-4ecc-8f72-a2c08936df22"
+    },
+    {
+      "question_id": "96fd3d19-a07f-43c9-9f11-cac585baeddf",
+      "concept_id": "d4893c4a-04a1-4ecc-8f72-a2c08936df22"
+    },
+    {
+      "question_id": "5c97c032-5e87-4b24-98a6-138e3c82b82b",
+      "concept_id": "2f98b95b-85d6-49f4-876f-def3277c2e91"
+    },
+    {
+      "question_id": "2ced0e8a-6a64-4d91-a61b-24bce7cb9ba3",
+      "concept_id": "e90cbc2d-9ef6-4e4f-961f-ef81cd4c0691"
+    },
+    {
+      "question_id": "3893abed-41c8-48ba-b387-558308370482",
+      "concept_id": "b8976c0d-13c1-49e5-8dba-6f8faa1e08e1"
+    },
+    {
+      "question_id": "62cfa1ef-5165-4988-b403-17c2ad96db48",
+      "concept_id": "2f98b95b-85d6-49f4-876f-def3277c2e91"
+    },
+    {
+      "question_id": "6a205556-b7af-45ba-9a48-bed2749d420a",
+      "concept_id": "b8976c0d-13c1-49e5-8dba-6f8faa1e08e1"
+    },
+    {
+      "question_id": "6b01dd63-a859-4231-84aa-d4b7b6fc7948",
+      "concept_id": "2f98b95b-85d6-49f4-876f-def3277c2e91"
+    },
+    {
+      "question_id": "6cf479df-6d8f-45f9-b586-6edd3481ad11",
+      "concept_id": "b8976c0d-13c1-49e5-8dba-6f8faa1e08e1"
+    },
+    {
+      "question_id": "bb078820-4bf0-47e1-86f9-60c1033d873f",
+      "concept_id": "f8c48a65-7f0b-45ed-8816-67c5fee9fbef"
+    },
+    {
+      "question_id": "ccae6f2c-925b-47eb-92c8-e3ef2c53701c",
+      "concept_id": "f9bbf346-dcd8-4034-ae80-764363b0635e"
+    },
+    {
+      "question_id": "457d8875-b9b4-4644-bad1-8141bae0005c",
+      "concept_id": "fd436efd-44b7-4a3c-9548-df21580833de"
+    },
+    {
+      "question_id": "66c19c7a-3dfe-4b94-947c-124998d3b64f",
+      "concept_id": "adeefeb2-9ba9-483b-9b0b-9a8d561e526c"
+    },
+    {
+      "question_id": "1a78e7b4-99bf-4f21-80a6-e26f7834dc47",
+      "concept_id": "fd436efd-44b7-4a3c-9548-df21580833de"
+    },
+    {
+      "question_id": "084e4cf8-af37-4022-aa2f-ba3c2af4616f",
+      "concept_id": "2f98b95b-85d6-49f4-876f-def3277c2e91"
+    },
+    {
+      "question_id": "0c42371d-449d-4bfe-866c-0729ea240e5f",
+      "concept_id": "41d50b94-b91e-46fd-a8f2-e16cc8c8462b"
+    },
+    {
+      "question_id": "2cedfbbe-fd1c-48f0-a4ff-96ecc53a1b39",
+      "concept_id": "2f98b95b-85d6-49f4-876f-def3277c2e91"
+    },
+    {
+      "question_id": "074bee84-f31b-47b4-bfb2-dc564f08b704",
+      "concept_id": "043c7ded-597e-44d1-83fb-416093cda438"
+    },
+    {
+      "question_id": "0e205e72-8e13-4c59-9467-a5db68437838",
+      "concept_id": "41d50b94-b91e-46fd-a8f2-e16cc8c8462b"
+    },
+    {
+      "question_id": "21cdf15a-e47b-4be5-8fc3-f6d3101eb5ae",
+      "concept_id": "5815cb8d-7d3e-4ba5-8793-23de776a796d"
+    },
+    {
+      "question_id": "16299ce5-a5e2-48e9-99a9-d7142ea37e66",
+      "concept_id": "82e9ddea-822b-483d-bb85-e1c7525a5c22"
+    },
+    {
+      "question_id": "576f13bd-0ee4-4d1f-a4f8-52b7d74a0386",
+      "concept_id": "0a89af3b-cc97-485b-8b27-ed6c0991b901"
+    },
+    {
+      "question_id": "7b99eb77-a62c-4794-99ab-2e2fc05e379e",
+      "concept_id": "82e9ddea-822b-483d-bb85-e1c7525a5c22"
+    },
+    {
+      "question_id": "9e608599-9a7b-4cc1-ac74-c79ccd897b9f",
+      "concept_id": "87904b34-87bd-4020-a949-2e5ea023bb68"
+    },
+    {
+      "question_id": "c0fb0e52-0453-41f3-8b5b-67669d979c9b",
+      "concept_id": "82e9ddea-822b-483d-bb85-e1c7525a5c22"
+    },
+    {
+      "question_id": "c49811df-0555-4d98-a97b-d7aa496f05a3",
+      "concept_id": "82e9ddea-822b-483d-bb85-e1c7525a5c22"
+    },
+    {
+      "question_id": "dd0bea33-082a-4ff4-9b24-a90d0038d6b2",
+      "concept_id": "82e9ddea-822b-483d-bb85-e1c7525a5c22"
+    },
+    {
+      "question_id": "e822868e-e6bb-4d97-ad93-fb239a407097",
+      "concept_id": "82e9ddea-822b-483d-bb85-e1c7525a5c22"
+    },
+    {
+      "question_id": "7447c408-a72a-4f8f-aca8-bcfe420f40e6",
+      "concept_id": "82e9ddea-822b-483d-bb85-e1c7525a5c22"
+    },
+    {
+      "question_id": "a0bce350-acb3-431f-bc3d-ddb225702876",
+      "concept_id": "0e700656-bd0d-43f7-bf7b-890405a19546"
+    },
+    {
+      "question_id": "a550a382-0c84-4940-a759-f6b4a7d1b001",
+      "concept_id": "0a89af3b-cc97-485b-8b27-ed6c0991b901"
+    },
+    {
+      "question_id": "b9501929-a10b-4426-9771-b27ff6d5cedb",
+      "concept_id": "87904b34-87bd-4020-a949-2e5ea023bb68"
+    },
+    {
+      "question_id": "d340dd43-2434-482f-b20c-6b5274f54fec",
+      "concept_id": "f3f59485-3368-44a9-84c5-1edffe059704"
+    },
+    {
+      "question_id": "cf6b64d9-8973-4c10-9510-0a1a3d602dc6",
+      "concept_id": "084b3ebc-cccc-422e-b711-013e8044207b"
+    },
+    {
+      "question_id": "3e34885b-2b26-465c-920d-a4bb9ac63b5f",
+      "concept_id": "c01e9c92-e2d9-444f-97ae-5ef08bfca305"
+    },
+    {
+      "question_id": "6addfa4e-14cf-4c55-a611-a5f903267be8",
+      "concept_id": "c8548e96-5d1a-4266-9d4e-06a8246729bd"
+    },
+    {
+      "question_id": "be034332-70c7-4521-bdc6-7baac3528f23",
+      "concept_id": "8bdd0751-a25f-4613-a14a-8210be6e9d92"
+    },
+    {
+      "question_id": "ca679a45-1bd1-4a3d-8bb0-abb8c647a4f1",
+      "concept_id": "f1c98643-dacf-459c-b766-c8dd70c83eed"
+    },
+    {
+      "question_id": "eec46f58-626e-4569-b310-bb586f558e04",
+      "concept_id": "b8aba542-1d24-45ac-867f-2f3a26c2f1e2"
+    },
+    {
+      "question_id": "f2d70bdf-1d05-4bf8-a417-8861bd57f6cf",
+      "concept_id": "3c4b539d-13c1-4618-b553-234f490b724e"
+    },
+    {
+      "question_id": "13fb62e3-85e3-4ce6-8df7-e22dfe38a650",
+      "concept_id": "9735d1f0-18ca-4999-806a-af5143f4db55"
+    },
+    {
+      "question_id": "9e005555-2e7b-4ca3-9ffc-f5bb3dd31404",
+      "concept_id": "b39c4653-6fd5-49a4-b6dd-6908cead5985"
+    },
+    {
+      "question_id": "f06df777-4391-44e4-b340-7e1ac58c8bff",
+      "concept_id": "b39c4653-6fd5-49a4-b6dd-6908cead5985"
+    },
+    {
+      "question_id": "fc2cc175-4321-473c-a2d4-37cc8b170396",
+      "concept_id": "f448de24-9dac-46c3-8762-e48292921ab2"
+    },
+    {
+      "question_id": "75879237-f2c9-4dd0-a87a-c5e796eb4a2c",
+      "concept_id": "aed84489-663a-48d8-9c04-f27201746760"
+    },
+    {
+      "question_id": "94ef6647-72fe-42dd-9eff-ee5a545e2e02",
+      "concept_id": "129f9dd8-f3ed-4664-a7cf-6cd12ce1b708"
+    },
+    {
+      "question_id": "f862308a-aebb-47b4-be06-42a4673dca34",
+      "concept_id": "49fd6612-3761-40ba-9a6a-210098582308"
+    },
+    {
+      "question_id": "e1856ca5-7726-4760-8bf8-544bd3c9a435",
+      "concept_id": "5499319a-bab1-464a-82f3-7146e1c0ee76"
+    },
+    {
+      "question_id": "06fd5ea7-4bb1-47bb-9aed-17c008ae57d2",
+      "concept_id": "67a4fc4b-6469-4faa-a286-8b21e666bfb7"
+    },
+    {
+      "question_id": "e0e31a84-e444-4c52-bed8-a39627a95577",
+      "concept_id": "9931f18b-cd46-48d4-afd5-ba398b295545"
+    },
+    {
+      "question_id": "a29b05a2-fbfc-4cbc-8102-495d44d89d8a",
+      "concept_id": "034d8007-2d33-4c2a-9e04-78b8b712e383"
+    },
+    {
+      "question_id": "6e3b3d55-d48e-424e-bdbe-443bf5d99195",
+      "concept_id": "e2b10471-5b13-4970-bd10-88b01c231311"
+    }
+  ],
+  "misfiled": [
+    {
+      "question_id": "93eaecc2-bc37-4cdf-b713-6fa7289c9afa",
+      "belongs_to": "biology / Respiration in Plants",
+      "note": "Fermentation vs aerobic respiration ATP yield."
+    },
+    {
+      "question_id": "a3718aa9-6d08-41d0-8462-59ec341884c8",
+      "belongs_to": "biology / Reproductive Health",
+      "note": "Periodic abstinence / rhythm method of contraception."
+    },
+    {
+      "question_id": "a9abc7b9-1d73-4607-8292-7fe2c7eaf524",
+      "belongs_to": "biology / Breathing and Exchange of Gases",
+      "note": "O2 delivered per 100 mL oxygenated blood."
+    },
+    {
+      "question_id": "ae734f28-e84e-41e1-be81-181ba6b20387",
+      "belongs_to": "biology / Molecular Basis of Inheritance",
+      "note": "Applications of DNA fingerprinting."
+    },
+    {
+      "question_id": "b2aac6f8-cbe4-45fe-9a87-f7d6faed6fcb",
+      "belongs_to": "biology / Molecular Basis of Inheritance",
+      "note": "Degeneracy of the genetic code."
+    },
+    {
+      "question_id": "bd91cb29-9645-408f-ad2c-cc5af45f4ca2",
+      "belongs_to": "biology / Biotechnology: Principles and Processes",
+      "note": "Beta-galactosidase reporter / X-gal insertional inactivation."
+    },
+    {
+      "question_id": "f275e70a-d1d2-4ee0-bc9e-993e7f4fc259",
+      "belongs_to": "biology / Microbes in Human Welfare",
+      "note": "Sewage treatment: primary vs secondary settling tanks."
+    },
+    {
+      "question_id": "0625cce5-9236-4141-9d8d-cf15fc80318e",
+      "belongs_to": "biology / Microbes in Human Welfare",
+      "note": "Activated sludge as inoculum in aeration tank."
+    },
+    {
+      "question_id": "1b377dfe-26b3-4e37-8946-678338669c1a",
+      "belongs_to": "biology / Human Health and Disease",
+      "note": "Innate (non-specific) vs cell-mediated defence."
+    },
+    {
+      "question_id": "1f67630b-ce33-49ef-8d2c-117e1c779c7c",
+      "belongs_to": "biology / Molecular Basis of Inheritance",
+      "note": "Genome sizes of phiX174, lambda, E. coli, human."
+    },
+    {
+      "question_id": "29329c06-8679-484b-a085-cdc585611d41",
+      "belongs_to": "biology / Biotechnology and Its Applications",
+      "note": "Safety of rDNA-derived therapeutic proteins."
+    },
+    {
+      "question_id": "4f2c336b-b8c6-4077-ba0f-26e4463fc869",
+      "belongs_to": "biology / Biotechnology and Its Applications",
+      "note": "RNA interference and pest-resistant plants."
+    },
+    {
+      "question_id": "5c4b6593-b4c9-428b-b5df-466a0daaa455",
+      "belongs_to": "biology / Molecular Basis of Inheritance",
+      "note": "23S rRNA, topoisomerase, RNA polymerase, snRNPs."
+    },
+    {
+      "question_id": "5db38d05-a9ef-40ea-bcd2-db3937c5e9a2",
+      "belongs_to": "biology / Molecular Basis of Inheritance",
+      "note": "Near-universality of the genetic code."
+    },
+    {
+      "question_id": "711ac2f0-9353-4eca-bd63-b6b98d1684b0",
+      "belongs_to": "biology / Biotechnology and Its Applications",
+      "note": "RNAi tobacco resistant to Meloidogyne incognita."
+    },
+    {
+      "question_id": "94036d06-88c9-4a61-80d0-5aab42d02ec7",
+      "belongs_to": "biology / Human Health and Disease",
+      "note": "Tetanus antitoxin / passive immunity."
+    },
+    {
+      "question_id": "a0693ac3-ddb3-4f42-8f77-10d26e29aba3",
+      "belongs_to": "biology / Biotechnology: Principles and Processes",
+      "note": "PCR primers are oligonucleotides."
+    },
+    {
+      "question_id": "a22ccf44-8852-42d7-b305-26a0d83aaefe",
+      "belongs_to": "biology / Biotechnology: Principles and Processes",
+      "note": "Bioreactor design and function."
+    },
+    {
+      "question_id": "af6550b8-1c04-46b2-914c-68c61d083ec2",
+      "belongs_to": "biology / Human Health and Disease",
+      "note": "Pneumonia vs typhoid pathology."
+    },
+    {
+      "question_id": "b69b6443-0c39-46ff-a317-1c44fca93f9d",
+      "belongs_to": "biology / Human Health and Disease",
+      "note": "Interferons in innate immunity."
+    },
+    {
+      "question_id": "ba277900-f84b-4f52-a9e7-e5f9b6fe4e29",
+      "belongs_to": "biology / Biotechnology: Principles and Processes",
+      "note": "DNA isolation: protease, cellulase, chilled ethanol, EtBr."
+    },
+    {
+      "question_id": "d305af89-7f92-4c81-a012-8a973d530020",
+      "belongs_to": "biology / Human Health and Disease",
+      "note": "Carcinogens, oncogenic viruses, proto-oncogenes."
+    },
+    {
+      "question_id": "d32d5185-d957-4bf2-8a5c-91f430876112",
+      "belongs_to": "biology / Biotechnology and Its Applications",
+      "note": "Bt protoxin activation in insect gut."
+    },
+    {
+      "question_id": "d38bd9a6-f1d7-4d5d-8fbc-42b519717c95",
+      "belongs_to": "biology / Biotechnology: Principles and Processes",
+      "note": "Gel electrophoresis separates DNA fragments."
+    },
+    {
+      "question_id": "d928c610-20a6-42e4-9f2f-14c94f98612b",
+      "belongs_to": "biology / Molecular Basis of Inheritance",
+      "note": "Minimum codon size for 12 amino acids."
+    },
+    {
+      "question_id": "e8a39099-5157-4884-8810-15cfaf37ceb3",
+      "belongs_to": "biology / Microbes in Human Welfare",
+      "note": "Benefits of mycorrhiza (biofertiliser)."
+    },
+    {
+      "question_id": "ee92deeb-e99b-4014-a214-d7d8cbf6c6f7",
+      "belongs_to": "biology / Biotechnology: Principles and Processes",
+      "note": "Origin of replication, plasmid copy number, vectors."
+    },
+    {
+      "question_id": "f5b299f7-f0b7-40fd-95d1-916ee4806268",
+      "belongs_to": "biology / Human Health and Disease",
+      "note": "HIV asymptomatic phase and helper T-cell depletion."
+    },
+    {
+      "question_id": "1a49ded9-79dc-4a83-829d-2b0cd1c5db34",
+      "belongs_to": "biology / Respiration in Plants",
+      "note": "Products of the Krebs cycle (stem truncated; options are TCA outputs)."
+    },
+    {
+      "question_id": "cff049e5-bd9b-450d-9280-12c9648a1ac6",
+      "belongs_to": "biology / Biodiversity and Conservation",
+      "note": "Percentage of marketed drugs derived from plants."
+    },
+    {
+      "question_id": "bfe96cd4-90ec-4db5-a310-35dfe0616f23",
+      "belongs_to": "biology / Biotechnology and Its Applications",
+      "note": "PCR/ELISA for early disease diagnosis."
+    },
+    {
+      "question_id": "2971c9f2-9016-42c7-80d3-c63f0dffccbe",
+      "belongs_to": "biology / Biotechnology: Principles and Processes",
+      "note": "Restriction endonucleases occur in bacteria."
+    },
+    {
+      "question_id": "26d35f5a-5ff3-4adc-a83f-acc3c8900cb3",
+      "belongs_to": "biology / Molecular Basis of Inheritance",
+      "note": "Codon coding for serine."
+    },
+    {
+      "question_id": "6b82f177-3509-4890-a55d-22ceee47cd73",
+      "belongs_to": "biology / Biotechnology and Its Applications",
+      "note": "Benefits of genetically modified crops."
+    },
+    {
+      "question_id": "b380c055-17cd-43cc-a312-27099d2c454b",
+      "belongs_to": "chemistry / The p-Block Elements (Group 17, Halogens)",
+      "note": "F2/Cl2/I2 behaviour with water; no transition-metal content."
+    },
+    {
+      "question_id": "400549ca-711f-4f73-a25a-45c829407141",
+      "belongs_to": "chemistry / The p-Block Elements (Group 14)",
+      "note": "PbI4 stability, SnF4/PbF4 ionic character, inert pair effect."
+    },
+    {
+      "question_id": "567bc62e-9fc5-4ed7-ab66-19707941e69d",
+      "belongs_to": "chemistry / Coordination Compounds",
+      "note": "Crystal field stability of octahedral d4-d7 strong vs weak field; ruby colour."
+    },
+    {
+      "question_id": "fc1df3a8-ae08-40c1-9ae9-88f6cfa13f43",
+      "belongs_to": "chemistry / The p-Block Elements (Group 16)",
+      "note": "EO2/EO3 oxides, TeO2 vs SO2, ozone lone pairs."
+    },
+    {
+      "question_id": "30c1ef2e-108a-47c3-a60d-90da93289958",
+      "belongs_to": "physics / Thermal Properties of Matter (black-body radiation)",
+      "note": "Colour of a heated iron rod vs temperature (Wien displacement); not chemistry."
+    },
+    {
+      "question_id": "24523524-97bb-4c96-805c-6794d424b745",
+      "belongs_to": "chemistry / Classification of Elements and Periodicity / p-Block",
+      "note": "Electronegativity order, SiBr4/PbF4 hybridisation, ligand pi-bonding."
+    },
+    {
+      "question_id": "b5947688-e7f5-4510-a79e-5738765b1225",
+      "belongs_to": "chemistry / The p-Block Elements (Group 18, Noble Gases)",
+      "note": "Which noble gas shows most oxidation states."
+    },
+    {
+      "question_id": "f397ad15-edf6-46b0-85cd-d487deacc1f1",
+      "belongs_to": "chemistry / The p-Block Elements (Group 15)",
+      "note": "HNO2 disproportionation, N and P covalency, Bi pentahalides."
+    },
+    {
+      "question_id": "1995cfba-b2ee-4790-918f-15449c2bebe0",
+      "belongs_to": "biology / Biological Classification",
+      "note": "Euglena pellicle - Protista, not Animalia."
+    },
+    {
+      "question_id": "c1953bce-c4b4-4731-beff-cb9216981206",
+      "belongs_to": "biology / Biological Classification",
+      "note": "Euglena pellicle - Protista (duplicate of 1995cfba)."
+    },
+    {
+      "question_id": "6cfe9d27-2917-487b-9aba-f9ea5e0b5ef6",
+      "belongs_to": "biology / Biological Classification",
+      "note": "Protozoans as primitive relatives of animals - Protista."
+    },
+    {
+      "question_id": "5dda4461-8633-47d8-9032-caef24f1b565",
+      "belongs_to": "biology / Biological Classification",
+      "note": "Protozoans as primitive relatives of animals (duplicate of 6cfe9d27)."
+    },
+    {
+      "question_id": "bd94789e-2dcd-45ce-96a2-9a22188f39ff",
+      "belongs_to": "biology / Biological Classification",
+      "note": "Amoeboid/flagellated/ciliated/sporozoan protozoan groups."
+    },
+    {
+      "question_id": "2e5fd924-65e8-42d0-b4c2-48f8bc1bc13a",
+      "belongs_to": "biology / The Living World",
+      "note": "Genus/family level of the taxonomic hierarchy (Panthera, Felidae)."
+    },
+    {
+      "question_id": "6b4e3471-c398-4367-aa13-5537004e25b6",
+      "belongs_to": "biology / The Living World",
+      "note": "Two orders sharing a class - taxonomic hierarchy."
+    },
+    {
+      "question_id": "733f40e1-41e3-413d-986f-e58f978abbff",
+      "belongs_to": "biology / The Living World",
+      "note": "Branch of zoology (ichthyology); target chapter also lacks a branches-of-biology concept."
+    },
+    {
+      "question_id": "c79b3d4f-a473-4a84-bd2a-10e799c422e9",
+      "belongs_to": "biology / The Living World",
+      "note": "Branch of zoology (ethology); target chapter also lacks a branches-of-biology concept."
+    },
+    {
+      "question_id": "a6d48195-dd78-4934-a8d4-514500918921",
+      "belongs_to": "biology / Biological Classification",
+      "note": "Bacterial motility by flagella - Kingdom Monera."
+    },
+    {
+      "question_id": "eff06ca0-6461-4afc-b7c2-84506a8e55f9",
+      "belongs_to": "biology / Biological Classification",
+      "note": "Five-kingdom comparison: cell wall + autotrophic nutrition."
+    },
+    {
+      "question_id": "709ad3c9-a85b-4b58-af71-d67d55483a9c",
+      "belongs_to": "chemistry / The p-Block Elements (Group 17) + chromyl chloride test",
+      "note": "Hydrogen halides from salts with conc. H2SO4 and CrO2Cl2 test; no C-X compound involved."
+    },
+    {
+      "question_id": "34d86185-72a8-4f43-beea-20861e91bf97",
+      "belongs_to": "chemistry / Aldehydes, Ketones and Carboxylic Acids (named organic reactions)",
+      "note": "Cannizzaro, Friedel-Crafts, Clemmensen, Reimer-Tiemann - none is a haloalkane reaction."
+    },
+    {
+      "question_id": "361fecf2-9217-4e56-bb1a-a8995d53a43a",
+      "belongs_to": "chemistry / The p-Block Elements (Group 17, Halogens)",
+      "note": "KCl/KBr/KI with conc. H2SO4 - inorganic halide oxidation."
+    },
+    {
+      "question_id": "7ab66c3a-acee-416f-b481-2272cc1b102c",
+      "belongs_to": "biology / Strategies for Enhancement in Food Production (Tissue Culture)",
+      "note": "Explant, autoclave, sucrose, plantlets - micropropagation."
+    },
+    {
+      "question_id": "7b689927-eda5-4419-be74-c8da1efec653",
+      "belongs_to": "biology / Strategies for Enhancement in Food Production (Tissue Culture)",
+      "note": "Totipotency, somaclones, somatic hybridisation."
+    },
+    {
+      "question_id": "8e0be679-8cfb-482e-9221-bf9f427609c8",
+      "belongs_to": "biology / Strategies for Enhancement in Food Production (Tissue Culture)",
+      "note": "Pomato produced by somatic hybridisation."
+    },
+    {
+      "question_id": "04ac02a2-1803-4eee-a472-18153b56cac4",
+      "belongs_to": "physics / Electromagnetic Induction",
+      "note": "Magnet falling through copper vs PVC pipe - eddy currents."
+    },
+    {
+      "question_id": "28cb164c-2bee-4297-bbac-1a8446c5ec1d",
+      "belongs_to": "physics / Electromagnetic Induction",
+      "note": "Rotating planar loop, instants of max/min induced emf."
+    },
+    {
+      "question_id": "8e6005a9-b5c3-4394-a714-768205a69d58",
+      "belongs_to": "physics / Current Electricity",
+      "note": "Internal resistance of a cell from emf and terminal p.d."
+    },
+    {
+      "question_id": "d5c4a952-e073-47a4-9ca3-38b8eb1c79e4",
+      "belongs_to": "physics / Electric Charges and Fields",
+      "note": "Projectile motion of an electron in a uniform field between plates."
+    },
+    {
+      "question_id": "035a6cb9-e510-4a16-951a-ab9d29dcea29",
+      "belongs_to": "chemistry / Coordination Compounds",
+      "note": "Electrons donated by ligands to Pd2+ in [PdCl4]2- (EAN)."
+    },
+    {
+      "question_id": "5fedb908-e1e9-4c12-bafe-7a98d04c0062",
+      "belongs_to": "biology / Biodiversity and Conservation",
+      "note": "Tilman's long-term plot experiments on diversity and biomass stability."
+    },
+    {
+      "question_id": "dd6ae8c3-4ecd-499c-9202-4c343aebf01b",
+      "belongs_to": "biology / Biodiversity and Conservation",
+      "note": "Definition of a keystone species; alternatively could justify a new Ecosystem concept."
+    },
+    {
+      "question_id": "39262c7c-40e1-4b7c-9334-d4576f7a790c",
+      "belongs_to": "chemistry / Organic Chemistry: Some Basic Principles and Techniques",
+      "note": "Paper chromatography, Lassaigne's test, Kjeldahl method - purification/analysis, not amines."
+    },
+    {
+      "question_id": "4adc94ba-d32b-461f-9195-4f455a335d24",
+      "belongs_to": "physics / Motion in a Plane (Scalars and Vectors)",
+      "note": "Identifying a vector quantity; Units & Measurements has no scalar/vector concept."
+    },
+    {
+      "question_id": "dcd285fd-b198-4f8c-8dbc-df2cb7a03264",
+      "belongs_to": "chemistry / Organic Chemistry: Some Basic Principles and Techniques",
+      "note": "Separation of chloroform and aniline by distillation - purification technique."
+    },
+    {
+      "question_id": "bbdc7849-ba31-40bf-a64d-7fdf8e951321",
+      "belongs_to": "chemistry / Electrochemistry",
+      "note": "Nernst-equation ordering of Cu2+/Cu electrode potentials with concentration."
+    }
+  ],
+  "taxonomy_gap": [
+    {
+      "question_id": "657875c2-c3f7-47ae-a909-ab0d5a71713e",
+      "chapter": "The Living World",
+      "needed_concept": "Modes of life / habit adaptations (arboreal, fossorial, nocturnal, diurnal)"
+    },
+    {
+      "question_id": "6eb90663-f8f6-419c-ac3b-7aa6b9250ba8",
+      "chapter": "The Living World",
+      "needed_concept": "Modes of life / habit adaptations (arboreal, fossorial, nocturnal, diurnal)"
+    },
+    {
+      "question_id": "8a0bf553-8069-40d7-a409-ff5a3c0f4c3e",
+      "chapter": "The Living World",
+      "needed_concept": "Modes of life / habit adaptations (arboreal, fossorial, nocturnal, diurnal)"
+    },
+    {
+      "question_id": "96d80047-5898-4a21-812e-75d1025f3b89",
+      "chapter": "The Living World",
+      "needed_concept": "Modes of life / habit adaptations (arboreal, fossorial, nocturnal, diurnal)"
+    },
+    {
+      "question_id": "e8e9ea3e-fb30-4469-8227-b9319e599826",
+      "chapter": "The Living World",
+      "needed_concept": "Modes of life / habit adaptations (arboreal, fossorial, nocturnal, diurnal)"
+    },
+    {
+      "question_id": "94a918fe-cc50-45f4-a791-34d6ce5498ee",
+      "chapter": "The Living World",
+      "needed_concept": "Branches of biology/zoology (morphology, ecology, ethology, genetics)"
+    },
+    {
+      "question_id": "97f3ed81-0363-407a-a28b-2ac8f7a9f0b1",
+      "chapter": "The Living World",
+      "needed_concept": "Branches of biology/zoology (entomology, ichthyology, ornithology vs physiology)"
+    },
+    {
+      "question_id": "ac4b52b1-6245-434b-83a5-cb942493c49d",
+      "chapter": "The Living World",
+      "needed_concept": "Branches of biology/zoology (ornithology, herpetology)"
+    },
+    {
+      "question_id": "bc320244-6a84-4d41-a7ed-22e1bca01b18",
+      "chapter": "The Living World",
+      "needed_concept": "Scope of biology: classical vs modern (molecular) biology"
+    },
+    {
+      "question_id": "0361ea47-e695-4d6c-ae96-3d87c483fcaf",
+      "chapter": "Coordination Compounds",
+      "needed_concept": "Inorganic qualitative analysis: confirmatory tests (brown ring, chromyl chloride, gas tests)"
+    },
+    {
+      "question_id": "f97bde29-36db-4763-8fee-f016716d3f5e",
+      "chapter": "Coordination Compounds",
+      "needed_concept": "Inorganic qualitative analysis: confirmatory tests via complex formation / precipitates"
+    },
+    {
+      "question_id": "74a1930c-7578-4d41-a669-a9ad9c8946fe",
+      "chapter": "Dual Nature of Radiation and Matter",
+      "needed_concept": "Specific charge (e/m) of fundamental particles and Thomson's e/m experiment"
+    }
+  ],
+  "no_content": [
+    {
+      "question_id": "9a963b39-8630-446e-872a-889048bf8596",
+      "reason": "Stem is a bare trigonometric ratio (sin30/sin60) and the options are plain numbers; no physics context survives, so no Ray Optics concept can be identified. Likely a truncated fragment of a Snell's-law problem."
+    }
+  ]
+}
