@@ -1,0 +1,3483 @@
+[
+ {
+  "chapter_id": "ad7f3197-f77b-5be6-8581-f5372ffb7797",
+  "concepts": [
+   {
+    "name": "General, Middle and Independent Terms",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "General, Middle and Independent Terms"
+    ],
+    "question_tag_aliases": [
+     "General"
+    ]
+   },
+   {
+    "name": "Binomial Coefficient Identities and Summation of Series",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Properties of Binomial Coefficients and Summation of Series"
+    ],
+    "question_tag_aliases": [
+     "Combinatorial Sums",
+     "Series and Sequences",
+     "Combinatorics"
+    ]
+   },
+   {
+    "name": "Binomial Expansion and Pascal's Triangle",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Binomial Expansion and Pascal's Triangle",
+     "Chapter Review"
+    ],
+    "question_tag_aliases": [
+     "Binomial Expansion",
+     "Algebra"
+    ]
+   },
+   {
+    "name": "Divisibility, Remainders and Last Digits",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Applications: Divisibility, Remainders, Last Digits and Integral/Fractional Parts"
+    ],
+    "question_tag_aliases": [
+     "Number Theory",
+     "Arithmetic"
+    ]
+   },
+   {
+    "name": "Greatest Term and Greatest Binomial Coefficient",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Greatest Term and Greatest Binomial Coefficient"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Binomial Theorem for Any Index and Approximations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Binomial Theorem for Any Index and Approximations"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Coefficient of a Term in a Product of Expansions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Differentiation and Integration of Binomial Series",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Multinomial Theorem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "The Multinomial Theorem"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Integral and Fractional Parts of Irrational Binomials",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "ea46f354-2c41-542e-bf5c-e990c56d2a1d",
+  "concepts": [
+   {
+    "name": "Modulus and Conjugate: Properties and Manipulation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "The Modulus and the Conjugate of a Complex Number"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Algebra of Complex Numbers and Powers of i",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Algebra of Complex Numbers"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Complex Numbers",
+     "Complex numbers",
+     "Algebra",
+     "Algebra of Complex Numbers",
+     "Complex Functions"
+    ]
+   },
+   {
+    "name": "Argument and Polar Form in the Argand Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "The Argand Plane and Polar Representation"
+    ],
+    "question_tag_aliases": [
+     "Argand Plane and Polar Representation"
+    ]
+   },
+   {
+    "name": "Cube Roots and nth Roots of Unity",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Roots of Unity",
+     "Roots of Unity & Polynomial Divisibility",
+     "Polynomials",
+     "Polynomial Functions"
+    ]
+   },
+   {
+    "name": "Loci and Regions in the Argand Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Geometry of Complex Numbers (Argand Geometry & Loci)"
+    ],
+    "question_tag_aliases": [
+     "Complex Geometry"
+    ]
+   },
+   {
+    "name": "De Moivre's Theorem and Euler Form",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Euler Form, De Moivre's Theorem & Roots of a Complex Number"
+    ],
+    "question_tag_aliases": [
+     "Exponential Equations",
+     "Trigonometric Equations",
+     "Integral values"
+    ]
+   },
+   {
+    "name": "Quadratic and Polynomial Equations with Complex Roots",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Quadratic Equations with Complex Roots"
+    ],
+    "question_tag_aliases": [
+     "Quadratic Equations",
+     "Quadratic equations",
+     "Polynomial Equations"
+    ]
+   },
+   {
+    "name": "Triangle Inequality and Extreme Values of Modulus",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Inequalities"
+    ]
+   },
+   {
+    "name": "Rotation Theorem and Triangle Geometry in the Argand Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Square Root of a Complex Number",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Summation of Trigonometric Series using Complex Numbers",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "ce3b1755-7eb0-5e16-9849-e752cca5f723",
+  "concepts": [
+   {
+    "name": "The Circle: Standard and General Equations, Centre and Radius",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "The Circle"
+    ],
+    "question_tag_aliases": [
+     "Circles",
+     "Circle Geometry",
+     "Geometry of Circles"
+    ]
+   },
+   {
+    "name": "The Parabola: Standard Forms, Focus, Directrix and Latus Rectum",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "The Parabola"
+    ],
+    "question_tag_aliases": [
+     "Parabola",
+     "Parabolas"
+    ]
+   },
+   {
+    "name": "The Ellipse: Standard Equation, Foci and Eccentricity",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "The Ellipse"
+    ],
+    "question_tag_aliases": [
+     "Ellipse"
+    ]
+   },
+   {
+    "name": "The Hyperbola: Standard Equation, Foci and Eccentricity",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "The Hyperbola"
+    ],
+    "question_tag_aliases": [
+     "Hyperbola"
+    ]
+   },
+   {
+    "name": "Tangents, Normals and Chord of Contact for a Circle",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Tangents, Normals and Chords of a Parabola",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Tangents to Parabolas"
+    ]
+   },
+   {
+    "name": "Tangents, Normals and Chords of an Ellipse",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Tangents, Normals and Chords of a Hyperbola",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Asymptotes, Conjugate and Rectangular Hyperbola",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Family of Circles, Radical Axis and Orthogonal Circles",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Concyclic Points"
+    ]
+   },
+   {
+    "name": "Focus-Directrix Definition and Identification of a Conic",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "The Conic Family"
+    ],
+    "question_tag_aliases": [
+     "Conic Sections",
+     "General",
+     "Analytic Geometry",
+     "Geometry"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "f516713d-c4ae-43ee-a7b3-91b68e709cbf",
+  "concepts": [
+   {
+    "name": "Distance Formula in Three Dimensions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Distance and Section Formulas in 3D"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Section Formula: Internal and External Division",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Coordinate Axes, Planes and Octants",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Coordinate Axes, Planes, and Octants"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Midpoint and Centroid of Triangles and Tetrahedra",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Applications: Centroid, Collinearity & Locus"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Collinearity of Three Points in Space",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Classifying Triangles and Quadrilaterals from Given Vertices",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Distance of a Point from the Coordinate Axes and Planes",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Locus of a Point in Space",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Image and Foot of Perpendicular on the Coordinate Planes",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "b5fa886e-012b-5425-9399-a8249254a151",
+  "concepts": [
+   {
+    "name": "Evaluating Limits by Factorisation and Rationalisation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Limits: Concepts & Algebra"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Standard Trigonometric, Exponential and Logarithmic Limits",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Standard Limits"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Limits at Infinity and Limits of Rational Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Limits at Infinity & Special Cases of Existence"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Derivative from First Principles",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Derivatives and First Principle"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Product and Quotient Rules of Differentiation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Rules of Differentiation"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Indeterminate Form 1^infinity and Exponential Limits",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Left-Hand, Right-Hand Limits and Existence of a Limit",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Limits of Greatest Integer and Modulus Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Derivatives of Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Derivative as Slope of a Tangent and Rate of Change",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Sandwich Theorem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "7bc767a8-c36f-5f5c-93f5-fb8337ffd7f5",
+  "concepts": [
+   {
+    "name": "Solving Linear Inequalities in One Variable",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Linear Inequalities in One Variable",
+     "Chapter cheat sheet"
+    ],
+    "question_tag_aliases": [
+     "Linear Inequalities in One Variable",
+     "General"
+    ]
+   },
+   {
+    "name": "Graphical Solution of Linear Inequalities in Two Variables",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Linear Inequalities in Two Variables"
+    ],
+    "question_tag_aliases": [
+     "Linear Inequalities in Two Variables"
+    ]
+   },
+   {
+    "name": "Systems of Linear Inequalities and Feasible Regions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Polynomial and Rational Inequalities by the Wavy Curve Method",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Non-Linear Inequalities: The Wavy-Curve Method"
+    ],
+    "question_tag_aliases": [
+     "Inequalities"
+    ]
+   },
+   {
+    "name": "Inequalities Involving Modulus",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Word Problems on Linear Inequalities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Applications & Word Problems of Linear Inequalities"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Integral Solutions of Inequalities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Integer Equations"
+    ]
+   },
+   {
+    "name": "Exponential and Logarithmic Inequalities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Inequalities with Irrational (Square Root) Expressions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "e8c7f4cb-b1a3-5c5e-99d7-4341c4618bb8",
+  "concepts": [
+   {
+    "name": "Combinations and Selections",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Combinations"
+    ],
+    "question_tag_aliases": [
+     "Combinations",
+     "Combination",
+     "Combinatorics",
+     "Probability"
+    ]
+   },
+   {
+    "name": "Permutations of Distinct Objects",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Permutations"
+    ],
+    "question_tag_aliases": [
+     "Permutations",
+     "Permutation",
+     "Arrangements"
+    ]
+   },
+   {
+    "name": "Fundamental Principle of Counting",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Fundamental Principle of Counting & Factorial",
+     "Chapter Formula Recap",
+     "Chapter Cheat Sheet"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Counting",
+     "Fundamental Principle of Counting and Factorial"
+    ]
+   },
+   {
+    "name": "Arrangements with Restrictions and the Gap Method",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Permutations with Repetition and Identical Objects",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Division into Groups and Distribution of Identical Objects",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Total Selections, Grouping & Distribution (Stars and Bars)"
+    ],
+    "question_tag_aliases": [
+     "Subsets"
+    ]
+   },
+   {
+    "name": "Circular Permutations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Geometrical Counting: Lines, Triangles and Diagonals",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Geometry",
+     "Graph Theory"
+    ]
+   },
+   {
+    "name": "Counting Divisors and Number-Theoretic Selections",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Number Theory"
+    ]
+   },
+   {
+    "name": "Inclusion-Exclusion Principle and Derangements",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Counting Applications & Advanced Tools"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Counting Functions and Mappings Between Finite Sets",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Functions",
+     "Functional Equations",
+     "Calculus"
+    ]
+   },
+   {
+    "name": "Factorial Notation and Its Properties",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Factorial"
+    ]
+   },
+   {
+    "name": "Sum of Numbers Formed by Given Digits",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Geometric Progression",
+     "Series"
+    ]
+   },
+   {
+    "name": "Rank of a Word in Dictionary Order",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 14,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "35830227-5b8e-5d97-a032-a5f775c28b07",
+  "concepts": [
+   {
+    "name": "Combinatorial Probability with Dice, Coins, Cards and Selections",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Computing Probabilities: Combinatorial Methods, Multi-Event Addition and Odds"
+    ],
+    "question_tag_aliases": [
+     "Probability",
+     "Combinatorics",
+     "Probability with Dice & Discriminant",
+     "Polynomials"
+    ]
+   },
+   {
+    "name": "Axiomatic Probability and Its Properties",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Probability of Events and the Axiomatic Approach"
+    ],
+    "question_tag_aliases": [
+     "Probability of Events and Axiomatic Approach",
+     "General"
+    ]
+   },
+   {
+    "name": "Addition Theorem for the Union of Events",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Conditional Probability, Independence and Bayes' Theorem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Conditional Probability & Independence",
+     "Bayes' Theorem"
+    ]
+   },
+   {
+    "name": "Random Experiments, Sample Space and Events",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Sample Space and Events"
+    ],
+    "question_tag_aliases": [
+     "Sample Space and Events"
+    ]
+   },
+   {
+    "name": "Complementary Events and At Least One Problems",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Mutually Exclusive and Exhaustive Events",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Random Variables, Probability Distributions and Expectation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Random Variables & Distributions",
+     "Probability Distributions",
+     "Statistics"
+    ]
+   },
+   {
+    "name": "Odds in Favour and Odds Against",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "e38cf062-e572-52f4-9099-eaf6ee0f7b27",
+  "concepts": [
+   {
+    "name": "Domain and Range of Real Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Functions"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Functions",
+     "Functions and Mappings",
+     "Polynomial Functions",
+     "Logarithmic Functions",
+     "Limits and Continuity"
+    ]
+   },
+   {
+    "name": "Types of Functions: One-One, Onto and Bijective",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Types of Functions"
+    ]
+   },
+   {
+    "name": "Types of Relations: Reflexive, Symmetric and Transitive",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Types of Relations"
+    ]
+   },
+   {
+    "name": "Composition and Inverse of Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Function Composition",
+     "Composition and Inverse of Functions"
+    ]
+   },
+   {
+    "name": "Relations: Definition, Domain, Range and Representation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Relations"
+    ],
+    "question_tag_aliases": [
+     "Relations"
+    ]
+   },
+   {
+    "name": "Cartesian Product of Sets and Ordered Pairs",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Cartesian Product of Sets"
+    ],
+    "question_tag_aliases": [
+     "Cartesian Product of Sets",
+     "Set Theory"
+    ]
+   },
+   {
+    "name": "Standard Real Functions and Their Graphs",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Trigonometric Functions",
+     "Functions and Areas"
+    ]
+   },
+   {
+    "name": "Even and Odd Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Periodic Functions and Their Periods",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Algebra of Real Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Functional Equations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Functional Equations",
+     "Sequences and Series"
+    ]
+   },
+   {
+    "name": "Number of Relations and Functions Between Finite Sets",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "7936f031-5b80-5350-ad08-bc78bef84e12",
+  "concepts": [
+   {
+    "name": "Arithmetic Progression: nth Term and Sum of n Terms",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "AP - Concept",
+     "AP - Core Formulas",
+     "AP - Derivations",
+     "AP Worked Examples",
+     "AP",
+     "AP - Technique"
+    ],
+    "question_tag_aliases": [
+     "Arithmetic Progression",
+     "Quadratic Equations"
+    ]
+   },
+   {
+    "name": "Geometric Progression: nth Term, Sum and Infinite GP",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "GP - Concept",
+     "GP - Derivations",
+     "GP Worked Examples",
+     "GP - Technique",
+     "GP - Core Formulas",
+     "GP"
+    ],
+    "question_tag_aliases": [
+     "Geometric Progression"
+    ]
+   },
+   {
+    "name": "Sum of Special Series: Sigma n, Sigma n^2 and Sigma n^3",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Special Series - Concept",
+     "Special Series Worked Examples",
+     "Special Series - Derivations",
+     "Special Series - Formulas",
+     "Special Series"
+    ],
+    "question_tag_aliases": [
+     "Mathematical Induction"
+    ]
+   },
+   {
+    "name": "AM, GM, HM Relations and the AM-GM Inequality",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "AM-GM-HM - Concept",
+     "AM-GM-HM Worked Examples",
+     "AM-GM-HM",
+     "AM-GM-HM - Derivations",
+     "AM-GM-HM - Formulas"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Arithmetico-Geometric Progression",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "AGP - Derivation",
+     "AGP Worked Examples",
+     "AGP - Formulas",
+     "AGP - Concept",
+     "AGP"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Telescoping Series and the Method of Differences",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Telescoping - Concept",
+     "Telescoping - Formulas",
+     "Telescoping",
+     "Telescoping - Derivations",
+     "Telescoping Worked Examples"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Harmonic Progression and Harmonic Mean",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "HP - Derivations",
+     "HP Worked Examples",
+     "HP - Formulas",
+     "HP - Concept",
+     "HP"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Arithmetic Mean and Insertion of Arithmetic Means",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "AP - Means and Characterization"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Geometric Mean, Insertion of GMs and GP Inequalities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "GP - Means and Inequality"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Sigma Notation and Algebra of Summations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Sigma Notation and Its Algebra",
+     "From Sequence to Series"
+    ],
+    "question_tag_aliases": [
+     "Sequences and Series"
+    ]
+   },
+   {
+    "name": "Sequences: General Term and Recursive Definitions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "What is a Sequence?",
+     "Foundations",
+     "Foundations Worked Examples",
+     "Chapter Close"
+    ],
+    "question_tag_aliases": [
+     "Sequences",
+     "General",
+     "Functions"
+    ]
+   },
+   {
+    "name": "Applications and Word Problems on Progressions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Work and Time",
+     "Geometry",
+     "Combinatorics"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "b4f9bb1a-a366-5e67-ae76-52ffd1dd8a67",
+  "concepts": [
+   {
+    "name": "Set Operations: Union, Intersection and Difference",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Venn Diagrams and Set Operations"
+    ],
+    "question_tag_aliases": [
+     "Venn Diagrams and Set Operations",
+     "Set Theory"
+    ]
+   },
+   {
+    "name": "Cardinality Formulas for Unions of Sets",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Cardinality of Unions and Practical Problems"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Subsets, Power Set and Universal Set",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Subsets, Power Set, and Universal Set"
+    ],
+    "question_tag_aliases": [
+     "Subsets, Power Set, and Universal Set"
+    ]
+   },
+   {
+    "name": "Sets and Their Representations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Sets and their Representations"
+    ],
+    "question_tag_aliases": [
+     "Sets and their Representations",
+     "General"
+    ]
+   },
+   {
+    "name": "Word Problems Using Venn Diagrams",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Complement of a Set and De Morgan's Laws",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Laws of Algebra of Sets and Set Identities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Types of Sets: Empty, Finite, Infinite and Equal Sets",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Intervals as Subsets of the Real Line",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "be419d00-be96-52c5-9704-c4331213c6e9",
+  "concepts": [
+   {
+    "name": "Variance and Standard Deviation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Variance and Standard Deviation",
+     "Whole-Chapter Recap"
+    ],
+    "question_tag_aliases": [
+     "Variance and Standard Deviation",
+     "Statistics",
+     "General"
+    ]
+   },
+   {
+    "name": "Mean Deviation about the Mean and the Median",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Measures of Dispersion and Mean Deviation"
+    ],
+    "question_tag_aliases": [
+     "Measures of Dispersion and Mean Deviation"
+    ]
+   },
+   {
+    "name": "Mean, Median and Mode",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Combined Mean and Combined Variance of Two or More Groups",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Effect of Change of Origin and Scale on Mean and Variance",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Coefficient of Variation and Comparison of Consistency",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Analysis of Frequency Distributions & Advanced Problem Types"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Correcting Mean and Variance for Wrong or Missing Observations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Mean and Variance of the First n Natural Numbers",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Range and Quartile Deviation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "5edf4eb2-af54-5da2-b8fa-bfbb3270e702",
+  "concepts": [
+   {
+    "name": "Equations of a Straight Line in Various Forms",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Equations of a Line"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Coordinate Geometry"
+    ]
+   },
+   {
+    "name": "Distance of a Point from a Line and Between Parallel Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Distance Formulas"
+    ],
+    "question_tag_aliases": [
+     "General Equation and Distance Formulas"
+    ]
+   },
+   {
+    "name": "Slope of a Line and Angle Between Two Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Slope of a Line and Angles"
+    ],
+    "question_tag_aliases": [
+     "Trigonometry"
+    ]
+   },
+   {
+    "name": "Point of Intersection, Concurrency and Family of Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Point of Intersection, Concurrency and Family of Lines"
+    ],
+    "question_tag_aliases": [
+     "Linear Algebra"
+    ]
+   },
+   {
+    "name": "Foot of Perpendicular, Image and Reflection of a Point",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Foot of Perpendicular, Image and Reflection"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Angle Bisectors of Two Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Angle Bisectors of Two Lines"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Distance, Section Formula and Area of a Triangle in the Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Coordinate Foundations",
+     "Chapter Wrap-Up: Straight Lines"
+    ],
+    "question_tag_aliases": [
+     "Geometry"
+    ]
+   },
+   {
+    "name": "Special Points of a Triangle: Centroid, Incentre, Circumcentre and Orthocentre",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Pair of Straight Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Locus and Its Equation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Position of a Point Relative to a Line",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Position of Points w.r.t. a Line"
+    ]
+   },
+   {
+    "name": "Shifting of Origin and Rotation of Axes",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "fab8d5c4-68ad-5772-8888-f5b1cd687633",
+  "concepts": [
+   {
+    "name": "Compound Angle Formulas and Trigonometric Identities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "05 · Trigonometric Identities and Compound Angle Formulas"
+    ],
+    "question_tag_aliases": [
+     "Trigonometric Identities and Compound Angle Formulas",
+     "General"
+    ]
+   },
+   {
+    "name": "Trigonometric Equations: Principal and General Solutions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "06 · Trigonometric Equations and Solutions"
+    ],
+    "question_tag_aliases": [
+     "Trigonometric Equations and Solutions",
+     "Principal Value Branches",
+     "Properties of Inverse Trigonometric Functions"
+    ]
+   },
+   {
+    "name": "Multiple and Sub-Multiple Angle Formulas",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Transformation Formulas: Sum to Product and Product to Sum",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Standard Values, Even-Odd Nature and Allied Angles",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "03 · Standard Values, Even-Odd Nature and Allied Angles"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Trigonometric Functions: Domain, Range and Signs in Quadrants",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "02 · Trigonometric Functions and Quadrant Signs"
+    ],
+    "question_tag_aliases": [
+     "Trigonometric Functions"
+    ]
+   },
+   {
+    "name": "Maximum and Minimum Values of Trigonometric Expressions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Maximization in trigonometric equations"
+    ]
+   },
+   {
+    "name": "Measurement of Angles: Degrees, Radians and Arc Length",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "01 · Angle Measurement and Radians"
+    ],
+    "question_tag_aliases": [
+     "Trigonometry"
+    ]
+   },
+   {
+    "name": "Graphs and Periodicity of Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "04 · Graphs and Periodicity of Trigonometric Functions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Conditional Trigonometric Identities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Summation of Trigonometric Series",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "4aeaa5f2-e183-530c-abca-da24207c63f9",
+  "concepts": [
+   {
+    "name": "Area Between Two Intersecting Curves",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Area between Two Curves"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Area Bounded by a Parabola and a Line",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Area Under a Simple Curve Bounded by the Axes",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Area under Simple Curves",
+     "Chapter Close"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Calculus"
+    ]
+   },
+   {
+    "name": "Area of Regions Involving Modulus and Piecewise-Defined Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Advanced Regions: Modulus, Inequalities & Composite Areas"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Area of Regions Bounded by Circles and Ellipses",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Geometry"
+    ]
+   },
+   {
+    "name": "Area of Regions Described by Inequalities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Area by Integration Along the y-axis",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Area Bounded by a Curve and Its Tangent or Normal",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Areas Involving Greatest Integer and Fractional Part Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Area Between a Function and Its Inverse",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "48503325-cfe9-5bfd-8533-bb6f9cc53251",
+  "concepts": [
+   {
+    "name": "Maxima and Minima Using the Derivative Tests",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Maxima and Minima",
+     "Formula Recap (whole chapter)",
+     "Cheat Sheet (whole chapter)"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Increasing and Decreasing Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Monotonicity — Increasing and Decreasing Functions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Tangents and Normals to a Curve",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Tangents and Normals (JEE-relevant)"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Applied Optimization Problems",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Absolute Maximum and Minimum on a Closed Interval",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Rate of Change and Related Rates",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Rate of Change of Quantities"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Angle of Intersection of Two Curves",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Proving Inequalities Using Monotonicity",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Number of Roots of an Equation Using Derivatives",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Concavity, Inflection Points and Curve Sketching",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Approximations and Errors Using Differentials",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [
+     "Approximations and Differentials (JEE-relevant)"
+    ],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "ec4d9f55-c416-51a4-ae90-2d1b2cb685aa",
+  "concepts": [
+   {
+    "name": "Continuity and Differentiability of Piecewise and Modulus Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Differentiability and Existence of the Derivative",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Continuity at a Point and on an Interval",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Continuity & Differentiability — The Foundations",
+     "Chapter Cheat Sheet"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Chain Rule and Derivatives of Composite Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "The Chain Rule — Derivatives of Composite Functions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Standard Derivatives with the Product and Quotient Rules",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "The Differentiation Toolkit — Standard Derivatives & Rules",
+     "Chapter Formula Recap"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Derivatives of Inverse Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Derivatives of Inverse Trigonometric Functions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Implicit Differentiation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Implicit Differentiation"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Logarithmic Differentiation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Logarithmic & Parametric Differentiation"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Parametric Differentiation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Second and Higher Order Derivatives",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Second-Order Derivatives & the Mean Value Theorems"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Rolle's Theorem and Lagrange's Mean Value Theorem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Differentiation of One Function with Respect to Another",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "ad2fbc00-f463-506b-aad6-b00c8dc4b32f",
+  "concepts": [
+   {
+    "name": "Properties of Determinants and Row-Column Simplification",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Properties of Determinants"
+    ],
+    "question_tag_aliases": [
+     "Properties of Determinants",
+     "Algebra"
+    ]
+   },
+   {
+    "name": "Consistency of Non-Homogeneous Systems",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Systems of Equations"
+    ]
+   },
+   {
+    "name": "Solving Linear Systems by Cramer's Rule and Matrix Inversion",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Linear Algebra",
+     "Linear algebra"
+    ]
+   },
+   {
+    "name": "Evaluation and Expansion of Determinants",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Determinant: Meaning, Definition & Expansion",
+     "Chapter Review"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Determinants",
+     "Matrix Determinants"
+    ]
+   },
+   {
+    "name": "Minors, Cofactors and the Adjoint",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Minors and Cofactors"
+    ],
+    "question_tag_aliases": [
+     "Minors and Cofactors"
+    ]
+   },
+   {
+    "name": "Inverse of a Matrix Using the Adjoint",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Inverse of a Matrix & System of Linear Equations"
+    ],
+    "question_tag_aliases": [
+     "Inverse & System of Equations"
+    ]
+   },
+   {
+    "name": "Homogeneous Systems and Non-Trivial Solutions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Determinants of Powers, Products and Special Matrices",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Matrices",
+     "Matrix Exponentiation"
+    ]
+   },
+   {
+    "name": "Area of a Triangle and Collinearity Using Determinants",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Area of a Triangle, Collinearity & Equation of a Line"
+    ],
+    "question_tag_aliases": [
+     "Geometry"
+    ]
+   },
+   {
+    "name": "Multiplication of Two Determinants",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Advanced Techniques: Multiplication, Differentiation & Special Determinants"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Differentiation of Determinant-Valued Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Limits and Continuity"
+    ]
+   },
+   {
+    "name": "Equation of a Line in Determinant Form",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "dd40f933-c8e5-5bd0-9ff8-c14656eeca8e",
+  "concepts": [
+   {
+    "name": "Variable Separable Differential Equations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Separable & Homogeneous Equations"
+    ],
+    "question_tag_aliases": [
+     "General"
+    ]
+   },
+   {
+    "name": "Linear Differential Equations and the Integrating Factor",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Linear Differential Equations"
+    ],
+    "question_tag_aliases": [
+     "Linear Differential Equations"
+    ]
+   },
+   {
+    "name": "Homogeneous Differential Equations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Separable & Homogeneous Equations"
+    ]
+   },
+   {
+    "name": "Order and Degree of a Differential Equation",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Order, Degree & Solutions"
+    ],
+    "question_tag_aliases": [
+     "Differential Equations"
+    ]
+   },
+   {
+    "name": "Formation of Differential Equations by Eliminating Arbitrary Constants",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Formation of Differential Equations"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "General and Particular Solutions and Their Verification",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Order, Degree, and Solutions"
+    ]
+   },
+   {
+    "name": "Equations Reducible to Variable Separable Form",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Equations Reducible to Homogeneous Form",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Linear Equations in x and Bernoulli-Type Reduction",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Applications: Growth, Decay and Curve Geometry",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Applications of Differential Equations"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Exact Differential Equations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "c663b4f9-59fd-5253-8c06-a1743f126ad9",
+  "concepts": [
+   {
+    "name": "Integration by Substitution",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Integration by Substitution"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Integration by Parts",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Integration by Parts"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Integrals with Quadratic Denominators and Radicals",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Integrals of Special Forms (Quadratic Denominators & Roots)"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Integration by Partial Fractions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Integration by Partial Fractions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Properties of Definite Integrals and Symmetry",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Properties of Definite Integrals: The Symmetry Toolkit"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Integration Using Trigonometric Identities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Integration using Trigonometric Identities"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Indefinite Integrals of Standard Forms",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Foundations of Integration: Indefinite Integrals & Standard Forms",
+     "Chapter Close: Integrals"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Definite Integrals and the Fundamental Theorem of Calculus",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Definite Integrals: Definition, the Fundamental Theorem & Limit of a Sum"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Definite Integration by Substitution",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Evaluation of Definite Integrals by Substitution"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Integration of Rational Functions of sin x and cos x",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Definite Integrals of Modulus, Greatest Integer and Periodic Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Definite Integral as the Limit of a Sum",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Definite Integrals with Variable Limits and Leibniz Rule",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "8dcd67fd-ec13-5797-8dc5-4f91150ba056",
+  "concepts": [
+   {
+    "name": "Principal Values and Principal Value Branches",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Principal Value Branches"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Evaluating Composites of Trigonometric and Inverse Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Graphs, Composite Evaluation & Simplification"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Sum and Difference Formulae for tan Inverse",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Combination Identities (Sums, Differences & Multiple Angles)"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Complementary and Negative-Argument Identities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Self-Map Identities (Reciprocal, Negative-Argument, Complementary)"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Domain and Range of Inverse Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Solving Equations Involving Inverse Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Sum and Difference Formulae for sin Inverse and cos Inverse",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Multiple-Angle Formulae and Their Validity Conditions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Summation of Inverse Trigonometric Series",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Substitution Techniques for Simplifying Inverse Trigonometric Expressions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Reciprocal Relations Between Inverse Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Graphs of Inverse Trigonometric Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "f6a91395-aa95-5203-a5c0-b0cec8191539",
+  "concepts": [
+   {
+    "name": "Corner Point Method for Optimal Solutions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Formulation & Graphical Solution"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Graphing Constraints and the Feasible Region",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Graphical Solutions & Feasible Regions"
+    ]
+   },
+   {
+    "name": "Mathematical Formulation of a Linear Programming Problem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Mathematical Formulation & LPP Applications",
+     "Chapter 12 — Complete Master Reference"
+    ],
+    "question_tag_aliases": [
+     "Mathematical Formulation & LPP Applications"
+    ]
+   },
+   {
+    "name": "Bounded and Unbounded Feasible Regions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Multiple Optimal Solutions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Special Cases of LPP Solutions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Manufacturing and Diet Allocation Problems",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Infeasible Problems and Empty Feasible Regions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Transportation and Blending Problems",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "7ac5ff35-3931-5f69-b2b2-c0c055a92aa8",
+  "concepts": [
+   {
+    "name": "Matrix Multiplication and Its Properties",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Chapter Synthesis"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Matrix Operations",
+     "Matrix Algebra"
+    ]
+   },
+   {
+    "name": "Symmetric and Skew-Symmetric Matrices",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Symmetric & Skew-Symmetric Matrices"
+    ],
+    "question_tag_aliases": [
+     "Symmetric & Skew-Symmetric Matrices"
+    ]
+   },
+   {
+    "name": "Order, Types and Representation of Matrices",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Foundations & Representation"
+    ],
+    "question_tag_aliases": [
+     "Matrices",
+     "Statistics"
+    ]
+   },
+   {
+    "name": "Addition, Subtraction, Scalar Multiplication and Equality of Matrices",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Matrix Algebra & Operations"
+    ],
+    "question_tag_aliases": [
+     "Matrix Algebra & Operations",
+     "Algebra"
+    ]
+   },
+   {
+    "name": "Transpose of a Matrix and Its Properties",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Powers of a Matrix and Matrix Polynomials",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Eigenvalues and Matrices",
+     "Recursion"
+    ]
+   },
+   {
+    "name": "Invertible Matrices and Uniqueness of the Inverse",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Linear Algebra",
+     "Matrix Invertibility",
+     "Determinants and Matrices"
+    ]
+   },
+   {
+    "name": "Inverse by Elementary Row Operations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Invertible Matrices & Row Operations"
+    ],
+    "question_tag_aliases": [
+     "Invertible Matrices & Row Operations"
+    ]
+   },
+   {
+    "name": "Idempotent, Involutory, Nilpotent and Orthogonal Matrices",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Special Square Matrices & Chapter Synthesis"
+    ],
+    "question_tag_aliases": [
+     "Matrix Theory"
+    ]
+   },
+   {
+    "name": "Solving Matrix Equations for an Unknown Matrix",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Trace of a Matrix",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Counting Matrices with Given Properties",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Counting & Trace of Matrices"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "e0a1f7f1-b810-5176-8dcd-676b98d0bbf3",
+  "concepts": [
+   {
+    "name": "Conditional Probability",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Conditional Probability & Independence",
+     "Master Formula Sheet & Revision Capstone"
+    ],
+    "question_tag_aliases": [
+     "Probability"
+    ]
+   },
+   {
+    "name": "Bayes' Theorem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Bayes' Theorem"
+    ]
+   },
+   {
+    "name": "Total Probability Theorem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Total Probability & Bayes' Theorem"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Independent Events and the Multiplication Theorem",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Conditional Probability & Independence"
+    ]
+   },
+   {
+    "name": "Bernoulli Trials and the Binomial Distribution",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [
+     "Bernoulli Trials & Binomial Distribution"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Mean and Variance of a Random Variable",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Random Variables & Distributions",
+     "Statistics"
+    ]
+   },
+   {
+    "name": "Random Variables and Probability Distributions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [
+     "Random Variables & Distributions"
+    ],
+    "question_tag_aliases": [
+     "Probability Distributions"
+    ]
+   },
+   {
+    "name": "Addition Theorem and Probability of Unions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "General"
+    ]
+   },
+   {
+    "name": "Sample Space, Events and the Axiomatic Approach",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Probability of Events and Axiomatic Approach",
+     "Sample Space and Events"
+    ]
+   },
+   {
+    "name": "Probability Using Permutations and Combinations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Combinatorics"
+    ]
+   },
+   {
+    "name": "Mean and Variance of the Binomial Distribution",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Probability of Events Defined by Equations and Inequalities",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Probability with Dice & Discriminant",
+     "Polynomials"
+    ]
+   }
+  ]
+ },
+ {
+  "chapter_id": "ced56f98-0bb4-5f30-a514-6927db4425ec",
+  "concepts": [
+   {
+    "name": "Types of Relations: Reflexive, Symmetric and Transitive",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Types of Relations"
+    ],
+    "question_tag_aliases": [
+     "Relations",
+     "Types of Relations"
+    ]
+   },
+   {
+    "name": "One-One, Onto and Bijective Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Types of Functions",
+     "Chapter Close"
+    ],
+    "question_tag_aliases": [
+     "General",
+     "Types of Functions"
+    ]
+   },
+   {
+    "name": "Domain and Range of Real Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Domain and Range of Real Functions"
+    ],
+    "question_tag_aliases": [
+     "Functions",
+     "Logarithmic Functions"
+    ]
+   },
+   {
+    "name": "Composition of Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Composition and Inverse of Functions"
+    ],
+    "question_tag_aliases": [
+     "Function Composition"
+    ]
+   },
+   {
+    "name": "Inverse of a Function",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Composition and Inverse of Functions"
+    ]
+   },
+   {
+    "name": "Equivalence Relations and Equivalence Classes",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Set Theory"
+    ]
+   },
+   {
+    "name": "Counting Relations and Functions Between Finite Sets",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Functions and Mappings"
+    ]
+   },
+   {
+    "name": "Even and Odd Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [
+     "Even, Odd, and Periodic Functions"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Standard Real Functions and Their Graphs",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Standard Real Functions and Their Graphs"
+    ],
+    "question_tag_aliases": [
+     "Limits and Continuity",
+     "Polynomial Functions",
+     "Functions and Areas"
+    ]
+   },
+   {
+    "name": "Functional Equations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [
+     "Algebra of Functions and Functional Equations"
+    ],
+    "question_tag_aliases": [
+     "Functional Equations",
+     "Sequences and Series"
+    ]
+   },
+   {
+    "name": "Periodic Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Trigonometric Functions"
+    ]
+   },
+   {
+    "name": "Cartesian Product and Representation of Relations",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": [
+     "Cartesian Product of Sets"
+    ]
+   },
+   {
+    "name": "Algebra of Functions",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "a02626b5-2eac-51f6-b406-22f0df7bd955",
+  "concepts": [
+   {
+    "name": "Equation of a Plane in Various Forms",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Planes in Space — Equations, Family, Angles & Distances",
+     "Chapter Cheat Sheet"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Equation of a Line in Vector and Cartesian Form",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Chapter Formula Recap"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Direction Cosines and Direction Ratios",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Direction Cosines, Direction Ratios & Equations of a Line in Space"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Shortest Distance Between Two Skew Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [
+     "Shortest Distance & Angle Between Two Lines"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Angle Between Two Planes and Between a Line and a Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Foot of Perpendicular and Image of a Point in a Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "The Perpendicular Toolkit — Distances, Feet & Images"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Distance of a Point from a Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Angle Between Two Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Point of Intersection of a Line and a Plane",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [
+     "Line–Plane & Plane–Plane Configurations"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Perpendicular Distance, Foot and Image of a Point with Respect to a Line",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Family of Planes Through the Line of Intersection",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Intersection and Coplanarity of Two Lines",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Coordinates in Space: Distance, Section Formula and Projections",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 13,
+    "subtopic_aliases": [
+     "Foundations of 3D Coordinate Geometry"
+    ],
+    "question_tag_aliases": []
+   }
+  ]
+ },
+ {
+  "chapter_id": "e6db6ba6-3d6e-55fc-af55-34eaa2638788",
+  "concepts": [
+   {
+    "name": "Scalar (Dot) Product and Its Properties",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 1,
+    "subtopic_aliases": [
+     "Product of Two Vectors"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Vector (Cross) Product and Its Properties",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 2,
+    "subtopic_aliases": [
+     "Chapter Review"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Scalar Triple Product and Volume of a Parallelepiped",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 3,
+    "subtopic_aliases": [
+     "Product of Three Vectors & Vector Applications"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Position Vectors, Section Formula and Collinearity",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 4,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Projection of a Vector and Angle Between Two Vectors",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 5,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Types of Vectors and Vector Addition",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 6,
+    "subtopic_aliases": [
+     "Vector Operations & Components"
+    ],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Components, Direction Cosines and Unit Vectors",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 7,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Area of Triangles and Parallelograms Using Cross Product",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 8,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Coplanarity of Vectors Using the Scalar Triple Product",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 9,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Vector Triple Product",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 10,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Linear Dependence and Independence of Vectors",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 11,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   },
+   {
+    "name": "Vector Applications: Work, Moment and Geometric Proofs",
+    "exams": [
+     "jee"
+    ],
+    "display_order": 12,
+    "subtopic_aliases": [],
+    "question_tag_aliases": []
+   }
+  ]
+ }
+]
