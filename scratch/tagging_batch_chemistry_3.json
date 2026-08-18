@@ -1,0 +1,2241 @@
+{
+ "subject": "chemistry",
+ "batch": 3,
+ "chapters": [
+  {
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "48563ea3-d738-4c9b-99e6-11d2752b4cf0",
+     "name": "Structure and Classification of Carbohydrates"
+    },
+    {
+     "concept_id": "224f4a7d-9700-4089-897a-50c5efe5249b",
+     "name": "Amino Acids: Structure, Classification and Zwitterions"
+    },
+    {
+     "concept_id": "51a9953d-c6a0-43a9-952f-a4724b121640",
+     "name": "Peptide Bond and Protein Structure"
+    },
+    {
+     "concept_id": "8c55f0df-e76b-40a0-9c1b-7b7b360a8b56",
+     "name": "Glucose and Fructose: Structure and Reactions"
+    },
+    {
+     "concept_id": "d4893c4a-04a1-4ecc-8f72-a2c08936df22",
+     "name": "Nucleic Acids: DNA and RNA Structure"
+    },
+    {
+     "concept_id": "f26501bc-449b-419d-a7a0-c4f39e61bd3c",
+     "name": "Vitamins: Classification and Deficiency Diseases"
+    },
+    {
+     "concept_id": "8ef827d7-09a1-4225-a68e-7eaa597cd614",
+     "name": "Disaccharides and Glycosidic Linkage"
+    },
+    {
+     "concept_id": "b6e42d6e-07e4-4ea9-8110-d85630efdf47",
+     "name": "Enzymes and Enzyme Catalysis"
+    },
+    {
+     "concept_id": "f606601b-3387-4852-aed4-0a495eb882c3",
+     "name": "Polysaccharides: Starch, Cellulose and Glycogen"
+    },
+    {
+     "concept_id": "8bceea08-f05c-4be9-aa08-2b622c477267",
+     "name": "Anomers, Epimers and Mutarotation"
+    },
+    {
+     "concept_id": "8375293c-3f23-42b7-bea7-da64e23ba454",
+     "name": "Hormones and Their Functions"
+    }
+   ]
+  },
+  {
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "08753ab9-3d9f-4b04-99b4-6105f96dfba0",
+     "name": "First Order Kinetics and Half-Life"
+    },
+    {
+     "concept_id": "e2b10471-5b13-4970-bd10-88b01c231311",
+     "name": "Rate Law, Order and Molecularity"
+    },
+    {
+     "concept_id": "9a432857-3de0-48b0-bba4-f168e5cf2845",
+     "name": "Arrhenius Equation and Temperature Dependence of Rate"
+    },
+    {
+     "concept_id": "ebab2cce-f27e-438d-8b56-5f51d1d02483",
+     "name": "Rate of Reaction and Rate Expressions from Stoichiometry"
+    },
+    {
+     "concept_id": "c6f4a5d7-17af-49eb-a9dc-700edea2019f",
+     "name": "Zero Order Reactions"
+    },
+    {
+     "concept_id": "39f6758f-54a7-42e3-82d0-bce1e44a8ede",
+     "name": "Collision Theory and Activation Energy"
+    },
+    {
+     "concept_id": "94137082-9c7e-48d5-a3f0-e8ce42f98f8b",
+     "name": "Determination of Order from Experimental Data"
+    },
+    {
+     "concept_id": "4a6071eb-47b7-4159-af32-edb01ced2ba6",
+     "name": "Pseudo First Order Reactions"
+    },
+    {
+     "concept_id": "5e187aec-d2b8-4fcd-bf1d-24d1476f6c51",
+     "name": "Reaction Mechanism and Rate-Determining Step"
+    },
+    {
+     "concept_id": "394d8fd5-fa92-4e78-899c-f0dfee492924",
+     "name": "Radioactive Decay Kinetics"
+    },
+    {
+     "concept_id": "d4b79ef7-60ad-4e53-a24c-2bd36cf2b6b2",
+     "name": "Effect of Catalyst on Reaction Rate"
+    }
+   ]
+  },
+  {
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "20e25a1a-73cc-441b-b759-00184ffcd3b8",
+     "name": "Crystal Field Theory and d-Orbital Splitting"
+    },
+    {
+     "concept_id": "70af5d9f-8afd-4b7d-a65f-3d64a4e09335",
+     "name": "Valence Bond Theory and Hybridisation of Complexes"
+    },
+    {
+     "concept_id": "9735d1f0-18ca-4999-806a-af5143f4db55",
+     "name": "Geometrical and Optical Isomerism in Complexes"
+    },
+    {
+     "concept_id": "8164d23f-91cf-4fed-a9ff-b8eb1c3b40e4",
+     "name": "IUPAC Nomenclature of Coordination Compounds"
+    },
+    {
+     "concept_id": "1132a306-6c9f-4365-aa0f-e6e4a3d79c50",
+     "name": "Magnetic Behaviour and Spin-Only Magnetic Moment"
+    },
+    {
+     "concept_id": "338cb295-5dea-41da-b13c-117733dbf3e8",
+     "name": "Structural Isomerism in Coordination Compounds"
+    },
+    {
+     "concept_id": "57105c47-50e9-4871-95c9-06c72e1b5195",
+     "name": "Oxidation State, Coordination Number and EAN"
+    },
+    {
+     "concept_id": "4989ab3f-59a5-43e9-b80e-14ba21f933b3",
+     "name": "Werner's Theory and the Coordination Sphere"
+    },
+    {
+     "concept_id": "f0316186-856b-4bcf-baad-fea0744991db",
+     "name": "Ligands, Denticity and Chelation"
+    },
+    {
+     "concept_id": "984a418e-fb4a-4e7d-abdb-64b07684b9d5",
+     "name": "Colour of Complexes and d-d Transitions"
+    },
+    {
+     "concept_id": "4217b0d9-953d-4763-a774-f43660ead330",
+     "name": "Metal Carbonyls and Synergic Bonding"
+    },
+    {
+     "concept_id": "c9e9bc20-ec60-43aa-b27a-30485da4bb1d",
+     "name": "Stability of Complexes and Stability Constants"
+    },
+    {
+     "concept_id": "acfc8879-09e7-43ed-88a4-3a82148148fe",
+     "name": "Applications of Coordination Compounds"
+    }
+   ]
+  },
+  {
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "5e20927d-5f3e-4f1d-a533-b5fb6b99ced0",
+     "name": "Nernst Equation and Cell Potential Calculations"
+    },
+    {
+     "concept_id": "67899b99-8258-40a2-98ea-fd0f53bb8e60",
+     "name": "Kohlrausch's Law and Limiting Molar Conductivity"
+    },
+    {
+     "concept_id": "d15200c7-3f7b-4220-94a3-f4df2ddb87d6",
+     "name": "Standard Electrode Potential and Feasibility of Redox Reactions"
+    },
+    {
+     "concept_id": "1380ba3e-3ad2-49a0-9b0c-11be512f5463",
+     "name": "EMF, Gibbs Energy and Equilibrium Constant"
+    },
+    {
+     "concept_id": "91c4fd8b-27bd-4716-af38-bf3ab05bf115",
+     "name": "Electrolysis and Faraday's Laws"
+    },
+    {
+     "concept_id": "8d8192c7-0749-44c2-8d7a-b80d85a087a5",
+     "name": "Molar Conductivity and Its Variation with Dilution"
+    },
+    {
+     "concept_id": "48a13e07-957f-4e60-b785-3d4429b9fdfd",
+     "name": "Galvanic Cells and Cell Representation"
+    },
+    {
+     "concept_id": "6e536e4c-00c1-47a0-bb69-d2c0459a1305",
+     "name": "Conductivity, Cell Constant and Conductance Measurement"
+    },
+    {
+     "concept_id": "8bdd0751-a25f-4613-a14a-8210be6e9d92",
+     "name": "Batteries and Fuel Cells"
+    },
+    {
+     "concept_id": "17570db9-4f06-4604-bca2-eee1d099a318",
+     "name": "Concentration Cells"
+    },
+    {
+     "concept_id": "689fc879-7fb7-4eb8-abef-381327286bf8",
+     "name": "Degree of Dissociation of Weak Electrolytes from Conductance"
+    },
+    {
+     "concept_id": "3084be23-0206-44cd-8357-acb7e271bdd0",
+     "name": "Conductometric Titration and Solubility from Conductance"
+    },
+    {
+     "concept_id": "f6a0cce7-e605-429c-a449-2adbc7de713b",
+     "name": "Corrosion and Its Prevention"
+    }
+   ]
+  },
+  {
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "9ab0e11b-daae-47ed-a885-7f045fb022ed",
+     "name": "SN1 and SN2 Mechanisms"
+    },
+    {
+     "concept_id": "a00f8526-510f-425e-bc1d-43d700bf369e",
+     "name": "Reactivity Order of Alkyl and Aryl Halides"
+    },
+    {
+     "concept_id": "4ced1346-6f33-46ef-874c-c4912fb17ee2",
+     "name": "Elimination Reactions and Saytzeff Rule"
+    },
+    {
+     "concept_id": "c3c169fe-4637-4252-ad20-1384ede8ecaa",
+     "name": "Stereochemistry of Nucleophilic Substitution"
+    },
+    {
+     "concept_id": "839e277c-826d-47d3-b875-35d60a989a94",
+     "name": "Preparation of Haloalkanes"
+    },
+    {
+     "concept_id": "64ee9b4d-8527-432a-a894-d3c5e1deab57",
+     "name": "Nucleophilic Substitution in Haloarenes"
+    },
+    {
+     "concept_id": "c01e9c92-e2d9-444f-97ae-5ef08bfca305",
+     "name": "Reactions with Metals: Grignard, Wurtz and Fittig"
+    },
+    {
+     "concept_id": "b4bf963a-4288-4270-bd31-7aff5c0d6deb",
+     "name": "Electrophilic Substitution in Haloarenes"
+    },
+    {
+     "concept_id": "084b3ebc-cccc-422e-b711-013e8044207b",
+     "name": "Polyhalogen Compounds"
+    },
+    {
+     "concept_id": "d8f52adf-6469-4cfc-bf95-374741e710c9",
+     "name": "Preparation of Haloarenes"
+    },
+    {
+     "concept_id": "4007fb98-cc1e-45f3-9326-6f57344cc8ff",
+     "name": "Nomenclature and Classification of Halogen Compounds"
+    },
+    {
+     "concept_id": "0f677eaf-6586-4d6b-a7aa-94acf9b1360e",
+     "name": "Physical Properties of Haloalkanes and Haloarenes"
+    },
+    {
+     "concept_id": "2668bb0c-c456-4612-ac1f-9755311b2f17",
+     "name": "Multi-step Conversions and Reaction Map"
+    }
+   ]
+  },
+  {
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "d296138d-8370-4eb9-88fe-7957793d9589",
+     "name": "Relative Lowering of Vapour Pressure and Raoult's Law"
+    },
+    {
+     "concept_id": "085ea185-694c-4f91-8498-4d487fcd409b",
+     "name": "Van't Hoff Factor, Association and Dissociation"
+    },
+    {
+     "concept_id": "b6f29319-8434-4d77-b089-1c0ca237adff",
+     "name": "Depression of Freezing Point"
+    },
+    {
+     "concept_id": "664d7e3a-f6f2-4b17-ac23-ecad718bb126",
+     "name": "Osmotic Pressure and Osmosis"
+    },
+    {
+     "concept_id": "2670e59f-c617-4468-adc7-aea34b2756ea",
+     "name": "Elevation of Boiling Point"
+    },
+    {
+     "concept_id": "dbb3ef69-dc72-4232-adf8-ff4ff1ec80d9",
+     "name": "Concentration Terms and Their Interconversion"
+    },
+    {
+     "concept_id": "2c7fc3f1-7f54-46da-8328-ad9dc00442e1",
+     "name": "Ideal and Non-ideal Solutions and Azeotropes"
+    },
+    {
+     "concept_id": "4c473474-a37f-4d70-90a5-11f92e3864a8",
+     "name": "Henry's Law and Solubility of Gases"
+    },
+    {
+     "concept_id": "712ec2a1-a50c-4774-b031-92895ab15767",
+     "name": "Vapour Pressure of Binary Liquid Mixtures and Vapour-Phase Composition"
+    },
+    {
+     "concept_id": "5dde6a36-e1a5-4001-8119-6279a1afac8f",
+     "name": "Solubility of Solids in Liquids and Effect of Temperature"
+    },
+    {
+     "concept_id": "ebb5e74a-0336-404a-b995-368c0f4d09ee",
+     "name": "Types of Solutions"
+    },
+    {
+     "concept_id": "8e72bc72-89c8-4dd2-886f-53fcc19f9fd7",
+     "name": "Reverse Osmosis and Water Purification"
+    }
+   ]
+  },
+  {
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "df5e4376-f433-462b-8d52-9084f9417ece",
+     "name": "Electronic Configuration of Transition Elements"
+    },
+    {
+     "concept_id": "043c7ded-597e-44d1-83fb-416093cda438",
+     "name": "Magnetic Moment and Magnetic Behaviour of Transition Ions"
+    },
+    {
+     "concept_id": "2f98b95b-85d6-49f4-876f-def3277c2e91",
+     "name": "Variable Oxidation States and Their Stability"
+    },
+    {
+     "concept_id": "adeefeb2-9ba9-483b-9b0b-9a8d561e526c",
+     "name": "Colour of Transition Metal Ions"
+    },
+    {
+     "concept_id": "5815cb8d-7d3e-4ba5-8793-23de776a796d",
+     "name": "Lanthanoid Contraction and Its Consequences"
+    },
+    {
+     "concept_id": "f8c48a65-7f0b-45ed-8816-67c5fee9fbef",
+     "name": "Potassium Permanganate: Preparation, Structure and Reactions"
+    },
+    {
+     "concept_id": "41d50b94-b91e-46fd-a8f2-e16cc8c8462b",
+     "name": "Standard Electrode Potentials and Redox Behaviour of Transition Metals"
+    },
+    {
+     "concept_id": "838c19a7-8ce1-4200-b539-4dff1bdeb621",
+     "name": "Potassium Dichromate: Preparation, Structure and Reactions"
+    },
+    {
+     "concept_id": "e90cbc2d-9ef6-4e4f-961f-ef81cd4c0691",
+     "name": "Actinoids and Their Comparison with Lanthanoids"
+    },
+    {
+     "concept_id": "b8976c0d-13c1-49e5-8dba-6f8faa1e08e1",
+     "name": "Lanthanoids: Configuration, Oxidation States and Properties"
+    },
+    {
+     "concept_id": "f9bbf346-dcd8-4034-ae80-764363b0635e",
+     "name": "Atomic Radii, Density and Melting Point Trends"
+    },
+    {
+     "concept_id": "fd436efd-44b7-4a3c-9548-df21580833de",
+     "name": "Catalytic Activity, Alloys and Interstitial Compounds"
+    },
+    {
+     "concept_id": "6878fa1e-d4b0-4c07-8fef-57334d080a7c",
+     "name": "Complex Formation and Qualitative Tests for Transition Metal Ions"
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "question_id": "b69b6443-0c39-46ff-a317-1c44fca93f9d",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A child suffers from repeated viral infections despite having normal skin, stomach acid secretion, and phagocytic cells. Further investigation shows that virus-infected cells in the body fail to prevent neighbouring cells from becoming infected. Which component of innate immunity is most likely defective?"
+  },
+  {
+   "question_id": "ba277900-f84b-4f52-a9e7-e5f9b6fe4e29",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the following and choose the correct option.\n\n| List I |  | List II |  |\n| :--- | :--- | :--- | :--- |\n| A. | Protease | I. | Staining the DNA |\n| B. | Chilled ethanol | II. | Hydrolyses plant cell wall |\n| C. | Cellulase | III. | Precipitates the genomic DNA from other degraded components of cell. |\n| D. | Ethidium bromide | IV. | Hydrolyses proteins |"
+  },
+  {
+   "question_id": "d305af89-7f92-4c81-a012-8a973d530020",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements.\nA. Cigarette smoke contains chemical carcinogens that can cause DNA mutations.\nB. Viral infections can initiate neoplastic transformation via viral oncogenes.\nC. Proto-oncogenes in normal lung cells can be activated under certain conditions and cause cancer.\nD. Ionising radiation is the only way to induce cellular transformation by causing DNA damage.\nWhich of the above statements are correct?"
+  },
+  {
+   "question_id": "d32d5185-d957-4bf2-8a5c-91f430876112",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : Toxic insecticidal protein of Bacillus thuringiensis does not kill Bacillus itself.\nReason (R) : In Bacillus Bt toxin proteins exist as inactive protoxins.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "d38bd9a6-f1d7-4d5d-8fbc-42b519717c95",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Gel electrophoresis is useful in"
+  },
+  {
+   "question_id": "d928c610-20a6-42e4-9f2f-14c94f98612b",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If proteins were composed of only 12 different kinds of amino acids, what would be the smallest possible codon size in a genetic system with four different nucleotides?"
+  },
+  {
+   "question_id": "e8a39099-5157-4884-8810-15cfaf37ceb3",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not an advantage of mycorrhiza?"
+  },
+  {
+   "question_id": "ee92deeb-e99b-4014-a214-d7d8cbf6c6f7",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the correct set of statements.\nA. Origin of replication (ori) is the sequence from where replication starts and any piece of DNA when linked to this sequence can be made to replicate within host cells\nB. Plasmids lack their own origin of replication and are entirely dependent on the host chromosomal DNA cycle to divide.\nC. Bacteriophages can have very high copy number of their genomes within bacterial cells\nD. Vectors used at present are engineered to completely prevent the linking of foreign DNA, making the selection of recombinants impossible.\nChoose the correct answer from options "
+  },
+  {
+   "question_id": "efeebc4a-0c8d-48ff-99bb-9e6fe88252a8",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following are the side effects of using anabolic steroids in males?\n    A. Reduction in the size of testicles.\n    B. Increased sperm production.\n    C. Kidney and liver dysfunction.\n    D. Breast enlargement.\n    E. Enlargement of prostate gland."
+  },
+  {
+   "question_id": "f5b299f7-f0b7-40fd-95d1-916ee4806268",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An individual is infected with HIV but does not show symptoms for several years. During this asymptomatic phase, which process is most likely occurring?"
+  },
+  {
+   "question_id": "626dfb7d-ace1-4071-a515-737276d5f408",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Glucose cannot react with"
+  },
+  {
+   "question_id": "7763bea6-91a3-48b3-8d0d-089e49431901",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which amino acid contains sulphur in its structure?"
+  },
+  {
+   "question_id": "1d9fd1a5-1ec2-4670-bea2-2ab98589f3ca",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statement is correct ?"
+  },
+  {
+   "question_id": "68e63e74-9b46-44c4-8ff3-5fa2744c30ab",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "How many of the following reactions are correct ?\n    a) Glucose $\\xrightarrow{\\mathrm{HI} / \\Delta} \\mathrm{n}$ - hexane\n    b) Glucose $\\xrightarrow{\\mathrm{Br}_{2} / \\text { water }}$ Gluconic acid\n    c) Glucose $\\xrightarrow{\\mathrm{HNO}_{3}}$ Saccharic acid\n    d)\nGlucose $\\xrightarrow{\\mathrm{NaHSO}_{3}}$ Glucosesodiumbisulphite"
+  },
+  {
+   "question_id": "29e4b6e9-c650-4ffb-bbfe-171c6776def6",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following amino acid is not a basic amino acid?"
+  },
+  {
+   "question_id": "880c2a34-6253-4245-885b-e81ade9b9118",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not a basic amino acid"
+  },
+  {
+   "question_id": "1a49ded9-79dc-4a83-829d-2b0cd1c5db34",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not a product of"
+  },
+  {
+   "question_id": "cff049e5-bd9b-450d-9280-12c9648a1ac6",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "What percentage of drugs currently sold in the market worldwide are derived from plants?"
+  },
+  {
+   "question_id": "03bd9992-fdb9-431c-9e83-d0bf72a8a927",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Incorrect match among the following related to vitamins and corresponding deficiency diseases is"
+  },
+  {
+   "question_id": "bfe96cd4-90ec-4db5-a310-35dfe0616f23",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "How many of the following techniques serve the purpose of early diagnosis of a disease?\nA. PCR\nB. Recombinant DNA technology\nC. Urine analysis\nD. Serum analysis\nE. ELISA"
+  },
+  {
+   "question_id": "2971c9f2-9016-42c7-80d3-c63f0dffccbe",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Restriction endonucleases are found in"
+  },
+  {
+   "question_id": "26d35f5a-5ff3-4adc-a83f-acc3c8900cb3",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the codon, coding for the amino acid, serine."
+  },
+  {
+   "question_id": "6b82f177-3509-4890-a55d-22ceee47cd73",
+   "chapter_id": "700ce9b5-8bfc-5c4b-bdb9-5a74738c2af4",
+   "chapter": "Biomolecules",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is correct regarding the genetic modification of crops?"
+  },
+  {
+   "question_id": "2603189d-1820-4d5b-8db6-f668e7798e58",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match column I with column II\n\n| Column - I | Column - II |\n| :--- | :--- |\n| A) Mathematical representation for rate of reaction | I) Order and molecularity of the slowest step are equal to one |\n| B) Catalyst lowers the rate of reaction | II) Depends on the concentration of reactants present in excess |\n| C) The value of the rate constant of the pseudo first order reaction depends | III) Rate law |\n| D) Unimolecular reaction | IV) By lowering the activation energy |\n|  | V) Is independent of the concentration of all reactants |"
+  },
+  {
+   "question_id": "563831e6-719c-4828-a713-e1b733cc3b94",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "| Expt | $[\\mathrm{A}] \\mathrm{mL}^{-1}$ | $[\\mathrm{B}] \\mathrm{mL}^{-1}$ | Initial rate of formulas of $[\\mathrm{C}] \\mathrm{mL}^{-1} \\mathrm{~m}^{-1}$ |\n| :--- | :--- | :--- | :--- |\n| 1 | 0.1 | 0.1 | $6.0 \\times 10^{-3}$ |\n| 2 | 0.3 | 0.2 | $7.2 \\times 10^{-2}$ |\n| 3 | 0.3 | 0.4 | $2.88 \\times 10^{-1}$ |\n| 4 | 0.4 | 0.1 | $2.40 \\times 10^{-2}$ |\n\nFor the reaction $2 \\mathrm{~A}+\\mathrm{B} \\rightarrow \\mathrm{C}+\\mathrm{D}$ the rate law is"
+  },
+  {
+   "question_id": "bbaf66b9-a055-483c-badd-ab6a51f7e921",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "For the reaction\n$$\n2 \\mathrm{NO}_{(\\mathrm{g})}+2 \\mathrm{H}_{2(\\mathrm{~g})} \\longrightarrow \\mathrm{N}_{2(\\mathrm{~g})}+2 \\mathrm{H}_{2} \\mathrm{O}_{(\\mathrm{g})} \\quad ;\n$$\nrate $=\\mathrm{k}[\\mathrm{NO}]^{2}\\left[\\mathrm{H}_{2}\\right]$\nStep $-\\mathrm{I}: 2 \\mathrm{NO} \\rightleftharpoons \\mathrm{N}_{2} \\mathrm{O}_{2}$\nStep - II : $\\mathrm{N}_{2} \\mathrm{O}_{2}+\\mathrm{H}_{2} \\longrightarrow \\mathrm{~N}_{2} \\mathrm{O}+\\mathrm{H}_{2} \\mathrm{O}$\nStep - III : $\\mathrm{N}_{2} \\mathrm{O}+\\mathrm{H}_{2} \\longrightarrow \\mathrm{~N}_{2}+\\mathrm{H}_{2} \\mathrm{O}$\nWhich step is likely to be the rate"
+  },
+  {
+   "question_id": "d3b4f762-4c8f-4858-b9dc-9385da608ec4",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "1st order reaction among the following is"
+  },
+  {
+   "question_id": "ec708e5c-9aca-4a6e-9d9f-46e301a13cb4",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "For an endothermic reaction, the energy of activation is $\\mathrm{E}_{\\mathrm{a}}$ and the enthalpy of reaction is $\\Delta \\mathrm{H}$. The minimum value of $\\mathrm{E}_{\\mathrm{a}}$ will be:"
+  },
+  {
+   "question_id": "eea4f846-5fd1-45dc-9323-08d63e94cd1d",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The activation energy of a reaction depends on the"
+  },
+  {
+   "question_id": "27d8853f-4b10-4e5c-ad24-bc878dc1eb33",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A. A → B $\\mathrm{E}_{\\mathrm{a}}=50 \\mathrm{~kJ} /$ mole\n    B. $\\mathrm{P} \\rightarrow \\mathrm{Q} \\mathrm{E}_{\\mathrm{a}}=60 \\mathrm{~kJ} / \\mathrm{mole}$\n    C. $\\mathrm{X} \\rightarrow \\mathrm{Y} \\mathrm{E}_{\\mathrm{a}}=10 \\mathrm{~kJ} /$ mole\n    D. $\\mathrm{C} \\rightarrow \\mathrm{D} \\quad \\mathrm{E}_{\\mathrm{a}}=20 \\mathrm{~kJ} /$ mole\nThen, the temperature coefficient is highest for which reaction?"
+  },
+  {
+   "question_id": "c1fe575d-6b49-4e7f-9617-7c558a45cb44",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If the rate becomes 100 times when $\\mathrm{p}^{\\mathrm{H}}$ changes from 2 to 1 for the rate law representation $\\frac{\\mathrm{dx}}{\\mathrm{dt}}=\\mathrm{k}\\left[\\mathrm{H}_{3} \\stackrel{+}{\\mathrm{O}}\\right]^{\\mathrm{n}}$, then the order of the reaction is"
+  },
+  {
+   "question_id": "dc3bfc45-5a2c-411b-9b0e-1d32a609a48a",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "For which order of reaction is the half-life independent of the initial concentration of reactant?"
+  },
+  {
+   "question_id": "dddf4840-4c86-4548-bc4f-eda770c29c7d",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The rate of the reaction\n$\\mathrm{RCl}+\\mathrm{NaOH} \\rightarrow \\mathrm{ROH}+\\mathrm{NaCl}$ is given by rate $=\\mathrm{K}[\\mathrm{RCl}]$. The rate of reaction is"
+  },
+  {
+   "question_id": "5844537c-573b-4c70-b994-ff8b26107400",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is incorrect regarding the clock reaction ?"
+  },
+  {
+   "question_id": "bc14992d-c98b-41da-a39d-3258630b26c8",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A first order reaction is 50 \\% completed in $1.26 \\times 10^{14}$ sec. How much time would it take for 100 \\% completion ?"
+  },
+  {
+   "question_id": "8838be24-9326-46f4-95d5-ea9b55e12a21",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The half-life for radioactive decay of $C^{14}$ is 5730 years. An archaeological artifact containing wood had only 80\\% of the $C^{14}$ found in a living tree. Age of the sample approximately is $(\\log 5=0.7, \\log 2=0.3)$"
+  },
+  {
+   "question_id": "13d24880-f2e3-4c76-adfd-dd44547e5e5c",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements:\nStatement - I: Rate constant of a chemical reaction depends on concentration of reactants.\nStatement - II: Rate of chemical reaction depends on concentration of reactants.\nIn the light of the above statements, choose the correct answer from the options given below"
+  },
+  {
+   "question_id": "47a03abf-2628-41f4-8482-e993f8227e4d",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The rate of a reaction quadruples when the temperature changes from 290 K to 310 K . Activation energy of reaction assuming that it does not change with temperature is (Given $\\left.\\mathrm{R}=8.3 \\mathrm{~J} \\mathrm{~mol}^{-1} \\mathrm{~K}^{-1}, \\log 2=0.3\\right)$"
+  },
+  {
+   "question_id": "6e3b3d55-d48e-424e-bdbe-443bf5d99195",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Incorrect statement among the following is"
+  },
+  {
+   "question_id": "fbd8cf43-d8b6-4c19-9a7f-2377770136e1",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A first order reaction is found to have a rate constant, $K=5.5 \\times 10^{-14} s^{-1}$. The half - life of the reaction is"
+  },
+  {
+   "question_id": "134767a5-2355-48bc-ad2b-091d66fc6b09",
+   "chapter_id": "0f327c85-1a68-50d9-a9bd-44fd17ed88b7",
+   "chapter": "Chemical Kinetics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The results given in the below table were obtained during kinetic studies of the following reaction : $2 \\mathrm{~A}+\\mathrm{B} \\longrightarrow \\mathrm{C}+\\mathrm{D}$\n\n| Experiment | [A] $\\mathrm{molL}^{-1}$ | [B] $\\mathrm{molL}^{-1}$ | Initial rate $\\mathrm{molL}^{-1} \\mathrm{~min}^{-1}$ |\n| :--- | :--- | :--- | :--- |\n| I | 0.1 | 0.1 | $6.00 \\times 10^{-3}$ |\n| II | 0.1 | 0.2 | $2.40 \\times 10^{-2}$ |\n| III | 0.2 | 0.1 | $1.20 \\times 10^{-2}$ |\n| IV | X | 0.2 | $7.20 \\times 10^{-2}$ |\n| V | 0.3 | Y | $2.88 \\times 10^{-1}$ |\n\nX and Y in the given table are respectively"
+  },
+  {
+   "question_id": "20fd8d21-a350-449c-90af-f4d71512cded",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A) : $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{5} \\mathrm{ONO}\\right] \\mathrm{Cl}$ exhibits linkage isomerism\nReason : $\\mathrm{ONO}^{-}$is an ambidentate ligand"
+  },
+  {
+   "question_id": "0361ea47-e695-4d6c-ae96-3d87c483fcaf",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II and choose the correct option\nList I\n    A. $\\left[\\mathrm{Fe}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right] \\mathrm{SO}_{4}+\\mathrm{NO}$\n    B. $\\mathrm{NaOH}+\\mathrm{CrO}_{2} \\mathrm{Cl}_{2}$\n    C. $\\mathrm{NH}_{4} \\mathrm{OH}+\\mathrm{HCl}$\n    D. $\\mathrm{FeS}+\\mathrm{H}_{2} \\mathrm{SO}_{4}$\nList II\n    I. White fumes\n    II. Brown ring\n    III. Yellow solid\n    IV. Rotten egg smell\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "3ee161ad-1732-458d-ba25-c1511f52e0c9",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The crystal field splitting of the $\\mathrm{Cr}^{3+}$ ion in octahedral field changes for ligands $\\mathrm{I}^{-}$, $\\mathrm{H}_{2} \\mathrm{O}, \\mathrm{NH}_{3}, \\mathrm{CN}^{-}$. Then the correct increasing order of splitting is"
+  },
+  {
+   "question_id": "c095e762-e2d3-4ae3-bc09-9eeb0c170a65",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : $\\left[\\mathrm{Ti}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$ is coloured.\nReason (R) : d-d transition is possible in $\\left[\\mathrm{Ti}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$ due to an unpaired d electron.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "2980a296-ac1a-4cc1-849e-ce46654c5af9",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The least number of isomers are observed in"
+  },
+  {
+   "question_id": "590fe020-ccd9-472c-926a-34e543e941c4",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following complex compounds will have the maximum conductance in solution?\n(assume equimolar solutions are taken and are completely ionised.)"
+  },
+  {
+   "question_id": "8c360ba3-f9ce-4364-9da3-44395f16f9b0",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Based on Spectro-chemical series, the strongest ligand is"
+  },
+  {
+   "question_id": "ae04538b-3b9e-4e83-8bad-42cb7430aaaa",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In photography the developed film is fixed by treating undissolved AgBr using hypo. The soluble complex ion formed during this process is"
+  },
+  {
+   "question_id": "13fb62e3-85e3-4ce6-8df7-e22dfe38a650",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements are true?"
+  },
+  {
+   "question_id": "58b7b288-e9c0-4594-899d-429159f8c5cf",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the salt that can provide maximum number of ions per mole in its aqueous solution?"
+  },
+  {
+   "question_id": "59068e6f-2b48-4b5a-94a8-d3a934f01b09",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following are paramagnetic?\nA) $\\left[\\mathrm{Cu}(\\mathrm{Gly})_{2}\\right]$\nB) $\\left[\\mathrm{Ni}(\\mathrm{en})_{2}\\right]^{2+}$\nC) $\\left[\\mathrm{PtCl}_{4}\\right]^{2-}$\nD) $\\left[\\mathrm{Co}\\left(\\mathrm{NO}_{2}\\right)_{6}\\right]^{4-}$\nE) $\\left[\\mathrm{Sc}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right] \\mathrm{Cl}_{3}$\nChoose the correct answer from the options given below:"
+  },
+  {
+   "question_id": "b3088652-669e-4bd0-8fe0-11f91e86e6e2",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The correct order of the energy of light absorbed by the following complexes is,\nA) $\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$\nB) $\\left[\\mathrm{CoF}_{6}\\right]^{3-}$\nC) $\\left[\\mathrm{Co}(\\mathrm{CN})_{6}\\right]^{3-}$\nD) $\\left[\\mathrm{Co}(\\mathrm{en})_{3}\\right]^{3+}$"
+  },
+  {
+   "question_id": "b8d65b2d-daaf-4d85-bdde-103d4b0209d4",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "How many of the following ions can be detected using potassium ferrocyanide\nA) $\\mathrm{Zn}^{2+}$\nB) $\\mathrm{Fe}^{3+}$\nC) $\\mathrm{Cu}^{2+}$"
+  },
+  {
+   "question_id": "f25f284a-0e0e-4e1a-bb45-c4dbcd720df0",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Regarding $\\mathrm{CuSO}_{4} .5 \\mathrm{H}_{2} \\mathrm{O}$, incorrect statement is"
+  },
+  {
+   "question_id": "4098b138-4a06-4610-bd9a-4c95fc66c7f7",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In which of the following complex ion, the metal ion will have $\\boldsymbol{t}_{\\mathbf{2} \\boldsymbol{g}}^{\\mathbf{6}} \\boldsymbol{e}_{\\boldsymbol{g}}^{\\mathbf{0}}$ configuration according to CFT is"
+  },
+  {
+   "question_id": "8a80daaf-fc18-48dd-a9bc-4aedcae43692",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the complex that is correctly matched with its characteristic colour."
+  },
+  {
+   "question_id": "f97bde29-36db-4763-8fee-f016716d3f5e",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify incorrect combination"
+  },
+  {
+   "question_id": "e8348cad-bf5f-44e3-a3f6-db4049b5728d",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The crystal field splitting energy for octahedral and tetrahedral complexes is related to"
+  },
+  {
+   "question_id": "0aa2a778-b919-4dbc-858c-e5346ca918b3",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is the correct order of increasing field strength of ligands to form coordination compounds?"
+  },
+  {
+   "question_id": "921900c7-eb0b-49e2-809e-c9a9035a3fe5",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Number of complexes with even number of electrons in $t_{2 g}$ orbitals is -\n$$\n\\begin{gathered}\n{\\left[\\mathrm{Fe}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+},\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+},\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}} \\\\\n{\\left[\\mathrm{Cu}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+},\\left[\\mathrm{Cr}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+}}\n\\end{gathered}\n$$"
+  },
+  {
+   "question_id": "58d55a1b-1840-40d5-8867-7c300107bdea",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A) : In octahedral complexes, electrons in the three orbitals $\\left(\\mathrm{d}_{\\mathrm{xy}}, \\mathrm{d}_{\\mathrm{yz}}, \\mathrm{d}_{\\mathrm{xz}}\\right)$ are of low energy while the two orbitals ( $\\mathrm{d}_{\\mathrm{z}}^{2}, \\mathrm{~d}_{\\mathrm{x} 2-\\mathrm{y} 2}$ ) have high energy.\nReason (R) : In presence of asymmetrical field, The degeneracy of d-orbital of metal ion is maintained."
+  },
+  {
+   "question_id": "156cc5a5-a74f-478b-8c00-0612b91d34fd",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Magnetic moment of a complex is 1.732 BM. The complex is"
+  },
+  {
+   "question_id": "2b825f12-abfd-491f-9125-189131011843",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If $\\mathrm{P}>\\Delta_{\\mathrm{o}}$ then electronic configuration of $\\mathrm{d}^{5}$ in octahedral complex"
+  },
+  {
+   "question_id": "19ab1cfb-6a23-470e-9ef4-fa5d83aa0c6a",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements:\nStatement-I: Valence bond theory explain the colour exhibited by co-ordination compounds.\nStatement-II: CFT considers the metal-ligand bond to be lonic from electrostatic interactions between the metal ion and the ligand.\nIn the light of the above statements, choose the most appropriate answer from the options given below:"
+  },
+  {
+   "question_id": "eff05131-579c-4e94-9f63-58f517e179f4",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The correct order of crystal field splitting strength of ligands is"
+  },
+  {
+   "question_id": "1001e9c1-a8de-42f3-a3fc-33a39049b2a4",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following complexes does contain two unpaired electrons?"
+  },
+  {
+   "question_id": "1554136a-0a42-43ac-9f09-e23204818f71",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The conditions and consequence that favours the $\\mathrm{t}_{2} \\mathrm{~g}^{3} \\mathrm{eg}^{1}$ configuration in a metal complex are"
+  },
+  {
+   "question_id": "4cea959a-acd2-490e-9ede-c2c608af0673",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following co ordination compounds has bridging carbonyl ligand?"
+  },
+  {
+   "question_id": "5ba95691-cdc3-4300-903e-8785698dc5ba",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Hybridisation and geometry of $\\left[\\mathrm{Ni}(\\mathrm{CN})_{4}\\right]^{2-}$ are"
+  },
+  {
+   "question_id": "9c42a799-667d-41ed-8640-a99df69dacaa",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements are true about $\\left[\\mathrm{CoF}_{6}\\right]^{3-}$ ion?\n    I) The complex has octahedral geometry.\n    II) Coordination number of Co is 3 and oxidation state is +6.\n    (III) The complex is $\\mathrm{sp}^{3} \\mathrm{~d}^{2}$ hybridised\n    (IV) It is a high spin complex"
+  },
+  {
+   "question_id": "a83bc345-b0cd-488b-bc01-c301d37782f6",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The type of hybridization and the magnetic property of $\\left[\\mathrm{MnCl}_{6}\\right]^{3-}$ are,"
+  },
+  {
+   "question_id": "cf4dcf41-c108-450b-8d72-88d5b8b02ebb",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Among the octahedral complexes $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{4-},\\left[\\mathrm{FeF}_{6}\\right]^{3-},\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+}$, and $\\left[\\mathrm{Ni}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right]^{2+}$, the d orbital configuration of the complex having the highest CFSE is"
+  },
+  {
+   "question_id": "99c2a9a1-371f-4429-8ba7-64cbf78244ea",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The hybridisation and magnetic property of the complex ion $\\left[\\mathrm{FeF}_{6}\\right]^{3-}$ are"
+  },
+  {
+   "question_id": "5f4f0e99-c30f-44e4-8899-53d102f52dbc",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the column I with column II and mark the appropriate choice.\n\n| Column - I |  | Column - II |  |\n| :--- | :--- | :--- | :--- |\n| (A) | $\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+}$ | (i) | $\\mathrm{d}^{2} \\mathrm{sp}^{3}$, octahedral |\n| (B) | $\\left[\\mathrm{Ni}(\\mathrm{CN})_{4}\\right]^{2-}$ | (ii) | $\\mathrm{dsp}^{2}$, square planar |\n| (C) | $\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]$ | (iii) | sp, linear |\n| (D) | $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{3-}$ | (iv) | $\\mathrm{sp}^{3}$, tetrahedral |"
+  },
+  {
+   "question_id": "63ca6719-cbc0-48f7-9299-825814dc1693",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which one of the following has the maximum wavelength of absorption in the visible region?"
+  },
+  {
+   "question_id": "866ef39d-ffd2-4a7b-bcf4-50c8e15195e3",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following statements\n    A) EDTA is used in the treatment of lead poisoning\n    B) Cis - platin effectively inhibit the growth of tumours.\n    C) Hardness of water is estimated by simple titration with $N a_{2}$ EDTA\n    D) In black \\& white photography, the undecomposed AgBr is removed as soluble complex $\\mathrm{Na}_{3}\\left[\\mathrm{Ag}\\left(\\mathrm{S}_{2} \\mathrm{O}_{3}\\right)_{2}\\right]$\nIdentify the correct statements"
+  },
+  {
+   "question_id": "88718565-c2c8-4627-97b4-53d3db289e18",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the column I with column II and mark the appropriate choice.\n\n| Column - I |  | Column - II |  |\n| :--- | :--- | :--- | :--- |\n| A) | Detection and estimation of nickel | i) | EDTA |\n| B) | Estimation of hardness of water | ii) | Silver complexes |\n| C) | Catalyst | iii) | Dimethyl glyoxime |\n| D) | Electroplating | iv) | $\\left[\\left(\\mathrm{Ph}_{3} \\mathrm{P}\\right)_{3} \\mathrm{RhCl}\\right]$ |"
+  },
+  {
+   "question_id": "9198ad85-27df-42b5-bd65-ed3be9eb5612",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The correct IUPAC name of the compound $\\left[\\mathrm{Cr}\\left(\\mathrm{NH}_{3}\\right)_{5}(\\mathrm{NCS})\\right]\\left[\\mathrm{ZnCl}_{4}\\right]$ is"
+  },
+  {
+   "question_id": "a7714bec-b32d-4cf5-93cf-e3738164fa55",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Determine which of the following statements about VBT in complexes is INCORRECT?"
+  },
+  {
+   "question_id": "f1428d8d-225c-4826-adbb-879425a418e7",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following complex absorbs maximum wavelength in the visible region?"
+  },
+  {
+   "question_id": "f3b167cd-e606-4fd2-a9d6-fb013ec97056",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match the complex species given in ColumnI with the possible isomerism given in Column-II and assign the correct code:\n\n| Column-I (Complex species) |  | Column-II (Isomerism) |  |\n| :--- | :--- | :--- | :--- |\n| a) | $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{4} \\mathrm{Cl}_{2}\\right]^{+}$ | i) | optical |\n| b) | cis- $\\left[\\mathrm{Co}(\\mathrm{en})_{2} \\mathrm{Cl}_{2}\\right]^{+}$ | ii) | ionization |\n| c) | $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{5}\\left(\\mathrm{NO}_{2}\\right)\\right] \\mathrm{Cl}_{2}$ | iii) | coordination |\n| d) | $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{"
+  },
+  {
+   "question_id": "f6cd4cce-6824-4360-895d-0cf8aac0d041",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In which of the follwoing octahedral complexes of cobalt (At No- 27 ) the magnitude of \" $\\Delta_{0}$ \" is the highest ?"
+  },
+  {
+   "question_id": "fbd6f4a6-c0cb-4965-894d-7f18d87c26d9",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The number of terminal and bridged CO ligands in the molecule, $\\left[\\mathrm{Co}_{2}(\\mathrm{CO})_{8}\\right]$ respectively are"
+  },
+  {
+   "question_id": "fdca0280-0715-4d6d-887c-329e19bd8867",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements:\nStatement-I: The primary valence is mostly ionisable and is satisfied by negative ions.\nStatement-II: The secondary valence is nonionisable and is satisfied by neutral molecules or negative ions.\nIn the light of the above statements, choose the most appropriate answer from the options given below:"
+  },
+  {
+   "question_id": "ff645680-a5ed-4c7c-974d-d90c818098ee",
+   "chapter_id": "b31d7996-66b8-5dc7-8e3b-95ddc4516a92",
+   "chapter": "Coordination Compounds",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List I with List II.\n\nList I\n(Complex)\n\nList II\n(Colour of complex)\nA. $\\left[\\mathrm{Ni}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{4}(\\mathrm{en})\\right]^{2+}$\nB. $\\left[\\mathrm{Ni}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{2}(\\mathrm{en})_{2}\\right]^{2+}$\nC. $\\left[\\mathrm{Ni}(\\mathrm{en})_{3}\\right]^{2+}$\nD. $\\left[\\mathrm{Ni}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$\nI. Green\nII. Violet\nIII. Blue/Purple\nIV. Pale blue\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "04ac02a2-1803-4eee-a472-18153b56cac4",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A copper pipe and a PVC pipe of same dimensions are arranged vertically, and two magnets A and B are allowed to fall freely from the above pipes respectively. Then velocity of the magnet on emerging through the lower end of the pipe is"
+  },
+  {
+   "question_id": "12f11cf2-da7f-4931-91c0-f6a2f7f86f52",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If 0.01M solution of an electrolyte has a resistance of 40 ohms in a cell having a cell constant of $0.4 \\mathrm{~cm}^{-1}$ then its molar conductance in $\\mathrm{ohm}^{-1} . \\mathrm{cm}^{2} \\mathrm{~mol}^{-1}$ will be"
+  },
+  {
+   "question_id": "1dd0eccc-d591-43c1-97f2-90e4be49e7c6",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The standard potential at 298 K for the following half reactions are given against each:\n$$\n\\begin{aligned}\n& \\mathrm{Zn}^{2+}(\\mathrm{aq})+2 \\mathrm{e}^{-} \\rightleftarrows \\mathrm{Zn}(\\mathrm{~s})-0.762 \\mathrm{~V} \\\\\n& 2 \\mathrm{H}^{+}(\\mathrm{aq})+2 \\mathrm{e}^{-} \\rightleftarrows \\mathrm{H}_{2}(\\mathrm{~g}) 0.000 \\\\\n& \\mathrm{Cr}^{3+}(\\mathrm{aq})+3 \\mathrm{e}^{-} \\rightleftarrows \\mathrm{Cr}(\\mathrm{~s})-0.740 \\mathrm{~V} \\\\\n& \\mathrm{Fe}^{3+}(\\mathrm{aq})+2 \\mathrm{e}^{-} \\rightleftarrows \\mathrm{Fe}^{2+}(\\mathrm{aq})+0.770 \\mathrm{~V}\n\\end{aligned}\n$$\nWhich is the strongest reducing ag"
+  },
+  {
+   "question_id": "233a02a0-02c0-4639-8b53-1e054c8754c4",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In a cell that utilizes the reaction $\\mathrm{Zn}_{(\\mathrm{s})}+2 \\mathrm{H}_{(\\mathrm{aq})}^{+} \\rightleftharpoons \\mathrm{Zn}_{(\\mathrm{aq})}^{2+}+\\mathrm{H}_{2(\\mathrm{~g})}$, addition of $\\mathrm{H}_{2} \\mathrm{SO}_{4}$ to cathode compartment will"
+  },
+  {
+   "question_id": "28cb164c-2bee-4297-bbac-1a8446c5ec1d",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A planar loop of wire rotates in a uniform magnetic field. Initially, at $\\mathrm{t}=0$, the plane of the loop is perpendicular to the magnetic field. If it rotates with a period of 10s about an axis in its plane, then the magnitude of induced emf will be maximum and minimum, respectively at"
+  },
+  {
+   "question_id": "35a2e230-ea53-4d41-8157-e111a3a95bb6",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "During electrolysis of an aqueous solution of potassium acetate, the major product formed at the anode is"
+  },
+  {
+   "question_id": "3cfbe809-f6d1-4b88-b0ab-287bc1873c6e",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If a strip of Cu is placed in a solution of ferrous sulphate, which one of the following alternatives is observed?"
+  },
+  {
+   "question_id": "4cb2c6cb-2d1d-4d83-8baf-0447517b0fdf",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A solution containing one mole per litre each of $\\mathrm{Cu}\\left(\\mathrm{NO}_{3}\\right)_{2}, \\mathrm{AgNO}_{3}, \\mathrm{Hg}_{2}\\left(\\mathrm{NO}_{3}\\right)_{2}, \\mathrm{Mg}\\left(\\mathrm{NO}_{3}\\right)_{2}$ is being electrolysed by using inert electrodes. The values of standard potentials are $E_{\\mathrm{Ag}+\\mathrm{Ag}}^{\\circ}=0.80 \\mathrm{~V}, E_{\\mathrm{Hg}_{2}^{2}{ }_{1}^{\\circ} \\mathrm{Hg}}^{\\circ}=0.79 \\mathrm{~V}$, $E_{\\mathrm{Cu}^{2} \\uparrow \\mathrm{Cu}}^{\\circ}=0.34 \\mathrm{~V}, E_{\\mathrm{Mg}^{2} \\uparrow \\mathrm{Mg}}^{\\circ}=-2.3 \\mathrm{~V}$\nWith increasing voltage, the sequence"
+  },
+  {
+   "question_id": "59d8e152-22aa-4492-acc2-7dad7c98cab5",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Conductivity of 20 ml of 0.1 M, HCl taken in a conical flask is $5 \\times 10^{-4} \\Omega^{-1} \\mathrm{~cm}^{-1}$. When it is titrated with 0.1 M NaOH from burette using phenolphthalein as indicator, the end point is obtained by adding 20ml of NaOH. When the conductivity of resulting solution is measured it is found one to be $2 \\times 10^{-4} \\Omega^{-1} \\mathrm{~cm}^{-1}$. Then the molar conductivity of that solution is"
+  },
+  {
+   "question_id": "5d14ea97-173c-45c6-8f92-15bf4a15ac32",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The reduction potential of hydrogen half-cell will be negative if"
+  },
+  {
+   "question_id": "64091551-79aa-4a53-8781-66f5c9a03885",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In Nickel-cadmium battery, during its discharge, the change in oxidation states of metal and metal radical at anode and cathode respectively are"
+  },
+  {
+   "question_id": "71131561-8cc4-41eb-a2bb-e8e75f3193b6",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In which of the following electrolysis setups will $\\mathrm{H}_{2}$ gas be evolved at the cathode?\nA. Dilute $\\mathrm{H}_{2} \\mathrm{SO}_{4}$ using platinum electrodes\n\nB. Aqueous NaCl using inert electrodes\nC. Aqueous $\\mathrm{CuSO}_{4}$ using copper electrodes\nD. Molten CaH2 using inert electrodes\nChoose the correct option."
+  },
+  {
+   "question_id": "88bfc96e-6a92-4d00-94cf-333829dd7457",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Examples of Electronic, Electrolytic and Mixed conductors respectively are"
+  },
+  {
+   "question_id": "8bbd7a1e-1633-42fc-8694-5f7b1706f0f0",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A) and the other is labelled Reason (R).\nAssertion (A) : $\\mathrm{CuSO}_{4}$ solution can be stored in a pot made up of nickel.\nReason (R) : $\\mathrm{E}_{\\mathrm{Ni}^{+2} / \\mathrm{Ni}}^{0}$ is negative while $\\mathrm{E}_{\\mathrm{Cu}^{+2} / \\mathrm{Cu}}^{0}$ is positive.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "8e6005a9-b5c3-4394-a714-768205a69d58",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A cell of emf 'X' is connected across a resistor R. The potential difference across the wire is measured as Y. The internal resistance of the cell should be"
+  },
+  {
+   "question_id": "95e6de8f-1751-4039-9c5c-ecba32bce9c0",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "On the basis of following data, select the correct pH value for $10^{-2} M N H_{4} O H(a q)$ solution at 25°C ( $\\log 3=0.48$ )\n$$\n\\Lambda_{m}\\left(\\mathrm{NH}_{4} \\mathrm{OH}\\right) \\text { of } \\quad 10^{-2} M \\text { solution } \\quad=\n$$\n$10.2 \\mathrm{~S} \\mathrm{~cm}^{2} \\mathrm{~mol}^{-1}$\n$$\n\\Lambda_{m}^{0}\\left(\\mathrm{NH}_{4} \\mathrm{Cl}\\right)=130 S \\mathrm{~cm}^{2} \\mathrm{~mol}^{-1}\n$$\n$\\Lambda_{m}^{0}(\\mathrm{NaOH})=320 S c m^{2} m o l^{-1}$\n$\\Lambda_{m}^{0}(\\mathrm{NaCl})=110 \\mathrm{~S} \\mathrm{~cm}^{2} \\mathrm{~mol}^{-1}$"
+  },
+  {
+   "question_id": "9bae1b24-9175-4611-b925-32802eeacba3",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements are correct about galvanic cell?\n    A. The useful work done by a galvanic cell is equal to decrease in Gibbs energy.\n    B. Both $E_{\\text {cell }}$ and $\\Delta G_{\\text {cell }}$ are intensive properties\n    C. A salt bridge is required even in a single electrolyte type galvanic cell.\n    D. Cell potential is called the cell electromotive force, when no current is drawn through the cell.\n\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "a1ee74b0-84c7-4965-a10f-fdfab68735d2",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The standard free energy change of the reaction $\\quad \\mathrm{Cu}^{2+}+\\mathrm{Sn}(\\mathrm{s}) \\rightarrow \\mathrm{Cu}(\\mathrm{s})+\\mathrm{Sn}^{2+}$ (Given: $E^{\\circ}=0.48 \\mathrm{~V}$ ) is"
+  },
+  {
+   "question_id": "aa0c0f74-6fcf-49ae-8677-8886a5c91425",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A) : Molar conductivity of $\\mathrm{NH}_{4} \\mathrm{OH}$ increases with increase in dilution. Reason (R) : On dilution of $\\mathrm{NH}_{4} \\mathrm{OH}$, the degree of ionization of $\\mathrm{NH}_{4} \\mathrm{OH}$ increases."
+  },
+  {
+   "question_id": "afb86d49-9c49-484a-bb2e-b274dcd5ec67",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "EMF of $\\mathrm{Zn}\\left|\\mathrm{Zn}^{+2}(\\mathrm{xm}) \\| \\mathrm{Cl}^{-}(\\mathrm{ym})\\right| \\mathrm{Cl}_{2}(1 \\mathrm{~atm})$, Pt, can be increased by :"
+  },
+  {
+   "question_id": "be034332-70c7-4521-bdc6-7baac3528f23",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which among the following is incorrect statement?"
+  },
+  {
+   "question_id": "e729e675-cfe1-4dcc-83c0-9562596f3c1a",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "At $25^{\\circ} \\mathrm{C}, E^{\\circ}$ for the reaction $\\mathrm{Cu}^{2+}+\\mathrm{Sn}(\\mathrm{s}) \\rightarrow \\mathrm{Cu}(\\mathrm{s})+\\mathrm{Sn}^{2+}$ is 0.48 V, the standard equilibrium constant for the reaction is $\\_\\_\\_\\_$ approximately"
+  },
+  {
+   "question_id": "ea611cf2-9545-4fa6-a170-6216c13fe1a1",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Statement I : Electrolysis of acidulated water always yields $\\mathrm{H}_{2}$ and $\\mathrm{O}_{2}$ in 2:1 molar ratio Statement II : Electrolysis of acidulated water using pt electrodes, $\\mathrm{O}_{2}$ liberated at cathode and $\\mathrm{H}_{2}$ liberated at anode"
+  },
+  {
+   "question_id": "f3f01a44-06ba-4b68-9300-8d6dbfbf17c6",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : $\\Lambda_{\\text {eq }}^{\\mathrm{o}}\\left(\\mathrm{BaCl}_{2}\\right)=$\n$$\n\\lambda_{\\mathrm{eq}}^{\\mathrm{o}}\\left(\\mathrm{Ba}^{+2}\\right)+\\lambda_{\\mathrm{eq}}^{\\mathrm{o}}\\left(\\mathrm{Cl}^{-}\\right)\n$$\nStatement II: $\\Lambda_{\\mathrm{m}}^{\\mathrm{o}}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)=\\Lambda_{\\mathrm{m}}^{\\mathrm{o}}(\\mathrm{HCl})+$\n$$\n\\Lambda_{\\mathrm{m}}^{\\mathrm{o}}(\\mathrm{NaOH})-\\Lambda_{\\mathrm{m}}^{\\mathrm{o}}(\\mathrm{NaCl})\n$$\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "fd46bea1-e897-46c6-93a2-c804a70b4cda",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A): The limiting molar conductivity of strong electrolyte (NaCl) is higher compared to that of weak electrolyte ( $\\mathrm{CH}_{3} \\mathrm{COOH}$ ).\nReason (R) : Molar conductivity, decreases with decrease in concentration of electrolyte."
+  },
+  {
+   "question_id": "fedf8c7e-fbf3-4f5c-8655-2ce8803a4a76",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Kohlrausch law is applicable to\n    A) Weak electrolytes at infinite dilution B) Strong electrolytes at infinite dilution"
+  },
+  {
+   "question_id": "28d302c1-ef58-47da-b608-878b4f0b7a37",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The time required for the complete decomposition of 4 moles of water using 4 amperes of current in seconds is"
+  },
+  {
+   "question_id": "07392f28-1a80-49ea-93ea-5621fea495c3",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given the standard electrode potentials:\n$$\n\\mathrm{E}_{\\mathrm{Zn}^{2+} / \\mathrm{Zn}}^{\\mathrm{o}}=-0.76 \\mathrm{~V} ; \\mathrm{E}_{\\mathrm{Cu}^{2+} / \\mathrm{Cu}}^{\\mathrm{o}}=+0.34 \\mathrm{~V}\n$$\nCalculate the standard Gibbs free energy change $\\left(\\Delta G^{\\circ}\\right)$ for the reaction:\n$$\n\\mathrm{Zn}(\\mathrm{~s})+\\mathrm{Cu}^{2+}(\\mathrm{aq}) \\rightarrow \\mathrm{Zn}^{2+}(\\mathrm{aq})+\\mathrm{Cu}(\\mathrm{~s})\n$$"
+  },
+  {
+   "question_id": "72c36847-02ea-478e-9b3a-8a7f76e3a82c",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assume that during electrolysis of $\\mathrm{AgNO}_{3}$, $O_{2}$ is formed at anode according to the reaction, $2 \\mathrm{H}_{2} \\mathrm{O} \\rightarrow 4 \\mathrm{H}^{+}+\\mathrm{O}_{2}+4 e^{-}$\nVolume of $O_{2}$ formed at STP due to passage of 2A current for 965 s is"
+  },
+  {
+   "question_id": "2bf075f3-051c-435c-adf9-50642bd966d8",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The oxidation electrode potential of magnesium electrode $\\left[\\mathrm{Mg} \\longrightarrow \\mathrm{Mg}^{+2}+2 \\mathrm{e}^{-}\\right]$is maximum, when the concentration of $\\mathrm{Mg}^{+2}$ ion is"
+  },
+  {
+   "question_id": "30d23bfa-768b-4f1d-8cf2-699ff2771cc6",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "How many coulombs of electricity are required for the oxidation of 1 mole of $\\mathrm{H}_{2} \\mathrm{O}$ to $\\mathrm{O}_{2}$ ?"
+  },
+  {
+   "question_id": "45453c6b-8b78-4bc1-bc96-f3b2fb83576a",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Specific conductance of 0.1M Sodium chloride solution is $1.06 \\times 10^{-2} \\mathrm{ohm}^{-1} \\mathrm{~cm}^{-1}$. Its molar conductance in $\\mathrm{ohm}^{-1} \\mathrm{~cm}^{2} \\mathrm{~mol}^{-1}$ is"
+  },
+  {
+   "question_id": "f92499fc-3fa5-4575-87f1-814ef37de005",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Electrode potential of $\\mathrm{Pt}, \\mathrm{Cl}_{2(1 \\mathrm{~atm})} \\mathrm{Cl}^{-}$ $\\left(10^{-x} \\mathrm{M}\\right)$ at 298 K is found to be 1.72 V $\\left(\\mathrm{E}^{0}=\\right.$ $+1.36 \\mathrm{~V})$. Then value of $x$ is"
+  },
+  {
+   "question_id": "02f621bf-f8c5-49e0-ad10-219ca2c362d1",
+   "chapter_id": "cf08cf74-67bb-5439-8375-68b0422c88af",
+   "chapter": "Electrochemistry",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Conductivity ( $\\mathrm{Sm}^{-1}$ ) is highest for"
+  },
+  {
+   "question_id": "a0b6a969-08f7-4c46-b207-321736617499",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Statement-I: Propene reacts with HBr in presence of benzoyl peroxide to give 2-bromopropane as a major product.\nStatement-II: Synergic bond in metal Carbonyls decreases C - O bond length in ligand."
+  },
+  {
+   "question_id": "187f1138-f77e-4f0e-82de-8f12494c8a18",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$\\mathrm{CH}_{3} \\mathrm{CH}_{2}-\\mathrm{OH}$ can be converted to $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CN}$ by the following reactions:"
+  },
+  {
+   "question_id": "ec3f19e9-4879-4a41-bd1f-4df938d4a2a2",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "All the following are examples of electrophilic substitution, except"
+  },
+  {
+   "question_id": "709ad3c9-a85b-4b58-af71-d67d55483a9c",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$\\mathrm{NaBr} \\xrightarrow[\\Delta]{\\text { Conc. } \\mathrm{H}_{2} \\mathrm{SO}_{4}} \\mathrm{~A}(\\mathrm{~g})$;\n$\\mathrm{NaCl} \\xrightarrow[\\Delta]{\\text { Conc. } \\mathrm{H}_{2} \\mathrm{SO}_{4}} \\mathrm{~B}(\\mathrm{~g})$;\n$\\mathrm{NaCl} \\xrightarrow[\\Delta]{\\mathrm{K}_{2} \\mathrm{Cr}_{2} \\mathrm{O}_{7}+\\mathrm{H}_{2} \\mathrm{SO}_{4}} \\mathrm{C}(\\mathrm{g}) ;$\nThe incorrect statement about products is"
+  },
+  {
+   "question_id": "3cf08c4c-938c-45e2-81aa-44a20c22e6d8",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following compounds is least reactive towards $\\mathrm{S}_{\\mathrm{N}} 1$ reaction?"
+  },
+  {
+   "question_id": "809dc4c5-c605-43a4-b6a7-7139f749a2b1",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The total number of stereoisomers for 2-Bromo-3-chlorobutane is"
+  },
+  {
+   "question_id": "027a64a9-02f9-4501-8dd6-adf027fab4a1",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion: The boiling points of alkyl halides decrease in the order : $\\mathrm{RI}>\\mathrm{RBr}>$ RCl > RF\n\nReason: The boiling points alkyl halides depends on molecular mass for same alkyl group."
+  },
+  {
+   "question_id": "4481b37a-9f12-4dba-8b46-0af9cecf6297",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following reactions $\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}_{2}+\\mathrm{HBr} \\rightarrow \\mathrm{A}$ $\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}_{2}+\\mathrm{Br}_{2} \\xrightarrow{\\mathrm{hv}} \\mathrm{B}$ $\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}-\\mathrm{CH}_{3}+\\mathrm{HBr} \\xrightarrow[\\text { Peroxide }]{ } \\mathrm{C}$ $\\mathrm{CH}_{3}-\\mathrm{CH}_{2}-\\mathrm{CH}=\\mathrm{CH}_{2}+\\mathrm{HBr} \\rightarrow \\mathrm{D}$\n\nIdentify the correct statements\n\n\ni) A \\& B are Isomers\nii) C and D are similar compounds\niii) C \\& D can show optical activity\niv) Among A, B, C, D Rate of $\\mathrm{S}_"
+  },
+  {
+   "question_id": "54ccf4f4-db5a-4141-96fa-430ce0ea91b8",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which is the correct increasing order of boiling points of the following compounds?\n1 - Iodobutane, 1 - Bromobutane, 1 - Chlorobutane, Butane."
+  },
+  {
+   "question_id": "8bb61e59-ee41-42cb-9ec4-ff62653bb44d",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Most reactive towards $\\mathrm{S}_{\\mathrm{N}} 1$ reaction is"
+  },
+  {
+   "question_id": "b301a13e-1285-45cf-94ff-fefb7358dac2",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which one of the following has maximum chlorine by percentage of mass ?"
+  },
+  {
+   "question_id": "3daceba2-3868-4ddb-86ac-02c6b087083c",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Rate of $S N^{2}$ reaction is highest in"
+  },
+  {
+   "question_id": "ae3c9a26-a645-482b-95a9-c66ce171a041",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The solution of (+)-2-chloro-2-phenylethane in toluene racemises slowly in the presence of small amount of $\\mathrm{SbCl}_{5}$, due to the formation of :"
+  },
+  {
+   "question_id": "34d86185-72a8-4f43-beea-20861e91bf97",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A new carbon - carbon bond formation is possible in\n    a) Cannizaro reaction\n    b) Friedal crafts reaction\n    c) Clemmensen's reduction\n    d) Reimer - Teimann reaction"
+  },
+  {
+   "question_id": "cf6b64d9-8973-4c10-9510-0a1a3d602dc6",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the incorrect statement among the following"
+  },
+  {
+   "question_id": "361fecf2-9217-4e56-bb1a-a8995d53a43a",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$\\mathrm{KCl}, \\mathrm{KBr}$ and KI mixture on heating with concentrated $\\mathrm{H}_{2} \\mathrm{SO}_{4}$ gives gases respectively"
+  },
+  {
+   "question_id": "3a6f154e-edb8-4cbb-9ab4-3c031afc8717",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Heating 2-bromopentane with alcoholic KOH leads to the formation of an alkene. Which of the following statements regarding this reaction is correct?\n    (a) It is a $\\beta$-elimination reaction.\n    (b) It follows Saytzeff (Zaitsev) rule.\n    (c) It is a dehydrohalogenation reaction.\n    (d) 2-Pentene is the major product.."
+  },
+  {
+   "question_id": "704299b1-a525-458e-be3a-ba435f640f90",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Correct sequence of density is :"
+  },
+  {
+   "question_id": "a05adab2-ac76-4d22-93a8-456e659ceb60",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Most reactive towards $S_{N} 2$ reactions is"
+  },
+  {
+   "question_id": "345811a8-699b-4e7c-a7a0-7a0cd80eac1c",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements correctly explains the major product formed when 2-bromopentane undergoes elimination with alcoholic KOH ?"
+  },
+  {
+   "question_id": "3e34885b-2b26-465c-920d-a4bb9ac63b5f",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the correct order of organic compounds in the following chemical reaction"
+  },
+  {
+   "question_id": "74fe6bd0-28b4-4c75-bff7-26a4c7af73d1",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion: Methyl iodide is highly reactive towards $S_{N} 2$ reaction\nReason: Methyl carbocation cannot be stabilised through hyperconjugation."
+  },
+  {
+   "question_id": "5adfbedd-dcd1-4349-80ca-03760f98ff0f",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Reactivity of order of halides for dehydrohalogenation is:"
+  },
+  {
+   "question_id": "65271729-3c42-40fb-83fd-fd41e19bf1fd",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$\\underset{\\text { (excess) }}{\\mathrm{CHCl}_{3}} \\xrightarrow[\\mathrm{Fe} / \\Delta]{\\mathrm{Ag} / \\Delta} A \\xrightarrow[\\mathrm{KMnO}_{4}, \\mathrm{OH}^{-} \\& \\mathrm{H}_{3} \\mathrm{O}^{+}]{\\mathrm{CH}_{3} \\mathrm{Cl}\\left(1 \\text { equiv.), } \\mathrm{AlCl}_{3}\\right.} B$\nSelect the correct statement for 'B'"
+  },
+  {
+   "question_id": "7bd37d67-1bbc-4837-94de-6220f694e264",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In $\\mathrm{S}_{\\mathrm{N}} 2$ reaction, the carbon in the transition state is"
+  },
+  {
+   "question_id": "87e985ab-ab14-4260-ada7-ff8a8477f8f8",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "1-Methylcyclohexene on addition of HCl produces"
+  },
+  {
+   "question_id": "8bd44e94-8ea3-4781-8a62-8622512220b1",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Predict the correct reactivity order ?"
+  },
+  {
+   "question_id": "8e50de39-257a-41f5-8da2-fb5299d1b07d",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is Sandmeyer's reaction?"
+  },
+  {
+   "question_id": "be77fa32-4eb0-42f1-851e-3e21ab12af5e",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An alkyhalides, RX, reacts with KCN to give propane nitrile. RX is"
+  },
+  {
+   "question_id": "cda66f41-981f-42b9-b86f-ecc52973a93e",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion(A) : Reactivity of the following bromides towards $\\mathrm{S}_{\\mathrm{N}} 1$ is\n$$\n\\begin{aligned}\n& \\left(\\mathrm{CH}_{3}\\right)_{3} \\mathrm{CBr} \\\\\n& >\\mathrm{CH}_{3} \\mathrm{CH}(\\mathrm{Br}) \\mathrm{CH}_{2} \\mathrm{CH}_{3} \\\\\n& >\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{Br}\n\\end{aligned}\n$$\nReason (R) : Order of stability of cations thus formed from these bromides is\n$$\n\\begin{aligned}\n& \\left(\\mathrm{CH}_{3}\\right)_{3} \\stackrel{+}{\\mathrm{C}}>\\mathr"
+  },
+  {
+   "question_id": "ceccfdd9-de5c-4fb9-b5fa-60d707e8c4fc",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In the following reaction $\\mathrm{C}_{6} \\mathrm{H}_{5} \\mathrm{CH}_{2} \\mathrm{Br} \\xrightarrow[2 \\cdot \\mathrm{H}_{3} \\mathrm{O}^{+}]{\\text {1. Mg.Ether }}$ the product ' X ' is"
+  },
+  {
+   "question_id": "cf3bc2da-0343-46f4-bce0-c0ea0d33f60e",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The optically inactive compound from the following is"
+  },
+  {
+   "question_id": "d29aff39-0009-4544-8c6c-91c466eb2b7d",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The incorrect statement regarding chirality is"
+  },
+  {
+   "question_id": "d514d1c5-59b7-4bf8-9297-b7c643ab473d",
+   "chapter_id": "54af5da8-ed02-5dff-90b6-a6c2a9f5928d",
+   "chapter": "Haloalkanes & Haloarenes",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A) : Reactivity of alkyl halides towards $\\mathrm{SN}^{1}$ reaction is $\\mathrm{R}_{3} \\mathrm{CX}>\\mathrm{R}_{2} \\mathrm{CH}-\\mathrm{X}>\\mathrm{R}-\\mathrm{CH}_{2}-\\mathrm{X}$ Reason (R) : Stability of carbocation is 3° $>2^{\\circ}>1^{\\circ}$"
+  },
+  {
+   "question_id": "f310dff5-9ab2-4044-a9ef-b98d5cd08687",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$7.483 \\times 10^{5} \\mathrm{Nm}^{-2}$ osmotic pressure is found for $0.1 \\mathrm{M} \\mathrm{K}_{x}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$ which dissociate 50\\% at 300K, the value of $x$ is"
+  },
+  {
+   "question_id": "b68a7738-6ed5-4645-8430-ab1e27e749a6",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "R.L.V. P is highest for an aqueous solution of"
+  },
+  {
+   "question_id": "7df81391-8b9c-44ed-a455-09c2bb95ba4a",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Y g of a non-volatile organic substance of molecular mass $M$ is dissolved in 250 g of benzene. The molal elevation constant of benzene is $\\mathrm{K}_{\\mathrm{b}}$. Elevation in its boiling point is given by"
+  },
+  {
+   "question_id": "8d312663-fd94-456b-be69-72ce1b2c5cbf",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The freezing point of which of the following aqueous solutions is the lowest?"
+  },
+  {
+   "question_id": "dcd285fd-b198-4f8c-8dbc-df2cb7a03264",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Chloroform (B.P. 334K) and aniline (B.P. 457K) are easily separated by the technique of"
+  },
+  {
+   "question_id": "8aa33b30-2151-4c53-8096-fe013a97343f",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following aqueous solutions will exhibit the highest freezing point?"
+  },
+  {
+   "question_id": "752e19fc-b980-4d64-8eb7-8f8ac007d3b1",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following gases has the highest solubility in water at 298K?"
+  },
+  {
+   "question_id": "46670025-636e-4949-8e74-06f9007cc09b",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A solution of urea in water has a freezing point of $-0.93^{\\circ} \\mathrm{C}$. The boiling point of the same solution, if $K_{f}$ and $K_{b}$ of water are $1.86 \\mathrm{~K} \\mathrm{~kg} \\mathrm{~mol}^{-1}$ and $0.52 \\mathrm{~K} \\mathrm{~kg} \\mathrm{~mol}^{-1}$ respectively, is"
+  },
+  {
+   "question_id": "6486328b-adcc-4469-82d2-5cb0b89cf35e",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The total vapour pressure of a solution containing 1 mol A ( $P_{A}^{0}=150$ torr) and 2 $\\operatorname{mol} \\mathrm{B}$ ( $P_{B}^{0}=300$ torr) is 240 torr. In this case"
+  },
+  {
+   "question_id": "745e9c7c-f718-4447-8042-16e74a7a519e",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A): The $\\Delta \\mathrm{T}_{\\mathrm{b}}$ value of 0.1 m urea is same as that of 0.1 m glucose aqueous solution.\nReason (R): The value of colligative property of an aqueous solution depends on the total number of solute particles present in the given solution."
+  },
+  {
+   "question_id": "0d1ae837-d94d-4537-aec9-171f6513304c",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is temperature dependent?"
+  },
+  {
+   "question_id": "557f67c2-df6f-4b90-9d62-73b5e1620259",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$0.1 \\mathrm{M} \\quad \\mathrm{K}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$ solution $\\quad$ is $60 \\%$ ionized. Its Vant-Hoff factor is"
+  },
+  {
+   "question_id": "e3016769-47d6-4ff7-b2a3-3117f599922d",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Regarding liquid mixture of chloroform and acetone, correct statement is"
+  },
+  {
+   "question_id": "80b7cf0c-c9c5-4b52-b32d-9dcc8fcc244b",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Benzene and Toluene form an ideal solution at room temperature. For this process the false statement is"
+  },
+  {
+   "question_id": "201fda5e-f810-41cd-964a-c3757ff6e695",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "0.2 M glucose is isotonic with all the following except"
+  },
+  {
+   "question_id": "2c26a126-3b52-4d4a-954b-301250a0f22e",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Statement - I: Molarity is an intensive property\nStatement - II: Molality does not depend on temperature"
+  },
+  {
+   "question_id": "8d1d8a13-7c91-44aa-8476-dd7c672ba6d0",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A most soluble gas in water at 298 K and 1 bar pressure is ( $\\mathrm{K}_{\\mathrm{H}}=$ Henry law constant in K bar)"
+  },
+  {
+   "question_id": "02fe6755-2a82-43a3-b60e-ee33d50af692",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The molal depression constant depends upon"
+  },
+  {
+   "question_id": "4e64fe20-b767-4996-bbb2-06d9ea54e44d",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "At 298K, the gas which is most soluble in water is"
+  },
+  {
+   "question_id": "ab8c5592-63b7-4165-8d35-3d12d6d4ebbe",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Density of 2.05M solution of acetic acid is $1.02 \\mathrm{gm} / \\mathrm{ml}$. Mole fraction of $\\mathrm{H}_{2} \\mathrm{O}$ is"
+  },
+  {
+   "question_id": "df15f7cd-261f-4dfd-9816-64d12e8e9b55",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Observe the following statements Statement-I:- The boiling point of 0.1 M urea solution is less than that of 0.1 M KCl solution\n\nStatement-II:- Elevation of boiling point is inversely proportional to molar mass of solute\n\nThe correct answer is"
+  },
+  {
+   "question_id": "e0bdbc6f-c301-43eb-9fe4-8e0e99d64c42",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is a Colligative property"
+  },
+  {
+   "question_id": "c8c82f5f-170d-4108-b3f4-a964997f4d34",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Regarding one molal solution, which of the following statements are incorrect?\n    i) 1 g. of the solute in 1000 g. of solvent\n    ii) 1 g. mole of solute in 1000 ml of solution\niii) 1 g. mole of solute in 22.4 liters of\n\n\niv) 1 g. mole of solute in 1000 g. of solvent"
+  },
+  {
+   "question_id": "b7bbc462-bb5a-4f69-80a1-04f1b458a367",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion: When a solution is separated from\nthe pure solvent by a semi-permeable membrane, the solvent molecules pass through it from pure solvent side to the solution side.\nReason: The flow of solvent occurs from a region of high concentration of solution to a region of low concentration of solution."
+  },
+  {
+   "question_id": "91a53008-1ce6-4c02-a950-c3b21b0cb064",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When 10 g of a non volatile solute is dissolved in 100 g of Benzene, it rises boiling point by 1°C then molecular mass of solute is ( $\\mathrm{K}_{\\mathrm{b}}$ of Benzene is = 2.53 K.kg.mol ${ }^{-1}$ )"
+  },
+  {
+   "question_id": "aa18442e-2578-45df-a433-c63802709429",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A): Relative lowering of vapour pressure of dilute solution of 0.5 M aqueous sugar solution is less than dilute solution of 0.5M aqueous KCl solution.\nReason (R) : Relative lowering of vapour pressure is directly proportional to the number of solute particles present in the solution.\nIn the light of the above statements, choose the most appropriate answer from the options given below:"
+  },
+  {
+   "question_id": "e04806c8-8d3d-49ac-a2e7-322f12e99224",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A set of solutions is prepared by using 180 gm of water as a solvent and 10 gm of different non-volatile solutes A (mol.wt = $100), \\mathrm{B}(\\mathrm{mol} . \\mathrm{wt}=200), \\mathrm{C}(\\mathrm{mol} . \\mathrm{wt}=10,000)$ The relative lowering of vapour pressures is in the order of"
+  },
+  {
+   "question_id": "f29b8d05-3cec-49f2-9aab-1e2deab0d28d",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "For the dissociation of $\\mathrm{BaCl}_{2}$ in water, which of the following VantHoff factor is not possible?"
+  },
+  {
+   "question_id": "fe3732e3-f119-4763-be6c-2772c9943512",
+   "chapter_id": "f95d6af7-2754-5516-8d74-c4455dfc6ea2",
+   "chapter": "Solutions",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The Van't Hoff factor for $0.1 \\mathrm{M} \\mathrm{Al}\\left(\\mathrm{NO}_{3}\\right)_{3}$ solution is 2.5, then the percent dissociation of aluminium nitrate is"
+  },
+  {
+   "question_id": "b380c055-17cd-43cc-a312-27099d2c454b",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which one of the following is correct?"
+  },
+  {
+   "question_id": "cd774957-2db8-4a55-be14-cb6c741e6866",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which one of the following ions will be colourless in its aqueous solution?"
+  },
+  {
+   "question_id": "329f9aa5-2f8b-4a5d-901d-8b68ab4b74c2",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "General oxidation of state of d-block elements is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "5c97c032-5e87-4b24-98a6-138e3c82b82b",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following facts is not shown by transition metals?"
+  },
+  {
+   "question_id": "e1b7c0b1-3c73-4a95-93a5-7d151e5f7bfa",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following has the maximum number of unpaired electrons?"
+  },
+  {
+   "question_id": "635a0fbb-08aa-43f1-ad25-bd154cd5cf9a",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The general electronic configuration of d-block elements is"
+  },
+  {
+   "question_id": "09621985-02ac-4a5f-8a9d-f99ae2e49f65",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which element from following does not exhibit magnetic moment in +2 state?"
+  },
+  {
+   "question_id": "18000514-71f5-4d01-b30c-e02df374c99b",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Similarity in the radius of Zr and Hf is explained on the basis of"
+  },
+  {
+   "question_id": "6198616d-e949-43ee-a08e-7d6528401cb6",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following vanadium dihalide $\\left(\\mathrm{VX}_{2}\\right)$ is unstable"
+  },
+  {
+   "question_id": "400549ca-711f-4f73-a25a-45c829407141",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion (A) : $\\mathrm{PbI}_{4}$ is stable and exists in nature.\nReason (R) : $\\mathrm{SnF}_{4}$ and $\\mathrm{PbF}_{4}$ are ionic in nature.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "2ced0e8a-6a64-4d91-a61b-24bce7cb9ba3",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the incorrect statement among the following :"
+  },
+  {
+   "question_id": "3893abed-41c8-48ba-b387-558308370482",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is not true?"
+  },
+  {
+   "question_id": "38dbdebc-c5dc-4551-b2e3-e3c8a989c41e",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is the correct order of oxidizing power among $\\mathrm{Cr}_{2} \\mathrm{O}_{7}^{2-}, \\mathrm{MnO}_{4}^{-}$and $\\mathrm{VO}_{2}^{+}$is"
+  },
+  {
+   "question_id": "39b71b92-dd4b-4803-bc92-5fbc94d5875b",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is a transition element?"
+  },
+  {
+   "question_id": "3a653c43-2865-49fb-9b55-60c168c97a3e",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Incorrect statements among the following A) Sc exhibits variable oxidation states. B) In aqueous solution, both $\\mathrm{Cr}^{2+}$ and $\\mathrm{Mn}^{3+}$ are good reducing agents. C) Interstitial compounds typically form ionic compounds. D) $\\mathrm{Mn}_{2} \\mathrm{O}_{7}$ is a covalent oxide."
+  },
+  {
+   "question_id": "3f116d3d-0b22-475d-8ecf-6b141445165d",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "3d series with highest melting point \\& highest enthalpy of atomization Respectively"
+  },
+  {
+   "question_id": "41edf3b0-44ae-4d7a-9b87-a2f62e1d0834",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements:\nStatement - I: Fusion of $\\mathrm{MnO}_{2}$ with KOH and an oxidising agent gives dark green $\\mathrm{K}_{2} \\mathrm{MnO}_{4}$.\nStatement - II: Manganate ion on electrolytic oxidation in alkaline medium gives permanganate ion.\nIn the light of the above statements, choose the correct answer from the options given below"
+  },
+  {
+   "question_id": "511bd9aa-39ce-452c-bd19-ce6817f189e9",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Atomic numbers of few elements are given below. Which of the pairs belongs to d-block?"
+  },
+  {
+   "question_id": "567bc62e-9fc5-4ed7-ab66-19707941e69d",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements:\nStatement-I: In octahedral $\\mathrm{d}^{4}$ to $\\mathrm{d}^{7}$ coordination entities are less stable for strong field as compared to weak field cases.\nStatement-II: Ruby is aluminium oxide $\\mathrm{D}\\left(\\mathrm{Al}_{2} \\mathrm{O}_{3}\\right)$ containing about $0.5-1 \\% \\mathrm{Cr}^{+2}$ ions $\\left(\\mathrm{d}^{4}\\right)$.\nIn the light of the above statements, choose the most appropriate answer from the options given below:"
+  },
+  {
+   "question_id": "62cfa1ef-5165-4988-b403-17c2ad96db48",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements is correct for a 3d-transition element?"
+  },
+  {
+   "question_id": "6a205556-b7af-45ba-9a48-bed2749d420a",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select incorrect statement?"
+  },
+  {
+   "question_id": "6b01dd63-a859-4231-84aa-d4b7b6fc7948",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify incorrect statement"
+  },
+  {
+   "question_id": "6b56d978-89c6-468d-aa9b-45329fff37eb",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Alloys are formed by atoms with metallic radii that are within about $\\_\\_\\_\\_$ \\% of each other."
+  },
+  {
+   "question_id": "6cf479df-6d8f-45f9-b586-6edd3481ad11",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify incorrect statement from the following"
+  },
+  {
+   "question_id": "6f0b688a-eee0-4c1c-95b0-a1b234087a66",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. one is labelled as Assertion (A) and the other is labelled as Reason (R):\nAssertion(A) : $\\mathrm{IE}_{2}$ of Fe is lower than $\\mathrm{IE}_{3}$ of Mn.\nReason (R) : $\\mathrm{Fe}^{+2}$ has $3 \\mathrm{~d}^{6}$ configuration and $\\mathrm{Mn}^{+2}$ has $3 \\mathrm{~d}^{5}$ configuration.\nIn light of the above statements, choose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "767fee69-4940-4624-b73f-339ea9c30e7a",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements about the interstitial compounds is incorrect?"
+  },
+  {
+   "question_id": "7a91921e-584c-4343-89e6-f8fb2dd6eb3e",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following transition metal ion catalyses the reaction between iodide and persulphate ion?"
+  },
+  {
+   "question_id": "7f2a5d47-1b51-4531-9267-e070c3abfd1a",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The first 'd' block element is"
+  },
+  {
+   "question_id": "7f658ebf-f069-4593-aecc-9986ae88d849",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion(A): The highest oxidation state of osmium is +8.\nReason (R) :Osmium is a 5d- series element."
+  },
+  {
+   "question_id": "97959095-809e-4d00-b42d-69d513421cac",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I :Diamagnetic substances are repelled by the applied field while the paramagnetic substances are attracted.\nStatement II: The number of unpaired electrons in a $\\mathrm{Fe}^{2+}$ ion is the same as that in $\\mathrm{Mn}^{2+}$.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "a8f9a778-8396-4657-afc8-018b0ab88a4b",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements:\nStatement - I: Acidified $\\mathrm{K}_{2} \\mathrm{Cr}_{2} \\mathrm{O}_{7}$ is stronger oxidizing agent than $\\mathrm{MoO}_{3}$\nStatement - II: Cr (VI) is more stable than Mo (VI)\nIn the light of the above statements, choose the correct answer from the options given below"
+  },
+  {
+   "question_id": "b05c31f6-fbb4-4df6-bac6-e1632791e89e",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\n\nStatement I: The radius of 5d series element is nearly similar to the 4d series element.\n\nStatement II: Due to poor shielding effect of 4f effective nuclear charge of 5d series elements is greater than that of 4d series elements.\n\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "b5e395a3-1864-47ad-a02b-67c0d0e63b45",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which pair of elements from the following has half-filled d-orbital in observed"
+  },
+  {
+   "question_id": "bb078820-4bf0-47e1-86f9-60c1033d873f",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The incorrect statement is:"
+  },
+  {
+   "question_id": "cb5ebab1-4908-4e95-a615-55fb0935389a",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A): The metals of the second and third series of transition elements have greater enthalpies of atomization than the corresponding metals of first transition series. Reason (R): Metal - metals bonding is much more frequent in 3d series than the corresponding metals of 4d \\& 5d series"
+  },
+  {
+   "question_id": "ccae6f2c-925b-47eb-92c8-e3ef2c53701c",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the incorrect statement from the following."
+  },
+  {
+   "question_id": "d41df4b2-ac7e-46d1-bfc5-33cd8e1e4ab4",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the d-block elements has the lowest enthalpy of atomisation"
+  },
+  {
+   "question_id": "e88768ad-670c-41a5-a82e-fe5785a71e41",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Cerium $(\\mathrm{Z}=58)$ is an important member of the lanthanoids. Which of the following statements about cerium is INCORRECT?"
+  },
+  {
+   "question_id": "f5325393-c416-411f-8347-29895bd81ae4",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Select the correct statements from the following\n    A. $\\mathrm{Ce}^{4+}$ is a strong oxidant in aqueous solution\n    B. Highest oxidation state of lanthanoids is +4 while highest oxidation state of actinoids is +7\n    C. Pr, Nd, Tb and Dy exhibit +4 state only in oxides.\nD. $\\mathrm{TiCl}_{4}+\\mathrm{Al}\\left(\\mathrm{CH}_{3}\\right)_{3}$ is used in polymersiation of ethylene\nChoose the correct answer from the option given below"
+  },
+  {
+   "question_id": "f727d3eb-ba0d-4d15-98e2-9f1616dd33ce",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following observations of a compound\ni) Decomposes on heating at 513 K to give green coloured and black coloured compounds\nii) Can exist in dark purple colour crystals.\niii) Shows diamagnetism along with weak temperature dependent para magnetism The compound is"
+  },
+  {
+   "question_id": "fc1df3a8-ae08-40c1-9ae9-88f6cfa13f43",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Choose the incorrect statements from the following\nA) Group 16 elements form oxides of general formula $E O_{2}$ and $E O_{3}$ (where $\\mathrm{E}=\\mathrm{S}$, Se and Te) Both the types of oxides are acidic in nature.\nB) $\\mathrm{TeO}_{2}$ is an oxidising agent while $\\mathrm{SO}_{2}$ is reducing in nature.\nC) Most votalile hydride of $16{ }^{\\text {th }}$ group is $H_{2} O$.\nD) The ozone molecule contains five lone pairs of electrons.(in its valence shell) Choose the correct answer from the options given below:"
+  },
+  {
+   "question_id": "fc454424-3bb6-4589-9a53-3de37aec48e9",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Among the following pair of ions having same colour in aqueous solution are"
+  },
+  {
+   "question_id": "457d8875-b9b4-4644-bad1-8141bae0005c",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the incorrect statement."
+  },
+  {
+   "question_id": "66c19c7a-3dfe-4b94-947c-124998d3b64f",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Wrong match among the following is"
+  },
+  {
+   "question_id": "6815db58-5b96-42b9-8431-7aab3b20795d",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the ions:\n(i) $\\mathrm{Cu}^{+2}$ (ii) $\\mathrm{Ti}^{+4}$ (iii) $\\mathrm{Co}^{+2}$ (iv) $\\mathrm{Fe}^{+2}$ Which set of ions will be coloured in aqueous solution?"
+  },
+  {
+   "question_id": "7666b097-fcfd-4cb8-baf3-85c5bf88374c",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In 3d series the element with the highest melting point \\& highest enthalpy of atomisation respectively"
+  },
+  {
+   "question_id": "ef7f178d-5cc6-4bbc-920c-c59ea86c92af",
+   "chapter_id": "03b28b70-7318-558a-a728-f505fc592e5a",
+   "chapter": "d-and-f-Block Elements",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The incorrect statement about magnetic behavior of transition elements is"
+  }
+ ]
+}

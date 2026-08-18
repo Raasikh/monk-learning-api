@@ -1,0 +1,1887 @@
+{
+ "subject": "physics",
+ "batch": 2,
+ "chapters": [
+  {
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "8092830f-53c7-4895-b598-114efbca3cb3",
+     "name": "Bohr's Model and Energy Levels"
+    },
+    {
+     "concept_id": "f9d6cd86-2eec-4a0e-ac12-e8d6fdf1b68a",
+     "name": "Hydrogen Spectrum and Spectral Series"
+    },
+    {
+     "concept_id": "063b765f-6628-4c06-91fd-835052ad3fe6",
+     "name": "Alpha-particle Scattering and Rutherford's Nuclear Model"
+    },
+    {
+     "concept_id": "ae678379-f2b7-46e1-9792-d47b2d7e52de",
+     "name": "Ionization and Excitation Energy"
+    },
+    {
+     "concept_id": "77066294-f774-42ab-90d6-05cc7785b555",
+     "name": "Atomic Collisions and Excitation"
+    },
+    {
+     "concept_id": "69fceb7f-d1f4-494a-9d66-e2bcc5668be6",
+     "name": "de Broglie's Explanation of Bohr's Quantisation"
+    },
+    {
+     "concept_id": "c51a7974-877c-4a13-9e99-fcbec7fa636d",
+     "name": "Limitations of Bohr's Model"
+    },
+    {
+     "concept_id": "a99d583e-0ba6-4bd7-a0fb-8eccab9876d5",
+     "name": "X-ray Production"
+    }
+   ]
+  },
+  {
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "f5f392a0-de08-4e8a-b4ff-908fb47a9a1a",
+     "name": "Ohm's Law and Resistance"
+    },
+    {
+     "concept_id": "5110b60a-46ba-4b87-8362-e053aa4f66aa",
+     "name": "Electric Current and Drift Velocity"
+    },
+    {
+     "concept_id": "29e78f28-c47b-4d44-a007-44e7b2d319fe",
+     "name": "Kirchhoff's Laws and Network Analysis"
+    },
+    {
+     "concept_id": "a133e4a0-0b49-419e-a78b-057ae57af83a",
+     "name": "Series and Parallel Combination of Resistors"
+    },
+    {
+     "concept_id": "9880c88d-11d5-407c-bfbd-645e7c53d581",
+     "name": "Measuring Instruments"
+    },
+    {
+     "concept_id": "bbe125fc-967b-462a-9283-bb56ba1f4c53",
+     "name": "Electrical Energy and Power"
+    },
+    {
+     "concept_id": "d513c2aa-6ac1-4bec-abad-9a58451801f2",
+     "name": "EMF, Terminal Voltage and Internal Resistance"
+    },
+    {
+     "concept_id": "00302640-d165-44d6-abc3-a5eaae28307d",
+     "name": "Wheatstone Bridge"
+    },
+    {
+     "concept_id": "cd2d91e4-def6-4081-bdc2-d1b1d44108a8",
+     "name": "Combination of Cells"
+    },
+    {
+     "concept_id": "b6067cfd-0217-4154-b451-d34585bae719",
+     "name": "Resistivity and Temperature Dependence"
+    },
+    {
+     "concept_id": "fc8bdf36-ab30-4e85-9e3e-efde29d30aa1",
+     "name": "Complex Network Reduction"
+    }
+   ]
+  },
+  {
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "ed13e677-d66f-4ec6-afad-ed7320de4f7b",
+     "name": "Einstein's Photoelectric Equation and Work Function"
+    },
+    {
+     "concept_id": "dfe2e8d5-fdcc-435e-9352-074d5a17c5f3",
+     "name": "Photoelectric Effect: Experimental Laws and Observations"
+    },
+    {
+     "concept_id": "9e571bd1-f45a-44bc-abf3-1cccaa387de0",
+     "name": "Matter Waves and de Broglie Wavelength"
+    },
+    {
+     "concept_id": "1d85c827-7166-497f-8106-297d1bbcf0d4",
+     "name": "de Broglie Wavelength of Accelerated Charged Particles"
+    },
+    {
+     "concept_id": "127d9ecb-4f52-42a3-ab08-b6f5dc277cbf",
+     "name": "Photon Energy and Momentum"
+    },
+    {
+     "concept_id": "c6025edc-ec61-4d56-b128-f010d276cfbf",
+     "name": "Photon Flux and Radiation Intensity"
+    },
+    {
+     "concept_id": "56e797d1-75be-484c-b821-842ae1e3c506",
+     "name": "Photoelectric Effect Graphs"
+    },
+    {
+     "concept_id": "4ba6b63d-472c-46aa-852f-9701fff0188c",
+     "name": "Davisson-Germer Experiment"
+    },
+    {
+     "concept_id": "871c6b13-5778-4c26-a25a-355e6172b8d1",
+     "name": "Electron Emission Mechanisms"
+    },
+    {
+     "concept_id": "438d7b3a-8a4a-4565-827a-bc0d24967782",
+     "name": "Wave-Particle Duality"
+    }
+   ]
+  },
+  {
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "6be391a9-5529-45aa-8b1e-989d3586bb34",
+     "name": "Coulomb's Law and Electric Forces"
+    },
+    {
+     "concept_id": "1ac4ed5a-8412-4777-86f6-0d862a12da43",
+     "name": "Electric Field"
+    },
+    {
+     "concept_id": "849e2af0-b7ce-4cf8-b0ea-e5485add8e92",
+     "name": "Gauss's Law and Its Applications"
+    },
+    {
+     "concept_id": "a2e41053-4fb1-49dc-8832-371b2f408142",
+     "name": "Electric Dipole and Its Field"
+    },
+    {
+     "concept_id": "a5a09ef3-2d20-447d-af1b-ffe3d1081314",
+     "name": "Torque and Potential Energy of a Dipole in a Uniform Electric Field"
+    },
+    {
+     "concept_id": "957797e7-da3d-4b70-be2d-715eb1bc92e3",
+     "name": "Electric Field due to Continuous Charge Distribution"
+    },
+    {
+     "concept_id": "fea5eded-a786-4ea0-a339-29848523e9fd",
+     "name": "Electric Flux"
+    },
+    {
+     "concept_id": "e707b056-1c7f-408f-b50f-14f365d92092",
+     "name": "Motion of a Charged Particle in a Uniform Electric Field"
+    },
+    {
+     "concept_id": "6a90efaf-0e86-4d58-ad13-aeea77c7c72d",
+     "name": "Equilibrium of Charges"
+    },
+    {
+     "concept_id": "9fb7100e-88f7-4a1d-b828-316cd83405b0",
+     "name": "Electric Charge: Properties, Quantisation and Charging"
+    },
+    {
+     "concept_id": "a9e92b8d-ae3d-4321-be2d-0aa0faf79ae7",
+     "name": "Electric Field Lines"
+    }
+   ]
+  },
+  {
+   "chapter_id": "b8223a22-15d4-5760-886f-53750c7dc9e8",
+   "chapter": "Electromagnetic Induction",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "6f912068-46c9-4ad3-892f-b46d5bbce0ae",
+     "name": "Motional EMF and Electromagnetic Force/Power"
+    },
+    {
+     "concept_id": "86ac1114-c645-4fa8-afd8-626504cc567a",
+     "name": "Lenz's Law and Direction of Induced Current"
+    },
+    {
+     "concept_id": "b0dcfc2a-1be7-4953-807a-6b8d30ee76dc",
+     "name": "Faraday's Law of Induction"
+    },
+    {
+     "concept_id": "34de082f-620b-4e62-afdd-8644b17b6b1f",
+     "name": "Magnetic Flux and Flux Linkage"
+    },
+    {
+     "concept_id": "4fed4017-7276-44c2-9949-f2214306051c",
+     "name": "Self-Inductance and Magnetic Energy"
+    },
+    {
+     "concept_id": "339eee1b-5f7a-46ba-a129-767f01514f2e",
+     "name": "Charge Flow and Heat in Induced Circuits"
+    },
+    {
+     "concept_id": "2afa44ce-65cf-4570-a5b6-de76719220f8",
+     "name": "Mutual Inductance"
+    },
+    {
+     "concept_id": "d89d68cc-5d79-4dcb-b1ad-99a735271212",
+     "name": "Eddy Currents and Electromagnetic Damping"
+    },
+    {
+     "concept_id": "cdc21487-14b5-4446-9d9c-e31755d1fdb3",
+     "name": "AC Generator and Rotating Coil EMF"
+    },
+    {
+     "concept_id": "493877b8-06c4-4013-b3af-d17b12ad37d4",
+     "name": "Induced Electric Field due to Changing Magnetic Flux"
+    }
+   ]
+  },
+  {
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "70614864-df5e-44c8-999a-6b5682e310a8",
+     "name": "Electromagnetic Spectrum and Applications"
+    },
+    {
+     "concept_id": "7fa5e09e-771c-4ae6-b828-4dc2760f8364",
+     "name": "Nature and Properties of Electromagnetic Waves"
+    },
+    {
+     "concept_id": "4a626c32-0b20-4567-aecf-00fca3fcfcd7",
+     "name": "Displacement Current and Maxwell's Equations"
+    },
+    {
+     "concept_id": "91b9e72c-8eec-4643-9d65-c675f29a3ca2",
+     "name": "Energy, Momentum and Radiation Pressure of Electromagnetic Waves"
+    },
+    {
+     "concept_id": "46ca60d9-9339-4436-ad55-614a1b6b454c",
+     "name": "Sources and Experimental Discovery of Electromagnetic Waves"
+    }
+   ]
+  },
+  {
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "e84dde4e-1bca-4484-aa08-1f874d403e2a",
+     "name": "Dielectric Effects on Capacitance"
+    },
+    {
+     "concept_id": "8af7d5ab-c160-40cc-b376-17cb096bb55c",
+     "name": "Electrostatic Potential and Potential Difference"
+    },
+    {
+     "concept_id": "a601aa4a-4bb6-43b1-87cc-1afaae6bbce2",
+     "name": "Equipotential Surfaces and Electric Field Relation"
+    },
+    {
+     "concept_id": "04394f5c-e1f7-49b4-b3c8-4ca23a78976a",
+     "name": "Electrostatic Potential Energy of Charge System"
+    },
+    {
+     "concept_id": "b675eb01-643f-406b-acf8-8a77035ba4ba",
+     "name": "Combination of Capacitors"
+    },
+    {
+     "concept_id": "5e688566-ddf4-415f-882e-b19fd5c2cfbf",
+     "name": "Capacitance of Conductors"
+    },
+    {
+     "concept_id": "0fa6f5ba-db0a-4442-81e9-7e9271daa771",
+     "name": "Electrostatics of Conductors"
+    },
+    {
+     "concept_id": "824110d4-f33b-4e7b-b47f-9e451ea5088f",
+     "name": "Energy Stored in a Capacitor"
+    },
+    {
+     "concept_id": "2e3c6bf0-5ef6-4a08-8edf-9065381e0462",
+     "name": "Charge Sharing and Common Potential"
+    },
+    {
+     "concept_id": "5c16964c-7b98-4e13-a379-adf4fcd13d54",
+     "name": "Electric Dipole in External Field"
+    }
+   ]
+  },
+  {
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "21f0d538-4687-4119-98fd-7460771e07f0",
+     "name": "Magnetization, Magnetic Intensity, Susceptibility and Permeability"
+    },
+    {
+     "concept_id": "c4058a57-165d-40fd-b423-bf447be9225d",
+     "name": "Diamagnetic, Paramagnetic and Ferromagnetic Materials"
+    },
+    {
+     "concept_id": "1782fe0b-cc15-418d-8081-6b1b8f90f4ca",
+     "name": "Bar Magnet and Magnetic Dipole Moment"
+    },
+    {
+     "concept_id": "f069f753-9cac-4c4e-8d0b-ed619716d0ff",
+     "name": "Torque on a Magnetic Dipole"
+    },
+    {
+     "concept_id": "698c6f5d-5c5c-4049-9ad7-bd706cd24bb2",
+     "name": "Potential Energy and Work Done on a Magnetic Dipole"
+    },
+    {
+     "concept_id": "ee81a55f-d053-4f06-a152-51fa5938b598",
+     "name": "Earth's Magnetism"
+    },
+    {
+     "concept_id": "85fe303b-bbbb-45c4-b37c-b2fc381ce8c6",
+     "name": "Magnetic Field Lines and Gauss's Law"
+    },
+    {
+     "concept_id": "7100f060-8516-45dd-bb35-201cf52defc4",
+     "name": "Curie's Law and Temperature Dependence"
+    },
+    {
+     "concept_id": "1265a827-54c2-4af1-a33d-8dad46831c34",
+     "name": "Hysteresis and Permanent Magnets"
+    },
+    {
+     "concept_id": "0c544255-d89b-4e55-a89b-7b8417d6f895",
+     "name": "Bar Magnet as Equivalent Solenoid"
+    }
+   ]
+  },
+  {
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "8b783aa6-2cc4-4895-910e-a3ac09b9f4fd",
+     "name": "Motion of Charged Particles in a Magnetic Field"
+    },
+    {
+     "concept_id": "9ccc34ef-3764-4811-8ee0-c00b5914690c",
+     "name": "Magnetic Field and Biot-Savart Law"
+    },
+    {
+     "concept_id": "ab1a2940-49ce-4aa7-8156-7e90aa62107a",
+     "name": "Magnetic Force on a Moving Charge"
+    },
+    {
+     "concept_id": "adf03d6d-eda0-4fb6-a8e5-d941795a0623",
+     "name": "Ampere's Circuital Law and Its Applications"
+    },
+    {
+     "concept_id": "ee95f3ba-d3b5-4303-9751-7f73b298531a",
+     "name": "Moving Coil Galvanometer and Its Conversion"
+    },
+    {
+     "concept_id": "70085900-e93c-455f-abb5-46cf9c7015d4",
+     "name": "Force on a Current-Carrying Conductor in a Magnetic Field"
+    },
+    {
+     "concept_id": "ac67b87b-c975-4687-b906-3f63bab21647",
+     "name": "Torque on a Current Loop"
+    },
+    {
+     "concept_id": "90b9e31e-3b36-4856-a922-a89dd4eca3b8",
+     "name": "Force Between Two Parallel Current-Carrying Conductors"
+    },
+    {
+     "concept_id": "74bffd8a-f8f2-4735-bd16-d9eea1be6a66",
+     "name": "Magnetic Dipole Moment of a Current Loop"
+    },
+    {
+     "concept_id": "56278729-cabc-4d92-b65c-7a43cb052791",
+     "name": "Magnetic Dipole Moment of a Revolving Electron (Bohr Magneton)"
+    }
+   ]
+  },
+  {
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "ccff9947-9d92-4fbc-b04d-390fb8ef6814",
+     "name": "Radioactive Decay Law and Half-Life"
+    },
+    {
+     "concept_id": "3e475210-99c0-41fd-968c-cd4ac8295ec8",
+     "name": "Mass Defect and Nuclear Binding Energy"
+    },
+    {
+     "concept_id": "9682b8e4-7371-4e5a-ba6c-ef7b214797bd",
+     "name": "Composition and Size of Nucleus"
+    },
+    {
+     "concept_id": "9827b09a-ae32-4f6b-a27f-f6f1ae0d1ce7",
+     "name": "Radioactive Decay Modes"
+    },
+    {
+     "concept_id": "15ac9181-fdc8-4c05-8bd8-5f3179a5c382",
+     "name": "Binding Energy Curve and Nuclear Force"
+    },
+    {
+     "concept_id": "f7c8c3a5-34da-4bff-80f2-df766c189361",
+     "name": "Mass-Energy Equivalence"
+    },
+    {
+     "concept_id": "e9a11d76-76e8-4b9c-b64e-defaf5a079d7",
+     "name": "Nuclear Fission"
+    },
+    {
+     "concept_id": "9d2d41f3-d9b0-4bd9-996a-9df48fdb589a",
+     "name": "Nuclear Fusion"
+    }
+   ]
+  },
+  {
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "56f12a24-cf92-473b-be1c-515aaaea4f09",
+     "name": "Thin Lens Formula and Magnification"
+    },
+    {
+     "concept_id": "d98db34e-9185-45ba-b148-91096dc7354f",
+     "name": "Power of a Lens and Combination of Lenses"
+    },
+    {
+     "concept_id": "af882c70-95a4-4cbd-99d7-6ca1d7e2a216",
+     "name": "Reflection by Spherical Mirrors"
+    },
+    {
+     "concept_id": "26551609-5f89-41c0-9e74-124abdcb5246",
+     "name": "Total Internal Reflection"
+    },
+    {
+     "concept_id": "ee0994f5-94c1-484c-8b72-170d8766d766",
+     "name": "Refraction at Plane Surfaces"
+    },
+    {
+     "concept_id": "d5b759e7-6bad-4793-9c37-5531d74bb1fc",
+     "name": "Optical Instruments"
+    },
+    {
+     "concept_id": "25adc210-5bb5-44b8-8138-7a5be2e05b00",
+     "name": "Prism and Angular Deviation"
+    },
+    {
+     "concept_id": "8af2d051-92a7-47b1-bbc9-88395d1a205a",
+     "name": "Lens Maker's Formula"
+    },
+    {
+     "concept_id": "de696554-6577-48ae-935d-091b012f5a3e",
+     "name": "Dispersion and Achromatic Combination"
+    },
+    {
+     "concept_id": "06c6589c-8a8c-4d82-8fa4-9f8e2ba6028b",
+     "name": "Refraction at Spherical Surfaces"
+    },
+    {
+     "concept_id": "c700153f-40be-4c1f-b3fa-0ac279f2c5b5",
+     "name": "Reflection by Plane Mirrors"
+    },
+    {
+     "concept_id": "580353dc-7c7a-4bd2-b632-8c45cca0f421",
+     "name": "Ray Optics Fundamentals"
+    }
+   ]
+  },
+  {
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "50e7912a-8cd2-4b69-bf67-877c92ed1c84",
+     "name": "Basic Logic Gates: OR, AND, NOT"
+    },
+    {
+     "concept_id": "651b2f6b-ee9d-46b4-afd7-be568a9f022f",
+     "name": "V-I Characteristics and Biasing of p-n Junction Diode"
+    },
+    {
+     "concept_id": "3179edc3-9ea0-4ace-8d9d-3d8c9118cb0c",
+     "name": "Rectifier Circuits (Half-Wave and Full-Wave)"
+    },
+    {
+     "concept_id": "644b2153-7acf-422d-8af4-dcf31d108058",
+     "name": "Intrinsic and Extrinsic Semiconductors"
+    },
+    {
+     "concept_id": "9c12ed0d-2e57-4da6-a9ed-1ff58944ffd2",
+     "name": "Zener Diode and Voltage Regulation"
+    },
+    {
+     "concept_id": "c945c540-34e3-4a05-a68c-b3a02d33d1ce",
+     "name": "LED, Photodiode and Solar Cell"
+    },
+    {
+     "concept_id": "1ca33c48-4a7a-445a-a2e6-e1de53b224af",
+     "name": "NAND and NOR as Universal Gates"
+    },
+    {
+     "concept_id": "41833b7e-cf8f-42f0-b193-058c5ddc09fb",
+     "name": "Boolean Expressions and Combinational Logic Circuits"
+    },
+    {
+     "concept_id": "7da5dbbc-d949-4635-9bcb-f4f4c65abd8a",
+     "name": "p-n Junction Formation and Depletion Region"
+    },
+    {
+     "concept_id": "034d8007-2d33-4c2a-9e04-78b8b712e383",
+     "name": "Energy Bands and Classification of Solids"
+    }
+   ]
+  },
+  {
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "concepts": [
+    {
+     "concept_id": "c8ce0494-eff8-4f3d-b23f-569957728d2d",
+     "name": "Interference of Light and Young's Double-Slit Experiment"
+    },
+    {
+     "concept_id": "294306d2-0fc1-4411-89bf-a190f0757067",
+     "name": "Diffraction of Light"
+    },
+    {
+     "concept_id": "552df558-8ef0-4e5a-b64d-e7b1932a3b0d",
+     "name": "Polarisation of Light"
+    },
+    {
+     "concept_id": "810d2ec1-789d-41e0-8421-f28a4661cc0d",
+     "name": "Wavefront and Huygens' Principle"
+    },
+    {
+     "concept_id": "86685011-bf7b-4c3e-a3b1-b0f1eefaa47e",
+     "name": "Optical Path and Fringe Shift in YDSE"
+    },
+    {
+     "concept_id": "1819cbdd-319b-4b28-a988-91efb71b3c6a",
+     "name": "Coherent Sources and Interference Conditions"
+    },
+    {
+     "concept_id": "d42db6a8-e141-465a-bb2b-1ad033fd4808",
+     "name": "Thin-Film Interference"
+    },
+    {
+     "concept_id": "c0d0bcb8-e30b-4ffe-b226-078fab67a5cc",
+     "name": "Doppler Effect of Light"
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "question_id": "21e469ef-95ec-48cf-a4ef-904530319b8a",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Let $L_{n}$ is the orbital angular momentum and $r_{n}$ is the radius of the electron in the $n^{\\text {th }}$ orbit, of Bohr model of hydrogen atom. Then"
+  },
+  {
+   "question_id": "9df35dae-06c6-4ea2-a948-1ec23f80fcac",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following statements related to atomic models:\n\na) Rutherford's nuclear model successfully explains the small size of the nucleus compared to the size of the atom.\nb) J. J. Thomson's atomic model accounts for the overall electrical neutrality of an atom.\nc) Rutherford's model of the atom was proposed on the basis of observations from the $\\alpha$-particle scattering experiment.\n\nWhich of the above statements are correct?"
+  },
+  {
+   "question_id": "b02685f7-53aa-40e4-91dd-ddc1a3f4e590",
+   "chapter_id": "0365e7bf-d5d9-5b52-afd0-cd2ae522284c",
+   "chapter": "Atoms",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Angular momentum of an electron in a hydrogen atom is proportional to"
+  },
+  {
+   "question_id": "2899999c-50fb-4e9f-aa99-fe750df55c15",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given a current carrying wire of nonuniform cross section. Which of the following quantity or quantities are constant throughout the length of the wire?"
+  },
+  {
+   "question_id": "531caf69-98f3-4908-aeec-987457a2c13c",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are three statements.\nStatement I :Specific resistance depends on nature of material and independent of temperature of the material.\n\nStatement II : A wire of resistance $6 \\Omega$ is drawn out so that its new length is four times its original length. The resistance of the new wire is $48 \\Omega$.\n\nStatement III : Drift velocity is the average constant velocity acquired by free electrons inside a metal by the application of an electric field which results in current.\n\nIn light of the above statements, choose the correct answer from the options given below.\n\nWhich of the following i"
+  },
+  {
+   "question_id": "8ab09eca-e2f4-4875-b4d1-70d3773197a0",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When the current $i$ is flowing through a conductor, the drift velocity is $v$. If $2 i$ current is flowed through the same metal but having double the area of crosssection, then the drift velocity will be"
+  },
+  {
+   "question_id": "aa6df36d-18be-41f5-b24b-78b39eff9338",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The paths of electrons between successive collisions (with the positive ions of the metal) in the absence of electric field are\n$\\_\\_\\_\\_$ and in the presence of electric field the paths are $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "b5172758-b394-4de8-affe-c2fa5ce231a7",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : A series combination of cells is preferred when the external resistance is large compared to the internal resistance of the cell.\nStatement II: A parallel combination of cells is preferred when the external resistance is small compared to the internal resistance of each cell.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "c397e449-64fb-4e84-831c-b206109e481d",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In a hydrogen tube it is observed that through a given cross-section $3.13 \\times 10^{15}$ electrons per sec moving from right to left and $3.12 \\times 10^{15}$ protons per sec are moving from left to right. The electric current in the discharge tube and its direction is"
+  },
+  {
+   "question_id": "ffdc7ca9-b71c-4c36-8f2b-ef9cbb890f76",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The charge flowing in a conductor varies with time as $\\mathrm{Q}=\\mathrm{at}-\\mathrm{bt}^{2}$. Then, the current"
+  },
+  {
+   "question_id": "fb861e25-f825-4b4e-9b9f-058fd87b7dfd",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "SI unit of electric current"
+  },
+  {
+   "question_id": "872e9e4f-9829-4c0d-89ce-0617394e23e9",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two heating coils, one of fine wire and the other of thick wire made of same material and of same length are first connected in series and then in parallel. Which of the following statements is correct?"
+  },
+  {
+   "question_id": "870ac895-d02b-4227-a665-617e537906d5",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A resistance $R_{2}$ is connected in parallel with a resistance $R_{1}$. What resistance $R_{3}$ must be connected in series with the combination of $R_{1}$ and $R_{2}$, so that the equivalent resistance is equal to the resistance $R_{1}$ ?"
+  },
+  {
+   "question_id": "b787e4b4-8a19-45fa-84ab-8002852fa1b5",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Manganin is widely used in wire bound standard resistors because of its"
+  },
+  {
+   "question_id": "e2a37b0e-81ab-4779-9251-b93450eb7805",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A uniform wire of resistance $9 \\Omega$ is cut into 3 equal parts. They are connected in the form of equilateral triangle ABC. A cell of e.m.f. 2V and negligible internal resistance is connected across B and C. Potential difference across AB is"
+  },
+  {
+   "question_id": "cc1affcd-2869-430e-ae17-909f22f1019a",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The product of resistivity and conductivity of a cylindrical conductor"
+  },
+  {
+   "question_id": "a2fe0ed6-5fb8-4ced-a470-3baa008b1e1a",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The temperature dependence of resistance of Cu and undoped Si in the temperature range 300 K to 400 K, is best described by"
+  },
+  {
+   "question_id": "c31a8651-18c7-4be9-9cdb-c65339356167",
+   "chapter_id": "5bd38ee4-dc52-5144-89a3-a51bbb35af15",
+   "chapter": "Current Electricity",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two resistances $\\mathrm{R}_{1}$ and $\\mathrm{R}_{2}$ when connected in series and then in parallel with 120 V line, The ratio of power consumed is $2: 9$. Then the ratio of $\\mathrm{R}_{1}$ and $\\mathrm{R}_{2}$ will be"
+  },
+  {
+   "question_id": "332f3e6c-a187-467b-bdad-3cf77b8ea995",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Electromagnetic radiation of intensity $1 \\mathrm{~W} / \\mathrm{m}^{2}$ strikes on the surface of a substance, which reflects 80\\% incident radiation back into same medium and 20\\% is absorbed. The radiation pressure on the surface of substance is"
+  },
+  {
+   "question_id": "254b83d1-ddfc-4c42-a31a-1d990d8db1c9",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In a photocell bi-chromatic light of wavelength $2475 \\AA^{0}$ and $6000 \\AA$ are incident on cathode whose work function is 4.8 eV. If a uniform magnetic field of $3 \\times 10^{-5}$ tesla exists parallel to the plane of the plate, the maximum radius of the path describe by the photoelectron will be (mass of electron $=9 \\times 10^{-31} \\mathrm{~kg}$ )"
+  },
+  {
+   "question_id": "d5c4a952-e073-47a4-9ca3-38b8eb1c79e4",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An electron is made to enter symmetrically between two parallel metal plates, each of 10 cm length, having equal and opposite charges. The electron emerges out of the plates with a horizontal component of velocity $10^{6} \\mathrm{~m} / \\mathrm{s}$. If the magnitude of the electric field between the plates is 9.1 V/cm, then the vertical component of the velocity of electron is\n(mass of electron $=9.1 \\times 10^{-31} \\mathrm{~kg}$ and charge of electron $=1.6 \\times 10^{-19} \\mathrm{C}$ )"
+  },
+  {
+   "question_id": "e80bf338-fe21-4c90-a508-3a6db13efc08",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When monochromatic light of certain wavelength falls on a metal, the maximum kinetic energy of the photoelectrons is found to be 'K'. When the wavelength of the incident light is halved, the maximum kinetic energy of the photoelectrons is found to be ' 3 K '. The work function of the metal is"
+  },
+  {
+   "question_id": "8d3c2c77-82ac-430b-9cb5-79d3aca9bbff",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The work function of a substance is 4.0 eV. The longest wavelength of light that can cause photoelectron emission from this substance is approximately"
+  },
+  {
+   "question_id": "441162b5-dc19-41e3-9ae7-631be18c7647",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When a metallic surface is illuminated with radiation of wavelength $\\lambda$, the stopping potential is V. If the same surface is illuminated with radiation of wavelength $2 \\lambda$, the stopping potential is V/4. The threshold wavelength for the metallic surface is"
+  },
+  {
+   "question_id": "465381ee-bdd6-49d7-b193-b9c1b7390354",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The de-Broglie wavelength of the electron in ground state of a hydrogen atom is $\\lambda_{0}$. The radius of $4^{\\text {th }}$ excited state of hydrogen atom in terms of $\\lambda_{0}$ is"
+  },
+  {
+   "question_id": "4b3dea9f-4de7-4d12-9a9f-3de39b019b1f",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Kinetic energy of an electron accelerated in a potential difference of 100 V is"
+  },
+  {
+   "question_id": "035a6cb9-e510-4a16-951a-ab9d29dcea29",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Number of electrons gained by $\\mathrm{Pd}^{+2}$ from ligands in $\\left[\\mathrm{PdCl}_{4}\\right]^{2-}$"
+  },
+  {
+   "question_id": "74a1930c-7578-4d41-a669-a9ad9c8946fe",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Increasing order (lowest first) for the values of e/m for electron (e), proton (p), neutron (n) and $\\alpha$-particle is"
+  },
+  {
+   "question_id": "f698d394-f313-48e9-b26c-65f3141dcbce",
+   "chapter_id": "b992c39b-0355-5fc6-bfb2-0ba5cc82411b",
+   "chapter": "Dual Nature of Radiation and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.\n\nAssertion (A): According to quantum picture of radiation number of photons increases with increase in frequency of light\n\nReason (R): Maximum kinetic energy of emitted electrons increases with the frequency of incident radiation on a photo sensitive metal\n\nIn the light of the above statements, choose the most appropriate answer from the options given below:"
+  },
+  {
+   "question_id": "90f36561-3869-427d-8489-54659ee4633b",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A proton is projected with speed $v$ towards a free proton at rest placed at a long distance from it. If $m$ is the mass and e is the charge of each proton, then the closest distance of approach between them is"
+  },
+  {
+   "question_id": "9964eaa9-b5a9-449b-aad4-0bafe23a8085",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : An electric charge cannot experience any force due to its own field.\nStatement II: A point charge is placed at the centre of a cube. The flux linked with each face is $\\frac{q}{6 \\varepsilon_{o}}$. If the charge of the centre is displaced from the centre to any other position in the cube, the flux through each face changes. But the total flux through the cube does not change.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "3fefcfc0-5d69-41a9-bbb0-7ec66d74db2a",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two identical conducting balls A and B have positive charge $q_{1}$ and $q_{2}$ respectively ( $q_{1} \\neq q_{2}$ ). The balls are brought together so that they touch each other and then kept in their original positions. The force between them is"
+  },
+  {
+   "question_id": "21585430-59cc-4567-bc76-38413dec1896",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A charge Q is placed at the centre of a cube, the flux coming out from any surface will be"
+  },
+  {
+   "question_id": "f1f719cb-9fb3-40fb-b3f8-22e58513479f",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the correct statements from the following descriptions.\nStatement(A):- Electric field is discontinuous across the surface of a charged conductor.\nStatement(B):- The electric potential is same on both the sides of a charged conductor and hence it is not discontinuous."
+  },
+  {
+   "question_id": "acb5beaa-6622-43b4-967b-f63ef7663194",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An electric dipole is formed by two equal and opposite charges q with separation d. The charges have same mass m. It is kept in a uniform electric field E. It it is slightly rotated from its equilibrium position, then its angular frequency $\\omega$ is."
+  },
+  {
+   "question_id": "d0469968-d644-4c63-b5d2-d5f60fec8751",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two point charges - q and + q are located atpoints $(0,0,-\\alpha)$ and $(0,0, \\alpha)$ respectively. The electric potential at a point (0,0,z), where $\\mathrm{z}>\\alpha$ is"
+  },
+  {
+   "question_id": "c7527032-d7de-4c6a-a0e1-633ba0d00a2a",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two charged particles having charges $1 \\mu \\mathrm{C}$ and $-1 \\mu \\mathrm{C}$ and of mass 50 gm each are held at rest while their separation is 2 m. Find the speed of the particles when their separation is 1 m."
+  },
+  {
+   "question_id": "c1e91f61-31c0-4183-a118-a6475ae944cb",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Aring of radius R has a charge -Q distributed uniformly over it. The charge, that should be placed at the centre of the ring such that the electricfield becomes zero at a point on the axis of the ring at a distance 'R' from the centre of the ring will be"
+  },
+  {
+   "question_id": "d460c6ce-492f-4e80-97ae-5405d4a20df5",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An electric dipole has a fixed dipole moment $\\vec{p}$, which makes an angle $\\theta$ with respect to the $x$-axis. When subjected to an electric field $\\vec{E}_{1}=E \\hat{i}$, it experiences a torque $\\overrightarrow{\\tau_{1}}=-\\tau \\hat{k}$. When subjected separately to another electric field $\\vec{E}_{2}=\\sqrt{3} E \\hat{j}$, it experiences a torque $\\overrightarrow{\\tau_{2}}=-\\overrightarrow{\\tau_{1}}$. The angle $\\theta$ is"
+  },
+  {
+   "question_id": "ebcb292a-e76c-492a-a791-bbaef4b5201c",
+   "chapter_id": "cf605dc6-faed-5c33-8107-81114cbfef79",
+   "chapter": "Electric Charges and Fields",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A hollow sphere has an outer radius R and an inner radius R/2 . An amount Q of electric charge is uniformly distributed in the volume of the sphere. Find the electric field in the annular part at $\\frac{\\mathrm{R}}{2}<\\mathrm{r}<\\mathrm{R}$."
+  },
+  {
+   "question_id": "5514c671-e481-4b09-9bcb-20f785a23df5",
+   "chapter_id": "b8223a22-15d4-5760-886f-53750c7dc9e8",
+   "chapter": "Electromagnetic Induction",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A coil of area $A$ and $N$ turns is rotating with angular velocity $\\omega$ in a uniform magnetic field $\\vec{B}$ about an axis perpendicular to $\\vec{B}$. The magnetic flux $\\varphi$ and the induced $\\operatorname{emf}$ $\\varepsilon$ across it, at an instant when $\\vec{B}$ is parallel to the plane of the coil, are"
+  },
+  {
+   "question_id": "68d18564-c8f5-4782-ad93-878d6743369a",
+   "chapter_id": "b8223a22-15d4-5760-886f-53750c7dc9e8",
+   "chapter": "Electromagnetic Induction",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion: Self-inductance is called the inertia of electricity.\nReason: Self- inductance is the phenomenon, according to which an opposing induced emf is produced in a coil as a result of change in current or magnetic flux linked in the coil.\nIn the light of the above statements, choose the most appropriate answer from the options given below."
+  },
+  {
+   "question_id": "f90b2bd3-6d3d-49c5-89d4-49c9915044bd",
+   "chapter_id": "b8223a22-15d4-5760-886f-53750c7dc9e8",
+   "chapter": "Electromagnetic Induction",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two solenoids of same volume (length×area of cross-section) have the same number of turns but their lengths are in the ratio 1 : 2. The ratio of their self -inductances is"
+  },
+  {
+   "question_id": "4e452040-f53e-4492-ada5-46d064f11d74",
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A plane electromagnetic wave travels in free space along the x-direction. The electric field component of the wave at a particular point of space and time is $\\mathrm{E}=6 \\mathrm{Vm}^{-1}$ along y-direction. Its corresponding magnetic field component, B would be"
+  },
+  {
+   "question_id": "acc9146a-1936-42ae-91d5-82b6c233cb62",
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In the electromagnetic spectrum, the visible spectrum lies between"
+  },
+  {
+   "question_id": "d49dac8b-0c0b-4cca-affb-dec7a083cc44",
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The rms value of the electric field of light coming from the sun is 720 N/C. The average total energy density of the electromagnetic wave is"
+  },
+  {
+   "question_id": "7438e7b6-fe02-423e-8e9b-5777072e168a",
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The mean intensity of radiation on the surface of the sun is about $10^{8} \\mathrm{~W} / \\mathrm{m}^{2}$. The rms value of the corresponding magnetic field is closest to"
+  },
+  {
+   "question_id": "c0ebeff2-9db0-4822-b4c4-6a390127f7e3",
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion(A) : The electromagnetic wave exerts pressure on the surface on which they are allowed to fall.Reason (R) : There is no mass associated with the electromagnetic waves.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "2a043ace-7379-4771-b3ed-b9e6c0f83f58",
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following is the longest wave?"
+  },
+  {
+   "question_id": "b09afd05-b914-4bfa-941d-46d41fa22d96",
+   "chapter_id": "e8e431d9-8966-55cc-b8f7-1ecc9427839f",
+   "chapter": "Electromagnetic Waves",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The amplitude of magnetic field in an electromagnetic wave propagating along Yaxis is $6.0 \\times 10^{-7} \\mathrm{~T}$. The maximum value of electric field in the electromagnetic wave is"
+  },
+  {
+   "question_id": "23b7a8bb-5382-41ce-954a-6a2f62da1f1e",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The work done in charging a capacitor from 5 V to 10 V is $W$. The work done in charging the capacitor from 10 V to 15 V is"
+  },
+  {
+   "question_id": "86e0eeae-04c1-4a9a-b7f1-d27d6158ac88",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The electrostatic potential in a region of space is given by $\\mathrm{V}=\\mathrm{x}^{2}-\\mathrm{y}^{2}$, where x and y are Cartesian coordinates. The equation of the electric lines of force in this region is"
+  },
+  {
+   "question_id": "0f7ca461-d130-4e76-acb3-1ed47165b829",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A capacitor is connected to a battery. The force of attraction between the plates when the separation between them is halved"
+  },
+  {
+   "question_id": "6eb7042d-fa81-4f6a-9808-77e3bc90a788",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A battery is used to charge a parallel plate capacitor till the potential difference between the plates becomes equal to the electromotive force of the battery. The ratio of the energy stored in the capacitor and the work done by the battery will be"
+  },
+  {
+   "question_id": "61dcb4a7-bece-4520-949b-fafdb8be8971",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If the electric potential at any point (x, y, z) m in space is given by $V=3 x^{2}$ volt. The electric field at the point (1, 0, 3) m will be"
+  },
+  {
+   "question_id": "bbdc7849-ba31-40bf-a64d-7fdf8e951321",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the following four electrodes :\n$$\n\\begin{aligned}\n& \\mathrm{A}=\\mathrm{Cu}^{2+}(0.0001 \\mathrm{M}) / \\mathrm{Cu}_{(\\mathrm{s})} \\\\\n& \\mathrm{B}=\\mathrm{Cu}^{2+}(0.1 \\mathrm{M}) / \\mathrm{Cu}_{(\\mathrm{s})} \\\\\n& \\mathrm{C}=\\mathrm{Cu}^{2+}(0.01 \\mathrm{M}) / \\mathrm{Cu}_{(\\mathrm{s})} \\\\\n& \\mathrm{D}=\\mathrm{Cu}^{2+}(0.001 \\mathrm{M}) / \\mathrm{Cu}_{(\\mathrm{s})}\n\\end{aligned}\n$$\nIf the standard reduction potential of\n$\\mathrm{Cu}^{+2} / \\mathrm{Cu}$ is +0.34 V , the reduction\npotentials (in volts) of the above electrodes\nfollow the order"
+  },
+  {
+   "question_id": "0eb58058-0473-45ed-9a0c-b53558cc9587",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A parallel plate condenser has plates of area $200 \\mathrm{~cm}^{2}$ and separation 0.05 cm. The space between plates have been filled with a dielectric having $\\mathrm{K}=8$ and then charged to 300 volts. The stored energy"
+  },
+  {
+   "question_id": "648dabb9-8b84-4269-8a98-cc91370a8846",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two spheres of radii 12 cm and 16 cm have equal charge. The ratio of their energies is"
+  },
+  {
+   "question_id": "2a60ff14-587d-41ab-a2b3-04b02c8574a2",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A 20F capacitor is charged to 5V and isolated. It is then connected in parallel with an uncharged 30F capacitor. The decrease in the energy of the system will be"
+  },
+  {
+   "question_id": "8362a655-25b5-4803-99e4-f238813dbd74",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Statement-A : Electrical potential may exist at a point where the electrical field is zero\n\nStatement-B : Electrical Field may exist at a point where the electrical potential is zero.\n\nStatement-C : The electric potential inside a charged conducting sphere is constant."
+  },
+  {
+   "question_id": "492187c6-13e1-4091-93ec-630be64d3610",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "On placing a dielectric slab between the plates of an isolated charged condenser Statement-1: Force applied by one plate on the other decreases Statement-2: Energy stored in the capacitor decreases."
+  },
+  {
+   "question_id": "2673becb-f790-43ce-8ea5-65570df7b060",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A parallel plate capacitor of capacitance $40 \\mu F$ is connected to a 100 V power supply. Now, the intermediate space between the plates is filled with a dielectric material of dielectric constant $\\mathrm{K}=2$. Due to the introduction of dielectric material, the extra charge and the change in the electrostatic energy in the capacitor, respectively, are"
+  },
+  {
+   "question_id": "6b9a7468-d8ac-4a97-a8bd-1302b64d51af",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The capacitance of a metallic sphere will be $1 \\mu \\mathrm{~F}$, if its radius is nearly"
+  },
+  {
+   "question_id": "6daa321b-bd21-442a-8946-3c00dd1e3d87",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Three condensers of same capacity connected in series has effective capacity 2mF. If they are connected in parallel and\n\ncharged using a battery of emf 12V, the total energy stored in the combination is"
+  },
+  {
+   "question_id": "9825480c-86e6-46de-b63f-200dca02d532",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Using a battery, a 100 pF capacitor is charged to 60 V and then the battery is removed. After that, a second uncharged capacitor is connected to the first capacitor in parallel. If the final voltage across the second capacitor is 20 V, its capacitance is (in pF)"
+  },
+  {
+   "question_id": "9a307538-34d5-460a-b5c9-b1412d1570da",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A $2 \\mu \\mathrm{~F}$ capacitor is charged to 100 V, and then its plates are connected by a conducting wire. The heat produced is"
+  },
+  {
+   "question_id": "b28d9cdb-66f5-4bd4-ae57-6047a1e143ef",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A capacitor is charged by a battery. The battery is removed and another identical uncharged capacitor is connected in parallel. The total electrostatic energy of resulting system:"
+  },
+  {
+   "question_id": "eced2b95-2c9b-4132-8e8d-c68553bc23c8",
+   "chapter_id": "32366295-8398-526f-a430-cefdeea6d001",
+   "chapter": "Electrostatic Potential and Capacitance",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A parallel plate capacitor is charged, and the charging battery is then disconnected. If the plates of the capacitor are moved farther apart by means of insulating handles"
+  },
+  {
+   "question_id": "13045965-aba5-4155-91cb-802aa1b87b33",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two short bar magnet of magnetic moment M each are arranged at the opposite corners of a square of side 'd' such that their centres coincide with the corners and their axes are parallel. If the like poles are in samedirection the magnetic induction at any of the other corner of the square is"
+  },
+  {
+   "question_id": "2dfdbe4e-998c-4f81-8fe9-1fb97ce6a373",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A domain contains approximately"
+  },
+  {
+   "question_id": "40c827b1-4a18-4f45-a5ee-5fb7007a35c9",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A frog can be levitated in a magnetic field produced by a current in a vertical solenoid placed below the frog. This is possible because the body of the frog behaves as"
+  },
+  {
+   "question_id": "480eb251-77bb-4f2b-a5de-5d937dd71887",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The magnetic susceptibility of a paramagnetic substance at -173°C is 1.5 x $10^{-2}$. To have the susceptibility $0.5 \\times 10^{-2}$, the change in temperature in °C is"
+  },
+  {
+   "question_id": "511682c3-06a4-4d7b-89b7-da360b201eda",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The length of a magnet is large compared to its width and breadth. Time period of its oscillation in a vibration magnetometer is 2s. The magnet is cut parallel to equatorial line into three equal parts and three parts are then placed on each other with their like poles together. The time period of this combination will be"
+  },
+  {
+   "question_id": "5c87621f-4162-463c-8e89-ba08677cd737",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Find the magnetic field due to a dipole of magnetic moment $1.2 A m^{2}$ at a point 1m away from it in a direction making an angle 60° with the dipole axis"
+  },
+  {
+   "question_id": "6708ecf0-08d6-4925-a67b-4880d286b672",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "What happens to the force between\nmagnetic poles when their pole strength and the distance between them are both doubled"
+  },
+  {
+   "question_id": "79671e05-ff85-4bf6-bffa-3e6cad41f868",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A paramagnetic liquid is taken in a U-tube and arranged so that one of its limbs is kept between pole pieces of the magnet. The liquid level in the limb"
+  },
+  {
+   "question_id": "8b01ebf6-0534-4d0c-a92f-d4ce88f4e037",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List-I with List-II.\n\n| List - I (Material) | List - II (Example) |\n| :--- | :--- |\n| A) Diamagnet | I) Alnico |\n| B) Paramagnet | II) Copper |\n| C) Soft Ferromagnet | III) Aluminium |\n| D) Hard Ferromagnet | IV) Gadolinium |\n\nChoose the correct answer from the options given below :"
+  },
+  {
+   "question_id": "9609d9a8-1953-4719-87f0-8de4d82bcc2c",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In the case of bar magnet, lines of magnetic induction"
+  },
+  {
+   "question_id": "9db56333-e155-41bf-b8bd-e2e4cad6e58a",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Which of the following statements is incorrect about hystersis"
+  },
+  {
+   "question_id": "b96dae2e-e0f6-48d6-ac03-fa81ed0e3a9b",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A bar magnet is hung by a thin cotton thread in a uniform horizontal magnetic field and is in equilibrium state. The energy required to rotate it by $60^{0}$ is W . Now the torque required to keep the magnet in this new position is"
+  },
+  {
+   "question_id": "cf3f3595-9c85-4357-8396-264769bcda6b",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If a diamagnetic solution is poured into a U-tube and one arm of this U-tube placed between the poles of a strong magnet with the meniscus in a line with the field, then the level of the solution will"
+  },
+  {
+   "question_id": "d3843716-17b4-4b87-b168-8cbca8b598f1",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A straight magnetic strip has a magnetic moment of $44 \\mathrm{Am}^{2}$. If the strip is bent in a semicircular shape, its magnetic moment will be $\\_\\_\\_\\_$ $\\operatorname{Am}^{2}\\left(\\right.$ Given $\\left.\\pi=\\frac{22}{7}\\right)$"
+  },
+  {
+   "question_id": "eadea2ca-9085-44a7-886a-0a3c819c433a",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A paramagnetic material is placed in a magnetic field. Consider the following statements. The correct statements are\nA) If the magnetic field is increased, the magnetization is increased\nB) The magnetic susceptibility ( $\\chi$ ) is greater than one (1)\nC) The relative permeability $\\mu_{r}$ is less than one (1)\nD) If the temperature is increased, the magnetization is decreased"
+  },
+  {
+   "question_id": "ee54c714-e737-4664-9065-725cf9332e81",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two points A and B are located at distances 20 cm and 30 cm from the center of a short bar magnet on its axial line. The ratio of magnetic induction at A and B is"
+  },
+  {
+   "question_id": "419cdc2d-61b2-4bcd-9699-fa2b9cbaf3df",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The work done in rotating a magnet of magnetic moment M by an angle of $90^{0}$ from the external magnetic field direction is 'n' times the corresponding work done to turn it through an angle of $60^{0}$. Where ' $n$ ' is given by"
+  },
+  {
+   "question_id": "2c19d880-f290-4588-8d17-a28ee191aad5",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The magnetic moment of a magnet of mass 75 gm is $9 \\times 10^{-7} \\mathrm{~A}-\\mathrm{m}^{2}$. If the density of the material of magnet is $7.5 \\times 10^{3} \\mathrm{~kg} / \\mathrm{m}^{3}$ then intensity of magnetisation will be"
+  },
+  {
+   "question_id": "2e24d055-d391-4a7e-be05-d8518fd1c143",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When a piece of a ferromagnetic substance is put in a uniform magnetic field. Flux density inside it is four times the flux density away from the piece. The relative magnetic permeability of the material is"
+  },
+  {
+   "question_id": "bbe5cd30-24ac-4cf0-89e6-956d1eabe685",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If the magnetic dipole moment of an atom of diamagnetic material, paramagnetic material and ferromagnetic material are denoted by $\\mu_{\\mathrm{d}}, \\mu_{\\mathrm{p}}$ and $\\mu_{\\mathrm{f}}$ respectively, then"
+  },
+  {
+   "question_id": "f0af30fd-d37d-4b17-a544-dd1f113fad19",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The magnetic susceptibility of a material at 200 K is $-1.0 \\times 10^{-5}$. Then its value at 400 K is $\\_\\_\\_\\_$ $\\times 10^{-5}$."
+  },
+  {
+   "question_id": "752fcd88-f9d0-48fc-be8a-f2fb6b7a31c6",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Curie temperature is the temperature above which"
+  },
+  {
+   "question_id": "4556d400-8691-45c7-9bfa-cad3f7792fbb",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A magnetic needle lying parallel to a magnetic field required W units of work to turn it through $60^{0}$. The torque required to maintain the needle in this position will be"
+  },
+  {
+   "question_id": "16aaa11b-7699-49a3-91e6-1becec7cd453",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The universal property among all substances is"
+  },
+  {
+   "question_id": "ae8e6545-147e-4cc2-9658-273eebb96e3f",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A bar magnet is analogous to a"
+  },
+  {
+   "question_id": "3de4b5a7-f9cb-4422-900c-d39b8f357c58",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A specimen of iron is uniformly magnetized by a magnetizing field of 500 $\\mathrm{Am}^{-1}$. If the magnetic induction in the specimen is $0.2 \\mathrm{Wbm}^{-2}$. The susceptibility nearly is"
+  },
+  {
+   "question_id": "402edf17-fe42-499f-b73d-41ceed47ebdc",
+   "chapter_id": "cf5d01e5-1a4b-538b-9e72-4d7074b2f61d",
+   "chapter": "Magnetism and Matter",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The magnetic susceptibility of a material of a rod is 999. Permeability of vaccumm is $4 \\pi \\times 10^{-7} \\mathrm{H} / \\mathrm{m}$. The absolute permeability of the material of the rod in henry / meter is"
+  },
+  {
+   "question_id": "051255f6-9d92-4f8b-bdd8-206b06193370",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The current flows in a conductor from east to west. Then, the direction of the magnetic field at a point above the conductor will be\n$\\_\\_\\_\\_$."
+  },
+  {
+   "question_id": "0c2125ce-7aff-444e-a0dc-2c9989593f68",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The electric current in a circular coil of 2 turns produces a magnetic induction $\\mathrm{B}_{1}$ at its centre. The coil is unwound and is rewound into a circular coil of 5 turns and the same current produces a magnetic induction $\\mathrm{B}_{2}$ at its centre. The ratio of $\\frac{B_{1}}{B_{2}}$ is"
+  },
+  {
+   "question_id": "2d88401d-2f78-4386-8af9-229066da7814",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A straight wire carries a current vertically upwards. A point P lies to the east of it at a small distance and another point Q lies to the west at the same distance. The magnetic field at P is (consider earth field)"
+  },
+  {
+   "question_id": "2ecd08b1-7686-4ecc-a88c-011ca310a3c3",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The magnetic field inside a 200-turn solenoid of radius 10 cm is $2.9 \\times 10^{-4}$ tesla. If the solenoid carries a current of 0.29 A, then the length of the solenoid is $\\_\\_\\_\\_$"
+  },
+  {
+   "question_id": "6e3503e5-fdc8-4fe8-b96d-86f60d3c859a",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An electron is fired into a region which may have uniform magnetic field $B$ and uniform electric field $E$. If the electron passes on undeflected then which of the following is true?"
+  },
+  {
+   "question_id": "916412c5-f33e-4032-8450-764f211c4b35",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The magnetic induction field at a distance of 1cm from a long straight current carrying conductor is $2 \\times 10^{-5} \\mathrm{~T}$. The current in the conductor is"
+  },
+  {
+   "question_id": "9cda7da2-cd14-4a4c-878b-14652eea252b",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements. One is labelled Assertion (A), and the other is labelled Reason (R).\nAssertion(A) : A flexible, closed, irregularly shaped current-carrying loop placed in a uniform magnetic field deforms into a circular shape with its magnetic moment along the magnetic field.\nReason (R) : For a given perimeter, a circle encloses the maximum possible area, and hence the magnetic flux linked with the loop is maximised, resulting in a minimum magnetic potential energy configuration.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "ae49cff6-e5fa-4adc-90be-2da29c2cc647",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A charged particle of mass m and charge q travels on a circular path of radius r that is perpendicular to a magnetic field B. The time taken by the particle to complete one revolution is"
+  },
+  {
+   "question_id": "b7f41918-6bf9-4db1-bdfc-de53bfa90ec8",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "At very close point on the axis of a current carrying circular coil $(x \\lll R)$ of radius ' $R$ ', the value of magnetic field decreases by a fraction of 5\\% with respect to centre value. The position of the point from the centre of the coil is"
+  },
+  {
+   "question_id": "c78530b1-fa5d-475e-910d-6da786436e19",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The magnetic field dB due to a small element at a distance r and carrying current i is"
+  },
+  {
+   "question_id": "cd70128a-eaa8-46ee-86c1-5d53d832d78e",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A particle of mass m and charge q is placed in uniform electric and magnetic fields,\n\n$\\overrightarrow{\\mathrm{E}}=2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}, \\quad \\overrightarrow{\\mathrm{B}}=4 \\hat{\\mathrm{j}}+6 \\hat{\\mathrm{k}}$. The particle moves from the origin to the point $\\mathrm{P}(\\mathrm{x}=1, \\mathrm{y}$ $=1$ ) along a straight path. The magnitude of the total work done (in J) is [All units are in SI]"
+  },
+  {
+   "question_id": "f0f83cac-baa7-40ac-b353-a5eaf5152f5c",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The dipole moment of a current loop is independent of"
+  },
+  {
+   "question_id": "d3377443-23bb-4f3d-8ed4-4682364f1130",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A straight wire of length ' $l$ ' can slide on two parallel plastic rails kept in a horizontal plane with a separation 'd'. The coefficient of friction between the wire and the rails is $\\mu$. If the wire carries a current 'i', what minimum magnetic field should exist in the space in order to slide the wire on the rails."
+  },
+  {
+   "question_id": "7775ede4-f549-4175-b1ff-73f13a76bf34",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A current element of strength $\\sqrt{2} \\times 10^{-4} \\mathrm{Am}$ is placed at the corner A of a square ABCD of side 10 cm. Magnetic field induction at the point, which is at the diagonally opposite corner of the square due to the element, is (The element lies along the side AB)\n(1) 100\n(2) 180\n(3) 200\n(4) 220"
+  },
+  {
+   "question_id": "b46bcf1d-af55-4a24-a9cf-27bb102e0ef3",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An electron moving in a circular orbit of radius $R$ makes $n$ turns per second. The magnetic field at the centre has a magnitude of"
+  },
+  {
+   "question_id": "3f842d4e-9869-48ce-9df8-1729bb32ac3e",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The source of magnetic field is $\\_\\_\\_\\_$, and the source of electric field is $\\_\\_\\_\\_$."
+  },
+  {
+   "question_id": "6e8a7309-a61b-4ebf-9927-5b68f8c51207",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two long and parallel straight wires A and B carrying currents of 8A and 5A in the same direction are separated by a distance of 4 cm . The force on a 10 cm section of wire A is"
+  },
+  {
+   "question_id": "f6a287c0-ebdd-4a7c-95ba-8916b7f477d4",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two identical coaxial circular loops carry a current $i$ each circulating in the same direction. If the loops move away from each other"
+  },
+  {
+   "question_id": "5815b7e5-be79-4cf1-9cc8-c8d2ba372fb1",
+   "chapter_id": "86b64ce4-24f5-5296-9cb2-f67b0989eca7",
+   "chapter": "Moving Charges and Magnetism",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Two very long straight, parallel wires carry steady currents each i in opposite directions. The distance between the wires is d. At a certain instant of time, a point\n\ncharge q is at a point equidistant from the two wires, in the plane of the wires. It's instantaneous velocity $\\vec{v}$ is perpendicular to this plane. The magnitude of the force due to the magnetic field acting on the charge at this instant is"
+  },
+  {
+   "question_id": "7862309a-aa89-4569-99ba-f00a7727ee77",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In each fission of $\\mathrm{U}^{235}, 200 \\mathrm{MeV}$ of energy is released. If a reactor produces 100 MW power, the rate of fission in it will be about"
+  },
+  {
+   "question_id": "0eb33f6b-a8fe-4008-9164-5f5c46b199bf",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In the given nuclear reaction, how many $\\alpha$ and $\\beta$ particles are emitted?\n$$\n{ }_{92} X^{235}{ }_{82} X^{207}\n$$"
+  },
+  {
+   "question_id": "2f192a2d-da88-4ee7-a985-a747482099e8",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements.\nStatement I : The radius (R) of the nucleus is related to the mass number (A) of the nucleus as $R \\propto A^{1 / 3}$\nStatement II: The density of the nucleus is independent of the mass number.\nIn light of the above statements, choose the correct answer from the options given below."
+  },
+  {
+   "question_id": "a4d62cca-fe1b-4cac-ba2f-43c4f950d50d",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The energy released in the fission of a ${ }_{92} U^{235}$ is 200 MeV . The total energy released when one gram of ${ }_{92} U^{235}$ undergoes fission is about"
+  },
+  {
+   "question_id": "6a91aca4-e519-4f5a-a33c-1b310b20ff03",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The electron emitted in beta radiation originates from"
+  },
+  {
+   "question_id": "8bcf5d4b-b628-4591-94db-6161662b166e",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A nucleus with mass number 220 initially at rest emits an $\\alpha$-particle. If the Q value of the reaction is 5.5 MeV, calculate the kinetic energy of the $\\alpha$-particle"
+  },
+  {
+   "question_id": "46825f13-9d5c-462f-9822-38ea6ed095c8",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the nuclear fission $\\mathrm{Ne}^{20} \\rightarrow 2 \\mathrm{He}^{4}+\\mathrm{C}^{12}$\nGiven that the binding energy/nucleon of $\\mathrm{Ne}^{20}, \\mathrm{He}^{4}$ and $\\mathrm{C}^{12}$ are, respectively, 8.03 MeV, 7.07 MeV and 7.86 MeV, identify the correct statement :"
+  },
+  {
+   "question_id": "3f340ee6-44b8-449a-b843-2529b1287234",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assume energy release per fission of ${ }_{92}^{235} \\mathrm{U}$ is 200 MeV, the energy released in the fission of 0.1 kg of ${ }_{92}^{235} \\mathrm{U}$ in kilowatt-hour is"
+  },
+  {
+   "question_id": "907847d6-1c77-412a-9c89-d2e1b45de68a",
+   "chapter_id": "bea23d56-36e5-5c51-a69e-34e6cd374f9a",
+   "chapter": "Nuclei",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A nucleus at rest ruptures into two nuclear parts which have their velocity ratio equal 2: 1.\nA: The ratio of their nuclear radius is $1: 2^{1 / 3}$\nB: Ratio of their kinetic energies just after breaking is 2: 1"
+  },
+  {
+   "question_id": "97d6ac75-eb10-4f85-8102-678e1f2e9d48",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Statement-1: A parallel beam of light\n- traveling in air can be displaced laterally by a parallel transparent slab by distance more than the thickness of the plate.\nStatement-2: The lateral displacement of light traveling in air increases with rise in value of refractive index of slab."
+  },
+  {
+   "question_id": "9bd34794-b2d4-48da-9448-1c30330664cb",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A planet is observed by an astronomical refracting telescope (working in normal adjustment) having an objective of focal length 16 m and an eyepiece of focal length 2 cm. The correct choices of the following are\n(A) The distance between the objective and the eyepiece is 16.02 m\n(B) The angular magnification of the planet is - 800\n(C) The image of the planet is inverted\n(D) The objective lens is larger than the eyepiece"
+  },
+  {
+   "question_id": "b74d9af8-b68a-462c-9072-5d759af133fa",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A convex lens of power +6D is placed in contact with a concave lens of power - 4D. The nature and focal length of the combination are"
+  },
+  {
+   "question_id": "dc456d40-4d90-454b-b237-986cdedfd3fe",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Four transparent media A, B, C and D have refractive indices in the ratio 6:8:9:12. The critical angle is minimum for the pair"
+  },
+  {
+   "question_id": "9a963b39-8630-446e-872a-889048bf8596",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "$\\frac{\\operatorname{Sin} 30^{0}}{\\operatorname{Sin} 60^{0}}$ is"
+  },
+  {
+   "question_id": "061df06f-4c45-40f4-bff3-1cf5771f3821",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A ray of light is incident at an angle of 60° on one face of a prism of angle 30°. The emergent ray of light makes an angle of $30^{\\circ}$ with the incident ray. The angle made by the emergent ray with the second face of the prism will be"
+  },
+  {
+   "question_id": "1c1c7e1c-0f14-417d-9dc0-d9de9ccb4ee2",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A lens of power 16 D is used as a simple microscope. In order to obtain maximum magnification, at what distance from the lens should a small object be placed?"
+  },
+  {
+   "question_id": "a5aceff6-afaf-41a1-a640-4baeaae9b5ca",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Each quarter of a vessel of depth $H$ is filled with liquids of the refractive indices $n_{1}, n_{2}$, $n_{3}$, and $n_{4}$ from the bottom, respectively. The apparent depth of the vessel when looked at normally is"
+  },
+  {
+   "question_id": "3315bfbf-50da-41c8-964c-438bedf9b4f1",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The refractive index of the material of a biconvex lens is 1.5. The radii of curvatures of the surfaces are 'r' and 'R'. The focal length of the lens is"
+  },
+  {
+   "question_id": "d97d8ffb-80e8-42bb-9185-9fc1f9bd0b79",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A concave lens forms the image of an object such that the distance between the object and image is 10 cm and the magnification produced is 1/4. The focal length of the lens will be"
+  },
+  {
+   "question_id": "7daa081b-dc18-4827-a724-5bb56f301023",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Identify the correct statements from the following descriptions.\nStatement(A):- For a simple microscope, the angular size of the object equals the angular size of the image. Yet it offers magnification because we can keep the small object much closer to the eye than 25 cm and hence have it subtend a large angle.\nStatement(B):- An optical fibre can be used to act as an optical pipe. These are used as a 'light pipes' to facilitate visual examination of internal organs like esophagus, stomach and intestines (LAPROSCOPE, ENDOSCOPE)\nStatement(C):- The speed of light in glass(or in any medium) depen"
+  },
+  {
+   "question_id": "0c8ae2d1-95ec-4bb9-aba2-e6e5cd50ba4a",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider following statements for refraction of light through an equilateral prism, when angle of deviation is minimum.\nA. The refracted ray inside prism becomes parallel to the base\nB. Angle of incidence and angle of emergence becomes equal.\nChoose the correct answer from the options given below."
+  },
+  {
+   "question_id": "8b436a79-053a-4934-a7f1-7da4f6cd62ef",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "An object approaches a convergent lens from the left of the lens with a uniform speed 5 m/s and stops at the focus. The image"
+  },
+  {
+   "question_id": "45a5c206-ec5a-45e1-b94f-2292437595ee",
+   "chapter_id": "5c6a37c7-67be-5575-a3cc-456df9937cfa",
+   "chapter": "Ray Optics and Optical Instruments",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A concave lens is in contact with a convex lens. The magnitude of the ratio of their focal lengths is $\\frac{4}{3}$. Their equivalent focal length is 36 cm. What are their individual focal lengths?"
+  },
+  {
+   "question_id": "537aaa47-73f7-4c5a-919c-53d1d6e157d5",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Match List - I with List - II\n\n|  | List - I |  | List - II |\n| :--- | :--- | :--- | :--- |\n| A) | Intrinsic semiconductor | I) | Fermi-level near the valence band |\n| B) | n-type semiconductor | II) | Fermi-level in the middle of valence and conduction band |\n| C) | p-type semiconductor |  | Fermi-level near the conduction band |\n| D) | Metals |  | Fermi-level inside IV) band |\n\nChoose the correct answer from the options given below :"
+  },
+  {
+   "question_id": "a29b05a2-fbfc-4cbc-8102-495d44d89d8a",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Choose the FALSE statement from the following:"
+  },
+  {
+   "question_id": "dedf2d57-f715-4cfb-974d-57d93d40d2c8",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Given below are two statements:\nStatement I: A solar cell operates without any external bias.\nStatement II: In a solar cell, the built-in electric field at the p-n junction separates photogenerated electron-hole pairs. In light of the above statements, choose the most appropriate answer from the options given below:"
+  },
+  {
+   "question_id": "fc71cf96-4a20-419c-8f39-17bfac08bed9",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The remote control of a TV emits infrared light of wavelength 900 nm. The TV detector is made of a semiconductor whose band gap is X eV. The detector is shielded by a semiconductor optical filter whose band gap is Y eV. From the four options below, select the best option for the TV to function."
+  },
+  {
+   "question_id": "d7660203-9b17-43f5-b019-a068ebe68953",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When the two inputs of a logic gate are 0 and 0 , the output is 1 . When inputs are 1 and 0 , the output is zero. The logic gate is"
+  },
+  {
+   "question_id": "3d748ad7-cd8f-4178-a530-6dea868a9622",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If the frequency of input A.C. is 60 Hz, then the pulse frequency of output D.C. in a full-wave rectifier is"
+  },
+  {
+   "question_id": "40afbb6b-c0e7-48aa-9f73-d41366b6a541",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "The main cause of Zener breakdown is"
+  },
+  {
+   "question_id": "ccacf903-52e3-4dce-884a-8d5e19400fee",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A digital circuit has three inputs A, B, and C and one output Y given by $\\mathrm{Y}=\\overline{\\mathrm{A}} \\mathrm{B}+\\mathrm{A} \\overline{\\mathrm{C}}$. Which of the following statements about this circuit is correct?\n    (A) $\\mathrm{Y}=1$, only when exactly two of the inputs are 1.\n        (B) $\\mathrm{Y}=0$, only when all three inputs are 0.\n        (C) Y is independent of C when $\\mathrm{A}=0$\n        (D) Y is independent of B when $\\mathrm{A}=1$"
+  },
+  {
+   "question_id": "2201d999-e3b2-4383-bd23-1d503c6e4007",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Read the following statements carefully Y: The resistivity of semiconductor decreases with increase of temperature.\nZ: In a conducting solid, the rate of collisions between free electrons and ions increases with increase of temperature.\nSelect the correct statement(s) from the following"
+  },
+  {
+   "question_id": "2eedaf86-80bb-4732-929c-c4f85e0c0da9",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "To make a p-type semiconductor, Germanium can be doped with"
+  },
+  {
+   "question_id": "96a3038e-01af-4f35-884b-93b03860f753",
+   "chapter_id": "6e22ac90-425b-5336-9d44-81cc39afb062",
+   "chapter": "Semiconductor Electronics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A half-wave rectifier is used to convert a.c. of time period T into d.c., then time duration between adjacent pulses in the rectified voltage is"
+  },
+  {
+   "question_id": "9cbde24e-07fd-4c05-8316-1618337bd77e",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When YDSE is carried out in a liquid, the $5^{\\text {th }}$ bright fringe lies at a point on the screen where the $3^{\\text {rd }}$ dark fringe was lying when the medium was air. The refractive index of the liquid is"
+  },
+  {
+   "question_id": "0b170f1c-413b-4747-a894-3f7269c47c32",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A double slit interference experiment performed with a light of wavelength 600 nm forms an interference fringe pattern on a screen with $10^{\\text {th }}$ bright fringe having its centre at a distance of 10 mm from the central maximum. The distance of the centre of the same $10^{\\text {th }}$ bright fringe from the central maximum when the source of light is replaced by another source of wavelength 660 nm would be\n$\\_\\_\\_\\_$ mm"
+  },
+  {
+   "question_id": "c648b255-f9db-4ecc-9fa4-cb6148cc83a2",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In case of linearly polarised light, the magnitude of the electric field vector"
+  },
+  {
+   "question_id": "452db324-7551-4997-98c5-e596cec3fb8e",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Light waves of wavelength $\\lambda$ propagate in a medium. If M and N are two points on the same wavefront, and are separated by a distance of $\\lambda / 4$, the phase difference between them will be (in radian)"
+  },
+  {
+   "question_id": "452fdc1f-9c4d-4951-89d2-16e0df07b902",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the diffraction pattern obtained from light incident on a pinhole of diameter $0.1 \\mu \\mathrm{~m}$. If the diameter of pinhole is slightly increased, it will affect the diffraction pattern such that"
+  },
+  {
+   "question_id": "94c86d3d-1bbd-4849-b213-b13a489f1af9",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Interference and diffraction effect are"
+  },
+  {
+   "question_id": "9212352d-d7d9-4d2e-b74f-11147aea093c",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "At the first minimum adjacent to the central maximum of a single slit diffraction pattern, the phase difference between the Huygen's wavelet from the edge of the slit and the wavelet from the midpoints of the slit is"
+  },
+  {
+   "question_id": "4f3e6afe-8072-45a1-a3f3-ff2b337aafdd",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "If intensity ratio of two interfering waves is 9:1 then ratio of maximum to minimum amplitude of resultant wave is"
+  },
+  {
+   "question_id": "4a6fd50e-78cf-4ad6-ba21-a568d154aa40",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Assertion (A): Light emitted by an incandescent light source is plane polarized. Reason (R): Molecules of a light source emit a large number of e.m.waves, each wave having its own orientation of the electric field."
+  },
+  {
+   "question_id": "9c44bde8-d4ae-4699-a732-872b901c6637",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "In Young's double slit experiment the y co-ordinates of central maxima and 10th maxima are 2 cm and 5 cm respectively. When the YDSE apparatus is immersed in a liquid of refractive index 1.5 the corresponding y co-ordinates will be:"
+  },
+  {
+   "question_id": "95d82616-daac-4333-a95c-530ec5f8f683",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Consider the diffraction pattern obtained from sunlight incident on a pinhole $0.1 \\mu m$. If the diameter of the pinhole is slightly increased, it will affect the central maxima of diffraction pattern such that"
+  },
+  {
+   "question_id": "99fba81e-4dd8-4bba-a3f6-f4b177fefab9",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "A parallel monochromatic beam of light is incident normally on a narrow slit. A diffraction pattern is formed on a screen placed perpendicular to the direction of the incident beam. At the first minimum of the diffraction pattern, the phase difference between the rays coming from the two edges of the slit is"
+  },
+  {
+   "question_id": "2a481542-84c0-4595-befb-c671c4ee2a95",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "Yellow light is used in single slit diffraction experiment with slit width 0.6 mm . If yellow light is replaced by X-rays then the pattern will reveal"
+  },
+  {
+   "question_id": "7b29aacc-5a44-43c0-8f60-1ec901cd447b",
+   "chapter_id": "87df3af3-42ba-5439-ab4b-217b054ea81c",
+   "chapter": "Wave Optics",
+   "class_level": 12,
+   "legacy_tag": null,
+   "stem": "When the polarizer and the analyzer are arranged such that the angle between their optical axes is 30°, the intensity of the light emerging from the analyzer is $\\mathrm{I}_{1}$ and when the angle is increased to 45°, the intensity of the light emerging from the analyzer is $\\mathrm{I}_{2}$ and when the angle is changed to 60°, the intensity of light emerging from the analyzer is $\\mathrm{I}_{3}$. Which of the following is the correct relation between the intensities?"
+  }
+ ]
+}
