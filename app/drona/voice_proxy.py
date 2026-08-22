@@ -37,21 +37,66 @@ def sanitize_secret(text: str) -> str:
         res = pat.sub("***REDACTED***", res)
     return res
 
-# Single Latin Letter Variable Phonetic Substitutions for Rumik Silk TTS
-SINGLE_LETTER_PRONUNCIATIONS = {
-    r"\bh\b": "aitch",
-    r"\be\b": "ee",
-    r"\bv\b": "vee",
-    r"\bu\b": "yoo",
-    r"\bt\b": "tee",
-    r"\bm\b": "em",
-    r"\bL\b": "el",
-    r"\bT\b": "tee",
-    r"\bM\b": "em",
-    r"\bg\b": "jee",
-    r"\br\b": "ar",
-    r"\bs\b": "es"
+# Spoken names for single-letter variables and dimension symbols.
+#
+# Applied ONLY inside formula context — see _apply_letter_phonetics. The old
+# map was unscoped and half-populated: it spelled M, L and T but had no entry
+# for A or K, so "M, L, T, A aur K" reached Rumik as "em, el, tee, A aur K" —
+# three letters spelled, two raw, in one breath. Completing it unscoped is not
+# an option either, because a bare "A" and "I" are ordinary English words and
+# "A ball rolls" must never become "ay ball rolls".
+_LETTER_NAMES = {
+    'a': 'ay', 'b': 'bee', 'c': 'see', 'd': 'dee', 'e': 'ee', 'f': 'ef',
+    'g': 'jee', 'h': 'aitch', 'i': 'eye', 'j': 'jay', 'k': 'kay', 'l': 'el',
+    'm': 'em', 'n': 'en', 'o': 'oh', 'p': 'pee', 'q': 'cue', 'r': 'ar',
+    's': 'es', 't': 'tee', 'u': 'yoo', 'v': 'vee', 'w': 'double-yoo',
+    'x': 'ex', 'y': 'why', 'z': 'zed',
 }
+
+# Words that mark the letter beside them as a variable rather than prose.
+_FORMULA_NEIGHBOUR = (
+    r"equals|squared|cubed|over|times|plus|minus|divided\s+by|"
+    r"to\s+the\s+power|per|upon"
+)
+
+# Two or more single letters in a row, separated only by spaces, commas or a
+# conjunction: "M, L, T, A aur K" or "L T". A lone letter followed by a real
+# word is prose and is left alone.
+_LETTER_RUN = re.compile(
+    r"\b[A-Za-z]\b(?:(?:\s*,\s*|\s+(?:aur|and|or|ya)\s+|\s+)\b[A-Za-z]\b)+"
+)
+# A single letter that is unambiguously a variable because of what sits next
+# to it: "v squared", "F equals", "[M]".
+_LETTER_BESIDE_MATH = re.compile(
+    rf"\b([A-Za-z])\b(?=\s+(?:{_FORMULA_NEIGHBOUR})\b)"
+)
+_LETTER_IN_BRACKETS = re.compile(r"\[([^\]]{1,40})\]")
+
+
+def _spell(letter: str) -> str:
+    return _LETTER_NAMES.get(letter.lower(), letter)
+
+
+def _spell_all_letters(fragment: str) -> str:
+    return re.sub(r"\b([A-Za-z])\b", lambda m: _spell(m.group(1)), fragment)
+
+
+def _apply_letter_phonetics(text: str) -> str:
+    """Spells out single-letter variables, but only where they are variables.
+
+    Rumik mangles bare letters, so they do need help — but the help has to be
+    scoped. Three contexts qualify, and nothing else does:
+      1. a run of 2+ single letters   -> "M, L, T, A aur K", "L T"
+      2. inside square brackets       -> "[M L T]"
+      3. adjacent to a formula word   -> "v squared", "F equals"
+    Prose keeps its letters, so "A ball rolls" and "I think" are untouched.
+    """
+    if not text:
+        return text
+    text = _LETTER_IN_BRACKETS.sub(lambda m: "[" + _spell_all_letters(m.group(1)) + "]", text)
+    text = _LETTER_RUN.sub(lambda m: _spell_all_letters(m.group(0)), text)
+    text = _LETTER_BESIDE_MATH.sub(lambda m: _spell(m.group(1)), text)
+    return text
 
 # The prompt forbids LaTeX in speech, but the model still emits plain-notation
 # formulas ("H = u² sin²θ / (2g)") — and raw math symbols reach the TTS engine,
@@ -89,8 +134,7 @@ def sanitize_tts_phonetics(text: str) -> str:
     res = text
     for pattern, replacement in MATH_SYMBOL_PRONUNCIATIONS:
         res = re.sub(pattern, replacement, res)
-    for pattern, replacement in SINGLE_LETTER_PRONUNCIATIONS.items():
-        res = re.sub(pattern, replacement, res)
+    res = _apply_letter_phonetics(res)
     return re.sub(r"\s{2,}", " ", res).strip()
 
 # Startup Assertion Checks
@@ -218,13 +262,169 @@ def normalize_devanagari_to_roman(text: str) -> str:
 # Tier-1 and Tier-2 TTS Safety Filters
 TIER1_FORBIDDEN_PATTERNS = [
     r'\\dfrac', r'\\sqrt', r'\\begin', r'\\end', r'\\frac',
-    r'\$\$', r'\$', r'\*\*', r'```', r'#{1,6}\s'
+    r'\$\$', r'\$', r'\*\*', r'```', r'#{1,6}\s',
+    r'\\[a-zA-Z]+',  # any other leaked LaTeX/mhchem command: \ce, \vec, \times, \alpha, \rightarrow, ...
 ]
 
 TIER2_WARNED_PATTERNS = [
     r'[a-zA-Z0-9_]+_[a-zA-Z0-9_]+',  # subscript notation like x_1
     r'[a-zA-Z0-9_]+\^[a-zA-Z0-9_]+'   # superscript notation like x^2
 ]
+
+def _skip_balanced_brace_group(text: str, start: int) -> int:
+    """text[start] is assumed to be '{'. Returns the index just past its
+    matching '}', scanning past any nested braces rather than stopping at
+    the first '}' encountered."""
+    depth = 0
+    i = start
+    n = len(text)
+    while i < n:
+        if text[i] == '{':
+            depth += 1
+        elif text[i] == '}':
+            depth -= 1
+            if depth == 0:
+                return i + 1
+        i += 1
+    return n
+
+# Commands that carry meaning a student needs to hear. Anything not listed
+# gets its command name dropped and its braces unwrapped, so the argument is
+# still spoken rather than thrown away.
+_LATEX_SYMBOL_WORDS = {
+    'times': ' times ', 'cdot': ' times ', 'div': ' divided by ',
+    'pm': ' plus or minus ', 'mp': ' minus or plus ',
+    'approx': ' approximately ', 'neq': ' not equal to ',
+    'leq': ' less than or equal to ', 'geq': ' greater than or equal to ',
+    'lt': ' less than ', 'gt': ' greater than ',
+    'rightarrow': ' gives ', 'to': ' gives ', 'leftarrow': ' from ',
+    'rightleftharpoons': ' in equilibrium with ',
+    'infty': ' infinity ', 'degree': ' degrees ', 'circ': ' degrees ',
+    'alpha': ' alpha ', 'beta': ' beta ', 'gamma': ' gamma ',
+    'delta': ' delta ', 'theta': ' theta ', 'lambda': ' lambda ',
+    'mu': ' mu ', 'pi': ' pi ', 'omega': ' omega ', 'rho': ' rho ',
+    'sigma': ' sigma ', 'phi': ' phi ', 'epsilon': ' epsilon ', 'nu': ' nu ',
+}
+# Wrappers whose argument is the content itself — the command is pure markup.
+_LATEX_UNWRAP = {'ce', 'text', 'textbf', 'textit', 'mathrm', 'mathbf', 'mathit',
+                 'vec', 'hat', 'bar', 'overline', 'underline', 'left', 'right'}
+
+# Exponents that have a real English name. Anything outside this map falls back
+# to "to the power N", which is still sayable.
+_POWER_WORDS = {'2': ' squared ', '3': ' cubed '}
+
+# ASCII arrows and comparators the model writes directly, with no backslash for
+# _latex_to_speech to key off. Longest-first so "->" never matches inside "<->".
+_ASCII_OPERATORS = [
+    ('<=>', ' in equilibrium with '),
+    ('<->', ' in equilibrium with '),
+    ('-->', ' gives '),
+    ('->', ' gives '),
+    ('<-', ' from '),
+    ('>=', ' greater than or equal to '),
+    ('<=', ' less than or equal to '),
+    ('!=', ' not equal to '),
+]
+
+
+def _notation_to_speech(text: str) -> str:
+    """Rewrites bare ^ and _ notation, and ASCII arrows, into spoken words.
+
+    These reach TTS with no backslash on them, so _latex_to_speech never sees
+    them — it only walks commands starting at '\\'. They were classified TIER 2
+    ("warn, don't touch"), which meant `v^2`, `x_1` and `2H2 -> 2H2O` were
+    handed to Rumik verbatim. None of ^, _ or -> has a pronunciation, so the
+    engine improvises and the student hears noise mid-sentence. Rewriting is
+    strictly better than stripping: "v squared" teaches, "v" is wrong physics.
+
+    Runs AFTER _latex_to_speech, so it also catches the residue that command
+    handling leaves behind — \\text{MLT}^{-2} unwraps to "MLT^{-2}" and only
+    then becomes "MLT to the power minus 2".
+    """
+    if not text:
+        return text
+
+    for src, word in _ASCII_OPERATORS:
+        text = text.replace(src, word)
+
+    # Superscripts: v^2, v^{2}, x^{-2}, r^{n+1}
+    def _sup(m: re.Match) -> str:
+        body = (m.group(1) or m.group(2) or '').strip()
+        if body in _POWER_WORDS:
+            return _POWER_WORDS[body]
+        # Spaced on both sides: 'n+1' must become "n plus 1", not "nplus 1".
+        # The caller collapses runs of whitespace afterwards, so over-spacing
+        # here is free and under-spacing is not recoverable.
+        body = body.replace('-', ' minus ').replace('+', ' plus ')
+        return f' to the power {body} '
+
+    text = re.sub(r'\^\{([^{}]*)\}|\^(-?\w+)', _sup, text)
+
+    # Subscripts: x_1, a_{net}. Spoken as a trailing qualifier the way a
+    # teacher says it aloud — "x one", "a net" — not "x underscore one".
+    text = re.sub(r'_\{([^{}]*)\}|_(\w+)',
+                  lambda m: ' ' + (m.group(1) or m.group(2) or '').strip() + ' ',
+                  text)
+
+    return text
+
+def _latex_to_speech(text: str) -> str:
+    """Rewrites LaTeX/mhchem that leaked into TTS-bound speech into words a
+    voice can actually say. The tutor prompt forbids markup in `speech`, but
+    the model still emits it on formula-heavy segments, and Rumik reads raw
+    backslashes and unmatched braces as garbled noise — the reported "glitch".
+
+    Formulas are spoken, not deleted: \\dfrac{1}{2}mv^2 becomes "1 over 2 mv^2"
+    so the student still gets the physics, rather than a sentence with a hole
+    in it."""
+    out = []
+    i = 0
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        if ch == '\\':
+            j = i + 1
+            while j < n and text[j].isalpha():
+                j += 1
+            name = text[i + 1:j]
+            if not name:
+                i += 1  # stray backslash: drop it, never voice it
+                continue
+
+            args = []
+            k = j
+            while k < n and text[k] == '{':
+                end = _skip_balanced_brace_group(text, k)
+                # An unclosed group runs to end-of-string and has no '}' to
+                # trim — chopping one anyway would eat a real character.
+                inner_end = end - 1 if text[end - 1:end] == '}' else end
+                args.append(text[k + 1:inner_end])
+                k = end
+
+            if name in ('frac', 'dfrac', 'tfrac') and len(args) >= 2:
+                out.append(f" {_latex_to_speech(args[0])} over {_latex_to_speech(args[1])} ")
+                for extra in args[2:]:
+                    out.append(_latex_to_speech(extra))
+            elif name == 'sqrt' and args:
+                out.append(f" root {_latex_to_speech(args[0])} ")
+                for extra in args[1:]:
+                    out.append(_latex_to_speech(extra))
+            elif name in _LATEX_SYMBOL_WORDS:
+                out.append(_LATEX_SYMBOL_WORDS[name])
+                for arg in args:
+                    out.append(_latex_to_speech(arg))
+            else:
+                # Unknown command (or a pure wrapper like \ce, \vec): drop the
+                # markup, keep what it wrapped.
+                if name not in _LATEX_UNWRAP and not args:
+                    pass
+                for arg in args:
+                    out.append(' ' + _latex_to_speech(arg) + ' ')
+            i = k
+            continue
+        out.append(ch)
+        i += 1
+    return ''.join(out)
 
 def check_tts_safety_filter(text: str) -> Tuple[bool, bool, str]:
     """Returns (tier1_violation, tier2_violation, sanitized_text)."""
@@ -234,9 +434,18 @@ def check_tts_safety_filter(text: str) -> Tuple[bool, bool, str]:
     tier1_viol = any(re.search(pat, text) for pat in TIER1_FORBIDDEN_PATTERNS)
     tier2_viol = any(re.search(pat, text) for pat in TIER2_WARNED_PATTERNS)
 
-    clean = text
-    clean = re.sub(r'\\(dfrac|sqrt|frac|begin|end)\{[^}]*\}', '', clean)
-    clean = re.sub(r'[\$\*\#\`]', '', clean)
+    if tier1_viol:
+        # The prompt forbids markup in speech; when it leaks anyway this is the
+        # only place that knows. Logged here rather than at the call sites so
+        # every synthesis path is covered.
+        logger.warning(f"[TTS MARKUP LEAK] Forbidden markup reached TTS text: '{text[:120]}'")
+
+    clean = _latex_to_speech(text)
+    # Must run before the brace strip below: _notation_to_speech reads the
+    # braces in x^{-2} to find the exponent's extent. Stripping first would
+    # leave "x^-2" and lose the grouping on multi-character exponents.
+    clean = _notation_to_speech(clean)
+    clean = re.sub(r'[\{\}\$\*\#\`]', '', clean)
     clean = re.sub(r'\s+', ' ', clean).strip()
 
     return tier1_viol, tier2_viol, clean
@@ -1132,6 +1341,10 @@ class RumikTTSProxy:
                             raise RuntimeError(f"Rumik TTS Rate Limited (Attempt {attempt}/3): {data.get('message') or 'Rate limit exceeded'}")
                 except asyncio.TimeoutError:
                     logger.warning(f"[RUMIK WS TIMEOUT] ws.recv() timed out for text='{text[:30]}...'")
+                    # Whatever was already synthesized still belongs to the
+                    # student — without this the tail sitting in part_buf is
+                    # dropped and the sentence cuts off mid-word.
+                    await _flush_part(force=True)
                     break
 
         except Exception as ws_err:

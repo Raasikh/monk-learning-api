@@ -29,11 +29,17 @@ wrong, and confidently-reported number, which is worse than no number at all.
 import logging
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Dict, Optional
 
 logger = logging.getLogger("drona.usage")
 
 _WARNED_UNPRICED: set = set()
+
+# For callers on a live student path: a PostgREST stall (default timeout is
+# 120s) must never hold a solve hostage to its own accounting. Workers are
+# non-daemon, so pending rows are flushed before the process exits.
+_RECORD_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="llm-usage")
 
 
 def _env_key(model: str) -> str:
@@ -112,6 +118,11 @@ def record_call(model: str, service: str, *, ok: bool = True, attempt: int = 1,
     module exists.
     """
     tok = tokens or tokens_from(res)
+    # All-None token counts mean "billed an unknown amount" (e.g. a stream that
+    # died before its usage chunk). Cost stays NULL there: pricing zero known
+    # tokens would report the call as free, the exact misreading rule 2 forbids.
+    counts_known = any(tok.get(k) is not None for k in
+                       ("input_tokens", "cache_hit_tokens", "output_tokens"))
     try:
         from app.db import supabase
         supabase.table("llm_calls").insert([{
@@ -122,9 +133,10 @@ def record_call(model: str, service: str, *, ok: bool = True, attempt: int = 1,
             "input_tokens": tok.get("input_tokens"),
             "cache_hit_tokens": tok.get("cache_hit_tokens"),
             "output_tokens": tok.get("output_tokens"),
-            "cost_usd": cost_for(model, tok.get("input_tokens", 0),
-                                 tok.get("cache_hit_tokens", 0),
-                                 tok.get("output_tokens", 0)),
+            "cost_usd": cost_for(model, tok.get("input_tokens") or 0,
+                                 tok.get("cache_hit_tokens") or 0,
+                                 tok.get("output_tokens") or 0)
+                        if counts_known else None,
             "latency_ms": latency_ms,
             "session_id": session_id,
             "plan_id": plan_id,
@@ -138,3 +150,17 @@ def record_call(model: str, service: str, *, ok: bool = True, attempt: int = 1,
             f"[USAGE] failed to record {service}/{model} "
             f"(in={tok.get('input_tokens')} out={tok.get('output_tokens')} ok={ok}): {exc}"
         )
+
+
+def record_call_bg(*args, **kwargs) -> None:
+    """`record_call`, off the caller's thread. For live student paths.
+
+    The insert runs on `_RECORD_EXECUTOR`; the caller returns immediately, so a
+    slow or hung PostgREST round-trip cannot delay a turn. Same never-raises
+    contract. `record_call` is resolved at execution time so tests that stub it
+    out stub this too.
+    """
+    try:
+        _RECORD_EXECUTOR.submit(lambda: record_call(*args, **kwargs))
+    except Exception as exc:  # executor shut down during interpreter exit
+        logger.error(f"[USAGE] failed to queue usage record: {exc}")

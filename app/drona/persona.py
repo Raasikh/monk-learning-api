@@ -64,6 +64,36 @@ SCOPING_RESOLVED = {
     "english": "Great choice. Let's dive into {subtopic} — I'll walk you through it step by step on the board.",
 }
 
+# Same line, but addressed to the student by name — a real teacher opens a class
+# by naming who they are teaching. Used whenever profiles.display_name gives us
+# a usable first name; SCOPING_RESOLVED stays the fallback for accounts that
+# have none, so the greeting degrades to the unnamed version instead of an
+# awkward empty slot.
+SCOPING_RESOLVED_NAMED = {
+    "hinglish": "Bahut badhiya, {name}! Chalo aaj {subtopic} padhte hain. Main board pe step-by-step samjhaungi.",
+    "english": "All right, {name} — today we're studying {subtopic}. I'll walk you through it step by step on the board.",
+}
+
+
+def first_name_of(display_name: object) -> str:
+    """First word of a display name, cleaned for speech.
+
+    TTS reads a full name stiffly ("All right, Raasikh Ahmed Naveed —"), and a
+    name that is an email local-part or a handle reads worse. Anything that
+    doesn't look like a spoken name returns "", which sends the caller back to
+    the unnamed greeting.
+    """
+    raw = str(display_name or "").strip()
+    if not raw:
+        return ""
+    first = raw.split()[0].strip()
+    # Reject handles/emails/numbers — "raasikh_92", "user123", "a@b.com".
+    if not first or not first.replace("'", "").replace("-", "").isalpha():
+        return ""
+    if len(first) < 2 or len(first) > 20:
+        return ""
+    return first[:1].upper() + first[1:]
+
 SCOPING_AMBIGUOUS = {
     "hinglish": "Theek hai! {chapter} mein se kaun sa subtopic karna chahoge?",
     "english": "Got it! Which of these subtopics in {chapter} would you like to cover?",
@@ -89,6 +119,15 @@ UNDERSTANDING_CHIPS = {
 PROCEDURAL_CHIPS = {
     "hinglish": ["Haan, aage badho", "Ek baar dubara samjhao"],
     "english": ["Yes, let's move on", "Go over that again"],
+}
+
+# Doubt-of-the-day opening turn. The teacher asks for the student's own guess
+# before revealing anything, so the two options are "I'll try" and "just tell
+# me" -- an understanding check-in ("Yes, that's clear") makes no sense there
+# because nothing has been explained yet.
+GUESS_CHIPS = {
+    "hinglish": ["Mujhe lagta hai mujhe pata hai", "Pata nahi, aap bataiye"],
+    "english": ["I think I know this", "No idea — tell me"],
 }
 
 

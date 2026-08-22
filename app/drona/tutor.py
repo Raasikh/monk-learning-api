@@ -9,6 +9,7 @@ from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.state import compute_next_session_state
+from app.drona.student_context import load_prior_knowledge
 from app.drona.voice_proxy import RumikConnectionPool, split_into_sentences
 from app.drona.json_utils import (
     FORBIDDEN_SSE_KEYS,
@@ -35,6 +36,47 @@ logger = logging.getLogger("drona.tutor")
 # A segment ends with a short quiz on what was just taught. Every answer moves
 # on — right or wrong — and only the last question closes the segment.
 QUIZ_QUESTIONS_PER_SEGMENT = 3
+
+# Spoken number words the tutor uses inside answers ("to the power minus two").
+_WORD_NUMERALS = {
+    "zero": "0", "one": "1", "two": "2", "three": "3", "four": "4",
+    "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9", "ten": "10",
+}
+
+
+def normalize_answer_text(s: str) -> str:
+    """Collapses a spoken answer and a board formula onto one comparable form.
+
+    The board writes LaTeX ("[\\text{force}] = [MLT^{-2}]") while the answer
+    chip is spoken English ("M L T to the power minus two"). They are the same
+    physics and must compare equal, so both are reduced to "mlt^-2" / to a
+    string containing it: powers symbolised, number words digitised, LaTeX
+    commands and all punctuation and spacing dropped.
+    """
+    s = (s or "").lower()
+    s = s.replace("to the power of", "to the power")
+    s = re.sub(r"to the power\s+(?:minus|negative)\s+(\w+)",
+               lambda m: "^-" + _WORD_NUMERALS.get(m.group(1), m.group(1)), s)
+    s = re.sub(r"to the power\s+(\w+)",
+               lambda m: "^" + _WORD_NUMERALS.get(m.group(1), m.group(1)), s)
+    s = s.replace("squared", "^2").replace("cubed", "^3")
+    s = re.sub(r"\\[a-z]+", " ", s)        # LaTeX commands
+    s = re.sub(r"[^a-z0-9^-]", "", s)      # keep letters, digits, ^ and -
+    return s
+
+
+def answer_is_written_on_board(correct_option: str, board_texts: List[str]) -> bool:
+    """True when the correct answer is already sitting on the board.
+
+    A checkpoint whose answer the student can read off the board tests copying,
+    not understanding. Measured case: the board said [force] = [MLT^{-2}] and
+    the very next question was "what is the dimensional formula of force?".
+    Short answers ("yes", "2") are skipped — they collide by coincidence.
+    """
+    key = normalize_answer_text(correct_option)
+    if len(key) < 4:
+        return False
+    return any(key in normalize_answer_text(b) for b in board_texts if b)
 
 # "Teach me again" turns are excluded from the segment's turn count so they
 # don't silently consume one of its QUIZ_QUESTIONS_PER_SEGMENT slots — capped
@@ -117,6 +159,12 @@ async def process_tutor_turn_stream(
     if session.get("mode") == "practice_explain":
         from app.drona.practice_explain import process_practice_explain_turn_stream
         async for chunk in process_practice_explain_turn_stream(session, user_id, utterance, turn_type):
+            yield chunk
+        return
+
+    if session.get("mode") == "doubt_of_day":
+        from app.drona.doubt_of_day import process_doubt_of_day_turn_stream
+        async for chunk in process_doubt_of_day_turn_stream(session, user_id, utterance, turn_type):
             yield chunk
         return
 
@@ -246,6 +294,7 @@ async def process_tutor_turn_stream(
     # Collect board events emitted so far in current segment to enforce progressive arc
     current_segment_board_events = []
     questions_already_asked = []
+    pending_question = None
     turn_within_segment = 1
     seg_turns_res = None
     try:
@@ -278,6 +327,21 @@ async def process_tutor_turn_stream(
                     sent = sent.strip()
                     if sent.endswith("?") and sent not in questions_already_asked:
                         questions_already_asked.append(sent)
+
+                # The options the student is actually choosing between, and
+                # which one this tutor decided was right when it asked. Only
+                # the question TEXT used to survive into the grading turn, so
+                # the model had to re-derive correctness from scratch against
+                # options it could no longer see — and a wrong chip could come
+                # back "correct" with a line of praise. Last writer wins: the
+                # most recent question-bearing turn is the pending one.
+                if raw.get("check_options"):
+                    pending_question = {
+                        "question": (questions_already_asked[-1] if questions_already_asked else ""),
+                        "options": raw.get("check_options") or [],
+                        "correct_option": raw.get("correct_option") or "",
+                        "question_type": raw.get("question_type"),
+                    }
     except Exception as b_err:
         logger.warning(f"Failed to load segment board events: {b_err}")
 
@@ -355,6 +419,21 @@ async def process_tutor_turn_stream(
         "tutor_name": persona["name"]
     }
 
+    # What this student already has history on IN THIS CHAPTER. Only sent on the
+    # opening turn of the first segment: it exists to shape how the lesson
+    # starts, and repeating it every turn would invite Drona to keep bringing up
+    # past mistakes mid-explanation. Chapter-scoped in student_context.py, so a
+    # Gravitation lesson can never surface Current Electricity weaknesses.
+    if curr_seg_idx == 1 and turn_within_segment == 1:
+        prior = load_prior_knowledge(user_id, session.get("chapter_id"))
+        if prior:
+            session_state_ctx["prior_knowledge"] = prior
+            logger.info(
+                f"{stag}   🧠 PRIOR       weak={[c['name'] for c in prior['weak_concepts']]} "
+                f"strong={[c['name'] for c in prior['strong_concepts']]} "
+                f"misconceptions={prior['past_misconceptions']}"
+            )
+
     # A segment only advances when its authored checkpoint is GRADED. Two
     # distinct failure modes had to be closed here:
     #   1. Left alone the tutor posts lightweight check after lightweight check
@@ -372,6 +451,23 @@ async def process_tutor_turn_stream(
         if 0 <= curr_seg_idx - 1 < len(wrapup_points)
         else curr_segment.get("objective") or "what we just covered"
     )
+    # The general "don't ask what the board already answers" rule was in the
+    # prompt and got ignored anyway: the board said [force] = [MLT^{-2}] and the
+    # next question was "what is the dimensional formula of force?". Naming the
+    # specific strings that are off-limits is far harder to ignore than stating
+    # the principle, and the items are right here at assembly time.
+    _visible = [t for t in (assigned_items_text + current_segment_board_events) if t and t.strip()]
+    board_answer_ban = ""
+    if _visible:
+        board_answer_ban = (
+            "\n\nALREADY WRITTEN ON THE BOARD — THESE ARE NOT VALID ANSWERS:\n"
+            + "\n".join(f"  - {t}" for t in _visible[:12])
+            + "\nThe student can read every line above. A question whose correct answer is any\n"
+              "of them tests copying, not understanding. Pick something they must WORK OUT\n"
+              "from those lines instead: apply it to a new case, change the numbers, compare\n"
+              "two of them, or ask which one would break if an assumption changed.\n"
+        )
+
     checkpoint_directive = ""
     if do_reteach:
         checkpoint_directive = f"""
@@ -407,7 +503,34 @@ Set "grade": null.
         grading_index = max(1, effective_turn - 1)
         is_final = grading_index >= QUIZ_QUESTIONS_PER_SEGMENT
 
-        verdict_rules = f"""
+        # The answer key for the question actually on screen, recovered from
+        # the turn that asked it. Without this the model re-derived the answer
+        # from the question text alone and could contradict its own intent.
+        answer_key_block = ""
+        if pending_question and pending_question.get("options"):
+            correct = (pending_question.get("correct_option") or "").strip()
+            answer_key_block = f"""
+[THE QUESTION THE STUDENT IS ANSWERING — THIS IS THE ANSWER KEY, NEVER REVEAL IT VERBATIM]
+Question: {json.dumps(pending_question.get("question") or "")}
+Options shown on screen: {json.dumps(pending_question.get("options") or [])}
+"""
+            if correct:
+                answer_key_block += f"""The correct option is EXACTLY: {json.dumps(correct)}
+
+Grade against THIS key, not against a fresh re-derivation. If the student's
+utterance matches the correct option — by text, by option letter (A/B/C), or by
+an unambiguous paraphrase of it — grade "correct". If it matches one of the OTHER
+options, it is "incorrect"; say so plainly and give the right answer in one
+sentence. Do not talk yourself into accepting a wrong option because it sounds
+confident or uses technical words.
+"""
+            else:
+                answer_key_block += """No answer key was recorded for this question. Work out the correct option
+yourself from the options above BEFORE reading the student's reply, then grade
+against that. Never assume the student's answer is the correct one.
+"""
+
+        verdict_rules = f"""{answer_key_block}
 [GRADE THE ANSWER TO QUESTION {grading_index} OF {QUIZ_QUESTIONS_PER_SEGMENT} — MANDATORY IF THIS IS AN ANSWER]
 This mandate applies ONLY when the student's utterance is a genuine attempt at
 the pending question. If it is off-topic instead — a language-switch request,
@@ -459,6 +582,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
+{board_answer_ban}
 """
     else:
         checkpoint_directive = f"""
@@ -481,6 +605,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
+{board_answer_ban}
 
 For reference, this segment's authored checkpoint is:
   "{checkpoint.get('question') or ''}"
@@ -549,7 +674,17 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                         "type": item.get("type") or ("formula" if item.get("latex") else "text"),
                         "emphasis": item.get("emphasis", "normal"),
                     }
-                    if item.get("latex"):
+                    # A plan-authored diagram reaches the board through THIS
+                    # branch, not the model's live board_events — on any turn
+                    # with assigned items those are discarded. Authoring
+                    # diagrams into the plan is also the safer path: they are
+                    # written once, offline, rather than improvised mid-lesson.
+                    if item.get("svg"):
+                        evt["type"] = "diagram"
+                        evt["svg"] = item["svg"]
+                        if item.get("caption"):
+                            evt["caption"] = item["caption"]
+                    elif item.get("latex"):
                         evt["latex"] = item["latex"]
                     else:
                         evt["text"] = item.get("text", "")
@@ -577,7 +712,26 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 "type": e_type,
                 "emphasis": evt.get("emphasis", "normal")
             }
-            if e_type == "formula":
+            if e_type == "diagram":
+                # A diagram carries `svg`, not text or latex. Both were being
+                # stripped here and the event then dropped for having no
+                # content — so diagrams could never reach the client even
+                # though PremiumBoardEvent has always known how to draw them.
+                # The client sanitizes the markup again before rendering
+                # (sanitizeSvg strips <script> and on* handlers); this cap is
+                # about payload size, since the SVG rides the same WS frames as
+                # the audio.
+                raw_svg = (evt.get("svg") or "").strip()
+                if not raw_svg or len(raw_svg) > 20000:
+                    logger.warning(
+                        f"⚠️ [DIAGRAM DROPPED] svg missing or too large ({len(raw_svg)} chars)."
+                    )
+                    continue
+                clean_evt["svg"] = raw_svg
+                if evt.get("caption"):
+                    clean_evt["caption"] = str(evt["caption"])[:200]
+                content_key = raw_svg[:120]
+            elif e_type == "formula":
                 content_key = (raw_latex or raw_text).strip()
                 clean_evt["latex"] = content_key
             else:
@@ -958,8 +1112,68 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 question_type = "procedural"
                 check_options = chips_for(PROCEDURAL_CHIPS, language)
             else:
+                # No usable options can be invented here — the server does not
+                # know the answer to a question the model just made up. This
+                # used to emit the literal strings "Option A"/"Option B"/
+                # "Option C", which reached the student as a checkpoint quiz
+                # whose choices meant nothing. Leaving chips empty keeps the
+                # question answerable by typing or speaking, which is the
+                # honest fallback.
+                logger.warning(f"⚠️ [NO CHIPS RECOVERABLE] Question asked with no options; leaving free-text.")
                 question_type = "check"
-                check_options = ["Option A", "Option B", "Option C"]
+                check_options = []
+
+    # The Ask Sheet needs the QUESTION, not the last thing that was said. It was
+    # rendering the live caption, so the panel showed a statement ("...so we
+    # write a_x equals zero...") above three answer chips, with the actual
+    # question nowhere on screen. Pull the interrogative sentence out of speech.
+    #
+    # Resolved HERE, above the drona_sessions write, because suppressing a
+    # phantom checkpoint changes next_phase — and that has to happen before the
+    # phase is persisted, or the DB and the client disagree about where the
+    # session is.
+    # Did the question just ask for something already written on the board?
+    # Recorded rather than retried: the speech has already been streamed to TTS
+    # sentence-by-sentence by this point, so rewriting the question here would
+    # not change what the student hears this turn. The ban list injected into
+    # the prompt is the actual fix; this measures whether it worked.
+    _board_now = [
+        (e.get("text") or e.get("latex") or "")
+        for e in (parsed_json.get("board_events") or [])
+    ] + current_segment_board_events
+    answer_on_board = bool(
+        check_options
+        and parsed_json.get("correct_option")
+        and answer_is_written_on_board(parsed_json["correct_option"], _board_now)
+    )
+    if answer_on_board:
+        logger.warning(
+            f"{stag}   ⚠️ [ANSWER READABLE OFF BOARD] correct_option="
+            f"{json.dumps(parsed_json.get('correct_option'))} is already on the board — "
+            f"this checkpoint tests copying, not understanding."
+        )
+
+    question_text = None
+    if check_options:
+        _sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", speech_out) if s.strip()]
+        _asked = [s for s in _sentences if s.endswith("?")]
+        question_text = _asked[-1] if _asked else None
+
+        # No interrogative sentence anywhere in the turn means the teacher did
+        # not actually ask anything, so there is no checkpoint to answer. This
+        # used to fall back to _sentences[-1] — promoting whatever statement the
+        # explanation happened to end on into the Ask Sheet's question slot, so
+        # a quiz panel appeared over a plain sentence with chips beneath it.
+        # A checkpoint must follow a real question or not appear at all.
+        if not question_text:
+            logger.warning(
+                f"{stag}   ⚠️ [CHECKPOINT SUPPRESSED] {len(check_options)} chips but no question "
+                f"was asked this turn — dropping chips rather than inventing one."
+            )
+            check_options = []
+            question_type = None
+            if next_phase == "awaiting_answer":
+                next_phase = "teaching"
 
     # 8. UPDATE drona_sessions with persistent telemetry
     #
@@ -1128,15 +1342,9 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     if phase_in == "awaiting_answer" and grade_out in ("correct", "partial", "incorrect"):
         answer_result = grade_out
 
-    # The Ask Sheet needs the QUESTION, not the last thing that was said. It was
-    # rendering the live caption, so the panel showed a statement ("...so we
-    # write a_x equals zero...") above three answer chips, with the actual
-    # question nowhere on screen. Pull the interrogative sentence out of speech.
-    question_text = None
-    if check_options:
-        sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", speech_out) if s.strip()]
-        asked = [s for s in sentences if s.endswith("?")]
-        question_text = asked[-1] if asked else (sentences[-1] if sentences else None)
+    # question_text / check_options were resolved above, before the
+    # drona_sessions write — suppressing a phantom checkpoint changes
+    # next_phase, which must be settled before the phase is persisted.
 
     # Full turn transcript in one place, for diagnosing speech/checkpoint
     # mismatches straight from the server log: exactly what was said, then

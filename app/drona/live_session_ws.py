@@ -12,6 +12,7 @@ from app.db import supabase
 from app.auth import decode_supabase_jwt
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.practice_explain import process_practice_explain_turn_stream
+from app.drona.doubt_of_day import process_doubt_of_day_turn_stream
 from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
 from app.drona.persona import normalize_language, persona_for
 
@@ -413,11 +414,15 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         if turn_type == "resume":
             turn_stream = _no_stream()
         elif session_mode == "practice_explain":
-            # process_practice_explain_turn_stream takes the session row
-            # directly rather than re-querying it (practice_explain.py:29) —
-            # state.current_phase is this connection's up-to-date view of it,
-            # kept in sync by the "state" event handler below on every turn.
+            # The scoped-turn processors take the session row directly rather
+            # than re-querying it (scoped_turn.py:41) — state.current_phase is
+            # this connection's up-to-date view of it, kept in sync by the
+            # "state" event handler below on every turn.
             turn_stream = process_practice_explain_turn_stream(
+                {**session_data, "phase": state.current_phase}, user_id, utterance_text, turn_type
+            )
+        elif session_mode == "doubt_of_day":
+            turn_stream = process_doubt_of_day_turn_stream(
                 {**session_data, "phase": state.current_phase}, user_id, utterance_text, turn_type
             )
         else:

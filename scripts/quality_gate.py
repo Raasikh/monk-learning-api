@@ -76,6 +76,7 @@ COLS = ('id,question_text,question_type,options,correct_option,correct_value,'
 # ---------------------------------------------------------------- lint ----
 
 META_TEXT = re.compile(r"the trap|students fixate|explanation\s*:|the answer is|correct answer", re.I)
+FOLLOWING_REF = re.compile(r"(?:of|among|from)\s+the\s+following", re.I)
 FIGURE_REF = re.compile(r"\b(figure|graph shown|following table|diagram|shown below|given curve)\b", re.I)
 
 def lint(q):
@@ -124,6 +125,14 @@ def lint(q):
         opts = q.get('options') or {}
         blank = [k for k, v in opts.items() if not str(v or '').strip()]
         if FIGURE_REF.search(text) or blank:
+            return 'figure_dependent'
+        # A figure in the STEM region carrying an "of the following" reference:
+        # the list/set the question asks about lives in the image. 3,748 batch2
+        # rows failed audit_wrong_key on exactly this shape - the defender kept
+        # saying "compound list is corrupted/missing" about chemistry stems
+        # whose compounds are drawn, not written. No deixis word appears, so the
+        # FIGURE_REF route above never fired.
+        if q.get('has_stem_figure') and FOLLOWING_REF.search(text):
             return 'figure_dependent'
     for frag in (text, json.dumps(q.get('options') or {})):
         if frag.count('$') % 2 == 1:
@@ -253,6 +262,60 @@ def values_match(got, key, tolerance):
     return abs(got - key) <= tol
 
 
+async def _finish_solution(client, q, rec, lock, key, is_num):
+    """Stage 3 only: write an honest solution and check it.
+
+    Shared by the normal path and the print-adjudicated path, so a key verified
+    against the page still gets exactly the same solution scrutiny.
+    """
+    # 3. honest solution
+    w = await ask(client, WRITE_SOL, stem_block(q) + f"\n\nVerified correct answer: {key}",
+                  service="gate_write_sol", ref=q['id'])
+    steps = w.get('steps') or []
+    # The writer names its destination however it likes: "B. Zygotene",
+    # "0.044", "120 V", "3100 Å, option D". The old leading-letter regex
+    # matched none of the value forms, compared the raw string against a
+    # one-letter key, and failed 31 rows whose keys had ALREADY passed
+    # blind AND defend - the largest single false-positive source after
+    # the scramble lint. Resolution order: leading letter, then
+    # "option X" anywhere, then the value matched against the keyed
+    # option's own text (numeric-aware).
+    reaches = str(w.get('reaches') or '').strip().upper()
+    m = re.match(r'^([A-D])\b', reaches) or re.search(r'\bOPTION\s+([A-D])\b', reaches)
+    reaches_letter = m.group(1) if m else None
+    if reaches_letter is None and not is_num and isinstance(q.get('options'), dict):
+        keyed_text = str(q['options'].get(key) or '').strip().upper()
+        if keyed_text:
+            norm = lambda s: re.sub(r'[\s$\\{}]', '', s)
+            if norm(reaches) and (norm(reaches) == norm(keyed_text)
+                                  or norm(reaches) in norm(keyed_text)
+                                  or norm(keyed_text) in norm(reaches)):
+                reaches_letter = key
+            else:
+                try:  # "0.044" vs "$0.044$" / "0.0444"
+                    if values_match(float(re.sub(r'[^\d.eE+-]', '', reaches) or 'x'),
+                                    float(re.sub(r'[^\d.eE+-]', '', keyed_text) or 'x'), None):
+                        reaches_letter = key
+                except (TypeError, ValueError):
+                    pass
+    if reaches_letter is None:
+        reaches_letter = reaches
+    if not steps or w.get('problem') or (not is_num and reaches_letter != key):
+        rec.update({"stage": "solution", "pass": False, "reason": "audit_bad_solution",
+                    "why": w.get('problem') or f"writer reached {reaches or '?'}"})
+        return await _emit(rec, lock)
+    c = await ask(client, CHECK_SOL,
+                  stem_block(q) + f"\n\nStated answer: {key}\n\nProposed solution:\n" + "\n".join(steps),
+                  service="gate_check_sol", ref=q['id'])
+    if c.get('verdict') != 'VALID':
+        rec.update({"stage": "solution", "pass": False, "reason": "audit_bad_solution",
+                    "why": f"check={c.get('verdict')}: {c.get('why')}"})
+        return await _emit(rec, lock)
+
+    rec.update({"stage": "done", "pass": True, "steps": steps})
+    return await _emit(rec, lock)
+
+
 async def gate_one(client, sem, q, lock):
     async with sem:
         rec = {"id": q['id'], "type": q.get('question_type')}
@@ -264,6 +327,22 @@ async def gate_one(client, sem, q, lock):
 
         is_num = q.get('question_type') == 'numerical'
         key = q.get('correct_value') if is_num else (q.get('correct_option') or '').strip().upper()
+
+        # A key verified against the printed page outranks a blind solve, so the
+        # key stages are skipped rather than re-run. Measured on the 2026-08-17
+        # adjudication: of 534 rows this gate had failed as wrong_key/disputed,
+        # 468 (87.6%) matched their printed key exactly - the model was failing
+        # hard JEE Advanced problems, not catching bad keys. Two independent
+        # readers over the same slices agreed 89/89 on servable-vs-held, so the
+        # print reading is reproducible in a way the blind solve was not.
+        # Re-asking the model that already got these wrong would just re-fail
+        # them and bill for it; the solution stage below still runs in full.
+        if q.get('adjudication_verdict') == 'PRINT_CONFIRMS':
+            b = {"answer": key, "value": key, "why": "print-adjudicated"}
+            blind_ok = defend_ok = True
+            d = {"verdict": "VALID", "why": "key verified against printed page"}
+            rec["key_stage"] = "skipped_print_adjudicated"
+            return await _finish_solution(client, q, rec, lock, key, is_num)
 
         # 1. blind solve
         b = await ask(client, BLIND_NUM if is_num else BLIND_MCQ, stem_block(q),
@@ -325,52 +404,7 @@ async def gate_one(client, sem, q, lock):
                         "why": d.get('why') or b.get('why')})
             return await _emit(rec, lock)
 
-        # 3. honest solution
-        w = await ask(client, WRITE_SOL, stem_block(q) + f"\n\nVerified correct answer: {key}",
-                      service="gate_write_sol", ref=q['id'])
-        steps = w.get('steps') or []
-        # The writer names its destination however it likes: "B. Zygotene",
-        # "0.044", "120 V", "3100 Å, option D". The old leading-letter regex
-        # matched none of the value forms, compared the raw string against a
-        # one-letter key, and failed 31 rows whose keys had ALREADY passed
-        # blind AND defend - the largest single false-positive source after
-        # the scramble lint. Resolution order: leading letter, then
-        # "option X" anywhere, then the value matched against the keyed
-        # option's own text (numeric-aware).
-        reaches = str(w.get('reaches') or '').strip().upper()
-        m = re.match(r'^([A-D])\b', reaches) or re.search(r'\bOPTION\s+([A-D])\b', reaches)
-        reaches_letter = m.group(1) if m else None
-        if reaches_letter is None and not is_num and isinstance(q.get('options'), dict):
-            keyed_text = str(q['options'].get(key) or '').strip().upper()
-            if keyed_text:
-                norm = lambda s: re.sub(r'[\s$\\{}]', '', s)
-                if norm(reaches) and (norm(reaches) == norm(keyed_text)
-                                      or norm(reaches) in norm(keyed_text)
-                                      or norm(keyed_text) in norm(reaches)):
-                    reaches_letter = key
-                else:
-                    try:  # "0.044" vs "$0.044$" / "0.0444"
-                        if values_match(float(re.sub(r'[^\d.eE+-]', '', reaches) or 'x'),
-                                        float(re.sub(r'[^\d.eE+-]', '', keyed_text) or 'x'), None):
-                            reaches_letter = key
-                    except (TypeError, ValueError):
-                        pass
-        if reaches_letter is None:
-            reaches_letter = reaches
-        if not steps or w.get('problem') or (not is_num and reaches_letter != key):
-            rec.update({"stage": "solution", "pass": False, "reason": "audit_bad_solution",
-                        "why": w.get('problem') or f"writer reached {reaches or '?'}"})
-            return await _emit(rec, lock)
-        c = await ask(client, CHECK_SOL,
-                      stem_block(q) + f"\n\nStated answer: {key}\n\nProposed solution:\n" + "\n".join(steps),
-                      service="gate_check_sol", ref=q['id'])
-        if c.get('verdict') != 'VALID':
-            rec.update({"stage": "solution", "pass": False, "reason": "audit_bad_solution",
-                        "why": f"check={c.get('verdict')}: {c.get('why')}"})
-            return await _emit(rec, lock)
-
-        rec.update({"stage": "done", "pass": True, "steps": steps})
-        return await _emit(rec, lock)
+        return await _finish_solution(client, q, rec, lock, key, is_num)
 
 
 async def _emit(rec, lock):
@@ -442,6 +476,14 @@ def fetch_staging(db_path):
     # them out as figure_dependent instead of letting blind-solve fail them
     # as unreadable after two paid model calls
     figq = {r[0] for r in conn.execute("select distinct question_id from staging_figures")}
+    # in_stem is newer than some staging DBs on disk (regress-pageorder-2026-08-16
+    # predates it). Without the column the stem-figure route simply cannot fire;
+    # degrading to an empty set keeps the gate runnable on older stores instead
+    # of dying on `no such column`.
+    _figcols = {r[1] for r in conn.execute("pragma table_info(staging_figures)")}
+    stemfig = ({r[0] for r in conn.execute(
+        "select distinct question_id from staging_figures where in_stem=1")}
+        if "in_stem" in _figcols else set())
     rows = []
     for r in conn.execute("select * from staging_questions where gate_status='staged'"):
         options = json.loads(r["options"]) if r["options"] else None
@@ -459,6 +501,11 @@ def fetch_staging(db_path):
             "solution": None,
             "chapter_name": r["chapter"],
             "needs_manual": r["needs_manual"],
+            # A key already checked against the PRINTED page. Stronger evidence
+            # than any blind solve, so gate_one skips its key stages rather than
+            # re-litigating them - see the guard there.
+            "adjudication_verdict": (r["adjudication_verdict"]
+                                     if "adjudication_verdict" in r.keys() else None),
             # Batch tag, not the individual filename: the spec's rule 3 wants a
             # single value per batch so the gate can target it and a bad batch
             # can be rolled back as a unit. run_id is exactly that
@@ -467,6 +514,7 @@ def fetch_staging(db_path):
             "source": r["run_id"],
             "source_pdf": r["source_pdf"],
             "has_figure": r["id"] in figq,
+            "has_stem_figure": r["id"] in stemfig,
         })
     conn.close()
     return rows

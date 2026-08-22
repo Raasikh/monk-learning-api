@@ -8,7 +8,9 @@ from app.drona.planner import get_or_create_plan
 from app.drona.persona import (
     SCOPING_AMBIGUOUS,
     SCOPING_RESOLVED,
+    SCOPING_RESOLVED_NAMED,
     copy_for,
+    first_name_of,
     normalize_language,
     normalize_voice,
     tutor_name,
@@ -131,7 +133,29 @@ Student Utterance: "{utterance}"
             "history_summary": new_history
         }).eq("id", session_id).execute()
 
-        tutor_speech = copy_for(SCOPING_RESOLVED, language, subtopic=sub_title)
+        # Open the class by name when we have one. Failure here must never cost
+        # the student their lesson, so any profile-lookup problem falls through
+        # to the unnamed greeting.
+        student_name = ""
+        try:
+            prof = (
+                supabase.table("profiles")
+                .select("display_name")
+                .eq("id", user_id)
+                .limit(1)
+                .execute()
+            )
+            rows = prof.data or []
+            student_name = first_name_of(rows[0].get("display_name") if rows else "")
+        except Exception as name_err:
+            logger.warning(f"Could not read display_name for greeting: {name_err}")
+
+        if student_name:
+            tutor_speech = copy_for(
+                SCOPING_RESOLVED_NAMED, language, name=student_name, subtopic=sub_title
+            )
+        else:
+            tutor_speech = copy_for(SCOPING_RESOLVED, language, subtopic=sub_title)
 
         return {
             "phase": "teaching",

@@ -21,8 +21,20 @@ def compute_next_session_state(
     seg_complete = bool(tutor_output.get("segment_complete"))
     offtopic_tier = tutor_output.get("offtopic_tier")
 
-    # Immediate completion on end_session request or crisis offtopic (tier 5)
-    if phase_req == "end_session" or offtopic_tier == 5:
+    # Immediate completion ONLY on an explicit end_session request.
+    #
+    # This used to also fire on `offtopic_tier == 5`, which ended the session
+    # for ALL of tier 5 — including tier 5-soft (exhaustion, overwhelm,
+    # hopelessness). A student saying "I'm exhausted, I can't do this" had
+    # their class killed mid-segment, which is the opposite of what a mentor
+    # does and directly contradicted prompts/tutor.md, whose 5-soft rule says
+    # KEEP SESSION OPEN and never set end_session. The prompt was right and
+    # the model obeyed it; this line silently overruled both.
+    #
+    # Tier 5a (explicit self-harm) is unaffected: it sets
+    # phase_request="end_session" itself, so the first clause still catches it
+    # and still terminates immediately.
+    if phase_req == "end_session":
         return "complete", current_segment, 0, False, False
 
     # Transition to wrapup when phase_req is wrapup

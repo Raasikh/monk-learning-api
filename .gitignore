@@ -19,3 +19,19 @@ htmlcov/
 .DS_Store
 .idea/
 .vscode/
+
+# Local editor / tooling artifacts — not part of the codebase
+.obsidian/
+.backups/
+repomix-output.xml
+repomix.config.json
+Untitled.canvas
+Untitled.md
+
+# Scratch working files and generated run artifacts
+scratch/
+scripts/gate_results.jsonl
+
+# Claude Code local config (contains machine-specific absolute paths)
+.claude/
+.claudeignore

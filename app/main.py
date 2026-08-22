@@ -1,6 +1,20 @@
 import time
 import asyncio
 import logging
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Must run before any app.* import below — several modules (e.g.
+# app/drona/retrieval.py) construct an OpenAI client at IMPORT time from
+# os.getenv(...), which raises immediately if the key isn't already in the
+# process environment. Railway injects real env vars directly so this is a
+# no-op there (load_dotenv never overrides an existing var), but a local
+# process launcher that can't source .env itself — e.g. a dev-server tool
+# spawning uvicorn directly — had no other way to get these vars in.
+# Path-based rather than bare load_dotenv() so it finds the right .env
+# regardless of the launching process's working directory.
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+
 from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
@@ -138,6 +152,9 @@ app.include_router(doubts_router)
 
 from app.routers.progress import router as progress_router
 app.include_router(progress_router)
+
+from app.routers.doubt_of_day import router as doubt_of_day_router
+app.include_router(doubt_of_day_router)
 
 
 

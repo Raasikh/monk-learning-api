@@ -15,6 +15,10 @@ FORBIDDEN_SSE_KEYS = {
     "mistake_tag",
     "phase_request",
     "segment_complete",
+    # The answer key for the question currently on screen. Persisted to
+    # drona_turns so the NEXT turn can grade against what was actually
+    # intended, but it must never travel to the client with the question.
+    "correct_option",
 }
 
 def assert_no_forbidden_keys(payload: dict):

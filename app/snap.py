@@ -36,6 +36,9 @@ from app.drona.prompt_loader import load_prompt
 # The repair path the rest of the codebase already uses: json.loads first,
 # repair only on failure. Imported, not reimplemented, and not modified.
 from app.drona.planner import repair_json_escapes, strip_fences
+# The _bg variant: recording must never add a PostgREST round-trip to a live
+# student turn. Aliased so tests can stub one name.
+from app.drona.usage import record_call_bg as record_call
 
 logger = logging.getLogger("snap")
 
@@ -214,31 +217,51 @@ def _usage_of(res: Any) -> Dict[str, int]:
 
 def _call_with_one_retry(stage: str, call, describe: str,
                          usage_acc: Optional[Dict[str, int]] = None,
-                         expect_model: Optional[str] = None) -> Dict[str, Any]:
+                         expect_model: Optional[str] = None,
+                         service: str = "snap") -> Dict[str, Any]:
     """Runs `call()` and parses its JSON, retrying once on a parse failure.
 
     Every failure is logged with the stage that produced it. After the retry the
     error is visible to the student — there is no canned answer.
 
     Token usage accumulates into `usage_acc` including retries, so the cost of a
-    snap is measured rather than estimated.
+    snap is measured rather than estimated. Every attempt is also recorded to
+    `llm_calls` under `service`. ok=False means the attempt billed and its
+    result was discarded — an API error, a substituted model, or unparseable
+    JSON — matching the column's meaning in migrations/0018_llm_calls.sql.
     """
+    model = expect_model or (MODEL_TRANSCRIBE if stage == "transcribe" else MODEL_SOLVE)
     last_raw = ""
     for attempt in (1, 2):
         # The retry says WHY the first attempt failed. Repeating the identical
         # prompt just produced the identical unusable response: a diagram
         # question rambled into a 5,445-character step and broke its own JSON
         # twice in a row.
-        res = call(_PARSE_CORRECTIVE if attempt == 2 else None)
+        t0 = time.time()
+        try:
+            res = call(_PARSE_CORRECTIVE if attempt == 2 else None)
+        except Exception as exc:
+            record_call(model, service, ok=False, attempt=attempt,
+                        latency_ms=int((time.time() - t0) * 1000),
+                        subtopic_key=describe, error=str(exc))
+            raise
+        latency_ms = int((time.time() - t0) * 1000)
+
+        def _record(ok: bool, error: Optional[str] = None,
+                    _attempt: int = attempt) -> None:
+            record_call(model, service, ok=ok, attempt=_attempt, res=res,
+                        latency_ms=latency_ms, subtopic_key=describe,
+                        error=error)
+
         if usage_acc is not None:
             counted = _usage_of(res)
             usage_acc["input"] = usage_acc.get("input", 0) + counted["input"]
             usage_acc["output"] = usage_acc.get("output", 0) + counted["output"]
-        _assert_model(
-            getattr(res, "model", None),
-            expect_model or (MODEL_TRANSCRIBE if stage == "transcribe" else MODEL_SOLVE),
-            stage,
-        )
+        try:
+            _assert_model(getattr(res, "model", None), model, stage)
+        except SnapError as err:
+            _record(False, f"model mismatch: {err}")
+            raise
         message = res.choices[0].message
         last_raw = message.content or ""
         if not last_raw.strip() and getattr(message, "reasoning_content", None):
@@ -248,12 +271,16 @@ def _call_with_one_retry(stage: str, call, describe: str,
                 stage.upper(), len(message.reasoning_content or ""),
             )
         try:
-            return _parse_json(last_raw, stage)
+            parsed = _parse_json(last_raw, stage)
         except (json.JSONDecodeError, SnapError) as err:
+            _record(False, f"unparseable JSON: {err}")
             logger.warning(
                 "[SNAP %s] unparseable JSON on attempt %d/2 (%s): %s | raw=%r",
                 stage.upper(), attempt, describe, err, last_raw[:400],
             )
+        else:
+            _record(True)
+            return parsed
     logger.error("[SNAP %s] gave up after 2 attempts (%s)", stage.upper(), describe)
     raise SnapError(
         "Something went wrong at Monk's end reading that back. Please try again.",
@@ -420,7 +447,8 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             timeout=TRANSCRIBE_TIMEOUT_S,
         )
 
-    parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}", usage_acc)
+    parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}", usage_acc,
+                                  service="snap_transcribe")
     parsed["_ocr_confidence"] = page["confidence"]
     parsed["_ocr_text"] = page["text"]
     parsed["_diagram_regions"] = page.get("diagram_regions", 0)
@@ -622,7 +650,8 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
 
     try:
         parsed = _call_with_one_retry("transcribe", call, f"diagram={doubt_id[:8]}",
-                                      usage_acc, expect_model=MODEL_DIAGRAM)
+                                      usage_acc, expect_model=MODEL_DIAGRAM,
+                                      service="snap_diagram")
     except SnapError as err:
         logger.warning("[SNAP DIAGRAM] doubt=%s describe failed: %s", doubt_id[:8], err)
         return None
@@ -682,6 +711,7 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
     client_kwargs["stream"] = True
     client_kwargs["stream_options"] = {"include_usage": True}
     solve_client = client_kwargs.pop("_client")
+    model = client_kwargs.get("model") or MODEL_SOLVE
 
     last_err = None
     for attempt in (1, 2):
@@ -692,12 +722,26 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
         buffer, emitted = "", set()
         thinking_chars, last_tick = 0, time.time()
         started = time.time()
+        # Per-attempt counts for llm_calls: a stream that dies mid-way still
+        # billed whatever it generated, and must be recorded like any other.
+        # The usage object arrives only on the terminal chunk, so a dead stream
+        # usually has no counts at all — that is recorded as NULLs ("billed an
+        # unknown amount"), never as zeros ("free").
+        att_in = att_cached = att_out = 0
+        saw_usage = False
         try:
             for chunk in solve_client.chat.completions.create(**client_kwargs):
                 usage = getattr(chunk, "usage", None)
-                if usage and usage_acc is not None:
-                    usage_acc["input"] = usage_acc.get("input", 0) + int(usage.prompt_tokens or 0)
-                    usage_acc["output"] = usage_acc.get("output", 0) + int(usage.completion_tokens or 0)
+                if usage:
+                    saw_usage = True
+                    att_in += int(usage.prompt_tokens or 0)
+                    att_out += int(usage.completion_tokens or 0)
+                    details = getattr(usage, "prompt_tokens_details", None)
+                    if details:
+                        att_cached += int(getattr(details, "cached_tokens", 0) or 0)
+                    if usage_acc is not None:
+                        usage_acc["input"] = usage_acc.get("input", 0) + int(usage.prompt_tokens or 0)
+                        usage_acc["output"] = usage_acc.get("output", 0) + int(usage.completion_tokens or 0)
                 if not chunk.choices:
                     continue
                 delta = chunk.choices[0].delta
@@ -713,18 +757,37 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                     buffer += delta.content
                     _emit_new_steps(buffer, emitted, on_event)
         except Exception as err:
+            record_call(model, "snap_solve", ok=False, attempt=attempt,
+                        tokens={"input_tokens": att_in, "cache_hit_tokens": att_cached,
+                                "output_tokens": att_out} if saw_usage else
+                               {"input_tokens": None, "cache_hit_tokens": None,
+                                "output_tokens": None},
+                        latency_ms=int((time.time() - started) * 1000),
+                        subtopic_key=f"doubt={doubt_id[:8]} stream", error=str(err))
             last_err = err
             logger.warning("[SNAP SOLVE] stream attempt %d/2 failed (%s): %s",
                            attempt, doubt_id[:8], str(err)[:160])
             continue
+        tokens = {"input_tokens": att_in, "cache_hit_tokens": att_cached,
+                  "output_tokens": att_out}
+        latency_ms = int((time.time() - started) * 1000)
         try:
-            return _parse_json(buffer, "solve")
+            parsed = _parse_json(buffer, "solve")
         except (json.JSONDecodeError, SnapError) as err:
+            record_call(model, "snap_solve", ok=False, attempt=attempt,
+                        tokens=tokens, latency_ms=latency_ms,
+                        subtopic_key=f"doubt={doubt_id[:8]} stream",
+                        error=f"unparseable JSON: {err}")
             last_err = err
             logger.warning(
                 "[SNAP SOLVE] streamed JSON unparseable on attempt %d/2 (%s): %s",
                 attempt, doubt_id[:8], err,
             )
+        else:
+            record_call(model, "snap_solve", ok=True, attempt=attempt,
+                        tokens=tokens, latency_ms=latency_ms,
+                        subtopic_key=f"doubt={doubt_id[:8]} stream")
+            return parsed
     raise SnapError(
         "Something went wrong at Monk's end reading that back. Please try again.",
         "solve", REMEDY_OUR_SIDE, "model_unparseable",
@@ -770,7 +833,7 @@ def match_answer_to_options(answer: str, options: List[Dict[str, str]],
 
     try:
         parsed = _call_with_one_retry("transcribe", call, f"match={doubt_id[:8]}",
-                                      usage_acc)
+                                      usage_acc, service="snap_match")
     except SnapError as err:
         logger.warning("[SNAP MATCH] doubt=%s matcher failed: %s", doubt_id[:8], err)
         return []
@@ -1035,7 +1098,8 @@ def _solve_with_consensus(make_call, doubt_id: str,
     if n <= 1:
         return _call_with_one_retry("solve", make_call(0.0),
                                     f"doubt={doubt_id[:8]}", usage_acc,
-                                    expect_model=expect_model)
+                                    expect_model=expect_model,
+                                    service="snap_solve")
 
     temps = [0.0] + [CONSENSUS_TEMP] * (n - 1)
     results: List[Optional[Dict[str, Any]]] = [None] * n
@@ -1045,7 +1109,7 @@ def _solve_with_consensus(make_call, doubt_id: str,
         try:
             results[i] = _call_with_one_retry(
                 "solve", make_call(temps[i]), f"doubt={doubt_id[:8]} s{i + 1}",
-                usages[i], expect_model=expect_model,
+                usages[i], expect_model=expect_model, service="snap_solve",
             )
         except SnapError as err:
             logger.warning("[SNAP CONSENSUS] doubt=%s sample %d failed: %s",
@@ -1227,7 +1291,9 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
 
         try:
             retried = _call_with_one_retry("solve", retry_call,
-                                           f"doubt={doubt_id[:8]} steps", usage_acc)
+                                           f"doubt={doubt_id[:8]} steps", usage_acc,
+                                           expect_model=solve_model,
+                                           service="snap_solve")
             still = _step_problems(retried.get("steps") or [])
             if len(still) < len(problems):
                 parsed = retried
@@ -1373,7 +1439,8 @@ def _steps_support_label(solution: Dict[str, Any],
 
     try:
         parsed = _call_with_one_retry("transcribe", call,
-                                      f"stepcheck={doubt_id[:8]}", usage_acc)
+                                      f"stepcheck={doubt_id[:8]}", usage_acc,
+                                      service="snap_stepcheck")
     except SnapError:
         return None
     if not parsed.get("clear"):
