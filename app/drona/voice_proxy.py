@@ -127,11 +127,51 @@ MATH_SYMBOL_PRONUNCIATIONS = [
     (r"(\w)_(\w)", r"\1 \2"),
 ]
 
+# Rumik performs these inline — they render as a SOUND, not as words (see
+# voice.md). Nothing in the tutor prompt ever asks for one, so any that appears
+# is the model improvising, and a teacher who randomly screams, sings or cries
+# mid-derivation is worse than one who simply reads the line. Stripped rather
+# than voiced: leaving "<laugh>" in would make Rumik actually laugh.
+#
+# Matches any bare <word> — the known 17 plus anything Rumik adds later — but
+# only with no internal spaces, so "x < 5" and "a < b > c" in maths are safe.
+_RUMIK_INLINE_TAG = re.compile(r"<\s*/?\s*[A-Za-z][A-Za-z0-9_]{1,19}\s*>")
+
+# If a tag is ever wanted deliberately, add it here and it will survive.
+_ALLOWED_INLINE_TAGS: set = set()
+
+
+def strip_inline_performance_tags(text: str) -> Tuple[str, List[str]]:
+    """Removes Rumik performance tags from TTS-bound text.
+
+    Returns (clean_text, tags_removed) so the caller can log what the model
+    tried to perform — silently dropping them would hide a prompt problem.
+    """
+    if not text or "<" not in text:
+        return text, []
+    found: List[str] = []
+
+    def _drop(m: re.Match) -> str:
+        tag = m.group(0)
+        name = re.sub(r"[<>/\s]", "", tag).lower()
+        if name in _ALLOWED_INLINE_TAGS:
+            return tag
+        found.append(name)
+        return " "
+
+    return _RUMIK_INLINE_TAG.sub(_drop, text), found
+
+
 def sanitize_tts_phonetics(text: str) -> str:
     """Substitutes math symbols and single Latin letter variable names with explicit phonetic spellings for Rumik TTS."""
     if not text:
         return ""
-    res = text
+    res, dropped = strip_inline_performance_tags(text)
+    if dropped:
+        logger.warning(
+            f"🎭 [INLINE TAG STRIPPED] Model emitted performance tag(s) {dropped} — "
+            f"Rumik would have performed these as sounds. Removed before synthesis."
+        )
     for pattern, replacement in MATH_SYMBOL_PRONUNCIATIONS:
         res = re.sub(pattern, replacement, res)
     res = _apply_letter_phonetics(res)

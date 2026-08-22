@@ -115,3 +115,49 @@ def test_prose_letters_are_never_spelled():
 def test_lone_letter_in_prose_is_left_alone():
     # One letter with no formula neighbour and no run is not a variable.
     assert sanitize_tts_phonetics("Temperature 300 K hota hai.") == "Temperature 300 K hota hai."
+
+
+# ── Rumik inline performance tags ────────────────────────────────────────────
+# Rumik PERFORMS <laugh>/<sigh>/<sing> as sounds rather than reading them
+# (voice.md). Nothing in the tutor prompt asks for one, so any tag that appears
+# is the model improvising — and a teacher who laughs or sings mid-derivation
+# is worse than one who just reads the line.
+
+from app.drona.voice_proxy import strip_inline_performance_tags
+
+
+def test_performance_tags_are_stripped():
+    for line, expected in [
+        ("<laugh> Dekho, yeh simple hai.", "Dekho, yeh simple hai."),
+        ("Achha <sigh> chalo aage badhte hain.", "Achha chalo aage badhte hain."),
+        ("<laugh_harder> arre wah!", "arre wah!"),
+    ]:
+        assert sanitize_tts_phonetics(line) == expected
+
+
+def test_paired_tags_keep_the_words_between_them():
+    # The content is real speech; only the wrapper is a performance instruction.
+    assert sanitize_tts_phonetics("<whisper>secret</whisper> formula") == "secret formula"
+    assert sanitize_tts_phonetics("Yeh <excited>bahut</excited> important hai.") == (
+        "Yeh bahut important hai."
+    )
+
+
+def test_maths_comparisons_are_not_mistaken_for_tags():
+    # The reason the pattern forbids internal spaces: "<" is also less-than.
+    for line in [
+        "Agar x < 5 hai toh",
+        "Compare 2 < 3 > 1 dekho",
+        "Value a < b hoti hai",
+    ]:
+        assert sanitize_tts_phonetics(line) == line
+
+
+def test_stripped_tags_are_reported_for_logging():
+    # Silently dropping them would hide a prompt regression.
+    _, dropped = strip_inline_performance_tags("<laugh> hi <sigh> there")
+    assert dropped == ["laugh", "sigh"]
+
+
+def test_text_without_tags_is_untouched_and_cheap():
+    assert strip_inline_performance_tags("plain speech")[1] == []
