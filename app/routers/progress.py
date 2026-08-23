@@ -162,6 +162,11 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
     # concepts in Class 12 Relations and Functions scored 38%, because eight
     # Class 11 duplicates were still being averaged in. Waves read 80%, both
     # Probability chapters 75-78%.
+    # Which chapters hold ANY live concept, before the exam filter. This is
+    # what separates "nobody has authored this chapter yet" from "this chapter
+    # is off the syllabus for the exam being scored" — see the skip below.
+    chapters_with_any_concept = {c["chapter_id"] for c in concepts
+                                 if c.get("active") is not False}
     concepts = [c for c in concepts
                 if c.get("active") is not False
                 and exam in (c.get("exams") or ["jee", "neet"])]
@@ -207,6 +212,16 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
             c["name"],
         )):
             clist = sorted(concepts_by_ch.get(ch["id"], []), key=lambda c: c.get("display_order", 99))
+            # A chapter whose concepts all exist but none are on this exam is
+            # off-syllabus, and scoring it is worse than listing it: chapter
+            # mastery is 0 with nothing attemptable, and `num += m_ch * w_ch`
+            # while `den += w_ch` then drags the whole SUBJECT score down by a
+            # chapter the student is never examined on and can never lift.
+            # Linear Programming, tagged board-only, did exactly that to
+            # Mathematics. A chapter with no concepts at all is merely
+            # uncurated and still belongs in the list, flagged curated=False.
+            if not clist and ch["id"] in chapters_with_any_concept:
+                continue
             concept_payload = []
             m_sum = 0.0
             ch_flagged = ch_attempted = False

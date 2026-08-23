@@ -19,8 +19,10 @@ from app.routers import progress as prog
 
 CH = "11111111-1111-1111-1111-111111111111"
 CH2 = "22222222-2222-2222-2222-222222222222"
+CH3 = "33333333-3333-3333-3333-333333333333"
 LIVE = "aaaaaaaa-0000-0000-0000-000000000001"
 RETIRED = "aaaaaaaa-0000-0000-0000-000000000002"
+OFF = "aaaaaaaa-0000-0000-0000-000000000004"
 
 
 @pytest.fixture
@@ -34,8 +36,13 @@ def wired(monkeypatch):
          "class_level": 11, "chapter_order": 14},
         {"id": CH, "name": "Units & Measurements", "subject": "physics",
          "class_level": 11, "chapter_order": 1},
+        # Concepts exist, none tagged for this exam — a board-only chapter.
+        {"id": CH3, "name": "Linear Programming", "subject": "physics",
+         "class_level": 12, "chapter_order": 20},
     ]
     concepts = [
+        {"id": OFF, "chapter_id": CH3, "name": "Corner Point Method",
+         "display_order": 1, "exams": ["board"], "active": True},
         {"id": LIVE, "chapter_id": CH2, "name": "Beats",
          "display_order": 1, "exams": ["jee"], "active": True},
         {"id": RETIRED, "chapter_id": CH2, "name": "Maxwell's Equations",
@@ -107,3 +114,21 @@ def test_the_ledger_counts_only_concepts_the_student_can_see(wired):
     # that appears nowhere in this response. Counting it would report a total
     # the student cannot reconcile against anything on the page.
     assert wired["ledger"]["concepts_mastered"] == 1
+
+
+def test_an_off_syllabus_chapter_is_not_scored(wired):
+    # A chapter whose concepts all exist but none are on the exam being scored
+    # must not appear AND must not count. Listing it would be cosmetic; scoring
+    # it is not — chapter mastery is 0 with nothing attemptable, and the
+    # subject score averages that in as `num += 0 * w` against `den += w`,
+    # dragging Physics down by a chapter the student is never examined on and
+    # can never lift. Linear Programming did this to Mathematics the moment it
+    # was tagged board-only.
+    physics = next(s for s in wired["subjects"] if s["subject"] == "physics")
+    names = [c["name"] for c in physics["chapters"]]
+    assert "Linear Programming" not in names
+    # Waves is fully mastered and Units & Measurements untouched, and the
+    # subject score is 10 * mean(chapter mastery): 10 * (100 + 0) / 2 = 500.
+    # A third chapter permanently stuck at 0 would make it 10 * 100/3 = 333 —
+    # a third of the score gone to a chapter that is not on the exam.
+    assert physics["score"] == 500
