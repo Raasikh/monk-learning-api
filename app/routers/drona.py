@@ -4,7 +4,7 @@ from typing import Optional, List, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from app.auth import get_current_user_id
-from app.db import supabase
+from app.db import supabase, fetch_all, fetch_all_cached
 from app.drona.scoping import scope_student_session
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.persona import (
@@ -21,26 +21,57 @@ router = APIRouter(prefix="/drona", tags=["drona"])
 
 @router.get("/catalogue")
 def get_catalogue(user_id: str = Depends(get_current_user_id)):
-    """GET /drona/catalogue — returns subject groups, chapters, and subtopics from subtopic_index."""
-    # Fetch chapters from DB
-    chap_res = supabase.table("chapters").select("id, name, subject, class_level").execute()
-    chapters_data = chap_res.data or []
+    """GET /drona/catalogue — subject groups, chapters, and the concepts to teach.
 
-    # Fetch subtopics from subtopic_index (canonical scoping unit)
-    sub_res = supabase.table("subtopic_index").select("id, chapter_id, subtopic").execute()
-    sub_data = sub_res.data or []
+    The teaching unit is `concepts`, not `subtopic_index`. Concepts are what
+    Progress already scores, so teaching against them is what lets a lesson and
+    a practice question move the same mastery number; teaching a subtopic that
+    only loosely aliases to a concept did not.
 
-    # Map subtopics by chapter_id
+    The wire shape is unchanged — the list is still called `subtopics` — so the
+    client needs no migration to benefit from this.
+    """
+    # fetch_all, not .execute(): concepts is 1,144 rows against PostgREST's
+    # 1000-row cap, which truncates silently. A plain read here would drop ~144
+    # concepts and simply look like chapters with missing content.
+    # Cached: the catalogue is the same for every student and was costing the
+    # same ~2.2s of round trips /progress was. Per-user state is not read here.
+    chapters_data = list(fetch_all_cached("chapters", "id, name, subject, class_level, chapter_order"))
+    concepts_data = fetch_all_cached("concepts", "id, chapter_id, name, key, teach_order, display_order, active")
+
+    # Order by the pedagogical sequence. display_order is the exam-frequency
+    # ranking Progress uses and is the wrong order to teach in — it opened
+    # Gravitation on potential energy and reached Newton's law fifth. It stays
+    # as the fallback only for concepts not yet sequenced.
+    concepts_by_chap: Dict[str, List[Dict[str, Any]]] = {}
+    for c in concepts_data:
+        if c.get("active") is False:
+            continue
+        concepts_by_chap.setdefault(c["chapter_id"], []).append(c)
+
     subtopics_by_chap: Dict[str, List[Dict[str, Any]]] = {}
-    for s in sub_data:
-        cid = s["chapter_id"]
-        if cid not in subtopics_by_chap:
-            subtopics_by_chap[cid] = []
-        subtopics_by_chap[cid].append({
-            "id": s["id"],
-            "name": s["subtopic"],
-            "grounding_status": "grounded"
-        })
+    for cid, items in concepts_by_chap.items():
+        items.sort(key=lambda x: (
+            x.get("teach_order") is None,          # unsequenced sink to the end
+            x.get("teach_order") or 0,
+            x.get("display_order") or 0,
+            x.get("name") or "",
+        ))
+        subtopics_by_chap[cid] = [{
+            "id": c["id"],
+            "name": c["name"],
+            "grounding_status": "grounded",
+        } for c in items]
+
+    # Chapters were coming back in whatever order Postgres returned them, so
+    # the picker's order drifted between requests. chapter_order is the
+    # syllabus sequence; class_level keeps 11 before 12 within a subject.
+    chapters_data.sort(key=lambda c: (
+        c.get("class_level") or 0,
+        c.get("chapter_order") is None,
+        c.get("chapter_order") or 0,
+        c.get("name") or "",
+    ))
 
     # Group chapters by subject
     subjects_map: Dict[str, List[Dict[str, Any]]] = {}

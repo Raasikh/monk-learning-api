@@ -1,7 +1,7 @@
 import json
 import logging
 from typing import Dict, Any, List
-from app.db import supabase
+from app.db import supabase, fetch_all
 from app.drona.models import get_drona_client, get_model_name, SCOPING_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.planner import get_or_create_plan
@@ -36,9 +36,27 @@ def scope_student_session(session_id: str, user_id: str, utterance: str) -> Dict
         if c_res.data:
             chap_name = c_res.data[0]["name"]
 
-    sub_res = supabase.table("subtopic_index").select("id, subtopic, subtopic_key").eq("chapter_id", chapter_id).execute() if chapter_id else None
-    subtopics = sub_res.data if sub_res and sub_res.data else []
-    
+    # Concepts are the teaching unit now, matching what /drona/catalogue offers
+    # and what Progress scores. The local variables keep the "subtopic" naming
+    # because subtopic_key is the plan cache's column and the scoping prompt's
+    # vocabulary — only the source table and the meaning of a key changed.
+    #
+    # Ordered by teach_order so the prompt lists them the way they are taught;
+    # the model reads this list top-down when a student's request is vague, and
+    # an exam-frequency ordering made it suggest the hardest concept first.
+    concept_rows = fetch_all(
+        "concepts", "id, name, key, teach_order, display_order, active",
+        chapter_id=chapter_id,
+    ) if chapter_id else []
+    concept_rows = [r for r in concept_rows if r.get("active") is not False]
+    concept_rows.sort(key=lambda x: (
+        x.get("teach_order") is None,
+        x.get("teach_order") or 0,
+        x.get("display_order") or 0,
+        x.get("name") or "",
+    ))
+    subtopics = [{"id": r["id"], "subtopic": r["name"], "subtopic_key": r["key"]} for r in concept_rows]
+
     valid_keys = {s["subtopic_key"]: s["subtopic"] for s in subtopics if "subtopic_key" in s}
 
     # Format numbered list of subtopics for prompt

@@ -93,8 +93,38 @@ def test_letter_run_is_spelled():
     assert "em el tee" in sanitize_tts_phonetics("formula hoga M L T to the power minus 2.")
 
 
-def test_letters_inside_brackets_are_spelled():
-    assert "[el tee]" in sanitize_tts_phonetics("dimension [L T] hota hai")
+def test_letters_inside_brackets_are_spelled_and_brackets_dropped():
+    # Brackets are visual notation. Spoken they are at best an odd pause and at
+    # worst read aloud, so the letters are kept and the brackets are not.
+    out = sanitize_tts_phonetics("dimension [L T] hota hai")
+    assert "el tee" in out
+    assert "[" not in out and "]" not in out
+
+
+def test_glued_dimension_cluster_sounds_the_same_as_the_spaced_one():
+    # "[LT]" used to say nothing recognisable while "[L T]" said "el tee",
+    # because a 2-char token is not a single letter. Both must match.
+    assert "el tee" in sanitize_tts_phonetics("formula is [LT]")
+    assert "em el tee" in sanitize_tts_phonetics("dimensions [MLT]")
+
+
+def test_contraction_next_to_an_article_is_not_a_letter_run():
+    # "That's a" -> the "s" after the apostrophe and the article "a" looked
+    # like a two-letter run and both got spelled: "That'es ay", heard as
+    # "thatsa". A letter touching an apostrophe is never a variable.
+    for line in [
+        "That's a good question.",
+        "It's a formula.",
+        "Here's a check.",
+        "What's a vector?",
+    ]:
+        assert sanitize_tts_phonetics(line) == line
+
+
+def test_no_space_is_left_before_punctuation():
+    # Dropping brackets used to leave " em , el ," which nudges the phrasing.
+    out = sanitize_tts_phonetics("We write these as [M], [L], and [K].")
+    assert " ," not in out and " ." not in out
 
 
 def test_letter_beside_a_formula_word_is_spelled():

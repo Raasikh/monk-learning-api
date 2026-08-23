@@ -59,16 +59,25 @@ _FORMULA_NEIGHBOUR = (
     r"to\s+the\s+power|per|upon"
 )
 
+# A standalone letter, explicitly NOT one glued to an apostrophe.
+#
+# `\b` treats an apostrophe as a word boundary, so the "s" in "That's" looked
+# like a lone letter. Paired with the article in "That's a", that read as a
+# two-letter run and both got spelled — "That'es ay", which is heard as
+# "thatsa". A letter touching an apostrophe is always a contraction fragment
+# ('s, 't, 'd, 're), never a variable.
+_SINGLE = r"(?<![A-Za-z0-9'’])[A-Za-z](?![A-Za-z0-9'’])"
+
 # Two or more single letters in a row, separated only by spaces, commas or a
 # conjunction: "M, L, T, A aur K" or "L T". A lone letter followed by a real
 # word is prose and is left alone.
 _LETTER_RUN = re.compile(
-    r"\b[A-Za-z]\b(?:(?:\s*,\s*|\s+(?:aur|and|or|ya)\s+|\s+)\b[A-Za-z]\b)+"
+    rf"{_SINGLE}(?:(?:\s*,\s*|\s+(?:aur|and|or|ya)\s+|\s+){_SINGLE})+"
 )
 # A single letter that is unambiguously a variable because of what sits next
 # to it: "v squared", "F equals", "[M]".
 _LETTER_BESIDE_MATH = re.compile(
-    rf"\b([A-Za-z])\b(?=\s+(?:{_FORMULA_NEIGHBOUR})\b)"
+    rf"({_SINGLE})(?=\s+(?:{_FORMULA_NEIGHBOUR})\b)"
 )
 _LETTER_IN_BRACKETS = re.compile(r"\[([^\]]{1,40})\]")
 
@@ -93,7 +102,21 @@ def _apply_letter_phonetics(text: str) -> str:
     """
     if not text:
         return text
-    text = _LETTER_IN_BRACKETS.sub(lambda m: "[" + _spell_all_letters(m.group(1)) + "]", text)
+
+    def _bracket(m: re.Match) -> str:
+        inner = m.group(1)
+        # "[MLT]" is a dimension cluster, not a word — spell every letter. The
+        # glued form was being skipped entirely because \b[A-Za-z]\b only sees
+        # ONE-character tokens, so "[L T]" said "el tee" while "[LT]" said
+        # nothing recognisable. Both must sound the same.
+        inner = re.sub(r"\b[A-Z]{2,5}\b",
+                       lambda c: " ".join(_spell(ch) for ch in c.group(0)), inner)
+        inner = _spell_all_letters(inner)
+        # The brackets themselves are visual notation. Spoken, they are at best
+        # an odd pause and at worst read aloud, so they go.
+        return " " + inner + " "
+
+    text = _LETTER_IN_BRACKETS.sub(_bracket, text)
     text = _LETTER_RUN.sub(lambda m: _spell_all_letters(m.group(0)), text)
     text = _LETTER_BESIDE_MATH.sub(lambda m: _spell(m.group(1)), text)
     return text
@@ -175,7 +198,11 @@ def sanitize_tts_phonetics(text: str) -> str:
     for pattern, replacement in MATH_SYMBOL_PRONUNCIATIONS:
         res = re.sub(pattern, replacement, res)
     res = _apply_letter_phonetics(res)
-    return re.sub(r"\s{2,}", " ", res).strip()
+    res = re.sub(r"\s{2,}", " ", res)
+    # Dropping brackets leaves " em , el ," — a space before punctuation, which
+    # nudges the engine's phrasing and reads as a stumble.
+    res = re.sub(r"\s+([,.!?;:])", r"\1", res)
+    return res.strip()
 
 # Startup Assertion Checks
 if not SARVAM_API_KEY:

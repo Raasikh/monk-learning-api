@@ -8,6 +8,7 @@ from typing import Dict, Any, AsyncGenerator, List, NamedTuple, Optional
 from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
+from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
 from app.drona.state import compute_next_session_state
 from app.drona.student_context import load_prior_knowledge
 from app.drona.voice_proxy import RumikConnectionPool, split_into_sentences
@@ -26,6 +27,7 @@ from app.drona.persona import (
     UNDERSTANDING_CHIPS,
     chips_for,
     copy_for,
+    first_name_of,
     normalize_language,
     normalize_voice,
     persona_for,
@@ -36,6 +38,31 @@ logger = logging.getLogger("drona.tutor")
 # A segment ends with a short quiz on what was just taught. Every answer moves
 # on — right or wrong — and only the last question closes the segment.
 QUIZ_QUESTIONS_PER_SEGMENT = 3
+
+# user_id -> first name. A display name effectively never changes, and this is
+# read on every turn, so it is not worth a DB round trip each time.
+_STUDENT_NAME_CACHE: Dict[str, str] = {}
+
+
+def _student_name_cached(user_id: str) -> str:
+    """First name for the student, or "" if there isn't a usable one.
+
+    Never raises: a lesson must not fail because a profile lookup did.
+    """
+    if user_id in _STUDENT_NAME_CACHE:
+        return _STUDENT_NAME_CACHE[user_id]
+    name = ""
+    try:
+        rows = (
+            supabase.table("profiles").select("display_name")
+            .eq("id", user_id).limit(1).execute().data
+        ) or []
+        name = first_name_of(rows[0].get("display_name") if rows else "")
+    except Exception as err:
+        logger.warning(f"Could not read display_name for tutor context: {err}")
+    _STUDENT_NAME_CACHE[user_id] = name
+    return name
+
 
 # Spoken number words the tutor uses inside answers ("to the power minus two").
 _WORD_NUMERALS = {
@@ -185,6 +212,13 @@ async def process_tutor_turn_stream(
         plan_res = supabase.table("lesson_plans").select("*").eq("id", plan_id).execute()
         if plan_res.data:
             plan_row = plan_res.data[0]
+
+    # The student's own name. Without it in session state the tutor genuinely
+    # did not know it, so "what's my name?" fell through to the Tier 3-personal
+    # rule and got refused — which reads as evasive when the answer is a name
+    # the product already stores. Cached per process: a display name changes
+    # about never, and this runs on every turn.
+    student_name = _student_name_cached(user_id)
 
     plan_json = plan_row.get("plan_json") if plan_row else {}
     segments = plan_json.get("segments") or []
@@ -416,7 +450,8 @@ async def process_tutor_turn_stream(
             "overall_mastery": overall_mastery
         },
         "tutor_gender": persona["gender"],
-        "tutor_name": persona["name"]
+        "tutor_name": persona["name"],
+        "student_name": student_name
     }
 
     # What this student already has history on IN THIS CHAPTER. Only sent on the
@@ -660,6 +695,40 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     client = get_drona_client()
     async_client = get_drona_async_client()
 
+    def _materialise_template(evt: Dict[str, Any]) -> Dict[str, Any]:
+        """Turns {template, params} into a rendered {svg} board event.
+
+        The model picks a template and fills its labels rather than authoring
+        SVG itself: rendering is ~0.1ms of local string building, so a diagram
+        costs no extra round trip and rides the same frame as the rest of the
+        board — whereas asking a model to emit ~2000 characters of markup would
+        add seconds to the turn with no layout guarantee.
+
+        A bad template name or a params mismatch raises out of render(); the
+        event is dropped rather than failing the turn, because a missing
+        diagram is a worse-looking lesson but a raised exception is no lesson.
+        """
+        name = evt.get("template")
+        if not name or evt.get("svg"):
+            return evt
+        params = evt.get("params")
+        if not isinstance(params, dict):
+            logger.warning(f"⚠️ [DIAGRAM DROPPED] template '{name}' had no params object.")
+            return {}
+        try:
+            svg = render_diagram(str(name), **params)
+        except Exception as tmpl_err:
+            logger.warning(
+                f"⚠️ [DIAGRAM DROPPED] template={name!r} params={json.dumps(params)[:200]} "
+                f"-> {type(tmpl_err).__name__}: {tmpl_err}"
+            )
+            return {}
+        out = {k: v for k, v in evt.items() if k not in ("template", "params")}
+        out["type"] = "diagram"
+        out["svg"] = svg
+        logger.info(f"{stag}   🖼️ DIAGRAM     rendered template={name!r} ({len(svg)} chars)")
+        return out
+
     def _sanitize_board_events(model_board_events_raw):
         """Builds the client-facing board_events. When the turn has assigned
         plan items, those authored objects are emitted verbatim — the model's
@@ -669,6 +738,10 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             board_events_out = []
             for i, item in enumerate(assigned_items, 1):
                 if isinstance(item, dict):
+                    # A plan item may name a template instead of carrying SVG,
+                    # so the planner can author a diagram without generating
+                    # markup. Renders to svg here and falls through unchanged.
+                    item = _materialise_template(item) or item
                     evt = {
                         "seq": i,
                         "type": item.get("type") or ("formula" if item.get("latex") else "text"),
@@ -692,7 +765,15 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 else:
                     board_events_out.append({"seq": i, "type": "text", "text": str(item), "emphasis": "normal"})
         else:
-            board_events_out = model_board_events_raw or []
+            # No assigned plan items — this is a live/improvised turn (a doubt,
+            # a free topic), which is exactly where a model-chosen template
+            # earns its place. Materialise before sanitising so the diagram
+            # branch below sees a normal svg event.
+            board_events_out = [
+                _materialise_template(e) if isinstance(e, dict) else e
+                for e in (model_board_events_raw or [])
+            ]
+            board_events_out = [e for e in board_events_out if e]
 
         sanitized = []
         seen = set()
