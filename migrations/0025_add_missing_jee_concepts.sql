@@ -33,6 +33,19 @@
 BEGIN;
 
 -- ── teach_order shifts ─────────────────────────────────────────────────────
+-- Each shift runs in TWO statements, and that is not incidental. There is a
+-- unique index on (chapter_id, teach_order) — idx_concepts_chapter_teach_order_unique,
+-- from migration 0020 — and Postgres checks a plain unique index row by row,
+-- not at statement end. So a single `teach_order + 1` fails the moment the row
+-- at position 8 becomes 9 while the old 9 is still sitting there:
+--
+--   duplicate key value violates unique constraint
+--   Key (chapter_id, teach_order)=(b5fa886e..., 10) already exists
+--
+-- The first statement parks the whole block above every real value (max in any
+-- chapter is 15), where nothing can collide; the second brings it back down at
+-- the intended +1. Net effect is identical, and no intermediate state violates
+-- the index.
 -- 20 of the 23 concepts append to the end of their chapter, which is right for
 -- an advanced topic that builds on everything before it. These three slot
 -- mid-sequence instead, because appending would teach them out of order:
@@ -42,16 +55,22 @@ BEGIN;
 -- lands on one that has not moved yet.
 
 -- Limits and Derivatives: make room at position 8
-UPDATE concepts SET teach_order = teach_order + 1
+UPDATE concepts SET teach_order = teach_order + 1000
   WHERE chapter_id = 'b5fa886e-012b-5425-9399-a8249254a151' AND teach_order >= 8;
+UPDATE concepts SET teach_order = teach_order - 999
+  WHERE chapter_id = 'b5fa886e-012b-5425-9399-a8249254a151' AND teach_order >= 1000;
 
 -- Sets: make room at position 6
-UPDATE concepts SET teach_order = teach_order + 1
+UPDATE concepts SET teach_order = teach_order + 1000
   WHERE chapter_id = 'b4f9bb1a-a366-5e67-ae76-52ffd1dd8a67' AND teach_order >= 6;
+UPDATE concepts SET teach_order = teach_order - 999
+  WHERE chapter_id = 'b4f9bb1a-a366-5e67-ae76-52ffd1dd8a67' AND teach_order >= 1000;
 
 -- Mechanical Properties of Fluids: make room at position 5
-UPDATE concepts SET teach_order = teach_order + 1
+UPDATE concepts SET teach_order = teach_order + 1000
   WHERE chapter_id = '33795397-f8fe-5ef6-ba2d-64549905ecd3' AND teach_order >= 5;
+UPDATE concepts SET teach_order = teach_order - 999
+  WHERE chapter_id = '33795397-f8fe-5ef6-ba2d-64549905ecd3' AND teach_order >= 1000;
 
 INSERT INTO concepts (chapter_id, key, name, teach_order, display_order, exams, active)
 VALUES
