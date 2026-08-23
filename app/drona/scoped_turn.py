@@ -29,6 +29,7 @@ from typing import Any, AsyncGenerator, Dict, List
 from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
+from app.drona.usage import record_call_bg
 from app.drona.json_utils import assert_no_forbidden_keys, parse_tutor_json, strip_fences
 from app.drona.persona import AUDIO_UNCLEAR, UNDERSTANDING_CHIPS, chips_for, copy_for, failure_speech, normalize_language, persona_for
 
@@ -246,6 +247,19 @@ async def process_scoped_turn_stream(
         })
 
     logger.info(f"{stag} LLM model={model_name} in={input_tokens} cache={cache_hit_tokens} out={output_tokens} ({time.time() - llm_t0:.1f}s)")
+
+    # Doubt turns were as unmetered as lesson turns: llm_calls had planner rows
+    # only, so a session's real cost could not be read back from the data.
+    record_call_bg(
+        model_name, f"doubt_{mode_label}",
+        ok=not turn_failed,
+        tokens={"input_tokens": input_tokens,
+                "cache_hit_tokens": cache_hit_tokens,
+                "output_tokens": output_tokens},
+        latency_ms=int((time.time() - llm_t0) * 1000),
+        session_id=session_id, user_id=user_id,
+        chapter_id=session.get("chapter_id"),
+    )
 
     parsed_json: Dict[str, Any] = {}
     try:

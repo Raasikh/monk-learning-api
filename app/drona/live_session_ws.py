@@ -309,6 +309,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         asyncio.create_task(tts_proxy.prewarm())
 
         turn_id = f"t_{int(time.time() * 1000)}"
+        # Wall clock the student actually experiences. Every latency number the
+        # logs carried so far was for one leg (the LLM call, one synthesis);
+        # nothing recorded how long the silence between "I finished speaking"
+        # and "the teacher started speaking" actually was.
+        turn_t0 = time.time()
+        first_audio_at: float | None = None
         speech_buffer = ""
         chunks_sent = 0
         total_audio_bytes = 0
@@ -343,7 +349,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             the student sat through on every single sentence. Part 1 carries
             the caption text and board event; continuation parts are audio
             only so the client doesn't re-arm reveals."""
-            nonlocal chunks_sent, total_audio_bytes
+            nonlocal chunks_sent, total_audio_bytes, first_audio_at
             chunks_sent += 1
             sentence_id = f"{turn_id}_s{chunks_sent}"
             matching_evt = next((e for e in turn_board_events if e.get("seq") == chunks_sent), None)
@@ -353,8 +359,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             part_count = 0
 
             async def _on_part(pcm: bytes):
-                nonlocal part_count, total_audio_bytes
+                nonlocal part_count, total_audio_bytes, first_audio_at
                 part_count += 1
+                if first_audio_at is None:
+                    first_audio_at = time.time()
+                    logger.info(f"⏱️ [TIME TO FIRST AUDIO] {first_audio_at - turn_t0:.2f}s for session {session_id[:8]}")
                 out = {
                     "type": "audio_chunk",
                     "sentence_id": sentence_id,
@@ -389,6 +398,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 }
                 assert_no_forbidden_keys(out_msg)
                 total_audio_bytes += len(audio_bytes)
+                if first_audio_at is None:
+                    first_audio_at = time.time()
+                    logger.info(f"⏱️ [TIME TO FIRST AUDIO] {first_audio_at - turn_t0:.2f}s for session {session_id[:8]}")
                 await safe_send_json(out_msg)
                 logger.info(f"🔊 [AUDIO SYNTHESIZED] sentence_id={sentence_id} ({len(clean_text)} chars, single frame)")
 
@@ -643,7 +655,12 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             except Exception as db_err:
                 logger.warning(f"Failed to increment tts_failure_count in drona_turns: {db_err}")
         else:
-            logger.info(f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames ({total_audio_bytes} total PCM bytes) for session {session_id}")
+            _ttfa = f"{first_audio_at - turn_t0:.2f}s" if first_audio_at else "never"
+            logger.info(
+                f"[SERVER TURN AUDIO SUMMARY] Emitted {chunks_sent} audio_chunk frames "
+                f"({total_audio_bytes} total PCM bytes) for session {session_id} "
+                f"| ttfa={_ttfa} turn_total={time.time() - turn_t0:.2f}s"
+            )
 
         # Peak TTS rate seen while this session was running — sampled at the
         # busiest moment of a turn (its end), which is when a turn's sentences

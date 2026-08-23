@@ -161,8 +161,11 @@ def resolve_topic_title(chapter_id: str, subtopic_key: str) -> str:
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""
     # Lookup chapter name & subtopic title
-    chap_res = supabase.table("chapters").select("name, subject").eq("id", chapter_id).execute()
-    chap_data = chap_res.data[0] if chap_res.data else {"name": "Chapter", "subject": "Physics"}
+    # id is selected because record_call attributes planner spend by chapter.
+    # It was omitted here, so every "outline" row ever written carried a null
+    # chapter_id — the accounting looked wired up and recorded nothing usable.
+    chap_res = supabase.table("chapters").select("id, name, subject").eq("id", chapter_id).execute()
+    chap_data = chap_res.data[0] if chap_res.data else {"id": chapter_id, "name": "Chapter", "subject": "Physics"}
 
     sub_title = resolve_topic_title(chapter_id, subtopic_key)
 
@@ -390,7 +393,7 @@ def _author_outline(chap_data: Dict[str, Any], sub_title: str, subtopic_key: str
 
 
 def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str, Any],
-                    index: int, depth_block: str) -> Dict[str, Any]:
+                    index: int, depth_block: str, plan_id: Optional[str] = None) -> Dict[str, Any]:
     """Authors one full segment. index is 0-based."""
     segs = outline["segments"]
     stub = segs[index]
@@ -432,10 +435,13 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
             # like this one were the invisible spend of 2026-08-15.
             record_call(model_name, "segment", ok=False, attempt=attempt,
                         latency_ms=int((time.time() - t0) * 1000),
+                        chapter_id=chap_data.get("id"), plan_id=plan_id,
                         subtopic_key=sub_title, error=str(exc))
             raise
         record_call(model_name, "segment", ok=True, attempt=attempt, res=res,
-                    latency_ms=int((time.time() - t0) * 1000), subtopic_key=sub_title)
+                    latency_ms=int((time.time() - t0) * 1000),
+                    chapter_id=chap_data.get("id"), plan_id=plan_id,
+                    subtopic_key=sub_title)
         raw = res.choices[0].message.content or ""
         try:
             seg = sanitize_double_escaped_latex(json.loads(strip_fences(raw)))
@@ -490,7 +496,7 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
     try:
         with ThreadPoolExecutor(max_workers=4) as ex:
             rest = list(ex.map(
-                lambda i: _author_segment(chap_data, sub_title, outline, i, depth_block),
+                lambda i: _author_segment(chap_data, sub_title, outline, i, depth_block, plan_id),
                 range(1, total),
             ))
         plan_json = {
@@ -521,8 +527,11 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     Segments 2..N are authored in the background."""
     import threading
 
-    chap_res = supabase.table("chapters").select("name, subject").eq("id", chapter_id).execute()
-    chap_data = chap_res.data[0] if chap_res.data else {"name": "Chapter", "subject": "Physics"}
+    # id is selected because record_call attributes planner spend by chapter.
+    # It was omitted here, so every "outline" row ever written carried a null
+    # chapter_id — the accounting looked wired up and recorded nothing usable.
+    chap_res = supabase.table("chapters").select("id, name, subject").eq("id", chapter_id).execute()
+    chap_data = chap_res.data[0] if chap_res.data else {"id": chapter_id, "name": "Chapter", "subject": "Physics"}
     sub_title = resolve_topic_title(chapter_id, subtopic_key)
 
     structure_block, depth_block, is_grounded = retrieve_dual_blocks(chapter_id, sub_title)

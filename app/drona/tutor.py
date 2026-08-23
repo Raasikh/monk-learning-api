@@ -10,6 +10,7 @@ from app.drona.models import get_drona_client, get_drona_async_client, get_model
 from app.drona.prompt_loader import load_prompt
 from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
 from app.drona.state import compute_next_session_state
+from app.drona.usage import record_call_bg
 from app.drona.student_context import load_prior_knowledge
 from app.drona.voice_proxy import RumikConnectionPool, split_into_sentences
 from app.drona.json_utils import (
@@ -561,18 +562,18 @@ async def process_tutor_turn_stream(
     # on the model to notice the general trigger table. Measured: with the
     # table alone, a Trigonometry derivation and a dipole-forces turn both came
     # back as pure text.
-    _diagram_hint = suggest_diagram_template(
+    _diag_hint = suggest_diagram_template(
         curr_segment.get("objective") or "",
         curr_segment.get("teaching_notes") or "",
         " ".join(assigned_items_text),
         utterance or "",
     )
     diagram_directive = ""
-    if _diagram_hint:
+    if _diag_hint:
         diagram_directive = (
-            f"\n\nDIAGRAM FOR THIS TURN: this content calls for `{_diagram_hint}`.\n"
+            f"\n\nDIAGRAM FOR THIS TURN: this content calls for `{_diag_hint}`.\n"
             f"Emit ONE board_event of type \"diagram\" with template "
-            f"\"{_diagram_hint}\" and the params that template takes (Rule 3), "
+            f"\"{_diag_hint}\" and the params that template takes (Rule 3), "
             f"tied by `seq` to the sentence that introduces it.\n"
             f"This is IN ADDITION to your normal board lines, not instead of "
             f"them — the headings, statements and formulas your speech mirrors "
@@ -1063,6 +1064,24 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
 
     llm_dur = time.time() - llm_t0
     logger.info(f"{stag}   LLM          model={model_name} in={input_tokens} cache={cache_hit_tokens} out={output_tokens} ({llm_dur:.1f}s)")
+
+    # Meter the turn. Only the planner was recording to llm_calls, so the most
+    # frequent call in the product was invisible: a day's spend could be broken
+    # down by outline and segment but the live turns behind every session were
+    # simply absent, and per-session unit economics had to be estimated from
+    # log lines. record_call_bg exists for exactly this path — it inserts off
+    # the caller's thread, so accounting cannot slow a student's turn.
+    record_call_bg(
+        model_name, "tutor",
+        ok=not turn_failed,
+        tokens={"input_tokens": input_tokens,
+                "cache_hit_tokens": cache_hit_tokens,
+                "output_tokens": output_tokens},
+        latency_ms=int(llm_dur * 1000),
+        session_id=session_id, user_id=user_id, plan_id=plan_id,
+        chapter_id=session.get("chapter_id"),
+        subtopic_key=session.get("subtopic_key"),
+    )
     logger.info(f"{stag}   ASSIGNED     {len(assigned_items_text)} board items: {assigned_items_text}")
 
     # 5. Parse complete JSON with robustness (§4.4)
@@ -1551,6 +1570,34 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         f"{stag}   ❓ MOUNTS     question={json.dumps(question_text)} "
         f"chips={json.dumps(check_options)} phase={next_phase} type={question_type}"
     )
+
+    # One line carrying everything decided this turn, so a production issue can
+    # be read from a single grep instead of stitching a dozen lines together.
+    # Every field here has been the subject of a bug at some point: whether a
+    # directive was injected at all is invisible from the model's output, and
+    # "the diagram didn't appear" has meant both "the cue never fired" and "the
+    # cue fired and the model ignored it" — which need opposite fixes.
+    #
+    # Wrapped: this line reads a dozen locals and runs BEFORE the state event
+    # the client needs to advance. A typo in a field here must cost a log line,
+    # never the student's turn.
+    try:
+        _diag_evt = next((e for e in (parsed_json.get("board_events") or [])
+                          if isinstance(e, dict) and e.get("type") == "diagram"), None)
+        logger.info(
+            f"{stag}   📋 TURN SUMMARY "
+            f"seg={curr_seg_idx}/{total_segments} turn={turn_within_segment} eff={effective_turn} "
+            f"phase={phase_in}->{next_phase} grade={grade_out or '-'} "
+            f"board={board_cnt} words={word_cnt} "
+            f"| cues: diagram={_diag_hint or '-'} example={'y' if example_directive else '-'} "
+            f"answer_key={'y' if parsed_json.get('correct_option') else '-'} "
+            f"ban={'y' if board_answer_ban else '-'} "
+            f"| emitted: diagram={_diag_evt.get('svg') is not None if _diag_evt else False} "
+            f"reteach={'y' if do_reteach else '-'} tier={parsed_json.get('offtopic_tier') or '-'} "
+            f"| llm={llm_dur:.1f}s tok={input_tokens}/{output_tokens} failed={turn_failed}"
+        )
+    except Exception as _sum_err:
+        logger.warning(f"{stag} turn summary unavailable: {_sum_err}")
 
     state_payload = {
         "phase": next_phase,
