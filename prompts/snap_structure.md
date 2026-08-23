@@ -12,8 +12,7 @@ Return ONLY valid JSON:
 {
   "questions": [
     {
-      "text": "…the full question, stem AND every option, copied verbatim…",
-      "stem": "…the question WITHOUT its options…",
+      "stem": "…the question WITHOUT its options, copied verbatim…",
       "self_contained": true,
       "question_type": "single_correct",
       "options": [
@@ -55,15 +54,17 @@ Return ONLY valid JSON:
    top-level `note` — the student needs to know the rest were not read.
 5. Skip page furniture: headers, watermarks, page numbers, exam names.
 5a. **`<smiles>…</smiles>` tags are the question's molecule**, converted from a
-    drawn structure. Keep the tag in `text` AND in `stem`, verbatim — a
+    drawn structure. Keep the tag in `stem`, verbatim — a
     stereochemistry question without its molecule is unanswerable, and dropping
     this tag has produced a confabulated answer.
 
 ## ━━━ STEM AND SELF-CONTAINMENT ━━━
 
 6a. `stem` is the question with the options removed — everything needed to work
-    the answer out, and nothing that lists the choices. `text` keeps both, for
-    display; `stem` is what the solver reasons from.
+    the answer out, and nothing that lists the choices. It is what the solver
+    reasons from. **Never repeat the options inside `stem`**: they belong in
+    `options` and are joined back on for display in code. Writing them twice
+    is the single biggest thing you can do to make this call slow.
 
 6b. `self_contained` is `true` when the question can be answered from the stem
     alone, and the options are just candidate answers to compare against:
@@ -113,7 +114,7 @@ Return ONLY valid JSON:
 
 11. Exam pages often print the key: `ANSWER : D`, `Ans. (B)`.
     - Put only the label in `printed_answer`.
-    - **Keep it out of `text` and out of `options`.**
+    - **Keep it out of `stem` and out of `options`.**
     - `null` when no answer is shown.
 12. The solver is deliberately not shown this, so its answer can be checked
     against the key rather than copied from it.

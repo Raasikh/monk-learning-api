@@ -307,6 +307,51 @@ def test_questions_solve_concurrently(monkeypatch):
     assert out["solved_count"] == 2
 
 
+def test_text_is_rebuilt_from_stem_and_options(monkeypatch):
+    """The structurer no longer emits `text`; code joins stem + options.
+
+    `text` was stem-and-options concatenated -- the same content the model had
+    already written into `stem` and `options`, measured at 47% of everything it
+    emitted on a real 3-question page. Output tokens are what the ~10s
+    structuring call spends its time on, so it stopped being asked for.
+    """
+    page = ("Q65. A vessel at 1000 K contains gas, then Kp is :\n"
+            "(1) 1.8 atm (2) 0.3 atm (3) 3 atm (4) 0.18 atm\n")
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": page, "confidence": 0.98,
+                                           "diagram_regions": 0, "ocr_ms": 50})
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "stem": "Q65. A vessel at 1000 K contains gas, then Kp is :",
+        "question_type": "single_correct", "legible": True,
+        "options": [{"label": "1", "text": "1.8 atm"}, {"label": "2", "text": "0.3 atm"},
+                    {"label": "3", "text": "3 atm"}, {"label": "4", "text": "0.18 atm"}],
+    }]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1", None, 1)["questions"][0]
+    print(f"  stem={q['stem'][:50]!r}")
+    print(f"  text={q['text'][:80]!r}")
+    assert q["stem"] == "Q65. A vessel at 1000 K contains gas, then Kp is :"
+    # Options must NOT be inside the stem -- that is what the solver reasons
+    # from, and seeing them is the back-fitting failure blind solving prevents.
+    assert "1.8 atm" not in q["stem"]
+    # ...but the display/search form still carries every option.
+    for opt in ("1.8 atm", "0.3 atm", "3 atm", "0.18 atm"):
+        assert opt in q["text"], f"{opt} missing from the rebuilt text"
+    assert q["text"].startswith(q["stem"])
+
+
+def test_legacy_text_only_response_still_reads(monkeypatch):
+    """A response in the OLD shape (`text`, no `stem`) must still work.
+
+    The prompt and the code deploy separately, and a stale prompt returning
+    `text` must not break the read.
+    """
+    stub_transcriber(monkeypatch, mcq_transcription())
+    q = transcribe_questions(b"img", "image/jpeg", "d1")["questions"][0]
+    print(f"  legacy stem={q['stem'][:60]!r}")
+    assert q["stem"]
+    assert q["options"]
+
+
 def test_page_question_numbers_are_read_in_order():
     """The page's printed numbers drive selection, so they must be read right."""
     ocr = (

@@ -577,7 +577,17 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     for idx, item in enumerate(raw_questions, 1):
         if not isinstance(item, dict):
             continue
-        text, stripped_key = _strip_printed_answer((item.get("text") or "").strip())
+        # `stem` is the source of truth now. The structurer used to ALSO return
+        # `text` (stem and options concatenated), which is the same content a
+        # second time — measured at 47% of everything it emitted on a real
+        # 3-question page, and output tokens are what the ~10s structuring call
+        # spends its time generating. `text` is rebuilt from stem + options
+        # below instead, which is exactly what the model was writing out by
+        # hand. Older responses that still send `text` are honoured as a
+        # fallback, so a stale prompt cannot break the read.
+        stem_text, stripped_key = _strip_printed_answer(
+            (item.get("stem") or item.get("text") or "").strip()
+        )
         legible = bool(item.get("legible", True))
         # Deliberately NOT named `note`: that is the response-level note above,
         # and shadowing it here silently replaced "a 3rd question was cut off"
@@ -586,10 +596,21 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         q_remedy, q_reason = REMEDY_RETAKE, "illegible"
 
         # A question with nothing in it is not legible, whatever the flag says.
-        if not text:
+        if not stem_text:
             legible = False
 
         options = _clean_options(item.get("options"))
+
+        # The display/search form: the stem with its options underneath, which
+        # is what `text` always held. Built here so it is derived from the same
+        # strings the solver and the fidelity gate use, rather than a separate
+        # transcription of them that could disagree.
+        if options:
+            text = stem_text + "\n" + "\n".join(
+                f"({o['label']}) {o['text']}" for o in options
+            )
+        else:
+            text = stem_text
 
         q_type = (item.get("question_type") or "").strip().lower()
         if q_type not in QUESTION_TYPES:
@@ -677,7 +698,10 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "text": text,
             "subject": (item.get("subject") or "unknown"),
             "topic": item.get("topic") or None,
-            "stem": (item.get("stem") or "").strip() or text,
+            # The printed-answer strip applies here too: `stem` is what the
+            # solver reasons from, so a key left in it is the exact leak
+            # _strip_printed_answer exists to prevent.
+            "stem": stem_text,
             # Options are withheld from the solver unless they ARE the question.
             "self_contained": item.get("self_contained") is not False,
             "question_type": q_type,
