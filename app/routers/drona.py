@@ -61,9 +61,13 @@ def get_catalogue(exam: Optional[str] = None, user_id: str = Depends(get_current
     # Gravitation on potential energy and reached Newton's law fifth. It stays
     # as the fallback only for concepts not yet sequenced.
     concepts_by_chap: Dict[str, List[Dict[str, Any]]] = {}
+    # Which chapters have ANY live concept, before the exam filter — this is
+    # what separates "uncurated" from "off-syllabus for the exam you picked".
+    any_concepts_by_chap: Dict[str, int] = {}
     for c in concepts_data:
         if c.get("active") is False:
             continue
+        any_concepts_by_chap[c["chapter_id"]] = any_concepts_by_chap.get(c["chapter_id"], 0) + 1
         if not tagged_for_exam(c.get("exams"), exam_view):
             continue
         concepts_by_chap.setdefault(c["chapter_id"], []).append(c)
@@ -103,6 +107,17 @@ def get_catalogue(exam: Optional[str] = None, user_id: str = Depends(get_current
         c_name = c["name"]
         subs = subtopics_by_chap.get(cid, [])
         if not subs:
+            # Two different empty chapters, and only one deserves the stub.
+            #
+            # A chapter with no concepts AT ALL is simply uncurated, and the
+            # stub is what lets a student open it anyway. But a chapter whose
+            # concepts all exist and were all filtered out by the exam pick is
+            # off-syllabus for that exam, and the stub resurrects it as a
+            # single ghost topic — Linear Programming, tagged board-only,
+            # reappeared under ?exam=jee as "General Overview" with nothing
+            # behind it. Drop it instead.
+            if exam_view != "both" and any_concepts_by_chap.get(cid):
+                continue
             subs = [{"id": f"{cid}-sec1", "name": "General Overview", "grounding_status": "sections_only"}]
 
         subjects_map[subj].append({

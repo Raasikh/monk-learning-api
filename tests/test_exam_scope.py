@@ -158,3 +158,59 @@ def test_both_passes_every_concept_and_subject():
         assert subject_on_syllabus(subject, "both")
     for tags in (["jee"], ["neet"], ["jee", "neet"], None):
         assert tagged_for_exam(tags, "both") is True
+
+
+# ── The empty-chapter stub ───────────────────────────────────────────────────
+# The catalogue serves a "General Overview" placeholder for a chapter with no
+# concepts, so an uncurated chapter can still be opened. That placeholder must
+# not resurrect a chapter the exam pick just emptied.
+
+def test_a_chapter_emptied_by_the_exam_filter_is_dropped_not_stubbed(monkeypatch):
+    from app.routers import drona
+
+    CH_OFF = "aaaa1111-0000-0000-0000-000000000001"   # concepts exist, none match
+    CH_BARE = "aaaa1111-0000-0000-0000-000000000002"  # genuinely uncurated
+    CH_OK = "aaaa1111-0000-0000-0000-000000000003"
+
+    def fake_fetch(table, _select, **_kw):
+        if table == "chapters":
+            return [
+                {"id": CH_OFF, "name": "Linear Programming", "subject": "mathematics",
+                 "class_level": 12, "chapter_order": 12},
+                {"id": CH_BARE, "name": "Uncurated Chapter", "subject": "mathematics",
+                 "class_level": 12, "chapter_order": 13},
+                {"id": CH_OK, "name": "Integrals", "subject": "mathematics",
+                 "class_level": 12, "chapter_order": 7},
+            ]
+        if table == "concepts":
+            return [
+                {"id": "c1", "chapter_id": CH_OFF, "name": "Corner Point Method",
+                 "key": "corner-point", "teach_order": 1, "display_order": 1,
+                 "active": True, "exams": ["board"]},
+                {"id": "c2", "chapter_id": CH_OK, "name": "Integration by Parts",
+                 "key": "by-parts", "teach_order": 1, "display_order": 1,
+                 "active": True, "exams": ["jee"]},
+            ]
+        return []
+
+    monkeypatch.setattr(drona, "fetch_all_cached", fake_fetch)
+
+    def names(exam):
+        cat = drona.get_catalogue(exam=exam, user_id="u1")
+        return {ch["name"]: [s["name"] for s in ch["subtopics"]]
+                for c in cat for ch in c["chapters"]}
+
+    picked = names("jee")
+    # Off-syllabus for the pick: every concept filtered out, so the chapter goes
+    # too. Stubbing it would put a ghost topic in the picker with nothing behind
+    # it — which is exactly what Linear Programming did once it went board-only.
+    assert "Linear Programming" not in picked
+    # Never authored: the stub is still the right answer, pick or no pick.
+    assert picked["Uncurated Chapter"] == ["General Overview"]
+    assert picked["Integrals"] == ["Integration by Parts"]
+
+    # With no pick, nothing is filtered, so the board chapter is served normally
+    # — board students revising must still find it.
+    unpicked = names(None)
+    assert unpicked["Linear Programming"] == ["Corner Point Method"]
+    assert unpicked["Uncurated Chapter"] == ["General Overview"]
