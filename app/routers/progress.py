@@ -18,14 +18,16 @@ Mastery lives in concept_mastery, written by the practice answer path.
 Absence of a row = Not started (m = 0, no attempts) per spec §8.
 """
 
+import logging
 from collections import defaultdict
 from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Depends
 
 from app.auth import get_current_user_id
-from concurrent.futures import ThreadPoolExecutor
 from app.db import supabase, fetch_all_cached
+
+logger = logging.getLogger("progress")
 
 router = APIRouter(prefix="/progress", tags=["progress"])
 
@@ -53,6 +55,51 @@ def _fetch_all(table: str, select: str, page: int = 1000, **filters) -> List[Dic
     return rows
 
 
+def _user_bundle(user_id: str) -> Dict[str, Any]:
+    """Every per-user read the page needs, in one round trip.
+
+    Calls progress_user_bundle() (migrations/0021). Falls back to the five
+    separate queries if that function is not in the database yet, so deploying
+    this code before running the migration degrades to the old latency rather
+    than 500-ing — but says so loudly, because silent degradation is how a
+    missing migration goes unnoticed for days.
+    """
+    try:
+        res = supabase.rpc("progress_user_bundle", {"p_user_id": user_id}).execute()
+        data = res.data
+        if isinstance(data, list):          # some clients wrap a scalar return
+            data = data[0] if data else None
+        if isinstance(data, dict):
+            return data
+        raise ValueError(f"unexpected rpc payload: {type(data).__name__}")
+    except Exception as rpc_err:
+        logger.warning(
+            "⚠️ [PROGRESS RPC UNAVAILABLE] %s — falling back to five separate "
+            "queries. Apply migrations/0021_progress_rpc.sql; /progress is ~1.3s "
+            "slower until you do.",
+            rpc_err,
+        )
+        prof = supabase.table("profiles").select("target_exam").eq("id", user_id).limit(1).execute().data
+        return {
+            "profile": prof[0] if prof else None,
+            "mastery": _fetch_all(
+                "concept_mastery",
+                "concept_id, mastery, attempts_first, correct_first, flag_state, flagged_at",
+                user_id=user_id,
+            ),
+            "snapshots": (
+                supabase.table("progress_snapshots")
+                .select("snapshot_date, monk_score_display, monk_score_raw")
+                .eq("user_id", user_id).order("snapshot_date", desc=True).limit(60)
+                .execute().data
+            ),
+            "attempts": supabase.table("practice_attempts").select("id", count="exact")
+                        .eq("user_id", user_id).limit(0).execute().count or 0,
+            "doubts": supabase.table("doubts").select("id", count="exact")
+                      .eq("user_id", user_id).eq("solved", True).limit(0).execute().count or 0,
+        }
+
+
 def get_active_config() -> Dict[str, Any]:
     # One row of tuning constants, versioned and swapped deliberately — never
     # per request. It was costing a ~350ms round trip on every page load.
@@ -77,47 +124,21 @@ def concept_state(mastery: float, flagged: bool, attempts: int, cfg: Dict[str, A
 def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str] = None):
     cfg = get_active_config()
 
-    # Five per-user reads, each independent of the others and each returning
-    # almost nothing (measured: 0, 4, 0, 8 and 9 rows). Run serially they cost
-    # ~325ms apiece — 1.65s of pure round trip, the entire remainder of this
-    # endpoint's latency once the syllabus is cached. Fired together they cost
-    # one round trip.
+    # Every per-user read in one round trip, done inside Postgres.
     #
-    # Safe to thread: supabase-py's sync client wraps httpx.Client (thread-safe
-    # for sync use) and every .table() call builds a fresh query object, so the
-    # threads share no mutable state. Nothing here writes.
-    with ThreadPoolExecutor(max_workers=5) as pool:
-        f_prof = pool.submit(
-            lambda: supabase.table("profiles").select("target_exam")
-            .eq("id", user_id).limit(1).execute().data
-        )
-        f_mastery = pool.submit(
-            lambda: _fetch_all(
-                "concept_mastery",
-                "concept_id, mastery, attempts_first, correct_first, flag_state, flagged_at",
-                user_id=user_id,
-            )
-        )
-        f_snaps = pool.submit(
-            lambda: supabase.table("progress_snapshots")
-            .select("snapshot_date, monk_score_display, monk_score_raw")
-            .eq("user_id", user_id).order("snapshot_date", desc=True).limit(60)
-            .execute().data
-        )
-        f_attempts = pool.submit(
-            lambda: supabase.table("practice_attempts").select("id", count="exact")
-            .eq("user_id", user_id).limit(0).execute().count or 0
-        )
-        f_doubts = pool.submit(
-            lambda: supabase.table("doubts").select("id", count="exact")
-            .eq("user_id", user_id).eq("solved", True).limit(0).execute().count or 0
-        )
+    # These are five unrelated tables, so PostgREST cannot fetch them together
+    # — each was its own HTTP request, ~325ms apiece of almost pure network
+    # latency for payloads of 0, 4, 0, 8 and 9 rows. Doing them concurrently
+    # from Python hid that but made this the only place in the codebase talking
+    # to Supabase from threads; a stored function removes the latency AND the
+    # concurrency question at once.
+    bundle = _user_bundle(user_id)
 
     # The exam is an ENTITLEMENT, not a preference: it's what the student paid
     # for, written to profiles.target_exam at onboarding/purchase ('JEE',
     # 'NEET', or 'both'). Progress always scores against the entitled exam.
     # The ?exam= param only selects a view for 'both'-entitled students.
-    prof = f_prof.result()
+    prof = [bundle["profile"]] if bundle.get("profile") else []
     raw = str((prof[0].get("target_exam") if prof else "") or "").strip().lower()
     entitlement = "both" if "both" in raw else ("neet" if "neet" in raw else "jee")
     allowed = ("jee", "neet") if entitlement == "both" else (entitlement,)
@@ -144,7 +165,7 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
                if w.get("exam") == exam}
 
     # the student's evidence
-    mastery_rows = f_mastery.result()
+    mastery_rows = bundle.get("mastery") or []
     m_by_concept = {r["concept_id"]: r for r in mastery_rows}
     flagged = [r for r in mastery_rows if r["flag_state"] == "flagged"]
 
@@ -215,15 +236,15 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
     ceiling = 1000 - cfg.get("flag_ceiling_penalty", 18) * len(flagged)
 
     # snapshots power running-max, delta and the climb series; degrade gracefully
-    snaps = f_snaps.result()
+    snaps = bundle.get("snapshots") or []
     running_max = max([ms_raw] + [float(s["monk_score_raw"]) for s in snaps])
     ms_display = min(running_max, ceiling)
     week_ago = next((float(s["monk_score_display"]) for s in snaps[6:7]), None)
     delta_week = round(ms_display - week_ago) if week_ago is not None else 0
 
     # ---- ledger (spec §13: plain lifetime totals, deliberately last) --------
-    attempts = f_attempts.result()
-    doubts = f_doubts.result()
+    attempts = int(bundle.get("attempts") or 0)
+    doubts = int(bundle.get("doubts") or 0)
     strong_t = cfg.get("strong_threshold", 80)
     concepts_mastered = sum(1 for r in mastery_rows if float(r["mastery"]) >= strong_t and r["flag_state"] != "flagged")
     chapters_strong = sum(1 for r in all_chapter_rows if r["mastery"] >= strong_t and r["state"] != "needs_revision")
