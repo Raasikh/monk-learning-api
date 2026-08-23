@@ -32,6 +32,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from openai import OpenAI
 
 from app import mathpix
+from app.image_prep import crop_to_content
 from app.drona.prompt_loader import load_prompt
 # The repair path the rest of the codebase already uses: json.loads first,
 # repair only on failure. Imported, not reimplemented, and not modified.
@@ -424,22 +425,16 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             doubt_id[:8], page["confidence"],
         )
 
-    # `page_confidence` is Mathpix's verdict on the read AS A WHOLE, and it was
-    # being stored and never looked at. It is the signal for a PARTIAL read,
-    # which confidence_rate cannot see: a screenshot of a whole browser window
-    # scored confidence_rate 0.9122 (the characters it did read were crisp)
-    # against page_confidence 0.0313, and it had found one question out of six.
-    # Everything downstream then behaved correctly on a fragment of the page,
-    # which is what makes this failure so confusing from the outside: no gate
-    # fires, the student just silently gets the wrong question solved.
-    partial_read = (page.get("page_confidence") is not None
-                    and page["page_confidence"] < 0.25)
-    if partial_read:
-        logger.warning(
-            "[SNAP TRANSCRIBE] doubt=%s PARTIAL READ SUSPECTED: page_confidence "
-            "%.4f (confidence_rate %.4f, %d chars) — Mathpix is not confident it "
-            "read the whole page, so questions above/below what it found may be "
-            "missing entirely",
+    # `page_confidence` is Mathpix's verdict on the read AS A WHOLE. It is worth
+    # logging and it is NOT worth acting on: measured against pages built to
+    # match a real submission, the tiled "mathongo" watermarks a coaching PDF
+    # carries drag it to 0.15 while the read is perfect — all six questions,
+    # 2,016 characters. Treating it as a partial-read signal told students to
+    # crop a photo that had been read correctly, so it is diagnostic only.
+    if page.get("page_confidence") is not None and page["page_confidence"] < 0.25:
+        logger.info(
+            "[SNAP TRANSCRIBE] doubt=%s low page_confidence %.4f (confidence_rate "
+            "%.4f, %d chars) — normal on a watermarked page; logged, not acted on",
             doubt_id[:8], page["page_confidence"], page["confidence"] or -1,
             len(page["text"]),
         )
@@ -594,25 +589,13 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         )
         raw_questions = raw_questions[:max_questions]
 
-    # Say so when the page was probably only partly read. Silently answering
-    # whatever fragment came back is the worst outcome: the student framed six
-    # questions, got the last one solved, and nothing on screen suggested the
-    # other five were never seen — it reads as the app ignoring them on
-    # purpose. This replaces any model-written note, which in that situation
-    # said "the rest of the page was not read" as though it were a decision.
-    if partial_read and len(raw_questions) < max_questions:
-        note = (
-            f"Monk could only make out {len(raw_questions)} question"
-            f"{'' if len(raw_questions) == 1 else 's'} on that photo, and there "
-            "may be more it could not read. If the picture holds a whole page, "
-            "crop tighter — a photo of just the questions you want reads far "
-            "better than a full screen."
-        )
-        logger.warning(
-            "[SNAP TRANSCRIBE] doubt=%s telling the student the read looks "
-            "partial (%d question(s) from a low-confidence page)",
-            doubt_id[:8], len(raw_questions),
-        )
+    # Deliberately NOT warning the student here about a possibly-partial read.
+    # There is no signal that separates "the photo held one question" from "six
+    # were there and Mathpix found one": page_confidence looked like one until
+    # it was measured (see above), and a student who cropped to a single
+    # question on a watermarked paper would have been told to crop tighter. The
+    # fix for a half-read page is to stop feeding it browser furniture in the
+    # first place — see crop_to_content at the top of the pipeline.
 
     questions: List[Dict[str, Any]] = []
     for idx, item in enumerate(raw_questions, 1):
@@ -1814,6 +1797,13 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     logger.info("[SNAP PIPELINE] doubt=%s START streamed image=%.1fKB mime=%s cap=%d",
                 doubt_id[:8], len(image_bytes) / 1024, mime_type, max_questions)
 
+    # Trim browser furniture before anything reads the image. Applied here, at
+    # the entry point, so the OCR and the diagram-describing pass both work
+    # from the same trimmed page rather than disagreeing about what was sent.
+    image_bytes, crop_note = crop_to_content(image_bytes, doubt_id)
+    if crop_note:
+        mime_type = "image/png"
+
     read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
                                 max_questions)
     transcribe_ms = int((time.time() - started) * 1000)
@@ -2067,6 +2057,9 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     sv_usage: Dict[str, int] = {"input": 0, "output": 0}
     logger.info("[SNAP PIPELINE] doubt=%s START non-streamed image=%.1fKB mime=%s cap=%d",
                 doubt_id[:8], len(image_bytes) / 1024, mime_type, max_questions)
+    image_bytes, crop_note = crop_to_content(image_bytes, doubt_id)
+    if crop_note:
+        mime_type = "image/png"
     read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
                                 max_questions)
     transcribe_ms = int((time.time() - started) * 1000)

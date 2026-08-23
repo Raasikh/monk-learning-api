@@ -352,14 +352,18 @@ def test_legacy_text_only_response_still_reads(monkeypatch):
     assert q["options"]
 
 
-def test_partial_page_read_is_declared_not_hidden(monkeypatch):
-    """A page Mathpix only half-read must SAY so, not silently answer a scrap.
+def test_low_page_confidence_does_not_warn_the_student(monkeypatch):
+    """A low page_confidence must NOT be reported as a half-read page.
 
-    Real failure: a full-window screenshot of six questions came back with
-    confidence_rate 0.9122 (the characters it did read were crisp) but
-    page_confidence 0.0313, and only Q56 was found. Every gate downstream then
-    behaved correctly on one sixth of the page, so nothing fired and the
-    student was left thinking the other five had been ignored on purpose.
+    It looked like the partial-read signal — a real submission scored 0.0313
+    while finding one question out of six — so a warning was built on it. Then
+    it was measured: pages rendered with the tiled watermarks a coaching PDF
+    carries score 0.15 while reading PERFECTLY (all six questions, 2,016
+    chars). The warning would have told students to re-crop photos that had
+    been read correctly, and a student who deliberately snapped ONE question
+    off a watermarked paper would get it every time.
+
+    page_confidence stays logged, and stays out of the student's way.
     """
     monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: {
         "text": "Q56. Given below are two statements :\n(1) a (2) b (3) c (4) d\n",
@@ -371,35 +375,46 @@ def test_partial_page_read_is_declared_not_hidden(monkeypatch):
         "question_type": "single_correct", "legible": True,
         "options": [{"label": "1", "text": "a"}, {"label": "2", "text": "b"},
                     {"label": "3", "text": "c"}, {"label": "4", "text": "d"}],
-    }], "note": "The rest of the page was not read."}))
-
-    read = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)
-    print(f"  note={read['note']!r}")
-    assert read["note"], "a partial read must carry a note"
-    # The model's confident-sounding note must not survive: it framed a failed
-    # read as a deliberate one.
-    assert read["note"] != "The rest of the page was not read."
-    assert "could not read" in read["note"] or "could only make out" in read["note"]
-    assert "crop" in read["note"].lower()
-
-
-def test_good_page_read_gets_no_partial_warning(monkeypatch):
-    """A confident read must not be labelled partial — that would cry wolf on
-    every normal snap."""
-    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: {
-        "text": "Q56. A question here?\n(1) a (2) b (3) c (4) d\n",
-        "confidence": 0.99, "page_confidence": 0.98,
-        "diagram_regions": 0, "ocr_ms": 100,
-    })
-    stub_transcriber(monkeypatch, json.dumps({"questions": [{
-        "stem": "Q56. A question here?",
-        "question_type": "single_correct", "legible": True,
-        "options": [{"label": "1", "text": "a"}, {"label": "2", "text": "b"},
-                    {"label": "3", "text": "c"}, {"label": "4", "text": "d"}],
     }]}))
     read = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)
-    print(f"  note={read['note']!r}")
-    assert not read["note"], f"a clean read should carry no note, got {read['note']!r}"
+    print(f"  one question, page_confidence 0.0313 -> note={read['note']!r}")
+    assert not read["note"], (
+        "a low page_confidence must not manufacture a student-facing warning; "
+        f"got {read['note']!r}"
+    )
+
+
+def test_crop_never_loses_the_image(monkeypatch):
+    """Preprocessing must never be why a snap fails.
+
+    crop_to_content runs before anything reads the photo, so every bad input
+    it can be handed — an unopenable file, a solid colour, something tiny —
+    has to come back as the original bytes rather than raising or returning
+    something Mathpix cannot read.
+    """
+    from app.image_prep import crop_to_content
+    from PIL import Image
+    import io as _io
+
+    def as_png(img):
+        b = _io.BytesIO(); img.save(b, format="PNG"); return b.getvalue()
+
+    cases = {
+        "not an image at all": b"this is not a picture",
+        "empty bytes": b"",
+        "solid white": as_png(Image.new("RGB", (900, 700), "white")),
+        "solid black": as_png(Image.new("RGB", (900, 700), "black")),
+        "tiny": as_png(Image.new("RGB", (12, 12), "white")),
+    }
+    for label, data in cases.items():
+        out, note = crop_to_content(data, "d1")
+        print(f"  {label:22} -> {'unchanged' if out is data else 'cropped'} note={note}")
+        # Every one of these is a case with nothing to crop. The contract is
+        # pass-through: the SAME bytes back, not a re-encode and not a raise.
+        # (Identity, not truthiness — empty in must give empty out, and the
+        # router rejects an empty upload long before this runs.)
+        assert out is data, f"{label} should have been passed through untouched"
+        assert note is None, f"{label} should report no crop, got {note!r}"
 
 
 def test_page_question_numbers_are_read_in_order():

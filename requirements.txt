@@ -13,3 +13,7 @@ websockets>=12.0
 python-multipart>=0.0.9
 # Cloudflare R2 is S3-compatible; boto3 stores and presigns snapped doubt images.
 boto3>=1.34.0
+# Snap a Doubt trims browser furniture off a screenshot before OCR — see
+# app/image_prep.py. Pillow only: the row/column profiling that would normally
+# want numpy is done by resizing the mask to a 1px strip.
+Pillow>=10.0.0
