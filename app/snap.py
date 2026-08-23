@@ -1193,23 +1193,25 @@ def _match_options(parsed: Dict[str, Any],
     # which would let "3-e" and "3+e" collide as the same key — exactly the
     # sign-collapsing _canon_fidelity's own docstring warns about, and which a
     # first version of this fallback (using _norm) hit immediately below.
-    answer_text = parsed.get("answer") or ""
-    candidates = [answer_text]
-    if "=" in answer_text:
-        # The prompt asks for the value alone, but a real solve restated the
-        # equation instead — "$x(1/2)=3-e$" for an option whose text is
-        # "3 - e" — which flagged a correct answer as unmatched because the
-        # full strings differ (the "x(1/2)" prefix pollutes it). The value is
-        # what follows the LAST '=', so try that too before falling through to
-        # the LLM matcher (or refusing outright).
-        candidates.append(answer_text.rsplit("=", 1)[-1])
-    for candidate in candidates:
-        answer_key = _canon_fidelity(candidate)
-        if not answer_key:
-            continue
-        for opt in options:
-            if _canon_fidelity(opt["text"]) == answer_key:
-                return [opt]
+    # Compare the value, not the sentence around it. Either side may carry a
+    # "<name> =" prefix, and which side has it is a coin toss:
+    #
+    #   answer "$x(1/2)=3-e$"   option "3 - e"       -> prefix on the ANSWER
+    #   answer "$2a_0$"         option "r = 2a_0"    -> prefix on the OPTION
+    #
+    # Both were seen on real pages, and both flagged a CORRECT answer as
+    # "matches no option" — the second one after the first had been fixed, so
+    # this now strips symmetrically rather than one side at a time.
+    def _forms(text: str) -> List[str]:
+        out = [_canon_fidelity(text)]
+        if "=" in text:
+            out.append(_canon_fidelity(text.rsplit("=", 1)[-1]))
+        return [f for f in out if f]
+
+    answer_forms = _forms(parsed.get("answer") or "")
+    for opt in options:
+        if set(answer_forms) & set(_forms(opt["text"])):
+            return [opt]
     return []
 
 

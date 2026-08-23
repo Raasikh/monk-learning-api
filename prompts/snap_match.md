@@ -23,6 +23,11 @@ Return ONLY valid JSON:
 
 1. Two things match when they are **the same value or the same statement**,
    written differently:
+   - **An option that names the quantity matches an answer that is just the
+     value.** The option `r = 2a_0` IS the answer `2a_0`; the option
+     `K_p = 1.8 atm` IS the answer `1.8 atm`. The `r =` is the paper restating
+     what was asked, not a different result. This one was reported as "matches
+     no option" on a real page where option (2) was, plainly, the answer.
    - `$\dfrac{\pi+2}{\pi+1}$` matches `(pi + 2)/(pi + 1)`
    - `0.5` matches `$\dfrac{1}{2}$`
    - `but-2-ene` matches `CH_3-CH=CH-CH_3`

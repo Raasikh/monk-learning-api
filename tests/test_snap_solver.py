@@ -1065,6 +1065,49 @@ def test_shared_fragment_does_not_count_as_a_match(monkeypatch):
     assert out["unmatched"] is True
 
 
+def test_option_naming_the_quantity_still_matches_a_bare_value(monkeypatch):
+    """Option "r = 2a_0" must match the answer "$2a_0$".
+
+    The mirror of the restated-equation bug below, and it slipped through
+    because that fix stripped the "<name> =" prefix from the ANSWER only. Here
+    the paper carries it instead: the solver derived the value, every option
+    restates it as "r = ...", and a correct answer was shown to the student as
+    "matches no option" with option (2) sitting right there on the page.
+
+    The LLM matcher is stubbed to refuse, so a pass proves the exact path
+    caught it without spending a call.
+    """
+    options = [{"label": "1", "text": "r = 4a_0"}, {"label": "2", "text": "r = 2a_0"},
+               {"label": "3", "text": "r = a_0/2"}, {"label": "4", "text": "r = a_0/4"}]
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "$2a_0$",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    matcher = stub_matcher(monkeypatch, [], equivalent=False)
+    out = solve_question(question(options=options), "d1")
+    print(f"  labels={out['option_labels']} answer={out['answer']!r} "
+          f"matcher_calls={matcher.calls}")
+    assert out["option_labels"] == ["2"]
+    assert not out.get("unmatched")
+    assert matcher.calls == 0
+
+
+def test_a_genuinely_absent_answer_still_refuses(monkeypatch):
+    """Stripping "<name> =" must not turn near-misses into matches.
+
+    The whole point of exact-ish matching is that a wrong answer is reported as
+    unmatched rather than snapped to the closest option.
+    """
+    options = [{"label": "1", "text": "r = 4a_0"}, {"label": "2", "text": "r = 2a_0"}]
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "$7a_0$",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    stub_matcher(monkeypatch, [], equivalent=False)
+    out = solve_question(question(options=options), "d1")
+    print(f"  labels={out['option_labels']} unmatched={out.get('unmatched')}")
+    assert out["option_labels"] == []
+    assert out["unmatched"] is True
+
+
 def test_restated_equation_still_matches_its_option(monkeypatch):
     """`$x(1/2)=3-e$` must match the option `3 - e` — real bug, real page.
 
