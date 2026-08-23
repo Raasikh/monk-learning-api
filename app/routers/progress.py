@@ -139,6 +139,10 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
     # for, written to profiles.target_exam at onboarding/purchase ('JEE',
     # 'NEET', or 'both'). Progress always scores against the entitled exam.
     # The ?exam= param only selects a view for 'both'-entitled students.
+    # Both are returned: `entitlement` is what the student paid for, `exam` is
+    # the view being served. They differ only for a 'both' student switching
+    # views, and the client shows the exam picker off the former.
+    entitlement = exam_scope.entitlement_of(bundle.get("profile"))
     exam = exam_scope.resolve_exam(bundle.get("profile"), exam)
     subjects = SUBJECTS_BY_EXAM[exam]
     subject_marks = cfg.get("subject_marks", {}).get(exam, {s: 1 for s in subjects})
@@ -147,10 +151,21 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
     # than re-downloaded per page load. Measured at 2.9s of this endpoint's ~5s
     # — 106 chapters + 1,144 concepts (two pages) + weights + config, all
     # unchanged between requests. The student's own rows below stay live.
-    chapters = fetch_all_cached("chapters", "id, name, subject, class_level")
+    chapters = fetch_all_cached("chapters", "id, name, subject, class_level, chapter_order")
     chapters = [c for c in chapters if str(c["subject"]).lower() in subjects]
-    concepts = fetch_all_cached("concepts", "id, chapter_id, name, display_order, exams")
-    concepts = [c for c in concepts if exam in (c.get("exams") or ["jee", "neet"])]
+    concepts = fetch_all_cached("concepts", "id, chapter_id, name, display_order, exams, active")
+    # Retired concepts are excluded, and it is the DENOMINATOR that makes this
+    # matter rather than the listing. Chapter mastery is the mean over every
+    # concept in the chapter, so a concept that no longer belongs there — and
+    # can therefore never be attempted — contributes a permanent zero that
+    # nothing can lift. A student who had genuinely mastered all five real
+    # concepts in Class 12 Relations and Functions scored 38%, because eight
+    # Class 11 duplicates were still being averaged in. Waves read 80%, both
+    # Probability chapters 75-78%.
+    concepts = [c for c in concepts
+                if c.get("active") is not False
+                and exam in (c.get("exams") or ["jee", "neet"])]
+    live_concept_ids = {c["id"] for c in concepts}
     concepts_by_ch: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for c in concepts:
         concepts_by_ch[c["chapter_id"]].append(c)
@@ -161,7 +176,13 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
                if w.get("exam") == exam}
 
     # the student's evidence
-    mastery_rows = bundle.get("mastery") or []
+    # Scoped to live concepts for the same reason the list above is: a mastery
+    # row on a retired concept can no longer appear anywhere in this response,
+    # so counting it in the ledger would report a number the student cannot
+    # find. It also keeps the flag recommendation from naming a concept that is
+    # no longer taught.
+    mastery_rows = [r for r in (bundle.get("mastery") or [])
+                    if r["concept_id"] in live_concept_ids]
     m_by_concept = {r["concept_id"]: r for r in mastery_rows}
     flagged = [r for r in mastery_rows if r["flag_state"] == "flagged"]
 
@@ -174,7 +195,17 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
         subj_chapters = [ch for ch in chapters if str(ch["subject"]).lower() == subj]
         num = den = 0.0
         chapter_payload = []
-        for ch in sorted(subj_chapters, key=lambda c: (c["class_level"], c["name"])):
+        # Book order, not alphabetical. Sorting by name put Units &
+        # Measurements — NCERT Class 11 chapter 1 — last in Physics, and the
+        # syllabus sequence is the only order a student reads a chapter list
+        # in. chapter_order is populated on all 106 chapters and is what the
+        # Learn catalogue already sorts by; name stays as the tie-break only.
+        for ch in sorted(subj_chapters, key=lambda c: (
+            c["class_level"] or 0,
+            c.get("chapter_order") is None,
+            c.get("chapter_order") or 0,
+            c["name"],
+        )):
             clist = sorted(concepts_by_ch.get(ch["id"], []), key=lambda c: c.get("display_order", 99))
             concept_payload = []
             m_sum = 0.0
