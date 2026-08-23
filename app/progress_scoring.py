@@ -106,7 +106,35 @@ def apply_answer_scoring(
     )
     if not qc:
         return None
-    concept_roles = [(r["concept_id"], r["role"]) for r in qc]
+
+    # Retired concepts are dropped here, and loudly. A link left pointing at an
+    # inactive concept fails SILENTLY otherwise: mastery is written normally,
+    # but /progress filters that concept out of both the listing and the
+    # chapter denominator, so the student earns a score that appears nowhere.
+    # It happened for real — migrations 0022 and 0023 deactivated 18 misfiled
+    # concepts and left 48 question links behind, and nothing surfaced it
+    # because every step of the write path succeeded.
+    active_ids = {
+        r["id"] for r in (
+            supabase.table("concepts")
+            .select("id")
+            .in_("id", [r["concept_id"] for r in qc])
+            .eq("active", True)
+            .execute()
+            .data or []
+        )
+    }
+    retired = [r["concept_id"] for r in qc if r["concept_id"] not in active_ids]
+    if retired:
+        logger.warning(
+            f"[SCORING] question {question_id} is linked to {len(retired)} retired "
+            f"concept(s) {retired}; skipping them. Remap the link — a retired "
+            f"concept scores into a row no student can see."
+        )
+    concept_roles = [(r["concept_id"], r["role"]) for r in qc
+                     if r["concept_id"] in active_ids]
+    if not concept_roles:
+        return {"scored": False, "reason": "all_concepts_retired", "concept_deltas": []}
 
     # ---- eligibility gates (spec §9.2 / §15) --------------------------------
     prior_attempts = (
