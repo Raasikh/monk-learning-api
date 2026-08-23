@@ -13,6 +13,20 @@ every one of the 1,144 concept rows; nothing read them.
 
 This module is that reading, in one place, so the catalogue and Progress cannot
 drift apart on what a student is entitled to.
+
+The two surfaces ask DIFFERENT questions of it, and the difference is
+deliberate:
+
+  - Progress asks `resolve_exam` — an ENTITLEMENT. A score is always computed
+    against the exam the student paid for, and ?exam= only picks a view for a
+    'both' student. It is not a thing to be opted out of.
+
+  - The Learn catalogue asks `selected_exam` — a SELECTION. It shows the whole
+    corpus until a student actively picks an exam, and narrows only then.
+    Unfiltered is the deliberate default while the catalogue is still being
+    tested across all four subjects; a filter that hides content by default
+    makes "is this chapter broken?" and "is this chapter hidden?" look
+    identical, which is the harder question to answer.
 """
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
@@ -49,6 +63,18 @@ def resolve_exam(profile: Optional[Dict[str, Any]], requested: Optional[str] = N
     allowed = allowed_exams(entitlement_of(profile))
     req = str(requested or "").strip().lower()
     return req if req in allowed else allowed[0]
+
+
+def selected_exam(requested: Optional[str] = None) -> str:
+    """The exam view for a SELECTION-driven surface: the Learn catalogue.
+
+    Returns 'both' — the whole corpus, nothing hidden — unless the caller names
+    a specific exam. This is the opposite default from `resolve_exam`, and
+    intentionally so: nothing narrows the catalogue until a student picks, so
+    the picker itself is the only thing that can hide a chapter.
+    """
+    req = str(requested or "").strip().lower()
+    return req if req in ("jee", "neet") else "both"
 
 
 def subjects_for(exam: str) -> Sequence[str]:

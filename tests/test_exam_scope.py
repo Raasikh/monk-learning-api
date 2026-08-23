@@ -19,6 +19,7 @@ from app.exam_scope import (
     allowed_exams,
     entitlement_of,
     resolve_exam,
+    selected_exam,
     subject_on_syllabus,
     subjects_for,
     tagged_for_exam,
@@ -120,3 +121,40 @@ def test_untagged_concepts_are_shared_not_hidden(tags):
     # silently hidden is indistinguishable from a chapter nobody authored.
     assert tagged_for_exam(tags, "jee") is True
     assert tagged_for_exam(tags, "neet") is True
+
+
+# ── Selection: what the Learn catalogue asks ─────────────────────────────────
+# Progress asks about an entitlement; Learn asks about a pick. The defaults are
+# opposites and that is the whole point, so both are pinned.
+
+@pytest.mark.parametrize("requested", [None, "", "   ", "both", "physics", "JEE+NEET"])
+def test_the_catalogue_hides_nothing_until_a_student_picks(requested):
+    # Anything that is not a clean 'jee' or 'neet' means "no pick yet". Hiding
+    # content on a junk or absent param would make a broken chapter and a
+    # filtered-out chapter indistinguishable from the outside.
+    assert selected_exam(requested) == "both"
+
+
+@pytest.mark.parametrize("requested,expected", [
+    ("jee", "jee"), ("neet", "neet"), ("JEE", "jee"), ("  NeEt ", "neet"),
+])
+def test_an_explicit_pick_narrows(requested, expected):
+    assert selected_exam(requested) == expected
+
+
+def test_selection_and_entitlement_default_in_opposite_directions():
+    # The Learn catalogue opens up when it knows nothing; Progress falls back
+    # to a concrete exam because a score has to be computed against one. Wiring
+    # either surface to the other's resolver silently changes what a student
+    # sees, so this pins the two apart.
+    assert selected_exam(None) == "both"
+    assert resolve_exam(None, None) == "jee"
+
+
+def test_both_passes_every_concept_and_subject():
+    # 'both' must be a true no-op, not a third syllabus: this is the mode the
+    # catalogue runs in by default today.
+    for subject in ("physics", "chemistry", "mathematics", "biology"):
+        assert subject_on_syllabus(subject, "both")
+    for tags in (["jee"], ["neet"], ["jee", "neet"], None):
+        assert tagged_for_exam(tags, "both") is True

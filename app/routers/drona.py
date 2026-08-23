@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from app.auth import get_current_user_id
 from app.db import supabase, fetch_all, fetch_all_cached
-from app.exam_scope import resolve_exam, subject_on_syllabus, tagged_for_exam
+from app.exam_scope import selected_exam, subject_on_syllabus, tagged_for_exam
 from app.drona.scoping import scope_student_session
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.persona import (
@@ -40,16 +40,21 @@ def get_catalogue(exam: Optional[str] = None, user_id: str = Depends(get_current
     chapters_data = list(fetch_all_cached("chapters", "id, name, subject, class_level, chapter_order"))
     concepts_data = fetch_all_cached("concepts", "id, chapter_id, name, key, teach_order, display_order, active, exams")
 
-    # Scope to what the student actually sits. This catalogue served the whole
-    # corpus to everyone: a NEET student was offered all 27 Mathematics
-    # chapters — not on their syllabus at any point — and every JEE-only
-    # concept inside the physics and chemistry chapters they do share. The
-    # `exams` tag needed to prevent that was already on all 1,144 concept
-    # rows; nothing read it. Resolved per user AFTER the shared cache, so the
-    # cache stays global and this costs one profile read.
-    prof_rows = supabase.table("profiles").select("target_exam").eq("id", user_id).limit(1).execute().data
-    exam_view = resolve_exam(prof_rows[0] if prof_rows else None, exam)
-    chapters_data = [c for c in chapters_data if subject_on_syllabus(c.get("subject"), exam_view)]
+    # Narrowing is driven by what the student PICKS, not by their profile.
+    # Without ?exam= this serves the whole corpus — all four subjects, all
+    # 1,144 concepts — which is the default on purpose: a catalogue that hides
+    # content by default makes "this chapter is broken" and "this chapter is
+    # hidden from me" look identical from the outside, and that is the harder
+    # of the two to diagnose. `profiles.target_exam` is deliberately NOT read
+    # here; on Progress it is an entitlement, but Learn is a picker.
+    #
+    # With ?exam=jee or ?exam=neet, both axes narrow: the subject (Mathematics
+    # is JEE-only, Biology NEET-only) and the per-concept `exams` tag, which
+    # is set on every one of the 1,144 rows and until now was read by nothing.
+    exam_view = selected_exam(exam)
+    if exam_view != "both":
+        chapters_data = [c for c in chapters_data
+                         if subject_on_syllabus(c.get("subject"), exam_view)]
 
     # Order by the pedagogical sequence. display_order is the exam-frequency
     # ranking Progress uses and is the wrong order to teach in — it opened
