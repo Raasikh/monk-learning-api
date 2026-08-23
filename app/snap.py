@@ -425,6 +425,11 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         )
 
     # 2. Structure. Text only — no image — so the maths cannot be re-read wrong.
+    # Timed separately from the OCR above: `transcribe_ms` used to be the sum of
+    # both, so a slow submission gave no clue whether Mathpix or the structuring
+    # model was responsible. On a dense JEE page the two are the same order of
+    # magnitude, and only one of them is ours to tune.
+    structure_t0 = time.time()
     client = _openai_client()
     system_prompt = load_prompt("snap_structure.md")
 
@@ -459,9 +464,19 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
 
     parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}", usage_acc,
                                   service="snap_transcribe")
+    structure_ms = int((time.time() - structure_t0) * 1000)
+    ocr_ms = page.get("ocr_ms") or 0
+    logger.info(
+        "[SNAP STRUCTURE] doubt=%s structure_ms=%d model=%s ocr_chars=%d "
+        "asked_for=%d (ocr_ms=%d, so transcribe = %d + %d = %dms)",
+        doubt_id[:8], structure_ms, MODEL_TRANSCRIBE, len(page["text"]),
+        max_questions, ocr_ms, ocr_ms, structure_ms, ocr_ms + structure_ms,
+    )
     parsed["_ocr_confidence"] = page["confidence"]
     parsed["_ocr_text"] = page["text"]
     parsed["_diagram_regions"] = page.get("diagram_regions", 0)
+    parsed["_ocr_ms"] = ocr_ms
+    parsed["_structure_ms"] = structure_ms
 
     raw_questions = parsed.get("questions")
     if not isinstance(raw_questions, list) or not raw_questions:
@@ -615,9 +630,26 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         "[SNAP TRANSCRIBE] doubt=%s read %d question(s), %d legible",
         doubt_id[:8], len(questions), sum(1 for q in questions if q["legible"]),
     )
+    # One line per question, so a production log says exactly what was read and
+    # what will happen to it — which questions go to the solver, which are held
+    # back and why, and whether the options are being withheld from the solver.
+    for q in questions:
+        logger.info(
+            "[SNAP QUESTION] doubt=%s q%d subject=%s topic=%s type=%s "
+            "options=%d complete=%s self_contained=%s diagram=%s legible=%s%s "
+            "printed_key=%s stem=%r",
+            doubt_id[:8], q["n"], q.get("subject"), q.get("topic"),
+            q.get("question_type"), len(q.get("options") or []),
+            q.get("options_complete"), q.get("self_contained"),
+            q.get("requires_diagram"), q["legible"],
+            f" reason={q.get('reason')} remedy={q.get('remedy')}" if not q["legible"] else "",
+            q.get("printed_answer"), (q.get("stem") or "")[:100],
+        )
     _warn_if_not_page_order(questions, parsed.get("_ocr_text") or "", doubt_id)
     return {"questions": questions, "note": note,
-            "ocr_confidence": parsed.get("_ocr_confidence")}
+            "ocr_confidence": parsed.get("_ocr_confidence"),
+            "ocr_ms": parsed.get("_ocr_ms") or 0,
+            "structure_ms": parsed.get("_structure_ms") or 0}
 
 
 def _warn_if_not_page_order(questions: List[Dict[str, Any]], ocr_text: str,
@@ -1289,6 +1321,19 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             return solve_client.chat.completions.create(**kwargs)
         return call
 
+    # Every knob this solve actually ran with, stated up front. When a solve
+    # behaves oddly in production the first question is always "what config was
+    # it on?" — blind or option-shown, thinking on or off, streamed or voted.
+    logger.info(
+        "[SNAP SOLVE START] doubt=%s q%s model=%s thinking=%s samples=%d "
+        "streamed=%s blind=%s type=%s options=%d diagram=%s payload_chars=%d",
+        doubt_id[:8], question.get("n"), solve_model, SOLVE_THINKING,
+        SOLVE_SAMPLES, on_event is not None and SOLVE_SAMPLES <= 1, solve_blind,
+        q_type, len(options), bool(question.get("diagram_description")),
+        len(payload),
+    )
+    solve_t0 = time.time()
+
     if on_event is not None and SOLVE_SAMPLES <= 1:
         def make_kwargs():
             kwargs: Dict[str, Any] = dict(
@@ -1312,11 +1357,19 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     else:
         parsed = _solve_with_consensus(make_call, doubt_id, usage_acc,
                                        expect_model=solve_model)
+    llm_ms = int((time.time() - solve_t0) * 1000)
+    logger.info(
+        "[SNAP SOLVE LLM] doubt=%s q%s llm_ms=%d steps=%d answerable=%s",
+        doubt_id[:8], question.get("n"), llm_ms, len(parsed.get("steps") or []),
+        parsed.get("answerable", True),
+    )
 
     # Steps are what the student reads. A rambling one is both unreadable and
     # the thing that breaks the JSON, so it earns one corrective retry.
+    rewrite_ms = 0
     problems = _step_problems(parsed.get("steps") or [])
     if problems:
+        rewrite_t0 = time.time()
         logger.warning("[SNAP SOLVE] doubt=%s poor steps: %s — retrying once",
                        doubt_id[:8], "; ".join(problems[:3]))
         corrective = (
@@ -1365,6 +1418,10 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             # The first answer is still good; keep it rather than lose the solve.
             logger.warning("[SNAP SOLVE] doubt=%s step rewrite failed: %s",
                            doubt_id[:8], err)
+        rewrite_ms = int((time.time() - rewrite_t0) * 1000)
+        logger.info("[SNAP SOLVE REWRITE] doubt=%s q%s rewrite_ms=%d "
+                    "(a second full LLM call, on top of the solve)",
+                    doubt_id[:8], question.get("n"), rewrite_ms)
     solution = _validate_solution(
         parsed,
         # A blind solve has no options to validate against; the matcher below
@@ -1384,10 +1441,15 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             "working is below. Worth checking in a live session."
         )
 
+    stepcheck_ms = match_ms = 0
     if not solve_blind and options and solution.get("option_labels"):
         # This solve SAW its options, which is where answers detach from their
         # own reasoning. Cross-check: the steps must conclude the same option.
+        stepcheck_t0 = time.time()
         steps_say = _steps_support_label(solution, options, doubt_id, usage_acc)
+        stepcheck_ms = int((time.time() - stepcheck_t0) * 1000)
+        logger.info("[SNAP STEPCHECK] doubt=%s q%s stepcheck_ms=%d steps_conclude=%s",
+                    doubt_id[:8], question.get("n"), stepcheck_ms, steps_say)
         if steps_say and set(steps_say) != set(solution["option_labels"]):
             logger.warning(
                 "[SNAP STEPCHECK] doubt=%s answer says %s but the steps conclude "
@@ -1400,8 +1462,15 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             solution["answer_from_steps"] = True
 
     if solve_blind:
+        match_t0 = time.time()
+        derived_answer = solution["answer"]
         labels = match_answer_to_options(solution["answer"], options, q_type,
                                          doubt_id, usage_acc)
+        match_ms = int((time.time() - match_t0) * 1000)
+        logger.info(
+            "[SNAP MATCH] doubt=%s q%s match_ms=%d derived=%r -> labels=%s",
+            doubt_id[:8], question.get("n"), match_ms, derived_answer[:80], labels,
+        )
         if not labels:
             # Not a refusal. The student gets the working and the result, clearly
             # flagged as not matching — that is more useful than nothing, and it
@@ -1452,6 +1521,26 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         question.get("subject") if question.get("subject") != "unknown" else None
     )
     solution["topic"] = solution["topic"] or question.get("topic")
+
+    # The whole solve on one greppable line: where the time went, and what came
+    # out. `llm` is the model actually reasoning; everything after it is a gate
+    # we added, so this shows what our own checking costs on top of the answer.
+    total_ms = int((time.time() - solve_t0) * 1000)
+    solution["timings"] = {
+        "llm_ms": llm_ms, "rewrite_ms": rewrite_ms,
+        "stepcheck_ms": stepcheck_ms, "match_ms": match_ms, "total_ms": total_ms,
+    }
+    logger.info(
+        "[SNAP SOLVE DONE] doubt=%s q%s total_ms=%d (llm=%d rewrite=%d "
+        "stepcheck=%d match=%d overhead=%d) answer=%r labels=%s "
+        "unmatched=%s no_consensus=%s from_steps=%s printed_agrees=%s",
+        doubt_id[:8], question.get("n"), total_ms, llm_ms, rewrite_ms,
+        stepcheck_ms, match_ms, total_ms - llm_ms,
+        (solution.get("answer") or "")[:60], solution.get("option_labels"),
+        solution.get("unmatched", False), solution.get("no_consensus", False),
+        solution.get("answer_from_steps", False),
+        solution.get("agrees_with_printed_answer"),
+    )
     return solution
 
 
@@ -1538,15 +1627,27 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     tx_usage: Dict[str, int] = {"input": 0, "output": 0}
     sv_usage: Dict[str, int] = {"input": 0, "output": 0}
 
+    logger.info("[SNAP PIPELINE] doubt=%s START streamed image=%.1fKB mime=%s cap=%d",
+                doubt_id[:8], len(image_bytes) / 1024, mime_type, max_questions)
+
     read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
                                 max_questions)
     transcribe_ms = int((time.time() - started) * 1000)
+    logger.info(
+        "[SNAP PIPELINE] doubt=%s transcribe_ms=%d (ocr=%d structure=%d) "
+        "questions=%d legible=%d — the student can see their question NOW",
+        doubt_id[:8], transcribe_ms, read.get("ocr_ms", 0),
+        read.get("structure_ms", 0), len(read["questions"]),
+        sum(1 for q in read["questions"] if q["legible"]),
+    )
 
     yield "meta", {
         "question_count": len(read["questions"]),
         "note": read["note"],
         "ocr_confidence": read.get("ocr_confidence"),
         "transcribe_ms": transcribe_ms,
+        "ocr_ms": read.get("ocr_ms", 0),
+        "structure_ms": read.get("structure_ms", 0),
     }
 
     questions = read["questions"]

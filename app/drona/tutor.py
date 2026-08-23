@@ -70,6 +70,26 @@ _DIAGRAM_CUES: List[Tuple[str, str]] = [
 ]
 
 
+# A turn that works a numerical example, where the student should be offered
+# the chance to attempt it first.
+_WORKED_EXAMPLE_CUE = re.compile(
+    r"numerical|worked example|work an example|calculat\w+|solve\b|find the\b"
+    r"|compute\b|evaluate\b|determine the\b|example:",
+    re.IGNORECASE,
+)
+
+
+def turn_works_an_example(*texts: str) -> bool:
+    """Whether this turn is about to work a numerical example.
+
+    The rule lives in prompts/tutor.md too, but four levels deep inside the
+    turn-depth structure, and measured on three subjects the model skipped the
+    offer every time. Naming the instruction for THIS turn is what made diagram
+    selection go from half the turns to all of them; same technique.
+    """
+    return bool(_WORKED_EXAMPLE_CUE.search(" ".join(t for t in texts if t)))
+
+
 def suggest_diagram_template(*texts: str) -> Optional[str]:
     """The one template this turn's content clearly calls for, if any.
 
@@ -562,6 +582,31 @@ async def process_tutor_turn_stream(
             f"template that does, or emit none.\n"
         )
 
+    # Offer the student the chance to attempt a worked example before it is
+    # solved for them. Injected per turn for the same reason as the diagram
+    # hint: stated only as a general rule in the prompt, it was skipped on
+    # every one of three test subjects.
+    example_directive = ""
+    if turn_works_an_example(
+        curr_segment.get("objective") or "",
+        curr_segment.get("teaching_notes") or "",
+        " ".join(assigned_items_text),
+    ):
+        example_directive = (
+            "\n\nTHIS TURN WORKS AN EXAMPLE — OFFER IT TO THEM FIRST.\n"
+            "State the problem, then offer BOTH options in one short line before "
+            "you solve anything: they may pause and try it themselves and then "
+            "check against your answer, or simply follow along while you work it. "
+            "Use the word \"pause\" — that is the button they would press.\n"
+            "English: \"Pause here and try it yourself if you'd like, then check "
+            "your answer against mine — or just follow along as I work it.\"\n"
+            "Hinglish: \"Chaho toh pause karke khud try karo, phir apna answer "
+            "mere se compare karna — ya bas mere saath chalte raho.\"\n"
+            "It is an OFFER, not an instruction, and never a stop: do not set "
+            "phase_request awaiting_answer for it, do not emit chips for it, and "
+            "carry straight on into the working. Never say it after solving.\n"
+        )
+
     _visible = [t for t in (assigned_items_text + current_segment_board_events) if t and t.strip()]
     board_answer_ban = ""
     if _visible:
@@ -688,7 +733,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
-{board_answer_ban}{diagram_directive}
+{board_answer_ban}{diagram_directive}{example_directive}
 """
     else:
         checkpoint_directive = f"""
@@ -711,7 +756,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
-{board_answer_ban}{diagram_directive}
+{board_answer_ban}{diagram_directive}{example_directive}
 
 For reference, this segment's authored checkpoint is:
   "{checkpoint.get('question') or ''}"

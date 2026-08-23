@@ -18,6 +18,7 @@ maths either.
 """
 import logging
 import os
+import time
 from typing import Any, Dict, Optional
 
 import requests
@@ -118,6 +119,12 @@ def read_page(image_bytes: bytes, mime_type: str,
         "include_line_data": True,
     }
 
+    t0 = time.time()
+    logger.info(
+        "[MATHPIX] doubt=%s POST %s image=%.1fKB mime=%s timeout=%ss",
+        doubt_id[:8], MATHPIX_URL, len(image_bytes) / 1024, mime_type,
+        MATHPIX_TIMEOUT_S,
+    )
     try:
         res = requests.post(
             MATHPIX_URL,
@@ -127,13 +134,20 @@ def read_page(image_bytes: bytes, mime_type: str,
             timeout=MATHPIX_TIMEOUT_S,
         )
     except requests.RequestException as err:
+        logger.error("[MATHPIX] doubt=%s FAILED after %dms: %s",
+                     doubt_id[:8], int((time.time() - t0) * 1000), err)
         raise MathpixError(f"Mathpix request failed: {err}")
+    ocr_ms = int((time.time() - t0) * 1000)
 
     if res.status_code != 200:
+        logger.error("[MATHPIX] doubt=%s HTTP %d in %dms: %s",
+                     doubt_id[:8], res.status_code, ocr_ms, res.text[:200])
         raise MathpixError(f"Mathpix returned HTTP {res.status_code}: {res.text[:200]}")
 
     payload = res.json()
     if payload.get("error"):
+        logger.error("[MATHPIX] doubt=%s API error in %dms: %s",
+                     doubt_id[:8], ocr_ms, payload["error"])
         raise MathpixError(f"Mathpix error: {payload['error']}")
 
     line_types = [ln.get("type") for ln in (payload.get("line_data") or [])]
@@ -146,15 +160,21 @@ def read_page(image_bytes: bytes, mime_type: str,
     whole_page = float(whole_page) if whole_page is not None else None
 
     if not text:
+        logger.error("[MATHPIX] doubt=%s read NOTHING in %dms (confidence_rate=%s)",
+                     doubt_id[:8], ocr_ms,
+                     f"{rate:.4f}" if rate is not None else "n/a")
         raise MathpixError("Mathpix read nothing from that image.")
 
     logger.info(
-        "[MATHPIX] doubt=%s read %d chars, confidence_rate=%s, diagram_regions=%d",
-        doubt_id[:8], len(text),
-        f"{rate:.4f}" if rate is not None else "n/a", diagram_regions,
+        "[MATHPIX] doubt=%s ocr_ms=%d chars=%d confidence_rate=%s "
+        "page_confidence=%s diagram_regions=%d lines=%d",
+        doubt_id[:8], ocr_ms, len(text),
+        f"{rate:.4f}" if rate is not None else "n/a",
+        f"{whole_page:.4f}" if whole_page is not None else "n/a",
+        diagram_regions, len(line_types),
     )
     return {"text": text, "confidence": rate, "page_confidence": whole_page,
-            "diagram_regions": diagram_regions}
+            "diagram_regions": diagram_regions, "ocr_ms": ocr_ms}
 
 
 def confidence_is_usable(confidence_rate: Optional[float]) -> bool:

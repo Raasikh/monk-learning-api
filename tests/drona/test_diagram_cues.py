@@ -67,6 +67,41 @@ def test_every_suggested_template_actually_exists():
         assert name in TEMPLATES, f"cue points at unknown template {name!r}"
 
 
-def test_empty_input_is_safe():
+def test_diagram_cue_empty_input_is_safe():
     assert suggest_diagram_template("", "", "") is None
     assert suggest_diagram_template() is None
+
+
+# ── Worked-example offer ─────────────────────────────────────────────────────
+# The rule is in prompts/tutor.md too, but four levels deep in the turn-depth
+# structure, and the model skipped it on all three subjects tested. Naming the
+# instruction for THIS turn is what fixed diagram selection; same technique.
+
+from app.drona.tutor import turn_works_an_example
+
+
+@pytest.mark.parametrize("objective,notes", [
+    ("Solving projectile range numericals", "Work a numerical: u=20 m/s at 30 degrees, find range."),
+    ("Calculating molarity", "Work an example: 5.85 g NaCl in 500 mL water."),
+    ("Mole concept numericals", "Work an example: moles in 44 g CO2."),
+    ("Dimensional Analysis", "Determine the dimensional formula of pressure."),
+    ("Kirchhoff's Laws", "Compute the current in each branch."),
+])
+def test_numerical_turns_are_detected(objective, notes):
+    assert turn_works_an_example(objective, notes, "") is True
+
+
+@pytest.mark.parametrize("objective,notes", [
+    ("Adaptive Radiation", "Darwin's finches diversified across islands."),
+    ("Bryophytes: Liverworts and Mosses", "Structure and habitat."),
+    ("Electric Field Lines", "Qualitative picture of field direction."),
+])
+def test_conceptual_turns_get_no_offer(objective, notes):
+    # Offering to "pause and try it" on a turn with nothing to compute would be
+    # noise, so silence is the correct answer here.
+    assert turn_works_an_example(objective, notes, "") is False
+
+
+def test_example_cue_empty_input_is_safe():
+    assert turn_works_an_example("", "", "") is False
+    assert turn_works_an_example() is False
