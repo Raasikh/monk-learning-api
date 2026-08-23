@@ -12,6 +12,7 @@ Return ONLY valid JSON:
 {
   "questions": [
     {
+      "number": 51,
       "stem": "…the question WITHOUT its options, copied verbatim…",
       "self_contained": true,
       "question_type": "single_correct",
@@ -48,6 +49,12 @@ Return ONLY valid JSON:
    OCR output and separate them correctly; do not emit duplicates.
 
 ## ━━━ SELECTION ━━━
+
+3a. `number` is the question number PRINTED on the page — 51 for "Q51.", 7 for
+    "7)". It is how the server checks it got the questions it asked for, so it
+    must be the number on the paper and not your own count. Use `null` only
+    when the page prints no number at all. Keep it OUT of `stem`: the stem is
+    the question, not its label.
 
 4. Return at most the number of questions you are asked for in the user message.
    If the page holds more, return the first ones in order and say so in the

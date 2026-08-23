@@ -17,6 +17,7 @@ Runs under pytest, or standalone:  python3 tests/test_snap_solver.py
 """
 import json
 import os
+import re
 import sys
 import threading
 
@@ -471,6 +472,12 @@ def test_structurer_skipping_ahead_is_corrected(monkeypatch):
                 "options": [{"label": str(i + 1), "text": t}
                             for i, t in enumerate(opts)]}
 
+    # Forces the WHOLE-PAGE path, which is where a skip is still possible: the
+    # per-question parallel path hands each call one question's slice and names
+    # it, so there is nothing left to skip to. This pins the fallback's
+    # correction, which is what runs on an unnumbered or unsplittable page.
+    monkeypatch.setattr(snap, "_slice_by_question", lambda *_a, **_k: {})
+
     # First response skips ahead (the bug); the correction returns the right ones.
     wrong = json.dumps({"questions": [q(64, ["2", "1", "4", "3"]),
                                       q(65, ["1.8 atm", "0.3 atm", "3 atm", "0.18 atm"])]})
@@ -483,6 +490,102 @@ def test_structurer_skipping_ahead_is_corrected(monkeypatch):
     print(f"  structurer calls={client.calls} -> served {got}")
     assert client.calls == 2, "the skip should have triggered exactly one correction"
     assert got == ["Q62", "Q63"], f"served the wrong questions: {got}"
+
+
+def test_a_schema_placeholder_is_not_filed_as_a_subject():
+    """The subject chip and the /doubts filter take only real subjects.
+
+    A per-question structuring call echoed the schema's own placeholder, so
+    "Physics|Chemistry|Maths|Biology|unknown" was about to be stored as the
+    subject. It also starts with "Phys", so a loose prefix match filed it under
+    Physics — a confident wrong answer to "which subject", which is worse than
+    admitting we do not know.
+    """
+    cases = {
+        "Physics|Chemistry|Maths|Biology|unknown": "unknown",
+        "Physics, Chemistry": "unknown",
+        "Astrology": "unknown",
+        "": "unknown",
+        None: "unknown",
+        "Chemistry": "Chemistry",
+        "physics": "Physics",
+        "Mathematics": "Maths",
+        "  Maths  ": "Maths",
+    }
+    for raw, want in cases.items():
+        got = snap._clean_subject(raw)
+        print(f"  {str(raw)[:44]:46} -> {got}")
+        assert got == want, f"{raw!r} became {got!r}, wanted {want!r}"
+
+
+def test_numbered_page_structures_each_question_in_parallel(monkeypatch):
+    """A numbered multi-question page gets one call PER QUESTION, concurrently.
+
+    The whole-page call is dominated by how many output tokens it must
+    generate -- 10.5s for three questions on a real submission -- and that work
+    divides: each slice between two printed question numbers holds exactly one
+    question and its options. Also removes the skip-ahead failure mode by
+    construction, since a call handed one question cannot return a later one.
+    """
+    page_text = (
+        "Q62. First question here?\n(1) a (2) b (3) c (4) d\n"
+        "Q63. Second question here?\n(1) e (2) f (3) g (4) h\n"
+        "Q64. Third question here?\n(1) i (2) j (3) k (4) l\n"
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": page_text, "confidence": 0.98,
+                                           "diagram_regions": 0, "ocr_ms": 100})
+
+    seen = []
+
+    class _PerQuestion:
+        def __init__(self):
+            outer = self
+            self.calls = 0
+
+            class _Completions:
+                def create(self, **kw):
+                    outer.calls += 1
+                    body = kw["messages"][-1]["content"]
+                    num = int(re.search(r"Q(\d+)", body).group(1))
+                    seen.append(num)
+                    # Each call must be given ONLY its own question's text.
+                    for other in (62, 63, 64):
+                        if other != num:
+                            assert f"Q{other}." not in body, (
+                                f"call for Q{num} was shown Q{other}'s text")
+                    return _Response(json.dumps({"questions": [{
+                        "number": num, "stem": f"stem {num}",
+                        "question_type": "single_correct", "legible": True,
+                        "options": [{"label": "1", "text": "a"},
+                                    {"label": "2", "text": "b"}],
+                    }]}), MODEL_TRANSCRIBE)
+            self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    client = _PerQuestion()
+    monkeypatch.setattr(snap, "_openai_client", lambda: client)
+
+    read = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)
+    print(f"  calls={client.calls} for numbers {sorted(seen)}")
+    assert client.calls == 3, "expected one call per question"
+    assert sorted(seen) == [62, 63, 64]
+    # Merged back in PAGE order, whichever order the calls finished in.
+    assert [q["stem"] for q in read["questions"]] == ["stem 62", "stem 63", "stem 64"]
+
+
+def test_unsplittable_page_falls_back_to_one_call(monkeypatch):
+    """An unnumbered page keeps the single whole-page call -- there is no safe
+    way to slice it, and half a question is worse than a slow one."""
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: {
+        "text": "Find the acceleration when F = 10 N and m = 2 kg.\n(1) 5 (2) 2\n",
+        "confidence": 0.98, "diagram_regions": 0, "ocr_ms": 100})
+    client = stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "stem": "Find the acceleration when F = 10 N and m = 2 kg.",
+        "question_type": "single_correct", "legible": True,
+        "options": [{"label": "1", "text": "5"}, {"label": "2", "text": "2"}]}]}))
+    transcribe_questions(b"img", "image/jpeg", "d1", None, 3)
+    print(f"  calls={client.calls} (unnumbered page)")
+    assert client.calls == 1
 
 
 def test_correct_selection_costs_no_extra_call(monkeypatch):

@@ -83,6 +83,11 @@ DAILY_QUESTION_LIMIT = 50
 # single_correct when options exist, subjective when they do not.
 CHOICE_TYPES = {"single_correct", "multi_correct"}
 QUESTION_TYPES = CHOICE_TYPES | {"numerical", "subjective"}
+# The subjects a question may be filed under. Anything else is "unknown" — a
+# structurer handed one question's slice echoed the schema's own placeholder
+# back as the value, so "Physics|Chemistry|Maths|Biology|unknown" was about to
+# be written to the doubt's subject column and shown as its chip.
+SUBJECTS = {"physics", "chemistry", "maths", "biology"}
 MAX_IMAGE_BYTES = 10 * 1024 * 1024
 ALLOWED_MIME = {"image/jpeg", "image/png", "image/webp", "image/heic"}
 
@@ -509,8 +514,25 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             )
         return call
 
-    parsed = _call_with_one_retry("transcribe", _make_call(), f"doubt={doubt_id[:8]}",
-                                  usage_acc, service="snap_transcribe")
+    # One call per question, in parallel, when the page is numbered and holds
+    # more than one of them. The single whole-page call is dominated by how
+    # many output tokens it has to generate — 10.5s for three questions on a
+    # real submission — and that work divides cleanly: each slice of the OCR
+    # text between two question numbers contains exactly one question and its
+    # options. Three ~1/3-size calls run concurrently instead of one long one.
+    #
+    # Falls back to the whole-page call whenever the split is not obviously
+    # safe: an unnumbered page, a single question, or slices that came out
+    # empty. A mis-split would hand the model half a question.
+    parsed = None
+    slices = _slice_by_question(page["text"], wanted_numbers) if len(wanted_numbers) > 1 else {}
+    if slices and len(slices) == len(wanted_numbers):
+        parsed = _structure_in_parallel(
+            client, system_prompt, slices, wanted_numbers, doubt_id, usage_acc)
+
+    if parsed is None:
+        parsed = _call_with_one_retry("transcribe", _make_call(), f"doubt={doubt_id[:8]}",
+                                      usage_acc, service="snap_transcribe")
 
     # Verify the model returned the questions it was told to. Costs nothing when
     # it complied, and when it did not, the student otherwise silently gets the
@@ -720,7 +742,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         questions.append({
             "n": idx,
             "text": text,
-            "subject": (item.get("subject") or "unknown"),
+            "subject": _clean_subject(item.get("subject")),
             "topic": item.get("topic") or None,
             # The printed-answer strip applies here too: `stem` is what the
             # solver reasons from, so a key left in it is the exact leak
@@ -799,18 +821,164 @@ def _question_numbers_in(ocr_text: str) -> List[int]:
     return seen
 
 
+def _clean_subject(raw: Any) -> str:
+    """One of SUBJECTS, title-cased, or "unknown".
+
+    Guards the subject chip and the /doubts subject filter against whatever the
+    structurer put in the field. Measured: a per-question call echoed the
+    schema's placeholder, so the value was the literal string
+    "Physics|Chemistry|Maths|Biology|unknown". Anything not recognised is
+    "unknown", which the pipeline already treats as "no subject read".
+    """
+    value = (raw or "").strip()
+    lowered = value.lower()
+    if lowered in SUBJECTS:
+        return value.title()
+    # Prefix matching ONLY on something that is plausibly one subject word.
+    # Without this guard the placeholder above starts with "phys" and files
+    # every such question under Physics — a wrong answer to "which subject",
+    # which is worse than admitting we do not know.
+    if len(value) > 16 or any(sep in value for sep in "|,/;"):
+        return "unknown"
+    for prefix, subject in (("math", "Maths"), ("bio", "Biology"),
+                            ("chem", "Chemistry"), ("phys", "Physics")):
+        if lowered.startswith(prefix):
+            return subject
+    return "unknown"
+
+
+def _slice_by_question(ocr_text: str, wanted: List[int]) -> Dict[int, str]:
+    """The slice of OCR text belonging to each wanted question number.
+
+    Each slice runs from that question's printed number to the start of the
+    next one, so it carries the stem and its options and nothing else. Returns
+    {} if any wanted number is missing or a slice comes out too short to be a
+    question — the caller then structures the whole page in one call rather
+    than risk handing the model half a question.
+    """
+    if not ocr_text or not wanted:
+        return {}
+    marks = [(int(m.group(1)), m.start()) for m in _QUESTION_NUMBER_RE.finditer(ocr_text)]
+    if not marks:
+        return {}
+    starts = {}
+    for num, pos in marks:
+        starts.setdefault(num, pos)
+    ordered = sorted(starts.values())
+
+    out: Dict[int, str] = {}
+    for num in wanted:
+        if num not in starts:
+            return {}
+        begin = starts[num]
+        after = [p for p in ordered if p > begin]
+        chunk = ocr_text[begin:after[0]] if after else ocr_text[begin:]
+        if len(chunk.strip()) < 25:
+            return {}
+        out[num] = chunk.strip()
+    return out
+
+
+def _structure_in_parallel(client, system_prompt: str, slices: Dict[int, str],
+                           wanted: List[int], doubt_id: str,
+                           usage_acc: Optional[Dict[str, int]]) -> Optional[Dict[str, Any]]:
+    """Structures each question's own slice concurrently; merges in page order.
+
+    Returns None if any one of them fails, so the caller falls back to the
+    single whole-page call rather than serving the student a partial page.
+    """
+    results: Dict[int, Any] = {}
+    usages = {n: {"input": 0, "output": 0} for n in wanted}
+    t0 = time.time()
+
+    def one(num: int) -> None:
+        def call(corrective: Optional[str] = None):
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": (
+                    f"Return EXACTLY ONE question: Q{num}, with `number` set to "
+                    f"{num}. The text below is that question and its options. If "
+                    f"part of it cannot be read, still return it with "
+                    f"`legible: false` and a `note` — do not return an empty "
+                    f"list.\n\nOCR TEXT:\n{slices[num]}"
+                )},
+            ]
+            if corrective:
+                messages.append({"role": "user", "content": corrective})
+            return client.chat.completions.create(
+                model=MODEL_TRANSCRIBE,
+                messages=messages,
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                max_tokens=2048,
+                timeout=TRANSCRIBE_TIMEOUT_S,
+            )
+        try:
+            got = _call_with_one_retry("transcribe", call,
+                                       f"doubt={doubt_id[:8]} q{num}", usages[num],
+                                       service="snap_transcribe")
+            qs = got.get("questions")
+            if isinstance(qs, list) and qs:
+                item = qs[0]
+                if isinstance(item, dict):
+                    item.setdefault("number", num)
+                    results[num] = item
+        except SnapError as err:
+            logger.warning("[SNAP STRUCTURE] doubt=%s q%d slice failed: %s",
+                           doubt_id[:8], num, err)
+
+    with ThreadPoolExecutor(max_workers=len(wanted)) as pool:
+        list(pool.map(one, wanted))
+
+    if usage_acc is not None:
+        for u in usages.values():
+            usage_acc["input"] = usage_acc.get("input", 0) + u["input"]
+            usage_acc["output"] = usage_acc.get("output", 0) + u["output"]
+
+    if len(results) != len(wanted):
+        logger.warning(
+            "[SNAP STRUCTURE] doubt=%s parallel structuring got %d/%d — falling "
+            "back to one whole-page call",
+            doubt_id[:8], len(results), len(wanted),
+        )
+        return None
+
+    logger.info(
+        "[SNAP STRUCTURE] doubt=%s structured %d questions in parallel in %dms "
+        "(one call each, instead of one call for the page)",
+        doubt_id[:8], len(wanted), int((time.time() - t0) * 1000),
+    )
+    return {"questions": [results[n] for n in wanted]}
+
+
 def _returned_numbers(raw_questions: Any) -> List[int]:
     """The question numbers the structurer actually returned, in its own order.
 
-    Read from the stem/text it echoed back, which keeps the printed "Q64."
-    prefix. [] when the page was not numbered or the model dropped the prefix —
-    in which case the caller has nothing to compare and lets the read stand.
+    Prefers the explicit `number` field. Reading it off the stem instead was a
+    silent hole: the structurer strips the printed "Q51." label from the stem —
+    correctly, it is not part of the question — so this returned [] on every
+    real response, and the caller's `if got and got != wanted` check could
+    never fire. The selection worked in production because the INSTRUCTION
+    names the questions, not because anything verified it.
+
+    Still falls back to the stem for a response that predates the field.
+    [] when the page carries no numbers at all, which the caller reads as
+    "nothing to compare" and lets the read stand.
     """
     if not isinstance(raw_questions, list):
         return []
     numbers: List[int] = []
     for item in raw_questions:
         if not isinstance(item, dict):
+            continue
+        raw = item.get("number")
+        if isinstance(raw, bool):
+            raw = None
+        if isinstance(raw, (int, float)):
+            numbers.append(int(raw))
+            continue
+        if isinstance(raw, str) and raw.strip().lstrip("Qq.").strip().isdigit():
+            numbers.append(int(raw.strip().lstrip("Qq.").strip()))
             continue
         head = ((item.get("stem") or item.get("text") or "") or "").lstrip()
         match = _QUESTION_NUMBER_RE.match(head) or _QUESTION_NUMBER_RE.search(head[:40])
