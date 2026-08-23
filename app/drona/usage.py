@@ -51,13 +51,31 @@ _WARNED_UNPRICED: set = set()
 _RECORD_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="llm-usage")
 
 
+def _model_slug(model: str) -> str:
+    return re.sub(r"[^A-Z0-9]+", "_", model.upper())
+
+
 def _env_key(model: str) -> str:
-    return "DEEPSEEK_PRICE_" + re.sub(r"[^A-Z0-9]+", "_", model.upper())
+    """The name to TELL people to set. LLM_PRICE_* reads better now that the
+    priced models include OpenAI's — DEEPSEEK_PRICE_GPT_4O_MINI is a confusing
+    thing to find in an env file."""
+    return "LLM_PRICE_" + _model_slug(model)
+
+
+def _env_keys(model: str) -> tuple:
+    """Both accepted names, preferred first. DEEPSEEK_PRICE_* stays supported
+    because it is what is already configured in deployed environments."""
+    slug = _model_slug(model)
+    return ("LLM_PRICE_" + slug, "DEEPSEEK_PRICE_" + slug)
 
 
 def price_for(model: str) -> Optional[Dict[str, float]]:
     """Per-million-token prices for a model, or None when unconfigured."""
-    raw = os.getenv(_env_key(model))
+    raw = None
+    for key in _env_keys(model):
+        raw = os.getenv(key)
+        if raw:
+            break
     if not raw:
         return None
     out: Dict[str, float] = {}
@@ -87,13 +105,26 @@ def is_peak(when: Optional[datetime] = None) -> bool:
     return any(start <= t.hour < end for start, end in _PEAK_WINDOWS_UTC)
 
 
+def has_time_of_day_pricing(model: str) -> bool:
+    """Whether this provider discounts by the clock. ONLY DeepSeek does.
+
+    The halving below was written when DeepSeek was the only priced model and
+    was applied to every model unconditionally. OpenAI bills one flat rate, so
+    pricing gpt-4o-mini under that rule would have recorded its cost at half
+    for most of the day and all weekend — a wrong number reported confidently,
+    which is the exact failure this module's docstring warns about.
+    """
+    return model.lower().startswith("deepseek")
+
+
 def cost_for(model: str, input_tokens: int, cache_hit_tokens: int,
              output_tokens: int, when: Optional[datetime] = None) -> Optional[float]:
     """USD for one call, or None when the model has no configured price.
 
-    Cached input is billed separately by DeepSeek, so it is subtracted from the
-    input count rather than double-counted. Configured prices are peak rates;
-    a call made off-peak is billed at half, and is recorded that way.
+    Cached input is billed separately, so it is subtracted from the input count
+    rather than double-counted. For DeepSeek the configured prices are PEAK
+    rates and an off-peak call is recorded at half; every other provider bills
+    one flat rate and is costed as configured, whatever the clock says.
     """
     prices = price_for(model)
     if not prices:
@@ -101,12 +132,15 @@ def cost_for(model: str, input_tokens: int, cache_hit_tokens: int,
             _WARNED_UNPRICED.add(model)
             logger.warning(
                 f"[USAGE] no price configured for {model!r} - set {_env_key(model)} "
-                f"(USD per 1M tokens at PEAK rate, e.g. 'in=1.32,cached=0.044,out=3.96'). "
+                f"(USD per 1M tokens, e.g. 'in=0.15,cached=0.075,out=0.60'; "
+                f"for DeepSeek give the PEAK rate — off-peak is halved for you). "
                 f"Tokens are still recorded; cost_usd stays NULL."
             )
         return None
     fresh_in = max(0, (input_tokens or 0) - (cache_hit_tokens or 0))
-    rate = 1.0 if is_peak(when) else OFF_PEAK_MULTIPLIER
+    rate = 1.0
+    if has_time_of_day_pricing(model) and not is_peak(when):
+        rate = OFF_PEAK_MULTIPLIER
     return round(
         rate * (
             fresh_in / 1_000_000 * prices.get("in", 0.0)
