@@ -28,17 +28,60 @@ def at(day: int, hour: int) -> datetime:
 # ── Rule 2: an unpriced call is NULL, not zero ───────────────────────────────
 
 def test_an_unconfigured_model_costs_none_not_zero(monkeypatch):
+    # BOTH names must go: a price can now be set as LLM_PRICE_* (preferred) or
+    # DEEPSEEK_PRICE_* (what deployed environments already carry). Clearing
+    # only one left the other configured, so this asserted "unpriced" against a
+    # model that was still priced.
+    monkeypatch.delenv("LLM_PRICE_DEEPSEEK_V4_PRO", raising=False)
     monkeypatch.delenv("DEEPSEEK_PRICE_DEEPSEEK_V4_PRO", raising=False)
     # Zero would read as "this call was free". It was not free; it was unpriced.
     assert cost_for("deepseek-v4-pro", 10_000, 0, 1_000) is None
 
 
 def test_a_malformed_price_is_unpriced_rather_than_partially_applied(monkeypatch):
-    monkeypatch.setenv("DEEPSEEK_PRICE_DEEPSEEK_V4_PRO", "in=notanumber,out=3.96")
+    monkeypatch.delenv("DEEPSEEK_PRICE_DEEPSEEK_V4_PRO", raising=False)
+    monkeypatch.setenv("LLM_PRICE_DEEPSEEK_V4_PRO", "in=notanumber,out=3.96")
     # Half a price table produces a confidently wrong number, which rule 2
     # exists to prevent. Refuse the whole entry.
     assert price_for("deepseek-v4-pro") is None
     assert cost_for("deepseek-v4-pro", 10_000, 0, 1_000) is None
+
+
+def test_either_env_name_prices_a_model(monkeypatch):
+    """LLM_PRICE_* is preferred; DEEPSEEK_PRICE_* still works.
+
+    Deployed environments were configured under the old name before OpenAI
+    models were priced, and DEEPSEEK_PRICE_GPT_4O_MINI is a confusing thing to
+    ask anyone to set. Both resolve; the new name wins when both are present.
+    """
+    monkeypatch.delenv("LLM_PRICE_DEEPSEEK_V4_PRO", raising=False)
+    monkeypatch.setenv("DEEPSEEK_PRICE_DEEPSEEK_V4_PRO", "in=1.32,cached=0.044,out=3.96")
+    assert price_for("deepseek-v4-pro")["in"] == 1.32
+    monkeypatch.setenv("LLM_PRICE_DEEPSEEK_V4_PRO", "in=9.99,cached=1.0,out=9.99")
+    assert price_for("deepseek-v4-pro")["in"] == 9.99
+
+
+def test_openai_is_not_given_deepseeks_off_peak_discount(monkeypatch):
+    """Only DeepSeek discounts by the clock.
+
+    The halving was applied to every model, because DeepSeek was the only one
+    priced. Pricing gpt-4o-mini under that rule recorded it at half for most of
+    the day and all weekend — a confidently wrong number, which is the failure
+    this module exists to prevent.
+    """
+    from datetime import datetime, timezone
+    monkeypatch.setenv("LLM_PRICE_GPT_4O_MINI", "in=0.15,cached=0.075,out=0.60")
+    monkeypatch.setenv("LLM_PRICE_DEEPSEEK_V4_PRO", "in=1.32,cached=0.044,out=3.96")
+    peak = datetime(2026, 8, 24, 7, 0, tzinfo=timezone.utc)   # Monday, in-window
+    off = datetime(2026, 8, 23, 20, 0, tzinfo=timezone.utc)   # Sunday, always off
+
+    mini_peak = cost_for("gpt-4o-mini", 10_000, 0, 5_000, when=peak)
+    mini_off = cost_for("gpt-4o-mini", 10_000, 0, 5_000, when=off)
+    assert mini_peak == mini_off, "OpenAI bills one flat rate at any hour"
+
+    pro_peak = cost_for("deepseek-v4-pro", 10_000, 0, 5_000, when=peak)
+    pro_off = cost_for("deepseek-v4-pro", 10_000, 0, 5_000, when=off)
+    assert pro_off == pytest.approx(pro_peak / 2), "DeepSeek halves off-peak"
 
 
 # ── Peak windows ─────────────────────────────────────────────────────────────
