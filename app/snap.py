@@ -424,6 +424,26 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             doubt_id[:8], page["confidence"],
         )
 
+    # `page_confidence` is Mathpix's verdict on the read AS A WHOLE, and it was
+    # being stored and never looked at. It is the signal for a PARTIAL read,
+    # which confidence_rate cannot see: a screenshot of a whole browser window
+    # scored confidence_rate 0.9122 (the characters it did read were crisp)
+    # against page_confidence 0.0313, and it had found one question out of six.
+    # Everything downstream then behaved correctly on a fragment of the page,
+    # which is what makes this failure so confusing from the outside: no gate
+    # fires, the student just silently gets the wrong question solved.
+    partial_read = (page.get("page_confidence") is not None
+                    and page["page_confidence"] < 0.25)
+    if partial_read:
+        logger.warning(
+            "[SNAP TRANSCRIBE] doubt=%s PARTIAL READ SUSPECTED: page_confidence "
+            "%.4f (confidence_rate %.4f, %d chars) — Mathpix is not confident it "
+            "read the whole page, so questions above/below what it found may be "
+            "missing entirely",
+            doubt_id[:8], page["page_confidence"], page["confidence"] or -1,
+            len(page["text"]),
+        )
+
     # 2. Structure. Text only — no image — so the maths cannot be re-read wrong.
     # Timed separately from the OCR above: `transcribe_ms` used to be the sum of
     # both, so a slow submission gave no clue whether Mathpix or the structuring
@@ -459,8 +479,9 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                 f"and do not skip one because it looks hard, has a diagram, or "
                 f"has options you cannot read — a question you cannot fully read "
                 f"is still returned, with `legible: false` and a `note` saying "
-                f"what was unclear. Say in the top-level `note` that the rest of "
-                f"the page was not read.{extra}"
+                f"what was unclear. Only mention unread questions in the "
+                f"top-level `note` if the text below actually contains more than "
+                f"these {len(wanted_numbers)}.{extra}"
             )
         return (
             f"Return the FIRST {max_questions} question(s) on this page, "
@@ -572,6 +593,26 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             f"first {max_questions}."
         )
         raw_questions = raw_questions[:max_questions]
+
+    # Say so when the page was probably only partly read. Silently answering
+    # whatever fragment came back is the worst outcome: the student framed six
+    # questions, got the last one solved, and nothing on screen suggested the
+    # other five were never seen — it reads as the app ignoring them on
+    # purpose. This replaces any model-written note, which in that situation
+    # said "the rest of the page was not read" as though it were a decision.
+    if partial_read and len(raw_questions) < max_questions:
+        note = (
+            f"Monk could only make out {len(raw_questions)} question"
+            f"{'' if len(raw_questions) == 1 else 's'} on that photo, and there "
+            "may be more it could not read. If the picture holds a whole page, "
+            "crop tighter — a photo of just the questions you want reads far "
+            "better than a full screen."
+        )
+        logger.warning(
+            "[SNAP TRANSCRIBE] doubt=%s telling the student the read looks "
+            "partial (%d question(s) from a low-confidence page)",
+            doubt_id[:8], len(raw_questions),
+        )
 
     questions: List[Dict[str, Any]] = []
     for idx, item in enumerate(raw_questions, 1):

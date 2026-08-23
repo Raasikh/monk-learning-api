@@ -352,6 +352,56 @@ def test_legacy_text_only_response_still_reads(monkeypatch):
     assert q["options"]
 
 
+def test_partial_page_read_is_declared_not_hidden(monkeypatch):
+    """A page Mathpix only half-read must SAY so, not silently answer a scrap.
+
+    Real failure: a full-window screenshot of six questions came back with
+    confidence_rate 0.9122 (the characters it did read were crisp) but
+    page_confidence 0.0313, and only Q56 was found. Every gate downstream then
+    behaved correctly on one sixth of the page, so nothing fired and the
+    student was left thinking the other five had been ignored on purpose.
+    """
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: {
+        "text": "Q56. Given below are two statements :\n(1) a (2) b (3) c (4) d\n",
+        "confidence": 0.9122, "page_confidence": 0.0313,
+        "diagram_regions": 0, "ocr_ms": 2905,
+    })
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "stem": "Q56. Given below are two statements :",
+        "question_type": "single_correct", "legible": True,
+        "options": [{"label": "1", "text": "a"}, {"label": "2", "text": "b"},
+                    {"label": "3", "text": "c"}, {"label": "4", "text": "d"}],
+    }], "note": "The rest of the page was not read."}))
+
+    read = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)
+    print(f"  note={read['note']!r}")
+    assert read["note"], "a partial read must carry a note"
+    # The model's confident-sounding note must not survive: it framed a failed
+    # read as a deliberate one.
+    assert read["note"] != "The rest of the page was not read."
+    assert "could not read" in read["note"] or "could only make out" in read["note"]
+    assert "crop" in read["note"].lower()
+
+
+def test_good_page_read_gets_no_partial_warning(monkeypatch):
+    """A confident read must not be labelled partial — that would cry wolf on
+    every normal snap."""
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: {
+        "text": "Q56. A question here?\n(1) a (2) b (3) c (4) d\n",
+        "confidence": 0.99, "page_confidence": 0.98,
+        "diagram_regions": 0, "ocr_ms": 100,
+    })
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "stem": "Q56. A question here?",
+        "question_type": "single_correct", "legible": True,
+        "options": [{"label": "1", "text": "a"}, {"label": "2", "text": "b"},
+                    {"label": "3", "text": "c"}, {"label": "4", "text": "d"}],
+    }]}))
+    read = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)
+    print(f"  note={read['note']!r}")
+    assert not read["note"], f"a clean read should carry no note, got {read['note']!r}"
+
+
 def test_page_question_numbers_are_read_in_order():
     """The page's printed numbers drive selection, so they must be read right."""
     ocr = (
