@@ -30,7 +30,7 @@ from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.json_utils import assert_no_forbidden_keys, parse_tutor_json, strip_fences
-from app.drona.persona import AUDIO_UNCLEAR, UNDERSTANDING_CHIPS, chips_for, copy_for, normalize_language, persona_for
+from app.drona.persona import AUDIO_UNCLEAR, UNDERSTANDING_CHIPS, chips_for, copy_for, failure_speech, normalize_language, persona_for
 
 logger = logging.getLogger("drona.scoped_turn")
 
@@ -239,7 +239,7 @@ async def process_scoped_turn_stream(
         logger.error(f"{stag} Error during LLM turn: {e}")
         turn_failed = True
         raw_response_text = json.dumps({
-            "speech": copy_for(AUDIO_UNCLEAR, language),
+            "speech": failure_speech(language, utterance),
             "board_events": [],
             "phase_request": phase_in,
             "turn_failed": True,
@@ -269,7 +269,7 @@ async def process_scoped_turn_stream(
             logger.error(f"{stag} Second JSON parse failure: {retry_err}")
             turn_failed = True
             parsed_json = {
-                "speech": copy_for(AUDIO_UNCLEAR, language),
+                "speech": failure_speech(language, utterance),
                 "board_events": [],
                 "phase_request": phase_in,
                 "turn_failed": True,

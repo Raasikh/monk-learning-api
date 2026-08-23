@@ -4,7 +4,7 @@ import json
 import time
 import asyncio
 import logging
-from typing import Dict, Any, AsyncGenerator, List, NamedTuple, Optional
+from typing import Dict, Any, AsyncGenerator, List, NamedTuple, Optional, Tuple
 from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
@@ -22,6 +22,7 @@ from app.drona.json_utils import (
 )
 from app.drona.persona import (
     AUDIO_UNCLEAR,
+    failure_speech,
     QUESTION_STEM,
     PROCEDURAL_CHIPS,
     UNDERSTANDING_CHIPS,
@@ -38,6 +39,51 @@ logger = logging.getLogger("drona.tutor")
 # A segment ends with a short quiz on what was just taught. Every answer moves
 # on — right or wrong — and only the last question closes the segment.
 QUIZ_QUESTIONS_PER_SEGMENT = 3
+
+# Words that make one diagram template obviously the right one, checked against
+# the turn's own content. The trigger table in prompts/tutor.md alone got a
+# diagram on roughly half of the turns that clearly wanted one — a real
+# Trigonometry turn with a derivation and a real dipole turn with forces both
+# produced pure text. A general rule the model must notice competes with the
+# much louder "mirror every sentence on the board" instruction next to it;
+# naming the ONE template that fits THIS turn does not.
+#
+# Ordered: the first match wins, so the more specific cue is listed first.
+_DIAGRAM_CUES: List[Tuple[str, str]] = [
+    (r"free[- ]body|forces? (?:acting|on)|normal force|friction|tension|incline"
+     r"|dipole|torque on|equilibrium of", "free_body_diagram"),
+    (r"resolv\w+|component[s]? of (?:a )?(?:vector|force)|x[- ]component|y[- ]component"
+     r"|vector addition|projectile", "vector_resolution"),
+    (r"\blens\b|\bmirror\b|image form|ray diagram|refract|focal length|optical instrument", "ray_diagram"),
+    (r"circuit|resistor|capacitor|\bemf\b|kirchhoff|battery|in series|in parallel"
+     r"|wheatstone|potentiometer", "circuit_diagram"),
+    # comparison_table sits ABOVE the plot: "Ideal vs Real Gases" is a
+    # comparison, not a graph, and a bare "vs" is far more often shorthand for
+    # "compared with" than for a plotted axis pair. "versus" spelled out
+    # ("P versus V") stays a plot cue.
+    (r"compare|comparison|difference between|ideal .*real|contrast|distinguish|\bvs\b", "comparison_table"),
+    (r"graph|versus|curve|plot|isotherm|characteristic|varies with|as a function of", "labeled_axes_plot"),
+    (r"deriv\w+|prove\b|step[- ]by[- ]step|substitut\w+|rearrang\w+|identit\w+"
+     r"|\btheorem\b|expansion|formula for", "boxed_derivation"),
+    (r"cycle|pathway|sequence|stages|process\b|steps in|mechanism|classification"
+     r"|radiation|reproduction|division|life cycle", "process_flow"),
+]
+
+
+def suggest_diagram_template(*texts: str) -> Optional[str]:
+    """The one template this turn's content clearly calls for, if any.
+
+    Deliberately conservative: no match means no suggestion, and the model is
+    still free to pick a different template or none at all. This only removes
+    the case where a diagram obviously belonged and none appeared.
+    """
+    blob = " ".join(t for t in texts if t).lower()
+    if not blob:
+        return None
+    for pattern, template in _DIAGRAM_CUES:
+        if re.search(pattern, blob):
+            return template
+    return None
 
 # user_id -> first name. A display name effectively never changes, and this is
 # read on every turn, so it is not worth a DB round trip each time.
@@ -491,6 +537,31 @@ async def process_tutor_turn_stream(
     # next question was "what is the dimensional formula of force?". Naming the
     # specific strings that are off-limits is far harder to ignore than stating
     # the principle, and the items are right here at assembly time.
+    # Name the template this turn's own content calls for, rather than relying
+    # on the model to notice the general trigger table. Measured: with the
+    # table alone, a Trigonometry derivation and a dipole-forces turn both came
+    # back as pure text.
+    _diagram_hint = suggest_diagram_template(
+        curr_segment.get("objective") or "",
+        curr_segment.get("teaching_notes") or "",
+        " ".join(assigned_items_text),
+        utterance or "",
+    )
+    diagram_directive = ""
+    if _diagram_hint:
+        diagram_directive = (
+            f"\n\nDIAGRAM FOR THIS TURN: this content calls for `{_diagram_hint}`.\n"
+            f"Emit ONE board_event of type \"diagram\" with template "
+            f"\"{_diagram_hint}\" and the params that template takes (Rule 3), "
+            f"tied by `seq` to the sentence that introduces it.\n"
+            f"This is IN ADDITION to your normal board lines, not instead of "
+            f"them — the headings, statements and formulas your speech mirrors "
+            f"must still be there. A board that is only a picture leaves the "
+            f"student nothing to read back. Skip the diagram only if the "
+            f"content genuinely does not fit that template; then pick a "
+            f"template that does, or emit none.\n"
+        )
+
     _visible = [t for t in (assigned_items_text + current_segment_board_events) if t and t.strip()]
     board_answer_ban = ""
     if _visible:
@@ -617,7 +688,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
-{board_answer_ban}
+{board_answer_ban}{diagram_directive}
 """
     else:
         checkpoint_directive = f"""
@@ -640,7 +711,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
-{board_answer_ban}
+{board_answer_ban}{diagram_directive}
 
 For reference, this segment's authored checkpoint is:
   "{checkpoint.get('question') or ''}"
@@ -939,7 +1010,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             })
         else:
             raw_response_text = json.dumps({
-                "speech": copy_for(AUDIO_UNCLEAR, language),
+                "speech": failure_speech(language, utterance),
                 "board_events": [],
                 "phase_request": phase_in,
                 "turn_failed": True
@@ -973,7 +1044,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             logger.error(f"Second JSON parse failure: {retry_err}")
             turn_failed = True
             parsed_json = {
-                "speech": copy_for(AUDIO_UNCLEAR, language),
+                "speech": failure_speech(language, utterance),
                 "board_events": [],
                 "phase_request": phase_in,
                 "turn_failed": True
@@ -1034,7 +1105,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 auto_events.append({"seq": idx, "type": event_type, "text": text_str, "emphasis": "normal"})
         parsed_json["board_events"] = auto_events
 
-    speech_out = parsed_json.get("speech") or copy_for(AUDIO_UNCLEAR, language)
+    speech_out = parsed_json.get("speech") or failure_speech(language, utterance)
 
     # A turn that offers answer chips MUST voice the question they answer.
     # Measured failure: turns ended on a transition ("Next, we'll see how this

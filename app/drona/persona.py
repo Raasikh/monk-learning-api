@@ -104,6 +104,29 @@ AUDIO_UNCLEAR = {
     "english": "I didn't quite catch that — could you say it once more?",
 }
 
+# For a turn the SERVER failed on, where the student said nothing to mishear.
+#
+# A teaching turn is auto-started: the student is listening, not talking. Using
+# AUDIO_UNCLEAR there told them their audio was unclear when they had not
+# spoken — blaming them for a server-side failure, and inviting them to repeat
+# something they never said. This owns the failure instead and moves on, which
+# is also what a real teacher does when they lose their place.
+TURN_INTERRUPTED = {
+    "hinglish": "Ek second — main apni baat ka sira chhod baitha. Chalo, wahin se dubara shuru karte hain.",
+    "english": "One moment — I lost my thread there. Let me pick that up again.",
+}
+
+
+def failure_speech(language: object, utterance: object) -> str:
+    """The right apology for whichever thing actually failed.
+
+    Only blame the audio when there WAS audio: if the student said something we
+    could not parse, asking them to repeat it is correct. If they said nothing,
+    the failure is ours and the message should say so.
+    """
+    table = AUDIO_UNCLEAR if str(utterance or "").strip() else TURN_INTERRUPTED
+    return copy_for(table, language)
+
 # Last-resort stem when the tutor offers answer chips but never voices a
 # question. Better a generic question than three orphaned options on screen.
 QUESTION_STEM = {
