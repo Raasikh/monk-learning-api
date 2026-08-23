@@ -9,6 +9,7 @@ the transcriber said was unclear, a failed solve is stored as 'failed' with its
 reason, and both are reported to the client with the stage that failed.
 """
 import logging
+import time
 import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
@@ -531,6 +532,13 @@ async def snap_doubt_stream(
     def stream():
         meta: Dict[str, Any] = {}
         emitted = 0
+        # Rows are inserted on each "question" event, which all arrive BEFORE
+        # the "summary" that carries the submission's latency — so reading it
+        # off `meta` wrote NULL into every streamed row, and the streaming path
+        # (the one students actually use) had no latency recorded at all. This
+        # stamps each row with how long the student actually waited to see THAT
+        # question answered, which is the number worth having per row anyway.
+        started_at = time.time()
         try:
             for kind, item in iter_snapped_questions(image_bytes, mime,
                                                      submission_id, allowed):
@@ -554,6 +562,7 @@ async def snap_doubt_stream(
                     yield event(kind, item)
                 elif kind == "question":
                     row = _row_from_question(item, user_id, submission_id, meta)
+                    row["latency_ms"] = int((time.time() - started_at) * 1000)
                     remedy = row.pop("_remedy")
                     try:
                         supabase.table("doubts").insert([row]).execute()

@@ -277,6 +277,58 @@ def test_questions_solve_concurrently(monkeypatch):
     assert out["solved_count"] == 2
 
 
+def test_questions_are_sent_before_any_solving(monkeypatch):
+    """The question reaches the student before the first solve starts.
+
+    The page used to have nothing to show for the whole ~20-30s solve, then
+    painted question and answer together at the end. The transcribed question
+    is known the moment OCR/structuring finishes, so it goes out then — with
+    no answer attached, which is what makes it safe to send early.
+    """
+    monkeypatch.setattr(snap, "transcribe_questions", lambda *a, **k: {
+        "questions": [
+            {"n": 1, "text": "q1 full", "stem": "q1 stem", "legible": True,
+             "options": [{"label": "A", "text": "opt"}],
+             "question_type": "single_correct", "subject": "Maths", "topic": "Algebra"},
+        ],
+        "note": None, "ocr_confidence": 0.99,
+    })
+
+    solve_started = threading.Event()
+
+    def fake_solve_question(question, doubt_id="-", usage_acc=None, on_event=None):
+        solve_started.set()
+        return {"answer": "a", "option_labels": [], "steps": [{"n": 1, "text": "x"}],
+                "key_idea": None, "subject": None, "topic": None}
+
+    monkeypatch.setattr(snap, "solve_question", fake_solve_question)
+
+    gen = snap.iter_snapped_questions(b"img", "image/jpeg", "d1", 1)
+    kinds = []
+    payload = None
+    for kind, item in gen:
+        kinds.append(kind)
+        if kind == "questions_read":
+            payload = item
+            # Nothing may have been solved yet at this point — that is the
+            # whole guarantee this test exists for.
+            assert not solve_started.is_set(), \
+                "a solve had already started before the question was sent"
+            break
+
+    print(f"  events up to questions_read: {kinds}")
+    assert kinds == ["meta", "questions_read"]
+    q = payload["questions"][0]
+    print(f"  payload: stem={q['stem']!r} options={q['options']} chapter={q['chapter']!r}")
+    assert q["stem"] == "q1 stem"
+    assert q["options"] == [{"label": "A", "text": "opt"}]
+    assert q["chapter"] == "Algebra"
+    # No answer may ride along early, under any key.
+    assert not ({"answer", "steps", "key_idea", "option_labels", "status"} & set(q)), \
+        f"an answer field leaked into the pre-solve payload: {sorted(q)}"
+    gen.close()
+
+
 def test_background_question_already_done_skips_replay(monkeypatch):
     """A question solving in the background can finish before its turn comes.
 
