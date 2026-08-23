@@ -522,6 +522,12 @@ async def snap_doubt_stream(
 
     allowed = min(MAX_QUESTIONS, remaining)
     submission_id = str(uuid.uuid4())
+    logger.info(
+        "[SNAP REQUEST] doubt=%s user=%s STREAM upload=%.1fKB mime=%s "
+        "quota %d/%d used, %d left -> reading %d",
+        submission_id[:8], user_id[:8], len(image_bytes) / 1024, mime,
+        used_today, DAILY_QUESTION_LIMIT, remaining, allowed,
+    )
     # No upload: the photo is read (Mathpix, then gpt-4o for any diagram) and
     # then discarded. The transcript IS the record; a second copy of the image
     # adds storage cost with no benefit once the question is captured as text.
@@ -564,11 +570,21 @@ async def snap_doubt_stream(
                     row = _row_from_question(item, user_id, submission_id, meta)
                     row["latency_ms"] = int((time.time() - started_at) * 1000)
                     remedy = row.pop("_remedy")
+                    # The DB write is on the path between the answer existing
+                    # and the student seeing it, so it is timed too — a slow
+                    # Supabase would otherwise look like a slow solve.
+                    insert_t0 = time.time()
                     try:
                         supabase.table("doubts").insert([row]).execute()
+                        logger.info(
+                            "[SNAP DB] doubt=%s q%s row=%s insert_ms=%d status=%s",
+                            submission_id[:8], row["question_index"], row["id"][:8],
+                            int((time.time() - insert_t0) * 1000), row["status"],
+                        )
                     except Exception as err:
-                        logger.error("Doubt insert failed for %s: %s",
-                                     submission_id[:8], err)
+                        logger.error("Doubt insert failed for %s (after %dms): %s",
+                                     submission_id[:8],
+                                     int((time.time() - insert_t0) * 1000), err)
                     # Count against the quota exactly what _questions_used_today
                     # counts: 'failed' is ours and free. The done event was
                     # reporting used_today + every row, so a page with one
@@ -603,8 +619,10 @@ async def snap_doubt_stream(
                 }]).execute()
             except Exception as db_err:
                 logger.error("Failed to record failed doubt: %s", db_err)
-            logger.warning("[SNAP FAILED stage=%s] doubt=%s: %s",
-                           err.stage, submission_id[:8], err)
+            logger.warning("[SNAP FAILED stage=%s reason=%s remedy=%s] doubt=%s "
+                           "after %dms: %s",
+                           err.stage, err.reason, err.remedy, submission_id[:8],
+                           int((time.time() - started_at) * 1000), err)
             yield event("error", {
                 "message": str(err), "stage": err.stage, "reason": err.reason,
                 "remedy": err.remedy, "retake_helps": err.remedy == REMEDY_RETAKE,
@@ -612,7 +630,12 @@ async def snap_doubt_stream(
             })
             return
         except Exception as err:
-            logger.error("[SNAP UNEXPECTED] doubt=%s: %s", submission_id[:8], err)
+            # exc_info: an unexpected error is the one case where the traceback
+            # is the whole story, and it was being thrown away.
+            logger.error("[SNAP UNEXPECTED] doubt=%s after %dms: %s",
+                         submission_id[:8],
+                         int((time.time() - started_at) * 1000), err,
+                         exc_info=True)
             yield event("error", {
                 "message": "Something went wrong while reading that question.",
                 "stage": "unknown", "remedy": REMEDY_OUR_SIDE,
@@ -620,11 +643,20 @@ async def snap_doubt_stream(
             })
             return
 
+        total_ms = int((time.time() - started_at) * 1000)
+        logger.info(
+            "[SNAP REQUEST] doubt=%s user=%s DONE total_ms=%d solved=%d "
+            "charged=%d quota_now=%d/%d",
+            submission_id[:8], user_id[:8], total_ms,
+            meta.get("solved_count", 0), emitted, used_today + emitted,
+            DAILY_QUESTION_LIMIT,
+        )
         yield event("done", {
             "submission_id": submission_id,
             "solved_count": meta.get("solved_count", 0),
             "questions_used_today": used_today + emitted,
             "daily_limit": DAILY_QUESTION_LIMIT,
+            "total_ms": total_ms,
         })
 
     return StreamingResponse(stream(), media_type="text/event-stream",

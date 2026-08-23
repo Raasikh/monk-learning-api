@@ -1682,10 +1682,21 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # solver reads diagram_description off the question dict — so this stays
     # sequential. It is per-page rare (only figure questions) and fast next to
     # a solve.
+    diagram_ms = 0
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
+            diagram_t0 = time.time()
             description = describe_diagram(
                 image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
+            )
+            q_diagram_ms = int((time.time() - diagram_t0) * 1000)
+            diagram_ms += q_diagram_ms
+            # This pass sits between the student seeing their question and any
+            # solve starting, so its cost is worth seeing on its own.
+            logger.info(
+                "[SNAP DIAGRAM] doubt=%s q%s diagram_ms=%d model=%s described=%s",
+                doubt_id[:8], question["n"], q_diagram_ms, MODEL_DIAGRAM,
+                bool(description),
             )
             if description:
                 question["diagram_description"] = description
@@ -1736,6 +1747,12 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         worker = _threading.Thread(target=_run, daemon=True)
         worker.start()
         threads.append(worker)
+
+    logger.info(
+        "[SNAP PIPELINE] doubt=%s launched %d concurrent solve(s) at t+%dms "
+        "(diagram_ms=%d) — wall time from here is the SLOWEST solve, not the sum",
+        doubt_id[:8], len(threads), int((time.time() - started) * 1000), diagram_ms,
+    )
 
     solved_count = 0
     first_live = True
@@ -1795,15 +1812,38 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
             logger.info("[SNAP] doubt=%s q%d not solvable: %s",
                         doubt_id[:8], question["n"], question.get("note"))
 
+        # When each question actually reached the student, measured from the
+        # start of the submission. This is the number that matches what they
+        # experienced — the per-row latency_ms the API stores.
+        logger.info(
+            "[SNAP DELIVERED] doubt=%s q%s at t+%dms status=%s",
+            doubt_id[:8], question["n"], int((time.time() - started) * 1000),
+            "solved" if question.get("solution") else
+            ("solve_failed" if question.get("solve_error") else "not_legible"),
+        )
         yield "question", question
 
     for worker in threads:
         worker.join()
 
     latency_ms = int((time.time() - started) * 1000)
+    solve_span_ms = latency_ms - transcribe_ms - diagram_ms
     logger.info(
         "[SNAP] doubt=%s solved %d/%d in %dms (transcribe %dms)",
         doubt_id[:8], solved_count, len(read["questions"]), latency_ms, transcribe_ms,
+    )
+    # The whole submission on one line. Read left to right, this is exactly
+    # where a student's wait went — and the three parts are independently
+    # actionable: ocr is Mathpix, structure and solve are ours.
+    logger.info(
+        "[SNAP BREAKDOWN] doubt=%s total=%dms = ocr %dms + structure %dms "
+        "+ diagram %dms + solve %dms | questions=%d solved=%d | "
+        "tokens transcribe(in=%d out=%d) solve(in=%d out=%d)",
+        doubt_id[:8], latency_ms, read.get("ocr_ms", 0),
+        read.get("structure_ms", 0), diagram_ms, solve_span_ms,
+        len(read["questions"]), solved_count,
+        tx_usage["input"], tx_usage["output"],
+        sv_usage["input"], sv_usage["output"],
     )
     logger.info(
         "[SNAP TOKENS] doubt=%s transcribe in=%d out=%d | solve in=%d out=%d",
@@ -1816,6 +1856,10 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         "transcriber_model": MODEL_TRANSCRIBE,
         "solver_model": MODEL_SOLVE,
         "transcribe_ms": transcribe_ms,
+        "ocr_ms": read.get("ocr_ms", 0),
+        "structure_ms": read.get("structure_ms", 0),
+        "diagram_ms": diagram_ms,
+        "solve_ms": solve_span_ms,
         "latency_ms": latency_ms,
         "usage": {"transcribe": tx_usage, "solve": sv_usage},
     }
@@ -1837,6 +1881,8 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     started = time.time()
     tx_usage: Dict[str, int] = {"input": 0, "output": 0}
     sv_usage: Dict[str, int] = {"input": 0, "output": 0}
+    logger.info("[SNAP PIPELINE] doubt=%s START non-streamed image=%.1fKB mime=%s cap=%d",
+                doubt_id[:8], len(image_bytes) / 1024, mime_type, max_questions)
     read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
                                 max_questions)
     transcribe_ms = int((time.time() - started) * 1000)
@@ -1847,10 +1893,19 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     # fails is it refused — and then honestly, as "the figure could not be made
     # out", not as "your photo is bad". Sequential: per-page rare and fast next
     # to a solve, and must finish before that question can be dispatched below.
+    diagram_ms = 0
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
+            diagram_t0 = time.time()
             description = describe_diagram(
                 image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
+            )
+            q_diagram_ms = int((time.time() - diagram_t0) * 1000)
+            diagram_ms += q_diagram_ms
+            logger.info(
+                "[SNAP DIAGRAM] doubt=%s q%s diagram_ms=%d model=%s described=%s",
+                doubt_id[:8], question["n"], q_diagram_ms, MODEL_DIAGRAM,
+                bool(description),
             )
             if description:
                 question["diagram_description"] = description
@@ -1933,9 +1988,20 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                         first.get("reason") or "unknown")
 
     latency_ms = int((time.time() - started) * 1000)
+    solve_span_ms = latency_ms - transcribe_ms - diagram_ms
     logger.info(
         "[SNAP] doubt=%s solved %d/%d in %dms (transcribe %dms)",
         doubt_id[:8], solved_count, len(read["questions"]), latency_ms, transcribe_ms,
+    )
+    logger.info(
+        "[SNAP BREAKDOWN] doubt=%s total=%dms = ocr %dms + structure %dms "
+        "+ diagram %dms + solve %dms | questions=%d solved=%d | "
+        "tokens transcribe(in=%d out=%d) solve(in=%d out=%d)",
+        doubt_id[:8], latency_ms, read.get("ocr_ms", 0),
+        read.get("structure_ms", 0), diagram_ms, solve_span_ms,
+        len(read["questions"]), solved_count,
+        tx_usage["input"], tx_usage["output"],
+        sv_usage["input"], sv_usage["output"],
     )
     logger.info(
         "[SNAP TOKENS] doubt=%s transcribe in=%d out=%d | solve in=%d out=%d",
@@ -1951,6 +2017,10 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
         "transcriber_model": MODEL_TRANSCRIBE,
         "solver_model": MODEL_SOLVE,
         "transcribe_ms": transcribe_ms,
+        "ocr_ms": read.get("ocr_ms", 0),
+        "structure_ms": read.get("structure_ms", 0),
+        "diagram_ms": diagram_ms,
+        "solve_ms": solve_span_ms,
         "latency_ms": latency_ms,
         "usage": {"transcribe": tx_usage, "solve": sv_usage},
     }
