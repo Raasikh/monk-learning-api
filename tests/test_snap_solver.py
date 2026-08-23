@@ -307,6 +307,93 @@ def test_questions_solve_concurrently(monkeypatch):
     assert out["solved_count"] == 2
 
 
+def test_page_question_numbers_are_read_in_order():
+    """The page's printed numbers drive selection, so they must be read right."""
+    ocr = (
+        "Q62. Which statement is not true for radioactive decay?\n"
+        "(1) Decay constant increases\n"
+        "Q63. The products formed are :\n"
+        "Q64. How many stereoisomers? <smiles>CC=CC(C)O</smiles>\n"
+        "(1) 1.660 g (2) 0.336 g\n"
+        "Q65. A vessel at 1000 K contains $CO_2$\n"
+    )
+    nums = snap._question_numbers_in(ocr)
+    print(f"  numbers={nums}")
+    assert nums == [62, 63, 64, 65]
+    # Option labels and stray figures must NOT be mistaken for question numbers.
+    assert 1 not in nums and 2 not in nums
+
+
+def test_unnumbered_page_yields_no_numbers():
+    """An unnumbered page falls back to 'the first N' rather than inventing
+    numbers — a wrong number list would chase questions that do not exist."""
+    nums = snap._question_numbers_in(
+        "Find the acceleration when $F = 10$ N.\n(1) 5\n(2) 2\n"
+    )
+    print(f"  numbers={nums}")
+    assert nums == []
+
+
+def test_structurer_skipping_ahead_is_corrected(monkeypatch):
+    """Naming the exact questions is checked, and a skip is corrected once.
+
+    Real failures, twice: a page of Q11-Q19 came back as Q16-Q18, and a page of
+    Q62-Q66 came back as Q64-Q66. The student framed the top of the page and
+    got its middle, which also breaks "reframe to the next three".
+    """
+    page_text = (
+        "Q62. Which statement is not true for radioactive decay?\n"
+        "(1) alpha (2) beta (3) gamma (4) delta\n"
+        "Q63. The products formed in the sequence are :\n"
+        "(1) one (2) two (3) three (4) four\n"
+        "Q64. How many stereoisomers are possible?\n"
+        "(1) 2 (2) 1 (3) 4 (4) 3\n"
+        "Q65. A vessel at 1000 K contains gas.\n"
+        "(1) 1.8 atm (2) 0.3 atm (3) 3 atm (4) 0.18 atm\n"
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": page_text, "confidence": 0.98,
+                                           "diagram_regions": 0, "ocr_ms": 100})
+
+    def q(n, opts):
+        return {"text": f"Q{n}. stem {n}", "stem": f"Q{n}. stem {n}",
+                "question_type": "single_correct", "legible": True,
+                "options": [{"label": str(i + 1), "text": t}
+                            for i, t in enumerate(opts)]}
+
+    # First response skips ahead (the bug); the correction returns the right ones.
+    wrong = json.dumps({"questions": [q(64, ["2", "1", "4", "3"]),
+                                      q(65, ["1.8 atm", "0.3 atm", "3 atm", "0.18 atm"])]})
+    right = json.dumps({"questions": [q(62, ["alpha", "beta", "gamma", "delta"]),
+                                      q(63, ["one", "two", "three", "four"])]})
+    client = stub_transcriber(monkeypatch, [wrong, right])
+
+    read = transcribe_questions(b"img", "image/jpeg", "d1", None, 2)
+    got = [qq["stem"].split(".")[0] for qq in read["questions"]]
+    print(f"  structurer calls={client.calls} -> served {got}")
+    assert client.calls == 2, "the skip should have triggered exactly one correction"
+    assert got == ["Q62", "Q63"], f"served the wrong questions: {got}"
+
+
+def test_correct_selection_costs_no_extra_call(monkeypatch):
+    """When the model complies, verification is free — no second call."""
+    page_text = ("Q62. First question here?\n(1) a (2) b (3) c (4) d\n"
+                 "Q63. Second question here?\n(1) e (2) f (3) g (4) h\n")
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": page_text, "confidence": 0.98,
+                                           "diagram_regions": 0, "ocr_ms": 100})
+    good = json.dumps({"questions": [
+        {"text": "Q62. First question here?", "stem": "Q62. First question here?",
+         "question_type": "single_correct", "legible": True,
+         "options": [{"label": "1", "text": "a"}, {"label": "2", "text": "b"},
+                     {"label": "3", "text": "c"}, {"label": "4", "text": "d"}]},
+    ]})
+    client = stub_transcriber(monkeypatch, [good])
+    transcribe_questions(b"img", "image/jpeg", "d1", None, 1)
+    print(f"  structurer calls={client.calls}")
+    assert client.calls == 1
+
+
 def test_questions_are_sent_before_any_solving(monkeypatch):
     """The question reaches the student before the first solve starts.
 

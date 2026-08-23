@@ -433,37 +433,113 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     client = _openai_client()
     system_prompt = load_prompt("snap_structure.md")
 
-    def call(corrective: Optional[str] = None):
-        messages = [
-            {"role": "system", "content": system_prompt},
-            # "At most N" alone let the model CHOOSE which N. On a JEE page
-            # holding Q11-Q19 it returned Q16, Q17 and Q18 — skipping the five
-            # above them — so the student who framed the top of the page got
-            # the middle of it back. The order is the instruction now, not just
-            # the count: the student reframes to the next three by moving down
-            # the page, which only works if "first" means first.
-            {"role": "user", "content": (
-                f"Return the FIRST {max_questions} question(s) on this page, "
-                f"reading top to bottom — not whichever {max_questions} look "
-                f"clearest or easiest. If the page holds more, return the first "
-                f"{max_questions} in page order and say so in the top-level "
-                f"`note`.\n\n"
-                f"OCR TEXT OF THE PAGE:\n{page['text']}"
-            )},
-        ]
-        if corrective:
-            messages.append({"role": "user", "content": corrective})
-        return client.chat.completions.create(
-            model=MODEL_TRANSCRIBE,
-            messages=messages,
-            response_format={"type": "json_object"},
-            temperature=0.0,
-            max_tokens=4096,
-            timeout=TRANSCRIBE_TIMEOUT_S,
+    # "The FIRST N, top to bottom" was still only a request, and the model
+    # ignored it twice on real pages: Q11-Q19 came back as Q16-Q18, and
+    # Q62-Q66 came back as Q64-Q66. When the page prints its question numbers
+    # — every JEE paper does — we can stop asking and start naming: the numbers
+    # are read out of the OCR text in code, and the model is told exactly which
+    # ones to return. That converts a preference into a checkable instruction,
+    # and the check below is what makes it stick.
+    page_numbers = _question_numbers_in(page["text"])
+    wanted_numbers = page_numbers[:max_questions]
+    if wanted_numbers:
+        logger.info(
+            "[SNAP STRUCTURE] doubt=%s page prints questions %s -> asking for %s",
+            doubt_id[:8], page_numbers, wanted_numbers,
         )
 
-    parsed = _call_with_one_retry("transcribe", call, f"doubt={doubt_id[:8]}", usage_acc,
-                                  service="snap_transcribe")
+    def _selection_instruction(extra: str = "") -> str:
+        if wanted_numbers:
+            listed = ", ".join(f"Q{n}" for n in wanted_numbers)
+            return (
+                f"This page prints questions numbered "
+                f"{', '.join(f'Q{n}' for n in page_numbers)}.\n"
+                f"Return EXACTLY these {len(wanted_numbers)}: {listed}. They are "
+                f"the first ones on the page. Do NOT return any other question, "
+                f"and do not skip one because it looks hard, has a diagram, or "
+                f"has options you cannot read — a question you cannot fully read "
+                f"is still returned, with `legible: false` and a `note` saying "
+                f"what was unclear. Say in the top-level `note` that the rest of "
+                f"the page was not read.{extra}"
+            )
+        return (
+            f"Return the FIRST {max_questions} question(s) on this page, "
+            f"reading top to bottom — not whichever {max_questions} look "
+            f"clearest or easiest. A question you cannot fully read is still "
+            f"returned, with `legible: false` and a `note`; do not silently skip "
+            f"it and take a later one instead. If the page holds more, return "
+            f"the first {max_questions} in page order and say so in the "
+            f"top-level `note`.{extra}"
+        )
+
+    def _make_call(extra: str = ""):
+        def call(corrective: Optional[str] = None):
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": (
+                    f"{_selection_instruction(extra)}\n\n"
+                    f"OCR TEXT OF THE PAGE:\n{page['text']}"
+                )},
+            ]
+            if corrective:
+                messages.append({"role": "user", "content": corrective})
+            return client.chat.completions.create(
+                model=MODEL_TRANSCRIBE,
+                messages=messages,
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                max_tokens=4096,
+                timeout=TRANSCRIBE_TIMEOUT_S,
+            )
+        return call
+
+    parsed = _call_with_one_retry("transcribe", _make_call(), f"doubt={doubt_id[:8]}",
+                                  usage_acc, service="snap_transcribe")
+
+    # Verify the model returned the questions it was told to. Costs nothing when
+    # it complied, and when it did not, the student otherwise silently gets the
+    # wrong three — which also breaks "reframe to the next three", since they
+    # cannot tell which ones were used.
+    if wanted_numbers:
+        got = _returned_numbers(parsed.get("questions"))
+        if got and got != wanted_numbers:
+            logger.warning(
+                "[SNAP STRUCTURE] doubt=%s asked for %s but got %s — correcting once",
+                doubt_id[:8], wanted_numbers, got,
+            )
+            missing = [n for n in wanted_numbers if n not in got]
+            retry_extra = (
+                f"\n\nYou returned {got}. That is wrong: you were asked for "
+                f"{wanted_numbers} and you skipped {missing}. Return "
+                f"{wanted_numbers} this time, in that order. If one of them "
+                f"cannot be fully read, return it anyway with `legible: false` "
+                f"and explain in its `note` — skipping it is not an option."
+            )
+            try:
+                retried = _call_with_one_retry(
+                    "transcribe", _make_call(retry_extra),
+                    f"doubt={doubt_id[:8]} selection", usage_acc,
+                    service="snap_transcribe",
+                )
+                retried_numbers = _returned_numbers(retried.get("questions"))
+                if retried_numbers == wanted_numbers:
+                    parsed = retried
+                    logger.info("[SNAP STRUCTURE] doubt=%s correction worked -> %s",
+                                doubt_id[:8], retried_numbers)
+                else:
+                    # Keep the first result rather than lose the submission; the
+                    # student still gets three real answers, just not the three
+                    # they framed. Loud, because it means the model is ignoring
+                    # an explicit, numbered instruction twice over.
+                    logger.error(
+                        "[SNAP STRUCTURE] doubt=%s correction FAILED too (got %s, "
+                        "wanted %s) — serving the original read",
+                        doubt_id[:8], retried_numbers, wanted_numbers,
+                    )
+            except SnapError as err:
+                logger.error("[SNAP STRUCTURE] doubt=%s correction call failed: %s",
+                             doubt_id[:8], err)
+
     structure_ms = int((time.time() - structure_t0) * 1000)
     ocr_ms = page.get("ocr_ms") or 0
     logger.info(
@@ -650,6 +726,49 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "ocr_confidence": parsed.get("_ocr_confidence"),
             "ocr_ms": parsed.get("_ocr_ms") or 0,
             "structure_ms": parsed.get("_structure_ms") or 0}
+
+
+# A printed question number at the start of a line: "Q62.", "Q 62)", "62.".
+# Anchored to a line start so an option label "(1)" or a mid-sentence number
+# cannot masquerade as one.
+_QUESTION_NUMBER_RE = re.compile(r"(?m)^[\s*_#>]*Q\s*\.?\s*(\d{1,3})\s*[.):]")
+
+
+def _question_numbers_in(ocr_text: str) -> List[int]:
+    """The question numbers the page prints, in the order they appear.
+
+    Requires the "Q" prefix: without it, "(1) 1.660 g" and stray figures in the
+    maths would be read as question numbers, which is worse than having none —
+    a wrong number list would send the selection instruction after questions
+    that do not exist. Returns [] for an unnumbered page, and the caller falls
+    back to asking for "the first N".
+    """
+    seen: List[int] = []
+    for match in _QUESTION_NUMBER_RE.finditer(ocr_text or ""):
+        n = int(match.group(1))
+        if n not in seen:
+            seen.append(n)
+    return seen
+
+
+def _returned_numbers(raw_questions: Any) -> List[int]:
+    """The question numbers the structurer actually returned, in its own order.
+
+    Read from the stem/text it echoed back, which keeps the printed "Q64."
+    prefix. [] when the page was not numbered or the model dropped the prefix —
+    in which case the caller has nothing to compare and lets the read stand.
+    """
+    if not isinstance(raw_questions, list):
+        return []
+    numbers: List[int] = []
+    for item in raw_questions:
+        if not isinstance(item, dict):
+            continue
+        head = ((item.get("stem") or item.get("text") or "") or "").lstrip()
+        match = _QUESTION_NUMBER_RE.match(head) or _QUESTION_NUMBER_RE.search(head[:40])
+        if match:
+            numbers.append(int(match.group(1)))
+    return numbers
 
 
 def _warn_if_not_page_order(questions: List[Dict[str, Any]], ocr_text: str,
