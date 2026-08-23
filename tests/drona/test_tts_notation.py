@@ -191,3 +191,30 @@ def test_stripped_tags_are_reported_for_logging():
 
 def test_text_without_tags_is_untouched_and_cheap():
     assert strip_inline_performance_tags("plain speech")[1] == []
+
+
+def test_letters_joined_by_operators_are_spelled_together():
+    # Found by rendering a real Trigonometry turn: "sine of A plus B" was
+    # voiced "sine of ay plus B" — the letter with a formula word AFTER it was
+    # spelled, its partner was not. Half-spelled is worse than either choice.
+    out = sanitize_tts_phonetics("sine of A plus B")
+    assert "ay plus bee" in out
+    assert sanitize_tts_phonetics("F equals m times a") == "ef equals em times ay"
+
+
+def test_letters_separated_by_trig_names_are_one_run():
+    out = sanitize_tts_phonetics("sine A cosine B plus cosine A sine B")
+    # Every letter spelled, or none — never a mix.
+    assert "A" not in out and "B" not in out
+    assert "ay" in out and "bee" in out
+
+
+def test_an_operator_between_a_word_and_a_letter_is_not_a_run():
+    # The guard that keeps prose safe: a run needs a single letter on BOTH
+    # sides of the separator, so the article here is untouched.
+    for line in [
+        "Take the medicine three times a day.",
+        "This happens once or twice a week.",
+        "Divide the work per a fixed rule.",
+    ]:
+        assert sanitize_tts_phonetics(line) == line

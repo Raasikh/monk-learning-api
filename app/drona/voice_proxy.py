@@ -71,8 +71,28 @@ _SINGLE = r"(?<![A-Za-z0-9'’])[A-Za-z](?![A-Za-z0-9'’])"
 # Two or more single letters in a row, separated only by spaces, commas or a
 # conjunction: "M, L, T, A aur K" or "L T". A lone letter followed by a real
 # word is prose and is left alone.
+#
+# Operator words count as separators, so "A plus B" and "F equals m times a"
+# are single runs. Without that, only the letter with a formula word AFTER it
+# was spelled and its partner was not: "sine of A plus B" was voiced as "sine
+# of ay plus B", and "F equals m times a" as "ef equals em times a" — the same
+# half-spelled inconsistency as the original M/L/T versus A/K bug, one clause
+# later. Requiring a single letter on BOTH sides is what keeps ordinary prose
+# safe: in "three times a day" the token before the operator is a word, so no
+# run starts and the article is left alone.
+#
+# Trig and log names join a run too: in "sine A cosine B" the letters are both
+# variables of the same identity, and spelling only the one next to an operator
+# gave "sine A cosine bee". These words are technical enough not to appear
+# between two lone letters in ordinary speech.
+_RUN_SEPARATOR = (
+    r"\s*,\s*"
+    r"|\s+(?:aur|and|or|ya|plus|minus|times|over|equals|by|per|upon"
+    r"|sine|sin|cosine|cos|tan|tangent|log|ln)\s+"
+    r"|\s+"
+)
 _LETTER_RUN = re.compile(
-    rf"{_SINGLE}(?:(?:\s*,\s*|\s+(?:aur|and|or|ya)\s+|\s+){_SINGLE})+"
+    rf"{_SINGLE}(?:(?:{_RUN_SEPARATOR}){_SINGLE})+"
 )
 # A single letter that is unambiguously a variable because of what sits next
 # to it: "v squared", "F equals", "[M]".

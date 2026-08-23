@@ -34,6 +34,119 @@ from app.drona.persona import AUDIO_UNCLEAR, UNDERSTANDING_CHIPS, chips_for, cop
 
 logger = logging.getLogger("drona.scoped_turn")
 
+# Chunks are retrieved once per scoped session and reused for every follow-up.
+# A scoped session is about ONE question, so the passages relevant on turn 1 are
+# still the relevant ones on turn 4 — and re-embedding the student's utterance
+# every turn would add an OpenAI round trip to each reply for no new grounding.
+# session_id -> reference block (or "" when the chapter could not be resolved).
+_GROUNDING_CACHE: Dict[str, str] = {}
+GROUNDING_CHUNKS = 5
+
+
+def _resolve_chapter_id(session: Dict[str, Any]) -> str | None:
+    """The chapter whose master PDF should ground this doubt.
+
+    Scoped sessions carry no chapter_id of their own — they are launched from a
+    question, not a chapter — so it comes from the question they were seeded
+    with. match_pdf_chunks requires a chapter filter (a null filter returns
+    nothing), so without this there is no retrieval at all.
+    """
+    if session.get("chapter_id"):
+        return session["chapter_id"]
+    qid = session.get("question_id")
+    if not qid:
+        return None
+    try:
+        rows = (
+            supabase.table("questions")
+            .select("chapter_id, chapter_name, subject")
+            .eq("id", qid).limit(1).execute().data
+        ) or []
+        if not rows:
+            return None
+        q = rows[0]
+        if q.get("chapter_id"):
+            return q["chapter_id"]
+
+        # questions.chapter_id is populated on only ~2% of the bank, but
+        # chapter_name is set on ~98% — so the name is the usable link. Matched
+        # with subject because chapter names are not unique on their own
+        # ("Probability" exists in both Class 11 and Class 12 maths).
+        name = (q.get("chapter_name") or "").strip().lower()
+        subject = (q.get("subject") or "").strip().lower()
+        if not name:
+            return None
+        for c in _chapters_by_name():
+            if c["_name"] == name and (not subject or c["_subject"] == subject):
+                return c["id"]
+        return None
+    except Exception as err:
+        logger.warning(f"Could not resolve chapter for grounding: {err}")
+        return None
+
+
+_CHAPTERS_CACHE: List[Dict[str, Any]] = []
+
+
+def _chapters_by_name() -> List[Dict[str, Any]]:
+    """All 106 chapters, normalised for name matching. Cached — this list is
+    static relative to a process lifetime and is read on every ungrounded
+    doubt."""
+    global _CHAPTERS_CACHE
+    if not _CHAPTERS_CACHE:
+        rows = supabase.table("chapters").select("id, name, subject").execute().data or []
+        _CHAPTERS_CACHE = [
+            {**r, "_name": (r.get("name") or "").strip().lower(),
+             "_subject": (r.get("subject") or "").strip().lower()}
+            for r in rows
+        ]
+    return _CHAPTERS_CACHE
+
+
+def _grounding_block(session: Dict[str, Any], seed: Dict[str, Any]) -> str:
+    """Passages from the master PDF for the question this session is about.
+
+    Doubt answers used to come from the model's own knowledge alone — the
+    pdf_chunks corpus was wired into the planner and nowhere else, so improving
+    the master content made lessons better and did nothing for doubts. This
+    puts the same corpus behind the doubt paths.
+
+    Returns "" and never raises: an ungrounded answer is the previous
+    behaviour, whereas an exception here would cost the student their reply.
+    """
+    sid = session["id"]
+    if sid in _GROUNDING_CACHE:
+        return _GROUNDING_CACHE[sid]
+
+    block = ""
+    try:
+        chapter_id = _resolve_chapter_id(session)
+        if chapter_id:
+            # The question itself is the query, not the student's utterance:
+            # follow-ups like "why?" or "explain again" carry no retrievable
+            # content, and the passages that matter are the ones about the
+            # question the whole session is scoped to.
+            query = " ".join(str(seed.get(k) or "") for k in
+                             ("question_text", "doubt_text", "stem")).strip()
+            if query:
+                from app.drona.retrieval import retrieve_pdf_chunks
+                chunks = retrieve_pdf_chunks(chapter_id, query, top_k=GROUNDING_CHUNKS)
+                if chunks:
+                    lines = ["[REFERENCE — master PDF for this chapter. Use it for accuracy;",
+                             " prefer it over recall when the two disagree. Never read it aloud verbatim.]"]
+                    for i, c in enumerate(chunks, 1):
+                        lines.append(f"Passage {i}: {(c.get('content') or '').strip()[:1200]}")
+                    block = "\n".join(lines)
+                    logger.info(f"📚 [DOUBT GROUNDED] {len(chunks)} chunks from chapter {str(chapter_id)[:8]}")
+        if not block:
+            logger.info("📚 [DOUBT UNGROUNDED] no chapter/chunks resolved — answering from model knowledge")
+    except Exception as err:
+        logger.warning(f"⚠️ [DOUBT GROUNDING FAILED] {err} — answering ungrounded")
+        block = ""
+
+    _GROUNDING_CACHE[sid] = block
+    return block
+
 
 async def process_scoped_turn_stream(
     session: Dict[str, Any],
@@ -68,6 +181,9 @@ async def process_scoped_turn_stream(
     )
 
     system_content = f"{load_prompt(prompt_file)}\n\n[{seed_header}]\n{json.dumps(seed, sort_keys=True)}"
+    grounding = _grounding_block(session, seed)
+    if grounding:
+        system_content = f"{system_content}\n\n{grounding}"
     session_state_ctx = {
         "language": language,
         "tutor_gender": persona["gender"],
