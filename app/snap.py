@@ -742,7 +742,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         questions.append({
             "n": idx,
             "text": text,
-            "subject": _clean_subject(item.get("subject")),
+            "subject": clean_subject(item.get("subject")),
             "topic": item.get("topic") or None,
             # The printed-answer strip applies here too: `stem` is what the
             # solver reasons from, so a key left in it is the exact leak
@@ -821,7 +821,7 @@ def _question_numbers_in(ocr_text: str) -> List[int]:
     return seen
 
 
-def _clean_subject(raw: Any) -> str:
+def clean_subject(raw: Any) -> str:
     """One of SUBJECTS, title-cased, or "unknown".
 
     Guards the subject chip and the /doubts subject filter against whatever the
@@ -1854,9 +1854,17 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
 
     # The transcriber saw the page; it wins on subject/topic when the solver is
     # vague, but the solver's own reading is preferred when it has one.
-    solution["subject"] = solution["subject"] or (
-        question.get("subject") if question.get("subject") != "unknown" else None
-    )
+    #
+    # Normalised HERE, not only where the transcriber's value is read: the
+    # solver's own answer is preferred, so its raw string went to the database
+    # untouched. It writes whatever it likes — "Mathematics", "mathematics" and
+    # "Maths" all appeared across 18 real rows for the same subject, as did
+    # "Chemistry" and "chemistry". The subject filter on /doubts is an equality
+    # match against a fixed list, so those rows were correctly classified and
+    # still invisible under their own subject. `unknown` becomes NULL, which is
+    # what "no subject read" already means in that column.
+    subject = clean_subject(solution["subject"] or question.get("subject"))
+    solution["subject"] = None if subject == "unknown" else subject
     solution["topic"] = solution["topic"] or question.get("topic")
 
     # The whole solve on one greppable line: where the time went, and what came

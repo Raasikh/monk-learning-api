@@ -513,7 +513,7 @@ def test_a_schema_placeholder_is_not_filed_as_a_subject():
         "  Maths  ": "Maths",
     }
     for raw, want in cases.items():
-        got = snap._clean_subject(raw)
+        got = snap.clean_subject(raw)
         print(f"  {str(raw)[:44]:46} -> {got}")
         assert got == want, f"{raw!r} became {got!r}, wanted {want!r}"
 

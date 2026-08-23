@@ -31,6 +31,7 @@ from app.snap import (
     MAX_IMAGE_BYTES,
     MAX_QUESTIONS,
     SnapError,
+    clean_subject,
     solve_snapped_image,
 )
 from app.storage_r2 import delete_image, signed_url
@@ -77,6 +78,21 @@ def _flatten_solution(solution: Dict[str, Any],
     if solution.get("key_idea"):
         lines.append(f"Key idea: {solution['key_idea']}")
     return "\n".join(lines)
+
+
+def _subject_for_row(solution: Dict[str, Any],
+                     question: Dict[str, Any]) -> Optional[str]:
+    """The subject to store, in the one spelling the filter matches.
+
+    The models classify accurately and label inconsistently. Across 18 real
+    rows the same subject was written "Maths", "Mathematics" and "mathematics",
+    and "Chemistry" alongside "chemistry". /doubts filters with an equality
+    match against a fixed list, so four of seven maths doubts were correctly
+    classified and still invisible when a student filtered for Maths.
+    """
+    raw = solution.get("subject") or question.get("subject")
+    cleaned = clean_subject(raw)
+    return None if cleaned == "unknown" else cleaned
 
 
 def _concept(solution: Dict[str, Any], question: Dict[str, Any]) -> Optional[str]:
@@ -324,9 +340,9 @@ async def snap_doubt(
             # (stem + options concatenated) is kept for search/legacy display.
             "stem": question.get("stem") or question.get("text") or None,
             "options": question.get("options") or [],
-            "subject": solution.get("subject") or (
-                question.get("subject") if question.get("subject") != "unknown" else None
-            ),
+            # Normalised, not taken raw: a row whose subject reads
+            # "Mathematics" is invisible to a filter matching "Maths".
+            "subject": _subject_for_row(solution, question),
             # `chapter` and `concept` are what the web pages render; `steps`,
             # `answer` and `key_idea` keep the structure for the rich panel.
             "chapter": solution.get("topic") or question.get("topic"),
@@ -455,9 +471,7 @@ def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: st
         "question_text": question.get("text") or None,
         "stem": question.get("stem") or question.get("text") or None,
         "options": question.get("options") or [],
-        "subject": solution.get("subject") or (
-            question.get("subject") if question.get("subject") != "unknown" else None
-        ),
+        "subject": _subject_for_row(solution, question),
         "chapter": solution.get("topic") or question.get("topic"),
         "concept": _concept(solution, question),
         "question_type": question.get("question_type"),
