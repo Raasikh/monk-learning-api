@@ -33,6 +33,7 @@ from openai import OpenAI
 
 from app import mathpix
 from app.image_prep import crop_to_content
+from app.exam_scope import canonical_subject
 from app.drona.prompt_loader import load_prompt
 # The repair path the rest of the codebase already uses: json.loads first,
 # repair only on failure. Imported, not reimplemented, and not modified.
@@ -83,11 +84,6 @@ DAILY_QUESTION_LIMIT = 50
 # single_correct when options exist, subjective when they do not.
 CHOICE_TYPES = {"single_correct", "multi_correct"}
 QUESTION_TYPES = CHOICE_TYPES | {"numerical", "subjective"}
-# The subjects a question may be filed under. Anything else is "unknown" — a
-# structurer handed one question's slice echoed the schema's own placeholder
-# back as the value, so "Physics|Chemistry|Maths|Biology|unknown" was about to
-# be written to the doubt's subject column and shown as its chip.
-SUBJECTS = {"physics", "chemistry", "maths", "biology"}
 MAX_IMAGE_BYTES = 10 * 1024 * 1024
 ALLOWED_MIME = {"image/jpeg", "image/png", "image/webp", "image/heic"}
 
@@ -742,7 +738,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         questions.append({
             "n": idx,
             "text": text,
-            "subject": clean_subject(item.get("subject")),
+            "subject": canonical_subject(item.get("subject")) or "unknown",
             "topic": item.get("topic") or None,
             # The printed-answer strip applies here too: `stem` is what the
             # solver reasons from, so a key left in it is the exact leak
@@ -819,32 +815,6 @@ def _question_numbers_in(ocr_text: str) -> List[int]:
         if n not in seen:
             seen.append(n)
     return seen
-
-
-def clean_subject(raw: Any) -> str:
-    """One of SUBJECTS, title-cased, or "unknown".
-
-    Guards the subject chip and the /doubts subject filter against whatever the
-    structurer put in the field. Measured: a per-question call echoed the
-    schema's placeholder, so the value was the literal string
-    "Physics|Chemistry|Maths|Biology|unknown". Anything not recognised is
-    "unknown", which the pipeline already treats as "no subject read".
-    """
-    value = (raw or "").strip()
-    lowered = value.lower()
-    if lowered in SUBJECTS:
-        return value.title()
-    # Prefix matching ONLY on something that is plausibly one subject word.
-    # Without this guard the placeholder above starts with "phys" and files
-    # every such question under Physics — a wrong answer to "which subject",
-    # which is worse than admitting we do not know.
-    if len(value) > 16 or any(sep in value for sep in "|,/;"):
-        return "unknown"
-    for prefix, subject in (("math", "Maths"), ("bio", "Biology"),
-                            ("chem", "Chemistry"), ("phys", "Physics")):
-        if lowered.startswith(prefix):
-            return subject
-    return "unknown"
 
 
 def _slice_by_question(ocr_text: str, wanted: List[int]) -> Dict[int, str]:
@@ -1863,8 +1833,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     # match against a fixed list, so those rows were correctly classified and
     # still invisible under their own subject. `unknown` becomes NULL, which is
     # what "no subject read" already means in that column.
-    subject = clean_subject(solution["subject"] or question.get("subject"))
-    solution["subject"] = None if subject == "unknown" else subject
+    solution["subject"] = canonical_subject(
+        solution["subject"] or question.get("subject"))
     solution["topic"] = solution["topic"] or question.get("topic")
 
     # The whole solve on one greppable line: where the time went, and what came

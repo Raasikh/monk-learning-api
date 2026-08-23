@@ -501,21 +501,34 @@ def test_a_schema_placeholder_is_not_filed_as_a_subject():
     Physics — a confident wrong answer to "which subject", which is worse than
     admitting we do not know.
     """
+    from app.exam_scope import canonical_subject, display_subject
+
+    # Stored values use the corpus's vocabulary -- `chapters` and `questions`
+    # have said lowercase "mathematics" across 828 rows since long before
+    # doubts existed, so that is the name everything groups on. "Math" is the
+    # label a student reads, which is a separate question from what is stored.
     cases = {
-        "Physics|Chemistry|Maths|Biology|unknown": "unknown",
-        "Physics, Chemistry": "unknown",
-        "Astrology": "unknown",
-        "": "unknown",
-        None: "unknown",
-        "Chemistry": "Chemistry",
-        "physics": "Physics",
-        "Mathematics": "Maths",
-        "  Maths  ": "Maths",
+        "Physics|Chemistry|Maths|Biology|unknown": None,
+        "Physics, Chemistry": None,
+        "Astrology": None,
+        "": None,
+        None: None,
+        "Chemistry": "chemistry",
+        "physics": "physics",
+        "Mathematics": "mathematics",
+        "Maths": "mathematics",
+        "math": "mathematics",
+        "  Maths  ": "mathematics",
     }
     for raw, want in cases.items():
-        got = snap.clean_subject(raw)
-        print(f"  {str(raw)[:44]:46} -> {got}")
+        got = canonical_subject(raw)
+        print(f"  {str(raw)[:44]:46} -> {got}  (shown as {display_subject(raw)})")
         assert got == want, f"{raw!r} became {got!r}, wanted {want!r}"
+
+    # Every spelling a model has produced lands on the same key AND the same
+    # label, which is the whole point -- an equality filter has to see them all.
+    assert len({canonical_subject(s) for s in ("Maths", "Mathematics", "math", "MATHS")}) == 1
+    assert display_subject("Maths") == "Math"
 
 
 def test_numbered_page_structures_each_question_in_parallel(monkeypatch):

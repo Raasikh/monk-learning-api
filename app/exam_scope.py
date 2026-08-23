@@ -85,7 +85,67 @@ def subjects_for(exam: str) -> Sequence[str]:
 
 
 def subject_on_syllabus(subject: Optional[str], exam: str) -> bool:
-    return str(subject or "").strip().lower() in set(subjects_for(exam))
+    return canonical_subject(subject) in set(subjects_for(exam))
+
+
+# ─── One name per subject ────────────────────────────────────────────────────
+#
+# The corpus decided this vocabulary long ago: `chapters` and `questions` store
+# lowercase physics / chemistry / mathematics / biology across 828 rows, and
+# SUBJECTS_BY_EXAM above is written in the same terms. Anything that wants to
+# group, join or filter by subject has to speak it.
+#
+# Snapped doubts did not. The models label accurately and spell freely, so the
+# same subject arrived as "Maths", "Mathematics" and "mathematics", and
+# "Chemistry" beside "chemistry" — correctly classified rows that an equality
+# filter could not see. Normalising per-caller is how that happens twice, so it
+# lives here with the vocabulary it has to match.
+#
+# What a student READS is a separate question from what we store: "mathematics"
+# is the key, "Math" is the label.
+_SUBJECT_ALIASES = {
+    "math": "mathematics", "maths": "mathematics", "mathematics": "mathematics",
+    "phys": "physics", "physics": "physics",
+    "chem": "chemistry", "chemistry": "chemistry",
+    "bio": "biology", "biology": "biology",
+}
+
+DISPLAY_LABEL: Dict[str, str] = {
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "mathematics": "Math",
+    "biology": "Biology",
+}
+
+
+def canonical_subject(raw: Any) -> Optional[str]:
+    """The corpus's name for this subject, or None when it is not one.
+
+    None rather than a placeholder: `doubts.subject` already uses NULL for "no
+    subject read", which is what an unreadable photo leaves behind.
+    """
+    value = str(raw or "").strip().lower()
+    if not value:
+        return None
+    if value in _SUBJECT_ALIASES:
+        return _SUBJECT_ALIASES[value]
+    # Prefix matching, but ONLY on something short enough to be one subject
+    # word. A structurer once echoed the schema placeholder
+    # "Physics|Chemistry|Maths|Biology|unknown", which starts with "phys" — a
+    # loose match files that under Physics, which is a confident wrong answer
+    # to "which subject" and worse than admitting we do not know.
+    if len(value) > 16 or any(sep in value for sep in "|,/;"):
+        return None
+    for prefix in ("math", "phys", "chem", "bio"):
+        if value.startswith(prefix):
+            return _SUBJECT_ALIASES[prefix]
+    return None
+
+
+def display_subject(raw: Any) -> Optional[str]:
+    """What a student should see: 'Math', 'Physics', … or None."""
+    canon = canonical_subject(raw)
+    return DISPLAY_LABEL.get(canon) if canon else None
 
 
 def tagged_for_exam(exams_val: Any, exam: str) -> bool:

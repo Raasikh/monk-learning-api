@@ -31,9 +31,10 @@ from app.snap import (
     MAX_IMAGE_BYTES,
     MAX_QUESTIONS,
     SnapError,
-    clean_subject,
     solve_snapped_image,
 )
+from app import exam_scope
+from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
 
 logger = logging.getLogger("doubts")
@@ -90,9 +91,8 @@ def _subject_for_row(solution: Dict[str, Any],
     match against a fixed list, so four of seven maths doubts were correctly
     classified and still invisible when a student filtered for Maths.
     """
-    raw = solution.get("subject") or question.get("subject")
-    cleaned = clean_subject(raw)
-    return None if cleaned == "unknown" else cleaned
+    return canonical_subject(
+        solution.get("subject") or question.get("subject"))
 
 
 def _concept(solution: Dict[str, Any], question: Dict[str, Any]) -> Optional[str]:
@@ -688,8 +688,16 @@ def list_doubts(
     """GET /doubts — the snap history, newest first."""
     query = supabase.table("doubts").select(LIST_COLUMNS).eq("user_id", user_id)
 
+    # Accept whatever spelling the caller sends -- "Math", "Maths", "mathematics"
+    # -- and match on the one the column stores.
     if subject and subject.lower() != "all":
-        query = query.eq("subject", subject)
+        wanted = canonical_subject(subject)
+        if wanted is None:
+            # An off-syllabus / unrecognised filter matches the rows that have
+            # no subject rather than silently returning the whole list.
+            query = query.is_("subject", "null")
+        else:
+            query = query.eq("subject", wanted)
     if q and q.strip():
         term = q.strip().replace(",", " ")
         query = query.or_(
@@ -711,16 +719,44 @@ def list_doubts(
             status_code=503, detail="My Doubts is not available right now."
         )
 
-    subjects = sorted({
-        (r.get("subject") or "").strip()
-        for r in (all_subjects_res.data or [])
-        if (r.get("subject") or "").strip()
-    })
+    # The chips the student sees. Their exam's syllabus comes first and always
+    # shows, so a JEE student gets Physics / Chemistry / Math whether or not
+    # they have snapped one yet; anything they HAVE snapped from outside it is
+    # appended rather than hidden, because a doubt you cannot find is worse
+    # than a chip you did not expect. Nothing is refused for being off-syllabus
+    # -- the subject is a best-effort label from a model, and one real
+    # stereochemistry question came back tagged Biology.
+    try:
+        prof = (supabase.table("profiles").select("target_exam")
+                .eq("id", user_id).limit(1).execute().data)
+    except Exception:
+        prof = None
+    exam = exam_scope.resolve_exam(prof[0] if prof else None)
+    on_syllabus = list(exam_scope.subjects_for(exam))
+    snapped = {r.get("subject") for r in (all_subjects_res.data or []) if r.get("subject")}
+    extra = sorted(s for s in snapped if s not in on_syllabus)
+
+    subjects = [
+        {"key": s,
+         "label": exam_scope.DISPLAY_LABEL.get(s, s.title()),
+         "on_syllabus": s in on_syllabus}
+        for s in on_syllabus + extra
+    ]
 
     return {
-        "doubts": [{**row, "scrap": _scrap(row.get("question_text"))} for row in rows],
+        # `subject` stays the stored key so filtering round-trips; the label is
+        # what the page prints, and `on_syllabus` lets it mark a doubt that is
+        # not on this student's exam without hiding or refusing it.
+        "doubts": [{
+            **row,
+            "scrap": _scrap(row.get("question_text")),
+            "subject_label": exam_scope.DISPLAY_LABEL.get(row.get("subject") or ""),
+            "on_syllabus": (row.get("subject") in on_syllabus
+                            if row.get("subject") else None),
+        } for row in rows],
         "count": len(rows),
         "subjects": subjects,
+        "exam": exam,
     }
 
 
