@@ -431,8 +431,18 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     def call(corrective: Optional[str] = None):
         messages = [
             {"role": "system", "content": system_prompt},
+            # "At most N" alone let the model CHOOSE which N. On a JEE page
+            # holding Q11-Q19 it returned Q16, Q17 and Q18 — skipping the five
+            # above them — so the student who framed the top of the page got
+            # the middle of it back. The order is the instruction now, not just
+            # the count: the student reframes to the next three by moving down
+            # the page, which only works if "first" means first.
             {"role": "user", "content": (
-                f"Return at most {max_questions} question(s).\n\n"
+                f"Return the FIRST {max_questions} question(s) on this page, "
+                f"reading top to bottom — not whichever {max_questions} look "
+                f"clearest or easiest. If the page holds more, return the first "
+                f"{max_questions} in page order and say so in the top-level "
+                f"`note`.\n\n"
                 f"OCR TEXT OF THE PAGE:\n{page['text']}"
             )},
         ]
@@ -605,8 +615,57 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         "[SNAP TRANSCRIBE] doubt=%s read %d question(s), %d legible",
         doubt_id[:8], len(questions), sum(1 for q in questions if q["legible"]),
     )
+    _warn_if_not_page_order(questions, parsed.get("_ocr_text") or "", doubt_id)
     return {"questions": questions, "note": note,
             "ocr_confidence": parsed.get("_ocr_confidence")}
+
+
+def _warn_if_not_page_order(questions: List[Dict[str, Any]], ocr_text: str,
+                            doubt_id: str) -> None:
+    """Logs when the structurer did not return the questions the page starts with.
+
+    The prompt asks for the first N top-to-bottom, and a prompt is not a
+    constraint: on a real JEE page holding Q11-Q19 it returned Q16-Q18. The
+    student had framed the top of the page and got its middle back, which also
+    breaks "reframe to the next three" — they cannot tell which three they
+    already used.
+
+    Nothing here can repair it (the skipped questions were never returned, so
+    there is nothing to reorder), but a silent recurrence is worse than a noisy
+    one. Warning only — never raises, never changes what the student sees.
+    """
+    if not ocr_text or not questions:
+        return
+    page = _canon_fidelity(ocr_text)
+    if not page:
+        return
+
+    positions = []
+    for q in questions:
+        needle = _canon_fidelity(q.get("stem") or q.get("text") or "")[:40]
+        positions.append(page.find(needle) if needle else -1)
+
+    located = [p for p in positions if p >= 0]
+    if len(located) < 2:
+        return
+
+    if located != sorted(located):
+        logger.warning(
+            "[SNAP TRANSCRIBE] doubt=%s questions came back OUT of page order "
+            "(positions %s) — the student's 'next three' will overlap or skip",
+            doubt_id[:8], positions,
+        )
+
+    # How much of the page sits above the first question we returned. A large
+    # fraction means whole questions were skipped over, not merely a header.
+    skipped_fraction = located[0] / len(page)
+    if skipped_fraction > 0.25:
+        logger.warning(
+            "[SNAP TRANSCRIBE] doubt=%s SKIPPED AHEAD: the first returned "
+            "question starts %.0f%% into the page — questions above it were "
+            "read and dropped",
+            doubt_id[:8], skipped_fraction * 100,
+        )
 
 
 # ─── Pass 1c: describe the figure ────────────────────────────────────────────
@@ -1491,6 +1550,32 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     }
 
     questions = read["questions"]
+
+    # The student's own question is fully known NOW — transcription is done and
+    # no solve has started. Send it immediately rather than holding it until the
+    # solve finishes: the page used to have nothing to show for the whole
+    # ~20-30s solve, then painted the question and its answer together at the
+    # end. The question is what the student is waiting to see confirmed ("did it
+    # read my page right?"), and it costs nothing extra to show it ~20s sooner.
+    # No solution fields here — nothing about an ANSWER is ever streamed early;
+    # the validated "question" event below stays authoritative for that.
+    yield "questions_read", {
+        "questions": [
+            {
+                "question_index": q["n"],
+                "question_text": q.get("text"),
+                "stem": q.get("stem") or q.get("text"),
+                "options": q.get("options") or [],
+                "subject": (q.get("subject")
+                            if q.get("subject") != "unknown" else None),
+                "chapter": q.get("topic"),
+                "question_type": q.get("question_type"),
+                "legible": q["legible"],
+                "legibility_note": q.get("note"),
+            }
+            for q in questions
+        ],
+    }
 
     # Diagram description must finish before its question can be solved — the
     # solver reads diagram_description off the question dict — so this stays

@@ -543,6 +543,11 @@ async def snap_doubt_stream(
                         "daily_limit": DAILY_QUESTION_LIMIT,
                         "questions_used_today": used_today,
                     })
+                elif kind == "questions_read":
+                    # What was read off the photo, before any solving. Lets the
+                    # page show the student their question ~20s earlier than
+                    # waiting for the first solve. Carries no answer.
+                    yield event("questions_read", item)
                 elif kind in ("thinking", "step", "steps_reset"):
                     # Live progress while a solve runs. Steps only — never an
                     # answer, which waits for the validated "question" event.
