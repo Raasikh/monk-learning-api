@@ -25,16 +25,17 @@ from typing import Any, Dict, List, Optional
 from fastapi import APIRouter, Depends
 
 from app.auth import get_current_user_id
+from app import exam_scope
 from app.db import supabase, fetch_all_cached
 
 logger = logging.getLogger("progress")
 
 router = APIRouter(prefix="/progress", tags=["progress"])
 
-SUBJECTS_BY_EXAM = {
-    "jee": ["physics", "chemistry", "mathematics"],
-    "neet": ["physics", "chemistry", "biology"],
-}
+# Owned by app.exam_scope so the Learn catalogue and Progress cannot drift on
+# what a student is entitled to — they disagreed for as long as the catalogue
+# served every subject to everyone.
+SUBJECTS_BY_EXAM = exam_scope.SUBJECTS_BY_EXAM
 
 
 def _fetch_all(table: str, select: str, page: int = 1000, **filters) -> List[Dict[str, Any]]:
@@ -138,12 +139,7 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
     # for, written to profiles.target_exam at onboarding/purchase ('JEE',
     # 'NEET', or 'both'). Progress always scores against the entitled exam.
     # The ?exam= param only selects a view for 'both'-entitled students.
-    prof = [bundle["profile"]] if bundle.get("profile") else []
-    raw = str((prof[0].get("target_exam") if prof else "") or "").strip().lower()
-    entitlement = "both" if "both" in raw else ("neet" if "neet" in raw else "jee")
-    allowed = ("jee", "neet") if entitlement == "both" else (entitlement,)
-    requested = str(exam or "").strip().lower()
-    exam = requested if requested in allowed else allowed[0]
+    exam = exam_scope.resolve_exam(bundle.get("profile"), exam)
     subjects = SUBJECTS_BY_EXAM[exam]
     subject_marks = cfg.get("subject_marks", {}).get(exam, {s: 1 for s in subjects})
 

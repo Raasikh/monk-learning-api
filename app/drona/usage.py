@@ -19,9 +19,17 @@ Two rules follow from that, and both matter more than the numbers:
    the question that mattered: what was actually called, and how much did it
    move.
 
-Prices are set per model via environment, in USD per MILLION tokens, e.g.
+Prices are set per model via environment, in USD per MILLION tokens, at
+DeepSeek's PEAK rate:
 
-    DEEPSEEK_PRICE_DEEPSEEK_V4_PRO="in=0.55,cached=0.07,out=2.19"
+    DEEPSEEK_PRICE_DEEPSEEK_V4_PRO="in=1.32,cached=0.044,out=3.96"
+
+Peak, specifically, because DeepSeek bills two rates: off-peak is exactly half
+of peak, and peak runs 01:00-04:00 and 06:00-10:00 UTC on weekdays. A single
+configured number would therefore be wrong by 2x for most of the day in one
+direction or the other. `cost_for` applies the halving itself from the call's
+own timestamp, so what is configured is one rate and what is recorded is the
+rate that actually applied.
 
 Nothing here ships a default price. A guessed price produces a plausible,
 wrong, and confidently-reported number, which is worse than no number at all.
@@ -29,6 +37,7 @@ wrong, and confidently-reported number, which is worse than no number at all.
 import logging
 import os
 import re
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Dict, Optional
 
@@ -63,12 +72,28 @@ def price_for(model: str) -> Optional[Dict[str, float]]:
     return out or None
 
 
+# DeepSeek's peak windows, in UTC hours, Monday-Friday. Outside these — and all
+# weekend — every rate is halved. Published at
+# https://api-docs.deepseek.com/quick_start/pricing
+_PEAK_WINDOWS_UTC = ((1, 4), (6, 10))
+OFF_PEAK_MULTIPLIER = 0.5
+
+
+def is_peak(when: Optional[datetime] = None) -> bool:
+    """Whether DeepSeek's peak rate applies at `when` (default: now, UTC)."""
+    t = (when or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    if t.weekday() >= 5:  # Saturday, Sunday: off-peak throughout
+        return False
+    return any(start <= t.hour < end for start, end in _PEAK_WINDOWS_UTC)
+
+
 def cost_for(model: str, input_tokens: int, cache_hit_tokens: int,
-             output_tokens: int) -> Optional[float]:
+             output_tokens: int, when: Optional[datetime] = None) -> Optional[float]:
     """USD for one call, or None when the model has no configured price.
 
     Cached input is billed separately by DeepSeek, so it is subtracted from the
-    input count rather than double-counted.
+    input count rather than double-counted. Configured prices are peak rates;
+    a call made off-peak is billed at half, and is recorded that way.
     """
     prices = price_for(model)
     if not prices:
@@ -76,15 +101,18 @@ def cost_for(model: str, input_tokens: int, cache_hit_tokens: int,
             _WARNED_UNPRICED.add(model)
             logger.warning(
                 f"[USAGE] no price configured for {model!r} - set {_env_key(model)} "
-                f"(USD per 1M tokens, e.g. 'in=0.55,cached=0.07,out=2.19'). "
+                f"(USD per 1M tokens at PEAK rate, e.g. 'in=1.32,cached=0.044,out=3.96'). "
                 f"Tokens are still recorded; cost_usd stays NULL."
             )
         return None
     fresh_in = max(0, (input_tokens or 0) - (cache_hit_tokens or 0))
+    rate = 1.0 if is_peak(when) else OFF_PEAK_MULTIPLIER
     return round(
-        fresh_in / 1_000_000 * prices.get("in", 0.0)
-        + (cache_hit_tokens or 0) / 1_000_000 * prices.get("cached", prices.get("in", 0.0))
-        + (output_tokens or 0) / 1_000_000 * prices.get("out", 0.0),
+        rate * (
+            fresh_in / 1_000_000 * prices.get("in", 0.0)
+            + (cache_hit_tokens or 0) / 1_000_000 * prices.get("cached", prices.get("in", 0.0))
+            + (output_tokens or 0) / 1_000_000 * prices.get("out", 0.0)
+        ),
         6,
     )
 
