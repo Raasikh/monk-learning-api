@@ -97,9 +97,23 @@ re-deriving it.
   warning and scores nothing, by design.
 - **The chapter matters, and it is ambiguous.** `questions.chapter_id` is
   populated on only 191 of 7,704 rows, so matching goes through
-  `chapter_name` — ~98% populated but NOT unique across classes. "Probability",
-  "Relations and Functions" and "Thermodynamics" each exist in two places.
-  Match on `(chapter_name, subject, class_level)`, never name alone.
+  `chapter_name` — ~98% populated but NOT unique. Three names collide exactly,
+  and two of the three collide across SUBJECTS, not just classes:
+
+  ```
+  Thermodynamics   chem11 + phys11     <- different subjects
+  Biomolecules     biol11 + chem12     <- different subjects
+  Probability      math11 + math12
+  ```
+
+  Match on `(chapter_name, subject, class_level)`, never name alone. A
+  Thermodynamics question matched on name alone has a 50% chance of landing in
+  the wrong subject entirely.
+
+  One more trap for any fuzzy matcher: Class 11 is `"Relations & Functions"`
+  and Class 12 is `"Relations and Functions"`. They differ by one word, they
+  are different chapters, and their contents were just split apart — so a
+  matcher that normalises `&` to `and` will silently merge them.
 - **Class 11 and Class 12 were just split along the NCERT boundary.**
   Conditional probability, Bayes and random variables now live ONLY in Class
   12; sample space and the addition theorem ONLY in Class 11. Same for
