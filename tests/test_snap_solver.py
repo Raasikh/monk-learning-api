@@ -50,21 +50,47 @@ class _Response:
 
 
 class _Client:
-    """Returns each queued response in turn, so retries can be exercised."""
+    """Returns each queued response in turn, so retries can be exercised.
+
+    `contents` may instead be a {marker: [responses]} mapping, which routes on
+    what the prompt actually contains rather than on call order. Questions are
+    solved concurrently in a ThreadPoolExecutor, so a positional queue hands
+    each thread whatever happens to be at the head of the list when it gets
+    there — the ordering a test writes is not the ordering it gets. Any test
+    that needs question A to fail and question B to succeed must key on the
+    questions themselves; only same-question retry sequences are ordered.
+    """
 
     def __init__(self, contents, model):
-        self._contents = list(contents)
+        self._routed = isinstance(contents, dict)
+        if self._routed:
+            self._contents = {k: list(v) for k, v in contents.items()}
+        else:
+            self._contents = list(contents)
         self._model = model
         self.calls = 0
+        self._lock = threading.Lock()
         outer = self
 
         class _Completions:
-            def create(self, **_kwargs):
-                outer.calls += 1
-                content = outer._contents.pop(0) if outer._contents else outer._contents
+            def create(self, **kwargs):
+                with outer._lock:
+                    outer.calls += 1
+                    content = outer._next(json.dumps(kwargs.get("messages", "")))
                 return _Response(content, outer._model)
 
         self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    def _next(self, prompt: str):
+        if not self._routed:
+            return self._contents.pop(0) if self._contents else self._contents
+        for marker, queue in self._contents.items():
+            if marker in prompt and queue:
+                return queue.pop(0) if len(queue) > 1 else queue[0]
+        raise AssertionError(
+            f"stubbed solver got a prompt matching no marker in "
+            f"{sorted(self._contents)}: {prompt[:200]}"
+        )
 
 
 @pytest.fixture(autouse=True)
@@ -93,7 +119,9 @@ def stub_mathpix_ocr(monkeypatch):
 
 
 def stub_transcriber(monkeypatch, contents, model=MODEL_TRANSCRIBE):
-    client = _Client(contents if isinstance(contents, list) else [contents], model)
+    # dict = routed by prompt content (see _Client), list = ordered queue,
+    # bare string = a single response reused for every call.
+    client = _Client(contents if isinstance(contents, (list, dict)) else [contents], model)
     monkeypatch.setattr(snap, "_openai_client", lambda: client)
     return client
 
@@ -105,7 +133,9 @@ def stub_matcher(monkeypatch, labels, equivalent=True):
 
 
 def stub_solver(monkeypatch, contents, model=MODEL_SOLVE):
-    client = _Client(contents if isinstance(contents, list) else [contents], model)
+    # dict = routed by prompt content (see _Client), list = ordered queue,
+    # bare string = a single response reused for every call.
+    client = _Client(contents if isinstance(contents, (list, dict)) else [contents], model)
     monkeypatch.setattr(snap, "_deepseek_client", lambda: client)
     return client
 
@@ -483,8 +513,11 @@ def test_one_failed_solve_does_not_lose_the_other_question(monkeypatch):
     stub_transcriber(monkeypatch, transcription(
         question(text="One."), question(text="Two."),
     ))
-    # First question's solve fails both attempts; second succeeds.
-    stub_solver(monkeypatch, ["{broken", "{broken", GOOD_SOLUTION])
+    # Routed by question text, not call order: the two solves run concurrently
+    # in a ThreadPoolExecutor, so a positional queue made this test flaky —
+    # whichever thread reached the stub first took the head of the list, and
+    # the failure landed on question 2 about as often as on question 1.
+    stub_solver(monkeypatch, {"One.": ["{broken", "{broken"], "Two.": [GOOD_SOLUTION]})
     out = solve_snapped_image(b"img", "image/jpeg", "d1")
     print(f"  solved {out['solved_count']} of 2; "
           f"q1 error={out['questions'][0].get('solve_error')!r}")
