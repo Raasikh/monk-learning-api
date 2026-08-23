@@ -242,7 +242,7 @@ def get_next_question(
     # 4. Fetch Candidate Questions for Chosen Subject
     query = (
         supabase.table("questions")
-        .select("id, question_text, question_type, options, chapter_id, chapter_name, concept, difficulty, source, needs_manual, target_exams, discipline")
+        .select("id, question_text, question_type, options, chapter_id, chapter_name, concept, difficulty, source, needs_manual, target_exams, discipline, diagram")
         .ilike("subject", chosen_subject)
         .is_("needs_manual", "null")
     )
@@ -334,6 +334,13 @@ def get_next_question(
     except Exception as e:
         print(f"[PRACTICE SERVE ERROR] Failed to record serve: {e}")
 
+    diagram = selected.get("diagram")
+    if isinstance(diagram, str):
+        try:
+            diagram = json.loads(diagram)
+        except (TypeError, ValueError):
+            diagram = None
+
     return {
         "question_id": selected["id"],
         "question_text": selected.get("question_text"),
@@ -341,7 +348,8 @@ def get_next_question(
         "options": options,
         "chapter_name": selected.get("chapter_name"),
         "concept": resolve_display_concept(selected["id"], selected.get("concept")),
-        "difficulty": selected.get("difficulty")
+        "difficulty": selected.get("difficulty"),
+        "diagram": diagram
     }
 
 

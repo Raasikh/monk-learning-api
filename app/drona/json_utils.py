@@ -4,7 +4,70 @@ Extracted from tutor.py so app/drona/practice_explain.py can reuse them
 without a circular import between the two turn-processing modules.
 """
 import json
-from typing import Dict, Any
+import re
+from typing import Any, Dict
+
+
+# LaTeX commands whose first letter collides with a JSON string escape.
+#
+# A model writing `\neq` inside a JSON string produces VALID JSON — `\n` is a
+# legal escape — so json.loads silently turns it into a newline followed by
+# "eq". Nothing downstream can tell that apart from a real line break, and the
+# note renders as a broken line with a stray "eq" on it, which is exactly what
+# a saved Integrals note showed. The same trap catches \theta and \times (tab),
+# \rho (carriage return), \beta and \bar (backspace), \frac and \forall (form
+# feed), \vec (vertical tab), \alpha and \angle (bell).
+#
+# Keyed by control character; each value is (original letter, surviving tails).
+# The escape EATS the first letter, so `\theta` leaves a tab plus "heta" — the
+# tails below are the command minus its initial letter, not the whole name.
+#
+# \b \f \v \a \r never occur in legitimate lesson text, so those are repaired
+# on sight. \n and \t are ordinary whitespace, so only distinctive maths tails
+# are listed for them and a following letter blocks the match — tab+"ext{"
+# becomes \text{ while tab+"extra" is left alone.
+_ESCAPE_VICTIMS = {
+    "\n": ("n", ["eq", "abla", "otin"]),
+    "\t": ("t", ["heta", "imes", "ext", "riangle"]),
+    "\r": ("r", ["ightarrow", "angle", "ho", "ightlangle"]),
+    "\b": ("b", ["eta", "inom", "ar", "egin", "matrix", "ullet"]),
+    "\f": ("f", ["rac", "orall", "loor"]),
+    "\v": ("v", ["ec", "arphi", "arepsilon", "arnothing"]),
+    "\a": ("a", ["lpha", "pprox", "ngle", "rccos", "rcsin", "rctan"]),
+}
+_ESCAPE_REPAIRS = [
+    (
+        re.compile(
+            re.escape(ctrl)
+            + "(" + "|".join(sorted(tails, key=len, reverse=True)) + ")"
+            # The tail must END the command: a trailing letter means this was
+            # ordinary prose that happened to start with those characters.
+            + "(?![A-Za-z])"
+        ),
+        "\\" + letter,
+    )
+    for ctrl, (letter, tails) in _ESCAPE_VICTIMS.items()
+]
+
+
+def repair_latex_control_escapes(text: str) -> str:
+    r"""Puts back LaTeX commands that json.loads ate as string escapes.
+
+    `\neq` inside a JSON string is VALID JSON — `\n` is a legal escape — so the
+    parser yields a newline and "eq", and nothing downstream can distinguish
+    that from a real line break. A saved Integrals note rendered exactly that
+    way: a broken line with a stray "eq" sitting on it.
+
+    Conservative by construction: the control character must be followed by the
+    complete tail of a known command and nothing alphabetic after it, so a
+    genuine newline before prose survives ("\n" + "next we look at" is not
+    touched, because "ext" is followed by a letter).
+    """
+    if not text:
+        return text
+    for pattern, letter in _ESCAPE_REPAIRS:
+        text = pattern.sub(lambda m, l=letter: l + m.group(1), text)
+    return text
 
 # R3 — Server-side consumed keys (never emitted to SSE stream)
 FORBIDDEN_SSE_KEYS = {

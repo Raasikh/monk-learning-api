@@ -6,6 +6,7 @@ from fastapi import HTTPException
 from app.db import supabase
 from app.drona.models import get_drona_client, get_model_name, PLANNER_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt, get_prompt_version
+from app.drona.json_utils import repair_latex_control_escapes
 from app.drona.retrieval import retrieve_dual_blocks
 from app.drona.usage import record_call
 
@@ -115,11 +116,47 @@ def sanitize_double_escaped_latex(obj: Any, count_acc: Optional[List[int]] = Non
         if "\\\\" in obj:
             count_acc[0] += 1
             res_obj = obj.replace("\\\\", "\\")
+        # Undo the OTHER escaping failure, which this function could never see:
+        # `\neq` written into JSON is valid JSON, so json.loads had already
+        # turned it into a newline plus "eq" before anything got here. A saved
+        # Integrals note rendered exactly that — a broken line with a stray
+        # "eq" on it. Runs on every string because \theta, \times, \frac,
+        # \beta, \alpha and \vec decay the same way.
+        res_obj = repair_latex_control_escapes(res_obj)
 
     if is_top_level and count_acc[0] > 0:
         logger.warning(f"⚠️ [DOUBLE ESCAPE SANITIZED] Cleaned {count_acc[0]} double-escaped LaTeX fields in lesson plan payload.")
 
     return res_obj
+
+def resolve_topic_title(chapter_id: str, subtopic_key: str) -> str:
+    """The human title to author a lesson about, for a concept or subtopic key.
+
+    concepts is checked FIRST because it is now the teaching unit. Looking only
+    in subtopic_index missed every concept key and fell through to
+    key.replace("-", " ").title(), so the planner was authoring
+    "Gauss S Law And Its Applications" — apostrophe eaten, capitalisation
+    wrong — and that mangled string went into the prompt as the lesson topic.
+
+    subtopic_index stays as the fallback for plans still keyed the old way, and
+    the title-cased key remains the last resort so a missing row cannot stop a
+    lesson being authored.
+    """
+    try:
+        rows = supabase.table("concepts").select("name").eq("chapter_id", chapter_id).eq("key", subtopic_key).limit(1).execute().data or []
+        if rows and rows[0].get("name"):
+            return rows[0]["name"]
+    except Exception as err:
+        logger.warning(f"concepts title lookup failed for {subtopic_key!r}: {err}")
+    try:
+        rows = supabase.table("subtopic_index").select("subtopic").eq("chapter_id", chapter_id).eq("subtopic_key", subtopic_key).limit(1).execute().data or []
+        if rows and rows[0].get("subtopic"):
+            return rows[0]["subtopic"]
+    except Exception as err:
+        logger.warning(f"subtopic_index title lookup failed for {subtopic_key!r}: {err}")
+    logger.warning(f"⚠️ [TITLE FALLBACK] no row for {subtopic_key!r}; authoring against a title-cased key.")
+    return subtopic_key.replace("-", " ").title()
+
 
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""
@@ -127,8 +164,7 @@ def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     chap_res = supabase.table("chapters").select("name, subject").eq("id", chapter_id).execute()
     chap_data = chap_res.data[0] if chap_res.data else {"name": "Chapter", "subject": "Physics"}
 
-    sub_res = supabase.table("subtopic_index").select("subtopic").eq("chapter_id", chapter_id).eq("subtopic_key", subtopic_key).execute()
-    sub_title = sub_res.data[0]["subtopic"] if sub_res.data else subtopic_key.replace("-", " ").title()
+    sub_title = resolve_topic_title(chapter_id, subtopic_key)
 
     # Retrieve dual blocks (§3.2)
     structure_block, depth_block, is_grounded = retrieve_dual_blocks(chapter_id, sub_title)
@@ -487,8 +523,7 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
 
     chap_res = supabase.table("chapters").select("name, subject").eq("id", chapter_id).execute()
     chap_data = chap_res.data[0] if chap_res.data else {"name": "Chapter", "subject": "Physics"}
-    sub_res = supabase.table("subtopic_index").select("subtopic").eq("chapter_id", chapter_id).eq("subtopic_key", subtopic_key).execute()
-    sub_title = sub_res.data[0]["subtopic"] if sub_res.data else subtopic_key.replace("-", " ").title()
+    sub_title = resolve_topic_title(chapter_id, subtopic_key)
 
     structure_block, depth_block, is_grounded = retrieve_dual_blocks(chapter_id, sub_title)
 
