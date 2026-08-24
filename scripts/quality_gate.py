@@ -45,6 +45,7 @@ load_dotenv('/Users/raasikhnaveed/Desktop/dronav1project/.env')
 
 from app.drona.models import get_drona_async_client  # noqa: E402
 from app.drona.usage import record_call  # noqa: E402
+from openai import AsyncOpenAI  # noqa: E402
 
 U = (os.getenv('SUPABASE_URL') or 'https://tgbknrmnjwiokraddurx.supabase.co').rstrip('/')
 K = (os.getenv('SUPABASE_SECRET_KEY') or '').strip('"\'')
@@ -62,6 +63,22 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gate_results.jso
 # billed on the small disputed subset rather than the whole batch.
 MODEL = os.getenv("QUALITY_GATE_MODEL", "deepseek-v4-flash")
 MODEL_DISPUTE = os.getenv("QUALITY_GATE_MODEL_DISPUTE", MODEL)
+# QUALITY_GATE_PROVIDER=openrouter switches BOTH ask() and the dispute
+# escalation onto OpenRouter (any model slug in QUALITY_GATE_MODEL /
+# QUALITY_GATE_MODEL_DISPUTE, e.g. "stealth/ox-alpha") instead of DeepSeek.
+# Kept as a separate switch rather than overloading get_drona_async_client()
+# so the tutor's own model plumbing is untouched.
+PROVIDER = os.getenv("QUALITY_GATE_PROVIDER", "deepseek")
+OPENROUTER_KEY = (os.getenv("OPENROUTER_API_KEY") or "").strip('"\'')
+
+
+def get_client():
+    if PROVIDER == "openrouter":
+        if not OPENROUTER_KEY:
+            raise RuntimeError("QUALITY_GATE_PROVIDER=openrouter but OPENROUTER_API_KEY is not set")
+        return AsyncOpenAI(api_key=OPENROUTER_KEY, base_url="https://openrouter.ai/api/v1",
+                            timeout=180.0, max_retries=0)
+    return get_drona_async_client()
 # llm_calls accounting needs the Supabase key. A --staging run on a machine
 # without it must not print one ERROR per model call trying to record; say so
 # once and skip recording instead.
@@ -69,7 +86,7 @@ RECORD_CALLS = bool(K)
 if not RECORD_CALLS:
     print("NOTE: llm_calls recording disabled - SUPABASE_SECRET_KEY is not set",
           file=sys.stderr)
-CONCURRENCY = 12
+CONCURRENCY = int(os.getenv("QUALITY_GATE_CONCURRENCY", "12"))
 COLS = ('id,question_text,question_type,options,correct_option,correct_value,'
         'value_tolerance,solution,chapter_name,needs_manual,source')
 
@@ -207,7 +224,18 @@ async def ask(client, system, user, model=None, service="gate", ref=None):
     attributable per row. Recording runs off the event loop and never raises.
     """
     mdl = model or MODEL
-    for attempt, no_think in enumerate((False, True), start=1):
+    # OpenRouter's shared free pool 429s under load (observed directly against
+    # stealth/ox-alpha), which the DeepSeek path never needed to handle — that
+    # provider is billed capacity, not a shared queue. `thinking: disabled` is
+    # a DeepSeek-specific field; sending it to another provider risks an
+    # unknown-param rejection, so it's only ever attached on that provider.
+    is_openrouter = PROVIDER == "openrouter"
+    attempts = [(False, 0)] if not is_openrouter else [(False, 0), (False, 3), (False, 8), (False, 15), (False, 25)]
+    if not is_openrouter:
+        attempts = [(False, 0), (True, 0)]
+    for attempt, (no_think, backoff) in enumerate(attempts, start=1):
+        if backoff:
+            await asyncio.sleep(backoff)
         kw = {'extra_body': {"thinking": {"type": "disabled"}}} if no_think else {}
         t0 = time.monotonic()
         try:
@@ -224,6 +252,10 @@ async def ask(client, system, user, model=None, service="gate", ref=None):
                     record_call, mdl, service, ok=False, attempt=attempt,
                     latency_ms=int((time.monotonic() - t0) * 1000),
                     subtopic_key=ref, error=str(e))
+            # A non-429 failure on OpenRouter (bad request, auth, etc.) will
+            # not be fixed by waiting and retrying the same call five times.
+            if is_openrouter and '429' not in str(e) and 'rate' not in str(e).lower():
+                break
             continue
         try:
             d = json.loads(r.choices[0].message.content or "")
@@ -743,7 +775,7 @@ async def main():
     todo = [q for q in rows if q['id'] not in done]
     print(f"candidates={len(rows)} judged_previously={len(done)} to_judge={len(todo)}", flush=True)
 
-    client = get_drona_async_client()
+    client = get_client()
     sem, lock = asyncio.Semaphore(CONCURRENCY), asyncio.Lock()
     n = 0
     for fut in asyncio.as_completed([gate_one(client, sem, q, lock) for q in todo]):
