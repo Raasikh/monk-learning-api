@@ -956,6 +956,31 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                     board_events_out.append(evt)
                 else:
                     board_events_out.append({"seq": i, "type": "text", "text": str(item), "emphasis": "normal"})
+
+            # Tier 2 delivery. The model's board_events are discarded above on
+            # a planned turn, which is right for text — authored lines beat
+            # improvised ones. A diagram is different: it ADDS to the board
+            # rather than replacing a line, so a template the model chose is
+            # appended instead of thrown away.
+            #
+            # Without this the directive asks for a diagram on every planned
+            # turn, the model complies, and the answer is dropped on the floor.
+            # That is why tier 2 effectively never fired: the only branch that
+            # rendered a model-chosen template was the one for turns with no
+            # plan items at all, which is the wrap-up turn and little else.
+            if not any(isinstance(e, dict) and e.get("type") == "diagram"
+                       for e in board_events_out):
+                for e in (model_board_events_raw or []):
+                    if not isinstance(e, dict) or e.get("type") != "diagram":
+                        continue
+                    mat = _materialise_template(e)
+                    if mat and mat.get("svg"):
+                        evt = {"seq": len(board_events_out) + 1,
+                               "type": "diagram", "svg": mat["svg"]}
+                        if mat.get("caption"):
+                            evt["caption"] = mat["caption"]
+                        board_events_out.append(evt)
+                        break
         else:
             # No assigned plan items — this is a live/improvised turn (a doubt,
             # a free topic), which is exactly where a model-chosen template

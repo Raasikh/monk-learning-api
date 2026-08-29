@@ -118,3 +118,31 @@ def test_the_turn_summary_reports_which_cues_fired():
     """
     assert "cues: diagram=" in SRC
     assert "emitted: diagram=" in SRC
+
+
+def test_a_planned_turn_still_delivers_a_model_chosen_diagram():
+    """The directive asks for a template on planned turns, so one must survive.
+
+    On a turn with assigned plan items the model's board_events are discarded
+    wholesale — correct for text, since authored lines beat improvised ones.
+    But tier 2's ONLY delivery path used to be the branch for turns with no
+    plan items, so on every ordinary explanation turn the cue fired, the
+    directive was injected, the model emitted a template diagram, and it was
+    dropped. Tier 2 looked implemented and never appeared on a board.
+
+    A diagram is additive, not a replacement, so it is appended instead.
+    """
+    start = SRC.index("if assigned_items:")
+    # anchored on the newline: a bare 8-space "else:" also matches the
+    # deeper-indented else inside the item-type chain, truncating the slice.
+    block = SRC[start:SRC.index("\n        else:", start)]
+    assert "_materialise_template(e)" in block, (
+        "the planned-turn branch no longer renders a model-chosen template; "
+        "tier 2 is unreachable on ordinary explanation turns again"
+    )
+    assert 'e.get("type") != "diagram"' in block, "appends non-diagram events too"
+    guard = block[block.index("if not any("):block.index("for e in (model_board_events")]
+    assert '"diagram"' in guard, (
+        "the append is not guarded on the board being diagram-free, so it can "
+        "add a second picture over one the plan already carries"
+    )
