@@ -33,6 +33,7 @@ arrowhead pops in before the line it belongs to. So nothing authored reaches a
 student without passing validate(), and a rejection costs a picture rather than
 a lesson — the same posture _materialise_template already takes.
 """
+import html
 import logging
 import re
 import xml.etree.ElementTree as ET
@@ -184,6 +185,10 @@ def _text_boxes(svg: str) -> List[Tuple[float, float, float, float, str]]:
     boxes = []
     for m in re.finditer(r"<text([^>]*)>(.*?)</text>", svg, re.S):
         attrs, body = m.group(1), re.sub(r"<[^>]+>", "", m.group(2)).strip()
+        # Measure the CHARACTERS, not the markup. "&#215;" is one glyph wide,
+        # not six, and a diagram that writes a degree sign or a multiplication
+        # cross was being rejected for a collision it did not have.
+        body = html.unescape(body)
         if not body:
             continue
 
