@@ -137,15 +137,28 @@ def _quota_resets_in(user_id: str) -> Optional[Dict[str, Any]]:
             "at": frees_at.isoformat()}
 
 
-def _questions_used_today(user_id: str) -> int:
-    """Questions this student has had read in the last rolling 24 hours.
+# What the allowance actually pays for: an ANSWER.
+#
+# 'illegible' used to count too, on the reasoning that a bad photo is the
+# student's own input and still costs an OCR read. That held right up until our
+# own bugs started producing it — numerical questions refused for "missing"
+# options they never have, and figure questions refused before their figure was
+# looked at. Students were charged nine slots for questions the pipeline was
+# built to answer and briefly could not. A quota that bills for our defects is
+# not a quota, and the OCR read it is defending costs $0.002.
+#
+# So: a student is charged when they got an answer, and not otherwise.
+# 'unsure' counts — the question WAS solved, the working is shown, and only the
+# final certainty is withheld; that is a real answer and the expensive solve
+# was really spent.
+CHARGEABLE_STATUSES = ("solved", "unsure")
 
-    Counts answers delivered and photos we could not read, because both are
-    about the student's own input and both cost an OCR read. Does NOT count
-    'failed' — that is where the page was read fine and we still could not
-    answer, or the question needed a diagram. Charging a student for our
-    inability to solve a question they photographed perfectly is not a quota,
-    it is a penalty.
+
+def _questions_used_today(user_id: str) -> int:
+    """Questions this student has been ANSWERED in the last rolling 24 hours.
+
+    Nothing else is billed: not a photo we could not read, and not a question
+    we read perfectly and failed to solve.
     """
     since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
     res = (
@@ -153,7 +166,7 @@ def _questions_used_today(user_id: str) -> int:
         .select("id", count="exact")
         .eq("user_id", user_id)
         .gte("created_at", since)
-        .in_("status", ["solved", "unsure", "illegible"])
+        .in_("status", list(CHARGEABLE_STATUSES))
         .execute()
     )
     return res.count if res.count is not None else len(res.data or [])
@@ -600,11 +613,10 @@ async def snap_doubt_stream(
                                      submission_id[:8],
                                      int((time.time() - insert_t0) * 1000), err)
                     # Count against the quota exactly what _questions_used_today
-                    # counts: 'failed' is ours and free. The done event was
-                    # reporting used_today + every row, so a page with one
-                    # failed question showed 2/50 while the student was actually
-                    # charged 1 — the number on screen must be the real one.
-                    if row["status"] in ("solved", "unsure", "illegible"):
+                    # counts, or the number on screen is not the real one: a
+                    # page with one unbilled question once showed 2/50 while the
+                    # student was actually charged 1.
+                    if row["status"] in CHARGEABLE_STATUSES:
                         emitted += 1
                     yield event("question", {
                         **{k: row[k] for k in (

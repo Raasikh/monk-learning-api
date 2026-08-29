@@ -64,7 +64,21 @@ MODEL_SOLVE = "deepseek-v4-pro"
 TRANSCRIBE_TIMEOUT_S = 45.0
 # Pro is slower than Flash; the budget follows the planner's shape rather than
 # the tutor's, since nothing here has to feel live.
-SOLVE_TIMEOUT_S = 120.0
+#
+# 75, not 120. Measured across real submissions, a solve that works lands in
+# 9-35s, so 120 was never protecting a slow success — it was the ceiling a
+# WEDGED solve ran to. One diagram question spent 2m13s producing an empty
+# response (Rule 5's failure: v4 spends the whole budget thinking and emits
+# nothing), and because that reads as a parse failure it earned a second full
+# attempt. The student waits for the slowest question, so one wedge cost them
+# four minutes. 75s still leaves better than 2x headroom over the slowest
+# solve ever recorded.
+SOLVE_TIMEOUT_S = 75.0
+# A retry is for a solve that came back WRONG, not one that never came back.
+# When an attempt burns most of its budget it did not fail fast — it wedged,
+# and repeating it with identical inputs wedges again for the same duration.
+# Past this share of the timeout, stop and report honestly instead.
+RETRY_IF_UNDER_FRACTION = 0.6
 
 # Per-submission cap: how many questions are read from ONE photo.
 #
