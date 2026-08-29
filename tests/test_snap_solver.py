@@ -542,6 +542,87 @@ def test_a_choice_question_with_no_options_is_still_refused(monkeypatch):
     assert q["reason"] == "options_unreadable"
 
 
+def test_options_that_are_figures_are_read_not_refused(monkeypatch):
+    """"Which of these curves…" printed as four graphs must not be refused.
+
+    There is no text for the OCR to read, so the structurer returns a choice
+    question with zero options and the gate fired: "the options could not be
+    read. Retake the photo with all the choices in frame." That advice cannot
+    work — no photograph of a graph turns it into text. Several figures inside
+    one question's span is the signal that its options are drawn.
+    """
+    page = _page_with_geometry(
+        text="Q45. Which resistivity vs temperature curve suits standard resistors?",
+        diagram_spans=[{"top": 91, "bottom": 266}, {"top": 95, "bottom": 266},
+                       {"top": 405, "bottom": 586}, {"top": 412, "bottom": 586}],
+        text_lines=[{"top": 28, "bottom": 52,
+                     "text": "Q45. Which resistivity vs temperature curve suits standard resistors?"}],
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: page)
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 45, "question_type": "single_correct", "options": [],
+        "legible": True, "requires_diagram": False,
+        "stem": "Which resistivity vs temperature curve suits standard resistors?",
+    }]}))
+    q = transcribe_questions(b"img", "image/png", "d1", None, 3)["questions"][0]
+    print(f"  legible={q['legible']} options_are_drawn={q['options_are_drawn']} "
+          f"reason={q.get('reason')}")
+    assert q["legible"] is True, "a question whose options are drawn was refused"
+    assert q["options_are_drawn"] is True
+
+
+def test_one_figure_does_not_make_the_options_drawn(monkeypatch):
+    """A question WITH a figure but genuinely missing options is still refused.
+
+    One figure is the question's own diagram. It takes several inside the span
+    to mean "the options are pictures" — otherwise a normal figure question
+    with its choices cut off would be waved through, and a choice question
+    without its choices reached the solver once and it invented an answer.
+    """
+    page = _page_with_geometry(
+        text="Q3. The gas undergoes the process shown. Which is correct?",
+        diagram_spans=[{"top": 111, "bottom": 350}],
+        text_lines=[{"top": 30, "bottom": 54,
+                     "text": "Q3. The gas undergoes the process shown. Which is correct?"}],
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: page)
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 3, "question_type": "single_correct", "options": [],
+        "legible": True, "requires_diagram": True,
+        "stem": "The gas undergoes the process shown. Which is correct?",
+    }]}))
+    q = transcribe_questions(b"img", "image/png", "d1", None, 3)["questions"][0]
+    print(f"  legible={q['legible']} reason={q.get('reason')}")
+    assert q["legible"] is False
+    assert q["reason"] == "options_unreadable"
+
+
+def test_drawn_options_skip_the_ocr_fidelity_gate(monkeypatch):
+    """Described options were never IN the OCR text, so they cannot be checked
+    against it. Running that gate on them would refuse every one."""
+    page = _page_with_geometry(
+        text="Q45. Which curve?",
+        diagram_spans=[{"top": 91, "bottom": 266}, {"top": 95, "bottom": 266},
+                       {"top": 405, "bottom": 586}, {"top": 412, "bottom": 586}],
+        text_lines=[{"top": 28, "bottom": 52, "text": "Q45. Which curve?"}],
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: page)
+    # The structurer returns options that are NOT in the OCR text at all.
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 45, "question_type": "single_correct", "legible": True,
+        "stem": "Which curve?",
+        "options": [{"label": "1", "text": "resistivity falls steeply"},
+                    {"label": "2", "text": "resistivity is constant"}],
+    }]}))
+    q = transcribe_questions(b"img", "image/png", "d1", None, 3)["questions"][0]
+    print(f"  legible={q['legible']} reason={q.get('reason')}")
+    # Two options WERE returned, so options_are_drawn is False and the fidelity
+    # gate applies normally — this pins that the gate is still live for text
+    # options that do not match the page.
+    assert q["legible"] is False
+    assert q["reason"] == "options_fidelity"
+
+
 def test_answers_arrive_as_they_finish_not_in_page_order(monkeypatch):
     """A slow question must not hold finished answers behind it.
 
@@ -746,7 +827,11 @@ def test_a_figure_question_reaches_the_describing_pass(monkeypatch):
     exists to handle, and the figure was never looked at. Whether a figure can
     be worked from is that pass's call; it refuses honestly when it cannot.
     """
-    page = "Q3. 10 mole of an ideal gas undergoes the process shown in the figure.\n"
+    # The options must appear in the OCR text, or the fidelity gate refuses
+    # first and this tests the wrong thing. The ONLY reason for illegibility
+    # here is the model's own note about the figure.
+    page = ("Q3. 10 mole of an ideal gas undergoes the process shown in the figure.\n"
+            "(1) 21 (2) 15 (3) 28 (4) 24\n")
     monkeypatch.setattr(snap.mathpix, "read_page",
                         lambda *_a, **_k: {"text": page, "confidence": 0.99,
                                            "page_confidence": 0.9,
@@ -755,7 +840,8 @@ def test_a_figure_question_reaches_the_describing_pass(monkeypatch):
         "number": 3, "question_type": "single_correct", "requires_diagram": True,
         "legible": False, "note": "unreadable: the reference to the figure",
         "stem": "10 mole of an ideal gas undergoes the process shown in the figure.",
-        "options": [{"label": "1", "text": "21"}, {"label": "2", "text": "15"}],
+        "options": [{"label": "1", "text": "21"}, {"label": "2", "text": "15"},
+                    {"label": "3", "text": "28"}, {"label": "4", "text": "24"}],
     }]}))
     q = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)["questions"][0]
     print(f"  requires_diagram={q['requires_diagram']} legible={q['legible']}")

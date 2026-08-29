@@ -718,7 +718,13 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # an empty stem is caught above, and a truncated one keeps its flag,
         # because this only overrides when there is a substantial stem to
         # solve from.
+        # Same guard as the figure override below: only when the MODEL set the
+        # flag, never when one of this function's own gates did. It is
+        # unreachable for a non-choice question today — every option gate is
+        # choice-only — but stating it keeps the two overrides honest if a
+        # future gate stops being choice-only.
         if (not legible and not is_choice and not options
+                and q_reason == "illegible"
                 and len(stem_text) >= 40):
             logger.info(
                 "[SNAP TRANSCRIBE] doubt=%s q%d marked illegible for having no "
@@ -847,8 +853,17 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # is the thing that decides whether a figure can be worked from; it
         # refuses honestly ("could not work reliably from the figure") when it
         # cannot. Deciding that here, from the text alone, pre-empts it.
-        if needs_diagram and not legible and stem_text and not options_missing_for_choice(
-                is_choice, options, item):
+        # `q_reason == "illegible"` is the load-bearing condition: that is the
+        # untouched default, meaning the MODEL set legible:false on its own
+        # judgement. Every gate in this function stamps its own reason
+        # (options_unreadable, options_fidelity, options_cut_off), and those
+        # are refusals this override must never reach. Without that check it
+        # swallowed the fidelity gate — options that do not appear on the page
+        # are a possibly-garbled list, and solving from one produces a
+        # confident wrong answer no later gate can catch.
+        if (needs_diagram and not legible and stem_text
+                and q_reason == "illegible"
+                and not options_missing_for_choice(is_choice, options, item)):
             logger.info(
                 "[SNAP TRANSCRIBE] doubt=%s q%d marked illegible for needing its "
                 "figure — that is what the describing pass is for. Letting it "
@@ -2321,34 +2336,6 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # ONE queue for every solve, not one each. The delivery loop below has to
     # take whichever question finishes FIRST, and it cannot do that while
     # blocked on a particular question's queue.
-    inbox: "_queue.Queue" = _queue.Queue()
-    outcomes: Dict[int, Dict[str, Any]] = {}
-    usages: Dict[int, Dict[str, int]] = {}
-    threads: List[_threading.Thread] = []
-
-    for question in questions:
-        if not question["legible"]:
-            continue
-        n = question["n"]
-        outcomes[n] = {}
-        usages[n] = {"input": 0, "output": 0}
-
-        def _run(q=question, num=n, outcome=outcomes[n], usage=usages[n]):
-            try:
-                outcome["solution"] = solve_question(
-                    q, doubt_id, usage,
-                    on_event=lambda kind, data: inbox.put(("event", num, kind, data)),
-                )
-            except SnapError as err:
-                outcome["error"] = err
-            finally:
-                inbox.put(("done", num, None, None))
-
-        worker = _threading.Thread(target=_run, daemon=True)
-        worker.start()
-        threads.append(worker)
-
-
     # Options that are printed as figures, read off the image the same way a
     # question's own figure is. Without this the question was refused with
     # "retake the photo with all the choices in frame", which cannot work: no
@@ -2379,6 +2366,34 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                 "Retaking the photo will not change that \u2014 ask this one in a "
                 "live session, where the options can be drawn on the board."
             )
+
+    inbox: "_queue.Queue" = _queue.Queue()
+    outcomes: Dict[int, Dict[str, Any]] = {}
+    usages: Dict[int, Dict[str, int]] = {}
+    threads: List[_threading.Thread] = []
+
+    for question in questions:
+        if not question["legible"]:
+            continue
+        n = question["n"]
+        outcomes[n] = {}
+        usages[n] = {"input": 0, "output": 0}
+
+        def _run(q=question, num=n, outcome=outcomes[n], usage=usages[n]):
+            try:
+                outcome["solution"] = solve_question(
+                    q, doubt_id, usage,
+                    on_event=lambda kind, data: inbox.put(("event", num, kind, data)),
+                )
+            except SnapError as err:
+                outcome["error"] = err
+            finally:
+                inbox.put(("done", num, None, None))
+
+        worker = _threading.Thread(target=_run, daemon=True)
+        worker.start()
+        threads.append(worker)
+
 
     logger.info(
         "[SNAP PIPELINE] doubt=%s launched %d concurrent solve(s) at t+%dms "
