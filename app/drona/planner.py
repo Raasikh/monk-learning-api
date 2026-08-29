@@ -392,9 +392,69 @@ def _author_outline(chap_data: Dict[str, Any], sub_title: str, subtopic_key: str
     return outline
 
 
+
+def _attach_example_diagram(segment: Dict[str, Any], subject: str, sub_title: str) -> None:
+    """Draw the small figure for this segment's worked example, in place.
+
+    A student who can already picture "a 2kg block pushed with 10N" does not
+    need this. One who cannot is exactly the student the example was written
+    for, and words alone leave them behind — which is the whole reason this
+    exists. Roughly 41% of segments work an example, so a lesson gets three or
+    four figures rather than one per concept or one per chapter.
+
+    Authored HERE, at plan time, rather than during the turn. Segments 2..N are
+    already written in a background thread the student never waits on, so a
+    diagram costs nothing they can perceive. Doing the same work live would put
+    4-10s inside a turn to save no wall clock at all.
+
+    Never raises and never blocks the segment: a segment without a figure is a
+    plainer lesson, a segment that failed to author is no lesson.
+    """
+    try:
+        from app.drona.tutor import turn_works_an_example
+    except Exception:
+        return
+    objective = str(segment.get("objective") or "")
+    notes = str(segment.get("teaching_notes") or "")
+    if not turn_works_an_example(objective, notes):
+        return
+    try:
+        from app.drona.diagram_author import author_diagram
+        svg, reason = author_diagram(
+            subject=subject,
+            concept=f"{sub_title} — {objective}",
+            # The EXAMPLE is the subject of the drawing, not the topic. This is
+            # what makes it a figure beside a worked problem rather than a
+            # chapter illustration.
+            explanation=f"Draw the small figure for this specific worked example: {notes}",
+            detail="simple",
+            # Two attempts, not one. The collision check rejects a first draft
+            # often enough that a single shot loses figures that a retry fixes —
+            # observed immediately, on a segment whose labels overlapped. Nobody
+            # is waiting on this thread, so the second attempt is free to the
+            # student and the difference is a figure existing or not.
+            attempts=2,
+        )
+        if svg:
+            segment["example_diagram_svg"] = svg
+            logger.info(f"🖼️ [SEGMENT DIAGRAM] '{objective[:44]}' ({len(svg)} chars)")
+        else:
+            logger.info(f"[SEGMENT DIAGRAM SKIPPED] '{objective[:44]}': {reason[:60]}")
+    except Exception as exc:
+        logger.warning(f"[SEGMENT DIAGRAM FAILED] {exc}")
+
+
 def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str, Any],
-                    index: int, depth_block: str, plan_id: Optional[str] = None) -> Dict[str, Any]:
-    """Authors one full segment. index is 0-based."""
+                    index: int, depth_block: str, plan_id: Optional[str] = None,
+                    with_diagram: bool = False) -> Dict[str, Any]:
+    """Authors one full segment. index is 0-based.
+
+    `with_diagram` is False on the synchronous path that authors segment 1,
+    because that call is the last thing between a student and the first spoken
+    word — ~24s today, and a diagram call would add 5 to it. Segment 1 gets its
+    figure in the background fill instead, well before the student has finished
+    hearing the segment.
+    """
     segs = outline["segments"]
     stub = segs[index]
     others = "\n".join(
@@ -452,6 +512,8 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
         cp = seg.get("checkpoint") or {}
         # Prompt asks for 9-12; accept 8 so a near-miss doesn't burn a retry.
         if isinstance(bc, list) and 8 <= len(bc) <= 12 and cp.get("question") and cp.get("model_answer") and cp.get("rubric"):
+            if with_diagram:
+                _attach_example_diagram(seg, chap_data.get("subject") or "", sub_title)
             return seg
         last_err = f"segment {index+1}: board_content={len(bc) if isinstance(bc, list) else 'n/a'}, checkpoint keys={list(cp)}"
         logger.warning(f"⚠️ [SEGMENT RETRY] {last_err} (attempt {attempt}/2)")
@@ -496,9 +558,14 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
     try:
         with ThreadPoolExecutor(max_workers=4) as ex:
             rest = list(ex.map(
-                lambda i: _author_segment(chap_data, sub_title, outline, i, depth_block, plan_id),
+                lambda i: _author_segment(chap_data, sub_title, outline, i, depth_block,
+                                          plan_id, with_diagram=True),
                 range(1, total),
             ))
+        # Segment 1 skipped its diagram to keep time-to-first-word at ~24s.
+        # It gets one here, minutes before the student finishes hearing it.
+        _attach_example_diagram(first_segment, chap_data.get("subject") or "", sub_title)
+
         plan_json = {
             "topic": outline.get("topic") or sub_title,
             "grounded": outline.get("grounded", True),

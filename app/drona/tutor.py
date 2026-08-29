@@ -622,8 +622,20 @@ async def process_tutor_turn_stream(
     # costs one indexed read instead of a model call. If it is present the
     # template directive is skipped entirely — two diagrams in one turn is
     # worse than either alone.
-    _precomputed_svg = _precomputed_diagram(
-        session.get("chapter_id"), session.get("subtopic_key"))
+    # This SEGMENT's own example figure outranks the concept-level one. It was
+    # drawn for the specific problem being worked — "a 2kg block pushed with
+    # 10N" — where the concept diagram is drawn for the topic. A student who
+    # cannot picture the example is exactly who both exist for, and the more
+    # specific picture is the one that helps.
+    _precomputed_svg = (curr_segment.get("example_diagram_svg")
+                        or _precomputed_diagram(session.get("chapter_id"),
+                                                session.get("subtopic_key")))
+    if curr_segment.get("example_diagram_svg"):
+        ok, why = validate_authored_svg(_precomputed_svg)
+        if not ok:
+            logger.warning(f"{stag} segment diagram rejected on read: {why}")
+            _precomputed_svg = _precomputed_diagram(session.get("chapter_id"),
+                                                    session.get("subtopic_key"))
 
     _diag_hint = suggest_diagram_template(
         curr_segment.get("objective") or "",
@@ -969,7 +981,8 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 "type": "diagram",
                 "svg": _precomputed_svg,
             })
-            logger.info(f"{stag}   🖼️ [PRECOMPUTED DIAGRAM] served for "
+            _src = "segment example" if curr_segment.get("example_diagram_svg") else "concept"
+            logger.info(f"{stag}   🖼️ [DIAGRAM SERVED] {_src} figure for "
                         f"{session.get('subtopic_key')} ({len(_precomputed_svg)} chars)")
 
         sanitized = []
