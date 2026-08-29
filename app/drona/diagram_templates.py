@@ -1135,6 +1135,146 @@ def process_flow(stages: Sequence[str], title: str | None = None) -> str:
 # registry
 # --------------------------------------------------------------------------
 
+def projectile_scene(
+    launch_label: str = "u",
+    angle_deg: float = 45,
+    range_label: str = "R",
+    height_label: str = "H",
+    show_dropped_ball: bool = True,
+    ground_label: str = "",
+) -> str:
+    """A launcher firing along an arc, with an optional ball dropped beside it.
+
+    The first ILLUSTRATIVE template rather than an abstract one. Every other
+    template here draws relationships — arrows, boxes, flows. This draws the
+    situation itself, because for projectile motion the situation IS the
+    insight: fire one ball horizontally and drop another at the same instant,
+    and they hit the ground together. A vector triangle cannot show that, and
+    `vector_resolution` is what this content was getting.
+
+    `show_dropped_ball` switches the SCENE, not just an overlay, and it has to:
+
+      * off -> an angled launch from the ground, with range and max height.
+      * on  -> a HORIZONTAL launch from a height, with a ball dropped beside it.
+
+    That is not a stylistic choice. The comparison only holds for a horizontal
+    launch. On an angled trajectory the projectile rises before it falls, so
+    its height is not monotonic — the first version of this drew markers at
+    equal fractions along a 45 degree arc, which put the "dropped" ball at the
+    same height twice and showed it going UP and back down. A diagram that
+    argues the opposite of the physics is worse than no diagram, and its own
+    test caught it.
+
+    Markers are placed at equal TIME steps, so their spacing widens downward
+    exactly as g does the work. Both columns share those heights, which is the
+    claim: horizontal velocity changes nothing about the fall.
+
+    Draw order matters (document order is animation order): ground, then
+    launcher, then the arc, then the velocity arrow, then the falling ball,
+    then the measurements last — the order a teacher actually draws it.
+    """
+    u = _label(launch_label, "launch_label", 14)
+    rl = _label(range_label, "range_label", 14, allow_empty=True)
+    hl = _label(height_label, "height_label", 14, allow_empty=True)
+    gl = _label(ground_label, "ground_label", 22, allow_empty=True)
+    angle = _number(angle_deg, "angle_deg")
+    if not show_dropped_ball and not 5 <= angle <= 85:
+        raise ValueError("angle_deg must lie between 5 and 85 for a visible arc")
+    if show_dropped_ball:
+        # A horizontal launch is the only geometry the comparison is true for.
+        angle = 0.0
+
+    w, h = 520, 340
+    gy = 262.0                 # ground line
+    x0, x1 = 78.0, 452.0       # launch and landing
+    span = x1 - x0
+    theta = math.radians(angle)
+    ax = (x0 + x1) / 2.0
+
+    if show_dropped_ball:
+        # Horizontal launch from a height: y falls as t^2, monotonically.
+        y0 = 92.0
+        drop = gy - y0
+
+        def arc_y(x: float) -> float:
+            t = (x - x0) / span
+            return y0 + drop * t * t
+        apex = drop
+    else:
+        # Angled launch from the ground: the familiar parabola. Apex scales
+        # off the angle so a steep launch looks steep, clamped so the label
+        # stays on canvas.
+        apex = min(150.0, max(58.0, span * math.tan(theta) / 4))
+
+        def arc_y(x: float) -> float:
+            t = (x - x0) / span
+            return gy - 4 * apex * t * (1 - t)
+
+    parts: list[str] = []
+
+    # 1. ground
+    parts.append(_line(40, gy, w - 30, gy, color=INK, width=2.4))
+    for hx in range(48, int(w - 34), 26):
+        parts.append(_line(hx, gy, hx - 9, gy + 9, color=MUTED, width=1.3))
+    if gl:
+        parts.append(_text((w) / 2, gy + 30, gl, size=12, color=MUTED))
+
+    # 2. the launcher, drawn as a stubby barrel from the launch point
+    ly = arc_y(x0)
+    bl = 40.0
+    bx, by = x0 + bl * math.cos(theta), ly - bl * math.sin(theta)
+    if show_dropped_ball:
+        # a table edge to launch from, so "rolls off a table" reads instantly
+        parts.append(_line(30, ly, x0, ly, color=INK, width=3))
+        parts.append(_line(52, ly, 52, gy, color=MUTED, width=2))
+    else:
+        parts.append(_line(x0 - 10, ly, x0 + 12, ly, color=INK, width=3))
+    parts.append(_polygon(
+        [(x0 - 9, ly + 4), (x0 + 11, ly + 4), (bx + 5, by + 4), (bx - 5, by - 4)],
+        stroke=INK, fill=LIGHT_FILL, width=2))
+
+    # 3. the trajectory, as one quadratic path
+    pts = [(x0 + span * i / 28.0, arc_y(x0 + span * i / 28.0)) for i in range(29)]
+    parts.append(_polyline(pts, color=PRIMARY, width=2.6))
+
+    # 4. launch velocity, off the barrel tip
+    parts.append(_arrow(bx, by, bx + 52 * math.cos(theta), by - 52 * math.sin(theta),
+                        color=RED, width=2.6, head=12))
+    parts.append(_text(bx + 58 * math.cos(theta) + 6, by - 58 * math.sin(theta) - 4,
+                       u, size=14, color=RED, anchor="start", weight="bold"))
+    if not show_dropped_ball:
+        parts.append(_text(x0 + 40, ly - 9, f"{_num(angle)}°", size=12, color=MUTED,
+                           anchor="start"))
+
+    # 5. the dropped ball — the comparison the whole diagram exists for
+    if show_dropped_ball:
+        dx = x1 + 34
+        parts.append(_line(dx, arc_y(x0), dx, gy, color=MUTED, width=1.4, dashed=True))
+        # equal TIME steps. x is linear in t, y quadratic, so the markers
+        # spread out downward exactly as gravity does the work — and both
+        # columns share the heights, which is the whole claim.
+        for frac in (0.25, 0.5, 0.75, 1.0):
+            px = x0 + span * frac
+            py = arc_y(px)
+            parts.append(_circle(px, py, 4.5, stroke=PRIMARY, fill=PRIMARY, width=1))
+            parts.append(_circle(dx, py, 4.5, stroke=AMBER, fill=AMBER, width=1))
+            parts.append(_line(px + 8, py, dx - 8, py, color=MUTED, width=1,
+                               dashed=True))
+        parts.append(_text(dx + 12, gy - 4, "dropped", size=11, color=AMBER,
+                           anchor="start"))
+
+    # 6. measurements last
+    if hl and not show_dropped_ball:
+        parts.append(_line(ax, arc_y(ax), ax, gy, color=GREEN, width=1.6, dashed=True))
+        parts.append(_text(ax + 8, (arc_y(ax) + gy) / 2, hl, size=13, color=GREEN,
+                           anchor="start", weight="bold"))
+    if rl:
+        parts.append(_arrow(x0, gy + 24, x1, gy + 24, color=GREEN, width=1.6, head=9))
+        parts.append(_text((x0 + x1) / 2, gy + 42, rl, size=13, color=GREEN,
+                           weight="bold"))
+    return _svg(w, h, parts)
+
+
 TEMPLATES: dict[str, Callable[..., str]] = {
     "free_body_diagram": free_body_diagram,
     "comparison_table": comparison_table,
@@ -1144,6 +1284,7 @@ TEMPLATES: dict[str, Callable[..., str]] = {
     "circuit_diagram": circuit_diagram,
     "vector_resolution": vector_resolution,
     "process_flow": process_flow,
+    "projectile_scene": projectile_scene,
 }
 
 

@@ -51,10 +51,17 @@ QUIZ_QUESTIONS_PER_SEGMENT = 3
 #
 # Ordered: the first match wins, so the more specific cue is listed first.
 _DIAGRAM_CUES: List[Tuple[str, str]] = [
+    # Scene cues come FIRST, and order is the whole point. "Projectile" used to
+    # fall through to vector_resolution and get an abstract arrow triangle —
+    # correct, and nothing like the picture the content is about. A scene
+    # template beats a relationship template whenever the content describes a
+    # situation a student can picture.
+    (r"projectile|launched at an angle|fired horizontally|thrown (?:at|horizontal)"
+     r"|range of a projectile|time of flight|trajector", "projectile_scene"),
     (r"free[- ]body|forces? (?:acting|on)|normal force|friction|tension|incline"
      r"|dipole|torque on|equilibrium of", "free_body_diagram"),
     (r"resolv\w+|component[s]? of (?:a )?(?:vector|force)|x[- ]component|y[- ]component"
-     r"|vector addition|projectile", "vector_resolution"),
+     r"|vector addition", "vector_resolution"),
     (r"\blens\b|\bmirror\b|image form|ray diagram|refract|focal length|optical instrument", "ray_diagram"),
     (r"circuit|resistor|capacitor|\bemf\b|kirchhoff|battery|in series|in parallel"
      r"|wheatstone|potentiometer", "circuit_diagram"),

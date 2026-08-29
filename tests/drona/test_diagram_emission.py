@@ -40,6 +40,17 @@ REALISTIC = {
 }
 
 
+# The comparison scene, not the plain arc — it is the case the template exists
+# for and the one whose geometry is easiest to get wrong.
+REALISTIC["projectile_scene"] = {
+    "launch_label": "u = 20 m/s",
+    "range_label": "R",
+    "height_label": "",
+    "show_dropped_ball": True,
+    "ground_label": "both land together",
+}
+
+
 def test_every_template_has_a_realistic_case_here():
     # A new template with no coverage would ship unexercised.
     assert set(REALISTIC) == set(TEMPLATES)

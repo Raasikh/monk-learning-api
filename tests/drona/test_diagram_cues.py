@@ -22,7 +22,10 @@ from app.drona.tutor import suggest_diagram_template
     ("Electric Dipole in External Field", "free_body_diagram"),
     ("Friction on an inclined plane", "free_body_diagram"),
     ("Resolving a force into components", "vector_resolution"),
-    ("Projectile Motion", "vector_resolution"),
+    # Moved off vector_resolution deliberately. An arrow triangle is a correct
+    # picture of the decomposition and nothing like the picture the content is
+    # about — a launcher, an arc, and a ball dropped beside it.
+    ("Projectile Motion", "projectile_scene"),
     ("Image formation by a convex lens", "ray_diagram"),
     ("Wheatstone Bridge", "circuit_diagram"),
     ("Series LCR Circuit: Impedance and Phase", "circuit_diagram"),

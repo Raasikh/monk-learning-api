@@ -90,6 +90,18 @@ SAMPLES: dict[str, dict] = {
 
 ALL_NAMES = sorted(dt.TEMPLATES)
 
+SAMPLES["projectile_scene"] = {
+    # The angled scene — it exercises every label and the angle guard.
+    # show_dropped_ball switches to a horizontal launch and is covered in
+    # tests/drona/test_projectile_scene.py.
+    "launch_label": "u",
+    "angle_deg": 45,
+    "range_label": "R = u² sin 2θ / g",
+    "height_label": "H",
+    "show_dropped_ball": False,
+}
+
+
 BAD_INPUTS: dict[str, list[dict]] = {
     "free_body_diagram": [
         {"body_label": "", "forces": [("N", 90)]},
@@ -163,6 +175,15 @@ HEX_RE = re.compile(r"#[0-9a-fA-F]{3,8}")
 ON_ATTR_RE = re.compile(r"\son[a-zA-Z]+\s*=", re.IGNORECASE)
 
 
+BAD_INPUTS["projectile_scene"] = [
+    {"launch_label": "u", "angle_deg": 0, "show_dropped_ball": False},    # flat
+    {"launch_label": "u", "angle_deg": 90, "show_dropped_ball": False},   # vertical
+    {"launch_label": "u", "angle_deg": -20, "show_dropped_ball": False},
+    {"launch_label": "u", "angle_deg": "steep", "show_dropped_ball": False},
+    {"launch_label": "", "angle_deg": 45, "show_dropped_ball": False},    # no label
+]
+
+
 def _render(name: str) -> str:
     return dt.render(name, **SAMPLES[name])
 
@@ -172,8 +193,13 @@ def _render(name: str) -> str:
 # --------------------------------------------------------------------------
 
 
-def test_registry_covers_all_eight_templates():
-    assert len(dt.TEMPLATES) == 8
+def test_registry_and_the_fixtures_stay_in_step():
+    # Renamed from "all_eight": the count is not the point, and a hard-coded
+    # number turns every new template into a puzzling failure. What matters is
+    # that a template cannot be registered without also getting a happy-path
+    # sample and a bad-input case, so it is held to the same contract as the
+    # rest rather than quietly exempt.
+    assert len(dt.TEMPLATES) >= 8
     assert set(dt.TEMPLATES) == set(SAMPLES)
     assert set(dt.TEMPLATES) == set(BAD_INPUTS)
 
