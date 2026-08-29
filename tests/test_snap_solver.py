@@ -2111,3 +2111,135 @@ def test_answer_contradicting_its_own_steps_is_corrected(monkeypatch):
     print(f"  corrected to {out['option_labels']} ({out['answer'][:44]!r})")
     assert out["option_labels"] == ["B"]
     assert out.get("answer_from_steps") is True
+
+
+# ── The shapes a JEE / NEET paper actually prints ────────────────────────────
+#
+# Built after a run of one-shape-at-a-time bugs: numerical questions refused for
+# having no options, figure questions refused before their figure was read,
+# options that are graphs refused as unreadable. Each of those was a shape
+# nobody had walked through. This walks all of them.
+#
+# The structuring MODEL is stubbed per shape with what it actually returned for
+# that shape on the live API, so this pins OUR handling — the gates, the
+# overrides, the refusals — rather than re-testing gpt-4o.
+
+def _shape(monkeypatch, ocr, structured, **page_over):
+    page = {"text": ocr, "confidence": 0.99, "page_confidence": 0.9,
+            "diagram_regions": 0, "ocr_ms": 0,
+            "diagram_spans": [], "text_lines": []}
+    page.update(page_over)
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: page)
+    stub_transcriber(monkeypatch, json.dumps({"questions": [structured]}))
+    return transcribe_questions(b"x", "image/png", "d1", None, 1)["questions"][0]
+
+
+def test_shape_assertion_reason(monkeypatch):
+    """Statement I / Statement II. The options describe which statement holds,
+    so the stem cannot be answered without them — self_contained must be False
+    or the solver derives blind and has nothing to match against."""
+    ocr = ("Q5. Statement I: one mole of propyne gives half a mole of H2.\n"
+           "Statement II: four g of propyne gives NH3 occupying 224 mL at STP.\n"
+           "(1) I incorrect II correct (2) Both correct\n"
+           "(3) I correct II incorrect (4) Both incorrect\n")
+    q = _shape(monkeypatch, ocr, {
+        "number": 5, "question_type": "single_correct", "legible": True,
+        "self_contained": False, "stem": "Statement I ... Statement II ...",
+        "options": [{"label": "1", "text": "I incorrect II correct"},
+                    {"label": "2", "text": "Both correct"},
+                    {"label": "3", "text": "I correct II incorrect"},
+                    {"label": "4", "text": "Both incorrect"}]})
+    print(f"  legible={q['legible']} self_contained={q['self_contained']}")
+    assert q["legible"] is True
+    assert q["self_contained"] is False
+
+
+def test_shape_match_the_column(monkeypatch):
+    """List-I against List-II, options are pairings. Same rule: the options are
+    the answer space, so the solver must see them."""
+    ocr = ("Q7. Match List-I with List-II.\n"
+           "(A) Ammeter (B) Voltmeter (C) Galvanometer (D) Ohmmeter\n"
+           "(I) low shunt (II) high series (III) small current (IV) resistance\n"
+           "(1) A-I, B-II, C-III, D-IV (2) A-II, B-I, C-III, D-IV\n"
+           "(3) A-I, B-III, C-II, D-IV (4) A-IV, B-II, C-III, D-I\n")
+    q = _shape(monkeypatch, ocr, {
+        "number": 7, "question_type": "multi_correct", "legible": True,
+        "self_contained": False, "stem": "Match List-I with List-II.",
+        "options": [{"label": "1", "text": "A-I, B-II, C-III, D-IV"},
+                    {"label": "2", "text": "A-II, B-I, C-III, D-IV"},
+                    {"label": "3", "text": "A-I, B-III, C-II, D-IV"},
+                    {"label": "4", "text": "A-IV, B-II, C-III, D-I"}]})
+    print(f"  legible={q['legible']} opts={len(q['options'])}")
+    assert q["legible"] is True
+    assert len(q["options"]) == 4
+
+
+def test_shape_printed_answer_key_is_stripped(monkeypatch):
+    """A page that prints its own key must not hand it to the solver.
+
+    Solving becomes copying, and a wrong solve becomes indistinguishable from a
+    right one. The key is kept aside to CHECK the answer afterwards.
+    """
+    ocr = ("Q9. The SI unit of magnetic flux is:\n"
+           "(1) tesla (2) weber (3) henry (4) gauss\nANSWER : B\n")
+    q = _shape(monkeypatch, ocr, {
+        "number": 9, "question_type": "single_correct", "legible": True,
+        "stem": "The SI unit of magnetic flux is:\nANSWER : B",
+        "options": [{"label": "1", "text": "tesla"}, {"label": "2", "text": "weber"},
+                    {"label": "3", "text": "henry"}, {"label": "4", "text": "gauss"}]})
+    print(f"  printed_answer={q['printed_answer']!r} stem={q['stem']!r}")
+    assert q["printed_answer"] == "B"
+    assert "ANSWER" not in q["stem"], "the key was left in what the solver reads"
+
+
+def test_shape_short_option_list_is_refused(monkeypatch):
+    """Two options where the paper prints four means the rest were cropped.
+
+    `options_complete` is set optimistically by the model — a 4-option question
+    cropped to 2 came back "complete" — so the count is checked in code.
+    """
+    ocr = "Q10. Which is a strong electrolyte?\n(1) CH3COOH (2) NH4OH\n"
+    q = _shape(monkeypatch, ocr, {
+        "number": 10, "question_type": "single_correct", "legible": True,
+        "options_complete": True, "stem": "Which is a strong electrolyte?",
+        "options": [{"label": "1", "text": "CH3COOH"},
+                    {"label": "2", "text": "NH4OH"}]})
+    print(f"  legible={q['legible']} reason={q.get('reason')}")
+    assert q["legible"] is False
+    assert q["reason"] == "options_cut_off"
+
+
+def test_shape_comprehension_passage_reaches_every_question():
+    """A shared passage sits ABOVE the first question of its set.
+
+    Slicing from the question number dropped it, so each question arrived as
+    "The time period of revolution is proportional to:" with nothing to reason
+    from. Every question in the set needs it.
+    """
+    ocr = ("Comprehension (Q31 to Q33):\n"
+           "A particle of mass m moves in a circular path of radius R under a "
+           "central force F = -k/r^2. The total energy is E and angular "
+           "momentum is L.\n\n"
+           "Q31. The time period of revolution is proportional to:\n"
+           "(1) R^{3/2} (2) R^2 (3) R (4) R^{1/2}\n"
+           "Q32. The kinetic energy of the particle is:\n"
+           "(1) k/2R (2) k/R (3) 2k/R (4) k/4R\n")
+    slices = snap._slice_by_question(ocr, [31, 32])
+    for n in (31, 32):
+        print(f"  Q{n}: passage carried={'central force' in slices[n]}")
+        assert "central force" in slices[n], f"Q{n} lost its passage"
+    assert "time period" in slices[31] and "kinetic energy" in slices[32]
+
+
+def test_shape_a_page_header_is_not_carried_as_context():
+    """The passage rule must not drag a running header into every slice —
+    that is tokens on every question for no benefit."""
+    ocr = ("JEE Main 2026 (24 January Shift 2)\n"
+           "Q3. Find the acceleration of the block on the incline.\n"
+           "(1) 2.5 m/s2 (2) 5 m/s2 (3) 7.5 m/s2 (4) 10 m/s2\n"
+           "Q4. Find the tension in the string connecting the blocks.\n"
+           "(1) 10 N (2) 20 N (3) 30 N (4) 40 N\n")
+    slices = snap._slice_by_question(ocr, [3, 4])
+    carried = [n for n, s in slices.items() if "SHARED CONTEXT" in s]
+    print(f"  slices carrying the header: {carried}")
+    assert not carried, "a short page header should not be treated as a passage"

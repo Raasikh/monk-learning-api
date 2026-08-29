@@ -97,6 +97,10 @@ DAILY_QUESTION_LIMIT = 50
 # Question shapes the transcriber may report. Anything else is treated as
 # single_correct when options exist, subjective when they do not.
 CHOICE_TYPES = {"single_correct", "multi_correct"}
+# How many choices a JEE or NEET paper prints. Both are standardised on four,
+# across single-correct, multi-correct, assertion-reason and match-the-column.
+# Fewer than this in frame means the rest were cropped out.
+EXPECTED_CHOICE_OPTIONS = 4
 QUESTION_TYPES = CHOICE_TYPES | {"numerical", "subjective"}
 MAX_IMAGE_BYTES = 10 * 1024 * 1024
 ALLOWED_MIME = {"image/jpeg", "image/png", "image/webp", "image/heic"}
@@ -771,6 +775,32 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                     doubt_id[:8], idx, q_type, len(options),
                 )
 
+        # A SHORT option list is a cut-off option list. JEE and NEET print four
+        # choices — every single-correct, multi-correct, assertion-reason and
+        # match-the-column question on both papers — so two or three means the
+        # rest were out of frame, whatever `options_complete` claims. Caught
+        # only by that flag before, which the model sets optimistically: a
+        # 4-option question cropped to 2 came back "complete", and the solver
+        # would then pick the best of a list that may not contain the answer.
+        #
+        # The cost of being wrong here is a retake prompt on a genuinely
+        # 2-option question, which these exams do not print. The cost of not
+        # having it is a confident answer chosen from half a list.
+        if (is_choice and not options_are_drawn
+                and 2 <= len(options) < EXPECTED_CHOICE_OPTIONS):
+            legible = False
+            q_note = q_note or (
+                f"Only {len(options)} of the answer choices are in frame — these "
+                f"papers print {EXPECTED_CHOICE_OPTIONS}. Retake the photo with "
+                f"the whole list of options visible."
+            )
+            q_remedy, q_reason = REMEDY_RETAKE, "options_cut_off"
+            logger.warning(
+                "[SNAP TRANSCRIBE] doubt=%s q%d %s read only %d of %d options — "
+                "the list is cut off, refusing rather than solving from part of it",
+                doubt_id[:8], idx, q_type, len(options), EXPECTED_CHOICE_OPTIONS,
+            )
+
         # Fidelity gate: every option must exist, verbatim, in what the OCR
         # read. The structuring model is INSTRUCTED to copy; this enforces it.
         # An option it invented or mutated is not on the page, and a solver
@@ -1008,14 +1038,30 @@ def figures_by_question(page: Dict[str, Any], wanted: List[int]) -> Dict[int, in
     return counts
 
 
+# A shared passage above a set of questions. Long enough to be prose rather
+# than a running header ("JEE Main 2026 (24 January Shift 2)"), and capped so a
+# whole previous page cannot ride along.
+_PREAMBLE_MIN_CHARS = 120
+_PREAMBLE_MAX_CHARS = 1500
+
+
 def _slice_by_question(ocr_text: str, wanted: List[int]) -> Dict[int, str]:
     """The slice of OCR text belonging to each wanted question number.
 
     Each slice runs from that question's printed number to the start of the
-    next one, so it carries the stem and its options and nothing else. Returns
-    {} if any wanted number is missing or a slice comes out too short to be a
-    question — the caller then structures the whole page in one call rather
-    than risk handing the model half a question.
+    next one, so it carries the stem and its options. Returns {} if any wanted
+    number is missing or a slice comes out too short to be a question — the
+    caller then structures the whole page in one call rather than risk handing
+    the model half a question.
+
+    A COMPREHENSION passage is prepended to every slice. JEE prints one block
+    of context — "A particle of mass m moves in a circular path…" — above a run
+    of questions that are meaningless without it, and it sits ABOVE the first
+    question number, so slicing from that number dropped it entirely and each
+    question arrived as "The time period of revolution is proportional to:"
+    with nothing to reason about. Only prose long enough not to be a running
+    header is carried, and only up to a cap, so a page banner costs nothing and
+    a previous page cannot ride along.
     """
     if not ocr_text or not wanted:
         return {}
@@ -1027,6 +1073,14 @@ def _slice_by_question(ocr_text: str, wanted: List[int]) -> Dict[int, str]:
         starts.setdefault(num, pos)
     ordered = sorted(starts.values())
 
+    preamble = ocr_text[:ordered[0]].strip()
+    if len(preamble) < _PREAMBLE_MIN_CHARS:
+        preamble = ""
+    elif len(preamble) > _PREAMBLE_MAX_CHARS:
+        # Keep the END of it: a passage sits directly above its questions, so
+        # the nearest text is the relevant text.
+        preamble = preamble[-_PREAMBLE_MAX_CHARS:]
+
     out: Dict[int, str] = {}
     for num in wanted:
         if num not in starts:
@@ -1034,6 +1088,11 @@ def _slice_by_question(ocr_text: str, wanted: List[int]) -> Dict[int, str]:
         begin = starts[num]
         after = [p for p in ordered if p > begin]
         chunk = ocr_text[begin:after[0]] if after else ocr_text[begin:]
+        if preamble:
+            chunk = (f"[SHARED CONTEXT printed above this question — it may be a "
+                     f"comprehension passage this question depends on, or it may "
+                     f"just be a page header. Use it only if this question needs "
+                     f"it.]\n{preamble}\n\n[THE QUESTION]\n{chunk}")
         if len(chunk.strip()) < 25:
             return {}
         out[num] = chunk.strip()
