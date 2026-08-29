@@ -1,6 +1,9 @@
 import json
 import logging
 from typing import Dict, Any, List
+import time
+from typing import List, Tuple
+
 from app.db import supabase, fetch_all
 from app.drona.models import get_drona_client, get_model_name, SCOPING_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
@@ -19,7 +22,20 @@ from app.drona.persona import (
 logger = logging.getLogger("drona.scoping")
 
 def scope_student_session(session_id: str, user_id: str, utterance: str) -> Dict[str, Any]:
-    """Scoping service layer (§2): resolves subtopic, invokes planner lazy cache, updates session state."""
+    """Scoping service layer (§2): resolves subtopic, invokes planner lazy cache, updates session state.
+
+    Every stage is timed, because this is the single longest thing between a
+    student and their first spoken word and it was previously a black box. A
+    report of "scope takes 2.5 minutes" could not be confirmed or refuted from
+    the logs: the endpoint line gives a total and nothing inside it is
+    attributed, and the scoping model call is not metered in llm_calls at all.
+    A number nobody can decompose is a number nobody can fix.
+    """
+    _t0 = time.time()
+    _marks: List[Tuple[str, float]] = []
+
+    def _mark(stage: str) -> None:
+        _marks.append((stage, time.time() - _t0))
     # 1. Load session row
     sess_res = supabase.table("drona_sessions").select("*").eq("id", session_id).eq("user_id", user_id).execute()
     if not sess_res.data:
@@ -48,6 +64,7 @@ def scope_student_session(session_id: str, user_id: str, utterance: str) -> Dict
         "concepts", "id, name, key, teach_order, display_order, active",
         chapter_id=chapter_id,
     ) if chapter_id else []
+    _mark("db_reads")
     concept_rows = [r for r in concept_rows if r.get("active") is not False]
     concept_rows.sort(key=lambda x: (
         x.get("teach_order") is None,
@@ -135,8 +152,12 @@ Student Utterance: "{utterance}"
     if subtopic_key:
         sub_title = valid_keys.get(subtopic_key, subtopic_key.replace("-", " ").title())
 
-        # Call get_or_create_plan (§3)
+        _mark("llm_scoping")
+        # Call get_or_create_plan (§3). On a cache miss this authors an outline
+        # plus segment 1 synchronously — measured at ~22s and ~6s — so it
+        # dominates the endpoint whenever the plan is new.
         plan_row = get_or_create_plan(chapter_id, subtopic_key)
+        _mark("plan")
         plan_id = plan_row["id"]
 
         new_history = history + [f"scoping: resolved to '{subtopic_key}'"]
@@ -175,6 +196,9 @@ Student Utterance: "{utterance}"
         else:
             tutor_speech = copy_for(SCOPING_RESOLVED, language, subtopic=sub_title)
 
+        _mark("done")
+        logger.info("⏱️ [SCOPE TIMING] " + "  ".join(
+            f"{name}={dt:.1f}s" for name, dt in _marks))
         return {
             "phase": "teaching",
             "speech": tutor_speech,

@@ -87,7 +87,24 @@ viewport                       375px
 The earlier version used a 380-520 canvas with 11-13px labels and rendered
 labels at **7-9px on a phone** — unreadable. That is the trap.
 
-**So the rule for your layout: give the diagram as much width as you can.**
+### Landscape inverts this — and the app is landscape
+
+Everything above assumes PORTRAIT, where width is scarce. In landscape the
+constraint flips to HEIGHT, and the advice flips with it. On an 812x375 phone
+the board gets ~740px of width but only ~285px of usable height, so a
+1.42-aspect figure at full width renders 522px tall and overflows.
+
+**In landscape, size by HEIGHT and let width follow:**
+
+```css
+svg { max-height: 100%; width: auto; max-width: 100%; }
+```
+
+The app team measured this independently and landed on capping a figure at 72%
+of visible board height, which puts it near 354pt wide — above the 300px floor
+below, so no retune of DETAIL_LEVELS is needed.
+
+**So the rule for portrait: give the diagram as much width as you can.**
 Every 16px of horizontal padding costs about 5% of label size. The web app
 dropped its diagram padding from 36px to 8px on mobile for exactly this reason.
 
@@ -121,7 +138,8 @@ If you skip the animation, nothing else changes. If you implement it, keep the
   why the server validates rather than trusting.
 - **Do not re-layout the SVG.** The author computed positions against the
   viewBox. Moving or re-wrapping text will cause the overlaps the server just
-  spent effort preventing.
+  spent effort preventing. If a label sits badly, report it rather than moving
+  it — the fix belongs in the authoring spec or the validator.
 - **Do not set `font-size` yourself.** It is on each `<text>` already and is
   load-bearing for the sizing maths above.
 - **Do not clip.** The web app sets `overflow="visible"` because a label can

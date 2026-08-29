@@ -150,6 +150,9 @@ STYLE — hold to these so every diagram reads as one system:
   broken, and the board lets overflow spill rather than clipping it.
 - Put labels OUTSIDE the shape they name, with a short leader line, rather than
   crowding them inside. Prefer fewer, shorter labels over many long ones.
+- NEVER draw a label on top of a FILLED shape. It vanishes into the fill once the
+  board recolours it. Place it beside the shape and point with a leader line. A
+  label inside an UNFILLED outline is fine.
 - Label every part a student is expected to name. An unlabelled diagram teaches nothing.
 - No shadows, no gradients, no opacity tricks. Flat, clean, chalk-on-paper.
 
@@ -201,6 +204,69 @@ def _text_boxes(svg: str) -> List[Tuple[float, float, float, float, str]]:
         boxes.append((x + pad, y - size * 0.8 + pad,
                       x + width - pad, y + size * 0.25 - pad, body))
     return boxes
+
+
+# Fills a label can legibly sit on. These are backing panels — a boxed formula
+# on pale grey is a deliberate, correct pattern, not a defect, and rejecting it
+# would throw away most good diagrams. Everything else is saturated enough that
+# ink-coloured text on it is genuinely hard to read.
+PALE_FILLS = {"#ffffff", "#f1f5f9", "#dbeafe"}
+
+
+def _filled_boxes(svg: str) -> List[Tuple[float, float, float, float]]:
+    """Boxes of shapes whose fill would swallow a label.
+
+    Only rect: it is what templates and authored figures use as panels, and a
+    path's bounding box cannot be computed without a geometry engine.
+
+    PALE fills are excluded deliberately. The first version of this flagged any
+    fill at all and rejected 7 of 8 real diagrams — including boxed formulas on
+    pale grey, which are correct and wanted. The hazard is contrast, not the
+    existence of a fill.
+    """
+    boxes = []
+    for m in re.finditer(r"<rect([^>]*)>", svg):
+        a = m.group(1)
+        fill = re.search(r'fill="([^"]+)"', a)
+        if not fill or fill.group(1).lower() in PALE_FILLS | {"none", "transparent"}:
+            continue
+
+        def n(k, d=0.0):
+            hit = re.search(rf'{k}="([-\d.]+)"', a)
+            return float(hit.group(1)) if hit else d
+
+        w, h = n("width"), n("height")
+        if w <= 0 or h <= 0:
+            continue
+        # A full-canvas background rect is not an overlap hazard.
+        if w * h > 100000:
+            continue
+        boxes.append((n("x"), n("y"), n("x") + w, n("y") + h))
+    return boxes
+
+
+def labels_over_shapes(svg: str) -> List[str]:
+    """Labels drawn on top of a filled shape.
+
+    Prompted by a report from a live class, though not the same thing as it:
+    that case was ink on a PALE panel, which restyles to dark-on-cream and reads
+    fine. It was crowding the scale bar it named, which is a spec matter — the
+    style rules now say to put a label beside a shape with a leader line.
+
+    What this catches is the harder failure: a label on a SATURATED fill, where
+    the text does not just crowd but disappears once the board recolours it, and
+    the app is forbidden from moving it.
+    """
+    hits = []
+    for tb in _text_boxes(svg):
+        tx0, ty0, tx1, ty1, body = tb
+        cx, cy = (tx0 + tx1) / 2, (ty0 + ty1) / 2
+        for bx0, by0, bx1, by1 in _filled_boxes(svg):
+            # Centre inside a filled box: the label is ON the panel, not beside it.
+            if bx0 < cx < bx1 and by0 < cy < by1:
+                hits.append(body)
+                break
+    return hits
 
 
 def colliding_labels(svg: str) -> List[Tuple[str, str]]:
@@ -256,6 +322,10 @@ def validate(svg: str) -> Tuple[bool, str]:
     off = used - {c.lower() for c in ALLOWED_COLORS}
     if off:
         return False, f"off-palette colours: {sorted(off)}"
+    over = labels_over_shapes(svg)
+    if over:
+        return False, ("labels drawn over filled shapes: "
+                       + ", ".join(repr(o) for o in over[:3]))
     clashes = colliding_labels(svg)
     if clashes:
         # Rejected so the retry loop redraws it, which is the only fix that
