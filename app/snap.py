@@ -2209,7 +2209,10 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # confirms its thread is done (Queue's internal lock makes that write
     # visible here, the same guarantee the outcome dict below already relied
     # on before this change).
-    event_queues: Dict[int, "_queue.Queue"] = {}
+    # ONE queue for every solve, not one each. The delivery loop below has to
+    # take whichever question finishes FIRST, and it cannot do that while
+    # blocked on a particular question's queue.
+    inbox: "_queue.Queue" = _queue.Queue()
     outcomes: Dict[int, Dict[str, Any]] = {}
     usages: Dict[int, Dict[str, int]] = {}
     threads: List[_threading.Thread] = []
@@ -2218,21 +2221,19 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         if not question["legible"]:
             continue
         n = question["n"]
-        q_events: "_queue.Queue" = _queue.Queue()
-        event_queues[n] = q_events
         outcomes[n] = {}
         usages[n] = {"input": 0, "output": 0}
 
-        def _run(q=question, events=q_events, outcome=outcomes[n], usage=usages[n]):
+        def _run(q=question, num=n, outcome=outcomes[n], usage=usages[n]):
             try:
                 outcome["solution"] = solve_question(
                     q, doubt_id, usage,
-                    on_event=lambda kind, data: events.put((kind, data)),
+                    on_event=lambda kind, data: inbox.put(("event", num, kind, data)),
                 )
             except SnapError as err:
                 outcome["error"] = err
             finally:
-                events.put(None)
+                inbox.put(("done", num, None, None))
 
         worker = _threading.Thread(target=_run, daemon=True)
         worker.start()
@@ -2245,73 +2246,84 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     )
 
     solved_count = 0
-    first_live = True
-    for question in questions:
-        n = question["n"]
-        if question["legible"]:
-            events = event_queues[n]
+    by_number = {q["n"]: q for q in questions}
 
-            # The FIRST question is drained the moment its thread starts, so
-            # whatever is sitting in its queue is genuinely fresh — nothing has
-            # been generated while the student was watching something else.
-            # Every question after it may have been solving in the background
-            # since before its turn came up, and may already be finished:
-            # anything already sitting in ITS queue is stale, and replaying it
-            # live would flash through several seconds of "thinking" ticks and
-            # steps in an instant, which reads as a glitch, not as fast. Drain
-            # it without yielding; if that drain reaches the done sentinel, the
-            # solve already finished — go straight to the result. If the queue
-            # runs dry before the sentinel, it is still running: forward events
-            # from here on exactly as they happen (below), so what the student
-            # sees is genuinely live, not a replay.
-            done_already = False
-            if not first_live:
-                while True:
-                    try:
-                        item = events.get_nowait()
-                    except _queue.Empty:
-                        break
-                    if item is None:
-                        done_already = True
-                        break
-            first_live = False
-
-            if not done_already:
-                while True:
-                    item = events.get()
-                    if item is None:
-                        break
-                    kind, data = item
-                    yield kind, {**data, "question_index": n}
-
-            sv_usage["input"] += usages[n]["input"]
-            sv_usage["output"] += usages[n]["output"]
-
-            outcome = outcomes[n]
-            if "solution" in outcome:
-                question["solution"] = outcome["solution"]
-                solved_count += 1
-            elif "error" in outcome:
-                err = outcome["error"]
-                logger.error("[SNAP SOLVE FAILED] doubt=%s q%d: %s",
-                             doubt_id[:8], question["n"], err)
-                question["solve_error"] = str(err)
-                question["solve_remedy"] = err.remedy
-                question["solve_reason"] = err.reason
-        else:
-            logger.info("[SNAP] doubt=%s q%d not solvable: %s",
-                        doubt_id[:8], question["n"], question.get("note"))
-
-        # When each question actually reached the student, measured from the
-        # start of the submission. This is the number that matches what they
-        # experienced — the per-row latency_ms the API stores.
+    def _deliver(question):
+        """Log and hand one finished question to the student."""
         logger.info(
             "[SNAP DELIVERED] doubt=%s q%s at t+%dms status=%s",
             doubt_id[:8], question["n"], int((time.time() - started) * 1000),
             "solved" if question.get("solution") else
             ("solve_failed" if question.get("solve_error") else "not_legible"),
         )
+
+    # Nothing is being solved for these, so there is nothing to wait for.
+    for question in questions:
+        if not question["legible"]:
+            logger.info("[SNAP] doubt=%s q%d not solvable: %s",
+                        doubt_id[:8], question["n"], question.get("note"))
+            _deliver(question)
+            yield "question", question
+
+    # Answers go out in the order they FINISH, not the order they sit on the
+    # page. Delivering in page order meant one slow question held every answer
+    # behind it: on a real submission q5 was ready at 8.9s and q4 at 23.5s,
+    # and the student saw neither until q3 — which had wedged — gave up at
+    # 2m13s, so all three appeared at once, two minutes late.
+    #
+    # The page keeps its own order regardless: each card is rendered from the
+    # question list sent before any solving, and fills in when its answer
+    # arrives, so out-of-order delivery is invisible.
+    pending = [q["n"] for q in questions if q["legible"]]
+    outstanding = set(pending)
+    # Steps stream for ONE question at a time, matching the single live panel.
+    # The featured question is whichever is earliest on the page and still
+    # running; the rest solve quietly and their working is not shown.
+    featured = pending[0] if pending else None
+
+    while outstanding:
+        kind, n, ev_kind, data = inbox.get()
+
+        if kind == "event":
+            # Only the featured question's working is forwarded. Another
+            # question's steps arriving mid-stream would swap the panel's
+            # contents under the student mid-sentence.
+            if n == featured:
+                yield ev_kind, {**data, "question_index": n}
+            continue
+
+        outstanding.discard(n)
+        question = by_number[n]
+        sv_usage["input"] += usages[n]["input"]
+        sv_usage["output"] += usages[n]["output"]
+
+        outcome = outcomes[n]
+        if "solution" in outcome:
+            question["solution"] = outcome["solution"]
+            solved_count += 1
+        elif "error" in outcome:
+            err = outcome["error"]
+            logger.error("[SNAP SOLVE FAILED] doubt=%s q%d: %s",
+                         doubt_id[:8], question["n"], err)
+            question["solve_error"] = str(err)
+            question["solve_remedy"] = err.remedy
+            question["solve_reason"] = err.reason
+
+        _deliver(question)
         yield "question", question
+
+        if n == featured:
+            # Hand the panel to the next question still working. Its earlier
+            # steps are deliberately NOT replayed — flushing a backlog would
+            # flash seconds of working past in an instant, which reads as a
+            # glitch rather than as speed.
+            featured = next((m for m in pending if m in outstanding), None)
+            if featured is not None:
+                logger.info(
+                    "[SNAP PIPELINE] doubt=%s live panel moves to q%d "
+                    "(%d still solving)",
+                    doubt_id[:8], featured, len(outstanding),
+                )
 
     for worker in threads:
         worker.join()

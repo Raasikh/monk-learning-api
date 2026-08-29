@@ -542,6 +542,73 @@ def test_a_choice_question_with_no_options_is_still_refused(monkeypatch):
     assert q["reason"] == "options_unreadable"
 
 
+def test_answers_arrive_as_they_finish_not_in_page_order(monkeypatch):
+    """A slow question must not hold finished answers behind it.
+
+    Delivery used to walk the page in order, so it blocked on q1's queue before
+    looking at q2. On a real submission q5 was ready at 8.9s and q4 at 23.5s,
+    and the student saw neither until q3 -- which had wedged -- gave up at
+    2m13s. All three then appeared at once, two minutes late.
+
+    The page keeps its own order regardless: cards are rendered from the
+    question list sent before any solving and fill in as answers land, so
+    out-of-order delivery is invisible.
+    """
+    delays = {1: 0.9, 2: 0.3, 3: 0.05}      # q1 slowest, q3 fastest
+    monkeypatch.setattr(snap, "crop_to_content", lambda b, d="-": (b, None))
+    monkeypatch.setattr(snap, "transcribe_questions", lambda *a, **k: {
+        "questions": [{"n": i, "text": f"q{i}", "stem": f"q{i}", "legible": True,
+                       "options": [], "question_type": "numerical",
+                       "requires_diagram": False} for i in (1, 2, 3)],
+        "note": None, "ocr_confidence": 0.99, "ocr_ms": 0, "structure_ms": 0})
+
+    def fake_solve(q, doubt_id="-", usage_acc=None, on_event=None):
+        time.sleep(delays[q["n"]])
+        return {"answer": f"a{q['n']}", "option_labels": [],
+                "steps": [{"n": 1, "text": "x"}], "key_idea": None,
+                "subject": None, "topic": None}
+    monkeypatch.setattr(snap, "solve_question", fake_solve)
+
+    order = [item["n"] for kind, item
+             in snap.iter_snapped_questions(b"x", "image/png", "d1", 3)
+             if kind == "question"]
+    print(f"  delivered in order: {order}  (page order would be [1, 2, 3])")
+    assert order == [3, 2, 1], (
+        f"answers should arrive fastest-first, got {order}")
+
+
+def test_every_question_is_delivered_exactly_once(monkeypatch):
+    """Out-of-order delivery must not drop or duplicate a question.
+
+    Mixed legible and illegible: the illegible ones have no solve to wait for
+    and go out immediately, the rest as they finish -- and every one arrives,
+    once.
+    """
+    monkeypatch.setattr(snap, "crop_to_content", lambda b, d="-": (b, None))
+    monkeypatch.setattr(snap, "transcribe_questions", lambda *a, **k: {
+        "questions": [
+            {"n": 1, "text": "q1", "stem": "q1", "legible": True, "options": [],
+             "question_type": "numerical", "requires_diagram": False},
+            {"n": 2, "text": "", "stem": "", "legible": False, "options": [],
+             "question_type": "numerical", "requires_diagram": False,
+             "note": "too blurry"},
+            {"n": 3, "text": "q3", "stem": "q3", "legible": True, "options": [],
+             "question_type": "numerical", "requires_diagram": False},
+        ], "note": None, "ocr_confidence": 0.99, "ocr_ms": 0, "structure_ms": 0})
+    monkeypatch.setattr(snap, "solve_question",
+                        lambda q, doubt_id="-", usage_acc=None, on_event=None: {
+                            "answer": "a", "option_labels": [],
+                            "steps": [{"n": 1, "text": "x"}], "key_idea": None,
+                            "subject": None, "topic": None})
+
+    delivered = [item["n"] for kind, item
+                 in snap.iter_snapped_questions(b"x", "image/png", "d1", 3)
+                 if kind == "question"]
+    print(f"  delivered: {delivered}")
+    assert sorted(delivered) == [1, 2, 3], f"lost or duplicated: {delivered}"
+    assert len(delivered) == len(set(delivered)), "a question was delivered twice"
+
+
 def test_a_wedged_solve_is_not_retried(monkeypatch):
     """An attempt that burned its budget wedged; repeating it wedges again.
 
