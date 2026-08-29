@@ -132,5 +132,28 @@ def test_exam_weightage_is_still_allowed_while_paper_prediction_is_not():
 
 
 def test_a_regional_language_question_still_gets_a_real_answer():
-    # The language lock must not turn into refusing to understand the student.
-    assert "deserves a real physics answer, in the session language" in PROMPT
+    # The language lock must not turn into refusing to UNDERSTAND the student.
+    # A real physics question asked in Tamil gets a real physics answer, in the
+    # session language — only a request to SWITCH language gets declined.
+    assert "deserves a real physics answer" in PROMPT
+    assert "Understanding is not the same as switching" in PROMPT
+
+
+def test_the_language_rule_never_fires_unprompted():
+    """It was announcing "this is an English session" when nobody asked.
+
+    The rule is long and salient, so the model volunteered it. Being silent
+    unless asked is the fix, and it has to be stated as a rule because the
+    absence of an instruction is not an instruction.
+    """
+    assert "NEVER VOLUNTEER ANY OF THIS" in PROMPT
+
+
+def test_an_unoffered_language_is_not_sent_to_a_session_that_does_not_exist():
+    """Telugu got "start a new session in Telugu". There is no such session.
+
+    Two situations that look alike and are not: switching between the two we
+    OFFER, and asking for one we do not have at all.
+    """
+    assert "That session does not exist" in PROMPT
+    assert "We don't have Telugu yet" in PROMPT

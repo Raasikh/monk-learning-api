@@ -14,7 +14,12 @@ from app.drona.tutor import process_tutor_turn_stream
 from app.drona.practice_explain import process_practice_explain_turn_stream
 from app.drona.doubt_of_day import process_doubt_of_day_turn_stream
 from app.drona.voice_proxy import DeepgramSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
-from app.drona.persona import normalize_language, persona_for
+from app.drona.persona import (
+    normalize_language,
+    persona_for,
+    unsupported_language_in,
+    unsupported_language_reply,
+)
 
 logger = logging.getLogger("drona.live_session_ws")
 router = APIRouter(prefix="/drona", tags=["drona_voice"])
@@ -1079,7 +1084,23 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             logger.info(f"⚡ [STT STREAMED] Transcript ready at release, REST call skipped: '{norm_t}'")
                         else:
                             _, norm_t = await stt_proxy.transcribe_audio_rest(full_pcm)
-                        if norm_t.strip():
+                        _unsupported = unsupported_language_in(norm_t)
+                        if _unsupported:
+                            # Short-circuited in code, not left to the tutor. A
+                            # Telugu utterance reaches the model as text it will
+                            # earnestly try to ANSWER — inventing a question the
+                            # student never asked. Cheaper and far more reliable
+                            # to say so here than to hope the prompt catches it.
+                            logger.info(f"🗣️ [UNSUPPORTED LANGUAGE] {_unsupported} detected in '{norm_t[:40]}' "
+                                        f"— declining without launching a turn")
+                            await safe_send_json({"type": "transcript_final", "transcript": norm_t})
+                            await safe_send_json({
+                                "type": "error",
+                                "message": unsupported_language_reply(session_language, _unsupported),
+                            })
+                            await safe_send_json({"type": "state", "no_response_timer_paused": False})
+                            resume_parked_lesson("unsupported_language")
+                        elif norm_t.strip():
                             logger.info(f"🎯 [STT TRANSCRIPT] norm='{norm_t}'")
                             await websocket.send_json({
                                 "type": "transcript_final",

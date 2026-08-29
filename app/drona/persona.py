@@ -11,7 +11,7 @@ The display names here must stay in step with getTutorName() in the web repo
 (src/lib/drona/tutor.ts) and with Rule 12 of prompts/tutor.md, which keys Hindi
 verb-form agreement off tutor_gender.
 """
-from typing import Dict, Literal
+from typing import Dict, Literal, Optional
 
 TutorVoice = Literal["male", "female"]
 SessionLanguage = Literal["english", "hinglish"]
@@ -163,3 +163,57 @@ def copy_for(table: Dict[str, str], language: object, **fmt) -> str:
 def chips_for(table: Dict[str, list], language: object) -> list:
     lang = normalize_language(language)
     return list(table.get(lang, table[DEFAULT_LANGUAGE]))
+
+# ── Languages we cannot teach in ─────────────────────────────────────────────
+# A student who speaks Telugu gets transcribed by Deepgram into Telugu script.
+# Passed to the tutor, that becomes an utterance it will earnestly try to
+# ANSWER — inventing a question the student never asked and teaching against
+# it. The co-founder hit exactly this: "it assumes it to be a question and it
+# starts answering."
+#
+# Script is the reliable signal, so this is done in code rather than left to
+# the model. Devanagari is deliberately ABSENT: Hindi is a session language and
+# normalize_devanagari_to_roman() already handles it.
+UNSUPPORTED_SCRIPTS = (
+    ("Telugu",    0x0C00, 0x0C7F),
+    ("Tamil",     0x0B80, 0x0BFF),
+    ("Kannada",   0x0C80, 0x0CFF),
+    ("Malayalam", 0x0D00, 0x0D7F),
+    ("Bengali",   0x0980, 0x09FF),
+    ("Gujarati",  0x0A80, 0x0AFF),
+    ("Punjabi",   0x0A00, 0x0A7F),
+    ("Odia",      0x0B00, 0x0B7F),
+)
+
+
+def unsupported_language_in(text: str) -> Optional[str]:
+    """The language name if this utterance is mostly a script we can't teach in.
+
+    Returns None for anything we can act on, including romanised Hinglish and
+    Devanagari. A THRESHOLD rather than any-match, because one stray glyph in
+    an otherwise fine sentence is a transcription artefact, not a language
+    change — refusing on that would break ordinary turns.
+    """
+    letters = [ch for ch in (text or "") if ch.isalpha()]
+    if len(letters) < 3:
+        return None
+    counts: Dict[str, int] = {}
+    for ch in letters:
+        cp = ord(ch)
+        for name, lo, hi in UNSUPPORTED_SCRIPTS:
+            if lo <= cp <= hi:
+                counts[name] = counts.get(name, 0) + 1
+                break
+    if not counts:
+        return None
+    name, n = max(counts.items(), key=lambda kv: kv[1])
+    return name if n / len(letters) >= 0.4 else None
+
+
+def unsupported_language_reply(language: str, lang_name: str) -> str:
+    """What to say. Names the language, promises nothing with a date on it."""
+    if language == "hinglish":
+        return (f"Lagta hai aapne {lang_name} mein bola — abhi wo hum support nahi karte, "
+                f"jald aayega ummeed hai. Filhaal Hinglish mein poochho, main samjha dunga.")
+    return (f"That sounded like {lang_name} — we don't support it yet, hopefully soon. "
+            f"Ask me in English for now and I'll take you through it.")
