@@ -1604,13 +1604,20 @@ def match_answer_to_options(answer: str, options: List[Dict[str, str]],
 # 1,062-character step that argued with itself, and a 5,445-character one that
 # broke the JSON outright — the rambling and the parse failures are the same
 # problem.
-# A step is one line of working, not a paragraph. 320 characters is roughly
-# three short sentences — enough room for a real explanation (the "how" as
-# well as the "what") without going back to the failure this replaced: an
-# earlier, higher ceiling let the model use the steps as scratch paper and
-# write a single 5,445-character step that broke its own JSON. The ceiling is
-# the enforcement; raise it, don't remove it.
-MAX_STEP_CHARS = 320
+# A step is one line of working, not a paragraph. The ceiling is what stops a
+# step becoming scratch paper: an earlier, higher one let the model write a
+# single 5,445-character step that broke its own JSON, and the rambling and the
+# parse failures were the same problem. It is the enforcement — raise it, don't
+# remove it.
+#
+# 320 was roughly three short sentences, which turned out to be the binding
+# constraint on whether a step could say WHY a move is valid rather than only
+# what the move is. 700 buys that room and is still an order of magnitude below
+# the failure it guards against. Note this is not a truncation: a step over the
+# ceiling is sent back to be rewritten (see `_step_problems`), so a student
+# never sees a sentence cut off mid-word — they see a solution that was made to
+# fit.
+MAX_STEP_CHARS = 700
 MAX_STEPS = 7
 
 # Phrases that only appear when a model is thinking out loud rather than
