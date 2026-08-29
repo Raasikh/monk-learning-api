@@ -1,0 +1,784 @@
+{
+  "paper_id": "jee-main-2024-s2-2024-04-08-shift-1",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2024-s2-2024-04-08-shift-1",
+    "exam": "jee-main",
+    "year": 2024,
+    "session": 2,
+    "exam_date": "2024-04-08",
+    "shift": 1,
+    "paper_type": "question_paper",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.esaral.com",
+    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
+    "pdf_url": "https://www.esaral.com/media/uploads/2024/4/10/124243-JEE-Main_Morning-Shift-1_08-04-2024_Student-Copy.pdf",
+    "official_key_url": "https://web.archive.org/web/20240423092125/https://jeemain.nta.ac.in/images/FINAL_ANSWER_KEY_JEE_MAIN_SESSION_2_22.04.2024.pdf",
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "67261ee8dbee33923942ec1453bf98f87b40a7d1d584e11547c3be361e4a1e3d",
+    "page_count": 10,
+    "text_chars": 8490,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s2-2024-04-08-shift-1.pdf"
+  },
+  "answer_sheet": {
+    "status": "official_key_pending",
+    "source": "official_nta_key",
+    "official_key_url": "https://web.archive.org/web/20240423092125/https://jeemain.nta.ac.in/images/FINAL_ANSWER_KEY_JEE_MAIN_SESSION_2_22.04.2024.pdf",
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "exam_date": "2024-04-08",
+    "shift": 1
+  },
+  "question_count": 45,
+  "defects": [
+    "45/45 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Find sum of solutions of the equation \n2\n8\n16.8\n48\n0\nα\nα\n−\n+\n=",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Find sum of diagonal elements of matrices A13 here \n2\n1\nA\n1\n1\n\n\n−\n= \n\n\n\n\n",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Given \n4\nsinx\n5\n= −\n where θ ∈ IIIrd quadrant then find the value of 3tan2x – cosx is",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Solve \n(\n)\n2\n2\n6dx\nsin x 1\ncot x\n∫\n−",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let f(x) = cosx – x + 1 ∀ x ∈ [0, π]. let M and m be the maximum and minimum values of f(x) \nthen find (M - m)",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Find \nshortest \ndistance \nbetween \nlines \n(\n)\n(\n)\n(\n)\n1\nˆ\nˆ\nˆ\nr\n5\ni\n1\n3\nj\n1\n2\nk\n=\n+ µ\n+\n−µ\n+\n+ µ\n\n \nand \n(\n)\n(\n)\n(\n)\n2\nˆ\nˆ\nˆ\nr\n2\ni\n3\n3\nj\n3\n4\nk\n=\n+ λ\n+\n−λ\n+\n+\nλ\n",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let A be 3 × 3 matrix where \n2\na\n0\nA\n1\n3\n1\n0\n1\nb\n\n\n\n\n= \n\n\n\n\n\n and A3 = 3A2 + 2Ι, then find the value of 3a + b?",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Find area where \n{\n}\nA\nmin sinx,cosx\n=\n in x\n,\n\n\n∈−π π\n\n",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If \n(\n)\n1\nn\nk\nn\n0\n1\nx\ndx\nΙ =\n−\n∫\n. If \n21\n20\n147\n148\nΙ\n=\nΙ\n then find the value of k.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Find the value of the \n3\n10\n2\nx\n0\n1\ncosx cos2x\ncos3x..... cos 10x\nlim 2\nx\n→\n\n\n−\n⋅\n\n\n\n\n\n",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "A Differential Equation is given as (\n)\n(\n)\n2\ntanx\n2 tanx\n2\n1\ny\n.e\ndx\n1\ne\ncos x dy\n0\n+\n+\n+\n=\n and y(0) = 1, then \nfind the value of y 4\n\n\nπ\n\n\n\n\n.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Find the number of three digit numbers than can be formed using the digits {2, 3, 4, 5, 7} \nwhich are not divisible by 3 where repetition is not allowed.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Given \nz\n1\n1\nmg\nand z\n2\n1\nz\n2\n5\n\n\n+\nΙ\n=\n+\n=\n\n\n+\n\n\n then find the value of \n(\n)\nRe z\n2\n+\n \nJEE(Main)-2024 | 08 April 2024 (Shift-1 Morning) | Question Paper | Memory Based \nJEE | NEET | Class 8 - 10 Download eSaral App\n1\nwww.esaral.com\nJEE-Main-08-04-2024 Morning Shift",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "There are two natural numbers ‘A’, ‘B’ such that their sum is 24 then find the probability \nthat product of A and B is not less than the 3\n4  of maximum product of A and B.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Range of \n4\n2\n4\n2\nsin\n3cos\nsin\ncos\nθ +\nθ\nθ +\nθ\n is [α, β]. If first term of G.P. is 64 and common ratio is α\nβ . Find the \nsum of infinite terms of G.P.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Given that A + 5B = 42 where A, B ∈ N and number of pairs of (A, B) is m. If \n(\n)\nm\nn!\nn 1 1\ni\nx\niy\n=\n−\n=\n+\n∑\n \nthen find the value of x + y + m.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Given a hyperbola \n2\n2\n2\n2\nx\ny\n1\na\nb\n−\n+\n=  and the eccentricity is \n3 , length of latus rectum of \nthe given hyperbola is 4 3  and a point p(α, β) lies on hyperbola, where product of \ndistance from foci is β. Find the value of α2 + β.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "There are two circles: C1:(x – α)2 + (y – β)2 = r12 and C2:(\n)\n2\n2\n2\n2\n15\nx\n8\ny\nr\n2\n\n\n−\n+\n−\n=\n\n\n\n\n both of them \ntouch each other at (6, 6) and the common point divide the distance between the centre of the two \ncircles in ratio 2 : 1. Find the value of (\n)\n(\n)\n2\n2\n2\n2\n1\n2\n4 r\nr\nα + β\n+\n+",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If ( )\n3\n2\nf x\n4cos x\n3 3 cos x\n1\n=\n+\n− then find the number of local maxima ∀ x ∈ (0, 2π).",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Given a triangle ABC such that equation of AB is 4x + 3y = 14 and AC is 3x – 2y = 5 and a \npoint \n4\nP 2,\n3\n\n\n−\n\n\n\n\n divides BC in the ratio 2 : 1 internally then find the equation of BC. \nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main-08-04-2024 Morning Shift \nwww.esaral.com\n2\n\nPHYSICS",
+      "options": null,
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "If the resultant is A\nx then find x.  \n45° \n|A| \n|A|\n|A|",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "Initially a mass of 5 kg is at rest, after some time it breaks into two parts of mass m1 and \nm2, the mass m1 is moving with velocity V1 and mass m2 is moving with velocity V2 and both \nvelocities are in opposite directions. Find the ratio of their kinetic energies.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "If the proton and electron have same de-Broglie wavelength, then what will be the ratio of \ntheir kinetic energy.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "If a light ray is passing from denser medium (refractive index 1) to rarer medium having \n(refractive index 2) and having critical angle 45°, then find the value of 1/2.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "A ball of mass 400 gram moving with initial velocity of 20 m/s is brought to rest in  \n0.1 seconds by the person catching the ball, then calculate the force experienced by him.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "What will be the ratio of molar specific heat at constant volume for monoatomic & diatomic \ngas?",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "The ratio of frequency of 7th overtone for a closed and open organ pipe is \n1\n−\n\n. Then find \nthe value of ",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "Resistance of a wire at 0°C is 10 whereas at 100°C is 10.2. Find the temperature (in kelvin) \nof wire when its resistance is 10.95.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "Find the value of terminal voltage in the given circuit: \n4 \n4 \n2\n3V",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "The length of second’s hand and minute hand of the clock are 75 cm and 60 cm respectively. \nThen find the distance (in cm) between the tips of second and minute hand after half hour.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "Which equation best describes Bernoulli’s theorem? \n \n \nJEE | NEET | Class 8 - 10 Download eSaral App\n3\nwww.esaral.com\nJEE-Main-08-04-2024 Morning Shift",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 1,
+      "text": "If the kinetic energy of masses m1 = 0.4 kg, m2 = 1.2 kg, m3 = 1.6 kg are same. Find the ratio \nof their linear momentum. \n \n13 \nFrom a uniform rectangular plate PQVW of mass 10 Kg, section RSUT (as shown in the figure) \nis removed. If the coordinates of COM of the remaining plate is (X,Y), then the value of X\nY is: \nQ \nR(1,2) \nU(2,2)\nV(3,2)\n(0,2) \n(0,0) P \nW(3,0)\nS(1,1) \nT(2,1)",
+      "options": null,
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "If the two planets of masses of m1 and m2 revolving around the sun in orbits of radius r1 and \nr2 have their angular momentum in the ratio 1 : 3, then the ratio of their time period will be:",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "Two spheres of radius a and b having charges Q1 and Q2 respectively are connected by a \nconducting wire. Find the correct relation if no charge flows through the wire.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "In a series LCR circuit, the value of resistance is halved, if the circuit is in resonance then \nthe new current amplitude (I2) will satisfy: (I1 is old current amplitude)",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "A loop having 30 turns of area 3.6 × 10–3m2  and net resistance = 100 is placed in the uniform \nmagnetic field of magnitude 5T. The work done by the external agent if the loop is pulled \nout of the magnetic field region in 1 sec. (If given resistance 100)",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "An electron is moving in a region of uniform magnetic field and electric field. The kinetic \nenergy of electron is 5eV and magnitude of magnetic field is 3T. If the direction of magnetic \nfield is perpendicular to the plane of motion of electron. Then the value of electric field if \nthe electron moves undeviated.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "Radiation of intensity 360 W/cm2 is incident normally on the perfectly absorbing surface and \nthe force experienced by the surface is 1.2 × 10–4N. Find the area of the surface.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "Find output : \nA \nB\nA \n \n \nY\nB",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "If a numerical value is given by n = a × 10b, then choose the correct option.",
+      "options": {
+        "A": "If a  5 then magnitude of it is in order of b",
+        "B": "If 10  a > 5 then magnitude of it is in order of b",
+        "C": "If a  5 then magnitude of it is in order of b",
+        "D": "If b  5 then magnitude of it is in order of a JEE | NEET | Class 8 - 10 Download eSaral App JEE-Main-08-04-2024 Morning Shift www.esaral.com 4"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "In a nuclear reaction Q-value is 18 × 108J. Find mass defect?",
+      "options": null,
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "Diameter of sphere is measured using vernier calipers. The least count of vernier caliper is \n0.1 mm, main scale reading is 2 cm and vernier scale is 2 cm. If the mass of sphere is 8 kg, \nthen find the density of material of sphere.",
+      "options": null,
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "Find out the magnitude of the work done on the gas when 1 mole of an ideal gas undergoes \ncompression from 9 litre to 1 litre through a reversible isothermal process. (in Joule) (Nearest \ninteger).",
+      "options": null,
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "In the given adjustment, find the distance of center of mass of the system from the origin. \ny \nm \n(0,a)\n(0,0)\nm\nm\nx\n(a,0)",
+      "options": null,
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 2,
+      "text": "Find the relation between \nA\nB\nD\nC\nV\nV\nand\nV\nV\n. In the process shown below: \nP\nV \nA \nB \nC\nD\nisothermal \nisothermal \nAdiabatic\nAdiabatic \n \nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main-08-04-2024 Morning Shift \nwww.esaral.com\n5\n\n→\n→\n→\n→\n+\n\n⎯⎯⎯⎯⎯→\n⎯⎯⎯⎯\n→\n \n \n⎯⎯→\n⎯⎯⎯⎯⎯→\n  \nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main-08-04-2024 Morning Shift \nwww.esaral.com\n6\n\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main-08-04-2024 Morning Shift \nwww.esaral.com\n7\n\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n⎯⎯⎯⎯⎯⎯\n→\n⎯⎯⎯⎯⎯→\n⎯⎯⎯⎯⎯⎯→\n\n⎯⎯⎯→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main-08-04-2024 Morning Shift \nwww.esaral.com\n8\n\n=\n−\n\n\n= \n\n\n\n\n\n\n\n= \n\n\n\n\n\n=\n \n−\n−\nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main-08-04-2024 Morning Shift \nwww.esaral.com\n9\n\n⎯⎯⎯⎯⎯\n\n⎯⎯⎯⎯→\n  \n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main-08-04-2024 Morning Shift \nwww.esaral.com\n10",
+      "options": null,
+      "page_start": 5,
+      "page_end": 10,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    }
+  ]
+}

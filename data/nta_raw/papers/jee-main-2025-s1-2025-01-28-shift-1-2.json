@@ -1,0 +1,60 @@
+{
+  "paper_id": "jee-main-2025-s1-2025-01-28-shift-1-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2025-s1-2025-01-28-shift-1-2",
+    "exam": "jee-main",
+    "year": 2025,
+    "session": 1,
+    "exam_date": "2025-01-28",
+    "shift": 1,
+    "paper_type": "question_paper",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "cdn.targetpublications.org",
+    "source_page_url": "",
+    "pdf_url": "https://cdn.targetpublications.org/admin/downloads/X9lRGMz1A39NeOfY5rpeT85oVn6RSTJJHmkmO5Gk.pdf",
+    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/02/2025021053.pdf",
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "ef3cdfc5a7e7bf1f011857d9f9e900eb1032128334d9ce7eb8127b710987065c",
+    "page_count": 9,
+    "text_chars": 0,
+    "has_text_layer": false,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2025-s1-2025-01-28-shift-1-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "official_key_pending",
+    "source": "official_nta_key",
+    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/02/2025021053.pdf",
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": null,
+  "status": "needs_ocr",
+  "question_count": 0,
+  "defects": [
+    "no usable text layer; OCR deferred per task scope"
+  ],
+  "questions": []
+}

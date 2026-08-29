@@ -13,7 +13,7 @@ from app.auth import decode_supabase_jwt
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.practice_explain import process_practice_explain_turn_stream
 from app.drona.doubt_of_day import process_doubt_of_day_turn_stream
-from app.drona.voice_proxy import SaarasSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
+from app.drona.voice_proxy import DeepgramSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
 from app.drona.persona import normalize_language, persona_for
 
 logger = logging.getLogger("drona.live_session_ws")
@@ -200,7 +200,22 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     conn_pool_key = f"{session_id}#{uuid.uuid4().hex[:4]}"
     tts_proxy = RumikTTSProxy(voice_preset=persona['voice_preset'], model="mulberry", session_id=session_id,
                               language=session_language, pool_key=conn_pool_key)
-    stt_proxy = SaarasSTTProxy(mode="codemix", latency_profile="Fast", language=session_language)
+    # The chapter's own concept names, boosted as Deepgram keyterms. A subject
+    # tutor knows exactly what vocabulary is coming, and nova-3 gets it wrong
+    # without help: "Born-Haber cycle" came back as "Born Harbor cycle" until
+    # the term was boosted. Never fatal — an empty list just means no boosting.
+    _keyterms: List[str] = []
+    try:
+        _chapter_id = session_data.get("chapter_id")
+        if _chapter_id:
+            _keyterms = [c["name"] for c in (
+                supabase.table("concepts").select("name")
+                .eq("chapter_id", _chapter_id).eq("active", True)
+                .limit(DeepgramSTTProxy.MAX_KEYTERMS).execute().data or []
+            )]
+    except Exception as kt_err:
+        logger.warning(f"Keyterm lookup skipped: {kt_err}")
+    stt_proxy = DeepgramSTTProxy(language=session_language, keyterms=_keyterms)
     logger.info(
         f"🎙️ [SESSION PERSONA] session={session_id[:8]} tutor={persona['name']} "
         f"voice_preset={persona['voice_preset']} language={session_language}"
@@ -756,7 +771,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         stt_stream["norm"] = f"{stt_stream['norm']} {norm_t}".strip()
         stt_stream["final"].set()
 
-    # W2 Fix: Audio stream generator feeding SaarasSTTProxy
+    # W2 Fix: Audio stream generator feeding the STT proxy
     async def audio_stream_generator():
         while state.is_active:
             try:
@@ -1010,7 +1025,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     # fallback needs the whole recording if the stream fails.
                     pcm_queue.put_nowait(pcm_bytes)
                     total_bytes = sum(len(x) for x in ptt_pcm_chunks)
-                    logger.info(f"[SARVAM STT PCM FORWARDED] Chunk #{len(ptt_pcm_chunks)}: {len(pcm_bytes)} bytes (Total: {total_bytes} bytes)")
+                    logger.info(f"[STT PCM FORWARDED] Chunk #{len(ptt_pcm_chunks)}: {len(pcm_bytes)} bytes (Total: {total_bytes} bytes)")
                 continue
 
             # B. TEXT JSON CONTROL MESSAGES
@@ -1037,7 +1052,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     # is mid-sentence, and the clock must not run out on them
                     # while they speak, while STT resolves, or while we grade.
                     await safe_send_json({"type": "state", "no_response_timer_paused": True})
-                    logger.info("[SARVAM STT PTT START] Microphone active. Buffering PCM audio frames...")
+                    logger.info("[STT PTT START] Microphone active. Buffering PCM audio frames...")
 
                 elif control_type == "ptt_stop":
                     is_ptt_active = False
@@ -1045,10 +1060,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     ptt_pcm_chunks = []
                     duration_s = len(full_pcm) / 32000.0
 
-                    logger.info(f"[SARVAM STT PTT STOP] Captured {len(full_pcm)} total bytes ({duration_s:.2f}s audio)")
+                    logger.info(f"[STT PTT STOP] Captured {len(full_pcm)} total bytes ({duration_s:.2f}s audio)")
 
                     if duration_s < 0.5:
-                        logger.info(f"[SARVAM STT PTT TOO SHORT] Duration {duration_s:.2f}s < 0.5s. Skipping STT.")
+                        logger.info(f"[STT PTT TOO SHORT] Duration {duration_s:.2f}s < 0.5s. Skipping STT.")
                         await websocket.send_json({
                             "type": "stt_too_short",
                             "message": "Hold the button while you speak"
@@ -1061,18 +1076,18 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     else:
                         norm_t = await streamed_transcript()
                         if norm_t:
-                            logger.info(f"⚡ [SARVAM STT STREAMED] Transcript ready at release, REST call skipped: '{norm_t}'")
+                            logger.info(f"⚡ [STT STREAMED] Transcript ready at release, REST call skipped: '{norm_t}'")
                         else:
                             _, norm_t = await stt_proxy.transcribe_audio_rest(full_pcm)
                         if norm_t.strip():
-                            logger.info(f"🎯 [SARVAM STT TRANSCRIPT] norm='{norm_t}'")
+                            logger.info(f"🎯 [STT TRANSCRIPT] norm='{norm_t}'")
                             await websocket.send_json({
                                 "type": "transcript_final",
                                 "transcript": norm_t
                             })
                             launch_background_turn(utterance_text=norm_t, turn_type="answer")
                         else:
-                            logger.warning(f"[SARVAM STT REST EMPTY] No transcript recovered from {duration_s:.2f}s of PTT audio for session {session_id}")
+                            logger.warning(f"[STT REST EMPTY] No transcript recovered from {duration_s:.2f}s of PTT audio for session {session_id}")
                             await websocket.send_json({
                                 "type": "error",
                                 "message": "Couldn't catch that — try holding the mic a little longer, or type your answer instead."

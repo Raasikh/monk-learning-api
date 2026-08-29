@@ -1,0 +1,408 @@
+{
+  "paper_id": "jee-main-2024-s2-2024-04-09-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2024-s2-2024-04-09-shift-2",
+    "exam": "jee-main",
+    "year": 2024,
+    "session": 2,
+    "exam_date": "2024-04-09",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.esaral.com",
+    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
+    "pdf_url": "https://www.esaral.com/media/uploads/2024/4/10/124353-JEE-Main_Evening-Shift-2_09-04-2024_Student-copy.pdf",
+    "official_key_url": "https://web.archive.org/web/20240423092125/https://jeemain.nta.ac.in/images/FINAL_ANSWER_KEY_JEE_MAIN_SESSION_2_22.04.2024.pdf",
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "db9620327398ed7322b5269d061c339730471ee55dc828e5464524bf0f34f5ec",
+    "page_count": 9,
+    "text_chars": 4177,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s2-2024-04-09-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "official_key_pending",
+    "source": "official_nta_key",
+    "official_key_url": "https://web.archive.org/web/20240423092125/https://jeemain.nta.ac.in/images/FINAL_ANSWER_KEY_JEE_MAIN_SESSION_2_22.04.2024.pdf",
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "exam_date": "2024-04-09",
+    "shift": 2
+  },
+  "question_count": 22,
+  "defects": [
+    "22/22 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find work done to bring a particle from x = 2 m to x = 4 m if force acting on it is given by  \nF = x2 + 2x – 3.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find the dimensional formula of plank’s constant.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find the Kinetic energy of electron emitted from metal surface if energy incident is 4.31 eV \nand the work function is 3.31eV.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find the time period of the block of mass m = 0.5 kg when force acting on it is given as  \nF = – 50x.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Magnitude of resultant of two vectors A and B is | B |\n2 , then find the angle between resultant \nand A vector. (given: (\n)\nA\nB\nB\n0\n+\n=\n·\n)",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "When the position of particle varies with the time as x = 3t2 – 2t + 4. find the displacement \nfrom t = 2s to t = 4s ?",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "To particles separated by 300m are moving with speed 20m/s each in opposite directions. \nAcceleration of both the particles is –2m/s2. Find their separation when they both stop.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A particle of mass m breaks into two parts of masses 2m/3 and m/3. Find ratio of their \nspeeds after explosion.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find out the electric flux passing through the given surface. \n5q\nq\n–2q\n2q \n–4q",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find Req about A and B in the given circuit",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find work done by the gas in the given cyclic process. \n \nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main 09-04-2024 Evening Shift \nwww.esaral.com\n3",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Kinetic energy of a gas sample is K at –78°C, find the temperature at which its kinetic energy \nis 2K.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "When a disc slips on an incline, it takes time t to reach the bottom. If it rolls then it takes \ntime \n1\n2\nt\n\n\n\n\n\n\n\n\n. Find the value of  + .",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find the output (Y) in terms of input (A & B).",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Resistance of a wire is 50 at 60°C. Find temperature at which resistance is 62. Thermal \ncoefficient of resistance () is 2.4 × 10–4 °C–1.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If incident and refracted rays are parallel to principle axis in the given figure, then find the \nvalue of x.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Find the value of force required to keep the system (as shown) in equilibrium.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two particles of mass m and 2m have same kinetic energy. Find ratio of their velocities.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A metallic square of sides 15 cm is moving with speed 2cm/s as shown in the figure. Find \nEMF induced in the square 10 sec. after it enters the magnetic field region. \n \nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main 09-04-2024 Evening Shift \nwww.esaral.com\n4",
+      "options": null,
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "no_options_found",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If kinetic energy of deuteron and proton particles are same. They both enter in a magnetic \nfield region perpendicular to the magnetic field. Then find the ratio of their radius of circular \npath.",
+      "options": null,
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following represents the graph to the best.",
+      "options": {
+        "A": "zener diode",
+        "B": "solar cell",
+        "C": "rectifier",
+        "D": "Transistor"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "In the given circuit, find the value of the resistance?   \n \n \nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main 09-04-2024 Evening Shift \nwww.esaral.com\n5\n\n   \n       \n⎯⎯⎯⎯⎯→ Major product is\n   \n       \n   \n       \n   \n       \n   \n       \n \n \n+\n−\n \n \n+\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯→ major product is:\nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main 09-04-2024 Evening Shift \nwww.esaral.com\n6\n\n \n \n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→\n→4 →\n→\n→\n→\n→\n→\n→\n→\n→\n→\n=\n     (II) \n\n=\nΘ\n    (III)  \n\n=\nΘ\nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main 09-04-2024 Evening Shift \nwww.esaral.com\n7\n\n\n⎯⎯⎯⎯⎯⎯→\nis\n \n→\n→\n→\n→\n→\n→3 →\n→\n→\n→\n→\n→\n→\n→\n→\n→\nJEE | NEET | Class 8 - 10 Download eSaral App\nJEE-Main 09-04-2024 Evening Shift \nwww.esaral.com\n8\n\n3 =\npv\nC\n330 K\n\n\n  \n\n−\n−\n=\n\n+ \n−\n=\n\n−\n+\n=\n\n+ \n+\n=\n \n→\n→\n→\n→",
+      "options": {
+        "B": "→ → → →",
+        "C": "P→4; Q→1; R→3; S→2",
+        "D": "P→1; Q→2; R→3; S→4 JEE | NEET | Class 8 - 10 Download eSaral App JEE-Main 09-04-2024 Evening Shift www.esaral.com 9"
+      },
+      "page_start": 5,
+      "page_end": 9,
+      "parse_flags": [
+        "options_count_3",
+        "possible_text_scramble"
+      ]
+    }
+  ]
+}

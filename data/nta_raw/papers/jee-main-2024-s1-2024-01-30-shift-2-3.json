@@ -1,0 +1,297 @@
+{
+  "paper_id": "jee-main-2024-s1-2024-01-30-shift-2-3",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2024-s1-2024-01-30-shift-2-3",
+    "exam": "jee-main",
+    "year": 2024,
+    "session": 1,
+    "exam_date": "2024-01-30",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.esaral.com",
+    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
+    "pdf_url": "https://www.esaral.com/media/uploads/2025/1/25/131049-JEE-Main-2024-(January-30-Shift-2)-Maths-Question-Paper-with-Solutions-[PDF].pdf",
+    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "2bbc893c084b7c0f827e5e82a43dcbc9d0ce8f3cc422cd9cafec84c4ce09dfd3",
+    "page_count": 7,
+    "text_chars": 5929,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 15,
+    "answer_marker_hits": 15,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s1-2024-01-30-shift-2-3.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 4,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "A",
+          "option": "A"
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 7,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "exam_date": "2024-01-30",
+    "shift": 2
+  },
+  "question_count": 7,
+  "defects": [
+    "1 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2]",
+    "7/7 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Bag A 3 write, 7 Red Ball Bag B → 3 white, 2 red if white ball is found find P of \nits being from Bag A.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "2\n2\n:\n1\n4\n9\nx\nx\nA\n−\n= . If P is point on and area of PSS′\n∆\n; is 2 13  (S,S’ is focus) find \nsquare of distance of P from origin.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "( )\n2x\nx\nf x\nae\nbe\ncx\n=\n+\n+\n \n( )\n(\n)\n0\n1\nlog 2\n21\nf\nf\n= −\n′\n=\n \n( )\nlog 4\n0\n39\n2\ne\nf x\ncxdx\n−\n<\n∫\n find a\nb\nc\n+\n+",
+      "options": null,
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Given \n2,",
+      "options": {
+        "B": "b b a = × =    Then 2 b a b × −    is Options:",
+        "A": "0",
+        "C": "1",
+        "D": "10"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_B",
+        "stem_under_20_chars"
+      ],
+      "embedded_answer": {
+        "raw": "A",
+        "option": "A"
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If \n( )\n(\n) (\n)\n2\n3\n2\n3\nf x\nx\nx\n=\n−\n−\n and \n[\n]\n1,4\nx∈\n of M and m denotes maximum and \nminimum values respectively, then M\nm\n−\n is",
+      "options": null,
+      "page_start": 4,
+      "page_end": 6,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "(\n)\n(\n)\n3sin\n4sin\nA\nB\nA\nB\n+\n=\n−\n. If tan\ntan\nA\nk\nB\n=\n, then the value of k is ____.",
+      "options": null,
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "{\n}\n1,2,3,4\nA =\n. Find numbers of relations which are symmetric but not reflexive.",
+      "options": null,
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

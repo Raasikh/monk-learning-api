@@ -1,6 +1,7 @@
 import os
 import re
 import json
+from urllib.parse import quote_plus
 import time
 import asyncio
 import base64
@@ -19,6 +20,7 @@ SARVAM_STT_REST_ENDPOINT = "https://api.sarvam.ai/speech-to-text"
 
 # Read API Keys strictly without silent fallbacks
 SARVAM_API_KEY = os.environ.get("SARVAM_API_KEY", "").strip("\"'")
+DEEPGRAM_API_KEY = os.environ.get("DEEPGRAM_API_KEY", "").strip("\"'")
 RUMIK_API_KEY = os.environ.get("RUMIK_API_KEY", "").strip("\"'")
 
 # Secret Redacting Regular Expressions
@@ -225,8 +227,15 @@ def sanitize_tts_phonetics(text: str) -> str:
     return res.strip()
 
 # Startup Assertion Checks
-if not SARVAM_API_KEY:
-    raise RuntimeError("FATAL BOOT FAILURE: SARVAM_API_KEY environment variable is not set!")
+#
+# SARVAM_API_KEY is no longer required: Sarvam's WebSocket returned HTTP 403 on
+# every endpoint and every auth variant while its REST returned 200, which is an
+# account entitlement we could not resolve. Streaming STT was therefore dead and
+# every hold paid a full upload-and-wait. Deepgram nova-3 connects in ~220ms and
+# is the STT now. The Sarvam class is kept below, unused, until the swap has
+# been exercised in real sessions.
+if not DEEPGRAM_API_KEY:
+    raise RuntimeError("FATAL BOOT FAILURE: DEEPGRAM_API_KEY environment variable is not set!")
 
 if not RUMIK_API_KEY:
     raise RuntimeError("FATAL BOOT FAILURE: RUMIK_API_KEY environment variable is not set!")
@@ -579,6 +588,216 @@ def split_into_sentences(text: str, min_chars: int = 100) -> List[str]:
         else:
             chunks.append(buf)
     return chunks
+
+class DeepgramSTTProxy:
+    """Deepgram nova-3 streaming STT. Drop-in for SaarasSTTProxy.
+
+    WHY THIS REPLACED SARVAM
+    ------------------------
+    Sarvam's WebSocket returned HTTP 403 on every endpoint and auth variant we
+    tried while its REST endpoint returned 200 — an account entitlement, not a
+    code fault. Streaming was therefore never available, so every push-to-talk
+    release paid a full upload-and-wait round trip. Deepgram's WS connects in
+    ~220ms and streams interim results at ~0.9s.
+
+    WHY `language=multi` AND NOT `en`
+    ---------------------------------
+    Measured on the same code-mixed utterance, "Dekho, yahan par net force zero
+    hai, isliye acceleration bhi zero hoga":
+
+        multi -> "देखो, यहाँ पर net force जीरो है, इसलिए acceleration भी जीरो होगा"
+        en    -> "Dikho, Yahapar Net four-zero Hai, Isliye acceleration d zero hoga"
+
+    Forcing roman output does not merely change the script, it destroys the
+    physics: "net force zero" became "net four-zero". Hindi phonemes have no
+    stable English spelling, so a roman-forced model has to guess one AND is
+    biased toward English words. Transcribing in Devanagari removes the guess,
+    and romanisation becomes a deterministic transform we own — the existing
+    normalize_devanagari_to_roman(), which was written for Sarvam and needs no
+    change. `multi` also keeps the spoken word "जीरो" rather than collapsing it
+    to the digit 0, which reads better in a spoken transcript.
+
+    KEYTERMS
+    --------
+    nova-3 accepts `keyterm` prompts, and a subject tutor knows exactly what
+    vocabulary is coming. Measured on the same audio:
+
+        without: "In the Born Harbor cycle, the lattice enthalpy of..."
+        with:    "In the Born-Haber cycle, the lattice enthalpy of..."
+
+    The session's concept names are passed in, so the terms being boosted are
+    the ones the lesson is actually about.
+    """
+
+    # 16-bit mono at 16kHz — what the browser sends and what the REST fallback
+    # already assumed (`duration_s = len(pcm) / 32000`).
+    SAMPLE_RATE = 16000
+    MODEL = "nova-3"
+    # Deepgram caps keyterms per request; the cap here is ours, to keep the
+    # connect URL a sane length.
+    MAX_KEYTERMS = 40
+
+    def __init__(self, mode: str = "codemix", latency_profile: str = "Fast",
+                 language: str = "hinglish", keyterms: Optional[List[str]] = None):
+        # mode/latency_profile are accepted and ignored: they are Sarvam's
+        # vocabulary, kept so the construction site did not have to change.
+        self.mode = mode
+        self.latency_profile = latency_profile
+        self.model = self.MODEL
+        # `multi` for both languages. An English session still benefits: a
+        # student answering in English inside an English session transcribes as
+        # English, and one who slips into Hindi mid-sentence is not mangled.
+        self.language_code = "multi"
+        self.keyterms = [k for k in (keyterms or []) if k][: self.MAX_KEYTERMS]
+        self.is_connected = False
+        self.active_ws = None
+
+    def _url(self, interim: bool = True) -> str:
+        parts = [
+            f"model={self.model}",
+            f"language={self.language_code}",
+            "encoding=linear16",
+            f"sample_rate={self.SAMPLE_RATE}",
+            "channels=1",
+            "punctuate=true",
+            "smart_format=true",
+            # 300ms of silence ends an utterance. The student is holding a
+            # button, so ptt_stop is the real boundary — this only decides when
+            # a final is emitted mid-hold.
+            "endpointing=300",
+            # SpeechStarted frames, mapped onto the barge-in callback that
+            # Sarvam drove from its own speech_onset field.
+            "vad_events=true",
+        ]
+        if interim:
+            parts.append("interim_results=true")
+        parts += [f"keyterm={quote_plus(k)}" for k in self.keyterms]
+        return "wss://api.deepgram.com/v1/listen?" + "&".join(parts)
+
+    def close(self):
+        """Closes the active Deepgram WebSocket cleanly."""
+        if self.active_ws:
+            try:
+                asyncio.create_task(self.active_ws.close())
+            except Exception:
+                pass
+            self.active_ws = None
+        self.is_connected = False
+
+    async def transcribe_audio_rest(self, pcm_bytes: bytes) -> Tuple[str, str]:
+        """One-shot fallback for a hold whose stream produced nothing.
+
+        Kept because the streaming path can still miss — a socket that dropped
+        mid-hold, or a hold shorter than the endpointing window.
+        """
+        if not pcm_bytes or len(pcm_bytes) < 3200:
+            return "", ""
+        duration_s = len(pcm_bytes) / (self.SAMPLE_RATE * 2.0)
+        logger.info(f"[DEEPGRAM STT REST REQUEST] {len(pcm_bytes)} PCM bytes ({duration_s:.2f}s)")
+
+        import requests
+        params = [f"model={self.model}", f"language={self.language_code}",
+                  "encoding=linear16", f"sample_rate={self.SAMPLE_RATE}",
+                  "channels=1", "punctuate=true", "smart_format=true"]
+        params += [f"keyterm={quote_plus(k)}" for k in self.keyterms]
+        url = "https://api.deepgram.com/v1/listen?" + "&".join(params)
+        headers = {"Authorization": f"Token {DEEPGRAM_API_KEY}",
+                   "Content-Type": "audio/raw"}
+        try:
+            loop = asyncio.get_event_loop()
+
+            def _do_rest_call():
+                record_stt_request()
+                return requests.post(url, headers=headers, data=pcm_bytes, timeout=12)
+
+            resp = await loop.run_in_executor(None, _do_rest_call)
+            if resp.status_code != 200:
+                logger.error(f"❌ [DEEPGRAM STT REST ERROR] HTTP {resp.status_code}: {resp.text[:300]}")
+                return "", ""
+            alts = (resp.json().get("results", {}).get("channels") or [{}])[0].get("alternatives") or [{}]
+            raw_transcript = (alts[0].get("transcript") or "").strip()
+            norm_transcript = normalize_devanagari_to_roman(raw_transcript)
+            logger.info(f"🎯 [DEEPGRAM STT TRANSCRIPT] raw='{raw_transcript}', norm='{norm_transcript}'")
+            return raw_transcript, norm_transcript
+        except Exception as err:
+            logger.error(f"❌ [DEEPGRAM STT REST EXCEPTION] {err}")
+            return "", ""
+
+    async def connect_and_stream(
+        self,
+        audio_stream: AsyncGenerator[bytes, None],
+        on_transcript: Callable[[str, str, bool, float], None],
+        on_barge_in: Callable[[], None],
+    ):
+        """Streams mic PCM to Deepgram and forwards transcripts as they arrive."""
+        uri = self._url()
+        logger.info(f"[DEEPGRAM STT CONNECTING] {self.model}/{self.language_code} "
+                    f"keyterms={len(self.keyterms)}")
+        try:
+            headers = {"Authorization": f"Token {DEEPGRAM_API_KEY}"}
+            try:
+                ws_ctx = websockets.connect(uri, additional_headers=headers)
+            except TypeError:  # websockets < 14
+                ws_ctx = websockets.connect(uri, extra_headers=headers)
+
+            async with ws_ctx as ws:
+                self.is_connected = True
+                self.active_ws = ws
+                logger.info(f"✅ [DEEPGRAM STT CONNECTED] {self.model} "
+                            f"({len(self.keyterms)} keyterms boosted)")
+
+                async def send_audio():
+                    chunk_count = 0
+                    total_bytes = 0
+                    async for chunk in audio_stream:
+                        if not chunk:
+                            continue
+                        chunk_count += 1
+                        total_bytes += len(chunk)
+                        await ws.send(chunk)
+                    # Tell Deepgram the utterance is over so it flushes its
+                    # last final rather than waiting on the endpointing timer.
+                    try:
+                        await ws.send(json.dumps({"type": "CloseStream"}))
+                    except Exception:
+                        pass
+                    logger.info(f"[DEEPGRAM STT PCM SENT] {chunk_count} chunks, {total_bytes} bytes")
+
+                async def receive_transcripts():
+                    async for msg in ws:
+                        try:
+                            data = json.loads(msg)
+                        except Exception:
+                            continue
+                        kind = data.get("type")
+                        if kind == "SpeechStarted":
+                            on_barge_in()
+                            continue
+                        if kind != "Results":
+                            continue
+                        alts = (data.get("channel") or {}).get("alternatives") or [{}]
+                        raw_transcript = (alts[0].get("transcript") or "").strip()
+                        if not raw_transcript:
+                            continue
+                        norm_transcript = normalize_devanagari_to_roman(raw_transcript)
+                        is_final = bool(data.get("is_final"))
+                        confidence = float(alts[0].get("confidence") or 0.95)
+                        logger.info(f"🎯 [DEEPGRAM STT TRANSCRIPT] raw='{raw_transcript}', "
+                                    f"norm='{norm_transcript}', is_final={is_final}")
+                        on_transcript(raw_transcript, norm_transcript, is_final, confidence)
+
+                await asyncio.gather(send_audio(), receive_transcripts())
+        except Exception as e:
+            self.is_connected = False
+            # No REST fallback loop here, unlike the Sarvam class. That existed
+            # because Sarvam's WS ALWAYS failed, so the fallback was the real
+            # path. Here the release handler already calls transcribe_audio_rest
+            # when the stream produced nothing, so a second one would transcribe
+            # the same audio twice.
+            logger.warning(f"⚠️ [DEEPGRAM STT WS FAILURE] {e} — the hold will fall back to REST at release.")
+        finally:
+            self.is_connected = False
+
 
 class SaarasSTTProxy:
     """Proxies Sarvam Saaras v3 STT stream over backend WebSocket connection."""
