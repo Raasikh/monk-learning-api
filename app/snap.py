@@ -695,6 +695,15 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             q_type = "single_correct" if len(options) >= 2 else "subjective"
         is_choice = q_type in CHOICE_TYPES
 
+        # How many figures the OCR located inside THIS question's span. None
+        # means the page gave no usable geometry, which is "no opinion" — never
+        # "no figures". Read before the option gate below, which needs it to
+        # tell a question whose options are pictures from one whose options
+        # were simply cut off.
+        printed_number = _returned_numbers([item])
+        located = (figure_counts.get(printed_number[0])
+                   if (figure_counts and printed_number) else None)
+
         # A NUMERICAL question has no options, by design — JEE prints a blank:
         # "the value of alpha is ____". The structurer read one correctly, as
         # `numerical` with `options: []`, and then set `legible: false` because
@@ -724,24 +733,44 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # the prompt saying so is not enough — a bare stem reached the solver
         # once and it invented an answer that was not among the options. This is
         # the gate that makes that impossible.
+        #
+        # ...unless the options are PICTURES. A JEE page routinely asks "which
+        # of these curves" and prints four graphs labelled (1)-(4). There is no
+        # text for the OCR to read, so this gate fired and told the student to
+        # "retake the photo with all the choices in frame" — advice that cannot
+        # work, because no photograph of a graph turns it into text. When the
+        # OCR's geometry shows several figures inside this question's span,
+        # that is what has happened: mark it for the option-reading pass rather
+        # than refusing, and let THAT decide whether they can be told apart.
+        options_are_drawn = False
         if is_choice and len(options) < 2:
-            legible = False
-            q_note = q_note or (
-                "This looks like a multiple-choice question, but the options "
-                "could not be read. Retake the photo with all the choices in frame."
-            )
-            q_remedy, q_reason = REMEDY_RETAKE, "options_unreadable"
-            logger.warning(
-                "[SNAP TRANSCRIBE] doubt=%s q%d %s with %d option(s) — refusing to solve",
-                doubt_id[:8], idx, q_type, len(options),
-            )
+            drawn_here = located if located is not None else 0
+            if drawn_here >= 2:
+                options_are_drawn = True
+                logger.info(
+                    "[SNAP TRANSCRIBE] doubt=%s q%d %s with no readable options "
+                    "but %d figures inside its span — the options are drawn, "
+                    "not written. Will read them from the image.",
+                    doubt_id[:8], idx, q_type, drawn_here,
+                )
+            else:
+                legible = False
+                q_note = q_note or (
+                    "This looks like a multiple-choice question, but the options "
+                    "could not be read. Retake the photo with all the choices in frame."
+                )
+                q_remedy, q_reason = REMEDY_RETAKE, "options_unreadable"
+                logger.warning(
+                    "[SNAP TRANSCRIBE] doubt=%s q%d %s with %d option(s) — refusing to solve",
+                    doubt_id[:8], idx, q_type, len(options),
+                )
 
         # Fidelity gate: every option must exist, verbatim, in what the OCR
         # read. The structuring model is INSTRUCTED to copy; this enforces it.
         # An option it invented or mutated is not on the page, and a solver
         # picking from a corrupted list produces a confident wrong answer no
         # later gate can catch.
-        if is_choice and options and parsed.get("_ocr_text"):
+        if is_choice and options and not options_are_drawn and parsed.get("_ocr_text"):
             missing = _options_found_in_ocr(options, parsed["_ocr_text"])
             if missing:
                 legible = False
@@ -794,9 +823,6 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # a figure it inferred from wording that is not actually on the page is
         # dropped, and one it missed is added. Only ever an override when the
         # two disagree, and only when there was geometry to judge from.
-        printed_number = _returned_numbers([item])
-        located = (figure_counts.get(printed_number[0])
-                   if (figure_counts and printed_number) else None)
         if located is not None and bool(located) != needs_diagram:
             logger.info(
                 "[SNAP TRANSCRIBE] doubt=%s q%d requires_diagram %s -> %s "
@@ -847,6 +873,9 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "is_multiple_choice": is_choice,
             "options": options,
             "options_complete": item.get("options_complete") is not False,
+            # The options are printed as figures, so they still have to be read
+            # off the image — see describe_option_figures in the pipeline.
+            "options_are_drawn": options_are_drawn,
             "requires_diagram": needs_diagram,
             # Held back from the solver on purpose; used to check it afterwards.
             # `stripped_key` is what the code removed from the text, which is
@@ -1220,6 +1249,86 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
     logger.info("[SNAP DIAGRAM] doubt=%s described in %d chars",
                 doubt_id[:8], len(description))
     return description
+
+
+def describe_option_figures(image_bytes: bytes, mime_type: str,
+                            question_text: str, doubt_id: str = "-",
+                            usage_acc: Optional[Dict[str, int]] = None
+                            ) -> List[Dict[str, str]]:
+    """Reads options that are DRAWN rather than written, into [{label, text}].
+
+    A JEE page routinely asks "which of these curves…" and prints four graphs
+    labelled (1)-(4). There is no text for the OCR to read, so the structurer
+    returns a choice question with zero options and the gate refuses it as
+    "the options could not be read. Retake the photo with all the choices in
+    frame" — advice that cannot work, because no photograph of a graph turns it
+    into text.
+
+    Same contract as describe_diagram: the describing model may not solve, and
+    the solver never sees the image. Returns [] when the options could not be
+    told apart or matched to their labels, which the caller treats as an honest
+    refusal rather than guessing a pairing — a mislabelled option silently
+    renames the answer.
+    """
+    client = _openai_client()
+    data_url = f"data:{mime_type};base64,{base64.b64encode(image_bytes).decode()}"
+
+    def call(corrective: Optional[str] = None):
+        messages = [
+            {"role": "system", "content": load_prompt("snap_options.md")},
+            {"role": "user", "content": [
+                {"type": "text",
+                 "text": f"The question whose options are drawn:\n{question_text}"},
+                {"type": "image_url",
+                 "image_url": {"url": data_url, "detail": "high"}},
+            ]},
+        ]
+        if corrective:
+            messages.append({"role": "user", "content": corrective})
+        return client.chat.completions.create(
+            model=MODEL_DIAGRAM,
+            messages=messages,
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=1400,
+            timeout=TRANSCRIBE_TIMEOUT_S,
+        )
+
+    try:
+        parsed = _call_with_one_retry("transcribe", call, f"options={doubt_id[:8]}",
+                                      usage_acc, expect_model=MODEL_DIAGRAM,
+                                      service="snap_options")
+    except SnapError as err:
+        logger.warning("[SNAP OPTIONS] doubt=%s read failed: %s", doubt_id[:8], err)
+        return []
+
+    if parsed.get("sufficient") is False:
+        logger.warning("[SNAP OPTIONS] doubt=%s options not clear enough: %s",
+                       doubt_id[:8], (parsed.get("note") or "")[:160])
+        return []
+
+    options = _clean_options(parsed.get("options"))
+    if len(options) < 2:
+        logger.warning("[SNAP OPTIONS] doubt=%s only %d option(s) described",
+                       doubt_id[:8], len(options))
+        return []
+
+    # Descriptions that are near-identical mean the model could not tell the
+    # figures apart, and the difference between them IS the question. Solving
+    # against a list whose entries all say the same thing picks at random.
+    canon = {_canon_fidelity(o["text"]) for o in options}
+    if len(canon) < len(options):
+        logger.warning(
+            "[SNAP OPTIONS] doubt=%s described options are not distinct "
+            "(%d unique of %d) — refusing rather than guessing between them",
+            doubt_id[:8], len(canon), len(options),
+        )
+        return []
+
+    logger.info("[SNAP OPTIONS] doubt=%s read %d drawn option(s): %s",
+                doubt_id[:8], len(options),
+                ", ".join(f"({o['label']}) {o['text'][:40]}" for o in options))
+    return options
 
 
 # A completed step object inside a *partial* JSON buffer. Streaming shows the
@@ -2172,7 +2281,7 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # solver reads diagram_description off the question dict — so this stays
     # sequential. It is per-page rare (only figure questions) and fast next to
     # a solve.
-    diagram_ms = 0
+    diagram_ms = options_ms = 0
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             diagram_t0 = time.time()
@@ -2238,6 +2347,38 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         worker = _threading.Thread(target=_run, daemon=True)
         worker.start()
         threads.append(worker)
+
+
+    # Options that are printed as figures, read off the image the same way a
+    # question's own figure is. Without this the question was refused with
+    # "retake the photo with all the choices in frame", which cannot work: no
+    # photograph of a graph turns it into text.
+    for question in questions:
+        if not question.get("options_are_drawn") or not question["legible"]:
+            continue
+        opts_t0 = time.time()
+        drawn = describe_option_figures(
+            image_bytes, mime_type, question.get("stem") or "", doubt_id, tx_usage
+        )
+        options_ms += int((time.time() - opts_t0) * 1000)
+        if drawn:
+            question["options"] = drawn
+            # The options ARE the question here — the student is choosing
+            # between curves — so the solver must see them rather than deriving
+            # blind and matching afterwards.
+            question["self_contained"] = False
+            question["text"] = (question.get("stem") or "") + "\n" + "\n".join(
+                f"({o['label']}) {o['text']}" for o in drawn)
+        else:
+            question["legible"] = False
+            question["remedy"] = REMEDY_NOT_PHOTO
+            question["reason"] = "options_are_figures"
+            question["note"] = (
+                "The answer choices for this one are diagrams, and Monk could "
+                "not tell them apart well enough to choose between them. "
+                "Retaking the photo will not change that \u2014 ask this one in a "
+                "live session, where the options can be drawn on the board."
+            )
 
     logger.info(
         "[SNAP PIPELINE] doubt=%s launched %d concurrent solve(s) at t+%dms "
@@ -2329,7 +2470,7 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         worker.join()
 
     latency_ms = int((time.time() - started) * 1000)
-    solve_span_ms = latency_ms - transcribe_ms - diagram_ms
+    solve_span_ms = latency_ms - transcribe_ms - diagram_ms - options_ms
     logger.info(
         "[SNAP] doubt=%s solved %d/%d in %dms (transcribe %dms)",
         doubt_id[:8], solved_count, len(read["questions"]), latency_ms, transcribe_ms,
@@ -2339,10 +2480,10 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # actionable: ocr is Mathpix, structure and solve are ours.
     logger.info(
         "[SNAP BREAKDOWN] doubt=%s total=%dms = ocr %dms + structure %dms "
-        "+ diagram %dms + solve %dms | questions=%d solved=%d | "
+        "+ diagram %dms + options %dms + solve %dms | questions=%d solved=%d | "
         "tokens transcribe(in=%d out=%d) solve(in=%d out=%d)",
         doubt_id[:8], latency_ms, read.get("ocr_ms", 0),
-        read.get("structure_ms", 0), diagram_ms, solve_span_ms,
+        read.get("structure_ms", 0), diagram_ms, options_ms, solve_span_ms,
         len(read["questions"]), solved_count,
         tx_usage["input"], tx_usage["output"],
         sv_usage["input"], sv_usage["output"],
@@ -2398,7 +2539,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     # fails is it refused — and then honestly, as "the figure could not be made
     # out", not as "your photo is bad". Sequential: per-page rare and fast next
     # to a solve, and must finish before that question can be dispatched below.
-    diagram_ms = 0
+    diagram_ms = options_ms = 0
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             diagram_t0 = time.time()
@@ -2424,6 +2565,38 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                     "off, retake the photo with all of it in frame — otherwise ask "
                     "this one in a live session, where the board can be used."
                 )
+
+
+    # Options that are printed as figures, read off the image the same way a
+    # question's own figure is. Without this the question was refused with
+    # "retake the photo with all the choices in frame", which cannot work: no
+    # photograph of a graph turns it into text.
+    for question in questions:
+        if not question.get("options_are_drawn") or not question["legible"]:
+            continue
+        opts_t0 = time.time()
+        drawn = describe_option_figures(
+            image_bytes, mime_type, question.get("stem") or "", doubt_id, tx_usage
+        )
+        options_ms += int((time.time() - opts_t0) * 1000)
+        if drawn:
+            question["options"] = drawn
+            # The options ARE the question here — the student is choosing
+            # between curves — so the solver must see them rather than deriving
+            # blind and matching afterwards.
+            question["self_contained"] = False
+            question["text"] = (question.get("stem") or "") + "\n" + "\n".join(
+                f"({o['label']}) {o['text']}" for o in drawn)
+        else:
+            question["legible"] = False
+            question["remedy"] = REMEDY_NOT_PHOTO
+            question["reason"] = "options_are_figures"
+            question["note"] = (
+                "The answer choices for this one are diagrams, and Monk could "
+                "not tell them apart well enough to choose between them. "
+                "Retaking the photo will not change that \u2014 ask this one in a "
+                "live session, where the options can be drawn on the board."
+            )
 
     to_solve: List[Dict[str, Any]] = []
     for question in questions:
@@ -2493,17 +2666,17 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                         first.get("reason") or "unknown")
 
     latency_ms = int((time.time() - started) * 1000)
-    solve_span_ms = latency_ms - transcribe_ms - diagram_ms
+    solve_span_ms = latency_ms - transcribe_ms - diagram_ms - options_ms
     logger.info(
         "[SNAP] doubt=%s solved %d/%d in %dms (transcribe %dms)",
         doubt_id[:8], solved_count, len(read["questions"]), latency_ms, transcribe_ms,
     )
     logger.info(
         "[SNAP BREAKDOWN] doubt=%s total=%dms = ocr %dms + structure %dms "
-        "+ diagram %dms + solve %dms | questions=%d solved=%d | "
+        "+ diagram %dms + options %dms + solve %dms | questions=%d solved=%d | "
         "tokens transcribe(in=%d out=%d) solve(in=%d out=%d)",
         doubt_id[:8], latency_ms, read.get("ocr_ms", 0),
-        read.get("structure_ms", 0), diagram_ms, solve_span_ms,
+        read.get("structure_ms", 0), diagram_ms, options_ms, solve_span_ms,
         len(read["questions"]), solved_count,
         tx_usage["input"], tx_usage["output"],
         sv_usage["input"], sv_usage["output"],
