@@ -942,8 +942,17 @@ def circuit_diagram(components: Sequence[Any]) -> str:
         for i, c in enumerate(_sequence(components, "components", min_len=2, max_len=6))
     ]
 
-    w, h = 520, 366
-    x0, x1 = 82.0, 438.0
+    # Side labels are anchored 30px outside the rails, so the canvas has to be
+    # wide enough for the LONGEST of them — "R1 = 4 Ohm" ran 18px past a fixed
+    # 520 and drew over whatever the board placed beside the figure. Widening
+    # is the fix rather than clamping the label inward, which only moves the
+    # collision onto the component glyph.
+    side_labels = [str((c or {}).get("label") or "") if isinstance(c, dict) else ""
+                   for c in components]
+    pad = max([len(lb) * 13 * 0.55 for lb in side_labels] or [0]) + 42
+    w, h = max(520.0, 2 * pad + 356.0), 366
+    x0 = (w - 356.0) / 2
+    x1 = x0 + 356.0
     y0, y1 = 74.0, 268.0
     side_w, side_h = x1 - x0, y1 - y0
     perim = 2 * (side_w + side_h)
@@ -1003,13 +1012,7 @@ def circuit_diagram(components: Sequence[Any]) -> str:
                                color=AMBER, weight="bold"))
         else:
             leftish = px < (x0 + x1) / 2
-            # A side label is anchored away from the rail, so a long one runs
-            # off the canvas — "R1 = 4 Ohm" cleared the right edge by 18px.
-            # Clamp to a margin the label can actually fit inside.
-            lw = len(label) * 13 * 0.55
-            lx = px + (-30 if leftish else 30)
-            lx = max(lw + 8, lx) if leftish else min(w - lw - 8, lx)
-            parts.append(_text(lx, py + 5, label, size=13,
+            parts.append(_text(px + (-30 if leftish else 30), py + 5, label, size=13,
                                color=AMBER, weight="bold",
                                anchor="end" if leftish else "start"))
 
