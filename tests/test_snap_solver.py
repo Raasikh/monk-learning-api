@@ -20,6 +20,7 @@ import os
 import re
 import sys
 import threading
+import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -539,6 +540,61 @@ def test_a_choice_question_with_no_options_is_still_refused(monkeypatch):
     print(f"  options={len(q['options'])} legible={q['legible']} reason={q['reason']}")
     assert q["legible"] is False
     assert q["reason"] == "options_unreadable"
+
+
+def test_a_wedged_solve_is_not_retried(monkeypatch):
+    """An attempt that burned its budget wedged; repeating it wedges again.
+
+    Measured: a diagram question spent 2m13s returning an empty response, which
+    reads as a parse failure and so earned a second full attempt. The student
+    waits on the SLOWEST question, so one wedge cost roughly four minutes. A
+    retry is for a solve that came back wrong, not one that never came back.
+    """
+    attempts = {"n": 0}
+
+    def make_kwargs():
+        class _Slow:
+            class chat:
+                class completions:
+                    @staticmethod
+                    def create(**_kw):
+                        attempts["n"] += 1
+                        # Burn most of the budget, then return nothing at all.
+                        time.sleep(snap.SOLVE_TIMEOUT_S * 0.7)
+                        return iter(())
+        return dict(model=MODEL_SOLVE, messages=[{"role": "user", "content": "x"}],
+                    timeout=snap.SOLVE_TIMEOUT_S, _client=_Slow())
+
+    monkeypatch.setattr(snap, "SOLVE_TIMEOUT_S", 1.0)
+    with pytest.raises(SnapError):
+        snap._streamed_solve(make_kwargs, lambda *_a: None, "d1", None)
+    print(f"  attempts made: {attempts['n']}")
+    assert attempts["n"] == 1, "a wedged attempt must not be retried"
+
+
+def test_a_fast_failure_is_still_retried(monkeypatch):
+    """The no-retry rule must not swallow the retry that earns its keep.
+
+    Unparseable JSON that comes back QUICKLY is the case the retry exists for —
+    a rambling step broke its own escaping twice, and the corrective fixed it.
+    """
+    attempts = {"n": 0}
+
+    def make_kwargs():
+        class _Fast:
+            class chat:
+                class completions:
+                    @staticmethod
+                    def create(**_kw):
+                        attempts["n"] += 1
+                        return iter(())          # fails immediately, no delay
+        return dict(model=MODEL_SOLVE, messages=[{"role": "user", "content": "x"}],
+                    timeout=snap.SOLVE_TIMEOUT_S, _client=_Fast())
+
+    with pytest.raises(SnapError):
+        snap._streamed_solve(make_kwargs, lambda *_a: None, "d1", None)
+    print(f"  attempts made: {attempts['n']}")
+    assert attempts["n"] == 2, "a fast failure should still get its one retry"
 
 
 def _page_with_geometry(**over):

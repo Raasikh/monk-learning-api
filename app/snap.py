@@ -1259,12 +1259,14 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
     model = client_kwargs.get("model") or MODEL_SOLVE
 
     last_err = None
+    budget_s = client_kwargs.get("timeout") or SOLVE_TIMEOUT_S
     for attempt in (1, 2):
         if attempt == 2:
             client_kwargs["messages"] = client_kwargs["messages"] + [
                 {"role": "user", "content": _PARSE_CORRECTIVE}]
             on_event("steps_reset", {})
         buffer, emitted = "", set()
+        attempt_started = time.time()
         thinking_chars, last_tick = 0, time.time()
         started = time.time()
         # Per-attempt counts for llm_calls: a stream that dies mid-way still
@@ -1328,6 +1330,23 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                 "[SNAP SOLVE] streamed JSON unparseable on attempt %d/2 (%s): %s",
                 attempt, doubt_id[:8], err,
             )
+            # An attempt that burned its budget did not fail fast — it wedged,
+            # and the same call with the same inputs wedges for the same
+            # duration again. Measured: a diagram question spent 2m13s
+            # returning an empty response, and the retry made the student wait
+            # for a second one. The student is waiting on the SLOWEST question,
+            # so this is the difference between a slow answer and no answer at
+            # roughly four minutes.
+            spent = time.time() - attempt_started
+            if attempt == 1 and spent > budget_s * RETRY_IF_UNDER_FRACTION:
+                logger.error(
+                    "[SNAP SOLVE] doubt=%s attempt 1 used %.0fs of a %.0fs "
+                    "budget and produced nothing — it wedged rather than "
+                    "failed. Not retrying; a second attempt would cost the "
+                    "student the same wait again.",
+                    doubt_id[:8], spent, budget_s,
+                )
+                break
         else:
             record_call(model, "snap_solve", ok=True, attempt=attempt,
                         tokens=tokens, latency_ms=latency_ms,
