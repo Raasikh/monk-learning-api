@@ -63,9 +63,44 @@ BANNED_ATTR = re.compile(r"\son[a-z]+\s*=", re.I)
 # Text counts. It fades rather than draws, but it is still a step in the plan.
 MAX_DRAW_STEPS = 110
 
+# How much diagram to draw. This is a pedagogical setting, not a size setting.
+#
+# "simple" is the DEFAULT and the one that matters. The brief came from a
+# co-founder watching a session: "what if it's a weak student? He can't imagine
+# like us." A strong student reads "the resultant is 5 N at 37 degrees" and sees
+# it. A weak one needs the triangle drawn with 3, 4 and 5 written on it. So the
+# job is not an impressive chapter illustration — it is the small concrete
+# figure that would sit beside a worked example in a textbook. Think the figure
+# next to a LaTeX example, not a plate.
+#
+# Small also means FAST: ~20 elements draws in about 2.4s against 7s for 70, so
+# a simple diagram can appear beside almost every example instead of once a
+# chapter. More diagrams, each doing less, is the goal.
+DETAIL_LEVELS = {
+    "simple": (
+        "SCOPE — this is the most important rule here:\n"
+        "Draw ONE small figure showing ONE concrete instance. Not a chapter overview,\n"
+        "not a summary of everything, not a poster. The figure that would sit beside a\n"
+        "single worked example in a textbook.\n"
+        "- Aim for 12-25 elements TOTAL. Above 30 you are drawing the wrong thing.\n"
+        "- Use REAL NUMBERS, not symbols, wherever a number would do. A triangle\n"
+        "  labelled 3, 4, 5 teaches a struggling student more than one labelled a, b, c.\n"
+        "- Canvas around 380x260. Small and legible beats large and busy.\n"
+        "- If the concept has several parts, draw the ONE that unlocks it and ignore\n"
+        "  the rest. Another diagram can cover the others.\n"
+        "- Assume the student CANNOT already picture this. That is why it exists.\n"
+    ),
+    "rich": (
+        "SCOPE — a fuller figure, for a concept that genuinely needs one.\n"
+        "- Up to 70 elements. Label every part a student must name.\n"
+        "- Canvas around 520x360.\n"
+        "- Still one idea, drawn thoroughly, rather than several crammed together.\n"
+    ),
+}
+
 # The style spec is the product decision in this module. Everything else is
-# mechanism. This is what makes nine diagrams read as one system rather than
-# nine drawings, so it is deliberately specific about weights and placement.
+# mechanism. This is what makes diagrams read as one system rather than a pile
+# of drawings, so it is deliberately specific about weights and placement.
 STYLE_SPEC = f"""You draw ONE static SVG for a live tutoring whiteboard for Indian JEE/NEET students.
 
 HARD RULES — an SVG breaking any of these is discarded and the student sees nothing:
@@ -104,6 +139,14 @@ STYLE — hold to these so every diagram reads as one system:
 - No shadows, no gradients, no opacity tricks. Flat, clean, chalk-on-paper.
 
 Return ONLY the SVG. No prose, no markdown fence, no explanation."""
+
+
+def spec_for(detail: str = "simple") -> str:
+    """The style spec plus the scope rules for this detail level."""
+    return STYLE_SPEC.replace(
+        "Return ONLY the SVG.",
+        DETAIL_LEVELS.get(detail, DETAIL_LEVELS["simple"]) + "\nReturn ONLY the SVG.",
+    )
 
 
 def validate(svg: str) -> Tuple[bool, str]:
@@ -161,8 +204,13 @@ def author_diagram(
     attempts: int = 2,
     model: Optional[str] = None,
     timeout: int = 90,
+    detail: str = "simple",
 ) -> Tuple[Optional[str], str]:
     """Author one SVG for this concept. Returns (svg or None, reason).
+
+    `detail` is "simple" by default — a small concrete figure for one instance,
+    which is what a student who cannot already picture the idea actually needs.
+    "rich" is for the rare concept that genuinely warrants a full illustration.
 
     `explanation` is what makes this better than a template — pass the teaching
     notes or the student's actual question, and the diagram is drawn for THAT
@@ -180,7 +228,7 @@ def author_diagram(
            f"for the first time.")
     last = "no attempt made"
     for attempt in range(1, attempts + 1):
-        messages = [{"role": "system", "content": STYLE_SPEC},
+        messages = [{"role": "system", "content": spec_for(detail)},
                     {"role": "user", "content": ask}]
         if attempt > 1:
             messages.append({
