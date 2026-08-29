@@ -135,6 +135,13 @@ STYLE — hold to these so every diagram reads as one system:
   being measured, amber for the thing the student must notice. Everything else is
   ink and muted.
 - Leave 16px of margin. Nothing may touch the canvas edge.
+- LABELS MUST NOT OVERLAP EACH OTHER. You cannot measure text, so leave room:
+  assume every character is about 0.55 x the font-size wide, and keep at least
+  one full line-height of vertical space between any two labels. A label that
+  collides with its neighbour is the most common way a correct diagram looks
+  broken, and the board lets overflow spill rather than clipping it.
+- Put labels OUTSIDE the shape they name, with a short leader line, rather than
+  crowding them inside. Prefer fewer, shorter labels over many long ones.
 - Label every part a student is expected to name. An unlabelled diagram teaches nothing.
 - No shadows, no gradients, no opacity tricks. Flat, clean, chalk-on-paper.
 
@@ -147,6 +154,63 @@ def spec_for(detail: str = "simple") -> str:
         "Return ONLY the SVG.",
         DETAIL_LEVELS.get(detail, DETAIL_LEVELS["simple"]) + "\nReturn ONLY the SVG.",
     )
+
+
+
+# Roughly how wide a character renders, as a fraction of font-size, for the
+# sans-serif the board uses. Approximate on purpose — the exact font is Anek
+# Latin, injected by the web app, and an author writing SVG cannot know its
+# metrics. That uncertainty IS the bug: <text> has no layout, so the author
+# guesses a width, and a wrong guess collides with the next label.
+_CHAR_ADVANCE = 0.55
+# Boxes must clear each other by this fraction of font-size before we call it
+# a collision. Slightly forgiving, because the estimate above is.
+_COLLISION_SLACK = 0.12
+
+
+def _text_boxes(svg: str) -> List[Tuple[float, float, float, float, str]]:
+    """Estimated bounding boxes for every <text>, in user units."""
+    boxes = []
+    for m in re.finditer(r"<text([^>]*)>(.*?)</text>", svg, re.S):
+        attrs, body = m.group(1), re.sub(r"<[^>]+>", "", m.group(2)).strip()
+        if not body:
+            continue
+
+        def num(key: str, default: float) -> float:
+            hit = re.search(rf'{key}="([-\d.]+)"', attrs)
+            return float(hit.group(1)) if hit else default
+
+        size = num("font-size", 14.0)
+        anchor_m = re.search(r'text-anchor="(\w+)"', attrs)
+        anchor = anchor_m.group(1) if anchor_m else "start"
+        width = len(body) * size * _CHAR_ADVANCE
+        x, y = num("x", 0.0), num("y", 0.0)
+        if anchor == "middle":
+            x -= width / 2
+        elif anchor == "end":
+            x -= width
+        pad = size * _COLLISION_SLACK
+        boxes.append((x + pad, y - size * 0.8 + pad,
+                      x + width - pad, y + size * 0.25 - pad, body))
+    return boxes
+
+
+def colliding_labels(svg: str) -> List[Tuple[str, str]]:
+    """Pairs of labels whose estimated boxes overlap.
+
+    Overlapping text is the single most common way an otherwise correct diagram
+    looks wrong, and the board makes it worse rather than better: it sets
+    overflow="visible" so labels that outgrow the viewBox spill over their
+    neighbours instead of being clipped.
+    """
+    boxes = _text_boxes(svg)
+    hits = []
+    for i in range(len(boxes)):
+        for j in range(i + 1, len(boxes)):
+            a, b = boxes[i], boxes[j]
+            if not (a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1]):
+                hits.append((a[4][:24], b[4][:24]))
+    return hits
 
 
 def validate(svg: str) -> Tuple[bool, str]:
@@ -184,6 +248,13 @@ def validate(svg: str) -> Tuple[bool, str]:
     off = used - {c.lower() for c in ALLOWED_COLORS}
     if off:
         return False, f"off-palette colours: {sorted(off)}"
+    clashes = colliding_labels(svg)
+    if clashes:
+        # Rejected so the retry loop redraws it, which is the only fix that
+        # scales — asking the spec more politely does not stop a model from
+        # mis-estimating a text width it cannot measure.
+        shown = "; ".join(f"{a!r} over {b!r}" for a, b in clashes[:3])
+        return False, f"{len(clashes)} overlapping labels ({shown})"
     return True, ""
 
 
