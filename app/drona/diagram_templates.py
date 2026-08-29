@@ -1301,6 +1301,414 @@ def projectile_scene(
     return _svg(w, h, parts)
 
 
+def number_line(
+    intervals: Sequence[Any],
+    title: str | None = None,
+) -> str:
+    """A real number line with shaded intervals and open/closed endpoints.
+
+    The figure inequality and domain work needs. A student who cannot picture
+    "x in (-2, 3]" is exactly who this exists for, and the open-versus-closed
+    circle is the whole distinction — so endpoints are drawn, never described.
+
+    Each interval is {"lo": num|None, "hi": num|None, "lo_closed": bool,
+    "hi_closed": bool, "label": str}. None means unbounded on that side.
+    """
+    items = _sequence(intervals, "intervals", min_len=1, max_len=3)
+    parsed = []
+    for i, it in enumerate(items):
+        if not isinstance(it, dict):
+            raise ValueError(f"intervals[{i}] must be an object")
+        lo = None if it.get("lo") in (None, "") else _number(it.get("lo"), f"intervals[{i}].lo")
+        hi = None if it.get("hi") in (None, "") else _number(it.get("hi"), f"intervals[{i}].hi")
+        if lo is None and hi is None:
+            raise ValueError(f"intervals[{i}] is unbounded on both sides")
+        if lo is not None and hi is not None and lo >= hi:
+            raise ValueError(f"intervals[{i}]: lo must be less than hi")
+        parsed.append({
+            "lo": lo, "hi": hi,
+            "lo_closed": bool(it.get("lo_closed")), "hi_closed": bool(it.get("hi_closed")),
+            "label": _label(it.get("label"), f"intervals[{i}].label", 30, allow_empty=True),
+        })
+
+    finite = [v for p in parsed for v in (p["lo"], p["hi"]) if v is not None]
+    span_lo, span_hi = min(finite), max(finite)
+    if span_hi - span_lo < 1e-9:
+        span_lo, span_hi = span_lo - 1, span_hi + 1
+    pad = (span_hi - span_lo) * 0.35
+    view_lo, view_hi = span_lo - pad, span_hi + pad
+
+    w = 540.0
+    m = 46.0
+    heading = _label(title, "title", 44, allow_empty=True)
+    axis_y = (56 if heading else 34) + 26 * len(parsed) + 28
+    h = axis_y + 62
+
+    def sx(v: float) -> float:
+        return m + (v - view_lo) / (view_hi - view_lo) * (w - 2 * m)
+
+    parts: list[str] = []
+    if heading:
+        parts.append(_text(w / 2, 32, heading, size=17, color=INK, weight="bold"))
+    parts.append(_arrow(m - 16, axis_y, w - m + 16, axis_y, color=INK, width=2, head=9))
+
+    # Ticks at the interval endpoints only. A full ruler of ticks is noise; the
+    # numbers that matter are the ones the inequality names.
+    for v in sorted(set(finite)):
+        x = sx(v)
+        parts.append(_line(x, axis_y - 6, x, axis_y + 6, color=INK, width=1.6))
+        parts.append(_text(x, axis_y + 26, _num(v), size=14, color=MUTED))
+
+    for i, p_ in enumerate(parsed):
+        y = axis_y - 26 - 26 * (len(parsed) - 1 - i)
+        x_lo = sx(p_["lo"]) if p_["lo"] is not None else m - 12
+        x_hi = sx(p_["hi"]) if p_["hi"] is not None else w - m + 12
+        parts.append(_line(x_lo, y, x_hi, y, color=PRIMARY, width=4))
+        for x, closed, bounded in ((x_lo, p_["lo_closed"], p_["lo"] is not None),
+                                   (x_hi, p_["hi_closed"], p_["hi"] is not None)):
+            if bounded:
+                parts.append(_circle(x, y, 5.5, stroke=PRIMARY,
+                                     fill=PRIMARY if closed else BACKGROUND, width=2))
+        if p_["label"]:
+            parts.append(_text((x_lo + x_hi) / 2, y - 12, p_["label"],
+                               size=14, color=PRIMARY, weight="bold"))
+
+    parts.append(_text(w / 2, h - 14, "filled = included, hollow = excluded",
+                       size=13, color=MUTED))
+    return _svg(w, h, parts)
+
+
+def conic_figure(
+    kind: str,
+    a: float,
+    b: float | None = None,
+    title: str | None = None,
+) -> str:
+    """One conic drawn to scale, with its vertices, foci and axes marked.
+
+    Drawn from the actual a and b rather than sketched, so the eccentricity a
+    student sees is the eccentricity the algebra gives.
+    """
+    k = str(kind or "").strip().lower().replace("-", "_").replace(" ", "_")
+    if k not in ("circle", "ellipse", "parabola", "hyperbola"):
+        raise ValueError(f"kind must be circle, ellipse, parabola or hyperbola, got {kind!r}")
+    a = _number(a, "a")
+    if a <= 0:
+        raise ValueError("a must be positive")
+    if k in ("ellipse", "hyperbola"):
+        if b is None:
+            raise ValueError(f"{k} needs b as well as a")
+        b = _number(b, "b")
+        if b <= 0:
+            raise ValueError("b must be positive")
+    if k == "ellipse" and b >= a:
+        a, b = max(a, b), min(a, b)   # keep a the semi-major axis
+
+    w, h = 520.0, 360.0
+    heading = _label(title, "title", 44, allow_empty=True)
+    cx, cy = w / 2, (h + (26 if heading else 0)) / 2
+    parts: list[str] = []
+    if heading:
+        parts.append(_text(w / 2, 30, heading, size=17, color=INK, weight="bold"))
+
+    # scale so the figure fills the canvas whatever a and b are
+    if k == "circle":
+        ext_x = ext_y = a
+    elif k == "ellipse":
+        ext_x, ext_y = a, b
+    elif k == "parabola":
+        ext_x, ext_y = 4 * a, 4 * a
+    else:
+        ext_x, ext_y = a * 2.0, (b or a) * 2.0
+    sc = min((w / 2 - 62) / max(ext_x, 1e-9), (h / 2 - 58) / max(ext_y, 1e-9))
+
+    parts.append(_line(40, cy, w - 40, cy, color=MUTED, width=1.4))
+    parts.append(_line(cx, 46 + (18 if heading else 0), cx, h - 40, color=MUTED, width=1.4))
+
+    marks: list[tuple[float, float, str, str]] = []
+    if k == "circle":
+        parts.append(_circle(cx, cy, a * sc, stroke=PRIMARY, width=2.5))
+        marks.append((cx, cy, "centre", AMBER))
+        parts.append(_line(cx, cy, cx + a * sc, cy, color=AMBER, width=2))
+        parts.append(_text(cx + a * sc / 2, cy - 10, f"r = {_num(a)}", size=15, color=AMBER, weight="bold"))
+    elif k == "ellipse":
+        c = math.sqrt(max(a * a - b * b, 0.0))
+        parts.append(f'<ellipse cx="{_num(cx)}" cy="{_num(cy)}" rx="{_num(a * sc)}" '
+                     f'ry="{_num(b * sc)}" fill="none" stroke="{PRIMARY}" stroke-width="2.5"/>')
+        for sign in (-1, 1):
+            parts.append(_circle(cx + sign * c * sc, cy, 4, stroke=AMBER, fill=AMBER, width=1))
+        marks.append((cx + c * sc, cy, f"S({_num(c)}, 0)", AMBER))
+        marks.append((cx + a * sc, cy, f"({_num(a)}, 0)", INK))
+        marks.append((cx, cy - b * sc, f"(0, {_num(b)})", INK))
+    elif k == "parabola":
+        pts = []
+        t = -math.sqrt(4 * a * (4 * a)) / 1.0
+        y_max = math.sqrt(4 * a * 4 * a)
+        steps = 36
+        for i in range(steps + 1):
+            yy = -y_max + (2 * y_max) * i / steps
+            xx = yy * yy / (4 * a)
+            pts.append((cx + xx * sc, cy - yy * sc))
+        parts.append(_polyline(pts, color=PRIMARY, width=2.5))
+        parts.append(_circle(cx + a * sc, cy, 4, stroke=AMBER, fill=AMBER, width=1))
+        parts.append(_line(cx - a * sc, cy - 100, cx - a * sc, cy + 100, color=GREEN, width=2, dashed=True))
+        marks.append((cx + a * sc, cy, f"S({_num(a)}, 0)", AMBER))
+        marks.append((cx - a * sc, cy + 118, f"x = -{_num(a)}", GREEN))
+    else:
+        c = math.sqrt(a * a + (b or a) ** 2)
+        for sign in (-1, 1):
+            pts = []
+            steps = 26
+            for i in range(steps + 1):
+                th = -1.15 + 2.3 * i / steps
+                xx = sign * a * math.cosh(th)
+                yy = (b or a) * math.sinh(th)
+                pts.append((cx + xx * sc, cy - yy * sc))
+            parts.append(_polyline(pts, color=PRIMARY, width=2.5))
+            parts.append(_circle(cx + sign * c * sc, cy, 4, stroke=AMBER, fill=AMBER, width=1))
+        marks.append((cx + c * sc, cy, f"S({_num(c)}, 0)", AMBER))
+        marks.append((cx + a * sc, cy, f"({_num(a)}, 0)", INK))
+
+    # Labels last, and staggered above/below so two marks near the axis cannot
+    # land on the same line.
+    for i, (mx, my, text, col) in enumerate(marks):
+        dy = -14 if i % 2 == 0 else 24
+        parts.append(_text(mx, my + dy, text, size=14, color=col, weight="bold"))
+    return _svg(w, h, parts)
+
+
+def triangle_figure(
+    vertices: Sequence[str] = ("A", "B", "C"),
+    sides: Sequence[str] | None = None,
+    angles: Sequence[str] | None = None,
+    right_angle_at: str | None = None,
+    title: str | None = None,
+) -> str:
+    """A labelled triangle: vertices, side lengths and angles.
+
+    `sides` are opposite their vertex in the usual convention — sides[0] faces
+    vertices[0]. Getting that wrong is the classic sine-rule error, so the
+    template enforces it rather than trusting the caller to place labels.
+    """
+    vs = [_label(v, f"vertices[{i}]", 3) for i, v in
+          enumerate(_sequence(vertices, "vertices", min_len=3, max_len=3))]
+    sd = ([_label(x, f"sides[{i}]", 12, allow_empty=True) for i, x in
+           enumerate(_sequence(sides, "sides", min_len=3, max_len=3))] if sides else ["", "", ""])
+    an = ([_label(x, f"angles[{i}]", 12, allow_empty=True) for i, x in
+           enumerate(_sequence(angles, "angles", min_len=3, max_len=3))] if angles else ["", "", ""])
+
+    w, h = 480.0, 340.0
+    heading = _label(title, "title", 44, allow_empty=True)
+    # The apex vertex label is pushed UP and away from the centroid, so the
+    # triangle has to start well below the title or the two collide.
+    top = 88 if heading else 46
+    # A deliberately scalene shape: an accidental isosceles reads as a claim.
+    P = [(258.0, top), (86.0, h - 62), (410.0, h - 62)]
+
+    parts: list[str] = []
+    if heading:
+        parts.append(_text(w / 2, 32, heading, size=17, color=INK, weight="bold"))
+    parts.append(_polygon(P, stroke=INK, fill="none", width=2.5))
+
+    if right_angle_at:
+        ra = str(right_angle_at).strip()
+        if ra not in vs:
+            raise ValueError(f"right_angle_at must be one of {vs}, got {ra!r}")
+        i = vs.index(ra)
+        vx, vy = P[i]
+        n1, n2 = P[(i + 1) % 3], P[(i + 2) % 3]
+        def step(t):
+            dx, dy = t[0] - vx, t[1] - vy
+            L = math.hypot(dx, dy) or 1.0
+            return dx / L * 20, dy / L * 20
+        a1, a2 = step(n1), step(n2)
+        parts.append(_polyline([(vx + a1[0], vy + a1[1]),
+                                (vx + a1[0] + a2[0], vy + a1[1] + a2[1]),
+                                (vx + a2[0], vy + a2[1])], color=AMBER, width=2))
+
+    cxc = sum(p[0] for p in P) / 3
+    cyc = sum(p[1] for p in P) / 3
+
+    # A small arc at each vertex. Without it the angle labels name something
+    # the figure never marks, and a triangle with three angles written beside
+    # bare corners is exactly the picture a student cannot read.
+    for i, (px, py) in enumerate(P):
+        n1, n2 = P[(i + 1) % 3], P[(i + 2) % 3]
+        def _u(t):
+            dx, dy = t[0] - px, t[1] - py
+            L = math.hypot(dx, dy) or 1.0
+            return dx / L, dy / L
+        u1, u2 = _u(n1), _u(n2)
+        r = 24.0
+        a1 = (px + u1[0] * r, py + u1[1] * r)
+        a2 = (px + u2[0] * r, py + u2[1] * r)
+        bx, by = u1[0] + u2[0], u1[1] + u2[1]
+        L = math.hypot(bx, by) or 1.0
+        ctl = (px + bx / L * r * 1.32, py + by / L * r * 1.32)
+        parts.append(_path(
+            f"M {_num(a1[0])} {_num(a1[1])} Q {_num(ctl[0])} {_num(ctl[1])} "
+            f"{_num(a2[0])} {_num(a2[1])}",
+            stroke=MUTED, width=1.6))
+    # vertex labels, pushed away from the centroid so they clear the outline
+    for i, (px, py) in enumerate(P):
+        dx, dy = px - cxc, py - cyc
+        L = math.hypot(dx, dy) or 1.0
+        lx, ly = px + dx / L * 24, py + dy / L * 24 + 5
+        txt = vs[i] + (f"  {an[i]}" if an[i] else "")
+        parts.append(_text(lx, ly, txt, size=16, color=INK, weight="bold"))
+    # side labels at each midpoint, nudged outward
+    for i in range(3):
+        p1, p2 = P[(i + 1) % 3], P[(i + 2) % 3]
+        if not sd[i]:
+            continue
+        mx, my = (p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2
+        dx, dy = mx - cxc, my - cyc
+        L = math.hypot(dx, dy) or 1.0
+        parts.append(_text(mx + dx / L * 22, my + dy / L * 22 + 5, sd[i],
+                           size=15, color=PRIMARY, weight="bold"))
+    return _svg(w, h, parts)
+
+
+def hierarchy_tree(
+    root: str,
+    children: Sequence[Any],
+    title: str | None = None,
+) -> str:
+    """A root box branching into children, each with optional leaves beneath.
+
+    Classification is the shape biology repeats more than any other — kingdoms
+    into phyla, phyla into classes — and a bulleted list is not the same thing:
+    the branching IS the content.
+    """
+    rt = _label(root, "root", 26)
+    kids = _sequence(children, "children", min_len=2, max_len=4)
+    cols: list[tuple[str, list[str]]] = []
+    for i, k in enumerate(kids):
+        if isinstance(k, dict):
+            name = _label(k.get("label") or k.get("name"), f"children[{i}].label", 18)
+            leaves = [_label(x, f"children[{i}].items[{j}]", 20) for j, x in
+                      enumerate(_sequence(k.get("items") or [], f"children[{i}].items",
+                                          min_len=0, max_len=4) if k.get("items") else [])]
+        else:
+            name, leaves = _label(k, f"children[{i}]", 18), []
+        cols.append((name, leaves))
+
+    n = len(cols)
+    col_w, gap = 132.0, 18.0
+    w = max(500.0, n * col_w + (n - 1) * gap + 56)
+    heading = _label(title, "title", 44, allow_empty=True)
+    top = 54 if heading else 26
+    root_h, box_h, leaf_h = 40.0, 38.0, 30.0
+    y_root, y_kid = top, top + root_h + 46
+    max_leaves = max(len(c[1]) for c in cols)
+    y_leaf = y_kid + box_h + 26
+    h = (y_leaf + max_leaves * (leaf_h + 8) + 18) if max_leaves else (y_kid + box_h + 24)
+
+    left = (w - (n * col_w + (n - 1) * gap)) / 2
+    centres = [left + i * (col_w + gap) + col_w / 2 for i in range(n)]
+
+    parts: list[str] = []
+    if heading:
+        parts.append(_text(w / 2, 32, heading, size=17, color=INK, weight="bold"))
+    parts.append(_rect(w / 2 - 108, y_root, 216, root_h, stroke=INK, fill=LIGHT_FILL, width=2, rx=8))
+    # connectors before the boxes they point at, so the tree draws outward
+    for cxx in centres:
+        parts.append(_polyline([(w / 2, y_root + root_h), (w / 2, y_root + root_h + 22),
+                                (cxx, y_root + root_h + 22), (cxx, y_kid)],
+                               color=MUTED, width=1.6))
+    for i, (name, leaves) in enumerate(cols):
+        parts.append(_rect(centres[i] - col_w / 2, y_kid, col_w, box_h,
+                           stroke=PRIMARY, fill="none", width=2, rx=6))
+        for j in range(len(leaves)):
+            ly = y_leaf + j * (leaf_h + 8)
+            parts.append(_line(centres[i], (y_kid + box_h) if j == 0 else ly - 8,
+                               centres[i], ly, color=MUTED, width=1.2))
+            parts.append(_rect(centres[i] - col_w / 2 + 10, ly, col_w - 20, leaf_h,
+                               stroke=MUTED, fill="none", width=1.4, rx=5))
+    # every label last
+    parts.append(_text(w / 2, y_root + root_h / 2 + 6, rt, size=16, color=INK, weight="bold"))
+    for i, (name, leaves) in enumerate(cols):
+        parts.append(_text(centres[i], y_kid + box_h / 2 + 6, name, size=14,
+                           color=PRIMARY, weight="bold"))
+        for j, lf in enumerate(leaves):
+            parts.append(_text(centres[i], y_leaf + j * (leaf_h + 8) + leaf_h / 2 + 5,
+                               lf, size=13, color=INK))
+    return _svg(w, h, parts)
+
+
+def energy_levels(
+    levels: Sequence[Any],
+    transitions: Sequence[Any] | None = None,
+    title: str | None = None,
+) -> str:
+    """Horizontal energy levels with transitions drawn between them.
+
+    Spacing is proportional to the energies given, not evenly stacked — the
+    crowding of hydrogen's levels toward n = infinity is the point of the
+    picture, and an evenly spaced ladder says the opposite.
+
+    Each level is {"label": str, "energy": num}; each transition is
+    {"from": idx, "to": idx, "label": str}.
+    """
+    items = _sequence(levels, "levels", min_len=2, max_len=6)
+    lv = []
+    for i, it in enumerate(items):
+        if not isinstance(it, dict):
+            raise ValueError(f"levels[{i}] must be an object")
+        lv.append((_label(it.get("label"), f"levels[{i}].label", 22),
+                   _number(it.get("energy"), f"levels[{i}].energy")))
+    es = [e for _, e in lv]
+    lo, hi = min(es), max(es)
+    if hi - lo < 1e-9:
+        raise ValueError("levels all have the same energy; nothing to space out")
+
+    w, h = 520.0, 360.0
+    heading = _label(title, "title", 44, allow_empty=True)
+    top, bot = (66 if heading else 44), h - 44
+    x0, x1 = 96.0, 360.0
+
+    def y_of(e: float) -> float:
+        return bot - (e - lo) / (hi - lo) * (bot - top)
+
+    parts: list[str] = []
+    if heading:
+        parts.append(_text(w / 2, 32, heading, size=17, color=INK, weight="bold"))
+    for label, e in lv:
+        y = y_of(e)
+        parts.append(_line(x0, y, x1, y, color=INK, width=2.4))
+
+    for i, t in enumerate(_sequence(transitions or [], "transitions", min_len=0, max_len=4)
+                          if transitions else []):
+        if not isinstance(t, dict):
+            raise ValueError(f"transitions[{i}] must be an object")
+        fi = int(_number(t.get("from"), f"transitions[{i}].from"))
+        ti = int(_number(t.get("to"), f"transitions[{i}].to"))
+        if not (0 <= fi < len(lv)) or not (0 <= ti < len(lv)) or fi == ti:
+            raise ValueError(f"transitions[{i}] must name two different levels")
+        tx = x0 + 46 + i * 58
+        col = AMBER if lv[fi][1] > lv[ti][1] else GREEN
+        parts.append(_arrow(tx, y_of(lv[fi][1]), tx, y_of(lv[ti][1]), color=col, width=2, head=9))
+        lab = _label(t.get("label"), f"transitions[{i}].label", 14, allow_empty=True)
+        if lab:
+            # Beside the shaft, never on it. Centred, the label sits ON its own
+            # arrow — which validate() does not catch, because the text-over-
+            # shape check only looks at filled shapes and an arrow is a stroke.
+            # Sides alternate so two adjacent transitions cannot collide.
+            left = i % 2 == 0
+            parts.append(_text(tx + (-9 if left else 9),
+                               (y_of(lv[fi][1]) + y_of(lv[ti][1])) / 2 + 5, lab,
+                               size=13, color=col, weight="bold",
+                               anchor="end" if left else "start"))
+
+    # Level labels sit to the RIGHT of the lines, clear of every transition
+    # arrow, which all live between x0 and x1.
+    for label, e in lv:
+        parts.append(_text(x1 + 12, y_of(e) + 5, label, size=14, color=PRIMARY,
+                           weight="bold", anchor="start"))
+    parts.append(_text(x0 - 12, top - 14, "energy", size=13, color=MUTED, anchor="end"))
+    return _svg(w, h, parts)
+
+
 TEMPLATES: dict[str, Callable[..., str]] = {
     "free_body_diagram": free_body_diagram,
     "comparison_table": comparison_table,
@@ -1311,6 +1719,11 @@ TEMPLATES: dict[str, Callable[..., str]] = {
     "vector_resolution": vector_resolution,
     "process_flow": process_flow,
     "projectile_scene": projectile_scene,
+    "number_line": number_line,
+    "conic_figure": conic_figure,
+    "triangle_figure": triangle_figure,
+    "hierarchy_tree": hierarchy_tree,
+    "energy_levels": energy_levels,
 }
 
 

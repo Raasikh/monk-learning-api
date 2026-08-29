@@ -37,6 +37,29 @@ REALISTIC = {
     ),
     "boxed_derivation": dict(steps=["v = u + at", "s = ut + at^2/2"], title="Kinematics"),
     "process_flow": dict(stages=["Glycolysis", "Krebs", "ETC"], title="Respiration"),
+    "number_line": {
+        "intervals": [{"lo": -3, "hi": 2, "lo_closed": True, "hi_closed": False,
+                       "label": "-3 <= x < 2"}],
+        "title": "Solution of the Inequality",
+    },
+    "conic_figure": {"kind": "parabola", "a": 2, "title": "y^2 = 8x"},
+    "triangle_figure": {
+        "vertices": ["A", "B", "C"], "sides": ["a = 8", "b = 6", "c = 7"],
+        "angles": ["A", "B", "C"], "title": "Sine Rule in a Triangle",
+    },
+    "hierarchy_tree": {
+        "root": "Five Kingdoms",
+        "children": [{"label": "Monera", "items": ["Bacteria"]},
+                     {"label": "Protista", "items": ["Amoeba"]},
+                     {"label": "Fungi", "items": ["Yeast"]}],
+        "title": "Whittaker's Classification",
+    },
+    "energy_levels": {
+        "levels": [{"label": "n = 1", "energy": -13.6}, {"label": "n = 2", "energy": -3.4},
+                   {"label": "n = 3", "energy": -1.51}],
+        "transitions": [{"from": 1, "to": 0, "label": "Lyman"}],
+        "title": "Hydrogen Spectrum",
+    },
 }
 
 

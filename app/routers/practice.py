@@ -261,18 +261,35 @@ def get_next_question(
             continue
 
         # Class Filter
+        #
+        # `chapter_id` is AUTHORITATIVE when present: it names exactly one row in
+        # `chapters`, so it pins the class unambiguously. Name matching is only a
+        # fallback for rows that still lack an id.
+        #
+        # Do NOT restore the old `match_id or match_name` form. Name matching
+        # normalises "&" to "and", which collapses two genuinely distinct chapters:
+        #   mathematics "Relations & Functions"  (class 11)
+        #   mathematics "Relations and Functions" (class 12)
+        # and "Probability" exists verbatim in both classes. Under the permissive
+        # OR, a row whose id correctly said class 12 was still admitted into a
+        # class-11 session because its name normalised into the class-11 list --
+        # measured 2026-08-29 against production: 131 class-12 maths questions
+        # leaked into the class-11 filter and 139 class-11 into class-12.
         if valid_chapter_ids is not None:
             q_chap_id = q.get("chapter_id")
             q_chap_name = q.get("chapter_name")
-            match_id = bool(q_chap_id and q_chap_id in valid_chapter_ids)
-            match_name = False
-            if valid_chapter_names and q_chap_name:
-                match_name = any(
-                    q_chap_name.strip().lower().replace("&", "and") == v_name.strip().lower().replace("&", "and")
-                    for v_name in valid_chapter_names
-                )
-            if not (match_id or match_name):
-                continue
+            if q_chap_id:
+                if q_chap_id not in valid_chapter_ids:
+                    continue
+            else:
+                match_name = False
+                if valid_chapter_names and q_chap_name:
+                    match_name = any(
+                        q_chap_name.strip().lower().replace("&", "and") == v_name.strip().lower().replace("&", "and")
+                        for v_name in valid_chapter_names
+                    )
+                if not match_name:
+                    continue
 
         # Biology Discipline Filter (Botany / Zoology)
         if chosen_subject == "biology" and target_discipline:

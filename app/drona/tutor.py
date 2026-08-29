@@ -72,6 +72,20 @@ _DIAGRAM_CUES: List[Tuple[str, str]] = [
     # comparison, not a graph, and a bare "vs" is far more often shorthand for
     # "compared with" than for a plotted axis pair. "versus" spelled out
     # ("P versus V") stays a plot cue.
+    # These five sit above the generic relationship cues for the same reason
+    # projectile_scene does: a specific figure beats an abstract one whenever
+    # the content describes a shape a student can picture.
+    (r"\bconic\b|parabola|ellipse|hyperbola|directrix|eccentricit|latus rectum"
+     r"|focus of|foci\b", "conic_figure"),
+    (r"energy level|orbital diagram|quantum number|spectral (?:line|series)"
+     r"|excitation|ionisation energy|ionization energy|band gap|conduction band"
+     r"|bohr model|hydrogen spectrum", "energy_levels"),
+    (r"inequalit|\binterval\b|number line|modulus function|absolute value"
+     r"|domain and range|wavy curve|sign scheme", "number_line"),
+    (r"sine rule|cosine rule|solution of triangle|height and distance"
+     r"|properties of triangle|law of sines|law of cosines", "triangle_figure"),
+    (r"taxonomic (?:hierarchy|categor)|classification of|kingdom|phylum|five kingdom"
+     r"|whittaker|taxonomic rank", "hierarchy_tree"),
     (r"compare|comparison|difference between|ideal .*real|contrast|distinguish|\bvs\b", "comparison_table"),
     (r"graph|versus|curve|plot|isotherm|characteristic|varies with|as a function of", "labeled_axes_plot"),
     (r"deriv\w+|prove\b|step[- ]by[- ]step|substitut\w+|rearrang\w+|identit\w+"

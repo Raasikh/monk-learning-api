@@ -31,7 +31,10 @@ from app.drona.tutor import suggest_diagram_template
     ("Series LCR Circuit: Impedance and Phase", "circuit_diagram"),
     ("Compound Angle Formulas and Trigonometric Identities", "boxed_derivation"),
     ("Adaptive Radiation", "process_flow"),
-    ("Classification of Organic Compounds", "process_flow"),
+    # Beats process_flow now that hierarchy_tree exists, and should: organic
+    # classification BRANCHES (aliphatic/aromatic, then chains and rings), where
+    # a flow chart asserts a sequence that is not there.
+    ("Classification of Organic Compounds", "hierarchy_tree"),
 ])
 def test_bare_concept_names_pick_the_right_template(concept, expected):
     # Bare names, no teaching notes — the hard case, and the one production
@@ -51,7 +54,6 @@ def test_comparison_beats_plot_for_vs():
 
 @pytest.mark.parametrize("concept", [
     "Electric Charge: Properties, Quantisation and Charging",
-    "Ionization and Excitation Energy",
     "Economic Importance of Algae and Their Products",
     "Types of Sets: Empty, Finite, Infinite and Equal Sets",
 ])
@@ -108,3 +110,14 @@ def test_conceptual_turns_get_no_offer(objective, notes):
 def test_example_cue_empty_input_is_safe():
     assert turn_works_an_example("", "", "") is False
     assert turn_works_an_example() is False
+
+
+def test_ionisation_energy_now_has_a_template():
+    """It used to be listed as having no fitting figure. That was a gap, not a fact.
+
+    "Ionization and Excitation Energy" is exactly a level ladder with a
+    transition arrow on it — the diagram existed as a shape long before
+    energy_levels existed as a template, and the old expectation only recorded
+    that we had nothing to offer.
+    """
+    assert suggest_diagram_template("Ionization and Excitation Energy", "", "") == "energy_levels"

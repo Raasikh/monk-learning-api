@@ -175,6 +175,57 @@ HEX_RE = re.compile(r"#[0-9a-fA-F]{3,8}")
 ON_ATTR_RE = re.compile(r"\son[a-zA-Z]+\s*=", re.IGNORECASE)
 
 
+SAMPLES["number_line"] = {
+    "intervals": [{"lo": -2, "hi": 3, "lo_closed": False, "hi_closed": True,
+                   "label": "-2 < x <= 3"}],
+    "title": "Solution Set",
+}
+SAMPLES["conic_figure"] = {"kind": "ellipse", "a": 5, "b": 3,
+                           "title": "Ellipse: x^2/25 + y^2/9 = 1"}
+SAMPLES["triangle_figure"] = {"vertices": ["A", "B", "C"],
+                              "sides": ["a = 7", "b = 5", "c = 6"],
+                              "title": "Sine Rule"}
+SAMPLES["hierarchy_tree"] = {
+    "root": "Kingdom Animalia",
+    "children": [{"label": "Porifera", "items": ["Sponges"]},
+                 {"label": "Cnidaria", "items": ["Hydra", "Jellyfish"]},
+                 {"label": "Chordata", "items": ["Fish", "Mammals"]}],
+    "title": "Taxonomic Hierarchy",
+}
+SAMPLES["energy_levels"] = {
+    "levels": [{"label": "n = 1", "energy": -13.6}, {"label": "n = 2", "energy": -3.4},
+               {"label": "n = 3", "energy": -1.51}, {"label": "n = 4", "energy": -0.85}],
+    "transitions": [{"from": 2, "to": 1, "label": "H-alpha"}],
+    "title": "Hydrogen Energy Levels",
+}
+
+BAD_INPUTS["number_line"] = [
+    {"intervals": []},                                   # nothing to draw
+    {"intervals": [{"lo": 5, "hi": 2}]},                 # reversed
+    {"intervals": [{"lo": None, "hi": None}]},           # unbounded both ways
+]
+BAD_INPUTS["conic_figure"] = [
+    {"kind": "trapezoid", "a": 3},                       # not a conic
+    {"kind": "ellipse", "a": 5},                         # b is required
+    {"kind": "circle", "a": -2},                         # negative radius
+]
+BAD_INPUTS["triangle_figure"] = [
+    {"vertices": ["A", "B"]},                            # only two vertices
+    {"vertices": ["A", "B", "C"], "sides": ["a", "b"]},  # sides do not match
+    {"vertices": ["A", "B", "C"], "right_angle_at": "Z"},  # not a vertex
+]
+BAD_INPUTS["hierarchy_tree"] = [
+    {"root": "Animalia", "children": ["only one"]},      # not a branching
+    {"root": "", "children": ["a", "b"]},                # unnamed root
+    {"root": "Animalia", "children": [{"label": ""}, {"label": "b"}]},
+]
+BAD_INPUTS["energy_levels"] = [
+    {"levels": [{"label": "n = 1", "energy": -13.6}]},   # one level is not a ladder
+    {"levels": [{"label": "a", "energy": 1}, {"label": "b", "energy": 1}]},  # no spread
+    {"levels": [{"label": "a", "energy": 0}, {"label": "b", "energy": -3}],
+     "transitions": [{"from": 0, "to": 9}]},             # transition to nowhere
+]
+
 BAD_INPUTS["projectile_scene"] = [
     {"launch_label": "u", "angle_deg": 0, "show_dropped_ball": False},    # flat
     {"launch_label": "u", "angle_deg": 90, "show_dropped_ball": False},   # vertical
@@ -533,7 +584,47 @@ def test_every_template_renders_and_validates():
         "vector_resolution": dict(magnitude_label="F = 50 N", angle_deg=37,
                                   x_label="Fx = 40 N", y_label="Fy = 30 N"),
         "projectile_scene": dict(launch_label="u = 20 m/s", angle_deg=30),
+        "number_line": dict(intervals=[{"lo": -2, "hi": 3, "hi_closed": True,
+                                        "label": "-2 < x <= 3"}]),
+        "conic_figure": dict(kind="ellipse", a=5, b=3, title="Ellipse"),
+        "triangle_figure": dict(vertices=["A", "B", "C"],
+                                sides=["a = 7", "b = 5", "c = 6"], title="Sine Rule"),
+        "hierarchy_tree": dict(root="Kingdom Animalia",
+                               children=[{"label": "Porifera", "items": ["Sponges"]},
+                                         {"label": "Chordata", "items": ["Fish", "Mammals"]}],
+                               title="Taxonomic Hierarchy"),
+        "energy_levels": dict(levels=[{"label": "n = 1", "energy": -13.6},
+                                      {"label": "n = 2", "energy": -3.4},
+                                      {"label": "n = 3", "energy": -1.51}],
+                              transitions=[{"from": 2, "to": 1, "label": "H-alpha"}],
+                              title="Hydrogen"),
     }
     for name, kw in cases.items():
         ok, why = validate(getattr(dt, name)(**kw))
         assert ok, f"{name}: {why}"
+
+
+
+def test_energy_levels_spacing_is_proportional_not_even():
+    """The crowding toward n = infinity IS the physics.
+
+    An evenly spaced ladder claims the levels are equally separated, which is
+    the exact misconception the figure exists to correct.
+    """
+    svg = dt.energy_levels(levels=[{"label": "n = 1", "energy": -13.6},
+                                   {"label": "n = 2", "energy": -3.4},
+                                   {"label": "n = 3", "energy": -1.51}])
+    ys = [float(m) for m in re.findall(r'<line [^>]*y1="([\d.]+)"', svg)]
+    ys = sorted(set(ys))
+    assert len(ys) >= 3
+    # gap from n=1 to n=2 must dwarf the gap from n=2 to n=3
+    assert (ys[-1] - ys[-2]) > 2 * (ys[1] - ys[0]) or (ys[1] - ys[0]) > 2 * (ys[-1] - ys[-2])
+
+
+def test_number_line_draws_open_and_closed_endpoints_differently():
+    """Open versus closed is the whole distinction the figure exists for."""
+    svg = dt.number_line(intervals=[{"lo": -2, "hi": 3, "lo_closed": False,
+                                     "hi_closed": True}])
+    fills = re.findall(r'<circle [^>]*fill="([^"]+)"', svg)
+    assert dt.BACKGROUND in fills, "no hollow endpoint drawn"
+    assert dt.PRIMARY in fills, "no filled endpoint drawn"
