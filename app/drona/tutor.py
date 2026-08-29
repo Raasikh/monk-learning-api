@@ -1,9 +1,11 @@
 import re
 import math
+import threading
 import json
 import time
 import asyncio
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, Any, AsyncGenerator, List, NamedTuple, Optional, Tuple
 from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
@@ -132,6 +134,96 @@ def _precomputed_diagram(chapter_id: Optional[str],
         logger.info(f"[PRECOMPUTED DIAGRAM] lookup skipped for {subtopic_key}: {str(exc)[:70]}")
     _DIAGRAM_CACHE[ck] = svg
     return svg
+
+
+# ── Tier 3: live authoring for a concept no earlier tier covers ─────────────
+# 955 of 1,154 concepts match neither a precomputed diagram nor a template cue,
+# and a DOUBT matches neither by construction — tier 1 is keyed to the
+# segment's concept and tier 2 needs a cue. Without this tier those turns are
+# prose, permanently.
+#
+# Two things happen with the result, and the second matters more:
+#
+#   1. If it finishes before the board flushes, it is included in this turn.
+#      A turn emits exactly ONE board_events event, so a diagram that arrives
+#      after the flush cannot be sent — emitting a second one is a WS contract
+#      change and would need the web and app clients to append rather than
+#      replace. So it races, and losing costs nothing.
+#   2. Win or lose, it is STORED. The next turn on that concept — this student
+#      or any other — serves it from tier 1 in one indexed read. Coverage then
+#      grows along the paths students actually walk, rather than by paying to
+#      author all 955 up front.
+_LIVE_DIAGRAM_POOL = ThreadPoolExecutor(max_workers=3,
+                                        thread_name_prefix="live-diagram")
+# Two sessions on the same concept would otherwise author it twice and store
+# two active rows, and the reader takes the newest of those blindly.
+_LIVE_DIAGRAM_INFLIGHT: set = set()
+_LIVE_DIAGRAM_LOCK = threading.Lock()
+
+
+def _author_and_store(concept_id: str, concept_name: str, subject: str,
+                      explanation: str, cache_key: str) -> Optional[str]:
+    """Author one figure, store it, and return it. Never raises."""
+    try:
+        from app.drona.diagram_author import author_diagram
+        svg, reason = author_diagram(
+            subject=subject, concept=concept_name, explanation=explanation,
+            # Two attempts even though the student may be waiting: this thread
+            # is not on the critical path, and a rejected first draft is common
+            # enough that one shot loses figures a retry would have saved.
+            attempts=2, detail="simple", timeout=45,
+        )
+        if not svg:
+            logger.info(f"🖼️ [LIVE DIAGRAM] no figure for {concept_name[:40]!r}: {reason[:60]}")
+            return None
+        supabase.table("concept_diagrams").update({"active": False}) \
+            .eq("concept_id", concept_id).eq("active", True).execute()
+        supabase.table("concept_diagrams").insert([{
+            "concept_id": concept_id, "svg": svg,
+            "source_model": get_model_name("tutor"),
+            "drawn_for": f"[live] {concept_name}"[:400],
+        }]).execute()
+        # The miss was cached; leave it and every later turn re-misses.
+        _DIAGRAM_CACHE.pop(cache_key, None)
+        logger.info(f"🖼️ [LIVE DIAGRAM] authored + stored {concept_name[:40]!r} ({len(svg)} chars)")
+        return svg
+    except Exception as exc:
+        logger.warning(f"⚠️ [LIVE DIAGRAM] {concept_name[:40]!r} failed: {str(exc)[:90]}")
+        return None
+    finally:
+        with _LIVE_DIAGRAM_LOCK:
+            _LIVE_DIAGRAM_INFLIGHT.discard(concept_id)
+
+
+def start_live_diagram(chapter_id: Optional[str], subtopic_key: Optional[str],
+                       explanation: str):
+    """Kick off tier 3 for this concept, or return None if it is not worth it.
+
+    Total by construction: a lesson must never fail because a figure could not
+    be started.
+    """
+    if not chapter_id or not subtopic_key:
+        return None
+    try:
+        con = (supabase.table("concepts").select("id, name")
+               .eq("chapter_id", chapter_id).eq("key", subtopic_key)
+               .eq("active", True).limit(1).execute().data or [])
+        if not con:
+            return None
+        cid, cname = con[0]["id"], con[0]["name"]
+        with _LIVE_DIAGRAM_LOCK:
+            if cid in _LIVE_DIAGRAM_INFLIGHT:
+                return None
+            _LIVE_DIAGRAM_INFLIGHT.add(cid)
+        chap = (supabase.table("chapters").select("subject")
+                .eq("id", chapter_id).limit(1).execute().data or [])
+        subject = (chap[0].get("subject") if chap else "") or "physics"
+        return _LIVE_DIAGRAM_POOL.submit(
+            _author_and_store, cid, cname, subject, explanation,
+            f"{chapter_id}|{subtopic_key}")
+    except Exception as exc:
+        logger.info(f"[LIVE DIAGRAM] not started for {subtopic_key}: {str(exc)[:70]}")
+        return None
 
 
 def turn_works_an_example(*texts: str) -> bool:
@@ -643,6 +735,24 @@ async def process_tutor_turn_stream(
         " ".join(assigned_items_text),
         utterance or "",
     )
+    # ── Tier 3: neither faster tier covers this concept ──────────────────────
+    # Started HERE, before the LLM call, so it runs concurrently with the turn
+    # rather than after it — that is the only thing that gives it a chance of
+    # landing before the board flushes. It is also why the two cheap tiers are
+    # resolved first: paying for a model call when an indexed read or a string
+    # build would have done is the one outcome worth avoiding.
+    _live_diagram_future = None
+    if not _precomputed_svg and not _diag_hint:
+        _live_diagram_future = start_live_diagram(
+            session.get("chapter_id"), session.get("subtopic_key"),
+            # A doubt is about the utterance; a teaching turn is about the
+            # segment. Drawing the chapter when the student asked about one
+            # thing is how a figure ends up beside the wrong sentence.
+            (f"The student asked: {utterance}" if utterance else "")
+            or (curr_segment.get("teaching_notes")
+                or curr_segment.get("objective") or ""),
+        )
+
     diagram_directive = ""
     if _diag_hint and not _precomputed_svg:
         diagram_directive = (
@@ -1009,6 +1119,28 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             _src = "segment example" if curr_segment.get("example_diagram_svg") else "concept"
             logger.info(f"{stag}   🖼️ [DIAGRAM SERVED] {_src} figure for "
                         f"{session.get('subtopic_key')} ({len(_precomputed_svg)} chars)")
+
+        # Tier 3 delivery. Polled, never awaited: this runs inside the SSE
+        # generator, so blocking here would hold the board — and the speech
+        # behind it — for as long as the authoring takes. A figure that has not
+        # arrived is simply not sent, and is stored for the next turn either
+        # way, which is the half of tier 3 that does not depend on the race.
+        if (_live_diagram_future is not None and _live_diagram_future.done()
+                and not any(isinstance(e, dict) and e.get("type") == "diagram"
+                            for e in board_events_out)):
+            _live_svg = None
+            try:
+                _live_svg = _live_diagram_future.result(timeout=0)
+            except Exception:
+                _live_svg = None
+            if _live_svg:
+                board_events_out.append({
+                    "seq": len(board_events_out) + 1,
+                    "type": "diagram",
+                    "svg": _live_svg,
+                })
+                logger.info(f"{stag}   🖼️ [DIAGRAM SERVED] live figure for "
+                            f"{session.get('subtopic_key')} ({len(_live_svg)} chars)")
 
         sanitized = []
         seen = set()
@@ -1707,7 +1839,13 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             f"seg={curr_seg_idx}/{total_segments} turn={turn_within_segment} eff={effective_turn} "
             f"phase={phase_in}->{next_phase} grade={grade_out or '-'} "
             f"board={board_cnt} words={word_cnt} "
-            f"| cues: diagram={_diag_hint or '-'} example={'y' if example_directive else '-'} "
+            # Which TIER answered is the first question asked when a diagram is
+            # missing, and it used to be unanswerable from the logs: "the cue
+            # fired" and "a picture reached the board" are different claims.
+            f"| cues: diagram={_diag_hint or '-'} "
+            f"tier={'1' if _precomputed_svg else ('2' if _diag_hint else ('3' if _live_diagram_future is not None else '-'))}"
+            f"{'' if _live_diagram_future is None else ('+won' if _live_diagram_future.done() else '+late')} "
+            f"example={'y' if example_directive else '-'} "
             f"answer_key={'y' if parsed_json.get('correct_option') else '-'} "
             f"ban={'y' if board_answer_ban else '-'} "
             f"| emitted: diagram={_diag_evt.get('svg') is not None if _diag_evt else False} "

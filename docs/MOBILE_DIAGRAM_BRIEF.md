@@ -152,11 +152,22 @@ As of today, of 1,154 concepts:
 ```
   8  ( 0.7%)  have a precomputed diagram   (Class 11 Physics ch 1 only)
 191  (16.6%)  match a template cue
-955  (82.8%)  have no diagram at all
+955  (82.8%)  have neither — these now go to live authoring
 ```
 
-So **most turns carry no diagram event**, and the board must look right without
-one. Build the diagram path as an enhancement to a text board, never as
+The third number is no longer static. A concept that reaches a turn without a
+diagram is authored live in a background thread and **stored**, so the next
+turn on it — any student — serves it instantly from the first tier. Coverage
+grows along the paths students actually walk. Expect the diagram rate to climb
+over the first weeks of real use rather than sitting where it is today.
+
+Live authoring races the board flush and is dropped if it loses, so the same
+concept can carry no diagram on one turn and a diagram on the next. That is
+expected, not a bug — **do not cache a "this concept has no figure" decision**
+on the client.
+
+So **many turns still carry no diagram event**, and the board must look right
+without one. Build the diagram path as an enhancement to a text board, never as
 something the layout depends on.
 
 Class 11 Physics chapter 1 ("Units & Measurements") is the chapter to test
