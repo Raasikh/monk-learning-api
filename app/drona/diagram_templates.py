@@ -420,7 +420,12 @@ def comparison_table(
     """A ruled 2- or 3-column comparison table."""
     heads = _sequence(headers, "headers", min_len=2, max_len=3)
     ncols = len(heads)
-    heads = [_label(hd, f"headers[{i}]", 22) for i, hd in enumerate(heads)]
+    # The corner cell of a row-labelled table is idiomatically blank, and a
+    # model emits headers=["", "Sigma bond", "Pi bond"] readily. Rejecting
+    # that raised, and a raising template is dropped silently — the board
+    # simply loses the diagram. An empty header renders as an empty cell.
+    heads = [_label(hd, f"headers[{i}]", 22, allow_empty=True)
+             for i, hd in enumerate(heads)]
     body_rows = _sequence(rows, "rows", min_len=1, max_len=7)
 
     cells: list[list[str]] = []
@@ -998,7 +1003,13 @@ def circuit_diagram(components: Sequence[Any]) -> str:
                                color=AMBER, weight="bold"))
         else:
             leftish = px < (x0 + x1) / 2
-            parts.append(_text(px + (-30 if leftish else 30), py + 5, label, size=13,
+            # A side label is anchored away from the rail, so a long one runs
+            # off the canvas — "R1 = 4 Ohm" cleared the right edge by 18px.
+            # Clamp to a margin the label can actually fit inside.
+            lw = len(label) * 13 * 0.55
+            lx = px + (-30 if leftish else 30)
+            lx = max(lw + 8, lx) if leftish else min(w - lw - 8, lx)
+            parts.append(_text(lx, py + 5, label, size=13,
                                color=AMBER, weight="bold",
                                anchor="end" if leftish else "start"))
 
@@ -1270,8 +1281,10 @@ def projectile_scene(
             parts.append(_circle(dx, py, 4.5, stroke=AMBER, fill=AMBER, width=1))
             parts.append(_line(px + 8, py, dx - 8, py, color=MUTED, width=1,
                                dashed=True))
-        parts.append(_text(dx + 12, gy - 4, "dropped", size=11, color=AMBER,
-                           anchor="start"))
+        # Anchored right of the dropped column, which is itself near the edge,
+        # so it overran the canvas by 19px. Centre it on the column instead.
+        parts.append(_text(dx, gy + 16, "dropped", size=11, color=AMBER,
+                           anchor="middle"))
 
     # 6. measurements last
     if hl and not show_dropped_ball:

@@ -492,3 +492,48 @@ def test_boxed_derivation_boxes_the_final_step():
         if el.tag.endswith("rect") and el.get("stroke") == dt.PRIMARY
     ]
     assert len(boxed) == 1, "exactly the final step should be boxed"
+
+
+def test_comparison_table_accepts_a_blank_corner_cell():
+    """headers=["", "A", "B"] is how a row-labelled table is written.
+
+    A model emits this readily, and it used to raise. A template that raises is
+    dropped by _materialise_template with only a log line, so the board just
+    silently lost the diagram — the same class of failure as tier 2 never
+    being delivered at all.
+    """
+    from app.drona.diagram_author import validate
+    svg = dt.comparison_table(
+        headers=["", "Sigma bond", "Pi bond"],
+        rows=[["Overlap", "head-on", "sideways"], ["Rotation", "free", "restricted"]],
+        title="Sigma vs Pi",
+    )
+    ok, why = validate(svg)
+    assert ok, why
+
+
+def test_every_template_renders_and_validates():
+    """A template that renders invalid SVG is dropped at delivery, not here.
+
+    Tier 2's whole promise is that it is instant and always works, so each
+    template is exercised once with parameters a model would plausibly emit.
+    """
+    from app.drona.diagram_author import validate
+    cases = {
+        "free_body_diagram": dict(body_label="2 kg block", forces=[
+            {"label": "N = 20 N", "angle": 90}, {"label": "W = 20 N", "angle": 270},
+            {"label": "F = 8 N", "angle": 0}]),
+        "process_flow": dict(stages=["Glucose", "Pyruvate", "Acetyl CoA", "ATP"]),
+        "boxed_derivation": dict(steps=["v = u + at", "v^2 = u^2 + 2as"]),
+        "labeled_axes_plot": dict(x_label="Strain", y_label="Stress (MPa)",
+                                  curve_points=[[0, 0], [40, 110], [70, 140], [95, 105]]),
+        "circuit_diagram": dict(components=[{"type": "battery", "label": "12 V"},
+                                            {"type": "resistor", "label": "R = 4 Ohm"}]),
+        "ray_diagram": dict(optic_type="concave_mirror", object_pos=30.0, focal_length=10.0),
+        "vector_resolution": dict(magnitude_label="F = 50 N", angle_deg=37,
+                                  x_label="Fx = 40 N", y_label="Fy = 30 N"),
+        "projectile_scene": dict(launch_label="u = 20 m/s", angle_deg=30),
+    }
+    for name, kw in cases.items():
+        ok, why = validate(getattr(dt, name)(**kw))
+        assert ok, f"{name}: {why}"

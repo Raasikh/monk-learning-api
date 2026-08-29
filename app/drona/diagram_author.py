@@ -178,6 +178,8 @@ _CHAR_ADVANCE = 0.55
 # Boxes must clear each other by this fraction of font-size before we call it
 # a collision. Slightly forgiving, because the estimate above is.
 _COLLISION_SLACK = 0.12
+# How far a label may hang past the viewBox before it counts as stray.
+_BOUNDS_SLACK = 6.0
 
 
 def _text_boxes(svg: str) -> List[Tuple[float, float, float, float, str]]:
@@ -305,8 +307,10 @@ def validate(svg: str) -> Tuple[bool, str]:
             return False, f"contains {banned}"
     if BANNED_ATTR.search(svg):
         return False, "contains an on* event attribute"
-    if not re.search(r'viewBox="[\d.\s-]+"', svg):
+    vb = re.search(r'viewBox="[\d.-]+\s+[\d.-]+\s+([\d.]+)\s+([\d.]+)"', svg)
+    if not vb:
         return False, "no explicit viewBox"
+    vb_w, vb_h = float(vb.group(1)), float(vb.group(2))
     try:
         ET.fromstring(svg)
     except ET.ParseError as exc:
@@ -338,6 +342,18 @@ def validate(svg: str) -> Tuple[bool, str]:
         # mis-estimating a text width it cannot measure.
         shown = "; ".join(f"{a!r} over {b!r}" for a, b in clashes[:3])
         return False, f"{len(clashes)} overlapping labels ({shown})"
+
+    # A label placed outside the viewBox is not clipped — the clients are told
+    # not to clip, because a label may legitimately sit a hair over the edge —
+    # so it renders on top of whatever the board puts beside the figure. Two
+    # templates did exactly this, by up to 19px, and nothing caught it. The
+    # tolerance is deliberate: the width estimate above is approximate, and a
+    # few pixels of overhang is the case the no-clip rule exists for.
+    strays = [t for x0, y0, x1, y1, t in _text_boxes(svg)
+              if x0 < -_BOUNDS_SLACK or y0 < -_BOUNDS_SLACK
+              or x1 > vb_w + _BOUNDS_SLACK or y1 > vb_h + _BOUNDS_SLACK]
+    if strays:
+        return False, f"{len(strays)} labels outside the viewBox ({strays[0][:28]!r})"
     return True, ""
 
 
