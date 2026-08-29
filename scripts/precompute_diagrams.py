@@ -44,6 +44,8 @@ def main() -> int:
     p.add_argument("--dry-run", action="store_true", help="author but do not store")
     p.add_argument("--force", action="store_true", help="re-author concepts that already have one")
     p.add_argument("--out", default=None, help="also write each svg here to eyeball")
+    p.add_argument("--detail", default="simple", choices=["simple", "rich"],
+                   help="simple = one concrete worked example (default); rich = a full illustration")
     args = p.parse_args()
 
     ch = resolve_chapter(args.chapter, args.subject, args.class_level)
@@ -74,7 +76,7 @@ def main() -> int:
         os.makedirs(args.out, exist_ok=True)
 
     print(f"{ch['name']} (class {ch['class_level']} {ch['subject']}) — {len(concepts)} concepts")
-    print(f"model={model}  dry_run={args.dry_run}  force={args.force}\n")
+    print(f"model={model}  detail={args.detail}  dry_run={args.dry_run}  force={args.force}\n")
 
     made = skipped = failed = 0
     t_all = time.time()
@@ -89,7 +91,7 @@ def main() -> int:
         svg, reason = author_diagram(
             subject=ch["subject"], concept=c["name"],
             explanation=f"Teaching {c['name']} in {ch['name']}, class {ch['class_level']}.",
-            model=args.model,
+            model=args.model, detail=args.detail,
         )
         dt = time.time() - t0
         if not svg:
@@ -104,7 +106,7 @@ def main() -> int:
                     .eq("concept_id", c["id"]).eq("active", True).execute()
             supabase.table("concept_diagrams").insert([{
                 "concept_id": c["id"], "svg": svg, "source_model": model,
-                "drawn_for": c["name"],
+                "drawn_for": f"[{args.detail}] {c['name']}",
             }]).execute()
         print(f"  {c['teach_order']:>2}. {c['name'][:52]:54} OK   {dt:5.1f}s  {len(svg):>5}ch")
         made += 1
