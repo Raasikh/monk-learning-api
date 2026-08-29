@@ -71,7 +71,17 @@ ALLOWED_COLORS = frozenset(
     {INK, PRIMARY, LIGHT_FILL, MUTED, AMBER, RED, GREEN, PALE_FILL, BACKGROUND}
 )
 
-MAX_SVG_CHARS = 8000
+# Raised from 8000. The byte cap was never the real constraint — the board
+# animates every stroke with a 60ms-per-step floor, so what actually binds is
+# ELEMENT COUNT. Measured at ~105 chars per drawn step across a dozen real
+# diagrams, 8000 chars landed at almost exactly the ~70-step ceiling where that
+# floor starts stretching the draw past its budget. The two were accidentally
+# equivalent.
+#
+# Raising this alone would have produced diagrams that draw for 6-8s instead of
+# richer ones, so PremiumBoardEvent's TOTAL_BUDGET moved with it. See
+# diagram_author.MAX_DRAW_STEPS for the cap that now does the real work.
+MAX_SVG_CHARS = 14000
 
 __all__ = [
     "ALLOWED_COLORS",

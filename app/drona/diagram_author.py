@@ -54,6 +54,15 @@ BANNED_SUBSTRINGS = (
 )
 BANNED_ATTR = re.compile(r"\son[a-z]+\s*=", re.I)
 
+# The cap that actually matters. PremiumBoardEvent draws each element in turn
+# with `dur = max(60, TOTAL_BUDGET / steps)`, so once steps exceed
+# TOTAL_BUDGET/60 the floor takes over and the draw stretches linearly. With the
+# budget at 7000ms that ceiling is ~116 steps; 110 leaves headroom and keeps a
+# diagram drawing in about the time a sentence takes to speak.
+#
+# Text counts. It fades rather than draws, but it is still a step in the plan.
+MAX_DRAW_STEPS = 110
+
 # The style spec is the product decision in this module. Everything else is
 # mechanism. This is what makes nine diagrams read as one system rather than
 # nine drawings, so it is deliberately specific about weights and placement.
@@ -71,7 +80,10 @@ HARD RULES — an SVG breaking any of these is discarded and the student sees no
     #ffffff background
 - Open with <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 W H"> and make the
   FIRST child a white background rect covering the canvas.
-- Under {MAX_SVG_CHARS - 1500} characters.
+- Under {MAX_SVG_CHARS - 1500} characters AND under {MAX_DRAW_STEPS - 10} total
+  elements (every shape plus every text counts). The board draws them one at a
+  time, so a diagram with 200 elements takes far too long to appear. Prefer
+  fewer, better-chosen strokes over exhaustive detail.
 
 DRAW ORDER IS ANIMATION ORDER. The board draws each stroke in document order, so
 emit in the order a teacher draws: container or outline first, then internal
@@ -119,6 +131,12 @@ def validate(svg: str) -> Tuple[bool, str]:
         return False, f"undrawable elements: {sorted(stray)}"
     if not (tags & DRAWABLE):
         return False, "nothing drawable — text only"
+    steps = sum(len(re.findall(rf"<{t}\b", svg)) for t in DRAWABLE)
+    steps += len(re.findall(r"<text\b", svg))
+    if steps > MAX_DRAW_STEPS:
+        # Not a size problem — a pacing one. Past this the per-step floor makes
+        # the diagram draw for longer than the sentence introducing it.
+        return False, f"{steps} draw steps over the {MAX_DRAW_STEPS} limit"
     used = {m.lower() for m in re.findall(r"#[0-9a-fA-F]{6}", svg)}
     off = used - {c.lower() for c in ALLOWED_COLORS}
     if off:
