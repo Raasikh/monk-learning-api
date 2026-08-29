@@ -541,6 +541,79 @@ def test_a_choice_question_with_no_options_is_still_refused(monkeypatch):
     assert q["reason"] == "options_unreadable"
 
 
+def _page_with_geometry(**over):
+    """A Mathpix result carrying line geometry: Q3 owns a figure, Q4/Q5 do not."""
+    page = {
+        "text": "Q3. gas process\nQ4. heat at constant volume\nQ5. insulated cylinder",
+        "confidence": 0.99, "page_confidence": 0.9, "diagram_regions": 1, "ocr_ms": 10,
+        "diagram_spans": [{"top": 111, "bottom": 350}],
+        "text_lines": [
+            {"top": 30, "bottom": 54, "text": "Q3. gas process shown in the figure"},
+            {"top": 370, "bottom": 392, "text": "(1) 21 (2) 15 (3) 28 (4) 24"},
+            {"top": 470, "bottom": 494, "text": "Q4. heat at constant volume"},
+            {"top": 600, "bottom": 624, "text": "Q5. insulated cylinder"},
+        ],
+    }
+    page.update(over)
+    return page
+
+
+def test_a_figure_belongs_to_the_question_it_sits_inside():
+    """Geometry, not wording, decides which question owns a figure.
+
+    The page-level count cannot: OR-ing it onto every question refused a
+    thermodynamics question because a bob-on-a-string question shared the page.
+    """
+    counts = snap.figures_by_question(_page_with_geometry(), [3, 4, 5])
+    print(f"  {counts}")
+    assert counts == {3: 1, 4: 0, 5: 0}
+
+
+def test_geometry_overrides_the_text_model_both_ways(monkeypatch):
+    """A figure the wording missed is added; one it imagined is dropped.
+
+    The text model never sees the page — it infers a figure from prose, and has
+    been wrong in both directions: it missed one whose stem said "two
+    arrangements of wires" without "as shown", and flagged another that had no
+    figure at all.
+    """
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: _page_with_geometry())
+    # Q3 really has the figure and is reported as not needing one; Q4 has none
+    # and is reported as needing one.
+    stub_transcriber(monkeypatch, json.dumps({"questions": [
+        {"number": 3, "question_type": "numerical", "options": [], "legible": True,
+         "requires_diagram": False, "stem": "gas process shown in the figure, find alpha"},
+        {"number": 4, "question_type": "numerical", "options": [], "legible": True,
+         "requires_diagram": True, "stem": "heat at constant volume, find 100n"},
+    ]}))
+    qs = transcribe_questions(b"img", "image/png", "d1", None, 2)["questions"]
+    print(f"  q3 requires_diagram={qs[0]['requires_diagram']} (model said False)")
+    print(f"  q4 requires_diagram={qs[1]['requires_diagram']} (model said True)")
+    assert qs[0]["requires_diagram"] is True, "a real figure was not picked up"
+    assert qs[1]["requires_diagram"] is False, "an imagined figure was not dropped"
+
+
+def test_no_geometry_leaves_the_text_model_in_charge(monkeypatch):
+    """No coordinates means NO OPINION, never "there is no figure".
+
+    Reading an absent signal as "no figure" would silently stop describing
+    figures on any page whose OCR returns no geometry — the same class of
+    failure as the gate that skipped the describing pass entirely.
+    """
+    bare = _page_with_geometry(diagram_spans=[], text_lines=[])
+    assert snap.figures_by_question(bare, [3, 4]) == {}
+
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: bare)
+    stub_transcriber(monkeypatch, json.dumps({"questions": [
+        {"number": 3, "question_type": "numerical", "options": [], "legible": True,
+         "requires_diagram": True, "stem": "the arrangement shown in the figure"},
+    ]}))
+    q = transcribe_questions(b"img", "image/png", "d1", None, 1)["questions"][0]
+    print(f"  requires_diagram={q['requires_diagram']} (kept the model's judgement)")
+    assert q["requires_diagram"] is True
+
+
 def test_a_figure_question_reaches_the_describing_pass(monkeypatch):
     """A question is not refused here for needing its figure.
 

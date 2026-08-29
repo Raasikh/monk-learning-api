@@ -150,8 +150,39 @@ def read_page(image_bytes: bytes, mime_type: str,
                      doubt_id[:8], ocr_ms, payload["error"])
         raise MathpixError(f"Mathpix error: {payload['error']}")
 
-    line_types = [ln.get("type") for ln in (payload.get("line_data") or [])]
+    line_data = payload.get("line_data") or []
+    line_types = [ln.get("type") for ln in line_data]
     diagram_regions = sum(1 for t in line_types if t in ("diagram", "chart"))
+
+    # WHERE each line sits, not just how many diagrams there are.
+    #
+    # `requires_diagram` was decided by a text-only model inferring a figure
+    # from wording, and it failed both ways: it missed one whose stem said "two
+    # arrangements of wires" without "as shown", and on another it flagged the
+    # figure AND marked the question illegible, so the describing pass was
+    # skipped and the picture never looked at. The count alone cannot fix that
+    # either — OR-ing it onto every question refused a thermodynamics question
+    # because a bob-on-a-string question shared the page.
+    #
+    # Mathpix gives each line a `cnt` bounding polygon, so a figure can be
+    # attributed to the question whose vertical span contains it. That is
+    # geometry from the OCR engine rather than a guess from prose.
+    def _yspan(entry):
+        cnt = entry.get("cnt") or []
+        ys = [p[1] for p in cnt if isinstance(p, (list, tuple)) and len(p) >= 2]
+        return (min(ys), max(ys)) if ys else None
+
+    diagram_spans = []
+    text_lines = []
+    for entry in line_data:
+        span = _yspan(entry)
+        if span is None:
+            continue
+        if entry.get("type") in ("diagram", "chart"):
+            diagram_spans.append({"top": span[0], "bottom": span[1]})
+        else:
+            text_lines.append({"top": span[0], "bottom": span[1],
+                               "text": (entry.get("text") or "").strip()})
 
     text = (payload.get("text") or "").strip()
     rate = payload.get("confidence_rate")
@@ -167,14 +198,21 @@ def read_page(image_bytes: bytes, mime_type: str,
 
     logger.info(
         "[MATHPIX] doubt=%s ocr_ms=%d chars=%d confidence_rate=%s "
-        "page_confidence=%s diagram_regions=%d lines=%d",
+        "page_confidence=%s diagram_regions=%d lines=%d located=%d",
         doubt_id[:8], ocr_ms, len(text),
         f"{rate:.4f}" if rate is not None else "n/a",
         f"{whole_page:.4f}" if whole_page is not None else "n/a",
-        diagram_regions, len(line_types),
+        diagram_regions, len(line_types), len(diagram_spans),
     )
+    for span in diagram_spans:
+        logger.info("[MATHPIX] doubt=%s figure at y %d-%d",
+                    doubt_id[:8], span["top"], span["bottom"])
     return {"text": text, "confidence": rate, "page_confidence": whole_page,
-            "diagram_regions": diagram_regions, "ocr_ms": ocr_ms}
+            "diagram_regions": diagram_regions, "ocr_ms": ocr_ms,
+            # Both in image coordinates, top-down, for attributing a figure to
+            # the question it belongs to. Empty when the OCR gave no geometry,
+            # which the caller must treat as "no opinion", never as "no figure".
+            "diagram_spans": diagram_spans, "text_lines": text_lines}
 
 
 def confidence_is_usable(confidence_rate: Optional[float]) -> bool:

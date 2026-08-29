@@ -628,6 +628,14 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     # fix for a half-read page is to stop feeding it browser furniture in the
     # first place — see crop_to_content at the top of the pipeline.
 
+    # Which questions actually have a figure, from the OCR's own geometry.
+    # Empty means the page gave no usable coordinates, and the text model's
+    # `requires_diagram` stays in charge.
+    figure_counts = figures_by_question(page, _returned_numbers(raw_questions))
+    if figure_counts:
+        logger.info("[SNAP TRANSCRIBE] doubt=%s figures located by question: %s",
+                    doubt_id[:8], figure_counts)
+
     questions: List[Dict[str, Any]] = []
     for idx, item in enumerate(raw_questions, 1):
         if not isinstance(item, dict):
@@ -767,6 +775,24 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # thermodynamics question and a de Broglie ratio were both refused as
         # "needs the board" because a bob-on-a-string question shared the page.
         needs_diagram = item.get("requires_diagram") is True
+        # Geometry beats prose. When the OCR located the figures, its verdict
+        # for THIS question replaces the text model's guess in both directions:
+        # a figure it inferred from wording that is not actually on the page is
+        # dropped, and one it missed is added. Only ever an override when the
+        # two disagree, and only when there was geometry to judge from.
+        printed_number = _returned_numbers([item])
+        located = (figure_counts.get(printed_number[0])
+                   if (figure_counts and printed_number) else None)
+        if located is not None and bool(located) != needs_diagram:
+            logger.info(
+                "[SNAP TRANSCRIBE] doubt=%s q%d requires_diagram %s -> %s "
+                "(the OCR found %s inside this question's span; the text model "
+                "only had the wording to go on)",
+                doubt_id[:8], idx, needs_diagram, bool(located),
+                f"{located} figure(s)" if located else "no figure",
+            )
+            needs_diagram = bool(located)
+
         if needs_diagram:
             logger.info(
                 "[SNAP TRANSCRIBE] doubt=%s q%d needs a diagram — will describe it",
@@ -872,6 +898,56 @@ def _question_numbers_in(ocr_text: str) -> List[int]:
         if n not in seen:
             seen.append(n)
     return seen
+
+
+def figures_by_question(page: Dict[str, Any], wanted: List[int]) -> Dict[int, int]:
+    """How many figures sit inside each question's vertical span on the page.
+
+    Mathpix reports every line's bounding box, so a figure belongs to the
+    question whose printed number is the last one ABOVE it. That is geometry
+    from the OCR engine, and it replaces a text-only model inferring a figure
+    from wording — which failed both ways: it missed one whose stem said "two
+    arrangements of wires" without "as shown", and on another it flagged the
+    figure and simultaneously marked the question illegible, so the describing
+    pass was skipped and the picture never looked at.
+
+    Returns {} when the OCR gave no geometry, or when the question numbers
+    cannot be located in it. {} means "no opinion" and leaves the text model's
+    judgement in charge — NOT "there are no figures", which would reintroduce
+    the failure this exists to prevent.
+    """
+    spans = page.get("diagram_spans") or []
+    lines = page.get("text_lines") or []
+    if not spans or not lines or not wanted:
+        return {}
+
+    # Where each wanted question starts, vertically: the topmost line whose
+    # text begins with its printed number.
+    starts: Dict[int, float] = {}
+    for line in lines:
+        match = _QUESTION_NUMBER_RE.match((line.get("text") or "").lstrip())
+        if not match:
+            continue
+        num = int(match.group(1))
+        if num in wanted and num not in starts:
+            starts[num] = line["top"]
+    if len(starts) != len(wanted):
+        return {}
+
+    ordered = sorted(starts.items(), key=lambda kv: kv[1])
+    counts = {num: 0 for num in wanted}
+    for span in spans:
+        centre = (span["top"] + span["bottom"]) / 2.0
+        owner = None
+        for num, top in ordered:
+            # The last question that starts above this figure owns it.
+            if top <= centre:
+                owner = num
+            else:
+                break
+        if owner is not None:
+            counts[owner] += 1
+    return counts
 
 
 def _slice_by_question(ocr_text: str, wanted: List[int]) -> Dict[int, str]:
