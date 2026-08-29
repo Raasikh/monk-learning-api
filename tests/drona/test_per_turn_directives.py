@@ -67,7 +67,34 @@ def test_the_cue_still_feeds_the_directive():
     # suggest_diagram_template's result is what makes the directive specific.
     # If the two are decoupled, the cue fires into nothing.
     assert re.search(r"_diag_hint\s*=\s*suggest_diagram_template\(", SRC)
-    assert re.search(r"if\s+_diag_hint\s*:", SRC)
+    assert re.search(r"if\s+_diag_hint\s+and\s+not\s+_precomputed_svg\s*:", SRC)
+
+
+def test_the_two_diagram_tiers_cannot_both_fire():
+    """A precomputed diagram suppresses the template directive.
+
+    Both tiers producing a picture in one turn is worse than either alone — the
+    board would carry two diagrams of the same idea, drawn differently, and the
+    speech only introduces one. The suppression is the whole reason the tiers
+    are ordered rather than merely both available.
+    """
+    assert re.search(r"if\s+_diag_hint\s+and\s+not\s+_precomputed_svg\s*:", SRC)
+    # and the delivery side refuses to append over a diagram the model emitted
+    idx = SRC.index("Tier 1 delivery")
+    block = SRC[idx:idx + 700]
+    assert 'e.get("type") == "diagram"' in block, "appends without checking for an existing one"
+
+
+def test_the_precomputed_lookup_cannot_fail_a_lesson():
+    """It runs on every turn, so it must be total.
+
+    It also has to survive the table not existing — that is the state before
+    migration 0029 is applied, and a lesson must not care.
+    """
+    idx = SRC.index("def _precomputed_diagram(")
+    block = SRC[idx:SRC.index("\ndef ", idx + 10)]
+    assert "try:" in block and "except Exception" in block
+    assert "return None" in block
 
 
 def test_the_prompt_rule_and_the_injection_both_exist():

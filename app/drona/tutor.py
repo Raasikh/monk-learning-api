@@ -9,6 +9,7 @@ from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
+from app.drona.diagram_author import validate as validate_authored_svg
 from app.drona.state import compute_next_session_state
 from app.drona.usage import record_call_bg
 from app.drona.student_context import load_prior_knowledge
@@ -85,6 +86,52 @@ _WORKED_EXAMPLE_CUE = re.compile(
     r"|compute\b|evaluate\b|determine the\b|example:",
     re.IGNORECASE,
 )
+
+
+
+# One indexed read per turn, and it must never be able to fail a lesson — a
+# missing diagram is a plainer board, an exception is no board at all.
+_DIAGRAM_CACHE: Dict[str, Optional[str]] = {}
+
+
+def _precomputed_diagram(chapter_id: Optional[str],
+                         subtopic_key: Optional[str]) -> Optional[str]:
+    """The stored SVG for the concept this session is teaching, if any.
+
+    `subtopic_key` is the concept's slug (e.g. "projectile-motion"), and slugs
+    repeat across chapters, so the chapter is part of the lookup — without it a
+    Class 11 Thermodynamics session could serve a Chemistry diagram.
+
+    Re-validated on read rather than trusted: a row can predate a tightening of
+    the contract, and by then it is too late to catch it at authoring time.
+    """
+    if not chapter_id or not subtopic_key:
+        return None
+    ck = f"{chapter_id}|{subtopic_key}"
+    if ck in _DIAGRAM_CACHE:
+        return _DIAGRAM_CACHE[ck]
+    svg = None
+    try:
+        con = (supabase.table("concepts").select("id")
+               .eq("chapter_id", chapter_id).eq("key", subtopic_key)
+               .eq("active", True).limit(1).execute().data or [])
+        if con:
+            rows = (supabase.table("concept_diagrams").select("svg")
+                    .eq("concept_id", con[0]["id"]).eq("active", True)
+                    .order("created_at", desc=True).limit(1).execute().data or [])
+            if rows:
+                candidate = rows[0].get("svg") or ""
+                ok, why = validate_authored_svg(candidate)
+                if ok:
+                    svg = candidate
+                else:
+                    logger.warning(f"⚠️ [PRECOMPUTED DIAGRAM REJECTED] {subtopic_key}: {why}")
+    except Exception as exc:
+        # Includes the table not existing yet, which is the state before
+        # migration 0029 is applied.
+        logger.info(f"[PRECOMPUTED DIAGRAM] lookup skipped for {subtopic_key}: {str(exc)[:70]}")
+    _DIAGRAM_CACHE[ck] = svg
+    return svg
 
 
 def turn_works_an_example(*texts: str) -> bool:
@@ -569,6 +616,15 @@ async def process_tutor_turn_stream(
     # on the model to notice the general trigger table. Measured: with the
     # table alone, a Trigonometry derivation and a dipole-forces turn both came
     # back as pure text.
+    # ── Tier 1: a precomputed diagram, if this concept has one ───────────────
+    # Beats the template tier outright. It was authored FOR this concept rather
+    # than assembled from parameters, it is already validated, and serving it
+    # costs one indexed read instead of a model call. If it is present the
+    # template directive is skipped entirely — two diagrams in one turn is
+    # worse than either alone.
+    _precomputed_svg = _precomputed_diagram(
+        session.get("chapter_id"), session.get("subtopic_key"))
+
     _diag_hint = suggest_diagram_template(
         curr_segment.get("objective") or "",
         curr_segment.get("teaching_notes") or "",
@@ -576,7 +632,7 @@ async def process_tutor_turn_stream(
         utterance or "",
     )
     diagram_directive = ""
-    if _diag_hint:
+    if _diag_hint and not _precomputed_svg:
         diagram_directive = (
             f"\n\nDIAGRAM FOR THIS TURN: this content calls for `{_diag_hint}`.\n"
             f"Emit ONE board_event of type \"diagram\" with template "
@@ -898,6 +954,23 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 for e in (model_board_events_raw or [])
             ]
             board_events_out = [e for e in board_events_out if e]
+
+        # Tier 1 delivery. The model was never asked for a diagram this turn
+        # (the template directive is suppressed when a precomputed one exists),
+        # so this is appended rather than replacing anything it produced. seq
+        # ties it to the last sentence, which is where a summarising picture
+        # belongs — the board reveals in step with the speech, and a diagram
+        # arriving before the words that explain it reads as a non sequitur.
+        if _precomputed_svg and not any(
+            isinstance(e, dict) and e.get("type") == "diagram" for e in board_events_out
+        ):
+            board_events_out.append({
+                "seq": len(board_events_out) + 1,
+                "type": "diagram",
+                "svg": _precomputed_svg,
+            })
+            logger.info(f"{stag}   🖼️ [PRECOMPUTED DIAGRAM] served for "
+                        f"{session.get('subtopic_key')} ({len(_precomputed_svg)} chars)")
 
         sanitized = []
         seen = set()
