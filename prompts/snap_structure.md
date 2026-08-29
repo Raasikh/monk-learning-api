@@ -108,6 +108,17 @@ Return ONLY valid JSON:
    missing from the sequence (A, B, D with no C).
 9. `legible: false` when a question is clearly truncated mid-sentence, or when a
    choice question has no readable options at all. Say why in `note`.
+9a. **`legible` is about whether the TEXT could be read — nothing else.**
+    - A `numerical` or `subjective` question has NO options. That is the
+      question's shape, not a failure to read it: JEE prints a blank
+      ("the value of α is ____"). Marking one illegible for "missing options"
+      refused a whole page that had been read perfectly.
+    - A question that refers to a figure is `legible: true` with
+      `requires_diagram: true`. Something downstream looks at the picture and
+      decides whether it can be worked from; that is not your call, and
+      refusing here means the figure is never even examined.
+    - If you find yourself writing a note that starts "the question is legible,
+      but…", the answer is `legible: true`.
 
 ## ━━━ DIAGRAMS ━━━
 

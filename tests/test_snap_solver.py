@@ -492,6 +492,81 @@ def test_structurer_skipping_ahead_is_corrected(monkeypatch):
     assert got == ["Q62", "Q63"], f"served the wrong questions: {got}"
 
 
+def test_a_numerical_question_is_not_refused_for_having_no_options(monkeypatch):
+    """"No options" is only evidence against a CHOICE question.
+
+    A JEE numerical prints a blank -- "the value of alpha is ____" -- so it has
+    no options by design. The structurer read one correctly as `numerical` with
+    `options: []`, then set `legible: false` because the options were
+    "missing", in a note that literally began "The question is legible, but".
+    A page of three came back solved 0/3 and the student was told to retake a
+    photo that had been read perfectly.
+    """
+    page = ("Q4. When 300 J of heat is given to an ideal gas at constant "
+            "volume its temperature rises from 20 C to 50 C. What is 100n?\n")
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": page, "confidence": 0.99,
+                                           "page_confidence": 0.9,
+                                           "diagram_regions": 0, "ocr_ms": 10})
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 4, "question_type": "numerical", "options": [],
+        "legible": False, "note": "The question is legible but lacks options.",
+        "stem": ("When 300 J of heat is given to an ideal gas at constant volume "
+                 "its temperature rises from 20 C to 50 C. What is 100n?"),
+    }]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)["questions"][0]
+    print(f"  type={q['question_type']} options={len(q['options'])} legible={q['legible']}")
+    assert q["legible"] is True, "a numerical question was refused for having no options"
+
+
+def test_a_choice_question_with_no_options_is_still_refused(monkeypatch):
+    """The override above must not reach the refusal that matters.
+
+    A multiple-choice question without its choices reached the solver once and
+    it invented an answer that was not among them. That gate stands.
+    """
+    page = "Q7. Extra pure nitrogen can be obtained by heating\n(A) NH_3 with CuO\n"
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": page, "confidence": 0.99,
+                                           "page_confidence": 0.9,
+                                           "diagram_regions": 0, "ocr_ms": 10})
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 7, "question_type": "single_correct", "legible": True,
+        "stem": "Extra pure nitrogen can be obtained by heating",
+        "options": [{"label": "A", "text": "NH_3 with CuO"}],
+    }]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)["questions"][0]
+    print(f"  options={len(q['options'])} legible={q['legible']} reason={q['reason']}")
+    assert q["legible"] is False
+    assert q["reason"] == "options_unreadable"
+
+
+def test_a_figure_question_reaches_the_describing_pass(monkeypatch):
+    """A question is not refused here for needing its figure.
+
+    The describing pass runs only on legible questions, so a P-V graph question
+    returned as `requires_diagram: true` AND `legible: false` -- its note citing
+    "the reference to the figure" -- was refused for the exact reason that pass
+    exists to handle, and the figure was never looked at. Whether a figure can
+    be worked from is that pass's call; it refuses honestly when it cannot.
+    """
+    page = "Q3. 10 mole of an ideal gas undergoes the process shown in the figure.\n"
+    monkeypatch.setattr(snap.mathpix, "read_page",
+                        lambda *_a, **_k: {"text": page, "confidence": 0.99,
+                                           "page_confidence": 0.9,
+                                           "diagram_regions": 1, "ocr_ms": 10})
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 3, "question_type": "single_correct", "requires_diagram": True,
+        "legible": False, "note": "unreadable: the reference to the figure",
+        "stem": "10 mole of an ideal gas undergoes the process shown in the figure.",
+        "options": [{"label": "1", "text": "21"}, {"label": "2", "text": "15"}],
+    }]}))
+    q = transcribe_questions(b"img", "image/jpeg", "d1", None, 3)["questions"][0]
+    print(f"  requires_diagram={q['requires_diagram']} legible={q['legible']}")
+    assert q["requires_diagram"] is True
+    assert q["legible"] is True, "refused before its figure was ever described"
+
+
 def test_a_schema_placeholder_is_not_filed_as_a_subject():
     """The subject chip and the /doubts filter take only real subjects.
 

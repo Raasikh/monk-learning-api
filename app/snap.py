@@ -362,6 +362,19 @@ def _options_found_in_ocr(options: List[Dict[str, str]], ocr_text: str) -> List[
     return missing
 
 
+def options_missing_for_choice(is_choice: bool, options: List[Dict[str, str]],
+                               item: Dict[str, Any]) -> bool:
+    """Whether a CHOICE question is missing choices it genuinely needs.
+
+    The one refusal that must survive every "let it through" override below: a
+    multiple-choice question without its options reached the solver once and it
+    invented an answer that was not among them.
+    """
+    if not is_choice:
+        return False
+    return len(options) < 2 or item.get("options_complete") is False
+
+
 def _clean_options(raw: Any) -> List[Dict[str, str]]:
     """Normalises the transcriber's `options` into [{label, text}].
 
@@ -660,6 +673,31 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             q_type = "single_correct" if len(options) >= 2 else "subjective"
         is_choice = q_type in CHOICE_TYPES
 
+        # A NUMERICAL question has no options, by design — JEE prints a blank:
+        # "the value of alpha is ____". The structurer read one correctly, as
+        # `numerical` with `options: []`, and then set `legible: false` because
+        # the options were "missing", with a note that literally began "The
+        # question is legible, but...". A whole page of three came back solved
+        # 0/3 that way, and the student was told to retake a photo that had
+        # been read perfectly.
+        #
+        # Not a prompt fix alone: the pipeline already knows the option count
+        # is only evidence for a CHOICE question, so it decides that here
+        # rather than trusting the flag. Genuine illegibility still stands —
+        # an empty stem is caught above, and a truncated one keeps its flag,
+        # because this only overrides when there is a substantial stem to
+        # solve from.
+        if (not legible and not is_choice and not options
+                and len(stem_text) >= 40):
+            logger.info(
+                "[SNAP TRANSCRIBE] doubt=%s q%d marked illegible for having no "
+                "options, but it is %s — options are not expected. Solving it. "
+                "(model note: %r)",
+                doubt_id[:8], idx, q_type, (q_note or "")[:100],
+            )
+            legible = True
+            q_note = None
+
         # A multiple-choice question without its choices is not answerable, and
         # the prompt saying so is not enough — a bare stem reached the solver
         # once and it invented an answer that was not among the options. This is
@@ -734,6 +772,25 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                 "[SNAP TRANSCRIBE] doubt=%s q%d needs a diagram — will describe it",
                 doubt_id[:8], idx,
             )
+
+        # ...but only if it survives to the describing pass, which runs on
+        # legible questions. A P-V graph question came back `requires_diagram:
+        # true` AND `legible: false`, its note citing "the reference to the
+        # figure" — so it was refused for the exact reason that pass exists to
+        # handle, and the figure was never even looked at. The describing pass
+        # is the thing that decides whether a figure can be worked from; it
+        # refuses honestly ("could not work reliably from the figure") when it
+        # cannot. Deciding that here, from the text alone, pre-empts it.
+        if needs_diagram and not legible and stem_text and not options_missing_for_choice(
+                is_choice, options, item):
+            logger.info(
+                "[SNAP TRANSCRIBE] doubt=%s q%d marked illegible for needing its "
+                "figure — that is what the describing pass is for. Letting it "
+                "through. (model note: %r)",
+                doubt_id[:8], idx, (q_note or "")[:100],
+            )
+            legible = True
+            q_note = None
 
         questions.append({
             "n": idx,
@@ -867,10 +924,12 @@ def _structure_in_parallel(client, system_prompt: str, slices: Dict[int, str],
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": (
                     f"Return EXACTLY ONE question: Q{num}, with `number` set to "
-                    f"{num}. The text below is that question and its options. If "
-                    f"part of it cannot be read, still return it with "
-                    f"`legible: false` and a `note` — do not return an empty "
-                    f"list.\n\nOCR TEXT:\n{slices[num]}"
+                    f"{num}. The text below is that question and, if it is a "
+                    f"choice question, its options — a numerical or subjective "
+                    f"question has none, and that is its shape, not a failure "
+                    f"to read it. Use `legible: false` ONLY when the words "
+                    f"themselves are truncated or unreadable; return it either "
+                    f"way, never an empty list.\n\nOCR TEXT:\n{slices[num]}"
                 )},
             ]
             if corrective:
