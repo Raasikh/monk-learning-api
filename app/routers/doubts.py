@@ -148,17 +148,29 @@ def _quota_resets_in(user_id: str) -> Optional[Dict[str, Any]]:
 # not a quota, and the OCR read it is defending costs $0.002.
 #
 # So: a student is charged when they got an answer, and not otherwise.
-# 'unsure' counts — the question WAS solved, the working is shown, and only the
-# final certainty is withheld; that is a real answer and the expensive solve
-# was really spent.
-CHARGEABLE_STATUSES = ("solved", "unsure")
+#
+# 'unsure' used to count, on the reasoning that the question WAS solved, the
+# working is shown, and only the final certainty is withheld — a real answer,
+# and the expensive solve really was spent. That reasoning describes our side of
+# the exchange rather than theirs. What a student receives for an 'unsure' is
+# working they have been told not to trust the end of: the one case where we
+# cannot say what the answer is. Billing a question for that asks them to pay
+# for our uncertainty, and the triggers are all ours — a disagreement with the
+# printed key, an answer outside the printed options, two solves that disagree.
+# None of them is anything the student did to their photo.
+#
+# So the line is now the plainest one available: a slot is spent when a student
+# is given an answer. The solve cost is real and unbilled, which is a cost we
+# carry rather than one we pass on for a result we would not stand behind.
+CHARGEABLE_STATUSES = ("solved",)
 
 
 def _questions_used_today(user_id: str) -> int:
     """Questions this student has been ANSWERED in the last rolling 24 hours.
 
-    Nothing else is billed: not a photo we could not read, and not a question
-    we read perfectly and failed to solve.
+    Nothing else is billed: not a photo we could not read, not a question we
+    read perfectly and failed to solve, and not one we solved but would not
+    stand behind the answer to.
     """
     since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
     res = (
@@ -412,7 +424,15 @@ async def snap_doubt(
         "submission_id": submission_id,
         "note": note,
         "solved_count": result["solved_count"],
-        "questions_used_today": used_today + len(rows),
+        # Chargeable rows, not every row. The streaming path was corrected for
+        # this — "a page with one unbilled question once showed 2/50 while the
+        # student was actually charged 1" — and the blocking one, which the
+        # mobile client still falls back to when the stream cannot be reached,
+        # kept the old arithmetic. It overstates by every unreadable or
+        # unsure question on the page.
+        "questions_used_today": used_today + sum(
+            1 for row in rows if row["status"] in CHARGEABLE_STATUSES
+        ),
         "daily_limit": DAILY_QUESTION_LIMIT,
         "questions": [
             {
