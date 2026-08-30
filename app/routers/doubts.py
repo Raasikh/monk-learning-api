@@ -38,6 +38,20 @@ from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
 
 
+def _figure_urls(keys):
+    """Signed URLs for a question's own figures, in the order they were kept.
+
+    A key that cannot be signed is dropped rather than sent: a broken image is
+    worse than one fewer, and the written description is still there.
+    """
+    out = []
+    for key in keys or []:
+        url = signed_url(key) if isinstance(key, str) else None
+        if url:
+            out.append(url)
+    return out
+
+
 def _options_with_figures(options):
     """Swaps each stored figure key for a URL the app can actually load.
 
@@ -69,7 +83,7 @@ LIST_COLUMNS = (
 )
 # image_key is selected only for legacy doubts saved before images stopped being
 # stored; signed_url() below returns None for a row that never had one.
-DETAIL_COLUMNS = LIST_COLUMNS + ", explanation, steps, image_key"
+DETAIL_COLUMNS = LIST_COLUMNS + ", explanation, steps, image_key, figures"
 
 
 class ReportRequest(BaseModel):
@@ -462,6 +476,7 @@ async def snap_doubt(
                 "question_text": row["question_text"],
                 "stem": row["stem"],
                 "options": _options_with_figures(row["options"]),
+                "figure_urls": _figure_urls(row.get("figures")),
                 "subject": row["subject"],
                 "chapter": row["chapter"],
                 "concept": row["concept"],
@@ -525,6 +540,9 @@ def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: st
         "question_text": question.get("text") or None,
         "stem": question.get("stem") or question.get("text") or None,
         "options": question.get("options") or [],
+        # The figures this question was printed with. Keys only — a client is
+        # given signed URLs, never a key.
+        "figures": question.get("figure_keys") or [],
         "subject": _subject_for_row(solution, question),
         "chapter": solution.get("topic") or question.get("topic"),
         "concept": _concept(solution, question),
@@ -667,6 +685,7 @@ async def snap_doubt_stream(
                             "answer", "steps", "key_idea", "option_labels",
                             "status", "failure_reason")},
                         "options": _options_with_figures(row["options"]),
+                        "figure_urls": _figure_urls(row.get("figures")),
                         "remedy": remedy,
                         "retake_helps": remedy == REMEDY_RETAKE,
                     })
@@ -838,6 +857,7 @@ def get_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     # The key never leaves the server; the client gets a short-lived signed URL.
     doubt["image_url"] = signed_url(doubt.pop("image_key", None))
     doubt["options"] = _options_with_figures(doubt.get("options"))
+    doubt["figure_urls"] = _figure_urls(doubt.pop("figures", None))
 
     report = (
         supabase.table("doubt_reports")
@@ -904,7 +924,7 @@ def delete_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     """DELETE /doubts/{id} — drops the row, and the photo when nothing else uses it."""
     existing = (
         supabase.table("doubts")
-        .select("id, image_key, submission_id, options")
+        .select("id, image_key, submission_id, options, figures")
         .eq("id", doubt_id)
         .eq("user_id", user_id)
         .execute()
@@ -931,4 +951,7 @@ def delete_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
         for option in row.get("options") or []:
             if isinstance(option, dict) and option.get("figure_key"):
                 delete_image(option["figure_key"])
+        for key in row.get("figures") or []:
+            if isinstance(key, str):
+                delete_image(key)
     return None

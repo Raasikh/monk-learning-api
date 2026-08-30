@@ -1606,6 +1606,44 @@ def crop_figure(image_bytes: bytes, span: Dict[str, Any]) -> Optional[bytes]:
         return None
 
 
+def keep_question_figures(spans: List[Dict[str, Any]],
+                          image_bytes: bytes,
+                          doubt_id: str,
+                          question_index: int) -> List[str]:
+    """Stores the figures a QUESTION was printed with, in reading order.
+
+    Not its options — those ride on the options themselves. This is the beaker
+    in "the apparent depth of the coin is", the two wires in "the field at a
+    point P midway between them". The solver works from a written description
+    of them; the student should see the thing itself.
+
+    Best effort, like the option figures: no bucket or a failed crop costs the
+    picture, not the answer.
+    """
+    usable = [s for s in spans
+              if s.get("left") is not None and s.get("right") is not None]
+    if not usable or not storage_r2.is_configured():
+        return []
+
+    keys: List[str] = []
+    for position, span in enumerate(_reading_order(usable)):
+        piece = crop_figure(image_bytes, span)
+        if not piece:
+            continue
+        key = f"doubts/{doubt_id}/q{question_index}/fig-{position}.jpg"
+        try:
+            storage_r2.upload_image(key, piece, "image/jpeg")
+        except Exception as err:
+            logger.warning("[SNAP FIGURES] doubt=%s upload failed for %s: %s",
+                           doubt_id[:8], key, err)
+            continue
+        keys.append(key)
+
+    logger.info("[SNAP FIGURES] doubt=%s q%d kept %d question figure(s)",
+                doubt_id[:8], question_index, len(keys))
+    return keys
+
+
 def keep_option_figures(options: List[Dict[str, str]],
                         spans: List[Dict[str, Any]],
                         image_bytes: bytes,
@@ -2752,6 +2790,21 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                 "live session, where the options can be drawn on the board."
             )
 
+    # And the figures the QUESTION itself was printed with — the beaker, the
+    # graph, the pair of wires. Skipped when this question's figures were
+    # already kept as its options, so a picture is stored once and belongs to
+    # one thing.
+    for question in questions:
+        if not question["legible"]:
+            continue
+        if any((o or {}).get("figure_key") for o in question.get("options") or []):
+            continue
+        spans = question.get("figure_spans") or []
+        if spans:
+            question["figure_keys"] = keep_question_figures(
+                spans, image_bytes, doubt_id, question["n"]
+            )
+
     inbox: "_queue.Queue" = _queue.Queue()
     outcomes: Dict[int, Dict[str, Any]] = {}
     usages: Dict[int, Dict[str, int]] = {}
@@ -3024,6 +3077,21 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                 "not tell them apart well enough to choose between them. "
                 "Retaking the photo will not change that \u2014 ask this one in a "
                 "live session, where the options can be drawn on the board."
+            )
+
+    # And the figures the QUESTION itself was printed with — the beaker, the
+    # graph, the pair of wires. Skipped when this question's figures were
+    # already kept as its options, so a picture is stored once and belongs to
+    # one thing.
+    for question in questions:
+        if not question["legible"]:
+            continue
+        if any((o or {}).get("figure_key") for o in question.get("options") or []):
+            continue
+        spans = question.get("figure_spans") or []
+        if spans:
+            question["figure_keys"] = keep_question_figures(
+                spans, image_bytes, doubt_id, question["n"]
             )
 
     to_solve: List[Dict[str, Any]] = []
