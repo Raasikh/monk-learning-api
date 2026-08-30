@@ -2510,3 +2510,38 @@ def test_options_with_no_text_at_all_are_pictures():
     """The circuits question, before the describing pass has run."""
     blank = [{"label": str(i), "text": ""} for i in (1, 2, 3, 4)]
     assert snap.options_are_pictures(blank) is True
+
+
+def test_one_question_owns_every_figure_on_the_page():
+    """A student photographing ONE question rarely frames its number.
+
+    Attribution slices the page by printed question numbers, and gave up
+    entirely when it could not find one for every question — so the commonest
+    snap of all, a single question held close, lost its figure every time while
+    a page of three kept theirs. With one question there is nothing to slice:
+    every figure on the page is that question's.
+    """
+    page = {
+        "text": "The elastic behaviour of material is shown in the figure.",
+        "confidence": 0.99, "diagram_regions": 1, "ocr_ms": 10,
+        "diagram_spans": [{"top": 200, "bottom": 460, "left": 30, "right": 380}],
+        # No line begins with a question number.
+        "text_lines": [{"top": 40, "bottom": 66,
+                        "text": "The elastic behaviour of material is shown in the figure."}],
+    }
+    counts = snap.figures_by_question(page, [1])
+    spans = snap.figure_spans_by_question(page, [1])
+    print(f"  counts={counts} spans={len(spans.get(1, []))}")
+    assert counts == {1: 1}
+    assert len(spans.get(1, [])) == 1, "the one question's figure was lost"
+
+
+def test_several_questions_without_numbers_still_decline():
+    """Three questions and no numbers is genuinely ambiguous, and stays so."""
+    page = {
+        "text": "a\nb\nc", "confidence": 0.99, "diagram_regions": 2, "ocr_ms": 10,
+        "diagram_spans": [{"top": 100, "bottom": 200, "left": 0, "right": 100},
+                          {"top": 300, "bottom": 400, "left": 0, "right": 100}],
+        "text_lines": [{"top": 10, "bottom": 30, "text": "some question text"}],
+    }
+    assert snap.figures_by_question(page, [1, 2, 3]) == {}

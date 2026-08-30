@@ -1055,7 +1055,17 @@ def figures_by_question(page: Dict[str, Any], wanted: List[int]) -> Dict[int, in
     """
     spans = page.get("diagram_spans") or []
     lines = page.get("text_lines") or []
-    if not spans or not lines or not wanted:
+    if not spans or not wanted:
+        return {}
+
+    # One question on the page owns every figure on it. No slicing is needed
+    # and none is possible: a student photographing a single question usually
+    # frames the question and not the "Q19." above it, so there is no number to
+    # slice by — and this was the common case, losing its figure every time
+    # while pages of three kept theirs.
+    if len(wanted) == 1:
+        return {wanted[0]: len(spans)}
+    if not lines:
         return {}
 
     # Where each wanted question starts, vertically: the topmost line whose
@@ -1097,6 +1107,8 @@ def figure_spans_by_question(page: Dict[str, Any],
     spans = page.get("diagram_spans") or []
     if not spans or not figures_by_question(page, wanted):
         return {}
+    if len(wanted) == 1:
+        return {wanted[0]: list(spans)}
     lines = page.get("text_lines") or []
     starts: Dict[int, float] = {}
     for line in lines:
