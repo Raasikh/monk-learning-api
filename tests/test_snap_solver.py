@@ -1614,6 +1614,57 @@ def test_option_naming_the_quantity_still_matches_a_bare_value(monkeypatch):
     assert matcher.calls == 0
 
 
+def test_a_selection_question_is_solved_with_its_options(monkeypatch):
+    """"Identify the quantity that CANNOT be measured" needs the four choices.
+
+    Real page, real failure: asked blind, v4 answered "Mass". True — a
+    spherometer cannot measure mass — and useless, because "Mass" is not one of
+    the four things printed on the paper, so it matched nothing and the answer
+    was withheld. The answer to a selection question is not a quantity, it is
+    one of the options.
+    """
+    options = [
+        {"label": "1", "text": "Radius of curvature of concave surface"},
+        {"label": "2", "text": "Specific rotation of liquids"},
+        {"label": "3", "text": "Thickness of thin plates"},
+        {"label": "4", "text": "Radius of curvature of convex surface"},
+    ]
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "Specific rotation of liquids",
+        "option_labels": ["2"],
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    # An option-shown solve cross-checks that its steps conclude the same
+    # option, which is a second model call. The cross-check itself is covered
+    # by its own tests; here it only has to agree.
+    monkeypatch.setattr(snap, "_steps_support_label", lambda *_a, **_kw: ["2"])
+    q = question(options=options)
+    q["stem"] = "Identify the physical quantity that cannot be measured using spherometer :"
+    q["question_type"] = "single_correct"
+    out = solve_question(q, "d1")
+    print(f"  labels={out['option_labels']} unmatched={out.get('unmatched')}")
+    assert out["option_labels"] == ["2"], "the option the paper prints, not a free-text quantity"
+    assert not out.get("unmatched")
+
+
+def test_a_computational_mcq_still_solves_blind(monkeypatch):
+    """Showing the options is for SELECTION questions only.
+
+    "The value of 15C13 is" has an answer of its own, and handing over the
+    choices only invites reasoning backwards from them. It derives, then
+    matches, as it always did.
+    """
+    options = [{"label": "1", "text": "105"}, {"label": "2", "text": "195"}]
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True, "answer": "105",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    stub_matcher(monkeypatch, ["1"], equivalent=True)
+    q = question(options=options)
+    q["stem"] = "The value of $^{15}C_{13}$ is"
+    out = solve_question(q, "d1")
+    print(f"  labels={out['option_labels']}")
+    assert out["option_labels"] == ["1"], "matched from a blind derivation"
+
+
 def test_a_genuinely_absent_answer_still_refuses(monkeypatch):
     """Stripping "<name> =" must not turn near-misses into matches.
 

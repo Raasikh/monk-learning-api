@@ -1419,6 +1419,34 @@ def describe_option_figures(image_bytes: bytes, mime_type: str,
     return options
 
 
+# A question that asks the student to PICK, rather than to compute. "Which of
+# the following", "identify the ... that cannot", "choose the correct".
+#
+# Solving blind is right for a question with an answer of its own: derive it,
+# then match, and nothing can talk itself into an option. It is wrong for a
+# question whose options ARE the question. Asked "identify the physical
+# quantity that cannot be measured using a spherometer" with the choices
+# withheld, v4 answered "Mass" — true, unmatchable, and no use to a student
+# picking between four printed options. The answer to a selection question is
+# not a quantity, it is one of the four things on the page.
+#
+# Deliberately narrow. A computational MCQ ("the value of 15C13 is") keeps its
+# blind solve, because there the derivation stands on its own and showing the
+# options only invites the model to reason backwards from them.
+_SELECTION_STEM = re.compile(
+    r"\bwhich (?:one )?of the (?:following|these)\b"
+    r"|\bidentify the\b"
+    r"|\bchoose the\b"
+    r"|\bselect the\b"
+    r"|\bwhich (?:graph|curve|circuit|figure|diagram|option|statement)\b",
+    re.I,
+)
+
+
+def _options_are_the_question(stem: Optional[str]) -> bool:
+    return bool(stem) and bool(_SELECTION_STEM.search(stem))
+
+
 # A completed step object inside a *partial* JSON buffer. Streaming shows the
 # student each step as the solver writes it; the answer is never streamed — it
 # waits for the validated final card.
@@ -1995,7 +2023,9 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     # Options reach the solver ONLY when they are the question itself. For
     # everything else it derives blind and a separate pass matches the result,
     # so there is nothing to talk itself into.
-    solve_blind = bool(options) and question.get("self_contained", True)
+    solve_blind = (bool(options) and question.get("self_contained", True)
+                   and not _options_are_the_question(question.get("stem")
+                                                     or question.get("text")))
 
     payload_obj = {
         "text": question.get("stem") if solve_blind else question.get("text"),
