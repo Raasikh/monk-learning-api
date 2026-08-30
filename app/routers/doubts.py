@@ -38,6 +38,37 @@ from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
 
 
+# `doubts.figures` arrives with migration 0030. Code and schema deploy
+# separately, so for the window between them — and for any environment where
+# the migration has not been run — an insert that mentions the column is
+# retried without it. A snap that loses its figures is a worse answer; a snap
+# that cannot write its row at all is no answer, and that is not a trade worth
+# making on deploy ordering.
+_HAS_FIGURES_COLUMN = True
+
+
+def _insert_doubt_rows(rows):
+    """Inserts doubt rows, surviving a `figures` column that is not there yet."""
+    global _HAS_FIGURES_COLUMN
+
+    def without_figures(items):
+        return [{k: v for k, v in item.items() if k != "figures"} for item in items]
+
+    if not _HAS_FIGURES_COLUMN:
+        return supabase.table("doubts").insert(without_figures(rows)).execute()
+    try:
+        return supabase.table("doubts").insert(rows).execute()
+    except Exception as err:
+        if "figures" not in str(err):
+            raise
+        _HAS_FIGURES_COLUMN = False
+        logger.error(
+            "doubts.figures is missing — migration 0030 has not been applied. "
+            "Writing without it; question figures are not kept until it is."
+        )
+        return supabase.table("doubts").insert(without_figures(rows)).execute()
+
+
 def _figure_urls(keys):
     """Signed URLs for a question's own figures, in the order they were kept.
 
@@ -315,7 +346,7 @@ async def snap_doubt(
             "failure_reason": str(err),
         }
         try:
-            supabase.table("doubts").insert([row]).execute()
+            _insert_doubt_rows([row])
         except Exception as db_err:
             logger.error("Failed to record failed doubt %s: %s", submission_id[:8], db_err)
         logger.warning(
@@ -427,7 +458,7 @@ async def snap_doubt(
         })
 
     try:
-        res = supabase.table("doubts").insert(rows).execute()
+        res = _insert_doubt_rows(rows)
     except Exception as err:
         # A missing column here means a migration has not been applied. Saying
         # so beats "Could not save that doubt", which sent me looking at the
@@ -661,7 +692,7 @@ async def snap_doubt_stream(
                     # Supabase would otherwise look like a slow solve.
                     insert_t0 = time.time()
                     try:
-                        supabase.table("doubts").insert([row]).execute()
+                        _insert_doubt_rows([row])
                         logger.info(
                             "[SNAP DB] doubt=%s q%s row=%s insert_ms=%d status=%s",
                             submission_id[:8], row["question_index"], row["id"][:8],
