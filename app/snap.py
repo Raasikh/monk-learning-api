@@ -21,6 +21,7 @@ a visible error — never a canned answer. An illegible question is reported to
 the student with what was unclear, and is never handed to the solver.
 """
 import base64
+import io
 import json
 import logging
 import os
@@ -31,7 +32,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from openai import OpenAI
 
-from app import mathpix
+from app import mathpix, storage_r2
 from app.image_prep import crop_to_content
 from app.exam_scope import canonical_subject
 from app.drona.prompt_loader import load_prompt
@@ -630,6 +631,9 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     parsed["_ocr_confidence"] = page["confidence"]
     parsed["_ocr_text"] = page["text"]
     parsed["_diagram_regions"] = page.get("diagram_regions", 0)
+    # Carried out of transcription so the pipeline can crop the figures it
+    # already located, without asking the OCR twice.
+    parsed["_diagram_spans"] = page.get("diagram_spans") or []
     parsed["_ocr_ms"] = ocr_ms
     parsed["_structure_ms"] = structure_ms
 
@@ -1000,6 +1004,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     _warn_if_not_page_order(questions, parsed.get("_ocr_text") or "", doubt_id)
     return {"questions": questions, "note": note,
             "ocr_confidence": parsed.get("_ocr_confidence"),
+            "diagram_spans": parsed.get("_diagram_spans") or [],
             "ocr_ms": parsed.get("_ocr_ms") or 0,
             "structure_ms": parsed.get("_structure_ms") or 0}
 
@@ -1470,6 +1475,134 @@ _SELECTION_STEM = re.compile(
 
 def _options_are_the_question(stem: Optional[str]) -> bool:
     return bool(stem) and bool(_SELECTION_STEM.search(stem))
+
+
+# ─── Keeping the figures a question was printed with ─────────────────────────
+#
+# The photo is discarded after OCR — the transcript is the record. That is
+# right for the page, and wrong for a question whose OPTIONS are pictures:
+# "which of these circuits is reverse-biased" reduced to four sentences of
+# description is a question the student can no longer read. Those figures are
+# the only part of the page worth keeping, so they are the part we keep.
+#
+# Cropped from the geometry the OCR already reported, one object per option,
+# and paired to a label only when the pairing is certain (see `pair_figures`).
+
+FIGURE_PAD_PX = 10
+FIGURE_MAX_EDGE = 1400
+FIGURE_JPEG_QUALITY = 82
+
+
+def _reading_order(spans: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Sorts figures the way a page is read: rows down, then across each row.
+
+    Two figures belong to the same ROW when their vertical spans overlap — a
+    2x2 option grid gives spans like 498-589 and 508-745, side by side, which
+    a plain sort by `top` would interleave with the row beneath.
+    """
+    rows: List[List[Dict[str, Any]]] = []
+    for span in sorted(spans, key=lambda s: (s.get("top") or 0)):
+        placed = False
+        for row in rows:
+            if any(span.get("top", 0) <= s.get("bottom", 0)
+                   and s.get("top", 0) <= span.get("bottom", 0) for s in row):
+                row.append(span)
+                placed = True
+                break
+        if not placed:
+            rows.append([span])
+    ordered: List[Dict[str, Any]] = []
+    for row in rows:
+        ordered.extend(sorted(row, key=lambda s: (s.get("left") if s.get("left") is not None else 0)))
+    return ordered
+
+
+def pair_figures(options: List[Dict[str, str]],
+                 spans: List[Dict[str, Any]],
+                 doubt_id: str = "-") -> Optional[List[Dict[str, Any]]]:
+    """One figure per option, in reading order — or None when that is a guess.
+
+    The pairing is positional, which is exactly as reliable as the page's own
+    layout when there is one figure per option, and not reliable at all when
+    the counts disagree. This module already refuses to guess a label-to-option
+    pairing for text, on the grounds that a mislabelled option silently renames
+    the answer; a mislabelled PICTURE does the same thing more convincingly.
+    So: pair when the counts match, and otherwise return nothing.
+    """
+    usable = [s for s in spans
+              if s.get("left") is not None and s.get("right") is not None]
+    if not options or len(usable) != len(options):
+        logger.info(
+            "[SNAP FIGURES] doubt=%s not pairing: %d option(s) against %d "
+            "usable figure(s) — a positional guess would rename an answer",
+            doubt_id[:8], len(options), len(usable),
+        )
+        return None
+    return _reading_order(usable)
+
+
+def crop_figure(image_bytes: bytes, span: Dict[str, Any]) -> Optional[bytes]:
+    """One figure, cut from the page with a little air around it."""
+    try:
+        from PIL import Image
+    except ImportError:  # pragma: no cover - Pillow ships with image_prep
+        return None
+    try:
+        with Image.open(io.BytesIO(image_bytes)) as img:
+            img = img.convert("RGB")
+            width, height = img.size
+            left = max(0, int(span["left"]) - FIGURE_PAD_PX)
+            top = max(0, int(span["top"]) - FIGURE_PAD_PX)
+            right = min(width, int(span["right"]) + FIGURE_PAD_PX)
+            bottom = min(height, int(span["bottom"]) + FIGURE_PAD_PX)
+            if right - left < 8 or bottom - top < 8:
+                return None
+            piece = img.crop((left, top, right, bottom))
+            piece.thumbnail((FIGURE_MAX_EDGE, FIGURE_MAX_EDGE), Image.LANCZOS)
+            out = io.BytesIO()
+            piece.save(out, format="JPEG", quality=FIGURE_JPEG_QUALITY)
+            return out.getvalue()
+    except Exception as err:
+        logger.warning("[SNAP FIGURES] crop failed: %s", err)
+        return None
+
+
+def keep_option_figures(options: List[Dict[str, str]],
+                        spans: List[Dict[str, Any]],
+                        image_bytes: bytes,
+                        doubt_id: str,
+                        question_index: int) -> List[Dict[str, str]]:
+    """Stores one figure per option and hands back the options carrying keys.
+
+    Best effort throughout: a question that cannot be cropped, or a bucket that
+    is not configured, still returns its options with the descriptions that
+    were already read. Losing the picture is a worse answer, not a broken one.
+    """
+    paired = pair_figures(options, spans, doubt_id)
+    if not paired or not storage_r2.is_configured():
+        return options
+
+    kept = 0
+    out: List[Dict[str, str]] = []
+    for option, span in zip(options, paired):
+        piece = crop_figure(image_bytes, span)
+        if not piece:
+            out.append(option)
+            continue
+        key = f"doubts/{doubt_id}/q{question_index}/opt-{option['label']}.jpg"
+        try:
+            storage_r2.upload_image(key, piece, "image/jpeg")
+        except Exception as err:
+            logger.warning("[SNAP FIGURES] doubt=%s upload failed for %s: %s",
+                           doubt_id[:8], key, err)
+            out.append(option)
+            continue
+        kept += 1
+        out.append({**option, "figure_key": key})
+
+    logger.info("[SNAP FIGURES] doubt=%s q%d kept %d of %d option figure(s)",
+                doubt_id[:8], question_index, kept, len(options))
+    return out
 
 
 # A completed step object inside a *partial* JSON buffer. Streaming shows the
@@ -2534,7 +2667,14 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         )
         options_ms += int((time.time() - opts_t0) * 1000)
         if drawn:
-            question["options"] = drawn
+            # Keep the pictures, not only the sentences describing them. A
+            # question whose options are circuits is unreadable as four
+            # descriptions; the figures are the only part of this page worth
+            # storing, so they are the part stored.
+            question["options"] = keep_option_figures(
+                drawn, read.get("diagram_spans") or [], image_bytes,
+                doubt_id, question["n"]
+            )
             # The options ARE the question here — the student is choosing
             # between curves — so the solver must see them rather than deriving
             # blind and matching afterwards.
@@ -2780,7 +2920,14 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
         )
         options_ms += int((time.time() - opts_t0) * 1000)
         if drawn:
-            question["options"] = drawn
+            # Keep the pictures, not only the sentences describing them. A
+            # question whose options are circuits is unreadable as four
+            # descriptions; the figures are the only part of this page worth
+            # storing, so they are the part stored.
+            question["options"] = keep_option_figures(
+                drawn, read.get("diagram_spans") or [], image_bytes,
+                doubt_id, question["n"]
+            )
             # The options ARE the question here — the student is choosing
             # between curves — so the solver must see them rather than deriving
             # blind and matching afterwards.

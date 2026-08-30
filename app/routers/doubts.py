@@ -37,6 +37,27 @@ from app import exam_scope
 from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
 
+
+def _options_with_figures(options):
+    """Swaps each stored figure key for a URL the app can actually load.
+
+    An option whose choice is a picture carries `figure_key`; the key itself is
+    private and useless to a client, so it never leaves the server. A key that
+    cannot be signed drops back to the description that was always there.
+    """
+    out = []
+    for option in options or []:
+        if not isinstance(option, dict):
+            continue
+        key = option.get("figure_key")
+        clean = {k: v for k, v in option.items() if k != "figure_key"}
+        if key:
+            url = signed_url(key)
+            if url:
+                clean["image_url"] = url
+        out.append(clean)
+    return out
+
 logger = logging.getLogger("doubts")
 
 router = APIRouter(prefix="/doubts", tags=["doubts"])
@@ -440,7 +461,7 @@ async def snap_doubt(
                 "question_index": row["question_index"],
                 "question_text": row["question_text"],
                 "stem": row["stem"],
-                "options": row["options"],
+                "options": _options_with_figures(row["options"]),
                 "subject": row["subject"],
                 "chapter": row["chapter"],
                 "concept": row["concept"],
@@ -641,10 +662,11 @@ async def snap_doubt_stream(
                     yield event("question", {
                         **{k: row[k] for k in (
                             "id", "question_index", "question_text", "stem",
-                            "options", "subject", "chapter", "concept",
+                            "subject", "chapter", "concept",
                             "question_type", "legible", "legibility_note",
                             "answer", "steps", "key_idea", "option_labels",
                             "status", "failure_reason")},
+                        "options": _options_with_figures(row["options"]),
                         "remedy": remedy,
                         "retake_helps": remedy == REMEDY_RETAKE,
                     })
@@ -815,6 +837,7 @@ def get_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     doubt = res.data[0]
     # The key never leaves the server; the client gets a short-lived signed URL.
     doubt["image_url"] = signed_url(doubt.pop("image_key", None))
+    doubt["options"] = _options_with_figures(doubt.get("options"))
 
     report = (
         supabase.table("doubt_reports")
@@ -881,7 +904,7 @@ def delete_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     """DELETE /doubts/{id} — drops the row, and the photo when nothing else uses it."""
     existing = (
         supabase.table("doubts")
-        .select("id, image_key, submission_id")
+        .select("id, image_key, submission_id, options")
         .eq("id", doubt_id)
         .eq("user_id", user_id)
         .execute()
@@ -903,4 +926,9 @@ def delete_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     )
     if not siblings.data:
         delete_image(row.get("image_key"))
+        # The option figures belong to this question and nothing else refers
+        # to them, so they go when it does.
+        for option in row.get("options") or []:
+            if isinstance(option, dict) and option.get("figure_key"):
+                delete_image(option["figure_key"])
     return None

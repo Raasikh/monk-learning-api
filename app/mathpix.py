@@ -172,6 +172,11 @@ def read_page(image_bytes: bytes, mime_type: str,
         ys = [p[1] for p in cnt if isinstance(p, (list, tuple)) and len(p) >= 2]
         return (min(ys), max(ys)) if ys else None
 
+    def _xspan(entry):
+        cnt = entry.get("cnt") or []
+        xs = [p[0] for p in cnt if isinstance(p, (list, tuple)) and len(p) >= 2]
+        return (min(xs), max(xs)) if xs else None
+
     diagram_spans = []
     text_lines = []
     for entry in line_data:
@@ -179,7 +184,16 @@ def read_page(image_bytes: bytes, mime_type: str,
         if span is None:
             continue
         if entry.get("type") in ("diagram", "chart"):
-            diagram_spans.append({"top": span[0], "bottom": span[1]})
+            # Horizontal extent too. Four options printed as a 2x2 grid overlap
+            # in y — spans 498-589 and 508-745 on a real page were the top-left
+            # and top-right circuits — so a y-only box cannot separate them,
+            # and cropping one figure per option needs both axes.
+            across = _xspan(entry)
+            diagram_spans.append({
+                "top": span[0], "bottom": span[1],
+                "left": across[0] if across else None,
+                "right": across[1] if across else None,
+            })
         else:
             text_lines.append({"top": span[0], "bottom": span[1],
                                "text": (entry.get("text") or "").strip()})

@@ -2403,3 +2403,49 @@ def test_shape_a_page_header_is_not_carried_as_context():
     carried = [n for n, s in slices.items() if "SHARED CONTEXT" in s]
     print(f"  slices carrying the header: {carried}")
     assert not carried, "a short page header should not be treated as a passage"
+
+
+def test_option_figures_pair_in_reading_order():
+    """A 2x2 grid of options pairs down the rows, then across each row.
+
+    Real geometry from a page of four circuits: the y spans OVERLAP in pairs
+    (498-589 beside 508-745, 769-982 beside 773-857), so sorting by `top`
+    alone interleaves the two rows and hands option 2 the picture of option 3.
+    """
+    options = [{"label": str(i), "text": f"circuit {i}"} for i in (1, 2, 3, 4)]
+    spans = [
+        {"top": 769, "bottom": 982, "left": 40, "right": 300},    # bottom-left
+        {"top": 498, "bottom": 589, "left": 380, "right": 640},   # top-right
+        {"top": 508, "bottom": 745, "left": 40, "right": 300},    # top-left
+        {"top": 773, "bottom": 857, "left": 380, "right": 640},   # bottom-right
+    ]
+    paired = snap.pair_figures(options, spans, "d1")
+    order = [(s["top"], s["left"]) for s in paired]
+    print(f"  reading order: {order}")
+    assert order == [(498, 380), (508, 40), (769, 40), (773, 380)] or \
+           order == [(508, 40), (498, 380), (769, 40), (773, 380)], order
+    # Whatever the row grouping, the top row must come before the bottom one
+    # and each row must run left to right.
+    assert order[0][0] < order[2][0] and order[0][1] < order[1][1]
+    assert order[2][1] < order[3][1]
+
+
+def test_a_mismatched_count_is_not_paired():
+    """Three figures against four options is a guess, and a guess renames an answer.
+
+    This module already refuses to guess a label-to-option pairing for TEXT,
+    because a mislabelled option silently renames the answer. A mislabelled
+    picture does the same thing more convincingly.
+    """
+    options = [{"label": str(i), "text": f"c{i}"} for i in (1, 2, 3, 4)]
+    spans = [{"top": 10 * i, "bottom": 10 * i + 5, "left": 0, "right": 50}
+             for i in range(3)]
+    print(f"  paired: {snap.pair_figures(options, spans, 'd1')}")
+    assert snap.pair_figures(options, spans, "d1") is None
+
+
+def test_figures_without_horizontal_extent_are_not_paired():
+    """Older geometry carried only y, and a y-only box cannot separate a row."""
+    options = [{"label": "1", "text": "a"}, {"label": "2", "text": "b"}]
+    spans = [{"top": 10, "bottom": 40}, {"top": 12, "bottom": 44}]
+    assert snap.pair_figures(options, spans, "d1") is None
