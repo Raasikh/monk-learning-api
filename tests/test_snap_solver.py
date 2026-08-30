@@ -2449,3 +2449,36 @@ def test_figures_without_horizontal_extent_are_not_paired():
     options = [{"label": "1", "text": "a"}, {"label": "2", "text": "b"}]
     spans = [{"top": 10, "bottom": 40}, {"top": 12, "bottom": 44}]
     assert snap.pair_figures(options, spans, "d1") is None
+
+
+def test_structures_read_as_smiles_still_keep_their_pictures():
+    """Mathpix turns a drawn molecule into a SMILES string, which IS text.
+
+    "Which of the following is the strongest Bronsted base?" printed four
+    rings; the OCR returned four real text options — `<smiles>C1CCNC1</smiles>`
+    and friends — so the drawn-options gate never fired, and the student was
+    shown "structure: C1CCNC1" where the paper showed a ring.
+
+    The figures were attributed to the question and the counts matched all
+    along. This checks the geometry survives attribution so the pipeline can
+    reach them.
+    """
+    page = _page_with_geometry(
+        text="Q34. Which of the following is strongest Bronsted base?",
+        diagram_spans=[{"top": 364, "bottom": 493, "left": 60, "right": 320},
+                       {"top": 366, "bottom": 555, "left": 700, "right": 980},
+                       {"top": 575, "bottom": 779, "left": 60, "right": 320},
+                       {"top": 581, "bottom": 816, "left": 700, "right": 980}],
+        text_lines=[{"top": 330, "bottom": 356,
+                     "text": "Q34. Which of the following is strongest Bronsted base?"}],
+    )
+    owned = snap.figure_spans_by_question(page, [34])
+    print(f"  q34 owns {len(owned.get(34, []))} figure(s)")
+    assert len(owned.get(34, [])) == 4, "the figures a question owns are its own"
+
+    options = [{"label": str(i), "text": f"<smiles>C{i}</smiles>"} for i in (1, 2, 3, 4)]
+    paired = snap.pair_figures(options, owned[34], "d1")
+    assert paired is not None, "four figures against four options is not a guess"
+    # Top row before bottom row, left before right within each.
+    tops = [s["top"] for s in paired]
+    assert tops[0] < tops[2] and tops[1] < tops[3], tops

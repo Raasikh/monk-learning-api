@@ -668,6 +668,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     # Empty means the page gave no usable coordinates, and the text model's
     # `requires_diagram` stays in charge.
     figure_counts = figures_by_question(page, _returned_numbers(raw_questions))
+    figure_spans = figure_spans_by_question(page, _returned_numbers(raw_questions))
     # The page's own figure count, as a floor for the drawn-options gate when
     # per-question attribution comes up empty. Counted from the SPANS when
     # there are any: those are the same geometry attribution reads, so if the
@@ -964,6 +965,10 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             # The options are printed as figures, so they still have to be read
             # off the image — see describe_option_figures in the pipeline.
             "options_are_drawn": options_are_drawn,
+            # The figures this question owns, so the pipeline can keep them
+            # without re-deriving the geometry.
+            "figure_spans": (figure_spans.get(printed_number[0]) or []
+                             if (figure_spans and printed_number) else []),
             "requires_diagram": needs_diagram,
             # Held back from the solver on purpose; used to check it afterwards.
             # `stripped_key` is what the code removed from the text, which is
@@ -1080,6 +1085,40 @@ def figures_by_question(page: Dict[str, Any], wanted: List[int]) -> Dict[int, in
         if owner is not None:
             counts[owner] += 1
     return counts
+
+
+def figure_spans_by_question(page: Dict[str, Any],
+                             wanted: List[int]) -> Dict[int, List[Dict[str, Any]]]:
+    """The same attribution, keeping the figures themselves rather than a count.
+
+    Counting was enough while the only question was "are the options drawn?".
+    Keeping the picture needs the box it sits in.
+    """
+    spans = page.get("diagram_spans") or []
+    if not spans or not figures_by_question(page, wanted):
+        return {}
+    lines = page.get("text_lines") or []
+    starts: Dict[int, float] = {}
+    for line in lines:
+        match = _QUESTION_NUMBER_RE.match((line.get("text") or "").lstrip())
+        if not match:
+            continue
+        num = int(match.group(1))
+        if num in wanted and num not in starts:
+            starts[num] = line["top"]
+    ordered = sorted(starts.items(), key=lambda kv: kv[1])
+    owned: Dict[int, List[Dict[str, Any]]] = {num: [] for num in wanted}
+    for span in spans:
+        centre = (span["top"] + span["bottom"]) / 2.0
+        owner = None
+        for num, top in ordered:
+            if top <= centre:
+                owner = num
+            else:
+                break
+        if owner is not None:
+            owned[owner].append(span)
+    return owned
 
 
 # A shared passage above a set of questions. Long enough to be prose rather
@@ -2658,6 +2697,27 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # question's own figure is. Without this the question was refused with
     # "retake the photo with all the choices in frame", which cannot work: no
     # photograph of a graph turns it into text.
+    # A choice question whose options were READ as text can still have been
+    # printed as pictures. Mathpix transcribes a chemical structure into a
+    # SMILES string, so "which is the strongest Bronsted base?" came back with
+    # four perfectly real text options — `<smiles>C1CCNC1</smiles>` and
+    # friends — which never reach the drawn-options gate below, and a student
+    # was shown "structure: C1CCNC1" where the paper showed a ring.
+    #
+    # The figures are already attributed to the question and the counts match,
+    # so the same keeping applies. `keep_option_figures` declines whenever they
+    # do not, which is what makes this safe to try on every choice question
+    # rather than only the ones we guessed were drawn.
+    for question in questions:
+        if not question["legible"] or question.get("options_are_drawn"):
+            continue
+        options = question.get("options") or []
+        spans = question.get("figure_spans") or []
+        if len(options) >= 2 and len(spans) == len(options):
+            question["options"] = keep_option_figures(
+                options, spans, image_bytes, doubt_id, question["n"]
+            )
+
     for question in questions:
         if not question.get("options_are_drawn") or not question["legible"]:
             continue
@@ -2672,8 +2732,8 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
             # descriptions; the figures are the only part of this page worth
             # storing, so they are the part stored.
             question["options"] = keep_option_figures(
-                drawn, read.get("diagram_spans") or [], image_bytes,
-                doubt_id, question["n"]
+                drawn, question.get("figure_spans") or read.get("diagram_spans") or [],
+                image_bytes, doubt_id, question["n"]
             )
             # The options ARE the question here — the student is choosing
             # between curves — so the solver must see them rather than deriving
@@ -2911,6 +2971,27 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     # question's own figure is. Without this the question was refused with
     # "retake the photo with all the choices in frame", which cannot work: no
     # photograph of a graph turns it into text.
+    # A choice question whose options were READ as text can still have been
+    # printed as pictures. Mathpix transcribes a chemical structure into a
+    # SMILES string, so "which is the strongest Bronsted base?" came back with
+    # four perfectly real text options — `<smiles>C1CCNC1</smiles>` and
+    # friends — which never reach the drawn-options gate below, and a student
+    # was shown "structure: C1CCNC1" where the paper showed a ring.
+    #
+    # The figures are already attributed to the question and the counts match,
+    # so the same keeping applies. `keep_option_figures` declines whenever they
+    # do not, which is what makes this safe to try on every choice question
+    # rather than only the ones we guessed were drawn.
+    for question in questions:
+        if not question["legible"] or question.get("options_are_drawn"):
+            continue
+        options = question.get("options") or []
+        spans = question.get("figure_spans") or []
+        if len(options) >= 2 and len(spans) == len(options):
+            question["options"] = keep_option_figures(
+                options, spans, image_bytes, doubt_id, question["n"]
+            )
+
     for question in questions:
         if not question.get("options_are_drawn") or not question["legible"]:
             continue
@@ -2925,8 +3006,8 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             # descriptions; the figures are the only part of this page worth
             # storing, so they are the part stored.
             question["options"] = keep_option_figures(
-                drawn, read.get("diagram_spans") or [], image_bytes,
-                doubt_id, question["n"]
+                drawn, question.get("figure_spans") or read.get("diagram_spans") or [],
+                image_bytes, doubt_id, question["n"]
             )
             # The options ARE the question here — the student is choosing
             # between curves — so the solver must see them rather than deriving
