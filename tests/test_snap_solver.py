@@ -571,6 +571,65 @@ def test_options_that_are_figures_are_read_not_refused(monkeypatch):
     assert q["options_are_drawn"] is True
 
 
+def test_drawn_options_survive_a_page_with_no_usable_numbering(monkeypatch):
+    """The same page, refused once and read once, because of attribution.
+
+    Real pair of runs on one photo of four circuits. The first attributed four
+    figures to the question's span and read them. The second produced no
+    per-question attribution at all — so every question reported zero figures,
+    the gate saw none, and a circuit question was refused for "unreadable
+    options" with the four circuits sitting in the frame unlooked-at.
+
+    Attribution is a preference, not a precondition. A choice question with no
+    readable options, on a page that HAS figures, is exactly the shape the
+    reading pass exists for; whether they can be told apart is that pass's
+    judgement to make, not this gate's.
+    """
+    page = _page_with_geometry(
+        text="Which of the following circuits is reverse - biased ?",
+        diagram_spans=[{"top": 498, "bottom": 589}, {"top": 508, "bottom": 745},
+                       {"top": 769, "bottom": 982}, {"top": 773, "bottom": 857}],
+        # No line carries a question number, so nothing can be sliced per
+        # question — which is precisely the run that failed.
+        text_lines=[{"top": 460, "bottom": 486,
+                     "text": "Which of the following circuits is reverse - biased ?"}],
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: page)
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 19, "question_type": "single_correct", "options": [],
+        "options_complete": False, "legible": True, "requires_diagram": True,
+        "stem": "Which of the following circuits is reverse - biased ?",
+    }]}))
+    q = transcribe_questions(b"img", "image/png", "d1", None, 3)["questions"][0]
+    print(f"  legible={q['legible']} options_are_drawn={q['options_are_drawn']} "
+          f"reason={q.get('reason')}")
+    assert q["options_are_drawn"] is True, "four figures on the page, none looked at"
+    assert q["legible"] is True, "refused for unreadable options with the options in frame"
+
+
+def test_a_page_with_no_figures_at_all_still_refuses(monkeypatch):
+    """The fallback is to the page's figures, not to trusting every question.
+
+    A choice question with no options on a page carrying no figures has
+    genuinely lost its options, and a retake is the right advice.
+    """
+    page = _page_with_geometry(
+        text="Q7. The value of the integral is",
+        diagram_spans=[],
+        text_lines=[{"top": 28, "bottom": 52, "text": "Q7. The value of the integral is"}],
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: page)
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        "number": 7, "question_type": "single_correct", "options": [],
+        "legible": True, "requires_diagram": False,
+        "stem": "The value of the integral is",
+    }]}))
+    q = transcribe_questions(b"img", "image/png", "d1", None, 3)["questions"][0]
+    print(f"  legible={q['legible']} reason={q.get('reason')}")
+    assert q["legible"] is False
+    assert q["options_are_drawn"] is False
+
+
 def test_one_figure_does_not_make_the_options_drawn(monkeypatch):
     """A question WITH a figure but genuinely missing options is still refused.
 

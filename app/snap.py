@@ -664,6 +664,12 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     # Empty means the page gave no usable coordinates, and the text model's
     # `requires_diagram` stays in charge.
     figure_counts = figures_by_question(page, _returned_numbers(raw_questions))
+    # The page's own figure count, as a floor for the drawn-options gate when
+    # per-question attribution comes up empty. Counted from the SPANS when
+    # there are any: those are the same geometry attribution reads, so if the
+    # two ever disagree the spans are the ones that matter here.
+    page_diagram_regions = (len(page.get("diagram_spans") or [])
+                            or (page.get("diagram_regions") or 0))
     if figure_counts:
         logger.info("[SNAP TRANSCRIBE] doubt=%s figures located by question: %s",
                     doubt_id[:8], figure_counts)
@@ -768,14 +774,29 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # than refusing, and let THAT decide whether they can be told apart.
         options_are_drawn = False
         if is_choice and len(options) < 2:
-            drawn_here = located if located is not None else 0
+            # Prefer the per-question attribution, but do not REQUIRE it.
+            #
+            # Attribution needs the OCR's question numbers to slice the page,
+            # and when that slicing comes up empty every question reports zero
+            # figures — so a page with four circuits on it refused a circuit
+            # question for having "unreadable options", with the four figures
+            # sitting right there unlooked-at. Measured on the same photo
+            # twice: once attributed (4 in span, read fine), once not (refused).
+            #
+            # A choice question with no readable options, on a page that has
+            # figures at all, is the shape this pass exists for. Send it. The
+            # pass itself refuses honestly when the figures cannot be told
+            # apart, which is the right place for that judgement — here we only
+            # decide whether it is worth looking.
+            drawn_here = located if located else page_diagram_regions
             if drawn_here >= 2:
                 options_are_drawn = True
                 logger.info(
                     "[SNAP TRANSCRIBE] doubt=%s q%d %s with no readable options "
-                    "but %d figures inside its span — the options are drawn, "
-                    "not written. Will read them from the image.",
+                    "but %d figures %s — the options are drawn, not written. "
+                    "Will read them from the image.",
                     doubt_id[:8], idx, q_type, drawn_here,
+                    "inside its span" if located else "on the page",
                 )
             else:
                 legible = False
@@ -839,7 +860,11 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
         # A truncated option list is the same defect one step later: the solver
         # picks from a list that is missing the right answer. Measured on a real
         # page whose fourth option was out of frame and got invented.
-        if is_choice and item.get("options_complete") is False:
+        # `not options_are_drawn` for the same reason the gate above carries
+        # it: a question whose options are FIGURES has no text option list to
+        # be complete, so "incomplete" is the expected reading and refusing on
+        # it sends the student to retake a photo that was never the problem.
+        if is_choice and not options_are_drawn and item.get("options_complete") is False:
             legible = False
             q_note = q_note or (
                 "Some of the answer choices are cut off. Retake the photo with "
