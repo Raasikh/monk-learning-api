@@ -690,34 +690,84 @@ def test_every_question_is_delivered_exactly_once(monkeypatch):
     assert len(delivered) == len(set(delivered)), "a question was delivered twice"
 
 
-def test_a_wedged_solve_is_not_retried(monkeypatch):
-    """An attempt that burned its budget wedged; repeating it wedges again.
+def test_a_wedged_solve_retries_without_thinking(monkeypatch):
+    """An attempt that answered nothing is retried — but not identically.
 
-    Measured: a diagram question spent 2m13s returning an empty response, which
-    reads as a parse failure and so earned a second full attempt. The student
-    waits on the SLOWEST question, so one wedge cost roughly four minutes. A
-    retry is for a solve that came back wrong, not one that never came back.
+    Measured: a diagram question spent 2m13s returning an empty response
+    because reasoning spends the SAME token allowance as the answer, so the
+    model thought until the allowance was gone and had none left to write with.
+    Repeating that call verbatim wedges verbatim, and the student waits on the
+    slowest question of the page.
+
+    So the retry changes the one variable that causes it. Thinking off cannot
+    fail the same way and returns fast, which is what makes a second attempt
+    affordable at all.
     """
-    attempts = {"n": 0}
+    attempts = []
 
     def make_kwargs():
         class _Slow:
             class chat:
                 class completions:
                     @staticmethod
-                    def create(**_kw):
-                        attempts["n"] += 1
+                    def create(**kw):
+                        attempts.append(kw)
                         # Burn most of the budget, then return nothing at all.
                         time.sleep(snap.SOLVE_TIMEOUT_S * 0.7)
                         return iter(())
         return dict(model=MODEL_SOLVE, messages=[{"role": "user", "content": "x"}],
-                    timeout=snap.SOLVE_TIMEOUT_S, _client=_Slow())
+                    timeout=snap.SOLVE_TIMEOUT_S, _client=_Slow(),
+                    extra_body={"thinking": {"type": "enabled"}}, max_tokens=16000)
 
     monkeypatch.setattr(snap, "SOLVE_TIMEOUT_S", 1.0)
     with pytest.raises(SnapError):
         snap._streamed_solve(make_kwargs, lambda *_a: None, "d1", None)
-    print(f"  attempts made: {attempts['n']}")
-    assert attempts["n"] == 1, "a wedged attempt must not be retried"
+    print(f"  attempts made: {len(attempts)}")
+    assert len(attempts) == 2, "a wedge is worth exactly one different retry"
+    assert attempts[0]["extra_body"]["thinking"]["type"] == "enabled"
+    assert attempts[1]["extra_body"]["thinking"]["type"] == "disabled", (
+        "the retry must change the thing that wedged, not repeat it"
+    )
+    assert attempts[1]["max_tokens"] < attempts[0]["max_tokens"], (
+        "without thinking the big allowance is not needed"
+    )
+
+
+def test_a_slow_attempt_that_said_something_is_not_retried(monkeypatch):
+    """Partial content is a slow success, not a wedge.
+
+    The difference matters: an attempt that produced working but unparseable
+    JSON has already spent the student's time on something real, and a second
+    full attempt would spend it again. Only an attempt that answered NOTHING
+    earns the thinking-off retry.
+    """
+    attempts = []
+
+    def make_kwargs():
+        class _Chunk:
+            def __init__(self, text):
+                self.usage = None
+                self.choices = [type("C", (), {"delta": type("D", (), {
+                    "content": text, "reasoning_content": None})()})()]
+
+        class _Slow:
+            class chat:
+                class completions:
+                    @staticmethod
+                    def create(**kw):
+                        attempts.append(kw)
+                        time.sleep(snap.SOLVE_TIMEOUT_S * 0.7)
+                        # Says something, but never valid JSON.
+                        return iter([_Chunk("{not json")])
+        return dict(model=MODEL_SOLVE, messages=[{"role": "user", "content": "x"}],
+                    timeout=snap.SOLVE_TIMEOUT_S, _client=_Slow(),
+                    extra_body={"thinking": {"type": "enabled"}}, max_tokens=16000)
+
+    monkeypatch.setattr(snap, "SOLVE_TIMEOUT_S", 1.0)
+    with pytest.raises(SnapError):
+        snap._streamed_solve(make_kwargs, lambda *_a: None, "d2", None)
+    print(f"  attempts made: {len(attempts)}")
+    assert len(attempts) == 1, "a slow attempt that produced content is not retried"
 
 
 def test_a_fast_failure_is_still_retried(monkeypatch):

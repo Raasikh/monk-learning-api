@@ -79,6 +79,20 @@ SOLVE_TIMEOUT_S = 75.0
 # and repeating it with identical inputs wedges again for the same duration.
 # Past this share of the timeout, stop and report honestly instead.
 RETRY_IF_UNDER_FRACTION = 0.6
+# Reasoning tokens are spent from the SAME allowance as the answer, so this
+# ceiling is not "how long may the answer be" — it is "how long may the
+# thinking plus the answer be". Measured on a figure question that returned
+# nothing: 8000 in, 8000 spent, zero of it content. The model reasoned until
+# the allowance was gone and had none left to write the JSON with, which
+# surfaces as an empty response rather than as an error.
+#
+# A figure question is the expensive case — it reasons about a described
+# diagram on top of the physics — and it is the one that has actually wedged,
+# twice. So the allowance is generous, and generous again when a diagram is in
+# play. It costs nothing when unused: only tokens actually generated are
+# billed.
+THINKING_MAX_TOKENS = 16000
+THINKING_MAX_TOKENS_DIAGRAM = 24000
 
 # Per-submission cap: how many questions are read from ONE photo.
 #
@@ -1443,10 +1457,30 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
 
     last_err = None
     budget_s = client_kwargs.get("timeout") or SOLVE_TIMEOUT_S
+    # True when attempt 1 produced no content at all — it thought until the
+    # allowance ran out rather than answering. Repeating that verbatim wedges
+    # verbatim, so attempt 2 changes the one variable that causes it.
+    wedged = False
     for attempt in (1, 2):
         if attempt == 2:
             client_kwargs["messages"] = client_kwargs["messages"] + [
                 {"role": "user", "content": _PARSE_CORRECTIVE}]
+            if wedged:
+                # Thinking is what spends the allowance, so the second attempt
+                # goes without it. That is a genuinely different call — it
+                # cannot fail the same way — and it is fast, which is what
+                # makes a retry affordable at all when the student is already
+                # waiting on the slowest question of the page.
+                extra = dict(client_kwargs.get("extra_body") or {})
+                extra["thinking"] = {"type": "disabled"}
+                client_kwargs["extra_body"] = extra
+                client_kwargs["max_tokens"] = 2200
+                logger.warning(
+                    "[SNAP SOLVE] doubt=%s attempt 1 answered nothing; "
+                    "retrying once with thinking OFF rather than repeating a "
+                    "call that spends its whole allowance reasoning.",
+                    doubt_id[:8],
+                )
             on_event("steps_reset", {})
         buffer, emitted = "", set()
         attempt_started = time.time()
@@ -1461,6 +1495,19 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
         saw_usage = False
         try:
             for chunk in solve_client.chat.completions.create(**client_kwargs):
+                # The SDK's `timeout` bounds the GAP between chunks, not the
+                # length of the stream, so a model that keeps emitting
+                # reasoning runs past the budget unchallenged: the wedge that
+                # prompted all this ran 111s against a 75s ceiling. This is the
+                # wall clock the ceiling was always supposed to mean.
+                if time.time() - attempt_started > budget_s:
+                    logger.warning(
+                        "[SNAP SOLVE] doubt=%s attempt %d hit the %.0fs budget "
+                        "with %d chars of thinking and %d of answer — stopping "
+                        "the stream rather than letting it run on.",
+                        doubt_id[:8], attempt, budget_s, thinking_chars, len(buffer),
+                    )
+                    break
                 usage = getattr(chunk, "usage", None)
                 if usage:
                     saw_usage = True
@@ -1522,11 +1569,24 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
             # roughly four minutes.
             spent = time.time() - attempt_started
             if attempt == 1 and spent > budget_s * RETRY_IF_UNDER_FRACTION:
+                # It wedged rather than failed. Retrying the SAME call would
+                # cost the student the same wait for the same nothing — but a
+                # call with thinking off is a different call, and a fast one,
+                # so it is worth the one attempt. Only a wedge that produced
+                # some content is treated as a slow success and left alone.
+                if not buffer.strip():
+                    wedged = True
+                    logger.error(
+                        "[SNAP SOLVE] doubt=%s attempt 1 used %.0fs of a %.0fs "
+                        "budget and produced nothing — it spent the allowance "
+                        "thinking. Retrying without thinking.",
+                        doubt_id[:8], spent, budget_s,
+                    )
+                    continue
                 logger.error(
                     "[SNAP SOLVE] doubt=%s attempt 1 used %.0fs of a %.0fs "
-                    "budget and produced nothing — it wedged rather than "
-                    "failed. Not retrying; a second attempt would cost the "
-                    "student the same wait again.",
+                    "budget and came back unparseable. Not retrying; a second "
+                    "attempt would cost the student the same wait again.",
                     doubt_id[:8], spent, budget_s,
                 )
                 break
@@ -1982,7 +2042,11 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 # answer still fits after the reasoning.
                 kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
                 if SOLVE_THINKING != "disabled":
-                    kwargs["max_tokens"] = 8000
+                    kwargs["max_tokens"] = (
+                        THINKING_MAX_TOKENS_DIAGRAM
+                        if question.get("diagram_description")
+                        else THINKING_MAX_TOKENS
+                    )
             return solve_client.chat.completions.create(**kwargs)
         return call
 
