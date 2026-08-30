@@ -2482,3 +2482,31 @@ def test_structures_read_as_smiles_still_keep_their_pictures():
     # Top row before bottom row, left before right within each.
     tops = [s["top"] for s in paired]
     assert tops[0] < tops[2] and tops[1] < tops[3], tops
+
+
+def test_stem_figures_are_not_hung_on_text_options():
+    """Four structures in the STEM and four text options is a coincidence.
+
+    "The ascending order of acidity of -OH in the following compounds is:
+    (A) Bu-OH, (B)…(E)" prints four drawn compounds above four text options
+    that RANK them — `(A) < (D) < (C) < (B) < (E)`. The counts match, so
+    positional pairing hung a molecule on each ranking: a picture that means
+    nothing where it sits, next to an answer it does not illustrate.
+
+    A figure belongs to an option only when the option has nothing else to say.
+    """
+    ranking = [{"label": str(i), "text": f"$(A)<(D)<(C)<(B)<(E)$ {i}"} for i in (1, 2, 3, 4)]
+    print(f"  ranking options are pictures? {snap.options_are_pictures(ranking)}")
+    assert snap.options_are_pictures(ranking) is False
+
+
+def test_smiles_options_are_recognised_as_pictures():
+    """The Bronsted-base question: every option IS a drawn ring."""
+    rings = [{"label": str(i), "text": f"<smiles>C{i}CCNC1</smiles>"} for i in (1, 2, 3, 4)]
+    assert snap.options_are_pictures(rings) is True
+
+
+def test_options_with_no_text_at_all_are_pictures():
+    """The circuits question, before the describing pass has run."""
+    blank = [{"label": str(i), "text": ""} for i in (1, 2, 3, 4)]
+    assert snap.options_are_pictures(blank) is True

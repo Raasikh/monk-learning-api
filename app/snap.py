@@ -1606,6 +1606,31 @@ def crop_figure(image_bytes: bytes, span: Dict[str, Any]) -> Optional[bytes]:
         return None
 
 
+# An option whose text is a transcribed structure, or nothing at all. Mathpix
+# spells a drawn molecule as SMILES, so this is what "the option IS a picture"
+# looks like once the OCR has been through it.
+_SMILES_ONLY = re.compile(r"^\s*(<smiles>[^<]*</smiles>\s*)+$", re.I)
+
+
+def options_are_pictures(options: List[Dict[str, str]]) -> bool:
+    """True when every option's words are a picture rather than a statement.
+
+    The counts matching is not enough on its own. "The ascending order of
+    acidity is: (1) (A) < (D) < (C) < (B) < (E)" prints four structures in its
+    STEM — the compounds A to E — and four text options ranking them. Four
+    figures, four options, and pairing them positionally hung a molecule on
+    each ranking, which is a picture that means nothing where it sits.
+
+    A figure belongs to an option when the option has nothing else to say.
+    """
+    if not options:
+        return False
+    return all(
+        not (o.get("text") or "").strip() or _SMILES_ONLY.match(o.get("text") or "")
+        for o in options
+    )
+
+
 def keep_question_figures(spans: List[Dict[str, Any]],
                           image_bytes: bytes,
                           doubt_id: str,
@@ -2751,7 +2776,8 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
             continue
         options = question.get("options") or []
         spans = question.get("figure_spans") or []
-        if len(options) >= 2 and len(spans) == len(options):
+        if (len(options) >= 2 and len(spans) == len(options)
+                and options_are_pictures(options)):
             question["options"] = keep_option_figures(
                 options, spans, image_bytes, doubt_id, question["n"]
             )
@@ -3040,7 +3066,8 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             continue
         options = question.get("options") or []
         spans = question.get("figure_spans") or []
-        if len(options) >= 2 and len(spans) == len(options):
+        if (len(options) >= 2 and len(spans) == len(options)
+                and options_are_pictures(options)):
             question["options"] = keep_option_figures(
                 options, spans, image_bytes, doubt_id, question["n"]
             )
