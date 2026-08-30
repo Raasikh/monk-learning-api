@@ -675,6 +675,14 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     # two ever disagree the spans are the ones that matter here.
     page_diagram_regions = (len(page.get("diagram_spans") or [])
                             or (page.get("diagram_regions") or 0))
+    page_spans = page.get("diagram_spans") or []
+    # ONE question on the page owns every figure on it, and this is the check
+    # that has to be about the QUESTION rather than its printed number.
+    # `figures_by_question` keys everything on numbers, so it already gave up
+    # when a crop excluded the "Q29." above the question — which is exactly the
+    # crop a student makes. Measured: a single beaker question, figure found by
+    # the OCR, attributed to nothing, stored nowhere.
+    only_question = len(raw_questions) == 1
     if figure_counts:
         logger.info("[SNAP TRANSCRIBE] doubt=%s figures located by question: %s",
                     doubt_id[:8], figure_counts)
@@ -967,8 +975,11 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             "options_are_drawn": options_are_drawn,
             # The figures this question owns, so the pipeline can keep them
             # without re-deriving the geometry.
-            "figure_spans": (figure_spans.get(printed_number[0]) or []
-                             if (figure_spans and printed_number) else []),
+            "figure_spans": (
+                list(page_spans) if only_question
+                else (figure_spans.get(printed_number[0]) or []
+                      if (figure_spans and printed_number) else [])
+            ),
             "requires_diagram": needs_diagram,
             # Held back from the solver on purpose; used to check it afterwards.
             # `stripped_key` is what the code removed from the text, which is

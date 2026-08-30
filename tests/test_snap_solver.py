@@ -2545,3 +2545,31 @@ def test_several_questions_without_numbers_still_decline():
         "text_lines": [{"top": 10, "bottom": 30, "text": "some question text"}],
     }
     assert snap.figures_by_question(page, [1, 2, 3]) == {}
+
+
+def test_a_lone_question_without_its_number_still_keeps_its_figure(monkeypatch):
+    """The crop a student actually makes: one question, no "Q29." in frame.
+
+    Measured live. The OCR found the figure (`diagram_regions=1`), the
+    structurer returned the question with no printed number, and attribution —
+    which keys everything on numbers — gave up. The beaker was found, solved
+    from, and stored nowhere.
+
+    The shortcut has to be about the QUESTION, not its number.
+    """
+    page = _page_with_geometry(
+        text="Two immiscible liquids of refractive indices 8/5 and 3/2 are put in a beaker.",
+        diagram_spans=[{"top": 200, "bottom": 460, "left": 30, "right": 380}],
+        text_lines=[{"top": 40, "bottom": 66,
+                     "text": "Two immiscible liquids of refractive indices 8/5 and 3/2"}],
+    )
+    monkeypatch.setattr(snap.mathpix, "read_page", lambda *_a, **_k: page)
+    stub_transcriber(monkeypatch, json.dumps({"questions": [{
+        # No "number": the crop excluded it, which is the whole point.
+        "question_type": "numerical", "options": [], "legible": True,
+        "requires_diagram": True,
+        "stem": "Two immiscible liquids of refractive indices 8/5 and 3/2 are put in a beaker.",
+    }]}))
+    q = transcribe_questions(b"img", "image/png", "d1", None, 3)["questions"][0]
+    print(f"  figure_spans={len(q.get('figure_spans') or [])}")
+    assert len(q.get("figure_spans") or []) == 1, "the lone question's figure was lost again"
