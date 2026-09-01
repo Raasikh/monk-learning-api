@@ -323,6 +323,54 @@ def _call_with_one_retry(stage: str, call, describe: str,
     )
 
 
+_SUPERSCRIPTS = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺", "0123456789-+")
+
+
+def as_number(text: str) -> Optional[float]:
+    """The numeric value of an answer, or None when it is not a number.
+
+    Handles the forms a solver actually returns: "31", "-4", "0.5",
+    "25 × 10⁻⁶ kJ/m³", "$2.5 \\times 10^{-5}$", "6e8". Units and surrounding
+    words are ignored — only the quantity is compared.
+    """
+    if not text:
+        return None
+    t = str(text).translate(_SUPERSCRIPTS)
+    for noise in ("\\times", "\\cdot", "\\mathrm", "\\text", "$", "{", "}", "\\,", "\\;"):
+        t = t.replace(noise, " ")
+    t = t.replace("×", " ").replace("·", " ").replace("^", "")
+    t = re.sub(r"[−–—]", "-", t)
+    match = re.search(r"(-?\d+(?:\.\d+)?)", t)
+    if not match:
+        return None
+    value = float(match.group(1))
+    # An explicit power of ten following the mantissa: "25 10-6", "6 10 8".
+    rest = t[match.end():]
+    power = re.match(r"\s*(?:e\s*|10\s*)(-?\d{1,3})\b", rest, re.I)
+    if power:
+        value *= 10.0 ** int(power.group(1))
+    return value
+
+
+def numbers_agree(printed: str, answer: str) -> Optional[bool]:
+    """Whether a printed key and a derived answer are the same NUMBER.
+
+    None when either side is not numeric, so the caller can fall back to its
+    text comparison.
+
+    This exists because the text comparison silently passes the case it most
+    needed to catch. `_norm` reduces "25 × 10⁻⁶ kJ/m³" to "2510kjm3", and a
+    printed key of "25" is a substring of that — so an answer out by a factor
+    of a million read as agreement. Measured on a real page.
+    """
+    left, right = as_number(printed), as_number(answer)
+    if left is None or right is None:
+        return None
+    if left == 0 or right == 0:
+        return left == right
+    return abs(left - right) <= 1e-6 * max(abs(left), abs(right))
+
+
 def _norm(text: str) -> str:
     """Loose comparison key: case, spacing and punctuation are noise here."""
     return re.sub(r"[^a-z0-9]", "", (text or "").lower())
@@ -336,6 +384,41 @@ _PRINTED_ANSWER_RE = re.compile(
     r"(?im)^[\s\*_]*(?:correct\s+)?ans(?:wer)?\s*\.?\s*[:\-–—]?\s*\(?\s*"
     r"([A-Da-d1-4])\s*\)?\s*[\.\)]?\s*$"
 )
+
+
+# An answer KEY TABLE, which is how a chapter-wise question set prints it:
+#
+#     Answer Key
+#     Q1 (C)      Q2 (25)
+#
+# Different from the pattern above in two ways that both mattered. It is not on
+# a line of its own — several keys share a line — and its value need not be one
+# letter: a numerical question's key is a number, "25" or "-4" or "0.5".
+#
+# Measured: on a page whose key read "Q1 (C)  Q2 (25)", Q1's key was recovered
+# (the structuring model happened to report it) and Q2's was not — so the one
+# question that went on to be answered wrongly was the one with nothing to
+# check it against.
+_ANSWER_KEY_TABLE_RE = re.compile(
+    r"(?i)\bQ\s*(\d{1,3})\s*[\.\):]?\s*\(\s*"
+    r"([A-D]|-?\d{1,6}(?:\.\d+)?)\s*\)"
+)
+
+
+def printed_answer_key(ocr_text: str) -> Dict[int, str]:
+    """Every "Qn (value)" pair on the page, as {question number: key}.
+
+    Read from the whole page rather than from a single question's slice: the
+    key table sits at the bottom, under all of them.
+    """
+    if not ocr_text:
+        return {}
+    found: Dict[int, str] = {}
+    for match in _ANSWER_KEY_TABLE_RE.finditer(ocr_text):
+        num = int(match.group(1))
+        if num not in found:
+            found[num] = match.group(2).strip().upper()
+    return found
 
 
 def _strip_printed_answer(text: str) -> Tuple[str, Optional[str]]:
@@ -675,6 +758,11 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     # two ever disagree the spans are the ones that matter here.
     page_diagram_regions = (len(page.get("diagram_spans") or [])
                             or (page.get("diagram_regions") or 0))
+    # The key table at the foot of the page, if it printed one.
+    key_table = printed_answer_key(parsed.get("_ocr_text") or "")
+    if key_table:
+        logger.info("[SNAP KEY] doubt=%s page prints an answer key: %s",
+                    doubt_id[:8], key_table)
     page_spans = page.get("diagram_spans") or []
     # ONE question on the page owns every figure on it, and this is the check
     # that has to be about the QUESTION rather than its printed number.
@@ -984,7 +1072,16 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             # Held back from the solver on purpose; used to check it afterwards.
             # `stripped_key` is what the code removed from the text, which is
             # authoritative over the model's own `printed_answer` field.
-            "printed_answer": stripped_key or (item.get("printed_answer") or "").strip() or None,
+            # Order matters: what the code STRIPPED from this question's own
+            # text is best, then the page's key table, then the model's own
+            # report of it. The table is trusted over the model because it was
+            # read off the page by a regex rather than recalled by an LLM.
+            "printed_answer": (
+                stripped_key
+                or (key_table.get(printed_number[0]) if printed_number else None)
+                or (item.get("printed_answer") or "").strip()
+                or None
+            ),
             "legible": legible,
             "note": q_note,
             "remedy": q_remedy,
@@ -1551,6 +1648,11 @@ def _options_are_the_question(stem: Optional[str]) -> bool:
 # and paired to a label only when the pairing is certain (see `pair_figures`).
 
 FIGURE_PAD_PX = 10
+# A figure cropped for READING, not for showing. Padded generously because the
+# thing most often misread lives just outside the box the OCR drew: axis tick
+# labels, the units under an axis, a "×10ⁿ" multiplier at the end of it.
+FIGURE_READ_PAD_FRAC = 0.14
+FIGURE_READ_MIN_PAD_PX = 24
 FIGURE_MAX_EDGE = 1400
 FIGURE_JPEG_QUALITY = 82
 
@@ -1601,6 +1703,56 @@ def pair_figures(options: List[Dict[str, str]],
         )
         return None
     return _reading_order(usable)
+
+
+def crop_for_reading(image_bytes: bytes,
+                     spans: List[Dict[str, Any]]) -> Optional[bytes]:
+    """The figure alone, at full resolution, for the describing pass to read.
+
+    The describer was being handed the WHOLE PAGE. A vision model spends a
+    fixed detail budget across whatever it is given, so a figure occupying a
+    fifth of a page gets a fifth of the pixels — and the smallest marks on it,
+    the exponents on an axis, get almost none.
+
+    Measured, twice on the same page: a strain axis ticked $1\times10^{-10}$ to
+    $4\times10^{-10}$ was read as $10^{-4}$, putting the answer out by a factor
+    of a million. Rewriting the prompt to demand character-by-character reading
+    did not fix it, which is the evidence that it was never a matter of
+    attention — the pixels were not there to read.
+
+    So the figure is cut out and sent on its own, unshrunk. Same model, same
+    prompt, an order of magnitude more resolution on the part that matters.
+    """
+    usable = [s for s in spans
+              if s.get("left") is not None and s.get("right") is not None]
+    if not usable:
+        return None
+    try:
+        from PIL import Image
+    except ImportError:  # pragma: no cover - Pillow ships with image_prep
+        return None
+    try:
+        with Image.open(io.BytesIO(image_bytes)) as img:
+            img = img.convert("RGB")
+            width, height = img.size
+            left = min(s["left"] for s in usable)
+            right = max(s["right"] for s in usable)
+            top = min(s["top"] for s in usable)
+            bottom = max(s["bottom"] for s in usable)
+            pad_x = max(FIGURE_READ_MIN_PAD_PX, (right - left) * FIGURE_READ_PAD_FRAC)
+            pad_y = max(FIGURE_READ_MIN_PAD_PX, (bottom - top) * FIGURE_READ_PAD_FRAC)
+            box = (max(0, int(left - pad_x)), max(0, int(top - pad_y)),
+                   min(width, int(right + pad_x)), min(height, int(bottom + pad_y)))
+            if box[2] - box[0] < 40 or box[3] - box[1] < 40:
+                return None
+            # No thumbnail() here, unlike the stored crop: this one exists to be
+            # read, so every pixel the camera captured is kept.
+            out = io.BytesIO()
+            img.crop(box).save(out, format="JPEG", quality=92)
+            return out.getvalue()
+    except Exception as err:
+        logger.warning("[SNAP FIGURES] read-crop failed: %s", err)
+        return None
 
 
 def crop_figure(image_bytes: bytes, span: Dict[str, Any]) -> Optional[bytes]:
@@ -2546,7 +2698,16 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         chosen_label = _norm("".join(solution.get("option_labels") or []))
         agrees = bool(chosen_label) and printed_key == chosen_label
         if not agrees:
-            agrees = printed_key in _norm(solution["answer"]) or _norm(solution["answer"]) in printed_key
+            # A number is compared AS a number. The substring test below reads
+            # "25 × 10⁻⁶ kJ/m³" as agreeing with a printed "25", because _norm
+            # flattens it to "2510kjm3" and "25" sits inside that — an answer
+            # out by a factor of a million, passing as correct.
+            numeric = numbers_agree(printed, solution["answer"])
+            if numeric is not None:
+                agrees = numeric
+            else:
+                agrees = (printed_key in _norm(solution["answer"])
+                          or _norm(solution["answer"]) in printed_key)
         solution["printed_answer"] = printed
         solution["agrees_with_printed_answer"] = agrees
         logger.log(
@@ -2743,17 +2904,26 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             diagram_t0 = time.time()
+            # Read from the figure alone where its geometry is known. The
+            # describer's detail budget is spent across whatever it is handed,
+            # so a whole page leaves almost no pixels on the smallest marks —
+            # which is where the exponents live. Falls back to the full page
+            # when the OCR gave no usable box.
+            close_up = crop_for_reading(image_bytes, question.get("figure_spans") or [])
             description = describe_diagram(
-                image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
+                close_up or image_bytes,
+                "image/jpeg" if close_up else mime_type,
+                question.get("text") or "", doubt_id, tx_usage,
             )
             q_diagram_ms = int((time.time() - diagram_t0) * 1000)
             diagram_ms += q_diagram_ms
             # This pass sits between the student seeing their question and any
             # solve starting, so its cost is worth seeing on its own.
             logger.info(
-                "[SNAP DIAGRAM] doubt=%s q%s diagram_ms=%d model=%s described=%s",
+                "[SNAP DIAGRAM] doubt=%s q%s diagram_ms=%d model=%s described=%s "
+                "read_from=%s",
                 doubt_id[:8], question["n"], q_diagram_ms, MODEL_DIAGRAM,
-                bool(description),
+                bool(description), "figure crop" if close_up else "whole page",
             )
             if description:
                 question["diagram_description"] = description
@@ -3045,15 +3215,24 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             diagram_t0 = time.time()
+            # Read from the figure alone where its geometry is known. The
+            # describer's detail budget is spent across whatever it is handed,
+            # so a whole page leaves almost no pixels on the smallest marks —
+            # which is where the exponents live. Falls back to the full page
+            # when the OCR gave no usable box.
+            close_up = crop_for_reading(image_bytes, question.get("figure_spans") or [])
             description = describe_diagram(
-                image_bytes, mime_type, question.get("text") or "", doubt_id, tx_usage
+                close_up or image_bytes,
+                "image/jpeg" if close_up else mime_type,
+                question.get("text") or "", doubt_id, tx_usage,
             )
             q_diagram_ms = int((time.time() - diagram_t0) * 1000)
             diagram_ms += q_diagram_ms
             logger.info(
-                "[SNAP DIAGRAM] doubt=%s q%s diagram_ms=%d model=%s described=%s",
+                "[SNAP DIAGRAM] doubt=%s q%s diagram_ms=%d model=%s described=%s "
+                "read_from=%s",
                 doubt_id[:8], question["n"], q_diagram_ms, MODEL_DIAGRAM,
-                bool(description),
+                bool(description), "figure crop" if close_up else "whole page",
             )
             if description:
                 question["diagram_description"] = description

@@ -2573,3 +2573,33 @@ def test_a_lone_question_without_its_number_still_keeps_its_figure(monkeypatch):
     q = transcribe_questions(b"img", "image/png", "d1", None, 3)["questions"][0]
     print(f"  figure_spans={len(q.get('figure_spans') or [])}")
     assert len(q.get("figure_spans") or []) == 1, "the lone question's figure was lost again"
+
+
+def test_a_numeric_key_is_compared_as_a_number():
+    """"25 × 10⁻⁶" must not pass as agreement with a printed "25".
+
+    The text comparison flattens the answer to "2510kjm3" and finds "25"
+    inside it, so an answer wrong by a factor of a million read as correct.
+    That is the exact case the check exists for, and it was the one it missed.
+    """
+    assert snap.numbers_agree("25", "25 × 10⁻⁶ kJ/m³") is False
+    assert snap.numbers_agree("25", "25 kJ/m³") is True
+    assert snap.numbers_agree("31", "31") is True
+    assert snap.numbers_agree("6", "6 × 10⁸ Nm⁻²") is False
+    # Not numeric on one side: the caller falls back to its text comparison.
+    assert snap.numbers_agree("C", "CHCl_3") is None
+
+
+def test_an_answer_key_table_is_read_off_the_page():
+    """"Q1 (C)   Q2 (25)" is how a chapter-wise set prints its key.
+
+    The single-line pattern could not see it — several keys share a line, and a
+    numerical key is a number rather than a letter. On the page this was
+    measured from, Q1's key was recovered by luck and Q2's was not, leaving the
+    question that went on to be wrong with nothing checking it.
+    """
+    keys = snap.printed_answer_key("Answer Key\nQ1 (C)      Q2 (25)")
+    print(f"  {keys}")
+    assert keys == {1: "C", 2: "25"}
+    assert snap.printed_answer_key("Q17 (4) Q18 (2) Q19 (4)") == {17: "4", 18: "2", 19: "4"}
+    assert snap.printed_answer_key("no key here") == {}
