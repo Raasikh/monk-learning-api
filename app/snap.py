@@ -1076,9 +1076,21 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             # text is best, then the page's key table, then the model's own
             # report of it. The table is trusted over the model because it was
             # read off the page by a regex rather than recalled by an LLM.
+            # Order matters: what the code STRIPPED from this question's own
+            # text is best, then the page's key table, then the model's own
+            # report of it. The table is trusted over the model because a regex
+            # read it off the page rather than an LLM recalling it.
+            #
+            # By number where there is one, otherwise by position — the nth
+            # question read off a page is the nth key printed under it, which
+            # holds whenever the counts line up and is the only thing left when
+            # the page numbers its questions in a way nothing could parse.
             "printed_answer": (
                 stripped_key
                 or (key_table.get(printed_number[0]) if printed_number else None)
+                or (sorted(key_table.items())[idx - 1][1]
+                    if (key_table and len(key_table) == len(raw_questions)
+                        and 1 <= idx <= len(key_table)) else None)
                 or (item.get("printed_answer") or "").strip()
                 or None
             ),
@@ -1125,7 +1137,13 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
 # A printed question number at the start of a line: "Q62.", "Q 62)", "62.".
 # Anchored to a line start so an option label "(1)" or a mid-sentence number
 # cannot masquerade as one.
-_QUESTION_NUMBER_RE = re.compile(r"(?m)^[\s*_#>]*Q\s*\.?\s*(\d{1,3})\s*[.):]")
+# A dash counts as a separator too. Real pages label a question
+# "Q1 - 24 June - Shift 1", and requiring . ) or : meant the number was never
+# found — which silently cost that page BOTH its figure attribution (so the
+# describer got the whole page instead of the figure) and its answer key
+# (so nothing checked the result). One punctuation mark, two failures.
+_QUESTION_NUMBER_RE = re.compile(
+    r"(?m)^[\s*_#>]*Q\s*\.?\s*(\d{1,3})\s*[.):\-–—]")
 
 
 def _question_numbers_in(ocr_text: str) -> List[int]:
