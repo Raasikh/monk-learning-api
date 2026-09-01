@@ -134,6 +134,14 @@ REMEDY_NOT_PHOTO = "not_photo"
 REMEDY_OUR_SIDE = "our_side"
 
 
+class FigureUnreadable(Exception):
+    """The figure was looked at and could not be worked from — with a reason.
+
+    Distinct from returning None, which leaves the caller with nothing it can
+    tell anybody.
+    """
+
+
 class SnapError(Exception):
     """A snap that cannot be completed.
 
@@ -1529,9 +1537,11 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
         logger.info("[SNAP DIAGRAM] doubt=%s no figure found in the image", doubt_id[:8])
         return None
     if parsed.get("sufficient") is False:
+        why = (parsed.get("note") or "").strip()
         logger.warning("[SNAP DIAGRAM] doubt=%s figure not clear enough: %s",
-                       doubt_id[:8], (parsed.get("note") or "")[:160])
-        return None
+                       doubt_id[:8], why[:160])
+        # The reason is the useful part, and returning None threw it away.
+        raise FigureUnreadable(why)
 
     description = (parsed.get("description") or "").strip()
     if len(description) < 40:
@@ -2928,11 +2938,15 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
             # which is where the exponents live. Falls back to the full page
             # when the OCR gave no usable box.
             close_up = crop_for_reading(image_bytes, question.get("figure_spans") or [])
-            description = describe_diagram(
-                close_up or image_bytes,
-                "image/jpeg" if close_up else mime_type,
-                question.get("text") or "", doubt_id, tx_usage,
-            )
+            why_figure = ""
+            try:
+                description = describe_diagram(
+                    close_up or image_bytes,
+                    "image/jpeg" if close_up else mime_type,
+                    question.get("text") or "", doubt_id, tx_usage,
+                )
+            except FigureUnreadable as err:
+                description, why_figure = None, str(err)
             q_diagram_ms = int((time.time() - diagram_t0) * 1000)
             diagram_ms += q_diagram_ms
             # This pass sits between the student seeing their question and any
@@ -2949,7 +2963,14 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                 question["legible"] = False
                 question["remedy"] = REMEDY_NOT_PHOTO
                 question["reason"] = "diagram_unreadable"
+                # Say WHAT could not be made out, when the describer said so.
+                # "The strain axis is labelled with exponents that do not match
+                # the question's strain value" tells a student something real
+                # about their page; the generic line tells them nothing they
+                # cannot already see.
                 question["note"] = (
+                    f"Monk could not work from the figure on this one: {why_figure}"
+                    if why_figure else
                     "This question needs its diagram, and Monk could not make the "
                     "figure out clearly enough to solve from. If the figure is cut "
                     "off, retake the photo with all of it in frame — otherwise ask "
@@ -3239,11 +3260,15 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             # which is where the exponents live. Falls back to the full page
             # when the OCR gave no usable box.
             close_up = crop_for_reading(image_bytes, question.get("figure_spans") or [])
-            description = describe_diagram(
-                close_up or image_bytes,
-                "image/jpeg" if close_up else mime_type,
-                question.get("text") or "", doubt_id, tx_usage,
-            )
+            why_figure = ""
+            try:
+                description = describe_diagram(
+                    close_up or image_bytes,
+                    "image/jpeg" if close_up else mime_type,
+                    question.get("text") or "", doubt_id, tx_usage,
+                )
+            except FigureUnreadable as err:
+                description, why_figure = None, str(err)
             q_diagram_ms = int((time.time() - diagram_t0) * 1000)
             diagram_ms += q_diagram_ms
             logger.info(
@@ -3258,7 +3283,14 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                 question["legible"] = False
                 question["remedy"] = REMEDY_NOT_PHOTO
                 question["reason"] = "diagram_unreadable"
+                # Say WHAT could not be made out, when the describer said so.
+                # "The strain axis is labelled with exponents that do not match
+                # the question's strain value" tells a student something real
+                # about their page; the generic line tells them nothing they
+                # cannot already see.
                 question["note"] = (
+                    f"Monk could not work from the figure on this one: {why_figure}"
+                    if why_figure else
                     "This question needs its diagram, and Monk could not make the "
                     "figure out clearly enough to solve from. If the figure is cut "
                     "off, retake the photo with all of it in frame — otherwise ask "

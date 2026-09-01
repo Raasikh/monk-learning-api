@@ -2603,3 +2603,34 @@ def test_an_answer_key_table_is_read_off_the_page():
     assert keys == {1: "C", 2: "25"}
     assert snap.printed_answer_key("Q17 (4) Q18 (2) Q19 (4)") == {17: "4", 18: "2", 19: "4"}
     assert snap.printed_answer_key("no key here") == {}
+
+
+def test_an_unreadable_figure_says_what_was_unreadable(monkeypatch):
+    """The describer's reason is the useful part, and it was being discarded.
+
+    "The strain axis is labelled with exponents that do not match the
+    question's strain value" tells a student something real about their page.
+    "Could not make the figure out" tells them nothing they cannot already see.
+    """
+    monkeypatch.setattr(snap, "_openai_client", lambda: object())
+    monkeypatch.setattr(snap, "_call_with_one_retry", lambda *a, **k: {
+        "has_diagram": True, "sufficient": False,
+        "note": "The strain axis exponents do not match the question's strain value.",
+        "description": "",
+    })
+    with pytest.raises(snap.FigureUnreadable) as caught:
+        snap.describe_diagram(b"img", "image/jpeg", "a question", "d1")
+    print(f"  reason: {caught.value}")
+    assert "strain axis" in str(caught.value)
+
+
+def test_a_readable_figure_still_comes_back_described(monkeypatch):
+    """The happy path is unchanged by the new exception."""
+    monkeypatch.setattr(snap, "_openai_client", lambda: object())
+    monkeypatch.setattr(snap, "_call_with_one_retry", lambda *a, **k: {
+        "has_diagram": True, "sufficient": True,
+        "description": "A semicircular arc of radius $R$ carrying current $I$, "
+                       "with two straight wires entering along the diameter.",
+    })
+    out = snap.describe_diagram(b"img", "image/jpeg", "a question", "d1")
+    assert out and "semicircular" in out
