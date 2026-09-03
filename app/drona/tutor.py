@@ -94,6 +94,21 @@ _DIAGRAM_CUES: List[Tuple[str, str]] = [
      r"|radiation|reproduction|division|life cycle", "process_flow"),
 ]
 
+# Field-lines WIDGET cue — a second, independent table, never merged into
+# _DIAGRAM_CUES. field_lines has no entry in diagram_templates.TEMPLATES (it
+# is rendered by the student's app from parameters, not by the server from a
+# name), and test_every_suggested_template_actually_exists asserts every
+# _DIAGRAM_CUES entry names a real template — adding it there would fail that
+# assertion and be architecturally wrong besides. Checked only when
+# suggest_diagram_template found nothing (see its call site), so it can never
+# out-compete an existing, tested cue — "dipole" already routes to
+# free_body_diagram and keeps doing so; this only claims the electrostatics
+# content that cue table left as pure text.
+_WIDGET_CUES: List[Tuple[str, str]] = [
+    (r"field line|point charge|like charges|parallel[- ]plate|neutral point"
+     r"|dipole('s)? field|electric field\b", "field_lines"),
+]
+
 
 # A turn that works a numerical example, where the student should be offered
 # the chance to attempt it first.
@@ -264,6 +279,23 @@ def suggest_diagram_template(*texts: str) -> Optional[str]:
     for pattern, template in _DIAGRAM_CUES:
         if re.search(pattern, blob):
             return template
+    return None
+
+
+def suggest_widget(*texts: str) -> Optional[str]:
+    """The one client-rendered widget this turn's content calls for, if any.
+
+    Same shape and same conservatism as suggest_diagram_template — no match
+    means no suggestion — kept as a separate function over a separate table
+    (_WIDGET_CUES) rather than folded into that one. See _WIDGET_CUES' own
+    comment for why.
+    """
+    blob = " ".join(t for t in texts if t).lower()
+    if not blob:
+        return None
+    for pattern, widget in _WIDGET_CUES:
+        if re.search(pattern, blob):
+            return widget
     return None
 
 # user_id -> first name. A display name effectively never changes, and this is
@@ -749,6 +781,13 @@ async def process_tutor_turn_stream(
         " ".join(assigned_items_text),
         utterance or "",
     )
+    # Only checked when _diag_hint found nothing — see _WIDGET_CUES' comment.
+    _widget_hint = None if _diag_hint else suggest_widget(
+        curr_segment.get("objective") or "",
+        curr_segment.get("teaching_notes") or "",
+        " ".join(assigned_items_text),
+        utterance or "",
+    )
     # ── Tier 3: neither faster tier covers this concept ──────────────────────
     # Started HERE, before the LLM call, so it runs concurrently with the turn
     # rather than after it — that is the only thing that gives it a chance of
@@ -756,7 +795,7 @@ async def process_tutor_turn_stream(
     # resolved first: paying for a model call when an indexed read or a string
     # build would have done is the one outcome worth avoiding.
     _live_diagram_future = None
-    if not _precomputed_svg and not _diag_hint:
+    if not _precomputed_svg and not _diag_hint and not _widget_hint:
         _live_diagram_future = start_live_diagram(
             session.get("chapter_id"), session.get("subtopic_key"),
             # A doubt is about the utterance; a teaching turn is about the
@@ -780,6 +819,27 @@ async def process_tutor_turn_stream(
             f"student nothing to read back. Skip the diagram only if the "
             f"content genuinely does not fit that template; then pick a "
             f"template that does, or emit none.\n"
+        )
+
+    widget_directive = ""
+    if _widget_hint and not _precomputed_svg:
+        widget_directive = (
+            f"\n\nFIELD DIAGRAM FOR THIS TURN: this content calls for the "
+            f"`{_widget_hint}` widget — a live, physically-correct rendering "
+            f"the student's app draws itself, not a picture you author.\n"
+            f"Emit ONE board_event of type \"diagram\" with a `payload` "
+            f"object instead of `template`/`params`/`svg`:\n"
+            f"{{\"seq\": N, \"type\": \"diagram\", \"payload\": {{\"widget\": "
+            f"\"{_widget_hint}\", \"version\": 1, \"params\": {{\"configuration\": "
+            f"\"point\"|\"dipole\"|\"like_charges\"|\"parallel_plates\", "
+            f"\"charge_uc\": <a number 4-20>, \"show_arrows\": true, "
+            f"\"annotate\": null}}}}}}\n"
+            f"`charge_uc` is a magnitude in microcoulombs standing in for "
+            f"\"how strong\" — pick a value that fits the story, e.g. "
+            f"doubling it turn to turn to show the line count scaling with "
+            f"charge. This is IN ADDITION to your normal board lines, not "
+            f"instead of them. Skip it only if the content genuinely is not "
+            f"an electric-field-line picture.\n"
         )
 
     # Offer the student the chance to attempt a worked example before it is
@@ -933,7 +993,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
-{board_answer_ban}{diagram_directive}{example_directive}
+{board_answer_ban}{diagram_directive}{widget_directive}{example_directive}
 """
     else:
         checkpoint_directive = f"""
@@ -956,7 +1016,7 @@ into a question — if you just said 'the horizontal acceleration is zero', do n
 'what is the horizontal acceleration?'. Ask something that makes the student USE the
 idea: apply it to a small concrete case, compare two situations, or spot the
 consequence. It must still be answerable in a couple of words with no working.
-{board_answer_ban}{diagram_directive}{example_directive}
+{board_answer_ban}{diagram_directive}{widget_directive}{example_directive}
 
 For reference, this segment's authored checkpoint is:
   "{checkpoint.get('question') or ''}"
@@ -1097,6 +1157,18 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 for e in (model_board_events_raw or []):
                     if not isinstance(e, dict) or e.get("type") != "diagram":
                         continue
+                    # A field_lines event carries `payload`, never `template`
+                    # or `svg` — _materialise_template passes it through
+                    # unchanged (no `template` key to act on), so it needs its
+                    # own check here rather than the `mat.get("svg")` one
+                    # below, which it can never satisfy.
+                    if isinstance(e.get("payload"), dict):
+                        evt = {"seq": len(board_events_out) + 1,
+                               "type": "diagram", "payload": e["payload"]}
+                        if e.get("caption"):
+                            evt["caption"] = e["caption"]
+                        board_events_out.append(evt)
+                        break
                     mat = _materialise_template(e)
                     if mat and mat.get("svg"):
                         evt = {"seq": len(board_events_out) + 1,
@@ -1175,24 +1247,51 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 "emphasis": evt.get("emphasis", "normal")
             }
             if e_type == "diagram":
-                # A diagram carries `svg`, not text or latex. Both were being
-                # stripped here and the event then dropped for having no
-                # content — so diagrams could never reach the client even
-                # though PremiumBoardEvent has always known how to draw them.
-                # The client sanitizes the markup again before rendering
-                # (sanitizeSvg strips <script> and on* handlers); this cap is
-                # about payload size, since the SVG rides the same WS frames as
-                # the audio.
-                raw_svg = (evt.get("svg") or "").strip()
-                if not raw_svg or len(raw_svg) > 20000:
-                    logger.warning(
-                        f"⚠️ [DIAGRAM DROPPED] svg missing or too large ({len(raw_svg)} chars)."
-                    )
-                    continue
-                clean_evt["svg"] = raw_svg
-                if evt.get("caption"):
-                    clean_evt["caption"] = str(evt["caption"])[:200]
-                content_key = raw_svg[:120]
+                raw_payload = evt.get("payload")
+                if isinstance(raw_payload, dict) and raw_payload.get("widget") == "field_lines":
+                    # field_lines carries a widget `payload`, not `svg` — the
+                    # client's own field-lines validate() (lib/widgets/field-
+                    # lines/index.tsx) is the real, authoritative gate and
+                    # already clamps/rejects on device; this is only a coarse
+                    # shape check so an obviously-broken payload is dropped
+                    # and logged here rather than silently doing nothing on
+                    # the board.
+                    fl_params = raw_payload.get("params")
+                    _configs = ("point", "dipole", "like_charges", "parallel_plates")
+                    if (not isinstance(fl_params, dict)
+                            or fl_params.get("configuration") not in _configs
+                            or not isinstance(fl_params.get("charge_uc"), (int, float))):
+                        logger.warning(
+                            f"⚠️ [DIAGRAM DROPPED] field_lines payload malformed: {json.dumps(raw_payload)[:200]}"
+                        )
+                        continue
+                    clean_evt["payload"] = {
+                        "widget": "field_lines",
+                        "version": int(raw_payload.get("version") or 1),
+                        "params": fl_params,
+                    }
+                    if evt.get("caption"):
+                        clean_evt["caption"] = str(evt["caption"])[:200]
+                    content_key = json.dumps(fl_params, sort_keys=True)
+                else:
+                    # A diagram carries `svg`, not text or latex. Both were being
+                    # stripped here and the event then dropped for having no
+                    # content — so diagrams could never reach the client even
+                    # though PremiumBoardEvent has always known how to draw them.
+                    # The client sanitizes the markup again before rendering
+                    # (sanitizeSvg strips <script> and on* handlers); this cap is
+                    # about payload size, since the SVG rides the same WS frames as
+                    # the audio.
+                    raw_svg = (evt.get("svg") or "").strip()
+                    if not raw_svg or len(raw_svg) > 20000:
+                        logger.warning(
+                            f"⚠️ [DIAGRAM DROPPED] svg missing or too large ({len(raw_svg)} chars)."
+                        )
+                        continue
+                    clean_evt["svg"] = raw_svg
+                    if evt.get("caption"):
+                        clean_evt["caption"] = str(evt["caption"])[:200]
+                    content_key = raw_svg[:120]
             elif e_type == "formula":
                 content_key = (raw_latex or raw_text).strip()
                 clean_evt["latex"] = content_key
@@ -1856,8 +1955,8 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             # Which TIER answered is the first question asked when a diagram is
             # missing, and it used to be unanswerable from the logs: "the cue
             # fired" and "a picture reached the board" are different claims.
-            f"| cues: diagram={_diag_hint or '-'} "
-            f"tier={'1' if _precomputed_svg else ('2' if _diag_hint else ('3' if _live_diagram_future is not None else '-'))}"
+            f"| cues: diagram={_diag_hint or _widget_hint or '-'} "
+            f"tier={'1' if _precomputed_svg else ('2' if _diag_hint else ('2w' if _widget_hint else ('3' if _live_diagram_future is not None else '-')))}"
             f"{'' if _live_diagram_future is None else ('+won' if _live_diagram_future.done() else '+late')} "
             f"example={'y' if example_directive else '-'} "
             f"answer_key={'y' if parsed_json.get('correct_option') else '-'} "

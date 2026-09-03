@@ -86,6 +86,8 @@ Four things follow, and they govern every rule further down:
        * `comparison_table` — `headers` (list of str), `rows` (list of lists of str), optional `title`. Max 3 columns, keep cells short.
        * `boxed_derivation` — `steps` (list of str, each one line of the derivation), optional `title`
        * `process_flow` — `stages` (list of str, in order), optional `title`
+       * **`field_lines` is different from every template above: it is not rendered by the server from a name.** It is a live widget the STUDENT'S APP draws itself from parameters, so instead of `"template"`/`"params"` you emit a `"payload"` object: `{"seq": N, "type": "diagram", "payload": {"widget": "field_lines", "version": 1, "params": {"configuration": "point"|"dipole"|"like_charges"|"parallel_plates", "charge_uc": <number, 4-20>, "show_arrows": true, "annotate": null|"neutral_point"|"termination"}}, "caption": "one short line"}`. Never combine `payload` with `template`, `params` (the flat kind above), or `svg` on the same event. `charge_uc` is a magnitude in microcoulombs standing in for "how strong" — pick a value that fits the story, e.g. doubling it turn to turn to show the line count scaling with charge.
+         - electric field lines around a point charge, a dipole, two like charges, or between parallel plates → `field_lines` (`payload`, not `template`)
        * **WHEN TO USE ONE — these are triggers, not suggestions.** If the turn matches a row below, emit that diagram. A picture of a geometry is worth more than three sentences describing it, and this is the one thing the board can do that your voice cannot:
          - naming/resolving the forces on an object → `free_body_diagram`
          - splitting any vector or force into components → `vector_resolution`
@@ -95,6 +97,7 @@ Four things follow, and they govern every rule further down:
          - contrasting two or more things on shared criteria → `comparison_table`
          - deriving a result in ordered algebraic steps → `boxed_derivation`
          - a pathway, cycle or ordered sequence of stages → `process_flow`
+         - electric field lines around a point charge, a dipole, like charges, or parallel plates → `field_lines` (see above — uses `payload`, not `template`)
        * At most ONE diagram per turn, and it still needs its `seq` tied to the sentence that introduces it, exactly like every other board event.
        * Only skip the diagram if no template fits the content at all. Do not skip it because the parameters feel approximate — a labelled sketch with sensible values teaches; a paragraph describing a picture does not.
      - **Board Density (Scaled to Segment Content)**: The total board events emitted across ALL turns of a segment MUST equal the segment's authored `board_content` count — no more, no fewer. Distribute them across turns as specified in Sub-concept Pacing. Zero board events in a teaching turn is a HARD PROMPT VIOLATION (unless the segment assigned zero items to that turn). Draw ONLY from the segment's `board_content` provided in the plan. NEVER invent new board items beyond the plan's authored list. Write items out progressively as you explain them.
@@ -355,8 +358,9 @@ Return ONLY valid JSON. The `"speech"` key MUST be the very first key.
       "type": "heading | text | formula | note | diagram",
       "text": "For heading, text, note ONLY: plain text with $...$ for inline math.",
       "latex": "For formula ONLY: bare KaTeX string without text field.",
-      "template": "For diagram ONLY: one of the template names listed in Rule 3. Never raw SVG.",
-      "params": "For diagram ONLY: the object of labels that template takes.",
+      "template": "For diagram ONLY, all templates except field_lines: one of the template names listed in Rule 3. Never raw SVG.",
+      "params": "For diagram ONLY, paired with template: the object of labels that template takes.",
+      "payload": "For diagram ONLY, field_lines widget ONLY: {widget: 'field_lines', version: 1, params: {...}}. Never combine with template/params/svg.",
       "caption": "For diagram ONLY (optional): one short line under the picture.",
       "emphasis": "normal | key"
     }
