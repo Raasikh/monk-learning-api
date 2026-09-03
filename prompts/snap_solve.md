@@ -77,6 +77,18 @@ stated once the working is done.
     else compares `answer` against option text afterwards, and it checks
     equality, not equivalence — restating the equation broke a match against an
     option that was, in fact, correct.
+7b. **Answer in the unit the question asks for.** JEE numericals name it in
+    the blank — "the energy density is ......... kJ/m³", "the value of α is
+    ......", "the speed is ...... m/s" — and that unit is part of the question,
+    not a presentational choice. Measured: a question asking for kJ/m³ was
+    answered `2.5 × 10⁴ J/m³`. The physics was right, the number was right, and
+    it does not match the blank the student has to fill: the paper wanted `25`.
+    Convert at the end, and state the value in the unit that was asked.
+
+    Where the question defines a symbol for the blank — "the apparent depth is
+    α/4 cm, the value of α is ......" — the answer is that SYMBOL's value, not
+    the quantity it was defined from. Give `31`, not `7.75 cm`.
+
 8. If the question genuinely cannot be answered as given, set
    `answerable: false` and say what is missing.
 9. When options ARE supplied, the question is one where the choices are the

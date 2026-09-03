@@ -86,9 +86,10 @@ DETAIL_LEVELS = {
         "- Aim for 12-25 elements TOTAL. Above 30 you are drawing the wrong thing.\n"
         "- Use REAL NUMBERS, not symbols, wherever a number would do. A triangle\n"
         "  labelled 3, 4, 5 teaches a struggling student more than one labelled a, b, c.\n"
-        "- Canvas around 340x240, and never wider than 380. The board column on a\n"
-        "  phone is about 300px, so a wide canvas scales down until the labels are\n"
-        "  unreadable. Narrow and tall survives a phone; wide and short does not.\n"
+        "- Canvas around 640x260, and never narrower than 560 wide. The board is\n"
+        "  LANDSCAPE and about 700pt wide by 250pt tall, so a square-ish canvas\n"
+        "  fits to height and leaves half the board empty. Wide and short is what\n"
+        "  this board wants; narrow and tall wastes it.\n"
         "- If the concept has several parts, draw the ONE that unlocks it and ignore\n"
         "  the rest. Another diagram can cover the others.\n"
         "- Assume the student CANNOT already picture this. That is why it exists.\n"
@@ -96,7 +97,7 @@ DETAIL_LEVELS = {
     "rich": (
         "SCOPE — a fuller figure, for a concept that genuinely needs one.\n"
         "- Up to 70 elements. Label every part a student must name.\n"
-        "- Canvas around 420x300 — still phone-first. 520 wide scales to 0.58 on a\n"
+        "- Canvas around 760x300 — landscape-first, matching the board's own shape.\n"
         "  375px phone and takes every label under 10px with it.\n"
         "- Still one idea, drawn thoroughly, rather than several crammed together.\n"
     ),
@@ -134,11 +135,9 @@ stripped, so a marker arrowhead would appear before its own arrow.
 STYLE — hold to these so every diagram reads as one system:
 - Outlines 2.4-3 stroke-width. Internal structure 2. Guides and dashed leaders 1.4.
 - Labels 15-17px. A title, if any, 19px. NEVER smaller than 14px.
-  These look large next to a 340-wide canvas, and that is deliberate. The board
-  scales the whole SVG down to fit its column, and on a 375px phone that column
-  is about 300px — so a 13px label lands at roughly 8px on screen, which no
-  student can read. Sizing for the phone first and letting it scale UP on
-  desktop is the only ordering that works.
+  On a 640-wide canvas drawn into a ~700pt landscape board the SVG renders at
+  roughly 1:1, so these are close to their on-screen point size. Do not shrink
+  them on the theory that the board will scale them up — it will not.
 - COLOUR CARRIES MEANING, it is not decoration. Use one consistent contrast per
   diagram — e.g. red vs blue for oxygenated vs deoxygenated, green for the quantity
   being measured, amber for the thing the student must notice. Everything else is
