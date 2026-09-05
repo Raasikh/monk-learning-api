@@ -245,6 +245,19 @@ def plan_provenance(model_key: str = "planner") -> dict:
     }
 
 
+def _thinking_off() -> dict:
+    """Body fragment that disables the model's reasoning pass.
+
+    DeepSeek direct takes {"thinking": {"type": "disabled"}}. OpenRouter
+    ignores that and needs {"reasoning": {"enabled": false}} -- and the
+    difference is not cosmetic: left on, a trivial prompt returned
+    completion=27 with reasoning=24, so every token measurement taken through
+    the gateway would be inflated by reasoning tokens the production path
+    never spends. Both keys are sent; each gateway ignores the other's.
+    """
+    return {"thinking": {"type": "disabled"}, "reasoning": {"enabled": False}}
+
+
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""
     # Lookup chapter name & subtopic title
@@ -294,7 +307,7 @@ Author a complete lesson plan JSON following the instructions in the system prom
             # a large offset, which is indistinguishable from a bad escape.
             max_tokens=16384,
             timeout=PLANNER_TIMEOUT_S,
-            extra_body={"thinking": {"type": "disabled"}}
+            extra_body=_thinking_off()
         )
 
         raw_response_content = res.choices[0].message.content or ""
@@ -463,7 +476,7 @@ def _author_outline(chap_data: Dict[str, Any], sub_title: str, subtopic_key: str
             temperature=0.0,
             max_tokens=4096,
             timeout=PLANNER_TIMEOUT_S,
-            extra_body={"thinking": {"type": "disabled"}},
+            extra_body=_thinking_off(),
         )
     except Exception as exc:
         record_call(model_name, "outline", ok=False,
@@ -575,7 +588,7 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
                 temperature=0.0,
                 max_tokens=4096,
                 timeout=PLANNER_TIMEOUT_S,
-                extra_body={"thinking": {"type": "disabled"}},
+                extra_body=_thinking_off(),
             )
         except Exception as exc:
             # Recorded even though nothing usable came back: a call that threw

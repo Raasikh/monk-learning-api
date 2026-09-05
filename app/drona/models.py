@@ -51,9 +51,21 @@ def get_drona_client() -> OpenAI:
     # own budget (planner needs longer, tutor needs shorter) — this is only the
     # backstop for anything added later.
     if os.getenv("DEEPSEEK_API_KEY"):
+        # base_url is overridable. It was hardcoded, which meant a network that
+        # cannot reach api.deepseek.com could not run the planner AT ALL --
+        # not a model problem, a transport one: TCP connects and the TLS
+        # handshake is reset by peer, while api.openai.com and openrouter.ai
+        # negotiate fine from the same machine seconds apart.
+        #
+        # The default is unchanged, so production behaviour is identical.
+        # Setting DEEPSEEK_BASE_URL (with DEEPSEEK_PLANNER_MODEL /
+        # DEEPSEEK_SEGMENT_MODEL for the gateway's model naming) runs the same
+        # weights through another gateway. Anything measured that way has an
+        # extra network hop and its LATENCY is not comparable to production;
+        # token counts and outputs are.
         return OpenAI(
             api_key=os.getenv("DEEPSEEK_API_KEY"),
-            base_url="https://api.deepseek.com",
+            base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
             timeout=DEFAULT_TIMEOUT_S,
             max_retries=1,
         )
