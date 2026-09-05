@@ -61,6 +61,16 @@ MODEL_DIAGRAM = "gpt-4o"
 # is silently wrong. Accuracy beats latency here — it is one call per question,
 # not one per turn.
 MODEL_SOLVE = "deepseek-v4-pro"
+# The follow-up runs on flash, not pro. A follow-up is conversational — "where
+# did the 2 come from" — against a solution that has already been derived and
+# is sitting in the prompt. That is a reading-and-explaining job rather than a
+# reasoning one, and flash is three times cheaper and markedly faster, which is
+# what a student waiting mid-conversation actually feels.
+MODEL_FOLLOWUP = "deepseek-v4-flash"
+# Long enough for a real exchange, short enough that the prompt cannot grow
+# without bound over a session that is never persisted anyway.
+FOLLOWUP_MAX_TURNS = 12
+FOLLOWUP_MAX_CHARS = 600
 
 TRANSCRIBE_TIMEOUT_S = 45.0
 # Pro is slower than Flash; the budget follows the planner's shape rather than
@@ -184,6 +194,83 @@ def _deepseek_client() -> OpenAI:
         timeout=SOLVE_TIMEOUT_S,
         max_retries=1,
     )
+
+
+def followup_context(doubt: Dict[str, Any]) -> str:
+    """The solution the student is looking at, as the model's context.
+
+    Built server-side from the stored row rather than accepted from the client.
+    The phone already HAS all of this, so passing it up would be simpler — and
+    would mean a request could claim any question and any answer it liked, with
+    the model dutifully explaining a solution that was never given.
+    """
+    lines = [f"QUESTION: {doubt.get('stem') or doubt.get('question_text') or ''}"]
+    options = doubt.get("options") or []
+    if options:
+        lines.append("OPTIONS:")
+        for opt in options:
+            if isinstance(opt, dict):
+                lines.append(f"  ({opt.get('label')}) {opt.get('text')}")
+    steps = doubt.get("steps") or []
+    if steps:
+        lines.append("THE WORKING THEY CAN SEE:")
+        for step in sorted(steps, key=lambda s: s.get("n", 0)):
+            lines.append(f"  {step.get('n')}. {step.get('text')}")
+    elif doubt.get("explanation"):
+        lines.append(f"THE WORKING THEY CAN SEE:\n{doubt['explanation']}")
+    if doubt.get("answer"):
+        labels = doubt.get("option_labels") or []
+        shown = f"({', '.join(labels)}) {doubt['answer']}" if labels else doubt["answer"]
+        lines.append(f"FINAL ANSWER SHOWN: {shown}")
+    else:
+        # An `unsure` doubt shows working with no answer, and the student can
+        # see that. Saying so stops the model inventing one to be helpful.
+        lines.append(
+            "FINAL ANSWER SHOWN: none — this one was solved but the answer was "
+            "withheld, and the student can see that it was."
+        )
+    if doubt.get("key_idea"):
+        lines.append(f"KEY IDEA SHOWN: {doubt['key_idea']}")
+    return "\n".join(lines)
+
+
+def stream_followup(doubt: Dict[str, Any], question: str,
+                    history: Optional[List[Dict[str, str]]] = None):
+    """Yields the reply a token at a time.
+
+    Streamed rather than returned whole because the student is mid-conversation
+    and watching: first words in under a second reads as an answer arriving,
+    where four seconds of nothing reads as a hang.
+    """
+    messages: List[Dict[str, str]] = [
+        {"role": "system", "content": load_prompt("snap_followup.md")},
+        {"role": "system", "content": followup_context(doubt)},
+    ]
+    for turn in (history or [])[-FOLLOWUP_MAX_TURNS:]:
+        role = turn.get("role")
+        content = (turn.get("content") or "").strip()[:FOLLOWUP_MAX_CHARS]
+        if role in ("user", "assistant") and content:
+            messages.append({"role": role, "content": content})
+    messages.append({"role": "user", "content": question[:FOLLOWUP_MAX_CHARS]})
+
+    client = _deepseek_client()
+    stream = client.chat.completions.create(
+        model=MODEL_FOLLOWUP,
+        messages=messages,
+        temperature=0.3,
+        max_tokens=700,
+        stream=True,
+        # No `thinking` here. The reasoning is already done and printed above;
+        # a follow-up that stops to think spends the student's patience on a
+        # question it can answer by reading.
+        extra_body={"thinking": {"type": "disabled"}},
+    )
+    for chunk in stream:
+        if not getattr(chunk, "choices", None):
+            continue
+        piece = chunk.choices[0].delta.content
+        if piece:
+            yield piece
 
 
 def _assert_model(returned: Optional[str], expected: str, stage: str) -> None:

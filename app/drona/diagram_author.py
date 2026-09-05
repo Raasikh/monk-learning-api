@@ -40,7 +40,7 @@ import xml.etree.ElementTree as ET
 from typing import List, Optional, Tuple
 
 from app.drona.diagram_templates import ALLOWED_COLORS, MAX_SVG_CHARS
-from app.drona.models import get_drona_client, get_model_name
+from app.drona.models import get_drona_client, get_model_name, thinking_off
 
 logger = logging.getLogger("drona.diagram_author")
 
@@ -296,8 +296,16 @@ def colliding_labels(svg: str) -> List[Tuple[str, str]]:
 def validate(svg: str) -> Tuple[bool, str]:
     """(ok, reason). Cheap, total, and the only thing standing between a model's
     output and a student's screen."""
-    if not svg or not svg.lstrip().startswith("<svg"):
-        return False, "does not start with <svg"
+    if not svg or not svg.strip():
+        # DISTINCT from a formatting failure, and it matters: an empty response
+        # means the CALL failed (bad model id, filtered, truncated), while
+        # "does not start with <svg" means the model answered and we could not
+        # parse it. Reporting the second for the first sent a whole chapter's
+        # diagram loss to the wrong diagnosis -- the fix looked like string
+        # handling when it was a model id.
+        return False, "model returned an EMPTY response (call failed, not a formatting problem)"
+    if not svg.lstrip().startswith("<svg"):
+        return False, f"does not start with <svg (got {svg.lstrip()[:40]!r})"
     if len(svg) > MAX_SVG_CHARS:
         return False, f"{len(svg)} chars over the {MAX_SVG_CHARS} budget"
     low = svg.lower()
@@ -409,7 +417,7 @@ def author_diagram(
             res = client.chat.completions.create(
                 model=model_name, messages=messages, temperature=0.2,
                 max_tokens=3500, timeout=timeout,
-                extra_body={"thinking": {"type": "disabled"}},
+                extra_body=thinking_off(),
             )
             svg = _strip_fence(res.choices[0].message.content or "")
         except Exception as exc:

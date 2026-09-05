@@ -4,7 +4,7 @@ import time
 from typing import Dict, Any, List, Optional
 from fastapi import HTTPException
 from app.db import supabase
-from app.drona.models import get_drona_client, get_model_name, PLANNER_TIMEOUT_S
+from app.drona.models import get_drona_client, get_model_name, PLANNER_TIMEOUT_S, thinking_off
 from app.drona.prompt_loader import load_prompt, get_prompt_version
 from app.drona.json_utils import repair_latex_control_escapes
 from app.drona.retrieval import retrieve_dual_blocks
@@ -246,16 +246,9 @@ def plan_provenance(model_key: str = "planner") -> dict:
 
 
 def _thinking_off() -> dict:
-    """Body fragment that disables the model's reasoning pass.
-
-    DeepSeek direct takes {"thinking": {"type": "disabled"}}. OpenRouter
-    ignores that and needs {"reasoning": {"enabled": false}} -- and the
-    difference is not cosmetic: left on, a trivial prompt returned
-    completion=27 with reasoning=24, so every token measurement taken through
-    the gateway would be inflated by reasoning tokens the production path
-    never spends. Both keys are sent; each gateway ignores the other's.
-    """
-    return {"thinking": {"type": "disabled"}, "reasoning": {"enabled": False}}
+    """Delegates to models.thinking_off(). Kept as a name because three call
+    sites use it; the definition lives in models.py so it cannot drift again."""
+    return thinking_off()
 
 
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:

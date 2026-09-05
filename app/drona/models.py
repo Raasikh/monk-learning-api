@@ -91,6 +91,22 @@ def get_drona_async_client() -> AsyncOpenAI:
 
     return AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"), timeout=DEFAULT_TIMEOUT_S, max_retries=1)
 
+def thinking_off() -> dict:
+    """Body fragment that disables the model's reasoning pass.
+
+    ONE definition, because there were two and they drifted. DeepSeek direct
+    takes {"thinking": {"type": "disabled"}}; OpenRouter ignores that key and
+    needs {"reasoning": {"enabled": false}}. diagram_author.py carried its own
+    DeepSeek-only copy, so through a gateway its reasoning stayed ON, max_tokens
+    was consumed by reasoning, and every call returned EMPTY content -- which
+    surfaced as "does not start with <svg" and cost an entire chapter its
+    diagrams while looking like a string-parsing bug.
+
+    Both keys are sent; each gateway ignores the other's.
+    """
+    return {"thinking": {"type": "disabled"}, "reasoning": {"enabled": False}}
+
+
 def get_model_name(service: str) -> str:
     """Returns the non-negotiable model string for each Drona service (R1)."""
     # Allow environment override if specific provider requires alias mapping

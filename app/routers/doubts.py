@@ -32,6 +32,7 @@ from app.snap import (
     MAX_QUESTIONS,
     SnapError,
     solve_snapped_image,
+    stream_followup,
 )
 from app import exam_scope
 from app.exam_scope import canonical_subject
@@ -899,6 +900,88 @@ def get_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     )
     doubt["reported"] = bool(report.data)
     return doubt
+
+
+class FollowUpTurn(BaseModel):
+    role: str
+    content: str
+
+
+class FollowUpRequest(BaseModel):
+    question: str
+    """The exchange so far. Held by the CLIENT, not by us.
+
+    A follow-up lives as long as the student is looking at the solution and no
+    longer. Persisting it would mean a table, a retention decision and a delete
+    path for a conversation nobody asked to keep — so the phone carries it, and
+    it goes when the screen does.
+    """
+    history: List[FollowUpTurn] = []
+
+
+@router.post("/{doubt_id}/ask")
+def ask_about_doubt(doubt_id: str, body: FollowUpRequest,
+                    user_id: str = Depends(get_current_user_id)):
+    """POST /doubts/{id}/ask — a question about a solution already on screen.
+
+    Streams the reply a token at a time (`event: token`), because the student
+    is mid-conversation and watching: first words inside a second reads as an
+    answer arriving, four seconds of nothing reads as a hang.
+
+    The solution is loaded HERE, from the row, rather than accepted from the
+    request. The phone already has it, so sending it up would be simpler — and
+    would let any caller claim any question and any answer and have the model
+    explain it as fact.
+    """
+    question = (body.question or "").strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="Ask something first.")
+
+    try:
+        res = (
+            supabase.table("doubts")
+            .select(DETAIL_COLUMNS)
+            .eq("id", doubt_id)
+            .eq("user_id", user_id)
+            .execute()
+        )
+    except Exception as err:
+        logger.error("Could not read doubt %s for follow-up: %s", doubt_id[:8], err)
+        raise HTTPException(status_code=503, detail="That is not available right now.")
+    if not res.data:
+        raise HTTPException(status_code=404, detail="Doubt not found")
+    doubt = res.data[0]
+
+    def event(name: str, payload: Dict[str, Any]) -> str:
+        return f"event: {name}\ndata: {json.dumps(payload)}\n\n"
+
+    def stream():
+        started = time.time()
+        chars = 0
+        logger.info("[FOLLOWUP] doubt=%s user=%s asked %r (%d prior turns)",
+                    doubt_id[:8], user_id[:8], question[:80], len(body.history))
+        try:
+            for piece in stream_followup(
+                doubt, question,
+                [{"role": t.role, "content": t.content} for t in body.history],
+            ):
+                chars += len(piece)
+                yield event("token", {"text": piece})
+        except Exception as err:
+            logger.error("[FOLLOWUP] doubt=%s failed after %dms: %s",
+                         doubt_id[:8], int((time.time() - started) * 1000), err,
+                         exc_info=True)
+            yield event("error", {
+                "message": "Monk could not answer that just now. Try again in a moment.",
+            })
+            return
+        logger.info("[FOLLOWUP] doubt=%s done in %dms, %d chars",
+                    doubt_id[:8], int((time.time() - started) * 1000), chars)
+        yield event("done", {"total_ms": int((time.time() - started) * 1000)})
+
+    return StreamingResponse(stream(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache",
+                                      "X-Accel-Buffering": "no"})
 
 
 @router.post("/{doubt_id}/report", status_code=200)

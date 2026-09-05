@@ -2678,3 +2678,45 @@ def test_a_stream_that_has_begun_answering_gets_to_finish(monkeypatch):
     print(f"  attempts={len(attempts)} answer={out.get('answer')!r}")
     assert out["answer"] == "42", "a solve that was mid-answer was cut off"
     assert len(attempts) == 1, "it succeeded, so nothing should have been retried"
+
+
+def test_followup_context_is_built_from_the_stored_row():
+    """The solution comes from the row, never from the request.
+
+    The phone already has all of this, so accepting it from the client would be
+    simpler — and would let any caller assert any question and any answer and
+    have the model explain the invention as fact.
+    """
+    doubt = {
+        "stem": "Which of the following circuits is reverse-biased?",
+        "options": [{"label": "1", "text": "anode at +2V"},
+                    {"label": "4", "text": "cathode at +4V"}],
+        "steps": [{"n": 1, "text": "A diode conducts when the anode is higher."},
+                  {"n": 2, "text": "In (4) the cathode sits above the anode."}],
+        "answer": "cathode at +4V",
+        "option_labels": ["4"],
+        "key_idea": "Reverse-biased means anode below cathode.",
+    }
+    ctx = snap.followup_context(doubt)
+    print("  " + ctx.replace("\n", "\n  ")[:300])
+    assert "reverse-biased?" in ctx
+    assert "(4) cathode at +4V" in ctx
+    assert "A diode conducts" in ctx
+    assert "FINAL ANSWER SHOWN: (4) cathode at +4V" in ctx
+    assert "Reverse-biased means" in ctx
+
+
+def test_followup_context_says_when_no_answer_was_shown():
+    """An `unsure` doubt shows working and withholds the answer.
+
+    The student can see that it was withheld, so the model must know too —
+    otherwise it invents one to be helpful and contradicts the screen.
+    """
+    ctx = snap.followup_context({
+        "stem": "Find the energy density.",
+        "steps": [{"n": 1, "text": "Read the axis."}],
+        "answer": None,
+    })
+    print("  " + [l for l in ctx.split("\n") if "FINAL ANSWER" in l][0])
+    assert "none" in ctx.lower()
+    assert "withheld" in ctx.lower()
