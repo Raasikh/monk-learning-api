@@ -61,17 +61,43 @@ def retrieve_lesson_structure(chapter_id: str, subtopic: str) -> List[dict]:
     )
     all_sections = res.data or []
 
-    # Filter by matching subtopic (case-insensitive)
-    matched = [s for s in all_sections if (s.get('subtopic') or '').lower().strip() == subtopic.lower().strip()]
-    if not matched and all_sections:
-        sub_norm = subtopic.lower().strip()
-        matched = [s for s in all_sections if sub_norm in (s.get('subtopic') or '').lower()]
+    # EXACT TITLE MATCH ONLY. The substring fallback used to run here and has
+    # been removed, because a non-exact match measurably makes plans WORSE.
+    #
+    # Measured 2026-09-05, four matched/unmatched pairs across four subjects,
+    # scored on one pre-committed rubric. Unmatched won all four (18.00 vs
+    # 16.25 of 20). Depth and book-grounding tied EXACTLY; the entire gap was
+    # concept fidelity, and it ran opposite to the hypothesis:
+    #
+    #   matched "Polygenic Inheritance" spent a whole segment teaching
+    #     Pleiotropy -- a separate catalogue concept, because the authored
+    #     subtopic is "Polygenic Inheritance & Pleiotropy"
+    #   matched "Electric Field" spent FIVE of eight segments on sibling
+    #     concepts, because its subtopic is broader than the concept
+    #
+    # The single EXACT match in the experiment ("Integration by Parts" ->
+    # "Integration by Parts") was the only matched plan with no scope creep,
+    # scoring 5/5 on concept fidelity. Scope creep is proportional to how much
+    # broader the authored subtopic is than the concept -- so a substring hit,
+    # which by construction means the subtopic is WIDER than the concept, is
+    # the case that reliably drags the plan off-target.
+    #
+    # Caveat on the evidence: n=4, one non-blind rater, and all four pairs came
+    # from well-covered chapters. That is why every depth-only plan is logged
+    # with its chapter's chunk count below -- thin chapters are exactly the
+    # population this experiment could not see.
+    sub_norm = subtopic.lower().strip()
+    matched = [s for s in all_sections
+               if (s.get('subtopic') or '').lower().strip() == sub_norm]
 
     if not matched:
+        near = [s.get('subtopic') for s in all_sections
+                if sub_norm in (s.get('subtopic') or '').lower()]
         logger.warning(
-            f"📭 [NO LESSON SECTIONS] subtopic={subtopic!r} chapter={chapter_id} — "
-            f"{len(all_sections)} section(s) exist for this chapter but none match it. "
-            f"Planning without a structure block."
+            "[NO LESSON SECTIONS] subtopic=%r chapter=%s - %d section(s) exist "
+            "for this chapter, %d of them a SUBSTRING match (%r) which is "
+            "deliberately NOT used. Planning from book chunks alone.",
+            subtopic, chapter_id, len(all_sections), len(near), near[:2],
         )
     return matched
 
@@ -187,6 +213,18 @@ def retrieve_dual_blocks(chapter_id: str, subtopic: str) -> Tuple[str, str, bool
     # so False here is normal and is not a defect.
     grounded = len(pdf_chunks) > 0
     has_recorded_lesson = len(lesson_sections) > 0
+
+    # Depth-only plans are now the DESIGNED path, not the degraded one, so log
+    # them with the chapter's chunk count. The experiment that justified
+    # exact-match-only used four pairs, all from well-covered chapters
+    # (72-124 chunks). Thin chapters are the population it could not see, and
+    # this line is what will eventually show whether they behave differently.
+    if not has_recorded_lesson:
+        logger.info(
+            "[DEPTH-ONLY PLAN] subtopic=%r chapter=%s chunks=%d - planning "
+            "from book content alone (no exact lesson_sections match).",
+            subtopic, chapter_id, len(pdf_chunks),
+        )
 
     return structure_block, depth_block, grounded, has_recorded_lesson
 
