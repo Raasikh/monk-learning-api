@@ -622,6 +622,33 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
                     chapter_id=chap_data.get("id"), plan_id=plan_id,
                     subtopic_key=subtopic_key or sub_title)
         raw = res.choices[0].message.content or ""
+        finish = getattr(res.choices[0], "finish_reason", None) or "?"
+
+        # An EMPTY body and a body of the wrong SHAPE are different failures
+        # with different owners, and under response_format=json_object they
+        # look identical downstream: a degenerate generation returns "{}",
+        # which parses cleanly and then reports "board_content=n/a" -- a
+        # content complaint about a call that produced no content. The same
+        # confusion cost a day on diagram_author, where an empty body was
+        # reported as "does not start with <svg>".
+        #
+        # finish_reason is the field that separates them and nothing was
+        # logging it. Carry it into every message below.
+        if not raw.strip() or raw.strip() in ("{}", "[]"):
+            last_err = (f"segment {index+1}: EMPTY response from {model_name} "
+                        f"(finish_reason={finish}, {len(raw)} chars) -- this is a "
+                        f"gateway/model failure, not a content-shape failure")
+            logger.warning(f"⚠️ [SEGMENT EMPTY] {last_err} (attempt {attempt}/2)")
+            # Recorded as NOT ok: an empty body is billed and useless, and
+            # booking it ok=True is how spend hides inside a success rate.
+            record_call(model_name, "segment", ok=False, attempt=attempt, res=res,
+                        latency_ms=int((time.time() - t0) * 1000),
+                        chapter_id=chap_data.get("id"), plan_id=plan_id,
+                        subtopic_key=subtopic_key or sub_title, error=last_err)
+            # Do NOT append an empty assistant turn: it teaches the retry
+            # nothing and some gateways reject a message with empty content.
+            continue
+
         try:
             seg = sanitize_double_escaped_latex(json.loads(strip_fences(raw)))
         except json.JSONDecodeError:
@@ -634,7 +661,8 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
             if with_diagram:
                 _attach_example_diagram(seg, chap_data.get("subject") or "", sub_title)
             return seg
-        last_err = f"segment {index+1}: board_content={len(bc) if isinstance(bc, list) else 'n/a'}, checkpoint keys={list(cp)}"
+        last_err = (f"segment {index+1}: board_content={len(bc) if isinstance(bc, list) else 'n/a'}, "
+                    f"checkpoint keys={list(cp)}, finish_reason={finish}")
         logger.warning(f"⚠️ [SEGMENT RETRY] {last_err} (attempt {attempt}/2)")
         messages += [
             {"role": "assistant", "content": raw},
