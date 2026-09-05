@@ -15,6 +15,7 @@
     "exam_date": "2023-01-29",
     "shift": 2,
     "paper_type": "question_paper",
+    "subject": null,
     "language": "English",
     "notes": "",
     "exam_tag": "jee-main",
@@ -25,12 +26,12 @@
       "entrance-exam"
     ],
     "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2023-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/153513-29-01-2023_Physics_Paper+With+Ans_Evening.pdf",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2023/jee-main-29-jan-2023-paper-shift-2/1008782",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/dH1WPIczcQNkfWGNJoVd",
     "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2023/02/2023020697.pdf",
     "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
   },
   "probe": {
     "sha256": "4974101ce55adce3d8603a958794c4b935faddd7c8c57b5f5e111c6c1a9b605b",

@@ -36,3 +36,7 @@ scripts/gate_results.jsonl
 .claude/
 .claudeignore
 .diagram-preview/
+
+# Extracted diagram crops — 1.4GB of binaries, reproducible from the papers + bboxes.
+# Assets belong in R2, never in git.
+data/nta_raw/diagram_assets/

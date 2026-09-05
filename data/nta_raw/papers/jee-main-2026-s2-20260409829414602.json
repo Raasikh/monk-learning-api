@@ -1,1845 +1,2445 @@
 {
+ "paper_id": "jee-main-2026-s2-20260409829414602",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2026-s2-20260409829414602",
+  "exam": "jee-main",
+  "year": 2026,
+  "session": 2,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "language": "English",
+  "notes": "official NTA 2026 paper; exam_date/shift not in URL",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2026-s2-20260409829414602",
-    "exam": "jee-main",
-    "year": 2026,
-    "session": 2,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
-    "language": "English",
-    "notes": "official NTA 2026 paper; exam_date/shift not in URL",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "official",
-    "source_site": "cdnbbsr.s3waas.gov.in",
-    "source_page_url": "",
-    "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409829414602.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
-    "key_join_strategy": "question_id",
-    "key_join_notes": ""
-  },
-  "probe": {
-    "sha256": "876efb4250b5d8e096f28bb48d9078e39f25f1ad70473701e5c13523716588d4",
-    "page_count": 30,
-    "text_chars": 22854,
-    "has_text_layer": true,
-    "has_question_ids": true,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2026-s2-20260409829414602.pdf"
-  },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
-    "validation": "not_verified",
-    "entries": []
-  },
-  "format": "nta_2026",
-  "status": "extracted",
-  "detected_paper_meta": {
-    "question_paper_name": "B Tech 5th Apr 2026 Shift 2",
-    "exam_date": "2026-04-05",
-    "shift": 2
-  },
-  "question_count": 75,
-  "defects": [
-    "73/75 questions carry parse_flags",
-    "73/75 stems are image-only in the text layer; IDs/structure extracted but content needs OCR"
-  ],
-  "questions": [
-    {
-      "qno": 1,
-      "question_id": "691121451",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211531",
-        "6911211532",
-        "6911211533",
-        "6911211534"
-      ],
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 2,
-      "question_id": "691121452",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211535",
-        "6911211536",
-        "6911211537",
-        "6911211538"
-      ],
-      "page_start": 1,
-      "page_end": 2,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 3,
-      "question_id": "691121453",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211539",
-        "6911211540",
-        "6911211541",
-        "6911211542"
-      ],
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 4,
-      "question_id": "691121454",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211543",
-        "6911211544",
-        "6911211545",
-        "6911211546"
-      ],
-      "page_start": 2,
-      "page_end": 3,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 5,
-      "question_id": "691121455",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211547",
-        "6911211548",
-        "6911211549",
-        "6911211550"
-      ],
-      "page_start": 3,
-      "page_end": 3,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 6,
-      "question_id": "691121456",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211551",
-        "6911211552",
-        "6911211553",
-        "6911211554"
-      ],
-      "page_start": 3,
-      "page_end": 3,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 7,
-      "question_id": "691121457",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211555",
-        "6911211556",
-        "6911211557",
-        "6911211558"
-      ],
-      "page_start": 3,
-      "page_end": 4,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 8,
-      "question_id": "691121458",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211559",
-        "6911211560",
-        "6911211561",
-        "6911211562"
-      ],
-      "page_start": 4,
-      "page_end": 4,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 9,
-      "question_id": "691121459",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211563",
-        "6911211564",
-        "6911211565",
-        "6911211566"
-      ],
-      "page_start": 4,
-      "page_end": 4,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 10,
-      "question_id": "691121460",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211567",
-        "6911211568",
-        "6911211569",
-        "6911211570"
-      ],
-      "page_start": 4,
-      "page_end": 5,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 11,
-      "question_id": "691121461",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211571",
-        "6911211572",
-        "6911211573",
-        "6911211574"
-      ],
-      "page_start": 5,
-      "page_end": 5,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 12,
-      "question_id": "691121462",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211575",
-        "6911211576",
-        "6911211577",
-        "6911211578"
-      ],
-      "page_start": 5,
-      "page_end": 5,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 13,
-      "question_id": "691121463",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211579",
-        "6911211580",
-        "6911211581",
-        "6911211582"
-      ],
-      "page_start": 5,
-      "page_end": 6,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 14,
-      "question_id": "691121464",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211583",
-        "6911211584",
-        "6911211585",
-        "6911211586"
-      ],
-      "page_start": 6,
-      "page_end": 6,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 15,
-      "question_id": "691121465",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211587",
-        "6911211588",
-        "6911211589",
-        "6911211590"
-      ],
-      "page_start": 6,
-      "page_end": 6,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 16,
-      "question_id": "691121466",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211591",
-        "6911211592",
-        "6911211593",
-        "6911211594"
-      ],
-      "page_start": 6,
-      "page_end": 7,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 17,
-      "question_id": "691121467",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211595",
-        "6911211596",
-        "6911211597",
-        "6911211598"
-      ],
-      "page_start": 7,
-      "page_end": 7,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 18,
-      "question_id": "691121468",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211599",
-        "6911211600",
-        "6911211601",
-        "6911211602"
-      ],
-      "page_start": 7,
-      "page_end": 8,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 19,
-      "question_id": "691121469",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211603",
-        "6911211604",
-        "6911211605",
-        "6911211606"
-      ],
-      "page_start": 8,
-      "page_end": 8,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 20,
-      "question_id": "691121470",
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": "Mathematics Section B Section Id : 69112138 Section Number : 2 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112138 Question Shuffling Allowed : Yes Is Section Default? : No"
-      },
-      "option_ids": [
-        "6911211607",
-        "6911211608",
-        "6911211609",
-        "6911211610"
-      ],
-      "page_start": 8,
-      "page_end": 8,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 21,
-      "question_id": "691121471",
-      "question_type": "numerical",
-      "subject": "Mathematics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 8,
-      "page_end": 9,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 22,
-      "question_id": "691121472",
-      "question_type": "numerical",
-      "subject": "Mathematics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 9,
-      "page_end": 9,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 23,
-      "question_id": "691121473",
-      "question_type": "numerical",
-      "subject": "Mathematics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 9,
-      "page_end": 9,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 24,
-      "question_id": "691121474",
-      "question_type": "numerical",
-      "subject": "Mathematics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 9,
-      "page_end": 9,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 25,
-      "question_id": "691121475",
-      "question_type": "numerical",
-      "subject": "Mathematics",
-      "section": "Section B",
-      "text": "Physics Section A\nSection Id :\n69112139\nSection Number :\n3\nSection type :\nOnline\nMandatory or Optional :\nMandatory\nNumber of Questions :\n20\nNumber of Questions to be attempted :\n20\nSection Marks :\n80\nMaximum Instruction Time :\n0\nSub-Section Number :\n1\nSub-Section Id :\n69112139\nQuestion Shuffling Allowed :\nYes\nIs Section Default? :\nNo",
-      "options": null,
-      "option_ids": null,
-      "page_start": 9,
-      "page_end": 10,
-      "parse_flags": []
-    },
-    {
-      "qno": 26,
-      "question_id": "691121476",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211616",
-        "6911211617",
-        "6911211618",
-        "6911211619"
-      ],
-      "page_start": 10,
-      "page_end": 10,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 27,
-      "question_id": "691121477",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211620",
-        "6911211621",
-        "6911211622",
-        "6911211623"
-      ],
-      "page_start": 10,
-      "page_end": 11,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 28,
-      "question_id": "691121478",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211624",
-        "6911211625",
-        "6911211626",
-        "6911211627"
-      ],
-      "page_start": 11,
-      "page_end": 11,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 29,
-      "question_id": "691121479",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211628",
-        "6911211629",
-        "6911211630",
-        "6911211631"
-      ],
-      "page_start": 11,
-      "page_end": 12,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 30,
-      "question_id": "691121480",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211632",
-        "6911211633",
-        "6911211634",
-        "6911211635"
-      ],
-      "page_start": 12,
-      "page_end": 12,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 31,
-      "question_id": "691121481",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211636",
-        "6911211637",
-        "6911211638",
-        "6911211639"
-      ],
-      "page_start": 12,
-      "page_end": 13,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 32,
-      "question_id": "691121482",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211640",
-        "6911211641",
-        "6911211642",
-        "6911211643"
-      ],
-      "page_start": 13,
-      "page_end": 13,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 33,
-      "question_id": "691121483",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211644",
-        "6911211645",
-        "6911211646",
-        "6911211647"
-      ],
-      "page_start": 13,
-      "page_end": 13,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 34,
-      "question_id": "691121484",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211648",
-        "6911211649",
-        "6911211650",
-        "6911211651"
-      ],
-      "page_start": 13,
-      "page_end": 14,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 35,
-      "question_id": "691121485",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211652",
-        "6911211653",
-        "6911211654",
-        "6911211655"
-      ],
-      "page_start": 14,
-      "page_end": 14,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 36,
-      "question_id": "691121486",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211656",
-        "6911211657",
-        "6911211658",
-        "6911211659"
-      ],
-      "page_start": 14,
-      "page_end": 15,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 37,
-      "question_id": "691121487",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211660",
-        "6911211661",
-        "6911211662",
-        "6911211663"
-      ],
-      "page_start": 15,
-      "page_end": 15,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 38,
-      "question_id": "691121488",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211664",
-        "6911211665",
-        "6911211666",
-        "6911211667"
-      ],
-      "page_start": 15,
-      "page_end": 16,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 39,
-      "question_id": "691121489",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211668",
-        "6911211669",
-        "6911211670",
-        "6911211671"
-      ],
-      "page_start": 16,
-      "page_end": 16,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 40,
-      "question_id": "691121490",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211672",
-        "6911211673",
-        "6911211674",
-        "6911211675"
-      ],
-      "page_start": 16,
-      "page_end": 16,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 41,
-      "question_id": "691121491",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211676",
-        "6911211677",
-        "6911211678",
-        "6911211679"
-      ],
-      "page_start": 16,
-      "page_end": 17,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 42,
-      "question_id": "691121492",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211680",
-        "6911211681",
-        "6911211682",
-        "6911211683"
-      ],
-      "page_start": 17,
-      "page_end": 17,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 43,
-      "question_id": "691121493",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211684",
-        "6911211685",
-        "6911211686",
-        "6911211687"
-      ],
-      "page_start": 17,
-      "page_end": 18,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 44,
-      "question_id": "691121494",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211688",
-        "6911211689",
-        "6911211690",
-        "6911211691"
-      ],
-      "page_start": 18,
-      "page_end": 18,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 45,
-      "question_id": "691121495",
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": "Physics Section B Section Id : 69112140 Section Number : 4 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112140 Question Shuffling Allowed : Yes Is Section Default? : No"
-      },
-      "option_ids": [
-        "6911211692",
-        "6911211693",
-        "6911211694",
-        "6911211695"
-      ],
-      "page_start": 18,
-      "page_end": 19,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 46,
-      "question_id": "691121496",
-      "question_type": "numerical",
-      "subject": "Physics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 19,
-      "page_end": 19,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 47,
-      "question_id": "691121497",
-      "question_type": "numerical",
-      "subject": "Physics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 19,
-      "page_end": 19,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 48,
-      "question_id": "691121498",
-      "question_type": "numerical",
-      "subject": "Physics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 19,
-      "page_end": 19,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 49,
-      "question_id": "691121499",
-      "question_type": "numerical",
-      "subject": "Physics",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 19,
-      "page_end": 19,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 50,
-      "question_id": "691121500",
-      "question_type": "numerical",
-      "subject": "Physics",
-      "section": "Section B",
-      "text": "Chemistry Section A\nSection Id :\n69112141\nSection Number :\n5\nSection type :\nOnline\nMandatory or Optional :\nMandatory\nNumber of Questions :\n20\nNumber of Questions to be attempted :\n20\nSection Marks :\n80\nMaximum Instruction Time :\n0\nSub-Section Number :\n1\nSub-Section Id :\n69112141\nQuestion Shuffling Allowed :\nYes\nIs Section Default? :\nNo",
-      "options": null,
-      "option_ids": null,
-      "page_start": 19,
-      "page_end": 20,
-      "parse_flags": []
-    },
-    {
-      "qno": 51,
-      "question_id": "691121501",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211701",
-        "6911211702",
-        "6911211703",
-        "6911211704"
-      ],
-      "page_start": 20,
-      "page_end": 20,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 52,
-      "question_id": "691121502",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211705",
-        "6911211706",
-        "6911211707",
-        "6911211708"
-      ],
-      "page_start": 20,
-      "page_end": 21,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 53,
-      "question_id": "691121503",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211709",
-        "6911211710",
-        "6911211711",
-        "6911211712"
-      ],
-      "page_start": 21,
-      "page_end": 21,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 54,
-      "question_id": "691121504",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211713",
-        "6911211714",
-        "6911211715",
-        "6911211716"
-      ],
-      "page_start": 21,
-      "page_end": 22,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 55,
-      "question_id": "691121505",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211717",
-        "6911211718",
-        "6911211719",
-        "6911211720"
-      ],
-      "page_start": 22,
-      "page_end": 22,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 56,
-      "question_id": "691121506",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211721",
-        "6911211722",
-        "6911211723",
-        "6911211724"
-      ],
-      "page_start": 22,
-      "page_end": 23,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 57,
-      "question_id": "691121507",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211725",
-        "6911211726",
-        "6911211727",
-        "6911211728"
-      ],
-      "page_start": 23,
-      "page_end": 23,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 58,
-      "question_id": "691121508",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211729",
-        "6911211730",
-        "6911211731",
-        "6911211732"
-      ],
-      "page_start": 23,
-      "page_end": 24,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 59,
-      "question_id": "691121509",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211733",
-        "6911211734",
-        "6911211735",
-        "6911211736"
-      ],
-      "page_start": 24,
-      "page_end": 24,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 60,
-      "question_id": "691121510",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211737",
-        "6911211738",
-        "6911211739",
-        "6911211740"
-      ],
-      "page_start": 24,
-      "page_end": 24,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 61,
-      "question_id": "691121511",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211741",
-        "6911211742",
-        "6911211743",
-        "6911211744"
-      ],
-      "page_start": 24,
-      "page_end": 25,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 62,
-      "question_id": "691121512",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211745",
-        "6911211746",
-        "6911211747",
-        "6911211748"
-      ],
-      "page_start": 25,
-      "page_end": 25,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 63,
-      "question_id": "691121513",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211749",
-        "6911211750",
-        "6911211751",
-        "6911211752"
-      ],
-      "page_start": 25,
-      "page_end": 26,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 64,
-      "question_id": "691121514",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211753",
-        "6911211754",
-        "6911211755",
-        "6911211756"
-      ],
-      "page_start": 26,
-      "page_end": 26,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 65,
-      "question_id": "691121515",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211757",
-        "6911211758",
-        "6911211759",
-        "6911211760"
-      ],
-      "page_start": 26,
-      "page_end": 27,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 66,
-      "question_id": "691121516",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211761",
-        "6911211762",
-        "6911211763",
-        "6911211764"
-      ],
-      "page_start": 27,
-      "page_end": 27,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 67,
-      "question_id": "691121517",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211765",
-        "6911211766",
-        "6911211767",
-        "6911211768"
-      ],
-      "page_start": 27,
-      "page_end": 28,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 68,
-      "question_id": "691121518",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211769",
-        "6911211770",
-        "6911211771",
-        "6911211772"
-      ],
-      "page_start": 28,
-      "page_end": 28,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 69,
-      "question_id": "691121519",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "option_ids": [
-        "6911211773",
-        "6911211774",
-        "6911211775",
-        "6911211776"
-      ],
-      "page_start": 28,
-      "page_end": 29,
-      "parse_flags": [
-        "options_image_only",
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 70,
-      "question_id": "691121520",
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": "Section A",
-      "text": "",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": "Chemistry Section B Section Id : 69112142 Section Number : 6 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112142 Question Shuffling Allowed : Yes Is Section Default? : No"
-      },
-      "option_ids": [
-        "6911211777",
-        "6911211778",
-        "6911211779",
-        "6911211780"
-      ],
-      "page_start": 29,
-      "page_end": 29,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 71,
-      "question_id": "691121521",
-      "question_type": "numerical",
-      "subject": "Chemistry",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 29,
-      "page_end": 29,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 72,
-      "question_id": "691121522",
-      "question_type": "numerical",
-      "subject": "Chemistry",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 29,
-      "page_end": 30,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 73,
-      "question_id": "691121523",
-      "question_type": "numerical",
-      "subject": "Chemistry",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 30,
-      "page_end": 30,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 74,
-      "question_id": "691121524",
-      "question_type": "numerical",
-      "subject": "Chemistry",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 30,
-      "page_end": 30,
-      "parse_flags": [
-        "stem_image_only"
-      ]
-    },
-    {
-      "qno": 75,
-      "question_id": "691121525",
-      "question_type": "numerical",
-      "subject": "Chemistry",
-      "section": "Section B",
-      "text": "",
-      "options": null,
-      "option_ids": null,
-      "page_start": 30,
-      "page_end": 30,
-      "parse_flags": [
-        "stem_image_only"
-      ]
+  "source_tier": "official",
+  "source_site": "cdnbbsr.s3waas.gov.in",
+  "source_page_url": "",
+  "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409829414602.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "key_join_strategy": "question_id",
+  "key_join_notes": ""
+ },
+ "probe": {
+  "sha256": "876efb4250b5d8e096f28bb48d9078e39f25f1ad70473701e5c13523716588d4",
+  "page_count": 30,
+  "text_chars": 22854,
+  "has_text_layer": true,
+  "has_question_ids": true,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2026-s2-20260409829414602.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "691121451",
+    "answer": {
+     "raw": "6911211533",
+     "option": "C"
     }
+   },
+   {
+    "qno": 2,
+    "question_id": "691121452",
+    "answer": {
+     "raw": "6911211538",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "691121453",
+    "answer": {
+     "raw": "6911211539",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "691121454",
+    "answer": {
+     "raw": "6911211544",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "691121455",
+    "answer": {
+     "raw": "6911211549",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "691121456",
+    "answer": {
+     "raw": "6911211554",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "691121457",
+    "answer": {
+     "raw": "6911211556",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "691121458",
+    "answer": {
+     "raw": "6911211560",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "691121459",
+    "answer": {
+     "raw": "6911211563",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "691121460",
+    "answer": {
+     "raw": "6911211567",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "691121461",
+    "answer": {
+     "raw": "6911211572",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "691121462",
+    "answer": {
+     "raw": "6911211576",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "691121463",
+    "answer": {
+     "raw": "6911211581",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "691121464",
+    "answer": {
+     "raw": "6911211585",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "691121465",
+    "answer": {
+     "raw": "6911211589",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "691121466",
+    "answer": {
+     "raw": "6911211592",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "691121467",
+    "answer": {
+     "raw": "6911211597",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "691121468",
+    "answer": {
+     "raw": "6911211600",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "691121469",
+    "answer": {
+     "raw": "6911211603",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "691121470",
+    "answer": {
+     "raw": "6911211608",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "691121471",
+    "answer": {
+     "raw": "18",
+     "value": "18"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "691121472",
+    "answer": {
+     "raw": "7",
+     "value": "7"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "691121473",
+    "answer": {
+     "raw": "19",
+     "value": "19"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "691121474",
+    "answer": {
+     "raw": "16",
+     "value": "16"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "691121475",
+    "answer": {
+     "raw": "48",
+     "value": "48"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "691121476",
+    "answer": {
+     "raw": "6911211617",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "691121477",
+    "answer": {
+     "raw": "6911211623",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "691121478",
+    "answer": {
+     "raw": "6911211624",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "691121479",
+    "answer": {
+     "raw": "6911211630",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "691121480",
+    "answer": {
+     "raw": "6911211633",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 31,
+    "question_id": "691121481",
+    "answer": {
+     "raw": "6911211639",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 32,
+    "question_id": "691121482",
+    "answer": {
+     "raw": "6911211643",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 33,
+    "question_id": "691121483",
+    "answer": {
+     "raw": "6911211645",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 34,
+    "question_id": "691121484",
+    "answer": {
+     "raw": "6911211650",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 35,
+    "question_id": "691121485",
+    "answer": {
+     "raw": "6911211652",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 36,
+    "question_id": "691121486",
+    "answer": {
+     "raw": "6911211656",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 37,
+    "question_id": "691121487",
+    "answer": {
+     "raw": "6911211660",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 38,
+    "question_id": "691121488",
+    "answer": {
+     "raw": "6911211664",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 39,
+    "question_id": "691121489",
+    "answer": {
+     "raw": "6911211669",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 40,
+    "question_id": "691121490",
+    "answer": {
+     "raw": "6911211672",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 41,
+    "question_id": "691121491",
+    "answer": {
+     "raw": "6911211677",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 42,
+    "question_id": "691121492",
+    "answer": {
+     "raw": "6911211681",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 43,
+    "question_id": "691121493",
+    "answer": {
+     "raw": "6911211686",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 44,
+    "question_id": "691121494",
+    "answer": {
+     "raw": "6911211689",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 45,
+    "question_id": "691121495",
+    "answer": {
+     "raw": "6911211693",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 46,
+    "question_id": "691121496",
+    "answer": {
+     "raw": "33",
+     "value": "33"
+    }
+   },
+   {
+    "qno": 47,
+    "question_id": "691121497",
+    "answer": {
+     "raw": "922",
+     "value": "922"
+    }
+   },
+   {
+    "qno": 48,
+    "question_id": "691121498",
+    "answer": {
+     "raw": "200",
+     "value": "200"
+    }
+   },
+   {
+    "qno": 49,
+    "question_id": "691121499",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 50,
+    "question_id": "691121500",
+    "answer": {
+     "raw": "44",
+     "value": "44"
+    }
+   },
+   {
+    "qno": 51,
+    "question_id": "691121501",
+    "answer": {
+     "raw": "6911211703",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 52,
+    "question_id": "691121502",
+    "answer": {
+     "raw": "6911211706",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 53,
+    "question_id": "691121503",
+    "answer": {
+     "raw": "6911211709",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 54,
+    "question_id": "691121504",
+    "answer": {
+     "raw": "6911211714",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 55,
+    "question_id": "691121505",
+    "answer": {
+     "raw": "6911211718",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 56,
+    "question_id": "691121506",
+    "answer": {
+     "raw": "6911211722",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 57,
+    "question_id": "691121507",
+    "answer": {
+     "raw": "6911211726",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 58,
+    "question_id": "691121508",
+    "answer": {
+     "raw": "6911211729",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 59,
+    "question_id": "691121509",
+    "answer": {
+     "raw": "6911211736",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 60,
+    "question_id": "691121510",
+    "answer": {
+     "raw": "6911211737",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 61,
+    "question_id": "691121511",
+    "answer": {
+     "raw": "6911211743",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 62,
+    "question_id": "691121512",
+    "answer": {
+     "raw": "6911211746",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 63,
+    "question_id": "691121513",
+    "answer": {
+     "raw": "6911211749",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 64,
+    "question_id": "691121514",
+    "answer": {
+     "raw": "6911211755",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 65,
+    "question_id": "691121515",
+    "answer": {
+     "raw": "6911211757",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 66,
+    "question_id": "691121516",
+    "answer": {
+     "raw": "6911211764",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 67,
+    "question_id": "691121517",
+    "answer": {
+     "raw": "6911211768",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 68,
+    "question_id": "691121518",
+    "answer": {
+     "raw": "6911211771",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 69,
+    "question_id": "691121519",
+    "answer": {
+     "raw": "6911211773",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 70,
+    "question_id": "691121520",
+    "answer": {
+     "raw": "6911211780",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 71,
+    "question_id": "691121521",
+    "answer": {
+     "raw": "15",
+     "value": "15"
+    }
+   },
+   {
+    "qno": 72,
+    "question_id": "691121522",
+    "answer": {
+     "raw": "30",
+     "value": "30"
+    }
+   },
+   {
+    "qno": 73,
+    "question_id": "691121523",
+    "answer": {
+     "raw": "62",
+     "value": "62"
+    }
+   },
+   {
+    "qno": 74,
+    "question_id": "691121524",
+    "answer": {
+     "raw": "15",
+     "value": "15"
+    }
+   },
+   {
+    "qno": 75,
+    "question_id": "691121525",
+    "answer": {
+     "raw": "90",
+     "value": "90"
+    }
+   }
   ]
+ },
+ "format": "nta_2026",
+ "status": "extracted",
+ "detected_paper_meta": {
+  "question_paper_name": "B Tech 5th Apr 2026 Shift 2",
+  "exam_date": "2026-04-05",
+  "shift": 2
+ },
+ "question_count": 75,
+ "defects": [
+  "73/75 questions carry parse_flags",
+  "73/75 stems are image-only in the text layer; IDs/structure extracted but content needs OCR"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "691121451",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211531",
+    "6911211532",
+    "6911211533",
+    "6911211534"
+   ],
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 2,
+   "question_id": "691121452",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211535",
+    "6911211536",
+    "6911211537",
+    "6911211538"
+   ],
+   "page_start": 1,
+   "page_end": 2,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 3,
+   "question_id": "691121453",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211539",
+    "6911211540",
+    "6911211541",
+    "6911211542"
+   ],
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 4,
+   "question_id": "691121454",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211543",
+    "6911211544",
+    "6911211545",
+    "6911211546"
+   ],
+   "page_start": 2,
+   "page_end": 3,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 5,
+   "question_id": "691121455",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211547",
+    "6911211548",
+    "6911211549",
+    "6911211550"
+   ],
+   "page_start": 3,
+   "page_end": 3,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 6,
+   "question_id": "691121456",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211551",
+    "6911211552",
+    "6911211553",
+    "6911211554"
+   ],
+   "page_start": 3,
+   "page_end": 3,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 7,
+   "question_id": "691121457",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211555",
+    "6911211556",
+    "6911211557",
+    "6911211558"
+   ],
+   "page_start": 3,
+   "page_end": 4,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 8,
+   "question_id": "691121458",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211559",
+    "6911211560",
+    "6911211561",
+    "6911211562"
+   ],
+   "page_start": 4,
+   "page_end": 4,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 9,
+   "question_id": "691121459",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211563",
+    "6911211564",
+    "6911211565",
+    "6911211566"
+   ],
+   "page_start": 4,
+   "page_end": 4,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 10,
+   "question_id": "691121460",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211567",
+    "6911211568",
+    "6911211569",
+    "6911211570"
+   ],
+   "page_start": 4,
+   "page_end": 5,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 11,
+   "question_id": "691121461",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211571",
+    "6911211572",
+    "6911211573",
+    "6911211574"
+   ],
+   "page_start": 5,
+   "page_end": 5,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 12,
+   "question_id": "691121462",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211575",
+    "6911211576",
+    "6911211577",
+    "6911211578"
+   ],
+   "page_start": 5,
+   "page_end": 5,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 13,
+   "question_id": "691121463",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211579",
+    "6911211580",
+    "6911211581",
+    "6911211582"
+   ],
+   "page_start": 5,
+   "page_end": 6,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 14,
+   "question_id": "691121464",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211583",
+    "6911211584",
+    "6911211585",
+    "6911211586"
+   ],
+   "page_start": 6,
+   "page_end": 6,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 15,
+   "question_id": "691121465",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211587",
+    "6911211588",
+    "6911211589",
+    "6911211590"
+   ],
+   "page_start": 6,
+   "page_end": 6,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 16,
+   "question_id": "691121466",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211591",
+    "6911211592",
+    "6911211593",
+    "6911211594"
+   ],
+   "page_start": 6,
+   "page_end": 7,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 17,
+   "question_id": "691121467",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211595",
+    "6911211596",
+    "6911211597",
+    "6911211598"
+   ],
+   "page_start": 7,
+   "page_end": 7,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 18,
+   "question_id": "691121468",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211599",
+    "6911211600",
+    "6911211601",
+    "6911211602"
+   ],
+   "page_start": 7,
+   "page_end": 8,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 19,
+   "question_id": "691121469",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211603",
+    "6911211604",
+    "6911211605",
+    "6911211606"
+   ],
+   "page_start": 8,
+   "page_end": 8,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 20,
+   "question_id": "691121470",
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Mathematics Section B Section Id : 69112138 Section Number : 2 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112138 Question Shuffling Allowed : Yes Is Section Default? : No"
+   },
+   "option_ids": [
+    "6911211607",
+    "6911211608",
+    "6911211609",
+    "6911211610"
+   ],
+   "page_start": 8,
+   "page_end": 8,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 21,
+   "question_id": "691121471",
+   "question_type": "numerical",
+   "subject": "Mathematics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 8,
+   "page_end": 9,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 22,
+   "question_id": "691121472",
+   "question_type": "numerical",
+   "subject": "Mathematics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 9,
+   "page_end": 9,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 23,
+   "question_id": "691121473",
+   "question_type": "numerical",
+   "subject": "Mathematics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 9,
+   "page_end": 9,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 24,
+   "question_id": "691121474",
+   "question_type": "numerical",
+   "subject": "Mathematics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 9,
+   "page_end": 9,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 25,
+   "question_id": "691121475",
+   "question_type": "numerical",
+   "subject": "Mathematics",
+   "section": "Section B",
+   "text": "Physics Section A\nSection Id :\n69112139\nSection Number :\n3\nSection type :\nOnline\nMandatory or Optional :\nMandatory\nNumber of Questions :\n20\nNumber of Questions to be attempted :\n20\nSection Marks :\n80\nMaximum Instruction Time :\n0\nSub-Section Number :\n1\nSub-Section Id :\n69112139\nQuestion Shuffling Allowed :\nYes\nIs Section Default? :\nNo",
+   "options": null,
+   "option_ids": null,
+   "page_start": 9,
+   "page_end": 10,
+   "parse_flags": []
+  },
+  {
+   "qno": 26,
+   "question_id": "691121476",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211616",
+    "6911211617",
+    "6911211618",
+    "6911211619"
+   ],
+   "page_start": 10,
+   "page_end": 10,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 27,
+   "question_id": "691121477",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211620",
+    "6911211621",
+    "6911211622",
+    "6911211623"
+   ],
+   "page_start": 10,
+   "page_end": 11,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 28,
+   "question_id": "691121478",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211624",
+    "6911211625",
+    "6911211626",
+    "6911211627"
+   ],
+   "page_start": 11,
+   "page_end": 11,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 29,
+   "question_id": "691121479",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211628",
+    "6911211629",
+    "6911211630",
+    "6911211631"
+   ],
+   "page_start": 11,
+   "page_end": 12,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 30,
+   "question_id": "691121480",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211632",
+    "6911211633",
+    "6911211634",
+    "6911211635"
+   ],
+   "page_start": 12,
+   "page_end": 12,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 31,
+   "question_id": "691121481",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211636",
+    "6911211637",
+    "6911211638",
+    "6911211639"
+   ],
+   "page_start": 12,
+   "page_end": 13,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 32,
+   "question_id": "691121482",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211640",
+    "6911211641",
+    "6911211642",
+    "6911211643"
+   ],
+   "page_start": 13,
+   "page_end": 13,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 33,
+   "question_id": "691121483",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211644",
+    "6911211645",
+    "6911211646",
+    "6911211647"
+   ],
+   "page_start": 13,
+   "page_end": 13,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 34,
+   "question_id": "691121484",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211648",
+    "6911211649",
+    "6911211650",
+    "6911211651"
+   ],
+   "page_start": 13,
+   "page_end": 14,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 35,
+   "question_id": "691121485",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211652",
+    "6911211653",
+    "6911211654",
+    "6911211655"
+   ],
+   "page_start": 14,
+   "page_end": 14,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 36,
+   "question_id": "691121486",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211656",
+    "6911211657",
+    "6911211658",
+    "6911211659"
+   ],
+   "page_start": 14,
+   "page_end": 15,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 37,
+   "question_id": "691121487",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211660",
+    "6911211661",
+    "6911211662",
+    "6911211663"
+   ],
+   "page_start": 15,
+   "page_end": 15,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 38,
+   "question_id": "691121488",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211664",
+    "6911211665",
+    "6911211666",
+    "6911211667"
+   ],
+   "page_start": 15,
+   "page_end": 16,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 39,
+   "question_id": "691121489",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211668",
+    "6911211669",
+    "6911211670",
+    "6911211671"
+   ],
+   "page_start": 16,
+   "page_end": 16,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 40,
+   "question_id": "691121490",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211672",
+    "6911211673",
+    "6911211674",
+    "6911211675"
+   ],
+   "page_start": 16,
+   "page_end": 16,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 41,
+   "question_id": "691121491",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211676",
+    "6911211677",
+    "6911211678",
+    "6911211679"
+   ],
+   "page_start": 16,
+   "page_end": 17,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 42,
+   "question_id": "691121492",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211680",
+    "6911211681",
+    "6911211682",
+    "6911211683"
+   ],
+   "page_start": 17,
+   "page_end": 17,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 43,
+   "question_id": "691121493",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211684",
+    "6911211685",
+    "6911211686",
+    "6911211687"
+   ],
+   "page_start": 17,
+   "page_end": 18,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 44,
+   "question_id": "691121494",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211688",
+    "6911211689",
+    "6911211690",
+    "6911211691"
+   ],
+   "page_start": 18,
+   "page_end": 18,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 45,
+   "question_id": "691121495",
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Physics Section B Section Id : 69112140 Section Number : 4 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112140 Question Shuffling Allowed : Yes Is Section Default? : No"
+   },
+   "option_ids": [
+    "6911211692",
+    "6911211693",
+    "6911211694",
+    "6911211695"
+   ],
+   "page_start": 18,
+   "page_end": 19,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 46,
+   "question_id": "691121496",
+   "question_type": "numerical",
+   "subject": "Physics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 19,
+   "page_end": 19,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 47,
+   "question_id": "691121497",
+   "question_type": "numerical",
+   "subject": "Physics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 19,
+   "page_end": 19,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 48,
+   "question_id": "691121498",
+   "question_type": "numerical",
+   "subject": "Physics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 19,
+   "page_end": 19,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 49,
+   "question_id": "691121499",
+   "question_type": "numerical",
+   "subject": "Physics",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 19,
+   "page_end": 19,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 50,
+   "question_id": "691121500",
+   "question_type": "numerical",
+   "subject": "Physics",
+   "section": "Section B",
+   "text": "Chemistry Section A\nSection Id :\n69112141\nSection Number :\n5\nSection type :\nOnline\nMandatory or Optional :\nMandatory\nNumber of Questions :\n20\nNumber of Questions to be attempted :\n20\nSection Marks :\n80\nMaximum Instruction Time :\n0\nSub-Section Number :\n1\nSub-Section Id :\n69112141\nQuestion Shuffling Allowed :\nYes\nIs Section Default? :\nNo",
+   "options": null,
+   "option_ids": null,
+   "page_start": 19,
+   "page_end": 20,
+   "parse_flags": []
+  },
+  {
+   "qno": 51,
+   "question_id": "691121501",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211701",
+    "6911211702",
+    "6911211703",
+    "6911211704"
+   ],
+   "page_start": 20,
+   "page_end": 20,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 52,
+   "question_id": "691121502",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211705",
+    "6911211706",
+    "6911211707",
+    "6911211708"
+   ],
+   "page_start": 20,
+   "page_end": 21,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 53,
+   "question_id": "691121503",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211709",
+    "6911211710",
+    "6911211711",
+    "6911211712"
+   ],
+   "page_start": 21,
+   "page_end": 21,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 54,
+   "question_id": "691121504",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211713",
+    "6911211714",
+    "6911211715",
+    "6911211716"
+   ],
+   "page_start": 21,
+   "page_end": 22,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 55,
+   "question_id": "691121505",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211717",
+    "6911211718",
+    "6911211719",
+    "6911211720"
+   ],
+   "page_start": 22,
+   "page_end": 22,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 56,
+   "question_id": "691121506",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211721",
+    "6911211722",
+    "6911211723",
+    "6911211724"
+   ],
+   "page_start": 22,
+   "page_end": 23,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 57,
+   "question_id": "691121507",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211725",
+    "6911211726",
+    "6911211727",
+    "6911211728"
+   ],
+   "page_start": 23,
+   "page_end": 23,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 58,
+   "question_id": "691121508",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211729",
+    "6911211730",
+    "6911211731",
+    "6911211732"
+   ],
+   "page_start": 23,
+   "page_end": 24,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 59,
+   "question_id": "691121509",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211733",
+    "6911211734",
+    "6911211735",
+    "6911211736"
+   ],
+   "page_start": 24,
+   "page_end": 24,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 60,
+   "question_id": "691121510",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211737",
+    "6911211738",
+    "6911211739",
+    "6911211740"
+   ],
+   "page_start": 24,
+   "page_end": 24,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 61,
+   "question_id": "691121511",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211741",
+    "6911211742",
+    "6911211743",
+    "6911211744"
+   ],
+   "page_start": 24,
+   "page_end": 25,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 62,
+   "question_id": "691121512",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211745",
+    "6911211746",
+    "6911211747",
+    "6911211748"
+   ],
+   "page_start": 25,
+   "page_end": 25,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 63,
+   "question_id": "691121513",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211749",
+    "6911211750",
+    "6911211751",
+    "6911211752"
+   ],
+   "page_start": 25,
+   "page_end": 26,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 64,
+   "question_id": "691121514",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211753",
+    "6911211754",
+    "6911211755",
+    "6911211756"
+   ],
+   "page_start": 26,
+   "page_end": 26,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 65,
+   "question_id": "691121515",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211757",
+    "6911211758",
+    "6911211759",
+    "6911211760"
+   ],
+   "page_start": 26,
+   "page_end": 27,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 66,
+   "question_id": "691121516",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211761",
+    "6911211762",
+    "6911211763",
+    "6911211764"
+   ],
+   "page_start": 27,
+   "page_end": 27,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 67,
+   "question_id": "691121517",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211765",
+    "6911211766",
+    "6911211767",
+    "6911211768"
+   ],
+   "page_start": 27,
+   "page_end": 28,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 68,
+   "question_id": "691121518",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211769",
+    "6911211770",
+    "6911211771",
+    "6911211772"
+   ],
+   "page_start": 28,
+   "page_end": 28,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 69,
+   "question_id": "691121519",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": ""
+   },
+   "option_ids": [
+    "6911211773",
+    "6911211774",
+    "6911211775",
+    "6911211776"
+   ],
+   "page_start": 28,
+   "page_end": 29,
+   "parse_flags": [
+    "options_image_only",
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 70,
+   "question_id": "691121520",
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": "Section A",
+   "text": "",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Chemistry Section B Section Id : 69112142 Section Number : 6 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112142 Question Shuffling Allowed : Yes Is Section Default? : No"
+   },
+   "option_ids": [
+    "6911211777",
+    "6911211778",
+    "6911211779",
+    "6911211780"
+   ],
+   "page_start": 29,
+   "page_end": 29,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 71,
+   "question_id": "691121521",
+   "question_type": "numerical",
+   "subject": "Chemistry",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 29,
+   "page_end": 29,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 72,
+   "question_id": "691121522",
+   "question_type": "numerical",
+   "subject": "Chemistry",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 29,
+   "page_end": 30,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 73,
+   "question_id": "691121523",
+   "question_type": "numerical",
+   "subject": "Chemistry",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 30,
+   "page_end": 30,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 74,
+   "question_id": "691121524",
+   "question_type": "numerical",
+   "subject": "Chemistry",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 30,
+   "page_end": 30,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  },
+  {
+   "qno": 75,
+   "question_id": "691121525",
+   "question_type": "numerical",
+   "subject": "Chemistry",
+   "section": "Section B",
+   "text": "",
+   "options": null,
+   "option_ids": null,
+   "page_start": 30,
+   "page_end": 30,
+   "parse_flags": [
+    "stem_image_only"
+   ]
+  }
+ ]
 }

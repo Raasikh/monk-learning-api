@@ -1,0 +1,451 @@
+{
+  "paper_id": "jee-main-2022-shift-2-84lh5wdbnzsikbsyvh5j",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-2-84lh5wdbnzsikbsyvh5j",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/84lH5WdBnZSIKBsYVh5J",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "1fc93c22c6ccf7cae648eb4f85a3f46556d94741a0b3ca23b56366cfefd8cd20",
+    "page_count": 9,
+    "text_chars": 10095,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 17,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-2-84lh5wdbnzsikbsyvh5j.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "4",
+          "option": "D",
+          "option_index": 4
+        }
+      },
+      {
+        "qno": 11,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 12,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 13,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 14,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 15,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 16,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 17,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 12,
+  "defects": [
+    "22 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 2, 4, 5, 6, 2, 7, 8, 9, 10, 4, 2, 6, 5, 2]",
+    "12/12 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let f(x) be a quadratic polynomial such that f(–2) + f(3) = 0. If one root of f(x) = 0 is –1, then the sum of \nroots of f(x) = 0 is",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If n, A.M. are inserted between a and 100 such that the ratio of first mean and last mean equal to \nand \na + n = 33 then value of n is",
+      "options": {
+        "A": "20",
+        "B": "21",
+        "C": "22",
+        "D": "23"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "4",
+        "option": "D",
+        "option_index": 4
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If e and  are respectively the eccentricity and length of latus rectum of hyperbola \n1\nb\ny\n–\na\nx\n2\n2\n2\n2\n such that \ne2 = \n\n14",
+      "options": null,
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If e' & are the eccentricity and latus rectum of the conjugate hyperbola and (e)2 = \n\n8\n11\nthen \nthe value of 77a + 44b is",
+      "options": {
+        "A": "130",
+        "B": "140",
+        "C": "145",
+        "D": "155"
+      },
+      "page_start": 2,
+      "page_end": 6,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If z = x + iy is a complex number satisfies\ni\n–\nz\niz\nz\n2 \n\n then sum of square of all values of z satisfies \ngiven equation is",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If \nb\nax\nx\n7\n–\nx\n2\n1\nx\n–\n)\n4\n–\nx\nx\n3\nsin(\nlim\n3\n2\n2\n1\nx\n\n\n\n\n\n = –2, then the value of b – a is",
+      "options": null,
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The area bounded by x-axis and y = 3 – |x + 1| – |x – \n2\n1 | is",
+      "options": {
+        "A": "7 27",
+        "B": "8 27",
+        "C": "7 29",
+        "D": "7 25"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A chord of circle (x – 2 \n2 )2 + (y – 2 \n2 )2 = r2 is diameter of x2 + y2 – 2\n2 x – 6\n2 y + 14 = 0, then \nthe value of r is",
+      "options": {
+        "A": "10",
+        "B": "12",
+        "C": "15",
+        "D": "20"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If f(x) satisfying the relation f(x) + f(x + k) = n and 1 = \nnk\n4\n0\n,\ndx\n)\nx\n(f\n 2 = \nk\n3\nk\ndx\n)\nx\n(f\n then",
+      "options": {
+        "A": "1 + 2 = nk(2n + 2)",
+        "B": "1 + 2 = (2n + 2)",
+        "C": "1 + 2 = (2n + 2)k",
+        "D": "1 + 2 = (2n + 2)k"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "In how many ways 30 identical candies are distributed among four persons X1, X2, X3, X4, such that  \n \nX2 gets atleast 3 and atmost  7 and X3 gets atleast 2 and atmost 6",
+      "options": {
+        "A": "551",
+        "B": "550",
+        "C": "552",
+        "D": "549"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "",
+      "options": null,
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "28\n – \n2\n.\n3\n21\n.\n22\n.\n23\n.\n2\n + \n2\n.\n3\n16\n.\n17\n.\n18\n = 550",
+      "options": null,
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    }
+  ]
+}

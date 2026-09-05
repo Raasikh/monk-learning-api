@@ -1,0 +1,155 @@
+{
+  "paper_id": "jee-main-2021-s2-2021-07-22-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2021-s2-2021-07-22-shift-2",
+    "exam": "jee-main",
+    "year": 2021,
+    "session": 2,
+    "exam_date": "2021-07-22",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2021/jee-main-22-jul-2021-paper-shift-2/474662",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/QYNu4q1J8QIunErMWhtD",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "3904536946e05645e891719f62e5d3bc2a0fccbc87b71fa05d36801e3ab08584",
+    "page_count": 37,
+    "text_chars": 24883,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 48,
+    "answer_marker_hits": 59,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2021-s2-2021-07-22-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 0,
+        "question_id": null,
+        "subject": "Physics",
+        "section": null,
+        "answer": {
+          "raw": "C",
+          "option": "C"
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": "Physics",
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "exam_date": "2021-07-22",
+    "shift": 2
+  },
+  "question_count": 3,
+  "defects": [
+    "3/3 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 0,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "\n\n\n\n \n1\n2 10\n/\nkgm s\n\n\n\n \n0.2\n/\nkgm s\n\n \nBy conservation of linear momentum  \n\n\n3\n0\n4 10\n(50)\n4( )\nV\n\n\n\n\n  \nHere V=recoil velocity of gun  \n0.05 /\n5\n/\nV\nm s\ncm s\n\n\n\n  \n \nQuestion: An 80 kg object brought down by  80 cm  at constant speed. Find work done by \nexternal agent. \nOptions:",
+      "options": {
+        "A": "Zero",
+        "B": "640J ",
+        "C": "640J ",
+        "D": "645"
+      },
+      "page_start": 14,
+      "page_end": 16,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "C",
+        "option": "C"
+      }
+    },
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "can be written as \n5\n5\n1.25\n5\n4\nE\nr \n\n\n \n1\n5\n4\nE\nr\n\n\n\n \n\n4\n5\n.. 3\nE\nr\n\n\n",
+      "options": null,
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "can be written as \n2\n1\n2\nE\nr \n\n \n\n2\n2\n... 4\nE\nr\n\n\n\n \nSolving 3 and 4 we get \n3\n15\n2\n10\nE \n\n \n15\nx\n\n  \n  \n \n \n \n \n\n \nJEE-Main-22-07-2021-Shift-2 (Memory Based) \n \nCHEMISTRY \n \n \n \nQuestion: More dissolved oxygen is found in? \nOptions:",
+      "options": {
+        "A": "Boiling water",
+        "B": "Water at 4oC",
+        "C": "Water at 80oC",
+        "D": "Polluted water"
+      },
+      "page_start": 16,
+      "page_end": 37,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    }
+  ]
+}

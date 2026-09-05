@@ -1,0 +1,751 @@
+{
+  "paper_id": "jee-main-2016-s2-physics-s6ivvepeviuv2habm4gh",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2016-s2-physics-s6ivvepeviuv2habm4gh",
+    "exam": "jee-main",
+    "year": 2016,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2016/jee-main-2016-physics-question-paper-online-exam-9th-april-2016/98551",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/s6IvvEPEVIUv2HaBm4gh",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "f32b061f9abf94ba2717b12f68ae0a70b189ebd25fdf23a2b9464459e257117e",
+    "page_count": 21,
+    "text_chars": 22267,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 1,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2016-s2-physics-s6ivvepeviuv2habm4gh.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "10 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 5, 8, 10, 12, 14, 22, 24, 26, 28]",
+    "20/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the following ‘I’ refers to current and\nother symbols have their usual meaning.\nChoose the option that corresponds to the\ndimensions of electrical conductivity :",
+      "options": {
+        "A": "ML−3 T−3 I2",
+        "B": "M−1 L3 T3 I",
+        "C": "M−1 L−3 T3 I2",
+        "D": "M−1 L−3 T3 I"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following option correctly\ndescribes the variation of the speed v and\nacceleration ‘a’ of a point mass falling\nvertically in a viscous medium  that applies\na force F =−kv, where ‘k’ is a constant, on\nthe body ? (Graphs are schematic and not\ndrawn to scale)",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A rocket is fired  vertically from the earth\nwith an acceleration of 2g, where g is the\ngravitational acceleration.  On an inclined\nplane inside the rocket, making an angle θ\nwith the horizontal, a point object of mass\nm is kept.  The minimum coefficient of\nfriction µmin between the mass and the\ninclined surface such that the mass does not\nmove is :",
+      "options": {
+        "A": "tanθ",
+        "B": "2 tanθ",
+        "C": "3 tanθ",
+        "D": "tan2θ"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A car of weight W is on an inclined road\nthat rises by 100 m over a distance of 1 km\nand applies a constant frictional force  20\nW\non the car.  While moving uphill on the road\nat a speed of 10 ms−1, the car needs power\nP.  If it needs power 2\nP  while moving\ndownhill at speed v then value of v is :",
+      "options": {
+        "A": "20 ms−1",
+        "B": "15 ms−1",
+        "C": "10 ms−1",
+        "D": "5 ms−1"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A cubical block of side 30 cm is moving\nwith velocity 2 ms−1 on a smooth\nhorizontal surface. The surface has a bump\nat a point O as shown in figure. The angular\nvelocity (in rad/s) of the block immediately\nafter it hits the bump, is :",
+      "options": {
+        "A": "5.0",
+        "B": "6.7",
+        "C": "9.4",
+        "D": "13.3"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Figure shows elliptical path abcd of a planet\naround the sun S such that the area of\ntriangle csa is 1\n4  the area of the ellipse. (See\nfigure) With db as the semimajor axis, and\nca as the semiminor axis.  If t1 is the time\ntaken for planet to go over path abc and t2\nfor path taken over cda then :",
+      "options": {
+        "A": "t1=t2",
+        "B": "t1=2t2",
+        "C": "t1=3t2",
+        "D": "t1=4t2 5. ∞∑§ 30 cm ÷È¡Ê ﬂÊ‹Ê ÉÊŸËÿ é‹ÊÚ∑§ ∞∑§ Áø∑§Ÿ ˇÊÒÁÃ¡ Ã‹ ¬⁄U 2 ms−1 ∑§ ﬂª ‚ ªÁÃ◊ÊŸ „Ò– ¡Ò‚Ê Á∑§ ÁøòÊ ◊¥ ÁŒπÊÿÊ ªÿÊ „Ò, O ¬⁄U ∞∑§ •ﬂ⁄UÊœ ÁSÕÃ „Ò– •ﬂ⁄UÊœ ‚ ≈U∑§⁄UÊŸ ∑§ ÃÈ⁄¥UÃ ’ÊŒ é‹ÊÚ∑§ ∑§Ê ∑§ÊáÊËÿ ﬂª (⁄UÁ«UÿŸ/ ‚∑¥§«U ◊¥) „ÊªÊ —"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider a water jar of radius R that has\nwater filled up to height H and is kept on a\nstand of height h (see figure).  Through a\nhole of radius r (r << R) at its bottom, the\nwater leaks out and the stream of water\ncoming down towards the ground has a\nshape like a funnel as shown in the figure.\nIf the radius of the cross-section of water\nstream when it hits the ground is x. Then :",
+      "options": {
+        "A": "H r H h x       = +",
+        "B": "1 2 H r H h x       = +",
+        "C": "1 4 H r H h x       = +",
+        "D": "2 H r H h x       = + 7. ∞∑§ R ÁòÊíÿÊ ∑§ ¬ÊŸË ∑§ ¡Ê⁄, Á¡‚ ¬ÊŸË ‚ H ™°§øÊß¸ Ã∑§ ÷⁄UÊ ªÿÊ „Ò, ∑§Ê h ™°§øÊß¸ ∑§ S≈Ò¥U«U ¬⁄U ⁄UπÊ ªÿÊ „Ò (ÁøòÊ Œπ¥)– Ã‹ ◊¥ ∞∑§ ¿UÊ≈U Á¿UŒ˝, Á¡‚∑§Ë ÁòÊíÿÊ r „Ò (r << R), ‚ ŸËø Áª⁄UÃ „È∞ ¬ÊŸË ∑§Ë œÊ⁄U ∞∑§ “∑§Ë¬” ∑§Ê •Ê∑§Ê⁄U œÊ⁄UáÊ ∑§⁄UÃË „Ò– ÿÁŒ ÷ÍÁ◊ ∑§ Ã‹ ¬⁄U ¬ÊŸË ∑§Ë œÊ⁄U ∑§ •ŸÈ¬˝SÕ ∑§Ê≈U ∑§Ë ÁòÊíÿÊ x „Ò, Ã’ —"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "200 g water is heated from 408C to 608C.\nIgnoring the slight expansion of water, the\nchange in its internal energy is close to\n(Given \nspecific \nheat \nof\nwater=4184 J/kg/K) :",
+      "options": {
+        "A": "8.4 kJ",
+        "B": "4.2 kJ",
+        "C": "16.7 kJ",
+        "D": "167.4 kJ"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The ratio of work done by an ideal\nmonoatomic gas to the heat supplied to it\nin an isobaric process is :",
+      "options": {
+        "A": "3 5",
+        "B": "2 3",
+        "C": "3 2",
+        "D": "2 5 8. ¬ÊŸË ∑§ ÁﬂSÃÊ⁄U ∑§Ê Ÿªáÿ ◊ÊŸÃ „È∞, 200 g ¬ÊŸË ∑§Ê 408C ‚ 608C Ã∑§ ª⁄U◊ ∑§⁄UŸ ¬⁄U ©‚∑§Ë •Ê¥ÃÁ⁄U∑§ ™§¡Ê¸ ◊¥ •ŸÈ◊ÊÁŸÃ ¬Á⁄UﬂÃ¸Ÿ „ÊªÊ (¬ÊŸË ∑§Ê ÁﬂÁ‡Êc≈U ÃÊ¬ = 4184 J/kg/K ‹¥) —"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two particles are performing simple\nharmonic motion in a straight line about\nthe same equilibrium point.  The amplitude\nand time period for both particles are same\nand equal to A and T, respectively.  At time\nt=0 one particle  has displacement A while\nthe other one has displacement \n2\nA\n−\n and\nthey are moving towards each other.  If they\ncross each other at time t, then t is :",
+      "options": {
+        "A": "6 T",
+        "B": "5 6 T",
+        "C": "3 T",
+        "D": "4 T"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two engines pass each other moving in\nopposite directions with uniform speed of\n30 m/s. One of them is blowing a whistle\nof frequency 540 Hz.  Calculate the\nfrequency heard by driver of second engine\nbefore they pass each other.  Speed of sound\nis 330 m/sec :",
+      "options": {
+        "A": "450 Hz",
+        "B": "540 Hz",
+        "C": "648 Hz",
+        "D": "270 Hz 10. ŒÊ ∑§áÊ ∞∑§ ‚⁄U‹ ⁄UπËÿ ¬Õ ¬⁄U ÁSÕÃ ∞∑§ „Ë ◊Êäÿ Á’¥ŒÈ ∑§ ‚Ê¬ˇÊ ß‚ Ã⁄U„ ‚ ‚⁄U‹ •ÊﬂÃ¸ ªÁÃ◊ÊŸ •ﬂSÕÊ ◊¥ „Ò Á∑§ ©Ÿ∑§ •ÊÿÊ◊ (A) ÃÕÊ •ÊﬂÃ¸-∑§Ê‹ (T) ∞∑§ ‚◊ÊŸ „Ò¥– ÿÁŒ t=0 ‚◊ÿ ¬⁄U ∞∑§-ŒÍ‚⁄U ∑§Ë Ã⁄U»§ •ÊÃ „È∞, ∞∑§ ∑§áÊ ∑§Ê ÁﬂSÕÊ¬Ÿ A „Ò ÃÕÊ ŒÍ‚⁄U ∑§áÊ ∑§Ê ÁﬂSÕÊ¬Ÿ 2 A − „Ê, ÃÊ t ‚◊ÿ ¬⁄U ﬂ ∞∑§ ŒÍ‚⁄U ∑§Ê ¬Ê⁄U ∑§⁄UÃ „Ò¥– t ∑§Ê ◊ÊŸ „ÊªÊ —"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The potential (in volts) of a charge\ndistribution is given by\nV(z)=30−5z2 for ?z? £ 1 m\nV(z)=35−10 ?z? for ?z? /1 m.\nV(z) does not depend on x and y. If this\npotential is generated by a constant charge\nper unit volume ρ0 (in units of  e0 ) which is\nspread over a certain region, then choose\nthe correct statement.",
+      "options": {
+        "A": "ρ0=10 e0 for ?z?£1 m and ρ0=0 elsewhere",
+        "B": "ρ0=20 e0 in the entire region",
+        "C": "ρ0=40 e0 in the entire region",
+        "D": "ρ0=20 e0 for ?z?£1 m and ρ0=0 elsewhere"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Three capacitors each of 4 µF are to be\nconnected in such a way that the effective\ncapacitance is 6 µF. This can be done by\nconnecting them :",
+      "options": {
+        "A": "all in series",
+        "B": "two in series and one in parallel",
+        "C": "all in parallel",
+        "D": "two in parallel and one in series 12. ∞∑§ •Êﬂ‡Ê-ÁﬂÃ⁄UáÊ ∑§ mÊ⁄UÊ ÁŸêŸÁ‹ÁπÃ Áﬂ÷ﬂ (ﬂÊÀ≈U ◊¥) ©à¬ÛÊ „ÊÃÊ „Ò — V(z)=30−5z2, ?z? £ 1 m ◊¥ V(z)=35−10 ?z? , ?z? /1 m ◊¥ V(z), x ∞ﬂ¥ y ¬⁄U ÁŸ÷¸⁄U Ÿ„Ë¥ ∑§⁄UÃÊ– ÿÁŒ ÿ„ Áﬂ÷ﬂ ∞∑§ ÁŸÿÃ •Êﬂ‡Ê ¡Ê ¬˝ÁÃ ß∑§Êß¸ •ÊÿÃŸ ρ0 (e0 ß∑§ÊßÿÊ¥ ◊¥) „Ò ÃÕÊ ∞∑§ ÁŒÿ „È∞ ˇÊòÊ ◊¥ »Ò§‹Ê „È•Ê „Ò, ‚ ©à¬ÊÁŒÃ „Ò, Ã’ ÁŸêŸÁ‹ÁπÃ ◊¥ ‚ ‚„Ë Áﬂ∑§À¬ ∑§Ê øÿŸ ∑§⁄¥U —"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the circuit shown, the resistance r is a\nvariable resistance.  If for r=f R, the heat\ngeneration in r is maximum then the value\nof f is :",
+      "options": {
+        "A": "1 4",
+        "B": "1 2",
+        "C": "3 4",
+        "D": "1"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A magnetic dipole is acted upon by two\nmagnetic fields which are inclined to each\nother at an angle of 758.  One of the fields\nhas a magnitude of 15 mT.  The dipole\nattains stable equilibrium at an angle of 308\nwith this field.  The magnitude of the other\nfield (in mT ) is close to :",
+      "options": {
+        "A": "11",
+        "B": "36",
+        "C": "1",
+        "D": "1060 14. ÁŒÿ „È∞ ¬Á⁄U¬Õ ◊¥ r ∞∑§ ø⁄U-¬˝ÁÃ⁄UÊœ „Ò– ÿÁŒ r=f R, Ã’ r ◊¥ ™§c◊Ê ©à¬ÊŒŸ •Áœ∑§Ã◊ „ÊŸ ∑§ Á‹ÿ f ∑§Ê ◊ÊŸ „ÊªÊ —"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A 50 Ω resistance  is connected to a battery\nof 5 V. A galvanometer of resistance\n100 Ω is to be used as an ammeter to\nmeasure current through the resistance, for\nthis a resistance rs is connected to the\ngalvanometer.  Which of the following\nconnections should be employed if the\nmeasured current is within 1% of the\ncurrent without the ammeter in the\ncircuit ?",
+      "options": {
+        "A": "rs=0.5 Ω in parallel with the galvanometer",
+        "B": "rs=0.5 Ω in series with the galvanometer",
+        "C": "rs = 1 Ω in series with galvanometer",
+        "D": "rs=1 Ω in parallel with galvanometer 16. ∞∑§ 50 Ω ∑§Ê ¬˝ÁÃ⁄UÊœ ∞∑§ 5 V ∑§Ë ’Ò≈U⁄UË ‚ ¡È«∏Ê „È•Ê „Ò– ∞∑§ ªÒÀﬂŸÊ◊Ë≈U⁄U Á¡‚∑§Ê ¬˝ÁÃ⁄UÊœ 100 Ω „Ò, ∑§Ê ∞ê¬Ëÿ⁄U◊Ë≈U⁄U ∑§ M§¬ ◊¥ ¬˝ÿÊª Á∑§ÿÊ ¡ÊŸÊ „Ò– ªÒÀﬂŸÊ◊Ë≈U⁄U ∑§ ‚ÊÕ ∞∑§ ¬˝ÁÃ⁄UÊœ rs ‚¥ÿÊÁ¡Ã „Ò– ÿÁŒ ß‚ ‚¥ÿÊ¡Ÿ ◊¥ ◊ÊÁ¬Ã œÊ⁄UÊ ∞ê¬Ëÿ⁄U◊Ë≈U⁄U ∑§Ê „≈UÊŸ ¬⁄U ◊ÊÁ¬Ã œÊ⁄UÊ ∑§ ◊ÊŸ ‚ 1% ∑§ ÷ËÃ⁄U „Ê ÃÊ ÁŸêŸÁ‹ÁπÃ ◊¥ ‚ ∑§ÊÒŸ-‚Ê ‚¥ÿÊ¡Ÿ ©ÁøÃ „ÊªÊ?"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A series LR circuit is connected to a voltage\nsource with V(t)=V0 sinΩt.  After very\nlarge time, current I(t) behaves as\n0\nL\nt\nR\n\n\n>>\n\n\n\n:",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "17. ∞∑§ üÊáÊË LR ¬Á⁄U¬Õ ∑§Ê ∞∑§ ﬂÊÀ≈UËÿ dÊÃ V(t)=V0 sinΩt ‚ ¡Ê«∏Ê ¡ÊÃÊ „Ò ∑§Ê»§Ë ‹¥’ ‚◊ÿ ’ÊŒ ÁﬂlÈÃ œÊ⁄UÊ I(t) ∑§Ê ‚„Ë ÁøòÊáÊ Á∑§‚ Ã⁄U„ ∑§Ê „ÊªÊ? 0 L t R   >>     ¡„Ê°"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Microwave oven acts on the principle of :",
+      "options": {
+        "A": "transferring electrons from lower to higher energy levels in water molecule",
+        "B": "giving rotational energy to water molecules",
+        "C": "giving vibrational energy to water molecules",
+        "D": "giving translational energy to water molecules 18. ◊Êß∑˝§Êﬂﬂ •ÊﬂŸ Á∑§‚ ¬˝Á∑˝§ÿÊ ¬⁄U •ÊœÊÁ⁄UÃ „Ò?"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A convex lens, of focal length 30 cm, a\nconcave lens of focal length 120 cm, and a\nplane mirror are arranged as shown.  For\nan object kept at a distance of 60 cm from\nthe convex lens, the final image, formed by\nthe combination, is a real image, at a\ndistance of :",
+      "options": {
+        "A": "60 cm from the convex lens",
+        "B": "60 cm from the concave lens",
+        "C": "70 cm from the convex lens",
+        "D": "70 cm from the concave lens 19. ∞∑§ ©ûÊ‹ ‹Ò¥‚ ﬂ •ﬂÃ‹ ‹Ò¥‚, Á¡Ÿ∑§Ë $»§Ê∑§‚ ŒÍ⁄UË ∑˝§◊‡Ê— 30 cm ∞ﬂ¥ 120 cm „Ò, ÃÕÊ ‚◊Ã‹ Œ¬¸áÊ ÁŸêŸ ÁøòÊ ∑§ •ŸÈ‚Ê⁄U ⁄Uπ ªÿ „Ò– ∞∑§ Á’ê’ ©ûÊ‹ ‹Ò¥‚ ‚ 60 cm ∑§Ë ŒÍ⁄UË ¬⁄U ÁSÕÃ „Ò– ß‚ ‚¥ÿÊ¡Ÿ mÊ⁄UÊ ÁŸÁ◊¸Ã •¥ÁÃ◊ ¬˝ÁÃÁ’ê’ ∞∑§ ﬂÊSÃÁﬂ∑§ ¬˝ÁÃÁ’ê’ „Ò Á¡‚∑§Ë ÁSÕÁÃ ÁŸêŸÁ‹ÁπÃ „ÊªË —"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In Young’s double slit experiment, the\ndistance between slits and the screen is\n1.0 m and monochromatic light of 600 nm\nis being used.  A person standing near the\nslits is looking at the fringe pattern.  When\nthe separation between the slits is varied,\nthe interference pattern disappears for a\nparticular distance d0 between the slits.  If\nthe angular resolution of the eye is  1\n60\n\u0001\n,\nthe value of d0 is close to :",
+      "options": {
+        "A": "1 mm",
+        "B": "2 mm",
+        "C": "4 mm",
+        "D": "3 mm 20. ÿ¥ª ∑§ Ám-Á¤Ê⁄UË ¬˝ÿÊª ◊¥, Á¡‚◊¥ ¬Œ¸ ∞ﬂ¥ Á¤Ê⁄UË ∑§ ’Ëø ∑§Ë ŒÍ⁄UË 1.0 m ÃÕÊ 600 nm Ã⁄¥UªŒÒäÿ¸ ∑§ ∞∑§ﬂáÊË¸ÿ ¬˝∑§Ê‡Ê ∑§Ê ©¬ÿÊª Á∑§ÿÊ ªÿÊ „Ò– Á¤ÊÁ⁄UÿÊ¥ ∑§ ‚◊Ë¬ π«∏Ê „È•Ê ∞∑§ √ƒÊÁÄàÊ √ÿÁÃ∑§⁄UáÊ ¬Ò≈UŸ¸ ∑§Ê Œπ ⁄U„Ê „Ò– ŒÊŸÊ¥ Á¤ÊÁ⁄UÿÊ¥ ∑§ ’Ëø ∑§Ë ŒÍ⁄UË ∑§Ê ¬Á⁄UﬂÁÃ¸Ã ∑§⁄Ÿ ¬⁄U ∞∑§ Áﬂ‡Ê· ŒÍ⁄UË d0 ¬⁄U √ÿÁàÊ∑§⁄UáÊ ¬Ò≈UŸ¸ ‹ÈåàÊ „Ê ¡ÊÃÊ „Ò– ÿÁŒ √ÿÁÄàÊ ∑§Ë •Ê°π ∑§Ê ∑§ÊáÊËÿ ÁﬂÿÊ¡Ÿ 1 60 \u0001 „Ê, ÃÊ d0 ∑§Ê ◊ÊŸ ‹ª÷ª „ÊªÊ —"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "When photons of wavelength λ1 are\nincident on an isolated sphere, the\ncorresponding stopping potential is found\nto be V.  When photons of wavelength  λ2\nare used, the corresponding stopping\npotential was thrice that of the above value.\nIf light of wavelength  λ3 is used then find\nthe stopping potential for this case :",
+      "options": {
+        "A": "3 2 1 1 1 1 hc e       − − λ λ λ",
+        "B": "3 2 1 1 1 1 hc e       + − λ λ λ",
+        "C": "3 2 1 1 1 3 2 2 hc e       + − λ λ λ",
+        "D": "3 2 1 1 1 1 2 hc e       + − λ λ λ 21. ¡’ λ1 Ã⁄¥UªŒÒäÿ¸ ∑§ »§Ê≈ÊŸ ∞∑§ Áﬂ‹ÁªÃ ªÊ‹ ∑§Ê ¬˝ŒËåàÊ ∑§⁄UÃ „Ò¥, ÃÊ ‚¥ªÃ “ÁŸ⁄UÊœË-Áﬂ÷ﬂ” ∑§Ê ◊ÊŸ V ¬ÊÿÊ ¡ÊÃÊ „Ò– ¡’ λ2 Ã⁄¥UªŒÒäÿ¸ ∑§ »§Ê≈ÊŸ ©¬ÿÊª ◊¥ ‹Êÿ ¡ÊÃ „Ò¥ ÃÊ ÁŸ⁄UÊœË-Áﬂ÷ﬂ ∑§Ê ◊ÊŸ ÁÃªÈŸÊ (3V) „Ê ¡ÊÃÊ „Ò– •ª⁄U λ3 Ã⁄¥UªŒÒäÿ¸ ∑§ »§Ê≈UÊŸ ‚ ªÊ‹ ∑§Ê ¬˝ŒËåàÊ Á∑§ÿÊ ¡Ê∞ ÃÊ ÁŸ⁄ÊœË-Áﬂ÷ﬂ ∑§Ê ◊ÊŸ „ÊªÊ —"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A hydrogen atom makes a transition from\nn=2 to n=1 and emits a photon.  This\nphoton strikes a doubly ionized lithium\natom (z=3) in excited state and completely\nremoves the orbiting electron.  The least\nquantum number for the excited state of the\nion for the process is :",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The truth table given in fig. represents :\nA\nB\nY\n0\n0\n0\n0\n1\n1\n1\n0\n1\n1\n1\n1",
+      "options": {
+        "A": "AND - Gate",
+        "B": "OR - Gate",
+        "C": "NAND - Gate",
+        "D": "NOR - Gate 22. ∞∑§ „Êß«˛UÊ¡Ÿ ¬⁄U◊ÊáÊÈ n=2 Ä√ÊÊ¥≈U◊ ‚¥ÅÿÊ ﬂÊ‹ ™§¡Ê¸ ‹ﬂ‹ ‚ n=1 Ä√ÊÊ¥≈U◊ ‚¥ÅÿÊ ﬂÊ‹ ™§¡Ê¸ ‹ﬂ‹ ◊¥ ‚¥∑˝§◊áÊ ∑§⁄UŸ ¬⁄U ∞∑§ »§Ê≈UÊŸ ©à‚Á¡¸Ã ∑§⁄UÃÊ „Ò– ÿ„ »§Ê≈UÊŸ ∞∑§ Ám-•ÊÿÁŸÃ Á‹ÁÕÿ◊ ¬⁄U◊ÊáÊÈ (z=3) (¡Ê Á∑§ ©ûÊÁ¡Ã •ﬂSÕÊ ◊¥ „Ò) ‚ ≈U∑§⁄UÊÃÊ „Ò •ÊÒ⁄U ∑§ˇÊËÿ ß‹Ä≈˛UÊÚŸ (orbiting electron) ∑§Ê ¬Í⁄UË Ã⁄U„ ‚ ’Ê„⁄U ÁŸ∑§Ê‹ ŒÃÊ „Ò– ß‚ ¬˝Á∑˝§ÿÊ ∑§ Á‹∞ •ÊÿŸ ∑§Ë ©ûÊÁ¡Ã •ﬂSÕÊ ∑§Ë ãÿÍŸÃ◊ Ä√ÊÊ¥≈U◊ ‚¥ÅÿÊ „ÊªË —"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ äﬂÁŸ-Á‚ÇŸ‹ ŒÊ S¬c≈U äﬂÁŸÿÊ¥ ‚ ÁŸÁ◊¸Ã „Ò–\nßŸ◊¥ ‚ ∞∑§ ◊ŸÈcÿ mÊ⁄UÊ ÷ÊÁ·Ã Á‚ÇãÊ‹ „Ò ¡Ê\n200 Hz ‚ 2700 Hz ∑§Ë •ÊﬂÎÁûÊ •¥Ã⁄UÊ‹ ∑§Ê „Ò, ÃÕÊ\nŒÍ‚⁄UÊ Á‚ÇŸ‹ 10200 Hz ‚ 15200 Hz ©ìÊ •ÊﬂÎÁûÊ\nﬂÊ‹ ‚¥ªËÃ ∑§Ê „Ò–  ŒÊŸÊ¥ Á‚ÇŸ‹Ê¥ ∑§ ‚¥ø⁄UáÊ ∑§ Á‹∞\n•Êﬂ‡ÿ∑§ AM Á‚ÇãÊ‹ ∑§Ë ’Ò¥«U-øÊÒ«∏Êß¸ •ÊÒ⁄U ∑§ﬂ‹\n◊ŸÈcÿ mÊ⁄UÊ ÷ÊÁ·Ã Á‚ÇŸ‹ ∑§ ‚¥ø⁄UáÊ ∑§ Á‹∞ •Êﬂ‡ÿ∑§\nAM Á‚ÇãÊ‹ ∑§Ë ’Ò¥«U-øÊÒ«∏Êß¸ ∑§Ê •ŸÈ¬ÊÃ ÄÿÊ „ÊªÊ?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "6",
+        "D": "2"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": []
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "T=08C ¬⁄U ∞∑§ ‚⁄U‹-‹Ê‹∑§, ¡Ê Á∑§ m Œ˝√ÿ◊ÊŸ\n∑§ ªÊ‹∑§ •ÊÒ⁄U Œ˝√ÿ◊ÊŸ ⁄UÁ„Ã œÊÃÈ ∑§ ÃÊ⁄U ‚ ÁŸÁ◊¸Ã „Ò,\n∑§Ê •ÊﬂûÊ¸-∑§Ê‹ 2 s „Ò–  •ª⁄U ÃÊ⁄U ∑§ ÃÊ¬◊ÊŸ ∑§Ê\n’…∏ÊŸ ‚, •ÊﬂûÊ¸-∑§Ê‹ ◊¥ „Èß¸ ﬂÎÁh ∑§Ê ª˝Ê»§ mÊ⁄UÊ\nŒ‡ÊÊ¸ÿÊ ¡Êÿ, ÃÊ ¬Á⁄UáÊÊ◊Ë ª˝Ê»§ ∑§Ë …Ê‹-◊Ê¬ ( slope)\nS „Ò–  ÿÁŒ ÃÊ⁄U ∑§Ê ⁄ÒUÁπ∑§-¬˝‚Ê⁄U ªÈáÊÊ¥∑§ α „Ò ÃÊ S ∑§Ê\n◊ÊŸ „ÊªÊ —",
+      "options": {
+        "A": "α",
+        "B": "2 α",
+        "C": "2α",
+        "D": "1 α 24. An audio signal consists of two distinct sounds : one a human speech signal in the frequency band of 200 Hz to 2700 Hz, while the other is a high frequency music signal in the frequency band of 10200 Hz to 15200 Hz. The ratio of the AM signal bandwidth required to send both the signals together to the AM signal bandwidth required to send just the human speech is :"
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "•ÁﬂSÃÊÁ⁄UÃ L ‹ê’Êß¸ ∑§Ë ∞∑§‚◊ÊŸ ‡Ê¥∑È§ŸÈ◊Ê ÃÊ⁄U ∑§\nÁ‚⁄UÊ¥ ∑§Ë ÁòÊíÿÊ ∑˝§◊‡Ê— R ÃÕÊ 3R „Ò¥–  ©‚∑§Ë œÊÃÈ ∑§Ê\nÿ¥ª-◊Ê«ÈU‹‚ Y „Ò–  R ÁòÊíÿÊ ﬂÊ‹ Á‚⁄U ∑§Ê ∞∑§ ŒÎ…∏\n•ÊœÊ⁄U ¬⁄U ¡Á«∏Ã Á∑§ÿÊ ªÿÊ „Ò ÃÕÊ ŒÍ‚⁄U Á‚⁄U ¬⁄U M\nŒ˝√ÿ◊ÊŸ ‹≈U∑§ÊÿÊ ªÿÊ „Ò–  ‚¥ÃÈ‹Ÿ-•ﬂSÕÊ ◊¥ ÃÊ⁄U\n∑§Ë ÀÊê’Êß¸ „ÊªË —",
+      "options": {
+        "A": "2 2 1 9 Mg L YR       + π",
+        "B": "2 1 1 3 Mg L YR       + π",
+        "C": "2 1 1 9 Mg L YR       + π",
+        "D": "2 2 1 3 Mg L YR       + π"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ªÒÀﬂŸÊ◊Ë≈U⁄U ∑§Ê ¬˝ÁÃ⁄UÊœ G ◊Ê¬Ÿ ∑§ Á‹ÿ •h¸-\nÁﬂˇÊ¬ Ã⁄UË∑§ ∑§Ê ßSÃ◊Ê‹ Á∑§ÿÊ ªÿÊ Á¡‚◊¥ ’Ò≈U⁄UË ∑§Ë\nemf VE „Ò–  ¬˝ÁÃ⁄UÊœ R ∑§ Á‹ÿ θ ÁﬂˇÊ¬ Á◊‹Ê–\n‡Ê¥≈U-¬˝ÁÃ⁄UÊœ S ∑§ Á‹ÿ •ÊœÊ ÁﬂˇÊ¬ Á◊‹Ê–  Ã’\nG, R ÃÕÊ S Á∑§‚ ‚◊Ë∑§⁄UáÊ ‚ ‚¥’¥ÁœÃ „Ò¥?",
+      "options": {
+        "A": "2S (R+G)=RG",
+        "B": "S (R+G)=RG",
+        "C": "2S=G",
+        "D": "2G=S 26. A uniformly tapering conical wire is made from a material of Young’s modulus Y and has a normal, unextended length L. The radii, at the upper and lower ends of this conical wire, have values R and 3R, respectively. The upper end of the wire is fixed to a rigid support and a mass M is suspended from its lower end. The equilibrium extended length, of this wire, would equal :"
+      },
+      "page_start": 18,
+      "page_end": 19,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "©ûÊ‹-Œ¬¸áÊ ∑§Ë »§Ê∑§‚ ŒÍ⁄UË ÁŸ∑§Ê‹Ÿ ∑§ ∞∑§ ¬˝ÿÊª\n◊¥ ÁŸêŸ «UÊ≈UÊ ¬˝ÊåàÊ „È•Ê\nÁ’¥’\n©ûÊ‹ ‹Ò¥‚ ©ûÊ‹ Œ¬¸áÊ ¬˝ÁÃÁ’¥’ \n22.2 cm 32.2 cm\n45.8 cm\n71.2 cm\n©ûÊ‹ ‹Ò¥‚ ∑§Ë »§Ê∑§‚ ŒÍ⁄UË f1 ÃÕÊ ©ûÊ‹-Œ¬¸áÊ ∑§Ë\n»§Ê∑§‚ ŒÍ⁄UË f2 „Ò– index correction Ÿªáÿ „Ò–\nÃ’ —",
+      "options": {
+        "A": "f1=12.7 cm f2=7.8 cm",
+        "B": "f1=7.8 cm f2=12.7 cm",
+        "C": "f1=7.8 cm f2=25.4 cm",
+        "D": "f1=15.6 cm f2=25.4 cm"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ¡ËŸ⁄U «UÊÿÊ«U ∑§Ê •Á÷‹ˇÊÁáÊ∑§ I - V ª˝Ê»§ ’ŸÊŸ\n∑§ Á‹ÿ ∞∑§ ¬˝ÿÊª Á∑§ÿÊ ªÿÊ Á¡‚◊¥  R=100 Ω ∑§Ê\n¬˝Ê≈UÁÄ≈Uﬂ ¬˝ÁÃ⁄UÊœ •ÊÒ⁄U •Áœ∑§Ã◊ ¬Êﬂ⁄U 1 W ŒË ªß¸–\nÃ’ ¬Á⁄U¬Õ ◊¥ ‹ªÊÿ ªÿ DC dÊÃ ∑§Ë ãÿÍŸÃ◊ ﬂÊÀ≈UÃÊ\n„Ò —",
+      "options": {
+        "A": "0 – 5 V",
+        "B": "0 – 8 V",
+        "C": "0 – 12 V",
+        "D": "0 – 24 V 28. To find the focal length of a convex mirror, a student records the following data : Object Pin Convex Lens Convex Mirror Image Pin 22.2 cm 32.2 cm 45.8 cm 71.2 cm The focal length of the convex lens is f1 and that of mirror is f2. Then taking index correction to be negligibly small, f1 and f2 are close to :"
+      },
+      "page_start": 19,
+      "page_end": 20,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ •ôÊÊÃ ≈˛UÊ¥Á¡S≈U⁄U ∑§Ê npn •ÕﬂÊ pnp ∑§ ¬˝∑§Ê⁄U\n◊¥ ¬„øÊŸ ∑§⁄UŸÊ „Ò– ∞∑§ pnp ≈˛UÊ¥Á¡S≈U⁄U ∑§Ê ≈UÁ◊¸Ÿ‹ 2\n©‚∑§Ê ’‚ „Ò–  ∞∑§ êÊÀ≈UË◊Ë≈U⁄U ∑§ +ve ﬂ −ve\n≈UÁ◊¸Ÿ‹ ß‚ ≈˛UÊ¥Á¡S≈U⁄U ∑§ ÁﬂÁ÷ÛÊ ≈UÁ◊¸Ÿ‹Ê¥ 1, 2 ÿÊ 3 ∑§\n’Ëø ‹ªÊ∑§⁄U ¬˝ÁÃ⁄UÊœ ◊Ê¬ ªÿ Ã’ ß‚ ≈˛UÊ¥Á¡S≈U⁄U ∑§\nÁ‹∞ ∑§ÊÒŸ-‚Ê ÁŸêŸ ∑§ÕŸ ‚àÿ „Ò?",
+      "options": {
+        "A": "+ve ‚ ≈UÁ◊¸Ÿ‹ 1, −ve ‚ ≈UÁ◊¸Ÿ‹ 2, ¬˝ÁÃ⁄UÊœ íÿÊŒÊ–",
+        "B": "+ve ‚ ≈UÁ◊¸Ÿ‹ 2, −ve ‚ ≈UÁ◊¸Ÿ‹ 1, ¬˝ÁÃ⁄UÊœ íÿÊŒÊ–",
+        "C": "+ve ‚ ≈UÁ◊¸Ÿ‹ 3, −ve ‚ ≈UÁ◊¸Ÿ‹ 2, ¬˝ÁÃ⁄UÊœ íÿÊŒÊ–",
+        "D": "+ve ‚ ≈UÁ◊¸Ÿ‹ 2, −ve ‚ ≈UÁ◊¸Ÿ‹ 3, ¬˝ÁÃ⁄UÊœ ∑§◊ 30. An unknown transistor needs to be identified as a npn or pnp type. A multimeter, with +ve and −ve terminals, is used to measure resistance between different terminals of transistor. If terminal 2 is the base of the transistor then which of the following is correct for a pnp transistor ?"
+      },
+      "page_start": 20,
+      "page_end": 21,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

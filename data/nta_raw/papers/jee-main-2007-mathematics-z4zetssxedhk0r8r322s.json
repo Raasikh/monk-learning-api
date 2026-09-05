@@ -1,0 +1,461 @@
+{
+  "paper_id": "jee-main-2007-mathematics-z4zetssxedhk0r8r322s",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2007-mathematics-z4zetssxedhk0r8r322s",
+    "exam": "jee-main",
+    "year": 2007,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2007/iit-jee-maths-paper-i/81193",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/Z4ZEtsSxEDHK0R8r322s",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "94326b484193138023f261266aef45aed9592e0a6e0fa97a242b32708eecae4a",
+    "page_count": 8,
+    "text_chars": 7717,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2007-mathematics-z4zetssxedhk0r8r322s.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 22,
+  "defects": [
+    "1/22 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let α, β be the roots of the equation x2 - px + r = 0 and α/2, 2β be the roots of the \nequation x2 - qx + r = 0. Then the value of r is",
+      "options": {
+        "A": "2/9 (p - q)(2q - p)",
+        "B": "2/9 (q – p)(2p – q)",
+        "C": "2/9 (q – 2p)(2q – p)",
+        "D": "2/9 (2p - q)(2q - p)"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let f(x) be differentiable on the interval (0, ∞) such that f(1) = 1, and  \n \n                       lim t->∞(t2 f(x)-x2 f(t))/(t-x) - 1  \n \nfor each x > 0. Then f(x) is",
+      "options": {
+        "A": "1/3x + (2x2 )/3",
+        "B": "(-1)/3x + (4x2 )/3",
+        "C": "(-1)/x + 2/x2",
+        "D": "1/x"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "One Indian and four American men and their wives are to be seated randomly around a \ncircular table. Then the conditional probability that the Indian man is seated adjacent to his \nwife given that each American man is seated adjacent to this wife is",
+      "options": {
+        "A": "1/2",
+        "B": "1/3",
+        "C": "2/5",
+        "D": "1/5"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The tangent to the curve y = ex drawn at the point (e, ee) intersects the line joining the \npoints (e - 1, ee-1) and (e+1, ee+1)",
+      "options": {
+        "A": "on the left of x = e",
+        "B": "on the right of x = e",
+        "C": "at no points",
+        "D": "at all points"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "limx->π/4 ∫2\nsec2 x f(t) dt / ( x2 - π2/16 ) equals",
+      "options": {
+        "A": "8/π f(2)",
+        "B": "2/π f(2)",
+        "C": "2/π f(1/2)",
+        "D": "4f(2)"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A hyperbola, having the transverse axis of length 2 sin, is confocal with the ellipse 3x2 + \n4y2 = 12. Then its equation is",
+      "options": {
+        "A": "x2 cosex2 θ - y2 sec2 θ = 1",
+        "B": "x2 sec2 θ - y2 cosec2 θ = 1",
+        "C": "x2 sin2 θ - y2 cos2 θ = 1",
+        "D": "x2 cos2 θ - y2 sin2 θ = 1"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The number of distinct real values of λ, for which the vectors -λ2î + ĵ + k̂, î - λ2ĵ + k̂ and \nî + ĵ - λ2k̂ are coplanar, is",
+      "options": {
+        "A": "zero",
+        "B": "one",
+        "C": "two",
+        "D": "three"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A man walks a distance of 3 units from the origin towards the north-east (N 45oE) \ndirection. From there, he walks a distance of 4 units towards the north-west (N 45o W) \ndirection to reach a point P. Then the position of P in the Argand plane is",
+      "options": {
+        "A": "3eiπ/4 + 4i",
+        "B": "(3 - 4i)eiπ/4",
+        "C": "(4 + 3i)eiπ/4",
+        "D": "(3 + 4i)eiπ/4"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The number of solutions of the pair of equations \n                                2sin2 q - cos2q = 0 \n                                2cos2 q - 3 sin q - 0 \n        in the interval [0, 2p] is",
+      "options": {
+        "A": "zero",
+        "B": "one",
+        "C": "two",
+        "D": "four"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let H1, H2, ......, Hn be mutually exclusive and exhaustive events with P(Hi) > 0, i = 1, \n2, ......, n. Let E be any other event with 0 < P (E) < 1. \n        STATEMENT-1 \n        P(Hi|E) > P(E|Hi) • P(Hi) for i = 1, 2, ...... n. \n        Because \n        STATEMENT-2 \n        ∑n\ni=1 P(Hi) = 1.",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Tangents are drawn from the point (17, 7) to the circle x2 + y2 = 169. \n        STATEMENT-1 \n        The tangents are mutually perpendicular \n        Because \n        STATEMENT-2 \nThe locus of the points form which mutually perpendicular tangents can be drawn to the \ngiven circle is x2 + y2 = 338.",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let the vectors PQ, QR, RS, ST, TU and UP represent the sides of a regular hexagon. \n        STATEMENT-1 \nPQ-> × ( RS-> + ST-> ) ≠ 0->. \n        Because \n        STATEMENT-2 \n     PQ-> × RS-> = 0-> and PQ-> × ST-> ≠ 0->.",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let F(x) be an indefinite integral of sin2x. \n        STATEMENT-1 \n        The function F(x) satisfies F(x + p) - F(x) for all real x. \n        STATEMTN-2 \n        sin2(x + p) = sin2x for all real x.",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True Paragraph Let Vr denote the sum of the first r terms of an arithmetic progression (A.P.) whose first term is r and the common difference is (2r - 1). Let Tr = Vr+1 - Vr - 2 and Qr = Tr+1 - Tr for r = 1, 2,......"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The sum of V1 + V2 +......+ Vn is",
+      "options": {
+        "A": "1/12 n(n + 1)(3n2 - n + 1)",
+        "B": "1/12 n(n + 1)(3n2 + n + 1)",
+        "C": "1/12 n(2n2 - n + 1)",
+        "D": "1/12 n(2n2 - 2n + 3)"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Tr is always",
+      "options": {
+        "A": "an odd number",
+        "B": "an even number",
+        "C": "a prime number",
+        "D": "a composite number"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which one of the following is a correct statement?",
+      "options": {
+        "A": "Q1, Q2, Q3, ...... are in A.P. with common difference 5",
+        "B": "Q1, Q2, Q3, ...... are in A.P. with common difference 6",
+        "C": "Q1, Q2, Q3, ...... are in A.P. with common difference 11",
+        "D": "Q1 = Q2 = Q3 =...... Paragraph Consider the circle x2 + y2 = 9 and the parabola y2 = 8x. They intersect at P and Q in the first the fourth quadrants, respectively. Tangents to the circle at P and Q intersect the x- axis at R and tangents to the parabola at P and Q intersect the x-axis at S."
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The ratio of the areas of the triangles PQS and PQR is",
+      "options": {
+        "A": "1 : √2",
+        "B": "1 : 2",
+        "C": "1 : 4",
+        "D": "1 : 8"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The radius of the circumcircle of the triangle PRS is",
+      "options": {
+        "A": "5",
+        "B": "3√3",
+        "C": "3√2",
+        "D": "2√3"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The radius of the incircle of the triangle PQR is",
+      "options": {
+        "A": "4",
+        "B": "3",
+        "C": "8/3",
+        "D": "2"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider the following linear equations \n\n \n \n                ax + by + cz = 0 \n                bx + cy + az = 0 \n                cx + ay + bz = 0 \n  \nMatch the conditions/expressions in Column I with statements in Column II and indicate \nyour answer by darkening the appropriate bubbles in the 4 × 4 matrix given in the ORS. \nColumn I \nColumn II",
+      "options": {
+        "A": "a + b + c ¹ 0 and a2 + b2 + c2 = ab + bc + ca (p) the equations represent planes meeting only at a single point.",
+        "B": "a + b + c = 0 and a2 + b2 + c2 = ab + bc + ca (q) the equations represent the line x = y = z.",
+        "C": "a + b + c ¹ 0 and a2 + b2 + c2 ¹ ab + bc + ca (r) the equations represent identical planes.",
+        "D": "a + b + c = 0 and a2 + b2 + c2 = ab + bc + ca (s) the equations represent the whole of the three dimensional space."
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the following [x] denotes the greatest integer less than or equal to x. Match the \nfunctions in Column I with the properties in Column II. \nColumn I \nColumn II",
+      "options": {
+        "A": "x|x| (p) continuous in (-1,1)",
+        "B": "√|x| (q) differentiable in (-1,1)",
+        "C": "x + |x| (r) strictly increasing in (-1,1)",
+        "D": "|x - 1| + |x + 1| (s) not differentiable at least at one point in (-1, 1)"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Match the integrals in Column I with the values in Column II. \nColumn I \nColumn II",
+      "options": {
+        "A": "∫-1 1 dx/(1+x2 ) (p) 1/2 log(2/3)",
+        "B": "∫0 1 dx/√(1-x2 ) (q) 2log(2/3)",
+        "C": "∫2 3 dx/(1-x2 ) (r) π/3",
+        "D": "∫1 2 dx/(x√(x2-1)) (s) -π/2"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": []
+    }
+  ]
+}

@@ -1,0 +1,774 @@
+{
+  "paper_id": "jee-main-2015-s2-chemistry-hm75we8yiafmfezpsx8o",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2015-s2-chemistry-hm75we8yiafmfezpsx8o",
+    "exam": "jee-main",
+    "year": 2015,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Chemistry",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2015/jee-main-2015-chemistry-question-paper-online-exam-10th-april-2015/98540",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/Hm75We8yIaFMFeZpsX8o",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "c80bd11b79cb3fe87f6db334268cb34c9cf9289658784039ecf8db7fabcf572f",
+    "page_count": 10,
+    "text_chars": 15490,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 1,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2015-s2-chemistry-hm75we8yiafmfezpsx8o.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "21 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 17, 19, 20]",
+    "13/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A sample of a hydrate of barium chloride\nweighing 61 g was heated until all the\nwater of hydration is removed.  The dried\nsample weighed 52 g.  The formula of the\nhydrated salt is : (atomic mass,\nBa5137 amu, Cl535.5 amu)",
+      "options": {
+        "A": "BaCl2.H2O",
+        "B": "BaCl2.2H2O",
+        "C": "BaCl2.3H2O",
+        "D": "BaCl2.4H2O"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following is not an\nassumption of the kinetic theory of gases ?",
+      "options": {
+        "A": "A gas consists of many identical particles which are in continual motion.",
+        "B": "Gas particles have negligible volume.",
+        "C": "At high pressure, gas particles are difficult to compress.",
+        "D": "Collisions of gas particles are perfectly elastic."
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the principal quantum number n56, the\ncorrect sequence of filling of electrons will\nbe :",
+      "options": {
+        "A": "ns®np®(n21)d®(n22)f",
+        "B": "ns®(n22)f®(n21)d®np",
+        "C": "ns®(n21)d®(n22)f®np",
+        "D": "ns®(n22)f®np®(n21)d"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "After understanding the assertion and\nreason, choose the correct option.\nAssertion : In the bonding molecular\norbital (MO) of H2, electron\ndensity is increased between\nthe nuclei.\nReason :\nThe bonding MO is cA1cB,\nwhich shows destructive\ninterference of the combining\nelectron waves.",
+      "options": {
+        "A": "Assertion and reason are correct and reason is the correct explanation for the assertion.",
+        "B": "Assertion and reason are correct, but reason is not the correct explanation for the assertion.",
+        "C": "Assertion is correct, reason is incorrect.",
+        "D": "Assertion is incorrect, reason is correct."
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The heat of atomization of methane and\nethane are 360 kJ/mol and 620 kJ/mol,\nrespectively.  The longest wavelength of\nlight capable of breaking the C - C bond is\n(Avogadro number56.0231023,\nh56.62310234 J s) :",
+      "options": {
+        "A": "1.493103 nm",
+        "B": "2.483103 nm",
+        "C": "2.483104 nm",
+        "D": "1.493104 nm"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A solution at 208C is composed of 1.5 mol\nof benzene and 3.5 mol of toluene.  If the\nvapour pressure of pure benzene and pure\ntoluene at this temperature are 74.7 torr\nand 22.3 torr, respectively, then the total\nvapour pressure of the solution and the\nbenzene mole fraction in equilibrium with\nit will be, respectively :",
+      "options": {
+        "A": "35.0 torr and 0.480",
+        "B": "38.0 torr and 0.589",
+        "C": "30.5 torr and 0.389",
+        "D": "35.8 torr and 0.280"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Gaseous N2O4 dissociates into gaseous\nNO2 according to the reaction\nN2O4(g)ì 2NO2(g)\nAt 300 K and 1 atm pressure, the degree\nof dissociation of N2O4 is 0.2.  If one mole\nof N2O4 gas is contained in a vessel, then\nthe density of the equilibrium mixture is :",
+      "options": {
+        "A": "1.56 g/L",
+        "B": "3.11 g/L",
+        "C": "4.56 g/L",
+        "D": "6.22 g/L"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A variable, opposite external potential\n(Eext) is applied to the cell\nZn|Zn21 (1 M) ?? Cu21 (1 M) | Cu, of\npotential 1.1 V.  When Eext < 1.1 V and\nEext > 1.1 V, respectively electrons flow\nfrom :",
+      "options": {
+        "A": "anode to cathode and cathode to anode",
+        "B": "cathode to anode and anode to cathode",
+        "C": "cathode to anode in both cases",
+        "D": "anode to cathode in both cases"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The reaction\n2N2O5(g) ® 4NO2(g)1O2(g)\nfollows first order kinetics.  The pressure\nof a vessel containing only N2O5 was\nfound to increase from 50 mm Hg to\n87.5 mm Hg in 30 min.  The pressure\nexerted by the gases after 60 min. will be\n(Assume temperature remains constant) :",
+      "options": {
+        "A": "106.25 mm Hg",
+        "B": "116.25 mm Hg",
+        "C": "125 mm Hg",
+        "D": "150 mm Hg 7. »ñâèØ N2O4 »ñâèØ NO2 ×ð´ çÙÙ ¥çÖç·ý¤Øæ ·ð¤ ¥ÙéâæÚU çßØæðçÁÌ ãæðÌæ ãñ Ñ N2O4(g)ì 2NO2(g) 300 K ¥æñÚU 1 atm ÎæÕ ÂÚU N2O4 ·¤è çßØæðÁÙ ×æææ 0.2 ãñÐ ¥»ÚU °·¤ ×æðÜ N2O4 »ñâ ·¤æð °·¤ Âææ ×ð´ çÜØæ Áæ° ÌÕ âæØ ç×ææ ·¤æ æÙß ãñ Ñ"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The following statements relate to the\nadsorption of gases on a solid surface.\nIdentify the incorrect statement among\nthem :",
+      "options": {
+        "A": "Enthalpy of adsorption is negative",
+        "B": "Entropy of adsorption is negative",
+        "C": "On adsorption, the residual forces on the surface are increased",
+        "D": "On adsorption decrease in surface energy appears as heat"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the long form of the periodic table, the\nvalence shell electronic configuration of\n5s2 5p4 corresponds to the element present\nin :",
+      "options": {
+        "A": "Group 16 and period 6",
+        "B": "Group 17 and period 5",
+        "C": "Group 16 and period 5",
+        "D": "Group 17 and period 6"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the isolation of metals, calcination\nprocess usually results in :",
+      "options": {
+        "A": "metal carbonate",
+        "B": "metal oxide",
+        "C": "metal sulphide",
+        "D": "metal hydroxide"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Permanent hardness in water cannot be\ncured by :",
+      "options": {
+        "A": "Boiling",
+        "B": "Ion exchange method",
+        "C": "Calgons method",
+        "D": "Treatment with washing soda 10. çÙÙ ·¤ÍÙ ÆUæðâ ÂëcÆU ÂÚU »ñâèØ ¥çÏàææðáæ ·ð¤ â´ÎÖü ×ð´ ãñ´Ð §Ù×ð´ âð »ÜÌ ·¤ÍÙ ãñ Ñ"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ãæ§ÇþUæòâæ§ÇUæð´ ·¤æ ÌæÂèØ SÍæçØß ·¤æ âãè ·ý¤× ãñ Ñ",
+      "options": {
+        "A": "Ba(OH)2 < Sr(OH)2 < Ca(OH)2 < Mg(OH)2",
+        "B": "Ba(OH)2 < Ca(OH)2 < Sr(OH)2 < Mg(OH)2",
+        "C": "Mg(OH)2 < Ca(OH)2 < Sr(OH)2 < Ba(OH)2",
+        "D": "Mg(OH)2 < Sr(OH)2 < Ca(OH)2 < Ba(OH)2"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "âÕâð ·¤× â´Øæ ·ð¤ ¥æâè¥Ü ÕÙæÌæ ãñ Ñ",
+      "options": {
+        "A": "Ùæ§ÅþUæðÁÙ",
+        "B": "âËÈ¤ÚU",
+        "C": "Üé¥æðÚUèÙ",
+        "D": "ÜæðÚUèÙ"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ßè.°â.§ü.Âè.¥æÚU. (VSEPR) çâhæ´Ì ·ð¤ ¥ÙéâæÚU,\nXeOF4 ·¤è Øæç×çÌ ãñ Ñ",
+      "options": {
+        "A": "çæ·¤æðæèØ çmçÂÚUæç×ÇUè",
+        "B": "ß»ü çÂÚUæç×ÇUè",
+        "C": "¥cÅUÈ¤Ü·¤èØ",
+        "D": "Â´¿·¤æðæèØ â×ÌÜèØ"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Üßæ X ·¤æ ÁÜèØ çßÜØÙ SCN2 ·ð¤ âæÍ ¹êÙè\nÜæÜ Ú´U» ¥æñÚU K4[Fe(CN)6] ·ð¤ âæÍ ÙèÜæ Ú´U» ÎðÌæ\nãñÐ   X °·¤ â·¤æÚUæ×·¤ ·ý¤æðç×Ü ÜæðÚUæ§ÇU ÂÚUèÿææ Öè\nÎðÌæ ãñÐ  Üßæ X ãñ Ñ",
+      "options": {
+        "A": "CuCl2",
+        "B": "FeCl3",
+        "C": "Cu(NO3)2",
+        "D": "Fe(NO3)3"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "çÙÙ ×ð´ âð ·¤æñÙ âæ ¥æé/¥æØÙ â´·é¤Ü Øæñç»·¤æð´ ×ð´\nçÜ»ñÇU Ùãè´ ãæð â·¤Ìæ ãñ?",
+      "options": {
+        "A": "CO",
+        "B": "CN2",
+        "C": "CH4",
+        "D": "Br2 14. The correct order of thermal stability of hydroxides is :"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The correct statement on the isomerism\nassociated with the following complex\nions,",
+      "options": {
+        "A": "[Ni(H2O)5NH3]21,",
+        "B": "[Ni(H2O)4(NH3)2]21 and",
+        "C": "[Ni(H2O)3(NH3)3]21 is :",
+        "D": ""
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Photochemical smog consists of excessive\namount of X, in addition to aldehydes,\nketones, peroxy acetyl nitrile (PAN), and\nso forth.  X is :",
+      "options": {
+        "A": "CH4",
+        "B": "CO",
+        "C": "CO2",
+        "D": "O3"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "1.4 g of an organic compound was digested\naccording to Kjeldahls method and the\nammonia evolved was absorbed in 60 mL\nof M/10 H2SO4 solution.  The excess\nsulphuric acid required 20 mL of M/10\nNaOH solution for neutralization.  The\npercentage of nitrogen in the compound\nis :",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "10",
+        "D": "24"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The optically inactive compound from the\nfollowing is :",
+      "options": {
+        "A": "2 - chloropropanal",
+        "B": "2 - chloropentane",
+        "C": "2 - chlorobutane",
+        "D": "2 - chloro - 2 - methylbutane 19. çÙÙ â´·é¤Ü ¥æØÙæð´ âð âÕçÏÌ â×æßØßÌæ ÂÚU âãè ·¤ÍÙ ãñ´"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A is :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A compound A with molecular formula\nC10H13Cl gives a white precipitate on\nadding silver nitrate solution.  A on\nreacting with alcoholic KOH gives\ncompound B as the main product.  B on\nozonolysis gives C and D.  C gives\nCannizaro reaction but not aldol\ncondensation.  D gives aldol condensation\nbut not Cannizaro reaction.  A is :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "C6H52CH22CH22CH22CH22Cl",
+        "D": "23. A ãñ Ñ"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the presence of a small amount of\nphosphorous, aliphatic carboxylic acids\nreact with chlorine or bromine to yield a\ncompound in which a - hydrogen has been\nreplaced by halogen.  This reaction is\nknown as :",
+      "options": {
+        "A": "Wolff - Kischner reaction",
+        "B": "Etard reaction",
+        "C": "Hell - Volhard - Zelinsky reaction",
+        "D": "Rosenmund reaction"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Arrange the following amines in the order\nof increasing basicity.",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "25. È¤æòSÈ¤æðÚUâ ·¤è ·¤× ×æææ ·¤è ©ÂçSÍçÌ ×ð´ °ÜèÈð¤çÅU·¤ ·¤æÕæðüçâçÜ·¤ ¥Ü ÜæðÚUèÙ ¥æñÚU Õýæð×èÙ ·ð¤ âæÍ ¥çÖç·ý¤Øæ ·¤ÚUÌð ãé° ¥ÂÙð a - ãæ§ÇþUæðÁÙ ·¤æð ãñÜæðÁÙ ×ð´ ÂçÚUßçÌüÌ ·¤ÚUÌð ãñ´Ð §â ¥çÖç·ý¤Øæ ·¤æ Ùæ× ãñ Ñ"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Match the polymers in column-A with\ntheir main uses in column-B and choose\nthe correct answer :\nColumn - A\nColumn - B",
+      "options": {
+        "A": "Polystyrene (i) Paints and lacquers",
+        "B": "Glyptal (ii) Rain coats",
+        "C": "Polyvinyl Chloride (iii) Manufacture of toys",
+        "D": "Bakelite (iv) Computer discs"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "possible_embedded_answer_marker"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Complete hydrolysis of starch gives :",
+      "options": {
+        "A": "glucose and fructose in equimolar amounts",
+        "B": "galactose and fructose in equimolar amounts",
+        "C": "glucose only",
+        "D": "glucose and galactose in equimolar amounts"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "is used as :",
+      "options": {
+        "A": "Insecticide",
+        "B": "Antihistamine",
+        "C": "Analgesic",
+        "D": "Antacid"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The cation that will not be precipitated by\nH2S in the presence of dil HCl is :",
+      "options": {
+        "A": "Cu21",
+        "B": "Pb21",
+        "C": "As31",
+        "D": "Co21 - o O o - 27. ·¤æòÜ×-A ×ð´ çÎ° »° ÕãéÜ·¤æð´ ·¤æð ·¤æòÜ×-B ×ð´ ©Ù·ð¤ Âý×é¹ ©ÂØæð» ·ð¤ âæÍ âé×ðçÜÌ ·¤Úð´U ÌÍæ âãè çß·¤ËÂ ¿éÙð´ Ñ Ë×Á¼ - A Ë×Á¼ - B"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

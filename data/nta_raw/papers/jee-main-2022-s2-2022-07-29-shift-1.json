@@ -15,6 +15,7 @@
     "exam_date": "2022-07-29",
     "shift": 1,
     "paper_type": "question_paper",
+    "subject": null,
     "language": "English",
     "notes": "",
     "exam_tag": "jee-main",
@@ -25,12 +26,12 @@
       "entrance-exam"
     ],
     "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/17446-29-07%20MORNING%20MATHS%202022.pdf",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2022/jee-main-29-july-2022-paper-shift-1/960395",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/gzplraocbTAAG7EmpHul",
     "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
     "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
   },
   "probe": {
     "sha256": "00fdc1ad80dba0337b048aa756deb7081a8d8f960686b922c5cc6785a18da57a",

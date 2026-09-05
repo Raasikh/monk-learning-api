@@ -80,6 +80,16 @@ SOLVE_TIMEOUT_S = 75.0
 # and repeating it with identical inputs wedges again for the same duration.
 # Past this share of the timeout, stop and report honestly instead.
 RETRY_IF_UNDER_FRACTION = 0.6
+# Once the answer has STARTED arriving, the budget has done its job and the
+# only thing left is to let the sentence finish.
+#
+# Measured: a hard coordinate-geometry question spent the full 75s reasoning
+# and was 120 characters into its answer when the wall-clock guard cut the
+# stream — mid-string, so the JSON was unterminated, so it read as a parse
+# failure and the student was told "something went wrong at our end". The
+# guard exists for a solve that thinks forever and writes NOTHING; cutting one
+# that is mid-sentence turns a slow success into a failure.
+ANSWER_FINISH_GRACE_S = 25.0
 # Reasoning tokens are spent from the SAME allowance as the answer, so this
 # ceiling is not "how long may the answer be" — it is "how long may the
 # thinking plus the answer be". Measured on a figure question that returned
@@ -1991,14 +2001,6 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                 # reasoning runs past the budget unchallenged: the wedge that
                 # prompted all this ran 111s against a 75s ceiling. This is the
                 # wall clock the ceiling was always supposed to mean.
-                if time.time() - attempt_started > budget_s:
-                    logger.warning(
-                        "[SNAP SOLVE] doubt=%s attempt %d hit the %.0fs budget "
-                        "with %d chars of thinking and %d of answer — stopping "
-                        "the stream rather than letting it run on.",
-                        doubt_id[:8], attempt, budget_s, thinking_chars, len(buffer),
-                    )
-                    break
                 usage = getattr(chunk, "usage", None)
                 if usage:
                     saw_usage = True
@@ -2016,6 +2018,21 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                 reasoning = getattr(delta, "reasoning_content", None)
                 if reasoning:
                     thinking_chars += len(reasoning)
+                    # Still thinking, past the budget, nothing written: this is
+                    # the wedge the guard exists for. Checked here rather than
+                    # at the top of the loop, which could not tell a thinking
+                    # chunk from the first chunk of the ANSWER — and cutting
+                    # the latter turned a slow success into a parse failure.
+                    if (time.time() - attempt_started > budget_s
+                            and not buffer.strip()):
+                        logger.warning(
+                            "[SNAP SOLVE] doubt=%s attempt %d spent %.0fs "
+                            "(budget %.0fs) on %d chars of thinking without "
+                            "starting an answer — stopping.",
+                            doubt_id[:8], attempt,
+                            time.time() - attempt_started, budget_s, thinking_chars,
+                        )
+                        break
                     if time.time() - last_tick >= 2.5:
                         last_tick = time.time()
                         on_event("thinking", {
@@ -2024,6 +2041,15 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                 if delta.content:
                     buffer += delta.content
                     _emit_new_steps(buffer, emitted, on_event)
+                    if time.time() - attempt_started > budget_s + ANSWER_FINISH_GRACE_S:
+                        logger.warning(
+                            "[SNAP SOLVE] doubt=%s attempt %d was still writing "
+                            "at %.0fs (budget %.0fs + %.0fs grace) — stopping.",
+                            doubt_id[:8], attempt,
+                            time.time() - attempt_started, budget_s,
+                            ANSWER_FINISH_GRACE_S,
+                        )
+                        break
         except Exception as err:
             record_call(model, "snap_solve", ok=False, attempt=attempt,
                         tokens={"input_tokens": att_in, "cache_hit_tokens": att_cached,

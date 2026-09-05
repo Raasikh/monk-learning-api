@@ -1,0 +1,717 @@
+{
+  "paper_id": "jee-main-2017-s2-mathematics-qery92sqtrhnmszjht84",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2017-s2-mathematics-qery92sqtrhnmszjht84",
+    "exam": "jee-main",
+    "year": 2017,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2017/jee-main-2017-maths-question-paper-online-exam-8th-april-2017/98562",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/qERY92SqtrHnMszJht84",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "223e4813db2b5deba7adaf06652c3fbba97a7608d175c4869128db403b49528f",
+    "page_count": 15,
+    "text_chars": 12989,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2017-s2-mathematics-qery92sqtrhnmszjht84.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 25,
+  "defects": [
+    "25 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 4, 5, 3, 4, 5, 6, 7, 8, 6, 7, 8, 9, 10, 1]",
+    "23/25 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let f (x)=210⋅x+1 and g(x)=310⋅x−1.  If\n(fog)(x)=x, then x is equal to :",
+      "options": {
+        "A": "10 10 10 3 1 3 2− − −",
+        "B": "10 10 10 2 1 2 3− − −",
+        "C": "10 10 10 1 3 2 3 − − − −",
+        "D": "10 10 10 1 2 3 2 − − − −"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let p(x) be a quadratic polynomial such\nthat p(0)=1.  If p(x) leaves remainder 4\nwhen divided by x−1 and it leaves\nremainder 6 when divided by x+1; then :",
+      "options": {
+        "A": "p(2)=11",
+        "B": "p(2)=19",
+        "C": "p(−2)=19",
+        "D": "p(−2)=11 ªÁáÊÃ"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let z e C, the set of complex numbers.  Then\nthe \nequation, \n2?z+3i?−?z−i?=0\nrepresents :",
+      "options": {
+        "A": "a circle with radius 8 3 .",
+        "B": "a circle with diameter 10 3 .",
+        "C": "an ellipse with length of major axis 16 3 .",
+        "D": "an ellipse with length of minor axis 16"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "",
+      "options": {
+        "D": "The number of real values of λ for which the system of linear equations 2x+4y−λz=0 4x+λy+2z=0 λx+2y+2z=0 has infinitely many solutions, is :",
+        "A": "0",
+        "B": "1",
+        "C": "2"
+      },
+      "page_start": 2,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "3\n3   3\n2   4  2\nx\nx\nlim\nx\n→\n−\n−\n−\n is equal to :",
+      "options": {
+        "A": "3",
+        "B": "1 2",
+        "C": "3 2",
+        "D": "1 2 2"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The tangent at the point (2, −2) to the\ncurve, x2y2−2x=4(1−y) does not pass\nthrough the point :",
+      "options": {
+        "A": "1 4, 3      ",
+        "B": "(8, 5)",
+        "C": "(−4, −9)",
+        "D": "(−2, −7) 9. ÿÁŒ üÊáÊË 3 75 243 507 ..... + + + + ∑§ ¬˝Õ◊ n ¬ŒÊ¥ ∑§Ê ÿÊª 435 3 „Ò, ÃÊ n ’⁄UÊ’⁄U „Ò —"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "If \n15\n15\n2\n2\n1\n  \n1\ny\nx\nx\nx\nx\n\n\n\n\n\n\n\n\n \n \n \n=\n+\n+\n−\n−\n−\n,\nthen \n2\n2\n2\nd\nd",
+      "options": {
+        "A": "d d y y x x x x − + is equal to :",
+        "B": "224 y2",
+        "C": "225 y2",
+        "D": "225 y"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "If a point P has co-ordinates (0, −2) and\nQ \nis \nany \npoint \non \nthe \ncircle,\nx2+y2−5x−y+5=0, then the maximum\nvalue of (PQ)2 is :",
+      "options": {
+        "A": "25 6 2 +",
+        "B": "14 5 3 +",
+        "C": "47 10 6 2 +",
+        "D": "8 5 3 + 12. ÿÁŒ 15 15 2 2 1 1 y x x x x         = + + − − − „Ò, ÃÊ 2 2 2 d d"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The integral\n1  2cot (cosec   cot ) d\nx\nx\nx\nx\n∫\n+\n+\n0 <  < 2\nx\n\n\n\n\n\n\nπ  is equal to :\n(where C is a constant of integration)",
+      "options": {
+        "A": "4 log C sin 2 x       +",
+        "B": "2 log C sin 2 x       +",
+        "C": "2 log C cos 2 x       +",
+        "D": "4 log C cos 2 x       +"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The \nintegral \n4  \n12\n3\n8 cos 2\nd\n(tan   cot )\nx\nx\nx\nx\n∫\nπ\nπ\n+\nequals :",
+      "options": {
+        "A": "15 128",
+        "B": "15 64",
+        "C": "13 32",
+        "D": "13 256 14. ‚◊Ê∑§‹ 1 2cot (cosec cot ) d , x x x x ∫ + + 0 < < 2 x       π ’⁄UÊ’⁄U „Ò — (¡„Ê° C ∞∑§ ‚◊Ê∑§‹Ÿ •ø⁄U „Ò)"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The area (in sq. units) of the smaller portion\nenclosed between the curves, x2+y2=4\nand y2=3x, is :",
+      "options": {
+        "A": "1 3 2 3 π +",
+        "B": "1 2 3 3 π +",
+        "C": "1 2 3 2 3 π +",
+        "D": "1 4 3 3 π +"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The curve satisfying the differential\nequation, \nydx−(x+3y2)dy=0 \nand\npassing through the point (1, 1), also passes\nthrough the point :",
+      "options": {
+        "A": "1 1 , 4 2       −",
+        "B": "1 1 , 3 3       −",
+        "C": "1 1 , 3 3       −",
+        "D": "1 1 , 4 2       16. ﬂ∑˝§Ê¥ x2+y2=4 ÃÕÊ y2=3x ∑§ ’Ëø ÁÉÊ⁄U ¿UÊ≈U ÷Êª ∑§Ê ˇÊòÊ»§‹ (ﬂª¸ ß∑§ÊßÿÊ¥ ◊¥) „Ò —"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The locus of the point of intersection of the\nstraight lines,\ntx−2y−3t=0\nx−2ty+3=0  (t e R), is :",
+      "options": {
+        "A": "an ellipse with eccentricity 2 5",
+        "B": "an ellipse with the length of major axis 6",
+        "C": "a hyperbola with eccentricity 5",
+        "D": "a hyperbola with the length of conjugate axis 3"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "If two parallel chords of a circle, having\ndiameter 4 units, lie on the opposite sides\nof the centre and subtend angles\n1 1\ncos\n7\n\n\n\n\n\n\n−\n and sec−1(7) at the centre\nrespectively, then the distance between\nthese chords, is :",
+      "options": {
+        "A": "4 7",
+        "B": "8 7",
+        "C": "8 7",
+        "D": "16 7 18. ⁄UπÊ•Ê¥ tx−2y−3t=0 x−2ty+3=0 (t e R) ∑§ ¬˝ÁÃë¿UŒŸ Á’¥ŒÈ ∑§Ê Á’¥ŒÈ ¬Õ „Ò —"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "If the common tangents to the parabola,\nx2=4y and the circle, x2+y2=4 intersect\nat the point P, then the distance of P from\nthe origin, is :",
+      "options": {
+        "A": "2 1 +",
+        "B": "( ) 2 3 2 2 +",
+        "C": "( ) 2 2 1 +",
+        "D": "3 2 2 +"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "Consider an ellipse, whose centre is at the\norigin and its major axis is along the\nx-axis.  If its eccentricity is 3\n5  and the\ndistance between its foci is 6, then the area\n(in sq. units) of the quadrilateral inscribed\nin the ellipse, with the vertices as the\nvertices of the ellipse, is :",
+      "options": {
+        "A": "8",
+        "B": "32",
+        "C": "80",
+        "D": "40 20. ÿÁŒ ¬⁄Uﬂ‹ÿ x2=4y ÃÕÊ ﬂÎûÊ x2+y2=4 ∑§Ë ©÷ÿÁŸc∆U S¬‡Ê¸ ⁄UπÊ∞° ∞∑§ Á’¥ŒÈ P ¬⁄U ¬˝ÁÃë¿UŒ ∑§⁄UÃË „Ò¥, ÃÊ P ∑§Ë ◊Í‹ Á’¥ŒÈ ‚ ŒÍ⁄UË „Ò —"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The coordinates of the foot of the\nperpendicular from the point (1, −2, 1)\non the plane containing the lines,\n  1\n 1\n  3\n  \n  \n6\n7\n8\ny\nx\nz\n−\n+\n−\n=\n=\n and\n  2\n 1\n  3\n \n  \n,\n3\n5\n7\ny\nx\nz\n−\n−\n−\n=\n=\n is :",
+      "options": {
+        "A": "(2, −4, 2)",
+        "B": "(−1, 2, −1)",
+        "C": "(0, 0, 0)",
+        "D": "(1, 1, 1)"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The line of intersection of the planes\n(\n)\nr  . 3     \n  1\ni\nj\nk\n→\n∧\n∧\n∧\n−\n+\n=  and\n(\n)\nr  . \n  4   2\n  2,\ni\nj\nk\n→\n∧\n∧\n∧\n+\n−\n=\n is :",
+      "options": {
+        "A": "5 4 7 7 2 7 13 x z y − − = = −",
+        "B": "5 4 7 7 2 7 13 x z y − + = = −",
+        "C": "6 5 13 13 2 7 13 x y z − − = = − −",
+        "D": "6 5 13 13 2 7 13 x y z − − = = − 22. ‚◊Ã‹, Á¡‚◊¥ ŒÊŸÊ¥ ⁄UπÊ∞¥ 1 1 3 6 7 8 y x z − + − = = ÃÕÊ 2 1 3 3 5 7 y x z − − − = = ÁSÕÃ „Ò¥, ¬⁄U Á’ãŒÈ (1, −2, 1) ‚ «UÊ‹ ª∞ ‹ê’ ∑§ ¬ÊŒ ∑§ ÁŸŒ¸‡ÊÊ¥∑§ „Ò¥ —"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The area (in sq. units) of the parallelogram\nwhose diagonals are along the vectors\n8   6\ni\nj\n∧\n∧\n−\n and 3   4   12 ,\ni\nj\nk\n∧\n∧\n∧\n+\n−\n is :",
+      "options": {
+        "A": "26",
+        "B": "65",
+        "C": "20",
+        "D": "52"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "The mean age of 25 teachers in a school is\n40 years.  A teacher retires at the age of\n60 years and a new teacher is appointed\nin his place.  If now the mean age of the\nteachers in this school is 39 years, then the\nage (in years) of the newly appointed\nteacher is :",
+      "options": {
+        "A": "25",
+        "B": "30",
+        "C": "35",
+        "D": "40 24. ‚◊Ê¥Ã⁄U øÃÈ÷È¸¡, Á¡‚∑§ Áﬂ∑§áÊ¸, ‚ÁŒ‡ÊÊ¥ 8 6 i j ∧ ∧ − ÃÕÊ 3 4 12 i j k ∧ ∧ ∧ + − ∑§Ë ÁŒ‡ÊÊ•Ê¥ ◊¥ „Ò¥, ∑§Ê ˇÊòÊ»§‹ (ﬂª¸ ß∑§ÊßÿÊ¥ ◊¥) „Ò —"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "ÃËŸ √ÿÁÄÃ P, Q ÃÕÊ R SﬂÃ¥òÊ M§¬ ‚ ∞∑§ ÁŸ‡ÊÊŸ\n∑§Ê ÷ŒŸ ∑§Ê ¬˝ÿÊ‚ ∑§⁄UÃ „Ò¥–  ÿÁŒ ©Ÿ∑§ ÁŸ‡ÊÊŸ ∑§Ê\n÷Œ ¬ÊŸ ∑§Ë ¬˝ÊÁÿ∑§ÃÊ∞¥ ∑˝§◊‡Ê— 3\n1\n, \n4\n2  ÃÕÊ 5\n8  „Ò¥, ÃÊ\nP •ÕﬂÊ Q ∑§ ÁŸ‡ÊÊŸÊ ÷Œ ¬ÊŸ ¬⁄UãÃÈ R ∑§ ÁŸ‡ÊÊŸÊ Ÿ\n÷Œ ¬ÊŸ ∑§Ë ¬˝ÊÁÿ∑§ÃÊ „Ò —",
+      "options": {
+        "A": "21 64",
+        "B": "9 64",
+        "C": "15 64",
+        "D": "39 64"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "∞∑§ •ŸÁ÷ŸÃ (unbiased) Á‚Ä∑§ ∑§Ê •Ê∆U ’Ê⁄U\n©¿UÊ‹Ê ¡ÊÃÊ „Ò, ÃÊ ∑§◊ ‚ ∑§◊ ∞∑§ ÁøûÊ ÃÕÊ ∑§◊ ‚\n∑§◊ ∞∑§ ¬≈U ¬˝ÊåÃ ∑§⁄UŸ ∑§Ë ¬˝ÊÁÿ∑§ÃÊ „Ò —",
+      "options": {
+        "A": "255 256",
+        "B": "127 128",
+        "C": "63 64",
+        "D": "1 2 26. Three persons P, Q and R independently try to hit a target. If the probabilities of their hitting the target are 3 1 , 4 2 and 5 8 respectively, then the probability that the target is hit by P or Q but not by R is :"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "ÿÁŒ\n     \n[\n]\n0\ncos \nsin \nsin \n0\ncos \nS  \n \n : \n  0\n0, 2\ncos \nsin \n0\nx\nx\nx\nx\nx\nx\nx\n\n\n\n\n\n\n\n\n\n\n \n−\n=\n\u0003 \n=\nπ\n„Ò, ÃÊ \n  S\ntan\n \n3\nx\nx\n\n\n\n\n\n\n∑\n\u0001\nπ +\n ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "4 2 3 +",
+        "B": "2 3 −+",
+        "C": "2 3 −−",
+        "D": "4 2 3 −−"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "2\n2\n1\n2\n2\n1  \n  1  \ntan\n1  \n  1  \nx\nx\nx\nx\n\n\n\n\n\n\n\n\n−\n+\n+\n−\n+\n−\n−\n \n \n1\n< \n,  \n 0\n2\nx\nx ≠\n\u0001 \u0001\n,  ∑§Ê ◊ÊŸ „Ò —",
+      "options": {
+        "A": "1 2 1 cos 4 2 x − π +",
+        "B": "1 2 cos 4 x − π +",
+        "C": "1 2 1 cos 4 2 x − π −",
+        "D": "1 2 cos 4 x − π − 28. If [ ] 0 cos sin sin 0 cos S : 0 , 0, 2 cos sin 0 x x x x x x x           − = \u0003 = π then S tan 3 x x       ∑ \u0001 π + is equal to :"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 1,
+      "text": "∑§ÕŸ (~p) ∨ (p ∧ ~q) ‚◊ÃÈÀÿ „Ò —",
+      "options": {
+        "A": "p ∨ ~q",
+        "B": "p → ~q",
+        "C": "p ∧ ~q",
+        "D": "q → p - o 0 o - 30. The proposition (~p) ∨ (p ∧ ~q) is equivalent to :"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

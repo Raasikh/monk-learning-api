@@ -1,0 +1,753 @@
+{
+  "paper_id": "jee-main-2016-s2-physics-kasbhvrht14uququm8uy",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2016-s2-physics-kasbhvrht14uququm8uy",
+    "exam": "jee-main",
+    "year": 2016,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2016/jee-main-2016-physics-question-paper-online-exam-10th-april-2016/98548",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/KaSBHvrHT14uquQuM8Uy",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "b08f2c33de63b4e0146f6ef75036db78baec49a60983eebc25097ddb52bdcd4f",
+    "page_count": 24,
+    "text_chars": 21637,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 1,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2016-s2-physics-kasbhvrht14uququm8uy.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "8 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 4, 10, 3, 20, 22, 24, 27]",
+    "23/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A, B, C and D are four different physical\nquantities having different dimensions.\nNone of them is dimensionless.  But we\nknow that the equation AD=C ln(BD)\nholds true.  Then which of the combination\nis not a meaningful quantity ?",
+      "options": {
+        "A": "A2 − B2C2",
+        "B": "( ) A C D −",
+        "C": "A C B −",
+        "D": "2 C AD BD C −"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle of mass M is moving in a circle\nof fixed radius R in such a way that its\ncentripetal acceleration at time t is given\nby n2 R t2 where n is a constant.  The power\ndelivered to the particle by the force acting\non it, is :",
+      "options": {
+        "A": "M n2 R2 t",
+        "B": "M n R2 t",
+        "C": "M n R2 t2",
+        "D": "1 2 M n2 R2 t2"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Concrete mixture is made by mixing\ncement, stone and sand in a rotating\ncylindrical drum.  If the drum rotates too\nfast, the ingredients remain stuck to the\nwall of the drum and proper mixing of\ningredients does not take place.  The\nmaximum rotational speed of the drum in\nrevolutions per minute(rpm) to ensure\nproper mixing is close to :\n(Take the radius of the drum to be 1.25 m\nand its axle to be horizontal) :",
+      "options": {
+        "A": "0.4",
+        "B": "1.3",
+        "C": "8.0",
+        "D": "27.0"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Velocity-time graph for a body of mass\n10 kg is shown in figure.  Work-done on\nthe body in first two seconds of the motion\nis :",
+      "options": {
+        "A": "12000 J",
+        "B": "−12000 J",
+        "C": "−4500 J",
+        "D": "−9300 J"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the figure shown ABC is a uniform wire.\nIf centre of mass of wire lies vertically below\npoint A, then \nBC\nAB  is close to :",
+      "options": {
+        "A": "1.85",
+        "B": "1.37",
+        "C": "1.5",
+        "D": "3"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An astronaut of mass m is working on a\nsatellite orbiting the earth at a distance h\nfrom the earth’s surface.  The radius of the\nearth is R, while its mass is M.  The\ngravitational pull FG on the astronaut is :",
+      "options": {
+        "A": "Zero since astronaut feels weightless",
+        "B": "0 < < 2 G GMm F R",
+        "C": "< < 2 2 ( ) G GMm GMm F R h R +",
+        "D": "2 ( ) G GMm F R h = + 6. ¬ÎâﬂË ∑§Ë ‚Ã„ ‚ ‘h’ ŒÍ⁄UË ¬⁄U ÁSÕÃ ∞∑§ ©¬ª˝„ ¬⁄U ∞∑§ ‘m’ Œ˝√ÿ◊ÊŸ ∑§Ê •¥ÃÁ⁄UˇÊ-ÿÊòÊË ∑§Ê◊ ∑§⁄U ⁄U„Ê „Ò– ¬ÎâﬂË ∑§Ê Œ˝√ÿ◊ÊŸ ‘M’ ÃÕÊ ÁòÊíÿÊ ‘R’ „Ò– Ã’ ©‚ ÿÊòÊË ¬⁄U ‹ª ⁄U„Ê ªÈL§àﬂËÿ ’‹ FG „Ò —"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A bottle has an opening of radius a and\nlength b.  A cork of length b and radius\n(a+∆a) where (∆a<<a) is compressed to fit\ninto the opening completely (See figure).\nIf the bulk modulus of cork is B and\nfrictional coefficient between the bottle and\ncork is µ then the force needed to push the\ncork into  the bottle is :",
+      "options": {
+        "A": "(πµB b) ∆a",
+        "B": "(2πµB b) ∆a",
+        "C": "(πµB b) a",
+        "D": "(4πµB b) ∆a 7. ∞∑§ ’ÊÃ‹ ∑§ ◊È°„ ∑§Ë ÁòÊíÿÊ ‘a’ „Ò ÃÕÊ ‹ê’Êß¸ ‘b’ „Ò– ∞∑§ ‘b’ ‹ê’Êß¸ •ÊÒ⁄U (a+∆a) ÁòÊíÿÊ (∆a<<a) ﬂÊ‹ ∑§Ê∑¸§ ∑§Ê ©‚∑§ ◊È°„ ◊¥ ¬Í⁄UË Ã⁄U„ ∆Í°U‚ ÁŒÿÊ ªÿÊ „Ò (ÁøòÊ ŒÁπÿ)– ÿÁŒ ∑§Ê∑¸§ ∑§Ê •ÊÿÃŸ ¬˝àÿÊSÕÃÊ ªÈáÊÊ¥∑§ B „Ò ÃÕÊ ’ÊÃ‹ •ÊÒ⁄U ∑§Ê∑¸§ ∑§ ’Ëø ÉÊ·¸áÊ-ªÈáÊÊ¥∑§ µ „Ò, Ã’ ∑§Ê∑¸§ ∑§Ê ◊È°„ ◊¥ ÉÊÈ‚ÊŸ ∑§ Á‹ÿ •Êﬂ‡ÿ∑§ ’‹ „Ò —"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A Carnot freezer takes heat from water at\n08C inside it and rejects it to the room at a\ntemperature of 278C.  The latent heat of ice\nis 336×103 J kg−1.  If 5 kg of water at 08C is\nconverted into ice at 08C by the freezer, then\nthe energy consumed by the freezer is close\nto :",
+      "options": {
+        "A": "1.67×105 J",
+        "B": "1.68×106 J",
+        "C": "1.51×105 J",
+        "D": "1.71×107 J 8. ∞∑§ ∑§ÊŸÊ¸≈U »˝§Ë¡⁄U •¬Ÿ •¥Œ⁄U 08C ¬⁄U ⁄Uπ „È∞ ¡‹ ‚ ™§c◊Ê ‹∑§⁄U ©‚ ∑§◊⁄U ∑§ ÃÊ¬◊ÊŸ 278C ¬⁄U ÁŸc∑§ÊÁ‚Ã ∑§⁄UÃÊ „Ò– ’»¸§ ∑§Ë ªÈåÃ ™§c◊Ê 336×103 J kg−1 „Ò– ÿÁŒ »˝§Ë¡⁄U ◊¥ ⁄UπÊ 08C ¬⁄U 5 kg ¡‹, 08C ¬⁄U ’»¸§ ◊¥ ’Œ‹ÃÊ „Ò Ã’ »˝§Ë¡⁄U mÊ⁄UÊ π¬ÊßZ ªß¸ ™§¡Ê¸ ‹ª÷ª „Ò —"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following shows the correct\nrelationship between the pressure ‘P’ and\ndensity ρ of an ideal gas at constant\ntemperature ?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "9. Á∑§‚Ë •ÊŒ‡Ê¸ ªÒ‚ ∑§ Á‹ÿ ÁSÕ⁄U ÃÊ¬◊ÊŸ ¬⁄U ©‚∑§ ŒÊ’ ‘P’ ÃÕÊ ÉÊŸàﬂ ‘ρ’ ∑§ ’Ëø ‚¥’¥œ ∑§ Á‹ÿ ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-‚Ê ÁøòÊ ‚„Ë „Ò?"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In an engine the piston undergoes vertical\nsimple harmonic motion with amplitude\n7 cm.  A washer rests on top of the piston\nand moves with it.  The motor speed is\nslowly increased. The frequency of the\npiston at which the washer no longer stays\nin contact with the piston, is close to :",
+      "options": {
+        "A": "0.1 Hz",
+        "B": "1.2 Hz",
+        "C": "0.7 Hz",
+        "D": "1.9 Hz"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A toy-car, blowing its horn, is moving with\na steady speed of 5 m/s, away from a wall.\nAn observer, towards whom the toy car is\nmoving, is able to hear 5 beats per second.\nIf the velocity of sound in air is 340 m/s,\nthe frequency of the horn of the toy car is\nclose to :",
+      "options": {
+        "A": "680 Hz",
+        "B": "510 Hz",
+        "C": "340 Hz",
+        "D": "170 Hz 10. ∞∑§ ß¥¡Ÿ ∑§Ê Á¬S≈UŸ 7 cm •ÊÿÊ◊ ∑§Ë ‚⁄U‹-•ÊﬂÃ¸- ªÁÃ ™§äﬂÊ¸œ⁄U ◊¥ ∑§⁄U ⁄U„Ê „Ò– Á¬S≈UŸ ∑§ ™§¬⁄U ∞∑§ ﬂÊ‡Ê⁄U ⁄UπÊ „Ò ¡Ê ©‚∑§ ‚ÊÕ ø‹ÃÊ „Ò– ◊Ê≈U⁄U ∑§Ë ªÁÃ œË⁄U-œË⁄U ’…∏Êß¸ ¡ÊÃË „Ò ÃÊ Á¬S≈UŸ ∑§Ë •ÊﬂÎÁûÊ Á¡‚ ¬⁄U ﬂÊ‡Ê⁄U Á¬S≈UŸ ∑§Ê ‚ÊÕ ¿UÊ«∏ ŒÃÊ „Ò, ﬂ„ ‹ª÷ª „Ò —"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Within a spherical charge distribution of\ncharge density ρ(r), N equipotential\nsurfaces of potential V0, V0+∆V, V0+2∆V,\n.......... V0+N∆V  (∆V>0), are drawn and\nhave\nincreasing\nradii\nr0, r1, r2,..........rN, respectively.  If the\ndifference in the radii of the surfaces is\nconstant for all values of V0 and ∆V then :",
+      "options": {
+        "A": "ρ (r) α r",
+        "B": "ρ (r) = constant",
+        "C": "( ) 1 r r ρ α",
+        "D": "( ) 2 1 r r ρ α 12. •Êﬂ‡Ê-ÉÊŸàﬂ ρ (r) ∑§ Á∑§‚Ë ªÊ‹Ëÿ-•Êﬂ‡Ê-ÁﬂÃ⁄UáÊ, ∑§ •ãŒ⁄U N ‚◊Áﬂ÷ﬂ-¬Îc∆U, Á¡Ÿ∑§Ë Áﬂ÷ﬂ „Ò V0, V0+∆V, V0+2∆V, ........ V0+N∆V (∆V>0), •Ê⁄UÁπÃ Á∑§ÿ ªÿ „Ò¥ •ÊÒ⁄U ©Ÿ∑§Ë ÁòÊíÿÊ∞¥ ∑˝§◊‡Ê— r0, r1, r2,..........rN „Ò¥– ÿÁŒ ÁòÊíÿÊ•Ê¥ ∑§Ê •ãÃ⁄UÊ‹, ‚÷Ë V0 ÃÕÊ ∆V ∑§ ◊ÊŸÊ¥ ∑§ Á‹ÿ, ÁSÕ⁄U „Ò Ã’ —"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Figure shows a network of capacitors where\nthe numbers indicates capacitances in\nmicro Farad.  The value of capacitance C if\nthe equivalent capacitance between point\nA and B is to be 1 µF is :",
+      "options": {
+        "A": "31 F 23 µ",
+        "B": "32 F 23 µ",
+        "C": "33 F 23 µ",
+        "D": "34 F 23 µ 13. ÁøòÊ ‚¥œÊÁ⁄UòÊÊ¥ ∑§Ê ÁŸ∑§Êÿ Œ‡ÊÊ¸ÃÊ „Ò, ¡„Ê° •¥∑§ µF ◊¥ œÊÁ⁄UÃÊ Œ‡ÊÊ¸Ã „Ò¥– A ﬂ B ∑§ ’Ëø ¬˝÷ÊﬂË œÊÁ⁄UÃÊ 1 µF „ÊŸ ∑§ Á‹ÿ C ∑§Ë œÊÁ⁄UÃÊ „ÊŸË øÊÁ„ÿ —"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The resistance of an electrical toaster has a\ntemperature dependence given by\nR(T)=R0 [1+α(T−T0)] in its range of\noperation.  At T0=300 K, R=100 Ω and at\nT=500 K, R=120 Ω.  The toaster is\nconnected to a voltage source at 200 V and\nits temperature is raised at a constant rate\nfrom 300 to 500 K in 30 s.  The total work\ndone in raising the temperature is :",
+      "options": {
+        "A": "1 5 400 J 1 3 . ln .",
+        "B": "2 200 J 3 ln",
+        "C": "5 400 J 6 ln",
+        "D": "300 J 14. Á’¡‹Ë ‚ ø‹Ÿ ﬂÊ‹ ≈UÊS≈U⁄U ∑§ ¬˝ÁÃ⁄UÊœ ∑§Ê ÃÊ¬◊ÊŸ ‚ ’Œ‹Êﬂ R(T)=R0 [1+α(T−T0)] mÊ⁄UÊ ÁŒÿÊ ªÿÊ „Ò– T0=300 K ¬⁄U R=100 Ω „Ò ÃÕÊ T=500 K ¬⁄U R=120 Ω „Ò– ≈UÊS≈U⁄U 200 VU ∑§ dÊÃ ‚ ¡È«∏Ê „Ò, ÃÕÊ ©‚∑§Ê ÃÊ¬◊ÊŸ 300 K ‚ ∞∑§ ‚◊ÊŸ Œ⁄U ¬⁄U ’…∏∑§⁄U 30 s ◊¥ 500 K „Ê ¡ÊÃÊ „Ò– Ã’ ß‚ ¬˝∑˝§◊ ◊¥ Á∑§ÿÊ ªÿÊ ∑È§‹ ∑§Êÿ¸ „Ò —"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider \na \nthin \nmetallic \nsheet\nperpendicular to the plane of the paper\nmoving with speed ‘v’ in a uniform\nmagnetic field B going into the plane of the\npaper (See figure). If charge densities σ1 and\nσ2 are induced on the left and right surfaces,\nrespectively, of the sheet then  (ignore\nfringe effects) :",
+      "options": {
+        "A": "σ1=e0 v B, σ2=−e0 v B",
+        "B": "0 0 1 2 B B 2 2 v v , \u0001 \u0001 σ σ − = =",
+        "C": "σ1=σ2=e0 vB",
+        "D": "0 0 1 2 B B 2 2 v v , \u0001 \u0001 σ σ − = = 15. ∞∑§ ¬Ã‹Ë œÊÃÈ ‡ÊË≈U ¬Îc∆U ∑§ ‹ê’ﬂÃ ⁄UπË „Ò •ÊÒ⁄U ÁøòÊ ◊¥ ÁŒπÊß¸ ÁŒ‡ÊÊ ◊¥ ﬂª ‘v’ ‚ ∞∑§ ‚◊ÊŸ øÈê’∑§Ëÿ- ˇÊòÊ B ◊¥ ø‹ ⁄U„Ë „Ò– øÈê’∑§Ëÿ-ˇÊòÊ ß‚ ‚◊Ã‹ ¬Îc∆U ◊¥ ¬˝ﬂ‡Ê ∑§⁄U ⁄U„Ê „Ò– ÿÁŒ ß‚ ‡ÊË≈U ∑§Ë ’ÊßZ •ÊÒ⁄U ŒÊßZ ‚Ã„Ê¥ ¬⁄U ∑˝§◊‡Ê— ¬Îc∆U-•Êﬂ‡Ê-ÉÊŸàﬂ σ1 ÃÕÊ σ2 ¬˝Á⁄UÃ „ÊÃ „Ò¥, Ã’ ©¬Ê¥Ã-¬˝÷Êﬂ ∑§Ê Ÿªáÿ ◊ÊŸÃ „È∞ σ1 ÃÕÊ σ2 ∑§ ◊ÊŸ „Ê¥ª —"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A fighter plane of length 20 m, wing span\n(distance from tip of one wing to the tip of\nthe other wing) of 15 m and height\n5 m is flying towards east over Delhi.  Its\nspeed is 240 ms−1.  The earth’s magnetic\nfield over Delhi is 5×10−5 T with the\ndeclination angle ~08 and dip of θ such that\nsin θ = 2\n3 .  If the voltage developed is VB\nbetween the lower and upper side of the\nplane and VW between the tips of the wings\nthen VB and VW are close to :",
+      "options": {
+        "A": "VB=45 mV; VW=120 mV with right side of pilot at higher voltage",
+        "B": "VB=45 mV; VW=120 mV with left side of pilot at higher voltage",
+        "C": "VB=40 mV; VW=135 mV with right side of pilot at high voltage",
+        "D": "VB=40 mV; VW=135 mV with left side of pilot at higher voltage 16. ∞∑§ ‹«∏Ê∑Í§ ¡„Ê¡ ∑§Ë ‹ê’Êß¸ 20 m, ¬¥πÊ¥ ∑§ Á‚⁄UÊ¥ ∑§ ’Ëø ŒÍ⁄UË 15 m ÃÕÊ ™°§øÊß¸ 5 m „Ò, •ÊÒ⁄U ÿ„ ÁŒÀ‹Ë ∑§ ™§¬⁄U ¬Íﬂ¸-ÁŒ‡ÊÊ ◊¥ 240 ms−1 ªÁÃ ‚ ©«∏ ⁄U„Ê „Ò– ÁŒÀ‹Ë ∑§ ™§¬⁄U ¬ÎâﬂË ∑§Ê øÈê’∑§Ëÿ-ˇÊòÊ 5×10−5 T „Ò, Á«UÁÄ‹Ÿ‡ÊŸ ∑§ÊáÊ ~08 „Ò, ÃÕÊ Á«U¬ ∑§ÊáÊ θ ∑§ Á‹ÿ sin θ = 2 3 „Ò– ÿÁŒ ¬˝Á⁄UÃ-Áﬂ÷ﬂ „Ò¥ — VB ¡„Ê¡ ∑§ ™§¬⁄U ﬂ ŸËø ∑§ ’Ëø ; VW ¬¥πÊ¥ ∑§ Á‚⁄UÊ¥ ∑§ ’Ëø– Ã’ —"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A conducting metal circular-wire-loop of\nradius r is placed perpendicular to a\nmagnetic field which varies with time as\n0e\nt\nB\nB\nτ\n−\n= \n, where B0 and τ are constants,\nat time t=0.  If the resistance of the loop is\nR then the heat generated in the loop after\na long time (\n)\nt →∞ is :",
+      "options": {
+        "A": "2 4 4 0 2 r B R π τ",
+        "B": "2 4 2 0 2 r B R π τ",
+        "C": "2 4 2 0 r B R π τ",
+        "D": "2 4 2 0 r B R π τ 17. ‘r’ ÁòÊíÿÊ ∑§ œÊÃÈ ﬂÎûÊËÿ-ÃÊ⁄U-‹Í¬ ∑§Ê ¬Îc∆U, 0 e t B B τ − = mÊ⁄UÊ ’Œ‹Ã „È∞ øÈê’∑§Ëÿ-ˇÊòÊ ∑§ ‹ê’ﬂÃ ⁄UπÊ „Ò– ¡„Ê° ‚◊ÿ t=0 ¬⁄U B0 ÃÕÊ τ •ø⁄U „Ò¥– ÿÁŒ ‹Í¬ ∑§Ê ¬˝ÁÃ⁄UÊœ R „Ò, Ã’ ∑§Ê»§Ë íÿÊŒÊ ‚◊ÿ ( ) t →∞ ªÈ¡⁄UŸ ∑§ ’ÊŒ ©‚ ‹Í¬ ◊¥ ¬ÒŒÊ „Èß¸ ™§¡Ê¸ „Ò —"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider an electromagnetic wave\npropagating in vacuum.  Choose the correct\nstatement :",
+      "options": {
+        "A": "For an electromagnetic wave propagating in +x direction the electric field is ( ) 1 ( ) 2 E E x, t y z yz → ∧ ∧ = − and the magnetic field is ( ) 1 ( ) 2 B B x, t y z yz → ∧ ∧ = +",
+        "B": "For an electromagnetic wave propagating in +x direction the electric field is ( ) 1 ( ) 2 E E y, z, t y z yz → ∧ ∧ = + and the magnetic field is ( ) 1 ( ) 2 B B y, z, t y z yz → ∧ ∧ = +",
+        "C": "For an electromagnetic wave propagating in +y direction the electric field is 1 ( ) 2 E E x, t y yz → ∧ = and the magnetic field is 1 ( ) 2 B B x, t z yz → ∧ = 18. √ÿÊ◊ ◊¥ ø‹ ⁄U„Ë ﬂÒlÈÃ-ëÊÈê’∑§Ëÿ Ã⁄¥Uª ∑§ Á‹∞ ‚„Ë Áﬂ∑§À¬ øÈÁŸ∞–",
+        "D": "For an electromagnetic wave propagating in +y direction the electric field is 1 ( ) 2 E E x, t z yz → ∧ = and the magnetic field is 1 ( ) 2 B B x, t y z → ∧ ="
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A hemispherical glass body of radius\n10 cm and refractive index 1.5 is silvered\non its curved surface.  A small air bubble is\n6 cm below the flat surface inside it along\nthe axis.  The position of the image of the\nair bubble made by the mirror is seen :",
+      "options": {
+        "A": "14 cm below flat surface",
+        "B": "30 cm below flat surface",
+        "C": "20 cm below flat surface",
+        "D": "16 cm below flat surface"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two stars are 10 light years away from the\nearth.  They are seen through a telescope\nof objective diameter 30 cm.  The\nwavelength of light is 600 nm.  To see the\nstars just resolved by the telescope, the\nminimum distance between them should\nbe (1 light year=9.46× 1015m) of the order\nof :",
+      "options": {
+        "A": "106 km",
+        "B": "108 km",
+        "C": "1011 km",
+        "D": "1010 km"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A photoelectric surface is illuminated\nsuccessively by monochromatic light of\nwavelengths λ and  2\nλ . If the maximum\nkinetic \nenergy \nof \nthe \nemitted\nphotoelectrons in the second case is\n3 times that in the first case, the work\nfunction of the surface is :",
+      "options": {
+        "A": "3 hc λ",
+        "B": "2 hc λ",
+        "C": "hc λ",
+        "D": "3 hc λ 20. ŒÊ ÃÊ⁄U ¬ÎâﬂË ‚ 10 ¬˝∑§Ê‡Ê-ﬂ·¸ ∑§Ë ŒÍ⁄UË ¬⁄U „Ò¥– ©Ÿ∑§Ê ∞∑§ ≈UÁ‹S∑§Ê¬ mÊ⁄UÊ ŒπÊ ¡ÊÃÊ „Ò, Á¡‚∑§Ê •Á÷ŒÎ‡ÿ∑§ 30 cm √ÿÊ‚ ∑§Ê „Ò– ¬˝∑§Ê‡Ê ∑§Ë Ã⁄¥UªŒÒÉÿ¸ 600 nm „Ò– (1 ¬˝∑§Ê‡Ê-ﬂ·¸ =9.46× 1015m) „Ò– ≈UÁ‹S∑§Ê¬ •ª⁄U ©Ÿ ÃÊ⁄UÊ¥ ∑§Ê ‹ª÷ª Áﬂ÷ÁŒÃ Œπ ¬Ê ⁄U„Ê „Ò, Ã’ ©Ÿ∑§ ’Ëø ∑§Ë ŒÍ⁄UË ∑§Ê order „Ò —"
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A neutron moving with a speed ‘v’ makes\na head on collision with a stationary\nhydrogen atom in ground state.  The\nminimum kinetic energy of the neutron for\nwhich inelastic collision will take place is :",
+      "options": {
+        "A": "10.2 eV",
+        "B": "16.8 eV",
+        "C": "12.1 eV",
+        "D": "20.4 eV"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "To get an output of 1 from the circuit shown\nin figure the input must be :",
+      "options": {
+        "A": "a=0, b=1, c=0",
+        "B": "a=1, b=0, c=0",
+        "C": "a=1, b=0, c=1",
+        "D": "a=0, b=0, c=1 22. ªÁÃ ‘v’ ‚ ø‹ÃÊ „È•Ê ∞∑§ ãÿÍ≈˛UÊÚŸ ∞∑§ ÁSÕ⁄U „Êß¸«˛UÊ¡Ÿ ¬⁄U◊ÊáÊÈ, ¡Ê •¬ŸË •Êl-•ﬂSÕÊ ◊¥ „Ò, ‚ ‚ê◊Èπ ≈UÄ∑§⁄U ∑§⁄UÃÊ „Ò– ãÿÈ≈˛UÊÚŸ ∑§Ë ﬂ„ ãÿÍŸÃ◊ ªÁÃ¡ ™§¡Ê¸ ’ÃÊÿ¥ Á¡‚ ∑§ „ÊŸ ¬⁄U ÿ„ ≈UÄ∑§⁄U •¬˝àÿÊSÕ „ÊªË —"
+      },
+      "page_start": 18,
+      "page_end": 19,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A modulated signal Cm(t) has the form\nCm(t)=30 sin 300πt+10 (cos  200πt\n−cos 400πt).  The carrier frequency fc, the\nmodulating frequency (message frequency)\nfω, and the modulation index µ are\nrespectively given by :",
+      "options": {
+        "A": "fc=200 Hz ; fω=50 Hz ; 1 2 µ =",
+        "B": "fc=150 Hz ; fω=50 Hz ; 2 3 µ =",
+        "C": "fc=150 Hz ; fω=30 Hz ; 1 3 µ =",
+        "D": "fc=200 Hz ; fω=30 Hz ; 1 2 µ ="
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": []
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle of mass m is acted upon by a force\nF given by the empirical law \n2\n  \n \nR\nF\nv(t)\nt\n=\n.\nIf this law is to be tested experimentally by\nobserving the motion starting from rest, the\nbest way is to plot :",
+      "options": {
+        "A": "v(t) against t2",
+        "B": "log v(t) against 2 1 t",
+        "C": "log v(t) against t",
+        "D": "log v(t) against 1 t 24. Cm(t)=30 sin 300πt+10 (cos 200πt −cos 400πt) ∞∑§ ◊Ê«ÈUÁ‹Ã Á‚ÇŸ‹ ∑§Ê Œ‡ÊÊ¸ÃÊ „Ò– Ã’ ﬂÊ„∑§ •ÊﬂÎÁûÊ fc, ◊Ê«ÈU‹∑§ •ÊﬂÎÁûÊ fω ÃÕÊ ◊Ê«ÈU‹∑§ ßŸ«UÄ‚ µ ∑˝§◊‡Ê— „Ò¥ —"
+      },
+      "page_start": 19,
+      "page_end": 20,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A thin 1 m long rod has a radius of 5 mm.\nA force of 50 πkN is applied at one end to\ndetermine its Young’s modulus.   Assume\nthat the force is exactly known.  If the least\ncount in the measurement of all lengths is\n0.01 mm, which of the following statements\nis false ?",
+      "options": {
+        "A": "Y Y ∆ gets minimum contribution from the uncertainty in the length.",
+        "B": "The figure of merit is the largest for the length of the rod.",
+        "C": "The maximum value of Y that can be determined is 1014 N/m2.",
+        "D": "Y Y ∆ gets its maximum contribution from the uncertainty in strain. 26. 1 m ‹ê’Ë ¬Ã‹Ë ¿U«∏ ∑§Ë ÁòÊíÿÊ 5 mm „Ò– ÿ¥ª ◊Ê«U‹‚ ÁŸ∑§Ê‹Ÿ ∑§ Á‹ÿ ß‚ ∑§ Á‚⁄U ¬⁄U 50 πkN ∑§Ê ’‹ ‹ªÊÿÊ ªÿÊ– ◊ÊŸ¥ Á∑§ ’‹ Á’‹∑È§‹ ∆UË∑§ ‚ ôÊÊÃ „Ò– ÿÁŒ ‹ê’ÊßÿÊ¥ ∑§ ◊Ê¬Ÿ ∑§ •À¬Ê¥‡Ê 0.01 mm „Ò¥– Ã’ ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ ‚Ê ∑§ÕŸ ª‹Ã „Ò?"
+      },
+      "page_start": 20,
+      "page_end": 21,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ªÀﬂŸÊ◊Ë≈U⁄U ∑§Ë S∑§‹ 50 ÷ÊªÊ¥ ◊¥ ’¥≈UË „Ò–  ’Ò≈U⁄UË\n∑§Ê •Ê¥ÃÁ⁄U∑§ ¬˝ÁÃ⁄UÊœ ‡ÊÍãÿ „Ò– ÿÁŒ\nR=2400 Ω „Ò ÃÊ ÁﬂˇÊ¬ =40 ÷Êª „Ò–  ÿÁŒ\nR=4900 Ω „Ò ÃÊ ÁﬂˇÊ¬ =20 ÷Êª „Ò–  Ã’ „◊\nÁŸœÊ¸Á⁄UÃ ∑§⁄U ‚∑§Ã „Ò¥ Á∑§ —",
+      "options": {
+        "A": "ªÀﬂŸÊ◊Ë≈U⁄U ∑§Ê ¬˝ÁÃ⁄UÊœ 200 Ω „Ò–",
+        "B": "»È§‹-S∑§‹ ÁﬂˇÊ¬ ∑§ Á‹ÿ œÊ⁄UÊ 2 mA „Ò–",
+        "C": "ªÀﬂŸÊ◊Ë≈U⁄U ∑§Ë œÊ⁄UÊ-‚¥ﬂŒŸ‡ÊË‹ÃÊ 20 µA ¬˝ÁÃ ÷Êª „Ò–",
+        "D": "ÁﬂˇÊ¬ =10 ÷Êª ∑§ Á‹ÿ R=9800 Ω."
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∑§Ê°ø ∑§Ë S‹Ò’ ∑§Ê ø‹-◊Êß¸∑˝§ÊS∑§Ê¬ mÊ⁄UÊ •¬ﬂÃ¸ŸÊ¥∑§\nÁŸ∑§Ê‹Ÿ ∑§ Á‹ÿ ¡M§⁄UË ¬Ê∆˜ÿÊ¥∑§Ê¥ ∑§Ë ãÿÍŸÃ◊ ‚¥ÅÿÊ\n„Ò —",
+      "options": {
+        "A": "ŒÊ",
+        "B": "ÃËŸ",
+        "C": "øÊ⁄U",
+        "D": "¬Ê°ø 27. A galvanometer has a 50 division scale. Battery has no internal resistance. It is found that there is deflection of 40 divisions when R=2400 Ω. Deflection becomes 20 divisions when resistance taken from resistance box is 4900 Ω. Then we can conclude :"
+      },
+      "page_start": 21,
+      "page_end": 22,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ≈˛UÊ¥Á¡S≈U⁄U ∑§Ê common-emitter (CE)\n•Á÷ÁﬂãÿÊ‚ ◊¥ ÁŸﬂ‡Ê-•Á÷‹ÊˇÊÁáÊ∑§ ◊Ê¬Ÿ Á∑§ÿÊ ªÿÊ–\nÃ’ ÁŸﬂ‡Ê-¬˝ÁÃ⁄UÊœ ∑§ √ÿÈà∑˝§◊ ∑§Ê ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-\n‚Ê ª˝Ê»§ ©ÁøÃ „Ò?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "29. A realistic graph depicting the variation of the reciprocal of input resistance in an input characteristics measurement in a common- emitter transistor configuration is :",
+        "D": ""
+      },
+      "page_start": 22,
+      "page_end": 23,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Á∑§‚Ë ≈˛UÊ¥Á¡S≈U⁄U ∑§Ë ÁŸﬂ‡Ê-ÁŸª¸◊ •Á÷‹ÊˇÊÁáÊ∑§\n◊Ê¬Ÿ ∑§ Á‹ÿ ¬˝ÿÈÄÃ ÁŸª¸◊-¬˝ÁÃ⁄UÊœ (r0) ﬂ\nÁŸﬂ‡Ê-¬˝ÁÃ⁄UÊœ (ri) ∑§ •ŸÈ¬ÊÃ (R) ∑§Ê •ÊÿÊ◊\n(range) „ÊªÊ?",
+      "options": {
+        "A": "R~102−103",
+        "B": "R~1−10",
+        "C": "R~0.1−0.01",
+        "D": "R~0.1−1.0"
+      },
+      "page_start": 23,
+      "page_end": 24,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

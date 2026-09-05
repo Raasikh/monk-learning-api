@@ -1,0 +1,757 @@
+{
+  "paper_id": "jee-main-2015-s2-physics-wdlgboiakmdntfnoedxy",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2015-s2-physics-wdlgboiakmdntfnoedxy",
+    "exam": "jee-main",
+    "year": 2015,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2015/jee-main-2015-physics-question-paper-online-exam-10th-april-2015/98541",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/wdLgBOIAkMDnTfnoeDXY",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "7b0ac937a0f4a59c15b5416d70416ac71b43abc7ce5dd04c86ac91d25e64ea5c",
+    "page_count": 18,
+    "text_chars": 19868,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2015-s2-physics-wdlgboiakmdntfnoedxy.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "19 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 4, 6, 7, 11, 12, 15, 18, 20, 23, 25, 26, 28, 1, 2]",
+    "20/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "x and y displacements of a particle are\ngiven as x(t)5a sinvt and y(t)5a sin2vt.\nIts trajectory will look like :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If a body moving in a circular path\nmaintains constant speed of 10 ms21, then\nwhich of the following correctly describes\nrelation between acceleration and\nradius ?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A block of mass m510 kg rests on a\nhorizontal table. The coefficient of friction\nbetween the block and the table is 0.05.\nWhen hit by a bullet of mass 50 g moving\nwith speed v, that gets embedded in it, the\nblock moves and comes to stop after\nmoving a distance of 2 m on the table.\nIf a freely falling object were to acquire\nspeed \n10\nv  after being dropped from height\nH, then neglecting energy losses and\ntaking g510 ms22, the value of H is close\nto :",
+      "options": {
+        "A": "0.2 km",
+        "B": "0.3 km",
+        "C": "0.4 km",
+        "D": "0.5 km"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A block of mass m50.1 kg is connected to\na spring of unknown spring constant k. It\nis compressed to a distance x from its\nequilibrium position and released from rest.\nAfter approaching half the distance \n2\nx\n\n\n\n\n\n\nfrom equilibrium position, it hits another\nblock and comes to rest momentarily, while\nthe other block moves with a velocity\n3 ms21. The total initial energy of the\nspring is :",
+      "options": {
+        "A": "1.5 J",
+        "B": "0.6 J",
+        "C": "0.3 J",
+        "D": "0.8 J"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A uniform solid cylindrical roller of mass\nm is being pulled on a horizontal surface\nwith force F parallel to the surface and\napplied at its centre. If the acceleration of\nthe cylinder is a and it is rolling without\nslipping then the value of F is :",
+      "options": {
+        "A": "ma",
+        "B": "2 ma",
+        "C": "3 ma 2",
+        "D": "5 ma 3"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider a thin uniform square sheet made\nof a rigid material. If its side is a, mass m\nand moment of inertia I about one of its\ndiagonals, then :",
+      "options": {
+        "A": "2 ma I > 12",
+        "B": "2 2 ma ma < I < 24 12",
+        "C": "2 ma I 12 5",
+        "D": "2 ma I 24 5"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A very long (length L) cylindrical galaxy\nis made of uniformly distributed mass and\nhas radius R (R<<L). A star outside the\ngalaxy is orbiting the galaxy in a plane\nperpendicular to the galaxy and passing\nthrough its centre. If the time period of star\nis T and its distance from the galaxys axis\nis r, then :",
+      "options": {
+        "A": "T2 ; r3",
+        "B": "T ; r2",
+        "C": "T ; r",
+        "D": "T r ;"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If it takes 5 minutes to fill a 15 litre bucket\nfrom a water tap of diameter 2  cm\np\nthen\nthe Reynolds number for the flow is\n(density of water5103 kg/m3 and\nviscosity of water51023 Pa.s) close to :",
+      "options": {
+        "A": "5500",
+        "B": "11,000",
+        "C": "550",
+        "D": "1100 6. °·¤ ÂÌÜè, °·¤â×æÙ, ß»æü·¤æÚU, ¿æÎÚU (àæèÅU) ç·¤âè ÎëÉ¸ ÂÎæÍü ·¤è ÕÙè ãñÐ ØçÎ §â·¤è °·¤ ÖéÁæ a, ÎýÃØ×æÙ m ÌÍæ ç·¤âè °·¤ çß·¤æü ·ð¤ ÂçÚUÌÑ, §â·¤æ ÁÇ¸ß ¥ææêæü I ãñ Ìæð Ñ"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ØçÎ ·¤æ¡¿ ·¤è Îæð ÜðÅUæð´ ·ð¤ Õè¿ ×ð´ ÁÜ ·¤è °·¤\nÂÌÜè ÂÚUÌ ãæð (¥æÚðU¹ Îðç¹Øð) Ìæð ©Ù ÜðÅUæð´ ·¤æð\n¹è´¿·¤ÚU ¥Ü» ·¤ÚUÙæ ÕãéÌ ·¤çÆUÙ ãæðÌæ ãñÐ\n§â·¤æ ·¤æÚUæ Øã ãñ ç·¤, ÁÜ, ç·¤ÙæÚUæð´ ÂÚU çâçÜ´ÇUÚUè\n(ÕðÜÙæ·¤æÚU) âÌãð´ ÕÙæ ÎðÌæ ãñ çÁââð ßæØé×´ÇUÜ ·¤è\nÌéÜÙæ ×ð´ ßãæ¡ ÎæÕ ·¤× ãæð ÁæÌæ ãñÐ  ØçÎ §â çâçÜ´ÇUÚUè\nâÌã (ÂëcÆU) ·¤è çæØæ R ãñ ÌÍæ ÁÜ ·¤æ ÂëcÆU ÌÙæß\nT ãñ Ìæð, Îæð ÜðÅUæð´ ·ð¤ Õè¿ ÁÜ ×ð´ ÎæÕ ç·¤ÌÙæ ·¤×\nãæð»æ?",
+      "options": {
+        "A": "T 4R",
+        "B": "T 2R",
+        "C": "4T R",
+        "D": "2T R 9. If two glass plates have water between them and are separated by very small distance (see figure), it is very difficult to pull them apart. It is because the water in between forms cylindrical surface on the side that gives rise to lower pressure in the water in comparison to atmosphere. If the radius of the cylindrical surface is R and surface tension of water is T then the pressure in water between the plates is lower by :"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An ideal gas goes through a reversible\ncycle a®b®c®d has the V - T diagram\nshown below. Process d®a and b®c are\nadiabatic.\nThe corresponding P - V diagram for the\nprocess is (all figures are schematic and\nnot drawn to scale) :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "10. °·¤ ¥æÎàæü »ñâ ·ð¤ ©·ý¤×æèØ ¿·ý¤ a®b®c®d , ·ð¤ çÜØð V - T ¥æÚðU¹ Øãæ¡ ÎàææüØæ »Øæ ãñÐ Âý·ý¤× d®a ÌÍæ b®c L¤Î÷Ïæðc× ãñ´Ð Ìæð, §â Âý·ý¤× ·ð¤ çÜØð, â´»Ì P - V ¥æÚðU¹ ãæð»æ (âÖè ¥æÚðU¹ ÃØßSÍæ ¥æÚðU¹ ãñ´ ¥æñÚU S·ð¤Ü ·ð¤ ¥ÙéâæÚU Ùãè´ ãñ´) Ñ"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In an ideal gas at temperature T, the\naverage force that a molecule applies on\nthe walls of a closed container depends on\nT as Tq. A good estimate for q is :",
+      "options": {
+        "A": "2",
+        "B": "1",
+        "C": "1 2",
+        "D": "1 4"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A simple harmonic oscillator of angular\nfrequency 2 rad s21 is acted upon by an\nexternal force F5sint  N. If the oscillator\nis at rest in its equilibrium position at t50,\nits position at later times is proportional\nto :",
+      "options": {
+        "A": "1 sin sin 2 2 t t 1",
+        "B": "1 sin cos 2 2 t t 1",
+        "C": "1 cos sin 2 2 t t 2",
+        "D": "1 sin sin 2 2 t t 2"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A bat moving at 10 ms21 towards a wall\nsends a sound signal of 8000 Hz towards\nit. On reflection it hears a sound of\nfrequency f. The value of f in Hz is close to\n(speed of sound5320 ms21)",
+      "options": {
+        "A": "8258",
+        "B": "8516",
+        "C": "8000",
+        "D": "8424 11. ç·¤âè ¥æÎàæü »ñâ ×ð´, ç·¤âè ¥æé mæÚUæ »ñâ ·ð¤ ÕÎ Âææ ·¤è ÎèßæÚUæð´ ÂÚU Ü»æØæ »Øæ ¥æñâÌ ÕÜ, »ñâ ·ð¤ ÌæÂ T ÂÚU, Tq ·ð¤ ¥ÙéâæÚU çÙÖüÚU ·¤ÚUÌæ ãñÐ Ìæð, q ·¤æ âçÙ·¤ÅU ×æÙ ãñ Ñ"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A thin disc of radius b52a has a concentric\nhole of radius a in it (see figure). It carries\nuniform surface charge s on it. If the\nelectric field on its axis at height h (h<<a)\nfrom its centre is given as Ch then value\nof C is :",
+      "options": {
+        "A": "0 a s e",
+        "B": "0 2a s e",
+        "C": "0 4a s e",
+        "D": "0 8a s e 14. °·¤ ÂÌÜè çÇUS·¤ (¿ç·ý¤·¤æ) ·¤è çæØæ b ãñÐ §â×ð´ ÕÙð °·¤ â´·ð¤Îýè çÀUÎý (ÀðUÎ) ·¤è çæØæ a ãñÐ (b52a) Ð çÇS·¤ ÂÚU °·¤â×æÙ ÂëcÆU ¥æßðàæ s ãñÐ ØçÎ §â·¤è ¥ÿæ ÂÚU ÌÍæ §â·ð¤ ·ð¤Îý âð h ª¡¤¿æ§ü ÂÚU, (h<<a), çßléÌ ÿæðæ Ch ãæð Ìæð, C ·¤æ ×æÙ ãñ Ñ"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Shown in the figure are two point charges\n1Q and 2Q inside the cavity of a\nspherical shell. The charges are kept near\nthe surface of the cavity on opposite sides\nof the centre of the shell. If s1 is the surface\ncharge on the inner surface and Q1 net\ncharge on it and s2 the surface charge on\nthe outer surface and Q2 net charge on it\nthen :",
+      "options": {
+        "A": "s1 ¹ 0, Q1 ¹ 0 s2 ¹ 0, Q2 ¹ 0",
+        "B": "s1 ¹ 0, Q1 5 0 s2 ¹ 0, Q2 5 0",
+        "C": "s1 ¹ 0, Q1 5 0 s2 5 0, Q2 5 0",
+        "D": "s1 5 0, Q1 5 0 s2 5 0, Q2 5 0"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the capacitance of a nanocapacitor is\nmeasured in terms of a unit u made by\ncombining the electronic charge e, Bohr\nradius a0, Plancks constant h and speed\nof light c then :",
+      "options": {
+        "A": "2 0 e c ha u 5",
+        "B": "2 0 e h ca u 5",
+        "C": "2 0 e a hc u 5",
+        "D": "2 0 hc e a u 5 15. Øãæ¡ ¥æÚðU¹ ×ð´, ç·¤âè »æðÜæ·¤æÚU ·¤æðàæ (àæñÜ) ·ð¤ ·¤æðÅUÚU ·ð¤ ÖèÌÚU Îæð çÕÎé-¥æßðàæ 1Q ÌÍæ 2Q ÎàææüØð »Øð ãñ´Ð Øð ¥æßðàæ ·¤æðÅUÚU ·¤è âÌã ·ð¤ çÙ·¤Å U§â Âý·¤æÚU ÚU¹ð »Øð ãñ´ ç·¤, °·¤ ¥æßðàæ ·¤æðàæ ·ð¤ ·ð¤Îý ·¤è °·¤ ¥æðÚU ãñ ¥æñÚU ÎêâÚUæ ·ð¤Îý ·ð¤ çßÂÚUèÌ ÎêâÚUè ¥æðÚUÐ ØçÎ, ÖèÌÚUè ÌÍæ ÕæãÚUè âÌãæð´ (ÂëcÆUæð´) ÂÚU, ÂëcÆU ¥æßðàæ ·ý¤×àæÑ s1 ÌÍæ s2 ¥æñÚU ÙðÅU ¥æßðàæ ·ý¤×àæÑ Q1 ÌÍæ Q2 ãæð Ìæð Ñ"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Suppose the drift velocity vd in a material\nvaried with the applied electric field E as\nd  \nE\nv\n; \n. Then V - I graph for a wire\nmade of such a material is best given by :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "17. ØçÎ, ç·¤âè ÂÎæÍü ×ð´ ¥Âßæã ßð», vd ·¤æ ×æÙ, Ü»æØð »Øð çßléÌ ÿæðæ E ÂÚU §â Âý·¤æÚU çÙÖüÚU ·¤ÚUÌæ ãñ, ç·¤ d E v ; Ð Ìæð çÙÙæ´ç·¤Ì ×ð´ âð ·¤æñÙ-âæ »ýæÈ¤ (¥æÜð¹), §â ÂÎæÍü âð ÕÙð ÌæÚU ·ð¤ çÜØð, âçÙ·¤ÅU V - I »ýæÈ¤ ãæð»æ?"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "°·¤ ßæðËÅU×èÅUÚU âð â×æÌÚU ·ý¤× ×ð´, Îæð ÕñÅUçÚUØæ¡, ÁæðÇ¸è\n»§ü ãñ´Ð  ÂãÜè, 10V ÌÍæ 1V ¥æÌçÚU·¤ ÂýçÌÚUæðÏ ·¤è\n¥æñÚU ÎêâÚUè, 15V ÌÍæ 0.6V ¥æÌçÚU·¤ ÂýçÌÚUæðÏ ·¤è\n(¥æÚðU¹ Îðç¹Øð) Ìæð, ßæðËÅU×èÅUÚU ·ð¤ ÂÆUÙ (ÚUèçÇ´U»)\n·¤æ âçÙ·¤ÅU ×æÙ ãæð»æ Ñ",
+      "options": {
+        "A": "11.9 V",
+        "B": "12.5 V",
+        "C": "13.1 V",
+        "D": "24.5 V"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "çßÖßæÌÚ V mæÚUæ ßçÚUÌ, °·¤ ÂýæðÅUæòÙ (ÎýÃØ×æÙ m),\nç·¤âè ¥ÙéÂýSÍ °·¤â×æÙ ¿éÕ·¤èØ ÿæðæ B âð ãæð·¤ÚU\nÌèßý ¿æÜ âð »é$ÁÚUÌæ ãñÐ  Øã ¿éÕ·¤èØ ÿæðæ d ¿æñÇ¸æ§ü\nÌ·¤ çßSÌçÚUÌ ãñÐ  ØçÎ, Øã ÂýæðÅUæòÙ, ¿éÕ·¤èØ  ÿæðæ ·ð¤\n·¤æÚUæ ¥ÂÙè »çÌ ·¤è ÂýæÚ´UçÖ·¤ çÎàææ âð a ·¤æðæ âð\nçß¿çÜÌ ãæð ÁæÌæ ãñ (¥æÚðU¹ Îðç¹Øð) Ìæð,\nsin a ·¤æ ×æÙ ãæð»æ Ñ",
+      "options": {
+        "A": "qd B 2 mV",
+        "B": "q B d 2mV",
+        "C": "q Bd 2mV",
+        "D": "Bd qV 2m 18. A 10V battery with internal resistance 1V and a 15V battery with internal resistance 0.6V are connected in parallel to a voltmeter (see figure). The reading in the voltmeter will be close to :"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ç·¤âè ÂçÚUÙæçÜ·¤æ ·¤è ÜÕæ§ü 25 cm ÌÍæ çæØæ\n2 cm ãñ ¥æñÚU §â×ð´ ÌæÚU ·ð¤ ·é¤Ü 500 Èð¤ÚðU ÜÂðÅðU »Øð\nãñ´Ð  §ââð 15 A ·¤è ÏæÚUæ ÂýßæçãÌ ãæð ÚUãè ãñÐ  Øã\nÂçÚUÙæçÜ·¤æ, §âè âæ§Á ÌÍæ ¿éÕ·¤Ù M\n→ (¿éÕ·¤èØ\n¥ææêæü/¥æØÌÙ), ·ð¤ ÌéËØ ãñ Ìæð , M\n→\n?\n? ãñ Ñ",
+      "options": {
+        "A": "3p Am21",
+        "B": "30000 Am21",
+        "C": "300 Am21",
+        "D": "30000p Am21"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ç·¤âè ·é´¤ÇUÜè âð ÂýßæçãÌ çßléÌ ÏæÚUæ ·¤æ ×æÙ, 0.1 s\n×ð´, 5 A âð 2 A ãæð ÁæÌæ ãñ çÁââð, 50 V ·¤è ¥æñâÌ\nßæðËÅUÌæ ©ÂÙ ãæðÌè ãñÐ  Ìæð, §â ·é´¤ÇUÜè ·¤æ SßÂýðÚU·¤ß\nãñ Ñ",
+      "options": {
+        "A": "0.67 H",
+        "B": "1.67 H",
+        "C": "3 H",
+        "D": "6 H 20. A 25 cm long solenoid has radius 2 cm and 500 total number of turns. It carries a current of 15 A. If it is equivalent to a magnet of the same size and magnetization M → (magnetic moment/volume), then M → ? ? is :"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Îæð ÂçÚUÂÍæð´ (a) ÌÍæ (b) ×ð´ çSß¿ S1 ÌÍæ S2, t50\nÂÚU ÕÎ ç·¤Øð ÁæÌð ãñ´ ¥æñÚU ÂØæüÌ ÜÕð â×Ø Ì·¤\nÕÎ ÚU¹ð ÁæÌð ãñ´, Ìæð t ³ 0 ·ð¤ çÜØð, Îæð ÂçÚUÂÍæð´ ×ð´\nçßléÌ ÏæÚUæ¥æð´ ·ð¤ çß¿ÜÙ (ÂçÚUßÌüÙ) ·¤æð, ·¤æñÙâæ\n»ýæÈ¤ çÙ·¤ÅUÌ× ÎàææüÌæ ãñ?  (¥æÚðU¹ ·ð¤ßÜ\nÃØßSÍæ×·¤ ãñ´ ¥æñÚU S·ð¤Ü ·ð¤ ¥ÙéâæÚU Ùãè´ ãñ´)",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "22. In the circuits (a) and (b) switches S1 and S2 are closed at t50 and are kept closed for a long time. The variation of currents in the two circuits for t ³ 0 are roughly shown by (figures are schematic and not drawn to scale) :"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "x-çÎàææ ×ð´ ¿ÜÌè ãé§ü ç·¤âè çßléÌ ¿éÕ·¤èØ ÌÚ´U» ·¤è\n¥æßëçæ 231014 Hz ãñ ÌÍæ §â·¤æ çßléÌ ÿæðæ\n27 Vm21 ãñÐ  Ìæð, çÎØð »Øð çÙÙæ´ç·¤Ì çß·¤ËÂæð´ ×ð´\nâð ·¤æñÙ âæ çß·¤ËÂ, §â ÌÚ´U» ·ð¤ ¿éÕ·¤èØ ÿæðæ ·¤æð\nÂý·¤ÅU ·¤ÚUÌæ ãñ?",
+      "options": {
+        "A": "8 B ( , t) (3 10 T) x j → ∧ 2 5 3 8 14 sin 2 (1.5 10 2 10 t) x     2 p 3 2 3",
+        "B": "8 B ( , t) (9 10 T) x k → ∧ 2 5 3 6 14 sin 2 (1.5 10 2 10 t) x     2 p 3 2 3",
+        "C": "8 B ( , t) (9 10 T) x i → ∧ 2 5 3 8 14 sin 2 (1.5 10 2 10 t) x     2 p 3 2 3",
+        "D": "8 B ( , t) (9 10 T) x j → ∧ 2 5 3 6 14 sin 1.5 10 2 10 t x     2 3 2 3"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "¥æÂ·¤æð °·¤ àæðçß´» ÎÂüæ ÕÙæÙð ·¤æð ·¤ãæ ÁæÌæ ãñÐ\nØçÎ ·¤æð§ü ÃØçÌ §â ÎÂüæ ·¤æð ¥ÂÙð ¿ðãÚðU âð 10 cm\nÎêÚU ÚU¹Ìæ ãñ ¥æñÚU ¿ðãÚðU ·ð¤ ¥æßçÏüÌ ÂýçÌçÕÕ ·¤æð,\nâéçßÏæÁÙ·¤-ÎàæüÙ ·¤è çÙ·¤ÅUÌ× ÎêÚUè, 25 cm ÂÚU\nÎð¹Ìæ ãñ Ìæð, ÎÂüæ ·¤è ß·ý¤Ìæ çæØæ ãæð»è Ñ",
+      "options": {
+        "A": "30 cm",
+        "B": "24 cm",
+        "C": "60 cm",
+        "D": "224 cm 23. An electromagnetic wave travelling in the x-direction has frequency of 231014 Hz and electric field amplitude of 27 Vm21. From the options given below, which one describes the magnetic field for this wave ?"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "x-çÎàææ ×ð´ »çÌ ·¤ÚUÌæ ãé¥æ °·¤ â×æÌÚU §ÜðÅþUæòÙ Âé´Á\nd ¿æñÇ¸æ§ü ·¤è çÛæÚUè ÂÚU ¥æÂçÌÌ ãæðÌæ ãñ (¥æÚðU¹ Îðç¹Øð)Ð\nØçÎ §â çÛæÚUè âð çÙ·¤ÜÙð ·ð¤ Âà¿æÌ÷ §ÜðÅþUæòÙ,\ny-çÎàææ ×ð´, py â´ßð» ÂýæÌ ·¤ÚU ÜðÌð ãñ´ Ìæð, çSÜÅU âð\n»éÁÚUÙð ßæÜð ¥çÏ·¤æ´àæ §ÜðÅþUæòÙæð´ ·ð¤ çÜØð (ØçÎ h\nÜæ´·¤ çÙØÌæ´·¤ ãñ) Ñ",
+      "options": {
+        "A": "?py?d; h",
+        "B": "?py?d>h",
+        "C": "?py?d<h",
+        "D": "?py?d>>h"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ç·¤âè ÎêÚUÎàæü·¤ ·ð¤ ¥çÖÎëàØ·¤ ÌÍæ Ùðçæ·¤æ ·¤è È¤æð·¤â\nÎêçÚUØæ¡ ·ý¤×àæÑ 150 cm ÌÍæ 5 cm ãñ´Ð  ØçÎ 1 km\nÎêÚU çSÍÌ ç·¤âè 50 m ª¡¤¿ð ÅUæßÚU (×èÙæÚU) ·¤æð, âæ×æØ\nçßØæâ ×ð´, ÎêÚUÎàæü·¤ âð Îð¹Ùð ÂÚU, ÅUæßÚU ·ð¤ ÂýçÌçÕÕ\nmæÚUæ ÕÙæØæ »Øæ ·¤æðæ, u ãæð Ìæð, u ·¤æ ×æÙ ãæð»æ\nÜ»Ö» Ñ",
+      "options": {
+        "A": "18",
+        "B": "158",
+        "C": "308",
+        "D": "608"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "50 V ßæðËÅUÌæ mæÚUæ ßçÚUÌ §ÜðÅþUæòÙ ·¤è Îð-ÕýæòÜè\nÌÚ´U»ÎñØü ·¤æ çÙ·¤ÅUÌ× ×æÙ ãæð»æ Ñ\n(?e?51.6310219 C, me59.1310231 kg,\nh56.6310234 Js)",
+      "options": {
+        "A": "0.5 Å",
+        "B": "1.2 Å",
+        "C": "1.7 Å",
+        "D": "2.4 Å 25. A parallel beam of electrons travelling in x-direction falls on a slit of width d (see figure). If after passing the slit, an electron acquires momentum py in the y-direction then for a majority of electrons passing through the slit (h is Plancks constant) :"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ØçÎ ¿éÕ·¤èØ ÿæðæ B ·ð¤ ÂýÖæß ×ð´, â×ÌÜ ×ð´ »çÌ\n·¤ÚUÌð ãé°, m ÎýÃØ×æÙ  ÌÍæ q ¥æßðàæ ·ð¤ ·¤æ ÂÚU,\nÕæðÚU ×æòÇUÜ Üæ»ê ç·¤Øæ (ÂýØæð» ×ð´ ÜæØæ) ÁæØ Ìæð,\n¥æßðçàæÌ ·¤æ ·¤è n ßè´ SÌÚU ×ð´ ª¤Áæü ãæð»è Ñ",
+      "options": {
+        "A": "hqB n 2 m       p",
+        "B": "hqB n 4 m       p",
+        "C": "hqB n 8 m       p",
+        "D": "hqB n m       p"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ç·¤âè ¥-ÕæØçâÌ n-p â´çÏ ×ð´ §ÜðÅþUæòÙ n - ÿæðæ âð\np - ÿæðæ ·¤æð çßâçÚUÌ ãæðÌð ãñ´ Øæð´ç·¤ Ñ",
+      "options": {
+        "A": "p - ÿæðæ ×ð´ çÀUÎý (ãæðÜ) ©ãð´ ¥æ·¤çáüÌ ·¤ÚUÌð ãñ´Ð",
+        "B": "§ÜðÅþUæòÙ çßÖßæÌÚU ·ð¤ ·¤æÚUæ â´çÏ ·ð¤ ÂæÚU ¿Üð ÁæÌð ãñ´Ð",
+        "C": "n - ÿæðæ ×ð´ §ÜðÅþUæòÙæð´ ·¤è âæ´ÎýÌæ p - ÿæðæ âð ¥çÏ·¤ ãæðÌè ãñÐ",
+        "D": "§ÜðÅþUæòÙ ·ð¤ßÜ n âð p ÿæðæ ·¤æð ÁæÌð ã´ñ §â·ð¤ çßÂÚèUÌ (p âð n ·¤æð ) Ùãè´Ð 28. If one were to apply Bohr model to a particle of mass m and charge q moving in a plane under the influence of a magnetic field B, the energy of the charged particle in the nth level will be :"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Diameter of a steel ball is measured using\na Vernier callipers which has divisions of\n0.1 cm on its main scale (MS) and 10\ndivisions of its vernier scale (VS) match 9\ndivisions on the main scale. Three such\nmeasurements for a ball are given as :\nS.No. MS (cm)\nVS divisions",
+      "options": {
+        "A": "0.5 8",
+        "B": "0.5 4",
+        "C": "0.5 6 If the zero error is 20.03 cm, then mean corrected diameter is :",
+        "D": "0.52 cm - o 0 o - 30. SÅUèÜ ·¤è °·¤ »æðÜè ·¤æ ÃØæâ °·¤ °ðâð ßçÙüØÚU ·ñ¤ÜèÂâü âð ÙæÂæ ÁæÌæ ãñ çÁâ·ð¤ ×éØ Âñ×æÙð ·¤æ °·¤ Öæ» (MSD) 0.1 cm ãñ, ÌÍæ §â×ð´ ßçÙüØÚ Âñ×æÙðU (VS) ·ð¤ 10 Öæ», ×éØ Âñ×æÙð ·ð¤ 9 Öæ»æð´ ·ð¤ ÕÚUæÕÚU ãñ´Ð »æðÜè ·ð¤ ÃØæâ ·ð¤ çÜØð ÌèÙ ÂæÆ÷UØæ´·¤ (ÚUèçÇU´») Øãæ¡ çÎØð »Øð ãñ´ Ñ â¼Ë ¼Î½ §Ö¼Ë¾Õ Í ¼Ë§ cm ÄÌ¾á½¿U §Ö¼Ë¾Õ Õ »Ë"
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

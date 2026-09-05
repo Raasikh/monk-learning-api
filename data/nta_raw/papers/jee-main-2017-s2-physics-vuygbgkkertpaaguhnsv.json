@@ -1,0 +1,757 @@
+{
+  "paper_id": "jee-main-2017-s2-physics-vuygbgkkertpaaguhnsv",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2017-s2-physics-vuygbgkkertpaaguhnsv",
+    "exam": "jee-main",
+    "year": 2017,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2017/jee-main-2017-physics-question-paper-online-exam-8th-april-2017/98564",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/VUYGBgkkeRtPaaguHnsv",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "dd37f18be0b4c8dfc8a72a920bf85e573cf518d1f5afe25c07b52c7d91260b47",
+    "page_count": 19,
+    "text_chars": 20472,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2017-s2-physics-vuygbgkkertpaaguhnsv.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "12 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 28]",
+    "22/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Time (T), velocity (C) and angular\nmomentum (h) are chosen as fundamental\nquantities instead of mass, length and time.\nIn terms of these, the dimensions of mass\nwould be :",
+      "options": {
+        "A": "[ M ]=[ T−1 C−2 h ]",
+        "B": "[ M ]=[ T−1 C2 h ]",
+        "C": "[ M ]=[ T−1 C−2 h−1 ]",
+        "D": "[ M ]=[ T C−2 h ] ÷ÊÒÁÃ∑§ ÁﬂôÊÊŸ"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Which graph corresponds to an object\nmoving with a constant negative\nacceleration and a positive velocity ?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A 1 kg block attached to a spring vibrates\nwith a frequency of 1 Hz on a frictionless\nhorizontal table.  Two springs identical to\nthe original spring are attached in parallel\nto an 8 kg block placed on the same table.\nSo, the frequency of vibration of the 8 kg\nblock is :",
+      "options": {
+        "A": "1 Hz 4",
+        "B": "1 Hz 2 2",
+        "C": "1 Hz 2",
+        "D": "2 Hz"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "An object is dropped from a height h from\nthe ground.  Every time it hits the ground\nit looses 50% of its kinetic energy.  The total\ndistance covered as t→∞ is :",
+      "options": {
+        "A": "2h",
+        "B": "∞",
+        "C": "5 h 3",
+        "D": "8 h 3"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A uniform disc of radius R and mass M is\nfree to rotate only about its axis.  A string\nis wrapped over its rim and a body of mass\nm is tied to the free end of the string as\nshown in the figure.  The body is released\nfrom rest.  Then the acceleration of the\nbody is :",
+      "options": {
+        "A": "2 mg 2 m M +",
+        "B": "2 Mg 2 m M +",
+        "C": "2 mg 2 M m +",
+        "D": "2 Mg 2 M m + 5. ∞∑§ ÁòÊíÿÊ R ÃÕÊ Œ˝√ÿ◊ÊŸ M ∑§Ë ∞∑§‚◊ÊŸ Á«US∑§ ∑§ﬂ‹ •¬ŸË •ˇÊ ∑§ ¬Á⁄UÃ— ÉÊÍáÊ¸Ÿ ∑§ Á‹ÿ SﬂÃ¥òÊ „Ò– ÁøòÊÊŸÈ‚Ê⁄U ß‚ Á«US∑§ ∑§Ë ¬Á⁄UÁœ ¬⁄U ∞∑§ «UÊ⁄UË ‹¬≈U∑§⁄U, «UÊ⁄UË ∑§ SﬂÃ¥òÊ Á‚⁄U ‚ ∞∑§ Œ˝√ÿ◊ÊŸ m ∑§Ê ’Ê°œÊ ªÿÊ „Ò– ÿÁŒ Œ˝√ÿ◊ÊŸ ∑§Ê ÁSÕ⁄UÊﬂSÕÊ ‚ ¿UÊ«∏Ê ¡ÊÃÊ „Ò ÃÊ ©‚∑§Ê àﬂ⁄UáÊ „ÊªÊ —"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Moment of inertia of an equilateral\ntriangular lamina ABC, about the axis\npassing through its centre O and\nperpendicular to its plane is Io as shown\nin the figure.  A cavity DEF is cut out from\nthe lamina, where D, E, F are the mid\npoints of the sides.  Moment of inertia of\nthe remaining part of lamina about the\nsame axis is :",
+      "options": {
+        "A": "o 7 I 8",
+        "B": "o 15 I 16",
+        "C": "o 3 I 4",
+        "D": "o 31 I 32 6. ÁøòÊÊŸÈ‚Ê⁄U ‚◊’Ê„È ÁòÊ÷È¡ ∑§Ë •Ê∑Î§ÁÃ ﬂÊ‹ ∞∑§ ¬≈U‹ ABC ∑§Ê ∞∑§ •ˇÊ, ¡Ê Á’ãŒÈ O ‚ ¡ÊÃË „Ò ÃÕÊ ¬≈U‹ ∑§ •Á÷‹ê’ﬂÃ˜ „Ò, ∑§ ‚Ê¬ˇÊ ¡«∏àﬂ •ÊÉÊÍáÊ¸ Io „Ò– ß‚ ¬≈U‹ ◊¥ ‚ ∞∑§ ÁòÊ÷È¡ DEF ∑§ •Ê∑§Ê⁄U ∑§Ê ∞∑§ ¿UŒ Á∑§ÿÊ ¡ÊÃÊ „Ò– ÿ„Ê° D, E ﬂ F ÷È¡Ê•Ê¥ ∑§ ◊äÿ Á’ãŒÈ „Ò¥– ß‚ ’ø „È∞ ¬≈U‹ ∑§Ê ©‚Ë •ˇÊ ∑§ ‚Ê¬ˇÊ ¡«∏àﬂ •ÊÉÊÍáÊ¸ „ÊªÊ —"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If the Earth has no rotational motion, the\nweight of a person on the equator is W.\nDetermine the speed with which the earth\nwould have to rotate about its axis so that\nthe person at the equator will weigh\n3\n4  W.  Radius of the Earth is 6400 km and\ng=10 m/s2.",
+      "options": {
+        "A": "1.1×10−3 rad/s",
+        "B": "0.83×10−3 rad/s",
+        "C": "0.63×10−3 rad/s",
+        "D": "0.28×10−3 rad/s"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "In an experiment a sphere of aluminium\nof mass 0.20 kg is heated upto 1508C.\nImmediately, it is put into water of volume\n150 cc at 278C kept in a calorimeter of\nwater equivalent to 0.025 kg.  Final\ntemperature of the system is 408C.  The\nspecific heat of aluminium is :\n(take 4.2 Joule=1 calorie)",
+      "options": {
+        "A": "378 J/kg – 8C",
+        "B": "315 J/kg – 8C",
+        "C": "476 J/kg – 8C",
+        "D": "434 J/kg – 8C 7. ÿÁŒ ¬ÎâﬂË ∑§Ë ÉÊÍáÊ¸Ÿ ªÁÃ ‡ÊÍãÿ „Ò ÃÊ ∞∑§ √ÿÁÄÃ ∑§Ê ÷Í◊äÿ⁄UπÊ ¬⁄U ÷Ê⁄U W „Ò– ¬ÎâﬂË ∑§Ë •¬ŸË •ˇÊ ∑§ ¬Á⁄UÃ— ÉÊÍáÊ¸Ÿ ∑§Ë ﬂ„ ªÁÃ ôÊÊÃ ∑§ËÁ¡ÿ Á¡‚ ¬⁄U ©‚ √ÿÁÄÃ ∑§Ê ÷Í◊äÿ⁄UπÊ ¬⁄U ÷Ê⁄U 3 4 W „ÊªÊ– ¬ÎâﬂË ∑§Ë ÁòÊíÿÊ 6400 km •ÊÒ⁄U g=10 m/s2 „Ò–"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A compressive force, F is applied at the\ntwo ends of a long thin steel rod.  It is\nheated, simultaneously, such that its\ntemperature increases by ∆T.  The net\nchange in its length is zero.  Let l be the\nlength of the rod, A its area of cross-section,\nY its Young’s modulus, and α its coefficient\nof linear expansion.  Then, F is equal to :",
+      "options": {
+        "A": "l2 Yα ∆T",
+        "B": "lA Yα ∆T",
+        "C": "A Yα ∆T",
+        "D": "AY T α ∆"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "An engine operates by taking n moles of\nan ideal gas through the cycle ABCDA\nshown in figure.  The thermal efficiency\nof the engine is :\n(Take Cv=1.5 R, where R is gas constant)",
+      "options": {
+        "A": "0.24",
+        "B": "0.15",
+        "C": "0.32",
+        "D": "0.08 9. S≈UË‹ ∑§Ë ∞∑§ ¬Ã‹Ë ∞ﬂ¥ ‹ê’Ë ¿U«∏ ∑§ ŒÊŸÊ¥ Á‚⁄UÊ¥ ¬⁄U ∞∑§ ‚¥¬Ë«UŸ ’‹ F ‹ªÊÿÊ ¡ÊÃÊ „Ò ÃÕÊ ‚ÊÕ „Ë ¿U«∏ ∑§Ê ª◊¸ ∑§⁄U∑§ ©‚∑§Ê ÃÊ¬◊ÊŸ ∆T ’…∏ÊÿÊ ¡ÊÃÊ „Ò– ß‚‚ ¿U«∏ ∑§Ë ‹ê’Êß¸ ◊¥ ∑È§‹ ¬Á⁄UﬂÃ¸Ÿ ‡ÊÍãÿ „Ò– ◊ÊŸÊ Á∑§ ¿U«∏ ∑§Ë ‹ê’Êß¸ l, •ŸÈ¬˝SÕ ∑§Ê≈U ∑§Ê ˇÊòÊ»§‹ A, ÿ¥ª ¬˝àÿÊSÕÃÊ ªÈáÊÊ¥∑§ Y ﬂ ⁄UπËÿ ¬˝‚Ê⁄U ªÈáÊÊ¥∑§ α „Ò ÃÊ F ∑§Ê ◊ÊŸ „ÊªÊ —"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "An ideal gas has molecules with 5 degrees\nof freedom.  The ratio of specific heats at\nconstant pressure (Cp) and at constant\nvolume (Cv) is :",
+      "options": {
+        "A": "6",
+        "B": "7 2",
+        "C": "5 2",
+        "D": "7 5"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The ratio of maximum acceleration to\nmaximum velocity in a simple harmonic\nmotion is 10 s−1.  At, t=0 the\ndisplacement is 5 m.  What is the\nmaximum acceleration ?  The initial phase\nis 4\nπ .",
+      "options": {
+        "A": "500 m/s2",
+        "B": "500 2 m/s2",
+        "C": "750 m/s2",
+        "D": "750 2 m/s2 11. ∞∑§ •ÊŒ‡Ê¸ ªÒ‚ ∑§ •áÊÈ•Ê¥ ∑§Ë SﬂÊÃ¥òÊÿ ∑§ÊÁ≈U (degrees of freedom) 5 „Ò– ß‚ ªÒ‚ ∑§Ë ÁSÕ⁄U ŒÊ’ ¬⁄U ÁﬂÁ‡Êc≈U ™§c◊Ê (Cp) •ÊÒ⁄U ÁSÕ⁄U •ÊÿÃŸ ¬⁄U ÁﬂÁ‡ÊC ™§c◊Ê (Cv) ∑§Ê •ŸÈ¬ÊÃ „ÊªÊ —"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two wires W1 and W2 have the same\nradius r and respective densities ρ1 and ρ2\nsuch that ρ2=4ρ1.  They are joined\ntogether at the point O, as shown in the\nfigure.  The combination is used as a\nsonometer wire and kept under tension T.\nThe point O is midway between the two\nbridges.  When a stationary wave is set up\nin the composite wire, the joint is found to\nbe a node.  The ratio of the number of\nantinodes formed in W1 to W2 is :",
+      "options": {
+        "A": "1 : 1",
+        "B": "1 : 2",
+        "C": "1 : 3",
+        "D": "4 : 1"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "There is a uniform electrostatic field in a\nregion.  The potential at various points on\na small sphere centred at P, in the region,\nis found to vary between the limits\n589.0 V to 589.8 V.  What is the potential\nat a point on the sphere whose radius\nvector makes an angle of 608 with the\ndirection of the field ?",
+      "options": {
+        "A": "589.5 V",
+        "B": "589.2 V",
+        "C": "589.4 V",
+        "D": "589.6 V 13. ŒÊ ÃÊ⁄UÊ¥ W1 ÃÕÊ W2 ∑§Ë ‚◊ÊŸ ÁòÊíÿÊ r „Ò ÃÕÊ ÉÊŸàﬂ ∑˝§◊‡Ê— ρ1 •ÊÒ⁄U ρ2 ß‚ ¬˝∑§Ê⁄U „Ò¥ Á∑§ ρ2=4ρ1– ÁøòÊÊŸÈ‚Ê⁄U ßŸ ÃÊ⁄UÊ¥ ∑§Ê Á’ãŒÈ O ¬⁄U ¡Ê«∏Ê ªÿÊ „Ò– ß‚ ‚¥ÿÊ¡Ÿ ∑§Ê ‚ÊŸÊ◊Ë≈U⁄U ∑§ ÃÊ⁄U ∑§ M§¬ ◊¥ ¬˝ÿÊª ∑§⁄UÃ „Ò¥ •ÊÒ⁄U ß‚ ÃŸÊﬂ T ¬⁄U ⁄UπÃ „Ò¥– Á’ãŒÈ O, ŒÊŸÊ¥ ‚ÃÈ•Ê¥ ∑§ ◊äÿ ◊¥ „Ò¥– ß‚ ‚¥ÿÈÄÃ ÃÊ⁄U ◊¥ ∞∑§ •¬˝ªÊ◊Ë Ã⁄¥Uª ©à¬ÛÊ ∑§Ë ¡ÊÃË „Ò¥ ÃÊ ¡Ê«∏ ¬⁄U ÁŸS¬¥Œ (node) ’ŸÃÊ „Ò– W1 ﬂ W2 ÃÊ⁄UÊ¥ ◊¥ ’Ÿ ¬˝S¬¥ŒÊ¥ (antinode) ∑§Ë ‚¥ÅÿÊ ∑§Ê •ŸÈ¬ÊÃ „ÊªÊ —"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The energy stored in the electric field\nproduced by a metal sphere is 4.5 J.  If the\nsphere contains 4 µC charge, its radius will\nbe : [Take : \n9\n2\n2\no\n1\n9\n10 N\nm /C\n4 \n \n \n \n \n \n \n \n=\n×\n−\nπ\u0005\n]",
+      "options": {
+        "A": "20 mm",
+        "B": "32 mm",
+        "C": "28 mm",
+        "D": "16 mm"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "What \nis \nthe \nconductivity \nof \na\nsemiconductor sample having electron\nconcentration of 5×1018 m−3, hole\nconcentration of 5×1019 m−3, electron\nmobility of 2.0 m2 V−1 s−1 and hole\nmobility of 0.01 m2 V−1 s−1 ?\n(Take charge of electron as 1.6×10−19 C)",
+      "options": {
+        "A": "1.68 (Ω - m)−1",
+        "B": "1.83 (Ω - m)−1",
+        "C": "0.59 (Ω - m)−1",
+        "D": "1.20 (Ω - m)−1 15. œÊÃÈ ∑§ ∞∑§ ªÊ‹ ‚ ©à¬ÛÊ ÁﬂlÈÃ ˇÊòÊ ◊¥ ‚¥ÁøÃ ™§¡Ê¸ ∑§Ê ◊ÊŸ 4.5 J „Ò– ÿÁŒ ªÊ‹ ◊¥ ÁŸÁ„Ã •Êﬂ‡Ê 4 µC „Ê ÃÊ ©‚∑§Ë ÁòÊíÿÊ ∑§Ê ◊ÊŸ „ÊªÊ — [ÁŒÿÊ „Ò — 9 2 2 o 1 9 10 N m /C 4 = × − π\u0005 ]"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A 9 V battery with internal resistance of\n0.5 Ω is connected across an infinite\nnetwork as shown in the figure.  All\nammeters A1, A2, A3 and voltmeter V are\nideal.\nChoose correct statement.",
+      "options": {
+        "A": "Reading of A1 is 2 A",
+        "B": "Reading of A1 is 18 A",
+        "C": "Reading of V is 9 V",
+        "D": "Reading of V is 7 V"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "In a certain region static electric and\nmagnetic fields exist.  The magnetic field\nis given by \n(\n)\n0\nB\nB  \n2\n4\ni\nj\nk\n→\n∧\n∧\n∧\n=\n+\n−\n.  If a test\ncharge \nmoving \nwith \na \nvelocity\n(\n)\n0  3\n2\nv\nv\ni\nj\nk\n→\n∧\n∧\n∧\n=\n−+\n experiences no force\nin that region, then the electric field in the\nregion, in SI units, is :",
+      "options": {
+        "A": "( ) 0 0 E B 3 2 4 v i j k → ∧ ∧ ∧ =− − −",
+        "B": "( ) 0 0 E B 7 v i j k → ∧ ∧ ∧ =− + +",
+        "C": "( ) 0 0 E B 14 7 v j k → ∧ ∧ = +",
+        "D": "( ) 0 0 E B 14 7 v j k → ∧ ∧ =− + 17. ∞∑§ 9 V ∑§Ë ’Ò≈U⁄UË, Á¡‚∑§Ê •ÊãÃÁ⁄U∑§ ¬˝ÁÃ⁄UÊœ 0.5 Ω „Ò, ∑§Ê ÁøòÊÊŸÈ‚Ê⁄U •ŸãÃ ¬Á⁄U¬Õ ◊¥ ‹ªÊÿÊ ªÿÊ „Ò– ‚÷Ë •◊Ë≈U⁄U A1, A2, A3 ÃÕÊ ﬂÊÀ≈U◊Ë≈U⁄U V •ÊŒ‡Ê¸ „Ò¥– ‚„Ë ∑§ÕŸ øÈÁŸÿ —"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A magnetic dipole in a constant magnetic\nfield has :",
+      "options": {
+        "A": "maximum potential energy when the torque is maximum.",
+        "B": "zero potential energy when the torque is minimum.",
+        "C": "zero potential energy when the torque is maximum.",
+        "D": "minimum potential energy when the torque is maximum."
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A small circular loop of wire of radius a is\nlocated at the centre of a much larger\ncircular wire loop of radius b.  The two\nloops are in the same plane.  The outer loop\nof radius b carries an alternating current\nI=Io cos (ωt).  The emf induced in the\nsmaller inner loop is nearly :",
+      "options": {
+        "A": "2 o o I a . sin ( t) 2 b πµ ω ω",
+        "B": "2 o o I a . cos ( t) 2 b πµ ω ω",
+        "C": "2 o o a I sin ( t) b πµ ω ω",
+        "D": "2 o o I b cos ( t) a πµ ω ω 19. ∞∑§ øÈê’∑§Ëÿ ˇÊòÊ ◊¥ ⁄Uπ „È∞ øÈê’∑§Ëÿ Ámœ˝Èﬂ ∑§Ë —"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Magnetic field in a plane electromagnetic\nwave is given by\n→\n∧\n0\nB   B  sin (k\nt) \n T\nx\nj\n=\n+ω\nExpression for corresponding electric field\nwill be :\nWhere c is speed of light.",
+      "options": {
+        "A": "→ ∧ 0 E B c sin (k t) k V/m x = +ω",
+        "B": "0 B E sin (k t) k V/m c x → ∧ = +ω",
+        "C": "→ ∧ 0 E B c sin (k t) k V/m x =− +ω",
+        "D": "→ ∧ 0 E B c sin (k t) k V/m x = −ω"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Let the refractive index of a denser medium\nwith respect to a rarer medium be n12 and\nits critical angle be θC.  At an angle of\nincidence A when light is travelling from\ndenser medium to rarer medium, a part of\nthe light is reflected and the rest is refracted\nand the angle between reflected and\nrefracted rays is 908.  Angle A is given by :",
+      "options": {
+        "A": "( ) 1 C 1 sin cos − θ",
+        "B": "( ) 1 C 1 sin tan − θ",
+        "C": "cos−1 (sin θC)",
+        "D": "tan−1 (sin θC) 21. ∞∑§ ‚◊Ã‹ ﬂÒlÈÃøÈê’∑§Ëÿ Ã⁄¥Uª ◊¥ øÈê’∑§Ëÿ ˇÊòÊ → ∧ 0 B B sin (k t) T x j = +ω „Ò– ß‚∑§ ‚¥ªÃ ÁﬂlÈÃ ˇÊòÊ ∑§Ê ‚ÍòÊ „ÊªÊ — ÿ„Ê° c ¬˝∑§Ê‡Ê ∑§Ê ﬂª „Ò–"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "λ Ã⁄¥UªŒÒäÿ¸ ∑§ ∑§‹Ê‚ê’h ﬂ ∞∑§ﬂáÊË¸ÿ ¬˝∑§Ê‡Ê ‚\n∞∑§ b øÊÒ«∏Êß¸ ∑§Ë Á¤Ê⁄UË ∑§Ê ¬˝ŒË# ∑§⁄UÃ „Ò¥–  ÿÁŒ 1 m\nŒÍ⁄UË ¬⁄U ⁄Uπ ¬Œ¸ ¬⁄U ’Ÿ ÁﬂﬂÃ¸Ÿ ¬˝ÊM§¬ ◊¥ ÁmÃËÿ ∞ﬂ¥\nøÃÈÕ¸ ÁŸÁêŸc∆U ∑§Ë ∑§ãŒ˝Ëÿ ©ÁìÊc∆U ‚ ŒÍ⁄UË ∑˝§◊‡Ê—\n3 cm •ÊÒ⁄U 6 cm „Ò ÃÊ ∑§ãŒ˝Ëÿ ©Áëøc∆U ∑§Ë øÊÒ«∏Êß¸\nÄÿÊ „ÊªË?  (∑§ãŒ˝Ëÿ ©ÁëøD ∑§Ë øÊÒ«∏Êß¸ ©‚∑§ ŒÊŸÊ¥\nÃ⁄U»§ ∑§ ¬˝Õ◊ ÁŸÁêŸc∆U ∑§ ’Ëø ∑§Ë ŒÍ⁄UË „Ò–)",
+      "options": {
+        "A": "1.5 cm",
+        "B": "3.0 cm",
+        "C": "4.5 cm",
+        "D": "6.0 cm"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "¡’ •ÊﬂÎÁûÊ n ∑§Ê ¬˝∑§Ê‡Ê ∞∑§ œÊÃÈ ∑§ ¬Îc∆U ¬⁄U ¬«∏ÃÊ\n„Ò ÃÊ ©‚‚ ©à‚Á¡¸Ã »§Ê≈UÊ-ß‹Ä≈˛UÊÚŸÊ¥ ∑§Ê •Áœ∑§Ã◊\nﬂª v „Ò–  ÿÁŒ •Ê¬ÁÃÃ ¬˝∑§Ê‡Ê ∑§Ë •ÊﬂÎÁûÊ ’…∏Ê∑§⁄U\n3n ∑§⁄U ŒË ¡ÊÃË „Ò ÃÊ ©à‚Á¡¸Ã ß‹Ä≈˛UÊÚŸÊ¥ ∑§Ê •Áœ∑§Ã◊\nﬂª „ÊªÊ —",
+      "options": {
+        "A": "3 v ‚ ∑§◊",
+        "B": "v",
+        "C": "3 v ‚ •Áœ∑§",
+        "D": "3 v ∑§ ’⁄UÊ’⁄U 23. A single slit of width b is illuminated by a coherent monochromatic light of wavelength λ. If the second and fourth minima in the diffraction pattern at a distance 1 m from the slit are at 3 cm and 6 cm respectively from the central maximum, what is the width of the central maximum ? (i.e. distance between first minimum on either side of the central maximum)"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "’Ê⁄U (Bohr) ∑§ Á‚hÊãÃ ∑§ •ŸÈ‚Ê⁄U „Êß«˛UÊ¡Ÿ ¬⁄U◊ÊáÊÈ\n∑§ ∑§ãŒ˝ (ŸÊÁ÷∑§) ¬⁄U nﬂ¥ ∑§ˇÊ ◊¥ ß‹Ä≈˛UÊÚŸ ∑§Ë ªÁÃ\n∑§ ∑§Ê⁄UáÊ ©à¬ãŸ ‚◊ÿ-•ÊÒ‚Ã øÈê’∑§Ëÿ ˇÊòÊ ∑§Ê\n◊ÊŸ ÁŸêŸ ◊¥ ‚ Á∑§‚∑§ ‚◊ÊŸÈ¬ÊÃË „ÊªÊ — (ÿ„Ê° n\n◊ÈÅÿ ÄﬂÊã≈U◊ ‚¥ÅÿÊ „Ò–)",
+      "options": {
+        "A": "n−4",
+        "B": "n−5",
+        "C": "n−3",
+        "D": "n−2"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "ŒÊ «˜UÿÍ≈˛UÊÚŸÊ¥ ∑§ ŸÊÁ÷∑§Ëÿ ‚¥‹ÿŸ ‚ ∞∑§ „ËÁ‹ÿ◊\nŸÊÁ÷∑§ ’ŸÃÊ „Ò–  ß‚ ¬˝Á∑˝§ÿÊ ◊¥ ©à‚Á¡¸Ã ™§¡Ê¸ ∑§Ê\n◊ÊŸ „ÊªÊ — (ÁŒÿÊ „Ò — «˜UÿÍ≈˛UÊÚŸ ∑§Ë ¬˝ÁÃ-ãÿÍÁÄ‹•ÊÚŸ\n’ãœŸ ™§¡Ê¸=1.1 MeV ÃÕÊ „ËÁ‹ÿ◊ ∑§Ë ¬˝ÁÃ\nãÿÍÁÄ‹•ÊÚŸ ’ãœŸ ™§¡Ê¸=7.0 MeV)",
+      "options": {
+        "A": "30.2 MeV",
+        "B": "32.4 MeV",
+        "C": "23.6 MeV",
+        "D": "25.8 MeV 25. According to Bohr’s theory, the time averaged magnetic field at the centre (i.e. nucleus) of a hydrogen atom due to the motion of electrons in the nth orbit is proportional to : (n=principal quantum number)"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ «UÊÿÊ«U ∑§Ê V-I •Á÷‹ˇÊÁáÊ∑§ ﬂ∑˝§ ∑§Ê ÁøòÊ ◊¥\nÁŒπÊÿÊ ªÿÊ „Ò–  •ª˝ÁŒÁ‡Ê∑§ ÃÕÊ ¬‡øÁŒÁ‡Ê∑§ ’Êÿ‚\n◊¥ ¬˝ÁÃ⁄UÊœ ∑§Ê •ŸÈ¬ÊÃ „ÊªÊ —",
+      "options": {
+        "A": "10",
+        "B": "10−6",
+        "C": "106",
+        "D": "100 27. The V-I characteristic of a diode is shown in the figure. The ratio of forward to reverse bias resistance is :"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "1.2 MHz •ÊﬂÎÁûÊ ÃÕÊ 25 V Á‡Êπ⁄U ﬂÊÀ≈UÃÊ ﬂÊ‹Ë\n∞∑§ ﬂÊ„∑§ Ã⁄¥Uª ∑§Ê 20 kHz •ÊﬂÎÁûÊ ÃÕÊ Á‡Êπ⁄U\nﬂÊÀ≈UÃÊU 5 V ∑§ Á‚ÇŸ‹ ‚ ◊Ê«ÈUÁ‹Ã Á∑§ÿÊ ¡ÊÃÊ „Ò–\nÁŸêŸÁ‹ÁπÃ ◊¥ ‚ ‚„Ë ∑§ÕŸ øÈÁŸÿ–",
+      "options": {
+        "A": "◊Ê«ÈU‹Ÿ ‚Íø∑§Ê¥∑§=5, ¬Ê‡ﬂ¸ •ÊﬂÎÁûÊ ’Òá«U 1400 kHz ÃÕÊ 1000 kHz ¬⁄U „Ò–",
+        "B": "◊Ê«ÈU‹Ÿ ‚Íø∑§Ê¥∑§=5, ¬Ê‡ﬂ¸ •ÊﬂÎÁûÊ ’Òá«U 21.2 kHz ÃÕÊ 18.8 kHz ¬⁄U „Ò–",
+        "C": "◊Ê«ÈU‹Ÿ ‚Íø∑§Ê¥∑§=0.8, ¬Ê‡ﬂ¸ •ÊﬂÎÁûÊ ’Òá«U 1180 kHz ÃÕÊ 1220 kHz ¬⁄U „Ò–",
+        "D": "◊Ê«ÈU‹Ÿ ‚Íø∑§Ê¥∑§=0.2, ¬Ê‡ﬂ¸ •ÊﬂÎÁûÊ ’Òá«U 1220 kHz ÃÕÊ 1180 kHz ¬⁄U „Ò–"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "’‹ •ÊÉÊÍáÊ¸ ∑§ Á‚hÊãÃ ¬⁄U ∑§Êÿ¸ ∑§⁄UŸ ﬂÊ‹Ë ∞∑§\n÷ÊÒÁÃ∑§ ÃÈ‹Ê ∑§ ’Ê°ÿ ¬‹«∏ ◊¥ ¡’ 5 mg ÷Ê⁄U ⁄UπÊ\n¡ÊÃÊ „Ò ÃÊ ∑§◊ÊŸË ˇÊÒÁÃ¡ „Ê ¡ÊÃË „Ò–  ÃÈ‹Ê ∑§ ŒÊŸÊ¥\n¬‹«∏Ê¥ ∑§Ê Œ˝√ÿ◊ÊŸ ‚◊ÊŸ „Ò–  ÁŸêŸÁ‹ÁπÃ ◊¥ ‚ ∑§ÊÒŸ\n‚Ê ∑§ÕŸ ‚àÿ „Ò?",
+      "options": {
+        "A": "’Ê°ÿË ÷È¡Ê, ŒÊ°ÿË ÷È¡Ê ‚ ‹ê’Ë „Ò–",
+        "B": "ŒÊŸÊ¥ ÷È¡Êÿ¥ ‚◊ÊŸ ‹ê’Êß¸ ∑§Ë „Ò¥–",
+        "C": "’Ê°ÿË ÷È¡Ê, ŒÊ°ÿË ÷È¡Ê ‚ ¿UÊ≈UË „Ò–",
+        "D": "¬˝àÿ∑§ ﬂSÃÈ Á¡‚∑§Ê ß‚ ÃÈ‹Ê ¬⁄U ÃÊÒ‹Ê ¡ÊÃÊ „Ò, ©‚∑§Ê ÷Ê⁄U •¬Ÿ ﬂÊSÃÁﬂ∑§ ÷Ê⁄U ‚ ∑§◊ ¬˝ÃËÃ „ÊÃÊ „Ò– 28. A signal of frequency 20 kHz and peak voltage of 5 Volt is used to modulate a carrier wave of frequency 1.2 MHz and peak voltage 25 Volts. Choose the correct statement."
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ Áﬂ÷ﬂ◊Ê¬Ë PQ ∑§Ê ŒÊ ¬˝ÁÃ⁄UÊœÊ¥ ∑§Ë ÃÈ‹ŸÊ ∑§⁄UŸ\n∑§ Á‹ÿ, ÁøòÊÊŸÈ‚Ê⁄U, ‚◊ÊÿÊÁ¡Ã Á∑§ÿÊ ¡ÊÃÊ „Ò–  ÿÁŒ\n∑È¥§¡Ë K3 ∑§Ê πÊ‹ ÁŒÿÊ ¡Êÿ ÃÊ •◊Ë≈U⁄U A ◊¥ œÊ⁄UÊ\n1.0 A •ÊÃË „Ò–  ¡’ ÁmªÊ◊Ë ∑È¥§¡Ë K3 ∑§Ê 2 ÃÕÊ 1\n∑§ ’Ëø ‹ªÊÿÊ ¡ÊÃÊ „Ò ÃÊ ‚¥ÃÈ‹Ÿ Á’ãŒÈ P ‚\nl1 cm ŒÍ⁄UË ¬⁄U •ÊÃÊ „Ò, ¡’Á∑§ K3 ∑§Ê 3 ÃÕÊ 1 ∑§\n’Ëø ‹ªÊŸ ¬⁄U, ‚¥ÃÈ‹Ÿ Á’ãŒÈ P ‚ l2 cm ŒÍ⁄UË ¬⁄U\n•ÊÃÊ „Ò–  ŒÊŸÊ¥ ¬˝ÁÃ⁄UÊœÊ¥ ∑§ •ŸÈ¬ÊÃ \n1\n2\nR\nR  ∑§Ê ◊ÊŸ\n„ÊªÊ —",
+      "options": {
+        "A": "1 1 2 l l l +",
+        "B": "2 2 1 l l l −",
+        "C": "1 1 2 l l l −",
+        "D": "1 2 1 l l l − 30. A potentiometer PQ is set up to compare two resistances as shown in the figure. The ammeter A in the circuit reads 1.0 A when two way key K3 is open. The balance point is at a length l1 cm from P when two way key K3 is plugged in between 2 and 1, while the balance point is at a length l2 cm from P when key K3 is plugged in between 3 and 1. The ratio of two resistances 1 2 R R , is found to be :"
+      },
+      "page_start": 18,
+      "page_end": 19,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

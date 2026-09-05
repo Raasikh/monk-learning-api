@@ -1,0 +1,753 @@
+{
+  "paper_id": "jee-main-2017-s2-physics-whxlkyfrjbldswe5suu8",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2017-s2-physics-whxlkyfrjbldswe5suu8",
+    "exam": "jee-main",
+    "year": 2017,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2017/jee-main-2017-physics-question-paper-online-exam-9th-april-2017/98561",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/WHxlKYfRJbLdswE5SUu8",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "7a048e75b6d024c8c52e6d0f5d2390383d8e66b78a7e600139a6d5f228611aa4",
+    "page_count": 21,
+    "text_chars": 19032,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2017-s2-physics-whxlkyfrjbldswe5suu8.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "11 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 8, 11, 2, 15, 17, 20, 22, 23, 25, 26]",
+    "21/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A physical quantity P is described by the\nrelation\n1\n2\n3\n4\n2\nP  a\n b  c  d−\n=\nIf the relative errors in the measurement\nof a, b, c and d respectively, are 2%, 1%,\n3% and 5%, then the relative error in P\nwill be :",
+      "options": {
+        "A": "8%",
+        "B": "12%",
+        "C": "32%",
+        "D": "25%"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A car is standing 200 m behind a bus,\nwhich is also at rest.  The two start moving\nat the same instant but with different\nforward accelerations. The bus has\nacceleration 2 m/s2 and the car has\nacceleration 4 m/s2.  The car will catch\nup with the bus after a time of :",
+      "options": {
+        "A": "110 s",
+        "B": "120 s",
+        "C": "10 2 s",
+        "D": "15 s ÷ÊÒÁÃ∑§ ÁﬂôÊÊŸ"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two particles A and B of equal mass M\nare moving with the same speed v as\nshown in the figure.  They collide\ncompletely inelastically and move as a\nsingle particle C.  The angle θ that the path\nof C makes with the X-axis is given by :",
+      "options": {
+        "A": "3 2 tan 1 2 + θ= −",
+        "B": "3 2 tan 1 2 − θ= −",
+        "C": "( ) 1 2 tan 2 1 3 − θ= +",
+        "D": "1 3 tan 1 2 − θ= +"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The machine as shown has 2 rods of length\n1 m connected by a pivot at the top.  The\nend of one rod is connected to the floor by\na stationary pivot and the end of the other\nrod has a roller that rolls along the floor in\na slot.  As the roller goes back and forth,\n a 2 kg weight moves up and down.  If the\nroller is moving towards right at a constant\nspeed, the weight moves up with a :",
+      "options": {
+        "A": "constant speed",
+        "B": "decreasing speed",
+        "C": "increasing speed",
+        "D": "speed which is 3 4 th of that of the roller when the weight is 0.4 m above the ground"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A conical pendulum of length 1 m makes\nan angle θ=458 w.r.t. Z-axis and moves\nin a circle in the XY plane.  The radius of\nthe circle is 0.4 m and its center is vertically\nbelow O.  The speed of the pendulum, in\nits circular path, will be : (Take g=10 ms−2)",
+      "options": {
+        "A": "0.4 m/s",
+        "B": "4 m/s",
+        "C": "0.2 m/s",
+        "D": "2 m/s 5. ∞∑§ ‡ÊÊ¥∑§ﬂ (conical) ŒÊ‹∑§, Á¡‚∑§Ë ‹ê’Êß¸ 1 m „Ò •ÊÒ⁄U ¡Ê Z-•ˇÊ ‚ θ=458 ∑§ ∑§ÊáÊ ¬⁄U „Ò¥, XY ‚◊Ã‹ ◊¥ ∞∑§ ªÊ‹Ê∑§Ê⁄U ¬Õ ◊¥ ø‹ÃÊ „Ò– ªÊ‹Ê∑§Ê⁄U ¬Õ ∑§Ë ÁòÊíÿÊ 0.4 m „Ò •ÊÒ⁄U ©‚∑§Ê ∑§ãŒ˝ Á’ãŒÈ O ∑§ ∆UË∑§ ŸËø „Ò– ©‚ ŒÊ‹∑§ ∑§Ë ªÁÃ ªÊ‹Ê∑§Ê⁄U ¬Õ ◊¥ „ÊªË — (g=10 ms−2)"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A circular hole of radius R\n4  is made in a\nthin uniform disc having mass M and\nradius R, as shown in figure.  The moment\nof inertia of the remaining portion of the\ndisc about an axis passing through the\npoint O and perpendicular to the plane of\nthe disc is :",
+      "options": {
+        "A": "2 219 MR 256",
+        "B": "2 237 MR 512",
+        "C": "2 19 MR 512",
+        "D": "2 197 MR 256 6. Œ˝√ÿ◊ÊŸ M ÃÕÊ ÁòÊíÿÊ R ﬂÊ‹ ∞∑§‚◊ÊŸ Á«US∑§ ◊¥ ∞∑§ R 4 ÁòÊíÿÊ ∑§Ê ªÊ‹Ê∑§Ê⁄U ¿UŒ, ÁøòÊÊŸÈ‚Ê⁄U, Á∑§ÿÊ ªÿÊ „Ò– Á’¥ŒÈ O ‚ ¡ÊŸ ﬂÊ‹ ÃÕÊ Á«US∑§ ∑§ ‚◊Ã‹ ∑§ ‹ê’ﬂÃ˜ •ˇÊ ∑§ ‚Ê¬ˇÊ, Á«US∑§ ∑§ ’ø „È∞ ÷Êª ∑§Ê, ¡«∏àﬂ •ÊÉÊÍáÊ¸ „ÊªÊ —"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The mass density of a spherical body is\ngiven by ρ (r)= k\nr  for r ≤ R and\nρ (r)=0 for r > R,\nwhere r is the distance from the centre.\nThe correct graph that describes\nqualitatively the acceleration, a, of a test\nparticle as a function of r is :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "7. ∞∑§ ªÊ‹Ê∑§Ê⁄U Á¬á«U ∑§Ê Œ˝√ÿ◊ÊŸ ÉÊŸàﬂ „Ò ρ (r)= k r ¡’ r ≤ R ÃÕÊ ρ (r)=0 ¡’ r > R, ¡„Ê° r ∑§ãŒ˝ ‚ ŒÍ⁄UË „Ò– ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ ‚Ê ª˝Ê$»§ ∞∑§ ¬⁄UËˇÊáÊ ∑§áÊ ∑§ àﬂ⁄UáÊ a ∑§Ê r ∑§ »§‹Ÿ ◊¥ ªÈáÊÊà◊∑§ M§¬ ‚ Œ‡ÊÊ¸ÃÊ „Ò?"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A steel rail of length 5 m and area of cross\nsection 40 cm2 is prevented from expanding\nalong its length while the temperature rises\nby 108C.  If coefficient of linear expansion\nand Young’s modulus of steel are\n1.2×10−5 K−1 and 2×1011 Nm−2\nrespectively, the force developed in the rail\nis approximately :",
+      "options": {
+        "A": "2×107 N",
+        "B": "1×105 N",
+        "C": "2×109 N",
+        "D": "3×10−5 N"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two tubes of radii r1 and r2, and lengths l1\nand l2, respectively, are connected in series\nand a liquid flows through each of them\nin stream line conditions.  P1 and P2 are\npressure differences across the two tubes.\nIf P2 is 4P1 and l2 is 1l\n4\n, then the radius r2\nwill be equal to :",
+      "options": {
+        "A": "r1",
+        "B": "2r1",
+        "C": "4r1",
+        "D": "1r 2 8. 5 m ‹ê’Êß¸ ÃÕÊ 40 cm2 •ŸÈ¬˝SÕ ∑§Ê≈U ∑§ ˇÊòÊ»§‹ ∑§Ë ∞∑§ S≈UË‹ ∑§Ë ¬≈U⁄UË ∑§Ê ‹ê’Êß¸ ∑§ •ŸÈÁŒ‡Ê ÁﬂSÃÊ⁄UáÊ ⁄UÊ∑§Ê ¡ÊÃÊ „Ò ¡’Á∑§ ©‚∑§Ê ÃÊ¬◊ÊŸ 108C ’…∏ÊÿÊ ¡ÊÃÊ „Ò– ÿÁŒ S≈UË‹ ∑§Ê ⁄UπËÿ ¬˝‚Ê⁄U ªÈáÊÊ¥∑§ ÃÕÊ ÿ¥ª ¬˝àÿÊSÕÃÊ ªÈáÊÊ¥∑§ ∑˝§◊‡Ê— 1.2×10−5 K−1 ÃÕÊ 2×1011 Nm−2 „Ò¥ ÃÊ ¬≈U⁄UË ◊¥ ©à¬ÛÊ ’‹ ∑§Ê ÁŸ∑§≈UÃ◊ ◊ÊŸ „ÊªÊ —"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "For the P-V diagram given for an ideal gas,\nout of the following which one correctly\nrepresents the T-P diagram ?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "10. ∞∑§ •ÊŒ‡Ê¸ ªÒ‚ ∑§Ê P-V •Ê⁄Uπ ÁŒÿ ªÿ ÁøòÊ ◊¥ Œ‡ÊÊ¸ÿÊ ªÿÊ „Ò– ÁŒÿ ªÿ •Ê⁄UπÊ¥ ◊¥ ‚ ∑§ÊÒŸ-‚Ê ‚„Ë T-P •Ê⁄Uπ Œ‡ÊÊ¸ÿªÊ?"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "N moles of a diatomic gas in a cylinder are\nat a temperature T.  Heat is supplied to\nthe cylinder such that the temperature\nremains constant but n moles of the\ndiatomic gas get converted into\nmonoatomic gas.  What is the change in\nthe total kinetic energy of the gas ?",
+      "options": {
+        "A": "1 nRT 2",
+        "B": "0",
+        "C": "3 nRT 2",
+        "D": "5 nRT 2"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A block of mass 0.1 kg is connected to an\nelastic spring of spring constant 640 Nm−1\nand oscillates in a damping medium of\ndamping constant 10−2 kg s−1.  The\nsystem dissipates its energy gradually.  The\ntime taken for its mechanical energy of\nvibration to drop to half of its initial value,\nis closest to :",
+      "options": {
+        "A": "2 s",
+        "B": "3.5 s",
+        "C": "5 s",
+        "D": "7 s 11. ∞∑§ Ám¬⁄U◊ÊáÊÈ∑§ ªÒ‚ ∑§ N ◊Ê‹ T ÃÊ¬◊ÊŸ ¬⁄U ∞∑§ Á‚‹á«U⁄U ◊¥ ’¥Œ „Ò¥– Á‚‹á«U⁄U ◊¥ ™§c◊Ê ß‚ ¬˝∑§Ê⁄U ¬˝ﬂÊÁ„Ã ∑§Ë ¡ÊÃË „Ò Á¡‚‚ ©‚ Ám¬⁄U◊ÊáÊÈ∑§ ªÒ‚ ∑§ n ◊Ê‹ ∞∑§¬⁄U◊ÊáÊÈ∑§ ªÒ‚ ◊¥ Á’ŸÊ ÃÊ¬◊ÊŸ ’Œ‹ ¬Á⁄UﬂÁÃ¸Ã „Ê ¡ÊÃ „Ò¥– ªÒ‚ ∑§Ë ∑È§‹ ªÁÃ¡ ™§¡Ê¸ ◊¥ Á∑§ÃŸÊ ¬Á⁄UﬂÃ¸Ÿ „ÊªÊ?"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A standing wave is formed by the\nsuperposition of two waves travelling in\nopposite directions.  The transverse\ndisplacement is given by\n5 \n( , t)  0.5 sin\n cos(200 t).\n \n4\ny x\nx\n\n\n\n\n\n\nπ\n=\nπ\nWhat is the speed of the travelling wave\nmoving in the positive x direction ?\n(x and t are in meter and second,\nrespectively.)",
+      "options": {
+        "A": "160 m/s",
+        "B": "90 m/s",
+        "C": "180 m/s",
+        "D": "120 m/s 13. ŒÊ Ã⁄¥Uª¥, ¡Ê Áﬂ¬⁄UËÃ ÁŒ‡ÊÊ ◊¥ ø‹ ⁄U„Ë „Ò¥, ∑§ •äÿÊ⁄UÊ¬áÊ ‚ ∞∑§ •¬˝ªÊ◊Ë Ã⁄¥Uª ’ŸÃË „Ò Á¡‚∑§Ê •ŸÈ¬˝SÕ ÁﬂSÕÊ¬Ÿ ÁŸêŸ ‚◊Ë∑§⁄UáÊ mÊ⁄UÊ Á‹πÊ ¡Ê ‚∑§ÃÊ „Ò 5 ( , t) 0.5 sin cos(200 t). 4 y x x       π = π +x •ˇÊ ∑§Ë Ã⁄U»§ ø‹Ÿ ﬂÊ‹Ë ¬˝ªÊ◊Ë Ã⁄¥Uª ∑§Ë ªÁÃ „ÊªË — (ÿ„Ê° x ﬂ t ∑˝§◊‡Ê— ◊Ë≈U⁄U ﬂ ‚∑§á«U ◊¥ „Ò¥– )"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Four closed surfaces and corresponding\ncharge distributions are shown below.\n     \nLet the respective electric fluxes through\nthe surfaces be Φ1, Φ2, Φ3 and Φ4.  Then :",
+      "options": {
+        "A": "Φ1 < Φ2=Φ3 > Φ4",
+        "B": "Φ1 > Φ2 > Φ3 > Φ4",
+        "C": "Φ1=Φ2=Φ3=Φ4",
+        "D": "Φ1 > Φ3 ; Φ2 < Φ4 14. øÊ⁄U ’¥Œ ¬Îc∆U ÃÕÊ ©Ÿ∑§ •Êﬂ‡Ê ÁﬂãÿÊ‚ ∑§Ê ÁŸêŸ ÁøòÊ ◊¥ Œ‡ÊÊ¸ÿÊ ªÿÊ „Ò– ÿÁŒ ©Ÿ∑§ ¬Îc∆U ‚ ’h ﬂÒlÈÃ ç‹Ä‚ ∑˝§◊‡Ê— Φ1, Φ2, Φ3 ÃÕÊ Φ4 „Ê¥ ÃÊ —"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A combination of parallel plate capacitors\nis maintained at a certain potential\ndifference.\n      \nWhen a 3 mm thick slab is introduced\nbetween all the plates, in order to maintain\nthe same potential difference, the distance\nbetween the plates is increased by 2.4 mm.\nFind the dielectric constant of the slab.",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A uniform wire of length l and radius r\nhas a resistance of 100 Ω.  It is recast into a\nwire of radius r\n2 .  The resistance of new\nwire will be :",
+      "options": {
+        "A": "1600 Ω",
+        "B": "400 Ω",
+        "C": "200 Ω",
+        "D": "100 Ω 15. ‚◊ÊãÃ⁄U å‹≈U ‚¥œÊÁ⁄UòÊÊ¥ ∑§ ∞∑§ ‚¥ÿÊ¡Ÿ ∑§Ê ∞∑§ ÁŸÁ‡øÃ Áﬂ÷ﬂÊãÃ⁄U ¬⁄U ⁄UπÊ ªÿÊ „Ò– (ÁøòÊ ŒÁπÿ) ¡’ 3 mm ◊Ê≈U ªÈ≈U∑§ ∑§Ê ‚÷Ë ‚¥œÊÁ⁄UòÊÊ¥ ∑§Ë å‹≈UÊ¥ ∑§ ’Ëø «UÊ‹Ê ¡ÊÃÊ „Ò, ÃÊ ﬂ„Ë Áﬂ÷ﬂÊãÃ⁄U ’ŸÊÿ ⁄UπŸ ∑§ Á‹∞ å‹≈UÊ¥ ∑§ ’Ëø ∑§Ë ŒÍ⁄UË ∑§Ê 2.4 mm ‚ ’…∏ÊŸÊ ¬«∏ÃÊ „Ò– ªÈ≈U∑§ ∑§Ê ¬⁄UÊﬂÒlÈÃÊ¥∑§ „ÊªÊ —"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The figure shows three circuits I, II and III\nwhich are connected to a 3V battery.  If\nthe powers dissipated by the configurations\nI, II and III are P1, P2 and P3 respectively,\nthen :",
+      "options": {
+        "A": "P1 > P2 > P3",
+        "B": "P1 > P3 > P2",
+        "C": "P2 > P1 > P3",
+        "D": "P3 > P2 > P1"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A negative test charge is moving near a\nlong straight wire carrying a current.  The\nforce acting on the test charge is parallel\nto the direction of the current.  The motion\nof the charge is :",
+      "options": {
+        "A": "away from the wire",
+        "B": "towards the wire",
+        "C": "parallel to the wire along the current",
+        "D": "parallel to the wire opposite to the current 17. ÁŒÿ ªÿ ÁøòÊ ◊¥ ÃËŸ ¬Á⁄U¬Õ, I, II ∞ﬂ¥ III ∑§Ê ∞∑§ 3V ’Ò≈U⁄UË ‚ ¡Ê«∏Ê ªÿÊ „Ò– ÿÁŒ ÁﬂãÿÊ‚ I, II ÃÕÊ III ∑˝§◊‡Ê— P1, P2 ÃÕÊ P3 ‡ÊÁÄÃ •¬√ÿÿ ∑§⁄UÃ „Ò¥ ÃÊ —"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A uniform magnetic field B of 0.3 T is along\nthe positive Z-direction.  A rectangular\nloop (abcd) of sides 10 cm×5 cm carries a\ncurrent I of 12 A.  Out of the following\ndifferent \norientations \nwhich \none\ncorresponds to stable equilibrium ?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "19. 0.3 T ∑§Ê ∞∑§ ‚◊ÊŸ øÈê’∑§Ëÿ ˇÊòÊ B œŸÊà◊∑§ Z-•ˇÊ ∑§Ë Ã⁄U»§ ÁŒÁ‡ÊÃ „Ò– ∞∑§ 10 cm ÃÕÊ 5 cm ÷È¡Ê•Ê¥ ﬂÊ‹ •ÊÿÃÊ∑§Ê⁄U ¬Ê‡Ê (abcd) ◊¥ 12 A œÊ⁄UÊ I ’„ÃË „Ò– ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-‚Ê ÁŒª˜ÁﬂãÿÊ‚ ÁSÕ⁄U ‚ÊêÿÊﬂSÕÊ ∑§Ê ¬˝ŒÁ‡Ê¸Ã ∑§⁄UÃÊ „Ò?"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A sinusoidal voltage of peak value 283 V\nand angular frequency 320/s is applied to\na series LCR circuit.  Given that R=5 Ω,\nL=25 mH and C=1000 µF.  The total\nimpedance, and phase difference between\nthe voltage across the source and the\ncurrent will respectively be :",
+      "options": {
+        "A": "10 Ω and 1 5 tan 3       −",
+        "B": "7 Ω and 458",
+        "C": "10 Ω and 1 8 tan 3       −",
+        "D": "7 Ω and 1 5 tan 3       −"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The electric field component of a\nmonochromatic radiation is given by\n0\nE   2 E   cos k  cos t\ni\nz\n→\n∧\n=\nω\nIts magnetic field B\n→\n is then given by :",
+      "options": {
+        "A": "∧ 0 2 E sin k cos t c j z ω",
+        "B": "∧ 0 2 E sin k sin t c j z − ω",
+        "C": "∧ 0 2 E sin k sin t c j z ω",
+        "D": "∧ 0 2 E cos k cos t c j z ω 20. 283 V ◊„ûÊ◊ Áﬂ÷ﬂ ÃÕÊ 320 s−1 ∑§ÊáÊËÿ •ÊﬂÎÁûÊ ﬂÊ‹ ∞∑§ íÿÊﬂ∑˝§Ëÿ Áﬂ÷ﬂ ∑§Ê ∞∑§ üÊáÊË LCR ¬Á⁄U¬Õ ◊¥ ‹ªÊÿÊ ªÿÊ „Ò– ÁŒÿÊ „Ò R=5 Ω, L=25 mH •ÊÒ⁄U C=1000 µF– ¬Á⁄U¬Õ ∑§Ë ∑È§‹ ¬˝ÁÃ’ÊœÊ ÃÕÊ dÊÃ Áﬂ÷ﬂ ∞ﬂ¥ œÊ⁄UÊ ∑§ ’Ëø ∑§‹Ê¥Ã⁄U ∑˝§◊‡Ê— „ÊªÊ —"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ¬˝ÿÊª ∑§ ŒÊÒ⁄UÊŸ, 15 cm »§Ê∑§‚ ŒÍ⁄UË ∑§ ∞∑§\n©ûÊ‹ ‹¥‚ ∑§Ê ∞∑§ ¬˝∑§Ê‡Ê ’¥ø ¬⁄U ∞∑§ ©ûÊ‹ Œ¬¸áÊ\n∑§ ‚Ê◊Ÿ 5 cm ŒÍ⁄UË ¬⁄U ‚◊ÊˇÊËÿ ÁSÕÁÃ ◊¥ ⁄UπÊ ªÿÊ\n„Ò–  ÿÁŒ ﬂSÃÈ ∑§Ê ‹¥‚ ‚ 20 cm ∑§Ë ŒÍ⁄UË ¬⁄U ⁄UπÊ\n¡Êÿ ÃÊ ﬂSÃÈ ÃÕÊ ©‚∑§Ê ¬˝ÁÃÁ’ê’ ‚¥¬ÊÃË „Ê ¡ÊÃ „Ò¥–\n©ûÊ‹ Œ¬¸áÊ ∑§Ë »§Ê∑§‚ ŒÍ⁄UË „ÊªË —",
+      "options": {
+        "A": "27.5 cm",
+        "B": "20.0 cm",
+        "C": "25.0 cm",
+        "D": "30.5 cm"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "0.1 mm øÊÒ«∏Êß¸ ∑§Ë ∞∑§ Á¤Ê⁄UË 6000 Å Ã⁄¥UªŒÒÉÿ¸ ∑§\n‚◊ÊãÃ⁄U Á∑§⁄UáÊ ¬È¥¡ ‚ ¬˝∑§ÊÁ‡ÊÃ ∑§Ë ¡ÊÃË „Ò •ÊÒ⁄U\nÁﬂﬂÃ¸Ÿ ’Òá«U ∑§Ê Á¤Ê⁄UË ‚ 0.5 m ŒÍ⁄U ÁSÕÃ ¬Œ¸ ¬⁄U\nŒπÊ ¡ÊÃÊ „Ò–  ÃÎÃËÿ •ŒËåÃ ’Òá«U ∑§Ë ∑§ãŒ˝Ëÿ ŒËåÃ\n’Òá«U ‚ ŒÍ⁄UË „ÊªË —",
+      "options": {
+        "A": "3 mm",
+        "B": "9 mm",
+        "C": "4.5 mm",
+        "D": "1.5 mm"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "660 nm Ã⁄¥UªŒÒÉÿ¸ ∑§Ë ∞∑§ ‹$¡⁄U ‹Êß≈U ∑§Ê ⁄UÁ≈UŸÊ\nÁﬂÿÊ¡Ÿ ∑§Ê ¡Ê«∏Ÿ ∑§ Á‹∞ ¬˝ÿÊª Á∑§ÿÊ ¡ÊÃÊ „Ò–\nÿÁŒ  60 ms øÊÒ«∏Êß¸ ∞ﬂ¥ 0.5 kW ‡ÊÁÄÃ ∑§ ‹$¡⁄U\nS¬ãŒ (pulse) ∑§Ê ¬˝ÿÊª Á∑§ÿÊ ¡Êÿ ÃÊ ©‚ S¬ãŒ ◊¥\n»§Ê≈UÊÚŸÊ¥ ∑§Ë ‚¥ÅÿÊ ‹ª÷ª „ÊªË —\n[å‹Ê¥∑§ ÁŸÿÃÊ¥∑§ h=6.62×10−34 Js]",
+      "options": {
+        "A": "1020",
+        "B": "1018",
+        "C": "1022",
+        "D": "1019 22. In an experiment a convex lens of focal length 15 cm is placed coaxially on an optical bench in front of a convex mirror at a distance of 5 cm from it. It is found that an object and its image coincide, if the object is placed at a distance of 20 cm from the lens. The focal length of the convex mirror is :"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "„Êß«˛UÊ¡Ÿ ¬⁄U◊ÊáÊÈ ∑§Ë ¬˝Õ◊ ∑§ˇÊÊ (n=1) ∑§ ß‹Ä≈˛UÊÚŸ\n∑§Ê àﬂ⁄UáÊ „ÊªÊ —",
+      "options": {
+        "A": "2 2 2 3 h m r π",
+        "B": "2 2 2 3 h 8 m r π",
+        "C": "2 2 2 3 h 4 m r π",
+        "D": "2 2 3 h 4 m r π"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "∑§À¬ŸÊ ∑§ËÁ¡∞, ∞∑§ ÷≈˜U∆UË, ¡ÊÁ∑§ ÁŒÿ ªÿ ‚¥¬ÍáÊ¸\nŒ˝√ÿ◊ÊŸ ∑§Ê ™§¡Ê¸ ◊¥ ’Œ‹ÃË „Ò ∞ﬂ¥ 109 watt ∑§Ë\n‡ÊÁÄÃ SÃ⁄U ¬⁄U ø‹ÃË „Ò–  ÷≈˜∆UË ◊¥ ∞∑§ ÉÊá≈U ◊¥ π¬Ã\n„ÊŸ ﬂÊ‹ ßZœŸ ∑§Ê Œ˝√ÿ◊ÊŸ „ÊªÊ —\n(¬˝∑§Ê‡Ê ∑§Ê ﬂª, c=3×108 m/s)",
+      "options": {
+        "A": "0.96 gm",
+        "B": "0.8 gm",
+        "C": "4×10−2 gm",
+        "D": "6.6×10−5 gm"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ©÷ÿÁŸc∆U ©à‚¡¸∑§ ¬˝ﬂœ¸∑§ ∑§Ê œÊ⁄UÊ ‹Ê÷ 69\n„Ò–  ÿÁŒ ©à‚¡¸∑§ œÊ⁄UÊ ∑§Ê ◊ÊŸ 7.0 mA „Ê ÃÊ\n‚¥ª˝Ê„∑§ œÊ⁄UÊ ∑§Ê ◊ÊŸ „ÊªÊ —",
+      "options": {
+        "A": "9.6 mA",
+        "B": "6.9 mA",
+        "C": "0.69 mA",
+        "D": "69 mA 25. The acceleration of an electron in the first orbit of the hydrogen atom (n=1) is :"
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Ã⁄¥UªŒÒÉÿ¸ λ ∑§Ë Ã⁄¥Uª mÊ⁄UÊ ∞∑§ ‚¥Œ‡Ê ∑§Ê ∞∑§ ∞∑§⁄UπËÿ\n∞ã≈UŸÊ ‚ ¬˝‚ÊÁ⁄UÃ ∑§⁄UŸÊ „Ò–  ∞ã≈UŸÊ ∑§Ë ‹ê’Êß¸ l  ÃÕÊ\n¬˝÷ÊﬂË ©à‚Á¡¸Ã ‡ÊÁÄÃ Peff ∑§Ê ∑˝§◊‡Ê— ◊ÊŸ\n„ÊªÊ —\n(K ‚◊ÊŸÈ¬ÊÁÃ∑§  ÁSÕ⁄UÊ¥∑§  (constant  of\nproportionality) „Ò)",
+      "options": {
+        "A": "      2 eff l , P K λ = λ",
+        "B": "      eff l , P K 8 λ = λ",
+        "C": "      3 eff l , P K 16 λ = λ",
+        "D": "      1 2 eff l , P K 5 λ = λ 28. A signal is to be transmitted through a wave of wavelength λ, using a linear antenna. The length l of the antenna and effective power radiated Peff will be given respectively as : (K is a constant of proportionality)"
+      },
+      "page_start": 18,
+      "page_end": 19,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Á∑§‚Ë ◊Ë≈U⁄U ‚ÃÈ ¬˝ÿÊª ∑§ ŒÊÒ⁄UÊŸ, ¬˝ÁÃ⁄UÊœÊ¥ ∑§Ê ÁøòÊÊŸÈ‚Ê⁄U\n¡Ê«∏Ê ªÿÊ „Ò–  ‡ÊÈM§ ◊¥ ¬˝ÁÃ⁄UÊœ P=4 Ω ÃÕÊ Ÿ‹\nÁ’ãŒÈ  N, Á’ãŒÈ A ‚, 60 cm ∑§Ë ŒÍ⁄UË ¬⁄U „Ò–  ∞∑§\n•ôÊÊÃ ¬˝ÁÃ⁄UÊœ R ∑§Ê P ∑§ ‚ÊÕ üÊáÊË ∑˝§◊ ◊¥ ¡Ê«∏Ê\n¡ÊÃÊ „Ò Á¡‚‚ Ÿ‹ Á’ãŒÈ ∑§Ë Ÿß¸ ÁSÕÁÃ Á’¥ŒÈ A ‚\n80 cm ŒÍ⁄U „Ê ¡ÊÃË „Ò–  •ôÊÊÃ ¬˝ÁÃ⁄UÊœ R ∑§Ê ◊ÊŸ\n„ÊªÊ —",
+      "options": {
+        "A": "33 5 Ω",
+        "B": "6 Ω",
+        "C": "7 Ω",
+        "D": "20 3 Ω 29. In a meter bridge experiment resistances are connected as shown in the figure. Initially resistance P=4 Ω and the neutral point N is at 60 cm from A. Now an unknown resistance R is connected in series to P and the new position of the neutral point is at 80 cm from A. The value of unknown resistance R is :"
+      },
+      "page_start": 19,
+      "page_end": 20,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ¬˝ÿÊª ◊¥, 1 m ‹ê’Êß¸ ∑§Ë ∞∑§ ‚⁄U‹ ŒÊ‹∑§ ∑§Ê\n•ÊﬂÃ¸ ∑§Ê‹ ÁŸ∑§Ê‹Ÿ „ÃÈ ©‚∑§Ê r1 ÃÕÊ r2 ÁòÊíÿÊ•Ê¥\n∑§ •‹ª-•‹ª ªÊ‹Ê∑§Ê⁄U ‹Ê‹∑§ ‚ ¡Ê«∏Ê ¡ÊÃÊ „Ò–\nŒÊŸÊ¥ ªÊ‹Ê∑§Ê⁄U ‹Ê‹∑§Ê¥ ∑§ Œ˝√ÿ◊ÊŸ ÁﬂÃ⁄UáÊ ∞∑§ ‚◊ÊŸ\n„Ò¥–  ÿÁŒ •ÊﬂÃ¸∑§Ê‹Ê¥ ∑§Ê ‚Ê¬ˇÊ •¥Ã⁄U 5×10−4 s\n¬ÊÿÊ ªÿÊ „Ê ÃÊ ©Ÿ∑§Ë ÁòÊíÿÊ•Ê¥ ◊¥ •ãÃ⁄U,\n?r1−r2? ∑§Ê ÁŸ∑§≈UÃ◊ ◊ÊŸ „ÊªÊ —",
+      "options": {
+        "A": "1 cm",
+        "B": "0.1 cm",
+        "C": "0.5 cm",
+        "D": "0.01 cm - o 0 o - 30. In an experiment to determine the period of a simple pendulum of length 1 m, it is attached to different spherical bobs of radii r1 and r2. The two spherical bobs have uniform mass distribution. If the relative difference in the periods, is found to be 5×10−4 s, the difference in radii, ?r1−r2? is best given by :"
+      },
+      "page_start": 20,
+      "page_end": 21,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

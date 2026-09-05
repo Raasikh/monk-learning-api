@@ -1,0 +1,781 @@
+{
+  "paper_id": "jee-main-2006-physics-2m2wghl93lqk82s4sa7y",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2006-physics-2m2wghl93lqk82s4sa7y",
+    "exam": "jee-main",
+    "year": 2006,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2006/iit-jee-physics-paper-i/81195",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/2M2WgHl93lqK82S4sA7Y",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "f794bca40fd18934975711a1fc95e6705dea453e217f1ab36bd305862b1584c4",
+    "page_count": 16,
+    "text_chars": 15748,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2006-physics-2m2wghl93lqk82s4sa7y.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 40,
+  "defects": [
+    "9/40 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Given \n        R1 = 1Ω             C1 = 2µF \n        R2 = 1Ω             C2 = 4µF \n         \n \n  \n        The times constants (in mS) for the circuits I, II, III are respectively",
+      "options": {
+        "A": "18, 8/9, 4",
+        "B": "18, 4, 8/9",
+        "C": "4, 8/9, 18",
+        "D": "8/9, 18, 4"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two blocks A and B of masses 2m and m, respectively, are connected by a massles \nand inextensible string. The whole system is suspended by a massless spring as shown in \nthe figure. The magnitudes of acceleration of A and B, immediately after the string is cut, \nare respectively",
+      "options": {
+        "A": "g, g/2",
+        "B": "g/2, g",
+        "C": "g, g",
+        "D": "g/2, g/2"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A point object is placed at a distance of 20 cm from a thin plani-convex lens of focal \nlength 15 cm, fi the plane surface is silvered. The image will form at",
+      "options": {
+        "A": "60 cm left of AB",
+        "B": "30 cm left of AB",
+        "C": "12 cm left of AB",
+        "D": "60 cm right of AB"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A biconvex lens of focal length f forms a circular image of sun of radius r in focal \nplane. Then",
+      "options": {
+        "A": "Πr2 œ f",
+        "B": "Πr2 œ f2",
+        "C": "if lower half part is covered by black sheet, then area of the image is equal to Πr2/2",
+        "D": "if f is doubles, intensity will increase"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Given a sample of Radium-226 having half-life of 4 days. Find the probability, a \nnucleus distintegrates after 2 half lives.",
+      "options": {
+        "A": "1",
+        "B": "½",
+        "C": "1.5",
+        "D": "¾"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Graph of position of image vs position of point object from a convex lens is shown. \nThen, focal length of the lens is",
+      "options": {
+        "A": "0.50 + 0.05 cm",
+        "B": "0.50 + 0.10 cm",
+        "C": "5.00 + 0.05 cm",
+        "D": "5.00 + 0.10 cm"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A massless rod is suspended by two identical strings Ab and CD of equal length. A \nblock of mass m is suspended from point O such that BO is equal to 'x'. Further, it is \nobserved that the frequency of 1st harmonic (fundamental frequency) is AB is equal to \n2nd harmonic frequency in CD. Then, length of BO is",
+      "options": {
+        "A": "L/5",
+        "B": "4L/5",
+        "C": "3L/4",
+        "D": "L/4"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A system of binary stars of masses mA and mB are moving in circular orbits of radii \nrA and rB respectively. If TA and TB are the time periods of masses mA and mBrespectively, \nthen",
+      "options": {
+        "A": "TA/TB =(rA/rB )3/2",
+        "B": "TA > TB (if rA > rB)",
+        "C": "TA > TB (if mA > mB)",
+        "D": "TA = TB"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A solid sphere of mass M, radius R and having moment of inertia about an axis passing \nthrough the centre of mass as I, is recast into a disc of thickness t, whose moment of inertia \nabout an axis passing through its edge and perpendicular to its plane remains I. Then, \nradius of the disc will be",
+      "options": {
+        "A": "2R/√15",
+        "B": "R√(2/15)",
+        "C": "4R/√15",
+        "D": "R/4"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A student performs an experiment for determination of g (=(4π2 l)/T2 ),l ≈ 1m, and he \ncommits an error of ∆l . For T he takes the time of n oscillations with the stop watch of least \ncount ∆T and he commits a human error of 0.1 sec. For which of the following data, the \nmeasurement of g will be most accurate? \n                ∆l                               ∆T                   n          Amplitude oscillation",
+      "options": {
+        "A": "5 mm 0.2 sec 10 5 mm",
+        "B": "5 mm 0.2 sec 20 5 mm",
+        "C": "5 mm 0.1 sec 20 1 mm",
+        "D": "1 mm 0.1 sec 50 1 mm"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The circular divisions of shown screw gauge are 50. It moves 0.5 mm on main scale \nin one rotation. The diameter of the ball is",
+      "options": {
+        "A": "2.25 mm",
+        "B": "2.20 mm",
+        "C": "1.20 mm",
+        "D": "1.25 mm"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider a cylindrical element as shown in the figure. Current flowing the through \nelement is I and resistivity of material of the cylinder is r. \n                    \n \nChoose the correct option out the following.",
+      "options": {
+        "A": "Power loss in first half is four times the power loss in second half.",
+        "B": "Voltage drop in first half is twice of voltage drop in second half.",
+        "C": "Current density in both halves are equal.",
+        "D": "Electric field in both halves is equal. More than One Choice may be correct. (+5, -1)"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the given diagram, a line of force of a particular force field is shown. Out of the \nfollowing options, it can never represent",
+      "options": {
+        "A": "an electrostatic field",
+        "B": "a magnetostatic field",
+        "C": "a gravitational field of a mass at rest",
+        "D": "an induced electric field"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The electrostatic potential (fr) of a spherical symmetric system, kept at origin, is \nshown in the adjacent figure, and given as \n                 \n \n        Φr = q/(4π ε0 R0 )         (r > R0) \n        Φr = q/(4π ε0 R0 )        (r < R0) \n        Which of the following option(s) is/are correct?",
+      "options": {
+        "A": "For spherical region r < R0, total electrostatic energy stored is zero.",
+        "B": "Within r = 2R0, total charge is q.",
+        "C": "There will be no charge anywhere except at r = R0.",
+        "D": "Electric field is discontinuous at r = R0."
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A solid cylinder of mass m and radius r is rolling on a rough inclined plane of \ninclination θ. The coefficient of friction between the cylinder and incline is m. Then",
+      "options": {
+        "A": "frictional force is always mmg cos θ",
+        "B": "friction is a dissipative force",
+        "C": "by decreasing θ, frictional force decreases",
+        "D": "friction opposes translation and supports rotation."
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Function x = a sin2 ωt + B cos2 ωt + C sin ωt cos ωt represents SHM",
+      "options": {
+        "A": "for any value of A, B and C (except C = 0)",
+        "B": "if A = -B; C = 2B, amplitude = |B√2|",
+        "C": "if A = B; C = 0",
+        "D": "if A = B; C = 2B, amplitude = |B|"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In a dark room with ambient temperature T0, a black body is kept at a temperature \nT. Keeping the temperature of the black body constant (at T), sunrays are allowed to fall on \nthe black body through a hole in the roof to the dark room. Assuming that there is no \nchange in the ambient temperature of the room, which of the following statement(s) is/are \ncorrect?",
+      "options": {
+        "A": "The quantity of radiation absorbed by the black body in unit time will increase.",
+        "B": "Since emissivity = absorptivity, hence the quantity of radiation emitted by black body in unit time will increase.",
+        "C": "Black body radiates more energy in unit time in the visible spectrum.",
+        "D": "The reflected energy in unit time by the black body remains same."
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The graph between 1/λ and stopping potential (V) of three metals having work \nfunctions Φ1, Φ2 and Φ3 in an experiment of photo-electric effect is plotted as shown in the \nfigure. Which of the following statements(s) is/are correct? [Here λ is the wavelength of the \nincident ray].",
+      "options": {
+        "A": "Ratio of work functions Φ1 : Φ2 : Φ3 = 1 : 2 : 4",
+        "B": "Ratio of work functions Φ1 : Φ2 : Φ3 = 4 : 2 : 1",
+        "C": "tan q is directly proportional to hc/e, where h is Planck's constant and c is the speed of light.",
+        "D": "The violet colour light can eject photoelectrons from metals 2 and 3."
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An infinite current carrying wire passes through point O and in perpendicular to the \nplane containing a current carrying loop ABCD as shown in the figure. Choose the correct \noption(s).",
+      "options": {
+        "A": "Net force on the loop is zero.",
+        "B": "Net torque on the loop is zero.",
+        "C": "As seen from O, the loop rotates clockwise.",
+        "D": "As seen from O, the loop rotates anticlockwise."
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A ball moves over a fixed track as shown in the figure. From A to B the ball rolls \nwithout slipping. Surface BC is frictionless. KA, KB and KC are kinetic energies of the ball at \nA, B and C respectively. Then",
+      "options": {
+        "A": "hA > hC ; KB > KC",
+        "B": "hA > hC ; KC > KA",
+        "C": "hA = hC ; KB = KC",
+        "D": "hA < hC ; KB > KC Passage The capacitor of capacitance C can be charged (with the help of a resistance R) by a voltage source V, by closing switch S1 while keeping switch S2 open. The capacitor can be connected in series with an inductor 'L' by closing switch S2 and opening S1."
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Initially, the capacitor was uncharged. Now, switch S1 is closed and S2 is kept open. If \ntime constant of this circuit is t, then",
+      "options": {
+        "A": "after time interval t, charge on the capacitor is CV/2",
+        "B": "after time interval 2t, charge on the capacitor is CV(1-e-2)",
+        "C": "the work done by the voltage source will be half of the heat dissipated when the capacitor is fully charged.",
+        "D": "after time interval 2t, charge on the capacitor is CV(1-e-1)"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "After the capacitor gets fully charged, S1 is opened and S2 is closed so that the \ninductor is connected in series with the capacitor. Then",
+      "options": {
+        "A": "at t = 0, energy stored in the circuit is purely in the form of magnetic energy",
+        "B": "at any time t > 0, current in the circuit is in the same direction",
+        "C": "at t > 0, there is no exchange of energy between the inductor and capacitor",
+        "D": "at any time t > 0, instantaneous current in the circuit may V√(C/L)"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the total charge stored in the LC circuit is Q0, then for t > 0",
+      "options": {
+        "A": "the charge on the capacitor is Q = Q0 cos (π/2 + t/√(LC) )",
+        "B": "the charge on the capacitor is Q = Q0 cos (π/2 - t/√(LC) )",
+        "C": "the charge on the capacitor is Q = - LC d2Q / dt2",
+        "D": "the charge on the capacitor is Q = - 1/√LC d2Q / dt2 Passage A wooden cylinder of diameter 4r, height h and density r/3 is kept on a hole of diameter 2r of a tank, filled with water of density r as shown in the figure. The height of the base of cylinder form the base of tank is H."
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If level of liquid starts decreasing slowly when the level of liquid is at a height \nh1 above the cylinder, the block just starts moving up. Then, value of h1 is",
+      "options": {
+        "A": "2h/3",
+        "B": "5h/4",
+        "C": "5h/3",
+        "D": "5h/2"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let the cylinder is prevented from moving up, by applying a force and water level is \nfurther decreased. Then, height of water level (h2 in figure) for which the cylinder remains \nin original position without application of force is",
+      "options": {
+        "A": "h/3",
+        "B": "4h/9",
+        "C": "2h/3",
+        "D": "h"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If height h2 of water level is further decreased, then",
+      "options": {
+        "A": "cylinder will not move up and remains as its original position.",
+        "B": "for h2 = h/3, cylinder again starts moving up",
+        "C": "for h2 = h/4, cylinder again starts moving up",
+        "D": "for h2 = h/5 cylinder again starts moving up"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two waves y1 = A cos (0.5 px - 100pt) and y2 = A cos (0.46 px - 92 pt) are travelling \nin a pipe placed along x-axis. Find the number of times intensity is maximum in time \ninterval of 1 sec.",
+      "options": {
+        "A": "4",
+        "B": "6",
+        "C": "8",
+        "D": "10"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find wave velocity of louder sound",
+      "options": {
+        "A": "100 m/s",
+        "B": "192 m/s",
+        "C": "200 m/s",
+        "D": "96 m/s"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find the number of times y1 + y2 = 0 at x = 0 in 1 sec",
+      "options": {
+        "A": "100",
+        "B": "46",
+        "C": "192",
+        "D": "96 Paragraph Modern trains are based on Maglev technology in which trains are magnetically levitated, which runs its EDS Maglev system. There are coils on both sides of wheels. Due to motion of train, current induces in the coil of track which levitates it. This is in accordance with Lenz's law. If trains lower down then due to Lenz's law a repulsive force increases due to which train gets uplifted and if it goes much high then there is a net downward force disc to gravity. The advantage of Maglev train is that there is no friction between the train and the track, thereby reducing power consumption and enabling the train to attain very high speeds. Disadvantages of Maglev train is that as it slows down the electromagnetic forces decreases and it becomes difficult to keep it levitated and as it moves forward according to Lenz law there is an electromagnetic drag force."
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "What is the advantage of this system?",
+      "options": {
+        "A": "No friction hence no power consumption",
+        "B": "No electric power is used",
+        "C": "Gravitation fore is zero",
+        "D": "Electrostatic force draws the train"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "What is the disadvantage of this system?",
+      "options": {
+        "A": "Train experiences upward force according to Lenz's law",
+        "B": "Friction force create a drag on the train",
+        "C": "Retardation",
+        "D": "By Lenz's law train experience a drag"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which force causes the train to elevate up?",
+      "options": {
+        "A": "Electrostatic force",
+        "B": "Time varying electric field",
+        "C": "Magnetic force",
+        "D": "Induced electric field"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is a rectangular plate of mass M kg of dimensions (a × b). The plate is held in \nhorizontal position by striking n small balls each of mass m per unit area per unit time. \nThese are striking in the shaded half region of the plate. The balls are colliding elastically \nwith velocity v. What is v? \n               \n \n        It is given n = 100, M = 3 kg, m = 0.01 kg; b = 2 m; a = 1m; h = 10 m/s2.",
+      "options": null,
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In an insulated vessel, 0.05 kg stream at 373 K and 0.45 kg of ice at 253 mixed. \nThen, find the final temperature of the mixture. \n        Given, Lfusion = 80 cal/g = 336 J/g, Lvaporization = 540 cal/g = 2268 J/g, \n        Sice = 2100 J/kg K = 0.5 cal/gK and Swater = 4200 J/kg K = 1 cal/gK",
+      "options": null,
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 35,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In hydrogen-like atom (z = 11), nth line of Lyman series has wavelength l equal to \nthe de-Broglie's wavelength of electron in the level from which it originated. What is the \nvalue of n?",
+      "options": null,
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A circular disc with a groove along its diameter is placed horizontally. A block of mass \n1 kg is placed as shown. The co-efficient of friction between the block and all surfaces of \ngroove in contact is m = 2/5. The disc has an acceleration of 25 m/s2. Find the acceleration \nof the block with respect to disc.",
+      "options": null,
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Heat given to process is positive, match the following option of column I with the \ncorresponding option of column II. \n                \n \nColumn I \nColumn II",
+      "options": {
+        "A": "KJ (p) DW > 0",
+        "B": "KL (q) DQ < 0",
+        "C": "LM (r) DW < 0",
+        "D": "MJ (s) DQ > 0"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 38,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Match the following Columns \nColumn I \nColumn II",
+      "options": {
+        "A": "Nuclear fusion (p) Converts some matter into energy",
+        "B": "Nuclear fission (q) Generally for nuclei with low atomic number",
+        "C": "β-decay (r) General possible for nuclei with higher atomic number",
+        "D": "Exothermic nuclear reaction (s) ∆Q > 0"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Match the following Columns \nColumn I \nColumn II",
+      "options": {
+        "A": "Dielectric ring uniformly charged (p) Time independent electrostatic field out of system",
+        "B": "Dielectric ring uniformly charged rotating with angular velocity w (q) Magnetic field",
+        "C": "Constant current in ring i0 (r) Induced electric field",
+        "D": "i = i0 cos ωt (s) ∆Q > 0"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A simple telescope used to view distant objects has eyepiece and objective lens of \nfocal lengths fe and f0, respectively. Then \nColumn I \nColumn II",
+      "options": {
+        "A": "Intensity of light received by lens (p) Radius of aperture (R)",
+        "B": "Angular magnification (q) Dispersion of lens",
+        "C": "Length of telescope (r) Focal length f0, fe",
+        "D": "Sharpness of image (s) Spherical aberration"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": []
+    }
+  ]
+}

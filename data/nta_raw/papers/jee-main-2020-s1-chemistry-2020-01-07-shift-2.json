@@ -1,0 +1,139 @@
+{
+  "paper_id": "jee-main-2020-s1-chemistry-2020-01-07-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-chemistry-2020-01-07-shift-2",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-07",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Chemistry",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-7-jan-2020-chemistry-paper-shift-2/243251",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/EpWZZ2gFgjq9TxsOziLF",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "0173bf9fa4c0deda448f4d649f32f8920f973db9e7d5784a217a0145f954ed36",
+    "page_count": 12,
+    "text_chars": 12456,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 22,
+    "answer_marker_hits": 22,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-chemistry-2020-01-07-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "A",
+          "option": "A"
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 2,
+  "defects": [
+    "7 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [6, 11, 13, 15, 17, 22, 24]",
+    "2/2 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following reactions are possible?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "B in the given reaction is?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 2,
+      "page_end": 12,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "A",
+        "option": "A"
+      }
+    }
+  ]
+}

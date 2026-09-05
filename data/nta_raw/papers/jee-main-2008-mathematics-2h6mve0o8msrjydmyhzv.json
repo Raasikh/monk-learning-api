@@ -1,0 +1,452 @@
+{
+  "paper_id": "jee-main-2008-mathematics-2h6mve0o8msrjydmyhzv",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2008-mathematics-2h6mve0o8msrjydmyhzv",
+    "exam": "jee-main",
+    "year": 2008,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2008/iit-jee-maths-paper-ii/81185",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/2h6MvE0o8msrjyDMyhZV",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "77aba7ebaf1747b83190338301702d2cdf97cf89e4d84c061faf266bd54d6c88",
+    "page_count": 8,
+    "text_chars": 8495,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2008-mathematics-2h6mve0o8msrjydmyhzv.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 22,
+  "defects": [
+    "1 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1]",
+    "6/22 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle P starts from the point z0 = 1 + 2i, where i = √(-1). It moves first \nhorizontally away from origin by 5 units and then vertically away from origin by 3 units to \nreach a point z1 the particles moves √2 units in the direction of the unit vector i + j and \nthen it moves through an angle Π/2 in anticlockwise direction on a circle with centre at \norigin, to reach a point z2. The point z2 is given by",
+      "options": {
+        "A": "6 + 7i",
+        "B": "-7 + 6i",
+        "C": "7 + 6i",
+        "D": "-6 + 7i"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let the function g : (-∞, ∞) -->( -Π/2 , Π/2) be given by g(u) = 2tan-1(eu) -Π/2. \nThen, g is",
+      "options": {
+        "A": "even and is strictly increasing in (0, ∞)",
+        "B": "odd and is strictly decreasing in (-∞, ∞)",
+        "C": "odd and is strictly increasing in (-∞, ∞)",
+        "D": "neither even or odd, but is strictly increasing in (-∞, ∞)"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider a branch of the hyperbola \n                x2 - 2y2 - 2√2x - 4√2y - 6 = 0 \n        with vertex at the point A. Let B be one of the end points of its latus rectum. If C is \nthe focus of the hyperbola nearest to the point A, then the area of the triangle ABC is",
+      "options": {
+        "A": "1 - √(2/3)",
+        "B": "√(3/2) - 1",
+        "C": "1 + √(2/3)",
+        "D": "√(3/2) + 1"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The area of the region between the curves y = √( (1 + sin x)/cos x ) and y = √( (1 - \nsin x)/cos x ) bounded by the lines x = 0 and x = Π/4 is",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider three points P = (-sin(β-α), -cos β), Q = (cos(β-α), sin β) and R = (cos(β - α \n+ θ), sin(β - θ), where 0 < α, β, θ < Π/4. Then,",
+      "options": {
+        "A": "P lies on the line segment RQ",
+        "B": "Q lies on the line segment PR",
+        "C": "R lies on the line segment QP",
+        "D": "P, Q, R are non-collinear"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An experiment has 10 equally likely outcomes. Let A and B be two non-empty events \nof the experiment. If A consists of 4 outcomes, the number of outcomes that B must have \nso that A and B are independent, is",
+      "options": {
+        "A": "2, 4 or 8",
+        "B": "3, 6 or 9",
+        "C": "4 or 8",
+        "D": "5 or 10"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let two non-collinear unit vectors a and b form an acute angle. A point P moves so \nthat at any tiem t the position vector OP (where O is the origin) is given by a cos t + b sin t. \n\n \n \nWhen P is farthest from origin O, let M be the length of vector OP and u be the unit vector \nalong vector OP. Then,",
+      "options": null,
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let \n               \n. \n        Then, for an arbitrary constant C, the value of J - I equals.",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let g(x)&nbs    Let g(x)  = log f(x) where f(x) is a twice differentiable positive function \non (0, ∞) such that f(x + 1) = x f(x). Then, for N = 1, 2, 3, ......,",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Suppose four distinct positive numbers a1, a2, a3, a4 are in G.P. Let  \nb1 = a1, b2 = b1 + a2, b3 = b2 + a3 and b4 = b3 + a4. \n        STATEMENT-1: The numbers b1, b2, b3, b4 are neither in A.P. nor in G.P. \n        and \n        STATEMENT-2: The numbers b1, b2, b3, b4 are in H.P.",
+      "options": {
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let a, b, c, p, q be real numbers. Suppose α, β are the roots of the equation x2 + 2px \n+ q = 0 and α, 1/β are the roots of the equation ax2 + 2bx + c = 0, where β2 is not belongs \nto {-1, 0, 1}. \n        STATEMENT-1: (p2 - q)(b2 - ac) > 0 \n        and \n        STATEMENT-2: b ¹ pa or c ¹ qa",
+      "options": {
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider \n\n \n \n                L1 : 2x + 3y + p - 3 = 0 \n                L2 : 2x + 3y + p + 3 = 0 \n        where p is a real number, and C : x2 + y2 + 6x + 10y + 30 = 0 \nSTATEMENT-1: If line L1 is a chord of circle C, then line L2 is not always a diameter of circle",
+      "options": {
+        "C": "and STATEMENT-2: If line L1 is a diameter of circle C, then line L2 is not a chord of circle C.",
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let a solution y = y(x) of the differential equation  \n \nx√(x2-1) dy-y√(y2-1) dx=0  \n \nsatisfy y(2) = 2/√3.  \nSTATEMENT-1: y(x) = sec(sec-1 x-π/6)  \nand  \nSTATEMENT-2: y(x) is given by  \n \n1/y=(2√3)/x-√(1-1/x2 )",
+      "options": {
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True Paragraph Consider the function f : (–∞, ∞) --> (–∞, ∞) defined by f(x) = (x2-ax+1)/(x2+ax+1), 0 < a < 2."
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following is true?",
+      "options": {
+        "A": "(2 + a)2 f”(1) + (2 – a)2 f”(–1) = 0",
+        "B": "(2 – a)2 f”(1) – (2 + a)2 f”(–1) = 0",
+        "C": "f’(1)f’(–1) = (2 – a)2",
+        "D": "f’(1)f’(–1) = (2 + a)2"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following is true?",
+      "options": {
+        "A": "f(x) is decreasing on (–1, 1) and has a local minimum at x = 1",
+        "B": "f(x) is increasing on (–1, 1) and has a local maximum at x = 1",
+        "C": "f(x) is increasing on (–1, 1) but has neither a local maximum nor a local minimum at x = 1.",
+        "D": "f(x) is decreasing on (–1, 1) but has nether a local maximum nor a local minimum at x = 1."
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let  \n \ng(x) = ∫0\nex(f'(t))/(1+t2 ) dt.  \n \nWhich of the following is true?",
+      "options": {
+        "A": "g’(x) is positive on (–∞, 0) and negative on (0, ∞)",
+        "B": "g’(x) is negative on (–∞, 0) and positive on (0, ∞)",
+        "C": "g’(x) is changes sign on both (–∞, 0) and (0, ∞)",
+        "D": "g’(x) is does not change sign on (–∞, ∞) Paragraph Consider the lines L1 : (x+1)/3=(y+2)/1=(z+1)/2 L2 : (x-2)/1=(y+2)/2=(z-3)/3"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The unit vector perpendicular to both L1 and L2 is",
+      "options": {
+        "A": "(-i ̂+7j ̂+7k ̂)/√99",
+        "B": "(-i ̂-7j ̂+5k ̂)/(5√3)",
+        "C": "(-i ̂+7j ̂+5k ̂)/(5√3)",
+        "D": "(7i ̂-7j ̂-k ̂)/√99"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The shortest distance between L1 and L2 is",
+      "options": {
+        "A": "0",
+        "B": "17/√3",
+        "C": "41/(5√3)",
+        "D": "17/(5√3)"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The distance of the point (1, 1, 1) from the plane passing through the point (–1, –2, –",
+      "options": {
+        "A": "and whose normal is perpendicular to both the lines L1 and L2 is",
+        "B": "7/√75",
+        "C": "13/√75",
+        "D": "23/√75"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider the lines given by \n                L1 : x + 3y - 5 = 0 \n                L2 : 3x - ky - 1 = 0 \n                L3 : 5x + 2y - 12 = 0 \n  \n        Match the Statements/Expressions in Column I with the Statements/ Expressions in \nColumn II. \nColumn I \nColumn II",
+      "options": {
+        "A": "L1, L2, L3 are concurrent if (p) k = -9",
+        "B": "One of L1, L2, L3 is parallel to at least one of the other two, if (q) k = - 6/5",
+        "C": "L1, L2, L3 form a triangle if (r) k = 5/6",
+        "D": "L1, L2, L3 do not form a triangle if (s) k = 5"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Match the Statements/Expressions in Column I and the Statements/ Expressions in \nColumn II. \nColumn I \nColumn II",
+      "options": {
+        "A": "The minimum value of x2+2x+4 / x+2 is (p) 0",
+        "B": "Let A and B be 3 × 3 matrices of real numbers, where A is symmetric, b is skew-symmetric, and (A + B) (A - B) = (A - B) (A + B). If (AB)t = (- 1)k AB, where (AB)t is the transpose of the matrix AB, then the possible values of k are (q) 1",
+        "C": "Let a = log3 log3 2. An integer k satisfying 1 < 2(-k+3^-a) <2, , must be less than (r) 2",
+        "D": "If sin q = cos f, then the possible values of 1/Π(θ±Ø-Π/2) are (s) 3"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider all possible permutations of the letters of the word ENDEANOEL. \n        Match the Statements/Expressions in Column I and the Statements/ Expressions in \nColumn II. \nColumn I \nColumn II",
+      "options": {
+        "A": "The number of permutations containing the word ENDEA is (p) 5!",
+        "B": "The number of permutations in which the letter E occurs in the first and the last positions i (q) 2 × 5!",
+        "C": "The number of permutations in which one of the letters, D, L, N occurs in the last five positions is (r) 7 × 5!",
+        "D": "The number of permutations in which the letters A, E, O occur only in odd positions is (s) 21 × 5!"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    }
+  ]
+}

@@ -1,0 +1,2133 @@
+{
+  "paper_id": "jee-main-2016-s2-f61payh7lxndgmlo60h4",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2016-s2-f61payh7lxndgmlo60h4",
+    "exam": "jee-main",
+    "year": 2016,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2016/jee-main-2016-question-paper-set-h-3rd-april-2016/98552",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/F61PAYH7LxNdgMlo60H4",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "cce4d595204ae1129f7ce038f42a8e0402a7682ffe13d8d90bfcefe0b84a7590",
+    "page_count": 39,
+    "text_chars": 54430,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 3,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2016-s2-f61payh7lxndgmlo60h4.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 90,
+  "defects": [
+    "87 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2]",
+    "50/90 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Invigilator’s Signature : \n¬⁄ËˇÊÊÕË¸ ∑§ „SÃÊˇÊ⁄ —\nÁŸ⁄ËˇÊ∑§ ∑§ „SÃÊˇÊ⁄ —",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Invigilator’s Signature : \nÁŸ⁄ËˇÊ∑§ ∑§ „SÃÊˇÊ⁄ —\nNo. :\nTest Booklet Code\n¬⁄ËˇÊÊ ¬ÈÁSÃ∑§Ê ‚¥∑§Ã\nH\n PAPER - 1\n: PHYSICS, MATHEMATICS & CHEMISTRY\n ¬˝‡Ÿ¬ÈÁSÃ∑§Ê - 1\n: ÷ÊÒÁÃ∑§ ÁﬂôÊÊŸ, ªÁáÊÃ ÃÕÊ ⁄U‚ÊÿŸ ÁﬂôÊÊŸ\nS S O\nImportant Instructions :",
+      "options": {
+        "A": "Immediately fill in the particulars on this page of the Test Booklet with only Blue / Black Ball Point Pen provided by the Board.",
+        "B": "The Answer Sheet is kept inside this Test Booklet. When you are directed to open the Test Booklet, take out the Answer Sheet and fill in the particulars carefully."
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "options_count_2"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The test is of 3 hours duration.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Test Booklet consists of 90 questions. The maximum\nmarks are 360.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There are three parts in the question paper A, B, C\nconsisting of Physics, Mathematics and Chemistry having\n30 questions in each part of equal weightage.  Each question\nis allotted 4 (four) marks for correct response.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Candidates will be awarded marks as stated above in instruction\nNo. 5 for correct response of each question. ¼ (one fourth) marks\nwill be deducted for indicating incorrect response of each question.\nNo deduction from the total score will be made if no response is\nindicated for an item in the answer sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is only one correct response for each question.  Filling\nup more than one response in any question will be treated as\nwrong response and marks for wrong response will be\ndeducted accordingly as per instruction 6 above.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "For writing particulars/marking responses on Side-1 and\nSide–2 of the Answer Sheet use only Blue/Black Ball Point\nPen provided by the Board.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "No candidate is allowed to carry any textual material, printed\nor written, bits of papers, pager, mobile phone, any electronic\ndevice, etc. except the Admit Card inside the examination\nroom/hall.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Rough work is to be done on the space provided for this\npurpose in the Test Booklet only.  This space is given at the\nbottom of each page and in one page (i.e. Page 39) at the end\nof the booklet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "On completion of the test, the candidate must hand over the\nAnswer Sheet to the Invigilator on duty in the Room/Hall.\nHowever, the candidates are allowed to take away this Test\nBooklet with them.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The CODE for this Booklet is H.  Make sure that the CODE\nprinted on Side–2 of the Answer Sheet and also tally the\nserial number of the Test Booklet and Answer Sheet are the\nsame as that on this booklet.  In case of discrepancy, the\ncandidate should immediately report the matter to the\nInvigilator for replacement of both the Test Booklet and the\nAnswer Sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Do not fold or make any stray mark on the Answer Sheet.\n◊„ûﬂ¬ÍáÊ¸ ÁŸŒ¸‡Ê —",
+      "options": {
+        "A": "¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ∑§ ß‚ ¬Îc∆U ¬⁄U •Êﬂ‡ÿ∑§ Áﬂﬂ⁄UáÊ ∑§ﬂ‹ ’Ê«¸U mÊ⁄UÊ ©¬‹éœ ∑§⁄UÊÿ ªÿ ŸË‹ / ∑§Ê‹ ’ÊÚ‹ åﬂÊß¥≈U ¬Ÿ ‚ Ãà∑§Ê‹ ÷⁄¥–",
+        "B": "©ûÊ⁄U ¬òÊ ß‚ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ∑§ •ãŒ⁄U ⁄UπÊ „Ò– ¡’ •Ê¬∑§Ê ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê πÊ‹Ÿ ∑§Ê ∑§„Ê ¡Ê∞, ÃÊ ©ûÊ⁄U ¬òÊ ÁŸ∑§Ê‹ ∑§⁄U ‚ÊﬂœÊŸË¬Íﬂ¸∑§ Áﬂﬂ⁄UáÊ ÷⁄¥U–",
+        "C": "¬⁄UËˇÊÊ ∑§Ë •ﬂÁœ 3 ÉÊ¥≈U „Ò–",
+        "D": "ß‚ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ◊¥ 90 ¬˝‡Ÿ „Ò¥– •Áœ∑§Ã◊ •¥∑§ 360 „Ò¥– 5. ß‚ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ◊¥ ÃËŸ ÷Êª A, B, C „Ò¥, Á¡‚∑§ ¬˝àÿ∑§ ÷Êª ◊¥ ÷ÊÒÁÃ∑§ ÁﬂôÊÊŸ, ªÁáÊÃ ∞ﬂ¥ ⁄U‚ÊÿŸ ÁﬂôÊÊŸ ∑§ 30 ¬˝‡Ÿ „Ò¥ •ÊÒ⁄U ‚÷Ë ¬˝‡ŸÊ¥ ∑§ •¥∑§ ‚◊ÊŸ „Ò¥– ¬˝àÿ∑§ ¬˝‡Ÿ ∑§ ‚„Ë ©ûÊ⁄U ∑§ Á‹∞ 4 (øÊ⁄U) •¥∑§ ÁŸœÊ¸Á⁄UÃ Á∑§ÿ ªÿ „Ò¥– 6. •èÿÁÕ¸ÿÊ¥ ∑§Ê ¬˝àÿ∑§ ‚„Ë ©ûÊ⁄U ∑§ Á‹∞ ©¬⁄UÊÄÃ ÁŸŒ¸‡ÊŸ ‚¥ÅÿÊ 5 ∑§ ÁŸŒ¸‡ÊÊŸÈ‚Ê⁄U •¥∑§ ÁŒÿ ¡Êÿ¥ª– ¬˝àÿ∑§ ¬˝‡Ÿ ∑§ ª‹Ã ©ûÊ⁄U ∑§ Á‹ÿ ¼ ﬂÊ¥ ÷Êª ∑§Ê≈U Á‹ÿÊ ¡ÊÿªÊ– ÿÁŒ ©ûÊ⁄U ¬òÊ ◊¥ Á∑§‚Ë ¬˝‡Ÿ ∑§Ê ©ûÊ⁄U Ÿ„Ë¥ ÁŒÿÊ ªÿÊ „Ê ÃÊ ∑È§‹ ¬˝Ê#Ê¥∑§ ‚ ∑§Êß¸ ∑§≈UÊÒÃË Ÿ„Ë¥ ∑§Ë ¡ÊÿªË– 7. ¬˝àÿ∑§ ¬˝‡Ÿ ∑§Ê ∑§ﬂ‹ ∞∑§ „Ë ‚„Ë ©ûÊ⁄U „Ò– ∞∑§ ‚ •Áœ∑§ ©ûÊ⁄U ŒŸ ¬⁄U ©‚ ª‹Ã ©ûÊ⁄U ◊ÊŸÊ ¡ÊÿªÊ •ÊÒ⁄U ©¬⁄UÊÄÃ ÁŸŒ¸‡Ê 6 ∑§ •ŸÈ‚Ê⁄U •¥∑§ ∑§Ê≈U Á‹ÿ ¡Êÿ¥ª– 8. ©ûÊ⁄U ¬òÊ ∑§ ¬Îc∆U-1 ∞ﬂ¥ ¬Îc∆U-2 ¬⁄U ﬂÊ¥Á¿UÃ Áﬂﬂ⁄UáÊ ∞ﬂ¥ ©ûÊ⁄U •¥Á∑§Ã ∑§⁄UŸ „ÃÈ ’Ê«¸U mÊ⁄UÊ ©¬‹éœ ∑§⁄UÊÿ ªÿ ∑§ﬂ‹ ŸË‹/∑§Ê‹ ’ÊÚ‹ åﬂÊß¥≈U ¬Ÿ ∑§Ê „Ë ¬˝ÿÊª ∑§⁄¥U– 9. ¬⁄UËˇÊÊÕË¸ mÊ⁄UÊ ¬⁄UËˇÊÊ ∑§ˇÊ/„ÊÚ‹ ◊¥ ¬˝ﬂ‡Ê ∑§Ê«¸U ∑§ •‹ÊﬂÊ Á∑§‚Ë ÷Ë ¬˝∑§Ê⁄U ∑§Ë ¬Ê∆˜Uÿ ‚Ê◊ª˝Ë, ◊ÈÁŒ˝Ã ÿÊ „SÃÁ‹ÁπÃ, ∑§Êª¡ ∑§Ë ¬Áø¸ÿÊ°, ¬¡⁄U, ◊Ê’Êß‹ »§ÊŸ ÿÊ Á∑§‚Ë ÷Ë ¬˝∑§Ê⁄U ∑§ ß‹Ä≈˛UÊÚÁŸ∑§ ©¬∑§⁄UáÊÊ¥ ÿÊ Á∑§‚Ë •ãÿ ¬˝∑§Ê⁄U ∑§Ë ‚Ê◊ª˝Ë ∑§Ê ‹ ¡ÊŸ ÿÊ ©¬ÿÊª ∑§⁄UŸ ∑§Ë •ŸÈ◊ÁÃ Ÿ„Ë¥ „Ò– 10. ⁄U»§ ∑§Êÿ¸ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ◊¥ ∑§ﬂ‹ ÁŸœÊ¸Á⁄UÃ ¡ª„ ¬⁄U „Ë ∑§ËÁ¡∞– ÿ„ ¡ª„ ¬˝àÿ∑§ ¬Îc∆U ¬⁄U ŸËø ∑§Ë •Ê⁄U •ÊÒ⁄U ¬ÈÁSÃ∑§Ê ∑§ •¥Ã ◊¥ ∞∑§ ¬Îc∆U ¬⁄U (¬Îc∆U 39) ŒË ªß¸ „Ò– 11. ¬⁄UËˇÊÊ ‚◊ÊåÃ „ÊŸ ¬⁄U, ¬⁄UËˇÊÊÕË¸ ∑§ˇÊ/„ÊÚ‹ ¿UÊ«∏Ÿ ‚ ¬Íﬂ¸ ©ûÊ⁄U ¬òÊ ∑§ˇÊ ÁŸ⁄UËˇÊ∑§ ∑§Ê •ﬂ‡ÿ ‚ÊÒ¥¬ Œ¥– ¬⁄UËˇÊÊÕË¸ •¬Ÿ ‚ÊÕ ß‚ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ∑§Ê ‹ ¡Ê ‚∑§Ã „Ò¥– 12. ß‚ ¬ÈÁSÃ∑§Ê ∑§Ê ‚¥∑§Ã H „Ò– ÿ„ ‚ÈÁŸÁ‡øÃ ∑§⁄U ‹¥ Á∑§ ß‚ ¬ÈÁSÃ∑§Ê ∑§Ê ‚¥∑§Ã, ©ûÊ⁄U ¬òÊ ∑§ ¬Îc∆U-2 ¬⁄U ¿U¬ ‚¥∑§Ã ‚ Á◊‹ÃÊ „Ò •ÊÒ⁄U ÿ„ ÷Ë ‚ÈÁŸÁ‡øÃ ∑§⁄U ‹¥ Á∑§ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê •ÊÒ⁄U ©ûÊ⁄U ¬òÊ ∑§Ë ∑˝§◊ ‚¥ÅÿÊ Á◊‹ÃË „Ò– •ª⁄U ÿ„ Á÷ÛÊ „Ê ÃÊ ¬⁄UËˇÊÊÕË¸ ŒÍ‚⁄UË ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê •ÊÒ⁄U ©ûÊ⁄U ¬òÊ ‹Ÿ ∑§ Á‹∞ ÁŸ⁄UËˇÊ∑§ ∑§Ê ÃÈ⁄UãÃ •ﬂªÃ ∑§⁄UÊ∞°– 13. ©ûÊ⁄U ¬òÊ ∑§Ê Ÿ ◊Ê«∏¥ ∞ﬂ¥ Ÿ „Ë ©‚ ¬⁄U •ãÿ ÁŸ‡ÊÊŸ ‹ªÊ∞°– H/Page 2 SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ PART A — PHYSICS ALL THE GRAPHS GIVEN ARE SCHEMATIC AND NOT DRAWN TO SCALE."
+      },
+      "page_start": 1,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‘m’ Œ˝√ÿ◊ÊŸ ∑§Ê ∞∑§ Á’¥ŒÈ ∑§áÊ ∞∑§ πÈ⁄UŒ⁄U ¬Õ PQR\n(ÁøòÊ ŒÁπÿ) ¬⁄U ø‹ ⁄U„Ê „Ò–  ∑§áÊ •ÊÒ⁄U ¬Õ ∑§ ’Ëø\nÉÊ·¸áÊ ªÈáÊÊ¥∑§ µ „Ò–  ∑§áÊ P ‚ ¿UÊ«∏ ¡ÊŸ ∑§ ’ÊŒ R ¬⁄U\n¬„È°ø ∑§⁄U L§∑§ ¡ÊÃÊ „Ò–  ¬Õ ∑§ ÷Êª PQ •ÊÒ⁄U QR ¬⁄U\nø‹Ÿ ◊¥ ∑§áÊ mÊ⁄UÊ πø¸ ∑§Ë ªß¸ ™§¡Ê¸∞° ’⁄UÊ’⁄U „Ò¥–\nPQ ‚ QR ¬⁄U „ÊŸ ﬂÊ‹ ÁŒ‡ÊÊ ’Œ‹Êﬂ ◊¥ ∑§Êß¸ ™§¡Ê¸\nπø¸ Ÿ„Ë¥ „ÊÃË–\nÃ’ µ •ÊÒ⁄U ŒÍ⁄UË x(=QR)  ∑§ ◊ÊŸ ‹ª÷ª „Ò¥ ∑˝§◊‡Ê— —",
+      "options": {
+        "A": "0.29 •ÊÒ⁄U 3.5 m",
+        "B": "0.29 •ÊÒ⁄U 6.5 m",
+        "C": "0.2 •ÊÒ⁄U 6.5 m",
+        "D": "0.2 •ÊÒ⁄U 3.5 m 14. A point particle of mass m, moves along the uniformly rough track PQR as shown in the figure. The coefficient of friction, between the particle and the rough track equals µ. The particle is released, from rest, from the point P and it comes to rest at a point R. The energies, lost by the ball, over the parts, PQ and QR, of the track, are equal to each other, and no energy is lost when particle changes direction from PQ to QR. The values of the coefficient of friction µ and the distance x(=QR), are, respectively close to :"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÃÊ°’Ê ÃÕÊ •◊ÊÁŒÃ (undoped) Á‚Á‹∑§ÊŸ ∑§\n¬˝ÁÃ⁄UÊœÊ¥ ∑§Ë ©Ÿ∑§ ÃÊ¬◊ÊŸ ¬⁄U ÁŸ÷¸⁄UÃÊ, 300-400 K\nÃÊ¬◊ÊŸ •¥Ã⁄UÊ‹ ◊¥, ∑§ Á‹ÿ ‚„Ë ∑§ÕŸ „Ò —",
+      "options": {
+        "A": "ÃÊ°’Ê ∑§ Á‹ÿ ⁄UπËÿ ’…∏Êﬂ ÃÕÊ Á‚Á‹∑§ÊŸ ∑§ Á‹ÿ ø⁄UÉÊÊÃÊ¥∑§Ë ÉÊ≈UÊﬂ–",
+        "B": "ÃÊ°’Ê ∑§ Á‹ÿ ⁄UπËÿ ÉÊ≈UÊﬂ ÃÕÊ Á‚Á‹∑§ÊŸ ∑§ Á‹ÿ ⁄UπËÿ ÉÊ≈UÊﬂ–",
+        "C": "ÃÊ°’Ê ∑§ Á‹ÿ ⁄UπËÿ ’…∏Êﬂ ÃÕÊ Á‚Á‹∑§ÊŸ ∑§ Á‹ÿ ⁄UπËÿ ’…∏Êﬂ–",
+        "D": "ÃÊ°’Ê ∑§ Á‹ÿ ⁄UπËÿ ’…∏Êﬂ ÃÕÊ Á‚Á‹∑§ÊŸ ∑§ Á‹ÿ ø⁄UÉÊÊÃÊ¥∑§Ë ’…∏Êﬂ–"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸ ¬˝ÁÃ ÄﬂÊ¥≈U◊ ﬂÒlÈÃ-øÈê’∑§Ëÿ ÁﬂÁ∑§⁄UáÊÊ¥ ∑§Ê ©Ÿ∑§Ë\n™§¡Ê¸ ∑§ ’…∏Ã „È∞ ∑˝§◊ ◊¥ ‹ªÊÿ¥ —\nA : ŸË‹Ê ¬˝∑§Ê‡Ê\nB : ¬Ë‹Ê ¬˝∑§Ê‡Ê\nC : X - Á∑§⁄UáÊ¥\nD : ⁄UÁ«UÿÊ Ã⁄¥Uª",
+      "options": {
+        "A": "C, A, B, D",
+        "B": "B, A, D, C",
+        "C": "D, B, A, C",
+        "D": "A, B, D, C"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ªÒÀﬂŸÊ◊Ë≈U⁄U ∑§ ∑§Êß‹ ∑§Ê ¬˝ÁÃ⁄UÊœ 100 Ω „Ò–\n1 mA œÊ⁄UÊ ¬˝ﬂÊÁ„Ã ∑§⁄UŸ ¬⁄U ß‚◊¥ »È§‹-S∑§‹ ÁﬂˇÊ¬\nÁ◊‹ÃÊ „Ò–  ß‚ ªÒÀﬂŸÊ◊Ë≈U⁄U ∑§Ê 10 A ∑§ ∞◊Ë≈U⁄U ◊¥\n’Œ‹Ÿ ∑§ Á‹ÿ ¡Ê ¬˝ÁÃ⁄UÊœ ‹ªÊŸÊ „ÊªÊ ﬂ„ „Ò —",
+      "options": {
+        "A": "0.1 Ω",
+        "B": "3 Ω",
+        "C": "0.01 Ω",
+        "D": "2 Ω 15. The temperature dependence of resistances of Cu and undoped Si in the temperature range 300-400 K, is best described by :"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ŒÊ ⁄UÁ«UÿÊœ◊Ë¸ Ãàﬂ A ÃÕÊ B ∑§Ë •h¸•ÊÿÈ ∑˝§◊‡Ê—\n20 min ÃÕÊ 40 min „Ò¥–  ¬˝Ê⁄¥U÷ ◊¥ ŒÊŸÊ¥ ∑§ Ÿ◊ÍŸÊ¥ ◊¥\nŸÊÁ÷∑§Ê¥ ∑§Ë ‚¥ÅÿÊ ’⁄UÊ’⁄U „Ò–  80 min ∑§ ©¬⁄UÊ¥Ã\nA ÃÕÊ B ∑§ ˇÊÿ „È∞ ŸÊÁ÷∑§Ê¥ ∑§Ë ‚¥ÅÿÊ ∑§Ê •ŸÈ¬ÊÃ\n„ÊªÊ —",
+      "options": {
+        "A": "1 : 4",
+        "B": "5 : 4",
+        "C": "1 : 16",
+        "D": "4 : 1"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁøòÊ (a), (b), (c), (d) Œπ∑§⁄U ÁŸœÊ¸Á⁄UÃ ∑§⁄¥U Á∑§ ÿ\nÁøòÊ ∑˝§◊‡Ê— Á∑§Ÿ ‚◊Ë∑§ã«UÄ≈U⁄U  Á«UﬂÊß¸‚ ∑§\n•Á÷‹ˇÊÁáÊ∑§ ª˝Ê»§ „Ò¥?",
+      "options": {
+        "A": "‚Ê‹⁄U ‚‹, LDR (‹Êß¸≈U Á«U¬ã«Uã≈U ⁄UÁ¡S≈Uã‚), ¡ËŸ⁄U «UÊÿÊ«U, ‚ÊœÊ⁄UáÊ «UÊÿÊ«U",
+        "B": "¡ËŸ⁄U «UÊÿÊ«U, ‚Ê‹⁄U ‚‹, ‚ÊœÊ⁄UáÊ «UÊÿÊ«U, LDR (‹Êß¸≈U Á«U¬ã«Uã≈U ⁄UÁ¡S≈Uã‚)",
+        "C": "‚ÊœÊ⁄UáÊ «UÊÿÊ«U, ¡ËŸ⁄U «UÊÿÊ«, ‚Ê‹⁄U ‚‹, LDR (‹Êß¸≈U Á«U¬ã«Uã≈U ⁄UÁ¡S≈Uã‚)",
+        "D": "¡ËŸ⁄U «UÊÿÊ«U, ‚ÊœÊ⁄UáÊ «UÊÿÊ«U, LDR (‹Êß¸≈U Á«U¬ã«Uã≈U ⁄UÁ¡S≈Uã‚), ‚Ê‹⁄U ‚‹ 18. Half-lives of two radioactive elements A and B are 20 minutes and 40 minutes, respectively. Initially, the samples have equal number of nuclei. After 80 minutes, the ratio of decayed numbers of A and B nuclei will be :"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚¥œÊÁ⁄UòÊÊ¥ ‚ ’Ÿ ∞∑§ ¬Á⁄U¬Õ ∑§Ê ÁøòÊ ◊¥ ÁŒπÊÿÊ ªÿÊ\n„Ò–  ∞∑§ Á’ãŒÈ-•Êﬂ‡Ê Q (Á¡‚∑§Ê ◊ÊŸ 4 µF ÃÕÊ\n9 µF ﬂÊ‹ ‚¥œÊÁ⁄UòÊÊ¥ ∑§ ∑È§‹ •Êﬂ‡ÊÊ¥ ∑§ ’⁄UÊ’⁄U „Ò)\n∑§ mÊ⁄UÊ 30 m ŒÍ⁄UË ¬⁄U ﬂÒlÈÃ-ˇÊòÊ ∑§Ê ¬Á⁄U◊ÊáÊ „ÊªÊ —",
+      "options": {
+        "A": "420 N/C",
+        "B": "480 N/C",
+        "C": "240 N/C",
+        "D": "360 N/C"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "¬ÎâﬂË ∑§Ë ‚Ã„ ‚ ‘h’ ™°§øÊß¸ ¬⁄U ∞∑§ ©¬ª˝„ ﬂÎûÊÊ∑§Ê⁄U\n¬Õ ¬⁄U øÄ∑§⁄U ∑§Ê≈U ⁄U„Ê „Ò (¬ÎâﬂË ∑§Ë ÁòÊíÿÊ R ÃÕÊ\nh<<R)–  ¬ÎâﬂË ∑§ ªÈL§àﬂ ˇÊòÊ ‚ ¬‹ÊÿŸ ∑§⁄UŸ ∑§\nÁ‹ÿ ß‚∑§Ë ∑§ˇÊËÿ ªÁÃ ◊¥ •Êﬂ‡ÿ∑§ ãÿÍŸÃ◊ ’Œ‹Êﬂ\n„Ò —  (ﬂÊÿÈ◊¥«U‹Ëÿ ¬˝÷Êﬂ ∑§Ê Ÿªáÿ ‹ËÁ¡∞–)",
+      "options": {
+        "A": "2 gR /",
+        "B": "( ) 2 1 gR −",
+        "C": "2 gR",
+        "D": "gR 20. A combination of capacitors is set up as shown in the figure. The magnitude of the electric field, due to a point charge Q (having a charge equal to the sum of the charges on the 4 µF and 9 µF capacitors), at a point distant 30 m from it, would equal :"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ S∑˝Í§-ª¡ ∑§Ê Á¬ø 0.5 mm  „Ò •ÊÒ⁄U ©‚∑§ ﬂÎûÊËÿ-\nS∑§‹ ¬⁄U 50 ÷Êª „Ò¥–  ß‚∑§ mÊ⁄UÊ ∞∑§ ¬Ã‹Ë\n•ÀÿÈ◊ËÁŸÿ◊ ‡ÊË≈U ∑§Ë ◊Ê≈UÊß¸ ◊Ê¬Ë ªß¸–  ◊Ê¬ ‹Ÿ ∑§\n¬Íﬂ¸ ÿ„ ¬ÊÿÊ ªÿÊ Á∑§ ¡’ S∑˝Í§-ª¡ ∑§ ŒÊ ¡ÊÚﬂÊ¥ ∑§Ê\nSÊê¬∑¸§U ◊¥ ‹ÊÿÊ ¡ÊÃÊ „Ò Ã’ 45 ﬂÊ¥ ÷Êª ◊ÈÅÿ S∑§‹\n‹Êß¸Ÿ ∑§ ‚¥¬ÊÃË „ÊÃÊ „Ò •ÊÒ⁄U ◊ÈÅÿ S∑§‹ ∑§Ê ‡ÊÍãÿ (0)\n◊ÈÁ‡∑§‹ ‚ ÁŒπÃÊ „Ò–  ◊ÈÅÿ S∑§‹ ∑§Ê ¬Ê∆KÊ¥∑§ ÿÁŒ\n0.5 mm ÃÕÊ 25 ﬂÊ¥ ÷Êª ◊ÈÅÿ S∑§‹ ‹Êß¸Ÿ ∑§\n‚¥¬ÊÃË „Ê, ÃÊ ‡ÊË≈U ∑§Ë ◊Ê≈UÊß¸ ÄÿÊ „ÊªË?",
+      "options": {
+        "A": "0.70 mm",
+        "B": "0.50 mm",
+        "C": "0.75 mm",
+        "D": "0.80 mm"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ŒÊ ‡Ê¥∑È§ ∑§Ê ©Ÿ∑§ ‡ÊË·¸ O ¬⁄U ¡Ê«∏∑§⁄U ∞∑§ ⁄UÊ‹⁄U\n’ŸÊÿÊ ªÿÊ „Ò •ÊÒ⁄U ©‚ AB ﬂ CD ⁄U‹ ¬⁄U •‚◊Á◊Ã\n⁄UπÊ ªÿÊ „Ò (ÁøòÊ ŒÁπÿ)–  ⁄UÊ‹⁄U ∑§Ê •ˇÊ CD ‚\n‹ê’ﬂÃ „Ò •ÊÒ⁄U O ŒÊŸÊ¥ ⁄U‹ ∑§ ’ËøÊ’Ëø „Ò–  „À∑§ ‚\nœ∑§‹Ÿ ¬⁄U ⁄UÊ‹⁄U ⁄U‹ ¬⁄U ß‚ ¬˝∑§Ê⁄U ‹È…∏∑§ŸÊ •Ê⁄Uê÷\n∑§⁄UÃÊ „Ò Á∑§ O ∑§Ê øÊ‹Ÿ CD ∑§ ‚◊Ê¥Ã⁄U „Ò (ÁøòÊ\nŒÁπÿ)–  øÊÁ‹Ã „Ê ¡ÊŸ ∑§ ’ÊŒ ÿ„ ⁄UÊ‹⁄U —",
+      "options": {
+        "A": "‚ËœÊ ø‹ÃÊ ⁄U„ªÊ–",
+        "B": "’Êÿ¥ ÃÕÊ ŒÊÿ¥ ∑˝§◊‡Ê— ◊È«∏ÃÊ ⁄U„ªÊ–",
+        "C": "’Ê°ÿË¥ •Ê⁄U ◊È«∏ªÊ–",
+        "D": "ŒÊÿË¥ •Ê⁄U ◊È«∏ªÊ– 22. A screw gauge with a pitch of 0.5 mm and a circular scale with 50 divisions is used to measure the thickness of a thin sheet of Aluminium. Before starting the measurement, it is found that when the two jaws of the screw gauge are brought in contact, the 45th division coincides with the main scale line and that the zero of the main scale is barely visible. What is the thickness of the sheet if the main scale reading is 0.5 mm and the 25th division coincides with the main scale line ?"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ŒÊ øÈê’∑§Ëÿ ¬ŒÊÕ¸ A ÃÕÊ B ∑§ Á‹ÿ Á„S≈⁄UÁ‚‚-\n‹Í¬ ŸËø ÁŒπÊÿ ªÿ „Ò¥ —\nßŸ ¬ŒÊÕÊZ ∑§Ê øÈê’∑§Ëÿ ©¬ÿÊª ÁﬂlÈÃ-¡Ÿ⁄U≈U⁄U ∑§\nøÈê’∑§, ≈˛UÊã‚»§ÊÚ◊¸⁄U ∑§Ë ∑˝§Ê«U ∞ﬂ¥ ÁﬂlÈÃ-øÈê’∑§ ∑§Ë\n∑˝§Ê«U •ÊÁŒ ∑§ ’ŸÊŸ ◊¥ Á∑§ÿÊ ¡ÊÃÊ „Ò–  Ã’ ÿ„ ©ÁøÃ\n„Ò Á∑§ —",
+      "options": {
+        "A": "A ∑§Ê ßSÃ◊Ê‹ ≈˛UÊã‚»§ÊÚ◊¸⁄U ◊¥ ÃÕÊ B ∑§Ê ÁﬂlÈÃ-¡Ÿ⁄U≈U⁄U ◊¥ Á∑§ÿÊ ¡Ê∞–",
+        "B": "B ∑§Ê ßSÃ◊Ê‹ ÁﬂlÈÃ-øÈê’∑§ ÃÕÊ ≈˛UÊã‚»§ÊÚ◊¸⁄U ŒÊŸÊ¥ ◊¥ Á∑§ÿÊ ¡Ê∞–",
+        "C": "A ∑§Ê ßSÃ◊Ê‹ ÁﬂlÈÃ-¡Ÿ⁄U≈U⁄U ÃÕÊ ≈˛UÊã‚»§ÊÚ◊¸⁄U ŒÊŸÊ¥ ◊¥ Á∑§ÿÊ ¡Ê∞–",
+        "D": "A ∑§Ê ßSÃ◊Ê‹ ÁﬂlÈÃ-øÈê’∑§ ◊¥ ÃÕÊ B ∑§Ê ÁﬂlÈÃ-¡Ÿ⁄U≈U⁄U ◊¥ Á∑§ÿÊ ¡Ê∞–"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": []
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ Á¬Ÿ-„Ê‹ ∑Ò§◊⁄UÊ ∑§Ë ÀÊê’Êß¸ ‘L’ „Ò ÃÕÊ Á¿UŒ˝ ∑§Ë\nÁòÊíÿÊ a „Ò–  ©‚ ¬⁄U λ Ã⁄¥UªŒÒÉÿ¸ ∑§Ê ‚◊Ê¥Ã⁄U ¬˝∑§Ê‡Ê\n•Ê¬ÁÃÃ „Ò–  Á¿UŒ˝ ∑§ ‚Ê◊Ÿ ﬂÊ‹Ë ‚Ã„ ¬⁄U ’Ÿ S¬ÊÚ≈U\n∑§Ê ÁﬂSÃÊ⁄U Á¿UŒ˝ ∑§ íÿÊÁ◊ÃËÿ •Ê∑§Ê⁄U ÃÕÊ ÁﬂﬂÃ¸Ÿ\n∑§ ∑§Ê⁄UáÊ „È∞ ÁﬂSÃÊ⁄U ∑§Ê ∑È§‹ ÿÊª „Ò–  ß‚ S¬ÊÚ≈U ∑§Ê\nãÿÍŸÃ◊ •Ê∑§Ê⁄U bmin Ã’ „ÊªÊ ¡’ —",
+      "options": {
+        "A": "a L = λ ÃÕÊ bmin= 4 L λ",
+        "B": "2 a L = λ ÃÕÊ bmin= 4 L λ",
+        "C": "2 a L = λ ÃÕÊ bmin= 2 2 L         λ",
+        "D": "a L = λ ÃÕÊ bmin= 2 2 L         λ 24. Hysteresis loops for two magnetic materials A and B are given below : These materials are used to make magnets for electric generators, transformer core and electromagnet core. Then it is proper to use :"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "20 m ‹ê’Êß¸ ∑§Ë ∞∑§‚◊ÊŸ «UÊ⁄UË ∑§Ê ∞∑§ ŒÎ…∏ •ÊœÊ⁄U\n‚ ‹≈U∑§ÊÿÊ ªÿÊ „Ò–  ß‚∑§ ÁŸø‹ Á‚⁄U ‚ ∞∑§ ‚Íˇ◊\nÃ⁄¥Uª-S¬¥Œ øÊÁ‹Ã „ÊÃÊ „Ò–  ™§¬⁄U •ÊœÊ⁄U Ã∑§ ¬„È°øŸ\n◊¥ ‹ªŸ ﬂÊ‹Ê ‚◊ÿ „Ò —\n(g = 10 ms−2 ‹¥)",
+      "options": {
+        "A": "2 2 s",
+        "B": "2 s",
+        "C": "2 2 s π",
+        "D": "2 s"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ •ÊŒ‡Ê¸ ªÒ‚ ©à∑˝§◊áÊËÿ SÕÒÁÃ∑§-∑§À¬ ¬˝∑˝§◊ ‚\nªÈ$¡⁄UÃË „Ò ÃÕÊ ©‚∑§Ë ◊Ê‹⁄U-™§c◊Ê-œÊÁ⁄UÃÊ C ÁSÕ⁄U\n⁄U„ÃË „Ò–  ÿÁŒ ß‚ ¬˝∑˝§◊ ◊¥ ©‚∑§ ŒÊ’ P ﬂ •ÊÿÃŸ\nV ∑§ ’Ëø ‚¥’¥œ PVn=constant „Ò–  (CP ÃÕÊ\nCV ∑˝§◊‡Ê— ÁSÕ⁄U ŒÊ’ ﬂ ÁSÕ⁄U •ÊÿÃŸ ¬⁄U ™§c◊Ê-\nœÊÁ⁄UÃÊ „Ò) Ã’ ‘n’ ∑§ Á‹ÿ ‚◊Ë∑§⁄UáÊ „Ò —",
+      "options": {
+        "A": "P V C C n C C − = −",
+        "B": "V P C C n C C − = −",
+        "C": "P V C n C =",
+        "D": "P V C C n C C − = −"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ŒÍ⁄U ÁSÕÃ 10 m ™°§ø ¬«∏ ∑§Ê ∞∑§ 20 •Êﬂœ¸Ÿ ˇÊ◊ÃÊ\nﬂÊ‹ ≈UÁ‹S∑§Ê¬ ‚ ŒπŸ ¬⁄U ÄÿÊ ◊„‚Í‚ „ÊªÊ?",
+      "options": {
+        "A": "¬«∏ 20 ªÈŸÊ ™°§øÊ „Ò–",
+        "B": "¬«∏ 20 ªÈŸÊ ¬Ê‚ „Ò–",
+        "C": "¬«∏ 10 ªÈŸÊ ™°§øÊ „Ò–",
+        "D": "¬«∏ 10 ªÈŸÊ ¬Ê‚ „Ò– 26. A uniform string of length 20 m is suspended from a rigid support. A short wave pulse is introduced at its lowest end. It starts moving up the string. The time taken to reach the support is : (take g = 10 ms−2)"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ¬˝ÿÊª ∑§⁄U∑§ ÃÕÊ i− δ ª˝Ê»§ ’ŸÊ∑§⁄U ∞∑§ ∑§Ê°ø\n‚ ’Ÿ Á¬˝ï◊ ∑§Ê •¬ﬂÃ¸ŸÊ¥∑§ ÁŸ∑§Ê‹Ê ¡ÊÃÊ „Ò–  ¡’\n∞∑§ Á∑§⁄UáÊ ∑§Ê 358 ¬⁄U •Ê¬ÁÃÃ ∑§⁄UŸ ¬⁄U ﬂ„ 408 ‚\nÁﬂøÁ‹Ã „ÊÃË „Ò ÃÕÊ ÿ„ 798 ¬⁄U ÁŸª¸◊ „ÊÃË „Ò–  ß‚\nÁSÕÁÃ ◊¥ ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ‚Ê ◊ÊŸ •¬ﬂÃ¸ŸÊ¥∑§ ∑§\n•Áœ∑§Ã◊ ◊ÊŸ ∑§ ‚’‚ ¬Ê‚ „Ò?",
+      "options": {
+        "A": "1.7",
+        "B": "1.8",
+        "C": "1.5",
+        "D": "1.6"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": []
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ¬ãU«ÈU‹◊ ÉÊ«∏Ë 408C ÃÊ¬◊ÊŸ ¬⁄U 12 s ¬˝ÁÃÁŒŸ\nœË◊Ë „Ê ¡ÊÃË „Ò ÃÕÊ 208C ÃÊ¬◊ÊŸ ¬⁄U 4 s ¬˝ÁÃÁŒŸ\nÃ$¡ „Ê ¡ÊÃË „Ò–  ÃÊ¬◊ÊŸ Á¡‚ ¬⁄U ÿ„ ‚„Ë ‚◊ÿ\nŒ‡ÊÊ¸ÿªË ÃÕÊ ¬ãU«ÈU‹◊ ∑§Ë œÊÃÈ ∑§Ê ⁄UπËÿ-¬˝‚Ê⁄U ªÈáÊÊ¥∑§\n(α) ∑˝§◊‡Ê— „Ò¥ —",
+      "options": {
+        "A": "308C; α=1.85×10−3/8C",
+        "B": "558C; α=1.85×10−2/8C",
+        "C": "258C; α=1.85×10−5/8C",
+        "D": "608C; α=1.85×10−4/8C 29. In an experiment for determination of refractive index of glass of a prism by i− δ, plot, it was found that a ray incident at angle 358, suffers a deviation of 408 and that it emerges at angle 798⋅ Ιn that case which of the following is closest to the maximum possible value of the refractive index ?"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ˇÊòÊ\n{\n}\n \n  \n \n \n \n \n \n2\n2\n2\n( ,\n):\n2\n 4\n0,\n0\nx y\ny\nx\nx\ny\nx, x\ny\n\u0001\n+\n≤\n\u0001\n\u0001\nÃÕÊ\n∑§Ê ˇÊòÊ»§‹ (ﬂª¸ ß∑§ÊßÿÊ¥ ◊¥) „Ò —",
+      "options": {
+        "A": "4 2 3 − π",
+        "B": "2 2 2 3 − π",
+        "C": "4 3 − π",
+        "D": "8 3 − π"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ f (x)+2f \n1\nx\n\n\n\n\n\n=3x, \n0\nx ≠ „Ò, ÃÕÊ\n{\n}\n \nS  \n : \n( ) \n(\n)\nx\nf\nx\nf\nx\nR\n=\n\u0002\n= −\n „Ò ; ÃÊ S :",
+      "options": {
+        "A": "◊¥ ÃâÿÃ— ŒÊ •ﬂÿﬂ „Ò¥–",
+        "B": "◊¥ ŒÊ ‚ •Áœ∑§ •ﬂÿﬂ „Ò¥–",
+        "C": "∞∑§ Á⁄UÄÃ ‚◊ÈìÊÿ „Ò–",
+        "D": "◊¥ ∑§ﬂ‹ ∞∑§ •ﬂÿﬂ „Ò–"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚◊Ê∑§‹\n(\n)\n12\n9\n3\n5\n3\n2\n  5\n \n \n  1\nx\nx\ndx\nx\nx\n+\n+\n+\n’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "( ) 5 2 5 3 2 1 x C x x + + +",
+        "B": "( ) 10 2 5 3 2 1 x C x x − + + +",
+        "C": "( ) 5 2 5 3 1 x C x x − + + +",
+        "D": "( ) 10 2 5 3 2 1 x C x x + + + ¡„Ê° C ∞∑§ Sﬂë¿U •ø⁄U „Ò– PART B — MATHEMATICS 31. The area (in sq. units) of the region { } 2 2 2 ( , ): 2 and 4 0, 0 x y y x x y x, x y \u0001 + ≤ \u0001 \u0001 is :"
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "x e R ∑§ Á‹∞ f (x)=?log2−sinx? ÃÕÊ\ng(x)=f (f (x)) „Ò¥, ÃÊ —",
+      "options": {
+        "A": "g9(0)=−cos(log2) „Ò–",
+        "B": "x=0 ¬⁄U g •ﬂ∑§‹ŸËÿ „Ò ÃÕÊ g9(0)=−sin(log2) „Ò–",
+        "C": "x=0 ¬⁄U g •ﬂ∑§‹ŸËÿ Ÿ„Ë¥ „Ò–",
+        "D": "g9(0)=cos(log2) „Ò–"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": []
+    },
+    {
+      "qno": 35,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "©Ÿ ﬂÎûÊÊ¥ ∑§ ∑§ãŒ˝, ¡Ê ﬂÎûÊ x2+y2−8x−8y−4=0\n∑§Ê ’Ês M§¬ ‚ S¬‡Ê¸ ∑§⁄UÃ „Ò¥ ÃÕÊ x-•ˇÊ ∑§Ê ÷Ë\nS¬‡Ê¸ ∑§⁄UÃ „Ò¥, ÁSÕÃ „Ò¥ —",
+      "options": {
+        "A": "∞∑§ •ÁÃ¬⁄Uﬂ‹ÿ ¬⁄U–",
+        "B": "∞∑§ ¬⁄Uﬂ‹ÿ ¬⁄U–",
+        "C": "∞∑§ ﬂÎûÊ ¬⁄U–",
+        "D": "∞∑§ ŒËÉÊ¸ﬂÎûÊ ¬⁄U ¡Ê ﬂÎûÊ Ÿ„Ë¥ „Ò–"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": []
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "x ∑§ ©Ÿ ‚÷Ë ﬂÊSÃÁﬂ∑§ ◊ÊŸÊ¥ ∑§Ê ÿÊª ¡Ê ‚◊Ë∑§⁄UáÊ\n(\n)\n2   4   60\n2\n5   5\n  1\nx\nx\nx\nx\n+\n−\n−\n+\n=  ∑§Ê ‚¥ÃÈc≈U ∑§⁄UÃ\n„Ò¥, „Ò —",
+      "options": {
+        "A": "6",
+        "B": "5",
+        "C": "3",
+        "D": "−4 34. For x e R, f (x)=?log2−sinx? and g(x)=f (f (x)), then :"
+      },
+      "page_start": 18,
+      "page_end": 19,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ ∞∑§ •ø⁄UÃ⁄U ‚◊Ê¥Ã⁄U üÊ…∏Ë ∑§Ê ŒÍ‚⁄UÊ, 5 ﬂÊ¥ ÃÕÊ\n9 ﬂÊ¥ ¬Œ ∞∑§ ªÈáÊÊûÊ⁄U üÊ…∏Ë ◊¥ „Ò¥, ÃÊ ©‚ ªÈáÊÊûÊ⁄U üÊ…∏Ë\n∑§Ê ‚Êﬂ¸ •ŸÈ¬ÊÃ „Ò —",
+      "options": {
+        "A": "1",
+        "B": "7 4",
+        "C": "8 5",
+        "D": "4 3"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": []
+    },
+    {
+      "qno": 38,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "©‚ •ÁÃ¬⁄Uﬂ‹ÿ, Á¡‚∑§ ŸÊÁ÷‹¥’ ∑§Ë ‹¥’Êß¸ 8 „Ò\nÃÕÊ Á¡‚∑§ ‚¥ÿÈÇ◊Ë •ˇÊ ∑§Ë ‹¥’Êß¸ ©‚∑§Ë ŸÊÁ÷ÿÊ¥\n∑§ ’Ëø ∑§Ë ŒÍ⁄UË ∑§Ë •ÊœË „Ò, ∑§Ë ©à∑§ãŒ˝ÃÊ „Ò —",
+      "options": {
+        "A": "2 3",
+        "B": "3",
+        "C": "4 3",
+        "D": "4 3"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": []
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ\n2\n2\n4\n1  \n  \n, \n0\nn\nx\nx\nx\n\n\n≠\n\n\n\n\n−\n+\n ∑§ ¬˝‚Ê⁄U ◊¥ ¬ŒÊ¥\n∑§Ë ‚¥ÅÿÊ 28 „Ò, ÃÊ ß‚ ¬˝‚Ê⁄U ◊¥ •ÊŸ ﬂÊ‹ ‚÷Ë ¬ŒÊ¥\n∑§ ªÈáÊÊ¥∑§Ê¥ ∑§Ê ÿÊª „Ò —",
+      "options": {
+        "A": "243",
+        "B": "729",
+        "C": "64",
+        "D": "2187 37. If the 2nd, 5th and 9th terms of a non-constant A.P. are in G.P., then the common ratio of this G.P. is :"
+      },
+      "page_start": 19,
+      "page_end": 20,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "’Í‹  ∑§  √ÿ¥¡∑§  (Boolean  Expression)\n(p∧~q)∨q∨(~p∧q) ∑§Ê ‚◊ÃÈÀÿ „Ò —",
+      "options": {
+        "A": "p ∨ q",
+        "B": "p ∨ ~ q",
+        "C": "~ p ∧ q",
+        "D": "p ∧ q"
+      },
+      "page_start": 20,
+      "page_end": 20,
+      "parse_flags": []
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "1\n1  sin\n( )  tan\n, \n  0, \n1  sin\n2\nx\nf x\nx\nx\n\n\n\n\n\n\n\n\n\n\n\n\n−\n+\n=\n\u0003\n−\nπ\n¬⁄U ÁﬂøÊ⁄U ∑§ËÁ¡∞–  y=f (x) ∑§ Á’¥ŒÈ \n 6\nx = π  ¬⁄U\nπË¥øÊ ªÿÊ •Á÷‹¥’ ÁŸêŸ Á’¥ŒÈ ‚ ÷Ë „Ê∑§⁄U ¡ÊÃÊ „Ò —",
+      "options": {
+        "A": ", 0 6       π",
+        "B": ", 0 4       π",
+        "C": "(0, 0)",
+        "D": "2 0, 3       π"
+      },
+      "page_start": 20,
+      "page_end": 20,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "(\n) (\n)\n1\n2\n  1  \n 2  . . . 3\nlim\nn\nn\nn\nn\nn\nn\nn\n→\n\n\n\n\n\n\n∞\n+\n+\n ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "2 9 e",
+        "B": "3 log3−2",
+        "C": "4 18 e",
+        "D": "2 27 e 40. The Boolean Expression (p∧~q)∨q∨(~p∧q) is equivalent to :"
+      },
+      "page_start": 20,
+      "page_end": 21,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 43,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ ‚◊Ë∑§⁄UáÊ x2+y2−4x+6y−12=0 mÊ⁄UÊ\n¬˝ŒûÊ ∞∑§ ﬂÎûÊ ∑§Ê ∞∑§ √ÿÊ‚ ∞∑§ •ãÿ ﬂÎûÊ S, Á¡‚∑§Ê\n∑§ãŒ˝ (−3, 2) „Ò, ∑§Ë ¡ËﬂÊ „Ò, ÃÊ ﬂÎûÊ S ∑§Ë ÁòÊíÿÊ\n„Ò —",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "5 2",
+        "D": "5 3"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": []
+    },
+    {
+      "qno": 44,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ ŒÊ •ŸÁ÷ŸÃ ¿U— »§‹∑§Ëÿ ¬Ê‚ A ÃÕÊ B ∞∑§\n‚ÊÕ ©¿UÊ‹ ªÿ–  ◊ÊŸÊ ÉÊ≈UŸÊ E1 ¬Ê‚ A ¬⁄U øÊ⁄U\n•ÊŸÊ Œ‡ÊÊ¸ÃË „Ò, ÉÊ≈UŸÊ E2 ¬Ê‚ B ¬⁄U 2 •ÊŸÊ Œ‡ÊÊ¸ÃË\n„Ò ÃÕÊ ÉÊ≈UŸÊ E3 ŒÊŸÊ¥ ¬Ê‚Ê¥ ¬⁄U •ÊŸ ﬂÊ‹Ë ‚¥ÅÿÊ•Ê¥\n∑§Ê ÿÊª Áﬂ·◊ Œ‡ÊÊ¸ÃË „Ò, ÃÊ ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-‚Ê\n∑§ÕŸ ‚àÿ Ÿ„Ë¥ „Ò?",
+      "options": {
+        "A": "E1 ÃÕÊ E3 SﬂÃ¥òÊ „Ò¥–",
+        "B": "E1, E2 ÃÕÊ E3 SﬂÃ¥òÊ „Ò¥–",
+        "C": "E1 ÃÕÊ E2 SﬂÃ¥òÊ „Ò¥–",
+        "D": "E2 ÃÕÊ E3 SﬂÃ¥òÊ „Ò¥–"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": []
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "θ ∑§Ê ﬂ„ ∞∑§ ◊ÊŸ Á¡‚∑§ Á‹∞ 2  3  sin\n1  2  sin\ni\ni\n+\n−\nθ\nθ  ¬ÍáÊ¸Ã—\n∑§ÊÀ¬ÁŸ∑§ „Ò, „Ò —",
+      "options": {
+        "A": "1 3 sin 4       −",
+        "B": "1 1 sin 3       −",
+        "C": "3 π",
+        "D": "6 π 43. If one of the diameters of the circle, given by the equation, x2+y2−4x+6y−12=0, is a chord of a circle S, whose centre is at (−3, 2), then the radius of S is :"
+      },
+      "page_start": 21,
+      "page_end": 22,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ üÊáÊË\n \n \n2\n2\n2\n2\n2\n3\n2\n1\n4\n1\n2\n3\n4\n4\n...... ,\n5\n5\n5\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n+\n+\n+\n+\n+\n∑§ ¬˝Õ◊ Œ‚ ¬ŒÊ¥ ∑§Ê ÿÊª 16\n5 m „Ò, ÃÊ m ’⁄UÊ’⁄U\n„Ò —",
+      "options": {
+        "A": "100",
+        "B": "99",
+        "C": "102",
+        "D": "101"
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 47,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "⁄ÒUÁπ∑§ ‚◊Ë∑§⁄UáÊ ÁŸ∑§Êÿ\nx+λy−z=0\nλx−y−z=0\nx+y−λz=0\n∑§Ê ∞∑§ •ÃÈë¿U „‹ „ÊŸ ∑§ Á‹∞ —",
+      "options": {
+        "A": "λ ∑§ ÃâÿÃ— ŒÊ ◊ÊŸ „Ò¥–",
+        "B": "λ ∑§ ÃâÿÃ— ÃËŸ ◊ÊŸ „Ò¥–",
+        "C": "λ ∑§ •Ÿ¥Ã ◊ÊŸ „Ò¥–",
+        "D": "λ ∑§Ê ÃâÿÃ— ∞∑§ ◊ÊŸ „Ò–"
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": []
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ ⁄UπÊ \n  2\n  3\n  4\n  \n  \n2\n 1\n3\ny\nx\nz\n+\n−\n+\n=\n=\n−\n, ‚◊Ã‹\nlx+my−z=9 ◊¥ ÁSÕÃ „Ò, ÃÊ l2+m2 ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "5",
+        "B": "2",
+        "C": "26",
+        "D": "18 46. If the sum of the first ten terms of the series 2 2 2 2 2 3 2 1 4 1 2 3 4 4 ...... , 5 5 5 5                         + + + + + is 16 5 m , then m is equal to :"
+      },
+      "page_start": 22,
+      "page_end": 23,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‡ÊéŒ SMALL ∑§ •ˇÊ⁄UÊ¥ ∑§Ê ¬˝ÿÊª ∑§⁄U∑§, ¬Ê°ø •ˇÊ⁄UÊ¥\nﬂÊ‹ ‚÷Ë ‡ÊéŒÊ¥ (•Õ¸¬ÍáÊ¸ •ÕﬂÊ •Õ¸„ËŸ) ∑§Ê\n‡ÊéŒ∑§Ê‡Ê ∑§ ∑˝§◊ÊŸÈ‚Ê⁄U ⁄UπŸ ¬⁄U, ‡ÊéŒ SMALL ∑§Ê\nSÕÊŸ „Ò —",
+      "options": {
+        "A": "52 ﬂÊ¥",
+        "B": "58 ﬂÊ¥",
+        "C": "46 ﬂÊ¥",
+        "D": "59 ﬂÊ¥"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": []
+    },
+    {
+      "qno": 50,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ ‚¥ÅÿÊ•Ê¥ 2, 3, a ÃÕÊ 11 ∑§Ê ◊ÊŸ∑§ Áﬂø‹Ÿ\n3.5 „Ò, ÃÊ ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-‚Ê ‚àÿ „Ò?",
+      "options": {
+        "A": "3a2−34a+91=0",
+        "B": "3a2−23a+44=0",
+        "C": "3a2−26a+55=0",
+        "D": "3a2−32a+84=0"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": []
+    },
+    {
+      "qno": 51,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "2 ß∑§Êß¸ ‹¥’Ë ∞∑§ ÃÊ⁄U ∑§Ê ŒÊ ÷ÊªÊ¥ ◊¥ ∑§Ê≈U ∑§⁄U ©ã„¥\n∑˝§◊‡Ê— x ß∑§Êß¸ ÷È¡Ê ﬂÊ‹ ﬂª¸ ÃÕÊ r ß∑§Êß¸ ÁòÊíÿÊ\nﬂÊ‹ ﬂÎûÊ ∑§ M§¬ ◊¥ ◊Ê«∏Ê ¡ÊÃÊ „Ò–  ÿÁŒ ’ŸÊÿ ªÿ ﬂª¸\nÃÕÊ ﬂÎûÊ ∑§ ˇÊòÊ»§‹Ê¥ ∑§Ê ÿÊª ãÿÍŸÃ◊ „Ò, ÃÊ —",
+      "options": {
+        "A": "x=2r",
+        "B": "2x=r",
+        "C": "2x=(π+4)r",
+        "D": "(4−π)x=πr 49. If all the words (with or without meaning) having five letters, formed using the letters of the word SMALL and arranged as in a dictionary; then the position of the word SMALL is :"
+      },
+      "page_start": 23,
+      "page_end": 24,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 52,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ\n(\n)\n1\n2\n2\n0\n \nlim\n1  tan\nx\nx\np\nx\n→+\n=\n+\n„Ò, ÃÊ log p\n’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "1 2",
+        "B": "1 4",
+        "C": "2",
+        "D": "1"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 53,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ ¬⁄Uﬂ‹ÿ y2=8x ∑§Ê P ∞∑§ ∞‚Ê Á’¥ŒÈ „Ò ¡Ê\nﬂÎûÊ x2+(y+6)2=1, ∑§ ∑§ãŒ˝ C ‚ ãÿÍŸÃ◊ ŒÍ⁄UË\n¬⁄U „Ò, ÃÊ ©‚ ﬂÎûÊ ∑§Ê ‚◊Ë∑§⁄UáÊ ¡Ê C ‚ „Ê∑§⁄U ¡ÊÃÊ\n„Ò ÃÕÊ Á¡‚∑§Ê ∑§ãŒ˝ P ¬⁄U „Ò, „Ò —",
+      "options": {
+        "A": "x2+y2−4 x +2y−24=0",
+        "B": "x2+y2−4x+9y+18=0",
+        "C": "x2+y2−4x+8y+12=0",
+        "D": "x2+y2−x+4y−12=0 52. Let ( ) 1 2 2 0 lim 1 tan x x p x →+ = + then log p is equal to :"
+      },
+      "page_start": 24,
+      "page_end": 25,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 54,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ ∞∑§ ﬂ∑˝§ y=f (x) Á’¥ŒÈ (1, −1) ‚ „Ê∑§⁄U ¡ÊÃÊ\n„Ò ÃÕÊ •ﬂ∑§‹ ‚◊Ë∑§⁄UáÊ y(1+xy) dx=x dy\n∑§Ê ‚¥ÃÈc≈U ∑§⁄UÃÊ „Ò, ÃÊ \n1\n 2\nf \n\n\n\n\n\n−\n ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "2 5",
+        "B": "4 5",
+        "C": "2 5 −",
+        "D": "4 5 −"
+      },
+      "page_start": 25,
+      "page_end": 25,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 55,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ \n, \na\nb\n→\n→ ÃÕÊ c\n→ ÃËŸ ∞‚ ◊ÊòÊ∑§ ‚ÁŒ‡Ê „Ò¥ Á∑§\n3\n \n  \n  \n  \n2\na\nb\nc\nb\nc\n→\n→\n→\n→\n→\n\n\n\n\n\n\n\n\n\n\n\n\n×\n×\n=\n+\n„Ò–  ÿÁŒ\nb\n→, c\n→ ∑§ ‚◊Ê¥Ã⁄U Ÿ„Ë¥ „Ò, ÃÊ a\n→ÃÕÊ b\n→∑§ ’Ëø\n∑§Ê ∑§ÊáÊ „Ò —",
+      "options": {
+        "A": "2 3 π",
+        "B": "5 6 π",
+        "C": "3 4 π",
+        "D": "2 π 54. If a curve y=f (x) passes through the point (1, −1) and satisfies the differential equation, y(1+xy) dx=x dy, then 1 2 f       − is equal to :"
+      },
+      "page_start": 25,
+      "page_end": 26,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 56,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ\n5\nA \n3\n2\na\nb\n\n\n\n\n\n\n−\n=\n ÃÕÊ A adj A=A AT „Ò¥,\nÃÊ  5a+b ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "4",
+        "B": "13",
+        "C": "−1",
+        "D": "5"
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 57,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ √ÿÁÄÃ ∞∑§ ™§äﬂÊ¸œ⁄U π¥÷ ∑§Ë •Ê⁄U ∞∑§ ‚Ëœ ¬Õ\n¬⁄U ∞∑§ ‚◊ÊŸ øÊ‹ ‚ ¡Ê ⁄U„Ê „Ò–  ⁄UÊSÃ ¬⁄U ∞∑§ Á’¥ŒÈ\nA ‚ ﬂ„ π¥÷ ∑§ Á‡Êπ⁄U ∑§Ê ©ÛÊÿŸ ∑§ÊáÊ 308 ◊Ê¬ÃÊ\n„Ò–    A ‚ ©‚Ë ÁŒ‡ÊÊ ◊¥ 10 Á◊Ÿ≈U •ÊÒ⁄U ø‹Ÿ ∑§ ’ÊŒ\nÁ’¥ŒÈ B ‚ ﬂ„ π¥÷ ∑§ Á‡Êπ⁄U ∑§Ê ©ÛÊÿŸ ∑§ÊáÊ 608\n¬ÊÃÊ „Ò, ÃÊ B ‚ π¥÷ Ã∑§ ¬„È°øŸ ◊¥ ©‚ ‹ªŸ ﬂÊ‹Ê\n‚◊ÿ (Á◊Ÿ≈UÊ¥ ◊¥) „Ò —",
+      "options": {
+        "A": "20",
+        "B": "5",
+        "C": "6",
+        "D": "10"
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": []
+    },
+    {
+      "qno": 58,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Á’¥ŒÈ (1, −5, 9) ∑§Ë ‚◊Ã‹ x−y+z=5  ‚ ﬂ„\nŒÍ⁄UË ¡Ê ⁄UπÊ x=y=z ∑§Ë ÁŒ‡ÊÊ ◊¥ ◊Ê¬Ë ªß¸ „Ò, „Ò —",
+      "options": {
+        "A": "10 3",
+        "B": "20 3",
+        "C": "3 10",
+        "D": "10 3 56. If 5 A 3 2 a b       − = and A adj A=A AT, then 5a+b is equal to :"
+      },
+      "page_start": 26,
+      "page_end": 27,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 59,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ  ∞∑§  ‚◊øÃÈ÷¸È¡  ∑§Ë  ŒÊ  ÷È¡Ê∞°,  ⁄UπÊ•Ê¥\nx−y+1=0 ÃÕÊ 7x−y−5=0 ∑§Ë ÁŒ‡ÊÊ ◊¥ „Ò¥\nÃÕÊ ß‚∑§ Áﬂ∑§áÊ¸ Á’¥ŒÈ (−1, −2) ¬⁄U ¬˝ÁÃë¿UŒ\n∑§⁄UÃ „Ò¥, ÃÊ ß‚ ‚◊øÃÈ÷¸È¡ ∑§Ê ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-‚Ê\n‡ÊË·¸ „Ò?",
+      "options": {
+        "A": "1 8 , 3 3       −",
+        "B": "10 7 , 3 3       − −",
+        "C": "(−3, −9)",
+        "D": "(−3, −8)"
+      },
+      "page_start": 27,
+      "page_end": 27,
+      "parse_flags": []
+    },
+    {
+      "qno": 60,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ 0≤x<2π „Ò, ÃÊ x ∑§ ©Ÿ ﬂÊSÃÁﬂ∑§ ◊ÊŸÊ¥ ∑§Ë\n‚¥ÅÿÊ ¡Ê ‚◊Ë∑§⁄UáÊ\ncosx+cos2x+cos3x+cos4x=0 ∑§Ê ‚¥ÃÈc≈U\n∑§⁄UÃ „Ò¥, „Ò —",
+      "options": {
+        "A": "7",
+        "B": "9",
+        "C": "3",
+        "D": "5 59. Two sides of a rhombus are along the lines, x−y+1=0 and 7x−y−5=0. If its diagonals intersect at (−1, −2), then which one of the following is a vertex of this rhombus ?"
+      },
+      "page_start": 27,
+      "page_end": 28,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚◊ÊŸ •ÊÿÃŸ (V) ∑§ ŒÊ ’¥Œ ’À’, Á¡Ÿ◊¥ ∞∑§ •ÊŒ‡Ê¸\nªÒ‚ ¬˝Ê⁄UÁê÷∑§ ŒÊ’ pi ÃÕÊ ÃÊ¬ T1 ¬⁄U ÷⁄UË ªß¸ „Ò, ∞∑§\nŸªáÿ •ÊÿÃŸ ∑§Ë ¬Ã‹Ë ≈˜UÿÍ’ ‚ ¡È«∏ „Ò¥ ¡Ò‚Ê Á∑§\nŸËø ∑§ ÁøòÊ ◊¥ ÁŒπÊÿÊ ªÿÊ „Ò–  Á»§⁄U ßŸ◊¥ ‚ ∞∑§\n’À’ ∑§Ê ÃÊ¬ ’…∏Ê∑§⁄U T2 ∑§⁄U ÁŒÿÊ ¡ÊÃÊ „Ò–  •¥ÁÃ◊\nŒÊ’ pf „Ò —",
+      "options": {
+        "A": "2 1 2 2 i T p T T       +",
+        "B": "1 2 1 2 2 i T T p T T       +",
+        "C": "1 2 1 2 i T T p T T       +",
+        "D": "1 1 2 2 i T p T T       +"
+      },
+      "page_start": 28,
+      "page_end": 28,
+      "parse_flags": []
+    },
+    {
+      "qno": 62,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "¡‹ ∑§ ‚ê’ãœ ◊¥ ÁŸêŸ ∑§ÕŸÊ¥ ◊¥ ‚ ∑§ÊÒŸ ‚Ê ∞∑§\nª‹Ã „Ò?",
+      "options": {
+        "A": "ß‚∑§ ‚¥ÉÊÁŸÃ ¬˝ÊﬂSÕÊ ◊¥ ÁﬂSÃËáÊ¸ •¥Ã—•áÊÈ∑§ „Êß«˛UÊ¡Ÿ •Ê’ãœ „ÊÃ „Ò¥–",
+        "B": "÷Ê⁄UË ¡‹ mÊ⁄UÊ ’ŸÊ ’»¸§ ‚Ê◊Êãÿ ¡‹ ◊¥ «ÍU’ÃÊ „Ò–",
+        "C": "¬˝∑§Ê‡Ê‚¥‡‹·áÊ ◊¥ ¡‹ •ÊÄ‚Ë∑Î§Ã „Ê∑§⁄U •ÊÄ‚Ë$¡Ÿ ŒÃÊ „Ò–",
+        "D": "¡‹, •ê‹ ÃÕÊ ˇÊÊ⁄U∑§ ŒÊŸÊ¥ „Ë M§¬ ◊¥ ∑§Êÿ¸ ∑§⁄U ‚∑§ÃÊ „Ò– PART C — CHEMISTRY 61. Two closed bulbs of equal volume (V) containing an ideal gas initially at pressure pi and temperature T1 are connected through a narrow tube of negligible volume as shown in the figure below. The temperature of one of the bulbs is then raised to T2. The final pressure pf is :"
+      },
+      "page_start": 28,
+      "page_end": 29,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 63,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the Hofmann bromamide degradation\nreaction, the number of moles of NaOH\nand Br2 used per mole of amine produced\nare :",
+      "options": {
+        "A": "Two moles of NaOH and two moles of Br2 .",
+        "B": "Four moles of NaOH and one mole of Br2 .",
+        "C": "One mole of NaOH and one mole of Br2 .",
+        "D": "Four moles of NaOH and two moles of Br2 ."
+      },
+      "page_start": 29,
+      "page_end": 29,
+      "parse_flags": []
+    },
+    {
+      "qno": 64,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following atoms has the\nhighest first ionization energy ?",
+      "options": {
+        "A": "K",
+        "B": "Sc",
+        "C": "Rb",
+        "D": "Na"
+      },
+      "page_start": 29,
+      "page_end": 29,
+      "parse_flags": []
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The concentration of fluoride, lead, nitrate\nand iron in a water sample from an\nunderground lake was found to be\n1000 ppb, 40 ppb, 100 ppm and 0.2 ppm,\nrespectively.  This water is unsuitable for\ndrinking due to high concentration of :",
+      "options": {
+        "A": "Nitrate",
+        "B": "Iron",
+        "C": "Fluoride",
+        "D": "Lead 63. „Ê»§◊ÊŸ ’˝Ê◊Ê◊Êß«U ÁŸêŸË∑§⁄UáÊ •Á÷Á∑˝§ÿÊ ◊¥, NaOH ÃÕÊ Br2 ∑§ ¬˝ÿÈÄÃ ◊Ê‹Ê¥ ∑§Ë ‚¥ÅÿÊ ¬˝ÁÃ◊Ê‹ •◊ËŸ ∑§ ’ŸŸ ◊¥ „ÊªË —"
+      },
+      "page_start": 29,
+      "page_end": 30,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∑§Ê’¸Ÿ ÃÕÊ ∑§Ê’¸Ÿ ◊ÊŸÊÄ‚ÊÚß«U ∑§Ë Œ„Ÿ ™§c◊Êÿ¥ ∑˝§◊‡Ê—\n−393.5 ÃÕÊ −283.5 kJ mol−1 „Ò¥–  ∑§Ê’¸Ÿ\n◊ÊŸÊÄ‚Êß«U ∑§Ë ‚¥÷ﬂŸ ™§c◊Ê (kJ ◊¥) ¬˝ÁÃ ◊Ê‹ „ÊªË —",
+      "options": {
+        "A": "−676.5",
+        "B": "−110.5",
+        "C": "110.5",
+        "D": "676.5"
+      },
+      "page_start": 30,
+      "page_end": 30,
+      "parse_flags": []
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÃÊ¬◊ÊŸ 298 K ¬⁄U, ∞∑§ •Á÷Á∑˝§ÿÊ A+B⇌C+D\n∑§ Á‹∞ ‚Êêÿ ÁSÕ⁄UÊ¥∑§ 100 „Ò–  ÿÁŒ ¬˝Ê⁄UÁê÷∑§ ‚ÊãŒ˝ÃÊ\n‚÷Ë øÊ⁄UÊ¥ S¬Ë‡ÊË¡ ◊¥ ‚ ¬˝àÿ∑§ ∑§Ë 1 M „ÊÃË, ÃÊ D\n∑§Ë ‚Êêÿ ‚ÊãŒ˝ÃÊ (mol L−1 ◊¥) „ÊªË —",
+      "options": {
+        "A": "1.818",
+        "B": "1.182",
+        "C": "0.182",
+        "D": "0.818"
+      },
+      "page_start": 30,
+      "page_end": 30,
+      "parse_flags": []
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŒ∞ ªÿ ÿÊÒÁª∑§ ∑§Ê ÁŸ⁄U¬ˇÊ ÁﬂãÿÊ‚ „Ò —\nCO2H\nOH\nH\nCl\nH\nCH3",
+      "options": {
+        "A": "(2S, 3S)",
+        "B": "(2R, 3R)",
+        "C": "(2R, 3S)",
+        "D": "(2S, 3R) 66. The heats of combustion of carbon and carbon monoxide are −393.5 and −283.5 kJ mol−1, respectively. The heat of formation (in kJ) of carbon monoxide per mole is :"
+      },
+      "page_start": 30,
+      "page_end": 31,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "»˝§ÊÚÿã«UÁ‹∑§ •Áœ‡ÊÊ·áÊ ‚◊ÃÊ¬Ë ﬂ∑˝§ ◊¥\nlog (x/m) ÃÕÊ log p ∑§ ’Ëø πË¥ø ªÿ ⁄UπËÿ\nå‹Ê≈U ∑§ Á‹∞ ÁãÊêŸ ◊¥ ‚ ∑§ÊÒŸ ‚Ê ∑§ÕŸ ‚„Ë „Ò?\n(k ÃÕÊ n ÁSÕ⁄UÊ¥∑§ „Ò¥)",
+      "options": {
+        "A": "◊ÊòÊ 1/n S‹Ê¬ ∑§ M§¬ ◊¥ •ÊÃÊ „Ò–",
+        "B": "log (1/n) ßã≈U⁄U‚å≈U ∑§ M§¬ ◊¥ •ÊÃÊ „Ò–",
+        "C": "k ÃÕÊ 1/n ŒÊŸÊ¥ „Ë S‹Ê¬ ¬Œ ◊¥ •ÊÃ „Ò¥–",
+        "D": "1/n ßã≈U⁄U‚å≈U ∑§ M§¬ •ÊÃÊ „Ò–"
+      },
+      "page_start": 31,
+      "page_end": 31,
+      "parse_flags": []
+    },
+    {
+      "qno": 70,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚Ê’ÈŸ ©lÊª ◊¥ ÷ÈÄÃ‡Ê· ‹Êß (S¬ã≈U ‹Êß¸) ‚ ÁÇ‹‚⁄UÊÚ‹\n¬ÎÕ∑§ ∑§⁄UŸ ∑§ Á‹∞ ‚’‚ ©¬ÿÈÄÃ •Ê‚ﬂŸ ÁﬂÁœ\n„Ò —",
+      "options": {
+        "A": "’Êc¬ •Ê‚ﬂŸ",
+        "B": "‚◊ÊŸËÃ ŒÊ’ ¬⁄U •Ê‚ﬂŸ",
+        "C": "‚Ê◊Êãÿ •Ê‚ﬂŸ",
+        "D": "¬˝÷Ê¡Ë •Ê‚ﬂŸ"
+      },
+      "page_start": 31,
+      "page_end": 31,
+      "parse_flags": []
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ ‚Ê ∞ŸÊßÁŸ∑§ Á«U≈U⁄U¡¥≈U „Ò?",
+      "options": {
+        "A": "‚Á≈U‹≈˛UÊß◊ÁÕ‹ •◊ÊÁŸÿ◊ ’˝Ê◊Êß«U",
+        "B": "ÁÇ‹‚Á⁄U‹ •ÊÁ‹∞≈U",
+        "C": "‚ÊÁ«Uÿ◊ S≈UË•⁄U≈U",
+        "D": "‚ÊÁ«Uÿ◊ ‹ÊÁ⁄U‹ ‚À»§≈U"
+      },
+      "page_start": 31,
+      "page_end": 31,
+      "parse_flags": []
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ﬂ„ S¬Ë‡ÊË$¡, Á¡‚◊¥ N ¬⁄U◊ÊáÊÈ sp ‚¥∑§⁄UáÊ ∑§Ë •ﬂSÕÊ\n◊¥ „Ò, „ÊªË —",
+      "options": {
+        "A": "3 NO−",
+        "B": "NO2",
+        "C": "2 NO+",
+        "D": "2 NO− 69. For a linear plot of log (x/m) versus log p in a Freundlich adsorption isotherm, which of the following statements is correct ? (k and n are constants)"
+      },
+      "page_start": 31,
+      "page_end": 32,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÕÊÿÊ‹ ª˝È¬ Á¡‚◊¥ ©¬ÁSÕÃ „Ò, ﬂ„ „Ò —",
+      "options": {
+        "A": "Á‚S≈UËŸ (Cysteine)",
+        "B": "◊ÕÊß•ÊŸËŸ",
+        "C": "‚Êß≈UÊ‚ËŸ",
+        "D": "Á‚ÁS≈UŸ (Cystine)"
+      },
+      "page_start": 32,
+      "page_end": 32,
+      "parse_flags": []
+    },
+    {
+      "qno": 74,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "»˝§ÊÚÕ ç‹Ê≈U‡ÊŸ ÁﬂÁœ mÊ⁄UÊ ÁŸêŸ ◊¥ ‚ ﬂ„ ∑§ÊÒŸ ‚Ê\n•ÿS∑§ ‚ﬂÊ¸Áœ∑§ M§¬ ‚ ‚ÊÁãŒ˝Ã Á∑§ÿÊ ¡Ê ‚∑§ÃÊ\n„Ò?",
+      "options": {
+        "A": "ªÒ‹ŸÊ",
+        "B": "◊Ò‹Ê∑§Êß≈U",
+        "C": "◊ÒÇŸ≈UÊß≈U",
+        "D": "Á‚«U⁄UÊß≈U"
+      },
+      "page_start": 32,
+      "page_end": 32,
+      "parse_flags": []
+    },
+    {
+      "qno": 75,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸ ÉÊãÊàﬂ ∑§ ¬Ê‹ËÕËŸ ∑§ ‚ê’ãœ ◊¥ ÁŸêŸ ◊¥ ‚\n∑§ÊÒŸ ‚Ê ∑§ÕŸ ª‹Ã „Ò?",
+      "options": {
+        "A": "ß‚◊¥ «UÊß¸•ÊÄ‚Ë¡Ÿ •ÕﬂÊ ¬⁄U•ÊÄ‚Êß«U ßŸËÁ‚ÿ≈U⁄ (¬˝Ê⁄Uê÷∑§) ©à¬˝⁄U∑§ ∑§ M§¬ ◊¥ øÊÁ„∞–",
+        "B": "ÿ„ ’∑§≈U (’ÊÀ≈UË), «US≈U-Á’Ÿ, •ÊÁŒ ∑§ ©à¬ÊŒŸ ◊¥ ¬˝ÿÈÄÃ „ÊÃË „Ò–",
+        "C": "ß‚∑§ ‚¥‡‹·áÊ ◊¥ ©ìÊ ŒÊ’ ∑§Ë •Êﬂ‡ÿ∑§ÃÊ „ÊÃË „Ò–",
+        "D": "ÿ„ ÁﬂlÈÃ ∑§Ê „ËŸ øÊ‹∑§ „Ò–"
+      },
+      "page_start": 32,
+      "page_end": 32,
+      "parse_flags": []
+    },
+    {
+      "qno": 76,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ ‚Ê ÿÊÒÁª∑§ œÊÁàﬂ∑§ ÃÕÊ »§⁄UÊ◊ÒªŸÁ≈U∑§\n(‹ÊÒ„ øÈê’∑§Ëÿ) „Ò?",
+      "options": {
+        "A": "VO2",
+        "B": "MnO2",
+        "C": "TiO2",
+        "D": "CrO2 73. Thiol group is present in :"
+      },
+      "page_start": 32,
+      "page_end": 33,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 77,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ŸËø ŒË ªß¸ •Á÷Á∑˝§ÿÊ ∑§ Á‹∞ ©à¬ÊŒ „ÊªÊ —",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 33,
+      "page_end": 33,
+      "parse_flags": []
+    },
+    {
+      "qno": 78,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ŸËø ŒË ªß¸ Á»§ª⁄U ◊¥ ’Èã‚Ÿ ç‹◊ ∑§Ê ‚ﬂÊ¸Áœ∑§ ª◊¸\n÷Êª „Ò —",
+      "options": {
+        "A": "⁄UË¡Ÿ 3",
+        "B": "⁄UË¡Ÿ 4",
+        "C": "⁄UË¡Ÿ 1",
+        "D": "⁄UË¡Ÿ 2 77. The product of the reaction given below is :"
+      },
+      "page_start": 33,
+      "page_end": 34,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 79,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "300 K ÃÕÊ 1 atm ŒÊ’ ¬⁄U, 15 mL ªÒ‚Ëÿ\n„Êß«˛UÊ∑§Ê’¸Ÿ ∑§ ¬ÍáÊ¸ Œ„Ÿ ∑§ Á‹ÿ 375 mL ﬂÊÿÈ\nÁ¡‚◊¥ •ÊÿÃŸ ∑§ •ÊœÊ⁄U ¬⁄U 20% •ÊÚÄ‚Ë¡Ÿ „Ò, ∑§Ë\n•Êﬂ‡ÿ∑§ÃÊ „ÊÃË „Ò–  Œ„Ÿ ∑§ ’ÊŒ ªÒ‚¥ 330 mL\nÉÊ⁄UÃË „Ò–  ÿ„ ◊ÊŸÃ „È∞ Á∑§ ’ŸÊ „È•Ê ¡‹ Œ˝ﬂ M§¬ ◊¥\n„Ò ÃÕÊ ©‚Ë ÃÊ¬◊ÊŸ ∞ﬂ¥ ŒÊ’ ¬⁄U •ÊÿÃŸÊ¥ ∑§Ë ◊Ê¬ ∑§Ë\nªß¸ „Ò ÃÊ „Êß«˛UÊ∑§Ê’¸Ÿ ∑§Ê »§Ê◊¸Í‹Ê „Ò —",
+      "options": {
+        "A": "C4H8",
+        "B": "C4H10",
+        "C": "C3H6",
+        "D": "C3H8"
+      },
+      "page_start": 34,
+      "page_end": 34,
+      "parse_flags": []
+    },
+    {
+      "qno": 80,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ﬂ„ ÿÈÇ◊ Á¡Ÿ◊¥ »§ÊS»§Ê⁄U‚ ¬⁄U◊ÊáÊÈ•Ê¥ ∑§Ë »§Ê◊¸‹\n•ÊÚÄ‚Ë∑§⁄UáÊ •ﬂSÕÊ +3 „Ò, „Ò —",
+      "options": {
+        "A": "•ÊÕÊ¸»§ÊS»§Ê⁄U‚ ÃÕÊ „Êß¬Ê»§ÊS»§ÊÁ⁄U∑§ ∞Á‚«U",
+        "B": "¬Êÿ⁄UÊ»§ÊS»§Ê⁄U‚ ÃÕÊ ¬Êÿ⁄UÊ»§ÊS»§ÊÁ⁄U∑§ ∞Á‚«U",
+        "C": "•ÊÕÊ¸»§ÊS»§Ê⁄U‚ ÃÕÊ ¬Êÿ⁄UÊ»§ÊS»§Ê⁄U‚ ∞Á‚«U",
+        "D": "¬Êÿ⁄UÊ»§ÊS»§Ê⁄U‚ ÃÕÊ „Êß¬Ê»§ÊS»§ÊÁ⁄U∑§ ∞Á‚«U 79. At 300 K and 1 atm, 15 mL of a gaseous hydrocarbon requires 375 mL air containing 20% O2 by volume for complete combustion. After combustion the gases occupy 330 mL. Assuming that the water formed is in liquid form and the volumes were measured at the same temperature and pressure, the formula of the hydrocarbon is :"
+      },
+      "page_start": 34,
+      "page_end": 35,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 81,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "¬˝Ê¬ËŸ ∑§Ë HOCl (Cl2+H2O) ∑§ ‚ÊÕ •Á÷Á∑˝§ÿÊ\nÁ¡‚ ◊äÿﬂÃË¸ ‚ „Ê∑§⁄U ‚ê¬ãŸ „ÊÃË „Ò, ﬂ„ „Ò —",
+      "options": {
+        "A": "3 2 CH CH(OH) CH+ − −",
+        "B": "3 2 CH CHCl CH+ − −",
+        "C": "CH3−CH+−CH2−OH",
+        "D": "CH3−CH+−CH2−Cl"
+      },
+      "page_start": 35,
+      "page_end": 35,
+      "parse_flags": []
+    },
+    {
+      "qno": 82,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÕŸÊÚ‹ ◊¥ 2-Ä‹Ê⁄UÊ-2-◊ÁÕ‹¬ã≈UŸ, ‚ÊÁ«Uÿ◊\n◊ÕÊÄ‚Êß«U ∑§ ‚ÊÕ •Á÷Á∑˝§ÿÊ ∑§⁄U∑§ ŒÃË „Ò —",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 35,
+      "page_end": 36,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 83,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ ‚Ê ∑§ÊÚêå‹Ä‚ ¬˝∑§ÊÁ‡Ê∑§ ‚◊ÊﬂÿﬂÃÊ\n¬˝ŒÁ‡Ê¸Ã ∑§⁄UªÊ?",
+      "options": {
+        "A": "trans[Co(en)2Cl2]Cl",
+        "B": "[Co(NH3)4Cl2]Cl",
+        "C": "[Co(NH3)3Cl3]",
+        "D": "cis[Co(en)2Cl2]Cl (en=ethylenediamine)"
+      },
+      "page_start": 36,
+      "page_end": 36,
+      "parse_flags": []
+    },
+    {
+      "qno": 84,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "„ﬂÊ ∑§ •ÊÁœÄÿ ◊¥ Li, Na •ÊÒ⁄U K ∑§ Œ„Ÿ ¬⁄U\n’ŸŸﬂÊ‹Ë ◊ÈÅÿ •ÊÄ‚Êß«¥U ∑˝§◊‡Ê— „Ò¥ —",
+      "options": {
+        "A": "Li2O2, Na2O2 ÃÕÊ KO2",
+        "B": "Li2O, Na2O2 ÃÕÊ KO2",
+        "C": "Li2O, Na2O ÃÕÊ KO2",
+        "D": "LiO2, Na2O2 ÃÕÊ K2O"
+      },
+      "page_start": 36,
+      "page_end": 36,
+      "parse_flags": []
+    },
+    {
+      "qno": 85,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "18 g Ç‹È∑§Ê‚ (C6H12O6) ∑§Ê 178.2 g ¬ÊŸË ◊¥\nÁ◊‹ÊÿÊ ¡ÊÃÊ „Ò–  ß‚ ¡‹Ëÿ Áﬂ‹ÿŸ ∑§ Á‹∞ ¡‹\n∑§Ê ﬂÊc¬ ŒÊ’ (torr ◊¥) „ÊªÊ —",
+      "options": {
+        "A": "752.4",
+        "B": "759.0",
+        "C": "7.6",
+        "D": "76.0 83. Which one of the following complexes shows optical isomerism ?"
+      },
+      "page_start": 36,
+      "page_end": 37,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 86,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÃŸÈ ÃÕÊ ‚ÊãŒ˝ ŸÊßÁ≈˛U∑§ ∞Á‚«U ∑§ ‚ÊÕ Á¡¥∑§ ∑§Ë\n•Á÷Á∑˝§ÿÊ mÊ⁄UÊ ∑˝§◊‡Ê— ©à¬ãŸ „ÊÃ „Ò¥ —",
+      "options": {
+        "A": "NO ÃÕÊ N2O",
+        "B": "NO2 ÃÕÊ N2O",
+        "C": "N2O ÃÕÊ NO2",
+        "D": "NO2 ÃÕÊ NO"
+      },
+      "page_start": 37,
+      "page_end": 37,
+      "parse_flags": []
+    },
+    {
+      "qno": 87,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "H2O2 ∑§Ê ÁﬂÉÊ≈UŸ ∞∑§ ¬˝Õ◊ ∑§ÊÁ≈U ∑§Ë •Á÷Á∑˝§ÿÊ\n„Ò–  ¬øÊ‚ Á◊Ÿ≈U ◊¥ ß‚ ¬˝∑§Ê⁄U ∑§ ÁﬂÉÊ≈UŸ ◊¥ H2O2\n∑§Ë ‚ÊãŒ˝ÃÊ ÉÊ≈U∑§⁄U 0.5 ‚ 0.125 M „Ê ¡ÊÃË „Ò–  ¡’\nH2O2 ∑§Ë ‚ÊãŒ˝ÃÊ 0.05 M ¬„È°øÃË „Ò, ÃÊ O2 ∑§\n’ŸŸ ∑§Ë Œ⁄U „ÊªË —",
+      "options": {
+        "A": "2.66 L min−1 (STP ¬⁄U)",
+        "B": "1.34×10−2 mol min−1",
+        "C": "6.93×10−2 mol min−1",
+        "D": "6.93×10−4 mol min−1"
+      },
+      "page_start": 37,
+      "page_end": 37,
+      "parse_flags": []
+    },
+    {
+      "qno": 88,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§„Ë øÈê’∑§Ëÿ •ÊÉÊÍáÊ¸ ∑§Ê ÿÈÇ◊ „Ò —\n[At. No. : Cr=24, Mn=25, Fe=26, Co=27]",
+      "options": {
+        "A": "[Mn(H2O)6]2+ ÃÕÊ [Cr(H2O)6]2+",
+        "B": "[CoCl4]2− ÃÕÊ [Fe(H2O)6]2+",
+        "C": "[Cr(H2O)6]2+ ÃÕÊ [CoCl4]2−",
+        "D": "[Cr(H2O)6]2+ ÃÕÊ [Fe(H2O)6]2+ 86. The reaction of zinc with dilute and concentrated nitric acid, respectively, produces :"
+      },
+      "page_start": 37,
+      "page_end": 38,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 89,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Galvanization is applying a coating of :",
+      "options": {
+        "A": "Cu",
+        "B": "Zn",
+        "C": "Pb",
+        "D": "Cr"
+      },
+      "page_start": 38,
+      "page_end": 38,
+      "parse_flags": []
+    },
+    {
+      "qno": 90,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A stream of electrons from a heated\nfilament was passed between two charged\nplates kept at a potential difference V esu.\nIf e and m are charge and mass of an\nelectron, respectively, then the value of\nh/λ (where λ is wavelength associated\nwith electron wave) is given by :",
+      "options": {
+        "A": "meV",
+        "B": "2 meV",
+        "C": "meV",
+        "D": "2meV - o O o - 89. ªÒÀﬂŸÊß¡‡ÊŸ ÁŸêŸ ◊¥ ‚ Á∑§‚∑§ ∑§Ê≈U ‚ „ÊÃÊ „Ò?"
+      },
+      "page_start": 38,
+      "page_end": 39,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

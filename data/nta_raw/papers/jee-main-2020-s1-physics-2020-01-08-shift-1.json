@@ -1,0 +1,513 @@
+{
+  "paper_id": "jee-main-2020-s1-physics-2020-01-08-shift-1",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-physics-2020-01-08-shift-1",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-08",
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-8-jan-2020-physics-paper-shift-1/243270",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/EfYyhGTNcFOGqdi4gHTI",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "d3f95aa483eb42fceeee5df3d22129d3da85b27e3cdf6338c0e57e19b4b5c5de",
+    "page_count": 17,
+    "text_chars": 11714,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-physics-2020-01-08-shift-1.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 25,
+  "defects": [
+    "1 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2]",
+    "9/25 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A block of mass 𝑚 is connected at one end of natural length lo and spring constant k. The \nspring is fixed at its other end. The block is rotated with constant angular speed () in \ngravity free space. The elongation in spring is",
+      "options": {
+        "A": "lomω2 k−mω2",
+        "B": "lomω2 k+mω2",
+        "C": "lomω2 k−mω",
+        "D": "lomω2 k+mω Solution: (a) The centripetal force is provided by the spring force. mω2(lo + x) = kx ( lo x + 1) = k mω2 x = lomω2 k−mω2"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Three charges are placed on the circumference of a circle of radius 𝑑 as shown in the  \nfigure. The electric field along x −axis at the centre of the circle is \n \nJEE Main 2020 Paper\n\n8th Jan (Shift 1, Physics)   \nPage | 2",
+      "options": {
+        "A": "q 4πεod2",
+        "B": "q√3 4πεod2",
+        "C": "q√3 πεod2",
+        "D": "q√3 2πεod2 Solution: (c) Applying superposition principle, 𝐸⃗ 𝑛𝑒𝑡= 𝐸⃗ 1 + 𝐸⃗ 2 + 𝐸⃗ 3 By symmetry, net electric field along the x-axis. |E⃗ 𝑛𝑒𝑡| = 4kq d2 × 2 cos 30° = q√3 πεod2"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Choose the correct P −V graph of an ideal gas for the given V −T graph. \n \n \n \n\n8th Jan (Shift 1, Physics)   \nPage | 3",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "Solution: (a) For the given V −T graph For the process x →y; V ∝T; 𝑃=constant For the process y →z; V =constant Only ′𝑎′ satisfies these two conditions."
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find the co-ordinates of center of mass of the lamina shown in the figure below. \n \n\n8th Jan (Shift 1, Physics)   \nPage | 4",
+      "options": {
+        "A": "(0.75, 1.75)",
+        "B": "(0.75, 1.5)",
+        "C": "(0.5, 1.75)",
+        "D": "(0.5, 1.5) Solution: (a) The Lamina can be divided into two parts having equal mass 𝑚 each. r cm = 𝑚× (î 2 + ĵ) + 𝑚× (î + 5ĵ"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which graph correctly represents the variation between relaxation time (𝜏) of gas \nmolecules with absolute temperature (𝑇) of the gas?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "8th Jan (Shift 1, Physics) Page | 5 Solution: (a) τ ∝ 1 √T"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If two capacitors 𝐶1 and 𝐶2 are connected in a parallel combination then the equivalent \ncapacitance is 10 μF. If both the capacitors are connected across a 1 𝑉 battery, then \nenergy stored in 𝐶2 is 4 times of that in 𝐶1. The equivalent capacitance if they are \nconnected in series is",
+      "options": {
+        "A": "1.6 μF",
+        "B": "16 μF",
+        "C": "4 μF",
+        "D": "1 4 μF Solution: (a) Given that, C1 + C2 = 10 μF …..(i) 4 ( 1 2 C1V2) = 1 2 C2V2 ⟹4C1 = C2 …(ii) From equations (i) and (ii) C1 = 2 μF C2 = 8 μF If they are in series Ceq = C1C2 C1 + C2 = 1.6 μF"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A rod of mass 4𝑚 and length 𝐿 is hinged at its midpoint. A ball of mass 𝑚 is moving in the \nplane of the rod with a speed 𝑣. It strikes the end at an angle of 450 and sticks to it. The \nangular velocity of system after collision is \n\n8th Jan (Shift 1, Physics)   \nPage | 6",
+      "options": {
+        "A": "3√2𝑣 7𝐿",
+        "B": "√2𝑣 7𝐿",
+        "C": "√2𝑣 3𝐿",
+        "D": "3v 7𝐿 Solution: (a) There is no external torque on the system about the hinge point. So, 𝐿 i ⃗⃗⃗⃗ = 𝐿 f ⃗⃗⃗⃗ 𝑚𝑣 √2 × 1 2 = [4𝑚𝐿 2 12 + 𝑚𝐿 2 4 ] × ω ω = 6 V 7√2𝐿 = 3√2V 7𝐿"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two photons of energy 4 𝑒𝑉 and 4.5 𝑒𝑉 are incident on two metals 𝐴 and 𝐵 respectively. \nThe maximum kinetic energy for an ejected electron is 𝑇𝐴 for 𝐴, and  𝑇𝐵 = 𝑇𝐴 −1.5 𝑒𝑉 for \nthe metal 𝐵. The relation between the de-Broglie wavelengths of the ejected electron \nof 𝐴 and 𝐵 are 𝜆𝐵= 2𝜆𝐵. The work function of the metal 𝐵 is",
+      "options": {
+        "A": "3 𝑒𝑉",
+        "B": "1.5 𝑒𝑉",
+        "C": "4.5 𝑒𝑉",
+        "D": "4 𝑒𝑉 Solution: (d) λ = h √2(KE)mB = λ ∝ 1 √KE 8th Jan (Shift 1, Physics) Page | 7 λA λB = √KEB √KEA 1 2 = √𝑇𝐴 −1.5 𝑇𝐴 𝑇𝐴 = 2 𝑒𝑉 KEB = 2 −1.5 = 0.5 𝑒𝑉 ∅B = 4.5 −0.5 = 4 𝑒𝑉"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is a potentiometer wire of length 1200 𝑐𝑚 and a 60 𝑚𝐴 current is flowing in it. A \nbattery of emf 5 V and internal resistance of 20   is balanced on this potentiometer wire \nwith a balancing length1000 𝑐𝑚. The resistance of the potentiometer wire is",
+      "options": {
+        "A": "80 ",
+        "B": "100 ",
+        "C": "120 ",
+        "D": "60  Solution: (b) Assume the terminal voltage of the primary battery as 𝑉𝑝. As long as this potentiometer is operating on balanced length, 𝑉𝑝 will remain constant. As we know, potential gradient = 5 1000 = 𝑉𝑝 1200 𝑉𝑝= 6 V And Rp = 𝑉𝑝 i = 6 60×10−3 = 100  8th Jan (Shift 1, Physics) Page | 8"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A telescope has a magnification equal to 5 and the length of its tube is 60 cm. The focal \nlength of its eye piece is",
+      "options": {
+        "A": "10 cm",
+        "B": "20 cm",
+        "C": "30 cm",
+        "D": "40 cm Solution: (a) m = f0 fe = 5 ⇒f0 = 5fe f0 + fe = 5fe + fe = 6fe = length of the tube ⇒6fe = 60 cm ⇒fe = 10 cm"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two spherical bodies of mass m1 & m2 have radii 1 m & 2 m respectively. The graph of \nthe gravitational field of the two bodies with their radial distance is shown below. The \nvalue of  \nm1\nm2 is",
+      "options": {
+        "A": "1 6",
+        "B": "1 3",
+        "C": "1 2",
+        "D": "1 4 Solution: (a) Gravitation field will be maximum at the surface of a sphere. Therefore, Gm2 22 = 3 & Gm1 12 = 2 ⇒m2 m1 × 1 4 = 3 2 8th Jan (Shift 1, Physics) Page | 9 ⇒m1 m2 = 1 6"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "When a proton of KE =  1.0 MeV moving towards North enters a magnetic field \n(directed along East), it accelerates with an acceleration,  a = 1012 m/s2 . The \nmagnitude of the magnetic field is",
+      "options": {
+        "A": "0.71 mT",
+        "B": "7.1 mT",
+        "C": "71 mT",
+        "D": "710 mT Solution: (a) K. E = 1 × 106 eV = 1.6 × 10−13J = 1 2 mev2 Where me is the mass of the electron = 1.6 × 10−27kg ⇒1.6 × 10−13 = 1 2 × 1.6 × 10−27 × v2 ∴v = √2 × 107m/s Bqv = mea ∴B = 1.6 × 10−27 × 1012 1.6 × 10−19 × √2 × 107 = 0.71 × 10−3T = 0.71 mT 8th Jan (Shift 1, Physics) Page | 10"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the electric field around a surface is given by |E⃗ | =\nQin\nε0|A| where A is the normal area of \nsurface and Qin is the charge enclosed by the surface. This relation of Gauss’ law is valid \nwhen",
+      "options": {
+        "A": "the surface is equipotential.",
+        "B": "the magnitude of the electric field is constant.",
+        "C": "the magnitude of the electric field is constant and the surface is equipotential.",
+        "D": "for all the Gaussian surfaces. Solution: (c) The magnitude of the electric field is constant and the electric field must be along the area vector i.e. the surface is equipotential."
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The stopping potential depends on the Planks constant(h), the current (I), the universal \ngravitational constant (G) and the speed of light (C). Choose the correct option for the \ndimension of the stopping potential (V)",
+      "options": {
+        "A": "h1I−1G1C5",
+        "B": "h−1I1G6",
+        "C": "h0I1G1C6",
+        "D": "h0I−1G−1C5 Solution: (d) V = K(h)a(I)b(G)c(C)d Unit of stopping potential is (V) Volt. We know [h] = ML2T−1 [I] = A [G] = M−1L3T−2 [C] = LT−1 [V] = ML2T−3A−1 ML2T−3A−1 = (ML2T−1)a(A)b (M−1L3T−2)c(LT−1)d ML2T−3A−1 = Ma−cL2a+3c+dT−a−2c−dAb a −c = 1 2a + 3c + d = 2 −a −2c −d = −3 b = −1 On solving, c = −1 a = 0 d = 5 b = −1 V = K(h)0(I)−1(G)−1(C)5 8th Jan (Shift 1, Physics) Page | 11"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A cylinder of height 1 m is floating in water at 0o C with 20 cm height in air. Now the \ntemperature of water is raised to 4o C, the height of the cylinder in air becomes 21 cm. \nThe ratio of density of water at 4o C  to that at 0o C is (Consider expansion of the cylinder \nis negligible)",
+      "options": {
+        "A": "1.01",
+        "B": "1.03",
+        "C": "2.01",
+        "D": "1.04 Solution: (a) Since the cylinder is in equilibrium, it’s weight is balanced by the Buoyant force. mg = A(80)(ρ0oC)g mg = A(79)(ρ4oC)g ρ4oC ρ0oC = 80 79 = 1.01"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Number of the α-particle deflected in Rutherford's α- particle scattering experiment \nvaries with the angle of deflection. The graph between the two is best represented by\n\n8th Jan (Shift 1, Physics)   \nPage | 12",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "Solution: (c) N ∝ 1 sin4(θ/2)"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If relative permittivity and relative permeability of a medium are 3 and  \n4\n3  respectively, \nthe critical angle for this medium is",
+      "options": {
+        "A": "45o",
+        "B": "60o",
+        "C": "300",
+        "D": "150 Solution: (c) 8th Jan (Shift 1, Physics) Page | 13 If the speed of light in the given medium is 𝑉 then, 𝑉= 1 √μϵ We know that, n = c v n = √μrϵr = 2 sin θc = 1 2 θc = 30o"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The given loop is kept in a uniform magnetic field perpendicular to the plane of the loop. \nThe field changes from 1000 𝐺𝑎𝑢𝑠𝑠 to 500 𝐺𝑎𝑢𝑠𝑠 in 5 seconds. The average induced emf \nin the loop is",
+      "options": {
+        "A": "56 μV",
+        "B": "28 μV",
+        "C": "30 μV",
+        "D": "48 μV Solution: (a) ϵ = |−dϕ dt | = |−AdB dt | = (16 × 4 −4 × 2) (1000 −500) 5 × 10−4 × 10−4 = 56 × 500 5 × 10−8 = 56 × 10−6 V"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Choose the correct Boolean expression for the given circuit diagram: \n\n8th Jan (Shift 1, Physics)   \nPage | 14",
+      "options": {
+        "A": "A.B",
+        "B": "𝐴̅ + 𝐵̅",
+        "C": "𝐴+ 𝐵",
+        "D": "𝐴̅. 𝐵̅ Solution: (d) First part of figure shown OR gate and second part of figure shown NOT gate. So, 𝑌= 𝐴+ 𝐵 ̅̅̅̅̅̅̅̅ = 𝐴̅. 𝐵̅"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A Solid sphere of density 𝜌= 𝜌𝑜(1 −\n𝑟2\n𝑅2), 0 < 𝑟≤𝑅 just floats in a liquid, then the \ndensity of the liquid is (𝑟 is the distance from the centre of the sphere)",
+      "options": {
+        "A": "2 5 𝜌𝑜",
+        "B": "5 2 𝜌𝑜",
+        "C": "3 5 𝜌𝑜",
+        "D": "𝜌𝑜 Solution: (a) Let the mass of the sphere be 𝑚 and the density of the liquid be 𝜌𝐿 𝜌= 𝜌𝑜(1 − 𝑟2 𝑅2), 0 < 𝑟≤𝑅 Since the sphere is floating in the liquid, buoyancy force (𝐹𝐵) due to liquid will balance the weight of the sphere. 𝐹𝐵= 𝑚𝑔 𝜌𝐿 4 3 𝜋𝑅3𝑔= ∫𝜌(4𝜋𝑟2𝑑𝑟)𝑔 𝜌𝐿 4 3 𝜋𝑅3 = ∫𝜌𝑜(1 −𝑟2 𝑅2) 4𝜋𝑟2𝑑𝑟 𝜌𝐿 4 3 𝜋𝑅3 = ∫𝜌𝑜4𝜋(𝑟2 −𝑟4 𝑅2) 𝑑𝑟= 𝜌𝑜4𝜋(𝑟3 3 −𝑟5 5𝑅2) 0 𝑅 𝑅 0 8th Jan (Shift 1, Physics) Page | 15 𝜌𝐿= 2 5 𝜌𝑜"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two masses each of mass 0.10 𝑘𝑔 are moving with velocities 3 𝑚/𝑠 along 𝑥−axis and \n5 𝑚/𝑠 along 𝑦−axis respectively. After an elastic collision one of the mass moves with  \nvelocity 4𝑖̂ + 4𝑗̂ 𝑚/𝑠. If the energy of the other mass after the collision is \n𝑥\n10, then 𝑥 is \nSolution: (1) \nMass of each object, 𝑚1 = 𝑚2 = 0.1 𝑘𝑔 \nInitial velocity of 1st object, 𝑢1 = 5 𝑚/𝑠 \nInitial velocity of 2nd object, 𝑢2 = 3 𝑚/𝑠 \nFinal velocity of 1st object, 𝑉1 = 4𝑖̂ + 4𝑗̂ 𝑚/𝑠 =√42 + 42 = 16√2 𝑚/𝑠 \nFor elastic collision, kinetic energy remains conserved \n𝐼𝑛𝑖𝑡𝑖𝑎𝑙 𝑘𝑖𝑛𝑒𝑡𝑖𝑐 𝑒𝑛𝑒𝑟𝑔𝑦 (𝐾𝑖) = 𝐹𝑖𝑛𝑎𝑙 𝑘𝑖𝑛𝑒𝑡𝑖𝑐 𝑒𝑛𝑒𝑟𝑔𝑦(𝐾𝑓) \n1\n2 𝑚𝑢1\n2 + 1\n2 𝑚𝑢2\n2 = 1\n2 𝑚𝑉1\n2 + 1\n2 𝑚𝑉2\n2 \n1\n2 𝑚(5)2 + 1\n2 𝑚(3)2 = 1\n2 𝑚(16√2)2 + 1\n2 𝑚𝑉2\n2 \n𝑉2 = √2 𝑚/𝑠 \nKinetic energy of second object =\n1\n2 𝑚𝑉2\n2 =\n1\n2 × 0.1 × √2\n2 =\n1\n10 \n⟹𝑥= 1",
+      "options": null,
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A plano-convex lens of radius of curvature 30 cm and refractive index 1.5 is kept in air. \nFind its focal length (in cm). \nSolution: (60 cm) \nApplying Lens makers’ formula,  \n1\nf = (μ −1) ( 1\nR1\n−1\nR2\n) \nR1 = ∞ \nR2 = −30 cm \n1\nf = (1.5 −1) (1\n∞−\n1\n−30) \n\n8th Jan (Shift 1, Physics)   \nPage | 16  \n1\nf = 0.5\n30 \nf = 60 cm",
+      "options": null,
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The position of two particles 𝐴 and 𝐵 as a function of time are given by XA = −3t2 + 8t +\nc and  YB = 10 −8t3. The velocity of 𝐵 with respect to 𝐴 at t = 1 is √v . Find v. \nSolution: (580 m/s ) \nXA = −3t2 + 8t + c \nvA\n⃗⃗⃗⃗ = (−6t + 8)î \n= 2î \nYB = 10 −8t3 \nvB\n⃗⃗⃗⃗ = −24t2ĵ \n|v𝐵/𝐴\n⃗⃗⃗⃗⃗⃗⃗⃗ | = |vB\n⃗⃗⃗⃗ −vA\n⃗⃗⃗⃗ | = |−24ĵ − 2î| \nv = √242 + 22 \nv = 580 m/s",
+      "options": null,
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An open organ pipe of length 1 m contains a gas whose density is twice the density of the \natmosphere at STP. Find the difference between its fundamental and second harmonic \nfrequencies if the speed of sound in atmosphere is 300 m/s. \nSolution:  (105.75 Hz) \nV = √B\nρ \nVpipe\nVair\n=\n√B\n2ρ\n√B\nρ\n= 1\n√2\n \nVpipe = Vair\n√2\n \nfn = (n + 1)\n2l\nVpipe \n\n8th Jan (Shift 1, Physics)   \nPage | 17  \nf1 −f0 =\nVpipe\n2l\n=\n300\n2√2 = 105.75 Hz (if √2 = 1.41) \n= 106.05 Hz (if √2 = 1.414)",
+      "options": null,
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Four resistors of resistance 15 , 12 , 4  and 10  are connected in cyclic order to \nform a wheat stone bridge. The resistance (in  ) that should be connected in parallel \nacross the 10  resistor to balance the wheat stone bridge is \nSolution: (10   ) \n \n10 R\n10+R × 12 = 15 × 4 ⇒R = 10 ",
+      "options": null,
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    }
+  ]
+}

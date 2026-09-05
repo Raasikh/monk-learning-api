@@ -1,0 +1,467 @@
+{
+  "paper_id": "jee-main-2007-physics-asfo9oydvx83ujx9ffhz",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2007-physics-asfo9oydvx83ujx9ffhz",
+    "exam": "jee-main",
+    "year": 2007,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2007/iit-jee-physics-paper-i/81192",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/Asfo9OyDVx83UJx9Ffhz",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "ee014774f86ce464a9a6600b50f13f73fd18083fc28466da812d0dd5996819ca",
+    "page_count": 9,
+    "text_chars": 10049,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2007-physics-asfo9oydvx83ujx9ffhz.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 22,
+  "defects": [
+    "4/22 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A resistance of 2 W is connected across one gap of a meter-bridge (the length of the \nwire is 100 cm) and an unknown resistance, greater than 2W, is connected across the other \ngap. When the resistances are interchanged, the balance point shifts by 20 cm. neglecting \nany corrections, the unknown resistance is",
+      "options": {
+        "A": "3Ω",
+        "B": "4Ω",
+        "C": "5Ω",
+        "D": "6Ω"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In an experiment to determine the focal length (f) of a concave mirror by the n-v \nmethod, a student places the object pin A or the principal axis at a distance x from the pole \nP. The student looks at the pin and its inverted image from a distance keeping his/her eye \nin line with PA. When the student shifts his/her eye towards left, the image appears to the \nright of the object pin. Then,",
+      "options": {
+        "A": "x < f",
+        "B": "f < x < 2f",
+        "C": "x = 2f",
+        "D": "x > 2f"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two particles of mass m each are tied at the ends of a light string of length 2a. The \nwhole system is kept on a frictionless horizontal surface with the string held tight so that \neach mass is at a distance 'a' from the center P (as shown in the figure). Now, the mid-point \nof the string is pulled vertically upwards with a small but constant for F. As a result, the \nparticles move towards each other on the surface. The magnitudes of acceleration, when \nthe separation between them becomes 2x, is",
+      "options": {
+        "A": "F/2m a/√(a2 - x2 )",
+        "B": "F/2m x/√(a2 - x2 )",
+        "C": "F/2m x/a",
+        "D": "F/2m √(a2 - x2 )/x"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A long, hollow conducting cylinder is kept coaxially inside another long, hollow \nconducting cylinder of larger radius. Both the cylinders are initially electrically neutral.",
+      "options": {
+        "A": "A potential difference appears between the two cylinders when a charge density is given to the inner cylinder.",
+        "B": "A potential difference appears between the two cylinders when a charge density is given to the outer cylinder",
+        "C": "No potential difference appears between the two cylinders when a uniform line charge is kept along the axis of the cylinders",
+        "D": "No potential difference appears between the two cylinders when a same charge density is given to both the cylinders"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider a neutral conducting sphere. A positive point charge is placed outside the \nsphere. The net charge on the sphere is then,",
+      "options": {
+        "A": "negative and distributed uniformly over the surface of the sphere",
+        "B": "negative and appears only at the point on the sphere closest to the point charge",
+        "C": "negative and distributed non-uniformly over the entire surface of the sphere",
+        "D": "zero"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A circuit is connected as shown in the figure with the switch S open. When the switch \nis closed, the total amount of charge that flows from Y to X is",
+      "options": {
+        "A": "0",
+        "B": "54 µC",
+        "C": "27 µC",
+        "D": "81 µC"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A ray of light traveling in water is incident on its surface open to air. The angle of \nincidence is, which is less than the critical angle. Then there will be",
+      "options": {
+        "A": "only a reflected ray and no refracted ray",
+        "B": "only a refracted ray and no reflected ray",
+        "C": "a reflected ray and a refracted ray and the angle between them would be less than 180o - 2θ",
+        "D": "a reflected ray and a refracted ray and the angle between them would be greater than 180o - 2θ"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the options given below, let E denote the rest mass energy of a nucleus and n a \nneutron. The correct option is",
+      "options": {
+        "A": "E(236U92) > E(137I53) + E(97Y39) + 2E(n)",
+        "B": "E(236U92) < E(137I53) + E(97Y39) + 2E(n)",
+        "C": "E(236U92) < E(140Ba56) + E(94Kr36) + 2E(n)",
+        "D": "E(236U92) = E(140Ba56) + E(94Kr36) + 2E(n)"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The largest wavelength in the ultraviolet region of the hydrogen spectrum is 122 nm. \nThe smallest wavelength in the infrared region of the hydrogen spectrum to the nearest \ninteger) is",
+      "options": {
+        "A": "802 nm",
+        "B": "823 nm",
+        "C": "1882 nm",
+        "D": "1648 nm"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A block of mass m starts moving on a rough horizontal surface with a velocity v. It \nstops due to friction between the block and the surface after moving through a certain \ndistance. The surface is now titled to an angle of 30o with the horizontal and the same block \nis made to go up on the surface with the same initial velocity v. The decrease in the \nmechanical energy in the second situation is smaller than that in the first situation. \nBecause \nSTATEMENT-2 \nThe coefficient of friction between the block and the surface decreases with the increase in \nthe angle of inclination.",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "STATEMENT-1 \nIn an elastic collision between two bodies, the relative speed of the bodies after collision is \nequal to the relative speed before the collision. \n\n \n \nBecause \nSTATEMENT-2 \nIn an elastic collision, the linear momentum of the system is conserved.",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "STATEMENT-1 \nThe formulae connecting u, v and f for a spherical mirror is valid only for mirrors whose \nsizes are very small compared to their radii of curvature. \nBecause \nSTATEMENT-2 \nLaws of reflection are strictly valid for plane surfaces, but not for large spherical surfaces",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "STATEMENT-1 \nIf the accelerating potential in an X-ray tube is increased, the wavelengths of the \ncharacteristic X-rays do not change. \n\n \n \nBecause \nSTATEMENT-2 \nWhen an electron beam strikes the target in an X-ray tube, part of the kinetic energy is \nconverted into X-ray energy.",
+      "options": {
+        "A": "Statement-1 is True, Staement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Staement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The ratio x1/x2 is",
+      "options": {
+        "A": "2",
+        "B": "1/2",
+        "C": "√2",
+        "D": "1/√2"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "When disc B is brought in contact with disc A, they acquire a common angular \nvelocity in time t. The average frictional torque on one disc by the other during this period is",
+      "options": {
+        "A": "2Iω/3t",
+        "B": "9Iω/2t",
+        "C": "9Iω/4t",
+        "D": "3Iω/2t"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The loss of kinetic energy during the above process is",
+      "options": {
+        "A": "(Iω2)/2",
+        "B": "(Iω2)/3",
+        "C": "(Iω2)/4",
+        "D": "(Iω2)/6"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The piston is now pulled out slowly and held at a distance 2L from the top. The \npressure in the cylinder between its top and the piston will then be",
+      "options": {
+        "A": "P0",
+        "B": "P0/2",
+        "C": "P0/2 + Mg/(π R2 )",
+        "D": "P0/2 - Mg/(π R2 )"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "While the piston is at a distance 2L from the top, the hole at the top is sealed. The \npiston is then released, to a piston where it can stay in equilibrium. In this condition, the \ndistance of the piston from the top is",
+      "options": {
+        "A": "((2P0 π R2)/(π R2 P0 + Mg))(2L)",
+        "B": "((P0 π R2 - Mg)/(π R2 P0 ))(2L)",
+        "C": "((P0 π R2 + Mg)/(π R2 P0 ))(2L)",
+        "D": "((P0 π R2)/(π R2 P0 - Mg))(2L)"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The piston is taken completely out of the cylinder. The hole at the top is sealed. A \nwater tank is brought below the cylinder and put in a position so that the water surface in \nthe tank is at the same level as the top of the cylinder as shown in the figure. The density of \nthe water is r. In equilibrium, the height H of the water column in the cylinder satisfies",
+      "options": {
+        "A": "rg(L0 - H)2 + P0(L0 - H) + L0P0 = 0",
+        "B": "rg(L0 - H)2 - P0(L0 - H) - L0P0 = 0",
+        "C": "rg(L0 - H)2 + P0(L0 - H) - L0P0 = 0",
+        "D": "rg(L0 - H)2 - P0(L0 - H) + L0P0 = 0"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Some physical quantities are given in Column I and some possible. SI units in which \nthese quantities may be expressed are given in Column II. Match the physical quantities in \nColumn I with the units in Column II. \nColumn I \nColumn II",
+      "options": {
+        "A": "GMeMs G-universal gravitational constant Me-mass of the earth Ms-mass of the Sun (p) (volt) (coloumb) (metre)",
+        "B": "R-universal gas constant T-absolute temperature M-molar mass (q) (kilogram)(metre)3(second)-2",
+        "C": "F-force q-charge B-magnetic field (r) (metre)2 (second)2",
+        "D": "G-universal gravitational (s) (farad) (volt)2 (kg)-1 constant Me-mass of the earth Re-radius of the earth"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Column I gives certain situations in which a straight metallic wire of resistance R is \nused and Column II gives some resulting effects. Match the statements in Column I with the \nstatements in Column II. \nColumn I \nColumn II",
+      "options": {
+        "A": "A charged capacitor is connected to the ends of the wire (p) A constant current flows through the wire",
+        "B": "The wire is moved perpendicular to its length with a constant velocity in a uniform magnetic field perpendicular to the plane of motion. (q) Thermal energy is generated in the wire",
+        "C": "The wire placed of constant emf is connected to the ends of the wire (r) A constant potential difference develops between the ends of the wire",
+        "D": "A battery of constant emf is connected to the ends of the wire (s) Charges of constant magnitude appear at the ends of the wire"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Some laws/processes are given in Column I. Match these with the physical \nphenomena given in Column II. \nColumn I \nColumn II",
+      "options": {
+        "A": "Transition between two atomic energy levels (p) Characteristic X-rays",
+        "B": "Electron emission from a material (q) Photoelectric effect",
+        "C": "Mosley's law (r) Hydrogen spectrum",
+        "D": "Change of photon energy into kinetic energy of electrons (s) b-decay"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    }
+  ]
+}

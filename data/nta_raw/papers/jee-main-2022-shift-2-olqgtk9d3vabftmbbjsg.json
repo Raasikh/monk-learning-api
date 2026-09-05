@@ -1,0 +1,326 @@
+{
+  "paper_id": "jee-main-2022-shift-2-olqgtk9d3vabftmbbjsg",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-2-olqgtk9d3vabftmbbjsg",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/OlqgtK9d3VaBfTMBbjsG",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "6917f262d10abf88891dd2c9fc6dd2818e11f4164dfdfe485137434737a6a020",
+    "page_count": 8,
+    "text_chars": 9910,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 22,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-2-olqgtk9d3vabftmbbjsg.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 4,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "4",
+          "option": "D",
+          "option_index": 4
+        }
+      },
+      {
+        "qno": 7,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 7,
+  "defects": [
+    "26 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 8, 5, 8, 9, 10, 11, 2, 20, 12, 5, 13, 14, 25]",
+    "7/7 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "We have two spring block systems as shown in figure.   \n2k\n50gm \n9k \n100gm  \n \nDuring oscillation maximum speed of both block is same. Find the ratio of Amplitude of oscillation of \nBlocks ?",
+      "options": {
+        "A": "2 1",
+        "B": "2 3",
+        "C": "2 1",
+        "D": "2 7"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle of mass 5 kg is thrown upwards from ground. It experiences a constant air resistance 10 N \nopposite to the direction of velocity of particle. The ratio of time of ascent to the time of descent is.  \n[g = 10 m/s2]",
+      "options": {
+        "A": "2 3",
+        "B": "2 3",
+        "C": "2 1",
+        "D": "1"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Determine current in  \n \n5V\n1k\n800 \n10V \n \n \nFor the circuit above current through Zener diode.",
+      "options": {
+        "A": "1.125 mA",
+        "B": "2.25 mA",
+        "C": "4 mA",
+        "D": "4.5 mA"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the ratio of intensity of to light is 9 : 4. Find the ratio of maximum to minimum intensity due to interference \nof the lights.",
+      "options": {
+        "A": "5 : 1",
+        "B": "25 : 1",
+        "C": "7 : 5",
+        "D": "25 : 16"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Proton, deuteron and -particle are projected with same kinetic energy in uniform magnetic field in the \ndirection perpendicular to the magnetic field. Then ratio radii in magnetic field is : ",
+      "options": {
+        "A": "1 : 2 : 2",
+        "B": "1 : 2 : 2",
+        "C": "1 : 2 : 1",
+        "D": "2 : 2 : 2 2"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "During circular motion with constant angular acceleration, in 1st second, starting from rest covers  \n5 rotation. Then find number of rotation in next second.",
+      "options": {
+        "A": "5",
+        "B": "12",
+        "C": "10",
+        "D": "15"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "4",
+        "option": "D",
+        "option_index": 4
+      }
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Hammer of mass 1.5 kg strikes to nail of mass 5 kg with velocity 20 m/s. \nth\n4\n1\nenergy of hammer is transfer \nto nail, then find rise in temperature of nail, (s = 0.42)",
+      "options": {
+        "A": "35 K",
+        "B": "102 K",
+        "C": "90 K",
+        "D": "180 K"
+      },
+      "page_start": 3,
+      "page_end": 8,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    }
+  ]
+}

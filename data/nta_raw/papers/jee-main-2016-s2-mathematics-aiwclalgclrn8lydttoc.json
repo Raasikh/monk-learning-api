@@ -1,0 +1,762 @@
+{
+  "paper_id": "jee-main-2016-s2-mathematics-aiwclalgclrn8lydttoc",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2016-s2-mathematics-aiwclalgclrn8lydttoc",
+    "exam": "jee-main",
+    "year": 2016,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2016/jee-main-2016-maths-question-paper-online-exam-10th-april-2016/98546",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/AiwCLALgclRn8lYDTtOC",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "6d45169f125b60f05f55aca2d129bf09e25f00076017843a69a85d31ba7ecd79",
+    "page_count": 16,
+    "text_chars": 14382,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 1,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2016-s2-mathematics-aiwclalgclrn8lydttoc.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "17 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [62, 64, 66, 67, 69, 71, 73, 1, 75, 1, 77, 79, 80, 82, 84]",
+    "23/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ P \n{\n: sin\ncos\n2 cos }\nθ\nθ\nθ\nθ\n= \n \n − \n = \n ÃÕÊ\nQ \n{\n: sin\ncos\n2 sin }\nθ\nθ\nθ\nθ\n \n \n= \n \n+\n = \n ŒÊ\n‚◊Èëøÿ „Ò¥, ÃÊ —",
+      "options": {
+        "A": "P ⊂ Q ÃÕÊ Q−P ≠ φ",
+        "B": "Q ⊄ P",
+        "C": "P ⊄ Q",
+        "D": "P = Q 61. Let P { : sin cos 2 cos } θ θ θ θ = − = and Q { : sin cos 2 sin } θ θ θ θ = + = be two sets. Then :"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 62,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ ‚◊Ë∑§⁄UáÊ\n1\n2  \n1  2\n1  1, \n  \n,\n2\nx\nx\nx\n\n\n\n\n\n\n+\n−\n− =\n\u0005\n ∑§Ê x\n∞∑§ „‹ „Ò, ÃÊ \n2\n4\n1\nx − ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "3 4",
+        "B": "1 2",
+        "C": "2",
+        "D": "2 2"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 63,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ z=1+ai, a > 0 ∞∑§ ∞‚Ë ‚Áê◊üÊ ‚¥ÅÿÊ „Ò,\nÁ∑§ z3 ∞∑§ ﬂÊSÃÁﬂ∑§ ‚¥ÅÿÊ „Ò, ÃÊ ÿÊª\n1+z+z2+.....+z11 ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "1250 3 i −",
+        "B": "1250 3 i",
+        "C": "1365 3 i",
+        "D": "1365 3 i − 62. If x is a solution of the equation, 2 1 2 1 2 1 1, , then 2 4 1 is equal to : x x x x       + − − = \u0005 −"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 64,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ A, 3×3 ∑§Ê ∞∑§ ∞‚Ê •Ê√ÿÍ„ „Ò Á∑§\nA2−5A+7I=O „Ò–\n∑§ÕŸ - I    : \n1\n1\nA\n (5I \nA).\n7\n− = \n− \n∑§ÕŸ - II : ’„È¬Œ A3−2A2−3A+I ∑§Ê\n5(A−4I) ◊¥ ¬Á⁄UﬂÁÃ¸Ã Á∑§ÿÊ ¡Ê ‚∑§ÃÊ\n„Ò–\nÃÊ,",
+      "options": {
+        "A": "∑§ÕŸ - I ‚àÿ „Ò ‹Á∑§Ÿ ∑§ÕŸ - II •‚àÿ „Ò–",
+        "B": "∑§ÕŸ - I •‚àÿ „Ò ‹Á∑§Ÿ ∑§ÕŸ - II ‚àÿ „Ò–",
+        "C": "ŒÊŸÊ¥ ∑§ÕŸ ‚àÿ „Ò¥–",
+        "D": "ŒÊŸÊ¥ ∑§ÕŸ •‚àÿ „Ò¥–"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ \n4\n1\nA \n3\n1\n\n\n\n\n\n\n−\n−\n=\n „Ò, \nÃÊ \n•Ê√ÿÍ„\n(A2016−2A2015−A2014) ∑§Ê ‚Ê⁄UÁáÊ∑§ „Ò —",
+      "options": {
+        "A": "2014",
+        "B": "−175",
+        "C": "2016",
+        "D": "−25 64. Let A be a 3×3 matrix such that A2−5A+7I=O. Statement - I : 1 1 A (5I A). 7 −= − Statement - II : The polynomial A3−2A2−3A+I can be reduced to 5(A−4I). Then :"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ \n2\n6\n2\n2\nC\n 11,\nP\nn\nn\n+\n−\n=\n „Ò, ÃÊ n ÁŸêŸ ◊¥ ‚ Á∑§‚\n‚◊Ë∑§⁄UáÊ ∑§Ê ‚¥ÃÈc≈U ∑§⁄UÃÊ „Ò?",
+      "options": {
+        "A": "n2+3n−108=0",
+        "B": "n2+5n−84=0",
+        "C": "n2+2n−80=0",
+        "D": "n2+n−110=0"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ  \n1\n3\n1\n3\n18\n1\n2\nx\nx\n\n\n\n\n\n\n + \n, (x > 0), ∑§ ¬˝‚Ê⁄U ◊¥ x−2\nÃÕÊ x−4 ∑§ ªÈáÊÊ¥∑§ ∑˝§◊‡Ê— m ÃÕÊ n „Ò¥, ÃÊ m\nn\n’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "182",
+        "B": "4 5",
+        "C": "5 4",
+        "D": "27"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ a1, a2, a3, ......, an, ..... ∞∑§ ‚◊Ê¥Ã⁄U üÊ…∏Ë ◊¥ „Ò¥–\nÿÁŒ a3+a7+a11+a15=72 „Ò, ÃÊ ©‚∑§ ¬˝Õ◊ 17\n¬ŒÊ¥ ∑§Ê ÿÊª ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "306",
+        "B": "153",
+        "C": "612",
+        "D": "204 66. If 2 6 2 2 C 11, P n n + − = then n satisfies the equation :"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÊª»§‹ \n(\n)\n10\n2\n 1\n1   ( !)\nr\nr\nr\n∑\n=\n+ \n×\n ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "(11)!",
+        "B": "10×(11!)",
+        "C": "101×(10!)",
+        "D": "11×(11!)"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 70,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "(\n)2\n0\n1 \ncos2\nlim  2  tan  \n tan 2\nx\nx\nx\nx\nx\nx\n→\n− \n− \n ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "−2",
+        "B": "1 2 −",
+        "C": "1 2",
+        "D": "2 69. The sum ( ) 10 2 1 1 ( !) r r r ∑ = + × is equal to :"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ a, b e R, (a ≠ 0)– ÿÁŒ »§‹Ÿ f  ¡Ê, ÁŸêŸ mÊ⁄UÊ\n¬Á⁄U÷ÊÁ·Ã „Ò —\n2\n2\n3\n2\n    , \n0   < 1\n( ) \n    \n, \n1   < 2 \n2\n4 ,    \n2   < \nx\nx\na\nf x\na\nx\nb\nb\nx\nx\n\n\n\n\n\n∞\n\n≤\n= \n≤\n−\n≤\n•¥Ã⁄UÊ‹ [0, ∞) ◊¥ ‚ÃÃ „Ò, ÃÊ ∞∑§ ∑˝§Á◊Ã ÿÈÇ◊\n(a, b) „Ò —",
+      "options": {
+        "A": "( ) 2, 1 3 −",
+        "B": "( ) 2, 1 3 − +",
+        "C": "( ) 2, 1 3 −+",
+        "D": "( ) 2, 1 3 − −"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ f(x)=sin4x+cos4x „Ò, ÃÊ ÁŸêŸ ◊¥ ‚ Á∑§‚\n•¥Ã⁄UÊ‹ ◊¥ f  ∞∑§ ﬂœ¸◊ÊŸ »§‹Ÿ „Ò?",
+      "options": {
+        "A": "0, 4       π",
+        "B": ", 4 2       π π",
+        "C": "5 , 2 8       π π",
+        "D": "5 3 , 8 4       π π 71. Let a, b e R, (a ≠ 0). If the function f defined as 2 2 3 2 , 0 < 1 ( ) , 1 < 2 2 4 , 2 < x x a f x a x b b x x      ∞  ≤ = ≤ − ≤ is continuous in the interval [0, ∞), then an ordered pair (a, b) is :"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ C ∞∑§ ﬂ∑˝§ „Ò ¡Ê \n ( ) \n1 \n4  \n3\ny x\nx\n= + \n− ,\n3\n4\nx >\n mÊ⁄UÊ ¬˝ŒûÊ „Ò– ÿÁŒ C ¬⁄U P ∞∑§ ∞‚Ê Á’¥ŒÈ „Ò\nÁ∑§ P ¬⁄U πË¥øË ªß¸ S¬‡Ê¸ ⁄UπÊ ∑§Ë …Ê‹ 2\n3\n „Ò, ÃÊ ﬂ„\nÁ’¥ŒÈ Á¡‚‚ P ¬⁄U πË¥øÊ ªÿÊ •Á÷‹¥’ ªÈ$¡⁄UÃÊ „Ò, „Ò —",
+      "options": {
+        "A": "(2, 3)",
+        "B": "(4, −3)",
+        "C": "(1, 7)",
+        "D": "(3, −4)"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 74,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚◊Ê∑§‹ (\n)\n2\n1 \n \n \ndx\nx\nx\nx\n+ \n− \n ’⁄UÊ’⁄U „Ò —\n(¡„Ê° C ∞∑§ ‚◊Ê∑§‹Ÿ •ø⁄U „Ò–)",
+      "options": {
+        "A": "1 2 C 1 x x + − + −",
+        "B": "1 2 C 1 x x − − + +",
+        "C": "1 C 1 x x − − + +",
+        "D": "1 2 C 1 x x + + − 73. Let C be a curve given by ( ) 1 4 3, y x x = + − 3 4 x > . If P is a point on C, such that the tangent at P has slope 2 3 , then a point through which the normal at P passes, is :"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 75,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚◊Ê∑§‹ \n2\n2\n2\n \n28  \n196  \nx\ndx\nx\nx\nx\n\n\n\n\n\n\n\n\n\n\n\n\n− \n+ \n+ \n, ¡„Ê°\n[x], x ‚ ∑§◊ ÿÊ x ∑§ ’⁄UÊ’⁄U ◊„ûÊ◊ ¬ÍáÊÊZ∑§ „Ò, ∑§Ê\n◊ÊŸ „Ò —",
+      "options": {
+        "A": "6",
+        "B": "3",
+        "C": "7",
+        "D": "1 3"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 76,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "x e R, x ≠ 0, ∑§ Á‹∞, ÿÁŒ y(x) ∞∑§ ∞‚Ê •ﬂ∑§‹ŸËÿ\n»§‹Ÿ „Ò Á∑§\n1\n1\n( )",
+      "options": {
+        "A": "( ) x x x y t dt x t y t dt ∫ ∫ = + „Ò, ÃÊ y (x) ’⁄UÊ’⁄U „Ò — (¡„Ê° C ∞∑§ •ø⁄U „Ò–)",
+        "B": "1 2 C x e x −",
+        "C": "1 3 C x e x −",
+        "D": "1 3 C x x e 75. The value of the integral 2 2 2 28 196 x dx x x x             − + + , where [x] denotes the greatest integer less than or equal to x, is :"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 77,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "•ﬂ∑§‹ ‚◊Ë∑§⁄UáÊ \ntan\nsec   \n,\n2\n2 \ndy\ny\nx\nx\ndx\ny\n + \n=\n ¡„Ê°\n0   < 2\nx\nπ\n≤\n „Ò ÃÕÊ y(0)=1 „Ò, ∑§Ê „‹ „Ò —",
+      "options": {
+        "A": "1 sec tan x y x x = − +",
+        "B": "2 1 sec tan x y x x = + +",
+        "C": "2 1 sec tan x y x x = − +",
+        "D": "1 sec tan x y x x = + +"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 78,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "¬˝∑§Ê‡Ê ∑§Ë ∞∑§ Á∑§⁄UáÊ ∞∑§ ⁄UπÊ ∑§Ë ÁŒ‡ÊÊ ◊¥ •Ê¬ÁÃÃ\n„Ò ¡Ê ∞∑§ •ãÿ ⁄UπÊ 7x−y+1=0 ∑§Ê Á’¥ŒÈ\n(0, 1) ¬⁄U Á◊‹ÃË „Ò–  ﬂ„ Á∑§⁄UáÊ Á»§⁄U ß‚ Á’¥ŒÈ ‚ ⁄UπÊ\ny+2x=1 ∑§Ë ÁŒ‡ÊÊ ◊¥ ¬Á⁄UﬂÁÃ¸Ã „ÊÃË „Ò, ÃÊ •Ê¬ÁÃÃ\n¬˝∑§Ê‡Ê ∑§Ë Á∑§⁄UáÊ ∑§Ê ‚◊Ë∑§⁄UáÊ „Ò —",
+      "options": {
+        "A": "41x−38y+38=0",
+        "B": "41x+25y−25=0",
+        "C": "41x+38y−38=0",
+        "D": "41x−25y+25=0 77. The solution of the differential equation tan sec , 2 2 dy y x x dx y + = where 0 < 2 x π ≤ , and y(0)=1, is given by :"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 79,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊Í‹ Á’¥ŒÈ O ‚ „Ê∑§⁄U ¡ÊŸ ﬂÊ‹Ë ∞∑§ ‚⁄U‹ ⁄UπÊ ⁄UπÊ•Ê¥\n3y=10−4x ÃÕÊ 8x+6y+5=0 ∑§Ê ∑˝§◊‡Ê—\nÁ’¥ŒÈ•Ê¥ A ÃÕÊ B ¬⁄U Á◊‹ÃË „Ò¥, ÃÊ Á’¥ŒÈ O ⁄UπÊπ¥«U\nAB ∑§Ê Á¡‚ •ŸÈ¬ÊÃ ◊¥ Áﬂ÷ÊÁ¡Ã ∑§⁄UÃÊ „Ò, ﬂ„ „Ò —",
+      "options": {
+        "A": "2 : 3",
+        "B": "1 : 2",
+        "C": "4 : 1",
+        "D": "3 : 4"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 80,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "©‚ ﬂÎûÊ Á¡‚∑§Ê ∑§ãŒ˝ ‚⁄U‹ ⁄UπÊ•Ê¥ x−y=1 ÃÕÊ\n2x+y=3 ∑§Ê ¬˝ÁÃë¿UŒ Á’¥ŒÈ „Ò, ∑§ Á’¥ŒÈ (1, −1) ¬⁄U\nπË¥øË ªß¸ S¬‡Ê¸ ⁄πÊ ∑§Ê ‚◊Ë∑§⁄UáÊ „Ò —",
+      "options": {
+        "A": "4x+y−3=0",
+        "B": "x+4y+3=0",
+        "C": "3x−y−4=0",
+        "D": "x−3y−4=0"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 81,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "P ÃÕÊ Q ¬⁄Uﬂ‹ÿ y2=4x ¬⁄U ÁSÕÃ ŒÊ Á÷ãŸ Á’¥ŒÈ „Ò\nÁ¡Ÿ∑§ ¬˝Êø‹ ∑˝§◊‡Ê— t ÃÕÊ t1 „Ò¥–  ÿÁŒ P ¬⁄U πË¥øÊ\nªÿÊ •Á÷‹¥’ Q ‚ „Ê∑§⁄U ¡ÊÃÊ „Ò, ÃÊ 2\n1t  ∑§Ê ãÿÍŸÃ◊\n◊ÊŸ „Ò —",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "8 79. A straight line through origin O meets the lines 3y=10−4x and 8x+6y+5=0 at points A and B respectively. Then O divides the segment AB in the ratio :"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 82,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ •ÁÃ¬⁄Uﬂ‹ÿ, Á¡‚∑§Ê •ŸÈ¬˝SÕ •ˇÊ ‡ÊÊ¥∑§ﬂ\n2\n2\n4\n3\n4\ny\nx  + \n =  ∑§ ŒËÉÊ¸ •ˇÊ ∑§Ë ÁŒ‡ÊÊ ◊¥ „Ò ÃÕÊ\nÁ¡‚∑§ ‡ÊË·¸ ß‚ ‡ÊÊ¥∑§ﬂ ∑§Ë ŸÊÁ÷ÿÊ¥ ¬⁄U „Ò– ÿÁŒ\n•ÁÃ¬⁄Uﬂ‹ÿ ∑§Ë ©à∑§ãŒ˝ÃÊ 3\n2  „Ò, ÃÊ ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ\n‚Ê Á’¥ŒÈ ß‚ ¬⁄U ÁSÕÃ Ÿ„Ë¥ „Ò?",
+      "options": {
+        "A": "(0, 2)",
+        "B": "( ) 5, 2 2",
+        "C": "( ) 10, 2 3",
+        "D": "( ) 5, 2 3"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 83,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ‚◊Ã‹ ◊¥ ∞∑§ ÁòÊ÷È¡ ABC „Ò Á¡‚∑§ ‡ÊË·¸\nA(2, 3, 5), B(−1, 3, 2) ÃÕÊ C(λ, 5, µ) „Ò¥–  ÿÁŒ\nA ‚ „Ê∑§⁄U ¡ÊÃË ◊ÊÁäÿ∑§Ê ÁŸŒ¸‡ÊÊ¥∑§ •ˇÊÊ¥ ¬⁄U ‚◊ÊŸ\nM§¬ ‚ ¤ÊÈ∑§Ë „Ò, ÃÊ (λ3+µ3+5) ∑§Ê ◊ÊŸ „Ò —",
+      "options": {
+        "A": "1130",
+        "B": "1348",
+        "C": "676",
+        "D": "1077 82. A hyperbola whose transverse axis is along the major axis of the conic, 2 2 4 3 4 y x + = and has vertices at the foci of this conic. If the eccentricity of the hyperbola is 3 2 , then which of the following points does NOT lie on it ?"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 84,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "λ ∑§ ﬂ„ Á÷ãŸ ﬂÊSÃÁﬂ∑§ ◊ÊŸÊ¥ ∑§Ë ‚¥ÅÿÊ Á¡Ÿ∑§\nÁ‹∞ ⁄πÊ∞° \n2\n \n2\n1\n \n3\n \n1\n2\ny\nx\nz\nλ\n− \n− \n+ \n = \n= \n ÃÕÊ\n2\n \n2\n3\n \n1\n \n1\n2\ny\nx\nz\nλ\n− \n− \n− \n = \n= \n ‚◊Ã‹Ëÿ „Ò¥, „Ò —",
+      "options": {
+        "A": "4",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 85,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ ABC ∞∑§ ÁòÊ÷È¡ „Ò Á¡‚∑§Ê ¬Á⁄U∑§ãŒ˝ P ¬⁄U „Ò–\nÿÁŒ Á’¥ŒÈ•Ê¥ A, B, C ÃÕÊ P ∑§ ÁSÕÁÃ ‚ÁŒ‡Ê ∑˝§◊‡Ê—\n \n \na , b , c\n→\n→\n→ ÃÕÊ \n \n  \n4\na\nb\nc\n→\n→\n→\n+\n+\n „Ò¥, ÃÊ ß‚ ÁòÊ÷È¡\n∑§ ‹¥’ - ∑§ãŒ˝ ∑§Ê ÁSÕÁÃ ‚ÁŒ‡Ê „Ò —",
+      "options": {
+        "A": "a b c → → → + +",
+        "B": "2 a b c → → →           + + −",
+        "C": "0 →",
+        "D": "2 a b c → → →       + + 84. The number of distinct real values of λ for which the lines 2 2 1 3 1 2 y x z λ − − + = = and 2 2 3 1 1 2 y x z λ − − − = = are coplanar is :"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 86,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "5 ¬˝ˇÊáÊÊ¥ ∑§Ê ◊Êäÿ 5 „Ò ÃÕÊ ©Ÿ∑§Ê ¬˝‚⁄UáÊ 124 „Ò–\nÿÁŒ ©Ÿ◊¥ ‚ ÃËŸ ¬˝ˇÊáÊ 1, 2 ÃÕÊ 6 „Ò¥, ÃÊ ßŸ •Ê°∑§«∏Ê¥\n∑§Ê ◊Êäÿ ‚ ◊Êäÿ Áﬂø‹Ÿ „Ò —",
+      "options": {
+        "A": "2.4",
+        "B": "2.8",
+        "C": "2.5",
+        "D": "2.6"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 87,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ¬˝ÿÊª ∑§ ‚»§‹ „ÊŸ ∑§Ê ‚¥ÿÊª ©‚∑§ Áﬂ»§‹\n„ÊŸ ∑§ ‚¥ÿÊª ∑§Ê ŒÈªÈŸÊ „Ò–  ß‚ ¬˝ÿÊª ∑§ 6 ¬⁄UËˇÊáÊÊ¥\n◊¥ ‚ ∑§◊ ‚ ∑§◊ ¬Ê°ø ∑§ ‚»§‹ „ÊŸ ∑§Ë ¬˝ÊÁÿ∑§ÃÊ\n„Ò —",
+      "options": {
+        "A": "240 729",
+        "B": "192 729",
+        "C": "256 729",
+        "D": "496 729 86. The mean of 5 observations is 5 and their variance is 124. If three of the observations are 1, 2 and 6 ; then the mean deviation from the mean of the data is :"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 88,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If A>0, B>0 and Α  B  6\nπ\n+\n=\n, then the\nminimum value of tanA+tanB is :",
+      "options": {
+        "A": "3 2 −",
+        "B": "2 3 −",
+        "C": "4 2 3 −",
+        "D": "2 3"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": []
+    },
+    {
+      "qno": 89,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The angle of elevation of the top of a\nvertical tower from a point A, due east of it\nis 458.  The angle of elevation of the top of\nthe same tower from a point B, due south\nof A is 308.  If the distance between A and\nB is 54 2 m , then the height of the tower\n(in metres), is :",
+      "options": {
+        "A": "36 3",
+        "B": "54",
+        "C": "54 3",
+        "D": "108 88. ÿÁŒ A>0, B>0 ÃÕÊ Α B 6 π + = „Ò, ÃÊ tanA+tanB ∑§Ê ãÿÍŸÃ◊ ◊ÊŸ „Ò —"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 90,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The contrapositive of the following\nstatement,\n“If the side of a square doubles, then its area\nincreases four times”, is :",
+      "options": {
+        "A": "If the side of a square is not doubled, then its area does not increase four times.",
+        "B": "If the area of a square increases four times, then its side is doubled.",
+        "C": "If the area of a square increases four times, then its side is not doubled.",
+        "D": "If the area of a square does not increase four times, then its side is not doubled. - o O o - 90. ÁŸêŸ ∑§ÕŸ ∑§Ê ¬˝ÁÃœŸÊà◊∑§ (contrapositive) „Ò — ““ÿÁŒ Á∑§‚Ë ﬂª¸ ∑§Ë ÷È¡Ê ŒÈªÈŸË „Ê ¡Ê∞, ÃÊ ©‚∑§Ê ˇÊòÊ»§‹ øÊ⁄U ªÈŸÊ ’…∏ ¡ÊÃÊ „Ò”” —"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

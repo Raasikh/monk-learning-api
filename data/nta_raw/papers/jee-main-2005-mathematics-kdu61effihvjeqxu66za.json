@@ -1,0 +1,333 @@
+{
+  "paper_id": "jee-main-2005-mathematics-kdu61effihvjeqxu66za",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2005-mathematics-kdu61effihvjeqxu66za",
+    "exam": "jee-main",
+    "year": 2005,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2005/iit-jee-maths-paper-ii/81199",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/KDu61EFfIHvJeQxu66Za",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "c354801f9bff942780382826654ff341fd12b20eb4c6fb83f3d2e25bde818f15",
+    "page_count": 3,
+    "text_chars": 3379,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2005-mathematics-kdu61effihvjeqxu66za.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 18,
+  "defects": [
+    "18/18 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A person goes to office either by car, scooter, bus or train probability of which being \n1/7,3/7,2/7 and 1/7 respectively. Probability that he reaches office late, if he takes car, \nscooter, bus or train is 2/9,1/9,4/9 and 1/9 respectively. Given that he reaches office in \ntime, then what is the probability that he travelled by a car?",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find the range of values of t for which  \n \n               2 sin t = (1-2x+5x2)/(3x2-2x-1),t Î [-π/2,π/2].",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Circles with radii 3, 4 and 5 touch each other externally if P is the point of intersection of \ntangents to these circles at their points of contact. Find the distance of P from the point of \ncontact.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find the equation of the plane containing the line 2x – y + z – 3 = 0,  \n      3x + y + z = 5 and at a distance of 1/√6 from the point (2, 1 – 1).",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If |f(x1) – f(x2)| < (x1 – x2)2, for all x1, x2 Î R. Find the equation of tangent to  \n     \n    the curve y = f(x) at the point (1, 2).",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If total number of runs scored in n matches is ((n+1)/4) (2n+1 – n – 2) where n > 1, and \nthe runs scored in the kth match are given by k. 2n+1–k, where 1 < k < n. Find n.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The area of the triangle formed by the intersection of a line parallel to x-axis and passing \nthrough (h, k) with the lines y = x and x + y = 2 is 4h2. Find the locus of point P.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Evaluate  \n \n               ∫0\nπe|cos x| (2 sin (1/2 cos x) + 3 cos (1/2 cos x) ) sin x dx.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Incident ray is along the unit vector v and the reflected ray is along the unit vector w. \nThe normal is along unit vector a outwards. Express vector w in terms of vector a and v.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Tangents are drawn from any point on the hyperbola x2/9 - y2/4 = 1 to the circle \nx2 + y2 = 9. Find the locus of mid-point of the chord of contact.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find the equation of the common tangent in 1st quadrant to the circle x2 + y2 = 16 and \nthe ellipse x2/25 + y2/4 = 1. Also find the length of the intercept of the tangent between the \ncoordinate axes.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If length of tangent at any point on the curve y = f(x) intercepted between the point \nand the x-axis is of length 1. Find the equation of the curve.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find the area bounded by the curves  \n      x2 = y, x2 = – y and y2 = 4x – 3.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If one of the vertices of the square circumscribing the circle |z – 1| = √2 is  \n       2 + √3i. Find the other vertices of square.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If f(x – y) = f(x) . g(y) – f(y) . g(x) and g(x – y) = g(x) . g(y) + f(x). f(y) for all x, \ny Î R. If right hand derivative at x = 0 exists for f(x). Find derivative of g(x) at x = 0.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If p(x) be a polynomial of degree 3 satisfying p(–1) = 10, p(1) = –6 and p(x) has \nmaximum at x = –1 and p’(x) has minima at x = 1. Find the distance between the local \nmaximum and local minimum of the curve.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "f(x) is a differentiable function and g(x) is a double differentiable function such that \n|f(x)| < 1 and f’(x) = g(x). If f2 (0) + g2 (0) = 0. Prove that there exists some cÎ (–3, 3) \nsuch that g(c). gn (c) < 0.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If  \n\n \n \n           \n, \nf(x) is a quadratic function and its maximum value occurs at a point V. A is a point of \nintersection of y = f(x) with x-axis and point B is such that chord AB subtends a right angle \nat V. Find the area enclosed by f(x) and chord AB.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    }
+  ]
+}

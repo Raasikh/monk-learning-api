@@ -1,0 +1,381 @@
+{
+  "paper_id": "jee-main-2020-s1-physics-2020-01-09-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-physics-2020-01-09-shift-2",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-09",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-9-jan-2020-physics-paper-shift-2/243275",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/s3cX1PySgbQCCJlFtBuR",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "a3e1c978acfeab91ba377c2570924208c3e6d079759c7198f59394f20e3fd2ea",
+    "page_count": 18,
+    "text_chars": 13487,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-physics-2020-01-09-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 16,
+  "defects": [
+    "26 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 2, 2, 7, 2, 2, 4, 3, 2, 17, 3, 18, 19, 2]",
+    "4/16 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is a long solenoid of radius 𝑅 having 𝑛 turns per unit length with current flowing \nin it. A particle having charge 𝑞 and mass 𝑚 is projected with speed 𝑣 in the perpendicular \ndirection of axis from a point on its axis. Find maximum value of 𝑣 so that it will not collide \nwith the solenoid.",
+      "options": {
+        "A": "𝑅𝑞𝜇0𝑖𝑛 5𝑚",
+        "B": "𝑅𝑞𝜇0𝑖𝑛 2𝑚",
+        "C": "3𝑅𝑞𝜇0𝑖𝑛 𝑚",
+        "D": "𝑅𝑞𝜇0𝑖𝑛 4𝑚 Solution: (b) Looking at the cross-section of the solenoid, 𝑅𝑚𝑎𝑥 of the particle’s motion has to be 𝑅 2 for it not to strike the solenoid. 𝑞𝑣𝐵= 𝑚𝑣2 𝑅 2 𝑅𝑚𝑎𝑥= 𝑅 2 = 𝑚𝑣𝑚𝑎𝑥 𝑞𝜇0𝑖𝑛 𝑉𝑚𝑎𝑥= 𝑅𝑞𝜇0𝑖𝑛 2𝑚"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A capacitor 𝐶 and resistor 𝑅 are connected to a battery of 5 𝑉 in series. Now the battery \nis disconnected and a diode is connected as shown in the figures (a) and (b) respectively. \nJEE Main 2020 Paper\n\n9th Jan (Shift 2,Physics)     \nPage | 2  \nThe charge on the capacitor after time 𝑅𝐶 in (a) and (b) respectively is 𝑄𝐴 and 𝑄𝐵. Their \nvalues are",
+      "options": {
+        "A": "5𝐶𝑉 𝑒, 5𝐶𝑉",
+        "B": "5𝐶𝑉 𝑒, 5𝐶𝑉 2𝑒",
+        "C": "5𝐶𝑉, 5𝐶𝑉",
+        "D": "5𝐶𝑉, 5𝐶𝑉 𝑒 Solution:(a) Maximum charge on capacitor = 5𝐶𝑉 is forward biased and (b) is reverse biased For case (a) 𝑞= 𝑞𝑚𝑎𝑥(1 − 𝑒 −𝑡 𝑅𝐶) = 5𝐶𝑉 𝑄𝐴= 5𝐶𝑉𝑒−1 For case (b) 𝑄𝐵= 5𝐶𝑉"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Different values of 𝑎, 𝑏 and 𝑐 are given and their sum is 𝑑. Arrange the value of 𝑑 in \nincreasing order \n \n \n𝑎 \n𝑏 \n𝑐 \n1 \n220.1 \n20.4567 \n40.118 \n2 \n218.2 \n22.3625 \n40.372 \n3 \n221.2 \n20.2435 \n39.432 \n4 \n221.4 \n18.3625 \n40.281 \n \ne. 𝑑1 = 𝑑2 = 𝑑3 = 𝑑4 \nf. \n𝑑1 < 𝑑2 < 𝑑3 < 𝑑4 \ng. 𝑑1 > 𝑑2 > 𝑑3 > 𝑑4 \nh. 𝑑4 < 𝑑1 < 𝑑3 = 𝑑2 \n \nSolution:(d)  \n \n\n9th Jan (Shift 2,Physics)     \nPage | 3  \n \n𝑎 \n𝑏 \n𝑐 \n𝑎+ 𝑏+ 𝑐= 𝑑 \nRound \noff",
+      "options": {
+        "A": "220.1 20.4567 40.118 𝑑1 = 280.6747 280.7",
+        "B": "218.2 22.3625 40.372 𝑑2 = 280.9345 280.9",
+        "C": "221.2 20.2435 39.432 𝑑3 = 280.8755 280.9"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "options_count_3",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "221.4 \n18.3625 \n40.281 \n𝑑4\n= 280.0435 \n280.0",
+      "options": {
+        "D": "A particle starts moving with a velocity 𝑢⃗ = 3𝑖̂ from origin and an acceleration 𝑎 = 6𝑖̂ + 4𝑗̂ . Here, if the 𝑦-coordinate of the particle is 32 𝑚, then its x-coordinate at that instant will be",
+        "A": "60",
+        "B": "48",
+        "C": "45"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A mass 𝑚 is attached to a spring of natural length 𝑙𝑜 and spring constant 𝑘. One end of \nthe spring is attached to the centre of a disc in the horizontal plane which is being rotated \nby a constant angular speed, . Find the extension per unit length in the spring (given \n𝑘>>>  𝑚2 )",
+      "options": {
+        "A": "3𝑚𝜔2 2𝑘",
+        "B": "√2 3 𝑚𝜔2 𝑘",
+        "C": "𝑚𝜔2 𝑘",
+        "D": "3𝑚𝜔2 𝑘 Solution: (c) 9th Jan (Shift 2,Physics) Page | 4 Using Newton’s second law of dynamics, 𝑚𝜔2(𝑙𝑜+ 𝑥) = 𝑘𝑥 (𝑙𝑜 𝑥+ 1) = 𝑘 𝑚𝜔2 𝑥= 𝑙𝑜𝑚𝜔2 𝑘−𝑚𝜔2 𝑘 >> 𝑚2 So, 𝑥 𝑙𝑜 is equal to 𝑚𝜔2 𝑘"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A loop of radius 𝑅 and mass 𝑚 is placed in a uniform magnetic field 𝐵 with its plane \nperpendicular to the field. A current 𝑖 is flowing in it. Now the loop is slightly rotated \nabout its diameter and released. Find the time period of oscillations.",
+      "options": {
+        "A": "2√ 𝜋𝑀 𝑖𝐵",
+        "B": "√ 2𝜋𝑀 𝑖𝐵",
+        "C": "2√ 𝑀 𝜋𝑖𝐵",
+        "D": "√ 𝑀 𝜋𝑖𝐵 Solution: (b) Considering the torque situation on the loop, 9th Jan (Shift 2,Physics) Page | 5 𝜏= 𝑀𝐵𝑠𝑖𝑛𝜃= −𝑖𝛼 𝜋𝑅2𝑖𝐵𝜃= −𝑚𝑅2 2 𝛼 The above equation is analogous to 𝜃= −𝐶𝛼, where 𝐶= 𝜔2 = 2𝜋𝑖𝐵 𝑀 𝜔= √2𝜋𝑖𝐵 𝑀 = 2𝜋 𝑇 𝑇= √2𝜋𝑀 𝑖𝐵"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A sphere of density 𝜌 is half submerged in a liquid of density 𝜎 and surface tension 𝑇. \nThe sphere remains in equilibrium. Find the radius of this sphere. (Assume the force due \nto surface tension acts tangentially to surface of sphere.)",
+      "options": {
+        "A": "√ 3𝑇 2(𝜌+𝜎)𝑔",
+        "B": "√ 3𝑇 4(𝜌− 𝜎)𝑔",
+        "C": "√ 3𝑇 2(𝜌−𝜎 2)𝑔",
+        "D": "√ 𝑇 (𝜌+ 𝜎)𝑔 Solution:(c) In equilibrium, net external force acting on the sphere is zero. 𝑚𝑔= 𝐹𝑇+ 𝐵 9th Jan (Shift 2,Physics) Page | 6 𝜌𝑉𝑔= 𝜎(𝑉"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A string of mass per unit length  =  6 × 10−3 𝑘𝑔/𝑚 is fixed at both ends under the \ntension 540 𝑁. If the string is in resonance with consecutive frequencies 420 𝐻𝑧 and \n490 𝐻𝑧. Then what would be the length of the string?",
+      "options": {
+        "A": "2.8 m",
+        "B": "2.1 m",
+        "C": "4.5 m",
+        "D": "4.2 m Solution: (b) Key Idea: The difference of two consecutive resonant frequencies is the fundamental resonant frequency. Fundamental frequency= 490 −420 = 70 𝐻𝑧 70 = 1 2𝑙√𝑇 𝜇 ⇒70 = 1 2𝑙 √ 540 6 × 10−3 ⇒𝑙= 1 2 × 70 √90 × 10−3 = 300 140 ⇒𝑙≈2.14 𝑚"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An EM wave is travelling in  \n 𝑖̂+𝑗̂ \n2   direction. Axis of polarization of EM wave is found to be \n𝑘̂. Then equation of magnetic field will be",
+      "options": {
+        "A": "𝑖̂−𝑗̂ √2 𝑐𝑜𝑠(𝜔𝑡−𝑘( 𝑖̂+𝑗̂ √2 ))",
+        "B": "𝑖̂+𝑗̂ √2 𝑐𝑜𝑠(𝜔𝑡+ 𝑘( 𝑖̂+𝑗̂ √2 ))",
+        "C": "𝑖̂−𝑗̂ √2 𝑐𝑜𝑠(𝜔𝑡+ 𝑘( 𝑖̂+𝑗̂ √2 ))",
+        "D": "𝑘̂𝑐𝑜𝑠(𝜔𝑡−𝑘( 𝑖̂+𝑗̂ √2 )) Solution:(a) 9th Jan (Shift 2,Physics) Page | 7 EM wave is in direction 𝑖̂+𝑗̂ 2 Electric field is in direction 𝑘̂ Direction of propagation of EM wave is given by 𝐸⃗ × 𝐵⃗"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two gases Ar (40) and Xe (131) at equal temperature have the same number density. \nTheir diameters are 0.07 nm and 0.10 nm respectively. Find the ratio of their mean free \ntime",
+      "options": {
+        "A": "1.03",
+        "B": "2.04",
+        "C": "2.09",
+        "D": "2.49 Solution:(a) Mean free time = 1 √2𝑛𝜋𝑑2 𝑡𝐴𝑟 𝑡𝑋𝑒 = 𝑑𝑋𝑒 2 𝑑𝐴𝑟 2 = ( 0.1 0.07) 2 = (10 7 ) 2 = 2.04"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "When the same mass is suspended from two steel rods, the ratio of their energy densities \nis 1: 4. If the lengths of both the rods are equal, then the ratio of their diameters will be",
+      "options": {
+        "A": "√2: 1",
+        "B": "1: √2",
+        "C": "1: 2",
+        "D": "2: 1 Solution: (a) 𝑑𝑈 𝑑𝑉= 1 2 × 𝑠𝑡𝑟𝑒𝑠𝑠× 𝑠𝑡𝑟𝑒𝑠𝑠 𝑌 = 1 2 × 𝐹2 𝐴2𝑌 𝑑𝑈 𝑑𝑉∝1 𝐷4 (𝑑𝑈 𝑑𝑉) 1 (𝑑𝑈 𝑑𝑉) 2 = 𝐷24 𝐷14= 1 4 9th Jan (Shift 2,Physics) Page | 8 𝐷1 𝐷2 = (4) 1 4 ∴𝐷1: 𝐷2 = √2: 1"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two planets of masses 𝑀 and \n𝑀\n2 have radii 𝑅 and \n𝑅\n2 respectively. If the ratio (\n𝑣1\n𝑣2) of the \nescape velocities from their surfaces is \n𝑛\n4   , then n is",
+      "options": {
+        "A": "8",
+        "B": "2",
+        "C": "4",
+        "D": "1 Solution: (c) We know that the escape velocity is given by, 𝑉𝑒= √2𝐺𝑀 𝑅 Now 𝑉1 𝑉2 = √2𝐺𝑀 𝑅 √ 2𝐺𝑀 2 𝑅 2 = 1 We are given that 𝑉1 𝑉2 = 𝑛 4 ⇒ 𝑛 4 = 1 ⇒𝑛= 4"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find the centre of mass of the given rod of linear mass density 𝜆= (𝑎+ 𝑏(\n𝑥\n𝑙)\n2\n). Here, 𝑥 \nis the distance from one of its end. (Length of the rod is 𝑙)",
+      "options": {
+        "A": "3𝑙 4 ( 2𝑎+𝑏 2𝑎+𝑏)",
+        "B": "3𝑙 4 ( 2𝑎+𝑏 3𝑎+𝑏) 9th Jan (Shift 2,Physics) Page | 9",
+        "C": "𝑙 4 ( 𝑎+𝑏 3𝑎+𝑏)",
+        "D": "𝑙( 𝑎+𝑏 3𝑎+𝑏) Solution:(b) Here we take a small element along the length as 𝑑𝑥 at a distance 𝑥 from the left end as shown. 𝑥𝑐𝑚= 1 𝑀∫𝑥. 𝑑𝑚 𝑙 0 ⇒𝑑𝑀= 𝜆. 𝑑𝑥= (𝑎+ 𝑏(𝑥 𝑙) 2 ) . 𝑑𝑥 𝑥𝑐𝑚= ∫𝑥𝜆𝑑𝑥 ∫𝜆𝑑𝑥= ∫𝑥(𝑎+ 𝑏𝑥2 𝑙2 ) 𝑑𝑥 𝑙 0 ∫(𝑎+ 𝑏𝑥2 𝑙2 ) 𝑑𝑥 𝑙 0 = 𝑎(𝑥2 2 ) 0 𝑙 + 𝑏 𝑙2 (𝑥4 4 ) 0 𝑙 𝑎(𝑥)0 𝑙+ 𝑏 𝑙2 (𝑥3 3 ) 0 𝑙 = 𝑎𝑙2 2 + 𝑏𝑙2 4 𝑎𝑙+ 𝑏𝑙 3 = 3𝑙 4 (2𝑎+ 𝑏 3𝑎+ 𝑏)"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle is projected from the ground with a speed u at an angle of 60° from horizontal. \nIt collides with a second particle of equal mass moving with a horizontal speed u in the \nsame direction at the highest point of its trajectory. If the collision is perfectly inelastic \nthen find the horizontal distance travelled by them after this collision when they reached \nthe ground.",
+      "options": {
+        "A": "3√6𝑢2 8𝑔",
+        "B": "3√3𝑢2 8𝑔",
+        "C": "𝑢2 8𝑔",
+        "D": "√3𝑢2 𝑔 Solution: (b) 9th Jan (Shift 2,Physics) Page | 10 The only external force acting on the colliding system during the collision is the gravitational force. Since gravitational force is non- impulsive, the linear momentum of the system is conserved just before and just after the collision. 𝑝𝑖= 𝑝𝑓 𝑚𝑢+ 𝑚𝑢 𝑐𝑜𝑠𝜃= 2𝑚𝑣 ⟹ 𝑣= 𝑢(1 + 𝑐𝑜𝑠600) 2 = 3 4 𝑢 So the horizontal range after the collision = 𝑣𝑡 = 𝑣√ 2𝐻max 𝑔 = 3 4 𝑢√ 2𝑢2 sin2 600 2𝑔2 = 3 4 𝑢2 √3 4 𝑔= 3√3𝑢2 8𝑔"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "System is released from rest. Moment of inertia of pulley is 𝐼. Find angular speed of pulley \nwhen 𝑚1 block falls by ℎ. (Given 𝑚1 > 𝑚2 and assume no slipping between string and \npulley)",
+      "options": {
+        "A": "1 𝑅√ 2(𝑚1−𝑚2)𝑔ℎ 𝑚1+𝑚2+ 𝐼 𝑅2",
+        "B": "1 R √ 4(m2+m1)gh m1+m2+ I R4 9th Jan (Shift 2,Physics) Page | 11",
+        "C": "1 R √ (m1−m2)gh m1+m2+ I R",
+        "D": "1 R √ 2(m2+m1)gh m1+m2+ I R2 Solution: (a) Assume initial potential energy of the blocks to be zero. Initial kinetic energy is also zero since the blocks are at rest. When block 𝑚1 falls by ℎ, 𝑚2 goes up by ℎ (because of length constraint) Final P.E = 𝑚2𝑔ℎ−𝑚1𝑔ℎ Let the final speed of the blocks be 𝑣 and angular velocity of the pulley be 𝜔 Final K.E = 1 2 (𝑚1 + 𝑚2)𝑣2 + 1 2 𝐼𝜔2 Total energy is conserved. Hence, 0 = 𝑚2𝑔ℎ−𝑚1𝑔ℎ+ 1 2 (𝑚1 + 𝑚2)𝑣2 + 1 2 𝐼𝜔2 𝑣= 𝜔𝑟 (due to no slip condition) ⇒1 2 (𝑚1 + 𝑚2)𝜔2𝑅2 + 1 2 𝐼𝜔2 = (𝑚1 −𝑚2)𝑔ℎ ⇒𝜔2 [1 2 (𝑚1 + 𝑚2)𝑅2 + 1 2 𝐼] = (𝑚1 −𝑚2)𝑔ℎ ⇒𝜔2 = 2(𝑚1 −𝑚2)𝑔ℎ 𝑅2 [(𝑚1 + 𝑚2) + 𝐼 𝑅2] ⇒𝜔= 1 𝑅√ 2(𝑚1 −𝑚2)𝑔ℎ [(𝑚1 + 𝑚2) + 𝐼 𝑅2]"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An H-like atom has its ionization energy equal to 9R. Find the wavelength of light emitted \n(in 𝑛𝑚) when an electron jumps from the second excited state to the ground state. (R is \nRydberg constant)",
+      "options": {
+        "A": "12.40",
+        "B": "11.39",
+        "C": "5.80",
+        "D": "22.76 Solution:(b) ℎ𝑐 𝜆= (13.6 𝑒𝑉)𝑍2 ( 1 𝑛1 2 −1 𝑛2"
+      },
+      "page_start": 11,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B"
+      ]
+    }
+  ]
+}

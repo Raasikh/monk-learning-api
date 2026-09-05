@@ -1,0 +1,275 @@
+{
+  "paper_id": "jee-main-2019-s2-2019-04-12-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2019-s2-2019-04-12-shift-2",
+    "exam": "jee-main",
+    "year": 2019,
+    "session": 2,
+    "exam_date": "2019-04-12",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2019/jee-main-12-april-2019-paper-shift-2/140226",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/P2qzy1Jc89blgF5Nie4V",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "1943f7077ab28e3d9f82aed313130c298a0b6b5204c5e79d0988c8a473c711b4",
+    "page_count": 22,
+    "text_chars": 42202,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 2,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2019-s2-2019-04-12-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 7,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 8,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 8,
+  "defects": [
+    "96 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 4, 3, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]",
+    "8/8 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The test is of 3 hours duration.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Test Booklet consists of 90 questions. The maximum marks are 360.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There are three parts in the question paper A, B, C consisting of Physics, Chemistry and Mathematics\nhaving 30 questions in each part of equal weightage.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Each question is allotted 4 (four) marks for each correct response. ¼ (one-fourth) marks will be deducted\nfor indicating incorrect response of each question. No deduction from the total score will be made if no\nresponse is indicated for an item in the answer sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is only one correct response for each question.\n(Physics, Chemistry and Mathematics)\n12/04/2019\nEvening\n\nJEE (MAIN)-2019 (Online) Phase-2\nPART–A : PHYSICS",
+      "options": {
+        "A": "A uniform cylindrical rod of length L and radius r, is made from a material whose Young’s modulus of Elasticity equals Y. When this rod is heated by temperature T and simultaneously subjected to a net longitudinal compressional force F, its length remains unchanged. The coefficient of volume expansion, of the material of the rod, is (nearly) equal to:",
+        "B": "3F / (r2YT)",
+        "C": "F / (3r2YT)",
+        "D": "6F / (r2YT)"
+      },
+      "page_start": 1,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_A"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "One kg of  water, at 20°C, is heated in an\nelectric kettle whose heating element has a\nmean (temperature averaged) resistance of 20 .\nThe rms voltage in the mains is 200 V. Ignoring\nheat loss from the kettle, time taken for water to\nevaporate fully, is close to\n[Specific heat of water = 4200 J/(kg °C),\nLatent heat of water = 2260 kJ/kg]",
+      "options": {
+        "A": "16 minutes",
+        "B": "3 minutes",
+        "C": "22 minutes",
+        "D": "10 minutes"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An electron, moving along the x-axis with an\ninitial energy of 100 eV, enters a region of\nmagnetic field \n\n\n\n\u0002\n3\nˆ\nB\n(1.5 10\n T) k  at S (See\nfigure). The field extends between x = 0 and\nx = 2 cm. The electron is detected at the point\nQ on a screen placed 8 cm away from the point\nS. The distance d between P and Q (on the\nscreen) is\n(electron’s charge = 1.6 × 10–19 C, mass of\nelectron = 9.1 × 10–31 kg)\n2 cm\n8 cm\nd\nQ\nP\nS",
+      "options": {
+        "A": "11.65 cm",
+        "B": "12.87 cm",
+        "C": "2.25 cm",
+        "D": "1.22 cm"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A Carnot engine has an efficiency of 1.\n6  When\nthe temperature of the sink is reduced by 62°C,\nits efficiency is doubled. The temperatures of\nthe source and the sink are, respectively,",
+      "options": {
+        "A": "99°C, 37°C",
+        "B": "37°C, 99°C",
+        "C": "124°C, 62°C",
+        "D": "62°C, 124°C"
+      },
+      "page_start": 4,
+      "page_end": 22,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "paper_id": "jee-main-2011-9j42p5rhoftgprgo4rbl",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2011-9j42p5rhoftgprgo4rbl",
+    "exam": "jee-main",
+    "year": 2011,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper_with_solutions",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2011/aieee-2011-question-paper-with-solution-rescheduled-2011/98455",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/9J42P5RHOfTGprGO4RBL",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "6cee5e58d98f04c8a61ac99179acb8581ac9be94725fdebbd4bece41f1d0d390",
+    "page_count": 30,
+    "text_chars": 15936,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 30,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2011-9j42p5rhoftgprgo4rbl.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": "Physics",
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": "Mathematics",
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 2,
+  "defects": [
+    "6 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 1, 1, 0, 2, 0]",
+    "2/2 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "R\n2\n(\nGm\n = R\nmv2\n \n \nv = \nR\n4\nGM  \n \nR\nm\nm",
+      "options": null,
+      "page_start": 8,
+      "page_end": 20,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "2\n25\n.2\n(\n2\n1\n1\n=\n−\n+\n\n\n\n\n\n−",
+      "options": null,
+      "page_start": 20,
+      "page_end": 30,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

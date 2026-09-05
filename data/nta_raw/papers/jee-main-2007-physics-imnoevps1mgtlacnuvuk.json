@@ -1,0 +1,474 @@
+{
+  "paper_id": "jee-main-2007-physics-imnoevps1mgtlacnuvuk",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2007-physics-imnoevps1mgtlacnuvuk",
+    "exam": "jee-main",
+    "year": 2007,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2007/iit-jee-physics-paper-ii/81189",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/imnoEvPs1Mgtlacnuvuk",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "c17ea0f9d1811a2fe1272afc17da8c0fcb54d77c51131b79be4d61ee72c4d44a",
+    "page_count": 8,
+    "text_chars": 9817,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2007-physics-imnoevps1mgtlacnuvuk.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 21,
+  "defects": [
+    "17/21 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the experiment to determine the speed of sound using a resonance column,",
+      "options": {
+        "A": "prongs of the tuning fork are kept in a vertical plane",
+        "B": "prongs of the tuning fork are kept in a horizontal plane",
+        "C": "in one of the two resonances observed, the length of the resonating air column is close to wavelength of sound in air",
+        "D": "in one of the two resonances observed, the length of the resonating air column is close to of the wavelength of sound in air"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A student performs an experiment to determine the Young's modulus of a wire, exactly 2 m long,\nby Searle's method. In a particular reading, the student measures the extension in the length of the wire\nto be 0.8 mm with an uncertainty of +0.05 mm at a load of exactly 1.0 kg. The student also measures the\ndiameter of the wire to be 0.4 mm with an uncertainty of +0.01 mm. Take g = 9.8 m/s2 (exact). The\nYoung's modulus obtained from the reading is",
+      "options": {
+        "A": "(2.0 + 0.3) × 1011 N/m2",
+        "B": "(2.0 + 0.2) × 1011 N/m2",
+        "C": "(2.0 + 0.1) × 1011 N/m2",
+        "D": "(2.0 + 0.05) × 1011 N/m2"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle moves in the X-Y plane under the influence of a force such that its linear momentum is p\n(t) = A[i cos (kt) - j cos (kt)]  where A and k are constants. The angle between the force and the\nmomentum is",
+      "options": {
+        "A": "0 o",
+        "B": "30 o",
+        "C": "45 o",
+        "D": "90 o Page 1 of 8"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A small object of uniform density rolls up a curved surface with an initial velocity v. It reaches up\nto a maximum height of  3v2 / 4g  with respect to the initial position. The object is",
+      "options": {
+        "A": "ring",
+        "B": "solid sphere",
+        "C": "hollow sphere",
+        "D": "disc"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Water is filled up to a height h in a beaker of radius R as shown in the figure. The density of water\nis r, the surface tension of water is T and the atmospheric pressure is P0. Consider a vertical section\nABCD of the water column through a diameter of the beaker. The force on water on one side of this\nsection by water on the other side of this section has magnitude",
+      "options": {
+        "A": "|2 P 0 Rh +Π R2 ρ g h - 2RT|",
+        "B": "|2 P 0 Rh + Rρ g h2 - 2RT|",
+        "C": "|P 0 Π R2 + Rρ g h2 - 2RT|",
+        "D": "|P 0 Π R2 + Rρ g h2 + 2RT|"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Positive and negative point charges of equal magnitude are kept at (0, 0, a/2)  and (0, 0,-a/2),\nrespectively. The work done by the electric field when another positive point charge is moved from (-a,\n0, 0) to (0, a, 0) is\nPage 2 of 8",
+      "options": {
+        "A": "positive",
+        "B": "negative",
+        "C": "zero",
+        "D": "depends on the path connecting the initial and final positions"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A magnetic field vector B = B\n0 j- exists in the region a < x < 2a and vector B =-B0 j-, in the region\n2a < x < 3a, where B0 is a positive constant. A positive point charge moving with a velocity vector v =\nv0 i-, where v0 is a positive constant, enters the magnetic field at x = a. The trajectory of the charge in\nthis region can be like, magnetic field",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Electrons with de-Broglie wavelength λ fall on the target in an X-ray tube. The cut-off wavelength\nof the emitted X-rays is",
+      "options": {
+        "A": "λ0 = 2mcλ2 /h",
+        "B": "λ0 = 2h/mc",
+        "C": "λ0 = 2m2c2λ3/h2",
+        "D": "λ0 =λ"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "STATEMENT-1\nIf there is no external torque on a body about its center of mass, then the velocity of the center of mass\nremains constant.\nbecause\nSTATEMENT-2\nThe linear momentum of an isolated system remains constant.",
+      "options": {
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "STATEMENT-1\nPage 3 of 8\n\nA cloth covers a table. Some dishes are kept on it. The cloth can be pulled out without dislodging the\ndishes from the table.\nBecause\nSTATEMENT-2\nFor every action there is an equal and opposite reaction.",
+      "options": {
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "STATEMENT-1\n       A vertical iron rod has a coil of wire wound over it at the bottom end. An alternating current flow\nin the coil. The rod goes through a conducting ring as shown in the figure. The ring can float at a certain\nheight above the coil.\n                             \n       Because\n       STATEMENT\n-2\n       In the above situation, a current is induced in the ring which interacts with the horizontal\ncomponent of the magnetic field to produce an average force in the upward direction.",
+      "options": {
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "STATEMENT-1\nThe total translational kinetic energy of all the molecules of a given mass of an ideal gas is 1.5 times the\nproduct of its pressure and its volume.\nPage 4 of 8\n\nBecause\nSTATEMENT-2\nThe molecules of a gas collide with each other and the velocities of the molecules change due to the\ncollision",
+      "options": {
+        "A": "Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation for statement-1.",
+        "B": "Statement-1 is True, Statement-2 is True, Statement-2 is not a correct explanation for statement-1.",
+        "C": "Statement-1 is True, Statement-2 is False",
+        "D": "Statement-1 is False, Statement-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The speed of sound of the whistle is",
+      "options": {
+        "A": "340 m/s for passengers in A and 310 m/s for passengers in B",
+        "B": "360 m/s for passengers in A and 310 m/s for passengers in B",
+        "C": "310 m/s for passengers in A and 360 m/s for passengers in B",
+        "D": "340 m/s for passengers in both the trains"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The distribution of the sound intensity of the whistle as observed by the passengers in train A is\nbest represented by",
+      "options": null,
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The spread of frequency as observed by the passengers in train B in",
+      "options": {
+        "A": "310 Hz",
+        "B": "330 Hz",
+        "C": "350 Hz",
+        "D": "290 Hz Page 5 of 8"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Light travels as a",
+      "options": {
+        "A": "parallel beam in each medium",
+        "B": "convergent beam in each medium",
+        "C": "divergent beam in each medium",
+        "D": "divergent beam in one medium and convergent beam in other medium"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The phases of the light wave at c, d, e and f areΦc, Φd, Φe andΦfrespectively. It is given that Φc ≠\nΦf.",
+      "options": {
+        "A": "Φc cannot be equal toΦd",
+        "B": "Φd can be equal toΦe",
+        "C": "( Φd - Φf) is equal to (Φc - Φe)",
+        "D": "( Φd - Φc) is not equal to (Φf - Φe)"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Speed of light is",
+      "options": {
+        "A": "the same in medium -1 and medium-2",
+        "B": "larger in medium -1 than in medium-2",
+        "C": "larger in mediu -2 and than in medium-1",
+        "D": "different at b and d"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Column I described some situations in which a small object moves. Column II describes some\ncharacteristics of these motions. Match the situations in Column I with the characteristics in Column II.\nColumn I\nColumn II",
+      "options": {
+        "A": "The object moves n the x-axis under a conservative force in such a way that its \"speed\" and \"position\" satisfy v = c1 √(c2- x2 ) , where c1 and c2 are positive constants. (p) The object exercises a simple harmonic motion.",
+        "B": "The object moves on the x-axis in such a way that its velocity and its displacement from the origin satisfy v = -kx, where k is a positive constant. (q) The object does not change its direction. Page 6 of 8"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "options_count_2"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Two wires each carrying a steady current I are shown in four configurations in Column I. Some of\nthe resulting effects are described in Column II. Match the statements in Column I with the statements in\nColumn II.",
+      "options": null,
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Column I gives some devices and Column II gives some processes on which the functioning of",
+      "options": {
+        "C": "The object is attached to one end of a mass-less spring of a given spring constant. The other end of the spring is attached to the ceiling of an elevator. Initially everything is at rest. The elevator starts going upwards with a constant acceleration a. The motion of the object is observed from the elevator during the period it maintains this accelerations. (r) The kinetic energy of the object keeps on decreasing.",
+        "D": "The object is projected from the earth's surface vertically upwards with a speed 2√(GMe/Rer) , where, Me is the mass of the earth and Re is the radius of the earth. Neglect forces from objects other than the earth. (s) The object can change its direction only once. Column I Column II",
+        "A": "Point P is situated midway between the wires. (p) The magnetic fields",
+        "B": "at P due to the currents in the wires are in the same direction."
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

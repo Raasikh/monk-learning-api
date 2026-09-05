@@ -15,6 +15,7 @@
     "exam_date": "2024-04-08",
     "shift": 1,
     "paper_type": "question_paper",
+    "subject": null,
     "language": "English",
     "notes": "",
     "exam_tag": "jee-main",
@@ -25,12 +26,12 @@
       "entrance-exam"
     ],
     "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2024/4/10/124259-JEE-Main_Morning-Shift-2_08-04-2024_Student-copy.pdf",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2024/jee-main-08-apr-2024-paper-shift-1/1080300",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/MWoDHCh1Di6LIr012zvG",
     "official_key_url": "https://web.archive.org/web/20240423092125/https://jeemain.nta.ac.in/images/FINAL_ANSWER_KEY_JEE_MAIN_SESSION_2_22.04.2024.pdf",
     "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
   },
   "probe": {
     "sha256": "365fb86ccfa8ba85e5495ed1e76e094e33c10e757e5fc5bf541e09a3e0bc682e",

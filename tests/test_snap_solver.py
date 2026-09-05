@@ -2634,3 +2634,47 @@ def test_a_readable_figure_still_comes_back_described(monkeypatch):
     })
     out = snap.describe_diagram(b"img", "image/jpeg", "a question", "d1")
     assert out and "semicircular" in out
+
+
+def test_a_stream_that_has_begun_answering_gets_to_finish(monkeypatch):
+    """The wall-clock guard is for a solve that writes nothing, not a slow one.
+
+    Measured: a hard coordinate-geometry question thought for the full 75s and
+    was 120 characters into its answer when the guard cut the stream. Mid-
+    string, so the JSON was unterminated, so it read as a parse failure — and
+    the student was told "something went wrong at our end" for a solve that was
+    working.
+    """
+    attempts = []
+
+    class _Chunk:
+        def __init__(self, text=None, thinking=None):
+            self.usage = None
+            delta = type("D", (), {"content": text, "reasoning_content": thinking})()
+            self.choices = [type("C", (), {"delta": delta})()]
+
+    def make_kwargs():
+        class _Slow:
+            class chat:
+                class completions:
+                    @staticmethod
+                    def create(**kw):
+                        attempts.append(kw)
+
+                        def gen():
+                            # Think past the budget, THEN answer.
+                            yield _Chunk(thinking="reasoning " * 50)
+                            time.sleep(snap.SOLVE_TIMEOUT_S * 1.2)
+                            for part in ('{"steps": [{"n": 1, "text": "x"}], ',
+                                         '"answer": "42", "answerable": true}'):
+                                yield _Chunk(text=part)
+                        return gen()
+        return dict(model=MODEL_SOLVE, messages=[{"role": "user", "content": "x"}],
+                    timeout=snap.SOLVE_TIMEOUT_S, _client=_Slow())
+
+    monkeypatch.setattr(snap, "SOLVE_TIMEOUT_S", 0.5)
+    monkeypatch.setattr(snap, "ANSWER_FINISH_GRACE_S", 25.0)
+    out = snap._streamed_solve(make_kwargs, lambda *_a: None, "d1", None)
+    print(f"  attempts={len(attempts)} answer={out.get('answer')!r}")
+    assert out["answer"] == "42", "a solve that was mid-answer was cut off"
+    assert len(attempts) == 1, "it succeeded, so nothing should have been retried"

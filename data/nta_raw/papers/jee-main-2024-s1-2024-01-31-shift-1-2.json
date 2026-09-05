@@ -15,6 +15,7 @@
     "exam_date": "2024-01-31",
     "shift": 1,
     "paper_type": "question_paper",
+    "subject": null,
     "language": "English",
     "notes": "",
     "exam_tag": "jee-main",
@@ -25,12 +26,12 @@
       "entrance-exam"
     ],
     "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2025/1/25/131230-JEE-Main-2024-(January-31-Shift-1)-Chemistry-Question-Paper-with-Solutions-[PDF].pdf",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2024/jee-main-31-jan-2024-paper-shift-1-memory-based/1072851",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/aUSWuuBmMx4bucBxW1PK",
     "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
     "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
   },
   "probe": {
     "sha256": "5d40805a011ad58dcfc23747dd5c44b6032e5b8d96f74a5351dacee662701e67",

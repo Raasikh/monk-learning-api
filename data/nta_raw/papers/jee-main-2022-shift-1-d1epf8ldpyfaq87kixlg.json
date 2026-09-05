@@ -1,0 +1,331 @@
+{
+  "paper_id": "jee-main-2022-shift-1-d1epf8ldpyfaq87kixlg",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-1-d1epf8ldpyfaq87kixlg",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/d1EpF8LDPYFAq87kIXLg",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "eaf69c0dc146999485ff2af2cd8d7ea2f0327f9d7c5ca380bfd3efae9da30172",
+    "page_count": 8,
+    "text_chars": 6726,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 19,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-1-d1epf8ldpyfaq87kixlg.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "4",
+          "option": "D",
+          "option_index": 4
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 4,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 7,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 7,
+  "defects": [
+    "19 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [4, 8, 9, 22, 8, 8, 16, 10, 14, 11, 12, 13, 14, 15, 16]",
+    "7/7 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Three point charges are placed at corners of a square as shown in figure. Find electric field at point B. \n \nB\nA\nC\nD \nq/2 \nq \nq/2",
+      "options": {
+        "A": "      2 1 2 1 a kq 2 2",
+        "B": "      2 2 1 a kq 2",
+        "C": "      1 2 1 a kq 2",
+        "D": "      2 1 2 1 a kq 2"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "4",
+        "option": "D",
+        "option_index": 4
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Rigid Body \n \n \n \n \nMoment of inertia",
+      "options": {
+        "A": "MOI of solid sphere about its tangent (p) 2 MR 2 1",
+        "B": "MOI of hollow sphere about its diameter (q) 2 MR 4 1",
+        "C": "MOI of disc about its diameter (r) 2 MR 3 2",
+        "D": "MOI of ring about its diameter (s) 2 MR 5 7"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle having mass m is moving along a circle with radius r. centripetal acceleration varies as. \n \nac = k2. r. t2. Find power delivered :",
+      "options": {
+        "A": "m. k2. r2 t",
+        "B": "m. k2. r2",
+        "C": "m. k. r2 t",
+        "D": "m.k2.rt"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Relation between time period of two satellites is TA = 2TB. Find ratio between radii of orbits",
+      "options": {
+        "A": "41/3",
+        "B": "21/3",
+        "C": "31/3",
+        "D": "42/3"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Current i is flowing in a long thin hollow cylinder. Choose correct graph between magnetic field verses \ndistance r from axis :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Equation of two SHMs are  \n \n\n\n\n\n\n\n\n\n\n\nt\n2\nsin\n4\nx\n& y = 4 sin t  \n \nThen path of resultant motion will be :",
+      "options": {
+        "A": "straight line",
+        "B": "Circle",
+        "C": "Parabola",
+        "D": "Hyperbola"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Aperture of a telescope is 24.4 cm wavelength of light 2440Å, then its resolving power will be :",
+      "options": {
+        "A": "8.2 × 104",
+        "B": "8.2 × 105",
+        "C": "7.2 × 105",
+        "D": "8.2 × 103"
+      },
+      "page_start": 3,
+      "page_end": 8,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    }
+  ]
+}

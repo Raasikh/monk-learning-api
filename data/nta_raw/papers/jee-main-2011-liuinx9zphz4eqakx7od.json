@@ -1,0 +1,1758 @@
+{
+  "paper_id": "jee-main-2011-liuinx9zphz4eqakx7od",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2011-liuinx9zphz4eqakx7od",
+    "exam": "jee-main",
+    "year": 2011,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper_with_solutions",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2011/aieee-2011-question-paper-with-solution/98456",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/Liuinx9zPhZ4EqAkX7OD",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "2e5e8fc2b44e2aa92438a8c5563bc68fd3dceffe1d31dc0b67c398a61be1bb4f",
+    "page_count": 30,
+    "text_chars": 47648,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 1,
+    "answer_marker_hits": 1,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2011-liuinx9zphz4eqakx7od.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 90,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 90,
+  "defects": [
+    "113 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 3, 3, 5]",
+    "35/90 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Immediately fill in the particulars on this page of the Test Booklet with Blue/Black Ball Point Pen. Use of \nPencil is strictly prohibited.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Answer Sheet is kept inside the Test Booklet. When you are directed to open the Test Booklet, take \nout the Answer Sheet and fill in the particulars carefully.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The test is of 3 hours duration.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Test Booklet consists of 90 questions. The maximum marks are 360.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There are three parts in the question paper A, B, C consisting of Physics, Mathematics, Chemistry having \n30 questions in each part of equal weight age.  Each question is allotted 4(four) marks for each correct \nresponse.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Candidates will be awarded marks as stated above in instruction No. 5 for correct response of each \nquestion ¼ (one fourth) marks will be deducted for indicating incorrect response of each question.  No \ndeduction from the total score will be made if no response is indicated for an item in the answer sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is only one correct response for each question.  Filling up more than one response in each question \nwill be treated as wrong response and marks for wrong response will be deducted accordingly as per \ninstruction 6 above.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Use Blue/Black Ball Point Pen only for writing particulars/marking responses on Side-1 and Side-2 of the \nAnswer Sheet. Use of pencil is strictly prohibited.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "No candidate is allowed to carry any textual material, printed or written, bits of papers, pager, mobile \nphone, any electronic device, etc., except the Admit Card inside the examination hall/room.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Rough work is to be done on the space provided for this purpose in the Test Booklet only. This space is \ngiven at the bottom of each page and in 3 pages (Pages 21 – 23) at the end of the booklet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "On completion of the test, the candidate must hand over the Answer Sheet to the Invigilator on duty in the \nRoom/Hall. However, the candidates are allowed to take away this Test Booklet with them.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The CODE for this Booklet is  Q. Make sure that the CODE printed on Side-2 of the Answer Sheet is the \nsame as that on this booklet. In case of discrepancy, the candidate should immediately report the matter to \nthe Invigilator for replacement of both the Test Booklet and the Answer Sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Do not fold or make any stray marks on the Answer Sheet. \n \n\nAIEEE−2011−2 \nPART A :  PHYSICS",
+      "options": {
+        "A": "The transverse displacement ( ) y x,t of a wave on a string is given by ( ) ( ) 2 2 ax bt 2 ab xt y x,t e − + + = . This represents a",
+        "C": "standing wave of frequency 1 b",
+        "D": "wave moving in + x direction with a b",
+        "B": "A screw gauge gives the following reading when used to measure the diameter of a wire. Main scale reading : 0 mm Circular scale reading : 52 divisions Given that 1 mm on main scale corresponds to 100 divisions of the circular scale. The diameter of wire from the above date is :"
+      },
+      "page_start": 1,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A thermally insulated vessel contains an ideal gas of molecular mass M and ratio of specific heats γ.  It is \nmoving with speed υ and is suddenly brought to rest.  Assuming no heat is lost to the surroundings, its \ntemperature increases by :",
+      "options": {
+        "A": "( ) 2 1 M K 2 R γ − υ γ",
+        "B": "2 M K 2R γ υ",
+        "C": "( ) 2 1 M K 2R γ − υ",
+        "D": "( ) ( ) 2 1 M K 2 1 R γ − υ γ +"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A mass M, attached to a horizontal spring, executes S.H.M. with amplitude A1.  When the mass M passes \n2\nA\nA\n\n\n\n\n\n\n is :",
+      "options": {
+        "A": "M m M +",
+        "B": "1/ 2 M M m     +  ",
+        "C": "1/ 2 M m M +      ",
+        "D": "M M m +"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Water is flowing continuously from a tap having an internal diameter \n3\n8 10 m\n−\n×\n.  The water velocity as it \nleaves the tap is 0.4 ms−1.  The diameter of the water stream at a distance \n1\n2 10 m\n−\n×\n below the lap is \nclose to :",
+      "options": {
+        "A": "3 7.5 10 m − ×",
+        "B": "3 9.6 10 m − ×",
+        "C": "3 3.6 10 m − ×",
+        "D": "3 5.0 10 m − × through its mean position then a smaller mass m is placed over it and both of them move together with amplitude A2. The ratio of 1 AIEEE−2011−4"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "This question has Statement – 1 and Statement – 2.  Of the four choices given after the statements, \nchoose the one that best describes the two statements. \n  \n \nStatement-1 :  Sky wave signals are used for long distance radio communication.  These signals are in \ngeneral, less stable than ground wave signals. \n \nStatement-2 : The state of ionosphere varies from hour to hour, day to day and season to season.",
+      "options": {
+        "A": "Statement-1 is true, Statement-2 is true; Statement-2 is the correct explanation of Statement-1.",
+        "B": "Statement-1 is true, Statement-2 is true; Statement-2 is not the correct explanation of Statement-1.",
+        "C": "Statement-1 is false, Statement-2 is true.",
+        "D": "Statement-1 is true, Statement-2 is false."
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Three perfect gases at absolute temperatures T1, T2 and T3 are mixed.  The masses of molecules are m1, \nm2 and m3 and the number of molecules are n1, n2 and n3 respectively.  Assuming no loss of energy, the \nfinal temperature of the mixture is :",
+      "options": {
+        "A": "1 1 2 2 3 3 1 2 3 n T n T n T n n n + + + +",
+        "B": "2 2 1 1 2 2 3 3 1 1 2 2 3 3 n T n T n T n T n T n T + + + +",
+        "C": "2 2 2 2 2 2 1 1 2 2 3 3 1 1 2 2 3 3 n T n T n T n T n T n T + + + +",
+        "D": "( ) 1 2 3 T T T 3 + +"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A pulley of radius 2 m is rotated about its axis by a force \n(\n)\n2\nF\n20t\n5t\n=\n−\n Newton (where t is measured in \nseconds) applied tangentially.  If the moment of inertia of the pulley about its axis of rotation made by the \npulley before its direction of motion if reversed, is :",
+      "options": {
+        "A": "more than 3 but less than 6",
+        "B": "more than 6 but less than 9",
+        "C": "more than 9",
+        "D": "less than 3"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A resistor ‘R’ and 2µF capacitor in series is connected through a switch to 200 V direct supply.  Across \nthe capacitor is a neon bulb that lights up at 120 V.  Calculate the value of R to make the bulb light up 5 s \nafter the switch has been closed. (\n)\n10\nlog\n2.5\n0.4\n=",
+      "options": {
+        "A": "5 1.7 10 × Ω",
+        "B": "6 2.7 10 × Ω",
+        "C": "7 3.3 10 × Ω",
+        "D": "4 1.3 10 × Ω"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A Carnot engine operating between temperatures T1 and T2 has efficiency 1.\n6   When T2 is lowered by 62 \nK, its efficiency increases to 1\n3 .  Then T1 and T2 are, respectively :",
+      "options": {
+        "A": "372 K and 330 K",
+        "B": "330 K and 268 K",
+        "C": "310 K and 248 K",
+        "D": "372 K and 310 K"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If a wire is stretched to make it 0.1% longer, its resistance will :",
+      "options": {
+        "A": "increase by 0.2% (2) decrease by 0.2% (3) decrease by 0.05% (4) increases by 0.05%"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "options_count_1"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Direction:  \n \nThe question has a paragraph followed by two statements, Statement – 1 and statement – 2.  Of the \ngiven four alternatives after the statements, choose the one that describes the statements. \n \nA thin air film is formed by putting the convex surface of a plane – convex lens over a plane glass plate.  \nWith monochromatic light, this film gives an interference pattern due to light reflected from the top \n(convex) surface and the bottom (glass plate) surface of the film. \n  \nStatement-1 : When light reflects from the air-glass plate interface, the reflected wave suffers a phase \nchange of π. \n \nStatement-2 : The centre of the interference pattern is dark.",
+      "options": {
+        "A": "Statement-1 is true, Statement-2 is true; Statement-2 is the correct explanation of Statement-1.",
+        "B": "Statement-1 is true, Statement-2 is true; Statement-2 is not the correct explanation of Statement-1.",
+        "C": "Statement-1 is false, Statement-2 is true.",
+        "D": "Statement-1 is true, Statement-2 is false. AIEEE−2011−5"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A car is fitted with a convex side-view mirror of focal length 20cm.  A second car 2.8 m behind the first \ncar is overtaking the first car at relative speed of 15 m/s.  The speed of the image of the second car as \nseen in the mirror of the first one is :",
+      "options": {
+        "A": "1 m/ s 15",
+        "B": "10m/ s",
+        "C": "15m/ s",
+        "D": "1 m/ s 10"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Energy required for the electron excitation in Li++ from the first to the third Bohr orbit is :",
+      "options": {
+        "A": "36.3 eV",
+        "B": "108.8 eV",
+        "C": "122.4 eV",
+        "D": "12.1 eV"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The electrostatic potential inside a charged spherical ball is given by \nb\n2\nφ = αρ +\n where r is the distance \nfrom the centre; a, b are constants.  Then the charge density inside ball is",
+      "options": {
+        "A": "0 6a r − ε",
+        "B": "0 24 a r − π ε",
+        "C": "0 6a − ε",
+        "D": "0 24 a r − π ε"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A water fountain on the ground sprinkles water all around it.  If the speed of water coming out of the \nfountain is v, the total area around the fountain that gets wet is :",
+      "options": {
+        "A": "4 2 v g π",
+        "B": "4 2 v 2 g π",
+        "C": "2 2 v g π",
+        "D": "4 v g π"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "100g of water is heated from 300C to 500C.  Ignoring the slight expansion of the water, the change in its \ninternal energy is (specific heat of water is 4148 J/kg/K):",
+      "options": {
+        "A": "8.4 kJ",
+        "B": "84 kJ",
+        "C": "2.1 kJ",
+        "D": "4.2 kJ"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The half life of a radioactive substance is 20 minutes.  The approximate time interval (\n)\n2\n1\nt\nt\n−\n between \nthe time t2 when 2\n3  of it has decayed and time t1 and 1\n3  of it had decayed is :",
+      "options": {
+        "A": "14 min",
+        "B": "20 min",
+        "C": "28 min",
+        "D": "7 min"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "This question has Statement – 1 and Statement – 2.  Of the four choices given after the statements, \nchoose the one that best describes the two statements.  \n \nStatement-1 : A metallic surface is irradiated by a monochromatic light of frequency v > v0 (the threshold \nfrequency).  The maximum kinetic energy and the stopping potential are Kmax and V0 respectively.  If the \nfrequency incident on the surface doubled, both the Kmax and V0 are also doubled.  \n \nStatement-2 : The maximum kinetic energy and the stopping potential of photoelectrons emitted from a \nsurface are linearly dependent on the frequency of incident light.",
+      "options": {
+        "A": "Statement-1 is true, Statement-2 is true; Statement-2 is the correct explanation of Statement-1.",
+        "B": "Statement-1 is true, Statement-2 is true; Statement-2 is not the correct explanation of Statement-1.",
+        "C": "Statement-1 is false, Statement-2 is true.",
+        "D": "Statement-1 is true, Statement-2 is false. AIEEE−2011−6 PART B: MATHEMATICS"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The lines \n1\nL : y\nx\n0\n−\n=\n and \n2\nL : 2x\ny\n0\n+\n=\n intersect the line \n3\nL : y\n2\n0\n+\n=\n at P and Q respectively. The \nbisector of the acute angle between \n1\nL  and \n2\nL  intersect \n3\nL  at R . \n \nStatement – 1  :  \nThe ratio PR : RQ  equals 2 2 :\n5 . \n \nStatement – 2  :  \nIn any triangle, bisector of an angle divides the triangle into two similar triangles.",
+      "options": {
+        "A": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is not a correct explanation for Statement – 1",
+        "B": "Statement – 1 is true, Statement– 2 is false.",
+        "C": "Statement – 1 is false, Statement– 2 is true.",
+        "D": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is a correct explanation for Statement – 1"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If \n2\n4\nA\nsin x\ncos x\n=\n+\n, then for all real x",
+      "options": {
+        "A": "13 A 1 16 ≤ ≤",
+        "B": "1 A 2 ≤ ≤",
+        "C": "3 13 A 4 16 ≤ ≤",
+        "D": "3 A 1 4 ≤ ≤"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The coefficient of \n7\nx  in the expansion of (\n)\n6\n2\n3\n1\nx\nx\nx\n−\n−\n+\n is",
+      "options": {
+        "A": "-132",
+        "B": "-144 (3)132",
+        "D": "144"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "options_count_3",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "(\n)\n{\n}\nx\n2\n1 cos 2 x\n2\nlim\nx\n2\n→\n\n\n−\n−\n\n\n\n\n−\n\n\n\n",
+      "options": {
+        "A": "equals 2",
+        "B": "equals 2 −",
+        "C": "equals 1 2",
+        "D": "does not exist"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 35,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Statement – 1  :  \nThe number of ways of distributing 10 identical balls in 4 distinct boxes such that no \nbox is empty is 9\n3\nC  \n \nStatement – 2  :  \nThe number of ways of choosing any 3 places from 9 different places is 9\n3\nC .",
+      "options": {
+        "A": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is not a correct explanation for Statement – 1",
+        "B": "Statement – 1 is true, Statement– 2 is false.",
+        "C": "Statement – 1 is false, Statement– 2 is true.",
+        "D": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is a correct explanation for Statement – 1"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "2\n2\nd x\ndy\n equals",
+      "options": {
+        "A": "1 3 2 2 d y dy dx dx − −     −         ",
+        "B": "2 2 2 d y dy dx dx −           ",
+        "C": "3 2 2 d y dy dx dx −    −       ",
+        "D": "1 2 2 d y dx −         AIEEE−2011−7"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If dy\ny\n3\n0\ndx =\n+\n>\n and ( )\ny 0\n2\n=\n, then (\n)\ny ln2  is equal to",
+      "options": {
+        "A": "5",
+        "B": "13",
+        "C": "-2",
+        "D": "7"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 38,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let R be the set of real numbers  \n \nStatement – 1  :  \n(\n)\n{\n}\nA\nx,y\nR\nR : y\nx is an integer\n=\n∈\n×\n−\n is an equivalence relation on R . \n \nStatement – 2  :  \n(\n)\n{\n}\nB\nx,y\nR\nR : x\ny for some rational number\n=\n∈\n×\n= α\nα  is an equivalence relation on \nR .",
+      "options": {
+        "A": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is not a correct explanation for Statement – 1",
+        "B": "Statement – 1 is true, Statement– 2 is false.",
+        "C": "Statement – 1 is false, Statement– 2 is true.",
+        "D": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is a correct explanation for Statement – 1"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The value of \n(\n)\n1\n2\n0\n8log 1\nx\ndx\n1\nx\n+\n+\n∫\n is",
+      "options": {
+        "A": "log2 8 π",
+        "B": "log2 2 π",
+        "C": "log2",
+        "D": "log2 π"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let \n,\nα β  be real and z  be a complex number. If \n2\nz\nz\n0\n+ α + β =\n has two distinct roots on the line \nRez\n1\n=\n, then it is necessary that",
+      "options": {
+        "A": "( ) 1, 0 β ∈−",
+        "B": "1 β =",
+        "C": "( ) 1, β ∈ ∞",
+        "D": "( ) 0, 1 β ∈"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider 5 independent Bernoulli’s trials each with probability of success p. If the probability of at least \none failure is greater than or equal to 31\n32 , then p lies in the interval",
+      "options": {
+        "A": "3 11 , 4 12      ",
+        "B": "1 0, 2      ",
+        "C": "11, 1 12      ",
+        "D": "1 3 , 2 4      "
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A man saves Rs. 200 in each of the first three months of his service. In each of the subsequent months \nhis saving increases by Rs. 40 more than the saving of immediately previous month. His total saving from \nthe start of service will be Rs. 11040 after",
+      "options": {
+        "A": "19 months",
+        "B": "20 months",
+        "C": "21 months",
+        "D": "18 months"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 43,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The domain of the function ( )\n1\nf x\nx\nx\n=\n−\n is",
+      "options": {
+        "A": "( ) 0, ∞",
+        "B": "( ) , 0 −∞",
+        "C": "( ) { } , 0 −∞∞−",
+        "D": "( ) , −∞∞"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 44,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the angle between the line \ny\n1\nz\n3\nx\n2\n−\n−\n=\n=\nλ\n and the plane x\n2y\n3z\n4\n+\n+\n=\n is \n1\n5\ncos\n14\n−\n\n\n\n\n\n\n\n, then λ  \nequals",
+      "options": {
+        "A": "3 2",
+        "B": "2 5",
+        "C": "5 3",
+        "D": "2 3 AIEEE−2011−8"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If \n$\n(\n)\n1\na\n3i\nk\n10\n=\n+\nr\n$\n  and \n$\n(\n)\n1\nb\n2i\n3j\n6k\n7\n=\n+\n−\nr\n$\n$\n, then the value of (\n) (\n) (\n)\n2a\nb .\na\nb\na\n2b\n\n\n−\n×\n×\n+\n\n\nr\nr\nr\nr\nr\nr\n is",
+      "options": {
+        "A": "-3",
+        "B": "5",
+        "C": "3",
+        "D": "-5"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Equation of the ellipse whose axes are the axes of coordinates and which passes through the point \n(\n)\n3, 1\n−\n and has eccentricity \n2\n5  is",
+      "options": {
+        "A": "2 2 5x 3y 48 0 + − =",
+        "B": "2 2 3x 5y 15 0 + − =",
+        "C": "2 2 5x 3y 32 0 + − =",
+        "D": "2 2 3x 5y 32 0 + − ="
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 47,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let I be the purchase value of an equipment and \n( )\nV t  be the value after it has been used for t  years. \nThe value \n( )\nV t  depreciates at a rate given by differential equation \n( )\n(\n)\ndV t\nk T\nt\ndt\n= −\n−\n, where k\n0\n>\n is a \nconstant and T is the total life in years of the equipment. Then the scrap value \n( )\nV T  of the equipment is",
+      "options": {
+        "A": "2 kT I 2 −",
+        "B": "( ) 2 k T t I 2 − −",
+        "C": "kT e−",
+        "D": "2 I T k −"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The vector a\nr\n and b\nr\n are not perpendicular and c\nr\n and d\nr\n are two vectors satisfying: b\nc\nb\nd\n×\n=\n×\nr\nr\nr\nr\n and \na.d\n0\n=\nr r\n. Then the vector d\nr\n is equal to",
+      "options": {
+        "A": "a.c c b a.b   +       r r r r r r",
+        "B": "b.c b c a.b   +       r r r r r r",
+        "C": "a.c c b a.b   −      r r r r r r",
+        "D": "b.c b c a.b   −      r r r r r r"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The two circles \n2\n2\nx\ny\nax\n+\n=\n and \n(\n)\n2\n2\n2\nx\ny\nc\nc\n0\n+\n=\n>\n touch each other if",
+      "options": {
+        "A": "a c =",
+        "B": "a 2c =",
+        "C": "a 2c =",
+        "D": "2 a c ="
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 50,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If C and D are two events such that C\nD\n⊂\n and \n( )\nP D\n0\n≠\n, then the correct statement among the \nfollowing is",
+      "options": {
+        "A": "( ) ( ) P C | D P C ≥",
+        "B": "( ) ( ) P C | D P C <",
+        "C": "( ) ( ) ( ) P D P C | D P C =",
+        "D": "( ) ( ) P C | D P C ="
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 51,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The number of values of k for which the linear equations  \n \n4x\nky\n2z\n0\n+\n+\n=\n; kx\n4y\nz\n0\n+\n+\n=\n; 2x\n2y\nz\n0\n+\n+\n=\n possess a non-zero solution is",
+      "options": {
+        "A": "2",
+        "B": "1",
+        "C": "zero",
+        "D": "3"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 52,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider the following statements \n \nP : Suman is brilliant \n \nQ : Suman is rich \n \nR : Suman is honest \n \nThe negation of the statement “Suman is brilliant and dishonest if and only if Suman is rich” can be \nexpressed as",
+      "options": {
+        "A": "( ) ( ) ~ Q P ~ R ↔ ∧",
+        "B": "~ Q ~ P R ↔ ∧",
+        "C": "( ) ~ P ~ R Q ∧ ↔",
+        "D": "( ) ~ P Q ~ R ∧ ↔"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 53,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The shortest distance between line y\nx\n1\n−\n=\n and curve \n2\nx\ny\n=\n is",
+      "options": {
+        "A": "3 2 8",
+        "B": "8 3 2",
+        "C": "4 3",
+        "D": "3 4 AIEEE−2011−9"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 54,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the mean deviation about the median of the numbers a, 2a, …, 50a is 50, then a  equals",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "2"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 55,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Statement – 1  :  \nThe point \n(\n)\nA 1, 0, 7  is the mirror image of the point \n(\n)\nB 1, 6, 3  in the line \nx\ny\n1\nz\n2\n1\n2\n3\n−\n−\n=\n=\n. \n \nStatement – 2  :  \nThe line: x\ny\n1\nz\n2\n1\n2\n3\n−\n−\n=\n=\n bisects the line segment joining \n(\n)\nA 1, 0, 7  and (\n)\nB 1, 6, 3 .",
+      "options": {
+        "A": "Statement – 1 is true, Statement–2 is true; Statement–2 is not a correct explanation for Statement – 1",
+        "B": "Statement – 1 is true, Statement– 2 is false.",
+        "C": "Statement – 1 is false, Statement– 2 is true.",
+        "D": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is a correct explanation for Statement – 1"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 56,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let A and B be two symmetric matrices of order 3.  \n \nStatement – 1  :  \n(\n)\nA BA  and (\n)\nAB A  are symmetric matrices. \n \nStatement – 2  :  \nAB  is symmetric matrix if matrix multiplication of A and B is commutative.",
+      "options": {
+        "A": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is not a correct explanation for Statement – 1",
+        "B": "Statement – 1 is true, Statement– 2 is false.",
+        "C": "Statement – 1 is false, Statement– 2 is true.",
+        "D": "Statement – 1 is true, Statement – 2 is true; Statement – 2 is a correct explanation for Statement – 1"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 57,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If (\n)\n1\nω ≠\n is a cube root of unity, and (\n)\n7\n1\nA\nB\n+ ω\n=\n+\nω . Then (\n)\nA, B  equals",
+      "options": {
+        "A": "(1, 1)",
+        "B": "(1, 0)",
+        "C": "(-1, 1)",
+        "D": "(0, 1)"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 58,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The value of p and q for which the function ( )\n(\n)\n2\n3 / 2\nsin p\n1 x\nsinx\n,\nx\n0\nx\nf x\nq\n,\nx\n0\nx\nx\nx\n,\nx\n0\nx\n\n+\n+\n\n<\n\n=\n=\n\n\n+\n−\n\n>\n\n  \n \nis continuous for all x in R, is",
+      "options": {
+        "A": "5 1 p , q 2 2 = =",
+        "B": "3 1 p , q 2 2 = − =",
+        "C": "1 3 p , q 2 2 = =",
+        "D": "1 3 p , q 2 2 = = −"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 59,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The area of the region enclosed by the curves \n1\ny\nx, x\ne, y\nx\n=\n=\n=\n and the positive x-axis is",
+      "options": {
+        "A": "1 square units",
+        "B": "3 2 square units",
+        "C": "5 2 square units",
+        "D": "1 2 square units"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 60,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "For \n5\nx\n0, 2\nπ\n\n\n∈\n\n\n\n, define ( )\nx\n0\nf x\nt sint dt\n= ∫\n. Then f has",
+      "options": {
+        "A": "local minimum at π and 2π",
+        "B": "local minimum at π and local maximum at 2π",
+        "C": "local maximum at π and local minimum at 2π",
+        "D": "local maximum at π and 2π AIEEE−2011−10 PART C: CHEMISTRY"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Among the following the maximum covalent character is shown by the compound :",
+      "options": {
+        "A": "2 SnCl",
+        "B": "3 AlCl",
+        "C": "2 MgCl",
+        "D": "2 FeCl"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 62,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The presence or absence of hydroxyl group on which carbon atom of sugar differentiates RNA  and DNA \n?",
+      "options": {
+        "A": "2nd",
+        "B": "3rd",
+        "C": "4th",
+        "D": "1st"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 63,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Trichloroacetaldehyde was subjected to Cannizzaro’s reaction by using NaOH.  The mixture of the \nproducts contains sodium trichloroacetate and another compound.  The other compound is :",
+      "options": {
+        "A": "Trichloromethanol (2) 2, 2, 2-Trichloropropanol",
+        "C": "Chloroform",
+        "D": "2, 2, 2-Trichloroethanol"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": [
+        "options_count_3"
+      ]
+    },
+    {
+      "qno": 64,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Sodium ethoxide has reacted with ethanoyl chloride.  The compound that is produced in the above \nreaction is :",
+      "options": {
+        "A": "2-Butanone",
+        "B": "Ethyl chloride",
+        "C": "Ethyl ethanoate",
+        "D": "Diethyl ether"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The reduction potential of hydrogen half cell will be negative if :",
+      "options": {
+        "A": "( ) 2 p H = 1 atm and H+    =1.0 M",
+        "B": "p( ) 2 H =2 atm and H+    =1.0 M",
+        "C": "( ) 2 p H = 2 atm and H+     = 2.0 M",
+        "D": "( ) 2 p H =1 atm and H+    = 2.0 M"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The strongest acid amongst the following compounds is :",
+      "options": {
+        "A": "HCOOH",
+        "B": "( ) 3 2 2 CH CH CH Cl CO H",
+        "C": "2 2 2 ClCH CH CH COOH",
+        "D": "3 CH COOH"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The  degree of dissociation ( )\nα  of a weak electrolyte, \nx\ny\nA B  is related to van’t Hoff factor (i) by the \nexpression :",
+      "options": {
+        "A": "i 1 x y 1 − α = + +",
+        "B": "x y 1 i 1 + − α = −",
+        "C": "x y 1 i 1 + + α = −",
+        "D": "( ) i 1 x y 1 − α = + −"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "`a’ and `b’ are van der Waals’ constants for gases.  Chlorine is more easily liquefied than ethane because",
+      "options": {
+        "A": "a and b for 2 Cl a < and b for 2 6 C H",
+        "B": "a for 2 Cl a < for 2 6 C H but b for 2 Cl b > for 2 6 C H",
+        "C": "a for 2 Cl a > for 2 6 C H but b for 2 Cl < b for 2 6 C H",
+        "D": "a and b for 2 Cl > a and b for 2 6 C H"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A vessel at 1000 K contains \n2\nCO with a pressure of 0.5 atm. Some of the \n2\nCO  is converted into CO on \nthe addition of graphite.  If the total pressure at equilibrium is 0.8 atm, the value of K is",
+      "options": {
+        "A": "3 atm",
+        "B": "0.3 atm",
+        "C": "0.18 atm",
+        "D": "1.8 atm"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 70,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Boron cannot form which one of the following anions ?",
+      "options": {
+        "A": "4 BH−",
+        "B": "( )4 B OH −",
+        "C": "2 BO−",
+        "D": "3 6 BF −"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following facts about the complex \n(\n)\n3\n3\n6\nCr NH\nCl\n\n\n\n\ns wrong ?",
+      "options": {
+        "A": "The complex is paramagnetic",
+        "B": "The complex is an outer orbital complex",
+        "C": "The complex gives white precipitate with silver nitrate solution",
+        "D": "The complex involves 2 3 d sp hybridization and is octahedral in shape. AIEEE−2011−11"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Ethylene glycol is used as an antifreeze in a cold climate.  Mass of ethylene glycol which should be \nadded to 4 kg of water to prevent it from freezing at \no\n6 C\n−\n will be : \n \n[\nf\nK  for water = 1.86 K kg  mol\n1\n−, and molar mass of ethylene glycol = 62g mol\n1\n−)",
+      "options": {
+        "A": "204.30g",
+        "B": "400.00 g",
+        "C": "304.60 g",
+        "D": "804.32g"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which one of the following order represents the correct sequence of the increasing basic nature of the \ngiven oxides ?",
+      "options": {
+        "A": "2 2 3 2 MgO K O Al O Na O < < <",
+        "B": "2 2 2 3 Na O K O MgO Al O < < <",
+        "C": "2 2 2 3 K O Na O Al O MgO < < <",
+        "D": "2 3 2 2 Al O MgO Na O K O < < <"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 74,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The rate of a chemical reaction  doubles for every \no\n10 C  rise of temperature.  If the temperature is raised \nby \no\n50 C , the rate of the reaction increases by about :",
+      "options": {
+        "A": "24 times",
+        "B": "32 times",
+        "C": "64 times",
+        "D": "10 times"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 75,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The magnetic moment (spin only) of [\n]\n2\n4\nNiCl\n− is",
+      "options": {
+        "A": "5.46 BM",
+        "B": "2.83 BM",
+        "C": "1.41 BM",
+        "D": "1.82 BM"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 76,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The hybridization of orbitals of N atom in \n3\n2\nNO ,NO\n−\n+  and \n4\nNH+  are respectively :",
+      "options": {
+        "A": "2 3 sp , sp, sp",
+        "B": "3 2 sp, sp , sp",
+        "C": "2 3 sp , sp , sp",
+        "D": "2 3 sp, sp , sp"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 77,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In context of the lanthanoids,  which of the following statements is not correct ?",
+      "options": {
+        "A": "All the members exhibit +3 oxidation state",
+        "B": "Because of similar properties the separation of lanthanoids is not easy.",
+        "C": "Availability of 4f electrons results in the formation of compounds in +4 state for all the members of the series.",
+        "D": "There is a gradual decrease in the radii of the members with increasing atomic number in the series."
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 78,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A 5.2 molal aqueous solution of methyl alcohol, \n3\nCH OH , is supplied.  What is the mole fraction of methyl \nalcohol in the solution ?",
+      "options": {
+        "A": "0.190",
+        "B": "0.086",
+        "C": "0.050",
+        "D": "0.100"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 79,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following statement is wrong ?",
+      "options": {
+        "A": "Nitrogen cannot form dπ - pπ bond.",
+        "B": "Single N- N bond is weaker than the single P – P bond,",
+        "C": "2 4 N O has two resonance structures",
+        "D": "The stability of hydrides increases from 3 NH to 3 BiH in group 15 of the periodic table"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 80,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The outer electron configuration of Gd (Atomic No : 64 is :",
+      "options": {
+        "A": "8 0 2 4f 5d 6s",
+        "B": "4 4 2 4f 5d 6s",
+        "C": "7 1 2 4f 5d 6s",
+        "D": "3 5 2 4f 4d 6s"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 81,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following statements regarding sulphur is incorrect ?",
+      "options": {
+        "A": "The vapour at o 200 C consists mostly of 8 S rings",
+        "B": "At o 600 C the gas mainly consists of 2 S molecules",
+        "C": "The oxidation state of sulphur is never less than +4 in its compounds",
+        "D": "2 S molecule is paramagnetic."
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 82,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The structure of \n7\nIF  is :",
+      "options": {
+        "A": "trigonal bipyramid",
+        "B": "octahedral",
+        "C": "pentagonal bipyramid",
+        "D": "square pyramid AIEEE−2011−12"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 83,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Ozonolysis of an organic compound gives formaldehyde as one of the products.  This confirms the \npresence of :",
+      "options": {
+        "A": "a vinyl group",
+        "B": "an isopropyl group",
+        "C": "an acetylenic triple bond",
+        "D": "two ethylenic double bonds"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 84,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A gas absorbs a photon of 355 nm and emits at two wavelengths.  If one of the emissions is at  \n \n680 nm, the other is at :",
+      "options": {
+        "A": "325 nm",
+        "B": "743 nm",
+        "C": "518 nm",
+        "D": "1035 nm"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 85,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Silver Mirror test is given by which one of the following compounds ?",
+      "options": {
+        "A": "Acetone",
+        "B": "Formaldehyde",
+        "C": "Benzophenone",
+        "D": "Acetaldehyde"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 86,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following reagents may be used to distinguish between phenol and benzoic acid ?",
+      "options": {
+        "A": "Tollen’s reagent",
+        "B": "Molisch reagent",
+        "C": "Neutral Fe 3 Cl",
+        "D": "Aqueous NaOH"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 87,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Phenol is heated with a solution of mixture of KBr and KBrO3.  The major product obtained in the above \nreaction is",
+      "options": {
+        "A": "3-Bromophenol",
+        "B": "4-Bromophenol",
+        "C": "2, 4, 6- Tribromophenol",
+        "D": "2-Bromophenol"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 88,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In a face centred cubic lattice, atom A occupies the corner positions and atom B occupies the face centre \npositions.  If one atom of B is missing from one of the face centred points, the formula of the compound is \n:",
+      "options": {
+        "A": "2 AB",
+        "B": "2 3 A B",
+        "C": "2 5 A B",
+        "D": "2 A B"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 89,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The entropy change involved in the isothermal reversible expansion of 2 moles of an ideal gas from a \nvolume of 10 \n3\ndm  to a volume of 100 \n3\ndm  at \no\n27 C is :",
+      "options": {
+        "A": "35.8J mol 1 1 K − −",
+        "B": "32.3J 1 1 mol K − −",
+        "C": "42.3J 1 1 mol K − −",
+        "D": "38.3J 1 1 mol K − −"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 90,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Identify the compound that exhibits tautomerism.",
+      "options": {
+        "A": "Lactic acid",
+        "B": "2-Pentanone",
+        "C": "Phenol",
+        "D": "2- Butene AIEEE−2011−13 READ THE FOLLOWING INSTRUCTIONS CAREFULLY"
+      },
+      "page_start": 12,
+      "page_end": 30,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "paper_id": "jee-main-2020-s1-physics-2020-01-08-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-physics-2020-01-08-shift-2",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-08",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-8-jan-2020-physics-paper-shift-2/243269",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/4In8hKSr6dmGCNfIf7VY",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "121b66c3422c699365f10026ebb4b0f8019ba7008f836e35b136bc6da71e2be7",
+    "page_count": 19,
+    "text_chars": 12893,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-physics-2020-01-08-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 12,
+  "defects": [
+    "25 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 4, 4, 2, 5, 13, 14, 2, 8, 15, 16, 17, 18, 50, 19]",
+    "2/12 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find magnetic field at O. Where R is the radius of the loop",
+      "options": {
+        "A": "𝜇𝑜𝑖 2𝜋𝑅[−1 √2 + 𝜋]",
+        "B": "𝜇𝑜𝑖 2𝜋𝑅[𝜋−1]",
+        "C": "𝜇𝑜𝑖 2𝑅",
+        "D": "𝜇𝑜𝑖 2𝜋𝑅[ 1 √2 + 𝜋] Solution: (d) To get magnetic field at O, we need to find magnetic field due to each current carrying part 1, 2, 3 and 4 individually. JEE Main 2020 Paper 8th Jan (Shift 2,Physics) Page | 2 Let’s take total magnetic field as 𝐵𝑇, then 𝐵⃗ 𝑇= 𝐵⃗ 1 + 𝐵⃗ 2 + 𝐵⃗ 3 + 𝐵⃗ 4 Since 2 and 4 are parts of same wire, hence 𝐵⃗ 𝑇= 𝜇𝑜𝑖 4𝜋𝑅(sin 90° −sin 45°)(−𝑘̂) + 𝜇𝑜𝑖 2𝑅 𝑘̂ + 𝜇𝑜𝑖 4𝜋𝑅(sin 90° + sin 45°)𝑘̂ = −𝜇𝑜𝑖 4𝜋𝑅[1 − 1 √2] + 𝜇𝑜𝑖 2𝑅+ 𝜇𝑜𝑖 4𝜋𝑅[1 + 1 √2] 𝑘̂ 𝐵⃗ 𝑇= 𝜇𝑜𝑖 4𝜋𝑅[√2 + 2𝜋] 𝑘̂ 𝐵⃗ 𝑇= 𝜇𝑜𝑖 2𝜋𝑅[ 1 √2 + 𝜋] 𝑘̂ 𝑘̂ denotes that direction of magnetic field is in the plane coming out of the plane of current."
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Position of particle as a function of time is given as 𝑟 = cos 𝜔𝑡𝑖̂ + sin 𝜔𝑡𝑗̂, where 𝜔 is \nconstant. Choose correct statement about 𝑟 , 𝑣  𝑎𝑛𝑑 𝑎  where 𝑣  and  𝑎  are the velocity and \nacceleration of the particle at time 𝑡.",
+      "options": {
+        "A": "𝑣 and 𝑎 are perpendicular to 𝑟",
+        "B": "𝑣 is parallel to 𝑟 and 𝑎 parallel to 𝑟",
+        "C": "𝑣 is perpendicular to 𝑟 and 𝑎 is away from the origin",
+        "D": "𝑣 is perpendicular to 𝑟 and 𝑎 is towards the origin Solution:(d) 𝑟 = cos 𝜔𝑡𝑖̂ + sin 𝜔𝑡𝑗̂ 𝑣 = 𝑑𝑟 𝑑𝑡= 𝜔[−sin 𝜔𝑡𝑖̂ + cos 𝜔𝑡𝑗̂] 𝑎 = 𝑑𝑣⃗ 𝑑𝑡= −𝜔2[cos 𝜔𝑡𝑖̂ + sin 𝜔𝑡𝑗̂] 𝑎 = −𝜔2𝑟 Since there is negative sign in acceleration, this means that acceleration is in opposite direction of 𝑟 8th Jan (Shift 2,Physics) Page | 3 For velocity direction we can take dot product of 𝑣 and 𝑟 . 𝑣 . 𝑟 = 𝜔(−sin 𝜔𝑡𝑖̂ + cos 𝜔𝑡𝑗̂). (cos 𝜔𝑡𝑖̂ + sin 𝜔𝑡𝑗̂) = 𝜔[−sin 𝜔𝑡cos 𝜔𝑡+ cos 𝜔𝑡sin 𝜔𝑡] = 0 which implies that 𝑣 is perpendicular to 𝑟 ."
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two uniformly charged solid spheres are such that 𝐸1 is electric field at surface of 1𝑠𝑡 \nsphere due to itself. 𝐸2 is electric field at surface of 2𝑛𝑑 sphere due to itself. 𝑟1, 𝑟2 are \nradius of 1𝑠𝑡 and 2𝑛𝑑  sphere respectively. If \n𝐸1\n𝐸2 =\n𝑟1\n𝑟2 then ratio of potential at the surface \nof spheres 1𝑠𝑡 and 2𝑛𝑑 due to their self charges is :",
+      "options": {
+        "A": "𝑟1 𝑟2",
+        "B": "( 𝑟1 𝑟2) 2",
+        "C": "𝑟2 𝑟1",
+        "D": "( 𝑟2 𝑟1) 2 Solution: (b) 𝐸1 𝐸2 = 𝑟1 𝑟2 𝑉1 𝑉2 = 𝐸1𝑟1 𝐸2𝑟2 = 𝑟1 𝑟2 × 𝑟1 𝑟2 = (𝑟1 𝑟2 ) 2"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Velocity of a wave in a wire is v when tension in it is 2.06 × 104 𝑁 . Find value of tension \nin wire when velocity of wave become \n𝑉",
+      "options": {
+        "B": "",
+        "A": "5.15 × 102 𝑁",
+        "C": "9 × 104 𝑁",
+        "D": "5.15 × 103𝑁 Solution:(d) 𝑉∝√𝑇 𝑉1 𝑉2 = √𝑇1 𝑇2 ⇒2𝑉 𝑉= √2.06 × 104 𝑇 ⇒𝑇= 2.06 × 104 4 𝑁 = 5.15 × 103 𝑁 8th Jan (Shift 2,Physics) Page | 4"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There are two identical particles 𝐴 and 𝐵. One is projected vertically upward with speed \n√2𝑔ℎ  from ground and other is dropped from height ℎ along the same vertical line. \nColision between them is perfectly inelastic. Find time taken by them to reach the ground \nafter collision in terms of √\nℎ\n𝑔 is.",
+      "options": {
+        "A": "√ 3 2",
+        "B": "√ 1 2",
+        "C": "√3",
+        "D": "√ 1 5 Solution:(a) Time taken for the collision 𝑡1 = ℎ √2𝑔ℎ After 𝑡1 𝑉𝐴= 0 – 𝑔𝑡1 = −√𝑔ℎ 2 And 𝑉𝐵= √2𝑔ℎ – 𝑔𝑡1 = √𝑔ℎ[√2 – 1 √2] At the time of collision 𝑃𝑖⃗⃗ = 𝑃𝑓 ⃗⃗⃗ ⇒ 𝑚 𝑉𝐴 ⃗⃗⃗⃗ + 𝑚 𝑉𝐵 ⃗⃗⃗⃗ = 2 𝑚 𝑉𝑓 ⃗⃗⃗ ⇒−√𝑔ℎ 2 + √𝑔ℎ[√2– 1 √2 ] = 2 𝑉𝑓 ⃗⃗⃗ 𝑉𝑓= 0 8th Jan (Shift 2,Physics) Page | 5 And height from the ground = ℎ − 1 2 𝑔 𝑡1 2 = ℎ – ℎ 4 = 3ℎ 4 . So, time taken to reach ground after collision = √2 × (3ℎ 4 ) 𝑔 = √ 3ℎ 2𝑔"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A Carnot engine, having an efficiency of  = 1/10 as heat engine, is used as a refrigerator. \nIf the work done on the system is 10 J, the amount of energy absorbed from the reservoir \nat lower temperature is",
+      "options": {
+        "A": "99 J",
+        "B": "90 J",
+        "C": "1 J",
+        "D": "100 J Solution:(b ) For Carnot engine using as refrigerator Work done on engine is given by 𝑊= 𝑄1 −𝑄2 … (1) where 𝑄1 is heat rejected to the reservoir at higher temperature and 𝑄2 is the heat absorbed from the reservoir at lower temperature. It is given  = 1/10 𝜂= 1 −𝑄2 𝑄1 ⟹ 𝑄2 𝑄1 = 9 10 ….. (2) We are given, 𝑊= 10 J Therefore, from equations (1) and (2), 𝑄2 = 10 10 9 −1 ⇒𝑄2 = 90 J 8th Jan (Shift 2,Physics) Page | 6"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two liquid columns of same height 5 𝑚 and densities 𝜌 and 2𝜌 are filled in a container of \nuniform cross -sectional area. Then ratio of force exerted by the liquid on upper half of \nthe wall to lower half of the wall is",
+      "options": {
+        "A": "2 3",
+        "B": "1 2",
+        "C": "1 4",
+        "D": "2 5 Solution:(c) The net force exerted on the wall by one type of liquid will be average value of pressure due to that liquid multiplied by the area of the wall. Here, since the pressure due a liquid of uniform density varies linearly with depth, its average will be just the mean value of pressure at the top and pressure at the bottom. So, 𝑃1 = 0 𝑃2 = 𝜌𝑔× 5 𝑃3 = 5𝜌𝑔+ 2𝜌𝑔× 5 8th Jan (Shift 2,Physics) Page | 7 𝐹1 = (𝑃1 + 𝑃2 2 )𝐴 𝐹2 = (𝑃2 + 𝑃3 2 ) 𝐴 So, 𝐹1 𝐹2 = 1 4"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A uniform solid sphere of radius 𝑅 has a cavity of radius 1 𝑚 cut from it. If the center of \nmass of the system lies at the periphery of the cavity then",
+      "options": {
+        "A": "(𝑅2 + 𝑅+ 1)(2 −𝑅) = 1",
+        "B": "(𝑅2 −𝑅−1)(2 −𝑅) = 1",
+        "C": "(𝑅2 −𝑅+ 1)(2 −𝑅) = 1",
+        "D": "(𝑅2 + 𝑅−1)(2 −𝑅) = 1 Solution (a) Let 𝑀 be the mass of the sphere and 𝑀’ be the mass of the cavity. Mass of the remaining part of the sphere = 𝑀 – 𝑀’ 8th Jan (Shift 2,Physics) Page | 8 Mass moments of the cavity and the remaining part of sphere about the original CoM should add up to zero. (𝑀−𝑀′)(2 −𝑅) −𝑀′(𝑅−1) = 0 (Mass of the cavity to be taken negative) ⇒4 3 𝜋(𝑅3 −13)𝜌𝑔 (2 −𝑅) = 4 3 𝜋(1)3𝜌𝑔(𝑅−1) ⇒(𝑅3 −13)(2 −𝑅) = (13)(𝑅−1) ⇒(𝑅2 + 𝑅+ 1)(𝑅−1)(2 −𝑅) = (𝑅−1) (using identity) ⇒(𝑅2 + 𝑅+ 1)(2 −𝑅) = 1"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A charge particle of mass 𝑚 and charge  𝑞 is released from rest in uniform electric field. \nIts graph    between velocity (𝑣) and distance (𝑥) will be :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "8th Jan (Shift 2,Physics) Page | 9 Solution. (b) Applying work energy theorem, 𝑞𝐸𝑥= 1 2 𝑚𝑣2 𝑣2 ∝𝑥 Hence, solution will be option (b)"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In full scale deflection current in galvanometer of 100 Ω resistance is 1 𝑚𝐴. Resistance   \nrequired in series to convern it into voltmeter of range 10 𝑉.",
+      "options": {
+        "A": "0.99 𝐾Ω",
+        "B": "9.9 𝐾Ω",
+        "C": "9.8 𝐾Ω",
+        "D": "10 𝐾Ω Solution: (b) 𝑉0 = 𝑖𝑔 𝑅𝑔= 0.1 𝑣 𝑣= 10 𝑉 𝑅 = 𝑅𝑔( 𝑣 𝑣𝑔 −1) = 100 × 99 = 9.9 𝐾Ω"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "𝑛 moles of 𝐻𝑒 and 2𝑛 moles of 𝑂2 are mixed in a container. Then (\n𝐶𝑝\n𝐶𝑣)\n𝑚𝑖𝑥 will be",
+      "options": {
+        "A": "19 23",
+        "B": "13 19",
+        "C": "19 13",
+        "D": "23 19 Solution: (c) Using formula 𝐶𝑣𝑚𝑖𝑥= 𝑛1𝐶𝑣1 + 𝑛2𝐶𝑣2 𝑛1 + 𝑛2 = 𝑛×3𝑅 2 +2𝑛×5𝑅 2 3𝑛 = 13𝑅 6 (∵𝐻𝑒 is monoatomic and 𝑂2 is diatomic) 8th Jan (Shift 2,Physics) Page | 10 𝐶𝑝𝑚𝑖𝑥= 𝐶𝑣𝑚𝑖𝑥+ 𝑅= 19𝑅 6 ∴𝛾𝑚𝑖𝑥= 𝐶𝑝𝑚𝑖𝑥 𝐶𝑣𝑚𝑖𝑥 = 19 13"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A solid sphere of mass 𝑚=  500 𝑔𝑚 is rolling without slipping on a horizontal surface. \nFind kinetic energy of the sphere if velocity of center of mass is 5 𝑐𝑚/𝑠𝑒𝑐.",
+      "options": {
+        "A": "35 4 × 10−4 𝐽",
+        "B": "35 2 × 10−4 𝐽",
+        "C": "21 × 10−4 𝐽",
+        "D": "70 × 10−3 𝐽 Solution:(a) Total K.E. = Translational K.E + Rotational K.E. = 1 2 𝑚𝑣2 + 1 2 𝐼2 = 1 2 𝑚𝑣2 (1 + 𝑘2 𝑅2) 𝑘 is radius of gyration. = 1 2 × 1 2 × ( 5 100) 2 (1 + 2 5) = 35 4 × 10−4 𝐽 8th Jan (Shift 2,Physics) Page | 11 13. Two square plates of side 'a' are arranged as shown in the figure. The minimum separation between plates is 'd' and one of the plates is inclined at small angle 𝛼 with plane parallel to another plate. The capacitance of capacitor is (given 𝛼 is very small"
+      },
+      "page_start": 10,
+      "page_end": 19,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

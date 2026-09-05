@@ -1,0 +1,63 @@
+{
+  "paper_id": "jee-advanced-2022-paper-2",
+  "exam_tag": "jee-advanced",
+  "tags": [
+    "jee-advanced",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-advanced-2022-paper-2",
+    "exam": "jee-advanced",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "official JEE Advanced paper (organizing IIT site / Wayback snapshot)",
+    "exam_tag": "jee-advanced",
+    "tags": [
+      "jee-advanced",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "official",
+    "source_site": "jeeadv.ac.in",
+    "source_page_url": "https://jeeadv.ac.in/",
+    "pdf_url": "https://web.archive.org/web/20220829222112id_/https://jeeadv.ac.in/documents/jeeadv-2022-paper2.pdf",
+    "official_key_url": "https://web.archive.org/web/20220911041758id_/https://jeeadv.ac.in/documents/jeeadv-2022-final-answer-keys.pdf",
+    "key_join_strategy": "jee_advanced_key_pdf",
+    "key_join_notes": "JEE Advanced final keys are per-paper PDFs, not NTA Question-ID tables"
+  },
+  "probe": {
+    "sha256": "ab89fcaa875ad976f545929083bb6f8cb8c0421e2a226890e9ee2bd25ba22272",
+    "page_count": 26,
+    "text_chars": 22792,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 6,
+    "cache_path": "scratch/nta_pdf_cache/jee-advanced-2022-paper-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "official_key_pending",
+    "source": "official_nta_key",
+    "official_key_url": "https://web.archive.org/web/20220911041758id_/https://jeeadv.ac.in/documents/jeeadv-2022-final-answer-keys.pdf",
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "parse_failed",
+  "detected_paper_meta": {},
+  "question_count": 0,
+  "defects": [
+    "text layer present but no question blocks matched any known layout; paper may be solutions-only, image-based, or an unrecognized format",
+    "11 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 3, 4, 2, 4, 4, 0, 2, 3, 3, 6]"
+  ],
+  "questions": []
+}

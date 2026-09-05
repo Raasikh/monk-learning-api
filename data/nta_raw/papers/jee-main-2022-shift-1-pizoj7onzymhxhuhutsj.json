@@ -1,0 +1,142 @@
+{
+  "paper_id": "jee-main-2022-shift-1-pizoj7onzymhxhuhutsj",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-1-pizoj7onzymhxhuhutsj",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/pIzOJ7onZymHxhuHuTsJ",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "768ebe1ae0a0ab6437f3d4bd7f65d41d57d5a4bba63f9d276fe0f6380ce62cd7",
+    "page_count": 7,
+    "text_chars": 8399,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 29,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-1-pizoj7onzymhxhuhutsj.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 2,
+  "defects": [
+    "25 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 4, 3, 54, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]",
+    "2/2 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Density of NaCl solid is 43.1 g/cm3 and distance between Na+ & Cl– ions is [X] × 10–10 m, then value of X",
+      "options": {
+        "A": "Both S1 & S2 are true",
+        "B": "Both S1 & S2 are false",
+        "C": "S1 is true & S2 is false",
+        "D": "S1 is false & S2 is true S2 : Electron in it's wave nature when undergoes interference shows diffraction pattern."
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Eºcell for the following reaction. \n \n2Fe3+(aq) + 2–(aq) \n\n\n2Fe2+(aq) + 2 is [X] × 10–2 V. The value of X is_______ \n \nGiven \nV\n77\n.\n0\nE\n2\n3\nFe\n/\n0\nFe\n\n\n\n & \nV\n54\n.\n0\nE0\n/\n2\n\n\n",
+      "options": null,
+      "page_start": 2,
+      "page_end": 7,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    }
+  ]
+}

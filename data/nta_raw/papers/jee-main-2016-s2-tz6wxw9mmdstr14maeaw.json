@@ -1,0 +1,1839 @@
+{
+  "paper_id": "jee-main-2016-s2-tz6wxw9mmdstr14maeaw",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2016-s2-tz6wxw9mmdstr14maeaw",
+    "exam": "jee-main",
+    "year": 2016,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2016/jee-main-2016-question-paper-set-e-3rd-april-2016/98555",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/TZ6WXw9mmdSTr14MaEAw",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "b349e0fa80ea6d7c8885e5e445d2f9507f4ebfce952f28933c0f2209569aa302",
+    "page_count": 32,
+    "text_chars": 46732,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 1,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2016-s2-tz6wxw9mmdstr14maeaw.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 86,
+  "defects": [
+    "66 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 1, 2]",
+    "86/86 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Immediately fill in the particulars on this page of the Test Booklet with only Blue/Black Ball Point Pen provided\nby the Board.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Answer Sheet is kept inside this Test Booklet. When you are directed to open the Test Booklet, take out the\nAnswer Sheet and fill in the particulars carefully.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The test is of 3 hours duration.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Test Booklet consists of 90 questions. The maximum marks are 360.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There are three parts in the question paper A, B, C consisting of, Physics, Chemistry and\nMathematics having 30 questions in each part of equal weightage. Each question is allotted 4 (four) marks for\neach correct response.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Candidates will be awarded marks as stated above in instruction No. 5 for correct response of each question.\n1/4 (one fourth) marks will be deducted for indicating incorrect response of each question. No deduction from the\ntotal score will be made if no response is indicated for an item in the answer sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is only one correct response for each question. Filling up more than one response in each question will be\ntreated as wrong response and marks for wrong response will be deducted accordingly as per instruction 6\nabove.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "For writing, particulars / marking responses on Side1 and Side2 of the Answer Sheet use only Blue/\nBlack Ball Point Pen only provided by the Board.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "No candidates is allowed to carry any textual material, printed or written, bits of papers, pager, mobile phone, any\nelectronic device, etc., except the Admit Card inside the examination hall/room.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Rough work is to be done on the space provided for this purpose in the Test Booklet only. This space is given at\nthe bottom of each page and in three pages (Pages 2123) at the end of the booklet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "On completion of the test, the candidate must hand over the Answer Sheet to the Invigilator on duty in the Room /\nHall. However, the candidates are allowed to take away this Test Booklet with them.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The CODE for this Booklet is E. Make sure that the CODE printed on Side2 of the Answer Sheet and also tally\nthe serial number of the Test Booklet and Answer Sheet are the same as that on this booklet. In case of\ndiscrepancy, the candidate should immediately report the matter to the Invigilator for replacement of both\nthe Test Booklet and the Answer Sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Do not fold or make any stray marks on the Answer Sheet.\nPAPER - 1 : PHYSICS, CHEMISTRY & MATHEMATICS\nJEE MAIN 2016 (Code-E) \n  Name of the Candidate (in Capital letters) :  ______________________________________________ \nRoll Number : in figures \n    : in words  ______________________________________________________________ \nExamination Centre Number : \nName of Examination Centre (in Capital letters) :  ____________________________________________ \nCandidate’s Signature : ______________________ Invigilator’s Signature : ____________________ \n\n2\nRead the following instructions carefully :",
+      "options": {
+        "A": "The candidates should fill in the required particulars on the Test Booklet and Answer Sheet (Side-1) with Blue/ Black Ball Point Pen.",
+        "B": "For writing/marking particulars on Side-2 of the Answer Sheet, use Blue/Black Ball Point Pen only.",
+        "C": "The candidates should not write their Roll Numbers anywhere else (except in the specified space) on the Test Booklet/Answer Sheet.",
+        "D": "Out of the four options given for each question, only one option is the correct answer. 5. For each incorrect response, one-fourth (¼) of the total marks allotted to the question would be deducted from the total score. No deduction from the total score, however, will be made if no response is indicated for an item in the Answer Sheet. 6. Handle the Test Booklet and Answer Sheet with care, as under no circumstances (except for discrepancy in Test Booklet Code and Answer Sheet Code), another set will be provided. 7. The candidates are not allowed to do any rough work or writing work on the Answer Sheet. All calculations/writing work are to be done in the space provided for this purpose in the Test Booklet itself, marked ‘Space for Rough Work’. This space is given at the bottom of each page and in 3 pages (Pages 21 – 23) at the end of the booklet. 8. On completion of the test, the candidates must hand over the Answer Sheet to the Invigilator on duty in the Room/ Hall. However, the candidates are allowed to take away this Test Booklet with them. 9. Each candidate must show on demand his/her Admit Card to the Invigilator. 10. No candidate, without special permission of the Superintendent or Invigilator, should leave his/her seat. 11. The candidates should not leave the Examination Hall without handing over their Answer Sheet to the Invigilator on duty and sign the Attendance Sheet again. Cases where a candidate has not signed the Attendance Sheet a second time will be deemed not to have handed over the Answer Sheet and dealt with as an unfair means case. The candidates are also required to put their left hand THUMB impression in the space provided in the Attendance Sheet. 12. Use of Electronic/Manual Calculator and any Electronic Item like mobile phone, pager etc. is prohibited. 13. The candidates are governed by all Rules and Regulations of the JAB/Board with regard to their conduct in the Examination Hall. All cases of unfair means will be dealt with as per Rules and Regulations of the JAB/Board."
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "possible_embedded_answer_marker"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "No part of the Test Booklet and Answer Sheet shall be detached under any circumstances.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Candidates are not allowed to carry any textual material, printed or written, bits of papers, pager, mobile\nphone, electronic device or any other material except the Admit Card inside the examination\nroom / hall.\n\n 3 \nPART- A : PHYSICS",
+      "options": {
+        "A": "A student measures the time period of 100 oscillations of a simple pendulum four times. The data set is 90 s, 91 s, 95 s and 92 s. If the minimum division in the measuring clock is 1 s, then the reported mean time should be :",
+        "B": "92  5.0 s",
+        "C": "92  1.8 s",
+        "D": "92  3 s"
+      },
+      "page_start": 2,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "\n\nSolving 0 = 25˚C and putting in (2) \n8\n5 29 60 60\n\n\n\n\n\n8. An ideal gas undergoes a quasi static, reversible process in which its molar heat capacity\nCremains constant. If during this process the relation of pressure P and volume V is given by\nPVn = constant, then n is given by (Here CP and CV are molar specific heat at constant pressure\nand constant volume, respectively) :",
+      "options": {
+        "A": "n = P V C C",
+        "B": "P V C C n C C  ",
+        "C": "P V C C n C C  ",
+        "D": "V P C C n C C   8."
+      },
+      "page_start": 5,
+      "page_end": 10,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Radiation of wavelength , is incident on a photocell. The fastest emitted electron has speed v. If\nthe wavelength is changed to 3\n4\n, the speed of the fastest emitted electron will be :",
+      "options": {
+        "A": "1 2 4 v 3       ",
+        "B": "1 2 4 v 3       ",
+        "C": "1 2 4 v 3       ",
+        "D": "1 2 3 v 4        21. (1) 2 hc 1 mv 2   ………… (i) 2 4hc 1 mv' 3 2   ………… (ii) (ii)  (i) gives   2 2 2 hc 1 2hc m v' v v' v 3 2 3 m        ………….. (iii) also from (i) 2 2 hc mv 2hc 2 v 2 m m         2 2 2hc 2 r v 3 m 3m 3 3      …………… (iv) combining (iii) & (iv) 2 4v v' 3  L/a L a 11"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Half-lives of two radioactive elements A and B are 20 minutes and 40 minutes, respectively.\nInitially, the samples have equal number of nuclei. After 80 minutes, the ratio of decayed\nnumbers of A and B nuclei will be :",
+      "options": {
+        "A": "1 : 16",
+        "B": "4 : 1",
+        "C": "1 : 4",
+        "D": "5 : 4 22. (4) 80 minutes = 4 half-lives of A = 2 half-lives of B Let the initial number of nuclei in each sample be N NA after 80 minutes = 4 N 2  Number of A nuclides decayed = 15 N 16 NB after 80 minutes = 2 N 2 Number of B nuclides decayed = 3 4 N Required ratio = 15/16 5 3/ 4 4 "
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If a, b, c, d are inputs to a gate and x is its output, then, as per the following time graph, the gate\nis :",
+      "options": {
+        "A": "NOT",
+        "B": "AND",
+        "C": "OR",
+        "D": "NAND 23. (3) x is 1 when at least one of the inputs is 1. Hence x is an OR-Gate."
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Choose the correct statement :",
+      "options": {
+        "A": "In amplitude modulation the amplitude of the high frequency carrier wave is made to vary in proportion to the amplitude of the audio signal.",
+        "B": "In amplitude modulation the frequency of the high frequency carrier wave is made to vary in proportion to the amplitude of the audio signal.",
+        "C": "In frequency modulation the amplitude of the high frequency carrier wave is made to vary in proportion to the amplitude of the audio signal.",
+        "D": "In frequency modulation the amplitude of the high frequency carrier wave is made to vary in proportion to the frequency of the audio signal. 24. (1)"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A screw gauge with a pitch of 0.5 mm and a circular scale with 50 divisions is used to measure\nthe thickness of a thin sheet of Aluminium. Before starting the measurement, it is found that\nwhen the two jaws of the screw gauge and brought in contact, the 45th division coincides with the\nmain scale line and that the zero of the main scale is barely visible. What is the thickness of the\nsheet if the main scale reading is 0.5 mm and the 25th division coincides with the main scale line?",
+      "options": {
+        "A": "0.75 mm",
+        "B": "0.80 mm",
+        "C": "0.70 mm",
+        "D": "0.50 mm 25. (2) L.C. = pitch 0.5 0.001mm No. of division on circular scale 50   ve zero error =  5  L.C. = 0.005 mm Measured value = main scale reading + screw gauge reading  zero error = 0.5 mm + {25  0.001  (0.05)} mm = 0.80 mm 12"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A pipe open at both ends has a fundamental frequency f in air. The pipe is dipped vertically in\nwater so that half of it is in water. The fundamental frequency of the air column is now :",
+      "options": {
+        "A": "f 2",
+        "B": "3f 4",
+        "C": "2f",
+        "D": "f 26. (4)"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A galvanometer having a coil resistance of 100  gives a full scale deflection, when a current of\n1 mA is passed through it. The value of the resistance, which can convert this galvanometer into\nammeter giving a full scale deflection for a current of 10 A is :",
+      "options": {
+        "A": "0.01 ",
+        "B": "2 ",
+        "C": "0.1 ",
+        "D": "3  27. (1) Maximum voltage that can be applied across the galvanometer coil = 100   103 A = 0.1 V. If RS is the shunt resistance : RS  10 A = 0.1 V RS = 0.01 "
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "In an experiment for determination of refractive index of glass of a prism by i  , plot, it was\nfound that a ray incident at angle 35, suffers a deviation of 40 and that it emerges at angle 79.\nIn that case which of the following is closest to the maximum possible value of the refractive\nindex?",
+      "options": {
+        "A": "1.5",
+        "B": "1.6",
+        "C": "1.7",
+        "D": "1.8 28. (1)  = i + e  A 40 = 35 + 79  A 40 = 114  A A = 114  40 = 74 = r1+ r2 From this we get, = 1.5 min < 40  < 70 40 sin 2 sin37        max = 1.44"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Identify the semiconductor devices whose characteristics are given below, in the order (a), (b),\n(c), (d) :\nr1 \nr2\ne\ni \n\n13",
+      "options": {
+        "A": "Simple diode, Zener diode, Solar cell, Light dependent resistance.",
+        "B": "Zener diode, Simple diode, Light dependent resistance, Solar cell.",
+        "C": "Solar cell, Light dependent resistance, Zener diode, Simple diode.",
+        "D": "Zener diode, Solar cell, Simple diode, Light dependent resistance. 29. (1)"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "For a common emitter configuration, if  and  have their usual meanings, the incorrect\nrelationship between  and  is :",
+      "options": {
+        "A": "1 1 1    ",
+        "B": " = 1  ",
+        "C": " = 1  ",
+        "D": " = 2 2 1   30. (2) Standard Result PART- B : CHEMISTRY"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "At 300 K and 1 atm, 15 mL of a gaseous hydrocarbon requires 375 mL air containing 20% O2 by volume\nfor complete combustion. After combustion the gases occupy 330 mL. Assuming that the water formed is\nin liquid form and the volumes were measured at the same temperature and pressure, the formula of the\nhydrocarbon is :",
+      "options": {
+        "A": "C3H6",
+        "B": "C3H8",
+        "C": "C4H8",
+        "D": "C4H10 31. (2) x y 2 2 2 y 15 x mL 15 mL 15 x mL 4 y y C H x O xCO H O 4 2                      2 O V = 20 375 100 = 75 mL = y 15 x 4         y x 4  = 5 C3H8"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Two closed bulbs of equal volume (V) containing an ideal gas initially at pressure pi and temperature T1\nare connected through a narrow tube of negligible volume as shown in the figure below. The temperature\nof one of the bulbs is then raised to T2. The final pressure \nfp  is :",
+      "options": {
+        "A": "1 2 i 1 2 T T p T T       ",
+        "B": "1 i 1 2 T 2p T T       ",
+        "C": "2 i 1 2 T 2p T T       ",
+        "D": "1 2 i 1 2 T T 2p T T        32. (3) Initially Later on n1 = i 1 p V RT n2 = i 1 p V RT 1 n ' = f 1 p V RT 2 n ' = f 2 p V RT 14 n1 + n2 = 1 2 n ' n '  i 1 p V RT + i 1 p V RT = f 1 p V RT + f 2 p V RT i 1 2p V RT = f 1 2 1 2 p V T T R T T        pf = i 2 1 2 2p T T T "
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A stream of electrons from a heated filament was passed between two charged plates kept at a potential\ndifference V esu. If e and m are charge and mass of an electron, respectively, then the value of h/ (where\nis wavelength associated with electron wave) is given by :",
+      "options": {
+        "A": "me V",
+        "B": "2me V",
+        "C": "me V",
+        "D": "2 me V 33. (4)  = h P = h 2mE = h 2meV  h  = 2meV"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The species in which the N atom is in a state of sp hybridization is :",
+      "options": {
+        "A": "2 NO",
+        "B": "2 NO",
+        "C": "3 NO",
+        "D": "NO2 34. (1) O = N  = O sp hybridisation"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 35,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The heats of combustion of carbon and carbon monoxide are  393.5 and 283.5 kJ mol1, respectively.\nThe heat of formation (in kJ) of carbon monoxide per mole is :",
+      "options": {
+        "A": "110.5",
+        "B": "676.5",
+        "C": "676.5",
+        "D": "110.5 35. (4) (g) 2(g) 2(g) C O CO   H1 = 393.5 kJ/mol (g) 2(g) 2(g) 1 CO O CO 2     H2 = 283.5 kJ/ mol (g) 2 (g) (g) 1 C O CO 2    H = H1  H2 = 110 kJ/mol"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "18 g glucose (C6H12O6) is added to 178.2 g water. The vapor pressure of water (in torr) for this aqueous\nsolution is :",
+      "options": {
+        "A": "7.6",
+        "B": "76.0",
+        "C": "752.4",
+        "D": "759.0 36. (3) 2 H O n = 178.2 18 = 9.9 ; nGlucose = 18 180 = 0.1 nTotal = 10 2 H O X = 0.99 P = Solvent 0 X P = 760 0.99  = 752.4 torr."
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The equilibrium constant at 298 K for a reaction A + B\n C + D is 100. If the initial concentration of all the \nfour species were 1M each, then equilibrium concentration of D (in mol L1) will be :",
+      "options": {
+        "A": "0.182",
+        "B": "0.818",
+        "C": "1.818",
+        "D": "1.182 15 37. (3) A B C D    1 1 1 1 1  x 1  x 1 + x 1 + x KC = [C][D] [A][B]   = 2 2 (1 x) (1 x)   = 100  1 x 1 x   = 10  1 + x = 10  10x  11x = 9 x = 9 11 [D] = 1 + x = 9 1 11  = 1.818 M"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 38,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Galvanization is applying a coating of :",
+      "options": {
+        "A": "Pb",
+        "B": "Cr",
+        "C": "Cu",
+        "D": "Zn 38. (4) Galvanization is applying a coating of zinc. 2 0 Pb /Pb E  = 0.13 V 3 0 Cr /Cr E  = 0.74 V 2 0 Cu /Cu E  = 0.34 V 2 0 Zn /Zn E  = 0.76 V"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Decomposition of H2O2 follows a first order reaction. In fifty minutes the concentration of H2O2 decreases\nfrom 0.5 to 0.125 M in one such decomposition. When the concentration of H2O2 reaches 0.05 M, the rate\nof formation of O2 will be :",
+      "options": {
+        "A": "6.93  102 mol min1",
+        "B": "6.93  104 mol min1",
+        "C": "2.66 L min1 at STP",
+        "D": "1.34  102 mol min1 39. (2) 3/4 t = 1/2 2 t  = 50 min i.e. t1/2 = 25 min k = 1/2 0.693 t = 0.693 25 min1 Rate of H2O2 decomposition = k[H2O2] = 0.693 0.05 25  = 2 2 d[H O ] dt   2 2 2 2 1 H O H O O 2   2 2 d[H O ] dt  = 2 d[O ] 2 dt   2 d[O ] dt = 6.93  104 mol min1"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "For a linear plot of log (x/m) versus log p in a Freundlich adsorption isotherm, which of the following\nstatements is correct ? (k and n are constants)",
+      "options": {
+        "A": "Both k and 1/n appear in the slope term.",
+        "B": "1/n appears as the intercept.",
+        "C": "Only 1/n appears as the slope.",
+        "D": "log (1/n) appears as the intercept. 16 40. (3) x m = 1/n k p x log m       = 1 log k log p n "
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Which of the following atoms has the highest first ionization energy ?",
+      "options": {
+        "A": "Rb",
+        "B": "Na",
+        "C": "K",
+        "D": "Sc 41. (4) Element Ionisation energy (kJ/mol) Na 496 K 419 Rb 403 Sc 631 Scandium has the highest first Ionisation energy."
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Which one of the following ores is best concentrated by froth floatation method ?",
+      "options": {
+        "A": "Magnetite",
+        "B": "Siderite",
+        "C": "Galena",
+        "D": "Malachite 42. (3) PbS, i.e. Galena is best concentrated by froth floatation method."
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 43,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Which one of the following statements about water is FALSE ?",
+      "options": {
+        "A": "Water is oxidized to oxygen during photosynthesis.",
+        "B": "Water can act both as an acid and as a base.",
+        "C": "There is extensive intramolecular hydrogen bonding in the condensed phase.",
+        "D": "Ice formed by heavy water sinks in normal water. 43. (3) Water possess intermolecular hydrogen bonding in the condensed phase."
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 44,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The main oxides formed on combustion of Li, Na and K in excess of air are, respectively :",
+      "options": {
+        "A": "Li2O, Na2O and KO2",
+        "B": "LiO2, Na2O2 and K2O",
+        "C": "Li2O2, Na2O2 and KO2",
+        "D": "Li2O, Na2O2 and KO2 44. (4) Li  Li2O Na  Na2O2 K  KO2"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The reaction of zinc with dilute and concentrated nitric acid, respectively produces :",
+      "options": {
+        "A": "N2O and NO2",
+        "B": "NO2 and NO",
+        "C": "NO and N2O",
+        "D": "NO2 and N2O 45. (1) Zn reacts with dil. HNO3 (20%) to form nitrous oxide (N2O) Zn reacts with conc. HNO3 (70%) to form nitrogen dioxide (NO2) 3 3 2 2 2 4Zn 10HNO dil.) 4Zn(NO ) N O 5H O      3 3 2 2 2 Zn 4HNO conc.) Zn(NO ) 2NO 2H O     "
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The pair in which phosphorous atoms have a formal oxidation state of + 3 is :",
+      "options": {
+        "A": "Orthophosphorous and pyrophosphorous acids",
+        "B": "Pyrophosphorous and hypophosphoric acids",
+        "C": "Orthophosphorous and hypophosphoric acids",
+        "D": "Pyrophosphorous and pyrophosphoric acids log p  x log m        1 slope n  17 46. (1) Phosphorus acid series contain phosphorus in the oxidation state (+ III). Pyrophosphorus acid H H | | H O P O P OH O O        orthophosphorus acid H | H O P O H O     "
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 47,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Which of the following compounds is metallic and ferromagnetic ?",
+      "options": {
+        "A": "TiO2",
+        "B": "CrO2",
+        "C": "VO2",
+        "D": "MnO2 47. (2) CrO2 like metal conduct electricity and ferromagnetic."
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The pair having the same magnetic moment is :\n[At. No.: Cr = 24, Mn = 25, Fe = 26, Co = 27]",
+      "options": {
+        "A": "2 2 2 6 4 [Cr(H O) ] and[CoCl ]  ",
+        "B": "  2 2 2 6 2 6 Cr(H O) and[Fe(H O) ]  ",
+        "C": "2 2 2 6 2 6 [Mn(H O) ] and[Cr(H O) ]  ",
+        "D": "2 2 4 2 6 [CoCl ] and[Fe(H O) ]   48. (2) Cr+2  (Ar) 3d4 4s0 ↿ ↿ ↿ ↿ 3d4 4s0 Fe+2  (Ar) 3d6 4s0 ↿⇂ ↿ ↿ ↿ ↿ 3d6 4s0"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Which one of the following complexes shows optical isomerism ?",
+      "options": {
+        "A": "[Co(NH3)3Cl3]",
+        "B": "cis[Co(en)2Cl2]Cl",
+        "C": "trans[Co(en)2Cl2]Cl",
+        "D": "[Co(NH3)4Cl2] Cl (en = ethylenediamine) 49. (2)"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 50,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The concentration of fluoride, lead, nitrate and iron in a water sample from an underground lake was\nfound to be 1000 ppb, 40 ppb, 100 ppm and 0.2 ppm, respectively. This water is unsuitable for drinking\ndue to high concentration of :",
+      "options": {
+        "A": "Fluoride",
+        "B": "Lead",
+        "C": "Nitrate",
+        "D": "Iron 50. (3) Fluoride  1000 ppm Lead  40 ppm Nitrate  100 ppm [> 40 ppm gives blue baby syndrome disease.] Iron  0.2 ppm"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 51,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The distillation technique most suited for separating glycerol from spentlye in the soap industry is :",
+      "options": {
+        "A": "Simple distillation",
+        "B": "Fractional distillation",
+        "C": "Steam distillation",
+        "D": "Distillation under reduced pressure 51. (4) Glycerol and spent-lye can be separated by distillation under reduced pressure. 18 2 5 2 2 2 5 3 C H CH C CH C H CH C CH     CH3 CH3"
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 52,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The product of the reaction given below is :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "52. (2) 2 2 3 1NBS/hv 2,H O/K CO   Br  OH OH"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 53,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The absolute configuration of\nis :",
+      "options": {
+        "A": "(2R, 3S)",
+        "B": "(2S, 3R)",
+        "C": "(2S, 3S)",
+        "D": "(2R, 3R) 53. (2) H OH H Cl CH3 COOH 2 3 (2 S 3 R)"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 54,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "2chloro2methylpentane on reaction with sodium methoxide in methanol yields :",
+      "options": {
+        "A": "All of these",
+        "B": "(a) and (c)",
+        "C": "(c) only",
+        "D": "(a) and (b) 54. (1) 3 CH ONa 3 2 2 3 3 2 2 3 CH CH CH C CH CH C CH CH CH         CH3 Cl CH3 OMe"
+      },
+      "page_start": 18,
+      "page_end": 19,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 55,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The reaction of propene with HOCl (Cl2 + H2O) proceeds through the intermediate :",
+      "options": {
+        "A": "CH3  CH+  CH2  OH",
+        "B": "CH3  CH+  CH2  Cl",
+        "C": "3 2 CH CH(OH) CH  ",
+        "D": "3 2 CH CHCl CH   55. (2)"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 56,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "In the Hofmann bromamide degradation reaction, the number of moles of NaOH and Br2 used per mole of\namine produced are :",
+      "options": {
+        "A": "One mole of NaOH and one mole of Br2.",
+        "B": "Four moles of NaOH and two moles of Br2.",
+        "C": "Two moles of NaOH and two moles of Br2.",
+        "D": "Four moles of NaOH and one mole of Br2. 56. (4) 2 2 2 2 3 R C NH Br 4NaOH R NH 2NaBr Na CO       O"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 57,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Which of the following statements about low density polythene is FALSE ?",
+      "options": {
+        "A": "Its synthesis requires high pressure.",
+        "B": "It is a poor conductor of electricity.",
+        "C": "Its synthesis requires dioxygen or a peroxide initiator as a catalyst.",
+        "D": "It is used in the manufacture of buckets, dustbins etc. 57. (4) n(H2C = CH2) "
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 58,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Thiol group is present in :",
+      "options": {
+        "A": "Cytosine",
+        "B": "Cystine",
+        "C": "Cysteine",
+        "D": "Methionine 58. (3) 2 HS CH CH   NH2 COOH (Cysteine)"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 59,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Which of the following is an anionic detergent ?",
+      "options": {
+        "A": "Sodium stearate",
+        "B": "Sodium lauryl sulphate",
+        "C": "Cetyltrimethyl ammonium bromide",
+        "D": "Glyceryl oleate 59. (2) CH3(CH2)11OSO3Na = (Sodium Lauryl Sulphate)"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 60,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The hottest region of Bunsen flame shown in the figure below is :",
+      "options": {
+        "A": "region 1",
+        "B": "region 2",
+        "C": "region 3",
+        "D": "region 4 60. (2) Region  2  blue flame 20 PART- C : MATHEMATICS"
+      },
+      "page_start": 19,
+      "page_end": 20,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If f(x) + 2y 1\nx\n\n\n\n\n\n\n = 3x, x  0, and S = {x  R : f(x) = f(x)}; then S:",
+      "options": {
+        "A": "is an empty set",
+        "B": "contains exactly one element",
+        "C": "contains exactly two elements.",
+        "D": "contains more than two elements. 61. (3) 1 f(x) 2f 3x x         Replace x by 1 , x 1 3 f 2f(x) x x         3 2f (x) 3x f (x) x 2 1    3x  f(x) = 6 x 4f(x) f(x) = 2 x x f(x) = f(x)  2 2 x x x x    4 2x x 2 x "
+      },
+      "page_start": 20,
+      "page_end": 20,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 62,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A value of  for which 2\n3i sin\n1\n2i sin\n\n\n\n is purely imaginary, is:",
+      "options": {
+        "A": "3 ",
+        "B": "6 ",
+        "C": "sin1 3 4        ",
+        "D": "sin1 1 3       62. (4)     2 2 2 6sin i 7sin 2 3isin 1 2isin 1 2isin 1 2isin 1 4sin                To be purely imaginary if 2 2 2 6sin 0 1 4sin      2 2 1 1 1 2 6sin sin sin 3 3          "
+      },
+      "page_start": 20,
+      "page_end": 20,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 63,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The sum of all real values of x satisfying the equation\n2\nx\n2\n4x\nx\n5\n5\n(\n)\nx\n\n\n\n\n = 1 is:",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "6",
+        "D": "5 63. (1)     2 x 4x 60 0 2 2 x 5x 5 1 x 5x 5        x2 + 4x  60 = 0 [ax = ay  x = y if a  1, 0, 1] x = 10, 6 & base x2  5x + 5 = 0 or 1 or 1 If x2  5x + 5 = 0 x2  5x + 5 = 1 x2  5x + 5 = 1 But it will not satisfy original equation. x = 4, 1 x = 2, 3 x = 3 does not satisfy eqn. 21 Hence solutions are 10, 6, 4, 1, 2 So, sum of solutions = 10 + 6 + 4 + 1 + 2 = 3"
+      },
+      "page_start": 20,
+      "page_end": 21,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 64,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If A =\n5a\nb\n3\n2\n\n\n\n\n\n\n\nand A adj A = A AT, then 5a + b is equal to:",
+      "options": {
+        "A": "1",
+        "B": "5",
+        "C": "4",
+        "D": "13 64. (2) 5a b A 3 2        A.adj A = A . AT 5a b 2 b 5a b 5a 3 3 2 3 5a 3 2 b 2                          2 2 10a 3b 0 25a b 15a 2b 0 10a 3b 15a 2b 13                  Equate, 10a + 3b = 25a2 + b2 & 10a + 3b = 13 & 15 a  2b = 0 a b 2 15  = k (let) Solving a = 2 5 , b = 3 So, 5a + b = 5  2 5 + 3 = 5"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The system of linear equations\nx + y  z = 0\nx  y  z = 0\nx + y  z = 0\nhas a non-trivial solution for:",
+      "options": {
+        "A": "infinitely many values of .",
+        "B": "exactly one value of ",
+        "C": "exactly two values of ",
+        "D": "exactly three values of  65. (4) x + y  z = 0 x  y  z = 0 x + y  z = 0 For non-trivial solution   = 0  1 1 1 1 0 1 1         + 1   2 1"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If all the words (with or without meaning) having five letters, formed using the letters of the\nword SMALL and arranged as in a dictionary; then the position of the word SMALL is:",
+      "options": {
+        "A": "46th",
+        "B": "59th",
+        "C": "52nd",
+        "D": "58th 22 66. (4) A LL MS A (LL MS) 4! 24 12 2! 2   L (AL MS)  4! = 24 M (ALLS)  4! 24 12 2! 2   SA (MLL)  3! 3 2!  SL (ALM)  3! = 6 Total words = 12 + 24 + 12 + 3 + 6 = 57 SMALL 58th the position of the word SMALL is 58th.."
+      },
+      "page_start": 21,
+      "page_end": 22,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If the number of terms in the expansion of\nn\n2\n2\n4\n1\nx\nx\n\n\n\n\n\n\n\n\n, x  0, is 28, then the sum of the \ncoefficients of all the terms in this expansion, is:",
+      "options": {
+        "A": "64",
+        "B": "2187",
+        "C": "243",
+        "D": "729 67. (4) Number of terms (n 1)(n"
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_B",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If the 2nd, 5th and 9th terms of a non-constant A.P. are in G.P., then the common ratio of this G.P.\nis:",
+      "options": {
+        "A": "8 5",
+        "B": "4 3",
+        "C": "1",
+        "D": "7 4 68. (2) t2 = a + d t5 = a + 4d t9 = a + 8d Given t2, t5, t9 are in G.P. (a + 4d)2 = (a + d) (a + 8d) a2 + 16d2 + 8ad = a2 + 8d2 + 9ad 8d2  ad = 0 d(8d  a) = 0 As given nonconstant AP.  d  0 d = a 8 a = 8d so, A.P. is 8d, 9d, 10d, ….. Common ratio of G.P. = 5 2 t t = a 4d a d   = 12d 9d = 4 3 23"
+      },
+      "page_start": 22,
+      "page_end": 23,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If the sum of the first ten terms of the series\n2\n2\n2\n3\n2\n1\n1\n2\n3\n5\n5\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n+ 42 +\n2\n4\n4 5\n\n\n\n\n\n\n+ ……, is 16\n5\n m, then m is equal to:",
+      "options": {
+        "A": "102",
+        "B": "101",
+        "C": "100",
+        "D": "99 69. (2) 2 3 15       + 2 2 2 5       + 2 1 35       + 42 + 2 4 4 5       + …… upto 10 terms = 2 2 2 2 2 8 12 16 20 24 5 5 5 5 5                                   + …… upto 10 terms. (8)2 + (12)2 + (16)2 + ……… up to 10 terms Tn = [4 (n + 1)]2 where n varies from 1 to 10. = 16(n2 + 2n + 1) 10 n n 1 T 16    (n2 + 2n + 1) 10 2 n 1 n  = n(n 1) (2n 1) 6   = 10 11 21 6   = 385 = 16 [385 + 55(2) + 10] 10 n 1 n  = n(n 1) 2  = 10 11   = 55 = 16 (505) 10 n 1 1 = n = 10  2 8 5       + 2 12 5       + 2 16 5       + …… upto 10 terms = 16 505 25  It is given that 16 505 25  = 16 5 m m = 505 5 = 101"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 70,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let p =\n\n\n1\n2\n2x\nx\n0\nlim\n1\ntan\nx\n\n then long p is equal to:",
+      "options": {
+        "A": "2",
+        "B": "1",
+        "C": "1 2",
+        "D": "1 4 70. (3) p =   2 2 1 tan x 2 2x tan x x 0 lim 1 tan x     = 2 2 x 0 tan x 1 lim 2 ( x ) e    = 1 2 e e log p = 1 2 24"
+      },
+      "page_start": 23,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "For x  R, f(x) = |log 2  sin x| and g(x) = f(f(x)), then:",
+      "options": {
+        "A": "g is not differentiable at x = 0",
+        "B": "g(0) = cos (log 2)",
+        "C": "g(0) =  cos(log2)",
+        "D": "g is differentiable at x = 0 and g(0) = sin(log2) 71. (2) g(x) = | loge 2  sin (|loge 2  sin x|)| At x = 0, g(x) = loge(2)  sin (loge 2  sin x) g(x) = cos (loge (2)  sin x)  cos (x) g(0) = cos (loge(2))"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Consider\nf(x) = tan1\n1 sin x\n1 sin x\n\n\n\n\n\n\n\n\n\n\n, x  0, 2\n\n\n\n\n\n\n\n\n. \nA normal to y = f(x) at x = \n6\n also passes through the point:",
+      "options": {
+        "A": "(0, 0)",
+        "B": "2 0, 3        ",
+        "C": ", 0 6        ",
+        "D": ", 0 4         72. (2) 1 x x f(x) tan (tan 4 2 4 2              If x , 6   4 f( ) 6 4 12 12 3          f (x) = 1 2 Normal y 2 x 3 6            So, 0, 3        Satisfy"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A wire of length 2 units is cut into two parts which are bent respectively to form a square of\nside = x units and a circle of radius = r units. If the sum of the areas of the square and the circle\nso formed is minimum, then:",
+      "options": {
+        "A": "2x = ( + 4) r",
+        "B": "(4  )x = r",
+        "C": "x = 2r",
+        "D": "2x = r 73. (3) Let length of two parts be ‘a’ and ‘2  a’ As per condition given, we write a = 4x and 2  a = 2r  a x 4  and 2 a r 2       2 2 a a A square 4 16         and       2 2 2 4 a 4a 2 a A circle 2 4               =  2 a 4a 4 4    25  2 2 a a 4a 4 f a 16 4        2 2 a 4a 16a 16 f a 16          1 f ' a 2a 8a 16 16     f  (a) = 0  2a+ 8a  16 = 0  2a  + 8a = 16    8 2a 4 16 a 4     a 2 x 4 4   and 2 a r 2    = 8 2 4 2   =   2 8 8 2 4   = 1 4   2 x 4  and 1 r x 2r 4    "
+      },
+      "page_start": 24,
+      "page_end": 25,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 74,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The integral\n12\n9\n5\n3\n3\n2x\n5x\n(x\nx",
+      "options": {
+        "A": "    dx is equal to:",
+        "B": "10 5 3 2 x C 2(x x",
+        "C": "5 5 3 2 x C 2(x x",
+        "D": "10 5 3 2 x C 2(x x"
+      },
+      "page_start": 25,
+      "page_end": 26,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 75,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "1/n\n2n\nn\n(n",
+      "options": {
+        "A": "(n 2)...3n lim n          is equal to:",
+        "B": "2 27 e",
+        "C": "2 9 e",
+        "D": "3 log 3  2 75. (2) Let P = 1 n n n 1 n 2 n 2n lim ... n n n              Taking log Log P = 2n n r 1 1 r lim log 1 n n            = 2 0 log (1 x) dx     = log (1 + x)  x  2 2 0 0 x 1 x     dx = 2 ln3  2 0 1 1 1 x          dx = 2ln3    2 2 0 0 x 1n(1 x)         = 2 ln3  [2  1n3] = 3 ln3  2 = ln33  lne2 = ln 2 27 e       P = 2 27 e"
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 76,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The area (in sq. units) of the region {(x, y) : y2  2x and x2 + y2  4x, x  0, y  0} is:",
+      "options": {
+        "A": " 4 3",
+        "B": " 8 3",
+        "C": " 4 2 3",
+        "D": "2   2 2 3 76. (2) x2 + y2  4x & y2  2x To find point of intersection, x2 + y2 = 4x  x2 + 2x = 4x x2  2x = 0  x (x  2) = 0 x = 0 or x = 2 y = 0 or y = 2 Solve (x, y) = (0, 0) & (x, y) = (2, 2) Area =   2 2 2 1 2 circle parabola 0 0 0 y y dx y dx y dx          = 2 2 1/2 0 r 2 x dx 4     = 2 3/2 0 4 2 2 x 4 3     =     3/2 2 2 8 2 0 3 3    (0, 0) (2, 0) (2, 2) 27"
+      },
+      "page_start": 26,
+      "page_end": 27,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 77,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If a curve y = f(x) passes through the point (1, 1) and satisfies the differential equation,\ny(1 + xy) dx = x dy, then f\n1\n2\n\n\n\n\n\n\n\n is equal to:",
+      "options": {
+        "A": "2 5",
+        "B": "4 5",
+        "C": "2 5",
+        "D": "4 5 77. (4)   y dy 1 xy x dx   y = vx  y v x  dy dv v x dx dx   2 dv v(1 vx ) v x dx    2 2 dv v x x dx  2 dv v x dx  2 1 xdx dv v    2 x 1 c 2 v   2 x x c 2 y   Put (1, 1) 1 1 c 2 1    1 c 2   2 x x 1 2 y 2   We have to find 1 f 2        Put 1 x 2  2 1 1 1 2 2 2 y 2                 1 1 1 8 2y 2   4 y 5 "
+      },
+      "page_start": 27,
+      "page_end": 27,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 78,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Two sides of a rhombus are along the lines, x  y + 1 = 0 and 7x  y  5 = 0. If its diagonals\nintersect at (1, 2), then which one of the following is a vertex of this rhombus?",
+      "options": {
+        "A": "(3, 9)",
+        "B": "(3, 8)",
+        "C": "1 8 , 3 3       ",
+        "D": "10 7 , 3 3         28 78. (3) Coordinates of A  (1, 2) Slope of AE = 2 Slope of BD = 1 2 Eq. of BD is y 2 x   = 1 2 x + 2y + 5 = 0 Co-ordinates of D = 1 8 , 3 3        "
+      },
+      "page_start": 27,
+      "page_end": 28,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 79,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The centres of those circles which touch the circle, x2 + y2  8x  8y  4 = 0, externally and also\ntouch the x-axis, lie on:",
+      "options": {
+        "A": "a circle",
+        "B": "an ellipse which is not a circle",
+        "C": "a hyperbola",
+        "D": "a parabola 79. (4) x2 + y2  8x  8y  4 = 0 Centre (4, 4) Radius 2 2 4 4 4 6     Let centre of the circle is (h, k) 2 2 (h"
+      },
+      "page_start": 28,
+      "page_end": 28,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 80,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If one of the diameters of the circle, given by the equation, x2 + y2   4x + 6y  12 = 0, is a chord\nof a circle S, whose centre is at (3, 2), then the radius of S is:",
+      "options": {
+        "A": "5 2",
+        "B": "5 3",
+        "C": "5",
+        "D": "10 80. (2) x2 + y2  4x + 6y  12 = 0 Centre (2, 3) Radius 4 9 12 5    Distance b/w two centres c1(2, 3) and c2(3, 2) 2 2 d (2"
+      },
+      "page_start": 28,
+      "page_end": 28,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 81,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let P be the point on the parabola, y2 = 8x which is at a minimum distance from the centre C of\nthe circle, x2 + (y + 6)2 = 1. Then the equation of the circle, passing through C and having its\ncentre at P is:",
+      "options": {
+        "A": "x2 + y2  4x + 8y + 12 = 0",
+        "B": "x2 + y2  x + 4y  12 = 0",
+        "C": "x2 + y2 x 4 + 2y  24 = 0",
+        "D": "x2 + y2  4x + 9y + 18 = 0 B A D x  y + 1 = 0 E(1, 2) 7x  y  5 = 0 C 29 81. (1) Normal at P(at2, 2at) is y + tx = 2at + at3 Given it passes (0, 6) 6 = 2at + at3 (a = 2) 6 = 4t + 2t3 t3 + 2t + 3 = 0 t = 1 so, P (a, 2a) = (2, 4) . [a = 1) radius of circle = CP = 2 2 2 ( 4 6) 2 2   Circle is (x  2)2 + (y + 4)2 =   2 2 2 x2 + y2  4x + 8y + 12 = 0"
+      },
+      "page_start": 28,
+      "page_end": 29,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 82,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The eccentricity of the hyperbola whose length of the latus rectum is equal to 8 and the length of\nits conjugate axis is equal to half the distance between its foci, is:",
+      "options": {
+        "A": "4 3",
+        "B": "4 3",
+        "C": "2 3",
+        "D": "3 82. (3) 2 2b 8 a   2 b 4a   … (1) 2b = 1 (2ae) 2 2b = ae … (2) Squaring eqn. (2), we get 4b2 = a2e2  2 2 2 b 4 e a  and we know that e2 = 2 2 2 2 2 b b 1 e 1 a a     4(e2  1) = e2 4e2  e2 = 4 3e2 = 4 e = 2 3"
+      },
+      "page_start": 29,
+      "page_end": 29,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 83,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The distance of the point (1, 5, 9) from the plane x  y + z = 5 measured along the line x = y = z\nis :",
+      "options": {
+        "A": "3 10",
+        "B": "10 3",
+        "C": "10 3",
+        "D": "20 3 83. (2) Let Q (1, 5, 9) x 0 y 0 z 0 1 1 1      Line is x 1 y 5 z 9 r 1 1 1       (say) Any pt on line we can take P (r + 1, r  5, r + 9) So, Pt satisfy Plane (r + 1)  (r  5) + (r + 9) = 5 r = 10 So, Point P = (9, 15, 1) Distance is 2 2 2 PQ (10) (10) (10) 10 3     C(0, 6) P(at2, 2at) 30"
+      },
+      "page_start": 29,
+      "page_end": 30,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 84,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If the line, x\n3\ny\n2\nz\n4\n2\n1\n3\n\n\n\n\n\n\n lies in the plane, x + my  z = 9, then \n2 + m2 is equal to :",
+      "options": {
+        "A": "26",
+        "B": "18",
+        "C": "5",
+        "D": "2 84. (4) Point on line is P = (3, 2, 4) ‘P’ lies on x + my  z = 9 3 2m 4  = 9 3 2m  = 5 …(1) As line lies on plane  2  + m  (1) + 3  (1) = 0 2  m = 3 …(3) Solving = 1, m = 1 So, 2 + m2 = 2."
+      },
+      "page_start": 30,
+      "page_end": 30,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 85,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let a, b and c  be three unit vectors such that \n\n\n\n\n3\na\nb c\nb\nc .\n2\n\n\n\n\nIf b  is not parallel to c ,\nthen the angle between a and b  is :",
+      "options": {
+        "A": "3 4 ",
+        "B": "2 ",
+        "C": "2 3 ",
+        "D": "5 6  85. (4)     3 a b c b c 2         3 3 a c b a b c b c 2 2      Equate   3 3 a c & a b 2 2     | a | 3 | b |cos 2   cos  =  3 as a & b 2  unit vectors = 5 6 "
+      },
+      "page_start": 30,
+      "page_end": 30,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 86,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If the standard deviation of the numbers 2, 3, a and 11 is 3.5, then which of the following is true?",
+      "options": {
+        "A": "3a2  26a + 55 = 0",
+        "B": "3a2  32a + 84 = 0",
+        "C": "3a2  34a + 91 = 0",
+        "D": "3a2  23a + 44 = 0 86. (2) S.D. = 2 2 d d N N          2 4 9 a 121 4     2 2 3 a 11 4        = 49 4 (4a2 + 536)  (a2 + 32a + 256) = 196 3a2  32a + 84 = 0 31"
+      },
+      "page_start": 30,
+      "page_end": 31,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 87,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let two fair sixfaced dice A and B be thrown simultaneously. If E1 is the event that die A shows\nup four, E2 is the event that die B shows up two and E3 is the event that the sum of numbers on\nboth dice is odd, then which of the following statements is NOT true?",
+      "options": {
+        "A": "E1 and E2 are independent",
+        "B": "E2 and E3 are independent",
+        "C": "E1 and E3 are independent",
+        "D": "E1, E2 and E3 are independent 87. (4) P(E1) = 1 6 P(E2) = 1 6 P(E3) = 1 2 P(E1  E2) = 1 36 P(E2  E3) = 1 12 P(E3  E1) = 1 12 P(E1  E2  E3) = 0 E1, E2, E3 are not independent"
+      },
+      "page_start": 31,
+      "page_end": 31,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 88,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If 0  x < 2, then the number of real values of x, which satisfy the equation\ncos x + cos 2x = cos 3x + cos 4x = 0, is :",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "7",
+        "D": "9 88. (3) We have, cosx + cos2x + cos 3x + cos 4x = 0    cos x cos4x cos2x cos3x 0     5x 3x 5x x 2cos cos 2cos cos 0 2 2 2 2     5x 3x x 2cos cos cos 0 2 2 2         5x cos 0 2     5x 2n 1 2 2       x 2n 1 5     3 7 9 x , , , , 5 5 5 5       Or 3x x cos cos 0 2 2   3 x x x 4cos 3cos cos 0 2 2 2     3 x x 4cos 2cos 0 2 2    3 x x 2cos cos 0 2 2   2 x x 2cos 2cos 1 0 2 2            x 2cos cosx 0 2      x x cos 0 2n 1 x 2n 1 2 2 2          or cos x = 0    x 2n 1 2    x =  or 3 x , 2 2    Solution are 3 3 x , , , , , 5 5 5 5 2 2       … (0  x < 2) 32"
+      },
+      "page_start": 31,
+      "page_end": 32,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 89,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A man is walking towards a vertical pillar in a straight path, at a uniform speed. At a certain\npoint A on the path, he observes that the angle of elevation of the top of the pillar is 30. After\nwalking for 10 minutes from A in the same direction, at a point B, he observes that the angle of\nelevation of the top of the pillar is 60. Then the time taken (in minutes) by him, from B to reach\nthe pillar, is :",
+      "options": {
+        "A": "6",
+        "B": "10",
+        "C": "20",
+        "D": "5 89. (4) Let AB = x, BQ = y, PQ = z z x y tan30 z x y 3      z tan60 z 3y y     x y 3y x y 3y x 2y 3         x y 2  To go x, it takes 10 minutes. To go y, it takes 5 minutes."
+      },
+      "page_start": 32,
+      "page_end": 32,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 90,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The Boolean Expression (p   q)  q  ( p  q) is equivalent to :",
+      "options": {
+        "A": " p  q",
+        "B": "p  q",
+        "C": "p  q",
+        "D": "p   q 90. (3) (p   q)  q  ( p  q) p q p q p   q p  q (p   q)  q (p   q)  q  ( p  q) p  q T T F F F F T T T T F F T T F T T T F T T F F T T T T F F T T F F F F F  y x 60° 30° P Q A Z B"
+      },
+      "page_start": 32,
+      "page_end": 32,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    }
+  ]
+}

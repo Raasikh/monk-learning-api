@@ -29,10 +29,12 @@ from __future__ import annotations
 import argparse
 import bisect
 import hashlib
+import html as html_mod
 import json
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional
 from urllib.parse import unquote
@@ -63,6 +65,20 @@ ESARAL_INDEXES = [
     (2023, "https://www.esaral.com/jee/jee-main-2023-question-papers/"),
     (2024, "https://www.esaral.com/jee/jee-mains-2024-question-papers/"),
     (2025, "https://www.esaral.com/jee/jee-main-2025-question-paper/"),
+]
+
+# eSaral NEET pages are much thinner than JEE; harvest what direct PDFs exist.
+ESARAL_NEET_INDEXES = [
+    (2022, "https://www.esaral.com/neet/neet-2022-question-paper/"),
+    (2019, "https://www.esaral.com/neet/neet-2019-question-paper/"),
+    (2023, "https://www.esaral.com/neet/neet-2023-question-paper/"),
+]
+
+# SelfStudys has older JEE/NEET papers and chapter-wise PYP books. The index
+# pages carry some direct show-pdf links plus many book pages that each link a PDF.
+SELFSTUDYS_INDEXES = [
+    ("jee-main", "https://www.selfstudys.com/books/jee-previous-year-paper"),
+    ("neet-ug", "https://www.selfstudys.com/books/neet-previous-year-paper"),
 ]
 
 # Official NTA final answer keys (hardcoded per task brief). 2024 via Wayback.
@@ -234,21 +250,36 @@ def infer_metadata(pdf_url: str, link_text: str, year_hint: Optional[int]) -> di
     if shift is None:
         notes.append("shift not inferable from link text/URL")
 
-    paper_type = (
-        "question_paper_with_solutions"
-        if re.search(r"\b(solution|solved|answer)\b", blob_decoded)
-        else "question_paper"
-    )
+    if re.search(r"\b(chapter[\s-]?wise|question bank|pyq)\b", blob_decoded):
+        paper_type = "chapterwise_question_bank"
+    else:
+        paper_type = (
+            "question_paper_with_solutions"
+            if re.search(r"\b(solution|solved|answer)\b", blob_decoded)
+            else "question_paper"
+        )
+
+    subject = None
+    if re.search(r"\bmath(ematics|s)?\b", blob_decoded):
+        subject = "Mathematics"
+    elif re.search(r"\bphysics\b", blob_decoded):
+        subject = "Physics"
+    elif re.search(r"\bchemistry\b", blob_decoded):
+        subject = "Chemistry"
+    elif re.search(r"\bbiology\b|\bbotany\b|\bzoology\b", blob_decoded):
+        subject = "Biology"
 
     language = "Hindi" if re.search(r"\bhindi\b", blob_decoded) else "English"
+    exam = "neet-ug" if "neet" in blob_decoded else "jee-main"
 
     return {
-        "exam": "jee-main",
+        "exam": exam,
         "year": year,
         "session": session,
         "exam_date": exam_date,
         "shift": shift,
         "paper_type": paper_type,
+        "subject": subject,
         "language": language,
         "notes": "; ".join(notes),
     }
@@ -290,12 +321,16 @@ def make_paper_id(meta: dict, pdf_url: str, link_text: str) -> str:
         parts.append(str(meta["year"]))
     if meta.get("session"):
         parts.append(f"s{meta['session']}")
+    if meta.get("subject"):
+        parts.append(slugify(meta["subject"], max_len=20))
     if meta.get("exam_date"):
         parts.append(meta["exam_date"])
     if meta.get("shift"):
         parts.append(f"shift-{meta['shift']}")
     base = "-".join(parts)
-    if not meta.get("exam_date"):
+    if meta.get("paper_type") == "chapterwise_question_bank":
+        base += "-" + slugify(link_text or Path(pdf_url.split("?")[0]).stem, max_len=80)
+    elif not meta.get("exam_date"):
         base += "-" + slugify(Path(pdf_url.split("?")[0]).stem or link_text)
     return base
 
@@ -332,15 +367,197 @@ def harvest_esaral_index(year: int, index_url: str) -> list[dict]:
     return entries
 
 
+MATHONGO_SEED = (
+    "https://www.mathongo.com/iit-jee/"
+    "jee-main-maths-chapter-wise-questions-with-solutions-april-2025"
+)
+MATHONGO_PAGE_RE = re.compile(
+    r'href=["\'](https://www\.mathongo\.com/iit-jee/[^"\']*'
+    r'(?:chapter-wise-questions-with-solutions|'
+    r'nta-abhyas-question-paper-pdf-download-chapterwise-for-jee-main)'
+    r'[^"\']*)["\']',
+    re.IGNORECASE,
+)
+MATHONGO_SHORT_RE = re.compile(
+    r'href=["\'](https://(?:links\.mathongo\.com|bit\.ly)/[^"\']+)["\']',
+    re.IGNORECASE,
+)
+DRIVE_ID_RE = re.compile(r"/file/d/([^/]+)|[?&]id=([^&]+)")
+
+
+def drive_file_id(url: str) -> Optional[str]:
+    m = DRIVE_ID_RE.search(url)
+    file_id = m.group(1) or m.group(2) if m else None
+    # App-store links also carry ?id=com.package.name; those are not PDFs.
+    if not file_id or "." in file_id or len(file_id) < 20:
+        return None
+    return file_id
+
+
+def mathongo_direct_pdf(short_url: str) -> Optional[str]:
+    """Resolve MathonGo's short link to a direct PDF URL (usually Drive)."""
+    resp = requests.get(short_url, headers=HEADERS, timeout=TIMEOUT, allow_redirects=True)
+    resp.raise_for_status()
+    final_url = resp.url
+    file_id = drive_file_id(final_url)
+    if file_id:
+        return f"https://drive.google.com/uc?export=download&id={file_id}"
+    if final_url.lower().endswith(".pdf"):
+        return final_url
+    if "pdf" in (resp.headers.get("Content-Type") or "").lower():
+        return short_url
+    return None
+
+
+def harvest_mathongo_chapterwise() -> list[tuple[str, str, str, Optional[int]]]:
+    """Harvest chapter-wise JEE question-bank PDFs linked from MathonGo.
+
+    The seed page's sidebar lists the year/session/subject variants. Newer
+    pages expose one `links.mathongo.com` whole-book URL; older pages expose
+    per-chapter `bit.ly` links. Per-chapter short links are stored unresolved
+    so harvest stays cheap; `download_pdf` follows redirects at probe time.
+    """
+    resp = requests.get(MATHONGO_SEED, headers=HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    pages = []
+    for m in MATHONGO_PAGE_RE.finditer(resp.text):
+        page = m.group(1).split("#")[0]
+        if page not in pages:
+            pages.append(page)
+    rows = []
+    for page in pages:
+        try:
+            html = requests.get(page, headers=HEADERS, timeout=TIMEOUT).text
+            slug = Path(page).name
+            ym = re.search(r"(20\d{2})", slug)
+            year = int(ym.group(1)) if ym else None
+            seen_short = set()
+            for sm in MATHONGO_SHORT_RE.finditer(html):
+                short = sm.group(1)
+                if short in seen_short:
+                    continue
+                seen_short.add(short)
+                tail = html[sm.end(): sm.end() + 220]
+                text_m = re.search(r">([^<>]{3,160})<", tail)
+                label = text_m.group(1).strip() if text_m else ""
+                if "links.mathongo.com" in short:
+                    pdf_url = mathongo_direct_pdf(short)
+                    if pdf_url:
+                        rows.append((pdf_url, page, slug, year))
+                else:
+                    # bit.ly per-chapter links: keep the chapter name in metadata.
+                    # App-store/marketing short links are present on every page;
+                    # only links whose anchor says PDF are question banks.
+                    if "pdf" not in label.lower():
+                        continue
+                    link_text = f"{slug} :: {label}" if label else slug
+                    rows.append((short, page, link_text, year))
+            time.sleep(POLITE_DELAY_S)
+        except Exception as exc:
+            print(f"[harvest] WARN: mathongo {page} failed: {exc}", file=sys.stderr)
+            continue
+    return rows
+
+
+SELFSTUDYS_PDF_RE = re.compile(
+    r'(?:href|source)=["\']((?:https://www\.selfstudys\.com)?/(?:show-pdf/[^"\']+?\.pdf|sitepdfs/[A-Za-z0-9]+))["\']',
+    re.IGNORECASE,
+)
+SELFSTUDYS_BOOK_RE = re.compile(
+    r'href=["\']((?:https://www\.selfstudys\.com)?/books/(?:jee|neet)-previous-year-paper/[^"\']+)["\']',
+    re.IGNORECASE,
+)
+
+
+def selfstudys_pdf_links(page_url: str) -> list[tuple[str, str]]:
+    resp = requests.get(page_url, headers=HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    html = resp.text
+    out = []
+    seen = set()
+    for m in SELFSTUDYS_PDF_RE.finditer(html):
+        href = m.group(1)
+        pdf_url = href if href.startswith("http") else f"https://www.selfstudys.com{href}"
+        if "/show-pdf/" in pdf_url:
+            # show-pdf/<id>.pdf is an HTML viewer; the payload is sitepdfs/<id>.
+            pdf_url = f"https://www.selfstudys.com/sitepdfs/{Path(pdf_url).stem}"
+        if pdf_url in seen:
+            continue
+        seen.add(pdf_url)
+        tail = html[m.end(): m.end() + 260]
+        text_m = re.search(r">([^<>]{3,220})<", tail)
+        label = text_m.group(1).strip() if text_m else Path(pdf_url).stem
+        out.append((pdf_url, html_mod.unescape(label)))
+    return out
+
+
+def harvest_selfstudys(max_book_pages: Optional[int] = None) -> list[tuple[str, str, str, None]]:
+    rows = []
+    for exam, index_url in SELFSTUDYS_INDEXES:
+        try:
+            direct = selfstudys_pdf_links(index_url)
+        except Exception as exc:
+            print(f"[harvest] WARN: selfstudys {index_url} failed: {exc}", file=sys.stderr)
+            continue
+        print(f"[harvest] {index_url}: {len(direct)} direct pdf links")
+        for pdf_url, label in direct:
+            rows.append((pdf_url, index_url, f"{exam} {label}", None))
+        try:
+            resp = requests.get(index_url, headers=HEADERS, timeout=TIMEOUT)
+            resp.raise_for_status()
+            book_pages = []
+            for m in SELFSTUDYS_BOOK_RE.finditer(resp.text):
+                href = m.group(1)
+                page = href if href.startswith("http") else f"https://www.selfstudys.com{href}"
+                page = page.split("#")[0]
+                if page != index_url and page not in book_pages:
+                    book_pages.append(page)
+        except Exception:
+            book_pages = []
+        if max_book_pages is not None:
+            book_pages = book_pages[:max_book_pages]
+        print(f"[harvest] {index_url}: {len(book_pages)} book pages")
+
+        def book_rows(page):
+            try:
+                out = []
+                for pdf_url, label in selfstudys_pdf_links(page):
+                    slug = page.rstrip("/").split("/")[-2]
+                    link_text = f"{exam} {label}".strip() or f"{exam} {slug}"
+                    if label:
+                        link_text = f"{link_text} {slug}"
+                    out.append((pdf_url, page, link_text, None))
+                return out
+            except Exception as exc:
+                print(f"[harvest] WARN: selfstudys book {page} failed: {exc}", file=sys.stderr)
+                return []
+
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            futures = {pool.submit(book_rows, page): page for page in book_pages}
+            for fut in as_completed(futures):
+                rows.extend(fut.result())
+    # Dedupe by URL while preserving first label.
+    seen = set()
+    out = []
+    for row in rows:
+        if row[0] in seen:
+            continue
+        seen.add(row[0])
+        out.append(row)
+    return out
+
+
 def cmd_harvest(args: argparse.Namespace) -> None:
     manifest = []
     seen_urls = set()
+    old_manifest = load_manifest()
+    old_probe_by_url = {e.get("pdf_url"): e.get("probe") for e in old_manifest if e.get("probe")}
 
     def add(pdf_url, source_tier, source_site, source_page_url, link_text, year_hint):
         if pdf_url in seen_urls:
             return
         seen_urls.add(pdf_url)
-        meta = infer_metadata(pdf_url, link_text, year_hint)
+        meta = infer_metadata(pdf_url, f"{link_text} {source_page_url}", year_hint)
         tags = build_tags(meta, f"{link_text} {pdf_url}")
         key_url = OFFICIAL_KEYS.get((meta.get("year"), meta.get("session")))
         entry = {
@@ -350,7 +567,7 @@ def cmd_harvest(args: argparse.Namespace) -> None:
             "tags": tags,
             "source_tier": source_tier,
             "source_site": source_site,
-            "source_page_url": source_page_url,
+            "source_page_url": source_page_url or pdf_url,
             "pdf_url": pdf_url,
             "official_key_url": key_url,
             "key_join_strategy": (
@@ -367,6 +584,8 @@ def cmd_harvest(args: argparse.Namespace) -> None:
             ),
             "probe": None,
         }
+        if old_probe_by_url.get(pdf_url):
+            entry["probe"] = old_probe_by_url[pdf_url]
         if key_url is None:
             entry["notes"] = (entry["notes"] + "; " if entry["notes"] else "") + \
                 "no official key URL known for this year/session"
@@ -394,6 +613,43 @@ def cmd_harvest(args: argparse.Namespace) -> None:
                 add(pdf_url, "mirror", "www.esaral.com", page_url, link_text, year)
             time.sleep(POLITE_DELAY_S)
 
+    # eSaral NEET harvest (direct PDFs only; some year pages are image-only links).
+    if not args.skip_esaral:
+        for year, index_url in ESARAL_NEET_INDEXES:
+            try:
+                rows = harvest_esaral_index(year, index_url)
+            except Exception as exc:
+                print(f"[harvest] WARN: {index_url} failed: {exc}", file=sys.stderr)
+                continue
+            print(f"[harvest] {index_url}: {len(rows)} pdf links")
+            for pdf_url, page_url, link_text in rows:
+                add(pdf_url, "mirror", "www.esaral.com", page_url, link_text, year)
+            time.sleep(POLITE_DELAY_S)
+
+    # MathonGo chapter-wise / NTA Abhyas question banks (bigger diagram yield
+    # than shift papers; these are public question compilations, not live papers).
+    if not args.skip_question_banks:
+        try:
+            rows = harvest_mathongo_chapterwise()
+        except Exception as exc:
+            print(f"[harvest] WARN: mathongo chapterwise failed: {exc}", file=sys.stderr)
+            rows = []
+        print(f"[harvest] mathongo chapterwise: {len(rows)} pdf links")
+        for pdf_url, page_url, link_text, year in rows:
+            add(pdf_url, "question_bank", "www.mathongo.com", page_url, link_text, year)
+
+    # SelfStudys older year-wise and chapter-wise papers (runs after MathonGo;
+    # download_pdf's %PDF magic check rejects marketing pages).
+    if not args.skip_selfstudys:
+        try:
+            rows = harvest_selfstudys(args.selfstudys_max_pages)
+        except Exception as exc:
+            print(f"[harvest] WARN: selfstudys failed: {exc}", file=sys.stderr)
+            rows = []
+        print(f"[harvest] selfstudys: {len(rows)} pdf links")
+        for pdf_url, page_url, link_text, year in rows:
+            add(pdf_url, "mirror", "www.selfstudys.com", page_url, link_text, year)
+
     # Extra verified seed samples from the task brief.
     for seed in SEED_MIRROR_PAPERS:
         site = re.sub(r"^https?://(www\.)?", "", seed["pdf_url"]).split("/")[0]
@@ -414,21 +670,262 @@ def cmd_harvest(args: argparse.Namespace) -> None:
     print(f"[harvest] wrote {len(manifest)} entries to {MANIFEST_PATH}")
 
 
+def cmd_harvest_selfstudys(args: argparse.Namespace) -> None:
+    """Refresh only SelfStudys entries in the existing manifest."""
+    manifest = [e for e in load_manifest() if "selfstudys" not in e.get("source_site", "")]
+    seen_urls = {e.get("pdf_url") for e in manifest}
+    rows = harvest_selfstudys(args.selfstudys_max_pages)
+    print(f"[harvest-selfstudys] {len(rows)} pdf links")
+    added = 0
+    for pdf_url, page_url, link_text, year in rows:
+        if pdf_url in seen_urls:
+            continue
+        seen_urls.add(pdf_url)
+        meta = infer_metadata(pdf_url, f"{link_text} {page_url}", year)
+        tags = build_tags(meta, f"{link_text} {pdf_url}")
+        manifest.append({
+            "paper_id": make_paper_id(meta, pdf_url, link_text),
+            **meta,
+            "exam_tag": tags[0],
+            "tags": tags,
+            "source_tier": "mirror",
+            "source_site": "www.selfstudys.com",
+            "source_page_url": page_url or pdf_url,
+            "pdf_url": pdf_url,
+            "official_key_url": OFFICIAL_KEYS.get((meta.get("year"), meta.get("session"))),
+            "key_join_strategy": "sequence_within_section",
+            "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate",
+            "probe": None,
+        })
+        added += 1
+    seen_ids = {}
+    for e in manifest:
+        pid = e["paper_id"]
+        if pid in seen_ids:
+            seen_ids[pid] += 1
+            e["paper_id"] = f"{pid}-{seen_ids[pid]}"
+        else:
+            seen_ids[pid] = 1
+    save_manifest(manifest)
+    print(f"[harvest-selfstudys] added {added}; wrote {len(manifest)} entries")
+
+
+NEET_ARCHIVE_URL = "https://neet.nta.nic.in/archive/"
+NEET_ARCHIVE_PDF_RE = re.compile(r'href=["\']([^"\']+?\.pdf)["\']', re.IGNORECASE)
+
+
+def harvest_neet_official() -> list[tuple[str, str, str, int]]:
+    resp = requests.get(NEET_ARCHIVE_URL, headers=HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    html = resp.text
+    rows = []
+    seen = set()
+    for m in NEET_ARCHIVE_PDF_RE.finditer(html):
+        href = m.group(1)
+        pdf_url = href if href.startswith("http") else f"https://neet.nta.nic.in{href}"
+        tail = html[m.end(): m.end() + 240]
+        text_m = re.search(r">([^<>]{3,220})<", tail)
+        label = html_mod.unescape(text_m.group(1).strip()) if text_m else Path(pdf_url).stem
+        low = label.lower()
+        if re.search(r"answer|key|omr|result|score|bulletin|syllabus|faq|information|notice|public", low):
+            continue
+        if not ("question paper" in low or "booklet" in low or re.search(r"\b[efgh][1-6]\b", low)):
+            continue
+        if pdf_url in seen:
+            continue
+        seen.add(pdf_url)
+        rows.append((pdf_url, NEET_ARCHIVE_URL, f"neet-ug {label}", 2020))
+    return rows
+
+
+def cmd_harvest_neet_official(args: argparse.Namespace) -> None:
+    """Append official NEET archive question papers to the existing manifest."""
+    manifest = load_manifest()
+    seen_urls = {e.get("pdf_url") for e in manifest}
+    rows = harvest_neet_official()
+    print(f"[harvest-neet-official] {len(rows)} pdf links")
+    added = 0
+    for pdf_url, page_url, link_text, year in rows:
+        if pdf_url in seen_urls:
+            continue
+        seen_urls.add(pdf_url)
+        meta = infer_metadata(pdf_url, f"{link_text} {page_url}", year)
+        meta["exam"] = "neet-ug"
+        tags = build_tags(meta, f"{link_text} {pdf_url}")
+        manifest.append({
+            "paper_id": make_paper_id(meta, pdf_url, link_text),
+            **meta,
+            "exam_tag": "neet-ug",
+            "tags": tags,
+            "source_tier": "official",
+            "source_site": "neet.nta.nic.in",
+            "source_page_url": page_url,
+            "pdf_url": pdf_url,
+            "official_key_url": None,
+            "key_join_strategy": "booklet_question_number",
+            "key_join_notes": "NEET official keys join by booklet code + question number, not NTA question IDs",
+            "probe": None,
+        })
+        added += 1
+    seen_ids = {}
+    for e in manifest:
+        pid = e["paper_id"]
+        if pid in seen_ids:
+            seen_ids[pid] += 1
+            e["paper_id"] = f"{pid}-{seen_ids[pid]}"
+        else:
+            seen_ids[pid] = 1
+    save_manifest(manifest)
+    print(f"[harvest-neet-official] added {added}; wrote {len(manifest)} entries")
+
+
+# ---------------------------------------------------------------------------
+# JEE Advanced official papers (jeeadv.ac.in + Wayback snapshots)
+# ---------------------------------------------------------------------------
+
+# (year, paper_no, paper_download_url, key_download_url, source_page_url)
+# Wayback URLs use the <timestamp>id_ form to fetch the raw PDF bytes.
+JEE_ADVANCED_OFFICIAL = [
+    (2022, 1,
+     "https://web.archive.org/web/20220829222110id_/https://jeeadv.ac.in/documents/jeeadv-2022-paper1.pdf",
+     "https://web.archive.org/web/20220911041758id_/https://jeeadv.ac.in/documents/jeeadv-2022-final-answer-keys.pdf",
+     "https://jeeadv.ac.in/"),
+    (2022, 2,
+     "https://web.archive.org/web/20220829222112id_/https://jeeadv.ac.in/documents/jeeadv-2022-paper2.pdf",
+     "https://web.archive.org/web/20220911041758id_/https://jeeadv.ac.in/documents/jeeadv-2022-final-answer-keys.pdf",
+     "https://jeeadv.ac.in/"),
+    (2023, 1,
+     "https://web.archive.org/web/20230605121952id_/https://jeeadv.ac.in/documents/JEEAdv2023_Paper1.pdf",
+     "https://web.archive.org/web/20230618114607id_/https://jeeadv.ac.in/documents/Paper1_Final_Answer_Keys.pdf",
+     "https://jeeadv.ac.in/"),
+    (2023, 2,
+     "https://web.archive.org/web/20230605122213id_/https://jeeadv.ac.in/documents/JEEAdv2023_Paper2.pdf",
+     "https://web.archive.org/web/20230618114609id_/https://jeeadv.ac.in/documents/Paper2_Final_Answer_Keys.pdf",
+     "https://jeeadv.ac.in/"),
+    (2024, 1,
+     "https://web.archive.org/web/20240527012201id_/https://www.jeeadv.ac.in/documents/JEEAdv2024_Paper1_English.pdf",
+     "https://web.archive.org/web/20240609043803id_/https://jeeadv.ac.in/documents/Paper1_English_2024_With_Final_Keys.pdf",
+     "https://jeeadv.ac.in/"),
+    (2024, 2,
+     "https://web.archive.org/web/20240527012214id_/https://www.jeeadv.ac.in/documents/JEEAdv2024_Paper2_English.pdf",
+     "https://web.archive.org/web/20240609164114id_/https://jeeadv.ac.in/documents/Paper2_English_2024_With_Final_Keys.pdf",
+     "https://jeeadv.ac.in/"),
+    (2025, 1,
+     "https://web.archive.org/web/20250518172502id_/https://jeeadv.ac.in/documents/p1_english.pdf",
+     "https://web.archive.org/web/20250602022251id_/https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+     "https://jeeadv.ac.in/"),
+    (2025, 2,
+     "https://web.archive.org/web/20250518172501id_/https://jeeadv.ac.in/documents/p2_english.pdf",
+     "https://web.archive.org/web/20250602022251id_/https://jeeadv.ac.in/documents/p2_solutions_final.pdf",
+     "https://jeeadv.ac.in/"),
+    (2026, 1,
+     "https://jeeadv.ac.in/documents/p1_english.pdf",
+     "https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+     "https://jeeadv.ac.in/"),
+    (2026, 2,
+     "https://jeeadv.ac.in/documents/p2_english.pdf",
+     "https://jeeadv.ac.in/documents/p2_solutions_final.pdf",
+     "https://jeeadv.ac.in/"),
+]
+
+
+def cmd_harvest_jee_advanced(args: argparse.Namespace) -> None:
+    """Append official JEE Advanced papers (2022-2026) to the manifest.
+
+    Fixed URL table — jeeadv.ac.in only hosts the current year, so older
+    papers resolve through Wayback snapshots of the same official paths.
+    """
+    manifest = load_manifest()
+    seen_urls = {e.get("pdf_url") for e in manifest}
+    existing_ids = {e["paper_id"] for e in manifest}
+    added = 0
+    for year, paper_no, pdf_url, key_url, page_url in JEE_ADVANCED_OFFICIAL:
+        if pdf_url in seen_urls:
+            continue
+        pid = f"jee-advanced-{year}-paper-{paper_no}"
+        if pid in existing_ids:
+            continue
+        manifest.append({
+            "paper_id": pid,
+            "exam": "jee-advanced",
+            "year": year,
+            "session": None,
+            "exam_date": None,
+            "shift": None,
+            "paper_type": "question_paper",
+            "subject": None,
+            "language": "English",
+            "notes": "official JEE Advanced paper (organizing IIT site / Wayback snapshot)",
+            "exam_tag": "jee-advanced",
+            "tags": ["jee-advanced", "class-11", "class-12", "entrance-exam"],
+            "source_tier": "official",
+            "source_site": "jeeadv.ac.in",
+            "source_page_url": page_url,
+            "pdf_url": pdf_url,
+            "official_key_url": key_url,
+            "key_join_strategy": "jee_advanced_key_pdf",
+            "key_join_notes": "JEE Advanced final keys are per-paper PDFs, not NTA Question-ID tables",
+            "probe": None,
+        })
+        added += 1
+    save_manifest(manifest)
+    print(f"[harvest-jee-advanced] added {added}; wrote {len(manifest)} entries")
+
+
 # ---------------------------------------------------------------------------
 # probe
 # ---------------------------------------------------------------------------
 
-def download_pdf(pdf_url: str, dest: Path) -> None:
-    dest.parent.mkdir(parents=True, exist_ok=True)
+def resolve_download_url(pdf_url: str) -> str:
+    """Resolve short links / Google Drive view URLs to a direct download URL."""
+    if not re.search(r"(bit\.ly|links\.mathongo\.com|drive\.google\.com)", pdf_url):
+        return pdf_url
+    file_id = drive_file_id(pdf_url)
+    if file_id and "uc?export=download" not in pdf_url:
+        return f"https://drive.google.com/uc?export=download&id={file_id}"
+    try:
+        with requests.get(pdf_url, headers=HEADERS, timeout=TIMEOUT, stream=True,
+                          allow_redirects=True) as r:
+            final_url = r.url
+        file_id = drive_file_id(final_url)
+        if file_id:
+            return f"https://drive.google.com/uc?export=download&id={file_id}"
+        return final_url
+    except requests.RequestException:
+        return pdf_url
+
+
+def _stream_download(pdf_url: str, dest: Path) -> str:
     with requests.get(pdf_url, headers=HEADERS, timeout=TIMEOUT, stream=True) as r:
         r.raise_for_status()
         ctype = r.headers.get("Content-Type", "")
         with open(dest, "wb") as f:
             for chunk in r.iter_content(chunk_size=1 << 16):
                 f.write(chunk)
+    return ctype
+
+
+def download_pdf(pdf_url: str, dest: Path) -> None:
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    resolved = resolve_download_url(pdf_url)
+    try:
+        ctype = _stream_download(resolved, dest)
+    except requests.exceptions.HTTPError:
+        # Some Drive files need the confirm token form; retry once before
+        # recording the source as broken.
+        file_id = drive_file_id(resolved) or drive_file_id(pdf_url)
+        if not file_id:
+            raise
+        alt = f"https://drive.google.com/uc?export=download&confirm=t&id={file_id}"
+        ctype = _stream_download(alt, dest)
     if dest.stat().st_size < 1024:
         dest.unlink(missing_ok=True)
         raise RuntimeError(f"suspiciously small download ({ctype})")
+    with open(dest, "rb") as f:
+        magic = f.read(5)
+    if magic != b"%PDF-":
+        dest.unlink(missing_ok=True)
+        raise RuntimeError(f"download is not a PDF ({ctype}, magic={magic!r})")
 
 
 SOLUTIONS_HEADING_RE = re.compile(
@@ -442,6 +939,9 @@ def probe_pdf(path: Path) -> dict:
     import fitz  # PyMuPDF — dev-only dependency (not in requirements.txt)
 
     sha = hashlib.sha256(path.read_bytes()).hexdigest()
+    with open(path, "rb") as f:
+        if f.read(5) != b"%PDF-":
+            raise RuntimeError("cached file is not a PDF")
     doc = fitz.open(path)
     page_texts = [page.get_text() for page in doc]
     page_count = doc.page_count
@@ -473,6 +973,7 @@ def _select_entries(manifest: list[dict], args: argparse.Namespace) -> list[dict
     if args.only:
         wanted = set(args.only)
         entries = [e for e in entries if e["paper_id"] in wanted
+                   or any(w in e["paper_id"] for w in wanted)
                    or any(w in e["pdf_url"] for w in wanted)]
     if args.limit:
         entries = entries[: args.limit]
@@ -482,26 +983,38 @@ def _select_entries(manifest: list[dict], args: argparse.Namespace) -> list[dict
 def cmd_probe(args: argparse.Namespace) -> None:
     manifest = load_manifest()
     by_id = {e["paper_id"]: e for e in manifest}
-    for entry in _select_entries(manifest, args):
+    entries = _select_entries(manifest, args)
+
+    def work(entry: dict) -> tuple[str, dict]:
         pid = entry["paper_id"]
         cache_path = CACHE_DIR / f"{pid}.pdf"
         try:
             if not cache_path.exists() or args.redownload:
-                print(f"[probe] downloading {pid}")
                 download_pdf(entry["pdf_url"], cache_path)
-                time.sleep(POLITE_DELAY_S)
-            entry["probe"] = probe_pdf(cache_path)
-            print(
-                f"[probe] {pid}: pages={entry['probe']['page_count']} "
-                f"text={entry['probe']['has_text_layer']} "
-                f"qids={entry['probe']['has_question_ids']} "
-                f"solutions={entry['probe']['includes_solutions']}"
-            )
+            return pid, probe_pdf(cache_path)
         except Exception as exc:
-            entry["probe"] = {"error": str(exc)}
-            print(f"[probe] {pid}: ERROR {exc}", file=sys.stderr)
-        by_id[pid] = entry
-    save_manifest(manifest)
+            return pid, {"error": str(exc)}
+
+    workers = max(1, getattr(args, "workers", 1))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(work, entry): entry["paper_id"] for entry in entries}
+        for fut in as_completed(futures):
+            pid = futures[fut]
+            try:
+                pid, probe = fut.result()
+            except Exception as exc:
+                probe = {"error": str(exc)}
+            by_id[pid]["probe"] = probe
+            save_manifest(manifest)  # persist after every PDF so long runs are resumable
+            if probe.get("error"):
+                print(f"[probe] {pid}: ERROR {probe['error']}", file=sys.stderr)
+            else:
+                print(
+                    f"[probe] {pid}: pages={probe['page_count']} "
+                    f"text={probe['has_text_layer']} "
+                    f"qids={probe['has_question_ids']} "
+                    f"solutions={probe['includes_solutions']}"
+                )
 
 
 # ---------------------------------------------------------------------------
@@ -709,9 +1222,9 @@ def _strip_2026_boilerplate(text: str) -> str:
 def _normalize_embedded_answer(token: str) -> dict:
     raw = token.strip().upper()
     out = {"raw": raw}
-    if raw in "ABCD":
+    if raw in ("A", "B", "C", "D"):
         out["option"] = raw
-    elif raw in "1234":
+    elif raw in ("1", "2", "3", "4"):
         out["option"] = "ABCD"[int(raw) - 1]
         out["option_index"] = int(raw)
     return out
@@ -1265,13 +1778,32 @@ def main() -> None:
     p = sub.add_parser("harvest", help="build data/nta_raw/manifest.json")
     p.add_argument("--skip-esaral", action="store_true",
                    help="only seed official 2026 + brief sample URLs")
+    p.add_argument("--skip-question-banks", action="store_true",
+                   help="skip MathonGo/NTA-Abhyas chapter-wise question banks")
+    p.add_argument("--skip-selfstudys", action="store_true",
+                   help="skip SelfStudys year-wise/chapter-wise papers")
+    p.add_argument("--selfstudys-max-pages", type=int, default=None,
+                   help="cap SelfStudys book pages for smoke tests")
     p.set_defaults(func=cmd_harvest)
+
+    p = sub.add_parser("harvest-selfstudys", help="refresh only SelfStudys entries in the manifest")
+    p.add_argument("--selfstudys-max-pages", type=int, default=None,
+                   help="cap SelfStudys book pages for smoke tests")
+    p.set_defaults(func=cmd_harvest_selfstudys)
+
+    p = sub.add_parser("harvest-neet-official", help="append official NEET archive papers")
+    p.set_defaults(func=cmd_harvest_neet_official)
+
+    p = sub.add_parser("harvest-jee-advanced", help="append official JEE Advanced papers 2022-2026")
+    p.set_defaults(func=cmd_harvest_jee_advanced)
 
     p = sub.add_parser("probe", help="download + fingerprint PDFs into scratch cache")
     p.add_argument("--only", nargs="*", default=None,
                    help="paper_ids (or URL substrings) to probe")
     p.add_argument("--limit", type=int, default=None)
     p.add_argument("--redownload", action="store_true")
+    p.add_argument("--workers", type=int, default=4,
+                   help="parallel PDF download/probe workers")
     p.set_defaults(func=cmd_probe)
 
     p = sub.add_parser("extract", help="parse cached PDFs into data/nta_raw/papers/")

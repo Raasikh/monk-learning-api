@@ -1,0 +1,1797 @@
+{
+  "paper_id": "jee-main-2017-vv4ubbdul3kfrfj5ehug",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2017-vv4ubbdul3kfrfj5ehug",
+    "exam": "jee-main",
+    "year": 2017,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2017/jee-main-2017-question-paper-set-y-paper-2/98556",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/vv4UBBDul3KfRFj5EhUG",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "c2446d6b114d744b8994c3e8c5255cfc9f8c55bc7df3cfe510270af6c3222b6a",
+    "page_count": 27,
+    "text_chars": 35730,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2017-vv4ubbdul3kfrfj5ehug.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 80,
+  "defects": [
+    "70 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 3, 4, 5, 6, 1, 2, 1, 2, 3, 4, 5, 3, 4]",
+    "63/80 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Immediately fill in the particulars on this page of the Test\nBooklet with Black Ball Point Pen provided in the examination\nhall.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "This Test Booklet consists of three parts - Part I, Part II and\nPart III.  Part I  has 30 objective type questions of Mathematics\nconsisting of FOUR (4) marks for each correct response.\nPart II Aptitude Test has 50 objective type questions\nconsisting of FOUR (4) marks for each correct response.\nMark your answers for these questions in the appropriate\nspace against the number corresponding to the question in\nthe Answer Sheet placed inside this Test Booklet.  Use the\nBlack Ball Point Pen provided in the examination hall for\nwriting particulars/marking responses on Side-1 and\nSide-2 of the Answer Sheet.  Part III consists of 2 questions\ncarrying 70 marks which are to be attempted on a separate\nDrawing Sheet which is also placed inside the Test Booklet.\nMarks allotted to each question are written against each\nquestion.  Use colour pencils or crayons only on the Drawing\nSheet.  Do not use water colours.  For each incorrect response\nin Part I and Part II, ¼ (one–fourth) marks of the total marks\nallotted to the question (i.e. 1 mark) would be deducted\nfrom the total score.  No deduction from the total score,\nhowever, will be made if no response is indicated for an item\nin the Answer Sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is only one correct response for each question in Part I\nand Part II.  Filling up more than one response in each question\nwill be treated as wrong response and marks for wrong response\nwill be deducted accordingly as per instruction 2 above.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The test is of 3 hours duration.  The maximum marks are 390.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "On completion of the test, the candidates must hand over the\nAnswer Sheet of Mathematics and Aptitude Test-Part I &\nII and the Drawing Sheet of Aptitude Test-Part III alongwith\nTest Booklet for Part III to the Invigilator in the Room/Hall.\nCandidates are allowed to take away with them the Test\nBooklet of Mathematics and Aptitude Test-Part I & II.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The CODE for this Booklet is Y. Make sure that the CODE\nprinted on Side-2 of the Answer Sheet and on the Drawing\nSheet (Part III) is the same as that on this booklet.  Also tally\nthe Serial Number of the Test Booklet, Answer Sheet and\nDrawing Sheet and ensure that they are same.  In case of\ndiscrepancy in Code or Serial Number, the candidate should\nimmediately report the matter to the Invigilator for replacement\nof the Test Booklet, Answer Sheet and the Drawing Sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Do not fold or make any stray mark on the Answer Sheet.",
+      "options": {
+        "A": "¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ∑§ ß‚ ¬Îc∆U ¬⁄U •Êﬂ‡ÿ∑§ Áﬂﬂ⁄UáÊ ¬⁄UËˇÊÊ ∑§ˇÊ ◊¥ ©¬‹éœ ∑§⁄UÊÿ ª∞ ∑§ﬂ‹ ∑§Ê‹ ’ÊÚ‹ ¬ÊÚßZ≈U ¬Ÿ ‚ Ãà∑§Ê‹ ÷⁄¥–",
+        "B": "ß‚ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ∑§ ÃËŸ ÷Êª „Ò¥ - ÷Êª I, ÷Êª II ∞ﬂ¥ ÷Êª III. ¬ÈÁSÃ∑§Ê ∑§ ÷Êª I ◊¥ ªÁáÊÃ ∑§ 30 ﬂSÃÈÁŸD ¬˝‡Ÿ „Ò¥ Á¡‚◊¥ ¬˝àÿ∑§ ¬˝‡Ÿ ∑§ ‚„Ë ©ûÊ⁄U ∑§ Á‹ÿ øÊ⁄U (4) •¥∑§ ÁŸœÊ¸Á⁄UÃ Á∑§ÿ ªÿ „Ò¥– ÷Êª II •Á÷L§Áø ¬⁄UËˇÊáÊ ◊¥ 50 ﬂSÃÈÁŸD ¬˝‡Ÿ „Ò¥ Á¡Ÿ◊¥ ¬˝àÿ∑§ ‚„Ë ©ûÊ⁄U ∑§ Á‹∞ øÊ⁄U (4) •¥∑§ „Ò¥– ßŸ ¬˝‡ŸÊ¥ ∑§Ê ©ûÊ⁄U ß‚ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ◊¥ ⁄Uπ ©ûÊ⁄U ¬òÊ ◊¥ ‚¥ªÃ ∑˝§◊ ‚¥ÅÿÊ ∑§ ªÊ‹ ◊¥ ª„⁄UÊ ÁŸ‡ÊÊŸ ‹ªÊ∑§⁄U ŒËÁ¡∞– ©ûÊ⁄U ¬òÊ ∑§ ¬ÎD-1 ∞ﬂ¥ ¬ÎD-2 ¬⁄U ﬂÊ¥Á¿UÃ Áﬂﬂ⁄UáÊ Á‹πŸ ∞ﬂ¥ ©ûÊ⁄U •¥Á∑§Ã ∑§⁄UŸ „ÃÈ ¬⁄UËˇÊÊ ∑§ˇÊ ◊¥ ©¬‹éœ ∑§⁄UÊÿ ª∞ ∑§ﬂ‹ ∑§Ê‹ ’ÊÚ‹ ¬ÊÚßZ≈ ¬Ÿ ∑§Ê „Ë ¬˝ÿÊª ∑§⁄¥U– ¬ÈÁSÃ∑§Ê ∑§ ÷Êª III ◊¥ 2 ¬˝‡Ÿ „Ò¥ Á¡Ÿ∑§ Á‹∞ 70 •¥∑§ ÁŸœÊ¸Á⁄UÃ „Ò¥– ÿ„ ¬˝‡Ÿ ß‚Ë ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ∑§ •ãŒ⁄U ⁄UπË «˛UÊß¥ª ‡ÊË≈U ¬⁄U ∑§⁄UŸ „Ò¥– ¬˝àÿ∑§ ¬˝‡Ÿ „ÃÈ ÁŸœÊ¸Á⁄UÃ •¥∑§ ¬˝‡Ÿ ∑§ ‚ê◊Èπ •¥Á∑§Ã „Ò¥– «˛UÊß¥ª ‡ÊË≈U ¬⁄U ∑§ﬂ‹ ⁄¥UªËŸ ¬¥Á‚‹ •ÕﬂÊ ∑˝§ÿÊŸ ∑§Ê „Ë ¬˝ÿÊª ∑§⁄¥U– ¬ÊŸË ∑§ ⁄¥UªÊ¥ ∑§Ê ¬˝ÿÊª Ÿ ∑§⁄¥U– ÷Êª I •ÊÒ⁄U ÷Êª II ◊¥ ¬˝àÿ∑§ ª‹Ã ©ûÊ⁄U ∑§ Á‹∞ ©‚ ¬˝‡Ÿ ∑§ Á‹∞ ÁŸœÊ¸Á⁄UÃ ∑È§‹ •¥∑§Ê¥ ◊¥ ‚ ¼ (∞∑§-øÊÒÕÊß¸) ÷Êª (•ÕÊ¸Ã˜ 1 •¥∑§) ∑È§‹ ÿÊª ◊¥ ‚ ∑§Ê≈U Á‹∞ ¡Ê∞°ª– ÿÁŒ ©ûÊ⁄U ¬òÊ ◊¥ Á∑§‚Ë ¬˝‡Ÿ ∑§Ê ∑§Êß¸ ©ûÊ⁄U Ÿ„Ë¥ ÁŒÿÊ ªÿÊ „Ò, ÃÊ ∑È§‹ ÿÊª ◊¥ ‚ ∑§Êß¸ •¥∑§ Ÿ„Ë¥ ∑§Ê≈U ¡Ê∞°ª–",
+        "C": "ß‚ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ∑§ ÷Êª I •ÊÒ⁄U ÷Êª II ◊¥ ¬˝àÿ∑§ ¬˝‡Ÿ ∑§Ê ∑§ﬂ‹ ∞∑§ „Ë ‚„Ë ©ûÊ⁄U „Ò– ∞∑§ ‚ •Áœ∑§ ©ûÊ⁄U ŒŸ ¬⁄U ©‚ ª‹Ã ©ûÊ⁄U ◊ÊŸÊ ¡ÊÿªÊ •ÊÒ⁄U ©¬⁄UÊÄÃ ÁŸŒ¸‡Ê 2 ∑§ •ŸÈ‚Ê⁄U •¥∑§ ∑§Ê≈U Á‹ÿ ¡Êÿ¥ª–",
+        "D": "¬⁄UËˇÊÊ ∑§Ë •ﬂÁœ 3 ÉÊ¥≈U „Ò– •Áœ∑§Ã◊ •¥∑§ 390 „Ò¥– 5. ¬⁄UËˇÊÊ ‚◊Ê# „ÊŸ ¬⁄U, •èÿÕË¸ ªÁáÊÃ ∞ﬂ¥ •Á÷L§Áø ¬⁄UËˇÊáÊ-÷Êª I ∞ﬂ¥ II ∑§Ê ©ûÊ⁄U ¬òÊ ∞ﬂ¥ •Á÷L§Áø ¬⁄UËˇÊáÊ-÷Êª III ∑§Ë «˛UÊß¥ª ‡ÊË≈U ∞ﬂ¥ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê ÷Êª III „Ê‹/∑§ˇÊ ÁŸ⁄UËˇÊ∑§ ∑§Ê ‚ÊÒ¥¬∑§⁄U „Ë ¬⁄UËˇÊÊ „Ê‹/∑§ˇÊ ¿UÊ«∏¥– •èÿÕË¸ ªÁáÊÃ ∞ﬂ¥ •Á÷L§Áø ¬⁄UËˇÊáÊ-÷Êª I ∞ﬂ¥ II ∑§Ë ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê •¬Ÿ ‚ÊÕ ‹ ¡Ê ‚∑§Ã „Ò¥– 6. ß‚ ¬ÈÁSÃ∑§Ê ∑§Ê ‚¥∑§Ã Y „Ò– ÿ„ ‚ÈÁŸÁ‡øÃ ∑§⁄U ‹¥ Á∑§ ß‚ ¬ÈÁSÃ∑§Ê ∑§Ê ‚¥∑§Ã, ©ûÊ⁄U ¬òÊ ∑§ ¬ÎD-2 ∞ﬂ¥ «˛UÊß¥ª ‡ÊË≈U (÷Êª-III) ¬⁄U ¿U¬ ‚¥∑§Ã ‚ Á◊‹ÃÊ „Ò– ÿ„ ÷Ë ‚ÈÁŸÁ‡øÃ ∑§⁄U ‹¥ Á∑§ ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê, ©ûÊ⁄U ¬òÊ ∞ﬂ¥ «˛UÊß¥ª ‡ÊË≈U ¬⁄U ∑˝§◊ ‚¥ÅÿÊ Á◊‹ÃË „Ò– •ª⁄U ‚¥∑§Ã ÿÊ ∑˝§◊ ‚¥ÅÿÊ Á÷ÛÊ „Ê¥, ÃÊ •èÿÁÕ¸ÿÊ¥ ∑§Ê ÁŸ⁄UËˇÊ∑§ ‚ ŒÍ‚⁄UË ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê, ©ûÊ⁄U ¬òÊ ∞ﬂ¥ «˛UÊß¥ª ‡ÊË≈U ‹Ÿ ∑§ Á‹∞ ©ã„¥ ÃÈ⁄UãÃ ß‚ òÊÈÁ≈U ‚ •ﬂªÃ ∑§⁄UÊ∞°– 7. ©ûÊ⁄U ¬òÊ ∑§Ê Ÿ ◊Ê«∏¥ ∞ﬂ¥ Ÿ „Ë ©‚ ¬⁄U •ãÿ ÁŸ‡ÊÊŸ ‹ªÊ∞°– PAPER - 2 : MATHEMATICS & APTITUDE TEST ¬⁄UËˇÊÊ ¬ÈÁSÃ∑§Ê - 2 : ªÁáÊÃ ÃÕÊ •Á÷L§Áø ¬⁄UËˇÊáÊ Name of the Candidate (in Capitals) : •èÿÕË¸ ∑§Ê ŸÊ◊ (’«∏ •ˇÊ⁄Ê¥ ◊¥) — Roll Number : in figures •ŸÈ∑˝§◊Ê¥∑§ — •¥∑§Ê¥ ◊¥ : in words — ‡ÊéŒÊ¥ ◊¥ Examination Centre Number : ¬⁄ËˇÊÊ ∑§ãŒ˝ Ÿê’⁄U — Centre of Examination (in Capitals) : ¬⁄UËˇÊÊ ∑§ãŒ˝ (’«∏ •ˇÊ⁄UÊ¥ ◊¥ ) — Candidate’s Signature : Invigilator’s Signature (1) : •èÿÕË¸ ∑§ „SÃÊˇÊ⁄ — ÁŸ⁄ËˇÊ∑§ ∑§ „SÃÊˇÊ⁄ (1) — Invigilator’s Signature (2) : ÁŸ⁄ËˇÊ∑§ ∑§ „SÃÊˇÊ⁄ (2) — ◊„ûﬂ¬ÍáÊ¸ ÁŸŒ¸‡Ê — Important Instructions : SRB No. : Test Booklet Code ¬⁄ËˇÊÊ ¬ÈÁSÃ∑§Ê ‚¥∑§Ã Y Y/Page 2 SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Part I / ÷Êª I Mathematics / ªÁáÊÃ"
+      },
+      "page_start": 1,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ (x+iy)2=7+24i „Ò, ÃÊ\n(\n)\n(\n)\n1\n1\n2\n2\n7  \n576\n 7  \n576\n+ −\n−\n−−\n ∑§Ê ∞∑§ ◊ÊŸ\n„Ò —",
+      "options": {
+        "A": "2i",
+        "B": "6",
+        "C": "−6i",
+        "D": "−3i 6. An urn contains 5 red, 4 black and 3 white marbles. Then the number of ways in which 4 marbles can be drawn from it so that at most 3 of them are red, is :"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-‚Ê Á’¥ŒÈ •ÁÃ¬⁄Uﬂ‹ÿ\n2\n2\n \n  1\n16\n9\ny\nx\n−\n=\n∑§ Á’¥ŒÈ (8, 3 3)  ¬⁄U πË¥ø ª∞\n•Á÷‹¥’ ¬⁄U ÁSÕÃ Ÿ„Ë¥ „Ò?",
+      "options": {
+        "A": "      1 12 3 ,",
+        "B": "(11, 3)",
+        "C": "(10, 3)",
+        "D": "      1 13 3 , −"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "©‚ ﬂÎûÊ ∑§Ê ‚◊Ë∑§⁄UáÊ, ¡Ê ﬂÎûÊ x2+y2−2x=0\n∑§Ê ⁄UπÊ y=3−x ◊¥ Œ¬¸áÊ ¬˝ÁÃÁ’¥’ „Ò, „Ò —",
+      "options": {
+        "A": "x2+y2−8x−6y+24=0",
+        "B": "x2+y2−4x−6y+12=0",
+        "C": "x2+y2−6x−4y+12=0",
+        "D": "x2+y2−6x−8y+24=0"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ‚◊’Ê„È ÁòÊ÷È¡, Á¡‚∑§Ê ∑§ãŒ˝∑§ ◊Í‹ Á’¥ŒÈ „Ò, ∑§Ë\n∞∑§ ÷È¡Ê ⁄UπÊ x+y=2 ∑§Ë ÁŒ‡ÊÊ ◊¥ „Ò, ÃÊ ÁòÊ÷È¡\n∑§Ê ˇÊòÊ»§‹ (ﬂª¸ ß∑§ÊßÿÊ¥ ◊¥) „Ò¥ —",
+      "options": {
+        "A": "6 3",
+        "B": "9 3 2",
+        "C": "3 6",
+        "D": "6 9. Which one of the following points does not lie on the normal to the hyperbola, 2 2 1 16 9 y x − = drawn at the point (8, 3 3) ?"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸ ◊¥ ‚ ∑§ÊÒŸ-‚Ê ∑§ÕŸ ∞∑§ ¬ÈŸL§ÁÄÃ (Tautology)\n„Ò¥ ?",
+      "options": {
+        "A": "p ∨ (p → q)",
+        "B": "p ∨ (q → p)",
+        "C": "p → (p → q)",
+        "D": "(p ∨ q) → q"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ ⁄UπÊ y=mx, ˇÊòÊ\n2\n3\n{(\n, ) : 0\n 0\n1 4\n}\n2\nx y\nx\n,\ny\nx\nx\n≤≤\n≤≤+\n−\n∑§Ê ŒÊ\n’⁄UÊ’⁄U ÷ÊªÊ¥ ◊¥ Áﬂ÷ÊÁ¡Ã ∑§⁄UÃË „Ò, ÃÊ m ∑§Ê ◊ÊŸ „Ò —",
+      "options": {
+        "A": "13 3",
+        "B": "13 6",
+        "C": "39 16",
+        "D": "9 8"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ »§‹Ÿ f : R → R, ¡Ê\n\n\n2\na\n < 2\n( )  \na\n  b   3,\n  2\nx,\nx\nf x\nx\nx\nx\n=\n−\n+\n\u0004\nmÊ⁄UÊ ¬Á⁄U÷ÊÁ·Ã „Ò, •ﬂ∑§‹ŸËÿ „Ò, ÃÊ\nf 9 (−3)+f 9(3) ∑§Ê ◊ÊŸ „Ò —",
+      "options": {
+        "A": "4",
+        "B": "15 2",
+        "C": "0",
+        "D": "3 12. Which one of the following statements is a tautology ?"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "◊ÊŸÊ S, ‘a’ ∑§ ‚÷Ë ﬂÊSÃÁﬂ∑§ ◊ÊŸÊ¥ ∑§Ê ‚◊ÈìÊÿ „Ò\nÁ¡‚∑§ Á‹∞ ⁄ÒUÁπ∑§ ‚◊Ë∑§⁄UáÊ ÁŸ∑§Êÿ\nax+2y+5z=1\n2x+y+3z=1\n     3y+7z=1\n‚¥ªÃ  (consistent) „Ò¥, ÃÊ ‚◊ÈìÊÿ S —",
+      "options": {
+        "A": "R−{1} ∑§ ’⁄UÊ’⁄U „Ò",
+        "B": "{1} ∑§ ’⁄UÊ’⁄U „Ò",
+        "C": "∞∑§ Á⁄UÄÃ ‚◊ÈìÊÿ „Ò",
+        "D": "R ∑§ ’⁄UÊ’⁄U „Ò"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "1\n1\n  \ncos285\n3 sin255\n+\n\u0002\n\u0002 ∑§Ê ◊ÊŸ „Ò —",
+      "options": {
+        "A": "4 2 3",
+        "B": "2 2 3",
+        "C": "3 2 −",
+        "D": "2 2"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Á’¥ŒÈ (3, 1, 1) ‚ ∞∑§ ‚◊Ã‹, ¡Ê Á’¥ŒÈ (1, 2, 3) ‚\n„Ê∑§⁄U ¡ÊÃÊ „Ò ÃÕÊ Á¡‚ ¬⁄U ⁄UπÊ\n→\n∧\n∧\n∧\n∧\n∧\nr   \n \n   (2   \n  4 )\ni\nj\ni\nj\nk\n=\n +\n+ λ\n+\n+\n ÁSÕÃ „Ò, ¬⁄U\n«UÊ‹ ª∞ ‹¥’ ∑§Ë ‹¥’Êß¸ „Ò —",
+      "options": {
+        "A": "4 41",
+        "B": "0",
+        "C": "3 11",
+        "D": "1 11 15. Let S be the set of all real values of ‘a’ for which the following system of linear equations ax+2y+5z=1 2x+y+3z=1 3y+7z=1 is consistent. Then the set S is :"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ λ1 ÃÕÊ λ2, λ ∑§ ∞‚ ŒÊ ◊ÊŸ „Ò¥ Á∑§ ÁmÉÊÊÃË\n‚◊Ë∑§⁄UáÊ  λ(x2−x)+x+5=0 ∑§ ◊Í‹ α, β ∞‚\n„Ò¥  Á∑§ \n4\n \n  \n  0\n5\nα\nβ\n+\n+\n=\nβ\nα\n „Ò, ÃÊ \n1\n2\n2\n2\n2\n1\n \nλ\nλ\n+\nλ\nλ\n ’⁄UÊ’⁄U\n„Ò —",
+      "options": {
+        "A": "512",
+        "B": "504",
+        "C": "488",
+        "D": "536"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ŒËÉÊ¸ﬂÎûÊ\n2\n2\n \n  1\n9\n25\ny\nx\n+\n=  ∑§Ë ŸÊÁ÷ÿÊ¥ ‚ ß‚∑§ Á’¥ŒÈ\n\n\n\n\n\n\n3\n5 3\n2\n2\n,\n¬⁄U πË¥øË ªß¸ S¬‡Ê¸ ⁄UπÊ ¬⁄U «UÊ‹ ªÿ\n‹¥’Ê¥ ∑§Ê ªÈáÊŸ»§‹ „Ò —",
+      "options": {
+        "A": "189 13",
+        "B": "18",
+        "C": "3 13",
+        "D": "9 18. If λ1 and λ2 are the two values of λ such that the roots α and β of the quadratic equation, λ(x2−x)+x+5=0 satisfy 4 0 5 α β + + = β α , then 1 2 2 2 2 1 λ λ + λ λ is equal to :"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚◊Ê∑§‹ ∫\n5 24\n3\n24\nd\n1  tan 2\nx\nx\nπ\nπ\n+\n ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "12 π",
+        "B": "6 π",
+        "C": "18 π",
+        "D": "3 π"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "0\nlog (sin 7\n  cos 7 )\n \nsin 3\nx\nx\nx\nlim\nx\n→\n+\n ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "14 3",
+        "B": "1 3",
+        "C": "1 log 7 3",
+        "D": "7 3 20. The integral ∫ 5 24 3 24 d 1 tan 2 x x π π + is equal to :"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ A ÃÕÊ B ŒÊ ¬Á⁄UÁ◊Ã ‚◊ÈìÊÿ ∞‚ „Ò¥ Á∑§ A ∑§\n∑È§‹ ©¬‚◊ÈìÊÿÊ¥ ∑§Ë ‚¥ÅÿÊ, B ∑§ ∑È§‹ ©¬‚◊ÈìÊÿÊ¥\n∑§Ë ‚¥ÅÿÊ ‚ 960 •Áœ∑§ „Ò, ÃÊ n(A)−n(B)\n(¡„Ê° n(X), ‚◊ÈìÊÿ X ∑§ •ﬂÿﬂÊ¥ ∑§Ë ‚¥ÅÿÊ Œ‡ÊÊ¸ÃÊ\n„Ò) ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "6",
+        "D": "2"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚◊Ê∑§‹ ∫\n2\n  2\nd\n(\n  3   3) \n  1\nx\nx\nx\nx\nx\n+\n+\n+\n+\n ’⁄UÊ’⁄U\n„Ò —",
+      "options": {
+        "A": "        1 2 tan C 3(",
+        "B": "        1 2 cot C 1 3 x x − + +",
+        "C": "        1 3 1 cot C 1 3 x x − + +",
+        "D": "        1 1 tan C 3("
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÃËŸ ‚ÁŒ‡Ê \n→\n→\na  b\n,\n ÃÕÊ \n→\nc  ∞‚ „Ò¥ Á∑§\na\n→\n=1, b\n→\n=2, c\n→\n=4  ÃÕÊ\na   b   c   0\n→\n→\n→\n→\n+\n+\n=\n „Ò, ÃÊ\n→\n→\n→\n→\n→→\n4 a b   3 b c   3 c a\n⋅\n+\n⋅\n+\n⋅\n  ∑§Ê ◊ÊŸ „Ò —",
+      "options": {
+        "A": "−26",
+        "B": "−34",
+        "C": "27",
+        "D": "−68"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "©Ÿ ‚÷Ë ŒËÉÊ¸ﬂÎûÊÊ¥, Á¡Ÿ∑§Ê ∑§ãŒ˝ ◊Í‹ Á’¥ŒÈ „Ò, ŒËÉÊ¸\n•ˇÊ, x-•ˇÊ ∑§Ë ÁŒ‡ÊÊ ◊¥ „Ò ÃÕÊ ©à∑§ãŒ˝ÃÊ \n3\n2\n „Ò, ∑§\n•ﬂ∑§‹ ‚◊Ë∑§⁄UáÊ ∑§Ë ∑§ÊÁ≈U ÃÕÊ ÉÊÊÃ ∑˝§◊‡Ê— „Ò¥ —",
+      "options": {
+        "A": "2, 1",
+        "B": "1, 2",
+        "C": "2, 2",
+        "D": "1, 1"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÿÁŒ üÊáÊË 3+7+14+24+37+ . . . . . ∑§ ¬˝Õ◊\n15 ¬ŒÊ¥ ∑§Ê ÿÊª 15 k „Ò, ÃÊ k ’⁄UÊ’⁄U „Ò —",
+      "options": {
+        "A": "81",
+        "B": "119",
+        "C": "126",
+        "D": "122 24. Three vectors → → a b , and → c are such that a → =1, b → =2, c → =4 and a b c 0 → → → → + + = . Then the value of → → → → →→ 4 a b 3 b c 3 c a ⋅ + ⋅ + ⋅ is equal to :"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "¬˝Õ◊ ¿U— œŸ¬ÍáÊÊZ∑§Ê¥ ◊¥ ‚ ŒÊ ‚¥ÅÿÊ∞° (Á’ŸÊ ¬˝ÁÃSÕÊ¬ŸÊ\n∑§) ÿÊŒÎë¿UÿÊ øÈŸË ªß¸–  ÿÁŒ X ŒÊŸÊ¥ ◊¥ ‚ ¿UÊ≈UË\n‚¥ÅÿÊ ∑§Ê ¬˝ŒÁ‡Ê¸Ã ∑§⁄UÃÊ „Ò, ÃÊ X ∑§Ë ¬˝àÿÊ‡ÊÊ\n(Expectation) „Ò —",
+      "options": {
+        "A": "13 3",
+        "B": "7 3",
+        "C": "5 3",
+        "D": "14 3"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∞∑§ ÕÒ‹ ◊¥ ÃËŸ Á‚Ä∑§ „Ò¥, Á¡Ÿ◊¥ ‚ ∞∑§ ∑§ ŒÊŸÊ¥ •Ê⁄U\nÁøûÊ „Ò, ŒÍ‚⁄UÊ Á‚Ä∑§Ê •Á÷ŸÃ (biased) „Ò Á¡‚ ¬⁄U\nÁøûÊ 90% ’Ê⁄U ¬˝∑§≈U „ÊÃÊ „Ò •ÊÒ⁄U ÃË‚⁄UÊ •ŸÁ÷ŸÃ\nÁ‚Ä∑§Ê „Ò–  ÕÒ‹ ◊¥ ‚ ∞∑§ Á‚Ä∑§Ê ÿÊŒÎë¿UÿÊ ÁŸ∑§Ê‹\n∑§⁄U ©¿UÊ‹Ê ªÿÊ–  ÿÁŒ Á‚Ä∑§ ¬⁄U ÁøûÊ ¬˝∑§≈U „Ê, ÃÊ\n©‚∑§ •ŸÁ÷ŸÃ Á‚Ä∑§Ê „ÊŸ ∑§Ë ¬˝ÊÁÿ∑§ÃÊ „Ò —",
+      "options": {
+        "A": "5 24",
+        "B": "1 3",
+        "C": "3 8",
+        "D": "5 12 27. Two numbers are selected at random (without replacement) from the first six positive integers. If X denotes the smaller of the two numbers, then the expectation of X, is :"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The sum of the abscissae of the points\nwhere the curves,\ny=kx2+(5k+3)x+6k+5, (keR), touch\nthe x-axis, is equal to :",
+      "options": {
+        "A": "10 3 −",
+        "B": "5 3",
+        "C": "4 3 −",
+        "D": "19 3 −"
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": []
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Water is running into an underground\nright circular conical reservoir, which is\n10 m deep and radius of its base is 5 m.  If\nthe rate of change in the volume of water\nin the reservoir is \n3\n3\nm /min.\n2 π\n, then the\nrate (in m/min) at which water rises in it,\nwhen the water level is 4 m, is :",
+      "options": {
+        "A": "1 8",
+        "B": "1 4",
+        "C": "3 2",
+        "D": "3 8 29. ©Ÿ Á’¥ŒÈ•Ê¥ ∑§ x-ÁŸŒ¸‡ÊÊ¥∑§Ê¥ ∑§Ê ÿÊª, ¡„Ê° ﬂ∑˝§ y=kx2+(5k+3)x+6k+5, (keR), x-•ˇÊ ∑§Ê S¬‡Ê¸ ∑§⁄UÃË „Ò¥, „Ò —"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "IGBC stands for :",
+      "options": {
+        "A": "Indian Green Building Council",
+        "B": "Indian Great Building Center",
+        "C": "Indian Government Biological Center",
+        "D": "International Great Beautiful City"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which one of the following is not a load\nbearing component in a building ?",
+      "options": {
+        "A": "Beam",
+        "B": "Partition wall",
+        "C": "Concrete floor slab",
+        "D": "Column"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": []
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Ellora temples are :",
+      "options": {
+        "A": "Built in sandstone",
+        "B": "Cut out of rock",
+        "C": "Built in wood",
+        "D": "Made in marble"
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": []
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Solar energy is converted to electrical\nenergy by :",
+      "options": {
+        "A": "Electro magnets",
+        "B": "Bio technology",
+        "C": "Rain water",
+        "D": "Photovoltaic cells 31. •Êß¸.¡Ë.’Ë.‚Ë. Á∑§‚ ∑§Ê ¬˝ÃË∑§ „Ò?"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 35,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‚‹Ë◊ ÁøSÃË ∑§Ê ◊$∑§’⁄UÊ ∑§„Ê° ¬⁄U ÁSÕÃ „Ò?",
+      "options": {
+        "A": "»§Ã„¬È⁄U Á‚∑§⁄UË",
+        "B": "„ÒŒ⁄UÊ’ÊŒ",
+        "C": "ÁŒÀ‹Ë",
+        "D": "ÇﬂÊÁ‹ÿ⁄U"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "œ⁄UÃË ∑§Ê ÃÊ¬◊ÊŸ “ª˝ËŸ „Ê©‚ ¬˝÷Êﬂ” ‚ —",
+      "options": {
+        "A": "ÉÊ≈UÃÊ „Ò",
+        "B": "∞∑§ ‚◊ÊŸ ⁄U„ÃÊ „Ò",
+        "C": "’…∏ÃÊ/ÉÊ≈UÃÊ ⁄U„ÃÊ „Ò",
+        "D": "’…∏ÃÊ „Ò"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "‹Ê‹ ∞ﬂ¥ ¬Ë‹Ê ⁄¥Uª Á◊‹ÊŸ ‚ ∑§ÊÒŸ ‚Ê ⁄¥Uª ’ŸÃÊ „Ò?",
+      "options": {
+        "A": "ªÈ‹Ê’Ë",
+        "B": "‚¥Ã⁄UË",
+        "C": "÷Í⁄UÊ",
+        "D": "’Ò¥ªŸË"
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": []
+    },
+    {
+      "qno": 38,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ÁŸêŸÁ‹ÁπÃ ◊¥ ∑§ÊÒŸ ‚Ë ¿UÃ ÷ﬂŸÊ¥ ◊¥ ª◊Ë¸ ÁﬂÁ∑§⁄UáÊ\n‚ ‚’‚ •Áœ∑§ ‚È⁄UˇÊÊ ŒªË?",
+      "options": {
+        "A": "∑¥§∑˝§Ë≈U ¬Á≈UÿÊ å‹ÊS≈U⁄U ∑§ ‚ÊÕ",
+        "B": "∑¥§∑˝§Ë≈U ¬Á≈UÿÊ Á◊^Ë ∞ﬂ¥ ßZ≈UÊ¥ ∑§Ë ≈UÊßÀ‚ ∑§ ‚ÊÕ",
+        "C": "¡‹ ‚¥⁄UÁˇÊÃ, ©lÊŸ¿UÃ ‚ …U∑§Ë „Èß¸ ∑¥§∑˝§Ë≈U ¬Á≈UÿÊ",
+        "D": "⁄¥UªË ∞‹ÈÁ◊ÁŸÿ◊ øg⁄U 35. Salim Chisti mosque is located in :"
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "’Ë¡Ê¬È⁄U ∑§Ê ªÊ‹ ªÈê’¡ —",
+      "options": {
+        "A": "∞∑§ ◊$∑§’⁄UÊ „Ò",
+        "B": "∞∑§ ◊„‹ „Ò",
+        "C": "∞∑§ ◊ÁS¡Œ „Ò",
+        "D": "∞∑§ Á∑§‹Ê „Ò"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": []
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "„ê¬Ë ∑§ π¥«U„⁄U Á∑§‚ ⁄UÊíÿ ◊¥ ÁSÕÃ „Ò¥?",
+      "options": {
+        "A": "•Ê¥œ˝ ¬˝Œ‡Ê",
+        "B": "∑§⁄U‹",
+        "C": "ÃÁ◊‹ŸÊ«ÈU",
+        "D": "∑§ŸÊ¸≈U∑§"
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": []
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Áπ«∏∑§Ë ∑§ ‚ÊÕ ‹ª π«∏ ‚Í⁄U¡ ‚¥⁄UˇÊ∑§ ‚Íÿ¸ Á∑§⁄UáÊÊ¥\n∑§Ê Á∑§‚ ÁŒ‡ÊÊ ◊¥ ∑§Ê≈UÃ „Ò¥?",
+      "options": {
+        "A": "¬Á‡ø◊ ∑§Ë Ã⁄U»§",
+        "B": "©ûÊ⁄U ∑§Ë Ã⁄U»§",
+        "C": "„⁄U Ã⁄U»§",
+        "D": "ŒÁˇÊáÊ ∑§Ë Ã⁄U»§ 39. Gol Gumbaj of Bijapur is :"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Buland Darwaza is located in :",
+      "options": {
+        "A": "Red Fort",
+        "B": "Agra Fort",
+        "C": "Golconda",
+        "D": "Fatehpur Sikri"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": []
+    },
+    {
+      "qno": 43,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "What is Venice famous for ?",
+      "options": {
+        "A": "Mountains",
+        "B": "Valleys",
+        "C": "Springs",
+        "D": "Canals"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": []
+    },
+    {
+      "qno": 44,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Big Ben is a :",
+      "options": {
+        "A": "Palace",
+        "B": "Mosque",
+        "C": "Temple",
+        "D": "Clock Tower"
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Pyramids are located in :",
+      "options": {
+        "A": "Egypt",
+        "B": "Greece",
+        "C": "Ethiopia",
+        "D": "Rome 42. ’È‹¥Œ Œ⁄UﬂÊ$¡Ê Á∑§‚ ◊¥ ÁSÕÃ „Ò?"
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 47,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Directions : (For Q. No. 49 and 50). The problem figure shows the elevation of an object. Identify the correct top view from amongst the answer figures. ÁŸŒ¸‡Ê — (¬˝. 49 •ÊÒ⁄U 50 ∑§ Á‹∞)– ¬˝‡Ÿ •Ê∑Î§ÁÃ ◊¥ Á∑§‚Ë ﬂSÃÈ ∑§Ê ‚ê◊Èπ ŒÎ‡ÿ ÁŒπÊÿÊ ªÿÊ „Ò– ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ß‚∑§Ê ‚„Ë ™§¬⁄UË ŒÎ‡ÿ ¬„øÊÁŸÿ– Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 18,
+      "page_end": 18,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "",
+        "D": "SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Y/Page 19 Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 18,
+      "page_end": 19,
+      "parse_flags": [
+        "options_count_3",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 50,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Directions : (For Q. No. 51 to 54). Which one of the answer figures is the correct mirror image of the problem figure with respect to X - X ? ÁŸŒ¸‡Ê — (¬˝. 51 ‚ 54 ∑§ Á‹∞)– ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ∑§ÊÒŸ-‚Ë •Ê∑Î§ÁÃ ŒË ªÿË ¬˝‡Ÿ •Ê∑Î§ÁÃ ∑§Ê X - X ‚ ‚ê’¥ÁœÃ ‚„Ë Œ¬¸áÊ ¬˝ÁÃÁ’ê’ „Ò? Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 51,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 52,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 53,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 19,
+      "page_end": 19,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 54,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Y/Page 20 SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Directions : (For Q. No. 55 to 57). Which one of the answer figures shows the correct view of the 3–D problem figure after the problem figure is opened up ? ÁŸŒ¸‡Ê — (¬˝. 55 ‚ 57 ∑§ Á‹∞)– 3–D ¬˝‡Ÿ •Ê∑Î§ÁÃ ∑§Ê πÊ‹Ÿ ¬⁄U, ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ‚„Ë ŒÎ‡ÿ ∑§ÊÒŸ-‚Ê „Ò? Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 19,
+      "page_end": 20,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 55,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 20,
+      "page_end": 20,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 56,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 20,
+      "page_end": 20,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 57,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Y/Page 21 Directions : (For Q. No. 58 and 59). Which one of the answer figures will complete the sequence of the three problem figures ? ÁŸŒ¸‡Ê — (¬˝. 58 •ÊÒ⁄U 59 ∑§ Á‹∞)– ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ∑§ÊÒŸ-‚Ë •Ê∑Î§ÁÃ ∑§Ê ÃËŸ ¬˝‡Ÿ •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‹ªÊŸ ‚ •ŸÈ∑˝§◊ (sequence) ¬Í⁄UÊ „Ê ¡ÊÿªÊ? Problem Figures / ¬˝‡Ÿ •Ê∑Î§ÁÃÿÊ° Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 20,
+      "page_end": 21,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 58,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 59,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Directions : (For Q. No. 60 to 62). The 3–D problem figure shows a view of an object. Identify the correct front view, from amongst the answer figures, looking in the direction of arrow. ÁŸŒ¸‡Ê — (¬˝. 60 ‚ 62 ∑§ Á‹∞)– 3–D ¬˝‡Ÿ •Ê∑Î§ÁÃ ◊¥ ∞∑§ ﬂSÃÈ ∑§ ∞∑§ ŒÎ‡ÿ ∑§Ê ÁŒπÊÿÊ ªÿÊ „Ò– ÃË⁄U ∑§Ë ÁŒ‡ÊÊ ◊¥ ŒπÃ „È∞, ß‚∑§ ‚„Ë ‚ê◊Èπ ŒÎ‡ÿ ∑§Ê ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ¬„øÊÁŸ∞– Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 60,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Y/Page 22 SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 21,
+      "page_end": 22,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 62,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Directions : (For Q. No. 63 to 66). The problem figure shows the top view of objects. Looking in the direction of the arrow, identify the correct elevation, from amongst the answer figures. ÁŸŒ¸‡Ê — (¬˝. 63 ‚ 66 ∑§ Á‹∞)– ¬˝‡Ÿ •Ê∑Î§ÁÃ ◊¥ ﬂSÃÈ•Ê¥ ∑§Ê ™§¬⁄UË ŒÎ‡ÿ ÁŒπÊÿÊ ªÿÊ „Ò– ÃË⁄U ∑§Ë ÁŒ‡ÊÊ ◊¥ ŒπÃ „È∞ ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ‚„Ë ‚ê◊Èπ ŒÎ‡ÿ ¬„øÊÁŸÿ– Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 63,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "(4)"
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "options_count_3",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 64,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Y/Page 23 Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 22,
+      "page_end": 23,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "(4) Directions : (For Q. No. 67). One of the following answer figures is hidden in the problem figure in the same size and direction. Select the correct one. ÁŸŒ¸‡Ê — (¬˝. 67 ∑§ Á‹∞)– ŸËø ŒË ªÿË ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ∞∑§ •Ê∑Î§ÁÃ ◊Ê¬ •ÊÒ⁄U ÁŒ‡ÊÊ ◊¥ ‚◊ÊŸ M§¬ ‚ ¬˝‡Ÿ •Ê∑Î§ÁÃ ◊¥ ¿ÈU¬Ë „Ò– ∑§ÊÒŸ-‚Ë ‚„Ë „Ò, øÈÁŸ∞– Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": [
+        "options_count_3",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Directions : (For Q. No. 68 to 70). The problem figure shows the top view of an object. Identify the correct elevation from amongst the answer figures looking in the direction of the arrow. ÁŸŒ¸‡Ê — (¬˝. 68 ‚ 70 ∑§ Á‹∞)– ¬˝‡Ÿ •Ê∑Î§ÁÃ ◊¥ Á∑§‚Ë ﬂSÃÈ ∑§Ê ™§¬⁄UË ŒÎ‡ÿ ÁŒπÊÿÊ ªÿÊ „Ò– ÃË⁄U ∑§Ë ÁŒ‡ÊÊ ŒπÃ „È∞ ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ß‚∑§Ê ‚„Ë ‚ê◊Èπ ŒÎ‡ÿ ¬„øÊÁŸÿ– Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Y/Page 24 SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 23,
+      "page_end": 24,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 70,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Directions : (For Q. No. 71 to 74). The 3-D figure shows the view of an object. Identify the correct top view from amongst the answer figures. ÁŸŒ¸‡Ê — (¬˝. 71 ‚ 74 ∑§ Á‹∞)– 3-D ¬˝‡Ÿ •Ê∑Î§ÁÃ ◊¥ ∞∑§ ﬂSÃÈ ∑§ ∞∑§ ŒÎ‡ÿ ∑§Ê ÁŒπÊÿÊ ªÿÊ „Ò– ß‚∑§Ê ‚„Ë ™§¬⁄UË ŒÎ‡ÿ, ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ¬„øÊÁŸÿ– Problem Figure /¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4)"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Y/Page 25 Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 24,
+      "page_end": 25,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 74,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "(4) Directions : (For Q. No. 75 and 76). Find the odd figure out of the problem figures given below. ÁŸŒ¸‡Ê — (¬˝. 75 •ÊÒ⁄U 76 ∑§ Á‹∞)– ŸËø ŒË ªÿË ¬˝‡Ÿ •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ Áﬂ·◊ •Ê∑Î§ÁÃ ¬„øÊÁŸÿ–"
+      },
+      "page_start": 25,
+      "page_end": 25,
+      "parse_flags": [
+        "options_count_2",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 75,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "(4)"
+      },
+      "page_start": 25,
+      "page_end": 25,
+      "parse_flags": [
+        "options_count_3",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 76,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "(2)",
+        "C": "",
+        "D": "Directions : (For Q. No. 77). From the top view given in the problem figure identify the correct 3-D figure from amongst the answer figures. ÁŸŒ¸‡Ê — (¬˝. 77 ∑§ Á‹∞)– ŒË ªÿË ¬˝‡Ÿ •Ê∑Î§ÁÃ ∑§ ™§¬⁄UË ŒÎ‡ÿ ∑§Ê ‚„Ë 3-D ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ¬„øÊÁŸÿ– Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 25,
+      "page_end": 25,
+      "parse_flags": [
+        "options_count_3",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 77,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "(4) Y/Page 26 SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Directions : (For Q. No. 78 to 80). Identify the correct 3-D figure from amongst the answer figures, which has the same elevation, as given in the problem figure on the left. ÁŸŒ¸‡Ê — (¬˝. 78 ‚ 80 ∑§ Á‹∞)– 3-D ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ¥ ◊¥ ‚ ©‚ •Ê∑Î§ÁÃ ∑§Ê ¬„øÊÁŸÿ Á¡‚ ∑§Ê, ‚ê◊Èπ ŒÎ‡ÿ ¬˝‡Ÿ •Ê∑Î§ÁÃ ‚ Á◊‹ÃË „Ê– Problem Figure / ¬˝‡Ÿ •Ê∑Î§ÁÃ Answer Figures / ©ûÊ⁄U •Ê∑Î§ÁÃÿÊ°"
+      },
+      "page_start": 25,
+      "page_end": 26,
+      "parse_flags": [
+        "options_count_3",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 78,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": [
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 79,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": [
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 80,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "- o 0 o - SPACE FOR ROUGH WORK / ⁄U»§ ∑§Êÿ¸ ∑§ Á‹∞ ¡ª„ Read the following instructions carefully :"
+      },
+      "page_start": 26,
+      "page_end": 27,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "empty_stem"
+      ]
+    }
+  ]
+}

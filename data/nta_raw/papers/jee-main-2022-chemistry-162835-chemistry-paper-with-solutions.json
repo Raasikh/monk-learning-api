@@ -1,0 +1,62 @@
+{
+  "paper_id": "jee-main-2022-chemistry-162835-chemistry-paper-with-solutions",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-chemistry-162835-chemistry-paper-with-solutions",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Chemistry",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL; no official key URL known for this year/session",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.esaral.com",
+    "source_page_url": "https://www.esaral.com/neet/neet-2022-question-paper/",
+    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/27/162835-CHEMISTRY_paper_with-solutions.pdf",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "38695266593b6e1f37d06b6a12ae0930d258572de161f6c420589bbfbbd35f04",
+    "page_count": 11,
+    "text_chars": 6190,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 5,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-chemistry-162835-chemistry-paper-with-solutions.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "parse_failed",
+  "detected_paper_meta": {},
+  "question_count": 0,
+  "defects": [
+    "text layer present but no question blocks matched any known layout; paper may be solutions-only, image-based, or an unrecognized format"
+  ],
+  "questions": []
+}

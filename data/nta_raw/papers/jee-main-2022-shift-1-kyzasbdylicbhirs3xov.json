@@ -1,0 +1,203 @@
+{
+  "paper_id": "jee-main-2022-shift-1-kyzasbdylicbhirs3xov",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-1-kyzasbdylicbhirs3xov",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/KyzasBdyLIcBhIRS3XOv",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "9133e994b36d48c6a465a19c23dd8a9a9d58633152f36ba68f9a0e528b468f56",
+    "page_count": 9,
+    "text_chars": 11049,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 29,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-1-kyzasbdylicbhirs3xov.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 4,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 4,
+  "defects": [
+    "26 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 1, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]",
+    "4/4 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following in true regarding colloidal solution",
+      "options": {
+        "A": "Brownian movement destabilize the colloidal solution",
+        "B": "Opposite charge sol when mixed neutralize the charge stable the colloidal solution",
+        "C": "Similar charge on colloidal particle makes the sol stable",
+        "D": "None of these"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In the following reaction sequence FeCr2O4 \n      𝐾𝑂𝐻     \n→       A \n      𝐻+/𝐻2𝑂     \n→          B  \nFind no of terminal oxygen atom in product 'B'.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Enthalpy of vaporization of 17 gram of ammonia is 23.4 kJ, then find enthalpy of vaporisation of 85 gram \nammonia.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "4.64kg Fe3O4 react with 2.52kg of CO according to following reaction \n \nFe3O4 + 4CO 3 Fe + 4CO2 \n \nThen Find mass of Iron is formed in gram is",
+      "options": {
+        "A": "3360 gram",
+        "B": "5040 gram",
+        "C": "2800 gram",
+        "D": "3920 gram"
+      },
+      "page_start": 2,
+      "page_end": 9,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    }
+  ]
+}

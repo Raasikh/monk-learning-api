@@ -1,0 +1,471 @@
+{
+  "paper_id": "jee-main-2005-chemistry-touepnv3zafmryee7dya",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2005-chemistry-touepnv3zafmryee7dya",
+    "exam": "jee-main",
+    "year": 2005,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Chemistry",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2005/iit-jee-chemistry-paper-i/81203",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/TOUePNV3ZAFmryee7DYa",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "2d36b42da34265f856554f9c2c39df123f05c969e3f8fe847165cab5c913b23c",
+    "page_count": 5,
+    "text_chars": 4559,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2005-chemistry-touepnv3zafmryee7dya.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 21,
+  "defects": [
+    "7 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 3, 4, 5, 6, 7]",
+    "4/21 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which blue-liquid is obtained on reacting equimolar amounts of two gases at –30oC?",
+      "options": {
+        "A": "N2O IIT-JEE-Chemistry-Screening-2005",
+        "B": "XeF4",
+        "C": "SF4",
+        "D": "[I3-]"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following resonating structures of 1-methoxy-1, 3-butadiene is least stable?",
+      "options": {
+        "A": "CH2—CH=CH—CH=O—CH3",
+        "B": "CH2=CH2—CH—CH=O—CH3",
+        "C": "CH2—CH—CH=CH—O—CH3",
+        "D": "CH2=CH—CH—CH—O—CH3"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The ratio of the rate of diffusion of helium and methane under identical condition of \npressure and temperature will be:",
+      "options": {
+        "A": "4",
+        "B": "2",
+        "C": "1",
+        "D": "0.5"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "When PbO2 reacts with conc. HNO3 the gas evolved is:",
+      "options": {
+        "A": "NO2",
+        "B": "O2",
+        "C": "N2",
+        "D": "N2O"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In which of the following crystals alternate tetrahedral voids are occupied?",
+      "options": {
+        "A": "NaCI",
+        "B": "ZnS",
+        "C": "CaF2",
+        "D": "Na2O"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "CH3—COOH",
+        "B": "BrCH2—COOH",
+        "C": "(CH3CO)2O",
+        "D": "CHO—COOH"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The elevation in boiling point of a solution of 13.44 g of CuCI2 in 1 kg of water using \nthe following information will be: \n(Molecular weight of CuCI2 = 134.4 and Kb = 0.52 K molal–1)",
+      "options": {
+        "A": "0.16",
+        "B": "0.05",
+        "C": "0.1",
+        "D": "0.2"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "What would be the product formed when 1-bromo-3-chloro cyclobutane reacts with two \nequivalents of metallic sodium in ether?",
+      "options": null,
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "4-methyl benzene sulphonic acid reacts with sodium acetate to give :",
+      "options": null,
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The following on hydrolysis in aqueous acetone will give :",
+      "options": {
+        "A": "Mixture of (K) and (L)",
+        "B": "Mixture of (K) and (M)",
+        "C": "only (M)",
+        "D": "only (K)"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "0.1 mole of CH3NH2 (Kb = 5 × 10–4) is mixed with 0.08 mole of HCI and diluted to one \nlitre. What will be the H+ concentration in the solution?",
+      "options": {
+        "A": "8 × 10–2 M",
+        "B": "8 × 10–11 M",
+        "C": "1.6 × 10–11 M",
+        "D": "8 × 10–5 M"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The rusting of iron takes place as follows : \n2H+ + 2e– + 1/2O2 ® H2O (l) ;       Eo = + 1.23 V \nFe2+ + 2e– ® Fe(s) ;                   Eo = 0.44 V \n \nCalculate DGo for the net process",
+      "options": {
+        "A": "–322 kJ mol–1",
+        "B": "–161 kJ mol–1",
+        "C": "–152 kJ mol–1",
+        "D": "–76 kJ mol–1"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Name of the structure of silicates in which three oxygen atoms of [SiO4]4– are shared \nis :",
+      "options": {
+        "A": "pyrosilicate",
+        "B": "sheet silicate",
+        "C": "linear chain silicate",
+        "D": "three dimensional silicate"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Lyophilic sols are :",
+      "options": {
+        "A": "irreversible sols",
+        "B": "they are prepared from inorganic compounds",
+        "C": "coagulated by adding electrolytes",
+        "D": "self-stabilizing"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which pair of compounds is expected to show similar colour in aqueous medium?",
+      "options": {
+        "A": "FeCI3 and CuCI2",
+        "B": "VOCI2 and CuCI2",
+        "C": "VOCI2 and FeCI2",
+        "D": "FeCI2 and MnCI2"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The two forms of D-glucopyranose obtained from the solution of D-glucose are called :",
+      "options": {
+        "A": "isomer",
+        "B": "anomer",
+        "C": "epimer",
+        "D": "enantiomer"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The number of radial nodes of 3s, and 2p orbitals are respectively :",
+      "options": {
+        "A": "2, 0",
+        "B": "0, 2",
+        "C": "1, 2",
+        "D": "2, 1"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A metal nitrate reacts with KI to give a black precipitate which on addition of excess of \nKI convert into orange colour solution. The cation of metal nitrate is:",
+      "options": {
+        "A": "Hg2+",
+        "B": "Bi3+",
+        "C": "Pb2+",
+        "D": "Cu+"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "When phenyl magnesium bromide reacts with t-butanol, the product would be:",
+      "options": {
+        "A": "benzene",
+        "B": "phenol",
+        "C": "t-butyl benzene",
+        "D": "t-butyl phenyl ether"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The best method to prepare cyclohexene from cyclohexanol is by using :",
+      "options": {
+        "A": "conc. HCI + ZnCI2",
+        "B": "conc. H3PO4",
+        "C": "HBr",
+        "D": "conc. HCI"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "When one mole of monoatomic ideal gas at T K undergoes adiabatic change under a \nconstant external pressure of 1 atm changes volume from 1 litre to 2 litre. The final \ntemperature in kelvin would be :",
+      "options": {
+        "A": "T/2(2/3)",
+        "B": "T + 2/(3×0.0821)",
+        "C": "T",
+        "D": "T – 2/(2×0.0821)"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    }
+  ]
+}

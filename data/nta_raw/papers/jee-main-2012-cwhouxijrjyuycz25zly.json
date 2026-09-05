@@ -1,0 +1,280 @@
+{
+  "paper_id": "jee-main-2012-cwhouxijrjyuycz25zly",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2012-cwhouxijrjyuycz25zly",
+    "exam": "jee-main",
+    "year": 2012,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2012/aieee-2012-question-paper-with-solutions/98457",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/cWhouXiJRjYUyCZ25ZLy",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "77e75f272e3c46acb9f8ce0531962d79fc83cbeccd3e8ce83582a383d2432446",
+    "page_count": 27,
+    "text_chars": 50123,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 1,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2012-cwhouxijrjyuycz25zly.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 13,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 13,
+  "defects": [
+    "291 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8]",
+    "13/13 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Immediately fill in the particulars on this page of the Test Booklet with Blue/Black Ball Point \nPen. Use of pencil is strictly prohibited.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Answer Sheet is kept inside this Test Booklet. When you are directed to open the Test \nBooklet, take out the Answer Sheet and fill in the particulars carefully.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The test is of 3 hours duration.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Test Booklet consists of 90 questions. The maximum marks are 360.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There are three parts in the question paper A, B, C consisting of Mathematics, Physics and \nChemistry having 30 questions in each part of equal weightage. Each question is allotted 4 \n(four) marks for each correct response.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Candidates will be awarded marks as stated above in instruction No.5 for correct response of \neach question. 1/4 (one fourth) marks will be deducted for indicating incorrect response of each \nquestion. No deduction from the total score will be made if no response is indicated for an item \nin the answer sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is only one correct response for each question. Filling up more than one response in \neach question will be treated as wrong response and marks for wrong response will be \ndeducted accordingly as per instruction 6 above.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Use Blue/Black Ball Point Pen only for writing particulars/marking responses on Side-1 and \nSide-2 of the Answer Sheet. Use of pencil is strictly prohibited.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "No candidate is allowed to carry any textual material, printed or written, bits of papers, pager, \nmobile phone, any electronic device, etc., except the Admit Card inside the examination \nhall/room.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Rough work is to be done on the space provided for this purpose in the Test Booklet only. This \nspace is given at the bottom of each page and in 3 pages (Pages 21 – 23) at the end of the \nbooklet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "On completion of the test, the candidate must hand over the Answer Sheet to the Invigilator on \nduty in the Room/Hall. However, the candidates are allowed to take away this Test Booklet \nwith them.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The CODE for this Booklet is C. Make sure that the CODE printed on Side-2 of the Answer \nSheet is the same as that on this booklet. In case of discrepancy, the candidate should \nimmediately report the matter to the Invigilator for replacement of both the Test Booklet and the \nAnswer Sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Do not fold or make any stray marks on the Answer Sheet.\u0001\n\u0001\n\nAIEEE−2012−2 \n\u0001\u0002\u0003\u0004\u0005\u0002\u0006\u0005\u0007 \u0002\u0004\b \t\u0007 \u0002\u0004\n\u000b\f\u0005\n\u0005",
+      "options": {
+        "A": "The equation esin x – e–sin x – 4 = 0 has",
+        "B": "no real roots",
+        "C": "exactly one real root",
+        "D": "exactly four real roots"
+      },
+      "page_start": 1,
+      "page_end": 27,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

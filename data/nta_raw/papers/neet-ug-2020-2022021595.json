@@ -1,0 +1,61 @@
+{
+  "paper_id": "neet-ug-2020-2022021595",
+  "exam_tag": "neet-ug",
+  "tags": [
+    "neet-ug",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "neet-ug-2020-2022021595",
+    "exam": "neet-ug",
+    "year": 2020,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "Hindi",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "neet-ug",
+    "tags": [
+      "neet-ug",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "official",
+    "source_site": "neet.nta.nic.in",
+    "source_page_url": "https://neet.nta.nic.in/archive/",
+    "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021595.pdf",
+    "official_key_url": null,
+    "key_join_strategy": "booklet_question_number",
+    "key_join_notes": "NEET official keys join by booklet code + question number, not NTA question IDs"
+  },
+  "probe": {
+    "sha256": "51481e0209fee278b99a17170f7593dbf049573779a4284efee35e0db092e3c1",
+    "page_count": 44,
+    "text_chars": 0,
+    "has_text_layer": false,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/neet-ug-2020-2022021595.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": null,
+  "status": "needs_ocr",
+  "question_count": 0,
+  "defects": [
+    "no usable text layer; OCR deferred per task scope"
+  ],
+  "questions": []
+}

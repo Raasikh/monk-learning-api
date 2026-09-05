@@ -1,0 +1,62 @@
+{
+  "paper_id": "neet-ug-2019-chemistry-164111-neet-2019-20chemistry",
+  "exam_tag": "neet-ug",
+  "tags": [
+    "neet-ug",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "neet-ug-2019-chemistry-164111-neet-2019-20chemistry",
+    "exam": "neet-ug",
+    "year": 2019,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Chemistry",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL; no official key URL known for this year/session",
+    "exam_tag": "neet-ug",
+    "tags": [
+      "neet-ug",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.esaral.com",
+    "source_page_url": "https://www.esaral.com/neet/neet-2019-question-paper/",
+    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/27/164111-NEET_2019%20Chemistry.pdf",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "2ac4bf7e0d71dc8f2665fc9e8421027bb339619fea2d31d821a75b2d972ed272",
+    "page_count": 9,
+    "text_chars": 808,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/neet-ug-2019-chemistry-164111-neet-2019-20chemistry.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "parse_failed",
+  "detected_paper_meta": {},
+  "question_count": 0,
+  "defects": [
+    "text layer present but no question blocks matched any known layout; paper may be solutions-only, image-based, or an unrecognized format"
+  ],
+  "questions": []
+}

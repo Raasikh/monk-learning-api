@@ -1,0 +1,159 @@
+{
+  "paper_id": "jee-main-2022-shift-1-zu6rb9brkolunkwktn8p",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-1-zu6rb9brkolunkwktn8p",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/zu6rb9BrKOlUnkwkTN8p",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "f9c3b838389ac98bdfee6a895d3ef7c54eb0534ee8ac06add506c8bdcbd6296d",
+    "page_count": 6,
+    "text_chars": 6873,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 23,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-1-zu6rb9brkolunkwktn8p.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "4",
+          "option": "D",
+          "option_index": 4
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "4",
+          "option": "D",
+          "option_index": 4
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 3,
+  "defects": [
+    "31 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 1, 9, 22, 37, 3, 4, 2, 5, 6, 7, 8, 9, 5, 10]",
+    "3/3 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle of mass 0.5 kg moving with speed 12 m/s collide with free end of spring as shown in figure. \nWhen compression in spring is 30 cm speed of particle is 6 m/s, then find spring constant of spring    \n \nK = ? \nm=0.5 gm",
+      "options": {
+        "A": "300 N/m",
+        "B": "400 N/m",
+        "C": "500 N/m",
+        "D": "600 N/m"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "4",
+        "option": "D",
+        "option_index": 4
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "0\n(\nk\n2\n1\n4\nV\nm\n2\n1\nmV\n2\n1\n\n\n\n\n\n\n\n\n \n \n)\n9\n.\n0\n(\nk\n2\n1\nV\n4\n3\nm\n2\n1\n2 \n \n \nk = 600 N/m",
+      "options": {
+        "B": "Difference of speed of light in two medium A & B is VA – VB = 2.6 × 107 m/s, Refractive index of medium B is nB = 1.37, then find refractive index of medium A (Given C = 3 ×108 m/s )",
+        "A": "1.11",
+        "C": "1.33",
+        "D": "1.44"
+      },
+      "page_start": 1,
+      "page_end": 6,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_B",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "4",
+        "option": "D",
+        "option_index": 4
+      }
+    }
+  ]
+}

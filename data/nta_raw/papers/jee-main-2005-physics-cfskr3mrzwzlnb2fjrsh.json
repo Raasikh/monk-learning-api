@@ -1,0 +1,1574 @@
+{
+  "paper_id": "jee-main-2005-physics-cfskr3mrzwzlnb2fjrsh",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2005-physics-cfskr3mrzwzlnb2fjrsh",
+    "exam": "jee-main",
+    "year": 2005,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper_with_solutions",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2005/aieee-2005-physics-question-paper-with-solution/98444",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/cFSkr3MRZWzLNb2FjrSH",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "9aad090aec3b71e502e78ba73c74ed19d596a5c68eed91cf659c62526c557fa3",
+    "page_count": 18,
+    "text_chars": 25070,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2005-physics-cfskr3mrzwzlnb2fjrsh.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 75,
+  "defects": [
+    "1 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [8]",
+    "72/75 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A projectile can have the same range R for two angles of projection. If t1 and t2 be the \ntimes of flights in the two cases, then the product of the two time of flights is \nproportional to",
+      "options": {
+        "A": "R2",
+        "B": "1/R2",
+        "C": "1/R",
+        "D": "R"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "An annular ring with inner and outer radii R1 and R2 is rolling without slipping with a \nuniform angular speed. The ratio of the forces experienced by the two particles \nsituated on the inner and outer parts of the ring, F1/F2 is",
+      "options": {
+        "A": "2 1 R R",
+        "B": "2 1 2 R R      ",
+        "C": "1",
+        "D": "1 2 R R"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A smooth block is released at rest on a 45° incline and then slides a distance d. The \ntime taken to slide is n times as much to slide on rough incline than on a smooth \nincline. The coefficient of friction is",
+      "options": {
+        "A": "k 2 1 1 n µ = −",
+        "B": "k 2 1 1 n µ = −",
+        "C": "s 2 1 1 n µ = −",
+        "D": "s 2 1 1 n µ = −"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The upper half of an inclined plane with inclination φ is perfectly smooth while the \nlower half is rough. A body starting from rest at the top will again come to rest at the \nbottom if the coefficient of friction for the lower half is given by  \n\n \n \n-2-",
+      "options": {
+        "A": "2sinφ",
+        "B": "2cosφ",
+        "C": "2tanφ",
+        "D": "tanφ"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A bullet fired into a fixed target loses half of its velocity after penetrating 3 cm. How \nmuch further it will penetrate before coming to rest assuming that it faces constant \nresistance to motion?",
+      "options": {
+        "A": "3.0 cm",
+        "B": "2.0 cm",
+        "C": "1.5 cm",
+        "D": "1.0 cm 5."
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Out of the following pair, which one does NOT have identical dimensions is",
+      "options": {
+        "A": "angular momentum and Planck’s constant",
+        "B": "impulse and momentum",
+        "C": "moment of inertia and moment of a force",
+        "D": "work and torque 6."
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The relation between time t and distance x is t=ax2+bx where a and b are constants. \nThe acceleration is",
+      "options": {
+        "A": "−2abv2",
+        "B": "2bv3",
+        "C": "−2av3",
+        "D": "2av2 7."
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A car starting from rest accelerates at the rate f through a distance S, then continues \nat constant speed for time t and then decelerates at the rate f/2 to come to rest. If the \ntotal distance traversed is 15 S, then",
+      "options": {
+        "A": "S=ft",
+        "B": "S = 1/6 ft2",
+        "C": "S = 1/2 ft2",
+        "D": "S = 1/4 ft2 8. (none) 2 1 ft S 2 = 0 v 2Sf = During retardation t1 t2 t V0 V S2 = 2S -3- During constant velocity 15S -3S = 12S = vot 2 ft S 72 ⇒ ="
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A particle is moving eastwards with a velocity of 5 m/s in 10 seconds the velocity \nchanges to 5 m/s northwards. The average acceleration in this time is",
+      "options": {
+        "A": "2 1 m/ s 2 towards north-east",
+        "B": "2 1 m/ s 2 towards north.",
+        "C": "zero",
+        "D": "2 1 m/ s 2 towards north-west 9."
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A parachutist after bailing out falls 50 m without friction. When parachute opens, it \ndecelerates at 2 m/s2.  He reaches the ground with a speed of 3 m/s. At what height, \ndid he bail out?",
+      "options": {
+        "A": "91 m",
+        "B": "182 m",
+        "C": "293 m",
+        "D": "111 m 10."
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A block is kept on a frictionless inclined surface with angle \nof inclination α. The incline is given an acceleration a to \nkeep the block stationary. Then a is equal to",
+      "options": {
+        "A": "g/tanα",
+        "B": "g cosecα",
+        "C": "g",
+        "D": "g tanα a α 11."
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A spherical ball of mass 20 kg is stationary at the top of a hill of height 100 m. It rolls \ndown a smooth surface to the ground, then climbs up another hill of height 30 m and \nfinally rolls down to a horizontal base at a height of 20 m above the ground. The \nvelocity attained by the ball is",
+      "options": {
+        "A": "40 m/s",
+        "B": "20 m/s",
+        "C": "10 m/s",
+        "D": "10 30 m/s -4- 12."
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A body A of mass M while falling vertically downwards under gravity breaks into two \nparts; a body B of mass 1/3 M and a body C of mass 2/3 M. The centre of mass of \nbodies B and C taken together shifts compared to that of body A towards",
+      "options": {
+        "A": "depends on height of breaking",
+        "B": "does not shift",
+        "C": "body C",
+        "D": "body B 13."
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The moment of inertia of a uniform semicircular disc of mass M and radius r about a \nline perpendicular to the plane of the disc through the centre is",
+      "options": {
+        "A": "2 1Mr 4",
+        "B": "2 2Mr 5",
+        "C": "Mr2",
+        "D": "2 1Mr 2 14."
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A particle of mass 0.3 kg is subjected to a force F=−kx with k=15 N/m. What will be \nits initial acceleration if it is released from a point 20 cm away from the origin?",
+      "options": {
+        "A": "3 m/s2",
+        "B": "15 m/s2",
+        "C": "5 m/s2",
+        "D": "10 m/s2 15."
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The block of mass M moving on the frictionless \nhorizontal surface collides with a spring of spring \nconstant K and compresses it by length L. The \nmaximum momentum of the block after collision is",
+      "options": {
+        "A": "MK L",
+        "B": "2 KL 2M",
+        "C": "zero",
+        "D": "2 ML K M 16."
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A mass ‘m’  moves with a velocity v and collides \ninelastically with another identical mass. After \ncollision the 1st mass moves with velocity v/√3 in a \ndirection perpendicular to the initial direction of \nmotion. Find the speed of the 2nd mass after \ncollision   \nm \nm \nv \nBefore \ncollision \nAfter  \ncollision \nv/√3",
+      "options": {
+        "A": "v",
+        "B": "√3 v",
+        "C": "2v/√3",
+        "D": "v/√3 17."
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A 20 cm long capillary tube is dipped in water. The water rises up to 8 cm. If the \nentire arrangement is put in a freely falling elevator the length of water column in the \ncapillary tube will be",
+      "options": {
+        "A": "8 cm",
+        "B": "10 cm",
+        "C": "4 cm",
+        "D": "20 cm 18."
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If S is stress and Y is Young’s modulus of material of a wire, the energy stored in the \nwire per unit volume is",
+      "options": {
+        "A": "2S2Y",
+        "B": "S2/2Y",
+        "C": "2Y/S2",
+        "D": "S/2Y 19."
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Average density of the earth",
+      "options": {
+        "A": "does not depend on g",
+        "B": "is a complex function of g",
+        "C": "is directly proportional to g",
+        "D": "is inversely proportional to g 20."
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A body of mass m is accelerated uniformly from rest to a speed v in a time T. The \ninstantaneous power delivered to the body as a function time is given by",
+      "options": {
+        "A": "2 2 mv t T ⋅",
+        "B": "2 2 2 mv t T ⋅",
+        "C": "2 2 1 mv t 2 T ⋅",
+        "D": "2 2 2 1 mv t 2 T ⋅ 21."
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Consider a car moving on a straight road with a speed of 100  m/s. The distance at \nwhich car can be stopped is [\n]\nk\n0.5\nµ =",
+      "options": {
+        "A": "800 m",
+        "B": "1000 m",
+        "C": "100 m",
+        "D": "400 m 22."
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following is incorrect regarding the first law of thermodynamics?",
+      "options": {
+        "A": "It is not applicable to any cyclic process",
+        "B": "It is a restatement of the principle of conservation of energy",
+        "C": "It introduces the concept of the internal energy",
+        "D": "It introduces the concept of the entropy 23. (none) More than one statements are incorrect"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A ‘T’ shaped object with dimensions shown in \nthe figure, is lying on a smooth floor. A force F is \napplied at the point P parallel to AB, such that \nthe object has only the translational motion \nwithout rotation. Find the location of P with \nrespect to C   \n \nP \nl  \n2 l  \nF\nr\nA\nB \nC",
+      "options": {
+        "A": "2 3 l",
+        "B": "3 2 l",
+        "C": "4 3 l",
+        "D": "l 24."
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The change in the value of g at a height ‘h’ above the surface of the earth is the \nsame as at a depth ‘d’ below the surface of earth. When both ‘d’ and ‘h’ are much \nsmaller than the radius of earth, then which one of the following is correct?",
+      "options": {
+        "A": "h d 2 =",
+        "B": "3h d 2 =",
+        "C": "d 2h =",
+        "D": "d = h 25."
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A particle of mass 10 g is kept on the surface of a uniform sphere of mass 100 kg \nand radius 10 cm. Find the work to be done against the gravitational force between \nthem to take the particle far away from the sphere  \n \n(you may take G = 6 . 67× 10-11 Nm2 / kg2)",
+      "options": {
+        "A": "10 13.34 10 J − ×",
+        "B": "10 3.33 10 J − ×",
+        "C": "9 6.67 10 J − ×",
+        "D": "10 6.67 10 J − × 26."
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A gaseous mixture consists of 16 g of helium and 16 g of oxygen. The ratio \nP\nv\nC\nC of the \nmixture is",
+      "options": {
+        "A": "1.59",
+        "B": "1.62",
+        "C": "1.4",
+        "D": "1.54 27."
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The intensity of gamma radiation from a given source is I. On passing through 36 mm \nof lead, it is reduced to I\n8 . The thickness of lead which will reduce the intensity to \nI\n2 will be",
+      "options": {
+        "A": "6 mm",
+        "B": "9 mm",
+        "C": "18 mm",
+        "D": "12 mm 28."
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The electrical conductivity of a semiconductor increases when electromagnetic \nradiation of wavelength shorter than 2480 nm is incident on it. The band gap in (eV) \nfor the semiconductor is",
+      "options": {
+        "A": "1.1 eV",
+        "B": "2.5 eV",
+        "C": "0.5 eV",
+        "D": "0.7 eV 29."
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A photocell is illuminated by a small bright source placed 1 m away. When the same \nsource of light is placed 1\n2  m away, the number of electrons emitted by photo \ncathode would",
+      "options": {
+        "A": "decrease by a factor of 4",
+        "B": "increase by a factor of 4",
+        "C": "decrease by a factor of 2",
+        "D": "increase by a factor of 2 -8- 30."
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "C": "1/ 2 1/ 2 1/ 2 t t t 0 0 0 0 N N N N 2 4 8 → → → 1/ 2 3t 15 = 1/ 2 t 5 ∴ ="
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "options_count_1",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If radius of \n27\n13 Al  nucleus is estimated to be 3.6 Fermi then the radius \n125\n52 Te  nucleus  \nbe nearly",
+      "options": {
+        "A": "6 fermi",
+        "B": "8 fermi",
+        "C": "4 fermi",
+        "D": "5 fermi 32."
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The temperature-entropy diagram of a reversible engine \ncycle is given in the figure. Its efficiency is",
+      "options": {
+        "A": "1/2",
+        "B": "1/4",
+        "C": "1/3",
+        "D": "2/3 2So 2To T To S S 33."
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The figure shows a system of two concentric spheres of radii \nr1 and r2 and kept at temperatures T1 and T2 respectively. The \nradial rate of flow of heat in a substance between the two \nconcentric sphere is proportional to  \n \nT1 \nT2 \nr1 \nr2",
+      "options": {
+        "A": "2 1 1 2 r r r r −",
+        "B": "2 1 r ln r      ",
+        "C": "1 2 2 1 r r r r −",
+        "D": "( ) 2 1 ln r r − -9- 34."
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 35,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A system goes from A to B via two processes I and II as shown \nin the figure. If ∆U1 and ∆U2 are the changes in internal energies \nin the processes I and II respectively, the",
+      "options": {
+        "A": "∆U1 = ∆U2",
+        "B": "relation between ∆U1 and ∆U2 can not be determined",
+        "C": "∆U2 > ∆U1",
+        "D": "∆U2 < ∆U1 P V II I A B 35."
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The function sin2(ωt) represents",
+      "options": {
+        "A": "a periodic, but not simple harmonic motion with a period 2π/ω",
+        "B": "a periodic, but not simple harmonic motion with a period π/ω",
+        "C": "a simple harmonic motion with a period 2π/ω",
+        "D": "a simple harmonic motion with a period π/ω. 36."
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A Young’s double slit experiment uses a monochromatic source. The shape of the \ninterference fringes formed on a screen is",
+      "options": {
+        "A": "hyperbola",
+        "B": "circle",
+        "C": "straight line",
+        "D": "parabola 37."
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 38,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two simple harmonic motions are represented by the equation y1 = 0.1 \nsin 100 t\n3\nπ\n\n\nπ +\n\n\n\n\n and y2 = 0.1 cosπt. The phase difference of the velocity of particle 1 \nw.r.t. the velocity of the particle 2 is",
+      "options": {
+        "A": "−π/6",
+        "B": "π/3",
+        "C": "−π/3",
+        "D": "π/6 38."
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A fish looking up through the water sees the outside world contained in a circular \nhorizon. If the refractive index of water is 4/3 and the fish is 12 cm below the surface, \nthe radius of this circle in cm is",
+      "options": {
+        "A": "36 7",
+        "B": "36 / 7",
+        "C": "36 5",
+        "D": "4 5 -10- 39."
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two point white dots are 1 mm apart on a black paper.  They are viewed by eye of \npupil diameter 3 mm.  Approximately, what is the maximum distance at which these \ndots can be resolved by the eye? [ Take wavelength of light  = 500 nm ]",
+      "options": {
+        "A": "5 m",
+        "B": "1m",
+        "C": "6 m",
+        "D": "3m 40."
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A thin glass (refractive index 1.5) lens has optical power of – 5D in air.  Its optical \npower in a liquid medium with refractive index 1.6 will be",
+      "options": {
+        "A": "1 D",
+        "B": "-1D",
+        "C": "25 D",
+        "D": "– 25 D 41. (none) a m air m 1 P P 1   µ −   µ   =   µ −   µ   l l Pm=5/8 D"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": []
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The diagram shows the energy levels for an electron \nin a certain atom.  Which transition shown represents \nthe emission of a photon with the most energy ?",
+      "options": {
+        "A": "III",
+        "B": "IV",
+        "C": "I",
+        "D": "II n=4 n=3 n=2 n=1 I II III IV 42."
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 43,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If the kinetic energy of a free electron doubles. Its deBroglie wavelength changes by \nthe factor",
+      "options": {
+        "A": "1 2",
+        "B": "2",
+        "C": "1 2",
+        "D": "2 43."
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 44,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "In a common base amplifier, the phase difference between the input signal voltage \nand output voltage is",
+      "options": {
+        "A": "4 π",
+        "B": "π",
+        "C": "0",
+        "D": "2 π 44."
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "In a full wave rectifier circuit operating from 50 Hz mains frequency, the fundamental \nfrequency in the ripple would be",
+      "options": {
+        "A": "50 Hz",
+        "B": "25 Hz",
+        "C": "100 Hz",
+        "D": "70.7 Hz 45."
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A nuclear transformation is denoted by X(n, α) \n7\n3Li .  Which of the following is the \nnucleus of element X ?",
+      "options": {
+        "A": "12C6",
+        "B": "10 5 B",
+        "C": "9 5B",
+        "D": "11 4 Be 46."
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 47,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A moving coil galvanometer has 150 equal divisions.  Its current sensitivity is  \n10 divisions per milliampere and voltage sensitivity is 2 divisions per millivolt.  In \norder that each division reads 1 volt, the resistance in ohms needed to be connected \nin series with the coil will be",
+      "options": {
+        "A": "103",
+        "B": "105",
+        "C": "99995",
+        "D": "9995 47."
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two voltameters one of copper and another of silver, are joined in parallel.  When a \ntotal charge q flows through the voltameters, equal amount of metals are deposited.  \nIf the electrochemical equivalents of copper and silver are z1 and z2 respectively the \ncharge which flows through the silver voltameter is",
+      "options": {
+        "A": "1 2 q z 1 z +",
+        "B": "2 1 q z 1 z +",
+        "C": "q 1 2 z z",
+        "D": "q 2 1 z z 48."
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "In the circuit, the galvanometer G shows \nzero deflection. If the batteries A and B \nhave negligible internal resistance, the \nvalue of the resistor R will be  \n2V \n12V\n500Ω\nR \nA \nG \nB",
+      "options": {
+        "A": "200 Ω",
+        "B": "100 Ω",
+        "C": "500 Ω",
+        "D": "1000 Ω 49."
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 50,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two sources of equal emf are connected to an external resistance R.  The internal \nresistance of the two sources are R1 and R2 (R2 > R1).  If the potential difference \nacross the source having internal resistance R2 is zero, then",
+      "options": {
+        "A": "R = R2 × (R1 + R2)/R2 – R1)",
+        "B": "R = R2 – R1",
+        "C": "R = R1R2 / (R1 + R2)",
+        "D": "R = R1R2 / (R2 – R1) 50."
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 51,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A fully charged capacitor has a capacitance ‘C’ it is discharged through a small coil of \nresistance wire embedded in a thermally insulated block of specific heat capacity ‘s’ \nand mass ‘m’.  If the temperature of the block is raised by ‘∆T’.  The potential \ndifference V across the capacitance is",
+      "options": {
+        "A": "2mC T s ∆ s ∆",
+        "C": "ms T C ∆",
+        "D": "2ms T C ∆ 51."
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "options_count_3"
+      ]
+    },
+    {
+      "qno": 52,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "One conducting U tube can slide inside another as \nshown in figure, maintaining electrical contacts \nbetween the tubes. The magnetic field B is \nperpendicular to the plane of the figure.  if each tube \nmoves towards the other at a constant speed V, \nthen the emf induced in the circuit in terms of B, l \nand V where l is the width of each tube will be  \nA \nD \nx \nB \nx \nx \nx \nx \nx \nx \nx \nx \nx \nx \nx \nx \nx \nx \nC \nD \nV \nV",
+      "options": {
+        "A": "BlV",
+        "B": "– BlV",
+        "C": "zero",
+        "D": "2 BlV 52."
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "references_figure_not_extracted",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 53,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A heater coil is cut into two equal parts and only one part is now used in the heater.  \nThe heat generated will now be",
+      "options": {
+        "A": "doubled",
+        "B": "four times",
+        "C": "one fourth",
+        "D": "halved 53."
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 54,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two thin, long parallel wires separated by a distance ‘d’ carry a current of ‘i’ A in the \nsame direction.  They will",
+      "options": {
+        "A": "attract each other with a force of µ0i2/(2πd)",
+        "B": "repel each other with a force of µ0i2 / (2πd)",
+        "C": "attract each other with a force of µ0i2(2πd2)",
+        "D": "repel each other with a force of µ0i2/(2πd2) 54."
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 55,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "When an unpolarized light of intensity I0 is incident on a polarizing sheet, the intensity \nof the light which does not get transmitted is",
+      "options": {
+        "A": "0 1I 2",
+        "B": "0 1I 4",
+        "C": "zero",
+        "D": "I0 55."
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 56,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A charged ball B hangs from a silk thread S which makes an \nangle θ with a large charged conducting sheet P, as show in \nthe figure.  The surface charge density σ of the sheet is \nproportional to",
+      "options": {
+        "A": "cos θ",
+        "B": "cot θ",
+        "C": "sin θ",
+        "D": "tan θ + + + + + + + S B θ P 56."
+      },
+      "page_start": 13,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 57,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two point charges + 8q and – 2q are located at x = 0 and x = L respectively.  The \nlocation of a point on the x axis at which the net electric field due to these two point \ncharges is zero is",
+      "options": {
+        "A": "2L",
+        "B": "L/4 -14-",
+        "C": "8L",
+        "D": "4L 57."
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 58,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two thin wires rings each having a radius R are placed at a distance d apart with \ntheir axes coinciding.  The charges on the two rings are +q and –q.  The potential \ndifference between the centres of the two rings is",
+      "options": {
+        "A": "QR/4πε0d2",
+        "B": "2 2 0 Q 1 1 2 R R d   −   πε +  ",
+        "C": "zero",
+        "D": "2 2 0 Q 1 1 4 R R d   −   πε +   58."
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 59,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A parallel plate capacitor is made by stacking n equally spaced plates connected \nalternatively. If the capacitance between any two adjacent plates is C then the \nresultant capacitance is",
+      "options": {
+        "A": "(n − 1)C",
+        "B": "(n + 1)C",
+        "C": "C",
+        "D": "nC 59."
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 60,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "When two tuning forks (fork 1 and fork 2) are sounded simultaneously, 4 beats per \nsecond are heard. Now, some tape is attached on the prong of the fork 2. When the \ntuning forks are sounded again, 6 beats per seconds are heard. If the frequency of \nfork 1 is 200 Hz, then what was the original frequency of fork 2?",
+      "options": {
+        "A": "200 Hz",
+        "B": "202 Hz",
+        "C": "196 Hz",
+        "D": "204 Hz 60."
+      },
+      "page_start": 14,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If a simple harmonic motion is represented by \n2\n2\nd x\ndt  + αx = 0, its time period is",
+      "options": {
+        "A": "2π α",
+        "B": "2π α",
+        "C": "2πα",
+        "D": "2π α -15- 61."
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 62,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The bob of a simple pendulum is a spherical hollow ball filled with water. A plugged \nhole near the bottom of the oscillation bob gets suddenly unplugged. During \nobservation, till water is coming out, the time period of oscillation would",
+      "options": {
+        "A": "first increase and then decrease to the original value.",
+        "B": "first decreased then increase to the original value.",
+        "C": "remain unchanged.",
+        "D": "increase towards a saturation value. 62."
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 63,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "An observer moves towards a stationary source of sound, with a velocity one fifth of \nthe velocity of sound. What is the percentage increase in the apparent frequency?",
+      "options": {
+        "A": "zero.",
+        "B": "0.5%",
+        "C": "5%",
+        "D": "20% 63."
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 64,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "If I0 is the intensity of the principal maximum in the single slit diffraction pattern, then \nwhat will be its intensity when the slit width is doubled?",
+      "options": {
+        "A": "2I0",
+        "B": "4I0",
+        "C": "I0",
+        "D": "I0/2 64."
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "Two concentric coils each of radius equal to 2π cm are placed at right angles to each \nother. 3 Ampere and 4 ampere are the currents flowing in each coil respectively. The \nmagnetic induction in Weber/m2 at the centre of the coils will be (µ0 = 4π × 10−7 \nWb/A-m)",
+      "options": {
+        "A": "12 × 10−5",
+        "B": "10−5",
+        "C": "5 × 10−5",
+        "D": "7 × 10−5 65."
+      },
+      "page_start": 15,
+      "page_end": 15,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A coil of inductance 300 mH and resistance 2Ω is connected to a source of voltage \n2V. The current reaches half of its steady state value in",
+      "options": {
+        "A": "0.05 s",
+        "B": "0.1 s -16-",
+        "C": "0.15 s",
+        "D": "0.3 s 66."
+      },
+      "page_start": 15,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The self inductance of the motor of an electric fan is 10 H. In order to impart \nmaximum power at 50 Hz, it should be connected to a capacitance of",
+      "options": {
+        "A": "4µF",
+        "B": "8µF",
+        "C": "1µF",
+        "D": "2µF 67."
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "An energy source will supply a constant current into the load of its internal resistance \nis",
+      "options": {
+        "A": "equal to the resistance of the load.",
+        "B": "very large as compared to the load resistance.",
+        "C": "zero.",
+        "D": "non-zero but less than the resistance of the load. 68."
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A circuit has a resistance of 12 Ω and an impedance of 15 Ω. The power factor of the \ncircuit will be",
+      "options": {
+        "A": "0.8",
+        "B": "0.4",
+        "C": "1.25",
+        "D": "0.125 69."
+      },
+      "page_start": 16,
+      "page_end": 16,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 70,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The phase difference between the alternating current and emf is π/2. Which of the \nfollowing cannot be the constituent of the circuit?",
+      "options": {
+        "A": "C alone",
+        "B": "R.L",
+        "C": "L. C",
+        "D": "L alone 70."
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A uniform electric field and a uniform magnetic field are acting along the same \ndirection in a certain region. If an electron is projected along the direction of the fields \nwith a certain velocity then",
+      "options": {
+        "A": "its velocity will decrease.",
+        "B": "its velocity will increase.",
+        "C": "it will turn towards right of direction of motion.",
+        "D": "it will turn towards left of direction of motion. 71."
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A charged particle of mass m and charge q travels on a circular path of radius r that \nis perpendicular to a magnetic field B. The time taken by the particle to complete one \nrevolution is",
+      "options": {
+        "A": "2 mq B π",
+        "B": "2 2 q B m π",
+        "C": "2 qB m π",
+        "D": "2 m qB π 72."
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "In a potentiometer experiment the balancing with a cell is at length 240 cm. On \nshunting the cell with a resistance of 2Ω the balancing length becomes 120 cm. The \ninternal resistance of the cell is",
+      "options": {
+        "A": "1 Ω",
+        "B": "0.5 Ω",
+        "C": "4 Ω",
+        "D": "2 Ω 73."
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 74,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "The resistance of hot tungsten filament is about 10 times the cold resistance. What \nwill be the resistance of 100 W and 200 V lamp when not in use?",
+      "options": {
+        "A": "40 Ω",
+        "B": "20 Ω",
+        "C": "400 Ω",
+        "D": "200 Ω 74."
+      },
+      "page_start": 17,
+      "page_end": 17,
+      "parse_flags": [
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 75,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Physics",
+      "section": null,
+      "segment": 0,
+      "text": "A magnetic needle is kept in a non-uniform magnetic field. It experiences",
+      "options": {
+        "A": "a torque but not a force",
+        "B": "neither a force nor a torque",
+        "C": "a force and a torque.",
+        "D": "a force but not a torque. -18- 75."
+      },
+      "page_start": 17,
+      "page_end": 18,
+      "parse_flags": [
+        "duplicate_option_marker_C"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "paper_id": "jee-main-2022-shift-1-9fkz3dbipalaqskxjejj",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-1-9fkz3dbipalaqskxjejj",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/9fkz3DbIpaLaqsKxjejj",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "0bc389a80f3af6fb56859c55f539051e22f9616e0d5ddcd41adb20b494b3ab2d",
+    "page_count": 8,
+    "text_chars": 7949,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 15,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-1-9fkz3dbipalaqskxjejj.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 4,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "4",
+          "option": "D",
+          "option_index": 4
+        }
+      },
+      {
+        "qno": 7,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 8,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 8,
+  "defects": [
+    "16 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 2, 4, 4, 2, 9, 28, 10, 11, 12, 13, 3, 14, 15, 5]",
+    "8/8 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If curve y = f(x) satisfying \nand (2, ) then the value of is",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Probability that in three digit number at least two digit are odd",
+      "options": {
+        "A": "36 15",
+        "B": "36 19",
+        "C": "36 23",
+        "D": "36 13"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The number of 5 digit positive integer numbers divisible by 6 using digit 1,2,3,5,6,7 , without repetition is",
+      "options": {
+        "A": "70",
+        "B": "71",
+        "C": "72",
+        "D": "73"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The mean and standard deviation of 15 observation are 8 and 3 respectively. If an observation 20 was \nmisread as 5, then the correct variance is",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If A is a square matrix of order 3 such that |A| = 2 then the value of \n\n\n\n\n3\nA\nadj\n5\nadj\n.\nA\n is",
+      "options": {
+        "A": "215.56",
+        "B": "215.54",
+        "C": "215.53",
+        "D": "213.56"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "AB and PQ are two poles 160 meter apart and C is mid point of BQ. Where B and Q are on level ground. \nIf the height of PQ is twice of AB and angles of elevation of P and A from C are \n8\n and Q respectively \nthen the value of tan2 is",
+      "options": {
+        "A": "  2 1 – 2 2",
+        "B": "  4 1 2 2 ",
+        "C": "  2 1 – 2 3",
+        "D": "  4 1 – 2 2"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "4",
+        "option": "D",
+        "option_index": 4
+      }
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The area bounded between the curves y2  8x, y  \nx.\n2\n and x  1 is",
+      "options": {
+        "A": "12 2 11",
+        "B": "3 2 11",
+        "C": "6 2 11",
+        "D": "8 2 11"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The positive integral value of k for which the constant term in the expansion of \n12\nk\n3\nx\n3\nx\n2\n\n\n\n\n\n\n\n is  \n \n28. , where  is an odd integer",
+      "options": null,
+      "page_start": 4,
+      "page_end": 8,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    }
+  ]
+}

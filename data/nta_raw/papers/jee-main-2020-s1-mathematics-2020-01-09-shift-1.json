@@ -1,0 +1,126 @@
+{
+  "paper_id": "jee-main-2020-s1-mathematics-2020-01-09-shift-1",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-mathematics-2020-01-09-shift-1",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-09",
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-9-jan-2020-maths-paper-shift-1/243278",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/hK9XM9hEVZRcn7XC6gsK",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "0e4ad47e97358ba7a4fd1a02f5679035b7c6fe60a213f2555044eae6b375fd65",
+    "page_count": 14,
+    "text_chars": 12656,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 25,
+    "answer_marker_hits": 25,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-mathematics-2020-01-09-shift-1.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 22,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 23,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 2,
+  "defects": [
+    "10 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 3, 6, 8, 12, 14, 16, 18, 25]",
+    "2/2 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Function 𝑓(𝑥) =\n{  \n  \nsin(𝑎+2)𝑥+sin𝑥\n𝑥\n, 𝑥< 0\n𝑏                       , 𝑥= 0\n(𝑥+3𝑥2)\n1\n3−𝑥\n1\n3\n𝑥\n4\n3\n    , 𝑥> 0\n is continuous at 𝑥= 0. The value of 𝑎+ 2𝑏 is",
+      "options": null,
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The coefficient of 𝑥4 in (1 + 𝑥+ 𝑥2)10 is",
+      "options": null,
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

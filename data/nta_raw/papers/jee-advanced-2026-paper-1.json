@@ -1,0 +1,63 @@
+{
+  "paper_id": "jee-advanced-2026-paper-1",
+  "exam_tag": "jee-advanced",
+  "tags": [
+    "jee-advanced",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-advanced-2026-paper-1",
+    "exam": "jee-advanced",
+    "year": 2026,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "official JEE Advanced paper (organizing IIT site / Wayback snapshot)",
+    "exam_tag": "jee-advanced",
+    "tags": [
+      "jee-advanced",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "official",
+    "source_site": "jeeadv.ac.in",
+    "source_page_url": "https://jeeadv.ac.in/",
+    "pdf_url": "https://jeeadv.ac.in/documents/p1_english.pdf",
+    "official_key_url": "https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+    "key_join_strategy": "jee_advanced_key_pdf",
+    "key_join_notes": "JEE Advanced final keys are per-paper PDFs, not NTA Question-ID tables"
+  },
+  "probe": {
+    "sha256": "5864d8e10378892af0f833434bb8ba11b1839eabd75528937e7b10cc81daa95e",
+    "page_count": 34,
+    "text_chars": 38421,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 6,
+    "cache_path": "scratch/nta_pdf_cache/jee-advanced-2026-paper-1.pdf"
+  },
+  "answer_sheet": {
+    "status": "official_key_pending",
+    "source": "official_nta_key",
+    "official_key_url": "https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "parse_failed",
+  "detected_paper_meta": {},
+  "question_count": 0,
+  "defects": [
+    "text layer present but no question blocks matched any known layout; paper may be solutions-only, image-based, or an unrecognized format",
+    "3 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 51, 243]"
+  ],
+  "questions": []
+}

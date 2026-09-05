@@ -1,0 +1,477 @@
+{
+  "paper_id": "jee-main-2008-mathematics-qf9qhmbtkljaybs7wpzs",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2008-mathematics-qf9qhmbtkljaybs7wpzs",
+    "exam": "jee-main",
+    "year": 2008,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2008/iit-jee-maths-paper-i/81187",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/qf9qhMBtklJAYbS7wpZs",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "e1f3c3705b399500aaa7ba6d74ad2330b8d0b2887a12ff7b68199d2b6ba43b1e",
+    "page_count": 8,
+    "text_chars": 7848,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2008-mathematics-qf9qhmbtkljaybs7wpzs.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 23,
+  "defects": [
+    "4/23 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If 0 < x < 1 then √1+x2 [{x cos (cot-1 x) + sin (cot-1 x)}2 - 1]1/2",
+      "options": {
+        "A": "x/√1+x2",
+        "B": "x",
+        "C": "x√1+x2",
+        "D": "√1+x2"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider the two curves \nC1 : y2 = 4x \nC2 : x2 + y2 - 6x + 1 = 0 \nThen,",
+      "options": {
+        "A": "C1 and C2 touch each other only at one point",
+        "B": "C1 and C2 touch each other exactly at two points",
+        "C": "C1 and C2 intersect (but do not touch) at exactly two points",
+        "D": "C1 and C2 neither intersect nor touch each other"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The edges of a parallelopiped are of unit length and are parallel to non-coplanar unit \nvectors a, b, c such that a.b = b.c = c.a = 1/2 \nThen, the volume of the parallelopiped is",
+      "options": {
+        "A": "1/√2",
+        "B": "1/2√2",
+        "C": "√3 / 2",
+        "D": "1/√3"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let a and b be non-zero real numbers. Then, the equation (ax2 + by2 + c) (x2 - 5xy + \n6y2) = 0 represents",
+      "options": {
+        "A": "four straight lines, when c = 0 and a, b are of the same sign",
+        "B": "two straight lines and a circle, when a = b, and c is of sign opposite to that of a",
+        "C": "two straight lines and a hyperbola, when a and b are of the same sign and c is of sign opposite to that of a",
+        "D": "a circle and an ellipse, when a and b are of the same sign and c is of sign opposite to that of a."
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The total number of local maxima and minima of the function",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "m and n are integers m ≠ 0, n > 0 and let p be the left hand derivative of",
+      "options": {
+        "A": "n = 1, m = 1",
+        "B": "n = 1, m = -1",
+        "C": "n = 2, m = 2",
+        "D": "n > 2, m = n SECTION II Multiple Correct Answers Type This section contains 4 multiple correct answer(s) type questions. Each question has 4 choices (1), (2), (3) and (4), out of which ONE OR MORE is/are correct."
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let P (x1, y1) and Q(x2, y2), y1 < 0, y2 < 0, be the end points of the latus rectum of the \nellipse x2 + 4y2 = 4. The equations of parabolas with latus rectum PQ are",
+      "options": {
+        "A": "x2 + 2√3 y = 3 + √3",
+        "B": "x2 - 2√3 y = 3 + √3",
+        "C": "x2 + 2√3 y = 3 - √3",
+        "D": "x2 - 2√3 y = 3 - √3"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A straight line through the vertex P of a triangle PQR intersects the side QR at the point S \nand the circumcircle of the triangle PQR at the point T. If S is not the centre of the \ncircumcircle, then",
+      "options": {
+        "A": "1/PS + 1/ST < 2/√(QS * SR)",
+        "B": "1/PS + 1/ST > 2/√(QS * SR)",
+        "C": "1/PS + 1/ST < 4/ QR",
+        "D": "1/PS + 1/ST > 4/ QR"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let f(x) be a non-constant twice differentiable function defined \n       \n  \nThen,",
+      "options": {
+        "A": "f''(x) vanishes at least twice on [0, 1]"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "options_count_1"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "Sn < Π/3√3",
+        "B": "Sn > Π/3√3",
+        "C": "Tn < Π/3√3",
+        "D": "Tn > Π/3√3 SECTION - III Assertion - Reason Type This section contains 4 reasoning type questions. Each question has 4 choices (1), (2), (3) and (4) out of which ONLY ONE is correct."
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider the system of equations \nx - 2y + 3z = - 1 \n-x + y - 2z = k \nx - 3y + 4z = 1 \n \nSTATEMENT-1: The system of equations has no solutions for k ≠ 3 \nand \n \nSTATEMENT-2:",
+      "options": {
+        "A": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is a correct explanation for STATEMENT-1",
+        "B": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is NOT a correct explanation for STATEMENT-1",
+        "C": "STATEMENT-1 is True, STATEMENT-2 is False",
+        "D": "STATEMENT-1 is False, STATEMENT-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider the system of equations ax + by = 0, cx + dy = 0, where a, b, c, dÎ{0, 1} \n \nSTATEMENT-1: The probability that the system of equations has a unique solution is 3/8 \nand \n \nSTATEMENT-2: The probability that the system of equations has a solution is 1.",
+      "options": {
+        "A": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is a correct explanation for STATEMENT-1",
+        "B": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is NOT a correct explanation for STATEMENT-1",
+        "C": "STATEMENT-1 is True, STATEMENT-2 is False",
+        "D": "STATEMENT-1 is False, STATEMENT-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let f and g be real valued functions defined on interval (-1, 1) such that g''(x) is \n\n \n \ncontinuous g(0) ≠ 0, g''(0) = 0 \n \nSTATEMENT-1:  g''(0) ≠ 0, and f(x) = g(x) sinx  \n                       limx→0 [g(x) cot x -g(x) cosec x] = f''(0). \nand \n \nSTATEMENT-2: f''(0) = g(0)",
+      "options": {
+        "A": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is a correct explanation for STATEMENT-1",
+        "B": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is NOT a correct explanation for STATEMENT-1",
+        "C": "STATEMENT-1 is True, STATEMENT-2 is False",
+        "D": "STATEMENT-1 is False, STATEMENT-2 is True"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider three planes P1 : x - y + z = 1 \nP2 : x + y - z = - 1 \nP3 : x - 3y + 3z = 2 \nLet L1 , L2, L3 be the lines of intersection of the planes P2 and P3, P3 and P1, and P1and P2, \nrespectively \n \nSTATEMENT-1: At least two of the lines L1, L2 and L3 are non-parallel \nand \n \nSTATEMENT-2: The three planes do not have a common point",
+      "options": {
+        "A": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is a correct explanation for STATEMENT-1",
+        "B": "STATEMENT-1 is True, STATEMENT-2 is True; STATEMENT-2 is NOT a correct explanation for STATEMENT-1",
+        "C": "STATEMENT-1 is True, STATEMENT-2 is False",
+        "D": "STATEMENT-1 is False, STATEMENT-2 is True SECTION - IV Linked Comprehension Type This section contains 3 paragraphs. Based upon each paragraph, 3 multiple choice questions have to be answered. Each question has 4 choices (1), (2), (3) and (4) out of which ONLY ONE is correct. Paragraph for Questions Nos. 15 to 17 Let A, B, C be three sets of complex numbers as defined below A = { z: Imz > 1} B = { z: |z-2-i| = 3} C = { z: Re((1-i)z) = √2}"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The number of element in the set A ∩ B ∩ C is",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "∞"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let z be any point in A ∩ B ∩ C. Then, |z + 1 - i|2 + |z - 5 - i|2 lies between",
+      "options": {
+        "A": "25 and 29",
+        "B": "30 and 34",
+        "C": "35 and 39",
+        "D": "40 and 44"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let z be any point in A ∩ B ∩ C and let w be any point satisfying |w - 2 - i| < 3. Then, \n|z| - |w| + 3 lies between",
+      "options": {
+        "A": "-6 and 3",
+        "B": "-3 and 6",
+        "C": "-6 and 6",
+        "D": "-3 and 9 Paragraph for Questions Nos. 18 to 20 A circle C of radius 1 is inscribed in an equilateral triangle PQR. The points of contact of C with the sides PQ, QR, RP are D,E, F, respectively. The line PQ is given by the equation √3x + y - 6 = 0 and the point D is (3√3/2, 3/2) Further, it is given that the origin and the centre of C are on the same side of the line PQ."
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The equation of circle C is",
+      "options": {
+        "A": "(x-2√3)2 + (y-1)2 = 1",
+        "B": "(x-2√3)2 + (y-1/2)2 = 1",
+        "C": "(x-√3)2 + (y+1)2 = 1",
+        "D": "(x-√3)2 + (y-1)2 = 1"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Points E and F are given by",
+      "options": {
+        "A": "(√3/2, 3/2) (√3, 0)",
+        "B": "(√3/2, 1/2) (√3, 0)",
+        "C": "(√3/2, 3/2) (√3/2, 1/2)",
+        "D": "(3/2, √3/2) (√3/2, 1/2)"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Equations of the sides QR, RP are",
+      "options": {
+        "A": "y = (2/√3)x + 1, y = -(2/√3)x - 1",
+        "B": "y = (1/√3)x y = 0",
+        "C": "y = (√3/2)x + 1, y = -(√3/2)x - 1",
+        "D": "y = (√3)x, y = 0 Paragraph for Questions Nos. 21 to 23 Consider the functions defined implicitly by the equation y3 - 3y + x = 0 on various intervals in the real line. If x Î (-∞,2) U (2,∞)the equation implicitly defines a unique real valued differentiable function y = f(x). If x Î (-2, 2), the equation implicitly defines a unique real valued differentiable function y = g(x) satisfying g (0) = 0."
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If f(-10√2) = 2√2, then f''(-10√2) =",
+      "options": {
+        "A": "4√2 / 73 32",
+        "B": "-4√2 / 73 32",
+        "C": "4√2 / 73 3",
+        "D": "-4√2 / 73 3"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The area of the region bounded by the curve y = f(x), the x-axis, and the lines x = a \nand x = b, where -∞ < a < b < -2, is",
+      "options": null,
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "∫1\n-1 g'(x)dx =",
+      "options": {
+        "A": "2g(-1)",
+        "B": "0",
+        "C": "-2g (1)",
+        "D": "2g(1)"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "stem_under_20_chars"
+      ]
+    }
+  ]
+}

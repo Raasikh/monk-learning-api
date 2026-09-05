@@ -1,0 +1,762 @@
+{
+  "paper_id": "jee-main-2015-s2-mathematics-bp1sexyhabu1mhyf9jwo",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2015-s2-mathematics-bp1sexyhabu1mhyf9jwo",
+    "exam": "jee-main",
+    "year": 2015,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2015/jee-main-2015-maths-question-paper-online-exam-10th-april-2015/98539",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/bP1sexyhabu1mhYF9JwO",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "1f011eecb27416418b9db188d25df7de7a3de22f1b702725b553469589b7524b",
+    "page_count": 10,
+    "text_chars": 13516,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2015-s2-mathematics-bp1sexyhabu1mhyf9jwo.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "27 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 2, 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 2, 15, 1]",
+    "17/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In a certain town, 25% of the families own\na phone and 15% own a car ; 65% families\nown neither a phone nor a car and 2,000\nfamilies own both a car and a phone.\nConsider the following three statements :",
+      "options": {
+        "A": "5% families own both a car and a phone.",
+        "B": "35% families own either a car or a phone.",
+        "C": "40,000 families live in the town. Then,",
+        "D": "All (a), (b) and (c) are correct."
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The largest value of r for which the region\nrepresented by the set {v e C/?v242i?[r}\nis contained in the region represented by\nthe set {z e C/?z21?[?z1i?}, is equal to :",
+      "options": {
+        "A": "17",
+        "B": "2 2",
+        "C": "3 2 2",
+        "D": "5 2 2"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If 213i is one of the roots of the equation\n2x329x21kx21350, k e R, then the real\nroot of this equation :",
+      "options": {
+        "A": "does not exist.",
+        "B": "exists and is equal to 1 2 .",
+        "C": "exists and is equal to 1 2 2 .",
+        "D": "exists and is equal to 1."
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The least value of the product xyz for\nwhich the determinant \n1\n1\n1\n1\n1\n1\nx\ny\nz\n is\nnon-negative, is :",
+      "options": {
+        "A": "2 2 2",
+        "B": "16 2 2",
+        "C": "28",
+        "D": "21"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If \n0\n1\nA  1\n0\n\n\n\n\n\n\n2\n5\n, then which one of the\nfollowing statements is not correct ?",
+      "options": {
+        "A": "A42I5A21I",
+        "B": "A32I5A(A2I)",
+        "C": "A21I5A(A22I)",
+        "D": "A31I5A(A32I)"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The number of ways of selecting 15 teams\nfrom 15 men and 15 women, such that\neach team consists of a man and a woman,\nis :",
+      "options": {
+        "A": "1120",
+        "B": "1240",
+        "C": "1880",
+        "D": "1960"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let the sum of the first three terms of an\nA.P. be 39 and the sum of its last four terms\nbe 178.  If the first term of this A.P. is 10,\nthen the median of the A.P. is :",
+      "options": {
+        "A": "26.5",
+        "B": "28",
+        "C": "29.5",
+        "D": "31"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the coefficients of the three successive\nterms in the binomial expansion of (11x)n\nare in the ratio 1 : 7 : 42, then the first of\nthese terms in the expansion is :",
+      "options": {
+        "A": "6th",
+        "B": "7th",
+        "C": "8th",
+        "D": "9th"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The value of \n30\nr\n16\n(r  2)(r  3)\n∑\n5\n1\n2\n is equal to :",
+      "options": {
+        "A": "7785",
+        "B": "7780",
+        "C": "7775",
+        "D": "7770"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "2\n2\n0\ne\n cos\nsin\nx\nx\nx\nlim\nx\n→\n2\n is equal to :",
+      "options": {
+        "A": "3",
+        "B": "3 2",
+        "C": "5 4",
+        "D": "2"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The distance, from the origin, of the\nnormal  to  the  curve,  x52 cost 1 2t sint,\n y  5 2 sint22t cost  at    4\nt\np\n5\n, is :",
+      "options": {
+        "A": "4",
+        "B": "2 2",
+        "C": "2",
+        "D": "2 8. ØçÎ (11x)n ·ð¤ çmÂÎ çßSÌæÚU ×ð´ ÌèÙ ·ý¤ç×·¤ ÂÎæð´ ·ð¤ »éææ´·¤æð´ ×ð´ 1 : 7 : 42 ·¤æ ¥ÙéÂæÌ ãñ, Ìæð §Ù ×ð´ âð çßSÌæÚU ×ð´ ÂãÜæ ÂÎ ãñ Ñ"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If Rolles theorem holds for the function\nf  (x)52x31bx21cx, x e [21, 1], at the\npoint \n1\n  2\nx 5\n, then 2b1c equals :",
+      "options": {
+        "A": "1",
+        "B": "21",
+        "C": "2",
+        "D": "23"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let the tangents drawn to the circle,\nx21y2516 from the point P(0, h) meet the\nx-axis at points A and B.  If the area of\nDAPB is minimum, then   h  is equal to :",
+      "options": {
+        "A": "4 3",
+        "B": "3 3",
+        "C": "3 2",
+        "D": "4 2"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The integral \n3\n5\n4\n4\nd",
+      "options": {
+        "A": "( 2) x x x ∫ 1 2 is equal to :",
+        "B": "1 4 2 4 C 1 x x       2 1 1",
+        "C": "1 4 4 1 C 3 2 x x       1 2 1 2",
+        "D": "1 4 4 2 C 3 1 x x       2 2 1 1 12. ØçÎ È¤ÜÙ f (x)52x31bx21cx, x e [21, 1] ·ð¤ çÜ° çÕ´Îé 1 2 x 5 ÂÚU ÚUæðÜð ·¤æ Âý×ðØ Üæ»ê ãæðÌæ ãñ, Ìæð 2b1c ÕÚUæÕÚU ãñ Ñ"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "x > 0 ·ð¤ çÜ° ×æÙæ \n1\nlog  t\n( )   \n dt\n1  t\nx\nf x\n∫\n5\n1\nãñ, Ìæð\n1\n( )  \nf x\nf\nx\n\n\n\n\n\n\n1\n ÕÚUæÕÚU ãñ Ñ",
+      "options": {
+        "A": "2 1 (log ) 4 x",
+        "B": "2 1 (log ) 2 x",
+        "C": "log x",
+        "D": "2 1 log 4 x"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ß·ý¤æð´ y12x250 ÌÍæ y13x251 mæÚUæ ÂçÚUÕh ÿæðæ\n·¤æ ÿæðæÈ¤Ü (ß»ü §·¤æ§Øæð´ ×ð´) ÕÚUæÕÚU ãñ Ñ",
+      "options": {
+        "A": "3 5",
+        "B": "3 4",
+        "C": "1 3",
+        "D": "4 3"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "ØçÎ y(x), ¥ß·¤Ü â×è·¤ÚUæ\n \n \n \n \n \n  \n \n \n2\nd",
+      "options": {
+        "B": "4 9 d y x x x x 1 5 1 2 , x ¹ 22 ¥æñÚU y(0)50, ·¤æ ãÜ ãñ, Ìæð y(24) ÕÚUæÕÚU ãñ Ñ",
+        "A": "0",
+        "C": "21",
+        "D": "2 15. For x > 0, let 1 log t ( ) dt 1 t x f x ∫ 5 1 . Then 1 ( ) f x f x       1 is equal to :"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The points \n8\n0, 3\n\n\n\n\n\n\n, (1, 3) and (82, 30) :",
+      "options": {
+        "A": "form an obtuse angled triangle.",
+        "B": "form an acute angled triangle.",
+        "C": "form a right angled triangle.",
+        "D": "lie on a straight line."
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let L be the line passing through the point\nP(1, 2) such that its intercepted segment\nbetween the co-ordinate axes is bisected\nat P.  If L1 is the line perpendicular to L\nand passing through the point (22, 1),\nthen the point of intersection of L and L1\nis :",
+      "options": {
+        "A": "4 12 , 5 5      ",
+        "B": "11 29 , 20 10      ",
+        "C": "3 17 , 10 5      ",
+        "D": "3 23 , 5 10      "
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If y13x50 is the equation of a chord of\nthe circle, x21y2230x50, then the\nequation of the circle with this chord as\ndiameter is :",
+      "options": {
+        "A": "x21y213x19y50",
+        "B": "x21y223x19y50",
+        "C": "x21y223x29y50",
+        "D": "x21y213x29y50 18. çÕ´Îé 8 0, 3       , (1, 3) ÌÍæ (82, 30) Ñ"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the tangent to the conic, y265x2 at\n(2, 10) touches the circle,\nx21y218x22y5k (for some fixed k) at a\npoint (a, b) ; then (a, b) is :",
+      "options": {
+        "A": "6 10 , 17 17       2",
+        "B": "8 2 , 17 17       2",
+        "C": "4 1 , 17 17       2",
+        "D": "7 6 , 17 17       2"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An ellipse passes through the foci of the\nhyperbola, 9x224y2536 and its major\nand minor axes lie along the transverse and\nconjugate axes of the hyperbola\nrespectively.  If the product of eccentricities\nof the two conics is 1\n2 , then which of the\nfollowing points does not lie on the\nellipse ?",
+      "options": {
+        "A": "( ) 13, 0",
+        "B": "39 , 3 2      ",
+        "C": "1 3 13, 2 2      ",
+        "D": "13 , 6 2      "
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the points (1, 1, l) and (23, 0, 1) are\nequidistant \nfrom \nthe \nplane,\n3x14y212z11350, then l satisfies the\nequation :",
+      "options": {
+        "A": "3x2210x1750",
+        "B": "3x2110x1750",
+        "C": "3x2110x21350",
+        "D": "3x2210x12150 21. ØçÎ àææ´·¤ß y265x2 ·ð¤ çÕ´Îé (2, 10) ÂÚU ¹è´¿è »§ü SÂàæü ÚðU¹æ ßëæ x21y218x22y5k ·¤æð (ç·¤âè çÙçà¿Ì k ·ð¤ çÜ°) çÕ´Îé (a, b) ÂÚU SÂàæü ·¤ÚUÌè ãñ, Ìæð (a, b) ãñ Ñ"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the shortest distance between the lines\n  1\n  1   \n  \n1\n1\ny\nx\nz\n1\n2\n5\n5\na\n2\n, (a  ¹21) and\nx1y1z115052x2y1z13 is 1\n3\n, then\na value of a is :",
+      "options": {
+        "A": "16 19 2",
+        "B": "19 16 2",
+        "C": "32 19",
+        "D": "19 32"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let a\n→ and b\n→\n be two unit vectors such\nthat \n5\n3 .  If\n(\n)\nc   a   2 b   3 a   b\n→\n→\n→\n→\n→\n5\n1\n1\n3\n, then \nis\nequal to :",
+      "options": {
+        "A": "55",
+        "B": "51",
+        "C": "43",
+        "D": "37"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let X be a set containing 10 elements and\nP(X) be its power set.  If A and B are picked\nup \nat \nrandom \nfrom \nP(X), \nwith\nreplacement, then the probability that A\nand B have equal number of elements, is :",
+      "options": {
+        "A": "20 10 10 2 C",
+        "B": "( ) 10 20 2 1 2 2",
+        "C": "( ) 10 10 2 1 2 2",
+        "D": "20 10 20 2 C 24. ØçÎ ÚðU¹æ¥æð´ 1 1 1 1 y x z 1 2 5 5 a 2 , (a ¹21) ÌÍæ x1y1z115052x2y1z13 ·ð¤ Õè¿ ·¤è ØêÙÌ× ÎêÚUè 1 3 ãñ, Ìæð a ·¤æ °·¤ ×æÙ ãñ Ñ"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A factory is operating in two shifts, day\nand night, with 70 and 30 workers\nrespectively.  If per day mean wage of the\nday shift workers is ` 54 and per day mean\nwage of all the workers is ` 60, then per\nday mean wage of the night shift workers\n(in `) is :",
+      "options": {
+        "A": "66",
+        "B": "69",
+        "C": "74",
+        "D": "75"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In a DABC, a   2  3\nb 5 1\nand ÐC5608.\nThen the ordered pair (ÐA, ÐB) is equal\nto :",
+      "options": {
+        "A": "(158, 1058)",
+        "B": "(1058, 158)",
+        "C": "(458, 758)",
+        "D": "(758, 458)"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If \n1\n1\n2\n2\n( )  2tan\n  sin\n1  \nx\nf x\nx\nx\n\n\n\n\n\n\n2\n2\n5\n1\n1\n, x > 1,\nthen f (5) is equal to :",
+      "options": {
+        "A": "2 p",
+        "B": "p",
+        "C": "4 tan21(5)",
+        "D": "1 65 tan 156       2"
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The contrapositive of the statement\nIf it is raining, then I will not come, is :",
+      "options": {
+        "A": "If I will come, then it is not raining.",
+        "B": "If I will not come, then it is raining.",
+        "C": "If I will not come, then it is not raining.",
+        "D": "If I will come, then it is raining. - o 0 o - 27. °·¤ Èñ¤ÅþUè Îæð ÂæçÚUØæð´, çÎÙ ÌÍæ ÚUæÌ, ×ð´ ¿ÜÌè ãñ çÁÙ×ð´ ·ý¤×àæÑ 70 ÌÍæ 30 ·¤æ×»æÚU ·¤æØü ·¤ÚUÌð ãñ´Ð ØçÎ çÎÙ ·¤è ÂæÚUè ·ð¤ ·¤æ×»æÚUæð´ ·¤æ ×æØ ÂýçÌçÎÙ ßðÌÙ ` 54 ãñ ÌÍæ âÖè ·¤æ×»æÚUæð´ ·¤æ ×æØ ÂýçÌçÎÙ ßðÌÙ ` 60 ãñ, Ìæð ÚUæÌ ×ð´ ·¤æØü ·¤ÚUÙð ßæÜð ·¤æ×»æÚUæð´ ·¤æ ×æØ ÂýçÌçÎÙ ßðÌÙ (` ×ð´) ãñ Ñ"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

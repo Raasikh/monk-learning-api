@@ -1,0 +1,469 @@
+{
+  "paper_id": "jee-main-2023-s2-physics-2023-04-08-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2023-s2-physics-2023-04-08-shift-2",
+    "exam": "jee-main",
+    "year": 2023,
+    "session": 2,
+    "exam_date": "2023-04-08",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.esaral.com",
+    "source_page_url": "https://www.esaral.com/jee/jee-main-2023-question-papers/",
+    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/162137-Physics%20_%208_April_2023%20Shift%202.pdf",
+    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2023/04/2023042948.pdf",
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "9bf2f55214000f2a3cf4961b363ed317d5d31b48e2c1cfbe1424c364a96c374c",
+    "page_count": 11,
+    "text_chars": 13418,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 2,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2023-s2-physics-2023-04-08-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2023/04/2023042948.pdf",
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 31,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 32,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 33,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 34,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 35,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 36,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 37,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 38,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 39,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 40,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 41,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 42,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 12,
+  "defects": [
+    "21 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57]",
+    "12/12 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A hydraulic automobile lift is designed to lift vehicles of mass 5000 kg. The area of cross section of the cylinder \ncarrying the load is 250 cm2. The maximum pressure the smaller piston would have to bear is  \n \n[Assume g = 10 m/s2] :",
+      "options": {
+        "A": "2 × 10+5 Pa",
+        "B": "20 × 10+6 Pa",
+        "C": "200 × 10+6 Pa",
+        "D": "2 × 10+6 Pa"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The orbital angular momentum of a satellite is L, when it is revolving in a circular orbit at height h from earth \nsurface. If the distance of satellite from the earth center is increased by eight times to its initial value, then the \nnew angular momentum will be-",
+      "options": {
+        "A": "8L",
+        "B": "3L",
+        "C": "4L",
+        "D": "9L"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The waves emitted when a metal target is bombarded with high energy electrons are",
+      "options": {
+        "A": "Microwaves",
+        "B": "X-rays",
+        "C": "Radio Waves",
+        "D": "Infrared rays"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Match List I with List II  \nLIST – I \nLIST – II",
+      "options": {
+        "A": "Torque I. ML–2T–2",
+        "B": "Stress II. ML2T–2",
+        "C": "Pressure gradient III. ML–1t–1",
+        "D": "Coefficient of viscosity IV ML–1T–2 Choose the correct answer from the options given below:"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 35,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Give below are two statements  \n \nStatement I : Area under velocity- time graph gives the distance travelled by the body in a given time.  \n \nStatement II : Area under acceleration- time graph is equal to the change in velocity- in the given time.  \n \nIn the light of given statement, choose the correct answer from the options given below.",
+      "options": {
+        "A": "Both Statement I and Statement II are true.",
+        "B": "Statement I is correct but Statement II is false.",
+        "C": "Both Statement I and and Statement II are false.",
+        "D": "Statement I is incorrect but Statement II is true."
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The power radiated from a linear antenna of length l is proportional to (Given,  = Wavelength of wave):",
+      "options": {
+        "A": " l",
+        "B": "2  l",
+        "C": "2  l",
+        "D": "2        l"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Electric potential at a point 'P' due to a point charge of 5 × 10–9C is 50 V. The distance of 'P' from the point \ncharge is:  \n \n(Assume, \n0\n1\n4\n = 9 × 10+9 Nm2C–2)",
+      "options": {
+        "A": "3 cm",
+        "B": "9 cm",
+        "C": "0.9 cm",
+        "D": "90 cm JEE Exam Solution 2 JEE | NEET | Class 8 - 10 Download eSaral APP www.esaral.com"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 38,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The acceleration due to gravity at height h above the earth if h<<R (Radius of earth) is given by",
+      "options": {
+        "A": "2 2 h g' g 1 2R        ",
+        "B": "h g' g 1 2R        ",
+        "C": "2 2 2h g' g 1 R        ",
+        "D": "2h g ' g 1 R        "
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An emf of 0.08 V is induced in a metal rod of length 10 cm held normal to a uniform magnetic field of 0.4 T, \nwhen moves with a velocity of:",
+      "options": {
+        "A": "2 ms–1",
+        "B": "20 ms–1",
+        "C": "3.2 ms–1",
+        "D": "0.5 ms–1"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Work done by a Carnot engine operating between temperatures 127°C and 27°C is 2 kJ. The amount of heat \ntransferred to the engine by the reservoir is:",
+      "options": {
+        "A": "2 kJ",
+        "B": "4 kJ",
+        "C": "2.67 kJ",
+        "D": "8 kJ"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The width of fringe is 2 mm on the screen in a double slits experiment for the light of wavelength of 400 nm. \nThe width of the fringe for the light of wavelength 600 nm will be:",
+      "options": {
+        "A": "1.33 mm",
+        "B": "3 mm",
+        "C": "2 mm",
+        "D": "4 mm"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The temperature at which the kinetic energy of oxygen molecules becomes double than its value at 27°C is",
+      "options": {
+        "A": "1227°C",
+        "B": "627°C",
+        "C": "327°C",
+        "D": "927°C"
+      },
+      "page_start": 4,
+      "page_end": 11,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

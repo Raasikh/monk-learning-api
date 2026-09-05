@@ -15,6 +15,7 @@
     "exam_date": "2024-01-27",
     "shift": 2,
     "paper_type": "question_paper",
+    "subject": null,
     "language": "English",
     "notes": "",
     "exam_tag": "jee-main",
@@ -25,12 +26,12 @@
       "entrance-exam"
     ],
     "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2024/4/2/163227-JEE%20Main%202024%20(January%2027%20Shift%202)%20Physics%20Question%20Paper%20with%20Solutions%20[PDF].pdf",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2024/jee-main-27-jan-2024-paper-shift-2/1072870",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/0j90ObcNu6JKV5xHY8t1",
     "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
     "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
   },
   "probe": {
     "sha256": "b3085aafeebc34008fd310dbadd0eeea505bdbe90701f6b7251ae187d3a50012",

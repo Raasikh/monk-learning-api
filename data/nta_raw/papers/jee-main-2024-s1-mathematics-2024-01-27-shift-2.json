@@ -1,0 +1,282 @@
+{
+  "paper_id": "jee-main-2024-s1-mathematics-2024-01-27-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2024-s1-mathematics-2024-01-27-shift-2",
+    "exam": "jee-main",
+    "year": 2024,
+    "session": 1,
+    "exam_date": "2024-01-27",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.esaral.com",
+    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
+    "pdf_url": "https://www.esaral.com/media/uploads/2024/4/2/16331-JEE%20Main%202024%20(January%2027%20Shift%202)%20Maths%20Question%20Paper%20with%20Solutions%20[PDF].pdf",
+    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  },
+  "probe": {
+    "sha256": "3f36002fafbc3446b364e0e6227366f85070288a966d8aeceed8ef8a2280024c",
+    "page_count": 8,
+    "text_chars": 6903,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 11,
+    "answer_marker_hits": 13,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s1-mathematics-2024-01-27-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      },
+      {
+        "qno": 4,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "exam_date": "2024-01-27",
+    "shift": 2
+  },
+  "question_count": 6,
+  "defects": [
+    "6/6 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If 20th term from the end of progression \n1\n1\n3\n1\n20,19\n,18\n,17\n,...129\n4\n2\n4\n4  is _____. \nOptions:",
+      "options": {
+        "A": "−120",
+        "B": "−115",
+        "C": "−125",
+        "D": "−110"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Consider an ellipse \n(\n)\n2\n2\n2\n2\n1\n;\nx\ny\na\nb\na\nb\n+\n=\n>\neccentricity \n1e  & Hyperbola \n2\n2\n1\n16\n9\nx\ny\n−\n= , \nwith eccentricity \n2e , \n1 2\n1\ne e = . Ellipse passes through the foci of hyperbola find the length of \nthe ellipse along \n2\ny =\n.",
+      "options": null,
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If \n2\n2tan\n5sec\n1\nθ\nθ\n−\n=  has exactly 7 solutions in 0, 2\nnπ\n\n\n\n\n\n\n least value of n\nN\n∈\n, \nthen \n1 2\nn\nn\nk\nk\n=∑\n is equal to _____. \nOptions:",
+      "options": {
+        "A": "9 9 2",
+        "B": "13 91 2",
+        "C": "7 7 2",
+        "D": "12 11 2"
+      },
+      "page_start": 3,
+      "page_end": 5,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "2\n0 1 2 cos\ndx\na\nx\na\nπ\n−\n+\n∫\n is equal to: \nOptions:",
+      "options": {
+        "A": "( ) ( ) 2 2 2 1 1 a a π + −",
+        "B": "( ) 2 1 a π −",
+        "C": "( ) ( ) 2 2 1 1 a a π − +",
+        "D": "( ) ( ) 2 2 2 1 1 a a π − +"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the area (\n)\n(\n)\n{\n}\n2\n,\n:0\nmin 2 ,6\nx y\ny\nx\nx\nx\n≤\n≤\n−\n is A then 12 A ____.",
+      "options": null,
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If mean of 15 observation is 12 & s.d. = 3. 10 was taken wrongly in place of 12. \nNew mean = µ , Variance = \n2\nσ . Find the value \n(\n)\n2\n2\n15 µ\nµ\nσ\n=\n+\n+",
+      "options": null,
+      "page_start": 6,
+      "page_end": 8,
+      "parse_flags": [
+        "unnumbered_question_colon_format",
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    }
+  ]
+}

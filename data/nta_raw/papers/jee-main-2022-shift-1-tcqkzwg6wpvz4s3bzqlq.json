@@ -1,0 +1,142 @@
+{
+  "paper_id": "jee-main-2022-shift-1-tcqkzwg6wpvz4s3bzqlq",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-1-tcqkzwg6wpvz4s3bzqlq",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/tcqKZwG6WPVz4S3bzqLq",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "d8a99f55ac158f796ecf8e053a26bfcbeb20a1059d4f490b019afb7edfed6f39",
+    "page_count": 8,
+    "text_chars": 8750,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 25,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-1-tcqkzwg6wpvz4s3bzqlq.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 2,
+  "defects": [
+    "37 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 4, 5, 6, 7, 10, 3, 2, 8, 9, 10, 5, 5, 5, 5]",
+    "2/2 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find VA – VB \nA \nB \n3\n2\n15V",
+      "options": {
+        "A": "3 V",
+        "B": "7 V",
+        "C": "9 V",
+        "D": "11 V"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If \nB\nA\n2\nB\nA\n\n\n\n\n\n\n\n & \n|\nB\n|\n|\nA\n|\n\n\n\n. Find angle between A\n\n and B\n",
+      "options": {
+        "A": "cos–1 (3/5)",
+        "B": "sin–1 (3/5)",
+        "C": "sec–1 (3/5)",
+        "D": "tan–1 (3/5)"
+      },
+      "page_start": 1,
+      "page_end": 8,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    }
+  ]
+}

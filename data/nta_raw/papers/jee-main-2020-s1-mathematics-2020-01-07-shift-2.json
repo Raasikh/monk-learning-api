@@ -1,0 +1,532 @@
+{
+  "paper_id": "jee-main-2020-s1-mathematics-2020-01-07-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-mathematics-2020-01-07-shift-2",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-07",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-7-jan-2020-maths-paper-shift-2/243255",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/gjXZgCHcI9neDmut8aQz",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "b5233266fe253b1ac9302c64bfda27cf781939c53ad5ad52eeec9ef455fd36cf",
+    "page_count": 18,
+    "text_chars": 13937,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 24,
+    "answer_marker_hits": 24,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-mathematics-2020-01-07-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 1,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "A",
+          "option": "A"
+        }
+      },
+      {
+        "qno": 2,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "D",
+          "option": "D"
+        }
+      },
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "D",
+          "option": "D"
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "C",
+          "option": "C"
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "D",
+          "option": "D"
+        }
+      },
+      {
+        "qno": 10,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 11,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      },
+      {
+        "qno": 12,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "D",
+          "option": "D"
+        }
+      },
+      {
+        "qno": 14,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "C",
+          "option": "C"
+        }
+      },
+      {
+        "qno": 15,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "D",
+          "option": "D"
+        }
+      },
+      {
+        "qno": 16,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "A",
+          "option": "A"
+        }
+      },
+      {
+        "qno": 18,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "C",
+          "option": "C"
+        }
+      },
+      {
+        "qno": 19,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 13,
+  "defects": [
+    "10 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 8, 4, 4, 4, 4, 4, 3, 21, 24]",
+    "13/13 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "From any point 𝑃 on the line 𝑥 = 2𝑦 , a perpendicular is drawn on 𝑦= 𝑥. Let the foot of \nperpendicular be 𝑄. Find the locus of mid point of 𝑃𝑄.",
+      "options": {
+        "A": "5𝑥= 7𝑦",
+        "B": "2𝑥= 3𝑦",
+        "C": "7𝑥= 5𝑦",
+        "D": "3𝑥= 2𝑦"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "A",
+        "option": "A"
+      }
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let 𝜃1 and 𝜃2 (where  𝜃1 < 𝜃2) are two solutions of 2 cot2 𝜃− \n5\nsin𝜃 +4 = 0, 𝜃∈[0,2𝜋) then \n∫\ncos2 3𝜃 𝑑𝜃\n𝜃2\n𝜃1\n is equal to",
+      "options": {
+        "A": "𝜋 9",
+        "B": "2𝜋 3",
+        "C": "𝜋 3 + 1 6",
+        "D": "𝜋 3"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "D",
+        "option": "D"
+      }
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Coefficient of 𝑥7 in (1 + 𝑥)10 + 𝑥(1 + 𝑥)9 + 𝑥2(1 + 𝑥)8 + ⋯ +𝑥10 is",
+      "options": {
+        "A": "260",
+        "B": "210",
+        "C": "420",
+        "D": "330"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "D",
+        "option": "D"
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The area bounded by 4𝑥2 ≤𝑦≤8𝑥+ 12 is",
+      "options": {
+        "A": "127 3",
+        "B": "125 3",
+        "C": "128 3",
+        "D": "124 3"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "C",
+        "option": "C"
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Contrapositive of 𝐴⊂𝐵 and 𝐵⊂𝐶 then 𝐶⊂𝐷",
+      "options": {
+        "A": "𝐶⊄ 𝐷 or 𝐴⊄𝐵 or 𝐵⊄𝐶",
+        "B": "𝐶⊂𝐷 or 𝐴⊄𝐵 and 𝐵⊄𝐶",
+        "C": "𝐶⊂𝐷 and 𝐴⊄𝐵 or 𝐵⊄C",
+        "D": "𝐶⊂𝐷 or 𝐴⊄𝐵 or 𝐵⊄𝐶"
+      },
+      "page_start": 5,
+      "page_end": 7,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "D",
+        "option": "D"
+      }
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "If LMVT is applicable on 𝑓(𝑥) = 𝑥3 −4𝑥2 + 8𝑥+ 11 in [0,1], the value of 𝑐 is",
+      "options": {
+        "A": "4+√5 3",
+        "B": "4+√7 3",
+        "C": "4−√7 3",
+        "D": "4−√5 3"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_2"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "Consider there are 5 machines. Probability of a machine being faulty is \n1",
+      "options": {
+        "D": "Probability of at most two machines being faulty is ( 3",
+        "A": "17 4",
+        "B": "17 8",
+        "C": "17 2"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_2",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "𝑎1, 𝑎2, 𝑎3, … , 𝑎9 are in geometric progression where 𝑎1 < 0 and 𝑎1 + 𝑎2 = 4, 𝑎3 + 𝑎4 = 16. If \n ∑\n𝑎𝑖\n9\n𝑖=1\n= 4𝜆, then 𝜆 is equal to",
+      "options": {
+        "A": "171",
+        "B": "−513",
+        "C": "− 511 3",
+        "D": "−171"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_2"
+      ],
+      "embedded_answer": {
+        "raw": "D",
+        "option": "D"
+      }
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "Let 𝐴= [𝑎𝑖𝑗], 𝐵= [𝑏𝑖𝑗] are two 3 × 3 matrices such that 𝑏𝑖𝑗= 𝜆𝑖+𝑗−2𝑎𝑖𝑗  and |𝐵| = 81. Find |𝐴| if \n𝜆= 3",
+      "options": {
+        "A": "1 81",
+        "B": "1 27",
+        "C": "1 9",
+        "D": "3"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_3"
+      ],
+      "embedded_answer": {
+        "raw": "C",
+        "option": "C"
+      }
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "Pair of tangents are drawn from the origin to the circle 𝑥2 + 𝑦2 −8𝑥−4𝑦+ 16 = 0, then the \nsquare of length of chord of contact is",
+      "options": {
+        "A": "8 5",
+        "B": "8 13",
+        "C": "24 5",
+        "D": "64 5"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_3"
+      ],
+      "embedded_answer": {
+        "raw": "D",
+        "option": "D"
+      }
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "Let 𝑦(𝑥) is the solution of differential equation (𝑦2 −𝑥) 𝑑𝑦\n𝑑𝑥= 1 and 𝑦(0) = 1, then find the \nvalue of 𝑥 where the curve cuts the 𝑥−𝑎𝑥𝑖𝑠 .",
+      "options": {
+        "A": "2 −𝑒",
+        "B": "2",
+        "C": "2 + 𝑒",
+        "D": "𝑒 7th January 2020 (Shift 2), Mathematics Page | 13"
+      },
+      "page_start": 12,
+      "page_end": 14,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_3"
+      ],
+      "embedded_answer": {
+        "raw": "A",
+        "option": "A"
+      }
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "If 𝑎⃗, 𝑏⃗⃗, 𝑐⃗ are unit vectors such that 𝑎⃗+ 𝑏⃗⃗+ 𝑐⃗= 0⃗⃗ and 𝜆= 𝑎⃗. 𝑏⃗⃗+ 𝑏⃗⃗. 𝑐⃗+ 𝑐⃗. 𝑎⃗ and 𝑑⃗= 𝑎⃗× 𝑏⃗⃗+ 𝑏⃗⃗×\n𝑐⃗+ 𝑐⃗× 𝑎⃗  then (𝜆, 𝑑) =",
+      "options": {
+        "A": "( 3 2 , 3𝑎⃗× 𝑏⃗⃗)",
+        "B": "(− 3 2 , 3𝑎⃗× 𝑐⃗)",
+        "C": "(− 3 2 , 3𝑎⃗× 𝑏⃗⃗)",
+        "D": "( 3 2 , 3𝑎⃗× 𝑐⃗)"
+      },
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_4"
+      ],
+      "embedded_answer": {
+        "raw": "C",
+        "option": "C"
+      }
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "3𝑥+ 4𝑦= 12√2 is a tangent to the ellipse \n𝑥2\n𝑎2 +\n𝑦2\n9 = 1, then the distance between foci of ellipse \nis",
+      "options": {
+        "A": "2√5",
+        "B": "2√7",
+        "C": "4",
+        "D": "2√3"
+      },
+      "page_start": 15,
+      "page_end": 18,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_4"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    }
+  ]
+}

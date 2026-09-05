@@ -1,0 +1,765 @@
+{
+  "paper_id": "jee-main-2017-s2-mathematics-4afjd4xvolfsa5fctugr",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2017-s2-mathematics-4afjd4xvolfsa5fctugr",
+    "exam": "jee-main",
+    "year": 2017,
+    "session": 2,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2017/jee-main-2017-maths-question-paper-online-exam-9th-april-2017/98559",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/4AFjD4XVoLFSA5fctuGr",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "07002ba9d6b55546ea51511374b6cb55d04a8fca1d96613a8314389cfa82b4f4",
+    "page_count": 14,
+    "text_chars": 13454,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2017-s2-mathematics-4afjd4xvolfsa5fctugr.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 30,
+  "defects": [
+    "25 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2, 4, 5, 7, 8, 1, 10, 1, 12, 13, 1, 2, 1, 15]",
+    "18/30 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The function f : N → N defined by\n( )    5\n5\nx\nf x\nx\n\n\n\n=\n−\n, where N is the set of\nnatural numbers and [x] denotes the\ngreatest integer less than or equal to x, is :",
+      "options": {
+        "A": "one-one and onto.",
+        "B": "one-one but not onto.",
+        "C": "onto but not one-one.",
+        "D": "neither one-one nor onto."
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The sum of all the real values of x satisfying\nthe equation 2(x−1)(x2+5x−50)=1 is :",
+      "options": {
+        "A": "16",
+        "B": "14",
+        "C": "−4",
+        "D": "−5"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The equation\n \n \n \n  2\nIm\n  1  0, \n, \n \niz\nz\nz\ni\nz\ni\n\n\n≠\n\n\n\n\nC\n−\n+ =\n\u0004\n−\nrepresents a part of a circle having radius\nequal to :",
+      "options": {
+        "A": "2",
+        "B": "1",
+        "C": "3 4",
+        "D": "1 2 ªÁáÊÃ"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "For two 3×3 matrices A and B, let\nA+B=2B9 and 3A+2B=I3, where B9 is\nthe transpose of B and I3 is 3×3 identity\nmatrix.  Then :",
+      "options": {
+        "A": "5A+10B=2I3",
+        "B": "10A+5B=3I3",
+        "C": "B+2A=I3",
+        "D": "3A+6B=2I3"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If x=a, y=b, z=c is a solution of the\nsystem of linear equations\nx+8y+7z=0\n9x+2y+3z=0\n x+y+z=0\nsuch that the point (a, b, c) lies on the plane\nx+2y+z=6, then 2a+b+c equals :",
+      "options": {
+        "A": "−1",
+        "B": "0",
+        "C": "1",
+        "D": "2"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The number of ways in which 5 boys and\n3 girls can be seated on a round table if a\nparticular boy B1 and a particular girl G1\nnever sit adjacent to each other, is :",
+      "options": {
+        "A": "5×6!",
+        "B": "6×6!",
+        "C": "7!",
+        "D": "5×7!"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The coefficient of x−5 in the binomial\nexpansion of \n2\n1\n1\n3\n3\n2\n10\n  1\n  1\n  \n  \n  \n  1\nx\nx\nx\nx\nx\nx\n\n\n\n\n\n\n+\n−\n−\n−\n−\n+\n,\nwhere x ≠ 0, 1, is :",
+      "options": {
+        "A": "1",
+        "B": "4",
+        "C": "−4",
+        "D": "−1"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If three positive numbers a, b and c are in\nA.P. such that abc=8, then the minimum\npossible value of b is :",
+      "options": {
+        "A": "2",
+        "B": "1 3 4",
+        "C": "2 3 4",
+        "D": "4"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let\nn\n3\n3\n3\n3\n3\n3\n1\n1  2\n1  2  3\nS   \n  \n  \n \n1\n1   2\n1   2   3\n+\n+ +\n=\n+\n+\n+\n+\n+\n+\n3\n3\n3\n1  2  .......  n\n....... \n.\n1   2   .......  n\n+ +\n+\n+ \n+\n+\n+\n If 100 Sn=n,\nthen n is equal to :",
+      "options": {
+        "A": "199",
+        "B": "99",
+        "C": "200",
+        "D": "19 7. 2 1 1 3 3 2 10 1 1 1 x x x x x x       + − − − − + , ¡„Ê° x ≠ 0, 1, ∑§ Ám¬Œ ÁﬂSÃÊ⁄U ◊¥ x−5 ∑§Ê ªÈáÊÊ¥∑§ „Ò —"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The value of k for which the function\ntan  4\ntan  5\n4\n,   0 <  < 2\n5\n( )  \n2\nk  \n    ,      \n5\n2\nx\nx\nx\nf x\nx\n\n\n\n\n\n\n\n\n\nπ\n=\nπ\n+\n=\nis continuous at \n 2\nx\nπ\n=\n, is :",
+      "options": {
+        "A": "17 20",
+        "B": "2 5",
+        "C": "3 5",
+        "D": "2 5 −"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If \n1\n1\n5\n5\n2   \n  \nx\ny\ny\n \n−\n=\n+\n and\n2\n2\n2\nd\nd",
+      "options": {
+        "A": "k 0, d d y y x x y x x − +λ + = then λ+k is equal to :",
+        "B": "−24",
+        "C": "26",
+        "D": "−26 10. k ∑§Ê ﬂ„ ◊ÊŸ Á¡‚∑§ Á‹∞ »§‹Ÿ tan 4 tan 5 4 , 0 < < 2 5 ( ) 2 k , 5 2 x x x f x x          π = π + = 2 x π = ¬⁄U ‚ÃÃ˜ „Ò, „Ò —"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The function f defined by\nf (x)=x3−3x2+5x+7, is :",
+      "options": {
+        "A": "increasing in R.",
+        "B": "decreasing in R.",
+        "C": "decreasing in (0, ∞) and increasing in (−∞, 0).",
+        "D": "increasing in (0, ∞) and decreasing in (−∞, 0)."
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let f be a polynomial function such that\nf (3x)=f 9(x) ⋅ f 99(x), for all x e R.  Then :",
+      "options": {
+        "A": "f (2)+f 9(2)=28",
+        "B": "f 99 (2)−f 9(2)=0",
+        "C": "f 99(2)−f (2)=4",
+        "D": "f (2)−f 9(2)+f 99(2)=10"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If \n \n \n 4\n3   4\n   2, \n,\n3\n3   4\nx\nf\nx\nx\nx\n\n\n≠\n\n\n\n\n−\n=\n+\n−\n+\n \nand\n( ) d   A log\n  B   C,\n1  \nf x\nx\nx\nx\n∫\n=\n+\n+\n−\n \nthen\nthe ordered pair (A, B) is equal to :\n(where C is a constant of integration)",
+      "options": {
+        "A": "8 2 , 3 3      ",
+        "B": "8 2 , 3 3       −",
+        "C": "8 2 , 3 3       − −",
+        "D": "8 2 , 3 3       − 12. f (x)=x3−3x2+5x+7 mÊ⁄UÊ ¬Á⁄U÷ÊÁ·Ã »§‹Ÿ f —"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If \n(\n)\n3\n2\n2\n2\n1\nd\nk\n \n,\nk  5\n  2   4\nx\nx\nx\n∫\n=\n+\n−\n+\n then k is\nequal to :",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If\n \n[\n]\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \na\na\na\nn\na 1\n1   2   ........  n\n1\nlim\n60\n(na",
+      "options": {
+        "A": "(na",
+        "B": "..... (na n) (n",
+        "C": "15 2",
+        "D": "17 2 15. ÿÁŒ ( ) ∫ 3 2 2 2 1 d k k 5 2 4 x x x = + − + „Ò, ÃÊ k ’⁄UÊ’⁄U „Ò —"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "A tangent to the curve, y=f (x) at P(x, y)\nmeets x-axis at A and y-axis at B.  If\nAP : BP=1 : 3 and f (1)=1, then the curve\nalso passes through the point :",
+      "options": {
+        "A": "1 , 24 3      ",
+        "B": "1 , 4 2      ",
+        "C": "1 2, 8      ",
+        "D": "1 3, 28      "
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "A square, of each side 2, lies above the\nx-axis and has one vertex at the origin.  If\none of the sides passing through the origin\nmakes an angle 308 with the positive\ndirection of the x-axis, then the sum of the\nx-coordinates of the vertices of the square\nis :",
+      "options": {
+        "A": "2 3 1 −",
+        "B": "2 3 2 −",
+        "C": "3 2 −",
+        "D": "3 1 − 17. ﬂ∑˝§ y=f (x) ∑§ Á’¥ŒÈ P(x, y) ¬⁄U S¬‡Ê¸⁄UπÊ x-•ˇÊ ∑§Ê A ¬⁄U ÃÕÊ y-•ˇÊ ∑§Ê B ¬⁄U ∑§Ê≈UÃË „Ò– ÿÁŒ AP : BP=1 : 3 ÃÕÊ f (1)=1 „Ò, ÃÊ ﬂ∑˝§ ÁŸêŸ Á’¥ŒÈ ‚ ÷Ë „Ê ∑§⁄U ¡ÊÃÊ „Ò —"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "A line drawn through the point P(4, 7) cuts\nthe circle x2+y2=9 at the points A and B.\nThen PA⋅PB is equal to :",
+      "options": {
+        "A": "53",
+        "B": "56",
+        "C": "74",
+        "D": "65"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The eccentricity of an ellipse having centre\nat the origin, axes along the co-ordinate\naxes and passing through the points\n(4, −1) and (−2, 2) is :",
+      "options": {
+        "A": "1 2",
+        "B": "2 5",
+        "C": "3 2",
+        "D": "3 4"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If y=mx+c is the normal at a point on\nthe parabola y2=8x whose focal distance\nis 8 units, then ?c? is equal to :",
+      "options": {
+        "A": "2 3",
+        "B": "8 3",
+        "C": "10 3",
+        "D": "16 3 19. ÿÁŒ Á’¥ŒÈ P(4, 7) ‚ πË¥øË ªß¸ ∞∑§ ⁄UπÊ, ﬂÎûÊ x2+y2=9 ∑§Ê Á’¥ŒÈ•Ê¥ A ÃÕÊ B ¬⁄U ∑§Ê≈UÃË „Ò, ÃÊ PA⋅PB ’⁄UÊ’⁄U „Ò —"
+      },
+      "page_start": 8,
+      "page_end": 9,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If a variable plane, at a distance of 3 units\nfrom the origin, intersects the coordinate\naxes at A, B and C, then the locus of the\ncentroid of ∆ABC is :",
+      "options": {
+        "A": "2 2 2 1 1 1 1 x y z + + =",
+        "B": "2 2 2 1 1 1 3 x y z + + =",
+        "C": "2 2 2 1 1 1 1 9 x y z + + =",
+        "D": "2 2 2 1 1 1 9 x y z + + ="
+      },
+      "page_start": 9,
+      "page_end": 9,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If the line, \n  2\n 3\n  \n  \n  \n1\n1\n2\ny\nx\nz\n+\n−\n+λ\n=\n=\n−\n−\n lies in\nthe plane, 2x−4y+3z=2, then the\nshortest distance between this line and the\nline, \n  1\n \n  \n12\n9\n4\ny\nx\nz\n−\n=\n=\n is :",
+      "options": {
+        "A": "2",
+        "B": "1",
+        "C": "0",
+        "D": "3 22. ∞∑§ ø⁄U ‚◊Ã‹, Á¡‚∑§Ë ◊Í‹ Á’¥ŒÈ ‚ ŒÍ⁄UË 3 ß∑§Êß¸ „Ò, ÁŸŒ¸‡ÊÊ¥∑§ •ˇÊÊ¥ ∑§Ê A, B ÃÕÊ C ¬⁄U ∑§Ê≈UÃÊ „Ò, ÃÊ ∆ABC ∑§ ∑¥§Œ˝∑§ ∑§Ê Á’¥ŒÈ¬Õ „Ò —"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "If the vector b   3   4\nj\nk\n→\n∧\n∧\n=\n+\n is written as the\nsum of a vector \n1\nb\n→\n, parallel to a   \n  \ni\nj\n→\n∧\n∧\n=\n+\nand a vector \n2\nb\n→\n, perpendicular to a\n→, then\n1\n2\nb   b\n→\n→\n×\n is equal to :",
+      "options": {
+        "A": "3 3 9 i j k ∧ ∧ ∧ − + −",
+        "B": "9 6 6 2 i j k ∧ ∧ ∧ − +",
+        "C": "9 6 6 2 i j k ∧ ∧ ∧ − + −",
+        "D": "3 3 9 i j k ∧ ∧ ∧ − +"
+      },
+      "page_start": 10,
+      "page_end": 10,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "From a group of 10 men and 5 women,\nfour member committees are to be formed\neach of which must contain at least one\nwoman.  Then the probability for these\ncommittees to have more women than\nmen, is :",
+      "options": {
+        "A": "21 220",
+        "B": "3 11",
+        "C": "1 11",
+        "D": "2 23 24. ÿÁŒ ‚ÁŒ‡Ê b 3 4 j k → ∧ ∧ = + ∑§Ê ‚ÁŒ‡Ê a i j → ∧ ∧ = + ∑§ ‚◊Ê¥Ã⁄U ‚ÁŒ‡Ê 1 b → ÃÕÊ ‚ÁŒ‡Ê a → ∑§ ‹¥’ﬂÃ ‚ÁŒ‡Ê 2 b → ∑§ ÿÊª ∑§ M§¬ ◊¥ Á‹πÊ ¡Ê∞, ÃÊ 1 2 b b → → × ’⁄UÊ’⁄U „Ò —"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "Let E and F be two independent events.\nThe probability that both E and F happen\nis 1\n12\n and the probability that neither E\nnor F happens is 1\n2 , then a value of P(E)\nP(F)\nis :",
+      "options": {
+        "A": "4 3",
+        "B": "3 2",
+        "C": "1 3",
+        "D": "5 12"
+      },
+      "page_start": 11,
+      "page_end": 11,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The sum of 100 observations and the sum\nof their squares are 400 and 2475,\nrespectively.  Later on, three observations,\n3, 4 and 5, were found to be incorrect.  If\nthe incorrect observations are omitted, then\nthe variance of the remaining observations\nis :",
+      "options": {
+        "A": "8.25",
+        "B": "8.50",
+        "C": "8.00",
+        "D": "9.00 26. ◊ÊŸÊ E ÃÕÊ F ŒÊ SﬂÃ¥òÊ ÉÊ≈UŸÊ∞° „Ò¥– E ÃÕÊ F ŒÊŸÊ¥ ∑§ ÉÊ≈UŸ ∑§Ë ¬˝ÊÁÿ∑§ÃÊ 1 12 „Ò ÃÕÊ Ÿ E •ÊÒ⁄U Ÿ „Ë F ∑§ ÉÊ≈UŸ ∑§Ë ¬˝ÊÁÿ∑§ÃÊ 1 2 „Ò, ÃÊ P(E) P(F) ∑§Ê ∞∑§ ◊ÊŸ „Ò —"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "A value of x satisfying the equation\nsin[cot−1(1+x)]=cos[tan−1x], is :",
+      "options": {
+        "A": "1 2 −",
+        "B": "−1",
+        "C": "0",
+        "D": "1 2"
+      },
+      "page_start": 12,
+      "page_end": 12,
+      "parse_flags": []
+    },
+    {
+      "qno": 29,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "The two adjacent sides of a cyclic\nquadrilateral are 2 and 5 and the angle\nbetween them is 608.  If the area of the\nquadrilateral is 4 3 , then the perimeter\nof the quadrilateral is :",
+      "options": {
+        "A": "12.5",
+        "B": "13.2",
+        "C": "12",
+        "D": "13 28. ‚◊Ë∑§⁄UáÊ sin[cot−1(1+x)]=cos[tan−1x] ∑§Ê ‚¥ÃÈc≈U ∑§⁄UŸ ﬂÊ‹Ê x ∑§Ê ∞∑§ ◊ÊŸ „Ò —"
+      },
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 30,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": "Mathematics",
+      "section": null,
+      "segment": 0,
+      "text": "∑§ÕŸ\n“ÿÁŒ ŒÊ ‚¥ÅÿÊ∞° ‚◊ÊŸ Ÿ„Ë¥ „Ò¥, ÃÊ ©Ÿ∑§ ﬂª¸ ‚◊ÊŸ\nŸ„Ë¥ „Ò¥”\n∑§Ê ¬˝ÁÃœŸÊà◊∑§ (Contrapositive) „Ò —",
+      "options": {
+        "A": "ÿÁŒ ŒÊ ‚¥ÅÿÊ•Ê¥ ∑§ ﬂª¸ ‚◊ÊŸ „Ò¥, ÃÊ ‚¥ÅÿÊ∞° ‚◊ÊŸ „Ò¥–",
+        "B": "ÿÁŒ ŒÊ ‚¥ÅÿÊ•Ê¥ ∑§ ﬂª¸ ‚◊ÊŸ „Ò¥, ÃÊ ‚¥ÅÿÊ∞° ‚◊ÊŸ Ÿ„Ë¥ „Ò¥–",
+        "C": "ÿÁŒ ŒÊ ‚¥ÅÿÊ•Ê¥ ∑§ ﬂª¸ ‚◊ÊŸ Ÿ„Ë¥ „Ò¥, ÃÊ ‚¥ÅÿÊ∞° ‚◊ÊŸ Ÿ„Ë¥ „Ò–",
+        "D": "ÿÁŒ ŒÊ ‚¥ÅÿÊ•Ê¥ ∑§ ﬂª¸ ‚◊ÊŸ Ÿ„Ë¥ „Ò¥, ÃÊ ‚¥ÅÿÊ∞° ‚◊ÊŸ „Ò– - o 0 o - 30. Contrapositive of the statement ‘If two numbers are not equal, then their squares are not equal’, is :"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

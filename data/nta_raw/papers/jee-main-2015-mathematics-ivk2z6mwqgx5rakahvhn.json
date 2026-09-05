@@ -1,0 +1,877 @@
+{
+  "paper_id": "jee-main-2015-mathematics-ivk2z6mwqgx5rakahvhn",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2015-mathematics-ivk2z6mwqgx5rakahvhn",
+    "exam": "jee-main",
+    "year": 2015,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2015/jee-mains-%E2%80%93-maths-paper-i/81147",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/iVK2Z6mwqGX5raKahvHn",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "fd558e735cfdaa41b4e26c4bb25d2c7cf10561605ceeb65f7c8e5461836e62c0",
+    "page_count": 21,
+    "text_chars": 16639,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2015-mathematics-ivk2z6mwqgx5rakahvhn.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 90,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 43,
+  "defects": [
+    "2 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 2]",
+    "43/43 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Immediately fill in the particulars on this page of the Test Booklet with Blue/ Black Ball Point \nPen, Use of pencil is strictly prohibited,",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Answer Sheet is kept inside this Test Booklet. When you are directed to open the Test \nBooklet take out the Answer Sheet and fill in the particulars carefully.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The test is of 3 hours duration.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The Test Booklet consists of 90 questions. The maximum marks are 360",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There are three parts in the question paper A, B, C consisting of Physics, Chemistry and \nMathematics having 30 questions in each part of equal weightage Each question is allotted 4 \n(four) marks for correct response.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Candidates will be awarded marks as stated above in instruction NO. 5 for correct response of \neach question. ¼ (one fourth) marks will be deducted for indicating incorrect response of each \nquestion, No deduction from the total score will be made if no response is indicated for an item \nin the answer sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "There is only one correct response for each question. Filling up more than one response in any \nquestion will be treated as wrong response and marks for wrong response will be deducted \naccordingly as per instruction 6 above.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Use blue/ Black Ball Point Pen only for writing particulars / marking response on side – 1 and \nside – 2 of the Answer Sheet. Use of Pencil is strictly prohibited.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "No candidate is allowed to carry any textual  material, printed or written, bits of papers, pager, \nmobile phone, any electronic device , etc, except the admit card inside the examination \nroom/hall.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Rough work is to be done on the space provided for this purpose in the Test Booklet only. This \nspace is given at the bottom of each page and in one page (i.e. Page 39) at the end of the booklet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "On completion of the test , the candidate must hand over the Answer Sheet to the Invigilator on \nduty in the Room/Hall. However , the candidates are allowed to take away this Test Booklet with \nthem.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The CODE for this Booklet is A. Make sure that CODE printed on Side-2 of the Answer Sheet and \nalso tally the serial number of the Test Booklet and Answer Sheet are the candidate should \nimmediately report the matter to the invigilator for replacement of both the Test Booklet and the \nAnswer Sheet.",
+      "options": null,
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Do not fold or make any stray mark on the Answer Sheet. \n\n \n \nPage|2 \nNote: Answers have been highlighted in “Yellow” color and Explanations to answers are given at the end",
+      "options": null,
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let A and B be two sets containing four and two elements respectively. Then the number of \nsubsets of the set A × B, each having at least three elements is:",
+      "options": {
+        "A": "219",
+        "B": "256",
+        "C": "275",
+        "D": "510"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 62,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A complex number z is said to be unimodular if |z| = 1. Suppose z1 and z2 are complex numbers \nsuch that \n      \n       is unimodular and z2 is not unimodular. Then the point z1 lies on a:",
+      "options": {
+        "A": "straight line parallel to x-axis.",
+        "B": "straight line parallel to y-axis.",
+        "C": "circle of radius 2.",
+        "D": "circle of radius √ ."
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 63,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let α and ß be the roots of equation x² – 6x – 2 = 0. If a  α  ß , for n ≥ 1, then the value of \n       \n   \n is equal to:",
+      "options": {
+        "A": "6",
+        "B": "– 6",
+        "C": "3",
+        "D": "– 3"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 64,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "[\n1\n \n \n \n1\n  \n \n \n \n] is matrix satisfying the equation     = 9I, where I is 3 × 3 identity matrix, \nthen the ordered pair (a, b) is equal to:",
+      "options": {
+        "A": "(2, – 1)",
+        "B": "(– 2, 1)",
+        "C": "(2, 1)",
+        "D": "(–2, –1)"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The set of all values of λ for which the system of linear equation: \n           λx   \n \n            λx  \n\n \n \nPage|3 \n                     λx   \nhas a non-trivial solution,",
+      "options": {
+        "A": "is an empty set.",
+        "B": "is a singleton.",
+        "C": "contains two elements.",
+        "D": "contains more than two elements."
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The number of integers greater than 6,000 that can be formed, using the digits 3, 5, 6, 7 and 8, \nwithout repetition, is:",
+      "options": {
+        "A": "216",
+        "B": "192",
+        "C": "120",
+        "D": "72"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The sum of coefficients of integral powers of x in the binomial expansion of (1   √ )\n   is:",
+      "options": {
+        "A": "( 1)",
+        "B": "( )",
+        "C": "( 1)",
+        "D": "( 1)"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If m is the A.M. of two distinct real numbers l and n (l, n > 1) and G1, G2 and G3 are three \ngeometric means between l and n, then   \n     \n    \n  equals.",
+      "options": {
+        "A": "4 l²mn",
+        "B": "4 lm²n",
+        "C": "4 lmn²",
+        "D": "4 l²m²n²"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The sum of first 9 terms of the series \n  \n  \n     \n    \n        \n       . . . . is",
+      "options": {
+        "A": "71",
+        "B": "96",
+        "C": "142 Page|4",
+        "D": "192"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 70,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "0\n(1 cos2x)(3\ncosx)\nlim\nisequalto:\ntan 4\nx\nx\nx\n\n\n",
+      "options": {
+        "A": "4",
+        "B": "3",
+        "C": "2",
+        "D": ""
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If the function, \n \ng( )   { √  1  ,       \n       ,       is differentiable, then the value of k + m is:",
+      "options": {
+        "A": "2",
+        "B": "",
+        "C": "",
+        "D": "4"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The normal to the curve. x² + 2xy – 3y² = 0, at (1, 1):",
+      "options": {
+        "A": "does not meet the curve again.",
+        "B": "meets the curve again in the second quadrant.",
+        "C": "meets the curve again in the third quadrant.",
+        "D": "meets the curve again in the fourth quadrant."
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let ƒ(x) be a polynomial of degree four having extreme values at x   1 and x    . \n \nIf \n2\n0\nƒ(x)\nlim 1\n3\nx\nx\n\n\n\n\n\n\n\n\n\n, then ƒ( ) is equal to:",
+      "options": {
+        "A": "– 8",
+        "B": "– 4",
+        "C": "0",
+        "D": "4"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 74,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The integral \n2\n4\n3/4\n(x",
+      "options": {
+        "A": "dx x   equals: Page|5",
+        "B": "(x 1) c",
+        "C": "(x 1) c",
+        "D": ". / c"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 75,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The integral \n4\n2\n2\n2\n2\nlog\nlog\nlog(36 12x x )\nx\ndx\nx \n\n\n\nis equal to:",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "1",
+        "D": "6"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 76,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The area (in sq. units) of the region described by {(x, y) : y²    x and y ≥ 4x – 1} is:",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 77,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let y(x) be the solution of the differential equation (x log x) \n  \n     y    x log x, (x ≥ 1). \n \nThen y(e) is equal to:",
+      "options": {
+        "A": "e",
+        "B": "0 Note: Insufficient information as per our expert",
+        "C": "2",
+        "D": "2e"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 78,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The number of points, having both co-ordinates as integers, that lie in the interior of the triangle \nwith vertices (0, 0), (0, 41) and (41, 0), is:",
+      "options": {
+        "A": "901",
+        "B": "861 Page|6",
+        "C": "820",
+        "D": "780"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 79,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Locus of the image of the point (2, 3) in the line (2x – 3y + 4) + k (x – 2y + 3)= 0, k ϵ R, is a:",
+      "options": {
+        "A": "straight line parallel to x-axis.",
+        "B": "straight line parallel to y-axis.",
+        "C": "circle of radius √ .",
+        "D": "circle of radius √ ."
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 80,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The number of common tangents to the circles x² + y² – 4x – 6y – 12 = 0 and x² + y² + 6x + 18y \n+ 26 = 0, is:",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 81,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The area (in sq. units) of the quadrilateral formed by the tangents at the end points of the latera \nrecta to the ellipse \n  \n  \n  \n  1, is:",
+      "options": {
+        "A": "",
+        "B": "18",
+        "C": "",
+        "D": "27"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 82,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let O be the vertex and Q be any point on the parabola, x² = 8y. If the point P divides the line \nsegment OQ internally in the ratio 1 : 3, then the locus of P is:",
+      "options": {
+        "A": "x² = y",
+        "B": "y² = x",
+        "C": "y² = 2x",
+        "D": "x² = 2y"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 83,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The distance of the point (1, 0, 2) from the point of intersection of the line \n   \n  \n   \n  \n   \n   and \nthe plane x – y + z = 16, is:",
+      "options": {
+        "A": "√14 Page|7",
+        "B": "8",
+        "C": "√ 1",
+        "D": "13"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 84,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The equation of the plane containing the line 2x – 5y + z = 3; x + y + 4z = 5, and parallel to the \nplane, x + 3y + 6z = 1, is:",
+      "options": {
+        "A": "2x + 6y + 12z = 13",
+        "B": "x + 3y + 6z = – 7",
+        "C": "x + 3y + 6z = 7",
+        "D": "2x + 6y + 12z = – 13"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 85,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let a⃗ , b⃗  and c  be three non-zero vectors such that no two of them are collinear and (a⃗   b⃗ )   c  \n \n |b⃗ | |c | a⃗  . If θ is the angle between vectors b⃗  and c , then a value of sin θ is:",
+      "options": {
+        "A": "√",
+        "B": "√",
+        "C": "",
+        "D": "√"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 86,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If 12 identical balls are to be placed in 3 identical boxes, then the probability that one of the \nboxes contains exactly 3 balls is:",
+      "options": {
+        "A": ". / Note: Question seems to be wrong as per our expert",
+        "B": ". /",
+        "C": ". /",
+        "D": ". /"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 87,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The mean of the data set comprising of 16 observations is 16. If one of the observation valued 16 \nis deleted and three new observations valued 3, 4 and 5 are added to the data, then the mean of \nthe resultant data, then the mean of the resultant data, is:",
+      "options": {
+        "A": "16.8",
+        "B": "16.0 Page|8",
+        "C": "15.8",
+        "D": "14.0"
+      },
+      "page_start": 7,
+      "page_end": 8,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 88,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If the angles of elevation of the top of a tower from three collinear points A, B and C, on a  line \nleading to the foot of the tower, are 30°, 45° and 60° respectively, then the ratio, AB : BC, is:",
+      "options": {
+        "A": "√ 1",
+        "B": "√ √",
+        "C": "1 : √",
+        "D": "2 : 3"
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 89,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let tan    tan    tan  .\n  \n    / where |x| < \n \n√ . Then a value of y is:",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 8,
+      "page_end": 8,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 90,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The negation of ~ s ∨ (~ r ∧ s) is equivalent to :",
+      "options": {
+        "A": "s ∧ ~ r",
+        "B": "s ∧ (r ∧ ~ s) ( ) s ∨ (r ∨ ~ s)",
+        "D": "s ∨ r Page|9 Answer Key and Explanations"
+      },
+      "page_start": 8,
+      "page_end": 21,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1",
+        "options_count_3"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

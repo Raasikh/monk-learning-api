@@ -1,0 +1,504 @@
+{
+  "paper_id": "jee-main-2005-mathematics-ydtzgml0kd1wqpnxprao",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2005-mathematics-ydtzgml0kd1wqpnxprao",
+    "exam": "jee-main",
+    "year": 2005,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2005/iit-jee-maths-paper-i/81202",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/yDtzGML0kd1wqpnxpRaO",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "a79a5bdd03afaa59bfcdbf09df86c053e9ef7eb481ebdd5638d4ea15760de0db",
+    "page_count": 6,
+    "text_chars": 4967,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2005-mathematics-ydtzgml0kd1wqpnxprao.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 22,
+  "defects": [
+    "3 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 1, 24]",
+    "14/22 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The area bounded by the curves y = (x – 1)2, y = (x + 1)2 and y = 1/4 is:",
+      "options": {
+        "A": "1/3",
+        "B": "2/3",
+        "C": "1/4",
+        "D": "1/5"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The value of ∫-2\n0[x3+3x2+3x+3+(x+1)cos(x+1)dx] is:",
+      "options": {
+        "A": "0",
+        "B": "3",
+        "C": "4",
+        "D": "1"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The tangent at (1, 7) to the curve x2 = y – 6 touches the circle x2 + y2 + 16x + 12y + c \n= 0 at :",
+      "options": {
+        "A": "(6, 7)",
+        "B": "(–6, 7)",
+        "C": "(6, –7)",
+        "D": "(–6, –7)"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If dy/dx=xy/(x2+y2 ), y(1) = 1, then one of the values of x0 satisfying y(x0) = e is given \nby",
+      "options": {
+        "A": "e√2",
+        "B": "e√3",
+        "C": "e√5"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "duplicate_option_marker_C",
+        "options_count_3"
+      ]
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The locus of the centre of circle which touches (y -1)2 + x2 = 1 externally also \ntouches x axis is:",
+      "options": {
+        "A": "x2 = 4y È (0, y), y < 0",
+        "B": "x2 = y SCREENING _______________________________________________________________________",
+        "C": "7 + 4√3",
+        "D": "4√3"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If ∫sin x\n1 t2 f(t) dt = 1 – sin x ∀ x Î [0, Π/2] then f(1/√3) is:",
+      "options": {
+        "A": "3",
+        "B": "√3",
+        "C": "1/3",
+        "D": "none of these"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "",
+      "options": {
+        "A": "30C11",
+        "B": "60C10",
+        "C": "30C10",
+        "D": "65C55"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A variable plane x/a + y/b + z/c = 1 at a unit distance from origin cuts the \ncoordinate axes at A, B and C. Centroid (x, y, z) satisfies the equation 1/x2 + 1/y2 + 1/z2 = \nK. The value of K is :",
+      "options": {
+        "A": "9",
+        "B": "3",
+        "C": "1/9",
+        "D": "1/3"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let f(x) = ax2 + bx + c, a ¹ 0 and D = b2 - 4ac. If a + b, a2 + b2 and a3 + b3are in \nG.P., then :",
+      "options": {
+        "A": "D ¹ 0",
+        "B": "bD ¹ 0",
+        "C": "cD ¹ 0",
+        "D": "bc ¹ 0"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Tangent at a point of the ellipse x2/a2 + y2/b2 = 1 is drawn which cuts the coordinate \naxes at A and B. The minimum area of the triangle OAB is (O being the origin) :",
+      "options": {
+        "A": "ab",
+        "B": "(a3 + ab + b3)/3",
+        "C": "a2 + b2",
+        "D": "((a2 + b2))/4"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A fair die is rolled. The probability that the first time 1 occurs at the even throw is :",
+      "options": {
+        "A": "1/6",
+        "B": "5/11",
+        "C": "6/11",
+        "D": "5/36"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If xdy = y (dx + ydy), y(1) = 1 and y(x) > 0. Then y(–3) = :",
+      "options": {
+        "A": "3",
+        "B": "2",
+        "C": "1",
+        "D": "0"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A rectangle with sides (2n – 1) and (2m – 1) is divided into squares of unit length. The \nnumber of rectangle which can be formed with sides of odd length is :",
+      "options": {
+        "A": "m2 n2",
+        "B": "mn(m + 1) (n + 1)",
+        "C": "4m + n – 1",
+        "D": "none of these"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The minimum value of |a + bw + cw2|, where a, b and c are all not equal integers \nand w(¹  1) is a cube root of unity, is:",
+      "options": {
+        "A": "√3",
+        "B": "1/3",
+        "C": "1",
+        "D": "0"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "The shaded region, where  \nP ≡ (–1, 0), Q ≡ (–1 + √2,√2)  \nR ≡ (–1 + √2, – √2), S ≡ (1, 0) is represented by:",
+      "options": {
+        "A": "|z + 1| > 2, |arg (z + 1)|< π/4",
+        "B": "|z + 1| < 2, |arg (z + 1)|< π/2",
+        "C": "|z – 1| > 2, |arg (z + 1)|> π/4",
+        "D": "|z – 1| < 2, |arg (z + 1)|> π/2"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "The number of ordered pairs (α, β), where α, β Î (–Π, Π) satisfying cos (α – β) = 1 and \ncos (α + β) = 1/e is :",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "4"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "Let f(x) = |x|–1, then points where f(x) is not differentiable is/(are) :",
+      "options": {
+        "A": "0, + 1",
+        "B": "+ 1",
+        "C": "0",
+        "D": "1"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "The second degree polynomial f(x), satisfying f(0) = 0, f(1) = 1, f’(x) > 0 for all xÎ (0,",
+      "options": {
+        "A": ":",
+        "B": "f(x) = ax + (1 – a) x2; ∀ a Î (0, ¥)",
+        "C": "f(x) = ax + (1 – a) x2; ∀ a Î (0, 2)",
+        "D": "no such polynomial"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "If f is a differentiable function satisfying f(1/n) = 0 for all n > 1, n Î I, then :",
+      "options": {
+        "A": "f(x) = 0, x Î (0, 1]",
+        "B": "f’(0) = 0 = f(0)",
+        "C": "f(0) = 0 but f’(0) not necessarily zero",
+        "D": "|f(x)| < 1, x Î (0, 1] 6A-1 = A2 + cA + dI, then (c, d) is:"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "If y = f(x) and y cos x + x cos y = Π, then the value of f’(0) is :",
+      "options": {
+        "A": "Π",
+        "B": "– Π",
+        "C": "0",
+        "D": "2Π"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": [
+        "numbering_restart_segment_3"
+      ]
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "Let f be twice differentiable function satisfying f(1) = 1, f(2) = 4, f(3) = 9, then :",
+      "options": {
+        "A": "f’(x) = 2, ∀ x Î (R)",
+        "B": "f’(x) = 5 = f’’ (x), for some x Î (1, 3)",
+        "C": "There exists at least one x Î (1, 3) such that f’(x) = 2",
+        "D": "none of these"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_3"
+      ]
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "If X and Y are two non-empty sets where f : X --> Y is function is defined such that  \nf(c) = {f(x) : x Î C} for C Í X  \nand f-1 (D) = {x : f(x) Î D} for D Í y,  \nfor any A Í X and B Í Y then :",
+      "options": {
+        "A": "f-1 (f(A)) = A",
+        "B": "f-1 (f(A)) = A only if f(X) = Y",
+        "C": "f(f-1 (B)) = B only if B Í f(x)",
+        "D": "f(f-1 (B)) = B"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": [
+        "numbering_restart_segment_3"
+      ]
+    }
+  ]
+}

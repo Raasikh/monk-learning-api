@@ -1,0 +1,210 @@
+{
+  "paper_id": "jee-main-2020-s1-mathematics-2020-01-09-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-mathematics-2020-01-09-shift-2",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-09",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-9-jan-2020-maths-paper-shift-2/243277",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/RlwAWraiFRcJcJjvRwET",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "d8de4be77dd25bfede6158850cab9fb40a5b594737410666ee8d76842b34e67d",
+    "page_count": 15,
+    "text_chars": 13896,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 23,
+    "answer_marker_hits": 23,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-mathematics-2020-01-09-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 8,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "A",
+          "option": "A"
+        }
+      },
+      {
+        "qno": 9,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "D",
+          "option": "D"
+        }
+      },
+      {
+        "qno": 14,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      },
+      {
+        "qno": 15,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "B",
+          "option": "B"
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 4,
+  "defects": [
+    "7 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 3, 5, 11, 17, 19, 21]",
+    "4/4 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let 𝑥= 2 sin𝜃−sin2𝜃 and  𝑦= 2 cos𝜃−cos 2𝜃 , then the value of  \n𝑑2𝑦\n𝑑𝑥2  at 𝜃= 𝜋 is",
+      "options": {
+        "A": "3 8",
+        "B": "5 8",
+        "C": "7 8",
+        "D": "3 2"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "A",
+        "option": "A"
+      }
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If 𝑓(𝑥) and 𝑔(𝑥) are continuous functions, 𝑓𝑜𝑔 is identity function, 𝑔′(𝑏) = 5 and 𝑔(𝑏) = 𝑎, then \n𝑓′(𝑎) is",
+      "options": {
+        "A": "3 5",
+        "B": "5",
+        "C": "2 5",
+        "D": "1 5"
+      },
+      "page_start": 7,
+      "page_end": 10,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "D",
+        "option": "D"
+      }
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If 𝐴= {𝑥: |𝑥| < 2 and 𝐵= {𝑥: |𝑥−2| ≥3} then",
+      "options": {
+        "A": "𝐴∩𝐵= [−2, −1]",
+        "B": "𝐵−𝐴= 𝐑−(−2,5)",
+        "C": "𝐴−𝐵= [−1,2)",
+        "D": "𝐴∪𝐵= 𝐑−(2,5)"
+      },
+      "page_start": 10,
+      "page_end": 11,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The value of 𝑃(𝑥𝑖> 2) for the given probability distribution is                  \n𝑥𝑖 \n1 \n2 \n3 \n4 \n5 \n𝑃𝑖 \n𝑘2 \n2𝑘 \n𝑘 \n2𝑘 \n5𝑘2",
+      "options": {
+        "A": "1 36",
+        "B": "23 36",
+        "C": "1 6",
+        "D": "7 12"
+      },
+      "page_start": 11,
+      "page_end": 15,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "B",
+        "option": "B"
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "paper_id": "jee-main-2020-s1-physics-2020-01-07-shift-2",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-physics-2020-01-07-shift-2",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-07",
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-7-jan-2020-physics-paper-shift-2/243253",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/2zuQgQYDVAFLCG9iPokJ",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "f33198ba0359d69865015eb7de93367ab1c79ea6b472d408e3cf4176cf6a36aa",
+    "page_count": 14,
+    "text_chars": 11512,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 20,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-physics-2020-01-07-shift-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 9,
+  "defects": [
+    "7 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 2, 4, 9, 11, 15, 17]",
+    "4/9 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If the weight of an object at the pole is 196 𝑁, then the weight of the object at the \nequator is? (𝑔= 10 𝑚/𝑠2;  𝑡ℎ𝑒 𝑟𝑎𝑑𝑖𝑢𝑠 𝑜𝑓 𝑒𝑎𝑟𝑡ℎ= 6400  𝑘𝑚)",
+      "options": {
+        "A": "194.32 𝑁",
+        "B": "194.66 N",
+        "C": "195.32 N",
+        "D": "195.66 N Solution: (c) Weight of the object at the pole, 𝑊= 𝑚𝑔= 196 𝑁 Mass of the object, 𝑚= 𝑊 𝑔 = 196 10 = 19.6 𝑘𝑔 Weight of object at the equator(W’) = Weight at pole − Centrifugal acceleration 𝑊’ = 𝑚𝑔−𝑚𝜔2 𝑅 196 −(19.6) ( 2π 24 × 3600) 2 × 6400 × 103 = 195.33 𝑁"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In a house 15 bulbs of 45 W, 15 bulbs of 100 W, 15 bulbs of 10 W and two heaters of 1 \nkW each is connected to 220 V mains supply. The minimum fuse current will be",
+      "options": {
+        "A": "5 A",
+        "B": "20 A",
+        "C": "25 A",
+        "D": "15 A Solution: (b) Total power consumption of the house(P) = Number of appliances × Power rating of each appliance 𝑃= (15 × 45) + (15 × 100) + (15 × 10) + (2 × 1000) = 4325 𝑊 So, minimum fuse current 𝐼= 𝑇𝑜𝑡𝑎𝑙 𝑝𝑜𝑤𝑒𝑟 𝑐𝑜𝑛𝑠𝑢𝑚𝑝𝑡𝑖𝑜𝑛 𝑉𝑜𝑙𝑡𝑎𝑔𝑒 𝑠𝑢𝑝𝑝𝑙𝑦 = 4325 220 𝐴= 19.66 𝐴 JEE Main 2020 Paper 7th Jan (Shift 2, Physics) Page | 2"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In an adiabatic process, the volume is doubled. Find the ratio of final average relaxation \ntime and initial relaxation time. Given \n𝐶𝑝\n𝐶𝑣= 𝛾",
+      "options": {
+        "A": "1 2",
+        "B": "(2) 1+𝛾 2",
+        "C": "( 1",
+        "D": "( 1"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B"
+      ]
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A block of mass 10 𝑘𝑔 is suspended from a string of length 4 𝑚. When pulled by a force \n𝐹 along horizontal from the midpoint. The upper half of the string makes 45𝑜 with the \nvertical, value of 𝐹 is",
+      "options": {
+        "A": "100 𝑁",
+        "B": "90 𝑁",
+        "C": "75 𝑁",
+        "D": "70 𝑁 Solution: (a) Equating the vertical and horizontal components of the forces acting at point 𝑇 √2 = 100 7th Jan (Shift 2, Physics) Page | 3 𝑇 √2 = 𝐹 𝐹= 100 𝑁"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The surface mass density of a disc varies with radial distance as 𝜎= 𝐴+ 𝐵𝑟, where \n𝐴 and 𝐵 are positive constants. The moment of inertia of the disc about an axis passing \nthrough its centre and perpendicular to the plane is",
+      "options": {
+        "A": "2𝜋𝑎4 ( 𝐴 4 + 𝐵𝑎 5 )",
+        "B": "2𝜋𝑎4 ( 4𝐴 4 + 𝐵 5)",
+        "C": "𝜋𝑎4 ( 𝐴 4 + 𝐵𝑎 5 )",
+        "D": "2𝜋𝑎4 ( 𝐴 5 + 𝐵𝑎 4 ) Solution: (a) 𝜎= 𝐴+ 𝐵𝑟 ∫𝑑𝑚= ∫(𝐴+ 𝐵𝑟)2𝜋𝑟𝑑𝑟 𝐼= ∫𝑑𝑚 𝑟2 =∫(𝐴+ 𝐵𝑟)2𝜋𝑟3 𝑎 0 𝑑𝑟 =2𝜋(𝐴 𝑎4 4 + 𝐵 𝑎5 5 ) = 2𝜋𝑎4 (𝐴 4 + 𝐵𝑎 5 )"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Cascaded Carnot engine is an arrangement in which heat sink of one engine is source \nfor other. If high temperature for one engine is 𝑇1, low temperature for other engine is \n𝑇2 (Assume work done by both engines is same). Calculate lower temperature of first \nengine.",
+      "options": {
+        "A": "2𝑇1𝑇2 𝑇1+𝑇2",
+        "B": "𝑇1+𝑇2 2",
+        "C": "0",
+        "D": "√𝑇1𝑇2 7th Jan (Shift 2, Physics) Page | 4 2 = T1 T + T2 T T = T1 + T2 2"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Activity of a substance changes from 700 𝑠−1 to 900 𝑠−1 in 30 minutes. Find its half-\nlife in minutes.",
+      "options": {
+        "A": "66",
+        "B": "62",
+        "C": "56",
+        "D": "50 7th Jan (Shift 2, Physics) Page | 5 𝛽= 𝜆𝐷 𝑑 = 589 × 10−9 × 1.5 0.5 × 10−3 = 5.9 𝑚𝑚 9. An ideal fluid is flowing in a pipe in streamline flow. Pipe has maximum and minimum diameter of 6.4 𝑐𝑚 and 4.8 𝑐𝑚 respectively. Find out the ratio of minimum to maximum velocity."
+      },
+      "page_start": 4,
+      "page_end": 12,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A solid cube of side ’𝑎’ is shown in the figure. Find the maximum value of c \n100𝑏\n𝑎  for \nwhich the block does not topple before sliding. \n\n \n7th Jan (Shift 2, Physics)   \nPage | 13  \n \n \n \n0.4𝑏 ≤ 0.3𝑎 \n \n𝑏 ≤3\n4   𝑎 \n \nBut, maximum value of b can only be 0.5𝑎 \n \n∴ Maximum value of  100\n𝑏\n𝑎 is 50.",
+      "options": null,
+      "page_start": 12,
+      "page_end": 13,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Magnitude of resultant of two vectors 𝑃⃗  and 𝑄⃗  is equal to magnitude of 𝑃⃗ . Find the \nangle between 𝑄⃗  and resultant of 2𝑃⃗  and 𝑄⃗ . \n\n \n7th Jan (Shift 2, Physics)   \nPage | 14",
+      "options": null,
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "no_options_found"
+      ]
+    }
+  ]
+}

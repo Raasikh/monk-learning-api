@@ -1,0 +1,129 @@
+{
+  "paper_id": "jee-advanced-2025-paper-2",
+  "exam_tag": "jee-advanced",
+  "tags": [
+    "jee-advanced",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-advanced-2025-paper-2",
+    "exam": "jee-advanced",
+    "year": 2025,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "official JEE Advanced paper (organizing IIT site / Wayback snapshot)",
+    "exam_tag": "jee-advanced",
+    "tags": [
+      "jee-advanced",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "official",
+    "source_site": "jeeadv.ac.in",
+    "source_page_url": "https://jeeadv.ac.in/",
+    "pdf_url": "https://web.archive.org/web/20250518172501id_/https://jeeadv.ac.in/documents/p2_english.pdf",
+    "official_key_url": "https://web.archive.org/web/20250602022251id_/https://jeeadv.ac.in/documents/p2_solutions_final.pdf",
+    "key_join_strategy": "jee_advanced_key_pdf",
+    "key_join_notes": "JEE Advanced final keys are per-paper PDFs, not NTA Question-ID tables"
+  },
+  "probe": {
+    "sha256": "5fbeb582cf000e3edbad36bfcf9a1ed831a46d1f8dfd5a24213e3a5c32925301",
+    "page_count": 21,
+    "text_chars": 30308,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 9,
+    "cache_path": "scratch/nta_pdf_cache/jee-advanced-2025-paper-2.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": "https://web.archive.org/web/20250602022251id_/https://jeeadv.ac.in/documents/p2_solutions_final.pdf",
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 2,
+  "defects": [
+    "3 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 3, 2]",
+    "2/2 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "for some non-zero real numbers 𝑥, 𝑦,  and 𝑧, \nfor which there is a 2 × 2 matrix 𝑅 with all entries being non-zero real numbers, such that \n𝑄𝑅= 𝑅𝑃 .  \n \nThen which of the following statements is (are) TRUE?",
+      "options": {
+        "A": "The determinant of 𝑄−2𝐼 is zero",
+        "B": "The determinant of 𝑄−6𝐼 is 12",
+        "C": "The determinant of 𝑄−3𝐼 is 15",
+        "D": "𝑦𝑧= 2 JEE (Advanced) 2025 Paper 2 4/6 Q.6 Let 𝑆 denote the locus of the mid-points of those chords of the parabola 𝑦2 = 𝑥 , such that the area of the region enclosed between the parabola and the chord is 4 3 . Let ℛ denote the region lying in the first quadrant, enclosed by the parabola 𝑦2 = 𝑥 , the curve 𝑆, and the lines 𝑥= 1 and 𝑥= 4 . Then which of the following statements is (are) TRUE?"
+      },
+      "page_start": 3,
+      "page_end": 5,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If a bulb is chosen randomly from the bulbs produced by 𝑀3, then the probability that it is defective \nis ___________. \nQ.12  Consider the vectors \n𝑥⃗= 𝑖̂ + 2𝑗̂ + 3𝑘̂ ,\n𝑦⃗= 2𝑖̂ + 3𝑗̂ + 𝑘̂ ,\nand      𝑧⃗= 3𝑖̂ + 𝑗̂ + 2𝑘̂ .  \n \nFor two distinct positive real numbers 𝛼 and 𝛽, define \n \n𝑋⃗= 𝛼𝑥⃗+ 𝛽𝑦⃗−𝑧⃗ ,\n𝑌⃗⃗= 𝛼𝑦⃗+ 𝛽𝑧⃗−𝑥⃗,\nand     𝑍⃗= 𝛼𝑧⃗+ 𝛽𝑥⃗−𝑦⃗ .   \n \nIf the vectors 𝑋⃗, 𝑌⃗⃗, and 𝑍⃗ lie in a plane, then the value of 𝛼+ 𝛽−3 is_____________. \n \n \n \nSECTION 3 (Maximum Marks: 32) \n \n• \nThis section contains  EIGHT (08) questions. \n• \nThe answer to each question is a NUMERICAL VALUE. \n• \nFor each question, enter the correct numerical value of the answer using the mouse and the on-\nscreen virtual numeric keypad in the place designated to enter the answer.  \n• \nIf the numerical value has more than two decimal places, truncate/round-off the value to TWO \ndecimal places.  \n• \nAnswer to each question will be evaluated according to the following marking scheme: \nFull Marks \n:  +4 If ONLY the correct numerical value is entered in the designated place; \n       Zero Marks        :   0      In all other cases. \n \n\nJEE (Advanced) 2025 \n \n                               Paper 2 \n \n6/6\nQ.13  For a non-zero complex number 𝑧, let arg(𝑧) denote the principal argument of 𝑧, with                      \n−𝜋< arg(𝑧) ≤𝜋.  Let 𝜔 be the cube root of unity for which  0 < arg(𝜔) < π. Let  \n \n𝛼= arg ( ∑(−𝜔)𝑛\n2025\n𝑛=1\n) . \n \nThen the value of  \n 3𝛼 \n𝜋  is ________________. \nQ.14  Let ℝ denote the set of all real numbers. Let 𝑓: ℝ→ℝ and 𝑔: ℝ→(0, 4) be functions defined by \n \n𝑓(𝑥) = log𝑒(𝑥2 + 2𝑥+ 4) ,   and  𝑔(𝑥) =\n4 \n1 + 𝑒−2𝑥  . \n \nDefine the composite function 𝑓∘𝑔−1 by (𝑓∘𝑔−1) (𝑥) = 𝑓(𝑔−1(𝑥)),  where 𝑔−1 is the inverse of \nthe function 𝑔.   \n \nThen the value of the derivative of the composite function 𝑓∘𝑔−1  at 𝑥= 2  is ______________. \n \n \n \n \nQ.15  Let  \nα =\n1\nsin 60∘ sin 61∘ + \n1\nsin62∘ sin 63∘ + ⋯ +\n1\nsin 118∘ sin 119∘  . \n \nThen the value of  \n( cosec 1∘\nα\n)\n2\n \nis ______________. \n \n \n \nQ.16  If \n𝛼= ∫\ntan−1 𝑥\n2𝑥2 −3𝑥+ 2\n2\n1\n2\n 𝑑𝑥 , \n \nthen the value of √7 tan (\n2𝛼 √7\n𝜋)  is _____________. \n \n(Here, the inverse trigonometric function tan−1 𝑥 assumes values in (−\n𝜋\n2 ,\n𝜋",
+      "options": {
+        "B": ".) END OF THE QUESTION PAPER JEE (Advanced) 2025 Paper 2 1/9 SECTION 1 (Maximum Marks: 12) • This section contains FOUR (04) questions. • Each question has FOUR options (A), (B), (C) and (D). ONLY ONE of these four options is the correct"
+      },
+      "page_start": 5,
+      "page_end": 21,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "options_count_1",
+        "possible_embedded_answer_marker",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    }
+  ]
+}

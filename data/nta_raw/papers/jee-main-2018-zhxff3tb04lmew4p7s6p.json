@@ -1,0 +1,670 @@
+{
+  "paper_id": "jee-main-2018-zhxff3tb04lmew4p7s6p",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2018-zhxff3tb04lmew4p7s6p",
+    "exam": "jee-main",
+    "year": 2018,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2018/jee-main-%E2%80%93-paper-i-set-d/93830",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/zHXfF3Tb04lMEW4p7S6p",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "14d47190e6b528642efc137335ce289922238c705550beda66757753a192a0fd",
+    "page_count": 60,
+    "text_chars": 44861,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 87,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2018-zhxff3tb04lmew4p7s6p.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 20,
+  "defects": [
+    "111 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 3, 5, 14, 1, 16, 18, 20, 23, 30, 31, 34, 36, 39, 0]",
+    "20/20 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If sum of all the solution of equation \n1\n8cos . cos\n.cos\n1\n6\n6\n2\nx\nx\nx\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n in [0, ]\nis \nk,then k is equal to : \n(5) \n20\n9\n(6) \n2\n3\n(7) \n2\n3\n(8) \n8\n9\n\nJEE Mains 2018 Mathematics",
+      "options": null,
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": [
+        "no_options_found",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Let\n2\n2\n1\n( )\nf x\nx\nx\n\n\n and \n1\n( )\ng x\nx\nx\n\n\n,\n\n\n1,0,1\nx\nR\n\n\n. If \n( )\n( )\n( )\nf x\nh x\ng x\n\n, then the local \nminimum value of value of ( )\nh x is :",
+      "options": {
+        "A": "2 2",
+        "B": "3",
+        "C": "3 ",
+        "D": "2 2  JEE Mains 2018 Mathematics   2 0 2 Local maxima local minima Local minimum value occurs at t 2 2 Local minimum value h 2 2 2 2 2             "
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The integral\n\n\n5\n3\n2\n3\n2\n5\n2\n2\nsin\ncos\nsin\nsin\ncos\ncos\n2\nsin\ncos\nx\nx\nx\nx\nx\nx\nx\nx\ndx\n\n\n\n\n is equal to :",
+      "options": {
+        "A": "3 1 1 cot c x   ",
+        "B": "  3 1 3 1 tan c x  ",
+        "C": "  3 1 3 1 tan c x   ",
+        "D": "3 1 1 cot c x    JEE Mains 2018 Mathematics"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": [
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A bag contains 4 red and 6 black v balls. A ball is drawn at random from the bag, its colour\nis observed and this ball along with two additional balls of the same colour is returned to the\nbag. If now a ball is drawn at random from the bag, then probability that this drawn ball is\nred, is:",
+      "options": {
+        "A": "3 4",
+        "B": "3 10",
+        "C": "2 5",
+        "D": "1 5 JEE Mains 2018 Mathematics JEE Mains 2018 Mathematics         2 2 107 101 2 101 214 2 1 3 , 2 1 x and                             14. PQR is a triangular park with PQ=PR=200 m. AT.V. tower stands at the mid-point of QR. If the angle of elevation of the top of the tower at P,Q and R are respectively 0 45 , 0 30 and 0 30 then the height of tower (in m) is :"
+      },
+      "page_start": 7,
+      "page_end": 27,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "In an a.c. circuit, the instantaneous e.m.f. and current are given by e = 100 sin 30 t\n20sin 30\n4\ni\nt\n\n\n\n\n\n\n\n\n\n. In one cycle of a.c., the average power consumed by the circuit and the \nwattless current are, respectively :",
+      "options": {
+        "A": "50, 0",
+        "B": "50, 10",
+        "C": "1000 ,10 2",
+        "D": "50 ,0 2 JEE Mains 2018 Physics cos 100 20 cos 4 2 2 2000 2 2 1000 2 cos 20 1 2 2 10 qv rms rms w rms P I watt w I I A                        Hence the Solution is Option (3)"
+      },
+      "page_start": 27,
+      "page_end": 28,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "An EM wave from air enters a medium. The electric fields are\n1\n01ˆcos 2\nz\nE\nE x\nv\nt\nc\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n in \nair and \n\n\n2\n02 ˆcos\n2\nE\nE x\nk\nz\nct\n\n\n\n\n\nin medium, where the wave number k and frequency 𝜐 refer to\ntheir values in air. The medium is non-magnetic. If \n1r\nand \n2r\n\nrefer to relative permitivities of air\nand medium respectively, which of the following options is correct ?",
+      "options": {
+        "A": "1 2 1 2 r r  ",
+        "B": "1 2 4 r r  ",
+        "C": "1 2 2 r r  ",
+        "D": "1 2 1 4 r r   JEE Mains 2018 Physics Volume in medium 2 = C/2 1 0 1 r C    2 0 1 2 r C    2 1 2 r r     1 2 1 4 r r     Hence the Solution is Option (4)"
+      },
+      "page_start": 28,
+      "page_end": 29,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 43,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A telephonic communication service is working at carrier frequency of 10 GHz. Only 10% of\nit is utilized for transmission. How many telephonic channels can be transmitted simultaneously\nif each channel requires a bandwidth of 5 kHz ?",
+      "options": {
+        "A": "6 2 10 ",
+        "B": "3 2 10 ",
+        "C": "4 2 10 ",
+        "D": "5 2 10  JEE Mains 2018 Physics So, 10 3 3 3 30 4 1.2 9.27 10 2.7 10 5.85 10 / 5.85 10 , 1.2 5 cm m y m s So kHz                  Hence the Solution is Option (2)"
+      },
+      "page_start": 29,
+      "page_end": 30,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "It is found that if a neutron suffers an elastic collinear collision with deuterium at rest,\nfractional loss of its energy is pd; while for its similar collision with carbon nucleus at rest,\nfractional loss of energy is pc. The values of pd and pc are respectively :",
+      "options": {
+        "A": "(0, 1)",
+        "B": "(.89, .28)",
+        "C": "(.28, .89)",
+        "D": "(0, 0) Solution: U1 , U2=0 Since collision is elastic,    1 1 2 1 2 1 1 2 2 1 1 2 1 1 2 2 , 0 ............. u M M M M M M But u M M i u M M            Fractional loss in kinetic energy of neutron, 2 2 1 1 1 1 2 1 1 2 1 1 1 1 2 2 1 2 1 M u M M u u           So, A.TQ; Set:D JEE Mains 2018 Physics 2 2 1 2 8 1 0.89 1 2 9 1 12 1 0.28 1 12 d c P P                      Hence the Solution is Option (2)"
+      },
+      "page_start": 30,
+      "page_end": 31,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "The density of a material in the shape of a cube is determines by measuring three sides of the\ncube and its mass. If the relative errors in measuring the mass and length are respectively 1.5%\nand 1%, the maximum error in determining the density is :",
+      "options": {
+        "A": "6%",
+        "B": "2.5%",
+        "C": "3.5%",
+        "D": "4.5% JEE Mains 2018 Physics   1 1 2/3 1/3 1 1 2 300 300 189 4 1.6 i f w r r i i f f i f f nR T T d r TV T V T T T k                   Since gas undergoes expensed. , 0 & 0. w q u w u So d d d d d      Hence the Solution is Option (4)"
+      },
+      "page_start": 31,
+      "page_end": 32,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "A solid sphere of radius r made of a soft material of bulk modulus K is surrounded by a\nliquid in a cylindrical container. A massless  piston of area a floats on the surface of the liquid,\ncovering entire cross section of cylindrical container. When a mass m is placed on the surface of\nthe piston to compress the liquid, the fractional decrement in the radius of the sphere, dr\nr\n\n\n\n\n\n\n is :",
+      "options": {
+        "A": "mg Ka",
+        "B": "Ka mg",
+        "C": "3 Ka mg",
+        "D": "3 mg Ka Solution: Bulk Modulus, Set:D JEE Mains 2018 Physics   3 / 4 , 3 3 3 3 P K V V For sphere V r V r V r r P Mg r K Ka              Hence the Solution is Option (4)"
+      },
+      "page_start": 32,
+      "page_end": 33,
+      "parse_flags": [
+        "numbering_restart_segment_3"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "A parallel plate capacitor of capacitance 90 pF is connected to a battery of emf 20 V. If a\ndielectric material constant K = 5\n3\n is inserted between the plates, the magnitude of the induced \ncharge will be :",
+      "options": {
+        "A": "0.9 n C",
+        "B": "1.2 n C",
+        "C": "0.3 n C",
+        "D": "2.4 n C JEE Mains 2018 Physics"
+      },
+      "page_start": 33,
+      "page_end": 35,
+      "parse_flags": [
+        "numbering_restart_segment_3",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 52,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "The mass of a hydrogen molecule is \n27\n3.32 10\n\nkg. If 1023 hydrogen molecules strike, per \nsecond, a fixed wall of area 2 cm2 at an angle of 450 to the normal, and rebound elastically with a \nspeed of 103 m/s, then the pressure on the wall is nearly :",
+      "options": {
+        "A": "2 2 4.70 10 / N m ",
+        "B": "3 2 2.35 10 / N m ",
+        "C": "3 2 4.70 10 / N m ",
+        "D": "2 2 2.35 10 / N m  JEE Mains 2018 Physics   27 3 23 4 3 2 2 cos45 2 cos45 , 1 2 3.32 10 10 10 2 Pr 2 10 1 2.35 10 / o o mv mv N So Force t essure P N m                Hence the Solution is Option (2)"
+      },
+      "page_start": 35,
+      "page_end": 36,
+      "parse_flags": [
+        "numbering_restart_segment_4"
+      ]
+    },
+    {
+      "qno": 53,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "All the graphs below are intended to represent the same motion. One of them does it\nincorrectly. Pick it up.",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "JEE Mains 2018 Physics"
+      },
+      "page_start": 36,
+      "page_end": 38,
+      "parse_flags": [
+        "numbering_restart_segment_4",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 56,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "In a potentiometer experiment, it is found that no current passes through the galvanometer\nwhen the terminals of the cell are connected across 52 cm of the potentiometer wire. If the cell is\nshunted by a resistance of 5𝛺,  a balance is found when the cell is connected across 40 cm of the\nwire. Find the internal resistance of the cell.",
+      "options": {
+        "A": "2.5𝛺",
+        "B": "1𝛺",
+        "C": "1.5𝛺",
+        "D": "2𝛺 JEE Mains 2018 Physics 1 2 1 52 1 5 40 12 5 40 1.5 l r R l                      Hence the Solution is Option (3)"
+      },
+      "page_start": 38,
+      "page_end": 39,
+      "parse_flags": [
+        "numbering_restart_segment_5"
+      ]
+    },
+    {
+      "qno": 57,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "If the series limit frequency of the Lyman series is 𝜐L , then the series limit frequency of the\nPfund series is :",
+      "options": {
+        "A": "25 L v",
+        "B": "25 L v",
+        "C": "16 Lv",
+        "D": "16 L v JEE Mains 2018 Physics JEE Mains 2018 Physics 2 3 2 2 2 2 2 2 2 2 0 K T K mv r r mv K E r K K U r r         Hence the Solution is Option (4)"
+      },
+      "page_start": 39,
+      "page_end": 41,
+      "parse_flags": [
+        "numbering_restart_segment_5"
+      ]
+    },
+    {
+      "qno": 60,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 6,
+      "text": "A silver atom in a solid oscillates in simple harmonic motion in some direction with a\nfrequency of 1012/sec. What is the force constant of the bonds connecting one atom with the\nother ? (Mole wt. of silver = 108 and Avagadro number = 6.02 x 1023 gm mole-1)",
+      "options": {
+        "A": "5.5 N/m",
+        "B": "6.44 N/m",
+        "C": "7.1 N/m",
+        "D": "2.2 N/m JEE Mains 2018 Chemistry"
+      },
+      "page_start": 41,
+      "page_end": 42,
+      "parse_flags": [
+        "numbering_restart_segment_6"
+      ]
+    },
+    {
+      "qno": 61,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 6,
+      "text": "For 1 molal aqueous solution of the following compounds, which one will show the highest \nfreezing point?",
+      "options": {
+        "A": "  2 3 2 3 .3 Co H O Cl H O    ",
+        "B": "  2 3 6 Co H O Cl    ",
+        "C": "  2 2 2 5 . Co H O Cl Cl H O    ",
+        "D": "  2 2 2 4 .2 Co H O Cl Cl H O     JEE Mains 2018 Chemistry         2 2 3 4 3 2 2 6 6 H O Oxidizing agent Fe CN Fe CN O oxiding agent               Hence the answer is option (4). 63. Which of the following compounds will be suitable for Kjeldahl’s method for nitrogen estimation?"
+      },
+      "page_start": 42,
+      "page_end": 45,
+      "parse_flags": [
+        "numbering_restart_segment_6",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 67,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "The increasing order of basicity of the following compounds is :",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "page_start": 45,
+      "page_end": 46,
+      "parse_flags": [
+        "numbering_restart_segment_7",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 68,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "Which of the following lines correctly show the temperature dependence of equilibrium \nconstant K, for an exothermic reaction?",
+      "options": {
+        "A": "A and D",
+        "B": "A and B",
+        "C": "B and C",
+        "D": "C and D JEE Mains 2018 Chemistry"
+      },
+      "page_start": 46,
+      "page_end": 47,
+      "parse_flags": [
+        "numbering_restart_segment_7"
+      ]
+    },
+    {
+      "qno": 69,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "How long (approximate) should water be electrolysed by passing through 100 amperes \ncurrent so that the oxygen released can completely burn 27.66 g of diborane? \n(Atomic weight of B = 10.8 u)",
+      "options": {
+        "A": "1.6 hours",
+        "B": "6.4 hours",
+        "C": "0.8 hours",
+        "D": "3.2 hours JEE Mains 2018 Chemistry"
+      },
+      "page_start": 47,
+      "page_end": 60,
+      "parse_flags": [
+        "numbering_restart_segment_7",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    }
+  ]
+}

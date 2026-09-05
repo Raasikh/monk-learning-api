@@ -1,0 +1,722 @@
+{
+  "paper_id": "jee-main-2018-ykk8o9bz8lv0a8yjznyb",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2018-ykk8o9bz8lv0a8yjznyb",
+    "exam": "jee-main",
+    "year": 2018,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2018/jee-main-%E2%80%93-paper-i-set-c/93831",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/yKk8o9Bz8lv0A8YjzNYB",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "50a2761f8faa337234cb5d93b7765590e8994907284fc55867d66cd0879587f8",
+    "page_count": 48,
+    "text_chars": 41952,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 70,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2018-ykk8o9bz8lv0a8yjznyb.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 23,
+  "defects": [
+    "108 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 5, 7, 9, 11, 23, 29, 32, 34, 36, 6, 5, 6, 57, 61]",
+    "21/23 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following salts is the most basic in aqueous solution?",
+      "options": {
+        "A": "CH3COOK",
+        "B": "FeCl3",
+        "C": "Pb(CH3COO)2",
+        "D": "Al(CN)3 Solution: CH3COOK is a salt of weak acid and strong base Hydrolysis of potassium acetate gives strong base KOH Hence the answer is option (1)."
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following compounds will be suitable for Kjeldahl’s method for nitrogen \nestimation?",
+      "options": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "JEE Mains 2018 Set:C Nitro compounds, A2O compounds & Nitrogen part of the aromatic ring will not give positive result for Kjeldahl’s method. Aniline is the best suitable to estimate nitrogen using Kjeldahl’s method. Hence the answer is option (1)."
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following are Lewis acids ?",
+      "options": {
+        "A": "AlCl3 and SiCl4",
+        "B": "PH3 and SiCl4",
+        "C": "BCl3 and AlCl3",
+        "D": "PH3 and BCl3 JEE Mains 2018 Set:C JEE Mains 2018 Set:C   1 2 2 2 . 2 2 1 2 2 2 2 20 2 0.1 0.2 0.2 5 . 0.1 1.2 10 0.1 0.04 3 10 ka ka H S H S x x ka ka S S                       Hence the answer is option (1). 7. The combustion of benzene (1) gives CO2(g) and H2O(I). Given that heat of combustion of benzene at constant volume is -3263.9 kJ mol-1 at 250 C; heat of combustion (in kJ mol-1) of benzene at constant pressure will be :"
+      },
+      "page_start": 2,
+      "page_end": 22,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Two sets A and B are as under : \n \nA={(a, b)  R\nR\n\n: \n5\n1\na \n and \n5\n1\nb \n}; \n \nB={(a, b)  R\nR\n\n: \n2\n2\n4(\n6)\n9(\n5)\n36\na\nb\n\n\n\n\n}. Then :",
+      "options": {
+        "A": "A B ",
+        "B": "A B  (an empty set",
+        "C": "neither A B  nor B A  )",
+        "D": "B A "
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "From 6 different novels and 3 different dictionaries, 4 novels and 1 dictionary are to \nbe selected and arranged in a row on a shelf so that the dictionary is always in the \nmiddle. The number of such arrangements is :",
+      "options": {
+        "A": "less than 500",
+        "B": "at least 500 but less than 750",
+        "C": "at least 750 but less than 1000",
+        "D": "at least 1000"
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 43,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Let \n2\n2\n1\n( )\nf x\nx\nx\n\n\n and \n1\n( )\ng x\nx\nx\n\n\n,\n\n\n1,0,1\nx\nR\n\n\n. If \n( )\n( )\n( )\nf x\nh x\ng x\n\n, then the local \nminimum value of value of ( )\nh x is :",
+      "options": {
+        "A": "-3",
+        "B": "2 2 ",
+        "C": "2 2",
+        "D": "3"
+      },
+      "page_start": 22,
+      "page_end": 22,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 44,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "For each t  R, let [t] be the greatest integer less than or equal to t. Than \n0\n1\n2\n15\nlim\n......\nx\nx\nx\nx\nx\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "options": {
+        "A": "is equal to 50",
+        "B": "is equal to 120 JEE Mains 2018 Set:C",
+        "C": "does not exist (in R)",
+        "D": "is equal to 0"
+      },
+      "page_start": 22,
+      "page_end": 23,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The value of \n2\n2\nx\n2\nsin x\n1+2\ndx\n\n\n\n\n is:",
+      "options": {
+        "A": "2 ",
+        "B": "4",
+        "C": "4 ",
+        "D": "8 "
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A bag contains 4 red and 6 black balls. A ball is drawn at random from the bag, its \ncolour is observed and this ball along with two additional balls of the same colour is \nreturned to the bag. If now a ball is drawn at random from the bag, then probability that \nthis drawn ball is red, is:",
+      "options": {
+        "A": "2 5",
+        "B": "1 5",
+        "C": "3 4",
+        "D": "3 10"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 47,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The length of the projection of the line segment joining the points (5, -1, 4) and (4, -\n1, 3) on the plane, x + y + z = 7 is :",
+      "options": {
+        "A": "2 3",
+        "B": "1 3",
+        "C": "2 3",
+        "D": "2 3 JEE Mains 2018 Set:C"
+      },
+      "page_start": 23,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If sum of all the solution of equation \n1\n8cos . cos\n.cos\n1\n6\n6\n2\nx\nx\nx\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n in \n[0, ]\nis k,then k is equal  to :",
+      "options": {
+        "A": "13 9",
+        "B": "8 9",
+        "C": "20 9",
+        "D": "2 3"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "A straight line through a fixed point (2, 3) intersects the coordinate axes at distinct \npoints P and Q. If O is the origin and the rectangle OPRQ is completed, then the locus of \nR is:",
+      "options": {
+        "A": "2 3 x y xy  ",
+        "B": "3 2 x y xy  ",
+        "C": "3 2 6 x y xy  ",
+        "D": "3 2 6 x y   JEE Mains 2018 Set:C"
+      },
+      "page_start": 24,
+      "page_end": 26,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 53,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "Let S={t R:f(x)= x • (\n1)sin\nx\ne\nx\n\n is not differentiable at t}. Then the set S is \nequal to:",
+      "options": {
+        "A": "{0}",
+        "B": "{ } ",
+        "C": "{0, } ",
+        "D": "(an empty set)"
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 54,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "If  \n4\n2\n2\n2\n4\n2\n2\n2\n4\nx\nx\nx\nx\nx\nx\nx\nx\nx\n\n\n\n=\n2\n(\n)(\n)\nA\nBx x\nA\n\n\n, then the ordered pair (A, B) is equal to :",
+      "options": {
+        "A": "(-4, 3)",
+        "B": "(-4, 5)",
+        "C": "(4, 5)",
+        "D": "(-4, -5)"
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 55,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "The Boolean expression \n(\n)\n(\n)\np\nq\np\nq\n\n\n\nis equivalent to:",
+      "options": {
+        "A": "p",
+        "B": "q",
+        "C": "q",
+        "D": "p JEE Mains 2018 Set:C 57. Let S= { : 0 x R x   and 2 3 ( 6) 6 0} x x x      . Then S :"
+      },
+      "page_start": 26,
+      "page_end": 34,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 71,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "It is found that if a neutron suffers an elastic collinear collision with deuterium at rest, \nfractional loss of its energy is pd; while for its similar collision with carbon nucleus at rest, \nfractional loss of energy is pc. The values of pd and pc are respectively :",
+      "options": {
+        "A": "(.28, .89)",
+        "B": "(0, 0)",
+        "C": "(0, 1)",
+        "D": "(.89, .28) Solution: U1 , U2=0 Since collision is elastic,    1 1 2 1 2 1 1 2 2 1 1 2 1 1 2 2 , 0 ............. u M M M M M M But u M M i u M M            Fractional loss in kinetic energy of neutron, 2 2 1 1 1 1 2 1 1 2 1 1 1 1 2 2 1 2 1 M u M M u u           So, A.TQ; 2 2 1 2 8 1 0.89 1 2 9 1 12 1 0.28 1 12 d c P P                      Hence the Solution is Option (4)"
+      },
+      "page_start": 34,
+      "page_end": 34,
+      "parse_flags": [
+        "numbering_restart_segment_3"
+      ]
+    },
+    {
+      "qno": 72,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "The dipole moment of a circular loop carrying a current I, is m and the magnetic field at \nthe centre of the loop is B1. When the dipole moment is doubled by keeping the current \nconstant, the magnetic field at the centre of the loop is B2. The ratio \n1\n2\nB\nB\nis :",
+      "options": {
+        "A": "3",
+        "B": "2",
+        "C": "1 2",
+        "D": "2 JEE Mains 2018 Set:C 0 2 2 1 2 2 2 2 , 2 f f i i f i f i I B R M I r M M I r M r r r B So B r              Hence the Solution is Option (2)"
+      },
+      "page_start": 34,
+      "page_end": 35,
+      "parse_flags": [
+        "numbering_restart_segment_3"
+      ]
+    },
+    {
+      "qno": 73,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "In a potentiometer experiment, it is found that no current passes through the galvanometer \nwhen the terminals of the cell are connected across 52 cm of the potentiometer wire. If the \ncell is shunted by a resistance of 5𝛺,  a balance is found when the cell is connected across 40 \ncm of the wire. Find the internal resistance of the cell.",
+      "options": {
+        "A": "1.5𝛺",
+        "B": "2𝛺",
+        "C": "2.5𝛺",
+        "D": "1𝛺 JEE Mains 2018 Set:C"
+      },
+      "page_start": 35,
+      "page_end": 42,
+      "parse_flags": [
+        "numbering_restart_segment_3",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 83,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "A particle is moving with a uniform speed in a circular orbit of radius R in a central force \ninversely proportional to the nth power of R. If the period of rotation of the particle is T, then :",
+      "options": {
+        "A": "1 2 n T R  ",
+        "B": " 1 /2 n T R  ",
+        "C": "/2 n T R ",
+        "D": "3/2 T R  for any n. JEE Mains 2018 Set:C"
+      },
+      "page_start": 42,
+      "page_end": 43,
+      "parse_flags": [
+        "numbering_restart_segment_4"
+      ]
+    },
+    {
+      "qno": 84,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "If the series limit frequency of the Lyman series is 𝜐L , then the series limit frequency of \nthe Pfund series is :",
+      "options": {
+        "A": "16 Lv",
+        "B": "16 L v",
+        "C": "25 L v",
+        "D": "25 Lv JEE Mains 2018 Set:C cos 100 20 cos 4 2 2 2000 2 2 1000 2 cos 20 1 2 2 10 qv rms rms w rms P I watt w I I A                        Hence the Solution is Option (1) 86. Two moles of an ideal monoatomic gas occupies a volume V at 270 C. The gas expands adiabatically to a volume 2 V. Calculate (a) the final temperature of the gas and (b) change in its internal energy."
+      },
+      "page_start": 43,
+      "page_end": 45,
+      "parse_flags": [
+        "numbering_restart_segment_4",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 88,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "A granite  rod of 60 cm length is clamped at its middle point and is set into longitudinal \nvibrations. The density of granite is \n3\n2.7 10\n\nkg/m3 and its young’s modulus is \n10\n9.27 10\n\nPa. \nWhat will be the fundamental frequency of the longitudinal vibrations ?",
+      "options": {
+        "A": "2.5 kHz",
+        "B": "10 kHz",
+        "C": "7.5 kHz",
+        "D": "5 kHz JEE Mains 2018 Set:C 10 3 3 3 30 4 1.2 9.27 10 2.7 10 5.85 10 / 5.85 10 , 1.2 5 cm m y m s So kHz                  Hence the Solution is Option (4)"
+      },
+      "page_start": 45,
+      "page_end": 46,
+      "parse_flags": [
+        "numbering_restart_segment_5"
+      ]
+    },
+    {
+      "qno": 89,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "The mass of a hydrogen molecule is \n27\n3.32 10\n\nkg. If 1023 hydrogen molecules strike, per \nsecond, a fixed wall of area 2 cm2 at an angle of 450 to the normal, and rebound elastically \nwith a speed of 103 m/s, then the pressure on the wall is nearly :",
+      "options": {
+        "A": "3 2 4.70 10 / N m ",
+        "B": "2 2 2.35 10 / N m ",
+        "C": "2 2 4.70 10 / N m ",
+        "D": "3 2 2.35 10 / N m  JEE Mains 2018 Set:C"
+      },
+      "page_start": 46,
+      "page_end": 48,
+      "parse_flags": [
+        "numbering_restart_segment_5",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 90,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "",
+      "options": {
+        "C": "JEE (Main) 2018 BOOKLET CODE : C"
+      },
+      "page_start": 48,
+      "page_end": 48,
+      "parse_flags": [
+        "numbering_restart_segment_5",
+        "options_count_1",
+        "empty_stem"
+      ]
+    }
+  ]
+}

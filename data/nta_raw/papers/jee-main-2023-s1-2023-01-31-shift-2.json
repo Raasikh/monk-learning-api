@@ -14,7 +14,8 @@
     "session": 1,
     "exam_date": "2023-01-31",
     "shift": 2,
-    "paper_type": "question_paper_with_solutions",
+    "paper_type": "question_paper",
+    "subject": null,
     "language": "English",
     "notes": "",
     "exam_tag": "jee-main",
@@ -25,12 +26,12 @@
       "entrance-exam"
     ],
     "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2023-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/152738-31-01-2023-Mathematics_Paper+with+Answer_Evening.pdf",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2023/jee-main-31-jan-2023-paper-shift-2/1020742",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/2ASz395fHDM5YdFs4flz",
     "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2023/02/2023020697.pdf",
     "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
   },
   "probe": {
     "sha256": "65a42e89c8f6beaaf02883dfd04235d2f3dc62c03fc0ec6f9e276adc4fa40b97",

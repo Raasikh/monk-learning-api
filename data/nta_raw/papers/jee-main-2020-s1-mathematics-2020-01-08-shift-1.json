@@ -1,0 +1,270 @@
+{
+  "paper_id": "jee-main-2020-s1-mathematics-2020-01-08-shift-1",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2020-s1-mathematics-2020-01-08-shift-1",
+    "exam": "jee-main",
+    "year": 2020,
+    "session": 1,
+    "exam_date": "2020-01-08",
+    "shift": 1,
+    "paper_type": "question_paper",
+    "subject": "Mathematics",
+    "language": "English",
+    "notes": "",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2020/jee-main-8-jan-2020-maths-paper-shift-1/243272",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/cBOKSjgOF2PegcYG4XWW",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "8f39a09448542a0a525213d02aa4478e9729440ef569b994f5bc0b046453f668",
+    "page_count": 15,
+    "text_chars": 13329,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 25,
+    "answer_marker_hits": 25,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2020-s1-mathematics-2020-01-08-shift-1.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 8,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 9,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 15,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 16,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 22,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": null
+        }
+      },
+      {
+        "qno": 23,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 1
+  },
+  "question_count": 6,
+  "defects": [
+    "13 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 3, 5, 2, 11, 6, 13, 18, 2, 20, 2, 2, 25]",
+    "6/6 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If 𝐴𝐵𝐶 is a triangle whose vertices are 𝐴(1, −1), 𝐵(0, 2), 𝐶(𝑥′, 𝑦′) and area of Δ𝐴𝐵𝐶 is \n5,  and 𝐶(𝑥′, 𝑦′) lies on 3𝑥+ 𝑦−4𝜆= 0, then",
+      "options": {
+        "A": "𝜆= 3",
+        "B": "𝜆= 4",
+        "C": "𝜆= −3",
+        "D": "𝜆= 2"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Shortest distance between the lines \n𝑥−3\n1 =\n𝑦−8\n4 =\n𝑧−3\n22 ,   \n𝑥+3\n1 =\n𝑦+7\n1 =\n𝑧−6\n7  is",
+      "options": {
+        "A": "3√30",
+        "B": "√30",
+        "C": "2√30",
+        "D": "4√30"
+      },
+      "page_start": 6,
+      "page_end": 9,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "The system of equation  3𝑥+ 4𝑦+ 5𝑧= 𝜇 \n    𝑥+ 2𝑦+ 3𝑧= 1    \n  4𝑥+ 4𝑦+ 4𝑧= 𝛿  \n \nis inconsistent, then (𝜇, 𝛿) can be",
+      "options": {
+        "A": "(4, 6)",
+        "B": "(1, 0)",
+        "C": "(4, 3)",
+        "D": "(3, 4)"
+      },
+      "page_start": 9,
+      "page_end": 10,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "If volume of parallelepiped whose conterminous edges are   𝑢⃗ = 𝑖̂ + 𝑗̂ + λ 𝑘̂,   \n𝑣 = 2𝑖̂ + 𝑗̂ + 𝑘̂ and    𝑤⃗⃗ = 𝑖̂ + 𝑗̂ + 3𝑘̂ is 1 cubic units. Then, the cosine of angle between 𝑢⃗  \nand 𝑣  is",
+      "options": {
+        "A": "5 3√10",
+        "B": "5 7",
+        "C": "7 6√3",
+        "D": "7 3√3"
+      },
+      "page_start": 10,
+      "page_end": 13,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_1"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "If the curves 𝑦2 = 𝑎𝑥 and 𝑥2 = 𝑎𝑦 intersect each other at 𝐴 and 𝐵 such that the area \nbounded by the curves is bisected by the line 𝑥= 𝑏 (given a > 𝑏> 0) and the area of \ntriangle formed by the lines 𝐴𝐵, 𝑥= 𝑏 and the 𝑥-axis is \n1",
+      "options": {
+        "B": "Then",
+        "A": "𝑎6 + 12𝑎3 + 4 = 0",
+        "C": "𝑎6 −12𝑎3 + 4 = 0",
+        "D": "𝑎6 −12𝑎3 −4 = 0"
+      },
+      "page_start": 13,
+      "page_end": 14,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_2",
+        "duplicate_option_marker_B"
+      ],
+      "embedded_answer": {
+        "raw": null
+      }
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "The sum ∑\n(1 + 2 + 3+. … . + 𝑘)\n20\n𝑘=1\n is _____________.",
+      "options": null,
+      "page_start": 14,
+      "page_end": 15,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "numbering_restart_segment_2",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    }
+  ]
+}

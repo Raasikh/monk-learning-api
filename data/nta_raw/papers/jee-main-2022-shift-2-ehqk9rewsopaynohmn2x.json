@@ -1,0 +1,429 @@
+{
+  "paper_id": "jee-main-2022-shift-2-ehqk9rewsopaynohmn2x",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2022-shift-2-ehqk9rewsopaynohmn2x",
+    "exam": "jee-main",
+    "year": 2022,
+    "session": null,
+    "exam_date": null,
+    "shift": 2,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/Ehqk9rEwSopaynOhmN2x",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "dce6a1bcb5593d92b0f63eddb370952871276737f69a32867250202920f6b1a7",
+    "page_count": 9,
+    "text_chars": 9655,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 24,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-shift-2-ehqk9rewsopaynohmn2x.pdf"
+  },
+  "answer_sheet": {
+    "status": "embedded_unverified",
+    "source": "mirror_pdf_embedded",
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": [
+      {
+        "qno": 3,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 4,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 5,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 6,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 7,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "3",
+          "option": "C",
+          "option_index": 3
+        }
+      },
+      {
+        "qno": 8,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 9,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 10,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "2",
+          "option": "B",
+          "option_index": 2
+        }
+      },
+      {
+        "qno": 11,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "1",
+          "option": "A",
+          "option_index": 1
+        }
+      },
+      {
+        "qno": 12,
+        "question_id": null,
+        "subject": null,
+        "section": null,
+        "answer": {
+          "raw": "4",
+          "option": "D",
+          "option_index": 4
+        }
+      }
+    ]
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {
+    "shift": 2
+  },
+  "question_count": 10,
+  "defects": [
+    "26 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [2, 1, 14, 14, 13, 14, 15, 5, 82, 5, 15, 500, 45, 45, 20]",
+    "10/10 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "How many of following compounds have sulphur atom in two different oxidation state.",
+      "options": {
+        "A": "H2S2O3 (b) H2S2O8 (c) H2S2O7 (d) H2S2O5 [IO-PBC-XVI] M"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "options_count_1"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Identify the correct statement regarding SF4 \n \n \n \n \n[IO-CBO] M",
+      "options": {
+        "A": "It have one lone pair at equatorial position with two lone pair- bond pair repulsion at 90°",
+        "B": "It have one lone pair at axial position with two lone pair-bond pair repulsion at 90°",
+        "C": "It have one lone pair at equatorial position with three lone pair –bond pair repulsion at 90°",
+        "D": "It have one lone pair at axial position with three lone pair – bond pair repulsion at 90°"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following oxide is basic in nature.   \n \n \n \n[IO-PTB] E",
+      "options": {
+        "A": "SiO2",
+        "B": "CaO",
+        "C": "Al2O3",
+        "D": "SO2"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which set of complex ions represent paramagnetic character.  \n \n \n[IO-COR] M \n \n(i) [Fe(CN)6]3– \n(ii) [Fe(CN)6]4– (iii) [Ti(CN)6]3– (iv) [Co(CN)6]3– (v) [Ni(CN)6]4–",
+      "options": {
+        "A": "(i),(ii),(iii)",
+        "B": "(i),(iii),(v)",
+        "C": "(i),(ii),(iii),(iv)",
+        "D": "(iii),(iv)"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In extraction of copper following reaction take place  \n \n \n \n[IO-MTL] E \n \nFeO + SiO2 \n\n\nFeSiO3 \n \nIn which FeO and FeSiO3 act as",
+      "options": {
+        "A": "Flux, Slag",
+        "B": "Slag, Flux",
+        "C": "Gangue, Slag",
+        "D": "Slag, Flux"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "3",
+        "option": "C",
+        "option_index": 3
+      }
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "How many of two following show Cis-Trans isomers  \n \n \n \n[IO-COR] E \n \n(i) CoCl3.4NH3 (ii) CoCl3.5NH3 (iii) CoCl3.6NH3 (iv) CoCl3.3NH3",
+      "options": null,
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "pH of a buffer solution of  \n \n \n \n \n \n \n \nCH3CH2COOH(aq.) & CH3CH2COONa(aq.) is 4.  \n \n \n \n[PC-IEQ] E \n \nthen ratio of \n]\nCOOH\nCH\nCH\n[\n]\nCOO\nCH\nCH\n[\n2\n3\n2\n3\n\n is – \n \nGiven ka = 10–5",
+      "options": {
+        "A": "0.1",
+        "B": "10",
+        "C": "0.2",
+        "D": "20"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A compound contain 8.64 mass % of hydrogen, 74 mass% of carbon and 17.36 mass% of nitrogen and \nhave molecular mass 162. then possible compound is  \n \n \n \n[PC-MOL] E",
+      "options": {
+        "A": "C5H7N",
+        "B": "C10H14N2",
+        "C": "C4H6N2",
+        "D": "C2H3N"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "2",
+        "option": "B",
+        "option_index": 2
+      }
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Using following statements identify correct set of statements \n \n \n[PC-ATS] E \n \n(i) n can have value 1,2,3,4,…… \n(ii) Number of orbital for given value of  is (2 + 1)  \n \n(iii) Value of spin quantum numbers is always \n2\n1\n\n \n \n(iv) For  = 5 total number of orbital is 9",
+      "options": {
+        "A": "(i),(ii),(iii)",
+        "B": "(i),(ii),(iv)",
+        "C": "(i),(ii),(iii),(iv)",
+        "D": "(i),(iii),(iv)"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated"
+      ],
+      "embedded_answer": {
+        "raw": "1",
+        "option": "A",
+        "option_index": 1
+      }
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The value of \n0\nSn\n/\nSn\n2\n4\nE\n\n\nis ___  10-2V  \n \n \n \n \n \n[PC-ECH] M \ngiven \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nV\n15\n.\n0\nE\nV\n14\n.\n0\nE\n0\nSn\n|\nSn\n0\nSn\n|\nSn\n4\n2",
+      "options": null,
+      "page_start": 3,
+      "page_end": 9,
+      "parse_flags": [
+        "embedded_answer_captured",
+        "embedded_answer_truncated",
+        "no_options_found",
+        "possible_text_scramble"
+      ],
+      "embedded_answer": {
+        "raw": "4",
+        "option": "D",
+        "option_index": 4
+      }
+    }
+  ]
+}

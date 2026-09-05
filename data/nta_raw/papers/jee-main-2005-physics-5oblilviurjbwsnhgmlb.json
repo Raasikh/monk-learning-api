@@ -1,0 +1,565 @@
+{
+  "paper_id": "jee-main-2005-physics-5oblilviurjbwsnhgmlb",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2005-physics-5oblilviurjbwsnhgmlb",
+    "exam": "jee-main",
+    "year": 2005,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": "Physics",
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2005/iit-jee-physics-paper-i/81201",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/5obLILviURJbWSNHgmlB",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "494b26b6339fa3e6b3024ef86a5c7e7202d308a42bc6a42ad9f7358e3cdc4951",
+    "page_count": 7,
+    "text_chars": 7723,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": false,
+    "solutions_heading_hits": 0,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2005-physics-5oblilviurjbwsnhgmlb.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 28,
+  "defects": [
+    "1/28 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle moves in a circular path with decreasing speed. Choose the correct statement \n:",
+      "options": {
+        "A": "Angular momentum remains constant",
+        "B": "Acceleration (a) is towards the centre",
+        "C": "Particle moves in a spiral path with decreasing radius",
+        "D": "The direction of angular momentum remains constant"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A block of mass m is at rest under the action of force F against a wall as shown in figure. \nWhich of the following statement is incorrect?",
+      "options": {
+        "A": "f = mg [where f is the frictional force]",
+        "B": "F = N [where N is the normal force]",
+        "C": "F will not produce torque",
+        "D": "N will not produce torque"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A simple pendulum has time period T1. The point of suspension is now moved upward \naccording to the relation y = Kt2, (K = 1 m/s2) where y is the vertical displacement. The \ntime period now becomes T2. The ratio of (T12)/(T22 ) is (g = 10 m/s2).",
+      "options": {
+        "A": "6/5",
+        "B": "5/6",
+        "C": "1",
+        "D": "4/5"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "From a circular disc of radius R and mass 9M, a small disc of radius R/3 is removed from \nthe disc. The moment of inertia of the remaining disc about an axis perpendicular to the \nplane of the disc and passing through O is:",
+      "options": {
+        "A": "4MR2",
+        "B": "40/9 MR2",
+        "C": "10 MR2",
+        "D": "37/9 MR2"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Which of the following sets have different dimensions?",
+      "options": {
+        "A": "Pressure, Young’s modulus, Stress",
+        "B": "Emf, Potential difference, Electric potential",
+        "C": "Heat, Work done, Energy",
+        "D": "Dipole moment, Electric flux, Electric field"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 6,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The given graph shows the variation of velocity with displacement. Which one of the \ngraph given below correctly represents the variation of acceleration displacement?",
+      "options": null,
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": [
+        "no_options_found",
+        "references_figure_not_extracted"
+      ]
+    },
+    {
+      "qno": 7,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Three infinitely long charge sheets are placed as shown in figure. The electric field at \npoint P is :",
+      "options": {
+        "A": "2σ/ε0 k",
+        "B": "-2σ/ε0k",
+        "C": "4σ/ε0 k",
+        "D": "-4σ/ε0 k"
+      },
+      "page_start": 2,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 8,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A photon collides with a stationary hydrogen atom in ground state inelastically. Energy of \nthe colliding photon is 10.2 eV. After a time interval of the order of micro second another \nphoton collides with same hydrogen atom inelastically with an energy of 15 eV. What will be \nobserved by the detector?",
+      "options": {
+        "A": "2 photon of energy 10.2 eV",
+        "B": "2 photon of energy of 1.4 eV",
+        "C": "One photon of energy 10.2 eV and an electron of energy 1.4 eV",
+        "D": "One photon of energy 10.2 eV and another photon of energy 1.4 eV"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 9,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A moving coil galvanometer of resistance 100 W is used as an ammeter using a \nresistance 0.1 W. The maximum deflection current in the galvanometer is 100 mA. Find the \nminimum current in the circuit so that the ammeter shows maximum deflection :",
+      "options": {
+        "A": "100.1 mA",
+        "B": "1000.1 mA",
+        "C": "10.01 mA",
+        "D": "1.01 mA"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 10,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The pressure of a medium is changed from 1.01 × 105 Pa to 1.165 × 105 Pa and \nchange in volume is 0% keeping temperature constant. The Bulk modulus of the medium is \n:",
+      "options": {
+        "A": "204.8 × 105 Pa",
+        "B": "102.4 × 105Pa",
+        "C": "51.2 × 105Pa",
+        "D": "1.55 × 105 Pa"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 11,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An open pipe is in resonance in 2nd harmonic with frequency f1. Now one end of the \ntube is closed and frequency is increased to f2 such that the resonance again occurs in nth \nharmonic. Choose the correct option :",
+      "options": {
+        "A": "n = 3, f2 = 3/4 f1",
+        "B": "n = 3, f2 = 5/4 f1",
+        "C": "n = 5, f2 = 5/4 f1",
+        "D": "n = 5, f2 = 3/4 f1"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 12,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Water of volume 2 litre in a container is heated with a coil of 1kW at 27oC. The lid of \nthe container is open and energy dissipates at rate of 160 J/s. In how much time \ntemperature will rise from 27oC to 77oC [Given specific heat of water is 4.2 kJ/kg] :",
+      "options": {
+        "A": "8 min 20 s",
+        "B": "6 min 2 s",
+        "C": "7 min",
+        "D": "14 min"
+      },
+      "page_start": 3,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 13,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Water is filled in a cylindrical container to a height of 3 m. The ratio of the cross \nsectional area of the orifice and the beaker is 0.1. The square of the speed of the liquid \ncoming out from the orifice is (g = 10 m/s2) :",
+      "options": {
+        "A": "50 m2/s2",
+        "B": "50.5 m2/s2",
+        "C": "51 m2/s2",
+        "D": "52 m2/s2"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 14,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In Young’s double slit experiment intensity at a point is (1/4) of the maximum intensity. \nAngular position of this point is :",
+      "options": {
+        "A": "sin–1 (l/d)",
+        "B": "sin–1 (l/2d)",
+        "C": "sin–1 (l/3d)",
+        "D": "sin–1 (l/4d)"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 15,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "In which of the following process, convection does not take place primarily :",
+      "options": {
+        "A": "sea and land breeze",
+        "B": "boiling of water",
+        "C": "warming of glass of bulb due to filament",
+        "D": "heating air around a furnace"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 16,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A container is filled with water (m = 1.33) upto a height of 33.25 cm. A concave mirror \nis placed 15 cm above the water level and the image of an object placed at the bottom is \nformed 25 cm below the water level. The focal length of the mirror is:",
+      "options": {
+        "A": "10 cm",
+        "B": "15 cm",
+        "C": "20 cm",
+        "D": "25 cm"
+      },
+      "page_start": 4,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Variation of radiant energy emitted by sun, filament of tungsten lamp and welding arc \nas a function of its wavelength is shown in figure. Which of the following option is the \ncorrect match?",
+      "options": {
+        "A": "Sun-T1, tungsten filament-T2, welding arc-T3",
+        "B": "Sun-T2, tungsten filament-T1, welding arc-T3",
+        "C": "Sun-T3, tungsten filament-T2, welding arc-T1",
+        "D": "Sun-T1, tungsten filament-T3, welding arc-T2"
+      },
+      "page_start": 4,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Calorie is defined as the amount of heat required to raise temperature of 1 g of water \nby 1oC and it is defined under which of the following conditions?",
+      "options": {
+        "A": "From 14.5oC to 15.5oCat 760 mm of Hg",
+        "B": "From 98.5oC to 99.5oC at 760 mm of Hg",
+        "C": "From 13.5oC to 14.5oC at 76 mm of Hg",
+        "D": "From 3.5oC to 4.5oC at 76 mm of Hg"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 19,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A convex lens is in contact with concave lens. The magnitude of the ratio of their focal \nlength is 2/3. Their equivalent focal length is 30 cm. What are their individual focal lengths?",
+      "options": {
+        "A": "–75, 50",
+        "B": "–10, 15",
+        "C": "75, 50",
+        "D": "–15, 10"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 20,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Ka  wavelength emitted by an atom of atomic number Z = 11 is l. Find the atomic \nnumber for an atom that emits Ka radiation with wavelength 4l.",
+      "options": {
+        "A": "Z = 6",
+        "B": "Z = 4",
+        "C": "Z = 11",
+        "D": "Z = 44"
+      },
+      "page_start": 5,
+      "page_end": 5,
+      "parse_flags": []
+    },
+    {
+      "qno": 21,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A rigid container with thermally insulated walls contains a coil of resistance 100W, \ncarrying current 1A. Change in internal energy after 5 minute will be:",
+      "options": {
+        "A": "0 kJ",
+        "B": "10 kJ",
+        "C": "20 kJ",
+        "D": "30 kJ"
+      },
+      "page_start": 5,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 22,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A beam of electron is used in an YDSE experiment. The slit width is d. When the \nvelocity of electron is increased, then :",
+      "options": {
+        "A": "no interference is observed",
+        "B": "fringe width increases",
+        "C": "fringe width decreases",
+        "D": "fringe width remains same"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A tuning fork of 512 Hz is used to produce resonance in a resonance tube experiment. \nThe level of water at first resonance is 30.7 cm and at second resonance is 63.2 cm. The \nerror in calculating velocity of sound is:",
+      "options": {
+        "A": "204.1 cm/s",
+        "B": "110 cm/s",
+        "C": "58 cm/s",
+        "D": "80 cm/s"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Find out the value of current through 2 W resistance for the given circuit.",
+      "options": {
+        "A": "5 A",
+        "B": "2 A",
+        "C": "zero",
+        "D": "4 A"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 25,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A 4mF capacitor, a resistance of 2.5 MW is in series with 12 V battery. Find the time \nafter which the potential difference across the capacitor is 3 times the potential difference \nacross the resistor. [Given In (2) = 0.693]",
+      "options": {
+        "A": "13.86 s",
+        "B": "6.93 s",
+        "C": "7 s",
+        "D": "14 s"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 26,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "An infinitely long cylinder is kept parallel to an uniform magnetic field B directed along \npositive z axis. The direction of induced current as seen from the z axis will be :",
+      "options": {
+        "A": "clockwise of the +ve z axis",
+        "B": "anticlockwise of the +ve z axis",
+        "C": "zero",
+        "D": "along the magnetic field"
+      },
+      "page_start": 6,
+      "page_end": 6,
+      "parse_flags": []
+    },
+    {
+      "qno": 27,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "If a star can convert all the He nuclei completely into oxygen nuclei. The energy \nreleased per oxygen nuclei is: [Mass of the nucleus is 4.0026 amu and mass of oxygen \n\n \nnucleus is 15.9994 amu]",
+      "options": {
+        "A": "7.6 MeV",
+        "B": "56.12 MeV",
+        "C": "10.24 MeV",
+        "D": "23.9 MeV"
+      },
+      "page_start": 6,
+      "page_end": 7,
+      "parse_flags": []
+    },
+    {
+      "qno": 28,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A body with area A and temperature T and emissivity e = 0.6 is kept inside a spherical \nblack body. What will be the maximum energy radiated?",
+      "options": {
+        "A": "0.60 eAT4",
+        "B": "0.80 eAT4",
+        "C": "1.00 eAT4",
+        "D": "0.40 eAT4"
+      },
+      "page_start": 7,
+      "page_end": 7,
+      "parse_flags": []
+    }
+  ]
+}

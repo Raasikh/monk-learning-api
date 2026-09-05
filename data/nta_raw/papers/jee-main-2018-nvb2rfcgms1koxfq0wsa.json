@@ -1,0 +1,896 @@
+{
+  "paper_id": "jee-main-2018-nvb2rfcgms1koxfq0wsa",
+  "exam_tag": "jee-main",
+  "tags": [
+    "jee-main",
+    "class-11",
+    "class-12",
+    "entrance-exam"
+  ],
+  "manifest": {
+    "paper_id": "jee-main-2018-nvb2rfcgms1koxfq0wsa",
+    "exam": "jee-main",
+    "year": 2018,
+    "session": null,
+    "exam_date": null,
+    "shift": null,
+    "paper_type": "question_paper",
+    "subject": null,
+    "language": "English",
+    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
+    "exam_tag": "jee-main",
+    "tags": [
+      "jee-main",
+      "class-11",
+      "class-12",
+      "entrance-exam"
+    ],
+    "source_tier": "mirror",
+    "source_site": "www.selfstudys.com",
+    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2018/jee-main-%E2%80%93-paper-i-set-b/93832",
+    "pdf_url": "https://www.selfstudys.com/sitepdfs/nvB2RfCgMS1KoxFQ0WsA",
+    "official_key_url": null,
+    "key_join_strategy": "sequence_within_section",
+    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  },
+  "probe": {
+    "sha256": "233ce5ebd4a184a5fd4789ff198c7b8e0a03d325607b7a84c7eee58e456fb736",
+    "page_count": 49,
+    "text_chars": 42010,
+    "has_text_layer": true,
+    "has_question_ids": false,
+    "includes_solutions": true,
+    "solutions_heading_hits": 70,
+    "answer_marker_hits": 0,
+    "cache_path": "scratch/nta_pdf_cache/jee-main-2018-nvb2rfcgms1koxfq0wsa.pdf"
+  },
+  "answer_sheet": {
+    "status": "unavailable",
+    "source": null,
+    "official_key_url": null,
+    "validation": "not_verified",
+    "entries": []
+  },
+  "format": "generic_mirror",
+  "status": "extracted",
+  "detected_paper_meta": {},
+  "question_count": 33,
+  "defects": [
+    "110 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [7, 10, 13, 26, 29, 6, 6, 5, 1, 5, 5, 61, 68, 71, 2]",
+    "29/33 questions carry parse_flags"
+  ],
+  "questions": [
+    {
+      "qno": 1,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "It is found that if a neutron suffers an elastic collinear collision with deuterium at rest, \nfractional loss of its energy is pd; while for its similar collision with carbon nucleus at rest, \nfractional loss of energy is pc. The values of pd and pc are respectively :",
+      "options": {
+        "A": "(0, 0)",
+        "B": "(0, 1)",
+        "C": "(.89, .28)",
+        "D": "(.28, .89) Solution: U1 , U2=0 Since collision is elastic,    1 1 2 1 2 1 1 2 2 1 1 2 1 1 2 2 , 0 ............. u M M M M M M But u M M i u M M            Fractional loss in kinetic energy of neutron, 2 2 1 1 1 1 2 1 1 2 1 1 1 1 2 2 1 2 1 M u M M u u           So, A.TQ; 2 2 1 2 8 1 0.89 1 2 9 1 12 1 0.28 1 12 d c P P                      Hence the Solution is Option (3)"
+      },
+      "page_start": 1,
+      "page_end": 1,
+      "parse_flags": []
+    },
+    {
+      "qno": 2,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "The mass of a hydrogen molecule is \n27\n3.32 10\n\nkg. If 1023 hydrogen molecules strike, per \nsecond, a fixed wall of area 2 cm2 at an angle of 450 to the normal, and rebound elastically \nwith a speed of 103 m/s, then the pressure on the wall is nearly :",
+      "options": {
+        "A": "2 2 2.35 10 / N m ",
+        "B": "2 2 4.70 10 / N m ",
+        "C": "3 2 2.35 10 / N m ",
+        "D": "3 2 4.70 10 / N m  JEE Mains 2018 Set:B   27 3 23 4 3 2 2 cos45 2 cos45 , 1 2 3.32 10 10 10 2 Pr 2 10 1 2.35 10 / o o mv mv N So Force t essure P N m                Hence the Solution is Option (3)"
+      },
+      "page_start": 1,
+      "page_end": 2,
+      "parse_flags": []
+    },
+    {
+      "qno": 3,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A solid sphere of radius r made of a soft material of bulk modulus K is surrounded by a \nliquid in a cylindrical container. A massless  piston of area a floats on the surface of the \nliquid, covering entire cross section of cylindrical container. When a mass m is placed on the \nsurface of the piston to compress the liquid, the fractional decrement in the radius of the \nsphere, dr\nr\n\n\n\n\n\n\n is :",
+      "options": {
+        "A": "3 mg Ka",
+        "B": "mg Ka",
+        "C": "Ka mg",
+        "D": "3 Ka mg Solution: Bulk Modulus, JEE Mains 2018 Set:B   3 / 4 , 3 3 3 3 P K V V For sphere V r V r V r r P Mg r K Ka              Hence the Solution is Option (1)"
+      },
+      "page_start": 2,
+      "page_end": 3,
+      "parse_flags": []
+    },
+    {
+      "qno": 4,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "Two batteries with e.m.f. 12 V and 13 V are connected in parallel across a load resistor of \n10𝛺. The internal resistances of the two batteries are 1𝛺 and 2𝛺 respectively. The voltage \nacross the load lies between :",
+      "options": {
+        "A": "11.4 V and 11.5 V",
+        "B": "11.7 V and 11.8 V",
+        "C": "11.6 V and 11.7 V",
+        "D": "11.5 V and 11.6 V JEE Mains 2018 Set:B"
+      },
+      "page_start": 3,
+      "page_end": 4,
+      "parse_flags": []
+    },
+    {
+      "qno": 5,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 0,
+      "text": "A particle is moving in a circular path of radius a under the action of an attractive potential \n2\n2\nk\nU\nr\n\n . Its total energy is :",
+      "options": {
+        "A": "Zero",
+        "B": "2 3 2 k a ",
+        "C": "2 4 k a ",
+        "D": "2 2 k a JEE Mains 2018 Set:B To stop the motion,   1 1 2 1 2 5 10 0.15 27.3 m g T m m g m m m m m kg              Hence the nearest Solution is Option (4) 7. If the series limit frequency of the Lyman series is 𝜐L , then the series limit frequency of the Pfund series is :"
+      },
+      "page_start": 4,
+      "page_end": 11,
+      "parse_flags": [
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 17,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "Three concentric metal shells A, B and C of respective radii a, b and c (a < b < c) have \nsurface charge densities \n,\n\n\n\n\nand \n\n respectively. The potential of shell B is :",
+      "options": {
+        "A": "2 2 0 b c a b        ",
+        "B": "2 2 0 b c a c        ",
+        "C": "2 2 0 a b c a        ",
+        "D": "2 2 0 a b c b         JEE Mains 2018 Set:B 0 0 0 2 2 2 0 0 0 2 0 2 2 0 4 4 4 b c A q q q b b c a b c b b c a b c b a b c b                                       Hence the Solution is Option (4)"
+      },
+      "page_start": 11,
+      "page_end": 12,
+      "parse_flags": [
+        "numbering_restart_segment_1"
+      ]
+    },
+    {
+      "qno": 18,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 1,
+      "text": "In a potentiometer experiment, it is found that no current passes through the galvanometer \nwhen the terminals of the cell are connected across 52 cm of the potentiometer wire. If the \ncell is shunted by a resistance of 5𝛺,  a balance is found when the cell is connected across 40 \ncm of the wire. Find the internal resistance of the cell.",
+      "options": {
+        "A": "2𝛺",
+        "B": "2.5𝛺",
+        "C": "1𝛺",
+        "D": "1.5𝛺 JEE Mains 2018 Set:B"
+      },
+      "page_start": 12,
+      "page_end": 16,
+      "parse_flags": [
+        "numbering_restart_segment_1",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 23,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "In a collinear collision, a particle with an initial speed \n0\nstrikes a stationary particle of \nthe same mass. If the final total kinetic energy is 50% greater than the original kinetic energy, \nthe magnitude of the relative velocity between the two particles, after collision, is :",
+      "options": {
+        "A": "0 2 ",
+        "B": "0 2 ",
+        "C": "0 4 ",
+        "D": "0 2 JEE Mains 2018 Set:B Hence the Solution is Option (4)"
+      },
+      "page_start": 16,
+      "page_end": 17,
+      "parse_flags": [
+        "numbering_restart_segment_2"
+      ]
+    },
+    {
+      "qno": 24,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 2,
+      "text": "The dipole moment of a circular loop carrying a current I, is m and the magnetic field at \nthe centre of the loop is B1. When the dipole moment is doubled by keeping the current \nconstant, the magnetic field at the centre of the loop is B2. The ratio \n1\n2\nB\nB\nis :",
+      "options": {
+        "A": "2",
+        "B": "1 2",
+        "C": "2",
+        "D": "3 JEE Mains 2018 Set:B 26. On interchanging the resistances, the balane point of a meter bridge shifts to the left by 10 cm. The resistance of their series combinations is 1 k𝛺. How much was the resistance on the left slot before interchanging the resistances ?"
+      },
+      "page_start": 17,
+      "page_end": 21,
+      "parse_flags": [
+        "numbering_restart_segment_2",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 31,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "If the tangent at (1,7) to the curve \n2\n6\nx\ny\n\n touches  the circle \n2\n2\n16\n12\n0\nx\ny\nx\ny\nc\n\n\n\n\n than the value of c is :",
+      "options": {
+        "A": "85",
+        "B": "95",
+        "C": "195",
+        "D": "185"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": [
+        "numbering_restart_segment_3",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 32,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "If \n1L is the line of intersection of the planes  2\n2\n3\n0,\n0\nx\ny\nz\nx\ny\nz\n\n\n\n\n\n\n and \n2\nL  is the \nline of intersection of the planes \n2\n3\n0,3\n2\n0\nx\ny\nz\nx\ny\nz\n\n\n\n\n\n then the distance of the \norigin from the plane, containing the lane \n1L and \n2\nL , is :",
+      "options": {
+        "A": "1 2 2",
+        "B": "1 2",
+        "C": "1 4 2",
+        "D": "1 3 2"
+      },
+      "page_start": 21,
+      "page_end": 21,
+      "parse_flags": [
+        "numbering_restart_segment_3",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 33,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "If ,\nc\nare the distinct roots, of the equation \n2\n1\n0\nx\nx\n\n, then \n101\n107\n\n\n\nis equal to :",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "-1",
+        "D": "0 JEE Mains 2018 Set:B         2 2 107 101 2 101 214 2 1 3 , 2 1 x and                            "
+      },
+      "page_start": 21,
+      "page_end": 22,
+      "parse_flags": [
+        "numbering_restart_segment_3",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 34,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 3,
+      "text": "Tangents are drawn to the hyperbola \n2\n2\n4\n36\nx\ny\n\n\nat the points P and Q. If these \ntangents intersects at the point T(0, 3) then the  area (in sq. units) of  PTQ is :",
+      "options": {
+        "A": "60 3",
+        "B": "36 5",
+        "C": "45 5",
+        "D": "54 3 JEE Mains 2018 Set:B 1 1 1 1 1 1 2 2 1 1 1 1 6 3 ' 2 18 9 27 27 18 1 2 y y y x x x x x b by by by y         2 1 1 9 6 2 y x b   "
+      },
+      "page_start": 22,
+      "page_end": 23,
+      "parse_flags": [
+        "numbering_restart_segment_3",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 36,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "If the system of linear equations\n3\n0\n3\n2\n0\n2\n4\n3\n0\nx\nky\nz\nx\nky\nz\nx\ny\nz\n\n\n\n\n\n\n\n\n\nhas a non-zero solution (x, y, z), then \n2\nxz\ny\n is equal to:",
+      "options": {
+        "A": "-30",
+        "B": "30",
+        "C": "-10",
+        "D": "10"
+      },
+      "page_start": 23,
+      "page_end": 23,
+      "parse_flags": [
+        "numbering_restart_segment_4",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 37,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 4,
+      "text": "Let S= {\n:\n0\nx\nR x\n\n\n and 2\n3\n(\n6)\n6\n0}\nx\nx\nx\n\n\n\n\n\n. Then S :",
+      "options": {
+        "A": "contains exactly two element.",
+        "B": "contains exactly four elements.",
+        "C": "is an empty set.",
+        "D": "contains exactly one element. JEE Mains 2018 Set:B"
+      },
+      "page_start": 23,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_4",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 39,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "A bag contains 4 red and 6 black balls. A ball is drawn at random from the bag, its colour \nis observed and this ball along with two additional balls of the same colour is returned to the \nbag. If now a ball is drawn at random from the bag, then probability that this drawn ball is \nred, is:",
+      "options": {
+        "A": "1 5",
+        "B": "3 4",
+        "C": "3 10",
+        "D": "2 5"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_5"
+      ]
+    },
+    {
+      "qno": 40,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "Let \n2\n2\n1\n( )\nf x\nx\nx\n\n\n and \n1\n( )\ng x\nx\nx\n\n\n,\n\n\n1,0,1\nx\nR\n\n\n. If \n( )\n( )\n( )\nf x\nh x\ng x\n\n, then the local \nminimum value of value of ( )\nh x is :",
+      "options": {
+        "A": "2 2 ",
+        "B": "2 2",
+        "C": "3",
+        "D": "-3"
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_5",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 41,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "Two sets A and B are as under : \n \nA={(a, b)  R\nR\n\n: \n5\n1\na \n and \n5\n1\nb \n}; \n \nB={(a, b)  R\nR\n\n: \n2\n2\n4(\n6)\n9(\n5)\n36\na\nb\n\n\n\n\n}. Then :",
+      "options": {
+        "A": "A B  (an empty set",
+        "B": "neither A B  nor B A  )",
+        "C": "B A ",
+        "D": "A B "
+      },
+      "page_start": 24,
+      "page_end": 24,
+      "parse_flags": [
+        "numbering_restart_segment_5",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 42,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 5,
+      "text": "The Boolean expression \n(\n)\n(\n)\np\nq\np\nq\n\n\n\nis equivalent to:",
+      "options": {
+        "A": "q",
+        "B": "q",
+        "C": "p JEE Mains 2018 Set:B",
+        "D": "p JEE Mains 2018 Set:B"
+      },
+      "page_start": 24,
+      "page_end": 26,
+      "parse_flags": [
+        "numbering_restart_segment_5",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 45,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 6,
+      "text": "The sum of the co-efficients of all odd degree terms in the expansion of  \n\n\n\n\n5\n5\n3\n3\n1\n1\n,(",
+      "options": {
+        "A": "x x x x x       is:",
+        "B": "2",
+        "C": "-1",
+        "D": "0"
+      },
+      "page_start": 26,
+      "page_end": 26,
+      "parse_flags": [
+        "numbering_restart_segment_6",
+        "duplicate_option_marker_A",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 46,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 6,
+      "text": "Let \n1\n2\n3\n49\n,\n,\n,......,\na a a\na  be in A.P. such that \n12\n4\n1\n0\n416\nk\nk\na\n\n\n\n\n and \n9\n43\n66\na\na\n\n\n. \n      If  \n2\n2\n2\n1\n2\n17\n.....\n140\na\na\na\nm\n\n\n\n\n , then m is equal to:",
+      "options": {
+        "A": "34",
+        "B": "33",
+        "C": "66",
+        "D": "68 JEE Mains 2018 Set:B  1 ........ 2 3 1 x y i h k h k      2k + 3h = hk Locus of (h, k) is 2y + 3x = xy"
+      },
+      "page_start": 26,
+      "page_end": 27,
+      "parse_flags": [
+        "numbering_restart_segment_6",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 48,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "he value of \n2\n2\nx\n2\nsin x\n1+2\ndx\n\n\n\n\n is:",
+      "options": {
+        "A": "4",
+        "B": "4 ",
+        "C": "8 ",
+        "D": "2 "
+      },
+      "page_start": 27,
+      "page_end": 27,
+      "parse_flags": [
+        "numbering_restart_segment_7",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 49,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "Let \n2\n( )\ncos\ng x\nx\n\n, \n( )\nf x\nx\n\n, and  \n\n\n,\n\n\n\n be the roots of the quadratic equation \n2\n2\n18\n9\n0\nx\nx\n\n\n\n\n\n. Then the area (in sq. units) bounded by the curve \n(\n)( )\ny\ngof\nx\n\n and the \nlines x\n\n\n, x\n\n\n and \n0\ny , is :",
+      "options": {
+        "A": "  1 3 2 2 ",
+        "B": "  1 2 1 2 ",
+        "C": "  1 3 1 2 ",
+        "D": "  1 3 1 2  JEE Mains 2018 Set:B         2 2 2 /3 /6 cos cos , 18 9 0 6 3 0 , 6 3 3 1 cos 2 g x x f x x g f x x given x x x x x Area x dx                      "
+      },
+      "page_start": 27,
+      "page_end": 28,
+      "parse_flags": [
+        "numbering_restart_segment_7",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 50,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "For each t  R, let [t] be the greatest integer less than or equal to t. Than \n0\n1\n2\n15\nlim\n......\nx\nx\nx\nx\nx\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "options": {
+        "A": "is equal to 120",
+        "B": "does not exist (in R)",
+        "C": "is equal to 0",
+        "D": "is equal to 15"
+      },
+      "page_start": 28,
+      "page_end": 28,
+      "parse_flags": [
+        "numbering_restart_segment_7",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 51,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "If \n9\n1\n(\n5)\n9\ni\ni\nx\n\n\n\n\n and \n9\n2\n1\n(\n5)\n45\ni\ni\nx\n\n\n\n\n , then the standard deviation of the 9 items  \n    \n1,\nx\n2,\nx ….,\n9x  is:",
+      "options": {
+        "A": "4",
+        "B": "2",
+        "C": "3",
+        "D": "9"
+      },
+      "page_start": 28,
+      "page_end": 28,
+      "parse_flags": [
+        "numbering_restart_segment_7",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 52,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 7,
+      "text": "The integral \n\n2\n2\n2\n5\n3\n2\n3\n2\n5\nsin\ncos\nsin\ncos\nsin\nsin\ncos\ncos\nx\nx\ndx\nx\nx\nx\nx\nx\nx\n\n\n\n\n is equal to :",
+      "options": {
+        "A": "3 1 1 cot c x  ",
+        "B": "3 1 1 cot c x   ",
+        "C": "  3 1 3 1 tan c x  ",
+        "D": "  3 1 3 1 tan c x    JEE Mains 2018 Set:B JEE Mains 2018 Set:B"
+      },
+      "page_start": 28,
+      "page_end": 31,
+      "parse_flags": [
+        "numbering_restart_segment_7",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 58,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 8,
+      "text": "From 6 different novels and 3 different dictionaries, 4 novels and 1 dictionary are to be \nselected and arranged in a row on a shelf so that the dictionary is always in the middle. The \nnumber of such arrangements is :",
+      "options": {
+        "A": "at least 500 but less than 750",
+        "B": "at least 750 but less than 1000",
+        "C": "at least 1000",
+        "D": "less than 500"
+      },
+      "page_start": 31,
+      "page_end": 31,
+      "parse_flags": [
+        "numbering_restart_segment_8"
+      ]
+    },
+    {
+      "qno": 59,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 8,
+      "text": "Let A be the sum of the first 20 terms and B be the sum of the first 40 terms of  \n   the series \n \n2\n2\n2\n2\n2\n2\n1\n2 2\n3\n2 4\n5\n2 6\n.....\n\n\n\n\n\n\n \n \nIf  B-2A=100 , then is equal to:",
+      "options": {
+        "A": "464",
+        "B": "496",
+        "C": "232",
+        "D": "248 JEE Mains 2018 Set:B"
+      },
+      "page_start": 31,
+      "page_end": 34,
+      "parse_flags": [
+        "numbering_restart_segment_8",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "possible_text_scramble"
+      ]
+    },
+    {
+      "qno": 65,
+      "question_id": null,
+      "question_type": null,
+      "subject": null,
+      "section": null,
+      "segment": 9,
+      "text": "An alkali is titrated against an acid with methyl orange as indicator, which of the \nfollowing is a correct combination? \n\nJEE Mains 2018 \nSet:B",
+      "options": null,
+      "page_start": 34,
+      "page_end": 35,
+      "parse_flags": [
+        "numbering_restart_segment_9",
+        "no_options_found"
+      ]
+    },
+    {
+      "qno": 66,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 9,
+      "text": "The trans-alkenes are formed by the reduction of alkynes with :",
+      "options": {
+        "A": "Na/liq. NH3",
+        "B": "Sn-HCl",
+        "C": "H2 – pd/C, BaSO4",
+        "D": "NaBH4 JEE Mains 2018 Set:B 2 4 3 1 2 4 4 2 2 4 2 4 4 2 3 4 y y z x x x y y x Z y Z x c h o Z                    Hence the answer is option (2). 68. Hydrogen peroxide oxides   4 6 Fe CN      to   3 6 Fe CN      in acidic medium but reduces   3 6 Fe CN      to   4 6 Fe CN      in alkaline medium. The other products formed are, respectively:"
+      },
+      "page_start": 35,
+      "page_end": 47,
+      "parse_flags": [
+        "numbering_restart_segment_9",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D"
+      ]
+    },
+    {
+      "qno": 88,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 10,
+      "text": "Which of the following compounds contain(s) no covalent bond(s) ? \nKCl, PH3, O2, B2H6, H2SO4",
+      "options": {
+        "A": "KCl",
+        "B": "KCl, B2H6",
+        "C": "KCl, B2H6, PH3",
+        "D": "KCl, H2SO4 JEE Mains 2018 Set:B 2 2 H  electronic configuration * 2 2 1 , 1 S S   Number of electrons = 4 ;     1 1 2 2 0 2 2 b a Bo N N      Molecule does not exist. Hence the answer is option (2). Q.No. Answer"
+      },
+      "page_start": 47,
+      "page_end": 49,
+      "parse_flags": [
+        "numbering_restart_segment_10",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_C",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_D",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_A",
+        "duplicate_option_marker_B",
+        "duplicate_option_marker_A"
+      ]
+    },
+    {
+      "qno": 89,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 10,
+      "text": "",
+      "options": {
+        "B": ""
+      },
+      "page_start": 49,
+      "page_end": 49,
+      "parse_flags": [
+        "numbering_restart_segment_10",
+        "options_count_1",
+        "empty_stem"
+      ]
+    },
+    {
+      "qno": 90,
+      "question_id": null,
+      "question_type": "single_correct",
+      "subject": null,
+      "section": null,
+      "segment": 10,
+      "text": "",
+      "options": {
+        "B": "JEE (Main) 2018 BOOKLET CODE : B"
+      },
+      "page_start": 49,
+      "page_end": 49,
+      "parse_flags": [
+        "numbering_restart_segment_10",
+        "options_count_1",
+        "empty_stem"
+      ]
+    }
+  ]
+}
