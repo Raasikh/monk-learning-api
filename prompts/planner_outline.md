@@ -16,7 +16,7 @@ any segment is written in isolation.
    the supplied blocks — thin subtopics get fewer segments, never padding. This is a hard requirement.
 2. **Ordering**: Each segment must build on the one before it. Segment 1 opens with a hook: a real-world
    question or a quick "why this matters for your exam".
-3. **Grounding**: Follow the ordering of the [LESSON STRUCTURE] block where present. Do not introduce
+3. **Grounding**: Plan for the concept named above. [RELATED AUTHORED LESSON], when present, is a reference for coverage and tone — not an order to follow, and not a scope to match. Do not introduce
    out-of-syllabus theory and do not contradict the supplied content.
 4. **Scope per segment**: Each segment is one teachable unit of roughly 3-4 spoken minutes — narrower
    than the whole subtopic, wider than a single formula.

@@ -1,9 +1,12 @@
 import os
 import math
 import json
+import logging
 from typing import Dict, List, Optional, Tuple
 from openai import OpenAI
 from app.db import supabase
+
+logger = logging.getLogger("drona.retrieval")
 
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -28,7 +31,27 @@ def cosine_similarity(v1: List[float], v2: List[float]) -> float:
     return dot / (norm1 * norm2)
 
 def retrieve_lesson_structure(chapter_id: str, subtopic: str) -> List[dict]:
-    """Retrieves ordered lesson_sections for a chapter and subtopic."""
+    """Ordered lesson_sections authored for THIS subtopic, or nothing.
+
+    Returns [] when the subtopic has no authored sections. It used to return
+    `all_sections[:10]` — the chapter's OPENING ten sections — and
+    retrieve_dual_blocks then presented them to the planner under the header
+    "already validated and voiced, follow this teaching order". The planner
+    did what it was told, so every unmatched concept was planned as its
+    chapter's introduction: "Electric Field Lines" came back as a lesson on
+    charge, conductors and the gold-leaf electroscope, because that is the
+    lesson it was handed.
+
+    Measured 2026-09-03 before this change: 1,023 of 1,154 active concepts
+    (88.6%) took that fallback. Only 11.3% were matched to their own
+    sections. Every one of the 88.6% produced a plan grounded in the wrong
+    lesson and labelled validated.
+
+    An unmatched concept is a content gap to count, not to paper over. The
+    planner still receives the concept name, the chapter, and the reference
+    depth chunks; it can plan from those. What it must not receive is
+    another concept's lesson presented as this one's.
+    """
     res = (
         supabase.table('lesson_sections')
         .select('title, board_content, segments_english, position, subtopic')
@@ -37,14 +60,20 @@ def retrieve_lesson_structure(chapter_id: str, subtopic: str) -> List[dict]:
         .execute()
     )
     all_sections = res.data or []
-    
+
     # Filter by matching subtopic (case-insensitive)
     matched = [s for s in all_sections if (s.get('subtopic') or '').lower().strip() == subtopic.lower().strip()]
     if not matched and all_sections:
         sub_norm = subtopic.lower().strip()
         matched = [s for s in all_sections if sub_norm in (s.get('subtopic') or '').lower()]
 
-    return matched if matched else all_sections[:10]
+    if not matched:
+        logger.warning(
+            f"📭 [NO LESSON SECTIONS] subtopic={subtopic!r} chapter={chapter_id} — "
+            f"{len(all_sections)} section(s) exist for this chapter but none match it. "
+            f"Planning without a structure block."
+        )
+    return matched
 
 def retrieve_pdf_chunks(chapter_id: str, query_text: str, top_k: int = 12) -> List[dict]:
     """Queries pdf_chunks for top_k similar chunks by cosine similarity to query_text."""
@@ -83,12 +112,36 @@ def retrieve_pdf_chunks(chapter_id: str, query_text: str, top_k: int = 12) -> Li
     scored.sort(key=lambda x: x[0], reverse=True)
     return [item[1] for item in scored[:top_k]]
 
-def retrieve_dual_blocks(chapter_id: str, subtopic: str) -> Tuple[str, str, bool]:
-    """Formats two labelled blocks: [LESSON STRUCTURE] and [REFERENCE DEPTH]."""
+def retrieve_dual_blocks(chapter_id: str, subtopic: str) -> Tuple[str, str, bool, bool]:
+    """Formats the planner's context: [REFERENCE DEPTH] always, and
+    [RELATED AUTHORED LESSON] only when one genuinely exists for this
+    subtopic."""
     lesson_sections = retrieve_lesson_structure(chapter_id, subtopic)
     
-    structure_lines = ["[LESSON STRUCTURE — already validated and voiced, follow this teaching order]"]
+    # Two claims live in this header, and both have to be true.
+    #
+    # Provenance: it is only written when the sections are genuinely this
+    # subtopic's, never as a heading over someone else's lesson.
+    #
+    # Authority: it used to end "follow this teaching order", which is an
+    # instruction, not context. These sections come from the recorded Lessons
+    # product (lesson_sections — see lib/lessons.ts in the app, which is their
+    # actual owner), authored at that product's own granularity of roughly
+    # seven subtopics per chapter. They are supplied here to give the planner
+    # MORE context about how this material has been taught before, which is
+    # what the design intended — not to hand it a running order to reproduce.
+    # Telling the planner to follow them makes a reference into a script, and
+    # constrains it to a lesson written for a coarser unit than the concept it
+    # is planning.
+    structure_lines = []
     if lesson_sections:
+        structure_lines.append(
+            "[RELATED AUTHORED LESSON — how this material has been taught before, "
+            "for reference on coverage, depth and tone]\n"
+            "Use it to inform your plan. Do NOT simply follow its order or scope: "
+            "it was authored for a broader topic than the concept above, so it may "
+            "cover more, less, or adjacent ground. Plan for the concept."
+        )
         for idx, s in enumerate(lesson_sections, 1):
             title = s.get('title', f'Section {idx}')
             board = s.get('board_content', '')
@@ -100,8 +153,6 @@ def retrieve_dual_blocks(chapter_id: str, subtopic: str) -> Tuple[str, str, bool
                 structure_lines.append(f"  Board: {str(board)[:200]}")
             if narration:
                 structure_lines.append(f"  Narration: {str(narration)[:200]}")
-    else:
-        structure_lines.append("  (No existing lesson sections found for this subtopic)")
 
     structure_block = "\n".join(structure_lines)
 
@@ -119,9 +170,25 @@ def retrieve_dual_blocks(chapter_id: str, subtopic: str) -> Tuple[str, str, bool
         depth_lines.append("  (No pdf_chunks available for this chapter)")
 
     depth_block = "\n".join(depth_lines)
-    grounded = len(pdf_chunks) > 0 or len(lesson_sections) > 0
+    # Two separate facts, because they answer different questions and
+    # collapsing them is what hid this bug for three weeks.
+    #
+    # `grounded` asks: did the planner have real source material for this
+    # concept? That is the master-PDF chunks — the primary source, present
+    # for 105 of 107 chapters. It was previously `pdf_chunks or
+    # lesson_sections`, and lesson_sections was never empty because of the
+    # fallback, so the OR made it unconditionally True on every plan ever
+    # written. An always-true flag records nothing.
+    #
+    # `has_recorded_lesson` asks the narrower question: did a lesson authored
+    # for THIS subtopic exist to hand over as extra context? That is a
+    # minority case by design — lesson_sections belongs to the recorded
+    # Lessons product and is authored at its granularity, not per concept —
+    # so False here is normal and is not a defect.
+    grounded = len(pdf_chunks) > 0
+    has_recorded_lesson = len(lesson_sections) > 0
 
-    return structure_block, depth_block, grounded
+    return structure_block, depth_block, grounded, has_recorded_lesson
 
 def classify_with_llm(student_query: str, candidate_chapters: List[dict]) -> Tuple[bool, Optional[str]]:
     """Stage 2 lightweight LLM classifier (thinking OFF) for top1_score < 0.50 queries."""

@@ -170,7 +170,7 @@ def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     sub_title = resolve_topic_title(chapter_id, subtopic_key)
 
     # Retrieve dual blocks (§3.2)
-    structure_block, depth_block, is_grounded = retrieve_dual_blocks(chapter_id, sub_title)
+    structure_block, depth_block, is_grounded, has_recorded_lesson = retrieve_dual_blocks(chapter_id, sub_title)
 
     planner_prompt = load_prompt("planner.md")
     model_name = get_model_name("planner")
@@ -601,7 +601,7 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     chap_data = chap_res.data[0] if chap_res.data else {"id": chapter_id, "name": "Chapter", "subject": "Physics"}
     sub_title = resolve_topic_title(chapter_id, subtopic_key)
 
-    structure_block, depth_block, is_grounded = retrieve_dual_blocks(chapter_id, sub_title)
+    structure_block, depth_block, is_grounded, has_recorded_lesson = retrieve_dual_blocks(chapter_id, sub_title)
 
     t0 = time.time()
     outline = _author_outline(chap_data, sub_title, subtopic_key, structure_block, depth_block)

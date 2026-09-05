@@ -1,3 +1,4 @@
+import os
 import re
 import math
 import threading
@@ -43,6 +44,28 @@ logger = logging.getLogger("drona.tutor")
 # A segment ends with a short quiz on what was just taught. Every answer moves
 # on — right or wrong — and only the last question closes the segment.
 QUIZ_QUESTIONS_PER_SEGMENT = 3
+
+# Whether a tier-3 authored figure is PERSISTED into concept_diagrams, i.e.
+# promoted to tier 1 and served instantly and permanently from then on.
+#
+# Off by default, deliberately, and this is a behaviour change: tier 3 still
+# authors a figure and still shows it for the turn it was drawn for, but it no
+# longer mints a permanent row. The reason is that promotion is currently
+# one-way in practice. `active` gives us the mechanism to retire a row (the
+# read at _precomputed_diagram filters `.eq("active", True)`, and the write
+# below deactivates its own predecessor), but nothing else ever sets it false
+# and there is no version or reason recorded against a row — so there is no
+# basis on which to sweep. A figure that is wrong for the concept therefore
+# stays wrong, instantly served, until someone finds it by hand.
+#
+# Measured on Physics 12 Ch 1 (2026-09-03): 1 of 11 concepts had a cached row,
+# authored as 6 rects + 3 arrowheads — a flowchart for charge quantisation, on
+# a chapter the content plan classifies as field_lines for all eleven concepts.
+# Caching that makes it permanent and free rather than merely wrong.
+#
+# Set DRONA_TIER3_PERSIST=1 to restore the old behaviour once archetype-based
+# routing lands and there is a sweep path for stale rows.
+TIER3_PERSIST = os.getenv("DRONA_TIER3_PERSIST", "0").strip().lower() in ("1", "true", "yes", "on")
 
 # Words that make one diagram template obviously the right one, checked against
 # the turn's own content. The trigger table in prompts/tutor.md alone got a
@@ -205,6 +228,12 @@ def _author_and_store(concept_id: str, concept_name: str, subject: str,
         if not svg:
             logger.info(f"🖼️ [LIVE DIAGRAM] no figure for {concept_name[:40]!r}: {reason[:60]}")
             return None
+        if not TIER3_PERSIST:
+            logger.info(
+                f"🖼️ [LIVE DIAGRAM] authored {concept_name[:40]!r} but NOT cached "
+                f"(DRONA_TIER3_PERSIST off) — served for this turn only."
+            )
+            return svg
         supabase.table("concept_diagrams").update({"active": False}) \
             .eq("concept_id", concept_id).eq("active", True).execute()
         supabase.table("concept_diagrams").insert([{
