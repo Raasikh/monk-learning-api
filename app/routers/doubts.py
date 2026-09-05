@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
-from fastapi.responses import StreamingResponse
+from fastapi.responses import Response, StreamingResponse
 from pydantic import BaseModel
 
 from app.auth import get_current_user_id
@@ -35,7 +35,7 @@ from app.snap import (
     stream_followup,
     transcribe_question,
 )
-from app import exam_scope
+from app import exam_scope, followup_voice
 from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
 
@@ -1037,6 +1037,62 @@ async def ask_about_doubt_aloud(
              for t in prior if isinstance(t, dict)]
     return _followup_response(doubt, doubt_id, user_id, question, turns,
                               transcript=question)
+
+
+class SpeakRequest(BaseModel):
+    """The `spoken` line from an answer the student has just been given."""
+    text: str
+
+
+def _tutor_voice_for(user_id: str) -> str:
+    """The teacher this student picked, as their last session recorded it.
+
+    Read here rather than taken from the request so a follow-up is spoken by
+    the same teacher the classroom uses — a student who chose Veda should not
+    be answered by Drona because a different screen asked.
+    """
+    try:
+        res = (
+            supabase.table("drona_sessions")
+            .select("tutor_voice")
+            .eq("user_id", user_id)
+            .order("created_at", desc=True)
+            .limit(1)
+            .execute()
+        )
+        if res.data and res.data[0].get("tutor_voice"):
+            return res.data[0]["tutor_voice"]
+    except Exception as err:
+        # A voice is a preference, not a requirement. Defaulting is better than
+        # failing to speak at all.
+        logger.warning("Could not read tutor_voice for %s: %s", user_id[:8], err)
+    return followup_voice.DEFAULT_VOICE
+
+
+@router.post("/{doubt_id}/speak")
+async def speak_followup(doubt_id: str, body: SpeakRequest,
+                         user_id: str = Depends(get_current_user_id)):
+    """POST /doubts/{id}/speak — the answer read aloud, as a WAV.
+
+    A separate call from the answer itself, deliberately. The steps are on
+    screen the moment they arrive and are useful in silence; the audio is an
+    addition to them, not a gate in front of them. Asking for it separately
+    means a slow or refused synthesis costs the student nothing they were
+    already reading.
+    """
+    said = (body.text or "").strip()
+    if not said:
+        raise HTTPException(status_code=400, detail="Nothing to say.")
+    # Ownership check: this speaks a specific student's own answer.
+    _load_doubt_for_user(doubt_id, user_id)
+
+    wav = await followup_voice.speak(said, _tutor_voice_for(user_id))
+    if not wav:
+        # Silence is not returned as audio. The screen has the steps, and a
+        # file that plays nothing is worse than no file the app can skip.
+        raise HTTPException(status_code=503, detail="Could not speak that just now.")
+    return Response(content=wav, media_type="audio/wav",
+                    headers={"Cache-Control": "no-store"})
 
 
 @router.post("/{doubt_id}/report", status_code=200)

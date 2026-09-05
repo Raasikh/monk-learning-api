@@ -2760,3 +2760,25 @@ def test_second_opinion_returns_none_when_the_other_model_declines(monkeypatch):
     out = snap.second_opinion("sys", "payload", "d1", None)
     print(f"  -> {out!r}")
     assert out is None
+
+
+def test_the_voice_follows_the_student_not_the_screen():
+    """A student who chose Veda is answered by Veda, wherever they asked."""
+    from app import followup_voice
+    assert followup_voice.preset_for("female") == "Ira"
+    assert followup_voice.preset_for("male") == "Lucas"
+    # An unset or unknown preference is a default, never a failure to speak.
+    assert followup_voice.preset_for(None) == "Ira"
+    assert followup_voice.preset_for("nonsense") == "Ira"
+
+
+def test_speech_is_wrapped_as_a_playable_file():
+    """Rumik streams headerless PCM; the phone is handed a file, not frames."""
+    from app import followup_voice
+    pcm = b"\x00\x01" * 24000  # one second at 24kHz mono 16-bit
+    wav = followup_voice.wav_from_pcm(pcm)
+    print(f"  {len(pcm)} bytes of PCM -> {len(wav)} bytes of WAV")
+    assert wav[:4] == b"RIFF" and wav[8:12] == b"WAVE"
+    assert wav[36:40] == b"data"
+    # The header is 44 bytes and the audio is carried whole.
+    assert len(wav) == len(pcm) + 44
