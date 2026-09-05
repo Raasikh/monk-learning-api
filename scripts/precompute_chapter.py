@@ -39,13 +39,26 @@ DEFAULT_DEADLINE = 900  # 15 min per concept; the slowest C1 concept took ~6
 
 
 def wait_for_complete(plan_id: str, deadline: int) -> tuple[bool, dict, float]:
-    """Poll until _status == complete. Returns (ok, plan_json, seconds)."""
+    """Poll until _status is terminal. Returns (ok, plan_json, seconds).
+
+    THREE states, not two. "not complete" used to mean both "still authoring"
+    and "the background thread died", and a poller cannot distinguish them --
+    so a dead fill cost the full deadline before it was called a failure, and
+    the reason was only ever in a server log this script never sees.
+
+    planner._mark_plan_failed now writes _status == "failed" with _error, so
+    death is terminal here and immediate. A plan that is merely slow still
+    waits out the deadline, which is correct.
+    """
     t0 = time.perf_counter()
     while time.perf_counter() - t0 < deadline:
         row = supabase.table("lesson_plans").select("plan_json").eq("id", plan_id).execute().data
         pj = (row[0]["plan_json"] if row else {}) or {}
-        if pj.get("_status", "complete") == "complete":
+        status = pj.get("_status", "complete")
+        if status == "complete":
             return True, pj, time.perf_counter() - t0
+        if status == "failed":
+            return False, pj, time.perf_counter() - t0
         time.sleep(POLL_SECONDS)
     row = supabase.table("lesson_plans").select("plan_json").eq("id", plan_id).execute().data
     return False, ((row[0]["plan_json"] if row else {}) or {}), time.perf_counter() - t0
@@ -86,8 +99,12 @@ def main() -> int:
             if not ok:
                 # LOUD. A partial plan is not a plan: the student reaches
                 # segment 2 and there is nothing there.
-                msg = (f"INCOMPLETE after {args.deadline}s — {len(segs)} of "
-                       f"{pj.get('_expected_segments', '?')} segments")
+                have, want = len(segs), pj.get("_expected_segments", "?")
+                if pj.get("_status") == "failed":
+                    msg = (f"FILL FAILED after {waited:.0f}s — {have} of {want} "
+                           f"segments — {pj.get('_error', 'no reason recorded')}")
+                else:
+                    msg = (f"INCOMPLETE after {args.deadline}s — {have} of {want} segments")
                 failures.append((c["name"], msg))
                 print(f"[{i}/{len(concepts)}] !! {msg}  {c['name'][:40]}")
             else:
