@@ -218,3 +218,66 @@ def test_an_operator_between_a_word_and_a_letter_is_not_a_run():
         "Divide the work per a fixed rule.",
     ]:
         assert sanitize_tts_phonetics(line) == line
+
+
+# ---------------------------------------------------------------------------
+# Spoken maths: commands that USED to be dropped silently.
+#
+# _latex_to_speech dropped any command it did not recognise, and the
+# unrecognised set included every big operator and every function name. The
+# damage was not garbled audio -- it was a changed statement:
+#
+#     \log_{10} 100 = 2              was spoken "10 100 = 2"
+#     \lim_{x \to 0}\frac{\sin x}{x} was spoken "x gives 0 x over x"
+#
+# The second asserts x/x. A student hears a false claim in a confident voice,
+# and nothing anywhere logs that a token went missing.
+# ---------------------------------------------------------------------------
+import re
+from app.drona.voice_proxy import _latex_to_speech, _notation_to_speech
+
+
+def _spoken(text: str) -> str:
+    """The real pipeline order, as check_tts_safety_filter runs it."""
+    out = _notation_to_speech(_latex_to_speech(text))
+    return re.sub(r"\s+", " ", out).strip()
+
+
+def test_function_names_are_never_dropped():
+    # Dropping \sin changes sin(x)/x into x/x -- a different, false statement.
+    assert "sine" in _spoken(r"\lim_{x \to 0} \frac{\sin x}{x}")
+    assert "log" in _spoken(r"\log_{10} 100 = 2")
+    assert "natural log" in _spoken(r"\ln e = 1")
+    assert "cosine" in _spoken(r"\cos 0 = 1")
+
+
+def test_big_operator_scripts_are_limits_not_powers():
+    # \int_0^t means "from 0 to t". The generic superscript rule claimed a
+    # power the notation never stated.
+    spoken = _spoken(r"\int_0^t a\,dt")
+    assert "the integral" in spoken
+    assert "from 0 to t" in spoken
+    assert "to the power" not in spoken
+
+    assert "the sum from i=1 to n" in _spoken(r"\sum_{i=1}^{n} x_i")
+
+
+def test_latex_spacing_commands_do_not_become_punctuation():
+    # `a\,dt` was spoken "a comma d t" -- the backslash was dropped and the
+    # comma survived.
+    assert "," not in _spoken(r"\int_0^t a\,dt")
+    assert _spoken(r"a \quad b") == "a b"
+
+
+def test_unknown_command_says_its_name_rather_than_vanishing():
+    # A dropped token is indistinguishable from one that was never there, so
+    # the gap cannot be found by listening. Saying the bare name is at worst
+    # clumsy; vanishing is unmeasurable.
+    assert "widehat" in _spoken(r"\widehat{AB}") or "AB" in _spoken(r"\widehat{AB}")
+    assert _spoken(r"\zzzunknown") != ""
+
+
+def test_working_cases_did_not_regress():
+    assert _spoken(r"v^2 = u^2 + 2as") == "v squared = u squared + 2as"
+    assert _spoken(r"\ce{2H2 + O2 -> 2H2O}") == "2H2 + O2 gives 2H2O"
+    assert _spoken(r"\frac{1}{2}mv^2") == "1 over 2 mv squared"

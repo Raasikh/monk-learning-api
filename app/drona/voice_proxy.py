@@ -446,8 +446,54 @@ _LATEX_SYMBOL_WORDS = {
     'delta': ' delta ', 'theta': ' theta ', 'lambda': ' lambda ',
     'mu': ' mu ', 'pi': ' pi ', 'omega': ' omega ', 'rho': ' rho ',
     'sigma': ' sigma ', 'phi': ' phi ', 'epsilon': ' epsilon ', 'nu': ' nu ',
+    'eta': ' eta ', 'zeta': ' zeta ', 'kappa': ' kappa ', 'tau': ' tau ',
+    'chi': ' chi ', 'psi': ' psi ', 'xi': ' xi ', 'upsilon': ' upsilon ',
+    'Delta': ' delta ', 'Omega': ' omega ', 'Sigma': ' sigma ',
+    'Phi': ' phi ', 'Lambda': ' lambda ', 'Gamma': ' gamma ',
+    'Theta': ' theta ', 'Pi': ' pi ', 'Psi': ' psi ',
+    'partial': ' partial ', 'nabla': ' del ', 'propto': ' proportional to ',
+    'equiv': ' is identical to ', 'sim': ' similar to ',
+    'perp': ' perpendicular to ', 'parallel': ' parallel to ',
+    'angle': ' angle ', 'therefore': ' therefore ', 'because': ' because ',
+    'cup': ' union ', 'cap': ' intersect ', 'subset': ' is a subset of ',
+    'in': ' in ', 'notin': ' not in ', 'forall': ' for all ',
+    'exists': ' there exists ', 'll': ' much less than ',
+    'gg': ' much greater than ', 'ne': ' not equal to ',
+    'le': ' less than or equal to ', 'ge': ' greater than or equal to ',
+    'longrightarrow': ' gives ', 'Rightarrow': ' implies ',
+    'Leftrightarrow': ' if and only if ', 'ldots': ' and so on ',
+    'dots': ' and so on ', 'cdots': ' and so on ',
 }
+# Function names. These MUST be spoken: dropping one changes the statement
+# rather than merely garbling it. Measured before this existed:
+#   \log_{10} 100 = 2            ->  "10 100 = 2"
+#   \lim_{x \to 0}\frac{\sin x}{x} ->  "x gives 0 x over x"
+# The first is read to a student as nonsense; the second asserts x/x, which is
+# a different and false claim.
+_LATEX_FUNCTIONS = {
+    'sin': ' sine ', 'cos': ' cosine ', 'tan': ' tan ',
+    'sec': ' secant ', 'csc': ' cosec ', 'cot': ' cot ',
+    'arcsin': ' arc sine ', 'arccos': ' arc cosine ', 'arctan': ' arc tan ',
+    'sinh': ' hyperbolic sine ', 'cosh': ' hyperbolic cosine ',
+    'tanh': ' hyperbolic tan ',
+    'log': ' log ', 'ln': ' natural log ', 'lg': ' log ',
+    'exp': ' exp ', 'det': ' determinant of ', 'gcd': ' gcd ',
+    'max': ' maximum of ', 'min': ' minimum of ',
+}
+
+# Big operators. Their sub/superscripts are LIMITS, not powers — without this
+# \int_0^t was spoken as "0 to the power t", which is not what the notation
+# says. _consume_limits below reads them and says "from 0 to t".
+_LATEX_BIG_OPERATORS = {
+    'int': ' the integral ', 'iint': ' the double integral ',
+    'iiint': ' the triple integral ', 'oint': ' the closed integral ',
+    'sum': ' the sum ', 'prod': ' the product ',
+    'lim': ' the limit ', 'limsup': ' the limit superior ',
+    'liminf': ' the limit inferior ',
+}
+
 # Wrappers whose argument is the content itself — the command is pure markup.
+_LATEX_SPACING = {'quad', 'qquad', 'thinspace', 'medspace', 'thickspace'}
 _LATEX_UNWRAP = {'ce', 'text', 'textbf', 'textit', 'mathrm', 'mathbf', 'mathit',
                  'vec', 'hat', 'bar', 'overline', 'underline', 'left', 'right'}
 
@@ -510,6 +556,40 @@ def _notation_to_speech(text: str) -> str:
 
     return text
 
+def _consume_limits(text: str, k: int) -> Tuple[str, int]:
+    """Read a big operator's sub/superscript as LIMITS and return them spoken.
+
+    `\int_0^t` means "from 0 to t", not "0 to the power t". Without this the
+    generic superscript rule downstream claimed a power that the notation never
+    said. Returns ('', k) when there are no limits, so \sum on its own is
+    still just "the sum".
+    """
+    lo = hi = None
+    while k < len(text) and text[k] in '_^':
+        marker = text[k]
+        k += 1
+        if k < len(text) and text[k] == '{':
+            end = _skip_balanced_brace_group(text, k)
+            inner = end - 1 if text[end - 1:end] == '}' else end
+            body, k = text[k + 1:inner], end
+        else:
+            j = k
+            while j < len(text) and (text[j].isalnum() or text[j] in '+-.\\'):
+                j += 1
+            body, k = text[k:j], j
+        body = _latex_to_speech(body).strip()
+        if marker == '_':
+            lo = body
+        else:
+            hi = body
+    if lo and hi:
+        return f' from {lo} to {hi} ', k
+    if lo:
+        return f' as {lo} ' if lo else '', k
+    if hi:
+        return f' to {hi} ', k
+    return '', k
+
 def _latex_to_speech(text: str) -> str:
     """Rewrites LaTeX/mhchem that leaked into TTS-bound speech into words a
     voice can actually say. The tutor prompt forbids markup in `speech`, but
@@ -530,7 +610,15 @@ def _latex_to_speech(text: str) -> str:
                 j += 1
             name = text[i + 1:j]
             if not name:
-                i += 1  # stray backslash: drop it, never voice it
+                # A non-alphabetic escape. The LaTeX spacing commands are the
+                # common case and they mean WHITESPACE -- dropping only the
+                # backslash left the punctuation behind, so `a\,dt` was spoken
+                # as "a comma d t". Emit a space and swallow the character.
+                if i + 1 < n and text[i + 1] in ',;:!> ':
+                    out.append(' ')
+                    i += 2
+                else:
+                    i += 1  # stray backslash: drop it, never voice it
                 continue
 
             args = []
@@ -551,15 +639,45 @@ def _latex_to_speech(text: str) -> str:
                 out.append(f" root {_latex_to_speech(args[0])} ")
                 for extra in args[1:]:
                     out.append(_latex_to_speech(extra))
+            elif name in _LATEX_BIG_OPERATORS:
+                out.append(_LATEX_BIG_OPERATORS[name])
+                limits, k = _consume_limits(text, k)
+                out.append(limits)
+                for arg in args:
+                    out.append(' ' + _latex_to_speech(arg) + ' ')
+            elif name in _LATEX_FUNCTIONS:
+                out.append(_LATEX_FUNCTIONS[name])
+                for arg in args:
+                    out.append(' ' + _latex_to_speech(arg) + ' ')
             elif name in _LATEX_SYMBOL_WORDS:
                 out.append(_LATEX_SYMBOL_WORDS[name])
                 for arg in args:
                     out.append(_latex_to_speech(arg))
+            elif name in _LATEX_SPACING:
+                out.append(' ')
+                for arg in args:
+                    out.append(' ' + _latex_to_speech(arg) + ' ')
+            elif name in _LATEX_UNWRAP:
+                # Pure markup wrapper: drop the command, keep what it wrapped.
+                for arg in args:
+                    out.append(' ' + _latex_to_speech(arg) + ' ')
             else:
-                # Unknown command (or a pure wrapper like \ce, \vec): drop the
-                # markup, keep what it wrapped.
-                if name not in _LATEX_UNWRAP and not args:
-                    pass
+                # UNKNOWN COMMAND. Previously this fell through to `pass` and
+                # the command vanished without trace, which is how \int, \sum
+                # and \log came to be silently deleted from spoken maths --
+                # \log_{10} 100 = 2 was read aloud as "10 100 = 2". A dropped
+                # token is indistinguishable from a token that was never there,
+                # so the gap could not be found by listening.
+                #
+                # Now: say the bare name, which is at worst clumsy and at best
+                # exactly right (\theta -> "theta"), and LOG it so the gap is
+                # discoverable instead of silent.
+                logger.warning(
+                    "[TTS UNKNOWN LATEX] no spoken form for '\\%s' — saying the "
+                    "bare name. Add it to _LATEX_FUNCTIONS, _LATEX_BIG_OPERATORS "
+                    "or _LATEX_SYMBOL_WORDS.", name
+                )
+                out.append(f' {name} ')
                 for arg in args:
                     out.append(' ' + _latex_to_speech(arg) + ' ')
             i = k
