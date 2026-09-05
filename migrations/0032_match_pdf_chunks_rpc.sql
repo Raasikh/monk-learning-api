@@ -1,5 +1,44 @@
 -- 0032_match_pdf_chunks_rpc.sql
 --
+-- ============================================================================
+-- RETRACTED 2026-09-04. DO NOT APPLY AS WRITTEN.
+-- ============================================================================
+--
+-- This migration was written on a false premise. I probed for the RPC with the
+-- parameter name `chapter_id_filter`; app/drona/retrieval.py actually calls it
+-- with `filter_chapter_id`. PostgREST resolves overloads by argument NAME, so
+-- my probe reported "Could not find the function" for a function that exists
+-- and works. Everything downstream of that -- "the fallback IS the production
+-- path", the 1088ms and 3164ms figures, "PRE-INGEST BLOCKER" -- was wrong.
+--
+-- WHAT IS ACTUALLY TRUE, measured 2026-09-04 after the master-book ingest:
+--
+--   baseline round-trip (trivial query)              324 ms   <- network floor
+--   RPC, largest chapter (233 chunks), match_count=1 321 ms
+--   RPC, largest chapter (233 chunks), match_count=12 361 ms
+--   RPC, smallest chapter (34 chunks), match_count=12 318 ms
+--
+-- The vector search is FREE. 233 chunks vs 34 chunks costs 43ms. Latency is
+-- network round-trip plus payload size (match_count=50 costs 892ms because it
+-- returns 50 chunks of content text, not because the search is slow).
+--
+-- So an HNSW index would buy approximately nothing, and on a query already
+-- filtered to one chapter's ~80 rows the planner would likely not use it.
+-- The 1088/3164 ms numbers were measurements of the FALLBACK, which production
+-- does not take.
+--
+-- THE ONE THING STILL WORTH DOING, and it is not urgent:
+-- the live function's return type omits page_start and page_end. Those were
+-- meaningless before (every row was page 1) and are meaningful now (1,200
+-- distinct values, pages 6-1211). Adding them would let Drona cite a page.
+-- That requires DROP + CREATE, which is a real risk to a working production
+-- function, so do it WITH an app change that uses them -- not speculatively.
+-- The DROP-and-recreate form is kept below for that day.
+--
+-- Original (wrong) rationale follows, kept so the error is legible.
+-- ============================================================================
+--
+--
 -- PRE-INGEST BLOCKER. Apply WITH the 1,000-page book ingest, not before, not after.
 --
 -- WHY THIS IS URGENT RATHER THAN TIDY
@@ -32,6 +71,12 @@
 -- so the wire payload stops scaling with chapter size altogether.
 
 -- ---------------------------------------------------------------- extension
+-- Guarded: applying this file as-is will FAIL on the existing function with
+-- "cannot change return type of existing function". That is intentional --
+-- see the retraction above. To adopt the page-number version deliberately,
+-- uncomment the drop.
+-- drop function if exists public.match_pdf_chunks(vector, uuid, integer);
+
 create extension if not exists vector;
 
 -- ------------------------------------------------------------------- index

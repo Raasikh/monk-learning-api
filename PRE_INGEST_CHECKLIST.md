@@ -1,5 +1,13 @@
 # Pre-ingest checklist
 
+> **CORRECTION 2026-09-04: item 1 was WRONG and is withdrawn.** The
+> `match_pdf_chunks` RPC exists and works. I probed it with the wrong
+> parameter name (`chapter_id_filter` instead of `filter_chapter_id`),
+> PostgREST resolves overloads by name, and I read "function not found" as
+> "function absent". The fallback I measured is not the production path.
+> Measured properly: the vector search is free -- 233 chunks vs 34 chunks
+> costs 43ms, and total latency is the network round-trip. No index needed.
+>
 > **STATUS 2026-09-04: the ingest has HAPPENED.** All eight master books are in
 > (9,304 chunks, 106 chapters, legacy corpus fully replaced). Item 1 is now
 > OVERDUE rather than pending — measured at 3,164 ms per live turn, up from
@@ -18,16 +26,28 @@ list is a hunch.
 
 ---
 
-## 1. `match_pdf_chunks` RPC + HNSW index — OVERDUE, APPLY NOW
+## 1. `match_pdf_chunks` RPC + HNSW index — WITHDRAWN, was never a blocker
 
-**Re-measured after the ingest**, largest chapter (mathematics 11 Trigonometry,
-233 chunks): **3,164 ms and 5.0 MB per live turn**, against 1,088 ms / 2.24 MB
-before. The corpus got better and retrieval got 3x slower, exactly as predicted.
-This is no longer a forecast — it is the current production latency.
+The RPC exists. Measured through it, after the ingest:
 
-Applying requires a direct Postgres connection. The repo has PostgREST
-credentials only, which cannot run DDL, so this must be applied by hand in the
-Supabase SQL editor.
+| | |
+|---|---|
+| baseline round-trip, trivial query | **324 ms** (network floor) |
+| RPC, 233-chunk chapter, match_count=1 | 321 ms |
+| RPC, 233-chunk chapter, match_count=12 | 361 ms |
+| RPC, 34-chunk chapter, match_count=12 | 318 ms |
+
+**The vector search is free.** Seven times the chunks costs 43 ms. What costs
+time is the network round-trip and, at large `match_count`, the content text
+returned. An HNSW index solves a problem that does not exist here.
+
+The 1,088 ms and 3,164 ms figures reported earlier were the in-memory FALLBACK,
+which production does not take. See the retraction header in
+`migrations/0032_match_pdf_chunks_rpc.sql`.
+
+**The lesson, which generalises:** I probed for the function with parameter
+names I invented rather than the ones `retrieval.py` passes. A negative result
+from a malformed probe is not evidence of absence. Read the caller.
 
 **Migration:** `migrations/0032_match_pdf_chunks_rpc.sql` — written, **not applied**.
 Apply it *with* the ingest.
