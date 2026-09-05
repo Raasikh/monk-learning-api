@@ -76,12 +76,28 @@ def sanitize(text: str) -> str:
     if not text:
         return ""
     text = text.replace("\x00", "")
-    # Mathpix reflows hyphenated line breaks to "tem-\n\nperature" -- a BLANK
-    # line, not a single newline. The previous regex only matched \w-\n\w and
-    # therefore reported 0 soft hyphens on Mathpix output while 41 of 50 pages
-    # still had them. Measured, not assumed.
-    text = re.sub(r"(\w)-\s*\n\s*\n?\s*(\w)", r"\1\2", text)
+    # NOTE: hyphen repair is deliberately NOT here. sanitize() runs on a single
+    # Mathpix LINE, and a broken word ends one line and resumes on the NEXT --
+    # so within one line there is no newline for the pattern to match. Putting
+    # it here looked right and fired on nothing: the first biology ingest came
+    # back 1393/2088 chunks still hyphenated. It belongs after the join; see
+    # dehyphenate().
     return re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", "", text).strip()
+
+
+def dehyphenate(text: str) -> str:
+    """Rejoin words split across a line break by hyphenation.
+
+    Runs on ASSEMBLED chunk text, not on individual lines, because that is the
+    only place the two halves of the word are adjacent.
+
+    Known limitation, accepted: a genuine hyphenated compound broken at a line
+    end ("well-\nknown") is joined too, giving "wellknown". Typographic
+    hyphenation is far more common than that case in justified text, and the
+    alternative -- leaving 67% of biology chunks with words like
+    "Gib-berellins" -- breaks both reading and lexical retrieval.
+    """
+    return re.sub(r"(\w)-\s*\n\s*\n?\s*(\w)", r"\1\2", text)
 
 
 def chapter_spans(doc) -> List[dict]:
@@ -169,7 +185,7 @@ def chunk_units(units: List[Tuple[int, str, str]]) -> List[dict]:
     cur: List[Tuple[int, str, str]] = []
 
     def body(u):
-        return "\n\n".join(t for _, _, t in u).strip()
+        return dehyphenate("\n\n".join(t for _, _, t in u).strip())
 
     def tail(u):
         # Trailing SENTENCES up to OVERLAP tokens. Whole-paragraph overlap
@@ -236,6 +252,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--execute", action="store_true")
     ap.add_argument("--only", help="substring filter on the book path")
+    ap.add_argument("--chapter", type=int, help="single chapter number, for safe re-runs")
     args = ap.parse_args()
     dry = not args.execute
 
@@ -252,7 +269,24 @@ def main() -> int:
         if args.only and args.only not in rel:
             continue
         path = BOOK_ROOT + rel
-        book = os.path.basename(path)
+        # The '#mathpix' suffix is load-bearing, not cosmetic.
+        #
+        # pdf_chunks_dedupe_idx is UNIQUE(source_file, chunk_index). The old
+        # PyMuPDF corpus wrote the SAME source_file with a book-wide index
+        # 0..1302, so re-indexing a new corpus from 0 under that name collides
+        # with whatever old rows the current chapter has not deleted yet. That
+        # is what failed here: chapter 1's new index 59 hit chapter 2's old
+        # row 59.
+        #
+        # It also closes a safety hole. With a distinct name the idempotency
+        # delete below can only ever remove rows THIS extractor wrote, so a
+        # failed run cannot empty a chapter -- which is exactly what it did to
+        # "The Living World" before this fix.
+        #
+        # And it gives chunk_corpus_version something to distinguish: a
+        # PyMuPDF corpus and a Mathpix corpus differ in every equation, and
+        # under one filename the version hash could not tell them apart.
+        book = os.path.basename(path) + "#mathpix"
         doc = fitz.open(path)
         lines = mx.extract(path)
         pages_by_no = {p["page"]: p for p in lines.get("pages", [])}
@@ -274,6 +308,8 @@ def main() -> int:
 
         seq = 0
         for span in chapter_spans(doc):
+            if args.chapter is not None and span["num"] != args.chapter:
+                continue
             nt = norm(span["title"] or "")
             best, score = None, 0.0
             for c in cands:
