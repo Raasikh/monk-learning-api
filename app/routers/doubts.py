@@ -14,7 +14,7 @@ import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 
-from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
@@ -33,6 +33,7 @@ from app.snap import (
     SnapError,
     solve_snapped_image,
     stream_followup,
+    transcribe_question,
 )
 from app import exam_scope
 from app.exam_scope import canonical_subject
@@ -919,6 +920,24 @@ class FollowUpRequest(BaseModel):
     history: List[FollowUpTurn] = []
 
 
+def _load_doubt_for_user(doubt_id: str, user_id: str) -> Dict[str, Any]:
+    """The doubt, or the right HTTP error. Scoped to its owner."""
+    try:
+        res = (
+            supabase.table("doubts")
+            .select(DETAIL_COLUMNS)
+            .eq("id", doubt_id)
+            .eq("user_id", user_id)
+            .execute()
+        )
+    except Exception as err:
+        logger.error("Could not read doubt %s for follow-up: %s", doubt_id[:8], err)
+        raise HTTPException(status_code=503, detail="That is not available right now.")
+    if not res.data:
+        raise HTTPException(status_code=404, detail="Doubt not found")
+    return res.data[0]
+
+
 @router.post("/{doubt_id}/ask")
 def ask_about_doubt(doubt_id: str, body: FollowUpRequest,
                     user_id: str = Depends(get_current_user_id)):
@@ -937,36 +956,37 @@ def ask_about_doubt(doubt_id: str, body: FollowUpRequest,
     if not question:
         raise HTTPException(status_code=400, detail="Ask something first.")
 
-    try:
-        res = (
-            supabase.table("doubts")
-            .select(DETAIL_COLUMNS)
-            .eq("id", doubt_id)
-            .eq("user_id", user_id)
-            .execute()
-        )
-    except Exception as err:
-        logger.error("Could not read doubt %s for follow-up: %s", doubt_id[:8], err)
-        raise HTTPException(status_code=503, detail="That is not available right now.")
-    if not res.data:
-        raise HTTPException(status_code=404, detail="Doubt not found")
-    doubt = res.data[0]
+    doubt = _load_doubt_for_user(doubt_id, user_id)
+    return _followup_response(doubt, doubt_id, user_id, question,
+                              [{"role": t.role, "content": t.content}
+                               for t in body.history])
 
+
+def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
+                       question: str, history: List[Dict[str, str]],
+                       transcript: Optional[str] = None) -> StreamingResponse:
+    """The reply, streamed a step at a time.
+
+    `transcript` is echoed back first when the question was spoken, so the
+    screen can show what was HEARD before the answer starts arriving — a
+    misheard question is worth catching before reading three steps that answer
+    something else.
+    """
     def event(name: str, payload: Dict[str, Any]) -> str:
         return f"event: {name}\ndata: {json.dumps(payload)}\n\n"
 
     def stream():
         started = time.time()
-        chars = 0
+        steps = 0
+        if transcript is not None:
+            yield event("transcript", {"text": transcript})
         logger.info("[FOLLOWUP] doubt=%s user=%s asked %r (%d prior turns)",
-                    doubt_id[:8], user_id[:8], question[:80], len(body.history))
+                    doubt_id[:8], user_id[:8], question[:80], len(history))
         try:
-            for piece in stream_followup(
-                doubt, question,
-                [{"role": t.role, "content": t.content} for t in body.history],
-            ):
-                chars += len(piece)
-                yield event("token", {"text": piece})
+            for kind, payload in stream_followup(doubt, question, history):
+                if kind == "step":
+                    steps += 1
+                yield event(kind, payload)
         except Exception as err:
             logger.error("[FOLLOWUP] doubt=%s failed after %dms: %s",
                          doubt_id[:8], int((time.time() - started) * 1000), err,
@@ -975,13 +995,48 @@ def ask_about_doubt(doubt_id: str, body: FollowUpRequest,
                 "message": "Monk could not answer that just now. Try again in a moment.",
             })
             return
-        logger.info("[FOLLOWUP] doubt=%s done in %dms, %d chars",
-                    doubt_id[:8], int((time.time() - started) * 1000), chars)
+        logger.info("[FOLLOWUP] doubt=%s done in %dms, %d step(s)",
+                    doubt_id[:8], int((time.time() - started) * 1000), steps)
         yield event("done", {"total_ms": int((time.time() - started) * 1000)})
 
     return StreamingResponse(stream(), media_type="text/event-stream",
                              headers={"Cache-Control": "no-cache",
                                       "X-Accel-Buffering": "no"})
+
+
+@router.post("/{doubt_id}/ask-voice")
+async def ask_about_doubt_aloud(
+    doubt_id: str,
+    audio: UploadFile = File(..., description="The held recording"),
+    history: str = Form("[]"),
+    user_id: str = Depends(get_current_user_id),
+):
+    """POST /doubts/{id}/ask-voice — the same thing, asked out loud.
+
+    Transcribed here rather than on the phone: the key stays on the server, and
+    the transcript and the answer come back down one connection so the screen
+    can show what was heard the moment it is known.
+    """
+    doubt = _load_doubt_for_user(doubt_id, user_id)
+    raw = await audio.read()
+    try:
+        question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)
+    except SnapError as err:
+        raise HTTPException(status_code=422, detail=str(err))
+    if not question:
+        # Not an error: a hold with nothing in it is a slip, and the screen can
+        # simply ask again rather than showing a failure.
+        raise HTTPException(status_code=422,
+                            detail="Monk did not catch that — try asking again.")
+
+    try:
+        prior = json.loads(history or "[]")
+    except json.JSONDecodeError:
+        prior = []
+    turns = [{"role": t.get("role"), "content": t.get("content") or ""}
+             for t in prior if isinstance(t, dict)]
+    return _followup_response(doubt, doubt_id, user_id, question, turns,
+                              transcript=question)
 
 
 @router.post("/{doubt_id}/report", status_code=200)

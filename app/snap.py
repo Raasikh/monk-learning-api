@@ -209,6 +209,59 @@ def _deepseek_client() -> OpenAI:
     )
 
 
+# Deepgram nova-3, the same model the classroom listens with. One shot rather
+# than a socket: a follow-up is one held question, not a conversation, so there
+# is nothing for a stream to be faster than.
+STT_MODEL = "nova-3"
+STT_TIMEOUT_S = 20.0
+STT_MAX_BYTES = 8 * 1024 * 1024
+
+
+def transcribe_question(audio: bytes, mime_type: str, doubt_id: str = "-") -> str:
+    """What the student just asked, as text. Empty when nothing was heard.
+
+    The recording is sent in whatever container the phone made it in and
+    Deepgram detects the format — the classroom sends raw PCM because it is
+    already streaming frames, but a one-shot hold has a file, and converting it
+    here would be work for its own sake.
+    """
+    key = os.getenv("DEEPGRAM_API_KEY")
+    if not key:
+        raise SnapError("Voice is not configured on this server.", "config")
+    if not audio:
+        return ""
+    if len(audio) > STT_MAX_BYTES:
+        raise SnapError("That recording is too long — ask it in a sentence or two.",
+                        "transcribe", REMEDY_RETAKE)
+
+    import requests
+    params = [f"model={STT_MODEL}", "language=en", "punctuate=true",
+              "smart_format=true"]
+    url = "https://api.deepgram.com/v1/listen?" + "&".join(params)
+    started = time.time()
+    try:
+        res = requests.post(
+            url, data=audio, timeout=STT_TIMEOUT_S,
+            headers={"Authorization": f"Token {key}",
+                     "Content-Type": mime_type or "audio/m4a"},
+        )
+    except Exception as err:
+        logger.error("[FOLLOWUP STT] doubt=%s failed: %s", doubt_id[:8], err)
+        raise SnapError("Monk could not hear that. Try asking again.", "transcribe")
+    if res.status_code != 200:
+        logger.error("[FOLLOWUP STT] doubt=%s HTTP %d: %s",
+                     doubt_id[:8], res.status_code, res.text[:200])
+        raise SnapError("Monk could not hear that. Try asking again.", "transcribe")
+
+    alts = ((res.json().get("results", {}).get("channels") or [{}])[0]
+            .get("alternatives") or [{}])
+    text = (alts[0].get("transcript") or "").strip()
+    logger.info("[FOLLOWUP STT] doubt=%s %.0fkB in %dms -> %r",
+                doubt_id[:8], len(audio) / 1024,
+                int((time.time() - started) * 1000), text[:80])
+    return text
+
+
 def followup_context(doubt: Dict[str, Any]) -> str:
     """The solution the student is looking at, as the model's context.
 
@@ -249,11 +302,16 @@ def followup_context(doubt: Dict[str, Any]) -> str:
 
 def stream_followup(doubt: Dict[str, Any], question: str,
                     history: Optional[List[Dict[str, str]]] = None):
-    """Yields the reply a token at a time.
+    """Yields ("step", {...}) as each is finished, then ("spoken", {...}).
 
-    Streamed rather than returned whole because the student is mid-conversation
-    and watching: first words in under a second reads as an answer arriving,
-    where four seconds of nothing reads as a hang.
+    Not a token stream any more. A follow-up is an explanation, and an
+    explanation has an order — so it comes back as the same numbered steps the
+    solution above it uses, and each one is handed over the moment it is
+    complete. `_emit_new_steps` is the solver's own reader; a step is a step
+    wherever it was written.
+
+    The `spoken` line is the same explanation as continuous speech, kept apart
+    from the steps because what reads well numbered does not sound well read.
     """
     messages: List[Dict[str, str]] = [
         {"role": "system", "content": load_prompt("snap_followup.md")},
@@ -270,62 +328,42 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     stream = client.chat.completions.create(
         model=MODEL_FOLLOWUP,
         messages=messages,
+        response_format={"type": "json_object"},
         temperature=0.3,
-        max_tokens=700,
+        max_tokens=900,
         stream=True,
-        # No `thinking` here. The reasoning is already done and printed above;
-        # a follow-up that stops to think spends the student's patience on a
-        # question it can answer by reading.
+        # The reasoning is already done and printed above this question; a
+        # follow-up that stops to think spends the student's patience on
+        # something it can answer by reading.
         extra_body={"thinking": {"type": "disabled"}},
     )
+
+    buffer, emitted = "", set()
+    pending: List[Dict[str, Any]] = []
     for chunk in stream:
         if not getattr(chunk, "choices", None):
             continue
         piece = chunk.choices[0].delta.content
-        if piece:
-            yield piece
+        if not piece:
+            continue
+        buffer += piece
+        _emit_new_steps(buffer, emitted,
+                        lambda kind, data: pending.append(data) if kind == "step" else None)
+        while pending:
+            yield "step", pending.pop(0)
 
-
-def second_opinion(system_prompt: str, payload: str, doubt_id: str,
-                   usage_acc: Optional[Dict[str, int]] = None) -> Optional[str]:
-    """The same question, put to a different model. Its answer, or None.
-
-    Deliberately the same prompt and the same payload as the first solve: the
-    point is a second READING of one question, not a second question. And
-    deliberately blind, like the first — it derives an answer and something
-    else matches it to the options afterwards, so the match stays meaningful.
-    """
     try:
-        client = _openai_client()
-        res = client.chat.completions.create(
-            model=MODEL_SECOND_OPINION,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.0,
-            max_tokens=2200,
-            timeout=SECOND_OPINION_TIMEOUT_S,
-        )
-    except Exception as err:
-        logger.warning("[SNAP SECOND] doubt=%s call failed: %s", doubt_id[:8], err)
-        return None
-
-    if usage_acc is not None and getattr(res, "usage", None):
-        usage_acc["input"] = usage_acc.get("input", 0) + int(res.usage.prompt_tokens or 0)
-        usage_acc["output"] = usage_acc.get("output", 0) + int(res.usage.completion_tokens or 0)
-    try:
-        parsed = json.loads(res.choices[0].message.content or "{}")
-    except (json.JSONDecodeError, AttributeError, IndexError) as err:
-        logger.warning("[SNAP SECOND] doubt=%s unparseable: %s", doubt_id[:8], err)
-        return None
-    if parsed.get("answerable") is False:
-        logger.info("[SNAP SECOND] doubt=%s the other model declined to answer",
-                    doubt_id[:8])
-        return None
-    answer = (parsed.get("answer") or "").strip()
-    return answer or None
+        parsed = json.loads(buffer)
+    except json.JSONDecodeError:
+        parsed = {}
+    # Every step again at the end, in case the stream never produced a complete
+    # one to read — a short answer can finish inside a single chunk.
+    for step in parsed.get("steps") or []:
+        if step.get("n") not in emitted:
+            yield "step", {"n": step.get("n"), "text": step.get("text") or ""}
+    spoken = (parsed.get("spoken") or "").strip()
+    if spoken:
+        yield "spoken", {"text": spoken}
 
 
 def _assert_model(returned: Optional[str], expected: str, stage: str) -> None:
