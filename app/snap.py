@@ -366,6 +366,48 @@ def stream_followup(doubt: Dict[str, Any], question: str,
         yield "spoken", {"text": spoken}
 
 
+def second_opinion(system_prompt: str, payload: str, doubt_id: str,
+                   usage_acc: Optional[Dict[str, int]] = None) -> Optional[str]:
+    """The same question, put to a different model. Its answer, or None.
+
+    Deliberately the same prompt and the same payload as the first solve: the
+    point is a second READING of one question, not a second question. And
+    deliberately blind, like the first — it derives an answer and something
+    else matches it to the options afterwards, so the match stays meaningful.
+    """
+    try:
+        client = _openai_client()
+        res = client.chat.completions.create(
+            model=MODEL_SECOND_OPINION,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=2200,
+            timeout=SECOND_OPINION_TIMEOUT_S,
+        )
+    except Exception as err:
+        logger.warning("[SNAP SECOND] doubt=%s call failed: %s", doubt_id[:8], err)
+        return None
+
+    if usage_acc is not None and getattr(res, "usage", None):
+        usage_acc["input"] = usage_acc.get("input", 0) + int(res.usage.prompt_tokens or 0)
+        usage_acc["output"] = usage_acc.get("output", 0) + int(res.usage.completion_tokens or 0)
+    try:
+        parsed = json.loads(res.choices[0].message.content or "{}")
+    except (json.JSONDecodeError, AttributeError, IndexError) as err:
+        logger.warning("[SNAP SECOND] doubt=%s unparseable: %s", doubt_id[:8], err)
+        return None
+    if parsed.get("answerable") is False:
+        logger.info("[SNAP SECOND] doubt=%s the other model declined to answer",
+                    doubt_id[:8])
+        return None
+    answer = (parsed.get("answer") or "").strip()
+    return answer or None
+
+
 def _assert_model(returned: Optional[str], expected: str, stage: str) -> None:
     """Rule 5 — assert the model string the provider actually served.
 
