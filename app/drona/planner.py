@@ -442,6 +442,30 @@ Author a complete lesson plan JSON following the instructions in the system prom
 # are ignored by every existing reader and avoid a schema change.
 PLAN_STATUS_KEY = "_status"
 PLAN_EXPECTED_KEY = "_expected_segments"
+PLAN_ERROR_KEY = "_error"
+
+
+def _mark_plan_failed(plan_id: str, reason: str) -> None:
+    """Record that the background fill DIED, as distinct from still running.
+
+    Both states leave a plan without _status == "complete", so a poller cannot
+    tell them apart and has to wait out its whole deadline before calling a
+    failure -- minutes, for a thread that is already gone. That is the
+    "check that passes on absent information" shape in reverse: an absence
+    that reads as patience rather than as death.
+
+    Writes are best-effort. A plan that stays 'partial' because even this
+    update failed is the OLD behaviour, which is safe: the next lookup
+    regenerates. It is never worse for trying.
+    """
+    try:
+        res = supabase.table("lesson_plans").select("plan_json").eq("id", plan_id).execute()
+        pj = (res.data[0].get("plan_json") if res.data else None) or {}
+        pj[PLAN_STATUS_KEY] = "failed"
+        pj[PLAN_ERROR_KEY] = reason[:500]
+        supabase.table("lesson_plans").update({"plan_json": pj}).eq("id", plan_id).execute()
+    except Exception as exc:
+        logger.error(f"[PLAN MARK-FAILED FAILED] plan={plan_id[:8]}: {exc}")
 
 
 def _plan_is_complete(plan_json: Dict[str, Any]) -> bool:
@@ -648,6 +672,7 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
             f"ceiling is {MAX_SEGMENTS_PER_PLAN}. Authoring nothing rather than billing "
             f"{total - 1} calls against a malformed outline."
         )
+        _mark_plan_failed(plan_id, f"fan-out refused: outline claims {total} segments, ceiling {MAX_SEGMENTS_PER_PLAN}")
         return
 
     try:
@@ -683,6 +708,7 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
         # The student keeps whatever segments exist; the plan stays 'partial' so
         # the next lookup regenerates rather than serving a half lesson as cached.
         logger.error(f"❌ [BACKGROUND PLAN FILL FAILED] plan={plan_id[:8]}: {e}")
+        _mark_plan_failed(plan_id, f"background fill: {type(e).__name__}: {e}")
 
 
 def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
