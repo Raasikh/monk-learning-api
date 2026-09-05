@@ -15,6 +15,52 @@ logger = logging.getLogger("drona.voice_proxy")
 
 # Fixed Base Endpoints (Constant across environments)
 RUMIK_TTS_ENDPOINT = "https://silk-api.rumik.ai"
+
+# --- Rumik TTS PCM geometry -------------------------------------------------
+# Rumik Silk returns raw PCM over the WS with NO duration and NO timestamp
+# field — only binary frames plus a {"type":"done"} control frame. A duration
+# is therefore never received; it is COMPUTED from the byte count, exactly as
+# the batch pipeline does (dronav1project/scripts/synth_rumik.py:
+# `dur = len(all_pcm_samples) / float(RUMIK_SAMPLE_RATE)`).
+#
+# 24000 Hz, 16-bit, mono. Evidence, mutually independent:
+#   * synth_rumik.py sets RUMIK_SAMPLE_RATE = 24000 and hard-refuses to encode
+#     if a Rumik WAV header ever comes back at a different rate, bit depth, or
+#     channel count.
+#   * This file's own live path sizes its progressive flush at
+#     `PART_BYTES = 48000`, documented there as "~1s of 24kHz 16-bit mono per
+#     part" — 24000 * 2 * 1 = 48000 bytes/s.
+#   * The mobile client plays every audio_chunk at TTS_SAMPLE_RATE = 24000
+#     (drona-voice-client.ts) and Drona does not sound pitch-shifted, which a
+#     16000-vs-24000 mismatch would make unmistakable.
+#
+# NOT 16000. DeepgramSTTProxy.SAMPLE_RATE = 16000 and SaarasSTTProxy's
+# `len(pcm_bytes) / 32000.0` describe the STT *uplink* — the rate the client
+# mic sends at, as their own comments say ("what the browser sends"). They say
+# nothing about what Rumik synthesizes. Using 16000 here would report every
+# narration 1.5x longer than it really is.
+RUMIK_TTS_SAMPLE_RATE = 24000
+RUMIK_TTS_BYTES_PER_SAMPLE = 2  # 16-bit
+RUMIK_TTS_CHANNELS = 1          # mono
+RUMIK_TTS_BYTES_PER_SECOND = (
+    RUMIK_TTS_SAMPLE_RATE * RUMIK_TTS_BYTES_PER_SAMPLE * RUMIK_TTS_CHANNELS
+)  # 48000
+
+
+def pcm_duration_ms(pcm: Optional[bytes]) -> int:
+    """Playback length of a Rumik PCM buffer, in whole milliseconds.
+
+        duration_ms = len(pcm) / (24000 * 2 * 1) * 1000
+
+    Measured, not estimated: it is the byte count of the audio that was
+    actually synthesized, so it stays correct for a sentence Rumik truncated,
+    a cached filler, or the partial tail of a timed-out stream.
+    """
+    if not pcm:
+        return 0
+    return int(len(pcm) * 1000 / RUMIK_TTS_BYTES_PER_SECOND)
+
+
 SARVAM_STT_ENDPOINT = "wss://api.sarvam.ai/speech-to-text-ws"
 SARVAM_STT_REST_ENDPOINT = "https://api.sarvam.ai/speech-to-text"
 
@@ -1551,20 +1597,30 @@ class RumikTTSProxy:
         # Progressive flush state. ~1s of 24kHz 16-bit mono per part: small
         # enough that the first part reaches the student seconds before the
         # sentence finishes synthesizing, big enough not to spam frames.
-        PART_BYTES = 48000
+        PART_BYTES = RUMIK_TTS_BYTES_PER_SECOND  # 48000
         part_buf = bytearray()
         emitted_parts = 0
+        # Milliseconds of audio already handed to on_audio_part. Each part's
+        # own measured duration accumulates here, so this doubles as the
+        # start offset of the NEXT part within the sentence.
+        emitted_duration_ms = 0
 
         async def _flush_part(force: bool = False):
-            nonlocal emitted_parts
+            nonlocal emitted_parts, emitted_duration_ms
             if on_audio_part is None:
                 return
             if len(part_buf) >= PART_BYTES or (force and part_buf):
                 chunk = bytes(part_buf)
                 part_buf.clear()
                 emitted_parts += 1
+                # Measured playback length of THIS part, from its own bytes —
+                # see pcm_duration_ms. The caller forwards it to the client so
+                # narration-synced board cues have a real millisecond track
+                # instead of a guess.
+                part_duration_ms = pcm_duration_ms(chunk)
+                emitted_duration_ms += part_duration_ms
                 if emitted_parts == 1:
-                    logger.info(f"⚡ [RUMIK FIRST PART] Sentence #{self.connection_count}: first {len(chunk)} bytes flushed {time.time() - t0:.2f}s in (sentence still synthesizing)")
+                    logger.info(f"⚡ [RUMIK FIRST PART] Sentence #{self.connection_count}: first {len(chunk)} bytes ({part_duration_ms}ms) flushed {time.time() - t0:.2f}s in (sentence still synthesizing)")
                 try:
                     await on_audio_part(chunk)
                 except Exception as part_err:
@@ -1676,8 +1732,23 @@ class RumikTTSProxy:
             return b"\x00" * 24000
 
         t_total = time.time() - t0
-        logger.info(f"[RUMIK SYNTHESIS COMPLETE] Sentence #{self.connection_count}: {len(text)} chars -> {len(pcm_bytes)} PCM bytes in {t_total:.2f}s")
+        # Whole-sentence measured duration, over every byte Rumik produced —
+        # equal to the sum of the parts when streaming, and the length of the
+        # single returned buffer when not.
+        sentence_duration_ms = pcm_duration_ms(bytes(pcm_bytes))
+        logger.info(
+            f"[RUMIK SYNTHESIS COMPLETE] Sentence #{self.connection_count}: {len(text)} chars -> "
+            f"{len(pcm_bytes)} PCM bytes ({sentence_duration_ms}ms audio) in {t_total:.2f}s wall"
+        )
         if emitted_parts > 0:
+            if emitted_duration_ms != sentence_duration_ms:
+                # Only reachable if a part was dropped; the two are the same
+                # bytes counted two ways.
+                logger.warning(
+                    f"[RUMIK DURATION MISMATCH] Sentence #{self.connection_count}: streamed "
+                    f"{emitted_duration_ms}ms across {emitted_parts} parts but synthesized "
+                    f"{sentence_duration_ms}ms"
+                )
             # Everything already went out through on_audio_part.
             return b""
         return bytes(pcm_bytes)

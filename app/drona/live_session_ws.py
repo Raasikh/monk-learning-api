@@ -13,7 +13,7 @@ from app.auth import decode_supabase_jwt
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.practice_explain import process_practice_explain_turn_stream
 from app.drona.doubt_of_day import process_doubt_of_day_turn_stream
-from app.drona.voice_proxy import DeepgramSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences
+from app.drona.voice_proxy import DeepgramSTTProxy, RumikTTSProxy, RumikConnectionPool, check_tts_safety_filter, split_into_sentences, pcm_duration_ms
 from app.drona.persona import (
     normalize_language,
     persona_for,
@@ -357,7 +357,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 "sentence_id": f"{turn_id}_filler_{int(time.time()*1000)}",
                 "audio": b64_f,
                 "speech": "One moment…" if session_language == "english" else "Ek second…",
-                "board_event": None
+                "board_event": None,
+                # Measured playback length of this frame's PCM. Additive: a
+                # client that ignores it behaves exactly as before.
+                "duration_ms": pcm_duration_ms(filler_pcm),
             }
             await safe_send_json(f_msg)
             logger.info(f"🔊 [FILLER AUDIO TRANSMITTED] Sent pre-synthesized filler chunk ({len(filler_pcm)} bytes) over WebSocket.")
@@ -391,6 +394,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     "speech": clean_text if part_count == 1 else "",
                     "board_event": matching_evt if part_count == 1 else None,
                     "continuation": part_count > 1,
+                    # Measured playback length of THIS part's PCM (not the
+                    # whole sentence): len(pcm) / (24000 * 2) * 1000, computed
+                    # in voice_proxy.pcm_duration_ms. Parts of one sentence
+                    # arrive in order, so a client can accumulate these to get
+                    # each part's start offset within the sentence and drive
+                    # narration-synced board cues off real milliseconds.
+                    # Additive — an older client that ignores it is unaffected.
+                    "duration_ms": pcm_duration_ms(pcm),
                 }
                 assert_no_forbidden_keys(out)
                 total_audio_bytes += len(pcm)
@@ -414,7 +425,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     "sentence_id": sentence_id,
                     "audio": base64.b64encode(audio_bytes).decode('utf-8'),
                     "speech": clean_text,
-                    "board_event": matching_evt
+                    "board_event": matching_evt,
+                    # Whole-sentence duration here: this branch sends the
+                    # sentence as one frame. skip_tts's silent buffer measures
+                    # honestly too, since it is real bytes at the same rate.
+                    "duration_ms": pcm_duration_ms(audio_bytes),
                 }
                 assert_no_forbidden_keys(out_msg)
                 total_audio_bytes += len(audio_bytes)
@@ -648,7 +663,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                             "sentence_id": sentence_id,
                             "audio": None,
                             "speech": clean_text,
-                            "board_event": matching_evt
+                            "board_event": matching_evt,
+                            # No audio was synthesized, so there is nothing to
+                            # measure — 0, never a guess from the text length.
+                            "duration_ms": 0,
                         }
                         assert_no_forbidden_keys(out_msg)
                         logger.info(f"🔇 [CHECKPOINT QUESTION - TTS FAILED] sentence_id={sentence_id} sent as silent caption ({len(clean_text)} chars)")
