@@ -540,7 +540,8 @@ def _attach_example_diagram(segment: Dict[str, Any], subject: str, sub_title: st
 
 def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str, Any],
                     index: int, depth_block: str, plan_id: Optional[str] = None,
-                    with_diagram: bool = False) -> Dict[str, Any]:
+                    with_diagram: bool = False,
+                    subtopic_key: Optional[str] = None) -> Dict[str, Any]:
     """Authors one full segment. index is 0-based.
 
     `with_diagram` is False on the synchronous path that authors segment 1,
@@ -590,12 +591,12 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
             record_call(model_name, "segment", ok=False, attempt=attempt,
                         latency_ms=int((time.time() - t0) * 1000),
                         chapter_id=chap_data.get("id"), plan_id=plan_id,
-                        subtopic_key=sub_title, error=str(exc))
+                        subtopic_key=subtopic_key or sub_title, error=str(exc))
             raise
         record_call(model_name, "segment", ok=True, attempt=attempt, res=res,
                     latency_ms=int((time.time() - t0) * 1000),
                     chapter_id=chap_data.get("id"), plan_id=plan_id,
-                    subtopic_key=sub_title)
+                    subtopic_key=subtopic_key or sub_title)
         raw = res.choices[0].message.content or ""
         try:
             seg = sanitize_double_escaped_latex(json.loads(strip_fences(raw)))
@@ -624,7 +625,7 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
 
 def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title: str,
                              outline: Dict[str, Any], first_segment: Dict[str, Any],
-                             depth_block: str) -> None:
+                             depth_block: str, subtopic_key: Optional[str] = None) -> None:
     """Authors segments 2..N in parallel and writes the completed plan. Runs in a
     background thread while the student is being taught segment 1.
 
@@ -653,7 +654,8 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
         with ThreadPoolExecutor(max_workers=4) as ex:
             rest = list(ex.map(
                 lambda i: _author_segment(chap_data, sub_title, outline, i, depth_block,
-                                          plan_id, with_diagram=True),
+                                          plan_id, with_diagram=True,
+                                          subtopic_key=subtopic_key),
                 range(1, total),
             ))
         # Segment 1 skipped its diagram to keep time-to-first-word at ~24s.
@@ -700,7 +702,8 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     t0 = time.time()
     outline = _author_outline(chap_data, sub_title, subtopic_key, structure_block, depth_block)
     t_outline = time.time() - t0
-    first_segment = _author_segment(chap_data, sub_title, outline, 0, depth_block)
+    first_segment = _author_segment(chap_data, sub_title, outline, 0, depth_block,
+                                    subtopic_key=subtopic_key)
     total = len(outline["segments"])
     logger.info(
         f"⚡ [STREAMING PLAN] '{subtopic_key}' outline={t_outline:.0f}s "
@@ -732,7 +735,8 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
 
     threading.Thread(
         target=_fill_remaining_segments,
-        args=(row["id"], chap_data, sub_title, outline, first_segment, depth_block),
+        args=(row["id"], chap_data, sub_title, outline, first_segment, depth_block,
+              subtopic_key),
         daemon=True,
     ).start()
     return row
