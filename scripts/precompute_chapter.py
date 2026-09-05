@@ -38,6 +38,16 @@ POLL_SECONDS = 5
 DEFAULT_DEADLINE = 900  # 15 min per concept; the slowest C1 concept took ~6
 
 
+# stdout is block-buffered when redirected to a file, stderr is not. So a run
+# piped to a log showed the logger's per-segment chatter live and NONE of this
+# script's own [n/8] progress lines -- they sat in a 4KB buffer, and a run that
+# was working looked stalled. Reconfigure rather than sprinkle flush=True.
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+except Exception:
+    pass
+
+
 def wait_for_complete(plan_id: str, deadline: int) -> tuple[bool, dict, float]:
     """Poll until _status is terminal. Returns (ok, plan_json, seconds).
 
