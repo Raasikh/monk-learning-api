@@ -67,6 +67,19 @@ MODEL_SOLVE = "deepseek-v4-pro"
 # reasoning one, and flash is three times cheaper and markedly faster, which is
 # what a student waiting mid-conversation actually feels.
 MODEL_FOLLOWUP = "deepseek-v4-flash"
+# A SECOND OPINION, from a different family, for the one case that says
+# plainly that something went wrong: a choice question whose derived answer is
+# not any of the four printed options.
+#
+# The paper prints the answer among them. So an answer outside them is either a
+# wrong derivation or a misread option, and both are worth a second look —
+# where "second" matters more than "stronger". Two independent models are a
+# real signal in a way that asking the same one twice is not, and the way they
+# disagree tells you WHICH failure it was: if the other model lands on an
+# option, the first had it wrong; if it independently lands outside them too,
+# the options themselves are the likely problem.
+MODEL_SECOND_OPINION = os.getenv("SNAP_SECOND_OPINION_MODEL", "gpt-4o").strip()
+SECOND_OPINION_TIMEOUT_S = 60.0
 # Long enough for a real exchange, short enough that the prompt cannot grow
 # without bound over a session that is never persisted anyway.
 FOLLOWUP_MAX_TURNS = 12
@@ -271,6 +284,48 @@ def stream_followup(doubt: Dict[str, Any], question: str,
         piece = chunk.choices[0].delta.content
         if piece:
             yield piece
+
+
+def second_opinion(system_prompt: str, payload: str, doubt_id: str,
+                   usage_acc: Optional[Dict[str, int]] = None) -> Optional[str]:
+    """The same question, put to a different model. Its answer, or None.
+
+    Deliberately the same prompt and the same payload as the first solve: the
+    point is a second READING of one question, not a second question. And
+    deliberately blind, like the first — it derives an answer and something
+    else matches it to the options afterwards, so the match stays meaningful.
+    """
+    try:
+        client = _openai_client()
+        res = client.chat.completions.create(
+            model=MODEL_SECOND_OPINION,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=2200,
+            timeout=SECOND_OPINION_TIMEOUT_S,
+        )
+    except Exception as err:
+        logger.warning("[SNAP SECOND] doubt=%s call failed: %s", doubt_id[:8], err)
+        return None
+
+    if usage_acc is not None and getattr(res, "usage", None):
+        usage_acc["input"] = usage_acc.get("input", 0) + int(res.usage.prompt_tokens or 0)
+        usage_acc["output"] = usage_acc.get("output", 0) + int(res.usage.completion_tokens or 0)
+    try:
+        parsed = json.loads(res.choices[0].message.content or "{}")
+    except (json.JSONDecodeError, AttributeError, IndexError) as err:
+        logger.warning("[SNAP SECOND] doubt=%s unparseable: %s", doubt_id[:8], err)
+        return None
+    if parsed.get("answerable") is False:
+        logger.info("[SNAP SECOND] doubt=%s the other model declined to answer",
+                    doubt_id[:8])
+        return None
+    answer = (parsed.get("answer") or "").strip()
+    return answer or None
 
 
 def _assert_model(returned: Optional[str], expected: str, stage: str) -> None:
@@ -2807,6 +2862,51 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             doubt_id[:8], question.get("n"), match_ms, derived_answer[:80], labels,
         )
         if not labels:
+            # An answer outside the printed options is the plainest signal we
+            # get that something went wrong, so it earns one look from a
+            # different model — see MODEL_SECOND_OPINION. Only here: this is
+            # rare, and the cost of a second solve is only worth paying when
+            # the first one has already said it does not fit the page.
+            second_t0 = time.time()
+            other = second_opinion(system_prompt, payload, doubt_id, usage_acc)
+            second_labels = (
+                match_answer_to_options(other, options, q_type, doubt_id, usage_acc)
+                if other else []
+            )
+            logger.info(
+                "[SNAP SECOND] doubt=%s q%s model=%s second_ms=%d derived=%r "
+                "-> labels=%s",
+                doubt_id[:8], question.get("n"), MODEL_SECOND_OPINION,
+                int((time.time() - second_t0) * 1000), (other or "")[:80],
+                second_labels,
+            )
+            if second_labels:
+                # It lands on an option, so the first derivation was the
+                # problem. Take the one that fits the page, and say plainly in
+                # the record where it came from.
+                logger.warning(
+                    "[SNAP SECOND] doubt=%s taking %s's answer %r over %r — the "
+                    "first derivation matched no option and this one does",
+                    doubt_id[:8], MODEL_SECOND_OPINION, (other or "")[:60],
+                    solution["answer"][:60],
+                )
+                solution["answer"] = other
+                solution["option_labels"] = second_labels
+                solution["answer_from_second_opinion"] = MODEL_SECOND_OPINION
+                labels = second_labels
+            elif other:
+                # Two models, independently, both outside the four printed
+                # options. That points at the OPTIONS rather than at the maths,
+                # which is worth saying rather than blaming the derivation.
+                solution["second_opinion_answer"] = other
+                logger.warning(
+                    "[SNAP SECOND] doubt=%s %s also landed outside the options "
+                    "(%r vs %r) — the options are the likely misread",
+                    doubt_id[:8], MODEL_SECOND_OPINION, (other or "")[:60],
+                    solution["answer"][:60],
+                )
+
+        if not labels:
             # Not a refusal. The student gets the working and the result, clearly
             # flagged as not matching — that is more useful than nothing, and it
             # is honest in a way that silently picking the nearest option is not.
@@ -2818,12 +2918,25 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             )
             solution["option_labels"] = []
             solution["unmatched"] = True
-            solution["unmatched_note"] = (
-                f"Monk worked this out as \u201c{solution['answer']}\u201d, which is not "
-                "one of the options on the page. Either an option was misread from "
-                "the photo, or Monk has this one wrong \u2014 the working is below so "
-                "you can judge, and it is worth checking in a session."
-            )
+            if solution.get("second_opinion_answer"):
+                # Two models, separately, both landed outside the four printed
+                # options. That is much more likely to be an option we misread
+                # than two independent derivations failing the same way, and
+                # saying so points the student at the right thing to check.
+                solution["unmatched_note"] = (
+                    f"Monk worked this out as \u201c{solution['answer']}\u201d, and a "
+                    "second check landed outside the printed options too. That "
+                    "usually means one of the options did not come through the "
+                    "photo cleanly rather than that the working is wrong \u2014 "
+                    "compare the options below against your page."
+                )
+            else:
+                solution["unmatched_note"] = (
+                    f"Monk worked this out as \u201c{solution['answer']}\u201d, which is not "
+                    "one of the options on the page. Either an option was misread from "
+                    "the photo, or Monk has this one wrong \u2014 the working is below so "
+                    "you can judge, and it is worth checking in a session."
+                )
         if q_type == "single_correct":
             labels = labels[:1]
         chosen = [o for o in options if o["label"] in labels]

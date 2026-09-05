@@ -2720,3 +2720,43 @@ def test_followup_context_says_when_no_answer_was_shown():
     print("  " + [l for l in ctx.split("\n") if "FINAL ANSWER" in l][0])
     assert "none" in ctx.lower()
     assert "withheld" in ctx.lower()
+
+
+def test_a_second_opinion_is_asked_only_when_nothing_matched(monkeypatch):
+    """The second model is for the one case that says something went wrong.
+
+    A choice question's answer is printed among its options, so an answer
+    outside them is either a wrong derivation or a misread option. Both earn a
+    look; a matched answer earns nothing, because a second solve on every
+    question would double the cost of the common case to fix the rare one.
+    """
+    calls = []
+    monkeypatch.setattr(snap, "second_opinion",
+                        lambda *a, **k: calls.append(a) or "42")
+    monkeypatch.setattr(snap, "match_answer_to_options",
+                        lambda answer, *a, **k: ["1"] if answer == "42" else [])
+    labels = snap.match_answer_to_options("42", [{"label": "1", "text": "42"}],
+                                          "single_correct", "d1", None)
+    print(f"  matched first time -> {labels}, second opinions asked: {len(calls)}")
+    assert labels == ["1"]
+    assert calls == [], "a matched answer must not pay for a second solve"
+
+
+def test_second_opinion_returns_none_when_the_other_model_declines(monkeypatch):
+    """`answerable: false` is a real outcome and must not become an answer."""
+    class _Res:
+        usage = None
+        choices = [type("C", (), {"message": type("M", (), {
+            "content": '{"answerable": false, "answer": "not enough information"}'})()})()]
+
+    class _Client:
+        class chat:
+            class completions:
+                @staticmethod
+                def create(**_kw):
+                    return _Res()
+
+    monkeypatch.setattr(snap, "_openai_client", lambda: _Client())
+    out = snap.second_opinion("sys", "payload", "d1", None)
+    print(f"  -> {out!r}")
+    assert out is None
