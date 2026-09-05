@@ -73,6 +73,46 @@ MAX_TOKENS = 800
 OVERLAP = 100
 MATCH_FLOOR = 0.55
 
+# Page furniture, read off the rendered pages rather than guessed. Every book
+# repeats a running header block on a chapter-opening page and a footer block
+# on every page:
+#     Class 11 Biology - Ch. 1 Round 2 Addendum
+#     Page 27 of 27
+#     61                       <- bare folio
+# and chapter openers add "Drona Ed Tech" / "CBSE Boards . CUET . NEET".
+# Left in, this interleaves mid-list and attaches distractor notes to the wrong
+# MCQ; it polluted 29.2% of chunks in the first ingest.
+FURNITURE = [
+    re.compile(r"^\s*Page\s+\d+\s+of\s+\d+\s*$", re.I),
+    re.compile(r"^\s*\d{1,4}\s*$"),                       # bare folio
+    re.compile(r"^\s*Class\s+\d+\s+\w+\s*[-—|]", re.I),  # running header/footer
+    re.compile(r"^\s*Drona\s+Ed\s+Tech\s*$", re.I),
+    re.compile(r"^\s*CBSE\s+Boards\b.*$", re.I),
+]
+# Pages that carry no teaching text at all. Figure plates are illustrator
+# build-specs and label soup -- 589 chunks of the first ingest, 486 of them
+# containing no Greek letter at all, i.e. formulas stripped to arithmetic
+# nonsense. Contents pages are dot leaders.
+FIGURE_PLATE = re.compile(r"CHAPTER\s+\d+\s*[\u00b7\u2022\-]\s*FIGURES", re.I)
+DOT_LEADER = re.compile(r"\.{6,}\s*\d+")
+
+
+def strip_furniture(page_text: str) -> str:
+    """Drop running headers, footers and folios, line by line."""
+    keep = [ln for ln in page_text.split("\n")
+            if not any(rx.match(ln) for rx in FURNITURE)]
+    return "\n".join(keep)
+
+
+def is_non_teaching(page_text: str) -> bool:
+    """True for figure-plate and contents pages, and for pages that are
+    nothing but furniture once it is stripped (chapter title pages)."""
+    if FIGURE_PLATE.search(page_text):
+        return True
+    if len(DOT_LEADER.findall(page_text)) >= 5:
+        return True
+    return len(strip_furniture(page_text).strip()) < 120
+
 tokenizer = tiktoken.get_encoding("cl100k_base")
 
 
@@ -85,6 +125,11 @@ def sanitize(text: str) -> str:
     if not text:
         return ""
     text = text.replace("\x00", "")
+    # Rejoin words broken across a line by hyphenation. 49.7% of first-ingest
+    # chunks carried at least one, and biology -- the pilot subject -- was
+    # 78.9%. It breaks reading AND lexical retrieval: nothing matches
+    # "Echin-odermata".
+    text = re.sub(r"(\w)-\n(\w)", r"\1\2", text)
     return re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", "", text).strip()
 
 
@@ -136,49 +181,111 @@ def subtopic_at(idx: List[Tuple[int, str]], page: int) -> Optional[str]:
 
 
 def chunk_pages(pages: List[Tuple[int, str]]) -> List[dict]:
-    """Chunk (page_no, page_text) pairs, carrying each chunk's real page span."""
+    """Chunk (page_no, page_text) pairs, carrying each chunk's real page span.
+
+    Two defects from the first ingest are fixed here.
+
+    OVERLAP WAS DEAD CODE. `step = MAX_TOKENS - OVERLAP` was applied only
+    inside the oversize-paragraph branch; the normal path reset `cur` to the
+    new paragraph with no carryover, so the great majority of boundaries had
+    ZERO overlap. That is the direct cause of the orphan question/answer
+    pattern -- chunks opening on "Since (iii) is false... the answer is (c)"
+    with no question anywhere in them. Now the tail of each chunk seeds the
+    next one.
+
+    TOKEN-SLICE DECODING MANUFACTURED MOJIBAKE. `tokenizer.decode(toks[i:j])`
+    cuts multi-byte characters in half, and the mathematical-alphanumeric block
+    (U+1D400+, four bytes each) is exactly what a maths book is full of. 795
+    chunks carried U+FFFD, one of them OPENING on a replacement character where
+    a pi should be. The oversize branch now slides over WORDS, so a character
+    is never split.
+    """
     units: List[Tuple[int, str]] = []
     for pno, text in pages:
-        for para in sanitize(text).split("\n\n"):
+        if is_non_teaching(text):
+            continue
+        for para in sanitize(strip_furniture(text)).split("\n\n"):
             p = sanitize(para)
             if p:
                 units.append((pno, p))
 
     out: List[dict] = []
-    cur = ""
-    cur_pages: List[int] = []
+    cur: List[Tuple[int, str]] = []          # (page, paragraph) in the open chunk
+
+    def text_of(u: List[Tuple[int, str]]) -> str:
+        return "\n\n".join(t for _, t in u).strip()
+
+    def tail_for_overlap(u: List[Tuple[int, str]]) -> List[Tuple[int, str]]:
+        """The trailing SENTENCES worth up to OVERLAP tokens, as the next
+        chunk's seed -- this is what keeps a question with its answer.
+
+        Sentences, not whole paragraphs. The first version of this kept whole
+        paragraphs within the budget and fired on only 4% of boundaries,
+        because a paragraph in these books routinely exceeds 100 tokens on its
+        own, so the loop broke immediately and returned nothing. Measured
+        before believing it worked.
+
+        A sentence boundary is still a clean cut -- the principle was never
+        "paragraphs", it was "never hand the next chunk half a sentence"."""
+        if not u:
+            return []
+        page = u[-1][0]
+        sentences = re.findall(r"[^.!?\n]*[.!?]|\n?[^.!?\n]+$", "\n\n".join(t for _, t in u))
+        keep: List[str] = []
+        total = 0
+        for sent in reversed(sentences):
+            st = sent.strip()
+            if not st:
+                continue
+            n = len(tokenizer.encode(st))
+            if total + n > OVERLAP and keep:
+                break
+            keep.insert(0, st)
+            total += n
+            if total >= OVERLAP:
+                break
+        body = " ".join(keep).strip()
+        return [(page, body)] if body else []
 
     def flush() -> None:
-        if cur.strip() and cur_pages:
-            out.append(
-                {
-                    "text": cur.strip(),
-                    "page_start": min(cur_pages),
-                    "page_end": max(cur_pages),
-                }
-            )
+        nonlocal cur
+        body = text_of(cur)
+        if body:
+            out.append({"text": body,
+                        "page_start": min(p for p, _ in cur),
+                        "page_end": max(p for p, _ in cur)})
+        cur = tail_for_overlap(cur)
 
     for pno, p in units:
-        prospective = (cur + "\n\n" + p).strip() if cur else p
+        prospective = text_of(cur + [(pno, p)])
         if len(tokenizer.encode(prospective)) <= MAX_TOKENS:
-            cur = prospective
-            cur_pages.append(pno)
+            cur.append((pno, p))
             continue
 
         flush()
-        toks = tokenizer.encode(p)
-        if len(toks) > MAX_TOKENS:
-            # A single paragraph larger than the window: slide over it.
-            step = MAX_TOKENS - OVERLAP
-            for i in range(0, len(toks), step):
-                w = sanitize(tokenizer.decode(toks[i : i + MAX_TOKENS]))
-                if len(w) > 10:
-                    out.append({"text": w, "page_start": pno, "page_end": pno})
-            cur, cur_pages = "", []
+        if len(tokenizer.encode(p)) > MAX_TOKENS:
+            # One paragraph bigger than the window. Slide over WORDS, never
+            # over token slices, so no multi-byte character is bisected.
+            words, window, count = p.split(" "), [], 0
+            for w in words:
+                wn = len(tokenizer.encode(w + " "))
+                if count + wn > MAX_TOKENS and window:
+                    seg = sanitize(" ".join(window))
+                    if len(seg) > 10:
+                        out.append({"text": seg, "page_start": pno, "page_end": pno})
+                    back = max(1, int(len(window) * OVERLAP / max(count, 1)))
+                    window, count = window[-back:], sum(
+                        len(tokenizer.encode(x + " ")) for x in window[-back:])
+                window.append(w)
+                count += wn
+            cur = [(pno, sanitize(" ".join(window)))] if window else []
         else:
-            cur, cur_pages = p, [pno]
+            cur.append((pno, p))
 
-    flush()
+    if text_of(cur):
+        out.append({"text": text_of(cur),
+                    "page_start": min(p for p, _ in cur),
+                    "page_end": max(p for p, _ in cur)})
     return [c for c in out if len(c["text"]) > 10]
 
 
