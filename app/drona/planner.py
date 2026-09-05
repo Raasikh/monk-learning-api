@@ -158,6 +158,93 @@ def resolve_topic_title(chapter_id: str, subtopic_key: str) -> str:
     return subtopic_key.replace("-", " ").title()
 
 
+# ---------------------------------------------------------------------------
+# Plan provenance (migration 0033)
+#
+# Written on EVERY plan insert. Without this the columns exist and every new
+# row silently carries the 'unknown-pre-0033' backfill -- which is exactly the
+# prompt_version failure repeated: a field that looks populated and asserts
+# nothing. docs/plan-invalidation.md specifies the cache key these feed.
+# ---------------------------------------------------------------------------
+_PLANNER_PROMPT_FILES = ("planner.md", "planner_outline.md", "planner_segment.md")
+
+
+def _planner_prompt_hash() -> str:
+    """sha256 over THE THREE PLANNER PROMPTS ONLY, sorted by filename.
+
+    Deliberately not get_prompt_version(), which hashes all of prompts/*.md:
+    that moves when an unrelated prompt moves and stays still when planner.py
+    moves, so it cannot answer "was this plan built by the current planner".
+    """
+    import hashlib as _h
+    from pathlib import Path as _P
+    root = _P(__file__).resolve().parent.parent.parent / "prompts"
+    h = _h.sha256()
+    for name in sorted(_PLANNER_PROMPT_FILES):
+        f = root / name
+        if f.exists():
+            h.update(f.read_bytes())
+    return h.hexdigest()[:16]
+
+
+def _planner_code_sha() -> str:
+    import hashlib as _h
+    from pathlib import Path as _P
+    return _h.sha256(_P(__file__).resolve().read_bytes()).hexdigest()[:16]
+
+
+def _chunk_corpus_version() -> str:
+    """Hash of (source_file, chunk_count) pairs -- which corpus grounded this.
+
+    The corpus has been fully replaced twice in two days and nothing in a plan
+    row would have said so. Cached per process: it is one query and it cannot
+    change mid-run.
+    """
+    global _CORPUS_VERSION_CACHE
+    if _CORPUS_VERSION_CACHE is not None:
+        return _CORPUS_VERSION_CACHE
+    import hashlib as _h, collections as _c
+    try:
+        rows, start = [], 0
+        while True:
+            r = supabase.table("pdf_chunks").select("source_file").range(start, start + 999).execute()
+            if not r.data:
+                break
+            rows += r.data
+            start += 1000
+        counts = _c.Counter(x["source_file"] for x in rows)
+        payload = "".join(f"{k}:{counts[k]};" for k in sorted(counts))
+        _CORPUS_VERSION_CACHE = _h.sha256(payload.encode()).hexdigest()[:16]
+    except Exception as e:  # provenance must never block a plan
+        logger.warning("[PROVENANCE] could not compute chunk_corpus_version: %s", e)
+        _CORPUS_VERSION_CACHE = "unavailable"
+    return _CORPUS_VERSION_CACHE
+
+
+_CORPUS_VERSION_CACHE = None
+
+
+def plan_provenance(model_key: str = "planner") -> dict:
+    """The provenance columns for a lesson_plans insert."""
+    return {
+        "planner_prompt_hash": _planner_prompt_hash(),
+        "planner_code_sha": _planner_code_sha(),
+        "model_id": get_model_name(model_key),
+        "temperature": 0.0,
+        "retrieval_config": {
+            "top_k": 12,
+            "embedding_model": "text-embedding-3-small",
+            "rpc": "match_pdf_chunks",
+            "structure_match": "exact_only",
+        },
+        "chunk_corpus_version": _chunk_corpus_version(),
+        # No value yet: the classification was read from a corpus that has
+        # since been replaced. Stamped so these rows all invalidate the moment
+        # it is re-run, which is the correct outcome.
+        "archetype_version": "unversioned-2026-09-04",
+    }
+
+
 def create_plan_with_llm(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     """Authored lesson plan generation using deepseek-v4-pro with dual retrieval blocks."""
     # Lookup chapter name & subtopic title
@@ -264,7 +351,8 @@ Author a complete lesson plan JSON following the instructions in the system prom
                     "grounded": is_grounded,
                     "segment_count": segment_count,
                     "source_model": source_model_tag,
-                    "prompt_version": prompt_ver
+                    "prompt_version": prompt_ver,
+                    **plan_provenance(),
                 }]).execute()
                 if ins_res.data:
                     return ins_res.data[0]
@@ -630,6 +718,7 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
         "segment_count": total,
         "source_model": f"{get_model_name('planner')}-thinking-off-streaming",
         "prompt_version": get_prompt_version(),
+        **plan_provenance(),
     }]).execute()
     if not ins.data:
         raise RuntimeError("Failed to insert streaming lesson plan")
