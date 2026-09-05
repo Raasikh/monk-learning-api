@@ -364,13 +364,312 @@ def validate(svg: str) -> Tuple[bool, str]:
     return True, ""
 
 
+# ---------------------------------------------------------------------------
+# LAYOUT POST-PASS
+# ---------------------------------------------------------------------------
+# Runs between _strip_fence() and validate(), which is the ONE place every
+# authored SVG passes through on its way to the gate. There is no SVGO or other
+# third-party normaliser in this repo — _strip_fence is the whole normalisation
+# stage — so this sits immediately after it rather than becoming a second
+# pipeline nobody remembers to call.
+#
+# WHY A REPAIR AND NOT ANOTHER PROMPT RULE
+# The spec already tells the model to keep labels apart and inside the canvas.
+# It cannot obey: <text> has no layout, so the model is estimating a width it
+# cannot measure. Asking more politely does not fix arithmetic. These three
+# failures are the ones a deterministic pass CAN fix, so it fixes them.
+#
+# WHAT IT MUST NOT DO
+# It never touches the drawing. Only <text> x/y and the font-family attribute.
+# If a label can only be saved by moving a path, that is out of scope and the
+# SVG is returned UNCHANGED so validate() rejects it loudly. A silently-worse
+# layout that passes is the failure mode this whole module exists to avoid.
+
+# The gate's own text metrics, mirrored from the mobile render gate
+# (monklearning-mobile/scripts/verify-render.mjs, textBox()/overlaps()).
+#
+# These are DELIBERATELY not _CHAR_ADVANCE/_COLLISION_SLACK above. That model
+# (0.55 wide, inset by 0.12*size) produces a STRICTLY SMALLER box than the
+# render gate's (0.58 wide, no inset, taller). Repairing to the smaller box
+# would leave the render gate still rejecting the result. Repairing to the
+# larger box satisfies both, because the smaller box is contained in it — the
+# repair is narrower than either gate, never wider.
+_GATE_CHAR_W = 0.58      # verify-render.mjs: w = s.length * size * 0.58
+_GATE_ASCENT = 0.82      # verify-render.mjs: y0 = y - size * 0.82
+_GATE_LINE_H = 1.15      # verify-render.mjs: h = size * 1.15
+
+# Clear a repaired pair by this much beyond bare contact. Both gates test
+# overlap with a strict inequality, so touching already passes; the margin is
+# for the float arithmetic and for the difference between the two box models.
+_REPAIR_GAP = 1.5
+# Keep repaired labels this far inside the viewBox. validate() allows 6px of
+# overhang (_BOUNDS_SLACK); we spend none of it, so a clamped label is inside
+# the canvas under any reading.
+_REPAIR_INSET = 1.0
+# Fixed-point cap. Each round re-derives every box after every move, so a
+# crowded layout walks toward a solution a pair at a time: six mutually
+# overlapping labels take 11 rounds. The cap is set well above that ON PURPOSE
+# — it exists to stop a cycle, not to decide repairability. If a layout is
+# still moving at 40 the viewBox has no room for it, and that is a geometric
+# verdict rather than an exhausted budget. Rounds are O(labels^2) over ~20
+# labels, so the whole budget is microseconds.
+_MAX_REPAIR_ROUNDS = 40
+
+_TEXT_RE = re.compile(r"<text([^>]*)>(.*?)</text>", re.S)
+
+
+def _gate_box(x: float, y: float, size: float, anchor: str, body: str):
+    """The render gate's box for one label. Mirrors verify-render.mjs textBox()."""
+    w = len(body) * size * _GATE_CHAR_W
+    x0 = x - w / 2 if anchor == "middle" else (x - w if anchor == "end" else x)
+    y0 = y - size * _GATE_ASCENT
+    return x0, y0, x0 + w, y0 + size * _GATE_LINE_H
+
+
+def _gate_overlaps(a, b) -> bool:
+    """verify-render.mjs overlaps(). TRUE for two identical boxes."""
+    return a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]
+
+
+def _parse_texts(svg: str):
+    """Every <text> with its anchor point and metrics, in document order."""
+    out = []
+    for m in _TEXT_RE.finditer(svg):
+        attrs, raw = m.group(1), m.group(2)
+        body = html.unescape(re.sub(r"<[^>]+>", "", raw)).strip()
+        if not body:
+            continue
+
+        def num(key, default):
+            hit = re.search(rf'{key}="([-\d.]+)"', attrs)
+            return float(hit.group(1)) if hit else default
+
+        anchor_m = re.search(r'text-anchor="(\w+)"', attrs)
+        out.append({
+            "span": m.span(), "attrs": attrs,
+            "x": num("x", 0.0), "y": num("y", 0.0),
+            "size": num("font-size", 14.0),
+            "anchor": anchor_m.group(1) if anchor_m else "start",
+            "body": body,
+        })
+    return out
+
+
+def _rewrite_text_positions(svg: str, texts) -> str:
+    """Write x/y back onto each <text>. Only x and y — nothing else is touched."""
+    out, cursor = [], 0
+    for t in texts:
+        start, end = t["span"]
+        out.append(svg[cursor:start])
+        attrs = t["attrs"]
+        for key, val in (("x", t["x"]), ("y", t["y"])):
+            new = f'{key}="{val:g}"'
+            if re.search(rf'\s{key}="[-\d.]+"', attrs):
+                attrs = re.sub(rf'\s{key}="[-\d.]+"', " " + new, attrs, count=1)
+            else:
+                attrs = attrs + " " + new
+        body = svg[start:end]
+        inner = body[body.index(">") + 1:]
+        out.append(f"<text{attrs}>{inner}")
+        cursor = end
+    out.append(svg[cursor:])
+    return "".join(out)
+
+
+def strip_font_family(svg: str) -> Tuple[str, bool]:
+    """Remove every font-family declaration. Unconditional.
+
+    validate() bans the substring anywhere, so both spellings go: the attribute
+    and the CSS property inside a style="". If the literal survives both — it is
+    in label TEXT, say, a diagram about typography — nothing here can remove it
+    without changing what the diagram says, and the caller reports it.
+    """
+    before = svg
+    svg = re.sub(r'\s*font-family\s*=\s*"[^"]*"', "", svg, flags=re.I)
+    svg = re.sub(r"\s*font-family\s*=\s*'[^']*'", "", svg, flags=re.I)
+    svg = re.sub(r"\s*font-family\s*:[^;\"'}]*;?", "", svg, flags=re.I)
+    return svg, svg != before
+
+
+def _violations(svg: str, vb_w: float, vb_h: float):
+    """(stray label indices, overlapping index pairs, on-fill indices).
+
+    Measured with the RENDER GATE's box, which contains validate()'s, so a
+    layout clean here is clean under both.
+    """
+    texts = _parse_texts(svg)
+    boxes = [_gate_box(t["x"], t["y"], t["size"], t["anchor"], t["body"]) for t in texts]
+    strays = [i for i, b in enumerate(boxes)
+              if b[0] < 0 or b[1] < 0 or b[2] > vb_w or b[3] > vb_h]
+    pairs = [(i, j) for i in range(len(boxes)) for j in range(i + 1, len(boxes))
+             if _gate_overlaps(boxes[i], boxes[j])]
+    fills = _filled_boxes(svg)
+    on_fill = []
+    for i, b in enumerate(boxes):
+        cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
+        if any(f[0] < cx < f[2] and f[1] < cy < f[3] for f in fills):
+            on_fill.append(i)
+    return strays, pairs, on_fill
+
+
+def repair_layout(svg: str) -> Tuple[str, dict]:
+    """Deterministically repair the layout failures validate() can see.
+
+    Returns (svg, report). The report is the point: it names what was repaired,
+    what resisted, and — separately — the case of a diagram with no labels at
+    all, which is NOT a clean layout. A checker that reports "0 overlaps, pass"
+    on a diagram with nothing to overlap has told you nothing, and this codebase
+    has shipped that mistake before.
+
+    The repaired SVG is returned ONLY if every layout violation is gone. A
+    partial repair is discarded and the original returned, so validate() fails
+    on the real reason instead of passing a layout that is merely differently
+    broken.
+    """
+    report = {"font_family_stripped": False, "font_family_unrepairable": False,
+              "labels": 0, "no_labels": False,
+              "strays_before": 0, "overlaps_before": 0, "on_fill_before": 0,
+              "rounds": 0, "converged": False, "applied": False,
+              "unrepairable": []}
+
+    svg, stripped = strip_font_family(svg)
+    report["font_family_stripped"] = stripped
+    if "font-family" in svg.lower():
+        # Survived both rewrites: it is inside label text or an entity, and
+        # removing it would change what the diagram says.
+        report["font_family_unrepairable"] = True
+        report["unrepairable"].append("font-family in text content")
+
+    vb = re.search(r'viewBox="[\d.-]+\s+[\d.-]+\s+([\d.]+)\s+([\d.]+)"', svg)
+    if not vb:
+        report["unrepairable"].append("no viewBox — cannot clamp")
+        return svg, report
+    vb_w, vb_h = float(vb.group(1)), float(vb.group(2))
+
+    texts = _parse_texts(svg)
+    report["labels"] = len(texts)
+    if not texts:
+        # Its own category, deliberately. "No labels" is a diagram that teaches
+        # nothing, not a diagram whose labels are all correctly placed.
+        report["no_labels"] = True
+        report["converged"] = True
+        return svg, report
+
+    s0, p0, f0 = _violations(svg, vb_w, vb_h)
+    report["strays_before"] = len(s0)
+    report["overlaps_before"] = len(p0)
+    report["on_fill_before"] = len(f0)
+    if not (s0 or p0 or f0):
+        report["converged"] = True
+        return svg, report
+
+    # A label wider than the whole canvas cannot be clamped into it. The only
+    # fixes are a smaller font or a wider viewBox, and both are the drawing.
+    for t in texts:
+        b = _gate_box(t["x"], t["y"], t["size"], t["anchor"], t["body"])
+        if b[2] - b[0] > vb_w or b[3] - b[1] > vb_h:
+            report["unrepairable"].append(
+                f"label {t['body'][:24]!r} is wider than the {vb_w:g}x{vb_h:g} viewBox")
+            return svg, report
+
+    work = [dict(t) for t in texts]
+    fills = _filled_boxes(svg)
+
+    def boxes_of(ts):
+        return [_gate_box(t["x"], t["y"], t["size"], t["anchor"], t["body"]) for t in ts]
+
+    def clamp(ts):
+        for t in ts:
+            x0, y0, x1, y1 = _gate_box(t["x"], t["y"], t["size"], t["anchor"], t["body"])
+            if x0 < _REPAIR_INSET:
+                t["x"] += _REPAIR_INSET - x0
+            elif x1 > vb_w - _REPAIR_INSET:
+                t["x"] -= x1 - (vb_w - _REPAIR_INSET)
+            if y0 < _REPAIR_INSET:
+                t["y"] += _REPAIR_INSET - y0
+            elif y1 > vb_h - _REPAIR_INSET:
+                t["y"] -= y1 - (vb_h - _REPAIR_INSET)
+
+    for rnd in range(1, _MAX_REPAIR_ROUNDS + 1):
+        report["rounds"] = rnd
+        clamp(work)
+        boxes = boxes_of(work)
+
+        moved = False
+        # Overlaps: nudge along the MINOR axis. A label is wide and short, so
+        # its minor axis is vertical. Sliding it sideways is what walks a label
+        # away from the thing it names; a line-height up or down keeps it beside
+        # its own shape.
+        for i in range(len(boxes)):
+            for j in range(i + 1, len(boxes)):
+                a, b = boxes[i], boxes[j]
+                if not _gate_overlaps(a, b):
+                    continue
+                depth = min(a[3], b[3]) - max(a[1], b[1]) + _REPAIR_GAP
+                up, down = (i, j) if (a[1] + a[3]) <= (b[1] + b[3]) else (j, i)
+                work[up]["y"] -= depth / 2
+                work[down]["y"] += depth / 2
+                moved = True
+                boxes = boxes_of(work)
+
+        # A label sitting ON a saturated fill needs to come OFF it — the same
+        # vertical move, to whichever edge of the panel is nearer. This class was
+        # not in the original brief; it turns up in the live run, and the minor
+        # axis handles it for the same reason it handles an overlap.
+        for i, b in enumerate(boxes):
+            cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
+            hit = next((f for f in fills if f[0] < cx < f[2] and f[1] < cy < f[3]), None)
+            if not hit:
+                continue
+            h = b[3] - b[1]
+            work[i]["y"] += (hit[1] - _REPAIR_GAP - h / 2 - cy) if (cy - hit[1]) < (hit[3] - cy) \
+                else (hit[3] + _REPAIR_GAP + h / 2 - cy)
+            moved = True
+            boxes = boxes_of(work)
+
+        if not moved:
+            clamp(work)
+            candidate = _rewrite_text_positions(svg, work)
+            s, p, f = _violations(candidate, vb_w, vb_h)
+            if not (s or p or f):
+                report["converged"] = True
+                report["applied"] = True
+                return candidate, report
+            break
+
+    # Did not reach a fixed point, or reached one that is still in violation.
+    # Return the ORIGINAL. A half-nudged layout that squeaks past the gate is
+    # worse than a rejection, because the rejection triggers a redraw.
+    s, p, f = _violations(_rewrite_text_positions(svg, work), vb_w, vb_h)
+    report["unrepairable"].append(
+        f"no fixed point in {report['rounds']} rounds "
+        f"({report['overlaps_before']} overlaps, {report['strays_before']} strays, "
+        f"{report['on_fill_before']} on-fill in; {len(p)}/{len(s)}/{len(f)} left)")
+    return svg, report
+
+
 def _strip_fence(text: str) -> str:
     out = (text or "").strip()
     out = re.sub(r"^```[a-zA-Z]*\s*", "", out)
     out = re.sub(r"```\s*$", "", out)
     # Models occasionally prepend a sentence despite being told not to.
     i = out.find("<svg")
-    return out[i:].strip() if i > 0 else out.strip()
+    if i > 0:
+        out = out[i:]
+    out = out.strip()
+    # And append one AFTER the drawing, despite the same instruction. The
+    # closing fence is then no longer at the end of the string, so the rule
+    # above does not match it, and the prose plus a stray ``` stay glued to the
+    # document. validate() reports that as "not well-formed XML ... line N,
+    # column 0", which reads exactly like a truncated response and was diagnosed
+    # as one — it is the opposite, a response with too much in it. Measured on a
+    # 20-attempt biology sample: every such failure had finish_reason="stop" and
+    # a complete </svg>, and 3 of 4 passed the gate untouched once the tail was
+    # cut. Keep everything up to the LAST </svg>; if there is no </svg> the
+    # response really was cut short, and it is left alone to fail loudly rather
+    # than be closed up into a diagram missing its bottom half.
+    end = out.rfind("</svg>")
+    return out[:end + 6] if end != -1 else out
 
 
 def author_diagram(
@@ -420,6 +719,23 @@ def author_diagram(
                 extra_body=thinking_off(),
             )
             svg = _strip_fence(res.choices[0].message.content or "")
+            # Deterministic layout repair BEFORE the gate. _strip_fence is the
+            # only normalisation this module has, so the post-pass goes right
+            # after it — one place, on the one path every authored SVG takes.
+            svg, fix = repair_layout(svg)
+            if fix["no_labels"] and svg:
+                logger.info(f"[DIAGRAM UNLABELLED] {concept!r} attempt {attempt}: "
+                            f"no <text> at all — nothing to lay out")
+            elif fix["applied"] or fix["font_family_stripped"]:
+                logger.info(
+                    f"[DIAGRAM REPAIRED] {concept!r} attempt {attempt}: "
+                    f"{fix['strays_before']} stray / {fix['overlaps_before']} overlapping / "
+                    f"{fix['on_fill_before']} on-fill labels, font-family "
+                    f"{'stripped' if fix['font_family_stripped'] else 'absent'}, "
+                    f"{fix['rounds']} round(s)")
+            elif fix["unrepairable"]:
+                logger.info(f"[DIAGRAM UNREPAIRABLE] {concept!r} attempt {attempt}: "
+                            f"{'; '.join(fix['unrepairable'])[:120]}")
         except Exception as exc:
             last = f"call failed: {exc}"
             logger.warning(f"[DIAGRAM AUTHOR] {concept!r} attempt {attempt}: {last}")
