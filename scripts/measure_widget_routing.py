@@ -74,6 +74,7 @@ Usage:
 
 import argparse
 import asyncio
+import collections
 import json
 import os
 import sys
@@ -441,6 +442,50 @@ async def main() -> None:
             print(f"  ⚠️ cleanup failed for {sid}: {e}", flush=True)
     print(f"\n🧹 cleaned up {len(created_sessions)} synthetic sessions", flush=True)
     print(f"📄 {written} records -> {out_path}  ({time.time() - t_all:.0f}s)", flush=True)
+
+    assert_every_turn_ran(out_path)
+
+
+def assert_every_turn_ran(out_path: str) -> None:
+    """Refuse to let a run be summarised if any turn did not RUN.
+
+    A turn with llm_ok=False never reached the model. It is not "the model
+    did not fire" -- it is no evidence at all, and it is indistinguishable
+    from a real zero in any rate table computed over these records.
+
+    This exists because it already happened. The harness wrapped
+    sanitize_widget_payload with a fixed signature; a kwarg was added to the
+    real function; every archetype-branch call raised TypeError, which
+    process_tutor_turn_stream catches as "Error during LLM turn". 33 of 40
+    turns returned no board events, and the run reported 0/70 fired. It read
+    exactly like the product suppressing the board on the concepts the
+    classifier had named -- and was escalated as a live regression before
+    anyone looked at llm_ok, which was in every record the whole time.
+
+    An instrument that fails closed, in the shape of the thing it measures,
+    is worse than one that crashes.
+    """
+    rows = [json.loads(line) for line in open(out_path, encoding="utf-8")]
+    dead = [r for r in rows if not r.get("llm_ok")]
+    if not dead:
+        print(f"✅ all {len(rows)} turns reached the model", flush=True)
+        return
+    print(f"\n❌ {len(dead)} of {len(rows)} TURNS DID NOT RUN — this run cannot "
+          f"be summarised. A rate over these records would be a fiction.",
+          flush=True)
+    seen = collections.Counter()
+    for r in dead:
+        msg = str((r.get("turn_error") or {}).get("message") or r.get("harness_error"))
+        seen[msg] += 1
+        if seen[msg] <= 2:
+            print(f"   {r['subtopic_key'][:38]} seg{r['segment_index']}: {msg}", flush=True)
+    print("\n   distinct failures:", flush=True)
+    for msg, n in seen.most_common():
+        print(f"     {n:4}  {msg}", flush=True)
+    print("\n   The exception itself is in the run log, as "
+          "'Error during LLM turn: ...' -- tutor.py swallows it into a generic "
+          "user-facing message, so grep the log, not the JSONL.", flush=True)
+    raise SystemExit(2)
 
 
 if __name__ == "__main__":
