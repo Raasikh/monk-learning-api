@@ -1,7 +1,13 @@
 -- 0033_plan_provenance.sql
 --
--- WRITTEN, NOT APPLIED. Apply by hand in the Supabase SQL editor after review;
--- this repo holds PostgREST credentials only, which cannot run DDL.
+-- APPLIED 2026-09-04 by Nikhil in the Supabase SQL editor.
+-- Verified live 2026-09-05: lesson_plans.planner_code_sha exists and is
+-- populated -- 8 plans carry '6fd952c39cbeae44'. The marker below said
+-- NOT APPLIED for a day after it was; a stale marker is how a migration
+-- gets run twice or skipped once.
+--
+-- (Applied by hand in the Supabase SQL editor, as all of these are: this repo
+-- holds PostgREST credentials only, which cannot run DDL.)
 --
 -- WHY, AND WHY BEFORE ANY PRECOMPUTE
 -- ==================================
