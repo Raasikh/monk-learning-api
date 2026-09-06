@@ -718,7 +718,29 @@ def author_diagram(
                 max_tokens=3500, timeout=timeout,
                 extra_body=thinking_off(),
             )
-            svg = _strip_fence(res.choices[0].message.content or "")
+            raw = res.choices[0].message.content or ""
+            finish = getattr(res.choices[0], "finish_reason", None) or "?"
+            # TRUNCATION AND REFUSAL LOOK IDENTICAL DOWNSTREAM. Both end up as
+            # validate()'s "does not start with <svg", which reports the first
+            # 40 characters and explains nothing:
+            #
+            #   attempt 1: does not start with <svg
+            #              (got 'I'll generate a clean teaching SVG that ')
+            #
+            # That is a model which opened with a preamble and then ran out of
+            # budget mid-sentence -- _strip_fence already removes a preamble
+            # that PRECEDES a drawing, so reaching validate() in this shape
+            # means there is no <svg in the response at all. finish_reason is
+            # the only field that separates "never drew it" from "was cut off",
+            # and nothing on this path was capturing it. Same gap, same fix, as
+            # the segment path in planner.py.
+            if finish == "length" and "<svg" not in raw:
+                last = (f"TRUNCATED before any <svg: {len(raw)} chars at "
+                        f"max_tokens, finish_reason=length. The preamble ate "
+                        f"the budget; this is not a drawing failure.")
+                logger.warning(f"[DIAGRAM TRUNCATED] {concept!r} attempt {attempt}: {last}")
+                continue
+            svg = _strip_fence(raw)
             # Deterministic layout repair BEFORE the gate. _strip_fence is the
             # only normalisation this module has, so the post-pass goes right
             # after it — one place, on the one path every authored SVG takes.
@@ -745,5 +767,6 @@ def author_diagram(
             logger.info(f"✏️ [DIAGRAM AUTHORED] {concept!r} ({len(svg)} chars, attempt {attempt})")
             return svg, ""
         last = reason
-        logger.warning(f"[DIAGRAM REJECTED] {concept!r} attempt {attempt}: {reason}")
+        logger.warning(f"[DIAGRAM REJECTED] {concept!r} attempt {attempt}: {reason} "
+                       f"(finish_reason={finish})")
     return None, last
