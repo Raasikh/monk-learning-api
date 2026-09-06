@@ -456,20 +456,28 @@ def test_the_directives_are_no_longer_gated_on_the_precomputed_svg():
     )
 
 
-def test_slots_one_and_three_are_explicit_empty_branches_not_gaps():
-    """Neither has storage yet. An absent slot that is absent from the CODE is
-    an order nobody can review; an absent slot that is a named None with a
-    comment is one line away from being filled."""
-    assert re.search(r"_precomputed_widget = None", TUTOR_SRC)
+def test_slot_one_reads_the_plan_and_slot_three_is_still_an_explicit_empty():
+    """Slot 1 is FILLED; slot 3 is not, and is empty in the CODE rather than
+    absent from it. An absent slot that is absent from the code is an order
+    nobody can review.
+
+    Slot 1 needed no migration and the comment has to say so: `plan_json` is
+    jsonb and already carries `example_diagram_svg`, so the payload is a
+    sibling key in the same object. Three previous attempts stopped on
+    "the storage does not exist", which was true of the tables and false of
+    the storage."""
     assert re.search(r"_illustration_asset = None", TUTOR_SRC)
     # Scoped to the resolution block: slot 2's INPUT is resolved earlier, at
     # prompt assembly, because the system message depends on it.
     body = TUTOR_SRC[TUTOR_SRC.index("══ BOARD RESOLUTION"):]
     slot1 = body[body.index("── SLOT 1"):body.index("── SLOT 2")]
     slot3 = body[body.index("── SLOT 3"):body.index("── SLOT 4")]
-    assert "DELIBERATELY EMPTY" in slot1 and "DELIBERATELY EMPTY" in slot3
-    # and they say WHY, naming the storage that does not exist
-    assert "concept_diagrams" in slot1
+    # slot 1 reads the segment, and re-gates what it read
+    assert 'curr_segment.get("example_widget_payload")' in slot1
+    assert "sanitize_widget_payload(" in slot1
+    assert "plan_json" in slot1 and "jsonb" in slot1
+    # slot 3 still has nowhere to read from, and says which migration
+    assert "DELIBERATELY EMPTY" in slot3
     assert "0035" in slot3 and "NOT APPLIED" in slot3
 
 

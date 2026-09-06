@@ -259,5 +259,17 @@ def concept_archetype_for_session(chapter_id: Optional[str],
         # reported as its own confidence value so the turn summary can say so.
         result = ArchetypeVerdict(None, "", "lookup_error", f"{str(exc)[:70]}")
         logger.info(f"[ARCHETYPE] lookup skipped for {subtopic_key}: {str(exc)[:70]}")
-    _SESSION_CACHE[ck] = result
+    # A `lookup_error` IS NOT CACHED, and that is the difference between a blip
+    # and a permanent verdict. Measured on the first Ecosystem precompute run:
+    # one transient "Server disconnected" from the shared PostgREST client on
+    # the very first concept, cached here, made every later caller in that
+    # process see `lookup_error` for `energy-flow-and-the-ten-per-cent-law` —
+    # so all 8 of its segments were recorded as never-asked and the concept was
+    # silently excluded from a run that reported itself complete.
+    #
+    # Every OTHER value is cached, including "unknown" and "unjoinable": those
+    # are answers. A concept's name and a chapter's number do not change under
+    # a running process, but a socket does.
+    if result.confidence != "lookup_error":
+        _SESSION_CACHE[ck] = result
     return result

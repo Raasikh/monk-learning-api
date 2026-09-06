@@ -9,6 +9,15 @@ from app.drona.prompt_loader import load_prompt, get_prompt_version
 from app.drona.json_utils import repair_latex_control_escapes
 from app.drona.retrieval import retrieve_dual_blocks
 from app.drona.usage import record_call
+from app.drona.widget_registry import (
+    ROUTE_ARCHETYPE_HIGH,
+    WIDGET_VERSIONS,
+    render_single_widget_block,
+)
+from app.drona.concept_archetypes import (
+    ARCHETYPE_VERSION,
+    concept_archetype_for_session,
+)
 
 # Hard ceiling on segments authored for one plan. validate_plan_json accepts
 # 6-9, so anything above this is a malformed outline rather than a long lesson,
@@ -511,8 +520,14 @@ def _author_outline(chap_data: Dict[str, Any], sub_title: str, subtopic_key: str
 
 
 
-def _attach_example_diagram(segment: Dict[str, Any], subject: str, sub_title: str) -> None:
+def _attach_example_diagram(segment: Dict[str, Any], subject: str, sub_title: str,
+                           force: bool = False) -> None:
     """Draw the small figure for this segment's worked example, in place.
+
+    `force` skips the worked-example cue and draws anyway. Its ONE caller is
+    the precompute decline path below: a segment whose named widget was
+    declined has no picture at all, and here — unlike live — nobody is
+    waiting, so it is worth the call. Everywhere else the cue still decides.
 
     A student who can already picture "a 2kg block pushed with 10N" does not
     need this. One who cannot is exactly the student the example was written
@@ -534,7 +549,7 @@ def _attach_example_diagram(segment: Dict[str, Any], subject: str, sub_title: st
         return
     objective = str(segment.get("objective") or "")
     notes = str(segment.get("teaching_notes") or "")
-    if not turn_works_an_example(objective, notes):
+    if not force and not turn_works_an_example(objective, notes):
         return
     try:
         from app.drona.diagram_author import author_diagram
@@ -562,10 +577,276 @@ def _attach_example_diagram(segment: Dict[str, Any], subject: str, sub_title: st
         logger.warning(f"[SEGMENT DIAGRAM FAILED] {exc}")
 
 
+# ── SLOT 1 of the board resolution order: a PRECOMPUTED WIDGET PAYLOAD ──────
+#
+# WHY THIS IS HERE AND NOT BEHIND A MIGRATION
+# -------------------------------------------
+# Slot 1 in `tutor.py` was blocked three times on "the storage does not
+# exist". It does exist. `lesson_plans.plan_json` is `jsonb`
+# (migrations/0005_drona.sql), the segment dict inside it is an open object,
+# and `_attach_example_diagram` above already writes a whole SVG into it as
+# `segment["example_diagram_svg"]`. A widget payload — three short fields —
+# goes in exactly the same place, under a sibling key, with no DDL, no new
+# column and no schema review. `validate_plan_json` checks named fields and
+# ignores every other key, so nothing rejects it on the way back out.
+#
+# WHAT IS ASKED, AND WHAT IS NOT RE-DECIDED HERE
+# ----------------------------------------------
+# The single-widget block is `render_single_widget_block` — the SAME text the
+# live path puts in its system message — so the widget's schema, its version
+# and the "EMIT IT unless this segment genuinely has nothing to draw" bar are
+# single-sourced. Only the OUTPUT ENVELOPE differs, because there is no board
+# here to carry a `board_event`: precompute asks for a bare payload object.
+# The envelope override is placed AFTER the block deliberately. v4 measured
+# that whatever the model reads LAST about diagrams is what it does, and an
+# opt-out read last produced zero diagrams in 40 turns.
+#
+# The gate is `sanitize_widget_payload`, called with the archetype id, and it
+# is the ONLY gate. A second one written here would be the "two validators
+# that drift" failure the registry docstring names.
+#
+# THREE OUTCOMES, AND THEY ARE STORED, NOT INFERRED
+# -------------------------------------------------
+# The recurring defect in this project is a check that PASSES on absent
+# information. A segment with no `example_widget_payload` could mean the
+# concept was never eligible, or that the model was asked and said no, or
+# that it answered and the gate dropped it — three different facts that an
+# absent key cannot tell apart, and the middle one is the only signal for
+# where the archetype column is too coarse. So EVERY segment the fill touches
+# gets `example_widget_precompute.status`, whether or not anything was asked.
+WIDGET_PAYLOAD_KEY = "example_widget_payload"
+WIDGET_PRECOMPUTE_KEY = "example_widget_precompute"
+
+#: The terminal states of one precompute attempt. SIX, not two, because
+#: "there is no payload on this segment" has six causes with six different
+#: owners and an absent key tells them apart from nothing.
+#:   not_asked   the column gave a verdict and it named no widget — `med`,
+#:               `not_in_scope`, `none_symbolic`, or a `high` row naming
+#:               something the client registry does not ship. AN ANSWER.
+#:   unresolved  the column could not be consulted at all: the CSV was
+#:               unreadable, or the concept/chapter read failed. NOT AN ANSWER,
+#:               and the distinction is load-bearing — measured on the first
+#:               Ecosystem run, one transient socket error made a whole
+#:               concept's 8 segments look like a concept with no widget.
+#:   stored      a payload passed the gate and is on the segment
+#:   declined    the model was asked and judged this segment wants no picture
+#:   rejected    the model answered and the gate dropped it
+#:   error       the call itself failed; nobody judged anything
+WIDGET_PRECOMPUTE_STATES = ("not_asked", "unresolved", "stored", "declined",
+                            "rejected", "error")
+
+#: Confidence values that mean the archetype table was never actually
+#: consulted, as opposed to consulted and answering "no widget".
+#: `concept_archetypes` is explicit that these are "we do not know", not
+#: "not high", and slot 1 has to carry that distinction forward.
+_ARCHETYPE_UNRESOLVED = ("table_unreadable", "lookup_error", "unjoinable")
+
+#: Cap on the model's params object before it is even parsed. A payload is
+#: three short fields; anything of this size is a runaway generation, not a
+#: widget, and it would ride every plan read forever.
+MAX_WIDGET_PAYLOAD_CHARS = 8000
+
+
+def _widget_precompute_messages(widget_id: str, sub_title: str,
+                                segment: Dict[str, Any]) -> List[Dict[str, str]]:
+    """The one call. Block verbatim from the registry; envelope stated after it.
+
+    `render_single_widget_block` refers to "the objective in [CURRENT SEGMENT]
+    below", so the user message MUST carry a section by that name or the
+    block's own instruction points at nothing. That is why the segment is
+    rendered under that exact heading rather than a tidier one.
+    """
+    board = segment.get("board_content") or []
+    board_lines = []
+    for item in board[:12]:
+        if isinstance(item, dict):
+            board_lines.append(str(item.get("text") or item.get("latex") or "")[:200])
+        else:
+            board_lines.append(str(item)[:200])
+    return [
+        {"role": "system", "content": (
+            "You are preparing the board for ONE segment of a lesson, ahead of "
+            "time. There is no student waiting and no turn in progress; you are "
+            "choosing the picture this segment will be taught with.\n\n"
+            f"{render_single_widget_block(widget_id)}\n\n"
+            "OUTPUT — this is a plan-time call, so there are no board_events and "
+            "no `seq`. Reply with ONE JSON object and nothing else:\n"
+            "  declining:  {\"decline\": \"<one line saying why this segment "
+            "wants no picture>\"}\n"
+            f"  drawing:    {{\"payload\": {{\"widget\": \"{widget_id}\", "
+            f"\"version\": {WIDGET_VERSIONS.get(widget_id, 1)}, \"params\": "
+            "{ … }}, \"caption\": \"one short line\"}\n"
+            "Fill `params` from this segment's own content — the nodes, labels "
+            "and values below, not a generic textbook example."
+        )},
+        {"role": "user", "content": (
+            f"Subtopic: {sub_title}\n\n"
+            f"[CURRENT SEGMENT]\n"
+            f"  objective: {str(segment.get('objective') or '')[:600]}\n"
+            f"  teaching_notes: {str(segment.get('teaching_notes') or '')[:1500]}\n"
+            f"  board_content:\n" + "\n".join(f"    - {b}" for b in board_lines) +
+            f"\n\nProduce the JSON object."
+        )},
+    ]
+
+
+def _attach_widget_payload(segment: Dict[str, Any], archetype, chap_data: Dict[str, Any],
+                           sub_title: str, subtopic_key: Optional[str] = None,
+                           plan_id: Optional[str] = None) -> str:
+    """Fill slot 1 for this segment, in place. Returns the status it recorded.
+
+    Never raises: a segment without a precomputed payload is a segment the
+    live path handles exactly as it does today. A segment that killed the
+    background fill is a lesson that does not exist.
+    """
+    widget_id = getattr(archetype, "widget", None)
+    confidence = getattr(archetype, "confidence", "unjoinable")
+    why = getattr(archetype, "why", "")
+
+    def _record(status: str, note: str, **extra) -> str:
+        segment[WIDGET_PRECOMPUTE_KEY] = {
+            "status": status,
+            "widget": widget_id,
+            "archetype_confidence": confidence,
+            "archetype_version": ARCHETYPE_VERSION,
+            "why": note[:300],
+            **extra,
+        }
+        return status
+
+    if not widget_id:
+        # NOT the same as a decline, and the distinction is the whole point of
+        # writing this key on every segment: nobody was asked anything here.
+        # And "the column said no widget" is not the same as "the column could
+        # not be read" — the first is an answer, the second is an absence
+        # wearing an answer's clothes, which is the recurring defect here.
+        return _record(
+            "unresolved" if confidence in _ARCHETYPE_UNRESOLVED else "not_asked",
+            why or "archetype names no registered widget")
+
+    from app.drona.widget_registry import sanitize_widget_payload
+
+    client = get_drona_client()
+    model_name = get_model_name("tutor")
+    t0 = time.time()
+    try:
+        res = client.chat.completions.create(
+            model=model_name,
+            messages=_widget_precompute_messages(widget_id, sub_title, segment),
+            response_format={"type": "json_object"},
+            temperature=0.0,
+            max_tokens=2048,
+            timeout=PLANNER_TIMEOUT_S,
+            extra_body=_thinking_off(),
+        )
+    except Exception as exc:
+        # Booked as a failure even though nothing usable came back. This runs
+        # on the detached fill thread, which is exactly where a day of spend
+        # went untraceable on 2026-08-15.
+        record_call(model_name, "widget_payload", ok=False,
+                    latency_ms=int((time.time() - t0) * 1000),
+                    chapter_id=chap_data.get("id"), plan_id=plan_id,
+                    subtopic_key=subtopic_key or sub_title, error=str(exc))
+        logger.warning(f"[WIDGET PRECOMPUTE FAILED] {widget_id}: {str(exc)[:120]}")
+        return _record("error", f"{type(exc).__name__}: {str(exc)[:120]}")
+
+    record_call(model_name, "widget_payload", ok=True, res=res,
+                latency_ms=int((time.time() - t0) * 1000),
+                chapter_id=chap_data.get("id"), plan_id=plan_id,
+                subtopic_key=subtopic_key or sub_title)
+
+    raw = (res.choices[0].message.content or "")
+    if len(raw) > MAX_WIDGET_PAYLOAD_CHARS:
+        logger.warning(f"[WIDGET PRECOMPUTE OVERSIZE] {widget_id}: {len(raw)} chars")
+        return _record("rejected", f"response {len(raw)} chars exceeds {MAX_WIDGET_PAYLOAD_CHARS}")
+    try:
+        answer = json.loads(strip_fences(raw))
+    except Exception as exc:
+        return _record("rejected", f"unparseable JSON: {str(exc)[:100]}")
+    if not isinstance(answer, dict):
+        return _record("rejected", "response is not a JSON object")
+
+    # A declared decline, and the two shapes an answer can arrive in. The
+    # envelope asks for `payload` at the top level; a model that answers in
+    # the board_event shape it was shown by the reused block is still
+    # answering, and reading it is parsing, not gate-widening — whatever comes
+    # out still goes through sanitize_widget_payload untouched.
+    raw_payload = answer.get("payload")
+    if raw_payload is None:
+        for evt in (answer.get("board_events") or []):
+            if isinstance(evt, dict) and isinstance(evt.get("payload"), dict):
+                raw_payload = evt["payload"]
+                break
+    if raw_payload is None:
+        reason = str(answer.get("decline") or answer.get("reason") or "").strip()
+        logger.info(f"[WIDGET PRECOMPUTE DECLINED] {widget_id} on "
+                    f"'{str(segment.get('objective'))[:40]}': {reason[:80] or '(no reason given)'}")
+        return _record("declined", reason or "no payload and no reason given")
+
+    gated = sanitize_widget_payload(raw_payload, archetype_widget=widget_id)
+    if not gated:
+        # sanitize_widget_payload has already logged WHICH check failed.
+        return _record("rejected", "failed sanitize_widget_payload")
+    if gated["route"] != ROUTE_ARCHETYPE_HIGH:
+        # It answered with a DIFFERENT widget than the column named. Live,
+        # that is still drawable and is kept as `model_choice`. Stored on the
+        # segment it would become a permanent, cached picture that no
+        # classification chose, served ahead of the live path on every future
+        # turn. Slot 1 stores only what path 1 actually produced.
+        logger.warning(f"[WIDGET PRECOMPUTE OFF-ARCHETYPE] asked for {widget_id}, "
+                       f"got {gated['payload']['widget']}; storing nothing")
+        return _record("rejected",
+                       f"answered with {gated['payload']['widget']}, not {widget_id}")
+
+    segment[WIDGET_PAYLOAD_KEY] = gated["payload"]
+    caption = str(answer.get("caption") or "").strip()[:200]
+    logger.info(f"🧩 [WIDGET PRECOMPUTED] {widget_id} for "
+                f"'{str(segment.get('objective'))[:44]}'")
+    return _record("stored", f"high -> {widget_id}", route=gated["route"],
+                   **({"caption": caption} if caption else {}))
+
+
+
+def _attach_segment_board(segment: Dict[str, Any], chap_data: Dict[str, Any],
+                          sub_title: str, archetype,
+                          subtopic_key: Optional[str] = None,
+                          plan_id: Optional[str] = None) -> str:
+    """Slot 1 then slot 4 for one authored segment, in tier order. Returns the
+    slot-1 status.
+
+    THE DECLINE RULE, AND IT DIFFERS BETWEEN THE TWO PATHS ON PURPOSE.
+    Live, a decline shows no picture: the model has just judged that this
+    segment wants none, and appending a fallback would put back the picture it
+    declined. HERE nobody is waiting, so a decline falls through to tier 3 —
+    the segment gets an authored SVG it would not otherwise have had.
+
+    The decline itself is NOT cached. Nothing is stored that would stop the
+    live path asking again, and because slot 4 sits BELOW slot 2 in
+    `resolve_board_slot`, the SVG this writes cannot suppress the live widget
+    directive on any future turn of that segment.
+    """
+    status = _attach_widget_payload(segment, archetype, chap_data, sub_title,
+                                    subtopic_key=subtopic_key, plan_id=plan_id)
+    subject = chap_data.get("subject") or ""
+    # Unchanged: a segment that works an example gets a figure for that
+    # example, whatever slot 1 did. Slot 1 outranks it at serve time, so a
+    # segment with both loses nothing.
+    _attach_example_diagram(segment, subject, sub_title)
+    if status in ("declined", "rejected", "error") and not segment.get("example_diagram_svg"):
+        # `unresolved` is deliberately NOT in that list. A concept whose column
+        # could not be read may still be a `high` concept, and burning a
+        # diagram_author call per segment on a transient socket error is paying
+        # for a failure. It regenerates: the plan is invalidated by
+        # planner_code_sha and the live path still resolves the column per turn.
+        _attach_example_diagram(segment, subject, sub_title, force=True)
+    return status
+
+
 def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str, Any],
                     index: int, depth_block: str, plan_id: Optional[str] = None,
                     with_diagram: bool = False,
-                    subtopic_key: Optional[str] = None) -> Dict[str, Any]:
+                    subtopic_key: Optional[str] = None,
+                    archetype=None) -> Dict[str, Any]:
     """Authors one full segment. index is 0-based.
 
     `with_diagram` is False on the synchronous path that authors segment 1,
@@ -675,7 +956,13 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
         # Prompt asks for 9-12; accept 8 so a near-miss doesn't burn a retry.
         if isinstance(bc, list) and 8 <= len(bc) <= 12 and cp.get("question") and cp.get("model_answer") and cp.get("rubric"):
             if with_diagram:
-                _attach_example_diagram(seg, chap_data.get("subject") or "", sub_title)
+                # Slot 1 AND slot 4, in that order. `with_diagram` is the
+                # background-fill flag: it is False on the synchronous path
+                # that authors segment 1, because that call is the last thing
+                # between a student and the first spoken word. Segment 1 gets
+                # both in the fill, minutes before it is finished being heard.
+                _attach_segment_board(seg, chap_data, sub_title, archetype,
+                                      subtopic_key=subtopic_key, plan_id=plan_id)
             return seg
         last_err = (f"segment {index+1}: board_content={len(bc) if isinstance(bc, list) else 'n/a'}, "
                     f"checkpoint keys={list(cp)}, finish_reason={finish}")
@@ -693,7 +980,8 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
 
 def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title: str,
                              outline: Dict[str, Any], first_segment: Dict[str, Any],
-                             depth_block: str, subtopic_key: Optional[str] = None) -> None:
+                             depth_block: str, subtopic_key: Optional[str] = None,
+                             archetype=None) -> None:
     """Authors segments 2..N in parallel and writes the completed plan. Runs in a
     background thread while the student is being taught segment 1.
 
@@ -719,17 +1007,47 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
         _mark_plan_failed(plan_id, f"fan-out refused: outline claims {total} segments, ceiling {MAX_SEGMENTS_PER_PLAN}")
         return
 
+    # SLOT 1 INPUT, resolved ONCE for the whole plan. The archetype classifies
+    # a CONCEPT, and a plan is one concept, so asking per segment would be the
+    # same two indexed reads seven times over. Total by construction:
+    # `concept_archetype_for_session` never raises, and an unreadable table
+    # yields confidence "table_unreadable" rather than a concept that merely
+    # looks non-high — which is the difference between "we asked and the answer
+    # was no" and "we could not ask".
+    #
+    # Normally resolved by `create_plan_streaming` on the MAIN thread and handed
+    # in. This function runs DETACHED, alongside a poller hammering the same
+    # shared PostgREST client, and the first Ecosystem precompute run lost a
+    # whole concept to a transient "Server disconnected" raised right here. The
+    # fallback stays for direct callers and tests.
+    if archetype is None:
+        archetype = concept_archetype_for_session(chap_data.get("id"), subtopic_key)
+    _unresolved = archetype.confidence in _ARCHETYPE_UNRESOLVED
+    # WARNING, not info, when the column could not be consulted: with no verdict
+    # every concept looks like a concept with no widget, slot 1 is silently
+    # empty, and the run reports itself complete. That is the failure this
+    # project keeps rediscovering, in its plainest form.
+    (logger.warning if _unresolved else logger.info)(
+        f"{'⚠️ ' if _unresolved else ''}[PLAN ARCHETYPE] plan={plan_id[:8]} {subtopic_key}: "
+        f"{archetype.confidence}"
+        f"{('->' + archetype.widget) if archetype.widget else ''} — {archetype.why[:80]}"
+        + (" — slot 1 is UNRESOLVED for this plan, which is NOT the same as "
+           "'this concept has no widget'." if _unresolved else "")
+    )
+
     try:
         with ThreadPoolExecutor(max_workers=4) as ex:
             rest = list(ex.map(
                 lambda i: _author_segment(chap_data, sub_title, outline, i, depth_block,
                                           plan_id, with_diagram=True,
-                                          subtopic_key=subtopic_key),
+                                          subtopic_key=subtopic_key,
+                                          archetype=archetype),
                 range(1, total),
             ))
-        # Segment 1 skipped its diagram to keep time-to-first-word at ~24s.
-        # It gets one here, minutes before the student finishes hearing it.
-        _attach_example_diagram(first_segment, chap_data.get("subject") or "", sub_title)
+        # Segment 1 skipped its board work to keep time-to-first-word at ~24s.
+        # It gets it here, minutes before the student finishes hearing it.
+        _attach_segment_board(first_segment, chap_data, sub_title, archetype,
+                              subtopic_key=subtopic_key, plan_id=plan_id)
 
         plan_json = {
             "topic": outline.get("topic") or sub_title,
@@ -747,6 +1065,18 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
         supabase.table("lesson_plans").update({
             "plan_json": plan_json, "segment_count": total,
         }).eq("id", plan_id).execute()
+        # The per-plan slot-1 tally, stated rather than inferable. An absent
+        # payload has three causes with three different owners and a count of
+        # stored payloads alone cannot tell them apart.
+        _tally = {s: 0 for s in WIDGET_PRECOMPUTE_STATES}
+        for _s in plan_json["segments"]:
+            _st = ((_s.get(WIDGET_PRECOMPUTE_KEY) or {}).get("status") or "not_asked")
+            _tally[_st] = _tally.get(_st, 0) + 1
+        logger.info(
+            f"🧩 [WIDGET PRECOMPUTE] plan={plan_id[:8]} {subtopic_key} "
+            f"widget={archetype.widget or '(none)'} arch={archetype.confidence} "
+            f"segments={total} " + " ".join(f"{k}={v}" for k, v in _tally.items() if v)
+        )
         logger.info(f"✅ [PLAN COMPLETE] plan={plan_id[:8]} all {total} segments authored and validated")
     except Exception as e:
         # The student keeps whatever segments exist; the plan stays 'partial' so
@@ -768,6 +1098,10 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     sub_title = resolve_topic_title(chapter_id, subtopic_key)
 
     structure_block, depth_block, is_grounded, has_recorded_lesson = retrieve_dual_blocks(chapter_id, sub_title)
+
+    # SLOT 1 input, read HERE — on the MAIN thread, beside the other indexed
+    # reads above — and handed to the detached fill rather than read inside it.
+    archetype = concept_archetype_for_session(chapter_id, subtopic_key)
 
     t0 = time.time()
     outline = _author_outline(chap_data, sub_title, subtopic_key, structure_block, depth_block)
@@ -806,7 +1140,7 @@ def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
     threading.Thread(
         target=_fill_remaining_segments,
         args=(row["id"], chap_data, sub_title, outline, first_segment, depth_block,
-              subtopic_key),
+              subtopic_key, archetype),
         daemon=True,
     ).start()
     return row

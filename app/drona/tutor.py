@@ -947,14 +947,46 @@ async def process_tutor_turn_stream(
     # when the turn produced no diagram of its own.
 
     # ── SLOT 1: a precomputed WIDGET PAYLOAD for this concept ────────────────
-    # DELIBERATELY EMPTY, and empty in code rather than absent from it. No
-    # table in this repo stores a widget payload: `concept_diagrams` holds SVG
-    # text (migrations/0029) and nothing holds `{widget, version, params}`.
-    # Inventing storage for it was explicitly out of scope, so the slot is a
-    # named `None` that the resolver reads — which is what makes the ORDER
-    # complete and reviewable now, and what a later precompute fills in one
-    # line without re-deciding the order.
+    # FILLED, and it needed no migration. The claim that blocked this three
+    # times — "no table in this repo stores a widget payload" — was true of the
+    # TABLES and false of the STORAGE. `lesson_plans.plan_json` is `jsonb`
+    # (migrations/0005_drona.sql) and the segment object inside it already
+    # carries a whole authored SVG under `example_diagram_svg`, written by
+    # `planner._attach_example_diagram`. `{widget, version, params}` is three
+    # short fields in that same object, written beside it by
+    # `planner._attach_widget_payload` at plan time. No DDL, no new column.
+    #
+    # RE-GATED ON READ, exactly as slot 4 re-validates its stored SVG twelve
+    # lines below and for the same reason: what is in the plan was written by
+    # an earlier process against an earlier registry, and a payload the CLIENT
+    # can no longer resolve fails SILENTLY on device — `lookup()` returns null
+    # and the board simply draws nothing. `sanitize_widget_payload` is the same
+    # single gate the write used; there is no second one here.
+    #
+    # The `route` check is the NARROW half of that gate, not a widening: it
+    # requires the stored widget to be the one the archetype column names for
+    # this concept RIGHT NOW. A reclassification that moved the concept, or a
+    # CSV that cannot be read at all, empties this slot rather than serving a
+    # cached picture no live classification chose. It also means slot 1 can
+    # only ever fire where slot 2 could — which is precisely the case where the
+    # order has to be right.
     _precomputed_widget = None
+    _stored_widget = curr_segment.get("example_widget_payload")
+    if isinstance(_stored_widget, dict):
+        _gated_stored = sanitize_widget_payload(_stored_widget,
+                                                archetype_widget=_archetype_widget)
+        if _gated_stored and _gated_stored["route"] == ROUTE_ARCHETYPE_HIGH:
+            _precomputed_widget = _gated_stored["payload"]
+        else:
+            # Dropped AND SAID SO. sanitize_widget_payload logs which check
+            # failed; this names the segment that carried it, because a slot
+            # that quietly empties looks exactly like a concept that was never
+            # eligible — the check-that-passes-on-absent-information shape.
+            logger.warning(
+                f"{stag} stored widget payload rejected on read, segment "
+                f"{curr_seg_idx}: arch={_archetype_widget or '(none)'} "
+                f"stored={json.dumps(_stored_widget, default=str)[:160]}"
+            )
 
     # ── SLOT 2: the archetype column NAMES a widget for this concept ─────────
     # `_archetype` / `_archetype_widget` are resolved earlier, at prompt
@@ -1047,7 +1079,29 @@ async def process_tutor_turn_stream(
     diagram_directive = ""
     widget_directive = ""
 
-    if _archetype_widget:
+    if _board_slot == "widget_precomputed":
+        # SLOT 1, AND IT OUTRANKS SLOT 2 — that is the whole point of the tier
+        # order. The params for this concept's widget were already authored and
+        # already gated at plan time, so asking for them again would pay a
+        # second time for the same answer and expose the turn to a live decline
+        # the precompute did not make.
+        #
+        # No widget directive on this branch, and no template directive either:
+        # the picture for this turn EXISTS. "Emit `process_flow`" beside a
+        # process_flow already on its way to the board is the two-competing-
+        # directives failure in a third costume, and the board carries one
+        # picture per turn.
+        widget_directive = (
+            f"\n\nTHE PICTURE FOR THIS TURN IS ALREADY DRAWN. A "
+            f"`{_precomputed_widget.get('widget')}` widget authored for this "
+            f"segment ahead of time is being added to the board beside your "
+            f"lines — you do not need to produce it and must not produce "
+            f"another.\n"
+            f"Emit NO board_event of type \"diagram\": no `payload`, no "
+            f"`template`, no `svg`. Write your normal board lines and let them "
+            f"refer to the figure as something the student can see.\n"
+        )
+    elif _archetype_widget:
         # SLOT 2. The column NAMES the widget; it is not offered. The system
         # message already carries only this widget's schema
         # (render_single_widget_block), so the directive names it and asks for
@@ -1462,6 +1516,39 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 for e in (model_board_events_raw or [])
             ]
             board_events_out = [e for e in board_events_out if e]
+
+        # SLOT 1 delivery. UNCONDITIONAL, and that is exactly what separates a
+        # TIER from a FALLBACK. Slot 4 below appends only when the turn produced
+        # no picture of its own — correct for a cached tier-3 SVG, which must
+        # never outrank the slots above it. Slot 1 is the opposite case: it is
+        # the HIGHEST tier, its payload was gated twice (at write, and again on
+        # read above), and the model was told on this branch not to draw. If it
+        # drew anyway, the higher tier wins and the stray event is dropped and
+        # named — one picture per turn is what the board has always carried.
+        #
+        # No `route` or `archetype_version` is stamped here on purpose: this
+        # event goes through the same sanitising loop below as a model-emitted
+        # one, which re-gates it and stamps both. Writing them here would be a
+        # second copy of the provenance rule to fall out of step with the first.
+        if _precomputed_widget:
+            _stray = [e for e in board_events_out
+                      if isinstance(e, dict) and e.get("type") == "diagram"]
+            if _stray:
+                logger.warning(
+                    f"{stag}   🧩 [SLOT 1 OUTRANKS] dropping {len(_stray)} diagram "
+                    f"event(s) the turn emitted despite the no-diagram directive; "
+                    f"the precomputed {_precomputed_widget.get('widget')} payload wins."
+                )
+                board_events_out = [e for e in board_events_out
+                                    if not (isinstance(e, dict) and e.get("type") == "diagram")]
+            board_events_out.append({
+                "seq": len(board_events_out) + 1,
+                "type": "diagram",
+                "payload": _precomputed_widget,
+            })
+            logger.info(f"{stag}   🧩 [WIDGET SERVED] precomputed "
+                        f"{_precomputed_widget.get('widget')} for "
+                        f"{session.get('subtopic_key')} seg={curr_seg_idx}")
 
         # SLOT 4 delivery, and it is now a FALLBACK rather than a foregone
         # conclusion. The model IS asked for a diagram on these turns — the
@@ -2186,8 +2273,15 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     # instead of reading as an archetype turn that produced nothing.
     _decline = None
     if not turn_failed:
-        _decline = classify_widget_decline(_archetype_widget,
-                                           parsed_json.get("board_events"))
+        # ONLY on the branch that actually asked. On a slot-1 turn the model was
+        # told the picture already exists and NOT to emit one, so an absent
+        # payload there is compliance, not a judgement about the segment —
+        # counting it as a decline would manufacture the very signal this exists
+        # to measure. `classify_widget_decline` returns None for a None widget,
+        # which is its documented contract for "no widget was named this turn".
+        _decline = classify_widget_decline(
+            _archetype_widget if _board_slot == "widget_archetype" else None,
+            parsed_json.get("board_events"))
     if _decline:
         logger.warning(
             f"{stag}   🚫 [WIDGET DECLINE] {_decline['kind']} "
@@ -2341,6 +2435,13 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             # the model was asked, and it said not this segment.
             f"| slot={_board_slot}"
             f"{('->declined:' + _decline['kind']) if _decline else ''} "
+            # What the PLAN recorded for slot 1 on this segment, verbatim.
+            # "stored", "declined", "rejected", "not_asked" and "error" need
+            # five different reactions and an empty slot 1 used to look like
+            # one thing. `pre=absent` is a sixth: a plan authored before the
+            # precompute existed, which is not the same as a segment nobody
+            # asked about.
+            f"pre={((curr_segment.get('example_widget_precompute') or {}).get('status') or 'absent')} "
             f"arch={_archetype.confidence}"
             f"{('->' + _archetype_widget) if _archetype_widget else ''} "
             f"priors={len(prior_payload_entries)} "

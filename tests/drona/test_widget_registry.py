@@ -406,18 +406,34 @@ def test_the_template_directive_says_a_widget_may_be_used_instead():
     assert "is the DEFAULT, not the only option" in block
 
 
-def test_the_two_directives_are_mutually_exclusive_branches():
+def test_the_directives_are_mutually_exclusive_branches():
     """Two 'emit ONE diagram' directives in one turn is worse than a bad pick.
 
-    They are now an if/elif on the archetype: a concept the column NAMES gets
-    the widget directive and no template directive; everything else gets the
-    template directive if a cue fired, and the manifest either way.
+    THREE branches now, and the chain IS the tier order: a segment whose
+    payload was already precomputed asks for no picture at all; a concept the
+    column NAMES gets the widget directive; everything else gets the template
+    directive if a cue fired, and the manifest either way.
     """
-    assert re.search(r"\n    if _archetype_widget:\n", TUTOR_SRC)
+    assert re.search(r'\n    if _board_slot == "widget_precomputed":\n', TUTOR_SRC)
+    assert re.search(r"\n    elif _archetype_widget:\n", TUTOR_SRC)
     assert re.search(r"\n    elif _diag_hint:\n", TUTOR_SRC)
-    # and neither is gated on the cached SVG any more — that was the
+    # and none is gated on the cached SVG any more — that was the
     # timing-over-tier bug.
     assert "and not _precomputed_svg:" not in TUTOR_SRC
+
+
+def test_slot_one_precedes_slot_two_in_the_directive_chain():
+    """The resolver having the right order is not enough: whichever branch runs
+    FIRST is the one that decides what the model is asked for. Slot 1 outranks
+    slot 2, so its branch must come first — and it must ask for NO diagram,
+    because the picture already exists and the board carries one per turn."""
+    pre = TUTOR_SRC.index('if _board_slot == "widget_precomputed":')
+    arch = TUTOR_SRC.index("elif _archetype_widget:")
+    tmpl = TUTOR_SRC.index("elif _diag_hint:")
+    assert pre < arch < tmpl
+    block = TUTOR_SRC[pre:arch]
+    assert "ALREADY DRAWN" in block
+    assert "Emit NO board_event" in block
 
 
 def test_the_widget_directive_takes_its_params_from_the_registry():
@@ -426,9 +442,13 @@ def test_the_widget_directive_takes_its_params_from_the_registry():
     A second widget would then have been handed field_lines' params — the same
     hardcoding, one level up from the sanitizer. The archetype column now
     names widgets the registry has never described in a literal here.
+
+    Scoped to the SLOT 2 branch: slot 1's directive names no params at all (its
+    payload is already authored), so starting at the first `widget_directive =`
+    would read the wrong block.
     """
-    start = TUTOR_SRC.index("widget_directive = (")
-    block = TUTOR_SRC[start:start + 2000]
+    start = TUTOR_SRC.index("elif _archetype_widget:")
+    block = TUTOR_SRC[start:start + 3000]
     assert "WIDGET_SPECS.get(_archetype_widget" in block
     assert "WIDGET_VERSIONS.get(_archetype_widget" in TUTOR_SRC
     assert "like_charges" not in block, "field_lines params are hardcoded again"
