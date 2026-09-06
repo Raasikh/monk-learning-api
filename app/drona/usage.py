@@ -113,8 +113,24 @@ def has_time_of_day_pricing(model: str) -> bool:
     pricing gpt-4o-mini under that rule would have recorded its cost at half
     for most of the day and all weekend — a wrong number reported confidently,
     which is the exact failure this module's docstring warns about.
+
+    A prefix test cannot tell WHO IS BILLING from WHOSE WEIGHTS RAN, and the
+    two came apart when the same model started being reached through a gateway:
+
+        deepseek-v4-pro           billed by DeepSeek    -> discounts by clock
+        deepseek/deepseek-v4-pro  billed by OpenRouter  -> does NOT
+
+    OpenRouter charges its own rate on its own schedule, so halving its bill on
+    DeepSeek's off-peak window is the gpt-4o-mini mistake again, one layer up.
+    The slash is the tell: an OpenRouter model id is "vendor/model", and a
+    native DeepSeek id never contains one. Measured 2026-09-05 alongside the
+    finding that OpenRouter already returns its true figure in `usage.cost`,
+    which this module still ignores.
     """
-    return model.lower().startswith("deepseek")
+    m = model.lower()
+    if "/" in m:
+        return False
+    return m.startswith("deepseek")
 
 
 def cost_for(model: str, input_tokens: int, cache_hit_tokens: int,
@@ -151,11 +167,49 @@ def cost_for(model: str, input_tokens: int, cache_hit_tokens: int,
     )
 
 
-def tokens_from(res: Any) -> Dict[str, int]:
+def gateway_error(res: Any) -> Optional[str]:
+    """Describe why `res` is unusable, or None if it looks like a completion.
+
+    OpenRouter answers a malformed request with HTTP **200** and an error body
+    where api.deepseek.com answers 400. The OpenAI SDK only raises on non-2xx,
+    so the rejection sails through as a ChatCompletion with `choices is None`
+    and `usage is None`, and the caller dies later on
+
+        TypeError: 'NoneType' object is not subscriptable
+
+    which names nothing relevant. Measured 2026-09-05, both directions:
+
+        response_format={"type":"totally_bogus"}   direct 400  |  OR 200 + error
+        {"seed": "not-an-int"}                     direct 400  |  OR 200 + error
+
+    Detect it once, here, rather than at each of the seven sites that read
+    choices[0].
+    """
+    if res is None:
+        return None                      # nothing to judge; not an error
+    err = getattr(res, "error", None)
+    if err:
+        msg = getattr(err, "message", None) or (err.get("message") if isinstance(err, dict) else None)
+        code = getattr(err, "code", None) or (err.get("code") if isinstance(err, dict) else None)
+        return f"gateway returned 200 with an error body: code={code} {msg}"
+    if getattr(res, "choices", None) is None:
+        return "gateway returned 200 with no choices (rejected request wearing a success status)"
+    return None
+
+
+def tokens_from(res: Any) -> Dict[str, Any]:
     """Pull token counts off an OpenAI-shaped response, tolerating absence."""
     usage = getattr(res, "usage", None)
     if usage is None:
-        return {"input_tokens": 0, "cache_hit_tokens": 0, "output_tokens": 0}
+        # None, NOT zero. Zero means "this call was free"; absent usage means
+        # "billed an unknown amount", and record_call prices the difference:
+        # all-None leaves cost_usd NULL, all-zero writes cost_usd = 0.0.
+        #
+        # A rejected OpenRouter request has no usage block, so the old zeros
+        # wrote a BILLED, REJECTED call to llm_calls as ok=True and free --
+        # the exact misreading rule 2 forbids, arrived at through the one path
+        # that skipped it.
+        return {"input_tokens": None, "cache_hit_tokens": None, "output_tokens": None}
     details = getattr(usage, "prompt_tokens_details", None)
     return {
         "input_tokens": getattr(usage, "prompt_tokens", 0) or 0,
@@ -179,6 +233,14 @@ def record_call(model: str, service: str, *, ok: bool = True, attempt: int = 1,
     away are the ones that were impossible to see, and they are the reason this
     module exists.
     """
+    # A 200-with-error body is a FAILED call however the caller labelled it.
+    # Both planner paths call record_call(ok=True, res=res) before they read
+    # choices[0], so without this the rejection is booked as a success.
+    gw = gateway_error(res)
+    if gw:
+        ok, error = False, (error or gw)
+        logger.warning(f"[USAGE] {service}/{model}: {gw}")
+
     tok = tokens or tokens_from(res)
     # All-None token counts mean "billed an unknown amount" (e.g. a stream that
     # died before its usage chunk). Cost stays NULL there: pricing zero known
