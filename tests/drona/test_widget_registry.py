@@ -471,3 +471,147 @@ def test_every_maths_12_ch8_concept_now_reaches_the_widget_registry():
     assert "{{REGISTRY_MANIFEST}}" in PROMPT, (
         "the manifest reaches every turn regardless of which cue fired"
     )
+
+
+# ── 4. v5: repetition and the implicit decline ───────────────────────────────
+# Four mechanical fixes, each written against a specific way the previous
+# attempt got the answer wrong. Each one gets the test that would have caught
+# it, because "the model repeated itself" is not a failure any assertion about
+# widget ids can see.
+
+def test_the_node_list_is_serialised_before_the_knobs():
+    """`sort_keys=True` put `nodes` LAST, and the cap ate the content.
+
+    Reproduced literally: for `process_flow`, `active_node`, `branch_at`,
+    `caption`, `closes` and `layout` all sort before `n`. At a 180-char cap the
+    sorted line stops inside the word `"nodes"` — the model is shown every knob
+    of the picture it drew last segment and none of what was in it.
+    """
+    params = {
+        "active_node": -1, "branch_at": -1,
+        "caption": "Energy flow through the ecosystem",
+        "closes": False, "layout": "chain",
+        "nodes": ["Sun", "Producers", "Primary consumers",
+                  "Secondary consumers", "Decomposers"],
+    }
+    sorted_line = json.dumps(params, sort_keys=True)[:wr.PRIOR_PAYLOAD_CHARS]
+    assert "Decomposers" not in sorted_line, (
+        "the sorted serialisation now fits; re-derive the cap before trusting this"
+    )
+
+    line = wr.render_prior_payload_line(
+        {"segment_index": 3, "widget": "process_flow", "params": params})
+    assert list(wr.order_params_content_first(params))[0] == "nodes"
+    for node in params["nodes"]:
+        assert node in line, f"{node!r} was truncated out of the summary line"
+
+
+def test_two_payloads_that_draw_the_same_picture_compare_equal():
+    """v4 reported "byte-identical groups: 0" while three consecutive
+    decomposition segments drew the same five-step chain. The CAPTIONS
+    differed, so the params were not byte-identical. A student sees nodes."""
+    nodes = ["Detritus", "Fragmentation", "Leaching", "Catabolism", "Humus"]
+    a = {"widget": "process_flow",
+         "params": {"nodes": list(nodes), "layout": "chain",
+                    "caption": "Steps in decomposition"}}
+    b = {"widget": "process_flow",
+         "params": {"nodes": list(nodes), "layout": "chain",
+                    "caption": "How detritus breaks down", "active_node": 2}}
+    assert json.dumps(a["params"], sort_keys=True) != json.dumps(b["params"], sort_keys=True)
+    assert wr.payload_node_list(a) == wr.payload_node_list(b) != ()
+
+
+def test_the_node_list_reads_names_out_of_object_params():
+    """circuit_network's `elements` are objects; the NAME is what is drawn."""
+    got = wr.payload_node_list({"params": {
+        "topology": "series",
+        "elements": [{"kind": "resistor", "name": "R1", "value": 4},
+                     {"kind": "cell", "name": "E", "value": 6}],
+    }})
+    assert got == ("r1", "e")
+
+
+def test_a_payload_with_no_list_param_has_no_node_list():
+    """`()` rather than a guess. projectile_motion draws no list of anything,
+    so two projectile payloads must never compare equal on node list alone."""
+    assert wr.payload_node_list({"params": {"launch_angle_deg": 45,
+                                            "initial_speed_ms": 20}}) == ()
+
+
+def test_the_prior_payload_window_is_four():
+    """v4 cut it to three for token headroom and that broke the succession
+    case: seg 3 and seg 7 of one plan drew the same chain with three unrelated
+    segments between them, and a window of three could not see it."""
+    assert wr.PRIOR_PAYLOAD_WINDOW == 4
+    assert "PRIOR_PAYLOAD_WINDOW" in TUTOR_SRC
+
+
+def test_the_prior_payload_query_is_ordered():
+    """PostgREST returns rows in NO guaranteed order without `.order()`, so
+    "the four most recent payloads" was whatever the planner handed back."""
+    assert re.search(
+        r'table\("drona_turns"\)[\s\S]{0,400}?\.order\("turn_index",\s*desc=True\)',
+        TUTOR_SRC,
+    ), "the prior-payload query lost its .order()"
+
+
+def test_the_prior_payload_block_rides_the_user_message_not_the_prefix():
+    """The one thing that cost v4 a 10.2x cache collapse: a per-turn string in
+    the SYSTEM message, which is the cached prefix."""
+    assert "{prior_payload_block}" in TUTOR_SRC
+    sys_line = re.search(r"system_content = f\".*?\"", TUTOR_SRC, re.S)
+    assert sys_line and "prior_payload_block" not in sys_line.group(0)
+    assert wr.render_prior_payload_block([]) == "", (
+        "a session with no prior payloads must add nothing to the turn"
+    )
+
+
+def test_the_single_widget_block_references_the_segment_and_never_carries_it():
+    """v4 interpolated the objective TEXT into the cached prefix. The block
+    must POINT at [CURRENT SEGMENT], which the user message already carries."""
+    block = wr.render_single_widget_block("process_flow")
+    assert "[CURRENT SEGMENT]" in block
+    # It takes no segment argument, so it CANNOT embed one.
+    import inspect
+    assert list(inspect.signature(wr.render_single_widget_block).parameters) == ["widget_id"]
+
+
+def test_an_archetype_turn_with_no_payload_is_a_decline():
+    """The whole of change 2. v4 asked for the decline out loud and got zero
+    in 40 turns while six turns silently drew nothing."""
+    assert wr.classify_widget_decline("process_flow", [
+        {"seq": 1, "type": "heading", "text": "Secondary Productivity"},
+    ]) == {"kind": "implicit", "reason": None}
+
+
+def test_a_volunteered_reason_beats_the_inference():
+    got = wr.classify_widget_decline("process_flow", [
+        {"seq": 1, "type": "widget_decline", "reason": "this segment only defines a term"},
+    ])
+    assert got == {"kind": "explicit", "reason": "this segment only defines a term"}
+    bare = wr.classify_widget_decline("process_flow", [{"type": "widget_decline"}])
+    assert bare == {"kind": "explicit", "reason": "(no reason given)"}
+
+
+def test_a_turn_that_drew_the_widget_is_not_a_decline():
+    assert wr.classify_widget_decline("process_flow", [
+        {"seq": 1, "type": "diagram",
+         "payload": {"widget": "process_flow", "version": 1, "params": {"nodes": ["a"]}}},
+    ]) is None
+
+
+def test_nothing_is_declined_on_the_manifest_branch():
+    """No widget was NAMED there, so an absent payload is a choice from nine,
+    not a refusal of one. Folding the two together would drown the signal."""
+    assert wr.classify_widget_decline(None, []) is None
+    assert wr.classify_widget_decline("", [{"type": "text", "text": "x"}]) is None
+
+
+def test_the_decline_log_carries_the_concept_and_the_objective():
+    """The log IS the deliverable — it is the only signal for where the
+    archetype column is too coarse. A count without these is unactionable."""
+    block = re.search(r"\[WIDGET DECLINE\][\s\S]{0,900}?\n\s*\)", TUTOR_SRC)
+    assert block, "the decline log is gone"
+    src = block.group(0)
+    for field in ("subtopic_key", "objective", "reason", "_decline['kind']"):
+        assert field in src, f"the decline log no longer reports {field}"

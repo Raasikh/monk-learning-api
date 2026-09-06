@@ -264,6 +264,25 @@ def render_single_widget_block(widget_id: str) -> str:
         f"the same bar as a template: do not skip because the parameters feel "
         f"approximate. A definition, a recap or a pure checkpoint may want no "
         f"picture; explaining, deriving or working the concept does.\n"
+        # v5, and it is a REFERENCE, not a copy. v4 interpolated the segment's
+        # objective TEXT into this block. The block lands in the system
+        # message, which is the cached prefix, so every segment got its own
+        # prefix: uncached input per archetype turn went 1,939 -> 19,822, a
+        # 10.2x cache collapse, to carry a string the per-turn user message
+        # was already carrying verbatim twenty lines further down. A pointer
+        # is one static sentence and caches; the objective costs its own
+        # length on every turn forever.
+        #
+        # The decline is a SOFT ASK, and it is not the mechanism. Implicit
+        # decline — no payload at all on an archetype turn — is detected in
+        # code (classify_widget_decline) and logged there. v4 shipped this
+        # ask alone and it fired zero times in 40 turns, which is why the
+        # code path exists. This stays only because when the model DOES
+        # volunteer a reason, that sentence is worth more than the inference.
+        f"         Judge that against the objective in [CURRENT SEGMENT] "
+        f"below, not the concept as a whole. If it wants none, say so: "
+        f"`{{\"seq\": N, \"type\": \"widget_decline\", \"reason\": \"<one "
+        f"line>\"}}` — it never reaches the board; it records WHY.\n"
         f"         Emit ONE board_event: "
         f"`{{\"seq\": N, \"type\": \"diagram\", \"payload\": {{\"widget\": "
         f"\"{widget_id}\", \"version\": {version}, \"params\": {{ … }}}}, "
@@ -271,6 +290,169 @@ def render_single_widget_block(widget_id: str) -> str:
         f"`template`, `params` or `svg`. This is IN ADDITION to your normal "
         f"board lines, never instead of them."
     )
+
+
+# ── REPETITION ───────────────────────────────────────────────────────────────
+# Three segments in a row drawing the same five-step chain is not a widget
+# failure; it is the model never being told what it drew last time. These are
+# the three pieces that make "what did I already draw" answerable, and each one
+# is a fix to a specific way the answer came out wrong.
+
+#: The params that carry the CONTENT a student reads off the picture, in the
+#: order they are serialised into the prior-payload summary. Everything else is
+#: a knob — a layout flag, a highlight index, a caption.
+#:
+#: THIS ORDER IS THE FIX. `json.dumps(params, sort_keys=True)` put `nodes`
+#: LAST for `process_flow`, because `active_node`, `branch_at`, `caption`,
+#: `closes` and `layout` all sort before `n`. The character cap on the summary
+#: line then truncated at exactly the word `"nodes"`: the model was shown every
+#: knob of the picture it drew last segment and none of what was in it, and
+#: went on to draw the same five steps again. Content first, knobs after, and
+#: the cap eats the knobs.
+CONTENT_FIRST_PARAMS = (
+    "nodes",          # process_flow
+    "species",        # reaction_scheme
+    "row_labels",     # data_table_trend
+    "col_labels",     # data_table_trend
+    "elements",       # circuit_network
+    "ligands",        # molecule_struct
+    "centre",         # molecule_struct
+    "values",         # data_table_trend / xy_plot
+    "text_values",    # data_table_trend
+    "curve",          # xy_plot
+    "curve2",         # xy_plot
+    "structure_ref",  # molecule_3d
+    "configuration",  # field_lines
+    "topology",       # circuit_network
+)
+
+#: Per-payload cap on the summary line. Four of these ride the per-turn USER
+#: message, so this is paid uncached on every turn that has priors: 4 x ~180
+#: chars is ~200 tokens against v3's 1,939-token uncached baseline.
+PRIOR_PAYLOAD_CHARS = 180
+
+#: How many prior payloads the model is shown. FOUR. v4 cut it to three for
+#: token headroom and that is precisely what broke the succession case, where
+#: seg 3 and seg 7 of the same plan drew the same chain with three unrelated
+#: segments between them.
+PRIOR_PAYLOAD_WINDOW = 4
+
+#: The board_event type a model uses to decline the named widget out loud.
+#: Stripped before the board — nothing in the client registry renders it.
+DECLINE_EVENT_TYPE = "widget_decline"
+
+
+def order_params_content_first(params: Any) -> Dict[str, Any]:
+    """`params`, with CONTENT_FIRST_PARAMS hoisted, then everything else sorted.
+
+    Deterministic in both halves: a summary line that reorders itself turn to
+    turn is a diff nobody can read.
+    """
+    if not isinstance(params, dict):
+        return {}
+    out: Dict[str, Any] = {}
+    for key in CONTENT_FIRST_PARAMS:
+        if key in params:
+            out[key] = params[key]
+    for key in sorted(params):
+        if key not in out:
+            out[key] = params[key]
+    return out
+
+
+def payload_node_list(payload: Any) -> tuple:
+    """The list a STUDENT actually sees, as a comparable tuple. `()` if none.
+
+    Two payloads are the same picture when this matches. Comparing SERIALISED
+    PARAMS instead reported "byte-identical groups: 0" across three
+    consecutive decomposition segments that each drew the same five-step
+    chain — the captions differed, so the params were not byte-identical. A
+    student does not see the caption key. They see the five steps.
+
+    Lowercased and stripped because "Detritus" and "detritus " are the same
+    node to a reader and a different string to `==`.
+    """
+    if not isinstance(payload, dict):
+        return ()
+    params = payload.get("params")
+    if not isinstance(params, dict):
+        return ()
+    for key in CONTENT_FIRST_PARAMS:
+        val = params.get(key)
+        if not isinstance(val, list) or not val:
+            continue
+        items = []
+        for v in val:
+            if isinstance(v, dict):
+                # circuit_network's `elements` are objects; the NAME is the
+                # thing on the picture.
+                v = v.get("name") or v.get("label") or json.dumps(
+                    v, sort_keys=True, default=str)
+            items.append(str(v).strip().lower())
+        return tuple(items)
+    return ()
+
+
+def render_prior_payload_line(entry: Dict[str, Any]) -> str:
+    """One prior payload, content first, capped."""
+    widget = entry.get("widget") or "?"
+    body = json.dumps(order_params_content_first(entry.get("params")),
+                      ensure_ascii=False, default=str)
+    if len(body) > PRIOR_PAYLOAD_CHARS:
+        body = body[:PRIOR_PAYLOAD_CHARS] + "…"
+    return f"  segment {entry.get('segment_index', '?')} — `{widget}` {body}"
+
+
+def render_prior_payload_block(entries: List[Dict[str, Any]]) -> str:
+    """The per-turn USER-message block. Empty string when there are no priors.
+
+    Deliberately in the user message, not the system prefix: it changes every
+    turn, and a per-turn string in the cached prefix is exactly the mistake
+    that cost v4 a 10.2x cache collapse.
+    """
+    if not entries:
+        return ""
+    lines = ["", "[WIDGETS ALREADY DRAWN IN THIS SESSION — MOST RECENT FIRST]"]
+    lines += [render_prior_payload_line(e) for e in entries]
+    lines.append(
+        "Do not draw one of these again. A picture whose content repeats one "
+        "above teaches nothing the student has not already seen: draw the part "
+        "THIS segment adds, or emit no diagram."
+    )
+    return "\n".join(lines) + "\n"
+
+
+def classify_widget_decline(archetype_widget: Optional[str],
+                            board_events: Any) -> Optional[Dict[str, Any]]:
+    """Did this archetype turn decline the named widget, and did it say why.
+
+    `None` means it drew one. Otherwise `{"kind": "implicit"|"explicit",
+    "reason": str|None}`.
+
+    A turn on the archetype branch that emits NO widget payload IS a decline —
+    the model was shown one widget, told to emit it unless the segment has
+    nothing to draw, and emitted nothing. That is a judgement, not an absence,
+    and it is the only signal for where the archetype column is too coarse for
+    a segment. v4 asked for the decline to be stated out loud and it was stated
+    ZERO times in 40 turns, so inferring it from the payload's absence is the
+    mechanism and the explicit event is the bonus: when the model does
+    volunteer a sentence, that sentence beats the inference.
+
+    Called with `archetype_widget=None` on every other branch and returns None
+    there: on the manifest branch no widget was named, so nothing was declined.
+    """
+    if not archetype_widget:
+        return None
+    events = [e for e in (board_events or []) if isinstance(e, dict)]
+    for evt in events:
+        payload = evt.get("payload")
+        if isinstance(payload, dict) and payload.get("widget"):
+            return None
+    for evt in events:
+        if evt.get("type") == DECLINE_EVENT_TYPE:
+            reason = str(evt.get("reason") or "").strip()
+            return {"kind": "explicit", "reason": reason or "(no reason given)"}
+    return {"kind": "implicit", "reason": None}
 
 
 def _field_lines_shape_ok(params: Dict[str, Any]) -> bool:

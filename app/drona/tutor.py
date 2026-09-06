@@ -14,10 +14,13 @@ from app.drona.prompt_loader import load_prompt
 from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
 from app.drona.diagram_author import validate as validate_authored_svg
 from app.drona.widget_registry import (
+    PRIOR_PAYLOAD_WINDOW,
     ROUTE_ARCHETYPE_HIGH,
     WIDGET_SPECS,
     WIDGET_VERSIONS,
+    classify_widget_decline,
     render_manifest_block,
+    render_prior_payload_block,
     render_single_widget_block,
     sanitize_widget_payload,
 )
@@ -56,6 +59,12 @@ logger = logging.getLogger("drona.tutor")
 # A segment ends with a short quiz on what was just taught. Every answer moves
 # on — right or wrong — and only the last question closes the segment.
 QUIZ_QUESTIONS_PER_SEGMENT = 3
+
+# How many of the session's most recent turns are READ looking for the
+# PRIOR_PAYLOAD_WINDOW most recent widget payloads. Most turns carry none —
+# a segment is three turns and at most one of them draws — so the scan has to
+# reach further back than the window it fills. 24 turns is eight segments.
+PRIOR_PAYLOAD_SCAN = 24
 
 # Whether a tier-3 authored figure is PERSISTED into concept_diagrams, i.e.
 # promoted to tier 1 and served instantly and permanently from then on.
@@ -757,6 +766,56 @@ async def process_tutor_turn_stream(
     except Exception as b_err:
         logger.warning(f"Failed to load segment board events: {b_err}")
 
+    # ── REPETITION: the widget payloads this SESSION has already drawn ───────
+    # Session-wide, not segment-wide. [BOARD EVENTS ALREADY EMITTED IN THIS
+    # SEGMENT] above is scoped to the current segment, which is the right scope
+    # for board TEXT — a heading repeated inside one segment is the failure it
+    # was written for. A widget is the opposite: the same five-step chain drawn
+    # in segments 3 and 7 of the same plan is the failure, and a segment-scoped
+    # query cannot see it.
+    #
+    # `.order()` IS LOAD-BEARING. PostgREST returns rows in no guaranteed
+    # order without one, so "the four most recent payloads" was whatever the
+    # planner happened to hand back. Ordered by `turn_index` rather than
+    # `created_at`: it is the column this code writes and increments itself,
+    # so it cannot tie or skew, and two turns inserted inside the same clock
+    # tick still sort.
+    prior_payload_entries: List[Dict[str, Any]] = []
+    try:
+        _prior_rows = (supabase.table("drona_turns")
+                       .select("turn_index, segment_index, raw_response")
+                       .eq("session_id", session_id)
+                       .order("turn_index", desc=True)
+                       .limit(PRIOR_PAYLOAD_SCAN)
+                       .execute().data or [])
+        for _row in _prior_rows:
+            if len(prior_payload_entries) >= PRIOR_PAYLOAD_WINDOW:
+                break
+            _raw = _row.get("raw_response")
+            if isinstance(_raw, str):
+                try:
+                    _raw = json.loads(_raw)
+                except Exception:
+                    _raw = {}
+            if not isinstance(_raw, dict):
+                continue
+            for _evt in (_raw.get("board_events") or []):
+                if not isinstance(_evt, dict):
+                    continue
+                _pl = _evt.get("payload")
+                if not (isinstance(_pl, dict) and _pl.get("widget")):
+                    continue
+                prior_payload_entries.append({
+                    "segment_index": _row.get("segment_index"),
+                    "widget": _pl.get("widget"),
+                    "params": _pl.get("params") if isinstance(_pl.get("params"), dict) else {},
+                })
+                break  # one picture per turn is all the board ever carries
+    except Exception as pp_err:
+        logger.warning(f"{stag} prior widget payloads unavailable: {pp_err}")
+
+    prior_payload_block = render_prior_payload_block(prior_payload_entries)
+
     # ── Re-teach handling ──────────────────────────────────────────────────
     # "Teach me again" must re-explain the SAME sub-concept differently. Two
     # things follow from that: the board slice must NOT advance (otherwise the
@@ -1241,7 +1300,7 @@ This is Turn {turn_within_segment} of 3 in this segment.
 
 [BOARD EVENTS ALREADY EMITTED IN THIS SEGMENT]
 {json.dumps(current_segment_board_events, indent=2)}
-
+{prior_payload_block}
 [QUESTIONS ALREADY ASKED IN THIS SEGMENT — NEVER RE-ASK THESE]
 {json.dumps(questions_already_asked, indent=2)}
 Your question this turn must test something NOT covered by any question above —
@@ -2100,6 +2159,48 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         assert_no_forbidden_keys(err_payload)
         yield f"event: turn_error\ndata: {json.dumps(err_payload)}\n\n"
 
+    # ── 12b. THE DECLINE, INFERRED IN CODE ───────────────────────────────────
+    # An archetype turn that emits NO widget payload IS a decline. The model
+    # was shown exactly one widget and told to emit it unless this segment has
+    # nothing to draw; emitting nothing is that judgement, and until now it was
+    # indistinguishable in the logs from the widget path being broken.
+    #
+    # THE LOG IS THE DELIVERABLE. It carries the CONCEPT and the OBJECTIVE
+    # because those are the two fields that say WHERE the archetype column is
+    # too coarse: the column classifies a concept, and a decline says this
+    # segment of it wanted something the column cannot express. A count of
+    # declines without them is a number nobody can act on.
+    #
+    # This is in code because the prompt-only version did not work. v4 asked
+    # for an explicit `widget_decline` event and got ZERO in 40 turns while 6
+    # of those turns silently drew nothing. The explicit event is still read —
+    # `classify_widget_decline` prefers it — because a reason the model
+    # volunteers beats one inferred from an absence.
+    #
+    # AND IT ROUTES TO THE TEMPLATE PATH: the archetype slot has answered
+    # "not this segment", so it no longer holds the diagram slot, and delivery
+    # falls through to whatever the template/SVG tiers have. That fall-through
+    # already runs unconditionally below (the `_precomputed_svg` append and the
+    # tier-2 model-template append both fire on any turn with no diagram), so
+    # what changes here is that the turn is RECORDED as having taken it
+    # instead of reading as an archetype turn that produced nothing.
+    _decline = None
+    if not turn_failed:
+        _decline = classify_widget_decline(_archetype_widget,
+                                           parsed_json.get("board_events"))
+    if _decline:
+        logger.warning(
+            f"{stag}   🚫 [WIDGET DECLINE] {_decline['kind']} "
+            f"widget={_archetype_widget} "
+            f"concept={session.get('subtopic_key')} "
+            f"chapter={session.get('chapter_id')} "
+            f"seg={curr_seg_idx}/{total_segments} "
+            f"reason={_decline['reason'] or '(none volunteered — no payload emitted)'} "
+            f"objective={json.dumps((curr_segment.get('objective') or '')[:240])} "
+            f"-> template path (cue={_diag_hint or 'none'}, "
+            f"fallback={'svg_precomputed' if _precomputed_svg else 'none'})"
+        )
+
     # 13. Compute board events and finalize phase/check_options BEFORE emitting
     # anything. board_events must reach the client before speech/audio so the
     # whiteboard isn't a beat behind the voice, and ends_in_checkpoint (below)
@@ -2235,8 +2336,14 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             # used to look like "no widget". `slot=` is the resolution, and
             # `diagram=` is the template cue — which is still reported on an
             # archetype turn, where it fired into nothing on purpose.
-            f"| slot={_board_slot} arch={_archetype.confidence}"
+            # `slot=widget_archetype->declined:implicit` is the resolution a
+            # bare `slot=widget_archetype` used to hide: the tier was chosen,
+            # the model was asked, and it said not this segment.
+            f"| slot={_board_slot}"
+            f"{('->declined:' + _decline['kind']) if _decline else ''} "
+            f"arch={_archetype.confidence}"
             f"{('->' + _archetype_widget) if _archetype_widget else ''} "
+            f"priors={len(prior_payload_entries)} "
             f"cues: diagram={_diag_hint or '-'}"
             f"{'' if _live_diagram_future is None else ('+won' if _live_diagram_future.done() else '+late')} "
             f"example={'y' if example_directive else '-'} "

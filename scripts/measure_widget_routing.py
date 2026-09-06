@@ -87,12 +87,14 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.db import supabase  # noqa: E402
 from app.drona import tutor  # noqa: E402
+from app.drona.widget_registry import payload_node_list  # noqa: E402
 
 # Chapter is a CLI argument, not a constant. The first run of this harness
 # measured only Maths 12 Ch8, where every concept is v2_confidence
 # "not_in_scope" -- so it could only ever exercise the manifest branch, and a
 # reader could mistake "the column named nothing" for "the column is broken".
 # Both branches need their own chapter.
+ONLY = ""             # set in main() from --only
 CHAPTER_ID = ""       # set in main() from --subject/--class-level/--chapter
 CHAPTER_NAME = ""
 EXPECTED_WIDGET = ""  # set from --expect
@@ -114,6 +116,12 @@ def _reset_probe() -> None:
         "sanitize_calls": [],
         "model_raw_board_events": None,
         "tokens": None,
+        # v5. What the model was ACTUALLY GIVEN about what it already drew,
+        # and what the server concluded about a turn that drew nothing. Both
+        # are computed inside process_tutor_turn_stream and neither reaches
+        # the SSE, so neither can be reconstructed from the emitted frame.
+        "prior_payload_block": None,
+        "decline": None,
     })
 
 
@@ -122,6 +130,8 @@ _real_resolve_slot = tutor.resolve_board_slot
 _real_sanitize = tutor.sanitize_widget_payload
 _real_parse = tutor.parse_tutor_json
 _real_record = tutor.record_call_bg
+_real_prior_block = tutor.render_prior_payload_block
+_real_classify_decline = tutor.classify_widget_decline
 
 
 def _patched_suggest_template(*texts: str):
@@ -180,12 +190,34 @@ def _patched_record(model, service, **kw):
     return _real_record(model, service, **kw)
 
 
+def _patched_prior_block(*a: Any, **kw: Any):
+    """The prior-payload summary, EXACTLY as the model received it.
+
+    Dumped verbatim beside the payload so a human re-judging sanity can see
+    what the model was told it had already drawn. "It repeated itself" and "it
+    was never shown what it drew" are different findings and the emitted board
+    event distinguishes them not at all.
+    """
+    out = _real_prior_block(*a, **kw)
+    PROBE["prior_payload_block"] = out
+    return out
+
+
+def _patched_classify_decline(*a: Any, **kw: Any):
+    out = _real_classify_decline(*a, **kw)
+    if out is not None:
+        PROBE["decline"] = dict(out)
+    return out
+
+
 def install_probes() -> None:
     tutor.suggest_diagram_template = _patched_suggest_template
     tutor.resolve_board_slot = _patched_resolve_slot
     tutor.sanitize_widget_payload = _patched_sanitize
     tutor.parse_tutor_json = _patched_parse
     tutor.record_call_bg = _patched_record
+    tutor.render_prior_payload_block = _patched_prior_block
+    tutor.classify_widget_decline = _patched_classify_decline
 
 
 # ── the four-way classification of a non-fire ────────────────────────────────
@@ -213,11 +245,20 @@ CANNOT_EXPRESS = {
 
 def classify_non_fire(rec: Dict[str, Any]) -> str:
     """Why no widget payload reached the client on this segment."""
-    # First, because it is the one non-fire the model EXPLAINED. Folding a
-    # reasoned decline into "model_chose_no_widget" would discard the only
+    # First, because it is the one non-fire that is a JUDGEMENT rather than a
+    # miss. Folding it into "model_chose_no_widget" would discard the only
     # category that says what to build next.
+    #
+    # v5: `rec["decline"]` is the SERVER's verdict, read off
+    # tutor.classify_widget_decline, and on the archetype branch it fires on
+    # every non-fire whether or not the model said anything. `rec["declines"]`
+    # is the model's own volunteered reason and is kept because when it is
+    # there it is worth more than the inference.
+    dec = rec.get("decline")
+    if dec:
+        return f"declined_{dec['kind']}"
     if rec.get("declines"):
-        return "declined"
+        return "declined_explicit"
     calls = rec["sanitize_calls"]
     if calls:
         if any(c["accepted"] for c in calls):
@@ -264,6 +305,15 @@ def load_plans() -> List[Dict[str, Any]]:
     rows = (supabase.table("lesson_plans")
             .select("id,subtopic_key,plan_json,segment_count")
             .eq("chapter_id", CHAPTER_ID).execute().data or [])
+    if ONLY:
+        rows = [r for r in rows if ONLY in r["subtopic_key"]]
+        print(f"--only {ONLY!r}: {len(rows)} plan(s)", flush=True)
+        if not rows:
+            # Loud. Walking the chapter alphabetically with --limit alone can
+            # measure a concept the column never routes and read as a zero --
+            # which is exactly how six segments of gap_inverse_mirror were
+            # briefly mistaken for xy_plot failing to fire.
+            raise SystemExit(f"no plan matches --only {ONLY!r}")
     out = []
     for r in rows:
         pj = r.get("plan_json") or {}
@@ -285,11 +335,15 @@ async def main() -> None:
     ap.add_argument("--subject", required=True)
     ap.add_argument("--class-level", type=int, required=True)
     ap.add_argument("--chapter", required=True, help="chapter name, exact")
+    ap.add_argument("--only", default="",
+                    help="substring filter on subtopic_key; the chapter's plans are "
+                         "walked alphabetically, so --limit alone can measure a "
+                         "concept the column never routes and read as a zero")
     ap.add_argument("--expect", required=True,
                     help="the widget this chapter's content defensibly wants")
     args = ap.parse_args()
 
-    global CHAPTER_ID, CHAPTER_NAME, EXPECTED_WIDGET
+    global CHAPTER_ID, CHAPTER_NAME, EXPECTED_WIDGET, ONLY
     _rows = (supabase.table("chapters").select("id,name")
              .eq("subject", args.subject).eq("class_level", args.class_level)
              .execute().data or [])
@@ -301,6 +355,7 @@ async def main() -> None:
                          f"{args.class_level}; have: {[c['name'] for c in _rows][:8]}")
     CHAPTER_ID, CHAPTER_NAME = _match[0]["id"], _match[0]["name"]
     EXPECTED_WIDGET = args.expect
+    ONLY = args.only
     print(f"chapter: {CHAPTER_NAME} ({CHAPTER_ID})  expecting: {EXPECTED_WIDGET}", flush=True)
 
     install_probes()
@@ -374,6 +429,10 @@ async def main() -> None:
                 rec["llm_ok"] = PROBE.get("llm_ok")
                 rec["turn_error"] = res["turn_error"]
                 rec["sanitize_calls"] = PROBE.get("sanitize_calls") or []
+                # v5. The four fields a human needs to re-judge this row, and
+                # the two the repetition analysis is computed from.
+                rec["prior_payload_block"] = PROBE.get("prior_payload_block") or ""
+                rec["decline"] = PROBE.get("decline")
                 rec["model_raw_board_events"] = PROBE.get("model_raw_board_events")
                 # What the model reached for INSTEAD of a payload. Rule 2: this
                 # is a result. A template name here with no sanitize_calls means
@@ -414,11 +473,17 @@ async def main() -> None:
                     rec["caption"] = widget_events[0].get("caption")
                     rec["route"] = widget_events[0].get("route")
                     rec["correct_widget"] = (w.get("widget") == EXPECTED_WIDGET)
+                    # The list a STUDENT sees, which is what "the same picture
+                    # twice" means. Computed with the SAME function the prompt
+                    # block orders by, so the repetition analysis and the thing
+                    # the model was shown cannot drift.
+                    rec["node_list"] = list(payload_node_list(w))
                     rec["server_validated"] = True
                     rec["non_fire_reason"] = None
                 else:
                     rec["widget"] = None
                     rec["params"] = None
+                    rec["node_list"] = []
                     # Rule 2: what the turn emitted INSTEAD is the result.
                     rec["emitted_instead"] = (
                         "svg" if svg_events
