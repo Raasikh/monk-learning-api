@@ -830,6 +830,60 @@ def get_or_create_plan(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
                 logger.error(f"Failed to delete stale partial plan: {del_err}")
             return create_plan_streaming(chapter_id, subtopic_key)
 
+        # PROVENANCE CHECK -- the lazy invalidation of docs/plan-invalidation.md.
+        #
+        # 0033 added these columns and the planner WROTE them, but nothing ever
+        # READ them: the cache hit tested only "is it still filling" and "does
+        # it validate". So the cache key documented as
+        #   (concept_id, planner_prompt_hash, planner_code_sha, model_id,
+        #    archetype_version, chunk_corpus_version)
+        # was in practice just (concept_id), and a plan authored by a different
+        # planner, a different prompt or a different MODEL was served forever.
+        # The columns made it look wired. That is the same shape as prompt_version
+        # not covering the planner, and grounded always being true.
+        #
+        # Deliberately NOT compared: chunk_corpus_version. It is derived per call
+        # from a live count over pdf_chunks, so with the corpus mid-rebuild every
+        # lookup would differ from every stored value and NOTHING would ever cache.
+        # Add it once the corpus is stable.
+        #
+        # planner_code_sha hashes the WHOLE file, so a comment or a log line
+        # invalidates every plan. That is coarse, and deliberately coarse in the
+        # safe direction: over-invalidating costs a regeneration, under-
+        # invalidating serves a stale lesson forever. At 24 plans that is free.
+        # Narrow it before the corpus fills, not after.
+        _prov = plan_provenance()
+        _drift = [
+            (k, cached_plan.get(k), _prov[k])
+            for k in ("planner_prompt_hash", "planner_code_sha", "model_id")
+            if cached_plan.get(k) != _prov[k]
+        ]
+        if _drift:
+            logger.warning(
+                f"⚠️ [PLAN PROVENANCE DRIFT] '{subtopic_key}' regenerating — "
+                + "; ".join(f"{k}: {was!r} -> {now!r}" for k, was, now in _drift)
+            )
+            try:
+                supabase.table("lesson_plans").delete().eq("id", cached_plan["id"]).execute()
+                return create_plan_streaming(chapter_id, subtopic_key)
+            except Exception as regen_err:
+                # Serve the stale plan rather than 500. Note this is a PARTIAL
+                # mitigation: the delete above has already run, so the row is
+                # gone and only this request still has the object.
+                #
+                # That is the bug the invalid-plan path below documents in its
+                # own comment -- "Regenerate BEFORE deleting ... the cached plan
+                # was already gone, so the student got a 500 and the plan was
+                # destroyed permanently. Observed on two subtopics." -- except
+                # that path ALSO deletes first and regenerates second, so the
+                # comment describes a fix its code does not implement. Flagged,
+                # not silently copied. Fixing it properly needs an insert that
+                # can coexist with the old row (the unique key on
+                # (chapter_id, subtopic_key) is why it was written this way),
+                # which is a schema question, not a reordering.
+                logger.error(f"Provenance regeneration failed, serving the stale plan: {regen_err}")
+                return cached_plan
+
         try:
             validate_plan_json(plan_json)
             logger.info(f"CACHE HIT (VALIDATED) for plan chapter_id={chapter_id}, subtopic_key={subtopic_key}")
