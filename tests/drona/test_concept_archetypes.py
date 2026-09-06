@@ -198,8 +198,8 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     for r in high:
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
-    assert len(high) == 143
-    assert len(named) == 53, f"the routed population moved: {len(named)}"
+    assert len(high) == 226
+    assert len(named) == 55, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
@@ -210,7 +210,7 @@ def test_the_routed_population_is_fifty_three_across_twenty_seven_chapters():
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 27
+    assert len(routed) == 28
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
@@ -241,22 +241,44 @@ def test_missing_join_fields_are_unjoinable_not_unknown():
     assert verdict("physics", "eleven", 6, "Center of Mass").confidence == "unjoinable"
 
 
-def test_maths_12_ch8_can_never_fire_on_the_column():
-    """The brief's own falsifier, and the chapter every earlier measurement
-    used. All ten concepts are `not_in_scope` with a blank archetype: the
-    reclassification is 0/151 on maths cl11 and 1/141 on cl12. If any of these
-    routes deterministically, the implementation is reading something it
-    should not be."""
-    maths = [r for r in _rows()
-             if r["subject"] == "mathematics" and r["class_level"] == "12"
-             and r["chapter_order"] == "8"]
-    assert len(maths) == 10
-    for r in maths:
-        v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
-        assert v.widget is None and v.confidence == "not_in_scope", r["concept"]
+def test_maths_12_ch8_routes_exactly_the_two_regions_xy_plot_can_draw():
+    """This test used to assert that Ch8 could NEVER fire on the column.
 
+    That was true, and it was true because the reclassification had never
+    read maths: all ten rows were `not_in_scope`. Maths 12 has since been
+    reclassified from the book's own chunks, so the premise is gone.
 
-# ── 4. which prompt block rides ─────────────────────────────────────────────
+    What replaces it is the sharper claim. `xy_plot@2` takes one curve from
+    line|parabola|sine|exponential|reciprocal, plus a second for
+    area_between. Ch8 is mostly NOT that: the book teaches "Area Between Two
+    Intersecting Curves" with sideways parabolas y^2 = 4ax and horizontal
+    strips, and bounds several regions with circles. So exactly two concepts
+    route, and the four geometries validate() refuses must never route --
+    routing one would put a diagram on a board that the client then declines
+    to draw, which is the silent failure this column exists to prevent.
+
+    Note the widget's own header claimed "5 solid + 1 partial" for this
+    chapter. That header was written against concept NAMES. It is the
+    name-based failure mode reappearing inside a docstring.
+    """
+    rows = [r for r in _rows()
+            if r["subject"] == "mathematics" and r["class_level"] == "12"
+            and r["chapter_order"] == "8"]
+    assert len(rows) == 10, "Ch8 should have ten concepts"
+
+    routed = {r["concept"] for r in rows
+              if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
+    assert routed == {
+        "Area Under a Simple Curve Bounded by the Axes",
+        "Area Bounded by a Parabola and a Line",
+    }, routed
+
+    # The geometries xy_plot's validate() refuses must not route, whatever
+    # their confidence.
+    for r in rows:
+        if r["archetype_v2"] in WIDGET_VERSIONS:
+            continue
+        assert not (r["v2_confidence"] == "high" and r["archetype_v2"] == "xy_plot"), r
 
 def test_a_high_confidence_concept_gets_one_widget_schema_not_the_manifest():
     # Taken from the file rather than hardcoded: a resync that reclassifies

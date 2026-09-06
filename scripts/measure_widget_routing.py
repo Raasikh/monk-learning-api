@@ -213,6 +213,11 @@ CANNOT_EXPRESS = {
 
 def classify_non_fire(rec: Dict[str, Any]) -> str:
     """Why no widget payload reached the client on this segment."""
+    # First, because it is the one non-fire the model EXPLAINED. Folding a
+    # reasoned decline into "model_chose_no_widget" would discard the only
+    # category that says what to build next.
+    if rec.get("declines"):
+        return "declined"
     calls = rec["sanitize_calls"]
     if calls:
         if any(c["accepted"] for c in calls):
@@ -378,6 +383,19 @@ async def main() -> None:
                     e.get("template")
                     for e in (rec["model_raw_board_events"] or [])
                     if isinstance(e, dict) and e.get("template")
+                ]
+                # A structured decline. Read off the model's RAW board_events,
+                # never the emitted frame: tutor.py strips the event by design,
+                # because nothing in the client registry can render it. A
+                # decline is a RESULT, not a non-fire — it is the signal for
+                # where the archetype column is too coarse for a segment's
+                # objective — so it is recorded with its reason rather than
+                # folded into `model_chose_no_widget`, which needs the opposite
+                # fix.
+                rec["declines"] = [
+                    (e.get("reason") or "(no reason given)")
+                    for e in (rec["model_raw_board_events"] or [])
+                    if isinstance(e, dict) and e.get("type") == "widget_decline"
                 ]
 
                 emitted = res["board_events"] or []
