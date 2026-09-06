@@ -98,6 +98,32 @@ TRANSCRIBE_TIMEOUT_S = 45.0
 # four minutes. 75s still leaves better than 2x headroom over the slowest
 # solve ever recorded.
 SOLVE_TIMEOUT_S = 75.0
+# …but a solve that is THINKING gets longer, because 75 was measured before
+# the guard could tell the two failures apart.
+#
+# When that number was chosen, a stream cut at the budget was indistinguishable
+# from a wedge: both surfaced as unparseable JSON, so a generous ceiling only
+# bought longer wedges. The guard now cuts only while the model is still
+# reasoning with nothing written, and gives a stream that has BEGUN answering
+# time to finish — so a higher ceiling costs nothing on a solve that is working
+# and buys the ones that legitimately need it.
+#
+# They exist. Measured on two consecutive real submissions: 16,484 characters
+# of reasoning at 75s with no answer started, on questions the retry then
+# answered — one of them taking 79s on its own. A coordinate-geometry question
+# was 120 characters into its answer at the 75s mark.
+#
+# The cost is bounded and paid only by a true wedge: 150s of reasoning that
+# produces nothing, then a thinking-off retry that returns in seconds. The
+# alternative was cheaper in time and worse in substance — the thinking-off
+# retry is measurably weaker on hard questions, and answered α+2β as "6".
+SOLVE_TIMEOUT_THINKING_S = 150.0
+
+
+def solve_budget_s() -> float:
+    """How long this solve may take, by whether it is allowed to think."""
+    return (SOLVE_TIMEOUT_S if SOLVE_THINKING == "disabled"
+            else SOLVE_TIMEOUT_THINKING_S)
 # A retry is for a solve that came back WRONG, not one that never came back.
 # When an attempt burns most of its budget it did not fail fast — it wedged,
 # and repeating it with identical inputs wedges again for the same duration.
@@ -204,7 +230,10 @@ def _deepseek_client() -> OpenAI:
     return OpenAI(
         api_key=api_key,
         base_url="https://api.deepseek.com",
-        timeout=SOLVE_TIMEOUT_S,
+        # The longest budget, not the shortest: this bounds the SDK's own
+        # patience, and the wall clock inside the stream is what actually
+        # decides when a solve has gone on too long.
+        timeout=SOLVE_TIMEOUT_THINKING_S,
         max_retries=1,
     )
 
@@ -2198,6 +2227,10 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                 extra["thinking"] = {"type": "disabled"}
                 client_kwargs["extra_body"] = extra
                 client_kwargs["max_tokens"] = 2200
+                # Back to the short budget: the long one is for reasoning, and
+                # this attempt is not allowed to do any.
+                client_kwargs["timeout"] = SOLVE_TIMEOUT_S
+                budget_s = SOLVE_TIMEOUT_S
                 logger.warning(
                     "[SNAP SOLVE] doubt=%s attempt 1 answered nothing; "
                     "retrying once with thinking OFF rather than repeating a "
@@ -2774,7 +2807,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 response_format={"type": "json_object"},
                 temperature=temperature,
                 max_tokens=2200,
-                timeout=SOLVE_TIMEOUT_S,
+                timeout=solve_budget_s(),
             )
             if not use_openai:
                 # Rule 5 — V4 defaults to chain-of-thought and will spend the
@@ -2815,13 +2848,13 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 response_format={"type": "json_object"},
                 temperature=0.0,
                 max_tokens=2200,
-                timeout=SOLVE_TIMEOUT_S,
+                timeout=solve_budget_s(),
                 _client=solve_client,
             )
             if not use_openai:
                 kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
                 if SOLVE_THINKING != "disabled":
-                    kwargs["max_tokens"] = 8000
+                    kwargs["max_tokens"] = THINKING_MAX_TOKENS
             return kwargs
         parsed = _streamed_solve(make_kwargs, on_event, doubt_id, usage_acc)
     else:
@@ -2863,12 +2896,12 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 response_format={"type": "json_object"},
                 temperature=0.0,
                 max_tokens=2200,
-                timeout=SOLVE_TIMEOUT_S,
+                timeout=solve_budget_s(),
             )
             if not use_openai:
                 kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
                 if SOLVE_THINKING != "disabled":
-                    kwargs["max_tokens"] = 8000
+                    kwargs["max_tokens"] = THINKING_MAX_TOKENS
             return solve_client.chat.completions.create(**kwargs)
 
         try:

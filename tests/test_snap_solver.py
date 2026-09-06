@@ -2782,3 +2782,58 @@ def test_speech_is_wrapped_as_a_playable_file():
     assert wav[36:40] == b"data"
     # The header is 44 bytes and the audio is carried whole.
     assert len(wav) == len(pcm) + 44
+
+
+def test_thinking_gets_the_longer_budget(monkeypatch):
+    """A solve that may reason gets longer than one that may not.
+
+    75s was measured when a stream cut at the budget looked exactly like a
+    wedge, so a generous ceiling only bought longer wedges. The guard can tell
+    them apart now, so the ceiling can rise for the solves that need it —
+    measured: 16,484 characters of reasoning at 75s with no answer started, on
+    a question the retry then answered.
+    """
+    monkeypatch.setattr(snap, "SOLVE_THINKING", "enabled")
+    assert snap.solve_budget_s() == snap.SOLVE_TIMEOUT_THINKING_S
+    monkeypatch.setattr(snap, "SOLVE_THINKING", "disabled")
+    assert snap.solve_budget_s() == snap.SOLVE_TIMEOUT_S
+    assert snap.SOLVE_TIMEOUT_THINKING_S > snap.SOLVE_TIMEOUT_S
+
+
+def test_the_thinking_off_retry_drops_back_to_the_short_budget(monkeypatch):
+    """The long budget is for reasoning, and the retry does none.
+
+    Without this a wedge would cost the long budget twice: once thinking to no
+    purpose, then again on an attempt that cannot think at all.
+    """
+    seen = []
+
+    class _Chunk:
+        def __init__(self, thinking):
+            self.usage = None
+            self.choices = [type("C", (), {"delta": type("D", (), {
+                "content": None, "reasoning_content": thinking})()})()]
+
+    def make_kwargs():
+        class _Wedge:
+            class chat:
+                class completions:
+                    @staticmethod
+                    def create(**kw):
+                        seen.append(kw.get("timeout"))
+
+                        def gen():
+                            while True:
+                                yield _Chunk("reasoning " * 20)
+                        return gen()
+        return dict(model=MODEL_SOLVE, messages=[{"role": "user", "content": "x"}],
+                    timeout=snap.SOLVE_TIMEOUT_THINKING_S, _client=_Wedge(),
+                    extra_body={"thinking": {"type": "enabled"}}, max_tokens=16000)
+
+    monkeypatch.setattr(snap, "SOLVE_TIMEOUT_S", 0.3)
+    monkeypatch.setattr(snap, "SOLVE_TIMEOUT_THINKING_S", 0.6)
+    with pytest.raises(SnapError):
+        snap._streamed_solve(make_kwargs, lambda *_a: None, "d1", None)
+    print(f"  budgets used: {seen}")
+    assert len(seen) == 2, "a wedge is retried once"
+    assert seen[0] > seen[1], "the retry must not inherit the reasoning budget"
