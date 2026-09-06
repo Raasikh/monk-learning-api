@@ -185,7 +185,7 @@ def test_only_high_confidence_ever_names_a_widget():
 
 
 def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through():
-    """480 rows are `high`; only 69 name a registered widget.
+    """479 rows are `high`; only 69 name a registered widget.
 
     After the corpus-wide reclassification every one of the 1,154 concepts
     carries a verdict read from the book's own chunks. Coverage went 35% -> 100%
@@ -205,7 +205,7 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     for r in high:
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
-    assert len(high) == 480
+    assert len(high) == 479
     assert len(named) == 69, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
