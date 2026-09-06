@@ -170,3 +170,70 @@ def delete_image(key: Optional[str]) -> None:
         logger.info("[R2] deleted %s", key)
     except Exception as err:
         logger.warning("[R2] orphaned object %s: %s", key, err)
+
+
+# ---------------------------------------------------------------------------
+# Illustration assets — a SEPARATE BUCKET, not another prefix in this one.
+#
+# Everything above serves snapped student homework: private, per-user, read
+# only through a 1-hour presigned URL. Illustration art is the exact opposite —
+# public, immutable, cacheable, and bundled into the app binary so a live class
+# renders in airplane mode.
+#
+# Those two want opposite bucket policies, and bucket policy is the unit R2
+# applies access at. A shared bucket with an `illustrations/` prefix works right
+# up until somebody enables public read or attaches a custom domain to serve the
+# art quickly — at which point every photographed homework page under
+# `doubts/{user_id}/` becomes publicly addressable, and the enumeration is
+# trivial because the keys are structured. A prefix is a naming convention; it
+# is not an access boundary. So: two buckets.
+#
+# R2_ASSETS_BUCKET_NAME has NO FALLBACK to R2_DOUBTS_BUCKET_NAME. The fallback
+# above exists because a doubt that fails to store loses a student's photo; an
+# asset that fails to store loses nothing but an ingest run, and writing public
+# art into the private bucket is the failure worth refusing.
+ASSETS_KEY_PREFIX = "concept-assets/"
+
+_EXT_FOR_CONTENT_TYPE = {
+    "image/png": "png",
+    "image/jpeg": "jpg",
+    "image/webp": "webp",
+}
+
+
+def assets_bucket_name() -> str:
+    """The illustrations bucket. Raises rather than borrowing the doubts one."""
+    _config()  # credentials must be present; same account, same client
+    bucket = _env("R2_ASSETS_BUCKET_NAME")
+    if not bucket:
+        raise R2NotConfigured(
+            "R2_ASSETS_BUCKET_NAME is not set. Illustration art must not be "
+            "written to the doubts bucket — that bucket holds student PII and "
+            "is private by policy. Create a separate public-read bucket and "
+            "set R2_ASSETS_BUCKET_NAME."
+        )
+    return bucket
+
+
+def asset_object_key(asset_slug: str, variant: str, content_type: str) -> str:
+    """`concept-assets/{slug}.png` / `concept-assets/{slug}.labelled.png`.
+
+    Deterministic from (slug, variant), and chosen to be BYTE-IDENTICAL to the
+    `file_unlabelled` / `file_labelled` columns of illustration-manifest.csv.
+    That is not decoration: it makes the join between the work order, the object
+    store and the database checkable by eye, and it means a human comparing a
+    bucket listing against the manifest does not have to hold a naming
+    convention in their head to do it.
+
+    Deterministic is also what makes re-ingest idempotent: the same slug and
+    variant overwrite the same object rather than accumulating a second copy.
+    The extension comes from the SNIFFED content type, never from the filename,
+    so a .png that is really a JPEG lands as .jpg with the right Content-Type.
+    """
+    ext = _EXT_FOR_CONTENT_TYPE.get(content_type)
+    if ext is None:
+        raise ValueError(f"no object-key extension for content type {content_type!r}")
+    if variant not in ("unlabelled", "labelled"):
+        raise ValueError(f"unknown asset variant {variant!r}")
+    infix = "" if variant == "unlabelled" else ".labelled"
+    return f"{ASSETS_KEY_PREFIX}{asset_slug}{infix}.{ext}"
