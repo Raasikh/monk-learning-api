@@ -158,6 +158,33 @@
 begin;
 
 -- --------------------------------------------------------------------- table
+-- A CHECK constraint may not CONTAIN a subquery (SQLSTATE 0A000), but it may
+-- CALL a function that does. syllabus_gap is text[], and the rule is per
+-- ELEMENT -- "no element is a placeholder" -- which needs unnest.
+--
+-- The alternative was a regex over array_to_string(). That would have worked
+-- and been unreadable, and it would have quietly reinterpreted the rule in
+-- terms of a delimiter that can appear inside an element. This keeps the
+-- original predicate verbatim.
+--
+-- IMMUTABLE is honest here: the result depends only on the argument. It takes
+-- no snapshot and reads no table, which is the thing that makes a
+-- function-in-a-CHECK unsafe.
+create or replace function public.has_placeholder_element(arr text[])
+returns boolean
+language sql
+immutable
+parallel safe
+as $fn$
+  select exists (
+    select 1
+      from unnest(arr) g
+     where g is null
+        or lower(btrim(g)) in ('', 'unknown', 'tbd', 'n/a', 'na', 'todo',
+                               '-', 'null', 'none', '?')
+  );
+$fn$;
+
 create table if not exists public.concept_assets (
   id            uuid primary key default gen_random_uuid(),
 
@@ -354,11 +381,10 @@ create table if not exists public.concept_assets (
   -- No element of syllabus_gap may itself be a placeholder. '{unknown}' is not
   -- '{}' and must not be allowed to look like a completed check. (NULL is
   -- permitted and means nobody has looked; see the header.)
+  -- Also refuses a NULL element, which the inline version did not: a NULL
+  -- inside the array is not a gap anyone recorded, and it would read as one.
   constraint concept_assets_syllabus_gap_clean check (
-    syllabus_gap is null or not exists (
-      select 1 from unnest(syllabus_gap) g
-       where lower(btrim(g)) in ('', 'unknown', 'tbd', 'n/a', 'na', 'todo', '-', 'null', 'none', '?')
-    )
+    syllabus_gap is null or not public.has_placeholder_element(syllabus_gap)
   ),
 
   -- The manifest's double hyphen is legal here. Measured over all 48 rows: 256
