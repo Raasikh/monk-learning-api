@@ -82,10 +82,16 @@ Four things follow, and they govern every rule further down:
        * `vector_resolution` — `magnitude_label` (str), `angle_deg` (number, not a multiple of 90), `x_label` (str), `y_label` (str)
        * `ray_diagram` — `optic_type` (`"convex_lens" | "concave_lens" | "concave_mirror" | "convex_mirror"`), `object_pos` (number), `focal_length` (number). Keep `object_pos` clear of the focus or it is rejected.
        * `circuit_diagram` — `components` (list of `{"type": "battery"|"resistor"|"capacitor"|"inductor"|"switch", "label": str}`), series loop only
-       * `labeled_axes_plot` — `x_label`, `y_label` (str), `curve_points` (list of `[x, y]` pairs), optional `annotations`, optional `title`
+       * `labeled_axes_plot` — `x_label`, `y_label` (str), `curve_points` (list of `[x, y]` pairs), optional `annotations` (max 4, each `{"x": num, "y": num, "text": str}` OR an `[x, y, text]` triple — NOT a bare string), optional `title`
        * `comparison_table` — `headers` (list of str), `rows` (list of lists of str), optional `title`. Max 3 columns, keep cells short.
        * `boxed_derivation` — `steps` (list of str, each one line of the derivation), optional `title`
        * `process_flow` — `stages` (list of str, in order), optional `title`
+       * `conic_figure` — `kind` (`"circle" | "ellipse" | "parabola" | "hyperbola"`), `a` (number), `b` (number; REQUIRED for ellipse/hyperbola, and for an ellipse `b` must be less than `a`), optional `title`
+       * `number_line` — `intervals` (list of `{"lo": num, "hi": num, "lo_closed": bool, "hi_closed": bool, "label": str}`; omit `lo` or `hi` for an open ray, but not both; `lo` must be less than `hi`), optional `title`
+       * `projectile_scene` — `launch_label` (str), `angle_deg` (number), `range_label` (str), `height_label` (str), `show_dropped_ball` (bool), `ground_label` (str). All optional; defaults `u` / 45 / `R` / `H` / true / empty
+       * `energy_levels` — `levels` (list of `{"label": str, "energy": num}`; they must NOT all share one energy), optional `transitions` (list of `{"from": int, "to": int, "label": str}` where from/to are 0-based INDICES into `levels`), optional `title`
+       * `hierarchy_tree` — `root` (str), `children` (list of `{"label": str, "items": list of str (max 4)}`), optional `title`
+       * `triangle_figure` — `vertices` (list of 3 str), optional `sides` (list of str), optional `angles` (list of str), optional `right_angle_at` (one of the vertex names), optional `title`
 {{REGISTRY_MANIFEST}}
        * **WHEN TO USE ONE — these are triggers, not suggestions.** If the turn matches a row below, emit that diagram. A picture of a geometry is worth more than three sentences describing it, and this is the one thing the board can do that your voice cannot:
          - naming/resolving the forces on an object → `free_body_diagram`
