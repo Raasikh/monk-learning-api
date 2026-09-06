@@ -1,0 +1,62 @@
+[
+  {
+    "id": "projectile_motion",
+    "version": 1,
+    "animatable": [
+      "launch_angle_deg"
+    ]
+  },
+  {
+    "id": "molecule_3d",
+    "version": 1,
+    "animatable": []
+  },
+  {
+    "id": "field_lines",
+    "version": 1,
+    "animatable": []
+  },
+  {
+    "id": "xy_plot",
+    "version": 2,
+    "animatable": [
+      "shade_to"
+    ]
+  },
+  {
+    "id": "data_table_trend",
+    "version": 1,
+    "animatable": [
+      "highlight_row"
+    ]
+  },
+  {
+    "id": "process_flow",
+    "version": 1,
+    "animatable": [
+      "active_node"
+    ]
+  },
+  {
+    "id": "reaction_scheme",
+    "version": 1,
+    "animatable": [
+      "step_progress"
+    ]
+  },
+  {
+    "id": "molecule_struct",
+    "version": 2,
+    "animatable": [
+      "highlight_site"
+    ]
+  },
+  {
+    "id": "circuit_network",
+    "version": 1,
+    "animatable": [
+      "t_frac",
+      "bridge_delta"
+    ]
+  }
+]
