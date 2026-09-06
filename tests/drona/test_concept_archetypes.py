@@ -273,8 +273,16 @@ def test_a_high_confidence_concept_gets_one_widget_schema_not_the_manifest():
     others = [w for w in WIDGET_VERSIONS if w != v.widget and f"`{w}`" in block]
     assert not others, f"the single-widget block still offers {others}"
     # The two questions the brief specifies.
-    assert "Does THIS SEGMENT want the board picture at all?" in block
-    assert "what are the params?" in block
+    # The block must ASK FOR the payload, and must not hand out an opt-out.
+    # It used to open "Does THIS SEGMENT want the board picture at all? ... that
+    # is a correct answer, not a failure" -- measured on Ecosystem, the archetype
+    # branch fired on 40 segments and the model emitted zero diagrams, and zero
+    # templates on those turns either. It took the out every time.
+    assert '"payload"' in block and f'"{v.widget}"' in block
+    for out in ("that is a correct answer, not a failure",
+                "Does THIS SEGMENT want the board picture at all?"):
+        assert out not in block, f"the opt-out is back in the block: {out!r}"
+    assert "params:" in block, "the block must spell out the widget's params"
 
 
 def test_a_non_high_concept_gets_the_full_manifest():
