@@ -653,6 +653,22 @@ def _author_segment(chap_data: Dict[str, Any], sub_title: str, outline: Dict[str
             seg = sanitize_double_escaped_latex(json.loads(strip_fences(raw)))
         except json.JSONDecodeError:
             seg = sanitize_double_escaped_latex(json.loads(repair_json_escapes(strip_fences(raw)), strict=False))
+        # json_object mode sometimes wraps the object in a single key --
+        # {"segment": {...}} -- which parses fine and then reports
+        # "board_content=n/a", a content complaint about a segment that is
+        # actually right there one level down. Measured: an EMPTY body cannot
+        # produce that message (it raises out of the parse above), so a wrapper
+        # or a literal {} is what the message has always meant.
+        #
+        # Unwrap only when it is unambiguous: exactly one key, a dict value,
+        # and board_content inside it. Anything looser would start inventing
+        # structure the model did not send.
+        if isinstance(seg, dict) and "board_content" not in seg and len(seg) == 1:
+            _only = next(iter(seg.values()))
+            if isinstance(_only, dict) and "board_content" in _only:
+                logger.info(f"[SEGMENT UNWRAP] segment {index+1}: unwrapped from {{{next(iter(seg))!r}: ...}}")
+                seg = _only
+
         seg["id"] = index + 1
         bc = seg.get("board_content")
         cp = seg.get("checkpoint") or {}
