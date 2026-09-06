@@ -213,6 +213,59 @@ def render_manifest_block() -> str:
     return "\n".join(lines)
 
 
+def render_single_widget_block(widget_id: str) -> str:
+    """The REGISTRY_MANIFEST replacement for a concept the column NAMES.
+
+    `docs/widget-routing.md` path 1: when `v2_confidence == "high"` the
+    archetype column names the widget, and the classification was right 21/21
+    against blind adjudication at that confidence. So the model is not asked to
+    CHOOSE — offering it nine alternatives invites it to overrule a
+    measurement with a guess, and it pays 1,123 tokens for the privilege.
+
+    It IS still asked one thing the column cannot answer: whether THIS SEGMENT
+    wants a board at all. The column classifies a CONCEPT; a segment inside
+    that concept may be a definition, a recap or a checkpoint, and forcing a
+    picture onto it is how a widget ends up beside a sentence that does not
+    need one. So the block asks exactly two things — yes/no, and if yes, the
+    params.
+
+    Falls back to the full manifest for an id with no spec. That is
+    unreachable while test_every_manifest_widget_has_a_prompt_spec passes, and
+    the fallback is the full list rather than nothing because a turn with no
+    widget list at all is the degradation this block exists to avoid.
+    """
+    spec = WIDGET_SPECS.get(widget_id)
+    version = WIDGET_VERSIONS.get(widget_id)
+    if spec is None or version is None:
+        logger.warning(
+            f"⚠️ [WIDGET REGISTRY] archetype named '{widget_id}', which has no "
+            f"spec or no registry entry; falling back to the full manifest."
+        )
+        return render_manifest_block()
+    anim = WIDGET_ANIMATABLE.get(widget_id) or []
+    anim_note = f" animates: {', '.join(anim)}." if anim else ""
+    return (
+        f"       * **THE LIVE WIDGET FOR THIS CONCEPT — it is already chosen.** "
+        f"This concept was classified from the book's own text, and at this "
+        f"confidence that classification was correct on every row checked. Do "
+        f"not pick a different widget and do not go looking for one: "
+        f"`{widget_id}` is the only widget available to you this turn.\n"
+        f"         - `{widget_id}` v{version} — {spec}{anim_note}\n"
+        f"         ANSWER TWO QUESTIONS, in this order:\n"
+        f"         1. Does THIS SEGMENT want the board picture at all? The "
+        f"classification is about the concept, not about this segment — a "
+        f"definition, a recap or a checkpoint may want none. If it does not, "
+        f"emit no diagram event and carry on; that is a correct answer, not a "
+        f"failure.\n"
+        f"         2. If it does, what are the params? Emit ONE board_event: "
+        f"`{{\"seq\": N, \"type\": \"diagram\", \"payload\": {{\"widget\": "
+        f"\"{widget_id}\", \"version\": {version}, \"params\": {{ … }}}}, "
+        f"\"caption\": \"one short line\"}}`. Never combine `payload` with "
+        f"`template`, `params` or `svg`. This is IN ADDITION to your normal "
+        f"board lines, never instead of them."
+    )
+
+
 def _field_lines_shape_ok(params: Dict[str, Any]) -> bool:
     """The coarse check tutor.py already applied to field_lines, carried over
     VERBATIM so the one widget that was already live keeps behaving identically.
@@ -234,17 +287,31 @@ _COARSE_PARAM_CHECKS = {"field_lines": _field_lines_shape_ok}
 
 
 #: docs/widget-routing.md, "what each path must record". Path 2 of the hybrid:
-#: the model chose from REGISTRY_MANIFEST. Path 1 (`archetype_high`) is not
-#: implemented server-side, and tier 3 is the `svg` branch in tutor.py — so a
-#: payload that clears the gate below is `model_choice` by construction.
+#: the model chose from REGISTRY_MANIFEST. Tier 3 is the `svg` branch in
+#: tutor.py, so it never reaches this gate at all.
 ROUTE_MODEL_CHOICE = "model_choice"
 
+#: Path 1: `v2_confidence == "high"` named this widget and the model filled in
+#: its params. Stamped ONLY when the emitted id is the one the column named —
+#: a model that was shown `reaction_scheme` and emitted something else did not
+#: take path 1, and recording it as though it had would be a provenance field
+#: that is populated, plausible, and asserts a decision nobody made. That is
+#: the exact failure shape migrations/0035 was written against.
+ROUTE_ARCHETYPE_HIGH = "archetype_high"
 
-def sanitize_widget_payload(raw_payload: Any) -> Optional[Dict[str, Any]]:
+
+def sanitize_widget_payload(raw_payload: Any,
+                            archetype_widget: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """Coarse gate on a model-authored widget payload. None means DROP.
 
     Returns the BOARD-EVENT FIELDS to merge, not a bare payload:
     `{"payload": {widget, version, params}, "route": "model_choice"}`.
+
+    `archetype_widget` is the id the archetype column NAMED for this concept,
+    or None. It decides `route` and nothing else — it never admits or rejects
+    a payload, because a model that ignored the named widget still emitted
+    something the client may well be able to draw, and dropping it would trade
+    a wrong provenance label for a blank board.
 
     `route` is a sibling of `payload`, deliberately NOT a key inside it.
     `WidgetPayload` in the client's `lib/widgets/types.ts` is a declared shape
@@ -322,5 +389,6 @@ def sanitize_widget_payload(raw_payload: Any) -> Optional[Dict[str, Any]]:
 
     return {
         "payload": {"widget": widget, "version": version, "params": params},
-        "route": ROUTE_MODEL_CHOICE,
+        "route": (ROUTE_ARCHETYPE_HIGH if archetype_widget and widget == archetype_widget
+                  else ROUTE_MODEL_CHOICE),
     }

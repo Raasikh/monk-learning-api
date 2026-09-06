@@ -1,0 +1,1155 @@
+subject,class_level,chapter_order,concept,exams,archetype,build_class,archetype_v2,v2_confidence,v2_evidence,v2_top_sim
+physics,11,1,Systems of Units and SI Units,b,apparatus,illustration,none_symbolic,high,"Demoted from apparatus: no instrument or setup anywhere. Chunks are the seven SI base units, the 2019 constant-based redefinitions, a Factor|Prefix|Symbol lookup table and conversi",0.6511
+physics,11,1,"Measurement of Length, Mass and Time",b,apparatus,illustration,none_symbolic,high,"Chunks are parallax/angular-size/echo formulae, u and pc conversions, spectrograph m=qBr/v and caesium-clock facts. Pure definitions, unit tables and order-of-magnitude arithmetic;",0.6052
+physics,11,1,Measuring Instruments: Vernier Callipers and Screw Gauge,b,circuit,widget,apparatus,med,"Chunks describe jaws closed, main vs vernier divisions coinciding, pitch and circular scale, positive/negative zero error as a physical offset. Reading the instrument needs the dra",0.6719
+physics,11,1,Errors in Measurement,b,apparatus,illustration,none_symbolic,high,"Chunks are types of error, the archer accuracy-vs-precision metaphor, mean/absolute/percentage error rules and MCQs. Prose and algebra only.",0.58
+physics,11,1,Propagation of Errors,b,apparatus,illustration,none_symbolic,high,"Chunks are the sum/difference/product/power error rules and their worst-case derivations. The one DIAGRAM call-out is a two-column chart of the rules themselves, i.e. a rules list,",0.4676
+physics,11,1,Significant Figures,b,none_symbolic,none,,not_in_scope,,
+physics,11,1,Dimensions and Dimensional Formulae,b,none_symbolic,none,,not_in_scope,,
+physics,11,1,Dimensional Analysis and Its Applications,b,none_symbolic,none,,not_in_scope,,
+physics,11,2,Kinematic Quantities,b,motion_path,widget,,not_in_scope,,
+physics,11,2,Average and Instantaneous Quantities,b,none_symbolic,none,,not_in_scope,,
+physics,11,2,Graphical Analysis,b,xy_plot,widget,,not_in_scope,,
+physics,11,2,Equations of Motion,b,motion_path,widget,,not_in_scope,,
+physics,11,2,Free Fall,b,motion_path,widget,,not_in_scope,,
+physics,11,2,Relative Velocity,b,motion_path,widget,,not_in_scope,,
+physics,11,2,Motion with Variable Acceleration,b,xy_plot,widget,,not_in_scope,,
+physics,11,3,Vector Algebra and Resolution,b,geometry_3d,widget,,not_in_scope,,
+physics,11,3,Vector Products (Dot and Cross),b,geometry_3d,widget,,not_in_scope,,
+physics,11,3,Motion in Two Dimensions,b,motion_path,widget,,not_in_scope,,
+physics,11,3,Relative Velocity in a Plane,b,motion_path,widget,,not_in_scope,,
+physics,11,3,Projectile Motion,b,motion_path,widget,,not_in_scope,,
+physics,11,3,Circular Motion Kinematics,b,motion_path,widget,,not_in_scope,,
+physics,11,3,Circular Motion Dynamics,b,motion_path,widget,,not_in_scope,,
+physics,11,4,Newton's Laws and Impulse,b,motion_path,widget,,not_in_scope,,
+physics,11,4,Common Forces in Mechanics and Free-Body Diagrams,b,free_body_forces,widget,,not_in_scope,,
+physics,11,4,Concurrent Forces and Equilibrium,b,free_body_forces,widget,,not_in_scope,,
+physics,11,4,"Connected Bodies, Pulleys and Constraint Relations",b,free_body_forces,widget,,not_in_scope,,
+physics,11,4,Momentum Conservation,b,motion_path,widget,,not_in_scope,,
+physics,11,4,Friction,b,free_body_forces,widget,,not_in_scope,,
+physics,11,4,Circular Motion Dynamics (Banking),b,motion_path,widget,,not_in_scope,,
+physics,11,4,Vertical Circular Motion,b,motion_path,widget,,not_in_scope,,
+physics,11,4,Non-Inertial Frames and Pseudo Forces,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Work Done by a Force,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Kinetic Energy,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Work-Energy Theorem,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Conservative and Non-Conservative Forces,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Potential Energy,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Conservation of Mechanical Energy,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Various Forms of Energy and Law of Conservation of Energy,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Power,b,free_body_forces,widget,,not_in_scope,,
+physics,11,5,Collisions,b,motion_path,widget,,not_in_scope,,
+physics,11,5,Motion in a Vertical Circle,b,geometry_plane,widget,,not_in_scope,,
+physics,11,6,Rigid Bodies and Types of Motion,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Center of Mass,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Motion of Center of Mass and Linear Momentum,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Vector Product of Two Vectors,b,geometry_3d,widget,,not_in_scope,,
+physics,11,6,Rotational Kinematics,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Torque and Angular Momentum,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Equilibrium of Rigid Bodies,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Moment of Inertia,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Rotational Dynamics,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Rolling Motion,b,motion_path,widget,,not_in_scope,,
+physics,11,6,Angular Impulse and Collisions with Rigid Bodies,j,motion_path,widget,,not_in_scope,,
+physics,11,7,Newton's Law of Gravitation,b,free_body_forces,widget,,not_in_scope,,
+physics,11,7,The Gravitational Constant and Two-Body Systems,j,free_body_forces,widget,,not_in_scope,,
+physics,11,7,Acceleration due to Gravity and Its Variation,b,free_body_forces,widget,,not_in_scope,,
+physics,11,7,Gravitational Field Intensity,b,free_body_forces,widget,,not_in_scope,,
+physics,11,7,Gravitational Potential,b,free_body_forces,widget,,not_in_scope,,
+physics,11,7,Gravitational Potential Energy,b,free_body_forces,widget,,not_in_scope,,
+physics,11,7,Escape Velocity,b,motion_path,widget,,not_in_scope,,
+physics,11,7,Kepler's Laws of Planetary Motion,b,motion_path,widget,,not_in_scope,,
+physics,11,7,Satellite Motion and Orbital Mechanics,b,motion_path,widget,,not_in_scope,,
+physics,11,7,Weightlessness,b,motion_path,widget,,not_in_scope,,
+physics,11,8,"Stress, Strain and Hooke's Law",b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Stress-Strain Curve and Yielding,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Young's Modulus,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Bulk Modulus and Compressibility,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Shear Modulus,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Poisson's Ratio,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Relations Among Elastic Constants,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Elastic Potential Energy,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Thermal Stress and Thermal Expansion,b,free_body_forces,widget,,not_in_scope,,
+physics,11,8,Applications of Elastic Behaviour,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Fluid Pressure and Pascal's Law,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Buoyancy and Floatation,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Fluids in Accelerated and Rotating Frames,j,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Equation of Continuity,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,"Turbulent Flow, Critical Velocity and Reynolds Number",b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Bernoulli's Theorem,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Viscosity and Newton's Law of Viscosity,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Poiseuille's Law and Viscous Flow Resistance,j,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Stokes' Law and Terminal Velocity,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Surface Tension,b,free_body_forces,widget,,not_in_scope,,
+physics,11,9,Capillarity,b,free_body_forces,widget,,not_in_scope,,
+physics,11,10,Temperature and Thermometry,b,xy_plot,widget,,not_in_scope,,
+physics,11,10,Ideal Gas Equation and Absolute Temperature,b,thermo_pv,widget,,not_in_scope,,
+physics,11,10,Thermal Expansion,b,xy_plot,widget,,not_in_scope,,
+physics,11,10,Calorimetry and Specific Heat,b,xy_plot,widget,,not_in_scope,,
+physics,11,10,Change of State and Latent Heat,b,xy_plot,widget,,not_in_scope,,
+physics,11,10,Heat Conduction and Thermal Conductivity,b,xy_plot,widget,,not_in_scope,,
+physics,11,10,Convection,b,xy_plot,widget,,not_in_scope,,
+physics,11,10,Radiation and Stefan's Law,b,xy_plot,widget,,not_in_scope,,
+physics,11,10,Newton's Law of Cooling,b,free_body_forces,widget,,not_in_scope,,
+physics,11,10,Blackbody Radiation and Wien's Displacement Law,b,xy_plot,widget,,not_in_scope,,
+physics,11,11,Zeroth Law and Thermal Equilibrium,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,Thermodynamic Variables and State Functions,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,Ideal Gas Law,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,First Law of Thermodynamics,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,Specific Heat Capacity and Mayer's Relation,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,Thermodynamic Processes,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,"Heat Engines, Refrigerators and Heat Pumps",b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,Second Law of Thermodynamics and Reversibility,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,Carnot Engine and Carnot's Theorem,b,thermo_pv,widget,,not_in_scope,,
+physics,11,11,Entropy and the Quantified Second Law,j,thermo_pv,widget,,not_in_scope,,
+physics,11,12,Kinetic Theory: Assumptions and Molecular Nature,b,xy_plot,widget,,not_in_scope,,
+physics,11,12,Ideal Gas and Gas Laws,b,thermo_pv,widget,,not_in_scope,,
+physics,11,12,Kinetic Theory and Gas Pressure,b,xy_plot,widget,,not_in_scope,,
+physics,11,12,RMS Speed and Maxwell Distribution,b,field_lines,widget,,not_in_scope,,
+physics,11,12,Degrees of Freedom and Equipartition of Energy,b,xy_plot,widget,,not_in_scope,,
+physics,11,12,Internal Energy and Specific Heat Capacities,b,thermo_pv,widget,,not_in_scope,,
+physics,11,12,Mean Free Path,b,motion_path,widget,,not_in_scope,,
+physics,11,13,SHM Kinematics and Equations,b,wave_form,widget,,not_in_scope,,
+physics,11,13,Reference Circle and Phasor Representation,b,geometry_plane,widget,,not_in_scope,,
+physics,11,13,SHM Energy,b,wave_form,widget,,not_in_scope,,
+physics,11,13,Spring-Mass Systems,b,wave_form,widget,,not_in_scope,,
+physics,11,13,Simple Pendulum,b,wave_form,widget,,not_in_scope,,
+physics,11,13,Physical and Torsional Pendulum,j,wave_form,widget,,not_in_scope,,
+physics,11,13,SHM in Fluid Systems,j,wave_form,widget,,not_in_scope,,
+physics,11,13,Superposition of SHMs,j,wave_form,widget,,not_in_scope,,
+physics,11,13,Damped and Forced Oscillations,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Wave Characteristics and Speed,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Progressive Wave Equation,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Interference of Waves,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Standing Waves in Strings,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Standing Waves in Air Columns and Acoustics,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Beats,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Doppler Effect,b,wave_form,widget,,not_in_scope,,
+physics,11,14,Mach Cone and Sonic Boom,j,wave_form,widget,,not_in_scope,,
+physics,12,1,"Electric Charge: Properties, Quantisation and Charging",b,field_lines,widget,,not_in_scope,,
+physics,12,1,Coulomb's Law and Electric Forces,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Equilibrium of Charges,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Electric Field,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Electric Field Lines,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Motion of a Charged Particle in a Uniform Electric Field,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Electric Flux,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Electric Dipole and Its Field,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Torque and Potential Energy of a Dipole in a Uniform Electric Field,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Electric Field due to Continuous Charge Distribution,b,field_lines,widget,,not_in_scope,,
+physics,12,1,Gauss's Law and Its Applications,b,field_lines,widget,,not_in_scope,,
+physics,12,2,Electrostatic Potential and Potential Difference,b,field_lines,widget,,not_in_scope,,
+physics,12,2,Equipotential Surfaces and Electric Field Relation,b,field_lines,widget,,not_in_scope,,
+physics,12,2,Electrostatic Potential Energy of Charge System,b,field_lines,widget,,not_in_scope,,
+physics,12,2,Electric Dipole in External Field,b,field_lines,widget,,not_in_scope,,
+physics,12,2,Electrostatics of Conductors,b,field_lines,widget,,not_in_scope,,
+physics,12,2,Capacitance of Conductors,b,circuit,widget,none_symbolic,med,"Chunks are electrostatics-of-conductors statements: E=0 inside, q_interior=0, E=sigma/eps0, C=4*pi*eps0*R, plus a Gaussian-pillbox derivation. Definitions and Gauss-law algebra; no",0.5968
+physics,12,2,Dielectric Effects on Capacitance,b,circuit,widget,none_symbolic,med,"Chunks give C=eps0*A/d, K>=1, E=E0/K and the battery connected/disconnected scaling table (xK, /K). Symbolic scaling factors and formulae, not data values or a drawable structure.",0.6074
+physics,12,2,Combination of Capacitors,b,circuit,widget,circuit_network,high,"Chunks give 1/Cs=sum 1/Ci, Cp=sum Ci with the explicit derivation figures (three capacitors end-to-end vs all plates joined across the battery) and worked reduction 2/3/6 uF -> 1 u",0.5986
+physics,12,2,Energy Stored in a Capacitor,b,circuit,widget,none_symbolic,high,"Chunks are W=integral q/C dq, U=Q^2/2C=CV^2/2=QV/2 and energy density u=eps0*E^2/2 plus numericals. Pure algebra.",0.6067
+physics,12,2,Charge Sharing and Common Potential,b,field_lines,widget,,not_in_scope,,
+physics,12,3,Electric Current and Drift Velocity,b,circuit,widget,none_symbolic,med,"Chunks are I=dq/dt, J=nev_d, mu=e*tau/m, rho=m/ne^2*tau and the drift derivation. A 'field OFF / field ON' electron zig-zag figure is called for, but nothing in the closed vocabula",0.6498
+physics,12,3,Ohm's Law and Resistance,b,circuit,widget,xy_plot,med,"Chunks state the V-I graph is the CBSE-asked artefact: linear for ohmic, 'its V-I graph curves' for a tungsten filament, plus non-unique/direction-dependent cases. A closed-form cu",0.5917
+physics,12,3,Resistivity and Temperature Dependence,b,circuit,widget,xy_plot,med,"Chunks give R_T=R0[1+alpha(T-T0)] and note CBSE asks for 'the temperature-dependence graphs of metals vs semiconductors'; metals alpha>0, semiconductors alpha<0, alloys ~0 — a plot",0.5912
+physics,12,3,Series and Parallel Combination of Resistors,b,circuit,widget,circuit_network,high,"Chunks give Rs=sum Ri, 1/Rp=sum 1/Ri with the parallel-branch figure (R1,R2,R3 between nodes A and B), divider rules, and reductions (2 in series with 6||3), plus the infinite-ladd",0.6832
+physics,12,3,Electrical Energy and Power,b,circuit,widget,none_symbolic,high,"Chunks are P=VI=I^2R=V^2/R, H=I^2Rt, kWh billing numericals and the maximum-power-transfer algebra. Formulae and arithmetic only.",0.5703
+physics,12,3,"EMF, Terminal Voltage and Internal Resistance",b,circuit,widget,none_symbolic,med,"Chunks are V=E-Ir / V=E+Ir, I=E/(R+r), r=R(E/V-1) and two-load numericals. Single-loop algebra; no network to reduce and no drawn setup in the retrieved text.",0.6494
+physics,12,3,Combination of Cells,b,circuit,widget,circuit_network,med,"Chunks give E_eq/r_eq for series, parallel and mixed grouping, with a figure of m rows of n cells in series across bus-bars feeding R, and matching mR=nr: a topology reduced to an ",0.5358
+physics,12,3,Kirchhoff's Laws and Network Analysis,b,circuit,widget,circuit_network,med,"Chunks state KCL/KVL, the b-branch equation count, and work an unbalanced five-resistor bridge (AB=R, BC=2R, AD=2R, DC=R, BD=R) through to Req=1.4R. A named topology solved for an ",0.7076
+physics,12,3,Wheatstone Bridge,b,circuit,widget,circuit_network,high,"Chunk 0 lays out the diamond: AB=P, BC=Q, AD=R, DC=S, galvanometer across B-D, cell across A-C, balance PS=QR with Ig=0; meter bridge is the same bridge with a 100 cm wire.",0.6276
+physics,12,3,Measuring Instruments,b,circuit,widget,apparatus,low,"Retrieval is weak (top sim 0.465) and largely duplicate summary text, but its content is the meter bridge / potentiometer / jockey null method — physical measuring setups, not a re",0.4648
+physics,12,3,Complex Network Reduction,j,circuit,widget,circuit_network,med,"Top sim only 0.406 and chunks duplicate Kirchhoff and series/parallel material, but that material is reduction itself: delete the balanced bridge arm and reduce, Rs=11, Rp=1, reduc",0.4055
+physics,12,3,Capacitor Charging and Discharging in RC Circuits,j,circuit,widget,none_symbolic,med,"Retrieval missed: every chunk is cell charging/discharging (V=E+Ir, back-EMF, short-circuit current), not RC transients. No time constant, no exponential q(t) anywhere in the retri",0.4299
+physics,12,4,Magnetic Force on a Moving Charge,b,field_lines,widget,,not_in_scope,,
+physics,12,4,Motion of Charged Particles in a Magnetic Field,b,field_lines,widget,,not_in_scope,,
+physics,12,4,Magnetic Field and Biot-Savart Law,b,field_lines,widget,,not_in_scope,,
+physics,12,4,Ampere's Circuital Law and Its Applications,b,circuit,widget,xy_plot,med,"Chunks flag the thick-wire B-vs-r profile as the standard exam object: B proportional to r inside (enclosed fraction r^2/R^2) and mu0*I/2*pi*r outside, plus uniform mu0*n*I inside ",0.6685
+physics,12,4,Force on a Current-Carrying Conductor in a Magnetic Field,b,field_lines,widget,,not_in_scope,,
+physics,12,4,Force Between Two Parallel Current-Carrying Conductors,b,field_lines,widget,,not_in_scope,,
+physics,12,4,Torque on a Current Loop,b,field_lines,widget,,not_in_scope,,
+physics,12,4,Magnetic Dipole Moment of a Current Loop,b,field_lines,widget,,not_in_scope,,
+physics,12,4,Magnetic Dipole Moment of a Revolving Electron (Bohr Magneton),b,field_lines,widget,,not_in_scope,,
+physics,12,4,Moving Coil Galvanometer and Its Conversion,b,circuit,widget,circuit_network,med,"Chunk 1 is the shunt: G with small S in parallel, I splits into Ig and (I-Ig), Ig*G=(I-Ig)S, S=IgG/(I-Ig), effective R_A=GS/(G+S); multiplier R=V/Ig-G. A two-terminal network reduc",0.5206
+physics,12,5,Bar Magnet and Magnetic Dipole Moment,b,field_lines,widget,,not_in_scope,,
+physics,12,5,Magnetic Field Lines and Gauss's Law,b,field_lines,widget,,not_in_scope,,
+physics,12,5,Bar Magnet as Equivalent Solenoid,b,field_lines,widget,,not_in_scope,,
+physics,12,5,Torque on a Magnetic Dipole,b,field_lines,widget,,not_in_scope,,
+physics,12,5,Potential Energy and Work Done on a Magnetic Dipole,b,field_lines,widget,,not_in_scope,,
+physics,12,5,Earth's Magnetism,b,field_lines,widget,,not_in_scope,,
+physics,12,5,"Magnetization, Magnetic Intensity, Susceptibility and Permeability",b,field_lines,widget,,not_in_scope,,
+physics,12,5,"Diamagnetic, Paramagnetic and Ferromagnetic Materials",b,field_lines,widget,,not_in_scope,,
+physics,12,5,Curie's Law and Temperature Dependence,b,field_lines,widget,,not_in_scope,,
+physics,12,5,Hysteresis and Permanent Magnets,b,field_lines,widget,,not_in_scope,,
+physics,12,6,Magnetic Flux and Flux Linkage,b,field_lines,widget,,not_in_scope,,
+physics,12,6,Faraday's Law of Induction,b,field_lines,widget,,not_in_scope,,
+physics,12,6,Lenz's Law and Direction of Induced Current,b,field_lines,widget,,not_in_scope,,
+physics,12,6,Motional EMF and Electromagnetic Force/Power,b,field_lines,widget,,not_in_scope,,
+physics,12,6,Charge Flow and Heat in Induced Circuits,b,circuit,widget,none_symbolic,high,"Chunks are flux and Faraday formulae plus q=N*deltaPhi/R and I=|eps|/R, with MCQs about what the induced charge depends on. Formulae and conceptual traps only.",0.5586
+physics,12,6,Induced Electric Field due to Changing Magnetic Flux,j,field_lines,widget,,not_in_scope,,
+physics,12,6,Eddy Currents and Electromagnetic Damping,b,circuit,widget,none_symbolic,med,"Chunks are eps=Bvl, I=Bvl/R, F=B^2l^2v/R, P=I^2R and prose on laminations and the magnet-in-copper-tube demo. Algebra plus qualitative description; no structure specified to draw.",0.5846
+physics,12,6,Self-Inductance and Magnetic Energy,b,circuit,widget,none_symbolic,high,"Chunks are N*Phi=LI, eps=-L dI/dt, L=mu0*n^2*A*l, U=LI^2/2, u_B=B^2/2mu0 and M=k*sqrt(L1L2). Formula and derivation text throughout.",0.647
+physics,12,6,Mutual Inductance,b,circuit,widget,none_symbolic,med,"Chunks are M=N2*Phi2/I1, coaxial-solenoid M=mu0*n1*n2*A*l, reciprocity and the geometric-mean rule, with one small coaxial-coils geometry sketch. Substance is formulae and numerica",0.6578
+physics,12,6,AC Generator and Rotating Coil EMF,b,circuit,widget,apparatus,med,"Chunk 2 specifies the machine: rectangular armature between N and S poles, axle, two slip rings, carbon brushes, external resistor; CBSE asks 'principle and construction'. A drawn ",0.6302
+physics,12,6,Growth and Decay of Current in an LR Circuit,j,circuit,widget,none_symbolic,med,"Retrieval missed: chunks (top sim 0.375) are inductance pitfalls, motional emf and mutual inductance. No LR growth/decay, no time constant L/R, no exponential curve in the retrieve",0.3753
+physics,12,7,Average and RMS Values of AC,b,circuit,widget,none_symbolic,med,"Chunks are the RMS integral with <sin^2>=1/2, I_rms=im/sqrt2, half-cycle mean 2im/pi, form/peak factors and a DC+AC mean-square example. Calculus and factors; the phasor is mention",0.6472
+physics,12,7,AC through Pure Resistor,b,circuit,widget,none_symbolic,med,"Retrieval missed the pure-resistor case entirely: chunks are a capacitor reactance numerical, the black-box problem, the LCR phasor Pythagoras step, the choke, and the AC introduct",0.4259
+physics,12,7,Phasors and Phase Relationships,b,wave_form,widget,,not_in_scope,,
+physics,12,7,AC through Pure Inductor,b,circuit,widget,xy_plot,low,"One on-target chunk derives i=(vm/omega*L) sin(omega*t - pi/2) with X_L=omega*L, i.e. two closed-form sinusoids a quarter cycle apart. Rest of retrieval is transformer and power ma",0.4317
+physics,12,7,AC through Pure Capacitor,b,circuit,widget,xy_plot,low,Chunks give X_C=1/2*pi*f*C with a worked value and state the current leads voltage by 90 deg; the phasor step appears in chunk 1. Weak retrieval otherwise (one chunk is a table of ,0.4578
+physics,12,7,Series LR Circuit,b,circuit,widget,none_symbolic,med,"Retrieval returned LCR and resonance material, not series-LR: Q-factor, resonance exercises, the black box. Nothing LR-specific beyond Z=sqrt(R^2+X^2) algebra.",0.4979
+physics,12,7,Series RC Circuit,b,circuit,widget,none_symbolic,med,"Same retrieval drift as the LR row: chunks are LCR resonance, Q-factor, bandwidth and the black box. The RC-specific content is one practice question; substance is impedance algebr",0.4843
+physics,12,7,Series LCR Circuit: Impedance and Phase,b,circuit,widget,gap_phasor,med,"Chunks build it geometrically: V_L and V_C antiphase, resultant perpendicular to V_R, Pythagoras to v_m=im*sqrt(R^2+(XL-XC)^2), tan(phi)=(XL-XC)/R. A phasor triangle; nothing shipp",0.614
+physics,12,7,Resonance and Q-Factor,b,wave_form,widget,,not_in_scope,,
+physics,12,7,Power in AC Circuits and Power Factor,b,circuit,widget,none_symbolic,med,"Chunks derive P_avg=Vrms*Irms*cos(phi) by cycle-averaging, define power factor cos(phi)=R/Z, and list transformer losses. Derivation and definitions.",0.5498
+physics,12,7,LC Oscillations,b,wave_form,widget,,not_in_scope,,
+physics,12,7,Transformers,b,circuit,widget,apparatus,med,"Chunk 5 specifies the device: laminated soft-iron core with hatching, N_p on the left limb to an AC source, N_s on the right limb to a bulb, curved arrows for the shared flux. A dr",0.4894
+physics,12,8,Displacement Current and Maxwell's Equations,b,field_lines,widget,,not_in_scope,,
+physics,12,8,Sources and Experimental Discovery of Electromagnetic Waves,b,wave_form,widget,,not_in_scope,,
+physics,12,8,Nature and Properties of Electromagnetic Waves,b,wave_form,widget,,not_in_scope,,
+physics,12,8,"Energy, Momentum and Radiation Pressure of Electromagnetic Waves",b,wave_form,widget,,not_in_scope,,
+physics,12,8,Electromagnetic Spectrum and Applications,b,wave_form,widget,,not_in_scope,,
+physics,12,9,Ray Optics Fundamentals,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Reflection by Plane Mirrors,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Reflection by Spherical Mirrors,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Refraction at Plane Surfaces,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Total Internal Reflection,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Refraction at Spherical Surfaces,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Lens Maker's Formula,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Thin Lens Formula and Magnification,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Power of a Lens and Combination of Lenses,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Prism and Angular Deviation,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Dispersion and Achromatic Combination,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Optical Instruments,b,ray_optics,widget,,not_in_scope,,
+physics,12,9,Combination of Mirrors and Lenses,j,ray_optics,widget,,not_in_scope,,
+physics,12,10,Wavefront and Huygens' Principle,b,wave_form,widget,,not_in_scope,,
+physics,12,10,Coherent Sources and Interference Conditions,b,wave_form,widget,,not_in_scope,,
+physics,12,10,Interference of Light and Young's Double-Slit Experiment,b,wave_form,widget,,not_in_scope,,
+physics,12,10,Optical Path and Fringe Shift in YDSE,b,wave_form,widget,,not_in_scope,,
+physics,12,10,Thin-Film Interference,b,wave_form,widget,,not_in_scope,,
+physics,12,10,Diffraction of Light,b,wave_form,widget,,not_in_scope,,
+physics,12,10,Polarisation of Light,b,wave_form,widget,,not_in_scope,,
+physics,12,10,Doppler Effect of Light,j,wave_form,widget,,not_in_scope,,
+physics,12,11,Electron Emission Mechanisms,b,energy_level,widget,,not_in_scope,,
+physics,12,11,Photoelectric Effect: Experimental Laws and Observations,b,xy_plot,widget,,not_in_scope,,
+physics,12,11,Einstein's Photoelectric Equation and Work Function,b,xy_plot,widget,,not_in_scope,,
+physics,12,11,Photon Energy and Momentum,b,xy_plot,widget,,not_in_scope,,
+physics,12,11,Photoelectric Effect Graphs,b,xy_plot,widget,,not_in_scope,,
+physics,12,11,Photon Flux and Radiation Intensity,b,xy_plot,widget,,not_in_scope,,
+physics,12,11,Wave-Particle Duality,b,wave_form,widget,,not_in_scope,,
+physics,12,11,Matter Waves and de Broglie Wavelength,b,wave_form,widget,,not_in_scope,,
+physics,12,11,de Broglie Wavelength of Accelerated Charged Particles,b,wave_form,widget,,not_in_scope,,
+physics,12,11,Davisson-Germer Experiment,b,energy_level,widget,,not_in_scope,,
+physics,12,12,Alpha-particle Scattering and Rutherford's Nuclear Model,b,motion_path,widget,,not_in_scope,,
+physics,12,12,Bohr's Model and Energy Levels,b,energy_level,widget,,not_in_scope,,
+physics,12,12,Hydrogen Spectrum and Spectral Series,b,energy_level,widget,,not_in_scope,,
+physics,12,12,Ionization and Excitation Energy,b,energy_level,widget,,not_in_scope,,
+physics,12,12,Atomic Collisions and Excitation,b,motion_path,widget,,not_in_scope,,
+physics,12,12,de Broglie's Explanation of Bohr's Quantisation,b,energy_level,widget,,not_in_scope,,
+physics,12,12,Limitations of Bohr's Model,b,energy_level,widget,,not_in_scope,,
+physics,12,12,X-ray Production,j,energy_level,widget,,not_in_scope,,
+physics,12,12,Moseley's Law and X-ray Spectra,j,energy_level,widget,,not_in_scope,,
+physics,12,13,Composition and Size of Nucleus,b,energy_level,widget,,not_in_scope,,
+physics,12,13,Mass-Energy Equivalence,b,energy_level,widget,,not_in_scope,,
+physics,12,13,Mass Defect and Nuclear Binding Energy,b,energy_level,widget,,not_in_scope,,
+physics,12,13,Binding Energy Curve and Nuclear Force,b,xy_plot,widget,,not_in_scope,,
+physics,12,13,Radioactive Decay Law and Half-Life,b,xy_plot,widget,,not_in_scope,,
+physics,12,13,Radioactive Decay Modes,b,xy_plot,widget,,not_in_scope,,
+physics,12,13,Nuclear Fission,b,energy_level,widget,,not_in_scope,,
+physics,12,13,Nuclear Fusion,b,energy_level,widget,,not_in_scope,,
+physics,12,14,Energy Bands and Classification of Solids,b,circuit,widget,gap_energy_band,med,"Chunk 3 calls for three side-by-side energy-band diagrams (conductor with overlapping bands, insulator Eg>3 eV, semiconductor Eg<3 eV). Parametric in Eg, but no shipped or approved",0.5388
+physics,12,14,Intrinsic and Extrinsic Semiconductors,b,circuit,widget,gap_energy_band,med,"Chunks repeat the three-band-diagram call-out and add donor levels just below the conduction band, acceptor levels just above the valence band; Fermi-level position is the answer. ",0.6303
+physics,12,14,p-n Junction Formation and Depletion Region,b,circuit,widget,gap_pn_junction,med,"Chunks describe the depletion region forming from diffusion vs drift, exposed fixed ions, the built-in barrier V_b, and a band-bending figure with bands rising n-side to p-side. No",0.5947
+physics,12,14,V-I Characteristics and Biasing of p-n Junction Diode,b,circuit,widget,xy_plot,med,"Chunks state the forward I-V 'climbs exponentially past the knee voltage' with the ideal-diode exponential, and a flat reverse saturation current until breakdown: a closed-form two",0.5745
+physics,12,14,Rectifier Circuits (Half-Wave and Full-Wave),b,wave_form,widget,,not_in_scope,,
+physics,12,14,Zener Diode and Voltage Regulation,b,circuit,widget,gap_device_schematic,med,"Top chunk specifies the regulator: V_in through R_S to a node, Zener to ground in reverse bias, R_L in parallel, I_in splitting into I_Z and I_L, V_out=V_Z. A nonlinear schematic, ",0.638
+physics,12,14,"LED, Photodiode and Solar Cell",b,circuit,widget,gap_device_schematic,low,"Chunks call for a 2x2 device panel (Zener reverse-biased, photodiode with light in, LED forward-biased emitting, solar cell unbiased driving a load) plus a fourth-quadrant solar-ce",0.6022
+physics,12,14,"Basic Logic Gates: OR, AND, NOT",b,circuit,widget,gap_logic_gate,med,"Chunks specify the symbol row (OR shield, AND D-shape, NOT triangle with bubble, NAND/NOR bubbled, XOR extra curve) with inputs A,B and output Y, alongside truth tables. Needs a ga",0.6685
+physics,12,14,NAND and NOR as Universal Gates,b,circuit,widget,gap_logic_gate,med,"Chunks wire actual gate networks: two NANDs as inverters feeding a third NAND to make OR, tied-input NAND/NOR as NOT, De Morgan proofs. Topology of gates, which no shipped or appro",0.6584
+physics,12,14,Boolean Expressions and Combinational Logic Circuits,b,circuit,widget,gap_logic_gate,med,"Chunks build XOR as two AND gates with one inverted input each feeding an OR, plus the gate-by-gate truth-table procedure and the symbol row. The circuit is the object; identities ",0.6066
+chemistry,11,1,Nature of Matter: Classification of Pure Substances and Mixtures,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,1,SI Units and Dimensional Analysis,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,Significant Figures and Uncertainty in Measurement,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,Laws of Chemical Combination,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,Dalton's Atomic Theory,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,"Atomic Mass, Average Atomic Mass and Isotopic Abundance",b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,"Mole Concept: Mass, Mole, Particle and Gas-Volume Interconversion",b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,Empirical and Molecular Formula from Percentage Composition,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,Stoichiometric Calculations and Limiting Reagent,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,Percentage Yield and Theoretical Yield,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,"Concentration Terms: Molarity, Molality, Mole Fraction and ppm",b,none_symbolic,none,,not_in_scope,,
+chemistry,11,1,Dilution and Mixing of Solutions,b,apparatus,illustration,none_symbolic,high,"Chunks are concentration formulae and algebra: mass%, ppm, mole fraction, M=n/V, and the dilution sum M1V1=M2V2 with the added-vs-final trap. No glassware or setup described anywhe",0.5751
+chemistry,11,1,"Volumetric Analysis: Normality, Equivalent Weight and Titration Calculations",b,apparatus,illustration,none_symbolic,high,"Retrieval returned concentration-term definitions, density interconversion procedures and an n-factor/normality calculation. No burette, pipette or titration setup appears in any c",0.5223
+chemistry,11,2,Discovery and Properties of Subatomic Particles,b,energy_level,widget,,not_in_scope,,
+chemistry,11,2,"Atomic Number, Mass Number, Isotopes and Isobars",b,energy_level,widget,,not_in_scope,,
+chemistry,11,2,Early Atomic Models: Thomson and Rutherford,b,energy_level,widget,,not_in_scope,,
+chemistry,11,2,Electromagnetic Radiation and Planck's Quantum Theory,b,energy_level,widget,,not_in_scope,,
+chemistry,11,2,Photoelectric Effect,b,xy_plot,widget,,not_in_scope,,
+chemistry,11,2,Hydrogen Spectrum and Spectral Series,b,energy_level,widget,,not_in_scope,,
+chemistry,11,2,Bohr's Model of the Hydrogen Atom,b,energy_level,widget,,not_in_scope,,
+chemistry,11,2,de Broglie Wavelength and Wave-Particle Duality,b,wave_form,widget,,not_in_scope,,
+chemistry,11,2,Heisenberg Uncertainty Principle,b,energy_level,widget,,not_in_scope,,
+chemistry,11,2,Quantum Numbers and Orbital Designation,b,motion_path,widget,,not_in_scope,,
+chemistry,11,2,Shapes and Nodes of Atomic Orbitals,b,motion_path,widget,,not_in_scope,,
+chemistry,11,2,Electronic Configuration of Atoms and Ions,b,energy_level,widget,,not_in_scope,,
+chemistry,11,3,"Early Attempts at Classification: Dobereiner, Newlands and Mendeleev",b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,Modern Periodic Law and Structure of the Periodic Table,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,Nomenclature of Elements with Atomic Number Greater than 100,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,3,Position and Block of an Element from Electronic Configuration,b,energy_level,widget,,not_in_scope,,
+chemistry,11,3,Effective Nuclear Charge and Shielding Effect,b,field_lines,widget,,not_in_scope,,
+chemistry,11,3,Atomic and Ionic Radii,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,Ionization Enthalpy: Trends and Anomalies,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,Electron Gain Enthalpy and Electron Affinity,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,Electronegativity and Ionic Character,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,Periodic Trends in Valency and Oxidation States,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,"Metallic Character, Reactivity and Nature of Oxides",b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,3,Anomalous Behaviour of Second-Period Elements and Diagonal Relationship,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,4,"Lewis Structures, Octet Rule and Formal Charge",b,field_lines,widget,,not_in_scope,,
+chemistry,11,4,"Ionic Bond Formation, Lattice Enthalpy and Born-Haber Cycle",b,molecule_struct,widget,process_flow,med,"Chunk: 'Figure A closed Born-Haber cycle for an alkali halide MX' - boxes M(s)+1/2X2, M(g), M+(g), X-(g), MX(s) joined by sublimation/ionisation/electron-gain/lattice arrows, each ",0.6415
+chemistry,11,4,"Bond Parameters: Bond Length, Bond Angle and Bond Enthalpy",b,molecule_struct,widget,none_symbolic,med,"Chunks are cheat-sheet formulae (FC = V-L-B/2, mu = q x d, % ionic character) and octet-failure lists. Bond angles appear only as prose values; no structure or geometry figure retr",0.574
+chemistry,11,4,Resonance and Resonance Energy,b,wave_form,widget,,not_in_scope,,
+chemistry,11,4,Coordinate (Dative) Bond Formation,b,molecule_struct,widget,none_symbolic,med,"Chunks define the dative bond (donor lone pair + acceptor vacant orbital) and give a spotting procedure (NH4+ = NH3 + H+). Definition and bookkeeping, no electron-domain geometry t",0.6171
+chemistry,11,4,Dipole Moment and Molecular Polarity,b,field_lines,widget,,not_in_scope,,
+chemistry,11,4,Fajans' Rules and Covalent Character of Ionic Bonds,b,molecule_struct,widget,none_symbolic,high,"Chunks are Fajans' polarisation rules, the 'SHaPe' mnemonic, % ionic character formula and MCQ distractor analysis. Rules and prose - nothing spatial.",0.6625
+chemistry,11,4,VSEPR Theory and Molecular Geometry,b,molecule_struct,widget,molecule_struct,high,"Chunks give steric number -> hybridisation -> shape with the full ligand/lone-pair set: AB3E pyramidal NH3 107deg, AB2E2 bent H2O 104.5, AB4E seesaw SF4, AB3E2 T-shape ClF3, AB4E2 ",0.6979
+chemistry,11,4,Hybridization and Valence Bond Theory,b,molecule_struct,widget,molecule_struct,med,"Chunks give hybrid-orbital geometry directly: sp3 four orbitals to tetrahedron corners (CH4), sp2 three at 120deg in a plane (ethene, planar), sp linear 180deg (ethyne), with bond ",0.6584
+chemistry,11,4,Back Bonding and Anomalous Bond Angles,j,molecule_struct,widget,none_symbolic,low,"Chunks are reasoning rules (Bent's, Drago's) plus angle values quoted in prose (NH3 107, NF3 102, PH3 93.5, H2S 92). Explanation of ordering, not a figure; a values grid would be a",0.6642
+chemistry,11,4,"Molecular Orbital Theory: MO Diagrams, Bond Order and Magnetic Behaviour",b,motion_path,widget,,not_in_scope,,
+chemistry,11,4,Hydrogen Bonding,b,molecule_struct,widget,none_symbolic,med,Relevant chunk is a definition plus a wedding analogy for H-bonding; three of six chunks are MOT bond-order text (retrieval drift). No dotted-bond structure spec retrieved for this,0.665
+chemistry,11,4,Intermolecular Forces and Physical Properties,b,molecule_struct,widget,none_symbolic,med,"Retrieval largely missed: chunks are MOT bond order, dipole vectors and MO-filling procedure. The one on-topic chunk is a drawn o-/p-nitrophenol H-bond figure - art, not a parametr",0.5417
+chemistry,11,4,Metallic Bonding and the Electron Sea Model,b,molecule_struct,widget,none_symbolic,low,"Retrieval failed for this concept: every chunk is chapter contents, MOT, coordinate/back bonding or dipole cheat-sheet text. No electron-sea or metallic-lattice content retrieved a",0.5206
+chemistry,11,5,"State Functions, Path Functions and Extensive/Intensive Properties",b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,"First Law of Thermodynamics: Internal Energy, Work and Heat",b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,"Thermodynamic Processes: Isothermal, Adiabatic, Isobaric and Isochoric",b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,Enthalpy Change and the Relationship Between Delta-H and Delta-U,b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,"Heat Capacity, Specific Heat and the Cp-Cv Relationship",b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,Calorimetry and Measurement of Heat Changes,b,xy_plot,widget,,not_in_scope,,
+chemistry,11,5,"Standard Enthalpies of Formation, Combustion and Neutralisation",b,REVIEW,review,,not_in_scope,,
+chemistry,11,5,Hess's Law and Enthalpy of Reaction Calculations,b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,Bond Enthalpy and Lattice Enthalpy Calculations,b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,Entropy Change and the Second Law of Thermodynamics,b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,Third Law of Thermodynamics and Absolute Entropy,b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,Gibbs Free Energy and Spontaneity,b,thermo_pv,widget,,not_in_scope,,
+chemistry,11,5,"Enthalpies of Phase Transition, Atomisation, Hydration and Solution",b,REVIEW,review,,not_in_scope,,
+chemistry,11,6,Physical Equilibria and Characteristics of the Equilibrium State,b,process_cycle,widget,xy_plot,high,"Chunk holds a figure spec: 'Two-curve plot, rate (y) vs time (x). Forward-rate curve starts high and falls; reverse starts at zero and rises. They meet and run flat at t_eq'. A clo",0.6008
+chemistry,11,6,"Equilibrium Constant: Kc, Kp and Their Relationship",b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,Reaction Quotient and Predicting the Direction of Reaction,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,Le Chatelier's Principle and Factors Affecting Equilibrium,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,Relation Between Gibbs Energy and the Equilibrium Constant,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,"Acid-Base Concepts: Arrhenius, Bronsted-Lowry and Lewis",b,xy_plot,widget,,not_in_scope,,
+chemistry,11,6,Ionic Product of Water and Autoionization,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,"pH, pOH and Strength of Acids and Bases",b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,"Ionization Constants (Ka, Kb) and Ostwald's Dilution Law",b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,Common Ion Effect,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,Salt Hydrolysis and pH of Salt Solutions,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,Buffer Solutions and the Henderson-Hasselbalch Equation,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,6,Acid-Base Titration Curves and Indicators,b,xy_plot,widget,,not_in_scope,,
+chemistry,11,6,Solubility Product and Precipitation,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,7,Classical and Electronic Concepts of Oxidation and Reduction,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,7,Oxidation Number: Rules and Calculation,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,7,Stock Notation and Naming Compounds by Oxidation Number,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,7,Identifying Oxidising and Reducing Agents,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,7,"Types of Redox Reactions: Combination, Decomposition and Displacement",b,reaction_mechanism,widget,reaction_scheme,med,"Chunks give the four families as species-and-arrow templates: A+B->AB, AB->A+B, A+BC->AC+B, plus worked instances (Zn+CuSO4->ZnSO4+Cu, 2KClO3 -Delta-> 2KCl+3O2).",0.7064
+chemistry,11,7,Disproportionation and Comproportionation Reactions,b,reaction_mechanism,widget,reaction_scheme,med,"Chunk works 3MnO4(2-)+4H+ -> 2MnO4(-) + MnO2 + 2H2O, one element at +6 splitting to +7 and +4 - a branching species scheme with O.N. labels on each arrow.",0.6677
+chemistry,11,7,Balancing Redox Equations: Oxidation-Number and Half-Reaction Methods,b,reaction_mechanism,widget,none_symbolic,med,"Chunks are balancing bookkeeping: half-reactions, spectator ions, O.N.-method and ion-electron step lists, medium tools (H+/OH-/H2O). Symbolic equation algebra, nothing to draw.",0.7858
+chemistry,11,7,"Redox Titrations, Equivalent Mass and n-Factor Calculations",b,apparatus,illustration,none_symbolic,high,"Chunks are n-factor/equivalents/milliequivalent algebra, an n-factor lookup table and EMF formulae. No burette, flask or titration apparatus is described in any retrieved chunk.",0.6722
+chemistry,11,7,"Redox Couples, Electrode Potential and Electrochemical Cells",b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,7,Reactivity Series and Metal Displacement Reactions,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,7,Redox Reactions in Everyday Life and Industry,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,8,Classification of Organic Compounds and Functional Groups,b,molecule_struct,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,"Hybridization, Shape and Bond Parameters in Organic Molecules",b,molecule_struct,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,IUPAC Nomenclature of Organic Compounds,b,none_symbolic,none,,not_in_scope,,
+chemistry,11,8,"Structural Isomerism: Chain, Position, Functional, Metamerism and Tautomerism",b,molecule_struct,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,Geometrical Isomerism: Cis-Trans and E-Z Configuration,b,molecule_struct,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,"Optical Isomerism: Chirality, Optical Activity and R/S Configuration",b,molecule_struct,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,Types of Organic Reactions and Fundamentals of Reaction Mechanisms,b,reaction_mechanism,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,"Inductive, Resonance, Hyperconjugation and Electromeric Effects",b,wave_form,widget,,not_in_scope,,
+chemistry,11,8,"Stability of Reaction Intermediates: Carbocations, Carbanions and Free Radicals",b,molecule_struct,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,Acidity and Basicity of Organic Compounds,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,8,"Purification of Organic Compounds: Crystallisation, Distillation and Chromatography",b,apparatus,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,Qualitative Analysis: Detection of Elements by Lassaigne's Test,b,apparatus,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,Quantitative Analysis and Determination of Empirical Formula,b,apparatus,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,8,"Diastereomers, Meso Compounds and Molecules with Two Stereocentres",b,molecule_struct,review,UNVERIFIED_no_chunks,none,"reason=no_chunks WHEN WRITTEN; chemistry 11 ch8 now has 39 chunks after the 2026-09-04 master-book ingest (corpus b6ae8226a951b903). Still build_class=review because it is unclassified, NOT because content is missing. Reclassify from content.",
+chemistry,11,9,"Classification, General Formulae and Nomenclature of Hydrocarbons",b,none_symbolic,none,,not_in_scope,,
+chemistry,11,9,"Preparation of Alkanes: Wurtz, Kolbe, Decarboxylation and Hydrogenation",b,reaction_mechanism,widget,reaction_scheme,high,"Chunks give reagent-labelled equations: 2CH3Br + 2Na -dry ether-> CH3-CH3 + 2NaBr; CH3COONa + NaOH -CaO,Delta-> CH4; R-X + 2[H] -Zn,dil.HCl-> R-H. Species nodes, labelled arrows.",0.697
+chemistry,11,9,Conformational Analysis of Alkanes (Newman Projections),b,molecule_struct,widget,xy_plot,med,"Figure spec in chunk: 'Potential-energy-vs-dihedral-angle curve for ethane', minima staggered 60/180/300, maxima eclipsed 0/120/240, gap 12.5 kJ/mol. Newman projections themselves ",0.5883
+chemistry,11,9,Free Radical Halogenation and Reactions of Alkanes,b,reaction_mechanism,widget,reaction_scheme,med,Chunk gives the three-step chain as equations: Cl-Cl -hv-> 2Cl*; Cl* + CH4 -> *CH3 + HCl; *CH3 + Cl2 -> CH3Cl + Cl*; termination *CH3+*CH3->C2H6. Species nodes with labelled arrows,0.6333
+chemistry,11,9,Preparation of Alkenes and Elimination Reactions (Saytzeff Rule),b,reaction_mechanism,widget,reaction_scheme,high,Chunks list eliminations as reagent-labelled equations: R-X + alc. KOH -> alkene; CH2Br-CH2Br + Zn -> CH2=CH2 + ZnBr2; alcohol + conc. H2SO4 -> alkene; Na/liq NH3 -> trans-but-2-en,0.6564
+chemistry,11,9,Electrophilic Addition Reactions of Alkenes (Markovnikov and Peroxide Effect),b,reaction_mechanism,widget,reaction_scheme,med,Chunks give the two-step HBr addition via the more stable carbocation and an explicit ozonolysis spec: alkene +O3/CCl4 -> ozonide -> +Zn/H2O -> two carbonyl fragments. Species + re,0.7344
+chemistry,11,9,Preparation of Alkynes and Alkane-Alkene-Alkyne Interconversion,b,reaction_mechanism,widget,reaction_scheme,med,"Chunks give the interconversion ladder with reagents on the arrows: HC#CH -H2,Pt/Pd/Ni-> H2C=CH2 -H2-> CH3CH3; Lindlar -> cis alkene, Na/liq NH3 -> trans alkene; +2HBr -> gem-dihal",0.6263
+chemistry,11,9,Reactions and Acidity of Terminal Alkynes,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,9,Oxidation and Ozonolysis of Alkenes and Alkynes,b,reaction_mechanism,widget,reaction_scheme,high,Chunks give reagent-labelled cleavage equations (CH2=CH2 -cold dil KMnO4-> glycol; CH3CH=CHCH3 -hot KMnO4/H+-> 2CH3COOH) plus the two-step ozonolysis scheme with the ozonide interm,0.6679
+chemistry,11,9,Aromaticity and Huckel's Rule,b,molecule_struct,widget,none_symbolic,med,"Chunks are the aromaticity checklist (cyclic, planar, conjugated, 4n+2), a resonance-energy number, and lists of activating/o-p- and m-directing groups. Criteria and lists, not a r",0.5715
+chemistry,11,9,Electrophilic Substitution in Benzene and Directive Influence of Substituents,b,reaction_mechanism,widget,reaction_scheme,high,"Chunks give five EAS equations with reagents over the arrows (HNO3/conc H2SO4, Cl2/FeCl3, oleum, CH3Cl/AlCl3, CH3COCl/AlCl3) plus a three-step arenium-ion sequence with the RDS mar",0.6764
+chemistry,11,9,Carcinogenicity and Toxicity of Polynuclear Aromatic Hydrocarbons,b,data_table_trend,widget,,not_in_scope,,
+chemistry,11,9,Polymerisation of Alkenes and Cyclic Polymerisation of Alkynes,b,reaction_mechanism,widget,none_symbolic,low,"Retrieval drifted to alkene/alkyne nomenclature, isomerism and physical properties; polymerisation is one sentence ('ethyne polymerises to polyacetylene'). No polymerisation scheme",0.5845
+chemistry,12,1,Types of Solutions,b,none_symbolic,none,,not_in_scope,,
+chemistry,12,1,Concentration Terms and Their Interconversion,b,none_symbolic,none,,not_in_scope,,
+chemistry,12,1,Solubility of Solids in Liquids and Effect of Temperature,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Henry's Law and Solubility of Gases,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Relative Lowering of Vapour Pressure and Raoult's Law,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Vapour Pressure of Binary Liquid Mixtures and Vapour-Phase Composition,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Ideal and Non-ideal Solutions and Azeotropes,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Elevation of Boiling Point,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Depression of Freezing Point,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Osmotic Pressure and Osmosis,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,1,Reverse Osmosis and Water Purification,b,apparatus,illustration,apparatus,low,"Retrieval clearly missed (top sim 0.32; chunks are colligative properties/Henry's law). The one relevant chunk is an osmosis-cell figure - U-tube, semipermeable membrane, applied-p",0.3201
+chemistry,12,1,"Van't Hoff Factor, Association and Dissociation",b,xy_plot,widget,,not_in_scope,,
+chemistry,12,2,Galvanic Cells and Cell Representation,b,apparatus,illustration,apparatus,med,"Chunk describes the physical two-beaker cell: Zn2+ building in the anode beaker, Cu2+ draining in the cathode beaker, a KCl/KNO3 gel bridge feeding ions and a wire completing the c",0.5672
+chemistry,12,2,Standard Electrode Potential and Feasibility of Redox Reactions,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,2,Nernst Equation and Cell Potential Calculations,b,apparatus,illustration,none_symbolic,high,"Chunks are pure formulae and derivation: E_cell = E0 - (0.0591/n)log Q, DrG = -nFE, log Kc = nE0/0.0591, plus a symbols-and-units table. Algebra only.",0.7224
+chemistry,12,2,Concentration Cells,b,apparatus,illustration,none_symbolic,med,"Chunks are the concentration-cell idea in prose (two identical Zn rods, different [Zn2+]) plus the chapter formula sheet. No figure spec; the physical picture is one sentence of te",0.5796
+chemistry,12,2,"EMF, Gibbs Energy and Equilibrium Constant",b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,2,"Conductivity, Cell Constant and Conductance Measurement",b,xy_plot,widget,,not_in_scope,,
+chemistry,12,2,Molar Conductivity and Its Variation with Dilution,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,2,Kohlrausch's Law and Limiting Molar Conductivity,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,2,Degree of Dissociation of Weak Electrolytes from Conductance,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,2,Conductometric Titration and Solubility from Conductance,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,2,Electrolysis and Faraday's Laws,b,field_lines,widget,,not_in_scope,,
+chemistry,12,2,Batteries and Fuel Cells,b,apparatus,illustration,none_symbolic,med,"Chunks give electrode half-equations (lead storage, Ni-Cd, H2-O2 alkaline) and efficiency prose. Equations and classification (primary/secondary/fuel), no cell-construction figure ",0.5724
+chemistry,12,2,Corrosion and Its Prevention,b,apparatus,illustration,apparatus,med,"Chunk describes a drawn situation, cut off at 'Figure - to be illu[strated]': water droplet on iron, oxygen-starved centre as anode, oxygen-rich rim as cathode, electrons through t",0.5079
+chemistry,12,3,Rate of Reaction and Rate Expressions from Stoichiometry,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,"Rate Law, Order and Molecularity",b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,Zero Order Reactions,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,First Order Kinetics and Half-Life,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,Pseudo First Order Reactions,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,Determination of Order from Experimental Data,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,Radioactive Decay Kinetics,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,Arrhenius Equation and Temperature Dependence of Rate,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,Collision Theory and Activation Energy,b,motion_path,widget,,not_in_scope,,
+chemistry,12,3,Effect of Catalyst on Reaction Rate,b,xy_plot,widget,,not_in_scope,,
+chemistry,12,3,Reaction Mechanism and Rate-Determining Step,b,reaction_mechanism,widget,none_symbolic,med,"Chunks are rate-law algebra: order/molecularity definitions, a units-of-k table, and a two-step mechanism used only to derive Rate = k2[A2][B]. Symbolic derivation, no diagram.",0.5987
+chemistry,12,3,Homogeneous and Heterogeneous Catalysis,j,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,Electronic Configuration of Transition Elements,b,energy_level,widget,,not_in_scope,,
+chemistry,12,4,"Atomic Radii, Density and Melting Point Trends",b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,Variable Oxidation States and Their Stability,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,Standard Electrode Potentials and Redox Behaviour of Transition Metals,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,Magnetic Moment and Magnetic Behaviour of Transition Ions,b,energy_level,widget,,not_in_scope,,
+chemistry,12,4,Colour of Transition Metal Ions,b,energy_level,widget,,not_in_scope,,
+chemistry,12,4,Complex Formation and Qualitative Tests for Transition Metal Ions,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,"Catalytic Activity, Alloys and Interstitial Compounds",b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,"Potassium Dichromate: Preparation, Structure and Reactions",b,molecule_struct,widget,reaction_scheme,med,"Chunks are dominated by reagent-labelled equations: chromite-ore manufacture, K2Cr2O7 + 2H2SO4 -> 2CrO3 + 2KHSO4 + H2O, and the pH interconversion 2CrO4(2-) + 2H+ <=> Cr2O7(2-) + H",0.6054
+chemistry,12,4,"Potassium Permanganate: Preparation, Structure and Reactions",b,molecule_struct,widget,reaction_scheme,med,Chunks give preparation equations (2Mn2+ + 5S2O8(2-) + 8H2O -> 2MnO4-...; 2MnO2+4KOH+O2 -> 2K2MnO4) and the 5-3-1 medium-dependent half-reactions with their products. Species + lab,0.664
+chemistry,12,4,"Lanthanoids: Configuration, Oxidation States and Properties",b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,Lanthanoid Contraction and Its Consequences,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,Actinoids and Their Comparison with Lanthanoids,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,4,Ionisation Enthalpy Trends in the Transition Series,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,5,Werner's Theory and the Coordination Sphere,b,molecule_struct,widget,none_symbolic,med,"Weak retrieval (top 0.47; two chunks are chapter contents). Content is definitional: primary vs secondary valence, the bracket 'fence', charge balance, double salt vs complex. Pros",0.4674
+chemistry,12,5,"Ligands, Denticity and Chelation",b,molecule_struct,widget,none_symbolic,high,"Chunks are definitions and a classification list: unidentate/didentate/polydentate with examples, EDTA hexadentate, plus chelate-effect prose with two log K values. A list, not a s",0.6807
+chemistry,12,5,"Oxidation State, Coordination Number and EAN",b,none_symbolic,none,,not_in_scope,,
+chemistry,12,5,IUPAC Nomenclature of Coordination Compounds,b,none_symbolic,none,,not_in_scope,,
+chemistry,12,5,Structural Isomerism in Coordination Compounds,b,molecule_struct,widget,none_symbolic,med,"Chunks describe ionisation, solvate, linkage and coordination isomerism as differences between written formulae and the ions released in solution. Formula bookkeeping, not spatial ",0.7575
+chemistry,12,5,Geometrical and Optical Isomerism in Complexes,b,molecule_struct,widget,gap_stereochemistry,med,"Chunks demand drawn 3-D arrangements: cis/trans for Ma4b2/Ma2b4, fac/mer, mirror-plane test for chirality, 'Diagram Three octahedral structures... d/l pair'. No shipped widget draw",0.6737
+chemistry,12,5,Valence Bond Theory and Hybridisation of Complexes,b,molecule_struct,widget,none_symbolic,med,"Chunks are the VBT procedure and arithmetic: d-count, inner/outer d2sp3 vs sp3d2, mu = sqrt(n(n+2)) = 3.87 BM, spectrochemical series as an ordered list. Orbital-box/splitting figu",0.6195
+chemistry,12,5,Crystal Field Theory and d-Orbital Splitting,b,motion_path,widget,,not_in_scope,,
+chemistry,12,5,Magnetic Behaviour and Spin-Only Magnetic Moment,b,energy_level,widget,,not_in_scope,,
+chemistry,12,5,Colour of Complexes and d-d Transitions,b,energy_level,widget,,not_in_scope,,
+chemistry,12,5,Stability of Complexes and Stability Constants,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,5,Metal Carbonyls and Synergic Bonding,b,molecule_struct,widget,none_symbolic,med,"Chunks explain synergic bonding in prose (CO sigma lone pair to metal, metal d into CO pi*, C-O IR stretch falls) and EAN counting to 18/36. Argument and arithmetic, no structure s",0.7198
+chemistry,12,5,Applications of Coordination Compounds,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,6,Nomenclature and Classification of Halogen Compounds,b,none_symbolic,none,,not_in_scope,,
+chemistry,12,6,Physical Properties of Haloalkanes and Haloarenes,b,molecule_struct,widget,data_table_trend,med,"Chunks are exactly a trend-with-exceptions set: b.p. RI>RBr>RCl>RF, rises with chain length, falls with branching; density rule (only Br/I/poly denser than water); para dihalobenze",0.7069
+chemistry,12,6,Preparation of Haloalkanes,b,reaction_mechanism,widget,reaction_scheme,med,"Chunks list routes as reagent-labelled transformations: R-OH + SOCl2/PCl3/PCl5, alkene + HX (Markovnikov), Finkelstein (NaI, dry acetone), Swarts, and diazonium -> Sandmeyer/Gatter",0.633
+chemistry,12,6,SN1 and SN2 Mechanisms,b,reaction_mechanism,widget,gap_mechanism_arrows,med,"Figure spec in chunk: SN2 transition state, three equatorial groups planar, Nu approaching axially on a partial bond, X leaving on a partial bond, curved arrows, 'umbrella invertin",0.7042
+chemistry,12,6,Stereochemistry of Nucleophilic Substitution,b,reaction_mechanism,widget,gap_stereo_inversion,med,"Chunks are rate laws and reactivity orders; the only spatial lines are 'backside attack, inversion' and a planar cation attacked 'from either face equally' -> racemisation. No ship",0.6078
+chemistry,12,6,Reactivity Order of Alkyl and Aryl Halides,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,6,Elimination Reactions and Saytzeff Rule,b,reaction_mechanism,widget,reaction_scheme,high,"Explicit reagent-over-arrow fork: 'R-X aq.KOH -> R-OH' vs 'R-X alcoholic KOH, higher temp -> alkene', plus a Diagram callout for beta-elimination labelling alpha and beta carbons.",0.5939
+chemistry,12,6,"Reactions with Metals: Grignard, Wurtz and Fittig",b,reaction_mechanism,widget,reaction_scheme,med,"Balanced equations with condition labels: 'R-X + Mg dry ether -> R-MgX', '2 R-X + 2Na dry ether -> R-R + 2NaX', Wurtz-Fittig. Rest of the retrieval is SN1/SN2 prose (top sim 0.54).",0.5397
+chemistry,12,6,Preparation of Haloarenes,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 1 is a branching route map: arene + X2/FeX3 -> ArX; ArN2+ with CuCl/HCl (Sandmeyer), Cu/HX (Gattermann), KI, HBF4-heat (Balz-Schiemann) -> Ar-Cl/Br/I/F. Reagent-labelled arro",0.6284
+chemistry,12,6,Nucleophilic Substitution in Haloarenes,b,reaction_mechanism,widget,reaction_scheme,med,"Addition-elimination on EWG-activated rings, Dow's process (NaOH 623 K/300 atm -> phenol), benzyne route, plus the 'substitution product map: choose the reagent, get the product'.",0.6909
+chemistry,12,6,Electrophilic Substitution in Haloarenes,b,reaction_mechanism,widget,none_symbolic,med,"Retrieval returned nucleophilic-substitution and ambident-nucleophile text, not EAS. Only on-topic line is prose: halogen is 'deactivating yet o/p-directing'. No ring-substitution ",0.667
+chemistry,12,6,Polyhalogen Compounds,b,molecule_struct,widget,none_symbolic,high,"Demoted: definition, mono/di/poly classification, IUPAC prefix rules, bp/density/solubility trends, DDT/freon pitfalls. No central-atom-plus-ligand structure anywhere in the chunks",0.6298
+chemistry,12,6,Multi-step Conversions and Reaction Map,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 0 is 'Sub-topic 04: The Complete Reaction Map'; chunk 1 gives the 'Nucleophilic substitution product map (alkyl halides, R-X). Choose the reagent, get the product' - a labell",0.4881
+chemistry,12,7,"Nomenclature and Classification of Alcohols, Phenols and Ethers",b,none_symbolic,none,,not_in_scope,,
+chemistry,12,7,Physical Properties and Hydrogen Bonding Trends,b,molecule_struct,widget,none_symbolic,med,"Demoted from molecule_struct: bp/solubility reasoning ('alcohols H-bond, so they boil far higher'), an acidity ladder, an ordering exercise. Qualitative only, no values; top sim 0.",0.4615
+chemistry,12,7,Preparation of Alcohols from Alkenes and Carbonyl Compounds,b,reaction_mechanism,widget,reaction_scheme,high,"Explicit reagent-on-arrow equations: 'R-CHO H2/Ni or NaBH4 -> R-CH2OH', 'R-CO-R' NaBH4 -> 2 alcohol', 'R-MgX + HCHO -> ... H3O+', plus the three alkene-hydration routes.",0.6307
+chemistry,12,7,Preparation of Phenols,b,reaction_mechanism,widget,reaction_scheme,high,Chunk 0: '(D) Preparation of phenols - four routes' with 'Figure - visualise the following: A central' hub; chunk 5: 'Cumene -O2-> hydroperoxide -dil.H+-> C6H5OH + acetone'.,0.6701
+chemistry,12,7,Acidity of Alcohols and Phenols,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,7,Chemical Reactions of Alcohols,b,reaction_mechanism,widget,reaction_scheme,high,"Reagent->product map for -OH: Lucas (SN1), dehydration, 1->aldehyde->acid / 2->ketone / 3 resists, iodoform (I2/NaOH), esterification, 'C2H5OH + HO-SO2-OH -> ethyl hydrogen sulphat",0.6559
+chemistry,12,7,Dehydration of Alcohols and Carbocation Rearrangement,b,reaction_mechanism,widget,none_symbolic,med,"Demoted: retrieval gives only conditions and orders (conc. H2SO4, E1, Saytzeff, 3>2>1, 360 vs 440 K). The one stepwise mechanism shown, 'Step 1 protonation: C=C + H3O+', is hydrati",0.6454
+chemistry,12,7,Electrophilic Substitution and Named Reactions of Phenols,b,reaction_mechanism,widget,reaction_scheme,high,"Named reactions with reagents and products: Reimer-Tiemann (CHCl3/NaOH 340 K -> salicylaldehyde), Kolbe (phenoxide + CO2 -> salicylic acid), Br2/CS2 -> p-bromophenol, Zn dust -> be",0.5941
+chemistry,12,7,Williamson Ether Synthesis,b,reaction_mechanism,widget,reaction_scheme,med,"Chunk 1 gives the equation and the contrast: 'CH3CH2CH2O-Na+ + CH3I -> 1-methoxypropane + NaI' vs the 3-halide pairing that only eliminates. Thin: top sim 0.54, much of it ether cl",0.54
+chemistry,12,7,Reactions of Ethers: C-O Cleavage and Ring Substitution,b,reaction_mechanism,widget,reaction_scheme,high,"Product map branching on substrate: aryl ether -> phenol + alkyl halide (aryl-O never breaks); 3 -> SN1, iodide on tertiary C; 1/2 -> SN2, iodide on the smaller alkyl; excess hot H",0.6514
+chemistry,12,7,Distinguishing Tests for Alcohols and Phenols,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,7,Commercially Important Alcohols,b,molecule_struct,widget,none_symbolic,med,"Demoted from molecule_struct: recall facts - methanol vs ethanol uses, wood spirit, denatured alcohol, toxicity. Only drawable bit is the two-step fermentation (invertase, then zym",0.6184
+chemistry,12,7,Oxidation and Reduction of Phenols,b,reaction_mechanism,widget,none_symbolic,med,"Retrieval missed it: chunks return Kolbe/Reimer-Tiemann and alcohol oxidation (1->aldehyde, 2->ketone). Phenol->quinone never appears; only 'phenol + Zn dust -> benzene' is on topi",0.611
+chemistry,12,8,Nomenclature and Structure of Carbonyl Compounds,b,none_symbolic,none,,not_in_scope,,
+chemistry,12,8,Physical Properties and Hydrogen Bonding in Carbonyl Compounds,b,molecule_struct,widget,data_table_trend,med,"Chunk 5 names 'Boiling-point comparison at comparable molecular mass (the table to memorise)' with the order hydrocarbon < ether < aldehyde/ketone < alcohol < acid, and its stated ",0.607
+chemistry,12,8,Preparation of Aldehydes and Ketones,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 1 is an explicit 'Preparation map'; chunk 3 lists routes by reagent: Rosenmund (H2, Pd/BaSO4), Stephen/DIBAL-H on nitriles, Etard (CrO2Cl2), Gattermann-Koch, ozonolysis, alky",0.7018
+chemistry,12,8,Nucleophilic Addition Reactions of Aldehydes and Ketones,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 0 is a Reagent|Product table at the carbonyl carbon: HCN -> cyanohydrin, NaHSO3 -> bisulphite adduct, RMgX/H3O+ -> alcohol, alcohol+dry HCl -> hemiacetal -> acetal. A labelle",0.7021
+chemistry,12,8,Reactions of Carbonyl Compounds with Ammonia Derivatives,b,reaction_mechanism,widget,reaction_scheme,med,"On topic but thin: 'B. Addition-elimination with ammonia derivatives H2N-Z (acid-catalysed, optimum pH 3.5): the adduct loses' - the chunk truncates before the Z table; only pH rea",0.5738
+chemistry,12,8,Oxidation and Reduction of Aldehydes and Ketones,b,reaction_mechanism,widget,reaction_scheme,high,"Reagent-labelled outcomes both ways: Tollens' -> silver mirror, Fehling's -> red Cu2O (aliphatic only), KMnO4 -> RCOOH; NaBH4/LiAlH4/H2 -> alcohol, Clemmensen or Wolff-Kishner -> C",0.6888
+chemistry,12,8,Aldol Condensation,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 0 is an ordered 4-step sequence (enolate, C-C bond, protonation, dehydration) with the chain '2 CH3CHO -dil.NaOH-> 3-hydroxybutanal -heat-> but-2-enal'. Species plus labelled",0.6302
+chemistry,12,8,Cannizzaro Reaction,b,reaction_mechanism,widget,none_symbolic,med,Demoted: one cheat-sheet line ('no alpha-H + conc. alkali -> disproportionation to alcohol + carboxylate') plus aldol-vs-Cannizzaro pitfalls. Chunk 3 cuts off at the '3C.' mechanis,0.5046
+chemistry,12,8,Preparation of Carboxylic Acids,b,reaction_mechanism,widget,reaction_scheme,med,"Routes with reagents: nitrile hydrolysis -> propanoic acid, 'C6H5CH3 -KMnO4/KOH, H3O+-> C6H5COOH', Grignard + CO2, hydrolysis of esters/amides. Half the retrieval is acidity/pKa re",0.6425
+chemistry,12,8,Acidity of Carboxylic Acids and Substituent Effects,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,8,Reactions of Carboxylic Acids,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 0 groups reactions by bond broken with reagents and products: salt (metals, NaOH, NaHCO3 -> CO2), anhydride (H2SO4/P2O5), acyl chloride (SOCl2), esterification, amide, reduct",0.6277
+chemistry,12,8,Alpha-Halogenation and Hell-Volhard-Zelinsky Reaction,b,reaction_mechanism,widget,none_symbolic,med,"Retrieval essentially missed HVZ: it survives as one clause in a cheat-sheet list, 'HVZ alpha-halogenation (Cl2/Br2, red P)'. The rest is aldehyde/ketone reactivity and the acid re",0.5792
+chemistry,12,8,"Distinguishing Tests for Aldehydes, Ketones and Acids",b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,8,Multi-step Conversions and Reaction Maps,b,reaction_mechanism,widget,reaction_scheme,med,"Low top sim (0.41) but on point: an explicit 'Reaction map' branching on O-H vs C-OH cleavage, a 'Preparation map', and 'the preparation decision logic' matching starting material ",0.4083
+chemistry,12,8,Haloform Reaction,b,reaction_mechanism,widget,none_symbolic,med,"Demoted: one cheat-sheet line, 'CH3CO- group + X2/NaOH -> CHX3 (yellow CHI3) + carboxylate'. No mechanism retrieved; remaining chunks are aldol/Cannizzaro and acid maps. Top sim 0.",0.4896
+chemistry,12,9,Nomenclature and Classification of Amines,b,none_symbolic,none,,not_in_scope,,
+chemistry,12,9,Physical Properties and Hydrogen Bonding in Amines,b,molecule_struct,widget,data_table_trend,med,"Demoted to a value grid: pKb figures (aniline 9.38, ammonia 4.75), bp order 1>2>3, and the trend's own exception - gas phase 3>2>1 but 'the usual aqueous outcome is 2 > 1 > 3 > NH3",0.5837
+chemistry,12,9,Basicity and Comparison of Amine Strength,b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,9,Preparation of Amines by Reduction and Ammonolysis,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 4 is a 'Preparation of Amines - Complete Compendium' (Method|Reagent|Conversion); chunks 1-2 give 'R-X NH3(excess) -> R-NH2', 'R-CN + 4[H] -> R-CH2NH2', 'CH3CN -LiAlH4-> CH3C",0.6021
+chemistry,12,9,Gabriel Phthalimide and Hofmann Bromamide Synthesis,b,reaction_mechanism,widget,reaction_scheme,high,"Chunk 0 spells the widget out: 'Gabriel scheme in three boxes - phthalimide ->(KOH) -> potassium phthalimide ->(R-X, SN2)-> N-alkylphthalimide ->(H3O+)-> R-NH2', plus the Hofmann e",0.595
+chemistry,12,9,Acylation and Alkylation of Amines,b,reaction_mechanism,widget,none_symbolic,med,"Retrieval is basicity logic, nomenclature and isomerism. Acylation survives as one row of a qualitative matrix (1 -> N-acyl amide, 2 -> N,N-acyl, 3 -> none) and an N-H count rule; ",0.6426
+chemistry,12,9,Electrophilic Substitution in Aromatic Amines,b,reaction_mechanism,widget,none_symbolic,med,"Retrieval missed it: chunk 0 truncates at '3.7 Electrophilic substitution of aniline. The -NH2 group i' and chunk 4 at '-NH2 strongly activating, o/p-directin'. No ring products re",0.5711
+chemistry,12,9,Hofmann Elimination of Quaternary Ammonium Salts,b,reaction_mechanism,widget,none_symbolic,high,"Retrieval clearly missed: every chunk is Hofmann BROMAMIDE degradation, Gabriel, ammonolysis or diazotisation. Hofmann elimination of quaternary ammonium salts does not appear at a",0.5902
+chemistry,12,9,Preparation and Structure of Diazonium Salts,b,labelled_figure,illustration,reaction_scheme,med,"Not a labelled figure: drawable content is the diazotisation chain 'C6H5NH2 + NaNO2 + 2HCl, 273-278 K -> C6H5N2+Cl-' and 'Ar-NH2 + NO+ -> Ar-NH-N=O -> Ar-N=N-OH -H2O-> Ar-N2+'.",0.6454
+chemistry,12,9,"Reactions of Diazonium Salts: Sandmeyer, Gattermann and Coupling",b,reaction_mechanism,widget,reaction_scheme,high,"Chunks describe the artifact: the 'aniline wheel' with 'Ar-N2+Cl- at the hub, with spokes to products... Each spoke labelled with reagent and product', plus a Target|Reagent|Reacti",0.7383
+chemistry,12,9,"Distinguishing Tests for Primary, Secondary and Tertiary Amines",b,data_table_trend,widget,,not_in_scope,,
+chemistry,12,10,Structure and Classification of Carbohydrates,b,molecule_struct,widget,none_symbolic,med,"Demoted from molecule_struct: a hydrolysis-count classification (mono / oligo 2-10 / poly), the reducing vs non-reducing cross-label, and a formula-definition cheat sheet. A classi",0.6311
+chemistry,12,10,Glucose and Fructose: Structure and Reactions,b,molecule_struct,widget,gap_sugar_projection,med,"Retrieval largely missed: chunks 1-5 are amino-acid and peptide practice answers. Mutarotation appears once, as prose about the hemiacetal reopening to alpha or beta. Top sim 0.48.",0.648
+chemistry,12,10,"Anomers, Epimers and Mutarotation",b,molecule_struct,widget,none_symbolic,med,Retrieval largely missed: chunks 1-5 are amino-acid and peptide practice answers. Mutarotation appears once as prose about the hemiacetal reopening to alpha or beta form. Top sim 0,0.4778
+chemistry,12,10,Disaccharides and Glycosidic Linkage,b,molecule_struct,widget,none_symbolic,med,"Demoted from molecule_struct: a qualitative prose contrast - cellulose beta C1-C4 linear, amylose alpha C1-C4, amylopectin/glycogen C1-C6 branched - plus an MCQ. No values, no figu",0.5732
+chemistry,12,10,"Polysaccharides: Starch, Cellulose and Glycogen",b,molecule_struct,widget,none_symbolic,med,"Demoted from molecule_struct: a qualitative contrast in prose - cellulose beta C1-C4 linear, amylose alpha C1-C4, amylopectin/glycogen C1-C6 branched - plus an MCQ. No values, no f",0.6436
+chemistry,12,10,"Amino Acids: Structure, Classification and Zwitterions",b,molecule_struct,widget,none_symbolic,high,"Demoted: formulae and classification - 'General alpha-amino acid: R-CH(NH2)-COOH', 'Zwitter ion: R-CH(+NH3)-COO-', a three-axis classification table, isoelectric point, glycine pit",0.6467
+chemistry,12,10,Peptide Bond and Protein Structure,b,molecule_struct,widget,none_symbolic,med,"Demoted; retrieval scattered (top sim 0.44, mostly DNA/RNA and vitamins). Enzyme content is definitions and lists: biocatalyst, naming, lock-and-key, optimum T 298-310 K, pH 5-7.",0.6081
+chemistry,12,10,Enzymes and Enzyme Catalysis,b,molecule_struct,widget,none_symbolic,high,"Demoted; retrieval scattered (top sim 0.44, mostly DNA/RNA and vitamins). Enzyme content is definitions and lists: biocatalyst, naming, lock-and-key, optimum T 298-310 K, pH 5-7.",0.4357
+chemistry,12,10,Vitamins: Classification and Deficiency Diseases,b,molecule_struct,widget,none_symbolic,high,"Demoted: pure lookup lists - 'fat-soluble = ADEK; water-soluble = B-group + C' and deficiency pairs A->night blindness, B1->beri-beri, C->scurvy, D->rickets, K->clotting. Nothing s",0.6108
+chemistry,12,10,Nucleic Acids: DNA and RNA Structure,b,molecule_struct,widget,none_symbolic,med,"Demoted from molecule_struct: a DNA|RNA feature table, attachment/phosphodiester positions, A-T G-C pairing rules and a base-counting exercise. The double helix is one sentence of ",0.6386
+chemistry,12,10,Hormones and Their Functions,b,data_table_trend,widget,,not_in_scope,,
+mathematics,11,0,"Logarithms: Definition, Properties and Change of Base",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,Sets and Their Representations,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,"Types of Sets: Empty, Finite, Infinite and Equal Sets",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,"Subsets, Power Set and Universal Set",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,Intervals as Subsets of the Real Line,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,"Set Operations: Union, Intersection and Difference",j,venn_tree,widget,,not_in_scope,,
+mathematics,11,1,Symmetric Difference of Sets,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,Complement of a Set and De Morgan's Laws,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,Laws of Algebra of Sets and Set Identities,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,Cardinality Formulas for Unions of Sets,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,1,Word Problems Using Venn Diagrams,j,venn_tree,widget,,not_in_scope,,
+mathematics,11,2,Cartesian Product of Sets and Ordered Pairs,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,2,"Relations: Definition, Domain, Range and Representation",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,2,Domain and Range of Real Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,2,Standard Real Functions and Their Graphs,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,2,Algebra of Real Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,2,Even and Odd Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,2,Periodic Functions and Their Periods,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,2,Number of Relations and Functions Between Finite Sets,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,2,Functional Equations,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,3,"Measurement of Angles: Degrees, Radians and Arc Length",j,unit_circle_trig,widget,,not_in_scope,,
+mathematics,11,3,"Trigonometric Functions: Domain, Range and Signs in Quadrants",j,unit_circle_trig,widget,,not_in_scope,,
+mathematics,11,3,"Standard Values, Even-Odd Nature and Allied Angles",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,3,Graphs and Periodicity of Trigonometric Functions,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,3,Compound Angle Formulas and Trigonometric Identities,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,3,Multiple and Sub-Multiple Angle Formulas,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,3,Transformation Formulas: Sum to Product and Product to Sum,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,3,Conditional Trigonometric Identities,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,3,Trigonometric Equations: Principal and General Solutions,j,unit_circle_trig,widget,,not_in_scope,,
+mathematics,11,3,Maximum and Minimum Values of Trigonometric Expressions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,3,Summation of Trigonometric Series,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Algebra of Complex Numbers and Powers of i,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Modulus and Conjugate: Properties and Manipulation,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Square Root of a Complex Number,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Quadratic and Polynomial Equations with Complex Roots,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Argument and Polar Form in the Argand Plane,j,argand,widget,,not_in_scope,,
+mathematics,11,4,De Moivre's Theorem and Euler Form,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Cube Roots and nth Roots of Unity,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Triangle Inequality and Extreme Values of Modulus,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Loci and Regions in the Argand Plane,j,argand,widget,,not_in_scope,,
+mathematics,11,4,Rotation Theorem and Triangle Geometry in the Argand Plane,j,argand,widget,,not_in_scope,,
+mathematics,11,4,Summation of Trigonometric Series using Complex Numbers,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Nature of Roots and the Discriminant,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Relations Between Roots and Coefficients and Symmetric Functions of Roots,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,4,Formation of Quadratic Equations and Condition for a Common Root,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,5,Solving Linear Inequalities in One Variable,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,5,Integral Solutions of Inequalities,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,5,Word Problems on Linear Inequalities,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,5,Graphical Solution of Linear Inequalities in Two Variables,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,5,Systems of Linear Inequalities and Feasible Regions,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,5,Inequalities Involving Modulus,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,5,Polynomial and Rational Inequalities by the Wavy Curve Method,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,5,Inequalities with Irrational (Square Root) Expressions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,5,Exponential and Logarithmic Inequalities,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Fundamental Principle of Counting,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Factorial Notation and Its Properties,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Permutations of Distinct Objects,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Permutations with Repetition and Identical Objects,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Arrangements with Restrictions and the Gap Method,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Circular Permutations,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Combinations and Selections,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Division into Groups and Distribution of Identical Objects,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,"Geometrical Counting: Lines, Triangles and Diagonals",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,6,Counting Divisors and Number-Theoretic Selections,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Counting Functions and Mappings Between Finite Sets,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Inclusion-Exclusion Principle and Derangements,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Sum of Numbers Formed by Given Digits,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,6,Rank of a Word in Dictionary Order,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Binomial Expansion and Pascal's Triangle,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,"General, Middle and Independent Terms",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Greatest Term and Greatest Binomial Coefficient,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Coefficient of a Term in a Product of Expansions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Binomial Coefficient Identities and Summation of Series,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Differentiation and Integration of Binomial Series,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Multinomial Theorem,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Binomial Theorem for Any Index and Approximations,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,"Divisibility, Remainders and Last Digits",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,7,Integral and Fractional Parts of Irrational Binomials,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Sequences: General Term and Recursive Definitions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Sigma Notation and Algebra of Summations,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Arithmetic Progression: nth Term and Sum of n Terms,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Arithmetic Mean and Insertion of Arithmetic Means,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,"Geometric Progression: nth Term, Sum and Infinite GP",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,"Geometric Mean, Insertion of GMs and GP Inequalities",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Harmonic Progression and Harmonic Mean,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,"AM, GM, HM Relations and the AM-GM Inequality",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,"Sum of Special Series: Sigma n, Sigma n^2 and Sigma n^3",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Arithmetico-Geometric Progression,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Telescoping Series and the Method of Differences,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,8,Applications and Word Problems on Progressions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,9,"Distance, Section Formula and Area of a Triangle in the Plane",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Slope of a Line and Angle Between Two Lines,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Equations of a Straight Line in Various Forms,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Distance of a Point from a Line and Between Parallel Lines,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Position of a Point Relative to a Line,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,"Point of Intersection, Concurrency and Family of Lines",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,"Foot of Perpendicular, Image and Reflection of a Point",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Angle Bisectors of Two Lines,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Locus and Its Equation,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,"Special Points of a Triangle: Centroid, Incentre, Circumcentre and Orthocentre",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Pair of Straight Lines,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,9,Shifting of Origin and Rotation of Axes,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,Focus-Directrix Definition and Identification of a Conic,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"The Circle: Standard and General Equations, Centre and Radius",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"Tangents, Normals and Chord of Contact for a Circle",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"Family of Circles, Radical Axis and Orthogonal Circles",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"The Parabola: Standard Forms, Focus, Directrix and Latus Rectum",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"Tangents, Normals and Chords of a Parabola",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"The Ellipse: Standard Equation, Foci and Eccentricity",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"Tangents, Normals and Chords of an Ellipse",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"The Hyperbola: Standard Equation, Foci and Eccentricity",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"Tangents, Normals and Chords of a Hyperbola",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,"Asymptotes, Conjugate and Rectangular Hyperbola",j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,10,Relative Position of Two Circles and Common Tangents,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,11,"Coordinate Axes, Planes and Octants",j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Distance Formula in Three Dimensions,j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Distance of a Point from the Coordinate Axes and Planes,j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Collinearity of Three Points in Space,j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Classifying Triangles and Quadrilaterals from Given Vertices,j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Section Formula: Internal and External Division,j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Midpoint and Centroid of Triangles and Tetrahedra,j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Image and Foot of Perpendicular on the Coordinate Planes,j,geometry_3d,widget,,not_in_scope,,
+mathematics,11,11,Locus of a Point in Space,j,geometry_plane,widget,,not_in_scope,,
+mathematics,11,12,"Left-Hand, Right-Hand Limits and Existence of a Limit",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Evaluating Limits by Factorisation and Rationalisation,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Limits of Greatest Integer and Modulus Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Sandwich Theorem,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,"Standard Trigonometric, Exponential and Logarithmic Limits",j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Limits at Infinity and Limits of Rational Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Indeterminate Form 1^infinity and Exponential Limits,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,L'Hopital's Rule for Indeterminate Forms,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Derivative from First Principles,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Derivative as Slope of a Tangent and Rate of Change,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,12,Product and Quotient Rules of Differentiation,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,12,Derivatives of Trigonometric Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,11,13,"Mean, Median and Mode",j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Range and Quartile Deviation,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Mean Deviation about the Mean and the Median,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Variance and Standard Deviation,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Mean and Variance of the First n Natural Numbers,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Effect of Change of Origin and Scale on Mean and Variance,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Combined Mean and Combined Variance of Two or More Groups,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Correcting Mean and Variance for Wrong or Missing Observations,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,13,Coefficient of Variation and Comparison of Consistency,j,xy_plot,widget,,not_in_scope,,
+mathematics,11,14,"Random Experiments, Sample Space and Events",j,venn_tree,widget,,not_in_scope,,
+mathematics,11,14,Mutually Exclusive and Exhaustive Events,j,venn_tree,widget,,not_in_scope,,
+mathematics,11,14,Axiomatic Probability and Its Properties,j,venn_tree,widget,,not_in_scope,,
+mathematics,11,14,Complementary Events and At Least One Problems,j,venn_tree,widget,,not_in_scope,,
+mathematics,11,14,Addition Theorem for the Union of Events,j,venn_tree,widget,,not_in_scope,,
+mathematics,11,14,"Combinatorial Probability with Dice, Coins, Cards and Selections",j,venn_tree,widget,,not_in_scope,,
+mathematics,11,14,Odds in Favour and Odds Against,j,venn_tree,widget,,not_in_scope,,
+mathematics,12,1,"Types of Relations: Reflexive, Symmetric and Transitive",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,1,Equivalence Relations and Equivalence Classes,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,1,"One-One, Onto and Bijective Functions",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,1,Composition of Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,1,Inverse of a Function,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Domain and Range of Inverse Trigonometric Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Principal Values and Principal Value Branches,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Graphs of Inverse Trigonometric Functions,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,2,Reciprocal Relations Between Inverse Trigonometric Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Complementary and Negative-Argument Identities,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Evaluating Composites of Trigonometric and Inverse Trigonometric Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Sum and Difference Formulae for tan Inverse,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Sum and Difference Formulae for sin Inverse and cos Inverse,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Multiple-Angle Formulae and Their Validity Conditions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Substitution Techniques for Simplifying Inverse Trigonometric Expressions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Solving Equations Involving Inverse Trigonometric Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,2,Summation of Inverse Trigonometric Series,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,"Order, Types and Representation of Matrices",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,"Addition, Subtraction, Scalar Multiplication and Equality of Matrices",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Matrix Multiplication and Its Properties,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Trace of a Matrix,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Powers of a Matrix and Matrix Polynomials,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Transpose of a Matrix and Its Properties,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Symmetric and Skew-Symmetric Matrices,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Invertible Matrices and Uniqueness of the Inverse,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Inverse by Elementary Row Operations,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,"Idempotent, Involutory, Nilpotent and Orthogonal Matrices",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Solving Matrix Equations for an Unknown Matrix,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,3,Counting Matrices with Given Properties,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Evaluation and Expansion of Determinants,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Properties of Determinants and Row-Column Simplification,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Multiplication of Two Determinants,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,"Determinants of Powers, Products and Special Matrices",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,"Minors, Cofactors and the Adjoint",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Inverse of a Matrix Using the Adjoint,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Area of a Triangle and Collinearity Using Determinants,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Equation of a Line in Determinant Form,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Solving Linear Systems by Cramer's Rule and Matrix Inversion,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Consistency of Non-Homogeneous Systems,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Homogeneous Systems and Non-Trivial Solutions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,4,Differentiation of Determinant-Valued Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Continuity at a Point and on an Interval,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,5,Differentiability and Existence of the Derivative,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,5,Continuity and Differentiability of Piecewise and Modulus Functions,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,5,Standard Derivatives with the Product and Quotient Rules,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Chain Rule and Derivatives of Composite Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Derivatives of Inverse Trigonometric Functions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Implicit Differentiation,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Logarithmic Differentiation,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Parametric Differentiation,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Differentiation of One Function with Respect to Another,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Second and Higher Order Derivatives,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,5,Rolle's Theorem and Lagrange's Mean Value Theorem,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,5,Continuity of Composite Functions and the Intermediate Value Property,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Rate of Change and Related Rates,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Tangents and Normals to a Curve,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Angle of Intersection of Two Curves,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Approximations and Errors Using Differentials,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,6,Increasing and Decreasing Functions,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Maxima and Minima Using the Derivative Tests,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Absolute Maximum and Minimum on a Closed Interval,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Applied Optimization Problems,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,"Concavity, Inflection Points and Curve Sketching",j,xy_plot,widget,,not_in_scope,,
+mathematics,12,6,Proving Inequalities Using Monotonicity,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,6,Number of Roots of an Equation Using Derivatives,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Indefinite Integrals of Standard Forms,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Integration by Substitution,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Integration Using Trigonometric Identities,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Integrals with Quadratic Denominators and Radicals,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Integration by Partial Fractions,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Integration by Parts,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Integration of Rational Functions of sin x and cos x,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Definite Integral as the Limit of a Sum,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Definite Integrals and the Fundamental Theorem of Calculus,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Definite Integration by Substitution,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Properties of Definite Integrals and Symmetry,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,"Definite Integrals of Modulus, Greatest Integer and Periodic Functions",j,none_symbolic,none,,not_in_scope,,
+mathematics,12,7,Definite Integrals with Variable Limits and Leibniz Rule,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,8,Area Under a Simple Curve Bounded by the Axes,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area by Integration Along the y-axis,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area Bounded by a Parabola and a Line,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area Between Two Intersecting Curves,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area of Regions Bounded by Circles and Ellipses,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area Bounded by a Curve and Its Tangent or Normal,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area Between a Function and Its Inverse,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area of Regions Involving Modulus and Piecewise-Defined Functions,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Areas Involving Greatest Integer and Fractional Part Functions,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,8,Area of Regions Described by Inequalities,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,9,Order and Degree of a Differential Equation,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,General and Particular Solutions and Their Verification,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Formation of Differential Equations by Eliminating Arbitrary Constants,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Variable Separable Differential Equations,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Equations Reducible to Variable Separable Form,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Homogeneous Differential Equations,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Equations Reducible to Homogeneous Form,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Linear Differential Equations and the Integrating Factor,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Linear Equations in x and Bernoulli-Type Reduction,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,Exact Differential Equations,j,none_symbolic,none,,not_in_scope,,
+mathematics,12,9,"Applications: Growth, Decay and Curve Geometry",j,process_cycle,widget,xy_plot,high,"Closed-form curves to plot: 'N = N0 e^kt' with doubling time / half-life ln2/k, and 'theta = theta_s + (theta0-theta_s) e^{-kt}' with the stated asymptote 'as t -> infinity, theta ",0.55
+mathematics,12,10,Types of Vectors and Vector Addition,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,"Components, Direction Cosines and Unit Vectors",j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,"Position Vectors, Section Formula and Collinearity",j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Scalar (Dot) Product and Its Properties,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Projection of a Vector and Angle Between Two Vectors,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Vector (Cross) Product and Its Properties,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Area of Triangles and Parallelograms Using Cross Product,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Scalar Triple Product and Volume of a Parallelepiped,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Coplanarity of Vectors Using the Scalar Triple Product,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Vector Triple Product,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,Linear Dependence and Independence of Vectors,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,10,"Vector Applications: Work, Moment and Geometric Proofs",j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,"Coordinates in Space: Distance, Section Formula and Projections",j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Direction Cosines and Direction Ratios,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Equation of a Line in Vector and Cartesian Form,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Angle Between Two Lines,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,"Perpendicular Distance, Foot and Image of a Point with Respect to a Line",j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Shortest Distance Between Two Skew Lines,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Intersection and Coplanarity of Two Lines,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Equation of a Plane in Various Forms,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Distance of a Point from a Plane,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Angle Between Two Planes and Between a Line and a Plane,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Point of Intersection of a Line and a Plane,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Foot of Perpendicular and Image of a Point in a Plane,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,11,Family of Planes Through the Line of Intersection,j,geometry_3d,widget,,not_in_scope,,
+mathematics,12,12,Mathematical Formulation of a Linear Programming Problem,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,12,Graphing Constraints and the Feasible Region,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,12,Corner Point Method for Optimal Solutions,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,12,Bounded and Unbounded Feasible Regions,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,12,Multiple Optimal Solutions,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,12,Infeasible Problems and Empty Feasible Regions,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,12,Manufacturing and Diet Allocation Problems,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,12,Transportation and Blending Problems,d,geometry_plane,widget,,not_in_scope,,
+mathematics,12,13,Probability of Events Defined by Equations and Inequalities,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,13,Conditional Probability,j,venn_tree,widget,,not_in_scope,,
+mathematics,12,13,Independent Events and the Multiplication Theorem,j,venn_tree,widget,,not_in_scope,,
+mathematics,12,13,Total Probability Theorem,j,venn_tree,widget,,not_in_scope,,
+mathematics,12,13,Bayes' Theorem,j,venn_tree,widget,,not_in_scope,,
+mathematics,12,13,Random Variables and Probability Distributions,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,13,Mean and Variance of a Random Variable,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,13,Bernoulli Trials and the Binomial Distribution,j,xy_plot,widget,,not_in_scope,,
+mathematics,12,13,Mean and Variance of the Binomial Distribution,j,xy_plot,widget,,not_in_scope,,
+biology,11,1,Characteristics of Living Organisms,n,none_symbolic,none,,not_in_scope,,
+biology,11,1,Biodiversity and the Need for Classification,n,data_table_trend,widget,,not_in_scope,,
+biology,11,1,"Taxonomy, Systematics and Classification: Scope and Definitions",n,data_table_trend,widget,,not_in_scope,,
+biology,11,1,Binomial Nomenclature: Rules and Conventions,n,none_symbolic,none,,not_in_scope,,
+biology,11,1,Concept of Species and Taxon,n,none_symbolic,none,,not_in_scope,,
+biology,11,1,Taxonomic Hierarchy: Categories from Kingdom to Species,n,labelled_figure,illustration,process_flow,med,"Chunks are definitions (taxon vs category) plus an explicit diagram spec: inverted pyramid of seven ordered bands Kingdom->Species with two trend arrows. Ordered labelled nodes, no",0.6483
+biology,11,1,"Taxonomic Aids: Herbarium, Botanical Garden, Museum and Zoological Park",n,process_cycle,widget,none_symbolic,high,"Retrieval missed: top sim 0.50 and every chunk is nomenclature/binomial/hierarchy text. No herbarium, botanical garden, museum or zoo content at all.",0.5013
+biology,11,1,"Taxonomic Keys, Flora, Manuals and Monographs",n,none_symbolic,none,,not_in_scope,,
+biology,11,2,"Classification Systems: Two-Kingdom, Five-Kingdom and Three Domains",n,data_table_trend,widget,,not_in_scope,,
+biology,11,2,Kingdom Monera: Bacterial Forms and Nutritional Types,n,labelled_figure,illustration,labelled_figure,med,"Chunk carries 'Figure - illustration brief: two-panel comparison, left a labelled prokaryotic [cell]' plus bacterial shape forms and outside-in cell structure (capsule, wall, mesos",0.6351
+biology,11,2,Archaebacteria: Groups and Extreme Habitats,n,labelled_figure,illustration,none_symbolic,high,"Chunks are cheat-sheet lists and MCQs: three archaea groups paired with habitats, no peptidoglycan, branched lipids. A classification list, nothing with spatial form.",0.6045
+biology,11,2,Cyanobacteria and Nitrogen-fixing Bacteria,n,process_cycle,widget,none_symbolic,med,"Chunks are property lists (chlorophyll a, heterocysts, biofertiliser) plus a bullet list of beneficial roles and MCQs. No nitrogen cycle stages are laid out; 'nutrient cycle' appea",0.5358
+biology,11,2,Kingdom Protista: Major Groups and Their Features,n,labelled_figure,illustration,none_symbolic,med,"Chunks are a group-vs-covering-vs-stored-food diagnostic table and a wall-material decision rule. The only figure brief is a hub-and-spoke concept map, not an organism drawing.",0.6922
+biology,11,2,"Fungal Structure, Nutrition and Modes of Reproduction",n,labelled_figure,illustration,labelled_figure,med,Explicit illustration brief: mycelium as a branching network of hyphae through a substrate with an inset contrasting a septate hypha with cross-walls vs an aseptate coenocytic one.,0.6986
+biology,11,2,Kingdom Fungi: Classification into Four Classes,n,data_table_trend,widget,,not_in_scope,,
+biology,11,2,Kingdoms Plantae and Animalia: Defining Features,n,labelled_figure,illustration,none_symbolic,high,"Chunks are bullet lists of kingdom-defining features (cellulose wall, plastids, starch vs glycogen) plus the two-kingdom history. Pure feature recall.",0.6835
+biology,11,2,Lichens and Mycorrhizal Associations,n,labelled_figure,illustration,none_symbolic,high,"Lichen content is one definition (phycobiont + mycobiont, SO2 indicator); the remaining chunks are fungal classes and a fungal sexual-cycle strip. Nothing lichen-structural retriev",0.5005
+biology,11,2,"Viruses: Structure, Composition and Diseases",n,labelled_figure,illustration,labelled_figure,high,"Explicit illustration brief: bacteriophage with labelled head, collar, sheath/tail and tail fibres beside a rod-shaped TMV with helical capsomeres around coiled RNA.",0.6258
+biology,11,2,Viroids and Prions,n,labelled_figure,illustration,none_symbolic,high,"Viroid = free RNA with no coat; prion = protein only. Chunks are a virus/viroid/prion strip-down table, mnemonics and MCQs; the only figure retrieved is the phage, not these agents",0.6953
+biology,11,3,"Classification Systems: Artificial, Natural and Phylogenetic",n,data_table_trend,widget,,not_in_scope,,
+biology,11,3,"Numerical, Cyto- and Chemotaxonomy",n,none_symbolic,none,,not_in_scope,,
+biology,11,3,Alternation of Generations and Life Cycle Patterns,n,process_cycle,widget,process_flow,high,"Chunks give the cycle as an explicit arrow chain: 'gametes (n) -fusion-> zygote (2n) -meiosis-> zoospores (n) -> gametophyte', with the three patterns keyed to where meiosis sits i",0.6082
+biology,11,3,"Algae: Chlorophyceae, Phaeophyceae and Rhodophyceae",n,labelled_figure,illustration,none_symbolic,med,"Dominant chunk is the three-class comparison table (pigments, reserve food, wall, flagella). The one drawable item is a peripheral kelp habit sketch that does not carry the class d",0.6602
+biology,11,3,Economic Importance of Algae and Their Products,n,labelled_figure,illustration,none_symbolic,high,"Retrieval missed: top sim 0.47, chunks are the algae definition, the class table and angiosperm double fertilisation. No economic-products content (agar, algin, carrageen) retrieve",0.4731
+biology,11,3,Bryophytes: Liverworts and Mosses,n,labelled_figure,illustration,labelled_figure,med,"Chunks describe body form: liverwort flat dorsiventral thallus anchored by rhizoids, gemmae in cup-like gemma cups, moss gametophyte stages. Organism morphology.",0.6402
+biology,11,3,"Pteridophytes: Classes, Structure and Life Cycle",n,process_cycle,widget,labelled_figure,med,"Explicit Illustration: fern sporophyte with true roots, rhizome and fronds bearing sori, beside a separate heart-shaped prothallus with antheridia/archegonia, labelled 2n vs n.",0.7171
+biology,11,3,Heterospory and the Origin of the Seed Habit,n,data_table_trend,widget,,not_in_scope,,
+biology,11,3,"Gymnosperms: Characteristics, Structure and Examples",n,labelled_figure,illustration,labelled_figure,med,"Chunks carry an 'Illustration: A pine (Pinus...)' brief plus structural detail - needle leaves with sunken stomata, coralloid roots, micropyle/ovule, cones.",0.6855
+biology,11,3,"Angiosperms: Dicots, Monocots and Double Fertilisation",n,process_cycle,widget,labelled_figure,med,"Embryo sac given positionally: egg apparatus at the micropylar end, three antipodals at the chalazal end, central cell with two polar nuclei - 7 cells, 8 nuclei. The classic labell",0.6922
+biology,11,4,"Basis of Classification: Levels of Organisation, Symmetry and Germ Layers",n,data_table_trend,widget,,not_in_scope,,
+biology,11,4,"Coelom: Acoelomate, Pseudocoelomate and Coelomate Organisation",n,labelled_figure,illustration,labelled_figure,med,"Chunks describe layer geometry: mesoderm packing the space solidly, scattered mesodermal pouches between ectoderm and endoderm, coelom lined by mesoderm both sides - the three cros",0.6837
+biology,11,4,Phylum Porifera,n,labelled_figure,illustration,labelled_figure,med,"Chunk 3 carries 'Diagram. Longitudinal section of a simple sponge (Sycon-type)' with ostia, spongocoel, flagellated choanocytes and the one-way current. Retrieval otherwise generic",0.495
+biology,11,4,Phylum Coelenterata and Ctenophora,n,labelled_figure,illustration,none_symbolic,med,Retrieval returned only the ten-phylum master matrix and the signature-organ cheat sheet. Polyp/medusa is a table cell; no cnidarian or ctenophore structure is described.,0.609
+biology,11,4,Phylum Platyhelminthes,n,labelled_figure,illustration,none_symbolic,high,"All chunks are the phylum feature matrix and a reproduction-terminology table (oviparous, viviparous...). No flatworm anatomy retrieved at all.",0.5458
+biology,11,4,Phylum Aschelminthes (Nematoda),n,labelled_figure,illustration,none_symbolic,high,Top sim 0.485 and every chunk is the shared master matrix / cheat sheet. Nothing specific to roundworm body organisation was retrieved.,0.4854
+biology,11,4,Phylum Annelida,n,labelled_figure,illustration,none_symbolic,high,"Chunks are the coelom line-up, circulation lists and the phylum matrix. Metameric segmentation appears only as a table phrase; no annelid structure described.",0.5454
+biology,11,4,Phylum Arthropoda,n,labelled_figure,illustration,none_symbolic,high,"Chunks are the master matrix, fingerprint mnemonics and a taxonomy decision tree. 'Jointed legs, largest phylum' is a table cell, not a described structure.",0.5359
+biology,11,4,Phylum Mollusca,n,labelled_figure,illustration,none_symbolic,high,Chunks are the phylum matrix rows and an open-vs-closed-circulation analogy. Foot/visceral hump/mantle appears only inside a table cell; no molluscan figure retrieved.,0.6342
+biology,11,4,Phylum Echinodermata and Hemichordata,n,labelled_figure,illustration,none_symbolic,high,Retrieval drifted to Chordata: the chunks are the chordate branching key and the classification tree. Echinoderm/hemichordate content is confined to matrix rows.,0.6039
+biology,11,4,Phylum Chordata: General Characters and Subphyla,n,labelled_figure,illustration,none_symbolic,high,"Chunks are the chordate feature checklist, subphylum one-liners and a yes/no classification tree of taxon names. Classification, not structure.",0.6696
+biology,11,4,"Class Cyclostomata, Chondrichthyes and Osteichthyes",n,labelled_figure,illustration,none_symbolic,high,"Chunks are class one-liners (jawless; cartilage, no operculum; operculum + air bladder) and the chordate taxonomy tree. Pure feature recall.",0.6894
+biology,11,4,Class Amphibia and Reptilia,n,labelled_figure,illustration,none_symbolic,high,"Chunks are class one-liners, the whole-kingdom table and the canonical example bank. No amphibian or reptile anatomy in the retrieved text.",0.5715
+biology,11,4,Class Aves and Mammalia,n,labelled_figure,illustration,none_symbolic,high,"Chunks are comparison-table rows (heart chambers, respiration, skin derivatives) plus the genus example bank and exception list. A feature grid of categories, not a drawing.",0.5622
+biology,11,5,"Root System: Types, Regions and Modifications",n,labelled_figure,illustration,labelled_figure,med,"Chunks give the root's axial zones - root cap, meristematic, elongation, maturation with root hairs confined to maturation and lateral roots arising there - alongside the modificat",0.5354
+biology,11,5,Stem: Modifications and Functions,n,labelled_figure,illustration,none_symbolic,med,"Chunks are modification classification tables (underground/subaerial/aerial -> job -> example) and pitfall notes. The only illustration brief retrieved is of a leaf, not a stem.",0.52
+biology,11,5,"Leaf: Types, Venation, Phyllotaxy and Modifications",n,labelled_figure,illustration,labelled_figure,high,"Explicit illustration brief plus 'Structure 2 - Parts of a typical dicot leaf': leaf base, stipules, petiole, lamina, midrib, veins/veinlets and the axillary bud in the axil.",0.622
+biology,11,5,Inflorescence: Racemose and Cymose,n,labelled_figure,illustration,none_symbolic,med,Retrieved content is a three-column definition table (main axis indefinite vs terminating; acropetal vs basipetal; mustard vs Solanum). No branching figure is described.,0.5776
+biology,11,5,"The Flower: Floral Parts, Symmetry and Ovary Position",n,labelled_figure,illustration,labelled_figure,high,"Explicit illustration brief: three side-view flowers - hypogynous ovary on the thalamus, perigynous on a cup-shaped rim, epigynous embedded - with the other whorls' insertion level",0.7158
+biology,11,5,Aestivation and Placentation Types,n,labelled_figure,illustration,labelled_figure,med,Chunks describe arrangements geometrically: margins just touching vs regularly overlapping; ovules on the ventral suture / a central axis with septa / the ovary wall. Retrieval wea,0.478
+biology,11,5,Stamen and Carpel Fusion: Cohesion and Adhesion,n,labelled_figure,illustration,none_symbolic,med,"Top sim 0.43 - retrieval largely missed. Chunks are term definitions (gamosepalous, epipetalous, epiphyllous) and floral-formula decoding; no described figure of stamen or carpel f",0.4262
+biology,11,5,"Fruit: Types, Pericarp and False Fruits",n,labelled_figure,illustration,labelled_figure,med,"Chunks name pericarp layers outside-in from a sliced fruit (epicarp, mesocarp, endocarp) and carry a longitudinal-section ovule brief with funicle, hilum, integuments, micropyle, c",0.6243
+biology,11,5,Seed Structure in Dicots and Monocots,n,labelled_figure,illustration,none_symbolic,low,"Retrieval drifted: top chunk is the Solanaceae table, another is leaf parts. Seed content is a dicot-vs-monocot feature table (cotyledons, endosperm, coleoptile), not a described s",0.5756
+biology,11,5,Semi-technical Description: Floral Diagram and Floral Formula,n,labelled_figure,illustration,gap_floral_diagram,med,"Chunks are about constructing floral diagrams and formulae from a symbol key (K C A G, fusion brackets, ovary position). A diagram parameterised by a formula - no shipped or approv",0.6337
+biology,11,5,Family Solanaceae: Floral Characters and Floral Formula,n,labelled_figure,illustration,gap_floral_diagram,med,"Explicit brief: Solanaceae floral diagram - 5 fused sepals, 5 valvate petals, 5 epipetalous stamens, bicarpellary superior ovary in T.S. with two locules, axile placentation. No ex",0.66
+biology,11,5,"Families Malvaceae, Cruciferae, Leguminosae, Compositae and Graminae",n,labelled_figure,illustration,none_symbolic,high,"Retrieval mismatch: every chunk covers Fabaceae, Solanaceae and Liliaceae - the three NCERT families - with nothing on Malvaceae, Cruciferae, Compositae or Graminae.",0.5401
+biology,11,6,"Meristems: Types, Location and Function",n,labelled_figure,illustration,none_symbolic,med,"Chunks are classification tables (position: apical/intercalary/lateral; primary vs secondary; cell characters). The one 'Figure to be drawn' retrieved is dicot/monocot T.S., not me",0.5811
+biology,11,6,"Simple Permanent Tissues: Parenchyma, Collenchyma and Sclerenchyma",n,labelled_figure,illustration,labelled_figure,med,"Chunks describe cell-level form: isodiametric vs elongated cells, collenchyma corner thickening, sclereids spherical with narrow lumen and numerous pits. Tissue drawing.",0.6676
+biology,11,6,Xylem: Structure and Conducting Elements,n,labelled_figure,illustration,labelled_figure,med,"Chunks describe element form - tracheids elongated with tapering ends and pits, vessel elements joined end-to-end into open tubes - plus protoxylem position (endarch vs exarch).",0.6868
+biology,11,6,Phloem: Structure and Conducting Elements,n,labelled_figure,illustration,labelled_figure,med,"Chunks describe sieve tube elements stacked into pipes with perforated sieve plates, cytoplasm pushed to a thin peripheral layer, and the companion-cell partnership.",0.6545
+biology,11,6,"Epidermal Tissue System: Epidermis, Stomata and Trichomes",n,labelled_figure,illustration,labelled_figure,med,"Chunks give stomatal apparatus form: kidney-shaped dicot guard cells vs dumb-bell monocot, subsidiary cells surrounding them, trichomes as multicellular epidermal hairs, root hairs",0.6129
+biology,11,6,Anatomy of Dicot and Monocot Root,n,labelled_figure,illustration,labelled_figure,high,"Explicit 'Figure to be drawn': paired transverse sections, dicot left / monocot right - dicot tetrarch radial bundles with small pith vs monocot polyarch, plus casparian-banded end",0.7252
+biology,11,6,Anatomy of Dicot and Monocot Stem,n,labelled_figure,illustration,labelled_figure,high,"Same paired-T.S. brief plus a second: three half-sections of a young dicot stem (separate bundles, cambial ring completing, secondary xylem) and a labelled old-trunk wedge with ann",0.7308
+biology,11,6,Anatomy of Dorsiventral and Isobilateral Leaf,n,labelled_figure,illustration,labelled_figure,high,"Chunks carry a figure spec: 'Three paired transverse sections side by side, each split dicot/monocot' plus mesophyll/stomata/bulliform layer anatomy. Real drawn T.S., not a widget.",0.5797
+biology,11,6,Secondary Growth in Dicot Stem: Vascular Cambium,n,labelled_figure,illustration,labelled_figure,high,Explicit figure spec: 'three transverse half-sections ... intrafascicular cambium ... interfascicular cambium ... broad band of secondary xylem inside the ring'. Stem anatomy.,0.672
+biology,11,6,"Cork Cambium, Periderm and Lenticels",n,labelled_figure,illustration,labelled_figure,med,Chunks are mostly feature tables (phellem/phellogen/phelloderm origin+nature) but the periderm is a concentric layered anatomy with a lenticel breaking the surface. Weakest of the ,0.6589
+biology,11,6,"Annual Rings, Heartwood and Sapwood",n,labelled_figure,illustration,labelled_figure,high,"Figure spec retrieved: 'transverse wedge of an old trunk labelled from centre outward: pith, heartwood (tyloses), sapwood, cambium ... mark two annual rings'.",0.6633
+biology,11,7,"Epithelial Tissue: Types, Location and Cell Junctions",n,labelled_figure,illustration,labelled_figure,med,"Epithelium is classified by CELL SHAPE in the chunks - 'ciliated columnar/cuboidal cells bearing cilia', 'compound (stratified) many layers'. Morphology, so a drawing, though bundl",0.5789
+biology,11,7,Connective Tissue: Types and Matrix,n,labelled_figure,illustration,none_symbolic,med,"Demoted: chunks for this concept are a classification hierarchy (loose/dense/specialised) plus 'little cell, lots of matrix' prose and MCQ reasoning. Composition, not drawable morp",0.5796
+biology,11,7,"Muscular Tissue: Skeletal, Smooth and Cardiac",n,labelled_figure,illustration,labelled_figure,med,"Chunks describe cell morphology directly: fibres long+striated, cardiac branched with intercalated discs, smooth spindle-shaped non-striated. Shape is the examinable thing.",0.5895
+biology,11,7,Neural Tissue: Neurons and Neuroglia,n,labelled_figure,illustration,none_symbolic,low,"Retrieval missed - top sim 0.43, all six chunks are the generic four-tissue block/MCQs. Only neuron content is one cheat line 'cell body + dendrites + axon'. Not enough to earn a f",0.4317
+biology,11,7,Earthworm: Morphology and Digestive System,n,labelled_figure,illustration,labelled_figure,high,Explicit spec: 'A lateral view of an earthworm with key segments labelled ... below it a cut-away of the anterior gut ... gizzard at 8-9 ... typhlosole ridge inside'.,0.6655
+biology,11,7,"Earthworm: Circulatory, Excretory and Reproductive Systems",n,labelled_figure,illustration,labelled_figure,med,"Same earthworm anatomy block; retrieval drifted to the gut and general morphology rather than nephridia/spermathecae, but the content is organism anatomy with segment positions.",0.606
+biology,11,7,Cockroach: Morphology and Digestive System,n,labelled_figure,illustration,labelled_figure,high,"Explicit spec: 'A dorsal view of the cockroach showing the three body regions ... alongside, a schematic of the alimentary canal in order'.",0.6919
+biology,11,7,"Cockroach: Circulatory, Respiratory and Excretory Systems",n,labelled_figure,illustration,labelled_figure,med,"Cockroach anatomy: 13-chambered dorsal heart with valved ostia, haemocoel, 10 pairs of spiracles/tracheae, malpighian tubules at the midgut-hindgut junction. Positional, drawable.",0.6274
+biology,11,7,Cockroach: Nervous System and Reproduction,n,labelled_figure,illustration,labelled_figure,med,"Chunks give the nervous layout - 'double ventral nerve cord ... segmental ganglia (three thoracic, six abdominal), fused head ganglia = supra-oesophageal ganglion' - plus head appe",0.6704
+biology,11,7,Frog: External Morphology and Digestive System,n,labelled_figure,illustration,labelled_figure,high,"External morphology in detail: skin glands, 4/5 webbed digits, tympanum behind the eye, nictitating membrane, plus an 'organ systems at a glance' table. Anatomy drawing.",0.6843
+biology,11,7,Frog: Circulatory and Respiratory Systems,n,labelled_figure,illustration,labelled_figure,med,"Chunks describe heart anatomy - two atria, one ventricle, sinus venosus and truncus arteriosus with the blood route through them. A labelled heart, not a parametric widget.",0.6513
+biology,11,7,"Frog: Excretory, Nervous and Reproductive Systems",n,labelled_figure,illustration,labelled_figure,med,Frog anatomy chunks; the male route 'testes -> vasa efferentia -> kidney -> Bidder's canal -> ureter -> cloaca' is an anatomical route best shown on the drawn urinogenital system.,0.6588
+biology,11,8,Cell Theory and Overview of Cell Types,n,labelled_figure,illustration,none_symbolic,med,"Demoted: chunks are history and definition - Schleiden/Schwann/Virchow, 'omnis cellula e cellula' - plus a contents page and a cell-size list. No structure to draw for this concept",0.5827
+biology,11,8,"Prokaryotic Cell: Cell Envelope, Mesosome, Nucleoid and Plasmid",n,labelled_figure,illustration,labelled_figure,high,"Chunk carries 'Diagram - Bacterial cell envelope in cross-section' and the layer-by-layer order glycocalyx (capsule/slime) -> cell wall -> plasma membrane, with mesosome and nucleo",0.6469
+biology,11,8,Cell Wall: Structure and Composition,n,labelled_figure,illustration,none_symbolic,med,"Demoted: chunks are wall CHEMISTRY (peptidoglycan vs cellulose, hemicellulose, pectin, middle lamella) and a prokaryote/eukaryote feature grid. Composition prose, no figure spec re",0.5844
+biology,11,8,Cell Membrane: Fluid Mosaic Model and Transport,n,labelled_figure,illustration,labelled_figure,med,"Chunks give the fluid-mosaic picture explicitly: bilayer with polar heads out and tails in, integral proteins buried, peripheral on the surface. That is the canonical drawn schemat",0.5821
+biology,11,8,"Endomembrane System: ER, Golgi Complex and Lysosomes",n,labelled_figure,illustration,labelled_figure,med,"Chunk 0 is a diagram spec: nuclear envelope continuous with RER (ribosomes shown) -> vesicle -> Golgi (stacked cisternae, cis/trans faces) -> secretory vesicle, lysosome budding of",0.635
+biology,11,8,"Vacuoles, Microbodies and Cell Inclusions",n,labelled_figure,illustration,none_symbolic,med,"Demoted: retrieval returned MCQs plus the master-organelle and membrane-count reference tables. Vacuole/microbody content is 'one membrane, tonoplast, storage' - property lists onl",0.5435
+biology,11,8,Mitochondria and Plastids: Structure and Semi-autonomy,n,labelled_figure,illustration,labelled_figure,high,"Internal ultrastructure spelled out: 'outer membrane smooth, inner thrown into folds called cristae ... five regions' and chloroplast 'thylakoids stack into grana, stromal lamellae",0.6668
+biology,11,8,Ribosomes in Prokaryotes and Eukaryotes,n,labelled_figure,illustration,none_symbolic,high,"Demoted: top sim 0.51 and every chunk is MCQ/table noise about the endomembrane system. The only ribosome content is '70S (50S+30S) vs 80S' - a fact pair, nothing to draw.",0.5087
+biology,11,8,Cytoskeleton: Microtubules and Microfilaments,n,labelled_figure,illustration,none_symbolic,med,"Demoted: cytoskeleton content is prose - 'network of proteinaceous filaments ... tubulin and actin ... support, anchoring, streaming, spindle fibres'. Function list, no structure s",0.5078
+biology,11,8,Cilia and Flagella: Axoneme Organisation,n,labelled_figure,illustration,labelled_figure,med,"The 9+2 axoneme (9 peripheral doublets + 2 central) vs the centriole's 9+0 is a cross-sectional spatial arrangement, given as an explicit arrays table. A drawn section, not a rende",0.6392
+biology,11,8,Centrosome and Centrioles,n,labelled_figure,illustration,none_symbolic,med,"Demoted: retrieval returned cheat-sheet bullets and the master organelle table. Centriole content is functional (animal cells, non-membranous, basal bodies, spindle) plus a bare '9",0.5906
+biology,11,8,"Nucleus: Nuclear Envelope, Nucleolus and Chromatin",n,labelled_figure,illustration,labelled_figure,med,"Chunks describe the nucleus as a structure: double envelope with pores, outer membrane continuous with ER, nucleolus and chromatin inside, envelope breaking down at division.",0.6749
+biology,11,8,Chromosome Types by Centromere Position,n,labelled_figure,illustration,labelled_figure,med,The table maps centromere position to arm length (meta/sub-meta/acro/telo) and the chunk notes CUET 'matching chromosome SHAPES to centromere position' - four small drawn shapes.,0.5675
+biology,11,9,Chemical Analysis: Acid-Soluble Pool and Biomacromolecules,n,data_table_trend,widget,,not_in_scope,,
+biology,11,9,Primary and Secondary Metabolites,n,data_table_trend,widget,,not_in_scope,,
+biology,11,9,"Carbohydrates: Mono-, Di- and Polysaccharides",n,molecule_struct,widget,none_symbolic,med,"Demoted: chunks are category sorting (storage vs structural, alpha vs beta, branched vs unbranched) plus one condensation equation. molecule_struct is a central-atom renderer - wro",0.512
+biology,11,9,Lipids: Classification and Properties,n,data_table_trend,widget,,not_in_scope,,
+biology,11,9,Amino Acids: Structure and Classification,n,molecule_struct,widget,none_symbolic,med,"Demoted: chunks are classification lists (acidic/basic/neutral/aromatic), the zwitterion definition, and an unrelated fatty-acid procedure. No structural-formula spec for amino aci",0.5609
+biology,11,9,Protein Structure: Primary to Quaternary Levels,n,molecule_struct,widget,labelled_figure,med,"Figure spec: 'four levels ... bead chain (primary), alpha-helix and beta-pleated sheet (secondary), folded globule (tertiary), four globules (quaternary)'. An illustration, not mol",0.5882
+biology,11,9,Nucleic Acids: Nucleotide Structure and Types of RNA,n,molecule_struct,widget,labelled_figure,med,"Diagram spec: 'short DNA double helix with antiparallel sugar-phosphate backbones, base pairs drawn as A=T'; chunks stress rails/rungs and 2 vs 3 H-bonds. A drawn schematic, not a ",0.5796
+biology,11,9,"Metabolism, Metabolic Pathways and the Living State",n,process_cycle,widget,none_symbolic,high,"Demoted: chunks define metabolism, anabolic vs catabolic, ATP as currency, and the non-equilibrium living state, plus acid-soluble/insoluble pool MCQs. Definitions - no named pathw",0.7152
+biology,11,9,Enzyme Action and the Enzyme-Substrate Complex,n,xy_plot,widget,,not_in_scope,,
+biology,11,9,Factors Affecting Enzyme Activity and Enzyme Inhibition,n,xy_plot,widget,,not_in_scope,,
+biology,11,9,"Enzyme Classification, Cofactors and Coenzymes",n,data_table_trend,widget,,not_in_scope,,
+biology,11,10,"Interphase: G1, S, G2 and G0 Phases",n,process_cycle,widget,process_flow,med,"Chunks give the ordered cycle explicitly: 'G1 -> S -> G2 -> Prophase -> Metaphase -> Anaphase -> Telophase -> Cytokinesis', with G0 exiting from G1. A ring of labelled stages.",0.6213
+biology,11,10,Phases of Mitosis: Prophase to Telophase,n,process_cycle,widget,process_flow,med,"PMAT one-liners give stage + defining event in fixed order (condensation, equatorial plate, centromeres split, envelope reforms). Retrieval leaned meiotic, but the mitotic chain is",0.6162
+biology,11,10,Cytokinesis in Plant and Animal Cells,n,process_cycle,widget,none_symbolic,med,Demoted: the only cytokinesis content is a two-line contrast - animal cleavage furrow (periphery to centre) vs plant cell plate (centre to periphery). Retrieval otherwise off-targe,0.5469
+biology,11,10,Prophase I: Substages and Crossing Over,n,process_cycle,widget,process_flow,med,"Explicit ordered substage table: Leptotene -> Zygotene (synapsis) -> Pachytene (crossing over) -> Diplotene (chiasmata) -> Diakinesis (terminalization), each with one defining even",0.6934
+biology,11,10,Meiosis I: Metaphase I to Telophase I,n,process_cycle,widget,process_flow,med,"Chunks give 'Prophase I -> Metaphase I -> Anaphase I -> Telophase I -> interkinesis' with one defining event per stage (bivalents at equator, homologues disjoin). Ordered chain.",0.7262
+biology,11,10,Meiosis II: Events and Outcomes,n,process_cycle,widget,process_flow,med,Explicit stage/event table 'Prophase II -> Metaphase II -> Anaphase II -> Telophase II' ending in four haploid cells; chunk states the sequence outright. Ordered chain.,0.6742
+biology,11,10,Mitosis vs Meiosis: Comparison of Events and Products,n,process_cycle,widget,none_symbolic,med,"Demoted: the content is a qualitative comparison grid (Feature | Mitosis | Meiosis) plus 'the three contrasts' prose. No values or trend, so not data_table_trend; nothing spatial t",0.6669
+biology,11,10,DNA Content and Chromosome Number Across Divisions,n,process_cycle,widget,data_table_trend,high,"Chunk carries the bookkeeping grid verbatim: Stage | Chromosome number | Chromatids | DNA amount, with G1 2n/1/2C, after S 2n/2/4C, after Meiosis I n/2/2C. Values in a grid with a ",0.56
+biology,11,10,Significance of Mitosis and Meiosis,n,process_cycle,widget,none_symbolic,high,"Demoted: significance is a bullet list - growth, repair, constant chromosome number, nucleo-cytoplasmic ratio; meiosis halves and generates variation. Prose, nothing to render.",0.6761
+biology,11,11,Early Experiments in Photosynthesis,n,labelled_figure,illustration,apparatus,med,"Chunks are experimental setups: Priestley's restored air, Ingenhousz's bubbles on submerged green parts, and the half-leaf iodine test. That is a drawn apparatus, not a parametric ",0.6008
+biology,11,11,Chloroplast Structure and Sites of the Two Reactions,n,labelled_figure,illustration,labelled_figure,high,"Chloroplast geography given structurally: 'flattened sacs called thylakoids stack into coin-pile grana; long thylakoids connecting grana are stromal lamellae', stroma as the Calvin",0.6262
+biology,11,11,"Photosynthetic Pigments, Absorption and Action Spectra",n,xy_plot,widget,,not_in_scope,,
+biology,11,11,"Light Reaction: Photosystems, Z-Scheme and Electron Transport",n,process_cycle,widget,gap_energy_level,med,"Figure spec is 'Z-scheme on a vertical redox-potential axis (more negative = higher up)', P680 jumping up then sliding down carriers. Needs an energy-level renderer; process_flow w",0.7072
+biology,11,11,Cyclic and Non-Cyclic Photophosphorylation,n,process_cycle,widget,process_flow,med,Chunks contrast an open chain 'Water -> PS II -> PS I -> NADP+' with a closed loop 'P700 -> carriers -> back to P700'. Chain vs ring is exactly what process_flow renders.,0.6193
+biology,11,11,Chemiosmotic Hypothesis and ATP Synthesis,n,process_cycle,widget,gap_membrane_gradient,low,Chunks are compartment-spatial: 'H+ piled into the lumen ... rush back through ATP synthase (F0 channel + F1 head in stroma)'. No approved widget shows a membrane and a gradient; r,0.5834
+biology,11,11,"Calvin Cycle: Carboxylation, Reduction and Regeneration",n,process_cycle,widget,process_flow,high,"Explicit figure spec: 'Circular Calvin cycle. Stage 1 Carboxylation ... Stage 2 Reduction ... Stage 3 Regeneration, closing the loop.' A closed ring of labelled stages.",0.6216
+biology,11,11,Photorespiration and RuBisCO Specificity,n,process_cycle,widget,process_flow,med,"Chunks give an ordered organelle-hopping pathway: RuBisCO adds O2 -> one 3-PGA + 2C phosphoglycolate -> exported to peroxisome then mitochondrion -> CO2 released, no sugar/ATP.",0.6084
+biology,11,11,C4 Pathway and Kranz Anatomy,n,process_cycle,widget,process_flow,med,Chunk figure: 'Two adjacent leaf cells. LEFT mesophyll: CO2+PEP(3C)-PEPcase->OAA(4C)->malic acid; arrow (plasmodesmata) carrying mal[ate]' to bundle sheath - a labelled two-compart,0.6235
+biology,11,11,Factors Affecting Photosynthesis and Blackman's Law of Limiting Factors,n,xy_plot,widget,,not_in_scope,,
+biology,11,12,Gaseous Exchange in Plants,n,process_cycle,widget,none_symbolic,high,"Chunks are prose reasoning, a routes list (stomata/lenticels/soil air), day-vs-night gas balance and MCQs. No structure or figure described.",0.6476
+biology,11,12,"Glycolysis: Steps, Enzymes and Net Yield",n,process_cycle,widget,process_flow,high,"Explicit 'Figure - to be illustrated: Vertical glycolysis flowchart. Glucose -hexokinase,-ATP-> G6P -> F6P -> F1,6-bisP -aldolase-> G3P/DHAP ... -> Pyruvic acid', enzyme labels on ",0.6751
+biology,11,12,Fermentation: Alcoholic and Lactic Acid Pathways,n,process_cycle,widget,process_flow,med,Only pathway text is the cheat-sheet branch 'Alcoholic - pyruvate -> acetaldehyde (+CO2) -> ethanol; Lactic - pyruvate -> lactic acid'. A real but tiny 2-branch chain; rest is glyc,0.6509
+biology,11,12,Link Reaction: Oxidative Decarboxylation of Pyruvate,n,process_cycle,widget,none_symbolic,high,"Chunks give one equation only: 'Pyruvate(3C)+CoA+NAD+ -> Acetyl CoA(2C)+CO2+NADH', enzyme and location. A single-step equation, not a diagram; retrieval mostly returned Krebs/glyco",0.5168
+biology,11,12,Krebs Cycle: Reactions and Products,n,process_cycle,widget,process_flow,high,"Explicit figure: 'Circular Krebs cycle wheel... Acetyl CoA enters at top, condenses with OAA -> Citrate ... clockwise ... Malate -> OAA' - a closed ring of labelled nodes with arro",0.6364
+biology,11,12,Electron Transport System and Oxidative Phosphorylation,n,process_cycle,widget,labelled_figure,med,"Figure retrieved is 'Cross-section of inner mitochondrial membrane... Complexes I, III, IV embedded pumping H+, ATP synthase F0 + F1' - a drawn membrane whose part positions are th",0.5939
+biology,11,12,Respiratory Balance Sheet: Aerobic vs Anaerobic ATP Yield,n,xy_plot,widget,,not_in_scope,,
+biology,11,12,Amphibolic Nature of Respiratory Pathways,n,process_cycle,widget,none_symbolic,med,"Chunks are the amphibolic definition, a substrate->entry-point table and RQ arithmetic (RQ=CO2/O2; 1, <1, >1, infinity). Definitions and division, nothing spatial.",0.6211
+biology,11,12,Respiratory Quotient of Different Substrates,n,xy_plot,widget,,not_in_scope,,
+biology,11,13,Seed Germination and Conditions for Growth,n,process_cycle,widget,none_symbolic,high,"Retrieval clearly missed: top sim 0.46 and chunks are photoperiodism, vernalisation, PGR balance-beam and a table of contents. No germination content at all.",0.4566
+biology,11,13,Phases of Growth and Growth Rate,n,xy_plot,widget,,not_in_scope,,
+biology,11,13,"Differentiation, Dedifferentiation and Redifferentiation",n,process_cycle,widget,process_flow,med,Chunk: 'Figure A three-step cyclic flow - Meristem cell -(Differentiation)-> Mature cell -(Dedifferentiation)-> regains division -(Redifferentiation)-> secondary xylem'. Labelled b,0.5307
+biology,11,13,"Development, Plasticity and Heterophylly",n,process_cycle,widget,none_symbolic,med,"Chunks are AGR/RGR algebra, growth definitions, TOC lines and the dedifferentiation figure belonging to the neighbouring concept. Heterophylly appears only as a one-word answer.",0.4759
+biology,11,13,"Auxins: Discovery, Effects and Applications",n,data_table_trend,widget,,not_in_scope,,
+biology,11,13,Gibberellins: Effects and Applications,n,data_table_trend,widget,,not_in_scope,,
+biology,11,13,Cytokinins: Effects and Applications,n,data_table_trend,widget,,not_in_scope,,
+biology,11,13,Ethylene: Effects and Applications,n,data_table_trend,widget,,not_in_scope,,
+biology,11,13,Abscisic Acid: Effects and Stress Responses,n,free_body_forces,widget,,not_in_scope,,
+biology,11,13,Photoperiodism and Classification of Plants by Day Length,n,data_table_trend,widget,,not_in_scope,,
+biology,11,13,Vernalisation,n,data_table_trend,widget,,not_in_scope,,
+biology,11,14,Respiratory Organs Across Animal Groups,n,labelled_figure,illustration,none_symbolic,med,"Retrieval returned human respiratory tract and breathing-mechanism text, not the animal comparison. The concept's own content is an organ<->group pairing list - a classification.",0.6551
+biology,11,14,Human Respiratory System: Structure of the Respiratory Tract,n,labelled_figure,illustration,labelled_figure,med,"Chunks name the airway in spatial order: 'external nostril -> nasal chamber -> pharynx -> larynx -> trachea -> primary bronchi -> bronchioles -> alveoli', plus double-layered pleur",0.622
+biology,11,14,Mechanism of Breathing: Inspiration and Expiration,n,reaction_mechanism,widget,labelled_figure,med,"Chunks describe the diaphragm flattening, ribs/sternum moving up and out, vertical and front-to-back chest dimensions changing. That is a two-state anatomical drawing, not a node-a",0.6689
+biology,11,14,Pulmonary Volumes and Capacities,n,labelled_figure,illustration,gap_spirogram,low,"Chunks give TV 500, IRV 2500-3000, ERV 1000-1100, RV 1100-1200 and additive capacities (IC=TV+IRV). Natural visual is a stacked spirogram ladder; no shipped widget fits, no anatomy",0.618
+biology,11,14,Exchange of Gases: Partial Pressures and the Diffusion Membrane,n,process_cycle,widget,data_table_trend,med,"Chunks carry the partial-pressure grid (atmosphere 159/0.3, alveoli 104/40, deoxy 40/45, oxy 95/40) with 'Reading the table is the whole game: gas flows from higher to lower partia",0.655
+biology,11,14,Transport of Oxygen and the Oxygen Dissociation Curve,n,process_cycle,widget,xy_plot,high,"Explicit figure: 'Oxygen-haemoglobin dissociation curve. X-axis pO2 (0-100 mmHg), Y-axis % saturation; sigmoid curve, dashed right-shifted (Bohr) and left-shifted curves'. A plotte",0.6635
+biology,11,14,Transport of Carbon Dioxide and the Chloride Shift,n,process_cycle,widget,none_symbolic,med,"Chunks give transport percentages (70% bicarbonate, 20-25% carbamino, 7% dissolved) and the carbonic-anhydrase equilibrium. The chloride shift is never described; retrieval returne",0.5456
+biology,11,14,Regulation of Respiration,n,process_cycle,widget,labelled_figure,med,Figure described is 'A mid-sagittal brainstem schematic. Label the pons with Pneumotaxic centre; medulla with Respiratory rhythm centre and Chemosensitive area' - anatomy with labe,0.6586
+biology,11,14,Respiratory Disorders,n,data_table_trend,widget,,not_in_scope,,
+biology,11,15,Plasma Composition and Plasma Proteins,n,labelled_figure,illustration,none_symbolic,high,"Chunks are composition figures (plasma ~55%, 90-92% water, 6-8% proteins) and the albumin/globulin/fibrinogen role list. A composition list, no morphology.",0.5055
+biology,11,15,"Formed Elements: RBC, WBC and Platelets",n,labelled_figure,illustration,labelled_figure,med,"Chunks describe cell morphology to draw - RBC 'biconcave, enucleate', platelets 'enucleate cell fragments budded from megakaryocytes', granulocytes vs agranulocytes - alongside the",0.6592
+biology,11,15,Blood Groups: ABO and Rh Incompatibility,n,data_table_trend,widget,,not_in_scope,,
+biology,11,15,Blood Coagulation and Clotting Factors,n,process_cycle,widget,process_flow,high,"Chunks give the cascade explicitly: spasm -> prothrombinase -> 'Prothrombin -prothrombinase/Ca2+-> Thrombin' -> 'Fibrinogen -thrombin-> Fibrin', with intrinsic and extrinsic routes",0.6397
+biology,11,15,Lymph: Composition and Functions,n,labelled_figure,illustration,none_symbolic,med,"Chunks for composition/functions are definitional (clear fluid rich in lymphocytes, lacks RBCs, returns interstitial fluid, absorbs fats). The one figure retrieved is the heart, no",0.5679
+biology,11,15,Structure of the Human Heart and Its Chambers,n,labelled_figure,illustration,labelled_figure,high,"Chunk: 'Suggested figure. Frontal section of the human heart - label RA, RV, LA, LV; tricuspid, bicuspid, aortic and pulmonary valves; venae cavae, pulmonary artery/veins, aorta'.",0.6054
+biology,11,15,Double Circulation and Portal Systems,n,process_cycle,widget,none_symbolic,med,"No circuit figure retrieved; chunks are the cardiac cycle, lymph drainage and a chambers-per-class list. Portal systems appear only as 'Hepatic portal system: gut -> liver'. Retrie",0.5616
+biology,11,15,Conducting System of the Heart,n,process_cycle,widget,labelled_figure,med,The nodal pathway is retrieved only inside the heart figure - 'and the nodal pathway SA node -> AV node -> bundle of His -> Purkinje fibres' drawn on a frontal section. Positions a,0.6226
+biology,11,15,"Cardiac Cycle: Phases, Volumes and Heart Sounds",n,process_cycle,widget,process_flow,med,Chunks give the closed cycle 'atrial systole -> ventricular systole -> joint diastole' (~0.8 s) with valve events and S1/S2 attached to each phase - a ring of labelled stages.,0.6793
+biology,11,15,Cardiac Output and Regulation of Cardiac Activity,n,process_cycle,widget,none_symbolic,high,"Chunks are CO = SV x HR arithmetic (~70 mL x 72 = 5 L/min), sympathetic/parasympathetic bullet contrasts and disorder definitions. Formula plus prose.",0.5741
+biology,11,15,Electrocardiogram (ECG) and Its Waves,n,wave_form,widget,,not_in_scope,,
+biology,11,15,Disorders of the Circulatory System,n,data_table_trend,widget,,not_in_scope,,
+biology,11,16,Nitrogenous Wastes and Modes of Excretion,n,process_cycle,widget,data_table_trend,med,"Chunks give the mode/excreted-form/toxicity/water grid and 'Master arrow: NH3 -> urea -> uric acid - toxicity down, water-economy up', with the tadpole-vs-adult-frog exception. A g",0.6144
+biology,11,16,Excretory Organs in Invertebrates,n,labelled_figure,illustration,labelled_figure,med,"Chunks give morphology per organ: flame cell 'a single hollow cell capped with a tuft of cilia', nephridia 'coiled tubes' with a ciliated nephrostome, Malpighian tubules joining th",0.6658
+biology,11,16,Structure of the Human Kidney and Urinary Tract,n,labelled_figure,illustration,labelled_figure,high,"Explicit figure: 'Front view of the human urinary system... bean-shaped kidneys, renal artery/vein at the hilum, ureters to bladder, urethra. Label kidneys, hilum, ureters, urinary",0.7055
+biology,11,16,Nephron Structure and Types,n,labelled_figure,illustration,labelled_figure,high,"Chunks describe nephron parts by zone (corpuscle/PCT/DCT in cortex, loop of Henle in medulla), podocytes, wider afferent vs narrower efferent arteriole, cortical vs juxtamedullary ",0.6278
+biology,11,16,Glomerular Filtration and Glomerular Filtration Rate,n,process_cycle,widget,none_symbolic,med,"Chunks are definitions (ultrafiltration, filtrate, three-layer membrane) plus net-filtration-pressure arithmetic and GFR 125 mL/min, 180 L/day. Algebra and definitions, nothing dra",0.5906
+biology,11,16,Tubular Reabsorption and Secretion Along the Nephron,n,process_cycle,widget,labelled_figure,med,"Content is segment-by-segment specialisation along the drawn tubule: PCT brush border 70-80%, descending vs ascending limb permeability, DCT H+/K+/NH3, collecting duct. The anatomy",0.5998
+biology,11,16,Counter-Current Mechanism and Concentration of Urine,n,reaction_mechanism,widget,labelled_figure,med,Figure: 'Counter-current mechanism schematic. Juxtamedullary loop of Henle beside U-shaped vasa recta... osmolarity scale ~300 mOsm/L at cortex to ~1200 at inner medulla.' A drawn ,0.604
+biology,11,16,"Hormonal Regulation of Kidney Function: RAAS, ADH and ANF",n,process_cycle,widget,process_flow,high,"Figure: 'Two-arm regulation schematic. LEFT LOW BP: JGA -> renin -> angiotensinogen -> A-I -> A-II -> aldosterone -> BP restored; RIGHT: atria -> ANF, blunt-ended arrow from ANF ba",0.6797
+biology,11,16,Micturition and Composition of Urine,n,process_cycle,widget,none_symbolic,med,Retrieval missed: chunks are urine-formation and nitrogenous-waste text plus one MCQ defining micturition as the neural release of urine. No composition data and no structure.,0.525
+biology,11,16,"Accessory Excretory Roles of Lungs, Liver and Skin",n,labelled_figure,illustration,none_symbolic,med,"Only a fragment is on topic - 'sweat glands remove water, NaCl, urea and lactic acid; sebaceous glands excrete sebum' plus kidney endocrine roles. An organ->substance list; rest is",0.5682
+biology,11,16,Kidney Disorders and Haemodialysis,n,apparatus,illustration,none_symbolic,low,"No apparatus is described: chunks are a dialysis MCQ ('only urea leaves, the dialysing fluid lacks it') and hormone/disorder pitfalls. The dialyser setup itself was not retrieved.",0.5385
+biology,11,17,"Types of Movement: Amoeboid, Ciliary and Muscular",n,labelled_figure,illustration,none_symbolic,med,"Chunks define and classify amoeboid, ciliary and muscular movement with examples and MCQs; the only structural notes are one-line (pseudopodia, microtubule ring). A classification,",0.702
+biology,11,17,Structure of Skeletal Muscle Fibre and the Sarcomere,n,labelled_figure,illustration,labelled_figure,high,Chunks give the drawable hierarchy and banding: 'muscle -> fascicle -> fibre -> myofibril -> sarcomere -> filaments' and 'Sarcomere = unit between two Z-lines. Bands: A (dark) I (l,0.7112
+biology,11,17,"Muscle Proteins: Actin, Myosin and Regulatory Proteins",n,labelled_figure,illustration,labelled_figure,med,"Chunks describe molecular architecture to draw: G-actin polymerising to helical F-actin, tropomyosin and troponin C/I/T masking active sites, myosin heads as cross-bridges, titin a",0.5679
+biology,11,17,Neuromuscular Junction and Excitation-Contraction Coupling,n,process_cycle,widget,none_symbolic,med,NMJ appears only as a definition bullet: 'junction where the axon terminal meets the sarcolemma; acetylcholine is released'. Retrieval returned sliding-filament text; no coupling s,0.5753
+biology,11,17,Sliding Filament Theory of Muscle Contraction,n,process_cycle,widget,process_flow,high,"Chunk renders 'The cross-bridge cycle (one myosin head) 1. ATP cocks head 2. binds actin site 3. power stroke 4. detach, new ATP binds -> cycle' - an explicit closed 4-stage loop.",0.6926
+biology,11,17,Red and White Muscle Fibres,n,labelled_figure,illustration,none_symbolic,med,"Chunks are a qualitative red-vs-white contrast (mitochondria, myoglobin, aerobic vs anaerobic, fatigue-resistant vs fast-tiring). A comparison of properties, no morphology and no n",0.6642
+biology,11,17,"Axial Skeleton: Skull, Vertebral Column, Ribs and Sternum",n,labelled_figure,illustration,labelled_figure,high,"Chunks are anatomy: skull 22 bones (8 cranial + 14 facial), 26 vertebrae by region with atlas/axis, sternum with 7 true / 3 false / 2 floating ribs and their costal cartilages.",0.6943
+biology,11,17,Appendicular Skeleton: Girdles and Limb Bones,n,labelled_figure,illustration,labelled_figure,med,"Chunks give girdle and limb anatomy - clavicle + scapula with acromion, glenoid cavity receiving the humerus, fused ilium/ischium/pubis with acetabulum receiving the femur, carpals",0.547
+biology,11,17,"Types of Joints: Fibrous, Cartilaginous and Synovial",n,labelled_figure,illustration,none_symbolic,low,"Chunks are a three-class classification with examples (fibrous=skull sutures, cartilaginous=intervertebral, synovial: ball-socket/hinge/pivot/gliding/saddle) and match-the-column M",0.689
+biology,11,17,Disorders of the Muscular and Skeletal System,n,labelled_figure,illustration,none_symbolic,high,"Chunks are a disorder/side/cause/hallmark table (myasthenia-autoimmune NMJ, dystrophy-genetic, tetany-low Ca2+, arthritis, gout-uric acid, osteoporosis) plus clinical clue lists. P",0.6036
+biology,11,18,Organisation of the Neural System in Animals,n,labelled_figure,illustration,none_symbolic,med,"Retrieval returned the human neural-system classification tree and CNS anatomy, not organisation across animals. The concept's own content is a hierarchical name list.",0.606
+biology,11,18,Neuron Structure and Types,n,labelled_figure,illustration,labelled_figure,high,"Chunks give neuron parts (cyton/dendrites/axon/nodes of Ranvier) and an explicit 'Figure. A labelled multipolar neuron ... Schwann cells, myelin sheath'. Anatomy to draw, not param",0.6485
+biology,11,18,Generation and Conduction of the Nerve Impulse,n,motion_path,widget,,not_in_scope,,
+biology,11,18,Synaptic Transmission and Neurotransmitters,n,process_cycle,widget,process_flow,med,"Retrieval is mostly neuron anatomy/resting potential; the synapse content that lands is an ordered chain: 'impulse -> Ca2+ in -> vesicles release neurotransmitter'. Chain, not a cy",0.48
+biology,11,18,"Meninges, Ventricles and Cerebrospinal Fluid",n,labelled_figure,illustration,labelled_figure,high,'Dura mater / arachnoid / pia' layers plus 'Figure. A mid-sagittal section of the human brain labelling ... meninges at the surface'. Pure anatomy.,0.5988
+biology,11,18,Human Brain: Forebrain Structure and Functions,n,labelled_figure,illustration,labelled_figure,high,"Same mid-sagittal-section figure directive; chunks are forebrain part names and locations (cerebrum, corpus callosum, thalamus, hypothalamus). Drawn anatomy.",0.5949
+biology,11,18,Human Brain: Midbrain and Hindbrain,n,labelled_figure,illustration,labelled_figure,high,Chunks are the same brain-division anatomy plus the mid-sagittal figure directive; midbrain/hindbrain parts are locations on a drawing.,0.53
+biology,11,18,Spinal Cord: Structure and Functions,n,labelled_figure,illustration,labelled_figure,high,"'grey matter is internal (H-shaped) and white matter external, carrying ascending (sensory) and descending (motor) tracts' - a cross-section to draw.",0.5933
+biology,11,18,Reflex Action and the Reflex Arc,n,process_cycle,widget,process_flow,high,Explicit five-component ordered arc plus 'Figure. A reflex arc ... receptor -> afferent neuron -> interneuron -> efferent neuron -> effector'. Linear chain of labelled nodes.,0.7028
+biology,11,18,Peripheral Nervous System: Cranial and Spinal Nerves,n,labelled_figure,illustration,none_symbolic,med,"Chunks are PNS definitions, nerve counts, somatic-vs-autonomic classification, transmitter lists. Only figure retrieved is a branching classification tree; no nerve-distribution dr",0.6366
+biology,11,18,Autonomic Nervous System: Sympathetic and Parasympathetic,n,labelled_figure,illustration,data_table_trend,med,"Organ-by-organ grid in chunk: 'Heart rate Increases/Decreases, Pupil Dilates/Constricts, Bronchi Dilate/Constrict', plus stated exceptions (sweat glands, most vessels).",0.6954
+biology,11,19,Neural vs Endocrine Coordination and Chemical Nature of Hormones,n,REVIEW,review,,not_in_scope,,
+biology,11,19,Mechanism of Hormone Action and Receptor Types,n,reaction_mechanism,widget,process_flow,med,Cheat sheet gives the chain: 'water-soluble -> surface receptor -> 2nd messenger (cAMP) -> fast'; 'fat-soluble -> intracellular receptor -> gene expression -> slow'. Rest is gland ,0.5748
+biology,11,19,Feedback Regulation of Hormone Secretion,n,process_cycle,widget,none_symbolic,med,"Retrieval missed the feedback loop entirely - the six chunks are the gland/hormone/action/disorder table, endocrine definitions and adrenal lists. No loop, no ordered stages in the",0.6059
+biology,11,19,Hypothalamic Releasing and Inhibiting Hormones,n,REVIEW,review,,not_in_scope,,
+biology,11,19,Pituitary Gland: Hormones and Their Actions,n,REVIEW,review,,not_in_scope,,
+biology,11,19,Pineal Gland and Melatonin,n,REVIEW,review,,not_in_scope,,
+biology,11,19,"Thyroid Hormones: Synthesis, Actions and Disorders",n,data_table_trend,widget,,not_in_scope,,
+biology,11,19,Parathyroid Hormone and Calcium Homeostasis,n,REVIEW,review,,not_in_scope,,
+biology,11,19,Thymus and Thymosins,n,REVIEW,review,,not_in_scope,,
+biology,11,19,Adrenal Cortex and Adrenal Medulla Hormones,n,REVIEW,review,,not_in_scope,,
+biology,11,19,Pancreatic Hormones and Blood Glucose Regulation,n,REVIEW,review,,not_in_scope,,
+biology,11,19,Gonadal Hormones and Their Functions,n,data_table_trend,widget,,not_in_scope,,
+biology,11,19,"Hormones of the Heart, Kidney and Gastrointestinal Tract",n,labelled_figure,illustration,none_symbolic,med,"Chunks are lists of source-hormone-action (ANF, erythropoietin, renin, gastrin/secretin/CCK/GIP) and a reference gland table. No organ drawing described; a lookup list, not a trend",0.6761
+biology,11,19,Hypo- and Hyperactivity Disorders of the Endocrine Glands,n,data_table_trend,widget,,not_in_scope,,
+biology,12,1,Anther Structure and Microsporogenesis,n,process_cycle,widget,process_flow,med,Numbered developmental chain in the chunks: 'sporogenous tissue -> PMC (2n) -> meiosis -> microspore tetrad (n) -> pollen grains -> dehiscence'. Anther T.S. wall layers are seconda,0.6801
+biology,12,1,Pollen Grain Structure and Male Gametophyte,n,process_cycle,widget,labelled_figure,med,"Chunks describe a drawable grain: 'wall has two layers - the outer exine and inner intine', sporopollenin, germ pores, 2-celled (vegetative + generative). Parts on a picture, not s",0.6887
+biology,12,1,Ovule (Megasporangium) Structure and Types,n,labelled_figure,illustration,labelled_figure,high,"Figure text retrieved: 'ovule showing funicle, hilum, micropyle and chalaza, two integuments enclosing the nucellus, and inside it the 7-celled/8-nucleate embryo sac'.",0.5997
+biology,12,1,Megasporogenesis and Embryo Sac Development,n,process_cycle,widget,process_flow,med,"Explicit chain: 'MMC (2n) -> meiosis -> 4 megaspores -> 3 degenerate -> 1 functional megaspore (n)' then 'functional megaspore -> 3 mitotic divisions -> 8 nuclei, 7 cells'.",0.6392
+biology,12,1,Pollination: Types and Agents,n,process_cycle,widget,labelled_figure,med,"'Diagram. Side-by-side comparison of three flowers - wind-pollinated grass floret, insect-pollinated flower, Yucca-moth pair - each labelled with its agent'. Drawn organisms; no cy",0.7104
+biology,12,1,Outbreeding Devices and Self-Incompatibility,n,process_cycle,widget,none_symbolic,high,"Retrieval largely missed (top sim 0.49); chunks are pollen-pistil prose and apomixis. Outbreeding devices appear only as a definition list (dichogamy, self-incompatibility).",0.4914
+biology,12,1,Pollen-Pistil Interaction and Pollen Tube Growth,n,process_cycle,widget,process_flow,med,"Numbered recognition sequence: '1. The stigma chemically reads the arriving pollen. 2. If compatible, the pistil promotes it - the grain germinates', up to tube entry into the ovul",0.5987
+biology,12,1,Artificial Hybridisation: Emasculation and Bagging,n,molecule_struct,widget,process_flow,med,Chunk states the procedure verbatim: 'The correct chain is emasculate -> bag -> (collect ->) dust -> re-bag.' An ordered protocol; molecule_struct was nonsense here.,0.5164
+biology,12,1,Double Fertilisation and Triple Fusion,n,process_cycle,widget,labelled_figure,med,"Chunks are definitions of syngamy/triple fusion plus a ploidy ladder; the associated figure is a drawn embryo sac with two branching fusion arrows, not a linear chain a flow widget",0.7035
+biology,12,1,Endosperm Development and Types,n,process_cycle,widget,none_symbolic,med,"Chunks give a three-way classification - 'Nuclear type ... Cellular type ... Helobial type' - with the coconut example. A typology, not an ordered pathway.",0.6346
+biology,12,1,Embryogeny: Dicot and Monocot Embryo Development,n,process_cycle,widget,labelled_figure,med,"Chunks are embryo part names to label: embryonal axis/tigellum, epicotyl->plumule, hypocotyl->radicle, cotyledon/scutellum, coleoptile, coleorhiza. A drawn dicot/monocot embryo.",0.6076
+biology,12,1,"Seed and Fruit Formation (Parthenocarpy, Seed Structure)",n,process_cycle,widget,none_symbolic,med,"Chunks are definitions and correspondences: ovule->seed, ovary->fruit, testa/tegmen, albuminous vs non-albuminous, true vs false fruit. Classification prose; retrieval drifted to a",0.6104
+biology,12,1,Apomixis and Polyembryony,n,process_cycle,widget,none_symbolic,med,"Chunks are definitions (apomixis, polyembryony, nucellar embryony) plus a branching classification chart of routes. A taxonomy list, not a sequence or a drawable object.",0.6735
+biology,12,2,"Male Reproductive System: Testis, Ducts and Accessory Glands",n,labelled_figure,illustration,labelled_figure,high,'Diagram. Cross-section of a single seminiferous tubule ... label the central lumen; in the interstitial space draw clusters of Leydig cells.' Anatomy.,0.6218
+biology,12,2,"Female Reproductive System: Ovary, Oviduct, Uterus and Mammary Gland",n,labelled_figure,illustration,labelled_figure,high,"'Diagram. Sectional view of the female reproductive system. Label ovary, fimbriae, infundibulum, ampulla, isthmus ... uterus with its three labelled wall layers'.",0.6284
+biology,12,2,Gametogenesis: Spermatogenesis and Oogenesis,n,process_cycle,widget,process_flow,high,Explicit chains: 'spermatogonium -> primary -> secondary spermatocyte -> spermatid -> spermatozoon -> spermiation' and the oogenesis line; chunk even names a 'Parallel flowchart'.,0.7025
+biology,12,2,Structure of Sperm and Ovum,n,molecule_struct,widget,labelled_figure,med,"Structure evidence is 'spermatids reshape - growing a head, neck, middle piece and tail' plus the zona pellucida: labelled cell drawings. molecule_struct is a category error here.",0.6161
+biology,12,2,Menstrual Cycle and Its Hormonal Regulation,n,process_cycle,widget,process_flow,med,"Four ordered phases closing on themselves: 'Menstrual (3-5 d) - Follicular (~14 d) - Ovulatory (~day 14, LH surge) - Luteal (~10 d)'. A ring; the hormone curves are not a closed-fo",0.5205
+biology,12,2,Fertilisation and Zygote Formation,n,process_cycle,widget,none_symbolic,med,Chunks give only a definition ('fusion of a sperm with the secondary oocyte at the ampullary-isthmic junction'); rest is placenta/parturition drift. The sequence diagram is the cle,0.6069
+biology,12,2,"Cleavage, Blastocyst Formation and Implantation",n,process_cycle,widget,process_flow,high,'Diagram. Linear sequence from zygote in the oviduct -> 2-cell -> 4-cell -> morula -> blastocyst (labelling trophoblast and inner cell mass) -> blastocyst implanting'. Explicit nod,0.6108
+biology,12,2,"Placenta: Structure, Functions and Hormones",n,labelled_figure,illustration,none_symbolic,med,"Chunks define the placenta in one line and then list pregnancy hormones (hCG/hPL/oestrogen/relaxin) with source and role. A lookup table, not a drawn structure or a trend.",0.5366
+biology,12,2,Embryonic Development: Germ Layers and Organogenesis,n,process_cycle,widget,none_symbolic,med,"Chunks are a germ-layer to derivative mapping ('Mesoderm (muscle, bone, blood, kidneys)') plus gestation milestones. A list and a timeline of facts; no ordered mechanism or figure ",0.5554
+biology,12,2,Parturition and Its Hormonal Control,n,process_cycle,widget,process_flow,high,"'Diagram. Positive-feedback loop for parturition - signals -> mild uterine contractions -> oxytocin -> stronger contractions -> more oxytocin, drawn as a reinforcing cycle ending i",0.5423
+biology,12,2,Lactation and Colostrum,n,process_cycle,widget,none_symbolic,high,"Weak retrieval (top sim 0.40). The lactation content is two sentences of definition: prolactin makes milk, oxytocin ejects it, colostrum is IgA-rich. Nothing to draw.",0.3961
+biology,12,3,"Reproductive Health Programmes and Strategies (RCH, Family Planning)",n,labelled_figure,illustration,none_symbolic,high,"Chunks are policy and social prose - WHO definition, RCH pillars, family planning 1951, PCPNDT 1994, marriageable ages. No figure of any kind; labelled_figure was a name-driven err",0.6942
+biology,12,3,Adolescent Sexual Health and Sex Education,n,REVIEW,review,,not_in_scope,,
+biology,12,3,Population Explosion and Population Stabilisation Measures,n,REVIEW,review,,not_in_scope,,
+biology,12,3,Natural and Barrier Methods of Contraception,n,REVIEW,review,,not_in_scope,,
+biology,12,3,"Hormonal Contraceptives, IUDs and Emergency Contraception",n,REVIEW,review,,not_in_scope,,
+biology,12,3,Sterilisation: Vasectomy and Tubectomy,n,REVIEW,review,,not_in_scope,,
+biology,12,3,Medical Termination of Pregnancy (MTP),n,REVIEW,review,,not_in_scope,,
+biology,12,3,Amniocentesis and Prenatal Sex-Determination Misuse,n,apparatus,illustration,none_symbolic,med,"No apparatus is described anywhere in the chunks - retrieval drifted to MTP law, week limits and female-foeticide policy. Amniocentesis appears only as a one-line definition of the",0.5573
+biology,12,3,Sexually Transmitted Infections,n,REVIEW,review,,not_in_scope,,
+biology,12,3,"Infertility and Assisted Reproductive Technologies (IVF, ZIFT, GIFT, ICSI)",n,REVIEW,review,,not_in_scope,,
+biology,12,4,"Mendel's Laws: Monohybrid, Dihybrid and Test Cross",n,molecule_struct,widget,gap_genetics_cross,high,"Chunks centre on the 'Punnett square: the checkerboard grid for laying out all gamete combinations and computing offspring ratios', 3:1, 9:3:3:1. No shipped widget covers a cross g",0.6901
+biology,12,4,"Deviations from Mendelism: Incomplete Dominance, Codominance and Multiple Allelism",n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,Gene Interaction and Epistasis,n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,Polygenic Inheritance,n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,Pleiotropy,n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,Chromosomal Theory of Inheritance and Morgan's Drosophila Experiments,n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,Linkage and Recombination,n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,"Sex Determination in Humans, Insects and Birds",n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,"Mutation: Types, Mutagens and Chromosomal Aberrations",n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,Pedigree Analysis,n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,"Mendelian Genetic Disorders (Haemophilia, Colour Blindness, Sickle-Cell Anaemia, Thalassaemia)",n,genetics_cross,widget,,not_in_scope,,
+biology,12,4,"Chromosomal Disorders: Down, Turner and Klinefelter Syndromes",n,genetics_cross,widget,,not_in_scope,,
+biology,12,5,Structure of DNA: Double Helix and Chargaff's Rules,n,molecule_struct,widget,molecule_3d,med,"Chunks give real 3-D geometry: 'diameter 2 nm; rise 0.34 nm/bp; pitch 3.4 nm; 10 bp per turn', antiparallel strands, A=T/G=C. That is a PDB structure, not a 2-D central-atom formul",0.7136
+biology,12,5,"Types and Structure of RNA (mRNA, tRNA, rRNA)",n,labelled_figure,illustration,labelled_figure,med,"tRNA is described as a drawable adapter - 'Anticodon loop: three bases complementary to the codon' and 'Amino-acid acceptor end: the 3' end, bearing a -CCA-OH' - plus the two ribos",0.5494
+biology,12,5,"DNA Packaging: Nucleosome, Chromatin and Histones",n,process_cycle,widget,process_flow,med,"Chunk gives the packaging hierarchy as an arrow chain: 'DNA -> histone octamer [2x(H2A,H2B,H3,H4)] -> nucleosome (~200 bp) -> +H1 = chromatosome -> chromatin -> chromosome'.",0.5416
+biology,12,5,Search for Genetic Material: Griffith's Transformation and Avery-MacLeod-McCarty,n,apparatus,illustration,data_table_trend,med,"Chunks carry two grids: the four Griffith treatments and their outcomes (live R->live ... heat-killed S + live R->die, the exception that makes the point) and a Strain/Colony/Capsu",0.6565
+biology,12,5,Hershey-Chase Experiment,n,apparatus,illustration,none_symbolic,med,"No apparatus (blender, centrifuge) appears in the retrieved text; what lands is the isotope logic in prose and MCQs - 32P tags DNA, 35S tags protein, only 32P entered the cells.",0.5691
+biology,12,5,RNA World and Properties of Genetic Material,n,REVIEW,review,,not_in_scope,,
+biology,12,5,Meselson-Stahl Experiment,n,apparatus,illustration,none_symbolic,med,Retrieval largely missed - four of six chunks are DNA-vs-RNA and packaging. The rest is prose on band density ('a single band of intermediate density after one generation'); no set,0.4912
+biology,12,5,DNA Replication: Semiconservative Mechanism and Enzymes,n,reaction_mechanism,widget,process_flow,med,"Chunk gives 'The step-by-step logic, with the reason for each step: 1. Origin (ori)...' at the fork, plus the ordered enzyme crew (helicase, topoisomerase, SSBP, primer, polymerase",0.6327
+biology,12,5,Transcription in Prokaryotes and Eukaryotes,n,process_cycle,widget,process_flow,high,"'three stages, each with a clear logic: 1. Initiation ... 2. Elongation ... 3. [Termination]' plus the hnRNA pipeline 'Step 1 cap, Step 2 splicing, Step 3 poly-A tail'. Ordered sta",0.6607
+biology,12,5,Genetic Code and Its Properties,n,process_cycle,widget,none_symbolic,high,"Chunks are properties and traps - degenerate vs ambiguous, comma-less, stop-codon nicknames, template vs coding strand. Definitions and a pitfalls list; the codon table itself was ",0.5998
+biology,12,5,"Translation: Ribosomes, tRNA and Protein Synthesis",n,process_cycle,widget,process_flow,high,'The three stages of translation. Initiation ... Elongation: 1. A charged tRNA enters the A-site. 2. The ribozyme catalyses a peptide bond. 3. [translocation]' - an explicit ordere,0.6351
+biology,12,5,lac Operon and Regulation of Gene Expression,n,process_cycle,widget,process_flow,med,"ON pathway numbered in chunk: lactose enters -> acts as inducer -> inactivates repressor -> repressor leaves operator -> polymerase transcribes z, y, a. OFF state is the same chain",0.7022
+biology,12,5,"Human Genome Project: Goals, Methods and Findings",n,process_cycle,widget,none_symbolic,high,"Chunks are a goals list (identify genes, sequence 3bn bp, databases, ELSI), isolated numbers (2968 vs 231 genes, 99.9%) and a SNP/VNTR vocabulary table. No cycle, no stages.",0.6512
+biology,12,5,DNA Fingerprinting and VNTR Polymorphism,n,process_cycle,widget,process_flow,med,"Chunks name an explicit ordered technique chain: 'I-PRESHA' = Isolation, PCR, Restriction, Electrophoresis, Southern blot, Hybridisation, Autoradiography. Linear pathway, not a clo",0.6074
+biology,12,6,Origin of Life: Oparin-Haldane Theory and Miller-Urey Experiment,n,apparatus,illustration,apparatus,med,"Chunks describe the sealed flask apparatus ('sealed CH4, NH3, H2 and water vapour', electric discharge = lightning) and a CBSE task 'Describe Miller's experiment with a labelled sk",0.5996
+biology,12,6,"Evidences of Evolution: Homology, Analogy, Fossils and Embryology",n,process_cycle,widget,labelled_figure,med,"Not a process. Chunks describe a drawable comparative figure: whale flipper, bat wing, horse leg sharing 'humerus, radius-ulna, carpals, phalanges' in the same arrangement, versus ",0.767
+biology,12,6,Geological Time Scale and Evolution of Life Forms,n,process_cycle,widget,gap_timeline,med,"Chunk: 'Figure to be illustrated: horizontal geological timeline... stacked bands showing rise, peak and decline of each group', 65 mya line. Bands on a time axis, not nodes+arrows",0.5514
+biology,12,6,Adaptive Radiation,n,process_cycle,widget,none_symbolic,med,Retrieval largely missed (top sim 0.50): chunks are the geological-era table and the evidence-class table. Only a one-line mention 'one ancestor to many forms'. Nothing to render.,0.4957
+biology,12,6,Darwinism and Natural Selection,n,process_cycle,widget,none_symbolic,high,"Chunks are Hardy-Weinberg algebra (p+q=1, p2+2pq+q2), theory definitions and a theory timeline of names/dates. Prose and formulae, no stages.",0.5963
+biology,12,6,"Mechanisms of Evolution: Mutation, Gene Flow, Genetic Drift and Founder Effect",n,reaction_mechanism,widget,none_symbolic,high,"Chunks are the step-by-step H-W derivation (gamete-frequency multiplication, binomial expansion) and the five-factors list. Worked algebra; 'reaction_mechanism' is not even the rig",0.6228
+biology,12,6,"Types of Natural Selection: Stabilising, Directional and Disruptive",n,process_cycle,widget,xy_plot,med,"Chunk table has an 'Effect on the curve' column: 'peak gets taller & narrower', 'peak shifts toward that extreme', 'curve splits into two peaks' - three trait-distribution curves o",0.5593
+biology,12,6,Lamarckism and the Modern Synthetic Theory,n,process_cycle,widget,none_symbolic,high,"Chunks are definitions (saltation, germplasm, neo-Darwinism), a dated name timeline and H-W arithmetic pitfalls. Pure distinction/recall content.",0.6071
+biology,12,6,Hardy-Weinberg Principle and Genetic Equilibrium,n,genetics_cross,widget,,not_in_scope,,
+biology,12,6,Anthropogenic Evolution: Industrial Melanism and Drug/Pesticide Resistance,n,process_cycle,widget,none_symbolic,high,Retrieval missed (top 0.48): chunks are plant-evolution sequence MCQs and era tables. Resistance appears only as one sentence about selection on pre-existing variants.,0.4823
+biology,12,6,Speciation and Reproductive Isolation,n,process_cycle,widget,none_symbolic,high,"Retrieval clearly failed - top sim 0.42, every chunk is Hardy-Weinberg MCQ/derivation material. No speciation content retrieved at all, so nothing earns a widget.",0.4195
+biology,12,6,Human Evolution: Hominid Fossils and Timeline,n,process_cycle,widget,data_table_trend,med,Chunks give a grid (Hominin | when | where | brain capacity | features) and an explicit 'brain-capacity ladder (~400 -> 700 -> 900 -> 1400 -> 1600)' - values with a trend to read.,0.5988
+biology,12,7,"Concept of Health, Disease and Public Health Measures",n,REVIEW,review,,not_in_scope,,
+biology,12,7,"Common Infectious Diseases: Bacterial, Viral, Fungal, Protozoan and Helminthic",n,labelled_figure,illustration,none_symbolic,med,"Chunks are disease/pathogen/organ/symptom tables, a vector cheat-grid and a communicable-vs-non-communicable classification tree. No anatomy or organism morphology described.",0.5886
+biology,12,7,Malaria and the Life Cycle of Plasmodium,n,process_cycle,widget,process_flow,high,Explicit figure spec: 'Circular life-cycle of Plasmodium spanning two hosts... arrows clockwise: bite -> sporozoites -> liver -> RBC -> gametocytes -> mosquito gut'. A ring of stag,0.6433
+biology,12,7,Immunity: Innate and Acquired,n,process_cycle,widget,none_symbolic,med,"Chunks are an ASCII classification tree (innate vs acquired, active vs passive) plus the four-barriers list. A taxonomy, not ordered stages - classification content.",0.5676
+biology,12,7,Lymphoid Organs: Primary and Secondary,n,labelled_figure,illustration,none_symbolic,med,"Chunks only list membership: 'Primary = bone marrow + thymus; Secondary = spleen, lymph nodes, tonsils, appendix, Peyer's patches, MALT'. No body-position or morphology text to dra",0.5609
+biology,12,7,Antibodies: Structure and Classes of Immunoglobulins,n,process_cycle,widget,labelled_figure,low,"Retrieval drifted (top chunk 0.68 is the immunity tree). Only structural line present: 'Antibody = H2L2 (2 heavy + 2 light, disulphide-bonded)' - a labelled molecule drawing, certa",0.6844
+biology,12,7,"Vaccination, Immunisation and Active vs Passive Immunity",n,process_cycle,widget,none_symbolic,med,"Chunks are definitions (attenuated pathogen -> memory cells; pre-formed antibodies = passive) plus the immunity classification tree and Ig match-column. Distinctions, not a cycle.",0.6073
+biology,12,7,"Allergies, Autoimmunity and Immune Disorders",n,process_cycle,widget,none_symbolic,high,"Top sim 0.46; content is one-line definitions ('mast cells release histamine; IgE mediates it', 'fails to tell self from non-self, e.g. rheumatoid arthritis'). Prose definitions on",0.4569
+biology,12,7,"AIDS: HIV Structure, Transmission and Replication Cycle",n,process_cycle,widget,process_flow,med,Chunk gives the numbered replication pathway ('the diagram the exam loves'): Entry -> reverse transcription -> integration -> T-cell invasion -> immune collapse. Linear chain of st,0.4926
+biology,12,7,"Cancer: Causes, Types, Detection and Treatment",n,process_cycle,widget,none_symbolic,med,Retrieval mostly missed (top 0.51 is immune phenomena). Cancer content is one cheat-sheet line 'loss of contact inhibition -> tumour (benign local; malignant metastasis)' plus carc,0.5102
+biology,12,7,"Drug Abuse: Opioids, Cannabinoids and Coca Alkaloids",n,REVIEW,review,,not_in_scope,,
+biology,12,7,Alcohol and Tobacco Abuse: Effects and Prevention,n,REVIEW,review,,not_in_scope,,
+biology,12,8,Diversity and Habitats of Microbes,n,REVIEW,review,,not_in_scope,,
+biology,12,8,"Microbes in Household Products (Curd, Dough, Cheese, Toddy)",n,apparatus,illustration,process_flow,med,"Chunk: 'Figure - to be drawn. A simple 4-stage horizontal flow strip: (1) warm milk; (2) starter added; (3) arrow lactose to lactic acid, pH falls; (4) set curd'. Stages+arrows, no",0.6834
+biology,12,8,Fermented Beverages: Brewing and Distillation,n,apparatus,illustration,none_symbolic,med,"No apparatus anywhere in the chunks - they are product/microbe/with-or-without-distillation recall tables and pitfall notes ('wine and beer without, whisky/brandy/rum with').",0.5576
+biology,12,8,Antibiotics and Their Microbial Production,n,apparatus,illustration,none_symbolic,high,Chunks are microbe-to-product pairing tables (Aspergillus niger/citric acid etc.) and 'antibiotics do not work on viruses' MCQs. Nothing about fermenters or any equipment.,0.6105
+biology,12,8,"Industrial Chemicals, Enzymes and Bioactive Molecules from Microbes",n,apparatus,illustration,none_symbolic,high,"Every chunk is a Product|Microbe|Type|Use grid (lipase, pectinase, streptokinase, cyclosporin A, statins) plus match-column drilling. Pure name-pairing recall.",0.6511
+biology,12,8,"Sewage Treatment: Primary, Secondary and BOD",n,apparatus,illustration,process_flow,high,Ordered pathway in the chunks: filtration/sedimentation -> primary sludge + effluent -> aeration tank/flocs -> BOD drops -> activated sludge -> anaerobic digester -> biogas -> disc,0.7688
+biology,12,8,Biogas Production and Methanogens,n,apparatus,illustration,apparatus,med,"Chunks describe the plant's parts: slurry inlet, sealed digester, 'floating gas holder which rises with accumulating gas', gas outlet, slurry outlet, plus an MCQ on the cover's fun",0.694
+biology,12,8,Biocontrol Agents in Pest and Disease Management,n,REVIEW,review,,not_in_scope,,
+biology,12,8,"Biofertilisers: Rhizobium, Mycorrhiza and Cyanobacteria",n,process_cycle,widget,none_symbolic,high,"Chunks are an Agent|Type|Association|Nutrient-role table plus match-the-column items. The examinable content is the nitrogen-vs-phosphorus split, a classification, not a cycle.",0.7567
+biology,12,9,Principles of Biotechnology: Genetic Engineering and Bioprocess Engineering,n,process_cycle,widget,process_flow,high,"Chunk states: 'Diagram - Three-step logical flow - (1) Identify DNA with desirable gene, arrow to (2) Introduce DNA into host, arrow to (3) Maintain and transfer to progeny - three",0.6686
+biology,12,9,"Restriction Enzymes: Nomenclature, Recognition Sites and Sticky Ends",n,none_symbolic,none,,not_in_scope,,
+biology,12,9,"Cloning Vectors: pBR322, Origin of Replication and Selectable Markers",n,geometry_3d,widget,,not_in_scope,,
+biology,12,9,Insertional Inactivation and Selection of Recombinants,n,process_cycle,widget,gap_plasmid_map,med,"Chunks call for a 'Circular map of pBR322' with ori, ampR, tetR and the BamHI site inside tetR, plus amp-resistant/tet-sensitive selection logic. A ring plasmid map fits no existin",0.5515
+biology,12,9,Vectors for Plant and Animal Cells: Ti Plasmid and Retroviruses,n,geometry_3d,widget,,not_in_scope,,
+biology,12,9,Steps in Recombinant DNA Technology (Gene Cloning Sequence),n,process_cycle,widget,process_flow,high,Chunk: 'Diagram - Linear rDNA workflow flowchart - Isolation -> Cutting -> Amplification by PCR -> Ligation -> Insertion into host -> Selection -> Culture -> Downstream -> Purified,0.6382
+biology,12,9,Isolation of DNA from Cells (Lysis and Purification),n,apparatus,illustration,none_symbolic,med,"No apparatus in the chunks; retrieval returned the generic rDNA flowchart and gel-electrophoresis MCQs. Own content is an enzyme-to-substrate list (lysozyme/cellulase/chitinase, RN",0.5644
+biology,12,9,Gel Electrophoresis and Elution of DNA Fragments,n,apparatus,illustration,apparatus,high,"Explicit setup spec: 'Agarose gel electrophoresis setup - wells at the cathode (-) end loaded with DNA, field driving DNA toward the anode (+); lanes showing bands', plus a band-ex",0.7069
+biology,12,9,"PCR: Principle, Steps and Applications",n,apparatus,illustration,process_flow,med,"Chunk figure is a cycle, not a machine: '(A) denaturation ~94C, (B) annealing ~40-60C, (C) extension ~72C by Taq; arrow looping back x30 cycles'. No thermocycler hardware described",0.587
+biology,12,9,"Introducing Recombinant DNA into Host Cells (Competent Cells, Gene Gun, Microinjection)",n,apparatus,illustration,none_symbolic,med,Retrieval returned generic workflow/PCR text. Gene gun and microinjection appear only as a naming list of 'vectorless / direct physical methods'; the tested point is why cells must,0.5646
+biology,12,9,Bioreactors and Downstream Processing,n,apparatus,illustration,process_flow,low,No bioreactor hardware in these chunks. What is present is an ordered chain: 'Separation -> purification of the product -> formulation with preservatives -> clinical trials and qua,0.5474
+biology,12,10,Genetically Modified Crops and Their Benefits,n,process_cycle,widget,none_symbolic,med,"Own content is a benefits bullet list (abiotic-stress tolerance, less pesticide, less post-harvest loss, Golden Rice); the flow figures retrieved belong to the Bt and RNAi mechanis",0.5688
+biology,12,10,Bt Cotton and Bt Toxin (cry Genes),n,process_cycle,widget,process_flow,med,Ordered kill chain: bacterium makes inactive crystal -> cry gene into cotton -> larva eats -> alkaline midgut activates protoxin -> toxin pores gut cells. Mnemonic 'crystal-eaten-a,0.7309
+biology,12,10,RNA Interference and Nematode-Resistant Plants,n,wave_form,widget,,not_in_scope,,
+biology,12,10,Recombinant Human Insulin (Humulin) Production,n,process_cycle,widget,process_flow,high,Five numbered steps: synthesise A and B genes -> insert into E. coli plasmids -> express separately -> extract and purify -> assemble by disulphide bonds. Pro-tip repeats it as 'th,0.7048
+biology,12,10,Recombinant Vaccines and Therapeutic Proteins,n,process_cycle,widget,none_symbolic,high,"Retrieval missed the concept (top 0.53): chunks are humulin production, gene-therapy cheat sheet and transgenic-animal uses. Own content is a name list (hGH, TPA, interferon, alpha",0.5273
+biology,12,10,Gene Therapy and ADA Deficiency Treatment,n,process_cycle,widget,process_flow,high,"Chunk: 'Visualise this - Cyclic flowchart. (1) lymphocytes taken from blood (2) grown in culture (3) ADA cDNA into retrovirus (4) retrovirus delivers gene (5) re-infused, dashed lo",0.6919
+biology,12,10,"Molecular Diagnosis: PCR, ELISA and DNA Probes",n,apparatus,illustration,apparatus,low,"Chunk specifies three side-by-side technique panels - DNA amplified into copies, radioactive probe giving a dark spot on film, and 'a well-plate with antibodies binding antigens, a",0.696
+biology,12,10,Transgenic Animals and Their Applications,n,process_cycle,widget,none_symbolic,med,"The figure asked for is a hub with 'five arms radiating out, each with a small icon and label' - a decorated list of the five NCERT uses. No ordered stages and no cycle anywhere in",0.6986
+biology,12,10,Biopiracy and Patent Issues,n,REVIEW,review,,not_in_scope,,
+biology,12,10,"Biosafety, GEAC and Ethical Concerns of GMOs",n,REVIEW,review,,not_in_scope,,
+biology,12,11,Levels of Ecological Organisation (Organism to Biome),n,labelled_figure,illustration,none_symbolic,med,"Chunks define four nested levels in one sentence (organism, population, community, ecosystem) and otherwise give eury-/steno- definitions and a table of contents. Nothing anatomica",0.5319
+biology,12,11,Ecological Niche and Habitat,n,labelled_figure,illustration,none_symbolic,high,"Content is a pure verbal distinction: 'habitat is the address, niche is the profession', with the canopy-gleaning vs bark-probing bird example. Definitions and an A-R item, no figu",0.5609
+biology,12,11,"Major Abiotic Factors: Temperature, Water, Light and Soil",n,REVIEW,review,,not_in_scope,,
+biology,12,11,Responses to Abiotic Stress and Adaptations,n,free_body_forces,widget,,not_in_scope,,
+biology,12,11,"Population Attributes: Density, Natality, Mortality, Sex Ratio and Age Pyramids",n,xy_plot,widget,,not_in_scope,,
+biology,12,11,Population Growth: Exponential and Logistic Models,n,process_cycle,widget,xy_plot,high,Explicit: 'Two growth curves on the same axes - N (y) vs t (x). Curve 1 J-shape dN/dt=rN. Curve 2 S-shape flattening to dashed line K.' Second chunk adds the labelled sigmoid with ,0.6805
+biology,12,11,Life History Variation and Reproductive Strategies,n,REVIEW,review,,not_in_scope,,
+biology,12,11,"Competition, Competitive Exclusion and Resource Partitioning",n,REVIEW,review,,not_in_scope,,
+biology,12,11,Predation and Prey Defences,n,REVIEW,review,,not_in_scope,,
+biology,12,11,Parasitism and Brood Parasitism,n,REVIEW,review,,not_in_scope,,
+biology,12,11,Mutualism and Commensalism,n,REVIEW,review,,not_in_scope,,
+biology,12,12,"Ecosystem Structure: Components, Stratification and Functions",n,REVIEW,review,,not_in_scope,,
+biology,12,12,"Productivity: GPP, NPP and Secondary Productivity",n,process_cycle,widget,process_flow,med,"Chunk: 'Diagram to render - horizontal income-statement flow. Box 1 GPP -> arrow splitting, downward arrow R (producer respiration) peeling off, forward into Box 2 NPP = GPP-R -> B",0.7278
+biology,12,12,Decomposition and Its Steps,n,process_cycle,widget,process_flow,high,"Chunk: 'Diagram to render - a left-to-right pipeline of five linked boxes on the detritus stream', with the fixed order fragmentation -> leaching -> catabolism -> humification -> m",0.6149
+biology,12,12,"Food Chains, Food Webs and Trophic Levels",n,process_cycle,widget,process_flow,med,"Chunks trace a unidirectional chain 'Sun -> producers -> consumers -> heat', 10% passed at each arrow and ~90% 'lost as heat (2nd law)', ending at 4-5 levels. Pyramids are a separa",0.6633
+biology,12,12,Energy Flow and the Ten Per Cent Law,n,process_cycle,widget,process_flow,high,"Chunks trace an ordered chain Sun->producers->herbivores->consumers with ~10% passed per arrow and ~90% lost as heat; 'count the arrows... that many factors of /10'. Nodes+arrows, ",0.529
+biology,12,12,Ecological Pyramids and Their Limitations,n,process_cycle,widget,data_table_trend,med,"Chunk is an explicit grid: rows Number/Biomass/Energy x columns 'usually upright' / 'can be inverted', with the exception rule (energy never inverts). Values-and-exceptions table, ",0.6218
+biology,12,12,"Ecological Succession: Primary, Secondary, Hydrarch and Xerarch",n,process_cycle,widget,process_flow,high,Explicit ordered sequence: 'bare rock -> crustose lichens -> foliose lichens -> mosses -> herbs -> shrubs -> forest (climax)'; hydrarch parallel chain. Linear stage chain.,0.6126
+biology,12,12,Carbon Cycle,n,process_cycle,widget,process_flow,high,"Chunk carries a literal 'Diagram to render': box 'CO2 in atmosphere (reservoir)' with arrows photosynthesis down, respiration/decomposition/combustion back up, 'Oceans = sink'. Clo",0.5137
+biology,12,12,Phosphorus Cycle,n,process_cycle,widget,process_flow,high,"Same 'Diagram to render' chunk: 'Rock phosphate (reservoir)' -> weathering -> soil solution -> producers -> decomposers -> back to soil, dashed arrow to sediments. Labelled-box cyc",0.5358
+biology,12,12,Ecosystem Services and Their Economic Valuation,n,REVIEW,review,,not_in_scope,,
+biology,12,13,"Levels and Magnitude of Biodiversity (Genetic, Species and Ecological)",n,xy_plot,widget,,not_in_scope,,
+biology,12,13,Patterns of Biodiversity: Latitudinal Gradient and Species-Area Relationship,n,xy_plot,widget,,not_in_scope,,
+biology,12,13,India's Biodiversity: Megadiversity and Endemism,n,REVIEW,review,,not_in_scope,,
+biology,12,13,Species Diversity and Ecosystem Stability (Rivet Popper Hypothesis),n,xy_plot,widget,,not_in_scope,,
+biology,12,13,Loss of Biodiversity and the Evil Quartet,n,REVIEW,review,,not_in_scope,,
+biology,12,13,Extinction and the IUCN Red List,n,xy_plot,widget,,not_in_scope,,
+biology,12,13,"Reasons for Conserving Biodiversity: Narrowly Utilitarian, Broadly Utilitarian and Ethical",n,REVIEW,review,,not_in_scope,,
+biology,12,13,"In-situ Conservation: Biosphere Reserves, National Parks, Sanctuaries and Sacred Groves",n,REVIEW,review,,not_in_scope,,
+biology,12,13,Biodiversity Hotspots and Global Conservation Efforts,n,xy_plot,widget,,not_in_scope,,
+biology,12,13,"Ex-situ Conservation: Zoos, Botanical Gardens, Cryopreservation and Seed Banks",n,REVIEW,review,,not_in_scope,,

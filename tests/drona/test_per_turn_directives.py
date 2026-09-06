@@ -67,22 +67,35 @@ def test_the_cue_still_feeds_the_directive():
     # suggest_diagram_template's result is what makes the directive specific.
     # If the two are decoupled, the cue fires into nothing.
     assert re.search(r"_diag_hint\s*=\s*suggest_diagram_template\(", SRC)
-    assert re.search(r"if\s+_diag_hint\s+and\s+not\s+_precomputed_svg\s*:", SRC)
+    # It is now the `elif` of the archetype branch, not a condition of its own:
+    # a concept the archetype column NAMES does not also get a template
+    # directive, because two "emit ONE diagram" instructions in one turn is the
+    # failure both branches are shaped to avoid.
+    assert re.search(r"\n    elif _diag_hint:\n", SRC)
 
 
 def test_the_two_diagram_tiers_cannot_both_fire():
-    """A precomputed diagram suppresses the template directive.
+    """Two pictures in one turn is worse than either alone — the board would
+    carry two diagrams of the same idea, drawn differently, and the speech only
+    introduces one.
 
-    Both tiers producing a picture in one turn is worse than either alone — the
-    board would carry two diagrams of the same idea, drawn differently, and the
-    speech only introduces one. The suppression is the whole reason the tiers
-    are ordered rather than merely both available.
+    WHERE THAT IS ENFORCED HAS MOVED, and it had to. It used to be enforced by
+    a precomputed SVG suppressing the template DIRECTIVE, which also suppressed
+    the widget path: measured on Maths 12 Ch8, 50 of 70 segments (71%) never
+    saw a diagram directive at all. A cached tier-3 SVG is still tier 3 and may
+    not outrank the tiers above it.
+
+    So the directive is built regardless, and the DELIVERY side is what keeps
+    the board to one picture: the precomputed SVG is appended only when the
+    turn produced no diagram of its own. Same guarantee, correct tier order.
     """
-    assert re.search(r"if\s+_diag_hint\s+and\s+not\s+_precomputed_svg\s*:", SRC)
-    # and the delivery side refuses to append over a diagram the model emitted
-    idx = SRC.index("Tier 1 delivery")
-    block = SRC[idx:idx + 700]
+    assert not re.search(r"if\s+_diag_hint\s+and\s+not\s+_precomputed_svg\s*:", SRC), (
+        "the cached SVG is gating the directive again"
+    )
+    idx = SRC.index("SLOT 4 delivery")
+    block = SRC[idx:idx + 1400]
     assert 'e.get("type") == "diagram"' in block, "appends without checking for an existing one"
+    assert "if _precomputed_svg and not any(" in block
 
 
 def test_the_precomputed_lookup_cannot_fail_a_lesson():
@@ -162,10 +175,16 @@ def test_tier_three_is_started_before_the_llm_call():
 
 
 def test_tier_three_only_fires_when_the_cheap_tiers_missed():
-    """Paying a model call where an indexed read would have done is the waste."""
+    """Paying a model call where an indexed read would have done is the waste.
+
+    Now expressed as `_board_slot == "svg_live"`, which IS "slots 1-4 all
+    empty" by construction — a single value that cannot drift out of step with
+    the resolution order the way four chained `not`s could. `not _diag_hint`
+    stays: a template cue costs a string build, not a model call.
+    """
     idx = SRC.index("_live_diagram_future = None")
     block = SRC[idx:idx + 260]
-    assert "not _precomputed_svg and not _diag_hint" in block
+    assert '_board_slot == "svg_live"' in block and "not _diag_hint" in block
 
 
 def test_tier_three_is_polled_never_awaited():
