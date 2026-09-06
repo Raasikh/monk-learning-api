@@ -28,7 +28,12 @@ _ROOT = Path(__file__).resolve().parents[2]
 
 def _cued_templates() -> set[str]:
     src = (_ROOT / "app" / "drona" / "tutor.py").read_text(encoding="utf-8")
-    block = src[src.index("_DIAGRAM_CUES"):src.index("_WIDGET_CUES")]
+    # Anchored on the table's own closing bracket rather than on whatever is
+    # declared next: this used to end at `_WIDGET_CUES`, which has since been
+    # deleted, and the slice only kept working because the comment recording
+    # the deletion happens to sit in the same place.
+    _start = src.index("_DIAGRAM_CUES: List")
+    block = src[_start:src.index("\n]\n", _start)]
     return set(re.findall(r'"([a-z_]+)"\)\s*,', block))
 
 

@@ -346,18 +346,22 @@ def test_new_widgets_deliberately_get_no_server_side_param_check():
 #
 # `_WIDGET_CUES` was consulted ONLY when `suggest_diagram_template` found
 # nothing, so a template cue silently hid the whole widget registry. Measured
-# on Maths 12 Ch8 (`suggest_diagram_template` / `suggest_widget`, real
-# functions, bare concept names): 6 of 10 concepts were claimed by a template
-# and never reached widget routing at all — including "Area Bounded by a
-# Parabola and a Line", the canonical xy_plot case, routed to `conic_figure`
-# on the literal word "parabola".
+# on Maths 12 Ch8 (real functions, bare concept names): 6 of 10 concepts were
+# claimed by a template and never reached widget routing at all — including
+# "Area Bounded by a Parabola and a Line", the canonical xy_plot case, routed
+# to `conic_figure` on the literal word "parabola".
 #
 # The fix is NOT to invert the order. `projectile_scene` beating
 # `vector_resolution` is a measured lesson recorded in _DIAGRAM_CUES' own
 # comments, and template-vs-template order is deliberately untouched here.
-# What changed is that a keyword no longer DECIDES: both hints are computed,
-# both are shown, and the model picks — which is what docs/widget-routing.md
-# already mandates for everything below `v2_confidence == "high"`.
+# What changed is that a keyword no longer DECIDES: below `v2_confidence ==
+# "high"` the template cue is a DEFAULT, the full manifest is in the system
+# prompt, and the model picks — which is what docs/widget-routing.md mandates.
+#
+# `_WIDGET_CUES` itself is now DELETED, and the archetype column names the
+# widget on the high-confidence path instead. Its own tests live in
+# tests/drona/test_concept_archetypes.py; what stays here is everything about
+# the template side and the directive shapes.
 
 MATHS_12_CH8 = [
     "Area Under a Simple Curve Bounded by the Axes",
@@ -373,12 +377,19 @@ MATHS_12_CH8 = [
 ]
 
 
-def test_the_widget_cue_is_no_longer_suppressed_by_the_template_cue():
-    """`_widget_hint = None if _diag_hint else …` was the suppression."""
-    assert "None if _diag_hint else suggest_widget" not in TUTOR_SRC, (
+def test_the_widget_path_is_no_longer_suppressed_by_the_template_cue():
+    """The template cue must not be able to hide the registry.
+
+    It used to in two ways: `_WIDGET_CUES` was consulted only when no template
+    cue fired, and the template directive named one template and said nothing
+    about widgets. The first is gone with the table; the second is asserted
+    below.
+    """
+    assert "None if _diag_hint else" not in TUTOR_SRC, (
         "the template cue is deciding again; it must be a default, not a gate"
     )
-    assert re.search(r"_widget_hint = suggest_widget\(", TUTOR_SRC)
+    # The full manifest reaches every non-archetype turn regardless of cue.
+    assert "else render_manifest_block()" in TUTOR_SRC
 
 
 def test_the_template_directive_says_a_widget_may_be_used_instead():
@@ -390,49 +401,51 @@ def test_the_template_directive_says_a_widget_may_be_used_instead():
     nothing else is therefore an instruction to ignore the registry.
     """
     start = TUTOR_SRC.index("diagram_directive = (")
-    block = TUTOR_SRC[start:TUTOR_SRC.index("widget_directive = ", start)]
+    block = TUTOR_SRC[start:start + 2200]
     assert "LIVE WIDGETS" in block, "the template directive never mentions the registry"
-    assert "{_widget_hint}" in block, (
-        "a widget cue that also fired is not surfaced, so it fires into nothing"
-    )
+    assert "is the DEFAULT, not the only option" in block
 
 
-def test_the_standalone_widget_directive_still_only_fires_without_a_template():
+def test_the_two_directives_are_mutually_exclusive_branches():
     """Two 'emit ONE diagram' directives in one turn is worse than a bad pick.
 
-    When both cues fire the alternative rides inside diagram_directive instead,
-    which is also what keeps every field_lines turn behaving exactly as before.
+    They are now an if/elif on the archetype: a concept the column NAMES gets
+    the widget directive and no template directive; everything else gets the
+    template directive if a cue fired, and the manifest either way.
     """
-    assert re.search(
-        r"if _widget_hint and not _diag_hint and not _precomputed_svg:", TUTOR_SRC
-    )
+    assert re.search(r"\n    if _archetype_widget:\n", TUTOR_SRC)
+    assert re.search(r"\n    elif _diag_hint:\n", TUTOR_SRC)
+    # and neither is gated on the cached SVG any more — that was the
+    # timing-over-tier bug.
+    assert "and not _precomputed_svg:" not in TUTOR_SRC
 
 
 def test_the_widget_directive_takes_its_params_from_the_registry():
     """It used to spell out field_lines' four configurations inline.
 
-    A second row in `_WIDGET_CUES` would then have been handed field_lines'
-    params — the same hardcoding, one level up from the sanitizer.
+    A second widget would then have been handed field_lines' params — the same
+    hardcoding, one level up from the sanitizer. The archetype column now
+    names widgets the registry has never described in a literal here.
     """
     start = TUTOR_SRC.index("widget_directive = (")
-    block = TUTOR_SRC[start:start + 1400]
-    assert "WIDGET_SPECS.get(_widget_hint" in block
-    assert "WIDGET_VERSIONS.get(_widget_hint" in TUTOR_SRC
+    block = TUTOR_SRC[start:start + 2000]
+    assert "WIDGET_SPECS.get(_archetype_widget" in block
+    assert "WIDGET_VERSIONS.get(_archetype_widget" in TUTOR_SRC
     assert "like_charges" not in block, "field_lines params are hardcoded again"
 
 
-def test_tier_three_kickoff_is_unchanged_by_the_precedence_change():
-    """Un-suppressing _widget_hint must not change WHEN tier 3 starts.
+def test_tier_three_kickoff_still_precedes_the_llm_call():
+    """The guard changed with the resolution order; the POSITION must not have.
 
-    Tier 3 starts only when neither hint fired; a widget hint could previously
-    only be non-None where `_diag_hint` was already None, so the guard's value
-    is identical either way. It is asserted rather than argued because tier 3
-    is started before the LLM call and cannot be started after — losing it
-    would mean turns with no fallback at all.
+    Tier 3 is started before the LLM call and cannot be started after — a turn
+    emits exactly ONE board_events event. The guard is now the resolved slot,
+    which is "slots 1-4 all empty" by construction, so a segment that falls
+    through to slot 5 still gets a figure started rather than nothing.
     """
     idx = TUTOR_SRC.index("_live_diagram_future = None")
     block = TUTOR_SRC[idx:idx + 260]
-    assert "not _precomputed_svg and not _diag_hint and not _widget_hint" in block
+    assert '_board_slot == "svg_live"' in block
+    assert TUTOR_SRC.index("start_live_diagram(\n") < TUTOR_SRC.index("diagram_directive = (")
 
 
 def test_every_maths_12_ch8_concept_now_reaches_the_widget_registry():

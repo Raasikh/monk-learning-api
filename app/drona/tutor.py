@@ -14,10 +14,16 @@ from app.drona.prompt_loader import load_prompt
 from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
 from app.drona.diagram_author import validate as validate_authored_svg
 from app.drona.widget_registry import (
+    ROUTE_ARCHETYPE_HIGH,
     WIDGET_SPECS,
     WIDGET_VERSIONS,
     render_manifest_block,
+    render_single_widget_block,
     sanitize_widget_payload,
+)
+from app.drona.concept_archetypes import (
+    ARCHETYPE_VERSION,
+    concept_archetype_for_session,
 )
 from app.drona.state import compute_next_session_state
 from app.drona.usage import record_call_bg
@@ -123,20 +129,22 @@ _DIAGRAM_CUES: List[Tuple[str, str]] = [
      r"|radiation|reproduction|division|life cycle", "process_flow"),
 ]
 
-# Field-lines WIDGET cue — a second, independent table, never merged into
-# _DIAGRAM_CUES. field_lines has no entry in diagram_templates.TEMPLATES (it
-# is rendered by the student's app from parameters, not by the server from a
-# name), and test_every_suggested_template_actually_exists asserts every
-# _DIAGRAM_CUES entry names a real template — adding it there would fail that
-# assertion and be architecturally wrong besides. Checked only when
-# suggest_diagram_template found nothing (see its call site), so it can never
-# out-compete an existing, tested cue — "dipole" already routes to
-# free_body_diagram and keeps doing so; this only claims the electrostatics
-# content that cue table left as pure text.
-_WIDGET_CUES: List[Tuple[str, str]] = [
-    (r"field line|point charge|like charges|parallel[- ]plate|neutral point"
-     r"|dipole('s)? field|electric field\b", "field_lines"),
-]
+# `_WIDGET_CUES` WAS HERE AND IS GONE, along with `suggest_widget`. It was a
+# ONE-ROW regex table that claimed electrostatics content for `field_lines`,
+# and it was the only server-side thing that ever NAMED a widget. It is
+# replaced by the archetype column (app/drona/concept_archetypes.py): a
+# classification read from the book's own text and validated 21/21 blind at
+# high confidence, rather than a keyword deciding before the model with
+# nothing measured behind it.
+#
+# WHAT THAT COSTS, MEASURED, BECAUSE IT IS NOT ZERO. `field_lines` appears
+# ZERO times in `archetype_v2` — every concept in physics 12 ch1, where field
+# lines live, is `not_in_scope` (the reclassification covered 407 of 1,154
+# concepts and physics ch1 was not among them). So the one widget that was
+# already live loses its named directive and is reachable only by the model
+# picking it out of REGISTRY_MANIFEST, which is in the system prompt on every
+# non-archetype turn. That is a real reduction in directive strength on
+# electrostatics turns, and it is recorded here rather than discovered later.
 
 
 # A turn that works a numerical example, where the student should be offered
@@ -317,21 +325,44 @@ def suggest_diagram_template(*texts: str) -> Optional[str]:
     return None
 
 
-def suggest_widget(*texts: str) -> Optional[str]:
-    """The one client-rendered widget this turn's content calls for, if any.
+# ── Board resolution: five slots, ordered by TIER, never by timing ──────────
+#: The order every segment resolves in. It is a TIER order, and the thing it
+#: fixes is that slot 4 used to sit at the top: a stored `example_diagram_svg`
+#: short-circuited everything, so neither the template directive nor the widget
+#: directive was built at all. Measured on Maths 12 Ch8, 50 of 70 segments
+#: (71%) never saw a diagram directive, which made the widget path unreachable
+#: on them. A precomputed tier-3 SVG is STILL TIER 3; caching it does not
+#: promote it.
+BOARD_SLOTS = (
+    "widget_precomputed",   # 1. a stored widget payload for this concept
+    "widget_archetype",     # 2. archetype_v2 @ high names a registered widget
+    "illustration",         # 3. the concept maps to an illustration asset
+    "svg_precomputed",      # 4. a stored tier-3 SVG — where the cached C1 SVG belongs
+    "svg_live",             # 5. author one now
+)
 
-    Same shape and same conservatism as suggest_diagram_template — no match
-    means no suggestion — kept as a separate function over a separate table
-    (_WIDGET_CUES) rather than folded into that one. See _WIDGET_CUES' own
-    comment for why.
+
+def resolve_board_slot(precomputed_widget=None, archetype_widget=None,
+                       illustration_asset=None, precomputed_svg=None) -> str:
+    """Which slot answers this segment. Pure, total, and the whole order.
+
+    Written as one function taking four values rather than as a chain of `if`s
+    at the call site, because the ORDER is the thing under test and a chain
+    spread over eighty lines of directive-building cannot be tested without a
+    session, a plan and a database.
+
+    Slot 5 is the floor: with nothing stored and no archetype, the answer is
+    "author one now", which is what the caller then decides whether to pay for.
     """
-    blob = " ".join(t for t in texts if t).lower()
-    if not blob:
-        return None
-    for pattern, widget in _WIDGET_CUES:
-        if re.search(pattern, blob):
-            return widget
-    return None
+    if precomputed_widget:
+        return "widget_precomputed"
+    if archetype_widget:
+        return "widget_archetype"
+    if illustration_asset:
+        return "illustration"
+    if precomputed_svg:
+        return "svg_precomputed"
+    return "svg_live"
 
 # user_id -> first name. A display name effectively never changes, and this is
 # read on every turn, so it is not worth a DB round trip each time.
@@ -616,6 +647,20 @@ async def process_tutor_turn_stream(
         "checkpoint": {"question": "Ready to move forward?", "model_answer": "Yes", "rubric": "Confirm understanding"}
     }
 
+    # ── SLOT 2 input, resolved HERE because the SYSTEM PROMPT depends on it ──
+    # The rest of the board resolution lives further down, next to the
+    # directives it feeds (search: "BOARD RESOLUTION"). This one value has to
+    # be known before `tutor.md` is assembled, because a concept the column
+    # names gets a DIFFERENT widget block in the system message — not the full
+    # manifest — and that is the whole token saving.
+    #
+    # Total by construction: `concept_archetype_for_session` never raises, and
+    # an unreadable table yields confidence "table_unreadable" rather than a
+    # concept that merely looks non-high. See app/drona/concept_archetypes.py.
+    _archetype = concept_archetype_for_session(session.get("chapter_id"),
+                                               session.get("subtopic_key"))
+    _archetype_widget = _archetype.widget
+
     # 3. Assemble R4 prefix order: [1] tutor.md [2] plan [3] current segment [4] state [5] utterance
     tutor_prompt = load_prompt("tutor.md")
     # The registry manifest is GENERATED into the prompt, not written out in
@@ -627,6 +672,23 @@ async def process_tutor_turn_stream(
     # tokens (cl100k) for nine widgets, net +997 on a 13,886-token prompt after
     # the field_lines paragraph it replaces, so it is paid in full once per
     # prompt version and at the cache rate on every turn after.
+    #
+    # TWO BLOCKS, NOT ONE, and which one rides depends on the archetype column:
+    #
+    #   `v2_confidence == "high"`  -> render_single_widget_block: ONE widget's
+    #       schema and two questions (does this segment want the board; if so,
+    #       what params). The column was right 21/21 blind at that confidence,
+    #       so offering nine alternatives invites the model to overrule a
+    #       measurement with a guess — and costs ~1,000 tokens to do it.
+    #   anything else              -> render_manifest_block, unchanged. `med`
+    #       leans 2:1 toward falsely claiming a diagram, so it must not nudge
+    #       the model at all; it gets the full list and picks.
+    #
+    # The cost of the split is a CACHE MISS: the system message is the cached
+    # prefix, and two prefixes alternating by segment means each is cached
+    # separately. Corpus-wide only 53 concepts across 27 chapters take the
+    # single-widget branch, so within any one chapter the prompt is stable for
+    # most or all segments and the miss is bounded.
     if "{{REGISTRY_MANIFEST}}" not in tutor_prompt:
         # Loud, not silent: a prompt edit that loses the marker would leave the
         # model with no widget list at all, and path 2 would degrade to tier 3
@@ -635,7 +697,11 @@ async def process_tutor_turn_stream(
             "⚠️ [WIDGET REGISTRY] prompts/tutor.md has no {{REGISTRY_MANIFEST}} "
             "marker — the model is being given NO widget list this turn."
         )
-    tutor_prompt = tutor_prompt.replace("{{REGISTRY_MANIFEST}}", render_manifest_block())
+    tutor_prompt = tutor_prompt.replace(
+        "{{REGISTRY_MANIFEST}}",
+        render_single_widget_block(_archetype_widget) if _archetype_widget
+        else render_manifest_block(),
+    )
 
     # Collect board events emitted so far in current segment to enforce progressive arc
     current_segment_board_events = []
@@ -807,17 +873,59 @@ async def process_tutor_turn_stream(
     # on the model to notice the general trigger table. Measured: with the
     # table alone, a Trigonometry derivation and a dipole-forces turn both came
     # back as pure text.
-    # ── Tier 1: a precomputed diagram, if this concept has one ───────────────
-    # Beats the template tier outright. It was authored FOR this concept rather
-    # than assembled from parameters, it is already validated, and serving it
-    # costs one indexed read instead of a model call. If it is present the
-    # template directive is skipped entirely — two diagrams in one turn is
-    # worse than either alone.
+    # ══ BOARD RESOLUTION ════════════════════════════════════════════════════
+    # FIVE SLOTS, ORDERED BY TIER, NEVER BY TIMING. See `resolve_board_slot`
+    # for the order itself and why it is a separate pure function.
+    #
+    # What changed: `_precomputed_svg` used to sit at the top and
+    # short-circuit everything — a segment with a stored `example_diagram_svg`
+    # built NEITHER the template directive NOR the widget directive, so the
+    # model was never asked for a picture at all. Measured on Maths 12 Ch8,
+    # 50 of 70 segments (71%) never saw a diagram directive, which made the
+    # whole widget path unreachable on them. A CACHED tier-3 SVG IS STILL TIER
+    # 3. It is slot 4, and slot 4 may not suppress slots 1-3 or the
+    # model-choice directives; it is a FALLBACK, delivered further down only
+    # when the turn produced no diagram of its own.
+
+    # ── SLOT 1: a precomputed WIDGET PAYLOAD for this concept ────────────────
+    # DELIBERATELY EMPTY, and empty in code rather than absent from it. No
+    # table in this repo stores a widget payload: `concept_diagrams` holds SVG
+    # text (migrations/0029) and nothing holds `{widget, version, params}`.
+    # Inventing storage for it was explicitly out of scope, so the slot is a
+    # named `None` that the resolver reads — which is what makes the ORDER
+    # complete and reviewable now, and what a later precompute fills in one
+    # line without re-deciding the order.
+    _precomputed_widget = None
+
+    # ── SLOT 2: the archetype column NAMES a widget for this concept ─────────
+    # `_archetype` / `_archetype_widget` are resolved earlier, at prompt
+    # assembly, because the SYSTEM MESSAGE depends on them (search:
+    # "SLOT 2 input"). Non-None only when `v2_confidence == "high"` AND the
+    # named id is one the client registry ships — 53 concepts across 27
+    # chapters corpus-wide. Everything else, including a concept the table
+    # does not know and a table that could not be read at all, is None here
+    # and falls to the model-choice branch below.
+
+    # ── SLOT 3: an ILLUSTRATION ASSET for this concept ───────────────────────
+    # DELIBERATELY EMPTY, for a reason that is recorded rather than assumed:
+    # `concept_assets` (migrations/0035) is marked WRITTEN, NOT APPLIED, so
+    # there is no `asset_slug` to look up and a lookup would be a query against
+    # a table that does not exist. This is the slot `archetype_v2 ==
+    # "labelled_figure"` belongs in — 27 high-confidence concepts, and
+    # `labelled_figure` is deliberately absent from the client widget registry
+    # precisely because it names an offline-authored asset rather than a
+    # drawing the model composes (see widget_registry.py, "ONE TRAP"). Wiring
+    # it needs the migration applied AND a client dispatch branch; neither
+    # exists, so nothing is invented here.
+    _illustration_asset = None
+
+    # ── SLOT 4: a precomputed tier-3 SVG ─────────────────────────────────────
     # This SEGMENT's own example figure outranks the concept-level one. It was
     # drawn for the specific problem being worked — "a 2kg block pushed with
     # 10N" — where the concept diagram is drawn for the topic. A student who
     # cannot picture the example is exactly who both exist for, and the more
-    # specific picture is the one that helps.
+    # specific picture is the one that helps. (Order WITHIN slot 4; the slot
+    # itself no longer outranks anything above it.)
     _precomputed_svg = (curr_segment.get("example_diagram_svg")
                         or _precomputed_diagram(session.get("chapter_id"),
                                                 session.get("subtopic_key")))
@@ -828,47 +936,38 @@ async def process_tutor_turn_stream(
             _precomputed_svg = _precomputed_diagram(session.get("chapter_id"),
                                                     session.get("subtopic_key"))
 
+    _board_slot = resolve_board_slot(
+        precomputed_widget=_precomputed_widget,
+        archetype_widget=_archetype_widget,
+        illustration_asset=_illustration_asset,
+        precomputed_svg=_precomputed_svg,
+    )
+
+    # The template cue. Computed on EVERY turn, including archetype turns,
+    # because it is the diagnostic that says what a keyword would have picked
+    # — but it only builds a directive on the non-archetype branch. On an
+    # archetype turn the column decided, and a competing "emit `conic_figure`"
+    # beside "emit `xy_plot`" is the two-directives failure in a new costume.
     _diag_hint = suggest_diagram_template(
         curr_segment.get("objective") or "",
         curr_segment.get("teaching_notes") or "",
         " ".join(assigned_items_text),
         utterance or "",
     )
-    # No longer suppressed by _diag_hint. _WIDGET_CUES' original comment said
-    # the widget table must "never out-compete an existing, tested cue" — right
-    # when there was ONE widget against a mature template library, and expired
-    # now that nine registered widgets compute their geometry exactly and
-    # animate. But the fix is NOT to invert the order: `projectile_scene`
-    # beating `vector_resolution` is a measured lesson (a scene a student can
-    # picture beats an abstract relationship figure), and a blanket inversion
-    # re-breaks it on every subject at once with nothing measured.
-    #
-    # So the template cue stops being a DECISION and becomes a DEFAULT: both
-    # hints are computed, both are shown, and the MODEL picks with the turn's
-    # content in front of it. That is what docs/widget-routing.md already
-    # mandates for everything that is not `v2_confidence == "high"` — "the
-    # model picks from REGISTRY_MANIFEST" — and a keyword that decides before
-    # the model, and hides the manifest when it fires, is a fourth routing
-    # path the doc does not have. Measured on Maths 12 Ch8: 6 of 10 concepts
-    # were claimed by a template cue and never reached suggest_widget at all,
-    # including "Area Bounded by a Parabola and a Line" — the canonical
-    # xy_plot case — routed to conic_figure on the literal word "parabola".
-    #
-    # Template-vs-template order in _DIAGRAM_CUES is untouched.
-    _widget_hint = suggest_widget(
-        curr_segment.get("objective") or "",
-        curr_segment.get("teaching_notes") or "",
-        " ".join(assigned_items_text),
-        utterance or "",
-    )
-    # ── Tier 3: neither faster tier covers this concept ──────────────────────
-    # Started HERE, before the LLM call, so it runs concurrently with the turn
+    # ── SLOT 5: author one now ───────────────────────────────────────────────
+    # Started HERE, BEFORE THE LLM CALL, so it runs concurrently with the turn
     # rather than after it — that is the only thing that gives it a chance of
-    # landing before the board flushes. It is also why the two cheap tiers are
-    # resolved first: paying for a model call when an indexed read or a string
-    # build would have done is the one outcome worth avoiding.
+    # landing before the board flushes, and it cannot be started afterwards.
+    # THAT PROPERTY IS PRESERVED EXACTLY; only the guard changed.
+    #
+    # The guard is now `_board_slot == "svg_live"`, which is by construction
+    # "slots 1-4 all empty" — it subsumes the old `not _precomputed_svg` and
+    # replaces `not _widget_hint` with the archetype slot. `not _diag_hint`
+    # stays for the original reason: paying for a model call when a template
+    # cue will do is the one outcome worth avoiding. A segment that falls
+    # through to slot 5 therefore still gets a figure started.
     _live_diagram_future = None
-    if not _precomputed_svg and not _diag_hint and not _widget_hint:
+    if _board_slot == "svg_live" and not _diag_hint:
         _live_diagram_future = start_live_diagram(
             session.get("chapter_id"), session.get("subtopic_key"),
             # A doubt is about the utterance; a teaching turn is about the
@@ -879,8 +978,51 @@ async def process_tutor_turn_stream(
                 or curr_segment.get("objective") or ""),
         )
 
+    # ── The directives. WHICH ONE is decided by the slot, not by the cache ───
+    # `and not _precomputed_svg` is GONE from both conditions, and that removal
+    # is the whole of change 1. It was the short-circuit that hid the widget
+    # path on 50 of 70 Maths 12 Ch8 segments. Slot 4 is delivered instead as a
+    # fallback further down, at the append that already refuses to
+    # append over a diagram the turn produced — so two pictures in one turn
+    # remains impossible, which was the real thing the suppression protected.
     diagram_directive = ""
-    if _diag_hint and not _precomputed_svg:
+    widget_directive = ""
+
+    if _archetype_widget:
+        # SLOT 2. The column NAMES the widget; it is not offered. The system
+        # message already carries only this widget's schema
+        # (render_single_widget_block), so the directive names it and asks for
+        # params — it does not re-describe them, which would be a second copy
+        # of the registry spec in a different voice.
+        #
+        # No `diagram_directive` on this branch, deliberately: the template cue
+        # may well have fired (it is still computed, and the turn summary
+        # reports it), but a "emit `conic_figure`" beside "emit `xy_plot`" is
+        # the two-competing-directives failure the previous change removed.
+        _wv = WIDGET_VERSIONS.get(_archetype_widget, 1)
+        widget_directive = (
+            f"\n\nLIVE WIDGET FOR THIS TURN: `{_archetype_widget}` — a live, "
+            f"physically-correct rendering the student's app draws itself, not "
+            f"a picture you author. This concept was classified from the book's "
+            f"own text and this widget is the classification; it is not a "
+            f"suggestion and there is no alternative on offer this turn.\n"
+            f"Emit ONE board_event of type \"diagram\" with a `payload` "
+            f"object instead of `template`/`params`/`svg`:\n"
+            f"{{\"seq\": N, \"type\": \"diagram\", \"payload\": {{\"widget\": "
+            f"\"{_archetype_widget}\", \"version\": {_wv}, \"params\": {{ … }}}}}}\n"
+            # Params come from the registry, never from a literal here: this
+            # directive used to spell out field_lines' four configurations, so
+            # a second widget would have been handed field_lines' params.
+            f"Its params: {WIDGET_SPECS.get(_archetype_widget, '')}\n"
+            f"This is IN ADDITION to your normal board lines, not instead of "
+            f"them.\n"
+            f"ONE JUDGEMENT IS YOURS: whether THIS SEGMENT wants the picture at "
+            f"all. The classification is about the concept; this segment may be "
+            f"a definition, a recap or a checkpoint that wants none. If so, emit "
+            f"no diagram event — that is a correct answer, not a failure. Never "
+            f"substitute a different widget or a template for it.\n"
+        )
+    elif _diag_hint:
         diagram_directive = (
             f"\n\nDIAGRAM FOR THIS TURN: this content calls for `{_diag_hint}`.\n"
             f"Emit ONE board_event of type \"diagram\" with template "
@@ -892,46 +1034,21 @@ async def process_tutor_turn_stream(
             f"student nothing to read back. Skip the diagram only if the "
             f"content genuinely does not fit that template; then pick a "
             f"template that does, or emit none.\n"
-            # The template cue is a DEFAULT, not a decision — see _widget_hint
-            # above. The alternative is stated here rather than as a second
-            # directive because "emit ONE diagram" appearing twice, for two
-            # different things, is worse than a keyword picking wrongly.
+            # The template cue is a DEFAULT, not a decision. The alternative is
+            # stated here rather than as a second directive because "emit ONE
+            # diagram" appearing twice, for two different things, is worse than
+            # a keyword picking wrongly.
             f"`{_diag_hint}` is the DEFAULT, not the only option: if one of the "
             f"LIVE WIDGETS in Rule 3 fits this content and its params really "
             f"describe it, emit that widget's `payload` INSTEAD — the app draws "
             f"it from exact maths and can animate it, which a template cannot. "
             f"Do not stretch a widget whose params do not fit; then the template "
             f"stands.\n"
-            + (f"For this turn `{_widget_hint}` also matched the content — "
-               f"weigh it against `{_diag_hint}` and pick the one that actually "
-               f"draws what you are teaching.\n" if _widget_hint else "")
         )
-
-    widget_directive = ""
-    # Unchanged condition: the standalone widget directive still fires only
-    # when no template cue claimed the turn. When both fire, the alternative is
-    # carried inside diagram_directive above instead, so a turn never receives
-    # two competing "emit ONE diagram" instructions. This keeps every
-    # field_lines turn behaving exactly as it did.
-    if _widget_hint and not _diag_hint and not _precomputed_svg:
-        _wv = WIDGET_VERSIONS.get(_widget_hint, 1)
-        widget_directive = (
-            f"\n\nLIVE WIDGET FOR THIS TURN: this content calls for the "
-            f"`{_widget_hint}` widget — a live, physically-correct rendering "
-            f"the student's app draws itself, not a picture you author.\n"
-            f"Emit ONE board_event of type \"diagram\" with a `payload` "
-            f"object instead of `template`/`params`/`svg`:\n"
-            f"{{\"seq\": N, \"type\": \"diagram\", \"payload\": {{\"widget\": "
-            f"\"{_widget_hint}\", \"version\": {_wv}, \"params\": {{ … }}}}}}\n"
-            # Params come from the registry, not from a hardcoded field_lines
-            # literal: this directive used to spell out the four field_lines
-            # configurations, so adding a second row to _WIDGET_CUES would have
-            # handed the new widget field_lines' params.
-            f"Its params (Rule 3): {WIDGET_SPECS.get(_widget_hint, '')}\n"
-            f"This is IN ADDITION to your normal board lines, not instead of "
-            f"them. Skip it only if the content genuinely is not what that "
-            f"widget draws.\n"
-        )
+    # else: no template cue and no archetype widget. The full REGISTRY_MANIFEST
+    # is in the system message and the model picks from it unprompted — path 2
+    # of docs/widget-routing.md, which is the designed behaviour for 1,101 of
+    # 1,154 concepts rather than a degraded one.
 
     # Offer the student the chance to attempt a worked example before it is
     # solved for them. Injected per turn for the same reason as the diagram
@@ -1287,12 +1404,18 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             ]
             board_events_out = [e for e in board_events_out if e]
 
-        # Tier 1 delivery. The model was never asked for a diagram this turn
-        # (the template directive is suppressed when a precomputed one exists),
-        # so this is appended rather than replacing anything it produced. seq
-        # ties it to the last sentence, which is where a summarising picture
-        # belongs — the board reveals in step with the speech, and a diagram
-        # arriving before the words that explain it reads as a non sequitur.
+        # SLOT 4 delivery, and it is now a FALLBACK rather than a foregone
+        # conclusion. The model IS asked for a diagram on these turns — the
+        # directives stopped being suppressed by the cache, which is the whole
+        # of change 1 — so the stored SVG lands only when the turn produced no
+        # picture of its own. That `not any(... "diagram" ...)` guard is what
+        # keeps the board to one picture now that the directive no longer does
+        # it; it is the same guarantee moved to the place it belongs, because
+        # a cached tier-3 SVG is still tier 3 and must not outrank slots 1-3.
+        # seq ties it to the last sentence, which is where a summarising
+        # picture belongs — the board reveals in step with the speech, and a
+        # diagram arriving before the words that explain it reads as a non
+        # sequitur.
         if _precomputed_svg and not any(
             isinstance(e, dict) and e.get("type") == "diagram" for e in board_events_out
         ):
@@ -1366,7 +1489,14 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                     # malformed-field_lines log did, so a widget the client
                     # cannot render is never emitted and never vanishes
                     # silently.
-                    gated = sanitize_widget_payload(raw_payload)
+                    # `_archetype_widget` decides `route` and nothing else. A
+                    # model shown one widget that emits a different one is
+                    # still `model_choice` — stamping archetype_high on it
+                    # would be a provenance field asserting a decision nobody
+                    # made, which is the failure class migrations/0035 is
+                    # written against.
+                    gated = sanitize_widget_payload(
+                        raw_payload, archetype_widget=_archetype_widget)
                     if not gated:
                         continue
                     clean_evt["payload"] = gated["payload"]
@@ -1376,6 +1506,14 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                     # client's WidgetPayload is a declared shape and this is
                     # server-owned provenance.
                     clean_evt["route"] = gated["route"]
+                    if gated["route"] == ROUTE_ARCHETYPE_HIGH:
+                        # The other half of what the doc requires a routed
+                        # segment to record. Stamped ONLY on the archetype
+                        # route, because on any other route the classification
+                        # decided nothing and naming it would imply it did.
+                        # Computed from the CSV's own bytes, never typed —
+                        # see concept_archetypes._version().
+                        clean_evt["archetype_version"] = ARCHETYPE_VERSION
                     _routes_seen.add(gated["route"])
                     if evt.get("caption"):
                         clean_evt["caption"] = str(evt["caption"])[:200]
@@ -2087,15 +2225,19 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             f"seg={curr_seg_idx}/{total_segments} turn={turn_within_segment} eff={effective_turn} "
             f"phase={phase_in}->{next_phase} grade={grade_out or '-'} "
             f"board={board_cnt} words={word_cnt} "
-            # Which TIER answered is the first question asked when a diagram is
+            # Which SLOT answered is the first question asked when a diagram is
             # missing, and it used to be unanswerable from the logs: "the cue
             # fired" and "a picture reached the board" are different claims.
-            # Two cues now, reported separately. They were mutually exclusive,
-            # so one slot could carry either; since the template cue stopped
-            # suppressing the widget cue, `a or b` would hide the case where
-            # both fired and the model was the one asked to choose.
-            f"| cues: diagram={_diag_hint or '-'} widget={_widget_hint or '-'} "
-            f"tier={'1' if _precomputed_svg else ('2' if _diag_hint else ('2w' if _widget_hint else ('3' if _live_diagram_future is not None else '-')))}"
+            #
+            # `arch=` reports the column's verdict VERBATIM, including the
+            # non-high ones, because "med", "not_in_scope", "unknown" and
+            # "table_unreadable" need four different reactions and all four
+            # used to look like "no widget". `slot=` is the resolution, and
+            # `diagram=` is the template cue — which is still reported on an
+            # archetype turn, where it fired into nothing on purpose.
+            f"| slot={_board_slot} arch={_archetype.confidence}"
+            f"{('->' + _archetype_widget) if _archetype_widget else ''} "
+            f"cues: diagram={_diag_hint or '-'}"
             f"{'' if _live_diagram_future is None else ('+won' if _live_diagram_future.done() else '+late')} "
             f"example={'y' if example_directive else '-'} "
             f"answer_key={'y' if parsed_json.get('correct_option') else '-'} "
