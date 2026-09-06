@@ -185,21 +185,28 @@ def test_only_high_confidence_ever_names_a_widget():
 
 
 def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through():
-    """143 rows are `high`; only 53 name a registered widget.
+    """480 rows are `high`; only 69 name a registered widget.
 
-    `none_symbolic` (61), `labelled_figure` (27 — an offline asset, slot 3, and
-    deliberately absent from the client registry), `apparatus` and the `gap_*`
-    placeholders are all `high` and all unroutable. Naming one would offer the
-    model an id `registry.ts::lookup` returns null for, and the board would
-    draw nothing at all.
+    After the corpus-wide reclassification every one of the 1,154 concepts
+    carries a verdict read from the book's own chunks. Coverage went 35% -> 100%
+    and `high` went 226 -> 480 — but the ROUTED population went 55 -> 69, and
+    that gap is the point of this test.
+
+    `none_symbolic`, `labelled_figure` (an offline asset, slot 3, deliberately
+    absent from the client registry), `apparatus` and the `gap_*` placeholders
+    are `high` and unroutable. Naming one would hand the model an id
+    `registry.ts::lookup` returns null for, and the board would draw nothing.
+
+    So "high" is not "routable", and the difference is now 411 rows. Most of
+    those are `gap_*`: pictures the book actually draws that no widget can.
     """
     high = [r for r in _rows() if r["v2_confidence"] == "high"]
     named, unroutable = [], []
     for r in high:
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
-    assert len(high) == 226
-    assert len(named) == 55, f"the routed population moved: {len(named)}"
+    assert len(high) == 480
+    assert len(named) == 69, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
@@ -210,7 +217,7 @@ def test_the_routed_population_is_fifty_three_across_twenty_seven_chapters():
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 28
+    assert len(routed) == 37
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
@@ -225,9 +232,22 @@ def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
     v = verdict("physics", 11, 6, "Rigid Bodies & Types of Motion")
     assert v.widget is None
     assert v.confidence == "unknown"
-    # and the spelling the CSV does carry is a known, ordinary row
-    assert verdict("physics", 11, 6, "Rigid Bodies and Types of Motion").confidence \
-        == "not_in_scope"
+    # and the spelling the CSV DOES carry is now a classified row -- which is
+    # exactly why this matters more than it used to. Before the corpus-wide
+    # reclassification this row was `not_in_scope`, and the module's own comment
+    # said the miss "costs nothing". It now reads `labelled_figure` at `high`,
+    # so the miss discards a real verdict. It still cannot put a WRONG diagram
+    # on a board -- labelled_figure is not a registered widget and never routes
+    # -- but the day this row becomes a widget verdict, the `&` costs a route
+    # silently. Asserted so that day is loud.
+    csv_side = verdict("physics", 11, 6, "Rigid Bodies and Types of Motion")
+    assert csv_side.confidence == "high"
+    assert csv_side.widget is None, (
+        "this row now carries a HIGH verdict that the live concepts table cannot "
+        "reach, because it spells the name with '&'. While the verdict is "
+        "unroutable that is survivable; if it ever names a registered widget, "
+        "fix the spelling rather than adding a normaliser."
+    )
 
     # A concept from no corpus at all behaves the same way.
     invented = verdict("physics", 11, 6, "Zebra Mechanics of the Fourth Kind")
