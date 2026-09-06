@@ -251,13 +251,20 @@ def render_single_widget_block(widget_id: str) -> str:
         f"not pick a different widget and do not go looking for one: "
         f"`{widget_id}` is the only widget available to you this turn.\n"
         f"         - `{widget_id}` v{version} — {spec}{anim_note}\n"
-        f"         ANSWER TWO QUESTIONS, in this order:\n"
-        f"         1. Does THIS SEGMENT want the board picture at all? The "
-        f"classification is about the concept, not about this segment — a "
-        f"definition, a recap or a checkpoint may want none. If it does not, "
-        f"emit no diagram event and carry on; that is a correct answer, not a "
-        f"failure.\n"
-        f"         2. If it does, what are the params? Emit ONE board_event: "
+        # WAS "ANSWER TWO QUESTIONS", question 1 being "does this segment want a
+        # picture at all? ... that is a correct answer, not a failure". Measured
+        # on Ecosystem: the archetype branch fired on 40 segments and the model
+        # emitted ZERO diagrams -- and zero TEMPLATES on those turns either,
+        # though it named 68 templates on a chapter without this block. The
+        # opt-out was the last thing it read about diagrams and it took it every
+        # time. It also contradicted the template rule twenty lines above:
+        # "Only skip the diagram if no template fits ... do not skip it because
+        # the parameters feel approximate." Same bar for both now.
+        f"         EMIT IT unless this segment genuinely has nothing to draw — "
+        f"the same bar as a template: do not skip because the parameters feel "
+        f"approximate. A definition, a recap or a pure checkpoint may want no "
+        f"picture; explaining, deriving or working the concept does.\n"
+        f"         Emit ONE board_event: "
         f"`{{\"seq\": N, \"type\": \"diagram\", \"payload\": {{\"widget\": "
         f"\"{widget_id}\", \"version\": {version}, \"params\": {{ … }}}}, "
         f"\"caption\": \"one short line\"}}`. Never combine `payload` with "

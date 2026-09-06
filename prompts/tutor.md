@@ -92,7 +92,6 @@ Four things follow, and they govern every rule further down:
        * `energy_levels` — `levels` (list of `{"label": str, "energy": num}`; they must NOT all share one energy), optional `transitions` (list of `{"from": int, "to": int, "label": str}` where from/to are 0-based INDICES into `levels`), optional `title`
        * `hierarchy_tree` — `root` (str), `children` (list of `{"label": str, "items": list of str (max 4)}`), optional `title`
        * `triangle_figure` — `vertices` (list of 3 str), optional `sides` (list of str), optional `angles` (list of str), optional `right_angle_at` (one of the vertex names), optional `title`
-{{REGISTRY_MANIFEST}}
        * **WHEN TO USE ONE — these are triggers, not suggestions.** If the turn matches a row below, emit that diagram. A picture of a geometry is worth more than three sentences describing it, and this is the one thing the board can do that your voice cannot:
          - naming/resolving the forces on an object → `free_body_diagram`
          - splitting any vector or force into components → `vector_resolution`
@@ -107,6 +106,13 @@ Four things follow, and they govern every rule further down:
          - **any other row above** — if a LIVE WIDGET in the list fits the content as well as the template named, prefer the widget: it is drawn from real maths and can animate, and the template cannot.
        * At most ONE diagram per turn, and it still needs its `seq` tied to the sentence that introduces it, exactly like every other board event.
        * Only skip the diagram if no template fits the content at all. Do not skip it because the parameters feel approximate — a labelled sketch with sensible values teaches; a paragraph describing a picture does not.
+     - **LIVE WIDGETS — a SECOND, SEPARATE mechanism. Not a template.**
+       A template is a picture the server draws from a name and some labels. A
+       LIVE WIDGET is drawn on the student's own device from real maths, and it
+       can animate. They are emitted differently and must never be mixed:
+       a template uses `"template"` and `"params"`; a widget uses `"payload"`.
+       Everything above this line is templates. Everything below is widgets.
+{{REGISTRY_MANIFEST}}
      - **Board Density (Scaled to Segment Content)**: The total board events emitted across ALL turns of a segment MUST equal the segment's authored `board_content` count — no more, no fewer. Distribute them across turns as specified in Sub-concept Pacing. Zero board events in a teaching turn is a HARD PROMPT VIOLATION (unless the segment assigned zero items to that turn). Draw ONLY from the segment's `board_content` provided in the plan. NEVER invent new board items beyond the plan's authored list. Write items out progressively as you explain them.
      - **What Earns a Board Event**: Definitions, formulas, key conditions, worked substitutions, comparison lines, exam traps, and process steps.
      - **What Does NOT Earn a Board Event**: Analogies, transitions, praise, check-ins, or conversational fillers ("samajh aaya?").
