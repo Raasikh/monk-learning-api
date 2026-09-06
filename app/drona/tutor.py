@@ -13,6 +13,12 @@ from app.drona.models import get_drona_client, get_drona_async_client, get_model
 from app.drona.prompt_loader import load_prompt
 from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
 from app.drona.diagram_author import validate as validate_authored_svg
+from app.drona.widget_registry import (
+    WIDGET_SPECS,
+    WIDGET_VERSIONS,
+    render_manifest_block,
+    sanitize_widget_payload,
+)
 from app.drona.state import compute_next_session_state
 from app.drona.usage import record_call_bg
 from app.drona.student_context import load_prior_knowledge
@@ -612,6 +618,24 @@ async def process_tutor_turn_stream(
 
     # 3. Assemble R4 prefix order: [1] tutor.md [2] plan [3] current segment [4] state [5] utterance
     tutor_prompt = load_prompt("tutor.md")
+    # The registry manifest is GENERATED into the prompt, not written out in
+    # the markdown. prompts/tutor.md carries only the `{{REGISTRY_MANIFEST}}`
+    # marker, so the ids and versions the model is offered are literally the
+    # same list app/drona/registry_manifest.json holds and the sanitizer
+    # accepts — there is no second copy in prose to fall out of step. It lands
+    # in the SYSTEM message, which is the cached prefix: measured at 1,123
+    # tokens (cl100k) for nine widgets, net +997 on a 13,886-token prompt after
+    # the field_lines paragraph it replaces, so it is paid in full once per
+    # prompt version and at the cache rate on every turn after.
+    if "{{REGISTRY_MANIFEST}}" not in tutor_prompt:
+        # Loud, not silent: a prompt edit that loses the marker would leave the
+        # model with no widget list at all, and path 2 would degrade to tier 3
+        # everywhere while every test still passed.
+        logger.error(
+            "⚠️ [WIDGET REGISTRY] prompts/tutor.md has no {{REGISTRY_MANIFEST}} "
+            "marker — the model is being given NO widget list this turn."
+        )
+    tutor_prompt = tutor_prompt.replace("{{REGISTRY_MANIFEST}}", render_manifest_block())
 
     # Collect board events emitted so far in current segment to enforce progressive arc
     current_segment_board_events = []
@@ -810,8 +834,28 @@ async def process_tutor_turn_stream(
         " ".join(assigned_items_text),
         utterance or "",
     )
-    # Only checked when _diag_hint found nothing — see _WIDGET_CUES' comment.
-    _widget_hint = None if _diag_hint else suggest_widget(
+    # No longer suppressed by _diag_hint. _WIDGET_CUES' original comment said
+    # the widget table must "never out-compete an existing, tested cue" — right
+    # when there was ONE widget against a mature template library, and expired
+    # now that nine registered widgets compute their geometry exactly and
+    # animate. But the fix is NOT to invert the order: `projectile_scene`
+    # beating `vector_resolution` is a measured lesson (a scene a student can
+    # picture beats an abstract relationship figure), and a blanket inversion
+    # re-breaks it on every subject at once with nothing measured.
+    #
+    # So the template cue stops being a DECISION and becomes a DEFAULT: both
+    # hints are computed, both are shown, and the MODEL picks with the turn's
+    # content in front of it. That is what docs/widget-routing.md already
+    # mandates for everything that is not `v2_confidence == "high"` — "the
+    # model picks from REGISTRY_MANIFEST" — and a keyword that decides before
+    # the model, and hides the manifest when it fires, is a fourth routing
+    # path the doc does not have. Measured on Maths 12 Ch8: 6 of 10 concepts
+    # were claimed by a template cue and never reached suggest_widget at all,
+    # including "Area Bounded by a Parabola and a Line" — the canonical
+    # xy_plot case — routed to conic_figure on the literal word "parabola".
+    #
+    # Template-vs-template order in _DIAGRAM_CUES is untouched.
+    _widget_hint = suggest_widget(
         curr_segment.get("objective") or "",
         curr_segment.get("teaching_notes") or "",
         " ".join(assigned_items_text),
@@ -848,27 +892,45 @@ async def process_tutor_turn_stream(
             f"student nothing to read back. Skip the diagram only if the "
             f"content genuinely does not fit that template; then pick a "
             f"template that does, or emit none.\n"
+            # The template cue is a DEFAULT, not a decision — see _widget_hint
+            # above. The alternative is stated here rather than as a second
+            # directive because "emit ONE diagram" appearing twice, for two
+            # different things, is worse than a keyword picking wrongly.
+            f"`{_diag_hint}` is the DEFAULT, not the only option: if one of the "
+            f"LIVE WIDGETS in Rule 3 fits this content and its params really "
+            f"describe it, emit that widget's `payload` INSTEAD — the app draws "
+            f"it from exact maths and can animate it, which a template cannot. "
+            f"Do not stretch a widget whose params do not fit; then the template "
+            f"stands.\n"
+            + (f"For this turn `{_widget_hint}` also matched the content — "
+               f"weigh it against `{_diag_hint}` and pick the one that actually "
+               f"draws what you are teaching.\n" if _widget_hint else "")
         )
 
     widget_directive = ""
-    if _widget_hint and not _precomputed_svg:
+    # Unchanged condition: the standalone widget directive still fires only
+    # when no template cue claimed the turn. When both fire, the alternative is
+    # carried inside diagram_directive above instead, so a turn never receives
+    # two competing "emit ONE diagram" instructions. This keeps every
+    # field_lines turn behaving exactly as it did.
+    if _widget_hint and not _diag_hint and not _precomputed_svg:
+        _wv = WIDGET_VERSIONS.get(_widget_hint, 1)
         widget_directive = (
-            f"\n\nFIELD DIAGRAM FOR THIS TURN: this content calls for the "
+            f"\n\nLIVE WIDGET FOR THIS TURN: this content calls for the "
             f"`{_widget_hint}` widget — a live, physically-correct rendering "
             f"the student's app draws itself, not a picture you author.\n"
             f"Emit ONE board_event of type \"diagram\" with a `payload` "
             f"object instead of `template`/`params`/`svg`:\n"
             f"{{\"seq\": N, \"type\": \"diagram\", \"payload\": {{\"widget\": "
-            f"\"{_widget_hint}\", \"version\": 1, \"params\": {{\"configuration\": "
-            f"\"point\"|\"dipole\"|\"like_charges\"|\"parallel_plates\", "
-            f"\"charge_uc\": <a number 4-20>, \"show_arrows\": true, "
-            f"\"annotate\": null}}}}}}\n"
-            f"`charge_uc` is a magnitude in microcoulombs standing in for "
-            f"\"how strong\" — pick a value that fits the story, e.g. "
-            f"doubling it turn to turn to show the line count scaling with "
-            f"charge. This is IN ADDITION to your normal board lines, not "
-            f"instead of them. Skip it only if the content genuinely is not "
-            f"an electric-field-line picture.\n"
+            f"\"{_widget_hint}\", \"version\": {_wv}, \"params\": {{ … }}}}}}\n"
+            # Params come from the registry, not from a hardcoded field_lines
+            # literal: this directive used to spell out the four field_lines
+            # configurations, so adding a second row to _WIDGET_CUES would have
+            # handed the new widget field_lines' params.
+            f"Its params (Rule 3): {WIDGET_SPECS.get(_widget_hint, '')}\n"
+            f"This is IN ADDITION to your normal board lines, not instead of "
+            f"them. Skip it only if the content genuinely is not what that "
+            f"widget draws.\n"
         )
 
     # Offer the student the chance to attempt a worked example before it is
@@ -1134,6 +1196,14 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         logger.info(f"{stag}   🖼️ DIAGRAM     rendered template={name!r} ({len(svg)} chars)")
         return out
 
+    # Every routing path that produced a payload this turn —
+    # docs/widget-routing.md, "what each path must record". Collected inside
+    # the sanitizer because that is the only place a payload is stamped, and
+    # read by the turn summary: `sanitized_board_events` is local to the
+    # non-early-flush branch, so reading routes off it would report "-" on
+    # exactly the turns that flushed the board early.
+    _routes_seen = set()
+
     def _sanitize_board_events(model_board_events_raw):
         """Builds the client-facing board_events. When the turn has assigned
         plan items, those authored objects are emitted verbatim — the model's
@@ -1277,31 +1347,47 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             }
             if e_type == "diagram":
                 raw_payload = evt.get("payload")
-                if isinstance(raw_payload, dict) and raw_payload.get("widget") == "field_lines":
-                    # field_lines carries a widget `payload`, not `svg` — the
-                    # client's own field-lines validate() (lib/widgets/field-
-                    # lines/index.tsx) is the real, authoritative gate and
-                    # already clamps/rejects on device; this is only a coarse
-                    # shape check so an obviously-broken payload is dropped
-                    # and logged here rather than silently doing nothing on
-                    # the board.
-                    fl_params = raw_payload.get("params")
-                    _configs = ("point", "dipole", "like_charges", "parallel_plates")
-                    if (not isinstance(fl_params, dict)
-                            or fl_params.get("configuration") not in _configs
-                            or not isinstance(fl_params.get("charge_uc"), (int, float))):
-                        logger.warning(
-                            f"⚠️ [DIAGRAM DROPPED] field_lines payload malformed: {json.dumps(raw_payload)[:200]}"
-                        )
+                if isinstance(raw_payload, dict) and raw_payload.get("widget"):
+                    # A widget event carries a `payload`, not `svg`. Any of the
+                    # ids in app/drona/registry_manifest.json is accepted here,
+                    # not just field_lines — the manifest is the client's own
+                    # generated export, so the set the model was offered
+                    # (render_manifest_block, in the system prompt) and the set
+                    # accepted here are the same list read once.
+                    #
+                    # The client's own per-widget validate() (e.g.
+                    # lib/widgets/field-lines/index.tsx) is the real,
+                    # AUTHORITATIVE gate and already clamps/rejects on device;
+                    # sanitize_widget_payload is only a coarse check, and it
+                    # covers the two failures the client reports back to
+                    # nobody — an unknown id and an unresolvable version both
+                    # make `lookup()` return null and the board draw nothing.
+                    # It DROPS AND LOGS in every rejecting case, exactly as the
+                    # malformed-field_lines log did, so a widget the client
+                    # cannot render is never emitted and never vanishes
+                    # silently.
+                    gated = sanitize_widget_payload(raw_payload)
+                    if not gated:
                         continue
-                    clean_evt["payload"] = {
-                        "widget": "field_lines",
-                        "version": int(raw_payload.get("version") or 1),
-                        "params": fl_params,
-                    }
+                    clean_evt["payload"] = gated["payload"]
+                    # Which routing path produced this payload —
+                    # docs/widget-routing.md, "what each path must record".
+                    # A sibling of `payload`, never a key inside it: the
+                    # client's WidgetPayload is a declared shape and this is
+                    # server-owned provenance.
+                    clean_evt["route"] = gated["route"]
+                    _routes_seen.add(gated["route"])
                     if evt.get("caption"):
                         clean_evt["caption"] = str(evt["caption"])[:200]
-                    content_key = json.dumps(fl_params, sort_keys=True)
+                    # Includes the widget id: two widgets can legitimately carry
+                    # the same params object (`{"active_node": 0}` fits more
+                    # than one), and keying on params alone would let the second
+                    # be dropped as a duplicate of the first.
+                    content_key = json.dumps(
+                        {"widget": gated["payload"]["widget"],
+                         "params": gated["payload"]["params"]},
+                        sort_keys=True, default=str,
+                    )
                 else:
                     # A diagram carries `svg`, not text or latex. Both were being
                     # stripped here and the event then dropped for having no
@@ -1976,6 +2062,26 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     try:
         _diag_evt = next((e for e in (parsed_json.get("board_events") or [])
                           if isinstance(e, dict) and e.get("type") == "diagram"), None)
+        # What the model actually produced for the diagram slot. A widget
+        # payload carries no `svg`, so the old `svg is not None` reported
+        # False for every widget diagram — the one shape this work exists to
+        # make routine would have looked like "no diagram emitted" in every
+        # log. Reports the widget id and its routing path instead, and stays
+        # False only when the model genuinely emitted neither.
+        if not _diag_evt:
+            _diag_emitted = "False"
+        elif _diag_evt.get("svg") is not None:
+            _diag_emitted = "svg"
+        elif isinstance(_diag_evt.get("payload"), dict):
+            _w = _diag_evt["payload"].get("widget") or "?"
+            _diag_emitted = f"widget:{_w}@{_diag_evt['payload'].get('version', '?')}"
+        elif _diag_evt.get("template"):
+            _diag_emitted = f"template:{_diag_evt['template']}"
+        else:
+            _diag_emitted = "False"
+        # Only payloads that CLEARED the gate are stamped, so a dropped
+        # widget never reads as one that was delivered.
+        _routes = sorted(_routes_seen)
         logger.info(
             f"{stag}   📋 TURN SUMMARY "
             f"seg={curr_seg_idx}/{total_segments} turn={turn_within_segment} eff={effective_turn} "
@@ -1984,13 +2090,18 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             # Which TIER answered is the first question asked when a diagram is
             # missing, and it used to be unanswerable from the logs: "the cue
             # fired" and "a picture reached the board" are different claims.
-            f"| cues: diagram={_diag_hint or _widget_hint or '-'} "
+            # Two cues now, reported separately. They were mutually exclusive,
+            # so one slot could carry either; since the template cue stopped
+            # suppressing the widget cue, `a or b` would hide the case where
+            # both fired and the model was the one asked to choose.
+            f"| cues: diagram={_diag_hint or '-'} widget={_widget_hint or '-'} "
             f"tier={'1' if _precomputed_svg else ('2' if _diag_hint else ('2w' if _widget_hint else ('3' if _live_diagram_future is not None else '-')))}"
             f"{'' if _live_diagram_future is None else ('+won' if _live_diagram_future.done() else '+late')} "
             f"example={'y' if example_directive else '-'} "
             f"answer_key={'y' if parsed_json.get('correct_option') else '-'} "
             f"ban={'y' if board_answer_ban else '-'} "
-            f"| emitted: diagram={_diag_evt.get('svg') is not None if _diag_evt else False} "
+            f"| emitted: diagram={_diag_emitted} "
+            f"route={','.join(_routes) if _routes else '-'} "
             f"reteach={'y' if do_reteach else '-'} tier={parsed_json.get('offtopic_tier') or '-'} "
             f"| llm={llm_dur:.1f}s tok={input_tokens}/{output_tokens} failed={turn_failed}"
         )

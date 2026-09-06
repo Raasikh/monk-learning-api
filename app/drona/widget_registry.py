@@ -1,0 +1,326 @@
+"""The closed set of client-rendered board widgets, and the turn-time gate on them.
+
+WHY THIS FILE EXISTS
+--------------------
+The client (monklearning-mobile, `lib/widgets/registry.ts`) is the single
+source of truth for which widgets exist. Its own header says the server "reads
+the same id/version list", and until now that was aspirational: the server knew
+exactly one widget name, `field_lines`, hardcoded in tutor.py. The model was
+never shown the set, so it could not choose from it — nine verified widgets on
+the client, one reachable from the server.
+
+HOW DRIFT IS PREVENTED
+----------------------
+`registry_manifest.json` beside this file is a VERBATIM COPY of the mobile
+repo's generated `build/registry-manifest.json` (produced by
+`npm run export-registry`). It is never hand-edited. Two mechanisms keep it
+honest, and they cover different failure modes:
+
+  1. `tests/drona/test_widget_registry.py::test_server_manifest_matches_the_
+     mobile_registry_export` compares this copy against the mobile repo's
+     generated artifact when a checkout is reachable. When it is NOT reachable
+     the test SKIPS with an explicit "drift unverified" reason — it does not
+     pass. A green run with that skip in it means "not checked", which is a
+     different thing from "checked and equal", and the test output says so.
+
+  2. `WIDGET_SPECS` below is the one hand-written part — the manifest carries
+     `{id, version, animatable}` and nothing about what a widget draws or what
+     params it takes, which is precisely what the model needs. A test asserts
+     `set(WIDGET_SPECS) == {every id in the manifest}` in BOTH directions, and
+     that test needs no mobile checkout. So a widget added to the registry and
+     re-exported fails the build until someone describes it, instead of
+     staying invisible to the model forever; and a spec for a widget that has
+     been removed fails too, instead of the model naming something the client
+     cannot resolve.
+
+Mechanism 2 is the load-bearing one. Mechanism 1 catches a stale copy, but
+only on a machine that has both repos.
+
+ONE TRAP
+--------
+`labelled_figure` is deliberately ABSENT from the client registry (see
+`registry.ts`'s comment): its payload names an offline-authored ASSET rather
+than a drawing the model composes, and `BoardWidget` dispatches it as its own
+tier BEFORE consulting `lookup()`. Nothing in this repo emits one today, so the
+gate below cannot drop one — but it WOULD, because the manifest is the closed
+set and `labelled_figure` is not in it. If a labelled-figure path is ever added
+server-side it needs its own branch in tutor.py's diagram handling, above this
+gate, mirroring the client's dispatch order. It must not be added to
+WIDGET_SPECS: that would offer the model an id `lookup()` cannot resolve.
+
+WHAT THIS IS NOT
+----------------
+This is a COARSE gate. The authoritative validator is each widget's own
+`validate()` on the client (e.g. `lib/widgets/field-lines/index.tsx`), which
+clamps ranges and rejects on device. Nothing here should grow into a second
+copy of those rules: two validators that disagree is worse than one that is
+coarse. What this file must guarantee is only that a payload names a widget
+the client HAS, at a version the client can RESOLVE — because those two
+failures are silent on the client (`lookup()` returns null and the board draws
+nothing) and loud here.
+"""
+
+import json
+import logging
+import os
+from typing import Any, Dict, List, Optional
+
+logger = logging.getLogger(__name__)
+
+MANIFEST_PATH = os.path.join(os.path.dirname(__file__), "registry_manifest.json")
+
+with open(MANIFEST_PATH, "r", encoding="utf-8") as _f:
+    MANIFEST: List[Dict[str, Any]] = json.load(_f)
+
+#: id -> the version the client ships. `registry.ts::lookup` is
+#: forward-compatible WITHIN a major: a payload may target an older version,
+#: never a newer one (`if (version > mod.version) return null`). The same
+#: comparison is mirrored below so a too-new version is dropped and logged
+#: here rather than silently rendering nothing on the board.
+WIDGET_VERSIONS: Dict[str, int] = {w["id"]: int(w["version"]) for w in MANIFEST}
+
+#: id -> animatable param names, straight from the manifest.
+WIDGET_ANIMATABLE: Dict[str, List[str]] = {
+    w["id"]: list(w.get("animatable") or []) for w in MANIFEST
+}
+
+
+#: What each widget DRAWS and what params it takes, for the turn prompt.
+#:
+#: Hand-written, and the only hand-written thing here — the generated manifest
+#: does not carry it. Kept to one line per widget on purpose: this rides every
+#: turn's system prompt (see the token note in `render_manifest_block`). The
+#: ranges named are the client validator's own caps, quoted so the model does
+#: not have to guess; they are NOT re-enforced server-side, because a second
+#: enforcement that drifts from the first is the failure this whole file is
+#: written against.
+WIDGET_SPECS: Dict[str, str] = {
+    "projectile_motion": (
+        "flight of a body launched at an angle — exact parabola, range and peak "
+        "readout. params: launch_angle_deg, initial_speed_ms, gravity_ms2, "
+        'body ("earth"|"moon"|"mars"|"jupiter", label only).'
+    ),
+    "molecule_3d": (
+        "rotatable 3-D molecule fetched by public id. params: structure_ref "
+        '("pubchem:<cid>" or "pdb:<id>"), label, representation '
+        '("ball_and_stick"|"space_filling"|"wireframe"|"cartoon"), auto_rotate (bool).'
+    ),
+    "field_lines": (
+        "electric field lines and their geometry. params: configuration "
+        '("point"|"dipole"|"like_charges"|"parallel_plates"), charge_uc (4-20 — '
+        'a "how strong" magnitude; doubling it turn to turn shows the line count '
+        'scaling with charge), show_arrows (bool), annotate '
+        '(null|"neutral_point"|"termination").'
+    ),
+    "xy_plot": (
+        "a curve y=f(x), the EXACT area under it, the area between two curves, "
+        "or a plotted dataset — integrals and areas included, computed, not "
+        'sketched. params: mode ("curve"|"area"|"area_between"|"data"), curve and '
+        'curve2 ("line"|"parabola"|"sine"|"exponential"|"reciprocal"; '
+        "area_between accepts line/parabola only), coefficients a,b,c and "
+        "a2,b2,c2, x_min, x_max, shade_from, shade_to, values (data mode), "
+        "x_label, y_label."
+    ),
+    "data_table_trend": (
+        "a small table of measured values with the trend down one column called "
+        'out. params: cell_kind ("numeric"|"categorical"), row_labels (2-8), '
+        "col_labels (max 4 numeric / 3 categorical), values (row-major numbers) "
+        "or text_values (row-major strings), trend_col, highlight_row (-1 none), "
+        "unit, caption."
+    ),
+    "process_flow": (
+        "an ordered pathway or closed cycle of named steps. params: layout "
+        '("ring"|"chain"), nodes (3-8 ring / 3-10 chain labels), closes (bool), '
+        "branch_at (-1 none), active_node (-1 none), caption. NOT the same shape "
+        "as the server `process_flow` TEMPLATE, which takes `stages`."
+    ),
+    "reaction_scheme": (
+        "a multi-step reaction as a labelled graph. params: species (max 8 "
+        "labels), index-aligned step_from, step_to, step_reagent, step_kind "
+        '("plain"|"major"|"minor") (max 8 steps), highlight_step (-1 none), '
+        "step_progress (0-1), caption."
+    ),
+    "molecule_struct": (
+        "2-D structure of one species — VSEPR geometry, lone pairs, bond angle. "
+        'params: mode ("electron_domain"|"coordination"|"interaction"), centre '
+        "(element symbol), bond_pairs (2-6), lone_pairs (0-3, plus bond_pairs "
+        "<=6), ligands / bond_orders (1|2|3) / bond_styles "
+        '("plain"|"wedge"|"dash"|"dative"|"hbond") each of length bond_pairs, '
+        "charge (-4..4), bracket (bool), show_lone_pairs, show_angle, label, "
+        "highlight_site (-1 none), and OPTIONALLY angle_override "
+        "({bond, secondary}) — the MEASURED angles of a named exception; omit "
+        "it unless you know the species' real angle differs from the VSEPR "
+        "table."
+    ),
+    "circuit_network": (
+        "a circuit network with computed R_eq, C_eq, current and terminal "
+        'voltage. params: topology ("series" 1-4 elements|"parallel" 2-3|'
+        '"series_parallel" 4|"ladder" 4|"bridge" 5|"two_loop" 6), elements '
+        '([{kind: "resistor"|"capacitor"|"inductor"|"cell"|"switch"|'
+        '"galvanometer"|"lamp", name (<=3 chars), value (>0)}]), source_v '
+        "(0.1-500), internal_r (0-100), bridge_null_cm, show_current (bool), "
+        "t_frac (0-1), bridge_delta (-1..1), caption."
+    ),
+}
+
+
+def render_manifest_block() -> str:
+    """The REGISTRY_MANIFEST block injected into prompts/tutor.md.
+
+    Generated from MANIFEST rather than written out in the markdown, so the
+    ids and versions the model is shown cannot drift from the ids and versions
+    the sanitizer accepts — they are the same list, read once.
+
+    Cost, measured with cl100k_base against the pre-change prompt: the block is
+    1,123 tokens, and it REPLACES the 126-token field_lines paragraph it
+    generalises, so the system prompt goes 13,886 -> 14,883 — a net +997, or
+    +7.2%. Header 173 tokens, then ~105 per widget, so a tenth widget costs
+    about 105 more. It lands in the SYSTEM message, which is the cached prefix
+    (tutor.py logs `cache_hit_tokens`), so that is paid in full once per prompt
+    version and at the cache rate on every turn after.
+    tests/drona/test_widget_registry.py caps it so a future widget cannot
+    quietly multiply the per-turn bill.
+    """
+    lines = [
+        "       * **LIVE WIDGETS — a CLOSED set, not templates.** The STUDENT'S "
+        "APP draws these itself from your parameters, with exact maths, so a "
+        "value read off the picture is computed rather than sketched. Prefer "
+        "one over a template whenever its params genuinely describe the "
+        "content. Emit a `\"payload\"` instead of `\"template\"`/`\"params\"`: "
+        "`{\"seq\": N, \"type\": \"diagram\", \"payload\": {\"widget\": \"<id>\", "
+        "\"version\": <as listed>, \"params\": { … }}, \"caption\": \"one short "
+        "line\"}`. Never combine `payload` with `template`, `params` or `svg`. "
+        "**This list is everything that exists** — an id not on it is "
+        "DISCARDED. Never invent one, and never stretch one whose params do "
+        "not fit; use a template above or emit no diagram instead.",
+    ]
+    for entry in MANIFEST:
+        wid = entry["id"]
+        spec = WIDGET_SPECS.get(wid)
+        if spec is None:
+            # Unreachable while test_every_manifest_widget_has_a_prompt_spec
+            # passes. If it ever is reached, the widget would be named to the
+            # model with no params — worse than omitting it — so omit it and
+            # say so, rather than emitting a half-described entry.
+            logger.warning(
+                f"⚠️ [WIDGET REGISTRY] '{wid}' is in the manifest with no "
+                f"WIDGET_SPECS entry; omitted from the turn prompt."
+            )
+            continue
+        anim = WIDGET_ANIMATABLE.get(wid) or []
+        anim_note = f" animates: {', '.join(anim)}." if anim else ""
+        lines.append(f"         - `{wid}` v{entry['version']} — {spec}{anim_note}")
+    return "\n".join(lines)
+
+
+def _field_lines_shape_ok(params: Dict[str, Any]) -> bool:
+    """The coarse check tutor.py already applied to field_lines, carried over
+    VERBATIM so the one widget that was already live keeps behaving identically.
+
+    New widgets deliberately get NO entry in `_COARSE_PARAM_CHECKS`. Writing one
+    per widget would rebuild each client validator badly on this side, and the
+    first time the two disagreed the server would be the one that was wrong —
+    the client's `validate()` is the gate that runs against the actual renderer.
+    This table exists to preserve an existing behaviour, not to be extended.
+    """
+    return (
+        params.get("configuration")
+        in ("point", "dipole", "like_charges", "parallel_plates")
+        and isinstance(params.get("charge_uc"), (int, float))
+    )
+
+
+_COARSE_PARAM_CHECKS = {"field_lines": _field_lines_shape_ok}
+
+
+#: docs/widget-routing.md, "what each path must record". Path 2 of the hybrid:
+#: the model chose from REGISTRY_MANIFEST. Path 1 (`archetype_high`) is not
+#: implemented server-side, and tier 3 is the `svg` branch in tutor.py — so a
+#: payload that clears the gate below is `model_choice` by construction.
+ROUTE_MODEL_CHOICE = "model_choice"
+
+
+def sanitize_widget_payload(raw_payload: Any) -> Optional[Dict[str, Any]]:
+    """Coarse gate on a model-authored widget payload. None means DROP.
+
+    Returns the BOARD-EVENT FIELDS to merge, not a bare payload:
+    `{"payload": {widget, version, params}, "route": "model_choice"}`.
+
+    `route` is a sibling of `payload`, deliberately NOT a key inside it.
+    `WidgetPayload` in the client's `lib/widgets/types.ts` is a declared shape
+    the cofounder owns; adding an undeclared key to it would be a wire-contract
+    change made from this side. `BoardEvent` already carries server-owned
+    optional metadata beside the payload (`tier`), which is where routing
+    provenance belongs.
+
+    The client's own `validate()` for each widget is the real, authoritative
+    gate — it clamps and rejects on device — so this deliberately checks only
+    the two things the client CANNOT report back:
+
+      * the widget id is in the registry, and
+      * the version is one `registry.ts::lookup` will resolve (<= the shipped
+        version; older is fine, newer is not).
+
+    Both of those fail SILENTLY on the client: `lookup()` returns null and the
+    board simply draws nothing. Every rejection here is logged for that reason,
+    the same way the original field_lines branch logged a malformed payload —
+    a widget the client cannot render must never be emitted, and must never
+    vanish without a trace.
+
+    `params` is checked only for being a non-empty object. Re-implementing
+    per-widget ranges here would build a second validator that drifts from the
+    first, and a gate widened or narrowed on one side only is worse than a
+    coarse one on both.
+    """
+    if not isinstance(raw_payload, dict):
+        return None
+
+    widget = raw_payload.get("widget")
+    if not isinstance(widget, str) or widget not in WIDGET_VERSIONS:
+        logger.warning(
+            f"⚠️ [DIAGRAM DROPPED] widget {widget!r} is not in the client "
+            f"registry (have: {', '.join(sorted(WIDGET_VERSIONS))}); "
+            f"payload={json.dumps(raw_payload, default=str)[:200]}"
+        )
+        return None
+
+    shipped = WIDGET_VERSIONS[widget]
+    # `or 1` rather than a default: the replaced field_lines branch read
+    # `int(raw_payload.get("version") or 1)`, so an absent, null or 0 version
+    # meant v1. Kept identical rather than tightened — a version the model
+    # omits is not the failure this gate is for.
+    raw_version = raw_payload.get("version") or 1
+    try:
+        version = int(raw_version)
+    except (TypeError, ValueError):
+        logger.warning(
+            f"⚠️ [DIAGRAM DROPPED] {widget} version {raw_version!r} is not an integer."
+        )
+        return None
+    if version < 1 or version > shipped:
+        logger.warning(
+            f"⚠️ [DIAGRAM DROPPED] {widget} v{version} — the client ships v{shipped} "
+            f"and lookup() refuses anything newer, so this would render nothing."
+        )
+        return None
+
+    params = raw_payload.get("params")
+    if not isinstance(params, dict) or not params:
+        logger.warning(
+            f"⚠️ [DIAGRAM DROPPED] {widget} v{version} params missing or not an "
+            f"object: {json.dumps(raw_payload, default=str)[:200]}"
+        )
+        return None
+
+    coarse = _COARSE_PARAM_CHECKS.get(widget)
+    if coarse is not None and not coarse(params):
+        logger.warning(
+            f"⚠️ [DIAGRAM DROPPED] {widget} payload malformed: "
+            f"{json.dumps(raw_payload, default=str)[:200]}"
+        )
+        return None
+
+    return {
+        "payload": {"widget": widget, "version": version, "params": params},
+        "route": ROUTE_MODEL_CHOICE,
+    }
