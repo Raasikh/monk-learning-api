@@ -829,6 +829,33 @@ def get_or_create_plan(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
         # NEW student — serving it would teach one segment and stop. Give the
         # background thread a grace window, then treat it as stale.
         if not _plan_is_complete(plan_json):
+            # DEAD BEATS YOUNG. The grace window below asks "is this plan new
+            # enough that the background thread might still be working?", which
+            # is the right question only while the answer is unknowable. Since
+            # _mark_plan_failed exists it IS knowable, and a failed plan inside
+            # the window would otherwise be served with
+            #
+            #   [PLAN PARTIAL] ... still filling — segments arrive as authored
+            #
+            # to a student who would get 1 of 7 segments and wait forever for
+            # the rest. Observed live on Maths 12 Ch8: a JSONDecodeError killed
+            # the fill 33s in, well inside the 300s window.
+            #
+            # This is the same defect the harness had this morning, in the same
+            # shape -- "not complete" read as "still going" -- and fixing it
+            # there and not here just moved it from a script nobody watches to
+            # a path a student walks.
+            if plan_json.get(PLAN_STATUS_KEY) == "failed":
+                logger.warning(
+                    f"⚠️ [PLAN FAILED] '{subtopic_key}' background fill died "
+                    f"({plan_json.get(PLAN_ERROR_KEY, 'no reason recorded')}). Regenerating."
+                )
+                try:
+                    supabase.table("lesson_plans").delete().eq("id", cached_plan["id"]).execute()
+                except Exception as del_err:
+                    logger.error(f"Failed to delete failed plan: {del_err}")
+                return create_plan_streaming(chapter_id, subtopic_key)
+
             age_s = 1e9
             try:
                 from datetime import datetime, timezone
