@@ -54,7 +54,15 @@ question. This is not a chat reply and must not be a paragraph.
 is read aloud to them. Say it as a teacher would at a desk: no numbering read
 out, no "step one", no symbols the ear cannot hear — "delta V over V" rather
 than "$\Delta V/V$", "two times ten to the eight" rather than "$2\times10^8$".
-It should stand on its own if they are not looking at the screen.
+
+**It must be no longer than the steps.** It is heard WHILE they are on screen,
+not instead of them — the student has read all of it inside ten seconds, and a
+fuller, self-contained retelling takes forty to say. That gap is the voice
+still labouring through something they finished reading half a minute ago, and
+it is worse than no voice at all. Say the same thing the steps say, in speech
+instead of notation. Do not add context they can see, do not restate the
+question, and do not recap at the end. If the steps are three short lines, this
+is three short sentences.
 
 ## ━━━ HOW TO TALK ━━━
 

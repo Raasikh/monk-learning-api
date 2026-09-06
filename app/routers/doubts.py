@@ -8,6 +8,7 @@ Nothing fails silently. An illegible question is stored as 'illegible' with what
 the transcriber said was unclear, a failed solve is stored as 'failed' with its
 reason, and both are reported to the client with the stage that failed.
 """
+import base64
 import logging
 import time
 import uuid
@@ -1093,6 +1094,59 @@ async def speak_followup(doubt_id: str, body: SpeakRequest,
         raise HTTPException(status_code=503, detail="Could not speak that just now.")
     return Response(content=wav, media_type="audio/wav",
                     headers={"Cache-Control": "no-store"})
+
+
+@router.post("/{doubt_id}/speak-stream")
+async def speak_followup_stream(doubt_id: str, body: SpeakRequest,
+                                user_id: str = Depends(get_current_user_id)):
+    """POST /doubts/{id}/speak-stream — the answer read aloud, a sentence at a time.
+
+    `/speak` returns one WAV and cannot start until all of it exists: 9.4s of
+    silence for a 588-character answer, and 24.7s once that answer is split
+    into the several requests it takes to escape Rumik's ~25s ceiling. The
+    student has been reading the steps for all of it, which is what makes the
+    wait feel wrong rather than merely long.
+
+    Here each sentence goes out as it is made, so the first plays at ~4s and
+    the rest are synthesised while it is playing. Base64 rather than binary
+    frames because this is an SSE stream carrying JSON, and one WAV per chunk
+    because a browser will play a file without any MediaSource plumbing.
+
+    `/speak` stays exactly as it was: mobile has not been built against this
+    yet, and a whole-file endpoint is the simpler thing to hold.
+    """
+    said = (body.text or "").strip()
+    if not said:
+        raise HTTPException(status_code=400, detail="Nothing to say.")
+    _load_doubt_for_user(doubt_id, user_id)
+    voice = _tutor_voice_for(user_id)
+
+    def event(name: str, payload: Dict[str, Any]) -> str:
+        return f"event: {name}\ndata: {json.dumps(payload)}\n\n"
+
+    async def stream():
+        started = time.time()
+        sent = 0
+        try:
+            async for idx, total, wav in followup_voice.speak_chunks(said, voice):
+                sent += 1
+                yield event("audio", {
+                    "n": idx, "total": total,
+                    "b64": base64.b64encode(wav).decode("ascii"),
+                })
+        except Exception as err:
+            logger.error("[FOLLOWUP TTS] stream failed for %s: %s", doubt_id[:8], err,
+                         exc_info=True)
+        if not sent:
+            # Nothing could be spoken. Not an error to show: the steps are on
+            # screen and readable, and a voice is an addition to them.
+            yield event("unavailable", {})
+        yield event("done", {"chunks": sent,
+                             "total_ms": int((time.time() - started) * 1000)})
+
+    return StreamingResponse(stream(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache",
+                                      "X-Accel-Buffering": "no"})
 
 
 @router.post("/{doubt_id}/report", status_code=200)
