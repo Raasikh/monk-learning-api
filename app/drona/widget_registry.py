@@ -161,6 +161,16 @@ WIDGET_SPECS: Dict[str, str] = {
         "(0.1-500), internal_r (0-100), bridge_null_cm, show_current (bool), "
         "t_frac (0-1), bridge_delta (-1..1), caption."
     ),
+    "lines_planes_3d": (
+        "3D coordinate geometry in orthographic projection, with the foot, "
+        "image, distance and angle computed. params: mode (\"two_lines\" "
+        'shortest distance|"point_line"|"point_plane"|"line_plane"|'
+        '"two_planes" dihedral), view ("standard"|"swing"|"high"; switch if '
+        "the figure reads flat), point ([x,y,z]), line1/line2 ({at, dir}), "
+        "plane1/plane2 ({normal, d}) where the plane is r·n = d, NOT "
+        "ax+by+cz+d=0, show_image (bool), show_axes (bool), caption. Each mode "
+        "reads only the slots its name mentions."
+    ),
 }
 
 
