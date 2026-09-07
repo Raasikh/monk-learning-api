@@ -508,19 +508,22 @@ def test_the_directives_are_no_longer_gated_on_the_precomputed_svg():
     )
 
 
-def test_slot_one_reads_the_plan_and_slot_three_is_still_an_explicit_empty():
-    """Slot 1 is FILLED; slot 3 is not, and is empty in the CODE rather than
-    absent from it. An absent slot that is absent from the code is an order
-    nobody can review.
+def test_slot_one_reads_the_plan_and_slot_three_reads_concept_assets():
+    """Both are FILLED now, and slot 3 stopped being an explicit empty.
 
     Slot 1 needed no migration and the comment has to say so: `plan_json` is
     jsonb and already carries `example_diagram_svg`, so the payload is a
     sibling key in the same object. Three previous attempts stopped on
     "the storage does not exist", which was true of the tables and false of
-    the storage."""
-    assert re.search(r"_illustration_asset = None", TUTOR_SRC)
-    # Scoped to the resolution block: slot 2's INPUT is resolved earlier, at
-    # prompt assembly, because the system message depends on it.
+    the storage.
+
+    SLOT 3 WENT LIVE ON 2026-09-07, and this test previously asserted the
+    opposite -- that the slot was empty and said "0035 NOT APPLIED". Both
+    halves of that reason had quietly become false: the migration WAS applied,
+    and BoardWidget.tsx already dispatched `labelled_figure` ahead of
+    `lookup()`. The assertion was pinning a sentence, not a behaviour, so it
+    kept passing while the reason underneath it expired. It now pins the
+    behaviour instead."""
     body = TUTOR_SRC[TUTOR_SRC.index("══ BOARD RESOLUTION"):]
     slot1 = body[body.index("── SLOT 1"):body.index("── SLOT 2")]
     slot3 = body[body.index("── SLOT 3"):body.index("── SLOT 4")]
@@ -528,9 +531,60 @@ def test_slot_one_reads_the_plan_and_slot_three_is_still_an_explicit_empty():
     assert 'curr_segment.get("example_widget_payload")' in slot1
     assert "sanitize_widget_payload(" in slot1
     assert "plan_json" in slot1 and "jsonb" in slot1
-    # slot 3 still has nowhere to read from, and says which migration
-    assert "DELIBERATELY EMPTY" in slot3
-    assert "0035" in slot3 and "NOT APPLIED" in slot3
+    # slot 3 reads the asset table, keyed the way a SESSION identifies a
+    # concept. The session row has no concept_id column, so a lookup taking one
+    # would receive None on every turn and this slot would look wired while
+    # never firing -- which is what the first draft of it did.
+    assert "_illustration_asset_for(" in slot3
+    assert "DELIBERATELY EMPTY" not in slot3
+    assert 'session.get("chapter_id")' in slot3 and 'session.get("subtopic_key")' in slot3
+    assert "concept_assets" in TUTOR_SRC
+
+
+def test_the_illustration_lookup_cannot_fail_a_lesson():
+    """Same contract as `_precomputed_diagram`: a board slot never raises.
+
+    A missing table, a dropped connection and a concept with no art all mean
+    the same thing -- this slot is empty, the next tier answers -- and none of
+    them may reach the student as an error."""
+    src = TUTOR_SRC[TUTOR_SRC.index("def _illustration_asset_for("):]
+    src = src[:src.index("\ndef ", 10)]
+    assert "except Exception" in src
+    assert "return None" in src
+    # The transient failure must NOT be cached, or one blip pins the concept
+    # to "no illustration" for the life of the process. Scoped to the EXCEPT
+    # BLOCK: the first version of this sliced to the end of the function and
+    # caught the success path's own cache write, which is the line that is
+    # supposed to be there.
+    handler = src[src.index("except Exception"):]
+    handler = handler[:handler.index("return None") + len("return None")]
+    assert "_ILLUSTRATION_CACHE" not in handler
+
+
+def test_the_labelled_figure_payload_bypasses_the_registry_gate():
+    """widget_registry.py's header asks for exactly this, by name.
+
+    `labelled_figure` is deliberately NOT in the client registry, so
+    `sanitize_widget_payload` would drop every illustration and log it as an
+    unknown widget. The header says a server-side path "needs its own branch in
+    tutor.py's diagram handling, ABOVE this gate, mirroring the client's
+    dispatch order" -- which is what BoardWidget.tsx does by testing
+    `payload.widget === labelledFigure.id` before calling `lookup()`."""
+    assert 'LABELLED_FIGURE_ID = "labelled_figure"' in TUTOR_SRC
+    delivery = TUTOR_SRC[TUTOR_SRC.index("SLOT 3 DELIVERY"):]
+    delivery = delivery[:delivery.index("SLOT 4 delivery")]
+    # CODE ONLY. The first version searched the raw text and matched the word
+    # inside this block's own comment explaining the bypass -- a test that
+    # failed because the code was well documented.
+    code = "\n".join(ln for ln in delivery.splitlines()
+                     if not ln.strip().startswith("#"))
+    assert "sanitize_widget_payload(" not in code, (
+        "the illustration payload must not go through the registry gate — it "
+        "names a widget the registry deliberately excludes"
+    )
+    assert '"asset_slug": _illustration_asset' in delivery
+    # And the bypass is justified in place rather than left to be rediscovered.
+    assert "0035" in delivery or "approved" in delivery
 
 
 def test_tier_three_still_starts_before_the_llm_call():

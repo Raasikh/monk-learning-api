@@ -377,6 +377,74 @@ def resolve_board_slot(precomputed_widget=None, archetype_widget=None,
 # read on every turn, so it is not worth a DB round trip each time.
 _STUDENT_NAME_CACHE: Dict[str, str] = {}
 
+#: The one widget id the client dispatches OUTSIDE its registry. See
+#: widget_registry.py's "ONE TRAP" and BoardWidget.tsx's own comment: the
+#: registry is the closed set the MODEL may name and fill params for, and a
+#: label layer is authored offline by a subject author instead. The client
+#: tests `payload.widget === labelledFigure.id` BEFORE calling `lookup()`, and
+#: slot 3 below mirrors that ordering on this side — which is exactly what
+#: widget_registry.py's header says a server-side labelled-figure path must do.
+LABELLED_FIGURE_ID = "labelled_figure"
+
+#: (chapter_id|subtopic_key) -> asset_slug, or None when that concept has no
+#: approved asset. Keyed the way the SESSION identifies a concept, not the way
+#: `concept_assets` stores it: a session row carries chapter_id and
+#: subtopic_key and has NO concept_id column, so a lookup taking one would
+#: silently receive None on every turn and this slot would look wired while
+#: never once firing.
+#: Cached for the process: an asset is bound offline by the ingest and cannot
+#: appear mid-session, which is CLAUDE.md §3a's "nothing is created during a
+#: live session" restated as a cache policy.
+_ILLUSTRATION_CACHE: Dict[str, Optional[str]] = {}
+
+
+def _illustration_asset_for(chapter_id: Optional[str],
+                            subtopic_key: Optional[str]) -> Optional[str]:
+    """The approved asset_slug for this concept, or None. Never raises.
+
+    Takes the pair the session actually has and resolves `concepts.id` here,
+    the same join `concept_archetype_for_session` makes for the same reason.
+
+    Same contract as `_precomputed_diagram`: a board slot must never be able to
+    fail a lesson. A missing table, a dropped connection and a concept with no
+    art all mean the same thing here — this slot is empty and the next tier
+    answers — and none of them may reach the student as an error.
+
+    `manifest_status = 'approved'` is re-checked on READ even though
+    migrations/0035 constrains the column to that value on WRITE. The constraint
+    can be relaxed later by whoever adds a review workflow; this line is what
+    keeps an un-approved row off a board if it ever is.
+    """
+    if not chapter_id or not subtopic_key:
+        return None
+    ck = f"{chapter_id}|{subtopic_key}"
+    if ck in _ILLUSTRATION_CACHE:
+        return _ILLUSTRATION_CACHE[ck]
+    slug: Optional[str] = None
+    try:
+        con = (supabase.table("concepts").select("id")
+               .eq("chapter_id", chapter_id).eq("key", subtopic_key)
+               .eq("active", True).limit(1).execute().data or [])
+        if not con:
+            _ILLUSTRATION_CACHE[ck] = None
+            return None
+        rows = (supabase.table("concept_assets")
+                .select("asset_slug")
+                .eq("concept_id", con[0]["id"])
+                .eq("manifest_status", "approved")
+                .limit(1).execute().data)
+        if rows:
+            slug = rows[0].get("asset_slug") or None
+    except Exception as exc:
+        # Logged, not raised, and deliberately NOT cached: a transient failure
+        # must not pin this concept to "no illustration" for the life of the
+        # process, which is the shape a cached negative would create.
+        logger.warning(
+            f"[ILLUSTRATION LOOKUP FAILED] {ck}: {str(exc)[:120]}")
+        return None
+    _ILLUSTRATION_CACHE[ck] = slug
+    return slug
+
 
 def _student_name_cached(user_id: str) -> str:
     """First name for the student, or "" if there isn't a usable one.
@@ -998,17 +1066,25 @@ async def process_tutor_turn_stream(
     # and falls to the model-choice branch below.
 
     # ── SLOT 3: an ILLUSTRATION ASSET for this concept ───────────────────────
-    # DELIBERATELY EMPTY, for a reason that is recorded rather than assumed:
-    # `concept_assets` (migrations/0035) is marked WRITTEN, NOT APPLIED, so
-    # there is no `asset_slug` to look up and a lookup would be a query against
-    # a table that does not exist. This is the slot `archetype_v2 ==
-    # "labelled_figure"` belongs in — 27 high-confidence concepts, and
-    # `labelled_figure` is deliberately absent from the client widget registry
-    # precisely because it names an offline-authored asset rather than a
-    # drawing the model composes (see widget_registry.py, "ONE TRAP"). Wiring
-    # it needs the migration applied AND a client dispatch branch; neither
-    # exists, so nothing is invented here.
-    _illustration_asset = None
+    # LIVE as of 2026-09-07. This comment used to say the slot was deliberately
+    # empty because migrations/0035 was "WRITTEN, NOT APPLIED" and a client
+    # dispatch branch did not exist. BOTH had since become false and the comment
+    # had not: `concept_assets` is applied, and BoardWidget.tsx dispatches
+    # `labelled_figure` ahead of `lookup()`. A stale reason reads exactly like a
+    # current one, which is why this names the date.
+    #
+    # This is the slot `archetype_v2 == "labelled_figure"` belongs in — 30
+    # high-confidence concepts, all biology. `labelled_figure` is absent from
+    # the client REGISTRY on purpose (widget_registry.py, "ONE TRAP"): the
+    # registry is the closed set the MODEL may name and fill params for, and a
+    # label layer is authored offline by a subject author. That is why the
+    # payload built here bypasses `sanitize_widget_payload` further down, in a
+    # branch that mirrors the client's own dispatch order.
+    #
+    # An empty slot is the ordinary case and costs nothing: no asset, no query
+    # result, next tier answers.
+    _illustration_asset = _illustration_asset_for(session.get("chapter_id"),
+                                                  session.get("subtopic_key"))
 
     # ── SLOT 4: a precomputed tier-3 SVG ─────────────────────────────────────
     # This SEGMENT's own example figure outranks the concept-level one. It was
@@ -1097,6 +1173,25 @@ async def process_tutor_turn_stream(
             f"segment ahead of time is being added to the board beside your "
             f"lines — you do not need to produce it and must not produce "
             f"another.\n"
+            f"Emit NO board_event of type \"diagram\": no `payload`, no "
+            f"`template`, no `svg`. Write your normal board lines and let them "
+            f"refer to the figure as something the student can see.\n"
+        )
+    elif _board_slot == "illustration":
+        # SLOT 3, AND IT OUTRANKS SLOT 2 FOR THE SAME REASON SLOT 1 DOES: the
+        # picture for this turn already exists. An illustration is a plate a
+        # subject author drew and licensed offline; asking the model to compose
+        # a widget beside it would put two pictures on a board that carries one.
+        #
+        # The model is NOT told the asset_slug and must never be. It does not
+        # choose the plate and cannot name one — the archetype column bound this
+        # concept to this asset before the session started, which is §3a's
+        # "precompute creates and binds, a live session only selects".
+        widget_directive = (
+            f"\n\nTHE PICTURE FOR THIS TURN IS ALREADY DRAWN. A labelled "
+            f"illustration prepared for this concept is being added to the "
+            f"board beside your lines — you do not need to produce it and must "
+            f"not produce another.\n"
             f"Emit NO board_event of type \"diagram\": no `payload`, no "
             f"`template`, no `svg`. Write your normal board lines and let them "
             f"refer to the figure as something the student can see.\n"
@@ -1548,6 +1643,52 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             })
             logger.info(f"{stag}   🧩 [WIDGET SERVED] precomputed "
                         f"{_precomputed_widget.get('widget')} for "
+                        f"{session.get('subtopic_key')} seg={curr_seg_idx}")
+
+        # SLOT 3 DELIVERY, AND IT BYPASSES sanitize_widget_payload ON PURPOSE.
+        #
+        # widget_registry.py's header says exactly this: "If a labelled-figure
+        # path is ever added server-side it needs its own branch in tutor.py's
+        # diagram handling, ABOVE this gate, mirroring the client's dispatch
+        # order." That gate tests membership of the closed registry, and
+        # `labelled_figure` is deliberately not a member — sending this payload
+        # through it would drop every illustration and log it as an unknown
+        # widget, which is the trap that header was written to prevent.
+        #
+        # What replaces the gate is not nothing. The slug reaching here came
+        # from `concept_assets` under `manifest_status = 'approved'`, whose row
+        # could not exist without passing 0035's licence enum, placeholder
+        # denylist and hash-shape checks. That is a stricter provenance gate
+        # than any model-authored payload passes, applied at ingest instead of
+        # at turn time. The client then re-checks the slug against its own
+        # resolver cache and calls labelledFigure.validate() before drawing, so
+        # this is gated on both sides and ungated only in the middle.
+        if _illustration_asset:
+            _stray_ill = [e for e in board_events_out
+                          if isinstance(e, dict) and e.get("type") == "diagram"]
+            if _stray_ill:
+                logger.warning(
+                    f"{stag}   🖼️ [SLOT 3 OUTRANKS] dropping {len(_stray_ill)} diagram "
+                    f"event(s) the turn emitted despite the no-diagram directive; "
+                    f"the bound illustration {_illustration_asset} wins."
+                )
+                board_events_out = [e for e in board_events_out
+                                    if not (isinstance(e, dict) and e.get("type") == "diagram")]
+            board_events_out.append({
+                "seq": len(board_events_out) + 1,
+                "type": "diagram",
+                "payload": {
+                    "widget": LABELLED_FIGURE_ID,
+                    "version": 1,
+                    # `asset_slug` is the ONLY param. The client resolves it to
+                    # art plus a label set through its own FigureResolver cache;
+                    # sending anything else would be this side authoring a
+                    # figure it did not draw.
+                    "params": {"asset_slug": _illustration_asset},
+                },
+                "route": "illustration",
+            })
+            logger.info(f"{stag}   🖼️ [ILLUSTRATION SERVED] {_illustration_asset} for "
                         f"{session.get('subtopic_key')} seg={curr_seg_idx}")
 
         # SLOT 4 delivery, and it is now a FALLBACK rather than a foregone
