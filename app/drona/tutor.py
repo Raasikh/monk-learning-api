@@ -146,14 +146,25 @@ _DIAGRAM_CUES: List[Tuple[str, str]] = [
 # high confidence, rather than a keyword deciding before the model with
 # nothing measured behind it.
 #
-# WHAT THAT COSTS, MEASURED, BECAUSE IT IS NOT ZERO. `field_lines` appears
+# WHAT THAT COST, MEASURED, AND THEN REPAID. For a time `field_lines` appeared
 # ZERO times in `archetype_v2` — every concept in physics 12 ch1, where field
-# lines live, is `not_in_scope` (the reclassification covered 407 of 1,154
-# concepts and physics ch1 was not among them). So the one widget that was
-# already live loses its named directive and is reachable only by the model
-# picking it out of REGISTRY_MANIFEST, which is in the system prompt on every
-# non-archetype turn. That is a real reduction in directive strength on
-# electrostatics turns, and it is recorded here rather than discovered later.
+# lines live, was `not_in_scope` (the first reclassification covered 407 of
+# 1,154 concepts and physics ch1 was not among them). So the one widget that
+# was already live lost its named directive and was reachable only by the model
+# picking it out of REGISTRY_MANIFEST. That was a real reduction in directive
+# strength on electrostatics turns, and recording it here is what made it
+# fixable rather than permanent.
+#
+# CLOSED 2026-09-07, and NOT by widening the gate — which is what the note
+# above was written to warn against. The corpus-wide reclassification reached
+# physics 12 ch1, which then named the concepts `gap_gaussian_surface`,
+# `gap_equipotential_surfaces` and `gap_dipole_field_geometry`; field_lines@2
+# added `gaussian_sphere/cylinder/pillbox` and `equipotential_point/uniform`
+# for exactly those figures; and four of the five candidates were promoted to
+# `field_lines` after their payloads passed validate() and the render gate at
+# all three boards. The fifth, "Coulomb's Law and Electric Forces", keeps its
+# gap: its figures are force arrows, and this widget draws field lines.
+# field_lines now routes 4 concepts.
 
 
 # A turn that works a numerical example, where the student should be offered

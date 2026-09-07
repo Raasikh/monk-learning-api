@@ -185,7 +185,7 @@ def test_only_high_confidence_ever_names_a_widget():
 
 
 def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through():
-    """479 rows are `high`; only 86 name a registered widget.
+    """479 rows are `high`; only 90 name a registered widget.
 
     After the corpus-wide reclassification every one of the 1,154 concepts
     carries a verdict read from the book's own chunks. Coverage went 35% -> 100%
@@ -197,7 +197,7 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     are `high` and unroutable. Naming one would hand the model an id
     `registry.ts::lookup` returns null for, and the board would draw nothing.
 
-    So "high" is not "routable", and the difference is now 393 rows. Most of
+    So "high" is not "routable", and the difference is now 389 rows. Most of
     those are `gap_*`: pictures the book actually draws that no widget can.
 
     69 -> 73 on 2026-09-07, when lines_planes_3d@1 was wired and FOUR of the six
@@ -226,7 +226,21 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
 
     The fourteen refusals are as measured as the promotions and are listed with
     their defeating element in lib/widgets/xy-plot/__tests__/v3-gap-coverage.
-    Two are worth knowing here because the NAME matches and the FIGURE does not:
+    86 -> 90 the same day, and field_lines is the sharpest case of the pattern:
+    it was built, independently verified and wired, and routed ZERO, because the
+    column calls those concepts `gap_gaussian_surface`,
+    `gap_equipotential_surfaces` and `gap_dipole_field_geometry` and nobody
+    renamed them when the widget shipped. Two of the rows said "Gaussian
+    surfaces are outside field_lines" and "registry excludes Gaussian surfaces"
+    -- both written against v1, and v2 is the version that added them.
+
+    FOUR of the five candidates, not five. "Coulomb's Law and Electric Forces"
+    keeps its gap: its figures are force arrows on charges, a triangle
+    resultant and a rod element dF, and this widget draws field lines.
+    `like_charges` would put two charges on the board and look close enough to
+    pass a glance, which is why the refusal is written down.
+
+    Two more worth knowing because the NAME matches and the FIGURE does not:
     `gap_potential_energy_curve` wants a valley AND a hilltop with a total-energy
     line, while the named shape is a Lennard-Jones well with neither; and
     `gap_cooling_curve` is not the named `heating` shape, which is temperature
@@ -239,24 +253,25 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
     assert len(high) == 479
-    assert len(named) == 86, f"the routed population moved: {len(named)}"
+    assert len(named) == 90, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
 
-def test_the_routed_population_is_eighty_six_across_fifty_chapters():
+def test_the_routed_population_is_ninety_across_fifty_one_chapters():
     """The number the routing decision was made on. Pinned so a resync that
     moves it is a visible test change rather than a silent behaviour change.
 
     37 -> 39 with the lines_planes_3d promotion (mathematics 11 ch11 and
     mathematics 12 ch11 had high rows but no routable one), then 39 -> 50 when
-    the 27 plot-shaped gap rows were re-read against xy_plot v3.
+    the 27 plot-shaped gap rows were re-read against xy_plot v3, then 50 -> 51
+    when field_lines v2 took physics 12 ch1.
     (The function name has trailed the number twice; it says what it asserts.)
     """
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 50
+    assert len(routed) == 51
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
@@ -625,11 +640,32 @@ def test_the_widget_cue_table_is_gone():
 
 
 def test_what_deleting_it_cost_is_recorded_where_it_was_deleted():
-    """`field_lines` appears ZERO times in `archetype_v2` — physics 12 ch1 is
-    entirely `not_in_scope` — so the one widget that was already live loses its
-    named directive and is reachable only by the model picking it out of the
-    manifest. Asserted rather than remembered, because the day someone widens
-    the gate to "fix field_lines" this is the note they need to find."""
-    assert not any(r["archetype_v2"] == "field_lines" for r in _rows())
+    """The cost of deleting `_WIDGET_CUES` is recorded at the deletion, AND so
+    is the repayment.
+
+    This test used to assert `field_lines` appeared ZERO times in
+    `archetype_v2`, which was true and was the point: the one widget already
+    live had lost its named directive. Its own docstring warned that the note
+    was for "the day someone widens the gate to fix field_lines".
+
+    Nobody widened the gate. The reclassification reached physics 12 ch1, the
+    concepts came back as `gap_gaussian_surface` / `gap_equipotential_surfaces`
+    / `gap_dipole_field_geometry`, field_lines@2 had been built for exactly
+    those figures, and four were promoted with payloads that passed validate()
+    and the render gate at 343x236, 495x270 and 900x430.
+
+    So the assertion inverts: field_lines must ROUTE now, and if it ever
+    returns to zero that is a regression this names."""
+    routed = [r for r in _rows()
+              if r["archetype_v2"] == "field_lines" and r["v2_confidence"] == "high"]
+    assert len(routed) == 4, f"field_lines routes {len(routed)}, expected 4"
+    # Coulomb's Law is NOT among them, and that is the deliberate half.
+    assert not any("Coulomb" in r["concept"] for r in routed), (
+        "Coulomb's Law draws force arrows; field_lines draws field lines. "
+        "`like_charges` looks close enough to pass a glance, which is why this "
+        "refusal is pinned rather than left to judgement."
+    )
+    # The tombstone still carries the story, both halves of it.
     block = TUTOR_SRC[TUTOR_SRC.index("`_WIDGET_CUES` WAS HERE"):]
-    assert "field_lines" in block[:1400] and "ZERO times" in block[:1400]
+    assert "field_lines" in block[:2200] and "ZERO times" in block[:2200]
+    assert "CLOSED 2026-09-07" in block[:2200]
