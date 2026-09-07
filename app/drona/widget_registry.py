@@ -63,6 +63,8 @@ nothing) and loud here.
 import json
 import logging
 import os
+from functools import lru_cache
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
@@ -503,6 +505,78 @@ ROUTE_MODEL_CHOICE = "model_choice"
 ROUTE_ARCHETYPE_HIGH = "archetype_high"
 
 
+_LABEL_BUDGETS_PATH = Path(__file__).resolve().parent / "label_budgets.json"
+
+
+@lru_cache(maxsize=1)
+def _label_budgets() -> Dict[str, Any]:
+    """The per-layout label budgets, generated from the CLIENT's own maths.
+
+    Vendored from the mobile repo's `build/label-budgets.json`, which
+    `lib/widgets/__generate__/registry-manifest.gen.ts` writes by CALLING
+    `maxRingLabelChars` / `maxChainLabelChars`. Not typed by hand here, and
+    pinned to the mobile export by a test, so the numbers cannot drift from the
+    code that enforces them.
+    """
+    return json.loads(_LABEL_BUDGETS_PATH.read_text())
+
+
+def _label_budget_problem(widget: str, params: Any) -> Optional[str]:
+    """The one per-widget params check this gate makes, and why it is here.
+
+    THE DOCSTRING ABOVE SAYS NOT TO DO THIS, so the exception needs its reason
+    stated rather than assumed. The rule it protects is "do not re-implement a
+    range the client already rejects, because two validators drift". That rule
+    does not reach this case, on both halves:
+
+      * There is no client rejection to duplicate. process_flow's `validate()`
+        does `s.slice(0, cap)` — it SILENTLY TRUNCATES and returns ok. So the
+        client cannot report this back, which is exactly the criterion the
+        docstring above uses to decide what belongs here.
+      * The numbers cannot drift. They are generated from the client's own
+        `maxRingLabelChars`/`maxChainLabelChars` and pinned to that export by a
+        test, rather than transcribed.
+
+    WHY DROPPING BEATS STORING. An over-budget label is not a payload that
+    renders slightly worse; it is a payload that renders a DIFFERENT WORD.
+    Measured on the Ecosystem precompute, a live board read "Producers (ph".
+    Dropping sends the segment to tier 3, which draws something honest. The
+    board must never claim a word the content does not have.
+
+    Returns a human-readable reason, or None when the payload is within budget.
+    """
+    if widget != "process_flow" or not isinstance(params, dict):
+        return None
+    spec = _label_budgets().get("process_flow") or {}
+
+    nodes = params.get("nodes")
+    if isinstance(nodes, list):
+        labels = [n for n in nodes if isinstance(n, str)]
+        if params.get("layout") == "ring":
+            # Keyed by node count: the ring budget is angular, not monotonic —
+            # 5 nodes allow 13 characters while 6 allow 17. An unknown count is
+            # not silently allowed; the tightest budget applies, because a
+            # count the table does not know is a layout nobody measured.
+            ring = spec.get("ring") or {}
+            cap = ring.get(str(len(labels)))
+            if cap is None:
+                cap = min(ring.values()) if ring else 0
+        else:
+            cap = spec.get("chain", 0)
+        over = [n for n in labels if len(n) > cap]
+        if over:
+            return (f"{len(over)} node label(s) over the {cap}-char "
+                    f"{params.get('layout')} budget and would be CUT mid-word: "
+                    + "; ".join(f"{n!r} ({len(n)})" for n in over[:3]))
+
+    caption = params.get("caption")
+    cap_c = spec.get("caption", 0)
+    if isinstance(caption, str) and len(caption) > cap_c:
+        return (f"caption is {len(caption)} chars, over the {cap_c}-char budget, "
+                f"and would be CUT mid-word: {caption!r}")
+    return None
+
+
 def sanitize_widget_payload(raw_payload: Any,
                             archetype_widget: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """Coarse gate on a model-authored widget payload. None means DROP.
@@ -537,10 +611,10 @@ def sanitize_widget_payload(raw_payload: Any,
     a widget the client cannot render must never be emitted, and must never
     vanish without a trace.
 
-    `params` is checked only for being a non-empty object. Re-implementing
-    per-widget ranges here would build a second validator that drifts from the
-    first, and a gate widened or narrowed on one side only is worse than a
-    coarse one on both.
+    `params` is checked only for being a non-empty object, with ONE exception
+    documented at `_label_budget_problem`. Re-implementing per-widget ranges
+    here would build a second validator that drifts from the first, and a gate
+    widened or narrowed on one side only is worse than a coarse one on both.
     """
     if not isinstance(raw_payload, dict):
         return None
@@ -588,6 +662,16 @@ def sanitize_widget_payload(raw_payload: Any,
             f"⚠️ [DIAGRAM DROPPED] {widget} payload malformed: "
             f"{json.dumps(raw_payload, default=str)[:200]}"
         )
+        return None
+
+    budget_problem = _label_budget_problem(widget, params)
+    if budget_problem is not None:
+        # WARNING, with the offending strings, because this is the one rejection
+        # whose payload is otherwise PERFECTLY VALID: every other branch here
+        # drops something the client could not render, while this one drops
+        # something the client renders happily as a DIFFERENT WORD. See
+        # `_label_budget_problem` for why the check lives here at all.
+        logger.warning(f"⚠️ [DIAGRAM DROPPED] {widget}: {budget_problem}")
         return None
 
     return {

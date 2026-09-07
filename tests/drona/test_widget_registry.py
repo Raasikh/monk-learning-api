@@ -698,3 +698,116 @@ def test_the_process_flow_prompt_states_the_label_budget_the_widget_enforces():
             f"spec does not state the ring budget for {n} nodes as `{pair}` — "
             f"the widget cuts at {budgets['ring'][str(n)]}. Spec says: {spec}"
         )
+
+
+# ── the label-budget guard ──────────────────────────────────────────────────
+
+def test_the_vendored_label_budgets_match_the_client_export():
+    """app/drona/label_budgets.json is a verbatim copy, never hand-edited.
+
+    Same contract as the manifest copy beside it: the client GENERATES the file
+    by calling maxRingLabelChars/maxChainLabelChars, and this repo vendors it so
+    the guard can run without a mobile checkout. Vendoring is what makes it
+    usable at runtime and also what lets it go stale, so this pins the two.
+
+    NOT REACHABLE IS NOT PASSING: skips loudly with no checkout.
+    """
+    mobile = _mobile_checkout()
+    if mobile is None:
+        pytest.skip(
+            "BUDGET DRIFT UNVERIFIED: no monklearning-mobile checkout found. "
+            "app/drona/label_budgets.json was NOT compared against the client's "
+            "generated build/label-budgets.json on this run."
+        )
+    generated = mobile / "build" / "label-budgets.json"
+    assert generated.is_file(), (
+        f"{generated} is missing — run `npm run export-registry` in the mobile "
+        "checkout. The guard is enforcing budgets nothing verified on this run."
+    )
+    vendored = Path(wr._LABEL_BUDGETS_PATH)
+    assert json.loads(vendored.read_text()) == json.loads(generated.read_text()), (
+        "app/drona/label_budgets.json has drifted from the client export. It is "
+        "a verbatim copy — re-copy it, do not edit it."
+    )
+
+
+def test_an_over_budget_process_flow_payload_is_dropped_not_stored():
+    """The payload that put "Producers (ph" on a live board.
+
+    Every OTHER rejection in sanitize_widget_payload drops something the client
+    could not render. This one drops something the client renders perfectly
+    happily, as a different word — process_flow's validate() does
+    `s.slice(0, cap)` and returns ok, so nothing downstream can notice.
+
+    Both directions are asserted. A guard that only ever rejects would pass
+    while blocking every payload, which is the same false-confidence shape as a
+    check that only ever admits.
+    """
+    over = {
+        "widget": "process_flow", "version": 1,
+        "params": {
+            "layout": "ring",
+            "nodes": ["Atmosphere (CO2)", "Producers (photosynthesis)",
+                      "Consumers (feeding)", "Decomposers (decay)",
+                      "Oceans & Rocks (storage)"],
+            "caption": "Carbon cycle: movement between biotic and abiotic reservoirs",
+        },
+    }
+    assert sanitize_widget_payload(over, archetype_widget="process_flow") is None
+
+    # The SAME concept, written within budget — this is what the re-precompute
+    # actually produced and what the device now draws.
+    within = {
+        "widget": "process_flow", "version": 1,
+        "params": {
+            "layout": "ring",
+            "nodes": ["Atmosphere", "Plants", "Animals", "Soil", "Oceans"],
+            "caption": "Carbon moves between these reservoirs",
+        },
+    }
+    gated = sanitize_widget_payload(within, archetype_widget="process_flow")
+    assert gated is not None, "the in-budget payload must still be admitted"
+    assert gated["payload"]["params"]["nodes"][0] == "Atmosphere"
+
+
+def test_the_ring_budget_is_read_per_node_count_not_as_one_number():
+    """13 at five nodes, 17 at six — the same label passes one and fails the other.
+
+    The ring budget is angular and NOT monotonic in node count. A guard that
+    collapsed it to a single number would be wrong in one direction for every
+    count, and wrong in the SAFE direction for some, which is how it would
+    survive review.
+    """
+    label = "Photosynthesis"  # 14 chars: over 13, under 17
+    five = {"widget": "process_flow", "version": 1, "params": {
+        "layout": "ring", "nodes": [label, "A", "B", "C", "D"], "caption": "x"}}
+    six = {"widget": "process_flow", "version": 1, "params": {
+        "layout": "ring", "nodes": [label, "A", "B", "C", "D", "E"], "caption": "x"}}
+    assert sanitize_widget_payload(five, archetype_widget="process_flow") is None
+    assert sanitize_widget_payload(six, archetype_widget="process_flow") is not None
+
+
+def test_an_unknown_ring_node_count_gets_the_tightest_budget_not_a_free_pass():
+    """A count the generated table does not know is a layout nobody measured.
+
+    The failure to avoid is `ring.get(str(n))` returning None and the guard
+    then admitting everything — a check that passes on absent information,
+    which is the defect shape this subsystem keeps producing.
+    """
+    huge = {"widget": "process_flow", "version": 1, "params": {
+        "layout": "ring", "nodes": ["Photosynthesis"] * 40, "caption": "x"}}
+    assert sanitize_widget_payload(huge, archetype_widget="process_flow") is None
+
+
+def test_the_guard_does_not_touch_other_widgets():
+    """It is a process_flow rule, not a general label rule.
+
+    xy_plot's axis labels have their own fitting behaviour and no budget in the
+    table; silently applying process_flow's numbers to them would be exactly
+    the second-validator drift the module docstring forbids.
+    """
+    payload = {"widget": "xy_plot", "version": 1, "params": {
+        "mode": "curve", "curve": "parabola",
+        "x_label": "a very long axis label indeed, far over forty characters",
+        "y_label": "another one that is comfortably over any budget at all"}}
+    assert sanitize_widget_payload(payload, archetype_widget="xy_plot") is not None
