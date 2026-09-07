@@ -1129,12 +1129,18 @@ def cmd_verify(args) -> int:
     except Exception as err:
         sys.stderr.write(f"could not read {TABLE}: {err}\n")
         return 1
+    # The S3 listing needs a credential; the PUBLIC leg below does not. A
+    # credential problem must not hide the answer to "can the app fetch this
+    # art", which is a different question and the one a student feels.
+    s3_error: Optional[str] = None
+    objects: Dict[str, dict] = {}
+    bucket = "(unknown)"
     try:
         objects = list_r2_objects()
         bucket = storage_r2.assets_bucket_name()
     except Exception as err:
+        s3_error = str(err)
         sys.stderr.write(f"could not list R2: {err}\n")
-        return 1
 
     by_key: Dict[str, dict] = {}
     dup_keys: List[str] = []
@@ -1143,8 +1149,11 @@ def cmd_verify(args) -> int:
             dup_keys.append(row["r2_key"])
         by_key[row["r2_key"]] = row
 
-    dangling = [r for r in rows if r["r2_key"] not in objects]
-    unreferenced = sorted(k for k in objects if k not in by_key)
+    # UNKNOWABLE, not empty. Without a listing, "no dangling rows" would be a
+    # green tick produced by having looked at nothing — the exact shape this
+    # file's own header warns about.
+    dangling = [] if s3_error else [r for r in rows if r["r2_key"] not in objects]
+    unreferenced = [] if s3_error else sorted(k for k in objects if k not in by_key)
     mismatched = [
         (r, objects[r["r2_key"]]["Size"]) for r in rows
         if r["r2_key"] in objects
@@ -1206,10 +1215,92 @@ def cmd_verify(args) -> int:
               f"author fills it in; the ingest cannot.")
         print()
 
-    broken = bool(dangling or unreferenced or mismatched or dup_keys)
+    # ── THE PUBLIC LEG, which everything above is blind to ──────────────────
+    #
+    # Every check so far went through the S3 API with a credential. The APP has
+    # no credential: it fetches `${EXPO_PUBLIC_ASSETS_BASE_URL}/concept-assets/
+    # {slug}.{ext}` anonymously, because the art is public and immutable and
+    # that is what lets a device fetch it directly.
+    #
+    # So public read and CORS are a SEPARATE configuration that can be wrong
+    # while every assertion above passes: the object is there, the row is
+    # there, the sizes agree, and every figure on every board is blank. Turning
+    # off public access on a bucket is one click and leaves no trace here.
+    #
+    # Checked WITHOUT credentials on purpose — using the S3 client would prove
+    # the wrong thing. A 403 means the bucket is private; a 404 on a key that
+    # does not exist means public read works and the bucket is simply empty,
+    # which is why the probe key is deliberately absent.
+    public_bad: List[str] = []
+    base = (os.getenv("ASSETS_PUBLIC_BASE_URL") or "").rstrip("/")
+    if not base:
+        print("PUBLIC LEG UNVERIFIED: ASSETS_PUBLIC_BASE_URL is not set, so "
+              "nothing checked whether the app can actually fetch this art. "
+              "That is a different question from whether the objects exist.")
+        print()
+    else:
+        import urllib.error
+        import urllib.request
+
+        def head(url: str) -> tuple[int, str]:
+            req = urllib.request.Request(url, method="HEAD")
+            req.add_header("Origin", "https://monklearning.app")
+            # A REAL User-Agent, and this is not cosmetic. r2.dev refuses the
+            # default `Python-urllib/3.x` with 403 — the same status a PRIVATE
+            # bucket returns. Without this the check reports "PUBLIC READ IS
+            # OFF: every figure will be blank" against a bucket that is
+            # correctly configured, which is worse than not checking: it sends
+            # someone to fix something that is not broken. Measured: same URL,
+            # same Origin, urllib default UA -> 403 and no CORS header;
+            # browser UA -> 404 and `Access-Control-Allow-Origin: *`.
+            req.add_header("User-Agent", "monk-learning-ingest/1.0 (+verify)")
+            try:
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    return r.status, r.headers.get("Access-Control-Allow-Origin", "")
+            except urllib.error.HTTPError as e:
+                return e.code, e.headers.get("Access-Control-Allow-Origin", "")
+            except Exception:
+                return 0, ""
+
+        probe, cors = head(f"{base}/{storage_r2.ASSETS_KEY_PREFIX}__probe-not-present__.png")
+        if probe == 404:
+            print(f"public read OK ({base}) — 404 on an absent key, not 403.")
+        elif probe in (401, 403):
+            public_bad.append(
+                f"PUBLIC READ IS OFF: {base} returned {probe} for an absent key. "
+                f"A public bucket returns 404. Every figure will be blank on "
+                f"every device while everything above still says OK."
+            )
+        else:
+            public_bad.append(f"public base URL returned {probe or 'no response'} — "
+                              f"cannot tell whether public read works.")
+        if not cors:
+            public_bad.append(
+                "NO Access-Control-Allow-Origin header. The art will fetch from "
+                "curl and fail from the app."
+            )
+
+        # And the rows themselves, over the same anonymous path the app uses.
+        for r in rows:
+            code, _ = head(f"{base}/{r['r2_key']}")
+            if code != 200:
+                public_bad.append(f"{r['asset_slug']}: {r['r2_key']} -> {code} publicly "
+                                  f"(present in R2, unreachable by the app)")
+        if public_bad:
+            print("PUBLIC LEG PROBLEMS:")
+            for m in public_bad:
+                print(f"  {m}")
+            print()
+
+    broken = bool(dangling or unreferenced or mismatched or dup_keys or public_bad or s3_error)
+    if s3_error:
+        print(f"STORAGE LEG UNVERIFIED: {s3_error}")
+        print("  Rows-vs-objects was NOT checked on this run. The public leg "
+              "above needs no credential and was.")
+        print()
     if not broken:
-        print("OK on storage — every row has its object and every object has "
-              "its row.")
+        print("OK on storage — every row has its object, every object has its "
+              "row, and every object is reachable without a credential.")
     else:
         print("PROBLEMS FOUND (see above).")
     return 1 if broken else 0
