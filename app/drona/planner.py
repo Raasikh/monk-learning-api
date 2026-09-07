@@ -179,11 +179,29 @@ _PLANNER_PROMPT_FILES = ("planner.md", "planner_outline.md", "planner_segment.md
 
 
 def _planner_prompt_hash() -> str:
-    """sha256 over THE THREE PLANNER PROMPTS ONLY, sorted by filename.
+    """sha256 over the three planner prompts AND widget_registry.py.
 
     Deliberately not get_prompt_version(), which hashes all of prompts/*.md:
     that moves when an unrelated prompt moves and stays still when planner.py
     moves, so it cannot answer "was this plan built by the current planner".
+
+    WHY A .py FILE IS IN A *PROMPT* HASH. `_attach_widget_payload` builds the
+    widget prompt from `render_single_widget_block(widget_id)`, whose entire
+    text is WIDGET_SPECS in widget_registry.py. That text is a planner prompt
+    in every sense except its file extension, and until 2026-09-07 it was in no
+    part of the cache key.
+
+    The gap was not theoretical. process_flow's spec was corrected to state the
+    label budget the widget enforces -- the fix for 33 of 42 Ecosystem payloads
+    reaching a student's board chopped mid-word -- and NOTHING invalidated: all
+    ten stored plans compared clean, so a re-precompute would have returned the
+    ten cached plans untouched and reported success. That is the "columns made
+    it look wired" failure in the provenance check below, one layer up.
+
+    Coarse in the safe direction, exactly like `_planner_code_sha`: any edit to
+    widget_registry.py invalidates every plan. Over-invalidating costs a lazy
+    regeneration; under-invalidating serves a lesson authored against a prompt
+    nobody can reconstruct.
     """
     import hashlib as _h
     from pathlib import Path as _P
@@ -193,6 +211,7 @@ def _planner_prompt_hash() -> str:
         f = root / name
         if f.exists():
             h.update(f.read_bytes())
+    h.update(_P(__file__).resolve().parent.joinpath("widget_registry.py").read_bytes())
     return h.hexdigest()[:16]
 
 
