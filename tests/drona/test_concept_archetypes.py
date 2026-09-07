@@ -185,7 +185,7 @@ def test_only_high_confidence_ever_names_a_widget():
 
 
 def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through():
-    """479 rows are `high`; only 69 name a registered widget.
+    """479 rows are `high`; only 73 name a registered widget.
 
     After the corpus-wide reclassification every one of the 1,154 concepts
     carries a verdict read from the book's own chunks. Coverage went 35% -> 100%
@@ -197,8 +197,24 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     are `high` and unroutable. Naming one would hand the model an id
     `registry.ts::lookup` returns null for, and the board would draw nothing.
 
-    So "high" is not "routable", and the difference is now 411 rows. Most of
+    So "high" is not "routable", and the difference is now 406 rows. Most of
     those are `gap_*`: pictures the book actually draws that no widget can.
+
+    69 -> 73 on 2026-09-07, when lines_planes_3d@1 was wired and FOUR of the six
+    high rows named `gap_3d_lines_planes` were renamed to it. Four, not six, and
+    not seventeen: a gap name is a description of a PICTURE, and this widget has
+    five modes rather than a subject. "Shortest Distance Between Two Skew Lines"
+    is `two_lines`, "Image and Foot of Perpendicular on the Coordinate Planes"
+    is `point_plane` — but "Distance Formula in Three Dimensions" draws a space
+    diagonal between two points, which is no mode this widget has, and
+    "Coordinate Axes, Planes and Octants" wants the eight octants. Those two keep
+    the gap name, because they are still gaps.
+
+    Renaming all six would have routed a concept to a widget with no mode for it,
+    and the model would then have picked the closest mode rather than declining
+    -- a wrong diagram drawn confidently, which is worse than tier 3. Each of the
+    four promoted names a mode AND a checked-in tree that passed the gate at all
+    three boards; the evidence column records which.
     """
     high = [r for r in _rows() if r["v2_confidence"] == "high"]
     named, unroutable = [], []
@@ -206,18 +222,23 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
     assert len(high) == 479
-    assert len(named) == 69, f"the routed population moved: {len(named)}"
+    assert len(named) == 73, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
 
-def test_the_routed_population_is_fifty_three_across_twenty_seven_chapters():
+def test_the_routed_population_is_seventy_three_across_thirty_nine_chapters():
     """The number the routing decision was made on. Pinned so a resync that
-    moves it is a visible test change rather than a silent behaviour change."""
+    moves it is a visible test change rather than a silent behaviour change.
+
+    37 -> 39 chapters with the lines_planes_3d promotion: mathematics 11 ch11
+    and mathematics 12 ch11 both had high rows but no routable one until now.
+    (The function name has trailed the number twice; it says what it asserts.)
+    """
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 37
+    assert len(routed) == 39
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
