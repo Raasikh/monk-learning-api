@@ -37,6 +37,13 @@ from app.drona.widget_registry import (
     sanitize_widget_payload,
 )
 
+# The ring node counts the schema admits, mirrored from the client's
+# MIN_NODES / MAX_NODES_RING. Not imported (that is TypeScript); the budget
+# TABLE is imported, from build/label-budgets.json, and these two bounds only
+# decide how many rows of it are checked.
+MIN_NODES_RING = 3
+MAX_NODES_RING = 8
+
 API_ROOT = Path(__file__).resolve().parents[2]
 SERVER_MANIFEST = API_ROOT / "app" / "drona" / "registry_manifest.json"
 PROMPT = (API_ROOT / "prompts" / "tutor.md").read_text()
@@ -635,3 +642,59 @@ def test_the_decline_log_carries_the_concept_and_the_objective():
     src = block.group(0)
     for field in ("subtopic_key", "objective", "reason", "_decline['kind']"):
         assert field in src, f"the decline log no longer reports {field}"
+
+
+def test_the_process_flow_prompt_states_the_label_budget_the_widget_enforces():
+    """The numbers in the prompt must be the numbers `validate()` cuts at.
+
+    process_flow does `s.slice(0, cap)` on every node label and on the caption,
+    with NO ellipsis, so an over-budget label reaches a student's board chopped
+    mid-word. The budget is angular geometry rather than a round number -- a
+    5-node ring allows 13 characters while a 6-node ring allows 17, because the
+    5-ring's mirrored pair sits 1.18*rx apart and the 6-ring's sits 1.73*rx.
+
+    Nothing told the payload generator that. Measured on the Ecosystem
+    precompute (2026-09-07): 33 of 42 stored payloads lose text, 22 captions are
+    cut, and every one of the five widget-bearing concepts is affected. One
+    board read "Producers (ph".
+
+    The spec now carries the table -- and a budget TYPED into a prompt is a
+    number that rots the first time the layout changes. So the client EXPORTS it
+    from its own maths to build/label-budgets.json and this test pins the prompt
+    against that file. Change the ring geometry and this fails, naming the
+    number that moved, instead of the prompt quietly describing a board that no
+    longer exists.
+
+    NOT REACHABLE IS NOT PASSING: with no mobile checkout this SKIPS loudly.
+    """
+    mobile = _mobile_checkout()
+    if mobile is None:
+        pytest.skip(
+            "BUDGET UNVERIFIED: no monklearning-mobile checkout found. The "
+            "process_flow label budget in WIDGET_SPECS was NOT compared against "
+            "the client's exported build/label-budgets.json on this run."
+        )
+
+    exported = mobile / "build" / "label-budgets.json"
+    assert exported.is_file(), (
+        f"{exported} is missing — run `npm run export-registry` in the mobile "
+        "checkout. The prompt states a budget nothing verified on this run."
+    )
+    budgets = json.loads(exported.read_text())["process_flow"]
+    spec = WIDGET_SPECS["process_flow"]
+
+    # chain and caption
+    assert f"chain {budgets['chain']} chars" in spec, (
+        f"spec does not state the chain budget of {budgets['chain']}: {spec}"
+    )
+    assert f"cut at {budgets['caption']}" in spec, (
+        f"spec does not state the caption budget of {budgets['caption']}: {spec}"
+    )
+
+    # every ring node count the schema admits, at its own budget
+    for n in range(MIN_NODES_RING, MAX_NODES_RING + 1):
+        pair = f"{n}:{budgets['ring'][str(n)]}"
+        assert pair in spec, (
+            f"spec does not state the ring budget for {n} nodes as `{pair}` — "
+            f"the widget cuts at {budgets['ring'][str(n)]}. Spec says: {spec}"
+        )

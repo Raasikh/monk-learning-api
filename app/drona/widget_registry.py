@@ -132,7 +132,11 @@ WIDGET_SPECS: Dict[str, str] = {
         "an ordered pathway or closed cycle of named steps. params: layout "
         '("ring"|"chain"), nodes (3-8 ring / 3-10 chain labels), closes (bool), '
         "branch_at (-1 none), active_node (-1 none), caption. NOT the same shape "
-        "as the server `process_flow` TEMPLATE, which takes `stages`."
+        "as the server `process_flow` TEMPLATE, which takes `stages`. "
+        "LABELS ARE CUT MID-WORD, NOT WRAPPED, so write within budget: "
+        "chain 16 chars; ring by node count 3:17 4:18 5:13 6:17 7:10 8:15. "
+        'caption is cut at 40. Prefer a bare noun: "Atmosphere (CO2)" becomes '
+        '"Atmosphere (C".'
     ),
     "reaction_scheme": (
         "a multi-step reaction as a labelled graph. params: species (max 8 "
