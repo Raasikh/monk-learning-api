@@ -1,5 +1,6 @@
 import json
 import logging
+import re
 import time
 from typing import Dict, Any, List, Optional
 from fastapi import HTTPException
@@ -59,14 +60,74 @@ def validate_plan_json(data: Dict[str, Any]) -> None:
         if len(bc) > 12:
             raise ValueError(f"Segment {idx} board_content has {len(bc)} items (maximum 12 allowed)")
 
-        # Balanced $ and $$ check in board_content
-        board_text = str(seg.get("board_content", ""))
-        double_dollars = board_text.count("$$")
-        single_dollars = board_text.count("$") - (double_dollars * 2)
-        if double_dollars % 2 != 0:
-            raise ValueError(f"Segment {idx} board_content has unbalanced '$$' delimiters")
-        if single_dollars % 2 != 0:
-            raise ValueError(f"Segment {idx} board_content has unbalanced '$' delimiters")
+        # `$` IN BOARD PROSE IS CURRENCY, NOT A MATHS DELIMITER.
+        #
+        # This used to demand an EVEN number of `$`, and that rule was exactly
+        # inverted -- measured against `latexToText`, the converter every board
+        # prose line actually goes through:
+        #
+        #   "US $33 trillion per year"                 1 dollar   INTACT
+        #   "US $33 trillion vs US $18 trillion"       2 dollars  BOTH DELETED
+        #   "$33 tn, $18 tn, $2 tn, $5 tn"             4 dollars  ALL DELETED
+        #
+        # An odd count is the only SAFE case: the client sees no closing
+        # delimiter and prints the symbol. An even count gives `indexOf` a
+        # partner, the span between two prices is converted as maths, and the
+        # currency vanishes from the board. So the check rejected the one shape
+        # that worked and admitted every shape that corrupts.
+        #
+        # It cost a whole lesson. "Ecosystem Services and Their Economic
+        # Valuation" is the one NEET concept whose subject is money -- its
+        # chunks carry "US $33 trillion" and "~US $18 trillion" on nearly every
+        # page -- and segment 5 landed an odd count, so validate_plan_json
+        # killed the plan. Nine of ten concepts precomputed; this one had no
+        # lesson at all.
+        #
+        # The parity rule is gone, and the client no longer eats a `$` followed
+        # by a digit (lib/latex-text.ts, currency-not-math.test.ts). What
+        # replaces it is the contract planner_segment.md actually states:
+        # formulas go in a `formula` event's own `latex` field, undelimited. So
+        # a `$` wrapping a LaTeX command means the author reached for the wrong
+        # mechanism, and THAT is worth refusing -- unlike a price.
+        # PER ITEM, AND PROSE ONLY. The first cut of this check stringified the
+        # whole list, and both halves of that were wrong:
+        #
+        #   * `$` in one board event paired with `$` in a LATER one, so the
+        #     captured span ran straight through the JSON between them --
+        #     "33 \\text{ trillion/yr}', 'emphasis': 'key'}, {'seq': 5, 'ty".
+        #     Two events render as two separate lines; a delimiter cannot span
+        #     them, and neither may the check.
+        #   * a `formula` event's `latex` field is SUPPOSED to be full of
+        #     backslashes. Scanning it made every legitimate formula a
+        #     candidate for a rule about prose.
+        for item in bc:
+            prose = item.get("text") if isinstance(item, dict) else item
+            if not isinstance(prose, str):
+                prose = ""
+            for span in re.findall(r"\$([^$]{1,200})\$", prose):
+                if "\\" in span:
+                    raise ValueError(
+                        f"Segment {idx} board_content wraps LaTeX in '$': {span[:60]!r}. "
+                        f"Formulas belong in a formula event's `latex` field, "
+                        f"undelimited — see planner_segment.md."
+                    )
+            # The mirror image: a `latex` field is undelimited by contract, so a
+            # `$` inside one is the same mistake pointing the other way.
+            #
+            # `\$` IS NOT THAT MISTAKE. It is LaTeX's escape for a literal
+            # dollar and it is the CORRECT way to price something inside a
+            # formula -- `\text{Value} \approx \$33 \text{ trillion/yr}` is
+            # exactly what this chapter wants, and lib/latex-text.ts already
+            # emits the bare character for it. Rejecting `\$` here failed the
+            # Ecosystem Services plan a third time, on content that was right.
+            # Strip the escapes first, then look for a real delimiter.
+            latex = item.get("latex") if isinstance(item, dict) else None
+            if isinstance(latex, str) and "$" in latex.replace("\\$", ""):
+                raise ValueError(
+                    f"Segment {idx} has a formula whose `latex` field carries a "
+                    f"'$' delimiter: {latex[:60]!r}. That field is undelimited — "
+                    f"see planner_segment.md."
+                )
 
         # Checkpoint validation
         cp = seg.get("checkpoint")
