@@ -1119,6 +1119,36 @@ def cmd_ingest(args) -> int:
     return 1 if failed else (2 if refused else 0)
 
 
+def public_head(url: str) -> Tuple[int, str]:
+    """HEAD `url` with NO credential, as the app does. (status, ACAO header).
+
+    Module level so tests can replace it — the same seam `get_client` and
+    `fetch_all` use. Inlined in cmd_verify it made a hermetic unit test reach
+    the network and fail on a row whose object was a fake.
+
+    A REAL User-Agent, and this is not cosmetic. r2.dev refuses the default
+    `Python-urllib/3.x` with 403 — the same status a PRIVATE bucket returns.
+    Without this the caller reports "PUBLIC READ IS OFF: every figure will be
+    blank" against a correctly configured bucket, which is worse than not
+    checking: it sends someone to fix something that is not broken. Measured on
+    one URL with one Origin: urllib default UA -> 403 and no CORS header;
+    browser UA -> 404 and `Access-Control-Allow-Origin: *`.
+    """
+    import urllib.error
+    import urllib.request
+
+    req = urllib.request.Request(url, method="HEAD")
+    req.add_header("Origin", "https://monklearning.app")
+    req.add_header("User-Agent", "monk-learning-ingest/1.0 (+verify)")
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return r.status, r.headers.get("Access-Control-Allow-Origin", "")
+    except urllib.error.HTTPError as e:
+        return e.code, e.headers.get("Access-Control-Allow-Origin", "")
+    except Exception:
+        return 0, ""
+
+
 def cmd_verify(args) -> int:
     """Both directions: a row with no object, and an object with no row."""
     from app.db import fetch_all
@@ -1239,30 +1269,7 @@ def cmd_verify(args) -> int:
               "That is a different question from whether the objects exist.")
         print()
     else:
-        import urllib.error
-        import urllib.request
-
-        def head(url: str) -> tuple[int, str]:
-            req = urllib.request.Request(url, method="HEAD")
-            req.add_header("Origin", "https://monklearning.app")
-            # A REAL User-Agent, and this is not cosmetic. r2.dev refuses the
-            # default `Python-urllib/3.x` with 403 — the same status a PRIVATE
-            # bucket returns. Without this the check reports "PUBLIC READ IS
-            # OFF: every figure will be blank" against a bucket that is
-            # correctly configured, which is worse than not checking: it sends
-            # someone to fix something that is not broken. Measured: same URL,
-            # same Origin, urllib default UA -> 403 and no CORS header;
-            # browser UA -> 404 and `Access-Control-Allow-Origin: *`.
-            req.add_header("User-Agent", "monk-learning-ingest/1.0 (+verify)")
-            try:
-                with urllib.request.urlopen(req, timeout=20) as r:
-                    return r.status, r.headers.get("Access-Control-Allow-Origin", "")
-            except urllib.error.HTTPError as e:
-                return e.code, e.headers.get("Access-Control-Allow-Origin", "")
-            except Exception:
-                return 0, ""
-
-        probe, cors = head(f"{base}/{storage_r2.ASSETS_KEY_PREFIX}__probe-not-present__.png")
+        probe, cors = public_head(f"{base}/{storage_r2.ASSETS_KEY_PREFIX}__probe-not-present__.png")
         if probe == 404:
             print(f"public read OK ({base}) — 404 on an absent key, not 403.")
         elif probe in (401, 403):
@@ -1282,7 +1289,7 @@ def cmd_verify(args) -> int:
 
         # And the rows themselves, over the same anonymous path the app uses.
         for r in rows:
-            code, _ = head(f"{base}/{r['r2_key']}")
+            code, _ = public_head(f"{base}/{r['r2_key']}")
             if code != 200:
                 public_bad.append(f"{r['asset_slug']}: {r['r2_key']} -> {code} publicly "
                                   f"(present in R2, unreachable by the app)")

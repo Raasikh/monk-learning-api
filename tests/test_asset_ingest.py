@@ -797,7 +797,15 @@ def _row(slug, key, size=2048, **kw):
     return r
 
 
-def _verify_with(monkeypatch, rows, objects):
+def _verify_with(monkeypatch, rows, objects, public=None):
+    """`verify` against fake storage.
+
+    `public` stubs the anonymous public-read leg, which is a REAL network call
+    in production and must not be one here. Default: the bucket is correctly
+    public (404 on the absent probe, CORS present) and every object in `objects`
+    is reachable — so these tests keep measuring the storage leg they were
+    written for, and the public leg gets its own tests below.
+    """
     import app.db as appdb
     import app.storage_r2 as r2
 
@@ -805,6 +813,14 @@ def _verify_with(monkeypatch, rows, objects):
     monkeypatch.setattr(r2, "get_client", lambda: s3)
     monkeypatch.setattr(r2, "assets_bucket_name", lambda: "monk-illustrations")
     monkeypatch.setattr(appdb, "fetch_all", lambda t, c, **kw: rows)
+    monkeypatch.setenv("ASSETS_PUBLIC_BASE_URL", "https://assets.example.test")
+
+    def default_public(url: str):
+        key = url.split("assets.example.test/", 1)[-1]
+        return (404, "*") if "__probe-not-present__" in key else (
+            (200, "*") if key in objects else (404, "*"))
+
+    monkeypatch.setattr(ia, "public_head", public or default_public)
     return ia.main(["verify"])
 
 
@@ -933,3 +949,68 @@ def test_probe_never_returns_a_bare_boolean():
     assert r.verdict == "heuristic-clean-ocr-unavailable"
     assert not r.is_conclusive, "no OCR is installed, so nothing conclusive ran"
     assert "ABSENCE OF EVIDENCE" in r.detail
+
+
+# ── the public leg: what the APP sees, with no credential ───────────────────
+
+def test_verify_fails_when_public_read_is_off(monkeypatch, capsys):
+    """The failure every other check in this command is blind to.
+
+    Object present, row present, sizes agree — and every figure blank on every
+    device, because the bucket stopped being public. An S3 listing cannot see
+    it: the credential still works.
+    """
+    code = _verify_with(
+        monkeypatch, [_row("a", "concept-assets/a.png")],
+        {"concept-assets/a.png": b"x" * 2048},
+        public=lambda url: (403, ""),
+    )
+    out = capsys.readouterr().out
+    assert code != 0
+    assert "PUBLIC READ IS OFF" in out
+    assert "blank" in out
+
+
+def test_verify_fails_when_cors_is_missing(monkeypatch, capsys):
+    """Fetches from curl, fails from the app — the most confusing shape of all,
+    because a human checking by hand sees it working."""
+    code = _verify_with(
+        monkeypatch, [_row("a", "concept-assets/a.png")],
+        {"concept-assets/a.png": b"x" * 2048},
+        public=lambda url: (404, "") if "__probe" in url else (200, ""),
+    )
+    out = capsys.readouterr().out
+    assert code != 0
+    assert "Access-Control-Allow-Origin" in out
+
+
+def test_verify_fails_when_an_object_is_present_but_not_public(monkeypatch, capsys):
+    """Per row, not just the bucket. One object can be unreachable while the
+    bucket is public — a botched key, or an object uploaded with the wrong
+    ACL."""
+    def public(url: str):
+        if "__probe" in url:
+            return 404, "*"
+        return 403, "*"
+
+    code = _verify_with(
+        monkeypatch, [_row("a", "concept-assets/a.png")],
+        {"concept-assets/a.png": b"x" * 2048}, public=public)
+    out = capsys.readouterr().out
+    assert code != 0
+    assert "unreachable by the app" in out
+
+
+def test_verify_says_so_when_the_public_leg_was_not_checked(monkeypatch, capsys):
+    """No base URL is not a pass. "Nothing checked whether the app can fetch
+    this art" is a different statement from "the app can fetch this art"."""
+    import app.db as appdb
+    import app.storage_r2 as r2
+
+    s3 = FakeS3(objects={"concept-assets/a.png": b"x" * 2048})
+    monkeypatch.setattr(r2, "get_client", lambda: s3)
+    monkeypatch.setattr(r2, "assets_bucket_name", lambda: "monk-illustrations")
+    monkeypatch.setattr(appdb, "fetch_all", lambda t, c, **kw: [_row("a", "concept-assets/a.png")])
+    monkeypatch.delenv("ASSETS_PUBLIC_BASE_URL", raising=False)
+    ia.main(["verify"])
+    assert "PUBLIC LEG UNVERIFIED" in capsys.readouterr().out
