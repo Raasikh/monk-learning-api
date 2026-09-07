@@ -185,7 +185,7 @@ def test_only_high_confidence_ever_names_a_widget():
 
 
 def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through():
-    """479 rows are `high`; only 73 name a registered widget.
+    """479 rows are `high`; only 86 name a registered widget.
 
     After the corpus-wide reclassification every one of the 1,154 concepts
     carries a verdict read from the book's own chunks. Coverage went 35% -> 100%
@@ -197,7 +197,7 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     are `high` and unroutable. Naming one would hand the model an id
     `registry.ts::lookup` returns null for, and the board would draw nothing.
 
-    So "high" is not "routable", and the difference is now 406 rows. Most of
+    So "high" is not "routable", and the difference is now 393 rows. Most of
     those are `gap_*`: pictures the book actually draws that no widget can.
 
     69 -> 73 on 2026-09-07, when lines_planes_3d@1 was wired and FOUR of the six
@@ -215,6 +215,23 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     -- a wrong diagram drawn confidently, which is worse than tier 3. Each of the
     four promoted names a mode AND a checked-in tree that passed the gate at all
     three boards; the evidence column records which.
+
+    73 -> 86 on the same day, from re-reading the 27 high `gap_*` rows whose
+    figures are plots against xy_plot v3. Thirteen promoted, fourteen refused.
+    The re-read was necessary because their evidence was written against v2 and
+    had gone stale in the direction that hides coverage: three rows said in as
+    many words that xy_plot could not draw a step function, a Lorentzian or a
+    diode V-I, and v3 draws all three. A stale refusal is indistinguishable from
+    a current one, so the whole set was re-read rather than the promising ones.
+
+    The fourteen refusals are as measured as the promotions and are listed with
+    their defeating element in lib/widgets/xy-plot/__tests__/v3-gap-coverage.
+    Two are worth knowing here because the NAME matches and the FIGURE does not:
+    `gap_potential_energy_curve` wants a valley AND a hilltop with a total-energy
+    line, while the named shape is a Lennard-Jones well with neither; and
+    `gap_cooling_curve` is not the named `heating` shape, which is temperature
+    against HEAT ADDED with melting and boiling plateaus. (Newton's cooling was
+    promoted anyway -- as `curve: exponential`, which is exactly a*e^(bx)+c.)
     """
     high = [r for r in _rows() if r["v2_confidence"] == "high"]
     named, unroutable = [], []
@@ -222,23 +239,24 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
     assert len(high) == 479
-    assert len(named) == 73, f"the routed population moved: {len(named)}"
+    assert len(named) == 86, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
 
-def test_the_routed_population_is_seventy_three_across_thirty_nine_chapters():
+def test_the_routed_population_is_eighty_six_across_fifty_chapters():
     """The number the routing decision was made on. Pinned so a resync that
     moves it is a visible test change rather than a silent behaviour change.
 
-    37 -> 39 chapters with the lines_planes_3d promotion: mathematics 11 ch11
-    and mathematics 12 ch11 both had high rows but no routable one until now.
+    37 -> 39 with the lines_planes_3d promotion (mathematics 11 ch11 and
+    mathematics 12 ch11 had high rows but no routable one), then 39 -> 50 when
+    the 27 plot-shaped gap rows were re-read against xy_plot v3.
     (The function name has trailed the number twice; it says what it asserts.)
     """
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 39
+    assert len(routed) == 50
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
@@ -282,21 +300,33 @@ def test_missing_join_fields_are_unjoinable_not_unknown():
     assert verdict("physics", "eleven", 6, "Center of Mass").confidence == "unjoinable"
 
 
-def test_maths_12_ch8_routes_exactly_the_two_regions_xy_plot_can_draw():
+def test_maths_12_ch8_routes_exactly_the_three_regions_xy_plot_can_draw():
     """This test used to assert that Ch8 could NEVER fire on the column.
 
     That was true, and it was true because the reclassification had never
     read maths: all ten rows were `not_in_scope`. Maths 12 has since been
     reclassified from the book's own chunks, so the premise is gone.
 
-    What replaces it is the sharper claim. `xy_plot@2` takes one curve from
+    What replaces it is the sharper claim. `xy_plot@2` took one curve from
     line|parabola|sine|exponential|reciprocal, plus a second for
     area_between. Ch8 is mostly NOT that: the book teaches "Area Between Two
     Intersecting Curves" with sideways parabolas y^2 = 4ax and horizontal
     strips, and bounds several regions with circles. So exactly two concepts
-    route, and the four geometries validate() refuses must never route --
-    routing one would put a diagram on a board that the client then declines
-    to draw, which is the silent failure this column exists to prevent.
+    routed, and the geometries validate() refuses must never route -- routing
+    one would put a diagram on a board that the client then declines to draw,
+    which is the silent failure this column exists to prevent.
+
+    THREE at v3, and the third is the one v3 was extended for. "Area of Regions
+    Involving Modulus and Piecewise-Defined Functions" is `pieces` under
+    `mode: area` -- the figure is literally "curve A on the left, curve B on the
+    right, a dashed vertical at the switch point, the region beneath shaded".
+
+    Its sibling "Areas Involving Greatest Integer and Fractional Part Functions"
+    still does NOT route, and the difference is worth stating because the names
+    are so close: its retrieved chunks are 2-D regions -- the diamond
+    |x|+|y|<=a, a wedge inside a circle, "sketch and shade the overlap" -- which
+    have no integration variable at all. `integrate_along` does not help; there
+    is nothing to integrate along.
 
     Note the widget's own header claimed "5 solid + 1 partial" for this
     chapter. That header was written against concept NAMES. It is the
@@ -312,6 +342,7 @@ def test_maths_12_ch8_routes_exactly_the_two_regions_xy_plot_can_draw():
     assert routed == {
         "Area Under a Simple Curve Bounded by the Axes",
         "Area Bounded by a Parabola and a Line",
+        "Area of Regions Involving Modulus and Piecewise-Defined Functions",
     }, routed
 
     # The geometries xy_plot's validate() refuses must not route, whatever
