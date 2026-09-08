@@ -1014,3 +1014,62 @@ def test_verify_says_so_when_the_public_leg_was_not_checked(monkeypatch, capsys)
     monkeypatch.delenv("ASSETS_PUBLIC_BASE_URL", raising=False)
     ia.main(["verify"])
     assert "PUBLIC LEG UNVERIFIED" in capsys.readouterr().out
+
+
+# ── renditions: the @2x the client picks on every frame ─────────────────────
+
+def _png(w, h, mode="RGB"):
+    import io as _io
+    from PIL import Image
+    im = Image.new(mode, (w, h), "white")
+    # a hard edge, so a resampler that blurs or staircases has something to do
+    for x in range(w // 2):
+        for y in range(h // 3):
+            im.putpixel((x, y), (10, 40, 200) if mode == "RGB" else (10, 40, 200, 255))
+    b = _io.BytesIO(); im.save(b, format="PNG"); return b.getvalue()
+
+
+def test_a_rendition_is_exactly_twice_the_master():
+    import io as _io
+    from PIL import Image
+    out = ia.make_rendition(_png(896, 500))
+    with Image.open(_io.BytesIO(out)) as im:
+        assert im.size == (1792, 1000)
+
+
+def test_a_master_at_the_threshold_gets_no_rendition():
+    """Not "a rendition that happens to be the same size" — None, so the caller
+    uploads one object rather than two identical ones."""
+    assert ia.make_rendition(_png(1600, 900)) is None
+    assert ia.make_rendition(_png(2000, 1200)) is None
+
+
+def test_a_palette_png_is_converted_before_resampling():
+    """A palette image resampled in place quantises the interpolated pixels
+    back to the original palette — the staircasing LANCZOS is here to avoid.
+    The fix is invisible in the output size, so it is asserted on the mode."""
+    import io as _io
+    from PIL import Image
+    src = Image.open(_io.BytesIO(_png(896, 500))).convert("P")
+    b = _io.BytesIO(); src.save(b, format="PNG")
+    out = ia.make_rendition(b.getvalue())
+    with Image.open(_io.BytesIO(out)) as im:
+        assert im.mode in ("RGBA", "RGB"), f"resampled while still paletted: {im.mode}"
+
+
+def test_the_rendition_key_is_a_suffix_not_a_directory():
+    """A bucket listing must sort a master and its rendition adjacent."""
+    assert ia.rendition_key("concept-assets/x.png") == "concept-assets/x@2x.png"
+    # And a slug containing dots or dashes is not mangled.
+    assert (ia.rendition_key("concept-assets/bio11-ch7-frog--a.png")
+            == "concept-assets/bio11-ch7-frog--a@2x.png")
+
+
+def test_generating_a_rendition_does_not_touch_the_master():
+    """The standing constraint. make_rendition takes BYTES and returns bytes;
+    it must have no path to the file the manifest pinned a sha256 of."""
+    import hashlib
+    data = _png(896, 500)
+    before = hashlib.sha256(data).hexdigest()
+    ia.make_rendition(data)
+    assert hashlib.sha256(data).hexdigest() == before

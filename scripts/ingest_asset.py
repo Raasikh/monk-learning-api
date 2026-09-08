@@ -900,6 +900,53 @@ def fetch_existing(slug: str) -> Optional[dict]:
     return rows[0] if rows else None
 
 
+#: Masters at or above this width are served as-is. Every asset in
+#: drona-illustrations-v1 is under it — 104 of the 112 are 896x500 — so this
+#: batch produces a rendition for all 112.
+RENDITION_THRESHOLD_PX = 1600
+RENDITION_SUFFIX = "@2x"
+
+
+def rendition_key(master_key: str) -> str:
+    """`concept-assets/x.png` -> `concept-assets/x@2x.png`.
+
+    A SUFFIX, not a directory, so a bucket listing sorts a master and its
+    rendition adjacent and a human comparing the bucket to the manifest does
+    not have to look in two places.
+    """
+    stem, dot, ext = master_key.rpartition(".")
+    return f"{stem}{RENDITION_SUFFIX}{dot}{ext}"
+
+
+def make_rendition(data: bytes) -> Optional[bytes]:
+    """2x Lanczos, or None when the master is already big enough.
+
+    LANCZOS because these are flat fills with hard edges. Bilinear rounds the
+    edges off and nearest staircases them; on line art both are visible at the
+    size a board draws.
+
+    DERIVED, NOT PROVENANCED. The row's sha256 stays the master's and only the
+    master's. A rendition is reproducible from it, and hashing it too would put
+    a second checksum in the table that means nothing on its own and that
+    nobody would know to re-verify.
+    """
+    import io as _io
+
+    from PIL import Image
+
+    with Image.open(_io.BytesIO(data)) as im:
+        if im.width >= RENDITION_THRESHOLD_PX:
+            return None
+        # convert() first: a palette PNG resampled in place quantises the
+        # interpolated pixels back to the original palette, which is exactly
+        # the staircasing LANCZOS is here to avoid.
+        rgba = im.convert("RGBA")
+        big = rgba.resize((im.width * 2, im.height * 2), Image.Resampling.LANCZOS)
+        out = _io.BytesIO()
+        big.save(out, format="PNG", optimize=True)
+        return out.getvalue()
+
+
 def upload_and_verify(key: str, data: bytes, content_type: str) -> int:
     """put_object, then head_object. Returns the size R2 reports.
 
