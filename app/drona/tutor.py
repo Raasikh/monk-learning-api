@@ -406,15 +406,65 @@ LABELLED_FIGURE_ID = "labelled_figure"
 #: Cached for the process: an asset is bound offline by the ingest and cannot
 #: appear mid-session, which is CLAUDE.md §3a's "nothing is created during a
 #: live session" restated as a cache policy.
-_ILLUSTRATION_CACHE: Dict[str, Optional[str]] = {}
+_ILLUSTRATION_CACHE: Dict[str, List[Dict[str, Any]]] = {}
 
 
-def _illustration_asset_for(chapter_id: Optional[str],
-                            subtopic_key: Optional[str]) -> Optional[str]:
-    """The approved asset_slug for this concept, or None. Never raises.
+def figure_letter(sub_index: int) -> str:
+    """0 -> 'a'. The letter is PRESENTATION of the ordinal, derived not stored.
 
-    Takes the pair the session actually has and resolves `concepts.id` here,
-    the same join `concept_archetype_for_session` makes for the same reason.
+    migrations/0036 deliberately has no `figure_letter` column: two fields that
+    can disagree about one fact is the defect this whole subsystem keeps
+    producing.
+    """
+    return chr(ord("a") + int(sub_index))
+
+
+def resolve_figure(assets: List[Dict[str, Any]],
+                   figure: Optional[str]) -> Tuple[Optional[Dict[str, Any]], str]:
+    """Pick the cued sub-asset from an ordered set. Returns (asset, why).
+
+    THE FALLBACK IS THE WHOLE CONTRACT. A segment may cue `figure: "c"`; the
+    set may have two members because a row was refused at ingest. An unknown
+    letter resolves to `sub_index 0` and SAYS SO — it never blanks the board,
+    because a missing figure and a wrong figure are both worse than the default
+    one, and the student is owed a picture either way.
+
+    Pure and total so it can be tested without a database, which is the only
+    reason the fallback path is exercised at all.
+    """
+    if not assets:
+        return None, "empty set"
+    # THE LOWEST ORDINAL, not the first element. The database query orders by
+    # sub_index, but a function whose correctness depends on its caller having
+    # sorted is one refactor away from putting figure d on every board — and it
+    # would still render, so nothing would say so.
+    default = min(assets, key=lambda a: int(a.get("sub_index", 0)))
+    if not figure:
+        return default, "no cue"
+    want = str(figure).strip().lower()
+    if len(want) != 1 or not ("a" <= want <= "z"):
+        return default, f"cue {figure!r} is not a single letter a-z; using figure a"
+    idx = ord(want) - ord("a")
+    for a in assets:
+        if int(a.get("sub_index", 0)) == idx:
+            return a, f"cue {want}"
+    have = ",".join(figure_letter(int(a.get("sub_index", 0)))
+                    for a in sorted(assets, key=lambda a: int(a.get("sub_index", 0))))
+    return default, f"cue {want} not in set [{have}]; using figure a"
+
+
+def _illustration_set_for(chapter_id: Optional[str],
+                          subtopic_key: Optional[str]) -> List[Dict[str, Any]]:
+    """The ORDERED set of approved assets for this concept. Never raises.
+
+    Was `_illustration_asset_for`, returning one slug with `.limit(1)` and no
+    ordering — which for a 6-asset set returned whichever row Postgres handed
+    back first. drona-illustrations-v1 delivers 112 assets across 48 concepts,
+    most of them sets, so "one arbitrary member" stopped being a simplification
+    and became a wrong figure chosen at random per process.
+
+    Ordered by `sub_index`, so `[0]` is figure a by construction rather than by
+    luck.
 
     Same contract as `_precomputed_diagram`: a board slot must never be able to
     fail a lesson. A missing table, a dropped connection and a concept with no
@@ -427,34 +477,33 @@ def _illustration_asset_for(chapter_id: Optional[str],
     keeps an un-approved row off a board if it ever is.
     """
     if not chapter_id or not subtopic_key:
-        return None
+        return []
     ck = f"{chapter_id}|{subtopic_key}"
     if ck in _ILLUSTRATION_CACHE:
         return _ILLUSTRATION_CACHE[ck]
-    slug: Optional[str] = None
+    out: List[Dict[str, Any]] = []
     try:
         con = (supabase.table("concepts").select("id")
                .eq("chapter_id", chapter_id).eq("key", subtopic_key)
                .eq("active", True).limit(1).execute().data or [])
         if not con:
-            _ILLUSTRATION_CACHE[ck] = None
-            return None
-        rows = (supabase.table("concept_assets")
-                .select("asset_slug")
-                .eq("concept_id", con[0]["id"])
-                .eq("manifest_status", "approved")
-                .limit(1).execute().data)
-        if rows:
-            slug = rows[0].get("asset_slug") or None
+            _ILLUSTRATION_CACHE[ck] = []
+            return []
+        out = (supabase.table("concept_assets")
+               .select("asset_slug,sub_index,concept_slug")
+               .eq("concept_id", con[0]["id"])
+               .eq("manifest_status", "approved")
+               .order("sub_index")
+               .execute().data) or []
     except Exception as exc:
         # Logged, not raised, and deliberately NOT cached: a transient failure
         # must not pin this concept to "no illustration" for the life of the
         # process, which is the shape a cached negative would create.
         logger.warning(
             f"[ILLUSTRATION LOOKUP FAILED] {ck}: {str(exc)[:120]}")
-        return None
-    _ILLUSTRATION_CACHE[ck] = slug
-    return slug
+        return []
+    _ILLUSTRATION_CACHE[ck] = out
+    return out
 
 
 def _student_name_cached(user_id: str) -> str:
@@ -1094,8 +1143,26 @@ async def process_tutor_turn_stream(
     #
     # An empty slot is the ordinary case and costs nothing: no asset, no query
     # result, next tier answers.
-    _illustration_asset = _illustration_asset_for(session.get("chapter_id"),
-                                                  session.get("subtopic_key"))
+    _illustration_set = _illustration_set_for(session.get("chapter_id"),
+                                              session.get("subtopic_key"))
+    # THE CUE, and its fallback. A segment may name a specific plate with
+    # `figure: "c"` in its board_payload; the set may be shorter than the cue
+    # expects because a row was refused at ingest. `resolve_figure` returns the
+    # default and a REASON in that case — an unknown letter must never blank a
+    # board, because a wrong figure and no figure are both worse than figure a.
+    _figure_cue = None
+    _bp = curr_segment.get("board_payload")
+    if isinstance(_bp, dict):
+        _figure_cue = _bp.get("figure")
+    _illustration_row, _figure_why = resolve_figure(_illustration_set, _figure_cue)
+    _illustration_asset = (_illustration_row or {}).get("asset_slug")
+    if _illustration_set and _figure_cue and "using figure a" in _figure_why:
+        # Logged at WARNING because it is a CONTENT bug: a segment is cueing a
+        # figure its concept does not have, and the board silently shows a
+        # different one. Nothing else in the pipeline can notice.
+        logger.warning(
+            f"{stag} 🖼️ [FIGURE CUE FELL BACK] {session.get('subtopic_key')} "
+            f"seg={curr_seg_idx}: {_figure_why}")
 
     # ── SLOT 4: a precomputed tier-3 SVG ─────────────────────────────────────
     # This SEGMENT's own example figure outranks the concept-level one. It was

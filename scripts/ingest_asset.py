@@ -186,7 +186,9 @@ import csv
 import hashlib
 import os
 import io
+import subprocess
 import sys
+from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -981,6 +983,56 @@ def list_r2_objects() -> Dict[str, dict]:
 # ---------------------------------------------------------------------------
 
 
+def strip_raw_to_masters(raw_dir: Path, out_dir: Path, halo: int = 5,
+                        chroma: float = 4.0) -> List[str]:
+    """Derive masters from a RAW drop with scripts/strip_labels.py.
+
+    FOR FUTURE BATCHES ONLY. drona-illustrations-v1 arrived with its masters
+    already stripped — 17 of them, recorded per row as `cleanup=strip_labels` —
+    and re-running it here would rewrite files whose sha256 the manifest already
+    pins. That is why this is a flag and not a step: the package's own masters
+    are an input, never an output.
+
+    REFUSES TO OVERWRITE. Every produced file must not already exist. A raw drop
+    that lands on top of accepted masters is the one way this could destroy the
+    thing being ingested, and "masters are never modified" is a standing
+    constraint rather than a preference.
+    """
+    try:
+        import cv2  # noqa: F401
+    except ImportError:
+        raise Refusal(
+            "--strip needs OpenCV, which is not installed here: "
+            "pip install opencv-python-headless. The flag is for future raw "
+            "drops; this package's masters are already stripped and must not "
+            "be regenerated."
+        )
+
+    script = Path(__file__).resolve().parent / "strip_labels.py"
+    if not script.is_file():
+        raise Refusal(f"{script} is missing — it ships in the package and is "
+                      f"adopted into scripts/ on unpack.")
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    made: List[str] = []
+    for src in sorted(raw_dir.glob("*.png")):
+        dst = out_dir / src.name
+        if dst.exists():
+            raise Refusal(
+                f"{dst} already exists. --strip never overwrites a master: the "
+                f"manifest pins its sha256, and rewriting it would invalidate "
+                f"the provenance of a row that may already be ingested."
+            )
+        res = subprocess.run(
+            [sys.executable, str(script), str(src), str(dst), str(halo), str(chroma)],
+            capture_output=True, text=True)
+        if res.returncode != 0 or not dst.is_file():
+            raise Refusal(f"strip_labels failed on {src.name}: "
+                          f"{(res.stderr or res.stdout).strip()[:200]}")
+        made.append(dst.name)
+    return made
+
+
 def cmd_ingest(args) -> int:
     dry = not args.execute
 
@@ -1134,6 +1186,16 @@ def public_head(url: str) -> Tuple[int, str]:
     one URL with one Origin: urllib default UA -> 403 and no CORS header;
     browser UA -> 404 and `Access-Control-Allow-Origin: *`.
     """
+    # --strip runs FIRST and separately: it produces the masters that the rest
+    # of this command then treats as inputs. Not folded into the per-row loop,
+    # because a half-stripped drop with a half-ingested manifest is two partial
+    # states to reason about instead of one.
+    if getattr(args, "strip", None):
+        made = strip_raw_to_masters(Path(args.strip), Path(args.dir),
+                                    args.strip_halo, args.strip_chroma)
+        print(f"--strip: derived {len(made)} master(s) from {args.strip} "
+              f"into {args.dir}\n")
+
     import urllib.error
     import urllib.request
 
@@ -1362,6 +1424,14 @@ def build_parser() -> argparse.ArgumentParser:
                      help="gemini-work-order.md; hashed into every row")
     ing.add_argument("--generator-model", required=True,
                      help="exact model id, e.g. gemini-3-pro-image")
+    ing.add_argument("--strip", metavar="RAW_DIR",
+                     help="FUTURE BATCHES ONLY. Derive masters from a raw drop "
+                          "with scripts/strip_labels.py before ingesting. "
+                          "Refuses to overwrite an existing master.")
+    ing.add_argument("--strip-halo", type=int, default=5,
+                     help="strip_labels halo px (default 5)")
+    ing.add_argument("--strip-chroma", type=float, default=4.0,
+                     help="strip_labels chroma threshold (default 4.0)")
     ing.add_argument("--accept-inconclusive-text-check", action="store_true",
                      help="admit rows whose text check could only run the shape "
                           "heuristic. Recorded in text_check.")

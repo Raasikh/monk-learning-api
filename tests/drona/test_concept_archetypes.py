@@ -550,7 +550,11 @@ def test_slot_one_reads_the_plan_and_slot_three_reads_concept_assets():
     # concept. The session row has no concept_id column, so a lookup taking one
     # would receive None on every turn and this slot would look wired while
     # never firing -- which is what the first draft of it did.
-    assert "_illustration_asset_for(" in slot3
+    #
+    # It resolves the ORDERED SET now, not one row: 0036 made a concept able to
+    # carry several plates, and `.limit(1)` with no `order by` returned an
+    # arbitrary member of a six-asset set.
+    assert "_illustration_set_for(" in slot3
     assert "DELIBERATELY EMPTY" not in slot3
     assert 'session.get("chapter_id")' in slot3 and 'session.get("subtopic_key")' in slot3
     assert "concept_assets" in TUTOR_SRC
@@ -562,17 +566,21 @@ def test_the_illustration_lookup_cannot_fail_a_lesson():
     A missing table, a dropped connection and a concept with no art all mean
     the same thing -- this slot is empty, the next tier answers -- and none of
     them may reach the student as an error."""
-    src = TUTOR_SRC[TUTOR_SRC.index("def _illustration_asset_for("):]
+    src = TUTOR_SRC[TUTOR_SRC.index("def _illustration_set_for("):]
     src = src[:src.index("\ndef ", 10)]
     assert "except Exception" in src
-    assert "return None" in src
+    # An EMPTY SET, not None and not a raise. The function returns a list now,
+    # and "this concept has no art" and "the lookup failed" must be the same
+    # thing to the caller — both mean the slot is empty and the next tier
+    # answers.
+    assert "return []" in src
     # The transient failure must NOT be cached, or one blip pins the concept
     # to "no illustration" for the life of the process. Scoped to the EXCEPT
     # BLOCK: the first version of this sliced to the end of the function and
     # caught the success path's own cache write, which is the line that is
     # supposed to be there.
     handler = src[src.index("except Exception"):]
-    handler = handler[:handler.index("return None") + len("return None")]
+    handler = handler[:handler.index("return []") + len("return []")]
     assert "_ILLUSTRATION_CACHE" not in handler
 
 
