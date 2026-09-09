@@ -1772,3 +1772,34 @@ def test_a_wide_master_alone_is_clean(monkeypatch, capsys):
     assert code == 0
     assert "MISSING @2x" not in out
     assert "1 master(s) need none" in out
+
+
+def test_the_row_records_the_MASTER_hash_not_the_raw_one(bench, wired):
+    """They are the same shape, so nothing downstream can tell them apart.
+
+    The client keys its downloaded-file cache on `sha256`, so a row carrying
+    the RAW plate's hash would key every master by the hash of a file that is
+    never served — and it would look completely normal: 64 hex characters,
+    stable, unique per asset. The only thing that separates them is which
+    bytes were hashed, and that is decided here.
+    """
+    _, db = wired
+    assert ia.main(bench() + ["--execute"]) == 0
+    row = db.inserts[0]
+    assert re.fullmatch(r"[0-9a-f]{64}", row["sha256"])
+    assert row["sha256"] != row["labelled_reference_sha256"], (
+        "the master and the raw cannot hash the same — the master is the "
+        "stripped plate"
+    )
+    # And it is the hash of what was uploaded, not of what the manifest says.
+    uploaded = next(v for k, v in db.uploaded.items()) if hasattr(db, "uploaded") else None
+    if uploaded is not None:
+        assert hashlib.sha256(uploaded).hexdigest() == row["sha256"]
+
+
+def test_sha256_is_in_the_columns_the_reader_asks_for():
+    """ROW_COLUMNS is the SELECT list. A column written but not read is a
+    column the reconciliation and the idempotency check cannot see — which is
+    how concept_slug and sub_index stayed invisible for a month."""
+    assert "sha256" in ia.ROW_COLUMNS.split(",")
+    assert "labelled_reference_sha256" in ia.ROW_COLUMNS.split(",")

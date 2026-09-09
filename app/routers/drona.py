@@ -4,6 +4,7 @@ from typing import Optional, List, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from app.auth import get_current_user_id
+from app import storage_r2
 from app.db import supabase, fetch_all, fetch_all_cached
 from app.exam_scope import selected_exam, subject_on_syllabus, tagged_for_exam
 from app.drona.scoping import scope_student_session
@@ -19,6 +20,60 @@ from app.drona.persona import (
 logger = logging.getLogger("drona.router")
 
 router = APIRouter(prefix="/drona", tags=["drona"])
+
+@router.get("/chapter/{chapter_id}/figures")
+def get_chapter_figures(chapter_id: str,
+                        user_id: str = Depends(get_current_user_id)):
+    """Every illustration asset for one chapter, so the client can download
+    them BEFORE the class rather than during it.
+
+    WHY A CHAPTER AND NOT A CONCEPT. Slot 3 picks the asset server-side, per
+    turn, from the concept the session has reached — so the client cannot know
+    in advance which slug it will be asked for, only which chapter it is in.
+    Asking per turn is what it did before this endpoint existed, and it meant
+    every figure's art arrived after the sentence that introduced it.
+
+    The rows carry `sha256` because the client caches the downloaded file under
+    it: new art for an existing slug must invalidate the old file, and `bytes`
+    cannot do that job — two different plates can be the same length.
+
+    fetch_all, not .execute(): a chapter is small today, but this table grows
+    with the art and PostgREST truncates an unpaged read at 1000 rows without
+    saying so. That is not a hypothetical here — it is the defect that made
+    four assets look like missing concepts three days ago.
+    """
+    if not chapter_id:
+        raise HTTPException(status_code=400, detail="chapter_id is required")
+    try:
+        rows = fetch_all(
+            "concept_assets",
+            "asset_slug,concept_slug,sub_index,concept_id,r2_key,"
+            "content_type,width,height,bytes,sha256,manifest_status",
+            chapter_id=chapter_id,
+        )
+    except Exception as exc:                                  # pragma: no cover
+        logger.warning(f"[CHAPTER FIGURES] {chapter_id}: {str(exc)[:120]}")
+        # An empty list, not a 500. A chapter whose figures cannot be listed is
+        # a class that draws no figures, which is the same outcome the client
+        # already handles; a 500 here would stop the class from starting.
+        return {"chapter_id": chapter_id, "assets": []}
+
+    approved = [r for r in rows
+                if r.get("manifest_status") == storage_r2.ASSET_APPROVED_STATUS]
+    # Ordered so a set reads a, b, c. The client does not depend on it, but a
+    # human diffing this response against the bucket should not have to sort.
+    approved.sort(key=lambda r: (r.get("concept_slug") or "", r.get("sub_index") or 0))
+    unhashed = [r["asset_slug"] for r in approved if not r.get("sha256")]
+    if unhashed:
+        # Named, not counted, and not silently dropped: the client refuses to
+        # cache a row with no version rather than invent a key, so these
+        # figures will not draw and somebody needs to know which.
+        logger.warning(
+            f"[CHAPTER FIGURES] {len(unhashed)} asset(s) in {chapter_id} have no "
+            f"sha256 and cannot be cached by the client: {', '.join(unhashed[:5])}"
+        )
+    return {"chapter_id": chapter_id, "assets": approved}
+
 
 @router.get("/catalogue")
 def get_catalogue(exam: Optional[str] = None, user_id: str = Depends(get_current_user_id)):

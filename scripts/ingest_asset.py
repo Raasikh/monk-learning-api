@@ -418,7 +418,8 @@ ROW_COLUMNS = (
     "class_level,r2_key,"
     "content_type,width,height,bytes,licence,source_url,author,anchor_book,"
     "generator_model,prompt_sha,text_check,labelled_reference_file,"
-    "labelled_reference_sha256,arrived_labelled,syllabus_gap,manifest_status,"
+    "sha256,labelled_reference_sha256,arrived_labelled,syllabus_gap,"
+    "manifest_status,"
     "created_at"
 )
 
@@ -1073,6 +1074,16 @@ def validate_row(entry: Dict[str, str], folder: str, generator_model: str,
             "generator_model": generator_model,
             "prompt_sha": sha,
             "text_check": probe.verdict,
+            # THE MASTER'S OWN HASH. Distinct from labelled_reference_sha256
+            # below, which hashes the RAW plate. The client keys its downloaded
+            # file cache on this, so new art for an existing slug invalidates
+            # the old file; `bytes` cannot do that job, because two different
+            # plates can be the same length.
+            #
+            # Verified against the manifest earlier in this function, so this
+            # is the hash of the bytes actually uploaded, not a value copied
+            # from a CSV and hoped about.
+            "sha256": master["sha256"],
             # Verified to exist, recorded by name and hash, NOT uploaded. See
             # TWO FILES, ONE ROW.
             "labelled_reference_file": name_raw,
