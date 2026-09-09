@@ -7,7 +7,7 @@ def _row(slug, **kw):
     r = {"asset_slug": slug, "concept_slug": slug.rsplit("--", 1)[0],
          "sub_index": 0, "concept_id": "c1", "r2_key": f"concept-assets/{slug}.png",
          "content_type": "image/png", "width": 896, "height": 560, "bytes": 1234,
-         "sha256": "a" * 64,
+         "master_sha256": "a" * 64, "rendition_2x_sha256": "b" * 64,
          "manifest_status": storage_r2.ASSET_APPROVED_STATUS}
     r.update(kw)
     return r
@@ -58,7 +58,8 @@ def test_every_row_carries_the_hash_the_client_caches_on(monkeypatch):
     out = drona.get_chapter_figures("chap-7", user_id="u1")
     a = out["assets"][0]
     # bytes is NOT a version: two different plates can be the same length.
-    for key in ("asset_slug", "r2_key", "bytes", "sha256", "width", "height"):
+    for key in ("asset_slug", "r2_key", "bytes", "master_sha256",
+                "rendition_2x_sha256", "width", "height"):
         assert key in a, f"{key} missing — the client needs it to fetch and verify"
 
 

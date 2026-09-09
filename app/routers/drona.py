@@ -48,7 +48,8 @@ def get_chapter_figures(chapter_id: str,
         rows = fetch_all(
             "concept_assets",
             "asset_slug,concept_slug,sub_index,concept_id,r2_key,"
-            "content_type,width,height,bytes,sha256,manifest_status",
+            "content_type,width,height,bytes,master_sha256,rendition_2x_sha256,"
+            "manifest_status",
             chapter_id=chapter_id,
         )
     except Exception as exc:                                  # pragma: no cover
@@ -63,14 +64,14 @@ def get_chapter_figures(chapter_id: str,
     # Ordered so a set reads a, b, c. The client does not depend on it, but a
     # human diffing this response against the bucket should not have to sort.
     approved.sort(key=lambda r: (r.get("concept_slug") or "", r.get("sub_index") or 0))
-    unhashed = [r["asset_slug"] for r in approved if not r.get("sha256")]
+    unhashed = [r["asset_slug"] for r in approved if not r.get("master_sha256")]
     if unhashed:
         # Named, not counted, and not silently dropped: the client refuses to
         # cache a row with no version rather than invent a key, so these
         # figures will not draw and somebody needs to know which.
         logger.warning(
             f"[CHAPTER FIGURES] {len(unhashed)} asset(s) in {chapter_id} have no "
-            f"sha256 and cannot be cached by the client: {', '.join(unhashed[:5])}"
+            f"master_sha256 and cannot be cached by the client: {', '.join(unhashed[:5])}"
         )
     return {"chapter_id": chapter_id, "assets": approved}
 

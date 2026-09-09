@@ -1786,20 +1786,57 @@ def test_the_row_records_the_MASTER_hash_not_the_raw_one(bench, wired):
     _, db = wired
     assert ia.main(bench() + ["--execute"]) == 0
     row = db.inserts[0]
-    assert re.fullmatch(r"[0-9a-f]{64}", row["sha256"])
-    assert row["sha256"] != row["labelled_reference_sha256"], (
+    assert re.fullmatch(r"[0-9a-f]{64}", row["master_sha256"])
+    assert row["master_sha256"] != row["labelled_reference_sha256"], (
         "the master and the raw cannot hash the same — the master is the "
         "stripped plate"
     )
-    # And it is the hash of what was uploaded, not of what the manifest says.
-    uploaded = next(v for k, v in db.uploaded.items()) if hasattr(db, "uploaded") else None
-    if uploaded is not None:
-        assert hashlib.sha256(uploaded).hexdigest() == row["sha256"]
 
 
 def test_sha256_is_in_the_columns_the_reader_asks_for():
     """ROW_COLUMNS is the SELECT list. A column written but not read is a
     column the reconciliation and the idempotency check cannot see — which is
     how concept_slug and sub_index stayed invisible for a month."""
-    assert "sha256" in ia.ROW_COLUMNS.split(",")
-    assert "labelled_reference_sha256" in ia.ROW_COLUMNS.split(",")
+    cols = ia.ROW_COLUMNS.split(",")
+    assert "master_sha256" in cols
+    assert "rendition_2x_sha256" in cols
+    assert "labelled_reference_sha256" in cols
+    # And the ambiguous name is NOT here: three hashes on one row, two of the
+    # same shape, and a column called plain `sha256` is the confusion 0041 has
+    # to write a query to catch.
+    assert "sha256" not in cols
+
+
+def test_the_rendition_hash_is_taken_from_the_bytes_that_were_uploaded(bench, wired):
+    """Not from a re-read of a file, because there is no file.
+
+    The @2x exists only in memory — it is derived at upload time, never
+    authored and never written to disk — so the moment it is sent is the only
+    moment its hash can be taken from the same bytes the bucket received.
+    Hashing anything else here would verify a different object than the one a
+    student downloads.
+    """
+    s3, db = wired
+    assert ia.main(bench() + ["--execute"]) == 0
+    row = db.inserts[0]
+    rkey = f"concept-assets/{SLUG}@2x.png"
+    assert rkey in s3.puts
+    assert re.fullmatch(r"[0-9a-f]{64}", row["rendition_2x_sha256"])
+    assert row["rendition_2x_sha256"] != row["master_sha256"], (
+        "a 2x upscale cannot hash the same as what it was upscaled from"
+    )
+    assert hashlib.sha256(s3.objects[rkey]).hexdigest() == row["rendition_2x_sha256"]
+
+
+def test_a_master_too_wide_for_a_rendition_records_NULL_not_a_hash(bench, wired):
+    """NULL means "this master needs no rendition", and 0041 makes that the
+    only way NULL is reachable. A hash here would name a file that does not
+    exist in the bucket, and the client would fetch it and 404."""
+    row = dict(GOOD_ROW)
+    row["width"], row["height"] = "1800", "1240"
+    s3, db = wired
+    wide = plate(w=1800, h=1240, bg=255)
+    assert ia.main(bench(rows=[row], master=wide) + ["--execute"]) == 0
+    written = db.inserts[0]
+    assert written["rendition_2x_sha256"] is None
+    assert not any(k.endswith("@2x.png") for k in s3.puts)

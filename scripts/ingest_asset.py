@@ -418,8 +418,8 @@ ROW_COLUMNS = (
     "class_level,r2_key,"
     "content_type,width,height,bytes,licence,source_url,author,anchor_book,"
     "generator_model,prompt_sha,text_check,labelled_reference_file,"
-    "sha256,labelled_reference_sha256,arrived_labelled,syllabus_gap,"
-    "manifest_status,"
+    "master_sha256,rendition_2x_sha256,labelled_reference_sha256,"
+    "arrived_labelled,syllabus_gap,manifest_status,"
     "created_at"
 )
 
@@ -1076,14 +1076,19 @@ def validate_row(entry: Dict[str, str], folder: str, generator_model: str,
             "text_check": probe.verdict,
             # THE MASTER'S OWN HASH. Distinct from labelled_reference_sha256
             # below, which hashes the RAW plate. The client keys its downloaded
-            # file cache on this, so new art for an existing slug invalidates
-            # the old file; `bytes` cannot do that job, because two different
+            # file cache on this AND verifies the bytes against it, so new art
+            # for an existing slug invalidates the old file and a truncated
+            # download is caught. `bytes` cannot do either job: two different
             # plates can be the same length.
             #
             # Verified against the manifest earlier in this function, so this
             # is the hash of the bytes actually uploaded, not a value copied
             # from a CSV and hoped about.
-            "sha256": master["sha256"],
+            "master_sha256": master["sha256"],
+            # Filled at UPLOAD time from the bytes actually sent, further down.
+            # None here rather than absent, so the shape of the row does not
+            # change between the dry run and the execute.
+            "rendition_2x_sha256": None,
             # Verified to exist, recorded by name and hash, NOT uploaded. See
             # TWO FILES, ONE ROW.
             "labelled_reference_file": name_raw,
@@ -1700,7 +1705,16 @@ def cmd_ingest(args) -> int:
             if rend is not None:
                 rkey = rendition_key(row["r2_key"])
                 upload_and_verify(rkey, rend, row["content_type"])
+                # Hashed from the bytes SENT, not from a file re-read off disk.
+                # The rendition exists only in memory here — it is derived, not
+                # authored — so this is the only moment its hash can be taken
+                # from the same bytes the bucket received.
+                row["rendition_2x_sha256"] = hashlib.sha256(rend).hexdigest()
                 renditions.append((r.slug, rkey, len(rend)))
+            else:
+                # No rendition for a master at or above the threshold. NULL is
+                # the honest value and 0041 makes it reachable only here.
+                row["rendition_2x_sha256"] = None
         except Exception as err:
             sys.stderr.write(
                 f"{r.slug}: UPLOAD FAILED for {bucket}/{row['r2_key']}: {err}\n"
