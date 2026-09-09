@@ -801,7 +801,9 @@ def test_execute_uploads_then_inserts(bench, wired, capsys):
     code = ia.main(bench() + ["--execute"])
     out = capsys.readouterr().out
     assert code == 0
-    assert s3.puts == [f"concept-assets/{SLUG}.png"]
+    # 1600 < RENDITION_THRESHOLD_PX, so a rendition is produced beside it.
+    assert s3.puts == [f"concept-assets/{SLUG}.png",
+                       f"concept-assets/{SLUG}@2x.png"]
     assert len(db.inserts) == 1
     row = db.inserts[0]
     assert row["asset_slug"] == SLUG
@@ -820,7 +822,9 @@ def test_only_the_master_is_uploaded(bench, wired):
     """The labelled file is verified and hashed, never stored."""
     s3, db = wired
     assert ia.main(bench() + ["--execute"]) == 0
-    assert s3.puts == [f"concept-assets/{SLUG}.png"]
+    # 1600 < RENDITION_THRESHOLD_PX, so a rendition is produced beside it.
+    assert s3.puts == [f"concept-assets/{SLUG}.png",
+                       f"concept-assets/{SLUG}@2x.png"]
     assert not any(".labelled." in k for k in s3.objects)
     row = db.inserts[0]
     # raw/, not a labelled sibling: the reference is what the master was made
@@ -882,7 +886,8 @@ def test_reingest_updates_rather_than_duplicating(bench, wired, capsys):
     assert len(db.inserts) == 1
     assert len(db.updates) == 1
     assert len(db.rows) == 1
-    assert s3.puts == [f"concept-assets/{SLUG}.png"] * 2
+    assert s3.puts == [f"concept-assets/{SLUG}.png",
+                       f"concept-assets/{SLUG}@2x.png"] * 2
 
 
 def test_a_refusal_does_not_block_the_good_rows(bench, wired, capsys):
@@ -1303,9 +1308,19 @@ def test_a_rendition_is_exactly_twice_the_master():
 
 def test_a_master_at_the_threshold_gets_no_rendition():
     """Not "a rendition that happens to be the same size" — None, so the caller
-    uploads one object rather than two identical ones."""
-    assert ia.make_rendition(_png(1600, 900)) is None
+    uploads one object rather than two identical ones.
+
+    The threshold is 1800, not 1600, and the number is not arbitrary: the
+    client asks for @2x whenever frame * dpr exceeds the master's width, and
+    its widest board is 900pt at 2x. At 1600 a master 1601..1799 px wide was
+    asked for a rendition this function declined to make, and the board 404s
+    on the only file it wants.
+    """
+    assert ia.RENDITION_THRESHOLD_PX == 1800
+    assert ia.make_rendition(_png(1800, 1240)) is None
     assert ia.make_rendition(_png(2000, 1200)) is None
+    # ...and the width that used to be exempt is not any more.
+    assert ia.make_rendition(_png(1700, 1000)) is not None
 
 
 def test_a_palette_png_is_converted_before_resampling():
@@ -1722,3 +1737,38 @@ def test_the_migration_and_the_code_agree():
     sql = Path(__file__).resolve().parents[1] / "migrations" / "0039_manifest_status_accepted.sql"
     body = sql.read_text()
     assert f"manifest_status = '{storage_r2.ASSET_APPROVED_STATUS}'" in body
+
+
+def test_a_wide_master_needs_no_rendition_and_a_stale_one_is_an_orphan(
+        monkeypatch, capsys):
+    """The pass-for-the-wrong-reason this check produced on its first wide master.
+
+    `expected_renditions` was built for EVERY row with no width test, so a
+    1800px master — which `make_rendition` correctly declines to upscale — was
+    expected to have an @2x anyway. It did: a stale one left over from an
+    earlier, narrower render of the same slug. So a file holding 2x of
+    SUPERSEDED art counted as healthy and was kept off the orphan list by the
+    very check meant to find it.
+    """
+    code = _verify_with(
+        monkeypatch,
+        [_row("wide", "concept-assets/wide.png", width=1800, height=1240)],
+        {"concept-assets/wide.png": b"x" * 2048,
+         "concept-assets/wide@2x.png": b"x" * 9000})   # stale, from a narrower render
+    out = capsys.readouterr().out
+    assert code == 1
+    assert "ORPHANED OBJECTS" in out
+    assert "concept-assets/wide@2x.png" in out
+    assert "MISSING @2x" not in out
+
+
+def test_a_wide_master_alone_is_clean(monkeypatch, capsys):
+    """The other half: no rendition is not a missing rendition."""
+    code = _verify_with(
+        monkeypatch,
+        [_row("wide", "concept-assets/wide.png", width=1800, height=1240)],
+        {"concept-assets/wide.png": b"x" * 2048})
+    out = capsys.readouterr().out
+    assert code == 0
+    assert "MISSING @2x" not in out
+    assert "1 master(s) need none" in out

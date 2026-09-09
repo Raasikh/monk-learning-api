@@ -1,18 +1,19 @@
 {
   "asset_slug": "bio11-ch7-frog--circulatory-and-respiratory-systems--a",
-  "image_w": 896,
-  "image_h": 617,
+  "image_w": 1800,
+  "image_h": 1240,
   "schema_version": 1,
+  "source": "svg-authored",
   "labels": [
     {
       "id": "sinus-venosus",
       "text": {
         "en": "sinus venosus",
-        "hi": ""
+        "hi": "sinus venosus"
       },
       "anchor": [
-        0.658,
-        0.411
+        0.6583,
+        0.4113
       ],
       "side": "auto"
     },
@@ -20,11 +21,11 @@
       "id": "right-atrium",
       "text": {
         "en": "right atrium",
-        "hi": ""
+        "hi": "right atrium"
       },
       "anchor": [
-        0.453,
-        0.532
+        0.4528,
+        0.5323
       ],
       "side": "auto"
     },
@@ -32,11 +33,11 @@
       "id": "left-atrium",
       "text": {
         "en": "left atrium",
-        "hi": ""
+        "hi": "left atrium"
       },
       "anchor": [
-        0.594,
-        0.524
+        0.5944,
+        0.5242
       ],
       "side": "auto"
     },
@@ -44,11 +45,11 @@
       "id": "ventricle",
       "text": {
         "en": "ventricle",
-        "hi": ""
+        "hi": "ventricle"
       },
       "anchor": [
-        0.467,
-        0.79
+        0.4667,
+        0.7903
       ],
       "side": "auto"
     },
@@ -56,11 +57,11 @@
       "id": "conus-arteriosus",
       "text": {
         "en": "conus arteriosus",
-        "hi": ""
+        "hi": "conus arteriosus"
       },
       "anchor": [
-        0.389,
-        0.508
+        0.3889,
+        0.5081
       ],
       "side": "auto"
     },
@@ -68,11 +69,11 @@
       "id": "truncus-arteriosus",
       "text": {
         "en": "truncus arteriosus",
-        "hi": ""
+        "hi": "truncus arteriosus"
       },
       "anchor": [
-        0.433,
-        0.355
+        0.45,
+        0.3468
       ],
       "side": "auto"
     },
@@ -80,11 +81,11 @@
       "id": "carotid-arch",
       "text": {
         "en": "carotid arch",
-        "hi": ""
+        "hi": "carotid arch"
       },
       "anchor": [
-        0.347,
-        0.081
+        0.3611,
+        0.0685
       ],
       "side": "auto"
     },
@@ -92,11 +93,11 @@
       "id": "systemic-arch",
       "text": {
         "en": "systemic arch",
-        "hi": ""
+        "hi": "systemic arch"
       },
       "anchor": [
-        0.389,
-        0.105
+        0.4167,
+        0.1129
       ],
       "side": "auto"
     },
@@ -104,11 +105,11 @@
       "id": "pulmocutaneous-arch",
       "text": {
         "en": "pulmocutaneous arch",
-        "hi": ""
+        "hi": "pulmocutaneous arch"
       },
       "anchor": [
-        0.472,
-        0.145
+        0.4639,
+        0.1371
       ],
       "side": "auto"
     },
@@ -116,11 +117,11 @@
       "id": "pulmonary-vein",
       "text": {
         "en": "pulmonary vein",
-        "hi": ""
+        "hi": "pulmonary vein"
       },
       "anchor": [
-        0.653,
-        0.714
+        0.6528,
+        0.7137
       ],
       "side": "auto"
     },
@@ -128,11 +129,11 @@
       "id": "precaval-vein",
       "text": {
         "en": "precaval vein",
-        "hi": ""
+        "hi": "precaval vein"
       },
       "anchor": [
-        0.653,
-        0.306
+        0.6528,
+        0.3065
       ],
       "side": "auto"
     },
@@ -140,11 +141,11 @@
       "id": "postcaval-vein",
       "text": {
         "en": "postcaval vein",
-        "hi": ""
+        "hi": "postcaval vein"
       },
       "anchor": [
-        0.656,
-        0.573
+        0.6556,
+        0.5726
       ],
       "side": "auto"
     },
@@ -152,7 +153,7 @@
       "id": "lung",
       "text": {
         "en": "lung",
-        "hi": ""
+        "hi": "lung"
       },
       "anchor": null,
       "side": "auto"
@@ -161,7 +162,7 @@
       "id": "buccal-cavity",
       "text": {
         "en": "buccal cavity",
-        "hi": ""
+        "hi": "buccal cavity"
       },
       "anchor": null,
       "side": "auto"
@@ -170,7 +171,7 @@
       "id": "glottis",
       "text": {
         "en": "glottis",
-        "hi": ""
+        "hi": "glottis"
       },
       "anchor": null,
       "side": "auto"
@@ -179,14 +180,14 @@
       "id": "skin",
       "text": {
         "en": "skin",
-        "hi": ""
+        "hi": "skin"
       },
       "anchor": null,
       "side": "auto"
     }
   ],
   "_draft": {
-    "generated_by": "content/tier3-svg/…--a.svg (authored leader endpoints)",
+    "generated_by": "content/illustrations/svg/…--a.svg (leader endpoints, read from the document)",
     "model": null,
     "unplaced": [
       "lung",
@@ -195,6 +196,6 @@
       "skin"
     ],
     "shared_anchors": {},
-    "note": "Anchors are READ FROM THE DRAWING, not proposed by vision. This plate was authored in this repo, so every leader endpoint is where the term belongs by construction, and a vision guess would be strictly worse. The four unplaced terms are respiratory and belong to figure b of this set, not to the heart. Still no reviewed_by: exact is not the same as reviewed."
+    "note": "Anchors are READ OUT OF THE DRAWING. Every leader's end point is the point its label names, so this set cannot disagree with the art. The unplaced terms are respiratory and belong to figure b of this set, not to the heart."
   }
 }

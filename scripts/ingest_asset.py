@@ -1166,7 +1166,22 @@ def fetch_existing(slug: str) -> Optional[dict]:
 #: Masters at or above this width are served as-is. Every asset in
 #: drona-illustrations-v1 is under it — 104 of the 112 are 896x500 — so this
 #: batch produces a rendition for all 112.
-RENDITION_THRESHOLD_PX = 1600
+# THE WIDEST REQUEST THE APP CAN MAKE, and that is what this number has to be.
+#
+# The client asks for @2x whenever `frameWidthPt * dpr > masterWidthPx`. Its
+# widest board is 900pt, and at 2x that is 1800 device pixels — so a master
+# NARROWER than 1800 will be asked for a rendition on some device, full stop.
+#
+# This was 1600, which opened a window: a master 1601..1799 px wide was asked
+# for an @2x that this command refused to produce, and the board 404s on the
+# only file it wanted. No master in v1.1 fell in that window (104 are 896 wide,
+# 5 are 1376), so nothing was broken — but the frog heart was about to be
+# rendered at 1792, one pixel class inside it.
+#
+# Keep this equal to max(frame * dpr) over the boards in
+# lib/widgets/labelled-figure/__tests__/renditions.test.ts. If a wider board or
+# a 3x tablet appears, both sides move together or the window reopens.
+RENDITION_THRESHOLD_PX = 1800
 RENDITION_SUFFIX = "@2x"
 
 
@@ -1778,7 +1793,20 @@ def cmd_verify(args) -> int:
     # would report every healthy rendition as an orphan — 108 false positives —
     # and, worse, would make a genuinely orphaned rendition invisible in the
     # noise.
-    expected_renditions = {rendition_key(k): k for k in by_key}
+    # MIRRORS THE INGEST RULE, and it must: `make_rendition` produces nothing
+    # for a master already at or above RENDITION_THRESHOLD_PX, so expecting an
+    # @2x for one is expecting a file that is correctly absent.
+    #
+    # This read `{rendition_key(k): k for k in by_key}` — every row, no width
+    # test — and it passed for the WRONG REASON on the first wide master: a
+    # stale @2x left over from an earlier, narrower render of the same slug
+    # satisfied the expectation, so a file holding 2x of SUPERSEDED art was
+    # counted as healthy and kept off the orphan list by the very check meant
+    # to find it.
+    expected_renditions = {
+        rendition_key(k): k for k, r in by_key.items()
+        if int(r.get("width") or 0) < RENDITION_THRESHOLD_PX
+    }
 
     dangling = [] if s3_error else [r for r in rows if r["r2_key"] not in objects]
     unreferenced = [] if s3_error else sorted(
@@ -1911,15 +1939,24 @@ def cmd_verify(args) -> int:
         # this app renders picks @2x.
         checked = 0
         for r in rows:
-            for key in (r["r2_key"], rendition_key(r["r2_key"])):
+            keys = [r["r2_key"]]
+            # Only ask for a rendition the ingest would have made. A master at
+            # or above the threshold has none, and HEADing a key that should
+            # not exist would report a healthy asset as broken.
+            if int(r.get("width") or 0) < RENDITION_THRESHOLD_PX:
+                keys.append(rendition_key(r["r2_key"]))
+            for key in keys:
                 code, _ = public_head(f"{base}/{key}")
                 checked += 1
                 if code != 200:
                     public_bad.append(
                         f"{r['asset_slug']}: {key} -> {code} publicly "
                         f"(present in R2, unreachable by the app)")
+        n_rend = sum(1 for r in rows
+                     if int(r.get("width") or 0) < RENDITION_THRESHOLD_PX)
         print(f"public HEAD: {checked} key(s) checked anonymously "
-              f"({len(rows)} masters + {len(rows)} renditions), "
+              f"({len(rows)} masters + {n_rend} renditions; "
+              f"{len(rows) - n_rend} master(s) need none), "
               f"{checked - len(public_bad)} returned 200.")
         if public_bad:
             print("PUBLIC LEG PROBLEMS:")
