@@ -1867,37 +1867,73 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                     # would be a provenance field asserting a decision nobody
                     # made, which is the failure class migrations/0035 is
                     # written against.
-                    gated = sanitize_widget_payload(
-                        raw_payload, archetype_widget=_archetype_widget)
-                    if not gated:
-                        continue
-                    clean_evt["payload"] = gated["payload"]
-                    # Which routing path produced this payload —
-                    # docs/widget-routing.md, "what each path must record".
-                    # A sibling of `payload`, never a key inside it: the
-                    # client's WidgetPayload is a declared shape and this is
-                    # server-owned provenance.
-                    clean_evt["route"] = gated["route"]
-                    if gated["route"] == ROUTE_ARCHETYPE_HIGH:
-                        # The other half of what the doc requires a routed
-                        # segment to record. Stamped ONLY on the archetype
-                        # route, because on any other route the classification
-                        # decided nothing and naming it would imply it did.
-                        # Computed from the CSV's own bytes, never typed —
-                        # see concept_archetypes._version().
-                        clean_evt["archetype_version"] = ARCHETYPE_VERSION
-                    _routes_seen.add(gated["route"])
-                    if evt.get("caption"):
-                        clean_evt["caption"] = str(evt["caption"])[:200]
-                    # Includes the widget id: two widgets can legitimately carry
-                    # the same params object (`{"active_node": 0}` fits more
-                    # than one), and keying on params alone would let the second
-                    # be dropped as a duplicate of the first.
-                    content_key = json.dumps(
-                        {"widget": gated["payload"]["widget"],
-                         "params": gated["payload"]["params"]},
-                        sort_keys=True, default=str,
-                    )
+                    # LABELLED_FIGURE IS DISPATCHED OUTSIDE THE REGISTRY, on
+                    # this side exactly as on the client's.
+                    #
+                    # `sanitize_widget_payload` checks the id against
+                    # WIDGET_VERSIONS, which is the client's GENERATED registry
+                    # manifest — and `labelled_figure` is deliberately not in
+                    # it, because BoardWidget tests
+                    # `payload.widget === labelledFigure.id` BEFORE calling
+                    # `lookup()`. widget_registry.py's own header says a
+                    # server-side labelled-figure path must mirror that
+                    # ordering. Slot 3 does, where it builds the payload; this
+                    # normalisation pass runs over EVERY board event afterwards
+                    # and did not, so it dropped the figure slot 3 had just
+                    # served:
+                    #
+                    #   🖼️ [ILLUSTRATION SERVED] bio11-ch7-frog-...--a
+                    #   ⚠️ [DIAGRAM DROPPED] widget 'labelled_figure' is not in
+                    #      the client registry
+                    #
+                    # Two log lines apart, and the board drew nothing. The
+                    # bypass has to be at BOTH points or it is not a bypass.
+                    if raw_payload.get("widget") == LABELLED_FIGURE_ID:
+                        clean_evt["payload"] = raw_payload
+                        clean_evt["route"] = evt.get("route") or "illustration"
+                        if evt.get("caption"):
+                            clean_evt["caption"] = str(evt["caption"])[:200]
+                        _routes_seen.add(clean_evt["route"])
+                        # Falls through to the shared dedupe tail rather than
+                        # appending here: an early append would skip it, and
+                        # two figure events with the same asset_slug in one
+                        # turn would both reach the board.
+                        content_key = json.dumps(
+                            {"widget": LABELLED_FIGURE_ID,
+                             "params": raw_payload.get("params")},
+                            sort_keys=True, default=str)
+                    else:
+                        gated = sanitize_widget_payload(
+                            raw_payload, archetype_widget=_archetype_widget)
+                        if not gated:
+                            continue
+                        clean_evt["payload"] = gated["payload"]
+                        # Which routing path produced this payload —
+                        # docs/widget-routing.md, "what each path must record".
+                        # A sibling of `payload`, never a key inside it: the
+                        # client's WidgetPayload is a declared shape and this
+                        # is server-owned provenance.
+                        clean_evt["route"] = gated["route"]
+                        if gated["route"] == ROUTE_ARCHETYPE_HIGH:
+                            # The other half of what the doc requires a routed
+                            # segment to record. Stamped ONLY on the archetype
+                            # route, because on any other route the
+                            # classification decided nothing and naming it
+                            # would imply it did. Computed from the CSV's own
+                            # bytes, never typed — concept_archetypes._version.
+                            clean_evt["archetype_version"] = ARCHETYPE_VERSION
+                        _routes_seen.add(gated["route"])
+                        if evt.get("caption"):
+                            clean_evt["caption"] = str(evt["caption"])[:200]
+                        # Includes the widget id: two widgets can legitimately
+                        # carry the same params object (`{"active_node": 0}`
+                        # fits more than one), and keying on params alone would
+                        # let the second be dropped as a duplicate of the first.
+                        content_key = json.dumps(
+                            {"widget": gated["payload"]["widget"],
+                             "params": gated["payload"]["params"]},
+                            sort_keys=True, default=str,
+                        )
                 else:
                     # A diagram carries `svg`, not text or latex. Both were being
                     # stripped here and the event then dropped for having no

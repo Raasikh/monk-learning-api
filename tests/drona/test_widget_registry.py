@@ -142,12 +142,32 @@ def test_the_sanitizer_matches_no_widget_id_by_name():
     """
     start = TUTOR_SRC.index('if e_type == "diagram":')
     branch = TUTOR_SRC[start:TUTOR_SRC.index('elif e_type == "formula":', start)]
-    assert 'raw_payload.get("widget") ==' not in branch, (
-        "the sanitizer compares the widget id against a literal again"
+
+    # EXACTLY ONE id may be compared here, and it is the one that is not in the
+    # registry: `labelled_figure` is dispatched outside `lookup()` on the
+    # client (BoardWidget tests it BEFORE calling lookup) and must be on this
+    # side too, or the normalisation pass drops the figure slot 3 just served.
+    # That is a different thing from the bug this test was written for — an id
+    # from the manifest typed into Python, which made eight of nine widgets
+    # unreachable — and the two assertions below keep them apart:
+    #   * every comparison must be against the NAMED constant, never a literal;
+    #   * no manifest id may appear at all.
+    comparisons = re.findall(r'raw_payload\.get\("widget"\)\s*==\s*(\S+)', branch)
+    assert set(comparisons) <= {"LABELLED_FIGURE_ID:"}, (
+        f"the diagram branch compares the widget id against {comparisons} — "
+        f"only LABELLED_FIGURE_ID may be named here, and only because it is "
+        f"deliberately absent from the registry"
     )
     for wid in WIDGET_VERSIONS:
         assert f'"{wid}"' not in branch, f"'{wid}' is hardcoded in the diagram branch"
     assert "sanitize_widget_payload(" in branch
+    assert "LABELLED_FIGURE_ID" not in str(WIDGET_VERSIONS), (
+        "labelled_figure must NOT be in the client registry manifest"
+    )
+    assert "labelled_figure" not in WIDGET_VERSIONS, (
+        "labelled_figure is dispatched outside the registry; putting it in the "
+        "manifest would offer it to the model as a fillable widget"
+    )
 
 
 # ── 2. the model must be told what exists ───────────────────────────────────
