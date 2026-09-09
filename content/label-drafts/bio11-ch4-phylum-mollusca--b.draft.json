@@ -1,0 +1,104 @@
+{
+  "asset_slug": "bio11-ch4-phylum-mollusca--b",
+  "image_w": 1376,
+  "image_h": 860,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "shell",
+      "text": {
+        "en": "shell",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mantle",
+      "text": {
+        "en": "mantle",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "foot",
+      "text": {
+        "en": "foot",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tentacle",
+      "text": {
+        "en": "tentacle",
+        "hi": ""
+      },
+      "anchor": [
+        0.8,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "visceral-hump",
+      "text": {
+        "en": "visceral hump",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": ""
+      },
+      "anchor": [
+        0.2,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "radula",
+      "text": {
+        "en": "radula",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "siphon",
+      "text": {
+        "en": "siphon",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.55
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "shell",
+      "foot",
+      "visceral hump",
+      "radula"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

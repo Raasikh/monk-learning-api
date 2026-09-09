@@ -1,0 +1,86 @@
+{
+  "asset_slug": "bio11-ch4-phylum-platyhelminthes--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "scolex",
+      "text": {
+        "en": "scolex",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "hook",
+      "text": {
+        "en": "hook",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "sucker",
+      "text": {
+        "en": "sucker",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "neck",
+      "text": {
+        "en": "neck",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "proglottid",
+      "text": {
+        "en": "proglottid",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mature-proglottid",
+      "text": {
+        "en": "mature proglottid",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "gravid-proglottid",
+      "text": {
+        "en": "gravid proglottid",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "scolex",
+      "hook",
+      "sucker",
+      "neck",
+      "proglottid",
+      "mature proglottid",
+      "gravid proglottid"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

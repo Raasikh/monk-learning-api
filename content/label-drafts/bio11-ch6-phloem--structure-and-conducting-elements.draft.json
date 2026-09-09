@@ -1,0 +1,99 @@
+{
+  "asset_slug": "bio11-ch6-phloem--structure-and-conducting-elements",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "sieve-tube-element",
+      "text": {
+        "en": "sieve tube element",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "sieve-plate",
+      "text": {
+        "en": "sieve plate",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "sieve-pore",
+      "text": {
+        "en": "sieve pore",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.9
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "companion-cell",
+      "text": {
+        "en": "companion cell",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "phloem-parenchyma",
+      "text": {
+        "en": "phloem parenchyma",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "phloem-fibre",
+      "text": {
+        "en": "phloem fibre",
+        "hi": ""
+      },
+      "anchor": [
+        0.1,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "nucleus",
+      "text": {
+        "en": "nucleus",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.4
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

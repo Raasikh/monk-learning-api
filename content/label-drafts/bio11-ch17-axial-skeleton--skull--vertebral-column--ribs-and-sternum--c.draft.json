@@ -1,0 +1,196 @@
+{
+  "asset_slug": "bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "cranium",
+      "text": {
+        "en": "cranium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "facial-bone",
+      "text": {
+        "en": "facial bone",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mandible",
+      "text": {
+        "en": "mandible",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "hyoid",
+      "text": {
+        "en": "hyoid",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "cervical-vertebra",
+      "text": {
+        "en": "cervical vertebra",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "thoracic-vertebra",
+      "text": {
+        "en": "thoracic vertebra",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lumbar-vertebra",
+      "text": {
+        "en": "lumbar vertebra",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "sacrum",
+      "text": {
+        "en": "sacrum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "coccyx",
+      "text": {
+        "en": "coccyx",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.9
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "atlas",
+      "text": {
+        "en": "atlas",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "true-rib",
+      "text": {
+        "en": "true rib",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "false-rib",
+      "text": {
+        "en": "false rib",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "floating-rib",
+      "text": {
+        "en": "floating rib",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "sternum",
+      "text": {
+        "en": "sternum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "costal-cartilage",
+      "text": {
+        "en": "costal cartilage",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "intervertebral-disc",
+      "text": {
+        "en": "intervertebral disc",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "cranium",
+      "facial bone",
+      "mandible",
+      "hyoid",
+      "atlas",
+      "intervertebral disc"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

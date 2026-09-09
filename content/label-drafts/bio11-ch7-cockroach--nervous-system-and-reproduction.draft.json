@@ -1,0 +1,240 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--nervous-system-and-reproduction",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "supra-oesophageal-ganglion",
+      "text": {
+        "en": "supra-oesophageal ganglion",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "sub-oesophageal-ganglion",
+      "text": {
+        "en": "sub-oesophageal ganglion",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "circum-oesophageal-connective",
+      "text": {
+        "en": "circum-oesophageal connective",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.15
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "thoracic-ganglion",
+      "text": {
+        "en": "thoracic ganglion",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.35
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "abdominal-ganglion",
+      "text": {
+        "en": "abdominal ganglion",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ventral-nerve-cord",
+      "text": {
+        "en": "ventral nerve cord",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "seminal-vesicle",
+      "text": {
+        "en": "seminal vesicle",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "mushroom-gland",
+      "text": {
+        "en": "mushroom gland",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ejaculatory-duct",
+      "text": {
+        "en": "ejaculatory duct",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "phallic-gland",
+      "text": {
+        "en": "phallic gland",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "gonapophysis",
+      "text": {
+        "en": "gonapophysis",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ovariole",
+      "text": {
+        "en": "ovariole",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.35
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "oviduct",
+      "text": {
+        "en": "oviduct",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "spermatheca",
+      "text": {
+        "en": "spermatheca",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "collateral-gland",
+      "text": {
+        "en": "collateral gland",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ootheca",
+      "text": {
+        "en": "ootheca",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "gonapophysis",
+      "ootheca"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

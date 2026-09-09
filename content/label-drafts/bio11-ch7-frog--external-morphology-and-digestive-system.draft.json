@@ -1,0 +1,279 @@
+{
+  "asset_slug": "bio11-ch7-frog--external-morphology-and-digestive-system",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.15
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "eye",
+      "text": {
+        "en": "eye",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.15
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "nictitating-membrane",
+      "text": {
+        "en": "nictitating membrane",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tympanum",
+      "text": {
+        "en": "tympanum",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "nostril",
+      "text": {
+        "en": "nostril",
+        "hi": ""
+      },
+      "anchor": [
+        0.2,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "trunk",
+      "text": {
+        "en": "trunk",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "forelimb",
+      "text": {
+        "en": "forelimb",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "hindlimb",
+      "text": {
+        "en": "hindlimb",
+        "hi": ""
+      },
+      "anchor": [
+        0.8,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "webbed-digit",
+      "text": {
+        "en": "webbed digit",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cloacal-aperture",
+      "text": {
+        "en": "cloacal aperture",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "buccal-cavity",
+      "text": {
+        "en": "buccal cavity",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "oesophagus",
+      "text": {
+        "en": "oesophagus",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "stomach",
+      "text": {
+        "en": "stomach",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "duodenum",
+      "text": {
+        "en": "duodenum",
+        "hi": ""
+      },
+      "anchor": [
+        0.65,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ileum",
+      "text": {
+        "en": "ileum",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "rectum",
+      "text": {
+        "en": "rectum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cloaca",
+      "text": {
+        "en": "cloaca",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "liver",
+      "text": {
+        "en": "liver",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "gall-bladder",
+      "text": {
+        "en": "gall bladder",
+        "hi": ""
+      },
+      "anchor": [
+        0.45,
+        0.45
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pancreas",
+      "text": {
+        "en": "pancreas",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "spleen",
+      "text": {
+        "en": "spleen",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bile-duct",
+      "text": {
+        "en": "bile duct",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "nictitating membrane",
+      "buccal cavity",
+      "bile duct"
+    ],
+    "shared_anchors": {
+      "0.5,0.75": [
+        "cloacal-aperture",
+        "cloaca"
+      ]
+    },
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

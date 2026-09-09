@@ -1,0 +1,123 @@
+{
+  "asset_slug": "bio11-ch4-phylum-coelenterata-and-ctenophora--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "tentacle",
+      "text": {
+        "en": "tentacle",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "hypostome",
+      "text": {
+        "en": "hypostome",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "mouth",
+      "text": {
+        "en": "mouth",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "basal-disc",
+      "text": {
+        "en": "basal disc",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.9
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bud",
+      "text": {
+        "en": "bud",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "gastrovascular-cavity",
+      "text": {
+        "en": "gastrovascular cavity",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cnidoblast",
+      "text": {
+        "en": "cnidoblast",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "umbrella",
+      "text": {
+        "en": "umbrella",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "comb-plate",
+      "text": {
+        "en": "comb plate",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "cnidoblast",
+      "umbrella",
+      "comb plate"
+    ],
+    "shared_anchors": {
+      "0.5,0.2": [
+        "hypostome",
+        "mouth"
+      ]
+    },
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

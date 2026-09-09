@@ -1,0 +1,195 @@
+{
+  "asset_slug": "bio11-ch16-structure-of-the-human-kidney-and-urinary-tract",
+  "image_w": 1376,
+  "image_h": 860,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "renal-capsule",
+      "text": {
+        "en": "renal capsule",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.35
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cortex",
+      "text": {
+        "en": "cortex",
+        "hi": ""
+      },
+      "anchor": [
+        0.2,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "medulla",
+      "text": {
+        "en": "medulla",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "renal-pyramid",
+      "text": {
+        "en": "renal pyramid",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "renal-papilla",
+      "text": {
+        "en": "renal papilla",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "minor-calyx",
+      "text": {
+        "en": "minor calyx",
+        "hi": ""
+      },
+      "anchor": [
+        0.45,
+        0.65
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "major-calyx",
+      "text": {
+        "en": "major calyx",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "renal-pelvis",
+      "text": {
+        "en": "renal pelvis",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ureter",
+      "text": {
+        "en": "ureter",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "renal-artery",
+      "text": {
+        "en": "renal artery",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "renal-vein",
+      "text": {
+        "en": "renal vein",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "hilum",
+      "text": {
+        "en": "hilum",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.35
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "column-of-bertini",
+      "text": {
+        "en": "column of Bertini",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "urinary-bladder",
+      "text": {
+        "en": "urinary bladder",
+        "hi": ""
+      },
+      "anchor": [
+        0.8,
+        0.85
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "urethra",
+      "text": {
+        "en": "urethra",
+        "hi": ""
+      },
+      "anchor": [
+        0.8,
+        0.95
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

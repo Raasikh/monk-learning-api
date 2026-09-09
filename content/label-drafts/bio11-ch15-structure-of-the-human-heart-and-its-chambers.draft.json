@@ -1,0 +1,278 @@
+{
+  "asset_slug": "bio11-ch15-structure-of-the-human-heart-and-its-chambers",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "superior-vena-cava",
+      "text": {
+        "en": "superior vena cava",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.15
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "inferior-vena-cava",
+      "text": {
+        "en": "inferior vena cava",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "right-atrium",
+      "text": {
+        "en": "right atrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "tricuspid-valve",
+      "text": {
+        "en": "tricuspid valve",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "right-ventricle",
+      "text": {
+        "en": "right ventricle",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pulmonary-artery",
+      "text": {
+        "en": "pulmonary artery",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pulmonary-semilunar-valve",
+      "text": {
+        "en": "pulmonary semilunar valve",
+        "hi": ""
+      },
+      "anchor": [
+        0.45,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pulmonary-vein",
+      "text": {
+        "en": "pulmonary vein",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.25
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "left-atrium",
+      "text": {
+        "en": "left atrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bicuspid-valve",
+      "text": {
+        "en": "bicuspid valve",
+        "hi": ""
+      },
+      "anchor": [
+        0.65,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "left-ventricle",
+      "text": {
+        "en": "left ventricle",
+        "hi": ""
+      },
+      "anchor": [
+        0.65,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "aorta",
+      "text": {
+        "en": "aorta",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.05
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "aortic-semilunar-valve",
+      "text": {
+        "en": "aortic semilunar valve",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "chordae-tendineae",
+      "text": {
+        "en": "chordae tendineae",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "papillary-muscle",
+      "text": {
+        "en": "papillary muscle",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "interventricular-septum",
+      "text": {
+        "en": "interventricular septum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "interatrial-septum",
+      "text": {
+        "en": "interatrial septum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "sa-node",
+      "text": {
+        "en": "SA node",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "av-node",
+      "text": {
+        "en": "AV node",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bundle-of-his",
+      "text": {
+        "en": "bundle of His",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "purkinje-fibre",
+      "text": {
+        "en": "Purkinje fibre",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.85
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pericardium",
+      "text": {
+        "en": "pericardium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "pericardium"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

@@ -197,8 +197,142 @@ def build_draft(slug: str, art: Path, terms: List[str], proposed: Dict[str, Any]
     }
 
 
+def accepted_rows(manifest: Path) -> List[Dict[str, str]]:
+    """Every ingested row, in manifest order."""
+    return [r for r in csv.DictReader(manifest.open(encoding="utf-8"))
+            if (r.get("status") or "").strip() == "accepted"]
+
+
+def draft_one(slug: str, art: Path, terms: List[str], out_dir: Path,
+              force: bool = False) -> Dict[str, Any]:
+    """One plate, written to disk. Resumable: an existing draft is not redone.
+
+    Resumability is not a nicety at this size — 112 plates is 112 vision calls,
+    and a crash at plate 90 that redid the first 89 would cost the run twice.
+    """
+    out = out_dir / f"{slug}.draft.json"
+    if out.is_file() and not force:
+        return json.loads(out.read_text(encoding="utf-8"))
+    draft = build_draft(slug, art, terms, propose(art, terms))
+    out.write_text(json.dumps(draft, indent=2, ensure_ascii=False) + "\n",
+                   encoding="utf-8")
+    return draft
+
+
+def summarise(draft: Dict[str, Any], terms: List[str]) -> Dict[str, Any]:
+    """The three numbers §5 asks for, per asset.
+
+    DRAFTED / OMITTED / DEFAULTED are three different things and collapsing any
+    two of them loses the one fact an author needs:
+
+      drafted    an anchor the model placed on a structure. Still a guess, but
+                 a located guess — the editor shows it on the art.
+      omitted    the model says the structure is NOT IN THIS FIGURE. For a
+                 sub-asset set this is the expected answer for most terms: the
+                 concept's label list is shared by every figure in the set, so
+                 the earthworm's reproductive terms are legitimately absent
+                 from its circulatory plate. An omission is a decision, not a
+                 failure.
+      defaulted  several terms given the SAME point. The model stopped
+                 locating and started defaulting. These are the dangerous ones:
+                 a centred anchor looks deliberate. Counted separately AND
+                 still counted as drafted, because that is what they are on
+                 disk — the point is that they need re-placing first.
+    """
+    shared = draft["_draft"]["shared_anchors"]
+    defaulted = sorted({i for ids in shared.values() for i in ids})
+    drafted = [l for l in draft["labels"] if l["anchor"] is not None]
+    return {
+        "terms": len(terms),
+        "drafted": len(drafted),
+        "omitted": list(draft["_draft"]["unplaced"]),
+        "defaulted": defaulted,
+        "reviewed_by": draft.get("reviewed_by", None),
+    }
+
+
+def cmd_all(args) -> int:
+    manifest = Path(args.manifest)
+    art_dir = Path(args.dir)
+    out_dir = Path(args.out)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    rows = accepted_rows(manifest)
+    todo, nolabels, noart = [], [], []
+    for r in rows:
+        slug = r["asset_slug"].strip()
+        terms = [t.strip() for t in (r.get("ncert_labels") or "").split(",")
+                 if t.strip()]
+        art = art_dir / (r.get("file") or f"masters/{slug}.png")
+        if not terms:
+            nolabels.append(slug)
+        elif not art.is_file():
+            noart.append(slug)
+        else:
+            todo.append((slug, art, terms))
+
+    print(f"manifest   {manifest}  ({len(rows)} accepted)")
+    print(f"to draft   {len(todo)}")
+    if nolabels:
+        # NOT drafted with an invented list. The terms come from the work order
+        # a subject author wrote; a model asked to decide WHICH terms a figure
+        # needs is doing a different job, and not a vision one.
+        print(f"no ncert_labels ({len(nolabels)}) — cannot draft, reported:")
+        for s in nolabels:
+            print(f"    {s}")
+    if noart:
+        print(f"NO ART ({len(noart)}):")
+        for s in noart:
+            print(f"    {s}")
+    print()
+
+    summary: Dict[str, Dict[str, Any]] = {}
+    failed: List[str] = []
+    for n, (slug, art, terms) in enumerate(todo, 1):
+        try:
+            draft = draft_one(slug, art, terms, out_dir, force=args.force)
+        except Exception as err:
+            failed.append(f"{slug}: {err}")
+            print(f"[{n:3}/{len(todo)}] {slug}  FAILED: {err}")
+            continue
+        s = summarise(draft, terms)
+        summary[slug] = s
+        print(f"[{n:3}/{len(todo)}] {slug}  "
+              f"drafted {s['drafted']}/{s['terms']}  "
+              f"omitted {len(s['omitted'])}  defaulted {len(s['defaulted'])}")
+
+    (out_dir / "_summary.json").write_text(
+        json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    total_anchors = sum(s["drafted"] for s in summary.values())
+    unreviewed = [k for k, s in summary.items() if s["reviewed_by"] is not None]
+    print(f"\nsets {len(summary)}   anchors {total_anchors}   "
+          f"omitted {sum(len(s['omitted']) for s in summary.values())}   "
+          f"defaulted {sum(len(s['defaulted']) for s in summary.values())}")
+    if unreviewed:
+        print(f"!! {len(unreviewed)} set(s) carry a reviewed_by. This tool must "
+              f"never write one: {unreviewed}")
+    else:
+        print("every set has reviewed_by = NULL, as it must — the resolver "
+              "refuses a set without a human name on it.")
+    if failed:
+        print(f"\nFAILED ({len(failed)}):")
+        for f in failed:
+            print(f"  {f}")
+    return 1 if failed or unreviewed else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
+    if "--all" in sys.argv:
+        ap.add_argument("--all", action="store_true")
+        ap.add_argument("--manifest", required=True)
+        ap.add_argument("--dir", required=True,
+                        help="folder holding masters/, as named in the manifest's `file`")
+        ap.add_argument("--out", default="content/label-drafts")
+        ap.add_argument("--force", action="store_true",
+                        help="redo drafts that already exist")
+        return cmd_all(ap.parse_args())
     ap.add_argument("--slug", required=True)
     ap.add_argument("--art", required=True)
     ap.add_argument("--manifest", required=True)

@@ -1,0 +1,231 @@
+{
+  "asset_slug": "bio12-ch2-female-reproductive-system--ovary--oviduct--uterus-and-mamma--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.35
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "fallopian-tube",
+      "text": {
+        "en": "fallopian tube",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "infundibulum",
+      "text": {
+        "en": "infundibulum",
+        "hi": ""
+      },
+      "anchor": [
+        0.28,
+        0.28
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "fimbriae",
+      "text": {
+        "en": "fimbriae",
+        "hi": ""
+      },
+      "anchor": [
+        0.26,
+        0.28
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ampulla",
+      "text": {
+        "en": "ampulla",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "isthmus",
+      "text": {
+        "en": "isthmus",
+        "hi": ""
+      },
+      "anchor": [
+        0.32,
+        0.32
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "uterus",
+      "text": {
+        "en": "uterus",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "fundus",
+      "text": {
+        "en": "fundus",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.35
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cervix",
+      "text": {
+        "en": "cervix",
+        "hi": ""
+      },
+      "anchor": [
+        0.45,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "vagina",
+      "text": {
+        "en": "vagina",
+        "hi": ""
+      },
+      "anchor": [
+        0.45,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "endometrium",
+      "text": {
+        "en": "endometrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "myometrium",
+      "text": {
+        "en": "myometrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.42
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "perimetrium",
+      "text": {
+        "en": "perimetrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.38
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "mammary-lobe",
+      "text": {
+        "en": "mammary lobe",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "alveolus",
+      "text": {
+        "en": "alveolus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mammary-duct",
+      "text": {
+        "en": "mammary duct",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "lactiferous-duct",
+      "text": {
+        "en": "lactiferous duct",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "nipple",
+      "text": {
+        "en": "nipple",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "mammary lobe",
+      "alveolus",
+      "mammary duct",
+      "lactiferous duct",
+      "nipple"
+    ],
+    "shared_anchors": {
+      "0.3,0.3": [
+        "fallopian-tube",
+        "ampulla"
+      ],
+      "0.4,0.4": [
+        "uterus",
+        "endometrium"
+      ]
+    },
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

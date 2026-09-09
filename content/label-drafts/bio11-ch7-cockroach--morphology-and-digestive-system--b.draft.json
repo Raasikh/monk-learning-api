@@ -1,0 +1,322 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--morphology-and-digestive-system--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "compound-eye",
+      "text": {
+        "en": "compound eye",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "antenna",
+      "text": {
+        "en": "antenna",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "prothorax",
+      "text": {
+        "en": "prothorax",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mesothorax",
+      "text": {
+        "en": "mesothorax",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "metathorax",
+      "text": {
+        "en": "metathorax",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tegmen",
+      "text": {
+        "en": "tegmen",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "hind-wing",
+      "text": {
+        "en": "hind wing",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "abdomen",
+      "text": {
+        "en": "abdomen",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "anal-cercus",
+      "text": {
+        "en": "anal cercus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "anal-style",
+      "text": {
+        "en": "anal style",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "coxa",
+      "text": {
+        "en": "coxa",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "femur",
+      "text": {
+        "en": "femur",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tibia",
+      "text": {
+        "en": "tibia",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tarsus",
+      "text": {
+        "en": "tarsus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mouth",
+      "text": {
+        "en": "mouth",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.05
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pharynx",
+      "text": {
+        "en": "pharynx",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "oesophagus",
+      "text": {
+        "en": "oesophagus",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.15
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "crop",
+      "text": {
+        "en": "crop",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.25
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "gizzard",
+      "text": {
+        "en": "gizzard",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.35
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "hepatic-caeca",
+      "text": {
+        "en": "hepatic caeca",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "midgut",
+      "text": {
+        "en": "midgut",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "malpighian-tubule",
+      "text": {
+        "en": "Malpighian tubule",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ileum",
+      "text": {
+        "en": "ileum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.65
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "colon",
+      "text": {
+        "en": "colon",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "rectum",
+      "text": {
+        "en": "rectum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.85
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "anus",
+      "text": {
+        "en": "anus",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "salivary-gland",
+      "text": {
+        "en": "salivary gland",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.1
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "head",
+      "compound eye",
+      "antenna",
+      "prothorax",
+      "mesothorax",
+      "metathorax",
+      "tegmen",
+      "hind wing",
+      "abdomen",
+      "anal cercus",
+      "anal style",
+      "coxa",
+      "femur",
+      "tibia",
+      "tarsus"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "asset_slug": "bio11-ch6-anatomy-of-dicot-and-monocot-stem--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "epidermis",
+      "text": {
+        "en": "epidermis",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.05
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cuticle",
+      "text": {
+        "en": "cuticle",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.02
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "hypodermis",
+      "text": {
+        "en": "hypodermis",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "cortex",
+      "text": {
+        "en": "cortex",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.15
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "endodermis",
+      "text": {
+        "en": "endodermis",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.25
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pericycle",
+      "text": {
+        "en": "pericycle",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "vascular-bundle",
+      "text": {
+        "en": "vascular bundle",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "xylem",
+      "text": {
+        "en": "xylem",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "phloem",
+      "text": {
+        "en": "phloem",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.45
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cambium",
+      "text": {
+        "en": "cambium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "pith",
+      "text": {
+        "en": "pith",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bundle-sheath",
+      "text": {
+        "en": "bundle sheath",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "ground-tissue",
+      "text": {
+        "en": "ground tissue",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "medullary-ray",
+      "text": {
+        "en": "medullary ray",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "hypodermis",
+      "cambium",
+      "bundle sheath",
+      "medullary ray"
+    ],
+    "shared_anchors": {
+      "0.7,0.5": [
+        "vascular-bundle",
+        "xylem"
+      ]
+    },
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

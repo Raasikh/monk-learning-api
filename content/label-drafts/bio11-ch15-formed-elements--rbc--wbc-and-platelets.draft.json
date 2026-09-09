@@ -1,0 +1,132 @@
+{
+  "asset_slug": "bio11-ch15-formed-elements--rbc--wbc-and-platelets",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "erythrocyte",
+      "text": {
+        "en": "erythrocyte",
+        "hi": ""
+      },
+      "anchor": [
+        0.2,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "neutrophil",
+      "text": {
+        "en": "neutrophil",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "eosinophil",
+      "text": {
+        "en": "eosinophil",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "basophil",
+      "text": {
+        "en": "basophil",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lymphocyte",
+      "text": {
+        "en": "lymphocyte",
+        "hi": ""
+      },
+      "anchor": [
+        0.2,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "monocyte",
+      "text": {
+        "en": "monocyte",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "platelet",
+      "text": {
+        "en": "platelet",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lobed-nucleus",
+      "text": {
+        "en": "lobed nucleus",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "granule",
+      "text": {
+        "en": "granule",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [],
+    "shared_anchors": {
+      "0.5,0.3": [
+        "neutrophil",
+        "lobed-nucleus"
+      ],
+      "0.5,0.5": [
+        "eosinophil",
+        "granule"
+      ]
+    },
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

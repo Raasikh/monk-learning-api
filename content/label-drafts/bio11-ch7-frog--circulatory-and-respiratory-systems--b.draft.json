@@ -1,0 +1,190 @@
+{
+  "asset_slug": "bio11-ch7-frog--circulatory-and-respiratory-systems--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "sinus-venosus",
+      "text": {
+        "en": "sinus venosus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "right-atrium",
+      "text": {
+        "en": "right atrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "left-atrium",
+      "text": {
+        "en": "left atrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.65,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ventricle",
+      "text": {
+        "en": "ventricle",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "conus-arteriosus",
+      "text": {
+        "en": "conus arteriosus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "truncus-arteriosus",
+      "text": {
+        "en": "truncus arteriosus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "carotid-arch",
+      "text": {
+        "en": "carotid arch",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "systemic-arch",
+      "text": {
+        "en": "systemic arch",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "pulmocutaneous-arch",
+      "text": {
+        "en": "pulmocutaneous arch",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "pulmonary-vein",
+      "text": {
+        "en": "pulmonary vein",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "precaval-vein",
+      "text": {
+        "en": "precaval vein",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "postcaval-vein",
+      "text": {
+        "en": "postcaval vein",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "lung",
+      "text": {
+        "en": "lung",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "buccal-cavity",
+      "text": {
+        "en": "buccal cavity",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "glottis",
+      "text": {
+        "en": "glottis",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "skin",
+      "text": {
+        "en": "skin",
+        "hi": ""
+      },
+      "anchor": [
+        0.9,
+        0.3
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "sinus venosus",
+      "conus arteriosus",
+      "truncus arteriosus",
+      "carotid arch",
+      "systemic arch",
+      "pulmocutaneous arch",
+      "pulmonary vein",
+      "precaval vein",
+      "postcaval vein"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

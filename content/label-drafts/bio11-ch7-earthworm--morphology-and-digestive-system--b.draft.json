@@ -1,0 +1,232 @@
+{
+  "asset_slug": "bio11-ch7-earthworm--morphology-and-digestive-system--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "prostomium",
+      "text": {
+        "en": "prostomium",
+        "hi": ""
+      },
+      "anchor": [
+        0.05,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "peristomium",
+      "text": {
+        "en": "peristomium",
+        "hi": ""
+      },
+      "anchor": [
+        0.1,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "mouth",
+      "text": {
+        "en": "mouth",
+        "hi": ""
+      },
+      "anchor": [
+        0.08,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "clitellum",
+      "text": {
+        "en": "clitellum",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "seta",
+      "text": {
+        "en": "seta",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "genital-papilla",
+      "text": {
+        "en": "genital papilla",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "female-genital-pore",
+      "text": {
+        "en": "female genital pore",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "male-genital-pore",
+      "text": {
+        "en": "male genital pore",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "spermathecal-pore",
+      "text": {
+        "en": "spermathecal pore",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "anus",
+      "text": {
+        "en": "anus",
+        "hi": ""
+      },
+      "anchor": [
+        0.95,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "buccal-cavity",
+      "text": {
+        "en": "buccal cavity",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pharynx",
+      "text": {
+        "en": "pharynx",
+        "hi": ""
+      },
+      "anchor": [
+        0.2,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "oesophagus",
+      "text": {
+        "en": "oesophagus",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "gizzard",
+      "text": {
+        "en": "gizzard",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "stomach",
+      "text": {
+        "en": "stomach",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "intestine",
+      "text": {
+        "en": "intestine",
+        "hi": ""
+      },
+      "anchor": [
+        0.85,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "typhlosole",
+      "text": {
+        "en": "typhlosole",
+        "hi": ""
+      },
+      "anchor": [
+        0.9,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "calciferous-gland",
+      "text": {
+        "en": "calciferous gland",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "intestinal-caeca",
+      "text": {
+        "en": "intestinal caeca",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "genital papilla",
+      "female genital pore",
+      "male genital pore",
+      "spermathecal pore",
+      "stomach",
+      "intestinal caeca"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

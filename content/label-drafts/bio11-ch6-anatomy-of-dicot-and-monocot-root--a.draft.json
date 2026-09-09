@@ -1,0 +1,150 @@
+{
+  "asset_slug": "bio11-ch6-anatomy-of-dicot-and-monocot-root--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "epiblema",
+      "text": {
+        "en": "epiblema",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "root-hair",
+      "text": {
+        "en": "root hair",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "cortex",
+      "text": {
+        "en": "cortex",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "endodermis",
+      "text": {
+        "en": "endodermis",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "casparian-strip",
+      "text": {
+        "en": "Casparian strip",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "pericycle",
+      "text": {
+        "en": "pericycle",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "xylem",
+      "text": {
+        "en": "xylem",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "phloem",
+      "text": {
+        "en": "phloem",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "conjunctive-tissue",
+      "text": {
+        "en": "conjunctive tissue",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "pith",
+      "text": {
+        "en": "pith",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "protoxylem",
+      "text": {
+        "en": "protoxylem",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "metaxylem",
+      "text": {
+        "en": "metaxylem",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.1
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "epiblema",
+      "root hair",
+      "Casparian strip",
+      "conjunctive tissue",
+      "pith"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

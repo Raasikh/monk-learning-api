@@ -1,0 +1,178 @@
+{
+  "asset_slug": "bio12-ch2-male-reproductive-system--testis--ducts-and-accessory-glands--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.8
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "scrotum",
+      "text": {
+        "en": "scrotum",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.9
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "seminiferous-tubule",
+      "text": {
+        "en": "seminiferous tubule",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "leydig-cell",
+      "text": {
+        "en": "Leydig cell",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "sertoli-cell",
+      "text": {
+        "en": "Sertoli cell",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "epididymis",
+      "text": {
+        "en": "epididymis",
+        "hi": ""
+      },
+      "anchor": [
+        0.35,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "seminal-vesicle",
+      "text": {
+        "en": "seminal vesicle",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ejaculatory-duct",
+      "text": {
+        "en": "ejaculatory duct",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.45
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "prostate-gland",
+      "text": {
+        "en": "prostate gland",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bulbourethral-gland",
+      "text": {
+        "en": "bulbourethral gland",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.65
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "urethra",
+      "text": {
+        "en": "urethra",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "penis",
+      "text": {
+        "en": "penis",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "urinary-bladder",
+      "text": {
+        "en": "urinary bladder",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "seminiferous tubule",
+      "Leydig cell",
+      "Sertoli cell"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

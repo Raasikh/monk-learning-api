@@ -1,0 +1,138 @@
+{
+  "asset_slug": "bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "flagellum",
+      "text": {
+        "en": "flagellum",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.05
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cup-shaped-chloroplast",
+      "text": {
+        "en": "cup-shaped chloroplast",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pyrenoid",
+      "text": {
+        "en": "pyrenoid",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "eyespot",
+      "text": {
+        "en": "eyespot",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.25
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "nucleus",
+      "text": {
+        "en": "nucleus",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "cell-wall",
+      "text": {
+        "en": "cell wall",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.9
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "colony",
+      "text": {
+        "en": "colony",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "spiral-chloroplast",
+      "text": {
+        "en": "spiral chloroplast",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "holdfast",
+      "text": {
+        "en": "holdfast",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "stipe",
+      "text": {
+        "en": "stipe",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "blade",
+      "text": {
+        "en": "blade",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "colony",
+      "spiral chloroplast",
+      "holdfast",
+      "stipe",
+      "blade"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

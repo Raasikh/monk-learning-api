@@ -1,0 +1,194 @@
+{
+  "asset_slug": "bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "nostril",
+      "text": {
+        "en": "nostril",
+        "hi": ""
+      },
+      "anchor": [
+        0.48,
+        0.12
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "nasal-cavity",
+      "text": {
+        "en": "nasal cavity",
+        "hi": ""
+      },
+      "anchor": [
+        0.48,
+        0.18
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pharynx",
+      "text": {
+        "en": "pharynx",
+        "hi": ""
+      },
+      "anchor": [
+        0.48,
+        0.25
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "larynx",
+      "text": {
+        "en": "larynx",
+        "hi": ""
+      },
+      "anchor": [
+        0.48,
+        0.32
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "epiglottis",
+      "text": {
+        "en": "epiglottis",
+        "hi": ""
+      },
+      "anchor": [
+        0.48,
+        0.29
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "trachea",
+      "text": {
+        "en": "trachea",
+        "hi": ""
+      },
+      "anchor": [
+        0.48,
+        0.38
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bronchus",
+      "text": {
+        "en": "bronchus",
+        "hi": ""
+      },
+      "anchor": [
+        0.48,
+        0.45
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "bronchiole",
+      "text": {
+        "en": "bronchiole",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "alveolus",
+      "text": {
+        "en": "alveolus",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.58
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lung",
+      "text": {
+        "en": "lung",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pleura",
+      "text": {
+        "en": "pleura",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.48
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pleural-fluid",
+      "text": {
+        "en": "pleural fluid",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "diaphragm",
+      "text": {
+        "en": "diaphragm",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "rib",
+      "text": {
+        "en": "rib",
+        "hi": ""
+      },
+      "anchor": [
+        0.4,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "capillary",
+      "text": {
+        "en": "capillary",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.58
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "pleural fluid"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

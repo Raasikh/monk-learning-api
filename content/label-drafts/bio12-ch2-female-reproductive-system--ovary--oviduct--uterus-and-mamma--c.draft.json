@@ -1,0 +1,206 @@
+{
+  "asset_slug": "bio12-ch2-female-reproductive-system--ovary--oviduct--uterus-and-mamma--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "fallopian-tube",
+      "text": {
+        "en": "fallopian tube",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "infundibulum",
+      "text": {
+        "en": "infundibulum",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "fimbriae",
+      "text": {
+        "en": "fimbriae",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "ampulla",
+      "text": {
+        "en": "ampulla",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "isthmus",
+      "text": {
+        "en": "isthmus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "uterus",
+      "text": {
+        "en": "uterus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "fundus",
+      "text": {
+        "en": "fundus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "cervix",
+      "text": {
+        "en": "cervix",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "vagina",
+      "text": {
+        "en": "vagina",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "endometrium",
+      "text": {
+        "en": "endometrium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "myometrium",
+      "text": {
+        "en": "myometrium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "perimetrium",
+      "text": {
+        "en": "perimetrium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mammary-lobe",
+      "text": {
+        "en": "mammary lobe",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "alveolus",
+      "text": {
+        "en": "alveolus",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "mammary-duct",
+      "text": {
+        "en": "mammary duct",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lactiferous-duct",
+      "text": {
+        "en": "lactiferous duct",
+        "hi": ""
+      },
+      "anchor": [
+        0.7,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "nipple",
+      "text": {
+        "en": "nipple",
+        "hi": ""
+      },
+      "anchor": [
+        0.9,
+        0.5
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "ovary",
+      "fallopian tube",
+      "infundibulum",
+      "fimbriae",
+      "ampulla",
+      "isthmus",
+      "uterus",
+      "fundus",
+      "cervix",
+      "vagina",
+      "endometrium",
+      "myometrium",
+      "perimetrium"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

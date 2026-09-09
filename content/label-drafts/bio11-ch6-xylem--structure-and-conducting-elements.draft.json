@@ -1,0 +1,111 @@
+{
+  "asset_slug": "bio11-ch6-xylem--structure-and-conducting-elements",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "tracheid",
+      "text": {
+        "en": "tracheid",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "vessel",
+      "text": {
+        "en": "vessel",
+        "hi": ""
+      },
+      "anchor": [
+        0.38,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "xylem-fibre",
+      "text": {
+        "en": "xylem fibre",
+        "hi": ""
+      },
+      "anchor": [
+        0.62,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "xylem-parenchyma",
+      "text": {
+        "en": "xylem parenchyma",
+        "hi": ""
+      },
+      "anchor": [
+        0.85,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pit",
+      "text": {
+        "en": "pit",
+        "hi": ""
+      },
+      "anchor": [
+        0.1,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "perforation-plate",
+      "text": {
+        "en": "perforation plate",
+        "hi": ""
+      },
+      "anchor": [
+        0.38,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lignified-wall",
+      "text": {
+        "en": "lignified wall",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "tapering-end",
+      "text": {
+        "en": "tapering end",
+        "hi": ""
+      },
+      "anchor": [
+        0.62,
+        0.1
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

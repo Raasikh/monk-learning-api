@@ -1,0 +1,222 @@
+{
+  "asset_slug": "bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "clavicle",
+      "text": {
+        "en": "clavicle",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "scapula",
+      "text": {
+        "en": "scapula",
+        "hi": ""
+      },
+      "anchor": [
+        0.65,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "glenoid-cavity",
+      "text": {
+        "en": "glenoid cavity",
+        "hi": ""
+      },
+      "anchor": [
+        0.68,
+        0.2
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "humerus",
+      "text": {
+        "en": "humerus",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.3
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "radius",
+      "text": {
+        "en": "radius",
+        "hi": ""
+      },
+      "anchor": [
+        0.65,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ulna",
+      "text": {
+        "en": "ulna",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.55
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "carpal",
+      "text": {
+        "en": "carpal",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.75
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "metacarpal",
+      "text": {
+        "en": "metacarpal",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.85
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "phalanx",
+      "text": {
+        "en": "phalanx",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.95
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ilium",
+      "text": {
+        "en": "ilium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "ischium",
+      "text": {
+        "en": "ischium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "pubis",
+      "text": {
+        "en": "pubis",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "acetabulum",
+      "text": {
+        "en": "acetabulum",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "femur",
+      "text": {
+        "en": "femur",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "patella",
+      "text": {
+        "en": "patella",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tibia",
+      "text": {
+        "en": "tibia",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "fibula",
+      "text": {
+        "en": "fibula",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tarsal",
+      "text": {
+        "en": "tarsal",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "metatarsal",
+      "text": {
+        "en": "metatarsal",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "clavicle",
+      "ilium",
+      "ischium",
+      "pubis",
+      "acetabulum",
+      "femur",
+      "patella",
+      "tibia",
+      "fibula",
+      "tarsal",
+      "metatarsal"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

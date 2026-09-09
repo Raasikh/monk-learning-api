@@ -1,0 +1,186 @@
+{
+  "asset_slug": "bio11-ch7-earthworm--circulatory--excretory-and-reproductive-systems--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "dorsal-blood-vessel",
+      "text": {
+        "en": "dorsal blood vessel",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.1
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ventral-blood-vessel",
+      "text": {
+        "en": "ventral blood vessel",
+        "hi": ""
+      },
+      "anchor": [
+        0.15,
+        0.9
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lateral-heart",
+      "text": {
+        "en": "lateral heart",
+        "hi": ""
+      },
+      "anchor": [
+        0.25,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "supra-oesophageal-vessel",
+      "text": {
+        "en": "supra-oesophageal vessel",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "septal-nephridium",
+      "text": {
+        "en": "septal nephridium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "pharyngeal-nephridium",
+      "text": {
+        "en": "pharyngeal nephridium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "integumentary-nephridium",
+      "text": {
+        "en": "integumentary nephridium",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "testis-sac",
+      "text": {
+        "en": "testis sac",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.7
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "seminal-vesicle",
+      "text": {
+        "en": "seminal vesicle",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.6
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "prostate-gland",
+      "text": {
+        "en": "prostate gland",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": ""
+      },
+      "anchor": [
+        0.55,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "oviduct",
+      "text": {
+        "en": "oviduct",
+        "hi": ""
+      },
+      "anchor": [
+        0.6,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "spermatheca",
+      "text": {
+        "en": "spermatheca",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.3
+      ],
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "supra-oesophageal vessel",
+      "septal nephridium",
+      "pharyngeal nephridium",
+      "integumentary nephridium",
+      "prostate gland"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "asset_slug": "bio11-ch7-connective-tissue--types-and-matrix--c",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "fibroblast",
+      "text": {
+        "en": "fibroblast",
+        "hi": ""
+      },
+      "anchor": [
+        0.3,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "collagen-fibre",
+      "text": {
+        "en": "collagen fibre",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "elastin-fibre",
+      "text": {
+        "en": "elastin fibre",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "macrophage",
+      "text": {
+        "en": "macrophage",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mast-cell",
+      "text": {
+        "en": "mast cell",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "matrix",
+      "text": {
+        "en": "matrix",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "adipocyte",
+      "text": {
+        "en": "adipocyte",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "fat-droplet",
+      "text": {
+        "en": "fat droplet",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "tendon",
+      "text": {
+        "en": "tendon",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "chondrocyte",
+      "text": {
+        "en": "chondrocyte",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "lacuna",
+      "text": {
+        "en": "lacuna",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "osteocyte",
+      "text": {
+        "en": "osteocyte",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "haversian-canal",
+      "text": {
+        "en": "Haversian canal",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "lamella",
+      "text": {
+        "en": "lamella",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "canaliculus",
+      "text": {
+        "en": "canaliculus",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "elastin fibre",
+      "macrophage",
+      "mast cell",
+      "matrix",
+      "adipocyte",
+      "fat droplet",
+      "tendon",
+      "chondrocyte",
+      "lacuna",
+      "osteocyte",
+      "Haversian canal",
+      "lamella",
+      "canaliculus"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}

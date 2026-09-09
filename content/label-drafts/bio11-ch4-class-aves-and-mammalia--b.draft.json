@@ -1,0 +1,100 @@
+{
+  "asset_slug": "bio11-ch4-class-aves-and-mammalia--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "feather",
+      "text": {
+        "en": "feather",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "beak",
+      "text": {
+        "en": "beak",
+        "hi": ""
+      },
+      "anchor": [
+        0.75,
+        0.4
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "wing",
+      "text": {
+        "en": "wing",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "hollow-bone",
+      "text": {
+        "en": "hollow bone",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "air-cavity",
+      "text": {
+        "en": "air cavity",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "fur",
+      "text": {
+        "en": "fur",
+        "hi": ""
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pouch",
+      "text": {
+        "en": "pouch",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "mammary-gland",
+      "text": {
+        "en": "mammary gland",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_labels.py",
+    "model": "gpt-4o",
+    "unplaced": [
+      "feather",
+      "wing",
+      "hollow bone",
+      "air cavity",
+      "pouch",
+      "mammary gland"
+    ],
+    "shared_anchors": {},
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+  }
+}
