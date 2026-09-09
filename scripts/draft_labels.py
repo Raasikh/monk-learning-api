@@ -248,6 +248,11 @@ def summarise(draft: Dict[str, Any], terms: List[str]) -> Dict[str, Any]:
         "omitted": list(draft["_draft"]["unplaced"]),
         "defaulted": defaulted,
         "reviewed_by": draft.get("reviewed_by", None),
+        # Carried through, because "where did this anchor come from" is the
+        # first thing a reviewer needs and the summary is what they open. A
+        # vision proposal and an anchor read out of a drawing we authored are
+        # not the same claim, and the summary dropped that distinction.
+        "source": draft.get("source", "vision"),
     }
 
 
