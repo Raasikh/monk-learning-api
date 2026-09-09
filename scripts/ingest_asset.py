@@ -405,8 +405,14 @@ URL_RE = re.compile(r"^https?://[^\s]+$")
 
 TABLE = "concept_assets"
 
+# 0036 added concept_slug and sub_index and this list was not updated with
+# them, so every read here — reconciliation, the idempotency check — was blind
+# to the two columns that define a figure SET. Found by a test asserting the
+# probe only writes columns that exist; it caught the stale list as well as the
+# typo it was written for.
 ROW_COLUMNS = (
-    "id,asset_slug,concept_id,chapter_id,subject,class_level,r2_key,"
+    "id,asset_slug,concept_slug,sub_index,concept_id,chapter_id,subject,"
+    "class_level,r2_key,"
     "content_type,width,height,bytes,licence,source_url,author,anchor_book,"
     "generator_model,prompt_sha,text_check,labelled_reference_file,"
     "labelled_reference_sha256,arrived_labelled,syllabus_gap,manifest_status,"
@@ -1405,11 +1411,19 @@ def probe_constraints(supabase, row: Dict[str, object]) -> List[str]:
     argument the two Devanagari fixtures are built on: a check that can only
     pass is not a check.
     """
+    from app import storage_r2
+
+    def probe_key(suffix: str) -> str:
+        # Same prefix the real keys use, so the probe is subject to whatever
+        # the r2_key column constrains about shape.
+        return f"{storage_r2.ASSETS_KEY_PREFIX}{PROBE_SLUG}{suffix}.png"
+
     problems: List[str] = []
     probe = dict(row)
+    probe.pop("id", None)          # let the table mint its own
     probe["asset_slug"] = PROBE_SLUG
     probe["concept_slug"] = PROBE_SLUG
-    probe["object_key"] = f"{PROBE_SLUG}.png"
+    probe["r2_key"] = probe_key("")
 
     def cleanup():
         try:
@@ -1434,7 +1448,7 @@ def probe_constraints(supabase, row: Dict[str, object]) -> List[str]:
         spoiled = dict(probe)
         spoiled["asset_slug"] = f"{PROBE_SLUG}-neg"
         spoiled["concept_slug"] = f"{PROBE_SLUG}-neg"
-        spoiled["object_key"] = f"{PROBE_SLUG}-neg.png"
+        spoiled["r2_key"] = probe_key("-neg")
         spoiled.update(overrides)
         try:
             supabase.table(TABLE).insert(spoiled).execute()
@@ -1456,7 +1470,7 @@ def probe_constraints(supabase, row: Dict[str, object]) -> List[str]:
     # than a bad value, so it cannot be expressed as a spoiled column above.
     twin = dict(probe)
     twin["asset_slug"] = f"{PROBE_SLUG}-twin"
-    twin["object_key"] = f"{PROBE_SLUG}-twin.png"     # same concept_slug+sub_index
+    twin["r2_key"] = probe_key("-twin")   # same concept_slug+sub_index
     try:
         supabase.table(TABLE).insert(twin).execute()
     except Exception:

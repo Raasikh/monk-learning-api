@@ -1511,7 +1511,7 @@ def test_a_probe_row_left_by_a_killed_run_is_cleared_first(
     """Otherwise the next dry run trips the unique ordinal against its own
     corpse and reports a constraint failure that is really a stale row."""
     stale = {"asset_slug": ia.PROBE_SLUG, "concept_slug": ia.PROBE_SLUG,
-             "sub_index": 0, "object_key": f"{ia.PROBE_SLUG}.png"}
+             "sub_index": 0, "r2_key": f"concept-assets/{ia.PROBE_SLUG}.png"}
     db = FakeDB(rows=[stale])
     code, s3, db = _dry_with_db(monkeypatch, bench, db)
     out = capsys.readouterr().out
@@ -1533,9 +1533,25 @@ def test_the_probe_row_is_a_copy_of_a_real_row_not_a_constant(
     positive = db.inserts[0]
     assert positive["asset_slug"] == ia.PROBE_SLUG          # swapped
     assert positive["concept_slug"] == ia.PROBE_SLUG        # swapped
-    assert positive["object_key"] == f"{ia.PROBE_SLUG}.png"  # swapped
+    assert positive["r2_key"].endswith(f"{ia.PROBE_SLUG}.png")   # swapped
     # ...and everything the database actually judges comes from the manifest.
     assert positive["manifest_status"] == GOOD_ROW["status"]
     assert positive["licence"] == GOOD_ROW["licence"]
     assert positive["concept_id"] == CONCEPT_ID
     assert positive["source_url"].startswith("generated:")
+
+
+def test_every_column_the_probe_touches_is_a_real_column():
+    """The probe swapped `object_key`. There is no such column — the key is
+    `r2_key` — so the probe's positive insert failed with PGRST204 and the run
+    reported the DATABASE as the problem when the bug was in the probe.
+
+    Caught by running it against the real table, which is a bad place to find
+    a typo. Every column the probe writes must appear in ROW_COLUMNS.
+    """
+    columns = set(ia.ROW_COLUMNS.split(","))
+    touched = {"asset_slug", "concept_slug", "r2_key", "sub_index"}
+    for _constraint, overrides in ia.PROBE_NEGATIVES:
+        touched |= set(overrides)
+    unknown = sorted(touched - columns)
+    assert not unknown, f"probe writes column(s) the table does not have: {unknown}"
