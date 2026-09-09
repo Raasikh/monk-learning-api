@@ -1015,6 +1015,26 @@ def validate_row(entry: Dict[str, str], folder: str, generator_model: str,
             "class_level": int(entry["class"]) if (entry.get("class") or
                                                    "").strip().isdigit() else None,
         }
+        # THE SHAPE ADVISORY, carried by slug into the run report.
+        #
+        # OCR found no legible token, so the row is not refused — but the shape
+        # heuristic saw glyph-shaped chains, and on line art that is usually
+        # hatching or segmented anatomy. It is 20/20 on synthetic labels and
+        # produced 29 false refusals on 112 real masters, so it advises rather
+        # than vetoes. Surfaced here because an advisory nobody can see is the
+        # same as no advisory: 19 of these exist and somebody should look at
+        # them before the next batch, without any of them blocking this one.
+        #
+        # Nothing is persisted for it. `text_check` records the OCR verdict,
+        # which is what was actually decided on.
+        if probe.verdict == "ocr-clean" and probe.words:
+            master["warnings"] = list(master["warnings"]) + [
+                f"SHAPE ADVISORY: OCR read no legible token, but the heuristic "
+                f"flagged {len(probe.words)} glyph-shaped chain(s), e.g. at "
+                f"{probe.words[0]}. Usually hatching or segmented anatomy on "
+                f"line art; review before the next batch, not a refusal."
+            ]
+
         warnings = list(master["warnings"]) + list(labelled["warnings"]) + \
             list(probe.warnings)
         return RowResult(slug, "ready", row=row, data=master["data"],
