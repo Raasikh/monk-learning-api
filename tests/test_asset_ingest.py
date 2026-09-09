@@ -35,6 +35,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import asset_text_probe as probe  # noqa: E402
 import ingest_asset as ia  # noqa: E402
 
+# Captured before any fixture can replace it. The autouse offline fixture
+# stubs load_concept_tables for every test in this file, which is right for
+# all of them but the one that tests load_concept_tables itself.
+REAL_LOAD_CONCEPT_TABLES = ia.load_concept_tables
+
 # The CURRENT package's manifest. Was the Downloads work order, which is
 # superseded — 48 rows at status=todo, in the old two-file schema. Reading a
 # manifest is not the same as depending on the 224 image files: the OCR
@@ -1603,3 +1608,77 @@ def test_every_column_the_probe_touches_is_a_real_column():
         touched |= set(overrides)
     unknown = sorted(touched - columns)
     assert not unknown, f"probe writes column(s) the table does not have: {unknown}"
+
+
+# ---------------------------------------------------------------------------
+# The 1000-row ceiling. Written after load_concept_tables read 1000 of 1,172
+# concepts and refused four assets for naming concepts that were in fact
+# present and active.
+# ---------------------------------------------------------------------------
+
+class PagingTable:
+    """PostgREST's actual behaviour: an unpaged select stops at 1000.
+
+    The old fake returned everything from execute() and ignored range(), so it
+    could not tell a paging reader from a truncating one — both passed. A fake
+    that cannot fail the way production fails is not a test double.
+    """
+    CEILING = 1000
+
+    def __init__(self, rows):
+        self.rows, self._lo, self._hi, self._f = rows, None, None, {}
+
+    def select(self, *a, **k):
+        return self
+
+    def eq(self, c, v):
+        self._f[c] = v
+        return self
+
+    def limit(self, n):
+        return self
+
+    def range(self, lo, hi):
+        self._lo, self._hi = lo, hi
+        return self
+
+    def execute(self):
+        rows = [r for r in self.rows
+                if all(r.get(c) == v for c, v in self._f.items())]
+        if self._lo is None:
+            rows = rows[:self.CEILING]                  # the silent truncation
+        else:
+            rows = rows[self._lo:self._hi + 1][:self.CEILING]
+        return type("R", (), {"data": rows})()
+
+
+def test_load_concept_tables_reads_past_the_1000_row_ceiling(monkeypatch):
+    """1,172 concepts exist. A raw select returns 1000 of them and says so
+    nowhere — no error, no warning, a short list that looks plausible.
+
+    The concept this asset needed was row 1,100. It was refused as absent, and
+    the refusal told a person to fix a manifest that was correct.
+    """
+    import app.db as appdb
+    concepts = [{"id": f"c{i}", "chapter_id": "ch1", "name": f"Concept {i}"}
+                for i in range(1172)]
+    chapters = [{"id": "ch1", "name": "Structural Organisation in Animals",
+                 "subject": "biology", "class_level": 11}]
+    tables = {"concepts": concepts, "chapters": chapters}
+    monkeypatch.setattr(
+        appdb, "supabase",
+        type("C", (), {"table": lambda _s, n: PagingTable(tables[n])})())
+
+    got_chapters, got_concepts = REAL_LOAD_CONCEPT_TABLES()
+    assert len(got_concepts) == 1172, (
+        f"read {len(got_concepts)} of 1172 — the tail is invisible, and an "
+        f"asset whose concept lives in it is refused as absent")
+    assert len(got_chapters) == 1
+
+    # And the lookup finds the one past the ceiling, which is the whole point.
+    monkeypatch.setattr(ia, "_CONCEPT_INDEX", None)
+    monkeypatch.setattr(ia, "load_concept_tables", REAL_LOAD_CONCEPT_TABLES)
+    cid, chid = ia.resolve_concept("biology", 11,
+                                   "Structural Organisation in Animals",
+                                   "Concept 1100")
+    assert cid == "c1100" and chid == "ch1"

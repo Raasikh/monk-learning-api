@@ -723,12 +723,20 @@ def load_concept_tables():
     index back and refused every fixture row for "no concept matches". A unit
     test that silently consults production is not hermetic even when it passes.
     """
-    from app.db import supabase
-    chapters = supabase.table("chapters").select(
-        "id,name,subject,class_level").execute().data or []
-    concepts = supabase.table("concepts").select(
-        "id,chapter_id,name").execute().data or []
-    return chapters, concepts
+    from app.db import fetch_all
+    # fetch_all, NOT supabase.table(...).execute(). PostgREST caps an unpaged
+    # select at 1000 rows and reports the truncation nowhere: no error, no
+    # warning, a short list that looks plausible. `concepts` holds 1,172.
+    #
+    # The first version of this used a raw select, read 1000 of them, and
+    # refused four assets for "no concept matches" — naming a mismatch that
+    # did not exist and sending a person to fix a manifest that was correct.
+    # Both concepts were present, active, and in exactly the chapter the
+    # manifest named; they were in the 172 rows never fetched. fetch_all's own
+    # docstring warns about this and names `concepts` as a table that exceeds
+    # the ceiling, which makes it a rule that was written down and not applied.
+    return (fetch_all("chapters", "id,name,subject,class_level"),
+            fetch_all("concepts", "id,chapter_id,name"))
 
 
 def build_concept_index(chapters, concepts):
