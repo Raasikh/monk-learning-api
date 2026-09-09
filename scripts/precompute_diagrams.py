@@ -61,6 +61,9 @@ def main() -> int:
     p.add_argument("--dry-run", action="store_true", help="author but do not store")
     p.add_argument("--force", action="store_true", help="re-author concepts that already have one")
     p.add_argument("--out", default=None, help="also write each svg here to eyeball")
+    p.add_argument("--include-illustrated", action="store_true",
+                   help="author even for concepts slot 3 already answers "
+                        "(they will be outranked; costs money, changes nothing)")
     p.add_argument("--detail", default="simple", choices=["simple", "rich"],
                    help="simple = one concrete worked example (default); rich = a full illustration")
     args = p.parse_args()
@@ -104,12 +107,44 @@ def main() -> int:
         print("(concept_diagrams not present — dry run only)\n")
         existing = set()
 
-    todo = [(ch, c) for ch, c in concepts if args.force or c["id"] not in existing]
+    # A CONCEPT ANSWERED BY A HIGHER SLOT IS SKIPPED, for the same reason a
+    # concept with an active diagram already is: this script exists to fill
+    # slot 4, and a slot-4 row under a slot-3 illustration can never reach a
+    # board. drona-illustrations-v1.1 put assets on 48 of these concepts, so
+    # without this the run authors 48 diagrams that are outranked the moment
+    # they are stored — paid for, stored, and dead.
+    #
+    # Note --dry-run does NOT avoid the cost: it authors and declines to
+    # store, so a dry run over these chapters spends exactly the same model
+    # calls. The skip is what saves them.
+    illustrated = set()
+    if not args.include_illustrated:
+        try:
+            from app.storage_r2 import ASSET_APPROVED_STATUS
+            illustrated = {
+                r["concept_id"] for r in
+                (supabase.table("concept_assets").select("concept_id")
+                 .eq("manifest_status", ASSET_APPROVED_STATUS).execute().data or [])
+                if r.get("concept_id")
+            }
+        except Exception as exc:
+            # Readable failure, not a silent empty set: an unreadable table
+            # here would quietly restore the old behaviour and the only
+            # symptom would be a larger bill.
+            print(f"!! could not read concept_assets ({str(exc)[:80]}) — "
+                  f"authoring for ALL concepts, including any that slot 3 "
+                  f"already answers.")
+
+    todo = [(ch, c) for ch, c in concepts
+            if (args.force or c["id"] not in existing) and c["id"] not in illustrated]
+    outranked = sum(1 for _ch, c in concepts if c["id"] in illustrated)
     model = args.model or get_model_name("tutor")
     if args.out:
         os.makedirs(args.out, exist_ok=True)
 
-    print(f"{len(chapters)} chapter(s), {len(concepts)} concepts, {len(todo)} to author")
+    print(f"{len(chapters)} chapter(s), {len(concepts)} concepts, {len(todo)} to author"
+          + (f", {outranked} skipped as already answered by an illustration"
+             if outranked else ""))
     print(f"model={model}  detail={args.detail}  workers={args.workers}  "
           f"dry_run={args.dry_run}  force={args.force}\n")
 
