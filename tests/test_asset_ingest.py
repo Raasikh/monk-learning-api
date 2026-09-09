@@ -23,6 +23,7 @@ import hashlib
 import io
 import os
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -292,9 +293,28 @@ class FakeTable:
     def insert(self, row):
         if self.db.fail_write:
             raise RuntimeError("PostgREST 500")
+        self.db.enforce(row)
         self.db.rows.append(dict(row))
         self.db.inserts.append(dict(row))
         return type("Q", (), {"execute": lambda _s: None})()
+
+    def delete(self):
+        db = self.db
+
+        class _D:
+            def __init__(_s):
+                _s.f = {}
+
+            def eq(_s, c, v):
+                _s.f[c] = v
+                return _s
+
+            def execute(_s):
+                db.rows[:] = [r for r in db.rows
+                              if not all(r.get(c) == v for c, v in _s.f.items())]
+                return type("R", (), {"data": []})()
+
+        return _D()
 
     def update(self, row):
         if self.db.fail_write:
@@ -319,11 +339,61 @@ class FakeTable:
         return _U()
 
 
+# The CHECKs on concept_assets, restated as predicates. A fake that accepts
+# everything is not a stand-in for a table with seven constraints on it — it is
+# a stand-in for a table with none, and `probe_constraints` would correctly
+# report all seven as missing against it. Keep these in step with migrations
+# 0035–0039; each names the constraint it mirrors.
+DB_CONSTRAINTS = {
+    "concept_assets_manifest_status":
+        lambda r: r.get("manifest_status") == "accepted",
+    "concept_assets_licence_enum":
+        lambda r: r.get("licence") in {
+            "CC0-1.0", "CC-BY-4.0", "CC-BY-3.0", "CC-BY-2.5",
+            "PD-US-gov", "PD-old-70", "generated-free"},
+    "concept_assets_source_url_is_url":
+        lambda r: bool(re.match(r"^https?://[^\s]+$", str(r.get("source_url", "")))
+                       or ia.GENERATED_SOURCE_RE.match(str(r.get("source_url", "")))),
+    "concept_assets_anchor_book_required":
+        lambda r: ((r.get("licence") == "generated-free")
+                   == (r.get("anchor_book") in (None, ""))),
+    "concept_assets_sub_index_range":
+        lambda r: isinstance(r.get("sub_index"), int) and 0 <= r["sub_index"] <= 25,
+    "concept_assets_text_check_enum":
+        lambda r: r.get("text_check") in {"ocr-clean",
+                                          "heuristic-clean-ocr-unavailable"},
+    "concept_assets_arrived_labelled_enum":
+        lambda r: r.get("arrived_labelled") in {"unlabelled", "labelled_usable",
+                                                "labelled_unusable"},
+}
+
+
 class FakeDB:
-    def __init__(self, rows=None, fail_write=False):
+    def __init__(self, rows=None, fail_write=False, dropped=()):
         self.rows = [dict(r) for r in (rows or [])]
         self.inserts, self.updates = [], []
         self.fail_write = fail_write
+        # Names in here behave as though the migration were never applied. It
+        # is how a test proves the probe can SEE a missing constraint, rather
+        # than proving only that a good row passes.
+        self.dropped = set(dropped)
+
+    def enforce(self, row):
+        for name, ok in DB_CONSTRAINTS.items():
+            if name in self.dropped:
+                continue
+            if not ok(row):
+                raise RuntimeError(
+                    f'new row for relation "concept_assets" violates check '
+                    f'constraint "{name}"')
+        if "concept_assets_set_ordinal_idx" not in self.dropped:
+            key = (row.get("concept_slug"), row.get("sub_index"))
+            for r in self.rows:
+                if (r.get("concept_slug"), r.get("sub_index")) == key \
+                        and r.get("asset_slug") != row.get("asset_slug"):
+                    raise RuntimeError(
+                        'duplicate key value violates unique constraint '
+                        '"concept_assets_set_ordinal_idx"')
 
     def table(self, name):
         return FakeTable(self, name)
@@ -697,14 +767,28 @@ def test_every_real_slug_passes_slug_validation():
 # ---------------------------------------------------------------------------
 
 
-def test_dry_run_is_the_default_and_writes_nothing(bench, wired, capsys):
+def test_dry_run_is_the_default_and_leaves_nothing_behind(bench, wired, capsys):
+    """It uploads nothing and PERSISTS nothing — which is not the same as
+    touching nothing.
+
+    Since the constraint probe, a dry run does write to the table: one row
+    shaped exactly like the run's first ready row, plus the spoiled variants
+    that must bounce. All of them are deleted again. The assertion that matters
+    is that the table is EMPTY afterwards, not that insert() was never called —
+    the older, stricter-looking version of this test would now forbid the probe
+    entirely, and the probe is the thing that makes "ready" mean the database
+    would take it.
+    """
     code = ia.main(bench())
     out = capsys.readouterr().out
     assert code == 0
     assert "DRY RUN" in out
     assert "READY (1)" in out
+    assert "constraint probe OK" in out
     s3, db = wired
-    assert s3.puts == [] and db.inserts == []
+    assert s3.puts == []                 # still: a dry run uploads nothing
+    assert db.rows == []                 # the probe took its own row back out
+    assert all(r["asset_slug"].startswith(ia.PROBE_SLUG) for r in db.inserts)
 
 
 def test_execute_uploads_then_inserts(bench, wired, capsys):
@@ -1359,3 +1443,99 @@ def test_build_concept_index_is_pure_and_matches_exactly():
     # Case is NOT folded. 'DNA' and 'Dna' are not the same concept, and a
     # difference in case is a difference someone should see.
     assert "cockroach: nervous system and reproduction" not in by_name[CHAPTER_ID]
+
+
+# ---------------------------------------------------------------------------
+# The constraint probe. Written after --execute uploaded 210 objects and then
+# failed all 105 database writes on a constraint the dry run never consulted.
+# ---------------------------------------------------------------------------
+
+def _dry_with_db(monkeypatch, bench, db):
+    import app.db as appdb
+    import app.storage_r2 as r2
+    s3 = FakeS3()
+    monkeypatch.setattr(r2, "get_client", lambda: s3)
+    monkeypatch.setattr(r2, "assets_bucket_name", lambda: "monk-illustrations")
+    monkeypatch.setattr(appdb, "supabase", db)
+    monkeypatch.setattr(appdb, "fetch_all", lambda t, c, **kw: list(db.rows))
+    return ia.main(bench()), s3, db
+
+
+@pytest.mark.parametrize("constraint", sorted(DB_CONSTRAINTS) +
+                         ["concept_assets_set_ordinal_idx"])
+def test_the_probe_notices_each_constraint_going_missing(
+        constraint, bench, monkeypatch, capsys):
+    """One case per constraint, because a probe that only inserts a GOOD row
+    passes identically against a table with every CHECK dropped.
+
+    This is the same argument as the two Devanagari fixtures: the positive
+    fixture alone kept passing when the branch it guarded was deleted, so it
+    proved nothing. Here the ablation is per constraint — drop exactly one,
+    and the probe must name exactly that one.
+    """
+    db = FakeDB(dropped={constraint})
+    code, s3, db = _dry_with_db(monkeypatch, bench, db)
+    out = capsys.readouterr().out
+    assert code == 2                          # a dry run that cannot be trusted
+    assert "CONSTRAINT PROBE FAILED" in out
+    assert constraint in out
+    assert "NOT ENFORCED" in out
+    assert s3.puts == []
+    assert db.rows == []                      # every probe row cleaned up
+
+
+def test_the_probe_refuses_the_run_when_a_ready_row_is_inadmissible(
+        bench, monkeypatch, capsys):
+    """The failure this was built for, reproduced.
+
+    manifest_status='accepted' against a database still pinned to 'approved'.
+    The dry run used to print READY and exit 0; --execute then uploaded every
+    master and every rendition before the first insert failed.
+    """
+    db = FakeDB()
+    db.enforce_manifest_status = None
+    monkeypatch.setitem(DB_CONSTRAINTS, "concept_assets_manifest_status",
+                        lambda r: r.get("manifest_status") == "approved")
+    code, s3, db = _dry_with_db(monkeypatch, bench, db)
+    out = capsys.readouterr().out
+    assert code == 2
+    assert "the database REFUSED a row this run calls ready" in out
+    assert "concept_assets_manifest_status" in out
+    # The whole point of finding it here: nothing was uploaded.
+    assert s3.puts == []
+    assert db.rows == []
+
+
+def test_a_probe_row_left_by_a_killed_run_is_cleared_first(
+        bench, monkeypatch, capsys):
+    """Otherwise the next dry run trips the unique ordinal against its own
+    corpse and reports a constraint failure that is really a stale row."""
+    stale = {"asset_slug": ia.PROBE_SLUG, "concept_slug": ia.PROBE_SLUG,
+             "sub_index": 0, "object_key": f"{ia.PROBE_SLUG}.png"}
+    db = FakeDB(rows=[stale])
+    code, s3, db = _dry_with_db(monkeypatch, bench, db)
+    out = capsys.readouterr().out
+    assert code == 0
+    assert "constraint probe OK" in out
+    assert db.rows == []
+
+
+def test_the_probe_row_is_a_copy_of_a_real_row_not_a_constant(
+        bench, wired, capsys):
+    """A hand-written probe row would have passed while all 105 real rows
+    failed — it would have been testing itself, not the run.
+
+    So the probe must carry the run's own values in every column except the
+    three that have to be unique.
+    """
+    _, db = wired
+    assert ia.main(bench()) == 0
+    positive = db.inserts[0]
+    assert positive["asset_slug"] == ia.PROBE_SLUG          # swapped
+    assert positive["concept_slug"] == ia.PROBE_SLUG        # swapped
+    assert positive["object_key"] == f"{ia.PROBE_SLUG}.png"  # swapped
+    # ...and everything the database actually judges comes from the manifest.
+    assert positive["manifest_status"] == GOOD_ROW["status"]
+    assert positive["licence"] == GOOD_ROW["licence"]
+    assert positive["concept_id"] == CONCEPT_ID
+    assert positive["source_url"].startswith("generated:")
