@@ -1,0 +1,424 @@
+v5 ARCHETYPE-BRANCH PAYLOAD DUMP — biology 12, Ecosystem, 40 segments
+Judge `sane`: does this picture belong beside THIS objective, and is it
+different from what the prior-payload lines say was already drawn?
+`sane` is left blank on purpose. Fill it in.
+==============================================================================
+
+[carbon-cycle  seg 1]  Why Carbon Matters: The Element of Life
+  OBJECTIVE : Explain why carbon is essential for life and why its cycling is crucial for ecosystems.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=process_flow
+  SANE      : ____
+
+[carbon-cycle  seg 2]  The Big Picture: Reservoirs and the Gaseous Nature
+  OBJECTIVE : Identify the main reservoirs of carbon and classify the carbon cycle as gaseous.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=comparison_table
+  SANE      : ____
+
+[carbon-cycle  seg 3]  Photosynthesis: The Entry Point of Carbon
+  OBJECTIVE : Describe how carbon enters the biotic world through photosynthesis.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['sunlight', 'co2 + water', 'photosynthesis', 'glucose + oxygen']
+  PARAMS    : {"layout": "chain", "nodes": ["Sunlight", "CO2 + Water", "Photosynthesis", "Glucose + Oxygen"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Carbon enters the biotic world via photosynthesis"}
+  SANE      : ____
+
+[carbon-cycle  seg 4]  Carbon on the Move: Food Chains and Respiration
+  OBJECTIVE : Trace the flow of carbon through food chains and its release via respiration.
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Sunlight", "CO2 + Water", "Photosynthesis", "Glucose + Oxygen"], "active_node": -1, "branch_at": -1, "caption": "Carbon enters the biotic world via photosynthesis", "cl…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Carbon moves through the food chain and returns via respiration
+  NODES     : ['producers (plants)', 'consumers (deer)', 'respiration', 'co2 to atmosphere']
+  PARAMS    : {"layout": "chain", "nodes": ["Producers (plants)", "Consumers (deer)", "Respiration", "CO2 to atmosphere"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Carbon moves through the food chain and returns via respiration"}
+  SANE      : ____
+
+[carbon-cycle  seg 5]  Decomposition: Nature's Recycling Crew
+  OBJECTIVE : Explain the role of decomposers in returning carbon to the atmosphere and soil.
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers (plants)", "Consumers (deer)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Carbon moves through the food chain and re…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Sunlight", "CO2 + Water", "Photosynthesis", "Glucose + Oxygen"], "active_node": -1, "branch_at": -1, "caption": "Carbon enters the biotic world via photosynthesis", "cl…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Decomposers return carbon as CO2
+  NODES     : ['dead deer (organic matter)', 'decomposers (bacteria & fungi)', 'respiration', 'co2 to atmosphere']
+  PARAMS    : {"layout": "chain", "nodes": ["Dead deer (organic matter)", "Decomposers (bacteria & fungi)", "Respiration", "CO2 to atmosphere"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Decomposers return carbon as CO2"}
+  SANE      : ____
+
+[carbon-cycle  seg 6]  Combustion and Human Impact: The Accelerator
+  OBJECTIVE : Explain how combustion of fossil fuels and deforestation disrupt the carbon cycle.
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Dead deer (organic matter)", "Decomposers (bacteria & fungi)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Decomposers return c…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers (plants)", "Consumers (deer)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Carbon moves through the food chain and re…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Sunlight", "CO2 + Water", "Photosynthesis", "Glucose + Oxygen"], "active_node": -1, "branch_at": -1, "caption": "Carbon enters the biotic world via photosynthesis", "cl…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Burning fossil fuels releases stored carbon as CO2
+  NODES     : ['fossil fuels (coal, oil, gas)', 'combustion (burning)', 'co2 released to atmosphere']
+  PARAMS    : {"layout": "chain", "nodes": ["Fossil fuels (coal, oil, gas)", "Combustion (burning)", "CO2 released to atmosphere"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Burning fossil fuels releases stored carbon as CO2"}
+  SANE      : ____
+
+[carbon-cycle  seg 7]  Oceans: The Silent Sink
+  OBJECTIVE : Describe the role of oceans in absorbing and storing atmospheric CO2.
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Fossil fuels (coal, oil, gas)", "Combustion (burning)", "CO2 released to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Burning fossil fuels releases sto…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Dead deer (organic matter)", "Decomposers (bacteria & fungi)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Decomposers return c…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers (plants)", "Consumers (deer)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Carbon moves through the food chain and re…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Sunlight", "CO2 + Water", "Photosynthesis", "Glucose + Oxygen"], "active_node": -1, "branch_at": -1, "caption": "Carbon enters the biotic world via photosynthesis", "cl…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Oceans absorb CO2 and phytoplankton use it for photosynthesis
+  NODES     : ['atmospheric co2', 'oceans absorb co2', 'phytoplankton use co2 for photosynthesis']
+  PARAMS    : {"layout": "chain", "nodes": ["Atmospheric CO2", "Oceans absorb CO2", "Phytoplankton use CO2 for photosynthesis"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Oceans absorb CO2 and phytoplankton use it for photosynthesis"}
+  SANE      : ____
+
+[carbon-cycle  seg 8]  Putting It All Together: The Carbon Cycle Map
+  OBJECTIVE : Summarize the carbon cycle by tracing carbon through all major pathways.
+  PRIOR     : segment 7 — `process_flow` {"nodes": ["Atmospheric CO2", "Oceans absorb CO2", "Phytoplankton use CO2 for photosynthesis"], "active_node": -1, "branch_at": -1, "caption": "Oceans absorb CO2 and phytoplankton …
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Fossil fuels (coal, oil, gas)", "Combustion (burning)", "CO2 released to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Burning fossil fuels releases sto…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Dead deer (organic matter)", "Decomposers (bacteria & fungi)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Decomposers return c…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers (plants)", "Consumers (deer)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Carbon moves through the food chain and re…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['atmospheric co2', 'photosynthesis (producers)', 'food chain (consumers)', 'respiration / decomposition / combustion']
+  PARAMS    : {"layout": "ring", "nodes": ["Atmospheric CO2", "Photosynthesis (producers)", "Food chain (consumers)", "Respiration / Decomposition / Combustion"], "closes": true, "branch_at": -1, "active_node": -1, "caption": "Carbon moves in a closed loop through the ecosystem."}
+  SANE      : ____
+
+[carbon-cycle  seg 9]  Exam Edge: Common Traps and Quick Revision
+  OBJECTIVE : Avoid common mistakes and recall key points for exams.
+  PRIOR     : segment 8 — `process_flow` {"nodes": ["Atmospheric CO2", "Photosynthesis (producers)", "Food chain (consumers)", "Respiration / Decomposition / Combustion"], "active_node": -1, "branch_at": -1, "caption": "C…
+  PRIOR     : segment 7 — `process_flow` {"nodes": ["Atmospheric CO2", "Oceans absorb CO2", "Phytoplankton use CO2 for photosynthesis"], "active_node": -1, "branch_at": -1, "caption": "Oceans absorb CO2 and phytoplankton …
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Fossil fuels (coal, oil, gas)", "Combustion (burning)", "CO2 released to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Burning fossil fuels releases sto…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Dead deer (organic matter)", "Decomposers (bacteria & fungi)", "Respiration", "CO2 to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Decomposers return c…
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=process_flow
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 1]  Why Decomposition Matters: Nature's Recycling Plant
+  OBJECTIVE : Explain why decomposition is essential for nutrient cycling and identify detritus and decomposers.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Decomposition recycles nutrients back to producers
+  NODES     : ['dead organic matter', 'decomposition', 'inorganic nutrients', 'producers reuse']
+  PARAMS    : {"layout": "chain", "nodes": ["Dead organic matter", "Decomposition", "Inorganic nutrients", "Producers reuse"], "closes": true, "branch_at": -1, "active_node": -1, "caption": "Decomposition recycles nutrients back to producers"}
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 2]  The Five Steps of Decomposition: An Overview
+  OBJECTIVE : List the five steps of decomposition in the correct order.
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Dead organic matter", "Decomposition", "Inorganic nutrients", "Producers reuse"], "active_node": -1, "branch_at": -1, "caption": "Decomposition recycles nutrients back …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Five steps of decomposition
+  NODES     : ['detritus', 'fragmentation', 'leaching', 'catabolism', 'humification', 'mineralisation']
+  PARAMS    : {"layout": "chain", "nodes": ["Detritus", "Fragmentation", "Leaching", "Catabolism", "Humification", "Mineralisation"], "closes": false, "branch_at": -1, "active_node": 1, "caption": "Five steps of decomposition"}
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 3]  Fragmentation and Leaching: Physical and Chemical Prep
+  OBJECTIVE : Describe fragmentation and leaching, and explain their roles in decomposition.
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching", "Catabolism", "Humification", "Mineralisation"], "active_node": 1, "branch_at": -1, "caption": "Five steps of decomposition", "c…
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Dead organic matter", "Decomposition", "Inorganic nutrients", "Producers reuse"], "active_node": -1, "branch_at": -1, "caption": "Decomposition recycles nutrients back …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Fragmentation prepares detritus for leaching
+  NODES     : ['detritus', 'fragmentation', 'leaching']
+  PARAMS    : {"layout": "chain", "nodes": ["Detritus", "Fragmentation", "Leaching"], "closes": false, "branch_at": -1, "active_node": 1, "caption": "Fragmentation prepares detritus for leaching"}
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 4]  Catabolism: The Chemical Breakdown
+  OBJECTIVE : Explain how enzymes from decomposers break down detritus into simpler compounds.
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching"], "active_node": 1, "branch_at": -1, "caption": "Fragmentation prepares detritus for leaching", "closes": false, "layout": "chain…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching", "Catabolism", "Humification", "Mineralisation"], "active_node": 1, "branch_at": -1, "caption": "Five steps of decomposition", "c…
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Dead organic matter", "Decomposition", "Inorganic nutrients", "Producers reuse"], "active_node": -1, "branch_at": -1, "caption": "Decomposition recycles nutrients back …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Catabolism: external digestion by decomposers
+  NODES     : ['detritus', 'enzymes secreted', 'external digestion', 'absorption']
+  PARAMS    : {"layout": "chain", "nodes": ["Detritus", "Enzymes secreted", "External digestion", "Absorption"], "closes": false, "branch_at": -1, "active_node": 2, "caption": "Catabolism: external digestion by decomposers"}
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 5]  Humification and Mineralisation: Storing and Releasing Nutrients
+  OBJECTIVE : Distinguish between humification and mineralisation and explain their roles in nutrient storage and release.
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Detritus", "Enzymes secreted", "External digestion", "Absorption"], "active_node": 2, "branch_at": -1, "caption": "Catabolism: external digestion by decomposers", "clos…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching"], "active_node": 1, "branch_at": -1, "caption": "Fragmentation prepares detritus for leaching", "closes": false, "layout": "chain…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching", "Catabolism", "Humification", "Mineralisation"], "active_node": 1, "branch_at": -1, "caption": "Five steps of decomposition", "c…
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Dead organic matter", "Decomposition", "Inorganic nutrients", "Producers reuse"], "active_node": -1, "branch_at": -1, "caption": "Decomposition recycles nutrients back …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Humification stores, mineralisation releases
+  NODES     : ['humification', 'humus stores nutrients', 'mineralisation releases nutrients']
+  PARAMS    : {"layout": "chain", "nodes": ["Humification", "Humus stores nutrients", "Mineralisation releases nutrients"], "closes": false, "branch_at": -1, "active_node": 0, "caption": "Humification stores, mineralisation releases"}
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 6]  Factors Affecting Decomposition Rate
+  OBJECTIVE : Identify the key factors that speed up or slow down decomposition.
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Humification", "Humus stores nutrients", "Mineralisation releases nutrients"], "active_node": 0, "branch_at": -1, "caption": "Humification stores, mineralisation releas…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Detritus", "Enzymes secreted", "External digestion", "Absorption"], "active_node": 2, "branch_at": -1, "caption": "Catabolism: external digestion by decomposers", "clos…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching"], "active_node": 1, "branch_at": -1, "caption": "Fragmentation prepares detritus for leaching", "closes": false, "layout": "chain…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching", "Catabolism", "Humification", "Mineralisation"], "active_node": 1, "branch_at": -1, "caption": "Five steps of decomposition", "c…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Chemical nature decides decomposition speed
+  NODES     : ['nitrogen-rich detritus', 'fast decomposition', 'lignin-rich detritus', 'slow decomposition']
+  PARAMS    : {"layout": "chain", "nodes": ["Nitrogen-rich detritus", "Fast decomposition", "Lignin-rich detritus", "Slow decomposition"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Chemical nature decides decomposition speed"}
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 7]  Detritivores vs. Decomposers: Who Does What?
+  OBJECTIVE : Differentiate between detritivores and decomposers and give examples of each.
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Nitrogen-rich detritus", "Fast decomposition", "Lignin-rich detritus", "Slow decomposition"], "active_node": -1, "branch_at": -1, "caption": "Chemical nature decides de…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Humification", "Humus stores nutrients", "Mineralisation releases nutrients"], "active_node": 0, "branch_at": -1, "caption": "Humification stores, mineralisation releas…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Detritus", "Enzymes secreted", "External digestion", "Absorption"], "active_node": 2, "branch_at": -1, "caption": "Catabolism: external digestion by decomposers", "clos…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Detritus", "Fragmentation", "Leaching"], "active_node": 1, "branch_at": -1, "caption": "Fragmentation prepares detritus for leaching", "closes": false, "layout": "chain…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['detritus', 'detritivore fragments', 'decomposer enzymes', 'nutrients released']
+  PARAMS    : {"layout": "chain", "nodes": ["Detritus", "Detritivore fragments", "Decomposer enzymes", "Nutrients released"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Detritivores prepare, decomposers complete"}
+  SANE      : ____
+
+[decomposition-and-its-steps  seg 8]  Decomposition in the Ecosystem: Connecting the Dots
+  OBJECTIVE : Explain how decomposition links to nutrient cycles and the detritus food chain.
+  PRIOR     : segment 7 — `process_flow` {"nodes": ["Detritus", "Detritivore fragments", "Decomposer enzymes", "Nutrients released"], "active_node": -1, "branch_at": -1, "caption": "Detritivores prepare, decomposers compl…
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Nitrogen-rich detritus", "Fast decomposition", "Lignin-rich detritus", "Slow decomposition"], "active_node": -1, "branch_at": -1, "caption": "Chemical nature decides de…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Humification", "Humus stores nutrients", "Mineralisation releases nutrients"], "active_node": 0, "branch_at": -1, "caption": "Humification stores, mineralisation releas…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Detritus", "Enzymes secreted", "External digestion", "Absorption"], "active_node": 2, "branch_at": -1, "caption": "Catabolism: external digestion by decomposers", "clos…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Decomposition closes the nutrient loop
+  NODES     : ['dead leaf', 'detritivores shred', 'decomposers release nutrients', 'plants absorb nutrients']
+  PARAMS    : {"layout": "chain", "nodes": ["Dead leaf", "Detritivores shred", "Decomposers release nutrients", "Plants absorb nutrients"], "closes": true, "branch_at": -1, "active_node": -1, "caption": "Decomposition closes the nutrient loop"}
+  SANE      : ____
+
+[ecological-succession-primary-secondary-hydrarch-and-xerarch  seg 1]  What is Ecological Succession?
+  OBJECTIVE : Define ecological succession and identify its key components: sere, seral stage, pioneer community, and climax community.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Ecological succession: from bare area to climax
+  NODES     : ['bare area', 'pioneer community', 'seral stages', 'climax community']
+  PARAMS    : {"layout": "chain", "nodes": ["Bare area", "Pioneer community", "Seral stages", "Climax community"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Ecological succession: from bare area to climax"}
+  SANE      : ____
+
+[ecological-succession-primary-secondary-hydrarch-and-xerarch  seg 2]  Primary vs Secondary Succession
+  OBJECTIVE : Differentiate between primary and secondary succession based on starting conditions and speed.
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Bare area", "Pioneer community", "Seral stages", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Ecological succession: from bare area to climax", …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Primary succession: soil must form first
+  NODES     : ['bare rock (no soil)', 'primary succession (slow)', 'soil forms', 'climax community']
+  PARAMS    : {"layout": "chain", "nodes": ["Bare rock (no soil)", "Primary succession (slow)", "Soil forms", "Climax community"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Primary succession: soil must form first"}
+  SANE      : ____
+
+[ecological-succession-primary-secondary-hydrarch-and-xerarch  seg 3]  Xerarch Succession: From Bare Rock to Forest
+  OBJECTIVE : List the seral stages of xerarch succession in order and identify the pioneer community.
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Bare rock (no soil)", "Primary succession (slow)", "Soil forms", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Primary succession: soil must form…
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Bare area", "Pioneer community", "Seral stages", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Ecological succession: from bare area to climax", …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Xerarch succession: from bare rock to climax forest
+  NODES     : ['bare rock', 'crustose lichens', 'foliose lichens', 'mosses', 'herbs', 'shrubs', 'climax forest']
+  PARAMS    : {"layout": "chain", "nodes": ["Bare rock", "Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Xerarch succession: from bare rock to climax forest"}
+  SANE      : ____
+
+[ecological-succession-primary-secondary-hydrarch-and-xerarch  seg 4]  Hydrarch Succession: From Pond to Forest
+  OBJECTIVE : List the seral stages of hydrarch succession in order and identify the pioneer community.
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Bare rock", "Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Xerarch succession: fr…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Bare rock (no soil)", "Primary succession (slow)", "Soil forms", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Primary succession: soil must form…
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Bare area", "Pioneer community", "Seral stages", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Ecological succession: from bare area to climax", …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Hydrarch succession: from pond to forest
+  NODES     : ['open water', 'phytoplankton', 'submerged plants', 'free-floating plants', 'reed-swamp', 'climax forest']
+  PARAMS    : {"layout": "chain", "nodes": ["Open water", "Phytoplankton", "Submerged plants", "Free-floating plants", "Reed-swamp", "Climax forest"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Hydrarch succession: from pond to forest"}
+  SANE      : ____
+
+[ecological-succession-primary-secondary-hydrarch-and-xerarch  seg 5]  Why Succession Moves Forward
+  OBJECTIVE : Explain the mechanism by which each seral stage modifies the habitat to favor the next community.
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Open water", "Phytoplankton", "Submerged plants", "Free-floating plants", "Reed-swamp", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Hydrarch succe…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Bare rock", "Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Xerarch succession: fr…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Bare rock (no soil)", "Primary succession (slow)", "Soil forms", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Primary succession: soil must form…
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Bare area", "Pioneer community", "Seral stages", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Ecological succession: from bare area to climax", …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Each stage modifies habitat, enabling the next
+  NODES     : ['crustose lichens', 'foliose lichens', 'mosses', 'herbs', 'shrubs', 'climax forest']
+  PARAMS    : {"layout": "chain", "nodes": ["Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Each stage modifies habitat, enabling the next"}
+  SANE      : ____
+
+[ecological-succession-primary-secondary-hydrarch-and-xerarch  seg 6]  Convergence to a Mesic Climax
+  OBJECTIVE : Explain why both hydrarch and xerarch successions lead to a similar mesic climax community.
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Each stage modifies habitat, enabli…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Open water", "Phytoplankton", "Submerged plants", "Free-floating plants", "Reed-swamp", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Hydrarch succe…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Bare rock", "Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Xerarch succession: fr…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Bare rock (no soil)", "Primary succession (slow)", "Soil forms", "Climax community"], "active_node": -1, "branch_at": -1, "caption": "Primary succession: soil must form…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Both successions converge to a mesic climax
+  NODES     : ['hydrarch: pond', 'xerarch: bare rock', 'habitat modification', 'mesic climax forest']
+  PARAMS    : {"layout": "chain", "nodes": ["Hydrarch: pond", "Xerarch: bare rock", "Habitat modification", "Mesic climax forest"], "closes": false, "branch_at": 1, "active_node": -1, "caption": "Both successions converge to a mesic climax"}
+  SANE      : ____
+
+[ecological-succession-primary-secondary-hydrarch-and-xerarch  seg 7]  Exam-Style Sequencing and Traps
+  OBJECTIVE : Apply knowledge of succession to solve typical exam questions and avoid common mistakes.
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Hydrarch: pond", "Xerarch: bare rock", "Habitat modification", "Mesic climax forest"], "active_node": -1, "branch_at": 1, "caption": "Both successions converge to a mes…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Each stage modifies habitat, enabli…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Open water", "Phytoplankton", "Submerged plants", "Free-floating plants", "Reed-swamp", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Hydrarch succe…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Bare rock", "Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "active_node": -1, "branch_at": -1, "caption": "Xerarch succession: fr…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Xerarch succession: lichens first, mosses later
+  NODES     : ['bare rock', 'crustose lichens', 'foliose lichens', 'mosses', 'herbs', 'shrubs', 'climax forest']
+  PARAMS    : {"layout": "chain", "nodes": ["Bare rock", "Crustose lichens", "Foliose lichens", "Mosses", "Herbs", "Shrubs", "Climax forest"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Xerarch succession: lichens first, mosses later"}
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 1]  The One-Way Street of Energy
+  OBJECTIVE : Explain why energy flow in an ecosystem is unidirectional and non-cyclic, contrasting it with nutrient cycling.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Energy flows one way: Sun to heat
+  NODES     : ['sun', 'producers', 'consumers', 'heat']
+  PARAMS    : {"layout": "chain", "nodes": ["Sun", "Producers", "Consumers", "Heat"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Energy flows one way: Sun to heat"}
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 2]  From Sunlight to Producers: The PAR Slice
+  OBJECTIVE : State the percentage of incident solar radiation that is PAR and the percentage of PAR that producers capture.
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Sun", "Producers", "Consumers", "Heat"], "active_node": -1, "branch_at": -1, "caption": "Energy flows one way: Sun to heat", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Only a slice of sunlight becomes usable PAR
+  NODES     : ['sunlight', 'par (<50%)', 'producers']
+  PARAMS    : {"layout": "chain", "nodes": ["Sunlight", "PAR (<50%)", "Producers"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Only a slice of sunlight becomes usable PAR"}
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 3]  Trophic Levels and Food Chains
+  OBJECTIVE : Define trophic level and distinguish between grazing and detritus food chains with examples.
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Sunlight", "PAR (<50%)", "Producers"], "active_node": -1, "branch_at": -1, "caption": "Only a slice of sunlight becomes usable PAR", "closes": false, "layout": "chain"}
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Sun", "Producers", "Consumers", "Heat"], "active_node": -1, "branch_at": -1, "caption": "Energy flows one way: Sun to heat", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Grazing food chain starts with living producers
+  NODES     : ['grass', 'grasshopper', 'frog', 'snake']
+  PARAMS    : {"layout": "chain", "nodes": ["Grass", "Grasshopper", "Frog", "Snake"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Grazing food chain starts with living producers"}
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 4]  The Ten Per Cent Law: Lindeman's Rule
+  OBJECTIVE : State Lindeman's ten per cent law and apply it to calculate energy at successive trophic levels.
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Grass", "Grasshopper", "Frog", "Snake"], "active_node": -1, "branch_at": -1, "caption": "Grazing food chain starts with living producers", "closes": false, "layout": "c…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Sunlight", "PAR (<50%)", "Producers"], "active_node": -1, "branch_at": -1, "caption": "Only a slice of sunlight becomes usable PAR", "closes": false, "layout": "chain"}
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Sun", "Producers", "Consumers", "Heat"], "active_node": -1, "branch_at": -1, "caption": "Energy flows one way: Sun to heat", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Each step passes only 10%
+  NODES     : ['producers 10,000 kj', 'herbivores 1,000 kj', 'secondary 100 kj']
+  PARAMS    : {"layout": "chain", "nodes": ["Producers 10,000 kJ", "Herbivores 1,000 kJ", "Secondary 100 kJ"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Each step passes only 10%"}
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 5]  Why Chains Are Short: The Energy Ceiling
+  OBJECTIVE : Explain why food chains rarely exceed 4-5 trophic levels using the ten per cent law.
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers 10,000 kJ", "Herbivores 1,000 kJ", "Secondary 100 kJ"], "active_node": -1, "branch_at": -1, "caption": "Each step passes only 10%", "closes": false, "layout":…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Grass", "Grasshopper", "Frog", "Snake"], "active_node": -1, "branch_at": -1, "caption": "Grazing food chain starts with living producers", "closes": false, "layout": "c…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Sunlight", "PAR (<50%)", "Producers"], "active_node": -1, "branch_at": -1, "caption": "Only a slice of sunlight becomes usable PAR", "closes": false, "layout": "chain"}
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["Sun", "Producers", "Consumers", "Heat"], "active_node": -1, "branch_at": -1, "caption": "Energy flows one way: Sun to heat", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Energy dwindles to almost nothing by level 6
+  NODES     : ['producers 100,000 kj', 'level 2: 10,000 kj', 'level 3: 1,000 kj', 'level 4: 100 kj', 'level 5: 10 kj', 'level 6: 1 kj']
+  PARAMS    : {"layout": "chain", "nodes": ["Producers 100,000 kJ", "Level 2: 10,000 kJ", "Level 3: 1,000 kJ", "Level 4: 100 kJ", "Level 5: 10 kJ", "Level 6: 1 kJ"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Energy dwindles to almost nothing by level 6"}
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 6]  Ecological Pyramids: Number, Biomass, Energy
+  OBJECTIVE : Describe the three types of ecological pyramids and identify which can be inverted.
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Producers 100,000 kJ", "Level 2: 10,000 kJ", "Level 3: 1,000 kJ", "Level 4: 100 kJ", "Level 5: 10 kJ", "Level 6: 1 kJ"], "active_node": -1, "branch_at": -1, "caption": …
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers 10,000 kJ", "Herbivores 1,000 kJ", "Secondary 100 kJ"], "active_node": -1, "branch_at": -1, "caption": "Each step passes only 10%", "closes": false, "layout":…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Grass", "Grasshopper", "Frog", "Snake"], "active_node": -1, "branch_at": -1, "caption": "Grazing food chain starts with living producers", "closes": false, "layout": "c…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Sunlight", "PAR (<50%)", "Producers"], "active_node": -1, "branch_at": -1, "caption": "Only a slice of sunlight becomes usable PAR", "closes": false, "layout": "chain"}
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=labeled_axes_plot
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 7]  Pyramid Blind Spots and Exam Traps
+  OBJECTIVE : List the limitations of ecological pyramids and avoid common exam errors.
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Producers 100,000 kJ", "Level 2: 10,000 kJ", "Level 3: 1,000 kJ", "Level 4: 100 kJ", "Level 5: 10 kJ", "Level 6: 1 kJ"], "active_node": -1, "branch_at": -1, "caption": …
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers 10,000 kJ", "Herbivores 1,000 kJ", "Secondary 100 kJ"], "active_node": -1, "branch_at": -1, "caption": "Each step passes only 10%", "closes": false, "layout":…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Grass", "Grasshopper", "Frog", "Snake"], "active_node": -1, "branch_at": -1, "caption": "Grazing food chain starts with living producers", "closes": false, "layout": "c…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Sunlight", "PAR (<50%)", "Producers"], "active_node": -1, "branch_at": -1, "caption": "Only a slice of sunlight becomes usable PAR", "closes": false, "layout": "chain"}
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=None
+  SANE      : ____
+
+[energy-flow-and-the-ten-per-cent-law  seg 8]  Numerical Practice: Applying the 10% Law
+  OBJECTIVE : Solve typical exam numericals involving energy transfer across trophic levels.
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Producers 100,000 kJ", "Level 2: 10,000 kJ", "Level 3: 1,000 kJ", "Level 4: 100 kJ", "Level 5: 10 kJ", "Level 6: 1 kJ"], "active_node": -1, "branch_at": -1, "caption": …
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Producers 10,000 kJ", "Herbivores 1,000 kJ", "Secondary 100 kJ"], "active_node": -1, "branch_at": -1, "caption": "Each step passes only 10%", "closes": false, "layout":…
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Grass", "Grasshopper", "Frog", "Snake"], "active_node": -1, "branch_at": -1, "caption": "Grazing food chain starts with living producers", "closes": false, "layout": "c…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Sunlight", "PAR (<50%)", "Producers"], "active_node": -1, "branch_at": -1, "caption": "Only a slice of sunlight becomes usable PAR", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Each arrow multiplies by 0.1
+  NODES     : ['producers 48,000 kj', 'herbivores 4,800 kj', 'secondary 480 kj']
+  PARAMS    : {"layout": "chain", "nodes": ["Producers 48,000 kJ", "Herbivores 4,800 kJ", "Secondary 480 kJ"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Each arrow multiplies by 0.1"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 1]  Why Phosphorus Matters: The Element of Life
+  OBJECTIVE : Explain why phosphorus is essential for living organisms and identify its key biological roles.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['atp', 'adp + pi', 'energy']
+  PARAMS    : {"layout": "chain", "nodes": ["ATP", "ADP + Pi", "Energy"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "ATP breakdown releases energy"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 2]  The Reservoir: Where Phosphorus Lives
+  OBJECTIVE : Identify the main reservoir of phosphorus and explain why the cycle is classified as sedimentary.
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["ATP", "ADP + Pi", "Energy"], "active_node": -1, "branch_at": -1, "caption": "ATP breakdown releases energy", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Reservoir location decides cycle type
+  NODES     : ['atmosphere/hydrosphere', 'gaseous cycle', "earth's crust/rocks", 'sedimentary cycle']
+  PARAMS    : {"layout": "chain", "nodes": ["Atmosphere/Hydrosphere", "Gaseous cycle", "Earth's crust/Rocks", "Sedimentary cycle"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Reservoir location decides cycle type"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 3]  Weathering: Releasing Phosphorus from Rock
+  OBJECTIVE : Describe how weathering releases phosphate ions into the soil solution.
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Atmosphere/Hydrosphere", "Gaseous cycle", "Earth's crust/Rocks", "Sedimentary cycle"], "active_node": -1, "branch_at": -1, "caption": "Reservoir location decides cycle …
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["ATP", "ADP + Pi", "Energy"], "active_node": -1, "branch_at": -1, "caption": "ATP breakdown releases energy", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Weathering releases phosphate into soil
+  NODES     : ['rock phosphate', 'weathering', 'po4^3- in soil']
+  PARAMS    : {"layout": "chain", "nodes": ["Rock phosphate", "Weathering", "PO4^3- in soil"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Weathering releases phosphate into soil"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 4]  Uptake and the Food Chain: Phosphorus in Living Systems
+  OBJECTIVE : Trace the movement of phosphorus from soil to producers and through the food chain.
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Rock phosphate", "Weathering", "PO4^3- in soil"], "active_node": -1, "branch_at": -1, "caption": "Weathering releases phosphate into soil", "closes": false, "layout": "…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Atmosphere/Hydrosphere", "Gaseous cycle", "Earth's crust/Rocks", "Sedimentary cycle"], "active_node": -1, "branch_at": -1, "caption": "Reservoir location decides cycle …
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["ATP", "ADP + Pi", "Energy"], "active_node": -1, "branch_at": -1, "caption": "ATP breakdown releases energy", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Phosphorus enters plants from soil
+  NODES     : ['soil phosphate', 'plant roots', 'atp, dna, membranes']
+  PARAMS    : {"layout": "chain", "nodes": ["Soil phosphate", "Plant roots", "ATP, DNA, membranes"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Phosphorus enters plants from soil"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 5]  Return to Soil: Decomposers and Phosphate-Solubilising Bacteria
+  OBJECTIVE : Explain how decomposers and phosphate-solubilising bacteria return phosphorus to the soil.
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Soil phosphate", "Plant roots", "ATP, DNA, membranes"], "active_node": -1, "branch_at": -1, "caption": "Phosphorus enters plants from soil", "closes": false, "layout": …
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Rock phosphate", "Weathering", "PO4^3- in soil"], "active_node": -1, "branch_at": -1, "caption": "Weathering releases phosphate into soil", "closes": false, "layout": "…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Atmosphere/Hydrosphere", "Gaseous cycle", "Earth's crust/Rocks", "Sedimentary cycle"], "active_node": -1, "branch_at": -1, "caption": "Reservoir location decides cycle …
+  PRIOR     : segment 1 — `process_flow` {"nodes": ["ATP", "ADP + Pi", "Energy"], "active_node": -1, "branch_at": -1, "caption": "ATP breakdown releases energy", "closes": false, "layout": "chain"}
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Decomposers recycle phosphorus to soil
+  NODES     : ['dead organic matter', 'decomposers', 'phosphate in soil']
+  PARAMS    : {"layout": "ring", "nodes": ["Dead organic matter", "Decomposers", "Phosphate in soil"], "closes": true, "branch_at": -1, "active_node": -1, "caption": "Decomposers recycle phosphorus to soil"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 6]  The Slow Return: Sedimentation and Geological Uplift
+  OBJECTIVE : Describe how phosphorus is lost to sediments and eventually returns via geological uplift.
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Dead organic matter", "Decomposers", "Phosphate in soil"], "active_node": -1, "branch_at": -1, "caption": "Decomposers recycle phosphorus to soil", "closes": true, "lay…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Soil phosphate", "Plant roots", "ATP, DNA, membranes"], "active_node": -1, "branch_at": -1, "caption": "Phosphorus enters plants from soil", "closes": false, "layout": …
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Rock phosphate", "Weathering", "PO4^3- in soil"], "active_node": -1, "branch_at": -1, "caption": "Weathering releases phosphate into soil", "closes": false, "layout": "…
+  PRIOR     : segment 2 — `process_flow` {"nodes": ["Atmosphere/Hydrosphere", "Gaseous cycle", "Earth's crust/Rocks", "Sedimentary cycle"], "active_node": -1, "branch_at": -1, "caption": "Reservoir location decides cycle …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['soil phosphate', 'runoff to ocean', 'ocean sediments', 'locked for millions of years']
+  PARAMS    : {"layout": "chain", "nodes": ["Soil phosphate", "Runoff to ocean", "Ocean sediments", "Locked for millions of years"], "closes": false, "branch_at": -1, "active_node": -1, "caption": "Phosphorus lost to sediments"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 7]  Phosphorus vs. Carbon: Gaseous vs. Sedimentary Cycles
+  OBJECTIVE : Compare the phosphorus cycle with the carbon cycle, highlighting key differences in speed and reservoir.
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Soil phosphate", "Runoff to ocean", "Ocean sediments", "Locked for millions of years"], "active_node": -1, "branch_at": -1, "caption": "Phosphorus lost to sediments", "…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Dead organic matter", "Decomposers", "Phosphate in soil"], "active_node": -1, "branch_at": -1, "caption": "Decomposers recycle phosphorus to soil", "closes": true, "lay…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Soil phosphate", "Plant roots", "ATP, DNA, membranes"], "active_node": -1, "branch_at": -1, "caption": "Phosphorus enters plants from soil", "closes": false, "layout": …
+  PRIOR     : segment 3 — `process_flow` {"nodes": ["Rock phosphate", "Weathering", "PO4^3- in soil"], "active_node": -1, "branch_at": -1, "caption": "Weathering releases phosphate into soil", "closes": false, "layout": "…
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Carbon cycle: gaseous and fast
+  NODES     : ['carbon: atmosphere co2', 'photosynthesis', 'respiration/decomposition/combustion', 'back to atmosphere']
+  PARAMS    : {"layout": "chain", "nodes": ["Carbon: atmosphere CO2", "Photosynthesis", "Respiration/Decomposition/Combustion", "Back to atmosphere"], "closes": true, "branch_at": -1, "active_node": -1, "caption": "Carbon cycle: gaseous and fast"}
+  SANE      : ____
+
+[phosphorus-cycle  seg 8]  Exam Traps and Quick Revision
+  OBJECTIVE : Identify common exam pitfalls and recall key points about the phosphorus cycle.
+  PRIOR     : segment 7 — `process_flow` {"nodes": ["Carbon: atmosphere CO2", "Photosynthesis", "Respiration/Decomposition/Combustion", "Back to atmosphere"], "active_node": -1, "branch_at": -1, "caption": "Carbon cycle: …
+  PRIOR     : segment 6 — `process_flow` {"nodes": ["Soil phosphate", "Runoff to ocean", "Ocean sediments", "Locked for millions of years"], "active_node": -1, "branch_at": -1, "caption": "Phosphorus lost to sediments", "…
+  PRIOR     : segment 5 — `process_flow` {"nodes": ["Dead organic matter", "Decomposers", "Phosphate in soil"], "active_node": -1, "branch_at": -1, "caption": "Decomposers recycle phosphorus to soil", "closes": true, "lay…
+  PRIOR     : segment 4 — `process_flow` {"nodes": ["Soil phosphate", "Plant roots", "ATP, DNA, membranes"], "active_node": -1, "branch_at": -1, "caption": "Phosphorus enters plants from soil", "closes": false, "layout": …
+  FIRED     : process_flow v1 route=archetype_high
+  CAPTION   : Phosphorus cycle: no atmospheric phase
+  NODES     : ['rock phosphate', 'weathering', 'soil phosphate', 'plants & food chain', 'decomposers & p-solubilising bacteria', 'back to soil']
+  PARAMS    : {"layout": "chain", "nodes": ["Rock phosphate", "Weathering", "Soil phosphate", "Plants & food chain", "Decomposers & P-solubilising bacteria", "Back to soil"], "closes": true, "branch_at": -1, "active_node": -1, "caption": "Phosphorus cycle: no atmospheric phase"}
+  SANE      : ____

@@ -704,6 +704,69 @@ def measure_image(data: bytes) -> Tuple[int, int, str]:
     return width, height, content_type
 
 
+_CONCEPT_INDEX = None
+
+
+def load_concept_tables():
+    """(chapters, concepts) straight from the database.
+
+    Module level so tests can replace it — the same seam `get_client`,
+    `fetch_all` and `public_head` use. Reading Supabase inline inside
+    `resolve_concept` made eleven hermetic tests reach the network, and they
+    did not fail with a connection error: they got a real, EMPTY-for-fixtures
+    index back and refused every fixture row for "no concept matches". A unit
+    test that silently consults production is not hermetic even when it passes.
+    """
+    from app.db import supabase
+    chapters = supabase.table("chapters").select(
+        "id,name,subject,class_level").execute().data or []
+    concepts = supabase.table("concepts").select(
+        "id,chapter_id,name").execute().data or []
+    return chapters, concepts
+
+
+def build_concept_index(chapters, concepts):
+    """Pure. Two dicts, no I/O — so the lookup rule is testable on its own."""
+    by_chapter = {}
+    for c in chapters:
+        by_chapter[(str(c["subject"]).lower(), int(c["class_level"] or 0),
+                    str(c["name"]).strip())] = c["id"]
+    by_name = {}
+    for c in concepts:
+        by_name.setdefault(c["chapter_id"], {})[str(c["name"]).strip()] = c["id"]
+    return by_chapter, by_name
+
+
+def resolve_concept(subject: str, class_level, chapter: str, concept: str):
+    """(concept_id, chapter_id) for a manifest row, or (None, None).
+
+    WITHOUT THIS EVERY ROW IS INVISIBLE. Slot 3 in tutor.py resolves
+    (chapter_id, subtopic_key) -> concepts.id -> concept_assets.concept_id. A
+    row written with a null concept_id is stored, uploaded, publicly readable —
+    and can never reach a board, because nothing joins to it. The first version
+    of this command never populated the column at all.
+
+    Matched on EXACT names, deliberately. `concept_archetypes` makes the same
+    join and its own test records why: physics 11 ch6 is spelled with '&' in
+    one place and 'and' in another, and a normaliser that papers over that
+    hides a real disagreement about what a concept is called rather than
+    surfacing it.
+    """
+    global _CONCEPT_INDEX
+    if _CONCEPT_INDEX is None:
+        _CONCEPT_INDEX = build_concept_index(*load_concept_tables())
+    by_chapter, by_name = _CONCEPT_INDEX
+    try:
+        lvl = int(str(class_level).strip())
+    except (TypeError, ValueError):
+        return None, None
+    chapter_id = by_chapter.get((str(subject).strip().lower(), lvl,
+                                 str(chapter).strip()))
+    if not chapter_id:
+        return None, None
+    return by_name.get(chapter_id, {}).get(str(concept).strip()), chapter_id
+
+
 def validate_image_file(path: str, label: str,
                         check_geometry: bool = True) -> Dict[str, object]:
     """Everything an image file has to be. Raises Refusal on anything else.
@@ -1012,9 +1075,33 @@ def validate_row(entry: Dict[str, str], folder: str, generator_model: str,
             "subject": {"bio": "biology"}.get(
                 (entry.get("subject") or "").strip().lower(),
                 (entry.get("subject") or "").strip().lower()) or None,
-            "class_level": int(entry["class"]) if (entry.get("class") or
-                                                   "").strip().isdigit() else None,
+            "class_level": int(entry["class_"]) if (entry.get("class_") or
+                                                    "").strip().isdigit() else None,
+            # 0036. `sub` is the letter; empty means a sole asset, which is a
+            # SET OF ONE and must not be a special case downstream.
+            "concept_slug": (entry.get("concept_slug") or "").strip() or slug,
+            "sub_index": sub_index_of(entry.get("sub")),
         }
+
+        # THE JOIN SLOT 3 DEPENDS ON. Resolved here, and its absence is a
+        # REFUSAL rather than a null: a row with no concept_id is uploaded,
+        # public, and unreachable by any board — the most expensive possible
+        # way to store nothing.
+        concept_id, chapter_id = resolve_concept(
+            row["subject"], row["class_level"],
+            entry.get("chapter"), entry.get("concept"))
+        if not concept_id:
+            raise Refusal(
+                f"no concept matches (subject={row['subject']!r}, "
+                f"class={row['class_level']}, chapter={entry.get('chapter')!r}, "
+                f"concept={entry.get('concept')!r}).\n"
+                f"      Slot 3 joins concept_assets.concept_id, so a row "
+                f"written without it can never reach a board. Names are "
+                f"matched exactly; fix the manifest or the concept, do not "
+                f"normalise the difference away."
+            )
+        row["concept_id"] = concept_id
+        row["chapter_id"] = chapter_id
         # THE SHAPE ADVISORY, carried by slug into the run report.
         #
         # OCR found no legible token, so the row is not refused — but the shape
@@ -1268,6 +1355,16 @@ def strip_raw_to_masters(raw_dir: Path, out_dir: Path, halo: int = 5,
 def cmd_ingest(args) -> int:
     dry = not args.execute
 
+    # --strip runs FIRST and separately: it produces the masters that the rest
+    # of this command then treats as inputs. Not folded into the per-row loop,
+    # because a half-stripped drop with a half-ingested manifest is two partial
+    # states to reason about instead of one.
+    if getattr(args, "strip", None):
+        made = strip_raw_to_masters(Path(args.strip), Path(args.dir),
+                                    args.strip_halo, args.strip_chroma)
+        print(f"--strip: derived {len(made)} master(s) from {args.strip} "
+              f"into {args.dir}\n")
+
     try:
         entries = read_manifest(args.manifest)
         sha = prompt_sha(args.work_order)
@@ -1358,6 +1455,8 @@ def cmd_ingest(args) -> int:
 
     bucket = storage_r2.assets_bucket_name()
     wrote, failed = 0, 0
+    skipped_unchanged: List[str] = []
+    renditions: List[Tuple[str, str, int]] = []
     print()
     for r in ready:
         row = r.row or {}
@@ -1369,10 +1468,48 @@ def cmd_ingest(args) -> int:
             failed += 1
             continue
 
+        # CONTENT-HASH SKIP, against the OBJECT rather than the row.
+        #
+        # A re-run over an unchanged package must not re-upload 112 objects or
+        # rewrite 112 rows. The obvious comparison — the row's sha256 against
+        # the manifest's — CANNOT BE MADE: `concept_assets` has no master
+        # sha256 column, only `labelled_reference_sha256`, which is the RAW
+        # file's hash and does not move when a master is re-cut. Written that
+        # way it compares None to None and skips everything, always, which is a
+        # check that passes because it looked at nothing.
+        #
+        # So the comparison is to what is actually stored: R2's ETag is the MD5
+        # of a single-part upload, and these objects are all well under the
+        # multipart threshold. Same bytes at the same key plus a row already
+        # present means there is nothing to do.
+        if existing:
+            try:
+                head = storage_r2.get_client().head_object(
+                    Bucket=bucket, Key=row["r2_key"])
+                etag = (head.get("ETag") or "").strip('"')
+                if etag == hashlib.md5(r.data).hexdigest():
+                    skipped_unchanged.append(r.slug)
+                    continue
+            except Exception:
+                # No object, or no answer. Fall through and upload it — a row
+                # without its object is the one state this ordering exists to
+                # prevent, and re-uploading is cheap next to leaving it.
+                pass
+
         # 1. upload, 2. confirm it is there. Only then, 3. record it.
         try:
             stored = upload_and_verify(row["r2_key"], r.data,
                                        row["content_type"])
+            # THE RENDITION, beside the master and before the row is written.
+            # If it fails the row is not recorded, for the same reason the
+            # master's upload failing stops it: the client picks @2x on every
+            # frame this app renders, so a row whose rendition is missing is a
+            # row that resolves to a 404 on a real device.
+            rend = make_rendition(r.data)
+            if rend is not None:
+                rkey = rendition_key(row["r2_key"])
+                upload_and_verify(rkey, rend, row["content_type"])
+                renditions.append((r.slug, rkey, len(rend)))
         except Exception as err:
             sys.stderr.write(
                 f"{r.slug}: UPLOAD FAILED for {bucket}/{row['r2_key']}: {err}\n"
@@ -1399,6 +1536,11 @@ def cmd_ingest(args) -> int:
         wrote += 1
         print(f"{r.slug}: uploaded {stored:,} bytes and {verb} the row")
 
+    if renditions:
+        print(f"\n@2x RENDITIONS uploaded: {len(renditions)}")
+    if skipped_unchanged:
+        print(f"UNCHANGED, nothing re-uploaded or rewritten: "
+              f"{len(skipped_unchanged)}")
     print(f"\nWROTE {wrote}, FAILED {failed}")
     return 1 if failed else (2 if refused else 0)
 
@@ -1418,16 +1560,6 @@ def public_head(url: str) -> Tuple[int, str]:
     one URL with one Origin: urllib default UA -> 403 and no CORS header;
     browser UA -> 404 and `Access-Control-Allow-Origin: *`.
     """
-    # --strip runs FIRST and separately: it produces the masters that the rest
-    # of this command then treats as inputs. Not folded into the per-row loop,
-    # because a half-stripped drop with a half-ingested manifest is two partial
-    # states to reason about instead of one.
-    if getattr(args, "strip", None):
-        made = strip_raw_to_masters(Path(args.strip), Path(args.dir),
-                                    args.strip_halo, args.strip_chroma)
-        print(f"--strip: derived {len(made)} master(s) from {args.strip} "
-              f"into {args.dir}\n")
-
     import urllib.error
     import urllib.request
 

@@ -127,6 +127,34 @@ GOOD_ROW = {
     "author": "MonkLearning (AI-generated, Gemini)",
 }
 
+CHAPTER_ID = "chap-0001"
+CONCEPT_ID = "conc-0001"
+
+# The two tables `resolve_concept` reads, matching GOOD_ROW. `subject` is
+# 'biology' here and 'bio' in the manifest on purpose: the ingest expands the
+# abbreviation, and pinning both sides of that expansion is what makes the
+# expansion testable.
+FAKE_CHAPTERS = [{"id": CHAPTER_ID, "name": GOOD_ROW["chapter"],
+                  "subject": "biology", "class_level": 11}]
+FAKE_CONCEPTS = [{"id": CONCEPT_ID, "chapter_id": CHAPTER_ID,
+                  "name": GOOD_ROW["concept"]}]
+
+
+@pytest.fixture(autouse=True)
+def offline_concept_index(monkeypatch):
+    """No test in this file may reach the concepts table.
+
+    Autouse and unconditional. When `resolve_concept` read Supabase inline,
+    eleven tests here quietly consulted PRODUCTION and refused every fixture
+    row — a hermetic suite that was not hermetic, failing for a reason that
+    had nothing to do with what each test was asserting. The module-level
+    cache is reset too, or the first test to populate it leaks into the rest.
+    """
+    monkeypatch.setattr(ia, "_CONCEPT_INDEX", None)
+    monkeypatch.setattr(ia, "load_concept_tables",
+                        lambda: (FAKE_CHAPTERS, FAKE_CONCEPTS))
+
+
 
 @pytest.fixture
 def work_order(tmp_path):
@@ -1251,3 +1279,83 @@ def test_ocr_sensitivity_is_pinned_on_the_synthetic_benchmark():
     caught = sum(1 for d in labelled if (r := probe._ocr(d)) is not None
                  and r.verdict == "ocr-found-text")
     assert caught >= 12, f"OCR caught {caught}/20, below the measured 12"
+
+
+# ---------------------------------------------------------------------------
+# concept_id — the join slot 3 makes, and the column the first version of this
+# command never wrote at all.
+# ---------------------------------------------------------------------------
+
+def test_the_written_row_carries_the_ids_slot_3_joins_on(bench, wired):
+    """Positive proof, because the failure mode here is SILENT.
+
+    A row with a null concept_id is accepted by the table, uploaded, publicly
+    readable, and joined by nothing: `_illustration_set_for` filters
+    concept_assets on concept_id, so the asset is invisible to every board and
+    the only symptom is a concept that never shows a figure. Asserting the
+    values are present and correct is the only thing that catches it before a
+    hundred rows are written that way.
+    """
+    _, db = wired
+    assert ia.main(bench() + ["--execute"]) == 0
+    row = db.inserts[0]
+    assert row["concept_id"] == CONCEPT_ID
+    assert row["chapter_id"] == CHAPTER_ID
+    assert row["concept_slug"] == SLUG
+    assert row["sub_index"] == 0
+    # 'bio' in the manifest, 'biology' in chapters. The match only happens
+    # because the ingest expands it; pin the expanded value it stored.
+    assert row["subject"] == "biology"
+
+
+def test_a_concept_the_database_does_not_have_is_refused_not_nulled(
+        bench, wired, capsys):
+    """And refused BEFORE the upload, so it costs nothing.
+
+    The tempting alternative is to write NULL and move on, which is how 112
+    invisible rows get created. The refusal names both sides of the mismatch
+    so the manifest or the concept can be fixed — it does not normalise the
+    difference away, for the same reason `concept_archetypes` does not:
+    physics 11 ch6 is spelled '&' in one table and 'and' in another, and
+    papering over that hides a real disagreement about what a concept is
+    called.
+    """
+    row = dict(GOOD_ROW)
+    row["concept"] = "Cockroach: Nervous System & Reproduction"   # & vs and
+    code = ia.main(bench(rows=[row]) + ["--execute"])
+    out = capsys.readouterr().out
+    s3, db = wired
+    assert code == 2
+    assert db.inserts == []
+    assert s3.puts == []                     # refused before anything uploaded
+    assert "no concept matches" in out
+    assert "Nervous System & Reproduction" in out
+
+
+def test_the_chapter_must_match_too_not_just_the_concept_name(bench, wired):
+    """A concept name is unique only within its chapter.
+
+    `by_name` is keyed by chapter_id for that reason. Without the chapter half
+    of the key, 'Structure and Function' would resolve to whichever chapter
+    happened to be read first.
+    """
+    row = dict(GOOD_ROW)
+    row["chapter"] = "Animal Kingdom"        # real chapter, wrong one
+    assert ia.main(bench(rows=[row]) + ["--execute"]) == 2
+    _, db = wired
+    assert db.inserts == []
+
+
+def test_build_concept_index_is_pure_and_matches_exactly():
+    """The lookup rule on its own, with no ingest and no I/O around it."""
+    by_chapter, by_name = ia.build_concept_index(FAKE_CHAPTERS, FAKE_CONCEPTS)
+    assert by_chapter[("biology", 11, GOOD_ROW["chapter"])] == CHAPTER_ID
+    assert by_name[CHAPTER_ID][GOOD_ROW["concept"]] == CONCEPT_ID
+    # Surrounding whitespace is stripped on both sides — a trailing space in a
+    # CSV cell is not a different concept.
+    assert ia.build_concept_index(
+        FAKE_CHAPTERS, [{"id": "x", "chapter_id": CHAPTER_ID,
+                         "name": "  Padded  "}])[1][CHAPTER_ID]["Padded"] == "x"
+    # Case is NOT folded. 'DNA' and 'Dna' are not the same concept, and a
+    # difference in case is a difference someone should see.
+    assert "cockroach: nervous system and reproduction" not in by_name[CHAPTER_ID]
