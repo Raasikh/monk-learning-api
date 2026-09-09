@@ -1008,10 +1008,56 @@ def _verify_with(monkeypatch, rows, objects, public=None):
 
 
 def test_verify_clean(monkeypatch, capsys):
+    # A master AND its @2x. A bucket holding only masters is not clean — see
+    # test_verify_reports_a_master_with_no_rendition.
+    code = _verify_with(monkeypatch, [_row("a", "concept-assets/a.png")],
+                        {"concept-assets/a.png": b"x" * 2048,
+                         "concept-assets/a@2x.png": b"x" * 6000})
+    assert code == 0
+    out = capsys.readouterr().out
+    assert "OK on storage" in out
+    # Both keys went over the anonymous path, not just the master.
+    assert "2 key(s) checked anonymously" in out
+
+
+def test_verify_reports_a_master_with_no_rendition(monkeypatch, capsys):
+    """The blank board nothing else notices.
+
+    `pickRendition` chooses @2x at all three frames this app renders — 343 and
+    495 at 3x, 900 at 2x are 1029, 1485 and 1800 device pixels against an
+    896px master — so the app never requests the master. A missing rendition
+    is a 404 on the board while the row, the master and the sizes all agree.
+    """
     code = _verify_with(monkeypatch, [_row("a", "concept-assets/a.png")],
                         {"concept-assets/a.png": b"x" * 2048})
+    out = capsys.readouterr().out
+    assert code == 1
+    assert "MISSING @2x RENDITION (1)" in out
+    assert "concept-assets/a@2x.png" in out
+
+
+def test_a_rendition_is_not_an_orphan(monkeypatch, capsys):
+    """It has no row of its own and never will — it is reconciled through its
+    master. Counting it as unreferenced would have reported 108 false orphans
+    and buried a real one."""
+    code = _verify_with(monkeypatch, [_row("a", "concept-assets/a.png")],
+                        {"concept-assets/a.png": b"x" * 2048,
+                         "concept-assets/a@2x.png": b"x" * 6000})
     assert code == 0
-    assert "OK on storage" in capsys.readouterr().out
+    assert "ORPHANED OBJECTS" not in capsys.readouterr().out
+
+
+def test_a_rendition_whose_master_has_no_row_IS_an_orphan(monkeypatch, capsys):
+    """The distinction the expected-set lookup buys: @2x is excused only when
+    its master is a row. A rendition left behind by a failed run is not."""
+    code = _verify_with(monkeypatch, [_row("a", "concept-assets/a.png")],
+                        {"concept-assets/a.png": b"x" * 2048,
+                         "concept-assets/a@2x.png": b"x" * 6000,
+                         "concept-assets/gone@2x.png": b"x" * 6000})
+    out = capsys.readouterr().out
+    assert code == 1
+    assert "ORPHANED OBJECTS — an object no row points at (1)" in out
+    assert "concept-assets/gone@2x.png" in out
 
 
 def test_verify_reports_a_row_with_no_object(monkeypatch, capsys):
@@ -1044,7 +1090,9 @@ def test_verify_counts_the_two_soft_backlogs(monkeypatch, capsys):
     rows = [_row("a", "concept-assets/a.png",
                  text_check="heuristic-clean-ocr-unavailable",
                  syllabus_gap=None)]
-    code = _verify_with(monkeypatch, rows, {"concept-assets/a.png": b"x" * 2048})
+    code = _verify_with(monkeypatch, rows,
+                        {"concept-assets/a.png": b"x" * 2048,
+                         "concept-assets/a@2x.png": b"x" * 6000})
     out = capsys.readouterr().out
     assert code == 0                     # not storage problems
     assert "TEXT CHECK INCONCLUSIVE (1 of 1)" in out

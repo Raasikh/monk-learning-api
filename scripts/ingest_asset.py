@@ -1762,8 +1762,26 @@ def cmd_verify(args) -> int:
     # UNKNOWABLE, not empty. Without a listing, "no dangling rows" would be a
     # green tick produced by having looked at nothing — the exact shape this
     # file's own header warns about.
+    # A rendition is not a row and never will be: `@2x` is a variant of its
+    # master, reconciled through the master's row. Counting it as unreferenced
+    # would report every healthy rendition as an orphan — 108 false positives —
+    # and, worse, would make a genuinely orphaned rendition invisible in the
+    # noise.
+    expected_renditions = {rendition_key(k): k for k in by_key}
+
     dangling = [] if s3_error else [r for r in rows if r["r2_key"] not in objects]
-    unreferenced = [] if s3_error else sorted(k for k in objects if k not in by_key)
+    unreferenced = [] if s3_error else sorted(
+        k for k in objects if k not in by_key and k not in expected_renditions)
+
+    # THE OTHER DIRECTION, and it is the one that shows a student a blank
+    # board. `pickRendition` in the app chooses @2x at ALL THREE frames — 343
+    # and 495 at 3x, 900 at 2x are 1029, 1485 and 1800 device pixels against an
+    # 896px master — so a master whose rendition is missing is not "served at
+    # lower quality", it is a 404. Nothing above notices: the row is fine, the
+    # master is fine, the sizes agree.
+    missing_renditions = [] if s3_error else sorted(
+        master for rend, master in expected_renditions.items()
+        if rend not in objects)
     mismatched = [
         (r, objects[r["r2_key"]]["Size"]) for r in rows
         if r["r2_key"] in objects
@@ -1794,6 +1812,15 @@ def cmd_verify(args) -> int:
               "Usually an ingest whose database write failed.")
         for k in unreferenced:
             print(f"  {k}  ({objects[k]['Size']:,} bytes)")
+        print()
+
+    if missing_renditions:
+        print(f"MISSING @2x RENDITION ({len(missing_renditions)}).")
+        print("  Every board this app renders picks @2x over the master "
+              "(1029, 1485 and 1800 device px against 896). A master without "
+              "one is a 404 on the board, not a softer image.")
+        for k in missing_renditions:
+            print(f"  {by_key[k]['asset_slug']}  wants {rendition_key(k)}")
         print()
 
     if mismatched:
@@ -1867,19 +1894,30 @@ def cmd_verify(args) -> int:
                 "curl and fail from the app."
             )
 
-        # And the rows themselves, over the same anonymous path the app uses.
+        # And the rows themselves, over the same anonymous path the app uses —
+        # MASTER AND RENDITION BOTH. Checking only the master would give a
+        # clean bill of health to the file the app never requests: every board
+        # this app renders picks @2x.
+        checked = 0
         for r in rows:
-            code, _ = public_head(f"{base}/{r['r2_key']}")
-            if code != 200:
-                public_bad.append(f"{r['asset_slug']}: {r['r2_key']} -> {code} publicly "
-                                  f"(present in R2, unreachable by the app)")
+            for key in (r["r2_key"], rendition_key(r["r2_key"])):
+                code, _ = public_head(f"{base}/{key}")
+                checked += 1
+                if code != 200:
+                    public_bad.append(
+                        f"{r['asset_slug']}: {key} -> {code} publicly "
+                        f"(present in R2, unreachable by the app)")
+        print(f"public HEAD: {checked} key(s) checked anonymously "
+              f"({len(rows)} masters + {len(rows)} renditions), "
+              f"{checked - len(public_bad)} returned 200.")
         if public_bad:
             print("PUBLIC LEG PROBLEMS:")
             for m in public_bad:
                 print(f"  {m}")
             print()
 
-    broken = bool(dangling or unreferenced or mismatched or dup_keys or public_bad or s3_error)
+    broken = bool(dangling or unreferenced or missing_renditions or mismatched
+                  or dup_keys or public_bad or s3_error)
     if s3_error:
         print(f"STORAGE LEG UNVERIFIED: {s3_error}")
         print("  Rows-vs-objects was NOT checked on this run. The public leg "
