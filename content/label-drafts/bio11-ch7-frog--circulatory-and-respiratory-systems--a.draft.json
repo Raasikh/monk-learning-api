@@ -1,0 +1,200 @@
+{
+  "asset_slug": "bio11-ch7-frog--circulatory-and-respiratory-systems--a",
+  "image_w": 896,
+  "image_h": 617,
+  "schema_version": 1,
+  "labels": [
+    {
+      "id": "sinus-venosus",
+      "text": {
+        "en": "sinus venosus",
+        "hi": ""
+      },
+      "anchor": [
+        0.658,
+        0.411
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "right-atrium",
+      "text": {
+        "en": "right atrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.453,
+        0.532
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "left-atrium",
+      "text": {
+        "en": "left atrium",
+        "hi": ""
+      },
+      "anchor": [
+        0.594,
+        0.524
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "ventricle",
+      "text": {
+        "en": "ventricle",
+        "hi": ""
+      },
+      "anchor": [
+        0.467,
+        0.79
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "conus-arteriosus",
+      "text": {
+        "en": "conus arteriosus",
+        "hi": ""
+      },
+      "anchor": [
+        0.389,
+        0.508
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "truncus-arteriosus",
+      "text": {
+        "en": "truncus arteriosus",
+        "hi": ""
+      },
+      "anchor": [
+        0.433,
+        0.355
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "carotid-arch",
+      "text": {
+        "en": "carotid arch",
+        "hi": ""
+      },
+      "anchor": [
+        0.347,
+        0.081
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "systemic-arch",
+      "text": {
+        "en": "systemic arch",
+        "hi": ""
+      },
+      "anchor": [
+        0.389,
+        0.105
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pulmocutaneous-arch",
+      "text": {
+        "en": "pulmocutaneous arch",
+        "hi": ""
+      },
+      "anchor": [
+        0.472,
+        0.145
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "pulmonary-vein",
+      "text": {
+        "en": "pulmonary vein",
+        "hi": ""
+      },
+      "anchor": [
+        0.653,
+        0.714
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "precaval-vein",
+      "text": {
+        "en": "precaval vein",
+        "hi": ""
+      },
+      "anchor": [
+        0.653,
+        0.306
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "postcaval-vein",
+      "text": {
+        "en": "postcaval vein",
+        "hi": ""
+      },
+      "anchor": [
+        0.656,
+        0.573
+      ],
+      "side": "auto"
+    },
+    {
+      "id": "lung",
+      "text": {
+        "en": "lung",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "buccal-cavity",
+      "text": {
+        "en": "buccal cavity",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "glottis",
+      "text": {
+        "en": "glottis",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "skin",
+      "text": {
+        "en": "skin",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    }
+  ],
+  "_draft": {
+    "generated_by": "content/tier3-svg/…--a.svg (authored leader endpoints)",
+    "model": null,
+    "unplaced": [
+      "lung",
+      "buccal cavity",
+      "glottis",
+      "skin"
+    ],
+    "shared_anchors": {},
+    "note": "Anchors are READ FROM THE DRAWING, not proposed by vision. This plate was authored in this repo, so every leader endpoint is where the term belongs by construction, and a vision guess would be strictly worse. The four unplaced terms are respiratory and belong to figure b of this set, not to the heart. Still no reviewed_by: exact is not the same as reviewed."
+  }
+}
