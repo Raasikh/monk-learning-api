@@ -726,36 +726,36 @@ def test_todo_rows_are_skipped_and_reported_not_silently_dropped(bench, wired,
     assert s3.puts == [] and db.inserts == []
 
 
-@pytest.mark.skipif(not REAL_MANIFEST.exists(),
-                    reason="the package manifest is not on this machine")
-def test_the_real_manifest_reports_the_svg_row_as_skipped(tmp_path, work_order,
-                                                          wired, capsys):
-    """drona-illustrations-v1.1 is 112 accepted rows and ONE svg-queue row.
+def test_a_status_this_command_does_not_ingest_is_a_counted_skip(bench, wired,
+                                                                capsys):
+    """Not silence: a category with a count and a named reason.
 
-    Replaces a test written against the superseded Downloads work order, which
-    was 48 rows at status=todo in the two-file schema. That package is gone;
-    asserting against it measured nothing.
-
-    The skip is the point: a status this command does not ingest is a category
-    with a count and a named reason, not silence. The 112 refuse here only
-    because this fixture points --dir at a temp folder with none of the files
-    in it — what is being measured is the SKIP, not the refusals.
+    This was written against the real manifest's one svg-queue row, and block E
+    promoted that row to accepted — so the test began measuring a manifest that
+    no longer contains the case. A behaviour test hostage to content someone
+    else edits is a test that goes quiet at the moment the content changes.
+    The row is synthetic now, so the behaviour holds whatever the package
+    happens to carry.
     """
-    code = ia.main(["ingest", "--dir", str(tmp_path), "--manifest",
-                    str(REAL_MANIFEST), "--work-order", work_order,
-                    "--generator-model", "gemini-3-pro-image"])
+    queued = dict(GOOD_ROW)
+    queued["asset_slug"] = SLUG + "-queued"
+    queued["file"] = f"masters/{queued['asset_slug']}.png"
+    queued["status"] = "svg-queue"
+    code = ia.main(bench(rows=[dict(GOOD_ROW), queued]))
     out = capsys.readouterr().out
-    assert code != 0
     assert "SKIPPED (1)" in out
     assert f"not marked '{ia.APPROVED_STATUS}'" in out
+    assert "READY (1)" in out          # the good row is unaffected by the skip
     s3, db = wired
-    assert s3.puts == [] and db.inserts == []
+    assert s3.puts == []                        # dry run uploads nothing
+    assert db.rows == []                        # and the probe cleans up
+
 
 def test_every_real_slug_passes_slug_validation():
     """The double hyphen must survive. 50 double-hyphen runs across 48 rows."""
     rows = [r for r in csv.DictReader(REAL_MANIFEST.open())
             if r["status"] == ia.APPROVED_STATUS]
-    assert len(rows) == 112, "drona-illustrations-v1.1 is 112 accepted assets"
+    assert len(rows) == 113, "drona-illustrations-v1.1 is 113 accepted assets (112 generated + the hand-authored frog heart)"
     doubles = 0
     for r in rows:
         ia.validate_slug(r["asset_slug"])          # raises on failure
@@ -1682,3 +1682,43 @@ def test_load_concept_tables_reads_past_the_1000_row_ceiling(monkeypatch):
                                    "Structural Organisation in Animals",
                                    "Concept 1100")
     assert cid == "c1100" and chid == "ch1"
+
+
+def test_the_writer_and_the_reader_agree_on_the_approved_status():
+    """One literal, imported by both sides, asserted here anyway.
+
+    0039 renamed this value from 'approved' to 'accepted' so the column would
+    say what the manifest says. tutor.py's slot 3 re-checks it on READ and kept
+    the old literal, so `_illustration_set_for` filtered on a value no row
+    carried and returned an empty set for EVERY concept. 113 assets were
+    stored, uploaded, publicly readable and invisible to every board, and
+    nothing failed: a filter that matches nothing looks exactly like a concept
+    with no art.
+
+    The grep that should have caught it errored — `--include=*.py` is not a
+    glob zsh expands — and printed nothing, which read as "no other users".
+    """
+    from app import storage_r2
+    from pathlib import Path
+
+    assert ia.APPROVED_STATUS == storage_r2.ASSET_APPROVED_STATUS
+
+    # Read as text rather than imported: app.drona.tutor boots the whole
+    # application (it refuses to import without DEEPGRAM_API_KEY) and this
+    # suite is hermetic. The thing under test is a string in a file.
+    src = (Path(__file__).resolve().parents[1] / "app" / "drona" / "tutor.py").read_text()
+    assert '"manifest_status", "approved"' not in src
+    assert "'manifest_status', 'approved'" not in src
+    assert "ASSET_APPROVED_STATUS" in src, (
+        "slot 3 must import the constant, not spell the value")
+
+
+def test_the_migration_and_the_code_agree():
+    """The database's CHECK is the third copy of this value. If a migration
+    admits one word and the code writes another, --execute fails all rows —
+    which is exactly how 0039 was discovered, after 210 objects were uploaded."""
+    from pathlib import Path
+    from app import storage_r2
+    sql = Path(__file__).resolve().parents[1] / "migrations" / "0039_manifest_status_accepted.sql"
+    body = sql.read_text()
+    assert f"manifest_status = '{storage_r2.ASSET_APPROVED_STATUS}'" in body

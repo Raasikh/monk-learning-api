@@ -8,6 +8,7 @@ import asyncio
 import logging
 from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, Any, AsyncGenerator, List, NamedTuple, Optional, Tuple
+from app import storage_r2
 from app.db import supabase
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
@@ -471,10 +472,16 @@ def _illustration_set_for(chapter_id: Optional[str],
     art all mean the same thing here — this slot is empty and the next tier
     answers — and none of them may reach the student as an error.
 
-    `manifest_status = 'approved'` is re-checked on READ even though
-    migrations/0035 constrains the column to that value on WRITE. The constraint
-    can be relaxed later by whoever adds a review workflow; this line is what
-    keeps an un-approved row off a board if it ever is.
+    `manifest_status` is re-checked on READ even though migrations/0035 and
+    0039 constrain the column on WRITE. The constraint can be relaxed later by
+    whoever adds a review workflow; this line is what keeps an un-approved row
+    off a board if it ever is.
+
+    THE VALUE IS IMPORTED, NOT SPELLED. This filter held the literal
+    'approved' while 0039 renamed the written value to 'accepted', and the
+    result was an empty set for EVERY concept: 113 assets stored, uploaded,
+    publicly readable and invisible to every board. Nothing failed — a filter
+    matching nothing is indistinguishable from a concept with no art.
     """
     if not chapter_id or not subtopic_key:
         return []
@@ -492,7 +499,7 @@ def _illustration_set_for(chapter_id: Optional[str],
         out = (supabase.table("concept_assets")
                .select("asset_slug,sub_index,concept_slug")
                .eq("concept_id", con[0]["id"])
-               .eq("manifest_status", "approved")
+               .eq("manifest_status", storage_r2.ASSET_APPROVED_STATUS)
                .order("sub_index")
                .execute().data) or []
     except Exception as exc:

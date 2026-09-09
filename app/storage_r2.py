@@ -194,6 +194,22 @@ def delete_image(key: Optional[str]) -> None:
 # art into the private bucket is the failure worth refusing.
 ASSETS_KEY_PREFIX = "concept-assets/"
 
+#: The manifest status a concept_asset must carry to reach a board.
+#:
+#: ONE PLACE, because the writer and the reader had drifted and the drift was
+#: silent. scripts/ingest_asset.py writes this value; tutor.py's slot 3
+#: re-checks it on read; migrations/0035 and 0039 constrain it in the database.
+#: 0039 renamed the value from 'approved' to 'accepted' to match what the
+#: manifest actually says, the read in tutor.py kept the old literal, and slot
+#: 3 then returned an empty set for EVERY concept — 113 assets stored,
+#: uploaded, publicly readable and invisible to every board, with no error
+#: anywhere. A filter that matches nothing looks exactly like a concept with no
+#: art.
+#:
+#: Anything comparing against this column imports it. A new literal in a new
+#: caller is the same bug again.
+ASSET_APPROVED_STATUS = "accepted"
+
 _EXT_FOR_CONTENT_TYPE = {
     "image/png": "png",
     "image/jpeg": "jpg",

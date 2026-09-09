@@ -225,7 +225,10 @@ MANIFEST_COLUMNS = (
 # skipped is a category with a count, not silence. drona-illustrations-v1 marks
 # its 112 finished plates `accepted`; the one `svg-queue` row is the frog heart,
 # drawn through the render gate as a schematic rather than ingested as a raster.
-APPROVED_STATUS = "accepted"
+# IMPORTED, not spelled. The writer and the reader of this column drifted
+# once — 0039 renamed the value here and tutor.py's slot 3 kept the old
+# literal, so every asset became invisible with nothing reporting it.
+from app.storage_r2 import ASSET_APPROVED_STATUS as APPROVED_STATUS
 
 #: Statuses this package uses that are NOT ingested, and why. Named so the skip
 #: report can say which KIND of skip it was — "1 skipped" that cannot separate
