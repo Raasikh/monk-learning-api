@@ -19,6 +19,7 @@ A detector whose stated blind spots have no failing fixture is a detector
 described rather than measured.
 """
 import csv
+import hashlib
 import io
 import os
 import random
@@ -33,11 +34,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import asset_text_probe as probe  # noqa: E402
 import ingest_asset as ia  # noqa: E402
 
+# The CURRENT package's manifest. Was the Downloads work order, which is
+# superseded — 48 rows at status=todo, in the old two-file schema. Reading a
+# manifest is not the same as depending on the 224 image files: the OCR
+# controls are committed crops under tests/fixtures/ for exactly that reason.
 REAL_MANIFEST = Path(
-    "/Users/raasikhnaveed/Downloads/geminiillustrationworkorder/"
-    "illustration-manifest.csv"
+    "/Users/raasikhnaveed/Desktop/monk-learning-mobile/monklearning-mobile/"
+    "content/illustrations/v1/illustration-manifest.csv"
 )
-REAL_WORK_ORDER = REAL_MANIFEST.parent / "gemini-work-order.md"
+REAL_WORK_ORDER = REAL_MANIFEST.parent / "DIRECTIVE.md"
 
 FONTS = [
     "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
@@ -52,12 +57,19 @@ HAVE_FONTS = all(os.path.exists(f) for f in FONTS)
 
 
 def plate(seed=0, w=1600, h=1000, n_words=0, word_size=(16, 34), text=None,
-          fmt="PNG"):
-    """A synthetic engraving-style plate: aged paper, strokes, stipple, labels."""
+          fmt="PNG", bg=232):
+    """A synthetic engraving-style plate: strokes, stipple, optional labels.
+
+    `bg` is the ground. 232 is aged paper and is what the TEXT-DETECTOR
+    benchmark uses, because that is the corpus those numbers were measured on.
+    255 is what a v1.1 master looks like — white ground, flush to the board —
+    and is what every ingest fixture uses, because the white-corner check is
+    real and a 232 ground correctly fails it.
+    """
     from PIL import Image, ImageDraw, ImageFont
 
     rnd = random.Random(seed)
-    im = Image.new("L", (w, h), 232)
+    im = Image.new("L", (w, h), bg)
     d = ImageDraw.Draw(im)
     for _ in range(rnd.randint(18, 30)):
         pts, x, y = [], rnd.randint(100, max(101, w - 100)), rnd.randint(100, max(101, h - 100))
@@ -87,23 +99,32 @@ def plate(seed=0, w=1600, h=1000, n_words=0, word_size=(16, 34), text=None,
 
 SLUG = "bio11-ch7-cockroach--nervous-system-and-reproduction"
 
+# drona-illustrations-v1.1's schema, not the old work order's. `sha256` is
+# filled in by `write_files`, because a manifest hash that does not match the
+# bytes on disk is the one thing the ingest checks it against.
 GOOD_ROW = {
     "asset_slug": SLUG,
+    "concept_slug": SLUG,
+    "sub": "",
+    "batch": "1",
     "subject": "bio",
-    "class": "11",
+    "class_": "11",
     "chapter": "Structural Organisation in Animals",
     "concept": "Cockroach: Nervous System and Reproduction",
-    "anchor_book": "Miall & Denny — The Structure and Life-History of the "
-                   "Cockroach (1886)",
-    "ncert_specimen": "Periplaneta nervous system",
-    "must_show": "ganglia, ventral cord",
+    "file": f"masters/{SLUG}.png",
+    "width": "1600",
+    "height": "1000",
+    "sha256": "",            # written by write_files
+    "cleanup": "none",
+    "note": "",
     "ncert_labels": "ganglion, ovary, testis",
-    "file_unlabelled": f"{SLUG}.png",
-    "file_labelled": f"{SLUG}.labelled.png",
-    "status": "approved",
-    "licence": "PD-old-70",
-    "source_url": "https://archive.org/details/structurelifehis00miala",
-    "author": "Monk Learning",
+    "status": "accepted",
+    # generated-free, because this manifest has no anchor_book column and 0038
+    # requires a third-party licence to name one. A batch of third-party art
+    # would ship a manifest that HAS that column; this schema is for our own.
+    "licence": "generated-free",
+    "source_url": f"generated:gemini:batch1/{SLUG}",
+    "author": "MonkLearning (AI-generated, Gemini)",
 }
 
 
@@ -126,12 +147,40 @@ def write_manifest(tmp_path, rows, drop_columns=()):
 
 
 def write_files(folder, row, master=None, labelled=None):
-    os.makedirs(folder, exist_ok=True)
-    Path(folder, row["file_unlabelled"]).write_bytes(
-        master if master is not None else plate(1))
-    Path(folder, row["file_labelled"]).write_bytes(
-        labelled if labelled is not None else plate(2, n_words=6))
+    """Write the master and its raw counterpart, and pin the row's sha256.
 
+    ONE `file` plus `raw/`, mirroring the package: the old work order named two
+    files because it commissioned two. The raw copy carries words on purpose —
+    it is what the master was made from, and it is the positive control that
+    the text check is not vacuous.
+    """
+    rel = row.get("file") or f"masters/{row['asset_slug']}.png"
+    m = Path(folder, rel)
+    r = Path(folder, rel.replace("masters/", "raw/", 1))
+    m.parent.mkdir(parents=True, exist_ok=True)
+    r.parent.mkdir(parents=True, exist_ok=True)
+    data = master if master is not None else plate(1, bg=255)
+    m.write_bytes(data)
+    r.write_bytes(labelled if labelled is not None else plate(2, n_words=6))
+    # The manifest's claim about the bytes, made true. A test that leaves this
+    # stale would fail on the sha256 check rather than on the thing it breaks.
+    if not row.get("sha256"):
+        row["sha256"] = hashlib.sha256(data).hexdigest()
+
+
+
+@pytest.fixture
+def no_ocr(monkeypatch):
+    """Simulate a machine with no OCR engine.
+
+    The inconclusive path is not dead code — it is what runs wherever
+    tesseract is absent, which was this machine until the v1.1 pass. With an
+    engine installed the verdict is always conclusive, so a test asserting the
+    inconclusive refusal cannot fire on its own. It is made to fire here, by
+    removing the detector, rather than deleted as unreachable.
+    """
+    monkeypatch.setattr(probe, "_ocr", lambda data: None)
+    return True
 
 @pytest.fixture
 def bench(tmp_path, work_order):
@@ -415,23 +464,48 @@ def test_refuses_a_portrait_plate(bench, capsys):
     assert "343x236" in out
 
 
-def test_refuses_when_the_labelled_reference_is_missing(bench, tmp_path,
-                                                        wired, capsys):
+def test_refuses_when_the_raw_counterpart_is_missing(bench, tmp_path,
+                                                     wired, capsys):
+    """Raw must EXIST and OPEN, even though it is never uploaded.
+
+    `labelled_reference_sha256` is a hash of that file. A row carrying a hash of
+    a file nobody can produce records nothing, so the row is refused rather
+    than written with an unverifiable claim.
+
+    (The old two-file model's `file_labelled` checks are gone with it; raw is
+    the counterpart now, and its GEOMETRY is deliberately unchecked — see
+    test_raw_geometry_is_not_checked.)
+    """
     args = bench()
-    os.remove(tmp_path / "out" / GOOD_ROW["file_labelled"])
+    os.remove(tmp_path / "out" / "raw" / f"{SLUG}.png")
     code = ia.main(args)
     out = capsys.readouterr().out
     assert code != 0
-    assert "labelled reference file is missing" in out
+    assert "raw counterpart file is missing" in out
     s3, db = wired
     assert s3.puts == [] and db.inserts == []
 
 
 def test_refuses_when_the_master_is_missing(bench, tmp_path, capsys):
     args = bench()
-    os.remove(tmp_path / "out" / GOOD_ROW["file_unlabelled"])
+    os.remove(tmp_path / "out" / GOOD_ROW["file"])
     assert ia.main(args) != 0
-    assert "unlabelled master file is missing" in capsys.readouterr().out
+    assert "master file is missing" in capsys.readouterr().out
+
+
+def test_raw_geometry_is_not_checked(bench, tmp_path, wired, capsys):
+    """Raw is provenance, not a plate. It is never uploaded and never drawn.
+
+    v1.1 normalised the masters to 16:10 and left raw exactly as it arrived —
+    which is the point of keeping it. Two 896x896 raws were refusing their
+    perfectly good masters over the shape of a file no board renders. The
+    positive proof is a SQUARE raw beside a valid master: it must ingest.
+    """
+    args = bench(labelled=plate(2, w=896, h=896, n_words=6))
+    code = ia.main(args)
+    out = capsys.readouterr().out
+    assert code == 0, out
+    assert "not landscape" not in out
 
 
 def test_refuses_oversize_file(bench, capsys, monkeypatch):
@@ -445,8 +519,7 @@ def test_refuses_oversize_file(bench, capsys, monkeypatch):
 def test_refuses_bad_slug(bench, capsys):
     bad = dict(GOOD_ROW)
     bad["asset_slug"] = "Bio11 Ch7 Cockroach"
-    bad["file_unlabelled"] = f"{bad['asset_slug']}.png"
-    bad["file_labelled"] = f"{bad['asset_slug']}.labelled.png"
+    bad["file"] = f"masters/{bad['asset_slug']}.png"
     assert ia.main(bench(rows=[bad])) != 0
     out = capsys.readouterr().out
     assert "not a usable slug" in out
@@ -478,7 +551,10 @@ def test_refuses_a_missing_work_order(bench, tmp_path, capsys):
 
 @pytest.mark.skipif(not HAVE_FONTS, reason="needs system fonts to render text")
 def test_refuses_a_master_that_contains_text(bench, wired, capsys):
-    code = ia.main(bench(master=plate(7, n_words=8)))
+    # bg=255 so the ONLY thing wrong with this fixture is the text. On the
+    # aged-paper default it refuses on the white-corner check instead, and the
+    # test would pass while proving something else entirely.
+    code = ia.main(bench(master=plate(7, n_words=8, bg=255)))
     out = capsys.readouterr().out
     assert code != 0
     assert "CONTAINS TEXT" in out
@@ -488,7 +564,7 @@ def test_refuses_a_master_that_contains_text(bench, wired, capsys):
 
 
 def test_inconclusive_text_check_is_refused_without_the_explicit_flag(
-    bench, wired, capsys
+    bench, wired, capsys, no_ocr
 ):
     args = [a for a in bench() if a != "--accept-inconclusive-text-check"]
     code = ia.main(args)
@@ -501,7 +577,7 @@ def test_inconclusive_text_check_is_refused_without_the_explicit_flag(
     assert s3.puts == [] and db.inserts == []
 
 
-def test_the_inconclusive_verdict_is_stored_not_flattened(bench, wired, capsys):
+def test_the_inconclusive_verdict_is_stored_not_flattened(bench, wired, capsys, no_ocr):
     s3, db = wired
     assert ia.main(bench() + ["--execute"]) == 0
     capsys.readouterr()
@@ -534,8 +610,8 @@ def test_todo_rows_are_skipped_and_reported_not_silently_dropped(bench, wired,
         r = dict(GOOD_ROW)
         r["status"] = "todo"
         r["asset_slug"] = f"{SLUG}-{i}"
-        r["file_unlabelled"] = f"{r['asset_slug']}.png"
-        r["file_labelled"] = f"{r['asset_slug']}.labelled.png"
+        r["file"] = f"masters/{r['asset_slug']}.png"
+        r["sha256"] = ""            # recomputed by write_files
         rows.append(r)
     code = ia.main(bench(rows=rows))
     out = capsys.readouterr().out
@@ -548,41 +624,35 @@ def test_todo_rows_are_skipped_and_reported_not_silently_dropped(bench, wired,
 
 
 @pytest.mark.skipif(not REAL_MANIFEST.exists(),
-                    reason="the real work-order manifest is not on this machine")
-def test_the_real_manifest_ingests_zero_and_reports_48_skipped(tmp_path,
-                                                               work_order,
-                                                               wired, capsys):
-    """The coordinator's own fixture: today's file is 48 rows at status=todo.
+                    reason="the package manifest is not on this machine")
+def test_the_real_manifest_reports_the_svg_row_as_skipped(tmp_path, work_order,
+                                                          wired, capsys):
+    """drona-illustrations-v1.1 is 112 accepted rows and ONE svg-queue row.
 
-    A correct run ingests ZERO and reports 48 skipped. The real manifest does
-    not yet carry licence/source_url/author, so the missing-column rule fires
-    first — which is itself the right answer and is asserted as such.
+    Replaces a test written against the superseded Downloads work order, which
+    was 48 rows at status=todo in the two-file schema. That package is gone;
+    asserting against it measured nothing.
+
+    The skip is the point: a status this command does not ingest is a category
+    with a count and a named reason, not silence. The 112 refuse here only
+    because this fixture points --dir at a temp folder with none of the files
+    in it — what is being measured is the SKIP, not the refusals.
     """
-    folder = tmp_path / "out"
-    folder.mkdir()
-    code = ia.main(["ingest", "--dir", str(folder),
-                    "--manifest", str(REAL_MANIFEST),
-                    "--work-order", str(REAL_WORK_ORDER)
-                    if REAL_WORK_ORDER.exists() else work_order,
+    code = ia.main(["ingest", "--dir", str(tmp_path), "--manifest",
+                    str(REAL_MANIFEST), "--work-order", work_order,
                     "--generator-model", "gemini-3-pro-image"])
-    captured = capsys.readouterr()
+    out = capsys.readouterr().out
     assert code != 0
-    header = list(csv.DictReader(REAL_MANIFEST.open()).fieldnames or [])
-    if "licence" in header:
-        # Once the three columns land, the 48 todo rows must SKIP, not refuse.
-        assert "SKIPPED (48)" in captured.out
-        assert "ready 0" in captured.out
-    else:
-        assert "missing" in captured.err and "licence" in captured.err
+    assert "SKIPPED (1)" in out
+    assert f"not marked '{ia.APPROVED_STATUS}'" in out
     s3, db = wired
     assert s3.puts == [] and db.inserts == []
 
-
-@pytest.mark.skipif(not REAL_MANIFEST.exists(), reason="manifest not present")
 def test_every_real_slug_passes_slug_validation():
     """The double hyphen must survive. 50 double-hyphen runs across 48 rows."""
-    rows = list(csv.DictReader(REAL_MANIFEST.open()))
-    assert len(rows) == 48
+    rows = [r for r in csv.DictReader(REAL_MANIFEST.open())
+            if r["status"] == ia.APPROVED_STATUS]
+    assert len(rows) == 112, "drona-illustrations-v1.1 is 112 accepted assets"
     doubles = 0
     for r in rows:
         ia.validate_slug(r["asset_slug"])          # raises on failure
@@ -591,8 +661,7 @@ def test_every_real_slug_passes_slug_validation():
     # And the filenames are exactly slug + suffix, which is what the R2 key
     # mirrors.
     for r in rows:
-        assert r["file_unlabelled"] == r["asset_slug"] + ".png"
-        assert r["file_labelled"] == r["asset_slug"] + ".labelled.png"
+        assert r["file"] == "masters/" + r["asset_slug"] + ".png"
 
 
 # ---------------------------------------------------------------------------
@@ -619,12 +688,13 @@ def test_execute_uploads_then_inserts(bench, wired, capsys):
     assert len(db.inserts) == 1
     row = db.inserts[0]
     assert row["asset_slug"] == SLUG
-    assert row["licence"] == "PD-old-70"
-    assert row["author"] == "Monk Learning"
-    assert row["anchor_book"].startswith("Miall & Denny")
+    assert row["licence"] == "generated-free"
+    # And 0038's conditional: generated art carries no anchor plate.
+    assert row["anchor_book"] is None
+    assert row["author"] == "MonkLearning (AI-generated, Gemini)"
     assert row["generator_model"] == "gemini-3-pro-image"
     assert len(row["prompt_sha"]) == 16
-    assert row["manifest_status"] == "approved"
+    assert row["manifest_status"] == ia.APPROVED_STATUS
     assert row["arrived_labelled"] == "unlabelled"
     assert "uploaded" in out
 
@@ -636,7 +706,9 @@ def test_only_the_master_is_uploaded(bench, wired):
     assert s3.puts == [f"concept-assets/{SLUG}.png"]
     assert not any(".labelled." in k for k in s3.objects)
     row = db.inserts[0]
-    assert row["labelled_reference_file"] == f"{SLUG}.labelled.png"
+    # raw/, not a labelled sibling: the reference is what the master was made
+    # from, recorded by name and hash and never uploaded.
+    assert row["labelled_reference_file"] == f"raw/{SLUG}.png"
     assert len(row["labelled_reference_sha256"]) == 64
 
 
@@ -700,8 +772,7 @@ def test_a_refusal_does_not_block_the_good_rows(bench, wired, capsys):
     good = dict(GOOD_ROW)
     bad = dict(GOOD_ROW)
     bad["asset_slug"] = SLUG + "-two"
-    bad["file_unlabelled"] = f"{bad['asset_slug']}.png"
-    bad["file_labelled"] = f"{bad['asset_slug']}.labelled.png"
+    bad["file"] = f"masters/{bad['asset_slug']}.png"
     bad["licence"] = "unknown"
     code = ia.main(bench(rows=[good, bad]) + ["--execute"])
     out = capsys.readouterr().out
@@ -884,8 +955,20 @@ def test_text_probe_measured_behaviour():
     """
     from PIL import Image, ImageDraw, ImageFont
 
+    # MEASURES THE SHAPE HEURISTIC, and now says so.
+    #
+    # This asserted 20/20 through `probe()`, which was true only while no OCR
+    # engine was installed — `probe` short-circuits to OCR when one is, and OCR
+    # is LESS sensitive on this synthetic aged-paper corpus. Swept over every
+    # threshold, OCR tops out at 16/20 here, while scoring 0 false positives on
+    # the 112 real masters where the heuristic scored 29.
+    #
+    # So the two are measured separately, because they are separately true:
+    # the heuristic's sensitivity is pinned here, and OCR's precision is what
+    # `probe()` refuses on. Asserting one number through a function that may
+    # run either detector measures whichever happened to be installed.
     def detected(images):
-        return sum(1 for d in images if probe.probe(d).found_text)
+        return sum(1 for d in images if probe.find_text_like(d))
 
     # Detected: ordinary labels, and labels crossed by the drawing's strokes.
     normal = [plate(100 + i, n_words=6) for i in range(20)]
@@ -936,19 +1019,35 @@ def test_text_probe_measured_behaviour():
         im.convert("RGB").save(b, format="PNG")
         return b.getvalue()
 
+    # THE HEURISTIC's strict tier misses display text; that is the documented
+    # blind spot and it is still true of the heuristic.
+    assert not probe.find_text_like(title(0)), \
+        "display text escapes the heuristic's STRICT tier"
+
+    # OCR DOES NOT MISS IT, and that is the point of it being the authority:
+    # 'THE COCKROACH' at 90 pt reads back at 90% confidence. A blind spot the
+    # old detector documented is simply closed, and the test says so rather
+    # than asserting the weakness is still there.
     t = probe.probe(title(0))
-    assert not t.found_text, "display text escapes the STRICT tier"
-    assert t.warnings, "but the advisory tier must warn about it"
-    assert "display-text tier" in t.warnings[0]
+    assert t.found_text, "OCR must catch display text the heuristic misses"
+    assert "COCKROACH" in (t.ocr_text or "")
 
 
 def test_probe_never_returns_a_bare_boolean():
     """'No text found' and 'no text present' are different statements."""
     r = probe.probe(plate(1))
     assert r.verdict in probe.VERDICTS
-    assert r.verdict == "heuristic-clean-ocr-unavailable"
-    assert not r.is_conclusive, "no OCR is installed, so nothing conclusive ran"
-    assert "ABSENCE OF EVIDENCE" in r.detail
+    # WHICH DETECTOR SPOKE is the point, and the answer now depends on the
+    # environment: with tesseract installed the verdict is conclusive, and
+    # without it the run falls back to the heuristic and says so. Both are
+    # real answers; a bare boolean would be neither.
+    if probe._ocr(plate(1)) is not None:
+        assert r.verdict in ("ocr-clean", "ocr-found-text")
+        assert r.is_conclusive
+    else:
+        assert r.verdict == "heuristic-clean-ocr-unavailable"
+        assert not r.is_conclusive
+        assert "ABSENCE OF EVIDENCE" in r.detail
 
 
 # ── the public leg: what the APP sees, with no credential ───────────────────
@@ -1073,3 +1172,82 @@ def test_generating_a_rendition_does_not_touch_the_master():
     before = hashlib.sha256(data).hexdigest()
     ia.make_rendition(data)
     assert hashlib.sha256(data).hexdigest() == before
+
+
+# ── OCR is the refusal authority: two committed controls ────────────────────
+#
+# Crops of ONE real plate and its raw, checked in under tests/fixtures/ rather
+# than read from the 224-file package: a test that points at content is a test
+# that breaks when content is re-cut, and these two must keep meaning the same
+# thing for as long as the threshold does.
+
+FIXTURES = Path(__file__).resolve().parent / "fixtures"
+
+
+def test_ocr_reads_real_labels_off_the_raw_plate():
+    """POSITIVE CONTROL. Without this the bar could be raised to infinity and
+    every test would still pass — 'no text found' and 'no text present' are
+    different statements, and only one of them is evidence.
+
+    The crop is the label column of the cockroach gut raw, which arrived with
+    its terms burnt in.
+    """
+    r = probe.probe((FIXTURES / "gut-raw-labels.png").read_bytes())
+    assert r.verdict == "ocr-found-text", r.detail
+    assert r.found_text is True
+    tokens = [w for w in (r.ocr_text or "").split() if len(w) >= 4 and w.isalpha()]
+    assert len(tokens) >= 8, f"expected >= 8 legible tokens, got {len(tokens)}: {tokens}"
+    # Real anatomy, not noise: these are the words a student would read.
+    assert {"Pharynx", "Gizzard", "Midgut"} <= set(tokens), tokens
+
+
+def test_ocr_reads_nothing_off_the_same_region_of_the_master():
+    """NEGATIVE CONTROL, and the same pixels as the positive one minus the
+    labels. This is the plate the old character-count bar refused over
+    'Oseppe' at 0% confidence in a box 394 pixels tall."""
+    r = probe.probe((FIXTURES / "gut-master-clean.png").read_bytes())
+    assert r.found_text is False, r.detail
+    assert r.verdict == "ocr-clean"
+
+
+def test_the_ocr_bar_is_not_lowered_below_the_agreed_floor():
+    """The threshold is a decision, not a tuning knob. >= 4 alphabetic
+    characters at >= 60% confidence, agreed after showing the strings."""
+    assert probe.OCR_MIN_CONF >= 60
+    assert probe.OCR_MIN_TOKEN_LEN >= 4
+
+
+def test_the_shape_heuristic_advises_and_cannot_veto():
+    """It scores 20/20 on the synthetic benchmark and produced 29 false
+    refusals on 112 real masters. So it still runs when OCR is clean, and what
+    it finds is recorded as ADVISORY — countable and reviewable, never a
+    refusal."""
+    data = (FIXTURES / "gut-master-clean.png").read_bytes()
+    r = probe.probe(data)
+    assert r.found_text is False
+    # If the heuristic fires on this plate it must say so without vetoing.
+    if r.words:
+        assert "ADVISORY" in r.detail
+        assert r.verdict == "ocr-clean"
+
+
+def test_ocr_sensitivity_is_pinned_on_the_synthetic_benchmark():
+    """12 of 20 on THIS benchmark, at the agreed bar. Measured, not hoped for.
+
+    OCR is LESS sensitive than the shape heuristic on aged-paper synthetics —
+    the heuristic gets 20/20 here. No threshold closes that gap: swept over
+    conf 30..60 x length 3..5, OCR tops out well short of 20. That is the whole
+    reason the heuristic still runs as an ADVISORY when OCR is clean.
+
+    The trade is deliberate and the real corpus is why. On the 112 v1.1 masters
+    the heuristic produced 29 false refusals and OCR produced 0, while OCR
+    still caught all 15 labelled raws. Precision is what a refusal needs;
+    sensitivity is what an advisory is for.
+
+    Pinned so a regression BELOW the measured number is visible. If this rises,
+    raise the number.
+    """
+    labelled = [plate(100 + i, n_words=6) for i in range(20)]
+    caught = sum(1 for d in labelled if (r := probe._ocr(d)) is not None
+                 and r.verdict == "ocr-found-text")
+    assert caught >= 12, f"OCR caught {caught}/20, below the measured 12"
