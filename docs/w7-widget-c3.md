@@ -56,18 +56,44 @@ payload — no SVG string, no coordinates. Both readouts (`E 1.36e6 N/C`,
 `area 4.67`) are client-side derivations that agree with hand computation,
 which is only possible when the geometry comes from the widget's own maths.
 
-## Cue / reveal-order observation (finding, not a defect)
+## The reveal-order "finding" was the outage's signature — RESOLVED
 
-In both maths runs only **seq 1** was revealed by `onItemStart` (paired with
-its audio clip); seq 2–5 revealed via `END_OF_TURN_FLUSH`. The board is
-correct — everything reveals, in order — but the per-sentence pairing carried
-only the first segment in these sessions. Worth a look server-side at how
-`audio_chunk.board_event` is being attached for later segments; the flush path
-is doing the work the pairing path should.
+In both maths runs only **seq 1** was revealed by `onItemStart`; seq 2–5 came
+via `END_OF_TURN_FLUSH`. Root cause (found from the production log, not the
+client): DeepSeek began echoing `deepseek-flash` for the pinned
+`deepseek-v4-flash`, and tutor.py's strict model-echo equality check raised on
+the FIRST chunk of every teaching turn. The failure fallback synthesized
+exactly ONE audio clip per turn ("I didn't quite catch that — could you say it
+once more?" — mis-blamed on the student because the client's synthetic 'Begin
+lesson segment' kick-off counts as an utterance), so only one board event
+could ride an `onItemStart`; the rest had nothing to pair with and flushed.
+The boards looked perfect throughout because the failure path auto-populates
+assigned board items and still serves precomputed widgets.
+
+Fixed in API `8cb7c16` (evidence-dated alias map `models.KNOWN_MODEL_ECHOES`,
+unknown echoes still refused, six unit tests incl. the failing fixture).
+Post-fix verification class (bio11-ch7 cockroach, production): seq 1–5 each
+`carriedBy=onItemStart(s1-0..s5-4)` — per-sentence pairing restored — turn
+`failed=False`, 200-word narration, `ILLUSTRATION SERVED`, `DIAGRAM DROPPED 0`.
+The maths xy_plot evidence above (payload → deterministic render, derived
+`area 4.67`) was captured DURING the outage and stands: the widget path never
+depended on the LLM turn succeeding.
+
+## Tap-to-answer (production, post-fix)
+
+Checkpoint mounted after audio drain: question "if a cockroach's exoskeleton
+were one single rigid shell with no membranes at all, what would it lose?"
+with 3 chips. Tapped "Its ability to bend and move freely" → answer turn ran:
+
+    TURN SUMMARY seg=1/8 turn=2 phase=awaiting_answer->awaiting_answer
+    grade=correct  words=173  llm=25.6s  failed=False
+
+Client revealed the answer turn's four board items each on their own clip
+(`onItemStart(s1-8..s4-11)` — playback ids continue across turns). Shots:
+`docs/w7-shots/w7-tap-answer-board.png`.
 
 ## Still to capture
 
-- [ ] Tap-to-answer evidence (waiting on a question turn in the live class).
 - [ ] Exact-frame widget screenshots at 343×236 and 900×430 (extend
       `dev-widget-preview` with a 'frames' mode mirroring FigureLab — only
       after the live class ends; fast refresh kills a running class).
