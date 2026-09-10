@@ -107,6 +107,17 @@ WIDGET_SPECS: Dict[str, str] = {
         '("pubchem:<cid>" or "pdb:<id>"), label, representation '
         '("ball_and_stick"|"space_filling"|"wireframe"|"cartoon"), auto_rotate (bool).'
     ),
+    "free_body_forces": (
+        "a free-body diagram: an isolated body with labelled force arrows, or "
+        "the same forces laid head to tail (closure gap = net force). params: "
+        'mode ("fbd"|"head_to_tail"), body ("block"|"sphere"|"particle"), '
+        'context ("none"|"floor"|"incline"|"string"; head_to_tail takes "none"), '
+        "incline_angle_deg (10-40), forces (2-5 of {label <=8 chars — the "
+        'book\'s symbol like "mg","N","T","f","F_B"; angle_deg anticlockwise '
+        "from +x, 90 is up; magnitude_rel 0.35-1}), any two forces >=24 deg "
+        "apart, components_of (-1 or a force index; needs context incline|string), "
+        "caption (<=40 chars)."
+    ),
     "field_lines": (
         "electric field lines and their geometry. params: configuration "
         '("point"|"dipole"|"like_charges"|"parallel_plates"), charge_uc (4-20 — '
