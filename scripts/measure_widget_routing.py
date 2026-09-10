@@ -87,6 +87,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.db import supabase  # noqa: E402
 from app.drona import tutor  # noqa: E402
+from app.drona.planner import _plan_is_complete  # noqa: E402
 from app.drona.widget_registry import payload_node_list  # noqa: E402
 
 # Chapter is a CLI argument, not a constant. The first run of this harness
@@ -317,9 +318,14 @@ def load_plans() -> List[Dict[str, Any]]:
     out = []
     for r in rows:
         pj = r.get("plan_json") or {}
-        status = pj.get("_status")
-        if status != "complete":
-            print(f"  ⏭️  EXCLUDED {r['subtopic_key']} — plan_json._status={status!r} "
+        # The PLANNER's own predicate, not a reimplementation: an absent
+        # _status key means a legacy or single-pass-fallback plan, which
+        # get_or_create_plan serves to students as complete — so this measure
+        # must include it, or the sheet measures a corpus students don't get.
+        # (Found on chem12-ch8: the single-pass fallback writes no _status,
+        # and a local `!= "complete"` check silently excluded that plan.)
+        if not _plan_is_complete(pj):
+            print(f"  ⏭️  EXCLUDED {r['subtopic_key']} — plan_json._status={pj.get('_status')!r} "
                   f"({len(pj.get('segments') or [])} segments authored of "
                   f"{r.get('segment_count')})", flush=True)
             continue
