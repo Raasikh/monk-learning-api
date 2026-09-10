@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, Any, AsyncGenerator, List, NamedTuple, Optional, Tuple
 from app import storage_r2
 from app.db import supabase
-from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
+from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, model_echo_ok, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
 from app.drona.diagram_author import validate as validate_authored_svg
@@ -1992,6 +1992,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     streamed_speech = ""
     early_flushed = False
     board_events_flushed = False
+    echo_alias_logged = False
 
     turn_failed = False
     llm_t0 = time.time()
@@ -2022,8 +2023,17 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 continue
 
             returned_model = getattr(chunk, "model", "")
-            if returned_model and returned_model != model_name:
+            if not model_echo_ok(model_name, returned_model):
+                # A different model FAMILY answered — the substitution this
+                # guard exists to catch. Known canonical aliases (DeepSeek
+                # echoes 'deepseek-flash' for the pinned 'deepseek-v4-flash';
+                # measured 2026-09-10 after the equality check failed every
+                # production teaching turn) live in models.KNOWN_MODEL_ECHOES
+                # with dated evidence — extend that map, never widen this.
                 raise RuntimeError(f"STRICT R1 MODEL VIOLATION: Requested '{model_name}', but API returned '{returned_model}'")
+            if returned_model and returned_model != model_name and not echo_alias_logged:
+                echo_alias_logged = True
+                logger.warning(f"{stag} [MODEL ECHO ALIAS] requested '{model_name}', API echoes '{returned_model}' (known alias — models.KNOWN_MODEL_ECHOES)")
 
             delta_text = chunk.choices[0].delta.content or ""
             if not delta_text:

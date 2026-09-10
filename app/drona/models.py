@@ -24,6 +24,31 @@ MODEL_TUTOR = "deepseek-v4-flash"
 # retries in llm_calls rather than as quietly worse lessons.
 MODEL_SEGMENT = "deepseek-v4-flash"
 
+# Canonical names the API is KNOWN to echo back for a requested model.
+#
+# DeepSeek accepts the pinned request name but echoes its own canonical id in
+# every stream chunk. Measured 2026-09-10 against api.deepseek.com directly:
+# requesting 'deepseek-v4-flash' AND requesting 'deepseek-flash' both return
+# `model: "deepseek-flash"` with no error — the echo stopped matching the
+# pinned name, and the strict equality guard in tutor.py failed EVERY live
+# teaching turn in production (STRICT R1 MODEL VIOLATION, 0.6s in, 0 tokens).
+#
+# The guard exists to catch a gateway silently substituting a different model
+# FAMILY, so it stays strict: only echoes listed here, with evidence, are
+# accepted. Extend this map only after probing the API yourself and recording
+# the date; do not add wildcards.
+KNOWN_MODEL_ECHOES: dict[str, frozenset[str]] = {
+    "deepseek-v4-flash": frozenset({"deepseek-flash"}),
+}
+
+
+def model_echo_ok(requested: str, returned: str) -> bool:
+    """True when the API's echoed model id is the requested one or a known
+    canonical alias of it. An empty echo is OK — nothing to compare."""
+    if not returned or returned == requested:
+        return True
+    return returned in KNOWN_MODEL_ECHOES.get(requested, frozenset())
+
 # Per-call timeout budgets, in seconds.
 #
 # The `openai` package is the HTTP client for DeepSeek as well as for OpenAI
