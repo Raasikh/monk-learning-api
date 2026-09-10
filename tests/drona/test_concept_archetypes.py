@@ -240,6 +240,17 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     `like_charges` would put two charges on the board and look close enough to
     pass a glance, which is why the refusal is written down.
 
+    114 -> 120 in the W5 physics-11 re-pass (2026-09-10): the
+    labelled_figure/gap_* rule applied FIRST over 58 non-routed rows. 44
+    canonical plates went to labelled_figure (physics's slot-3 art backlog,
+    now 137 rows corpus-wide against biology's 30-with-art), and six
+    routed: banked road and rolling motion to free_body_forces, potential
+    energy, gravitational U, stress-strain and shm_energy to xy_plot — the
+    last three via NAMED shapes, one of which the first pass forgot its own
+    list contained. Blind agreement 52/58 first-pass; five differences
+    adopted from the checker, one held (a retrieval FAILURE is not evidence
+    a figure exists, so Mach cone stays none_symbolic rather than gap).
+
     97 -> 114 in the W3 med re-pass (2026-09-10): 245 med rows carrying a
     figure cue were re-read against the CURRENT registry; 18 proposed, and a
     blind adjudicator — an independent agent shown evidence only, with 18
@@ -285,8 +296,8 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     for r in high:
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
-    assert len(high) == 499
-    assert len(named) == 114, f"the routed population moved: {len(named)}"
+    assert len(high) == 501
+    assert len(named) == 120, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
@@ -309,7 +320,7 @@ def test_the_routed_population_is_ninety_across_fifty_one_chapters():
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 58
+    assert len(routed) == 60
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
