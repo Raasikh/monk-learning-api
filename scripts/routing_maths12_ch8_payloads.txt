@@ -1,0 +1,581 @@
+ARCHETYPE-BRANCH PAYLOAD DUMP — Application of Integrals, 71 segments
+Judge `sane`: does this picture belong beside THIS objective, and is it
+different from what the prior-payload lines say was already drawn?
+`sane` is left blank on purpose. Fill it in.
+==============================================================================
+
+[area-between-a-function-and-its-inverse  seg 1]  The Mirror Property of Inverse Functions
+  OBJECTIVE : Explain why the graph of an inverse function is the reflection of the original graph across the line y = x.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=ray_diagram
+  SANE      : ____
+
+[area-between-a-function-and-its-inverse  seg 2]  The Mirror Trick for Area Between Inverses
+  OBJECTIVE : State and prove the mirror trick formula for the area between a function and its inverse when the function is increasing and lies above the diagonal.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=ray_diagram
+  SANE      : ____
+
+[area-between-a-function-and-its-inverse  seg 3]  Antiderivatives of Inverse Trigonometric Functions
+  OBJECTIVE : Recall the antiderivatives of sin^{-1}x, cos^{-1}x, and tan^{-1}x, and apply them to compute integrals.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[area-between-a-function-and-its-inverse  seg 4]  Area Between sin^{-1}x and cos^{-1}x
+  OBJECTIVE : Compute the area of the region bounded by y=sin^{-1}x, y=cos^{-1}x, and the x-axis.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-between-a-function-and-its-inverse  seg 5]  Area Between x^3 and x^{1/3}
+  OBJECTIVE : Apply the mirror trick to find the area enclosed between y=x^3 and y=x^{1/3}.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=ray_diagram
+  SANE      : ____
+
+[area-between-a-function-and-its-inverse  seg 6]  Area Between tan^{-1}x and cot^{-1}x
+  OBJECTIVE : Compute the area bounded by y=tan^{-1}x, y=cot^{-1}x, and the y-axis.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[area-between-a-function-and-its-inverse  seg 7]  Practice and Pitfalls
+  OBJECTIVE : Solve additional problems involving areas with inverse functions and avoid common mistakes.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=ray_diagram
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 1]  The Core Idea: Top Minus Bottom
+  OBJECTIVE : Understand the formula for area between two curves using vertical strips and apply it when the upper and lower curves are known.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 2]  Finding the Limits: Intersection Points
+  OBJECTIVE : Determine the limits of integration by solving for the points where the two curves intersect.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 3]  Which Curve is on Top? Sampling and Sketching
+  OBJECTIVE : Identify the upper and lower curves on an interval by testing a sample point and sketching the region.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 4]  Worked Example: Line and Parabola
+  OBJECTIVE : Compute the area between y=x and y=x^2 from x=0 to x=1 using the top-minus-bottom formula.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 5]  When Curves Cross: Splitting the Integral
+  OBJECTIVE : Handle cases where the curves swap positions within the interval by splitting the integral at crossing points.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=number_line
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 6]  Horizontal Strips: Integrating with Respect to y
+  OBJECTIVE : Use horizontal strips (right minus left) when the region is more naturally described by functions of y.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 7]  Standard Result: Area Between Two Parabolas
+  OBJECTIVE : Derive and remember the area between y^2=4ax and x^2=4ay as 16a^2/3.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 8]  Choosing the Right Variable and Symmetry
+  OBJECTIVE : Decide between dx and dy based on the region's geometry and use symmetry to simplify calculations when applicable.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-between-two-intersecting-curves  seg 9]  Pitfalls and Pro-Tips: The Four-Beat Routine
+  OBJECTIVE : Avoid common mistakes by following the ISSI routine: Intersect, Sketch, Sample, Integrate.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 1]  The Tangent/Normal Area Problem
+  OBJECTIVE : Identify the region bounded by a curve and its tangent or normal and set up the area integral using top-minus-bottom.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 2]  Finding the Tangent and Normal Equations
+  OBJECTIVE : Compute the equation of the tangent or normal to a given curve at a specified point.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 3]  Intersection Points: Where Curve Meets Line
+  OBJECTIVE : Find the points of intersection between a curve and its tangent or normal by solving equations simultaneously.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 4]  Setting Up the Area Integral
+  OBJECTIVE : Set up the definite integral for the area between a curve and its tangent or normal using top-minus-bottom.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 5]  Evaluating the Integral
+  OBJECTIVE : Evaluate the definite integral to find the area between a curve and its tangent or normal.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 6]  Tangent with an Additional Boundary
+  OBJECTIVE : Find the area bounded by a curve, its tangent, and another line (like an axis or a vertical line).
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 7]  Normal with an Additional Boundary
+  OBJECTIVE : Find the area bounded by a curve, its normal, and an axis or another line.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-bounded-by-a-curve-and-its-tangent-or-normal  seg 8]  Special Cases and Symmetry
+  OBJECTIVE : Use symmetry to simplify area calculations when the curve and tangent/normal are symmetric about an axis.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-bounded-by-a-parabola-and-a-line  seg 1]  The Area Between Two Curves: The Core Formula
+  OBJECTIVE : State and apply the formula for the area between two curves using vertical strips.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Area between y = x (top) and y = x^2 (bottom) from x = 0 to x = 1
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "line", "curve2": "parabola", "a": 1, "b": 0, "c": 0, "a2": -1, "b2": 0, "c2": 0, "x_min": 0, "x_max": 1, "shade_from": 0, "shade_to": 1, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-bounded-by-a-parabola-and-a-line  seg 2]  Finding Intersections: The Limits of Integration
+  OBJECTIVE : Find the points of intersection of a parabola and a line by solving their equations simultaneously.
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": -1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1, "x_m…
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Intersection points (0,0) and (4,4) give the limits of integration.
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "line", "curve2": "parabola", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "x_min": -0.5, "x_max": 4.5, "shade_from": 0, "shade_to": 4, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-bounded-by-a-parabola-and-a-line  seg 3]  Vertical Strips: Parabola on Top
+  OBJECTIVE : Compute the area between a parabola and a line when the parabola is the upper curve using vertical strips.
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": -1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1, "x_m…
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Region between y = 2√x and y = x, from x = 0 to x = 4
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "x_min": 0, "x_max": 4.5, "shade_from": 0, "shade_to": 4, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-bounded-by-a-parabola-and-a-line  seg 4]  Horizontal Strips: When the Parabola is Sideways
+  OBJECTIVE : Decide when to integrate with respect to y and compute the area using horizontal strips.
+  PRIOR     : segment 3 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": -1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1, "x_m…
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Region between y^2 = 4x and y = 2x - 4, sliced horizontally
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "x_min": -0.5, "x_max": 4.5, "shade_from": 0, "shade_to": 4, "x_label": "x", "y_label": "y", "integrate_along": "y"}
+  SANE      : ____
+
+[area-bounded-by-a-parabola-and-a-line  seg 5]  The Latus Rectum: A Special Chord
+  OBJECTIVE : Compute the area bounded by a parabola and its latus rectum using symmetry.
+  PRIOR     : segment 4 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "integrate_along": "y", "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label"…
+  PRIOR     : segment 3 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": -1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1, "x_m…
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Region between y^2 = 4x and its latus rectum x = 1
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "integrate_along": "x", "shade_from": 0, "shade_to": 1, "x_min": -0.5, "x_max": 1.5, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-bounded-by-a-parabola-and-a-line  seg 6]  Parameter Problems: When Area is Given
+  OBJECTIVE : Solve for an unknown parameter in the line or parabola given the bounded area.
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "integrate_along": "x", "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label"…
+  PRIOR     : segment 4 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "integrate_along": "y", "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label"…
+  PRIOR     : segment 3 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "curve2": "parabola", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Region under y = 4 - x^2, from x = -2 to x = 2
+  NODES     : []
+  PARAMS    : {"mode": "area", "curve": "parabola", "a": -1, "b": 0, "c": 4, "x_min": -2.5, "x_max": 2.5, "shade_from": -2, "shade_to": 2, "x_label": "x", "y_label": "y", "integrate_along": "x"}
+  SANE      : ____
+
+[area-bounded-by-a-parabola-and-a-line  seg 7]  Common Mistakes and Exam Traps
+  OBJECTIVE : Identify and avoid common errors in area-between-curves problems.
+  PRIOR     : segment 6 — `xy_plot` {"curve": "parabola", "a": -1, "b": 0, "c": 4, "integrate_along": "x", "mode": "area", "shade_from": -2, "shade_to": 2, "x_label": "x", "x_max": 2.5, "x_min": -2.5, "y_label": "y"}
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "integrate_along": "x", "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label"…
+  PRIOR     : segment 4 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "integrate_along": "y", "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label"…
+  PRIOR     : segment 3 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 0, "c": 0, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 4, "x_label": "x", "x_max": 4.5, "x_…
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : y = x (top) aur y = x^2 (bottom) ke beech ka area, x = 0 se x = 1
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "a": 1, "b": 0, "c": 0, "curve2": "line", "a2": 1, "b2": 0, "c2": 0, "x_min": -0.5, "x_max": 1.5, "shade_from": 0, "shade_to": 1, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 1]  Why Integrate Along the y-axis?
+  OBJECTIVE : Recognize when a region is more naturally described by horizontal strips and explain why integrating with respect to y is advantageous.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 2]  The Horizontal Strip Formula
+  OBJECTIVE : State and apply the formula A = ∫ x dy for a region bounded by a curve, the y-axis, and horizontal lines.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=number_line
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 3]  Choosing Limits and Handling Signs
+  OBJECTIVE : Determine correct limits of integration from given boundaries and handle cases where the curve crosses the y-axis.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=number_line
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 4]  Worked Example: Parabola and y-axis
+  OBJECTIVE : Compute the area of a region bounded by a parabola, the y-axis, and horizontal lines using integration with respect to y.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 5]  When to Choose dy over dx
+  OBJECTIVE : Decide whether to integrate with respect to x or y based on the geometry of the region.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 6]  Area Between Two Curves Using dy
+  OBJECTIVE : Compute the area between two curves by integrating with respect to y, using right minus left.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 7]  Symmetry and Efficiency
+  OBJECTIVE : Use symmetry about the x-axis to simplify area calculations when integrating with respect to y.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-by-integration-along-the-y-axis  seg 8]  Common Pitfalls and Exam Strategy
+  OBJECTIVE : Identify and avoid common mistakes in area problems involving integration along the y-axis.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 1]  Why Circles and Ellipses? The Area Problem
+  OBJECTIVE : Recognize that areas of circles and ellipses can be computed using definite integrals and recall the standard formulas.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 2]  The Workhorse Integral for Circles
+  OBJECTIVE : Evaluate integrals of the form ∫√(a^2 - x^2) dx using the standard antiderivative.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 3]  Area of a Full Circle by Integration
+  OBJECTIVE : Compute the area of a circle using integration and symmetry.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 4]  Area of an Ellipse: From Circle to Ellipse
+  OBJECTIVE : Derive the area of an ellipse using scaling from a circle.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 5]  Regions Bounded by Circles and Lines
+  OBJECTIVE : Find areas of segments of circles cut by vertical or horizontal lines.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 6]  Regions Bounded by Ellipses and Lines
+  OBJECTIVE : Find areas of segments of ellipses cut by lines.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 7]  Composite Regions with Circles and Parabolas
+  OBJECTIVE : Find areas of regions bounded by a circle and another curve, such as a parabola.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-of-regions-bounded-by-circles-and-ellipses  seg 8]  Exam Traps and Quick Checks
+  OBJECTIVE : Avoid common mistakes and verify answers using geometry or degeneration.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=conic_figure
+  SANE      : ____
+
+[area-of-regions-described-by-inequalities  seg 1]  Decoding Inequalities: The Region Game
+  OBJECTIVE : Translate a single inequality into a shaded region and verify the correct side using a test point.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=number_line
+  SANE      : ____
+
+[area-of-regions-described-by-inequalities  seg 2]  Modulus Curves: Splitting at the Kink
+  OBJECTIVE : Break a modulus function into piecewise linear parts and set up the integral for area under it.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=number_line
+  SANE      : ____
+
+[area-of-regions-described-by-inequalities  seg 3]  The Diamond Region: |x| + |y| ≤ a
+  OBJECTIVE : Compute the area of the diamond region using symmetry and the formula 2a².
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[area-of-regions-described-by-inequalities  seg 4]  Systems of Inequalities: Finding the Overlap
+  OBJECTIVE : Sketch the intersection of two inequality regions and identify the boundaries for integration.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=ray_diagram
+  SANE      : ____
+
+[area-of-regions-described-by-inequalities  seg 5]  Composite Regions: When the Ceiling Changes
+  OBJECTIVE : Split the area integral when the upper boundary switches from one curve to another.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=number_line
+  SANE      : ____
+
+[area-of-regions-described-by-inequalities  seg 6]  Putting It All Together: A JEE-Style Problem
+  OBJECTIVE : Solve a multi-condition region problem involving modulus and circle, using symmetry and geometry check.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[area-of-regions-described-by-inequalities  seg 7]  Common Pitfalls and Speed Tricks
+  OBJECTIVE : Avoid typical decoding errors and use geometry as a quick verification tool.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=number_line
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 1]  Decoding the Disguises: Modulus, Inequalities, and Composite Regions
+  OBJECTIVE : Recognize that advanced area problems are just basic area problems with a modulus, inequality, or switching boundary, and identify which disguise is present.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : y = |x| — V-shape with a corner at the origin
+  NODES     : []
+  PARAMS    : {"mode": "curve", "curve": "line", "a": 1, "b": 0, "c": 0, "x_min": -3, "x_max": 3, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 2]  Splitting Modulus Curves at Their Corners
+  OBJECTIVE : Find the area under a modulus curve by locating its corners and integrating piecewise.
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : y = |x| — V-shape with a corner at the origin
+  NODES     : []
+  PARAMS    : {"mode": "curve", "curve": "line", "a": 1, "b": 0, "c": 0, "x_min": -3, "x_max": 3, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 3]  The Diamond Theorem: Area of |x| + |y| ≤ a
+  OBJECTIVE : Compute the area of the diamond region |x| + |y| ≤ a using symmetry and the formula 2a².
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : First-quadrant triangle: x + y ≤ 2, legs of length 2
+  NODES     : []
+  PARAMS    : {"mode": "area", "curve": "line", "a": -1, "b": 2, "c": 0, "x_min": 0, "x_max": 2, "shade_from": 0, "shade_to": 2, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 4]  Decoding Inequalities: Which Side of the Curve?
+  OBJECTIVE : Translate inequalities like y ≤ f(x) or y ≥ f(x) into shaded regions and identify the overlap for a system.
+  PRIOR     : segment 3 — `xy_plot` {"curve": "line", "a": -1, "b": 2, "c": 0, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y"}
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Region between y = x² and y = x + 2
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "a": 1, "b": 0, "c": 0, "curve2": "line", "a2": 1, "b2": 2, "c2": 0, "x_min": -1.5, "x_max": 2.5, "shade_from": -1, "shade_to": 2, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 5]  Composite Regions: When the Ceiling Switches
+  OBJECTIVE : Find the area of a region whose upper boundary changes from one curve to another by splitting at the switch point.
+  PRIOR     : segment 4 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 2, "c": 0, "c2": 0, "mode": "area_between", "shade_from": -1, "shade_to": 2, "x_label": "x", "x_max": 2.5, "x…
+  PRIOR     : segment 3 — `xy_plot` {"curve": "line", "a": -1, "b": 2, "c": 0, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y"}
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  PRIOR     : segment 1 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Region between y = 2 - x^2 and y = |x|, split at x = 0
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "a": -1, "b": 0, "c": 2, "curve2": "line", "a2": 1, "b2": 0, "c2": 0, "x_min": -1.5, "x_max": 1.5, "shade_from": -1, "shade_to": 1, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 6]  Symmetry as a Shortcut: Halving and Doubling
+  OBJECTIVE : Use symmetry about axes or origin to reduce the integration work by integrating over a smaller region and multiplying.
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": -1, "a2": 1, "b": 0, "b2": 0, "c": 2, "c2": 0, "mode": "area_between", "shade_from": -1, "shade_to": 1, "x_label": "x", "x_max": 1.5, "…
+  PRIOR     : segment 4 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 2, "c": 0, "c2": 0, "mode": "area_between", "shade_from": -1, "shade_to": 2, "x_label": "x", "x_max": 2.5, "x…
+  PRIOR     : segment 3 — `xy_plot` {"curve": "line", "a": -1, "b": 2, "c": 0, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y"}
+  PRIOR     : segment 2 — `xy_plot` {"curve": "line", "a": 1, "b": 0, "c": 0, "mode": "curve", "x_label": "x", "x_max": 3, "x_min": -3, "y_label": "y"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Right half of the region: bottom y = x, top y = sqrt(2 - x^2)
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "curve2": "line", "a": -1, "a2": 1, "b": 0, "b2": 0, "c": 2, "c2": 0, "x_min": -1.5, "x_max": 1.5, "shade_from": 0, "shade_to": 1, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 7]  Putting It All Together: A Multi-Concept JEE Problem
+  OBJECTIVE : Solve a complex area problem involving modulus, inequalities, and composite boundaries by decoding, sketching, splitting, and integrating.
+  PRIOR     : segment 6 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": -1, "a2": 1, "b": 0, "b2": 0, "c": 2, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1.5, "x…
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": -1, "a2": 1, "b": 0, "b2": 0, "c": 2, "c2": 0, "mode": "area_between", "shade_from": -1, "shade_to": 1, "x_label": "x", "x_max": 1.5, "…
+  PRIOR     : segment 4 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 2, "c": 0, "c2": 0, "mode": "area_between", "shade_from": -1, "shade_to": 2, "x_label": "x", "x_max": 2.5, "x…
+  PRIOR     : segment 3 — `xy_plot` {"curve": "line", "a": -1, "b": 2, "c": 0, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Right half of the wedge: between y = x and y = √(8 − x²), x from 0 to 2
+  NODES     : []
+  PARAMS    : {"mode": "area_between", "curve": "parabola", "a": -1, "b": 0, "c": 8, "curve2": "line", "a2": 1, "b2": 0, "c2": 0, "x_min": -2.5, "x_max": 2.5, "shade_from": 0, "shade_to": 2, "x_label": "x", "y_label": "y"}
+  SANE      : ____
+
+[area-of-regions-involving-modulus-and-piecewise-defined-functions  seg 8]  Common Pitfalls and Pro-Tips for Exam Success
+  OBJECTIVE : Avoid typical mistakes in modulus/inequality/composite area problems and apply strategic tips for accuracy and speed.
+  PRIOR     : segment 7 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": -1, "a2": 1, "b": 0, "b2": 0, "c": 8, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2.5, "x…
+  PRIOR     : segment 6 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": -1, "a2": 1, "b": 0, "b2": 0, "c": 2, "c2": 0, "mode": "area_between", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1.5, "x…
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": -1, "a2": 1, "b": 0, "b2": 0, "c": 2, "c2": 0, "mode": "area_between", "shade_from": -1, "shade_to": 1, "x_label": "x", "x_max": 1.5, "…
+  PRIOR     : segment 4 — `xy_plot` {"curve": "parabola", "curve2": "line", "a": 1, "a2": 1, "b": 0, "b2": 2, "c": 0, "c2": 0, "mode": "area_between", "shade_from": -1, "shade_to": 2, "x_label": "x", "x_max": 2.5, "x…
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=number_line
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 1]  The Strip Idea: From Rectangles to Integrals
+  OBJECTIVE : Understand how the area under a curve is approximated by thin vertical strips and expressed as a definite integral.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"a": 1, "b": 0, "c": 1, "mode": "area", "curve": "parabola", "x_max": 2, "x_min": 0, "x_label": "x", "y_label": "y = f(x)", "shade_to": 2, "shade_from": 0, "integrate_along": "x"}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 2]  Vertical Strips: Area Between a Curve and the x-axis
+  OBJECTIVE : Compute the area bounded by y = f(x), the x-axis, and vertical lines x = a and x = b when f(x) ≥ 0.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Thin vertical strips of width dx and height y = f(x) filling the area under the curve from x = 0 to x = 2.
+  NODES     : []
+  PARAMS    : {"mode": "area", "curve": "parabola", "a": 1, "b": 0, "c": 2, "x_min": 0, "x_max": 2, "shade_from": 0, "shade_to": 2, "x_label": "x", "y_label": "y = f(x)"}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 3]  Horizontal Strips: Area Between a Curve and the y-axis
+  OBJECTIVE : Compute the area bounded by x = g(y), the y-axis, and horizontal lines y = c and y = d when g(y) ≥ 0.
+  PRIOR     : segment 2 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 2, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y = f(x)"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"a": 1, "b": 0, "c": 0, "mode": "area", "curve": "parabola", "x_max": 2.5, "x_min": 0, "y_max": 5, "y_min": 0, "x_label": "x", "y_label": "y", "shade_to": 2, "shade_from": 0, "integrate_along": "y"}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 4]  Handling Curves Below the x-axis
+  OBJECTIVE : Find the area when the curve lies below the x-axis by taking the absolute value of the integral.
+  PRIOR     : segment 2 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 2, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y = f(x)"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"a": -1, "b": 0, "c": 0, "mode": "area", "curve": "parabola", "x_max": 1.2, "x_min": -0.2, "x_label": "x", "y_label": "y", "shade_to": 1, "shade_from": 0}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 5]  Splitting at Roots: When the Curve Crosses the Axis
+  OBJECTIVE : Compute the area when the curve crosses the x-axis within the interval by splitting the integral at the roots.
+  PRIOR     : segment 2 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 2, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y = f(x)"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : Curve crossing the x-axis: the two shaded pieces have opposite signs and cancel in the signed integral.
+  NODES     : []
+  PARAMS    : {"mode": "area", "curve": "parabola", "a": 1, "b": 0, "c": 0, "x_min": -2, "x_max": 2, "shade_from": -2, "shade_to": 2, "x_label": "x", "y_label": "y = f(x)"}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 6]  Symmetry: A Time-Saving Shortcut
+  OBJECTIVE : Use symmetry to compute areas of symmetric regions by integrating over a smaller part and multiplying.
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 0, "mode": "area", "shade_from": -2, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": -2, "y_label": "y = f(x)"}
+  PRIOR     : segment 2 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 2, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y = f(x)"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"a": 1, "b": 1, "c": 0, "mode": "area", "curve": "reciprocal", "x_max": 1.2, "x_min": -1.2, "x_label": "x", "y_label": "y", "shade_to": 1, "shade_from": 0}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 7]  Standard Results: Circle and Ellipse
+  OBJECTIVE : Apply the standard area formulas for a circle and an ellipse, and understand their derivation via integration.
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 0, "mode": "area", "shade_from": -2, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": -2, "y_label": "y = f(x)"}
+  PRIOR     : segment 2 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 2, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y = f(x)"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : First-quadrant piece of the circle: integrate y = sqrt(a^2 - x^2) from x = 0 to x = a.
+  NODES     : []
+  PARAMS    : {"mode": "area", "curve": "parabola", "a": -1, "b": 0, "c": 1, "x_min": 0, "x_max": 1, "shade_from": 0, "shade_to": 1, "x_label": "x", "y_label": "y = sqrt(a^2 - x^2)"}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 8]  Choosing the Right Variable: dx vs dy
+  OBJECTIVE : Decide whether to integrate with respect to x or y based on the geometry of the region.
+  PRIOR     : segment 7 — `xy_plot` {"curve": "parabola", "a": -1, "b": 0, "c": 1, "mode": "area", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1, "x_min": 0, "y_label": "y = sqrt(a^2 - x^2)"}
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 0, "mode": "area", "shade_from": -2, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": -2, "y_label": "y = f(x)"}
+  PRIOR     : segment 2 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 2, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y = f(x)"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"a": 0.25, "b": 0, "c": 0, "mode": "area", "curve": "parabola", "x_max": 4, "x_min": 0, "x_label": "x", "y_label": "y", "shade_to": 4, "shade_from": 0, "integrate_along": "x"}
+  SANE      : ____
+
+[area-under-a-simple-curve-bounded-by-the-axes  seg 9]  Putting It All Together: A Multi-Concept Problem
+  OBJECTIVE : Solve a problem that combines sign handling, splitting, symmetry, and variable choice.
+  PRIOR     : segment 7 — `xy_plot` {"curve": "parabola", "a": -1, "b": 0, "c": 1, "mode": "area", "shade_from": 0, "shade_to": 1, "x_label": "x", "x_max": 1, "x_min": 0, "y_label": "y = sqrt(a^2 - x^2)"}
+  PRIOR     : segment 5 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 0, "mode": "area", "shade_from": -2, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": -2, "y_label": "y = f(x)"}
+  PRIOR     : segment 2 — `xy_plot` {"curve": "parabola", "a": 1, "b": 0, "c": 2, "mode": "area", "shade_from": 0, "shade_to": 2, "x_label": "x", "x_max": 2, "x_min": 0, "y_label": "y = f(x)"}
+  FIRED     : xy_plot v4 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"a": 4, "b": 0, "c": 0, "mode": "area", "curve": "reciprocal", "x_max": 4.5, "x_min": -4.5, "x_label": "x", "y_label": "y", "shade_to": 4, "shade_from": 2}
+  SANE      : ____
