@@ -1,0 +1,299 @@
+ARCHETYPE-BRANCH PAYLOAD DUMP — Electric Charges and Fields, 40 segments
+Judge `sane`: does this picture belong beside THIS objective, and is it
+different from what the prior-payload lines say was already drawn?
+`sane` is left blank on purpose. Fill it in.
+==============================================================================
+
+[electric-charge-properties-quantisation-and-charging  seg 1]  Two Kinds of Charge and the Electron Transfer Model
+  OBJECTIVE : Explain that there are two kinds of charge, like charges repel and unlike attract, and that charging is due to electron transfer.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-charge-properties-quantisation-and-charging  seg 2]  Conductors, Insulators, and Earthing
+  OBJECTIVE : Distinguish conductors and insulators based on electron mobility and explain earthing as charge draining to ground.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[electric-charge-properties-quantisation-and-charging  seg 3]  Quantisation of Charge
+  OBJECTIVE : State that charge is quantised as q = ne and use it to determine possible charge values and number of electrons.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-charge-properties-quantisation-and-charging  seg 4]  Additivity and Conservation of Charge
+  OBJECTIVE : Calculate total charge of a system using algebraic sum and explain that net charge of an isolated system is conserved.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-charge-properties-quantisation-and-charging  seg 5]  Charging by Friction and Conduction
+  OBJECTIVE : Describe charging by friction and conduction, including charge sharing between identical conductors.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[electric-charge-properties-quantisation-and-charging  seg 6]  Charging by Induction
+  OBJECTIVE : Explain the steps of charging by induction and contrast it with conduction.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[electric-charge-properties-quantisation-and-charging  seg 7]  Detecting Charge and the Only Sure Test
+  OBJECTIVE : Use a gold-leaf electroscope to detect charge and explain why repulsion is the only definitive test of charge.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-charge-properties-quantisation-and-charging  seg 8]  Quantisation in Practice and Problem Solving
+  OBJECTIVE : Apply quantisation to calculate number of electrons and connect to mass transfer and Coulomb's law.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-field  seg 1]  How Does One Charge Know the Other Is There?
+  OBJECTIVE : Explain why the electric field concept is needed and how it resolves the action-at-a-distance problem.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=vector_resolution
+  SANE      : ____
+
+[electric-field  seg 2]  Defining the Field: Force per Unit Positive Charge
+  OBJECTIVE : State the definition of electric field and compute it from force and test charge.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[electric-field  seg 3]  Field of a Point Charge, and Superposition
+  OBJECTIVE : Derive the electric field of a point charge and apply superposition to multiple charges.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[electric-field  seg 4]  Electric Field Lines and Their Four Rules
+  OBJECTIVE : Interpret electric field line diagrams and state the four rules they obey.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[electric-field  seg 5]  Field Formulas, Units and Dimensions
+  OBJECTIVE : Recall the key electric field formulas, SI units, and dimensional formula.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-field  seg 6]  Worked Example: Field at a Point and Force on a Negative Charge
+  OBJECTIVE : Solve a board-level problem calculating the electric field magnitude at a point due to a point charge, then find the force on a negative charge placed at that point.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[electric-field  seg 7]  Worked Example: Axial Field of a Charged Ring and Its Maximum
+  OBJECTIVE : Derive the electric field on the axis of a uniformly charged ring and find its maximum.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[electric-field  seg 8]  Pitfalls and Pro-Tips for the Electric Field
+  OBJECTIVE : Identify common mistakes in electric field problems and apply strategies to avoid them.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=projectile_scene
+  SANE      : ____
+
+[electric-field-lines  seg 1]  Two Kinds of Charge and the Conservation Principle
+  OBJECTIVE : Identify the two kinds of electric charge and explain why charge is conserved during any charging process.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[electric-field-lines  seg 2]  Conductors, Insulators, and Earthing
+  OBJECTIVE : Distinguish conductors from insulators and describe how earthing removes excess charge.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[electric-field-lines  seg 3]  Quantisation: Charge Comes in Packets
+  OBJECTIVE : State the principle of charge quantisation and calculate the number of elementary charges in a given charge.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-field-lines  seg 4]  Charging by Friction and by Conduction
+  OBJECTIVE : Describe the outcomes of charging by friction and by conduction, including the sign of charge acquired.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[electric-field-lines  seg 5]  Charging by Induction: The Four-Step Procedure
+  OBJECTIVE : List the four steps of charging by induction and state the final charge on the conductor relative to the inducing rod.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[electric-field-lines  seg 6]  The Gold-Leaf Electroscope and Why Quantisation Hides
+  OBJECTIVE : Explain how a gold-leaf electroscope detects charge and why quantisation is not noticeable at macroscopic scales.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=None
+  SANE      : ____
+
+[electric-field-lines  seg 7]  Key Formulas: Quantisation, Additivity, Conservation, and Sharing
+  OBJECTIVE : Write and apply the formulas for quantisation, additivity, conservation, and charge sharing between identical conductors.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-field-lines  seg 8]  Worked Examples: Counting Electrons and a Speed-Trap Sharing Problem
+  OBJECTIVE : Solve numerical problems involving quantisation and charge sharing between identical conductors.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[electric-field-lines  seg 9]  Worked Examples: Quantisation Feeding into Coulomb's Law and Repeated Contact
+  OBJECTIVE : Solve advanced problems that combine quantisation with Coulomb's law and repeated charge sharing.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[equilibrium-of-charges  seg 1]  What Does Equilibrium Mean for Charges?
+  OBJECTIVE : Define electrostatic equilibrium and identify the condition for a charge to be in equilibrium under electric forces.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[equilibrium-of-charges  seg 2]  Two Charges: The Trivial Case
+  OBJECTIVE : Analyze equilibrium of a charge between two fixed charges and determine the position where net force is zero.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[equilibrium-of-charges  seg 3]  Three Charges on a Line: The Classic Problem
+  OBJECTIVE : Find the conditions for all three charges on a line to be in equilibrium simultaneously.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[equilibrium-of-charges  seg 4]  Stability: Earnshaw's Theorem and Constraints
+  OBJECTIVE : Distinguish stable, unstable, and neutral equilibrium and apply Earnshaw's theorem to electrostatic systems.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[equilibrium-of-charges  seg 5]  Equilibrium on a Ring: Symmetry in Action
+  OBJECTIVE : Determine equilibrium configurations of charges constrained to a ring and analyze their stability.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[equilibrium-of-charges  seg 6]  Spring-Block-Charge System: Mechanics Meets Electrostatics
+  OBJECTIVE : Find the equilibrium position and oscillation frequency of a charged block attached to a spring with a fixed charge.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[equilibrium-of-charges  seg 7]  Method of Images: Equilibrium Near a Grounded Plane
+  OBJECTIVE : Use the method of images to find the force on a point charge near a grounded conducting plane.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[equilibrium-of-charges  seg 8]  Putting It All Together: JEE-Level Synthesis
+  OBJECTIVE : Solve a compound problem involving multiple equilibrium concepts, such as charges on a ring with a central charge and stability analysis.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[gauss-s-law-and-its-applications  seg 1]  Electric Flux: The Flow of Field
+  OBJECTIVE : Define electric flux and compute it for a flat surface in a uniform field.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : field_lines v2 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"annotate": null, "charge_uc": 12, "show_arrows": true, "configuration": "parallel_plates"}
+  SANE      : ____
+
+[gauss-s-law-and-its-applications  seg 2]  Gauss's Law: The Net Flux Rule
+  OBJECTIVE : State Gauss's law and explain its meaning for any closed surface.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : field_lines v2 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"annotate": "termination", "charge_uc": 8, "show_arrows": true, "configuration": "point"}
+  SANE      : ____
+
+[gauss-s-law-and-its-applications  seg 3]  Field of an Infinite Line Charge
+  OBJECTIVE : Derive the electric field of an infinite line charge using Gauss's law.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : field_lines v2 route=archetype_high
+  CAPTION   : Radial field lines around the charged wire — a coaxial cylinder is the matching Gaussian surface.
+  NODES     : []
+  PARAMS    : {"configuration": "point", "charge_uc": 10, "show_arrows": true, "annotate": "termination"}
+  SANE      : ____
+
+[gauss-s-law-and-its-applications  seg 4]  Field of an Infinite Plane Sheet
+  OBJECTIVE : Derive the electric field of an infinite plane sheet of charge.
+  PRIOR     : segment 3 — `field_lines` {"configuration": "point", "annotate": "termination", "charge_uc": 10, "show_arrows": true}
+  FIRED     : field_lines v2 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"annotate": "termination", "charge_uc": 12, "show_arrows": true, "configuration": "parallel_plates"}
+  SANE      : ____
+
+[gauss-s-law-and-its-applications  seg 5]  Field of a Charged Spherical Shell
+  OBJECTIVE : Derive the electric field inside and outside a uniformly charged thin spherical shell.
+  PRIOR     : segment 3 — `field_lines` {"configuration": "point", "annotate": "termination", "charge_uc": 10, "show_arrows": true}
+  FIRED     : field_lines v2 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"annotate": "termination", "charge_uc": 12, "show_arrows": true, "configuration": "point"}
+  SANE      : ____
+
+[gauss-s-law-and-its-applications  seg 6]  Applying Gauss's Law: Symmetry and Strategy
+  OBJECTIVE : Choose appropriate Gaussian surfaces for symmetric charge distributions and compute fields.
+  PRIOR     : segment 3 — `field_lines` {"configuration": "point", "annotate": "termination", "charge_uc": 10, "show_arrows": true}
+  FIRED     : field_lines v2 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"annotate": null, "charge_uc": 8, "show_arrows": true, "configuration": "point"}
+  SANE      : ____
+
+[gauss-s-law-and-its-applications  seg 7]  Common Pitfalls and Exam Traps
+  OBJECTIVE : Avoid typical mistakes in flux and Gauss's law problems.
+  PRIOR     : segment 3 — `field_lines` {"configuration": "point", "annotate": "termination", "charge_uc": 10, "show_arrows": true}
+  FIRED     : field_lines v2 route=archetype_high
+  CAPTION   : None
+  NODES     : []
+  PARAMS    : {"annotate": "termination", "charge_uc": 8, "show_arrows": true, "configuration": "point"}
+  SANE      : ____
