@@ -126,13 +126,15 @@ WIDGET_SPECS: Dict[str, str] = {
         '(null|"neutral_point"|"termination").'
     ),
     "xy_plot": (
-        "a curve y=f(x), the EXACT area under it, the area between two curves, "
-        "or a plotted dataset — integrals and areas included, computed, not "
-        'sketched. params: mode ("curve"|"area"|"area_between"|"data"), curve and '
-        'curve2 ("line"|"parabola"|"sine"|"exponential"|"reciprocal"; '
-        "area_between accepts line/parabola only), coefficients a,b,c and "
-        "a2,b2,c2, x_min, x_max, shade_from, shade_to, values (data mode), "
-        "x_label, y_label."
+        "y=f(x): area under it, the area between two curves, piecewise/"
+        "modulus, tangent/normal, secant chord = average rate with delta-"
+        "risers. params: mode "
+        "(curve|area|area_between|data|family|named), curve/curve2 "
+        "(line|parabola|sine|exponential|reciprocal), a,b,c,a2,b2,c2, x_min, "
+        "x_max, shade_from, shade_to, values, x/y_label, "
+        "integrate_along, pieces (max 6), tangent_kind, tangent_at, secant "
+        "(none|chord|chord_with_deltas), secant_from/secant_to (>=5% apart), "
+        "family_param, family_values, named_shape. No circles/regions/panels."
     ),
     "data_table_trend": (
         "a small table of measured values with the trend down one column called "

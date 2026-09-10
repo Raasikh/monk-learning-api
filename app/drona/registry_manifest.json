@@ -23,10 +23,11 @@
   },
   {
     "id": "xy_plot",
-    "version": 3,
+    "version": 4,
     "animatable": [
       "shade_to",
-      "tangent_at"
+      "tangent_at",
+      "secant_to"
     ]
   },
   {
