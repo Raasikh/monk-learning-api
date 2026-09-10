@@ -240,6 +240,19 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     `like_charges` would put two charges on the board and look close enough to
     pass a glance, which is why the refusal is written down.
 
+    97 -> 114 in the W3 med re-pass (2026-09-10): 245 med rows carrying a
+    figure cue were re-read against the CURRENT registry; 18 proposed, and a
+    blind adjudicator — an independent agent shown evidence only, with 18
+    refusal controls interleaved, all of which it confirmed — agreed on 17.
+    The one disagreement was a hit on the first pass, not the checker:
+    Raoult's Fig 1.3 draws THREE lines and xy_plot draws two, so that row's
+    promotion was REMOVED. chem12's first-pass band was 3/4 (75%); the
+    correction is a removal, and the surviving band clears 90% per subject.
+    Notable stays: Blackman (saturation is not growth_curve), ethane
+    conformations (cosine needs a phase the sine kind lacks), Kohlrausch
+    (a root-c axis), the ch10 conic tangents (not functions of x), C4/Kranz
+    (a labelled two-compartment cell, not a box chain).
+
     95 -> 97 later the same day, xy_plot v4's secant: the two ch2 rows whose
     evidence is Fig 2.1 (chord AB with Δ risers, tangent at A) — drawn
     outright by the corner fixture secant-deltas-xt, gated at all three
@@ -272,8 +285,8 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     for r in high:
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
-    assert len(high) == 482
-    assert len(named) == 97, f"the routed population moved: {len(named)}"
+    assert len(high) == 499
+    assert len(named) == 114, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
@@ -296,7 +309,7 @@ def test_the_routed_population_is_ninety_across_fifty_one_chapters():
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 55
+    assert len(routed) == 58
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
