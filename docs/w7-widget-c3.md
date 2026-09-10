@@ -92,8 +92,23 @@ Client revealed the answer turn's four board items each on their own clip
 (`onItemStart(s1-8..s4-11)` — playback ids continue across turns). Shots:
 `docs/w7-shots/w7-tap-answer-board.png`.
 
-## Still to capture
+## Exact-frame shots (343×236 and 900×430)
 
-- [ ] Exact-frame widget screenshots at 343×236 and 900×430 (extend
-      `dev-widget-preview` with a 'frames' mode mirroring FigureLab — only
-      after the live class ends; fast refresh kills a running class).
+Captured via a new `wframes` mode in `app/dev-widget-preview.tsx` (mobile
+repo) mirroring FigureLab: the two class payloads written out IN FULL —
+defaults included, so what renders is exactly what `validate()` admits, not a
+partial payload leaning on defaulting — rendered through BoardWidget at the
+gate's two binding frames.
+
+    w7-xyplot-343x236.png       xy_plot@4, y = x²+1 on [0,2], area 4.67
+    w7-xyplot-900x430.png       same payload at the wide board
+    w7-fieldlines-343x236.png   field_lines@2 parallel_plates, E 1.13e6 N/C, lines 10
+    w7-fieldlines-900x430.png   same payload at the wide board
+
+(The 900-wide box exceeds the phone's 874pt landscape width, so wide-frame
+shots clip at the right edge on screen — the widget itself received exactly
+900×430. Same caveat as the block-3 figure shots.)
+
+W7 is complete: both classes verified on production, params → deterministic
+render with hand-checked derived readouts, cue on reveal order, no model
+geometry, tap-to-answer graded correct, and the four exact-frame shots above.
