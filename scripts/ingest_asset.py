@@ -1664,33 +1664,69 @@ def cmd_ingest(args) -> int:
             failed += 1
             continue
 
-        # CONTENT-HASH SKIP, against the OBJECT rather than the row.
+        # CONTENT-HASH SKIP — and the skip has TWO conditions, not one.
         #
-        # A re-run over an unchanged package must not re-upload 112 objects or
-        # rewrite 112 rows. The obvious comparison — the row's sha256 against
-        # the manifest's — CANNOT BE MADE: `concept_assets` has no master
-        # sha256 column, only `labelled_reference_sha256`, which is the RAW
-        # file's hash and does not move when a master is re-cut. Written that
-        # way it compares None to None and skips everything, always, which is a
-        # check that passes because it looked at nothing.
+        # A re-run over an unchanged package must not re-upload 113 objects or
+        # rewrite 113 rows. Since 0040 the row records the master's own hash,
+        # so the first comparison is row-to-manifest; the R2 ETag (the MD5 of a
+        # single-part upload) is kept as a cross-check that the OBJECT also
+        # matches, because the row saying so is a claim and the bucket is the
+        # fact. Before 0040 the ETag was the only comparison possible — the
+        # row-to-manifest version compared None to None and skipped everything.
         #
-        # So the comparison is to what is actually stored: R2's ETag is the MD5
-        # of a single-part upload, and these objects are all well under the
-        # multipart threshold. Same bytes at the same key plus a row already
-        # present means there is nothing to do.
+        # THE SECOND CONDITION IS THE ROW ITSELF. The first backfill run
+        # skipped all 113 rows with their new hash columns still NULL, because
+        # this block decided from the object alone: unchanged bytes meant
+        # "nothing to do" while the row was missing data this run had in hand.
+        # A skip must mean "the object AND the row are already what this run
+        # would make them" — so an unchanged object with an incomplete or
+        # stale-hashed row falls through to an UPDATE that uploads nothing.
         if existing:
             try:
                 head = storage_r2.get_client().head_object(
                     Bucket=bucket, Key=row["r2_key"])
                 etag = (head.get("ETag") or "").strip('"')
-                if etag == hashlib.md5(r.data).hexdigest():
-                    skipped_unchanged.append(r.slug)
-                    continue
+                object_unchanged = etag == hashlib.md5(r.data).hexdigest()
             except Exception:
                 # No object, or no answer. Fall through and upload it — a row
                 # without its object is the one state this ordering exists to
                 # prevent, and re-uploading is cheap next to leaving it.
-                pass
+                object_unchanged = False
+            row_complete = (
+                existing.get("master_sha256") == row["master_sha256"]
+                and (
+                    # The rendition hash is derived at upload time, so on this
+                    # path it is judged by presence and threshold: a narrow
+                    # master must have one, a wide master must not.
+                    existing.get("rendition_2x_sha256") is not None
+                    if int(row.get("width") or 0) < RENDITION_THRESHOLD_PX
+                    else existing.get("rendition_2x_sha256") is None
+                )
+            )
+            if object_unchanged and row_complete:
+                skipped_unchanged.append(r.slug)
+                continue
+            if object_unchanged:
+                # ── row repair, no upload ──────────────────────────────────
+                # The bytes in the bucket are already right; only the row is
+                # behind. The rendition is re-derived in memory purely to be
+                # hashed — deriving is deterministic (same Lanczos, same
+                # source bytes), so this hash names the object already stored.
+                rend = make_rendition(r.data)
+                row["rendition_2x_sha256"] = (
+                    hashlib.sha256(rend).hexdigest() if rend is not None else None
+                )
+                try:
+                    (supabase.table(TABLE).update(row)
+                     .eq("asset_slug", r.slug).execute())
+                except Exception as err:
+                    sys.stderr.write(f"{r.slug}: ROW REPAIR FAILED: {err}\n")
+                    failed += 1
+                    continue
+                wrote += 1
+                print(f"{r.slug}: object unchanged; row completed "
+                      f"(master_sha256, rendition_2x_sha256)")
+                continue
 
         # 1. upload, 2. confirm it is there. Only then, 3. record it.
         try:

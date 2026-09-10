@@ -259,7 +259,13 @@ class FakeS3:
     def head_object(self, Bucket, Key):
         if Key not in self.objects:
             raise RuntimeError("NoSuchKey")
-        return {"ContentLength": len(self.objects[Key])}
+        # The ETag, like the real thing: R2 answers the MD5 of a single-part
+        # upload, quoted. Without it this fake could never satisfy the
+        # content-hash skip, so every "skip" test silently exercised the
+        # upload path instead — a fake that cannot say "unchanged" is a fake
+        # for a different store than the one in production.
+        return {"ContentLength": len(self.objects[Key]),
+                "ETag": f'"{hashlib.md5(self.objects[Key]).hexdigest()}"'}
 
     def delete_object(self, Bucket, Key):
         self.deleted.append(Key)
@@ -876,18 +882,28 @@ def test_failed_insert_names_the_orphaned_object(bench, monkeypatch, capsys):
     assert f"concept-assets/{SLUG}.png" in err
 
 
-def test_reingest_updates_rather_than_duplicating(bench, wired, capsys):
+def test_reingest_skips_rather_than_duplicating(bench, wired, capsys):
+    """A second run over unchanged content is a SKIP, not an update.
+
+    This test used to assert the opposite — that the re-run uploaded and
+    updated again — and it passed only because FakeS3.head_object returned no
+    ETag, so the content-hash skip could never fire under test. Once the fake
+    answers like R2 does, the real semantics show: same bytes, complete row,
+    nothing to do.
+    """
     s3, db = wired
     args = bench() + ["--execute"]
     assert ia.main(args) == 0
     capsys.readouterr()
-    # Second attempt is the normal case, not the error case.
     assert ia.main(args) == 0
+    out = capsys.readouterr().out
+    assert "UNCHANGED, nothing re-uploaded or rewritten: 1" in out
     assert len(db.inserts) == 1
-    assert len(db.updates) == 1
+    assert len(db.updates) == 0
     assert len(db.rows) == 1
+    # One upload pair, not two.
     assert s3.puts == [f"concept-assets/{SLUG}.png",
-                       f"concept-assets/{SLUG}@2x.png"] * 2
+                       f"concept-assets/{SLUG}@2x.png"]
 
 
 def test_a_refusal_does_not_block_the_good_rows(bench, wired, capsys):
@@ -1840,3 +1856,36 @@ def test_a_master_too_wide_for_a_rendition_records_NULL_not_a_hash(bench, wired)
     written = db.inserts[0]
     assert written["rendition_2x_sha256"] is None
     assert not any(k.endswith("@2x.png") for k in s3.puts)
+
+
+def test_an_unchanged_object_with_an_incomplete_row_repairs_the_row(bench, wired, capsys):
+    """The first backfill run skipped all 113 rows with their new hash columns
+    still NULL: the skip decided from the OBJECT alone, and unchanged bytes
+    meant 'nothing to do' while the row was missing data the run had in hand.
+
+    A skip must mean 'the object AND the row are already what this run would
+    make them'. An unchanged object over an incomplete row is an UPDATE that
+    uploads nothing.
+    """
+    s3, db = wired
+    args = bench() + ["--execute"]
+    assert ia.main(args) == 0
+    # Simulate the pre-0040 state: the object is in the bucket, the row exists,
+    # but the hash columns were added after it was written.
+    db.rows[0]["master_sha256"] = None
+    db.rows[0]["rendition_2x_sha256"] = None
+    puts_before = list(s3.puts)
+    capsys.readouterr()
+
+    assert ia.main(args) == 0
+    out = capsys.readouterr().out
+    assert "row completed" in out
+    assert s3.puts == puts_before, "a row repair must upload nothing"
+    repaired = db.rows[0]
+    assert re.fullmatch(r"[0-9a-f]{64}", repaired["master_sha256"])
+    assert re.fullmatch(r"[0-9a-f]{64}", repaired["rendition_2x_sha256"])
+
+    # And a third run, with the row now complete, is a pure skip.
+    capsys.readouterr()
+    assert ia.main(args) == 0
+    assert "UNCHANGED, nothing re-uploaded or rewritten: 1" in capsys.readouterr().out
