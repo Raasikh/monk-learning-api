@@ -240,6 +240,19 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     `like_charges` would put two charges on the board and look close enough to
     pass a glance, which is why the refusal is written down.
 
+    90 -> 95 on 2026-09-10, free_body_forces@1. FIVE of the eight
+    gap_free_body_diagram / gap_vector_resolution rows, not eight, by the same
+    rule as lines_planes_3d's four-of-six: a row promotes only if the widget
+    draws the concept's evidence figure OUTRIGHT. "Newton's Law of
+    Gravitation" is a two-body action-reaction pair — deliberately not a v1
+    mode; "Fluid Pressure and Pascal's Law" draws pressure arrows INTO an
+    element's faces where v1 draws outward from a body; "Buoyancy and
+    Floatation"'s load-bearing figure is a pressure-arrow boundary field.
+    All three refusals are written into physics.ts's header alongside the
+    evidence rows that were promoted. Two of the five (ch4 FBD, ch4
+    Equilibrium) rode med -> high with the promotion, which is what moved the
+    high count 479 -> 481.
+
     Two more worth knowing because the NAME matches and the FIGURE does not:
     `gap_potential_energy_curve` wants a valley AND a hilltop with a total-energy
     line, while the named shape is a Lennard-Jones well with neither; and
@@ -252,8 +265,8 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     for r in high:
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
-    assert len(high) == 479
-    assert len(named) == 90, f"the routed population moved: {len(named)}"
+    assert len(high) == 481
+    assert len(named) == 95, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
@@ -265,13 +278,17 @@ def test_the_routed_population_is_ninety_across_fifty_one_chapters():
     37 -> 39 with the lines_planes_3d promotion (mathematics 11 ch11 and
     mathematics 12 ch11 had high rows but no routable one), then 39 -> 50 when
     the 27 plot-shaped gap rows were re-read against xy_plot v3, then 50 -> 51
-    when field_lines v2 took physics 12 ch1.
-    (The function name has trailed the number twice; it says what it asserts.)
+    when field_lines v2 took physics 12 ch1, then 51 -> 54 when
+    free_body_forces@1 took physics 11 ch3, ch4 and ch13 (ch9's Stokes row
+    routed too, but ch9 was already in the set via another widget or joins
+    now — the SET is what is pinned, and it grew by three).
+    (The function name has trailed the number three times; it says what it
+    asserts.)
     """
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 51
+    assert len(routed) == 54
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
