@@ -1,0 +1,888 @@
+ARCHETYPE-BRANCH PAYLOAD DUMP — Aldehydes, Ketones & Carboxylic Acids, 113 segments
+Judge `sane`: does this picture belong beside THIS objective, and is it
+different from what the prior-payload lines say was already drawn?
+`sane` is left blank on purpose. Fill it in.
+==============================================================================
+
+[acidity-of-carboxylic-acids-and-substituent-effects  seg 1]  Why Carboxylic Acids Are Acidic: The Carboxylate Story
+  OBJECTIVE : Explain why carboxylic acids are stronger acids than phenols and alcohols by comparing conjugate base stability.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : data_table_trend v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['acetic acid (ch3cooh)', 'phenol (c6h5oh)', 'ethanol (c2h5oh)']
+  PARAMS    : {"unit": "", "values": [[4.76, 2], [10.0, 5], [16.0, 0]], "caption": "Smaller pKa = stronger acid: carboxylate's two equivalent O-structures beat phenoxide's five C-structures.", "cell_kind": "numeric", "trend_col": 0, "col_labels": ["pKa", "Resonance structures in conjugate base"], "row_labels": ["Acetic acid (CH3COOH)", "Phenol (C6H5OH)", "Ethanol (C2H5OH)"], "highlight_row": 0}
+  SANE      : ____
+
+[acidity-of-carboxylic-acids-and-substituent-effects  seg 2]  The Substituent Effect: EWGs and EDGs
+  OBJECTIVE : Predict how electron-withdrawing and electron-donating groups attached to the carboxyl group affect acid strength.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : data_table_trend v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['trichloroacetic (3 cl)', 'dichloroacetic (2 cl)', 'chloroacetic (1 cl)', 'formic (no alkyl)', 'acetic (ch3)', 'propanoic (ch2ch3)']
+  PARAMS    : {"unit": "pKa", "values": [[0.7], [1.3], [2.9], [3.75], [4.76], [4.87]], "caption": "More Cl (EWG) lowers pKa; alkyl donors (EDG) raise it \u2014 lower pKa = stronger acid.", "cell_kind": "numeric", "trend_col": 0, "col_labels": ["pKa"], "row_labels": ["Trichloroacetic (3 Cl)", "Dichloroacetic (2 Cl)", "Chloroacetic (1 Cl)", "Formic (no alkyl)", "Acetic (CH3)", "Propanoic (CH2CH3)"], "highlight_row": -1}
+  SANE      : ____
+
+[acidity-of-carboxylic-acids-and-substituent-effects  seg 3]  Distance Matters: Alpha, Beta, Gamma
+  OBJECTIVE : Rank acids with the same substituent at different positions along the carbon chain.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : data_table_trend v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['2-chlorobutanoic (cl on alpha)', '3-chlorobutanoic (cl on beta)', '4-chlorobutanoic (cl on gamma)']
+  PARAMS    : {"unit": "", "values": [[2.86], [4.05], [4.52]], "caption": "Same one Cl, different position: pKa rises as the Cl moves away from the carboxyl (alpha < beta < gamma acidity)", "cell_kind": "numeric", "trend_col": 0, "col_labels": ["pKa"], "row_labels": ["2-chlorobutanoic (Cl on alpha)", "3-chlorobutanoic (Cl on beta)", "4-chlorobutanoic (Cl on gamma)"], "highlight_row": 0}
+  SANE      : ____
+
+[acidity-of-carboxylic-acids-and-substituent-effects  seg 4]  The Full NCERT Ladder: Putting It All Together
+  OBJECTIVE : Arrange a given set of carboxylic acids in order of increasing or decreasing acid strength using all principles.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : data_table_trend v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['cf3cooh', 'ccl3cooh', 'chcl2cooh', 'fch2cooh', 'clch2cooh', 'brch2cooh', 'hcooh', 'ch3cooh', 'ch3ch2cooh']
+  PARAMS    : {"unit": "", "values": [[0.23], [0.7], [1.29], [2.59], [2.87], [2.9], [3.75], [4.76], [4.87]], "caption": "The master ladder: pKa rises as acid strength falls, each jump traceable to one of the four principles.", "cell_kind": "numeric", "trend_col": 0, "col_labels": ["pKa"], "row_labels": ["CF3COOH", "CCl3COOH", "CHCl2COOH", "FCH2COOH", "ClCH2COOH", "BrCH2COOH", "HCOOH", "CH3COOH", "CH3CH2COOH"], "highlight_row": -1}
+  SANE      : ____
+
+[acidity-of-carboxylic-acids-and-substituent-effects  seg 5]  Aromatic Acids: Ring Substituents and the Ortho Effect
+  OBJECTIVE : Predict the acidity of substituted benzoic acids, including the special ortho effect.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : data_table_trend v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['4-nitrobenzoic acid', 'o-toluic acid', 'benzoic acid', '4-methoxybenzoic acid']
+  PARAMS    : {"unit": "pKa", "values": [[3.41], [3.9], [4.19], [4.46]], "caption": "Smaller pKa = stronger acid: -NO2 and ortho groups beat benzoic acid; -OCH3 falls below it.", "cell_kind": "numeric", "trend_col": 0, "col_labels": ["pKa"], "row_labels": ["4-nitrobenzoic acid", "o-toluic acid", "benzoic acid", "4-methoxybenzoic acid"], "highlight_row": 2}
+  SANE      : ____
+
+[acidity-of-carboxylic-acids-and-substituent-effects  seg 6]  Common Pitfalls and Exam Strategies
+  OBJECTIVE : Avoid typical mistakes in acidity ranking questions and apply a systematic approach.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : data_table_trend v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['alpha-cl', 'beta-cl', 'gamma-cl', 'no cl']
+  PARAMS    : {"unit": "pKa", "values": [[2.86], [3.98], [4.52], [4.76]], "caption": "Inductive distance: Cl on alpha acidifies far more than beta or gamma", "cell_kind": "numeric", "trend_col": 0, "col_labels": ["pKa"], "row_labels": ["alpha-Cl", "beta-Cl", "gamma-Cl", "no Cl"], "highlight_row": 0}
+  SANE      : ____
+
+[aldol-condensation  seg 1]  The Two Reactive Sites of a Carbonyl
+  OBJECTIVE : Identify the carbonyl carbon and alpha-carbon as the two reactive sites and explain why alpha-hydrogens are acidic.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3cho', 'oh^-', '[ch2cho]^-', 'h2o']
+  PARAMS    : {"caption": "Base plucks an alpha-H from ethanal, giving the resonance-stabilised enolate", "species": ["CH3CHO", "OH^-", "[CH2CHO]^-", "H2O"], "step_to": [2, 2], "step_from": [0, 1], "step_kind": ["plain", "plain"], "step_reagent": ["OH^-", ""], "step_progress": 0.5, "highlight_step": 0}
+  SANE      : ____
+
+[aldol-condensation  seg 2]  Enolate Formation: The Nucleophile
+  OBJECTIVE : Draw the enolate ion and explain its resonance stabilization.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['r-ch2-cho', 'r-ch^- -cho', 'r-ch=ch-o^-']
+  PARAMS    : {"caption": "Enolate formation: OH- removes an alpha-H, then the carbanion delocalises into the C=O pi system", "species": ["R-CH2-CHO", "R-CH^- -CHO", "R-CH=CH-O^-"], "step_to": [1, 2], "step_from": [0, 1], "step_kind": ["plain", "plain"], "step_reagent": ["OH^-", ""], "step_progress": 1, "highlight_step": 1}
+  SANE      : ____
+
+[aldol-condensation  seg 3]  The Aldol Addition: C-C Bond Formation
+  OBJECTIVE : Describe the nucleophilic attack of enolate on a second carbonyl to form a beta-hydroxy carbonyl compound.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3cho (molecule a)', 'ch3cho (molecule b)', 'enolate of a', 'tetrahedral alkoxide', '3-hydroxybutanal (aldol)']
+  PARAMS    : {"caption": "Enolate carbon attacks the second carbonyl: new C-C bond, alkoxide, then protonation to the beta-hydroxy aldehyde", "species": ["CH3CHO (molecule A)", "CH3CHO (molecule B)", "enolate of A", "tetrahedral alkoxide", "3-hydroxybutanal (aldol)"], "step_to": [2, 3, 4], "step_from": [0, 2, 3], "step_kind": ["plain", "plain", "major"], "step_reagent": ["dil. NaOH", "new C-C bond", "H+ (H2O)"], "step_progress": 1, "highlight_step": 1}
+  SANE      : ____
+
+[aldol-condensation  seg 4]  Dehydration: The Condensation Step
+  OBJECTIVE : Explain why heating the aldol leads to loss of water and formation of an alpha,beta-unsaturated carbonyl.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3cho', 'ch3ch(oh)ch2cho', 'ch3ch=chcho']
+  PARAMS    : {"caption": "Aldol addition then dehydration: the beta-hydroxy carbonyl loses water to give the conjugated enone", "species": ["CH3CHO", "CH3CH(OH)CH2CHO", "CH3CH=CHCHO"], "step_to": [1, 2], "step_from": [0, 1], "step_kind": ["plain", "major"], "step_reagent": ["dil. NaOH", "heat, -H2O"], "step_progress": 1, "highlight_step": 1}
+  SANE      : ____
+
+[aldol-condensation  seg 5]  Crossed Aldol: The Four-Product Problem
+  OBJECTIVE : Predict the four possible products when two different aldehydes with alpha-H are mixed.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ethanal enolate', 'ethanal', 'propanal', 'propanal enolate', '3-hydroxybutanal', '3-hydroxy-2-methylpentanal', '3-hydroxy-2-methylbutanal', '3-hydroxy-2-methylhexanal']
+  PARAMS    : {"caption": "Two aldehydes with alpha-H give four products: two self-aldols and two crossed aldols", "species": ["ethanal enolate", "ethanal", "propanal", "propanal enolate", "3-hydroxybutanal", "3-hydroxy-2-methylpentanal", "3-hydroxy-2-methylbutanal", "3-hydroxy-2-methylhexanal"], "step_to": [4, 5, 6, 7], "step_from": [0, 0, 3, 3], "step_kind": ["plain", "plain", "plain", "plain"], "step_reagent": ["ethanal", "propanal", "ethanal", "propanal"], "step_progress": 1, "highlight_step": -1}
+  SANE      : ____
+
+[aldol-condensation  seg 6]  Making Crossed Aldol Useful: No Alpha-H Partner
+  OBJECTIVE : Explain how using a carbonyl without alpha-H (like benzaldehyde) limits crossed aldol to one main product.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['c6h5cho', 'ch3cho', 'c6h5ch(oh)ch2cho', 'c6h5ch=chcho']
+  PARAMS    : {"caption": "Benzaldehyde (no alpha-H) is locked as electrophile; ethanal's enolate attacks it, then dehydration gives cinnamaldehyde.", "species": ["C6H5CHO", "CH3CHO", "C6H5CH(OH)CH2CHO", "C6H5CH=CHCHO"], "step_to": [2, 3], "step_from": [0, 2], "step_kind": ["major", "major"], "step_reagent": ["dil. NaOH", "\u0394, -H2O"], "step_progress": 0, "highlight_step": 0}
+  SANE      : ____
+
+[aldol-condensation  seg 7]  Intramolecular Aldol: Ring Formation
+  OBJECTIVE : Predict the cyclic product from a dicarbonyl compound undergoing intramolecular aldol.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3coch2ch2coch3', 'enolate at c-1', '5-membered ring aldol', '3-methylcyclopent-2-en-1-one', 'ch3coch2ch2ch2coch3', 'enolate at c-1', '6-membered ring aldol', '3-methylcyclohex-2-en-1-one']
+  PARAMS    : {"caption": "Intramolecular aldol: hexane-2,5-dione closes to a 5-ring enone; heptane-2,6-dione to a 6-ring enone", "species": ["CH3COCH2CH2COCH3", "enolate at C-1", "5-membered ring aldol", "3-methylcyclopent-2-en-1-one", "CH3COCH2CH2CH2COCH3", "enolate at C-1", "6-membered ring aldol", "3-methylcyclohex-2-en-1-one"], "step_to": [1, 2, 3, 5, 6, 7], "step_from": [0, 1, 2, 4, 5, 6], "step_kind": ["plain", "plain", "major", "plain", "plain", "major"], "step_reagent": ["dil. NaOH", "fold back; C-1 attacks C-5", "\u0394, -H2O", "dil. NaOH", "fold back; C-1 attacks C-6", "\u0394, -H2O"], "step_progress": 1, "highlight_step": 1}
+  SANE      : ____
+
+[aldol-condensation  seg 8]  Ketone Aldol: Acetone to Mesityl Oxide
+  OBJECTIVE : Name the aldol product of acetone and its dehydration product.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3coch3', 'ch3coch2(-)', 'ch3coch2c(oh)(ch3)2', 'ch3coch=c(ch3)2']
+  PARAMS    : {"caption": "Acetone self-aldol: enolate -> diacetone alcohol -> mesityl oxide", "species": ["CH3COCH3", "CH3COCH2(-)", "CH3COCH2C(OH)(CH3)2", "CH3COCH=C(CH3)2"], "step_to": [1, 2, 3], "step_from": [0, 1, 2], "step_kind": ["plain", "plain", "major"], "step_reagent": ["dil. Ba(OH)2 / OH-", "acetone (2nd molecule)", "heat, -H2O"], "step_progress": 1, "highlight_step": 2}
+  SANE      : ____
+
+[aldol-condensation  seg 9]  Aldol vs Cannizzaro: The Decision Tree
+  OBJECTIVE : Decide whether a given carbonyl compound undergoes aldol or Cannizzaro based on alpha-H presence and base concentration.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3cho', 'ch3ch(oh)ch2cho', 'ch3ch=chcho', 'c6h5cho', 'c6h5ch2oh', 'c6h5coona']
+  PARAMS    : {"caption": "Alpha-H decides the fork: ethanal (has alpha-H) goes aldol; benzaldehyde (no alpha-H) goes Cannizzaro.", "species": ["CH3CHO", "CH3CH(OH)CH2CHO", "CH3CH=CHCHO", "C6H5CHO", "C6H5CH2OH", "C6H5COONa"], "step_to": [1, 2, 4, 5], "step_from": [0, 1, 3, 3], "step_kind": ["plain", "plain", "plain", "plain"], "step_reagent": ["dil. NaOH", "\u0394, -H2O", "conc. NaOH", "conc. NaOH"], "step_progress": 0, "highlight_step": -1}
+  SANE      : ____
+
+[alpha-halogenation-and-hell-volhard-zelinsky-reaction  seg 1]  Why Alpha-Hydrogens Are Special
+  OBJECTIVE : Explain why the alpha-hydrogens of aldehydes and ketones are acidic and how enolate formation enables alpha-substitution.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[alpha-halogenation-and-hell-volhard-zelinsky-reaction  seg 2]  Acid-Catalyzed Alpha-Halogenation of Aldehydes and Ketones
+  OBJECTIVE : Predict the product of acid-catalyzed halogenation of an aldehyde or ketone and explain why only one alpha-hydrogen is replaced.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[alpha-halogenation-and-hell-volhard-zelinsky-reaction  seg 3]  Base-Promoted Alpha-Halogenation: The Haloform Reaction
+  OBJECTIVE : Identify methyl ketones and acetaldehyde as substrates for the haloform reaction and predict the products.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[alpha-halogenation-and-hell-volhard-zelinsky-reaction  seg 4]  Hell-Volhard-Zelinsky (HVZ) Reaction: Alpha-Halogenation of Carboxylic Acids
+  OBJECTIVE : Describe the HVZ reaction and predict the alpha-halo carboxylic acid product from a given carboxylic acid.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[alpha-halogenation-and-hell-volhard-zelinsky-reaction  seg 5]  Synthetic Applications of Alpha-Halogenation
+  OBJECTIVE : Use alpha-halogenation reactions to plan simple synthetic transformations, such as converting a carboxylic acid to an alpha-amino acid.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[alpha-halogenation-and-hell-volhard-zelinsky-reaction  seg 6]  Comparing Alpha-Halogenation Methods and Exam Strategy
+  OBJECTIVE : Distinguish between acid-catalyzed, base-promoted, and HVZ halogenation conditions and predict products for given substrates.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[cannizzaro-reaction  seg 1]  The Fork in the Road: Aldol vs Cannizzaro
+  OBJECTIVE : Identify whether an aldehyde will undergo aldol or Cannizzaro based on the presence or absence of alpha-hydrogens.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[cannizzaro-reaction  seg 2]  The Cannizzaro Reaction: Definition and Conditions
+  OBJECTIVE : State the Cannizzaro reaction and list the required substrate and reagent conditions.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[cannizzaro-reaction  seg 3]  Mechanism Step by Step: Hydride Transfer
+  OBJECTIVE : Describe the mechanism of the Cannizzaro reaction, including the key hydride transfer step.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[cannizzaro-reaction  seg 4]  Products: Alcohol and Carboxylate Salt
+  OBJECTIVE : Predict the products of a Cannizzaro reaction for a given aldehyde.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[cannizzaro-reaction  seg 5]  Crossed Cannizzaro: Formaldehyde Always Oxidized
+  OBJECTIVE : Predict products of a crossed Cannizzaro reaction between two different aldehydes without alpha-H.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[cannizzaro-reaction  seg 6]  Exam Traps and Quick Checks
+  OBJECTIVE : Apply a quick checklist to determine if a given aldehyde undergoes Cannizzaro and predict products.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 1]  The Identification Chain: 2,4-DNP First
+  OBJECTIVE : Use 2,4-DNP to detect the presence of a carbonyl group in an unknown compound.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 2]  Tollens' Test: The Silver Mirror for Aldehydes
+  OBJECTIVE : Use Tollens' reagent to distinguish aldehydes from ketones.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=ray_diagram
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 3]  Fehling's and Benedict's: Aliphatic Aldehydes Only
+  OBJECTIVE : Use Fehling's or Benedict's solution to distinguish aliphatic aldehydes from aromatic aldehydes and ketones.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 4]  Iodoform Test: The Methyl Ketone Signature
+  OBJECTIVE : Use the iodoform test to detect methyl ketones and secondary alcohols with a CH3CH(OH)- group.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 5]  Schiff's Test: Aldehyde vs Ketone Color
+  OBJECTIVE : Use Schiff's reagent to distinguish aldehydes from ketones by color restoration.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 6]  NaHSO3 and NaHCO3: Carbonyl vs Acid
+  OBJECTIVE : Use NaHSO3 to detect aldehydes and methyl ketones, and NaHCO3 to detect carboxylic acids.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 7]  Putting It All Together: The Decision Tree
+  OBJECTIVE : Apply a systematic sequence of tests to identify an unknown carbonyl compound.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=ray_diagram
+  SANE      : ____
+
+[distinguishing-tests-for-aldehydes-ketones-and-acids  seg 8]  Stoichiometry and Exam Traps
+  OBJECTIVE : Calculate moles of silver or Cu2O formed in oxidation tests and avoid common exam pitfalls.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=ray_diagram
+  SANE      : ____
+
+[haloform-reaction  seg 1]  The Yellow Solid That Tells a Story
+  OBJECTIVE : Recognize the iodoform test as a qualitative test for methyl ketones and methyl carbinols, and recall its visual signature.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[haloform-reaction  seg 2]  The Structural Key: CH3CO– or CH3CH(OH)–
+  OBJECTIVE : Identify whether a given compound will give a positive iodoform test by checking for a methyl group directly attached to a carbonyl or a secondary alcohol with a methyl group on the carbinol carbon.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[haloform-reaction  seg 3]  The Reaction: Halogenation and Cleavage
+  OBJECTIVE : Write the overall equation for the iodoform reaction of a methyl ketone with iodine and base, showing the formation of iodoform and a carboxylate salt.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[haloform-reaction  seg 4]  Mechanism in Three Steps
+  OBJECTIVE : Describe the stepwise mechanism: enolate formation, triple halogenation, and nucleophilic acyl substitution to release haloform.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[haloform-reaction  seg 5]  Ethanol and Ethanal: The Oxidation Twist
+  OBJECTIVE : Explain why ethanol and ethanal give a positive iodoform test even though they are not methyl ketones.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=vector_resolution
+  SANE      : ____
+
+[haloform-reaction  seg 6]  Test Conditions and Limitations
+  OBJECTIVE : State the reagents and conditions for the iodoform test and list common false positives and negatives.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[haloform-reaction  seg 7]  Exam Pattern Recognition
+  OBJECTIVE : Apply the structural criteria to solve typical MCQ and short-answer questions on iodoform test.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[haloform-reaction  seg 8]  Haloform Reaction in Synthesis
+  OBJECTIVE : Recognize the haloform reaction as a method to convert a methyl ketone to a carboxylic acid with one fewer carbon atom.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[haloform-reaction  seg 9]  Summary and Key Takeaways
+  OBJECTIVE : Recall the structural requirement, reagents, product, and applications of the haloform reaction.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 1]  The Two Reactive Sites of a Carbonyl
+  OBJECTIVE : Identify the two reactive sites in an aldehyde or ketone and predict which site a given reagent will attack.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 2]  Nucleophilic Addition: The Master Mechanism
+  OBJECTIVE : Describe the three steps of nucleophilic addition and apply them to predict products of reactions with HCN, NaHSO3, Grignard reagents, and ammonia derivatives.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 3]  Reduction and Oxidation: Choosing the Right Reagent
+  OBJECTIVE : Select the appropriate reagent to reduce a carbonyl to an alcohol or to a CH2 group, and to oxidize an aldehyde to a carboxylic acid, considering functional group compatibility.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=ray_diagram
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 4]  Alpha-Hydrogen Reactions: Aldol and Iodoform
+  OBJECTIVE : Predict whether a carbonyl compound will undergo aldol condensation or iodoform reaction based on the presence of alpha-hydrogens and the methyl ketone group.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=None
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 5]  Cannizzaro Reaction: When There's No Alpha-Hydrogen
+  OBJECTIVE : Identify aldehydes without alpha-hydrogens and predict the products of Cannizzaro reaction under concentrated alkali.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 6]  Distinguishing Tests: A Decision Tree
+  OBJECTIVE : Choose the correct chemical test to distinguish between given aldehydes and ketones, including Tollens', Fehling's, and iodoform tests.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=ray_diagram
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 7]  Multi-Step Synthesis: Connecting the Dots
+  OBJECTIVE : Plan a multi-step synthesis from a given starting material to a target molecule using the reactions learned, considering functional group compatibility and reaction order.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 8]  Reaction Maps: Seeing the Big Picture
+  OBJECTIVE : Construct a reaction map linking aldehydes, ketones, carboxylic acids, and their derivatives, and use it to solve conversion problems.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[multi-step-conversions-and-reaction-maps  seg 9]  Exam-Style Problem Solving
+  OBJECTIVE : Apply the reaction map and decision trees to solve typical JEE/NEET/board multi-step conversion and identification problems.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=ray_diagram
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 1]  The Carbonyl Group: The Heart of Aldehydes and Ketones
+  OBJECTIVE : Identify the carbonyl group and explain why its polarity makes the carbon electrophilic.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 2]  Aldehydes vs Ketones: The One Hydrogen That Changes Everything
+  OBJECTIVE : Distinguish aldehydes from ketones based on structure and predict relative reactivity.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 3]  IUPAC Nomenclature of Aldehydes: The -al Suffix
+  OBJECTIVE : Name simple and substituted aldehydes using IUPAC rules.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 4]  IUPAC Nomenclature of Ketones: The -one Suffix
+  OBJECTIVE : Name simple and substituted ketones using IUPAC rules.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 5]  Naming Molecules with Multiple Functional Groups: Priority Rules
+  OBJECTIVE : Apply IUPAC priority order to name compounds containing carbonyl and other functional groups.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 6]  Aromatic Carbonyl Compounds: Benzaldehyde and Beyond
+  OBJECTIVE : Name aromatic aldehydes and ketones using IUPAC and common names.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 7]  Isomerism in Carbonyl Compounds: Same Formula, Different Structures
+  OBJECTIVE : Identify functional and chain isomers of aldehydes and ketones.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=None
+  SANE      : ____
+
+[nomenclature-and-structure-of-carbonyl-compounds  seg 8]  Reactivity Order: Putting It All Together
+  OBJECTIVE : Rank carbonyl compounds in order of reactivity toward nucleophilic addition.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=labeled_axes_plot
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 1]  The Carbonyl's Front Counter: Why Nucleophiles Attack
+  OBJECTIVE : Explain why the carbonyl carbon is electrophilic and predict the first step of any nucleophilic addition.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['>c=o', 'nu⁻', '>c(nu)–o⁻']
+  PARAMS    : {"caption": "Nucleophile attacks the electron-poor carbonyl carbon, not the oxygen", "species": [">C=O", "Nu\u207b", ">C(Nu)\u2013O\u207b"], "step_to": [1, 2], "step_from": [0, 1], "step_kind": ["major", "major"], "step_reagent": ["Nu\u207b attacks \u03b4+ carbon", "\u03c0 bond breaks, new \u03c3 bond forms"], "step_progress": 0.5, "highlight_step": 0}
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 2]  The Master Mechanism: Attack, Rehybridise, Protonate
+  OBJECTIVE : Draw the three-step mechanism of nucleophilic addition and identify the tetrahedral intermediate.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3cho', 'tetrahedral alkoxide', 'ch3ch(oh)cn']
+  PARAMS    : {"caption": "Nucleophilic addition: CN\u207b attack gives the tetrahedral alkoxide, then protonation gives the cyanohydrin.", "species": ["CH3CHO", "tetrahedral alkoxide", "CH3CH(OH)CN"], "step_to": [1, 2], "step_from": [0, 1], "step_kind": ["plain", "plain"], "step_reagent": ["CN\u207b", "H\u207a"], "step_progress": 0, "highlight_step": -1}
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 3]  Reactivity Order: Aldehydes vs Ketones and Electronic Effects
+  OBJECTIVE : Rank carbonyl compounds by reactivity toward nucleophilic addition using steric and electronic factors.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ccl3cho', 'hcho', 'ch3cho', 'ch3coch3']
+  PARAMS    : {"caption": "Reactivity toward nucleophilic addition falls as electron donation and steric bulk increase", "species": ["CCl3CHO", "HCHO", "CH3CHO", "CH3COCH3"], "step_to": [1, 2, 3], "step_from": [0, 1, 2], "step_kind": ["major", "plain", "minor"], "step_reagent": ["3\u00d7 Cl (-I) withdraw", "1\u00d7 CH3 (+I) donate", "2\u00d7 CH3 (+I) + steric"], "step_progress": 1, "highlight_step": -1}
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 4]  Addition of HCN and NaHSO3: Cyanohydrins and Bisulphite Adducts
+  OBJECTIVE : Predict products of HCN and NaHSO3 addition and explain the synthetic utility of bisulphite adducts.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['r2c=o', 'r2c(oh)cn', 'r2c(oh)so3na']
+  PARAMS    : {"caption": "Nucleophilic addition at the carbonyl carbon: HCN gives a cyanohydrin, NaHSO3 gives a bisulphite adduct.", "species": ["R2C=O", "R2C(OH)CN", "R2C(OH)SO3Na"], "step_to": [1, 2], "step_from": [0, 0], "step_kind": ["major", "major"], "step_reagent": ["HCN, base (CN\u207b)", "NaHSO3"], "step_progress": 0, "highlight_step": -1}
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 5]  Grignard Addition: Building Alcohols
+  OBJECTIVE : Predict the alcohol product from a Grignard reagent and a given aldehyde or ketone.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3mgbr', 'ch3cho', 'alkoxide', 'propan-2-ol']
+  PARAMS    : {"caption": "Grignard addition to an aldehyde: R- attacks, then acidic work-up gives the alcohol", "species": ["CH3MgBr", "CH3CHO", "alkoxide", "propan-2-ol"], "step_to": [1, 2, 3], "step_from": [0, 1, 2], "step_kind": ["plain", "plain", "major"], "step_reagent": ["dry ether", "R- attack", "H3O+"], "step_progress": 1, "highlight_step": 2}
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 6]  Acetal Formation: Protecting the Carbonyl
+  OBJECTIVE : Describe acetal formation and hydrolysis, and explain its use as a protecting group.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['r2c=o', 'r2c(oh)(or)', 'r2c(or)2', 'r2c=o + 2 roh']
+  PARAMS    : {"caption": "Aldehyde/ketone \u2192 hemiacetal \u2192 acetal (masked carbonyl), reversed by aqueous acid", "species": ["R2C=O", "R2C(OH)(OR)", "R2C(OR)2", "R2C=O + 2 ROH"], "step_to": [1, 2, 3], "step_from": [0, 1, 2], "step_kind": ["plain", "major", "plain"], "step_reagent": ["ROH, dry HCl", "ROH, dry HCl (-H2O)", "aq. acid (H3O+)"], "step_progress": 1.0, "highlight_step": 1}
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 7]  Addition-Elimination with Ammonia Derivatives: Imines and Friends
+  OBJECTIVE : Predict products from reactions with ammonia derivatives and identify the role of pH.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3cho', 'h2n-oh', 'carbinolamine', 'ch3ch=n-oh', 'h2o']
+  PARAMS    : {"caption": "Ethanal + hydroxylamine: addition gives the carbinolamine, then elimination of water gives the oxime.", "species": ["CH3CHO", "H2N-OH", "carbinolamine", "CH3CH=N-OH", "H2O"], "step_to": [2, 3, 4], "step_from": [0, 2, 2], "step_kind": ["plain", "plain", "major"], "step_reagent": ["H2N-OH", "H+", "-H2O"], "step_progress": 0, "highlight_step": 2}
+  SANE      : ____
+
+[nucleophilic-addition-reactions-of-aldehydes-and-ketones  seg 8]  Putting It All Together: Predicting Products and Solving Problems
+  OBJECTIVE : Apply the nucleophilic addition framework to predict products and answer exam-style questions.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3ch2cho', 'cn-', 'ch3ch2ch(o-)cn', 'ch3ch2ch(oh)cn', 'ch3mgbr', 'ch3ch2ch(o-)ch3', 'ch3ch2ch(oh)ch3', 'nh2oh']
+  PARAMS    : {"caption": "One engine, three nucleophiles: attack, rehybridise, protonate (or eliminate)", "species": ["CH3CH2CHO", "CN-", "CH3CH2CH(O-)CN", "CH3CH2CH(OH)CN", "CH3MgBr", "CH3CH2CH(O-)CH3", "CH3CH2CH(OH)CH3", "NH2OH"], "step_to": [2, 3, 5, 6, 7], "step_from": [0, 2, 0, 5, 0], "step_kind": ["plain", "plain", "plain", "plain", "plain"], "step_reagent": ["CN-", "H+", "CH3MgBr", "H3O+", "NH2OH"], "step_progress": 1, "highlight_step": -1}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 1]  Why Aldehydes Oxidize but Ketones Resist
+  OBJECTIVE : Explain why aldehydes are easily oxidized to carboxylic acids while ketones resist mild oxidation, based on the presence or absence of a carbonyl hydrogen.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['r-cho', 'r-cooh', "r-co-r'"]
+  PARAMS    : {"caption": "Aldehyde's carbonyl C-H swaps for C-OH under mild oxidants; ketone has no H, so mild oxidants leave it unchanged.", "species": ["R-CHO", "R-COOH", "R-CO-R'"], "step_to": [1, 2], "step_from": [0, 2], "step_kind": ["major", "minor"], "step_reagent": ["Tollens' / Fehling's (mild)", "mild oxidant"], "step_progress": 1, "highlight_step": 0}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 2]  Mild Oxidizing Agents: Tollens', Fehling's, and Benedict's
+  OBJECTIVE : Identify the reagents, observations, and limitations of Tollens', Fehling's, and Benedict's tests for aldehydes.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : Aldehyde oxidizes with Tollens'; ketone does not react.
+  NODES     : ['r-cho', 'r-coo-', "r-co-r'"]
+  PARAMS    : {"species": ["R-CHO", "R-COO-", "R-CO-R'"], "step_from": [0, 2], "step_to": [1, 2], "step_reagent": ["Tollens' [Ag(NH3)2]+ (mild)", "mild oxidant"], "step_kind": ["major", "minor"], "highlight_step": 0, "step_progress": 1, "caption": "Aldehyde ka carbonyl H aasani se C-OH se swap ho jata hai; ketone ke paas H hi nahi, isliye mild oxidant usse chhoota nahi."}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 3]  Strong Oxidation to Carboxylic Acids
+  OBJECTIVE : Describe the oxidation of aldehydes and ketones using strong oxidizing agents like KMnO4 and K2Cr2O7.
+  PRIOR     : segment 2 — `reaction_scheme` {"species": ["R-CHO", "R-COO-", "R-CO-R'"], "caption": "Aldehyde ka carbonyl H aasani se C-OH se swap ho jata hai; ketone ke paas H hi nahi, isliye mild oxidant usse chhoota nahi."…
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3cho', 'ch3cooh', 'cyclohexanone', 'hooc-(ch2)4-cooh (adipic acid)']
+  PARAMS    : {"caption": "Strong oxidants: aldehyde \u2192 acid directly; ketone needs C\u2013C cleavage (cyclic ketone \u2192 single diacid).", "species": ["CH3CHO", "CH3COOH", "Cyclohexanone", "HOOC-(CH2)4-COOH (adipic acid)"], "step_to": [1, 3], "step_from": [0, 2], "step_kind": ["major", "major"], "step_reagent": ["K2Cr2O7/H+ (orange \u2192 green Cr3+)", "hot conc. KMnO4/H+, \u0394"], "step_progress": 0, "highlight_step": -1}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 4]  Reduction to Alcohols: NaBH4, LiAlH4, and Catalytic Hydrogenation
+  OBJECTIVE : Compare the reducing agents NaBH4, LiAlH4, and H2/catalyst for converting aldehydes and ketones to alcohols.
+  PRIOR     : segment 2 — `reaction_scheme` {"species": ["R-CHO", "R-COO-", "R-CO-R'"], "caption": "Aldehyde ka carbonyl H aasani se C-OH se swap ho jata hai; ketone ke paas H hi nahi, isliye mild oxidant usse chhoota nahi."…
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rcho (aldehyde)', 'r2c=o (ketone)', 'rch2oh (1° alcohol)', 'r2choh (2° alcohol)']
+  PARAMS    : {"caption": "Reduction adds H across C=O: aldehyde \u2192 1\u00b0 alcohol, ketone \u2192 2\u00b0 alcohol", "species": ["RCHO (aldehyde)", "R2C=O (ketone)", "RCH2OH (1\u00b0 alcohol)", "R2CHOH (2\u00b0 alcohol)"], "step_to": [2, 3], "step_from": [0, 1], "step_kind": ["major", "major"], "step_reagent": ["NaBH4 / LiAlH4 / H2,catalyst", "NaBH4 / LiAlH4 / H2,catalyst"], "step_progress": 1.0, "highlight_step": -1}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 5]  Reduction to Hydrocarbons: Clemmensen and Wolff-Kishner
+  OBJECTIVE : Apply Clemmensen and Wolff-Kishner reductions to convert carbonyl compounds to alkanes, choosing the appropriate method based on acid/base sensitivity.
+  PRIOR     : segment 2 — `reaction_scheme` {"species": ["R-CHO", "R-COO-", "R-CO-R'"], "caption": "Aldehyde ka carbonyl H aasani se C-OH se swap ho jata hai; ketone ke paas H hi nahi, isliye mild oxidant usse chhoota nahi."…
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['c6h5coch3', 'c6h5ch2ch3', 'r2c=o', 'r2ch2']
+  PARAMS    : {"caption": "Deoxygenation: >C=O \u2192 >CH2 \u2014 Clemmensen (acidic) or Wolff-Kishner (basic)", "species": ["C6H5COCH3", "C6H5CH2CH3", "R2C=O", "R2CH2"], "step_to": [1, 3], "step_from": [0, 2], "step_kind": ["major", "major"], "step_reagent": ["Zn-Hg / conc. HCl  (or NH2NH2, KOH / ethylene glycol, 180-200\u00b0C)", "Zn-Hg / conc. HCl  (or NH2NH2, KOH / ethylene glycol, 180-200\u00b0C)"], "step_progress": 1, "highlight_step": 0}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 6]  Special Case: Cannizzaro Reaction
+  OBJECTIVE : Predict the products of Cannizzaro reaction for aldehydes without alpha-hydrogens in concentrated alkali.
+  PRIOR     : segment 2 — `reaction_scheme` {"species": ["R-CHO", "R-COO-", "R-CO-R'"], "caption": "Aldehyde ka carbonyl H aasani se C-OH se swap ho jata hai; ketone ke paas H hi nahi, isliye mild oxidant usse chhoota nahi."…
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['hcho', 'oh⁻ adduct (tetrahedral alkoxide)', 'hcho (2nd molecule)', 'hcoo⁻ (oxidised)', 'ch₃o⁻ → ch₃oh (reduced)']
+  PARAMS    : {"caption": "Cannizzaro: OH\u207b adds, then H\u207b transfer \u2014 one aldehyde oxidised to HCOO\u207b, the other reduced to CH\u2083OH", "species": ["HCHO", "OH\u207b adduct (tetrahedral alkoxide)", "HCHO (2nd molecule)", "HCOO\u207b (oxidised)", "CH\u2083O\u207b \u2192 CH\u2083OH (reduced)"], "step_to": [1, 2, 3, 4], "step_from": [0, 1, 1, 4], "step_kind": ["plain", "plain", "major", "major"], "step_reagent": ["conc. NaOH (OH\u207b adds to C=O)", "hydride (H\u207b) transfer to 2nd aldehyde", "donor oxidised to carboxylate", "acceptor alkoxide protonates"], "step_progress": 0.0, "highlight_step": 1}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 7]  Distinguishing Aldehydes from Ketones: A Decision Tree
+  OBJECTIVE : Select appropriate chemical tests to distinguish between aldehydes and ketones, and between different types of aldehydes.
+  PRIOR     : segment 2 — `reaction_scheme` {"species": ["R-CHO", "R-COO-", "R-CO-R'"], "caption": "Aldehyde ka carbonyl H aasani se C-OH se swap ho jata hai; ketone ke paas H hi nahi, isliye mild oxidant usse chhoota nahi."…
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['unknown carbonyl', '2,4-dnp ppt', 'aldehyde', 'ketone', 'aliphatic aldehyde', 'aromatic aldehyde', 'methyl ketone']
+  PARAMS    : {"caption": "Decision tree: 2,4-DNP confirms carbonyl; Tollens' splits aldehyde/ketone; Fehling's splits aliphatic/aromatic aldehyde.", "species": ["Unknown carbonyl", "2,4-DNP ppt", "Aldehyde", "Ketone", "Aliphatic aldehyde", "Aromatic aldehyde", "Methyl ketone"], "step_to": [1, 2, 3, 4, 5, 6], "step_from": [0, 1, 1, 2, 2, 3], "step_kind": ["plain", "major", "minor", "major", "minor", "major"], "step_reagent": ["2,4-DNP (Brady's)", "Tollens' [Ag(NH3)2]+", "Tollens' \u2014 no reaction", "Fehling's Cu2+", "Fehling's \u2014 no reaction", "I2/NaOH"], "step_progress": 1, "highlight_step": -1}
+  SANE      : ____
+
+[oxidation-and-reduction-of-aldehydes-and-ketones  seg 8]  Putting It All Together: Reaction Map and Exam Strategy
+  OBJECTIVE : Construct a reaction map linking oxidation and reduction reactions of aldehydes and ketones, and apply it to solve exam-style problems.
+  PRIOR     : segment 2 — `reaction_scheme` {"species": ["R-CHO", "R-COO-", "R-CO-R'"], "caption": "Aldehyde ka carbonyl H aasani se C-OH se swap ho jata hai; ketone ke paas H hi nahi, isliye mild oxidant usse chhoota nahi."…
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : Oxidation side of the reaction map
+  NODES     : ['1° alcohol', 'aldehyde', 'carboxylic acid', '2° alcohol', 'ketone']
+  PARAMS    : {"species": ["1\u00b0 Alcohol", "Aldehyde", "Carboxylic Acid", "2\u00b0 Alcohol", "Ketone"], "step_from": [0, 1, 3, 4], "step_to": [1, 2, 4, 4], "step_reagent": ["Oxidation", "Oxidation", "Oxidation", "Mild oxidant"], "step_kind": ["major", "major", "major", "minor"], "highlight_step": 3, "step_progress": 1, "caption": "Oxidation map: 1\u00b0 alcohol \u2192 aldehyde \u2192 acid; 2\u00b0 alcohol \u2192 ketone, aur mild oxidant ke saamne ketone ruk jaata hai."}
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 1]  The Boiling-Point Ladder: Why Carbonyls Sit Where They Do
+  OBJECTIVE : Rank a given set of compounds (hydrocarbon, ether, aldehyde/ketone, alcohol, carboxylic acid) by boiling point using the intermolecular force ladder.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 2]  Why Ketones Edge Out Aldehydes: Dipole Placement and Mass
+  OBJECTIVE : Explain why a ketone boils slightly higher than an isomeric aldehyde, and apply mass/branching tie-breakers within the carbonyl family.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 3]  Carboxylic Acids: The Dimer Effect and the Top of the Ladder
+  OBJECTIVE : Explain why carboxylic acids boil higher than alcohols of similar mass, using the cyclic dimer held by two hydrogen bonds.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 4]  Water Solubility: The Tug-of-War Between Head and Tail
+  OBJECTIVE : Predict water solubility of a carbonyl compound by weighing its polar head against its hydrocarbon tail.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 5]  Physical States and Odours: Reading the Ladder in the Lab
+  OBJECTIVE : Relate intermolecular forces and molecular mass to physical state (gas, liquid, solid) and odour trends.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 6]  Aromatic Carbonyls: Meta-Directing and Deactivated
+  OBJECTIVE : Explain why aromatic aldehydes, ketones, and acids are deactivating and meta-directing in electrophilic substitution.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 7]  Uses of Carbonyl Compounds: Structure Dictates Function
+  OBJECTIVE : Recall key industrial and everyday uses of specific aldehydes, ketones, and carboxylic acids, linking them to structure.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[physical-properties-and-hydrogen-bonding-in-carbonyl-compounds  seg 8]  Putting It All Together: Ranking and Reasoning Like an Examiner
+  OBJECTIVE : Apply the force audit and head-tail analysis to solve mixed boiling point and solubility ranking problems.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=free_body_diagram
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 1]  The Carbonyl Family and Why Preparation Matters
+  OBJECTIVE : Recall the structural difference between aldehydes and ketones and explain why selective preparation is important.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['r-ch2oh', 'r-cho', 'r-cooh', "r-co-r'"]
+  PARAMS    : {"caption": "Selective routes stop at the aldehyde; strong reagents overshoot to acid or alcohol.", "species": ["R-CH2OH", "R-CHO", "R-COOH", "R-CO-R'"], "step_to": [1, 2, 1], "step_from": [0, 1, 3], "step_kind": ["major", "minor", "minor"], "step_reagent": ["PCC / cold DIBAL-H (selective)", "strong oxidant (KMnO4/HNO3)", "strong hydride (LiAlH4)"], "step_progress": 0.5, "highlight_step": 0}
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 2]  Oxidation of Alcohols: The Workhorse Route
+  OBJECTIVE : Predict the product of oxidizing a primary or secondary alcohol and choose the appropriate oxidant to stop at the aldehyde.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3ch2oh', 'ch3cho', 'ch3cooh', 'ch3ch(oh)ch3', 'ch3coch3']
+  PARAMS    : {"caption": "Primary alcohol: PCC stops at the aldehyde; strong oxidant overshoots to the acid. Secondary alcohol gives a ketone.", "species": ["CH3CH2OH", "CH3CHO", "CH3COOH", "CH3CH(OH)CH3", "CH3COCH3"], "step_to": [1, 2, 4], "step_from": [0, 0, 3], "step_kind": ["major", "minor", "major"], "step_reagent": ["PCC (mild)", "K2Cr2O7/H2SO4 (strong)", "K2Cr2O7/H2SO4"], "step_progress": 1, "highlight_step": 0}
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 3]  Catalytic Dehydrogenation: Oxidation Without Oxidant
+  OBJECTIVE : Describe the industrial preparation of aldehydes and ketones by passing alcohol vapors over heated copper.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3ch2oh', 'ch3cho', 'ch3ch(oh)ch3', 'ch3coch3']
+  PARAMS    : {"caption": "Catalytic dehydrogenation: alcohol vapour over heated Cu loses H2", "species": ["CH3CH2OH", "CH3CHO", "CH3CH(OH)CH3", "CH3COCH3"], "step_to": [1, 3], "step_from": [0, 2], "step_kind": ["major", "major"], "step_reagent": ["Cu, 573 K", "Cu, 573 K"], "step_progress": 0, "highlight_step": -1}
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 4]  Ozonolysis and Hydration of Alkynes: Cleaving and Adding
+  OBJECTIVE : Predict the carbonyl products from ozonolysis of an alkene and from hydration of an alkyne, noting the ethyne exception.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3ch=chch3', 'ch3cho', 'hc≡ch', 'ch3cho (ethanal)', 'rc≡ch', 'rcoch3']
+  PARAMS    : {"caption": "Ozonolysis cuts the C=C into two carbonyls; alkyne hydration gives a ketone \u2014 except ethyne, which gives ethanal.", "species": ["CH3CH=CHCH3", "CH3CHO", "HC\u2261CH", "CH3CHO (ethanal)", "RC\u2261CH", "RCOCH3"], "step_to": [1, 3, 5], "step_from": [0, 2, 4], "step_kind": ["plain", "plain", "plain"], "step_reagent": ["1) O3  2) Zn/H2O", "H2O, H2SO4/HgSO4", "H2O, H2SO4/HgSO4"], "step_progress": 1, "highlight_step": 1}
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 5]  Aldehyde-Specific Routes: Gentle Reductions
+  OBJECTIVE : Identify the correct reagent for converting acyl chlorides, nitriles, and esters to aldehydes without over-reduction.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rcocl', 'rcho', 'rcn', 'imine', "rcoor'", 'rch2oh']
+  PARAMS    : {"caption": "Gentle, selective reductions stop at the aldehyde; LiAlH4 over-reduces.", "species": ["RCOCl", "RCHO", "RCN", "imine", "RCOOR'", "RCH2OH"], "step_to": [1, 3, 1, 1, 5], "step_from": [0, 2, 3, 4, 4], "step_kind": ["plain", "plain", "plain", "plain", "minor"], "step_reagent": ["H2 / Pd-BaSO4 (poisoned)", "(i) DIBAL-H, low T", "(ii) H2O", "(i) DIBAL-H, low T", "LiAlH4"], "step_progress": 1, "highlight_step": 0}
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 6]  Aromatic Aldehydes: Étard, Side-Chain Chlorination, Gattermann-Koch
+  OBJECTIVE : Match each aromatic aldehyde preparation to its starting material and reagents.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['c6h5ch3 (toluene)', 'c6h5cho (benzaldehyde)', 'c6h5chcl2 (benzal chloride)', 'c6h6 (benzene)']
+  PARAMS    : {"caption": "Three routes to benzaldehyde: \u00c9tard (toluene/CrO2Cl2), side-chain chlorination (toluene/Cl2 then hydrolysis), Gattermann-Koch (benzene/CO+HCl)", "species": ["C6H5CH3 (toluene)", "C6H5CHO (benzaldehyde)", "C6H5CHCl2 (benzal chloride)", "C6H6 (benzene)"], "step_to": [1, 2, 1, 1], "step_from": [0, 0, 2, 3], "step_kind": ["major", "plain", "major", "major"], "step_reagent": ["CrO2Cl2, then H2O", "Cl2 / heat, light", "H2O (hydrolysis)", "CO + HCl, AlCl3/CuCl"], "step_progress": 1, "highlight_step": -1}
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 7]  Ketone-Specific Routes: Dialkylcadmium and Friedel-Crafts
+  OBJECTIVE : Predict the ketone product from reaction of an acyl chloride with a dialkylcadmium reagent or from Friedel-Crafts acylation.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rcocl', "r'2cd", "rcor'", 'cdcl2', 'c6h6', 'ch3cocl', 'c6h5coch3', 'hcl']
+  PARAMS    : {"caption": "Ketone-specific routes: dialkylcadmium + acyl chloride, and Friedel-Crafts acylation", "species": ["RCOCl", "R'2Cd", "RCOR'", "CdCl2", "C6H6", "CH3COCl", "C6H5COCH3", "HCl"], "step_to": [2, 2, 6, 6], "step_from": [0, 1, 4, 5], "step_kind": ["major", "plain", "major", "plain"], "step_reagent": ["R'2Cd (mild, one alkyl only)", "", "anhyd. AlCl3", "anhyd. AlCl3"], "step_progress": 1, "highlight_step": 0}
+  SANE      : ____
+
+[preparation-of-aldehydes-and-ketones  seg 8]  Preparation Map and Selectivity Logic
+  OBJECTIVE : Given a target aldehyde or ketone, select an appropriate preparation route from the full map and justify the choice.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rch2oh', 'rcho', 'rcocl', 'rcn', "rcor'", 'archo', 'arcoch3']
+  PARAMS    : {"caption": "Preparation map: gentle reagents stop at the target \u2014 poisoned Pd/BaSO4 gives RCHO, R'2Cd gives RCOR'", "species": ["RCH2OH", "RCHO", "RCOCl", "RCN", "RCOR'", "ArCHO", "ArCOCH3"], "step_to": [1, 1, 1, 4, 4, 6], "step_from": [0, 2, 3, 3, 2, 5], "step_kind": ["plain", "major", "major", "major", "major", "major"], "step_reagent": ["Cu, 573 K", "Pd/BaSO4 (poisoned)", "DIBAL-H, cold", "R'2Cd", "CH3COCl / anhyd. AlCl3", "CH3COCl / anhyd. AlCl3"], "step_progress": 1.0, "highlight_step": 1}
+  SANE      : ____
+
+[preparation-of-carboxylic-acids  seg 1]  Why Carboxylic Acids Matter & the Six Routes
+  OBJECTIVE : Recall the six preparation routes for carboxylic acids and identify the starting material for each.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : text_only  template cue=None
+  SANE      : ____
+
+[preparation-of-carboxylic-acids  seg 2]  Oxidation of Primary Alcohols and Aldehydes
+  OBJECTIVE : Predict the carboxylic acid product from oxidation of a given primary alcohol or aldehyde.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=process_flow
+  SANE      : ____
+
+[preparation-of-carboxylic-acids  seg 3]  Oxidation of Alkylbenzenes: Side-Chain Cleavage
+  OBJECTIVE : Predict the aromatic carboxylic acid product from vigorous oxidation of an alkylbenzene.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=None
+  SANE      : ____
+
+[preparation-of-carboxylic-acids  seg 4]  Hydrolysis of Nitriles and Amides
+  OBJECTIVE : Predict the carboxylic acid product from hydrolysis of a given nitrile or amide.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[preparation-of-carboxylic-acids  seg 5]  Grignard Reagent + CO2: Climbing One Carbon
+  OBJECTIVE : Predict the carboxylic acid product from a Grignard reagent and carbon dioxide.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[preparation-of-carboxylic-acids  seg 6]  Hydrolysis of Acid Derivatives: Esters, Acyl Halides, Anhydrides
+  OBJECTIVE : Predict the carboxylic acid product from hydrolysis of an ester, acyl halide, or anhydride.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[preparation-of-carboxylic-acids  seg 7]  Choosing the Right Route: A Decision Framework
+  OBJECTIVE : Select the appropriate preparation route for a given target carboxylic acid and starting material.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[reactions-of-carbonyl-compounds-with-ammonia-derivatives  seg 1]  Introduction to Ammonia Derivatives
+  OBJECTIVE : Understand what ammonia derivatives are and why they react with carbonyl compounds.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[reactions-of-carbonyl-compounds-with-ammonia-derivatives  seg 2]  Mechanism of Addition-Elimination
+  OBJECTIVE : Describe the stepwise mechanism for the reaction of a carbonyl with an ammonia derivative.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[reactions-of-carbonyl-compounds-with-ammonia-derivatives  seg 3]  Products with Different Ammonia Derivatives
+  OBJECTIVE : Identify the products formed when various ammonia derivatives react with aldehydes and ketones.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[reactions-of-carbonyl-compounds-with-ammonia-derivatives  seg 4]  2,4-DNP Test for Carbonyl Compounds
+  OBJECTIVE : Explain the use of 2,4-dinitrophenylhydrazine (Brady's reagent) as a test for aldehydes and ketones.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=comparison_table
+  SANE      : ____
+
+[reactions-of-carbonyl-compounds-with-ammonia-derivatives  seg 5]  Reaction Conditions and pH
+  OBJECTIVE : Understand the importance of pH in reactions with ammonia derivatives.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[reactions-of-carbonyl-compounds-with-ammonia-derivatives  seg 6]  Applications and Summary
+  OBJECTIVE : Summarize the key points and applications of reactions with ammonia derivatives.
+  PRIOR     : (none — first payload of this session)
+  DECLINED  : implicit  reason=(none volunteered)
+  INSTEAD   : svg  template cue=boxed_derivation
+  SANE      : ____
+
+[reactions-of-carboxylic-acids  seg 1]  Why Carboxylic Acids React: The Two Bond-Cleavage Modes
+  OBJECTIVE : Identify the two reactive bonds in a carboxylic acid and predict which bond breaks in a given reaction.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['r-cooh', 'r-coo⁻ + h⁺', 'rcoona + co₂', 'rcocl + so₂']
+  PARAMS    : {"caption": "Two handles: O-H cleavage gives salts/CO\u2082, C-OH cleavage gives acyl substitution", "species": ["R-COOH", "R-COO\u207b + H\u207a", "RCOONa + CO\u2082", "RCOCl + SO\u2082"], "step_to": [1, 2, 3], "step_from": [0, 0, 0], "step_kind": ["plain", "major", "major"], "step_reagent": ["base (O-H cleavage)", "NaHCO\u2083 (O-H cleavage)", "SOCl\u2082 (C-OH cleavage)"], "step_progress": 1, "highlight_step": -1}
+  SANE      : ____
+
+[reactions-of-carboxylic-acids  seg 2]  Salt Formation: The Bicarbonate Test and Acid Strength
+  OBJECTIVE : Predict the products of carboxylic acids with metals, bases, and carbonates, and use the bicarbonate test to distinguish acids from phenols.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rcooh', 'na', 'rcoona', 'h2', 'naoh', 'h2o', 'nahco3', 'co2']
+  PARAMS    : {"caption": "Carboxylic acid + metal/base/bicarbonate: H2 with metals, H2O with NaOH, CO2 fizz with NaHCO3", "species": ["RCOOH", "Na", "RCOONa", "H2", "NaOH", "H2O", "NaHCO3", "CO2"], "step_to": [2, 2, 2], "step_from": [0, 0, 0], "step_kind": ["plain", "plain", "major"], "step_reagent": ["Na (active metal)", "NaOH (strong base)", "NaHCO3 (weak base)"], "step_progress": 1, "highlight_step": 2}
+  SANE      : ____
+
+[reactions-of-carboxylic-acids  seg 3]  Esterification: Nucleophilic Acyl Substitution Mechanism
+  OBJECTIVE : Describe the acid-catalyzed esterification mechanism and explain how to drive the equilibrium forward.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rcooh', 'r-c(oh)2+ (protonated)', 'tetrahedral intermediate', 'r-c(oh)(oh2+)', "rcoor'", 'h2o']
+  PARAMS    : {"caption": "Acid-catalyzed esterification: protonation \u2192 nucleophilic attack \u2192 proton transfer \u2192 loss of water gives the ester; all steps reversible.", "species": ["RCOOH", "R-C(OH)2+ (protonated)", "tetrahedral intermediate", "R-C(OH)(OH2+)", "RCOOR'", "H2O"], "step_to": [1, 2, 3, 4, 5], "step_from": [0, 1, 2, 3, 4], "step_kind": ["plain", "plain", "plain", "major", "plain"], "step_reagent": ["H+ (H2SO4/HCl)", "R'OH", "proton transfer", "\u2013H2O, \u2013H+", "catalyst regenerated"], "step_progress": 0.0, "highlight_step": 3}
+  SANE      : ____
+
+[reactions-of-carboxylic-acids  seg 4]  Conversion to Acyl Chlorides and Anhydrides
+  OBJECTIVE : Choose the best reagent to convert a carboxylic acid to an acyl chloride or anhydride and justify the choice.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rcooh', 'rcocl', 'pocl3 + hcl', 'h3po3 + hcl', 'so2↑ + hcl↑', '(rco)2o + h2o']
+  PARAMS    : {"caption": "Breaking the C\u2013OH bond: SOCl2 wins for acyl chlorides, H2SO4/P2O5 for anhydrides", "species": ["RCOOH", "RCOCl", "POCl3 + HCl", "H3PO3 + HCl", "SO2\u2191 + HCl\u2191", "(RCO)2O + H2O"], "step_to": [1, 1, 1, 1, 5], "step_from": [0, 0, 0, 0, 0], "step_kind": ["plain", "minor", "major", "plain", "plain"], "step_reagent": ["PCl5", "PCl3", "SOCl2", "conc. H2SO4 or P2O5, \u0394", ""], "step_progress": 1, "highlight_step": 2}
+  SANE      : ____
+
+[reactions-of-carboxylic-acids  seg 5]  Amide Formation and Reduction to Alcohols
+  OBJECTIVE : Outline the two-step conversion of carboxylic acids to amides and select the appropriate reducing agent for acid to alcohol.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['rcooh', 'rcoo⁻ nh₄⁺', 'rconh₂', 'rch₂oh']
+  PARAMS    : {"caption": "Acid \u2192 ammonium salt \u2192 amide (heat); acid \u2192 primary alcohol with LiAlH\u2084/B\u2082H\u2086", "species": ["RCOOH", "RCOO\u207b NH\u2084\u207a", "RCONH\u2082", "RCH\u2082OH"], "step_to": [1, 2, 3], "step_from": [0, 1, 0], "step_kind": ["plain", "major", "major"], "step_reagent": ["NH\u2083 (no heat)", "\u0394, strong heat", "LiAlH\u2084 or B\u2082H\u2086"], "step_progress": 1, "highlight_step": 1}
+  SANE      : ____
+
+[reactions-of-carboxylic-acids  seg 6]  Decarboxylation and HVZ Halogenation
+  OBJECTIVE : Predict the products of decarboxylation (sodalime) and HVZ alpha-halogenation of carboxylic acids.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['ch3coona', 'ch4', 'ch3ch2coona', 'ch3ch2cooh', 'ch3chbrcooh']
+  PARAMS    : {"caption": "Decarboxylation (n \u2192 n\u22121 carbons) vs HVZ \u03b1-bromination (COOH kept, \u03b1-H swapped)", "species": ["CH3COONa", "CH4", "CH3CH2COONa", "CH3CH2COOH", "CH3CHBrCOOH"], "step_to": [1, 1, 4], "step_from": [0, 2, 3], "step_kind": ["major", "major", "major"], "step_reagent": ["NaOH/CaO, \u0394", "NaOH/CaO, \u0394", "Br2, red P"], "step_progress": 1, "highlight_step": -1}
+  SANE      : ____
+
+[reactions-of-carboxylic-acids  seg 7]  Aromatic Carboxylic Acids: Ring Deactivation and Meta-Direction
+  OBJECTIVE : Explain why the carboxyl group is meta-directing and deactivating, and predict the outcome of electrophilic substitution on benzoic acid.
+  PRIOR     : (none — first payload of this session)
+  FIRED     : reaction_scheme v1 route=archetype_high
+  CAPTION   : None
+  NODES     : ['c6h5cooh', 'm-no2c6h4cooh']
+  PARAMS    : {"caption": "Nitration of benzoic acid: the deactivated ring substitutes only at the meta gate.", "species": ["C6H5COOH", "m-NO2C6H4COOH"], "step_to": [1], "step_from": [0], "step_kind": ["major"], "step_reagent": ["HNO3 / H2SO4"], "step_progress": 1.0, "highlight_step": 0}
+  SANE      : ____
