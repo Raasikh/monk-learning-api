@@ -152,19 +152,93 @@ record the discarded IDs in a `merged_from` field so the decision is auditable.
 
 ---
 
-### 1.5 Dedupe against the LIVE question bank, not just within the corpus
+### 1.5 Dedupe against the live bank — DEFERRED, do not do this now
 
-§1.3 and §1.4 concern duplicates *inside* the raw corpus. There is a second check you
-must also run: **against the 15,408 rows already in the live `questions` table.**
+For the record, not for this pass: **875 rows in the current corpus are near-duplicates
+(Jaccard ≥ 0.75 on normalised text) of questions already live in the `questions` table.**
+They must be quarantined as `needs_manual: "duplicate_of_servable:<existing_id>"` rather
+than inserted, or students get the same question twice and the Monk Score's repeat-attempt
+detection misses it because the row IDs differ.
 
-Measured: **875 rows in the current corpus are near-duplicates (Jaccard ≥ 0.75 on
-normalised text) of questions already servable in production.**
+**This is a gate-time step and it is cheap — do not spend effort on it during extraction.**
+Deduplication is a fast pass over finished rows. Your job in this pass is to make the rows
+themselves correct and complete. Get the text, the answers, and the diagrams right; the
+duplicate sweep happens once, afterwards, against the finished set.
 
-If those are gated and inserted, students are served the same question twice, and the
-Monk Score's repeat-attempt detection will treat the second serve as a fresh question
-because the row IDs differ. Run the cross-check before insertion, and set
-`needs_manual: "duplicate_of_servable:<existing_id>"` on the new row rather than
-inserting it. Do not delete or modify the existing production row.
+### 1.6 Question-text fidelity — the defects nobody has measured yet
+
+Everything above concerns keys and duplicates. This section concerns whether the stem is
+*readable by a student at all*. A question with a correct key and an unreadable stem is
+still unservable. Measured across the current 16,211 rows:
+
+| defect | rows | what it looks like |
+|---|---:|---|
+| **char-fragmented stem** | **482** | a matrix/integral exploded into one character per line |
+| **Symbol-font PUA mojibake** | **847** | `10` where the source reads `10 Ω` |
+| publisher header in stem | 1,130 | `"Probability Chapter-wise Question Bank JEE Main 2025 April MathonGo ..."` |
+| **answer stamp inside stem** | **135** | `"... Q2. (2) ..."` — this leaks the answer to the student |
+| solution page filed as a question | 37 | stem is worked solutions; `options: None` |
+| stem ends with next question's number | 350 | trailing `"... 181."` |
+| raw pipes needing table structure | 886 | `\|` delimiters with no row/separator structure |
+| control characters | 20 | stray `\x00`–`\x1f` |
+
+All of these are confined to `diagram_questions.jsonl` — the PDF pipeline.
+
+#### The fragmentation + mojibake pair is one root cause, and it is fixable
+
+These two defects co-occur, and they are the same bug. Example (real row, truncated):
+
+```
+'Let   0 and \n3\nA\n2\n\n\n\n\n\n\n ...'
+```
+
+That was a 2×2 matrix with Greek entries. The PDF stores it as *positioned glyphs in a
+Symbol-family font*; the extractor read the **embedded text layer** and linearised those
+glyphs top-to-bottom, destroying the 2D structure and leaving every character as an
+unmapped private-use codepoint. No regex can rebuild a matrix from that — the geometry
+is gone.
+
+**The fix is not to repair these strings. It is to never produce them.** Mathpix already
+handles these pages correctly — it is the same OCR that gives you a 0.98 median confidence
+and clean diagram crops. The pipeline simply trusted the text layer instead of calling it.
+
+So: **treat the text layer as untrusted, and fall back to Mathpix OCR whenever the
+extracted stem shows either symptom** —
+
+- any codepoint in `U+F000`–`U+F0FF` (Symbol-font PUA), or
+- ≥40% of non-empty lines being 1–2 characters long.
+
+Re-OCR that question's page region and use the Mathpix result. Do not attempt a PUA
+substitution table as the primary fix: ``→Ω, ``→α, ``→β, ``→π,
+``→Δ, ``→≠, ``→=, ``→−, ``→→ will recover *individual
+characters*, but the 482 fragmented rows also lost their layout, so character-level
+repair yields a readable alphabet in an unreadable order. Use the substitution table only
+for rows that are otherwise well-formed prose.
+
+#### Stem hygiene
+
+Strip before writing `question_text`:
+
+- publisher/marketing headers (`"Chapter-wise Question Bank"`, `"MathonGo"`, site names)
+- the trailing question number of the *following* question
+- any `Qn. (k)` answer stamp — and if a stamp is present, capture it as an embedded
+  answer candidate rather than discarding it, but **never leave it in the stem**
+- control characters
+
+If after stripping the stem is a worked solution rather than a question (37 known rows),
+do not emit it as a question at all.
+
+#### Output formatting the client actually parses
+
+The web client renders stems through a parser that has specific expectations. Match them:
+
+- **Math** in `$...$` (inline) or `$$...$$` (display). Chemistry uses mhchem `\ce{...}`.
+- **Tables** (match-the-following, data tables) as real markdown: one row per line, a
+  `|---|---|` separator after the header. A whole table condensed onto one line renders
+  as raw pipes — that defect had to be repaired by hand in production.
+- **A pipe inside math is not a cell boundary.** `\left| x \right|` must stay in one cell.
+- **Options keyed `A`/`B`/`C`/`D`** in the options dict, regardless of whether the source
+  printed `(1)`–`(4)`. Grading compares the option *key*, not its display text.
 
 ## 2. Target schema — what a production row must contain
 
@@ -266,7 +340,13 @@ Every run must emit a report containing:
    Report the count dropped at each stage and *why*.
 5. **Asset integrity:** paths resolving, crops under 60×40, OCR confidence
    distribution (min/p05/median) and the count below 0.90.
-6. **Anything you capped, sampled, or truncated.** If you processed the top-N of
+6. **Text fidelity (§1.6)** — counts for each defect class, before and after your pass:
+   rows containing `U+F000`–`U+F0FF`, rows with ≥40% single/double-char lines, rows with a
+   publisher header, rows with an `Qn. (k)` answer stamp still in the stem, rows with
+   control characters. **Target is 0 for every class.** These are the checks that would
+   have caught the 482 unreadable stems, which passed every existing integrity lint
+   because the file was present, the reference resolved, and the text was non-empty.
+7. **Anything you capped, sampled, or truncated.** If you processed the top-N of
    something, say what was left out. Silent truncation reads as full coverage.
 
 ### Answer keys specifically
@@ -300,19 +380,26 @@ they are right.
 1. **Fix `EMBEDDED_ANSWER_VALUE_RE` and re-extract the affected mirror papers** (§1.1).
    Root cause is confirmed; the true keys are present in the source. Prove the per-path
    distribution flattens into the 15–35% band.
-2. **Merge the 779 same-text multi-region groups** into multi-element `diagram` rows
+2. **Re-OCR the untrusted text layer** (§1.6) — every row with Symbol-font PUA codepoints
+   or ≥40% single-character lines goes back through Mathpix. ~1,300 rows, and it converts
+   them from unreadable to servable using OCR you have already proven works. Then apply
+   stem hygiene (headers, trailing qnos, answer stamps) across the corpus.
+3. **Merge the 779 same-text multi-region groups** into multi-element `diagram` rows
    (§1.3). Use the text fingerprint. Do **not** apply a `(paper_id, qno)` constraint.
-3. **OCR-mine Question IDs from the 31 eSaral 2022 papers, then join to the official NTA
+4. **OCR-mine Question IDs from the 31 eSaral 2022 papers, then join to the official NTA
    key PDFs** (§4). This is the only route to `official_verified` keys at any scale —
    roughly 930 questions. Higher value than raw volume, because unverified keys cannot ship.
-4. **Fix options parsing** (§1.2) — per-source, starting with the ExamSIDE `<img alt>`
+5. **Fix options parsing** (§1.2) — per-source, starting with the ExamSIDE `<img alt>`
    extraction and the MathonGo generic-parser failure (162/175 files). This is where the
    volume is: potentially 10,000+ rows rather than ~700.
-5. **Attach chapter / concept / difficulty / solution** (§2), matching the live `chapters`
+6. **Attach chapter / concept / difficulty / solution** (§2), matching the live `chapters`
    and `concepts` tables exactly.
-6. **Upload assets to R2 and emit the `diagram` array** (§3).
+7. **Upload assets to R2 and emit the `diagram` array** (§3).
 
-Report after each step with the §4 numbers. Do not batch all six and report at the end.
+Deduplication is deliberately **not** in this list — see §1.5. It is a cheap pass over
+finished rows and happens after all of the above.
+
+Report after each step with the §4 numbers. Do not batch all seven and report at the end.
 
 ## 7. A note on citing this codebase
 
