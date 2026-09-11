@@ -7,15 +7,29 @@ per-segment slot-1/slot-4 board pass the streaming path runs and stamped no
 'reactions-of-carbonyl-compounds-with-ammonia-derivatives', whose streaming
 author died on a "Server disconnected" (2026-09-10):
 
-  * its 6 segments carried no `example_widget_payload` AND no
-    `example_widget_precompute` key — so there was no precomputed widget and
-    no record that nothing had been asked, the exact three-way ambiguity that
-    key exists to remove. All 6 resolved `slot=svg_live` in the W8 routing
-    measurement while its 14 sibling plans served precomputed widgets;
+  * its 6 segments carried no `example_widget_precompute` KEY AT ALL — so
+    there was no record of whether anything had been asked, which is exactly
+    the three-way ambiguity that key exists to remove: not-eligible, asked-
+    and-declined, and answered-but-gated are three different facts with three
+    different owners, and an absent key tells them apart from nothing;
   * `_plan_is_complete` reads an absent `_status` as complete, so the row was
     served to students forever and never regenerated.
 
-These tests pin the shape equality the chip asked for, and the stamp.
+WHAT THIS DEFECT IS **NOT**, corrected 2026-09-11 after repairing that row.
+The first write-up of this — including commit 48926b5's message — claimed the
+plan lacked precomputed WIDGET PAYLOADS because of the fallback, and that its
+siblings had them. That was wrong, and wrong in the direction of blaming this
+bug for someone else's verdict. The concept is `med` confidence in the
+archetype column, and the server routes on `high` only, so it gets no
+precomputed widget under EITHER authoring path. Repairing it through the
+fixed path proves the distinction precisely: all 6 segments now carry the
+precompute key, and payloads are still 0 — the key records `not_asked`, which
+is the honest answer, where before there was silence. (The chapter is 6 high,
+8 med, 1 low, so "its 14 siblings served precomputed widgets" was also
+arithmetically impossible.)
+
+The fallback's real damage is the two bullets above: no record, and a plan
+that reads as finished. Both are fixed and pinned below.
 """
 import app.drona.planner as planner
 
