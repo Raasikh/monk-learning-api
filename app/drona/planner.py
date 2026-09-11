@@ -437,6 +437,15 @@ Author a complete lesson plan JSON following the instructions in the system prom
             prompt_ver = get_prompt_version()
             source_model_tag = f"{model_name}-thinking-off"
 
+            # Stamped explicitly, because an ABSENT _status reads as complete
+            # (_plan_is_complete's legacy default) and this plan is NOT yet
+            # complete: its segments still have no board work. Without this the
+            # row is served to students, and to the routing measurement, as a
+            # finished lesson that quietly has no precomputed widget on any
+            # segment.
+            plan_json[PLAN_STATUS_KEY] = "partial"
+            plan_json[PLAN_EXPECTED_KEY] = segment_count
+
             # INSERT into lesson_plans table (§3.5) with 409 conflict handling
             try:
                 ins_res = supabase.table("lesson_plans").insert([{
@@ -450,7 +459,17 @@ Author a complete lesson plan JSON following the instructions in the system prom
                     **plan_provenance(),
                 }]).execute()
                 if ins_res.data:
-                    return ins_res.data[0]
+                    _row = ins_res.data[0]
+                    # Same shape as the streaming path: return now, board in
+                    # the background. Archetype resolved HERE, on this thread.
+                    import threading
+                    _arch = concept_archetype_for_session(chapter_id, subtopic_key)
+                    threading.Thread(
+                        target=_attach_boards_to_authored_plan,
+                        args=(_row["id"], chap_data, sub_title, subtopic_key, _arch),
+                        daemon=True,
+                    ).start()
+                    return _row
             except Exception as db_err:
                 err_msg = str(db_err)
                 if "unique" in err_msg.lower() or "duplicate" in err_msg.lower() or "23505" in err_msg or "409" in err_msg or "lesson_plans_subtopic_idx" in err_msg:
@@ -1163,6 +1182,75 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
         # the next lookup regenerates rather than serving a half lesson as cached.
         logger.error(f"❌ [BACKGROUND PLAN FILL FAILED] plan={plan_id[:8]}: {e}")
         _mark_plan_failed(plan_id, f"background fill: {type(e).__name__}: {e}")
+
+
+def _attach_boards_to_authored_plan(plan_id: str, chap_data: Dict[str, Any], sub_title: str,
+                                   subtopic_key: str, archetype) -> None:
+    """Give an already-authored plan the board work the streaming path does.
+
+    WHY THIS EXISTS. `create_plan_with_llm` is the fallback taken when
+    `create_plan_streaming` raises. It authors every segment in ONE call and
+    then inserted them as-is — which meant it skipped the entire slot-1/slot-4
+    pass that `_author_segment` runs per segment on the streaming path, and
+    stamped no `_status`. Two silent consequences, both measured on chemistry
+    12 ch8 'reactions-of-carbonyl-compounds-with-ammonia-derivatives' when its
+    streaming author died on a "Server disconnected" (2026-09-10):
+
+      * its segments carried no `example_widget_payload` and no
+        `example_widget_precompute` key at all — so not only was there no
+        precomputed widget, there was no record that nothing had been asked,
+        which is precisely the three-way ambiguity WIDGET_PRECOMPUTE_KEY was
+        introduced to remove. All 6 of its segments resolved `slot=svg_live`
+        in the W8 routing measurement while its 14 sibling plans in the same
+        chapter served precomputed widgets;
+      * `_plan_is_complete` reads an ABSENT `_status` as complete (the legacy
+        default), so the plan was served to students indefinitely and nothing
+        ever regenerated it.
+
+    A plan authored by the fallback is not supposed to be a lesser lesson. It
+    is supposed to be the same lesson, authored differently because the first
+    attempt broke.
+
+    Runs detached, like `_fill_remaining_segments`, so the fallback keeps its
+    latency: the student starts on segment 1 while the boards fill in behind.
+    `archetype` is resolved by the caller on the main thread for the reason
+    given there — a detached thread sharing the PostgREST client has already
+    lost a whole concept to a transient disconnect.
+    """
+    try:
+        row = supabase.table("lesson_plans").select("plan_json").eq("id", plan_id).execute()
+        if not row.data:
+            logger.error(f"❌ [FALLBACK BOARD FILL] plan={plan_id[:8]} vanished before the fill ran")
+            return
+        plan_json = row.data[0]["plan_json"] or {}
+        segments = plan_json.get("segments") or []
+        total = len(segments)
+
+        for segment in segments:
+            _attach_segment_board(segment, chap_data, sub_title, archetype,
+                                  subtopic_key=subtopic_key, plan_id=plan_id)
+
+        validate_plan_json(plan_json)
+        plan_json[PLAN_STATUS_KEY] = "complete"
+        plan_json[PLAN_EXPECTED_KEY] = total
+        supabase.table("lesson_plans").update({
+            "plan_json": plan_json, "segment_count": total,
+        }).eq("id", plan_id).execute()
+
+        _tally = {s: 0 for s in WIDGET_PRECOMPUTE_STATES}
+        for _s in segments:
+            _st = ((_s.get(WIDGET_PRECOMPUTE_KEY) or {}).get("status") or "not_asked")
+            _tally[_st] = _tally.get(_st, 0) + 1
+        logger.info(
+            f"🧩 [WIDGET PRECOMPUTE — FALLBACK PATH] plan={plan_id[:8]} {subtopic_key} "
+            f"widget={getattr(archetype, 'widget', None) or '(none)'} "
+            f"arch={getattr(archetype, 'confidence', '?')} segments={total} "
+            + " ".join(f"{k}={v}" for k, v in _tally.items() if v)
+        )
+        logger.info(f"✅ [PLAN COMPLETE — FALLBACK PATH] plan={plan_id[:8]} {total} segments boarded")
+    except Exception as e:
+        logger.error(f"❌ [FALLBACK BOARD FILL FAILED] plan={plan_id[:8]}: {e}")
+        _mark_plan_failed(plan_id, f"fallback board fill: {type(e).__name__}: {e}")
 
 
 def create_plan_streaming(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
