@@ -98,40 +98,42 @@ extractor is reading them as prose or dropping them.
 
 Treat multi-column and grid option layouts as a first-class case, not an edge case.
 
-### 1.3 The pipeline emits the same question multiple times
+### 1.3 One question split across rows — merge, never deduplicate on `(paper_id, qno)`
 
-1,911 duplicate groups exist within the corpus, covering 7,526 rows — **5,615 excess
-rows**. Breaking that down by cause:
+> **This section was rewritten on 2026-09-11 and contradicts an earlier draft.** That
+> draft said "`(source_file, paper_id, qno)` must be unique — enforce it at write time."
+> **That instruction was wrong and would have destroyed data. Do not follow it.**
+> If you already have the earlier version, this section supersedes it entirely.
 
-| cause | groups | excess rows |
-|---|---|---|
-| **one source file re-emitting the same `paper_id` + `qno`** | 1,280 | **2,995** |
-| genuine cross-source overlap (two sites, same paper) | 329 | ~2,300 |
-| same file, different paper/qno, near-identical text | 302 | ~300 |
-
-All 2,995 internal-repeat rows come from `diagram_questions.jsonl`. This is a bug in
-your PDF pass, not source overlap — the same PDF page is being processed more than
-once, or one question spanning two detected regions is emitted once per region.
-
-**CORRECTION (2026-09-11).** An earlier version of this directive said
-"`(source_file, paper_id, qno)` must be unique — enforce it at write time."
-**That instruction was wrong and would have destroyed data.** Do not follow it.
-
-Chapter-wise books (MathonGo, SelfStudys) restart question numbering per chapter, so
-"Q2" on pages 52, 133 and 142 are three *different* questions that legitimately share a
-qno. A uniqueness constraint on `(paper_id, qno)` would silently fuse them.
-
-The measured split of the 2,103 colliding `(paper_id, qno)` groups:
+2,103 groups of rows share a `(paper_id, qno)`. They are **not** all duplicates, and
+the three patterns need three different actions:
 
 | pattern | groups | rows | correct action |
-|---|---|---|---|
+|---|---:|---:|---|
 | same question, multiple diagram regions | 779 | 2,542 excess | **merge** into one row with a multi-element `diagram` array |
-| different questions sharing a qno | 1,324 | 6,083 | **keep all** — these are not duplicates |
-| identical page + bbox re-processing | 0 | 0 | — |
+| different questions sharing a qno | 1,324 | 6,083 | **keep all** — not duplicates |
+| identical page + bbox re-processing | 0 | 0 | — does not occur |
 
-So the dedupe key is the **question-text fingerprint**, never `(paper_id, qno)`. Merge
-only same-text groups, and merge them into multi-region rows rather than discarding the
-extra copies — discarding would drop figures the question needs.
+Two things follow.
+
+**The pipeline is not re-processing pages.** Zero groups share a page and bbox. The
+apparent "internal duplication" is one question whose figure was detected as several
+regions, emitted once per region. Those rows must be **merged into a single row carrying
+every region in its `diagram` array** — dropping the extras would silently discard
+figures the question depends on.
+
+**`qno` is not unique within a source.** Chapter-wise books (MathonGo, SelfStudys)
+restart numbering per chapter, so "Q2" on pages 52, 133 and 142 are three *different*
+questions. A uniqueness constraint on `(paper_id, qno)` would fuse 1,324 groups of
+distinct questions — 6,083 rows of real content destroyed.
+
+So the merge key is the **question-text fingerprint**, never `(paper_id, qno)`. Merge
+only same-text groups, and merge them into multi-region rows rather than discarding
+copies.
+
+Separately, a text-similarity pass over the whole corpus (Jaccard ≥ 0.75) finds 1,911
+near-duplicate groups covering 7,526 rows, of which ~329 span two different source
+files — genuine cross-source overlap, handled by §1.4.
 
 ### 1.4 Cross-source merges must pick the better copy, not the first one
 
@@ -334,7 +336,9 @@ Every run must emit a report containing:
    that path's rows rather than shipping them.
 2. **Self-consistency:** count duplicate-text groups whose copies disagree on the key.
    Target is 0. Report the actual number.
-3. **Uniqueness:** count violations of `(source_file, paper_id, qno)`. Target 0.
+3. **Multi-region merges (§1.3):** how many same-text groups you merged, and how many
+   `diagram` arrays now carry more than one region. Do **not** report `(paper_id, qno)`
+   uniqueness — that is not a defect, and treating it as one destroys data.
 4. **Funnel with a number at every stage**, e.g.
    `raw → text≥20 → options≥4 → asset resolves → key present → key verified → metadata complete → servable`.
    Report the count dropped at each stage and *why*.
