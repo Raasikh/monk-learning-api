@@ -301,9 +301,17 @@ async def turn_session_endpoint(session_id: str, payload: Dict[str, Any], user_i
     )
     utterance = payload.get("utterance")
     turn_type = payload.get("turn_type", "answer")
+    # Whether this utterance came from a microphone is not knowable here — the
+    # caller just posts text. Left False so a failed turn OWNS the failure
+    # ("I lost my thread") rather than telling a student who may well have
+    # typed it that their audio was unclear. Erring this way costs a slightly
+    # generic apology to someone who did speak; erring the other way blames a
+    # student for our outage. Callers that know may pass from_speech.
+    from_speech = bool(payload.get("from_speech", False))
 
     return StreamingResponse(
-        process_tutor_turn_stream(session_id, user_id, utterance, turn_type),
+        process_tutor_turn_stream(session_id, user_id, utterance, turn_type,
+                                  from_speech=from_speech),
         media_type="text/event-stream"
     )
 

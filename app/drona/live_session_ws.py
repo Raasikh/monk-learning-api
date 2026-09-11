@@ -323,7 +323,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     except Exception as replay_err:
         logger.warning(f"Board replay on connect skipped: {replay_err}")
 
-    async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer"):
+    async def execute_turn_pipeline(utterance_text: str, turn_type: str = "answer",
+                                    from_speech: bool = False):
         """Executes process_tutor_turn_stream and synthesizes TTS sentence-by-sentence over WebSocket."""
         # Pre-warm Rumik TTS concurrently in background while LLM generates tokens
         asyncio.create_task(tts_proxy.prewarm())
@@ -473,7 +474,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 {**session_data, "phase": state.current_phase}, user_id, utterance_text, turn_type
             )
         else:
-            turn_stream = process_tutor_turn_stream(session_id, user_id, utterance_text, turn_type)
+            turn_stream = process_tutor_turn_stream(session_id, user_id, utterance_text,
+                                                    turn_type, from_speech=from_speech)
 
         async for sse_chunk in turn_stream:
             lines = sse_chunk.strip().split("\n")
@@ -819,7 +821,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     turn_in_flight = {"value": False}
     MAX_QUEUED_TURNS = 4
 
-    def launch_background_turn(utterance_text: str, turn_type: str = "answer"):
+    def launch_background_turn(utterance_text: str, turn_type: str = "answer",
+                               from_speech: bool = False):
         """Launches execute_turn_pipeline as a background task with turn queueing and 20s heartbeat."""
         if turn_in_flight["value"]:
             # Queue teaching turns too. Auto-advance calls this with an empty
@@ -839,7 +842,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                     }))
                 return None
             logger.info(f"📥 [TURN QUEUED] Turn active for session {session_id}. Queueing {turn_type} turn utterance='{utterance_text[:30]}'")
-            pending_turn_queue.append((utterance_text, turn_type))
+            pending_turn_queue.append((utterance_text, turn_type, from_speech))
             return None
 
         turn_in_flight["value"] = True
@@ -864,7 +867,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 # socket stays open, and the student watches nothing happen with
                 # no error and no recovery. Observed as a 12-minute silence.
                 await asyncio.wait_for(
-                    execute_turn_pipeline(utterance_text=utterance_text, turn_type=turn_type),
+                    execute_turn_pipeline(utterance_text=utterance_text, turn_type=turn_type,
+                                          from_speech=from_speech),
                     timeout=TURN_WATCHDOG_S,
                 )
             except asyncio.TimeoutError:
@@ -905,9 +909,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                 # Clear before draining, or the next turn hits its own guard.
                 turn_in_flight["value"] = False
                 if pending_turn_queue and state.is_active:
-                    next_utt, next_ttype = pending_turn_queue.pop(0)
+                    next_utt, next_ttype, next_from_speech = pending_turn_queue.pop(0)
                     logger.info(f"🚀 [DRAINING TURN QUEUE] Executing queued {next_ttype} turn: utterance='{next_utt[:30]}'")
-                    launch_background_turn(utterance_text=next_utt, turn_type=next_ttype)
+                    launch_background_turn(utterance_text=next_utt, turn_type=next_ttype,
+                                           from_speech=next_from_speech)
 
         t_task = asyncio.create_task(_turn_runner())
         active_turn_tasks.add(t_task)
@@ -1124,7 +1129,11 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
                                 "type": "transcript_final",
                                 "transcript": norm_t
                             })
-                            launch_background_turn(utterance_text=norm_t, turn_type="answer")
+                            # The only launch site whose utterance came from
+                            # a microphone. from_speech drives which apology
+                            # a failed turn gives — see persona.failure_speech.
+                            launch_background_turn(utterance_text=norm_t, turn_type="answer",
+                                                   from_speech=True)
                         else:
                             logger.warning(f"[STT REST EMPTY] No transcript recovered from {duration_s:.2f}s of PTT audio for session {session_id}")
                             await websocket.send_json({

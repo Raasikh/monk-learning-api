@@ -117,15 +117,33 @@ TURN_INTERRUPTED = {
 }
 
 
-def failure_speech(language: object, utterance: object) -> str:
+def failure_speech(language: object, from_speech: object) -> str:
     """The right apology for whichever thing actually failed.
 
-    Only blame the audio when there WAS audio: if the student said something we
-    could not parse, asking them to repeat it is correct. If they said nothing,
-    the failure is ours and the message should say so.
+    Only blame the AUDIO when audio is what drove the turn. `from_speech` is
+    true for exactly one caller — the PTT path, where a speech-to-text
+    transcript became the utterance. Everything else (auto-started teaching,
+    resume, interruption, a typed message, a tapped answer chip, and the
+    client's synthetic "Begin lesson segment" kick-off) produced no audio to
+    mishear, so a server-side failure there is ours to own.
+
+    This USED to switch on whether the utterance string was non-empty, which
+    was wrong in three ways at once, all of them blaming the student for our
+    failure:
+
+      * the mobile client sends a synthetic "Begin lesson segment" utterance
+        to start a class (app/live-classroom.tsx), so EVERY turn-1 failure
+        told a student who had not spoken that their audio was unclear — this
+        is what the 2026-09-10 model-echo outage sounded like in production,
+        on every single turn;
+      * a tapped answer chip is a non-empty utterance and no audio at all;
+      * so is a typed message.
+
+    Asking someone to "say it once more" when they tapped a button, or when
+    they have not spoken at all, reads as the product being broken AND rude.
+    Owning it is both honest and what a teacher does when they lose the thread.
     """
-    table = AUDIO_UNCLEAR if str(utterance or "").strip() else TURN_INTERRUPTED
-    return copy_for(table, language)
+    return copy_for(AUDIO_UNCLEAR if from_speech else TURN_INTERRUPTED, language)
 
 # Last-resort stem when the tutor offers answer chips but never voices a
 # question. Better a generic question than three orphaned options on screen.

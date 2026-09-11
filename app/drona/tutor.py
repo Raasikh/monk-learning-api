@@ -627,7 +627,8 @@ async def process_tutor_turn_stream(
     session_id: str,
     user_id: str,
     utterance: str | None,
-    turn_type: str
+    turn_type: str,
+    from_speech: bool = False,
 ) -> AsyncGenerator[str, None]:
     """
     Complete production Drona tutor turn pipeline (§4):
@@ -2090,7 +2091,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             })
         else:
             raw_response_text = json.dumps({
-                "speech": failure_speech(language, utterance),
+                "speech": failure_speech(language, from_speech),
                 "board_events": [],
                 "phase_request": phase_in,
                 "turn_failed": True
@@ -2142,7 +2143,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             logger.error(f"Second JSON parse failure: {retry_err}")
             turn_failed = True
             parsed_json = {
-                "speech": failure_speech(language, utterance),
+                "speech": failure_speech(language, from_speech),
                 "board_events": [],
                 "phase_request": phase_in,
                 "turn_failed": True
@@ -2203,7 +2204,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 auto_events.append({"seq": idx, "type": event_type, "text": text_str, "emphasis": "normal"})
         parsed_json["board_events"] = auto_events
 
-    speech_out = parsed_json.get("speech") or failure_speech(language, utterance)
+    speech_out = parsed_json.get("speech") or failure_speech(language, from_speech)
 
     # A turn that offers answer chips MUST voice the question they answer.
     # Measured failure: turns ended on a transition ("Next, we'll see how this
