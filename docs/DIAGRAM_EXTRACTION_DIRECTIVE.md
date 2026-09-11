@@ -23,8 +23,15 @@ of the pipeline. Everything below is about the text extracted *around* the diagr
 
 Two known blemishes to fix while you are in there:
 
-- 2,616 rows have OCR confidence < 0.90 (minimum observed: 0.0000). Do not treat those
-  rows' text as trustworthy — see §4 on flagging.
+- 2,616 rows have OCR confidence < 0.90 (minimum observed: 0.0000). **Do not use this as
+  an exclusion filter.** Mathpix's `confidence_rate` is an estimated fraction of elements
+  recognized, and it correlates poorly with whether the text is actually usable — 146 of
+  the 222 rows scoring exactly 0.0 carry substantial, clean OCR text. Treat low confidence
+  as a weak signal for prioritising review, never as grounds for dropping a row. (Note:
+  `app/mathpix.py` does gate on `MIN_CONFIDENCE_RATE = 0.90`, but that governs whether a
+  *live doubt photo* is worth solving from — a different decision from whether an already-
+  extracted corpus row is worth keeping. `confidence: null` means not measured, and the
+  code deliberately treats that as usable.)
 - 348 crops are smaller than 60×40 px. A crop that small is almost certainly a stray
   rule, a subscript, or punctuation — not a figure. Re-check or drop them.
 
@@ -52,7 +59,31 @@ Independent corroboration: 13 groups of duplicate question text carry *contradic
 keys across copies (e.g. the same capacitor question keyed both `B` and `D`). A correct
 extractor cannot disagree with itself on identical input.
 
-Fix the letter path. Then prove it (§4).
+**ROOT CAUSE — confirmed and reproduced (2026-09-11).** The bug is in
+`EMBEDDED_ANSWER_VALUE_RE`, `scripts/extract_nta_papers.py:1086`:
+
+```python
+r"(?i)\b(?:Official\s+Ans(?:\.|\s+by\s+NTA)?|Answer|Ans)"
+r"\s*(?:[.:\)]|\()\s*\(?\s*([A-Da-d]|[1-4])\s*\)?"
+```
+
+On the line `Official Ans. by NTA (2)` the optional group's alternation tries `\.` first
+and consumes the period, so ` by NTA` is never consumed; the value capture then matches
+**the `b` of the word "by"**. Verified output:
+
+```
+'Official Ans. by NTA (2)'  -> captured='b'   matched='Official Ans. b'
+'Official Ans by NTA (3)'   -> captured='3'   (no period, so it works)
+'Allen Ans. (2)'            -> captured='2'   (the healthy numeric path)
+```
+
+Because it only misfires when a period follows "Ans", it corrupted a subset rather than
+everything — which is exactly why the structural lint never caught it.
+
+**These 696 rows are repairable, not droppable.** The true key `(2)` is printed on the
+same line, immediately after the text the regex stopped on. Fix the alternation order
+(try the longest alternative first, or make the group possessive/atomic), re-extract the
+affected mirror papers, and prove the distribution flattens (§4).
 
 ### 1.2 Options parsing fails on 74% of rows
 
@@ -82,7 +113,25 @@ All 2,995 internal-repeat rows come from `diagram_questions.jsonl`. This is a bu
 your PDF pass, not source overlap — the same PDF page is being processed more than
 once, or one question spanning two detected regions is emitted once per region.
 
-`(source_file, paper_id, qno)` must be unique. Enforce it at write time.
+**CORRECTION (2026-09-11).** An earlier version of this directive said
+"`(source_file, paper_id, qno)` must be unique — enforce it at write time."
+**That instruction was wrong and would have destroyed data.** Do not follow it.
+
+Chapter-wise books (MathonGo, SelfStudys) restart question numbering per chapter, so
+"Q2" on pages 52, 133 and 142 are three *different* questions that legitimately share a
+qno. A uniqueness constraint on `(paper_id, qno)` would silently fuse them.
+
+The measured split of the 2,103 colliding `(paper_id, qno)` groups:
+
+| pattern | groups | rows | correct action |
+|---|---|---|---|
+| same question, multiple diagram regions | 779 | 2,542 excess | **merge** into one row with a multi-element `diagram` array |
+| different questions sharing a qno | 1,324 | 6,083 | **keep all** — these are not duplicates |
+| identical page + bbox re-processing | 0 | 0 | — |
+
+So the dedupe key is the **question-text fingerprint**, never `(paper_id, qno)`. Merge
+only same-text groups, and merge them into multi-region rows rather than discarding the
+extra copies — discarding would drop figures the question needs.
 
 ### 1.4 Cross-source merges must pick the better copy, not the first one
 
@@ -102,6 +151,20 @@ numeric values preserved > full stem > option count > OCR confidence. Keep the b
 record the discarded IDs in a `merged_from` field so the decision is auditable.
 
 ---
+
+### 1.5 Dedupe against the LIVE question bank, not just within the corpus
+
+§1.3 and §1.4 concern duplicates *inside* the raw corpus. There is a second check you
+must also run: **against the 15,408 rows already in the live `questions` table.**
+
+Measured: **875 rows in the current corpus are near-duplicates (Jaccard ≥ 0.75 on
+normalised text) of questions already servable in production.**
+
+If those are gated and inserted, students are served the same question twice, and the
+Monk Score's repeat-attempt detection will treat the second serve as a fresh question
+because the row IDs differ. Run the cross-check before insertion, and set
+`needs_manual: "duplicate_of_servable:<existing_id>"` on the new row rather than
+inserting it. Do not delete or modify the existing production row.
 
 ## 2. Target schema — what a production row must contain
 
@@ -234,14 +297,29 @@ they are right.
 
 ## 6. Order of work
 
-1. **Fix the letter-format key parser** (§1.1). Self-contained, and it is the
-   difference between ~840 and ~1,540 usable keys. Prove it with a flat distribution.
-2. **Fix options parsing for multi-column/grid layouts** (§1.2). This is where the
-   volume is — potentially 10,000+ rows rather than 700.
-3. **Enforce `(source_file, paper_id, qno)` uniqueness and completeness-ranked
-   dedupe** (§1.3, §1.4).
-4. **Attach chapter / concept / difficulty / solution** (§2), matching `chapters` exactly.
-5. **Verify keys independently** (§4).
+1. **Fix `EMBEDDED_ANSWER_VALUE_RE` and re-extract the affected mirror papers** (§1.1).
+   Root cause is confirmed; the true keys are present in the source. Prove the per-path
+   distribution flattens into the 15–35% band.
+2. **Merge the 779 same-text multi-region groups** into multi-element `diagram` rows
+   (§1.3). Use the text fingerprint. Do **not** apply a `(paper_id, qno)` constraint.
+3. **OCR-mine Question IDs from the 31 eSaral 2022 papers, then join to the official NTA
+   key PDFs** (§4). This is the only route to `official_verified` keys at any scale —
+   roughly 930 questions. Higher value than raw volume, because unverified keys cannot ship.
+4. **Fix options parsing** (§1.2) — per-source, starting with the ExamSIDE `<img alt>`
+   extraction and the MathonGo generic-parser failure (162/175 files). This is where the
+   volume is: potentially 10,000+ rows rather than ~700.
+5. **Attach chapter / concept / difficulty / solution** (§2), matching the live `chapters`
+   and `concepts` tables exactly.
 6. **Upload assets to R2 and emit the `diagram` array** (§3).
 
 Report after each step with the §4 numbers. Do not batch all six and report at the end.
+
+## 7. A note on citing this codebase
+
+When you attribute a claim to our code, quote it exactly and give `file:line`. In the
+previous round, one answer stated that `app/mathpix.py` documents the confidence score as
+not separating "good from bad at all." That sentence is not in the file. The underlying
+point was correct and well-supported by your own data, so the conclusion stood — but a
+fabricated citation is indistinguishable from a real one until someone checks, and it
+costs us the ability to trust the citations that *are* real. Paraphrase openly, or quote
+exactly. Never present a paraphrase as a quotation.
