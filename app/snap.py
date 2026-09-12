@@ -405,7 +405,14 @@ def stream_followup(doubt: Dict[str, Any], question: str,
         messages=messages,
         response_format={"type": "json_object"},
         temperature=0.3,
-        max_tokens=900,
+        # Covers `spoken` AND every step, so it is the ceiling on the whole
+        # answer rather than on the voice. 900 was sized for the two or three
+        # steps a pointed question earns; "explain the whole thing" runs past
+        # it, and the JSON is then cut mid-object — the steps after the cut are
+        # never emitted, and if `spoken` itself was still being written it has
+        # no closing quote and cannot be read at all, so the answer stops in
+        # the middle with no voice.
+        max_tokens=1600,
         stream=True,
         # The reasoning is already done and printed above this question; a
         # follow-up that stops to think spends the student's patience on
