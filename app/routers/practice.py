@@ -89,21 +89,6 @@ class PracticeExplainRequest(BaseModel):
 DAILY_QUESTION_LIMIT = 150
 
 
-def _questions_answered_today(user_id: str) -> int:
-    """Practice attempts in the last rolling 24 hours. Mock runs are not
-    practice and do not count against this."""
-    since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
-    res = (
-        supabase.table("practice_attempts")
-        .select("id", count="exact")
-        .eq("user_id", user_id)
-        .eq("mode", "practice")
-        .gte("created_at", since)
-        .limit(0)
-        .execute()
-    )
-    return res.count if res.count is not None else len(res.data or [])
-
 
 PLACEHOLDER_OPTIONS = {'A': 'Option A', 'B': 'Option B', 'C': 'Option C', 'D': 'Option D'}
 
@@ -220,22 +205,6 @@ def get_next_question(
     - 21-attempt repeat spacing logic & prioritization of wrong attempts
     - Strict Quality Filter (GATE 8.6)
     """
-    used_today = _questions_answered_today(user_id)
-    if used_today >= DAILY_QUESTION_LIMIT:
-        # Reuses the `exhausted` shape the client already renders, with a
-        # reason so it can tell "you are done for today" from "this filter has
-        # nothing left" — the two need different words and different advice.
-        return {
-            "exhausted": True,
-            "reason": "daily_limit",
-            "message": (
-                f"That's all {DAILY_QUESTION_LIMIT} for today. Come back tomorrow — "
-                "or go over what you got wrong with Drona."
-            ),
-            "questions_used_today": used_today,
-            "daily_limit": DAILY_QUESTION_LIMIT,
-        }
-
     exam_mode = (req.exam or "both").strip().lower()
     if exam_mode not in ["jee", "neet", "both"]:
         exam_mode = "both"
@@ -287,6 +256,42 @@ def get_next_question(
 
     all_user_attempts = attempts_res.data or []
     n_total_attempts = len(all_user_attempts)
+
+    # The day's tally, counted from the attempts already in hand.
+    #
+    # This used to be its own query, and that one extra round trip is what took
+    # /practice/next down: the Supabase client pools ONE HTTP/2 connection, and
+    # the server sends GOAWAY with last_stream_id=3, so adding a request at the
+    # front pushed the chapters query onto a stream the connection would no
+    # longer accept — "httpx.RemoteProtocolError: ConnectionTerminated" at the
+    # line that had nothing to do with the change. Every attempt is already
+    # here, with created_at, so the count is free.
+    since = datetime.now(timezone.utc) - timedelta(hours=24)
+    used_today = 0
+    for att in all_user_attempts:
+        created = att.get("created_at")
+        if not created:
+            continue
+        try:
+            if datetime.fromisoformat(created.replace("Z", "+00:00")) >= since:
+                used_today += 1
+        except (TypeError, ValueError):
+            continue
+
+    if used_today >= DAILY_QUESTION_LIMIT:
+        # Reuses the `exhausted` shape the client already renders, with a
+        # reason so it can tell "you are done for today" from "this filter has
+        # nothing left" — the two need different words and different advice.
+        return {
+            "exhausted": True,
+            "reason": "daily_limit",
+            "message": (
+                f"That's all {DAILY_QUESTION_LIMIT} for today. Come back tomorrow — "
+                "or go over what you got wrong with Drona."
+            ),
+            "questions_used_today": used_today,
+            "daily_limit": DAILY_QUESTION_LIMIT,
+        }
 
     # Track most recent attempt index and status for each question
     latest_attempt_map: Dict[str, Dict[str, Any]] = {}
