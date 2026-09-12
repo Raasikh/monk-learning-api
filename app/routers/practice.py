@@ -1,6 +1,5 @@
 import json
 import random
-from datetime import datetime, timedelta, timezone
 from typing import List, Optional, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
@@ -51,19 +50,6 @@ class PracticeAnswerRequest(BaseModel):
     question_id: str
     chosen_option: Optional[str] = None
     chosen_value: Optional[float] = None
-    # How long the question was actually ON SCREEN, measured by the client.
-    #
-    # The server can only see when it HANDED THE QUESTION OUT (question_serves
-    # .served_at), and the app fetches one question ahead — so that clock
-    # starts while the student is still reading the previous one, and keeps
-    # running if they leave Practice and come back to a held question. Every
-    # server-derived reading is therefore inflated by an unknown amount.
-    # Trusted when present, ignored when absent or implausible.
-    elapsed_ms: Optional[int] = None
-    # True when the student pressed "I don't know" rather than answering. Still
-    # graded incorrect and still spaced the same way; excluded from timing
-    # statistics, because giving up is fast and solving is slow.
-    gave_up: bool = False
 
 
 class PracticeExplainRequest(BaseModel):
@@ -75,35 +61,6 @@ class PracticeExplainRequest(BaseModel):
 
 
 # --- Helper Functions ---
-
-# Questions a student may ANSWER in a rolling 24 hours.
-#
-# Counted on attempts, not on serves. A serve is already self-limiting in the
-# way that matters — record_serve burns the question out of this student's pool
-# whether they answer it or not — so charging for one would punish a student
-# twice for opening Practice and changing their mind. "150 questions a day" is
-# a promise about questions faced, and an attempt is the record of facing one.
-#
-# Give-ups count. The student was shown the question and shown the worked
-# solution; that is the expensive part and the useful part.
-DAILY_QUESTION_LIMIT = 150
-
-
-def _questions_answered_today(user_id: str) -> int:
-    """Practice attempts in the last rolling 24 hours. Mock runs are not
-    practice and do not count against this."""
-    since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
-    res = (
-        supabase.table("practice_attempts")
-        .select("id", count="exact")
-        .eq("user_id", user_id)
-        .eq("mode", "practice")
-        .gte("created_at", since)
-        .limit(0)
-        .execute()
-    )
-    return res.count if res.count is not None else len(res.data or [])
-
 
 PLACEHOLDER_OPTIONS = {'A': 'Option A', 'B': 'Option B', 'C': 'Option C', 'D': 'Option D'}
 
@@ -220,22 +177,6 @@ def get_next_question(
     - 21-attempt repeat spacing logic & prioritization of wrong attempts
     - Strict Quality Filter (GATE 8.6)
     """
-    used_today = _questions_answered_today(user_id)
-    if used_today >= DAILY_QUESTION_LIMIT:
-        # Reuses the `exhausted` shape the client already renders, with a
-        # reason so it can tell "you are done for today" from "this filter has
-        # nothing left" — the two need different words and different advice.
-        return {
-            "exhausted": True,
-            "reason": "daily_limit",
-            "message": (
-                f"That's all {DAILY_QUESTION_LIMIT} for today. Come back tomorrow — "
-                "or go over what you got wrong with Drona."
-            ),
-            "questions_used_today": used_today,
-            "daily_limit": DAILY_QUESTION_LIMIT,
-        }
-
     exam_mode = (req.exam or "both").strip().lower()
     if exam_mode not in ["jee", "neet", "both"]:
         exam_mode = "both"
@@ -366,10 +307,7 @@ def get_next_question(
     if not candidate_questions:
         return {
             "exhausted": True,
-            "reason": "pool_empty",
-            "message": f"No eligible practice questions available for subject '{chosen_subject.capitalize()}' under selected exam/class filters.",
-            "questions_used_today": used_today,
-            "daily_limit": DAILY_QUESTION_LIMIT,
+            "message": f"No eligible practice questions available for subject '{chosen_subject.capitalize()}' under selected exam/class filters."
         }
 
     # 7. Tier-Based Selection (GATE 8.4)
@@ -428,11 +366,7 @@ def get_next_question(
         "chapter_name": selected.get("chapter_name"),
         "concept": resolve_display_concept(selected["id"], selected.get("concept")),
         "difficulty": selected.get("difficulty"),
-        "diagram": diagram,
-        # So the client can show the day's remaining count without a second
-        # call. `used_today` is the count BEFORE this question is answered.
-        "questions_used_today": used_today,
-        "daily_limit": DAILY_QUESTION_LIMIT,
+        "diagram": diagram
     }
 
 
@@ -493,8 +427,6 @@ def submit_answer(
             is_correct=is_correct,
             raw_difficulty=q_data.get("difficulty"),
             mode="practice",
-            elapsed_ms=req.elapsed_ms,
-            gave_up=req.gave_up,
         )
     except Exception as e:
         print(f"[PRACTICE SCORING ERROR] Failed to score answer: {e}")
@@ -504,10 +436,7 @@ def submit_answer(
         "user_id": user_id,
         "question_id": req.question_id,
         "is_correct": is_correct,
-        "mode": "practice",
-        # Requires migration 0043. PostgREST rejects the WHOLE insert on an
-        # unknown column, so this must not ship ahead of it.
-        "gave_up": req.gave_up,
+        "mode": "practice"
     }
 
     try:

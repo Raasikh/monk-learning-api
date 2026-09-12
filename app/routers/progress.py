@@ -10,8 +10,7 @@ All math follows the Progress spec. Constants come from progress_config
 (active row) — never hardcoded here. Launch posture ("simple setup"):
  * chapter weights fall back to 1.0 until chapter_exam_weights is researched,
    so subjects are plain concept-mastery means for now;
- * pace is display-only: it reports the median seconds per question by
-   subject against a per-exam target, and does not move the score;
+ * pace is display-only and null until question_serves has timing data;
  * the climb bar / weekly delta read progress_snapshots (empty until the
    nightly job ships) and degrade to a flat series / +0.
 
@@ -20,7 +19,6 @@ Absence of a row = Not started (m = 0, no attempts) per spec §8.
 """
 
 import logging
-import statistics
 from collections import defaultdict
 from typing import Any, Dict, List, Optional
 
@@ -121,128 +119,6 @@ def concept_state(mastery: float, flagged: bool, attempts: int, cfg: Dict[str, A
     if mastery >= cfg.get("improving_threshold", 45):
         return "improving"
     return "needs_revision" if attempts > 0 else "not_started"
-
-
-# --- Pace ---------------------------------------------------------------------
-# Target seconds per question, per subject, per exam.
-#
-# Neither paper allocates time by subject — both run on one clock — so these are
-# an ALLOCATION of the real budget, not a figure read off the syllabus. Each set
-# sums to the actual paper:
-#
-#   JEE Main   180 min, 75 questions  (25 physics, 25 chemistry, 25 maths)
-#     chemistry 40 min + physics 60 min + maths 80 min = 180 min exactly
-#   NEET       180 min, 180 questions (45 physics, 45 chemistry, 90 biology)
-#     biology 60 min + chemistry 45 min + physics 75 min = 180 min exactly
-#
-# Weighted rather than uniform because chemistry is largely recall and maths is
-# the calculation sink; a flat 2m24s target would tell a student to slow down on
-# chemistry and hurry on maths, which is the opposite of the advice.
-#
-# The preview rows the mobile client shipped with summed to 210 minutes against
-# a 180-minute paper, which is how we know they were illustrative.
-PACE_TARGET_SECONDS = {
-    "JEE": {"chemistry": 96, "physics": 144, "mathematics": 192},
-    "NEET": {"biology": 40, "chemistry": 60, "physics": 100},
-}
-
-# Below this, a median is a rumour. Six is small but it is enough that one slow
-# question cannot own the number, and waiting for thirty means a new student
-# sees an empty card for a week.
-PACE_MIN_SAMPLES = 6
-
-
-def _pace_rows(user_id: str, exam: str) -> List[Dict[str, Any]]:
-    """Median seconds per question, by subject, against this exam's target.
-
-    MEDIAN, NOT MEAN. Measured on production before this shipped, the physics
-    distribution ran from 0.9s to 186,799s — the long one being an app left
-    open for two days. A mean is owned by that row; a median does not notice it.
-
-    Only genuine attempts count: first serves, not given up, and with a time
-    the client actually observed. `gave_up` is the important one — giving up
-    takes seconds and solving takes minutes, so mixing them reports the
-    hardest subject as the quickest.
-    """
-    targets = PACE_TARGET_SECONDS.get(exam.upper())
-    if not targets:
-        return []
-    try:
-        return _pace_rows_inner(user_id, targets)
-    except Exception as err:
-        # Pace is one card. Progress is the page, and it renders score,
-        # subjects, chapters, recommendations and the ledger without any of
-        # this — so a failure here must cost the card, not the screen. It will
-        # fail exactly once for real: `gave_up` does not exist until migration
-        # 0043 is applied, and this deploying first is the likely order.
-        logger.warning("pace unavailable, falling back to no rows: %s", err)
-        return []
-
-
-def _pace_rows_inner(user_id: str, targets: Dict[str, int]) -> List[Dict[str, Any]]:
-
-    serves = (
-        supabase.table("question_serves")
-        .select("question_id, time_to_answer_ms, first_serve")
-        .eq("user_id", user_id)
-        .eq("context", "practice")
-        .not_.is_("time_to_answer_ms", "null")
-        .execute()
-        .data
-        or []
-    )
-    serves = [s for s in serves if s.get("first_serve")]
-    if not serves:
-        return []
-
-    # Which of those the student gave up on, so they can be dropped.
-    gave_up = {
-        a["question_id"]
-        for a in (
-            supabase.table("practice_attempts")
-            .select("question_id, gave_up")
-            .eq("user_id", user_id)
-            .eq("gave_up", True)
-            .execute()
-            .data
-            or []
-        )
-    }
-
-    # question -> subject, since question_serves does not carry one.
-    ids = list({s["question_id"] for s in serves if s["question_id"] not in gave_up})
-    subject_of: Dict[str, str] = {}
-    for i in range(0, len(ids), 200):
-        for row in (
-            supabase.table("questions")
-            .select("id, subject")
-            .in_("id", ids[i : i + 200])
-            .execute()
-            .data
-            or []
-        ):
-            subject_of[row["id"]] = (row.get("subject") or "").strip().lower()
-
-    by_subject: Dict[str, List[float]] = {}
-    for s in serves:
-        subject = subject_of.get(s["question_id"])
-        if subject in targets:
-            by_subject.setdefault(subject, []).append(s["time_to_answer_ms"] / 1000.0)
-
-    rows = []
-    for subject, target in targets.items():
-        samples = by_subject.get(subject, [])
-        if len(samples) < PACE_MIN_SAMPLES:
-            continue
-        actual = statistics.median(samples)
-        rows.append({
-            "subject": subject,
-            "actual_seconds": round(actual, 1),
-            "target_seconds": target,
-            "over": actual > target,
-            "samples": len(samples),
-        })
-    return rows
 
 
 @router.get("")
@@ -446,8 +322,6 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
         "reason": "Mock answers earn a 1.15× exam-conditions premium.",
     })
 
-    pace_rows = _pace_rows(user_id, exam)
-
     return {
         "exam": exam,
         "entitlement": entitlement,
@@ -463,13 +337,7 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
             ],
         },
         "subjects": subject_payload,
-        "pace": {
-            "available": bool(pace_rows),
-            "rows": pace_rows,
-            "note": "Display only — doesn't move your score yet."
-            if pace_rows
-            else "Answer a few more and your pace per subject appears here.",
-        },
+        "pace": {"available": False, "note": "Display only — doesn't move your score yet."},
         "recommendations": recs,
         "ledger": {
             "doubts_solved": doubts,
