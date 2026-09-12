@@ -248,7 +248,17 @@ def get_next_question(
     valid_chapter_ids: Optional[List[str]] = None
     valid_chapter_names: Optional[List[str]] = None
 
-    if class_req in ["11", "12"]:
+    # An explicit chapter pick OVERRIDES the class filter.
+    #
+    # Focus mode lists Class 11 and Class 12 chapters side by side, and the two
+    # filters used to fight: a Class 11 student who picked "Current Electricity"
+    # (Class 12) had every candidate thrown out by the class whitelist and was
+    # told "No eligible practice questions available" -- for a chapter holding
+    # 125 questions. Naming one chapter is a stronger, more deliberate signal
+    # than the class on the profile: a student revising ahead, or back, means
+    # it. `chapter_id` also pins the class unambiguously on its own, so nothing
+    # leaks across classes by skipping the whitelist here.
+    if class_req in ["11", "12"] and not req.chapter_id:
         class_int = int(class_req)
         # Chapters are syllabus, not per-user state — cached, so this stops
         # being a round trip on every question after the first.
@@ -340,7 +350,11 @@ def get_next_question(
         .select("id, question_type, chapter_id, chapter_name, concept, difficulty, target_exams, discipline")
         .ilike("subject", chosen_subject)
         .is_("needs_manual", "null")
-        .neq("source", "extracted_master_content")
+        # NOT `.neq("source", ...)`. In SQL `NULL <> 'x'` is NULL, not true, so
+        # a plain neq silently drops every row whose `source` is unset -- 9,035
+        # of the bank's 15,408 rows, 59% of it. Measured on Current Electricity:
+        # 77 servable rows became 26, and 38 JEE-eligible ones became 4.
+        .or_("source.is.null,source.neq.extracted_master_content")
     )
     if req.chapter_id:
         query = query.eq("chapter_id", req.chapter_id)
