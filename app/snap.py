@@ -350,6 +350,31 @@ def followup_context(doubt: Dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+# A finished `"spoken": "..."` inside a JSON object that is still being
+# written. The value pattern walks escapes properly — `[^"\\]|\\.` — so a
+# quotation mark or a LaTeX backslash inside the sentence cannot be mistaken
+# for its end, which a lazy `"(.*?)"` would do on the first `\"`.
+_SPOKEN_RE = re.compile(r'"spoken"\s*:\s*"((?:[^"\\]|\\.)*)"')
+
+
+def _complete_spoken(buffer: str) -> Optional[str]:
+    """The `spoken` line once it is whole, or None while it is still arriving.
+
+    Decoded through `json.loads` rather than returned raw: the buffer holds
+    JSON source, so the text still carries its escapes, and speaking a literal
+    `\\n` or `\\"` aloud is exactly the kind of thing TTS says out loud.
+    """
+    match = _SPOKEN_RE.search(buffer)
+    if not match:
+        return None
+    try:
+        text = json.loads(f'"{match.group(1)}"')
+    except json.JSONDecodeError:
+        return None
+    text = (text or "").strip()
+    return text or None
+
+
 def stream_followup(doubt: Dict[str, Any], question: str,
                     history: Optional[List[Dict[str, str]]] = None):
     """Yields ("step", {...}) as each is finished, then ("spoken", {...}).
@@ -390,6 +415,7 @@ def stream_followup(doubt: Dict[str, Any], question: str,
 
     buffer, emitted = "", set()
     pending: List[Dict[str, Any]] = []
+    said = False
     for chunk in stream:
         if not getattr(chunk, "choices", None):
             continue
@@ -397,6 +423,18 @@ def stream_followup(doubt: Dict[str, Any], question: str,
         if not piece:
             continue
         buffer += piece
+        # `spoken` the moment it is whole, not at the end of the stream.
+        #
+        # It is the first field the prompt asks for, so it completes while the
+        # steps are still being written — and the voice cannot start until it
+        # exists. Waiting for the closing brace is what put the board three to
+        # four seconds ahead of the speech, talking about something the student
+        # had already read.
+        if not said:
+            spoken = _complete_spoken(buffer)
+            if spoken:
+                said = True
+                yield "spoken", {"text": spoken}
         _emit_new_steps(buffer, emitted,
                         lambda kind, data: pending.append(data) if kind == "step" else None)
         while pending:
@@ -411,9 +449,13 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     for step in parsed.get("steps") or []:
         if step.get("n") not in emitted:
             yield "step", {"n": step.get("n"), "text": step.get("text") or ""}
-    spoken = (parsed.get("spoken") or "").strip()
-    if spoken:
-        yield "spoken", {"text": spoken}
+    if not said:
+        # The stream never carried a complete `spoken` on its own — a short
+        # answer can arrive inside one chunk, and a model that ignored the
+        # field order writes it last. Either way it is here now.
+        spoken = (parsed.get("spoken") or "").strip()
+        if spoken:
+            yield "spoken", {"text": spoken}
 
 
 def second_opinion(system_prompt: str, payload: str, doubt_id: str,

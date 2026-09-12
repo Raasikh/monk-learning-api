@@ -3491,3 +3491,53 @@ def test_no_vision_model_configured_changes_nothing(monkeypatch):
     assert "image_url" not in json.dumps(sent["messages"]), (
         "an unset vision model must not start sending photographs to the solver"
     )
+
+
+# ─── the follow-up's voice starts while the board is still filling ───────────
+
+def test_spoken_is_read_out_of_a_half_written_answer():
+    """The voice cannot start until `spoken` exists, so it is read early.
+
+    `spoken` is the first field snap_followup.md asks for, so it completes
+    while the steps are still being written. Waiting for the closing brace is
+    what put the board three to four seconds ahead of the speech — the student
+    watched it fill in silence, then heard a voice describing what they had
+    already read.
+    """
+    assert snap._complete_spoken('{"spoken": "Because the velo') is None, (
+        "a half-written sentence must not be spoken"
+    )
+    ready = '{"spoken": "Because it starts at 200.", "steps": ['
+    assert snap._complete_spoken(ready) == "Because it starts at 200.", (
+        "once the closing quote is there it is whole, comma or not"
+    )
+    print(f"  read at {len(ready)} chars, before a single step exists")
+
+
+def test_a_spoken_line_survives_quotes_and_backslashes():
+    """The value is JSON source, and it is read back as JSON.
+
+    A lazy `"(.*?)"` would end the sentence at the first escaped quote, and
+    returning the raw match would hand TTS the escapes themselves — a voice
+    saying "backslash n" out loud is the failure this avoids.
+    """
+    assert snap._complete_spoken(
+        '{"spoken": "He said \\"no\\" there.", "steps": []}'
+    ) == 'He said "no" there.'
+    assert snap._complete_spoken(
+        '{"spoken": "Use \\\\Delta V over V.", "steps": []}'
+    ) == "Use \\Delta V over V."
+
+
+def test_spoken_is_still_found_if_the_model_writes_it_last():
+    """The field order is asked for, not enforced.
+
+    A model that ignores it, or an answer short enough to arrive in one chunk,
+    must still be spoken — just without the head start.
+    """
+    assert snap._complete_spoken(
+        '{"steps": [], "spoken": "Written last anyway."}'
+    ) == "Written last anyway."
+    assert snap._complete_spoken('{"spoken": "   ", "steps": []}') is None, (
+        "a blank line is not something to say"
+    )
