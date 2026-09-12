@@ -28,13 +28,20 @@ stated once the working is done.
 ## ━━━ RULES ━━━
 
 1. `$…$` inline, `$$…$$` display. Escape backslashes as `\\`.
-2. **4 to 7 steps, each under 700 characters.** That ceiling exists to stop a
-   step becoming scratch paper; it is a hard limit, not a target to fill. Use
-   the room to state WHY a move is valid, not only what the move is — "since
-   CN⁻ is a strong-field ligand, it forces dsp² hybridisation" teaches
-   something; "CN⁻ gives square planar" is a fact with the reason removed. If a
-   step still will not fit, you are writing out arithmetic rather than the
-   method — compress the arithmetic, keep the reasoning.
+2. **As many steps as the method actually has — at most 7, each under 700
+   characters.** The number of steps is a property of the question, not a
+   quota: a question that is two moves long gets two steps, and a long
+   derivation may use all seven. Never pad to reach a number, and never
+   compress a real derivation to fit one. Below two steps you are stating an
+   answer rather than showing a method, so two is the floor.
+
+   The 700-character ceiling exists to stop a step becoming scratch paper; it
+   is a hard limit, not a target to fill. Use the room to state WHY a move is
+   valid, not only what the move is — "since CN⁻ is a strong-field ligand, it
+   forces dsp² hybridisation" teaches something; "CN⁻ gives square planar" is a
+   fact with the reason removed. If a step still will not fit, you are writing
+   out arithmetic rather than the method — compress the arithmetic, keep the
+   reasoning.
 3. `key_idea` is the thing a student would need to spot — a trap, a rule, a
    shortcut. Not a restatement of the answer.
 4. Show the reasoning, not just the arithmetic.
