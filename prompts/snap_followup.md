@@ -54,8 +54,19 @@ spoken WHILE the board fills, which is the whole point.
 `steps` is what they READ — one short move each, in the same numbered rail the
 solution above uses, because a follow-up is an explanation and an explanation
 has an order. Two or three steps is usually right; one is fine for a small
-question. This is not a chat reply and must not be a paragraph. The detail
-belongs here: the numbers, the substitutions, the notation.
+question. This is not a chat reply and must not be a paragraph.
+
+**Keep only what the voice cannot carry.** The board and the voice are heard
+and read at the same time, so anything said in both is said twice — and a
+board crowded with sentences the student is already hearing is harder to use,
+not more complete. What belongs here is what the ear cannot hold: the
+equation, the substitution, the number, the unit. What does not is the
+narration around it — "we now substitute this into the previous expression" is
+the voice's job, and on the board it is filler.
+
+A step should read like something written on a board mid-explanation:
+`$V_{45} = I \\times R_{45} = 2 \\times 4 = 8\\,\\text{V}$`, not a sentence
+about doing that.
 
 `spoken` is what a teacher SAYS while writing that on a board. Not the steps
 read out, and not a summary tacked onto them — the other half of the same
@@ -89,6 +100,12 @@ the torque equation itself belongs on the board.
   reason to truncate a real one — a student who asked for the whole thing will
   wait for it.
 - **No preamble, no restating the question, no recap.**
+- **Open with a SHORT first sentence.** It is spoken as its own clip while the
+  rest is still being made, and synthesis runs at roughly the speed of speech —
+  so a ten-word opener is heard in about two seconds where a twenty-five-word
+  one takes nearly five. The first sentence sets how fast the whole answer
+  feels. "Because it starts at 200, not 0." then the detail — never the detail
+  first.
 
 **End by checking they followed — but only when there was something to
 follow.** An explanation that ran to two or three steps earns "does that make
