@@ -3076,8 +3076,11 @@ def test_question_spans_come_from_numbers_papers_actually_print():
     spans = snap.question_spans_by_number(page, [11, 12, 13])
     print(f"  spans: {[(n, int(s['top']), int(s['bottom'])) for n, s in spans.items()]}")
     assert sorted(spans) == [11, 12, 13]
-    assert spans[11]["bottom"] == 600, "a question runs to where the next begins"
-    assert spans[13]["bottom"] == 1330, "the last runs to the foot of the content"
+    assert spans[11]["bottom"] == 600, (
+        "with no choices between them, a question runs to where the next begins")
+    assert spans[13]["bottom"] == 1300, (
+        "the last would run to the foot of the content, but its own first "
+        "choice at y=1300 ends it sooner — see the stem-only crop")
 
 
 def test_a_parenthesised_option_is_not_a_question_number():
@@ -3088,9 +3091,52 @@ def test_a_parenthesised_option_is_not_a_question_number():
         {"top": 700, "bottom": 730, "text": "2. 1 g of a liquid is converted"},
     ], "diagram_spans": []}
     spans = snap.question_spans_by_number(page, [1, 2])
-    assert spans[1]["bottom"] == 700, (
-        "the option at y=300 must not end question 1 — the crop would cut its "
-        "own choices off"
+    print(f"  spans keyed: {sorted(spans)}")
+    assert sorted(spans) == [1, 2], (
+        "'(2) ...' is a choice, not question 2 — reading it as a number would "
+        "key a span on it and slice the page at the wrong place"
+    )
+    assert spans[2]["top"] == 700, "question 2 begins at its own numbered line"
+
+
+def test_the_crop_stops_where_the_choices_start():
+    """The crop is the stem and its figure, never the options.
+
+    The app keeps drawing the options itself and marks the correct one. A crop
+    that swallowed them would either print every choice twice or cost the
+    marking to avoid it, and neither is worth the extra pixels.
+    """
+    page = {"text_lines": [
+        {"top": 100, "bottom": 130, "text": "11. As shown in the figure, a network"},
+        {"top": 140, "bottom": 170, "text": "is connected to a battery of 24 V"},
+        {"top": 400, "bottom": 430, "text": "(1) I4 = 8/5 A and I5 = 2/5 A"},
+        {"top": 450, "bottom": 480, "text": "(2) I4 = 24/5 A"},
+        {"top": 600, "bottom": 630, "text": "12. Two long straight wires"},
+    ], "diagram_spans": [{"top": 200, "bottom": 380, "left": 10, "right": 500}]}
+    spans = snap.question_spans_by_number(page, [11, 12])
+    print(f"  q11 -> {int(spans[11]['top'])}-{int(spans[11]['bottom'])}")
+    assert spans[11]["bottom"] == 400, "the crop must end at the first choice"
+    assert spans[11]["top"] < 200 and spans[11]["bottom"] > 380, (
+        "and must still contain the figure the stem refers to"
+    )
+
+
+def test_a_question_that_is_its_options_keeps_the_whole_band():
+    """"Which of the following is NOT true" prints choices under one line.
+
+    Cutting at the first option there leaves a sliver of stem, which is worse
+    than showing the band whole — so the cut only applies with enough stem
+    above it to be worth cropping to.
+    """
+    page = {"text_lines": [
+        {"top": 100, "bottom": 120, "text": "7. Which of the following is NOT true?"},
+        {"top": 125, "bottom": 145, "text": "(1) the first claim"},
+        {"top": 150, "bottom": 170, "text": "(2) the second claim"},
+    ], "diagram_spans": []}
+    spans = snap.question_spans_by_number(page, [7])
+    print(f"  q7 -> {int(spans[7]['top'])}-{int(spans[7]['bottom'])}")
+    assert spans[7]["bottom"] > 125, (
+        "a 25px crop of one line of stem is not worth showing"
     )
 
 

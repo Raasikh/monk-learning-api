@@ -2033,6 +2033,15 @@ QUESTION_JPEG_QUALITY = 85
 # page.
 _CROP_NUMBER_RE = re.compile(r"^(\d{1,3})\s*[.)]\s+\S")
 
+# Where a question's CHOICES begin: "(1) 4320 J", "(A) tetrahedral".
+#
+# The crop stops here rather than running to the next question, because the
+# app keeps rendering the options itself — they are not decoration, the
+# correct one is marked. A crop that swallowed them would either duplicate
+# every choice on screen or cost the marking, and neither is worth the few
+# hundred pixels.
+_OPTION_LINE_RE = re.compile(r"^\(\s*([1-4]|[A-Da-d])\s*\)\s*\S")
+
 
 def question_spans_by_number(page: Dict[str, Any],
                              wanted: List[int]) -> Dict[int, Dict[str, Any]]:
@@ -2095,6 +2104,21 @@ def question_spans_by_number(page: Dict[str, Any],
     spans: Dict[int, Dict[str, Any]] = {}
     for i, (num, top) in enumerate(ordered):
         bottom = ordered[i + 1][1] if i + 1 < len(ordered) else page_bottom
+        # Stop at this question's first choice, so the crop is the STEM (and
+        # the figure it refers to) and not the options underneath. The app
+        # still draws those itself and marks the correct one.
+        first_option = min(
+            (float(ln["top"]) for ln in lines
+             if top < float(ln["top"]) < bottom
+             and _OPTION_LINE_RE.match((ln.get("text") or "").lstrip())),
+            default=None,
+        )
+        # ...unless that would leave almost nothing: a question whose options
+        # ARE the question ("which of the following is NOT true") prints its
+        # choices immediately under one line of stem, and a 30px crop of that
+        # line is worse than showing the whole band.
+        if first_option is not None and first_option - top >= 40:
+            bottom = first_option
         if bottom - top < 8:
             continue
         spans[num] = {"top": top, "bottom": bottom}
