@@ -2,7 +2,7 @@ import json
 import random
 from datetime import datetime, timedelta, timezone
 from typing import List, Optional, Dict, Any
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
 from pydantic import BaseModel
 
 from app.auth import get_current_user_id
@@ -441,13 +441,60 @@ def get_next_question(
     }
 
 
+def _record_answer(user_id: str, req: PracticeAnswerRequest, is_correct: bool, raw_difficulty):
+    """Scoring and the attempt row — everything the STUDENT is not waiting for.
+
+    Runs after the response has gone out. Order still matters between these
+    two: the first-attempt gate inside apply_answer_scoring counts prior
+    attempts, so the current one must not be in the table yet.
+    """
+    try:
+        apply_answer_scoring(
+            user_id=user_id,
+            question_id=req.question_id,
+            is_correct=is_correct,
+            raw_difficulty=raw_difficulty,
+            mode="practice",
+            elapsed_ms=req.elapsed_ms,
+            gave_up=req.gave_up,
+        )
+    except Exception as e:
+        print(f"[PRACTICE SCORING ERROR] Failed to score answer: {e}")
+
+    try:
+        supabase.table("practice_attempts").insert({
+            "user_id": user_id,
+            "question_id": req.question_id,
+            "is_correct": is_correct,
+            "mode": "practice",
+            # Requires migration 0043. PostgREST rejects the WHOLE insert on
+            # an unknown column, so this must not ship ahead of it.
+            "gave_up": req.gave_up,
+        }).execute()
+    except Exception as e:
+        print(f"[PRACTICE ANSWER ERROR] Failed to record attempt: {e}")
+
+
 @router.post("/answer")
 def submit_answer(
     req: PracticeAnswerRequest,
+    background_tasks: BackgroundTasks,
     user_id: str = Depends(get_current_user_id)
 ):
     """
-    Grades user answer and writes attempt row to practice_attempts.
+    Grades the answer and returns it; records it afterwards.
+
+    Grading needs ONE round trip — the question's ground truth. Everything
+    else this endpoint does (concept mastery, closing the serve, the attempt
+    row) is bookkeeping the student is not waiting for, and it was five more
+    sequential round trips at ~310ms each in front of the worked solution.
+    Measured end to end at ~1.5s of pure waiting for something already known
+    after the first 300ms.
+
+    So the grade goes back immediately and the bookkeeping runs in a
+    background task. `scoring` is no longer in the response: nothing reads it
+    — not this app, not the web client — and returning it would mean waiting
+    for the very work being moved off the path.
     """
     # 1. Fetch target question with ground truth answers
     q_res = (
@@ -487,45 +534,16 @@ def submit_answer(
         if req.chosen_option and correct_option:
             is_correct = req.chosen_option.strip().lower() == correct_option.strip().lower()
 
-    # 3. Score concept mastery BEFORE inserting the attempt row — the
-    #    first-attempt gate counts prior attempts, so the current one must
-    #    not be in the table yet. Scoring must never break grading.
-    scoring = None
-    try:
-        scoring = apply_answer_scoring(
-            user_id=user_id,
-            question_id=req.question_id,
-            is_correct=is_correct,
-            raw_difficulty=q_data.get("difficulty"),
-            mode="practice",
-            elapsed_ms=req.elapsed_ms,
-            gave_up=req.gave_up,
-        )
-    except Exception as e:
-        print(f"[PRACTICE SCORING ERROR] Failed to score answer: {e}")
-
-    # 4. Write attempt record to practice_attempts
-    attempt_payload = {
-        "user_id": user_id,
-        "question_id": req.question_id,
-        "is_correct": is_correct,
-        "mode": "practice",
-        # Requires migration 0043. PostgREST rejects the WHOLE insert on an
-        # unknown column, so this must not ship ahead of it.
-        "gave_up": req.gave_up,
-    }
-
-    try:
-        supabase.table("practice_attempts").insert(attempt_payload).execute()
-    except Exception as e:
-        print(f"[PRACTICE ANSWER ERROR] Failed to record attempt: {e}")
+    # 3. Everything else happens after the student has their answer.
+    background_tasks.add_task(
+        _record_answer, user_id, req, is_correct, q_data.get("difficulty")
+    )
 
     return {
         "is_correct": is_correct,
         "correct_option": correct_option,
         "correct_value": correct_value,
         "solution": solution,
-        "scoring": scoring
     }
 
 
