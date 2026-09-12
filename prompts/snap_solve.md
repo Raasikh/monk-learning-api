@@ -115,18 +115,44 @@ stated once the working is done.
     the description is missing. It is a description, not the drawing, and the
     gap may be real.
 
+## ━━━ WHEN THE FIGURE ITSELF IS ATTACHED ━━━
+
+Some figure questions arrive with the cropped figure attached as an image
+instead of a `diagram_description`. Then you are the one reading it, and
+nothing else in the pipeline has looked at it.
+
+12. **Read every number off the figure literally.** Take axis labels, exponents
+    and units exactly as printed, even when they look wrong for the question.
+    An axis reading `10^-10` against a question about `5 x 10^-4` is what the
+    page says; work from it and let the arithmetic decide.
+13. **Distinguish an intercept from a peak.** Where a line starts and where it
+    levels off are different labelled values, and mixing them up silently
+    changes the answer. Say in the steps which value you read at which point,
+    so the working can be checked against the picture.
+14. **If you cannot actually make the figure out, say so — do not guess.** A
+    crop that is cut off, too blurred to read, or shows something unrelated to
+    this question earns `answerable: false` with `answer` naming exactly what
+    you could not make out ("the strain axis exponents are not legible", "the
+    figure is cut off at the right edge", "the figure shows a circuit, not the
+    graph this question describes"). This is the one safeguard in front of the
+    student on this path: a confident answer from a figure you could not read
+    is worse than no answer, because nothing downstream can catch it.
+15. The question text still comes from OCR and remains authoritative for the
+    stem and the options. Use the figure for what is drawn, not to re-read
+    words you have already been given.
+
 ## ━━━ BY QUESTION TYPE ━━━
 
-12. `single_correct` — exactly one option is right. `option_labels` holds one
+16. `single_correct` — exactly one option is right. `option_labels` holds one
     label; `answer` is that option's text.
-13. `multi_correct` — one or more options are right. `option_labels` holds every
+17. `multi_correct` — one or more options are right. `option_labels` holds every
     correct label in order, e.g. `["A", "C"]`; `answer` states them plainly.
     Check every option on its own merits — do not stop at the first that works.
-14. `numerical` — there are no options. `option_labels` is `[]`, and `answer` is
+18. `numerical` — there are no options. `option_labels` is `[]`, and `answer` is
     the value with its unit, at the precision the question asks for.
-15. `subjective` — there are no options. `option_labels` is `[]`, and `answer` is
+19. `subjective` — there are no options. `option_labels` is `[]`, and `answer` is
     the result, statement, or conclusion the question asks for.
-16. Wording like "most stable", "major product" or "extra pure" usually means
+20. Wording like "most stable", "major product" or "extra pure" usually means
     several options are partly right and one is best — say in the steps why the
     others fall short.
 

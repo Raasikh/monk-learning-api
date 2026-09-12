@@ -139,6 +139,27 @@ RETRY_IF_UNDER_FRACTION = 0.6
 # guard exists for a solve that thinks forever and writes NOTHING; cutting one
 # that is mid-sentence turns a slow success into a failure.
 ANSWER_FINISH_GRACE_S = 25.0
+# How long a solve may reason with NOTHING written before it is called wedged.
+#
+# Separate from the solve budget, and much shorter, because the two bound
+# different things. SOLVE_TIMEOUT_THINKING_S is how long a solve that is
+# working may take; this is how long to wait before concluding one is not
+# working at all. Cutting a wedge at the full 150s means the student pays the
+# whole budget for an empty response AND then waits for the retry.
+#
+# 90s, from measurement rather than taste. Twelve streams of a real figure
+# question on a consistent diagram description started writing between 11.3s
+# and 47.7s; the slowest legitimate start ever recorded is the 75s
+# coordinate-geometry question that ANSWER_FINISH_GRACE_S exists for. 90s
+# clears both. The runaway case it catches looks nothing like them: the same
+# question on a self-contradictory description produced 40,454 characters of
+# reasoning across 191.8s, against 2,534-8,902 characters when the description
+# was consistent.
+#
+# Env-overridable so the threshold can be tuned against production without a
+# deploy — and every solve now logs its own time-to-first-content, which is
+# the distribution this number should be read off.
+WEDGE_NO_CONTENT_S = float(os.getenv("SNAP_WEDGE_NO_CONTENT_S", "90"))
 # Reasoning tokens are spent from the SAME allowance as the answer, so this
 # ceiling is not "how long may the answer be" — it is "how long may the
 # thinking plus the answer be". Measured on a figure question that returned
@@ -2226,7 +2247,13 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                 extra = dict(client_kwargs.get("extra_body") or {})
                 extra["thinking"] = {"type": "disabled"}
                 client_kwargs["extra_body"] = extra
-                client_kwargs["max_tokens"] = 2200
+                # Shrink whichever allowance this model actually takes. gpt-5
+                # rejects max_tokens outright, so writing that key blindly
+                # would turn a recoverable wedge into a 400 on the retry.
+                if "max_completion_tokens" in client_kwargs:
+                    client_kwargs["max_completion_tokens"] = 2200
+                else:
+                    client_kwargs["max_tokens"] = 2200
                 # Back to the short budget: the long one is for reasoning, and
                 # this attempt is not allowed to do any.
                 client_kwargs["timeout"] = SOLVE_TIMEOUT_S
@@ -2241,6 +2268,7 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
         buffer, emitted = "", set()
         attempt_started = time.time()
         thinking_chars, last_tick = 0, time.time()
+        first_content_s = None
         started = time.time()
         # Per-attempt counts for llm_calls: a stream that dies mid-way still
         # billed whatever it generated, and must be recorded like any other.
@@ -2273,20 +2301,42 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                 reasoning = getattr(delta, "reasoning_content", None)
                 if reasoning:
                     thinking_chars += len(reasoning)
-                    # Still thinking, past the budget, nothing written: this is
-                    # the wedge the guard exists for. Checked here rather than
-                    # at the top of the loop, which could not tell a thinking
-                    # chunk from the first chunk of the ANSWER — and cutting
-                    # the latter turned a slow success into a parse failure.
-                    if (time.time() - attempt_started > budget_s
+                    # Still thinking, nothing written: this is the wedge the
+                    # guard exists for. Checked here rather than at the top of
+                    # the loop, which could not tell a thinking chunk from the
+                    # first chunk of the ANSWER — and cutting the latter turned
+                    # a slow success into a parse failure.
+                    #
+                    # Against WEDGE_NO_CONTENT_S, not the solve budget. Waiting
+                    # the full budget to notice meant the student paid 150s for
+                    # an empty response and then waited for the retry on top;
+                    # measured at 195.9s end to end on a real figure question
+                    # that the retry then answered in 7s.
+                    #
+                    # Never longer than the budget itself: this ceiling exists
+                    # to cut a wedge EARLIER, and a value above budget_s would
+                    # push it later instead — dead code when thinking is off
+                    # (a 75s budget under a 90s ceiling), and the guard would
+                    # stop firing at all.
+                    wedge_ceiling_s = min(WEDGE_NO_CONTENT_S, budget_s)
+                    if (time.time() - attempt_started > wedge_ceiling_s
                             and not buffer.strip()):
                         logger.warning(
                             "[SNAP SOLVE] doubt=%s attempt %d spent %.0fs "
-                            "(budget %.0fs) on %d chars of thinking without "
-                            "starting an answer — stopping.",
+                            "(wedge ceiling %.0fs, budget %.0fs) on %d chars of "
+                            "thinking without starting an answer — stopping.",
                             doubt_id[:8], attempt,
-                            time.time() - attempt_started, budget_s, thinking_chars,
+                            time.time() - attempt_started, wedge_ceiling_s,
+                            budget_s, thinking_chars,
                         )
+                        # Say so explicitly rather than letting the handler
+                        # below infer it from elapsed time: this cut lands well
+                        # UNDER budget_s * RETRY_IF_UNDER_FRACTION, so inferring
+                        # would read it as a fast clean failure and retry with
+                        # thinking still on — which wedges again for the same
+                        # reason. Attempt 2 must drop thinking.
+                        if attempt == 1:
+                            wedged = True
                         break
                     if time.time() - last_tick >= 2.5:
                         last_tick = time.time()
@@ -2294,6 +2344,13 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                             "seconds": int(time.time() - started),
                         })
                 if delta.content:
+                    if first_content_s is None:
+                        # The number WEDGE_NO_CONTENT_S has to be read off, and
+                        # the one the logs never carried: how long this solve
+                        # reasoned before it began writing. A wedge is not a
+                        # slow answer, it is an answer that never starts, and
+                        # only this separates the two.
+                        first_content_s = time.time() - attempt_started
                     buffer += delta.content
                     _emit_new_steps(buffer, emitted, on_event)
                     if time.time() - attempt_started > budget_s + ANSWER_FINISH_GRACE_S:
@@ -2340,7 +2397,14 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
             # so this is the difference between a slow answer and no answer at
             # roughly four minutes.
             spent = time.time() - attempt_started
-            if attempt == 1 and spent > budget_s * RETRY_IF_UNDER_FRACTION:
+            # An early cut lands far under the fraction, so it would otherwise
+            # fall through unremarked and reach attempt 2 by accident rather
+            # than by decision. The behaviour is the same either way — the
+            # guard above already set `wedged`, and that is what makes attempt
+            # 2 drop thinking — but only this path logs WHY there was a second
+            # attempt, and a wedge nobody logs is a wedge nobody can count.
+            if attempt == 1 and (wedged
+                                 or spent > budget_s * RETRY_IF_UNDER_FRACTION):
                 # It wedged rather than failed. Retrying the SAME call would
                 # cost the student the same wait for the same nothing — but a
                 # call with thinking off is a different call, and a fast one,
@@ -2366,6 +2430,17 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
             record_call(model, "snap_solve", ok=True, attempt=attempt,
                         tokens=tokens, latency_ms=latency_ms,
                         subtopic_key=f"doubt={doubt_id[:8]} stream")
+            # The distribution WEDGE_NO_CONTENT_S should be tuned against. A
+            # solve that starts writing at 12s and one that starts at 80s look
+            # identical in latency_ms once the answer is long; they are not the
+            # same solve, and only the first number tells them apart.
+            logger.info(
+                "[SNAP SOLVE STREAM] doubt=%s attempt %d first_content=%.1fs "
+                "thinking=%dch answer=%dch ceiling=%.0fs",
+                doubt_id[:8], attempt,
+                first_content_s if first_content_s is not None else -1.0,
+                thinking_chars, len(buffer), WEDGE_NO_CONTENT_S,
+            )
             return parsed
     raise SnapError(
         "Something went wrong at Monk's end reading that back. Please try again.",
@@ -2540,6 +2615,59 @@ def _match_options(parsed: Dict[str, Any],
     for opt in options:
         if set(answer_forms) & set(_forms(opt["text"])):
             return [opt]
+
+    # Last tier: the same NUMBER, written with a unit the option omits.
+    #
+    # "12 km" against the option "12" is the same answer, and string equality
+    # cannot see it. Seen the moment figure questions began routing to gpt-5,
+    # which states units where deepseek-v4-pro returned the bare number: a
+    # correct answer scored as "matches no option", which downstream turns into
+    # an `unsure` — uncharged, withheld from the student, absent from Library.
+    #
+    # Deliberately the narrowest rule that fixes it, because this function's
+    # whole point is that a near miss is a refusal. It fires ONLY when:
+    #
+    #   - the option is a bare number, no letters at all, and
+    #   - the answer is a number followed by nothing but a unit — letters,
+    #     spaces, slashes and superscript digits — with no operator or symbol
+    #     left over, and
+    #   - exactly ONE option agrees numerically.
+    #
+    # The second condition is what keeps "3 - e" away from the option "3": its
+    # remainder holds a '-' and so is not a unit. That collision is the one
+    # this function's docstring was written about, and a looser numeric tier
+    # walks straight into it.
+    answer_text = str(parsed.get("answer") or "")
+    answer_value = as_number(answer_text)
+    if answer_value is not None:
+        rest = re.sub(r"^\s*[-−–—]?\s*\d+(?:\.\d+)?", "", answer_text, count=1)
+        rest = rest.translate(_SUPERSCRIPTS)
+        # A unit is SEPARATED from its number; an algebraic coefficient is not.
+        # That space is the only thing distinguishing "3 N" (three newtons)
+        # from "3n" (three times n) — both leave a bare letter behind, and
+        # matching the second to the option "3" would assert a wrong answer.
+        # An answer written "12km" is therefore missed, which is the safe
+        # direction: it withholds rather than asserts.
+        unit_only = (
+            not rest.strip()
+            or (rest[:1].isspace()
+                and re.fullmatch(r"[A-Za-zµμΩ°/·\s\d]*", rest.strip()) is not None)
+        )
+        if unit_only:
+            agreeing = [
+                opt for opt in options
+                if not re.search(r"[A-Za-z]", opt["text"])
+                and as_number(opt["text"]) is not None
+                and abs(as_number(opt["text"]) - answer_value) <= 1e-9 * max(
+                    1.0, abs(answer_value))
+            ]
+            if len(agreeing) == 1:
+                logger.info(
+                    "[SNAP MATCH] %r matched option %s by number — the answer "
+                    "carried a unit the option omits",
+                    answer_text[:60], agreeing[0]["label"],
+                )
+                return agreeing
     return []
 
 
@@ -2655,6 +2783,52 @@ SOLVE_MODEL_OVERRIDE = os.getenv("SNAP_SOLVE_MODEL_OVERRIDE", "").strip()
 SOLVE_THINKING = os.getenv("SNAP_SOLVE_THINKING", "enabled").strip()
 SANCTIONED_THINKING = "enabled"
 
+# Solve a FIGURE question by showing the solver the figure, instead of showing
+# it a description of the figure. Empty restores the described path.
+#
+# The description exists only because deepseek-v4-pro cannot receive an image:
+# it is an adapter between a model that can see and a model that can reason.
+#
+# NOT enabled for accuracy, and the grading is explicit about that. On 64 NTA
+# questions with official answer keys and correctly-paired figures, the
+# described path scored 63/64 and gpt-5 reading the figure scored 63/64 — one
+# disagreement in sixty-four. An earlier six-question run suggested the adapter
+# was losing answers; it did not survive ground truth, and the raw gap that
+# looked enormous (67% vs 98%) turned out to be 30 refusals on questions where
+# the NTA set had attached the WRONG figure — an equation crop to a functions
+# question, question 17's diagram to question 19. Those refusals were correct.
+#
+# It is enabled for three structural failures it removes at equal accuracy:
+#
+#   - the FigureUnreadable gate stops running on the common path. It refuses
+#     non-deterministically: the same energy-density question was refused in
+#     one run and solved correctly in another, and a refusal costs the student
+#     a question that was answerable.
+#   - the serial describe barrier goes. It was a network call inside a loop
+#     that blocked every solve on the page, figure question or not — a
+#     three-figure page spent ~10s there before any solve began, including the
+#     text questions that never needed a figure.
+#   - the wedge loses its cause. Reasoning ran away on a self-contradictory
+#     description (40,454 characters against 2,534-8,902 on a consistent one);
+#     with no description there is nothing left to contradict.
+#
+# One real thing is given up: describe_diagram's honest "the figure could not
+# be made out". Rules 12-15 of snap_solve.md move that duty onto the solver,
+# which is now the only thing that looks at the figure at all — if those rules
+# are weakened, an unreadable crop becomes a confident wrong answer instead of
+# a refusal, and nothing downstream can catch it.
+#
+# Applies ONLY to questions that carry a figure, and only when a crop could be
+# cut. Text questions keep deepseek-v4-pro, which was chosen as the strongest
+# reasoner available and has not been shown to lose to anything here: this
+# removes the adapter, it does not re-open the choice of solver.
+#
+# Costs roughly 1.5x the described path off-peak and about break-even at peak,
+# on the ~13% of questions that carry a figure. gpt-5's reasoning bills as
+# OUTPUT at $5/M, so `out=` in the solve logs is the number to watch — if
+# reasoning runs heavier than the grading measured, it shows up there first.
+MODEL_SOLVE_VISION = os.getenv("SNAP_VISION_SOLVE_MODEL", "gpt-5").strip()
+
 # How many independent solves to run per question, majority-voted. Measured
 # need: an identical photo produced 13 on one run and 14 on the next at
 # temperature 0 — a single sample asserts a coin flip as fact. 1 = old
@@ -2739,8 +2913,16 @@ def _solve_with_consensus(make_call, doubt_id: str,
 
 def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                    usage_acc: Optional[Dict[str, int]] = None,
-                   on_event=None) -> Dict[str, Any]:
-    """Solves ONE transcribed question. The solver never sees the image.
+                   on_event=None,
+                   figure: Optional[Tuple[bytes, str]] = None) -> Dict[str, Any]:
+    """Solves ONE transcribed question.
+
+    The solver sees the TRANSCRIPTION, never the photograph — that is what
+    stops a vision model flattening (π+3)/(π−1) or inventing a fourth option.
+    The single exception is `figure`: the cropped figure of a question that has
+    one, passed only when MODEL_SOLVE_VISION names a model that can read it.
+    The question's text still comes from Mathpix either way, so this widens
+    what the solver can SEE without moving where the words come from.
 
     With `on_event`, thinking progress and each completed step are emitted live
     ("thinking" / "step" / "steps_reset") while the solve runs. The ANSWER is
@@ -2783,9 +2965,22 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         payload_obj["diagram_description"] = question["diagram_description"]
     payload = json.dumps(payload_obj, ensure_ascii=False)
 
-    solve_model = SOLVE_MODEL_OVERRIDE or MODEL_SOLVE
+    # A figure question routes to a solver that can read the figure, when one
+    # is configured. Only then: with no figure in hand there is nothing for a
+    # vision model to do that the text solver cannot, and the text solver is
+    # the stronger reasoner.
+    vision_solve = bool(MODEL_SOLVE_VISION and figure and figure[0])
+    solve_model = (MODEL_SOLVE_VISION if vision_solve
+                   else (SOLVE_MODEL_OVERRIDE or MODEL_SOLVE))
     use_openai = solve_model.startswith("gpt")
     solve_client = _openai_client() if use_openai else client
+    if vision_solve:
+        logger.info(
+            "[SNAP SOLVE] doubt=%s q%s solving from the FIGURE with %s "
+            "(%.1fKB %s) — no description in the loop",
+            doubt_id[:8], question.get("n"), solve_model,
+            len(figure[0]) / 1024, figure[1],
+        )
     if SOLVE_MODEL_OVERRIDE or SOLVE_THINKING != SANCTIONED_THINKING:
         logger.warning(
             "[SNAP SOLVE] EXPERIMENT CONFIG ACTIVE: model=%s thinking=%s — "
@@ -2793,22 +2988,54 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             solve_model, SOLVE_THINKING,
         )
 
+    def _user_content():
+        """The question as the solver receives it.
+
+        Still the Mathpix JSON — the figure is added ALONGSIDE it, never
+        instead of it, so the numbers in the stem keep coming from OCR while
+        the picture answers what the description used to have to put in words.
+        `detail: high` for the same reason describe_diagram uses it: the marks
+        that decide these questions are the small ones.
+        """
+        text = payload + "\n\nProduce the solution JSON."
+        if not vision_solve:
+            return text
+        data_url = (f"data:{figure[1]};base64,"
+                    f"{base64.b64encode(figure[0]).decode()}")
+        return [
+            {"type": "text", "text": text},
+            {"type": "image_url",
+             "image_url": {"url": data_url, "detail": "high"}},
+        ]
+
+    def _fit_model_kwargs(kwargs: Dict[str, Any]) -> Dict[str, Any]:
+        """The reasoning models take different knobs for the same two ideas.
+
+        gpt-5 rejects `max_tokens` in favour of `max_completion_tokens`, and
+        rejects any temperature but its default — both hard 400s, so this is
+        translation rather than preference.
+        """
+        if solve_model.startswith("gpt-5"):
+            kwargs["max_completion_tokens"] = kwargs.pop("max_tokens", 2200)
+            kwargs.pop("temperature", None)
+        return kwargs
+
     def make_call(temperature: float):
         def call(corrective: Optional[str] = None):
             messages = [
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+                {"role": "user", "content": _user_content()},
             ]
             if corrective:
                 messages.append({"role": "user", "content": corrective})
-            kwargs: Dict[str, Any] = dict(
+            kwargs: Dict[str, Any] = _fit_model_kwargs(dict(
                 model=solve_model,
                 messages=messages,
                 response_format={"type": "json_object"},
                 temperature=temperature,
                 max_tokens=2200,
                 timeout=solve_budget_s(),
-            )
+            ))
             if not use_openai:
                 # Rule 5 — V4 defaults to chain-of-thought and will spend the
                 # whole budget thinking, returning an empty string. The
@@ -2843,7 +3070,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 model=solve_model,
                 messages=[
                     {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+                    {"role": "user", "content": _user_content()},
                 ],
                 response_format={"type": "json_object"},
                 temperature=0.0,
@@ -2855,7 +3082,9 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
                 if SOLVE_THINKING != "disabled":
                     kwargs["max_tokens"] = THINKING_MAX_TOKENS
-            return kwargs
+            # After the thinking budget is applied, never before — it is set
+            # as max_tokens above and gpt-5 needs the whole thing renamed.
+            return _fit_model_kwargs(kwargs)
         parsed = _streamed_solve(make_kwargs, on_event, doubt_id, usage_acc)
     else:
         parsed = _solve_with_consensus(make_call, doubt_id, usage_acc,
@@ -3268,6 +3497,11 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # sequential. It is per-page rare (only figure questions) and fast next to
     # a solve.
     diagram_ms = options_ms = 0
+    # The figure each question will be solved FROM, by question number, when a
+    # vision solver is configured. Kept beside the questions rather than on
+    # them: these are raw JPEG bytes, and the question dicts get serialised
+    # into SSE frames and database rows, where bytes have no business.
+    figure_for: Dict[int, Tuple[bytes, str]] = {}
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             diagram_t0 = time.time()
@@ -3277,6 +3511,19 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
             # which is where the exponents live. Falls back to the full page
             # when the OCR gave no usable box.
             close_up = crop_for_reading(image_bytes, question.get("figure_spans") or [])
+            if MODEL_SOLVE_VISION and close_up:
+                # The solver can read the figure itself, so describing it would
+                # mean translating a picture into words for a reader who can
+                # see the picture — the lossy step this route exists to delete.
+                # Not taken without a crop: handing the whole page over instead
+                # would put the neighbouring questions in front of the solver.
+                figure_for[question["n"]] = (close_up, "image/jpeg")
+                logger.info(
+                    "[SNAP DIAGRAM] doubt=%s q%s describe SKIPPED — solving "
+                    "from the figure with %s instead",
+                    doubt_id[:8], question["n"], MODEL_SOLVE_VISION,
+                )
+                continue
             why_figure = ""
             try:
                 description = describe_diagram(
@@ -3419,6 +3666,9 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                 outcome["solution"] = solve_question(
                     q, doubt_id, usage,
                     on_event=lambda kind, data: inbox.put(("event", num, kind, data)),
+                    # Present only for a figure question when a vision solver
+                    # is configured; None leaves the described path untouched.
+                    figure=figure_for.get(num),
                 )
             except SnapError as err:
                 outcome["error"] = err
@@ -3590,6 +3840,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     # out", not as "your photo is bad". Sequential: per-page rare and fast next
     # to a solve, and must finish before that question can be dispatched below.
     diagram_ms = options_ms = 0
+    figure_for: Dict[int, Tuple[bytes, str]] = {}      # see the streamed path
     for question in questions:
         if question.get("requires_diagram") and question["legible"]:
             diagram_t0 = time.time()
@@ -3599,6 +3850,15 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             # which is where the exponents live. Falls back to the full page
             # when the OCR gave no usable box.
             close_up = crop_for_reading(image_bytes, question.get("figure_spans") or [])
+            if MODEL_SOLVE_VISION and close_up:
+                # Solve from the figure instead of from a description of it.
+                figure_for[question["n"]] = (close_up, "image/jpeg")
+                logger.info(
+                    "[SNAP DIAGRAM] doubt=%s q%s describe SKIPPED — solving "
+                    "from the figure with %s instead",
+                    doubt_id[:8], question["n"], MODEL_SOLVE_VISION,
+                )
+                continue
             why_figure = ""
             try:
                 description = describe_diagram(
@@ -3731,7 +3991,10 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
 
     def _solve_one(i: int) -> None:
         try:
-            solve_results[i] = solve_question(to_solve[i], doubt_id, solve_usages[i])
+            solve_results[i] = solve_question(
+                to_solve[i], doubt_id, solve_usages[i],
+                figure=figure_for.get(to_solve[i]["n"]),
+            )
         except SnapError as err:
             solve_errors[i] = err
 

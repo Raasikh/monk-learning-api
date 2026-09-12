@@ -282,7 +282,8 @@ def test_questions_solve_concurrently(monkeypatch):
         "note": None, "ocr_confidence": 0.99,
     })
 
-    def fake_solve_question(question, doubt_id="-", usage_acc=None, on_event=None):
+    def fake_solve_question(question, doubt_id="-", usage_acc=None,
+                            on_event=None, figure=None):
         n = question["n"]
         entered[n].set()
         assert releases[n].wait(timeout=5), f"q{n} was never released"
@@ -702,7 +703,8 @@ def test_answers_arrive_as_they_finish_not_in_page_order(monkeypatch):
                        "requires_diagram": False} for i in (1, 2, 3)],
         "note": None, "ocr_confidence": 0.99, "ocr_ms": 0, "structure_ms": 0})
 
-    def fake_solve(q, doubt_id="-", usage_acc=None, on_event=None):
+    def fake_solve(q, doubt_id="-", usage_acc=None, on_event=None,
+                   figure=None):
         time.sleep(delays[q["n"]])
         return {"answer": f"a{q['n']}", "option_labels": [],
                 "steps": [{"n": 1, "text": "x"}], "key_idea": None,
@@ -736,7 +738,8 @@ def test_every_question_is_delivered_exactly_once(monkeypatch):
              "question_type": "numerical", "requires_diagram": False},
         ], "note": None, "ocr_confidence": 0.99, "ocr_ms": 0, "structure_ms": 0})
     monkeypatch.setattr(snap, "solve_question",
-                        lambda q, doubt_id="-", usage_acc=None, on_event=None: {
+                        lambda q, doubt_id="-", usage_acc=None, on_event=None,
+                               figure=None: {
                             "answer": "a", "option_labels": [],
                             "steps": [{"n": 1, "text": "x"}], "key_idea": None,
                             "subject": None, "topic": None})
@@ -1105,7 +1108,8 @@ def test_questions_are_sent_before_any_solving(monkeypatch):
 
     solve_started = threading.Event()
 
-    def fake_solve_question(question, doubt_id="-", usage_acc=None, on_event=None):
+    def fake_solve_question(question, doubt_id="-", usage_acc=None,
+                            on_event=None, figure=None):
         solve_started.set()
         return {"answer": "a", "option_labels": [], "steps": [{"n": 1, "text": "x"}],
                 "key_idea": None, "subject": None, "topic": None}
@@ -1157,7 +1161,8 @@ def test_background_question_already_done_skips_replay(monkeypatch):
 
     q2_done = threading.Event()
 
-    def fake_solve_question(question, doubt_id="-", usage_acc=None, on_event=None):
+    def fake_solve_question(question, doubt_id="-", usage_acc=None,
+                            on_event=None, figure=None):
         n = question["n"]
         if n == 1:
             if on_event:
@@ -2837,3 +2842,278 @@ def test_the_thinking_off_retry_drops_back_to_the_short_budget(monkeypatch):
     print(f"  budgets used: {seen}")
     assert len(seen) == 2, "a wedge is retried once"
     assert seen[0] > seen[1], "the retry must not inherit the reasoning budget"
+
+
+def test_a_runaway_is_cut_at_the_ceiling_not_at_the_budget(monkeypatch):
+    """The wedge is cut when it is recognised, not when the budget runs out.
+
+    This is the whole fix. A stream that reasons with nothing written used to
+    run until budget_s — 150s in production — before anyone called it wedged,
+    and only then earned the thinking-off retry. Measured end to end on a real
+    figure question: 195.9s, of which 150s bought an empty response and 7s
+    bought the answer.
+
+    So the assertion is about WHEN the cut lands: near WEDGE_NO_CONTENT_S, and
+    nowhere near the budget it sits inside. The retry still happens and still
+    drops thinking, which the assertions below also pin — the runaway is a
+    property of the input (the same figure question produced 2,534-8,902
+    characters of reasoning on a consistent diagram description and 40,454
+    across 191.8s on a self-contradictory one), so repeating the call repeats
+    it.
+    """
+    thinking_modes = []
+    attempt_1_took = []
+
+    class _Chunk:
+        def __init__(self, thinking):
+            self.usage = None
+            self.choices = [type("C", (), {"delta": type("D", (), {
+                "content": None, "reasoning_content": thinking})()})()]
+
+    def make_kwargs():
+        class _Runaway:
+            class chat:
+                class completions:
+                    @staticmethod
+                    def create(**kw):
+                        thinking_modes.append(
+                            (kw.get("extra_body") or {}).get("thinking", {}).get("type")
+                        )
+                        entered = time.time()
+
+                        def gen():
+                            try:
+                                while True:  # reasons forever, writes nothing
+                                    yield _Chunk("reasoning " * 20)
+                            finally:
+                                # Closed when the guard breaks out of the loop,
+                                # so this is the moment the cut actually landed.
+                                if len(thinking_modes) == 1:
+                                    attempt_1_took.append(time.time() - entered)
+                        return gen()
+        return dict(model=MODEL_SOLVE, messages=[{"role": "user", "content": "x"}],
+                    timeout=snap.SOLVE_TIMEOUT_THINKING_S, _client=_Runaway(),
+                    extra_body={"thinking": {"type": "enabled"}}, max_tokens=16000)
+
+    # A ceiling well below the budget, so "cut at the ceiling" and "cut at the
+    # budget" are far enough apart to tell apart.
+    monkeypatch.setattr(snap, "SOLVE_TIMEOUT_S", 3.0)
+    monkeypatch.setattr(snap, "SOLVE_TIMEOUT_THINKING_S", 6.0)
+    monkeypatch.setattr(snap, "WEDGE_NO_CONTENT_S", 0.4)
+    with pytest.raises(SnapError):
+        snap._streamed_solve(make_kwargs, lambda *_a: None, "d3", None)
+    print(f"  attempt 1 cut after {attempt_1_took[0]:.2f}s "
+          f"(ceiling 0.4s, budget {snap.SOLVE_TIMEOUT_THINKING_S}s); "
+          f"thinking per attempt: {thinking_modes}")
+    assert attempt_1_took, "attempt 1's stream was never closed"
+    assert attempt_1_took[0] < 2.0, (
+        f"the runaway ran {attempt_1_took[0]:.2f}s against a 0.4s ceiling — it "
+        f"is being cut at the budget, which is the bug this guards"
+    )
+    assert len(thinking_modes) == 2, "an early-cut wedge is still worth one retry"
+    assert thinking_modes[0] == "enabled"
+    assert thinking_modes[1] == "disabled", (
+        "the retry must drop the thing that ran away, not repeat it"
+    )
+
+
+def test_the_wedge_ceiling_never_outlasts_the_budget():
+    """The ceiling may only ever cut EARLIER than the budget, never later.
+
+    It is expressed in absolute seconds while the budget moves with whether
+    thinking is on, so a ceiling above the budget is not a longer grace — it is
+    a guard that stops firing. The tests above patch the budget down to
+    fractions of a second to exercise the wedge path at all, and an unclamped
+    ceiling made every one of them hang.
+    """
+    assert snap.WEDGE_NO_CONTENT_S > 0
+    for budget in (snap.SOLVE_TIMEOUT_S, snap.SOLVE_TIMEOUT_THINKING_S):
+        assert min(snap.WEDGE_NO_CONTENT_S, budget) <= budget
+
+
+# ─── solving a figure question from the figure ───────────────────────────────
+#
+# The described path stays the default; these cover the route that replaces the
+# description with the picture, and — as much as anything here — the boundary
+# that keeps it away from text questions.
+
+def _capture_solve(monkeypatch, which="_openai_client"):
+    """Patches a client and returns the kwargs the solver was called with."""
+    sent = {}
+
+    class _Capturing:
+        def __init__(self):
+            outer = self
+
+            class _Completions:
+                def create(self, **kwargs):
+                    sent.update(kwargs)
+                    return _Response(GOOD_SOLUTION, kwargs.get("model"))
+
+            self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    monkeypatch.setattr(snap, which, lambda: _Capturing())
+    return sent
+
+
+def test_a_figure_question_is_solved_from_the_figure(monkeypatch):
+    """With a vision solver configured, the picture reaches the solver.
+
+    The description was only ever a way to get pixels to a solver that cannot
+    see them, and it loses things that decide answers: on the airplane
+    velocity-time graph, whose line runs B(0, 200) to A(2, 400), gpt-4o
+    described "a straight line from the origin (0,0) to point B at (2, 200),
+    and then a horizontal line from point A at (2, 400)" — both labels
+    misplaced. The answer came out right and the working the student read did
+    not.
+    """
+    monkeypatch.setattr(snap, "MODEL_SOLVE_VISION", "gpt-5")
+    sent = _capture_solve(monkeypatch)
+    snap.solve_question(question(), "d1", figure=(b"\xff\xd8ignored", "image/jpeg"))
+
+    parts = sent["messages"][-1]["content"]
+    assert isinstance(parts, list), (
+        "a vision solve sends content PARTS, not one string — got a plain "
+        f"string, so no figure was attached: {str(parts)[:80]!r}"
+    )
+    kinds = [p["type"] for p in parts]
+    print(f"  model={sent['model']} content parts={kinds}")
+    assert sent["model"] == "gpt-5", "a figure question must use the vision solver"
+    assert "image_url" in kinds, "the figure never reached the solver"
+    assert "text" in kinds, (
+        "the transcription must travel WITH the figure — Mathpix still owns the "
+        "numbers in the stem"
+    )
+    img = next(p for p in parts if p["type"] == "image_url")["image_url"]
+    assert img["detail"] == "high", (
+        "the marks that decide these questions are the small ones; "
+        "describe_diagram asks for high detail for the same reason"
+    )
+
+
+def test_a_text_question_never_routes_to_the_vision_solver(monkeypatch):
+    """No figure, no reroute — even with a vision solver configured.
+
+    deepseek-v4-pro was chosen as the strongest reasoner available and this
+    route is not a re-litigation of that: it removes the description adapter
+    where the adapter exists. A question with no figure has no adapter to
+    remove, so it must be left exactly where it was.
+    """
+    monkeypatch.setattr(snap, "MODEL_SOLVE_VISION", "gpt-5")
+    sent = _capture_solve(monkeypatch, "_deepseek_client")
+    snap.solve_question(question(), "d1")          # no figure=
+
+    print(f"  model={sent['model']}")
+    assert sent["model"] == MODEL_SOLVE, "a text question stays on the text solver"
+    assert "image_url" not in json.dumps(sent["messages"])
+    assert sent["extra_body"] == {"thinking": {"type": snap.SOLVE_THINKING}}
+
+
+def test_gpt5_gets_the_knobs_it_actually_accepts(monkeypatch):
+    """gpt-5 rejects `max_tokens` and any non-default temperature, as 400s.
+
+    Both are hard errors rather than warnings, so a vision solve that sent the
+    DeepSeek-shaped kwargs would fail every time instead of degrading. The
+    allowance still has to arrive — under the name this model takes.
+    """
+    monkeypatch.setattr(snap, "MODEL_SOLVE_VISION", "gpt-5")
+    sent = _capture_solve(monkeypatch)
+    snap.solve_question(question(), "d1", figure=(b"\xff\xd8ignored", "image/jpeg"))
+
+    print(f"  keys: max_tokens={'max_tokens' in sent} "
+          f"max_completion_tokens={sent.get('max_completion_tokens')} "
+          f"temperature={'temperature' in sent}")
+    assert "max_tokens" not in sent, "gpt-5 rejects max_tokens outright"
+    assert sent.get("max_completion_tokens"), "the allowance must still be sent"
+    assert "temperature" not in sent, "gpt-5 accepts only its default temperature"
+
+
+def test_an_answer_with_a_unit_matches_a_bare_number_option():
+    """"12 km" and the option "12" are the same answer.
+
+    Surfaced the moment figure questions began routing to gpt-5, which states
+    units where deepseek-v4-pro returned the bare number. The real airplane
+    graph came back "12 km" against options ["12", "3", "6", "9"] and scored
+    "matches no option" — which downstream becomes an `unsure`: uncharged,
+    withheld from the student, absent from Library. A correct answer, hidden.
+    """
+    opts = [{"label": "1", "text": "12"}, {"label": "2", "text": "3"},
+            {"label": "3", "text": "6"}, {"label": "4", "text": "9"}]
+    got = [o["label"] for o in snap._match_options({"answer": "12 km"}, opts)]
+    print(f"  '12 km' -> {got}")
+    assert got == ["1"]
+    # The unit is not required; the bare form must keep working.
+    assert [o["label"] for o in
+            snap._match_options({"answer": "12"}, opts)] == ["1"]
+
+
+def test_the_numeric_match_never_collapses_a_symbolic_answer():
+    """The guard on the numeric tier, and the reason it is drawn so tightly.
+
+    `_match_options` exists to refuse near misses: a ratio that came out as
+    (pi+2)/pi was once stored as the option `pi + 2` because they shared a
+    numerator. A numeric tier that simply compared as_number() would walk
+    straight back into that — as_number("3 - e") is 3.0, and so is the option
+    "3".
+
+    So the tier requires the text after the number to be a UNIT: separated by
+    whitespace, then only letters, spaces, slashes and superscript digits.
+    "3 - e" leaves " - e", which holds an operator. "3n" leaves "n" with no
+    space — and that space is the only thing telling "3 N" (three newtons)
+    apart from "3n" (three times n), since both leave a bare letter behind.
+    """
+    both = [{"label": "A", "text": "3"}, {"label": "B", "text": "3 - e"}]
+    assert [o["label"] for o in
+            snap._match_options({"answer": "3 - e"}, both)] == ["B"], (
+        "the exact string tier must still pick the symbolic option")
+    only_bare = [{"label": "A", "text": "3"}, {"label": "B", "text": "4"}]
+    for symbolic in ("3 - e", "3 + e", "3 - \\pi", "3n"):
+        got = [o["label"] for o in
+               snap._match_options({"answer": symbolic}, only_bare)]
+        print(f"  {symbolic!r} vs bare '3' -> {got}")
+        assert got == [], (
+            f"{symbolic!r} is not the number 3; matching it to the option '3' "
+            f"would assert a wrong answer to a student"
+        )
+
+
+def test_an_ambiguous_number_is_still_a_refusal():
+    """Two options that agree numerically means the answer picked neither.
+
+    Refusing is the safe outcome: an `unsure` withholds an answer, while
+    guessing between two options asserts one.
+    """
+    dupes = [{"label": "A", "text": "12"}, {"label": "B", "text": "12"}]
+    assert snap._match_options({"answer": "12 km"}, dupes) == []
+
+
+def test_the_unit_charset_deliberately_excludes_carets():
+    """A documented limit, not an oversight.
+
+    Allowing '^' through would admit "3^e" as the number 3 against a bare "3"
+    option. So "2.5 J/m^3" does NOT match the option "2.5", and that is the
+    intended trade: a missed match becomes an `unsure` and withholds an answer,
+    where a wrong match asserts one. Unicode superscripts ARE handled, since
+    they normalise to digits before the check — "2.5 J/m³" is fine.
+    """
+    opts = [{"label": "A", "text": "2.5"}, {"label": "B", "text": "5"}]
+    assert snap._match_options({"answer": "2.5 J/m^3"}, opts) == []
+    assert [o["label"] for o in
+            snap._match_options({"answer": "2.5 J/m³"}, opts)] == ["A"]
+
+
+def test_no_vision_model_configured_changes_nothing(monkeypatch):
+    """The default is the described path, figure in hand or not.
+
+    The routing ships switched off: the grading that justifies turning it on
+    is a separate decision from the code being present.
+    """
+    monkeypatch.setattr(snap, "MODEL_SOLVE_VISION", "")
+    sent = _capture_solve(monkeypatch, "_deepseek_client")
+    snap.solve_question(question(), "d1", figure=(b"\xff\xd8ignored", "image/jpeg"))
+
+    print(f"  model={sent['model']} (vision model unset)")
+    assert sent["model"] == MODEL_SOLVE
+    assert "image_url" not in json.dumps(sent["messages"]), (
+        "an unset vision model must not start sending photographs to the solver"
+    )
