@@ -62,10 +62,27 @@ def wav_from_pcm(pcm: bytes) -> bytes:
 # at ~4s for the first sentence, which is the pause the student heard after
 # the board had already filled.
 #
-# 0.7s of audio at 24kHz/16-bit/mono: small enough that speech starts almost
-# as soon as Rumik does, large enough that the player is never handed a clip
-# too short to cover the gap before the next one arrives.
-FLUSH_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 0.7)
+# 2.5s of audio at 24kHz/16-bit/mono.
+#
+# NOT as small as it could be, and that is the point. The phone plays these
+# through AudioPlaybackQueue, whose supervisor ticks every 400ms and, on a tick
+# where the playhead has not moved, re-issues `play()` before eventually
+# skipping — machinery written for the sentence-length clips a live lesson
+# sends, "~5-7s of audio" by its own comment.
+#
+# Handed 0.7s pieces instead, "the playhead has not moved" means "this clip
+# already finished": it replayed fragments and raced its own advance, and the
+# result was a voice talking over itself. Shorter pieces need a player built
+# for them, not a smaller number here.
+#
+# At 2.5s the first sound still arrives in about 2.7s against 9.8s for the
+# whole file, and every clip is comfortably longer than the supervisor's
+# window.
+FLUSH_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 2.5)
+# A flush is held back until this much would still be left behind it, so the
+# final clip is never a fragment. 1.5s clears the supervisor's 400ms tick and
+# its 0.15s end-slack with room to spare.
+MIN_TAIL_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 1.5)
 
 
 async def _open_socket():
@@ -174,10 +191,12 @@ async def _synthesize_stream(text: str, voice_preset: str):
                 break
             msg = await asyncio.wait_for(ws.recv(), timeout=remaining)
             if isinstance(msg, bytes):
-                buf.extend(msg)
-                while len(buf) >= FLUSH_BYTES:
-                    piece, buf = buf[:FLUSH_BYTES], buf[FLUSH_BYTES:]
-                    yield bytes(piece)
+                # Raw, exactly as it arrives. All the sizing is done by
+                # `speak_chunks`, which is the only place that can see across
+                # sentence boundaries — flushing a remainder here produced one
+                # stub clip per sentence, and a 0.38s clip is precisely what
+                # the player cannot handle.
+                yield bytes(msg)
             elif isinstance(msg, str):
                 payload = json.loads(msg)
                 if payload.get("type") in ("done", "complete", "finish", "end"):
@@ -186,10 +205,6 @@ async def _synthesize_stream(text: str, voice_preset: str):
                     logger.warning("[FOLLOWUP TTS] refused: %s",
                                    payload.get("message") or payload.get("code"))
                     break
-        # The tail is never a whole flush, and dropping it would clip the last
-        # word off every utterance.
-        if buf:
-            yield bytes(buf)
     finally:
         try:
             await ws.close()
@@ -305,37 +320,58 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None):
     chunks = _speakable_chunks(said)
     started = time.time()
     sent = 0
-    for idx, chunk in enumerate(chunks, 1):
-        heard = 0
-        try:
+    heard = 0
+    # Held ACROSS sentences, which is the whole reason the sizing lives here.
+    # Sized per sentence, every sentence left a stub — 0.38s and 0.91s clips
+    # in a measured run — and a clip shorter than the player's 400ms tick is
+    # what made the voice talk over itself.
+    buf = bytearray()
+
+    def _cut(pcm: bytes):
+        """Whole flushes only, never the remainder."""
+        buf.extend(pcm)
+        while len(buf) >= FLUSH_BYTES + MIN_TAIL_BYTES:
+            piece = bytes(buf[:FLUSH_BYTES])
+            del buf[:FLUSH_BYTES]
+            yield piece
+
+    try:
+        for idx, chunk in enumerate(chunks, 1):
             # A piece at a time, not a sentence at a time. Rumik streams while
-            # it speaks, so the first piece is playable long before the
-            # sentence is finished — which is the difference between the voice
-            # starting with the board and starting after it.
+            # it speaks, so audio is playable long before the sentence is
+            # finished — the difference between the voice starting with the
+            # board and starting after it.
             async for pcm in _synthesize_stream(chunk, preset):
                 if not pcm:
                     continue
-                sent += 1
                 heard += len(pcm)
-                if sent == 1:
-                    logger.info("[FOLLOWUP TTS] %s first audio at t+%dms",
-                                preset, int((time.time() - started) * 1000))
-                # `total` is not known while a sentence is still arriving, and
-                # the client does not use it to decide anything — it plays what
-                # it is given, in order, until the stream ends.
-                yield sent, 0, wav_from_pcm(pcm)
-        except Exception as err:
-            logger.error("[FOLLOWUP TTS] chunk %d/%d failed for %s: %s",
-                         idx, len(chunks), preset, err)
-            return
-        if not heard:
-            logger.warning("[FOLLOWUP TTS] chunk %d/%d came back empty — stopping "
-                           "here rather than skipping a sentence", idx, len(chunks))
-            return
-        logger.info("[FOLLOWUP TTS] %s chunk %d/%d: %d chars -> %.1fs of audio "
-                    "by t+%dms", preset, idx, len(chunks), len(chunk),
-                    heard / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS),
-                    int((time.time() - started) * 1000))
+                for piece in _cut(pcm):
+                    sent += 1
+                    if sent == 1:
+                        logger.info("[FOLLOWUP TTS] %s first audio at t+%dms",
+                                    preset, int((time.time() - started) * 1000))
+                    # `total` is unknowable while the answer is still being
+                    # spoken; the client plays what it is given, in order.
+                    yield sent, 0, wav_from_pcm(piece)
+    except Exception as err:
+        logger.error("[FOLLOWUP TTS] synthesis failed for %s: %s", preset, err)
+        return
+
+    if not heard:
+        logger.warning("[FOLLOWUP TTS] nothing came back — stopping here rather "
+                       "than pretending the answer was spoken")
+        return
+    # The last words. Emitted whatever its length, because dropping it would
+    # cut the end off every answer — and it is only ever ONE short clip, at the
+    # end, rather than one per sentence. `MIN_TAIL_BYTES` above is what keeps
+    # it from being a fragment: a flush is held back until there is enough
+    # behind it to leave a real tail.
+    if buf:
+        sent += 1
+        yield sent, 0, wav_from_pcm(bytes(buf))
+    logger.info("[FOLLOWUP TTS] %s said %.1fs of audio in %d clip(s) by t+%dms",
+                preset, heard / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS),
+                sent, int((time.time() - started) * 1000))
 
 
 async def speak(text: str, tutor_voice: Optional[str] = None) -> bytes:
