@@ -3012,12 +3012,31 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         """The reasoning models take different knobs for the same two ideas.
 
         gpt-5 rejects `max_tokens` in favour of `max_completion_tokens`, and
-        rejects any temperature but its default — both hard 400s, so this is
-        translation rather than preference.
+        rejects any temperature but its default — both hard 400s, so those two
+        are translation rather than preference.
+
+        The SIZE is not translation, and getting it wrong shipped a bug. gpt-5
+        reasons, and its reasoning is spent from `max_completion_tokens` —
+        exactly what THINKING_MAX_TOKENS exists to say about DeepSeek. But that
+        budget was applied only `if not use_openai`, so a gpt-5 solve inherited
+        the bare 2200 meant for a non-reasoning answer. Measured on the real
+        plano-lens question a student snapped: at 2200 it returned
+        finish_reason=length, 2200 output tokens and ZERO characters of
+        content — reasoning ate the allowance, nothing was left to write the
+        JSON with, both attempts came back empty, and the student was told
+        "something went wrong at Monk's end". At 16000 the same call returned
+        finish_reason=stop, 4914 tokens, and the correct answer.
         """
         if solve_model.startswith("gpt-5"):
-            kwargs["max_completion_tokens"] = kwargs.pop("max_tokens", 2200)
+            kwargs.pop("max_tokens", None)
             kwargs.pop("temperature", None)
+            # A vision solve is always a figure question, which is the case
+            # THINKING_MAX_TOKENS_DIAGRAM was measured for: the reasoning sits
+            # on top of reading the diagram, so it runs longer.
+            kwargs["max_completion_tokens"] = (
+                THINKING_MAX_TOKENS_DIAGRAM if vision_solve
+                else THINKING_MAX_TOKENS
+            )
         return kwargs
 
     def make_call(temperature: float):

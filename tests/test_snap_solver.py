@@ -3024,8 +3024,21 @@ def test_gpt5_gets_the_knobs_it_actually_accepts(monkeypatch):
           f"max_completion_tokens={sent.get('max_completion_tokens')} "
           f"temperature={'temperature' in sent}")
     assert "max_tokens" not in sent, "gpt-5 rejects max_tokens outright"
-    assert sent.get("max_completion_tokens"), "the allowance must still be sent"
     assert "temperature" not in sent, "gpt-5 accepts only its default temperature"
+
+    # The SIZE of the allowance, not merely the presence of the key. The first
+    # version of this test asserted only that it was truthy — 2200 is truthy,
+    # so the bug shipped. gpt-5 spends its reasoning from
+    # max_completion_tokens, so 2200 was consumed entirely by reasoning and the
+    # call came back finish_reason=length with ZERO characters of content. Both
+    # attempts returned empty and the student was told "something went wrong at
+    # Monk's end". Measured on the real plano-lens question a student snapped:
+    # 2200 -> 0 chars of content; 16000 -> 4914 tokens and the right answer.
+    assert sent["max_completion_tokens"] >= snap.THINKING_MAX_TOKENS, (
+        f"gpt-5 reasons from this allowance, so it needs a reasoning-sized one "
+        f"— got {sent['max_completion_tokens']}, and 2200 is what shipped the "
+        f"bug that returned an empty response on every hard figure question"
+    )
 
 
 def test_an_answer_with_a_unit_matches_a_bare_number_option():
