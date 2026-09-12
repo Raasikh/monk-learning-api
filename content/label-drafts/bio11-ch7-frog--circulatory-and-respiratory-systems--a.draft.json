@@ -148,54 +148,13 @@
         0.6427
       ],
       "side": "auto"
-    },
-    {
-      "id": "lung",
-      "text": {
-        "en": "lung",
-        "hi": "lung"
-      },
-      "anchor": null,
-      "side": "auto"
-    },
-    {
-      "id": "buccal-cavity",
-      "text": {
-        "en": "buccal cavity",
-        "hi": "buccal cavity"
-      },
-      "anchor": null,
-      "side": "auto"
-    },
-    {
-      "id": "glottis",
-      "text": {
-        "en": "glottis",
-        "hi": "glottis"
-      },
-      "anchor": null,
-      "side": "auto"
-    },
-    {
-      "id": "skin",
-      "text": {
-        "en": "skin",
-        "hi": "skin"
-      },
-      "anchor": null,
-      "side": "auto"
     }
   ],
   "_draft": {
     "generated_by": "content/illustrations/svg/…--a.svg (leader endpoints, read from the document)",
     "model": null,
-    "unplaced": [
-      "lung",
-      "buccal cavity",
-      "glottis",
-      "skin"
-    ],
+    "unplaced": [],
     "shared_anchors": {},
-    "note": "Anchors are READ OUT OF THE DRAWING. Every leader's end point is the point its label names, so this set cannot disagree with the art. The unplaced terms are respiratory and belong to figure b of this set, not to the heart."
+    "note": "Anchors are READ OUT OF THE DRAWING: every leader's end point is the point its label names, so this set cannot disagree with the art. The four respiratory terms (lung, buccal cavity, glottis, skin) were MOVED to figure b on 2026-09-12 — they are structures of the respiration plate, not the heart, and an unplaced term sitting on the wrong figure is a term nobody can ever place."
   }
 }

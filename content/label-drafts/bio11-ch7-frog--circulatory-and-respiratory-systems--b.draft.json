@@ -174,17 +174,17 @@
     "generated_by": "scripts/draft_labels.py",
     "model": "gpt-4o",
     "unplaced": [
-      "sinus venosus",
-      "conus arteriosus",
-      "truncus arteriosus",
       "carotid arch",
-      "systemic arch",
+      "conus arteriosus",
+      "postcaval vein",
+      "precaval vein",
       "pulmocutaneous arch",
       "pulmonary vein",
-      "precaval vein",
-      "postcaval vein"
+      "sinus venosus",
+      "systemic arch",
+      "truncus arteriosus"
     ],
     "shared_anchors": {},
-    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by. 2026-09-12: lung, buccal cavity, glottis and skin were REMOVED from figure a, where they had sat unplaced because they are respiration structures and not heart ones. They were already present here, so nothing was copied in — figure a simply stopped claiming them."
   }
 }
