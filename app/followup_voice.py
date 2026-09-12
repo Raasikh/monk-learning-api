@@ -213,30 +213,9 @@ async def _synthesize_stream(text: str, voice_preset: str):
 
 
 async def _synthesize(text: str, voice_preset: str) -> bytes:
-    import websockets
-    import requests
-
-    key = os.getenv("RUMIK_API_KEY")
-    if not key:
-        raise RuntimeError("RUMIK_API_KEY is not set")
-
-    def _mint():
-        return requests.post(
-            f"{RUMIK_TTS_ENDPOINT}/v1/tts/ws-connect",
-            headers={"Authorization": f"Bearer {key}",
-                     "Content-Type": "application/json"},
-            json={"model": RUMIK_MODEL, "text": "Init"},
-            timeout=8,
-        ).json()
-
-    loop = asyncio.get_event_loop()
-    handshake = await loop.run_in_executor(None, _mint)
-    ws_url, token = handshake.get("ws_url"), handshake.get("token")
-    if not ws_url or not token:
-        raise RuntimeError("Rumik would not hand out a socket")
-
-    ws = await websockets.connect(f"{ws_url}?token={token}",
-                                  ping_interval=None, close_timeout=5.0)
+    # The warmed socket, same as the streaming path: the handshake is 1.76s of
+    # the wait and it does not have to be paid after the answer exists.
+    ws = await _take_socket()
     try:
         await ws.send(json.dumps({"text": text, "speaker": voice_preset}))
         buf = bytearray()
@@ -270,7 +249,11 @@ async def _synthesize(text: str, voice_preset: str) -> bytes:
 # and 1,156KB — so a long answer was not slow, it was CUT, mid-sentence, and
 # the student heard it stop. Anything past roughly this many characters has to
 # be sent as more than one request.
-MAX_CHARS_PER_REQUEST = 320
+# Measured: 588 and 704 characters both came back as exactly 24.7s, i.e. cut.
+# 450 leaves real headroom under that while letting an ordinary two or three
+# sentence follow-up go as ONE request, which is the only way to be sure there
+# is no seam in the middle of it.
+MAX_CHARS_PER_REQUEST = 450
 
 
 def _speakable_chunks(text: str) -> list:
@@ -283,16 +266,34 @@ def _speakable_chunks(text: str) -> list:
     from app.drona.voice_proxy import split_into_sentences
 
     chunks: list = []
+    # PACKED, not one per sentence. Splitting at every boundary made a
+    # three-sentence answer into three separate requests — three sockets,
+    # three start-ups, and an audible seam at each join — while Rumik will
+    # take the whole thing in one. The cap is the only reason to split at all.
+    current = ""
     for sentence in split_into_sentences(text, min_chars=0) or [text]:
         sentence = sentence.strip()
+        if not sentence:
+            continue
         while len(sentence) > MAX_CHARS_PER_REQUEST:
             cut = sentence.rfind(" ", 0, MAX_CHARS_PER_REQUEST)
             if cut <= 0:
                 cut = MAX_CHARS_PER_REQUEST
+            if current:
+                chunks.append(current)
+                current = ""
             chunks.append(sentence[:cut].strip())
             sentence = sentence[cut:].strip()
-        if sentence:
-            chunks.append(sentence)
+        if not sentence:
+            continue
+        joined = f"{current} {sentence}".strip() if current else sentence
+        if len(joined) <= MAX_CHARS_PER_REQUEST:
+            current = joined
+        else:
+            chunks.append(current)
+            current = sentence
+    if current:
+        chunks.append(current)
     return chunks
 
 
