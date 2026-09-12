@@ -417,21 +417,38 @@ def stream_followup(doubt: Dict[str, Any], question: str,
 
 
 def second_opinion(system_prompt: str, payload: str, doubt_id: str,
-                   usage_acc: Optional[Dict[str, int]] = None) -> Optional[str]:
+                   usage_acc: Optional[Dict[str, int]] = None,
+                   figure: Optional[Tuple[bytes, str]] = None) -> Optional[str]:
     """The same question, put to a different model. Its answer, or None.
 
     Deliberately the same prompt and the same payload as the first solve: the
     point is a second READING of one question, not a second question. And
     deliberately blind, like the first — it derives an answer and something
     else matches it to the options afterwards, so the match stays meaningful.
+
+    `figure` carries the crop when the first solve read one. Same payload
+    means the SAME INPUTS, and once a figure question stopped carrying a
+    `diagram_description` this call was the only place still solving it from
+    nothing — a second reading of a figure question with no figure, which can
+    only disagree by accident. MODEL_SECOND_OPINION reads images (it scored
+    97.9% doing exactly this on the graded set), so it gets the same crop.
     """
+    user_content: Any = payload + "\n\nProduce the solution JSON."
+    if figure and figure[0]:
+        user_content = [
+            {"type": "text", "text": user_content},
+            {"type": "image_url", "image_url": {
+                "url": (f"data:{figure[1]};base64,"
+                        f"{base64.b64encode(figure[0]).decode()}"),
+                "detail": "high"}},
+        ]
     try:
         client = _openai_client()
         res = client.chat.completions.create(
             model=MODEL_SECOND_OPINION,
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": payload + "\n\nProduce the solution JSON."},
+                {"role": "user", "content": user_content},
             ],
             response_format={"type": "json_object"},
             temperature=0.0,
@@ -3191,7 +3208,17 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                 kwargs["extra_body"] = {"thinking": {"type": SOLVE_THINKING}}
                 if SOLVE_THINKING != "disabled":
                     kwargs["max_tokens"] = THINKING_MAX_TOKENS
-            return solve_client.chat.completions.create(**kwargs)
+            # The same translation the other two call sites get. Without it a
+            # gpt-5 rewrite sent `max_tokens` and a non-default temperature,
+            # both hard 400s — so it failed EVERY time. The failure is caught
+            # below and the first answer kept, which meant the student silently
+            # kept the rambling steps this pass exists to remove, and an API
+            # call was burned discovering that on every figure question.
+            #
+            # Text payload, not `_user_content()`: this rewrites steps that
+            # already exist, and the prior solution is in the assistant turn
+            # above, so it needs no second copy of the image.
+            return solve_client.chat.completions.create(**_fit_model_kwargs(kwargs))
 
         try:
             retried = _call_with_one_retry("solve", retry_call,
@@ -3220,7 +3247,16 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         # does that instead.
         options=[] if solve_blind else options,
         question_type=q_type,
-        had_diagram=bool(question.get("diagram_description")),
+        # "This question had a figure", however the figure reached the solver.
+        # Reading it off `diagram_description` alone was right when a
+        # description was the only way a figure could arrive; a vision solve
+        # skips the describe step, so that field is empty and the question
+        # looked figure-less. The consequence lands on the student: an
+        # unanswerable figure question would be reported as "some of it is
+        # missing from the photo — retake it", sending them to re-photograph a
+        # page that was read perfectly, which is the exact mistake the
+        # had_diagram branch exists to prevent.
+        had_diagram=bool(question.get("diagram_description")) or vision_solve,
     )
     if parsed.get("_consensus_votes"):
         solution["consensus_votes"] = parsed["_consensus_votes"]
@@ -3258,7 +3294,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             # rare, and the cost of a second solve is only worth paying when
             # the first one has already said it does not fit the page.
             second_t0 = time.time()
-            other = second_opinion(system_prompt, payload, doubt_id, usage_acc)
+            other = second_opinion(system_prompt, payload, doubt_id, usage_acc,
+                                   figure=figure if vision_solve else None)
             second_labels = (
                 match_answer_to_options(other, options, q_type, doubt_id, usage_acc)
                 if other else []

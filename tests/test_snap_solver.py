@@ -3168,6 +3168,159 @@ def test_the_unit_charset_deliberately_excludes_carets():
             snap._match_options({"answer": "2.5 J/m³"}, opts)] == ["A"]
 
 
+def test_no_call_in_a_gpt5_solve_carries_the_wrong_knobs(monkeypatch):
+    """EVERY call in a gpt-5 solve, retries included — not just the first.
+
+    An invariant rather than a case, because the same mistake has now been
+    made three times in three places: the streamed solve, the voted solve, and
+    the step-rewrite each build their own kwargs, and the rewrite was still
+    sending `max_tokens` and a temperature long after the other two were
+    fixed. Both are hard 400s on gpt-5, so the rewrite failed every time — and
+    since a failed rewrite is caught and the first answer kept, it failed
+    SILENTLY, leaving the student the rambling steps that pass exists to
+    remove while burning an API call to discover it.
+
+    Any future call site added to this function is covered by this test for
+    free, which is the point of asserting it this way.
+    """
+    calls = []
+
+    class _Capturing:
+        def __init__(self):
+            # One long step trips _step_problems, which forces the rewrite
+            # pass; the rewrite then returns clean steps.
+            bodies = [
+                json.dumps({"answerable": True, "answer": "7",
+                            "steps": [{"n": 1, "text": "x" * 900}],
+                            "key_idea": "k"}),
+                json.dumps({"answerable": True, "answer": "7",
+                            "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}],
+                            "key_idea": "k"}),
+            ]
+
+            class _Completions:
+                @staticmethod
+                def create(**kwargs):
+                    calls.append(kwargs)
+                    body = bodies[min(len(calls) - 1, len(bodies) - 1)]
+                    return _Response(body, kwargs.get("model"))
+
+            self.chat = type("Chat", (), {"completions": _Completions()})()
+
+    monkeypatch.setattr(snap, "MODEL_SOLVE_VISION", "gpt-5")
+    monkeypatch.setattr(snap, "_openai_client", lambda: _Capturing())
+    snap.solve_question(question(), "d1", figure=(b"\xff\xd8img", "image/jpeg"))
+
+    print(f"  {len(calls)} calls; models={[c.get('model') for c in calls]}")
+    assert len(calls) >= 2, (
+        "this test is only meaningful if the rewrite pass actually ran — the "
+        "900-character step should have tripped _step_problems"
+    )
+    for i, kw in enumerate(calls):
+        assert "max_tokens" not in kw, (
+            f"call {i + 1}/{len(calls)} sent max_tokens to {kw.get('model')}, "
+            f"which is a hard 400 — every call site must go through "
+            f"_fit_model_kwargs"
+        )
+        assert "temperature" not in kw, (
+            f"call {i + 1}/{len(calls)} sent a temperature to {kw.get('model')}, "
+            f"which is a hard 400"
+        )
+        assert kw.get("max_completion_tokens", 0) >= snap.THINKING_MAX_TOKENS, (
+            f"call {i + 1}/{len(calls)} got {kw.get('max_completion_tokens')} — "
+            f"gpt-5 reasons from this allowance and needs a reasoning-sized one"
+        )
+
+
+def test_a_vision_solve_counts_as_having_had_a_diagram(monkeypatch):
+    """An unreadable figure must not be reported as a bad photo.
+
+    `had_diagram` decides which refusal the student gets. It was read off
+    `diagram_description`, which was right while a description was the only
+    way a figure could reach the solver — a vision solve skips the describe
+    step, so the field is empty and the question looks figure-less.
+
+    The consequence lands on the student: snap_solve.md now asks the solver to
+    return `answerable: false` when it cannot make the figure out, and without
+    this that answer is reported as "some of it is missing from the photo,
+    retake it" — sending them to re-photograph a page that was read perfectly.
+    """
+    monkeypatch.setattr(snap, "MODEL_SOLVE_VISION", "gpt-5")
+    sent = _capture_solve(monkeypatch)   # unused here beyond installing the client
+    monkeypatch.setattr(snap, "_openai_client", lambda: _Client([json.dumps({
+        "answerable": False,
+        "answer": "The strain axis exponents are not legible in the figure.",
+        "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})],
+        "gpt-5"))
+    with pytest.raises(SnapError) as err:
+        snap.solve_question(question(), "d1",
+                            figure=(b"\xff\xd8img", "image/jpeg"))
+    print(f"  remedy={err.value.remedy} reason={err.value.reason}")
+    assert err.value.reason == "diagram_insufficient", (
+        "a figure the solver could not read is not an incomplete photo"
+    )
+    assert err.value.remedy == snap.REMEDY_NOT_PHOTO, (
+        "retaking the photo cannot help when the photo was read correctly"
+    )
+
+
+def test_the_second_opinion_sees_the_figure_the_first_solve_saw(monkeypatch):
+    """A second reading of a figure question needs the figure.
+
+    The second opinion is deliberately given the SAME payload as the first
+    solve, so that it is a second reading rather than a second question. Once
+    a figure question stopped carrying a `diagram_description`, that payload
+    no longer contained the figure in any form — so this call was solving a
+    figure question from nothing, and could only agree or disagree by
+    accident.
+
+    Driven through `solve_question` rather than by calling `second_opinion`
+    directly, because the bug was at the CALL SITE — the function grew a
+    `figure` parameter and the caller kept passing nothing. A test that calls
+    the function with a figure passes either way and proves nothing.
+    """
+    calls = []
+    options = [{"label": "A", "text": "1"}, {"label": "B", "text": "2"}]
+
+    def fake_create(**kwargs):
+        calls.append(kwargs)
+        model = kwargs.get("model") or ""
+        if model.startswith("gpt-5"):                      # the solve
+            body = json.dumps({"answerable": True, "answer": "99",
+                               "steps": [{"n": 1, "text": "a"},
+                                         {"n": 2, "text": "b"}], "key_idea": "k"})
+        elif model == snap.MODEL_SECOND_OPINION:           # the second opinion
+            body = json.dumps({"answerable": True, "answer": "98",
+                               "steps": [{"n": 1, "text": "a"}], "key_idea": "k"})
+        else:                                              # the matcher: no match
+            body = json.dumps({"option_labels": [], "equivalent": False})
+        return _Response(body, model)
+
+    class _Capturing:
+        def __init__(self):
+            self.chat = type("Chat", (), {"completions": type(
+                "C", (), {"create": staticmethod(fake_create)})()})()
+
+    monkeypatch.setattr(snap, "MODEL_SOLVE_VISION", "gpt-5")
+    monkeypatch.setattr(snap, "_openai_client", lambda: _Capturing())
+    monkeypatch.setattr(snap, "_steps_support_label", lambda *_a, **_kw: None)
+    snap.solve_question(question(options=options), "d1",
+                        figure=(b"\xff\xd8img", "image/jpeg"))
+
+    second = [c for c in calls if c.get("model") == snap.MODEL_SECOND_OPINION]
+    print(f"  {len(calls)} calls; second-opinion calls: {len(second)}")
+    assert second, (
+        "the second opinion never ran — this test needs the first answer to "
+        "match no option, which is the only time it is consulted"
+    )
+    parts = second[0]["messages"][-1]["content"]
+    assert isinstance(parts, list), (
+        "the second opinion was sent a plain string: it is re-reading a figure "
+        "question with no figure, so it can only agree or disagree by accident"
+    )
+    assert "image_url" in [p["type"] for p in parts]
+
+
 def test_no_vision_model_configured_changes_nothing(monkeypatch):
     """The default is the described path, figure in hand or not.
 
