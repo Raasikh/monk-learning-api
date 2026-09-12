@@ -129,7 +129,15 @@ def stub_transcriber(monkeypatch, contents, model=MODEL_TRANSCRIBE):
 
 
 def stub_matcher(monkeypatch, labels, equivalent=True):
-    """Stubs pass 3. A blind solve derives, then this decides which option it equals."""
+    """Stubs pass 3. A blind solve derives, then this decides which option it equals.
+
+    Also silences the steps cross-check. A blind solve runs it once a label
+    exists, and it goes through the same `_openai_client` this stub replaces —
+    so without this, every `matcher.calls` assertion below would be counting
+    two different passes as one. Tests that are ABOUT the cross-check stub
+    `_steps_support_label` themselves and do not call this.
+    """
+    monkeypatch.setattr(snap, "_steps_support_label", lambda *_a, **_kw: None)
     return stub_transcriber(monkeypatch, json.dumps(
         {"option_labels": labels, "equivalent": equivalent}))
 
@@ -1419,6 +1427,10 @@ def test_answer_matching_option_text_without_a_label_is_accepted(monkeypatch):
     stub_solver(monkeypatch, [json.dumps({
         "answer": "Ba(N_3)_2", "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}],
         "key_idea": "k"})])
+    # This is about matching an answer to an option by TEXT. The steps here are
+    # placeholders ("a", "b") and conclude nothing, so the cross-check has no
+    # opinion to offer; None is what it returns for unclear steps.
+    monkeypatch.setattr(snap, "_steps_support_label", lambda *_a, **_kw: None)
     out = solve_question(question(options=MCQ_OPTIONS), "d1")
     print(f"  matched by text -> option_label={out['option_labels']}")
     assert out["option_labels"] == ["D"]
@@ -1460,6 +1472,9 @@ def test_agreement_with_the_printed_key_is_recorded(monkeypatch):
     stub_solver(monkeypatch, [json.dumps({
         "answer": "Ba(N_3)_2", "option_labels": ["D"],
         "steps": [{"n": 1, "text": "a"}, {"n": 2, "text": "b"}], "key_idea": "k"})])
+    # About the printed key, not the steps cross-check: placeholder steps
+    # conclude nothing, so it stays out of the way.
+    monkeypatch.setattr(snap, "_steps_support_label", lambda *_a, **_kw: None)
     out = solve_question(question(options=MCQ_OPTIONS, printed_answer="D"), "d1")
     print(f"  printed=D solver=D -> agrees={out['agrees_with_printed_answer']}")
     assert out["agrees_with_printed_answer"] is True
@@ -3039,6 +3054,44 @@ def test_gpt5_gets_the_knobs_it_actually_accepts(monkeypatch):
         f"— got {sent['max_completion_tokens']}, and 2200 is what shipped the "
         f"bug that returned an empty response on every hard figure question"
     )
+
+
+def test_a_blind_solve_is_also_held_against_its_own_steps(monkeypatch):
+    """A blind solve can contradict its derivation too, and used to get away with it.
+
+    The cross-check ran only when the solver had SEEN its options, on the
+    theory that seeing them is what makes an answer detach from its reasoning.
+    A real student question disproved that. A resistor-network MCQ, solved
+    blind, derived in its steps:
+
+        I4 = V/R4 = 8/20 = 2/5 A  and  I5 = V/R5 = 8/5 A
+
+    and then stated the answer with the two values SWAPPED. The matcher did
+    its job faithfully and matched the swapped text to option (1), so the app
+    showed the wrong option above correct working that contradicted it. The
+    official NTA key was (4) — which is what the steps had said all along.
+    """
+    options = [{"label": "1", "text": "I4 = 8/5 A and I5 = 2/5 A"},
+               {"label": "4", "text": "I4 = 2/5 A and I5 = 8/5 A"}]
+    stub_solver(monkeypatch, [json.dumps({
+        "answerable": True,
+        "answer": "I4 = 8/5 A and I5 = 2/5 A",          # swapped, as it happened
+        "steps": [{"n": 1, "text": "V across the parallel block is 8 V."},
+                  {"n": 2, "text": "I4 = 8/20 = 2/5 A and I5 = 8/5 A."}],
+        "key_idea": "k"})])
+    # The matcher faithfully matches the swapped text to option 1...
+    stub_transcriber(monkeypatch, json.dumps({"option_labels": ["1"],
+                                              "equivalent": True}))
+    # ...and the steps, read on their own, conclude option 4.
+    monkeypatch.setattr(snap, "_steps_support_label", lambda *_a, **_kw: ["4"])
+
+    out = solve_question(question(options=options), "d1")
+    print(f"  labels={out['option_labels']} from_steps={out.get('answer_from_steps')}")
+    assert out["option_labels"] == ["4"], (
+        "the steps are the derivation; an answer that contradicts them must not "
+        "be what the student is shown"
+    )
+    assert out.get("answer_from_steps") is True
 
 
 def test_an_answer_with_a_unit_matches_a_bare_number_option():

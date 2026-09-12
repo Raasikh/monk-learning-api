@@ -2543,6 +2543,47 @@ _DELIBERATION_MARKERS = (
 )
 
 
+def _reconcile_with_steps(solution: Dict[str, Any],
+                          options: List[Dict[str, str]],
+                          doubt_id: str,
+                          usage_acc: Optional[Dict[str, int]],
+                          question_n: Any = None) -> int:
+    """Make the stated answer agree with the derivation. Returns elapsed ms.
+
+    When the steps conclude a different option from the one the answer names,
+    the steps win: they are the derivation, and an answer at odds with them is
+    back-fitting. Mutates `solution` in place.
+
+    One helper rather than two copies because both solve paths need it and
+    they had already drifted — the option-shown path had this check and the
+    blind path did not, on the theory that seeing the options is "where
+    answers detach from their own reasoning". A blind solve detached anyway:
+    a resistor-network question derived I4 = 8/20 = 2/5 A and I5 = 8/5 A in
+    its steps, then stated the answer with the two values SWAPPED. The matcher
+    faithfully matched the swapped text to option (1), and the student was
+    shown the wrong option above correct working that contradicted it. The
+    official key was (4), which is what the steps said all along.
+    """
+    if not options or not solution.get("option_labels"):
+        return 0
+    t0 = time.time()
+    steps_say = _steps_support_label(solution, options, doubt_id, usage_acc)
+    elapsed_ms = int((time.time() - t0) * 1000)
+    logger.info("[SNAP STEPCHECK] doubt=%s q%s stepcheck_ms=%d steps_conclude=%s",
+                doubt_id[:8], question_n, elapsed_ms, steps_say)
+    if steps_say and set(steps_say) != set(solution["option_labels"]):
+        logger.warning(
+            "[SNAP STEPCHECK] doubt=%s answer says %s but the steps conclude "
+            "%s — trusting the derivation",
+            doubt_id[:8], solution["option_labels"], steps_say,
+        )
+        chosen = [o for o in options if o["label"] in steps_say]
+        solution["option_labels"] = steps_say
+        solution["answer"] = " and ".join(o["text"] for o in chosen)
+        solution["answer_from_steps"] = True
+    return elapsed_ms
+
+
 def _step_problems(steps: List[Dict[str, Any]]) -> List[str]:
     """What is wrong with these steps, student-readability-wise. [] if nothing."""
     problems: List[str] = []
@@ -3193,24 +3234,12 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         )
 
     stepcheck_ms = match_ms = 0
-    if not solve_blind and options and solution.get("option_labels"):
-        # This solve SAW its options, which is where answers detach from their
-        # own reasoning. Cross-check: the steps must conclude the same option.
-        stepcheck_t0 = time.time()
-        steps_say = _steps_support_label(solution, options, doubt_id, usage_acc)
-        stepcheck_ms = int((time.time() - stepcheck_t0) * 1000)
-        logger.info("[SNAP STEPCHECK] doubt=%s q%s stepcheck_ms=%d steps_conclude=%s",
-                    doubt_id[:8], question.get("n"), stepcheck_ms, steps_say)
-        if steps_say and set(steps_say) != set(solution["option_labels"]):
-            logger.warning(
-                "[SNAP STEPCHECK] doubt=%s answer says %s but the steps conclude "
-                "%s — trusting the derivation",
-                doubt_id[:8], solution["option_labels"], steps_say,
-            )
-            chosen = [o for o in options if o["label"] in steps_say]
-            solution["option_labels"] = steps_say
-            solution["answer"] = " and ".join(o["text"] for o in chosen)
-            solution["answer_from_steps"] = True
+    if not solve_blind:
+        # This solve SAW its options, which is one way answers detach from
+        # their own reasoning. The blind path runs the same check after it has
+        # matched — see the call at the end of that branch.
+        stepcheck_ms = _reconcile_with_steps(solution, options, doubt_id,
+                                             usage_acc, question.get("n"))
 
     if solve_blind:
         match_t0 = time.time()
@@ -3303,6 +3332,13 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         chosen = [o for o in options if o["label"] in labels]
         solution["option_labels"] = labels
         solution["answer"] = " and ".join(o["text"] for o in chosen) or solution["answer"]
+
+        # Now that a label exists, hold it against the derivation — the same
+        # check the option-shown path runs above. It has to happen HERE rather
+        # than before the match, because a blind solve has no label to check
+        # until its answer text has been matched to one.
+        stepcheck_ms = _reconcile_with_steps(solution, options, doubt_id,
+                                             usage_acc, question.get("n"))
 
     # Free correctness signal: the page's own answer key, which the solver never
     # saw. A disagreement does not change what the student is shown — the key
