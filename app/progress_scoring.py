@@ -83,12 +83,21 @@ def compute_mastery_updates(
     return updates
 
 
+# A client clock the server does not own. Ten minutes is far past the longest
+# a single exam question is worth, so anything beyond it is an app left open
+# rather than a question pondered, and is discarded in favour of the server's
+# own (also imperfect) reading.
+CLIENT_ELAPSED_CEILING_MS = 600_000
+
+
 def apply_answer_scoring(
     user_id: str,
     question_id: str,
     is_correct: bool,
     raw_difficulty: Any,
     mode: str = "practice",
+    elapsed_ms: Optional[int] = None,
+    gave_up: bool = False,
 ) -> Optional[Dict[str, Any]]:
     """Full scoring pass for one graded answer. Returns a summary for the
     response payload, or None when the question has no concept tagging yet
@@ -161,10 +170,25 @@ def apply_answer_scoring(
     open_serve = next((s for s in serves if not s.get("answered_at")), None)
     earlier_serves = [s for s in serves if open_serve and s["id"] != open_serve["id"]]
 
+    # How long the question took, preferring what the CLIENT observed.
+    #
+    # `served_at` is when this server handed the question out, and the app
+    # fetches one ahead — so the server's own interval starts while the student
+    # is still reading the previous question, and keeps running across a
+    # departure and return. It is an upper bound on the truth, not the truth.
+    #
+    # The client's figure is the interval the question was on screen, which is
+    # the thing every consumer of this column actually means. It is bounded
+    # here rather than trusted outright: a clock the server does not own can
+    # arrive negative or absurd, and a bad reading is worse than a missing one
+    # because it is silently averaged.
     time_ms: Optional[int] = None
+    if elapsed_ms is not None and 0 < int(elapsed_ms) <= CLIENT_ELAPSED_CEILING_MS:
+        time_ms = int(elapsed_ms)
     if open_serve:
-        served_at = datetime.fromisoformat(open_serve["served_at"].replace("Z", "+00:00"))
-        time_ms = int((now - served_at).total_seconds() * 1000)
+        if time_ms is None:
+            served_at = datetime.fromisoformat(open_serve["served_at"].replace("Z", "+00:00"))
+            time_ms = int((now - served_at).total_seconds() * 1000)
         supabase.table("question_serves").update(
             {"answered_at": now.isoformat(), "time_to_answer_ms": time_ms}
         ).eq("id", open_serve["id"]).execute()
@@ -177,6 +201,12 @@ def apply_answer_scoring(
         reason = "repeat_attempt"          # burned the moment it was first answered
     elif earlier_serves:
         reason = "previously_served"       # burned the moment it first rendered
+    elif gave_up:
+        # Not scored, and not filed as cheating either. "I don't know" carries
+        # no evidence about the concept beyond the admission itself, and the
+        # time floor below would otherwise catch it — giving up is quick — and
+        # record an honest student as a guesser.
+        reason = "gave_up"
     elif time_ms is not None and time_ms < floor_ms:
         reason = "under_time_floor"        # guess or leak — recorded, not scored
 
