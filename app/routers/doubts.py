@@ -1094,7 +1094,7 @@ async def ask_about_doubt_aloud(
     # watching a finished board in silence. Transcription and the model take
     # longer than that between them, so by the time a sentence exists the
     # socket is already waiting.
-    followup_voice.prewarm()
+    followup_voice.prewarm(_tutor_voice_for(user_id))
     raw = await audio.read()
     try:
         question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)

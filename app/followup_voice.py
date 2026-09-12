@@ -16,7 +16,7 @@ import logging
 import os
 import struct
 import time
-from typing import Any, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 logger = logging.getLogger("snap.followup_voice")
 
@@ -118,13 +118,17 @@ _warm: Optional[Tuple[Any, float]] = None
 _warming: Optional[asyncio.Task] = None
 
 
-def prewarm() -> None:
-    """Open a socket in the background, if one is not already waiting.
+def prewarm(tutor_voice: Optional[str] = None) -> None:
+    """Open a socket in the background, and cache this voice's filler.
 
     Fire and forget: a socket that fails to open costs nothing, because
     `_take_socket` falls back to opening one the usual way.
     """
     global _warming
+    # The filler is per-voice and synthesised once for the life of the
+    # process: the first follow-up pays for it, every later one opens
+    # instantly.
+    _warm_filler(preset_for(tutor_voice))
     if _warm is not None or (_warming is not None and not _warming.done()):
         return
 
@@ -349,6 +353,50 @@ def _speakable_chunks(text: str) -> list:
     return chunks
 
 
+# A short line, already spoken, to cover Rumik's start-up.
+#
+# Measured, synthesis time barely tracks length: 25 characters took 1.94s, 32
+# took 4.15s and 54 took 2.36s. What it tracks is Rumik's own first-byte time,
+# which ranged 0.61s to 2.30s across identical calls — so no amount of
+# shortening the first sentence makes the first sound reliably quick.
+#
+# Cached audio has no synthesis time at all, so it sidesteps that variance
+# instead of fighting it: the student hears a voice immediately and the real
+# first sentence lands behind it.
+#
+# Deliberately content-free. A filler that commits to anything ("So the answer
+# is—") is a claim made before the model has written one, and it would have to
+# be right by luck.
+FILLER_LINES = ("Right, let's look at that.", "Okay, so —")
+_fillers: Dict[str, bytes] = {}
+_filler_task: Optional[asyncio.Task] = None
+
+
+def _warm_filler(preset: str) -> None:
+    """Synthesise this voice's filler once, in the background."""
+    global _filler_task
+    if preset in _fillers:
+        return
+    if _filler_task is not None and not _filler_task.done():
+        return
+
+    async def _fill():
+        try:
+            pcm = await _synthesize(FILLER_LINES[0], preset)
+            if pcm:
+                _fillers[preset] = pcm
+                logger.info("[FOLLOWUP TTS] filler cached for %s (%.1fs)",
+                            preset, len(pcm) / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS))
+        except Exception as err:
+            logger.info("[FOLLOWUP TTS] no filler for %s (%s) — answers simply "
+                        "start when they start", preset, err)
+
+    try:
+        _filler_task = asyncio.get_event_loop().create_task(_fill())
+    except RuntimeError:
+        pass
+
+
 async def speak_chunks(text: str, tutor_voice: Optional[str] = None):
     """Yields (index, total, wav) — ONE WHOLE SENTENCE per clip, as each is ready.
 
@@ -373,6 +421,16 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None):
     preset = preset_for(tutor_voice)
     sentences = _spoken_sentences(said)
     started = time.time()
+
+    # The cached line first, if there is one. Streaming only: the whole-file
+    # path has nothing to cover, since by the time it returns the answer is
+    # already complete.
+    filler = _fillers.get(preset)
+    if filler:
+        logger.info("[FOLLOWUP TTS] %s opened with the cached filler at t+%dms",
+                    preset, int((time.time() - started) * 1000))
+        yield 0, len(sentences), wav_from_pcm(filler)
+
     for idx, sentence in enumerate(sentences, 1):
         try:
             pcm = await _synthesize(sentence, preset)
