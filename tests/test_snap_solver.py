@@ -3056,6 +3056,75 @@ def test_gpt5_gets_the_knobs_it_actually_accepts(monkeypatch):
     )
 
 
+# ─── cutting the student their own question back ─────────────────────────────
+
+def test_question_spans_come_from_numbers_papers_actually_print():
+    """Real papers number "13.", not "Q13.".
+
+    _QUESTION_NUMBER_RE demands the Q, and correctly so — a false positive
+    there hangs a FIGURE on the wrong question, which changes an answer. But
+    measured on a real 2023 physics paper, every line read "10. If E and K
+    represent…", so that pattern matched nothing and every multi-question page
+    silently fell back to the transcription.
+    """
+    page = {"text_lines": [
+        {"top": 100, "bottom": 130, "text": "11. As shown in the figure, a network"},
+        {"top": 600, "bottom": 630, "text": "12. Two long straight wires P and Q"},
+        {"top": 1000, "bottom": 1040, "text": "13. A circular loop of radius R"},
+        {"top": 1300, "bottom": 1330, "text": "(1) $8F_1$"},
+    ], "diagram_spans": []}
+    spans = snap.question_spans_by_number(page, [11, 12, 13])
+    print(f"  spans: {[(n, int(s['top']), int(s['bottom'])) for n, s in spans.items()]}")
+    assert sorted(spans) == [11, 12, 13]
+    assert spans[11]["bottom"] == 600, "a question runs to where the next begins"
+    assert spans[13]["bottom"] == 1330, "the last runs to the foot of the content"
+
+
+def test_a_parenthesised_option_is_not_a_question_number():
+    """"(1) 4320 J" is an option, and would cut the page in the wrong place."""
+    page = {"text_lines": [
+        {"top": 100, "bottom": 130, "text": "1. A 100 m long wire having"},
+        {"top": 300, "bottom": 330, "text": "(2) $4 \\times 10^{-4}$ m"},
+        {"top": 700, "bottom": 730, "text": "2. 1 g of a liquid is converted"},
+    ], "diagram_spans": []}
+    spans = snap.question_spans_by_number(page, [1, 2])
+    assert spans[1]["bottom"] == 700, (
+        "the option at y=300 must not end question 1 — the crop would cut its "
+        "own choices off"
+    )
+
+
+def test_a_two_column_page_yields_no_spans_rather_than_wrong_ones():
+    """Interleaved columns must produce nothing, not a guess.
+
+    Mathpix gives text lines a vertical extent only, so two columns collapse
+    into one y-ordering. Measured on a real paper: question 10 began at y=179
+    in the left column and question 13 at y=177 in the right, which put 13
+    above 10, dropped it for having a 2px span, and handed question 14 a band
+    belonging to 11 and 12.
+
+    That is not a slightly wrong crop — it shows the student a DIFFERENT
+    question than the one they are reading about, which is strictly worse than
+    the transcription this falls back to.
+    """
+    page = {"text_lines": [
+        {"top": 179, "bottom": 200, "text": "10. If E and K represent"},
+        {"top": 847, "bottom": 870, "text": "11. A circular loop of radius r"},
+        {"top": 1655, "bottom": 1680, "text": "12. A travelling wave"},
+        {"top": 177, "bottom": 200, "text": "13. As shown in the figure"},
+        {"top": 1486, "bottom": 1510, "text": "14. A conducting loop"},
+    ], "diagram_spans": []}
+    assert snap.question_spans_by_number(page, [10, 11, 12, 13, 14]) == {}
+
+
+def test_missing_geometry_is_no_opinion_not_no_question():
+    """No lines, or no numbers among them, must fall back to the text."""
+    assert snap.question_spans_by_number({}, [1]) == {}
+    assert snap.question_spans_by_number(
+        {"text_lines": [{"top": 1, "bottom": 2, "text": "no number here"}]},
+        [1]) == {}
+
+
 def test_a_blind_solve_is_also_held_against_its_own_steps(monkeypatch):
     """A blind solve can contradict its derivation too, and used to get away with it.
 

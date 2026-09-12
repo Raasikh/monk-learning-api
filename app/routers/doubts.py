@@ -47,29 +47,41 @@ from app.storage_r2 import delete_image, signed_url
 # retried without it. A snap that loses its figures is a worse answer; a snap
 # that cannot write its row at all is no answer, and that is not a trade worth
 # making on deploy ordering.
-_HAS_FIGURES_COLUMN = True
+# `doubts.question_image` arrives with 0044 and needs the same tolerance, so
+# this is now a SET of optional columns rather than one flag. Each is dropped
+# independently — a missing `question_image` must not cost the figures too.
+_OPTIONAL_COLUMNS = {
+    "figures": "migration 0030 — question figures are not kept until it is run",
+    "question_image": "migration 0044 — the question crop is not kept until it is run",
+}
+_MISSING_COLUMNS: set = set()
 
 
 def _insert_doubt_rows(rows):
-    """Inserts doubt rows, surviving a `figures` column that is not there yet."""
-    global _HAS_FIGURES_COLUMN
+    """Inserts doubt rows, surviving optional columns that are not there yet."""
 
-    def without_figures(items):
-        return [{k: v for k, v in item.items() if k != "figures"} for item in items]
+    def without(items, drop):
+        return [{k: v for k, v in item.items() if k not in drop} for item in items]
 
-    if not _HAS_FIGURES_COLUMN:
-        return supabase.table("doubts").insert(without_figures(rows)).execute()
-    try:
-        return supabase.table("doubts").insert(rows).execute()
-    except Exception as err:
-        if "figures" not in str(err):
-            raise
-        _HAS_FIGURES_COLUMN = False
-        logger.error(
-            "doubts.figures is missing — migration 0030 has not been applied. "
-            "Writing without it; question figures are not kept until it is."
-        )
-        return supabase.table("doubts").insert(without_figures(rows)).execute()
+    while True:
+        try:
+            return supabase.table("doubts").insert(
+                without(rows, _MISSING_COLUMNS) if _MISSING_COLUMNS else rows
+            ).execute()
+        except Exception as err:
+            # Retry only for a column this code knows is optional, and only
+            # once per column. Anything else is a real failure and has to
+            # surface rather than be swallowed by a retry loop.
+            culprit = next(
+                (col for col in _OPTIONAL_COLUMNS
+                 if col not in _MISSING_COLUMNS and col in str(err)),
+                None,
+            )
+            if culprit is None:
+                raise
+            _MISSING_COLUMNS.add(culprit)
+            logger.error("doubts.%s is missing — %s. Writing without it.",
+                         culprit, _OPTIONAL_COLUMNS[culprit])
 
 
 def _figure_urls(keys):
@@ -117,7 +129,8 @@ LIST_COLUMNS = (
 )
 # image_key is selected only for legacy doubts saved before images stopped being
 # stored; signed_url() below returns None for a row that never had one.
-DETAIL_COLUMNS = LIST_COLUMNS + ", explanation, steps, image_key, figures"
+DETAIL_COLUMNS = (LIST_COLUMNS
+                  + ", explanation, steps, image_key, figures, question_image")
 
 
 class ReportRequest(BaseModel):
@@ -511,6 +524,8 @@ async def snap_doubt(
                 "stem": row["stem"],
                 "options": _options_with_figures(row["options"]),
                 "figure_urls": _figure_urls(row.get("figures")),
+                # The photographed question, shown in place of the transcription.
+                "question_image_url": signed_url(row.get("question_image")),
                 "subject": row["subject"],
                 "chapter": row["chapter"],
                 "concept": row["concept"],
@@ -577,6 +592,10 @@ def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: st
         # The figures this question was printed with. Keys only — a client is
         # given signed URLs, never a key.
         "figures": question.get("figure_keys") or [],
+        # The question as it was photographed. Key only, signed on the way out
+        # like the figures — this is what the question box shows instead of a
+        # transcription, and it has to survive into Library.
+        "question_image": question.get("question_image_key"),
         "subject": _subject_for_row(solution, question),
         "chapter": solution.get("topic") or question.get("topic"),
         "concept": _concept(solution, question),
@@ -720,6 +739,7 @@ async def snap_doubt_stream(
                             "status", "failure_reason")},
                         "options": _options_with_figures(row["options"]),
                         "figure_urls": _figure_urls(row.get("figures")),
+                        "question_image_url": signed_url(row.get("question_image")),
                         "remedy": remedy,
                         "retake_helps": remedy == REMEDY_RETAKE,
                     })
@@ -892,6 +912,7 @@ def get_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     doubt["image_url"] = signed_url(doubt.pop("image_key", None))
     doubt["options"] = _options_with_figures(doubt.get("options"))
     doubt["figure_urls"] = _figure_urls(doubt.pop("figures", None))
+    doubt["question_image_url"] = signed_url(doubt.pop("question_image", None))
 
     report = (
         supabase.table("doubt_reports")

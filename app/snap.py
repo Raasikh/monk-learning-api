@@ -1059,6 +1059,9 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     # `requires_diagram` stays in charge.
     figure_counts = figures_by_question(page, _returned_numbers(raw_questions))
     figure_spans = figure_spans_by_question(page, _returned_numbers(raw_questions))
+    # The band each question occupies, for showing the student their own
+    # question rather than a transcription of it.
+    question_spans = question_spans_by_number(page, _returned_numbers(raw_questions))
     # The page's own figure count, as a floor for the drawn-options gate when
     # per-question attribution comes up empty. Counted from the SPANS when
     # there are any: those are the same geometry attribution reads, so if the
@@ -1374,6 +1377,17 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                 list(page_spans) if only_question
                 else (figure_spans.get(printed_number[0]) or []
                       if (figure_spans and printed_number) else [])
+            ),
+            # The band this question occupies, so the pipeline can cut the
+            # student their own question back rather than a transcription of
+            # it. None when the geometry could not place it — the screen falls
+            # back to the text, which is what it has always shown.
+            "question_span": (
+                # One question on the page: the page is the question, whether
+                # or not a number could be found to slice on.
+                {"top": 0, "bottom": None} if only_question
+                else (question_spans.get(printed_number[0])
+                      if (question_spans and printed_number) else None)
             ),
             "requires_diagram": needs_diagram,
             # Held back from the solver on purpose; used to check it afterwards.
@@ -1982,6 +1996,164 @@ FIGURE_READ_PAD_FRAC = 0.14
 FIGURE_READ_MIN_PAD_PX = 24
 FIGURE_MAX_EDGE = 1400
 FIGURE_JPEG_QUALITY = 82
+
+# The question itself, cut from the page to be SHOWN rather than read.
+#
+# A transcription is what the solver needs; it is not what the student should
+# have to read back. Mathpix spells a drawn structure as `<smiles>C1CCNC1`,
+# renders γ inconsistently at screen resolution, and a question it half-read
+# arrives looking mangled in a way the student cannot tell apart from a
+# question that IS mangled. The photograph has none of those problems — it is
+# their own page.
+#
+# Wider padding than a figure crop and no thumbnailing down to the figure's
+# edge: this is read at arm's length on a phone, so the text has to stay
+# legible where a figure only has to be recognisable.
+QUESTION_PAD_PX = 16
+QUESTION_MAX_EDGE = 1600
+QUESTION_JPEG_QUALITY = 85
+
+
+# A question number as papers actually print it: "13.", "26)" — no "Q".
+#
+# Deliberately more permissive than _QUESTION_NUMBER_RE, and used ONLY for
+# cutting crop boundaries. That one demands a "Q" because a false positive
+# there hangs a FIGURE on the wrong question, which changes an answer; its own
+# comment says so. Here a false positive shifts where a crop starts, which the
+# student can see and which costs nothing but a little extra page.
+#
+# Real JEE and NEET papers number without the Q — measured on a 2023 physics
+# paper, every line read "10. If E and K represent...", so the strict pattern
+# matched nothing and every multi-question page silently fell back to text.
+#
+# A bare leading number only: "(1) 4320 J" is an OPTION, and requiring the
+# digit to open the line excludes the whole parenthesised family. Callers
+# additionally intersect with the question numbers the structuring model
+# actually returned, so a stray "2." matches only if 2 is a question on this
+# page.
+_CROP_NUMBER_RE = re.compile(r"^(\d{1,3})\s*[.)]\s+\S")
+
+
+def question_spans_by_number(page: Dict[str, Any],
+                             wanted: List[int]) -> Dict[int, Dict[str, Any]]:
+    """The vertical band each question occupies on the page.
+
+    A question runs from its own numbered line down to the start of the next
+    one, and the last runs to the bottom of the lowest thing on the page.
+    Vertical only: Mathpix gives `left`/`right` for figures but not for text
+    lines, so the crop takes the full width.
+
+    Returns {} when the geometry is missing, which the caller must read as "no
+    opinion" and fall back to the transcription — never as "no question".
+    """
+    lines = page.get("text_lines") or []
+    if not lines:
+        return {}
+
+    starts: Dict[int, float] = {}
+    for line in lines:
+        text = (line.get("text") or "").lstrip()
+        match = _QUESTION_NUMBER_RE.match(text) or _CROP_NUMBER_RE.match(text)
+        if not match:
+            continue
+        num = int(match.group(1))
+        if num in wanted and num not in starts:
+            starts[num] = line["top"]
+    if not starts:
+        return {}
+
+    # A page whose questions do not run top to bottom is not sliceable this
+    # way, and must produce NOTHING rather than a guess.
+    #
+    # Mathpix gives text lines a vertical extent only — no left/right — so two
+    # columns interleave into one y-ordering and cannot be told apart.
+    # Measured on a real two-column paper: question 10 began at y=179 in the
+    # left column and question 13 at y=177 in the right, so ordering by y put
+    # 13 above 10, dropped it for having a 2px span, and handed question 14 a
+    # band belonging to 11 and 12. That does not show the student a slightly
+    # wrong crop — it shows them a DIFFERENT question, which is worse than the
+    # transcription this falls back to.
+    #
+    # The test is monotonicity: on a single column, later question numbers sit
+    # lower down. Anything else means the geometry cannot carry this.
+    by_number = [starts[n] for n in sorted(starts)]
+    if any(b <= a for a, b in zip(by_number, by_number[1:])):
+        logger.info(
+            "[SNAP QUESTION] question numbers do not run top to bottom "
+            "(%s) — multi-column or misread, so no crops rather than wrong ones",
+            {n: int(starts[n]) for n in sorted(starts)},
+        )
+        return {}
+
+    # The bottom of the page's content, so the last question does not run off
+    # into whatever white space the photo happened to include.
+    page_bottom = max(
+        [float(ln.get("bottom") or 0) for ln in lines]
+        + [float(s.get("bottom") or 0) for s in (page.get("diagram_spans") or [])]
+    )
+    ordered = sorted(starts.items(), key=lambda kv: kv[1])
+    spans: Dict[int, Dict[str, Any]] = {}
+    for i, (num, top) in enumerate(ordered):
+        bottom = ordered[i + 1][1] if i + 1 < len(ordered) else page_bottom
+        if bottom - top < 8:
+            continue
+        spans[num] = {"top": top, "bottom": bottom}
+    return spans
+
+
+def crop_question(image_bytes: bytes, span: Dict[str, Any]) -> Optional[bytes]:
+    """One question, cut from the page at full width."""
+    try:
+        from PIL import Image
+    except ImportError:  # pragma: no cover - Pillow ships with image_prep
+        return None
+    try:
+        with Image.open(io.BytesIO(image_bytes)) as img:
+            img = img.convert("RGB")
+            width, height = img.size
+            top = max(0, int(span["top"]) - QUESTION_PAD_PX)
+            # `bottom: None` means "to the foot of the image" — the whole page
+            # IS the question, which is the common case: a student photographs
+            # one question, often with no number visible to slice on.
+            bottom = (height if span.get("bottom") is None
+                      else min(height, int(span["bottom"]) + QUESTION_PAD_PX))
+            if bottom - top < 8:
+                return None
+            piece = img.crop((0, top, width, bottom))
+            piece.thumbnail((QUESTION_MAX_EDGE, QUESTION_MAX_EDGE), Image.LANCZOS)
+            out = io.BytesIO()
+            piece.save(out, format="JPEG", quality=QUESTION_JPEG_QUALITY)
+            return out.getvalue()
+    except Exception as err:
+        logger.warning("[SNAP QUESTION] crop failed: %s", err)
+        return None
+
+
+def keep_question_image(span: Optional[Dict[str, Any]],
+                        image_bytes: bytes,
+                        doubt_id: str,
+                        question_index: int) -> Optional[str]:
+    """Stores the photographed question itself. Its R2 key, or None.
+
+    Best effort, exactly like the figures: no bucket, no geometry or a failed
+    crop costs the picture and the screen falls back to the transcription. It
+    must never cost the answer.
+    """
+    if not span or not storage_r2.is_configured():
+        return None
+    piece = crop_question(image_bytes, span)
+    if not piece:
+        return None
+    key = f"doubts/{doubt_id}/q{question_index}/question.jpg"
+    try:
+        storage_r2.upload_image(key, piece, "image/jpeg")
+    except Exception as err:
+        logger.warning("[SNAP QUESTION] doubt=%s upload failed for %s: %s",
+                       doubt_id[:8], key, err)
+        return None
+    logger.info("[SNAP QUESTION] doubt=%s q%d kept %.1fKB question crop",
+                doubt_id[:8], question_index, len(piece) / 1024)
+    return key
 
 
 def _reading_order(spans: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -3566,10 +3738,37 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
     # read my page right?"), and it costs nothing extra to show it ~20s sooner.
     # No solution fields here — nothing about an ANSWER is ever streamed early;
     # the validated "question" event below stays authoritative for that.
+    # The student's own question, cut from their own photo, before the read
+    # event rather than after it: this is what fills the question box, so
+    # arriving later would mean painting the transcription and swapping it.
+    #
+    # Concurrent, and never fatal. Each crop is a small JPEG and the uploads
+    # are independent, so the cost is one upload's latency rather than the
+    # sum; a bucket that is down or a span that could not be placed costs the
+    # picture and the box falls back to the transcription.
+    crop_t0 = time.time()
+    with ThreadPoolExecutor(max_workers=max(1, len(questions))) as pool:
+        keys = list(pool.map(
+            lambda q: keep_question_image(q.get("question_span"), image_bytes,
+                                          doubt_id, q["n"]),
+            questions,
+        ))
+    for q, key in zip(questions, keys):
+        q["question_image_key"] = key
+    logger.info(
+        "[SNAP QUESTION] doubt=%s cropped %d of %d question(s) in %dms",
+        doubt_id[:8], sum(1 for k in keys if k), len(questions),
+        int((time.time() - crop_t0) * 1000),
+    )
+
     yield "questions_read", {
         "questions": [
             {
                 "question_index": q["n"],
+                # A signed URL, like the figures: the bucket is private and the
+                # app never holds a key.
+                "question_image_url": storage_r2.signed_url(
+                    q.get("question_image_key")),
                 "question_text": q.get("text"),
                 "stem": q.get("stem") or q.get("text"),
                 "options": q.get("options") or [],
