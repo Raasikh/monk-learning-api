@@ -3099,6 +3099,46 @@ def test_a_parenthesised_option_is_not_a_question_number():
     assert spans[2]["top"] == 700, "question 2 begins at its own numbered line"
 
 
+def test_a_crop_is_trimmed_to_its_own_left_and_right_margins():
+    """The vertical cut is OCR geometry; the horizontal cut has to be pixels.
+
+    Mathpix gives text lines no `left`/`right`, so a question was cut at the
+    full width of the page and carried both margins into a box far wider than
+    it is tall. Reclaiming them is worth most on a PHOTOGRAPH — a phone pointed
+    at a textbook catches the page edge and the desk — and least on a PDF
+    screenshot, where it measured 4% (22px left, 32px right of 1455).
+    """
+    from PIL import Image
+    page = Image.new("RGB", (800, 200), "white")
+    for x in range(100, 500):
+        for y in range(80, 120):
+            page.putpixel((x, y), (20, 20, 20))
+    out = snap._trim_margins(page)
+    print(f"  {page.size} -> {out.size}")
+    assert out.width < page.width, "the blank margins must go"
+    assert out.width >= 400, "and the content must not"
+    assert out.height == page.height, "only the horizontal cut belongs here"
+
+
+def test_trimming_leaves_a_near_blank_strip_alone():
+    """A stray mark is not a narrow question.
+
+    Cropping to the outermost ink is right until there is almost none of it,
+    and then it throws the question away. A faint scan, a speck of dust or a
+    pen dot in the margin would each otherwise produce a crop a few pixels
+    wide — worse than the untrimmed strip, and worse than the text it replaced.
+    """
+    from PIL import Image
+    blank = Image.new("RGB", (800, 200), "white")
+    assert snap._trim_margins(blank).size == blank.size
+
+    speck = Image.new("RGB", (800, 200), "white")
+    speck.putpixel((400, 100), (0, 0, 0))
+    assert snap._trim_margins(speck).size == speck.size, (
+        "one dark pixel must not become the whole crop"
+    )
+
+
 def test_the_crop_stops_where_the_choices_start():
     """The crop is the stem and its figure, never the options.
 
