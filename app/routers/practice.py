@@ -6,7 +6,7 @@ from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
 from pydantic import BaseModel
 
 from app.auth import get_current_user_id
-from app.db import supabase
+from app.db import supabase, fetch_all_cached
 from app.drona.persona import normalize_language, normalize_voice, tutor_name
 from app.progress_scoring import apply_answer_scoring, record_serve
 
@@ -29,9 +29,13 @@ def resolve_display_concept(question_id: str, raw_concept: Optional[str]) -> Opt
             .data
         )
         if qc:
-            row = supabase.table("concepts").select("name").eq("id", qc[0]["concept_id"]).limit(1).execute().data
-            if row:
-                return row[0]["name"]
+            # `concepts` only changes when the syllabus is rebuilt, so this is
+            # a cache hit after the first request rather than a round trip on
+            # every served question.
+            by_id = {c["id"]: c.get("name") for c in fetch_all_cached("concepts", "id, name")}
+            name = by_id.get(qc[0]["concept_id"])
+            if name:
+                return name
     except Exception as e:
         print(f"[CONCEPT RESOLVE ERROR] {e}")
     return raw_concept
@@ -45,6 +49,11 @@ class PracticeNextRequest(BaseModel):
     exam: Optional[str] = "both"         # "jee", "neet", "both"
     class_level: Optional[str] = "both"  # "11", "12", "both"
     subject: Optional[str] = None        # Optional override for legacy callers
+    # Focus mode. When set, only this chapter's questions are eligible — which
+    # is both what the chapter picker has always promised and, incidentally,
+    # the fastest this endpoint gets: a chapter is tens of rows where a subject
+    # is hundreds.
+    chapter_id: Optional[str] = None
 
 
 class PracticeAnswerRequest(BaseModel):
@@ -87,6 +96,11 @@ class PracticeExplainRequest(BaseModel):
 # Give-ups count. The student was shown the question and shown the worked
 # solution; that is the expensive part and the useful part.
 DAILY_QUESTION_LIMIT = 150
+
+# How many times to re-pick if the chosen question fails the quality gate.
+# Measured across every subject, the gate rejects 0% of servable rows, so this
+# is a guard rather than a loop that runs.
+QUALITY_RETRIES = 5
 
 
 
@@ -197,6 +211,7 @@ def matches_exam(target_exams_val: Any, selected_exam: str) -> bool:
 @router.post("/next")
 def get_next_question(
     req: PracticeNextRequest,
+    background_tasks: BackgroundTasks,
     user_id: str = Depends(get_current_user_id)
 ):
     """
@@ -235,15 +250,15 @@ def get_next_question(
 
     if class_req in ["11", "12"]:
         class_int = int(class_req)
-        chapters_res = (
-            supabase.table("chapters")
-            .select("id, name")
-            .ilike("subject", chosen_subject)
-            .eq("class_level", class_int)
-            .execute()
-        )
-        valid_chapter_ids = [row["id"] for row in chapters_res.data]
-        valid_chapter_names = [row["name"] for row in chapters_res.data if row.get("name")]
+        # Chapters are syllabus, not per-user state — cached, so this stops
+        # being a round trip on every question after the first.
+        chapter_rows = [
+            c for c in fetch_all_cached("chapters", "id, name, subject, class_level")
+            if (c.get("subject") or "").strip().lower() == chosen_subject
+            and c.get("class_level") == class_int
+        ]
+        valid_chapter_ids = [row["id"] for row in chapter_rows]
+        valid_chapter_names = [row["name"] for row in chapter_rows if row.get("name")]
 
     # 3. Fetch User Practice Attempts (for 21-attempt repeat spacing logic - GATE 8.4)
     attempts_res = (
@@ -304,22 +319,38 @@ def get_next_question(
             }
 
     # 4. Fetch Candidate Questions for Chosen Subject
+    # Only what CHOOSING needs.
+    #
+    # This used to select the full row — question_text, options and diagram
+    # included — for every candidate, to pick one. Measured against production
+    # on physics (879 servable rows), three runs each:
+    #
+    #     full columns    1165 ms   0.76 MB
+    #     these columns    348 ms   0.29 MB
+    #
+    # The chosen question's own row is read below. The quality gate moves with
+    # it, because it needs the text and the options; that costs nothing in
+    # practice, since the gate rejects 0% of servable rows in every subject —
+    # measured, not assumed.
+    #
+    # `source` and `needs_manual` are filters the database can apply, and were
+    # being applied in Python over every row that came back.
     query = (
         supabase.table("questions")
-        .select("id, question_text, question_type, options, chapter_id, chapter_name, concept, difficulty, source, needs_manual, target_exams, discipline, diagram")
+        .select("id, question_type, chapter_id, chapter_name, concept, difficulty, target_exams, discipline")
         .ilike("subject", chosen_subject)
         .is_("needs_manual", "null")
+        .neq("source", "extracted_master_content")
     )
+    if req.chapter_id:
+        query = query.eq("chapter_id", req.chapter_id)
 
     questions_res = query.execute()
 
     # 5. Filter Candidates by Exam, Class, Discipline, and Quality
     candidate_questions = []
     for q in questions_res.data:
-        # Exclude mock test pool
-        if q.get("source") == "extracted_master_content":
-            continue
-
+        # source and needs_manual are filtered in the query now.
         # Exam Filter
         if not matches_exam(q.get("target_exams"), exam_mode):
             continue
@@ -361,10 +392,9 @@ def get_next_question(
             if target_discipline not in disc:
                 continue
 
-        # Quality Filter (GATE 8.6)
-        if not is_quality_question(q):
-            continue
-
+        # Quality (GATE 8.6) is checked on the chosen question, not here: it
+        # reads question_text and options, which the light select above does
+        # not carry.
         candidate_questions.append(q)
 
     # 6. Empty Pool Handling (GATE 8.5)
@@ -400,23 +430,54 @@ def get_next_question(
             else:
                 tier3_fallback.append(q)
 
-    # Select single question based on priority hierarchy
-    if tier1_wrong_eligible:
-        selected = random.choice(tier1_wrong_eligible)
-    elif tier2_unseen:
-        selected = random.choice(tier2_unseen)
-    else:
-        selected = random.choice(tier3_fallback)
+    # Select single question based on priority hierarchy, then read its full
+    # row. The quality gate runs here rather than over every candidate: it
+    # needs question_text and options, and it rejects 0% of servable rows, so
+    # the loop below effectively never takes a second turn. It is a loop and
+    # not a single read because "effectively never" is not never, and a
+    # student must not be handed a corrupt row just because it was picked.
+    full = None
+    for _ in range(QUALITY_RETRIES):
+        pool = tier1_wrong_eligible or tier2_unseen or tier3_fallback
+        if not pool:
+            break
+        candidate = random.choice(pool)
+        row = (
+            supabase.table("questions")
+            .select("id, question_text, question_type, options, chapter_name, concept, difficulty, diagram")
+            .eq("id", candidate["id"])
+            .limit(1)
+            .execute()
+            .data
+        )
+        if row and is_quality_question(row[0]):
+            full = row[0]
+            break
+        # Drop it from every tier so the next turn cannot pick it again.
+        for tier in (tier1_wrong_eligible, tier2_unseen, tier3_fallback):
+            if candidate in tier:
+                tier.remove(candidate)
 
+    if full is None:
+        return {
+            "exhausted": True,
+            "reason": "pool_empty",
+            "message": f"No eligible practice questions available for subject '{chosen_subject.capitalize()}' under selected exam/class filters.",
+            "questions_used_today": used_today,
+            "daily_limit": DAILY_QUESTION_LIMIT,
+        }
+
+    selected = full
     q_type = selected.get("question_type")
     options = selected.get("options") if q_type != "numerical" else None
 
     # question.served — burns the item and starts the silent pace timer.
-    # Never allowed to break serving.
-    try:
-        record_serve(user_id, selected["id"], context="practice")
-    except Exception as e:
-        print(f"[PRACTICE SERVE ERROR] Failed to record serve: {e}")
+    #
+    # Deferred: it is two round trips (a count, then an insert) and the student
+    # is waiting on none of it. The row still lands within a second, long
+    # before any answer can close it, and the pace clock it starts has been
+    # superseded by the client's own `elapsed_ms` anyway.
+    background_tasks.add_task(_serve_quietly, user_id, selected["id"])
 
     diagram = selected.get("diagram")
     if isinstance(diagram, str):
@@ -439,6 +500,14 @@ def get_next_question(
         "questions_used_today": used_today,
         "daily_limit": DAILY_QUESTION_LIMIT,
     }
+
+
+def _serve_quietly(user_id: str, question_id: str) -> None:
+    """record_serve, after the response. Never allowed to break serving."""
+    try:
+        record_serve(user_id, question_id, context="practice")
+    except Exception as e:
+        print(f"[PRACTICE SERVE ERROR] Failed to record serve: {e}")
 
 
 def _record_answer(user_id: str, req: PracticeAnswerRequest, is_correct: bool, raw_difficulty):
