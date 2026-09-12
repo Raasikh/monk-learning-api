@@ -1088,6 +1088,13 @@ async def ask_about_doubt_aloud(
     can show what was heard the moment it is known.
     """
     doubt = _load_doubt_for_user(doubt_id, user_id)
+    # Open the TTS socket NOW, not when there is finally something to say.
+    # Measured, the handshake is 1.76s of the 2.9s before the first sound —
+    # and it was being paid after the answer already existed, with the student
+    # watching a finished board in silence. Transcription and the model take
+    # longer than that between them, so by the time a sentence exists the
+    # socket is already waiting.
+    followup_voice.prewarm()
     raw = await audio.read()
     try:
         question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)
