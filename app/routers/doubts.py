@@ -84,6 +84,60 @@ def _insert_doubt_rows(rows):
                          culprit, _OPTIONAL_COLUMNS[culprit])
 
 
+def _known_columns(columns: str) -> str:
+    """`columns` without any optional column known to be missing.
+
+    The insert path has tolerated a not-yet-migrated column since `figures`
+    arrived, for the stated reason that code and schema deploy separately. The
+    READ path did not, and adding `question_image` to DETAIL_COLUMNS turned
+    that asymmetry into an outage: every select naming it failed, and
+    `_load_doubt_for_user` turns a failed select into a 503 — so follow-ups
+    stopped answering on a deploy that had nothing to do with them.
+
+    A column is only ever dropped here after a query has actually failed on it,
+    so a properly migrated database is unaffected.
+    """
+    if not _MISSING_COLUMNS:
+        return columns
+    keep = [c for c in (part.strip() for part in columns.split(","))
+            if c not in _MISSING_COLUMNS]
+    return ", ".join(keep)
+
+
+def _select_doubts(columns: str):
+    """`table("doubts").select(...)`, minus optional columns that do not exist.
+
+    Returns the builder, so callers keep chaining .eq/.order/.execute as
+    before. The retry itself lives in `_execute_doubts`, because only the
+    caller knows what filters to re-apply.
+    """
+    return supabase.table("doubts").select(_known_columns(columns))
+
+
+def _execute_doubts(build, columns: str):
+    """Runs a doubts query, learning about a missing optional column once.
+
+    `build` takes the select-builder and returns the finished query, so the
+    whole thing can be rebuilt after a column is dropped rather than mutated.
+    """
+    while True:
+        try:
+            return build(_select_doubts(columns)).execute()
+        except Exception as err:
+            culprit = next(
+                (col for col in _OPTIONAL_COLUMNS
+                 if col not in _MISSING_COLUMNS and col in str(err)),
+                None,
+            )
+            if culprit is None:
+                raise
+            _MISSING_COLUMNS.add(culprit)
+            logger.error(
+                "doubts.%s is missing — %s. Reading without it; anything it "
+                "carried falls back to what was shown before.",
+                culprit, _OPTIONAL_COLUMNS[culprit])
+
+
 def _figure_urls(keys):
     """Signed URLs for a question's own figures, in the order they were kept.
 
@@ -813,7 +867,7 @@ def list_doubts(
     user_id: str = Depends(get_current_user_id),
 ):
     """GET /doubts — the snap history, newest first."""
-    query = supabase.table("doubts").select(LIST_COLUMNS).eq("user_id", user_id)
+    query = _select_doubts(LIST_COLUMNS).eq("user_id", user_id)
 
     # Accept whatever spelling the caller sends -- "Math", "Maths", "mathematics"
     # -- and match on the one the column stores.
@@ -891,12 +945,9 @@ def list_doubts(
 def get_doubt(doubt_id: str, user_id: str = Depends(get_current_user_id)):
     """GET /doubts/{id} — the question, a signed photo URL, and the solution."""
     try:
-        res = (
-            supabase.table("doubts")
-            .select(DETAIL_COLUMNS)
-            .eq("id", doubt_id)
-            .eq("user_id", user_id)
-            .execute()
+        res = _execute_doubts(
+            lambda sel: sel.eq("id", doubt_id).eq("user_id", user_id),
+            DETAIL_COLUMNS,
         )
     except Exception as err:
         logger.error("Could not read doubts (is migration 0012 applied?): %s", err)
@@ -945,12 +996,9 @@ class FollowUpRequest(BaseModel):
 def _load_doubt_for_user(doubt_id: str, user_id: str) -> Dict[str, Any]:
     """The doubt, or the right HTTP error. Scoped to its owner."""
     try:
-        res = (
-            supabase.table("doubts")
-            .select(DETAIL_COLUMNS)
-            .eq("id", doubt_id)
-            .eq("user_id", user_id)
-            .execute()
+        res = _execute_doubts(
+            lambda sel: sel.eq("id", doubt_id).eq("user_id", user_id),
+            DETAIL_COLUMNS,
         )
     except Exception as err:
         logger.error("Could not read doubt %s for follow-up: %s", doubt_id[:8], err)
