@@ -56,33 +56,24 @@ def wav_from_pcm(pcm: bytes) -> bytes:
 
 # How much audio to hold before handing a piece over, in bytes of PCM.
 #
-# Rumik STREAMS its output — the binary frames below arrive while it is still
-# speaking the sentence — so waiting for its "done" was a choice, not a
-# constraint, and it cost the whole synthesis before a single sound. Measured
-# at ~4s for the first sentence, which is the pause the student heard after
-# the board had already filled.
+# Rumik STREAMS its output — the binary frames arrive while it is still
+# speaking — so waiting for its "done" was a choice, not a constraint, and it
+# cost the whole synthesis before a single sound.
 #
-# 2.5s of audio at 24kHz/16-bit/mono.
+# 0.8s. This was 2.5s while the phone played these through the classroom's
+# AudioPlaybackQueue, which nudges a playhead that has not moved and shares one
+# player across clips — on a short clip that means replaying it, and starting
+# the next while it still sounds. The follow-up has its own player now
+# (lib/followup-audio.ts) which advances on the clip's OWN known length and
+# never nudges, so pieces can be small again.
 #
-# NOT as small as it could be, and that is the point. The phone plays these
-# through AudioPlaybackQueue, whose supervisor ticks every 400ms and, on a tick
-# where the playhead has not moved, re-issues `play()` before eventually
-# skipping — machinery written for the sentence-length clips a live lesson
-# sends, "~5-7s of audio" by its own comment.
-#
-# Handed 0.7s pieces instead, "the playhead has not moved" means "this clip
-# already finished": it replayed fragments and raced its own advance, and the
-# result was a voice talking over itself. Shorter pieces need a player built
-# for them, not a smaller number here.
-#
-# At 2.5s the first sound still arrives in about 2.7s against 9.8s for the
-# whole file, and every clip is comfortably longer than the supervisor's
-# window.
-FLUSH_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 2.5)
+# Not smaller than this: each piece is a file written and opened on the phone,
+# and below roughly half a second the per-clip cost starts to matter more than
+# the latency it saves.
+FLUSH_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 0.8)
 # A flush is held back until this much would still be left behind it, so the
-# final clip is never a fragment. 1.5s clears the supervisor's 400ms tick and
-# its 0.15s end-slack with room to spare.
-MIN_TAIL_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 1.5)
+# LAST clip of an answer is never a sliver.
+MIN_TAIL_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 0.4)
 
 
 async def _open_socket():
