@@ -107,10 +107,44 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     await websocket.accept()
 
     # 1. Authenticate & fetch session
+    #
+    # Shape first, so an id that is not a UUID is refused exactly like one that
+    # does not exist. Postgres rejects a malformed id with 22P02 "invalid input
+    # syntax for type uuid", raised by the query BELOW — before the
+    # `if not res_s.data` that would have closed the socket cleanly — so it
+    # escaped as an unhandled ASGI exception and printed a full traceback per
+    # attempt. One bad id reconnecting fills Railway's 500-line buffer and
+    # evicts everything else, which is how two unrelated Snap failures ended up
+    # with no logs left to read.
+    try:
+        uuid.UUID(str(session_id))
+    except (ValueError, AttributeError, TypeError):
+        logger.info("Rejecting a malformed session id %r on /live",
+                    str(session_id)[:64])
+        await websocket.send_json({"type": "error", "message": "Session not found."})
+        await websocket.close(code=4004)
+        return
+
     # select('*') rather than a column list: tutor_voice only exists once
     # migrations/0011 is applied, and naming a missing column here 42703s the
     # whole connection (the same failure documented further down this file).
-    res_s = supabase.table('drona_sessions').select('*').eq('id', session_id).execute()
+    #
+    # Wrapped for the same reason as the shape check: however the read fails,
+    # the socket must be CLOSED rather than left to an unhandled exception. The
+    # HTTP/2 ConnectionTerminated from Supabase that was also filling this log
+    # is the other way in.
+    #
+    # 1011, not 4004: this failure is ours, and a client that treats 4004 as
+    # permanent must stay free to retry a server fault.
+    try:
+        res_s = supabase.table('drona_sessions').select('*').eq('id', session_id).execute()
+    except Exception as err:
+        logger.error("Could not read session %s for /live: %s",
+                     str(session_id)[:8], err)
+        await websocket.send_json(
+            {"type": "error", "message": "That class is not available right now."})
+        await websocket.close(code=1011)
+        return
     if not res_s.data:
         await websocket.send_json({"type": "error", "message": f"Session {session_id} not found."})
         await websocket.close(code=4004)
