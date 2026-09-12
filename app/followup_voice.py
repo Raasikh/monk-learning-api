@@ -16,7 +16,7 @@ import logging
 import os
 import struct
 import time
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 logger = logging.getLogger("snap.followup_voice")
 
@@ -118,8 +118,9 @@ _warm: Optional[Tuple[Any, float]] = None
 _warming: Optional[asyncio.Task] = None
 
 
-def prewarm(tutor_voice: Optional[str] = None) -> None:
-    """Open a socket in the background, and cache this voice's filler.
+def prewarm(tutor_voice: Optional[str] = None,
+            language: Optional[str] = None) -> None:
+    """Open a socket in the background, and cache this voice's filler lines.
 
     Fire and forget: a socket that fails to open costs nothing, because
     `_take_socket` falls back to opening one the usual way.
@@ -128,7 +129,7 @@ def prewarm(tutor_voice: Optional[str] = None) -> None:
     # The filler is per-voice and synthesised once for the life of the
     # process: the first follow-up pays for it, every later one opens
     # instantly.
-    _warm_filler(preset_for(tutor_voice))
+    _warm_filler(tutor_voice, language)
     if _warm is not None or (_warming is not None and not _warming.done()):
         return
 
@@ -367,37 +368,120 @@ def _speakable_chunks(text: str) -> list:
 # Deliberately content-free. A filler that commits to anything ("So the answer
 # is—") is a claim made before the model has written one, and it would have to
 # be right by luck.
-FILLER_LINES = ("Right, let's look at that.", "Okay, so —")
-_fillers: Dict[str, bytes] = {}
-_filler_task: Optional[asyncio.Task] = None
+# Short, already-spoken lines to cover Rumik's start-up.
+#
+# Measured, synthesis time barely tracks length: 25 characters took 1.94s, 32
+# took 4.15s and 54 took 2.36s. What it tracks is Rumik's own first-byte time,
+# which ranged 0.61s to 2.30s across identical calls — so no amount of
+# shortening the first sentence makes the first sound reliably quick. Cached
+# audio has no synthesis time at all, so it sidesteps that rather than
+# fighting it.
+#
+# Several per voice and language, and ROTATED, because one line played before
+# every single follow-up stops being speech and becomes a noise the app makes.
+# The classroom learned this first — FILLER_PHRASES is a list per
+# (gender, language) for the same reason — and an earlier version of this
+# declared two lines and then only ever synthesised the first.
+#
+# Deliberately content-free. A filler that commits to anything ("So the answer
+# is—") is a claim made before the model has written one, and would be right
+# only by luck.
+FILLER_LINES = {
+    ("female", "english"): [
+        "Right, let's look at that.",
+        "Okay, one moment.",
+        "Let me see.",
+        "Sure — let's go through it.",
+    ],
+    ("male", "english"): [
+        "Right, let's look at that.",
+        "Okay, one moment.",
+        "Let me see.",
+        "Sure — let's go through it.",
+    ],
+    ("female", "hinglish"): [
+        "Haan, dekhte hain.",
+        "Ek second.",
+        "Theek hai, chalo dekhte hain.",
+        "Ruko, main dekh rahi hoon.",
+    ],
+    ("male", "hinglish"): [
+        "Haan, dekhte hain.",
+        "Ek second.",
+        "Theek hai, chalo dekhte hain.",
+        "Ruko, main dekh raha hoon.",
+    ],
+}
+DEFAULT_LANGUAGE = "hinglish"
+
+# In memory, for the life of the process — never written to disk. They are a
+# few seconds of audio each, they cost one synthesis apiece to rebuild, and a
+# deploy is exactly when a stale voice or a changed line should be dropped.
+_fillers: Dict[str, List[bytes]] = {}
+_filler_tasks: Dict[str, asyncio.Task] = {}
+# Which line each voice said last, so the next one is the NEXT one. Positional
+# rather than random: random repeats, and the same line twice running is
+# precisely what makes it obvious.
+_filler_turn: Dict[str, int] = {}
 
 
-def _warm_filler(preset: str) -> None:
-    """Synthesise this voice's filler once, in the background."""
-    global _filler_task
-    if preset in _fillers:
+def _filler_key(tutor_voice: Optional[str], language: Optional[str]) -> str:
+    gender = (tutor_voice or DEFAULT_VOICE).lower()
+    if gender not in ("male", "female"):
+        gender = DEFAULT_VOICE
+    lang = (language or DEFAULT_LANGUAGE).lower()
+    if lang not in ("english", "hinglish"):
+        lang = DEFAULT_LANGUAGE
+    return f"{gender}:{lang}"
+
+
+def _warm_filler(tutor_voice: Optional[str], language: Optional[str]) -> None:
+    """Synthesise this voice and language's lines once, in the background."""
+    key = _filler_key(tutor_voice, language)
+    if key in _fillers:
         return
-    if _filler_task is not None and not _filler_task.done():
+    running = _filler_tasks.get(key)
+    if running is not None and not running.done():
         return
+    gender, lang = key.split(":")
+    lines = FILLER_LINES.get((gender, lang)) or []
+    preset = preset_for(gender)
 
     async def _fill():
-        try:
-            pcm = await _synthesize(FILLER_LINES[0], preset)
+        made: List[bytes] = []
+        for line in lines:
+            try:
+                pcm = await _synthesize(line, preset)
+            except Exception as err:
+                logger.info("[FOLLOWUP TTS] no filler for %s (%s) — answers "
+                            "simply start when they start", key, err)
+                break
             if pcm:
-                _fillers[preset] = pcm
-                logger.info("[FOLLOWUP TTS] filler cached for %s (%.1fs)",
-                            preset, len(pcm) / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS))
-        except Exception as err:
-            logger.info("[FOLLOWUP TTS] no filler for %s (%s) — answers simply "
-                        "start when they start", preset, err)
+                made.append(pcm)
+        if made:
+            _fillers[key] = made
+            logger.info("[FOLLOWUP TTS] cached %d filler line(s) for %s",
+                        len(made), key)
 
     try:
-        _filler_task = asyncio.get_event_loop().create_task(_fill())
+        _filler_tasks[key] = asyncio.get_event_loop().create_task(_fill())
     except RuntimeError:
         pass
 
 
-async def speak_chunks(text: str, tutor_voice: Optional[str] = None):
+def _next_filler(tutor_voice: Optional[str], language: Optional[str]) -> Optional[bytes]:
+    """The next line for this voice, or None if they are not cached yet."""
+    key = _filler_key(tutor_voice, language)
+    lines = _fillers.get(key)
+    if not lines:
+        return None
+    turn = _filler_turn.get(key, -1) + 1
+    _filler_turn[key] = turn
+    return lines[turn % len(lines)]
+
+
+async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
+                       language: Optional[str] = None):
     """Yields (index, total, wav) — ONE WHOLE SENTENCE per clip, as each is ready.
 
     A sentence, not a slice. The audio was previously cut every 0.8s by byte
@@ -425,9 +509,9 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None):
     # The cached line first, if there is one. Streaming only: the whole-file
     # path has nothing to cover, since by the time it returns the answer is
     # already complete.
-    filler = _fillers.get(preset)
+    filler = _next_filler(tutor_voice, language)
     if filler:
-        logger.info("[FOLLOWUP TTS] %s opened with the cached filler at t+%dms",
+        logger.info("[FOLLOWUP TTS] %s opened with a cached filler at t+%dms",
                     preset, int((time.time() - started) * 1000))
         yield 0, len(sentences), wav_from_pcm(filler)
 

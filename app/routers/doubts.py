@@ -1094,7 +1094,8 @@ async def ask_about_doubt_aloud(
     # watching a finished board in silence. Transcription and the model take
     # longer than that between them, so by the time a sentence exists the
     # socket is already waiting.
-    followup_voice.prewarm(_tutor_voice_for(user_id))
+    followup_voice.prewarm(_tutor_voice_for(user_id),
+                            _tutor_language_for(user_id))
     raw = await audio.read()
     try:
         question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)
@@ -1119,6 +1120,30 @@ async def ask_about_doubt_aloud(
 class SpeakRequest(BaseModel):
     """The `spoken` line from an answer the student has just been given."""
     text: str
+
+
+def _tutor_language_for(user_id: str) -> str:
+    """The language this student's classroom is running in.
+
+    Same source and same reasoning as `_tutor_voice_for`: read from their last
+    session rather than the request, so a follow-up opens in the language they
+    are being taught in. Only the cached opener uses it — the answer itself is
+    written by the model in whatever the question was asked in.
+    """
+    try:
+        res = (
+            supabase.table("drona_sessions")
+            .select("language")
+            .eq("user_id", user_id)
+            .order("created_at", desc=True)
+            .limit(1)
+            .execute()
+        )
+        if res.data and res.data[0].get("language"):
+            return res.data[0]["language"]
+    except Exception as err:
+        logger.warning("Could not read language for %s: %s", user_id[:8], err)
+    return followup_voice.DEFAULT_LANGUAGE
 
 
 def _tutor_voice_for(user_id: str) -> str:
@@ -1204,7 +1229,8 @@ async def speak_followup_stream(doubt_id: str, body: SpeakRequest,
         started = time.time()
         sent = 0
         try:
-            async for idx, total, wav in followup_voice.speak_chunks(said, voice):
+            async for idx, total, wav in followup_voice.speak_chunks(
+                    said, voice, _tutor_language_for(user_id)):
                 sent += 1
                 yield event("audio", {
                     "n": idx, "total": total,
