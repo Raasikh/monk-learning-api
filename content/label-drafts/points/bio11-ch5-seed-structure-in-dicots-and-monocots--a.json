@@ -1,0 +1,10 @@
+{"groups":[{"id":"coat","label":"Seed coat"},{"id":"embryo","label":"Embryo"}],
+ "points":[
+ {"term":"seed coat","x":0.255,"y":0.280,"confidence":0.90,"group":"coat"},
+ {"term":"hilum","x":0.163,"y":0.505,"confidence":0.90,"group":"coat"},
+ {"term":"micropyle","x":0.178,"y":0.415,"confidence":0.70,"group":"coat"},
+ {"term":"cotyledon","x":0.545,"y":0.450,"confidence":0.95,"group":"embryo"},
+ {"term":"plumule","x":0.665,"y":0.435,"confidence":0.80,"group":"embryo"},
+ {"term":"radicle","x":0.678,"y":0.655,"confidence":0.85,"group":"embryo"},
+ {"term":"embryonal axis","x":0.672,"y":0.545,"confidence":0.70,"group":"embryo"}
+]}

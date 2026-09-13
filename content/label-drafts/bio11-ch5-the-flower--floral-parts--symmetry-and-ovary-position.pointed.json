@@ -1,0 +1,288 @@
+{
+  "asset_slug": "bio11-ch5-the-flower--floral-parts--symmetry-and-ovary-position",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "outer",
+      "label": {
+        "english": "Stalk and outer whorls",
+        "hinglish": "Stalk and outer whorls"
+      }
+    },
+    {
+      "id": "stamen",
+      "label": {
+        "english": "Stamen",
+        "hinglish": "Stamen"
+      }
+    },
+    {
+      "id": "carpel",
+      "label": {
+        "english": "Carpel",
+        "hinglish": "Carpel"
+      }
+    },
+    {
+      "id": "position",
+      "label": {
+        "english": "Ovary position",
+        "hinglish": "Ovary position"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "pedicel",
+      "text": {
+        "en": "pedicel",
+        "hi": "pedicel"
+      },
+      "anchor": [
+        0.285,
+        0.8
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "thalamus",
+      "text": {
+        "en": "thalamus",
+        "hi": "thalamus"
+      },
+      "anchor": [
+        0.283,
+        0.6
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "sepal",
+      "text": {
+        "en": "sepal",
+        "hi": "sepal"
+      },
+      "anchor": [
+        0.363,
+        0.58
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "petal",
+      "text": {
+        "en": "petal",
+        "hi": "petal"
+      },
+      "anchor": [
+        0.155,
+        0.33
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "stamen",
+      "text": {
+        "en": "stamen",
+        "hi": "stamen"
+      },
+      "anchor": [
+        0.215,
+        0.4
+      ],
+      "side": "auto",
+      "group": "stamen",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "filament",
+      "text": {
+        "en": "filament",
+        "hi": "filament"
+      },
+      "anchor": [
+        0.345,
+        0.45
+      ],
+      "side": "auto",
+      "group": "stamen",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "anther",
+      "text": {
+        "en": "anther",
+        "hi": "anther"
+      },
+      "anchor": [
+        0.375,
+        0.33
+      ],
+      "side": "auto",
+      "group": "stamen",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "carpel",
+      "text": {
+        "en": "carpel",
+        "hi": "carpel"
+      },
+      "anchor": [
+        0.298,
+        0.47
+      ],
+      "side": "auto",
+      "group": "carpel",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "stigma",
+      "text": {
+        "en": "stigma",
+        "hi": "stigma"
+      },
+      "anchor": [
+        0.3,
+        0.175
+      ],
+      "side": "auto",
+      "group": "carpel",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "style",
+      "text": {
+        "en": "style",
+        "hi": "style"
+      },
+      "anchor": [
+        0.298,
+        0.32
+      ],
+      "side": "auto",
+      "group": "carpel",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": "ovary"
+      },
+      "anchor": [
+        0.298,
+        0.53
+      ],
+      "side": "auto",
+      "group": "carpel",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "ovule",
+      "text": {
+        "en": "ovule",
+        "hi": "ovule"
+      },
+      "anchor": [
+        0.315,
+        0.545
+      ],
+      "side": "auto",
+      "group": "carpel",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "hypogynous",
+      "text": {
+        "en": "hypogynous",
+        "hi": "hypogynous"
+      },
+      "anchor": [
+        0.775,
+        0.2
+      ],
+      "side": "auto",
+      "group": "position",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "perigynous",
+      "text": {
+        "en": "perigynous",
+        "hi": "perigynous"
+      },
+      "anchor": [
+        0.775,
+        0.47
+      ],
+      "side": "auto",
+      "group": "position",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "epigynous",
+      "text": {
+        "en": "epigynous",
+        "hi": "epigynous"
+      },
+      "anchor": [
+        0.775,
+        0.72
+      ],
+      "side": "auto",
+      "group": "position",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-the-flower--floral-parts--symmetry-and-ovary-position.json",
+    "repointed": 15,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

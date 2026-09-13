@@ -1,0 +1,15 @@
+{"groups":[{"id":"midbrain","label":"Midbrain"},
+           {"id":"hindbrain","label":"Pons, medulla and cord"},
+           {"id":"cerebellum","label":"Cerebellum"}],
+ "points":[
+ {"term":"midbrain","x":0.435,"y":0.265,"confidence":0.70,"group":"midbrain"},
+ {"term":"corpora quadrigemina","x":0.503,"y":0.293,"confidence":0.75,"group":"midbrain"},
+ {"term":"cerebral peduncle","x":0.412,"y":0.345,"confidence":0.65,"group":"midbrain"},
+ {"term":"pons","x":0.432,"y":0.492,"confidence":0.85,"group":"hindbrain"},
+ {"term":"medulla oblongata","x":0.485,"y":0.660,"confidence":0.85,"group":"hindbrain"},
+ {"term":"brain stem","x":0.508,"y":0.575,"confidence":0.65,"group":"hindbrain"},
+ {"term":"fourth ventricle","x":0.545,"y":0.500,"confidence":0.70,"group":"hindbrain"},
+ {"term":"spinal cord","x":0.530,"y":0.830,"confidence":0.85,"group":"hindbrain"},
+ {"term":"cerebellum","x":0.655,"y":0.455,"confidence":0.90,"group":"cerebellum"},
+ {"term":"arbor vitae","x":0.615,"y":0.375,"confidence":0.85,"group":"cerebellum"}
+]}

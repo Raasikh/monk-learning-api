@@ -1,0 +1,7 @@
+{"groups":[{"id":"thallus","label":"Thallus"},{"id":"cells","label":"Cells in section"}],
+ "points":[
+ {"term":"holdfast","x":0.275,"y":0.855,"confidence":0.85,"group":"thallus"},
+ {"term":"stipe","x":0.280,"y":0.745,"confidence":0.65,"group":"thallus"},
+ {"term":"cell wall","x":0.765,"y":0.135,"confidence":0.80,"group":"cells"},
+ {"term":"nucleus","x":0.715,"y":0.135,"confidence":0.85,"group":"cells"}
+]}

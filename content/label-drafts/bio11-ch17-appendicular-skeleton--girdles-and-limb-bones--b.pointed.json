@@ -1,0 +1,235 @@
+{
+  "asset_slug": "bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "pelvis",
+      "label": {
+        "english": "Pelvic girdle",
+        "hinglish": "Pelvic girdle"
+      }
+    },
+    {
+      "id": "leg",
+      "label": {
+        "english": "Thigh and knee",
+        "hinglish": "Thigh and knee"
+      }
+    },
+    {
+      "id": "foot",
+      "label": {
+        "english": "Lower leg and foot",
+        "hinglish": "Lower leg and foot"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "phalanx",
+      "text": {
+        "en": "phalanx",
+        "hi": "phalanx"
+      },
+      "anchor": [
+        0.548,
+        0.9
+      ],
+      "side": "auto",
+      "group": "foot",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "ilium",
+      "text": {
+        "en": "ilium",
+        "hi": "ilium"
+      },
+      "anchor": [
+        0.435,
+        0.135
+      ],
+      "side": "auto",
+      "group": "pelvis",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ischium",
+      "text": {
+        "en": "ischium",
+        "hi": "ischium"
+      },
+      "anchor": [
+        0.448,
+        0.28
+      ],
+      "side": "auto",
+      "group": "pelvis",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "pubis",
+      "text": {
+        "en": "pubis",
+        "hi": "pubis"
+      },
+      "anchor": [
+        0.523,
+        0.283
+      ],
+      "side": "auto",
+      "group": "pelvis",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "acetabulum",
+      "text": {
+        "en": "acetabulum",
+        "hi": "acetabulum"
+      },
+      "anchor": [
+        0.558,
+        0.215
+      ],
+      "side": "auto",
+      "group": "pelvis",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "femur",
+      "text": {
+        "en": "femur",
+        "hi": "femur"
+      },
+      "anchor": [
+        0.543,
+        0.375
+      ],
+      "side": "auto",
+      "group": "leg",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "patella",
+      "text": {
+        "en": "patella",
+        "hi": "patella"
+      },
+      "anchor": [
+        0.533,
+        0.515
+      ],
+      "side": "auto",
+      "group": "leg",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "tibia",
+      "text": {
+        "en": "tibia",
+        "hi": "tibia"
+      },
+      "anchor": [
+        0.538,
+        0.67
+      ],
+      "side": "auto",
+      "group": "foot",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "fibula",
+      "text": {
+        "en": "fibula",
+        "hi": "fibula"
+      },
+      "anchor": [
+        0.521,
+        0.67
+      ],
+      "side": "auto",
+      "group": "foot",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "tarsal",
+      "text": {
+        "en": "tarsal",
+        "hi": "tarsal"
+      },
+      "anchor": [
+        0.525,
+        0.805
+      ],
+      "side": "auto",
+      "group": "foot",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "metatarsal",
+      "text": {
+        "en": "metatarsal",
+        "hi": "metatarsal"
+      },
+      "anchor": [
+        0.537,
+        0.855
+      ],
+      "side": "auto",
+      "group": "foot",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "clavicle",
+    "scapula",
+    "glenoid cavity",
+    "humerus",
+    "radius",
+    "ulna",
+    "carpal",
+    "metacarpal"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--b.json",
+    "repointed": 11,
+    "omitted_not_visible": [
+      "clavicle",
+      "scapula",
+      "glenoid cavity",
+      "humerus",
+      "radius",
+      "ulna",
+      "carpal",
+      "metacarpal"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

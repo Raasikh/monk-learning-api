@@ -1,0 +1,195 @@
+{
+  "asset_slug": "bio11-ch5-seed-structure-in-dicots-and-monocots--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "coats",
+      "label": {
+        "english": "Coats and endosperm",
+        "hinglish": "Coats and endosperm"
+      }
+    },
+    {
+      "id": "shoot",
+      "label": {
+        "english": "Shoot end",
+        "hinglish": "Shoot end"
+      }
+    },
+    {
+      "id": "root",
+      "label": {
+        "english": "Root end",
+        "hinglish": "Root end"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "plumule",
+      "text": {
+        "en": "plumule",
+        "hi": "plumule"
+      },
+      "anchor": [
+        0.448,
+        0.475
+      ],
+      "side": "auto",
+      "group": "shoot",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "radicle",
+      "text": {
+        "en": "radicle",
+        "hi": "radicle"
+      },
+      "anchor": [
+        0.468,
+        0.7
+      ],
+      "side": "auto",
+      "group": "root",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "embryonal-axis",
+      "text": {
+        "en": "embryonal axis",
+        "hi": "embryonal axis"
+      },
+      "anchor": [
+        0.455,
+        0.63
+      ],
+      "side": "auto",
+      "group": "root",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "pericarp",
+      "text": {
+        "en": "pericarp",
+        "hi": "pericarp"
+      },
+      "anchor": [
+        0.375,
+        0.3
+      ],
+      "side": "auto",
+      "group": "coats",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "aleurone-layer",
+      "text": {
+        "en": "aleurone layer",
+        "hi": "aleurone layer"
+      },
+      "anchor": [
+        0.415,
+        0.215
+      ],
+      "side": "auto",
+      "group": "coats",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "endosperm",
+      "text": {
+        "en": "endosperm",
+        "hi": "endosperm"
+      },
+      "anchor": [
+        0.545,
+        0.3
+      ],
+      "side": "auto",
+      "group": "coats",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "scutellum",
+      "text": {
+        "en": "scutellum",
+        "hi": "scutellum"
+      },
+      "anchor": [
+        0.505,
+        0.58
+      ],
+      "side": "auto",
+      "group": "shoot",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "coleoptile",
+      "text": {
+        "en": "coleoptile",
+        "hi": "coleoptile"
+      },
+      "anchor": [
+        0.435,
+        0.415
+      ],
+      "side": "auto",
+      "group": "shoot",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "coleorhiza",
+      "text": {
+        "en": "coleorhiza",
+        "hi": "coleorhiza"
+      },
+      "anchor": [
+        0.455,
+        0.735
+      ],
+      "side": "auto",
+      "group": "root",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "seed coat",
+    "hilum",
+    "micropyle",
+    "cotyledon"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-seed-structure-in-dicots-and-monocots--b.json",
+    "repointed": 9,
+    "omitted_not_visible": [
+      "seed coat",
+      "hilum",
+      "micropyle",
+      "cotyledon"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

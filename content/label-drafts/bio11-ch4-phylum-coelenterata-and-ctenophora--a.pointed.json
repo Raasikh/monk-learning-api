@@ -1,0 +1,138 @@
+{
+  "asset_slug": "bio11-ch4-phylum-coelenterata-and-ctenophora--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "oral",
+      "label": {
+        "english": "Oral end",
+        "hinglish": "Oral end"
+      }
+    },
+    {
+      "id": "body",
+      "label": {
+        "english": "Body and bud",
+        "hinglish": "Body and bud"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "tentacle",
+      "text": {
+        "en": "tentacle",
+        "hi": "tentacle"
+      },
+      "anchor": [
+        0.375,
+        0.185
+      ],
+      "side": "auto",
+      "group": "oral",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "hypostome",
+      "text": {
+        "en": "hypostome",
+        "hi": "hypostome"
+      },
+      "anchor": [
+        0.497,
+        0.295
+      ],
+      "side": "auto",
+      "group": "oral",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "mouth",
+      "text": {
+        "en": "mouth",
+        "hi": "mouth"
+      },
+      "anchor": [
+        0.497,
+        0.268
+      ],
+      "side": "auto",
+      "group": "oral",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "basal-disc",
+      "text": {
+        "en": "basal disc",
+        "hi": "basal disc"
+      },
+      "anchor": [
+        0.483,
+        0.865
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "bud",
+      "text": {
+        "en": "bud",
+        "hi": "bud"
+      },
+      "anchor": [
+        0.555,
+        0.62
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "gastrovascular-cavity",
+      "text": {
+        "en": "gastrovascular cavity",
+        "hi": "gastrovascular cavity"
+      },
+      "anchor": [
+        0.497,
+        0.5
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "cnidoblast",
+    "umbrella",
+    "comb plate"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-coelenterata-and-ctenophora--a.json",
+    "repointed": 6,
+    "omitted_not_visible": [
+      "cnidoblast",
+      "umbrella",
+      "comb plate"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,11 @@
+{"groups":[{"id":"elements","label":"Xylem elements"},{"id":"wall","label":"Wall features"}],
+ "points":[
+ {"term":"tracheid","x":0.238,"y":0.500,"confidence":0.90,"group":"elements"},
+ {"term":"vessel","x":0.405,"y":0.500,"confidence":0.90,"group":"elements"},
+ {"term":"xylem fibre","x":0.583,"y":0.500,"confidence":0.90,"group":"elements"},
+ {"term":"xylem parenchyma","x":0.755,"y":0.500,"confidence":0.90,"group":"elements"},
+ {"term":"pit","x":0.222,"y":0.280,"confidence":0.85,"group":"wall"},
+ {"term":"perforation plate","x":0.405,"y":0.355,"confidence":0.90,"group":"wall"},
+ {"term":"lignified wall","x":0.455,"y":0.620,"confidence":0.75,"group":"wall"},
+ {"term":"tapering end","x":0.583,"y":0.175,"confidence":0.85,"group":"wall"}
+]}

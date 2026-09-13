@@ -1,0 +1,91 @@
+{
+  "asset_slug": "bio11-ch4-phylum-coelenterata-and-ctenophora--d",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "tentacle",
+      "text": {
+        "en": "tentacle",
+        "hi": "tentacle"
+      },
+      "anchor": [
+        0.325,
+        0.5
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "mouth",
+      "text": {
+        "en": "mouth",
+        "hi": "mouth"
+      },
+      "anchor": [
+        0.49,
+        0.512
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "gastrovascular-cavity",
+      "text": {
+        "en": "gastrovascular cavity",
+        "hi": "gastrovascular cavity"
+      },
+      "anchor": [
+        0.605,
+        0.36
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "comb-plate",
+      "text": {
+        "en": "comb plate",
+        "hi": "comb plate"
+      },
+      "anchor": [
+        0.625,
+        0.155
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "hypostome",
+    "basal disc",
+    "bud",
+    "cnidoblast",
+    "umbrella"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-coelenterata-and-ctenophora--d.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "hypostome",
+      "basal disc",
+      "bud",
+      "cnidoblast",
+      "umbrella"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

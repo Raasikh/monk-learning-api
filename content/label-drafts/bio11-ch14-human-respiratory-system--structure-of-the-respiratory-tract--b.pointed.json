@@ -1,0 +1,90 @@
+{
+  "asset_slug": "bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "bronchiole",
+      "text": {
+        "en": "bronchiole",
+        "hi": "bronchiole"
+      },
+      "anchor": [
+        0.295,
+        0.215
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "alveolus",
+      "text": {
+        "en": "alveolus",
+        "hi": "alveolus"
+      },
+      "anchor": [
+        0.495,
+        0.415
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "capillary",
+      "text": {
+        "en": "capillary",
+        "hi": "capillary"
+      },
+      "anchor": [
+        0.455,
+        0.715
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "nostril",
+    "nasal cavity",
+    "pharynx",
+    "larynx",
+    "epiglottis",
+    "trachea",
+    "bronchus",
+    "lung",
+    "pleura",
+    "pleural fluid",
+    "diaphragm",
+    "rib"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--b.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "nostril",
+      "nasal cavity",
+      "pharynx",
+      "larynx",
+      "epiglottis",
+      "trachea",
+      "bronchus",
+      "lung",
+      "pleura",
+      "pleural fluid",
+      "diaphragm",
+      "rib"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

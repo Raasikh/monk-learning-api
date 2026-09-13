@@ -1,0 +1,104 @@
+{
+  "asset_slug": "bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "hypha",
+      "text": {
+        "en": "hypha",
+        "hi": "hypha"
+      },
+      "anchor": [
+        0.095,
+        0.555
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "sporangium",
+      "text": {
+        "en": "sporangium",
+        "hi": "sporangium"
+      },
+      "anchor": [
+        0.905,
+        0.255
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "spore",
+      "text": {
+        "en": "spore",
+        "hi": "spore"
+      },
+      "anchor": [
+        0.852,
+        0.325
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "sporangiophore",
+      "text": {
+        "en": "sporangiophore",
+        "hi": "sporangiophore"
+      },
+      "anchor": [
+        0.888,
+        0.435
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "rhizoid",
+      "text": {
+        "en": "rhizoid",
+        "hi": "rhizoid"
+      },
+      "anchor": [
+        0.86,
+        0.775
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "mycelium",
+    "septum",
+    "coenocytic hypha",
+    "stolon"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--c.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "mycelium",
+      "septum",
+      "coenocytic hypha",
+      "stolon"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

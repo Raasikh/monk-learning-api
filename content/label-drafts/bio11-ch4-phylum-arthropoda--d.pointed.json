@@ -1,0 +1,152 @@
+{
+  "asset_slug": "bio11-ch4-phylum-arthropoda--d",
+  "image_w": 1376,
+  "image_h": 860,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "head",
+      "label": {
+        "english": "Head",
+        "hinglish": "Head"
+      }
+    },
+    {
+      "id": "body",
+      "label": {
+        "english": "Body and appendages",
+        "hinglish": "Body and appendages"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": "head"
+      },
+      "anchor": [
+        0.325,
+        0.335
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "thorax",
+      "text": {
+        "en": "thorax",
+        "hi": "thorax"
+      },
+      "anchor": [
+        0.535,
+        0.38
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "abdomen",
+      "text": {
+        "en": "abdomen",
+        "hi": "abdomen"
+      },
+      "anchor": [
+        0.785,
+        0.38
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "antenna",
+      "text": {
+        "en": "antenna",
+        "hi": "antenna"
+      },
+      "anchor": [
+        0.6,
+        0.215
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "compound-eye",
+      "text": {
+        "en": "compound eye",
+        "hi": "compound eye"
+      },
+      "anchor": [
+        0.288,
+        0.34
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "jointed-appendage",
+      "text": {
+        "en": "jointed appendage",
+        "hi": "jointed appendage"
+      },
+      "anchor": [
+        0.485,
+        0.565
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "exoskeleton",
+      "text": {
+        "en": "exoskeleton",
+        "hi": "exoskeleton"
+      },
+      "anchor": [
+        0.655,
+        0.335
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "wing",
+    "sting"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-arthropoda--d.json",
+    "repointed": 7,
+    "omitted_not_visible": [
+      "wing",
+      "sting"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

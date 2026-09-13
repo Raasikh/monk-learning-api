@@ -1,0 +1,166 @@
+{
+  "asset_slug": "bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "upper",
+      "label": {
+        "english": "Cervical and thoracic",
+        "hinglish": "Cervical and thoracic"
+      }
+    },
+    {
+      "id": "lower",
+      "label": {
+        "english": "Lumbar, sacrum and coccyx",
+        "hinglish": "Lumbar, sacrum and coccyx"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "cervical-vertebra",
+      "text": {
+        "en": "cervical vertebra",
+        "hi": "cervical vertebra"
+      },
+      "anchor": [
+        0.495,
+        0.14
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "thoracic-vertebra",
+      "text": {
+        "en": "thoracic vertebra",
+        "hi": "thoracic vertebra"
+      },
+      "anchor": [
+        0.505,
+        0.325
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "lumbar-vertebra",
+      "text": {
+        "en": "lumbar vertebra",
+        "hi": "lumbar vertebra"
+      },
+      "anchor": [
+        0.492,
+        0.615
+      ],
+      "side": "auto",
+      "group": "lower",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "sacrum",
+      "text": {
+        "en": "sacrum",
+        "hi": "sacrum"
+      },
+      "anchor": [
+        0.498,
+        0.765
+      ],
+      "side": "auto",
+      "group": "lower",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "coccyx",
+      "text": {
+        "en": "coccyx",
+        "hi": "coccyx"
+      },
+      "anchor": [
+        0.505,
+        0.875
+      ],
+      "side": "auto",
+      "group": "lower",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "atlas",
+      "text": {
+        "en": "atlas",
+        "hi": "atlas"
+      },
+      "anchor": [
+        0.481,
+        0.095
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "intervertebral-disc",
+      "text": {
+        "en": "intervertebral disc",
+        "hi": "intervertebral disc"
+      },
+      "anchor": [
+        0.513,
+        0.455
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "cranium",
+    "facial bone",
+    "mandible",
+    "hyoid",
+    "true rib",
+    "false rib",
+    "floating rib",
+    "sternum",
+    "costal cartilage"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--b.json",
+    "repointed": 7,
+    "omitted_not_visible": [
+      "cranium",
+      "facial bone",
+      "mandible",
+      "hyoid",
+      "true rib",
+      "false rib",
+      "floating rib",
+      "sternum",
+      "costal cartilage"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

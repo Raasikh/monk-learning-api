@@ -1,0 +1,95 @@
+{
+ "groups": [
+  {
+   "id": "epi",
+   "label": "Epidermis"
+  },
+  {
+   "id": "meso",
+   "label": "Mesophyll"
+  },
+  {
+   "id": "bundle",
+   "label": "Vascular bundle"
+  }
+ ],
+ "points": [
+  {
+   "term": "cuticle",
+   "x": 0.45,
+   "y": 0.152,
+   "confidence": 0.85,
+   "group": "epi"
+  },
+  {
+   "term": "upper epidermis",
+   "x": 0.31,
+   "y": 0.185,
+   "confidence": 0.9,
+   "group": "epi"
+  },
+  {
+   "term": "lower epidermis",
+   "x": 0.705,
+   "y": 0.705,
+   "confidence": 0.85,
+   "group": "epi"
+  },
+  {
+   "term": "stoma",
+   "x": 0.305,
+   "y": 0.695,
+   "confidence": 0.9,
+   "group": "epi"
+  },
+  {
+   "term": "palisade parenchyma",
+   "x": 0.28,
+   "y": 0.29,
+   "confidence": 0.9,
+   "group": "meso"
+  },
+  {
+   "term": "spongy parenchyma",
+   "x": 0.235,
+   "y": 0.53,
+   "confidence": 0.9,
+   "group": "meso"
+  },
+  {
+   "term": "mesophyll",
+   "x": 0.745,
+   "y": 0.47,
+   "confidence": 0.7,
+   "group": "meso"
+  },
+  {
+   "term": "vascular bundle",
+   "x": 0.515,
+   "y": 0.575,
+   "confidence": 0.85,
+   "group": "bundle"
+  },
+  {
+   "term": "bundle sheath",
+   "x": 0.585,
+   "y": 0.485,
+   "confidence": 0.8,
+   "group": "bundle"
+  },
+  {
+   "term": "xylem",
+   "x": 0.535,
+   "y": 0.535,
+   "confidence": 0.85,
+   "group": "bundle"
+  },
+  {
+   "term": "phloem",
+   "x": 0.518,
+   "y": 0.655,
+   "confidence": 0.85,
+   "group": "bundle"
+  }
+ ]
+}

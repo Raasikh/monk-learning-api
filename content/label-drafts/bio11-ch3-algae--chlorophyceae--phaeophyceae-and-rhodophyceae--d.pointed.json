@@ -1,0 +1,82 @@
+{
+  "asset_slug": "bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--d",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "holdfast",
+      "text": {
+        "en": "holdfast",
+        "hi": "holdfast"
+      },
+      "anchor": [
+        0.485,
+        0.775
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "stipe",
+      "text": {
+        "en": "stipe",
+        "hi": "stipe"
+      },
+      "anchor": [
+        0.48,
+        0.685
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "blade",
+      "text": {
+        "en": "blade",
+        "hi": "blade"
+      },
+      "anchor": [
+        0.505,
+        0.25
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "flagellum",
+    "cup-shaped chloroplast",
+    "pyrenoid",
+    "eyespot",
+    "nucleus",
+    "cell wall",
+    "colony",
+    "spiral chloroplast"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--d.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "flagellum",
+      "cup-shaped chloroplast",
+      "pyrenoid",
+      "eyespot",
+      "nucleus",
+      "cell wall",
+      "colony",
+      "spiral chloroplast"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,10 @@
+{"groups":[{"id":"sieve","label":"Sieve tube"},{"id":"assoc","label":"Associated cells"}],
+ "points":[
+ {"term":"sieve tube element","x":0.445,"y":0.170,"confidence":0.90,"group":"sieve"},
+ {"term":"sieve plate","x":0.455,"y":0.400,"confidence":0.90,"group":"sieve"},
+ {"term":"sieve pore","x":0.500,"y":0.795,"confidence":0.85,"group":"sieve"},
+ {"term":"companion cell","x":0.585,"y":0.450,"confidence":0.85,"group":"assoc"},
+ {"term":"nucleus","x":0.565,"y":0.280,"confidence":0.85,"group":"assoc"},
+ {"term":"phloem parenchyma","x":0.705,"y":0.300,"confidence":0.85,"group":"assoc"},
+ {"term":"phloem fibre","x":0.275,"y":0.300,"confidence":0.90,"group":"assoc"}
+]}

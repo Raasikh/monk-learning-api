@@ -1,0 +1,367 @@
+{
+  "asset_slug": "bio11-ch15-structure-of-the-human-heart-and-its-chambers",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "right",
+      "label": {
+        "english": "Right heart",
+        "hinglish": "Right heart"
+      }
+    },
+    {
+      "id": "left",
+      "label": {
+        "english": "Left heart",
+        "hinglish": "Left heart"
+      }
+    },
+    {
+      "id": "septa",
+      "label": {
+        "english": "Great vessels and septa",
+        "hinglish": "Great vessels and septa"
+      }
+    },
+    {
+      "id": "valves",
+      "label": {
+        "english": "Valve apparatus",
+        "hinglish": "Valve apparatus"
+      }
+    },
+    {
+      "id": "conduction",
+      "label": {
+        "english": "Conducting system",
+        "hinglish": "Conducting system"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "superior-vena-cava",
+      "text": {
+        "en": "superior vena cava",
+        "hi": "superior vena cava"
+      },
+      "anchor": [
+        0.375,
+        0.195
+      ],
+      "side": "auto",
+      "group": "right",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "inferior-vena-cava",
+      "text": {
+        "en": "inferior vena cava",
+        "hi": "inferior vena cava"
+      },
+      "anchor": [
+        0.377,
+        0.765
+      ],
+      "side": "auto",
+      "group": "right",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "right-atrium",
+      "text": {
+        "en": "right atrium",
+        "hi": "right atrium"
+      },
+      "anchor": [
+        0.415,
+        0.465
+      ],
+      "side": "auto",
+      "group": "right",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "tricuspid-valve",
+      "text": {
+        "en": "tricuspid valve",
+        "hi": "tricuspid valve"
+      },
+      "anchor": [
+        0.443,
+        0.572
+      ],
+      "side": "auto",
+      "group": "right",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "right-ventricle",
+      "text": {
+        "en": "right ventricle",
+        "hi": "right ventricle"
+      },
+      "anchor": [
+        0.442,
+        0.685
+      ],
+      "side": "auto",
+      "group": "right",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "pulmonary-artery",
+      "text": {
+        "en": "pulmonary artery",
+        "hi": "pulmonary artery"
+      },
+      "anchor": [
+        0.555,
+        0.295
+      ],
+      "side": "auto",
+      "group": "septa",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "pulmonary-vein",
+      "text": {
+        "en": "pulmonary vein",
+        "hi": "pulmonary vein"
+      },
+      "anchor": [
+        0.625,
+        0.395
+      ],
+      "side": "auto",
+      "group": "left",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "left-atrium",
+      "text": {
+        "en": "left atrium",
+        "hi": "left atrium"
+      },
+      "anchor": [
+        0.545,
+        0.455
+      ],
+      "side": "auto",
+      "group": "left",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "bicuspid-valve",
+      "text": {
+        "en": "bicuspid valve",
+        "hi": "bicuspid valve"
+      },
+      "anchor": [
+        0.553,
+        0.545
+      ],
+      "side": "auto",
+      "group": "left",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "left-ventricle",
+      "text": {
+        "en": "left ventricle",
+        "hi": "left ventricle"
+      },
+      "anchor": [
+        0.575,
+        0.685
+      ],
+      "side": "auto",
+      "group": "left",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "aorta",
+      "text": {
+        "en": "aorta",
+        "hi": "aorta"
+      },
+      "anchor": [
+        0.465,
+        0.125
+      ],
+      "side": "auto",
+      "group": "left",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "chordae-tendineae",
+      "text": {
+        "en": "chordae tendineae",
+        "hi": "chordae tendineae"
+      },
+      "anchor": [
+        0.6,
+        0.6
+      ],
+      "side": "auto",
+      "group": "valves",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "papillary-muscle",
+      "text": {
+        "en": "papillary muscle",
+        "hi": "papillary muscle"
+      },
+      "anchor": [
+        0.607,
+        0.66
+      ],
+      "side": "auto",
+      "group": "valves",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "interventricular-septum",
+      "text": {
+        "en": "interventricular septum",
+        "hi": "interventricular septum"
+      },
+      "anchor": [
+        0.508,
+        0.7
+      ],
+      "side": "auto",
+      "group": "septa",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "interatrial-septum",
+      "text": {
+        "en": "interatrial septum",
+        "hi": "interatrial septum"
+      },
+      "anchor": [
+        0.487,
+        0.47
+      ],
+      "side": "auto",
+      "group": "septa",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "sa-node",
+      "text": {
+        "en": "SA node",
+        "hi": "SA node"
+      },
+      "anchor": [
+        0.385,
+        0.425
+      ],
+      "side": "auto",
+      "group": "conduction",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "av-node",
+      "text": {
+        "en": "AV node",
+        "hi": "AV node"
+      },
+      "anchor": [
+        0.478,
+        0.525
+      ],
+      "side": "auto",
+      "group": "conduction",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "bundle-of-his",
+      "text": {
+        "en": "bundle of His",
+        "hi": "bundle of His"
+      },
+      "anchor": [
+        0.5,
+        0.6
+      ],
+      "side": "auto",
+      "group": "conduction",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "purkinje-fibre",
+      "text": {
+        "en": "Purkinje fibre",
+        "hi": "Purkinje fibre"
+      },
+      "anchor": [
+        0.565,
+        0.78
+      ],
+      "side": "auto",
+      "group": "conduction",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "pulmonary semilunar valve",
+    "aortic semilunar valve",
+    "pericardium"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch15-structure-of-the-human-heart-and-its-chambers.json",
+    "repointed": 19,
+    "omitted_not_visible": [
+      "pulmonary semilunar valve",
+      "aortic semilunar valve",
+      "pericardium"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

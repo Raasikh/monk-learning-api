@@ -1,0 +1,185 @@
+{
+  "asset_slug": "bio11-ch15-formed-elements--rbc--wbc-and-platelets",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "cells1",
+      "label": {
+        "english": "Red cells and granulocytes",
+        "hinglish": "Red cells and granulocytes"
+      }
+    },
+    {
+      "id": "cells2",
+      "label": {
+        "english": "Other leucocytes and platelets",
+        "hinglish": "Other leucocytes and platelets"
+      }
+    },
+    {
+      "id": "features",
+      "label": {
+        "english": "Cell features",
+        "hinglish": "Cell features"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "erythrocyte",
+      "text": {
+        "en": "erythrocyte",
+        "hi": "erythrocyte"
+      },
+      "anchor": [
+        0.145,
+        0.235
+      ],
+      "side": "auto",
+      "group": "cells1",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "neutrophil",
+      "text": {
+        "en": "neutrophil",
+        "hi": "neutrophil"
+      },
+      "anchor": [
+        0.325,
+        0.3
+      ],
+      "side": "auto",
+      "group": "cells1",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "eosinophil",
+      "text": {
+        "en": "eosinophil",
+        "hi": "eosinophil"
+      },
+      "anchor": [
+        0.595,
+        0.355
+      ],
+      "side": "auto",
+      "group": "cells1",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "basophil",
+      "text": {
+        "en": "basophil",
+        "hi": "basophil"
+      },
+      "anchor": [
+        0.735,
+        0.29
+      ],
+      "side": "auto",
+      "group": "cells2",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "lymphocyte",
+      "text": {
+        "en": "lymphocyte",
+        "hi": "lymphocyte"
+      },
+      "anchor": [
+        0.285,
+        0.7
+      ],
+      "side": "auto",
+      "group": "cells2",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "monocyte",
+      "text": {
+        "en": "monocyte",
+        "hi": "monocyte"
+      },
+      "anchor": [
+        0.675,
+        0.7
+      ],
+      "side": "auto",
+      "group": "cells2",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "platelet",
+      "text": {
+        "en": "platelet",
+        "hi": "platelet"
+      },
+      "anchor": [
+        0.69,
+        0.375
+      ],
+      "side": "auto",
+      "group": "cells2",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "lobed-nucleus",
+      "text": {
+        "en": "lobed nucleus",
+        "hi": "lobed nucleus"
+      },
+      "anchor": [
+        0.44,
+        0.56
+      ],
+      "side": "auto",
+      "group": "features",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "granule",
+      "text": {
+        "en": "granule",
+        "hi": "granule"
+      },
+      "anchor": [
+        0.76,
+        0.315
+      ],
+      "side": "auto",
+      "group": "features",
+      "_point": {
+        "confidence": 0.65
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch15-formed-elements--rbc--wbc-and-platelets.json",
+    "repointed": 9,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

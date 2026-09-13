@@ -1,0 +1,227 @@
+{
+  "asset_slug": "bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "upper",
+      "label": {
+        "english": "Upper respiratory tract",
+        "hinglish": "Upper respiratory tract"
+      }
+    },
+    {
+      "id": "airway",
+      "label": {
+        "english": "Conducting airway",
+        "hinglish": "Conducting airway"
+      }
+    },
+    {
+      "id": "thorax",
+      "label": {
+        "english": "Lungs and thorax",
+        "hinglish": "Lungs and thorax"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "nostril",
+      "text": {
+        "en": "nostril",
+        "hi": "nostril"
+      },
+      "anchor": [
+        0.412,
+        0.272
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "nasal-cavity",
+      "text": {
+        "en": "nasal cavity",
+        "hi": "nasal cavity"
+      },
+      "anchor": [
+        0.435,
+        0.225
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "pharynx",
+      "text": {
+        "en": "pharynx",
+        "hi": "pharynx"
+      },
+      "anchor": [
+        0.472,
+        0.325
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "larynx",
+      "text": {
+        "en": "larynx",
+        "hi": "larynx"
+      },
+      "anchor": [
+        0.478,
+        0.385
+      ],
+      "side": "auto",
+      "group": "upper",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "trachea",
+      "text": {
+        "en": "trachea",
+        "hi": "trachea"
+      },
+      "anchor": [
+        0.48,
+        0.455
+      ],
+      "side": "auto",
+      "group": "airway",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "bronchus",
+      "text": {
+        "en": "bronchus",
+        "hi": "bronchus"
+      },
+      "anchor": [
+        0.515,
+        0.545
+      ],
+      "side": "auto",
+      "group": "airway",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "bronchiole",
+      "text": {
+        "en": "bronchiole",
+        "hi": "bronchiole"
+      },
+      "anchor": [
+        0.545,
+        0.605
+      ],
+      "side": "auto",
+      "group": "airway",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "lung",
+      "text": {
+        "en": "lung",
+        "hi": "lung"
+      },
+      "anchor": [
+        0.425,
+        0.63
+      ],
+      "side": "auto",
+      "group": "thorax",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "pleura",
+      "text": {
+        "en": "pleura",
+        "hi": "pleura"
+      },
+      "anchor": [
+        0.39,
+        0.615
+      ],
+      "side": "auto",
+      "group": "thorax",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "diaphragm",
+      "text": {
+        "en": "diaphragm",
+        "hi": "diaphragm"
+      },
+      "anchor": [
+        0.47,
+        0.79
+      ],
+      "side": "auto",
+      "group": "thorax",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "rib",
+      "text": {
+        "en": "rib",
+        "hi": "rib"
+      },
+      "anchor": [
+        0.6,
+        0.545
+      ],
+      "side": "auto",
+      "group": "thorax",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "epiglottis",
+    "alveolus",
+    "pleural fluid",
+    "capillary"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--a.json",
+    "repointed": 11,
+    "omitted_not_visible": [
+      "epiglottis",
+      "alveolus",
+      "pleural fluid",
+      "capillary"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "asset_slug": "bio12-ch2-male-reproductive-system--testis--ducts-and-accessory-glands--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "organ",
+      "label": {
+        "english": "Testis and ducts",
+        "hinglish": "Testis and ducts"
+      }
+    },
+    {
+      "id": "tubule",
+      "label": {
+        "english": "Inside a seminiferous tubule",
+        "hinglish": "Inside a seminiferous tubule"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": "testis"
+      },
+      "anchor": [
+        0.28,
+        0.5
+      ],
+      "side": "auto",
+      "group": "organ",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "scrotum",
+      "text": {
+        "en": "scrotum",
+        "hi": "scrotum"
+      },
+      "anchor": [
+        0.195,
+        0.3
+      ],
+      "side": "auto",
+      "group": "organ",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "seminiferous-tubule",
+      "text": {
+        "en": "seminiferous tubule",
+        "hi": "seminiferous tubule"
+      },
+      "anchor": [
+        0.25,
+        0.36
+      ],
+      "side": "auto",
+      "group": "tubule",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "leydig-cell",
+      "text": {
+        "en": "Leydig cell",
+        "hi": "Leydig cell"
+      },
+      "anchor": [
+        0.605,
+        0.64
+      ],
+      "side": "auto",
+      "group": "tubule",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "sertoli-cell",
+      "text": {
+        "en": "Sertoli cell",
+        "hi": "Sertoli cell"
+      },
+      "anchor": [
+        0.73,
+        0.345
+      ],
+      "side": "auto",
+      "group": "tubule",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "epididymis",
+      "text": {
+        "en": "epididymis",
+        "hi": "epididymis"
+      },
+      "anchor": [
+        0.455,
+        0.55
+      ],
+      "side": "auto",
+      "group": "organ",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": "vas deferens"
+      },
+      "anchor": [
+        0.435,
+        0.145
+      ],
+      "side": "auto",
+      "group": "organ",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "seminal vesicle",
+    "ejaculatory duct",
+    "prostate gland",
+    "bulbourethral gland",
+    "urethra",
+    "penis",
+    "urinary bladder"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio12-ch2-male-reproductive-system--testis--ducts-and-accessory-glands--b.json",
+    "repointed": 7,
+    "omitted_not_visible": [
+      "seminal vesicle",
+      "ejaculatory duct",
+      "prostate gland",
+      "bulbourethral gland",
+      "urethra",
+      "penis",
+      "urinary bladder"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "asset_slug": "bio11-ch6-anatomy-of-dicot-and-monocot-stem--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "outer",
+      "label": {
+        "english": "Outer layers",
+        "hinglish": "Outer layers"
+      }
+    },
+    {
+      "id": "inner",
+      "label": {
+        "english": "Inner ground tissue",
+        "hinglish": "Inner ground tissue"
+      }
+    },
+    {
+      "id": "bundle",
+      "label": {
+        "english": "Vascular bundle",
+        "hinglish": "Vascular bundle"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "epidermis",
+      "text": {
+        "en": "epidermis",
+        "hi": "epidermis"
+      },
+      "anchor": [
+        0.5,
+        0.115
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "cuticle",
+      "text": {
+        "en": "cuticle",
+        "hi": "cuticle"
+      },
+      "anchor": [
+        0.5,
+        0.088
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "hypodermis",
+      "text": {
+        "en": "hypodermis",
+        "hi": "hypodermis"
+      },
+      "anchor": [
+        0.5,
+        0.145
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "cortex",
+      "text": {
+        "en": "cortex",
+        "hi": "cortex"
+      },
+      "anchor": [
+        0.345,
+        0.63
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "endodermis",
+      "text": {
+        "en": "endodermis",
+        "hi": "endodermis"
+      },
+      "anchor": [
+        0.362,
+        0.44
+      ],
+      "side": "auto",
+      "group": "inner",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "pericycle",
+      "text": {
+        "en": "pericycle",
+        "hi": "pericycle"
+      },
+      "anchor": [
+        0.345,
+        0.365
+      ],
+      "side": "auto",
+      "group": "inner",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "vascular-bundle",
+      "text": {
+        "en": "vascular bundle",
+        "hi": "vascular bundle"
+      },
+      "anchor": [
+        0.395,
+        0.3
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "xylem",
+      "text": {
+        "en": "xylem",
+        "hi": "xylem"
+      },
+      "anchor": [
+        0.565,
+        0.335
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "phloem",
+      "text": {
+        "en": "phloem",
+        "hi": "phloem"
+      },
+      "anchor": [
+        0.545,
+        0.245
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "cambium",
+      "text": {
+        "en": "cambium",
+        "hi": "cambium"
+      },
+      "anchor": [
+        0.555,
+        0.29
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "pith",
+      "text": {
+        "en": "pith",
+        "hi": "pith"
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto",
+      "group": "inner",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "medullary-ray",
+      "text": {
+        "en": "medullary ray",
+        "hi": "medullary ray"
+      },
+      "anchor": [
+        0.455,
+        0.31
+      ],
+      "side": "auto",
+      "group": "inner",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "bundle sheath",
+    "ground tissue"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-anatomy-of-dicot-and-monocot-stem--a.json",
+    "repointed": 12,
+    "omitted_not_visible": [
+      "bundle sheath",
+      "ground tissue"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

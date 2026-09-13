@@ -1,0 +1,124 @@
+{
+  "asset_slug": "bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "head",
+      "label": {
+        "english": "Head and gills",
+        "hinglish": "Head and gills"
+      }
+    },
+    {
+      "id": "body",
+      "label": {
+        "english": "Fins and scales",
+        "hinglish": "Fins and scales"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "gill-slit",
+      "text": {
+        "en": "gill slit",
+        "hi": "gill slit"
+      },
+      "anchor": [
+        0.265,
+        0.565
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "placoid-scale",
+      "text": {
+        "en": "placoid scale",
+        "hi": "placoid scale"
+      },
+      "anchor": [
+        0.745,
+        0.225
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "ventral-mouth",
+      "text": {
+        "en": "ventral mouth",
+        "hi": "ventral mouth"
+      },
+      "anchor": [
+        0.125,
+        0.565
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "heterocercal-tail",
+      "text": {
+        "en": "heterocercal tail",
+        "hi": "heterocercal tail"
+      },
+      "anchor": [
+        0.865,
+        0.415
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "pectoral-fin",
+      "text": {
+        "en": "pectoral fin",
+        "hi": "pectoral fin"
+      },
+      "anchor": [
+        0.355,
+        0.665
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "circular sucking mouth",
+    "operculum",
+    "homocercal tail",
+    "cycloid scale"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--b.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "circular sucking mouth",
+      "operculum",
+      "homocercal tail",
+      "cycloid scale"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

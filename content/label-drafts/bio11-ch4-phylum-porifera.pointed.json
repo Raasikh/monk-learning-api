@@ -1,0 +1,146 @@
+{
+  "asset_slug": "bio11-ch4-phylum-porifera",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "body",
+      "label": {
+        "english": "Body and openings",
+        "hinglish": "Body and openings"
+      }
+    },
+    {
+      "id": "cells",
+      "label": {
+        "english": "Cells and skeleton",
+        "hinglish": "Cells and skeleton"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "osculum",
+      "text": {
+        "en": "osculum",
+        "hi": "osculum"
+      },
+      "anchor": [
+        0.44,
+        0.14
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ostium",
+      "text": {
+        "en": "ostium",
+        "hi": "ostium"
+      },
+      "anchor": [
+        0.325,
+        0.395
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "spongocoel",
+      "text": {
+        "en": "spongocoel",
+        "hi": "spongocoel"
+      },
+      "anchor": [
+        0.435,
+        0.32
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "choanocyte",
+      "text": {
+        "en": "choanocyte",
+        "hi": "choanocyte"
+      },
+      "anchor": [
+        0.815,
+        0.47
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "spicule",
+      "text": {
+        "en": "spicule",
+        "hi": "spicule"
+      },
+      "anchor": [
+        0.345,
+        0.3
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "body-wall",
+      "text": {
+        "en": "body wall",
+        "hi": "body wall"
+      },
+      "anchor": [
+        0.375,
+        0.78
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "water-flow",
+      "text": {
+        "en": "water flow",
+        "hi": "water flow"
+      },
+      "anchor": [
+        0.425,
+        0.185
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-porifera.json",
+    "repointed": 7,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

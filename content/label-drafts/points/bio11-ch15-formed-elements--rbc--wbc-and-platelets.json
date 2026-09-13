@@ -1,0 +1,14 @@
+{"groups":[{"id":"cells1","label":"Red cells and granulocytes"},
+           {"id":"cells2","label":"Other leucocytes and platelets"},
+           {"id":"features","label":"Cell features"}],
+ "points":[
+ {"term":"erythrocyte","x":0.145,"y":0.235,"confidence":0.95,"group":"cells1"},
+ {"term":"neutrophil","x":0.325,"y":0.300,"confidence":0.85,"group":"cells1"},
+ {"term":"eosinophil","x":0.595,"y":0.355,"confidence":0.90,"group":"cells1"},
+ {"term":"basophil","x":0.735,"y":0.290,"confidence":0.80,"group":"cells2"},
+ {"term":"lymphocyte","x":0.285,"y":0.700,"confidence":0.90,"group":"cells2"},
+ {"term":"monocyte","x":0.675,"y":0.700,"confidence":0.85,"group":"cells2"},
+ {"term":"platelet","x":0.690,"y":0.375,"confidence":0.80,"group":"cells2"},
+ {"term":"lobed nucleus","x":0.440,"y":0.560,"confidence":0.70,"group":"features"},
+ {"term":"granule","x":0.760,"y":0.315,"confidence":0.65,"group":"features"}
+]}

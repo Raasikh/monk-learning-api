@@ -1,0 +1,122 @@
+{
+  "asset_slug": "bio11-ch4-phylum-aschelminthes--nematoda",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "sexes",
+      "label": {
+        "english": "Female and male",
+        "hinglish": "Female and male"
+      }
+    },
+    {
+      "id": "head",
+      "label": {
+        "english": "Anterior end",
+        "hinglish": "Anterior end"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "mouth",
+      "text": {
+        "en": "mouth",
+        "hi": "mouth"
+      },
+      "anchor": [
+        0.845,
+        0.4
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "lip",
+      "text": {
+        "en": "lip",
+        "hi": "lip"
+      },
+      "anchor": [
+        0.845,
+        0.315
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "female",
+      "text": {
+        "en": "female",
+        "hi": "female"
+      },
+      "anchor": [
+        0.245,
+        0.295
+      ],
+      "side": "auto",
+      "group": "sexes",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "male",
+      "text": {
+        "en": "male",
+        "hi": "male"
+      },
+      "anchor": [
+        0.545,
+        0.4
+      ],
+      "side": "auto",
+      "group": "sexes",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "curved-tail",
+      "text": {
+        "en": "curved tail",
+        "hi": "curved tail"
+      },
+      "anchor": [
+        0.605,
+        0.585
+      ],
+      "side": "auto",
+      "group": "sexes",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "anus",
+    "cloacal aperture",
+    "pre-anal papilla"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-aschelminthes--nematoda.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "anus",
+      "cloacal aperture",
+      "pre-anal papilla"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

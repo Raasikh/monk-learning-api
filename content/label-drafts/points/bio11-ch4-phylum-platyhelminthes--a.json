@@ -1,0 +1,56 @@
+{
+ "groups": [
+  {
+   "id": "scolex",
+   "label": "Scolex"
+  },
+  {
+   "id": "strobila",
+   "label": "Neck and proglottids"
+  }
+ ],
+ "points": [
+  {
+   "term": "scolex",
+   "x": 0.735,
+   "y": 0.19,
+   "confidence": 0.9,
+   "group": "scolex"
+  },
+  {
+   "term": "hook",
+   "x": 0.735,
+   "y": 0.128,
+   "confidence": 0.9,
+   "group": "scolex"
+  },
+  {
+   "term": "sucker",
+   "x": 0.685,
+   "y": 0.295,
+   "confidence": 0.9,
+   "group": "scolex"
+  },
+  {
+   "term": "neck",
+   "x": 0.735,
+   "y": 0.425,
+   "confidence": 0.85,
+   "group": "strobila"
+  },
+  {
+   "term": "proglottid",
+   "x": 0.205,
+   "y": 0.3,
+   "confidence": 0.85,
+   "group": "strobila"
+  },
+  {
+   "term": "mature proglottid",
+   "x": 0.745,
+   "y": 0.665,
+   "confidence": 0.75,
+   "group": "strobila"
+  }
+ ]
+}

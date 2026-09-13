@@ -1,0 +1,288 @@
+{
+  "asset_slug": "bio11-ch16-structure-of-the-human-kidney-and-urinary-tract",
+  "image_w": 1376,
+  "image_h": 860,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "outer",
+      "label": {
+        "english": "Outer layers",
+        "hinglish": "Outer layers"
+      }
+    },
+    {
+      "id": "medulla",
+      "label": {
+        "english": "Medulla",
+        "hinglish": "Medulla"
+      }
+    },
+    {
+      "id": "collecting",
+      "label": {
+        "english": "Collecting system",
+        "hinglish": "Collecting system"
+      }
+    },
+    {
+      "id": "tract",
+      "label": {
+        "english": "Vessels and urinary tract",
+        "hinglish": "Vessels and urinary tract"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "renal-capsule",
+      "text": {
+        "en": "renal capsule",
+        "hi": "renal capsule"
+      },
+      "anchor": [
+        0.395,
+        0.225
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "cortex",
+      "text": {
+        "en": "cortex",
+        "hi": "cortex"
+      },
+      "anchor": [
+        0.385,
+        0.295
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "medulla",
+      "text": {
+        "en": "medulla",
+        "hi": "medulla"
+      },
+      "anchor": [
+        0.355,
+        0.655
+      ],
+      "side": "auto",
+      "group": "medulla",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "renal-pyramid",
+      "text": {
+        "en": "renal pyramid",
+        "hi": "renal pyramid"
+      },
+      "anchor": [
+        0.318,
+        0.235
+      ],
+      "side": "auto",
+      "group": "medulla",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "renal-papilla",
+      "text": {
+        "en": "renal papilla",
+        "hi": "renal papilla"
+      },
+      "anchor": [
+        0.282,
+        0.315
+      ],
+      "side": "auto",
+      "group": "medulla",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "minor-calyx",
+      "text": {
+        "en": "minor calyx",
+        "hi": "minor calyx"
+      },
+      "anchor": [
+        0.262,
+        0.345
+      ],
+      "side": "auto",
+      "group": "collecting",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "major-calyx",
+      "text": {
+        "en": "major calyx",
+        "hi": "major calyx"
+      },
+      "anchor": [
+        0.243,
+        0.4
+      ],
+      "side": "auto",
+      "group": "collecting",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "renal-pelvis",
+      "text": {
+        "en": "renal pelvis",
+        "hi": "renal pelvis"
+      },
+      "anchor": [
+        0.222,
+        0.545
+      ],
+      "side": "auto",
+      "group": "collecting",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "ureter",
+      "text": {
+        "en": "ureter",
+        "hi": "ureter"
+      },
+      "anchor": [
+        0.183,
+        0.7
+      ],
+      "side": "auto",
+      "group": "collecting",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "renal-artery",
+      "text": {
+        "en": "renal artery",
+        "hi": "renal artery"
+      },
+      "anchor": [
+        0.145,
+        0.432
+      ],
+      "side": "auto",
+      "group": "tract",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "renal-vein",
+      "text": {
+        "en": "renal vein",
+        "hi": "renal vein"
+      },
+      "anchor": [
+        0.145,
+        0.488
+      ],
+      "side": "auto",
+      "group": "tract",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "hilum",
+      "text": {
+        "en": "hilum",
+        "hi": "hilum"
+      },
+      "anchor": [
+        0.203,
+        0.465
+      ],
+      "side": "auto",
+      "group": "tract",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "column-of-bertini",
+      "text": {
+        "en": "column of Bertini",
+        "hi": "column of Bertini"
+      },
+      "anchor": [
+        0.34,
+        0.445
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "urinary-bladder",
+      "text": {
+        "en": "urinary bladder",
+        "hi": "urinary bladder"
+      },
+      "anchor": [
+        0.735,
+        0.68
+      ],
+      "side": "auto",
+      "group": "tract",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "urethra",
+      "text": {
+        "en": "urethra",
+        "hi": "urethra"
+      },
+      "anchor": [
+        0.735,
+        0.755
+      ],
+      "side": "auto",
+      "group": "tract",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch16-structure-of-the-human-kidney-and-urinary-tract.json",
+    "repointed": 15,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

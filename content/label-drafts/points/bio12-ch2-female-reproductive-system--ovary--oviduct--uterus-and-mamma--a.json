@@ -1,0 +1,12 @@
+{"groups":[{"id":"tube","label":"Ovary and oviduct"},
+           {"id":"uterus","label":"Uterus and vagina"}],
+ "points":[
+ {"term":"ovary","x":0.365,"y":0.320,"confidence":0.85,"group":"tube"},
+ {"term":"fallopian tube","x":0.400,"y":0.200,"confidence":0.80,"group":"tube"},
+ {"term":"fimbriae","x":0.325,"y":0.355,"confidence":0.80,"group":"tube"},
+ {"term":"infundibulum","x":0.340,"y":0.300,"confidence":0.60,"group":"tube"},
+ {"term":"uterus","x":0.462,"y":0.330,"confidence":0.90,"group":"uterus"},
+ {"term":"fundus","x":0.448,"y":0.268,"confidence":0.65,"group":"uterus"},
+ {"term":"cervix","x":0.487,"y":0.485,"confidence":0.70,"group":"uterus"},
+ {"term":"vagina","x":0.458,"y":0.600,"confidence":0.80,"group":"uterus"}
+]}

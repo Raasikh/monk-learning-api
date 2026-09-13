@@ -1,0 +1,16 @@
+{"groups":[{"id":"pelvis","label":"Pelvic girdle"},
+           {"id":"leg","label":"Thigh and knee"},
+           {"id":"foot","label":"Lower leg and foot"}],
+ "points":[
+ {"term":"ilium","x":0.435,"y":0.135,"confidence":0.90,"group":"pelvis"},
+ {"term":"ischium","x":0.448,"y":0.280,"confidence":0.85,"group":"pelvis"},
+ {"term":"pubis","x":0.523,"y":0.283,"confidence":0.85,"group":"pelvis"},
+ {"term":"acetabulum","x":0.558,"y":0.215,"confidence":0.80,"group":"pelvis"},
+ {"term":"femur","x":0.543,"y":0.375,"confidence":0.95,"group":"leg"},
+ {"term":"patella","x":0.533,"y":0.515,"confidence":0.95,"group":"leg"},
+ {"term":"tibia","x":0.538,"y":0.670,"confidence":0.75,"group":"foot"},
+ {"term":"fibula","x":0.521,"y":0.670,"confidence":0.70,"group":"foot"},
+ {"term":"tarsal","x":0.525,"y":0.805,"confidence":0.80,"group":"foot"},
+ {"term":"metatarsal","x":0.537,"y":0.855,"confidence":0.80,"group":"foot"},
+ {"term":"phalanx","x":0.548,"y":0.900,"confidence":0.75,"group":"foot"}
+]}

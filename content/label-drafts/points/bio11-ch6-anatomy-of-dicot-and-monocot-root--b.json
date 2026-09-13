@@ -1,0 +1,106 @@
+{
+ "groups": [
+  {
+   "id": "outer",
+   "label": "Outer layers"
+  },
+  {
+   "id": "endo",
+   "label": "Endodermis and pericycle"
+  },
+  {
+   "id": "vasc",
+   "label": "Vascular cylinder and pith"
+  },
+  {
+   "id": "ground",
+   "label": "Pith and ground tissue"
+  }
+ ],
+ "points": [
+  {
+   "term": "epiblema",
+   "x": 0.295,
+   "y": 0.3,
+   "confidence": 0.85,
+   "group": "outer"
+  },
+  {
+   "term": "root hair",
+   "x": 0.245,
+   "y": 0.375,
+   "confidence": 0.9,
+   "group": "outer"
+  },
+  {
+   "term": "cortex",
+   "x": 0.345,
+   "y": 0.58,
+   "confidence": 0.9,
+   "group": "outer"
+  },
+  {
+   "term": "endodermis",
+   "x": 0.395,
+   "y": 0.315,
+   "confidence": 0.85,
+   "group": "endo"
+  },
+  {
+   "term": "Casparian strip",
+   "x": 0.6,
+   "y": 0.375,
+   "confidence": 0.65,
+   "group": "endo"
+  },
+  {
+   "term": "pericycle",
+   "x": 0.425,
+   "y": 0.665,
+   "confidence": 0.7,
+   "group": "endo"
+  },
+  {
+   "term": "xylem",
+   "x": 0.435,
+   "y": 0.29,
+   "confidence": 0.8,
+   "group": "vasc"
+  },
+  {
+   "term": "phloem",
+   "x": 0.565,
+   "y": 0.275,
+   "confidence": 0.8,
+   "group": "vasc"
+  },
+  {
+   "term": "protoxylem",
+   "x": 0.415,
+   "y": 0.44,
+   "confidence": 0.65,
+   "group": "vasc"
+  },
+  {
+   "term": "metaxylem",
+   "x": 0.545,
+   "y": 0.585,
+   "confidence": 0.65,
+   "group": "vasc"
+  },
+  {
+   "term": "pith",
+   "x": 0.5,
+   "y": 0.5,
+   "confidence": 0.9,
+   "group": "ground"
+  },
+  {
+   "term": "conjunctive tissue",
+   "x": 0.475,
+   "y": 0.655,
+   "confidence": 0.6,
+   "group": "ground"
+  }
+ ]
+}

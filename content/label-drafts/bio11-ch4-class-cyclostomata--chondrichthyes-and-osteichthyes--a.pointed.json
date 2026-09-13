@@ -1,0 +1,65 @@
+{
+  "asset_slug": "bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "circular-sucking-mouth",
+      "text": {
+        "en": "circular sucking mouth",
+        "hi": "circular sucking mouth"
+      },
+      "anchor": [
+        0.125,
+        0.525
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "gill-slit",
+      "text": {
+        "en": "gill slit",
+        "hi": "gill slit"
+      },
+      "anchor": [
+        0.355,
+        0.535
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "placoid scale",
+    "ventral mouth",
+    "heterocercal tail",
+    "pectoral fin",
+    "operculum",
+    "homocercal tail",
+    "cycloid scale"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--a.json",
+    "repointed": 2,
+    "omitted_not_visible": [
+      "placoid scale",
+      "ventral mouth",
+      "heterocercal tail",
+      "pectoral fin",
+      "operculum",
+      "homocercal tail",
+      "cycloid scale"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

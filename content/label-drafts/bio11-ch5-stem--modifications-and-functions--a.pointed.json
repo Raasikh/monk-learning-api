@@ -1,0 +1,146 @@
+{
+  "asset_slug": "bio11-ch5-stem--modifications-and-functions--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "tuber",
+      "label": {
+        "english": "Tuber and rhizome",
+        "hinglish": "Tuber and rhizome"
+      }
+    },
+    {
+      "id": "corm",
+      "label": {
+        "english": "Corm and bulb",
+        "hinglish": "Corm and bulb"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "tuber",
+      "text": {
+        "en": "tuber",
+        "hi": "tuber"
+      },
+      "anchor": [
+        0.165,
+        0.55
+      ],
+      "side": "auto",
+      "group": "tuber",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "eye",
+      "text": {
+        "en": "eye",
+        "hi": "eye"
+      },
+      "anchor": [
+        0.205,
+        0.475
+      ],
+      "side": "auto",
+      "group": "tuber",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "rhizome",
+      "text": {
+        "en": "rhizome",
+        "hi": "rhizome"
+      },
+      "anchor": [
+        0.395,
+        0.51
+      ],
+      "side": "auto",
+      "group": "tuber",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "node",
+      "text": {
+        "en": "node",
+        "hi": "node"
+      },
+      "anchor": [
+        0.435,
+        0.28
+      ],
+      "side": "auto",
+      "group": "tuber",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "corm",
+      "text": {
+        "en": "corm",
+        "hi": "corm"
+      },
+      "anchor": [
+        0.6,
+        0.5
+      ],
+      "side": "auto",
+      "group": "corm",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "bulb",
+      "text": {
+        "en": "bulb",
+        "hi": "bulb"
+      },
+      "anchor": [
+        0.845,
+        0.52
+      ],
+      "side": "auto",
+      "group": "corm",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "runner",
+    "stolon",
+    "offset",
+    "sucker",
+    "phylloclade",
+    "thorn",
+    "tendril"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-stem--modifications-and-functions--a.json",
+    "repointed": 6,
+    "omitted_not_visible": [
+      "runner",
+      "stolon",
+      "offset",
+      "sucker",
+      "phylloclade",
+      "thorn",
+      "tendril"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

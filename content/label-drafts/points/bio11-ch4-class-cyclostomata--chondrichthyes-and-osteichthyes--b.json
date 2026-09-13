@@ -1,0 +1,8 @@
+{"groups":[{"id":"head","label":"Head and gills"},{"id":"body","label":"Fins and scales"}],
+ "points":[
+ {"term":"ventral mouth","x":0.125,"y":0.565,"confidence":0.85,"group":"head"},
+ {"term":"gill slit","x":0.265,"y":0.565,"confidence":0.95,"group":"head"},
+ {"term":"placoid scale","x":0.745,"y":0.225,"confidence":0.95,"group":"body"},
+ {"term":"heterocercal tail","x":0.865,"y":0.415,"confidence":0.90,"group":"body"},
+ {"term":"pectoral fin","x":0.355,"y":0.665,"confidence":0.90,"group":"body"}
+]}

@@ -1,0 +1,9 @@
+{"groups":[{"id":"oral","label":"Oral end"},{"id":"body","label":"Body and bud"}],
+ "points":[
+ {"term":"tentacle","x":0.375,"y":0.185,"confidence":0.95,"group":"oral"},
+ {"term":"hypostome","x":0.497,"y":0.295,"confidence":0.85,"group":"oral"},
+ {"term":"mouth","x":0.497,"y":0.268,"confidence":0.70,"group":"oral"},
+ {"term":"gastrovascular cavity","x":0.497,"y":0.500,"confidence":0.90,"group":"body"},
+ {"term":"bud","x":0.555,"y":0.620,"confidence":0.95,"group":"body"},
+ {"term":"basal disc","x":0.483,"y":0.865,"confidence":0.90,"group":"body"}
+]}

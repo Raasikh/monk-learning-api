@@ -1,0 +1,190 @@
+{
+  "asset_slug": "bio12-ch2-male-reproductive-system--testis--ducts-and-accessory-glands--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "glands",
+      "label": {
+        "english": "Bladder and accessory glands",
+        "hinglish": "Bladder and accessory glands"
+      }
+    },
+    {
+      "id": "ducts",
+      "label": {
+        "english": "Testis, ducts and penis",
+        "hinglish": "Testis, ducts and penis"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": "testis"
+      },
+      "anchor": [
+        0.405,
+        0.755
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "scrotum",
+      "text": {
+        "en": "scrotum",
+        "hi": "scrotum"
+      },
+      "anchor": [
+        0.398,
+        0.815
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "epididymis",
+      "text": {
+        "en": "epididymis",
+        "hi": "epididymis"
+      },
+      "anchor": [
+        0.425,
+        0.715
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": "vas deferens"
+      },
+      "anchor": [
+        0.432,
+        0.275
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "seminal-vesicle",
+      "text": {
+        "en": "seminal vesicle",
+        "hi": "seminal vesicle"
+      },
+      "anchor": [
+        0.535,
+        0.41
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "prostate-gland",
+      "text": {
+        "en": "prostate gland",
+        "hi": "prostate gland"
+      },
+      "anchor": [
+        0.497,
+        0.44
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "urethra",
+      "text": {
+        "en": "urethra",
+        "hi": "urethra"
+      },
+      "anchor": [
+        0.313,
+        0.72
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "penis",
+      "text": {
+        "en": "penis",
+        "hi": "penis"
+      },
+      "anchor": [
+        0.335,
+        0.63
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "urinary-bladder",
+      "text": {
+        "en": "urinary bladder",
+        "hi": "urinary bladder"
+      },
+      "anchor": [
+        0.455,
+        0.325
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "seminiferous tubule",
+    "Leydig cell",
+    "Sertoli cell",
+    "ejaculatory duct",
+    "bulbourethral gland"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio12-ch2-male-reproductive-system--testis--ducts-and-accessory-glands--a.json",
+    "repointed": 9,
+    "omitted_not_visible": [
+      "seminiferous tubule",
+      "Leydig cell",
+      "Sertoli cell",
+      "ejaculatory duct",
+      "bulbourethral gland"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

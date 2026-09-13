@@ -1,0 +1,13 @@
+{"groups":[{"id":"glands","label":"Bladder and accessory glands"},
+           {"id":"ducts","label":"Testis, ducts and penis"}],
+ "points":[
+ {"term":"urinary bladder","x":0.455,"y":0.325,"confidence":0.90,"group":"glands"},
+ {"term":"prostate gland","x":0.497,"y":0.440,"confidence":0.80,"group":"glands"},
+ {"term":"seminal vesicle","x":0.535,"y":0.410,"confidence":0.70,"group":"glands"},
+ {"term":"vas deferens","x":0.432,"y":0.275,"confidence":0.75,"group":"glands"},
+ {"term":"testis","x":0.405,"y":0.755,"confidence":0.90,"group":"ducts"},
+ {"term":"epididymis","x":0.425,"y":0.715,"confidence":0.75,"group":"ducts"},
+ {"term":"scrotum","x":0.398,"y":0.815,"confidence":0.80,"group":"ducts"},
+ {"term":"penis","x":0.335,"y":0.630,"confidence":0.90,"group":"ducts"},
+ {"term":"urethra","x":0.313,"y":0.720,"confidence":0.75,"group":"ducts"}
+]}

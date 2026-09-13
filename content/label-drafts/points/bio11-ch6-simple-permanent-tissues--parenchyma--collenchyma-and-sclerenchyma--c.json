@@ -1,0 +1,9 @@
+{"groups":[{"id":"cells","label":"Cell types"},{"id":"wall","label":"Wall features"}],
+ "points":[
+ {"term":"sclerenchyma","x":0.220,"y":0.660,"confidence":0.85,"group":"cells"},
+ {"term":"fibre","x":0.220,"y":0.265,"confidence":0.90,"group":"cells"},
+ {"term":"sclereid","x":0.655,"y":0.300,"confidence":0.90,"group":"cells"},
+ {"term":"lignified wall","x":0.845,"y":0.300,"confidence":0.85,"group":"wall"},
+ {"term":"lumen","x":0.845,"y":0.442,"confidence":0.80,"group":"wall"},
+ {"term":"pit","x":0.635,"y":0.700,"confidence":0.85,"group":"wall"}
+]}

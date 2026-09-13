@@ -1,0 +1,15 @@
+{"groups":[{"id":"outer","label":"Outer layers"},{"id":"endo","label":"Endodermis and pericycle"},
+           {"id":"vasc","label":"Vascular cylinder"}],
+ "points":[
+ {"term":"epiblema","x":0.310,"y":0.250,"confidence":0.85,"group":"outer"},
+ {"term":"root hair","x":0.275,"y":0.185,"confidence":0.90,"group":"outer"},
+ {"term":"cortex","x":0.355,"y":0.550,"confidence":0.90,"group":"outer"},
+ {"term":"endodermis","x":0.415,"y":0.290,"confidence":0.85,"group":"endo"},
+ {"term":"Casparian strip","x":0.585,"y":0.320,"confidence":0.65,"group":"endo"},
+ {"term":"pericycle","x":0.440,"y":0.685,"confidence":0.70,"group":"endo"},
+ {"term":"xylem","x":0.478,"y":0.300,"confidence":0.85,"group":"vasc"},
+ {"term":"phloem","x":0.425,"y":0.385,"confidence":0.80,"group":"vasc"},
+ {"term":"protoxylem","x":0.408,"y":0.500,"confidence":0.70,"group":"vasc"},
+ {"term":"metaxylem","x":0.475,"y":0.435,"confidence":0.70,"group":"vasc"},
+ {"term":"conjunctive tissue","x":0.545,"y":0.440,"confidence":0.60,"group":"vasc"}
+]}

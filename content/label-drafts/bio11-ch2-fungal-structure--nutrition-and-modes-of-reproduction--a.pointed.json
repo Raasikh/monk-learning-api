@@ -1,0 +1,152 @@
+{
+  "asset_slug": "bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "aerial",
+      "label": {
+        "english": "Aerial reproductive parts",
+        "hinglish": "Aerial reproductive parts"
+      }
+    },
+    {
+      "id": "substrate",
+      "label": {
+        "english": "Mycelium in the substrate",
+        "hinglish": "Mycelium in the substrate"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "hypha",
+      "text": {
+        "en": "hypha",
+        "hi": "hypha"
+      },
+      "anchor": [
+        0.135,
+        0.645
+      ],
+      "side": "auto",
+      "group": "substrate",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "mycelium",
+      "text": {
+        "en": "mycelium",
+        "hi": "mycelium"
+      },
+      "anchor": [
+        0.585,
+        0.655
+      ],
+      "side": "auto",
+      "group": "substrate",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "sporangium",
+      "text": {
+        "en": "sporangium",
+        "hi": "sporangium"
+      },
+      "anchor": [
+        0.5,
+        0.215
+      ],
+      "side": "auto",
+      "group": "aerial",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "spore",
+      "text": {
+        "en": "spore",
+        "hi": "spore"
+      },
+      "anchor": [
+        0.855,
+        0.215
+      ],
+      "side": "auto",
+      "group": "aerial",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "sporangiophore",
+      "text": {
+        "en": "sporangiophore",
+        "hi": "sporangiophore"
+      },
+      "anchor": [
+        0.487,
+        0.395
+      ],
+      "side": "auto",
+      "group": "aerial",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "rhizoid",
+      "text": {
+        "en": "rhizoid",
+        "hi": "rhizoid"
+      },
+      "anchor": [
+        0.23,
+        0.7
+      ],
+      "side": "auto",
+      "group": "substrate",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "stolon",
+      "text": {
+        "en": "stolon",
+        "hi": "stolon"
+      },
+      "anchor": [
+        0.355,
+        0.525
+      ],
+      "side": "auto",
+      "group": "aerial",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "septum",
+    "coenocytic hypha"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--a.json",
+    "repointed": 7,
+    "omitted_not_visible": [
+      "septum",
+      "coenocytic hypha"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

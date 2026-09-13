@@ -1,0 +1,108 @@
+{
+  "asset_slug": "bio11-ch4-phylum-echinodermata-and-hemichordata--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "body",
+      "label": {
+        "english": "Body",
+        "hinglish": "Body"
+      }
+    },
+    {
+      "id": "groove",
+      "label": {
+        "english": "Ambulacral groove",
+        "hinglish": "Ambulacral groove"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "arm",
+      "text": {
+        "en": "arm",
+        "hi": "arm"
+      },
+      "anchor": [
+        0.5,
+        0.2
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "central-disc",
+      "text": {
+        "en": "central disc",
+        "hi": "central disc"
+      },
+      "anchor": [
+        0.455,
+        0.465
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "tube-feet",
+      "text": {
+        "en": "tube feet",
+        "hi": "tube feet"
+      },
+      "anchor": [
+        0.395,
+        0.435
+      ],
+      "side": "auto",
+      "group": "groove",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "ambulacral-groove",
+      "text": {
+        "en": "ambulacral groove",
+        "hi": "ambulacral groove"
+      },
+      "anchor": [
+        0.5,
+        0.28
+      ],
+      "side": "auto",
+      "group": "groove",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "madreporite",
+    "proboscis",
+    "collar",
+    "trunk"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-echinodermata-and-hemichordata--a.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "madreporite",
+      "proboscis",
+      "collar",
+      "trunk"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

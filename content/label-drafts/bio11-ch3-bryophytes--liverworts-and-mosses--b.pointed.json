@@ -1,0 +1,156 @@
+{
+  "asset_slug": "bio11-ch3-bryophytes--liverworts-and-mosses--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "gameto",
+      "label": {
+        "english": "Leafy gametophyte",
+        "hinglish": "Leafy gametophyte"
+      }
+    },
+    {
+      "id": "sporo",
+      "label": {
+        "english": "Capsule",
+        "hinglish": "Capsule"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "rhizoid",
+      "text": {
+        "en": "rhizoid",
+        "hi": "rhizoid"
+      },
+      "anchor": [
+        0.265,
+        0.845
+      ],
+      "side": "auto",
+      "group": "gameto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "leaf",
+      "text": {
+        "en": "leaf",
+        "hi": "leaf"
+      },
+      "anchor": [
+        0.225,
+        0.42
+      ],
+      "side": "auto",
+      "group": "gameto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "stem",
+      "text": {
+        "en": "stem",
+        "hi": "stem"
+      },
+      "anchor": [
+        0.265,
+        0.62
+      ],
+      "side": "auto",
+      "group": "gameto",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "seta",
+      "text": {
+        "en": "seta",
+        "hi": "seta"
+      },
+      "anchor": [
+        0.295,
+        0.38
+      ],
+      "side": "auto",
+      "group": "gameto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "capsule",
+      "text": {
+        "en": "capsule",
+        "hi": "capsule"
+      },
+      "anchor": [
+        0.695,
+        0.6
+      ],
+      "side": "auto",
+      "group": "sporo",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "operculum",
+      "text": {
+        "en": "operculum",
+        "hi": "operculum"
+      },
+      "anchor": [
+        0.675,
+        0.235
+      ],
+      "side": "auto",
+      "group": "sporo",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "peristome",
+      "text": {
+        "en": "peristome",
+        "hi": "peristome"
+      },
+      "anchor": [
+        0.695,
+        0.415
+      ],
+      "side": "auto",
+      "group": "sporo",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "thallus",
+    "gemma cup",
+    "antheridiophore",
+    "archegoniophore"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-bryophytes--liverworts-and-mosses--b.json",
+    "repointed": 7,
+    "omitted_not_visible": [
+      "thallus",
+      "gemma cup",
+      "antheridiophore",
+      "archegoniophore"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

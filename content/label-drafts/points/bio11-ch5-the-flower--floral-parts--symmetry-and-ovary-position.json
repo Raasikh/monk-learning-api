@@ -1,0 +1,21 @@
+{"groups":[{"id":"outer","label":"Stalk and outer whorls"},
+           {"id":"stamen","label":"Stamen"},
+           {"id":"carpel","label":"Carpel"},
+           {"id":"position","label":"Ovary position"}],
+ "points":[
+ {"term":"pedicel","x":0.285,"y":0.800,"confidence":0.90,"group":"outer"},
+ {"term":"thalamus","x":0.283,"y":0.600,"confidence":0.80,"group":"outer"},
+ {"term":"sepal","x":0.363,"y":0.580,"confidence":0.85,"group":"outer"},
+ {"term":"petal","x":0.155,"y":0.330,"confidence":0.95,"group":"outer"},
+ {"term":"stamen","x":0.215,"y":0.400,"confidence":0.80,"group":"stamen"},
+ {"term":"anther","x":0.375,"y":0.330,"confidence":0.90,"group":"stamen"},
+ {"term":"filament","x":0.345,"y":0.450,"confidence":0.85,"group":"stamen"},
+ {"term":"carpel","x":0.298,"y":0.470,"confidence":0.70,"group":"carpel"},
+ {"term":"stigma","x":0.300,"y":0.175,"confidence":0.90,"group":"carpel"},
+ {"term":"style","x":0.298,"y":0.320,"confidence":0.85,"group":"carpel"},
+ {"term":"ovary","x":0.298,"y":0.530,"confidence":0.85,"group":"carpel"},
+ {"term":"ovule","x":0.315,"y":0.545,"confidence":0.70,"group":"carpel"},
+ {"term":"hypogynous","x":0.775,"y":0.200,"confidence":0.80,"group":"position"},
+ {"term":"perigynous","x":0.775,"y":0.470,"confidence":0.75,"group":"position"},
+ {"term":"epigynous","x":0.775,"y":0.720,"confidence":0.80,"group":"position"}
+]}

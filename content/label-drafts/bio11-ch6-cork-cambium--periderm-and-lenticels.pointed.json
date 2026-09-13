@@ -1,0 +1,162 @@
+{
+  "asset_slug": "bio11-ch6-cork-cambium--periderm-and-lenticels",
+  "image_w": 1376,
+  "image_h": 860,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "periderm",
+      "label": {
+        "english": "Periderm",
+        "hinglish": "Periderm"
+      }
+    },
+    {
+      "id": "lenticel",
+      "label": {
+        "english": "Lenticel",
+        "hinglish": "Lenticel"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "phellem",
+      "text": {
+        "en": "phellem",
+        "hi": "phellem"
+      },
+      "anchor": [
+        0.335,
+        0.3
+      ],
+      "side": "auto",
+      "group": "periderm",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "phellogen",
+      "text": {
+        "en": "phellogen",
+        "hi": "phellogen"
+      },
+      "anchor": [
+        0.36,
+        0.475
+      ],
+      "side": "auto",
+      "group": "periderm",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "phelloderm",
+      "text": {
+        "en": "phelloderm",
+        "hi": "phelloderm"
+      },
+      "anchor": [
+        0.38,
+        0.535
+      ],
+      "side": "auto",
+      "group": "periderm",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "periderm",
+      "text": {
+        "en": "periderm",
+        "hi": "periderm"
+      },
+      "anchor": [
+        0.715,
+        0.47
+      ],
+      "side": "auto",
+      "group": "periderm",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "lenticel",
+      "text": {
+        "en": "lenticel",
+        "hi": "lenticel"
+      },
+      "anchor": [
+        0.51,
+        0.29
+      ],
+      "side": "auto",
+      "group": "lenticel",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "complementary-cell",
+      "text": {
+        "en": "complementary cell",
+        "hi": "complementary cell"
+      },
+      "anchor": [
+        0.505,
+        0.42
+      ],
+      "side": "auto",
+      "group": "lenticel",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "epidermis",
+      "text": {
+        "en": "epidermis",
+        "hi": "epidermis"
+      },
+      "anchor": [
+        0.6,
+        0.185
+      ],
+      "side": "auto",
+      "group": "lenticel",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "cortex",
+      "text": {
+        "en": "cortex",
+        "hi": "cortex"
+      },
+      "anchor": [
+        0.42,
+        0.72
+      ],
+      "side": "auto",
+      "group": "lenticel",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-cork-cambium--periderm-and-lenticels.json",
+    "repointed": 8,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,10 @@
+{"groups":[{"id":"ribs","label":"Ribs"},
+           {"id":"front","label":"Sternum and attachments"}],
+ "points":[
+ {"term":"true rib","x":0.618,"y":0.300,"confidence":0.80,"group":"ribs"},
+ {"term":"false rib","x":0.628,"y":0.600,"confidence":0.75,"group":"ribs"},
+ {"term":"floating rib","x":0.618,"y":0.790,"confidence":0.85,"group":"ribs"},
+ {"term":"sternum","x":0.495,"y":0.320,"confidence":0.90,"group":"front"},
+ {"term":"costal cartilage","x":0.555,"y":0.415,"confidence":0.85,"group":"front"},
+ {"term":"thoracic vertebra","x":0.492,"y":0.660,"confidence":0.75,"group":"front"}
+]}

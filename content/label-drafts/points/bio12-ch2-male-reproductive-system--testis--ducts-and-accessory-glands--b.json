@@ -1,0 +1,11 @@
+{"groups":[{"id":"organ","label":"Testis and ducts"},
+           {"id":"tubule","label":"Inside a seminiferous tubule"}],
+ "points":[
+ {"term":"testis","x":0.280,"y":0.500,"confidence":0.90,"group":"organ"},
+ {"term":"epididymis","x":0.455,"y":0.550,"confidence":0.85,"group":"organ"},
+ {"term":"vas deferens","x":0.435,"y":0.145,"confidence":0.75,"group":"organ"},
+ {"term":"scrotum","x":0.195,"y":0.300,"confidence":0.60,"group":"organ"},
+ {"term":"seminiferous tubule","x":0.250,"y":0.360,"confidence":0.85,"group":"tubule"},
+ {"term":"Sertoli cell","x":0.730,"y":0.345,"confidence":0.65,"group":"tubule"},
+ {"term":"Leydig cell","x":0.605,"y":0.640,"confidence":0.70,"group":"tubule"}
+]}

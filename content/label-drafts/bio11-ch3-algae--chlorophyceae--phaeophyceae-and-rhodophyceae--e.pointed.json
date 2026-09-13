@@ -1,0 +1,114 @@
+{
+  "asset_slug": "bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--e",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "thallus",
+      "label": {
+        "english": "Thallus",
+        "hinglish": "Thallus"
+      }
+    },
+    {
+      "id": "cells",
+      "label": {
+        "english": "Cells in section",
+        "hinglish": "Cells in section"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "nucleus",
+      "text": {
+        "en": "nucleus",
+        "hi": "nucleus"
+      },
+      "anchor": [
+        0.715,
+        0.135
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "cell-wall",
+      "text": {
+        "en": "cell wall",
+        "hi": "cell wall"
+      },
+      "anchor": [
+        0.765,
+        0.135
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "holdfast",
+      "text": {
+        "en": "holdfast",
+        "hi": "holdfast"
+      },
+      "anchor": [
+        0.275,
+        0.855
+      ],
+      "side": "auto",
+      "group": "thallus",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "stipe",
+      "text": {
+        "en": "stipe",
+        "hi": "stipe"
+      },
+      "anchor": [
+        0.28,
+        0.745
+      ],
+      "side": "auto",
+      "group": "thallus",
+      "_point": {
+        "confidence": 0.65
+      }
+    }
+  ],
+  "unplaced": [
+    "flagellum",
+    "cup-shaped chloroplast",
+    "pyrenoid",
+    "eyespot",
+    "colony",
+    "spiral chloroplast",
+    "blade"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--e.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "flagellum",
+      "cup-shaped chloroplast",
+      "pyrenoid",
+      "eyespot",
+      "colony",
+      "spiral chloroplast",
+      "blade"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

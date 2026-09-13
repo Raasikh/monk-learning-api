@@ -1,0 +1,9 @@
+{"groups":[{"id":"organelles","label":"Organelles"},{"id":"surface","label":"Surface and wall"}],
+ "points":[
+ {"term":"cup-shaped chloroplast","x":0.432,"y":0.720,"confidence":0.90,"group":"organelles"},
+ {"term":"pyrenoid","x":0.578,"y":0.598,"confidence":0.80,"group":"organelles"},
+ {"term":"nucleus","x":0.498,"y":0.635,"confidence":0.85,"group":"organelles"},
+ {"term":"flagellum","x":0.360,"y":0.170,"confidence":0.95,"group":"surface"},
+ {"term":"eyespot","x":0.548,"y":0.395,"confidence":0.95,"group":"surface"},
+ {"term":"cell wall","x":0.372,"y":0.500,"confidence":0.75,"group":"surface"}
+]}

@@ -1,0 +1,88 @@
+{
+  "asset_slug": "bio11-ch5-root-system--types--regions-and-modifications--d",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "prop-root",
+      "text": {
+        "en": "prop root",
+        "hi": "prop root"
+      },
+      "anchor": [
+        0.17,
+        0.62
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "stilt-root",
+      "text": {
+        "en": "stilt root",
+        "hi": "stilt root"
+      },
+      "anchor": [
+        0.5,
+        0.735
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "pneumatophore",
+      "text": {
+        "en": "pneumatophore",
+        "hi": "pneumatophore"
+      },
+      "anchor": [
+        0.845,
+        0.715
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "tap root",
+    "lateral root",
+    "fibrous root",
+    "root cap",
+    "region of meristematic activity",
+    "region of elongation",
+    "region of maturation",
+    "root hair",
+    "conical root",
+    "fusiform root",
+    "napiform root"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-root-system--types--regions-and-modifications--d.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "tap root",
+      "lateral root",
+      "fibrous root",
+      "root cap",
+      "region of meristematic activity",
+      "region of elongation",
+      "region of maturation",
+      "root hair",
+      "conical root",
+      "fusiform root",
+      "napiform root"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

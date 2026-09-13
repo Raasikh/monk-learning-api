@@ -1,0 +1,8 @@
+{"groups":[{"id":"layers","label":"Layers of the pericarp"},{"id":"whole","label":"Fruit wall and seed"}],
+ "points":[
+ {"term":"epicarp","x":0.635,"y":0.290,"confidence":0.90,"group":"layers"},
+ {"term":"mesocarp","x":0.400,"y":0.600,"confidence":0.90,"group":"layers"},
+ {"term":"endocarp","x":0.455,"y":0.300,"confidence":0.85,"group":"layers"},
+ {"term":"pericarp","x":0.622,"y":0.450,"confidence":0.65,"group":"whole"},
+ {"term":"seed","x":0.505,"y":0.500,"confidence":0.90,"group":"whole"}
+]}

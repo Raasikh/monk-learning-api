@@ -1,0 +1,64 @@
+{
+  "asset_slug": "bio11-ch6-simple-permanent-tissues--parenchyma--collenchyma-and-sclerenchyma--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "collenchyma",
+      "text": {
+        "en": "collenchyma",
+        "hi": "collenchyma"
+      },
+      "anchor": [
+        0.445,
+        0.4
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "cell-wall",
+      "text": {
+        "en": "cell wall",
+        "hi": "cell wall"
+      },
+      "anchor": [
+        0.345,
+        0.48
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "thickened-corner",
+      "text": {
+        "en": "thickened corner",
+        "hi": "thickened corner"
+      },
+      "anchor": [
+        0.425,
+        0.265
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-simple-permanent-tissues--parenchyma--collenchyma-and-sclerenchyma--b.json",
+    "repointed": 3,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

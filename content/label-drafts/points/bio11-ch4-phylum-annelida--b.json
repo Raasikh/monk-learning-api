@@ -1,0 +1,8 @@
+{"groups":[{"id":"ends","label":"Anterior and posterior"},{"id":"body","label":"Body surface"}],
+ "points":[
+ {"term":"prostomium","x":0.075,"y":0.500,"confidence":0.85,"group":"ends"},
+ {"term":"clitellum","x":0.225,"y":0.500,"confidence":0.95,"group":"ends"},
+ {"term":"anus","x":0.935,"y":0.555,"confidence":0.75,"group":"ends"},
+ {"term":"segment","x":0.685,"y":0.485,"confidence":0.85,"group":"body"},
+ {"term":"seta","x":0.400,"y":0.462,"confidence":0.80,"group":"body"}
+]}

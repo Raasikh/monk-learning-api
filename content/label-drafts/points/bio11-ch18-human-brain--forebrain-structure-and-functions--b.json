@@ -1,0 +1,11 @@
+{"groups":[{"id":"lobes","label":"Lobes of the cerebrum"},
+           {"id":"surface","label":"Surface landmarks"}],
+ "points":[
+ {"term":"frontal lobe","x":0.310,"y":0.280,"confidence":0.95,"group":"lobes"},
+ {"term":"parietal lobe","x":0.590,"y":0.200,"confidence":0.95,"group":"lobes"},
+ {"term":"temporal lobe","x":0.480,"y":0.500,"confidence":0.95,"group":"lobes"},
+ {"term":"occipital lobe","x":0.715,"y":0.420,"confidence":0.95,"group":"lobes"},
+ {"term":"cerebrum","x":0.530,"y":0.125,"confidence":0.70,"group":"surface"},
+ {"term":"central sulcus","x":0.478,"y":0.235,"confidence":0.85,"group":"surface"},
+ {"term":"cerebral cortex","x":0.250,"y":0.400,"confidence":0.70,"group":"surface"}
+]}

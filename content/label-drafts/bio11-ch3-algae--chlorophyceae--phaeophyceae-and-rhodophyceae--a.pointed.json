@@ -1,0 +1,142 @@
+{
+  "asset_slug": "bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "organelles",
+      "label": {
+        "english": "Organelles",
+        "hinglish": "Organelles"
+      }
+    },
+    {
+      "id": "surface",
+      "label": {
+        "english": "Surface and wall",
+        "hinglish": "Surface and wall"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "flagellum",
+      "text": {
+        "en": "flagellum",
+        "hi": "flagellum"
+      },
+      "anchor": [
+        0.36,
+        0.17
+      ],
+      "side": "auto",
+      "group": "surface",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "cup-shaped-chloroplast",
+      "text": {
+        "en": "cup-shaped chloroplast",
+        "hi": "cup-shaped chloroplast"
+      },
+      "anchor": [
+        0.432,
+        0.72
+      ],
+      "side": "auto",
+      "group": "organelles",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "pyrenoid",
+      "text": {
+        "en": "pyrenoid",
+        "hi": "pyrenoid"
+      },
+      "anchor": [
+        0.578,
+        0.598
+      ],
+      "side": "auto",
+      "group": "organelles",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "eyespot",
+      "text": {
+        "en": "eyespot",
+        "hi": "eyespot"
+      },
+      "anchor": [
+        0.548,
+        0.395
+      ],
+      "side": "auto",
+      "group": "surface",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "nucleus",
+      "text": {
+        "en": "nucleus",
+        "hi": "nucleus"
+      },
+      "anchor": [
+        0.498,
+        0.635
+      ],
+      "side": "auto",
+      "group": "organelles",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "cell-wall",
+      "text": {
+        "en": "cell wall",
+        "hi": "cell wall"
+      },
+      "anchor": [
+        0.372,
+        0.5
+      ],
+      "side": "auto",
+      "group": "surface",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "colony",
+    "spiral chloroplast",
+    "holdfast",
+    "stipe",
+    "blade"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--a.json",
+    "repointed": 6,
+    "omitted_not_visible": [
+      "colony",
+      "spiral chloroplast",
+      "holdfast",
+      "stipe",
+      "blade"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "asset_slug": "bio11-ch4-phylum-annelida--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "ends",
+      "label": {
+        "english": "Anterior and posterior",
+        "hinglish": "Anterior and posterior"
+      }
+    },
+    {
+      "id": "body",
+      "label": {
+        "english": "Body surface",
+        "hinglish": "Body surface"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "prostomium",
+      "text": {
+        "en": "prostomium",
+        "hi": "prostomium"
+      },
+      "anchor": [
+        0.075,
+        0.5
+      ],
+      "side": "auto",
+      "group": "ends",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "segment",
+      "text": {
+        "en": "segment",
+        "hi": "segment"
+      },
+      "anchor": [
+        0.685,
+        0.485
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "clitellum",
+      "text": {
+        "en": "clitellum",
+        "hi": "clitellum"
+      },
+      "anchor": [
+        0.225,
+        0.5
+      ],
+      "side": "auto",
+      "group": "ends",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "seta",
+      "text": {
+        "en": "seta",
+        "hi": "seta"
+      },
+      "anchor": [
+        0.4,
+        0.462
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "anus",
+      "text": {
+        "en": "anus",
+        "hi": "anus"
+      },
+      "anchor": [
+        0.935,
+        0.555
+      ],
+      "side": "auto",
+      "group": "ends",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "parapodium"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-annelida--b.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "parapodium"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

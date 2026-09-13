@@ -1,0 +1,8 @@
+{"groups":[{"id":"shell","label":"Shell and mantle"},{"id":"body","label":"Head and foot"}],
+ "points":[
+ {"term":"shell","x":0.635,"y":0.300,"confidence":0.95,"group":"shell"},
+ {"term":"mantle","x":0.445,"y":0.595,"confidence":0.65,"group":"shell"},
+ {"term":"tentacle","x":0.155,"y":0.395,"confidence":0.95,"group":"body"},
+ {"term":"head","x":0.255,"y":0.620,"confidence":0.80,"group":"body"},
+ {"term":"foot","x":0.475,"y":0.735,"confidence":0.90,"group":"body"}
+]}

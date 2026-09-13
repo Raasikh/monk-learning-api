@@ -1,0 +1,78 @@
+{
+  "asset_slug": "bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "hypha",
+      "text": {
+        "en": "hypha",
+        "hi": "hypha"
+      },
+      "anchor": [
+        0.855,
+        0.275
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "septum",
+      "text": {
+        "en": "septum",
+        "hi": "septum"
+      },
+      "anchor": [
+        0.795,
+        0.395
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "coenocytic-hypha",
+      "text": {
+        "en": "coenocytic hypha",
+        "hi": "coenocytic hypha"
+      },
+      "anchor": [
+        0.225,
+        0.635
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "mycelium",
+    "sporangium",
+    "spore",
+    "sporangiophore",
+    "rhizoid",
+    "stolon"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--b.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "mycelium",
+      "sporangium",
+      "spore",
+      "sporangiophore",
+      "rhizoid",
+      "stolon"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

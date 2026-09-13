@@ -1,0 +1,7 @@
+{"groups":[{"id":"body","label":"Body"},{"id":"groove","label":"Ambulacral groove"}],
+ "points":[
+ {"term":"arm","x":0.500,"y":0.200,"confidence":0.95,"group":"body"},
+ {"term":"central disc","x":0.455,"y":0.465,"confidence":0.80,"group":"body"},
+ {"term":"ambulacral groove","x":0.500,"y":0.280,"confidence":0.85,"group":"groove"},
+ {"term":"tube feet","x":0.395,"y":0.435,"confidence":0.85,"group":"groove"}
+]}

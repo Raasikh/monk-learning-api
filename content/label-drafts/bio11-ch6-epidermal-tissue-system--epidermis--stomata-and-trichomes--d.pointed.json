@@ -1,0 +1,78 @@
+{
+  "asset_slug": "bio11-ch6-epidermal-tissue-system--epidermis--stomata-and-trichomes--d",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "epidermal-cell",
+      "text": {
+        "en": "epidermal cell",
+        "hi": "epidermal cell"
+      },
+      "anchor": [
+        0.735,
+        0.625
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "cuticle",
+      "text": {
+        "en": "cuticle",
+        "hi": "cuticle"
+      },
+      "anchor": [
+        0.275,
+        0.53
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "trichome",
+      "text": {
+        "en": "trichome",
+        "hi": "trichome"
+      },
+      "anchor": [
+        0.4,
+        0.27
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "guard cell",
+    "stomatal pore",
+    "subsidiary cell",
+    "chloroplast",
+    "dumbbell-shaped guard cell",
+    "root hair"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-epidermal-tissue-system--epidermis--stomata-and-trichomes--d.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "guard cell",
+      "stomatal pore",
+      "subsidiary cell",
+      "chloroplast",
+      "dumbbell-shaped guard cell",
+      "root hair"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

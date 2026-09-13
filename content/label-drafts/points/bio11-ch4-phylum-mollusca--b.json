@@ -1,0 +1,8 @@
+{"groups":[{"id":"mantle","label":"Mantle"},{"id":"head","label":"Head and arms"}],
+ "points":[
+ {"term":"mantle","x":0.200,"y":0.375,"confidence":0.90,"group":"mantle"},
+ {"term":"visceral hump","x":0.240,"y":0.430,"confidence":0.60,"group":"mantle"},
+ {"term":"siphon","x":0.385,"y":0.515,"confidence":0.85,"group":"mantle"},
+ {"term":"head","x":0.475,"y":0.325,"confidence":0.85,"group":"head"},
+ {"term":"tentacle","x":0.665,"y":0.335,"confidence":0.95,"group":"head"}
+]}

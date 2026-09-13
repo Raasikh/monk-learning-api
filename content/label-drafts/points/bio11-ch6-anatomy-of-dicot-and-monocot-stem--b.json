@@ -1,0 +1,10 @@
+{"groups":[{"id":"outer","label":"Outer layers"},{"id":"bundle","label":"Scattered bundles"}],
+ "points":[
+ {"term":"epidermis","x":0.500,"y":0.105,"confidence":0.85,"group":"outer"},
+ {"term":"hypodermis","x":0.500,"y":0.155,"confidence":0.80,"group":"outer"},
+ {"term":"ground tissue","x":0.400,"y":0.630,"confidence":0.85,"group":"outer"},
+ {"term":"vascular bundle","x":0.485,"y":0.245,"confidence":0.90,"group":"bundle"},
+ {"term":"bundle sheath","x":0.445,"y":0.565,"confidence":0.85,"group":"bundle"},
+ {"term":"xylem","x":0.578,"y":0.440,"confidence":0.80,"group":"bundle"},
+ {"term":"phloem","x":0.428,"y":0.545,"confidence":0.75,"group":"bundle"}
+]}

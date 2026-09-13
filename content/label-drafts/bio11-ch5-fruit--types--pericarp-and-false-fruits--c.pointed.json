@@ -1,0 +1,87 @@
+{
+  "asset_slug": "bio11-ch5-fruit--types--pericarp-and-false-fruits--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "seed",
+      "text": {
+        "en": "seed",
+        "hi": "seed"
+      },
+      "anchor": [
+        0.545,
+        0.53
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "pericarp",
+      "text": {
+        "en": "pericarp",
+        "hi": "pericarp"
+      },
+      "anchor": [
+        0.47,
+        0.43
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "fleshy-thalamus",
+      "text": {
+        "en": "fleshy thalamus",
+        "hi": "fleshy thalamus"
+      },
+      "anchor": [
+        0.375,
+        0.4
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "edible-part",
+      "text": {
+        "en": "edible part",
+        "hi": "edible part"
+      },
+      "anchor": [
+        0.605,
+        0.6
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "epicarp",
+    "mesocarp",
+    "endocarp"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-fruit--types--pericarp-and-false-fruits--c.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "epicarp",
+      "mesocarp",
+      "endocarp"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "asset_slug": "bio11-ch4-phylum-echinodermata-and-hemichordata--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "proboscis",
+      "text": {
+        "en": "proboscis",
+        "hi": "proboscis"
+      },
+      "anchor": [
+        0.155,
+        0.485
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "collar",
+      "text": {
+        "en": "collar",
+        "hi": "collar"
+      },
+      "anchor": [
+        0.255,
+        0.5
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "trunk",
+      "text": {
+        "en": "trunk",
+        "hi": "trunk"
+      },
+      "anchor": [
+        0.655,
+        0.465
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "arm",
+    "central disc",
+    "tube feet",
+    "madreporite",
+    "ambulacral groove"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-echinodermata-and-hemichordata--b.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "arm",
+      "central disc",
+      "tube feet",
+      "madreporite",
+      "ambulacral groove"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

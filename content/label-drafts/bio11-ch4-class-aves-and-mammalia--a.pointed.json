@@ -1,0 +1,122 @@
+{
+  "asset_slug": "bio11-ch4-class-aves-and-mammalia--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "outside",
+      "label": {
+        "english": "External features",
+        "hinglish": "External features"
+      }
+    },
+    {
+      "id": "bone",
+      "label": {
+        "english": "Skeleton",
+        "hinglish": "Skeleton"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "feather",
+      "text": {
+        "en": "feather",
+        "hi": "feather"
+      },
+      "anchor": [
+        0.455,
+        0.545
+      ],
+      "side": "auto",
+      "group": "outside",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "beak",
+      "text": {
+        "en": "beak",
+        "hi": "beak"
+      },
+      "anchor": [
+        0.645,
+        0.165
+      ],
+      "side": "auto",
+      "group": "outside",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "wing",
+      "text": {
+        "en": "wing",
+        "hi": "wing"
+      },
+      "anchor": [
+        0.395,
+        0.475
+      ],
+      "side": "auto",
+      "group": "outside",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "hollow-bone",
+      "text": {
+        "en": "hollow bone",
+        "hi": "hollow bone"
+      },
+      "anchor": [
+        0.815,
+        0.3
+      ],
+      "side": "auto",
+      "group": "bone",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "air-cavity",
+      "text": {
+        "en": "air cavity",
+        "hi": "air cavity"
+      },
+      "anchor": [
+        0.825,
+        0.22
+      ],
+      "side": "auto",
+      "group": "bone",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "fur",
+    "pouch",
+    "mammary gland"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-class-aves-and-mammalia--a.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "fur",
+      "pouch",
+      "mammary gland"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,77 @@
+{
+ "groups": [
+  {
+   "id": "girdle",
+   "label": "Pectoral girdle and arm"
+  },
+  {
+   "id": "hand",
+   "label": "Forearm and hand"
+  }
+ ],
+ "points": [
+  {
+   "term": "clavicle",
+   "x": 0.532,
+   "y": 0.108,
+   "confidence": 0.85,
+   "group": "girdle"
+  },
+  {
+   "term": "scapula",
+   "x": 0.555,
+   "y": 0.21,
+   "confidence": 0.9,
+   "group": "girdle"
+  },
+  {
+   "term": "glenoid cavity",
+   "x": 0.492,
+   "y": 0.148,
+   "confidence": 0.7,
+   "group": "girdle"
+  },
+  {
+   "term": "humerus",
+   "x": 0.478,
+   "y": 0.305,
+   "confidence": 0.9,
+   "group": "girdle"
+  },
+  {
+   "term": "radius",
+   "x": 0.472,
+   "y": 0.575,
+   "confidence": 0.65,
+   "group": "hand"
+  },
+  {
+   "term": "ulna",
+   "x": 0.492,
+   "y": 0.575,
+   "confidence": 0.65,
+   "group": "hand"
+  },
+  {
+   "term": "carpal",
+   "x": 0.487,
+   "y": 0.705,
+   "confidence": 0.8,
+   "group": "hand"
+  },
+  {
+   "term": "metacarpal",
+   "x": 0.497,
+   "y": 0.765,
+   "confidence": 0.8,
+   "group": "hand"
+  },
+  {
+   "term": "phalanx",
+   "x": 0.512,
+   "y": 0.862,
+   "confidence": 0.8,
+   "group": "hand"
+  }
+ ]
+}

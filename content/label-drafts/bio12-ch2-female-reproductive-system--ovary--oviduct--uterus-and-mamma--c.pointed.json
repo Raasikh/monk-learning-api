@@ -1,0 +1,122 @@
+{
+  "asset_slug": "bio12-ch2-female-reproductive-system--ovary--oviduct--uterus-and-mamma--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "mammary-lobe",
+      "text": {
+        "en": "mammary lobe",
+        "hi": "mammary lobe"
+      },
+      "anchor": [
+        0.462,
+        0.55
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "alveolus",
+      "text": {
+        "en": "alveolus",
+        "hi": "alveolus"
+      },
+      "anchor": [
+        0.538,
+        0.395
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "mammary-duct",
+      "text": {
+        "en": "mammary duct",
+        "hi": "mammary duct"
+      },
+      "anchor": [
+        0.568,
+        0.48
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "lactiferous-duct",
+      "text": {
+        "en": "lactiferous duct",
+        "hi": "lactiferous duct"
+      },
+      "anchor": [
+        0.635,
+        0.545
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "nipple",
+      "text": {
+        "en": "nipple",
+        "hi": "nipple"
+      },
+      "anchor": [
+        0.682,
+        0.545
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "ovary",
+    "fallopian tube",
+    "infundibulum",
+    "fimbriae",
+    "ampulla",
+    "isthmus",
+    "uterus",
+    "fundus",
+    "cervix",
+    "vagina",
+    "endometrium",
+    "myometrium",
+    "perimetrium"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio12-ch2-female-reproductive-system--ovary--oviduct--uterus-and-mamma--c.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "ovary",
+      "fallopian tube",
+      "infundibulum",
+      "fimbriae",
+      "ampulla",
+      "isthmus",
+      "uterus",
+      "fundus",
+      "cervix",
+      "vagina",
+      "endometrium",
+      "myometrium",
+      "perimetrium"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

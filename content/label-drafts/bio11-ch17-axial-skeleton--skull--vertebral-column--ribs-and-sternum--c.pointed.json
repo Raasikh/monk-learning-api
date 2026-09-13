@@ -1,0 +1,152 @@
+{
+  "asset_slug": "bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "ribs",
+      "label": {
+        "english": "Ribs",
+        "hinglish": "Ribs"
+      }
+    },
+    {
+      "id": "front",
+      "label": {
+        "english": "Sternum and attachments",
+        "hinglish": "Sternum and attachments"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "thoracic-vertebra",
+      "text": {
+        "en": "thoracic vertebra",
+        "hi": "thoracic vertebra"
+      },
+      "anchor": [
+        0.492,
+        0.66
+      ],
+      "side": "auto",
+      "group": "front",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "true-rib",
+      "text": {
+        "en": "true rib",
+        "hi": "true rib"
+      },
+      "anchor": [
+        0.618,
+        0.3
+      ],
+      "side": "auto",
+      "group": "ribs",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "false-rib",
+      "text": {
+        "en": "false rib",
+        "hi": "false rib"
+      },
+      "anchor": [
+        0.628,
+        0.6
+      ],
+      "side": "auto",
+      "group": "ribs",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "floating-rib",
+      "text": {
+        "en": "floating rib",
+        "hi": "floating rib"
+      },
+      "anchor": [
+        0.618,
+        0.79
+      ],
+      "side": "auto",
+      "group": "ribs",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "sternum",
+      "text": {
+        "en": "sternum",
+        "hi": "sternum"
+      },
+      "anchor": [
+        0.495,
+        0.32
+      ],
+      "side": "auto",
+      "group": "front",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "costal-cartilage",
+      "text": {
+        "en": "costal cartilage",
+        "hi": "costal cartilage"
+      },
+      "anchor": [
+        0.555,
+        0.415
+      ],
+      "side": "auto",
+      "group": "front",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "cranium",
+    "facial bone",
+    "mandible",
+    "hyoid",
+    "cervical vertebra",
+    "lumbar vertebra",
+    "sacrum",
+    "coccyx",
+    "atlas",
+    "intervertebral disc"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--c.json",
+    "repointed": 6,
+    "omitted_not_visible": [
+      "cranium",
+      "facial bone",
+      "mandible",
+      "hyoid",
+      "cervical vertebra",
+      "lumbar vertebra",
+      "sacrum",
+      "coccyx",
+      "atlas",
+      "intervertebral disc"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

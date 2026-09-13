@@ -1,0 +1,134 @@
+{
+  "asset_slug": "bio11-ch4-phylum-platyhelminthes--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "scolex",
+      "label": {
+        "english": "Scolex",
+        "hinglish": "Scolex"
+      }
+    },
+    {
+      "id": "strobila",
+      "label": {
+        "english": "Neck and proglottids",
+        "hinglish": "Neck and proglottids"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "scolex",
+      "text": {
+        "en": "scolex",
+        "hi": "scolex"
+      },
+      "anchor": [
+        0.735,
+        0.19
+      ],
+      "side": "auto",
+      "group": "scolex",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "hook",
+      "text": {
+        "en": "hook",
+        "hi": "hook"
+      },
+      "anchor": [
+        0.735,
+        0.128
+      ],
+      "side": "auto",
+      "group": "scolex",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "sucker",
+      "text": {
+        "en": "sucker",
+        "hi": "sucker"
+      },
+      "anchor": [
+        0.685,
+        0.295
+      ],
+      "side": "auto",
+      "group": "scolex",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "neck",
+      "text": {
+        "en": "neck",
+        "hi": "neck"
+      },
+      "anchor": [
+        0.735,
+        0.425
+      ],
+      "side": "auto",
+      "group": "strobila",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "proglottid",
+      "text": {
+        "en": "proglottid",
+        "hi": "proglottid"
+      },
+      "anchor": [
+        0.205,
+        0.3
+      ],
+      "side": "auto",
+      "group": "strobila",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "mature-proglottid",
+      "text": {
+        "en": "mature proglottid",
+        "hi": "mature proglottid"
+      },
+      "anchor": [
+        0.745,
+        0.665
+      ],
+      "side": "auto",
+      "group": "strobila",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "gravid proglottid"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-platyhelminthes--a.json",
+    "repointed": 6,
+    "omitted_not_visible": [
+      "gravid proglottid"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

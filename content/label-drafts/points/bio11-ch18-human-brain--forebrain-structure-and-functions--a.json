@@ -1,0 +1,15 @@
+{"groups":[{"id":"surface","label":"Cerebral surface"},
+           {"id":"deep","label":"Deep forebrain"},
+           {"id":"lobes","label":"Lobes in section"}],
+ "points":[
+ {"term":"cerebrum","x":0.400,"y":0.185,"confidence":0.85,"group":"surface"},
+ {"term":"cerebral cortex","x":0.470,"y":0.112,"confidence":0.75,"group":"surface"},
+ {"term":"central sulcus","x":0.462,"y":0.108,"confidence":0.60,"group":"surface"},
+ {"term":"corpus callosum","x":0.445,"y":0.345,"confidence":0.85,"group":"deep"},
+ {"term":"thalamus","x":0.505,"y":0.435,"confidence":0.85,"group":"deep"},
+ {"term":"hypothalamus","x":0.475,"y":0.525,"confidence":0.70,"group":"deep"},
+ {"term":"pituitary gland","x":0.435,"y":0.568,"confidence":0.70,"group":"deep"},
+ {"term":"frontal lobe","x":0.290,"y":0.275,"confidence":0.80,"group":"lobes"},
+ {"term":"parietal lobe","x":0.575,"y":0.155,"confidence":0.80,"group":"lobes"},
+ {"term":"occipital lobe","x":0.715,"y":0.325,"confidence":0.80,"group":"lobes"}
+]}

@@ -1,0 +1,160 @@
+{
+  "asset_slug": "bio11-ch5-seed-structure-in-dicots-and-monocots--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "coat",
+      "label": {
+        "english": "Seed coat",
+        "hinglish": "Seed coat"
+      }
+    },
+    {
+      "id": "embryo",
+      "label": {
+        "english": "Embryo",
+        "hinglish": "Embryo"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "seed-coat",
+      "text": {
+        "en": "seed coat",
+        "hi": "seed coat"
+      },
+      "anchor": [
+        0.255,
+        0.28
+      ],
+      "side": "auto",
+      "group": "coat",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "hilum",
+      "text": {
+        "en": "hilum",
+        "hi": "hilum"
+      },
+      "anchor": [
+        0.163,
+        0.505
+      ],
+      "side": "auto",
+      "group": "coat",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "micropyle",
+      "text": {
+        "en": "micropyle",
+        "hi": "micropyle"
+      },
+      "anchor": [
+        0.178,
+        0.415
+      ],
+      "side": "auto",
+      "group": "coat",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "cotyledon",
+      "text": {
+        "en": "cotyledon",
+        "hi": "cotyledon"
+      },
+      "anchor": [
+        0.545,
+        0.45
+      ],
+      "side": "auto",
+      "group": "embryo",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "plumule",
+      "text": {
+        "en": "plumule",
+        "hi": "plumule"
+      },
+      "anchor": [
+        0.665,
+        0.435
+      ],
+      "side": "auto",
+      "group": "embryo",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "radicle",
+      "text": {
+        "en": "radicle",
+        "hi": "radicle"
+      },
+      "anchor": [
+        0.678,
+        0.655
+      ],
+      "side": "auto",
+      "group": "embryo",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "embryonal-axis",
+      "text": {
+        "en": "embryonal axis",
+        "hi": "embryonal axis"
+      },
+      "anchor": [
+        0.672,
+        0.545
+      ],
+      "side": "auto",
+      "group": "embryo",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "pericarp",
+    "aleurone layer",
+    "endosperm",
+    "scutellum",
+    "coleoptile",
+    "coleorhiza"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-seed-structure-in-dicots-and-monocots--a.json",
+    "repointed": 7,
+    "omitted_not_visible": [
+      "pericarp",
+      "aleurone layer",
+      "endosperm",
+      "scutellum",
+      "coleoptile",
+      "coleorhiza"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

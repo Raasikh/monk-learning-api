@@ -1,0 +1,8 @@
+{"groups":[{"id":"stoma","label":"Stoma"},{"id":"around","label":"Surrounding cells"}],
+ "points":[
+ {"term":"guard cell","x":0.435,"y":0.360,"confidence":0.95,"group":"stoma"},
+ {"term":"stomatal pore","x":0.505,"y":0.500,"confidence":0.95,"group":"stoma"},
+ {"term":"chloroplast","x":0.575,"y":0.615,"confidence":0.85,"group":"stoma"},
+ {"term":"subsidiary cell","x":0.635,"y":0.755,"confidence":0.85,"group":"around"},
+ {"term":"epidermal cell","x":0.185,"y":0.280,"confidence":0.90,"group":"around"}
+]}

@@ -1,0 +1,110 @@
+{
+  "asset_slug": "bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "head",
+      "label": {
+        "english": "Head",
+        "hinglish": "Head"
+      }
+    },
+    {
+      "id": "body",
+      "label": {
+        "english": "Fins and scales",
+        "hinglish": "Fins and scales"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "pectoral-fin",
+      "text": {
+        "en": "pectoral fin",
+        "hi": "pectoral fin"
+      },
+      "anchor": [
+        0.325,
+        0.625
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "operculum",
+      "text": {
+        "en": "operculum",
+        "hi": "operculum"
+      },
+      "anchor": [
+        0.215,
+        0.475
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "homocercal-tail",
+      "text": {
+        "en": "homocercal tail",
+        "hi": "homocercal tail"
+      },
+      "anchor": [
+        0.855,
+        0.465
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "cycloid-scale",
+      "text": {
+        "en": "cycloid scale",
+        "hi": "cycloid scale"
+      },
+      "anchor": [
+        0.455,
+        0.415
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "circular sucking mouth",
+    "gill slit",
+    "placoid scale",
+    "ventral mouth",
+    "heterocercal tail"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--c.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "circular sucking mouth",
+      "gill slit",
+      "placoid scale",
+      "ventral mouth",
+      "heterocercal tail"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

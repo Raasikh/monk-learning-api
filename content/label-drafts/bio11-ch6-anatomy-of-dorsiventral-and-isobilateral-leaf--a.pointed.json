@@ -1,0 +1,221 @@
+{
+  "asset_slug": "bio11-ch6-anatomy-of-dorsiventral-and-isobilateral-leaf--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "epi",
+      "label": {
+        "english": "Epidermis",
+        "hinglish": "Epidermis"
+      }
+    },
+    {
+      "id": "meso",
+      "label": {
+        "english": "Mesophyll",
+        "hinglish": "Mesophyll"
+      }
+    },
+    {
+      "id": "bundle",
+      "label": {
+        "english": "Vascular bundle",
+        "hinglish": "Vascular bundle"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "upper-epidermis",
+      "text": {
+        "en": "upper epidermis",
+        "hi": "upper epidermis"
+      },
+      "anchor": [
+        0.31,
+        0.185
+      ],
+      "side": "auto",
+      "group": "epi",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "cuticle",
+      "text": {
+        "en": "cuticle",
+        "hi": "cuticle"
+      },
+      "anchor": [
+        0.45,
+        0.152
+      ],
+      "side": "auto",
+      "group": "epi",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "palisade-parenchyma",
+      "text": {
+        "en": "palisade parenchyma",
+        "hi": "palisade parenchyma"
+      },
+      "anchor": [
+        0.28,
+        0.29
+      ],
+      "side": "auto",
+      "group": "meso",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "spongy-parenchyma",
+      "text": {
+        "en": "spongy parenchyma",
+        "hi": "spongy parenchyma"
+      },
+      "anchor": [
+        0.235,
+        0.53
+      ],
+      "side": "auto",
+      "group": "meso",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "lower-epidermis",
+      "text": {
+        "en": "lower epidermis",
+        "hi": "lower epidermis"
+      },
+      "anchor": [
+        0.705,
+        0.705
+      ],
+      "side": "auto",
+      "group": "epi",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "stoma",
+      "text": {
+        "en": "stoma",
+        "hi": "stoma"
+      },
+      "anchor": [
+        0.305,
+        0.695
+      ],
+      "side": "auto",
+      "group": "epi",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "vascular-bundle",
+      "text": {
+        "en": "vascular bundle",
+        "hi": "vascular bundle"
+      },
+      "anchor": [
+        0.515,
+        0.575
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "bundle-sheath",
+      "text": {
+        "en": "bundle sheath",
+        "hi": "bundle sheath"
+      },
+      "anchor": [
+        0.585,
+        0.485
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "xylem",
+      "text": {
+        "en": "xylem",
+        "hi": "xylem"
+      },
+      "anchor": [
+        0.535,
+        0.535
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "phloem",
+      "text": {
+        "en": "phloem",
+        "hi": "phloem"
+      },
+      "anchor": [
+        0.518,
+        0.655
+      ],
+      "side": "auto",
+      "group": "bundle",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "mesophyll",
+      "text": {
+        "en": "mesophyll",
+        "hi": "mesophyll"
+      },
+      "anchor": [
+        0.745,
+        0.47
+      ],
+      "side": "auto",
+      "group": "meso",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "bulliform cell"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-anatomy-of-dorsiventral-and-isobilateral-leaf--a.json",
+    "repointed": 11,
+    "omitted_not_visible": [
+      "bulliform cell"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

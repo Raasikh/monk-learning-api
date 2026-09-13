@@ -1,0 +1,185 @@
+{
+  "asset_slug": "bio11-ch3-gymnosperms--characteristics--structure-and-examples--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "male",
+      "label": {
+        "english": "Male cone",
+        "hinglish": "Male cone"
+      }
+    },
+    {
+      "id": "female",
+      "label": {
+        "english": "Female cone",
+        "hinglish": "Female cone"
+      }
+    },
+    {
+      "id": "shoot",
+      "label": {
+        "english": "Shoot and seed",
+        "hinglish": "Shoot and seed"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "needle",
+      "text": {
+        "en": "needle",
+        "hi": "needle"
+      },
+      "anchor": [
+        0.42,
+        0.58
+      ],
+      "side": "auto",
+      "group": "shoot",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "dwarf-shoot",
+      "text": {
+        "en": "dwarf shoot",
+        "hi": "dwarf shoot"
+      },
+      "anchor": [
+        0.752,
+        0.43
+      ],
+      "side": "auto",
+      "group": "shoot",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "male-cone",
+      "text": {
+        "en": "male cone",
+        "hi": "male cone"
+      },
+      "anchor": [
+        0.295,
+        0.28
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "female-cone",
+      "text": {
+        "en": "female cone",
+        "hi": "female cone"
+      },
+      "anchor": [
+        0.615,
+        0.63
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "microsporophyll",
+      "text": {
+        "en": "microsporophyll",
+        "hi": "microsporophyll"
+      },
+      "anchor": [
+        0.278,
+        0.335
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "megasporophyll",
+      "text": {
+        "en": "megasporophyll",
+        "hi": "megasporophyll"
+      },
+      "anchor": [
+        0.585,
+        0.715
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "seed",
+      "text": {
+        "en": "seed",
+        "hi": "seed"
+      },
+      "anchor": [
+        0.765,
+        0.775
+      ],
+      "side": "auto",
+      "group": "shoot",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "wing",
+      "text": {
+        "en": "wing",
+        "hi": "wing"
+      },
+      "anchor": [
+        0.775,
+        0.645
+      ],
+      "side": "auto",
+      "group": "shoot",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "cone-scale",
+      "text": {
+        "en": "cone scale",
+        "hi": "cone scale"
+      },
+      "anchor": [
+        0.665,
+        0.545
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-gymnosperms--characteristics--structure-and-examples--a.json",
+    "repointed": 9,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "asset_slug": "bio11-ch6-anatomy-of-dicot-and-monocot-root--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "outer",
+      "label": {
+        "english": "Outer layers",
+        "hinglish": "Outer layers"
+      }
+    },
+    {
+      "id": "endo",
+      "label": {
+        "english": "Endodermis and pericycle",
+        "hinglish": "Endodermis and pericycle"
+      }
+    },
+    {
+      "id": "vasc",
+      "label": {
+        "english": "Vascular cylinder and pith",
+        "hinglish": "Vascular cylinder and pith"
+      }
+    },
+    {
+      "id": "ground",
+      "label": {
+        "english": "Pith and ground tissue",
+        "hinglish": "Pith and ground tissue"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "epiblema",
+      "text": {
+        "en": "epiblema",
+        "hi": "epiblema"
+      },
+      "anchor": [
+        0.295,
+        0.3
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "root-hair",
+      "text": {
+        "en": "root hair",
+        "hi": "root hair"
+      },
+      "anchor": [
+        0.245,
+        0.375
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "cortex",
+      "text": {
+        "en": "cortex",
+        "hi": "cortex"
+      },
+      "anchor": [
+        0.345,
+        0.58
+      ],
+      "side": "auto",
+      "group": "outer",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "endodermis",
+      "text": {
+        "en": "endodermis",
+        "hi": "endodermis"
+      },
+      "anchor": [
+        0.395,
+        0.315
+      ],
+      "side": "auto",
+      "group": "endo",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "casparian-strip",
+      "text": {
+        "en": "Casparian strip",
+        "hi": "Casparian strip"
+      },
+      "anchor": [
+        0.6,
+        0.375
+      ],
+      "side": "auto",
+      "group": "endo",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "pericycle",
+      "text": {
+        "en": "pericycle",
+        "hi": "pericycle"
+      },
+      "anchor": [
+        0.425,
+        0.665
+      ],
+      "side": "auto",
+      "group": "endo",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "xylem",
+      "text": {
+        "en": "xylem",
+        "hi": "xylem"
+      },
+      "anchor": [
+        0.435,
+        0.29
+      ],
+      "side": "auto",
+      "group": "vasc",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "phloem",
+      "text": {
+        "en": "phloem",
+        "hi": "phloem"
+      },
+      "anchor": [
+        0.565,
+        0.275
+      ],
+      "side": "auto",
+      "group": "vasc",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "conjunctive-tissue",
+      "text": {
+        "en": "conjunctive tissue",
+        "hi": "conjunctive tissue"
+      },
+      "anchor": [
+        0.475,
+        0.655
+      ],
+      "side": "auto",
+      "group": "ground",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "pith",
+      "text": {
+        "en": "pith",
+        "hi": "pith"
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto",
+      "group": "ground",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "protoxylem",
+      "text": {
+        "en": "protoxylem",
+        "hi": "protoxylem"
+      },
+      "anchor": [
+        0.415,
+        0.44
+      ],
+      "side": "auto",
+      "group": "vasc",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "metaxylem",
+      "text": {
+        "en": "metaxylem",
+        "hi": "metaxylem"
+      },
+      "anchor": [
+        0.545,
+        0.585
+      ],
+      "side": "auto",
+      "group": "vasc",
+      "_point": {
+        "confidence": 0.65
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-anatomy-of-dicot-and-monocot-root--b.json",
+    "repointed": 12,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

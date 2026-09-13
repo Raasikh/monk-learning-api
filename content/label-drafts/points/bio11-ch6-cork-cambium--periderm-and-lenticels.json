@@ -1,0 +1,70 @@
+{
+ "groups": [
+  {
+   "id": "periderm",
+   "label": "Periderm"
+  },
+  {
+   "id": "lenticel",
+   "label": "Lenticel"
+  }
+ ],
+ "points": [
+  {
+   "term": "phellem",
+   "x": 0.335,
+   "y": 0.3,
+   "confidence": 0.9,
+   "group": "periderm"
+  },
+  {
+   "term": "phellogen",
+   "x": 0.36,
+   "y": 0.475,
+   "confidence": 0.85,
+   "group": "periderm"
+  },
+  {
+   "term": "phelloderm",
+   "x": 0.38,
+   "y": 0.535,
+   "confidence": 0.85,
+   "group": "periderm"
+  },
+  {
+   "term": "periderm",
+   "x": 0.715,
+   "y": 0.47,
+   "confidence": 0.7,
+   "group": "periderm"
+  },
+  {
+   "term": "lenticel",
+   "x": 0.51,
+   "y": 0.29,
+   "confidence": 0.9,
+   "group": "lenticel"
+  },
+  {
+   "term": "complementary cell",
+   "x": 0.505,
+   "y": 0.42,
+   "confidence": 0.85,
+   "group": "lenticel"
+  },
+  {
+   "term": "cortex",
+   "x": 0.42,
+   "y": 0.72,
+   "confidence": 0.8,
+   "group": "lenticel"
+  },
+  {
+   "term": "epidermis",
+   "x": 0.6,
+   "y": 0.185,
+   "confidence": 0.65,
+   "group": "lenticel"
+  }
+ ]
+}

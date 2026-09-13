@@ -1,0 +1,11 @@
+{"groups":[{"id":"head","label":"Head"},{"id":"body","label":"Body and appendages"}],
+ "points":[
+ {"term":"head","x":0.225,"y":0.400,"confidence":0.90,"group":"head"},
+ {"term":"compound eye","x":0.235,"y":0.365,"confidence":0.95,"group":"head"},
+ {"term":"antenna","x":0.145,"y":0.255,"confidence":0.95,"group":"head"},
+ {"term":"thorax","x":0.335,"y":0.360,"confidence":0.85,"group":"body"},
+ {"term":"abdomen","x":0.665,"y":0.555,"confidence":0.90,"group":"body"},
+ {"term":"wing","x":0.585,"y":0.335,"confidence":0.95,"group":"body"},
+ {"term":"jointed appendage","x":0.735,"y":0.625,"confidence":0.85,"group":"body"},
+ {"term":"exoskeleton","x":0.445,"y":0.585,"confidence":0.65,"group":"body"}
+]}

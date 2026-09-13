@@ -1,0 +1,162 @@
+{
+  "asset_slug": "bio11-ch6-xylem--structure-and-conducting-elements",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "elements",
+      "label": {
+        "english": "Xylem elements",
+        "hinglish": "Xylem elements"
+      }
+    },
+    {
+      "id": "wall",
+      "label": {
+        "english": "Wall features",
+        "hinglish": "Wall features"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "tracheid",
+      "text": {
+        "en": "tracheid",
+        "hi": "tracheid"
+      },
+      "anchor": [
+        0.238,
+        0.5
+      ],
+      "side": "auto",
+      "group": "elements",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "vessel",
+      "text": {
+        "en": "vessel",
+        "hi": "vessel"
+      },
+      "anchor": [
+        0.405,
+        0.5
+      ],
+      "side": "auto",
+      "group": "elements",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "xylem-fibre",
+      "text": {
+        "en": "xylem fibre",
+        "hi": "xylem fibre"
+      },
+      "anchor": [
+        0.583,
+        0.5
+      ],
+      "side": "auto",
+      "group": "elements",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "xylem-parenchyma",
+      "text": {
+        "en": "xylem parenchyma",
+        "hi": "xylem parenchyma"
+      },
+      "anchor": [
+        0.755,
+        0.5
+      ],
+      "side": "auto",
+      "group": "elements",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "pit",
+      "text": {
+        "en": "pit",
+        "hi": "pit"
+      },
+      "anchor": [
+        0.222,
+        0.28
+      ],
+      "side": "auto",
+      "group": "wall",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "perforation-plate",
+      "text": {
+        "en": "perforation plate",
+        "hi": "perforation plate"
+      },
+      "anchor": [
+        0.405,
+        0.355
+      ],
+      "side": "auto",
+      "group": "wall",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "lignified-wall",
+      "text": {
+        "en": "lignified wall",
+        "hi": "lignified wall"
+      },
+      "anchor": [
+        0.455,
+        0.62
+      ],
+      "side": "auto",
+      "group": "wall",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "tapering-end",
+      "text": {
+        "en": "tapering end",
+        "hi": "tapering end"
+      },
+      "anchor": [
+        0.583,
+        0.175
+      ],
+      "side": "auto",
+      "group": "wall",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-xylem--structure-and-conducting-elements.json",
+    "repointed": 8,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

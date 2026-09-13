@@ -1,0 +1,200 @@
+{
+  "asset_slug": "bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "girdle",
+      "label": {
+        "english": "Pectoral girdle and arm",
+        "hinglish": "Pectoral girdle and arm"
+      }
+    },
+    {
+      "id": "hand",
+      "label": {
+        "english": "Forearm and hand",
+        "hinglish": "Forearm and hand"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "clavicle",
+      "text": {
+        "en": "clavicle",
+        "hi": "clavicle"
+      },
+      "anchor": [
+        0.532,
+        0.108
+      ],
+      "side": "auto",
+      "group": "girdle",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "scapula",
+      "text": {
+        "en": "scapula",
+        "hi": "scapula"
+      },
+      "anchor": [
+        0.555,
+        0.21
+      ],
+      "side": "auto",
+      "group": "girdle",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "glenoid-cavity",
+      "text": {
+        "en": "glenoid cavity",
+        "hi": "glenoid cavity"
+      },
+      "anchor": [
+        0.492,
+        0.148
+      ],
+      "side": "auto",
+      "group": "girdle",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "humerus",
+      "text": {
+        "en": "humerus",
+        "hi": "humerus"
+      },
+      "anchor": [
+        0.478,
+        0.305
+      ],
+      "side": "auto",
+      "group": "girdle",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "radius",
+      "text": {
+        "en": "radius",
+        "hi": "radius"
+      },
+      "anchor": [
+        0.472,
+        0.575
+      ],
+      "side": "auto",
+      "group": "hand",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "ulna",
+      "text": {
+        "en": "ulna",
+        "hi": "ulna"
+      },
+      "anchor": [
+        0.492,
+        0.575
+      ],
+      "side": "auto",
+      "group": "hand",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "carpal",
+      "text": {
+        "en": "carpal",
+        "hi": "carpal"
+      },
+      "anchor": [
+        0.487,
+        0.705
+      ],
+      "side": "auto",
+      "group": "hand",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "metacarpal",
+      "text": {
+        "en": "metacarpal",
+        "hi": "metacarpal"
+      },
+      "anchor": [
+        0.497,
+        0.765
+      ],
+      "side": "auto",
+      "group": "hand",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "phalanx",
+      "text": {
+        "en": "phalanx",
+        "hi": "phalanx"
+      },
+      "anchor": [
+        0.512,
+        0.862
+      ],
+      "side": "auto",
+      "group": "hand",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "ilium",
+    "ischium",
+    "pubis",
+    "acetabulum",
+    "femur",
+    "patella",
+    "tibia",
+    "fibula",
+    "tarsal",
+    "metatarsal"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--a.json",
+    "repointed": 9,
+    "omitted_not_visible": [
+      "ilium",
+      "ischium",
+      "pubis",
+      "acetabulum",
+      "femur",
+      "patella",
+      "tibia",
+      "fibula",
+      "tarsal",
+      "metatarsal"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "asset_slug": "bio11-ch4-class-aves-and-mammalia--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "fur",
+      "text": {
+        "en": "fur",
+        "hi": "fur"
+      },
+      "anchor": [
+        0.455,
+        0.4
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "feather",
+    "beak",
+    "wing",
+    "hollow bone",
+    "air cavity",
+    "pouch",
+    "mammary gland"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-class-aves-and-mammalia--b.json",
+    "repointed": 1,
+    "omitted_not_visible": [
+      "feather",
+      "beak",
+      "wing",
+      "hollow bone",
+      "air cavity",
+      "pouch",
+      "mammary gland"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

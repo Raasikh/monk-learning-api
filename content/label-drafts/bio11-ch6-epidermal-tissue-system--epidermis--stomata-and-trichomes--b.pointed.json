@@ -1,0 +1,124 @@
+{
+  "asset_slug": "bio11-ch6-epidermal-tissue-system--epidermis--stomata-and-trichomes--b",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "stoma",
+      "label": {
+        "english": "Stoma",
+        "hinglish": "Stoma"
+      }
+    },
+    {
+      "id": "around",
+      "label": {
+        "english": "Surrounding cells",
+        "hinglish": "Surrounding cells"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "stomatal-pore",
+      "text": {
+        "en": "stomatal pore",
+        "hi": "stomatal pore"
+      },
+      "anchor": [
+        0.505,
+        0.5
+      ],
+      "side": "auto",
+      "group": "stoma",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "subsidiary-cell",
+      "text": {
+        "en": "subsidiary cell",
+        "hi": "subsidiary cell"
+      },
+      "anchor": [
+        0.393,
+        0.5
+      ],
+      "side": "auto",
+      "group": "around",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "epidermal-cell",
+      "text": {
+        "en": "epidermal cell",
+        "hi": "epidermal cell"
+      },
+      "anchor": [
+        0.165,
+        0.3
+      ],
+      "side": "auto",
+      "group": "around",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "chloroplast",
+      "text": {
+        "en": "chloroplast",
+        "hi": "chloroplast"
+      },
+      "anchor": [
+        0.555,
+        0.62
+      ],
+      "side": "auto",
+      "group": "stoma",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "dumbbell-shaped-guard-cell",
+      "text": {
+        "en": "dumbbell-shaped guard cell",
+        "hi": "dumbbell-shaped guard cell"
+      },
+      "anchor": [
+        0.465,
+        0.32
+      ],
+      "side": "auto",
+      "group": "stoma",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "guard cell",
+    "cuticle",
+    "root hair",
+    "trichome"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-epidermal-tissue-system--epidermis--stomata-and-trichomes--b.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "guard cell",
+      "cuticle",
+      "root hair",
+      "trichome"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

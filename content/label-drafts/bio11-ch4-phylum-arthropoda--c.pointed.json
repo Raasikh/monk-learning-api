@@ -1,0 +1,124 @@
+{
+  "asset_slug": "bio11-ch4-phylum-arthropoda--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "body",
+      "label": {
+        "english": "Body",
+        "hinglish": "Body"
+      }
+    },
+    {
+      "id": "append",
+      "label": {
+        "english": "Appendages and sting",
+        "hinglish": "Appendages and sting"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": "head"
+      },
+      "anchor": [
+        0.395,
+        0.5
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "abdomen",
+      "text": {
+        "en": "abdomen",
+        "hi": "abdomen"
+      },
+      "anchor": [
+        0.545,
+        0.505
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "jointed-appendage",
+      "text": {
+        "en": "jointed appendage",
+        "hi": "jointed appendage"
+      },
+      "anchor": [
+        0.525,
+        0.685
+      ],
+      "side": "auto",
+      "group": "append",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "exoskeleton",
+      "text": {
+        "en": "exoskeleton",
+        "hi": "exoskeleton"
+      },
+      "anchor": [
+        0.475,
+        0.42
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "sting",
+      "text": {
+        "en": "sting",
+        "hi": "sting"
+      },
+      "anchor": [
+        0.715,
+        0.285
+      ],
+      "side": "auto",
+      "group": "append",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "thorax",
+    "antenna",
+    "compound eye",
+    "wing"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-arthropoda--c.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "thorax",
+      "antenna",
+      "compound eye",
+      "wing"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

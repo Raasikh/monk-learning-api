@@ -1,0 +1,158 @@
+{
+  "asset_slug": "bio11-ch18-human-brain--forebrain-structure-and-functions--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "lobes",
+      "label": {
+        "english": "Lobes of the cerebrum",
+        "hinglish": "Lobes of the cerebrum"
+      }
+    },
+    {
+      "id": "surface",
+      "label": {
+        "english": "Surface landmarks",
+        "hinglish": "Surface landmarks"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "cerebrum",
+      "text": {
+        "en": "cerebrum",
+        "hi": "cerebrum"
+      },
+      "anchor": [
+        0.53,
+        0.125
+      ],
+      "side": "auto",
+      "group": "surface",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "frontal-lobe",
+      "text": {
+        "en": "frontal lobe",
+        "hi": "frontal lobe"
+      },
+      "anchor": [
+        0.31,
+        0.28
+      ],
+      "side": "auto",
+      "group": "lobes",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "parietal-lobe",
+      "text": {
+        "en": "parietal lobe",
+        "hi": "parietal lobe"
+      },
+      "anchor": [
+        0.59,
+        0.2
+      ],
+      "side": "auto",
+      "group": "lobes",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "temporal-lobe",
+      "text": {
+        "en": "temporal lobe",
+        "hi": "temporal lobe"
+      },
+      "anchor": [
+        0.48,
+        0.5
+      ],
+      "side": "auto",
+      "group": "lobes",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "occipital-lobe",
+      "text": {
+        "en": "occipital lobe",
+        "hi": "occipital lobe"
+      },
+      "anchor": [
+        0.715,
+        0.42
+      ],
+      "side": "auto",
+      "group": "lobes",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "cerebral-cortex",
+      "text": {
+        "en": "cerebral cortex",
+        "hi": "cerebral cortex"
+      },
+      "anchor": [
+        0.25,
+        0.4
+      ],
+      "side": "auto",
+      "group": "surface",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "central-sulcus",
+      "text": {
+        "en": "central sulcus",
+        "hi": "central sulcus"
+      },
+      "anchor": [
+        0.478,
+        0.235
+      ],
+      "side": "auto",
+      "group": "surface",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "corpus callosum",
+    "thalamus",
+    "hypothalamus",
+    "olfactory lobe",
+    "pituitary gland"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch18-human-brain--forebrain-structure-and-functions--b.json",
+    "repointed": 7,
+    "omitted_not_visible": [
+      "corpus callosum",
+      "thalamus",
+      "hypothalamus",
+      "olfactory lobe",
+      "pituitary gland"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

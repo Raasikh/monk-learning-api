@@ -1,0 +1,205 @@
+{
+  "asset_slug": "bio11-ch18-human-brain--midbrain-and-hindbrain",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "midbrain",
+      "label": {
+        "english": "Midbrain",
+        "hinglish": "Midbrain"
+      }
+    },
+    {
+      "id": "hindbrain",
+      "label": {
+        "english": "Pons, medulla and cord",
+        "hinglish": "Pons, medulla and cord"
+      }
+    },
+    {
+      "id": "cerebellum",
+      "label": {
+        "english": "Cerebellum",
+        "hinglish": "Cerebellum"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "midbrain",
+      "text": {
+        "en": "midbrain",
+        "hi": "midbrain"
+      },
+      "anchor": [
+        0.435,
+        0.265
+      ],
+      "side": "auto",
+      "group": "midbrain",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "corpora-quadrigemina",
+      "text": {
+        "en": "corpora quadrigemina",
+        "hi": "corpora quadrigemina"
+      },
+      "anchor": [
+        0.503,
+        0.293
+      ],
+      "side": "auto",
+      "group": "midbrain",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "cerebral-peduncle",
+      "text": {
+        "en": "cerebral peduncle",
+        "hi": "cerebral peduncle"
+      },
+      "anchor": [
+        0.412,
+        0.345
+      ],
+      "side": "auto",
+      "group": "midbrain",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "pons",
+      "text": {
+        "en": "pons",
+        "hi": "pons"
+      },
+      "anchor": [
+        0.432,
+        0.492
+      ],
+      "side": "auto",
+      "group": "hindbrain",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "cerebellum",
+      "text": {
+        "en": "cerebellum",
+        "hi": "cerebellum"
+      },
+      "anchor": [
+        0.655,
+        0.455
+      ],
+      "side": "auto",
+      "group": "cerebellum",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "arbor-vitae",
+      "text": {
+        "en": "arbor vitae",
+        "hi": "arbor vitae"
+      },
+      "anchor": [
+        0.615,
+        0.375
+      ],
+      "side": "auto",
+      "group": "cerebellum",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "medulla-oblongata",
+      "text": {
+        "en": "medulla oblongata",
+        "hi": "medulla oblongata"
+      },
+      "anchor": [
+        0.485,
+        0.66
+      ],
+      "side": "auto",
+      "group": "hindbrain",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "brain-stem",
+      "text": {
+        "en": "brain stem",
+        "hi": "brain stem"
+      },
+      "anchor": [
+        0.508,
+        0.575
+      ],
+      "side": "auto",
+      "group": "hindbrain",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "fourth-ventricle",
+      "text": {
+        "en": "fourth ventricle",
+        "hi": "fourth ventricle"
+      },
+      "anchor": [
+        0.545,
+        0.5
+      ],
+      "side": "auto",
+      "group": "hindbrain",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "spinal-cord",
+      "text": {
+        "en": "spinal cord",
+        "hi": "spinal cord"
+      },
+      "anchor": [
+        0.53,
+        0.83
+      ],
+      "side": "auto",
+      "group": "hindbrain",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "cerebral aqueduct"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch18-human-brain--midbrain-and-hindbrain.json",
+    "repointed": 10,
+    "omitted_not_visible": [
+      "cerebral aqueduct"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

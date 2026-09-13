@@ -1,0 +1,7 @@
+{"groups":[{"id":"head","label":"Head"},{"id":"body","label":"Fins and scales"}],
+ "points":[
+ {"term":"operculum","x":0.215,"y":0.475,"confidence":0.90,"group":"head"},
+ {"term":"pectoral fin","x":0.325,"y":0.625,"confidence":0.85,"group":"head"},
+ {"term":"cycloid scale","x":0.455,"y":0.415,"confidence":0.90,"group":"body"},
+ {"term":"homocercal tail","x":0.855,"y":0.465,"confidence":0.90,"group":"body"}
+]}

@@ -1,0 +1,10 @@
+{"groups":[{"id":"body","label":"Body and openings"},{"id":"cells","label":"Cells and skeleton"}],
+ "points":[
+ {"term":"osculum","x":0.440,"y":0.140,"confidence":0.90,"group":"body"},
+ {"term":"ostium","x":0.325,"y":0.395,"confidence":0.80,"group":"body"},
+ {"term":"spongocoel","x":0.435,"y":0.320,"confidence":0.85,"group":"body"},
+ {"term":"water flow","x":0.425,"y":0.185,"confidence":0.75,"group":"body"},
+ {"term":"choanocyte","x":0.815,"y":0.470,"confidence":0.90,"group":"cells"},
+ {"term":"spicule","x":0.345,"y":0.300,"confidence":0.85,"group":"cells"},
+ {"term":"body wall","x":0.375,"y":0.780,"confidence":0.80,"group":"cells"}
+]}

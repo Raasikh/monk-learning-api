@@ -1,0 +1,49 @@
+{
+ "groups": [
+  {
+   "id": "body",
+   "label": "Body"
+  },
+  {
+   "id": "append",
+   "label": "Parapodia"
+  }
+ ],
+ "points": [
+  {
+   "term": "prostomium",
+   "x": 0.125,
+   "y": 0.5,
+   "confidence": 0.85,
+   "group": "body"
+  },
+  {
+   "term": "segment",
+   "x": 0.455,
+   "y": 0.48,
+   "confidence": 0.85,
+   "group": "body"
+  },
+  {
+   "term": "anus",
+   "x": 0.895,
+   "y": 0.5,
+   "confidence": 0.7,
+   "group": "body"
+  },
+  {
+   "term": "parapodium",
+   "x": 0.415,
+   "y": 0.395,
+   "confidence": 0.9,
+   "group": "append"
+  },
+  {
+   "term": "seta",
+   "x": 0.395,
+   "y": 0.38,
+   "confidence": 0.8,
+   "group": "append"
+  }
+ ]
+}

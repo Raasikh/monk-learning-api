@@ -1,0 +1,146 @@
+{
+  "asset_slug": "bio11-ch6-phloem--structure-and-conducting-elements",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "sieve",
+      "label": {
+        "english": "Sieve tube",
+        "hinglish": "Sieve tube"
+      }
+    },
+    {
+      "id": "assoc",
+      "label": {
+        "english": "Associated cells",
+        "hinglish": "Associated cells"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "sieve-tube-element",
+      "text": {
+        "en": "sieve tube element",
+        "hi": "sieve tube element"
+      },
+      "anchor": [
+        0.445,
+        0.17
+      ],
+      "side": "auto",
+      "group": "sieve",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "sieve-plate",
+      "text": {
+        "en": "sieve plate",
+        "hi": "sieve plate"
+      },
+      "anchor": [
+        0.455,
+        0.4
+      ],
+      "side": "auto",
+      "group": "sieve",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "sieve-pore",
+      "text": {
+        "en": "sieve pore",
+        "hi": "sieve pore"
+      },
+      "anchor": [
+        0.5,
+        0.795
+      ],
+      "side": "auto",
+      "group": "sieve",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "companion-cell",
+      "text": {
+        "en": "companion cell",
+        "hi": "companion cell"
+      },
+      "anchor": [
+        0.585,
+        0.45
+      ],
+      "side": "auto",
+      "group": "assoc",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "phloem-parenchyma",
+      "text": {
+        "en": "phloem parenchyma",
+        "hi": "phloem parenchyma"
+      },
+      "anchor": [
+        0.705,
+        0.3
+      ],
+      "side": "auto",
+      "group": "assoc",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "phloem-fibre",
+      "text": {
+        "en": "phloem fibre",
+        "hi": "phloem fibre"
+      },
+      "anchor": [
+        0.275,
+        0.3
+      ],
+      "side": "auto",
+      "group": "assoc",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "nucleus",
+      "text": {
+        "en": "nucleus",
+        "hi": "nucleus"
+      },
+      "anchor": [
+        0.565,
+        0.28
+      ],
+      "side": "auto",
+      "group": "assoc",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-phloem--structure-and-conducting-elements.json",
+    "repointed": 7,
+    "omitted_not_visible": [],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "asset_slug": "bio11-ch4-phylum-mollusca--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "shell",
+      "label": {
+        "english": "Shell and mantle",
+        "hinglish": "Shell and mantle"
+      }
+    },
+    {
+      "id": "body",
+      "label": {
+        "english": "Head and foot",
+        "hinglish": "Head and foot"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "shell",
+      "text": {
+        "en": "shell",
+        "hi": "shell"
+      },
+      "anchor": [
+        0.635,
+        0.3
+      ],
+      "side": "auto",
+      "group": "shell",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "mantle",
+      "text": {
+        "en": "mantle",
+        "hi": "mantle"
+      },
+      "anchor": [
+        0.445,
+        0.595
+      ],
+      "side": "auto",
+      "group": "shell",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "foot",
+      "text": {
+        "en": "foot",
+        "hi": "foot"
+      },
+      "anchor": [
+        0.475,
+        0.735
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "tentacle",
+      "text": {
+        "en": "tentacle",
+        "hi": "tentacle"
+      },
+      "anchor": [
+        0.155,
+        0.395
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": "head"
+      },
+      "anchor": [
+        0.255,
+        0.62
+      ],
+      "side": "auto",
+      "group": "body",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "visceral hump",
+    "radula",
+    "siphon"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-mollusca--a.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "visceral hump",
+      "radula",
+      "siphon"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

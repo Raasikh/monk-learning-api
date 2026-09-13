@@ -1,0 +1,14 @@
+{"groups":[{"id":"coats","label":"Coats and endosperm"},
+           {"id":"shoot","label":"Shoot end"},
+           {"id":"root","label":"Root end"}],
+ "points":[
+ {"term":"pericarp","x":0.375,"y":0.300,"confidence":0.80,"group":"coats"},
+ {"term":"aleurone layer","x":0.415,"y":0.215,"confidence":0.70,"group":"coats"},
+ {"term":"endosperm","x":0.545,"y":0.300,"confidence":0.90,"group":"coats"},
+ {"term":"coleoptile","x":0.435,"y":0.415,"confidence":0.80,"group":"shoot"},
+ {"term":"plumule","x":0.448,"y":0.475,"confidence":0.70,"group":"shoot"},
+ {"term":"scutellum","x":0.505,"y":0.580,"confidence":0.80,"group":"shoot"},
+ {"term":"coleorhiza","x":0.455,"y":0.735,"confidence":0.80,"group":"root"},
+ {"term":"radicle","x":0.468,"y":0.700,"confidence":0.70,"group":"root"},
+ {"term":"embryonal axis","x":0.455,"y":0.630,"confidence":0.60,"group":"root"}
+]}

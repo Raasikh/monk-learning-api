@@ -1,0 +1,108 @@
+{
+  "asset_slug": "bio11-ch3-bryophytes--liverworts-and-mosses--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "thallus",
+      "text": {
+        "en": "thallus",
+        "hi": "thallus"
+      },
+      "anchor": [
+        0.185,
+        0.665
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "gemma-cup",
+      "text": {
+        "en": "gemma cup",
+        "hi": "gemma cup"
+      },
+      "anchor": [
+        0.215,
+        0.505
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "rhizoid",
+      "text": {
+        "en": "rhizoid",
+        "hi": "rhizoid"
+      },
+      "anchor": [
+        0.33,
+        0.79
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "antheridiophore",
+      "text": {
+        "en": "antheridiophore",
+        "hi": "antheridiophore"
+      },
+      "anchor": [
+        0.335,
+        0.2
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "archegoniophore",
+      "text": {
+        "en": "archegoniophore",
+        "hi": "archegoniophore"
+      },
+      "anchor": [
+        0.785,
+        0.185
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "leaf",
+    "stem",
+    "seta",
+    "capsule",
+    "operculum",
+    "peristome"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-bryophytes--liverworts-and-mosses--a.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "leaf",
+      "stem",
+      "seta",
+      "capsule",
+      "operculum",
+      "peristome"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

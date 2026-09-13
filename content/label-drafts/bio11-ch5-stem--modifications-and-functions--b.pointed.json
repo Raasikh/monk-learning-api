@@ -1,0 +1,99 @@
+{
+  "asset_slug": "bio11-ch5-stem--modifications-and-functions--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "runner",
+      "text": {
+        "en": "runner",
+        "hi": "runner"
+      },
+      "anchor": [
+        0.155,
+        0.615
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "stolon",
+      "text": {
+        "en": "stolon",
+        "hi": "stolon"
+      },
+      "anchor": [
+        0.405,
+        0.415
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "offset",
+      "text": {
+        "en": "offset",
+        "hi": "offset"
+      },
+      "anchor": [
+        0.665,
+        0.505
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "sucker",
+      "text": {
+        "en": "sucker",
+        "hi": "sucker"
+      },
+      "anchor": [
+        0.845,
+        0.625
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "tuber",
+    "eye",
+    "rhizome",
+    "node",
+    "corm",
+    "bulb",
+    "phylloclade",
+    "thorn",
+    "tendril"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-stem--modifications-and-functions--b.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "tuber",
+      "eye",
+      "rhizome",
+      "node",
+      "corm",
+      "bulb",
+      "phylloclade",
+      "thorn",
+      "tendril"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

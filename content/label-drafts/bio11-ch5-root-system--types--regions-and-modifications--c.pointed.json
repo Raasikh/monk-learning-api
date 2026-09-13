@@ -1,0 +1,88 @@
+{
+  "asset_slug": "bio11-ch5-root-system--types--regions-and-modifications--c",
+  "image_w": 1434,
+  "image_h": 896,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "conical-root",
+      "text": {
+        "en": "conical root",
+        "hi": "conical root"
+      },
+      "anchor": [
+        0.325,
+        0.5
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "fusiform-root",
+      "text": {
+        "en": "fusiform root",
+        "hi": "fusiform root"
+      },
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "napiform-root",
+      "text": {
+        "en": "napiform root",
+        "hi": "napiform root"
+      },
+      "anchor": [
+        0.685,
+        0.47
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "tap root",
+    "lateral root",
+    "fibrous root",
+    "root cap",
+    "region of meristematic activity",
+    "region of elongation",
+    "region of maturation",
+    "root hair",
+    "prop root",
+    "stilt root",
+    "pneumatophore"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-root-system--types--regions-and-modifications--c.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "tap root",
+      "lateral root",
+      "fibrous root",
+      "root cap",
+      "region of meristematic activity",
+      "region of elongation",
+      "region of maturation",
+      "root hair",
+      "prop root",
+      "stilt root",
+      "pneumatophore"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

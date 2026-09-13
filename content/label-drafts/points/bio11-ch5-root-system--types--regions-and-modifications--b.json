@@ -1,0 +1,8 @@
+{"groups":[{"id":"zones","label":"Regions of the root"},{"id":"tip","label":"Tip and hairs"}],
+ "points":[
+ {"term":"region of meristematic activity","x":0.500,"y":0.655,"confidence":0.85,"group":"zones"},
+ {"term":"region of elongation","x":0.500,"y":0.470,"confidence":0.85,"group":"zones"},
+ {"term":"region of maturation","x":0.500,"y":0.220,"confidence":0.85,"group":"zones"},
+ {"term":"root cap","x":0.500,"y":0.810,"confidence":0.95,"group":"tip"},
+ {"term":"root hair","x":0.635,"y":0.215,"confidence":0.95,"group":"tip"}
+]}

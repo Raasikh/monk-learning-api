@@ -1,0 +1,92 @@
+{
+  "asset_slug": "bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "cranium",
+      "text": {
+        "en": "cranium",
+        "hi": "cranium"
+      },
+      "anchor": [
+        0.55,
+        0.2
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "facial-bone",
+      "text": {
+        "en": "facial bone",
+        "hi": "facial bone"
+      },
+      "anchor": [
+        0.345,
+        0.6
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "mandible",
+      "text": {
+        "en": "mandible",
+        "hi": "mandible"
+      },
+      "anchor": [
+        0.43,
+        0.79
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "hyoid",
+    "cervical vertebra",
+    "thoracic vertebra",
+    "lumbar vertebra",
+    "sacrum",
+    "coccyx",
+    "atlas",
+    "true rib",
+    "false rib",
+    "floating rib",
+    "sternum",
+    "costal cartilage",
+    "intervertebral disc"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--a.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "hyoid",
+      "cervical vertebra",
+      "thoracic vertebra",
+      "lumbar vertebra",
+      "sacrum",
+      "coccyx",
+      "atlas",
+      "true rib",
+      "false rib",
+      "floating rib",
+      "sternum",
+      "costal cartilage",
+      "intervertebral disc"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

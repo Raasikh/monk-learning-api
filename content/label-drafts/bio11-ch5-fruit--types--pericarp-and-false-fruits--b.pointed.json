@@ -1,0 +1,120 @@
+{
+  "asset_slug": "bio11-ch5-fruit--types--pericarp-and-false-fruits--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "layers",
+      "label": {
+        "english": "Layers of the pericarp",
+        "hinglish": "Layers of the pericarp"
+      }
+    },
+    {
+      "id": "whole",
+      "label": {
+        "english": "Fruit wall and seed",
+        "hinglish": "Fruit wall and seed"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "epicarp",
+      "text": {
+        "en": "epicarp",
+        "hi": "epicarp"
+      },
+      "anchor": [
+        0.325,
+        0.35
+      ],
+      "side": "auto",
+      "group": "layers",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "mesocarp",
+      "text": {
+        "en": "mesocarp",
+        "hi": "mesocarp"
+      },
+      "anchor": [
+        0.355,
+        0.6
+      ],
+      "side": "auto",
+      "group": "layers",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "endocarp",
+      "text": {
+        "en": "endocarp",
+        "hi": "endocarp"
+      },
+      "anchor": [
+        0.313,
+        0.475
+      ],
+      "side": "auto",
+      "group": "layers",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "seed",
+      "text": {
+        "en": "seed",
+        "hi": "seed"
+      },
+      "anchor": [
+        0.5,
+        0.475
+      ],
+      "side": "auto",
+      "group": "whole",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "pericarp",
+      "text": {
+        "en": "pericarp",
+        "hi": "pericarp"
+      },
+      "anchor": [
+        0.66,
+        0.3
+      ],
+      "side": "auto",
+      "group": "whole",
+      "_point": {
+        "confidence": 0.65
+      }
+    }
+  ],
+  "unplaced": [
+    "fleshy thalamus",
+    "edible part"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-fruit--types--pericarp-and-false-fruits--b.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "fleshy thalamus",
+      "edible part"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

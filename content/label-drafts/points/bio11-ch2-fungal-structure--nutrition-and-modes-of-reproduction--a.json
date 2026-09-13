@@ -1,0 +1,11 @@
+{"groups":[{"id":"aerial","label":"Aerial reproductive parts"},
+           {"id":"substrate","label":"Mycelium in the substrate"}],
+ "points":[
+ {"term":"sporangium","x":0.500,"y":0.215,"confidence":0.95,"group":"aerial"},
+ {"term":"sporangiophore","x":0.487,"y":0.395,"confidence":0.90,"group":"aerial"},
+ {"term":"spore","x":0.855,"y":0.215,"confidence":0.90,"group":"aerial"},
+ {"term":"stolon","x":0.355,"y":0.525,"confidence":0.80,"group":"aerial"},
+ {"term":"mycelium","x":0.585,"y":0.655,"confidence":0.80,"group":"substrate"},
+ {"term":"hypha","x":0.135,"y":0.645,"confidence":0.80,"group":"substrate"},
+ {"term":"rhizoid","x":0.230,"y":0.700,"confidence":0.90,"group":"substrate"}
+]}

@@ -1,0 +1,134 @@
+{
+  "asset_slug": "bio11-ch5-root-system--types--regions-and-modifications--b",
+  "image_w": 1434,
+  "image_h": 896,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "zones",
+      "label": {
+        "english": "Regions of the root",
+        "hinglish": "Regions of the root"
+      }
+    },
+    {
+      "id": "tip",
+      "label": {
+        "english": "Tip and hairs",
+        "hinglish": "Tip and hairs"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "root-cap",
+      "text": {
+        "en": "root cap",
+        "hi": "root cap"
+      },
+      "anchor": [
+        0.5,
+        0.81
+      ],
+      "side": "auto",
+      "group": "tip",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "region-of-meristematic-activity",
+      "text": {
+        "en": "region of meristematic activity",
+        "hi": "region of meristematic activity"
+      },
+      "anchor": [
+        0.5,
+        0.655
+      ],
+      "side": "auto",
+      "group": "zones",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "region-of-elongation",
+      "text": {
+        "en": "region of elongation",
+        "hi": "region of elongation"
+      },
+      "anchor": [
+        0.5,
+        0.47
+      ],
+      "side": "auto",
+      "group": "zones",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "region-of-maturation",
+      "text": {
+        "en": "region of maturation",
+        "hi": "region of maturation"
+      },
+      "anchor": [
+        0.5,
+        0.22
+      ],
+      "side": "auto",
+      "group": "zones",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "root-hair",
+      "text": {
+        "en": "root hair",
+        "hi": "root hair"
+      },
+      "anchor": [
+        0.635,
+        0.215
+      ],
+      "side": "auto",
+      "group": "tip",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "tap root",
+    "lateral root",
+    "fibrous root",
+    "conical root",
+    "fusiform root",
+    "napiform root",
+    "prop root",
+    "stilt root",
+    "pneumatophore"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-root-system--types--regions-and-modifications--b.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "tap root",
+      "lateral root",
+      "fibrous root",
+      "conical root",
+      "fusiform root",
+      "napiform root",
+      "prop root",
+      "stilt root",
+      "pneumatophore"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

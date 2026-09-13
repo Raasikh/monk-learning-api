@@ -1,0 +1,52 @@
+{
+  "asset_slug": "bio11-ch4-phylum-coelenterata-and-ctenophora--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "cnidoblast",
+      "text": {
+        "en": "cnidoblast",
+        "hi": "cnidoblast"
+      },
+      "anchor": [
+        0.155,
+        0.485
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "tentacle",
+    "hypostome",
+    "mouth",
+    "basal disc",
+    "bud",
+    "gastrovascular cavity",
+    "umbrella",
+    "comb plate"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-coelenterata-and-ctenophora--c.json",
+    "repointed": 1,
+    "omitted_not_visible": [
+      "tentacle",
+      "hypostome",
+      "mouth",
+      "basal disc",
+      "bud",
+      "gastrovascular cavity",
+      "umbrella",
+      "comb plate"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

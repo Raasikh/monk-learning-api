@@ -1,0 +1,61 @@
+{
+  "asset_slug": "bio11-ch4-class-amphibia-and-reptilia--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "scale",
+      "text": {
+        "en": "scale",
+        "hi": "scale"
+      },
+      "anchor": [
+        0.735,
+        0.375
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "shell",
+      "text": {
+        "en": "shell",
+        "hi": "shell"
+      },
+      "anchor": [
+        0.415,
+        0.3
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    }
+  ],
+  "unplaced": [
+    "moist skin",
+    "webbed foot",
+    "tympanum",
+    "hood",
+    "prehensile tail"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-class-amphibia-and-reptilia--b.json",
+    "repointed": 2,
+    "omitted_not_visible": [
+      "moist skin",
+      "webbed foot",
+      "tympanum",
+      "hood",
+      "prehensile tail"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}
