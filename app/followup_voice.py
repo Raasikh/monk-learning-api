@@ -240,6 +240,67 @@ async def _synthesize(text: str, voice_preset: str) -> bytes:
 MAX_CHARS_PER_REQUEST = 450
 
 
+# A sentence below this is too short to be its own clip: a two-word
+# interjection becomes a file the player opens, starts and closes almost at
+# once, and the join around it is heard as a stumble rather than a pause. Such
+# a sentence is carried into the next one.
+MIN_SPOKEN_CHARS = 40
+
+
+def _spoken_sentences(text: str) -> list:
+    """`text` as the units a voice actually pauses between.
+
+    Different from `_speakable_chunks`, which packs as much as Rumik will take
+    per request so a whole-file answer needs the fewest calls. Here the point
+    is the opposite: the SMALLEST piece that can be spoken on its own, so the
+    first one is ready soonest — and split where a speaker would pause anyway,
+    so the gap between files lands on a break that was already there.
+
+    That last part is the whole reason this exists. Slicing the audio every
+    0.8s put the joins mid-WORD, and sequential file playback has a
+    load-and-start gap at every join, so the voice broke twice a second no
+    matter how cleanly the clips were sequenced.
+    """
+    from app.drona.voice_proxy import split_into_sentences
+
+    out: list = []
+    for sentence in split_into_sentences(text, min_chars=0) or [text]:
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        while len(sentence) > MAX_CHARS_PER_REQUEST:
+            cut = sentence.rfind(" ", 0, MAX_CHARS_PER_REQUEST)
+            if cut <= 0:
+                cut = MAX_CHARS_PER_REQUEST
+            out.append(sentence[:cut].strip())
+            sentence = sentence[cut:].strip()
+        if not sentence:
+            continue
+        # Too short to stand alone, and there is something in front of it to
+        # join onto: a stub is a stumble, not a pause.
+        #
+        # `len(out) > 1` keeps the FIRST sentence out of this. A short opener
+        # is not a stub, it is the point — it is spoken as its own clip while
+        # the rest is still being synthesised, and synthesis runs at roughly
+        # the speed of speech, so a ten-word opener is heard in about two
+        # seconds where a twenty-five-word one takes nearly five. Merging it
+        # forward collapsed a three-sentence answer into one 166-character
+        # clip and put the first sound back at 5.2s.
+        if len(out) > 1 and len(out[-1]) < MIN_SPOKEN_CHARS:
+            joined = f"{out[-1]} {sentence}".strip()
+            if len(joined) <= MAX_CHARS_PER_REQUEST:
+                out[-1] = joined
+                continue
+        out.append(sentence)
+    # A trailing stub has nothing after it, so it goes backwards instead.
+    if len(out) > 1 and len(out[-1]) < MIN_SPOKEN_CHARS:
+        joined = f"{out[-2]} {out[-1]}".strip()
+        if len(joined) <= MAX_CHARS_PER_REQUEST:
+            out[-2] = joined
+            out.pop()
+    return out
+
+
 def _speakable_chunks(text: str) -> list:
     """`text` split so no single request can hit Rumik's ceiling.
 
@@ -316,73 +377,46 @@ def _speakable_chunks(text: str) -> list:
 
 async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
                        language: Optional[str] = None):
-    """Yields (index, total, wav) as Rumik produces audio — not per sentence.
+    """Yields (index, total, wav) — ONE WHOLE SENTENCE per clip, as each is ready.
 
-    Back to small pieces, and this time the phone can play them. Every earlier
-    attempt at this failed on the CLIENT: it played a sequence of files, and
-    opening a file has a load-and-start cost, so each piece boundary was an
-    audible gap. Cut every 0.8s by byte count those gaps landed mid-word, and
-    no amount of sequencing repaired that — which is why it was changed to one
-    whole sentence per clip, so the gaps at least fell where a speaker pauses.
+    A sentence, not a slice. The audio was previously cut every 0.8s by byte
+    count, which lands mid-word, and each piece was played as its own file on
+    the phone — where sequential playback has a load-and-start gap at every
+    join. The voice broke twice a second and no amount of sequencing repaired
+    it, because the split itself was in the wrong place.
 
-    The follow-up now plays raw PCM through a single queue source
-    (lib/followup-audio.ts), where appended samples follow the ones before with
-    nothing in between. A cut anywhere is inaudible, so the audio no longer has
-    to wait for a sentence to be finished before any of it can be heard — which
-    is the whole point, since Rumik streams while it is still speaking and
-    its first sentence takes 1.9-3.8s to complete.
+    Split where a speaker pauses and the gap falls on a break that was already
+    there, which is why the classroom's own sentence-level clips sound
+    continuous. Each clip is also seconds long rather than milliseconds, so
+    there is time to open the next file before this one runs out.
 
-    Still one WAV per piece rather than bare PCM: the client strips the header,
-    and keeping the wire format the same means a file-based player still works
-    if this is ever rolled back.
+    The cost is that the first clip waits for a whole sentence rather than
+    0.8s of audio — and that is the right trade, since 0.8s pieces could not be
+    played smoothly at all.
     """
+    del language  # only the cached opener used it, and that was removed
     said = (text or "").strip()
     if not said:
         return
     preset = preset_for(tutor_voice)
-    chunks = _speakable_chunks(said)
+    sentences = _spoken_sentences(said)
     started = time.time()
-    sent = 0
-    heard = 0
-    buf = bytearray()
-
-    def _cut(pcm: bytes):
-        """Whole flushes only; the remainder is held across sentences."""
-        buf.extend(pcm)
-        while len(buf) >= FLUSH_BYTES:
-            piece = bytes(buf[:FLUSH_BYTES])
-            del buf[:FLUSH_BYTES]
-            yield piece
-
-    try:
-        for chunk in chunks:
-            async for pcm in _synthesize_stream(chunk, preset):
-                if not pcm:
-                    continue
-                heard += len(pcm)
-                for piece in _cut(pcm):
-                    sent += 1
-                    if sent == 1:
-                        logger.info("[FOLLOWUP TTS] %s first audio at t+%dms",
-                                    preset, int((time.time() - started) * 1000))
-                    yield sent, 0, wav_from_pcm(piece)
-    except Exception as err:
-        logger.error("[FOLLOWUP TTS] synthesis failed for %s: %s", preset, err)
-        return
-
-    if not heard:
-        logger.warning("[FOLLOWUP TTS] nothing came back — stopping here rather "
-                       "than pretending the answer was spoken")
-        return
-    if buf:
-        # The tail, whatever its length. It is a continuous signal now, so a
-        # short final piece is simply the end of the audio rather than a stub
-        # clip the player has to cope with.
-        sent += 1
-        yield sent, 0, wav_from_pcm(bytes(buf))
-    logger.info("[FOLLOWUP TTS] %s said %.1fs of audio in %d piece(s) by t+%dms",
-                preset, heard / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS),
-                sent, int((time.time() - started) * 1000))
+    for idx, sentence in enumerate(sentences, 1):
+        try:
+            pcm = await _synthesize(sentence, preset)
+        except Exception as err:
+            logger.error("[FOLLOWUP TTS] sentence %d/%d failed for %s: %s",
+                         idx, len(sentences), preset, err)
+            return
+        if not pcm:
+            logger.warning("[FOLLOWUP TTS] sentence %d/%d came back empty — "
+                           "stopping rather than skipping it", idx, len(sentences))
+            return
+        logger.info("[FOLLOWUP TTS] %s sentence %d/%d: %d chars -> %.1fs of "
+                    "audio at t+%dms", preset, idx, len(sentences), len(sentence),
+                    len(pcm) / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS),
+                    int((time.time() - started) * 1000))
+        yield idx, len(sentences), wav_from_pcm(pcm)
 
 
 async def speak(text: str, tutor_voice: Optional[str] = None) -> bytes:
