@@ -232,14 +232,30 @@ def install_probes() -> None:
 # lists, concept by concept, which of this chapter's ten it can and cannot
 # draw. Copied here by subtopic_key rather than re-derived, so the classifier
 # and the widget agree by construction.
+# TWO OF THESE THREE WENT STALE AT v3 AND THE LIST DID NOT NOTICE, which made
+# this classifier report a JUDGEMENT the model never made. Removed 2026-09-12:
+#
+#   area-by-integration-along-the-y-axis
+#     said "NO, except by drawing the picture transposed: needs a transpose
+#     flag". `integrate_along` IS that flag. It shipped with v3, it is
+#     validated, and six separate test files exercise it.
+#   area-of-regions-involving-modulus-and-piecewise-defined-functions
+#     said "NO — takes two payloads: needs an array of (breakpoint, curve,
+#     coeffs)". `pieces` IS that array, max 6, and modulus is the two-piece
+#     case it was built for.
+#
+# The cost of leaving them was not a wrong number, it was a wrong STORY: every
+# non-fire on those subtopics was stamped "widget_cannot_express_concept",
+# docs/maths-widget-gap.md read that as the model consulting the spec and
+# declining, and recommended building a capability that already exists. The
+# model said nothing of the kind — this dictionary did.
+#
+# What remains is the one that is still true.
 CANNOT_EXPRESS = {
     # "NO — not functions of x": a circle needs upper/lower branches and
-    # segment arithmetic, not a difference of antiderivatives.
+    # segment arithmetic, not a difference of antiderivatives. Still true —
+    # `curve` has no conic kind, and nothing in v3 added one.
     "area-of-regions-bounded-by-circles-and-ellipses",
-    # "NO — takes two payloads": needs an array of (breakpoint, curve, coeffs).
-    "area-of-regions-involving-modulus-and-piecewise-defined-functions",
-    # "NO, except by drawing the picture transposed": needs a transpose flag.
-    "area-by-integration-along-the-y-axis",
     # (greatest-integer is the failed plan and is excluded outright.)
 }
 

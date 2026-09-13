@@ -1,5 +1,37 @@
 # D3 — the maths gap: what the plan asked for vs what the registry can draw
 
+> **CORRECTION, 2026-09-12.** The central claim below — that 16 rows were an
+> "honest refusal" in which "the model was asked, consulted the spec, and said
+> no" — is **wrong**, and the rest of the document should be read against that.
+>
+> `widget_cannot_express_concept` was never the model's verdict. It is a
+> hardcoded lookup in `scripts/measure_widget_routing.py`:
+> `if rec["subtopic_key"] in CANNOT_EXPRESS`. That set was a hand-written list,
+> and two of its three entries went stale when xy_plot v3 shipped:
+>
+> * `area-by-integration-along-the-y-axis` said "needs a transpose flag" —
+>   `integrate_along` **is** that flag, and six test files exercise it.
+> * `area-of-regions-involving-modulus-and-piecewise` said "needs an array of
+>   (breakpoint, curve, coeffs)" — `pieces` **is** that array.
+>
+> So this document recommended building two capabilities that already existed,
+> on the strength of a label the harness wrote for itself. The stale entries
+> are now removed and the classifier reports `model_chose_no_widget` for those
+> rows, which is the truth: the model reaches for no widget, and why is still
+> open.
+>
+> **Measured after the correction**, on the eight y-axis segments:
+> the parameter works (206 xy-plot tests pass); spelling `integrate_along` out
+> in the spec changed nothing (0/8); replacing the blunt
+> "No circles/regions/panels" with a precise one changed nothing (0/8);
+> and neither an existing example SVG nor the `conic_figure` diagram hint
+> explains it — rows **with** an example SVG fire *more* often (36.5% vs
+> 21.1%), and `conic_figure` fires 31% across the chapter.
+>
+> **These eight rows are not free.** The one recommendation below that
+> survives unchanged is conics, which is still a real capability gap.
+
+
 **No code. A decision note.** Maths 12 ch8 proposed 31 sane / 40 insane (43.7%),
 far below the 85% bar, and D3's instruction was to find out *why* before
 anyone tunes a payload. Clustered from the 71 measured rows in

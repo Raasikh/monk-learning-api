@@ -132,9 +132,36 @@ WIDGET_SPECS: Dict[str, str] = {
         "(curve|area|area_between|data|family|named), curve/curve2 "
         "(line|parabola|sine|exponential|reciprocal), a,b,c,a2,b2,c2, x_min, "
         "x_max, shade_from, shade_to, values, x/y_label, "
-        "integrate_along, pieces (max 6), tangent_kind, tangent_at, secant "
+        "pieces (max 6), tangent_kind, tangent_at, secant "
         "(none|chord|chord_with_deltas), secant_from/secant_to (>=5% apart), "
-        "family_param, family_values, named_shape. No circles/regions/panels."
+        "family_param, family_values, named_shape. "
+        # SPELLED OUT, because naming it was not enough. `integrate_along`
+        # was in this list as a bare parameter name and the model declined
+        # ALL EIGHT y-axis segments of maths12 ch8 as
+        # widget_cannot_express_concept — it could not know what the word
+        # meant. The parameter works and is covered by tests; the spec was
+        # the gap. Measured 2026-09-12.
+        "integrate_along ('x' default | 'y'): which way the strips run. "
+        "'y' means INTEGRATE WITH RESPECT TO y — horizontal strips, for a "
+        "region bounded on the LEFT and RIGHT rather than above and below. "
+        "Use it for 'area with respect to y', 'bounded by the y-axis', or a "
+        "curve given as x = g(y). With 'y', x_min/x_max and shade_from/"
+        "shade_to bound the VERTICAL variable, and curve/curve2 are read as "
+        "functions of it. Example — the area bounded by y^2 = 4ax and its "
+        "latus rectum x = a: integrate_along 'y', x_min -2a, x_max 2a, "
+        "curve the parabola as x = u^2/4a, curve2 the line x = a. "
+        # "No circles/regions/panels" was too blunt and it cost real rows.
+        # The planner tags a parabola-and-y-axis segment diag_hint
+        # 'conic_figure'; the model read that against "no circles" and
+        # declined all eight y-axis segments of maths12 ch8 — even the one
+        # whose objective is literally "area bounded by a parabola, the
+        # y-axis and horizontal lines using integration with respect to y",
+        # which is this widget's own worked example. A parabola IS a conic
+        # and xy_plot draws it. Measured 2026-09-12.
+        "CANNOT draw: circles, ellipses, closed 2-D regions, multi-panel "
+        "figures. CAN draw parabolas, including one written as a conic such "
+        "as y^2 = 4ax — a diag_hint of 'conic_figure' does NOT by itself "
+        "rule this widget out, only a circle or an ellipse does."
     ),
     "data_table_trend": (
         "a small table of measured values with the trend down one column called "
