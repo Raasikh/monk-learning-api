@@ -14,6 +14,7 @@ import io
 import json
 import logging
 import os
+import re
 import struct
 import time
 from typing import Any, Dict, List, Optional, Tuple
@@ -247,6 +248,37 @@ MAX_CHARS_PER_REQUEST = 450
 MIN_SPOKEN_CHARS = 40
 
 
+# The FIRST clip is the whole wait before the student hears anything, and
+# Rumik synthesizes at roughly half realtime — a 69-char opener became 7.2s
+# of audio and took 3.9s to make, all of it silence. A first sentence over
+# this is split at its last clause break (comma, dash, semicolon) inside the
+# limit: a clause break is where a speaker pauses anyway, so the join lands
+# on a breath that was already there. No clause break, no split — a mid-word
+# cut is worse than the wait.
+FIRST_CLIP_MAX_CHARS = 70
+
+_CLAUSE_BREAK = re.compile(r'[,;:—–]\s+|\s+—\s+')
+
+
+def _split_first_clip(sentence: str) -> list:
+    """[short opener, remainder] at a clause break, or [sentence] whole."""
+    if len(sentence) <= FIRST_CLIP_MAX_CHARS:
+        return [sentence]
+    breaks = [m.end() for m in _CLAUSE_BREAK.finditer(sentence)]
+    inside = [b for b in breaks if 15 <= b <= FIRST_CLIP_MAX_CHARS]
+    if inside:
+        cut = inside[-1]
+    else:
+        # No break inside the window. The FIRST break beyond it still beats
+        # no split at all — a 90-char opener is half the silence of a
+        # 144-char one — as long as it leaves a real remainder.
+        beyond = [b for b in breaks if b >= 15 and len(sentence) - b >= 15]
+        if not beyond:
+            return [sentence]
+        cut = beyond[0]
+    return [sentence[:cut].rstrip(), sentence[cut:].strip()]
+
+
 # The most the voice will say, whatever the model wrote.
 #
 # The prompt asks for ~200 characters; this is the backstop for when it does
@@ -311,6 +343,14 @@ def _spoken_sentences(text: str) -> list:
         sentence = sentence.strip()
         if not sentence:
             continue
+        if not out:
+            # Only the first sentence: everything after it is synthesized
+            # while something else is already playing, so its length costs
+            # nothing the student can hear.
+            pieces = _split_first_clip(sentence)
+            if len(pieces) == 2:
+                out.append(pieces[0])
+                sentence = pieces[1]
         while len(sentence) > MAX_CHARS_PER_REQUEST:
             cut = sentence.rfind(" ", 0, MAX_CHARS_PER_REQUEST)
             if cut <= 0:

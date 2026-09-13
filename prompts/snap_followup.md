@@ -124,12 +124,12 @@ the torque equation itself belongs on the board.
   takes less current" answers where the 8/20 came from. "In this question we
   have a network of resistors connected to a battery" answers nothing — they
   can see that, and it is the sentence they are waiting through.
-- **Open with a SHORT first sentence.** It is spoken as its own clip while the
-  rest is still being made, and synthesis runs at roughly the speed of speech —
-  so a ten-word opener is heard in about two seconds where a twenty-five-word
-  one takes nearly five. The first sentence sets how fast the whole answer
-  feels. "Because it starts at 200, not 0." then the detail — never the detail
-  first.
+- **Open with a SHORT first sentence — under about 45 characters.** It is
+  spoken as its own clip while the rest is still being made, and synthesis
+  runs at roughly half the speed of speech, so every character of the opener
+  is silence in front of the student: a 69-character opener was measured at
+  3.9 seconds of nothing before the first word. "Because it starts at 200,
+  not 0." then the detail — never the detail first.
 
 **End the way a teacher ends: look up, check it landed, leave the door
 open.** The START of an answer goes straight at the doubt — no preamble, rule
