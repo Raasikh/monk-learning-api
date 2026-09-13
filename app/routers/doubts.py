@@ -38,6 +38,7 @@ from app.snap import (
     transcribe_question,
 )
 from app import exam_scope, followup_voice
+from app.drona.persona import tutor_name
 from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
 
@@ -1030,12 +1031,14 @@ def ask_about_doubt(doubt_id: str, body: FollowUpRequest,
     doubt = _load_doubt_for_user(doubt_id, user_id)
     return _followup_response(doubt, doubt_id, user_id, question,
                               [{"role": t.role, "content": t.content}
-                               for t in body.history])
+                               for t in body.history],
+                              tutor_voice=_tutor_voice_for(user_id))
 
 
 def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
                        question: str, history: List[Dict[str, str]],
-                       transcript: Optional[str] = None) -> StreamingResponse:
+                       transcript: Optional[str] = None,
+                       tutor_voice: Optional[str] = None) -> StreamingResponse:
     """The reply, streamed a step at a time.
 
     `transcript` is echoed back first when the question was spoken, so the
@@ -1059,10 +1062,17 @@ def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
         # on. prewarm is idempotent, so the voice path paying twice costs
         # nothing.)
         followup_voice.prewarm()
-        # The teacher's voice, looked up while the model composes. Waiting
-        # until `spoken` arrives would put a Supabase read on the critical
-        # path this stream exists to shorten.
-        voice_task = asyncio.create_task(asyncio.to_thread(_tutor_voice_for, user_id))
+        # The teacher's voice. Both endpoints pass it in now — they already
+        # need it for the prewarm and the identity line — so the lookup here
+        # is only a net for a caller that did not. Either way it is resolved
+        # while the model composes; a Supabase read has no business on the
+        # critical path this stream exists to shorten.
+        if tutor_voice is not None:
+            voice_task: asyncio.Future = loop.create_future()
+            voice_task.set_result(tutor_voice)
+        else:
+            voice_task = asyncio.create_task(
+                asyncio.to_thread(_tutor_voice_for, user_id))
         tts_task: Optional[asyncio.Task] = None
 
         def pump() -> None:
@@ -1072,7 +1082,9 @@ def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
             # the old sync generator would have paid for, without a thread to
             # interrupt.
             try:
-                for kind, payload in stream_followup(doubt, question, history):
+                name = tutor_name(tutor_voice) if tutor_voice else None
+                for kind, payload in stream_followup(doubt, question, history,
+                                                     tutor_name=name):
                     loop.call_soon_threadsafe(frames.put_nowait, ("frame", kind, payload))
             except Exception as err:  # noqa: BLE001 — surfaced as an SSE error frame
                 loop.call_soon_threadsafe(frames.put_nowait, ("llm_failed", err, None))
@@ -1175,8 +1187,8 @@ async def ask_about_doubt_aloud(
     # watching a finished board in silence. Transcription and the model take
     # longer than that between them, so by the time a sentence exists the
     # socket is already waiting.
-    followup_voice.prewarm(_tutor_voice_for(user_id),
-                            _tutor_language_for(user_id))
+    voice = _tutor_voice_for(user_id)
+    followup_voice.prewarm(voice, _tutor_language_for(user_id))
     raw = await audio.read()
     try:
         question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)
@@ -1195,7 +1207,7 @@ async def ask_about_doubt_aloud(
     turns = [{"role": t.get("role"), "content": t.get("content") or ""}
              for t in prior if isinstance(t, dict)]
     return _followup_response(doubt, doubt_id, user_id, question, turns,
-                              transcript=question)
+                              transcript=question, tutor_voice=voice)
 
 
 class SpeakRequest(BaseModel):

@@ -125,3 +125,39 @@ def test_an_answer_with_no_spoken_line_does_not_wait_for_a_voice(monkeypatch):
     assert not called
     assert "voice_done" not in names
     assert names[-1] == "done"
+
+
+def test_the_teacher_knows_their_own_name(monkeypatch):
+    """A Veda session must never introduce itself as Drona.
+
+    Happened in production: the guardrail said "answer your name" but the
+    context never carried one, so the model guessed the flagship — Veda's
+    voice, Drona's name. The endpoints now pass tutor_voice down, and this
+    pins the whole chain: the persona name reaches the LLM, the SAME voice
+    reaches TTS, and no lookup fires when the value was already given.
+    """
+    seen = {}
+
+    def spying_llm(doubt, question, history=None, tutor_name=None):
+        seen["tutor_name"] = tutor_name
+        yield "spoken", {"text": "I'm Veda, your teacher here."}
+
+    async def spying_speak(text, voice=None, language=None):
+        seen["voice"] = voice
+        yield 1, 1, b"RIFFx"
+
+    def no_lookup(user_id):
+        raise AssertionError("tutor_voice was passed in — nothing to look up")
+
+    monkeypatch.setattr(doubts, "stream_followup", spying_llm)
+    monkeypatch.setattr(doubts.followup_voice, "speak_chunks", spying_speak)
+    monkeypatch.setattr(doubts.followup_voice, "prewarm", lambda *a, **k: None)
+    monkeypatch.setattr(doubts, "_tutor_voice_for", no_lookup)
+
+    frames = _frames(doubts._followup_response(
+        {"id": "d1"}, "d1", "u1", "what's your name?", [],
+        tutor_voice="female"))
+
+    assert seen["tutor_name"] == "Veda"
+    assert seen["voice"] == "female"
+    assert [n for n, _ in frames][-1] == "done"

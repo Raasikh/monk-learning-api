@@ -376,7 +376,8 @@ def _complete_spoken(buffer: str) -> Optional[str]:
 
 
 def stream_followup(doubt: Dict[str, Any], question: str,
-                    history: Optional[List[Dict[str, str]]] = None):
+                    history: Optional[List[Dict[str, str]]] = None,
+                    tutor_name: Optional[str] = None):
     """Yields ("step", {...}) as each is finished, then ("spoken", {...}).
 
     Not a token stream any more. A follow-up is an explanation, and an
@@ -388,9 +389,16 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     The `spoken` line is the same explanation as continuous speech, kept apart
     from the steps because what reads well numbered does not sound well read.
     """
+    context = followup_context(doubt)
+    if tutor_name:
+        # The classroom knows its own name from SESSION STATE; without this
+        # line the follow-up did not, and a student who asked got the OTHER
+        # teacher's name back — Veda's voice introducing itself as Drona.
+        context = (f"YOU ARE: {tutor_name}, this student's teacher — the same "
+                   "teacher whose voice reads this reply aloud.\n" + context)
     messages: List[Dict[str, str]] = [
         {"role": "system", "content": load_prompt("snap_followup.md")},
-        {"role": "system", "content": followup_context(doubt)},
+        {"role": "system", "content": context},
     ]
     for turn in (history or [])[-FOLLOWUP_MAX_TURNS:]:
         role = turn.get("role")
