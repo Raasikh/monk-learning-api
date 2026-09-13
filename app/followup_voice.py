@@ -120,16 +120,12 @@ _warming: Optional[asyncio.Task] = None
 
 def prewarm(tutor_voice: Optional[str] = None,
             language: Optional[str] = None) -> None:
-    """Open a socket in the background, and cache this voice's filler lines.
+    """Open a socket in the background, if one is not already waiting.
 
     Fire and forget: a socket that fails to open costs nothing, because
     `_take_socket` falls back to opening one the usual way.
     """
     global _warming
-    # The filler is per-voice and synthesised once for the life of the
-    # process: the first follow-up pays for it, every later one opens
-    # instantly.
-    _warm_filler(tutor_voice, language)
     if _warm is not None or (_warming is not None and not _warming.done()):
         return
 
@@ -368,237 +364,23 @@ def _speakable_chunks(text: str) -> list:
 # Deliberately content-free. A filler that commits to anything ("So the answer
 # is—") is a claim made before the model has written one, and it would have to
 # be right by luck.
-# Short, already-spoken lines to cover Rumik's start-up.
+# No cached opener. One was built and removed, and the reasons are worth
+# keeping because they are about Rumik rather than about the code.
 #
-# Measured, synthesis time barely tracks length: 25 characters took 1.94s, 32
-# took 4.15s and 54 took 2.36s. What it tracks is Rumik's own first-byte time,
-# which ranged 0.61s to 2.30s across identical calls — so no amount of
-# shortening the first sentence makes the first sound reliably quick. Cached
-# audio has no synthesis time at all, so it sidesteps that rather than
-# fighting it.
+# It worked, in the narrow sense: first sound went from ~2.9s to 0.29s. It
+# sounded wrong anyway. A cached line cannot know what was asked, so it is
+# generic by construction, and a generic line in front of a specific answer
+# reads as a stall rather than as a teacher thinking. On top of that Rumik
+# paces identical text differently between calls — the same sentence measured
+# 0.061 and 0.103 seconds per character on two runs — so a cached clip's
+# delivery never quite matches the live sentence behind it. Auditioning each
+# take (synthesise, measure, re-take if dragged) fixed the dragging and did
+# nothing for the mismatch.
 #
-# Several per voice and language, and ROTATED, because one line played before
-# every single follow-up stops being speech and becomes a noise the app makes.
-# The classroom learned this first — FILLER_PHRASES is a list per
-# (gender, language) for the same reason — and an earlier version of this
-# declared two lines and then only ever synthesised the first.
-#
-# Deliberately content-free — a filler that commits to anything ("So the
-# answer is—") is a claim made before the model has written one, and would be
-# right only by luck.
-#
-# But NOT "hold on" or "give me a second". Announcing a wait makes the wait
-# the thing the student notices, and a teacher about to explain something does
-# not ask you to wait — they start engaging with the question. These either
-# normalise being stuck, or begin looking at it with them, so the line bridges
-# INTO the explanation instead of marking time in front of it.
-#
-# And deliberately 40-50 CHARACTERS, which is not a style choice. Rumik speaks
-# short text far more slowly per character: measured, an 18-character line ran
-# at 0.114 s/char and a 26-character one at 0.085, against 0.060 for a
-# 47-character sentence. "Haan, dekhte hain." took 2.06 seconds to say — it
-# was not padded with silence, it was genuinely dragged out, and it sounded
-# it. At this length the same voice comes back to 0.055-0.072 s/char, which is
-# ordinary speech. Anything shorter here will drag again however natural it
-# looks written down.
-FILLER_LINES = {
-    ("female", "english"): [
-        "That's worth slowing down on, actually.",
-        "Sure, let's go through that one together.",
-        "Let's go back through that bit properly.",
-        "Okay — that's a fair thing to get stuck on.",
-    ],
-    ("male", "english"): [
-        "That's worth slowing down on, actually.",
-        "Sure, let's go through that one together.",
-        "Let's go back through that bit properly.",
-        "Okay — that's a fair thing to get stuck on.",
-    ],
-    ("female", "hinglish"): [
-        "Achha sawaal hai, chalo isko dekhte hain.",
-        "Theek hai, chalo isko dhyan se dekhte hain.",
-        "Yeh thoda dhyan se samajhna padega, chalo.",
-        "Haan, yeh wala part sabko confuse karta hai.",
-    ],
-    ("male", "hinglish"): [
-        "Achha sawaal hai, chalo isko dekhte hain.",
-        "Theek hai, chalo isko dhyan se dekhte hain.",
-        "Yeh thoda dhyan se samajhna padega, chalo.",
-        "Haan, yeh wala part sabko confuse karta hai.",
-    ],
-}
-DEFAULT_LANGUAGE = "hinglish"
-
-# In memory, for the life of the process — never written to disk. They are a
-# few seconds of audio each, they cost one synthesis apiece to rebuild, and a
-# deploy is exactly when a stale voice or a changed line should be dropped.
-_fillers: Dict[str, List[bytes]] = {}
-_filler_tasks: Dict[str, asyncio.Task] = {}
-# Which line each voice said last, so the next one is the NEXT one. Positional
-# rather than random: random repeats, and the same line twice running is
-# precisely what makes it obvious.
-_filler_turn: Dict[str, int] = {}
-
-
-# Speech seconds per character, above which a clip is dragged rather than
-# spoken. Measured across many real syntheses: ordinary delivery lands between
-# 0.046 and 0.072, and anything past ~0.080 is audibly slow.
-NATURAL_SPEED_LIMIT = 0.075
-# How many times to re-synthesise a filler that came back dragged.
-FILLER_ATTEMPTS = 3
-
-
-def _speech_rate(pcm: bytes, text: str) -> float:
-    """Seconds of actual speech per character, ignoring edge silence."""
-    if not pcm or not text:
-        return 0.0
-    count = len(pcm) // 2
-    samples = struct.unpack(f"<{count}h", pcm[:count * 2])
-    quiet = 600
-    lead = 0
-    for value in samples:
-        if abs(value) > quiet:
-            break
-        lead += 1
-    trail = 0
-    for value in reversed(samples):
-        if abs(value) > quiet:
-            break
-        trail += 1
-    spoken = max(0, count - lead - trail)
-    return (spoken / SAMPLE_RATE) / len(text)
-
-
-async def _synthesize_natural(text: str, preset: str) -> Optional[bytes]:
-    """A take of `text` that is not dragged, or the best of a few tries.
-
-    Rumik's pacing varies BETWEEN CALLS on identical input: the same line
-    measured 0.061 s/char once and 0.103 another time. That matters here and
-    nowhere else, because a filler is synthesised once and then played to
-    every student until the process restarts — one unlucky take is not a
-    moment of odd delivery, it is the permanent sound of the app.
-
-    So the cached clip is auditioned. A few extra synthesis calls, paid once
-    per voice at boot, is a cheap price for not shipping a dragged one.
-    """
-    best: Optional[bytes] = None
-    best_rate = float("inf")
-    for attempt in range(1, FILLER_ATTEMPTS + 1):
-        pcm = await _synthesize(text, preset)
-        if not pcm:
-            continue
-        rate = _speech_rate(pcm, text)
-        if rate < best_rate:
-            best, best_rate = pcm, rate
-        if rate <= NATURAL_SPEED_LIMIT:
-            logger.info("[FOLLOWUP TTS] filler %r ok at %.3f s/char (take %d)",
-                        text[:40], rate, attempt)
-            return pcm
-        logger.info("[FOLLOWUP TTS] filler %r dragged at %.3f s/char — re-taking",
-                    text[:40], rate)
-    if best is not None:
-        logger.warning("[FOLLOWUP TTS] filler %r never came back natural; "
-                       "keeping the best take at %.3f s/char", text[:40], best_rate)
-    return best
-
-
-def _filler_key(tutor_voice: Optional[str], language: Optional[str]) -> str:
-    gender = (tutor_voice or DEFAULT_VOICE).lower()
-    if gender not in ("male", "female"):
-        gender = DEFAULT_VOICE
-    lang = (language or DEFAULT_LANGUAGE).lower()
-    if lang not in ("english", "hinglish"):
-        lang = DEFAULT_LANGUAGE
-    return f"{gender}:{lang}"
-
-
-def _warm_filler(tutor_voice: Optional[str], language: Optional[str]) -> None:
-    """Synthesise this voice and language's lines once, in the background."""
-    key = _filler_key(tutor_voice, language)
-    gender_lang = tuple(key.split(":"))
-    # `in _fillers` is not enough: boot leaves exactly ONE line per bucket, and
-    # skipping on that would freeze the rotation at a single phrase — the very
-    # thing four lines exist to avoid.
-    if len(_fillers.get(key) or []) >= len(FILLER_LINES.get(gender_lang) or []):
-        return
-    running = _filler_tasks.get(key)
-    if running is not None and not running.done():
-        return
-    gender, lang = key.split(":")
-    lines = FILLER_LINES.get((gender, lang)) or []
-    preset = preset_for(gender)
-
-    async def _fill():
-        made: List[bytes] = []
-        for line in lines:
-            try:
-                pcm = await _synthesize_natural(line, preset)
-            except Exception as err:
-                logger.info("[FOLLOWUP TTS] no filler for %s (%s) — answers "
-                            "simply start when they start", key, err)
-                break
-            if pcm:
-                made.append(pcm)
-        if made:
-            _fillers[key] = made
-            logger.info("[FOLLOWUP TTS] cached %d filler line(s) for %s",
-                        len(made), key)
-
-    try:
-        _filler_tasks[key] = asyncio.get_event_loop().create_task(_fill())
-    except RuntimeError:
-        pass
-
-
-# How long after boot to start filling the cache.
-#
-# Boot prewarming of the CLASSROOM's fillers was removed for a measured
-# reason, written into app/main.py: 12 clips cost "~20-45s of Rumik
-# connections competing with whoever was already in class on a redeploy".
-# That is the moment a redeploy is most disruptive, and this must not add to
-# it. Waiting half a minute puts the synthesis after the restart crunch,
-# which costs nothing — a follow-up asked inside that window simply opens
-# without a filler, exactly as it does today.
-FILLER_BOOT_DELAY_S = 30.0
-
-
-async def prewarm_fillers_at_boot() -> None:
-    """One opener per voice and language, filled quietly after startup.
-
-    ONE line each, not all four: four buckets times four lines is sixteen
-    clips, more than the twelve whose boot cost was judged not worth paying.
-    One apiece is four, and it is enough for the thing that actually matters —
-    that no student ever gets silence in front of their first answer. The
-    other three fill in lazily the first time that voice is used, so the
-    rotation is complete by the second or third follow-up.
-
-    Sequential rather than concurrent, for the same reason: four sockets at
-    once during a redeploy is the shape that caused the problem.
-    """
-    await asyncio.sleep(FILLER_BOOT_DELAY_S)
-    for (gender, lang), lines in FILLER_LINES.items():
-        key = f"{gender}:{lang}"
-        if key in _fillers or not lines:
-            continue
-        try:
-            pcm = await _synthesize_natural(lines[0], preset_for(gender))
-        except Exception as err:
-            logger.info("[FOLLOWUP TTS] boot filler for %s skipped (%s)", key, err)
-            continue
-        if pcm:
-            _fillers[key] = [pcm]
-            logger.info("[FOLLOWUP TTS] boot-cached one opener for %s", key)
-
-
-def _next_filler(tutor_voice: Optional[str], language: Optional[str]) -> Optional[bytes]:
-    """The next line for this voice, or None if they are not cached yet."""
-    key = _filler_key(tutor_voice, language)
-    lines = _fillers.get(key)
-    if not lines:
-        return None
-    turn = _filler_turn.get(key, -1) + 1
-    _filler_turn[key] = turn
-    return lines[turn % len(lines)]
+# So the answer starts when its first sentence is ready. Measured over six
+# runs on a warm socket: 1.89, 1.98, 2.09, 2.82, 2.83, 3.82 seconds — median
+# 2.46s, and most of it is Rumik's own first-byte time, which is not ours to
+# shorten.
 
 
 async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
@@ -626,15 +408,6 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
     preset = preset_for(tutor_voice)
     sentences = _spoken_sentences(said)
     started = time.time()
-
-    # The cached line first, if there is one. Streaming only: the whole-file
-    # path has nothing to cover, since by the time it returns the answer is
-    # already complete.
-    filler = _next_filler(tutor_voice, language)
-    if filler:
-        logger.info("[FOLLOWUP TTS] %s opened with a cached filler at t+%dms",
-                    preset, int((time.time() - started) * 1000))
-        yield 0, len(sentences), wav_from_pcm(filler)
 
     for idx, sentence in enumerate(sentences, 1):
         try:

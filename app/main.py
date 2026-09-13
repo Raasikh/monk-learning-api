@@ -17,7 +17,6 @@ load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
-from app import followup_voice
 from app.config import settings
 from app.auth import get_current_user_id
 from app.routers import practice
@@ -49,25 +48,23 @@ app.add_middleware(
 @app.on_event("startup")
 async def verify_models_on_startup():
     logger.info("✅ [STARTUP] FastAPI application startup complete. Server ready.")
-    # The CLASSROOM's filler audio is NOT pre-warmed here any more. It only
-    # plays when Rumik rate-limits or the connection pool is exhausted — rare
-    # enough that synthesizing 12 clips on every boot cost more than it saved:
-    # ~20-45s of Rumik connections competing with whoever was already in class
-    # on a redeploy. FillerAudioCache now synthesizes lazily, in the
-    # background, the first time a filler is actually asked for (that first
-    # occurrence falls back to a brief silence).
+    # Filler audio is NOT pre-warmed here, for either surface.
     #
-    # The FOLLOW-UP's filler is different, and is warmed — carefully. It is not
-    # a fallback for a rare failure: it opens EVERY follow-up, covering Rumik's
-    # first-byte time, which was measured ranging 0.61s to 2.30s across
-    # identical calls. Lazy filling means the first student after each deploy
-    # waits that out in silence.
+    # The classroom's was removed for cost: 12 clips on every boot cost
+    # ~20-45s of Rumik connections competing with whoever was already in
+    # class on a redeploy, and it only plays when Rumik rate-limits anyway.
     #
-    # So it takes the lesson rather than ignoring it: four clips, not sixteen —
-    # one opener per voice and language, with the rest of each rotation filled
-    # lazily — run sequentially and only after a delay, so none of it lands in
-    # the restart crunch this comment is about.
-    asyncio.create_task(followup_voice.prewarm_fillers_at_boot())
+    # The follow-up's was built and then removed for a different reason — it
+    # sounded wrong. A cached line cannot know what was asked, so it is
+    # generic by construction, and a generic line in front of a specific
+    # answer reads as a stall rather than as a teacher thinking. Rumik also
+    # paces identical text differently between calls (0.061 vs 0.103 s/char on
+    # the same sentence), so a cached clip's delivery never quite matches the
+    # live sentence behind it. Auditioning the take fixed the dragging and not
+    # the mismatch.
+    #
+    # So the follow-up simply starts when its first sentence is ready: 1.9-3.8s
+    # measured, median 2.5s, of which most is Rumik's own first-byte time.
     asyncio.create_task(platform_metrics_sampler_loop())
 
 
