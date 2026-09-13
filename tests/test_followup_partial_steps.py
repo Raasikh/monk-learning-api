@@ -35,12 +35,14 @@ def test_escapes_inside_the_text_survive():
 
 
 def test_a_half_escape_at_the_boundary_is_dropped_not_shown():
-    # A chunk ending mid-escape must not leak a bare backslash or half a
-    # unicode escape onto the board.
-    assert _partial_step('{"steps": [{"n": 1, "text": "ends with \\\\')[1] == "ends with "
-    assert _partial_step('{"steps": [{"n": 2, "text": "half \\\\u00A')[1] == "half "
+    # A chunk ending mid-escape must not leak half an escape onto the board.
+    # A lone trailing backslash cannot even be parsed as a string tail, so
+    # that chunk produces NO frame — the escape completes in the next one.
+    # A cut unicode escape parses but the fragment is stripped.
+    assert _partial_step('{"steps": [{"n": 1, "text": "ends with \\') is None
+    assert _partial_step('{"steps": [{"n": 2, "text": "half \\u00A')[1] == "half "
 
 
 def test_a_complete_unicode_escape_is_kept():
-    got = _partial_step('{"steps": [{"n": 1, "text": "pi \\\\u03c0 next')
+    got = _partial_step('{"steps": [{"n": 1, "text": "pi \\u03c0 next')
     assert got == (1, "pi π next")
