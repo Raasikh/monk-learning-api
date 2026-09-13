@@ -1,0 +1,99 @@
+{
+ "groups": [
+  {
+   "id": "mouth",
+   "label": "Mouth and buccal cavity"
+  },
+  {
+   "id": "throat",
+   "label": "Pharynx and oesophagus"
+  },
+  {
+   "id": "midgut",
+   "label": "Gizzard and stomach"
+  },
+  {
+   "id": "hindgut",
+   "label": "Intestine"
+  }
+ ],
+ "points": [
+  {
+   "term": "prostomium",
+   "x": 0.062,
+   "y": 0.498,
+   "confidence": 0.85,
+   "group": "mouth"
+  },
+  {
+   "term": "peristomium",
+   "x": 0.105,
+   "y": 0.5,
+   "confidence": 0.7,
+   "group": "mouth"
+  },
+  {
+   "term": "buccal cavity",
+   "x": 0.175,
+   "y": 0.5,
+   "confidence": 0.8,
+   "group": "mouth"
+  },
+  {
+   "term": "pharynx",
+   "x": 0.25,
+   "y": 0.5,
+   "confidence": 0.85,
+   "group": "throat"
+  },
+  {
+   "term": "oesophagus",
+   "x": 0.345,
+   "y": 0.5,
+   "confidence": 0.85,
+   "group": "throat"
+  },
+  {
+   "term": "gizzard",
+   "x": 0.425,
+   "y": 0.5,
+   "confidence": 0.9,
+   "group": "midgut"
+  },
+  {
+   "term": "stomach",
+   "x": 0.525,
+   "y": 0.515,
+   "confidence": 0.75,
+   "group": "midgut"
+  },
+  {
+   "term": "calciferous gland",
+   "x": 0.532,
+   "y": 0.432,
+   "confidence": 0.8,
+   "group": "midgut"
+  },
+  {
+   "term": "intestine",
+   "x": 0.68,
+   "y": 0.5,
+   "confidence": 0.85,
+   "group": "hindgut"
+  },
+  {
+   "term": "intestinal caeca",
+   "x": 0.775,
+   "y": 0.555,
+   "confidence": 0.85,
+   "group": "hindgut"
+  },
+  {
+   "term": "typhlosole",
+   "x": 0.855,
+   "y": 0.505,
+   "confidence": 0.8,
+   "group": "hindgut"
+  }
+ ]
+}

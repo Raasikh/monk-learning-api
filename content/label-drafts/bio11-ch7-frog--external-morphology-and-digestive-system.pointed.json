@@ -1,0 +1,332 @@
+{
+  "asset_slug": "bio11-ch7-frog--external-morphology-and-digestive-system",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "head",
+      "label": {
+        "english": "Head",
+        "hinglish": "Head"
+      }
+    },
+    {
+      "id": "sense",
+      "label": {
+        "english": "Sense organs",
+        "hinglish": "Sense organs"
+      }
+    },
+    {
+      "id": "limbs",
+      "label": {
+        "english": "Trunk and limbs",
+        "hinglish": "Trunk and limbs"
+      }
+    },
+    {
+      "id": "vent",
+      "label": {
+        "english": "Digits and cloacal aperture",
+        "hinglish": "Digits and cloacal aperture"
+      }
+    },
+    {
+      "id": "gut",
+      "label": {
+        "english": "Alimentary canal",
+        "hinglish": "Alimentary canal"
+      }
+    },
+    {
+      "id": "glands",
+      "label": {
+        "english": "Digestive glands",
+        "hinglish": "Digestive glands"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": "head"
+      },
+      "anchor": [
+        0.145,
+        0.225
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "eye",
+      "text": {
+        "en": "eye",
+        "hi": "eye"
+      },
+      "anchor": [
+        0.163,
+        0.185
+      ],
+      "side": "auto",
+      "group": "head",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "tympanum",
+      "text": {
+        "en": "tympanum",
+        "hi": "tympanum"
+      },
+      "anchor": [
+        0.19,
+        0.2
+      ],
+      "side": "auto",
+      "group": "sense",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "nostril",
+      "text": {
+        "en": "nostril",
+        "hi": "nostril"
+      },
+      "anchor": [
+        0.112,
+        0.168
+      ],
+      "side": "auto",
+      "group": "sense",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "trunk",
+      "text": {
+        "en": "trunk",
+        "hi": "trunk"
+      },
+      "anchor": [
+        0.25,
+        0.25
+      ],
+      "side": "auto",
+      "group": "limbs",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "forelimb",
+      "text": {
+        "en": "forelimb",
+        "hi": "forelimb"
+      },
+      "anchor": [
+        0.178,
+        0.355
+      ],
+      "side": "auto",
+      "group": "limbs",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "hindlimb",
+      "text": {
+        "en": "hindlimb",
+        "hi": "hindlimb"
+      },
+      "anchor": [
+        0.32,
+        0.16
+      ],
+      "side": "auto",
+      "group": "limbs",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "webbed-digit",
+      "text": {
+        "en": "webbed digit",
+        "hi": "webbed digit"
+      },
+      "anchor": [
+        0.402,
+        0.185
+      ],
+      "side": "auto",
+      "group": "vent",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "cloacal-aperture",
+      "text": {
+        "en": "cloacal aperture",
+        "hi": "cloacal aperture"
+      },
+      "anchor": [
+        0.755,
+        0.295
+      ],
+      "side": "auto",
+      "group": "vent",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "stomach",
+      "text": {
+        "en": "stomach",
+        "hi": "stomach"
+      },
+      "anchor": [
+        0.503,
+        0.742
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "duodenum",
+      "text": {
+        "en": "duodenum",
+        "hi": "duodenum"
+      },
+      "anchor": [
+        0.556,
+        0.715
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "ileum",
+      "text": {
+        "en": "ileum",
+        "hi": "ileum"
+      },
+      "anchor": [
+        0.567,
+        0.749
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "cloaca",
+      "text": {
+        "en": "cloaca",
+        "hi": "cloaca"
+      },
+      "anchor": [
+        0.616,
+        0.711
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "liver",
+      "text": {
+        "en": "liver",
+        "hi": "liver"
+      },
+      "anchor": [
+        0.447,
+        0.646
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "gall-bladder",
+      "text": {
+        "en": "gall bladder",
+        "hi": "gall bladder"
+      },
+      "anchor": [
+        0.482,
+        0.665
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "pancreas",
+      "text": {
+        "en": "pancreas",
+        "hi": "pancreas"
+      },
+      "anchor": [
+        0.511,
+        0.677
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.6
+      }
+    }
+  ],
+  "unplaced": [
+    "nictitating membrane",
+    "buccal cavity",
+    "oesophagus",
+    "rectum",
+    "spleen",
+    "bile duct"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/frog-external.json",
+    "repointed": 16,
+    "omitted_not_visible": [
+      "nictitating membrane",
+      "buccal cavity",
+      "oesophagus",
+      "rectum",
+      "spleen",
+      "bile duct"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

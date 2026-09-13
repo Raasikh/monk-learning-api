@@ -1,0 +1,64 @@
+{
+  "asset_slug": "bio11-ch7-connective-tissue--types-and-matrix--f",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "matrix",
+      "text": {
+        "en": "matrix",
+        "hi": "matrix"
+      },
+      "anchor": [
+        0.165,
+        0.665
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "fibroblast",
+    "collagen fibre",
+    "elastin fibre",
+    "macrophage",
+    "mast cell",
+    "adipocyte",
+    "fat droplet",
+    "tendon",
+    "chondrocyte",
+    "lacuna",
+    "osteocyte",
+    "Haversian canal",
+    "lamella",
+    "canaliculus"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/connective-f.json",
+    "repointed": 1,
+    "omitted_not_visible": [
+      "fibroblast",
+      "collagen fibre",
+      "elastin fibre",
+      "macrophage",
+      "mast cell",
+      "adipocyte",
+      "fat droplet",
+      "tendon",
+      "chondrocyte",
+      "lacuna",
+      "osteocyte",
+      "Haversian canal",
+      "lamella",
+      "canaliculus"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

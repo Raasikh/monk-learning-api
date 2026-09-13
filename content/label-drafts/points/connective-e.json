@@ -1,0 +1,56 @@
+{
+ "groups": [
+  {
+   "id": "osteon",
+   "label": "Haversian system"
+  },
+  {
+   "id": "cells",
+   "label": "Cells and matrix"
+  }
+ ],
+ "points": [
+  {
+   "term": "Haversian canal",
+   "x": 0.638,
+   "y": 0.288,
+   "confidence": 0.95,
+   "group": "osteon"
+  },
+  {
+   "term": "lamella",
+   "x": 0.375,
+   "y": 0.215,
+   "confidence": 0.8,
+   "group": "osteon"
+  },
+  {
+   "term": "canaliculus",
+   "x": 0.66,
+   "y": 0.375,
+   "confidence": 0.65,
+   "group": "osteon"
+  },
+  {
+   "term": "osteocyte",
+   "x": 0.685,
+   "y": 0.225,
+   "confidence": 0.9,
+   "group": "cells"
+  },
+  {
+   "term": "lacuna",
+   "x": 0.44,
+   "y": 0.245,
+   "confidence": 0.6,
+   "group": "cells"
+  },
+  {
+   "term": "matrix",
+   "x": 0.29,
+   "y": 0.47,
+   "confidence": 0.7,
+   "group": "cells"
+  }
+ ]
+}

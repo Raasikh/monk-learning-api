@@ -1,0 +1,178 @@
+{
+  "asset_slug": "bio11-ch7-earthworm--circulatory--excretory-and-reproductive-systems--c",
+  "image_w": 924,
+  "image_h": 578,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "male",
+      "label": {
+        "english": "Male reproductive organs",
+        "hinglish": "Male reproductive organs"
+      }
+    },
+    {
+      "id": "female",
+      "label": {
+        "english": "Female reproductive organs",
+        "hinglish": "Female reproductive organs"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": "testis"
+      },
+      "anchor": [
+        0.415,
+        0.475
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "testis-sac",
+      "text": {
+        "en": "testis sac",
+        "hi": "testis sac"
+      },
+      "anchor": [
+        0.383,
+        0.49
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "seminal-vesicle",
+      "text": {
+        "en": "seminal vesicle",
+        "hi": "seminal vesicle"
+      },
+      "anchor": [
+        0.43,
+        0.415
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": "vas deferens"
+      },
+      "anchor": [
+        0.62,
+        0.5
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "prostate-gland",
+      "text": {
+        "en": "prostate gland",
+        "hi": "prostate gland"
+      },
+      "anchor": [
+        0.8,
+        0.43
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": "ovary"
+      },
+      "anchor": [
+        0.522,
+        0.395
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "oviduct",
+      "text": {
+        "en": "oviduct",
+        "hi": "oviduct"
+      },
+      "anchor": [
+        0.532,
+        0.465
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "spermatheca",
+      "text": {
+        "en": "spermatheca",
+        "hi": "spermatheca"
+      },
+      "anchor": [
+        0.2,
+        0.41
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "dorsal blood vessel",
+    "ventral blood vessel",
+    "lateral heart",
+    "supra-oesophageal vessel",
+    "septal nephridium",
+    "pharyngeal nephridium",
+    "integumentary nephridium"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/earthworm-circ-c.json",
+    "repointed": 8,
+    "omitted_not_visible": [
+      "dorsal blood vessel",
+      "ventral blood vessel",
+      "lateral heart",
+      "supra-oesophageal vessel",
+      "septal nephridium",
+      "pharyngeal nephridium",
+      "integumentary nephridium"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

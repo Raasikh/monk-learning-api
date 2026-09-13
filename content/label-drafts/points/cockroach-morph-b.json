@@ -1,0 +1,113 @@
+{
+ "groups": [
+  {
+   "id": "mouth",
+   "label": "Mouth and pharynx"
+  },
+  {
+   "id": "crop",
+   "label": "Salivary gland and crop"
+  },
+  {
+   "id": "midgut",
+   "label": "Midgut"
+  },
+  {
+   "id": "hindgut",
+   "label": "Hindgut"
+  }
+ ],
+ "points": [
+  {
+   "term": "mouth",
+   "x": 0.5,
+   "y": 0.1,
+   "confidence": 0.7,
+   "group": "mouth"
+  },
+  {
+   "term": "pharynx",
+   "x": 0.5,
+   "y": 0.133,
+   "confidence": 0.65,
+   "group": "mouth"
+  },
+  {
+   "term": "oesophagus",
+   "x": 0.5,
+   "y": 0.172,
+   "confidence": 0.7,
+   "group": "mouth"
+  },
+  {
+   "term": "salivary gland",
+   "x": 0.458,
+   "y": 0.197,
+   "confidence": 0.85,
+   "group": "crop"
+  },
+  {
+   "term": "crop",
+   "x": 0.5,
+   "y": 0.288,
+   "confidence": 0.9,
+   "group": "crop"
+  },
+  {
+   "term": "gizzard",
+   "x": 0.5,
+   "y": 0.415,
+   "confidence": 0.85,
+   "group": "midgut"
+  },
+  {
+   "term": "hepatic caeca",
+   "x": 0.455,
+   "y": 0.472,
+   "confidence": 0.85,
+   "group": "midgut"
+  },
+  {
+   "term": "midgut",
+   "x": 0.5,
+   "y": 0.545,
+   "confidence": 0.75,
+   "group": "midgut"
+  },
+  {
+   "term": "Malpighian tubule",
+   "x": 0.455,
+   "y": 0.598,
+   "confidence": 0.85,
+   "group": "midgut"
+  },
+  {
+   "term": "ileum",
+   "x": 0.5,
+   "y": 0.685,
+   "confidence": 0.7,
+   "group": "hindgut"
+  },
+  {
+   "term": "colon",
+   "x": 0.5,
+   "y": 0.76,
+   "confidence": 0.7,
+   "group": "hindgut"
+  },
+  {
+   "term": "rectum",
+   "x": 0.5,
+   "y": 0.832,
+   "confidence": 0.85,
+   "group": "hindgut"
+  },
+  {
+   "term": "anus",
+   "x": 0.5,
+   "y": 0.88,
+   "confidence": 0.75,
+   "group": "hindgut"
+  }
+ ]
+}

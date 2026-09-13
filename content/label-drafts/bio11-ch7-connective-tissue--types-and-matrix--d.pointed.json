@@ -1,0 +1,90 @@
+{
+  "asset_slug": "bio11-ch7-connective-tissue--types-and-matrix--d",
+  "image_w": 924,
+  "image_h": 578,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "matrix",
+      "text": {
+        "en": "matrix",
+        "hi": "matrix"
+      },
+      "anchor": [
+        0.6,
+        0.55
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "chondrocyte",
+      "text": {
+        "en": "chondrocyte",
+        "hi": "chondrocyte"
+      },
+      "anchor": [
+        0.645,
+        0.315
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "lacuna",
+      "text": {
+        "en": "lacuna",
+        "hi": "lacuna"
+      },
+      "anchor": [
+        0.878,
+        0.15
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "fibroblast",
+    "collagen fibre",
+    "elastin fibre",
+    "macrophage",
+    "mast cell",
+    "adipocyte",
+    "fat droplet",
+    "tendon",
+    "osteocyte",
+    "Haversian canal",
+    "lamella",
+    "canaliculus"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/connective-d.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "fibroblast",
+      "collagen fibre",
+      "elastin fibre",
+      "macrophage",
+      "mast cell",
+      "adipocyte",
+      "fat droplet",
+      "tendon",
+      "osteocyte",
+      "Haversian canal",
+      "lamella",
+      "canaliculus"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

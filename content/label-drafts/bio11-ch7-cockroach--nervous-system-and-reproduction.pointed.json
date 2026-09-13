@@ -1,0 +1,256 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--nervous-system-and-reproduction",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "brain",
+      "label": {
+        "english": "Brain",
+        "hinglish": "Brain"
+      }
+    },
+    {
+      "id": "cord",
+      "label": {
+        "english": "Nerve cord",
+        "hinglish": "Nerve cord"
+      }
+    },
+    {
+      "id": "male",
+      "label": {
+        "english": "Male reproductive organs",
+        "hinglish": "Male reproductive organs"
+      }
+    },
+    {
+      "id": "female",
+      "label": {
+        "english": "Female reproductive organs",
+        "hinglish": "Female reproductive organs"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "supra-oesophageal-ganglion",
+      "text": {
+        "en": "supra-oesophageal ganglion",
+        "hi": "supra-oesophageal ganglion"
+      },
+      "anchor": [
+        0.192,
+        0.225
+      ],
+      "side": "auto",
+      "group": "brain",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "sub-oesophageal-ganglion",
+      "text": {
+        "en": "sub-oesophageal ganglion",
+        "hi": "sub-oesophageal ganglion"
+      },
+      "anchor": [
+        0.192,
+        0.265
+      ],
+      "side": "auto",
+      "group": "brain",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "thoracic-ganglion",
+      "text": {
+        "en": "thoracic ganglion",
+        "hi": "thoracic ganglion"
+      },
+      "anchor": [
+        0.192,
+        0.345
+      ],
+      "side": "auto",
+      "group": "cord",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "abdominal-ganglion",
+      "text": {
+        "en": "abdominal ganglion",
+        "hi": "abdominal ganglion"
+      },
+      "anchor": [
+        0.192,
+        0.5
+      ],
+      "side": "auto",
+      "group": "cord",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "ventral-nerve-cord",
+      "text": {
+        "en": "ventral nerve cord",
+        "hi": "ventral nerve cord"
+      },
+      "anchor": [
+        0.192,
+        0.62
+      ],
+      "side": "auto",
+      "group": "cord",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": "testis"
+      },
+      "anchor": [
+        0.455,
+        0.545
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": "vas deferens"
+      },
+      "anchor": [
+        0.478,
+        0.6
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "mushroom-gland",
+      "text": {
+        "en": "mushroom gland",
+        "hi": "mushroom gland"
+      },
+      "anchor": [
+        0.47,
+        0.655
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "ejaculatory-duct",
+      "text": {
+        "en": "ejaculatory duct",
+        "hi": "ejaculatory duct"
+      },
+      "anchor": [
+        0.5,
+        0.725
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": "ovary"
+      },
+      "anchor": [
+        0.755,
+        0.535
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "ovariole",
+      "text": {
+        "en": "ovariole",
+        "hi": "ovariole"
+      },
+      "anchor": [
+        0.745,
+        0.495
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "oviduct",
+      "text": {
+        "en": "oviduct",
+        "hi": "oviduct"
+      },
+      "anchor": [
+        0.8,
+        0.62
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.65
+      }
+    }
+  ],
+  "unplaced": [
+    "circum-oesophageal connective",
+    "seminal vesicle",
+    "phallic gland",
+    "gonapophysis",
+    "spermatheca",
+    "collateral gland",
+    "ootheca"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/cockroach-nervous.json",
+    "repointed": 12,
+    "omitted_not_visible": [
+      "circum-oesophageal connective",
+      "seminal vesicle",
+      "phallic gland",
+      "gonapophysis",
+      "spermatheca",
+      "collateral gland",
+      "ootheca"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

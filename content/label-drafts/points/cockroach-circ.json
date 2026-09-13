@@ -1,0 +1,13 @@
+{"groups":[
+  {"id":"circulation","label":"Circulation"},
+  {"id":"resp-excretion","label":"Respiration and excretion"}],
+ "points":[
+ {"term":"heart","x":0.355,"y":0.500,"confidence":0.80,"group":"circulation"},
+ {"term":"chamber","x":0.475,"y":0.500,"confidence":0.65,"group":"circulation"},
+ {"term":"alary muscle","x":0.435,"y":0.405,"confidence":0.80,"group":"circulation"},
+ {"term":"haemocoel","x":0.755,"y":0.630,"confidence":0.60,"group":"circulation"},
+ {"term":"spiracle","x":0.455,"y":0.658,"confidence":0.70,"group":"resp-excretion"},
+ {"term":"trachea","x":0.260,"y":0.440,"confidence":0.75,"group":"resp-excretion"},
+ {"term":"Malpighian tubule","x":0.615,"y":0.440,"confidence":0.90,"group":"resp-excretion"},
+ {"term":"fat body","x":0.715,"y":0.425,"confidence":0.70,"group":"resp-excretion"}
+]}

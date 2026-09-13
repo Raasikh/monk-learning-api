@@ -1,0 +1,232 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--morphology-and-digestive-system--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "head-thorax",
+      "label": {
+        "english": "Head and thorax",
+        "hinglish": "Head and thorax"
+      }
+    },
+    {
+      "id": "abdomen-legs",
+      "label": {
+        "english": "Abdomen and leg",
+        "hinglish": "Abdomen and leg"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "head",
+      "text": {
+        "en": "head",
+        "hi": "head"
+      },
+      "anchor": [
+        0.5,
+        0.185
+      ],
+      "side": "auto",
+      "group": "head-thorax",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "compound-eye",
+      "text": {
+        "en": "compound eye",
+        "hi": "compound eye"
+      },
+      "anchor": [
+        0.465,
+        0.183
+      ],
+      "side": "auto",
+      "group": "head-thorax",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "antenna",
+      "text": {
+        "en": "antenna",
+        "hi": "antenna"
+      },
+      "anchor": [
+        0.3,
+        0.115
+      ],
+      "side": "auto",
+      "group": "head-thorax",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "prothorax",
+      "text": {
+        "en": "prothorax",
+        "hi": "prothorax"
+      },
+      "anchor": [
+        0.5,
+        0.27
+      ],
+      "side": "auto",
+      "group": "head-thorax",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "tegmen",
+      "text": {
+        "en": "tegmen",
+        "hi": "tegmen"
+      },
+      "anchor": [
+        0.435,
+        0.5
+      ],
+      "side": "auto",
+      "group": "head-thorax",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "abdomen",
+      "text": {
+        "en": "abdomen",
+        "hi": "abdomen"
+      },
+      "anchor": [
+        0.5,
+        0.73
+      ],
+      "side": "auto",
+      "group": "abdomen-legs",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "anal-cercus",
+      "text": {
+        "en": "anal cercus",
+        "hi": "anal cercus"
+      },
+      "anchor": [
+        0.452,
+        0.787
+      ],
+      "side": "auto",
+      "group": "abdomen-legs",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "femur",
+      "text": {
+        "en": "femur",
+        "hi": "femur"
+      },
+      "anchor": [
+        0.378,
+        0.645
+      ],
+      "side": "auto",
+      "group": "abdomen-legs",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "tibia",
+      "text": {
+        "en": "tibia",
+        "hi": "tibia"
+      },
+      "anchor": [
+        0.352,
+        0.76
+      ],
+      "side": "auto",
+      "group": "abdomen-legs",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "tarsus",
+      "text": {
+        "en": "tarsus",
+        "hi": "tarsus"
+      },
+      "anchor": [
+        0.322,
+        0.88
+      ],
+      "side": "auto",
+      "group": "abdomen-legs",
+      "_point": {
+        "confidence": 0.75
+      }
+    }
+  ],
+  "unplaced": [
+    "mesothorax",
+    "metathorax",
+    "hind wing",
+    "anal style",
+    "coxa",
+    "mouth",
+    "pharynx",
+    "oesophagus",
+    "crop",
+    "gizzard",
+    "hepatic caeca",
+    "midgut",
+    "Malpighian tubule",
+    "ileum",
+    "colon",
+    "rectum",
+    "anus",
+    "salivary gland"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/cockroach-morph-a.json",
+    "repointed": 10,
+    "omitted_not_visible": [
+      "mesothorax",
+      "metathorax",
+      "hind wing",
+      "anal style",
+      "coxa",
+      "mouth",
+      "pharynx",
+      "oesophagus",
+      "crop",
+      "gizzard",
+      "hepatic caeca",
+      "midgut",
+      "Malpighian tubule",
+      "ileum",
+      "colon",
+      "rectum",
+      "anus",
+      "salivary gland"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

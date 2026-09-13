@@ -1,0 +1,105 @@
+{
+  "asset_slug": "bio11-ch7-frog--circulatory-and-respiratory-systems--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "lung",
+      "text": {
+        "en": "lung",
+        "hi": "lung"
+      },
+      "anchor": [
+        0.465,
+        0.64
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "buccal-cavity",
+      "text": {
+        "en": "buccal cavity",
+        "hi": "buccal cavity"
+      },
+      "anchor": [
+        0.27,
+        0.42
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "glottis",
+      "text": {
+        "en": "glottis",
+        "hi": "glottis"
+      },
+      "anchor": [
+        0.445,
+        0.475
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "skin",
+      "text": {
+        "en": "skin",
+        "hi": "skin"
+      },
+      "anchor": [
+        0.755,
+        0.6
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "sinus venosus",
+    "right atrium",
+    "left atrium",
+    "ventricle",
+    "conus arteriosus",
+    "truncus arteriosus",
+    "carotid arch",
+    "systemic arch",
+    "pulmocutaneous arch",
+    "pulmonary vein",
+    "precaval vein",
+    "postcaval vein"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/frog-circ-b.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "sinus venosus",
+      "right atrium",
+      "left atrium",
+      "ventricle",
+      "conus arteriosus",
+      "truncus arteriosus",
+      "carotid arch",
+      "systemic arch",
+      "pulmocutaneous arch",
+      "pulmonary vein",
+      "precaval vein",
+      "postcaval vein"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

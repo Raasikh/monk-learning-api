@@ -1,0 +1,56 @@
+{
+ "groups": [
+  {
+   "id": "cells",
+   "label": "Cells of areolar tissue"
+  },
+  {
+   "id": "fibres",
+   "label": "Fibres and matrix"
+  }
+ ],
+ "points": [
+  {
+   "term": "fibroblast",
+   "x": 0.745,
+   "y": 0.285,
+   "confidence": 0.85,
+   "group": "cells"
+  },
+  {
+   "term": "macrophage",
+   "x": 0.665,
+   "y": 0.505,
+   "confidence": 0.95,
+   "group": "cells"
+  },
+  {
+   "term": "mast cell",
+   "x": 0.365,
+   "y": 0.725,
+   "confidence": 0.85,
+   "group": "cells"
+  },
+  {
+   "term": "collagen fibre",
+   "x": 0.55,
+   "y": 0.42,
+   "confidence": 0.9,
+   "group": "fibres"
+  },
+  {
+   "term": "elastin fibre",
+   "x": 0.225,
+   "y": 0.495,
+   "confidence": 0.8,
+   "group": "fibres"
+  },
+  {
+   "term": "matrix",
+   "x": 0.13,
+   "y": 0.63,
+   "confidence": 0.7,
+   "group": "fibres"
+  }
+ ]
+}

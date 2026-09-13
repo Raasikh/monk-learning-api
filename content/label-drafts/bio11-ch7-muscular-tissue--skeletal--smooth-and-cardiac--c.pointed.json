@@ -1,0 +1,104 @@
+{
+  "asset_slug": "bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--c",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "striation",
+      "text": {
+        "en": "striation",
+        "hi": "striation"
+      },
+      "anchor": [
+        0.75,
+        0.71
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "nucleus",
+      "text": {
+        "en": "nucleus",
+        "hi": "nucleus"
+      },
+      "anchor": [
+        0.328,
+        0.598
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "cardiac-muscle-fibre",
+      "text": {
+        "en": "cardiac muscle fibre",
+        "hi": "cardiac muscle fibre"
+      },
+      "anchor": [
+        0.5,
+        0.21
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "intercalated-disc",
+      "text": {
+        "en": "intercalated disc",
+        "hi": "intercalated disc"
+      },
+      "anchor": [
+        0.408,
+        0.295
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "branching",
+      "text": {
+        "en": "branching",
+        "hi": "branching"
+      },
+      "anchor": [
+        0.715,
+        0.325
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "skeletal muscle fibre",
+    "sarcolemma",
+    "smooth muscle fibre",
+    "spindle shape"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/muscular-c.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "skeletal muscle fibre",
+      "sarcolemma",
+      "smooth muscle fibre",
+      "spindle shape"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

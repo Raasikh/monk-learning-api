@@ -1,0 +1,172 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--circulatory--respiratory-and-excretory-systems",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "circulation",
+      "label": {
+        "english": "Circulation",
+        "hinglish": "Circulation"
+      }
+    },
+    {
+      "id": "resp-excretion",
+      "label": {
+        "english": "Respiration and excretion",
+        "hinglish": "Respiration and excretion"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "heart",
+      "text": {
+        "en": "heart",
+        "hi": "heart"
+      },
+      "anchor": [
+        0.355,
+        0.5
+      ],
+      "side": "auto",
+      "group": "circulation",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "chamber",
+      "text": {
+        "en": "chamber",
+        "hi": "chamber"
+      },
+      "anchor": [
+        0.475,
+        0.5
+      ],
+      "side": "auto",
+      "group": "circulation",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "alary-muscle",
+      "text": {
+        "en": "alary muscle",
+        "hi": "alary muscle"
+      },
+      "anchor": [
+        0.435,
+        0.405
+      ],
+      "side": "auto",
+      "group": "circulation",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "haemocoel",
+      "text": {
+        "en": "haemocoel",
+        "hi": "haemocoel"
+      },
+      "anchor": [
+        0.755,
+        0.63
+      ],
+      "side": "auto",
+      "group": "circulation",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "spiracle",
+      "text": {
+        "en": "spiracle",
+        "hi": "spiracle"
+      },
+      "anchor": [
+        0.455,
+        0.658
+      ],
+      "side": "auto",
+      "group": "resp-excretion",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "trachea",
+      "text": {
+        "en": "trachea",
+        "hi": "trachea"
+      },
+      "anchor": [
+        0.26,
+        0.44
+      ],
+      "side": "auto",
+      "group": "resp-excretion",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "malpighian-tubule",
+      "text": {
+        "en": "Malpighian tubule",
+        "hi": "Malpighian tubule"
+      },
+      "anchor": [
+        0.615,
+        0.44
+      ],
+      "side": "auto",
+      "group": "resp-excretion",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "fat-body",
+      "text": {
+        "en": "fat body",
+        "hi": "fat body"
+      },
+      "anchor": [
+        0.715,
+        0.425
+      ],
+      "side": "auto",
+      "group": "resp-excretion",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "ostium",
+    "tracheole",
+    "uricose gland",
+    "nephrocyte"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/cockroach-circ.json",
+    "repointed": 8,
+    "omitted_not_visible": [
+      "ostium",
+      "tracheole",
+      "uricose gland",
+      "nephrocyte"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

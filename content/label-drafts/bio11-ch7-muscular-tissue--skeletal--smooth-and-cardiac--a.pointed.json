@@ -1,0 +1,91 @@
+{
+  "asset_slug": "bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--a",
+  "image_w": 952,
+  "image_h": 595,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "skeletal-muscle-fibre",
+      "text": {
+        "en": "skeletal muscle fibre",
+        "hi": "skeletal muscle fibre"
+      },
+      "anchor": [
+        0.25,
+        0.64
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "striation",
+      "text": {
+        "en": "striation",
+        "hi": "striation"
+      },
+      "anchor": [
+        0.42,
+        0.44
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "nucleus",
+      "text": {
+        "en": "nucleus",
+        "hi": "nucleus"
+      },
+      "anchor": [
+        0.57,
+        0.295
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "sarcolemma",
+      "text": {
+        "en": "sarcolemma",
+        "hi": "sarcolemma"
+      },
+      "anchor": [
+        0.35,
+        0.708
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.7
+      }
+    }
+  ],
+  "unplaced": [
+    "smooth muscle fibre",
+    "spindle shape",
+    "cardiac muscle fibre",
+    "intercalated disc",
+    "branching"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/muscular-a.json",
+    "repointed": 4,
+    "omitted_not_visible": [
+      "smooth muscle fibre",
+      "spindle shape",
+      "cardiac muscle fibre",
+      "intercalated disc",
+      "branching"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

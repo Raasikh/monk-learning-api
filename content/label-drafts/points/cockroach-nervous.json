@@ -1,0 +1,106 @@
+{
+ "groups": [
+  {
+   "id": "brain",
+   "label": "Brain"
+  },
+  {
+   "id": "cord",
+   "label": "Nerve cord"
+  },
+  {
+   "id": "male",
+   "label": "Male reproductive organs"
+  },
+  {
+   "id": "female",
+   "label": "Female reproductive organs"
+  }
+ ],
+ "points": [
+  {
+   "term": "supra-oesophageal ganglion",
+   "x": 0.192,
+   "y": 0.225,
+   "confidence": 0.75,
+   "group": "brain"
+  },
+  {
+   "term": "sub-oesophageal ganglion",
+   "x": 0.192,
+   "y": 0.265,
+   "confidence": 0.65,
+   "group": "brain"
+  },
+  {
+   "term": "thoracic ganglion",
+   "x": 0.192,
+   "y": 0.345,
+   "confidence": 0.7,
+   "group": "cord"
+  },
+  {
+   "term": "abdominal ganglion",
+   "x": 0.192,
+   "y": 0.5,
+   "confidence": 0.7,
+   "group": "cord"
+  },
+  {
+   "term": "ventral nerve cord",
+   "x": 0.192,
+   "y": 0.62,
+   "confidence": 0.8,
+   "group": "cord"
+  },
+  {
+   "term": "testis",
+   "x": 0.455,
+   "y": 0.545,
+   "confidence": 0.7,
+   "group": "male"
+  },
+  {
+   "term": "vas deferens",
+   "x": 0.478,
+   "y": 0.6,
+   "confidence": 0.6,
+   "group": "male"
+  },
+  {
+   "term": "mushroom gland",
+   "x": 0.47,
+   "y": 0.655,
+   "confidence": 0.7,
+   "group": "male"
+  },
+  {
+   "term": "ejaculatory duct",
+   "x": 0.5,
+   "y": 0.725,
+   "confidence": 0.6,
+   "group": "male"
+  },
+  {
+   "term": "ovary",
+   "x": 0.755,
+   "y": 0.535,
+   "confidence": 0.8,
+   "group": "female"
+  },
+  {
+   "term": "ovariole",
+   "x": 0.745,
+   "y": 0.495,
+   "confidence": 0.75,
+   "group": "female"
+  },
+  {
+   "term": "oviduct",
+   "x": 0.8,
+   "y": 0.62,
+   "confidence": 0.65,
+   "group": "female"
+  }
+ ]
+}

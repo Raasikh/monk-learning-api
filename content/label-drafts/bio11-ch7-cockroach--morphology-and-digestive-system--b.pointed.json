@@ -1,0 +1,288 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--morphology-and-digestive-system--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "mouth",
+      "label": {
+        "english": "Mouth and pharynx",
+        "hinglish": "Mouth and pharynx"
+      }
+    },
+    {
+      "id": "crop",
+      "label": {
+        "english": "Salivary gland and crop",
+        "hinglish": "Salivary gland and crop"
+      }
+    },
+    {
+      "id": "midgut",
+      "label": {
+        "english": "Midgut",
+        "hinglish": "Midgut"
+      }
+    },
+    {
+      "id": "hindgut",
+      "label": {
+        "english": "Hindgut",
+        "hinglish": "Hindgut"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "mouth",
+      "text": {
+        "en": "mouth",
+        "hi": "mouth"
+      },
+      "anchor": [
+        0.5,
+        0.1
+      ],
+      "side": "auto",
+      "group": "mouth",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "pharynx",
+      "text": {
+        "en": "pharynx",
+        "hi": "pharynx"
+      },
+      "anchor": [
+        0.5,
+        0.133
+      ],
+      "side": "auto",
+      "group": "mouth",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "oesophagus",
+      "text": {
+        "en": "oesophagus",
+        "hi": "oesophagus"
+      },
+      "anchor": [
+        0.5,
+        0.172
+      ],
+      "side": "auto",
+      "group": "mouth",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "crop",
+      "text": {
+        "en": "crop",
+        "hi": "crop"
+      },
+      "anchor": [
+        0.5,
+        0.288
+      ],
+      "side": "auto",
+      "group": "crop",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "gizzard",
+      "text": {
+        "en": "gizzard",
+        "hi": "gizzard"
+      },
+      "anchor": [
+        0.5,
+        0.415
+      ],
+      "side": "auto",
+      "group": "midgut",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "hepatic-caeca",
+      "text": {
+        "en": "hepatic caeca",
+        "hi": "hepatic caeca"
+      },
+      "anchor": [
+        0.455,
+        0.472
+      ],
+      "side": "auto",
+      "group": "midgut",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "midgut",
+      "text": {
+        "en": "midgut",
+        "hi": "midgut"
+      },
+      "anchor": [
+        0.5,
+        0.545
+      ],
+      "side": "auto",
+      "group": "midgut",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "malpighian-tubule",
+      "text": {
+        "en": "Malpighian tubule",
+        "hi": "Malpighian tubule"
+      },
+      "anchor": [
+        0.455,
+        0.598
+      ],
+      "side": "auto",
+      "group": "midgut",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "ileum",
+      "text": {
+        "en": "ileum",
+        "hi": "ileum"
+      },
+      "anchor": [
+        0.5,
+        0.685
+      ],
+      "side": "auto",
+      "group": "hindgut",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "colon",
+      "text": {
+        "en": "colon",
+        "hi": "colon"
+      },
+      "anchor": [
+        0.5,
+        0.76
+      ],
+      "side": "auto",
+      "group": "hindgut",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "rectum",
+      "text": {
+        "en": "rectum",
+        "hi": "rectum"
+      },
+      "anchor": [
+        0.5,
+        0.832
+      ],
+      "side": "auto",
+      "group": "hindgut",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "anus",
+      "text": {
+        "en": "anus",
+        "hi": "anus"
+      },
+      "anchor": [
+        0.5,
+        0.88
+      ],
+      "side": "auto",
+      "group": "hindgut",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "salivary-gland",
+      "text": {
+        "en": "salivary gland",
+        "hi": "salivary gland"
+      },
+      "anchor": [
+        0.458,
+        0.197
+      ],
+      "side": "auto",
+      "group": "crop",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "head",
+    "compound eye",
+    "antenna",
+    "prothorax",
+    "mesothorax",
+    "metathorax",
+    "tegmen",
+    "hind wing",
+    "abdomen",
+    "anal cercus",
+    "anal style",
+    "coxa",
+    "femur",
+    "tibia",
+    "tarsus"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/cockroach-morph-b.json",
+    "repointed": 13,
+    "omitted_not_visible": [
+      "head",
+      "compound eye",
+      "antenna",
+      "prothorax",
+      "mesothorax",
+      "metathorax",
+      "tegmen",
+      "hind wing",
+      "abdomen",
+      "anal cercus",
+      "anal style",
+      "coxa",
+      "femur",
+      "tibia",
+      "tarsus"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

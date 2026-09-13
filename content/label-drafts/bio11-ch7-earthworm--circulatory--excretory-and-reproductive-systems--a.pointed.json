@@ -1,0 +1,90 @@
+{
+  "asset_slug": "bio11-ch7-earthworm--circulatory--excretory-and-reproductive-systems--a",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "dorsal-blood-vessel",
+      "text": {
+        "en": "dorsal blood vessel",
+        "hi": "dorsal blood vessel"
+      },
+      "anchor": [
+        0.3,
+        0.393
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ventral-blood-vessel",
+      "text": {
+        "en": "ventral blood vessel",
+        "hi": "ventral blood vessel"
+      },
+      "anchor": [
+        0.3,
+        0.578
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "lateral-heart",
+      "text": {
+        "en": "lateral heart",
+        "hi": "lateral heart"
+      },
+      "anchor": [
+        0.555,
+        0.47
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "supra-oesophageal vessel",
+    "septal nephridium",
+    "pharyngeal nephridium",
+    "integumentary nephridium",
+    "testis",
+    "testis sac",
+    "seminal vesicle",
+    "vas deferens",
+    "prostate gland",
+    "ovary",
+    "oviduct",
+    "spermatheca"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/earthworm-circ-a.json",
+    "repointed": 3,
+    "omitted_not_visible": [
+      "supra-oesophageal vessel",
+      "septal nephridium",
+      "pharyngeal nephridium",
+      "integumentary nephridium",
+      "testis",
+      "testis sac",
+      "seminal vesicle",
+      "vas deferens",
+      "prostate gland",
+      "ovary",
+      "oviduct",
+      "spermatheca"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

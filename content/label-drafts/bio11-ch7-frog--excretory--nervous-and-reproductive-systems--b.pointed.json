@@ -1,0 +1,237 @@
+{
+  "asset_slug": "bio11-ch7-frog--excretory--nervous-and-reproductive-systems--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "excretory",
+      "label": {
+        "english": "Excretory organs",
+        "hinglish": "Excretory organs"
+      }
+    },
+    {
+      "id": "male",
+      "label": {
+        "english": "Male reproductive organs",
+        "hinglish": "Male reproductive organs"
+      }
+    },
+    {
+      "id": "female",
+      "label": {
+        "english": "Female reproductive organs",
+        "hinglish": "Female reproductive organs"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "kidney",
+      "text": {
+        "en": "kidney",
+        "hi": "kidney"
+      },
+      "anchor": [
+        0.35,
+        0.3
+      ],
+      "side": "auto",
+      "group": "excretory",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ureter",
+      "text": {
+        "en": "ureter",
+        "hi": "ureter"
+      },
+      "anchor": [
+        0.41,
+        0.49
+      ],
+      "side": "auto",
+      "group": "excretory",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "urinary-bladder",
+      "text": {
+        "en": "urinary bladder",
+        "hi": "urinary bladder"
+      },
+      "anchor": [
+        0.47,
+        0.75
+      ],
+      "side": "auto",
+      "group": "excretory",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "cloaca",
+      "text": {
+        "en": "cloaca",
+        "hi": "cloaca"
+      },
+      "anchor": [
+        0.483,
+        0.812
+      ],
+      "side": "auto",
+      "group": "excretory",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "adrenal-gland",
+      "text": {
+        "en": "adrenal gland",
+        "hi": "adrenal gland"
+      },
+      "anchor": [
+        0.368,
+        0.215
+      ],
+      "side": "auto",
+      "group": "excretory",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": "testis"
+      },
+      "anchor": [
+        0.335,
+        0.555
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "vasa-efferentia",
+      "text": {
+        "en": "vasa efferentia",
+        "hi": "vasa efferentia"
+      },
+      "anchor": [
+        0.348,
+        0.45
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": "ovary"
+      },
+      "anchor": [
+        0.615,
+        0.555
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "oviduct",
+      "text": {
+        "en": "oviduct",
+        "hi": "oviduct"
+      },
+      "anchor": [
+        0.69,
+        0.34
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "ovisac",
+      "text": {
+        "en": "ovisac",
+        "hi": "ovisac"
+      },
+      "anchor": [
+        0.712,
+        0.72
+      ],
+      "side": "auto",
+      "group": "female",
+      "_point": {
+        "confidence": 0.65
+      }
+    },
+    {
+      "id": "fat-body",
+      "text": {
+        "en": "fat body",
+        "hi": "fat body"
+      },
+      "anchor": [
+        0.3,
+        0.24
+      ],
+      "side": "auto",
+      "group": "male",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "olfactory lobe",
+    "cerebral hemisphere",
+    "diencephalon",
+    "optic lobe",
+    "cerebellum",
+    "medulla oblongata",
+    "spinal cord",
+    "cranial nerve",
+    "Bidder's canal"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/frog-exc-b.json",
+    "repointed": 11,
+    "omitted_not_visible": [
+      "olfactory lobe",
+      "cerebral hemisphere",
+      "diencephalon",
+      "optic lobe",
+      "cerebellum",
+      "medulla oblongata",
+      "spinal cord",
+      "cranial nerve",
+      "Bidder's canal"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

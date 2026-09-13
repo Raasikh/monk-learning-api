@@ -1,0 +1,142 @@
+{
+ "groups": [
+  {
+   "id": "head",
+   "label": "Head"
+  },
+  {
+   "id": "sense",
+   "label": "Sense organs"
+  },
+  {
+   "id": "limbs",
+   "label": "Trunk and limbs"
+  },
+  {
+   "id": "vent",
+   "label": "Digits and cloacal aperture"
+  },
+  {
+   "id": "gut",
+   "label": "Alimentary canal"
+  },
+  {
+   "id": "glands",
+   "label": "Digestive glands"
+  }
+ ],
+ "points": [
+  {
+   "term": "head",
+   "x": 0.145,
+   "y": 0.225,
+   "confidence": 0.8,
+   "group": "head"
+  },
+  {
+   "term": "eye",
+   "x": 0.163,
+   "y": 0.185,
+   "confidence": 0.9,
+   "group": "head"
+  },
+  {
+   "term": "tympanum",
+   "x": 0.19,
+   "y": 0.2,
+   "confidence": 0.75,
+   "group": "sense"
+  },
+  {
+   "term": "nostril",
+   "x": 0.112,
+   "y": 0.168,
+   "confidence": 0.6,
+   "group": "sense"
+  },
+  {
+   "term": "trunk",
+   "x": 0.25,
+   "y": 0.25,
+   "confidence": 0.75,
+   "group": "limbs"
+  },
+  {
+   "term": "forelimb",
+   "x": 0.178,
+   "y": 0.355,
+   "confidence": 0.7,
+   "group": "limbs"
+  },
+  {
+   "term": "hindlimb",
+   "x": 0.32,
+   "y": 0.16,
+   "confidence": 0.8,
+   "group": "limbs"
+  },
+  {
+   "term": "webbed digit",
+   "x": 0.402,
+   "y": 0.185,
+   "confidence": 0.75,
+   "group": "vent"
+  },
+  {
+   "term": "cloacal aperture",
+   "x": 0.755,
+   "y": 0.295,
+   "confidence": 0.7,
+   "group": "vent"
+  },
+  {
+   "term": "stomach",
+   "x": 0.503,
+   "y": 0.742,
+   "confidence": 0.85,
+   "group": "gut"
+  },
+  {
+   "term": "duodenum",
+   "x": 0.556,
+   "y": 0.715,
+   "confidence": 0.6,
+   "group": "gut"
+  },
+  {
+   "term": "ileum",
+   "x": 0.567,
+   "y": 0.749,
+   "confidence": 0.65,
+   "group": "gut"
+  },
+  {
+   "term": "cloaca",
+   "x": 0.616,
+   "y": 0.711,
+   "confidence": 0.7,
+   "group": "gut"
+  },
+  {
+   "term": "liver",
+   "x": 0.447,
+   "y": 0.646,
+   "confidence": 0.85,
+   "group": "glands"
+  },
+  {
+   "term": "gall bladder",
+   "x": 0.482,
+   "y": 0.665,
+   "confidence": 0.65,
+   "group": "glands"
+  },
+  {
+   "term": "pancreas",
+   "x": 0.511,
+   "y": 0.677,
+   "confidence": 0.6,
+   "group": "glands"
+  }
+ ]
+}

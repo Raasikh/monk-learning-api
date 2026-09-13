@@ -1,0 +1,242 @@
+{
+  "asset_slug": "bio11-ch7-earthworm--morphology-and-digestive-system--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "mouth",
+      "label": {
+        "english": "Mouth and buccal cavity",
+        "hinglish": "Mouth and buccal cavity"
+      }
+    },
+    {
+      "id": "throat",
+      "label": {
+        "english": "Pharynx and oesophagus",
+        "hinglish": "Pharynx and oesophagus"
+      }
+    },
+    {
+      "id": "midgut",
+      "label": {
+        "english": "Gizzard and stomach",
+        "hinglish": "Gizzard and stomach"
+      }
+    },
+    {
+      "id": "hindgut",
+      "label": {
+        "english": "Intestine",
+        "hinglish": "Intestine"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "prostomium",
+      "text": {
+        "en": "prostomium",
+        "hi": "prostomium"
+      },
+      "anchor": [
+        0.062,
+        0.498
+      ],
+      "side": "auto",
+      "group": "mouth",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "peristomium",
+      "text": {
+        "en": "peristomium",
+        "hi": "peristomium"
+      },
+      "anchor": [
+        0.105,
+        0.5
+      ],
+      "side": "auto",
+      "group": "mouth",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "buccal-cavity",
+      "text": {
+        "en": "buccal cavity",
+        "hi": "buccal cavity"
+      },
+      "anchor": [
+        0.175,
+        0.5
+      ],
+      "side": "auto",
+      "group": "mouth",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "pharynx",
+      "text": {
+        "en": "pharynx",
+        "hi": "pharynx"
+      },
+      "anchor": [
+        0.25,
+        0.5
+      ],
+      "side": "auto",
+      "group": "throat",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "oesophagus",
+      "text": {
+        "en": "oesophagus",
+        "hi": "oesophagus"
+      },
+      "anchor": [
+        0.345,
+        0.5
+      ],
+      "side": "auto",
+      "group": "throat",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "gizzard",
+      "text": {
+        "en": "gizzard",
+        "hi": "gizzard"
+      },
+      "anchor": [
+        0.425,
+        0.5
+      ],
+      "side": "auto",
+      "group": "midgut",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "stomach",
+      "text": {
+        "en": "stomach",
+        "hi": "stomach"
+      },
+      "anchor": [
+        0.525,
+        0.515
+      ],
+      "side": "auto",
+      "group": "midgut",
+      "_point": {
+        "confidence": 0.75
+      }
+    },
+    {
+      "id": "intestine",
+      "text": {
+        "en": "intestine",
+        "hi": "intestine"
+      },
+      "anchor": [
+        0.68,
+        0.5
+      ],
+      "side": "auto",
+      "group": "hindgut",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "typhlosole",
+      "text": {
+        "en": "typhlosole",
+        "hi": "typhlosole"
+      },
+      "anchor": [
+        0.855,
+        0.505
+      ],
+      "side": "auto",
+      "group": "hindgut",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "calciferous-gland",
+      "text": {
+        "en": "calciferous gland",
+        "hi": "calciferous gland"
+      },
+      "anchor": [
+        0.532,
+        0.432
+      ],
+      "side": "auto",
+      "group": "midgut",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "intestinal-caeca",
+      "text": {
+        "en": "intestinal caeca",
+        "hi": "intestinal caeca"
+      },
+      "anchor": [
+        0.775,
+        0.555
+      ],
+      "side": "auto",
+      "group": "hindgut",
+      "_point": {
+        "confidence": 0.85
+      }
+    }
+  ],
+  "unplaced": [
+    "mouth",
+    "clitellum",
+    "seta",
+    "genital papilla",
+    "female genital pore",
+    "male genital pore",
+    "spermathecal pore",
+    "anus"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/earthworm-morph-b.json",
+    "repointed": 11,
+    "omitted_not_visible": [
+      "mouth",
+      "clitellum",
+      "seta",
+      "genital papilla",
+      "female genital pore",
+      "male genital pore",
+      "spermathecal pore",
+      "anus"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

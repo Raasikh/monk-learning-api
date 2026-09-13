@@ -1,0 +1,150 @@
+{
+  "asset_slug": "bio11-ch7-connective-tissue--types-and-matrix--e",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [
+    {
+      "id": "osteon",
+      "label": {
+        "english": "Haversian system",
+        "hinglish": "Haversian system"
+      }
+    },
+    {
+      "id": "cells",
+      "label": {
+        "english": "Cells and matrix",
+        "hinglish": "Cells and matrix"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "matrix",
+      "text": {
+        "en": "matrix",
+        "hi": "matrix"
+      },
+      "anchor": [
+        0.29,
+        0.47
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "lacuna",
+      "text": {
+        "en": "lacuna",
+        "hi": "lacuna"
+      },
+      "anchor": [
+        0.44,
+        0.245
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.6
+      }
+    },
+    {
+      "id": "osteocyte",
+      "text": {
+        "en": "osteocyte",
+        "hi": "osteocyte"
+      },
+      "anchor": [
+        0.685,
+        0.225
+      ],
+      "side": "auto",
+      "group": "cells",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "haversian-canal",
+      "text": {
+        "en": "Haversian canal",
+        "hi": "Haversian canal"
+      },
+      "anchor": [
+        0.638,
+        0.288
+      ],
+      "side": "auto",
+      "group": "osteon",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "lamella",
+      "text": {
+        "en": "lamella",
+        "hi": "lamella"
+      },
+      "anchor": [
+        0.375,
+        0.215
+      ],
+      "side": "auto",
+      "group": "osteon",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "canaliculus",
+      "text": {
+        "en": "canaliculus",
+        "hi": "canaliculus"
+      },
+      "anchor": [
+        0.66,
+        0.375
+      ],
+      "side": "auto",
+      "group": "osteon",
+      "_point": {
+        "confidence": 0.65
+      }
+    }
+  ],
+  "unplaced": [
+    "fibroblast",
+    "collagen fibre",
+    "elastin fibre",
+    "macrophage",
+    "mast cell",
+    "adipocyte",
+    "fat droplet",
+    "tendon",
+    "chondrocyte"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/connective-e.json",
+    "repointed": 6,
+    "omitted_not_visible": [
+      "fibroblast",
+      "collagen fibre",
+      "elastin fibre",
+      "macrophage",
+      "mast cell",
+      "adipocyte",
+      "fat droplet",
+      "tendon",
+      "chondrocyte"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

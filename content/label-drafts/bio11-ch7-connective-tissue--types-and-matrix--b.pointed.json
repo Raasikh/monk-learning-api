@@ -1,0 +1,77 @@
+{
+  "asset_slug": "bio11-ch7-connective-tissue--types-and-matrix--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "groups": [],
+  "labels": [
+    {
+      "id": "adipocyte",
+      "text": {
+        "en": "adipocyte",
+        "hi": "adipocyte"
+      },
+      "anchor": [
+        0.565,
+        0.225
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "fat-droplet",
+      "text": {
+        "en": "fat droplet",
+        "hi": "fat droplet"
+      },
+      "anchor": [
+        0.455,
+        0.455
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "fibroblast",
+    "collagen fibre",
+    "elastin fibre",
+    "macrophage",
+    "mast cell",
+    "matrix",
+    "tendon",
+    "chondrocyte",
+    "lacuna",
+    "osteocyte",
+    "Haversian canal",
+    "lamella",
+    "canaliculus"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/connective-b.json",
+    "repointed": 2,
+    "omitted_not_visible": [
+      "fibroblast",
+      "collagen fibre",
+      "elastin fibre",
+      "macrophage",
+      "mast cell",
+      "matrix",
+      "tendon",
+      "chondrocyte",
+      "lacuna",
+      "osteocyte",
+      "Haversian canal",
+      "lamella",
+      "canaliculus"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}
