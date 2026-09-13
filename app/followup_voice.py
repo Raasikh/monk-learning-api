@@ -438,7 +438,11 @@ def _filler_key(tutor_voice: Optional[str], language: Optional[str]) -> str:
 def _warm_filler(tutor_voice: Optional[str], language: Optional[str]) -> None:
     """Synthesise this voice and language's lines once, in the background."""
     key = _filler_key(tutor_voice, language)
-    if key in _fillers:
+    gender_lang = tuple(key.split(":"))
+    # `in _fillers` is not enough: boot leaves exactly ONE line per bucket, and
+    # skipping on that would freeze the rotation at a single phrase — the very
+    # thing four lines exist to avoid.
+    if len(_fillers.get(key) or []) >= len(FILLER_LINES.get(gender_lang) or []):
         return
     running = _filler_tasks.get(key)
     if running is not None and not running.done():
@@ -467,6 +471,46 @@ def _warm_filler(tutor_voice: Optional[str], language: Optional[str]) -> None:
         _filler_tasks[key] = asyncio.get_event_loop().create_task(_fill())
     except RuntimeError:
         pass
+
+
+# How long after boot to start filling the cache.
+#
+# Boot prewarming of the CLASSROOM's fillers was removed for a measured
+# reason, written into app/main.py: 12 clips cost "~20-45s of Rumik
+# connections competing with whoever was already in class on a redeploy".
+# That is the moment a redeploy is most disruptive, and this must not add to
+# it. Waiting half a minute puts the synthesis after the restart crunch,
+# which costs nothing — a follow-up asked inside that window simply opens
+# without a filler, exactly as it does today.
+FILLER_BOOT_DELAY_S = 30.0
+
+
+async def prewarm_fillers_at_boot() -> None:
+    """One opener per voice and language, filled quietly after startup.
+
+    ONE line each, not all four: four buckets times four lines is sixteen
+    clips, more than the twelve whose boot cost was judged not worth paying.
+    One apiece is four, and it is enough for the thing that actually matters —
+    that no student ever gets silence in front of their first answer. The
+    other three fill in lazily the first time that voice is used, so the
+    rotation is complete by the second or third follow-up.
+
+    Sequential rather than concurrent, for the same reason: four sockets at
+    once during a redeploy is the shape that caused the problem.
+    """
+    await asyncio.sleep(FILLER_BOOT_DELAY_S)
+    for (gender, lang), lines in FILLER_LINES.items():
+        key = f"{gender}:{lang}"
+        if key in _fillers or not lines:
+            continue
+        try:
+            pcm = await _synthesize(lines[0], preset_for(gender))
+        except Exception as err:
+            logger.info("[FOLLOWUP TTS] boot filler for %s skipped (%s)", key, err)
+            continue
+        if pcm:
+            _fillers[key] = [pcm]
+            logger.info("[FOLLOWUP TTS] boot-cached one opener for %s", key)
 
 
 def _next_filler(tutor_voice: Optional[str], language: Optional[str]) -> Optional[bytes]:

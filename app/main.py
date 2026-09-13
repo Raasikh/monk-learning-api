@@ -17,6 +17,7 @@ load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
+from app import followup_voice
 from app.config import settings
 from app.auth import get_current_user_id
 from app.routers import practice
@@ -48,13 +49,25 @@ app.add_middleware(
 @app.on_event("startup")
 async def verify_models_on_startup():
     logger.info("✅ [STARTUP] FastAPI application startup complete. Server ready.")
-    # Filler audio is NOT pre-warmed here any more. It only plays when Rumik
-    # rate-limits or the connection pool is exhausted — rare enough that
-    # synthesizing 12 clips on every boot cost more than it saved: ~20-45s of
-    # Rumik connections competing with whoever was already in class on a
-    # redeploy. FillerAudioCache now synthesizes lazily, in the background,
-    # the first time a filler is actually asked for (that first occurrence
-    # falls back to a brief silence).
+    # The CLASSROOM's filler audio is NOT pre-warmed here any more. It only
+    # plays when Rumik rate-limits or the connection pool is exhausted — rare
+    # enough that synthesizing 12 clips on every boot cost more than it saved:
+    # ~20-45s of Rumik connections competing with whoever was already in class
+    # on a redeploy. FillerAudioCache now synthesizes lazily, in the
+    # background, the first time a filler is actually asked for (that first
+    # occurrence falls back to a brief silence).
+    #
+    # The FOLLOW-UP's filler is different, and is warmed — carefully. It is not
+    # a fallback for a rare failure: it opens EVERY follow-up, covering Rumik's
+    # first-byte time, which was measured ranging 0.61s to 2.30s across
+    # identical calls. Lazy filling means the first student after each deploy
+    # waits that out in silence.
+    #
+    # So it takes the lesson rather than ignoring it: four clips, not sixteen —
+    # one opener per voice and language, with the rest of each rotation filled
+    # lazily — run sequentially and only after a delay, so none of it lands in
+    # the restart crunch this comment is about.
+    asyncio.create_task(followup_voice.prewarm_fillers_at_boot())
     asyncio.create_task(platform_metrics_sampler_loop())
 
 
