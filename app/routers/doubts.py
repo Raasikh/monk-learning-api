@@ -181,12 +181,14 @@ router = APIRouter(prefix="/doubts", tags=["doubts"])
 LIST_COLUMNS = (
     "id, submission_id, question_index, question_text, stem, options, subject, "
     "chapter, concept, question_type, legible, legibility_note, answer, key_idea, "
-    "option_labels, solved, status, failure_reason, created_at"
+    "option_labels, solved, status, failure_reason, created_at, question_image"
 )
 # image_key is selected only for legacy doubts saved before images stopped being
 # stored; signed_url() below returns None for a row that never had one.
+# question_image moved up into LIST_COLUMNS: the doubts list shows each
+# question as it was photographed, so every row needs its crop signed.
 DETAIL_COLUMNS = (LIST_COLUMNS
-                  + ", explanation, steps, image_key, figures, question_image")
+                  + ", explanation, steps, image_key, figures")
 
 
 class ReportRequest(BaseModel):
@@ -890,6 +892,10 @@ def list_doubts(
     try:
         res = query.order("created_at", desc=True).limit(limit).execute()
         rows: List[Dict[str, Any]] = res.data or []
+        for row in rows:
+            # Signed BEFORE the response dict spreads the row, so the R2 key
+            # itself never reaches a client — same rule as the detail route.
+            row["question_image_url"] = signed_url(row.pop("question_image", None))
 
         all_subjects_res = (
             supabase.table("doubts").select("subject").eq("user_id", user_id).execute()
