@@ -1140,12 +1140,8 @@ def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
                     logger.error("[FOLLOWUP] doubt=%s failed after %dms: %s",
                                  doubt_id[:8], int((time.time() - started) * 1000), a,
                                  exc_info=a)
-                    # The failure speaks as the TEACHER the student chose —
-                    # this is their conversation with Veda or Drona, and
-                    # "Monk" mid-conversation is the product barging in.
-                    who = tutor_name(tutor_voice) if tutor_voice else "Your teacher"
                     yield event("error", {
-                        "message": f"{who} could not answer that just now. Try again in a moment.",
+                        "message": "Monk could not answer that just now. Try again in a moment.",
                     })
                     return
                 elif kind == "llm_done":
@@ -1199,17 +1195,13 @@ async def ask_about_doubt_aloud(
     raw = await audio.read()
     try:
         question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)
-    except SnapError:
-        # Composed here, where the teacher's name is known — the raw
-        # SnapError says "Monk", and mid-conversation that is the product
-        # interrupting the teacher.
-        raise HTTPException(status_code=422,
-                            detail=f"{tutor_name(voice)} could not hear that. Try asking again.")
+    except SnapError as err:
+        raise HTTPException(status_code=422, detail=str(err))
     if not question:
         # Not an error: a hold with nothing in it is a slip, and the screen can
         # simply ask again rather than showing a failure.
         raise HTTPException(status_code=422,
-                            detail=f"{tutor_name(voice)} did not catch that — try asking again.")
+                            detail="Monk did not catch that — try asking again.")
 
     try:
         prior = json.loads(history or "[]")
