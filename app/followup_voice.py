@@ -247,6 +247,49 @@ MAX_CHARS_PER_REQUEST = 450
 MIN_SPOKEN_CHARS = 40
 
 
+# The most the voice will say, whatever the model wrote.
+#
+# The prompt asks for ~200 characters; this is the backstop for when it does
+# not comply, because a prompt is a request and this is the thing the student
+# actually waits through. 320 sits well above an ordinary two or three sentence
+# answer, so it never trims one of those — it only catches a runaway.
+#
+# Trimmed at a SENTENCE boundary, never mid-thought. Dropping a whole trailing
+# sentence leaves an answer that still ends properly, and the part that was
+# dropped is on the board being read anyway; cutting mid-clause would leave the
+# voice sounding like it was interrupted.
+MAX_SPOKEN_CHARS = 320
+
+
+def cap_spoken(text: str) -> str:
+    """`text` trimmed to whole sentences within `MAX_SPOKEN_CHARS`.
+
+    The first sentence is always kept even when it alone is over the cap —
+    `_spoken_sentences` will split it for Rumik, and a long opener is worth
+    hearing where an empty answer is not.
+    """
+    said = (text or "").strip()
+    if len(said) <= MAX_SPOKEN_CHARS:
+        return said
+
+    from app.drona.voice_proxy import split_into_sentences
+
+    kept: list = []
+    for sentence in split_into_sentences(said, min_chars=0) or [said]:
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        candidate = f"{' '.join(kept)} {sentence}".strip() if kept else sentence
+        if kept and len(candidate) > MAX_SPOKEN_CHARS:
+            break
+        kept.append(sentence)
+    out = " ".join(kept).strip() or said
+    if len(out) < len(said):
+        logger.info("[FOLLOWUP TTS] spoken trimmed %d -> %d chars at a sentence "
+                    "boundary (cap %d)", len(said), len(out), MAX_SPOKEN_CHARS)
+    return out
+
+
 def _spoken_sentences(text: str) -> list:
     """`text` as the units a voice actually pauses between.
 
@@ -395,7 +438,7 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
     played smoothly at all.
     """
     del language  # only the cached opener used it, and that was removed
-    said = (text or "").strip()
+    said = cap_spoken(text)
     if not said:
         return
     preset = preset_for(tutor_voice)
@@ -431,7 +474,7 @@ async def speak(text: str, tutor_voice: Optional[str] = None) -> bytes:
     audio: the screen has the steps either way, and a file that plays nothing
     is worse than no file at all, which the app can simply not play.
     """
-    said = (text or "").strip()
+    said = cap_spoken(text)
     if not said:
         return b""
     preset = preset_for(tutor_voice)
