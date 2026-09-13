@@ -386,30 +386,39 @@ def _speakable_chunks(text: str) -> list:
 # Deliberately content-free. A filler that commits to anything ("So the answer
 # is—") is a claim made before the model has written one, and would be right
 # only by luck.
+#
+# And deliberately 40-50 CHARACTERS, which is not a style choice. Rumik speaks
+# short text far more slowly per character: measured, an 18-character line ran
+# at 0.114 s/char and a 26-character one at 0.085, against 0.060 for a
+# 47-character sentence. "Haan, dekhte hain." took 2.06 seconds to say — it
+# was not padded with silence, it was genuinely dragged out, and it sounded
+# it. At this length the same voice comes back to 0.055-0.072 s/char, which is
+# ordinary speech. Anything shorter here will drag again however natural it
+# looks written down.
 FILLER_LINES = {
     ("female", "english"): [
-        "Right, let's look at that.",
-        "Okay, one moment.",
-        "Let me see.",
-        "Sure — let's go through it.",
+        "Right, let me take a look at that for you.",
+        "Okay, give me just a moment to think about this.",
+        "Sure, let's go through that one together.",
+        "Good question — let me work through it.",
     ],
     ("male", "english"): [
-        "Right, let's look at that.",
-        "Okay, one moment.",
-        "Let me see.",
-        "Sure — let's go through it.",
+        "Right, let me take a look at that for you.",
+        "Okay, give me just a moment to think about this.",
+        "Sure, let's go through that one together.",
+        "Good question — let me work through it.",
     ],
     ("female", "hinglish"): [
-        "Haan, dekhte hain.",
-        "Ek second.",
-        "Theek hai, chalo dekhte hain.",
-        "Ruko, main dekh rahi hoon.",
+        "Haan, ek second — main isko dekh rahi hoon.",
+        "Theek hai, chalo isko dhyan se dekhte hain.",
+        "Achha sawaal hai — main abhi samjhati hoon.",
+        "Ruko zara, main ise theek se dekh leti hoon.",
     ],
     ("male", "hinglish"): [
-        "Haan, dekhte hain.",
-        "Ek second.",
-        "Theek hai, chalo dekhte hain.",
-        "Ruko, main dekh raha hoon.",
+        "Haan, ek second — main isko dekh raha hoon.",
+        "Theek hai, chalo isko dhyan se dekhte hain.",
+        "Achha sawaal hai — main abhi samjhata hoon.",
+        "Ruko zara, main ise theek se dekh leta hoon.",
     ],
 }
 DEFAULT_LANGUAGE = "hinglish"
