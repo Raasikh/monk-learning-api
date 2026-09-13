@@ -138,8 +138,10 @@ def test_the_teacher_knows_their_own_name(monkeypatch):
     """
     seen = {}
 
-    def spying_llm(doubt, question, history=None, tutor_name=None):
+    def spying_llm(doubt, question, history=None, tutor_name=None,
+                   session_language=None):
         seen["tutor_name"] = tutor_name
+        seen["language"] = session_language
         yield "spoken", {"text": "I'm Veda, your teacher here."}
 
     async def spying_speak(text, voice=None, language=None):
@@ -156,8 +158,9 @@ def test_the_teacher_knows_their_own_name(monkeypatch):
 
     frames = _frames(doubts._followup_response(
         {"id": "d1"}, "d1", "u1", "what's your name?", [],
-        tutor_voice="female"))
+        tutor_voice="female", tutor_language="english"))
 
     assert seen["tutor_name"] == "Veda"
+    assert seen["language"] == "english"
     assert seen["voice"] == "female"
     assert [n for n, _ in frames][-1] == "done"

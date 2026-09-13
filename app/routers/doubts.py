@@ -1029,16 +1029,18 @@ def ask_about_doubt(doubt_id: str, body: FollowUpRequest,
         raise HTTPException(status_code=400, detail="Ask something first.")
 
     doubt = _load_doubt_for_user(doubt_id, user_id)
+    voice, language = _tutor_prefs_for(user_id)
     return _followup_response(doubt, doubt_id, user_id, question,
                               [{"role": t.role, "content": t.content}
                                for t in body.history],
-                              tutor_voice=_tutor_voice_for(user_id))
+                              tutor_voice=voice, tutor_language=language)
 
 
 def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
                        question: str, history: List[Dict[str, str]],
                        transcript: Optional[str] = None,
-                       tutor_voice: Optional[str] = None) -> StreamingResponse:
+                       tutor_voice: Optional[str] = None,
+                       tutor_language: Optional[str] = None) -> StreamingResponse:
     """The reply, streamed a step at a time.
 
     `transcript` is echoed back first when the question was spoken, so the
@@ -1084,7 +1086,8 @@ def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
             try:
                 name = tutor_name(tutor_voice) if tutor_voice else None
                 for kind, payload in stream_followup(doubt, question, history,
-                                                     tutor_name=name):
+                                                     tutor_name=name,
+                                                     session_language=tutor_language):
                     loop.call_soon_threadsafe(frames.put_nowait, ("frame", kind, payload))
             except Exception as err:  # noqa: BLE001 — surfaced as an SSE error frame
                 loop.call_soon_threadsafe(frames.put_nowait, ("llm_failed", err, None))
@@ -1187,8 +1190,8 @@ async def ask_about_doubt_aloud(
     # watching a finished board in silence. Transcription and the model take
     # longer than that between them, so by the time a sentence exists the
     # socket is already waiting.
-    voice = _tutor_voice_for(user_id)
-    followup_voice.prewarm(voice, _tutor_language_for(user_id))
+    voice, language = _tutor_prefs_for(user_id)
+    followup_voice.prewarm(voice, language)
     raw = await audio.read()
     try:
         question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)
@@ -1207,7 +1210,8 @@ async def ask_about_doubt_aloud(
     turns = [{"role": t.get("role"), "content": t.get("content") or ""}
              for t in prior if isinstance(t, dict)]
     return _followup_response(doubt, doubt_id, user_id, question, turns,
-                              transcript=question, tutor_voice=voice)
+                              transcript=question, tutor_voice=voice,
+                              tutor_language=language)
 
 
 class SpeakRequest(BaseModel):
@@ -1237,6 +1241,30 @@ def _tutor_language_for(user_id: str) -> str:
     except Exception as err:
         logger.warning("Could not read language for %s: %s", user_id[:8], err)
     return followup_voice.DEFAULT_LANGUAGE
+
+
+def _tutor_prefs_for(user_id: str) -> tuple:
+    """(tutor_voice, language) from the student's last session — ONE read.
+
+    The two were fetched separately, which was two Supabase reads on the
+    critical path of every voice ask for one row's worth of data.
+    """
+    try:
+        res = (
+            supabase.table("drona_sessions")
+            .select("tutor_voice, language")
+            .eq("user_id", user_id)
+            .order("created_at", desc=True)
+            .limit(1)
+            .execute()
+        )
+        if res.data:
+            row = res.data[0]
+            return (row.get("tutor_voice") or followup_voice.DEFAULT_VOICE,
+                    row.get("language") or followup_voice.DEFAULT_LANGUAGE)
+    except Exception as err:
+        logger.warning("Could not read tutor prefs for %s: %s", user_id[:8], err)
+    return followup_voice.DEFAULT_VOICE, followup_voice.DEFAULT_LANGUAGE
 
 
 def _tutor_voice_for(user_id: str) -> str:

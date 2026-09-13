@@ -408,7 +408,8 @@ def _complete_spoken(buffer: str) -> Optional[str]:
 
 def stream_followup(doubt: Dict[str, Any], question: str,
                     history: Optional[List[Dict[str, str]]] = None,
-                    tutor_name: Optional[str] = None):
+                    tutor_name: Optional[str] = None,
+                    session_language: Optional[str] = None):
     """Yields ("step", {...}) as each is finished, then ("spoken", {...}).
 
     Not a token stream any more. A follow-up is an explanation, and an
@@ -422,11 +423,15 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     """
     context = followup_context(doubt)
     if tutor_name:
-        # The classroom knows its own name from SESSION STATE; without this
-        # line the follow-up did not, and a student who asked got the OTHER
-        # teacher's name back — Veda's voice introducing itself as Drona.
-        context = (f"YOU ARE: {tutor_name}, this student's teacher — the same "
-                   "teacher whose voice reads this reply aloud.\n" + context)
+        # The classroom knows its own name and language from SESSION STATE;
+        # without this line the follow-up knew neither — a student who asked
+        # got the OTHER teacher's name, and a request for Hindi got an answer
+        # in a script the reader choked on and the voice could not speak.
+        line = (f"YOU ARE: {tutor_name}, this student's teacher — the same "
+                "teacher whose voice reads this reply aloud.")
+        if session_language:
+            line += f" THE SESSION LANGUAGE IS {session_language.upper()}."
+        context = line + "\n" + context
     messages: List[Dict[str, str]] = [
         {"role": "system", "content": load_prompt("snap_followup.md")},
         {"role": "system", "content": context},
@@ -530,8 +535,17 @@ def stream_followup(doubt: Dict[str, Any], question: str,
 
     try:
         parsed = json.loads(buffer)
-    except json.JSONDecodeError:
+    except json.JSONDecodeError as parse_err:
         parsed = {}
+        # This is the failure that reached production as pure silence: 193
+        # tokens spent, nothing shown, nothing spoken, no trace of why. The
+        # head and tail are enough to see the shape that broke without
+        # logging a student's whole exchange.
+        logger.error(
+            "[FOLLOWUP] reply was not valid JSON (%s at pos %s) — %d chars, "
+            "head=%r tail=%r", parse_err.msg, parse_err.pos, len(buffer),
+            buffer[:200], buffer[-100:],
+        )
     # Every step again at the end, in case the stream never produced a complete
     # one to read — a short answer can finish inside a single chunk.
     for step in parsed.get("steps") or []:
@@ -544,6 +558,12 @@ def stream_followup(doubt: Dict[str, Any], question: str,
         spoken = (parsed.get("spoken") or "").strip()
         if spoken:
             yield "spoken", {"text": spoken}
+        elif not emitted and not (parsed.get("steps") or []):
+            logger.error(
+                "[FOLLOWUP] empty answer: no spoken, no steps, from %d chars; "
+                "keys=%s", len(buffer),
+                sorted(parsed.keys()) if parsed else "unparseable",
+            )
 
 
 def second_opinion(system_prompt: str, payload: str, doubt_id: str,
