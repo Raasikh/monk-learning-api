@@ -27,7 +27,8 @@ WHAT IT DOES, IN ORDER
 ======================
   1. read the chapter's assets, and each one's draft;
   2. refuse the whole run if ANY set is unfit — an unanchored label, a term
-     the draft never placed, a set that fails the client's own validator;
+     the draft never placed, or a label whose hi differs from its en (see the
+     label-language policy below);
   3. stamp reviewed_by and bump `version`;
   4. upload each set to R2 and HEAD it back (upload_and_verify);
   5. print the board capture command per set, which is run separately.
@@ -35,6 +36,24 @@ WHAT IT DOES, IN ORDER
 ALL OR NOTHING, PER CHAPTER. A half-published chapter is the state nobody can
 reason about: some plates labelled, some not, and no record of which were
 judged. If one set is unfit the chapter does not go.
+
+LABELS ARE ENGLISH IN BOTH LANGUAGES
+====================================
+Raasikh, 2026-09-12: "lets keep the labels in english strictly".
+
+So `hi == en` is the correct state for every label, and this tool refuses a
+set where they DIFFER. That is the inverse of the check it carried earlier the
+same day, which refused hi == en on the reasoning that an untranslated set is
+indistinguishable from a translated one. The reasoning was sound; the premise
+was not. These terms are anatomical Latin — conus arteriosus, Malpighian
+tubule — the exam prints them in English, and a Hinglish label that drifts
+from the examinable term teaches the wrong string.
+
+A per-term `en_is_final` allowance was built first, so a reviewer could sign
+off individual terms as deliberately English. The policy decision made it
+unnecessary and it was removed rather than left in: an exception mechanism for
+an exception that no longer exists is just a second way to do the same thing,
+and the next reader would have to work out which one governs.
 
 WHAT IS NOT WIRED YET, AND SAYING SO RATHER THAN IMPLYING IT
 ============================================================
@@ -90,9 +109,56 @@ def unfit(slug: str, d: dict[str, Any]) -> list[str]:
             bad.append(f"{where}: anchor {a} is not normalised 0..1")
         hi = ((lab.get("text") or {}).get("hi") or "").strip()
         en = term
-        if hi and en and hi == en:
-            # C3's rule: hi that is a copy of en is untranslated, not bilingual.
-            bad.append(f"{where}: hi is a copy of en ({en!r}) — the reviewed CSV has not been applied")
+        # LABELS ARE ENGLISH IN BOTH LANGUAGES — Raasikh, 2026-09-12:
+        # "lets keep the labels in english strictly".
+        #
+        # This check is the INVERSE of what it was this morning. It used to
+        # refuse hi == en, on the reasoning that an untranslated set looks
+        # identical to a translated one and would ship half-done. That
+        # reasoning was right for a product that shows Hindi labels, and this
+        # one does not: the terms are anatomical Latin, the exam prints them
+        # in English, and a label that drifts from the examinable term teaches
+        # the wrong string.
+        #
+        # So hi == en is now the CORRECT state, and a label that differs is
+        # the thing to catch — a half-applied translation pass, which would
+        # show some labels in Hinglish and some not on the same plate.
+        if hi and en and hi != en:
+            bad.append(
+                f"{where}: hi ({hi!r}) differs from en ({en!r}). Labels are "
+                f"English in both languages; a partly translated set shows two "
+                f"registers on one plate. Change the policy deliberately, not "
+                f"a row at a time."
+            )
+    # DENSITY. This tool cannot run the real layout gate — gateLabelSet lives
+    # in TypeScript and is the authority on whether a group places clear. What
+    # it CAN do is refuse the shape that is already known to fail: the frog
+    # heart's twelve labels in a single group cannot be placed clear at
+    # 340x340, 343x236 or 495x270 (near-anchor-placement.test.ts). A set that
+    # reached this point ungrouped would publish and then fail to draw.
+    grouped = [l for l in labels if (l.get("group") or "").strip()]
+    if labels and not grouped and len(labels) > 5:
+        bad.append(
+            f"{len(labels)} labels and no groups. A group this size does not place "
+            f"clear at the phone frames; split it and re-run the TS gate "
+            f"(gateLabelSet) before publishing."
+        )
+    elif grouped and len(grouped) != len(labels):
+        bad.append(
+            f"{len(grouped)} of {len(labels)} labels declare a group — either all "
+            f"do or none do; filling the rest with a default is a value nobody supplied."
+        )
+    else:
+        sizes: dict[str, int] = {}
+        for l in grouped:
+            sizes[l["group"]] = sizes.get(l["group"], 0) + 1
+        for gid, n in sorted(sizes.items()):
+            if n > 5:
+                bad.append(
+                    f"group {gid!r} has {n} labels; groups above five have not been "
+                    f"gate-checked at 340x340. Run gateLabelSet before publishing."
+                )
+
     still = (d.get("_draft") or {}).get("unplaced") or []
     if still:
         bad.append(f"{len(still)} term(s) still unplaced: {', '.join(still)}")
@@ -120,7 +186,9 @@ def main() -> int:
     print(f"chapter   {args.chapter}")
     print(f"reviewer  {args.by}")
     print(f"mode      {'DRY RUN' if args.dry_run else 'EXECUTE'}")
-    print(f"assets    {len(rows)}\n")
+    print(f"assets    {len(rows)}")
+    print( "labels    English in both languages (Raasikh, 2026-09-12)")
+    print()
 
     ready: list[tuple[str, Path, dict[str, Any]]] = []
     blocked: list[tuple[str, list[str]]] = []
@@ -191,6 +259,16 @@ def main() -> int:
     for slug, path, d in ready:
         d["reviewed_by"] = args.by
         d["version"] = int(d.get("version", 0)) + 1
+        # The policy travels WITH the set, so a later reader finds a decision
+        # rather than inferring one from hi == en and guessing whether anyone
+        # looked.
+        d["label_language"] = {
+            "policy": "english-both-languages",
+            "by": args.by,
+            "note": "Labels are shown in English in both english and hinglish "
+                    "modes: the terms are anatomical Latin and the exam prints "
+                    "them in English.",
+        }
         d.pop("_draft", None)
         payload = (json.dumps(d, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
         key = f"concept-assets/{slug}.json"

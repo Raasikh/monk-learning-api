@@ -15,7 +15,8 @@
         0.4389,
         0.4435
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "heart"
     },
     {
       "id": "right-atrium",
@@ -27,7 +28,8 @@
         0.4528,
         0.5323
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "heart"
     },
     {
       "id": "left-atrium",
@@ -39,7 +41,8 @@
         0.5944,
         0.5242
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "heart"
     },
     {
       "id": "ventricle",
@@ -51,7 +54,8 @@
         0.4667,
         0.7903
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "heart"
     },
     {
       "id": "conus-arteriosus",
@@ -63,7 +67,8 @@
         0.3889,
         0.5081
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "heart"
     },
     {
       "id": "truncus-arteriosus",
@@ -75,7 +80,8 @@
         0.45,
         0.3468
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "arterial"
     },
     {
       "id": "carotid-arch",
@@ -87,7 +93,8 @@
         0.3611,
         0.0685
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "arterial"
     },
     {
       "id": "systemic-arch",
@@ -99,7 +106,8 @@
         0.4167,
         0.1129
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "arterial"
     },
     {
       "id": "pulmocutaneous-arch",
@@ -111,7 +119,8 @@
         0.4639,
         0.1371
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "arterial"
     },
     {
       "id": "pulmonary-vein",
@@ -123,7 +132,8 @@
         0.6528,
         0.7137
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "venous"
     },
     {
       "id": "precaval-vein",
@@ -135,7 +145,8 @@
         0.3531,
         0.3202
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "venous"
     },
     {
       "id": "postcaval-vein",
@@ -147,7 +158,8 @@
         0.3722,
         0.6427
       ],
-      "side": "auto"
+      "side": "auto",
+      "group": "venous"
     }
   ],
   "_draft": {
@@ -155,6 +167,30 @@
     "model": null,
     "unplaced": [],
     "shared_anchors": {},
-    "note": "Anchors are READ OUT OF THE DRAWING: every leader's end point is the point its label names, so this set cannot disagree with the art. The four respiratory terms (lung, buccal cavity, glottis, skin) were MOVED to figure b on 2026-09-12 — they are structures of the respiration plate, not the heart, and an unplaced term sitting on the wrong figure is a term nobody can ever place."
-  }
+    "note": "Anchors are READ OUT OF THE DRAWING: every leader's end point is the point its label names, so this set cannot disagree with the art. The four respiratory terms (lung, buccal cavity, glottis, skin) were MOVED to figure b on 2026-09-12 — they are structures of the respiration plate, not the heart, and an unplaced term sitting on the wrong figure is a term nobody can ever place.",
+    "grouping": "Proposed 2026-09-11, confirmed by Raasikh: heart 5 / arterial 4 / venous 3. MEASURED reason, not presentation: twelve labels in ONE group cannot be placed clear at 340x340, 343x236 or 495x270 — see near-anchor-placement.test.ts. Split this way every group places clear at all five gate frames."
+  },
+  "groups": [
+    {
+      "id": "heart",
+      "label": {
+        "english": "Heart chambers",
+        "hinglish": "Heart chambers"
+      }
+    },
+    {
+      "id": "arterial",
+      "label": {
+        "english": "Arterial arches",
+        "hinglish": "Arterial arches"
+      }
+    },
+    {
+      "id": "venous",
+      "label": {
+        "english": "Veins",
+        "hinglish": "Veins"
+      }
+    }
+  ]
 }
