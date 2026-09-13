@@ -400,6 +400,7 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     messages.append({"role": "user", "content": question[:FOLLOWUP_MAX_CHARS]})
 
     client = _deepseek_client()
+    llm_t0 = time.time()
     stream = client.chat.completions.create(
         model=MODEL_FOLLOWUP,
         messages=messages,
@@ -414,6 +415,7 @@ def stream_followup(doubt: Dict[str, Any], question: str,
         # the middle with no voice.
         max_tokens=1600,
         stream=True,
+        stream_options={"include_usage": True},
         # The reasoning is already done and printed above this question; a
         # follow-up that stops to think spends the student's patience on
         # something it can answer by reading.
@@ -423,7 +425,10 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     buffer, emitted = "", set()
     pending: List[Dict[str, Any]] = []
     said = False
+    usage = None
     for chunk in stream:
+        if getattr(chunk, "usage", None):
+            usage = chunk.usage
         if not getattr(chunk, "choices", None):
             continue
         piece = chunk.choices[0].delta.content
@@ -441,11 +446,33 @@ def stream_followup(doubt: Dict[str, Any], question: str,
             spoken = _complete_spoken(buffer)
             if spoken:
                 said = True
+                # The number that decides how much of the wait is the MODEL and
+                # how much is Rumik. Everything before this is the model
+                # reading the context and composing; everything after is
+                # synthesis, which streams. Without it, a slow follow-up is
+                # just "slow" with nowhere to look.
+                logger.info(
+                    "[FOLLOWUP] doubt=%s spoken ready at t+%dms (%d chars) — "
+                    "TTS can start now",
+                    doubt.get("id", "-")[:8] if doubt.get("id") else "-",
+                    int((time.time() - llm_t0) * 1000), len(spoken),
+                )
                 yield "spoken", {"text": spoken}
         _emit_new_steps(buffer, emitted,
                         lambda kind, data: pending.append(data) if kind == "step" else None)
         while pending:
             yield "step", pending.pop(0)
+
+    if usage is not None:
+        cached = getattr(getattr(usage, "prompt_tokens_details", None),
+                         "cached_tokens", None)
+        logger.info(
+            "[FOLLOWUP] llm_ms=%d in=%s cached=%s out=%s — a cached prefix is "
+            "what keeps a 1,790-token system prompt off the critical path",
+            int((time.time() - llm_t0) * 1000),
+            getattr(usage, "prompt_tokens", "?"), cached,
+            getattr(usage, "completion_tokens", "?"),
+        )
 
     try:
         parsed = json.loads(buffer)
