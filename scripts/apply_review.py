@@ -176,6 +176,39 @@ def unfit(slug: str, d: dict[str, Any]) -> list[str]:
     return bad
 
 
+def stamp_asset_row(slug: str, version: int, sha: str) -> None:
+    """Put the label set's identity on the asset row, so a RUNNING app notices.
+
+    This is the other half of the propagation problem. The draft file records
+    the publication for a human and for `git log`; the asset row is what the
+    client actually reads. `setChapterAssets` compares what it is given against
+    what it already has and drops the cached figure when they differ — it
+    already did that for `master_sha256`, which publishing a label set does not
+    touch, which is why the frog heart published on 2026-09-12 and every
+    running client kept drawing the plate unlabelled until it restarted.
+
+    TOLERATES THE COLUMNS BEING ABSENT. Migration 0045 is Raasikh's to apply
+    and this ships before it. A failure here must not undo a publish that has
+    already landed in R2 and already been recorded in the draft — the object is
+    correct and the only thing missing is the refresh signal, so this warns
+    with the exact remedy and returns.
+    """
+    try:
+        sys.path.insert(0, str(REPO))
+        from app.db import get_supabase  # noqa: PLC0415
+
+        (get_supabase().table("concept_assets")
+         .update({"label_set_version": version, "label_set_sha256": sha})
+         .eq("asset_slug", slug).execute())
+        print(f"            row:  label_set_version={version} label_set_sha256={sha[:12]}…")
+    except Exception as exc:
+        print(f"            NOTE: could not stamp the asset row ({str(exc)[:90]}).\n"
+              f"                  The object IS published and the draft IS recorded; what is\n"
+              f"                  missing is the signal that refreshes a running app without a\n"
+              f"                  restart. Apply migrations/0045_concept_assets_label_set_version.sql\n"
+              f"                  and re-run this command to backfill.")
+
+
 def record_publication(path: Path, version: int, key: str, payload: bytes,
                        by: str, confirmation: str) -> None:
     """Write the version back into the draft, so the next publish is v+1.
@@ -325,7 +358,7 @@ def main() -> int:
 
     from app import storage_r2  # noqa: PLC0415
     sys.path.insert(0, str(REPO / "scripts"))
-    from ingest_asset import CACHE_REVALIDATE, upload_and_verify  # noqa: PLC0415
+    from ingest_asset import upload_and_verify  # noqa: PLC0415
 
     published = 0
     gate_verdicts: dict[str, str] = {}
@@ -361,10 +394,14 @@ def main() -> int:
 
         payload = (json.dumps(d, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
         key = f"concept-assets/{slug}.json"
-        # NOT the default immutable header. A label set is revised at a fixed
-        # key whenever a reviewer corrects an anchor — see CACHE_REVALIDATE.
-        size = upload_and_verify(key, payload, "application/json", CACHE_REVALIDATE)
+        # The CLASS, not a header. A label set is revised at a fixed key
+        # whenever a reviewer corrects an anchor; CACHE_POLICY owns what that
+        # means for caching, and no caller writes a header string.
+        size = upload_and_verify(key, payload, "application/json",
+                                 object_class="label_set")
+        sha = hashlib.sha256(payload).hexdigest()
         record_publication(path, d["label_set_version"], key, payload, args.by, want)
+        stamp_asset_row(slug, d["label_set_version"], sha)
         print(f"  PUBLISHED {slug}  v{d['label_set_version']}  {size} bytes -> {key}")
         print(f"            gate: {verdict}")
         print(f"            url:  {R2_PUBLIC}/{key}")

@@ -153,22 +153,62 @@
         0.5
       ],
       "side": "auto"
+    },
+    {
+      "id": "erythrocyte",
+      "text": {
+        "en": "erythrocyte",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "leucocyte",
+      "text": {
+        "en": "leucocyte",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "platelet",
+      "text": {
+        "en": "platelet",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
+    },
+    {
+      "id": "plasma",
+      "text": {
+        "en": "plasma",
+        "hi": ""
+      },
+      "anchor": null,
+      "side": "auto"
     }
   ],
   "_draft": {
     "generated_by": "scripts/draft_labels.py",
     "model": "gpt-4o",
     "unplaced": [
-      "fibroblast",
+      "adipocyte",
+      "chondrocyte",
       "collagen fibre",
       "elastin fibre",
+      "erythrocyte",
+      "fat droplet",
+      "fibroblast",
+      "leucocyte",
       "macrophage",
       "mast cell",
       "matrix",
-      "adipocyte",
-      "fat droplet",
-      "tendon",
-      "chondrocyte"
+      "plasma",
+      "platelet",
+      "tendon"
     ],
     "shared_anchors": {
       "0.5,0.5": [
@@ -176,6 +216,9 @@
         "haversian-canal"
       ]
     },
-    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by."
+    "note": "DRAFT. Every anchor is a guess and must be checked against the art in the anchor editor. Anchors are null where the model could not find the term; those show in the editor's tray. `shared_anchors` lists terms the model gave the SAME point — two structures cannot share one, so those are defaults rather than locations and want re-placing first. Nothing here ships until a person adds reviewed_by.",
+    "notes": [
+      "2026-09-12: erythrocyte / leucocyte / platelet / plasma added to the concept's ncert_labels on Raasikh's decision. The blood sub-figure (--f) drew erythrocytes, leucocytes and platelets and the term list named none of them, so the plate could carry exactly one label. Unplaced here; pointed on --f."
+    ]
   }
 }

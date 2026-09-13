@@ -1267,26 +1267,40 @@ def _non_white_corner(data: bytes) -> Optional[Tuple[str, tuple]]:
     return None
 
 
-#: Art. A master at a given key is not expected to change, and when one did
-#: (the frog heart, 2026-09-12) it was replaced as a unit and propagated only
-#: because r2.dev is uncached. See docs/r2-security-inventory.md §3: this
-#: becomes a real year-long hazard the day a custom domain goes in front of
-#: the bucket, and the fix is a content hash in the key, done in the same
-#: change as the domain swap.
-CACHE_IMMUTABLE = "public, max-age=31536000, immutable"
+#: HOW LONG A CACHE MAY KEEP EACH KIND OF OBJECT, keyed by what the object IS.
+#:
+#: Callers name an object CLASS, never a header. A raw string at the call site
+#: is how the label sets went out `immutable` for a year on 2026-09-12: the
+#: helper defaulted to the art policy, `apply_review` said nothing, and the one
+#: document in the bucket that gets rewritten at a fixed key inherited the
+#: policy written for the one that never does.
+#:
+#: "art"       a master or rendition. Not expected to change; when the frog
+#:             heart was replaced it propagated only because r2.dev is
+#:             uncached. See docs/r2-security-inventory.md §3 — this becomes a
+#:             live year-long hazard the day a custom domain goes in front of
+#:             the bucket, and the fix is a content hash in the key, made in
+#:             the SAME change as the domain swap.
+#: "label_set" the JSON a reviewer republishes after nudging one anchor. That
+#:             is the normal working loop, not an exception. A stale copy
+#:             points arrows at the wrong structures with no way to discover
+#:             it; five minutes plus revalidation costs a 304.
+#: "precompute" same lifecycle as a label set — regenerated whenever the thing
+#:             it was computed from moves — so it gets the same policy rather
+#:             than a second number that would drift from it.
+CACHE_POLICY: dict[str, str] = {
+    "art": "public, max-age=31536000, immutable",
+    "label_set": "public, max-age=300, must-revalidate",
+    "precompute": "public, max-age=300, must-revalidate",
+}
 
-#: Label sets. NOT immutable, and this is the one distinction that matters
-#: here. A label set is the object most likely to be rewritten at the same
-#: key: a reviewer nudges one anchor and republishes, which is the normal
-#: working loop, not an exception. Serving a year-old set from an
-#: intermediary cache would show a student arrows pointing at the wrong
-#: structures with no way to discover it. Five minutes plus revalidation
-#: costs a conditional request and a 304.
-CACHE_REVALIDATE = "public, max-age=300, must-revalidate"
+#: Kept as names so a reader greps one word, not a header string.
+CACHE_IMMUTABLE = CACHE_POLICY["art"]
+CACHE_REVALIDATE = CACHE_POLICY["label_set"]
 
 
 def upload_and_verify(key: str, data: bytes, content_type: str,
-                      cache_control: str = CACHE_IMMUTABLE) -> int:
+                      object_class: str = "art") -> int:
     """put_object, then head_object. Returns the size R2 reports.
 
     The head is not paranoia about boto3; it is what makes the row's claim
@@ -1294,10 +1308,19 @@ def upload_and_verify(key: str, data: bytes, content_type: str,
     does not have the object (wrong bucket, a lifecycle rule, an eventually
     consistent overwrite) is exactly the case a row must not be written for.
 
-    `cache_control` defaults to immutable because every caller before label
-    sets was uploading art. Callers uploading a document that gets revised at
-    a fixed key must pass CACHE_REVALIDATE.
+    `object_class` is one of CACHE_POLICY's keys and decides the cache header.
+    It defaults to "art" because every caller before label sets was uploading
+    art; anything rewritten at a fixed key must say so. An unknown class is
+    refused rather than quietly defaulted — a typo that silently picked the
+    year-long policy is the exact failure this replaced.
     """
+    try:
+        cache_control = CACHE_POLICY[object_class]
+    except KeyError:
+        raise ValueError(
+            f"unknown object_class {object_class!r}; expected one of "
+            f"{', '.join(sorted(CACHE_POLICY))}"
+        ) from None
     from app import storage_r2
 
     client = storage_r2.get_client()

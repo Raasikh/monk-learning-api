@@ -7,18 +7,63 @@
   "groups": [],
   "labels": [
     {
-      "id": "matrix",
+      "id": "erythrocyte",
       "text": {
-        "en": "matrix",
-        "hi": "matrix"
+        "en": "erythrocyte",
+        "hi": "erythrocyte"
       },
       "anchor": [
-        0.165,
-        0.665
+        0.355,
+        0.185
       ],
       "side": "auto",
       "_point": {
-        "confidence": 0.75
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "leucocyte",
+      "text": {
+        "en": "leucocyte",
+        "hi": "leucocyte"
+      },
+      "anchor": [
+        0.715,
+        0.3
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "platelet",
+      "text": {
+        "en": "platelet",
+        "hi": "platelet"
+      },
+      "anchor": [
+        0.333,
+        0.462
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "plasma",
+      "text": {
+        "en": "plasma",
+        "hi": "plasma"
+      },
+      "anchor": [
+        0.675,
+        0.41
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
       }
     }
   ],
@@ -28,6 +73,7 @@
     "elastin fibre",
     "macrophage",
     "mast cell",
+    "matrix",
     "adipocyte",
     "fat droplet",
     "tendon",
@@ -42,13 +88,14 @@
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
     "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/connective-f.json",
-    "repointed": 1,
+    "repointed": 4,
     "omitted_not_visible": [
       "fibroblast",
       "collagen fibre",
       "elastin fibre",
       "macrophage",
       "mast cell",
+      "matrix",
       "adipocyte",
       "fat droplet",
       "tendon",

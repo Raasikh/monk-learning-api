@@ -1,3 +1,28 @@
-{"points":[
- {"term":"matrix","x":0.165,"y":0.665,"confidence":0.75}
-]}
+{
+ "points": [
+  {
+   "term": "erythrocyte",
+   "x": 0.355,
+   "y": 0.185,
+   "confidence": 0.95
+  },
+  {
+   "term": "leucocyte",
+   "x": 0.715,
+   "y": 0.3,
+   "confidence": 0.9
+  },
+  {
+   "term": "platelet",
+   "x": 0.333,
+   "y": 0.462,
+   "confidence": 0.8
+  },
+  {
+   "term": "plasma",
+   "x": 0.675,
+   "y": 0.41,
+   "confidence": 0.85
+  }
+ ]
+}

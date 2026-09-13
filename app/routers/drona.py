@@ -44,14 +44,30 @@ def get_chapter_figures(chapter_id: str,
     """
     if not chapter_id:
         raise HTTPException(status_code=400, detail="chapter_id is required")
-    try:
-        rows = fetch_all(
-            "concept_assets",
-            "asset_slug,concept_slug,sub_index,concept_id,r2_key,"
+    base = ("asset_slug,concept_slug,sub_index,concept_id,r2_key,"
             "content_type,width,height,bytes,master_sha256,rendition_2x_sha256,"
-            "manifest_status",
-            chapter_id=chapter_id,
+            "manifest_status")
+    # The label-set columns arrive with migration 0045, and this code ships
+    # before it is applied. A select naming a column the table does not have is
+    # a hard PostgREST error, so the wide read is TRIED and the narrow one is
+    # the fallback — the class still starts, the figures still draw, and the
+    # only thing missing is the staleness signal the client uses to refresh
+    # labels without a restart. Logged once per call and never raised.
+    rows, with_labels = None, True
+    try:
+        rows = fetch_all("concept_assets",
+                         base + ",label_set_version,label_set_sha256",
+                         chapter_id=chapter_id)
+    except Exception as exc:
+        logger.info(
+            f"[CHAPTER FIGURES] label-set columns unavailable ({str(exc)[:80]}); "
+            f"serving without them. Apply migration 0045 to enable label "
+            f"propagation without an app restart."
         )
+        with_labels = False
+    try:
+        if rows is None:
+            rows = fetch_all("concept_assets", base, chapter_id=chapter_id)
     except Exception as exc:                                  # pragma: no cover
         logger.warning(f"[CHAPTER FIGURES] {chapter_id}: {str(exc)[:120]}")
         # An empty list, not a 500. A chapter whose figures cannot be listed is
@@ -73,7 +89,14 @@ def get_chapter_figures(chapter_id: str,
             f"[CHAPTER FIGURES] {len(unhashed)} asset(s) in {chapter_id} have no "
             f"master_sha256 and cannot be cached by the client: {', '.join(unhashed[:5])}"
         )
-    return {"chapter_id": chapter_id, "assets": approved}
+    if not with_labels:
+        # Stated in the payload, not inferred from absent keys: a client that
+        # cannot see this flag would read "no set published anywhere" from
+        # missing fields, which is a different and wrong claim.
+        return {"chapter_id": chapter_id, "assets": approved,
+                "label_sets_available": False}
+    return {"chapter_id": chapter_id, "assets": approved,
+            "label_sets_available": True}
 
 
 @router.get("/catalogue")
