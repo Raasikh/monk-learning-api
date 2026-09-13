@@ -45,16 +45,15 @@
   "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-mathematics-2022-06-29-shift-1.pdf"
  },
  "answer_sheet": {
-  "status": "embedded_unverified",
-  "source": "mirror_pdf_embedded",
-  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-  "validation": "not_verified",
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "xval_printed_agree": 30,
+  "xval_printed_disagree": 0,
   "entries": [
    {
     "qno": 1,
     "question_id": "101761",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "C",
      "option": "C"
@@ -63,8 +62,6 @@
    {
     "qno": 2,
     "question_id": "101762",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "A",
      "option": "A"
@@ -73,8 +70,6 @@
    {
     "qno": 3,
     "question_id": "101763",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "C",
      "option": "C"
@@ -83,8 +78,6 @@
    {
     "qno": 4,
     "question_id": "101764",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "C",
      "option": "C"
@@ -93,8 +86,6 @@
    {
     "qno": 5,
     "question_id": "101765",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "A",
      "option": "A"
@@ -103,8 +94,6 @@
    {
     "qno": 6,
     "question_id": "101766",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "C",
      "option": "C"
@@ -113,8 +102,6 @@
    {
     "qno": 7,
     "question_id": "101767",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "B",
      "option": "B"
@@ -123,8 +110,6 @@
    {
     "qno": 8,
     "question_id": "101768",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "A",
      "option": "A"
@@ -133,8 +118,6 @@
    {
     "qno": 9,
     "question_id": "101769",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "C",
      "option": "C"
@@ -143,8 +126,6 @@
    {
     "qno": 10,
     "question_id": "101770",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "A",
      "option": "A"
@@ -153,8 +134,6 @@
    {
     "qno": 11,
     "question_id": "101771",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "D",
      "option": "D"
@@ -163,8 +142,6 @@
    {
     "qno": 12,
     "question_id": "101772",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "B",
      "option": "B"
@@ -173,8 +150,6 @@
    {
     "qno": 13,
     "question_id": "101773",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "C",
      "option": "C"
@@ -183,8 +158,6 @@
    {
     "qno": 14,
     "question_id": "101774",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "B",
      "option": "B"
@@ -193,8 +166,6 @@
    {
     "qno": 15,
     "question_id": "101775",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "D",
      "option": "D"
@@ -203,8 +174,6 @@
    {
     "qno": 16,
     "question_id": "101776",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "D",
      "option": "D"
@@ -213,8 +182,6 @@
    {
     "qno": 17,
     "question_id": "101777",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "D",
      "option": "D"
@@ -223,8 +190,6 @@
    {
     "qno": 18,
     "question_id": "101778",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "B",
      "option": "B"
@@ -233,8 +198,6 @@
    {
     "qno": 19,
     "question_id": "101779",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "C",
      "option": "C"
@@ -243,8 +206,6 @@
    {
     "qno": 20,
     "question_id": "101780",
-    "subject": null,
-    "section": "Section A",
     "answer": {
      "raw": "B",
      "option": "B"
@@ -253,95 +214,81 @@
    {
     "qno": 1,
     "question_id": "101781",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "26"
+     "raw": "26",
+     "value": "26"
     }
    },
    {
     "qno": 2,
     "question_id": "101782",
-    "subject": null,
-    "section": "Section B",
     "answer": {
      "raw": "2",
-     "option": "B",
-     "option_index": 2
+     "value": "2"
     }
    },
    {
     "qno": 3,
     "question_id": "101783",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "26"
+     "raw": "26",
+     "value": "26"
     }
    },
    {
     "qno": 4,
     "question_id": "101784",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "32"
+     "raw": "32",
+     "value": "32"
     }
    },
    {
     "qno": 5,
     "question_id": "101785",
-    "subject": null,
-    "section": "Section B",
     "answer": {
      "raw": "1",
-     "option": "A",
-     "option_index": 1
+     "value": "1"
     }
    },
    {
     "qno": 6,
     "question_id": "101786",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "29"
+     "raw": "29",
+     "value": "29"
     }
    },
    {
     "qno": 7,
     "question_id": "101787",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "3395"
+     "raw": "3395",
+     "value": "3395"
     }
    },
    {
     "qno": 8,
     "question_id": "101788",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "88"
+     "raw": "88",
+     "value": "88"
     }
    },
    {
     "qno": 9,
     "question_id": "101789",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "28"
+     "raw": "28",
+     "value": "28"
     }
    },
    {
     "qno": 10,
     "question_id": "101790",
-    "subject": null,
-    "section": "Section B",
     "answer": {
-     "raw": "18915"
+     "raw": "18915",
+     "value": "18915"
     }
    }
   ]
@@ -369,7 +316,16 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$|z-2| \\leq 1$\n$$(x-2)^{2}+y^{2} \\leq 1$$\n\\&\n$$z(1+i)+\\bar{z}(1-i) \\leq 2$$",
+     "Put $\\mathrm{z}=\\mathrm{x}+\\mathrm{iy}$\n$$\\therefore x-y \\leq 1$$\n$$\\mathrm{PA}=\\sqrt{17}, \\mathrm{~PB}=\\sqrt{13}$$",
+     "Maximum is PA \\& Minimum is PD",
+     "Let $\\mathrm{D}(2+\\cos \\theta, 0+\\sin \\theta)$\n$$\\begin{array}{l}\n\\therefore m_{c p}=\\tan \\theta=-2 \\\\\n\\cos \\theta=-\\frac{1}{\\sqrt{5}}, \\sin \\theta=\\frac{2}{\\sqrt{5}} \\\\\n\\therefore D\\left(2-\\frac{1}{\\sqrt{5}}, \\frac{2}{\\sqrt{5}}\\right) \\\\\n\\Rightarrow z_{1}=\\left(2-\\frac{1}{\\sqrt{5}}\\right)+\\frac{2 i}{\\sqrt{5}} \\\\\n\\left|z_{1}\\right|=\\frac{25-4 \\sqrt{5}}{5} \\& z_{2}=1 \\\\\n\\therefore\\left|z_{2}\\right|^{2}=1 \\\\\n\\therefore 5\\left(\\left|z_{1}\\right|^{2}+\\left|z_{2}\\right|^{2}\\right)=30-4 \\sqrt{5} \\\\\n\\therefore \\alpha=30 \\\\\n\\beta=-4 \\\\\n\\therefore \\alpha+\\beta=26\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 2,
@@ -387,7 +343,15 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{dy}}{\\mathrm{dx}}+\\frac{\\sqrt{2}}{2 \\cos ^{4} \\mathrm{x}-\\cos 2 \\mathrm{x}} \\mathrm{y}=\\mathrm{xe}^{\\tan ^{-1}(\\sqrt{2} \\cot 2 \\mathrm{x})}$\n$$\\begin{aligned}\n& \\int \\frac{d x}{2 \\cos ^{4} x-\\cos 2 x} \\\\\n= & \\int \\frac{d x}{\\cos ^{4} x+\\sin ^{4} x}=\\int \\frac{\\operatorname{cosec}^{4} x d x}{1+\\cot ^{4} x} \\\\\n= & -\\int \\frac{t^{2}+1}{t^{4}+1} d t=-\\int \\frac{\\left(1+\\frac{1}{t^{2}}\\right)}{\\left(t-\\frac{1}{t}\\right)^{2}+2} d t=\\frac{-1}{\\sqrt{2}} \\tan ^{-1}\\left(\\frac{t-\\frac{1}{t}}{\\sqrt{2}}\\right)\n\\end{aligned}$$\n$\\operatorname{Cot} \\mathrm{x}=\\mathrm{t}$\n$$=-\\frac{1}{\\sqrt{2}} \\tan ^{-1}(\\sqrt{2} \\cot 2 x)$$",
+     "JEE Exam Solution\nwww.esaral.com\n7",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\n\\therefore I F=e^{-\\tan ^{-1}(\\sqrt{2} \\cot 2 x)} \\\\\ny e^{-\\tan ^{-1}(\\sqrt{2} \\cot 2 x)}=\\int x d x \\\\\ny e^{-\\tan ^{-1}(\\sqrt{2} \\cot 2 x)}=\\frac{x^{2}}{2}+c \\\\\ny\\left(\\frac{\\pi}{4}\\right)=\\frac{\\pi^{2}}{32}+c \\Rightarrow c=0 \\\\\ny=\\frac{x^{2}}{2} e^{\\tan ^{-1}(\\sqrt{2} \\cot 2 x)} \\\\\ny\\left(\\frac{\\pi}{3}\\right)=\\frac{\\pi^{2}}{18} e^{\\tan ^{-1}\\left(\\sqrt{2} \\cot \\frac{2 \\pi}{3}\\right)} \\\\\n=\\frac{\\pi^{2}}{18} e^{-\\tan ^{-1}\\left(\\sqrt{\\frac{2}{3}}\\right)} \\\\\n\\alpha=\\sqrt{\\frac{2}{3}} \\Rightarrow 3 \\alpha^{2}=2\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 3,
@@ -405,7 +369,15 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Points P(1, 2, -1) and Q (2, -1, 3) lie on same side of the plane.\nPerpendicular distance of point P from plane is\n$$\\left|\\frac{-1+2-1-1}{\\sqrt{1^{2}+1^{2}+1^{2}}}\\right|=\\frac{1}{\\sqrt{3}}$$",
+     "Perpendicular distance of point Q from plane is\n$$=\\left|\\frac{-2-1+3-1}{\\sqrt{1^{2}+1^{2}+1^{2}}}\\right|=\\frac{1}{\\sqrt{3}}$$\n$\\Rightarrow \\overrightarrow{\\mathrm{PQ}}$ is parallel to given plane. So, distance between P and Q = distance between their foot of perpendiculars.\n$$\\begin{array}{l}\n\\Rightarrow|\\overrightarrow{\\mathrm{PQ}}|=\\sqrt{(1-2)^{2}+(2+1)^{2}+(-1-3)^{2}} \\\\\n=\\sqrt{26} \\\\\n|\\overrightarrow{\\mathrm{PQ}}|^{2}=26=\\mathrm{d}^{2}\n\\end{array}$$",
+     "Alternate\n$$\\begin{array}{l}\n-x+y+z-1=0 \\\\\n\\mathrm{P}(1,2,-1) \\mathrm{Q}(2,-1,3)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 4,
@@ -423,7 +395,16 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$3 \\cos ^{2} 2 \\theta+6 \\cos 2 \\theta-10 \\cos ^{2} \\theta+5=0$\n$$\\begin{array}{l}\n3 \\cos ^{2} 2 \\theta+6 \\cos 2 \\theta-5(1+\\cos 2 \\theta)+5=0 \\\\\n3 \\cos ^{2} 2 \\theta+\\cos 2 \\theta=0\n\\end{array}$$\n$\\operatorname{Cos} 2 \\theta=0$ OR $\\cos 2 \\theta=-1 / 3$\n$$\\begin{array}{l}\n\\theta \\in[-4 \\pi, 4 \\pi] \\\\\n2 \\theta=(2 n+1) \\cdot \\frac{\\pi}{2} \\\\\n\\therefore \\theta= \\pm \\pi / 4 \\cdot \\pm 3 \\pi / 4 \\ldots \\ldots \\pm 15 \\pi / 4\n\\end{array}$$",
+     "Similarly $\\cos 2 \\theta=-1 / 3$ gives 16 solution",
+     "JEE Exam Solution\nwww.esaral.com\n8",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 5,
@@ -441,7 +422,14 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$2 \\theta-\\cos ^{2} \\theta+\\sqrt{2}=0$\n$$\\begin{array}{l}\n\\Rightarrow \\cos ^{2} \\theta=2 \\theta+\\sqrt{2} \\\\\ny=2 \\theta+\\sqrt{2}\n\\end{array}$$",
+     "Both graphs intersect at one point."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 6,
@@ -459,7 +447,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$50 \\tan \\left(3 \\tan ^{-1} \\frac{1}{2}+2 \\cos ^{-1} \\frac{1}{\\sqrt{5}}\\right)$\n$$\\begin{array}{l}\n+4 \\sqrt{2} \\tan \\left(\\frac{1}{2} \\tan ^{-1} 2 \\sqrt{2}\\right) \\\\\n=50 \\tan \\left(\\tan ^{-1} \\frac{1}{2}+2\\left(\\tan ^{-1} \\frac{1}{2}+\\tan ^{-1} 2\\right)\\right) \\\\\n+4 \\sqrt{2} \\tan \\left(\\frac{1}{2} \\tan ^{-1} 2 \\sqrt{2}\\right) \\\\\n\\left.=50 \\tan \\left(\\tan ^{-1} \\frac{1}{2}+2 \\cdot \\frac{\\pi}{2}\\right)\\right)+4 \\sqrt{2} \\times \\frac{1}{\\sqrt{2}} \\\\\n=50\\left(\\tan \\tan ^{-1} \\frac{1}{2}\\right)+4 \\\\\n=25+4=29\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 7,
@@ -477,7 +471,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$f(x)=(c+1) x^{2}+\\left(1-c^{2}\\right) x+2 k$$\n$$\\& \\mathrm{f}(\\mathrm{x}+\\mathrm{y})=\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{y})-\\mathrm{xy} \\quad \\forall \\mathrm{xy} \\in \\mathrm{R}$$\n$$\\lim _{y \\rightarrow 0} \\frac{f(x+y)-f(x)}{y}=\\lim _{y \\rightarrow 0} \\frac{f(y)-x y}{y} \\Rightarrow f^{\\prime}(x)=f^{\\prime}(0)-x$$\n$$\\begin{array}{l}\n\\mathrm{f}(\\mathrm{x})=-\\frac{1}{2} \\mathrm{x}^{2}+\\mathrm{f}^{\\prime}(0) \\cdot \\mathrm{x}+\\lambda \\quad \\text { but } \\mathrm{f}(0)=0 \\Rightarrow \\lambda=0 \\\\\n\\mathrm{f}(\\mathrm{x})=-\\frac{1}{2} \\mathrm{x}^{2}+\\left(1-\\mathrm{c}^{2}\\right) \\cdot \\mathrm{x}\n\\end{array}$$\n$\\therefore \\quad$ as $\\mathrm{f}^{\\prime}(0)=1-\\mathrm{c}^{2}$\nComparing equation (1) and (2)\nWe obtain, $\\mathrm{c}=-\\frac{3}{2}$\n$\\therefore \\quad \\mathrm{f}(\\mathrm{x})=-\\frac{1}{2} \\mathrm{x}^{2}-\\frac{5}{4} \\mathrm{x}$\nNow $\\left|2 \\sum_{\\mathrm{x}=1}^{20} \\mathrm{f}(\\mathrm{x})\\right|=\\sum_{\\mathrm{x}=1}^{20} \\mathrm{x}^{2}+\\frac{5}{2} . \\sum_{\\mathrm{x}=1}^{20} \\mathrm{x}$\n$$\\begin{array}{l}\n=2870+525 \\\\\n=3395\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 8,
@@ -495,7 +495,13 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}-\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1$\nGiven $e^{2}=1+\\frac{b^{2}}{a^{2}} \\Rightarrow \\frac{11}{4}=1+\\frac{b^{2}}{a^{2}} \\Rightarrow b^{2}=\\frac{7}{4} a^{2}$\n$\\therefore \\frac{\\mathrm{x}^{2}}{(\\mathrm{a})^{2}}-\\frac{\\mathrm{y}^{2}}{\\left(\\frac{\\sqrt{7}}{2} \\mathrm{a}\\right)^{2}}=1$ Now given\n$2 \\mathrm{a}+2 \\cdot \\frac{\\sqrt{7} \\mathrm{a}}{2}=4(2 \\sqrt{2}+\\sqrt{14})$\n$a(2+\\sqrt{7})=4 \\sqrt{2}(2+\\sqrt{7})$\n$\\mathrm{a}=4 \\sqrt{2} \\Rightarrow \\mathrm{a}^{2}=32$\n$\\mathrm{b}^{2}=\\frac{7}{4} \\times 16 \\times 2=56$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 9,
@@ -513,7 +519,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{P}_{1}: \\overrightarrow{\\mathrm{r}} .(2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}-3 \\hat{\\mathrm{k}})=4$\n$\\mathrm{P}_{1}: 2 \\mathrm{x}+\\mathrm{y}-3 \\mathrm{z}=4$\n$P_{2}\\left|\\begin{array}{ccc}x-2 & y+3 & z-2 \\\\ 0 & 1 & -5 \\\\ -1 & -1 & 0\\end{array}\\right|=0$\n$\\Rightarrow-5 \\mathrm{x}+5 \\mathrm{y}+\\mathrm{z}+23=0$\nLet $\\mathrm{a}, \\mathrm{b}, \\mathrm{c}$ be the d'rs of line of intersection\nThen $\\mathrm{a}=\\frac{16 \\lambda}{15} ; \\mathrm{b}=\\frac{13 \\lambda}{15} ; \\mathrm{c}=\\frac{15 \\lambda}{15}$\n$\\therefore \\alpha=13: \\beta=15$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 10,
@@ -531,7 +543,15 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{b}_{\\mathrm{i}} \\in\\{1,2,3$ $\\_\\_\\_\\_$ 100\\}",
+     "Let $\\mathrm{A}=$ set when $\\mathrm{b}_{1} \\mathrm{~b}_{2} \\mathrm{~b}_{3}$ are consecutive\n$\\mathrm{n}(\\mathrm{A})=\\frac{97+97+\\ldots \\ldots+97}{98 \\text { times }}=97 \\times 98$\nSimilarly when $\\mathrm{b}_{2} \\mathrm{~b}_{3} \\mathrm{~b}_{4}$ are consecutive\n$\\mathrm{N}(\\mathrm{A})=97 \\times 98$\n$\\mathrm{n}(\\mathrm{A} \\cap \\mathrm{B})=\\frac{97+97+------97}{98 \\text { times }}=97 \\times 98$\nSimilarly when $\\mathrm{b}_{2} \\mathrm{~b}_{3} \\mathrm{~b}_{4}$ are consecutive\n$n(B)=97 \\times 98$\n$n(A \\cap B)=97$\n$\\mathrm{n}(\\mathrm{AUB})=\\mathrm{n}(\\mathrm{A})+\\mathrm{n}(\\mathrm{B})-\\mathrm{n}(\\mathrm{A} \\cap \\mathrm{B})$\nNumber of permutation = 18915",
+     "JEE Exam Solution\nwww.esaral.com\n10"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 11,
@@ -549,7 +569,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{A}=\\{1,2,3\\}$\n$$\\begin{array}{l}\n\\mathrm{R}=\\{(1,1),(1,2),(1,3)(2,1),(2,2),(2,3)(3,1), \\\\\n(3,2)(3,3)\\}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 12,
@@ -567,7 +593,14 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{a}_{2}=1, \\mathrm{a}_{3}=3 \\mathrm{a}_{4}=6$\n$$\\begin{array}{l}\na_{n}=\\frac{n(n-1)}{2} \\\\\nS=\\sum_{n=2}^{\\infty} \\frac{n(n-1)}{2\\left(7^{n}\\right)} \\\\\nS=\\frac{1}{7^{2}}+\\frac{3}{7^{3}}+\\frac{6}{7^{4}}+\\frac{10}{7^{5}}+\\frac{15}{7^{5}}+\\ldots \\ldots \\\\\n\\frac{S}{7}=\\frac{1}{7^{3}}+\\frac{3}{7^{4}}+\\frac{6}{7^{5}}+\\frac{10}{7^{6}}+\\ldots \\\\\n6 \\frac{S}{7}=\\frac{1}{7^{2}}+\\frac{2}{7^{3}}+\\frac{3}{7^{4}}+\\frac{4}{7^{5}}+\\ldots \\\\\n6 \\frac{S}{7^{2}}=\\frac{1}{7^{3}}+\\frac{2}{7^{4}}+\\frac{3}{7^{5}}+\\ldots \\\\\n6 \\frac{S}{7} \\cdot \\frac{6}{7}=\\frac{1}{7^{2}}+\\frac{1}{7^{3}}+\\ldots=\\frac{1 / 7^{2}}{1-1 / 7} \\\\\n6 \\times 6 \\frac{S}{7^{2}}=\\cdot \\frac{1}{7 \\times 6} \\\\\nS=\\frac{7}{6^{3}}=\\frac{7}{216}\n\\end{array}$$",
+     "Alternate\n$$\\begin{array}{l}\na_{n+2}=2 a_{n+1}-a_{n}+1 \\\\\n\\Rightarrow \\frac{a_{n+2}}{7^{n+2}}=\\frac{2}{7} \\frac{a_{n+1}}{7^{n+1}}-\\frac{1}{49} \\frac{a_{n}}{7^{n}}+\\frac{1}{7^{n+2}} \\\\\n\\Rightarrow \\sum_{n=2}^{\\infty} \\frac{a_{n+2}}{7^{n+2}}=\\frac{2}{7} \\sum_{n=2}^{\\infty} \\frac{a_{n+1}}{7^{n+1}}-\\frac{1}{49} \\sum_{n=2}^{\\infty} \\frac{a_{n}}{7^{n}}+\\sum_{n=2}^{\\infty} \\frac{1}{7^{n+2}} \\\\\n\\text { Let } \\sum_{n=2}^{\\infty} \\frac{a_{n}}{7^{n}}=p \\\\\n\\Rightarrow\\left(p-\\frac{a_{2}}{7^{2}}-\\frac{a_{3}}{7^{3}}\\right)=\\frac{2}{7}\\left(p-\\frac{a_{2}}{7^{2}}\\right)-\\frac{1}{49} p+\\frac{1 / 7^{4}}{1-\\frac{1}{7}} \\\\\n\\because a_{2}=1, a_{3}=3 \\\\\n\\Rightarrow p-\\frac{1}{49}-\\frac{3}{343}=\\frac{2}{7} p-\\frac{2}{7^{3}}-\\frac{p}{49}+\\frac{1}{6.7^{3}} \\\\\n\\Rightarrow p=\\frac{7}{216}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 13,
@@ -585,7 +618,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{M}_{1}=3 / 2 \\quad \\mathrm{M}_{2}=2 / \\mathrm{x} \\\\\n\\tan \\pi / 4=\\left|\\frac{3 / 2-2 / \\mathrm{x}}{1+6 / 2 \\mathrm{x}}\\right|=1 \\\\\n\\Rightarrow \\mathrm{x}_{1}=10, \\quad \\mathrm{x}_{2}=-2 / 5 \\\\\n\\Rightarrow \\mathrm{AA}^{\\prime}=52 / 5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 14,
@@ -603,7 +642,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n3 a=x \\quad 4 b=22-x \\\\\na=2 / 13 \\\\\nA_{T}=\\frac{\\sqrt{3}}{4} a^{2}+b^{2} \\\\\n=\\frac{\\sqrt{3}}{4} x^{2} / 9+\\frac{(22-x)^{2}}{16} \\\\\n\\frac{d A}{d x}=0 \\Rightarrow x\\left(\\frac{\\sqrt{3}}{2 \\times 9}+\\frac{1}{8}\\right)-\\frac{22}{8}=0 \\\\\n\\Rightarrow x\\left(\\frac{4 \\sqrt{3}+9}{36}\\right)=\\frac{11}{2} \\\\\na=x / 3 \\\\\na=\\left(\\frac{11 / 2}{\\frac{4 \\sqrt{3}+9}{36}}\\right)\\left(\\frac{1}{3}\\right)=\\frac{66}{4 \\sqrt{3}+9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 15,
@@ -621,7 +666,14 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n-1 \\leq \\frac{2 \\sin ^{-1}\\left(\\frac{1}{4 x^{2}-1}\\right)}{\\pi} \\leq 1 \\\\\n-\\pi / 2 \\leq \\sin ^{-1} \\frac{1}{4 x^{2}-1} \\leq \\pi / 2\n\\end{array}$$",
+     "Always $-1 \\leq \\frac{1}{4 \\mathrm{x}^{2}-1} \\leq 1$\n$$\\mathrm{x} \\in\\left(\\infty, \\frac{1}{\\sqrt{2}}\\right) \\cup\\left[\\frac{1}{\\sqrt{2}}, \\infty\\right)$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 16,
@@ -639,7 +691,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "General term\n$$\\begin{array}{l}\nT_{r+1}=\\frac{\\underline{10}}{\\left|r_{1}\\right| r_{2} \\mid r_{3}}(3)^{r_{1}}(-2)^{r_{2}}(5)^{r_{3}}(x)^{3 r_{1}+2 r_{2}-5 r_{3}} \\\\\n3 r_{1}+2 r_{2}-5 r_{3}=0 \\\\\nr_{1}+r_{2}+r_{3}=10\n\\end{array}$$\nfrom equation (1) and (2)\n$$\\begin{array}{l}\nr_{1}+2\\left(10-r_{3}\\right)-5 r_{3}=0 \\\\\nr_{1}+20=7 r_{3} \\\\\n\\left(r_{1}, r_{2}, r_{3}\\right)=(1,6,3)\n\\end{array}$$\nconstant term $=\\frac{\\lfloor 10}{\\lfloor 16\\rfloor 3}(3)^{1}(-2)^{6}(5)^{3}$\n$=2^{9} .3^{2} .5^{4} .7^{1}$\n$l=9$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 17,
@@ -657,7 +715,15 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{I}=\\int_{0}^{5} \\cos \\left(\\pi \\mathrm{x}-\\pi\\left[\\frac{\\mathrm{x}}{2}\\right]\\right) \\mathrm{dx}$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{I}=\\int_{0}^{2} \\cos (\\pi \\mathrm{x}) \\mathrm{dx}+\\int_{2}^{4} \\cos (\\pi \\mathrm{x}-\\pi) \\mathrm{dx}+\\int_{4}^{5} \\cos (\\pi \\mathrm{x}-2 \\pi) \\mathrm{dx} \\\\\n\\Rightarrow \\mathrm{I}=\\left[\\frac{\\sin \\pi \\mathrm{x}}{\\pi}\\right]_{0}^{2}+\\left[\\frac{\\sin (\\pi \\mathrm{x}-\\pi)}{\\pi}\\right]_{2}^{4}+\\left[\\frac{\\sin (\\pi \\mathrm{x}-2 \\pi)}{\\pi}\\right]_{4}^{5} \\\\\n\\Rightarrow \\mathrm{I}=0\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n5",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 18,
@@ -675,7 +741,14 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "PQ is focal chord\n$$\\begin{array}{l}\n\\mathrm{m}_{\\mathrm{PR}} \\cdot \\mathrm{~m}_{\\mathrm{PQ}}=-1 \\\\\n\\frac{2 \\mathrm{t}}{\\mathrm{t}^{2}-3} \\times \\frac{-2 / \\mathrm{t}}{\\frac{1}{\\mathrm{t}^{2}}-3}=-1 \\\\\n\\left(\\mathrm{t}^{2}-1\\right)^{2}=0 \\\\\n\\Rightarrow \\mathrm{t}=1\n\\end{array}$$",
+     "⇒ P \\& Q must be end point of latus rectum:\n$$\\mathrm{P}(1,2) \\& \\mathrm{Q}(1,-2)$$\n$\\therefore \\frac{2 \\mathrm{~b}^{2}}{\\mathrm{a}}=4 \\& \\mathrm{ae}=1$\n∵ We know that $\\mathrm{b}^{2}=\\mathrm{a}^{2}\\left(1-\\mathrm{e}^{2}\\right)$\n$$\\begin{array}{l}\n\\therefore \\mathrm{a}=1+\\sqrt{2} \\\\\n\\because \\mathrm{e}^{2}=1-\\frac{\\mathrm{b}^{2}}{\\mathrm{a}^{2}} \\\\\n\\therefore \\mathrm{e}^{2}=3-2 \\sqrt{2} \\\\\n\\frac{1}{\\mathrm{e}^{2}}=3+2 \\sqrt{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 19,
@@ -693,7 +766,14 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{OP}=\\left|\\frac{2-3+2}{\\sqrt{2}}\\right|$\n$$\\begin{array}{l}\n\\mathrm{OP}=\\frac{3}{\\sqrt{2}} \\\\\n\\mathrm{AP}=\\sqrt{\\mathrm{OA}^{2}-\\mathrm{OP}^{2}} \\\\\n=\\frac{1}{\\sqrt{2}} \\\\\n\\tan \\theta=3 \\\\\n\\therefore \\sin \\theta=\\frac{3}{\\sqrt{10}}=\\frac{\\mathrm{AP}}{\\mathrm{AN}} \\\\\n\\Rightarrow \\mathrm{AN}=\\frac{\\sqrt{5}}{3}=\\mathrm{BN}\n\\end{array}$$",
+     "Area of $\\triangle \\mathrm{ANB}=\\frac{1}{2} .\\left(\\mathrm{AN}^{2}\\right) \\sin 2 \\theta=\\frac{1}{6}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 20,
@@ -711,7 +791,14 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\bar{x}=\\frac{\\sum x_{i}}{5}=\\frac{24}{5} \\Rightarrow \\sum x_{i}=24 \\\\\n\\sigma^{2}=\\frac{\\sum x_{i}^{2}}{5}-\\left(\\frac{24}{5}\\right)^{2}=\\frac{194}{25} \\\\\n\\Rightarrow \\sum x_{i}^{2}=154 \\\\\nx_{1}+x_{2}+x_{3}+x_{4}=14 \\\\\n\\Rightarrow x_{5}=10 \\\\\n\\sigma^{2}=\\frac{x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}}{4}-\\frac{49}{4}=a \\\\\nx_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}=4 a+49 \\\\\nx_{5}^{2}=154-4 a-49 \\\\\n\\Rightarrow 100=105-4 a \\Rightarrow 4 a=5 \\\\\n4 a+x_{5}=15\n\\end{array}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 1,
@@ -723,7 +810,16 @@
    "embedded_answer": {
     "raw": "26"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$|z-2| \\leq 1$\n$$(x-2)^{2}+y^{2} \\leq 1$$\n\\&\n$$z(1+i)+\\bar{z}(1-i) \\leq 2$$",
+     "Put $\\mathrm{z}=\\mathrm{x}+\\mathrm{iy}$\n$$\\therefore x-y \\leq 1$$\n$$\\mathrm{PA}=\\sqrt{17}, \\mathrm{~PB}=\\sqrt{13}$$",
+     "Maximum is PA \\& Minimum is PD",
+     "Let $\\mathrm{D}(2+\\cos \\theta, 0+\\sin \\theta)$\n$$\\begin{array}{l}\n\\therefore m_{c p}=\\tan \\theta=-2 \\\\\n\\cos \\theta=-\\frac{1}{\\sqrt{5}}, \\sin \\theta=\\frac{2}{\\sqrt{5}} \\\\\n\\therefore D\\left(2-\\frac{1}{\\sqrt{5}}, \\frac{2}{\\sqrt{5}}\\right) \\\\\n\\Rightarrow z_{1}=\\left(2-\\frac{1}{\\sqrt{5}}\\right)+\\frac{2 i}{\\sqrt{5}} \\\\\n\\left|z_{1}\\right|=\\frac{25-4 \\sqrt{5}}{5} \\& z_{2}=1 \\\\\n\\therefore\\left|z_{2}\\right|^{2}=1 \\\\\n\\therefore 5\\left(\\left|z_{1}\\right|^{2}+\\left|z_{2}\\right|^{2}\\right)=30-4 \\sqrt{5} \\\\\n\\therefore \\alpha=30 \\\\\n\\beta=-4 \\\\\n\\therefore \\alpha+\\beta=26\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 2,
@@ -737,7 +833,15 @@
     "option": "B",
     "option_index": 2
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{dy}}{\\mathrm{dx}}+\\frac{\\sqrt{2}}{2 \\cos ^{4} \\mathrm{x}-\\cos 2 \\mathrm{x}} \\mathrm{y}=\\mathrm{xe}^{\\tan ^{-1}(\\sqrt{2} \\cot 2 \\mathrm{x})}$\n$$\\begin{aligned}\n& \\int \\frac{d x}{2 \\cos ^{4} x-\\cos 2 x} \\\\\n= & \\int \\frac{d x}{\\cos ^{4} x+\\sin ^{4} x}=\\int \\frac{\\operatorname{cosec}^{4} x d x}{1+\\cot ^{4} x} \\\\\n= & -\\int \\frac{t^{2}+1}{t^{4}+1} d t=-\\int \\frac{\\left(1+\\frac{1}{t^{2}}\\right)}{\\left(t-\\frac{1}{t}\\right)^{2}+2} d t=\\frac{-1}{\\sqrt{2}} \\tan ^{-1}\\left(\\frac{t-\\frac{1}{t}}{\\sqrt{2}}\\right)\n\\end{aligned}$$\n$\\operatorname{Cot} \\mathrm{x}=\\mathrm{t}$\n$$=-\\frac{1}{\\sqrt{2}} \\tan ^{-1}(\\sqrt{2} \\cot 2 x)$$",
+     "JEE Exam Solution\nwww.esaral.com\n7",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\n\\therefore I F=e^{-\\tan ^{-1}(\\sqrt{2} \\cot 2 x)} \\\\\ny e^{-\\tan ^{-1}(\\sqrt{2} \\cot 2 x)}=\\int x d x \\\\\ny e^{-\\tan ^{-1}(\\sqrt{2} \\cot 2 x)}=\\frac{x^{2}}{2}+c \\\\\ny\\left(\\frac{\\pi}{4}\\right)=\\frac{\\pi^{2}}{32}+c \\Rightarrow c=0 \\\\\ny=\\frac{x^{2}}{2} e^{\\tan ^{-1}(\\sqrt{2} \\cot 2 x)} \\\\\ny\\left(\\frac{\\pi}{3}\\right)=\\frac{\\pi^{2}}{18} e^{\\tan ^{-1}\\left(\\sqrt{2} \\cot \\frac{2 \\pi}{3}\\right)} \\\\\n=\\frac{\\pi^{2}}{18} e^{-\\tan ^{-1}\\left(\\sqrt{\\frac{2}{3}}\\right)} \\\\\n\\alpha=\\sqrt{\\frac{2}{3}} \\Rightarrow 3 \\alpha^{2}=2\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 3,
@@ -749,7 +853,15 @@
    "embedded_answer": {
     "raw": "26"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Points P(1, 2, -1) and Q (2, -1, 3) lie on same side of the plane.\nPerpendicular distance of point P from plane is\n$$\\left|\\frac{-1+2-1-1}{\\sqrt{1^{2}+1^{2}+1^{2}}}\\right|=\\frac{1}{\\sqrt{3}}$$",
+     "Perpendicular distance of point Q from plane is\n$$=\\left|\\frac{-2-1+3-1}{\\sqrt{1^{2}+1^{2}+1^{2}}}\\right|=\\frac{1}{\\sqrt{3}}$$\n$\\Rightarrow \\overrightarrow{\\mathrm{PQ}}$ is parallel to given plane. So, distance between P and Q = distance between their foot of perpendiculars.\n$$\\begin{array}{l}\n\\Rightarrow|\\overrightarrow{\\mathrm{PQ}}|=\\sqrt{(1-2)^{2}+(2+1)^{2}+(-1-3)^{2}} \\\\\n=\\sqrt{26} \\\\\n|\\overrightarrow{\\mathrm{PQ}}|^{2}=26=\\mathrm{d}^{2}\n\\end{array}$$",
+     "Alternate\n$$\\begin{array}{l}\n-x+y+z-1=0 \\\\\n\\mathrm{P}(1,2,-1) \\mathrm{Q}(2,-1,3)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 4,
@@ -761,7 +873,16 @@
    "embedded_answer": {
     "raw": "32"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$3 \\cos ^{2} 2 \\theta+6 \\cos 2 \\theta-10 \\cos ^{2} \\theta+5=0$\n$$\\begin{array}{l}\n3 \\cos ^{2} 2 \\theta+6 \\cos 2 \\theta-5(1+\\cos 2 \\theta)+5=0 \\\\\n3 \\cos ^{2} 2 \\theta+\\cos 2 \\theta=0\n\\end{array}$$\n$\\operatorname{Cos} 2 \\theta=0$ OR $\\cos 2 \\theta=-1 / 3$\n$$\\begin{array}{l}\n\\theta \\in[-4 \\pi, 4 \\pi] \\\\\n2 \\theta=(2 n+1) \\cdot \\frac{\\pi}{2} \\\\\n\\therefore \\theta= \\pm \\pi / 4 \\cdot \\pm 3 \\pi / 4 \\ldots \\ldots \\pm 15 \\pi / 4\n\\end{array}$$",
+     "Similarly $\\cos 2 \\theta=-1 / 3$ gives 16 solution",
+     "JEE Exam Solution\nwww.esaral.com\n8",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 5,
@@ -775,7 +896,14 @@
     "option": "A",
     "option_index": 1
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$2 \\theta-\\cos ^{2} \\theta+\\sqrt{2}=0$\n$$\\begin{array}{l}\n\\Rightarrow \\cos ^{2} \\theta=2 \\theta+\\sqrt{2} \\\\\ny=2 \\theta+\\sqrt{2}\n\\end{array}$$",
+     "Both graphs intersect at one point."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 6,
@@ -787,7 +915,13 @@
    "embedded_answer": {
     "raw": "29"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$50 \\tan \\left(3 \\tan ^{-1} \\frac{1}{2}+2 \\cos ^{-1} \\frac{1}{\\sqrt{5}}\\right)$\n$$\\begin{array}{l}\n+4 \\sqrt{2} \\tan \\left(\\frac{1}{2} \\tan ^{-1} 2 \\sqrt{2}\\right) \\\\\n=50 \\tan \\left(\\tan ^{-1} \\frac{1}{2}+2\\left(\\tan ^{-1} \\frac{1}{2}+\\tan ^{-1} 2\\right)\\right) \\\\\n+4 \\sqrt{2} \\tan \\left(\\frac{1}{2} \\tan ^{-1} 2 \\sqrt{2}\\right) \\\\\n\\left.=50 \\tan \\left(\\tan ^{-1} \\frac{1}{2}+2 \\cdot \\frac{\\pi}{2}\\right)\\right)+4 \\sqrt{2} \\times \\frac{1}{\\sqrt{2}} \\\\\n=50\\left(\\tan \\tan ^{-1} \\frac{1}{2}\\right)+4 \\\\\n=25+4=29\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 7,
@@ -799,7 +933,13 @@
    "embedded_answer": {
     "raw": "3395"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$f(x)=(c+1) x^{2}+\\left(1-c^{2}\\right) x+2 k$$\n$$\\& \\mathrm{f}(\\mathrm{x}+\\mathrm{y})=\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{y})-\\mathrm{xy} \\quad \\forall \\mathrm{xy} \\in \\mathrm{R}$$\n$$\\lim _{y \\rightarrow 0} \\frac{f(x+y)-f(x)}{y}=\\lim _{y \\rightarrow 0} \\frac{f(y)-x y}{y} \\Rightarrow f^{\\prime}(x)=f^{\\prime}(0)-x$$\n$$\\begin{array}{l}\n\\mathrm{f}(\\mathrm{x})=-\\frac{1}{2} \\mathrm{x}^{2}+\\mathrm{f}^{\\prime}(0) \\cdot \\mathrm{x}+\\lambda \\quad \\text { but } \\mathrm{f}(0)=0 \\Rightarrow \\lambda=0 \\\\\n\\mathrm{f}(\\mathrm{x})=-\\frac{1}{2} \\mathrm{x}^{2}+\\left(1-\\mathrm{c}^{2}\\right) \\cdot \\mathrm{x}\n\\end{array}$$\n$\\therefore \\quad$ as $\\mathrm{f}^{\\prime}(0)=1-\\mathrm{c}^{2}$\nComparing equation (1) and (2)\nWe obtain, $\\mathrm{c}=-\\frac{3}{2}$\n$\\therefore \\quad \\mathrm{f}(\\mathrm{x})=-\\frac{1}{2} \\mathrm{x}^{2}-\\frac{5}{4} \\mathrm{x}$\nNow $\\left|2 \\sum_{\\mathrm{x}=1}^{20} \\mathrm{f}(\\mathrm{x})\\right|=\\sum_{\\mathrm{x}=1}^{20} \\mathrm{x}^{2}+\\frac{5}{2} . \\sum_{\\mathrm{x}=1}^{20} \\mathrm{x}$\n$$\\begin{array}{l}\n=2870+525 \\\\\n=3395\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 8,
@@ -811,7 +951,13 @@
    "embedded_answer": {
     "raw": "88"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}-\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1$\nGiven $e^{2}=1+\\frac{b^{2}}{a^{2}} \\Rightarrow \\frac{11}{4}=1+\\frac{b^{2}}{a^{2}} \\Rightarrow b^{2}=\\frac{7}{4} a^{2}$\n$\\therefore \\frac{\\mathrm{x}^{2}}{(\\mathrm{a})^{2}}-\\frac{\\mathrm{y}^{2}}{\\left(\\frac{\\sqrt{7}}{2} \\mathrm{a}\\right)^{2}}=1$ Now given\n$2 \\mathrm{a}+2 \\cdot \\frac{\\sqrt{7} \\mathrm{a}}{2}=4(2 \\sqrt{2}+\\sqrt{14})$\n$a(2+\\sqrt{7})=4 \\sqrt{2}(2+\\sqrt{7})$\n$\\mathrm{a}=4 \\sqrt{2} \\Rightarrow \\mathrm{a}^{2}=32$\n$\\mathrm{b}^{2}=\\frac{7}{4} \\times 16 \\times 2=56$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 9,
@@ -823,7 +969,13 @@
    "embedded_answer": {
     "raw": "28"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{P}_{1}: \\overrightarrow{\\mathrm{r}} .(2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}-3 \\hat{\\mathrm{k}})=4$\n$\\mathrm{P}_{1}: 2 \\mathrm{x}+\\mathrm{y}-3 \\mathrm{z}=4$\n$P_{2}\\left|\\begin{array}{ccc}x-2 & y+3 & z-2 \\\\ 0 & 1 & -5 \\\\ -1 & -1 & 0\\end{array}\\right|=0$\n$\\Rightarrow-5 \\mathrm{x}+5 \\mathrm{y}+\\mathrm{z}+23=0$\nLet $\\mathrm{a}, \\mathrm{b}, \\mathrm{c}$ be the d'rs of line of intersection\nThen $\\mathrm{a}=\\frac{16 \\lambda}{15} ; \\mathrm{b}=\\frac{13 \\lambda}{15} ; \\mathrm{c}=\\frac{15 \\lambda}{15}$\n$\\therefore \\alpha=13: \\beta=15$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 10,
@@ -835,7 +987,15 @@
    "embedded_answer": {
     "raw": "18915"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{b}_{\\mathrm{i}} \\in\\{1,2,3$ $\\_\\_\\_\\_$ 100\\}",
+     "Let $\\mathrm{A}=$ set when $\\mathrm{b}_{1} \\mathrm{~b}_{2} \\mathrm{~b}_{3}$ are consecutive\n$\\mathrm{n}(\\mathrm{A})=\\frac{97+97+\\ldots \\ldots+97}{98 \\text { times }}=97 \\times 98$\nSimilarly when $\\mathrm{b}_{2} \\mathrm{~b}_{3} \\mathrm{~b}_{4}$ are consecutive\n$\\mathrm{N}(\\mathrm{A})=97 \\times 98$\n$\\mathrm{n}(\\mathrm{A} \\cap \\mathrm{B})=\\frac{97+97+------97}{98 \\text { times }}=97 \\times 98$\nSimilarly when $\\mathrm{b}_{2} \\mathrm{~b}_{3} \\mathrm{~b}_{4}$ are consecutive\n$n(B)=97 \\times 98$\n$n(A \\cap B)=97$\n$\\mathrm{n}(\\mathrm{AUB})=\\mathrm{n}(\\mathrm{A})+\\mathrm{n}(\\mathrm{B})-\\mathrm{n}(\\mathrm{A} \\cap \\mathrm{B})$\nNumber of permutation = 18915",
+     "JEE Exam Solution\nwww.esaral.com\n10"
+    ]
+   },
+   "solution_source": "mirror_printed"
   }
  ],
  "extraction_method": "mathpix_ocr"

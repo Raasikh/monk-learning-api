@@ -1,61 +1,964 @@
 {
+ "paper_id": "jee-main-2011-cmrnfwn9vqt3ymrcwlaf",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2011-cmrnfwn9vqt3ymrcwlaf",
+  "exam": "jee-main",
+  "year": 2011,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2011-cmrnfwn9vqt3ymrcwlaf",
-    "exam": "jee-main",
-    "year": 2011,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2011/iit-jee-paper-ii/81168",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/cmrNfWn9vqt3yMrCWLaf",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "1d24efc130927f26a4042113f38cae4ff5c225303abcfa4f49b4c4d5c2b0f348",
+  "page_count": 38,
+  "text_chars": 73,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2011-cmrnfwn9vqt3ymrcwlaf.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 21,
+    "question_id": null,
     "subject": null,
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2011/iit-jee-paper-ii/81168",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/cmrNfWn9vqt3yMrCWLaf",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "value": "D"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "ABD"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "CD"
+    }
+   },
+   {
+    "qno": 31,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "BC"
+    }
+   },
+   {
+    "qno": 32,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "AC"
+    }
+   },
+   {
+    "qno": 33,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   },
+   {
+    "qno": 34,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 36,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 37,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 38,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "7",
+     "value": "7"
+    }
+   },
+   {
+    "qno": 39,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 40,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A light ray traveling in glass medium is incident on glass-air interface at an angle of incidence $\\theta$. The reflected (R) and transmitted (T) intensities, both as function of $\\theta$, are plotted. The correct sketch is",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Ans. (C)\nWhen $\\theta=0^{\\circ}$, maximum light is transmitted. At $\\theta>\\theta_{\\mathrm{c}}$ (critical angle), no further light is transmitted"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
   },
-  "probe": {
-    "sha256": "1d24efc130927f26a4042113f38cae4ff5c225303abcfa4f49b4c4d5c2b0f348",
-    "page_count": 38,
-    "text_chars": 73,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2011-cmrnfwn9vqt3ymrcwlaf.pdf"
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A wooden block performs SHM on a frictionless surface with frequency, $v_{0}$. The block carries a charge +Q on its surface. If now a uniform electric field $\\vec{E}$ is switched-on as shown, then the SHM of the block will be",
+   "options": {
+    "A": "of the same frequency and with shifted mean position",
+    "B": "of the same frequency and with the same mean position",
+    "C": "of changed frequency and with shifted mean position",
+    "D": "of changed frequency and with the same mean position\n\nAns. (A)\nTime period of spring block system depends on spring constant and mass of block.\nOn applying electric field only the equilibrium position gets shifted."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The density of a solid ball is to be determined in an experiment. The diameter of the ball is measured with a screw gauge, whose pitch is 0.5 mm and there are 50 divisions on the circular scale. The reading on the main scale is 2.5 mm and that on the circular scale is 20 divisions. If the measured mass of the ball has a relative error of $2 \\%$, the relative percentage error in the density is",
+   "options": {
+    "A": "0.9\\%",
+    "B": "$2.4 \\%$",
+    "C": "$3.1 \\%$",
+    "D": "$4.2 \\%$\n\nAns. (C)\n$$\\begin{array}{l}\nP=\\frac{M}{\\frac{4}{3} \\pi r^{3}}, 100 \\times \\frac{\\Delta P}{P}=\\left(\\frac{\\Delta M}{M}+\\frac{3 \\Delta r}{r}\\right) \\times 100 \\\\\n\\Delta \\mathrm{r}=\\text { least count }=0.01 \\Rightarrow \\mathrm{r}=2.72 \\\\\n\\frac{\\Delta P}{P} \\times 100=2 \\%+\\left(3 \\times \\frac{0.01}{2070}\\right) \\times 100=3.1 \\%\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A ball of mass 0.2 kg rests on a vertical post of height 5m. A bullet of mass 0.01 kg, traveling with a velocity V m/s in a horizontal direction, hits the centre of the ball. After the collision, the ball and bullet travel independently. The ball hits the ground at a distance of 20 m and the bullet at a distance of 100 m from the foot of the post. The initial velocity $V$ of the bullet is\n(A) $250 \\mathrm{~m} / \\mathrm{s}$\nB) $250 \\sqrt{2} \\mathrm{~m} / \\mathrm{s}$\n(C) 400 m/s\n(D) $500 \\mathrm{~m} / \\mathrm{s}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Which of the field patterns given below is valid for electric field as well as for magnetic field?",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Ans. (C)"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A point mass is subjected to two simultaneous sinusoidal displacements in x-direction, $x_{1}(t)=A \\sin \\omega t$ and $x_{2}(t)=A \\sin \\left(\\omega t+\\frac{2 \\pi}{3}\\right)$. Adding a third sinusoidal displacement $x_{3}(t)=B \\sin (\\omega t+\\phi)$ brings the mass to a complete rest. The values of B and $\\phi$ are",
+   "options": {
+    "A": "$\\sqrt{2} A, \\frac{3 \\pi}{4}$",
+    "B": "$A, \\frac{4 \\pi}{3}$",
+    "C": "$\\sqrt{3} A, \\frac{5 \\pi}{6}$",
+    "D": "$A, \\frac{\\pi}{3}$\n\nAns. (B)\n\n$$\\mathrm{x}_{1}(\\mathrm{t})+\\mathrm{x}_{2}(\\mathrm{t})+\\mathrm{x}_{3}(\\mathrm{t})=0$$\n$\\mathrm{x}_{3}(\\mathrm{t})$ has to be such that resultant is zero.\n\nSo it should make $\\frac{4 \\pi}{3}$ from $\\mathrm{x}_{1}(\\mathrm{t})$ anticlockwise."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A long insulated copper wire is closely wound as a spiral of 'N' turns. The spiral has inner radius 'a' and outer radius ' $b$ '. The spiral lies in the X-Y plane and a steady current ' $I$ ' flows through the wire. The Zcomponent of the magnetic field at the center of the sparal is",
+   "options": {
+    "A": "$\\frac{\\mu_{0} N I}{2(b-a)} \\ln \\left(\\frac{b}{a}\\right)$",
+    "B": "$\\frac{\\mu_{0} N I}{2(b-a)} \\ln \\left(\\frac{b+a}{b-a}\\right)$",
+    "C": "$\\frac{\\mu_{0} N I}{2 b} \\ln \\left(\\frac{b}{a}\\right)$",
+    "D": "$\\frac{\\mu_{0} N I}{2 b} \\ln \\left(\\frac{b+a}{b-a}\\right)$\n\nAns. (A)\n\nTaking an elemental strip of radius x and width dx .\nArea of strip $=2 \\pi \\mathrm{x} \\mathrm{dx}$\n\nNumber of turns through area $=\\frac{N}{b-a} d x$\n$$\\int d B=\\int_{a}^{b} \\frac{\\mu_{0} \\frac{N}{(b-a)} I d x}{2 x}=\\frac{\\mu_{0} N I \\ln \\left(\\frac{b}{a}\\right)}{2(b-a)}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A satellite is moving with a constant speed ' $V$ ' in a circular orbit about the earth. An object of mass ' $m$ ' is ejected from the satellite such that it just escapes from the gravitational pull of the earth. At the time of its ejection, the kinetic energy of the object is",
+   "options": {
+    "A": "$\\frac{1}{2} m V^{2}$",
+    "B": "$\\mathrm{mV}^{2}$",
+    "C": "$\\frac{3}{2} m V^{2}$",
+    "D": "$2 \\mathrm{mV}^{2}$\n\nAns. (B)\nKE of object $=\\frac{1}{2} m v^{2}$ when it moves with satellite $;$ PE of object $=-m v^{2}$\nAt the time of ejection $\\mathrm{KE}+\\mathrm{PE}=0$ to make it escape from gravitational pull.\n$\\mathrm{KE}=\\mathrm{mv}^{2}$.\n\nPART -II (PHYSICS)\nSECTION-I : (Total Marks : 24)\n(Single Correct Answer Type)\nThis section contains 8 multiple choice questions. Each question has four choices (A), (B), (C) and (D), out of which ONLY ONE is correct.\n21. A light ray traveling in glass medium is incident on glass-air interface at an angle of incidence $\\theta$. The reflected (R) and transmitted (T) intensities, both as function of $\\theta$, are plotted. The correct sketch is\n\n(A)\n\n(B)\n\n(C)\n\n(D)\n\nAns. (C)\nWhen $\\theta=0^{\\circ}$, maximum light is transmitted. At $\\theta>\\theta_{\\mathrm{C}}$ (critical angle), no further light is transmitted\n\n22. A wooden block performs SHM on a frictionless surface with frequency, $v_{0}$. The block carries a charge +Q on its surface. If now a uniform electric field $\\vec{E}$ is switched-on as shown, then the SHM of the block will be\n(A) of the same frequency and with shifted mean position\n(B) of the same frequency and with the same mean position\n(C) of changed frequency and with shifted mean position\n(D) of changed frequency and with the same mean position\n\nAns. (A)\nTime period of spring block system depends on spring constant and mass of block.\nOn applying electric field only the equilibrium position gets shifted.\n23. The density of a solid ball is to be determined in an experiment. The diameter of the ball is measured with a screw gauge, whose pitch is 0.5 mm and there are 50 divisions on the circular scale. The reading on the main scale is 2.5 mm and that on the circular scale is 20 divisions. If the measured mass of the ball has a relative error of $2 \\%$, the relative percentage error in the density is\n(A) $0.9 \\%$\n(B) $2.4 \\%$\n(C) 3.1\\%\n(D) 4.2\\%\n\nAns. (C)\n$$\\begin{array}{l}\nP=\\frac{M}{\\frac{4}{3} \\pi r^{3}}, 100 \\times \\frac{\\Delta P}{P}=\\left(\\frac{\\Delta M}{M}+\\frac{3 \\Delta r}{r}\\right) \\times 100 \\\\\n\\Delta r=\\text { least count }=0.01 \\Rightarrow r=2.72 \\\\\n\\frac{\\Delta P}{P} \\times 100=2 \\%+\\left(3 \\times \\frac{0.01}{2070}\\right) \\times 100=3.1 \\%\n\\end{array}$$\n24. A ball of mass 0.2 kg rests on a vertical post of height 5m. A bullet of mass 0.01 kg, traveling with a velocity V m/s in a horizontal direction, hits the centre of the ball. After the collision, the ball and bullet travel independently. The ball hits the ground at a distance of 20 m and the bullet at a distance of 100 m from the foot of the post. The initial velocity V of the bullet 1s\n(A) $250 \\mathrm{~m} / \\mathrm{s}$\n(B) $250 \\sqrt{2} \\mathrm{~m} / \\mathrm{s}$\n\n(C) 400 m/s\n(D) 500 m/s\n\nAns. (D)\n$$0.01 \\mathrm{~V}=0.2 \\mathrm{u}+0.01 \\times 5 \\mathrm{u}$$\n\nTime of flight $\\mathrm{t}=1 \\mathrm{~s}$; Range for ball $=\\mathrm{u} \\times \\mathrm{t} \\Rightarrow 20=\\mathrm{u} \\times 1 \\Rightarrow \\mathrm{u}=20 \\mathrm{~m} / \\mathrm{s}$\n$$\\Rightarrow \\mathrm{V}=500 \\mathrm{~m} / \\mathrm{s}$$\n25. Which of the field patterns given below is valid for electric field as well as for magnetic field?\n\n(A)\n\n(B)\n\n(C)\n\n(D)\n\nAns. (C)\nMagnetic field lines and induced electric field lines always from closed loop.\n26. A point mass is subjected to two simultaneous sinusoidal displacements in x-direction, $x_{1}(t)=A \\sin \\omega t$ and $x_{2}(t)=A \\sin \\left(\\omega t+\\frac{2 \\pi}{3}\\right)$. Adding a third sinusoidal displacement $x_{3}(t)=B \\sin (\\omega t+\\phi)$ brings the mass to a complete rest. The values of B and $\\phi$ are\n(A) $\\sqrt{2} A, \\frac{3 \\pi}{4}$\n(B) $A, \\frac{4 \\pi}{3}$\n(C) $\\sqrt{3} A, \\frac{5 \\pi}{6}$\n(D) $A, \\frac{\\pi}{3}$\n\nAns. (B)\n$$\\mathrm{x}_{1}(\\mathrm{t})+\\mathrm{x}_{2}(\\mathrm{t})+\\mathrm{x}_{3}(\\mathrm{t})=0$$\n$\\mathrm{x}_{3}(\\mathrm{t})$ has to be such that resultant is zero.\nSo it should make $\\frac{4 \\pi}{3}$ from $\\mathrm{x}_{1}(\\mathrm{t})$ anticlockwise.\n27. A long insulated copper wire is closely wound as a spiral of 'N turns. The spiral has inner radius 'a' and outer radius ' $b$ '. The spiral lies in the X-Y plane and a steady current ' $I$ ' flows through the wire. The Zcomponent of the magnetic field at the center of the spiral is\n\n(A) $\\frac{\\mu_{0} N I}{2(b-a)} \\ln \\left(\\frac{b}{a}\\right)$\n(B) $\\frac{\\mu_{0} N I}{2(b-a)} \\ln \\left(\\frac{b+a}{b-a}\\right)$\n(C) $\\frac{\\mu_{0} N I}{2 b} \\ln \\left(\\frac{b}{a}\\right)$\n(D) $\\frac{\\mu_{0} N I}{2 b} \\ln \\left(\\frac{b+a}{b-a}\\right)$\n\nAns. (A)\nTaking an elemental strip of radius x and width dx .\nArea of strip $=2 \\pi \\mathrm{x} \\mathrm{dx}$\n\nNumber of turns through area $=\\frac{N}{b-a} d x$\n$$\\int d B=\\int_{a}^{b} \\frac{\\mu_{0} \\frac{N}{(b-a)} I d x}{2 x}=\\frac{\\mu_{0} N I \\ell n\\left(\\frac{b}{a}\\right)}{2(b-a)}$$\n28. A satellite is moving with a constant speed ' $V$ ' in a circular orbit about the earth. An object of mass 'm' is ejected from the satellite such that it just escapes from the gravitational pull of the earth. At the time of its ejection, the kinetic energy of the object is\n(A) $\\frac{1}{2} m V^{2}$\n(B) $\\mathrm{mV}^{2}$\n(C) $\\frac{3}{2} m V^{2}$\n(D) $2 \\mathrm{mV}^{2}$\n\nAns. (B)\nKE of object $=\\frac{1}{2} m v^{2}$ when it moves with satellite $;$ PE of object $=-\\mathrm{mv}^{2}$\nAt the time of ejection $\\mathrm{KE}+\\mathrm{PE}=0$ to make it escape from gravitational pull.\n$\\mathrm{KE}=\\mathrm{mv}^{2}$.\n\nSECTION-II : (Total Marks : 16)\n(Multiple Correct Answer Type)\nThis section contains 4 multiple choice questions. Each question has four choices (A), (B), (C) and (D) out of which ONE or MORE may be correct."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Two solid spheres A and B of equal volumes but of different densities $\\mathrm{d}_{\\mathrm{A}}$ and $\\mathrm{d}_{\\mathrm{B}}$ are connected by a string. They are fully immersed in a fluid of density $\\mathrm{d}_{\\mathrm{F}}$. They get arranged into an equilibrium state as shown in the figure with a tension in the string. The arrangement is possible only if",
+   "options": {
+    "A": "$\\mathrm{d}_{\\mathrm{A}}<\\mathrm{d}_{\\mathrm{F}}$",
+    "B": "$\\mathrm{d}_{\\mathrm{R}}>\\mathrm{d}_{\\mathrm{p}}$",
+    "C": "$\\mathrm{d}_{\\mathrm{A}}>\\mathrm{d}_{\\mathrm{F}}$",
+    "D": "$\\mathrm{d}_{\\mathrm{A}}+\\mathrm{d}_{\\mathrm{B}}=2 \\mathrm{~d}_{\\mathrm{F}}$\n\nAns. (ABD)\n$$\\begin{array}{l}\nF_{\\text {Buoyant }}=\\left(m_{a}+m_{B}\\right) g ; 2 v d_{F} g=v\\left(d_{A}+d_{B}\\right) g \\\\\nd_{A}+d_{B}=2 d_{F} . \\text { Therefore } a, b, d\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "ABD"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Which of the following statement(s) is/are correct?",
+   "options": {
+    "A": "If the electric field due to a point charge varies as $\\mathrm{r}^{-2.5}$ instead of $\\mathrm{r}^{-2}$, then the Gauss law will still be valid.",
+    "B": "The Gauss law can be used to calculate the field distribution around an electric dipole.",
+    "C": "If the electric field between two point charges is zero somewhere, then the sign of the two charges is the same.",
+    "D": "The work done by the external force in moving a unit positive charge from point A at potential $\\mathrm{V}_{\\mathrm{A}}$ to point B at potential $\\mathrm{V}_{\\mathrm{B}}$ is $\\left(\\mathrm{V}_{\\mathrm{B}}-\\mathrm{V}_{\\mathrm{A}}\\right)$\nAns. (CD)\nThe field distribution for a dipole can not be calculated by using Gauss law only, therefore (C,D)"
+   },
+   "embedded_answer": {
+    "raw": "CD"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 31,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A series $\\mathrm{R}-\\mathrm{C}$ circuit is connected to AC voltage source. Consider two cases ;",
+   "options": {
+    "A": "when C is without a dielectric medium and",
+    "B": "when C is filled with dielectric of constant 4 . The current $\\mathrm{I}_{\\mathrm{R}}$ through the resistor and voltage $\\mathrm{V}_{\\mathrm{c}}$ across the capacitor are compared in the two cases. Which of the following is/are true?\n(A) $I_{R}^{A}>I_{R}^{B}$\n(B) $I_{R}^{A}<I_{R}^{B}$",
+    "C": "$V_{C}^{A}>V_{C}^{B}$",
+    "D": "$V_{C}^{A}<V_{C}^{B}$\n\nAns. (BC)\n$\\mathrm{X}_{\\mathrm{C}}$ decreases therefore impedence decreases and current increases. $\\mathrm{I}_{\\mathrm{B}}>\\mathrm{I}_{\\mathrm{A}}$\nAs $\\mathrm{I}_{\\mathrm{B}}$ increases the voltage across ' R ' increases therefore $\\mathrm{V}_{\\mathrm{C}}$ decreases."
+   },
+   "embedded_answer": {
+    "raw": "BC"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 32,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A thin ring of mass 2 kg and radius 0.5 m is rolling without slipping on a horizontal plane with velocity $1 \\mathrm{~m} / \\mathrm{s}$. A small ball of mass 0.1 kg , moving with velocity $20 \\mathrm{~m} / \\mathrm{s}$ in the opposite direction, hits the ring at a height of 0.75 m and goes vertically up with velocity 10 m/s. Immediately after the collision",
+   "options": {
+    "A": "the ring has pure rotation about its stationary CM",
+    "B": "the ring comes to a complete stop",
+    "C": "friction between the ring and the ground 1s to the left",
+    "D": "there is no friction between the ring and the ground\n\nAns. (AC)\nSince momentum of ball and ring has same magnitude but they are opposite in direction and final momentum of ball after the collision in horizontal direction is zero, therefore the ring has pure rotation about its stationary CM just arrer comsion (assuming non-impulsive friction).\n\nSECTION-III : (Total Marks : 24)\n(Integer Answer Type)\nThis Section contains 6 questions. The answer to each of the questions is a single-digit integer, ranging from 0 to 9. The bubble corresponding to the correct answer is to be darkened in the ORS."
+   },
+   "embedded_answer": {
+    "raw": "AC"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 33,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two batteries of different emfs and different internal resistances are connected as shown. The voltage across AB in volts is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 34,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A series $\\mathrm{R}-\\mathrm{C}$ combination is connected to an AC voltage of angular frequency $\\omega=500 \\mathrm{radian} / \\mathrm{s}$. If the impedance of the R-C circuit is $R \\sqrt{1.25}$, the time constant (in millisecond) of the circuit is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 36,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Water (with refractive index $=\\frac{4}{3}$ ) in a tank is 18 cm deep. Oil of refractive index $\\frac{7}{4}$ lies on water making a convex surrace of radius of curvature ' $\\mathrm{R}=6 \\mathrm{~cm}$ ' as shown. Consider oil to act as a thin lens. An object 'S' is placed 24 cm above water surface. The location of its image is at ' x ' cm above the bottom of the tank. Then 'x' is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 37,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A block of mass 0.18 kg is attached to a spring of force-constant 2 N/m. The coefficient of friction between the block and the floor is 0.1 . Initially the block is at rest and the spring is un-stretched. An impulse is given to the block as shown in the figure. The block slides a distance of 0.06 m and comes to rest for the first time. The initial velocity of the block in $\\mathrm{m} / \\mathrm{s}$ is $\\mathrm{V}=\\mathrm{N} / 10$. Then N is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 38,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A silver sphere of radius 1 cm and work function 4.7 eV is suspended from an insulating thread in freespace. It is under continuous illumination of 200 nm wavelength light. As photoelectrons are emitted, the sphere gets charged and acquires a potential. The maximum number of photoelectrons emitted from the sphere is $\\mathrm{A} \\times 1 \\mathrm{U}^{2}$ (where $1<\\mathrm{A}<10$ ). The value of ' Z ' is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "7"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 39,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "One mole of a monatomic ideal gas is taken through a cycle ABCDA as shown in P-V diagram. Column II gives the characteristics involved in the cycle. Match them with each of the processes given in Column I.\nColumn I",
+   "options": {
+    "A": "Process A→B",
+    "B": "Process B → C",
+    "C": "Process $\\mathrm{C} \\rightarrow \\mathrm{D}$",
+    "D": "Process D→A\n\nColumn II\n(p) Internal energy decreases.\n(q) Internal energy increases.\n(r) Heat is lost.\n(s) Heat is gained.\n(t) Work is done on the gas.\n\nAns. (A) p,r,t (B) p,r (C) q,s (D) r,t\nFor (A) : In process AB (isobaric compression)\nWork is negative, $\\Delta \\mathrm{U}$ is negative, $\\Delta \\mathrm{Q}$ is negative\nFor (B) : BC process (Isochoric)\nWork is zero, $\\Delta \\mathrm{U}$ is negative, $\\Delta \\mathrm{Q}$ is negative\nFor (C) : CD Process (Isobaric expansion)\nWork is negative, $\\Delta \\mathrm{U}$ is positive, $\\Delta \\mathrm{Q}$ is positive\n\nFor (D) : DA Process ( $\\mathrm{V}=$ decreases Isothermal)\nWork is negative, $\\Delta \\mathrm{U}$ is zero, $\\Delta \\mathrm{Q}$ is negative"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 40,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Column I shows four systems, each of the same length L, for producing standing waves. The lowest possible natural frequency of a system is called its fundamental frequency, whose wavelength is denoted as $\\lambda_{\\mathrm{f}}$. Match each system with statements given in Column II describing the nature and wavelength of the standing waves.\nColumn I",
+   "options": {
+    "A": "Pipe closed at one end",
+    "B": "Pipe open at both ends\n\nColumn II\n(p) Longitudinal waves\n(q) Transverse Waves",
+    "C": "Stretched wire clamped at both ends",
+    "D": "Stretched wire clamped at both ends\n(s. $\\quad \\lambda_{\\mathrm{f}}=2 L$\n(t) $\\quad \\lambda_{\\mathrm{f}}=4 \\mathrm{~L}$\n\nAns. (A) p,t (B) p,s (C) q,s (D) q,r\nFor (A): Sound wave is longitudinal wave\n\nFor (B) : Sound wave is longitudinal wave\n\nFor (C) : String wave is transverse\n\nFor (D) :\n\nPart 3 (Mathematics)"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 41,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{P}(6,3)$ be a point on the hyperbola $\\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}-\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1$. If the normal at the point P intersects the $x$-axis at $(9,0)$, then the eccentricity of the hyperbola is -",
+   "options": {
+    "A": "$\\sqrt{\\frac{5}{2}}$",
+    "B": "$\\sqrt{\\frac{3}{2}}$",
+    "C": "$\\sqrt{2}$",
+    "D": "$\\sqrt{3}$\n\nSol. Ans. (B)\nEquation of normal at $\\mathrm{P}(6,3)$ on $\\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}-\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1$ is $\\frac{\\mathrm{a}^{2} \\mathrm{x}}{6}+\\frac{\\mathrm{b}^{2} \\mathrm{y}}{3}=\\mathrm{a}^{2} \\mathrm{e}^{2}$\nIt intersects x -axis at $(9,0)$\n$$\\Rightarrow \\quad \\mathrm{a}^{2} \\frac{9}{6}=\\mathrm{a}^{2} \\mathrm{e}^{2} \\quad \\Rightarrow \\quad \\mathrm{e}=\\sqrt{\\frac{3}{2}}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (B)\nEquation of normal at $\\mathrm{P}(6,3)$ on $\\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}-\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1$ is $\\frac{\\mathrm{a}^{2} \\mathrm{x}}{6}+\\frac{\\mathrm{b}^{2} \\mathrm{y}}{3}=\\mathrm{a}^{2} \\mathrm{e}^{2}$\nIt intersects x -axis at $(9,0)$\n$$\\Rightarrow \\quad \\mathrm{a}^{2} \\frac{9}{6}=\\mathrm{a}^{2} \\mathrm{e}^{2} \\quad \\Rightarrow \\quad \\mathrm{e}=\\sqrt{\\frac{3}{2}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 42,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $(x, y)$ be any point on the parabola $y^{2}=4 x$. Let $P$ be the point that divides the line segment from $(0,0)$ to (x,y) in the ratio 1 : 3. Then the locus of P is-",
+   "options": {
+    "A": "$x^{2}=y$",
+    "B": "$\\mathrm{y}^{2}=2 \\mathrm{x}$",
+    "C": "$\\mathrm{y}^{2}=\\mathrm{x}$",
+    "D": "$\\mathrm{x}^{2}=2 \\mathrm{y}$\n\nSol. Ans. (C)\nLet P be (h, k)\non using section formula $\\mathbf{P}\\left(\\frac{\\mathrm{x}}{4}, \\frac{\\mathrm{y}}{4}\\right)$\n$\\therefore \\quad \\mathrm{h}=\\frac{\\mathrm{x}}{4}$ and $\\mathrm{k}=\\frac{\\mathrm{y}}{4}$\n$\\Rightarrow x=4 \\mathrm{~h}$ and $y=4 \\mathrm{k}$\n$\\because \\quad(\\mathrm{x}, \\mathrm{y})$ lies on $\\mathrm{y}^{2}=4 \\mathrm{x}$\n$\\therefore \\quad 16 \\mathrm{k}^{2}=16 \\mathrm{~h} \\Rightarrow \\quad \\mathrm{k}^{2}=\\mathrm{h}$\nLocus of point $P$ is $y^{2}=x$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (C)\nLet P be (h, k)\non using section formula $\\mathbf{P}\\left(\\frac{\\mathrm{x}}{4}, \\frac{\\mathrm{y}}{4}\\right)$\n$\\therefore \\quad \\mathrm{h}=\\frac{\\mathrm{x}}{4}$ and $\\mathrm{k}=\\frac{\\mathrm{y}}{4}$\n$\\Rightarrow x=4 \\mathrm{~h}$ and $y=4 \\mathrm{k}$\n$\\because \\quad(\\mathrm{x}, \\mathrm{y})$ lies on $\\mathrm{y}^{2}=4 \\mathrm{x}$\n$\\therefore \\quad 16 \\mathrm{k}^{2}=16 \\mathrm{~h} \\Rightarrow \\quad \\mathrm{k}^{2}=\\mathrm{h}$\nLocus of point $P$ is $y^{2}=x$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 43,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}(\\mathrm{x})=\\mathrm{x}^{2}$ and $\\mathrm{g}(\\mathrm{x})=\\sin \\mathrm{x}$ for all $\\mathrm{x} \\in \\mathrm{R}$. Then the set of all x satisfying $(f \\circ \\mathrm{~g} \\circ \\mathrm{~g} \\circ f)(\\mathrm{x})=(\\mathrm{g} \\circ \\mathrm{g} \\circ f)(\\mathrm{x})$, where $(f \\circ \\mathrm{~g})(\\mathrm{x})=f(\\mathrm{~g}(\\mathrm{x}))$, is-",
+   "options": {
+    "A": "$\\pm \\sqrt{\\mathrm{n} \\pi}, \\mathrm{n} \\in\\{0,1,2, \\ldots\\}$",
+    "B": "$\\pm \\sqrt{\\mathrm{n} \\pi}, \\mathrm{n} \\in\\{1,2, \\ldots\\}$",
+    "C": "$\\frac{\\pi}{2}+2 \\mathrm{n} \\pi, \\mathrm{n} \\in\\{\\ldots .,-2,-1,0,1,2, \\ldots .$.",
+    "D": "$2 \\mathrm{n} \\pi, \\mathrm{n} \\in\\{\\ldots .,-2,-1,0,1,2, \\ldots .$.\n\nSol. Ans. (A)\nGiven $f(\\mathrm{x})=\\mathrm{x}^{2} ; \\mathrm{g}(\\mathrm{x})=\\sin \\mathrm{x}$\n$f \\circ g \\circ g \\circ f(x)=\\sin ^{2}\\left(\\sin x^{2}\\right)$ and gogo $f(x)=\\sin \\left(\\sin x^{2}\\right)$\ngiven $f \\operatorname{ogogof}(x)=\\operatorname{gog} o f(x) \\quad \\Rightarrow \\sin ^{2}\\left(\\sin x^{2}\\right)=\\sin \\left(\\sin x^{2}\\right)$\n$\\Rightarrow \\sin \\left(\\sin x^{2}\\right)=0$ or 1 (rejected)\n$$\\sin \\left(\\sin x^{2}\\right)=0 \\quad \\Rightarrow \\quad x^{2}=n \\pi \\Rightarrow x= \\pm \\sqrt{n \\pi} ; x \\in\\{0,1,2,3, \\ldots . .\\}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (A)\nGiven $f(\\mathrm{x})=\\mathrm{x}^{2} ; \\mathrm{g}(\\mathrm{x})=\\sin \\mathrm{x}$\n$f \\circ g \\circ g \\circ f(x)=\\sin ^{2}\\left(\\sin x^{2}\\right)$ and gogo $f(x)=\\sin \\left(\\sin x^{2}\\right)$\ngiven $f \\operatorname{ogogof}(x)=\\operatorname{gog} o f(x) \\quad \\Rightarrow \\sin ^{2}\\left(\\sin x^{2}\\right)=\\sin \\left(\\sin x^{2}\\right)$\n$\\Rightarrow \\sin \\left(\\sin x^{2}\\right)=0$ or 1 (rejected)\n$$\\sin \\left(\\sin x^{2}\\right)=0 \\quad \\Rightarrow \\quad x^{2}=n \\pi \\Rightarrow x= \\pm \\sqrt{n \\pi} ; x \\in\\{0,1,2,3, \\ldots . .\\}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 44,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $f:[-1,2] \\rightarrow[0, \\infty)$ be acontinuous function such that $f(\\mathrm{x})=f(1-\\mathrm{x})$ for all $\\mathrm{x} \\in[-1,2]$. Let $\\mathrm{R}_{1}=\\mid \\mathrm{x} f(\\mathrm{x}) \\mathrm{dx}$, and $\\mathrm{R}_{2}$ be the area of the region bounded by $\\mathrm{y}=f(\\mathrm{x}), \\mathrm{x}=-1, \\mathrm{x}=2$, and the x -axis. Then -",
+   "options": {
+    "A": "$\\mathrm{R}_{1}=2 \\mathrm{R}_{2}$",
+    "B": "$\\mathrm{R}_{1}=3 \\mathrm{R}_{2}$",
+    "C": "$2 R_{1}=R_{2}$",
+    "D": "$3 \\mathrm{R}_{1}=\\mathrm{R}_{2}$\n\nSol. Ans. (C)\n$$\\begin{array}{l} \n\\mathrm{R}_{2}=\\int_{-1}^{2} f(\\mathrm{x}) \\mathrm{dx}, \\quad \\mathrm{R}_{1}=\\int_{-1}^{2} \\mathrm{x} f(\\mathrm{x}) \\mathrm{dx} \\\\\n=\\int_{-1}^{2}(1-\\mathrm{x}) f(1-\\mathrm{x}) \\mathrm{dx} \\quad\\left(\\because \\int_{\\mathrm{a}}^{\\mathrm{b}} f(\\mathrm{x}) \\mathrm{dx}=\\int_{\\mathrm{a}}^{\\mathrm{b}} f(\\mathrm{a}+\\mathrm{b}-\\mathrm{x}) \\mathrm{dx}\\right) \\\\\n=\\int_{-1}^{2}(1-\\mathrm{x}) f(\\mathrm{x}) \\mathrm{dx} \\quad(\\text { given } f(\\mathrm{x})=f(1-\\mathrm{x})) \\\\\n=\\int_{-1}^{2} f(\\mathrm{x}) \\mathrm{dx}-\\int_{-1}^{2} \\mathrm{x} f(\\mathrm{x}) \\mathrm{dx} \\\\\n\\text { or } \\quad \\mathrm{R}_{1}=\\mathrm{R}_{2}-\\mathrm{R}_{1} \\quad \\Rightarrow \\quad 2 \\mathrm{R}_{1}=\\mathrm{R}_{2}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (C)\n$$\\begin{array}{l} \n\\mathrm{R}_{2}=\\int_{-1}^{2} f(\\mathrm{x}) \\mathrm{dx}, \\quad \\mathrm{R}_{1}=\\int_{-1}^{2} \\mathrm{x} f(\\mathrm{x}) \\mathrm{dx} \\\\\n=\\int_{-1}^{2}(1-\\mathrm{x}) f(1-\\mathrm{x}) \\mathrm{dx} \\quad\\left(\\because \\int_{\\mathrm{a}}^{\\mathrm{b}} f(\\mathrm{x}) \\mathrm{dx}=\\int_{\\mathrm{a}}^{\\mathrm{b}} f(\\mathrm{a}+\\mathrm{b}-\\mathrm{x}) \\mathrm{dx}\\right) \\\\\n=\\int_{-1}^{2}(1-\\mathrm{x}) f(\\mathrm{x}) \\mathrm{dx} \\quad(\\text { given } f(\\mathrm{x})=f(1-\\mathrm{x})) \\\\\n=\\int_{-1}^{2} f(\\mathrm{x}) \\mathrm{dx}-\\int_{-1}^{2} \\mathrm{x} f(\\mathrm{x}) \\mathrm{dx} \\\\\n\\text { or } \\quad \\mathrm{R}_{1}=\\mathrm{R}_{2}-\\mathrm{R}_{1} \\quad \\Rightarrow \\quad 2 \\mathrm{R}_{1}=\\mathrm{R}_{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 45,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "If $\\lim _{x \\rightarrow 0}\\left[1+x \\ell n\\left(1+b^{2}\\right)\\right]^{\\frac{1}{x}}=2 b \\sin ^{2} \\theta, b>0$ and $\\theta \\in(-\\pi, \\pi]$, then the value of $\\theta$ is-",
+   "options": {
+    "A": "$\\pm \\frac{\\pi}{4}$",
+    "B": "$\\pm \\frac{\\pi}{3}$",
+    "C": "$\\pm \\frac{\\pi}{6}$",
+    "D": "$\\pm \\frac{\\pi}{2}$\n\nSol. Ans. (D)\n$$\\lim _{x \\rightarrow 0}\\left[1+x \\ell n\\left(1+b^{2}\\right)\\right]^{\\frac{1}{x}}=e^{\\lim _{x \\rightarrow 0} \\frac{x \\ln \\left(1+b^{2}\\right)}{x}}=1+b^{2}$$\n\nHence $1+b^{2}=2 b \\sin ^{2} \\theta$\n$$\\begin{array}{l}\n\\Rightarrow \\sin ^{2} \\theta=\\frac{1}{2}\\left(b+\\frac{1}{b}\\right) \\geq 1 \\\\\n\\therefore \\sin ^{2} \\theta=1 \\Rightarrow \\sin \\theta= \\pm 1 \\quad \\Rightarrow \\theta= \\pm \\frac{\\pi}{2}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (D)\n$$\\lim _{x \\rightarrow 0}\\left[1+x \\ell n\\left(1+b^{2}\\right)\\right]^{\\frac{1}{x}}=e^{\\lim _{x \\rightarrow 0} \\frac{x \\ln \\left(1+b^{2}\\right)}{x}}=1+b^{2}$$",
+     "Hence $1+b^{2}=2 b \\sin ^{2} \\theta$\n$$\\begin{array}{l}\n\\Rightarrow \\sin ^{2} \\theta=\\frac{1}{2}\\left(b+\\frac{1}{b}\\right) \\geq 1 \\\\\n\\therefore \\sin ^{2} \\theta=1 \\Rightarrow \\sin \\theta= \\pm 1 \\quad \\Rightarrow \\theta= \\pm \\frac{\\pi}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 46,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The circle passing through the point $(-1,0)$ and touching the $y$-axis at $(0,2)$ also passes through the point -",
+   "options": {
+    "A": "$\\left(-\\frac{3}{2}, 0\\right)$",
+    "B": "$\\left(-\\frac{5}{2}, 2\\right)$",
+    "C": "$\\left(-\\frac{3}{2}, \\frac{5}{2}\\right)$",
+    "D": "$(-4,0)$\n\nSol. Ans.(D)\nFamily of circle which touches $y$-axis at $(0,2)$ is\n$$x^{2}+(y-2)^{2}+\\lambda x=0$$\n\nPassing through $(-1,0)$\n$$\\begin{array}{l}\n\\Rightarrow 1+4-\\lambda=0 \\quad \\Rightarrow \\quad \\lambda=5 \\\\\n\\therefore \\quad x^{2}+y^{2}+5 x-4 y+4=0\n\\end{array}$$\nwhich satisfy the point $(-4,0)$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans.(D)\nFamily of circle which touches $y$-axis at $(0,2)$ is\n$$x^{2}+(y-2)^{2}+\\lambda x=0$$",
+     "Passing through $(-1,0)$\n$$\\begin{array}{l}\n\\Rightarrow 1+4-\\lambda=0 \\quad \\Rightarrow \\quad \\lambda=5 \\\\\n\\therefore \\quad x^{2}+y^{2}+5 x-4 y+4=0\n\\end{array}$$\nwhich satisfy the point $(-4,0)$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 47,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\omega \\neq 1$ be a cube root of unity and $S$ be the set of all non-singular matrices of the form $\\left[\\begin{array}{ccc}1 & a & b \\\\ \\omega & 1 & c \\\\ \\omega^{2} & \\omega & 1\\end{array}\\right]$, where each of a,b and c is either $\\omega$ or $\\omega^{2}$. Then the number of distinct matrices in the set S is-",
+   "options": {
+    "A": "2",
+    "B": "6",
+    "C": "4",
+    "D": "8\n\nSol. Ans.(A)\n$$\\begin{array}{l}\n\\left|\\begin{array}{ccc}\n1 & a & b \\\\\n\\omega & 1 & c \\\\\n\\omega^{2} & \\omega & 1\n\\end{array}\\right| \\\\\n=1-c \\omega-a\\left(\\omega-\\omega^{2} c\\right)=(1-c \\omega)-a \\omega(1-c \\omega)=(1-c \\omega)(1-a \\omega)\n\\end{array}$$\nfor non singular matrix\n$$\\begin{aligned}\n& c \\neq \\frac{1}{\\omega} \\& a \\neq \\frac{1}{\\omega} \\\\\n\\Rightarrow & c \\neq \\omega^{2}, a \\neq \\omega^{2} \\\\\n\\Rightarrow & a \\& c \\text { must } b e \\omega \\& b \\text { can be } \\omega \\text { or } \\omega^{2} \\\\\n\\therefore & \\text { total matrices }=2\n\\end{aligned}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans.(A)\n$$\\begin{array}{l}\n\\left|\\begin{array}{ccc}\n1 & a & b \\\\\n\\omega & 1 & c \\\\\n\\omega^{2} & \\omega & 1\n\\end{array}\\right| \\\\\n=1-c \\omega-a\\left(\\omega-\\omega^{2} c\\right)=(1-c \\omega)-a \\omega(1-c \\omega)=(1-c \\omega)(1-a \\omega)\n\\end{array}$$\nfor non singular matrix\n$$\\begin{aligned}\n& c \\neq \\frac{1}{\\omega} \\& a \\neq \\frac{1}{\\omega} \\\\\n\\Rightarrow & c \\neq \\omega^{2}, a \\neq \\omega^{2} \\\\\n\\Rightarrow & a \\& c \\text { must } b e \\omega \\& b \\text { can be } \\omega \\text { or } \\omega^{2} \\\\\n\\therefore & \\text { total matrices }=2\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 48,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A value of $b$ for which the equations\n$$\\begin{array}{l}\nx^{2}+b x-1=0 \\\\\nx^{2}+x+b=0\n\\end{array}$$\nhave one root in common is -",
+   "options": {
+    "A": "$-\\sqrt{2}$",
+    "B": "$-\\mathrm{i} \\sqrt{3}$",
+    "C": "$\\mathrm{i} \\sqrt{5}$",
+    "D": "$\\sqrt{2}$\n\nSol. Ans.(B)\n$$\\begin{array}{l}\n\\frac{x^{2}}{b^{2}+1}=\\frac{-x}{b+1}=\\frac{1}{1-b} \\\\\n\\Rightarrow \\quad x=\\frac{b+1}{b-1}\n\\end{array}$$\n$$\\& \\mathrm{x}^{2}=\\frac{\\mathrm{b}^{2}+1}{1-\\mathrm{b}}$$\nfrom (i) \\& (ii)\n$$\\begin{aligned}\n& \\left(\\frac{b+1}{b-1}\\right)^{2}=\\frac{b^{2}+1}{1-b} \\\\\n\\Rightarrow & \\left(b^{2}+1\\right)(1-b)=(b+1)^{2} \\quad \\Rightarrow \\quad-b^{3}+1+b^{2}-b=b^{2}+1+2 b \\\\\n\\Rightarrow & -b^{3}-3 b=0 \\quad \\Rightarrow b\\left(b^{2}+3\\right)=0 \\\\\n\\Rightarrow & b=0, \\quad b= \\pm \\sqrt{3 i}\n\\end{aligned}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans.(B)\n$$\\begin{array}{l}\n\\frac{x^{2}}{b^{2}+1}=\\frac{-x}{b+1}=\\frac{1}{1-b} \\\\\n\\Rightarrow \\quad x=\\frac{b+1}{b-1}\n\\end{array}$$\n$$\\& \\mathrm{x}^{2}=\\frac{\\mathrm{b}^{2}+1}{1-\\mathrm{b}}$$\nfrom (i) \\& (ii)\n$$\\begin{aligned}\n& \\left(\\frac{b+1}{b-1}\\right)^{2}=\\frac{b^{2}+1}{1-b} \\\\\n\\Rightarrow & \\left(b^{2}+1\\right)(1-b)=(b+1)^{2} \\quad \\Rightarrow \\quad-b^{3}+1+b^{2}-b=b^{2}+1+2 b \\\\\n\\Rightarrow & -b^{3}-3 b=0 \\quad \\Rightarrow b\\left(b^{2}+3\\right)=0 \\\\\n\\Rightarrow & b=0, \\quad b= \\pm \\sqrt{3 i}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 49,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "If $f(x)=\\left\\{\\begin{array}{cc}-x-\\frac{\\pi}{2}, & x \\leq-\\frac{\\pi}{2} \\\\ -\\cos x, & -\\frac{\\pi}{2}<x \\leq 0 \\\\ x-1, & 0<x \\leq 1 \\\\ \\ln x, & x>1\\end{array}\\right.$ then -",
+   "options": {
+    "A": "$f(\\mathrm{x})$ is continuous at $\\mathrm{x}=-\\frac{\\pi}{2}$",
+    "B": "$f(\\mathrm{x})$ is mut thote entiable at $\\mathrm{x}=0$",
+    "C": "$f(\\mathrm{x})$ is differentiable at $\\mathrm{x}=1$",
+    "D": "$f(\\mathrm{x})$ is differentiable at $\\mathrm{x}=-\\frac{3}{2}$\n\nSol. Ans.(A,B,C,D)\n$$\\begin{array}{l}\nf\\left(-\\frac{\\pi^{-}}{2}\\right)=0, f\\left(-\\frac{\\pi^{+}}{2}\\right)=0 \\\\\nf^{\\prime}(x)=\\left\\{\\begin{array}{cc}\n-1 & x \\leq \\frac{\\pi}{2} \\\\\n\\sin x & -\\frac{\\pi}{2}<x \\leq 0 \\\\\n1 & 0<x \\leq 1 \\\\\n\\frac{1}{x} & x>1\n\\end{array}\\right.\n\\end{array}$$\n$f^{\\prime}\\left(0^{-}\\right)=0, f^{\\prime}\\left(0^{+}\\right)=1 \\therefore$ not differentiable at $\\mathrm{x}=0 f^{\\prime}\\left(1^{-}\\right)=1, f^{\\prime}\\left(1^{+}\\right)=1 \\quad \\therefore$ differentiable at $\\mathrm{x}=1$ as $-\\frac{3}{2} \\in\\left(-\\frac{\\pi}{2}, 0\\right)$\n\n$$f^{\\prime}(x)=\\left\\{\\begin{array}{cc}\n-1 & x \\leq \\frac{\\pi}{2} \\\\\n\\sin x & -\\frac{\\pi}{2}<x \\leq 0 \\\\\n1 & 0<x \\leq 1 \\\\\n\\frac{1}{x} & x>1\n\\end{array}\\right.$$\n$f^{\\prime}\\left(0^{-}\\right)=0, f^{\\prime}\\left(0^{+}\\right)=1 \\therefore$ not differentiable at $\\mathrm{x}=0$\n$f^{\\prime}\\left(1^{-}\\right)=1, f^{\\prime}\\left(1^{+}\\right)=1 \\quad \\therefore$ differentiable at $\\mathrm{x}=1$\nas $-\\frac{3}{2} \\in\\left(-\\frac{\\pi}{2}, 0\\right)$\n$f^{\\prime}(\\mathrm{x})=\\sin \\mathrm{x}$ which is differentiable at $\\mathrm{x}=-\\frac{3}{2}$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans.(A,B,C,D)\n$$\\begin{array}{l}\nf\\left(-\\frac{\\pi^{-}}{2}\\right)=0, f\\left(-\\frac{\\pi^{+}}{2}\\right)=0 \\\\\nf^{\\prime}(x)=\\left\\{\\begin{array}{cc}\n-1 & x \\leq \\frac{\\pi}{2} \\\\\n\\sin x & -\\frac{\\pi}{2}<x \\leq 0 \\\\\n1 & 0<x \\leq 1 \\\\\n\\frac{1}{x} & x>1\n\\end{array}\\right.\n\\end{array}$$\n$f^{\\prime}\\left(0^{-}\\right)=0, f^{\\prime}\\left(0^{+}\\right)=1 \\therefore$ not differentiable at $\\mathrm{x}=0 f^{\\prime}\\left(1^{-}\\right)=1, f^{\\prime}\\left(1^{+}\\right)=1 \\quad \\therefore$ differentiable at $\\mathrm{x}=1$ as $-\\frac{3}{2} \\in\\left(-\\frac{\\pi}{2}, 0\\right)$",
+     "$$f^{\\prime}(x)=\\left\\{\\begin{array}{cc}\n-1 & x \\leq \\frac{\\pi}{2} \\\\\n\\sin x & -\\frac{\\pi}{2}<x \\leq 0 \\\\\n1 & 0<x \\leq 1 \\\\\n\\frac{1}{x} & x>1\n\\end{array}\\right.$$\n$f^{\\prime}\\left(0^{-}\\right)=0, f^{\\prime}\\left(0^{+}\\right)=1 \\therefore$ not differentiable at $\\mathrm{x}=0$\n$f^{\\prime}\\left(1^{-}\\right)=1, f^{\\prime}\\left(1^{+}\\right)=1 \\quad \\therefore$ differentiable at $\\mathrm{x}=1$\nas $-\\frac{3}{2} \\in\\left(-\\frac{\\pi}{2}, 0\\right)$\n$f^{\\prime}(\\mathrm{x})=\\sin \\mathrm{x}$ which is differentiable at $\\mathrm{x}=-\\frac{3}{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 50,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let L be a normal to the parabola $\\mathrm{y}^{2}=4 \\mathrm{x}$. If L passes through the point $(9,6)$, then L is given by-",
+   "options": {
+    "A": "$\\mathrm{y}-\\mathrm{x}+3=0$",
+    "B": "$y+3 x-33=0$",
+    "C": "$y+x-15=0$",
+    "D": "$\\mathrm{y}-2 \\mathrm{x}+12=0$\n\nSol. Ans. (A,B,D)\nEquation of normal is $\\mathrm{y}=\\mathrm{mx}-2 \\mathrm{~m}-\\mathrm{m}^{3}$\nIt passes through the point $(9,6)$ then\n$$\\begin{array}{l}\n6=9 m-2 m-m^{3} \\\\\n\\Rightarrow m^{3}-7 m+6=0 \\Rightarrow(m-1)(m-2)(m+3)=0 \\Rightarrow m=1,2,-3\n\\end{array}$$\n\nEquations of normals are $\\quad y-x+3=0, y+3 x-33=0$ \\& $y-2 x+12=0$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (A,B,D)\nEquation of normal is $\\mathrm{y}=\\mathrm{mx}-2 \\mathrm{~m}-\\mathrm{m}^{3}$\nIt passes through the point $(9,6)$ then\n$$\\begin{array}{l}\n6=9 m-2 m-m^{3} \\\\\n\\Rightarrow m^{3}-7 m+6=0 \\Rightarrow(m-1)(m-2)(m+3)=0 \\Rightarrow m=1,2,-3\n\\end{array}$$",
+     "Equations of normals are $\\quad y-x+3=0, y+3 x-33=0$ \\& $y-2 x+12=0$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 51,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let E and F be two independent events. The probability that exactly one of them occurs is $\\frac{11}{25}$ and the probability of none of them occurring is $\\frac{2}{25}$. If $\\mathrm{P}(\\mathrm{T})$ denotes the probability of occurrence of the event T , then -",
+   "options": {
+    "A": "$\\mathrm{P}(\\mathrm{E})=\\frac{4}{5}, \\mathrm{P}(\\mathrm{F})=\\frac{3}{5}$",
+    "B": "$\\mathrm{P}(\\mathrm{E})=\\frac{1}{5}, \\mathrm{P}(\\mathrm{F})=\\frac{2}{5}$",
+    "C": "$\\mathrm{P}(\\mathrm{E})=\\frac{2}{5}, \\mathrm{P}(\\mathrm{F})=\\frac{1}{5}$",
+    "D": "$\\mathrm{P}(\\mathrm{E})=\\frac{3}{5}, \\mathrm{P}(\\mathrm{F})=\\frac{4}{5}$\n\nSol. Ans. (A,D)\nLet $\\mathrm{P}(\\mathrm{E})=\\mathrm{x}$ \\& $\\mathrm{P}(\\mathrm{F})=\\mathrm{y}$\nAccording to given condition\n$$\\begin{array}{l}\nx(1-y)+y(1-x)=\\frac{11}{25} \\\\\n\\Rightarrow x+y-2 x y=\\frac{11}{25}\n\\end{array}$$\n\nAlso, $\\quad(1-\\mathrm{x})(1-\\mathrm{y})=\\frac{2}{5}$\n$$\\Rightarrow \\quad x+y-x y=\\frac{23}{25}$$\nfrom (i) \\& (ii)\n$$x y=\\frac{12}{25}, x+y=\\frac{7}{5}$$\n\nSolving this $\\mathrm{x}=\\frac{4}{5}, \\mathrm{y}=\\frac{3}{5}$ or $\\mathrm{x}=\\frac{3}{5}, \\mathrm{y}=\\frac{4}{5}$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (A,D)\nLet $\\mathrm{P}(\\mathrm{E})=\\mathrm{x}$ \\& $\\mathrm{P}(\\mathrm{F})=\\mathrm{y}$\nAccording to given condition\n$$\\begin{array}{l}\nx(1-y)+y(1-x)=\\frac{11}{25} \\\\\n\\Rightarrow x+y-2 x y=\\frac{11}{25}\n\\end{array}$$",
+     "Also, $\\quad(1-\\mathrm{x})(1-\\mathrm{y})=\\frac{2}{5}$\n$$\\Rightarrow \\quad x+y-x y=\\frac{23}{25}$$\nfrom (i) \\& (ii)\n$$x y=\\frac{12}{25}, x+y=\\frac{7}{5}$$",
+     "Solving this $\\mathrm{x}=\\frac{4}{5}, \\mathrm{y}=\\frac{3}{5}$ or $\\mathrm{x}=\\frac{3}{5}, \\mathrm{y}=\\frac{4}{5}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 52,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $f:(0,1) \\rightarrow \\mathrm{R}$ be defined by $f(\\mathrm{x})=\\frac{\\mathrm{b}-\\mathrm{x}}{1-\\mathrm{bx}}$, where b is a constant such that $0<\\mathrm{b}<1$. Then",
+   "options": {
+    "A": "$f$ is not invertible on $(0,1)$",
+    "B": "$f \\neq f^{-1}$ on $(0,1)$ and $f^{\\prime}(\\mathrm{b})=\\frac{1}{f^{\\prime}(0)}$",
+    "C": "$f=f^{-1}$ on $(0,1)$ and $f^{\\prime}(\\mathrm{b})=\\frac{1}{f^{\\prime}(0)}$",
+    "D": "$f^{-1}$ is differentiable on $(0,1)$\n\nSol. Ans. (A)\n$$\\begin{array}{l}\nf:(0,1) \\rightarrow \\mathrm{R} \\\\\nf(\\mathrm{x})=\\frac{\\mathrm{b}-\\mathrm{x}}{1-\\mathrm{bx}} \\quad \\mathrm{~b} \\in(0,1) \\\\\n\\Rightarrow f^{\\prime}(\\mathrm{x})=\\frac{\\mathrm{b}^{2}-1}{(\\mathrm{bx}-1)^{2}} \\\\\n\\Rightarrow f^{\\prime}(\\mathrm{x})<0 \\forall \\mathrm{x} \\in(0,1)\n\\end{array}$$\nhence $f(\\mathrm{x})$ is decreasing function\nhence its range ( $-1, b$ )\n⇒ co-domain $\\neq$ range\n$\\Rightarrow \\quad f(\\mathrm{x})$ is non-invertible function"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (A)\n$$\\begin{array}{l}\nf:(0,1) \\rightarrow \\mathrm{R} \\\\\nf(\\mathrm{x})=\\frac{\\mathrm{b}-\\mathrm{x}}{1-\\mathrm{bx}} \\quad \\mathrm{~b} \\in(0,1) \\\\\n\\Rightarrow f^{\\prime}(\\mathrm{x})=\\frac{\\mathrm{b}^{2}-1}{(\\mathrm{bx}-1)^{2}} \\\\\n\\Rightarrow f^{\\prime}(\\mathrm{x})<0 \\forall \\mathrm{x} \\in(0,1)\n\\end{array}$$\nhence $f(\\mathrm{x})$ is decreasing function\nhence its range ( $-1, b$ )\n⇒ co-domain $\\neq$ range\n$\\Rightarrow \\quad f(\\mathrm{x})$ is non-invertible function"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 53,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{y}^{\\prime}(\\mathrm{x})+\\mathrm{y}(\\mathrm{x}) \\mathrm{g}^{\\prime}(\\mathrm{x})=\\mathrm{g}(\\mathrm{x}) \\mathrm{g}^{\\prime}(\\mathrm{x}), \\mathrm{y}(0)=0, \\mathrm{x} \\in \\mathrm{R}$, where $\\mathrm{f}^{\\prime}(\\mathrm{x})$ denotes $\\frac{\\mathrm{d} f(\\mathrm{x})}{\\mathrm{dx}}$ and $\\mathrm{g}(\\mathrm{x})$ is a given non-constant differentiable function on R with $\\mathrm{g}(0)=\\mathrm{g}(2)=0$. Then the value of $\\mathrm{y}(2)$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. 0\nGiven $\\mathrm{y}(0)=0, \\mathrm{~g}(0)=\\mathrm{g}(2)=0$\nLet $\\mathrm{y}^{\\prime}(\\mathrm{x})+\\mathrm{y}(\\mathrm{x}) \\cdot \\mathrm{g}^{\\prime}(\\mathrm{x})=\\mathrm{g}(\\mathrm{x}) \\mathrm{g}^{\\prime}(\\mathrm{x}) \\quad \\Rightarrow \\quad \\mathrm{y}^{\\prime}(\\mathrm{x})+(\\mathrm{y}(\\mathrm{x})-\\mathrm{g}(\\mathrm{x})) \\mathrm{g}^{\\prime}(\\mathrm{x})=0$\n$$\\begin{aligned}\n\\Rightarrow & \\frac{y^{\\prime}(x)}{g^{\\prime}(x)}+y(x)=g(x) \\Rightarrow \\frac{d y(x)}{d g(x)}+y(x)=g(x) \\\\\n\\Rightarrow & \\text { I.F. }=e^{\\int d(g(x))}=e^{g(x)} \\Rightarrow y(x) \\cdot e^{g(x)}=\\int e^{g(x)} g(x) \\cdot \\operatorname{dg}(x) \\\\\n& y(x) \\cdot e^{g(x)}=g(x) \\cdot e^{g(x)}-e^{g(x)}+c\n\\end{aligned}$$\nput $\\mathrm{x}=0$\n$$\\begin{array}{l}\n\\Rightarrow 0=0-1+c \\quad \\Rightarrow \\quad c=1 \\\\\n\\Rightarrow y(2) \\cdot e^{g(2)}=g(2) e^{g(2)}-e^{g(2)}+1 \\\\\n\\Rightarrow y(2)=0-e^{0}+1 \\quad \\Rightarrow y(2)=0\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 54,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $\\vec{a}=-\\hat{i}-\\hat{k}, \\vec{b}=-\\hat{i}+\\hat{j}$ and $\\vec{c}=\\hat{i}+2 \\hat{j}+3 \\hat{k}$ be three given vectors. If $\\vec{r}$ is a vector such that $\\vec{r} \\times \\vec{b}=\\vec{c} \\times \\vec{b}$ and $\\overrightarrow{\\mathrm{r}} . \\overrightarrow{\\mathrm{a}}=0$, then the value of $\\overrightarrow{\\mathrm{r}} . \\overrightarrow{\\mathrm{b}}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. 9\n$$\\begin{array}{l}\n\\vec{a}=-\\hat{i}-\\hat{k} \\\\\n\\vec{b}=-\\hat{i}+\\hat{j} \\\\\n\\vec{c}=\\hat{i}+2 \\hat{j}+3 \\hat{k} \\\\\n\\vec{r} \\times \\vec{b}=\\vec{c} \\times \\vec{b}\n\\end{array}$$",
+     "Taking cross product by $\\overrightarrow{\\mathrm{a}}$\n$$\\begin{array}{l}\n(\\vec{r} \\times \\vec{b}) \\times \\vec{a}=(\\vec{c} \\times \\vec{b}) \\times \\vec{a} \\\\\n\\Rightarrow \\quad(\\vec{r} \\cdot \\vec{a}) \\vec{b}-(\\vec{b} \\cdot \\vec{a}) \\vec{r}=(\\vec{c} \\cdot \\vec{a}) \\vec{b})-(\\vec{b} \\cdot \\vec{a}) \\vec{c} \\Rightarrow 0-\\vec{r}=(-1-3)(-\\hat{i}+\\hat{j})-(1)(\\hat{i}+2 \\hat{j}+3 \\hat{k}) \\\\\n\\vec{r}=-3 \\hat{i}+6 \\hat{j}+3 \\hat{k} \\\\\n\\vec{r} \\cdot \\vec{b}=3+6=9\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 55,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $\\omega=\\mathrm{e}^{\\mathrm{i} \\pi / 3}$, and $\\mathrm{a}, \\mathrm{b}, \\mathrm{c}, \\mathrm{x}, \\mathrm{y}, \\mathrm{z}$ be non-zero complex numbers such that\n$$\\begin{array}{l}\na+b+c=x \\\\\na+b \\omega+c \\omega^{2}=y \\\\\na+b \\omega^{2}+c \\omega=z .\n\\end{array}$$\nThen the value of $\\frac{|x|^{2}+|y|^{2}+|z|^{2}}{|a|^{2}+|b|^{2}+|c|^{2}}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. 3\nComment : If $\\omega=\\mathrm{e}^{\\mathrm{i} \\pi / 3}$ then $\\frac{|\\mathrm{x}|^{2}+|\\mathrm{y}|^{2}+|\\mathrm{z}|^{2}}{|\\mathrm{a}|^{2}+|\\mathrm{b}|^{2}+|\\mathrm{c}|^{2}}$ is not always an integer, infect its value depends upon a,b,c",
+     "⇒ Let $\\omega=\\mathrm{e}^{\\mathrm{i} 2 \\pi / 3}$\n$$\\begin{aligned}\n|\\mathrm{x}|^{2}= & (\\mathrm{a}+\\mathrm{b}+\\mathrm{c})(\\overline{\\mathrm{a}}+\\overline{\\mathrm{b}}+\\overline{\\mathrm{c}}) \\\\\n= & |\\mathrm{a}|^{2}+|\\mathrm{b}|^{2}+|\\mathrm{c}|^{2}+\\mathrm{a} \\overline{\\mathrm{~b}}+\\mathrm{a} \\overline{\\mathrm{c}}+\\mathrm{b} \\overline{\\mathrm{a}}+\\mathrm{b} \\overline{\\mathrm{c}}+\\mathrm{c} \\overline{\\mathrm{a}}+\\mathrm{c} \\overline{\\mathrm{~b}} \\\\\n|\\mathrm{y}|^{2}= & \\left(\\mathrm{a}+\\mathrm{b} \\omega+\\mathrm{c} \\omega^{2}\\right)\\left(\\overline{\\mathrm{a}}+\\overline{\\mathrm{b}} \\omega^{2}+\\overline{\\mathrm{c}} \\omega\\right) \\\\\n= & |\\mathrm{a}|^{2}+|\\mathrm{b}|^{2}+|\\mathrm{c}|^{2}+\\mathrm{a} \\overline{\\mathrm{~b}} \\omega^{2}+\\mathrm{a} \\overline{\\mathrm{c}} \\omega+\\mathrm{b} \\overline{\\mathrm{a}} \\omega+\\mathrm{b} \\overline{\\mathrm{c}} \\omega^{2}+\\mathrm{c} \\overline{\\mathrm{a}} \\omega^{2}+\\mathrm{c} \\overline{\\mathrm{~b}} \\omega \\\\\n|\\mathrm{z}|^{2}= & \\left(\\mathrm{a}+\\mathrm{b} \\omega^{2}+\\mathrm{c} \\omega\\right)\\left(\\overline{\\mathrm{a}}+\\overline{\\mathrm{b}} \\omega+\\overline{\\mathrm{c}} \\omega^{2}\\right) \\\\\n& =|\\mathrm{a}|^{2}+|\\mathrm{b}|^{2}+\\left|\\mathrm{c}^{2}\\right|+\\mathrm{a} \\overline{\\mathrm{~b}} \\omega+\\mathrm{a} \\overline{\\mathrm{c}} \\omega^{2}+\\mathrm{b} \\overline{\\mathrm{a}} \\omega^{2}+\\mathrm{b} \\overline{\\mathrm{c}} \\omega+\\mathrm{c} \\overline{\\mathrm{a}} \\omega+\\mathrm{c} \\overline{\\mathrm{~b}} \\omega^{2} \\\\\n\\therefore & |\\mathrm{x}|^{2}+|\\mathrm{y}|^{2}+|\\mathrm{z}|^{2}=3\\left(|\\mathrm{a}|^{2}+|\\mathrm{b}|^{2}+|\\mathrm{c}|^{2}\\right) \\\\\n\\Rightarrow & \\frac{|\\mathrm{x}|^{2}+|\\mathrm{y}|^{2}+|\\mathrm{z}|^{2}}{|\\mathrm{a}|^{2}+|\\mathrm{b}|^{2}+|\\mathrm{c}|^{2}}=3\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 56,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let M be $3 \\times 3$ matrix satisfying\n$$\\mathrm{M}\\left[\\begin{array}{l}\n0 \\\\\n1 \\\\\n0\n\\end{array}\\right]=\\left[\\begin{array}{c}\n-1 \\\\\n2 \\\\\n3\n\\end{array}\\right], \\mathrm{M}\\left[\\begin{array}{c}\n1 \\\\\n-1 \\\\\n0\n\\end{array}\\right]=\\left[\\begin{array}{c}\n1 \\\\\n1 \\\\\n-1\n\\end{array}\\right] \\text { and } \\mathrm{M}=\\left[\\begin{array}{l}\n1 \\\\\n1 \\\\\n1\n\\end{array}\\right]=\\left[\\begin{array}{c}\n0 \\\\\n0 \\\\\n12\n\\end{array}\\right]$$\nThen the sum of the diagonal entries of M is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. 9\n$$\\text { Let } \\mathrm{M}=\\left[\\begin{array}{ccc}\n\\mathrm{a} & \\mathrm{~b} & \\mathrm{c} \\\\\n\\mathrm{x} & \\mathrm{y} & \\mathrm{z} \\\\\n\\ell & \\mathrm{~m} & \\mathrm{n}\n\\end{array}\\right]$$\naccording to question\n$$\\begin{aligned}\n& {\\left[\\begin{array}{ccc}\n\\mathrm{a} & \\mathrm{~b} & \\mathrm{c} \\\\\n\\mathrm{x} & \\mathrm{y} & \\mathrm{z} \\\\\n\\ell & \\mathrm{~m} & \\mathrm{n}\n\\end{array}\\right]\\left[\\begin{array}{l}\n0 \\\\\n1 \\\\\n0\n\\end{array}\\right]=} \\\\\n\\Rightarrow & \\mathrm{b}=-1, \\mathrm{y}=2, \\mathrm{~m}=3\n\\end{aligned}$$",
+     "$\\begin{array}{l} \\Rightarrow \\quad\\left[\\begin{array}{ccc}a & b & c \\\\ x & y & z \\\\ \\ell & m & n\\end{array}\\right]\\left[\\begin{array}{c}1 \\\\ -1 \\\\ 0\\end{array}\\right]=\\left[\\begin{array}{c}1 \\\\ 1 \\\\ -1\\end{array}\\right] \\\\ \\begin{aligned} a-b & =1 \\\\ x-y & =1 \\\\ \\ell-m & =-1\\end{aligned} \\\\ \\text { from }(1) a=0 \\\\ x=3 \\\\ \\ell=2 \\\\ {\\left[\\begin{array}{ccc}a & b & c \\\\ x & y & z \\\\ \\ell & m & n\\end{array}\\right]\\left[\\begin{array}{l}1 \\\\ 1 \\\\ 1\\end{array}\\right]=\\left[\\begin{array}{c}0 \\\\ 0 \\\\ 12\\end{array}\\right] }\\end{array}$",
+     "$$\\begin{aligned}\n& \\ell+\\mathrm{m}+\\mathrm{n}=12 \\\\\n\\Rightarrow & 2+3+\\mathrm{n}=12 \\quad \\Rightarrow \\mathrm{n}=7\n\\end{aligned}$$",
+     "Now $a+y+n=0+2+7=9$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 57,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The number of distinct real roots of $x^{4}-4 x^{3}+12 x^{2}+x-1=0$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. 2\nLet $f(x)=x^{4}-4 x^{3}+12 x^{2}+x-1$\n$$\\begin{aligned}\nf^{\\prime}(x) & =4 x^{3}-12 x^{2}+24 x \\\\\nf^{\\prime \\prime}(x) & =12 x^{2}-24 x+24 \\\\\n& =12\\left(x^{2}-2 x+2\\right)>0\n\\end{aligned}$$\n$\\Rightarrow f^{\\prime}(\\mathrm{x})$ is strictly increasing function\n$\\because \\quad f^{\\prime}(\\mathrm{x})$ is cubic polynomial\nhence number of roots of $f^{\\prime}(\\mathrm{x})=0$ is 1\n⇒ Number of maximum roots of $f(\\mathrm{x})=0$ are 2\nNow $f(0)=-1, f(1)=9, f(-1)=15$\n$\\Rightarrow f(\\mathrm{x})$ has exactly 2 distinct real roots."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 58,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The straight line $2 \\mathrm{x}-3 \\mathrm{y}=1$ divides the circular region $\\mathrm{x}^{2}+\\mathrm{y}^{2} \\leq 6$ into two parts. If\n$$\\mathrm{S}=\\left\\{\\left(2, \\frac{3}{4}\\right),\\left(\\frac{5}{2}, \\frac{3}{4}\\right),\\left(\\frac{1}{4},-\\frac{1}{4}\\right),\\left(\\frac{1}{8}, \\frac{1}{4}\\right)\\right\\},$$\nthen the number of point(s) in $S$ lying inside the smaller part is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. 2\nIf the point lies inside the smaller part, then origin and point should give opposite signs w.r.t. line \\& point should lie inside the circle.\nfor origin : $2 \\times 0-3 \\times 0-1=-1$ (-ve) for $\\left(2, \\frac{3}{4}\\right): 2 \\times 2-3 \\times \\frac{3}{4}-1=\\frac{3}{4}(+\\mathrm{ve})$; point lies inside the circle for $\\left(\\frac{5}{2}, \\frac{3}{4}\\right): 2 \\times \\frac{5}{2}-3 \\times \\frac{3}{4}-1=\\frac{7}{4}$ (+ve) ; point lies outside the circle",
+     "For $\\left(\\frac{1}{4},-\\frac{1}{4}\\right): 2 \\times \\frac{1}{4}-3\\left(-\\frac{1}{4}\\right)-1=\\frac{1}{4}$ (+ve); point lies inside the circle\nFor $\\left(\\frac{1}{8}, \\frac{1}{4}\\right): 2 \\times \\frac{1}{8}-3\\left(\\frac{1}{4}\\right)-1=\\frac{-3}{2}$ (-ve) ; point lies inside the circle.\n$\\therefore 2$ points lie inside smaller part."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 59,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Match the statements given in Column I with the values given in Column II\nColumn I\nColumn II",
+   "options": {
+    "A": "If $\\overrightarrow{\\mathrm{a}}=\\hat{\\mathrm{j}}+\\sqrt{3} \\hat{\\mathrm{k}}, \\overrightarrow{\\mathrm{b}}=-\\hat{\\mathrm{j}}+\\sqrt{3} \\hat{\\mathrm{k}}$ and $\\overrightarrow{\\mathrm{c}}=2 \\sqrt{3} \\hat{\\mathrm{k}}$ form\n(p) $\\frac{\\pi}{6}$ a triangle, then the internal angle of the triangle between $\\vec{a}$ and $\\vec{b}$ is",
+    "B": "If $\\int_{\\mathrm{a}}^{\\mathrm{b}}(f(\\mathrm{x})-3 \\mathrm{x}) \\mathrm{dx}=\\mathrm{a}^{2}-\\mathrm{b}^{2}$, then the value of $f\\left(\\frac{\\pi}{6}\\right)$ is\n(q) $\\frac{2 \\pi}{3}$",
+    "C": "The value of $\\frac{\\pi^{2}}{\\ln 3} \\int_{7 / 6}^{5 / 6} \\sec (\\pi \\mathrm{x}) \\mathrm{dx}$ is\n(r) $\\frac{\\pi}{3}$",
+    "D": "The maximum value of $\\left|\\operatorname{Arg}\\left(\\frac{1}{1-z}\\right)\\right|$ for\n(s) $\\pi |z|=1, z \\neq 1$ is given by\n(t) $\\frac{\\pi}{2}$\n\nSol. Ans. (A) → (q); (B) → (p); (C) → (s); (D) → (t)\n(A)\n$$\\begin{array}{l}\n|\\vec{a}|=2 \\\\\n|\\vec{b}|=2 \\\\\n|\\vec{c}|=2 \\sqrt{3}\n\\end{array}$$\n$$\\cos \\theta=\\frac{|\\vec{a}|^{2}+|\\vec{b}|^{2}-|\\vec{c}|^{2}}{2|\\vec{a}||\\vec{b}|}=\\frac{4+4-12}{2 \\cdot 2 \\cdot 2}=\\frac{-1}{2} \\quad \\Rightarrow \\quad \\theta=\\frac{2 \\pi}{3}$$\n(B) $\\int_{\\mathrm{a}}^{\\mathrm{b}}(f(\\mathrm{x})-3 \\mathrm{x}) \\mathrm{dx}=\\mathrm{a}^{2}-\\mathrm{b}^{2}=\\int_{\\mathrm{a}}^{\\mathrm{b}}(-2 \\mathrm{x}) \\mathrm{dx}$\n$$\\begin{array}{l}\n\\Rightarrow \\int_{\\mathrm{a}}^{\\mathrm{b}}(f(\\mathrm{x})-\\mathrm{x}) \\mathrm{dx}=0 \\Rightarrow 0 \\\\\nf(\\mathrm{x})=\\mathrm{x} \\Rightarrow f\\left(\\frac{\\pi}{6}\\right)=\\frac{\\pi}{6}\n\\end{array}$$\n\n(C) $\\frac{\\pi^{2}}{\\ln 3} \\int_{7 / 6}^{5 / 6}(\\sec \\pi \\mathrm{x}) \\mathrm{dx}=\\frac{\\pi^{2}}{\\ln 3} \\frac{1}{\\pi}[\\ln |\\sec \\pi \\mathrm{x}+\\tan \\pi \\mathrm{x}|]_{7 / 6}^{5 / 6}$\n$$=\\frac{\\pi}{\\ln 3} \\ln \\left|\\frac{\\sec \\frac{5 \\pi}{6}+\\tan \\frac{5 \\pi}{6}}{\\sec \\frac{7 \\pi}{6}+\\tan \\frac{7 \\pi}{6}}\\right|=\\frac{\\pi}{\\ln 3} \\ln 3=\\pi$$\n(D) Let $\\theta=\\operatorname{Arg}\\left(\\frac{1}{1-z}\\right)$\n$\\Rightarrow \\theta=\\operatorname{Arg}\\left(\\frac{0-1}{z-1}\\right)$ which is shown in adjacent diagram.\n⇒ Maximum value of $\\theta$ is approaching to $\\frac{\\pi}{2}$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. (A) → (q); (B) → (p); (C) → (s); (D) → (t)\n(A)\n$$\\begin{array}{l}\n|\\vec{a}|=2 \\\\\n|\\vec{b}|=2 \\\\\n|\\vec{c}|=2 \\sqrt{3}\n\\end{array}$$\n$$\\cos \\theta=\\frac{|\\vec{a}|^{2}+|\\vec{b}|^{2}-|\\vec{c}|^{2}}{2|\\vec{a}||\\vec{b}|}=\\frac{4+4-12}{2 \\cdot 2 \\cdot 2}=\\frac{-1}{2} \\quad \\Rightarrow \\quad \\theta=\\frac{2 \\pi}{3}$$\n(B) $\\int_{\\mathrm{a}}^{\\mathrm{b}}(f(\\mathrm{x})-3 \\mathrm{x}) \\mathrm{dx}=\\mathrm{a}^{2}-\\mathrm{b}^{2}=\\int_{\\mathrm{a}}^{\\mathrm{b}}(-2 \\mathrm{x}) \\mathrm{dx}$\n$$\\begin{array}{l}\n\\Rightarrow \\int_{\\mathrm{a}}^{\\mathrm{b}}(f(\\mathrm{x})-\\mathrm{x}) \\mathrm{dx}=0 \\Rightarrow 0 \\\\\nf(\\mathrm{x})=\\mathrm{x} \\Rightarrow f\\left(\\frac{\\pi}{6}\\right)=\\frac{\\pi}{6}\n\\end{array}$$",
+     "(C) $\\frac{\\pi^{2}}{\\ln 3} \\int_{7 / 6}^{5 / 6}(\\sec \\pi \\mathrm{x}) \\mathrm{dx}=\\frac{\\pi^{2}}{\\ln 3} \\frac{1}{\\pi}[\\ln |\\sec \\pi \\mathrm{x}+\\tan \\pi \\mathrm{x}|]_{7 / 6}^{5 / 6}$\n$$=\\frac{\\pi}{\\ln 3} \\ln \\left|\\frac{\\sec \\frac{5 \\pi}{6}+\\tan \\frac{5 \\pi}{6}}{\\sec \\frac{7 \\pi}{6}+\\tan \\frac{7 \\pi}{6}}\\right|=\\frac{\\pi}{\\ln 3} \\ln 3=\\pi$$\n(D) Let $\\theta=\\operatorname{Arg}\\left(\\frac{1}{1-z}\\right)$\n$\\Rightarrow \\theta=\\operatorname{Arg}\\left(\\frac{0-1}{z-1}\\right)$ which is shown in adjacent diagram.\n⇒ Maximum value of $\\theta$ is approaching to $\\frac{\\pi}{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 60,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Match the statements given in Column I with the intervals/umon of intervals given in Column II\nColumn I\nColumn II",
+   "options": {
+    "A": "The set $\\left\\{\\operatorname{Re}\\left(\\frac{2 \\mathrm{iz}}{1-\\mathrm{z}^{2}}\\right): \\mathrm{z}\\right.$ is a complex number, $\\left.|\\mathrm{z}|=1, \\mathrm{z} \\neq \\pm 1\\right\\} \\quad(\\mathrm{p}) \\quad(-\\infty,-1) \\cup(1, \\infty)$ is",
+    "B": "The domain of the function $f(x)-\\sin ^{-1}\\left(\\frac{8(3)^{x-2}}{1-3^{2(x-1)}}\\right)$ is\n(q) $(-\\infty, 0) \\cup(0, \\infty)$",
+    "C": "If $f(\\theta)=\\left|\\begin{array}{ccc}1 & \\tan \\theta & 1 \\\\ -\\tan \\theta & 1 & \\tan \\theta \\\\ -1 & -\\tan \\theta & 1\\end{array}\\right|$, then the set\n(r) $[2, \\infty)$\n$\\left\\{f(\\theta): 0 \\leq \\theta<\\frac{\\pi}{2}\\right\\}$ is\n(s) $(-\\infty,-1] \\cup[1, \\infty)$",
+    "D": "If $f(\\mathrm{x})=\\mathrm{x}^{3 / 2}(3 \\mathrm{x}-10), \\mathrm{x} \\geq 0$, then $f(\\mathrm{x})$ is increasing in\n(t) $(-\\infty, 0] \\cup[2, \\infty)$\n\nSol. Ans. $(\\mathbf{A}) \\rightarrow(\\mathbf{s}) ;(\\mathbf{B}) \\rightarrow(\\mathbf{t}) ;(\\mathbf{C}) \\rightarrow(\\mathbf{r}) ;(\\mathbf{D}) \\rightarrow(\\mathbf{r})$\n(A) Let $\\mathrm{z}=\\cos \\theta+\\mathrm{i} \\sin \\theta$\n$$\\begin{array}{l}\n\\operatorname{Re}\\left(\\frac{2 \\mathrm{i}(\\cos \\theta+\\mathrm{i} \\sin \\theta)}{1-(\\cos \\theta+\\mathrm{i} \\sin \\theta)^{2}}\\right)=\\operatorname{Re}\\left(\\frac{\\cos \\theta \\mathrm{i}-\\sin \\theta}{\\sin ^{2} \\theta-\\mathrm{i} \\cos \\theta \\sin \\theta}\\right) \\\\\n=\\operatorname{Re}\\left(-\\frac{1}{\\sin \\theta}\\right)=\\frac{-1}{\\sin \\theta}\n\\end{array}$$\n$\\therefore \\quad$ Set will be $(-\\infty,-1] \\cup[1, \\infty)$\n\n(B) $-1 \\leq \\frac{8.3^{(\\mathrm{x}-2)}}{1-3^{2(\\mathrm{x}-1)}} \\leq 1 \\quad \\mathrm{x} \\neq 1$\n$$\\begin{array}{l}\n\\Rightarrow \\quad-1 \\leq \\frac{8.3^{x}}{\\left(3-3^{x}\\right)\\left(3+3^{x}\\right)} \\leq 1 \\\\\n3^{x}=t \\quad \\therefore \\quad t>0 \\\\\n\\frac{8 t}{(3-t)(t+3)} \\geq-1 \\Rightarrow t \\in(0,3) \\cup[9, \\infty) \\Rightarrow x \\in(-\\infty, 1) \\cup[2, \\infty) \\\\\n\\frac{8 t}{(3-t)(t+3)} \\leq 1 \\Rightarrow t \\in(0,1] \\cup(3, \\infty) \\Rightarrow x \\in(-\\infty, 0] \\cup(1, \\infty)\n\\end{array}$$\n\nTaking intersection,\n$$\\mathrm{x} \\in(-\\infty, 0] \\cup[2, \\infty)$$\n(C) $f(\\theta)=\\left|\\begin{array}{ccc}1 & \\tan & 1 \\\\ -\\tan \\theta & 1 & \\tan \\theta \\\\ -1 & -\\tan \\theta & 1\\end{array}\\right|$\n$$\\begin{array}{l}\nC_{1} \\rightarrow C_{1}+C_{3} \\\\\n\\Rightarrow f(\\theta)=\\left|\\begin{array}{ccc}\n2 & \\tan \\theta & 1 \\\\\n0 & 1 & \\tan \\theta \\\\\n0 & -\\tan \\theta & 1\n\\end{array}\\right| \\\\\n\\Rightarrow f(\\theta)=2 \\sec ^{2} \\theta \\quad \\Rightarrow f(\\theta) \\in[2, \\infty)\n\\end{array}$$\n(D) $f(\\mathrm{x})=3 \\mathrm{x}^{5 / 2}-10 \\mathrm{x}^{3 / 2}$\n$$\\begin{array}{l}\nf^{\\prime}(x)=\\frac{15}{2} x^{3 / 2}-\\frac{30}{2} x^{1 / 2}>0 \\\\\n\\Rightarrow \\frac{15}{2} \\sqrt{x}(x-2) \\geq 0 \\Rightarrow x \\geq 2\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ans. $(\\mathbf{A}) \\rightarrow(\\mathbf{s}) ;(\\mathbf{B}) \\rightarrow(\\mathbf{t}) ;(\\mathbf{C}) \\rightarrow(\\mathbf{r}) ;(\\mathbf{D}) \\rightarrow(\\mathbf{r})$\n(A) Let $\\mathrm{z}=\\cos \\theta+\\mathrm{i} \\sin \\theta$\n$$\\begin{array}{l}\n\\operatorname{Re}\\left(\\frac{2 \\mathrm{i}(\\cos \\theta+\\mathrm{i} \\sin \\theta)}{1-(\\cos \\theta+\\mathrm{i} \\sin \\theta)^{2}}\\right)=\\operatorname{Re}\\left(\\frac{\\cos \\theta \\mathrm{i}-\\sin \\theta}{\\sin ^{2} \\theta-\\mathrm{i} \\cos \\theta \\sin \\theta}\\right) \\\\\n=\\operatorname{Re}\\left(-\\frac{1}{\\sin \\theta}\\right)=\\frac{-1}{\\sin \\theta}\n\\end{array}$$\n$\\therefore \\quad$ Set will be $(-\\infty,-1] \\cup[1, \\infty)$",
+     "(B) $-1 \\leq \\frac{8.3^{(\\mathrm{x}-2)}}{1-3^{2(\\mathrm{x}-1)}} \\leq 1 \\quad \\mathrm{x} \\neq 1$\n$$\\begin{array}{l}\n\\Rightarrow \\quad-1 \\leq \\frac{8.3^{x}}{\\left(3-3^{x}\\right)\\left(3+3^{x}\\right)} \\leq 1 \\\\\n3^{x}=t \\quad \\therefore \\quad t>0 \\\\\n\\frac{8 t}{(3-t)(t+3)} \\geq-1 \\Rightarrow t \\in(0,3) \\cup[9, \\infty) \\Rightarrow x \\in(-\\infty, 1) \\cup[2, \\infty) \\\\\n\\frac{8 t}{(3-t)(t+3)} \\leq 1 \\Rightarrow t \\in(0,1] \\cup(3, \\infty) \\Rightarrow x \\in(-\\infty, 0] \\cup(1, \\infty)\n\\end{array}$$",
+     "Taking intersection,\n$$\\mathrm{x} \\in(-\\infty, 0] \\cup[2, \\infty)$$\n(C) $f(\\theta)=\\left|\\begin{array}{ccc}1 & \\tan & 1 \\\\ -\\tan \\theta & 1 & \\tan \\theta \\\\ -1 & -\\tan \\theta & 1\\end{array}\\right|$\n$$\\begin{array}{l}\nC_{1} \\rightarrow C_{1}+C_{3} \\\\\n\\Rightarrow f(\\theta)=\\left|\\begin{array}{ccc}\n2 & \\tan \\theta & 1 \\\\\n0 & 1 & \\tan \\theta \\\\\n0 & -\\tan \\theta & 1\n\\end{array}\\right| \\\\\n\\Rightarrow f(\\theta)=2 \\sec ^{2} \\theta \\quad \\Rightarrow f(\\theta) \\in[2, \\infty)\n\\end{array}$$\n(D) $f(\\mathrm{x})=3 \\mathrm{x}^{5 / 2}-10 \\mathrm{x}^{3 / 2}$\n$$\\begin{array}{l}\nf^{\\prime}(x)=\\frac{15}{2} x^{3 / 2}-\\frac{30}{2} x^{1 / 2}>0 \\\\\n\\Rightarrow \\frac{15}{2} \\sqrt{x}(x-2) \\geq 0 \\Rightarrow x \\geq 2\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

@@ -1,61 +1,960 @@
 {
+ "paper_id": "jee-main-2023-mathematics-shift-1-161645-1204-mathematics-paper-with-sol-morning",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2023-mathematics-shift-1-161645-1204-mathematics-paper-with-sol-morning",
+  "exam": "jee-main",
+  "year": 2023,
+  "session": null,
+  "exam_date": null,
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Mathematics",
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; no official key URL known for this year/session",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2023-mathematics-shift-1-161645-1204-mathematics-paper-with-sol-morning",
-    "exam": "jee-main",
-    "year": 2023,
-    "session": null,
-    "exam_date": null,
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Mathematics",
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; no official key URL known for this year/session",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2023-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/161645-1204-Mathematics-Paper-With-Sol-Morning.pdf",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2023-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/161645-1204-Mathematics-Paper-With-Sol-Morning.pdf",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "0d47f3c57874c360746b6bf878c8cd6153cc75096d3070902962428e4a97f067",
+  "page_count": 10,
+  "text_chars": 905,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2023-mathematics-shift-1-161645-1204-mathematics-paper-with-sol-morning.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "10.00",
+     "value": "10.00"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "1260",
+     "value": "1260"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2.00",
+     "value": "2.00"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "288.00",
+     "value": "288.00"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "64.00",
+     "value": "64.00"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "6.00",
+     "value": "6.00"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "211",
+     "value": "211"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "4.00",
+     "value": "4.00"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "575",
+     "value": "575"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "7.00",
+     "value": "7.00"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The number of five digit numbers, greater than 40000 and divisible by 5, which can be formed using the digits 0, 1, 3, 5, 7 and 9 without repetition, is equal to\n(1) 120\n(2) 132\n(3) 72\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "7 × × × 5\n9 x x x 0\n9 x x x 5\nSo Required numbers $=5 \\times{ }^{4} \\mathrm{P}_{3}=120$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "0d47f3c57874c360746b6bf878c8cd6153cc75096d3070902962428e4a97f067",
-    "page_count": 10,
-    "text_chars": 905,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2023-mathematics-shift-1-161645-1204-mathematics-paper-with-sol-morning.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\alpha, \\beta$ be the roots of the quadratic equation $x^{2}+\\sqrt{6} x+3=0$. Then $\\frac{\\alpha^{23}+\\beta^{23}+\\alpha^{14}+\\beta^{14}}{\\alpha^{15}+\\beta^{15}+\\alpha^{10}+\\beta^{10}}$ is equal to\n(1) 729\n(2) 72\n(3) 81\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\alpha, \\beta=\\frac{-\\sqrt{6} \\pm \\sqrt{6-12}}{2}=\\frac{-\\sqrt{6} \\pm \\sqrt{6} \\mathrm{i}}{2}$\n$$=\\sqrt{3} \\mathrm{e}^{ \\pm \\frac{3 \\pi \\mathrm{i}}{4}}$$",
+     "Required expression\n$$\\begin{array}{l}\n=\\frac{(\\sqrt{3})^{23}\\left(2 \\cos \\frac{69 \\pi}{4}\\right)+(\\sqrt{3})^{14}\\left(2 \\cos \\frac{42 \\pi}{4}\\right)}{(\\sqrt{3})^{15}\\left(2 \\cos \\frac{45 \\pi}{4}\\right)+(\\sqrt{3})^{10}\\left(2 \\cos \\frac{30 \\pi}{4}\\right)} \\\\\n(\\sqrt{3})^{8}=81\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\left\\langle\\mathrm{a}_{\\mathrm{n}}\\right\\rangle$ be a sequence such that $a_{1}+a_{2}+\\ldots+a_{n}=\\frac{n^{2}+3 n}{(n+1)(n+2)}$. If $28 \\sum_{\\mathrm{k}=1}^{10} \\frac{1}{\\mathrm{a}_{\\mathrm{k}}}=\\mathrm{p}_{1} \\mathrm{p}_{2} \\mathrm{p}_{3} \\ldots \\mathrm{p}_{\\mathrm{m}}$, where $\\mathrm{p}_{1}, \\mathrm{p}_{2}, \\ldots \\ldots \\mathrm{pm}$ are the first m prime numbers, then m is equal to\n(1) 7\n(2) 6\n(3) 5\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{a}_{\\mathrm{n}}=\\mathrm{S}_{\\mathrm{n}}-\\mathrm{S}_{\\mathrm{n}-1}=\\frac{\\mathrm{n}^{2}+3 \\mathrm{n}}{(\\mathrm{n}+1)(\\mathrm{n}+2)}-\\frac{(\\mathrm{n}-1)(\\mathrm{n}+2)}{\\mathrm{n}(\\mathrm{n}+1)}$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{a}_{\\mathrm{n}}=\\frac{4}{\\mathrm{n}(\\mathrm{n}+1)(\\mathrm{n}+2)} \\\\\n\\Rightarrow 28 \\sum_{\\mathrm{k}=1}^{10} \\frac{1}{\\mathrm{a}_{\\mathrm{k}}}=28 \\sum_{\\mathrm{k}=1}^{10} \\frac{\\mathrm{k}(\\mathrm{k}+1)(\\mathrm{k}+2)}{4}\n\\end{array}$$\n$$\\begin{array}{c}\n=\\frac{7}{4} \\sum_{\\mathrm{k}=1}^{10}(\\mathrm{k}(\\mathrm{k}+1)(\\mathrm{k}+2)(\\mathrm{k}+3)-(\\mathrm{k}-1) \\mathrm{k}(\\mathrm{k}+1)(\\mathrm{k}+2)) \\\\\n=\\frac{7}{4} \\cdot 10 \\cdot 11 \\cdot 12 \\cdot 13=2 \\cdot 3 \\cdot 5 \\cdot 7 \\cdot 11 \\cdot 13\n\\end{array}$$",
+     "So $\\mathrm{m}=6$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let the lines $l_{1}: \\frac{\\mathrm{x}+5}{3}=\\frac{\\mathrm{y}+4}{1}=\\frac{\\mathrm{z}-\\alpha}{-2}$ and $l_{2}: 3 \\mathrm{x}+ 2 y+z-2=0=x-3 y+2 z-13$ be coplanar. If the point $\\mathrm{P}(\\mathrm{a}, \\mathrm{b}, \\mathrm{c})$ on $l_{1}$ is nearest to the point Q (-$4,-3,2)$, then $|\\mathrm{a}|+|\\mathrm{b}|+|\\mathrm{c}|$ is equal to\n(1) 12\n(2) 14\n(3) 10\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n(3 x+2 y+z-2)+\\mu(x-3 y+2 z-13)=0 \\\\\n3(3+\\mu)+1 .(2-3 \\mu)-2(1+2 \\mu)=0 \\\\\n9-4 \\mu=0 \\\\\n\\mu=\\frac{9}{4} \\\\\n4(-15-8+\\alpha-2)+9(-5+12+2 \\alpha-13)=0 \\\\\n-100+4 \\alpha-54+18 \\alpha=0 \\\\\n\\Rightarrow \\alpha=7\n\\end{array}$$",
+     "Let $\\mathrm{P} \\equiv(3 \\lambda-5, \\lambda-4,-2 \\lambda+7)$\nDirection ratio of $\\mathrm{PQ}(3 \\lambda-1, \\lambda-1,-2 \\lambda+5)$\nBut PQ ⟂ $\\ell_{1}$\n$$\\begin{array}{l}\n\\Rightarrow 3(3 \\lambda-1)+1 \\cdot(\\lambda-1)-2(-2 \\lambda+5)=0 \\\\\n\\Rightarrow \\lambda=1 \\\\\n\\mathrm{P}(-2,-3,5) \\Rightarrow|\\mathrm{a}|+|\\mathrm{b}|+|\\mathrm{c}|=10\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{P}\\left(\\frac{2 \\sqrt{3}}{\\sqrt{7}}, \\frac{6}{\\sqrt{7}}\\right), \\mathrm{Q}, \\mathrm{R}$ and S be four points on the ellipse $9 \\mathrm{x}^{2}+4 \\mathrm{y}^{2}=36$. Let PQ and RS be mutually perpendicular and pass through the origin. If $\\frac{1}{(\\mathrm{PQ})^{2}}+\\frac{1}{(\\mathrm{RS})^{2}}=\\frac{\\mathrm{p}}{\\mathrm{q}}$, where p and q are coprime, then $\\mathrm{p}+\\mathrm{q}$ is equal to\n(1) 143\n(2) 137\n(3) 157\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let $\\mathrm{R}(2 \\cos \\theta, 3 \\sin \\theta)$\nas $\\mathrm{OP} \\perp \\mathrm{OR}$\n$$\\begin{array}{l}\n\\text { so } \\frac{3 \\sin \\theta}{2 \\cos \\theta} \\times \\frac{\\frac{6}{\\sqrt{7}}}{\\frac{2 \\sqrt{3}}{\\sqrt{7}}}=-1 \\\\\n\\Rightarrow \\tan \\theta=\\frac{-2}{3 \\sqrt{3}} \\\\\n\\Rightarrow \\mathrm{R}\\left(\\frac{-6 \\sqrt{3}}{\\sqrt{31}}, \\frac{6}{\\sqrt{31}}\\right) \\text { or } \\mathrm{R}\\left(\\frac{6 \\sqrt{3}}{\\sqrt{31}}, \\frac{-6}{\\sqrt{31}}\\right) \\\\\n\\text { Now }=\\frac{1}{(\\mathrm{PQ})^{2}}+\\frac{1}{(\\mathrm{RS})^{2}}=\\frac{1}{4}\\left(\\frac{1}{(\\mathrm{OP})^{2}}+\\frac{1}{(\\mathrm{OR})^{2}}\\right) \\\\\n=\\frac{1}{4}\\left(\\frac{1}{\\frac{48}{7}}+\\frac{1}{\\frac{144}{31}}\\right)=\\frac{1}{4}\\left(\\frac{7}{48}+\\frac{31}{144}\\right) \\\\\n=\\frac{13}{144} \\\\\n\\Rightarrow p+q=157\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let a, b, c be three distinct real numbers, none equal to one. If the vectors $\\mathbf{a} \\hat{\\mathbf{i}}+\\hat{\\mathbf{j}}+\\hat{\\mathbf{k}}, \\hat{\\mathbf{i}}+\\mathbf{b} \\hat{\\mathbf{j}}+\\hat{\\mathbf{k}}$ and $\\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+\\mathrm{c} \\hat{\\mathrm{k}}$ are coplanar, then $\\frac{1}{1-a}+\\frac{1}{1-b}+\\frac{1}{1-c}$ is equal to\n(1) 1\n(2) - 1\n(3) - 2\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left|\\begin{array}{ccc}\\mathrm{a} & 1 & 1 \\\\ 1 & \\mathrm{~b} & 1 \\\\ 1 & 1 & \\mathrm{c}\\end{array}\\right|=0$\n$$\\begin{array}{l}\n\\mathrm{C}_{2} \\rightarrow \\mathrm{C}_{2}-\\mathrm{C}_{1}, \\mathrm{C}_{3}- \\\\\n\\left|\\begin{array}{lll}\n\\mathrm{a} & 1-\\mathrm{a} & 1-\\mathrm{a} \\\\\n1 & \\mathrm{~b}-1 & 0 \\\\\n1 & 0 & \\mathrm{c}-1\n\\end{array}\\right|=0\n\\end{array}$$\n$\\mathrm{a}(\\mathrm{b}-1)(\\mathrm{c}-1)-(1-\\mathrm{a})(\\mathrm{c}-1)+(1-\\mathrm{a})(1-\\mathrm{b})=0$\n$$\\begin{array}{l}\na(1-b)(1-c)+(1-a)(1-c)+(1-a)(1-b) \\\\\n\\frac{a}{1-a}+\\frac{1}{1-b}+\\frac{1}{1-c}=0 \\\\\n\\Rightarrow-1+\\frac{1}{1-a}+\\frac{1}{1-b}+\\frac{1}{1-c}=0 \\\\\n\\Rightarrow \\frac{1}{1-a}+\\frac{1}{1-b}+\\frac{1}{1-c}=1\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If the local maximum value of the function $f(x)=\\left(\\frac{\\sqrt{3 e}}{2 \\sin x}\\right)^{\\sin ^{2} x}, x \\in\\left(0, \\frac{\\pi}{2}\\right)$, is $\\frac{k}{e}$, then $\\left(\\frac{\\mathrm{k}}{\\mathrm{e}}\\right)^{8}+\\frac{\\mathrm{k}^{8}}{\\mathrm{e}^{5}}+\\mathrm{k}^{8}$ is equal to\n(1) $e^{5}+e^{6}+e^{11}$\n(2) $e^{3}+e^{5}+e^{11}$\n(3) $e^{3}+e^{6}+e^{11}$\n(4) $e^{3}+e^{6}+e^{10}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let $\\mathrm{y}=\\left(\\frac{\\sqrt{3 \\mathrm{e}}}{2 \\sin \\mathrm{x}}\\right)^{\\sin ^{2} \\mathrm{x}}$\n$$\\begin{array}{l}\n\\ln y=\\sin ^{2} x \\cdot \\ln \\left(\\frac{\\sqrt{3 e}}{2 \\sin x}\\right) \\\\\n\\frac{1}{y} y^{\\prime}=\\ln \\left(\\frac{\\sqrt{3 e}}{2 \\sin x}\\right) 2 \\sin x \\cos x+\\sin ^{2} x \\frac{2 \\sin x}{\\sqrt{3 e}} \\frac{\\sqrt{3 e}}{2}(-\\operatorname{cosec} x \\cot x) \\\\\n\\frac{d y}{d x}=0 \\Rightarrow \\ln \\left(\\frac{\\sqrt{3 e}}{2 \\sin x}\\right) 2 \\sin x \\cos x-\\sin x \\cos x=0 \\\\\n\\Rightarrow \\sin x \\cos x\\left[2 \\ln \\left(\\frac{\\sqrt{3 e}}{2 \\sin x}\\right)-1\\right]=0 \\\\\n\\Rightarrow \\ln \\left(\\frac{3 e}{4 \\sin ^{2} x}\\right)=1 \\Rightarrow \\frac{3 e}{4 \\sin ^{2} x}=e \\Rightarrow \\sin ^{2} x=\\frac{3}{4} \\\\\n\\Rightarrow \\sin x=\\frac{\\sqrt{3}}{2} \\quad\\left(\\text { as } x \\in\\left(0, \\frac{\\pi}{2}\\right)\\right) \\\\\n\\Rightarrow \\operatorname{local} \\max \\text { value }=\\left(\\frac{\\sqrt{3 e}}{\\sqrt{3}}\\right)^{3 / 4}=e^{3 / 8}=\\frac{k}{e} \\\\\n\\Rightarrow k^{8}=e^{11} \\\\\n\\Rightarrow\\left(\\frac{k}{e}\\right)^{8}+\\frac{k^{8}}{e^{5}}+k^{8}=e^{3}+e^{6}+e^{11}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let D be the domain of the function $f(x)=\\sin ^{-1} \\left(\\log _{3 \\mathrm{x}}\\left(\\frac{6+2 \\log _{3} \\mathrm{x}}{-5 \\mathrm{x}}\\right)\\right)$. If the range of the function $\\mathrm{g}: \\mathrm{D} \\rightarrow \\mathrm{R}$ defined by $\\mathrm{g}(\\mathrm{x})=\\mathrm{x}-[\\mathrm{x}]$, ([x] is the greatest integer function), is $(\\alpha, \\beta)$, then $\\alpha^{2}+\\frac{5}{\\beta}$ is equal to\n(1) 46\n(2) 135\n(3) 136\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{6+2 \\log _{3} \\mathrm{x}}{-5 \\mathrm{x}}>0 \\& \\mathrm{x}>0 \\& \\mathrm{x} \\neq \\frac{1}{3}$\nthis gives $\\mathrm{x} \\in\\left(0, \\frac{1}{27}\\right)$\n$-1 \\leq \\log _{3 x}\\left(\\frac{6+2 \\log _{3} x}{-5 x}\\right) \\leq 1$\n$$\\begin{array}{l}\n3 x \\leq \\frac{6+2 \\log _{3} x}{-5 x} \\leq \\frac{1}{3 x} \\\\\n15 x^{2}+6+2 \\log _{3} x \\geq 0 \\quad 6+2 \\log _{3} x+\\frac{5}{3} \\geq 0 \\\\\nx \\in\\left(0, \\frac{1}{27}\\right) \\ldots(2) \\quad x \\geq 3^{-\\frac{23}{6}} \\ldots(3)\n\\end{array}$$\nfrom (1), (2) \\& (3)\n$\\mathrm{x} \\in\\left[3^{-\\frac{23}{6}}, \\frac{1}{27}\\right)$\n$\\therefore \\alpha$ is small positive quantity\n\\& $\\beta=\\frac{1}{27}$\n$\\therefore \\alpha^{2}+\\frac{5}{\\beta}$ is just greater than 135\nAns. (Bonus)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{y}=\\mathrm{y}(\\mathrm{x}), \\mathrm{y}>0$, be a solution curve of the differential equation $\\left(1+x^{2}\\right) d y=y(x-y) d x$.\nIf $y(0)=1$ and $y(2 \\sqrt{2})=\\beta$, then\n(1) $\\mathrm{e}^{3 \\beta^{-1}}=\\mathrm{e}(3+2 \\sqrt{2})$\n(2) $\\mathrm{e}^{\\beta^{-1}}=\\mathrm{e}^{-2}(5+\\sqrt{2})$\n(3) $\\mathrm{e}^{\\beta^{-1}}=\\mathrm{e}^{-2}(3+2 \\sqrt{2})$\n(4) $\\mathrm{e}^{3 \\beta^{-1}}=\\mathrm{e}(5+\\sqrt{2})$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left(1+\\mathrm{x}^{2}\\right) \\mathrm{dy}=\\mathrm{y}(\\mathrm{x}-\\mathrm{y}) \\mathrm{dx}$\n$y(0)=1 . y(2 \\sqrt{2})=\\beta$\n$\\frac{d y}{d x}=\\frac{y x-y^{2}}{1+x^{2}}$\n$\\frac{d y}{d x}+y\\left(\\frac{-x}{1+x^{2}}\\right)=\\left(\\frac{-1}{1+x^{2}}\\right) y^{2}$\n$\\frac{1}{y^{2}} \\frac{d y}{d x}+\\frac{1}{y}\\left(\\frac{-x}{1+x^{2}}\\right)=\\frac{-1}{1+x^{2}}$\nput $\\frac{1}{\\mathrm{y}}=\\mathrm{t}$ then $\\frac{-1}{\\mathrm{y}^{2}} \\frac{\\mathrm{dy}}{\\mathrm{dx}}=\\frac{\\mathrm{dt}}{\\mathrm{dx}}$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\n\\frac{d t}{d x}+t \\frac{x}{1+x^{2}}=\\frac{1}{1+x^{2}} \\\\\n\\text { I.F }=e^{\\int \\frac{x}{1+x^{2}} d x}=e^{\\frac{1}{2} \\ln \\left(1+x^{2}\\right)}=\\sqrt{1+x^{2}} \\\\\nt \\sqrt{1+x^{2}}=\\int \\frac{1}{\\sqrt{1+x^{2}}} d x \\\\\n\\frac{\\sqrt{1+x^{2}}}{y}=\\ln \\left(x+\\sqrt{x^{2}+1}\\right)+c \\\\\ny(0)=1 \\quad \\Rightarrow c=1 \\\\\n\\Rightarrow \\sqrt{1+x^{2}}=y \\ln \\left(e\\left(x+\\sqrt{x^{2}+1}\\right)\\right) \\\\\n\\beta=\\frac{3}{\\ln (e(3+2 \\sqrt{2}))} \\Rightarrow \\frac{3}{\\beta}=\\ln (e(3+2 \\sqrt{2})) \\\\\ne^{\\frac{3}{\\beta}}=e(3+2 \\sqrt{2})\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Among the two statements\n$(\\mathrm{S} 1):(\\mathrm{p} \\Rightarrow \\mathrm{q}) \\wedge(\\mathrm{q} \\wedge(\\sim \\mathrm{q}))$ is a contradiction and\n(S2) : $(\\mathrm{p} \\wedge \\mathrm{q}) \\vee((\\sim \\mathrm{p}) \\wedge \\mathrm{q}) \\vee$\n$(\\mathrm{p} \\wedge(\\sim \\mathrm{q})) \\vee((\\sim \\mathrm{p}) \\wedge(\\sim \\mathrm{q}))$ is a tautology\n(1) only (S2) is true\n(2) only (S1) is true\n(3) both are false.\n(4) both are true",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{S}_{1}:(\\mathrm{p} \\rightarrow \\mathrm{q}) \\wedge(\\mathrm{p} \\wedge(\\sim \\mathrm{q}))$",
+     "\\begin{tabular}[t]{|l|l|l|l|l|}\n\\hline p & q & p → q & $\\mathrm{p} \\wedge(\\sim \\mathrm{q})$ & S1 \\\\\n\\hline T & T & T & F & F \\\\\n\\hline T & F & F & T & F \\\\\n\\hline F & T & T & F & F \\\\\n\\hline F & F & T & F & F \\\\\n\\hline\n\\end{tabular}\n$\\Rightarrow \\mathrm{S}_{1}$ is Contradiction\n$\\mathrm{S}_{2}$",
+     "\\begin{tabular}[t]{|l|l|l|l|l|l|l|}\n\\hline p & q & $\\mathrm{p} \\wedge \\mathrm{q}$ & $(\\sim \\mathrm{p} \\wedge \\mathrm{q})$ & $(\\mathrm{p} \\wedge \\sim \\mathrm{q})$ & $(\\sim \\mathrm{p}) \\wedge(\\sim \\mathrm{q})$ & $\\mathrm{S}_{2}$ \\\\\n\\hline T & T & T & F & F & F & T \\\\\n\\hline T & F & F & F & T & F & T \\\\\n\\hline F & T & F & T & F & F & T \\\\\n\\hline F & F & F & F & F & T & T \\\\\n\\hline\n\\end{tabular}\n$\\mathrm{S}_{2}$ is tautology"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\lambda \\in \\mathrm{Z}, \\overrightarrow{\\mathrm{a}}=\\lambda \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}$ and $\\overrightarrow{\\mathrm{b}}=3 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$. Let $\\overrightarrow{\\mathrm{c}}$ be a vector such that\n$$(\\overrightarrow{\\mathrm{a}}+\\overrightarrow{\\mathrm{b}}+\\overrightarrow{\\mathrm{c}}) \\times \\overrightarrow{\\mathrm{c}}=\\overrightarrow{0}, \\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{c}}=-17 \\quad \\text { and } \\quad \\overrightarrow{\\mathrm{b}} \\cdot \\overrightarrow{\\mathrm{c}}=-20 \\text {. }$$\nThen $|\\overrightarrow{\\mathrm{c}} \\times(\\lambda \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}})|^{2}$ is equal to\n(1) 62\n(2) 46\n(3) 53\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$(\\overrightarrow{\\mathrm{a}}+\\overrightarrow{\\mathrm{b}}+\\overrightarrow{\\mathrm{c}}) \\times \\overrightarrow{\\mathrm{c}}=0$\n$$\\begin{array}{l}\n(\\vec{a}+\\vec{b}) \\times \\vec{c}=0 \\\\\n\\vec{c}=\\alpha(\\vec{a}+\\vec{b})=\\alpha(\\lambda+3) \\hat{i}+\\alpha \\hat{k} \\\\\n\\vec{b} \\cdot \\vec{c}=-20 \\Rightarrow 3 \\alpha(\\lambda+3)+2 \\alpha=-20 \\\\\n\\vec{a} \\cdot \\vec{c}=-17 \\Rightarrow \\alpha \\lambda(\\lambda+3)-\\alpha=-17 \\\\\n\\Rightarrow \\alpha(3 \\lambda+9+2)=-20 \\\\\n\\alpha\\left(\\lambda^{2}+3 \\lambda-1\\right)=-17 \\\\\n17(3 \\lambda+11)=20\\left(\\lambda^{2}+3 \\lambda-1\\right) \\\\\n20 \\lambda^{2}+9 \\lambda-207=0 \\\\\n\\lambda=3 \\quad(\\lambda \\in Z) \\\\\n\\Rightarrow \\alpha=-1 \\\\\n\\vec{v}=\\vec{c} \\times(3 \\hat{i}+\\hat{j}+\\hat{k}) \\\\\n\\left|\\begin{array}{ll}\n\\hat{i} & \\hat{j} \\\\\n-6 & 0 \\\\\n3 & 1 \\\\\n3 & 1\n\\end{array}\\right|=\\hat{i}+3 \\hat{j}-6 \\hat{k} \\\\\n|\\vec{v}|^{2}=\\left(\\begin{array}{ll}\n-1 & )^{2}+3^{2}+6^{2}=46\n\\end{array}\\right.\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The sum, of the coefficients of the first 50 terms in the binomial expansion of $(1-\\mathrm{x})^{100}$, is equal to\n(1) $-{ }^{101} \\mathrm{C}_{50}$\n(2) ${ }^{99} \\mathrm{C}_{49}$\n(3) $-{ }^{99} \\mathrm{C}_{49}$\n(4) ${ }^{101} \\mathrm{C}_{50}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n(1-x)^{100}=C o-C_{1} x+C_{2} x^{2}- \\\\\nC_{3} x^{3}+\\ldots . C_{99} x^{99}+C_{100} x^{100} \\\\\n\\Rightarrow C o-C_{1}+C_{2}-C_{3}+\\ldots \\ldots-C_{99}+C_{100}=0 \\\\\n2\\left(C o-C_{1}+C_{2}+\\ldots \\ldots-C_{9}\\right)+C_{50}=0 \\\\\nC_{0}-C_{1}+C_{2}+\\ldots . C_{99}=-\\frac{1}{2}{ }^{100} C_{50} \\\\\n-\\frac{1}{2} \\frac{100!}{50!50!}=-\\frac{1}{2} \\times \\frac{100 \\times 99!}{50!50!}=-{ }^{99} C_{49}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The area of the region enclosed by the curve $\\mathrm{y}=\\mathrm{x}^{3}$ and its tangent at the point (-1, -1) is\n(1) $\\frac{27}{4}$\n(2) $\\frac{19}{4}$\n(3) $\\frac{23}{4}$\n(4) $\\frac{31}{4}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "equation of tangent : $\\mathrm{y}+1=3(\\mathrm{x}+1)$\ni.e. $\\mathrm{y}=3 \\mathrm{x}+2$\nPoint of intersection with curve $(2,8)$\n$$\\text { So Area }=\\int_{-1}^{2}\\left((3 x+2)-x^{3}\\right) d x=\\frac{27}{4}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{A}=\\left[\\begin{array}{cc}1 & \\frac{1}{51} \\\\ 0 & 1\\end{array}\\right]$. If $\\mathrm{B}=\\left[\\begin{array}{cc}1 & 2 \\\\ -1 & -1\\end{array}\\right] \\mathrm{A}\\left[\\begin{array}{cc}-1 & -2 \\\\ 1 & 1\\end{array}\\right]$, then the sum of all the elements of the matrix $\\sum_{n=1}^{50} B^{n}$ is equal to\n(1) 100\n(2) 50\n(3) 75\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\text { Let } C=\\left[\\begin{array}{cc}\n1 & 2 \\\\\n-1 & -1\n\\end{array}\\right], D=\\left[\\begin{array}{cc}\n-1 & -2 \\\\\n1 & 1\n\\end{array}\\right] \\\\\nD C=\\left[\\begin{array}{cc}\n1 & 2 \\\\\n-1 & -1\n\\end{array}\\right]\\left[\\begin{array}{cc}\n-1 & -2 \\\\\n1 & 1\n\\end{array}\\right]=\\left[\\begin{array}{ll}\n1 & 0 \\\\\n0 & 1\n\\end{array}\\right]=I \\\\\nB=C A D \\\\\nB^{\\mathrm{n}}=\\underbrace{(\\mathrm{CAD})(\\mathrm{CAD})(\\mathrm{CAD}) \\ldots(\\mathrm{CAD})}_{\\mathrm{n} \\text {-times }}\n\\end{array}$$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{B}^{\\mathrm{n}}=\\mathrm{CA}^{\\mathrm{n}} \\mathrm{D} \\\\\n\\mathrm{~A}^{2}=\\left[\\begin{array}{cc}\n1 & \\frac{1}{51} \\\\\n0 & 1\n\\end{array}\\right]\\left[\\begin{array}{cc}\n1 & \\frac{1}{51} \\\\\n0 & 1\n\\end{array}\\right]=\\left[\\begin{array}{cc}\n1 & \\frac{2}{51} \\\\\n0 & 1\n\\end{array}\\right] \\\\\n\\mathrm{A}^{3}=\\left[\\begin{array}{cc}\n1 & \\frac{3}{51} \\\\\n0 & 1\n\\end{array}\\right]\n\\end{array}$$\nsimilarly $\\mathrm{A}^{\\mathrm{n}}=\\left[\\begin{array}{cc}1 & \\frac{\\mathrm{n}}{51} \\\\ 0 & 1\\end{array}\\right]$\n$$\\begin{array}{l} \nB^{\\mathrm{n}}=\\left[\\begin{array}{cc}\n1 & 2 \\\\\n-1 & -1\n\\end{array}\\right]\\left[\\begin{array}{cc}\n1 & \\frac{\\mathrm{n}}{51} \\\\\n0 & 1\n\\end{array}\\right]\\left[\\begin{array}{cc}\n-1 & -2 \\\\\n1 & 1\n\\end{array}\\right] \\\\\n=\\left[\\begin{array}{cc}\n1 & \\frac{\\mathrm{n}}{51}+2 \\\\\n-1 & -\\frac{\\mathrm{n}}{51}-1\n\\end{array}\\right]\\left[\\begin{array}{cc}\n-1 & -2 \\\\\n1 & 1\n\\end{array}\\right] \\\\\n=\\left[\\begin{array}{cc}\n\\frac{\\mathrm{n}}{51}+1 & \\frac{\\mathrm{n}}{51} \\\\\n-\\frac{\\mathrm{n}}{51} & 1-\\frac{\\mathrm{n}}{51}\n\\end{array}\\right] \\\\\n\\sum_{\\mathrm{n}=1}^{50} \\mathrm{~B}^{\\mathrm{n}}=\\left[\\begin{array}{cc}\n25+50 & 25 \\\\\n-25 & -25+50\n\\end{array}\\right]=\\left[\\begin{array}{cc}\n75 & 25 \\\\\n-25 & 25\n\\end{array}\\right]\n\\end{array}$$",
+     "Sum of the elements $=100$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let the plane $\\mathrm{P}: 4 \\mathrm{x}-\\mathrm{y}+\\mathrm{z}=10$ be rotated by an angle $\\frac{\\pi}{2}$ about its line of intersection with the plane $\\mathrm{x}+\\mathrm{y}-\\mathrm{z}=4$. If $\\alpha$ is the distance of the point $(2,3,-4)$ from the new position of the plane P , then $35 \\alpha$ is\n(1) 90\n(2) 85\n(3) 105\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let equation in new position is\n$$\\begin{array}{l}\n(4 x-y+z-10)+\\lambda(x+y-z-4)=0 \\\\\n4(4+\\lambda)-1 .(-1+\\lambda)+1 .(1-\\lambda)=0 \\\\\n\\Rightarrow \\lambda=-9\n\\end{array}$$",
+     "So equation in new position is\n$$\\begin{array}{l}\n-5 x-10 y+10 z+26=0 \\\\\n\\Rightarrow \\alpha=\\frac{54}{15}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If $\\frac{1}{n+1}{ }^{n} C_{n}+\\frac{1}{n}{ }^{n} C_{n-1}$\n$+\\ldots+\\frac{1}{2}{ }^{\\mathrm{n}} \\mathrm{C}_{1}+{ }^{\\mathrm{n}} \\mathrm{C}_{0}=\\frac{1023}{10}$ then n is equal to\n(1) 6\n(2) 9\n(3) 8\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\sum_{r=0}^{n} \\frac{{ }^{n} C_{r}}{r+1}=\\frac{1}{n+1} \\sum_{r=0}^{n}{ }^{n+1} C_{r+1} \\\\\n=\\frac{1}{n+1}\\left(2^{n+1}-1\\right)=\\frac{1023}{10} \\\\\nn+1=10 \\Rightarrow n=9\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let C be the circle in the complex plane with centre $\\mathrm{z}_{0}=\\frac{1}{2}(1+3 \\mathrm{i})$ and radius r = 1. Let $\\mathrm{z}_{1}=1+ i$ and the complex number $\\mathrm{z}_{2}$ be outside the circle C such that $\\left|\\mathrm{z}_{1}-\\mathrm{z}_{0}\\right|\\left|\\mathrm{z}_{2}-\\mathrm{z}_{0}\\right|=1$. If $\\mathrm{z}_{0}, \\mathrm{z}_{1}$ and $\\mathrm{z}_{2}$ are collinear, then the smaller value of $\\left|\\mathbf{z}_{2}\\right|^{2}$ is equal to\n(1) $\\frac{13}{2}$\n(2) $\\frac{5}{2}$\n(3) $\\frac{3}{2}$\n(4) $\\frac{7}{2}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left|\\mathrm{z}_{1}-\\mathrm{z}_{0}\\right|=\\left|\\frac{1-\\mathrm{i}}{2}\\right|=\\frac{1}{\\sqrt{2}}$\n$\\Rightarrow\\left|\\mathrm{z}_{2}-\\mathrm{z}_{\\mathrm{o}}\\right|=\\sqrt{2}$; centre $\\left(\\frac{1}{2}, \\frac{3}{2}\\right)$\n$\\mathrm{z}_{\\mathrm{o}}\\left(\\frac{1}{2}, \\frac{3}{2}\\right)$ and $\\mathrm{z}_{1}(1,1)$\n$\\tan \\theta=-1 \\Rightarrow \\theta=135^{\\circ}$\n$\\mathrm{z}_{2}\\left(\\frac{1}{2}+\\sqrt{2} \\cos 135^{\\circ}, \\frac{3}{2}+\\sqrt{2} \\sin 135^{\\circ}\\right)$\nor\n$$\\begin{array}{l}\n\\left(\\frac{1}{2}-\\sqrt{2} \\cos 135^{\\circ}, \\frac{3}{2}-\\sqrt{2} \\sin 135^{\\circ}\\right) \\\\\n\\Rightarrow z_{2}\\left(-\\frac{1}{2}, \\frac{5}{2}\\right) \\text { or } z_{2}\\left(\\frac{3}{2}, \\frac{1}{2}\\right) \\\\\n\\Rightarrow\\left|z_{2}\\right|^{2}=\\frac{26}{4}, \\frac{5}{2} \\\\\n\\Rightarrow\\left|z_{2}\\right|_{\\min }^{2}=\\frac{5}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If the point $\\left(\\alpha, \\frac{7 \\sqrt{3}}{3}\\right)$ lies on the curve traced by the mid-points of the line segments of the lines x $\\cos \\theta+\\mathrm{y} \\sin \\theta=7, \\theta \\in\\left(0, \\frac{\\pi}{2}\\right)$ between the coordinates axes, then $\\alpha$ is equal to\n(1) 7\n(2) -7\n(3) $-7 \\sqrt{3}$\n(4) $7 \\sqrt{3}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\operatorname{pt}\\left(\\alpha, \\frac{7 \\sqrt{3}}{3}\\right)$\n$$\\begin{array}{c}\nx \\cos \\theta+y \\sin \\theta=7 \\\\\nx-\\text { intercept }=\\frac{7}{\\cos \\theta} \\\\\ny-\\text { intercept }=\\frac{7}{\\sin \\theta} \\\\\nA:\\left(\\frac{7}{\\cos \\theta}, 0\\right) B:\\left(0, \\frac{7}{\\sin \\theta}\\right)\n\\end{array}$$",
+     "Locus of mid pt M : $(\\mathrm{h}, \\mathrm{k})$\n$$\\begin{array}{l}\n\\mathrm{h}=\\frac{7}{2 \\cos \\theta}, \\mathrm{k}=\\frac{7}{2 \\sin \\theta} \\\\\n\\frac{7}{2 \\sin \\theta}=\\frac{7 \\sqrt{3}}{3} \\Rightarrow \\sin \\theta=\\frac{\\sqrt{3}}{2} \\Rightarrow \\theta=\\frac{\\pi}{3} \\\\\n\\alpha=\\frac{7}{2 \\cos \\theta}=7\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Two dice A and B are rolled, Let the numbers obtained on A and B be $\\alpha$ and $\\beta$ respectively. If the variance of $\\alpha-\\beta$ is $\\frac{p}{q}$, where p and q are coprime, then the sum of the positive divisors of p is equal to\n(1) 36\n(2) 48\n(3) 31\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "\\begin{tabular}[t]{|l|l|l|}\n\\hline $\\alpha-\\beta$ & Case & P \\\\\n\\hline 5 & $(6,1)$ & 1/36 \\\\\n\\hline 4 & $(6,2)(5,1)$ & 2/36 \\\\\n\\hline 3 & $(6,3)(5,2)(4,1)$ & 3/36 \\\\\n\\hline 2 & $(6,4)(5,3)(4,3)(3,1)$ & 4/36 \\\\\n\\hline 1 & $(6,5)(5,4)(4,3)(3,2)(2,1)$ & 5/36 \\\\\n\\hline 0 & $(6,6)(5,5) \\ldots \\ldots(1,1)$ & 6/36 \\\\\n\\hline -1 & ----- & 5/36 \\\\\n\\hline -2 & ----- & 4/36 \\\\\n\\hline -3 & ----- & 3/36 \\\\\n\\hline -4 & $(2,6)(1,5)$ & 2/36 \\\\\n\\hline -5 & $(1,6)$ & 1/36 \\\\\n\\hline\n\\end{tabular}\n$$\\begin{array}{l}\n\\sum\\left(x^{2}\\right)=\\sum x^{2} P(x)=2\\left[\\frac{25}{36}+\\frac{32}{36}+\\frac{27}{36}+\\frac{16}{36}+\\frac{5}{36}\\right] \\\\\n=\\frac{105}{18}=\\frac{35}{6}\n\\end{array}$$\n$\\mu=\\sum(\\mathrm{x})=0$ as data is symmetric\n$$\\sigma^{2}=\\sum\\left(x^{2}\\right)=\\sum x^{2} P(x)=\\frac{35}{6} \\quad P=35=5 \\times 7$$",
+     "Sum of divisors $=\\left(5^{0}+5^{1}\\right)\\left(7^{0}+7^{1}\\right)=6 \\times 8=48$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "In a triangle ABC , if $\\cos \\mathrm{A}+2 \\cos \\mathrm{~B}+\\cos \\mathrm{C}=2$ and the lengths of the sides opposite to the angles A and C are 3 and 7 respectively, then $\\cos \\mathrm{A}-\\cos$ C is equal to\n(1) $\\frac{3}{7}$\n(2) $\\frac{9}{7}$\n(3) $\\frac{10}{7}$\n(4) $\\frac{5}{7}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\cos \\mathrm{A}+\\cos \\mathrm{C}=2(1-\\cos \\mathrm{B})$\n$$\\begin{array}{l}\n2 \\cos \\frac{A+C}{2} \\cos \\frac{A-C}{2}=4 \\sin ^{2} B / 2 \\\\\n\\text { as } \\cos \\left(\\frac{A+C}{2}\\right)=\\sin \\frac{B}{2} \\\\\n\\text { so } \\cos \\frac{A-C}{2}=2 \\sin \\frac{B}{2} \\\\\n2 \\cos B / 2 \\cos \\frac{A-C}{2}=4 \\sin B / 2 \\cos B / 2 \\\\\n2 \\sin \\left(\\frac{A+C}{2}\\right) \\cos \\left(\\frac{A-C}{2}\\right)=4 \\sin B / 2 \\cos B / 2 \\\\\n\\operatorname{Sin} A+\\sin C=2 \\sin B \\\\\na+c=2 b \\Rightarrow a=3, c=7, b=5 \\\\\n\\cos A-\\cos C=\\frac{b^{2}+c^{2}-a^{2}}{2 b c}-\\frac{a^{2}+b^{2}-c^{2}}{2 a b} \\\\\n\\quad=\\frac{25+49-9}{70}-\\frac{9+25-49}{30} \\\\\n\\quad=\\frac{65}{70}+\\frac{1}{2}=\\frac{20}{14}=\\frac{10}{7}\n\\end{array}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A fair $\\mathrm{n}(\\mathrm{n}>1)$ faces die is rolled repeatedly until a number less than n appears. If the mean of the number of tosses required is $\\frac{\\mathrm{n}}{9}$, then n is equal to\n$\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "10.00"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Mean $=1 . \\frac{\\mathrm{n}-1}{\\mathrm{n}}+2 \\frac{1}{\\mathrm{n}}\\left(\\frac{\\mathrm{n}-1}{\\mathrm{n}}\\right)+3\\left(\\frac{1}{\\mathrm{n}}\\right)^{2}\\left(\\frac{\\mathrm{n}-1}{\\mathrm{n}}\\right)$\n$$\\begin{array}{l}\n\\frac{n}{9}=\\left(\\frac{n-1}{n}\\right)\\left(1+2\\left(\\frac{1}{n}\\right)+3\\left(\\frac{1}{n}\\right)^{2} \\cdots \\cdots\\right) \\\\\n\\frac{n}{9}=\\left(\\frac{n-1}{n}\\right)\\left(1-\\frac{1}{n}\\right)^{-2}=\\left(\\frac{n-1}{n}\\right) \\cdot \\frac{n^{2}}{(n-1)^{2}} \\\\\n\\frac{n}{9}=\\frac{n}{n-1} \\Rightarrow n=10\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let the digits a, b, c be in A.P. Nine-digit numbers are to be formed using each of these three digits thrice such that three consecutive digits are in A.P. at least once. How many such numbers can be formed?",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1260"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "abc or cba\n$$\\begin{array}{l}\n---\\frac{\\mathrm{a}}{\\mathrm{c}} \\frac{\\mathrm{~b}}{\\mathrm{~b}} \\frac{\\mathrm{c}}{\\mathrm{a}}--- \\\\\n\\frac{{ }^{7} \\mathrm{C}_{1} \\times 2 \\times 6!}{2!2!2!}=1260\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $[\\mathrm{x}]$ be the greatest integer $\\leq \\mathrm{x}$. Then the number of points in the interval (-2,1), where the function $\\mathrm{f}(\\mathrm{x})=|[\\mathrm{x}]|+\\sqrt{\\mathrm{x}-[\\mathrm{x}]}$ is discontinuous is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2.00"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Need to check at doubtful points discont at $\\mathrm{x} \\in \\mathrm{I}$ only\n$$\\begin{aligned}\n\\text { at } \\mathrm{x}=-1 & \\Rightarrow \\mathrm{f}\\left(-1^{+}\\right)=1+0=1 \\\\\n& \\Rightarrow \\mathrm{f}\\left(-1^{-}\\right)=2+1=3 \\\\\n\\text { at } \\mathrm{x}=0 & \\Rightarrow \\mathrm{f}\\left(0^{+}\\right)=0+0=0 \\\\\n& \\Rightarrow \\mathrm{f}\\left(0^{-}\\right)=1+1=2 \\\\\n\\text { at } \\mathrm{x}=1 & \\Rightarrow \\mathrm{f}\\left(1^{+}\\right)=1+0=1 \\\\\n& \\Rightarrow \\mathrm{f}\\left(1^{-}\\right)=0+1=1\n\\end{aligned}$$\ndiscont. at two points"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let the plane $\\mathrm{x}+3 \\mathrm{y}-2 \\mathrm{z}+6=0$ meet the co-ordinate axes at the points A,B,C. If the orthocentre of the triangle ABC is $\\left(\\alpha, \\beta, \\frac{6}{7}\\right)$, then $98(\\alpha+\\beta)^{2}$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "288.00"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{A}(-6,0,0) \\quad \\mathrm{B}(0,-2,0) \\quad \\mathrm{C}=(0,0,3)$\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{AB}}=6 \\hat{i}-2 \\hat{j}, \\quad \\overrightarrow{\\mathrm{BC}}=2 \\hat{j}+3 \\hat{k}, \\\\\n\\overrightarrow{\\mathrm{AC}}=6 \\hat{i}+3 \\hat{k}\n\\end{array}$$\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{AH}} \\cdot \\overrightarrow{\\mathrm{BC}}=0 \\\\\n\\left(\\alpha+6, \\beta, \\frac{6}{7}\\right) \\cdot(0,2,3)=0 \\\\\n\\beta=\\frac{-9}{7}\n\\end{array}$$\n$\\overrightarrow{\\mathrm{CH}} \\cdot \\overrightarrow{\\mathrm{AB}}=0$\n$$\\begin{array}{l}\n\\left(\\alpha, \\beta, \\frac{-15}{7}\\right) \\cdot(6,-2,0)=0 \\\\\n6 \\alpha-2 \\beta=0 \\\\\n\\alpha=\\frac{-3}{7} \\\\\n98(\\alpha+\\beta)^{2}=(98) \\frac{(144)}{49}=288\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{I}(\\mathrm{x})=\\int \\sqrt{\\frac{\\mathrm{x}+7}{\\mathrm{x}}} \\mathrm{dx}$ and $\\mathrm{I}(9)=12+7 \\log _{\\mathrm{e}} 7$.\nIf $\\mathrm{I}(1)=\\alpha+7 \\log _{\\mathrm{e}}(1+2 \\sqrt{2})$, then $\\alpha^{4}$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "64.00"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\int \\sqrt{\\frac{\\mathrm{x}+7}{\\mathrm{x}}} \\mathrm{dx}$\nPut $\\mathrm{x}=\\mathrm{t}^{2}$\n$$\\begin{array}{l}\nd x=2 t d t \\\\\n\\int 2 \\sqrt{t^{2}+7} d t=2 \\int \\sqrt{t^{2}+\\sqrt{7^{2}}} d t \\\\\nI(t)=2\\left[\\frac{t}{2} \\sqrt{t^{2}+7}+\\frac{7}{2} \\ln \\left|t+\\sqrt{t^{2}+7}\\right|\\right]+C\n\\end{array}$$\n$$\\begin{array}{l}\nI(x)=\\sqrt{x} \\sqrt{x+7}+7 \\ln |\\sqrt{x}+\\sqrt{x+7}|+C \\\\\nI(9)=12+7 \\ln 7=12+7(\\ln (3+4))+C \\\\\n\\Rightarrow C=0 \\\\\nI(x)=\\sqrt{x} \\sqrt{x+7}+7 \\ln (\\sqrt{x}+\\sqrt{x+7}) \\\\\nI(1)=1 \\sqrt{8}+7 \\ln (1+\\sqrt{8}) \\\\\nI(1)=\\sqrt{8}+7 \\ln (1+2 \\sqrt{2}) \\\\\n\\alpha=\\sqrt{8} \\\\\n\\alpha^{4}=\\left(8^{1 / 2}\\right)^{4} \\\\\n\\alpha^{4}=8^{2}=64\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{D}_{\\mathrm{k}}=\\left|\\begin{array}{ccc}1 & 2 \\mathrm{k} & 2 \\mathrm{k} \\\\ \\mathrm{n} & \\mathrm{n}^{2}+\\mathrm{n}+2 & \\mathrm{n}^{2} \\\\ \\mathrm{n} & \\mathrm{n}^{2}+\\mathrm{n} & \\mathrm{n}^{2}+\\mathrm{n}+2\\end{array}\\right|$. If $\\sum_{\\mathrm{k}=1}^{\\mathrm{n}}$\n$D_{k}=96$, then n is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6.00"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{D}_{\\mathrm{k}}=\\left|\\begin{array}{ccc}1 & 2 \\mathrm{k} & 2 \\mathrm{k}-1 \\\\ \\mathrm{n} & \\mathrm{n}^{2}+\\mathrm{n}+2 & \\mathrm{n}^{2} \\\\ \\mathrm{n} & \\mathrm{n}^{2}+\\mathrm{n} & \\mathrm{n}^{2}+\\mathrm{n}+2\\end{array}\\right|$\n$$\\sum_{k=1}^{n} D_{k}=96 \\Rightarrow$$\n$$\\begin{array}{l}\n\\mid \\sum_{k=1}^{n} 1 \\text { 年 } y=96 \\\\\nn \\\\\nn \\\\\n\\Rightarrow\\left|\\begin{array}{ccc}\nn & n^{2}+n+2 & n^{2}+n \\\\\nn & n^{2}+n+2 & n^{2}+n+2 \\\\\nn & n^{2}+n & n^{2}+n+2\n\\end{array}\\right|=96\n\\end{array}$$\n$\\mathrm{R}_{2} \\rightarrow \\mathrm{R}_{2}-\\mathrm{R}_{1}$ and $\\mathrm{R}_{3} \\rightarrow \\mathrm{R}_{3}-\\mathrm{R}_{1}$\n$$\\begin{array}{l}\n\\left|\\begin{array}{ccc}\nn & n^{2}+n & n^{2} \\\\\n0 & 2 & 0 \\\\\n0 & 0 & n+2\n\\end{array}\\right|=96 \\\\\n\\Rightarrow n(2 n+4)=96 \\Rightarrow n(n+2)=48 \\Rightarrow n=6\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let the positive numbers $\\mathrm{a}_{1}, \\mathrm{a}_{2}, \\mathrm{a}_{3}, \\mathrm{a}_{4}$ and $\\mathrm{a}_{5}$ be in a G.P. Let their mean and variance be $\\frac{31}{10}$ and $\\frac{\\mathrm{m}}{\\mathrm{n}}$ respectively, where m and n are co-prime. If the mean of their reciprocals is $\\frac{31}{40}$ and $\\mathrm{a}_{3}+\\mathrm{a}_{4}+\\mathrm{a}_{5}=14$, then $\\mathrm{m}+\\mathrm{n}$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "211"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let $\\frac{\\mathrm{a}}{\\mathrm{r}^{2}}, \\frac{\\mathrm{a}}{\\mathrm{r}}, \\mathrm{a}, \\mathrm{ar}, \\mathrm{ar}^{2}$\nGiven $\\frac{\\mathrm{a}}{\\mathrm{r}^{2}}+\\frac{\\mathrm{a}}{\\mathrm{r}}+\\mathrm{a}+\\mathrm{ar}+\\mathrm{ar}^{2}=5 \\times \\frac{31}{10}$",
+     "And $\\frac{\\mathrm{r}^{2}}{\\mathrm{a}}+\\frac{\\mathrm{r}}{\\mathrm{a}}+\\frac{1}{\\mathrm{a}}+\\frac{1}{\\mathrm{ar}}+\\frac{1}{\\mathrm{ar}^{2}}=5 \\times \\frac{31}{40}$\n$(1) \\div(2) a^{2}=4 \\Rightarrow a=2 \\quad \\therefore r+\\frac{1}{r}=5 / 2 \\quad(a \\neq-2)$\n$\\Rightarrow \\mathrm{r}=2$\n∴ Now $\\frac{1}{2}, 1,2,4,8$\n$\\therefore \\sigma^{2}=\\frac{\\sum_{\\mathrm{X}^{2}}}{\\mathrm{~N}}-\\left(\\frac{\\sum_{\\mathrm{X}}}{\\mathrm{N}}\\right)^{2}$\n$=\\frac{186}{25}=\\frac{\\mathrm{M}}{\\mathrm{N}} \\Rightarrow 211=\\mathrm{m}+\\mathrm{n}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The number of relations, on the set \\{1,2,3\\} containing $(1,2)$ and $(2,3)$, which are reflexive and transitive but not symmetric, is $\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4.00"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{A}=\\{1,2,3\\}$\nFor Reflexive $(1,1)(2,2),(3,3) \\in \\mathrm{R}$\nFor transitive : $(1,2)$ and $(2,3) \\in \\mathrm{R} \\Rightarrow(1,3) \\in \\mathrm{R}$\nNot symmetric : $(2,1)$ and $(3,2) \\notin \\mathrm{R}$\n$\\mathrm{R}_{1}=\\{(1,1),(2,2),(3,3),(1,2),(2,3),(1,3)\\}$\n$\\mathrm{R}_{2}=\\{(1,1),(2,2),(3,3),(1,2),(2,3),(1,3)(2,1)\\}$\n$\\mathrm{R}_{3}=\\{(1,1),(2,2),(3,3),(1,2),(2,3),(1,3)(3,2)\\}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If $\\int_{-0.15}^{0.15}\\left|100 \\mathrm{x}^{2}-1\\right| \\mathrm{dx}=\\frac{\\mathrm{k}}{3000}$, then k is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "575"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\int_{-0.15}^{0.15}\\left|100 \\mathrm{x}^{2}-1\\right| \\mathrm{dx}=2 \\int_{0}^{0.15}\\left|100 \\mathrm{x}^{2}-1\\right| \\mathrm{dx}$",
+     "Now $100 \\mathrm{x}^{2}-1=0 \\Rightarrow \\mathrm{x}^{2}=\\frac{1}{100} \\Rightarrow \\mathrm{x}=0.1$\n$I=2\\left[\\int_{0}^{0.1}\\left(1-100 x^{2}\\right) d x+\\int_{0.1}^{0.15}\\left(100 x^{2}-1\\right) d x\\right]$\n$\\mathrm{I}=2\\left[\\mathrm{x}-\\frac{100}{3} \\mathrm{x}^{3}\\right]_{0}^{0.1}+2\\left[\\frac{100 \\mathrm{x}^{3}}{3}-\\mathrm{x}\\right]_{0.1}^{0.15}$\n$=2\\left[0.1-\\frac{0.1}{3}\\right]+2\\left[\\frac{0.3375}{3}-0.15-\\frac{0.1}{3}+0.1\\right]$\n$=2\\left[0.2-\\frac{0.2}{3}+0.1125-0.15\\right]$\n$=2\\left[\\frac{5}{100}-\\frac{2}{30}+\\frac{1125}{10000}\\right]=2\\left(\\frac{1500-2000+3375}{30000}\\right)$\n$=\\frac{575}{3000} \\Rightarrow \\mathrm{k}=575$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two circles in the first quadrant of radii $\\mathrm{r}_{1}$ and $\\mathrm{r}_{2}$ touch the coordinate axes. Each of them cuts off an intercept of 2 units with the line $\\mathrm{x}+\\mathrm{y}=2$. Then $r_{1}^{2}+r_{2}^{2}-r_{1} r_{2}$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "7.00"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Circle $(x-a)^{2}+(y-a)^{2}=a^{2}$\n$x^{2}+y^{2}-2 a x-2 a y+a^{2}=0$\nintercept $=2$\n$\\Rightarrow 2 \\sqrt{\\mathrm{a}^{2}-\\mathrm{d}^{2}}=2$",
+     "Where $\\mathrm{d}=$ perpendicular distance of centre from line $\\mathrm{x}+\\mathrm{y}=2$\n$\\Rightarrow 2 \\sqrt{\\mathrm{a}^{2}-\\left(\\frac{\\mathrm{a}+\\mathrm{a}-2}{\\sqrt{2}}\\right)^{2}}=2$\n$\\Rightarrow \\mathrm{a}^{2}-\\frac{(2 \\mathrm{a}-2)^{2}}{2}=1 \\Rightarrow 2 \\mathrm{a}^{2}-4 \\mathrm{a}^{2}+8 \\mathrm{a}-4=2$\n$\\Rightarrow 2 \\mathrm{a}^{2}-8 \\mathrm{a}+6=0 \\Rightarrow \\mathrm{a}^{2}-4 \\mathrm{a}+3=0$\n$\\therefore \\mathrm{r}_{1}+\\mathrm{r}_{2}=4$ and $\\mathrm{r}_{1} \\mathrm{r}_{2}=3$\n$\\therefore r_{1}^{2}+r_{2}^{2}-r_{1} r_{2}=\\left(r_{1}+r_{2}\\right)^{2}-3 r_{1} r_{2}$\n$=16-9=7$",
+     "JEE Exam Solution\nwww.esaral.com\n10"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

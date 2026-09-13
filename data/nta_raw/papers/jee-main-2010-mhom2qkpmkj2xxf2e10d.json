@@ -1,61 +1,1277 @@
 {
+ "paper_id": "jee-main-2010-mhom2qkpmkj2xxf2e10d",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2010-mhom2qkpmkj2xxf2e10d",
+  "exam": "jee-main",
+  "year": 2010,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2010-mhom2qkpmkj2xxf2e10d",
-    "exam": "jee-main",
-    "year": 2010,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2010/iit-jee-paper-i/81181",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/mhom2QKpMkj2XXf2E10d",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "b89181babde7b0dfe6e2dfbe1fae8bf97e3a6525d5f9d50a5a685e1dff844324",
+  "page_count": 33,
+  "text_chars": 0,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2010-mhom2qkpmkj2xxf2e10d.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 16,
+    "question_id": null,
     "subject": null,
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2010/iit-jee-paper-i/81181",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/mhom2QKpMkj2XXf2E10d",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "value": "A"
+    }
+   },
+   {
+    "qno": 45,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 46,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "For each question in Section IV, you will be awarded 3 marks if you darken the bubble corresponding to the correct answer and zero mark if no bubble is darkened. No negative marks will be awarded for in this Section\nWrite your name, registration number and sign in the space provided on the back page of this booklet.\nIITJEE2010-Paper 1-CMP-2\nUseful Data\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline Atomic Numbers: & & & Be 4; C 6; N 7; O 8; Al 13; Si 14; Cr24; Fe 26; Zn 30; Br 35. \\\\\n\\hline 1 amu = & $1.66 \\times 10^{-27} \\mathrm{~kg}$ & R = & $0.082 \\mathrm{~L}-\\mathrm{atm} \\mathrm{K}^{-1} \\mathrm{~mol}^{-1}$ \\\\\n\\hline $\\mathrm{h}=$ & $6.626 \\times 10^{-34} \\mathrm{~J} \\mathrm{~s}$ & $\\mathrm{N}_{\\mathrm{A}}=$ & $6.022 \\times 10^{23}$ \\\\\n\\hline $\\mathrm{m}_{\\mathrm{c}} \\quad=$ & $9.1 \\times 10^{-31} \\mathrm{~kg}$ & e = & $1.6 \\times 10^{-19} \\mathrm{C}$ \\\\\n\\hline $\\mathrm{c}=$ & $3.0 \\times 10^{8} \\mathrm{~m} \\mathrm{~s}^{-1}$ & F = & $96500 \\mathrm{C} \\mathrm{mol}^{-1}$ \\\\\n\\hline $\\mathrm{R}_{\\mathrm{H}} \\quad=$ & $2.18 \\times 10^{-18} \\mathrm{~J}$ & $4 \\pi \\in_{0} \\quad=$ & $1.11 \\times 10^{-10} \\mathrm{~J}^{-1} \\mathrm{C}^{2} \\mathrm{~m}^{-1}$ \\\\\n\\hline\n\\end{tabular}\nIITJEE2010-Paper 1-CMP-3\nIITJEE 2010 PAPER-1 [Code - 3]\nPART - I: CHEMISTRY\nSECTION - I (Single Correct Choice Type)\nThis Section contains 8 multiple choice questions. Each question has four choices A), B), C) and D) out of which ONLY ONE is correct.\n1. The synthesis of 3-octyne is achieved by adding a bromoalkane into a mixture of sodium amide and an alkyne. The bromoalkane and alkyne respectively are\nA) $\\mathrm{BrCH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{3}$ and $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{C} \\equiv \\mathrm{CH}$\nB) $\\mathrm{BrCH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{3}$ and $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{C} \\equiv \\mathrm{CH}$\nC) $\\mathrm{BrCH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{3}$ and $\\mathrm{CH}_{3} \\mathrm{C} \\equiv \\mathrm{CH}$\nD) $\\mathrm{BrCH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{3}$ and $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{C} \\equiv \\mathrm{CH}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
   },
-  "probe": {
-    "sha256": "b89181babde7b0dfe6e2dfbe1fae8bf97e3a6525d5f9d50a5a685e1dff844324",
-    "page_count": 33,
-    "text_chars": 0,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2010-mhom2qkpmkj2xxf2e10d.pdf"
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Iron is removed from chalcopyrite as\nA) FeO\nB) FeS\nC) $\\mathrm{Fe}_{2} \\mathrm{O}_{3}$\nD) $\\mathrm{FeSiO}_{3}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In self-reduction, the reducing species is\nA) S\nB) $\\mathrm{O}^{2-}$\nC) $\\mathrm{S}^{2-}$\nD) $\\mathrm{SO}_{2}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A student performs a titration with different burettes and finds titre values of 25.2 mL, 25.25 mL and 25.0 mL. The number of significant figures in the average titre value is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The concentration of $R$ in the reaction $R \\rightarrow P$ was measured as a function of time and the following data is obtained:\n\\begin{tabular}[t]{|l|l|l|l|l|}\n\\hline [R] (molar) & 1.0 & 0.75 & 0.40 & 0.10 \\\\\n\\hline t (min.) & 0.0 & 0.05 & 0.12 & 0.18 \\\\\n\\hline\n\\end{tabular}\nThe order of the reaction is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The number of neutrons emitted when ${ }_{92}^{235} \\mathrm{U}$ undergoes controlled nuclear fission to ${ }_{54}^{142} \\mathrm{Xe}$ and ${ }_{38}^{90} \\mathrm{Sr}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\n$$\\begin{array}{l}\n\\mathrm{CH}_{3}-\\mathrm{CH}_{2}-\\mathrm{C} \\equiv \\mathrm{CH} \\xrightarrow{\\mathrm{NaNH}_{2}} \\mathrm{CH}_{3}-\\mathrm{CH}_{2}-\\mathrm{C} \\equiv \\mathrm{C}^{-} \\mathrm{Na}^{+} \\\\\n\\mathrm{CH}_{3}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}{\\mathrm{Br}+\\mathrm{Na}^{+}}^{-} \\mathrm{C} \\equiv \\mathrm{C}-\\mathrm{CH}_{2}-\\mathrm{CH}_{3} \\longrightarrow \\mathrm{CH}_{3}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{C} \\equiv \\mathrm{C}-\\mathrm{CH}_{2}-\\mathrm{CH}_{3} \\\\\n\\text { 3-octyne }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The total number of basic groups in the following form of lysine is\n<smiles>NC(CCCC[NH3+])C(=O)[O-]</smiles>",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The total number of cyclic isomers possible for a hydrocarbon with the molecular formula $\\mathrm{C}_{4} \\mathrm{H}_{6}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In the scheme given below, the total number of intra molecular aldol condensation products formed from ' Y ' is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$\\mathrm{k}=\\mathrm{Ae}^{-\\mathrm{Ea} / \\mathrm{RT}}$\nAs T ↑; k ↑ exponentially."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Amongst the following, the total number of compound soluble in aqueous NaOH is\n<smiles>CN(C)c1ccccc1</smiles>\n<smiles>O=C(O)C1CCCCC1</smiles>\n<smiles>CCOc1ccccc1CO</smiles>\n<smiles>Oc1ccccc1</smiles>\n<smiles>O=[N+]([O-])c1ccccc1</smiles>\n<smiles>CN(C)c1ccc(O)cc1</smiles>\n<smiles>CCc1ccccc1CC</smiles>\n<smiles>O=C(O)c1cccc2ccccc12</smiles>",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$\\mathrm{Cl}_{2}$ is gas at 298 K while $\\mathrm{Br}_{2}$ is a liquid."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Amongst the following, the total number of compounds whose aqueous solution turns red litmus paper blue is\n$$\\begin{array}{ccccccccc}\n\\mathrm{KCN} & \\mathrm{~K}_{2} \\mathrm{SO}_{4} & \\left(\\mathrm{NH}_{4}\\right)_{2} \\mathrm{C}_{2} \\mathrm{O}_{4} & \\mathrm{NaCl} & \\mathrm{Zn}\\left(\\mathrm{NO}_{3}\\right)_{2} & \\mathrm{FeCl}_{3} & \\mathrm{~K}_{2} \\mathrm{CO}_{3} & \\mathrm{NH}_{4} \\mathrm{NO}_{3} & \\mathrm{LiCN}\n\\end{array}$$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Based on VSEPR theory, the number of 90 degree $\\mathrm{F}-\\mathrm{Br}-\\mathrm{F}$ angles in $\\mathrm{BrF}_{5}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The value of n in the molecular formula $\\mathrm{Be}_{\\mathrm{n}} \\mathrm{Al}_{2} \\mathrm{Si}_{6} \\mathrm{O}_{18}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$\\mathrm{Cl}^{-}$is replaced by $\\mathrm{NO}_{2}^{-}$in ionization sphere.\nSECTION - II (Multiple Correct Choice Type)\nThis section contains 5 multiple choice questions. Each question has four choices A), B), C) and D) out of which ONE OR MORE may be correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\omega$ be a complex cube root of unity with $\\omega \\neq 1$. A fair die is thrown three times. If $\\mathrm{r}_{1}, \\mathrm{r}_{2}$ and $\\mathrm{r}_{3}$ are the numbers obtained on the die, then the probability that $\\omega^{\\mathrm{r}_{1}}+\\omega^{\\mathrm{r}_{2}}+\\omega^{\\mathrm{r}_{3}}=0$ is",
+   "options": {
+    "A": "$\\frac{1}{18}$",
+    "B": "$\\frac{1}{9}$",
+    "C": "$\\frac{2}{9}$",
+    "D": "$\\frac{1}{36}$\n\nSol. (C)\n$r_{1}, r_{2}, r_{3} \\in\\{1,2,3,4,5,6\\}$\n$\\mathrm{r}_{1}, \\mathrm{r}_{2}, \\mathrm{r}_{3}$ are of the form $3 \\mathrm{k}, 3 \\mathrm{k}+1,3 \\mathrm{k}+2$\nRequired probability $=\\frac{3!\\times{ }^{2} \\mathrm{C}_{1} \\times{ }^{2} \\mathrm{C}_{1} \\times{ }^{2} \\mathrm{C}_{1}}{6 \\times 6 \\times 6}=\\frac{6 \\times 8}{216}=\\frac{2}{9}$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B, D)\n<smiles>CCC(C)(C)C</smiles>",
+     "On $\\mathrm{C}_{2}-\\mathrm{C}_{3}$ bond axis\n$\\mathrm{X}=\\mathrm{CH}_{3}$\n$\\mathrm{Y}=\\mathrm{CH}_{3}$\nOn $\\mathrm{C}_{1}-\\mathrm{C}_{2}$ bond axis\n$\\mathrm{X}=\\mathrm{H}$\n$\\mathrm{Y}=\\mathrm{C}_{2} \\mathrm{H}_{5}$",
+     "IITJEE2010-Paper 1-CMP-6"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{P}, \\mathrm{Q}, \\mathrm{R}$ and S be the points on the plane with position vectors $-2 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}, 4 \\hat{\\mathrm{i}}, 3 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}$ and $-3 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}$ respectively. The quadrilateral PQRS must be a",
+   "options": {
+    "A": "parallelogram, which is neither a rhombus nor a rectangle",
+    "B": "square",
+    "C": "rectangle, but not a square",
+    "D": "rhombus, but not a square\n\nSol. (A)\nEvaluating midpoint of PR and QS which\ngives $\\mathrm{M} \\equiv\\left[\\frac{\\hat{\\mathrm{i}}}{2}+\\hat{\\mathrm{j}}\\right]$, same for both.\n$\\overrightarrow{\\mathrm{PQ}}=\\overrightarrow{\\mathrm{SR}}=6 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}$\n$\\overrightarrow{\\mathrm{PS}}=\\overrightarrow{\\mathrm{QR}}=-\\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}$\n$\\Rightarrow \\overrightarrow{\\mathrm{PQ}} \\cdot \\overrightarrow{\\mathrm{PS}} \\neq 0$\n$\\overrightarrow{\\mathrm{PQ}}\\|\\overrightarrow{\\mathrm{SR}}, \\overrightarrow{\\mathrm{PS}}\\| \\overrightarrow{\\mathrm{QR}}$ and $|\\overrightarrow{\\mathrm{PQ}}|=|\\overrightarrow{\\mathrm{SR}}|,|\\overrightarrow{\\mathrm{PS}}|=|\\overrightarrow{\\mathrm{QR}}|$\nHence, PQRS is a parallelogram but not rhombus or rectangle."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C, D)\nIn option (C), if $\\mathrm{HNO}_{3}$ is present in limiting amount then this mixture will be a buffer. And the mixture given in option (D), contains a weak acid $\\left(\\mathrm{CH}_{3} \\mathrm{COOH}\\right)$ and its salt with strong base NaOH , i.e. $\\mathrm{CH}_{3} \\mathrm{COONa}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 31,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The number of 3 × 3 matrices A whose entries are either 0 or 1 and for which the system $A\\left[\\begin{array}{l}x \\\\ y \\\\ z\\end{array}\\right]=\\left[\\begin{array}{l}1 \\\\ 0 \\\\ 0\\end{array}\\right]$ has exactly two distinct solutions, is",
+   "options": {
+    "A": "0",
+    "B": "$2^{9}-1$",
+    "C": "168",
+    "D": "2\n\nSol. (A)\nThree planes cannot intersect at two distinct points.\n\nIITJEE2010-Paper 1-CMP-13"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A, B, C)\nPhenoxide ion is para ${ }^{*}$ and ortho directing. (* preferably)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 32,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The value of $\\lim _{x \\rightarrow 0} \\frac{1}{x^{3}} \\int_{0}^{x} \\frac{t \\ln (1+t)}{t^{4}+4} d t$ is",
+   "options": {
+    "A": "0",
+    "B": "$\\frac{1}{12}$",
+    "C": "$\\frac{1}{24}$",
+    "D": "$\\frac{1}{64}$\n\nSol. (B)\n$$\\begin{array}{l}\n\\lim _{x \\rightarrow 0} \\frac{1}{x^{3}} \\int_{0}^{x} \\frac{t \\ln (1+t) d t}{t^{4}+4}=\\lim _{x \\rightarrow 0} \\frac{x \\ln (1+x)}{\\left(x^{4}+4\\right) 3 x^{2}} \\\\\n=\\lim _{x \\rightarrow 0} \\frac{1}{3} \\frac{\\ln (1+x)}{x\\left(x^{4}+4\\right)}=\\frac{1}{12}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B, C, D)\n$$\\mathrm{Ca}\\left(\\mathrm{HCO}_{3}\\right)_{2}+\\mathrm{Ca}(\\mathrm{OH})_{2} \\longrightarrow 2 \\mathrm{CaCO}_{3} \\downarrow+2 \\mathrm{H}_{2} \\mathrm{O}$$\n[Clarke's method]\n$$\\begin{array}{l}\n\\mathrm{NaOCl}+\\mathrm{H}_{2} \\mathrm{O} \\rightleftharpoons \\mathrm{HOCl}+\\mathrm{NaOH} \\\\\n\\mathrm{OH}^{-}+\\mathrm{HCO}_{3}^{-} \\longrightarrow \\mathrm{CO}_{3}^{2-}+\\mathrm{H}_{2} \\mathrm{O} \\\\\n\\mathrm{Ca}\\left(\\mathrm{HCO}_{3}\\right)_{2}+\\mathrm{Na}_{2} \\mathrm{CO}_{3} \\longrightarrow \\mathrm{CaCO}_{3} \\downarrow+2 \\mathrm{NaHCO}_{3}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 33,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let p and q be real numbers such that $p \\neq 0, p^{3} \\neq q$ and $p^{3} \\neq-q$. If $\\alpha$ and $\\beta$ are nonzero complex numbers satisfying $\\alpha+\\beta=-\\mathrm{p}$ and $\\alpha^{3}+\\beta^{3}=\\mathrm{q}$, then a quadratic equation having $\\frac{\\alpha}{\\beta}$ and $\\frac{\\beta}{\\alpha}$ as its roots is",
+   "options": {
+    "A": "$\\left(\\mathrm{p}^{3}+\\mathrm{q}\\right) \\mathrm{x}^{2}-\\left(\\mathrm{p}^{3}+2 \\mathrm{q}\\right) \\mathrm{x}+\\left(\\mathrm{p}^{3}+\\mathrm{q}\\right)=0$",
+    "B": "$\\left(\\mathrm{p}^{3}+\\mathrm{q}\\right) \\mathrm{x}^{2}-\\left(\\mathrm{p}^{3}-2 \\mathrm{q}\\right) \\mathrm{x}+\\left(\\mathrm{p}^{3}+\\mathrm{q}\\right)=0$",
+    "C": "$\\left(\\mathrm{p}^{3}-\\mathrm{q}\\right) \\mathrm{x}^{2}-\\left(5 \\mathrm{p}^{3}-2 \\mathrm{q}\\right) \\mathrm{x}+\\left(\\mathrm{p}^{3}-\\mathrm{q}\\right)=0$",
+    "D": "$\\left(\\mathrm{p}^{3}-\\mathrm{q}\\right) \\mathrm{x}^{2}-\\left(5 \\mathrm{p}^{3}+2 \\mathrm{q}\\right) \\mathrm{x}+\\left(\\mathrm{p}^{3}-\\mathrm{q}\\right)=0$\n\nSol. (B)\n$$\\begin{array}{l}\n\\alpha^{3}+\\beta^{3}=q \\\\\n\\Rightarrow(\\alpha+\\beta)^{3}-3 \\alpha \\beta(\\alpha+\\beta)=q \\\\\n\\Rightarrow-p^{3}+3 p \\alpha \\beta=q \\Rightarrow \\alpha \\beta=\\frac{q+p^{3}}{3 p} \\\\\nx^{2}-\\left(\\frac{\\alpha}{\\beta}+\\frac{\\beta}{\\alpha}\\right) x+\\frac{\\alpha}{\\beta} \\cdot \\frac{\\beta}{\\alpha}=0 \\\\\nx^{2}-\\frac{\\left(\\alpha^{2}+\\beta^{2}\\right)}{\\alpha \\beta} x+1=0 \\\\\n\\Rightarrow x^{2}-\\left(\\frac{(\\alpha+\\beta)^{2}-2 \\alpha \\beta}{\\alpha \\beta}\\right) x+1=0 \\\\\n\\Rightarrow x^{2}-\\frac{p^{2}-2\\left(\\frac{p^{3}+q}{3 p}\\right)}{\\frac{p^{3}+q}{3 p}} x+1=0 \\\\\n\\Rightarrow\\left(p^{3}+q\\right) x^{2}-\\left(3 p^{3}-2 p^{3}-2 q\\right) x+\\left(p^{3}+q\\right)=0 \\\\\n\\Rightarrow\\left(p^{3}+q\\right) x^{2}-\\left(p^{3}-2 q\\right) x+\\left(p^{3}+q\\right)=0\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A, B)\nResistance and heat capacity are mass dependent properties, hence extensive.",
+     "SECTION-III (Paragraph Type)\nThis section contains 2 paragraphs. Based upon the first paragraph 2 multiple choice questions and based upon the second paragraph 3 multiple choice questions have to be answered. Each of these questions has four choices A), B), C) and D) out of WHICH ONLY ONE CORRECT.",
+     "Paragraph for Question Nos. 14 to 15\nThe concentration of potassium ions inside a biological cell is at least twenty times higher than the outside. The resulting potential difference across the cell is important in several processes such as transmission of nerve impulses and maintaining the ion balance. A simple model for such a concentration cell involving a metal M is:\n$\\mathrm{M}(\\mathrm{s}) \\mid \\mathrm{M}^{+}(\\mathrm{aq} ; 0.05$ molar $)| | \\mathrm{M}^{+}(\\mathrm{aq}), 1$ molar $) \\mid \\mathrm{M}(\\mathrm{s})$\nFor the above electrolytic cell the magnitude of the cell potential $\\left|\\mathrm{E}_{\\text {cell }}\\right|=70 \\mathrm{mV}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 34,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $f, g$ and $h$ be real-valued functions defined on the interval $[0,1]$ by $f(x)=e^{x^{2}}+e^{-x^{2}}, g(x) =x e^{x^{2}}+e^{-x^{2}}$ and $h(x)=x^{2} e^{x^{2}}+e^{-x^{2}}$. If a, b and c denote, respectively, the absolute maximum of f, g and $h$ on $[0,1]$, then",
+   "options": {
+    "A": "$a=b$ and $c \\neq b$",
+    "B": "$a=c$ and $a \\neq b$",
+    "C": "$a \\neq b$ and $c \\neq b$",
+    "D": "$\\mathrm{a}=\\mathrm{b}=\\mathrm{c}$\n\nSol. (D)\n\nIITJEE2010-Paper 1-CMP-14\n$$\\mathrm{f}(\\mathrm{x})=\\mathrm{e}^{\\mathrm{x}^{2}}+\\mathrm{e}^{-\\mathrm{x}^{2}} \\Rightarrow \\mathrm{f}^{\\prime}(\\mathrm{x})=2 \\mathrm{x}\\left(\\mathrm{e}^{\\mathrm{x}^{2}}-\\mathrm{e}^{-\\mathrm{x}^{2}}\\right) \\geq 0 \\forall \\mathrm{x} \\in[0,1]$$\n\nClearly for $0 \\leq x \\leq 1 \\quad f(x) \\geq g(x) \\geq h(x)$\n$$\\begin{array}{l}\n\\because f(1)=g(1)=h(1)=e+\\frac{1}{e} \\text { and } f(1) \\text { is the greatest } \\\\\n\\therefore a=b=c=e+\\frac{1}{e} \\Rightarrow a=b=c\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$$\\mathrm{M}(\\mathrm{~s})+\\mathrm{M}_{(\\mathrm{aq}) \\mathrm{lM}}^{+} \\longrightarrow \\mathrm{M}_{(\\mathrm{aq}), 05 \\mathrm{M}}^{+}+\\mathrm{M}(\\mathrm{~s})$$",
+     "According to Nernst equation ,\n$$\\begin{array}{l}\n\\mathrm{E}_{\\text {cell }}=0-\\frac{2.303 \\mathrm{RT}}{\\mathrm{~F}} \\log \\frac{\\mathrm{M}_{.05 \\mathrm{M}}^{+}}{\\mathrm{M}_{1 \\mathrm{M}}^{+}} \\\\\n=0-\\frac{2.303 \\mathrm{RT}}{\\mathrm{~F}} \\log \\left(5 \\times 10^{-2}\\right) \\\\\n=+\\mathrm{ve}\n\\end{array}$$",
+     "Hence, $\\left|\\mathrm{E}_{\\text {cell }}\\right|=\\mathrm{E}_{\\text {cell }}=0.70 \\mathrm{~V}$ and $\\Delta \\mathrm{G}<0$ for the feasibility of the reaction."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 35,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "If the angles $\\mathrm{A}, \\mathrm{B}$ and C of a triangle are in an arithmetic progression and if $\\mathrm{a}, \\mathrm{b}$ and c denote the lengths of the sides opposite to A, B and C respectively, then the value of the expression $\\frac{a}{c} \\sin 2 C+\\frac{c}{a} \\sin 2 A$ is",
+   "options": {
+    "A": "$\\frac{1}{2}$",
+    "B": "$\\frac{\\sqrt{3}}{2}$",
+    "C": "1",
+    "D": "$\\sqrt{3}$\n\nSol. (D)\n$$\\begin{array}{l}\nB=60^{\\circ} \\\\\n\\therefore \\frac{a}{c} \\sin 2 C+\\frac{c}{a} \\sin 2 A=2 \\sin A \\cos C+2 \\sin C \\cos A \\\\\n=2 \\sin (A+C)=2 \\sin B=2 \\times \\frac{\\sqrt{3}}{2}=\\sqrt{3} .\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\nFrom above equation $\\frac{2.303 R T}{F}=0.0538$\nSo, $\\mathrm{E}_{\\text {cell }}=\\mathrm{E}_{\\text {cel }}^{\\circ}-\\frac{0.0538}{1} \\log 0.0025$\n$=0-\\frac{0.0538}{1} \\log 0.0025$\n$\\approx 0.13988 \\mathrm{~V}$\n$\\approx 140 \\mathrm{mV}$",
+     "Paragraph for Question Nos. 16 to 18\nCopper is the most noble of the first row transition metals and occurs in small deposits in several countries. Ores of copper include chalcanthite $\\left(\\mathrm{CuSO}_{4} \\cdot 5 \\mathrm{H}_{2} \\mathrm{O}\\right)$, atacamite $\\left(\\mathrm{Cu}_{2} \\mathrm{Cl}(\\mathrm{OH})_{3}\\right)$, cuprite $\\left(\\mathrm{Cu}_{2} \\mathrm{O}\\right)$, copper glance $\\left(\\mathrm{Cu}_{2} \\mathrm{~S}\\right)$ and malachite $\\left(\\mathrm{Cu}_{2}(\\mathrm{OH})_{2} \\mathrm{CO}_{3}\\right)$. However, $80 \\%$ of the world copper production comes from the ore of chalcopyrite $\\left(\\mathrm{CuFeS}_{2}\\right)$. The extraction of copper from chalcopyrite involves partial roasting, removal of iron and self-reduction."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 36,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Equation of the plane containing the straight line $\\frac{\\mathrm{x}}{2}=\\frac{\\mathrm{y}}{3}=\\frac{\\mathrm{z}}{4}$ and perpendicular to the plane containing the straight lines $\\frac{\\mathrm{x}}{3}=\\frac{\\mathrm{y}}{4}=\\frac{\\mathrm{z}}{2}$ and $\\frac{\\mathrm{x}}{4}=\\frac{\\mathrm{y}}{2}=\\frac{\\mathrm{z}}{3}$ is",
+   "options": {
+    "A": "$\\mathrm{x}+2 \\mathrm{y}-2 \\mathrm{z}=0$",
+    "B": "$3 \\mathrm{x}+2 \\mathrm{y}-2 \\mathrm{z}=0$",
+    "C": "$\\mathrm{x}-2 \\mathrm{y}+\\mathrm{z}=0$",
+    "D": "$5 \\mathrm{x}+2 \\mathrm{y}-4 \\mathrm{z}=0$\n\nSol. (C)\nPlane 1: $\\mathrm{ax}+\\mathrm{by}+\\mathrm{cz}=0$ contains line $\\frac{\\mathrm{x}}{2}=\\frac{\\mathrm{y}}{3}=\\frac{\\mathrm{z}}{4}$\n$$\\therefore 2 a+3 b+4 c=0$$\n\nPlane 2: $a^{\\prime} x+b^{\\prime} y+c^{\\prime} z=0$ is perpendicular to plane containing lines $\\frac{x}{3}=\\frac{y}{4}=\\frac{z}{2}$ and $\\frac{x}{4}=\\frac{y}{2}=\\frac{z}{3}$\n$$\\begin{array}{l}\n\\therefore 3 a^{\\prime}+4 b^{\\prime}+2 c^{\\prime}=0 \\text { and } 4 a^{\\prime}+2 b^{\\prime}+3 c^{\\prime}=0 \\\\\n\\Rightarrow \\quad \\frac{a^{\\prime}}{12-4}=\\frac{b^{\\prime}}{8-9}=\\frac{c^{\\prime}}{6-16} \\\\\n\\Rightarrow \\quad 8 a-b-10 c=0\n\\end{array}$$\n\nFrom (i) and (ii)\n$$\\frac{\\mathrm{a}}{-30+4}=\\frac{\\mathrm{b}}{32+20}=\\frac{\\mathrm{c}}{-2-24}$$\n\n⇒ Equation of plane $\\mathrm{x}-2 \\mathrm{y}+\\mathrm{z}=0$.\n\nIITJEE2010-Paper 1-CMP-15\n\nSECTION - II (Multiple Correct Choice Type)\nThis section contains 5 multiple choice questions. Each question has four choices A), B), C) and D) out of which ONE OR MORE may be correct."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$2 \\mathrm{CuFeS}_{2}+\\mathrm{O}_{2} \\rightarrow \\mathrm{Cu}_{2} \\mathrm{~S}+2 \\mathrm{FeS}+\\mathrm{SO}_{2} \\uparrow$\n$2 \\mathrm{Cu}_{2} \\mathrm{~S}+3 \\mathrm{O}_{2} \\rightarrow 2 \\mathrm{Cu}_{2} \\mathrm{O}+2 \\mathrm{SO}_{2} \\uparrow$\n$2 \\mathrm{FeS}+3 \\mathrm{O}_{2} \\rightarrow 2 \\mathrm{FeO}+2 \\mathrm{SO}_{2} \\uparrow$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 37,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{z}_{1}$ and $\\mathrm{z}_{2}$ be two distinct complex numbers and let $\\mathrm{z}=(1-\\mathrm{t}) \\mathrm{z}_{1}+\\mathrm{t} \\mathrm{z}_{2}$ for some real number t with $0<\\mathrm{t} <1$. If $\\operatorname{Arg}(\\mathrm{w})$ denotes the principal argument of a non-zero complex number w , then",
+   "options": {
+    "A": "$\\left|\\mathrm{z}-\\mathrm{z}_{1}\\right|+\\left|\\mathrm{z}-\\mathrm{z}_{2}\\right|=\\left|\\mathrm{z}_{1}-\\mathrm{z}_{2}\\right|$",
+    "B": "$\\operatorname{Arg}\\left(\\mathrm{z}-\\mathrm{z}_{1}\\right)=\\operatorname{Arg}\\left(\\mathrm{z}-\\mathrm{z}_{2}\\right)$",
+    "C": "$\\left|\\begin{array}{cc}\\mathrm{z}-\\mathrm{z}_{1} & \\overline{\\mathrm{z}}-\\overline{\\mathrm{z}}_{1} \\\\ \\mathrm{z}_{2}-\\mathrm{z}_{1} & \\overline{\\mathrm{z}}_{2}-\\overline{\\mathrm{z}}_{1}\\end{array}\\right|=0$",
+    "D": "$\\operatorname{Arg}\\left(\\mathrm{z}-\\mathrm{z}_{1}\\right)=\\operatorname{Arg}\\left(\\mathrm{z}_{2}-\\mathrm{z}_{1}\\right)$\n\nSol. (A), (C), (D)\nGiven $\\mathrm{z}=(1-\\mathrm{t}) \\mathrm{z}_{1}+\\mathrm{tz}_{2}$\n$$\\begin{array}{l}\n\\Rightarrow \\frac{z-z_{1}}{z_{2}-z_{1}}=t \\Rightarrow \\arg \\left(\\frac{z-z_{1}}{z_{2}-z_{1}}\\right)=0 \\\\\n\\Rightarrow \\arg \\left(z-z_{1}\\right)=\\arg \\left(z_{2}-z_{1}\\right) \\\\\n\\frac{z-z_{1}}{z_{2}-z_{1}}=\\frac{\\bar{z}-\\bar{z}_{1}}{\\bar{z}_{2}-\\bar{z}_{1}} \\\\\n\\left|\\begin{array}{cc}\nz-z_{1} & \\bar{z}-\\bar{z}_{1} \\\\\nz_{2}-z_{1} & \\bar{z}_{2}-\\bar{z}_{1}\n\\end{array}\\right|=0\n\\end{array}$$\n$\\mathrm{AP}+\\mathrm{PB}=\\mathrm{AB}$\n$$\\Rightarrow\\left|z-z_{1}\\right|+\\left|z-z_{2}\\right|=\\left|z_{1}-z_{2}\\right| .$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\n$\\mathrm{FeO}+\\mathrm{SiO}_{2} \\rightarrow \\mathrm{FeSiO}_{3}$\n(slag)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 38,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The value(s) of $\\int_{0}^{1} \\frac{x^{4}(1-x)^{4}}{1+x^{2}} d x$ is (are)",
+   "options": {
+    "A": "$\\frac{22}{7}-\\pi$",
+    "B": "$\\frac{2}{105}$",
+    "C": "0",
+    "D": "$\\frac{71}{15}-\\frac{3 \\pi}{2}$\n\nSol. (A)\n$$\\begin{array}{l}\n\\int_{0}^{1} \\frac{x^{4}(1-x)^{4}}{1+x^{2}} d x \\\\\n=\\int_{0}^{1}\\left(x^{6}-4 x^{5}+5 x^{4}-4 x^{2}+4-\\frac{4}{1+x^{2}}\\right) d x \\\\\n=\\left[\\frac{x^{7}}{7}-\\frac{2 x^{6}}{3}+x^{5}-\\frac{4 x^{3}}{3}+4 x\\right]_{0}^{1}-\\pi \\\\\n=\\frac{1}{7}-\\frac{2}{3}+1-\\frac{4}{3}+4-\\pi=\\frac{22}{7}-\\pi\n\\end{array}$$\n\nIITJEE2010-Paper 1-CMP-16"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$\\mathrm{Cu}_{2} \\mathrm{~S}+2 \\mathrm{Cu}_{2} \\mathrm{O} \\rightarrow \\underset{\\text { (Blister copper) }}{6 \\mathrm{Cu}}+\\mathrm{SO}_{2} \\uparrow$\n$\\mathrm{S}^{2-} \\rightarrow \\mathrm{S}^{4+}$ is oxidation, i.e., $\\mathrm{S}^{2-}$ is reducing agent.",
+     "IITJEE2010-Paper 1-CMP-9",
+     "SECTION-IV (Integer Type)\nThis section contains TEN questions. The answer to each question is a single digit integer ranging from 0 to 9. The correct digit below the question number in the ORS is to be bubbled."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 39,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let ABC be a triangle such that $\\angle \\mathrm{ACB}=\\frac{\\pi}{6}$ and let $\\mathrm{a}, \\mathrm{b}$ and c denote the lengths of the sides opposite to A , $B$ and $C$ respectively. The value(s) of $x$ for which $a=x^{2}+x+1, b=x^{2}-1$ and $c=2 x+1$ is (are)",
+   "options": {
+    "A": "$-(2+\\sqrt{3})$",
+    "B": "$1+\\sqrt{3}$",
+    "C": "$2+\\sqrt{3}$",
+    "D": "$4 \\sqrt{3}$\n\nSol. (B)\nUsing cosine rule for $\\angle \\mathrm{C}$\n$$\\begin{array}{l}\n\\frac{\\sqrt{3}}{2}=\\frac{\\left(x^{2}+x+1\\right)^{2}+\\left(x^{2}-1\\right)^{2}-(2 x+1)^{2}}{2\\left(x^{2}+x+1\\right)\\left(x^{2}-1\\right)} \\\\\n\\Rightarrow \\sqrt{3}=\\frac{2 x^{2}+2 x-1}{x^{2}+x+1} \\\\\n\\Rightarrow(\\sqrt{3}-2) x^{2}+(\\sqrt{3}-2) x+(\\sqrt{3}+1)=0 \\\\\n\\Rightarrow x=\\frac{(2-\\sqrt{3}) \\pm \\sqrt{3}}{2(\\sqrt{3}-2)} \\\\\n\\Rightarrow x=-(2+\\sqrt{3}), 1+\\sqrt{3} \\Rightarrow x=1+\\sqrt{3} \\text { as }(x>0)\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 40,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let A and B be two distinct points on the parabola $\\mathrm{y}^{2}=4 \\mathrm{x}$. If the axis of the parabola touches a circle of radius $r$ having $A B$ as its diameter, then the slope of the line joining $A$ and $B$ can be",
+   "options": {
+    "A": "$-\\frac{1}{\\mathrm{r}}$",
+    "B": "$\\frac{1}{\\mathrm{r}}$",
+    "C": "$\\frac{2}{\\mathrm{r}}$",
+    "D": "$-\\frac{2}{\\mathrm{r}}$\n\nSol. (C), (D)\n$$\\begin{array}{l}\nA=\\left(t_{1}^{2}, 2 t_{1}\\right), B=\\left(t_{2}^{2}, 2 t_{2}\\right) \\\\\n\\text { Centre }=\\left[\\frac{t_{1}^{2}+t_{2}^{2}}{2},\\left(t_{1}+t_{2}\\right)\\right] \\\\\nt_{1}+t_{2}= \\pm r \\\\\nm=\\frac{2\\left(t_{1}-t_{2}\\right)}{t_{1}^{2}-t_{2}^{2}}=\\frac{2}{t_{1}+t_{2}}= \\pm \\frac{2}{r}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "0\nFrom two data, (for zero order kinetics)\n$$\\begin{array}{l}\n\\mathrm{K}_{\\mathrm{I}}=\\frac{\\mathrm{x}}{\\mathrm{t}}=\\frac{0.25}{0.05}=5 \\\\\n\\mathrm{~K}_{\\text {II }}=\\frac{\\mathrm{x}}{\\mathrm{t}}=\\frac{0.60}{0.12}=5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 41,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let f be a real-valued function defined on the interval $(0, \\infty)$ by $\\mathrm{f}(\\mathrm{x})=\\ln \\mathrm{x}+\\int_{0}^{\\mathrm{x}} \\sqrt{1+\\sin \\mathrm{t}} \\mathrm{dt}$. Then which of the following statement(s) is (are) true?",
+   "options": {
+    "A": "$\\mathrm{f}^{\\prime \\prime}(\\mathrm{x})$ exists for all $\\mathrm{x} \\in(0, \\infty)$",
+    "B": "$\\mathrm{f}^{\\prime}(\\mathrm{x})$ exists for all $\\mathrm{x} \\in(0, \\infty)$ and $\\mathrm{f}^{\\prime}$ is continuous on $(0, \\infty)$, but not differentiable on $(0, \\infty)$",
+    "C": "there exists $\\alpha>1$ such that $\\left|\\mathrm{f}^{\\prime}(\\mathrm{x})\\right|<|\\mathrm{f}(\\mathrm{x})|$ for all $\\mathrm{x} \\in(\\alpha, \\infty)$",
+    "D": "there exists $\\beta>0$ such that $|f(x)|+\\left|f^{\\prime}(x)\\right| \\leq \\beta$ for all $x \\in(0, \\infty)$\n\nSol. (B), (C)\n$$\\mathrm{f}^{\\prime}(\\mathrm{x})=\\frac{1}{\\mathrm{x}}+\\sqrt{1+\\sin \\mathrm{x}}$$\n$\\mathrm{f}^{\\prime}(\\mathrm{x})$ is not differentiable at $\\sin \\mathrm{x}=-1$ or $\\mathrm{x}=2 \\mathrm{n} \\pi-\\frac{\\pi}{2}, \\mathrm{n} \\in \\mathrm{N}$\nIn $x \\in(1, \\infty) \\quad f(x)>0, f^{\\prime}(x)>0$\n\nIITJEE2010-Paper 1-CMP-17\n\nConsider $\\mathrm{f}(\\mathrm{x})-\\mathrm{f}^{\\prime}(\\mathrm{x})$\n$$\\begin{array}{l}\n=\\ln \\mathrm{x}+\\int_{0}^{\\mathrm{x}} \\sqrt{1+\\sin \\mathrm{t}} \\mathrm{dt}-\\frac{1}{\\mathrm{x}}-\\sqrt{1+\\sin \\mathrm{x}} \\\\\n=\\left(\\int_{0}^{\\mathrm{x}} \\sqrt{1+\\sin \\mathrm{t}} \\mathrm{dt}-\\sqrt{1+\\sin \\mathrm{x}}\\right)+\\ln \\mathrm{x}-\\frac{1}{\\mathrm{x}}\n\\end{array}$$\n\nConsider $\\mathrm{g}(\\mathrm{x})=\\int_{0}^{\\mathrm{x}} \\sqrt{1+\\sin \\mathrm{t}} \\mathrm{dt}-\\sqrt{1+\\sin \\mathrm{x}}$\nIt can be proved that $\\mathrm{g}(\\mathrm{x}) \\geq 2 \\sqrt{2}-\\sqrt{10} \\quad \\forall \\mathrm{x} \\in(0, \\infty)$\nNow there exists some $\\alpha>1$ such that $\\frac{1}{\\mathrm{x}}-\\ln \\mathrm{x} \\leq 2 \\sqrt{2}-\\sqrt{10}$ for all $\\mathrm{x} \\in(\\alpha, \\infty)$ as $\\frac{1}{\\mathrm{x}}-\\operatorname{lnx}$ is strictly decreasing function.\n$$\\Rightarrow \\mathrm{g}(\\mathrm{x}) \\geq \\frac{1}{\\mathrm{x}}-\\ln \\mathrm{x} .$$\n\nSECTION - III (Paragraph Type)\nThis section contains 2 paragraphs. Based upon the first paragraph 2 multiple choice questions and based upon the second paragraph 3 multiple choice questions have to be answered. Each of these questions has four choices A), B), C) and D) out of WHICH ONLY ONE CORRECT.\n\nParagraph for Questions 42 to 43\nThe circle $\\mathrm{x}^{2}+\\mathrm{y}^{2}-8 \\mathrm{x}=0$ and hyperbola $\\frac{\\mathrm{x}^{2}}{9}-\\frac{\\mathrm{y}^{2}}{4}=1$ intersect at the points A and B."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "3\n$${ }_{92} \\mathrm{U}^{235} \\rightarrow_{54} \\mathrm{Xe}^{142}+{ }_{38} \\mathrm{Sr}^{90}+3_{0} \\mathrm{n}^{1}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 42,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Equation of a common tangent with positive slope to the circle as well as to the hyperbola is",
+   "options": {
+    "A": "$2 \\mathrm{x}-\\sqrt{5} \\mathrm{y}-20=0$",
+    "B": "$2 x-\\sqrt{5} y+4=0$",
+    "C": "$3 x-4 y+8=0$",
+    "D": "$4 \\mathrm{x}-3 \\mathrm{y}+4=0$\n\nSol. (B)\nA tangent to $\\frac{x^{2}}{9}-\\frac{y^{2}}{4}=1$ is $y=m x+\\sqrt{9 m^{2}-4}, m>0$\nIt is tangent to $\\mathrm{x}^{2}+\\mathrm{y}^{2}-8 \\mathrm{x}=0$\n$$\\begin{array}{l}\n\\therefore \\frac{4 \\mathrm{~m}+\\sqrt{9 \\mathrm{~m}^{2}-4}}{\\sqrt{1+\\mathrm{m}^{2}}}=4 \\\\\n\\Rightarrow 495 \\mathrm{~m}^{4}+104 \\mathrm{~m}^{2}-400=0 \\\\\n\\Rightarrow \\mathrm{~m}^{2}=\\frac{4}{5} \\text { or } \\mathrm{m}=\\frac{2}{\\sqrt{5}}\n\\end{array}$$\n∴ the tangent is $\\mathrm{y}=\\frac{2}{\\sqrt{5}} \\mathrm{~m}+\\frac{4}{\\sqrt{5}}$\n$$\\Rightarrow 2 x-\\sqrt{5} y+4=0 .$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "2\n<smiles>CC(=O)[O-]</smiles>\nand $-\\mathrm{NH}_{2}$ are basic groups in lysine."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 43,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Equation of the circle with AB as its diameter is",
+   "options": {
+    "A": "$\\mathrm{x}^{2}+\\mathrm{y}^{2}-12 \\mathrm{x}+24=0$",
+    "B": "$\\mathrm{x}^{2}+\\mathrm{y}^{2}+12 \\mathrm{x}+24=0$",
+    "C": "$\\mathrm{x}^{2}+\\mathrm{y}^{2}+24 \\mathrm{x}-12=0$",
+    "D": "$\\mathrm{x}^{2}+\\mathrm{y}^{2}-24 \\mathrm{x}-12=0$\n\nIITJEE2010-Paper 1-CMP-18\n\nSol. (A)\nA point on hyperbola is $(3 \\sec \\theta, 2 \\tan \\theta)$\nIt lies on the circle, so $9 \\sec ^{2} \\theta+4 \\tan ^{2} \\theta-24 \\sec \\theta=0$\n$$\\begin{array}{l}\n\\Rightarrow 13 \\sec ^{2} \\theta-24 \\sec \\theta-4=0 \\Rightarrow \\sec \\theta=2,-\\frac{2}{13} \\\\\n\\therefore \\sec \\theta=2 \\Rightarrow \\tan \\theta=\\sqrt{3} .\n\\end{array}$$\n\nThe point of intersection are $\\mathrm{A}(6,2 \\sqrt{3})$ and $\\mathrm{B}(6,-2 \\sqrt{3})$\n∴ The circle with AB as diameter is\n$$(x-6)^{2}+y^{2}=(2 \\sqrt{3})^{2} \\Rightarrow x^{2}+y^{2}-12 x+24=0$$\n\nParagraph for Questions 44 to 46\nLet p be an odd prime number and $\\mathrm{T}_{\\mathrm{p}}$ be the following set of $2 \\times 2$ matrices :\n$$\\mathrm{T}_{\\mathrm{p}}=\\left\\{\\mathrm{A}=\\left[\\begin{array}{ll}\n\\mathrm{a} & \\mathrm{~b} \\\\\n\\mathrm{c} & \\mathrm{a}\n\\end{array}\\right]: \\mathrm{a}, \\mathrm{~b}, \\mathrm{c} \\in\\{0,1, \\ldots, \\mathrm{p}-1\\}\\right\\}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "5\nIn $\\mathrm{C}_{4} \\mathrm{H}_{6}$, possible cyclic isomers are\n<smiles>C1=CCC1</smiles>\n,\n<smiles>CC1C=C1</smiles>\n,\n<smiles>CC1=CC1</smiles>\n,\n<smiles>C=C1CC1</smiles>\n,\n<smiles>C1C2CC12</smiles>",
+     "IITJEE2010-Paper 1-CMP-10"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 44,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The number of A in $\\mathrm{T}_{\\mathrm{p}}$ such that A is either symmetric or skew-symmetric or both, and $\\operatorname{det}(\\mathrm{A})$ divisible by p is",
+   "options": {
+    "A": "$(\\mathrm{p}-1)^{2}$",
+    "B": "$2(\\mathrm{p}-1)$",
+    "C": "$(p-1)^{2}+1$",
+    "D": "$2 \\mathrm{p}-1$\n\nSol. (D)\nWe must have $\\mathrm{a}^{2}-\\mathrm{b}^{2}=\\mathrm{kp}$\n$$\\Rightarrow(\\mathrm{a}+\\mathrm{b})(\\mathrm{a}-\\mathrm{b})=\\mathrm{kp}$$\n\n⇒ either $\\mathrm{a}-\\mathrm{b}=0$ or $\\mathrm{a}+\\mathrm{b}$ is a multiple of p\nwhen $\\mathrm{a}=\\mathrm{b}$; number of matrices is p\nand when $\\mathrm{a}+\\mathrm{b}=$ multiple of $\\mathrm{p} \\Rightarrow \\mathrm{a}, \\mathrm{b}$ has $\\mathrm{p}-1$\n∴ Total number of matrices $=\\mathrm{p}+\\mathrm{p}-1$\n$=2 \\mathrm{p}-1$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 45,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The number of $A$ in $T_{p}$ such that the trace of $A$ is not divisible by $p$ but $\\operatorname{det}",
+   "options": {
+    "A": "$ is divisible by $p$ is [Note: The trace of a matrix is the sum of its diagonal entries.]\n(A) $(\\mathrm{p}-1)\\left(\\mathrm{p}^{2}-\\mathrm{p}+1\\right)$",
+    "B": "$\\mathrm{p}^{3}-(\\mathrm{p}-1)^{2}$",
+    "C": "$(\\mathrm{p}-1)^{2}$",
+    "D": "$(\\mathrm{p}-1)\\left(\\mathrm{p}^{2}-2\\right)$\n\nAns. (C)"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "4\n<smiles>O=C(O)C1CCCCC1</smiles>\n<smiles>Oc1ccccc1</smiles>\n<smiles>CN(C)c1ccc(O)cc1</smiles>\n<smiles>O=C(O)c1cccc2ccccc12</smiles>",
+     "These four are soluble in aqueous NaOH."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 46,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The number of $A$ in $T_{p}$ such that $\\operatorname{det}",
+   "options": {
+    "A": "$ is not divisible by $p$ is\n(A) $2 \\mathrm{p}^{2}$",
+    "B": "$\\mathrm{p}^{3}-5 \\mathrm{p}$",
+    "C": "$\\mathrm{p}^{3}-3 \\mathrm{p}$",
+    "D": "$\\mathrm{p}^{3}-\\mathrm{p}^{2}$\n\nAns. (D)\n\nIITJEE2010-Paper 1-CMP-19\n\nSECTION - IV (Integer Type)\nThis section contains TEN questions. The answer to each question is a single digit integer ranging from 0 to 9. The correct digit below the question number in the ORS is to be bubbled."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "3\n$\\mathrm{KCN}, \\mathrm{K}_{2} \\mathrm{CO}_{3}, \\mathrm{LiCN}$ are basic in nature and their aqueous solution turns red litmus paper blue.",
+     "IITJEE2010-Paper 1-CMP-11"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 47,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{S}_{\\mathrm{k}}, \\mathrm{k}=1,2, \\ldots ., 100$, denote the sum of the infinite geometric series whose first term is $\\frac{\\mathrm{k}-1}{\\mathrm{k}!}$ and the common ratio is $\\frac{1}{\\mathrm{k}}$. Then the value of $\\frac{100^{2}}{100!}+\\sum_{\\mathrm{k}=1}^{100}\\left|\\left(\\mathrm{k}^{2}-3 \\mathrm{k}+1\\right) \\mathrm{S}_{\\mathrm{k}}\\right|$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "0",
+     "All four planar bonds ( $\\mathrm{F}-\\mathrm{Br}-\\mathrm{F}$ ) will reduce from $90^{\\circ}$ to $84.8^{\\circ}$ after $\\ell \\mathrm{p}-\\mathrm{bp}$ repulsion."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 48,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The number of all possible values of $\\theta$, where $0<\\theta<\\pi$, for which the system of equations\n$$\\begin{array}{l}\n(y+z) \\cos 3 \\theta=(x y z) \\sin 3 \\theta \\\\\nx \\sin 3 \\theta=\\frac{2 \\cos 3 \\theta}{y}+\\frac{2 \\sin 3 \\theta}{z} \\\\\n(x y z) \\sin 3 \\theta=(y+2 z) \\cos 3 \\theta+y \\sin 3 \\theta\n\\end{array}$$\nhave a solution $\\left(\\mathrm{x}_{0}, \\mathrm{y}_{0}, \\mathrm{z}_{0}\\right)$ with $\\mathrm{y}_{0} \\mathrm{z}_{0} \\neq 0$, is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "3\n$\\mathrm{Be}_{3} \\mathrm{Al}_{2} \\mathrm{Si}_{6} \\mathrm{O}_{18}$ (Beryl)\n(according to charge balance in a molecule)\n$2 \\mathrm{n}+6+24-36=0$\n$\\mathrm{n}=3$",
+     "IITJEE2010-Paper 1-CMP-12",
+     "PART - II: MATHEMATICS",
+     "SECTION - I (Single Correct Choice Type)\nThis Section contains 8 multiple choice questions. Each question has four choices A), B), C) and D) out of which ONLY ONE is correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 49,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $f$ be a real-valued differentiable function on $R$ (the set of all real numbers) such that $f(1)=1$. If the $y$ intercept of the tangent at any point $P(x, y)$ on the curve $y=f(x)$ is equal to the cube of the abscissa of $P$, then the value of $\\mathrm{f}(-3)$ is equal to\nIITJEE2010-Paper 1-CMP-20",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$r_{1}, r_{2}, r_{3} \\in\\{1,2,3,4,5,6\\}$\n$\\mathrm{r}_{1}, \\mathrm{r}_{2}, \\mathrm{r}_{3}$ are of the form $3 \\mathrm{k}, 3 \\mathrm{k}+1,3 \\mathrm{k}+2$\nRequired probability $=\\frac{3!\\times{ }^{2} \\mathrm{C}_{1} \\times{ }^{2} \\mathrm{C}_{1} \\times{ }^{2} \\mathrm{C}_{1}}{6 \\times 6 \\times 6}=\\frac{6 \\times 8}{216}=\\frac{2}{9}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 50,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The number of values of $\\theta$ in the interval $\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$ such that $\\theta \\neq \\frac{\\mathrm{n} \\pi}{5}$ for $\\mathrm{n}=0, \\pm 1, \\pm 2$ and $\\tan \\theta=\\cot 5 \\theta$ as well as $\\sin 2 \\theta=\\cos 4 \\theta$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nEvaluating midpoint of PR and QS which\ngives $\\mathrm{M} \\equiv\\left[\\frac{\\hat{\\mathrm{i}}}{2}+\\hat{\\mathrm{j}}\\right]$, same for both.\n$\\overrightarrow{\\mathrm{PQ}}=\\overrightarrow{\\mathrm{SR}}=6 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}$\n$\\overrightarrow{\\mathrm{PS}}=\\overrightarrow{\\mathrm{QR}}=-\\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}$\n$\\Rightarrow \\overrightarrow{\\mathrm{PQ}} \\cdot \\overrightarrow{\\mathrm{PS}} \\neq 0$\n$\\overrightarrow{\\mathrm{PQ}}\\|\\overrightarrow{\\mathrm{SR}}, \\overrightarrow{\\mathrm{PS}}\\| \\overrightarrow{\\mathrm{QR}}$ and $|\\overrightarrow{\\mathrm{PQ}}|=|\\overrightarrow{\\mathrm{SR}}|,|\\overrightarrow{\\mathrm{PS}}|=|\\overrightarrow{\\mathrm{QR}}|$\nHence, PQRS is a parallelogram but not rhombus or rectangle."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 51,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The maximum value of the expression $\\frac{1}{\\sin ^{2} \\theta+3 \\sin \\theta \\cos \\theta+5 \\cos ^{2} \\theta}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nThree planes cannot intersect at two distinct points.",
+     "IITJEE2010-Paper 1-CMP-13"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 52,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If $\\vec{a}$ and $\\vec{b}$ are vectors in space given by $\\vec{a}=\\frac{\\hat{i}-2 \\hat{j}}{\\sqrt{5}}$ and $\\vec{b}=\\frac{2 \\hat{i}+\\hat{j}+3 \\hat{k}}{\\sqrt{14}}$, then the value of $(2 \\vec{a}+\\vec{b}) \\cdot[(\\vec{a} \\times \\vec{b}) \\times(\\vec{a}-2 \\vec{b})]$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$$\\begin{array}{l}\n\\lim _{x \\rightarrow 0} \\frac{1}{x^{3}} \\int_{0}^{x} \\frac{t \\ln (1+t) d t}{t^{4}+4}=\\lim _{x \\rightarrow 0} \\frac{x \\ln (1+x)}{\\left(x^{4}+4\\right) 3 x^{2}} \\\\\n=\\lim _{x \\rightarrow 0} \\frac{1}{3} \\frac{\\ln (1+x)}{x\\left(x^{4}+4\\right)}=\\frac{1}{12}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 53,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The line $2 \\mathrm{x}+\\mathrm{y}=1$ is tangent to the hyperbola $\\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}-\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1$. If this line passes through the point of intersection of the nearest directrix and the x -axis, then the eccentricity of the hyperbola is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$$\\begin{array}{l}\n\\alpha^{3}+\\beta^{3}=q \\\\\n\\Rightarrow(\\alpha+\\beta)^{3}-3 \\alpha \\beta(\\alpha+\\beta)=q \\\\\n\\Rightarrow-p^{3}+3 p \\alpha \\beta=q \\Rightarrow \\alpha \\beta=\\frac{q+p^{3}}{3 p} \\\\\nx^{2}-\\left(\\frac{\\alpha}{\\beta}+\\frac{\\beta}{\\alpha}\\right) x+\\frac{\\alpha}{\\beta} \\cdot \\frac{\\beta}{\\alpha}=0 \\\\\nx^{2}-\\frac{\\left(\\alpha^{2}+\\beta^{2}\\right)}{\\alpha \\beta} x+1=0 \\\\\n\\Rightarrow x^{2}-\\left(\\frac{(\\alpha+\\beta)^{2}-2 \\alpha \\beta}{\\alpha \\beta}\\right) x+1=0 \\\\\n\\Rightarrow x^{2}-\\frac{p^{2}-2\\left(\\frac{p^{3}+q}{3 p}\\right)}{\\frac{p^{3}+q}{3 p}} x+1=0 \\\\\n\\Rightarrow\\left(p^{3}+q\\right) x^{2}-\\left(3 p^{3}-2 p^{3}-2 q\\right) x+\\left(p^{3}+q\\right)=0 \\\\\n\\Rightarrow\\left(p^{3}+q\\right) x^{2}-\\left(p^{3}-2 q\\right) x+\\left(p^{3}+q\\right)=0\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 54,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If the distance between the plane $\\mathrm{Ax}-2 \\mathrm{y}+\\mathrm{z}=\\mathrm{d}$ and the plane containing the lines $\\frac{\\mathrm{x}-1}{2}=\\frac{\\mathrm{y}-2}{3}=\\frac{\\mathrm{z}-3}{4}$ and $\\frac{\\mathrm{x}-2}{3}=\\frac{\\mathrm{y}-3}{4}=\\frac{\\mathrm{z}-4}{5}$ is $\\sqrt{6}$, then $|\\mathrm{d}|$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)",
+     "IITJEE2010-Paper 1-CMP-14\n$$\\mathrm{f}(\\mathrm{x})=\\mathrm{e}^{\\mathrm{x}^{2}}+\\mathrm{e}^{-\\mathrm{x}^{2}} \\Rightarrow \\mathrm{f}^{\\prime}(\\mathrm{x})=2 \\mathrm{x}\\left(\\mathrm{e}^{\\mathrm{x}^{2}}-\\mathrm{e}^{-\\mathrm{x}^{2}}\\right) \\geq 0 \\forall \\mathrm{x} \\in[0,1]$$",
+     "Clearly for $0 \\leq x \\leq 1 \\quad f(x) \\geq g(x) \\geq h(x)$\n$$\\begin{array}{l}\n\\because f(1)=g(1)=h(1)=e+\\frac{1}{e} \\text { and } f(1) \\text { is the greatest } \\\\\n\\therefore a=b=c=e+\\frac{1}{e} \\Rightarrow a=b=c\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 55,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "For any real number x , let $|\\mathrm{x}|$ denote the largest integer less than or equal to x . Let f be a real valued function defined on the interval $[-10,10]$ by\n$$f(x)=\\left\\{\\begin{array}{cc}\nx-[x] & \\text { if }[x] \\text { is odd } \\\\\n1+[x]-x & \\text { if }[x] \\text { is even }\n\\end{array}\\right.$$\nThen the value of $\\frac{\\pi^{2}}{10} \\int_{-10}^{10} f(x) \\cos \\pi x d x$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\n$$\\begin{array}{l}\nB=60^{\\circ} \\\\\n\\therefore \\frac{a}{c} \\sin 2 C+\\frac{c}{a} \\sin 2 A=2 \\sin A \\cos C+2 \\sin C \\cos A \\\\\n=2 \\sin (A+C)=2 \\sin B=2 \\times \\frac{\\sqrt{3}}{2}=\\sqrt{3} .\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 56,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $\\omega$ be the complex number $\\cos \\frac{2 \\pi}{3}+\\mathrm{i} \\sin \\frac{2 \\pi}{3}$. Then the number of distinct complex numbers z satisfying $\\left|\\begin{array}{ccc}z+1 & \\omega & \\omega^{2} \\\\ \\omega & z+\\omega^{2} & 1 \\\\ \\omega^{2} & 1 & z+\\omega\\end{array}\\right|=0$ is equal to",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\nPlane 1: $\\mathrm{ax}+\\mathrm{by}+\\mathrm{cz}=0$ contains line $\\frac{\\mathrm{x}}{2}=\\frac{\\mathrm{y}}{3}=\\frac{\\mathrm{z}}{4}$\n$$\\therefore 2 a+3 b+4 c=0$$",
+     "Plane 2: $a^{\\prime} x+b^{\\prime} y+c^{\\prime} z=0$ is perpendicular to plane containing lines $\\frac{x}{3}=\\frac{y}{4}=\\frac{z}{2}$ and $\\frac{x}{4}=\\frac{y}{2}=\\frac{z}{3}$\n$$\\begin{array}{l}\n\\therefore 3 a^{\\prime}+4 b^{\\prime}+2 c^{\\prime}=0 \\text { and } 4 a^{\\prime}+2 b^{\\prime}+3 c^{\\prime}=0 \\\\\n\\Rightarrow \\quad \\frac{a^{\\prime}}{12-4}=\\frac{b^{\\prime}}{8-9}=\\frac{c^{\\prime}}{6-16} \\\\\n\\Rightarrow \\quad 8 a-b-10 c=0\n\\end{array}$$",
+     "From (i) and (ii)\n$$\\frac{\\mathrm{a}}{-30+4}=\\frac{\\mathrm{b}}{32+20}=\\frac{\\mathrm{c}}{-2-24}$$",
+     "⇒ Equation of plane $\\mathrm{x}-2 \\mathrm{y}+\\mathrm{z}=0$.",
+     "IITJEE2010-Paper 1-CMP-15",
+     "SECTION - II (Multiple Correct Choice Type)\nThis section contains 5 multiple choice questions. Each question has four choices A), B), C) and D) out of which ONE OR MORE may be correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 57,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Incandescent bulbs are designed by keeping in mind that the resistance of their filament increases with the increase in temperature. If at room temperature, 100 W, 60 W and 40 W bulbs have filament resistances $\\mathrm{R}_{100}, \\mathrm{R}_{60}$ and $\\mathrm{R}_{40}$, respectively, the relation between these resistances is\nA) $\\frac{1}{\\mathrm{R}_{100}}=\\frac{1}{\\mathrm{R}_{40}}+\\frac{1}{\\mathrm{R}_{60}}$\nB) $\\mathrm{R}_{100}=\\mathrm{R}_{40}+\\mathrm{R}_{60}$\nC) $R_{100}>R_{60}>R_{40}$\nD) $\\frac{1}{R_{100}}>\\frac{1}{R_{60}}>\\frac{1}{R_{40}}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A), (C), (D)\nGiven $\\mathrm{z}=(1-\\mathrm{t}) \\mathrm{z}_{1}+\\mathrm{tz}_{2}$\n$$\\begin{array}{l}\n\\Rightarrow \\frac{z-z_{1}}{z_{2}-z_{1}}=t \\Rightarrow \\arg \\left(\\frac{z-z_{1}}{z_{2}-z_{1}}\\right)=0 \\\\\n\\Rightarrow \\arg \\left(z-z_{1}\\right)=\\arg \\left(z_{2}-z_{1}\\right) \\\\\n\\frac{z-z_{1}}{z_{2}-z_{1}}=\\frac{\\bar{z}-\\bar{z}_{1}}{\\bar{z}_{2}-\\bar{z}_{1}} \\\\\n\\left|\\begin{array}{cc}\nz-z_{1} & \\bar{z}-\\bar{z}_{1} \\\\\nz_{2}-z_{1} & \\bar{z}_{2}-\\bar{z}_{1}\n\\end{array}\\right|=0\n\\end{array}$$\n$\\mathrm{AP}+\\mathrm{PB}=\\mathrm{AB}$\n$$\\Rightarrow\\left|z-z_{1}\\right|+\\left|z-z_{2}\\right|=\\left|z_{1}-z_{2}\\right| .$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 58,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "To Verify Ohm's law, a student is provided with a test resistor $\\mathrm{R}_{\\mathrm{T}}$, a high resistance $\\mathrm{R}_{1}$, a small resistance $\\mathrm{R}_{2}$, two identical galvanometers $\\mathrm{G}_{1}$ and $\\mathrm{G}_{2}$, and a variable voltage source V. The correct circuit to carry out the experiment is\nA)\nB)\nC)\nD)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$$\\begin{array}{l}\n\\int_{0}^{1} \\frac{x^{4}(1-x)^{4}}{1+x^{2}} d x \\\\\n=\\int_{0}^{1}\\left(x^{6}-4 x^{5}+5 x^{4}-4 x^{2}+4-\\frac{4}{1+x^{2}}\\right) d x \\\\\n=\\left[\\frac{x^{7}}{7}-\\frac{2 x^{6}}{3}+x^{5}-\\frac{4 x^{3}}{3}+4 x\\right]_{0}^{1}-\\pi \\\\\n=\\frac{1}{7}-\\frac{2}{3}+1-\\frac{4}{3}+4-\\pi=\\frac{22}{7}-\\pi\n\\end{array}$$",
+     "IITJEE2010-Paper 1-CMP-16"
+    ]
+   },
+   "solution_source": "mirror_printed",
+   "parse_flags": [
+    "text_untrusted_frag"
+   ],
+   "needs_manual": "text_layer_frag_unrepairable"
+  },
+  {
+   "qno": 59,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "An AC voltage source of variable angular frequency $\\omega$ and fixed amplitude $\\mathrm{V}_{0}$ is connected in series with a capacitance C and an electric bulb of resistance R (inductance zero). When $\\omega$ is increased\nA) the bulb glows dimmer\nB) the bulb glows brighter\nC) total impedance of the circuit is unchanged\nD) total impedance of the circuit increases",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nUsing cosine rule for $\\angle \\mathrm{C}$\n$$\\begin{array}{l}\n\\frac{\\sqrt{3}}{2}=\\frac{\\left(x^{2}+x+1\\right)^{2}+\\left(x^{2}-1\\right)^{2}-(2 x+1)^{2}}{2\\left(x^{2}+x+1\\right)\\left(x^{2}-1\\right)} \\\\\n\\Rightarrow \\sqrt{3}=\\frac{2 x^{2}+2 x-1}{x^{2}+x+1} \\\\\n\\Rightarrow(\\sqrt{3}-2) x^{2}+(\\sqrt{3}-2) x+(\\sqrt{3}+1)=0 \\\\\n\\Rightarrow x=\\frac{(2-\\sqrt{3}) \\pm \\sqrt{3}}{2(\\sqrt{3}-2)} \\\\\n\\Rightarrow x=-(2+\\sqrt{3}), 1+\\sqrt{3} \\Rightarrow x=1+\\sqrt{3} \\text { as }(x>0)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 60,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A thin flexible wire of length L is connected to two adjacent fixed points and carries a current I in the clockwise direction, as shown in the figure. When the system is put in a uniform magnetic field of strength B going into the plane of the paper, the wire takes the shape of a circle. The tension in the wire is\nA) IBL\nB) $\\frac{\\mathrm{IBL}}{\\pi}$\nC) $\\frac{\\mathrm{IBL}}{2 \\pi}$\nD) $\\frac{\\mathrm{IBL}}{4 \\pi}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C), (D)\n$$\\begin{array}{l}\nA=\\left(t_{1}^{2}, 2 t_{1}\\right), B=\\left(t_{2}^{2}, 2 t_{2}\\right) \\\\\n\\text { Centre }=\\left[\\frac{t_{1}^{2}+t_{2}^{2}}{2},\\left(t_{1}+t_{2}\\right)\\right] \\\\\nt_{1}+t_{2}= \\pm r \\\\\nm=\\frac{2\\left(t_{1}-t_{2}\\right)}{t_{1}^{2}-t_{2}^{2}}=\\frac{2}{t_{1}+t_{2}}= \\pm \\frac{2}{r}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 61,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A block of mass $m$ is on an inclined plane of angle $\\theta$. The coefficient of friction between the block and the plane is $\\mu$ and $\\tan \\theta>\\mu$. The block is held stationary by applying a force P parallel to the plane. The direction of force\npointing up the plane is taken to be positive. As P is varied from $\\mathrm{P}_{1}= \\mathrm{mg}(\\sin \\theta-\\mu \\cos \\theta)$ to $\\mathrm{P}_{2}=\\mathrm{mg}(\\sin \\theta+\\mu \\cos \\theta)$, the frictional force f versus P graph will look like\nA)\nB)\nC)\nD)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B), (C)\n$$\\mathrm{f}^{\\prime}(\\mathrm{x})=\\frac{1}{\\mathrm{x}}+\\sqrt{1+\\sin \\mathrm{x}}$$\n$\\mathrm{f}^{\\prime}(\\mathrm{x})$ is not differentiable at $\\sin \\mathrm{x}=-1$ or $\\mathrm{x}=2 \\mathrm{n} \\pi-\\frac{\\pi}{2}, \\mathrm{n} \\in \\mathrm{N}$\nIn $x \\in(1, \\infty) \\quad f(x)>0, f^{\\prime}(x)>0$",
+     "IITJEE2010-Paper 1-CMP-17",
+     "Consider $\\mathrm{f}(\\mathrm{x})-\\mathrm{f}^{\\prime}(\\mathrm{x})$\n$$\\begin{array}{l}\n=\\ln \\mathrm{x}+\\int_{0}^{\\mathrm{x}} \\sqrt{1+\\sin \\mathrm{t}} \\mathrm{dt}-\\frac{1}{\\mathrm{x}}-\\sqrt{1+\\sin \\mathrm{x}} \\\\\n=\\left(\\int_{0}^{\\mathrm{x}} \\sqrt{1+\\sin \\mathrm{t}} \\mathrm{dt}-\\sqrt{1+\\sin \\mathrm{x}}\\right)+\\ln \\mathrm{x}-\\frac{1}{\\mathrm{x}}\n\\end{array}$$",
+     "Consider $\\mathrm{g}(\\mathrm{x})=\\int_{0}^{\\mathrm{x}} \\sqrt{1+\\sin \\mathrm{t}} \\mathrm{dt}-\\sqrt{1+\\sin \\mathrm{x}}$\nIt can be proved that $\\mathrm{g}(\\mathrm{x}) \\geq 2 \\sqrt{2}-\\sqrt{10} \\quad \\forall \\mathrm{x} \\in(0, \\infty)$\nNow there exists some $\\alpha>1$ such that $\\frac{1}{\\mathrm{x}}-\\ln \\mathrm{x} \\leq 2 \\sqrt{2}-\\sqrt{10}$ for all $\\mathrm{x} \\in(\\alpha, \\infty)$ as $\\frac{1}{\\mathrm{x}}-\\operatorname{lnx}$ is strictly decreasing function.\n$$\\Rightarrow \\mathrm{g}(\\mathrm{x}) \\geq \\frac{1}{\\mathrm{x}}-\\ln \\mathrm{x} .$$",
+     "SECTION - III (Paragraph Type)\nThis section contains 2 paragraphs. Based upon the first paragraph 2 multiple choice questions and based upon the second paragraph 3 multiple choice questions have to be answered. Each of these questions has four choices A), B), C) and D) out of WHICH ONLY ONE CORRECT.",
+     "Paragraph for Questions 42 to 43\nThe circle $\\mathrm{x}^{2}+\\mathrm{y}^{2}-8 \\mathrm{x}=0$ and hyperbola $\\frac{\\mathrm{x}^{2}}{9}-\\frac{\\mathrm{y}^{2}}{4}=1$ intersect at the points A and B."
+    ]
+   },
+   "solution_source": "mirror_printed",
+   "parse_flags": [
+    "text_untrusted_frag"
+   ],
+   "needs_manual": "text_layer_frag_unrepairable"
+  },
+  {
+   "qno": 62,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A thin uniform annular disc (see figure) of mass M has outer radius 4R and inner radius 3R. The work required to take a unit mass from point $P$ on its axis to infinity is\nA) $\\frac{2 \\mathrm{GM}}{7 \\mathrm{R}}(4 \\sqrt{2}-5)$\nB) $-\\frac{2 \\mathrm{GM}}{7 \\mathrm{R}}(4 \\sqrt{2}-5)$\nC) $\\frac{\\mathrm{GM}}{4 \\mathrm{R}}$\nB) $\\frac{2 \\mathrm{GM}}{5 \\mathrm{R}}(\\sqrt{2}-1)$\nIITJEE2010-Paper 1-CMP-27",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nA tangent to $\\frac{x^{2}}{9}-\\frac{y^{2}}{4}=1$ is $y=m x+\\sqrt{9 m^{2}-4}, m>0$\nIt is tangent to $\\mathrm{x}^{2}+\\mathrm{y}^{2}-8 \\mathrm{x}=0$\n$$\\begin{array}{l}\n\\therefore \\frac{4 \\mathrm{~m}+\\sqrt{9 \\mathrm{~m}^{2}-4}}{\\sqrt{1+\\mathrm{m}^{2}}}=4 \\\\\n\\Rightarrow 495 \\mathrm{~m}^{4}+104 \\mathrm{~m}^{2}-400=0 \\\\\n\\Rightarrow \\mathrm{~m}^{2}=\\frac{4}{5} \\text { or } \\mathrm{m}=\\frac{2}{\\sqrt{5}}\n\\end{array}$$\n∴ the tangent is $\\mathrm{y}=\\frac{2}{\\sqrt{5}} \\mathrm{~m}+\\frac{4}{\\sqrt{5}}$\n$$\\Rightarrow 2 x-\\sqrt{5} y+4=0 .$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 63,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Consider a thin square sheet of side L and thickness t, made of a material of resistivity $\\rho$. The resistance between two opposite faces, shown by the shaded areas in the figure is\nA) directly proportional to L\nB) directly proportional to t\nC) independent of L\nD) independent of t",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nA point on hyperbola is $(3 \\sec \\theta, 2 \\tan \\theta)$\nIt lies on the circle, so $9 \\sec ^{2} \\theta+4 \\tan ^{2} \\theta-24 \\sec \\theta=0$\n$$\\begin{array}{l}\n\\Rightarrow 13 \\sec ^{2} \\theta-24 \\sec \\theta-4=0 \\Rightarrow \\sec \\theta=2,-\\frac{2}{13} \\\\\n\\therefore \\sec \\theta=2 \\Rightarrow \\tan \\theta=\\sqrt{3} .\n\\end{array}$$",
+     "The point of intersection are $\\mathrm{A}(6,2 \\sqrt{3})$ and $\\mathrm{B}(6,-2 \\sqrt{3})$\n∴ The circle with AB as diameter is\n$$(x-6)^{2}+y^{2}=(2 \\sqrt{3})^{2} \\Rightarrow x^{2}+y^{2}-12 x+24=0$$",
+     "Paragraph for Questions 44 to 46\nLet p be an odd prime number and $\\mathrm{T}_{\\mathrm{p}}$ be the following set of $2 \\times 2$ matrices :\n$$\\mathrm{T}_{\\mathrm{p}}=\\left\\{\\mathrm{A}=\\left[\\begin{array}{ll}\n\\mathrm{a} & \\mathrm{~b} \\\\\n\\mathrm{c} & \\mathrm{a}\n\\end{array}\\right]: \\mathrm{a}, \\mathrm{~b}, \\mathrm{c} \\in\\{0,1, \\ldots, \\mathrm{p}-1\\}\\right\\}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 64,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A real gas behaves like an ideal gas if its\nA) pressure and temperature are both high\nB) pressure and temperature are both low\nC) pressure is high and temperature is low\nD) pressure is low and temperature is high",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\nWe must have $\\mathrm{a}^{2}-\\mathrm{b}^{2}=\\mathrm{kp}$\n$$\\Rightarrow(\\mathrm{a}+\\mathrm{b})(\\mathrm{a}-\\mathrm{b})=\\mathrm{kp}$$",
+     "⇒ either $\\mathrm{a}-\\mathrm{b}=0$ or $\\mathrm{a}+\\mathrm{b}$ is a multiple of p\nwhen $\\mathrm{a}=\\mathrm{b}$; number of matrices is p\nand when $\\mathrm{a}+\\mathrm{b}=$ multiple of $\\mathrm{p} \\Rightarrow \\mathrm{a}, \\mathrm{b}$ has $\\mathrm{p}-1$\n∴ Total number of matrices $=\\mathrm{p}+\\mathrm{p}-1$\n$=2 \\mathrm{p}-1$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 65,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A point mass of 1 kg collides elastically with a stationary point mass of 5 kg. After their collision, the 1 kg mass reverses its direction and moves with a speed of $2 \\mathrm{~ms}^{-1}$. Which of the following statement(s) is (are) correct for the system of these two masses?\nA) Total momentum of the system is $3 \\mathrm{~kg} \\mathrm{~ms}^{-1}$\nB) Momentum of $5 \\mathrm{~kg}_{\\text {mass }}$ after collision is $4 \\mathrm{~kg} \\mathrm{~ms}^{-1}$\nC) Kinetic energy of the centre of mass is 0.75 J\nD) Total kinetic energy of the system is 4J",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 66,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "One mole of an ideal gas in initial state A undergoes a cyclic process ABCA, as shown in the figure. Its pressure at A is $\\mathrm{P}_{0}$. Choose the correct option(s) from the following\nA) Internal energies at A and B are the same\nB) Work done by the gas in process AB is $\\mathrm{P}_{0} \\mathrm{~V}_{0}$ 纯 4\nC) Pressure at C is $\\frac{\\mathrm{P}_{0}}{4}$\nD) Temperature at C is $\\frac{\\mathrm{T}_{0}}{4}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 67,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A student uses a simple pendulum of exactly 1m length to determine g, the acceleration due to gravity. He uses a stop watch with the least count of 1 sec for this and records 40 seconds for 20 oscillations. For this observation, which of the following statement(s) is (are) true?\nA) Error $\\Delta \\mathrm{T}$ in measuring T , the time period, is 0.05 seconds\nB) Error $\\Delta \\mathrm{T}$ in measuring T , the time period, is 1 second\nC) Percentage error in the determination of g is 5\\%\nD) Percentage error in the determination of g is 2.5\\%",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\nS_{k}=\\frac{\\frac{k-1}{k!}}{1-\\frac{1}{k}}=\\frac{1}{(k-1)!} \\\\\n\\sum_{k=2}^{100}\\left|\\left(k^{2}-3 k+1\\right) \\frac{1}{(k-1)!}\\right| \\\\\n=\\sum_{k=2}^{100}\\left|\\frac{(k-1)^{2}-k}{(k-1)!}\\right| \\\\\n=\\sum\\left|\\frac{k-1}{(k-2)!}-\\frac{k}{(k-1)!}\\right| \\\\\n=\\left|\\frac{2}{1!}-\\frac{3}{2!}\\right|+\\left|\\frac{3}{2!}-\\frac{4}{3!}\\right|+\\cdots \\\\\n=\\frac{2}{1!}-\\frac{1}{0!}+\\frac{2}{1!}-\\frac{3}{2!}+\\frac{3}{2!}-\\frac{4}{3!}+\\cdots+\\frac{99}{98!}-\\frac{100}{99!} \\\\\n=3-\\frac{100}{99!} .\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 68,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A few electric field lines for a system of two charges $\\mathrm{Q}_{1}$ and $\\mathrm{Q}_{2}$ fixed at two different points on the x -axis are shown in the figure. These lines suggest that\nA) $\\left|Q_{1}\\right|>\\left|Q_{2}\\right|$\nB) $\\left|Q_{1}\\right|<\\left|Q_{2}\\right|$\nC) at a finite distance to the left of $Q_{1}$ the electric field is zero\nD) at a finite distance to the right of $Q_{2}$ the electric field is zero",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\n(y+z) \\cos 3 \\theta-(x y z) \\sin 3 \\theta=0 \\\\\nx y z \\sin 3 \\theta=(2 \\cos 3 \\theta) z+(2 \\sin 3 \\theta) y \\\\\n\\therefore(y+z) \\cos 3 \\theta=(2 \\cos 3 \\theta) z+(2 \\sin 3 \\theta) y=(y+2 z) \\cos 3 \\theta+y \\sin 3 \\theta \\\\\ny(\\cos 3 \\theta-2 \\sin 3 \\theta)=z \\cos 3 \\theta \\text { and } \\\\\ny(\\sin 3 \\theta-\\cos 3 \\theta)=0 \\Rightarrow \\sin 3 \\theta-\\cos 3 \\theta=0 \\Rightarrow \\sin 3 \\theta=\\cos 3 \\theta \\\\\n\\therefore 3 \\theta=n \\pi+\\pi / 4\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 69,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A ray OP of monochromatic light is incident on the face AB of prism ABCD near vertex B at an incident angle of $60^{\\circ}$ (see figure). If the refractive index of the material of the prism is $\\sqrt{3}$, which of the following is (are) correct?\nA) The ray gets totally internally reflected at face CD\nB) The ray comes out through face AD\nC) The angle between the incident ray and the emergent ray is $90^{\\circ}$\nD) The angle between the incident ray and the emergent ray is $120^{\\circ}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(9)\n$$\\begin{array}{l}\ny-y_{1}=m\\left(x-x_{1}\\right) \\\\\n\\text { Put } x=0, \\text { to get } y \\text { intercept } \\\\\ny_{1}-m x_{1}=x_{1}^{3} \\\\\ny_{1}-x_{1} \\frac{d y}{d x}=x_{1}^{3} \\\\\nx \\frac{d y}{d x}-y=-x^{3} \\\\\n\\frac{d y}{d x}-\\frac{y}{x}=-x^{2} \\\\\ne^{\\int-\\frac{1}{x} d x}=e^{-\\ln x}=\\frac{1}{x} \\\\\ny \\times \\frac{1}{x}=\\int-x^{2} \\times \\frac{1}{x} d x \\\\\n\\frac{y}{x}=-\\int x d x \\Rightarrow \\frac{y}{x}=-\\frac{x^{2}}{2}+c \\\\\n\\Rightarrow f(x)=-\\frac{x^{3}}{2}+\\frac{3}{2} x \\therefore f(-3)=9\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 70,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In the graphs below, the resistance R of a superconductor is shown as a function of its temperature T for two different magnetic fields $B_{1}$ (solid line) and $B_{2}$ (dashed line). If $B_{2}$ is larger than $B_{1}$ which of the following graphs shows the correct variation of R with T in these fields?\nA)\nC)\nB)\nD)\nIITJEE2010-Paper 1-CMP-30",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\n\\tan \\theta=\\cot 5 \\theta \\\\\n\\Rightarrow \\cos 6 \\theta=0 \\\\\n4 \\cos ^{3} 2 \\theta-3 \\cos 2 \\theta=0 \\\\\n\\Rightarrow \\cos 2 \\theta=0 \\text { or } \\pm \\frac{\\sqrt{3}}{2} \\\\\n\\sin 2 \\theta=\\cos 4 \\theta \\\\\n\\Rightarrow 2 \\sin ^{2} 2 \\theta+\\sin 2 \\theta-1=0 \\\\\n2 \\sin ^{2} 2 \\theta+2 \\sin 2 \\theta-\\sin 2 \\theta-1=0 \\\\\n\\sin 2 \\theta=-1 \\text { or } \\sin 2 \\theta=\\frac{1}{2} \\\\\n\\cos 2 \\theta=0 \\text { and } \\sin 2 \\theta=-1 \\\\\n\\Rightarrow 2 \\theta=-\\frac{\\pi}{2} \\Rightarrow \\theta=-\\frac{\\pi}{4} \\\\\n\\cos 2 \\theta= \\pm \\frac{\\sqrt{3}}{2}, \\sin 2 \\theta=\\frac{1}{2} \\\\\n\\Rightarrow 2 \\theta=\\frac{\\pi}{6}, \\frac{5 \\pi}{6} \\Rightarrow \\theta=\\frac{\\pi}{12}, \\frac{5 \\pi}{12} \\\\\n\\therefore \\theta=-\\frac{\\pi}{4}, \\frac{\\pi}{12}, \\frac{5 \\pi}{12}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed",
+   "parse_flags": [
+    "text_untrusted_frag"
+   ],
+   "needs_manual": "text_layer_frag_unrepairable"
+  },
+  {
+   "qno": 71,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A superconductor has $\\mathrm{T}_{\\mathrm{C}}(0)=100 \\mathrm{~K}$. When a magnetic field of 7.5 Tesla is applied, its $\\mathrm{T}_{\\mathrm{c}}$ decreases to 75 K. For this material one can definitely say that when\nA) $\\mathrm{B}=5$ Tesla, $\\mathrm{T}_{\\mathrm{c}}(\\mathrm{B})=80 \\mathrm{~K}$\nB) $\\mathrm{B}=5$ Tesla, $75 \\mathrm{~K}<\\mathrm{T}_{\\mathrm{c}}(\\mathrm{B})<100 \\mathrm{~K}$\nC) $\\mathrm{B}=10$ Tesla, $75 \\mathrm{~K}<\\mathrm{T}_{\\mathrm{c}}<100 \\mathrm{~K}$\nD) $\\mathrm{B}=10 \\mathrm{Tesla}, \\mathrm{T}_{\\mathrm{c}}=70 \\mathrm{~K}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)",
+     "IITJEE2010-Paper 1-CMP-21\n$$\\begin{array}{l}\n\\frac{1}{4 \\cos ^{2} \\theta+1+\\frac{3}{2} \\sin 2 \\theta} \\\\\n\\Rightarrow \\frac{1}{2[1+\\cos 2 \\theta]+1+\\frac{3}{2} \\sin 2 \\theta}\n\\end{array}$$\nlies between $\\frac{1}{2}$ to $\\frac{11}{2}$\n∴ maximum value is 2.\nMinimum value of $1+4 \\cos ^{2} \\theta+3 \\sin \\theta \\cos \\theta$\n$$\\begin{array}{l}\n1+\\frac{4(1+\\cos 2 \\theta)}{2}+\\frac{3}{2} \\sin 2 \\theta \\\\\n=1+2+2 \\cos 2 \\theta+\\frac{3}{2} \\sin 2 \\theta \\\\\n=3+2 \\cos 2 \\theta+\\frac{3}{2} \\sin 2 \\theta \\\\\n\\therefore=3-\\sqrt{4+\\frac{9}{4}}=3-\\frac{5}{2}=\\frac{1}{2}\n\\end{array}$$",
+     "So maximum value of $\\frac{1}{4 \\cos ^{2} \\theta+1+\\frac{3}{2} \\sin 2 \\theta}$ is 2 ."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 72,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If the total energy of the particle is E , it will perform periodic motion only if\nA) $\\mathrm{E}<0$\nB) $\\mathrm{E}>0$\nC) $\\mathrm{V}_{0}>\\mathrm{E}>0$\nD) $\\mathrm{E}>\\mathrm{V}_{0}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(5)\n$$\\begin{array}{l}\nE=(2 \\vec{a}+\\vec{b}) \\cdot\\left[2|\\vec{b}|^{2} \\vec{a}-2(\\vec{a} \\cdot \\vec{b}) \\vec{b}-(\\vec{a} \\cdot \\vec{b}) \\vec{a}+|\\vec{a}|^{2} \\vec{b}\\right] \\\\\n\\vec{a} \\cdot \\vec{b}=\\frac{2-2}{\\sqrt{70}}=0 \\\\\n|\\vec{a}|=1 \\\\\n|b|=1 \\\\\n\\vec{a} \\cdot \\vec{b}=0 \\\\\nE=(2 \\vec{a}+\\vec{b}) \\cdot\\left[2|\\vec{b}|^{2} \\vec{a}+|\\vec{a}|^{2} \\vec{b}\\right] \\\\\n=4|\\vec{a}|^{2}|\\vec{b}|^{2}+|\\vec{a}|^{2}(\\vec{a} \\cdot \\vec{b})+2|\\vec{b}|^{2}(\\vec{b} \\cdot \\vec{a})+|\\vec{a}|^{2}|\\vec{b}|^{2} \\\\\n=5|\\vec{a}|^{2}|\\vec{b}|^{2}=5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 73,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "For periodic motion of small amplitude A, the time period T of this particle is proportional to\nA) $A \\sqrt{\\frac{m}{\\alpha}}$\nB) $\\frac{1}{\\mathrm{~A}} \\sqrt{\\frac{\\mathrm{~m}}{\\alpha}}$\nC) $A \\sqrt{\\frac{\\alpha}{m}}$\nD) $\\mathrm{A} \\sqrt{\\frac{\\alpha}{\\mathrm{m}}}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nSubstituting $\\left(\\frac{\\mathrm{a}}{\\mathrm{e}}, 0\\right)$ in $\\mathrm{y}=-2 \\mathrm{x}+1$\n$$0=-\\frac{2 a}{e}+1$$",
+     "IITJEE2010-Paper 1-CMP-22\n$$\\begin{array}{l}\n\\frac{2 a}{e}=1 \\\\\na=\\frac{e}{2}\n\\end{array}$$",
+     "Also, $1=\\sqrt{\\mathrm{a}^{2} \\mathrm{~m}^{2}-\\mathrm{b}^{2}}$\n$$\\begin{array}{l}\n1=a^{2} m^{2}-b^{2} \\\\\n1=4 a^{2}-b^{2} \\\\\n1=\\frac{4 e^{2}}{4}-b^{2} \\\\\nb^{2}=e^{2}-1\n\\end{array}$$",
+     "Also, $b^{2}=a^{2}\\left(e^{2}-1\\right)$\n$$\\therefore \\mathrm{a}=1, \\mathrm{e}=2$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 74,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The acceleration of this particle for $|\\mathrm{x}|>\\mathrm{X}_{0}$ is\nA) proportional to $\\mathrm{V}_{0}$\nB) proportional to $\\frac{\\mathrm{V}_{0}}{\\mathrm{mX}_{0}}$\nC) proportional to $\\sqrt{\\frac{\\mathrm{V}_{0}}{\\mathrm{mX}_{0}}}$\nD) zero",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(6)\n$$\\begin{array}{l}\n21+3 m+4 n=0 \\\\\n31+4 m+5 n=0 \\\\\n\\frac{1}{-1}=\\frac{m}{2}=\\frac{n}{-1}\n\\end{array}$$",
+     "Equation of plane will be\n$$\\begin{array}{l}\na(x-1)+b(y-2)+c(z-3)=0 \\\\\n-1(x-1)+2(y-2)-1(z-3)=0 \\\\\n-x+1+2 y-4-z+3=0 \\\\\n-x+2 y-z=0 \\\\\nx-2 y+z=0 \\\\\n\\frac{|d|}{\\sqrt{6}}=\\sqrt{6} \\\\\nd=6\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 75,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Gravitational acceleration on the surface of a planet is $\\frac{\\sqrt{6}}{11} \\mathrm{~g}$, where g is the gravitational acceleration on the surface of the earth. The average mass density of the planet is $\\frac{2}{3}$ times that of the earth. If the escape speed on the surface of the earth is taken to be $11 \\mathrm{kms}^{-1}$, the escape speed on the surface of the planet in $\\mathrm{kms}^{-1}$ will be",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\n$$\\mathrm{f}(\\mathrm{x})=\\left\\{\\begin{array}{ll}\n\\mathrm{x}-1, & 1 \\leq \\mathrm{x}<2 \\\\\n1-\\mathrm{x}, & 0 \\leq \\mathrm{x}<1\n\\end{array}\\right.$$",
+     "IITJEE2010-Paper 1-CMP-23\n$f(x)$ is periodic with period 2\n$$\\begin{array}{l}\n\\therefore I=\\int_{-10}^{10} f(x) \\cos \\pi x d x \\\\\n=2 \\int_{0}^{10} f(x) \\cos \\pi x d x=2 \\times 5 \\int_{0}^{2} f(x) \\cos \\pi x d x \\\\\n=10\\left[\\int_{0}^{1}(1-x) \\cos \\pi x d x+\\int_{1}^{2}(x-1) \\cos \\pi x d x\\right]=10\\left(I_{1}+I_{2}\\right) \\\\\nI_{2}=\\int_{1}^{2}(x-1) \\cos \\pi x d x \\quad \\text { put } x-1=t \\\\\nI_{2}=-\\int_{0}^{1} t \\cos \\pi t d t \\\\\nI_{1}=\\int_{0}^{1}(1-x) \\cos \\pi x d x=-\\int_{0}^{1} x \\cos (\\pi x) d x \\\\\n\\therefore I=10\\left[-2 \\int_{0}^{1} x \\cos \\pi x d x\\right]_{1}^{1} \\\\\n=-20\\left[x \\frac{\\sin \\pi x}{\\pi}+\\frac{\\cos \\pi x}{\\pi^{2}}\\right]_{0}^{1} \\\\\n=-20\\left[-\\frac{1}{\\pi^{2}}-\\frac{1}{\\pi^{2}}\\right]=\\frac{40}{\\pi^{2}} \\therefore \\frac{\\pi^{2}}{10} I=4\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 76,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A piece of ice (heat capacity $=2100 \\mathrm{~J} \\mathrm{~kg}^{-1}{ }^{\\circ} \\mathrm{C}^{-1}$ and latent heat $=3.36 \\times 10^{5} \\mathrm{~J} \\mathrm{~kg}^{-1}$ ) of mass m grams is at $-5^{\\circ} \\mathrm{C}$ at atmospheric pressure. It is given 420 J of heat so that the ice starts melting. Finally when the ice-water mixture is in equilibrium, it is found that 1 gm of ice has melted. Assuming there is no other heat exchange in the process, the value of m is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\n$$\\begin{array}{l}\n\\omega=\\mathrm{e}^{i 2 \\pi / 3} \\\\\n\\left|\\begin{array}{ccc}\nz+1 & \\omega & \\omega^{2} \\\\\n\\omega & z+\\omega^{2} & 1 \\\\\n\\omega^{2} & 1 & z+\\omega\n\\end{array}\\right|=0\n\\end{array}$$",
+     "IITJEE2010-Paper 1-CMP-24\n$$\\begin{array}{l}\nz\\left|\\begin{array}{ccc}\n1 & \\omega & \\omega^{2} \\\\\n1 & z+\\omega^{2} & 1 \\\\\n1 & 1 & z+\\omega\n\\end{array}\\right|=0 \\\\\n\\Rightarrow z\\left[\\left(z+\\omega^{2}\\right)(z+\\omega)-1-\\omega(z+\\omega-1)+\\omega^{2}\\left(1-z-\\omega^{2}\\right)\\right]=0 \\\\\n\\Rightarrow z^{3}=0 \\\\\n\\Rightarrow z=0 \\text { is only solution. }\n\\end{array}$$",
+     "IITJEE2010-Paper 1-CMP-25",
+     "PART - III: PHYSICS",
+     "SECTION - I (Single Correct Choice Type)\nThis Section contains 8 multiple choice questions. Each question has four choices A), B), C) and D) out of which ONLY ONE is correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 77,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A stationary source is emitting sound at a fixed frequency $\\mathrm{f}_{0}$, which is reflected by two cars approaching the source. The difference between the frequencies of sound reflected from the cars is $1.2 \\%$ of $f_{0}$. What is the difference in the speeds of the cars (in km per hour) to the nearest integer? The cars are moving at constant speeds much smaller than the speed of sound which is $330 \\mathrm{~ms}^{-1}$.",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\nPower $\\propto 1 / R$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 78,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The focal length of a thin biconvex lens is 20 cm. When an object is moved from a distance of 25 cm in front of it to 50 cm, the magnification of its image changes from $\\mathrm{m}_{25}$ to $\\mathrm{m}_{50}$. The ratio $\\frac{\\mathrm{m}_{25}}{\\mathrm{~m}_{50}}$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$\\mathrm{G}_{1}$ is acting as voltmeter and $\\mathrm{G}_{2}$ is acting as ammeter."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 79,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "An $\\alpha$-particle and a proton are accelerated from rest by a potential difference of 100 V . After this, their de Broglie wavelengths are $\\lambda_{\\alpha}$ and $\\lambda_{p}$ respectively. The ratio $\\frac{\\lambda_{p}}{\\lambda_{\\alpha}}$, to the nearest integer, is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nImpedance $Z=\\sqrt{\\frac{1}{(\\omega C)^{2}}+R^{2}}$\nas $\\omega$ increases, Z decreases.\nHence bulb will glow brighter",
+     "IITJEE2010-Paper 1-CMP-26"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 80,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "When two identical batteries of internal resistance $1 \\Omega$ each are connected in series across a resistor R , the rate of heat produced in R is $\\mathrm{J}_{1}$. When the same batteries are connected in parallel across R, the rate is $\\mathrm{J}_{2}$. If $\\mathrm{J}_{1}=2.25 \\mathrm{~J}_{2}$ then the value of R in $\\Omega$ is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$$\\begin{array}{l}\n2 T \\sin \\frac{d \\theta}{2}=B i R d \\theta \\\\\nT d \\theta=B i R d \\theta \\quad \\text { (for } \\theta \\text { small) } \\\\\nT=B i R=\\frac{B i L}{2 \\pi} \\quad\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 81,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two spherical bodies A (radius 6 cm ) and B (radius 18 cm ) are at temperature $\\mathrm{T}_{1}$ and $\\mathrm{T}_{2}$, respectively. The maximum intensity in the emission spectrum of A is at 500 nm and in that of B is at 1500 nm. Considering them to be black bodies, what will be the ratio of the rate of total energy radiated by A to that of B?",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nInitially the frictional force is upwards as P increases frictional force decreases."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 82,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "When two progressive waves $\\mathrm{y}_{1}=4 \\sin (2 \\mathrm{x}-6 \\mathrm{t})$ and $\\mathrm{y}_{2}=3 \\sin \\left(2 \\mathrm{x}-6 \\mathrm{t}-\\frac{\\pi}{2}\\right)$ are superimposed, the amplitude of the resultant wave is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$$\\mathrm{V}=-\\int_{3 \\mathrm{R}}^{4 \\mathrm{R}} \\frac{\\sigma 2 \\pi \\mathrm{rdrG}}{\\sqrt{\\mathrm{r}^{2}+16 \\mathrm{R}^{2}}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 83,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A 0.1 kg mass is suspended from a wire of negligible mass. The length of the wire is 1m and its crosssectional area is $4.9 \\times 10^{-7} \\mathrm{~m}^{2}$. If the mass is pulled a little in the vertically downward direction and released, it performs simple harmonic motion of angular frequency $140 \\mathrm{rad} \\mathrm{s}^{-1}$. If the Young's modulus of the material of the wire is $\\mathrm{n} \\times 10^{9} \\mathrm{Nm}^{-2}$, the value of n is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$$\\mathrm{R}=\\frac{\\rho \\mathrm{L}}{\\mathrm{Lt}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 84,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A binary star consists of two stars A (mass $2.2 \\mathrm{M}_{\\mathrm{s}}$ ) and B (mass $11 \\mathrm{M}_{\\mathrm{s}}$ ), where $\\mathrm{M}_{\\mathrm{s}}$ is the mass of the sun. They are separated by distance $d$ and are rotating about their centre of mass, which is stationary. The ratio of the total angular momentum of the binary star to the angular momentum of star B about the centre of mass is",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)",
+     "SECTION - II (Multiple Correct Choice Type)\nThis section contains 5 multiple choice questions. Each question has four choices A), B), C) and D) out of which ONE OR MORE may be correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

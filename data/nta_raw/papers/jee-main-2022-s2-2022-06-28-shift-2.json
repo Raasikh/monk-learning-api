@@ -1,61 +1,1068 @@
 {
+ "paper_id": "jee-main-2022-s2-2022-06-28-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-2022-06-28-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-28",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-2022-06-28-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-28",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": null,
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2022/jee-main-28-june-2022-paper-shift-2/960382",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/eeU7ZLSlhmbH3eZC9Soi",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2022/jee-main-28-june-2022-paper-shift-2/960382",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/eeU7ZLSlhmbH3eZC9Soi",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "a588d41dd22b3455de148359aed4c7c4e94676000d2238050c1313fcae720ba9",
+  "page_count": 11,
+  "text_chars": 980,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-2022-06-28-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 2,
+  "xval_printed_agree": 30,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "101261",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "101262",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "101263",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "101264",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "101265",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "101266",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "101267",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "101268",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "101269",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "101270",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "101271",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "101272",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "101273",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "101274",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "101275",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "101276",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "101277",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "101278",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "101279",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "101280",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "101281",
+    "answer": {
+     "raw": "125",
+     "value": "125"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "101282",
+    "answer": {
+     "raw": "0",
+     "value": "0"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "101283",
+    "answer": {
+     "raw": "10",
+     "value": "10"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "101284",
+    "answer": {
+     "raw": "11",
+     "value": "11"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "101285",
+    "answer": {
+     "raw": "41651",
+     "value": "41651"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "101286",
+    "answer": {
+     "raw": "58",
+     "value": "58"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "101287",
+    "answer": {
+     "raw": "25",
+     "value": "25"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "101288",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "101289",
+    "answer": {
+     "raw": "37",
+     "value": "37"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "101290",
+    "answer": {
+     "raw": "9",
+     "value": "9"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "101261",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{R}_{1}=\\{(\\mathrm{a}, \\mathrm{b}) \\in \\mathrm{N} \\times \\mathrm{N}:|\\mathrm{a}-\\mathrm{b}| \\leq 13\\}$ and\n$$\\mathrm{R}_{2}=\\{(\\mathrm{a}, \\mathrm{~b}) \\in \\mathrm{N} \\times \\mathrm{N}:|\\mathrm{a}-\\mathrm{b}| \\neq 13\\} . \\text { Thenon } \\mathrm{N}:$$",
+   "options": {
+    "A": "Both $\\mathrm{R}_{1}$ and $\\mathrm{R}_{2}$ are equivalence relations",
+    "B": "Neither $\\mathrm{R}_{1}$ nor $\\mathrm{R}_{2}$ is an equivalence relation",
+    "C": "$\\mathrm{R}_{1}$ is an equivalence relation but $\\mathrm{R}_{2}$ is not",
+    "D": "$\\mathrm{R}_{2}$ is an equivalence relation but $\\mathrm{R}_{1}$ is not\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol.\n$$\\begin{array}{l}\nR_{1}=\\{(a, b) \\in N \\times N:|a-b| \\leq 13\\} \\\\\nR_{2}=\\{(a, b) \\in N \\times N:|a-b| \\neq 13\\} .\n\\end{array}$$\n\nFor $\\mathrm{R}_{1}$ :\ni) Reflexive relation\n$$(a, a) \\in N \\times N:|a-a| \\leq 13$$\nii) Symmetric relation\n$$(a, b) \\in R_{1},(b, a) \\in R_{1}:|b-a| \\leq 13$$\niii) Transitive relation\n$$\\begin{array}{l}\n(a, b) \\in R_{1},(b, c) \\in R_{1},(a, c) \\in R_{1}: \\\\\n(1,3) \\in R_{1},(3,16) \\in R_{1} \\text { but }(1,16) \\notin R_{1}\n\\end{array}$$\n\nFor $\\mathrm{R}_{2}$ :\ni) Reflexive relation\n$$(a, a) \\in N \\times N:|a-a| \\neq 13$$\nii) Symmetric relation\n$$(b, a) \\in N \\times N:|b-a| \\neq 13$$\niii) Transitive relation\n$$(a, b) \\in R_{2},(b, c) \\in R_{2},(a, c) \\in R_{2}$$\n$(1,3) \\in \\mathrm{R}_{2,}(3,14) \\in \\mathrm{R}_{2}$ but $(1,14) \\notin \\mathrm{R}_{2}$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nR_{1}=\\{(a, b) \\in N \\times N:|a-b| \\leq 13\\} \\\\\nR_{2}=\\{(a, b) \\in N \\times N:|a-b| \\neq 13\\} .\n\\end{array}$$",
+     "For $\\mathrm{R}_{1}$ :\ni) Reflexive relation\n$$(a, a) \\in N \\times N:|a-a| \\leq 13$$\nii) Symmetric relation\n$$(a, b) \\in R_{1},(b, a) \\in R_{1}:|b-a| \\leq 13$$\niii) Transitive relation\n$$\\begin{array}{l}\n(a, b) \\in R_{1},(b, c) \\in R_{1},(a, c) \\in R_{1}: \\\\\n(1,3) \\in R_{1},(3,16) \\in R_{1} \\text { but }(1,16) \\notin R_{1}\n\\end{array}$$",
+     "For $\\mathrm{R}_{2}$ :\ni) Reflexive relation\n$$(a, a) \\in N \\times N:|a-a| \\neq 13$$\nii) Symmetric relation\n$$(b, a) \\in N \\times N:|b-a| \\neq 13$$\niii) Transitive relation\n$$(a, b) \\in R_{2},(b, c) \\in R_{2},(a, c) \\in R_{2}$$\n$(1,3) \\in \\mathrm{R}_{2,}(3,14) \\in \\mathrm{R}_{2}$ but $(1,14) \\notin \\mathrm{R}_{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "a588d41dd22b3455de148359aed4c7c4e94676000d2238050c1313fcae720ba9",
-    "page_count": 11,
-    "text_chars": 980,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-2022-06-28-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": "101262",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}(\\mathrm{x})$ be a quadratic polynomial such that f(-2) $+f(3)=0$. If one of the roots of $f(x)=0$ is -1 , then the sum of the roots of $\\mathrm{f}(\\mathrm{x})=0$ is equal to :",
+   "options": {
+    "A": "$\\frac{11}{3}$",
+    "B": "$\\frac{7}{3}$",
+    "C": "$\\frac{13}{3}$",
+    "D": "$\\frac{14}{3}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol. $f(-2)+f(3)=0$\n$$\\begin{array}{l}\nf(x)=(x+1)(a x+b) \\\\\nf(-2)+f(3)=-1(-2 a+b)+4(3 a+b)=0 \\\\\n2 a-b+12 a+4 b=0 \\\\\n14 a+3 b=0 \\\\\n\\frac{-b}{a}=\\frac{14}{3}\n\\end{array}$$\n\nSum of roots $=\\left(-1+\\frac{-\\mathrm{b}}{\\mathrm{a}}\\right)=-1+\\frac{14}{3}=\\frac{11}{3}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$f(-2)+f(3)=0$\n$$\\begin{array}{l}\nf(x)=(x+1)(a x+b) \\\\\nf(-2)+f(3)=-1(-2 a+b)+4(3 a+b)=0 \\\\\n2 a-b+12 a+4 b=0 \\\\\n14 a+3 b=0 \\\\\n\\frac{-b}{a}=\\frac{14}{3}\n\\end{array}$$",
+     "Sum of roots $=\\left(-1+\\frac{-\\mathrm{b}}{\\mathrm{a}}\\right)=-1+\\frac{14}{3}=\\frac{11}{3}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "101263",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The number of ways to distribute 30 identical candies among four children $\\mathrm{C}_{1}, \\mathrm{C}_{2}, \\mathrm{C}_{3}$ and $\\mathrm{C}_{4}$ so that $\\mathrm{C}_{2}$ receives atleast 4 and atmost 7 candies, $\\mathrm{C}_{3}$ receives atleast 2 and atmost 6 candies, is equal to",
+   "options": {
+    "A": "205",
+    "B": "615",
+    "C": "510",
+    "D": "430\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{t}_{1}+\\mathrm{t}_{2}+\\mathrm{t}_{3}+\\mathrm{t}_{4}=30$\nCoefficient of $\\mathrm{x}^{30}$ in $\\left(1+\\mathrm{x}+\\mathrm{x}^{2}+\\ldots+\\mathrm{x}^{30}\\right)^{2}$\n$$\\begin{array}{l}\n\\left(x^{4}+x^{5}+x^{6}+x^{7}\\right)\\left(x^{2}+x^{3}+x^{4}+x^{5}+x^{6}\\right) \\\\\nx^{6}\\left(\\frac{1-x^{31}}{1-x}\\right)^{2}\\left(1+x+x^{2}+x^{3}\\right)\\left(1+x+x^{2}+x^{3}+x^{4}\\right) \\\\\nx^{6}\\left(1-x^{3}\\right)^{2}\\left(1-x^{4}\\right)\\left(1-x^{5}\\right)(1-x)^{4} \\\\\nx^{6}\\left(1-x^{4}-x^{5}+x^{9}\\right)\\left(1+x^{62}-2 x^{31}(1-x)^{-4}\\right) \\\\\nx^{6}\\left(1-x^{4}-x^{5}+x^{9}\\right)(1-x)^{-4}\n\\end{array}$$\n\nCoefficient of $x^{n}$ in $(1-x)^{-r}$ is ${ }^{n+r-1} C_{r-1}$\n$$\\begin{array}{l}\n\\Rightarrow{ }^{27} \\mathrm{C}_{3}-{ }^{23} \\mathrm{C}_{3}-{ }^{22} \\mathrm{C}_{3}+{ }^{18} \\mathrm{C}_{3} \\\\\n2925-1771-1540+816 \\\\\n=430\n\\end{array}$$\n\nOR\n$$\\begin{array}{l}\n\\mathrm{x}_{2} \\in[4,7], \\mathrm{x}_{3} \\in[2,6] \\\\\n\\Rightarrow \\mathrm{t}_{1}+\\mathrm{t}_{2}+\\mathrm{t}_{3}+\\mathrm{t}_{4}=24\n\\end{array}$$\ntotal ways =\n$$\\begin{array}{c}\n{ }^{24+4-1} \\mathrm{C}_{4-1}-{ }^{20+4-1} \\mathrm{C}_{4-1}-{ }^{19+4-1} \\mathrm{C}_{4-1}+{ }^{15+4-1} \\mathrm{C}_{4-1} \\\\\n={ }^{27} \\mathrm{C}_{3}-{ }^{23} \\mathrm{C}_{3}-{ }^{22} \\mathrm{C}_{3}+{ }^{18} \\mathrm{C}_{3}=430\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{t}_{1}+\\mathrm{t}_{2}+\\mathrm{t}_{3}+\\mathrm{t}_{4}=30$\nCoefficient of $\\mathrm{x}^{30}$ in $\\left(1+\\mathrm{x}+\\mathrm{x}^{2}+\\ldots+\\mathrm{x}^{30}\\right)^{2}$\n$$\\begin{array}{l}\n\\left(x^{4}+x^{5}+x^{6}+x^{7}\\right)\\left(x^{2}+x^{3}+x^{4}+x^{5}+x^{6}\\right) \\\\\nx^{6}\\left(\\frac{1-x^{31}}{1-x}\\right)^{2}\\left(1+x+x^{2}+x^{3}\\right)\\left(1+x+x^{2}+x^{3}+x^{4}\\right) \\\\\nx^{6}\\left(1-x^{3}\\right)^{2}\\left(1-x^{4}\\right)\\left(1-x^{5}\\right)(1-x)^{4} \\\\\nx^{6}\\left(1-x^{4}-x^{5}+x^{9}\\right)\\left(1+x^{62}-2 x^{31}(1-x)^{-4}\\right) \\\\\nx^{6}\\left(1-x^{4}-x^{5}+x^{9}\\right)(1-x)^{-4}\n\\end{array}$$",
+     "Coefficient of $x^{n}$ in $(1-x)^{-r}$ is ${ }^{n+r-1} C_{r-1}$\n$$\\begin{array}{l}\n\\Rightarrow{ }^{27} \\mathrm{C}_{3}-{ }^{23} \\mathrm{C}_{3}-{ }^{22} \\mathrm{C}_{3}+{ }^{18} \\mathrm{C}_{3} \\\\\n2925-1771-1540+816 \\\\\n=430\n\\end{array}$$",
+     "OR\n$$\\begin{array}{l}\n\\mathrm{x}_{2} \\in[4,7], \\mathrm{x}_{3} \\in[2,6] \\\\\n\\Rightarrow \\mathrm{t}_{1}+\\mathrm{t}_{2}+\\mathrm{t}_{3}+\\mathrm{t}_{4}=24\n\\end{array}$$\ntotal ways =\n$$\\begin{array}{c}\n{ }^{24+4-1} \\mathrm{C}_{4-1}-{ }^{20+4-1} \\mathrm{C}_{4-1}-{ }^{19+4-1} \\mathrm{C}_{4-1}+{ }^{15+4-1} \\mathrm{C}_{4-1} \\\\\n={ }^{27} \\mathrm{C}_{3}-{ }^{23} \\mathrm{C}_{3}-{ }^{22} \\mathrm{C}_{3}+{ }^{18} \\mathrm{C}_{3}=430\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "101264",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The term independent of x in the expression of $\\left(1-x^{2}+3 x^{3}\\right)\\left(\\frac{5}{2} x^{3}-\\frac{1}{5 x^{2}}\\right)^{11}, x \\neq 0$ is",
+   "options": {
+    "A": "$\\frac{7}{40}$",
+    "B": "$\\frac{33}{200}$",
+    "C": "$\\frac{39}{200}$",
+    "D": "$\\frac{11}{50}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\left(1-x^{2}+3 x^{3}\\right)\\left(\\frac{5}{2} x^{3}-\\frac{1}{5 x^{2}}\\right)^{11}$\nGeneral term of $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$ is ${ }^{11} \\mathrm{C}_{\\mathrm{r}}\\left(\\frac{5}{2} \\mathrm{x}^{3}\\right)^{11-\\mathrm{r}}\\left(-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{\\mathrm{r}}$\nGeneral term is ${ }^{11} \\mathrm{C}_{\\mathrm{r}}\\left(\\frac{5}{2}\\right)^{11-\\mathrm{r}}\\left(-\\frac{1}{5}\\right)^{\\mathrm{r}} \\mathrm{x}^{33-5 \\mathrm{r}}$\nNow, term independent of x\n$1 \\times$ coefficient of $\\mathrm{x}^{0}$ in $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$\n$-1 \\times$ coefficient of $x^{-2}$ in $\\left(\\frac{5}{2} x^{3}-\\frac{1}{5 x^{2}}\\right)^{11}+$\n$3 \\times$ coefficient of $\\mathrm{x}^{-3}$ in $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$\nfor coefficient of $\\mathrm{x}^{0} \\quad 33-5 \\mathrm{r}=0$ not possible for coefficient of $\\mathrm{x}^{-2} \\quad 33-5 \\mathrm{r}=-2$\n$35=5 \\mathrm{r} \\Rightarrow \\mathrm{r}=7$\nfor coefficient of $\\mathrm{x}^{-3} \\quad 33-5 \\mathrm{r}=-3$\n$36=5 \\mathrm{r}$ not possible\nSo term independent of x is\n$(-1)^{11} \\mathrm{C}_{7}\\left(\\frac{5}{2}\\right)^{4}\\left(-\\frac{1}{5}\\right)^{7}=\\frac{33}{200}$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\left(1-x^{2}+3 x^{3}\\right)\\left(\\frac{5}{2} x^{3}-\\frac{1}{5 x^{2}}\\right)^{11}$\nGeneral term of $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$ is ${ }^{11} \\mathrm{C}_{\\mathrm{r}}\\left(\\frac{5}{2} \\mathrm{x}^{3}\\right)^{11-\\mathrm{r}}\\left(-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{\\mathrm{r}}$\nGeneral term is ${ }^{11} \\mathrm{C}_{\\mathrm{r}}\\left(\\frac{5}{2}\\right)^{11-\\mathrm{r}}\\left(-\\frac{1}{5}\\right)^{\\mathrm{r}} \\mathrm{x}^{33-5 \\mathrm{r}}$\nNow, term independent of x\n$1 \\times$ coefficient of $\\mathrm{x}^{0}$ in $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$\n$-1 \\times$ coefficient of $x^{-2}$ in $\\left(\\frac{5}{2} x^{3}-\\frac{1}{5 x^{2}}\\right)^{11}+$\n$3 \\times$ coefficient of $\\mathrm{x}^{-3}$ in $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$\nfor coefficient of $\\mathrm{x}^{0} \\quad 33-5 \\mathrm{r}=0$ not possible for coefficient of $\\mathrm{x}^{-2} \\quad 33-5 \\mathrm{r}=-2$\n$35=5 \\mathrm{r} \\Rightarrow \\mathrm{r}=7$\nfor coefficient of $\\mathrm{x}^{-3} \\quad 33-5 \\mathrm{r}=-3$\n$36=5 \\mathrm{r}$ not possible\nSo term independent of x is\n$(-1)^{11} \\mathrm{C}_{7}\\left(\\frac{5}{2}\\right)^{4}\\left(-\\frac{1}{5}\\right)^{7}=\\frac{33}{200}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": "101265",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If n arithmetic means are inserted between a and 100 such that the ratio of the first mean to the last mean is 1 : 7 and $\\mathrm{a}+\\mathrm{n}=33$, then the value of n is",
+   "options": {
+    "A": "21",
+    "B": "22",
+    "C": "23",
+    "D": "24\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol. $\\mathrm{d}=\\frac{100-\\mathrm{a}}{\\mathrm{n}+1}$\n$$\\begin{array}{l}\nA_{1}=a+d \\\\\nA_{n}=100-d \\\\\n\\Rightarrow \\frac{A_{1}}{A_{n}}=\\frac{1}{7} \\Rightarrow \\frac{a+d}{100-d}=\\frac{1}{7} \\\\\n\\Rightarrow 7 a+8 d=100 \\\\\n\\Rightarrow 7 a+8\\left(\\frac{100-a}{n+1}\\right)=100 \\\\\n\\because a+n=33\n\\end{array}$$\n\nNow, by Eq. (1) and (2)\n$7 \\mathrm{n}^{2}-132 \\mathrm{n}-667=0$\n$\\mathrm{n}=23$ and $\\mathrm{n}=\\frac{-29}{7}$ reject."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{d}=\\frac{100-\\mathrm{a}}{\\mathrm{n}+1}$\n$$\\begin{array}{l}\nA_{1}=a+d \\\\\nA_{n}=100-d \\\\\n\\Rightarrow \\frac{A_{1}}{A_{n}}=\\frac{1}{7} \\Rightarrow \\frac{a+d}{100-d}=\\frac{1}{7} \\\\\n\\Rightarrow 7 a+8 d=100 \\\\\n\\Rightarrow 7 a+8\\left(\\frac{100-a}{n+1}\\right)=100 \\\\\n\\because a+n=33\n\\end{array}$$",
+     "Now, by Eq. (1) and (2)\n$7 \\mathrm{n}^{2}-132 \\mathrm{n}-667=0$\n$\\mathrm{n}=23$ and $\\mathrm{n}=\\frac{-29}{7}$ reject."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "101266",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}, \\mathrm{g}: \\mathbf{R} \\rightarrow \\mathbf{R}$ be functions defined by\n$f(x)=\\left\\{\\begin{array}{ll}{[x]} & , \\quad x<0 \\\\ |1-x| & , \\quad x \\geq 0\\end{array}\\right.$ and\n$\\mathrm{g}(\\mathrm{x})=\\left\\{\\begin{array}{lll}\\mathrm{e}^{\\mathrm{x}}-\\mathrm{x} & , & \\mathrm{x}<0 \\\\ (\\mathrm{x}-1)^{2}-1 & , & \\mathrm{x} \\geq 0\\end{array}\\right.$\nwhere [x] denote the greatest integer less than or equal to x . Then, the function fog is discontinuous at exactly :",
+   "options": {
+    "A": "one point",
+    "B": "two points",
+    "C": "three points",
+    "D": "four points\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Check continuity at $\\mathrm{x}=0$ and also check continuity at those $x$ where $g(x)=0$\n$$\\begin{array}{l}\ng(x)=0 \\text { at } x=0,2 \\\\\n\\operatorname{fog}\\left(0^{+}\\right)=-1 \\\\\n\\operatorname{fog}(0)=0\n\\end{array}$$\n\nHence, discontinuous at $\\mathrm{x}=0$\nfog $\\left(2^{+}\\right)=1$\nfog $\\left(2^{-}\\right)=-1$\nHence, discontinuous at $\\mathrm{x}=2$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Check continuity at $\\mathrm{x}=0$ and also check continuity at those $x$ where $g(x)=0$\n$$\\begin{array}{l}\ng(x)=0 \\text { at } x=0,2 \\\\\n\\operatorname{fog}\\left(0^{+}\\right)=-1 \\\\\n\\operatorname{fog}(0)=0\n\\end{array}$$",
+     "Hence, discontinuous at $\\mathrm{x}=0$\nfog $\\left(2^{+}\\right)=1$\nfog $\\left(2^{-}\\right)=-1$\nHence, discontinuous at $\\mathrm{x}=2$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "101267",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}: \\mathbf{R} \\rightarrow \\mathbf{R}$ be a differentiable function such that $\\mathrm{f}\\left(\\frac{\\pi}{4}\\right)=\\sqrt{2}, \\mathrm{f}\\left(\\frac{\\pi}{2}\\right)=0$ and $\\mathrm{f}^{\\prime}\\left(\\frac{\\pi}{2}\\right)=1$ and let $\\mathrm{g}(\\mathrm{x})=\\int_{\\mathrm{x}}^{\\pi / 4}\\left(\\mathrm{f}^{\\prime}(\\mathrm{t}) \\sec \\mathrm{t}+\\tan \\mathrm{t} \\sec \\mathrm{tf}(\\mathrm{t})\\right) \\mathrm{dt}$ for $\\mathrm{x} \\in\\left[\\frac{\\pi}{4}, \\frac{\\pi}{2}\\right)$. Then $\\lim _{\\mathrm{x} \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}} \\mathrm{g}(\\mathrm{x})$ is equal to",
+   "options": {
+    "A": "2",
+    "B": "3",
+    "C": "4",
+    "D": "-3\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{g}(\\mathrm{x})=\\int_{\\mathrm{x}}^{\\pi / 4}\\left(\\mathrm{f}^{\\prime}(\\mathrm{t}) \\sec \\mathrm{t}+\\tan \\mathrm{t} \\sec \\mathrm{tf}(\\mathrm{t})\\right) \\mathrm{dt}$\n$$\\begin{array}{l}\ng(x)=\\int_{x}^{\\pi / 4} d(f(t) \\cdot \\sec t)=\\left.f(t) \\sec t\\right|_{x} ^{\\pi / 4} \\\\\ng(x)=f\\left(\\frac{\\pi}{4}\\right) \\sec \\frac{\\pi}{4}-f(x) \\cdot \\sec x \\\\\ng(x)=2-f(x) \\sec x=2-\\left(\\frac{f(x)}{\\cos x}\\right) \\\\\n\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}} g(x)=2-\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}}\\left(\\frac{f(x)}{\\cos x}\\right)\n\\end{array}$$\n\nUsing L'Hopital Rule\n$$\\begin{array}{l}\n=2-\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}} \\frac{f^{\\prime}(x)}{(-\\sin x)} \\\\\n=2+\\frac{f^{\\prime}\\left(\\frac{\\pi}{2}\\right)}{\\sin \\frac{\\pi}{2}}=2+\\frac{1}{1}=3\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{g}(\\mathrm{x})=\\int_{\\mathrm{x}}^{\\pi / 4}\\left(\\mathrm{f}^{\\prime}(\\mathrm{t}) \\sec \\mathrm{t}+\\tan \\mathrm{t} \\sec \\mathrm{tf}(\\mathrm{t})\\right) \\mathrm{dt}$\n$$\\begin{array}{l}\ng(x)=\\int_{x}^{\\pi / 4} d(f(t) \\cdot \\sec t)=\\left.f(t) \\sec t\\right|_{x} ^{\\pi / 4} \\\\\ng(x)=f\\left(\\frac{\\pi}{4}\\right) \\sec \\frac{\\pi}{4}-f(x) \\cdot \\sec x \\\\\ng(x)=2-f(x) \\sec x=2-\\left(\\frac{f(x)}{\\cos x}\\right) \\\\\n\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}} g(x)=2-\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}}\\left(\\frac{f(x)}{\\cos x}\\right)\n\\end{array}$$",
+     "Using L'Hopital Rule\n$$\\begin{array}{l}\n=2-\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}} \\frac{f^{\\prime}(x)}{(-\\sin x)} \\\\\n=2+\\frac{f^{\\prime}\\left(\\frac{\\pi}{2}\\right)}{\\sin \\frac{\\pi}{2}}=2+\\frac{1}{1}=3\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": "101268",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}: \\mathbf{R} \\rightarrow \\mathbf{R}$ be continuous function satisfying $\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{x}+\\mathrm{k})=\\mathrm{n}$, for all $\\mathrm{x} \\in \\mathbf{R}$ where $\\mathrm{k}>0$ and n is a positive integer. If $\\mathrm{I}_{1}=\\int_{0}^{4 \\mathrm{nk}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}$ and $\\mathrm{I}_{2}=\\int_{-\\mathrm{k}}^{3 \\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}$, then",
+   "options": {
+    "A": "$\\mathrm{I}_{1}+2 \\mathrm{I}_{2}=4 \\mathrm{nk}$",
+    "B": "$\\mathrm{I}_{1}+2 \\mathrm{I}_{2}=2 \\mathrm{nk}$",
+    "C": "$\\mathrm{I}_{1}+\\mathrm{nI}_{2}=4 \\mathrm{n}^{2} \\mathrm{k}$",
+    "D": "$\\mathrm{I}_{1}+\\mathrm{nI}_{2}=6 \\mathrm{n}^{2} \\mathrm{k}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{x}+\\mathrm{k})=\\mathrm{n}$\n$$\\Rightarrow \\mathrm{f}(\\mathrm{x})=\\mathrm{f}(\\mathrm{x}+2 \\mathrm{k})$$\n$f(x)$ is periodic with period $2 k$\n$$\\begin{array}{l}\nI_{1}=\\int_{0}^{4 n k} f(x) d x=2 n \\int_{0}^{2 k} f(x) d x \\\\\nI_{2}=\\int_{-k}^{3 k} f(x) d x=2 \\int_{0}^{2 k} f(x) d x\n\\end{array}$$\n\nNow,\n$$\\begin{array}{l}\n\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{x}+\\mathrm{k})=\\mathrm{n} \\\\\n\\Rightarrow \\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}+\\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}+\\mathrm{k}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}+\\int_{\\mathrm{k}}^{2 \\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\int_{0}^{2 \\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\mathrm{I}_{1}=2 \\mathrm{n}^{2} \\mathrm{k}, \\mathrm{I}_{2}=2 \\mathrm{nk} \\\\\n\\Rightarrow \\mathrm{I}_{1}+\\mathrm{nI}_{2}=4 \\mathrm{n}^{2} \\mathrm{k}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{x}+\\mathrm{k})=\\mathrm{n}$\n$$\\Rightarrow \\mathrm{f}(\\mathrm{x})=\\mathrm{f}(\\mathrm{x}+2 \\mathrm{k})$$\n$f(x)$ is periodic with period $2 k$\n$$\\begin{array}{l}\nI_{1}=\\int_{0}^{4 n k} f(x) d x=2 n \\int_{0}^{2 k} f(x) d x \\\\\nI_{2}=\\int_{-k}^{3 k} f(x) d x=2 \\int_{0}^{2 k} f(x) d x\n\\end{array}$$",
+     "Now,\n$$\\begin{array}{l}\n\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{x}+\\mathrm{k})=\\mathrm{n} \\\\\n\\Rightarrow \\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}+\\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}+\\mathrm{k}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}+\\int_{\\mathrm{k}}^{2 \\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\int_{0}^{2 \\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\mathrm{I}_{1}=2 \\mathrm{n}^{2} \\mathrm{k}, \\mathrm{I}_{2}=2 \\mathrm{nk} \\\\\n\\Rightarrow \\mathrm{I}_{1}+\\mathrm{nI}_{2}=4 \\mathrm{n}^{2} \\mathrm{k}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "101269",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The area of the bounded region enclosed by the curve $\\mathrm{y}=3-\\left|\\mathrm{x}-\\frac{1}{2}\\right|-|\\mathrm{x}+1|$ and the x-axis is",
+   "options": {
+    "A": "$\\frac{9}{4}$",
+    "B": "$\\frac{45}{16}$",
+    "C": "$\\frac{27}{8}$",
+    "D": "$\\frac{63}{16}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol. $\\mathrm{y}=\\left\\{\\begin{array}{ll}3+(\\mathrm{x}+1)+\\left(\\mathrm{x}-\\frac{1}{2}\\right), & \\mathrm{x}<-1 \\\\ 3-(\\mathrm{x}+1)+\\left(\\mathrm{x}-\\frac{1}{2}\\right), & -1 \\leq \\mathrm{x}<\\frac{1}{2} \\\\ 3-(\\mathrm{x}+1)-\\left(\\mathrm{x}-\\frac{1}{2}\\right), & \\frac{1}{2} \\leq \\mathrm{x}\\end{array}\\right.$\n$$y=\\left\\{\\begin{array}{ll}\n\\frac{7}{2}+2 x, & x<-1 \\\\\n\\frac{3}{2}, & -1 \\leq x<\\frac{1}{2} \\\\\n\\frac{5}{2}-2 x, & \\frac{1}{2} \\leq x\n\\end{array}\\right.$$\n\nArea bounded $=\\operatorname{ar} \\mathrm{ABF}+\\operatorname{ar} \\mathrm{BCEF}+\\operatorname{ar} \\mathrm{CDE}$\n$$=\\frac{1}{2}\\left(\\frac{3}{4}\\right)\\left(\\frac{3}{2}\\right)+\\left(\\frac{3}{2}\\right)\\left(\\frac{3}{2}\\right)+\\frac{1}{2}\\left(\\frac{3}{4}\\right)\\left(\\frac{3}{2}\\right)$$\n$=\\frac{27}{8}$ sq. units."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{y}=\\left\\{\\begin{array}{ll}3+(\\mathrm{x}+1)+\\left(\\mathrm{x}-\\frac{1}{2}\\right), & \\mathrm{x}<-1 \\\\ 3-(\\mathrm{x}+1)+\\left(\\mathrm{x}-\\frac{1}{2}\\right), & -1 \\leq \\mathrm{x}<\\frac{1}{2} \\\\ 3-(\\mathrm{x}+1)-\\left(\\mathrm{x}-\\frac{1}{2}\\right), & \\frac{1}{2} \\leq \\mathrm{x}\\end{array}\\right.$\n$$y=\\left\\{\\begin{array}{ll}\n\\frac{7}{2}+2 x, & x<-1 \\\\\n\\frac{3}{2}, & -1 \\leq x<\\frac{1}{2} \\\\\n\\frac{5}{2}-2 x, & \\frac{1}{2} \\leq x\n\\end{array}\\right.$$",
+     "Area bounded $=\\operatorname{ar} \\mathrm{ABF}+\\operatorname{ar} \\mathrm{BCEF}+\\operatorname{ar} \\mathrm{CDE}$\n$$=\\frac{1}{2}\\left(\\frac{3}{4}\\right)\\left(\\frac{3}{2}\\right)+\\left(\\frac{3}{2}\\right)\\left(\\frac{3}{2}\\right)+\\frac{1}{2}\\left(\\frac{3}{4}\\right)\\left(\\frac{3}{2}\\right)$$\n$=\\frac{27}{8}$ sq. units."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "101270",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{x}=\\mathrm{x}(\\mathrm{y})$ be the solution of the differential equation $2 y e^{x / y^{2}} d x+\\left(y^{2}-4 x e^{x / y^{2}}\\right) d y=0$ such that $\\mathrm{x}(1)=0$. Then, $\\mathrm{x}(\\mathrm{e})$ is equal to",
+   "options": {
+    "A": "e $\\log _{\\mathrm{e}}(2)$",
+    "B": "$-\\mathrm{e} \\log _{\\mathrm{e}}(2)$",
+    "C": "$\\mathrm{e}^{2} \\log _{\\mathrm{e}}(2)$",
+    "D": "$-\\mathrm{e}^{2} \\log _{\\mathrm{e}}(2)$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $2 y e^{x / y^{2}} d x+\\left(y^{2}-4 x e^{x / y^{2}}\\right) d y=0$\n$$\\begin{array}{l}\n2 e^{x / y^{2}}[y d x-2 x d y]+y^{2} d y=0 \\\\\n2 e^{x / y^{2}}\\left[\\frac{y^{2} d x-x \\cdot(2 y) d y}{y}\\right]+y^{2} d y=0\n\\end{array}$$\n\nDivide by $\\mathrm{y}^{3}$\n$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}}\\left[\\frac{\\mathrm{y}^{2} \\mathrm{dx}-\\mathrm{x} \\cdot(2 \\mathrm{y}) \\mathrm{dy}}{\\mathrm{y}^{4}}\\right]+\\frac{1}{\\mathrm{y}} \\mathrm{dy}=0$\n$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}} \\mathrm{~d}\\left(\\frac{\\mathrm{x}}{\\mathrm{y}^{2}}\\right)+\\frac{1}{\\mathrm{y}} \\mathrm{dy}=0$\nIntegrating\n$$\\begin{array}{l}\n\\int 2 e^{x / y^{2}} d\\left(\\frac{x}{y^{2}}\\right)+\\int \\frac{1}{y} d y=0 \\\\\n2 e^{x / y^{2}}+\\ell n y+c=0\n\\end{array}$$\n$(0,1)$ lies on it.\n$$2 \\mathrm{e}^{0}+\\ell \\mathrm{n} 1+\\mathrm{c}=0 \\Rightarrow \\mathrm{c}=-2$$\n\nRequired curve : $2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}}+\\ell \\mathrm{ny}-2=0$\nFor x (e)\n$$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{e}^{2}}+\\ell \\mathrm{ne}-2=0 \\Rightarrow \\mathrm{x}=-\\mathrm{e}^{2} \\log _{\\mathrm{e}} 2$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$2 y e^{x / y^{2}} d x+\\left(y^{2}-4 x e^{x / y^{2}}\\right) d y=0$\n$$\\begin{array}{l}\n2 e^{x / y^{2}}[y d x-2 x d y]+y^{2} d y=0 \\\\\n2 e^{x / y^{2}}\\left[\\frac{y^{2} d x-x \\cdot(2 y) d y}{y}\\right]+y^{2} d y=0\n\\end{array}$$",
+     "Divide by $\\mathrm{y}^{3}$\n$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}}\\left[\\frac{\\mathrm{y}^{2} \\mathrm{dx}-\\mathrm{x} \\cdot(2 \\mathrm{y}) \\mathrm{dy}}{\\mathrm{y}^{4}}\\right]+\\frac{1}{\\mathrm{y}} \\mathrm{dy}=0$\n$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}} \\mathrm{~d}\\left(\\frac{\\mathrm{x}}{\\mathrm{y}^{2}}\\right)+\\frac{1}{\\mathrm{y}} \\mathrm{dy}=0$\nIntegrating\n$$\\begin{array}{l}\n\\int 2 e^{x / y^{2}} d\\left(\\frac{x}{y^{2}}\\right)+\\int \\frac{1}{y} d y=0 \\\\\n2 e^{x / y^{2}}+\\ell n y+c=0\n\\end{array}$$\n$(0,1)$ lies on it.\n$$2 \\mathrm{e}^{0}+\\ell \\mathrm{n} 1+\\mathrm{c}=0 \\Rightarrow \\mathrm{c}=-2$$",
+     "Required curve : $2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}}+\\ell \\mathrm{ny}-2=0$\nFor x (e)\n$$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{e}^{2}}+\\ell \\mathrm{ne}-2=0 \\Rightarrow \\mathrm{x}=-\\mathrm{e}^{2} \\log _{\\mathrm{e}} 2$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": "101271",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let the slope of the tangent to a curve $y=f(x)$ at $(\\mathrm{x}, \\mathrm{y})$ be given by $2 \\tan \\mathrm{x}(\\cos \\mathrm{x}-\\mathrm{y})$. if the curve passes through the point $(\\pi / 4,0)$, then the value of $\\int_{0}^{\\pi / 2} \\mathrm{ydx}$ is equal to",
+   "options": {
+    "A": "$(2-\\sqrt{2})+\\frac{\\pi}{\\sqrt{2}}$",
+    "B": "$2-\\frac{\\pi}{\\sqrt{2}}$",
+    "C": "$(2+\\sqrt{2})+\\frac{\\pi}{\\sqrt{2}}$",
+    "D": "$2+\\frac{\\pi}{\\sqrt{2}}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\frac{\\mathrm{dy}}{\\mathrm{dx}}=2 \\tan \\mathrm{x} \\cos \\mathrm{x}-2 \\tan \\mathrm{x} \\cdot \\mathrm{y}$\n$$\\frac{d y}{d x}+(2 \\tan x) y=2 \\sin x$$\n\nIntegrating factor $=\\mathrm{e}^{\\int 2 \\tan \\mathrm{xdx}}=\\frac{1}{\\cos ^{2} \\mathrm{x}}$\n$$\\begin{array}{l}\ny\\left(\\frac{1}{\\cos ^{2} x}\\right)=\\int \\frac{2 \\sin x}{\\cos ^{2} x} d x \\\\\ny \\sec ^{2} x=\\frac{2}{\\cos x}+C\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\ny=2 \\cos x+C \\cos ^{2} x \\\\\n\\text { Passes through }\\left(\\frac{\\pi}{4}, 0\\right) \\\\\n0=\\sqrt{2}+\\frac{C}{2} \\Rightarrow C=-2 \\sqrt{2} \\\\\nf(x)=2 \\cos x-2 \\sqrt{2} \\cos ^{2} x: \\text { Required } c t \\\\\n\\int_{0}^{\\pi / 2} y d x=2 \\int_{0}^{\\pi / 2} \\cos x d x-2 \\sqrt{2} \\int_{0}^{\\pi / 2} \\cos ^{2} x d x \\\\\n=[2 \\sin x]_{0}^{\\pi / 2}-2 \\sqrt{2}\\left[\\frac{x}{2}+\\frac{\\sin 2 x}{4}\\right]_{0}^{\\pi / 2} \\\\\n=2-\\frac{\\pi}{\\sqrt{2}}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{dy}}{\\mathrm{dx}}=2 \\tan \\mathrm{x} \\cos \\mathrm{x}-2 \\tan \\mathrm{x} \\cdot \\mathrm{y}$\n$$\\frac{d y}{d x}+(2 \\tan x) y=2 \\sin x$$",
+     "Integrating factor $=\\mathrm{e}^{\\int 2 \\tan \\mathrm{xdx}}=\\frac{1}{\\cos ^{2} \\mathrm{x}}$\n$$\\begin{array}{l}\ny\\left(\\frac{1}{\\cos ^{2} x}\\right)=\\int \\frac{2 \\sin x}{\\cos ^{2} x} d x \\\\\ny \\sec ^{2} x=\\frac{2}{\\cos x}+C\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\ny=2 \\cos x+C \\cos ^{2} x \\\\\n\\text { Passes through }\\left(\\frac{\\pi}{4}, 0\\right) \\\\\n0=\\sqrt{2}+\\frac{C}{2} \\Rightarrow C=-2 \\sqrt{2} \\\\\nf(x)=2 \\cos x-2 \\sqrt{2} \\cos ^{2} x: \\text { Required } c t \\\\\n\\int_{0}^{\\pi / 2} y d x=2 \\int_{0}^{\\pi / 2} \\cos x d x-2 \\sqrt{2} \\int_{0}^{\\pi / 2} \\cos ^{2} x d x \\\\\n=[2 \\sin x]_{0}^{\\pi / 2}-2 \\sqrt{2}\\left[\\frac{x}{2}+\\frac{\\sin 2 x}{4}\\right]_{0}^{\\pi / 2} \\\\\n=2-\\frac{\\pi}{\\sqrt{2}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": "101272",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let a triangle be bounded by the lines $\\mathrm{L}_{1}: 2 \\mathrm{x}+5 \\mathrm{y}=10$; $\\mathrm{L}_{2}:-4 \\mathrm{x}+3 \\mathrm{y}=12$ and the line $\\mathrm{L}_{3}$, which passes through the point $\\mathrm{P}(2,3)$, intersect $\\mathrm{L}_{2}$ at A and $\\mathrm{L}_{1}$ at $B$. If the point P divides the line-segment AB , internally in the ratio 1 : 3, then the area of the triangle is equal to",
+   "options": {
+    "A": "$\\frac{110}{13}$",
+    "B": "$\\frac{132}{13}$",
+    "C": "$\\frac{142}{13}$",
+    "D": "$\\frac{151}{13}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Points A lies on $\\mathrm{L}_{2}$\n$$\\mathrm{A}\\left(\\alpha, 4+\\frac{4}{3} \\alpha\\right)$$\n\nPoints B lies on $\\mathrm{L}_{1}$\n$$\\mathrm{B}\\left(\\beta, 2-\\frac{2}{5} \\beta\\right)$$\n\nPoints P divides AB internally in the ratio $1: 3$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{P}(2,3)=\\mathrm{P}\\left(\\frac{3 \\alpha+\\beta}{4}, \\frac{3\\left(4+\\frac{4}{3} \\alpha\\right)+1\\left(2-\\frac{2}{5} \\beta\\right)}{4}\\right) \\\\\n\\Rightarrow \\alpha=\\frac{3}{13}, \\beta=\\frac{95}{13}\n\\end{array}$$\n\nPoint $\\mathrm{A}\\left(\\frac{3}{13}, \\frac{56}{13}\\right), \\mathrm{B}\\left(\\frac{95}{13},-\\frac{12}{13}\\right)$\nVertex C of triangle is the point of intersection of $\\mathrm{L}_{1} \\& \\mathrm{~L}_{2}$\n$$\\begin{array}{l}\n\\Rightarrow C\\left(-\\frac{15}{13}, \\frac{32}{13}\\right) \\\\\n\\text { area } \\Delta A B C=\\frac{1}{2}\\left\\|\\begin{array}{ccc}\n\\frac{3}{13} & \\frac{56}{13} & 1 \\\\\n\\frac{95}{13} & -\\frac{12}{13} & 1 \\\\\n-\\frac{15}{13} & \\frac{32}{13} & 1\n\\end{array}\\right\\| \\\\\n=\\frac{1}{2 \\times 13^{3}}\\left\\|\\begin{array}{ccc}\n3 & 56 & 13 \\\\\n95 & -12 & 13 \\\\\n-15 & 32 & 13\n\\end{array}\\right\\| \\\\\n\\text { area } \\Delta A B C=\\frac{132}{13} \\text { sq. units. }\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Points A lies on $\\mathrm{L}_{2}$\n$$\\mathrm{A}\\left(\\alpha, 4+\\frac{4}{3} \\alpha\\right)$$",
+     "Points B lies on $\\mathrm{L}_{1}$\n$$\\mathrm{B}\\left(\\beta, 2-\\frac{2}{5} \\beta\\right)$$",
+     "Points P divides AB internally in the ratio $1: 3$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{P}(2,3)=\\mathrm{P}\\left(\\frac{3 \\alpha+\\beta}{4}, \\frac{3\\left(4+\\frac{4}{3} \\alpha\\right)+1\\left(2-\\frac{2}{5} \\beta\\right)}{4}\\right) \\\\\n\\Rightarrow \\alpha=\\frac{3}{13}, \\beta=\\frac{95}{13}\n\\end{array}$$",
+     "Point $\\mathrm{A}\\left(\\frac{3}{13}, \\frac{56}{13}\\right), \\mathrm{B}\\left(\\frac{95}{13},-\\frac{12}{13}\\right)$\nVertex C of triangle is the point of intersection of $\\mathrm{L}_{1} \\& \\mathrm{~L}_{2}$\n$$\\begin{array}{l}\n\\Rightarrow C\\left(-\\frac{15}{13}, \\frac{32}{13}\\right) \\\\\n\\text { area } \\Delta A B C=\\frac{1}{2}\\left\\|\\begin{array}{ccc}\n\\frac{3}{13} & \\frac{56}{13} & 1 \\\\\n\\frac{95}{13} & -\\frac{12}{13} & 1 \\\\\n-\\frac{15}{13} & \\frac{32}{13} & 1\n\\end{array}\\right\\| \\\\\n=\\frac{1}{2 \\times 13^{3}}\\left\\|\\begin{array}{ccc}\n3 & 56 & 13 \\\\\n95 & -12 & 13 \\\\\n-15 & 32 & 13\n\\end{array}\\right\\| \\\\\n\\text { area } \\Delta A B C=\\frac{132}{13} \\text { sq. units. }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "101273",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{a}>0, \\mathrm{~b}>0$. Let e and $\\ell$ respectively be the eccentricity and length of the latus rectum of the hyperbola $\\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}-\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1$. Let $\\mathrm{e}^{\\prime}$ and $\\ell^{\\prime}$ respectively the eccentricity and length of the latus rectum of its conjugate hyperbola. If $\\mathrm{e}^{2}=\\frac{11}{14} \\ell$ and $\\left(\\mathrm{e}^{\\prime}\\right)^{2}=\\frac{11}{8} \\ell^{\\prime}$, then the value of 77a+ 44b is equal to",
+   "options": {
+    "A": "100",
+    "B": "110",
+    "C": "120",
+    "D": "130\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{e}=\\sqrt{1+\\frac{\\mathrm{b}^{2}}{\\mathrm{a}^{2}}}, \\ell=\\frac{2 \\mathrm{~b}^{2}}{\\mathrm{a}}$\nGiven $\\mathrm{e}^{2}=\\frac{11}{14} \\ell$\n$$\\begin{array}{l}\n1+\\frac{\\mathrm{b}^{2}}{\\mathrm{a}^{2}}=\\frac{11}{14} \\cdot \\frac{2 \\mathrm{~b}^{2}}{\\mathrm{a}} \\\\\n\\frac{\\mathrm{a}^{2}+\\mathrm{b}^{2}}{\\mathrm{a}^{2}}=\\frac{11}{7} \\cdot \\frac{\\mathrm{~b}^{2}}{\\mathrm{a}}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nAlso $\\mathrm{e}^{\\prime}=\\sqrt{1+\\frac{\\mathrm{a}^{2}}{\\mathrm{~b}^{2}}}, \\ell^{\\prime}=\\frac{2 \\mathrm{a}^{2}}{\\mathrm{~b}}$\nGiven $\\left(\\mathrm{e}^{\\prime}\\right)^{2}=\\frac{11}{8} \\ell^{\\prime}$\n$$\\begin{array}{l}\n1+\\frac{\\mathrm{a}^{2}}{\\mathrm{~b}^{2}}=\\frac{11}{8} \\cdot \\frac{2 \\mathrm{a}^{2}}{\\mathrm{~b}} \\\\\n\\frac{\\mathrm{a}^{2}+\\mathrm{b}^{2}}{\\mathrm{~b}^{2}}=\\frac{11}{4} \\cdot \\frac{\\mathrm{a}^{2}}{\\mathrm{~b}}\n\\end{array}$$\n\nNew (1) ÷ (2)\n$$\\begin{array}{l}\n\\frac{b^{2}}{a^{2}}=\\frac{4}{7} \\cdot \\frac{b^{3}}{a^{3}} \\\\\n\\therefore 7 a=4 b\n\\end{array}$$\n\nFrom (2)\n$$\\begin{array}{l}\n\\frac{\\frac{16 b^{2}}{49}+b^{2}}{b^{2}}=\\frac{11}{4} \\cdot \\frac{16 b^{2}}{49 b} \\\\\n\\frac{65}{49}=\\frac{11}{4} \\cdot \\frac{16}{49} \\cdot b \\\\\n\\therefore b=\\frac{4 \\times 65}{11 \\times 16}\n\\end{array}$$\n\nWe have to find value of\n$$\\begin{array}{l}\n77 a+44 b \\\\\n11(7 a+4 b)=11(4 b+4 b)=11 \\times 8 b \\\\\n\\therefore \\text { Value of } 11 \\times 8 b=11 \\times 8 \\times \\frac{4 \\times 65}{16 \\times 11}=130\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{e}=\\sqrt{1+\\frac{\\mathrm{b}^{2}}{\\mathrm{a}^{2}}}, \\ell=\\frac{2 \\mathrm{~b}^{2}}{\\mathrm{a}}$\nGiven $\\mathrm{e}^{2}=\\frac{11}{14} \\ell$\n$$\\begin{array}{l}\n1+\\frac{\\mathrm{b}^{2}}{\\mathrm{a}^{2}}=\\frac{11}{14} \\cdot \\frac{2 \\mathrm{~b}^{2}}{\\mathrm{a}} \\\\\n\\frac{\\mathrm{a}^{2}+\\mathrm{b}^{2}}{\\mathrm{a}^{2}}=\\frac{11}{7} \\cdot \\frac{\\mathrm{~b}^{2}}{\\mathrm{a}}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n5",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP",
+     "Also $\\mathrm{e}^{\\prime}=\\sqrt{1+\\frac{\\mathrm{a}^{2}}{\\mathrm{~b}^{2}}}, \\ell^{\\prime}=\\frac{2 \\mathrm{a}^{2}}{\\mathrm{~b}}$\nGiven $\\left(\\mathrm{e}^{\\prime}\\right)^{2}=\\frac{11}{8} \\ell^{\\prime}$\n$$\\begin{array}{l}\n1+\\frac{\\mathrm{a}^{2}}{\\mathrm{~b}^{2}}=\\frac{11}{8} \\cdot \\frac{2 \\mathrm{a}^{2}}{\\mathrm{~b}} \\\\\n\\frac{\\mathrm{a}^{2}+\\mathrm{b}^{2}}{\\mathrm{~b}^{2}}=\\frac{11}{4} \\cdot \\frac{\\mathrm{a}^{2}}{\\mathrm{~b}}\n\\end{array}$$",
+     "New (1) ÷ (2)\n$$\\begin{array}{l}\n\\frac{b^{2}}{a^{2}}=\\frac{4}{7} \\cdot \\frac{b^{3}}{a^{3}} \\\\\n\\therefore 7 a=4 b\n\\end{array}$$",
+     "From (2)\n$$\\begin{array}{l}\n\\frac{\\frac{16 b^{2}}{49}+b^{2}}{b^{2}}=\\frac{11}{4} \\cdot \\frac{16 b^{2}}{49 b} \\\\\n\\frac{65}{49}=\\frac{11}{4} \\cdot \\frac{16}{49} \\cdot b \\\\\n\\therefore b=\\frac{4 \\times 65}{11 \\times 16}\n\\end{array}$$",
+     "We have to find value of\n$$\\begin{array}{l}\n77 a+44 b \\\\\n11(7 a+4 b)=11(4 b+4 b)=11 \\times 8 b \\\\\n\\therefore \\text { Value of } 11 \\times 8 b=11 \\times 8 \\times \\frac{4 \\times 65}{16 \\times 11}=130\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": "101274",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\vec{a}=\\alpha \\hat{i}+2 \\hat{j}-\\hat{k}$ and $\\vec{b}=-2 \\hat{i}+\\alpha \\hat{j}+\\hat{k}$, where $\\alpha \\in \\mathbf{R}$. If the area of the parallelogram whose adjacent sides are represented by the vectors $\\vec{a}$ and $\\vec{b}$ is $\\sqrt{15\\left(\\alpha^{2}+4\\right)}$, then the value of $2|\\overrightarrow{\\mathrm{a}}|^{2}+(\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{b}})|\\overrightarrow{\\mathrm{b}}|^{2}$ is equal to",
+   "options": {
+    "A": "10",
+    "B": "7",
+    "C": "9",
+    "D": "14\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\quad \\overrightarrow{\\mathrm{a}}=\\alpha \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}, \\overrightarrow{\\mathrm{b}}=-2 \\hat{\\mathrm{i}}+\\alpha \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$, area of parallelogram $=|\\hat{\\mathrm{a}} \\times \\hat{\\mathrm{b}}|$\n$|\\hat{\\mathrm{a}} \\times \\hat{\\mathrm{b}}|=\\sqrt{(\\alpha+2)^{2}+(\\alpha-2)^{2}+\\left(\\alpha^{2}+4\\right)^{2}}$\nGiven $|\\hat{\\mathrm{a}} \\times \\hat{\\mathrm{b}}|=\\sqrt{15\\left(\\alpha^{2}+4\\right)}$\n$$\\begin{array}{l}\n2\\left(\\alpha^{2}+4\\right)+\\left(\\alpha^{2}+4\\right)^{2}=15\\left(\\alpha^{2}+4\\right) \\\\\n\\left(\\alpha^{2}+4\\right)^{2}=13\\left(\\alpha^{2}+4\\right) \\\\\n\\Rightarrow \\alpha^{2}+4=13 \\therefore \\alpha^{2}=9 \\\\\n2|\\vec{a}|^{2}+(\\vec{a} \\cdot \\vec{b})|\\vec{b}|^{2} \\\\\n|\\vec{a}|^{2}=\\alpha^{2}+4+1=\\alpha^{2}+5 \\\\\n|\\vec{b}|^{2}=4+\\alpha^{2}+1=\\alpha^{2}+5 \\\\\n\\vec{a} \\cdot \\vec{b}=-2 \\alpha+2 \\alpha-1=-1 \\\\\n\\therefore 2|\\vec{a}|^{2}+(\\vec{a} \\cdot \\vec{b})|\\vec{b}|^{2} \\\\\n2\\left(\\alpha^{2}+5\\right)-1\\left(\\alpha^{2}+5\\right)=\\alpha^{2}+5=14\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\quad \\overrightarrow{\\mathrm{a}}=\\alpha \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}, \\overrightarrow{\\mathrm{b}}=-2 \\hat{\\mathrm{i}}+\\alpha \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$, area of parallelogram $=|\\hat{\\mathrm{a}} \\times \\hat{\\mathrm{b}}|$\n$|\\hat{\\mathrm{a}} \\times \\hat{\\mathrm{b}}|=\\sqrt{(\\alpha+2)^{2}+(\\alpha-2)^{2}+\\left(\\alpha^{2}+4\\right)^{2}}$\nGiven $|\\hat{\\mathrm{a}} \\times \\hat{\\mathrm{b}}|=\\sqrt{15\\left(\\alpha^{2}+4\\right)}$\n$$\\begin{array}{l}\n2\\left(\\alpha^{2}+4\\right)+\\left(\\alpha^{2}+4\\right)^{2}=15\\left(\\alpha^{2}+4\\right) \\\\\n\\left(\\alpha^{2}+4\\right)^{2}=13\\left(\\alpha^{2}+4\\right) \\\\\n\\Rightarrow \\alpha^{2}+4=13 \\therefore \\alpha^{2}=9 \\\\\n2|\\vec{a}|^{2}+(\\vec{a} \\cdot \\vec{b})|\\vec{b}|^{2} \\\\\n|\\vec{a}|^{2}=\\alpha^{2}+4+1=\\alpha^{2}+5 \\\\\n|\\vec{b}|^{2}=4+\\alpha^{2}+1=\\alpha^{2}+5 \\\\\n\\vec{a} \\cdot \\vec{b}=-2 \\alpha+2 \\alpha-1=-1 \\\\\n\\therefore 2|\\vec{a}|^{2}+(\\vec{a} \\cdot \\vec{b})|\\vec{b}|^{2} \\\\\n2\\left(\\alpha^{2}+5\\right)-1\\left(\\alpha^{2}+5\\right)=\\alpha^{2}+5=14\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": "101275",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If vertex of a parabola is (2, - 1) and the equation of its directrix is $4 x-3 y=21$, then the length of its latus rectum is",
+   "options": {
+    "A": "2",
+    "B": "8",
+    "C": "12",
+    "D": "16\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n$$a=\\frac{|8+3-21|}{5}=\\frac{10}{5}=2$$\n∴ latus rectum $=4 \\mathrm{a}=8$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$a=\\frac{|8+3-21|}{5}=\\frac{10}{5}=2$$\n∴ latus rectum $=4 \\mathrm{a}=8$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "101276",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let the plane $\\mathrm{ax}+\\mathrm{by}+\\mathrm{cz}=\\mathrm{d}$ pass through (2, 3, -5) and is perpendicular to the planes $2 x+y-5 z=10$ and $3 \\mathrm{x}+5 \\mathrm{y}-7 \\mathrm{z}=12$.\nIf a, b, c, d are integers d > 0 and gcd (lal, lbl, lcl, d) = 1, then the value of a + 7b + c + 20d is equal to",
+   "options": {
+    "A": "18",
+    "B": "20",
+    "C": "24",
+    "D": "22\n\nJEE Exam Solution\nwww.esaral.com\n6\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. DR'S normal of plane\n$$\\left|\\begin{array}{ccc}\n\\hat{i} & \\hat{j} & \\hat{k} \\\\\n2 & 1 & -5 \\\\\n3 & 5 & -7\n\\end{array}\\right|=18 \\hat{i}-\\hat{j}+7 \\hat{k}$$\n$\\therefore \\mathrm{eq}^{\\mathrm{n}}$ of plane\n$$18 x-y+7 z=d$$\n\nIt passes through (2, 3, -5)\n$$36-3-35=d \\quad \\therefore d=-2$$\n$\\therefore \\mathrm{Eq}^{\\mathrm{n}}$ of plane\n$$\\begin{array}{l}\n18 x-y+7 z=-2 \\\\\n-18 x+y-7 z=2 \\\\\n\\therefore a=-18, b=1, c=-7, d=2 \\\\\na+7 b+c+20 d=-18+7-7+40=22\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "DR'S normal of plane\n$$\\left|\\begin{array}{ccc}\n\\hat{i} & \\hat{j} & \\hat{k} \\\\\n2 & 1 & -5 \\\\\n3 & 5 & -7\n\\end{array}\\right|=18 \\hat{i}-\\hat{j}+7 \\hat{k}$$\n$\\therefore \\mathrm{eq}^{\\mathrm{n}}$ of plane\n$$18 x-y+7 z=d$$",
+     "It passes through (2, 3, -5)\n$$36-3-35=d \\quad \\therefore d=-2$$\n$\\therefore \\mathrm{Eq}^{\\mathrm{n}}$ of plane\n$$\\begin{array}{l}\n18 x-y+7 z=-2 \\\\\n-18 x+y-7 z=2 \\\\\n\\therefore a=-18, b=1, c=-7, d=2 \\\\\na+7 b+c+20 d=-18+7-7+40=22\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "101277",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The probability that a randomly chosen one-one function from the set $\\{\\mathrm{a}, \\mathrm{b}, \\mathrm{c}, \\mathrm{d}\\}$ to the set $\\{1,2,3,4,5\\}$ satisfies f(a) +2 f(b) $-\\mathrm{f}(\\mathrm{c})=\\mathrm{f}(\\mathrm{d})$ is :",
+   "options": {
+    "A": "$\\frac{1}{24}$",
+    "B": "$\\frac{1}{40}$",
+    "C": "$\\frac{1}{30}$",
+    "D": "$\\frac{1}{20}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol.\n$$\\mathrm{n}(\\mathrm{~s})=5_{\\mathrm{C}_{4}} \\times 4!=120$$\n\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline f(a) & \\multicolumn{3}{|r|}{\\begin{tabular}[t]{l}\n$2 \\mathrm{f}(\\mathrm{b})=\\mathrm{f}(\\mathrm{c})$ \\\\\n+ f(d)\n\\end{tabular}} \\\\\n\\hline 5 & $2 \\times 1$ & 3 & 4 \\\\\n\\hline 4 & $2 \\times 2$ & 3 & 5 \\\\\n\\hline 1 & $2 \\times 3$ & 2 & 5 \\\\\n\\hline\n\\end{tabular}\n$$\\begin{array}{l}\n\\mathrm{n}(\\mathrm{~A})=2 \\times 3=6 \\\\\n\\therefore \\mathrm{P}(\\mathrm{~A})=\\frac{\\mathrm{n}(\\mathrm{~A})}{\\mathrm{n}(\\mathrm{~s})}=\\frac{6}{120}=\\frac{1}{20}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\mathrm{n}(\\mathrm{~s})=5_{\\mathrm{C}_{4}} \\times 4!=120$$",
+     "\\begin{tabular}[t]{|l|l|l|l|}\n\\hline f(a) & \\multicolumn{3}{|r|}{\\begin{tabular}[t]{l}\n$2 \\mathrm{f}(\\mathrm{b})=\\mathrm{f}(\\mathrm{c})$ \\\\\n+ f(d)\n\\end{tabular}} \\\\\n\\hline 5 & $2 \\times 1$ & 3 & 4 \\\\\n\\hline 4 & $2 \\times 2$ & 3 & 5 \\\\\n\\hline 1 & $2 \\times 3$ & 2 & 5 \\\\\n\\hline\n\\end{tabular}\n$$\\begin{array}{l}\n\\mathrm{n}(\\mathrm{~A})=2 \\times 3=6 \\\\\n\\therefore \\mathrm{P}(\\mathrm{~A})=\\frac{\\mathrm{n}(\\mathrm{~A})}{\\mathrm{n}(\\mathrm{~s})}=\\frac{6}{120}=\\frac{1}{20}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": "101278",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The value of $\\lim _{\\mathrm{n} \\rightarrow \\infty} 6 \\tan \\left\\{\\sum_{\\mathrm{r}=1}^{\\mathrm{n}} \\tan ^{-1}\\left(\\frac{1}{\\mathrm{r}^{2}+3 \\mathrm{r}+3}\\right)\\right\\}$ is equal to",
+   "options": {
+    "A": "1",
+    "B": "2",
+    "C": "3",
+    "D": "6\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{T}_{\\mathrm{r}}=\\tan ^{-1}\\left[\\frac{(\\mathrm{r}+2)-(\\mathrm{r}+1)}{1+(\\mathrm{r}+2)(\\mathrm{r}+1)}\\right]$\n$$\\begin{array}{l}\n=\\tan ^{-1}(r+2)-\\tan ^{-1}(r+1) \\\\\nT_{1}=\\tan ^{-1} 3-\\tan ^{-1} 2 \\\\\nT_{2}=\\tan ^{-1} 4-\\tan ^{-1} 3 \\\\\n\\begin{array}{l} \nT_{n}=\\tan ^{-1}(n+2)-\\tan ^{-1}(n+1) \\\\\n\\overline{S_{n}=\\tan ^{-1}(n+2)-\\tan ^{-1} 2}=\\tan ^{-1}\\left(\\frac{n+2-2}{1+2(n+2)}\\right) \\\\\n=\\tan ^{-1}\\left(\\frac{n}{2 n+5}\\right)\n\\end{array}\n\\end{array}$$\n$\\lim _{\\mathrm{n} \\rightarrow \\infty} 6 \\tan \\left(\\tan ^{-1}\\left(\\frac{\\mathrm{n}}{2 \\mathrm{n}+5}\\right)\\right)$\n$=\\lim _{n \\rightarrow \\infty} \\frac{6 n}{2 n+5}=\\frac{6}{2}=3$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{T}_{\\mathrm{r}}=\\tan ^{-1}\\left[\\frac{(\\mathrm{r}+2)-(\\mathrm{r}+1)}{1+(\\mathrm{r}+2)(\\mathrm{r}+1)}\\right]$\n$$\\begin{array}{l}\n=\\tan ^{-1}(r+2)-\\tan ^{-1}(r+1) \\\\\nT_{1}=\\tan ^{-1} 3-\\tan ^{-1} 2 \\\\\nT_{2}=\\tan ^{-1} 4-\\tan ^{-1} 3 \\\\\n\\begin{array}{l} \nT_{n}=\\tan ^{-1}(n+2)-\\tan ^{-1}(n+1) \\\\\n\\overline{S_{n}=\\tan ^{-1}(n+2)-\\tan ^{-1} 2}=\\tan ^{-1}\\left(\\frac{n+2-2}{1+2(n+2)}\\right) \\\\\n=\\tan ^{-1}\\left(\\frac{n}{2 n+5}\\right)\n\\end{array}\n\\end{array}$$\n$\\lim _{\\mathrm{n} \\rightarrow \\infty} 6 \\tan \\left(\\tan ^{-1}\\left(\\frac{\\mathrm{n}}{2 \\mathrm{n}+5}\\right)\\right)$\n$=\\lim _{n \\rightarrow \\infty} \\frac{6 n}{2 n+5}=\\frac{6}{2}=3$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": "101279",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\overrightarrow{\\mathrm{a}}$ be a vector which is perpendicular to the vector $3 \\hat{\\mathrm{i}}+\\frac{1}{2} \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$. If $\\overrightarrow{\\mathrm{a}} \\times(2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{k}})=2 \\hat{\\mathrm{i}}-13 \\hat{\\mathrm{j}}-4 \\hat{\\mathrm{k}}$, then the projection of the vector $\\vec{a}$ on the vector $2 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ is",
+   "options": {
+    "A": "$\\frac{1}{3}$",
+    "B": "1",
+    "C": "$\\frac{5}{3}$",
+    "D": "$\\frac{7}{3}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $(\\overrightarrow{\\mathrm{a}} \\times(2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{k}})) \\times\\left(3 \\hat{\\mathrm{i}}+\\frac{1}{2} \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}\\right)$\n$$=(2 \\hat{i}-13 \\hat{j}-4 \\hat{k}) \\times\\left(3 \\hat{i}+\\frac{1}{2} \\hat{j}+2 \\hat{k}\\right)$$\n\nJEE Exam Solution\nwww.esaral.com\n7\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\n-(6+2) \\vec{a}=\\left|\\begin{array}{ccc}\n\\hat{i} & \\hat{j} & \\hat{k} \\\\\n2 & -13 & -4 \\\\\n3 & \\frac{1}{2} & 2\n\\end{array}\\right| \\\\\n\\vec{a}=3 \\hat{i}+2 \\hat{j}-5 \\hat{k}\n\\end{array}$$\n\nProjection of $\\overrightarrow{\\mathrm{a}}$ on vector $2 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ is $\\vec{a} \\cdot \\frac{(2 \\hat{i}+2 \\hat{j}+\\hat{k})}{3}=\\frac{5}{3}$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$(\\overrightarrow{\\mathrm{a}} \\times(2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{k}})) \\times\\left(3 \\hat{\\mathrm{i}}+\\frac{1}{2} \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}\\right)$\n$$=(2 \\hat{i}-13 \\hat{j}-4 \\hat{k}) \\times\\left(3 \\hat{i}+\\frac{1}{2} \\hat{j}+2 \\hat{k}\\right)$$",
+     "JEE Exam Solution\nwww.esaral.com\n7",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\n-(6+2) \\vec{a}=\\left|\\begin{array}{ccc}\n\\hat{i} & \\hat{j} & \\hat{k} \\\\\n2 & -13 & -4 \\\\\n3 & \\frac{1}{2} & 2\n\\end{array}\\right| \\\\\n\\vec{a}=3 \\hat{i}+2 \\hat{j}-5 \\hat{k}\n\\end{array}$$",
+     "Projection of $\\overrightarrow{\\mathrm{a}}$ on vector $2 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ is $\\vec{a} \\cdot \\frac{(2 \\hat{i}+2 \\hat{j}+\\hat{k})}{3}=\\frac{5}{3}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "101280",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If $\\cot \\alpha=1$ and $\\sec \\beta=-\\frac{5}{3}$, where $\\pi<\\alpha<\\frac{3 \\pi}{2}$ and $\\frac{\\pi}{2}<\\beta<\\pi$, then the value of $\\tan (\\alpha+\\beta)$ and the quadrant in which $\\alpha+\\beta$ lies, respectively are",
+   "options": {
+    "A": "$-\\frac{1}{7}$ and $\\mathrm{IV}^{\\text {th }}$ quadrant",
+    "B": "7 and $\\mathrm{I}^{\\mathrm{st}}$ quadrant",
+    "C": "- 7 and IV ${ }^{\\mathrm{th}}$ quadrant",
+    "D": "$\\frac{1}{7}$ and $\\mathrm{I}^{\\mathrm{t}}$ quadrant\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\cot \\alpha=1, \\sec \\beta=\\frac{-5}{3}, \\cos \\beta=\\frac{-3}{5}, \\tan \\beta=\\frac{-4}{3}$\n$$\\tan (\\alpha+\\beta)=\\frac{1-\\frac{4}{3}}{1+\\frac{4}{3} \\times 1}=\\frac{-1}{7}$$\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\cot \\alpha=1, \\sec \\beta=\\frac{-5}{3}, \\cos \\beta=\\frac{-3}{5}, \\tan \\beta=\\frac{-4}{3}$\n$$\\tan (\\alpha+\\beta)=\\frac{1-\\frac{4}{3}}{1+\\frac{4}{3} \\times 1}=\\frac{-1}{7}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "101281",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let the image of the point $\\mathrm{P}(1,2,3)$ in the line $\\mathrm{L}: \\frac{\\mathrm{x}-6}{3}=\\frac{\\mathrm{y}-1}{2}=\\frac{\\mathrm{z}-2}{3}$ be Q. let $\\mathrm{R}(\\alpha, \\beta, \\gamma)$ be a point that divides internally the line segment PQ in the ratio $1: 3$. Then the value of $22(\\alpha+\\beta+\\gamma)$ is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "125"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nR_{1}=\\{(a, b) \\in N \\times N:|a-b| \\leq 13\\} \\\\\nR_{2}=\\{(a, b) \\in N \\times N:|a-b| \\neq 13\\} .\n\\end{array}$$",
+     "For $\\mathrm{R}_{1}$ :\ni) Reflexive relation\n$$(a, a) \\in N \\times N:|a-a| \\leq 13$$\nii) Symmetric relation\n$$(a, b) \\in R_{1},(b, a) \\in R_{1}:|b-a| \\leq 13$$\niii) Transitive relation\n$$\\begin{array}{l}\n(a, b) \\in R_{1},(b, c) \\in R_{1},(a, c) \\in R_{1}: \\\\\n(1,3) \\in R_{1},(3,16) \\in R_{1} \\text { but }(1,16) \\notin R_{1}\n\\end{array}$$",
+     "For $\\mathrm{R}_{2}$ :\ni) Reflexive relation\n$$(a, a) \\in N \\times N:|a-a| \\neq 13$$\nii) Symmetric relation\n$$(b, a) \\in N \\times N:|b-a| \\neq 13$$\niii) Transitive relation\n$$(a, b) \\in R_{2},(b, c) \\in R_{2},(a, c) \\in R_{2}$$\n$(1,3) \\in \\mathrm{R}_{2,}(3,14) \\in \\mathrm{R}_{2}$ but $(1,14) \\notin \\mathrm{R}_{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "101282",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Suppose a class has 7 students. The average marks of these students in the mathematics examination is 62, and their variance is 20. A student fails in the examination if he/she gets less than 50 marks, then in worst case, the number of students can fail is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "0"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$f(-2)+f(3)=0$\n$$\\begin{array}{l}\nf(x)=(x+1)(a x+b) \\\\\nf(-2)+f(3)=-1(-2 a+b)+4(3 a+b)=0 \\\\\n2 a-b+12 a+4 b=0 \\\\\n14 a+3 b=0 \\\\\n\\frac{-b}{a}=\\frac{14}{3}\n\\end{array}$$",
+     "Sum of roots $=\\left(-1+\\frac{-\\mathrm{b}}{\\mathrm{a}}\\right)=-1+\\frac{14}{3}=\\frac{11}{3}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "101283",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If one of the diameters of the circle $x^{2}+y^{2}-2 \\sqrt{2} x -6 \\sqrt{2} \\mathrm{y}+14=0$ is a chord of the circle $(\\mathrm{x}-2 \\sqrt{2})^{2} +(y-2 \\sqrt{2})^{2}=r^{2}$, then the value of $r^{2}$ is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "10"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{t}_{1}+\\mathrm{t}_{2}+\\mathrm{t}_{3}+\\mathrm{t}_{4}=30$\nCoefficient of $\\mathrm{x}^{30}$ in $\\left(1+\\mathrm{x}+\\mathrm{x}^{2}+\\ldots+\\mathrm{x}^{30}\\right)^{2}$\n$$\\begin{array}{l}\n\\left(x^{4}+x^{5}+x^{6}+x^{7}\\right)\\left(x^{2}+x^{3}+x^{4}+x^{5}+x^{6}\\right) \\\\\nx^{6}\\left(\\frac{1-x^{31}}{1-x}\\right)^{2}\\left(1+x+x^{2}+x^{3}\\right)\\left(1+x+x^{2}+x^{3}+x^{4}\\right) \\\\\nx^{6}\\left(1-x^{3}\\right)^{2}\\left(1-x^{4}\\right)\\left(1-x^{5}\\right)(1-x)^{4} \\\\\nx^{6}\\left(1-x^{4}-x^{5}+x^{9}\\right)\\left(1+x^{62}-2 x^{31}(1-x)^{-4}\\right) \\\\\nx^{6}\\left(1-x^{4}-x^{5}+x^{9}\\right)(1-x)^{-4}\n\\end{array}$$",
+     "Coefficient of $x^{n}$ in $(1-x)^{-r}$ is ${ }^{n+r-1} C_{r-1}$\n$$\\begin{array}{l}\n\\Rightarrow{ }^{27} \\mathrm{C}_{3}-{ }^{23} \\mathrm{C}_{3}-{ }^{22} \\mathrm{C}_{3}+{ }^{18} \\mathrm{C}_{3} \\\\\n2925-1771-1540+816 \\\\\n=430\n\\end{array}$$",
+     "OR\n$$\\begin{array}{l}\n\\mathrm{x}_{2} \\in[4,7], \\mathrm{x}_{3} \\in[2,6] \\\\\n\\Rightarrow \\mathrm{t}_{1}+\\mathrm{t}_{2}+\\mathrm{t}_{3}+\\mathrm{t}_{4}=24\n\\end{array}$$\ntotal ways =\n$$\\begin{array}{c}\n{ }^{24+4-1} \\mathrm{C}_{4-1}-{ }^{20+4-1} \\mathrm{C}_{4-1}-{ }^{19+4-1} \\mathrm{C}_{4-1}+{ }^{15+4-1} \\mathrm{C}_{4-1} \\\\\n={ }^{27} \\mathrm{C}_{3}-{ }^{23} \\mathrm{C}_{3}-{ }^{22} \\mathrm{C}_{3}+{ }^{18} \\mathrm{C}_{3}=430\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "101284",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If $\\lim _{x \\rightarrow 1} \\frac{\\sin \\left(3 x^{2}-4 x+1\\right)-x^{2}+1}{2 x^{3}-7 x^{2}+a x+b}=-2$, then the value of $(a-b)$ is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "11"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\left(1-x^{2}+3 x^{3}\\right)\\left(\\frac{5}{2} x^{3}-\\frac{1}{5 x^{2}}\\right)^{11}$\nGeneral term of $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$ is ${ }^{11} \\mathrm{C}_{\\mathrm{r}}\\left(\\frac{5}{2} \\mathrm{x}^{3}\\right)^{11-\\mathrm{r}}\\left(-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{\\mathrm{r}}$\nGeneral term is ${ }^{11} \\mathrm{C}_{\\mathrm{r}}\\left(\\frac{5}{2}\\right)^{11-\\mathrm{r}}\\left(-\\frac{1}{5}\\right)^{\\mathrm{r}} \\mathrm{x}^{33-5 \\mathrm{r}}$\nNow, term independent of x\n$1 \\times$ coefficient of $\\mathrm{x}^{0}$ in $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$\n$-1 \\times$ coefficient of $x^{-2}$ in $\\left(\\frac{5}{2} x^{3}-\\frac{1}{5 x^{2}}\\right)^{11}+$\n$3 \\times$ coefficient of $\\mathrm{x}^{-3}$ in $\\left(\\frac{5}{2} \\mathrm{x}^{3}-\\frac{1}{5 \\mathrm{x}^{2}}\\right)^{11}$\nfor coefficient of $\\mathrm{x}^{0} \\quad 33-5 \\mathrm{r}=0$ not possible for coefficient of $\\mathrm{x}^{-2} \\quad 33-5 \\mathrm{r}=-2$\n$35=5 \\mathrm{r} \\Rightarrow \\mathrm{r}=7$\nfor coefficient of $\\mathrm{x}^{-3} \\quad 33-5 \\mathrm{r}=-3$\n$36=5 \\mathrm{r}$ not possible\nSo term independent of x is\n$(-1)^{11} \\mathrm{C}_{7}\\left(\\frac{5}{2}\\right)^{4}\\left(-\\frac{1}{5}\\right)^{7}=\\frac{33}{200}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": "101285",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let for $\\mathrm{n}=1,2, \\ldots . ., 50, \\mathrm{~S}_{\\mathrm{n}}$ be the sum of the infinite geometric progression whose first term is\n$\\mathrm{n}^{2}$ and whose common ratio is $\\frac{1}{(\\mathrm{n}+1)^{2}}$. Then the value of $\\frac{1}{26}+\\sum_{\\mathrm{n}=1}^{50}\\left(\\mathrm{~S}_{\\mathrm{n}}+\\frac{2}{\\mathrm{n}+1}-\\mathrm{n}-1\\right)$ is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "41651"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{d}=\\frac{100-\\mathrm{a}}{\\mathrm{n}+1}$\n$$\\begin{array}{l}\nA_{1}=a+d \\\\\nA_{n}=100-d \\\\\n\\Rightarrow \\frac{A_{1}}{A_{n}}=\\frac{1}{7} \\Rightarrow \\frac{a+d}{100-d}=\\frac{1}{7} \\\\\n\\Rightarrow 7 a+8 d=100 \\\\\n\\Rightarrow 7 a+8\\left(\\frac{100-a}{n+1}\\right)=100 \\\\\n\\because a+n=33\n\\end{array}$$",
+     "Now, by Eq. (1) and (2)\n$7 \\mathrm{n}^{2}-132 \\mathrm{n}-667=0$\n$\\mathrm{n}=23$ and $\\mathrm{n}=\\frac{-29}{7}$ reject."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "101286",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If the system of linear equations\n$$2 x-3 y=\\gamma+5$$\n$\\alpha \\mathrm{x}+5 \\mathrm{y}=\\beta+1$, where $\\alpha, \\beta, \\gamma \\in \\mathbf{R}$ has infinitely many solutions, then the value of $|9 \\alpha+3 \\beta+5 \\gamma|$ is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "58"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Check continuity at $\\mathrm{x}=0$ and also check continuity at those $x$ where $g(x)=0$\n$$\\begin{array}{l}\ng(x)=0 \\text { at } x=0,2 \\\\\n\\operatorname{fog}\\left(0^{+}\\right)=-1 \\\\\n\\operatorname{fog}(0)=0\n\\end{array}$$",
+     "Hence, discontinuous at $\\mathrm{x}=0$\nfog $\\left(2^{+}\\right)=1$\nfog $\\left(2^{-}\\right)=-1$\nHence, discontinuous at $\\mathrm{x}=2$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "101287",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{A}=\\left(\\begin{array}{cc}1+\\mathrm{i} & 1 \\\\ -\\mathrm{i} & 0\\end{array}\\right)$ where $\\mathrm{i}=\\sqrt{-1}$.\nThen, the number of elements in the set $\\left\\{\\mathrm{n} \\in\\{1,2, \\ldots, 100\\}: \\mathrm{A}^{\\mathrm{n}}=\\mathrm{A}\\right\\}$ is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "25"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{g}(\\mathrm{x})=\\int_{\\mathrm{x}}^{\\pi / 4}\\left(\\mathrm{f}^{\\prime}(\\mathrm{t}) \\sec \\mathrm{t}+\\tan \\mathrm{t} \\sec \\mathrm{tf}(\\mathrm{t})\\right) \\mathrm{dt}$\n$$\\begin{array}{l}\ng(x)=\\int_{x}^{\\pi / 4} d(f(t) \\cdot \\sec t)=\\left.f(t) \\sec t\\right|_{x} ^{\\pi / 4} \\\\\ng(x)=f\\left(\\frac{\\pi}{4}\\right) \\sec \\frac{\\pi}{4}-f(x) \\cdot \\sec x \\\\\ng(x)=2-f(x) \\sec x=2-\\left(\\frac{f(x)}{\\cos x}\\right) \\\\\n\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}} g(x)=2-\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}}\\left(\\frac{f(x)}{\\cos x}\\right)\n\\end{array}$$",
+     "Using L'Hopital Rule\n$$\\begin{array}{l}\n=2-\\lim _{x \\rightarrow\\left(\\frac{\\pi}{2}\\right)^{-}} \\frac{f^{\\prime}(x)}{(-\\sin x)} \\\\\n=2+\\frac{f^{\\prime}\\left(\\frac{\\pi}{2}\\right)}{\\sin \\frac{\\pi}{2}}=2+\\frac{1}{1}=3\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": "101288",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Sum of squares of modulus of all the complex numbers z satisfying $\\bar{z}=i z^{2}+z^{2}-z$ is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{x}+\\mathrm{k})=\\mathrm{n}$\n$$\\Rightarrow \\mathrm{f}(\\mathrm{x})=\\mathrm{f}(\\mathrm{x}+2 \\mathrm{k})$$\n$f(x)$ is periodic with period $2 k$\n$$\\begin{array}{l}\nI_{1}=\\int_{0}^{4 n k} f(x) d x=2 n \\int_{0}^{2 k} f(x) d x \\\\\nI_{2}=\\int_{-k}^{3 k} f(x) d x=2 \\int_{0}^{2 k} f(x) d x\n\\end{array}$$",
+     "Now,\n$$\\begin{array}{l}\n\\mathrm{f}(\\mathrm{x})+\\mathrm{f}(\\mathrm{x}+\\mathrm{k})=\\mathrm{n} \\\\\n\\Rightarrow \\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}+\\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}+\\mathrm{k}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\int_{0}^{\\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}+\\int_{\\mathrm{k}}^{2 \\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\int_{0}^{2 \\mathrm{k}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\mathrm{nk} \\\\\n\\Rightarrow \\mathrm{I}_{1}=2 \\mathrm{n}^{2} \\mathrm{k}, \\mathrm{I}_{2}=2 \\mathrm{nk} \\\\\n\\Rightarrow \\mathrm{I}_{1}+\\mathrm{nI}_{2}=4 \\mathrm{n}^{2} \\mathrm{k}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "101289",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{S}=\\{1,2,3,4\\}$. Then the number of elements in the set $\\{\\mathrm{f}: \\mathrm{S} \\times \\mathrm{S} \\rightarrow \\mathrm{S}: \\mathrm{f}$ is onto and $\\mathrm{f}(\\mathrm{a}, \\mathrm{b})=\\mathrm{f}(\\mathrm{b}, \\mathrm{a}) \\geq \\mathrm{a} \\forall(\\mathrm{a}, \\mathrm{b}) \\in \\mathrm{S} \\times \\mathrm{S}\\}$ is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "37"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{y}=\\left\\{\\begin{array}{ll}3+(\\mathrm{x}+1)+\\left(\\mathrm{x}-\\frac{1}{2}\\right), & \\mathrm{x}<-1 \\\\ 3-(\\mathrm{x}+1)+\\left(\\mathrm{x}-\\frac{1}{2}\\right), & -1 \\leq \\mathrm{x}<\\frac{1}{2} \\\\ 3-(\\mathrm{x}+1)-\\left(\\mathrm{x}-\\frac{1}{2}\\right), & \\frac{1}{2} \\leq \\mathrm{x}\\end{array}\\right.$\n$$y=\\left\\{\\begin{array}{ll}\n\\frac{7}{2}+2 x, & x<-1 \\\\\n\\frac{3}{2}, & -1 \\leq x<\\frac{1}{2} \\\\\n\\frac{5}{2}-2 x, & \\frac{1}{2} \\leq x\n\\end{array}\\right.$$",
+     "Area bounded $=\\operatorname{ar} \\mathrm{ABF}+\\operatorname{ar} \\mathrm{BCEF}+\\operatorname{ar} \\mathrm{CDE}$\n$$=\\frac{1}{2}\\left(\\frac{3}{4}\\right)\\left(\\frac{3}{2}\\right)+\\left(\\frac{3}{2}\\right)\\left(\\frac{3}{2}\\right)+\\frac{1}{2}\\left(\\frac{3}{4}\\right)\\left(\\frac{3}{2}\\right)$$\n$=\\frac{27}{8}$ sq. units."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "101290",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The maximum number of compound propositions, out of $\\mathrm{p} \\vee \\mathrm{r} \\vee \\mathrm{s}, \\mathrm{p} \\vee \\mathrm{r} \\vee \\sim \\mathrm{s}, \\mathrm{p} \\vee \\sim \\mathrm{q} \\vee \\mathrm{s}$, ~p $\\vee \\sim \\mathrm{r} \\vee \\mathrm{s}, \\sim \\mathrm{p} \\vee \\sim \\mathrm{r} \\vee \\sim \\mathrm{s}, \\sim \\mathrm{p} \\vee \\mathrm{q} \\vee \\sim \\mathrm{s}$, $\\mathrm{q} \\vee \\mathrm{r} \\vee \\sim \\mathrm{s}, \\mathrm{q} \\vee \\sim \\mathrm{r} \\vee \\sim \\mathrm{s}, \\sim \\mathrm{p} \\vee \\sim \\mathrm{q} \\vee \\sim \\mathrm{s}$\nthat can be made simultaneously true by an assignment of the truth values to p, q, r and s, is equal to",
+   "options": null,
+   "embedded_answer": {
+    "raw": "9"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$2 y e^{x / y^{2}} d x+\\left(y^{2}-4 x e^{x / y^{2}}\\right) d y=0$\n$$\\begin{array}{l}\n2 e^{x / y^{2}}[y d x-2 x d y]+y^{2} d y=0 \\\\\n2 e^{x / y^{2}}\\left[\\frac{y^{2} d x-x \\cdot(2 y) d y}{y}\\right]+y^{2} d y=0\n\\end{array}$$",
+     "Divide by $\\mathrm{y}^{3}$\n$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}}\\left[\\frac{\\mathrm{y}^{2} \\mathrm{dx}-\\mathrm{x} \\cdot(2 \\mathrm{y}) \\mathrm{dy}}{\\mathrm{y}^{4}}\\right]+\\frac{1}{\\mathrm{y}} \\mathrm{dy}=0$\n$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}} \\mathrm{~d}\\left(\\frac{\\mathrm{x}}{\\mathrm{y}^{2}}\\right)+\\frac{1}{\\mathrm{y}} \\mathrm{dy}=0$\nIntegrating\n$$\\begin{array}{l}\n\\int 2 e^{x / y^{2}} d\\left(\\frac{x}{y^{2}}\\right)+\\int \\frac{1}{y} d y=0 \\\\\n2 e^{x / y^{2}}+\\ell n y+c=0\n\\end{array}$$\n$(0,1)$ lies on it.\n$$2 \\mathrm{e}^{0}+\\ell \\mathrm{n} 1+\\mathrm{c}=0 \\Rightarrow \\mathrm{c}=-2$$",
+     "Required curve : $2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{y}^{2}}+\\ell \\mathrm{ny}-2=0$\nFor x (e)\n$$2 \\mathrm{e}^{\\mathrm{x} / \\mathrm{e}^{2}}+\\ell \\mathrm{ne}-2=0 \\Rightarrow \\mathrm{x}=-\\mathrm{e}^{2} \\log _{\\mathrm{e}} 2$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

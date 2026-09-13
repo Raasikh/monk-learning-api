@@ -1084,8 +1084,17 @@ EMBEDDED_ANSWER_RE = re.compile(
     r"(?im)^\s*(Answer\s*[:.(]|Ans\s*[.:\)]|Sol\s*[.:]|Official\s+Ans)"
 )
 EMBEDDED_ANSWER_VALUE_RE = re.compile(
-    r"(?i)\b(?:Official\s+Ans(?:\.|\s+by\s+NTA)?|Answer|Ans)"
-    r"\s*(?:[.:\)]|\()\s*\(?\s*([A-Da-d]|[1-4])\s*\)?"
+    # "Official Ans" must consume an optional period AND " by NTA" before the
+    # value, otherwise the value capture grabs the 'b' of "by" (confirmed
+    # 2026-09-11: 'Official Ans. by NTA (2)' yielded captured='b').
+    # The numeric alternative is a full token so numerical answers ("(26)",
+    # "(-2.5)") are not truncated to their first digit; single 1-4 still
+    # maps to an option letter in _normalize_embedded_answer.
+    # The (?![A-Za-z]) guard stops the letter class from matching the 'B' of
+    # "Bonus" or the 'D' of "Drop"/"Dropped" — those are "no key", never an
+    # option letter.
+    r"(?i)\b(?:Official\s+Ans\.?(?:\s+by\s+NTA)?|Answer|Ans)"
+    r"\s*(?:[.:\)]|\()\s*\(?\s*([A-Da-d](?![A-Za-z])|-?\d{1,6}(?:\.\d+)?|Drop(?:ped)?|Bonus)\s*\)?"
 )
 
 # Question-number markers for generic mirror papers: "Q.12", "Q 12", "12."
@@ -1222,6 +1231,10 @@ def _strip_2026_boilerplate(text: str) -> str:
 def _normalize_embedded_answer(token: str) -> dict:
     raw = token.strip().upper()
     out = {"raw": raw}
+    # BONUS / DROPPED questions have no key — never map them to an option.
+    if raw in ("BONUS", "DROP", "DROPPED", "BONOUS"):
+        out["dropped"] = True
+        return out
     if raw in ("A", "B", "C", "D"):
         out["option"] = raw
     elif raw in ("1", "2", "3", "4"):
@@ -1560,11 +1573,21 @@ def build_answer_sheet(questions: list[dict], official_key_url=None) -> dict:
     """Structured raw answer sheet. Embedded mirror answers are captured as
     unverified source-printed answers; official NTA keys are referenced, never
     guessed. No entry is fabricated when the source has no answer text."""
+    type_by_qno = {q.get("qno"): q.get("question_type") for q in questions}
     entries = []
     for q in questions:
         ans = q.get("embedded_answer")
         if not ans:
             continue
+        ans = dict(ans)
+        # Guard: a numerical (Section B) question must never carry an option
+        # letter — its raw value IS the answer. A single digit printed for a
+        # numerical question ("Answer (2)" meaning the value 2) is not option B.
+        if type_by_qno.get(q.get("qno")) == "numerical":
+            ans.pop("option", None)
+            ans.pop("option_index", None)
+            if ans.get("raw") is not None:
+                ans.setdefault("value", ans["raw"])
         entries.append({
             "qno": q.get("qno"),
             "question_id": q.get("question_id"),

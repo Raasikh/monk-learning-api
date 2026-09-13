@@ -68,9 +68,13 @@ gap is named here instead of being described as propagation that works.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import subprocess
 import sys
+import tempfile
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -87,6 +91,42 @@ def draft_for(slug: str) -> tuple[Path, dict[str, Any]] | None:
         if p.exists():
             return p, json.loads(p.read_text(encoding="utf-8"))
     return None
+
+
+MOBILE = Path.home() / "Desktop" / "monk-learning-mobile" / "monklearning-mobile"
+
+
+def run_layout_gate(payload: dict[str, Any], mobile: Path) -> tuple[bool, str]:
+    """Ask the TypeScript gate about the EXACT bytes we are about to publish.
+
+    THE ONE LAYOUT AUTHORITY. This tool used to carry its own guesses about
+    shape — no group over five, and so on — which made two gates with nothing
+    to keep them agreeing. That already cost something: the frog heart's
+    grouping lived only in the mobile preview fixture, so the draft this would
+    have published had no groups, Python called it READY, and the TypeScript
+    gate would have refused it. It would have published and then failed to draw
+    on every phone frame.
+
+    So layout is not judged here. `scripts/gate-label-set.mjs` runs
+    `gateLabelSet` at all five GATE_FRAMES and its verdict is returned verbatim
+    for the report.
+    """
+    script = mobile / "scripts" / "gate-label-set.mjs"
+    if not script.exists():
+        return False, f"the layout gate is missing at {script} — cannot publish unjudged"
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as fh:
+        json.dump(payload, fh, ensure_ascii=False)
+        tmp = fh.name
+    try:
+        proc = subprocess.run(["node", str(script), tmp], cwd=str(mobile),
+                              capture_output=True, text=True, timeout=180)
+    except Exception as e:
+        return False, f"could not run the layout gate: {e}"
+    finally:
+        Path(tmp).unlink(missing_ok=True)
+    verdict = (proc.stdout or proc.stderr or "").strip()
+    # exit 2 is "could not judge", which is NOT a pass.
+    return proc.returncode == 0, verdict or f"gate exited {proc.returncode} with no output"
 
 
 def unfit(slug: str, d: dict[str, Any]) -> list[str]:
@@ -130,44 +170,55 @@ def unfit(slug: str, d: dict[str, Any]) -> list[str]:
                 f"registers on one plate. Change the policy deliberately, not "
                 f"a row at a time."
             )
-    # DENSITY. This tool cannot run the real layout gate — gateLabelSet lives
-    # in TypeScript and is the authority on whether a group places clear. What
-    # it CAN do is refuse the shape that is already known to fail: the frog
-    # heart's twelve labels in a single group cannot be placed clear at
-    # 340x340, 343x236 or 495x270 (near-anchor-placement.test.ts). A set that
-    # reached this point ungrouped would publish and then fail to draw.
-    grouped = [l for l in labels if (l.get("group") or "").strip()]
-    if labels and not grouped and len(labels) > 5:
-        bad.append(
-            f"{len(labels)} labels and no groups. A group this size does not place "
-            f"clear at the phone frames; split it and re-run the TS gate "
-            f"(gateLabelSet) before publishing."
-        )
-    elif grouped and len(grouped) != len(labels):
-        bad.append(
-            f"{len(grouped)} of {len(labels)} labels declare a group — either all "
-            f"do or none do; filling the rest with a default is a value nobody supplied."
-        )
-    else:
-        sizes: dict[str, int] = {}
-        for l in grouped:
-            sizes[l["group"]] = sizes.get(l["group"], 0) + 1
-        for gid, n in sorted(sizes.items()):
-            if n > 5:
-                bad.append(
-                    f"group {gid!r} has {n} labels; groups above five have not been "
-                    f"gate-checked at 340x340. Run gateLabelSet before publishing."
-                )
-
     still = (d.get("_draft") or {}).get("unplaced") or []
     if still:
         bad.append(f"{len(still)} term(s) still unplaced: {', '.join(still)}")
     return bad
 
 
+def record_publication(path: Path, version: int, key: str, payload: bytes,
+                       by: str, confirmation: str) -> None:
+    """Write the version back into the draft, so the next publish is v+1.
+
+    THE BUMP IS ONLY A BUMP IF IT PERSISTS. This was computed in memory from a
+    field nothing ever wrote, so every publish produced v1 — including the
+    republish that corrected the cache header, which by definition was a second
+    version of the same key. A reviewer who nudges an anchor and republishes
+    would have shipped different bytes under an unchanged version number, and
+    the one signal a cache or a client could use to tell them apart would have
+    said nothing had changed.
+
+    There is no column for this. `concept_assets` has no label-set fields at
+    all (checked: master_sha256, r2_key, licence, and no reviewed_by), and
+    adding one is a migration, which is Raasikh's to run. The draft file is
+    therefore the durable record, which is not a workaround — it is version
+    controlled, so `git log` on the draft IS the publication history.
+
+    `_draft` is authoring metadata and is stripped before upload, so the
+    receipt below never reaches a student; only `label_set_version` is part of
+    the published document.
+    """
+    d = json.loads(path.read_text(encoding="utf-8"))
+    d["label_set_version"] = version
+    draft = d.setdefault("_draft", {})
+    draft["published"] = {
+        "version": version,
+        "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "r2_key": key,
+        "sha256": hashlib.sha256(payload).hexdigest(),
+        "bytes": len(payload),
+        "reviewed_by": by,
+        "confirmation": confirmation,
+    }
+    path.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--chapter", required=True, help="chapter_id (uuid)")
+    ap.add_argument("--chapter", help="chapter_id (uuid) — publish the whole chapter")
+    ap.add_argument("--set", dest="one_set", help="a single asset_slug")
+    ap.add_argument("--mobile", type=Path, default=MOBILE,
+                    help="mobile repo root, for the layout gate")
     ap.add_argument("--by", required=True, help="the reviewer, e.g. raasikh")
     ap.add_argument("--dry-run", action="store_true", help="print, write nothing")
     ap.add_argument("--confirmation", default="",
@@ -177,13 +228,22 @@ def main() -> int:
     sys.path.insert(0, str(REPO))
     from app.db import fetch_all  # noqa: PLC0415
 
-    rows = fetch_all("concept_assets", "asset_slug,concept_slug,chapter_id",
-                     chapter_id=args.chapter)
-    if not rows:
-        raise SystemExit(f"REFUSED: no assets for chapter {args.chapter}")
+    if bool(args.chapter) == bool(args.one_set):
+        raise SystemExit("REFUSED: pass exactly one of --chapter or --set")
+
+    if args.one_set:
+        rows = fetch_all("concept_assets", "asset_slug,concept_slug,chapter_id",
+                         asset_slug=args.one_set)
+        if not rows:
+            raise SystemExit(f"REFUSED: no asset {args.one_set!r}")
+    else:
+        rows = fetch_all("concept_assets", "asset_slug,concept_slug,chapter_id",
+                         chapter_id=args.chapter)
+        if not rows:
+            raise SystemExit(f"REFUSED: no assets for chapter {args.chapter}")
     rows.sort(key=lambda r: r["asset_slug"])
 
-    print(f"chapter   {args.chapter}")
+    print(f"target    {args.one_set or args.chapter}")
     print(f"reviewer  {args.by}")
     print(f"mode      {'DRY RUN' if args.dry_run else 'EXECUTE'}")
     print(f"assets    {len(rows)}")
@@ -220,15 +280,27 @@ def main() -> int:
           f"   of {len(rows)}")
 
     if blocked or missing:
-        print("\nALL OR NOTHING: a half-published chapter is the state nobody can reason\n"
-              "about — some plates labelled, some not, and no record of which were judged.\n"
-              "Nothing will be published for this chapter until every set above is ready.")
+        # ALL-OR-NOTHING REMOVED, on Raasikh's decision 2026-09-12: a plate
+        # without labels is the SHIPPED BASELINE — 113 of 113 have drawn that
+        # way since ingest — so a partly labelled chapter is not a broken
+        # state, it is a partly finished one. The ready sets go; the rest wait.
+        print(f"\n{len(blocked) + len(missing)} set(s) are not ready and will be SKIPPED. "
+              f"A plate without labels is the shipped baseline, so this is a partly\n"
+              f"finished chapter rather than a broken one.")
 
     if args.dry_run:
+        for slug, path, d in ready:
+            probe = dict(d)
+            probe["reviewed_by"] = args.by
+            ok, verdict = run_layout_gate(probe, args.mobile)
+            print(f"\n  GATE {slug}")
+            for line in verdict.splitlines():
+                print(f"       {line}")
+            print(f"       -> {'CLEAR' if ok else 'REFUSED'}")
         print("\nDRY RUN — nothing stamped, nothing uploaded, reviewed_by untouched.")
         if ready:
             print("\nOn confirmation, each READY set would be:")
-            print(f"  stamped     reviewed_by={args.by!r}, version bumped")
+            print(f"  stamped     reviewed_by={args.by!r}, label_set_version bumped")
             print(f"  uploaded    {R2_PUBLIC}/concept-assets/<slug>.json")
             print( "  verified    head_object size == payload size, then a public HEAD")
             print( "  captured    one board image at 343x236 via the fence rig "
@@ -248,17 +320,21 @@ def main() -> int:
             f"REFUSED: the confirmation does not name {args.by!r} and reviewed_by.\n"
             f"  got: {want!r}"
         )
-    if blocked or missing:
-        raise SystemExit("REFUSED: see the blocked sets above. Nothing published.")
+    if not ready:
+        raise SystemExit("REFUSED: no set is ready. Nothing published.")
 
     from app import storage_r2  # noqa: PLC0415
     sys.path.insert(0, str(REPO / "scripts"))
-    from ingest_asset import upload_and_verify  # noqa: PLC0415
+    from ingest_asset import CACHE_REVALIDATE, upload_and_verify  # noqa: PLC0415
 
     published = 0
+    gate_verdicts: dict[str, str] = {}
+    skipped_by_gate: list[str] = []
     for slug, path, d in ready:
         d["reviewed_by"] = args.by
-        d["version"] = int(d.get("version", 0)) + 1
+        # Named to match the directive and B0's contract. Nothing reads it
+        # yet — see the note at the top of this file.
+        d["label_set_version"] = int(d.get("label_set_version", 0)) + 1
         # The policy travels WITH the set, so a later reader finds a decision
         # rather than inferring one from hi == en and guessing whether anyone
         # looked.
@@ -270,13 +346,31 @@ def main() -> int:
                     "them in English.",
         }
         d.pop("_draft", None)
+        # THE GATE RUNS ON THE BYTES BEING UPLOADED, not on the draft that
+        # produced them — reviewed_by, version and label_language are all
+        # stamped above, and a gate that judged the pre-stamp draft would be
+        # judging a different document than the one students get.
+        ok, verdict = run_layout_gate(d, args.mobile)
+        gate_verdicts[slug] = verdict
+        if not ok:
+            print(f"  REFUSED   {slug} — the layout gate says:")
+            for line in verdict.splitlines():
+                print(f"            {line}")
+            skipped_by_gate.append(slug)
+            continue
+
         payload = (json.dumps(d, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
         key = f"concept-assets/{slug}.json"
-        size = upload_and_verify(key, payload, "application/json")
-        print(f"  PUBLISHED {slug}  v{d['version']}  {size} bytes -> {key}")
+        # NOT the default immutable header. A label set is revised at a fixed
+        # key whenever a reviewer corrects an anchor — see CACHE_REVALIDATE.
+        size = upload_and_verify(key, payload, "application/json", CACHE_REVALIDATE)
+        record_publication(path, d["label_set_version"], key, payload, args.by, want)
+        print(f"  PUBLISHED {slug}  v{d['label_set_version']}  {size} bytes -> {key}")
+        print(f"            gate: {verdict}")
+        print(f"            url:  {R2_PUBLIC}/{key}")
         published += 1
 
-    print(f"\nWROTE {published}, FAILED 0")
+    print(f"\nWROTE {published}, REFUSED BY GATE {len(skipped_by_gate)}")
     print(f"confirmation recorded: {want!r}")
     print("\nNow capture one board per set at 343x236 and attach them to the report.")
     return 0

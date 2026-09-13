@@ -1,61 +1,1425 @@
 {
+ "paper_id": "jee-main-2013-hkaxqu137tthrxgbayvm",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2013-hkaxqu137tthrxgbayvm",
+  "exam": "jee-main",
+  "year": 2013,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2013-hkaxqu137tthrxgbayvm",
-    "exam": "jee-main",
-    "year": 2013,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
-    "subject": null,
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2013/jee-main-paper-%E2%80%93-1/98430",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/hkAXqU137TTHrxgbayvM",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2013/jee-main-paper-%E2%80%93-1/98430",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/hkAXqU137TTHrxgbayvM",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "7054549e690e9b8941f34de2397988293fd7aba19c54c423548eab27238bed9a",
+  "page_count": 27,
+  "text_chars": 0,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2013-hkaxqu137tthrxgbayvm.pdf"
+ },
+ "answer_sheet": {
+  "status": "unavailable",
+  "source": null,
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": []
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "There is only one correct response for each question. Filling up more than one response in any question will be treated as wrong response and marks for wrong response will be deducted accordingly as per instruction 5 above.\nJEE (MAIN)-2013-CMP -2\nPART A -CHEMISTRY\n1. An unknown alcohol is treated with the \"Lucas reagent\" to determine whether the alcohol is primary, secondary or tertiary. Which alcohol reacts fastest and by what mechanism:\n(1) tertiary alcohol by $\\mathrm{S}_{\\mathrm{N}} 1$\n(2) secondary alcohol by $\\mathrm{S}_{\\mathrm{N}} 2$\n(3) tertiary alcohol by $\\mathrm{S}_{\\mathrm{N}} 2$\n(4) secondary alcohol by $\\mathrm{S}_{\\mathrm{N}} 1$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nReaction proceeds through carbocation formation as $3^{0}$ carbocation is highly stable, hence reaction proceeds through $\\mathrm{S}_{\\mathrm{N}} 1$ with $3^{0}$ alcohol.\n2. The first ionization potential of Na is 5.1 eV. The value of electron gain enthalpy of $\\mathrm{Na}^{+}$will be:\n(1) -5.1 eV\n(3) -10.2 eV\n(3) + 2.55 eV\n(4) -2.55 eV",
+     "Sol. (1)\n$\\mathrm{Na} \\underset{\\Delta \\mathrm{H}=-5.1 \\mathrm{eV}}{\\stackrel{\\Delta \\mathrm{H}=+5.1 \\mathrm{eV}}{\\rightleftarrows}} \\mathrm{Na}^{+}+\\mathrm{e}^{-}$, here the backward reaction releases same amount of energy and known as Electron gain enthalpy.\n3. Stability of the species $\\mathrm{Li}_{2}, \\mathrm{Li}_{2}^{-}$and $\\mathrm{Li}_{2}^{+}$increases in the order of:\n(1) $\\mathrm{Li}_{2}^{-}<\\mathrm{Li}_{2}^{+}<\\mathrm{Li}_{2}$\n(3) $\\mathrm{Li}_{2}<\\mathrm{Li}_{2}^{-}<\\mathrm{Li}_{2}^{+}$\n(3) $\\mathrm{Li}_{2}^{-}<\\mathrm{Li}_{2}<\\mathrm{Li}_{2}^{+}$\n(4) $\\mathrm{Li}_{2}<\\mathrm{Li}_{2}^{+}<\\mathrm{Li}_{2}^{-}$",
+     "Sol. (1)\n$\\mathrm{Li}_{2}(6)=\\sigma 1 \\mathrm{~s}^{2} \\stackrel{*}{\\sigma} 1 \\mathrm{~s}^{2} \\sigma 2 \\mathrm{~s}^{2}$\nB.O. $=\\frac{4-2}{2}=1$\n$\\mathrm{Li}_{2}^{+}(5)=\\sigma \\mathrm{ls}^{2} \\stackrel{*}{\\sigma} 1 \\mathrm{~s}^{2} \\sigma 2 \\mathrm{~s}^{1}$\nB. $\\mathrm{O} .=\\frac{3-2}{2}=0.5$\n$\\mathrm{Li}_{2}^{-}(7)=\\sigma 1 \\mathrm{~s}^{2} \\stackrel{*}{\\sigma} 1 \\mathrm{~s}^{2} \\sigma 2 \\mathrm{~s}^{2} \\stackrel{*}{\\sigma} 2 \\mathrm{~s}^{1}$\nB.O. $=\\frac{4-3}{2}=0.5$\n$\\mathrm{Li}_{2}^{+}$is more stable than $\\mathrm{Li}_{2}^{-}$because $\\mathrm{Li}_{2}^{-}$has more numbers of antibonding electrons.\n4. The molarity of a solution obtained by mixing 750 mL of 0.5 (M) HCl with 250 mL of 2(M)HCl will be:\n(1) 1.00 M\n(2) 1. 75 M\n(3) 0.975 M\n(4) 0.875 M",
+     "Sol. (4)\n$\\mathrm{M}_{1} \\mathrm{~V}_{1}+\\mathrm{M}_{2} \\mathrm{~V}_{2}=\\mathrm{MV}$\n$\\mathrm{M}=\\frac{\\mathrm{M}_{1} \\mathrm{~V}_{1}+\\mathrm{M}_{2} \\mathrm{~V}_{2}}{\\mathrm{~V}}=\\frac{0.5 \\times 750+2 \\times 250}{1000}$\n$\\mathrm{M}=0.875$\n5. Which of the following is the wrong statement?\n(1) $\\mathrm{O}_{3}$ molecule is bent\n(2) Ozone is violet-black in solid state\n(3) Ozone is diamagnetic gas\n(4) ONCl and $\\mathrm{ONO}^{-}$are not isoelectronic",
+     "Sol. (All the options are correct statements)\n(1) Correct, as\n<smiles>o1oo1</smiles>\nis bent.",
+     "JEE (MAIN)-2013-CMP-3\n(2) Correct, as ozone is violet-black solid.\n(3) Correct, as ozone is diamagnetic.\n(4) Correct, as ONCl = 32 electrons and $\\mathrm{ONO}^{-}=24$ electron hence are not isoelectronic.",
+     "All options are correct statements.\n6. Four successive members of the first row transition elements are listed below with atomic numbers. Which one of them is expected to have the highest $\\mathrm{E}_{\\mathrm{M}^{3+} / \\mathrm{M}^{2+}}^{0}$ value?\n(1) $\\mathrm{Mn}(\\mathrm{Z}=25$ )\n(2) $\\mathrm{Fe}(\\mathrm{Z}=26)$\n(3) $\\operatorname{Co}(Z=27)$\n(4) $\\operatorname{Cr}(\\mathrm{Z}=24)$",
+     "Sol. (3)\n$\\mathrm{E}_{\\mathrm{Mn}^{+3} / \\mathrm{Mn}^{+2}}^{0}=1.57 \\mathrm{~V}$\n$\\mathrm{E}_{\\mathrm{Fe}^{+3} / \\mathrm{Fe}^{+2}}^{0}=0.77 \\mathrm{~V}$\n$\\mathrm{E}_{\\mathrm{Co}^{-3} / \\mathrm{Co}^{-2}}^{0}=1.97 \\mathrm{~V}$\n$\\mathrm{E}_{\\mathrm{Cr}^{3+3} / \\mathrm{Cr}^{42}}^{0}=-0.41 \\mathrm{~V}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "7054549e690e9b8941f34de2397988293fd7aba19c54c423548eab27238bed9a",
-    "page_count": 27,
-    "text_chars": 0,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2013-hkaxqu137tthrxgbayvm.pdf"
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A solution of (-) -1 - chloro -1 - phenylethane is toluene racemises slowly in the presence of a small amount of $\\mathrm{SbCl}_{5}$, due to the formation of :\n(1) carbene\n(2) carbocation\n(3) free radical\n(4) carbanion",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The coagulating power of electrolytes having ions $\\mathrm{Na}^{+}, \\mathrm{Al}^{3+}$ and $\\mathrm{Ba}^{2+}$ for arsenic sulphide sol increases in the order:\n(1) $\\mathrm{Na}^{+}<\\mathrm{Ba}^{2+}<\\mathrm{Al}^{3+}$\n(2) $\\mathrm{Ba}^{2+}<\\mathrm{Na}^{+}<\\mathrm{Al}^{3+}$\n(3) $\\mathrm{Al}^{3+}<\\mathrm{Na}^{+}<\\mathrm{Ba}^{2+}$\n(4) $\\mathrm{Al}^{3+}<\\mathrm{Ba}^{2+}<\\mathrm{Na}^{+}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\n$\\mathrm{As}_{2} \\mathrm{~S}_{3}$ is an anionic sol (negative sol) hence coagulation will depend upon coagulating power of cation, which is directly proportional to the valency of cation (Hardy-Schulze rule)."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "How many litres of water must be added to 1 litre of an aqueous solution of HCl with a pH of 1 to create an aqueous solution with pH of 2?\n(1) 0.9 L\n(2) 2.0 L\n(3) 9.0 L\n(4) 0.1 L",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\nInitial $\\mathrm{pH}=1$, i.e. $\\left[\\mathrm{H}^{+}\\right]=0.1$ mole/litre\nNew $\\mathrm{pH}=2$, i.e. $\\left[\\mathrm{H}^{+}\\right]=0.01$ mole/litre\nIn case of dilution: $\\mathrm{M}_{1} \\mathrm{~V}_{1}=\\mathrm{M}_{2} \\mathrm{~V}_{2}$\n$0.1 \\times 1=0.01 \\times V_{2}$\n$\\mathrm{V}_{2}=10$ litre.\nVolume of water added = 9 litre."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Which one of the following molecules is expected to exhibit diamagnetic behaviour?\n(1) $\\mathrm{N}_{2}$\n(2) $\\mathrm{O}_{2}$\n(3) $\\mathrm{S}_{2}$\n(4) $\\mathrm{C}_{2}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1) \\& (4) both are correct answers.\n$\\mathrm{N}_{2} \\rightarrow$ Diamagnetic\n$\\mathrm{O}_{2} \\rightarrow$ Paramagnetic\n$\\mathrm{S}_{2} \\rightarrow$ Paramagnetic",
+     "JEE (MAIN)-2013-CMP -4",
+     "$\\mathrm{C}_{2} \\rightarrow$ Diamagnetic"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Which of the following arrangements does not represent the correct order of the property stated against it ?\n(1) $\\mathrm{Ni}^{2+}<\\mathrm{Co}^{2+}<\\mathrm{Fe}^{2+}<\\mathrm{Mn}^{2+}$ : ionic size\n(2) $\\mathrm{Co}^{3+}<\\mathrm{Fe}^{3+}<\\mathrm{Cr}^{3+}<\\mathrm{Sc}^{3+}$ : stability in aqueous solution\n(3) $\\mathrm{Sc}<\\mathrm{Ti}<\\mathrm{Cr}<\\mathrm{Mn}$ : number of oxidation states\n(4) $\\mathrm{V}^{2+}<\\mathrm{Cr}^{2+}<\\mathrm{Mn}^{2+}<\\mathrm{Fe}^{2+}$ : paramagnetic behaviour",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2) \\& (4) both are correct answers)\nThe exothermic hydration enthalpies of the given trivalent cations are:\n$\\mathrm{Sc}^{+3}=3960 \\mathrm{~kJ} /$ mole\n$\\mathrm{Fe}^{+3}=4429 \\mathrm{~kJ} /$ mole\n$\\mathrm{Co}^{+3}=4653 \\mathrm{~kJ} / \\mathrm{mole}$\n$\\mathrm{Cr}^{+3}=4563 \\mathrm{~kJ} /$ mole\nHence $\\mathrm{Sc}^{+3}$ is least hydrated; so least stable (not most stable)\n$\\mathrm{Fe}^{+2}$ contains 4 unpaired electrons where as $\\mathrm{Mn}^{+2}$ contains 5 unpaired electrons hence (4) is incorrect."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Experimentally it was found that a metal oxide has formula $\\mathrm{M}_{0.98} \\mathrm{O}$. Metal M , is present as $\\mathrm{M}^{2+}$ and $\\mathrm{M}^{3+}$ in its oxide. Fraction of the metal which exists as $\\mathrm{M}^{3+}$ would be:\n(1) 4.08\\%\n(2) 6.05\\%\n(3) 5.08\\%\n(4) 7.01\\%",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nMetal oxide $=\\mathrm{M}_{0.98} \\mathrm{O}$\nIf 'x' ions of M are in +3 state, then\n$3 \\mathrm{x}+(0.98-\\mathrm{x}) \\times 2=2$\n$\\mathrm{x}=0.04$\nSo the percentage of metal in +3 state would be $\\frac{0.04}{0.98} \\times 100=4.08 \\%$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A compound with molecular mass 180 is acylated with $\\mathrm{CH}_{3} \\mathrm{COCl}$ to get a compound with molecular mass 390. The number of amino groups present per molecule of the former compound is:\n(1) 5\n(2) 4\n(3) 6\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)",
+     "Each",
+     "Total increase in m.wt. $=390-180=210$\nThen number of $\\mathrm{NH}_{2}$ groups $=\\frac{210}{42}=5$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Given\n$$\\begin{array}{l}\n\\mathrm{E}_{\\mathrm{Cr}^{2+} / \\mathrm{Cr}^{-}}^{0}=-0.74 \\mathrm{~V} ; \\mathrm{E}_{\\mathrm{MnO}_{4}^{-} / \\mathrm{Mn}^{2+}}^{0}=1.51 \\mathrm{~V} \\\\\n\\mathrm{E}_{\\mathrm{Cr}_{2} \\mathrm{O}_{5}^{-} / \\mathrm{Cr}^{3+}}^{0}=1.33 \\mathrm{~V} ; \\mathrm{E}_{\\mathrm{Cl} / \\mathrm{Cr}^{-}}^{0}=1.36 \\mathrm{~V}\n\\end{array}$$\nBased on the data given above, strongest oxidising agent will be:\n(1) $\\mathrm{Cr}^{3+}$\n(2) $\\mathrm{Mn}^{2+}$\n(3) $\\mathrm{MnO}_{4}^{-}$\n(4) $\\mathrm{Cl}^{-}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\nAs per data mentioned\n$\\mathrm{MnO}_{4}^{-}$is strongest oxidising agent as it has maximum SRP value.",
+     "JEE (MAIN)-2013-CMP-5"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Arrange the following compounds in order of decreasing acidity:\n<smiles>Oc1ccc(Cl)cc1</smiles>\n(I)\n<smiles>Cc1ccc(O)cc1</smiles>\n(II)\n<smiles>O=[N+]([O-])c1ccc(O)cc1</smiles>\n(III)\n<smiles>COc1ccc(O)cc1</smiles>\n(IV)\n(1) I $>$ II $>$ III $>$ IV\n(2) III $>$ I $>$ II $>$ IV\n(3) IV $>$ III $>$ I $>$ II\n(4) II $>$ IV $>$ I $>$ III",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nCorrect order of acidic strength is $\\mathrm{III}>\\mathrm{I}>\\mathrm{II}>\\mathrm{IV}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The rate of a reaction doubles when its temperature changes from 300K to 310K. Activation energy of such a reaction will be:\n$\\left(\\mathrm{R}=8.314 \\mathrm{JK}^{-1} \\mathrm{~mol}^{-1}\\right.$ and $\\left.\\log 2=0.301\\right)$\n(1) $48.6 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$\n(2) $58.5 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$\n(3) $60.5 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$\n(4) $53.6 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nAs per Arrhenius equation:\n$\\ln \\frac{\\mathrm{k}_{2}}{\\mathrm{k}_{1}}=-\\frac{\\mathrm{E}_{\\mathrm{a}} \\underset{\\mathrm{C}}{\\mathrm{æ}} \\frac{1}{\\mathrm{C}_{2}}}{\\mathrm{R}}-\\frac{1}{\\mathrm{~T}_{1}} \\frac{\\stackrel{\\ddot{\\theta}}{\\dot{\\Phi}}}{\\dot{\\bar{\\theta}}}$\n$2.303 \\log 2=-\\frac{\\mathrm{E}_{\\mathrm{a}}}{8.314 \\text { C } 1}-\\frac{1}{300} \\frac{\\text { 首 }}{\\frac{1}{2}}$\n$\\Rightarrow \\mathrm{E}_{\\mathrm{a}}=53.6 \\mathrm{~kJ} / \\mathrm{mole}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Synthesis of each molecule of glucose in photosynthesis involves:\n(1) 10 molecules of ATP\n(2) 8 molecules of ATP\n(3) 6 molecules of ATP\n(4) 18 molecules of ATP",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\n$12 \\mathrm{H}_{2} \\mathrm{O}+12 \\mathrm{NADP}+18 \\mathrm{ADP} \\xrightarrow{\\text { Light raction }} 6 \\mathrm{O}_{2}+18 \\mathrm{ATP}+12 \\mathrm{NADPH}$\n$6 \\mathrm{CO}_{2}+12 \\mathrm{NADPH}+18 \\mathrm{ATP} \\xrightarrow{\\text { Durk reaction }} \\mathrm{C}_{6} \\mathrm{H}_{12} \\mathrm{O}_{6}+12 \\mathrm{NADP}+18 \\mathrm{ADP}+6 \\mathrm{H}_{2} \\mathrm{O}$\nNet reaction: $6 \\mathrm{CO}_{2}+6 \\mathrm{H}_{2} \\mathrm{O} \\longrightarrow \\mathrm{C}_{6} \\mathrm{H}_{12} \\mathrm{O}_{6}+6 \\mathrm{O}_{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Which of the following complex species is not expected to exhibit optical isomerism?\n(1) $\\left[\\mathrm{Co}(\\mathrm{en})_{2} \\mathrm{Cl}_{2}\\right]^{+}$\n(2) $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{3} \\mathrm{Cl}_{3}\\right]$\n(3) $\\left[\\mathrm{Co}(\\mathrm{en})\\left(\\mathrm{NH}_{3}\\right)_{2} \\mathrm{Cl}_{2}\\right]^{+}$\n(4) $\\left[\\mathrm{Co}(\\mathrm{en})_{3}\\right]^{3+}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{3} \\mathrm{Cl}_{3}\\right]$ exists in two forms (facial and meridonial)",
+     "JEE (MAIN)-2013-CMP -6",
+     "facial",
+     "meridonial",
+     "Both of these forms are achiral. Hence, $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{3} \\mathrm{Cl}_{3}\\right]$ does not show optical isomerism."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A piston filled with 0.04 mol of an ideal gas expands reversibly from 50.0 mL to 375 mL at a constant temperature of $37.0^{\\circ} \\mathrm{C}$. As it does so, it absorbs 208J of heat. The values of $q$ and $w$ for the process will be: $(\\mathrm{R}=8.314 \\mathrm{~J} / \\mathrm{mol} \\mathrm{K})(\\ell \\mathrm{n} 7.5=2.01)$\n(1) $\\mathrm{q}=-208 \\mathrm{~J}, \\mathrm{w}=-208 \\mathrm{~J}$\n(2) $\\mathrm{q}=-208 \\mathrm{~J}, \\mathrm{w}=+208 \\mathrm{~J}$\n(3) $\\mathrm{q}=+208 \\mathrm{~J}, \\mathrm{w}=+208 \\mathrm{~J}$\n(4) $\\mathrm{q}=+208 \\mathrm{~J}, \\mathrm{w}=-208 \\mathrm{~J}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nProcess is isothermal reversible expansion, hence $\\Delta \\mathrm{U}=0$.\n$\\therefore q=-W$\nAs q = +208 J\nHence $W=-208 \\mathrm{~J}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A gaseous hydrocarbon gives upon combustion 0.72 g of water and 3.08 g of $\\mathrm{CO}_{2}$. The empirical formula of the hydrocarbon is:\n(1) $\\mathrm{C}_{3} \\mathrm{H}_{4}$\n(2) $\\mathrm{C}_{6} \\mathrm{H}_{5}$\n(3) $\\mathrm{C}_{7} \\mathrm{H}_{8}$\n(4) $\\mathrm{C}_{2} \\mathrm{H}_{4}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\mathrm{C}_{\\mathrm{x}} \\mathrm{H}_{\\mathrm{y}}+\\underset{\\mathrm{C}}{\\mathrm{e}} \\mathrm{x}+\\frac{\\mathrm{y}}{4} \\frac{\\mathrm{O}}{\\vec{\\phi}} \\mathrm{O}_{2} 3 / 430 \\mathrm{xCO}_{2}+\\frac{\\mathrm{y}}{2} \\mathrm{H}_{2} \\mathrm{O}$$",
+     "Weight (g)\n3.08 g $\\quad 0.72$ g\nmoles\n0.070 .04\n$$\\begin{aligned}\n\\frac{x}{y / 2} & =\\frac{0.07}{0.04} \\\\\np \\frac{x}{y} & =\\frac{7}{8}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The order of stability of the following carbocations:\n<smiles>[C+]C=C</smiles>\nI\n<smiles>[C+]CC</smiles>\nII\n<smiles>[C+]c1ccccc1</smiles>\nIII\nis:\n(1) II $>$ III $>$ I\n(2) I $>$ II $>$ III\n(3) III $>$ I $>$ II\n(4) III $>$ II $>$ I",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\nOrder of stability is III $>$ I $>$ II .",
+     "JEE (MAIN)-2013-CMP-7",
+     "(Stability $\\propto$ extent of delocalization)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Which of the following represents the correct order of increasing first ionization enthalpy for $\\mathrm{Ca}, \\mathrm{Ba}, \\mathrm{S}, \\mathrm{Se}$ and Ar?\n(1) $\\mathrm{S}<\\mathrm{Se}<\\mathrm{Ca}<\\mathrm{Ba}<\\mathrm{Ar}$\n(2) $\\mathrm{Ba}<\\mathrm{Ca}<\\mathrm{Se}<\\mathrm{S}<\\mathrm{Ar}$\n(3) $\\mathrm{Ca}<\\mathrm{Ba}<\\mathrm{S}<\\mathrm{Se}<\\mathrm{Ar}$\n(4) $\\mathrm{Ca}<\\mathrm{S}<\\mathrm{Ba}<\\mathrm{Se}<\\mathrm{Ar}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nIncreasing order of first ionization enthalpy is\n$$\\mathrm{Ba}<\\mathrm{Ca}<\\mathrm{Se}<\\mathrm{S}<\\mathrm{Ar}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "For gaseous state, if most probable speed is denoated by $\\mathrm{C}^{*}$, average speed by $\\overline{\\mathrm{C}}$ and mean square speed by C , then for a large number of molecules the ratios of these speeds are:\n(1) $\\mathrm{C}^{*}: \\overline{\\mathrm{C}}: \\mathrm{C}=1.128: 1.225: 1$\n(2) $\\mathrm{C}^{*}: \\overline{\\mathrm{C}}: \\mathrm{C}=1: 1.128: 1.225$\n(3) $\\mathrm{C}^{*}: \\overline{\\mathrm{C}}: \\mathrm{C}=1: 1.125: 1.128$\n(4) $\\mathrm{C}^{*}: \\overline{\\mathrm{C}}: \\mathrm{C}=1.225: 1.128: 1$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$C^{*}=\\sqrt{\\frac{2 \\mathrm{RT}}{M}}, \\bar{C}=\\sqrt{\\frac{8 \\mathrm{RT}}{\\pi \\mathrm{M}}}, C=\\sqrt{\\frac{3 \\mathrm{RT}}{\\mathrm{M}}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The gas leaked from a storage tank of the Union Carbide plant in Bhopal gas tragedy was:\n(1) Methylamine\n(2) Ammonia\n(3) Phosgene\n(4) Methylisocyanate",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nIt was methyl isocyanate $\\left(\\mathrm{CH}_{3} \\mathrm{NCO}\\right)$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Consider the following reaction:\n$$\\mathrm{xMnO}_{4}^{-}+\\mathrm{yC}_{2} \\mathrm{O}_{4}^{2-}+\\mathrm{zH}^{+} 3 / 4 \\mathrm{xMn}^{2+}+2 \\mathrm{yCO}_{2}+\\frac{\\mathrm{z}}{2} \\mathrm{H}_{2} \\mathrm{O}$$\nThe values of $\\mathrm{x}, \\mathrm{y}$ and z in the reaction are, respectively:\n(1) 2, 5 and 8\n(2) 2, 5 and 16\n(3) 5, 2 and 8\n(4) 5, 2 and 16",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\n2 \\mathrm{MnO}_{4}^{-}+5 \\mathrm{C}_{2} \\mathrm{O}_{4}^{-2}+16 \\mathrm{H}^{+} \\longrightarrow 2 \\mathrm{Mn}^{+2}+10 \\mathrm{CO}_{2}+8 \\mathrm{H}_{2} \\mathrm{O} \\\\\n\\mathrm{x}=2, \\mathrm{y}=5, \\mathrm{z}=16\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Which of the following exists as covalent crystals in the solid state?\n(1) Silicon\n(2) Sulphur\n(3) Phosphorous\n(4) Iodine",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nSilicon $(\\mathrm{Si})$ - covalent solid\nSulphur $\\left(\\mathrm{S}_{8}\\right)$ - molecular solid\nPhosphorous $\\left(\\mathrm{P}_{4}\\right)$ - Molecular solid\nIodine $\\left(\\mathrm{I}_{2}\\right)$ - Molecular solid"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Compound (A), $\\mathrm{C}_{8} \\mathrm{H}_{9} \\mathrm{Br}$, gives a white precipitate when warmed with alcoholic $\\mathrm{AgNO}_{3}$. Oxidation of (A) gives a acid (B), $\\mathrm{C}_{8} \\mathrm{H}_{6} \\mathrm{O}_{4}$. (B) easily forms anhydride on heating. Identify the compound (A).\nJEE (MAIN)-2013-CMP -8\n(1)\n<smiles>CCCc1ccccc1Br</smiles>\n(3)\n<smiles>Cc1ccccc1CBr</smiles>\n(2)\n<smiles>Cc1ccc(CBr)cc1</smiles>\n(4)\n<smiles>Cc1cccc(CBr)c1</smiles>",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Energy of an electron is given by $\\mathrm{E}=-2.178^{\\prime} 10^{-18} \\mathrm{~J} \\stackrel{\\text { æz }}{\\text { 家 }} \\stackrel{\\text { ở }}{\\text { ở }}$. Wavelength of light required to excite an electron in an hydrogen atom from level $\\mathrm{n}=1$ to $\\mathrm{n}=2$ will be $\\left(\\mathrm{h}=6.62 \\times 10^{-34} \\mathrm{Js}\\right.$ and $\\left.\\mathrm{c}=3.0 \\times 10^{8} \\mathrm{~ms}^{-1}\\right)$\n(1) $2.816 \\times 10^{-7} \\mathrm{~m}$\n(2) $6.500 \\times 10^{-7} \\mathrm{~m}$\n(3) $8.500 \\times 10^{-7} \\mathrm{~m}$\n(4) $1.214 \\times 10^{-7} \\mathrm{~m}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\n$$\\begin{array}{l}\n\\mathrm{E}=\\frac{\\mathrm{hc}}{\\lambda}=2.178 \\times 10^{-18} \\times \\mathrm{Z}^{2}\\left[\\frac{1}{1^{2}}-\\frac{1}{2^{2}}\\right] \\\\\n\\Rightarrow \\lambda=1.214 \\times 10^{-7} \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "An organic compound A upon reacting with $\\mathrm{NH}_{3}$ gives B. On heating B gives C. C in presence of KOH reacts with $\\mathrm{Br}_{2}$ to give $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{NH}_{2}$. A is\n(1) $\\quad \\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{COOH}$\n(2)\n<smiles>CC(C)C(=O)O</smiles>\n(3) $\\quad \\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{COOH}$\n(4) $\\mathrm{CH}_{3} \\mathrm{COOH}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)",
+     "JEE (MAIN)-2013-CMP-9\n<smiles>CCC(=O)O</smiles>",
+     "(A)",
+     "3/4 32\n<smiles>CCC(=O)[O-]</smiles>",
+     "(B)",
+     "Y\n<smiles>CCC(N)=O</smiles>",
+     "(C)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In which of the following pairs of molecules/ions, both the species are not likely to exist?\n(1) $\\mathrm{H}_{2}, \\mathrm{He}_{2}^{2-}$\n(2) $\\mathrm{H}_{2}^{2+}, \\mathrm{He}_{2}$\n(3) $\\mathrm{H}_{2}, \\mathrm{He}_{2}^{2+}$\n(4) $\\mathrm{H}_{2}^{+}, \\mathrm{He}_{2}^{2-}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nBond order of $\\mathrm{H}_{2}^{2+}$ and $\\mathrm{He}_{2}$ is zero, thus their existence is not possible.",
+     "JEE (MAIN)-2013-CMP -10",
+     "PART B - MATHEMATICS"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 31,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The circle passing through $(1,-2)$ and touching the axis of $x$ at $(3,0)$ also passes through the point\n(1) $(2,-5)$\n(2) (5, -2)\n(3) (-2, 5)\n(4) (-5, 2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$(x-3)^{2}+y^{2}+\\lambda y=0$\nThe circle passes through $(1,-2)$\n$\\Rightarrow 4+4-2 \\lambda=0 \\Rightarrow \\lambda=4$\n$(x-3)^{2}+y^{2}+4 y=0 \\Rightarrow$ Clearly $(5,-2)$ satisfies."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 32,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "ABCD is a trapezium such that AB and CD are parallel and BC⟂CD. If $\\angle \\mathrm{ADB}=\\theta, \\mathrm{BC}=\\mathrm{p}$ and CD = q, then AB is equal to\n(1) $\\frac{\\mathrm{p}^{2}+\\mathrm{q}^{2} \\cos \\theta}{\\mathrm{p} \\cos \\theta+\\mathrm{q} \\sin \\theta}$\n(2) $\\frac{\\mathrm{p}^{2}+\\mathrm{q}^{2}}{\\mathrm{p}^{2} \\cos \\theta+\\mathrm{q}^{2} \\sin \\theta}$\n(3) $\\frac{\\left(p^{2}+q^{2}\\right) \\sin \\theta}{(p \\cos \\theta+q \\sin \\theta)^{2}}$\n(4) $\\frac{\\left(\\mathrm{p}^{2}+\\mathrm{q}^{2}\\right) \\sin \\theta}{\\mathrm{p} \\cos \\theta+\\mathrm{q} \\sin \\theta}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nUsing sine rule in triangle ABD\n$$\\begin{array}{l}\n\\frac{A B}{\\sin \\theta}=\\frac{B D}{\\sin (\\theta+\\alpha)} \\\\\n\\Rightarrow A B=\\frac{\\sqrt{p^{2}+q^{2}} \\sin \\theta}{\\sin \\theta \\cos \\alpha+\\cos \\theta \\sin \\alpha}=\\frac{\\sqrt{p^{2}+q^{2}} \\sin \\theta}{\\frac{\\sin \\theta \\cdot q}{\\sqrt{p^{2}+q^{2}}}+\\frac{\\cos \\theta \\cdot p}{\\sqrt{p^{2}+q^{2}}}} \\\\\n\\Rightarrow A B=\\frac{\\left(p^{2}+q^{2}\\right) \\sin \\theta}{(p \\cos \\theta+q \\sin \\theta)} .\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 33,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Given : A circle, $2 \\mathrm{x}^{2}+2 \\mathrm{y}^{2}=5$ and a parabola, $\\mathrm{y}^{2}=4 \\sqrt{5} \\mathrm{x}$.\nStatement -I : An equation of a common tangent to these curves is $\\mathrm{y}=\\mathrm{x}+\\sqrt{5}$.\nStatement - II : If the line, $\\mathrm{y}=\\mathrm{mx}+\\frac{\\sqrt{5}}{\\mathrm{~m}}(\\mathrm{~m} \\neq 0)$ is their common tangent, then m satisfies $\\mathrm{m}^{4}-3 \\mathrm{~m}^{2}+2=$\n0.\n(1) Statement - I is True; Statement -II is true; Statement-II is not a correct explanation for Statement-I\n(2) Statement -I is True; Statement -II is False.\n(3) Statement -I is False; Statement -II is True\n(4) Statement -I is True; Statement -II is True; Statement-II is a correct explanation for Statement-I",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nLet the tangent to the parabola be $\\mathrm{y}=\\mathrm{mx}+\\frac{\\sqrt{5}}{\\mathrm{~m}}(\\mathrm{~m} \\neq 0)$.\nNow, its distance from the centre of the circle must be equal to the radius of the circle.\nSo, $\\left|\\frac{\\sqrt{5}}{\\mathrm{~m}}\\right|=\\frac{\\sqrt{5}}{\\sqrt{2}} \\sqrt{1+\\mathrm{m}^{2}} \\Rightarrow\\left(1+\\mathrm{m}^{2}\\right) \\mathrm{m}^{2}=2 \\Rightarrow \\mathrm{~m}^{4}+\\mathrm{m}^{2}-2=0$.\n$\\Rightarrow\\left(\\mathrm{m}^{2}-1\\right)\\left(\\mathrm{m}^{2}+2\\right)=0 \\Rightarrow \\mathrm{~m}= \\pm 1$\nSo, the common tangents are $\\mathrm{y}=\\mathrm{x}+\\sqrt{5}$ and $\\mathrm{y}=-\\mathrm{x}-\\sqrt{5}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 34,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A ray of light along $\\mathrm{x}+\\sqrt{3} \\mathrm{y}=\\sqrt{3}$ gets reflected upon reaching x-axis, the equation of the reflected rays is\nJEE (MAIN)-2013-CMP-11\n(1) $\\sqrt{3} y=x-\\sqrt{3}$\n(2) $y=\\sqrt{3} x-\\sqrt{3}$\n(3) $\\sqrt{3} y=x-1$\n(4) $\\mathrm{y}=\\mathrm{x}+\\sqrt{3}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nSlope of the incident ray is $-\\frac{1}{\\sqrt{3}}$.\nSo, the slope of the reflected ray must be $\\frac{1}{\\sqrt{3}}$.\nThe point of incidence is $(\\sqrt{3}, 0)$. So, the equation of reflected ray is $\\mathrm{y}=\\frac{1}{\\sqrt{3}}(\\mathrm{x}-\\sqrt{3})$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 35,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "All the students of a class performed poorly in Mathematics. The teacher decided to give grace marks of 10 to each of the students. Which of the following statistical measures will not change even after the grace marks were given ?\n(1) median\n(2) mode\n(3) variance\n(4) mean",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\nVariance is not changed by the change of origin.\nAlternate Solution:\n$\\sigma=\\sqrt{\\frac{\\sum|x-\\bar{x}|^{2}}{n}}$ for $y=x+10 \\Rightarrow \\bar{y}=\\bar{x}+10$\n$\\sigma_{1}=\\sqrt{\\frac{\\sum|y+10-\\bar{y}-10|^{2}}{n}}=\\sqrt{\\frac{\\sum|y-\\bar{y}|^{2}}{n}}=\\sigma$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 36,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If $\\mathrm{x}, \\mathrm{y}, \\mathrm{z}$ are in A.P. and $\\tan ^{-1} \\mathrm{x}, \\tan ^{-1} \\mathrm{y}$ and $\\tan ^{-1} \\mathrm{z}$ are also in A.P., then\n(1) $2 x=3 y=6 z$\n(2) $6 x=3 y=2 z$\n(3) $6 x=4 y=3 z$\n(4) $x=y=z$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nIf $\\mathrm{x}, \\mathrm{y}, \\mathrm{z}$ are in A.P.\n$2 \\mathrm{y}=\\mathrm{x}+\\mathrm{z}$\nand $\\tan ^{-1} \\mathrm{x}, \\tan ^{-1} \\mathrm{y}, \\tan ^{-1} \\mathrm{z}$ are in A.P.\n$2 \\tan ^{-1} \\mathrm{y}=\\tan ^{-1} \\mathrm{x}+\\tan ^{-1} \\mathrm{z} \\quad \\Rightarrow \\mathrm{x}=\\mathrm{y}=\\mathrm{z}$.\nNote: If $\\mathbf{y}=\\mathbf{0}$, then none of the options is appropriate."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 37,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If $\\int \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\Psi(\\mathrm{x})$, then $\\int \\mathrm{x}^{5} \\mathrm{f}\\left(\\mathrm{x}^{3}\\right) \\mathrm{dx}$ is equal to\n(1) $\\frac{1}{3} \\mathrm{x}^{3} \\Psi\\left(\\mathrm{x}^{3}\\right)-3 \\int \\mathrm{x}^{3} \\Psi\\left(\\mathrm{x}^{3}\\right) \\mathrm{dx}+\\mathrm{C}$\n(2) $\\frac{1}{3} \\mathrm{x}^{3} \\Psi\\left(\\mathrm{x}^{3}\\right)-\\int \\mathrm{x}^{2} \\Psi\\left(\\mathrm{x}^{3}\\right) \\mathrm{dx}+\\mathrm{C}$\n(3) $\\frac{1}{3}\\left[\\mathrm{x}^{3} \\Psi\\left(\\mathrm{x}^{3}\\right)-\\int \\mathrm{x}^{3} \\Psi\\left(\\mathrm{x}^{3}\\right) \\mathrm{dx}\\right]+\\mathrm{C}$\n(4) $\\frac{1}{3}\\left[\\mathrm{x}^{3} \\Psi\\left(\\mathrm{x}^{3}\\right)-\\int \\mathrm{x}^{2} \\Psi\\left(\\mathrm{x}^{3}\\right) \\mathrm{dx}\\right]+\\mathrm{C}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$\\int \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\psi(\\mathrm{x})$\nLet $\\mathrm{x}^{3}=\\mathrm{t}$\n$3 \\mathrm{x}^{2} \\mathrm{dx}=\\mathrm{dt}$\nthen $\\int \\mathrm{x}^{5} \\mathrm{f}\\left(\\mathrm{x}^{3}\\right) \\mathrm{dx}=\\frac{1}{3} \\int \\mathrm{tf}(\\mathrm{t}) \\mathrm{dt}$\n$=\\frac{1}{3}\\left[\\mathrm{t} \\int \\mathrm{f}(\\mathrm{t}) \\mathrm{dt}-\\int\\left\\{1 \\cdot \\int \\mathrm{f}(\\mathrm{t}) \\mathrm{dt}\\right\\} \\mathrm{dt}\\right]=\\frac{1}{3} \\mathrm{x}^{3} \\psi\\left(\\mathrm{x}^{3}\\right)-\\int \\mathrm{x}^{2} \\psi\\left(\\mathrm{x}^{3}\\right) \\mathrm{dx}+\\mathrm{C}$.",
+     "JEE (MAIN)-2013-CMP -12"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 38,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The equation of the circle passing through the foci of the ellipse $\\frac{x^{2}}{16}+\\frac{y^{2}}{9}=1$, and having centre at $(0,3)$ is\n(1) $x^{2}+y^{2}-6 y+7=0$\n(2) $x^{2}+y^{2}-6 y-5=0$\n(3) $x^{2}+y^{2}-6 y+5=0$\n(4) $x^{2}+y^{2}-6 y-7=0$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nfoci $\\equiv( \\pm \\mathrm{ae}, 0)$\nWe have $a^{2} e^{2}=a^{2}-b^{2}=7$\nEquation of circle $(x-0)^{2}+(y-3)^{2}=(\\sqrt{7}-0)^{2}+(0-3)^{2}$\n$\\Rightarrow \\mathrm{x}^{2}+\\mathrm{y}^{2}-6 \\mathrm{y}-7=0$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 39,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The $x$-coordinate of the incentre of the triangle that has the coordinates of mid points of its sides as $(0,1) (1,1)$ and $(1,0)$ is\n(1) $2-\\sqrt{2}$\n(2) $1+\\sqrt{2}$\n(3) $1-\\sqrt{2}$\n(4) $2+\\sqrt{2}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nx-coordinate $=\\frac{\\mathrm{ax}_{1}+\\mathrm{bx}_{2}+\\mathrm{cx}_{3}}{\\mathrm{a}+\\mathrm{b}+\\mathrm{c}}$\n$=\\frac{2 \\times 2+2 \\sqrt{2} \\times 0+2 \\times 0}{2+2+2 \\sqrt{2}}$\n$=\\frac{4}{4+2 \\sqrt{2}}=\\frac{2}{2+\\sqrt{2}}=2-\\sqrt{2}$.",
+     "Alternate Solution:\nx -coordinate $=\\mathrm{r}=(\\mathrm{s}-\\mathrm{a}) \\tan \\mathrm{A} / 2$\n$=\\left(\\frac{4+2 \\sqrt{2}}{2}-2 \\sqrt{2}\\right) \\tan \\frac{\\pi}{4}=2-\\sqrt{2}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 40,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The intercepts on x-axis made by tangents to the curve, $\\mathrm{y}=\\int_{0}^{\\mathrm{x}}|\\mathrm{t}| \\mathrm{dt}, \\mathrm{x} \\in \\mathrm{R}$, which are parallel to the line $\\mathrm{y}=2 \\mathrm{x}$, are equal to\n(1) $\\pm 2$\n(2) ± 3\n(3) ±4\n(4) ± 1",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\n$\\frac{\\mathrm{dy}}{\\mathrm{dx}}=|\\mathrm{x}|=2 \\Rightarrow \\mathrm{x}= \\pm 2 \\Rightarrow \\mathrm{y}=\\int_{0}^{2}|\\mathrm{t}| \\mathrm{dt}=2$ for $\\mathrm{x}=2$\nand $\\mathrm{y}=\\int_{0}^{-2}|\\mathrm{t}| \\mathrm{dt}=-2$ for $\\mathrm{x}=-2$\n∴ tangents are $\\mathrm{y}-2=2(\\mathrm{x}-2) \\Rightarrow \\mathrm{y}=2 \\mathrm{x}-2$\nand $\\mathrm{y}+2=2(\\mathrm{x}+2) \\Rightarrow \\mathrm{y}=2 \\mathrm{x}+2$\nPutting $\\mathrm{y}=0$, we get $\\mathrm{x}=1$ and -1 ."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 41,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The sum of first 20 terms of the sequence $0.7,0.77,0.777, \\ldots$. , is\n(1) $\\frac{7}{9}\\left(99-10^{-20}\\right)$\n(2) $\\frac{7}{81}\\left(179+10^{-20}\\right)$\n(3) $\\frac{7}{9}\\left(99+10^{-20}\\right)$\n(4) $\\frac{7}{81}\\left(179-10^{-20}\\right)$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$\\mathrm{t}_{\\mathrm{r}}=0.777 \\ldots . . \\mathrm{r}$ times",
+     "JEE (MAIN)-2013-CMP-13\n$$\\begin{array}{l}\n=7\\left(10^{-1}+10^{-2}+10^{-3}+\\ldots . .+10^{-r}\\right) \\\\\n=\\frac{7}{9}\\left(1-10^{-r}\\right) \\\\\nS_{20}=\\sum_{r=1}^{20} t_{r}=\\frac{7}{9}\\left(20-\\sum_{r=1}^{20} 10^{-r}\\right)=\\frac{7}{9}\\left(20-\\frac{1}{9}\\left(1-10^{-20}\\right)\\right)=\\frac{7}{81}\\left(179+10^{-20}\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 42,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Consider :\nStatement $-I:(p \\wedge \\sim q) \\wedge(\\sim p \\wedge q)$ is a fallacy.\nStatement - II: $(\\mathrm{p} \\rightarrow \\mathrm{q}) \\leftrightarrow(\\sim \\mathrm{q} \\rightarrow \\sim \\mathrm{p})$ is a tautology.\n(1) Statement - I is True; Statement -II is true; Statement-II is not a correct explanation for Statement-I\n(2) Statement -I is True; Statement -II is False.\n(3) Statement -I is False; Statement -II is True\n(4) Statement -I is True; Statement -II is True; Statement-II is a correct explanation for Statement-I",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nS1:",
+     "\\begin{tabular}[t]{|l|l|l|l|l|l|l|}\n\\hline p & q & ~p & ~q & $\\mathrm{p}^{\\wedge} \\sim \\mathrm{q}$ & $\\sim p^{\\wedge} q$ & $\\left(p^{\\wedge} \\sim q\\right)^{\\wedge}\\left(\\sim p^{\\wedge} q\\right)$ \\\\\n\\hline T & T & F & F & F & F & F \\\\\n\\hline T & F & F & T & T & F & F \\\\\n\\hline F & T & T & F & F & T & F \\\\\n\\hline F & F & T & T & F & F & F \\\\\n\\hline\n\\end{tabular}",
+     "Fallacy\nS2:",
+     "\\begin{tabular}[t]{|l|l|l|l|l|l|l|}\n\\hline p & q & ~ p & ~ q & p ⇒ q & $\\sim \\mathrm{q} \\Rightarrow \\sim \\mathrm{p}$ & $(p \\Rightarrow q) \\Leftrightarrow(\\sim q \\Rightarrow \\sim p)$ \\\\\n\\hline T & T & F & F & T & T & T \\\\\n\\hline T & F & F & T & F & F & T \\\\\n\\hline F & T & T & F & T & T & T \\\\\n\\hline F & F & T & T & T & T & T \\\\\n\\hline\n\\end{tabular}",
+     "Tautology\nS2 is not an explanation of S1"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 43,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The area (in square units) bounded by the curves $\\mathrm{y}=\\sqrt{\\mathrm{x}}, 2 \\mathrm{y}-\\mathrm{x}+3=0, \\mathrm{x}$-axis, and lying in the first quadrant is\n(1) 36\n(2) 18\n(3) $\\frac{27}{4}$\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\n$$\\begin{array}{l}\n2 \\sqrt{x}=x-3 \\\\\n4 x=x^{2}-6 x+9 \\\\\nx^{2}-10 x+9 \\\\\nx=9, x=1 \\\\\n\\left.\\int_{0}^{3}(2 y+3)-y^{2}\\right] d y \\\\\n{\\left[y^{2}+3 y-\\frac{y^{3}}{3}\\right]_{0}^{3}=9+9-9=9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 44,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The expression $\\frac{\\tan \\mathrm{A}}{1-\\cot \\mathrm{A}}+\\frac{\\cot \\mathrm{A}}{1-\\tan \\mathrm{A}}$ can be written as\n(1) $\\sec \\mathrm{A} \\operatorname{cosec} \\mathrm{A}+1$\n(2) $\\tan \\mathrm{A}+\\cot \\mathrm{A}$\n(3) $\\sec \\mathrm{A}+\\operatorname{cosec} \\mathrm{A}$\n(4) $\\sin \\mathrm{A} \\cos \\mathrm{A}+1$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)",
+     "JEE (MAIN)-2013-CMP -14\n$$\\frac{1}{\\cot A(1-\\cot A)}-\\frac{\\cot ^{2} A}{(1-\\cot A)}=\\frac{1-\\cot ^{3} A}{\\cot A(1-\\cot A)}=\\frac{\\cos \\mathrm{ec}^{2} A+\\cot A}{\\cot A}=1+\\sec A \\operatorname{cosec} A$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 45,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The real number k for which the equation, $2 \\mathrm{x}^{3}+3 \\mathrm{x}+\\mathrm{k}=0$ has two distinct real roots in [0,1]\n(1) lies between 2 and 3\n(2) lies between -1 and 0\n(3) does not exist\n(4) lies between 1 and 2",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\nIf $2 \\mathrm{x}^{3}+3 \\mathrm{x}+\\mathrm{k}=0$ has 2 distinct real roots in $[0,1]$, then $\\mathrm{f}^{\\prime}(\\mathrm{x})$ will change sign but $\\mathrm{f}^{\\prime}(\\mathrm{x})=6 \\mathrm{x}^{2}+3>0$\nSo no value of k exists."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 46,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "$\\lim _{x \\rightarrow 0} \\frac{(1-\\cos 2 x)(3+\\cos x)}{x \\tan 4 x}$ is equal to\n(1) $\\frac{1}{2}$\n(2) 1\n(3) 2\n(4) $-\\frac{1}{4}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\n\\lim _{x \\rightarrow 0} \\frac{(1-\\cos 2 x)}{x(\\tan 4 x)}(3+\\cos x) \\\\\n\\lim _{x \\rightarrow 0} 2\\left(\\frac{\\sin x}{x}\\right)^{2} \\cdot \\frac{1}{4}\\left(\\frac{4 x}{\\tan 4 x}\\right)(3+\\cos x)=2 \\times 1 \\times \\frac{1}{4} \\times 1 \\times(3+1)=2\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 47,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{T}_{\\mathrm{n}}$ be the number of all possible triangles formed by joining vertices of an n-sided regular polygon. If $\\mathrm{T}_{\\mathrm{n}+1}-\\mathrm{T}_{\\mathrm{n}}=10$, then the value of n is\n(1) 5\n(2) 10\n(3) 8\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\n$${ }^{\\mathrm{n}+1} C_{3}-{ }^{\\mathrm{n}} C_{3}=10 \\Rightarrow{ }^{\\mathrm{n}} C_{2}=10 \\Rightarrow \\mathrm{n}=5$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 48,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "At present, a firm is manufacturing 2000 items. It is estimated that the rate of change of production P w.r.t. additional number of workers x is given by $\\frac{\\mathrm{dP}}{\\mathrm{dx}}=100-12 \\sqrt{\\mathrm{x}}$. If the firm employs 25 more workers, then the new level of production of items is\n(1) 3000\n(2) 3500\n(3) 4500\n(4) 2500",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\n\\int_{2000}^{\\mathrm{P}} \\mathrm{dP}=\\int_{0}^{25}(100-12 \\sqrt{\\mathrm{x}}) \\mathrm{dx} \\\\\n(\\mathrm{P}-2000)=25 \\times 100-\\frac{12 \\times 2}{3}(25)^{3 / 2} \\\\\n\\mathrm{P}=3500\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 49,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Statement - I : The value of the integral $\\int_{\\pi / 6}^{\\pi / 3} \\frac{\\mathrm{dx}}{1+\\sqrt{\\tan \\mathrm{x}}}$ is equal to $\\frac{\\pi}{6}$.\nStatement - II : $\\int_{\\mathrm{a}}^{\\mathrm{b}} \\mathrm{f}(\\mathrm{x}) \\mathrm{dx}=\\int_{\\mathrm{a}}^{\\mathrm{b}} \\mathrm{f}(\\mathrm{a}+\\mathrm{b}-\\mathrm{x}) \\mathrm{dx}$.\n(1) Statement - I is True; Statement -II is true; Statement-II is not a correct explanation for Statement-I\n(2) Statement -I is True; Statement -II is False.\nJEE (MAIN)-2013-CMP-15\n(3) Statement -I is False; Statement -II is True\n(4) Statement -I is True; Statement -II is True; Statement-II is a correct explanation for Statement-I",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\nI=\\int_{\\pi / 6}^{\\pi / 3} \\frac{d x}{1+\\sqrt{\\tan x}} \\\\\nI=\\int_{\\pi / 6}^{\\pi / 3} \\frac{\\sqrt{\\tan x}}{1+\\sqrt{\\tan x}} d x \\\\\n2 I=\\frac{\\pi}{6} \\\\\nI=\\frac{\\pi}{12}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 50,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If $\\mathrm{P}=\\left[\\begin{array}{lll}1 & \\alpha & 3 \\\\ 1 & 3 & 3 \\\\ 2 & 4 & 4\\end{array}\\right]$ is the adjoint of a $3 \\times 3$ matrix A and $|\\mathrm{A}|=4$, then $\\alpha$ is equal to\n(1) 11\n(2) 5\n(3) 0\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\n$$P=\\left[\\begin{array}{lll}\n1 & \\alpha & 3 \\\\\n1 & 3 & 3 \\\\\n2 & 4 & 4\n\\end{array}\\right]$$\n$|\\operatorname{Adj} \\mathrm{A}|=|\\mathrm{A}|^{2}$\n$|\\operatorname{Adj} \\mathrm{A}|=16$\n$$\\begin{array}{l}\n1(12-12)-\\alpha(4-6)+3(4-6)=16 \\\\\n2 \\alpha-6=16 \\\\\n2 \\alpha=22 \\\\\n\\alpha=11\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 51,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The number of values of k , for which the system of equations\n$$\\begin{array}{l}\n(\\mathrm{k}+1) \\mathrm{x}+8 \\mathrm{y}=4 \\mathrm{k} \\\\\n\\mathrm{kx}+(\\mathrm{k}+3) \\mathrm{y}=3 \\mathrm{k}-1\n\\end{array}$$\nhas no solution, is\n(1) 1\n(2) 2\n(3) 3\n(4) infinite",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nFor no solution\n$$\\frac{k+1}{k}=\\frac{8}{k+3} \\neq \\frac{4 k}{3 k-1}$$\n$\\Rightarrow(\\mathrm{k}+1)(\\mathrm{k}+3)-8 \\mathrm{k}=0$\nor $\\mathrm{k}^{2}-4 \\mathrm{k}+3=0 \\Rightarrow \\mathrm{k}=1,3$\nBut for $\\mathrm{k}=1$, equation (1) is not satisfied\nHence $\\mathrm{k}=3$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 52,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If $\\mathrm{y}=\\sec \\left(\\tan ^{-1} \\mathrm{x}\\right)$, then $\\frac{\\mathrm{dy}}{\\mathrm{dx}}$ at $\\mathrm{x}=1$ is equal to\n(1) $\\frac{1}{2}$\n(2) 1\n(3) $\\sqrt{2}$\n(4) $\\frac{1}{\\sqrt{2}}$\nJEE (MAIN)-2013-CMP -16",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\n$$\\begin{array}{l}\ny=\\sec \\left(\\tan ^{-1} x\\right) \\\\\n\\frac{d y}{d x}=\\sec \\left(\\tan ^{-1} x\\right) \\tan \\left(\\tan ^{-1} x\\right) \\cdot \\frac{1}{1+x^{2}} \\\\\n\\left.\\frac{d y}{d x}\\right|_{x=1}=\\sqrt{2} \\times 1 \\times \\frac{1}{2}=\\frac{1}{\\sqrt{2}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 53,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If the lines $\\frac{\\mathrm{x}-2}{1}=\\frac{\\mathrm{y}-3}{1}=\\frac{\\mathrm{z}-4}{-\\mathrm{k}}$ and $\\frac{\\mathrm{x}-1}{\\mathrm{k}}=\\frac{\\mathrm{y}-4}{2}=\\frac{\\mathrm{z}-5}{1}$ are coplanar, then k can have\n(1) exactly one value\n(2) exactly two values\n(3) exactly three values\n(4) any value",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\n\\left|\\begin{array}{ccc}\n1 & -1 & -1 \\\\\n1 & 1 & -k \\\\\nk & 2 & 1\n\\end{array}\\right|=0 \\\\\n1(1+2 k)+1\\left(1+k^{2}\\right)-1(2-k)=0 \\\\\nk^{2}+1+2 k+1-2+k=0 \\\\\nk^{2}+3 k=0\n\\end{array}$$\n(k) $(\\mathrm{k}+3)=0$",
+     "2 values of k ."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 54,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let A and B be two sets containing 2 elements and 4 elements respectively. The number of subsets of A × B having 3 or more elements is\n(1) 220\n(2) 219\n(3) 211\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nA×B will have 8 elements.\n$$2^{8}-{ }^{8} C_{0}-{ }^{8} C_{1}-{ }^{8} C_{2}=256-1-8-28=219 .$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 55,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If the vectors $\\overrightarrow{\\mathrm{AB}}=3 \\hat{\\mathrm{i}}+4 \\hat{\\mathrm{k}}$ and $\\overrightarrow{\\mathrm{AC}}=5 \\hat{\\mathrm{i}}-2 \\hat{\\mathrm{j}}+4 \\hat{\\mathrm{k}}$ are the sides of a triangle ABC , then the length of the median through A is\n(1) $\\sqrt{72}$\n(2) $\\sqrt{33}$\n(3) $\\sqrt{45}$\n(4) $\\sqrt{18}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{AM}}=\\frac{\\overrightarrow{\\mathrm{AB}}+\\overrightarrow{\\mathrm{AC}}}{2} \\\\\n\\overrightarrow{\\mathrm{AM}}=4 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+4 \\hat{\\mathrm{k}} \\\\\n|\\overrightarrow{\\mathrm{AM}}|=\\sqrt{16+16+1}=\\sqrt{33}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 56,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A multiple choice examination has 5 questions. Each question has three alternative answers of which exactly one is correct. The probability that a student will get 4 or more correct answers just by guessing is\n(1) $\\frac{13}{3^{5}}$\n(2) $\\frac{11}{3^{5}}$\n(3) $\\frac{10}{3^{5}}$\n(4) $\\frac{17}{3^{5}}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\mathrm{P}(\\text { correct answer })=1 / 3$$",
+     "JEE (MAIN)-2013-CMP-17\n$$\\begin{array}{l}\n{ }^{5} C_{4}\\left(\\frac{1}{3}\\right)^{4}\\left(\\frac{2}{3}\\right)^{1}+{ }^{5} C_{5}\\left(\\frac{1}{3}\\right)^{5} \\\\\n\\frac{5 \\times 2}{(3)^{5}}+\\frac{1}{(3)^{5}}=\\frac{11}{3^{5}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 57,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If z is a complex number of unit modulus and argument $\\theta$, then $\\arg \\left(\\frac{1+\\mathrm{z}}{1+\\overline{\\mathrm{z}}}\\right)$ equals\n(1) $\\frac{\\pi}{2}-\\theta$\n(2) $\\theta$\n(3) $\\pi-\\theta$\n(4) $-\\theta$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\n|z|=1 \\Rightarrow z \\bar{z}=1 \\\\\n\\frac{1+z}{1+\\bar{z}}=\\frac{1+z}{1+\\frac{1}{z}}=z\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 58,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If the equations $\\mathrm{x}^{2}+2 \\mathrm{x}+3=0$ and $\\mathrm{ax}^{2}+\\mathrm{bx}+\\mathrm{c}=0, \\mathrm{a}, \\mathrm{b}, \\mathrm{c} \\in \\mathrm{R}$, have a common root, then $\\mathrm{a}: \\mathrm{b}: \\mathrm{c}$ is\n(1) $3: 2: 1$\n(2) 1 : 3 : 2\n(3) $3: 1: 2$\n(4) 1 : 2 :",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nFor equation $\\mathrm{x}^{2}+2 \\mathrm{x}+3=0$\nboth roots are imaginary.\nSince $\\mathrm{a}, \\mathrm{b}, \\mathrm{c} \\in \\mathrm{R}$.\nIf one root is common then both roots are common\nHence, $\\frac{\\mathrm{a}}{1}=\\frac{\\mathrm{b}}{2}=\\frac{\\mathrm{c}}{3}$\n$\\mathrm{a}: \\mathrm{b}: \\mathrm{c}=1: 2: 3$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 59,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Distance between two parallel planes $2 x+y+2 z=8$ and $4 x+2 y+4 z+5=0$ is\n(1) $\\frac{5}{2}$\n(2) $\\frac{7}{2}$\n(3) $\\frac{9}{2}$\n(4) $\\frac{3}{2}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\n4 x+2 y+4 z=16 \\\\\n4 x+2 y+4 z=-5 \\\\\nd_{\\min }=\\frac{21}{\\sqrt{36}}=\\frac{21}{6}=\\frac{7}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 60,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The term independent of $x$ in expansion of $\\left(\\frac{x+1}{x^{2 / 3}-x^{1 / 3}+1}-\\frac{x-1}{x-x^{1 / 2}}\\right)^{10}$ is\n(1) 120\n(2) 210\n(3) 310\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\n\\left(\\frac{\\left(x^{1 / 3}+1\\right)\\left(x^{2 / 3}-x^{1 / 3}+1\\right)}{x^{2 / 3}-x^{1 / 3}+1}-\\frac{1}{\\sqrt{x}} \\cdot \\frac{(\\sqrt{x}+1)(\\sqrt{x-1})}{(\\sqrt{x}-1)}\\right)^{10}=\\left(x^{1 / 3}-x^{-1 / 2}\\right)^{10} \\\\\nT_{r+1}=(-1)^{r 10} C_{r} x^{\\frac{20-5 r}{6}} \\Rightarrow r=4 \\\\\n{ }^{10} C_{4}=210 .\n\\end{array}$$",
+     "JEE (MAIN)-2013-CMP -18",
+     "PART C - PHYSICS"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 61,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In an LCR circuit as shown below both switches are open initially. Now switch $\\mathrm{S}_{1}$ is closed, $\\mathrm{S}_{2}$ kept open. ( q is charge on the capacitor and $\\tau=\\mathrm{RC}$ is capacitive time constant). Which of the following statement is correct?\n(1) At $\\mathrm{t}=\\tau, \\mathrm{q}=\\mathrm{CV} / 2$\n(2) At $\\mathrm{t}=2 \\tau, \\mathrm{q}=\\mathrm{CV}\\left(1-\\mathrm{e}^{-2}\\right)$\n(3) At $\\mathrm{t}=\\frac{\\tau}{2}, \\mathrm{q}=\\mathrm{CV}\\left(1-\\mathrm{e}^{-1}\\right)$\n(4) Work done by the battery is half of the energy dissipated in the resistor.",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nCharge on the capacitor at any time ' $t$ ' is\n$$\\begin{array}{l}\n\\mathrm{q}=\\operatorname{CV}\\left(1-\\mathrm{e}^{-\\mathrm{t} / \\tau}\\right) \\\\\n\\text { at } \\mathrm{t}=2 \\tau \\\\\n\\mathrm{q}=\\operatorname{CV}\\left(1-\\mathrm{e}^{-2}\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 62,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A diode detector is used to detect an amplitude modulated wave of 60\\% modulation by using a condenser of capacity 250 pico farad in parallel with a load resistance 100 kilo ohm. Find the maximum modulated frequency which could be detected by it.\n(1) 10.62 kHz\n(2) 5.31 MHz\n(3) 5.31 kHz\n(4) 10.62 MHz",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\n\\mathrm{f}_{\\mathrm{C}}=\\frac{1}{2 \\pi \\mathrm{RC}}=\\frac{1}{2 \\times 3.14 \\times 100 \\times 10^{3} \\times 250 \\times 10^{-12}}=6.37 \\mathrm{kHz} \\\\\n\\mathrm{f}_{\\mathrm{C}}=\\text { cut off frequency }\n\\end{array}$$",
+     "As we know that $\\mathrm{f}_{\\mathrm{m}} \\square \\mathrm{f}_{\\mathrm{C}}$\n∴ (3) is correct\nNote: The maximum frequency of modulation must be less than $\\mathrm{f}_{\\mathrm{m}}$, where\n$$\\mathrm{f}_{\\mathrm{m}}=\\mathrm{f}_{\\mathrm{C}} \\frac{\\sqrt{1-\\mathrm{m}^{2}}}{\\mathrm{~m}}$$\nm ⇒ modulation index"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 63,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The supply voltage to a room is 120 V. The resistance of the lead wires is $6 \\Omega$. A 60 W bulb is already switched on. What is the decrease of voltage across the bulb, when a 240 W heater is switched on in parallel to the bulb?\n(1) 2.9 Volt\n(2) 13.3 Volt\n(3) 10.04 Volt\n(4) zero volt",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\n\\text { Resistance of bulb }=\\frac{120 \\times 120}{60}=240 \\Omega \\\\\n\\text { Resistance of Heater }=\\frac{120 \\times 120}{240}=60 \\Omega\n\\end{array}$$",
+     "JEE (MAIN)-2013-CMP-19",
+     "Voltage across bulb before heater is switched on, $\\mathrm{V}_{1}=\\frac{120}{246} \\times 240$\nVoltage across bulb after heater is switched on, $\\mathrm{V}_{2}=\\frac{120}{54} \\times 48$\nDecrease in the voltage is $\\mathrm{V}_{1}-\\mathrm{V}_{2}=10.04$ (approximately)\nNote: Here supply voltage is taken as rated voltage."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 64,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A uniform cylinder of length L and mass M having cross-sectional area A is suspended, with its length vertical, from a fixed point by a massless spring, such that it is half submerged in a liquid of density $\\sigma$ at equilibrium position. The extension $\\mathrm{x}_{0}$ of the spring when it is in equilibrium is:\n(1) $\\frac{\\mathrm{Mg}}{\\mathrm{k}}\\left(1-\\frac{\\mathrm{LA} \\sigma}{\\mathrm{M}}\\right)$\n(2) $\\frac{\\mathrm{Mg}}{\\mathrm{k}}\\left(1-\\frac{\\mathrm{LA} \\sigma}{2 \\mathrm{M}}\\right)$\n(3) $\\frac{\\mathrm{Mg}}{\\mathrm{k}}\\left(1+\\frac{\\mathrm{LA} \\sigma}{\\mathrm{M}}\\right)$\n(4) $\\frac{\\mathrm{Mg}}{\\mathrm{k}}$\n(Here k is spring constant)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nAt equilibrium $\\Sigma \\mathrm{F}=0$\n$$\\begin{array}{l}\n\\mathrm{kx}_{0}+\\left(\\frac{\\mathrm{AL}}{2} \\sigma \\mathrm{~g}\\right)-\\mathrm{Mg}=0 \\\\\n\\mathrm{x}_{0}=\\mathrm{Mg}\\left[1-\\frac{\\mathrm{LA} \\sigma}{2 \\mathrm{M}}\\right]\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 65,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two charges, each equal to q, are kept at x = -a and x = a on the x-axis. A particle of mass m and charge $\\mathrm{q}_{0}=\\frac{\\mathrm{q}}{2}$ is placed at the origin. If charge $\\mathrm{q}_{0}$ is given a small displacement ( $\\mathrm{y} \\square \\mathrm{a}$ ) along the y -axis, the net force acting on the particle is proportional to:\n(1) -y\n(2) $\\frac{1}{y}$\n(3) $-\\frac{1}{y}$\n(4) y",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\n$$\\begin{array}{l}\nF_{n e t}=2 F \\cos \\theta \\\\\n=2 \\frac{k \\cdot q \\cdot q / 2}{\\left(\\sqrt{a^{2}+y^{2}}\\right)^{2}} \\cdot \\frac{y}{\\sqrt{a^{2}+y^{2}}} \\\\\n=\\frac{k q^{2} y}{a^{3}}(y \\square a)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 66,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A beam of unpolarised light of intensity $\\mathrm{I}_{0}$ is passed through a polaroid A and then through another polaroid B which is oriented so that its principal plane makes an angle of $45^{\\circ}$ relative to that of A. The intensity of the emergent light is:\n(1) $\\mathrm{I}_{0} / 2$\n(2) $\\mathrm{I}_{0} / 4$\n(3) $\\mathrm{I}_{0} / 8$\n(4) $\\mathrm{I}_{0}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 67,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The anode voltage of a photocell is kept fixed. The wavelength $\\lambda$ of the light falling on the cathode is gradually changed. The plate current I of the photocell varies as follows:\nJEE (MAIN)-2013-CMP -20\n(1)\n(3)\n(2)\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 68,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two coherent point sources $\\mathrm{S}_{1}$ and $\\mathrm{S}_{2}$ are separated by a small distance 'd' as shown. The fringes obtained on the screen will be:\n(1) straight lines\n(2) semi-circles\n$(3)$ concentric circles\n(4) points",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 69,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A metallic rod of length ' $\\ell$ ' is tied to a string of length $2 \\ell$ and made to rotate with angular speed $\\omega$ on a horizontal table with one end of the string fixed. If there is a vertical magnetic field ' $B$ ' in the region, the e.m.f. induced across the ends of the rod is:\n(1) $\\frac{3 \\mathrm{~B} \\omega \\ell^{2}}{2}$\n(2) $\\frac{4 \\mathrm{~B} \\omega \\ell^{2}}{2}$\n(3) $\\frac{5 \\mathrm{~B} \\omega \\ell^{2}}{2}$\n(4) $\\frac{2 \\mathrm{~B} \\omega \\ell^{2}}{2}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\nd e=B(\\omega x) \\cdot d x \\\\\ne=B \\omega \\int_{2 L}^{3 L} x d x \\\\\n=\\frac{5 B \\omega L^{2}}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 70,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In a hydrogen like atom electron makes transition from an energy level with quantum number n to another with quantum number (n-1). If $n \\gg 1$, the frequency of radiation emitted is proportional to\n(1) $\\frac{1}{\\mathrm{n}^{2}}$\n(2) $\\frac{1}{n^{3 / 2}}$\n(3) $\\frac{1}{\\mathrm{n}^{3}}$\n(4) $\\frac{1}{n}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$$\\begin{array}{l}\nv \\propto\\left[\\frac{1}{(n-1)^{2}}-\\frac{1}{n^{2}}\\right] \\\\\n\\propto \\frac{(2 n-1)}{n^{2}(n-1)^{2}} \\\\\n\\propto \\frac{1}{n^{3}}(\\text { since } n \\square 1)\n\\end{array}$$",
+     "JEE (MAIN)-2013-CMP-21"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 71,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Assume that a drop of liquid evaporates by decrease in its surface energy, so that its temperature remains unchanged. What should be the minimum radius of the drop for this to be possible? The surface tension is T, density of liquid is $\\rho$ and L is its latent heat of vaporization.\n(1) $\\sqrt{\\mathrm{T} / \\rho \\mathrm{L}}$\n(2) $\\mathrm{T} / \\rho \\mathrm{L}$\n(3) $2 \\mathrm{~T} / \\rho \\mathrm{L}$\n(4) $\\rho L / T$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$\\rho 4 \\pi \\mathrm{R}^{2} \\Delta \\mathrm{RL}=\\mathrm{T} 4 \\pi\\left[\\mathrm{R}^{2}-(\\mathrm{R}-\\Delta \\mathrm{R})^{2}\\right]$\n$\\rho \\mathrm{R}^{2} \\Delta \\mathrm{RL}=\\mathrm{T}\\left[\\mathrm{R}^{2}-\\mathrm{R}^{2}+2 \\mathrm{R} \\Delta \\mathrm{R}-\\Delta \\mathrm{R}^{2}\\right]$\n$\\rho R^{2} \\Delta R L=T 2 R \\Delta R$ ( $\\Delta R$ is very small)\n$\\mathrm{R}=\\frac{2 \\mathrm{~T}}{\\rho \\mathrm{~L}}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 72,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The graph between angle of deviation ( $\\delta$ ) and angle of incidence (i) for a triangular prism is represented by:\n(1)\n(2)\n(3)\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 73,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Let $\\left[\\varepsilon_{0}\\right]$ denote the dimensional formula of the permittivity of vacuum. If $\\mathbf{M}=$ mass, $\\mathbf{L}=$ length, $\\mathbf{T}=$ time and $\\mathrm{A}=$ electric current, then:\n(1) $\\left[\\varepsilon_{0}\\right]=\\left[\\mathbf{M}^{-1} \\mathrm{~L}^{-3} \\mathrm{~T}^{4} \\mathrm{~A}^{2}\\right]$\n(2) $\\left[\\varepsilon_{0}\\right]=\\left[\\mathrm{M}^{-1} \\mathrm{~L}^{2} \\mathrm{~T}^{-1} \\mathrm{~A}^{-2}\\right]$\n(3) $\\left[\\varepsilon_{0}\\right]=\\left[\\mathrm{M}^{-1} \\mathrm{~L}^{2} \\mathrm{~T}^{-1} \\mathrm{~A}\\right]$\n(4) $\\left[\\varepsilon_{0}\\right]=\\left[\\mathrm{M}^{-1} \\mathrm{~L}^{-3} \\mathrm{~T}^{2} \\mathrm{~A}\\right]$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\n73. $\\frac{1}{4 \\pi \\varepsilon_{0}} \\frac{\\mathrm{q}^{2}}{\\mathrm{r}^{2}}=\\mathrm{F}$\n$\\varepsilon_{0}=\\frac{\\left[\\mathrm{A}^{2} \\mathrm{~T}^{2}\\right]}{\\left[\\mathrm{MLT}^{-2} \\mathrm{~L}^{2}\\right]}=\\left[\\mathrm{M}^{-1} \\mathrm{~L}^{-3} \\mathrm{~A}^{2} \\mathrm{~T}^{4}\\right]$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 74,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The above p-v diagram represents the thermodynamic cycle of an engine, operating with an ideal monoatomic gas. The amount of heat extracted from the source in a single cycle is\n(1) $\\left(\\frac{13}{2}\\right) \\mathrm{p}_{0} \\mathrm{v}_{0}$\n(2) $\\left(\\frac{11}{2}\\right) \\mathrm{p}_{0} \\mathrm{v}_{0}$\n(3) $4 \\mathrm{p}_{0} \\mathrm{v}_{0}$\n(4) $\\mathrm{p}_{0} \\mathrm{v}_{0}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nHeat is extracted from the source in path DA and AB is",
+     "JEE (MAIN)-2013-CMP -22\n$$\\Delta Q=\\frac{3}{2} R\\left(\\frac{P_{0} V_{0}}{R}\\right)+\\frac{5}{2} R\\left(\\frac{2 P_{0} V_{0}}{R}\\right)=\\frac{13}{2} P_{0} V_{0}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 75,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A sonometer wire of length 1.5 m is made of steel. The tension in it produces an elastic strain of 1 \\%. What is the fundamental frequency of steel if density and elasticity of steel are $7.7 \\times 10^{3} \\mathrm{~kg} / \\mathrm{m}^{3}$ and $2.2 \\times 10^{11} \\mathrm{~N} / \\mathrm{m}^{2}$ respectively?\n(1) 178.2 Hz\n(2) 200.5 Hz\n(3) 770 Hz\n(4) 188.5 Hz",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\nFundamental frequency $\\mathrm{f}=\\frac{1}{2 \\ell} \\sqrt{\\frac{\\mathrm{~T}}{\\mu}}$\n$$\\begin{array}{l}\n=\\frac{1}{2 \\ell} \\sqrt{\\frac{\\mathrm{~T}}{\\mathrm{~A} \\rho}} \\\\\n=\\frac{1}{2 \\ell} \\sqrt{\\frac{\\text { stress }}{\\rho}}=\\frac{1}{2 \\times 1.5} \\sqrt{\\frac{2.2 \\times 10^{11} \\times 10^{-2}}{7.7 \\times 10^{3}}} .\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 76,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "This question has statement I and statement II. Of the four choices given after the statements, choose the one that best describes the two statements.\nStatement- I: Higher the range, greater is the resistance of ammeter.\nStatement- II: To increase the range of ammeter, additional shunt needs to be used across it.\n(1) Statement - I is true, Statement - II is true, Statement - II is not the correct explanation of Statement-I.\n(2) Statement - I is true, statement - II is false.\n(3) Statement - I is false, Statement - II is true\n(4) Statement - I is true, Statement - II is true, Statement - II is the correct explanation of statement- I .",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\nFor Ammeter, $\\mathrm{S}=\\frac{\\mathrm{I}_{\\mathrm{g}} \\mathrm{G}}{\\mathrm{I}-\\mathrm{I}_{\\mathrm{g}}}$\nSo for I to increase, S should decrease, so additional S can be connected across it."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 77,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "What is the minimum energy required to launch a satellite of mass m from the surface of a planet of mass M and radius R in a circular orbit at an altitude of 2R?\n(1) $\\frac{2 \\mathrm{GmM}}{3 \\mathrm{R}}$\n(2) $\\frac{\\mathrm{GmM}}{2 \\mathrm{R}}$\n(3) $\\frac{\\mathrm{GmM}}{3 \\mathrm{R}}$\n(4) $\\frac{5 \\mathrm{GmM}}{6 \\mathrm{R}}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nT. $\\mathrm{E}_{\\mathrm{f}}=-\\frac{\\mathrm{GMm}}{6 \\mathrm{R}}$\nT. $\\mathrm{E}_{\\mathrm{i}}=-\\frac{\\mathrm{GMm}}{\\mathrm{R}}$\n$\\Delta \\mathrm{W}=\\mathrm{T} . \\mathrm{E}_{\\mathrm{f}}-\\mathrm{T} . \\mathrm{E}_{\\mathrm{i}}=\\frac{5 \\mathrm{GMm}}{6 \\mathrm{R}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 78,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A projectile is given an initial velocity of $(\\hat{i}+2 \\hat{j}) \\mathrm{m} / \\mathrm{s}$, where $\\hat{i}$ is along the ground and $\\hat{j}$ is along the vertical. If $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$, the equation of its trajectory is:\n(1) $y=2 x-5 x^{2}$\n(2) $4 y=2 x-5 x^{2}$\n(3) $4 y=2 x-25 x^{2}$\n(4) $y=x-5 x^{2}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)",
+     "JEE (MAIN)-2013-CMP-23\n$$\\begin{array}{l}\nx=t \\\\\ny=2 t-5 t^{2}\n\\end{array}$$",
+     "Equation of trajectory is $y=2 x-5 x^{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 79,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two capacitors $C_{1}$ and $C_{2}$ are charged to 120 V and 200 V respectively. It is found that by connecting them together the potential on each one can be made zero. Then :\n(1) $3 C_{1}=5 C_{2}$\n(2) $3 C_{1}+5 C_{2}=0$\n(3) $9 C_{1}=4 C_{2}$\n(4) $5 C_{1}=3 C_{2}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\n$120 C_{1}=200 C_{2}$\n$6 C_{1}=10 C_{2}$\n$3 C_{1}=5 C_{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 80,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A hoop of radius r and mass m rotating with an angular velocity $\\omega_{0}$ is placed on a rough horizontal surface. The initial velocity of the centre of the hoop is zero. What will be the velocity of the centre of the hoop when it ceases to slip?\n(1) $\\frac{r \\omega_{0}}{3}$\n(2) $\\frac{r \\omega_{0}}{2}$\n(3) $r \\omega_{0}$\n(4) $\\frac{r \\omega_{0}}{4}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nFrom conservation of angular momentum about any fix point on the surface\n$$\\begin{array}{l}\nm r^{2} \\omega_{0}=2 m r^{2} \\omega \\\\\n\\therefore \\omega=\\frac{\\omega_{0}}{2} \\\\\n\\therefore V_{C M}=\\frac{\\omega_{0} r}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 81,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "An ideal gas enclosed in a vertical cylindrical container supports a freely moving piston of mass M. The piston and cylinder have equal cross sectional area A. When the piston is in equilibrium, the volume of the gas is $\\mathrm{V}_{0}$ and its pressure is $\\mathrm{P}_{0}$. The piston is slightly displaced from the equilibrium position and released. Assuming that the system is completely isolated from its surrounding, the piston executes a simple harmonic motion with frequency:\n(1) $\\frac{1}{2 \\pi} \\frac{V_{0} M P_{0}}{A^{2} \\gamma}$\n(2) $\\frac{1}{2 \\pi} \\sqrt{\\frac{A^{2} \\gamma P_{0}}{M V_{0}}}$\n(3) $\\frac{1}{2 \\pi} \\sqrt{\\frac{M V_{0}}{A \\gamma P_{0}}}$\n(4) $\\frac{1}{2 \\pi} \\frac{A \\gamma P_{0}}{V_{0} M}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)",
+     "FBD of piston at equilibrium",
+     "...(1)",
+     "FBD of piston when piston is pushed down a distance $x$",
+     "JEE (MAIN)-2013-CMP -24\n$$\\mathrm{P}_{\\mathrm{atm}}+\\mathrm{mg}-\\left(\\mathrm{P}_{0}+\\mathrm{dP}\\right) \\mathrm{A}=m \\frac{d^{2} x}{d t^{2}}$$",
+     "Process is adiabatic $\\Rightarrow P V^{\\gamma}=\\mathrm{C} \\Rightarrow-d P=\\frac{\\gamma P d V}{V}$\nUsing 1,2,3 me get $f=\\frac{1}{2 \\pi} \\sqrt{\\frac{A^{2} \\gamma P_{0}}{M V_{0}}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 82,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A charge Q is uniformly distributed over a long rod AB of length L as shown in the figure. The electric potential at the point O lying at a distance L from the end A is:\n(1) $\\frac{3 Q}{4 \\pi \\varepsilon_{0} L}$\n(2) $\\frac{Q}{4 \\pi \\varepsilon_{0} L \\ln 2}$\n(3) $\\frac{Q \\ln 2}{4 \\pi \\varepsilon_{0} L}$\n(4) $\\frac{Q}{8 \\pi \\varepsilon_{0} L}$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\n$V=\\int_{x=L}^{x=2 L} \\frac{k}{x}\\left(\\frac{Q}{L}\\right) d x=\\frac{Q \\ln 2}{4 \\pi \\varepsilon_{0} L}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 83,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A circular loop of radius 0.3 cm lies parallel to a much bigger circular loop of radius 20 cm. The centre of the small loop is on the axis of the bigger loop. The distance between their centres is 15 cm . If a current of 2.0 A flows through the smaller loop, then the flux linked with bigger loop is\n(1) $6 \\times 10^{-11}$ weber\n(2) $3.3 \\times 10^{-11}$ weber\n(3) $6.6 \\times 10^{-9}$ weber\n(4) $9.1 \\times 10^{-11}$ weber",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)",
+     "Let $\\mathrm{M}_{12}$ be the coefficient of mutual induction between loops\n$$\\begin{array}{l}\n\\phi_{1}=M_{12} i_{2} \\\\\n\\Rightarrow \\frac{\\mu_{0} i_{2} R^{2}}{2\\left(d^{2}+R^{2}\\right)^{3 / 2}} \\pi r^{2}=M_{12} i_{2} \\\\\n\\Rightarrow M_{12}=\\frac{\\mu_{0} R^{2} \\pi r^{2}}{2\\left(d^{2}+R^{2}\\right)^{3 / 2}} \\\\\n\\phi_{2}=M_{12} i_{1} \\Rightarrow \\phi_{2}=9.1 \\times 10^{-11} \\text { weber }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 84,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If a piece of metal is heated to temperature $\\theta$ and then allowed to cool in a room which is at temperature $\\theta_{0}$ the graph between the temperature T of the metal and time t will be closest to :\n(1)\n(2)\nJEE (MAIN)-2013-CMP-25\n(3)\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\nThe temperature goes on decreasing with time (non-linearly) The rate of decrease will be more initially which is depicted in the second graph."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 85,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The I - V characteristic of an LED is\n(1)\n(2)\n(3)\n(4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(4)\nFor LED, in forward bias, intensity increases with voltage."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 86,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "This question has Statement I and Statement II. Of the four choices given after the Statements, choose the one that best describes the two Statements.\nStatement - I : A point particle of mass m moving with speed v collides with stationary point particle of mass M . If the maximum energy loss possible is given as $f\\left(\\frac{1}{2} m v^{2}\\right)$ then $f=\\left(\\frac{m}{M+m}\\right)$.\nStatement - II : Maximum energy loss occurs when the particles get stuck together as a result of the collision.\n(1) Statement - I is true, Statement - II is true, Statement - II is not a correct explanation of Statement - I.\n(2) Statement - I is true, Statement - II is false.\n(3) Statement - I is false, Statement - II is true\n(4) Statement - I is true, Statement - II is true, Statement - II is a correct explanation of Statement - I.",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(3)\nLoss of energy is maximum when collision is inelastic as in an inelastic collision there will be maximum deformation.\nKE in COM frame is $\\frac{1}{2}\\left(\\frac{M m}{M+m}\\right) V_{\\text {red }}^{2}$\n$$\\mathrm{KE}_{\\mathrm{i}}=\\frac{1}{2}\\left(\\frac{M m}{M+m}\\right) V^{2} \\quad K E_{f}=0\\left(\\because V_{\\text {red }}=0\\right)$$",
+     "Hence loss in energy is $\\frac{1}{2}\\left(\\frac{M m}{M+m}\\right) V^{2}$\n$$\\Rightarrow f=\\frac{M}{M+m}$$",
+     "JEE (MAIN)-2013-CMP -26"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 87,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The amplitude of a damped oscillator decreases to 0.9 times its original magnitude is 5 s. In another 10 s it will decrease to $\\alpha$ times its original magnitude, where $\\alpha$ equals.\n(1) 0.81\n(2) 0.729\n(3) 0.6\n(4) 0.7",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\nA=A_{0} e^{-k t} \\\\\n\\Rightarrow 0.9 A_{0}=A_{0} e^{-5 k} \\\\\n\\text { and } \\alpha A_{0}=A_{0} e^{-15 k} \\\\\n\\text { solving } \\Rightarrow \\alpha=0.729\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 88,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Diameter of plano-convex lens is 6 cm and thickness at the centre is 3 mm . If speed of light in material of lens is $2 \\times 10^{8} \\mathrm{~m} / \\mathrm{s}$, the focal length of the lens is :\n(1) 20 cm\n(2) 30 cm\n(3) 10 cm\n(4) 15 cm",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(2)\n$$\\begin{array}{l}\nR^{2}=d^{2}+(R-t)^{2} \\\\\nR^{2}-d^{2}=R^{2}\\left\\{1-\\frac{t}{R}\\right\\}^{2} \\\\\n1-\\frac{d^{2}}{R^{2}}=1-\\frac{2 t}{R} \\\\\nR=\\frac{(3)^{2}}{2 \\times(0 \\cdot 3)}=\\frac{90}{6}=15 \\mathrm{~cm} \\\\\n\\frac{1}{f}=(\\mu-1)\\left(\\frac{1}{R_{1}}-\\frac{1}{R_{2}}\\right) \\\\\n\\frac{1}{f}=\\left(\\frac{3}{2}-1\\right)\\left(\\frac{1}{15}\\right) \\\\\nf=30 \\mathrm{~cm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 89,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The magnetic field in a travelling electromagnetic wave has a peak value of 20 nT. The peak value of electric field strength is :\n(1) $6 \\mathrm{~V} / \\mathrm{m}$\n(2) $9 \\mathrm{~V} / \\mathrm{m}$\n(3) $12 \\mathrm{~V} / \\mathrm{m}$\n(4) 3 V/m",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(1)\n$$\\begin{array}{l}\n\\mathrm{E}_{0}=C B_{0} \\\\\n=3 \\times 10^{8} \\times 20 \\times 10^{-9} \\\\\n=6 \\mathrm{~V} / \\mathrm{m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

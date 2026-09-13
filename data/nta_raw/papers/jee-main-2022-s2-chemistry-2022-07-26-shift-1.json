@@ -1,61 +1,438 @@
 {
+ "paper_id": "jee-main-2022-s2-chemistry-2022-07-26-shift-1",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-chemistry-2022-07-26-shift-1",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-07-26",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-chemistry-2022-07-26-shift-1",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-07-26",
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/171711-26-07%20MORNING%20CHEMISTRY%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/171711-26-07%20MORNING%20CHEMISTRY%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "7b1f2c3c7b746a8bf2b5a9802def700cde249766318621bb938b34f560a25ac0",
+  "page_count": 8,
+  "text_chars": 731,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-07-26-shift-1.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "24",
+     "value": "24"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "1758",
+     "value": "1758"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "200",
+     "value": "200"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "54",
+     "value": "54"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "8",
+     "value": "8"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "0",
+     "value": "0"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List - I with List - II.\nList - I\n(Compound)",
+   "options": {
+    "A": "$\\mathrm{BrF}_{5}$",
+    "B": "$\\left[\\mathrm{CrF}_{6}\\right]^{3-}$",
+    "C": "$\\mathrm{O}_{3}$",
+    "D": "$\\mathrm{PCl}_{5}$\n\nList - II\n(Shape)\n(I) bent\n(II) square pyramidal\n(III) trigonal bipyramidal\n(IV) octahedral\n\nChoose the correct answer from the options given below:\n(A) (A) - (I), (B) - (II), (C) - (III), (D) - (IV)\n(B) (A) - (IV), (B) - (III), (C) - (II), (D) - (I)\n(C) (A) - (II), (B) - (IV), (C) - (I), (D) - (III)\n(D) (A) - (III), (B) - (IV), (C) - (II), (D) - (I)\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n<smiles>F[B-2]([1H])(F)(F)(F)F</smiles>\n\n(Square pyramidal)\n<smiles>FC(F)(F)C(F)(F)F</smiles>\n\n(Octahedral)\n$\\mathrm{O}_{3}$ :\n<smiles>[O][O+]=[Cr]</smiles>\n\n(Bent)\n$\\mathrm{PCl}_{5}$ :\n<smiles>ClP(Cl)(Cl)(Cl)(Cl)(Cl)Cl</smiles>\n\n(Trigonal bipyramidal)\n\nList-I\n(Processes/Reactions)\n(A) $2 \\mathrm{SO}_{2}(\\mathrm{~g})+\\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow 2 \\mathrm{SO}_{3}(\\mathrm{~g})$\n(B) $4 \\mathrm{NH}_{3}(\\mathrm{~g})+5 \\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow 4 \\mathrm{NO}(\\mathrm{g})+6 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{g})$\n(C) $\\mathrm{N}_{2}(\\mathrm{~g})+3 \\mathrm{H}_{2}(\\mathrm{~g}) \\rightarrow 2 \\mathrm{NH}_{3}(\\mathrm{~g})$\n(D) Vegetable oil $(l)+\\mathrm{H}_{2} \\rightarrow$ Vegetable ghee(s)\n\nList - II\n(Catalyst)\n(I) Fe(s)\n(II) Pt(s)-Rh(s)\n(III) $\\mathrm{V}_{2} \\mathrm{O}_{5}$\n(IV) Ni(s)\n\nChoose the correct answer from the options given below:\n(A) (A) - (III), (B) - (I), (C) - (II), (D) - (IV)\n(B) (A) - (III), (B) - (II), (C) - (I), (D) - (IV)\n(C) (A) - (IV), (B) - (III), (C) - (I), (D) - (II)\n(D) (A) - (IV), (B) - (II), (C) - (III), (D) - (I)\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $2 \\mathrm{SO}_{2}(\\mathrm{~g})+\\mathrm{O}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{V}_{2} \\mathrm{O}_{5}} 2 \\mathrm{SO}_{3}(\\mathrm{~g})$ :\ncontact process\n$$4 \\mathrm{NH}_{3}(\\mathrm{~g})+5 \\mathrm{O}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Pt}(\\mathrm{~s})-\\mathrm{Rh}(\\mathrm{~s})} 4 \\mathrm{NO}(\\mathrm{~g})+6 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{~g}):$$\n\nOstwald's process\n$\\mathrm{N}_{2}(\\mathrm{~g})+3 \\mathrm{H}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Fe}(\\mathrm{s})} 2 \\mathrm{NH}_{3}(\\mathrm{~g})$; Haber's process\nVegetable oil $(l)+\\mathrm{H}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Ni}(\\mathrm{s})}$ vegetable ghee\n: Hydrogenation\n3. Given two statements below :\n\nStatement I : In $\\mathrm{Cl}_{2}$ molecule the covalent radius is double of the atomic radius of chlorine.\n\nStatement II : Radius of anionic species is always greater than their parent atomic radius.\nChoose the most appropriate answer from options given below :\n(A) Both Statement I and Statement II are correct.\n(B) Both Statement I and Statement II are incorrect.\n(C) Statement I is correct but Statement II is incorrect.\n(D) Statement I is incorrect but Statement II is correct.\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nSol. In $\\mathrm{Cl}_{2}$ molecule, the covalent radius is half of the internuclear distance, so statement(I) is false.\n\nFor the same element, anion has lower effective nuclear charge than atom ⇒ so anion is larger than atom. ⇒ statement (II) is correct.\n4. Refining using liquation method is the most suitable for metals with :\n(A) Low melting point\n(B) High boiling point\n(C) High electrical conductivity\n(D) Less tendency to be soluble in melts than impurities\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Liquation is used to purify metals having lower melting point than impurities present in them.\n5. Which of the following can be used to prevent the decomposition of $\\mathrm{H}_{2} \\mathrm{O}_{2}$ ?\n(A) Urea\n(B) Formaldehyde\n(C) Formic acid\n(D) Ethanol\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Urea acts as stabiliser for $\\mathrm{H}_{2} \\mathrm{O}_{2}$.\n6. Reaction of $\\mathrm{BeCl}_{2}$ with $\\mathrm{LiAlH}_{4}$ gives :\n(A) $\\mathrm{AlCl}_{3}$\n(B) $\\mathrm{BeH}_{2}$\n(C) LiH\n(D) LiCl\n(E) $\\mathrm{BeAlH}_{4}$\n\nChoose the correct answer from options given below:\n(A) (A), (D) and (E)\n(B) (A) , (B) and (D)\n(C) (D) and (E)\n(D) (B) , (C) and (D)\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $2 \\mathrm{BeCl}_{2}+\\mathrm{LiAlH}_{4} \\rightarrow 2 \\mathrm{BeH}_{2}+\\mathrm{LiCl}+\\mathrm{AlCl}_{3}$\n7. Borazine, also known as inorganic benzene, can be prepared by the reaction of 3-equivalents of \"X\" with 6-equivalents of \"Y\". \"X\" and \"Y\", respectively are :\n(A) $\\mathrm{B}(\\mathrm{OH})_{3}$ and $\\mathrm{NH}_{3}$\n(B) $\\mathrm{B}_{2} \\mathrm{H}_{6}$ and $\\mathrm{NH}_{3}$\n(C) $\\mathrm{B}_{2} \\mathrm{H}_{6}$ and $\\mathrm{HN}_{3}$\n(D) $\\mathrm{NH}_{3}$ and $\\mathrm{B}_{2} \\mathrm{O}_{3}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $3 \\mathrm{~B}_{2} \\mathrm{H}_{6}+6 \\mathrm{NH}_{3} \\xrightarrow{\\Delta} 2 \\mathrm{~B}_{3} \\mathrm{~N}_{3} \\mathrm{H}_{6}+12 \\mathrm{H}_{2}$\n8. Which of the given reactions is not an example of disproportionation reaction?\n(A) $2 \\mathrm{H}_{2} \\mathrm{O}_{2} \\rightarrow 2 \\mathrm{H}_{2} \\mathrm{O}+\\mathrm{O}_{2}$\n(B) $2 \\mathrm{NO}_{2}+\\mathrm{H}_{2} \\mathrm{O} \\rightarrow \\mathrm{HNO}_{3}+\\mathrm{HNO}_{2}$\n(C) $\\mathrm{MnO}_{4}{ }^{-}+4 \\mathrm{H}^{+}+3 \\mathrm{e}^{-} \\rightarrow \\mathrm{MnO}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}$\n(D) $3 \\mathrm{MnO}_{4}{ }^{2-}+4 \\mathrm{H}^{+} \\rightarrow 2 \\mathrm{MnO}_{4}{ }^{-}+\\mathrm{MnO}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}$\n\nOfficial Ans. by NTA (C)\nAllen Ans. (C)\nSol. $2 \\mathrm{H}_{2} \\mathrm{O}_{2} \\longrightarrow 2 \\mathrm{H}_{2} \\mathrm{O}^{2-}+\\stackrel{0}{\\mathrm{O}}_{2}$ : Disproportionation $2 \\stackrel{+4}{\\mathrm{~N}} \\mathrm{O}_{2}+\\mathrm{H}_{2} \\mathrm{O} \\rightarrow \\stackrel{+5}{\\mathrm{H}^{+}} \\mathrm{O}_{3}+\\stackrel{+}{\\mathrm{H}}_{\\mathrm{NO}_{2}}$ : Disproportionation $\\mathrm{MnO}_{4}^{-}+4 \\mathrm{H}^{+}+3 \\mathrm{e}^{-} \\rightarrow \\mathrm{MnO}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}$ : reduction $3 \\mathrm{MnO}_{4}^{+6}+4 \\mathrm{H}^{+} \\rightarrow 2 \\stackrel{+7}{\\mathrm{MnO}_{4}^{-}}+\\stackrel{+4}{\\mathrm{MnO}_{2}}+2 \\mathrm{H}_{2} \\mathrm{O}$ : Disproportionation\n9. The dark purple colour of $\\mathrm{KMnO}_{4}$ disappears in the titration with oxalic acid in acidic medium. The overall change in the oxidation number of manganese in the reaction is :\n(A) 5\n(B) 1\n(C) 7\n(D) 2\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. In acidic medium,\n$$\\stackrel{+7}{\\mathrm{MnO}_{4}^{-}} \\rightarrow \\mathrm{Mn}^{+2}$$\nchange in ox. no. $=5$\n10. $\\dot{\\mathrm{C}} 1+\\mathrm{CH}_{4} \\rightarrow \\mathrm{~A}+\\mathrm{B}$\n$A$ and $B$ in the above atmospheric reaction step are\n(A) $\\mathrm{C}_{2} \\mathrm{H}_{6}$ and $\\mathrm{Cl}_{2}$\n(B) $\\dot{\\mathrm{C}} \\mathrm{HCl}_{2}$ and $\\mathrm{H}_{2}$\n(C) $\\dot{\\mathrm{C}} \\mathrm{H}_{3}$ and HCl\n(D) $\\mathrm{C}_{2} \\mathrm{H}_{6}$ and HCl\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\quad \\dot{\\mathrm{Cl}}+\\mathrm{CH}_{4} \\longrightarrow \\dot{\\mathrm{C}} \\mathrm{H}_{3}+\\mathrm{HCl}$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nJEE | NEET | Clas 8-10 Download eSaral APP\n11. Which technique among the following, is most appropriate in separation of a mixture of 100 mg of p-nitrophenol and picric acid?\n(A) Steam distillation\n(B) 2-5 ft long column of silica gel\n(C) Sublimation\n(D) Preparative TLC (Thin Layer Chromatography)\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol.\n<smiles>O=[N+]([O-])c1ccc(O)cc1</smiles>\n\nShows inter molecular H-bonding\n<smiles>O=[N+]([O-])c1cc([N+](=O)[O-])c(O)c([N+](=O)[O-])c1</smiles>\n\nShows intra molecular H-bonding\n\nSolvent polarity has been related to $\\mathrm{R}_{\\mathrm{f}}$ value of nitrocompounds.\n\n100 mg p-nitrophenol and picric acid have different $\\mathrm{R}_{\\mathrm{f}}$ value on silica gel plate\n∴ Preparative TLC is best to separate 100 mg of para nitrophenol and picric acid\n12. The difference in the reaction of phenol with bromine in chloroform and bromine in water medium is due to :\n(A) Hyperconjugation in substrate\n(B) Polarity of solvent\n(C) Free radical formation\n(D) Electromeric effect of the substrate\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n$\\bigcirc^{\\mathrm{OH}} \\xrightarrow[\\mathrm{H}_{2} \\mathrm{O}]{\\mathrm{Br}_{2}} \\mathrm{C}_{\\mathrm{Br}}^{\\mathrm{Br}}{ }^{\\mathrm{OH}} \\mathrm{Br}$\n\nDifference in reactions is observed due to solvent polarity, which\n(i) Ionizes phenol to make more reactive phenoxide ion\n(ii) Increases electrophilicity of bromine.\n13. Which of the following compounds is not aromatic?\n(A)\n<smiles>c1cc[cH-]c1</smiles>\n(B)\n<smiles>[C+]1C=C1</smiles>\n(C)\n<smiles>C1=CC=C2C=CC=CC=C2C=C1</smiles>\n(D)\n<smiles>c1ccc2ccccc2c1</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol. [10] Annulene, although follow $(4 \\mathrm{n}+2) \\pi$ electron rule, but it is non-aromatic due to its non planar nature. It is nonplanar due to repulsion of C - H bonds present inside the ring.\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n4\n14. The products formed in the following reaction, A and B are\n(A)\n(B)\n(C)\n(D)\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n$\\mathrm{NaBH}_{4}$ does not reduce carboxylic acid.\n15. Which reactant will give the following alcohol on reaction with one mole of phenyl magnesium bromide (PhMgBr) followed by acidic hydrolysis ?\n(A) $\\mathrm{CH}_{3}-\\mathrm{C} \\equiv \\mathrm{N}$\n(B) $\\mathrm{Ph}-\\mathrm{C} \\equiv \\mathrm{N}$\n(C)\n<smiles>CC(=O)Oc1ccccc1</smiles>\n(D)\n<smiles>CC(=O)c1ccccc1</smiles>\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol.\n16. The major product of the following reaction is\n(A)\n<smiles>COC1=CCC=CC1[N+](=O)[O-]</smiles>\n(B)\n<smiles>COC1=CCC=CC1N</smiles>\n(C)\n<smiles>O=[N+]([O-])C1=C(O)CC=CC1</smiles>\n(D)\n<smiles>COC1C=CCC=C1[N+](=O)[O-]</smiles>\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nJEE | NEET | Clas 8-10 Download eSaral APP\n17. The correct stability order of the following diazonium salt is\n\n(A)\n<smiles>COc1ccc([N]Cl)cc1</smiles>\n\n(B)\n<smiles>O=[N+]([O-])c1ccc([N+](=O)[O-])cc1</smiles>\n\n(C)\n<smiles>Cl[N+](Cl)c1ccccc1</smiles>\n\n(D)\n<smiles>N#Cc1ccc([N+](Cl)Cl)cc1</smiles>\n(A) (A) > (B) > (C) > (D)\n(B) (A) > (C) > (D) > (B)\n(C) (C) > (A) > (D) > (B)\n(D) (C) > (D) > (B) > (A)\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\n(A)\n<smiles>COc1cc[c]([Al][Cl])cc1</smiles>\n\n(B)\n<smiles>O=[N+]([Al])c1cc[c]([Al])cc1</smiles>\n\n(-M \\& -I group)\n\n(C)\n<smiles>[Al][c]1ccccc1</smiles>\n\n(D)\n<smiles>N#Cc1cc[c]([Al][Cl])cc1</smiles>\n\n(- M \\& -I group)\n\nSince diazonium ion is a cation hence it is stabilized by electron donating groups and destabilized by electron withdrawing group. Hence Stability order should be $\\mathrm{A}>\\mathrm{C}>\\mathrm{D}>\\mathrm{B}$.\n18. Stearic acid and polyethylene glycol react to form which one of the following soap/s detergents?\n(A) Cationic detergent\n(B) Soap\n(C) Anionic detergent\n(D) Non-ionic detergent\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol.\n19. Which of the following is reducing sugar?\n(A)\n<smiles>O[C@@H]1[C@@H](O)[C@@H](O)COC[C@@H]1O</smiles>\n(B)\n<smiles>CO[C@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O</smiles>\n(C)\n(D)\n<smiles>COC(OC)C(O)C(O)C(O)C(O)CO</smiles>\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nSol. If any sugar is having free -OH group at carbon then it will be a reducing sugar anomeric\n20. Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).\n\nAssertion (A) : Experimental reaction of $\\mathrm{CH}_{3} \\mathrm{Cl}$ with aniline and anhydrous $\\mathrm{AlCl}_{3}$ does not give o and p-methylaniline.\n\nReason (R) : The - $\\mathrm{NH}_{2}$ group of aniline becomes deactivating because of salt formation with anhydrous $\\mathrm{AlCl}_{3}$ and hence yields $m$-methyl aniline as the product.\n\nIn the light of the above statements, choose the most appropriate answer from the options given below:\n(A) Both (A) and (R) are true and (R) is the correct explanation of (A).\n(B) Both (A) and (R) are true but (R) is not the correct explanation of (A).\n(C) (A) is true, but (R) is false.\n(D) (A) is false, but (R) is true.\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n\nFriedel Craft Alkylation does not occur on this deactivated ring.\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>F[B-2]([1H])(F)(F)(F)F</smiles>",
+     "(Square pyramidal)\n<smiles>FC(F)(F)C(F)(F)F</smiles>",
+     "(Octahedral)\n$\\mathrm{O}_{3}$ :\n<smiles>[O][O+]=[Cr]</smiles>",
+     "(Bent)\n$\\mathrm{PCl}_{5}$ :\n<smiles>ClP(Cl)(Cl)(Cl)(Cl)(Cl)Cl</smiles>",
+     "(Trigonal bipyramidal)",
+     "List-I\n(Processes/Reactions)\n(A) $2 \\mathrm{SO}_{2}(\\mathrm{~g})+\\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow 2 \\mathrm{SO}_{3}(\\mathrm{~g})$\n(B) $4 \\mathrm{NH}_{3}(\\mathrm{~g})+5 \\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow 4 \\mathrm{NO}(\\mathrm{g})+6 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{g})$\n(C) $\\mathrm{N}_{2}(\\mathrm{~g})+3 \\mathrm{H}_{2}(\\mathrm{~g}) \\rightarrow 2 \\mathrm{NH}_{3}(\\mathrm{~g})$\n(D) Vegetable oil $(l)+\\mathrm{H}_{2} \\rightarrow$ Vegetable ghee(s)",
+     "List - II\n(Catalyst)\n(I) Fe(s)\n(II) Pt(s)-Rh(s)\n(III) $\\mathrm{V}_{2} \\mathrm{O}_{5}$\n(IV) Ni(s)",
+     "Choose the correct answer from the options given below:\n(A) (A) - (III), (B) - (I), (C) - (II), (D) - (IV)\n(B) (A) - (III), (B) - (II), (C) - (I), (D) - (IV)\n(C) (A) - (IV), (B) - (III), (C) - (I), (D) - (II)\n(D) (A) - (IV), (B) - (II), (C) - (III), (D) - (I)",
+     "Official Ans. by NTA (B)\nAns. (B)\nSol. $2 \\mathrm{SO}_{2}(\\mathrm{~g})+\\mathrm{O}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{V}_{2} \\mathrm{O}_{5}} 2 \\mathrm{SO}_{3}(\\mathrm{~g})$ :\ncontact process\n$$4 \\mathrm{NH}_{3}(\\mathrm{~g})+5 \\mathrm{O}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Pt}(\\mathrm{~s})-\\mathrm{Rh}(\\mathrm{~s})} 4 \\mathrm{NO}(\\mathrm{~g})+6 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{~g}):$$",
+     "Ostwald's process\n$\\mathrm{N}_{2}(\\mathrm{~g})+3 \\mathrm{H}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Fe}(\\mathrm{s})} 2 \\mathrm{NH}_{3}(\\mathrm{~g})$; Haber's process\nVegetable oil $(l)+\\mathrm{H}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Ni}(\\mathrm{s})}$ vegetable ghee\n: Hydrogenation\n3. Given two statements below :",
+     "Statement I : In $\\mathrm{Cl}_{2}$ molecule the covalent radius is double of the atomic radius of chlorine.",
+     "Statement II : Radius of anionic species is always greater than their parent atomic radius.\nChoose the most appropriate answer from options given below :\n(A) Both Statement I and Statement II are correct.\n(B) Both Statement I and Statement II are incorrect.\n(C) Statement I is correct but Statement II is incorrect.\n(D) Statement I is incorrect but Statement II is correct.",
+     "Official Ans. by NTA (D)\nAns. (D)",
+     "JEE Exam Solution\nwww.esaral.com\n1"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "7b1f2c3c7b746a8bf2b5a9802def700cde249766318621bb938b34f560a25ac0",
-    "page_count": 8,
-    "text_chars": 731,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-07-26-shift-1.pdf"
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Chlorophyll extracted from the crushed green leaves was dissolved in water to make 2 L solution of Mg of concentration 48 ppm. The number of atoms of Mg in this solution is x $10^{20}$ atoms. The value of x is $\\_\\_\\_\\_$ . (Nearest Integer)\n(Given : Atomic mass of Mg is $24 \\mathrm{~g} \\mathrm{~mol}^{-1}$, $\\mathrm{N}_{\\mathrm{A}}=6.02 \\times 10^{23} \\mathrm{~mol}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "24"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "<smiles>F[B-2]([1H])(F)(F)(F)F</smiles>",
+     "(Square pyramidal)\n<smiles>FC(F)(F)C(F)(F)F</smiles>",
+     "(Octahedral)\n$\\mathrm{O}_{3}$ :\n<smiles>[O][O+]=[Cr]</smiles>",
+     "(Bent)\n$\\mathrm{PCl}_{5}$ :\n<smiles>ClP(Cl)(Cl)(Cl)(Cl)(Cl)Cl</smiles>",
+     "(Trigonal bipyramidal)",
+     "List-I\n(Processes/Reactions)\n(A) $2 \\mathrm{SO}_{2}(\\mathrm{~g})+\\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow 2 \\mathrm{SO}_{3}(\\mathrm{~g})$\n(B) $4 \\mathrm{NH}_{3}(\\mathrm{~g})+5 \\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow 4 \\mathrm{NO}(\\mathrm{g})+6 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{g})$\n(C) $\\mathrm{N}_{2}(\\mathrm{~g})+3 \\mathrm{H}_{2}(\\mathrm{~g}) \\rightarrow 2 \\mathrm{NH}_{3}(\\mathrm{~g})$\n(D) Vegetable oil $(l)+\\mathrm{H}_{2} \\rightarrow$ Vegetable ghee(s)",
+     "List - II\n(Catalyst)\n(I) Fe(s)\n(II) Pt(s)-Rh(s)\n(III) $\\mathrm{V}_{2} \\mathrm{O}_{5}$\n(IV) Ni(s)",
+     "Choose the correct answer from the options given below:\n(A) (A) - (III), (B) - (I), (C) - (II), (D) - (IV)\n(B) (A) - (III), (B) - (II), (C) - (I), (D) - (IV)\n(C) (A) - (IV), (B) - (III), (C) - (I), (D) - (II)\n(D) (A) - (IV), (B) - (II), (C) - (III), (D) - (I)",
+     "Official Ans. by NTA (B)\nAns. (B)\nSol. $2 \\mathrm{SO}_{2}(\\mathrm{~g})+\\mathrm{O}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{V}_{2} \\mathrm{O}_{5}} 2 \\mathrm{SO}_{3}(\\mathrm{~g})$ :\ncontact process\n$$4 \\mathrm{NH}_{3}(\\mathrm{~g})+5 \\mathrm{O}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Pt}(\\mathrm{~s})-\\mathrm{Rh}(\\mathrm{~s})} 4 \\mathrm{NO}(\\mathrm{~g})+6 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{~g}):$$",
+     "Ostwald's process\n$\\mathrm{N}_{2}(\\mathrm{~g})+3 \\mathrm{H}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Fe}(\\mathrm{s})} 2 \\mathrm{NH}_{3}(\\mathrm{~g})$; Haber's process\nVegetable oil $(l)+\\mathrm{H}_{2}(\\mathrm{~g}) \\xrightarrow{\\mathrm{Ni}(\\mathrm{s})}$ vegetable ghee\n: Hydrogenation\n3. Given two statements below :",
+     "Statement I : In $\\mathrm{Cl}_{2}$ molecule the covalent radius is double of the atomic radius of chlorine.",
+     "Statement II : Radius of anionic species is always greater than their parent atomic radius.\nChoose the most appropriate answer from options given below :\n(A) Both Statement I and Statement II are correct.\n(B) Both Statement I and Statement II are incorrect.\n(C) Statement I is correct but Statement II is incorrect.\n(D) Statement I is incorrect but Statement II is correct.",
+     "Official Ans. by NTA (D)\nAns. (D)",
+     "JEE Exam Solution\nwww.esaral.com\n1"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A mixture of hydrogen and oxygen contains 40\\% hydrogen by mass when the pressure is 2.2 bar. The partial pressure of hydrogen is bar.\n(Nearest Integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Let $\\mathrm{W}_{\\mathrm{H}_{2}}=40 \\mathrm{~g} \\Rightarrow \\mathrm{n}_{\\mathrm{H}_{2}}=\\frac{40}{2}=20$\n$$\\mathrm{W}_{\\mathrm{O}_{2}}=60 \\mathrm{~g} \\Rightarrow \\mathrm{n}_{\\mathrm{O}_{2}}=\\frac{60}{32}=\\frac{15}{8}$$\n$$\\begin{array}{l}\n\\mathrm{P}_{\\mathrm{H}_{2}}=\\left(\\frac{20}{20+\\frac{15}{8}}\\right) \\times 2.2 \\\\\n=\\frac{20}{20+1.875} \\times 2.2 \\\\\n=\\frac{20}{21.875} \\times 2.2 \\\\\n=2.0114 \\\\\n\\simeq 2.01 \\mathrm{bar}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.coml. If any sugar is having free -OH group at 6\nanomeric",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The wavelength of an electron and a neutron will become equal when the velocity of the electron is x times the velocity of neutron. The value of x is $\\_\\_\\_\\_$ . (Nearest Integer)\n(Mass of electron is $9.1 \\times 10^{-31} \\mathrm{~kg}$ and mass of neutron is $1.6 \\times 10^{-27} \\mathrm{~kg}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1758"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$v_{\\mathrm{e}}=\\mathrm{x} v_{\\mathrm{N}}$\n$$\\begin{array}{l}\n\\lambda_{e}=\\lambda_{N} \\\\\n\\Rightarrow \\frac{h}{m_{e} v_{e}}=\\frac{h}{m_{N} v_{N}} \\\\\n\\quad v_{e}=\\frac{m_{N}}{m_{e}} \\cdot v_{N} \\\\\n=\\frac{1.6 \\times 10^{-27}}{9.1 \\times 10^{-31}} v_{N} \\\\\nv_{e}=1758.24 \\times v_{N} \\\\\n\\therefore \\quad x=1758.24\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "2.4 g coal is burnt in a bomb calorimeter in excess of oxygen at 298 K and 1 atm pressure.\nThe temperature of the calorimeter rises from 298 K to 300 K . The enthalpy change during the combustion of coal is $-\\mathrm{x} \\mathrm{kJ} \\mathrm{mol}^{-1}$. The value of x is $\\_\\_\\_\\_$ . (Nearest Integer)\n(Given : Heat capacity of bomb calorimeter 20.0 kJ $\\mathrm{K}^{-1}$. Assume coal to be pure carbon)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "200"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{C}(\\mathrm{s})+\\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow \\mathrm{CO}_{2}(\\mathrm{~g}) ; \\Delta \\mathrm{H}=-\\mathrm{x} \\mathrm{kJ} /$ mole\n$$\\mathrm{Q}=\\mathrm{C} \\Delta \\mathrm{~T}=20 \\mathrm{~kJ} \\times 2$$",
+     "40 kJ heat is released for 2.4 g of C\nFor 1 mole 'C' :\n$$\\begin{array}{l}\n\\mathrm{Q}=\\frac{40}{2.4} \\times 12 \\\\\n=\\frac{400}{24} \\times 12=200 \\mathrm{~kJ} / \\mathrm{mole}\n\\end{array}$$\n$$\\begin{aligned}\n\\mathrm{Q}= & \\Delta \\mathrm{E}=\\Delta \\mathrm{H}=200 \\mathrm{~kJ}\\left(\\because \\Delta \\mathrm{n}_{\\mathrm{g}}=0\\right) \\\\\n& \\quad x=200\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "When 800 mL of 0.5 M nitric acid is heated in a beaker, its volume is reduced to half and 11.5 g of nitric acid is evaporated. The molarity of the remaining nitric acid solution is $\\mathrm{x} \\times 10^{-2} \\mathrm{M}$. (Nearest Integer)\n(Molar mass of nitric acid is $63 \\mathrm{~g} \\mathrm{~mol}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "54"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{n}_{\\mathrm{HNO}_{3}}=0.5 \\times 0.8$\n$$\\begin{array}{l}\n=0.4 \\text { mole } \\\\\n\\left(\\mathrm{n}_{\\mathrm{HNO}_{3}}\\right)_{\\text {remains }}=0.4-\\frac{11.5}{63} \\\\\n=0.4-0.1825 \\\\\n=0.2175 \\\\\n\\text { Molarity }=\\frac{0.2175}{400} \\times 1000 \\\\\n=\\frac{0.2175}{0.4} \\\\\n=0.5437 \\text { mole } / \\text { lit } \\\\\n\\simeq 0.54 \\mathrm{~mole} / \\text { lit } \\\\\n=54 \\times 10^{-2} \\mathrm{~mol} / \\mathrm{lit}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "At 298 K, the equilibrium constant is $2 \\times 10^{15}$ for the reaction :\n$\\mathrm{Cu}(\\mathrm{s})+2 \\mathrm{Ag}^{+}(\\mathrm{aq}) \\rightleftharpoons \\mathrm{Cu}^{2+}(\\mathrm{aq})+2 \\mathrm{Ag}(\\mathrm{s})$\nThe equilibrium constant for the reaction\n$$\\frac{1}{2} \\mathrm{Cu}^{2+}(\\mathrm{aq})+\\mathrm{Ag}(\\mathrm{~s}) \\rightleftharpoons \\frac{1}{2} \\mathrm{Cu}(\\mathrm{~s})+\\mathrm{Ag}^{+}(\\mathrm{aq})$$\nis $\\mathrm{x} \\times 10^{-8}$. The value of x is $\\_\\_\\_\\_$ .\n(Nearest Integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{K}_{\\mathrm{eq}}^{\\prime}=\\frac{1}{\\sqrt{\\mathrm{~K}_{\\mathrm{eq}}}}=\\frac{1}{\\sqrt{2 \\times 10^{15}}}=\\mathrm{x} \\times 10^{-8}$\n$$\\begin{array}{l}\n\\Rightarrow \\frac{1}{\\sqrt{20}} \\times \\frac{1}{10^{7}}=\\mathrm{x} \\times 10^{-8} \\\\\n\\Rightarrow \\frac{1}{\\sqrt{20}} \\times 10^{-7}=\\mathrm{x} \\times 10^{-8} \\\\\n\\frac{10}{\\sqrt{20}}=\\mathrm{x} \\\\\n\\Rightarrow \\mathrm{x}=\\frac{\\sqrt{10}}{\\sqrt{2}}=\\sqrt{5}=2.236 \\\\\n\\simeq 2.24\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n7",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The amount of charge in F (Faraday) required to obtain one mole of iron from $\\mathrm{Fe}_{3} \\mathrm{O}_{4}$ is $\\_\\_\\_\\_$ .\n(Nearest Integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "8"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{Fe}_{3} \\mathrm{O}_{4} \\xrightarrow{+8 \\mathrm{e}^{-}} 3 \\mathrm{Fe}$",
+     "Charge for 1 mole $\\mathrm{Fe}=8 / 3 \\mathrm{~F}$\n$$=2.67 \\mathrm{~F}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "For a reaction $\\mathrm{A} \\rightarrow 2 \\mathrm{~B}+\\mathrm{C}$ the half lives are 100 s and 50 s when the concentration of reactant A is 0.5 and $1.0 \\mathrm{~mol} \\mathrm{~L}^{-1}$ respectively. The order of the reaction is $\\_\\_\\_\\_$ . (Nearest Integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{t}_{\\frac{1}{2}} \\propto \\frac{1}{\\left[\\mathrm{~A}_{0}\\right]^{\\mathrm{n}-1}}$\n$$[100] \\propto \\frac{1}{(0.5)^{\\mathrm{n}-1}}$$\n$$(50) \\propto \\frac{1}{(1)^{\\mathrm{n}-1}}$$\n$$[2]^{1}=\\left[\\frac{1}{0.5}\\right]^{\\mathrm{n}-1}$$\n$$[2]^{1}=[2]^{\\mathrm{n}-1}$$\n$$n-1=1$$\n$$\\mathrm{n}=2$$\n$$\\text { order }=2$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The difference between spin only magnetic moment values of $\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right] \\mathrm{Cl}_{2}$ and $\\left[\\mathrm{Cr}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right] \\mathrm{Cl}_{3}$ is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "0"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+}$\n$$\\mathrm{Co}^{+2}: \\begin{array}{|l|l|l|l|l|}\n\\hline 1 & 1 \\mathrm{l} & 1 & 1 & 1 \\\\\n\\hline\n\\end{array} \\begin{array}{|l|}\n\\hline \\\\\n\\hline\n\\end{array} \\begin{array}{|l|l|l|}\n\\hline & & \\\\\n\\hline\n\\end{array}$$",
+     "\\begin{tabular}[t]{|l|l|l|l|l|}\n\\hline 1 & 1 & 1 & & \\\\\n\\hline\n\\end{tabular}\n□\n$\\mathrm{Cr}^{+3}$ :\nnumber of unpaired $\\mathrm{e}^{-}=3$\n$$\\mu=\\sqrt{15} \\mathrm{BM}$$",
+     "Difference in spin only magnetic moment $=0$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In the presence of sunlight, benzene reacts with $\\mathrm{Cl}_{2}$ to give product, X . The number of hydrogens in X is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "JEE Exam Solution\nwww.esaral.com\n8"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

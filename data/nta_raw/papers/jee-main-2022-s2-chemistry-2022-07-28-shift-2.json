@@ -1,95 +1,109 @@
 {
+ "paper_id": "jee-main-2022-s2-chemistry-2022-07-28-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-chemistry-2022-07-28-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-07-28",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-chemistry-2022-07-28-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-07-28",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/171835-28-07%20EVENING%20CHEMISTRY%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/171835-28-07%20EVENING%20CHEMISTRY%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "8c0ff12a0f66058567a2c15ddfb4c23fe2a89dcecb24d87f0ff00af7a742bb69",
+  "page_count": 7,
+  "text_chars": 1248,
+  "has_text_layer": true,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-07-28-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_key_pending",
+  "source": "official_nta_key",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": []
+ },
+ "format": "generic_mirror",
+ "status": "extracted",
+ "detected_paper_meta": {},
+ "question_count": 2,
+ "defects": [
+  "2/2 questions carry parse_flags"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "NaBH",
+   "options": {
+    "A": "Both Statement I and Statement II are true",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Some drugs do not bind to active sites. These bind to different site of enzyme called allosteric sites.\n18. Given below are two statements : One is labelled as Assertion A and the other is labelled as Reason R Assertion A : Thin layer chromatography is an adsorption chromatography.\nReason : A thin layer of silica gel is spread over a glass plate of suitable size in thin layer chromatography which acts as an adsorbent.\nIn the light of the above statements, choose the correct answer from the options given below\n(A)Both A and R are true and R is the correct explanation of A\n(B) Both A and R are true but R is NOT the correct explanation of A\n(C) A is true but R is false\n(D) A is false but R is true\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Theory based\nThin layer chromoatography (TLC) is another type of adsorption chromatography, which involve sepration of substance of a mixture ovel a thin layer of an adsorbent coated on glass plate.\nA thin layer (about 0.2 mm thick) of an adsorbent (silica gel) or (Alumina) in spread overa glass plate of suitable size. Hence Assertion (A) is correct and Reason (R) is correct explanation of (A)\n19. The formulas of A and B for the following reaction sequence are\n(A) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{14} \\mathrm{O}_{8}, \\mathrm{~B}=\\mathrm{C}_{6} \\mathrm{H}_{14}$\n(B) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{13} \\mathrm{O}_{7}, \\mathrm{~B}=\\mathrm{C}_{7} \\mathrm{H}_{14} \\mathrm{O}$\n(C) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{12} \\mathrm{O}_{8}, \\mathrm{~B}=\\mathrm{C}_{6} \\mathrm{H}_{14}$\n(D) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{14} \\mathrm{O}_{8}, \\mathrm{~B}=\\mathrm{C}_{6} \\mathrm{H}_{14} \\mathrm{O}_{6}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n20.\n\nFind out the major product for the above reaction.\n(A)\n<smiles>O=C1CC2=C(CCCC2)O1</smiles>\n(B)\n<smiles>O=C(O)CC1(I)CCCCC1I</smiles>\n(C)\n<smiles>O=C1C=C2CCCCC2O1</smiles>\n(D)\n<smiles>O=C1CC2=CCCCC2O1</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n\nJEE Exam Solution\nwww.esaral.com\n5"
+   },
+   "page_start": 5,
+   "page_end": 5,
+   "parse_flags": [
+    "no_options_found",
+    "stem_under_20_chars",
+    "options_ocr_repaired"
+   ]
   },
-  "probe": {
-    "sha256": "8c0ff12a0f66058567a2c15ddfb4c23fe2a89dcecb24d87f0ff00af7a742bb69",
-    "page_count": 7,
-    "text_chars": 1248,
-    "has_text_layer": true,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-07-28-shift-2.pdf"
-  },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
-  },
-  "format": "generic_mirror",
-  "status": "extracted",
-  "detected_paper_meta": {},
-  "question_count": 2,
-  "defects": [
-    "2/2 questions carry parse_flags"
-  ],
-  "questions": [
-    {
-      "qno": 1,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "NaBH",
-      "options": null,
-      "page_start": 5,
-      "page_end": 5,
-      "parse_flags": [
-        "no_options_found",
-        "stem_under_20_chars"
-      ]
-    },
-    {
-      "qno": 2,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "P/HI\n4\nn-Hexane\n[B] [C H ]\n6\n14\n[A] [C H O ]\n7\n14\n8\nI2 / NaHCO3\nwww.esaral.com\n5\nJEE Exam Solution\nJEE | NEET | Clas 8 - 10 Download eSaral APP\n\nwww.esaral.com\n6\nJEE Exam Solution\nJEE | NEET | Clas 8 - 10 Download eSaral APP\n\nslope = 1/n\nlog k\n}\nlog p\nwww.esaral.com\n7\nJEE Exam Solution\nJEE | NEET | Clas 8 - 10 Download eSaral APP",
-      "options": null,
-      "page_start": 5,
-      "page_end": 7,
-      "parse_flags": [
-        "no_options_found",
-        "possible_text_scramble"
-      ]
-    }
-  ]
+  {
+   "qno": 2,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "Metal M crystallizes into a FCC lattice with the edge length of $4.0 \\times 10^{-8} \\mathrm{~cm}$. The atomic mass of the metal is $\\_\\_\\_\\_$ g/mol. (Nearest integer).\n(Use : $\\mathrm{N}_{\\mathrm{A}}=6.02 \\times 10^{23} \\mathrm{~mol}^{-1}$, density of metal, $\\mathrm{M}= 9.03 \\mathrm{~g} \\mathrm{~cm}^{-3}$ )",
+   "options": {
+    "A": "Both Statement I and Statement II are true",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Some drugs do not bind to active sites. These bind to different site of enzyme called allosteric sites.\n18. Given below are two statements : One is labelled as Assertion A and the other is labelled as Reason R Assertion A : Thin layer chromatography is an adsorption chromatography.\nReason : A thin layer of silica gel is spread over a glass plate of suitable size in thin layer chromatography which acts as an adsorbent.\nIn the light of the above statements, choose the correct answer from the options given below\n(A)Both A and R are true and R is the correct explanation of A\n(B) Both A and R are true but R is NOT the correct explanation of A\n(C) A is true but R is false\n(D) A is false but R is true\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Theory based\nThin layer chromoatography (TLC) is another type of adsorption chromatography, which involve sepration of substance of a mixture ovel a thin layer of an adsorbent coated on glass plate.\nA thin layer (about 0.2 mm thick) of an adsorbent (silica gel) or (Alumina) in spread overa glass plate of suitable size. Hence Assertion (A) is correct and Reason (R) is correct explanation of (A)\n19. The formulas of A and B for the following reaction sequence are\n(A) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{14} \\mathrm{O}_{8}, \\mathrm{~B}=\\mathrm{C}_{6} \\mathrm{H}_{14}$\n(B) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{13} \\mathrm{O}_{7}, \\mathrm{~B}=\\mathrm{C}_{7} \\mathrm{H}_{14} \\mathrm{O}$\n(C) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{12} \\mathrm{O}_{8}, \\mathrm{~B}=\\mathrm{C}_{6} \\mathrm{H}_{14}$\n(D) $\\mathrm{A}=\\mathrm{C}_{7} \\mathrm{H}_{14} \\mathrm{O}_{8}, \\mathrm{~B}=\\mathrm{C}_{6} \\mathrm{H}_{14} \\mathrm{O}_{6}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n20.\n\nFind out the major product for the above reaction.\n(A)\n<smiles>O=C1CC2=C(CCCC2)O1</smiles>\n(B)\n<smiles>O=C(O)CC1(I)CCCCC1I</smiles>\n(C)\n<smiles>O=C1C=C2CCCCC2O1</smiles>\n(D)\n<smiles>O=C1CC2=CCCCC2O1</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n\nJEE Exam Solution\nwww.esaral.com\n5"
+   },
+   "page_start": 5,
+   "page_end": 7,
+   "parse_flags": [
+    "no_options_found",
+    "possible_text_scramble",
+    "options_ocr_repaired"
+   ],
+   "text_original_textlayer": "P/HI\n4\nn-Hexane\n[B] [C H ]\n6\n14\n[A] [C H O ]\n7\n14\n8\nI2 / NaHCO3\n5\n\n6\n\nslope = 1/n\nlog k\n}\nlog p\n7",
+   "ocr_repaired": "frag"
+  }
+ ]
 }

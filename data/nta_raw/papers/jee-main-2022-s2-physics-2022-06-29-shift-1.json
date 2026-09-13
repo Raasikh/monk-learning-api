@@ -1,61 +1,1040 @@
 {
+ "paper_id": "jee-main-2022-s2-physics-2022-06-29-shift-1",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-physics-2022-06-29-shift-1",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-29",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-physics-2022-06-29-shift-1",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-29",
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/145417-29-06%20MORNING%20PHYSICS%202022%20(1).pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/145417-29-06%20MORNING%20PHYSICS%202022%20(1).pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "bf972f3c61aa3eea441d163a3c97d2e63f48c6bb3e347078210c7406f8612513",
+  "page_count": 8,
+  "text_chars": 740,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-29-shift-1.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 0,
+  "xval_printed_agree": 30,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "101701",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "101702",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "101703",
+    "answer": {
+     "raw": "B",
+     "value": "B"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "101704",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "101705",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "101706",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "101707",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "101708",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "101709",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "101710",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "101711",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "101712",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "101713",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "101714",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "101715",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "101716",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "101717",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "101718",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "101719",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "101720",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "101721",
+    "answer": {
+     "raw": "15",
+     "value": "15"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "101722",
+    "answer": {
+     "raw": "43",
+     "value": "43"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "101723",
+    "answer": {
+     "raw": "21",
+     "value": "21"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "101724",
+    "answer": {
+     "raw": "700",
+     "value": "700"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "101725",
+    "answer": {
+     "raw": "144",
+     "value": "144"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "101726",
+    "answer": {
+     "raw": "102",
+     "value": "102"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "101727",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "101728",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "101729",
+    "answer": {
+     "raw": "225",
+     "value": "225"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "101730",
+    "answer": {
+     "raw": "10",
+     "value": "10"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "101701",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two balls A and B are placed at the top of 180 m tall tower. Ball A is released from the top at $\\mathrm{t}=0$ s. Ball B is thrown vertically down with an initial velocity 'u' at $\\mathrm{t}=2 \\mathrm{~s}$. After a certain time, both balls meet 100 m above the ground. Find the value of 'u' in $\\mathrm{ms}^{-1}$. [use $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$ ] :",
+   "options": {
+    "A": "10",
+    "B": "15",
+    "C": "20",
+    "D": "30\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Let they meet at time t.\n$$\\begin{array}{l}\n\\mathrm{t}=\\sqrt{\\frac{2 \\mathrm{~h}}{\\mathrm{~g}}}=\\sqrt{\\frac{2 \\times 80}{10}} \\\\\n=4 \\mathrm{sec}\n\\end{array}$$\n\nTime taken by ball B to meet $\\mathrm{A}=2 \\mathrm{sec}$\n$$\\begin{array}{l}\n\\text { using } S=u t+\\frac{1}{2} a t^{2} \\\\\n-80=-u \\times 2+\\frac{1}{2}(-10)(2)^{2} \\\\\nu=30\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Let they meet at time t.\n$$\\begin{array}{l}\n\\mathrm{t}=\\sqrt{\\frac{2 \\mathrm{~h}}{\\mathrm{~g}}}=\\sqrt{\\frac{2 \\times 80}{10}} \\\\\n=4 \\mathrm{sec}\n\\end{array}$$",
+     "Time taken by ball B to meet $\\mathrm{A}=2 \\mathrm{sec}$\n$$\\begin{array}{l}\n\\text { using } S=u t+\\frac{1}{2} a t^{2} \\\\\n-80=-u \\times 2+\\frac{1}{2}(-10)(2)^{2} \\\\\nu=30\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "bf972f3c61aa3eea441d163a3c97d2e63f48c6bb3e347078210c7406f8612513",
-    "page_count": 8,
-    "text_chars": 740,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-29-shift-1.pdf"
+  {
+   "qno": 2,
+   "question_id": "101702",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A body of mass M at rest explodes into three pieces, in the ratio of masses 1 : 1 : 2. Two smaller pieces fly off perpendicular to each other with velocities of $30 \\mathrm{~ms}^{-1}$ and $40 \\mathrm{~ms}^{-1}$ respectively. The velocity of the third piece will be :",
+   "options": {
+    "A": "$15 \\mathrm{~ms}^{-1}$",
+    "B": "$25 \\mathrm{~ms}^{-1}$",
+    "C": "$35 \\mathrm{~ms}^{-1}$",
+    "D": "$50 \\mathrm{~ms}^{-1}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Mass of pieces by $\\frac{\\mathrm{M}}{4}, \\frac{\\mathrm{M}}{4}, \\frac{\\mathrm{M}}{2}$\nconserving momentum\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{P}}_{1}+\\overrightarrow{\\mathrm{P}}_{2}+\\overrightarrow{\\mathrm{P}}_{3}=0 \\\\\n\\overline{\\mathrm{P}}_{3}=-\\left(\\overline{\\mathrm{P}}_{1}+\\overline{\\mathrm{P}}_{2}\\right)\n\\end{array}$$\n\nAs $\\overline{\\mathrm{P}}_{1}$ \\& $\\overline{\\mathrm{P}}_{2}$ are perpendicular\n$$\\begin{array}{l}\n\\text { so } \\mathrm{P}_{3}=\\sqrt{\\mathrm{P}_{1}^{2}+\\mathrm{P}_{2}^{2}} \\\\\n\\mathrm{P}_{3}=(50) \\frac{\\mathrm{M}}{4} \\\\\n\\& \\mathrm{P}_{3}=\\frac{\\mathrm{M}}{2} \\mathrm{v} \\\\\n\\text { so } \\mathrm{v}=25\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Mass of pieces by $\\frac{\\mathrm{M}}{4}, \\frac{\\mathrm{M}}{4}, \\frac{\\mathrm{M}}{2}$\nconserving momentum\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{P}}_{1}+\\overrightarrow{\\mathrm{P}}_{2}+\\overrightarrow{\\mathrm{P}}_{3}=0 \\\\\n\\overline{\\mathrm{P}}_{3}=-\\left(\\overline{\\mathrm{P}}_{1}+\\overline{\\mathrm{P}}_{2}\\right)\n\\end{array}$$",
+     "As $\\overline{\\mathrm{P}}_{1}$ \\& $\\overline{\\mathrm{P}}_{2}$ are perpendicular\n$$\\begin{array}{l}\n\\text { so } \\mathrm{P}_{3}=\\sqrt{\\mathrm{P}_{1}^{2}+\\mathrm{P}_{2}^{2}} \\\\\n\\mathrm{P}_{3}=(50) \\frac{\\mathrm{M}}{4} \\\\\n\\& \\mathrm{P}_{3}=\\frac{\\mathrm{M}}{2} \\mathrm{v} \\\\\n\\text { so } \\mathrm{v}=25\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "101703",
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The activity of a radioactive material is $2.56 \\times 10^{-3}$\nCi. If the half life of the material is 5 days, after how many days the activity will become $2 \\times 10^{-5} \\mathrm{Ci}$ ?\n(A) 30 days\n(B) 35 days\n(D) 25 days",
+   "options": null,
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{A}}{\\mathrm{A}_{0}}=\\frac{\\mathrm{N}}{\\mathrm{N}_{0}}$\n$$\\begin{array}{l}\n\\frac{2 \\times 10^{-5}}{2.56 \\times 10^{-3}}=\\frac{\\mathrm{N}}{\\mathrm{~N}_{0}} \\\\\n\\frac{\\mathrm{~N}}{\\mathrm{~N}_{0}}=\\frac{1}{128} \\Rightarrow \\mathrm{~N}=\\frac{\\mathrm{N}_{0}}{128}\n\\end{array}$$",
+     "After 7 half life activity comes down to given value $\\mathrm{T}=7 \\times 5$\n$=35$ days"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "101704",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A spherical shell of 1 kg mass and radius R is rolling with angular speed $\\omega$ on horizontal plane (as shown in figure). The magnitude of angular momentum of the shell about the origin O is $\\frac{\\mathrm{a}}{3} \\mathrm{R}^{2} \\omega$. The value of a will be :",
+   "options": {
+    "A": "2",
+    "B": "3",
+    "C": "5",
+    "D": "4\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{L}_{0}$ = angular momentum of shell about O.\nAs shell is rolling\n$$\\begin{array}{l}\n\\text { so } V_{\\mathrm{cm}}=\\omega R \\\\\nL_{0}=m V_{\\mathrm{cm}} R+I \\omega \\\\\n=1 \\times \\omega R \\times R+\\frac{2}{3} R^{2} \\omega \\\\\n=\\frac{5}{3} R^{2} \\omega \\\\\n\\text { so } a=5\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{L}_{0}$ = angular momentum of shell about O.\nAs shell is rolling\n$$\\begin{array}{l}\n\\text { so } V_{\\mathrm{cm}}=\\omega R \\\\\nL_{0}=m V_{\\mathrm{cm}} R+I \\omega \\\\\n=1 \\times \\omega R \\times R+\\frac{2}{3} R^{2} \\omega \\\\\n=\\frac{5}{3} R^{2} \\omega \\\\\n\\text { so } a=5\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": "101705",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A cylinder of fixed capacity of 44.8 litres contains helium gas at standard temperature and pressure. The amount of heat needed to raise the temperature of gas in the cylinder by $20.0^{\\circ} \\mathrm{C}$ will be :\n(Given gas constant $\\mathrm{R}=8.3 \\mathrm{JK}^{-1}-\\mathrm{mol}^{-1}$ )",
+   "options": {
+    "A": "249 J",
+    "B": "415 J",
+    "C": "498 J",
+    "D": "830 J\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. No of moles $=\\frac{44.8}{22.4}=2$\nGas is mono atomic so $\\mathrm{C}_{\\mathrm{v}}=\\frac{3}{2} \\mathrm{R}$\n$$\\begin{array}{l}\n\\Delta Q=\\mathrm{nC}_{\\mathrm{v}} \\Delta \\mathrm{~T} \\\\\n=2 \\times \\frac{3}{2} \\mathrm{R}(20) \\\\\n=60 \\mathrm{R} \\\\\n=60 \\times 8.3 \\\\\n=498 \\mathrm{~J}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "No of moles $=\\frac{44.8}{22.4}=2$\nGas is mono atomic so $\\mathrm{C}_{\\mathrm{v}}=\\frac{3}{2} \\mathrm{R}$\n$$\\begin{array}{l}\n\\Delta Q=\\mathrm{nC}_{\\mathrm{v}} \\Delta \\mathrm{~T} \\\\\n=2 \\times \\frac{3}{2} \\mathrm{R}(20) \\\\\n=60 \\mathrm{R} \\\\\n=60 \\times 8.3 \\\\\n=498 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "101706",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A wire of length L is hanging from a fixed support. The length changes to $\\mathrm{L}_{1}$ and $\\mathrm{L}_{2}$ when masses 1 kg and 2 kg are suspended respectively from its free end. Then the value of L is equal to :",
+   "options": {
+    "A": "$\\sqrt{\\mathrm{L}_{1} \\mathrm{~L}_{2}}$",
+    "B": "$\\frac{\\mathrm{L}_{1}+\\mathrm{L}_{2}}{2}$",
+    "C": "$2 \\mathrm{~L}_{1}-\\mathrm{L}_{2}$",
+    "D": "$3 \\mathrm{~L}_{1}-2 \\mathrm{~L}_{2}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. By Hooke's Law\nso $\\mathrm{F} \\alpha \\Delta \\mathrm{L}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{F}_{1}}{\\mathrm{~F}_{2}}=\\frac{\\Delta \\mathrm{L}_{1}}{\\Delta \\mathrm{~L}_{2}} \\\\\n\\frac{10}{20}=\\frac{\\left(\\mathrm{L}_{1}-\\mathrm{L}\\right)}{\\left(\\mathrm{L}_{2}-\\mathrm{L}\\right)} \\\\\n\\mathrm{L}=2 \\mathrm{~L}_{1}-\\mathrm{L}_{2}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "By Hooke's Law\nso $\\mathrm{F} \\alpha \\Delta \\mathrm{L}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{F}_{1}}{\\mathrm{~F}_{2}}=\\frac{\\Delta \\mathrm{L}_{1}}{\\Delta \\mathrm{~L}_{2}} \\\\\n\\frac{10}{20}=\\frac{\\left(\\mathrm{L}_{1}-\\mathrm{L}\\right)}{\\left(\\mathrm{L}_{2}-\\mathrm{L}\\right)} \\\\\n\\mathrm{L}=2 \\mathrm{~L}_{1}-\\mathrm{L}_{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "101707",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements : one is labelled as Assertion A and the other is labelled as Reason R. Assertion A : The photoelectric effect does not take place, if the energy of the incident radiation is less than the work function of a metal.\nReason R : Kinetic energy of the photoelectrons is zero, if the energy of the incident radiation is equal to the work function of a metal.\nIn the light of the above statements, choose the most appropriate answer from the options given below.",
+   "options": {
+    "A": "Both $\\mathbf{A}$ and $\\mathbf{R}$ are correct and $\\mathbf{R}$ is the correct explanation of A",
+    "B": "Both A and R are correct but R is not the correct explanation of A",
+    "C": "$\\mathbf{A}$ is correct but $\\mathbf{R}$ is not correct",
+    "D": "$\\mathbf{A}$ is not correct but $\\mathbf{R}$ is correct\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. To free the electron from metal surface minimum energy required, is equal to the work function of that metal.\nSo Assertion A, is correct.\n$\\mathrm{hv}=\\mathrm{w}_{0}+\\mathrm{K} . \\mathrm{E} ._{\\text {max }}$\nif $\\mathrm{hv}=\\mathrm{w}_{0}$\n$\\Rightarrow \\mathrm{K} . \\mathrm{E}_{._{\\text {max }}}=0$\nHence reason R, is correct, But R is not the correct explanation of A."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "To free the electron from metal surface minimum energy required, is equal to the work function of that metal.\nSo Assertion A, is correct.\n$\\mathrm{hv}=\\mathrm{w}_{0}+\\mathrm{K} . \\mathrm{E} ._{\\text {max }}$\nif $\\mathrm{hv}=\\mathrm{w}_{0}$\n$\\Rightarrow \\mathrm{K} . \\mathrm{E}_{._{\\text {max }}}=0$\nHence reason R, is correct, But R is not the correct explanation of A."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": "101708",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A particle of mass 500 gm is moving in a straight line with velocity $v=\\mathrm{bx}^{5 / 2}$. The work done by the net force during its displacement from $\\mathrm{x}=0$ to $\\mathrm{x}=4 \\mathrm{~m}$ is : (Take $\\mathrm{b}=0.25 \\mathrm{~m}^{-3 / 2} \\mathrm{~s}^{-1}$ ).",
+   "options": {
+    "A": "2 J",
+    "B": "4 J",
+    "C": "8 J",
+    "D": "16 J\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. By work energy theorem\nwork done by net force $=\\Delta \\mathrm{K} . \\mathrm{E}$.\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{w}=\\frac{1}{2} \\mathrm{mv}_{\\mathrm{f}}^{2}-\\frac{1}{2} \\mathrm{mv}_{\\mathrm{i}}^{2} \\\\\n\\mathrm{w}=\\frac{1}{2} \\times 0.5 \\times(0.25)^{2} \\times(4)^{5} \\\\\n\\mathrm{w}=16 \\mathrm{~J}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "By work energy theorem\nwork done by net force $=\\Delta \\mathrm{K} . \\mathrm{E}$.\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{w}=\\frac{1}{2} \\mathrm{mv}_{\\mathrm{f}}^{2}-\\frac{1}{2} \\mathrm{mv}_{\\mathrm{i}}^{2} \\\\\n\\mathrm{w}=\\frac{1}{2} \\times 0.5 \\times(0.25)^{2} \\times(4)^{5} \\\\\n\\mathrm{w}=16 \\mathrm{~J}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "101709",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A charged particle moves along circular path in a uniform magnetic field in a cyclotron. The kinetic energy of the charged particle increases to 4 times its initial value. What will be the ratio of new radius to the original radius of circular path of the charged particle :",
+   "options": {
+    "A": "$1: 1$",
+    "B": "1 : 2",
+    "C": "$2: 1$",
+    "D": "$1: 4$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. radius of paerticle in cyclotron\n$$\\mathrm{r}=\\frac{\\sqrt{2 \\mathrm{mK} . \\mathrm{E} .}}{\\mathrm{qB}}$$\n\nSo ratio of new radius to original\n$$\\frac{\\mathrm{r}_{\\mathrm{n}}}{\\mathrm{r}_{0}}=\\sqrt{\\frac{(\\text { K.E. })_{\\mathrm{n}}}{(\\text { K.E })_{0}}}=\\sqrt{4} \\Rightarrow 2: 1$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "radius of paerticle in cyclotron\n$$\\mathrm{r}=\\frac{\\sqrt{2 \\mathrm{mK} . \\mathrm{E} .}}{\\mathrm{qB}}$$",
+     "So ratio of new radius to original\n$$\\frac{\\mathrm{r}_{\\mathrm{n}}}{\\mathrm{r}_{0}}=\\sqrt{\\frac{(\\text { K.E. })_{\\mathrm{n}}}{(\\text { K.E })_{0}}}=\\sqrt{4} \\Rightarrow 2: 1$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "101710",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "For a series LCR circuit, I vs $\\omega$ curve is shown :\n(a) To the left of $\\omega_{\\mathrm{r}}$, the circuit is mainly capacitive.\n(b) To the left of $\\omega_{\\mathrm{r}}$, the circuit is mainly inductive.\n(c) At $\\omega_{\\mathrm{r}}$, impedance of the circuit is equal to the resistance of the circuit.\n(d) At $\\omega_{\\mathrm{r}}$, impedance of the circuit is 0.\n$\\omega$\nChoose the most appropriate answer from the options given below :",
+   "options": {
+    "A": "(a) and (d) only",
+    "B": "(b) and (d) only",
+    "C": "(a) and (c) only",
+    "D": "(b) and (c) only\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol. at $\\omega_{\\mathrm{r}}, \\mathrm{X}_{\\mathrm{C}}=\\mathrm{X}_{\\mathrm{L}}$\n$$\\Rightarrow \\frac{1}{\\omega_{\\mathrm{r}} \\mathrm{C}}=\\omega_{\\mathrm{r}} \\mathrm{~L}$$\n\nSo if $\\omega<\\omega_{\\mathrm{r}}$ then $\\mathrm{x}_{\\mathrm{C}}$ will increase and $\\mathrm{X}_{\\mathrm{L}}$ will decrease.\nHence to left of $\\omega_{\\mathrm{r}}$ circuit is capacitive\n$$\\mathrm{Z}=\\sqrt{\\mathrm{R}^{2}+\\left(\\mathrm{X}_{\\mathrm{C}}-\\mathrm{X}_{\\mathrm{L}}\\right)^{2}}$$\nat $\\omega_{\\mathrm{r}}, \\mathrm{Z}=\\sqrt{\\mathrm{R}^{2}+\\mathrm{O}^{2}}=\\mathrm{R}(\\mathrm{C})$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "at $\\omega_{\\mathrm{r}}, \\mathrm{X}_{\\mathrm{C}}=\\mathrm{X}_{\\mathrm{L}}$\n$$\\Rightarrow \\frac{1}{\\omega_{\\mathrm{r}} \\mathrm{C}}=\\omega_{\\mathrm{r}} \\mathrm{~L}$$",
+     "So if $\\omega<\\omega_{\\mathrm{r}}$ then $\\mathrm{x}_{\\mathrm{C}}$ will increase and $\\mathrm{X}_{\\mathrm{L}}$ will decrease.\nHence to left of $\\omega_{\\mathrm{r}}$ circuit is capacitive\n$$\\mathrm{Z}=\\sqrt{\\mathrm{R}^{2}+\\left(\\mathrm{X}_{\\mathrm{C}}-\\mathrm{X}_{\\mathrm{L}}\\right)^{2}}$$\nat $\\omega_{\\mathrm{r}}, \\mathrm{Z}=\\sqrt{\\mathrm{R}^{2}+\\mathrm{O}^{2}}=\\mathrm{R}(\\mathrm{C})$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": "101711",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A block of metal weighing 2 kg is resting on a frictionless plane (as shown in figure). It is struck by a jet releasing water at a rate of $1 \\mathrm{kgs}^{-1}$ and at a speed of $10 \\mathrm{~ms}^{-1}$. Then, the initial acceleration of the block, in $\\mathrm{ms}^{-2}$, will be :\nPlane",
+   "options": {
+    "A": "3",
+    "B": "6",
+    "C": "5",
+    "D": "4\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{F}=\\frac{\\mathrm{dp}}{\\mathrm{dt}}=\\mathrm{v} \\frac{\\mathrm{dm}}{\\mathrm{dt}}$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{Ma}=10 \\times 1 \\\\\n\\Rightarrow 2 \\mathrm{a}=10 \\\\\n\\mathrm{a}=5 \\mathrm{~m} / \\mathrm{sec}^{2}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{F}=\\frac{\\mathrm{dp}}{\\mathrm{dt}}=\\mathrm{v} \\frac{\\mathrm{dm}}{\\mathrm{dt}}$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{Ma}=10 \\times 1 \\\\\n\\Rightarrow 2 \\mathrm{a}=10 \\\\\n\\mathrm{a}=5 \\mathrm{~m} / \\mathrm{sec}^{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": "101712",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In Vander Waals equation $\\left[\\mathrm{P}+\\frac{\\mathrm{a}}{\\mathrm{V}^{2}}\\right][\\mathrm{V}-\\mathrm{b}]=\\mathrm{RT}$; P is pressure, V is volume, R is universal gas constant and T is temperature. The ratio of constants $\\frac{\\mathrm{a}}{\\mathrm{b}}$ is dimensionally equal to :",
+   "options": {
+    "A": "$\\frac{\\mathrm{P}}{\\mathrm{V}}$",
+    "B": "$\\frac{\\mathrm{V}}{\\mathrm{P}}$",
+    "C": "PV",
+    "D": "$\\mathrm{PV}^{3}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. By principle of homogenity\n$$\\begin{array}{l}\n{[\\mathrm{P}]=\\left[\\frac{\\mathrm{a}}{\\mathrm{v}^{2}}\\right] \\text { and }[\\mathrm{b}]=[\\mathrm{v}]} \\\\\n\\Rightarrow\\left[\\frac{\\mathrm{a}}{\\mathrm{~b}}\\right]=[\\mathrm{PV}](\\mathrm{C})\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "By principle of homogenity\n$$\\begin{array}{l}\n{[\\mathrm{P}]=\\left[\\frac{\\mathrm{a}}{\\mathrm{v}^{2}}\\right] \\text { and }[\\mathrm{b}]=[\\mathrm{v}]} \\\\\n\\Rightarrow\\left[\\frac{\\mathrm{a}}{\\mathrm{~b}}\\right]=[\\mathrm{PV}](\\mathrm{C})\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "101713",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two vectors $\\overrightarrow{\\mathrm{A}}$ and $\\overrightarrow{\\mathrm{B}}$ have equal magnitudes. If magnitude of $\\overrightarrow{\\mathrm{A}}+\\overrightarrow{\\mathrm{B}}$ is equal to two times the magnitude of $\\vec{A}-\\vec{B}$, then the angle between $\\vec{A}$ and $\\overrightarrow{\\mathrm{B}}$ will be :",
+   "options": {
+    "A": "$\\sin ^{-1}\\left(\\frac{3}{5}\\right)$",
+    "B": "$\\sin ^{-1}\\left(\\frac{1}{3}\\right)$",
+    "C": "$\\cos ^{-1}\\left(\\frac{3}{5}\\right)$",
+    "D": "$\\cos ^{-1}\\left(\\frac{1}{3}\\right)$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\left(\\mathrm{a}^{2}+\\mathrm{b}^{2}+2 \\mathrm{ab} \\cos \\theta\\right)=4\\left(\\mathrm{a}^{2}+\\mathrm{b}^{2}-2 \\mathrm{ab} \\cos \\theta\\right)$ put $\\mathrm{a}=\\mathrm{b}$ we get\n$$\\begin{array}{l}\n2 a^{2}+2 a^{2} \\cos \\theta=8 a^{2}-8 a^{2} \\cos \\theta \\\\\n\\cos \\theta=\\frac{3}{5}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\left(\\mathrm{a}^{2}+\\mathrm{b}^{2}+2 \\mathrm{ab} \\cos \\theta\\right)=4\\left(\\mathrm{a}^{2}+\\mathrm{b}^{2}-2 \\mathrm{ab} \\cos \\theta\\right)$ put $\\mathrm{a}=\\mathrm{b}$ we get\n$$\\begin{array}{l}\n2 a^{2}+2 a^{2} \\cos \\theta=8 a^{2}-8 a^{2} \\cos \\theta \\\\\n\\cos \\theta=\\frac{3}{5}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": "101714",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The escape velocity of a body on a planet 'A' is $12 \\mathrm{kms}^{-1}$. The escape velocity of the body on another planet 'B', whose density is four times and radius is half of the planet ' A ', is :",
+   "options": {
+    "A": "$12 \\mathrm{kms}^{-1}$",
+    "B": "$24 \\mathrm{kms}^{-1}$",
+    "C": "$36 \\mathrm{kms}^{-1}$",
+    "D": "$6 \\mathrm{kms}^{-1}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{V}_{\\text {escape }}=\\sqrt{\\frac{2 \\mathrm{Gm}}{\\mathrm{R}}} \\Rightarrow \\sqrt{\\frac{2 \\mathrm{G} \\rho \\times \\frac{4}{3} \\pi \\mathrm{R}^{3}}{\\mathrm{R}}}$\n$$V_{\\text {escape }} \\propto \\sqrt{\\rho R^{2}}$$\n∴ if $\\rho$ is 4 times and Radius is halved.\n$$\\Rightarrow \\mathrm{V}_{\\text {escape }} \\text { will remain same } \\therefore \\text { Ans (A) }$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{V}_{\\text {escape }}=\\sqrt{\\frac{2 \\mathrm{Gm}}{\\mathrm{R}}} \\Rightarrow \\sqrt{\\frac{2 \\mathrm{G} \\rho \\times \\frac{4}{3} \\pi \\mathrm{R}^{3}}{\\mathrm{R}}}$\n$$V_{\\text {escape }} \\propto \\sqrt{\\rho R^{2}}$$\n∴ if $\\rho$ is 4 times and Radius is halved.\n$$\\Rightarrow \\mathrm{V}_{\\text {escape }} \\text { will remain same } \\therefore \\text { Ans (A) }$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": "101715",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "At a certain place the angle of dip is 30° and the horizontal component of earth's magnetic field is 0.5 G. The earth's total magnetic field (in G), at that certain place, is :",
+   "options": {
+    "A": "$\\frac{1}{\\sqrt{3}}$",
+    "B": "$\\frac{1}{2}$",
+    "C": "$\\sqrt{3}$",
+    "D": "1\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{B}_{\\mathrm{H}}=\\mathrm{B} \\cos \\theta$\n$$\\therefore \\mathrm{B}=\\frac{\\mathrm{B}_{\\mathrm{H}}}{\\cos \\theta}=\\frac{0.5 \\mathrm{G}}{\\cos 30^{\\circ}} \\Rightarrow \\frac{\\mathrm{G}}{\\sqrt{3}}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{B}_{\\mathrm{H}}=\\mathrm{B} \\cos \\theta$\n$$\\therefore \\mathrm{B}=\\frac{\\mathrm{B}_{\\mathrm{H}}}{\\cos \\theta}=\\frac{0.5 \\mathrm{G}}{\\cos 30^{\\circ}} \\Rightarrow \\frac{\\mathrm{G}}{\\sqrt{3}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "101716",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A longitudinal wave is represented by $\\mathrm{x}=10 \\sin 2 \\pi\\left(\\mathrm{nt}-\\frac{\\mathrm{x}}{\\lambda}\\right) \\mathrm{cm}$. The maximum particle velocity will be four times the wave velocity if the determined value of wavelength is equal to :",
+   "options": {
+    "A": "$2 \\pi$",
+    "B": "$5 \\pi$",
+    "C": "$\\pi$",
+    "D": "$\\frac{5 \\pi}{2}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{V}_{\\mathrm{P}} \\max =4 \\mathrm{~V}_{\\text {wave }}$\n$$\\begin{array}{l}\n\\omega A=4\\left(\\frac{\\omega}{k}\\right) \\Rightarrow A=\\frac{4 \\lambda}{2 \\pi} \\\\\n\\lambda=\\frac{2 \\pi A}{4} \\Rightarrow \\frac{20 \\pi}{4} \\Rightarrow 5 \\pi\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{V}_{\\mathrm{P}} \\max =4 \\mathrm{~V}_{\\text {wave }}$\n$$\\begin{array}{l}\n\\omega A=4\\left(\\frac{\\omega}{k}\\right) \\Rightarrow A=\\frac{4 \\lambda}{2 \\pi} \\\\\n\\lambda=\\frac{2 \\pi A}{4} \\Rightarrow \\frac{20 \\pi}{4} \\Rightarrow 5 \\pi\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "101717",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A parallel plate capacitor filled with a medium of dielectric constant 10 , is connected across a battery and is charged. The dielectric slab is replaced by another slab of dielectric constant 15. Then the energy of capacitor will :",
+   "options": {
+    "A": "increase by 50\\%",
+    "B": "decrease by 15\\%",
+    "C": "increase by 25\\%",
+    "D": "increase by 33\\%\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{E} \\Rightarrow \\frac{1}{2}(\\mathrm{KC}) \\mathrm{v}^{2}$\n∴ \\% change\n$$\\begin{array}{l}\n\\Rightarrow \\frac{\\frac{1}{2} K_{2} C V^{2}-\\frac{1}{2} K_{1} C V^{2}}{\\frac{1}{2} K_{1} C V^{2}}=\\frac{K_{2}-K_{1}}{K_{1}} \\times 100 \\\\\n\\Rightarrow \\frac{15-10}{10} \\times 100=50 \\%\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{E} \\Rightarrow \\frac{1}{2}(\\mathrm{KC}) \\mathrm{v}^{2}$\n∴ \\% change\n$$\\begin{array}{l}\n\\Rightarrow \\frac{\\frac{1}{2} K_{2} C V^{2}-\\frac{1}{2} K_{1} C V^{2}}{\\frac{1}{2} K_{1} C V^{2}}=\\frac{K_{2}-K_{1}}{K_{1}} \\times 100 \\\\\n\\Rightarrow \\frac{15-10}{10} \\times 100=50 \\%\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": "101718",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A positive charge particle of 100 mg is thrown in opposite direction to a uniform electric field of strength $1 \\times 10^{5} \\mathrm{NC}^{-1}$. If the charge on the particle is $40 \\mu \\mathrm{C}$ and the initial velocity is $200 \\mathrm{~ms}^{-1}$, how much distance it will travel before coming to the rest momentarily :",
+   "options": {
+    "A": "1 m",
+    "B": "5 m",
+    "C": "10 m",
+    "D": "0.5 m\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Distance travelled by particle before stopping\n$$\\frac{V^{2}}{2 a}=S \\Rightarrow \\frac{v^{2} m}{2 q E} \\Rightarrow \\frac{(200)^{2} \\times 100 \\times 10^{-6}}{2 \\times 40 \\times 10^{-6} \\times 10^{5}}=0.5 \\mathrm{~m}$$\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Distance travelled by particle before stopping\n$$\\frac{V^{2}}{2 a}=S \\Rightarrow \\frac{v^{2} m}{2 q E} \\Rightarrow \\frac{(200)^{2} \\times 100 \\times 10^{-6}}{2 \\times 40 \\times 10^{-6} \\times 10^{5}}=0.5 \\mathrm{~m}$$",
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": "101719",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Using Young's double slit experiment, a monochromatic light of wavelength $5000 \\AA$ produces fringes of fringe width 0.5 mm. If another monochromatic light of wavelength $6000 \\AA$ is used and the separation between the slits is doubled, then the new fringe width will be :",
+   "options": {
+    "A": "0.5 mm",
+    "B": "1.0 mm",
+    "C": "0.6 mm",
+    "D": "0.3 mm\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Fringe width $\\beta=\\frac{\\mathrm{D} \\lambda}{\\mathrm{d}}$\n$$\\begin{array}{l}\n\\lambda_{1}=5000 \\AA \\\\\n\\beta_{1}=\\frac{D}{d}\\left(5000 \\times 10^{-10}\\right)=5 \\times 10^{-4} \\mathrm{~m} \\\\\n\\beta_{2}=\\frac{D}{(2 d)}\\left(6000 \\times 10^{-10}\\right)=x \\text { (let) }\n\\end{array}$$\n\nDivide (II) \\& (I)\n$$\\begin{array}{l}\n\\frac{\\beta_{2}}{\\beta_{1}}=\\frac{3000 \\times 10^{-10}}{5000 \\times 10^{-10}}=\\frac{x}{5 \\times 10^{-4}} \\\\\nx=3 \\times 10^{-4} \\mathrm{~m} \\text { or } 0.3 \\mathrm{~mm}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Fringe width $\\beta=\\frac{\\mathrm{D} \\lambda}{\\mathrm{d}}$\n$$\\begin{array}{l}\n\\lambda_{1}=5000 \\AA \\\\\n\\beta_{1}=\\frac{D}{d}\\left(5000 \\times 10^{-10}\\right)=5 \\times 10^{-4} \\mathrm{~m} \\\\\n\\beta_{2}=\\frac{D}{(2 d)}\\left(6000 \\times 10^{-10}\\right)=x \\text { (let) }\n\\end{array}$$",
+     "Divide (II) \\& (I)\n$$\\begin{array}{l}\n\\frac{\\beta_{2}}{\\beta_{1}}=\\frac{3000 \\times 10^{-10}}{5000 \\times 10^{-10}}=\\frac{x}{5 \\times 10^{-4}} \\\\\nx=3 \\times 10^{-4} \\mathrm{~m} \\text { or } 0.3 \\mathrm{~mm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "101720",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Only 2\\% of the optical source frequency is the available channel bandwidth for an optical communicating system operating at 1000 nm. If an audio signal requires a bandwidth of 8 kHz, how many channels can be accommodated for transmission :",
+   "options": {
+    "A": "$375 \\times 10^{7}$",
+    "B": "$75 \\times 10^{7}$",
+    "C": "$375 \\times 10^{8}$",
+    "D": "$75 \\times 10^{9}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Frequency at $1000 \\mathrm{~nm}=\\frac{3 \\times 10}{1000 \\times 10^{-9}} \\Rightarrow 3 \\times 10^{14} \\mathrm{~Hz}$ available for channel band width\n$$=\\frac{2}{100} \\times 3 \\times 10^{14} \\Rightarrow 6 \\times 10^{12} \\mathrm{~Hz}$$\n\nBandwidth for 1 channel = 8000 Hz\n∴ No. of channel\n$$=\\frac{6 \\times 10^{12}}{8 \\times 10^{3}} \\Rightarrow \\frac{600}{8} \\times 10^{7}=75 \\times 10^{7}$$\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Frequency at $1000 \\mathrm{~nm}=\\frac{3 \\times 10}{1000 \\times 10^{-9}} \\Rightarrow 3 \\times 10^{14} \\mathrm{~Hz}$ available for channel band width\n$$=\\frac{2}{100} \\times 3 \\times 10^{14} \\Rightarrow 6 \\times 10^{12} \\mathrm{~Hz}$$",
+     "Bandwidth for 1 channel = 8000 Hz\n∴ No. of channel\n$$=\\frac{6 \\times 10^{12}}{8 \\times 10^{3}} \\Rightarrow \\frac{600}{8} \\times 10^{7}=75 \\times 10^{7}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "101721",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two coils require 20 minutes and 60 minutes respectively to produce same amount of heat energy when connected separately to the same source. If they are connected in parallel arrangement to the same source; the time required to produce same amount of heat by the combination of coils, will be $\\_\\_\\_\\_$ min.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "15"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Let they meet at time t.\n$$\\begin{array}{l}\n\\mathrm{t}=\\sqrt{\\frac{2 \\mathrm{~h}}{\\mathrm{~g}}}=\\sqrt{\\frac{2 \\times 80}{10}} \\\\\n=4 \\mathrm{sec}\n\\end{array}$$",
+     "Time taken by ball B to meet $\\mathrm{A}=2 \\mathrm{sec}$\n$$\\begin{array}{l}\n\\text { using } S=u t+\\frac{1}{2} a t^{2} \\\\\n-80=-u \\times 2+\\frac{1}{2}(-10)(2)^{2} \\\\\nu=30\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "101722",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The intensity of the light from a bulb incident on a surface is $0.22 \\mathrm{~W} / \\mathrm{m}^{2}$. The amplitude of the magnetic field in this light-wave is $\\_\\_\\_\\_$ $\\times 10^{-9} \\mathrm{~T}$.\n(Given : Permittivity of vacuum $\\epsilon_{0}=8.85 \\times 10^{-12} \\mathrm{C}^{2} \\mathrm{~N}^{-1} \\mathrm{~m}^{-2}$, speed of light in vacuum $\\mathrm{c}=3 \\times 10^{8} \\mathrm{~ms}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "43"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Mass of pieces by $\\frac{\\mathrm{M}}{4}, \\frac{\\mathrm{M}}{4}, \\frac{\\mathrm{M}}{2}$\nconserving momentum\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{P}}_{1}+\\overrightarrow{\\mathrm{P}}_{2}+\\overrightarrow{\\mathrm{P}}_{3}=0 \\\\\n\\overline{\\mathrm{P}}_{3}=-\\left(\\overline{\\mathrm{P}}_{1}+\\overline{\\mathrm{P}}_{2}\\right)\n\\end{array}$$",
+     "As $\\overline{\\mathrm{P}}_{1}$ \\& $\\overline{\\mathrm{P}}_{2}$ are perpendicular\n$$\\begin{array}{l}\n\\text { so } \\mathrm{P}_{3}=\\sqrt{\\mathrm{P}_{1}^{2}+\\mathrm{P}_{2}^{2}} \\\\\n\\mathrm{P}_{3}=(50) \\frac{\\mathrm{M}}{4} \\\\\n\\& \\mathrm{P}_{3}=\\frac{\\mathrm{M}}{2} \\mathrm{v} \\\\\n\\text { so } \\mathrm{v}=25\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "101723",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "As per the given figure, two plates A and B of thermal conductivity K and 2 K are joined together to form a compound plate. The thickness of plates are 4.0 cm and 2.5 cm respectively and the area of cross-section is $120 \\mathrm{~cm}^{2}$ for each plate. The equivalent thermal conductivity of the compound plate is $\\left(1+\\frac{5}{\\alpha}\\right) \\mathrm{K}$, then the value of $\\alpha$ will be\n$\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "21"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{A}}{\\mathrm{A}_{0}}=\\frac{\\mathrm{N}}{\\mathrm{N}_{0}}$\n$$\\begin{array}{l}\n\\frac{2 \\times 10^{-5}}{2.56 \\times 10^{-3}}=\\frac{\\mathrm{N}}{\\mathrm{~N}_{0}} \\\\\n\\frac{\\mathrm{~N}}{\\mathrm{~N}_{0}}=\\frac{1}{128} \\Rightarrow \\mathrm{~N}=\\frac{\\mathrm{N}_{0}}{128}\n\\end{array}$$",
+     "After 7 half life activity comes down to given value $\\mathrm{T}=7 \\times 5$\n$=35$ days"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "101724",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A body is performing simple harmonic with an amplitude of 10 cm. The velocity of the body was tripled by air Jet when it is at 5 cm from its mean position. The new amplitude of vibration is $\\sqrt{\\mathrm{x}}$ cm. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "700"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{L}_{0}$ = angular momentum of shell about O.\nAs shell is rolling\n$$\\begin{array}{l}\n\\text { so } V_{\\mathrm{cm}}=\\omega R \\\\\nL_{0}=m V_{\\mathrm{cm}} R+I \\omega \\\\\n=1 \\times \\omega R \\times R+\\frac{2}{3} R^{2} \\omega \\\\\n=\\frac{5}{3} R^{2} \\omega \\\\\n\\text { so } a=5\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": "101725",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The variation of applied potential and current flowing through a given wire is shown in figure. The length of wire is 31.4 cm . The diameter of wire is measured as 2.4 cm . The resistivity of the given wire is measured as $\\mathrm{x} \\times 10^{-3} \\Omega \\mathrm{~cm}$. The value of x is $\\_\\_\\_\\_$ . [Take $\\pi=3.14$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "144"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "No of moles $=\\frac{44.8}{22.4}=2$\nGas is mono atomic so $\\mathrm{C}_{\\mathrm{v}}=\\frac{3}{2} \\mathrm{R}$\n$$\\begin{array}{l}\n\\Delta Q=\\mathrm{nC}_{\\mathrm{v}} \\Delta \\mathrm{~T} \\\\\n=2 \\times \\frac{3}{2} \\mathrm{R}(20) \\\\\n=60 \\mathrm{R} \\\\\n=60 \\times 8.3 \\\\\n=498 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "101726",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "300 cal. of heat is given to a heat engine and it rejects 225 cal. of heat. If source temperature is $227^{\\circ} \\mathrm{C}$, then the temperature of sink will be $\\_\\_\\_\\_$ ${ }^{\\circ} \\mathrm{C}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "102"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "By Hooke's Law\nso $\\mathrm{F} \\alpha \\Delta \\mathrm{L}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{F}_{1}}{\\mathrm{~F}_{2}}=\\frac{\\Delta \\mathrm{L}_{1}}{\\Delta \\mathrm{~L}_{2}} \\\\\n\\frac{10}{20}=\\frac{\\left(\\mathrm{L}_{1}-\\mathrm{L}\\right)}{\\left(\\mathrm{L}_{2}-\\mathrm{L}\\right)} \\\\\n\\mathrm{L}=2 \\mathrm{~L}_{1}-\\mathrm{L}_{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "101727",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "$\\sqrt{\\mathrm{d}_{1}}$ and $\\sqrt{\\mathrm{d}_{2}}$ are the impact parameters corresponding to scattering angles 60° and 90° respectively, when an $\\alpha$ particle is approaching a gold nucleus. For $\\mathrm{d}_{1}=\\mathrm{x} \\mathrm{d}_{2}$, the value of x will be $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "To free the electron from metal surface minimum energy required, is equal to the work function of that metal.\nSo Assertion A, is correct.\n$\\mathrm{hv}=\\mathrm{w}_{0}+\\mathrm{K} . \\mathrm{E} ._{\\text {max }}$\nif $\\mathrm{hv}=\\mathrm{w}_{0}$\n$\\Rightarrow \\mathrm{K} . \\mathrm{E}_{._{\\text {max }}}=0$\nHence reason R, is correct, But R is not the correct explanation of A."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": "101728",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A transistor is used in an amplifier circuit in common emitter mode. If the base current changes by $100 \\mu \\mathrm{~A}$, it brings a change of 10 mA in collector current. If the load resistance is $2 \\mathrm{k} \\Omega$ and input resistance is $1 \\mathrm{k} \\Omega$, the value of power gain is $\\mathrm{x} \\times 10^{4}$. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "By work energy theorem\nwork done by net force $=\\Delta \\mathrm{K} . \\mathrm{E}$.\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{w}=\\frac{1}{2} \\mathrm{mv}_{\\mathrm{f}}^{2}-\\frac{1}{2} \\mathrm{mv}_{\\mathrm{i}}^{2} \\\\\n\\mathrm{w}=\\frac{1}{2} \\times 0.5 \\times(0.25)^{2} \\times(4)^{5} \\\\\n\\mathrm{w}=16 \\mathrm{~J}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "101729",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A parallel beam of light is allowed to fall on a transparent spherical globe of diameter 30 cm and refractive index 1.5 . The distance from the centre of the globe at which the beam of light can converge is $\\_\\_\\_\\_$ mm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "225"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "radius of paerticle in cyclotron\n$$\\mathrm{r}=\\frac{\\sqrt{2 \\mathrm{mK} . \\mathrm{E} .}}{\\mathrm{qB}}$$",
+     "So ratio of new radius to original\n$$\\frac{\\mathrm{r}_{\\mathrm{n}}}{\\mathrm{r}_{0}}=\\sqrt{\\frac{(\\text { K.E. })_{\\mathrm{n}}}{(\\text { K.E })_{0}}}=\\sqrt{4} \\Rightarrow 2: 1$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "101730",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "For the network shown below, the value $V_{B}-V_{A}$ is\n$\\_\\_\\_\\_$ V.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "10"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "at $\\omega_{\\mathrm{r}}, \\mathrm{X}_{\\mathrm{C}}=\\mathrm{X}_{\\mathrm{L}}$\n$$\\Rightarrow \\frac{1}{\\omega_{\\mathrm{r}} \\mathrm{C}}=\\omega_{\\mathrm{r}} \\mathrm{~L}$$",
+     "So if $\\omega<\\omega_{\\mathrm{r}}$ then $\\mathrm{x}_{\\mathrm{C}}$ will increase and $\\mathrm{X}_{\\mathrm{L}}$ will decrease.\nHence to left of $\\omega_{\\mathrm{r}}$ circuit is capacitive\n$$\\mathrm{Z}=\\sqrt{\\mathrm{R}^{2}+\\left(\\mathrm{X}_{\\mathrm{C}}-\\mathrm{X}_{\\mathrm{L}}\\right)^{2}}$$\nat $\\omega_{\\mathrm{r}}, \\mathrm{Z}=\\sqrt{\\mathrm{R}^{2}+\\mathrm{O}^{2}}=\\mathrm{R}(\\mathrm{C})$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

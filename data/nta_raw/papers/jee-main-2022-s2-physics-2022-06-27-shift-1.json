@@ -1,61 +1,1023 @@
 {
+ "paper_id": "jee-main-2022-s2-physics-2022-06-27-shift-1",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-physics-2022-06-27-shift-1",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-27",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-physics-2022-06-27-shift-1",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-27",
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132530-27-06%20MORNING%20PHYSICS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132530-27-06%20MORNING%20PHYSICS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "06906e303f7bdadad8e0299ab5696849b17531e0a93a906c5984205d399640ae",
+  "page_count": 8,
+  "text_chars": 737,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-27-shift-1.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 0,
+  "xval_printed_agree": 30,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "101301",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "101302",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "101303",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "101304",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "101305",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "101306",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "101307",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "101308",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "101309",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "101310",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "101311",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "101312",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "101313",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "101314",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "101315",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "101316",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "101317",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "101318",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "101319",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "101320",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "101321",
+    "answer": {
+     "raw": "16",
+     "value": "16"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "101322",
+    "answer": {
+     "raw": "975",
+     "value": "975"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "101323",
+    "answer": {
+     "raw": "450",
+     "value": "450"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "101324",
+    "answer": {
+     "raw": "114",
+     "value": "114"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "101325",
+    "answer": {
+     "raw": "8",
+     "value": "8"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "101326",
+    "answer": {
+     "raw": "48",
+     "value": "48"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "101327",
+    "answer": {
+     "raw": "125",
+     "value": "125"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "101328",
+    "answer": {
+     "raw": "192",
+     "value": "192"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "101329",
+    "answer": {
+     "raw": "300",
+     "value": "300"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "101330",
+    "answer": {
+     "raw": "10",
+     "value": "10"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "101301",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A projectile is launched at an angle ' $\\alpha$ ' with the horizontal with a velocity $20 \\mathrm{~ms}^{-1}$. After 10 s, its inclination with horizontal is ' $\\beta$ '. The value of $\\tan \\beta$ will be : $\\left(\\mathrm{g}=10 \\mathrm{~ms}^{-2}\\right)$",
+   "options": {
+    "A": "$\\tan \\alpha+5 \\sec \\alpha$",
+    "B": "$\\tan \\alpha-5 \\sec \\alpha$",
+    "C": "$2 \\tan \\alpha-5 \\sec \\alpha$",
+    "D": "$2 \\tan \\alpha+5 \\sec \\alpha$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n$$\\begin{array}{l}\nv_{x}=u_{x}=20 \\cos \\alpha \\\\\nv_{y}=20 \\sin \\alpha-10 \\times 10 \\\\\n\\tan \\beta=\\frac{v_{y}}{v_{x}}=\\frac{20 \\sin \\alpha-100}{20 \\cos \\alpha} \\\\\n=\\tan \\alpha-5 \\sec \\alpha\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nv_{x}=u_{x}=20 \\cos \\alpha \\\\\nv_{y}=20 \\sin \\alpha-10 \\times 10 \\\\\n\\tan \\beta=\\frac{v_{y}}{v_{x}}=\\frac{20 \\sin \\alpha-100}{20 \\cos \\alpha} \\\\\n=\\tan \\alpha-5 \\sec \\alpha\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "06906e303f7bdadad8e0299ab5696849b17531e0a93a906c5984205d399640ae",
-    "page_count": 8,
-    "text_chars": 737,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-27-shift-1.pdf"
+  {
+   "qno": 2,
+   "question_id": "101302",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A girl standing on road holds her umbrella at 45° with the vertical to keep the rain away. If she starts running without umbrella with a speed of $15 \\sqrt{2} k m h^{-1}$, the rain drops hit her head vertically. The speed of rain drops with respect to the moving girl is :",
+   "options": {
+    "A": "$30 \\mathrm{kmh}^{-1}$",
+    "B": "$\\frac{25}{\\sqrt{2}} k m h^{-1}$",
+    "C": "$\\frac{30}{\\sqrt{2}} k m h^{-1}$",
+    "D": "$25 \\mathrm{kmh}^{-1}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n$$\\begin{array}{l}\n\\mathrm{V}=\\tan \\theta=\\frac{V_{G}}{V_{R G}} \\\\\n1=\\frac{V_{G}}{V_{R G}} \\Rightarrow 15 \\sqrt{2}=V_{R G}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{V}=\\tan \\theta=\\frac{V_{G}}{V_{R G}} \\\\\n1=\\frac{V_{G}}{V_{R G}} \\Rightarrow 15 \\sqrt{2}=V_{R G}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "101303",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A sliver wire has mass $(0.6 \\pm 0.006) \\mathrm{g}$, radius $(0.5 \\pm 0.005) \\mathrm{mm}$ and length $(4 \\pm 0.04) \\mathrm{cm}$. The maximum percentage error in the measurement of its density will be :",
+   "options": {
+    "A": "4\\%",
+    "B": "$3 \\%$",
+    "C": "$6 \\%$",
+    "D": "$7 \\%$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol.\n$$\\begin{array}{l}\nM=(0.6 \\pm 0.006) \\mathrm{g} \\\\\nr=(0.5 \\pm 0.005) \\mathrm{mm} \\\\\nl=(4 \\pm 0.04) \\mathrm{cm}\n\\end{array}$$\n$$\\begin{array}{l}\n\\rho=\\frac{m}{V} \\\\\n\\Rightarrow \\frac{\\Delta \\rho}{\\rho}=\\frac{\\Delta m}{m}+\\frac{2 \\Delta r}{r}+\\frac{\\Delta l}{l}\n\\end{array}$$\n(Volume of cylinder $=\\pi r^{2} l$ )\n$$\\begin{array}{l}\n=\\frac{0.006}{0.6}+\\frac{2 \\times 0.005}{0.5}+\\frac{0.04}{4} \\\\\n100 \\times \\frac{\\Delta \\rho}{\\rho}=4 \\times 10^{-2} \\times 100 \\\\\n\\frac{\\Delta \\rho}{\\rho} \\times 100=4 \\%\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nM=(0.6 \\pm 0.006) \\mathrm{g} \\\\\nr=(0.5 \\pm 0.005) \\mathrm{mm} \\\\\nl=(4 \\pm 0.04) \\mathrm{cm}\n\\end{array}$$\n$$\\begin{array}{l}\n\\rho=\\frac{m}{V} \\\\\n\\Rightarrow \\frac{\\Delta \\rho}{\\rho}=\\frac{\\Delta m}{m}+\\frac{2 \\Delta r}{r}+\\frac{\\Delta l}{l}\n\\end{array}$$\n(Volume of cylinder $=\\pi r^{2} l$ )\n$$\\begin{array}{l}\n=\\frac{0.006}{0.6}+\\frac{2 \\times 0.005}{0.5}+\\frac{0.04}{4} \\\\\n100 \\times \\frac{\\Delta \\rho}{\\rho}=4 \\times 10^{-2} \\times 100 \\\\\n\\frac{\\Delta \\rho}{\\rho} \\times 100=4 \\%\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "101304",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A system of two blocks of masses $\\mathrm{m}=2 \\mathrm{~kg}$ and $\\mathrm{M}=8 \\mathrm{~kg}$ is placed on a smooth table as shown in figure. The coefficient of static friction between two blocks is 0.5 . The maximum horizontal force F that can be applied to the block of mass M so that the blocks move together will be :",
+   "options": {
+    "A": "9.8 N",
+    "B": "39.2 N",
+    "C": "49 N",
+    "D": "78.4 N\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nFor moving together\n$$\\begin{array}{l}\nF_{\\max }=m_{T} a_{A} \\\\\n=10 \\times 4.9 \\\\\n=49 \\mathrm{~N}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 5,
+   "question_id": "101305",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two blocks of masses 10 kg and 30 kg are placed on the same straight line with coordinates $(0,0) \\mathrm{cm}$ and $(\\mathrm{x}, 0)$ cm respectively. The block of 10 kg is moved on the same line through a distance of 6 cm towards the other block. The distance through which the block of 30 kg must be moved to keep the position of centre of mass of the system unchanged is :",
+   "options": {
+    "A": "4 cm towards the 10 kg block",
+    "B": "2 cm away from the 10 kg block",
+    "C": "2 cm towards the 10 kg block",
+    "D": "4 cm away from the 10 kg block\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol. $\\Delta x_{G}=\\frac{m_{1} \\Delta x_{1}+m_{2} \\Delta x_{2}}{m_{1}+m_{2}}$\n$$\\begin{array}{l}\n0=\\frac{10 \\times 6+30\\left(\\Delta x_{2}\\right)}{40} \\\\\n\\Delta x_{2}=-2 \\mathrm{~cm}\n\\end{array}$$\n\nBlock of mass 30 kg will to move towards 10 kg ."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\Delta x_{G}=\\frac{m_{1} \\Delta x_{1}+m_{2} \\Delta x_{2}}{m_{1}+m_{2}}$\n$$\\begin{array}{l}\n0=\\frac{10 \\times 6+30\\left(\\Delta x_{2}\\right)}{40} \\\\\n\\Delta x_{2}=-2 \\mathrm{~cm}\n\\end{array}$$",
+     "Block of mass 30 kg will to move towards 10 kg ."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "101306",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A $72 \\Omega$ galvanometer is shunted by a resistance of $8 \\Omega$. The percentage of the total current which passes through the galvanometer is :",
+   "options": {
+    "A": "0.1\\%",
+    "B": "$10 \\%$",
+    "C": "$25 \\%$",
+    "D": "$0.25 \\%$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $S=\\frac{R_{G}}{\\frac{I}{I_{g}}-1}$\n$$8=\\frac{72}{\\frac{I}{I_{g}}-1}$$\n$$\\begin{array}{l}\n\\frac{I}{I_{g}}-1=9 \\\\\n\\frac{I}{I_{g}}=10 \\Rightarrow \\frac{I_{g}}{I}=\\frac{1}{10} \\quad \\% I=\\frac{I_{g}}{I} \\times 100=10 \\%\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$S=\\frac{R_{G}}{\\frac{I}{I_{g}}-1}$\n$$8=\\frac{72}{\\frac{I}{I_{g}}-1}$$\n$$\\begin{array}{l}\n\\frac{I}{I_{g}}-1=9 \\\\\n\\frac{I}{I_{g}}=10 \\Rightarrow \\frac{I_{g}}{I}=\\frac{1}{10} \\quad \\% I=\\frac{I_{g}}{I} \\times 100=10 \\%\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "101307",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements :\nStatement I : The law of gravitation holds good for any pair of bodies in the universe.\nStatement II : The weight of any person becomes zero when the person is at the centre of the earth.\nIn the light of the above statements, choose the correct answer from the options given below.",
+   "options": {
+    "A": "Both statement I and Statement II are true",
+    "B": "Both statement I and Statement II are false",
+    "C": "Statement I is true but Statement II are false",
+    "D": "Statement I is false but Statement II is true\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Since it is universal law so it hold good for any pair of bodies.\n\nThe value of $\\mathbf{g}$ at centre is zero.\nSo statement I and Statement II are true.\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Since it is universal law so it hold good for any pair of bodies.",
+     "The value of $\\mathbf{g}$ at centre is zero.\nSo statement I and Statement II are true.",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": "101308",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "What percentage of kinetic energy of a moving particle is transferred to a stationary particle when it strikes the stationary particle of 5 times its mass? (Assume the collision to be head-on elastic collision)",
+   "options": {
+    "A": "50.0\\%",
+    "B": "$66.6 \\%$",
+    "C": "55.5\\%",
+    "D": "$33.3 \\%$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Velocity after collision\n$$\\begin{array}{l}\nV_{2}=\\frac{\\left(m_{2}-m_{1}\\right) u_{2}+2 m_{1} u_{1}}{m_{1}+m_{2}} \\\\\nV_{2}=\\frac{(5 m-m) 0+2 m \\cdot u_{0}}{m+5 m}=\\frac{u_{0}}{3} \\\\\n\\% \\Delta K E=\\frac{\\frac{1}{2} 5 m\\left(\\frac{u_{0}}{3}\\right)^{2}-0}{\\frac{1}{2} m u_{0}^{2}} \\times 100 \\\\\n=\\frac{5 u_{0}^{2}}{9 u_{0}^{2}} \\times 100=\\frac{500}{9}=55.6 \\%\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Velocity after collision\n$$\\begin{array}{l}\nV_{2}=\\frac{\\left(m_{2}-m_{1}\\right) u_{2}+2 m_{1} u_{1}}{m_{1}+m_{2}} \\\\\nV_{2}=\\frac{(5 m-m) 0+2 m \\cdot u_{0}}{m+5 m}=\\frac{u_{0}}{3} \\\\\n\\% \\Delta K E=\\frac{\\frac{1}{2} 5 m\\left(\\frac{u_{0}}{3}\\right)^{2}-0}{\\frac{1}{2} m u_{0}^{2}} \\times 100 \\\\\n=\\frac{5 u_{0}^{2}}{9 u_{0}^{2}} \\times 100=\\frac{500}{9}=55.6 \\%\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "101309",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The velocity of a small ball of mass 'm' and density $\\mathrm{d}_{1}$, when dropped in a container filled with glycerine, becomes constant after some time. If the density of glycerine is $\\mathrm{d}_{2}$, then the viscous force acting on the ball, will be :",
+   "options": {
+    "A": "$m g\\left(1-\\frac{d_{1}}{d_{2}}\\right)$",
+    "B": "$m g\\left(1-\\frac{d_{2}}{d_{1}}\\right)$",
+    "C": "$m g\\left(\\frac{d_{1}}{d_{2}}-1\\right)$",
+    "D": "$m g\\left(\\frac{d_{2}}{d_{1}}-1\\right)$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n$$F_{V}=m g-F_{B}$$\n\nSol.\n$$\\begin{array}{l}\n=m g-\\left(\\frac{m}{d_{1}} \\times d_{2}\\right) g \\\\\n=m g\\left(1-\\frac{d_{2}}{d_{1}}\\right)\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n=m g-\\left(\\frac{m}{d_{1}} \\times d_{2}\\right) g \\\\\n=m g\\left(1-\\frac{d_{2}}{d_{1}}\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "101310",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The susceptibility of a paramagnetic material is 99. The permeability of the material in $\\mathrm{Wb} / \\mathrm{A}-\\mathrm{m}$ is : [Permeability of free space $\\mu_{0}=4 \\pi \\times 10^{-7} \\mathrm{~Wb} / A-\\mathrm{m}$ ]",
+   "options": {
+    "A": "$4 \\pi \\times 10^{-7}$",
+    "B": "$4 \\pi \\times 10^{-4}$",
+    "C": "$4 \\pi \\times 10^{-5}$",
+    "D": "$4 \\pi \\times 10^{-6}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol. Susceptibility $\\chi=99$\n$$\\begin{array}{l}\n\\mu_{r}=\\frac{\\mu}{\\mu_{0}}=1+\\chi \\\\\n\\mu=\\mu_{0}(1+\\chi) \\\\\n=4 \\pi \\times 10^{-7}[1+99] \\\\\n=4 \\pi \\times 10^{-5}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Susceptibility $\\chi=99$\n$$\\begin{array}{l}\n\\mu_{r}=\\frac{\\mu}{\\mu_{0}}=1+\\chi \\\\\n\\mu=\\mu_{0}(1+\\chi) \\\\\n=4 \\pi \\times 10^{-7}[1+99] \\\\\n=4 \\pi \\times 10^{-5}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": "101311",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The current flowing through an ac circuit is given by\n$$I=5 \\sin (120 \\pi t) A$$\nHow long will the current take to reach the peak value starting from zero?",
+   "options": {
+    "A": "$\\frac{1}{60} s$",
+    "B": "60s",
+    "C": "$\\frac{1}{120} s$",
+    "D": "$\\frac{1}{240} s$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\omega=120 \\pi=\\frac{2 \\pi}{T} \\Rightarrow T=\\frac{1}{60} \\mathrm{sec}$\ntime taken to reach peak value $=\\frac{T}{4}=\\frac{1}{240} \\mathrm{~s}$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\omega=120 \\pi=\\frac{2 \\pi}{T} \\Rightarrow T=\\frac{1}{60} \\mathrm{sec}$\ntime taken to reach peak value $=\\frac{T}{4}=\\frac{1}{240} \\mathrm{~s}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": "101312",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Mach List-I with List -II :\nList - I\nList - II\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline & List-I & & List-Ii \\\\\n\\hline (a) & Ultraviolet rays & (i) & Study crystal structure \\\\\n\\hline (b) & Microwaves & (ii) & Greenhouse effect \\\\\n\\hline (c) & Infrared waves & (iii) & Sterilizing surgical instrument \\\\\n\\hline (d) & X-rays & (iv) & Radar system \\\\\n\\hline\n\\end{tabular}\nChoose the correct answer from the options given below:",
+   "options": {
+    "A": "(a) - (iii), (b) - (iv), (c) - (ii), (d) - (i)",
+    "B": "(a) - (iii), (b) - (i), (c) - (ii), (d) - (iv)",
+    "C": "(a) - (iv), (b) - (iii), (c) - (ii), (d) - (i)",
+    "D": "(a) - (iii), (b) - (iv), (c) - (i), (d) - (ii)\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. (Fact)\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "(Fact)",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "101313",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "An $\\alpha$ particle and a carbon 12 atom has same kinetic energy K. The ratio of their de-Broglie wavelength $\\left(\\lambda_{a}: \\lambda_{C 12}\\right)$ is :",
+   "options": {
+    "A": "$1: \\sqrt{3}$",
+    "B": "$\\sqrt{3}: 1$",
+    "C": "$3: 1$",
+    "D": "$2: \\sqrt{3}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $k=\\frac{P^{2}}{2 m} \\Rightarrow P \\alpha \\sqrt{m}$\nNow $\\lambda=\\frac{h}{p}$\nSo, $\\lambda \\alpha \\frac{1}{p} \\Rightarrow \\lambda \\alpha \\frac{1}{\\sqrt{m}}$\n$$\\frac{\\lambda_{\\alpha}}{\\lambda_{C 12}}=\\frac{\\sqrt{3}}{1}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$k=\\frac{P^{2}}{2 m} \\Rightarrow P \\alpha \\sqrt{m}$\nNow $\\lambda=\\frac{h}{p}$\nSo, $\\lambda \\alpha \\frac{1}{p} \\Rightarrow \\lambda \\alpha \\frac{1}{\\sqrt{m}}$\n$$\\frac{\\lambda_{\\alpha}}{\\lambda_{C 12}}=\\frac{\\sqrt{3}}{1}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": "101314",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A force of 10N acts on a charged particle placed between two plates of a charged capacitor. If one plate of capacitor is removed, then the force acting on that particle will be :",
+   "options": {
+    "A": "5 N",
+    "B": "10 N",
+    "C": "20 N",
+    "D": "Zero\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n$$\\left|\\begin{array}{cc}\n\\text { Q } & - \\text { Q } \\\\\n+ & E_{-}^{-} \\\\\n+ & \\bullet \\\\\n+ & -\n\\end{array}\\right|$$\n$F=q E=q\\left(\\frac{Q}{A \\epsilon_{0}}\\right)=\\frac{q Q}{A \\epsilon_{0}}=10 N$\nNow, when one plate is removed.\n$$\\begin{array}{l}\n\\frac{\\mathrm{Q}}{2} \\frac{\\mathrm{Q}}{2} \\\\\n+\\mathrm{O}^{+} \\\\\n+\\mathrm{E}^{\\prime} \\\\\n+\\mathrm{E}^{\\prime} \\\\\nE^{\\prime}=\\frac{Q}{2 A \\in_{0}} \\\\\nF=q E^{\\prime}=\\frac{Q q}{2 A \\in_{0}}=5 N\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\left|\\begin{array}{cc}\n\\text { Q } & - \\text { Q } \\\\\n+ & E_{-}^{-} \\\\\n+ & \\bullet \\\\\n+ & -\n\\end{array}\\right|$$\n$F=q E=q\\left(\\frac{Q}{A \\epsilon_{0}}\\right)=\\frac{q Q}{A \\epsilon_{0}}=10 N$\nNow, when one plate is removed.\n$$\\begin{array}{l}\n\\frac{\\mathrm{Q}}{2} \\frac{\\mathrm{Q}}{2} \\\\\n+\\mathrm{O}^{+} \\\\\n+\\mathrm{E}^{\\prime} \\\\\n+\\mathrm{E}^{\\prime} \\\\\nE^{\\prime}=\\frac{Q}{2 A \\in_{0}} \\\\\nF=q E^{\\prime}=\\frac{Q q}{2 A \\in_{0}}=5 N\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": "101315",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The displacement of simple harmonic oscillator after 3 seconds starting from its mean position is equal to half of its amplitude. The time period of harmonic motion is :",
+   "options": {
+    "A": "6 s",
+    "B": "8 s",
+    "C": "12 s",
+    "D": "36 s\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $X=A \\sin \\omega t\\left(t=3, X=\\frac{A}{2}\\right)$\n$$\\begin{array}{l}\n\\Rightarrow \\frac{A}{2}=A \\sin 3 \\omega \\\\\n\\Rightarrow \\sin 3 \\omega=\\frac{1}{2} \\\\\n\\Rightarrow 3 \\omega=\\frac{\\pi}{6} \\\\\n\\Rightarrow \\omega=\\frac{\\pi}{18}=\\frac{2 \\pi}{T} \\\\\n\\Rightarrow T=36 \\mathrm{~s}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$X=A \\sin \\omega t\\left(t=3, X=\\frac{A}{2}\\right)$\n$$\\begin{array}{l}\n\\Rightarrow \\frac{A}{2}=A \\sin 3 \\omega \\\\\n\\Rightarrow \\sin 3 \\omega=\\frac{1}{2} \\\\\n\\Rightarrow 3 \\omega=\\frac{\\pi}{6} \\\\\n\\Rightarrow \\omega=\\frac{\\pi}{18}=\\frac{2 \\pi}{T} \\\\\n\\Rightarrow T=36 \\mathrm{~s}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "101316",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "An observer moves towards a stationary source of sound with a velocity equal to one-fifth of the velocity of sound. The percentage change in the frequency will be :",
+   "options": {
+    "A": "20\\%",
+    "B": "10\\%",
+    "C": "5\\%",
+    "D": "0\\%\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $f_{0}=\\left(\\frac{v+v_{0}}{v}\\right) f_{s}$\n$$\\begin{array}{l}\nf_{0}=\\left(\\frac{v+\\frac{v}{5}}{v}\\right) f_{s} \\\\\nf_{0}=\\frac{6}{5} f_{s} \\\\\n\\% \\text { change }=\\frac{f_{0}-f_{s}}{f_{s}} \\times 100 \\\\\n=\\frac{1}{5} \\times 100=20 \\%\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$f_{0}=\\left(\\frac{v+v_{0}}{v}\\right) f_{s}$\n$$\\begin{array}{l}\nf_{0}=\\left(\\frac{v+\\frac{v}{5}}{v}\\right) f_{s} \\\\\nf_{0}=\\frac{6}{5} f_{s} \\\\\n\\% \\text { change }=\\frac{f_{0}-f_{s}}{f_{s}} \\times 100 \\\\\n=\\frac{1}{5} \\times 100=20 \\%\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "101317",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Consider a light ray travelling in air is incident into a medium of refractive index $\\sqrt{2 n}$. The incident angle is twice that of refracting angle. Then, the angle of incidence will be :",
+   "options": {
+    "A": "$\\sin ^{-1}(\\sqrt{n})$",
+    "B": "$\\cos ^{-1}\\left(\\sqrt{\\frac{n}{2}}\\right)$",
+    "C": "$\\sin ^{-1}(\\sqrt{2 n})$",
+    "D": "$2 \\cos ^{-1}\\left(\\sqrt{\\frac{n}{2}}\\right)$\n\nOfficial Ans. by NTA (D)\nAns. (D)\n$$\\begin{array}{l}\ni=2 r \\\\\n\\sin i \\times n_{1}=\\sin r \\times n_{2}\n\\end{array}$$\n\nSol.\n$$\\begin{array}{l}\n\\sin i \\times 1=\\sin \\frac{i}{2} \\times \\sqrt{2 n} \\\\\n\\frac{\\sin i}{\\sin \\frac{i}{2}}=\\sqrt{2 n} \\\\\n\\frac{2 \\sin \\frac{i}{2} \\cos \\frac{i}{2}}{\\sin \\frac{i}{2}}=\\sqrt{2 n} \\\\\n\\cos \\frac{i}{2}=\\sqrt{\\frac{n}{2}} \\\\\n\\frac{i}{2}=\\cos ^{-1}\\left(\\sqrt{\\frac{n}{2}}\\right) \\\\\ni=2 \\cos ^{-1}\\left(\\sqrt{\\frac{n}{2}}\\right)\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\sin i \\times 1=\\sin \\frac{i}{2} \\times \\sqrt{2 n} \\\\\n\\frac{\\sin i}{\\sin \\frac{i}{2}}=\\sqrt{2 n} \\\\\n\\frac{2 \\sin \\frac{i}{2} \\cos \\frac{i}{2}}{\\sin \\frac{i}{2}}=\\sqrt{2 n} \\\\\n\\cos \\frac{i}{2}=\\sqrt{\\frac{n}{2}} \\\\\n\\frac{i}{2}=\\cos ^{-1}\\left(\\sqrt{\\frac{n}{2}}\\right) \\\\\ni=2 \\cos ^{-1}\\left(\\sqrt{\\frac{n}{2}}\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": "101318",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A hydrogen atom in is ground state absorbs 10.2 eV of energy. The angular momentum of electron of the hydrogen atom will increase by the value of : (Given, Plank's constant $=6.6 \\times 10^{-34} \\mathrm{Js}$ )",
+   "options": {
+    "A": "$2.10 \\times 10^{-34} \\mathrm{Js}$",
+    "B": "$1.05 \\times 10^{-34} \\mathrm{Js}$",
+    "C": "$3.15 \\times 10^{-34} J s$",
+    "D": "$4.2 \\times 10^{-34} \\mathrm{Js}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol. $13.6\\left(\\frac{1}{1^{2}}-\\frac{1}{n^{2}}\\right)=10.2$\n$$\\begin{array}{l}\nn=2 \\\\\nL_{i}=\\frac{h}{2 \\pi} \\times 1 \\\\\nL_{F}=\\frac{2 h}{2 \\pi} \\\\\n\\Delta L=L_{F}-L_{i}=\\frac{h}{2 \\pi}=\\frac{6.6 \\times 10^{-34}}{2 \\times \\frac{22}{7}} \\\\\n=1.05 \\times 10^{-34} \\mathrm{~J}-s\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$13.6\\left(\\frac{1}{1^{2}}-\\frac{1}{n^{2}}\\right)=10.2$\n$$\\begin{array}{l}\nn=2 \\\\\nL_{i}=\\frac{h}{2 \\pi} \\times 1 \\\\\nL_{F}=\\frac{2 h}{2 \\pi} \\\\\n\\Delta L=L_{F}-L_{i}=\\frac{h}{2 \\pi}=\\frac{6.6 \\times 10^{-34}}{2 \\times \\frac{22}{7}} \\\\\n=1.05 \\times 10^{-34} \\mathrm{~J}-s\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": "101319",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Identify the correct Logic Gate for the following output (Y) of two inputs A and B.",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Official Ans. by NTA (B)\nAns. (B)\nSol.\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\n\\begin{tabular}[t]{|l|l|l|}\n\\hline A & B & Y \\\\\n\\hline 1 & 1 & 0 \\\\\n\\hline 0 & 0 & 1 \\\\\n\\hline 0 & 1 & 1 \\\\\n\\hline 1 & 0 & 1 \\\\\n\\hline 1 & 1 & 0 \\\\\n\\hline 0 & 0 & 1 \\\\\n\\hline 0 & 1 & 1 \\\\\n\\hline 1 & 0 & 1 \\\\\n\\hline \\multicolumn{3}{|c|}{NAND Gate} \\\\\n\\hline\n\\end{tabular}\n$$Y=\\overline{A \\cdot B}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "JEE Exam Solution\nwww.esaral.com\n5",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP",
+     "\\begin{tabular}[t]{|l|l|l|}\n\\hline A & B & Y \\\\\n\\hline 1 & 1 & 0 \\\\\n\\hline 0 & 0 & 1 \\\\\n\\hline 0 & 1 & 1 \\\\\n\\hline 1 & 0 & 1 \\\\\n\\hline 1 & 1 & 0 \\\\\n\\hline 0 & 0 & 1 \\\\\n\\hline 0 & 1 & 1 \\\\\n\\hline 1 & 0 & 1 \\\\\n\\hline \\multicolumn{3}{|c|}{NAND Gate} \\\\\n\\hline\n\\end{tabular}\n$$Y=\\overline{A \\cdot B}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "101320",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A mixture of hydrogen and oxygen has volume $2000 \\mathrm{~cm}^{3}$, temperature 300 K, pressure 100 kPa and mass 0.76 g The ratio of number of moles of hydrogen to number of moles of oxygen in the mixture will be :",
+   "options": {
+    "A": "$\\frac{1}{3}$",
+    "B": "$\\frac{3}{1}$",
+    "C": "$\\frac{1}{16}$",
+    "D": "$\\frac{16}{1}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{PV}=\\mathrm{nRT}$\n$$\\begin{array}{l}\nn=\\frac{100 \\times 10^{3} \\times 2000 \\times 10^{-6}}{\\frac{25}{3} \\times 300} \\\\\nn=80 \\times 10^{-3} \\\\\nn_{1}+n_{2}=0.08 \\\\\nn_{1} \\times 2+n_{2} \\times 32=0.76 \\\\\n\\left(0.08-n_{2}\\right) 2+n_{2}(32)=0.76 \\\\\nn_{2}=0.02 \\\\\nn_{1}=0.06 \\\\\n\\frac{n_{1}}{n_{2}}=\\frac{3}{1}\n\\end{array}$$\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{PV}=\\mathrm{nRT}$\n$$\\begin{array}{l}\nn=\\frac{100 \\times 10^{3} \\times 2000 \\times 10^{-6}}{\\frac{25}{3} \\times 300} \\\\\nn=80 \\times 10^{-3} \\\\\nn_{1}+n_{2}=0.08 \\\\\nn_{1} \\times 2+n_{2} \\times 32=0.76 \\\\\n\\left(0.08-n_{2}\\right) 2+n_{2}(32)=0.76 \\\\\nn_{2}=0.02 \\\\\nn_{1}=0.06 \\\\\n\\frac{n_{1}}{n_{2}}=\\frac{3}{1}\n\\end{array}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "101321",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a carnot engine, the temperature of reservoir is $527^{\\circ} \\mathrm{C}$ and that of sink is 200 K . If the workdone by the engine when it transfers heat from reservoir to sink is 12000 kJ , the quantity of heat absorbed by the engine from reservoir is $\\_\\_\\_\\_$ $\\times 10^{6} \\mathrm{~J}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "16"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nv_{x}=u_{x}=20 \\cos \\alpha \\\\\nv_{y}=20 \\sin \\alpha-10 \\times 10 \\\\\n\\tan \\beta=\\frac{v_{y}}{v_{x}}=\\frac{20 \\sin \\alpha-100}{20 \\cos \\alpha} \\\\\n=\\tan \\alpha-5 \\sec \\alpha\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "101322",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A 220 V, 50 Hz AC source is connected to a 25 V, 5 W lamp and an additional resistance R in series (as shown in figure) to run the lamp at its peak brightness, then the value of R (in ohm) will be\n$\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "975"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{V}=\\tan \\theta=\\frac{V_{G}}{V_{R G}} \\\\\n1=\\frac{V_{G}}{V_{R G}} \\Rightarrow 15 \\sqrt{2}=V_{R G}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "101323",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In Young's double slit experiment the two slits are 0.6 mm distance apart. Interference pattern is observed on a screen at a distance 80 cm from the slits. The first dark fringe is observed on the screen directly opposite to one of the slits. The wavelength of light will be $\\_\\_\\_\\_$ nm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "450"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nM=(0.6 \\pm 0.006) \\mathrm{g} \\\\\nr=(0.5 \\pm 0.005) \\mathrm{mm} \\\\\nl=(4 \\pm 0.04) \\mathrm{cm}\n\\end{array}$$\n$$\\begin{array}{l}\n\\rho=\\frac{m}{V} \\\\\n\\Rightarrow \\frac{\\Delta \\rho}{\\rho}=\\frac{\\Delta m}{m}+\\frac{2 \\Delta r}{r}+\\frac{\\Delta l}{l}\n\\end{array}$$\n(Volume of cylinder $=\\pi r^{2} l$ )\n$$\\begin{array}{l}\n=\\frac{0.006}{0.6}+\\frac{2 \\times 0.005}{0.5}+\\frac{0.04}{4} \\\\\n100 \\times \\frac{\\Delta \\rho}{\\rho}=4 \\times 10^{-2} \\times 100 \\\\\n\\frac{\\Delta \\rho}{\\rho} \\times 100=4 \\%\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "101324",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A beam of monochromatic light is used to excite the electron in $\\mathrm{Li}^{++}$from the first orbit to the third orbit. The wavelength of monochromatic light is found to be $x \\times 10^{-10} \\mathrm{~m}$. The value of x is $\\_\\_\\_\\_$ .\n[Given $\\mathrm{hc}=1242 \\mathrm{eV} \\mathrm{nm}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "114"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 25,
+   "question_id": "101325",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A cell, shunted by a $8 \\Omega$ resistance, is balanced across a potentiometer wire of length 3m. The balancing length is 2 m when the cell is shunted by $4 \\Omega$ resistance. The value of internal resistance of the cell will be $\\_\\_\\_\\_$ $\\Omega$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "8"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\Delta x_{G}=\\frac{m_{1} \\Delta x_{1}+m_{2} \\Delta x_{2}}{m_{1}+m_{2}}$\n$$\\begin{array}{l}\n0=\\frac{10 \\times 6+30\\left(\\Delta x_{2}\\right)}{40} \\\\\n\\Delta x_{2}=-2 \\mathrm{~cm}\n\\end{array}$$",
+     "Block of mass 30 kg will to move towards 10 kg ."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "101326",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The current density in a cylindrical wire of radius 4 mm is $4 \\times 10^{6} A m^{-2}$. The current through the outer portion of the wire between radial distance $\\frac{R}{2}$ and R is $\\_\\_\\_\\_$ $\\pi \\mathrm{A}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "48"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$S=\\frac{R_{G}}{\\frac{I}{I_{g}}-1}$\n$$8=\\frac{72}{\\frac{I}{I_{g}}-1}$$\n$$\\begin{array}{l}\n\\frac{I}{I_{g}}-1=9 \\\\\n\\frac{I}{I_{g}}=10 \\Rightarrow \\frac{I_{g}}{I}=\\frac{1}{10} \\quad \\% I=\\frac{I_{g}}{I} \\times 100=10 \\%\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "101327",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A capacitor of capacitance 50 pF is charged by 100 V source. It is then connected to another uncharged identical capacitor. Electrostatic energy loss in the process is $\\_\\_\\_\\_$ nJ.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "125"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Since it is universal law so it hold good for any pair of bodies.",
+     "The value of $\\mathbf{g}$ at centre is zero.\nSo statement I and Statement II are true.",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": "101328",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The height of a transmitting antenna at the top of a tower is 25 m and that of receiving antenna is, 49 m. The maximum distance between them, for satisfactory communication in LOS (Line-OfSight) is $K \\sqrt{5} \\times 10^{2} m$. The value of K is $\\_\\_\\_\\_$ .\n[Assume radius of Earth is $64 \\times 10^{+5} \\mathrm{~m}$ ] (Calculate upto nearest integer value)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "192"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Velocity after collision\n$$\\begin{array}{l}\nV_{2}=\\frac{\\left(m_{2}-m_{1}\\right) u_{2}+2 m_{1} u_{1}}{m_{1}+m_{2}} \\\\\nV_{2}=\\frac{(5 m-m) 0+2 m \\cdot u_{0}}{m+5 m}=\\frac{u_{0}}{3} \\\\\n\\% \\Delta K E=\\frac{\\frac{1}{2} 5 m\\left(\\frac{u_{0}}{3}\\right)^{2}-0}{\\frac{1}{2} m u_{0}^{2}} \\times 100 \\\\\n=\\frac{5 u_{0}^{2}}{9 u_{0}^{2}} \\times 100=\\frac{500}{9}=55.6 \\%\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "101329",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The area of cross-section of a large tank is $0.5 \\mathrm{~m}^{2}$. It has a narrow opening near the bottom having area of cross-section $1 \\mathrm{~cm}^{2}$. A load of 25 kg is applied on the water at the top in the tank. Neglecting the speed of water in the tank, the velocity of the water, coming out of the opening at the time when the height of water level in the tank is 40 cm above the bottom, will be $\\_\\_\\_\\_$ $\\mathrm{cms}^{-1}$.\n[Take $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "300"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n=m g-\\left(\\frac{m}{d_{1}} \\times d_{2}\\right) g \\\\\n=m g\\left(1-\\frac{d_{2}}{d_{1}}\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "101330",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A pendulum of length 2 m consists of a wooden bob of mass 50 g. A bullet of mass 75 g is fired towards the stationary bob with a speed v . The bullet emerges out of the bob with a speed $\\frac{v}{3}$ and the bob just completes the vertical circle. The value of v is $\\_\\_\\_\\_$ $\\mathrm{ms}^{-1}$. (if $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "10"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Susceptibility $\\chi=99$\n$$\\begin{array}{l}\n\\mu_{r}=\\frac{\\mu}{\\mu_{0}}=1+\\chi \\\\\n\\mu=\\mu_{0}(1+\\chi) \\\\\n=4 \\pi \\times 10^{-7}[1+99] \\\\\n=4 \\pi \\times 10^{-5}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

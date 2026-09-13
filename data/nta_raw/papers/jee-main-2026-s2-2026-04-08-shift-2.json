@@ -1,61 +1,100 @@
 {
+ "paper_id": "jee-main-2026-s2-2026-04-08-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2026-s2-2026-04-08-shift-2",
+  "exam": "jee-main",
+  "year": 2026,
+  "session": 2,
+  "exam_date": "2026-04-08",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2026-s2-2026-04-08-shift-2",
-    "exam": "jee-main",
-    "year": 2026,
-    "session": 2,
-    "exam_date": "2026-04-08",
-    "shift": 2,
-    "paper_type": "question_paper",
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2026/jee-main-8-april-2026-paper-shift-2/1214676",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/zSsCaG617CetJiuFdYdi",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "1c87f425b6e008a1ac1c23cf6c05b4588b77acb95052e4986e6dd571095362b9",
+  "page_count": 26,
+  "text_chars": 0,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2026-s2-2026-04-08-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 22,
+    "question_id": null,
     "subject": null,
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2026/jee-main-8-april-2026-paper-shift-2/1214676",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/zSsCaG617CetJiuFdYdi",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
-  },
-  "probe": {
-    "sha256": "1c87f425b6e008a1ac1c23cf6c05b4588b77acb95052e4986e6dd571095362b9",
-    "page_count": 26,
-    "text_chars": 0,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2026-s2-2026-04-08-shift-2.pdf"
-  },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
-    "validation": "not_verified",
-    "entries": []
-  },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "$\\lambda_{2}=6000 \\AA$\nThe ratio of the energies of these two radiations $\\left(\\frac{\\mathrm{E}_{1}}{\\mathrm{E}_{2}}\\right)$ is $\\_\\_\\_\\_$ . (Nearest integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{E}_{\\text {photon }}=\\frac{\\mathrm{hc}}{\\lambda}$\n$$\\begin{array}{l}\n\\Rightarrow \\frac{E_{1}}{E_{2}}=\\frac{\\lambda_{2}}{\\lambda_{1}} \\\\\n\\Rightarrow \\frac{E_{1}}{E_{2}}=\\frac{6000}{2000} \\\\\n\\Rightarrow \\frac{E_{1}}{E_{2}}=3\n\\end{array}$$\n74. Consider the reaction :\n$$2 \\mathrm{H}_{2} \\mathrm{~S}(\\mathrm{~g})+3 \\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow 2 \\mathrm{H}_{2} \\mathrm{O}(l)+2 \\mathrm{SO}_{2}(\\mathrm{~g})$$",
+     "The magnitude of enthalpy change for the reaction in $\\mathrm{kJ} \\mathrm{mol}^{-1}$ is $\\_\\_\\_\\_$ . (Nearest integer)\nGiven : $\\Delta_{f} \\mathrm{H}^{\\ominus}\\left(\\mathrm{H}_{2} \\mathrm{~S}\\right)=-20.1 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$\n$$\\begin{array}{l}\n\\Delta_{f} \\mathrm{H}^{\\ominus}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)=-286.0 \\mathrm{~kJ} \\mathrm{~mol}^{-1} \\\\\n\\Delta_{f} \\mathrm{H}^{\\ominus}\\left(\\mathrm{SO}_{2}\\right)=-297.0 \\mathrm{~kJ} \\mathrm{~mol}^{-1}\n\\end{array}$$",
+     "Ans. (1126)\nSol. $\\quad \\Delta_{\\mathrm{r}} \\mathrm{H}^{\\circ}=\\Sigma \\Delta \\mathrm{H}_{\\mathrm{f}}{ }^{\\circ}$ (product) $-\\Sigma \\Delta \\mathrm{H}_{\\mathrm{f}}{ }^{\\circ}$ (Reactant)\n$$\\begin{array}{l}\n\\begin{array}{l}\n\\Delta_{\\mathrm{r}} \\mathrm{H}^{\\circ}=2 \\times \\Delta \\mathrm{H}_{\\mathrm{f}}^{\\circ}\\left(\\mathrm{SO}_{2}, \\mathrm{~g}\\right)+2 \\times \\Delta \\mathrm{H}_{\\mathrm{f}}^{\\circ}\\left(\\mathrm{H}_{2} \\mathrm{O}, \\ell\\right) \\\\\n\\quad-2 \\times \\Delta \\mathrm{H}_{\\mathrm{f}}^{\\circ}\\left(\\mathrm{H}_{2} \\mathrm{~S}, \\mathrm{~g}\\right)\n\\end{array} \\\\\n\\begin{array}{l}\n\\Delta_{\\mathrm{r}} \\mathrm{H}^{\\circ}=2 \\times(-297)+2 \\times(-286)-2(-20.1) \\\\\n=-594-572+40.2 \\\\\n\\Delta_{\\mathrm{r}} \\mathrm{H}^{\\circ}=-1125.8 \\mathrm{~kJ} / \\mathrm{mol} \\\\\n\\left|\\Delta_{\\mathrm{r}} \\mathrm{H}^{\\circ}\\right|=1125.8 \\mathrm{~kJ} / \\mathrm{mol}\n\\end{array}\n\\end{array}$$\n75. Solid carbon, CaO and $\\mathrm{CaCO}_{3}$ are mixed and allowed to attain equilibrium at T K.\n$\\mathrm{CaCO}_{3} \\rightleftharpoons \\mathrm{CaO}(\\mathrm{s})+\\mathrm{CO}_{2}(\\mathrm{~g}) \\mathrm{Kp}_{1}=0.08 \\mathrm{~atm} \\mathrm{C}(\\mathrm{s})+\\mathrm{CO}_{2}(\\mathrm{~g}) \\rightleftharpoons 2 \\mathrm{CO}(\\mathrm{g}) \\quad \\mathrm{Kp}_{2}=2 \\mathrm{~atm}$",
+     "The partial pressure of CO is $\\_\\_\\_\\_$ $\\times 10^{-1} \\mathrm{~atm}$.",
+     "Ans. (4)\nSol. $\\mathrm{CaCO}_{3}(\\mathrm{~s}) \\rightleftharpoons \\mathrm{CaO}(\\mathrm{s})+\\mathrm{CO}_{2}(\\mathrm{~g}), \\mathrm{K}_{\\mathrm{P}_{1}}=0.08 \\mathrm{~atm}$\n$$\\begin{array}{l}\n\\mathrm{K}_{\\mathrm{P}_{1}}=\\mathrm{P}_{\\mathrm{CO}_{2}}=0.08 \\mathrm{~atm} \\\\\n\\mathrm{C}(\\mathrm{~s})+\\mathrm{CO}_{2}(\\mathrm{~g}) \\rightleftharpoons 2 \\mathrm{CO}(\\mathrm{~g}), \\mathrm{K}_{\\mathrm{P}_{2}}=2 \\\\\n\\mathrm{~K}_{\\mathrm{P}_{2}}=\\frac{\\mathrm{P}_{\\mathrm{CO}}^{2}}{\\mathrm{P}_{\\mathrm{CO}_{2}}}=2 \\\\\n\\frac{\\mathrm{P}_{\\mathrm{CO}}^{2}}{0.08}=2 \\\\\n\\mathrm{P}_{\\mathrm{CO}}^{2}=16 \\times 10^{-2} \\\\\n\\mathrm{P}_{\\mathrm{CO}}=4 \\times 10^{-1}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

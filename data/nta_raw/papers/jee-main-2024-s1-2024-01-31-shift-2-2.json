@@ -1,61 +1,884 @@
 {
+ "paper_id": "jee-main-2024-s1-2024-01-31-shift-2-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2024-s1-2024-01-31-shift-2-2",
+  "exam": "jee-main",
+  "year": 2024,
+  "session": 1,
+  "exam_date": "2024-01-31",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2024-s1-2024-01-31-shift-2-2",
-    "exam": "jee-main",
-    "year": 2024,
-    "session": 1,
-    "exam_date": "2024-01-31",
-    "shift": 2,
-    "paper_type": "question_paper",
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2024/jee-main-31-jan-2024-paper-shift-2-memory-based/1072850",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/AJCqMCHSFllyswok4TnO",
+  "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "9c9aded67ad8326b4459b7fb83c9dbc768da28538f0c746db8c5ff7f202e6337",
+  "page_count": 28,
+  "text_chars": 210,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s1-2024-01-31-shift-2-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
     "subject": null,
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2024/jee-main-31-jan-2024-paper-shift-2-memory-based/1072850",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/AJCqMCHSFllyswok4TnO",
-    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "25",
+     "value": "25"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "By what percent will the illumination (Power) of lamp decreases if the current drops by 20\\%. if resistance of the lamp is assumed to be constant\n(1) 12\\%\n(2) 24\\%\n(3) 36\\%\n(4) 48\\%",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad P_{1}=I^{2} R$\n$$\\begin{aligned}\n\\mathrm{P}_{2} & =(0.81)^{2} \\mathrm{R}=0.64 \\mathrm{I}^{2} \\mathrm{R} \\\\\n\\mathrm{P}_{2} & =0.64 \\mathrm{P}_{1}\n\\end{aligned}$$\n$$\\begin{aligned}\n\\% \\text { drop of Power }=\\frac{P_{2}-P_{1}}{P_{1}} \\times 100 & =\\frac{(0.64-1) P_{1}}{P_{1}} \\times 100 \\\\\n& =-0.36 \\times 100 \\\\\n& =36 \\% \\text { drop }\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "9c9aded67ad8326b4459b7fb83c9dbc768da28538f0c746db8c5ff7f202e6337",
-    "page_count": 28,
-    "text_chars": 210,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s1-2024-01-31-shift-2-2.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Mass of the moon is (1/144) times mass of a planet. Its diameter is 1/16 times diameter of the planet. If the escape velocity from the surface of planet is V , then the escape velocity from surface of moon will be-\n(1) $\\frac{\\mathrm{V}}{3}$\n(2) $\\frac{\\mathrm{V}}{2}$\n(3) $\\frac{\\mathrm{V}}{6}$\n(4) $\\frac{\\mathrm{V}}{8}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad V_{e} \\sqrt{\\frac{2 G M}{R}}, \\quad \\frac{V_{\\text {moon }}}{V_{\\text {planet }}}=\\frac{\\sqrt{\\frac{2 G M_{m}}{R_{m}}}}{\\sqrt{\\frac{2 G M_{p}}{R_{p}}}}=\\sqrt{\\frac{M_{m}}{M_{p}}} \\sqrt{\\frac{R_{p}}{R_{m}}}$\n$$\\Rightarrow \\frac{V_{\\text {moon }}}{V}=\\sqrt{\\frac{1}{144}} \\sqrt{\\frac{16}{1}} \\Rightarrow V_{\\text {moon }}=\\frac{4}{12} V=\\frac{V}{3}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The speed of sound in oxygen at STP will be approximately? (Given $\\mathrm{R}=8.3 \\mathrm{~J} / \\mathrm{mol} \\mathrm{K}$ and $\\gamma=1.4$ )\n(1) 320\n(2) 315\n(3) 330\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "At STP T $=273 \\mathrm{~K}$\n$$\\begin{aligned}\nV & =\\sqrt{\\frac{\\gamma R T}{M}} \\text { (Speed of sound) } \\\\\nV & =\\sqrt{\\frac{1.4 \\times 8.3 \\times 273}{32 \\times 10^{3}}}=314.5 \\mathrm{~m} / \\mathrm{s}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Force on a 2 kg particle varies with time as $\\dot{F}=6 t \\hat{i}-6 t^{2} \\hat{j}$. Particle start from rest. Find power delivered by the force as a function of time.\n(1) $9 t^{3}+4 t^{5}$\n(2) $9 t^{3}+6 t^{5}$\n(3) $6 t^{2}+3 t^{4}$\n(4) $4 t^{2}+6 t^{3}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{ll} \n& \\dot{F}=6 t \\hat{i}-6 t^{2} \\hat{j} \\\\\n\\Rightarrow & \\dot{a}=\\frac{\\dot{F}}{m}=3 t \\hat{i}-3 t^{2} \\hat{j} \\\\\n\\Rightarrow & \\frac{d \\dot{v}}{d t}=3 t \\hat{i}-3 t^{2} \\hat{j} \\\\\n\\Rightarrow & \\int_{0}^{v} d \\dot{v}=\\frac{3 t^{2}}{2} \\hat{i}-\\left.t^{3}\\right|_{0} ^{t} \\quad(m=2 k g) \\\\\n\\Rightarrow & \\dot{v}=\\frac{3 t^{2}}{2} \\hat{i}-t^{3} \\hat{j} \\\\\n\\Rightarrow & P=\\dot{F} \\cdot \\dot{v} \\\\\n& P=\\left(\\left(6 t \\hat{i}-6 t^{2} \\hat{j}\\right) \\cdot\\left(\\frac{3 t^{2}}{2} \\hat{i}-t^{3} \\hat{j}\\right)\\right.\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "If in the given expression, $\\mathrm{E}=\\frac{\\mathrm{b}-\\mathrm{x}^{2}}{\\mathrm{at}}$, where E represents energy, x represents length and t represents time Then, find dimension of $\\frac{\\mathrm{a}}{\\mathrm{b}}$.\n(1) $\\mathrm{M}^{-1} \\mathrm{~L}^{-2} \\mathrm{~T}$\n(2) $\\mathrm{M}^{-1} \\mathrm{~L}^{-2} \\mathrm{~T}^{-1}$\n(3) $\\mathrm{M}^{-1} \\mathrm{~L}^{-2} \\mathrm{~T}^{-2}$\n(4) $\\mathrm{M}^{-1} \\mathrm{~L}^{2} \\mathrm{~T}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$E=\\frac{b}{a t}-\\frac{x^{2}}{a t} \\Rightarrow[E]=\\left[\\frac{b}{a t}\\right]=\\left[\\frac{x^{2}}{a t}\\right]$\n$$\\begin{array}{l}\n{[\\mathrm{E}]=\\left[\\frac{\\mathrm{x}^{2}}{\\mathrm{at}}\\right] \\Rightarrow\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{2}\\right]=\\frac{\\left[\\mathrm{L}^{2}\\right]}{[\\mathrm{a}][\\mathrm{T}]}} \\\\\n\\Rightarrow[\\mathrm{a}]=\\frac{\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{2}\\right][\\mathrm{T}]}{\\left[\\mathrm{L}^{2}\\right]}=\\left[\\mathrm{MT}^{1}\\right] \\\\\n\\Rightarrow[\\mathrm{E}]=\\frac{[\\mathrm{b}]}{\\left.\\mathrm{MT}^{-1}\\right][\\mathrm{T}]} \\Rightarrow[\\mathrm{b}]=\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{2}\\right]\\left[\\mathrm{MT}^{1}\\right][\\mathrm{T}] \\\\\n{[\\mathrm{b}]=\\left[\\mathrm{M}^{2} \\mathrm{~L}^{2} \\mathrm{~T}^{2}\\right]} \\\\\n{\\left[\\frac{\\mathrm{a}}{\\mathrm{~b}}\\right]=\\frac{\\left[\\mathrm{MT}^{1}\\right]}{\\left.\\mathrm{M}^{2} \\mathrm{~L}^{2} \\mathrm{~T}^{2}\\right]}=\\mathrm{M}^{-1} \\mathrm{~L}^{2} \\mathrm{~T}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A particle is projected at an angle $45^{\\circ}$ with horizontal with speed u . Find the angular momentum of particle about the point of projection at the time when it reaches maximum height.\n(1) $\\frac{\\mathrm{mu}^{3}}{4 \\mathrm{~g}}$\n(2) $\\frac{\\mathrm{mu}^{3}}{4 \\sqrt{2} \\mathrm{~g}}$\n(3) $\\frac{\\mathrm{mu}^{3}}{2 \\sqrt{2} \\mathrm{~g}}$\n(4) $\\frac{\\sqrt{2} m u^{3}}{4 g}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$H=\\frac{u^{2} \\sin ^{2} \\theta}{2 g}=\\frac{u^{2}}{4 g}$$",
+     "Angular momentum $=\\mathrm{mvH} \\Rightarrow \\mathrm{m} \\frac{\\mathrm{u}}{\\sqrt{2}} \\cdot \\frac{\\mathrm{u}^{2}}{4 \\mathrm{~g}}=\\frac{\\mathrm{mu}^{3}}{4 \\sqrt{2} \\mathrm{~g}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "3 moles of oxygen gas and 2 moles of argon gas are mixed together. If the total internal energy of mixture is xRT. Find the value of x.\n(1) $\\frac{19}{2}$\n(2) 10\n(3) 11\n(4) $\\frac{21}{2}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For oxygen $\\mathrm{n}=3 \\mathrm{~mol}$\n$$\\mathrm{f}_{1}=5 \\text { (D.O.F) }$$\n$\\mathrm{U}_{1}$ (internal energy) $=\\frac{\\mathrm{f}_{1}}{2} \\mathrm{nRT}=\\frac{5}{2} \\times \\mathrm{nRT}=\\frac{15}{2} \\mathrm{RT}$\nfor argon\n$$\\begin{array}{r}\n\\mathrm{n}=2 \\text { moles } \\\\\n\\mathrm{f}_{2}=3 \\text { (D.O.F) } \\\\\n\\mathrm{U}_{2}=\\frac{\\mathrm{f}_{2}}{2} \\mathrm{nRT}=\\frac{3}{2} \\times 2 \\mathrm{RT}=\\frac{6}{2} \\mathrm{RT}\n\\end{array}$$",
+     "Total internal energy of mixture $=\\mathrm{U}_{1}+\\mathrm{U}_{2}$\n$$\\begin{aligned}\n& =\\frac{15}{2} R T+\\frac{6}{2} R T=\\frac{21}{2} R T \\\\\nx & =\\frac{21}{2}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Magnetic flux passing through a loop of resistance $8 \\Omega$ is given by $\\phi=5 t^{2}-3 t+5$. Find current in the loop at $\\mathrm{t}=2$ second.\n(1) 1.125 A\n(2) 2.25 A\n(3) 4.25 A\n(4) 2.125 A",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{aligned}\n\\varepsilon & =-\\frac{d \\phi}{d t} \\\\\n& =-\\frac{d}{d t}\\left(5 t^{2}-3 t+5\\right) \\\\\n\\varepsilon & =-(10 t-3) \\\\\n\\text { at } t & =2 \\mathrm{sec} . \\\\\n\\varepsilon & =-(10 \\times 2-3)=-17 \\\\\n\\mathrm{i} & =\\frac{\\varepsilon}{R}=\\frac{17}{8} \\text { Ampere } \\\\\n\\mathrm{i} & =2.125 \\text { Ampere }\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A nucleus x has mass number 192 and there is a second nucleus y having radius half of radius of x. Find mass number of y nucleus.\n(1)18\n(2) 24\n(3) 12\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{R_{x}}{R_{y}}=\\frac{R_{0}(192)^{\\frac{1}{3}}}{R_{0}(A)^{\\frac{1}{3}}}$\non solving A = 24"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The period of oscillation of system shown below is $\\pi \\sqrt{\\frac{a m}{5 k}}$ then a is $\\_\\_\\_\\_$\n(1) 4\n(2) 12\n(3) 16\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\text { Keq }_{\\text {eq }}=\\frac{2 \\mathrm{k}}{3}+\\mathrm{k}=\\frac{5 \\mathrm{k}}{3} \\\\\n\\mathrm{~T} \\text { (Time period) }=2 \\pi \\sqrt{\\frac{\\mathrm{M}}{\\mathrm{k}_{\\text {eq }}}}=\\pi \\sqrt{\\frac{12 \\mathrm{M}}{5 \\mathrm{k}}} \\\\\n\\mathrm{a}=12\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In the given figure, find the power delivered by the battery\n(1) 1 W\n(2) 2 W\n(3) 5 W\n(4) 3 W",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nP=\\frac{V^{2}}{R}=\\frac{(2)^{2}}{(4 / 3)}=\\frac{4}{4} \\times 3 \\\\\nP=3 \\text { watt }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A point object is placed in air at 100 cm from a convex spherical refractive surface having radius of curvature 20 cm and refractive index on other side is $\\mu=1.5$. Find image distance\n(1) 75 cm\n(2) 100 cm\n(3) 200 cm\n(4) 50 cm",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\frac{\\mu_{2}}{V}-\\frac{\\mu_{1}}{u}=\\frac{\\mu_{2}-\\mu_{1}}{R} \\\\\n\\Rightarrow \\quad \\frac{1.5}{V}-\\frac{1}{(-100)}=\\frac{1.5-1}{20} \\\\\n\\Rightarrow \\quad \\frac{1.5}{V}+\\frac{1}{100}=\\frac{1}{40} \\Rightarrow \\frac{1.5}{V}=\\frac{1}{40}-\\frac{1}{100} \\\\\n\\Rightarrow \\quad \\frac{1.5}{V}=\\frac{5-2}{200} \\Rightarrow \\frac{1.5}{V}=\\frac{3}{200} \\\\\n\\Rightarrow \\quad V=\\frac{200 \\times 1.5}{3} \\\\\n\\Rightarrow \\quad V=100 \\mathrm{~cm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Unpolarised light from air is incident on transparent glass at incident angle 60°. If reflected ray is completely polarized, then angle of refraction is -\n(1) 15°\n(2) 60°\n(3) 30°\n(4) 45°",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mu=\\tan i(\\text { Brewster's law }) \\\\\n\\mu_{2}=\\tan 60^{\\circ}=\\sqrt{3} \\\\\n\\mu_{1} \\sin i=\\mu_{2} \\sin r-\\left(\\text { Snell }{ }^{\\prime}\\right. \\\\\n1 \\times \\sin 60^{\\circ}=\\sqrt{3} \\sin r \\\\\n\\frac{\\sqrt{3}}{2}=\\sqrt{3} \\sin r=\\sin r=\\frac{1}{2} \\\\\nr=30^{\\circ}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Find the difference between minimum force required to prevent the block from sliding down and minimum force required to just push it up the plane. The inclined plane is at 30° from horizontal and mass of the block is $5 \\mathrm{Kg}\\left(\\right.$ use $\\left.\\mu=0.1, \\mathrm{~g}=10 \\mathrm{~m} / \\mathrm{s}^{2}\\right)$\n(1) $5 \\sqrt{3} \\mathrm{~N}$\n(2) $2 \\sqrt{3} \\mathrm{~N}$\n(3) 5 N\n(4) 8 N",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\left(F_{1}\\right)_{\\min }+\\left(f_{s}\\right)_{\\max }=m g \\sin \\theta \\\\\n\\left(F_{1}\\right)_{\\min }+\\mu m g \\cos \\theta=m g \\sin \\theta \\\\\n\\left(F_{1}\\right)_{\\min }=m g \\sin \\theta-\\mu m g \\cos \\theta\n\\end{array}$$\n$$\\begin{array}{l}\n\\left(F_{2}\\right)_{\\min }=\\left(f_{s}\\right)_{\\max }+m g \\sin \\theta \\\\\n\\left(F_{2}\\right)_{\\min }=\\mu m g \\cos \\theta+m g \\sin \\theta \\\\\n\\because\\left(F_{2}\\right)_{\\min }-\\left(F_{1}\\right)_{\\max }=2 \\mu m g \\cos \\theta \\\\\n=2 \\times 0.1 \\times 5 \\times 10 \\times \\cos 30^{\\circ} \\\\\n=5 \\sqrt{3} \\text { Newton }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Statement-1 : E.M. waves posses energy.\nStatement-2 : When E.M. Waves strike a surface they apply pressure on it.\n(1) Both statements are true\n(2) Both statements are false\n(3) Statement-1 is true and statement-2 is false\n(4) Statement-1 is false and statement-2 is true",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two vector of equal magnitude A are inclined at an angle $\\theta$ with each other. Find the magnitude of resultant vector\n(1) $2 \\mathrm{~A} \\cos \\left(\\frac{\\theta}{2}\\right)$\n(2) $2 \\mathrm{~A} \\sin \\left(\\frac{\\theta}{2}\\right)$\n(3) $2 \\mathrm{~A} \\cos \\theta$\n(4) $2 A \\sin \\theta$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{aligned}\n\\mid \\text { Resultant } \\mid & =\\sqrt{A^{2}+A^{2}+2 A^{2} \\cos \\theta} \\\\\n= & \\sqrt{2 A^{2}+2 A^{2} \\cos \\theta} \\\\\n= & \\sqrt{2} A \\sqrt{1+\\cos \\theta} \\\\\n= & 2 A \\cos \\left(\\frac{\\theta}{2}\\right)\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The force between two charged particle separated by a distance 'r' when placed in air is F. If these charges are immersed in a medium of dielectric constant $\\mathrm{K}=5$. Then find the separation between them to keep the force same.\n(1) $\\frac{\\mathrm{r}}{\\sqrt{3}}$\n(2) $\\sqrt{5} \\mathrm{r}$\n(3) $\\sqrt{3} \\mathrm{r}$\n(4) $\\frac{\\mathrm{r}}{\\sqrt{5}}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Case - 1 : In air\n$$F=\\frac{q_{1} q_{2}}{4 \\pi \\varepsilon_{0} r^{2}} \\text { (Electrostatic force) }$$",
+     "Case -2 : In medium ( $\\mathrm{K}=5$ )\n$$\\begin{array}{l}\nF=\\frac{q_{1} q_{2}}{4 \\pi \\varepsilon_{0} K \\times r^{\\prime 2}}=\\frac{q_{1} q_{2}}{4 \\pi \\varepsilon_{0} \\times 5 r^{\\prime 2}} \\\\\n5 r^{\\prime 2}=r^{2} \\\\\nr^{\\prime}=\\frac{r}{\\sqrt{5}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Length of a pendulum is 20 cm and error in its measurement is 2mm. If it completes 50 oscillations in 40 sec. and time was measured by a watch of resolution 1 sec. Find \\% error in calculation of acceleration due to gravity\n(1) $8 \\%$\n(2) 4 \\%\n(3) $2 \\%$\n(4) 6 \\%",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$T=2 \\pi \\sqrt{\\frac{\\ell}{g}}$\n$$\\left[T=\\frac{40}{50}=\\frac{4}{5} s\\right]$$\n$\\mathrm{g}=\\frac{4 \\pi^{2} \\ell}{\\mathrm{~T}^{2}}$\n$\\frac{\\Delta \\mathrm{g}}{\\mathrm{g}} \\times 100 \\%=\\frac{\\Delta \\ell}{\\ell} \\times 100 \\%+2 \\frac{\\Delta \\mathrm{~T}}{\\mathrm{~T}} \\times 100 \\%$\n$\\frac{\\Delta \\mathrm{g}}{\\mathrm{g}} \\times 100 \\%=\\left(\\frac{0.2}{20}\\right) \\times 100+2 \\times \\frac{1}{40} \\times 100$\n$\\frac{\\Delta \\mathrm{g}}{\\mathrm{g}} \\times 100 \\%=6 \\%$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A nucleus has mass number $A_{1}$ and volume $V_{1}$. Another nucleus has mass number $A_{2}$ and volume $V_{2}$ If relation between mass number is $A_{2}=4 A_{1}$ then find $V_{2}$\n(1) $2 \\mathrm{~V}_{1}$\n(2) $8 \\mathrm{~V}_{1}$\n(3) $4 \\mathrm{~V}_{1}$\n(4) $\\mathrm{V}_{1}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{r}=\\mathrm{r}_{0}(\\mathrm{~A})^{\\frac{1}{3}}$\n$$\\begin{array}{l}\nV_{1}=\\frac{4}{3} \\pi r^{3}=\\frac{4}{3} \\pi\\left(r_{0}\\left(A_{1}\\right)^{\\frac{1}{3}}\\right)^{3}=\\frac{4}{3} \\pi\\left(r_{0}\\right)^{3} A_{1} \\\\\nV_{2}=\\frac{4}{3} \\pi\\left(r_{0}\\left(A_{2} \\frac{1}{3}\\right)^{3}=\\frac{4}{3} \\pi r_{0}^{3} A_{2}\\right. \\\\\nA_{2}=4 A_{1} \\text { (given) } \\\\\nV_{2}=\\frac{4}{3} \\pi r_{0}^{3}\\left(4 A_{1}\\right)=4 V_{1} \\\\\nV_{2}=4 V_{1}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In the given pulley block system\ngiven $a=g / 8$\nfind the ratio of $\\frac{M_{1}}{M_{2}}=$ ?\n(1) $\\frac{7}{8}$\n(2) $\\frac{5}{7}$\n(3) $\\frac{9}{7}$\n(4) $\\frac{7}{9}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad a=\\frac{\\left(M_{2}-M_{1}\\right)}{M_{1}+M_{2}} g$\n$$\\begin{array}{l}\n\\frac{g}{8}=\\frac{\\left(M_{2}-M_{1}\\right)}{M_{1}+M_{2}} \\times g \\\\\nM_{1}+M_{2}=8 M_{2}-8 M_{1} \\\\\n\\frac{M_{1}}{M_{2}}=\\frac{7}{9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The frequency of incident light is equal to threshold frequency for the metal surface $v_{\\text {th }}$. When frequency is halved and intensity is doubled then the number of photo electrons will be\n(1) Doubled\n(2) halved\n(3) Will remain same\n(4) Photo electrons will not be emitted",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Find average power in electric circuit if source voltage $\\mathrm{V}=20 \\sin (100 \\mathrm{t})$ \\& current in the circuit is $\\mathrm{i}=2 \\sin (100 t+\\pi / 3)$\n(1) 5 W\n(2) 10 W\n(3) $5 \\sqrt{3} \\mathrm{~W}$\n(4) $10 \\sqrt{3} \\mathrm{~W}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{Ni}(\\mathrm{CO})_{4} \\longrightarrow \\mathrm{Ni}(0) \\longrightarrow$ In Presence of strong field ligand $\\mathrm{CO} \\longrightarrow$ more interaction and $\\Delta$ value high so paring will takes place.",
+     "In presence of SFL CO",
+     "No unpaired electron - So diamagnetic compound.\nBut in $[\\mathrm{NiCl}]^{2-} \\longrightarrow \\mathrm{Ni}^{+2}$",
+     "So Option (2) is Correct Answer."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two solid spheres each of mass 2 kg and radius 75 cm are arranged as shown. Find moment of inertia of the system about the gives axis shown.\n(1) $\\frac{63}{20} \\mathrm{~kg} \\cdot \\mathrm{~m}^{2}$\n(2) $\\frac{126}{30} \\mathrm{~kg} \\cdot \\mathrm{~m}^{2}$\n(3) $\\frac{7}{5} \\mathrm{~kg} \\cdot \\mathrm{~m}^{2}$\n(4) $\\frac{9}{7} \\mathrm{~kg} \\cdot \\mathrm{~m}^{2}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Order of ionic character $=\\mathrm{BaCl}_{2}>\\mathrm{KCl}>\\mathrm{CoCl}_{2}>\\mathrm{AgCl}$.\n$\\mathrm{Ag}^{\\ominus}$ due to pseudo inert gas configuration have high polarizing power.",
+     "4 Statement-I : $13^{\\text {th }}$ group element hydrolyse due to covalent nature.\nStatement-II : On hydrolysis AI give $\\left[\\mathrm{Al}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$\n(1) Both statement I and II are correct\n(2) Statement I is correct and statement II is incorrect\n(3) Statement I is incorrect and statement II is correct\n(4) Both statement I and II are incorrect",
+     "Ans. (1)\nSol. $\\quad 13^{\\text {th }}$ group element hydrolyse due to covalent character and on hydrolysis AI give $\\left[\\mathrm{Al}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$.\n5.",
+     "\\begin{tabular}[t]{|l|l|l|l|}\n\\hline & List-I & & List-II \\\\\n\\hline & Complex & & Electronic configuration \\\\\n\\hline (i) & $\\left[\\mathrm{Fe}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$ & (P) & $\\mathrm{t}_{2 \\mathrm{~g}}{ }^{2.2 .2}, \\mathrm{e}_{\\mathrm{g}}{ }^{1.1}$ \\\\\n\\hline (ii) & $\\left[\\mathrm{Ni}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+}$ & (Q) & $\\mathrm{t}_{2 \\mathrm{~g}}{ }^{1,1,1}, \\mathrm{e}_{\\mathrm{g}}{ }^{1,1}$ \\\\\n\\hline (iii) & $\\left[\\mathrm{Cr}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$ & (R) & $\\mathrm{t}_{2 \\mathrm{~g}}{ }^{1,1,0}, \\mathrm{e}_{\\mathrm{g}}{ }^{0,0}$ \\\\\n\\hline (iv) & $\\left[\\mathrm{V}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}$ & (S) & $\\mathrm{t}_{2 \\mathrm{~g}}{ }^{1,1,1,1}, \\mathrm{e}_{\\mathrm{g}}{ }^{0,0}$ \\\\\n\\hline\n\\end{tabular}",
+     "Identify correct match:\n(1) i-Q, ii-P, iii-S, iv-R\n(2) i-P, ii-Q, iii-R, iv-S\n(3) i-Q, ii-P, iii-R, iv-S\n(4) i-P, ii-R, iii-Q, iv-S",
+     "Ans. (1)\nSol. (i) ${ }_{26} \\mathrm{Fe}^{3+}=3 \\mathrm{~d}^{5}=\\mathrm{t}_{2 \\mathrm{~g}}{ }^{1,1,1}, \\mathrm{e}_{\\mathrm{g}}{ }^{1,1}$\n(ii) ${ }_{28} \\mathrm{Ni}^{2+}=3 \\mathrm{~d}^{8}=\\mathrm{t}_{2} \\mathrm{~g}^{2,2,2}, \\mathrm{eg}^{1,1}$\n(iii) ${ }_{24} \\mathrm{Cr}^{3+}=3 \\mathrm{~d}^{3}=\\mathrm{t}_{2 \\mathrm{~g}}{ }^{1,1,1}, \\mathrm{e}_{\\mathrm{g}}{ }^{0,0}$\n(iv) ${ }_{23} V^{3+}=3 d^{2}=t_{2 g^{1}}{ }^{1.1,0}, e_{g^{0,0}}$\n6.",
+     "Where A, B, C and D are elements in periodic table\nWhich of the following order is correct ?\n(1) Atomic radius: A < B < C < D\n(2) Metallic radius: A < B < D < C\n(3) Ionic radius: $\\mathrm{B}^{+}<\\mathrm{A}^{+}<\\mathrm{D}^{+}<\\mathrm{C}^{+}$\n(4) None of these.",
+     "Ans. (3)\nSol. (i) On moving left to right atomic radius decrease. So atomic radius order is B < A.\n(ii) Metallic radius is also decrease on moving left to right so order $\\Rightarrow \\mathrm{B}<\\mathrm{A}$.\n(iii) Order of ionic radius $\\mathrm{B}^{+}<\\mathrm{A}^{+}<\\mathrm{D}^{+}<\\mathrm{C}^{+}$.\n7. (A) $\\mathrm{Mn}_{2} \\mathrm{O}_{7}$ is an oil at room temperature\n(B) $\\mathrm{V}_{2} \\mathrm{O}_{5}$ reacts with acid to give $\\mathrm{VO}_{2}{ }^{+}$\n(C) CrO is a basic oxide\n(D) $\\mathrm{V}_{2} \\mathrm{O}_{5}$ does not react with acids",
+     "Choose the correct answer\n(1) A, B and C\n(2) B, C and D only\n(3) A only\n(4) B and C only",
+     "Ans. (1)",
+     "Sol. Ref. NCERT 4.4.1\n- $\\mathrm{Mn}_{2} \\mathrm{O}_{7}$ is a covalent green oil. So (A) is correct.\n- $\\mathrm{V}_{2} \\mathrm{O}_{5}$ is amphoteric, though mainly acidic, it gives $\\mathrm{VO}_{4}{ }^{3-}$ as well as $\\mathrm{VO}_{2}{ }^{+}$salts. So (B) is correct.\n- CrO is basic because Cr in CrO is +2 oxidation state. So Cr in +2 oxidation state shows basic character. So (C) is correct.\n8. Statement-I : In $15^{\\text {th }}$ group hydrides reducing character decreases from $\\mathrm{NH}_{3}$ to $\\mathrm{BiH}_{3}$.",
+     "Statement-II : $\\mathrm{E}_{2} \\mathrm{O}_{5}$ is more acidic than $\\mathrm{E}_{2} \\mathrm{O}_{3}$ (where E is the $15^{\\text {th }}$ group elements)\n(1) Statement I is incorrect and statement II is correct\n(2) Statement I is correct and statement II is incorrect\n(3) Both statement I and II are correct\n(4) Both statement I and II are incorrect",
+     "Ans. (1)\nSol. (1) Reducing character of $15^{\\text {th }}$ group hydrides increases from $\\mathrm{NH}_{3}$ to $\\mathrm{BiH}_{3}$.\n(2) The oxide in the higher oxidation state of element is more acidic than that of lower oxidation state.\n9. Statement-I : In the reduction of permanganate ion to magnate ion, one $\\mathrm{e}^{-}$is involved.",
+     "Statement-II : $\\mathrm{CrO}_{4}{ }^{2-} \\xrightarrow{\\mathrm{H}^{+}}$Product\nIn product Oxidation number of Cr is 6 .\n(1) Statement I is incorrect and statement II is correct\n(2) Statement I is correct and statement II is incorrect\n(3) Both statement I and II are correct\n(4) Both statement I and II are incorrect"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A resistor of $25 \\Omega$ is in left side with resistor x on the right side. Resistance per unit length is r and now the resistance per unit length is changed by 2r. Find the change in balance position, If the earlier balanced position was 40 cm from the left side.\n(1) Does not shift\n(2) Shift by 10 cm right\n(3) Shift by 20 cm right\n(4) Shift by 10 cm left",
+   "options": {
+    "A": "$\\mathrm{Mn}_{2} \\mathrm{O}_{7}$ is an oil at room temperature",
+    "B": "$\\mathrm{V}_{2} \\mathrm{O}_{5}$ reacts with acid to give $\\mathrm{VO}_{2}{ }^{+}$",
+    "C": "CrO is a basic oxide",
+    "D": "$\\mathrm{V}_{2} \\mathrm{O}_{5}$ does not react with acids\n\nChoose the correct answer\n(1) A, B and C\n(2) B, C and D only\n(3) A only\n(4) B and C only\n\nAns. (1)\n\nSol. Ref. NCERT 4.4.1\n- $\\mathrm{Mn}_{2} \\mathrm{O}_{7}$ is a covalent green oil. So (A) is correct.\n- $\\mathrm{V}_{2} \\mathrm{O}_{5}$ is amphoteric, though mainly acidic, it gives $\\mathrm{VO}_{4}{ }^{3-}$ as well as $\\mathrm{VO}_{2}{ }^{+}$salts. So (B) is correct.\n- CrO is basic because Cr in CrO is +2 oxidation state. So Cr in +2 oxidation state shows basic character. So (C) is correct.\n8. Statement-I : In $15^{\\text {th }}$ group hydrides reducing character decreases from $\\mathrm{NH}_{3}$ to $\\mathrm{BiH}_{3}$.\n\nStatement-II : $\\mathrm{E}_{2} \\mathrm{O}_{5}$ is more acidic than $\\mathrm{E}_{2} \\mathrm{O}_{3}$ (where E is the $15^{\\text {th }}$ group elements)\n(1) Statement I is incorrect and statement II is correct\n(2) Statement I is correct and statement II is incorrect\n(3) Both statement I and II are correct\n(4) Both statement I and II are incorrect\n\nAns. (1)\nSol. (1) Reducing character of $15^{\\text {th }}$ group hydrides increases from $\\mathrm{NH}_{3}$ to $\\mathrm{BiH}_{3}$.\n(2) The oxide in the higher oxidation state of element is more acidic than that of lower oxidation state.\n9. Statement-I : In the reduction of permanganate ion to magnate ion, one $\\mathrm{e}^{-}$is involved.\n\nStatement-II : $\\mathrm{CrO}_{4}{ }^{2-} \\xrightarrow{\\mathrm{H}^{+}}$Product\nIn product Oxidation number of Cr is 6 .\n(1) Statement I is incorrect and statement II is correct\n(2) Statement I is correct and statement II is incorrect\n(3) Both statement I and II are correct\n(4) Both statement I and II are incorrect\n\nAns. (1)\nSol. $\\mathrm{MnO}_{4}^{-}+\\mathrm{e}^{-} \\longrightarrow \\mathrm{MnO}_{4}{ }^{2-}$\n$2 \\mathrm{CrO}_{4}{ }^{2-}+2 \\mathrm{H}^{+} \\longrightarrow \\mathrm{Cr}_{2} \\mathrm{O}_{7}{ }^{2-}+\\mathrm{H}_{2} \\mathrm{O}$\nIn product $\\mathrm{Cr}_{2} \\mathrm{O}_{7}{ }^{2-}$ Oxidation number of Cr is 6 .\n10. Statement-I : $\\mathrm{S}_{8}$ disproportionate into $\\mathrm{S}^{2-}$ and $\\mathrm{S}_{2} \\mathrm{O}_{3}{ }^{2-}$ in alkaline medium\n\nStatement-II : $\\mathrm{ClO}_{4}{ }^{-}$undergoes disproportionate in acidic medium.\n(1) Statement I is correct and statement II is incorrect\n(2) Statement I is incorrect and statement II is correct\n(3) Both statement I and statement II are correct\n(4) Both statement I and statement II are incorrect\n\nAns. (1)\nSol. (i) $\\mathrm{S}_{8}+\\mathrm{OH}^{-} \\longrightarrow \\mathrm{S}^{2-}+\\mathrm{S}_{2} \\mathrm{O}_{3}{ }^{2-}$\n$\\mathrm{S}_{0} \\mathrm{~S}_{8}$ disproportionate in alkaline medium.\n(ii) $\\mathrm{ClO}_{4}{ }^{-}$do not show disproportionate reaction in any medium.\n11. Nessler's reagent is used for identification of following cation:\n(1) $\\mathrm{Na}^{+}$\n(2) $\\mathrm{K}^{+}$\n(3) $\\mathrm{NH}_{4}{ }^{+}$\n(4) $\\mathrm{Pb}^{+2}$\n\nAns. (3)\nSol. $\\mathrm{NH}_{4}{ }^{+}+\\underbrace{2\\left[\\mathrm{Hgl}_{4}\\right]^{2-}+4 \\mathrm{OH}^{-}}_{\\substack{\\text { Nessler's } \\\\ \\text { reagent }}} \\rightarrow \\underset{\\substack{\\text { brown ppt } \\\\ \\text { (iodide of millon's base) }}}{\\mathrm{HgO} . \\mathrm{Hg}\\left(\\mathrm{NH}_{2}\\right) \\mathrm{I} \\downarrow+\\mathrm{I}^{-}+\\mathrm{H}_{2} \\mathrm{O}}$\n\n12. For an equilibrium reaction $\\mathrm{A}(\\mathrm{g}) \\rightleftharpoons \\mathrm{B}(\\mathrm{g})+\\frac{\\mathrm{C}}{2}(\\mathrm{~g})$ the relation between equilibrium constant $(\\mathrm{Kp})$. degree of dissociation $(\\alpha)$ and total equilibrium pressure $(P)$ is :\n(1) $\\mathrm{Kp}=\\frac{\\alpha^{3 / 2} \\cdot \\mathrm{p}^{1 / 2}}{(2+\\alpha)^{1 / 2}(1-\\alpha)}$\n(2) $\\mathrm{Kp}=\\frac{\\alpha^{1 / 2} \\cdot \\mathrm{p}^{1 / 2}}{\\left(1+\\frac{\\alpha}{2}\\right)^{1 / 2}(1-\\alpha)}$\n(3) $\\mathrm{Kp}=\\frac{\\alpha^{3 / 2} \\cdot \\mathrm{p}^{1 / 2}}{\\left(1+\\frac{\\alpha}{2}\\right)(1-\\alpha)}$\n(4) $\\mathrm{Kp}=\\frac{\\alpha^{1 / 2} \\cdot \\mathrm{p}}{\\left(1+\\frac{\\alpha}{2}\\right)(-\\alpha)}$\n\nAns. (1)\nSol.\n$$\\mathrm{A}(\\mathrm{~g}) \\rightleftharpoons \\mathrm{B}(\\mathrm{~g})+\\frac{\\mathrm{C}}{2}(\\mathrm{~g})$$\n$\\mathrm{t}=0$\n$$\\begin{array}{ll}\n\\mathrm{a} & 0 \\\\\n\\mathrm{a}-\\mathrm{x} & \\mathrm{x}\n\\end{array}$$\n\nFor a mole, x moles are dissociated\nFor 1 mole, $\\frac{\\mathrm{x}}{\\mathrm{a}}$ moles $=\\alpha$ are dissociated\n$\\mathrm{x}=\\mathrm{a} \\alpha$\n$$\\mathrm{A}(\\mathrm{~g}) \\rightleftharpoons \\mathrm{B}(\\mathrm{~g})+\\frac{\\mathrm{C}}{2}(\\mathrm{~g})$$\n\nAt $\\mathrm{t}=\\mathrm{t}_{\\mathrm{eq}}$\n$$\\mathrm{a}-\\mathrm{a} \\alpha \\quad \\mathrm{a} \\alpha$$\n\nTotal no. of moles at equilibrium $=\\mathrm{a}+\\frac{\\mathrm{a} \\alpha}{2}=\\mathrm{a}\\left(1+\\frac{\\alpha}{2}\\right)$\n$$\\begin{aligned}\nP_{A(g)}=\\frac{a(1-\\alpha) P}{a\\left(1+\\frac{\\alpha}{2}\\right)} \\quad P_{B(g)}=\\frac{a \\alpha \\cdot P}{a\\left(1+\\frac{\\alpha}{2}\\right)} \\\\\n=\\frac{(1-\\alpha) P}{1+\\frac{\\alpha}{2}} \\quad=\\frac{\\alpha P}{1+\\frac{\\alpha}{2}} \\\\\nK_{P}=\\frac{P_{B} \\cdot(P c)^{1 / 2}}{P_{A}} \\quad=\\frac{\\left(\\frac{\\alpha}{1+\\frac{\\alpha}{2}} P\\right)\\left(\\frac{\\frac{\\alpha}{2} P}{1+\\frac{\\alpha}{2}}\\right)^{1 / 2}}{\\frac{(1-\\alpha) P}{\\left(1+\\frac{\\alpha}{2}\\right)}} \\\\\nK_{P}=\\frac{\\alpha \\cdot \\alpha^{1 / 2} \\cdot P^{1 / 2}}{(2+\\alpha)^{1 / 2}(1-\\alpha)}=\\frac{\\alpha^{3 / 2} \\cdot P^{1 / 2}}{(2+\\alpha)^{1 / 2}(1-\\alpha)}\n\\end{aligned}$$\n13. Find correct structure of 2,3-Dibromo-1-phenypentane\n(1)\n<smiles>CCC(Br)C(Br)Cc1ccccc1</smiles>\n(3)\n<smiles>CCCC(Br)C(Br)c1ccccc1</smiles>\n(2)\n<smiles>CCC(Br)CC(Br)c1ccccc1</smiles>\n(4)\n<smiles>CC(Br)CCC(Br)c1ccccc1</smiles>\n\nAns. (1)\n\nSol.\n<smiles>CCC(Br)C(Br)C(C)c1ccccc1</smiles>\n14. The correct order of reactivity towards electrophilic aromatic substitution reaction is.\n\n(A)\n<smiles>c1ccccc1</smiles>\n\n(B)\n<smiles>Cc1ccccc1</smiles>\n\n(C)\n<smiles>Clc1ccccc1</smiles>\n\n(D)\n<smiles>O=[N+]([O-])c1ccccc1</smiles>\n(1) $A<B<C<D$\n(2) C $<$ B $<$ D $<$ A\n(3) D $<$ C $<$ A $<$ B\n(4) D $<$ C $<$ B $<$ A\n\nAns. (3)\nSol. Greater the electron density of Aromatic ring, greater will be the rate of electrophilic Aromatic substitution.\n\n(A)\n<smiles>c1ccccc1</smiles>\n\n(B)\n<smiles>Cc1ccccc1</smiles>\n\n(C)\n<smiles>Clc1ccccc1</smiles>\n\n(D)\n<smiles>O=[N+]([O-])c1ccccc1</smiles>\n$D<C<A<B$\nAnswer is (3).\n15. Statement-I :\nformed product give Libermann nitroso test.\n\nStatement-II :\nformed product is highly deactivating due to protonation of nitrogen.\n(1) Both Statement-I \\& Statement-II are correct.\n(2) Both Statement-I \\& Statement-II are incorrect.\n(3) Statement-I is correct whereas Statement-II is incorrect.\n(4) Only Statement-II is correct.\n\nAns. (3)\nSol. In statement-I : Phenol is formed which gives Libermann nitroso test. In statement-II : The product benzanilide is weakly acitivating.\n16.\n\nX and Y are respectively.\n\n(1)\n<smiles>O=[N+]([O-])c1cc([N+](=O)[O-])c(Br)c([N+](=O)[O-])c1</smiles>\n\n(2)\n<smiles>O=[N+]([O-])c1ccc(Br)cc1</smiles>\n<smiles>O=[N+]([O-])c1ccc(O)cc1</smiles>\n\n(3)\n<smiles>O=[N+]([O-])c1cc([N+](=O)[O-])c(Br)c([N+](=O)[O-])c1</smiles>\n\n,\n<smiles>O=[N+]([O-])c1cc([N+](=O)[O-])c(Cl)c([N+](=O)[O-])c1</smiles>\n\n(4)\n<smiles>O=[N+]([O-])c1cc([N+](=O)[O-])c([N+](=O)[O-])c([N+](=O)[O-])c1</smiles>\n\n,\n<smiles>O=[N+]([O-])c1ccc(O)cc1</smiles>\n\nAns. (2)\n17. How many of the vitamins among $\\mathrm{A}, \\mathrm{B}_{1}, \\mathrm{~B}_{2}, \\mathrm{~B}_{12}, \\mathrm{C}, \\mathrm{D}$ and K , can be stored in human body.\n(1) 2\n(2) 3\n(3) 4\n(4) 5\n\nAns. (2)\nSol. Only water insoluble and fat soluble vitamins A, D and K can be stored in human body.\n18.\n\nAbove reaction is known as\n(1) Etard reaction.\n(2) Gatterman Koch reaction\n(3) Stephen reaction\n(4) Rosenmund reaction\n\nAns. (2)\n\nSol.\nis called Gatterman Koch reaction\n19.\n$P$, Product \" $P$ \" is\n(1)\n<smiles>[2H]C1CCC2(C)CC12Cl</smiles>\n(2)\n<smiles>CC12CCCC1(C)C2Cl</smiles>\n(3)\n<smiles>[2H]C1(Cl)CCCC1C</smiles>\n(4)\n<smiles>[2H]C1CCC(Cl)C1C</smiles>\n\nAns. (1)\nSol. It is example of electrophilic addition reaction\n20.\n(1)\n<smiles>O=C(c1ccccc1)c1ccccc1</smiles>\n(2)\n<smiles>O=C(Cl)c1ccc2ccccc2c1</smiles>\n(3)\n<smiles>ClCc1ccc2ccccc2c1</smiles>\n(4)\n<smiles>O=C(c1ccccc1)c1ccc(Cl)cc1</smiles>\n\nAns. (1)\nSol. It is example of Friedel Craft acylation.\n\n21. Sulphanlic acid $+\\mathrm{NaNO}_{2}+\\mathrm{CH}_{3} \\mathrm{COOH} \\longrightarrow X$\n\nY is :\n(1)\n<smiles>Nc1ccc(N=Nc2ccc(S(=O)(=O)O)cc2)c2ccccc12</smiles>\n(2)\n<smiles>O=S(=O)(O)c1ccc(N=Nc2ccc(O)c3ccccc23)cc1</smiles>\n(3)\n<smiles>Nc1cccc2c(N=Nc3ccc(S(=O)(=O)O)cc3)cccc12</smiles>\n(4)\n<smiles>Nc1ccc(S(=O)(=O)O)c2ccccc12</smiles>\n\nAns. (1)\nSol. Y is red violet Azo dye.\n22. Given rate law for a reaction $\\mathrm{r}=\\mathrm{k}[\\mathrm{A}]$\n\nIf reaction complete 50\\% in 120 min then determine in how many minute reaction gets completed 90\\%?\nAns. (400)\nSol. For first order,\n$$\\begin{aligned}\n\\mathrm{t}_{90 \\%} & =3.33 \\times \\mathrm{t}_{1 / 2} \\\\\n& =3.33 \\times 120 \\approx 400 \\mathrm{~min}\n\\end{aligned}$$\n23. $\\mathrm{KMnO}_{4}$ oxidise $\\mathrm{C}_{2} \\mathrm{O}_{4}{ }^{2-}$ to $\\mathrm{CO}_{2}$ during this reaction no of mole of $\\mathrm{H}^{+}$ions used with 1 mole of $\\mathrm{MnO}_{4}{ }^{-}$is\n$\\_\\_\\_\\_$ .\nAns. (8)\nSol. $\\left[\\mathrm{MnO}_{4}^{-}+8 \\mathrm{H}^{+}+5 \\mathrm{e}^{-} \\rightarrow \\mathrm{Mn}^{2+}+4 \\mathrm{H}_{2} \\mathrm{O}\\right] \\times 2$\n$$\\frac{\\left[\\mathrm{C}_{2} \\mathrm{O}_{4}{ }^{2-} \\rightarrow 2 \\mathrm{CO}_{2}+2 \\mathrm{e}^{-}\\right] \\times 5}{2 \\mathrm{MnO}_{4}^{-}+16 \\mathrm{H}^{+}+5 \\mathrm{C}_{2} \\mathrm{O}_{4}{ }^{2-} \\rightarrow 2 \\mathrm{Mn}^{2+}+10 \\mathrm{CO}_{2}+8 \\mathrm{H}_{2} \\mathrm{O}}$$\n24. 1 mole of an ideal gas expands from 10 lit to 100 lit isothermally and reversibly at 300 K , then magnitude of work done is $\\_\\_\\_\\_$ (in kJ ) [Nearest integer]\n[Given $\\mathrm{R}=8.314 \\frac{\\mathrm{~J}}{\\text { Mole × K }}$ ]\n\nAns. (6)\nSol. For isothermal reversible process\n$$\\begin{aligned}\nW & =-n R T \\ln \\left(\\frac{V_{2}}{V_{1}}\\right) \\\\\n& =-[1 \\times 8.314 \\times 300] 2.303 \\log \\left(\\frac{100}{10}\\right) \\\\\n& =-2.303 \\times 8.314 \\times 300 \\\\\n& =-5744 \\mathrm{~J} \\\\\n& =-5.744 \\mathrm{~kJ}\n\\end{aligned}$$"
+   },
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{f}(\\mathrm{x}) \\leq \\mathrm{f}(5 \\mathrm{x}) \\leq \\mathrm{f}(7 \\mathrm{x}), \\forall \\mathrm{x}>0$\n$$\\begin{array}{l}\n1 \\leq \\frac{f(5 x)}{f(x)} \\leq \\frac{f(7 x)}{f(x)} \\\\\n\\text { As } x \\rightarrow \\infty \\frac{f(5 x)}{f(x)} \\rightarrow 1^{\\prime} \\\\\n\\lim _{x \\rightarrow x}\\left[\\frac{f(5 x)}{f(x)}-1\\right]=0\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In compound AB dipole moment of A-B bond and bond distance are 1 A and 1.2 D respectively, then magnitude of fraction of charge on $A$ atom is $\\_\\_\\_\\_$ $\\times 10^{-2}$ [Nearest integer]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "25"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Solving $3 \\mathrm{y}=(\\mathrm{x}-4)^{2}$ and $\\mathrm{y}=4 \\mathrm{x}-\\mathrm{x}^{2}$\n$$\\begin{array}{l}\n12 x-3 x^{2}=x^{2}-8 x+16 \\\\\n\\Rightarrow 4 x^{2}-20 x+16=0 \\\\\n(x-1)(x-4)=0 \\Rightarrow x=1,4\n\\end{array}$$\n$$\\begin{aligned}\n\\text { Area } & =\\int_{1}^{4}\\left(\\left(4 x-x^{2}\\right)-\\frac{(x-4)^{2}}{3}\\right) d x \\\\\n& =\\left(2 x^{2}-\\frac{x^{3}}{3}-\\frac{(x-4)^{3}}{9}\\right)_{1}^{4} \\\\\n& =2(16-1)-\\frac{1}{3}(3)(21)-\\frac{1}{9}(0+27) \\\\\n& =30-21-3=6\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Number of monochlorination product of 2-Methylbutane formed in presence of sunlight is.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let $1^{\\text {st }}$ student get x\n$2^{\\text {nd }}$ student get y\n$3^{\\text {rd }}$ student get z\n$$\\Rightarrow x+y+z=21, \\quad x, y, z \\geq 2$$",
+     "Let $x=2+t_{1}, \\quad y=2+t_{2}, z=2+t_{3}$\n$\\Rightarrow \\mathrm{t}_{1}+\\mathrm{t}_{2}+\\mathrm{t}_{3}=15, \\mathrm{t}_{1} . \\mathrm{t}_{2} . \\mathrm{t}_{3} \\geq 0$\nnumber of ways $={ }^{17} \\mathrm{C}_{2}=\\frac{17 \\times 16}{2}=17 \\times 8=136$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Compound X with molar mass $108 \\mathrm{~g} \\mathrm{~mol}^{-1}$ undergoes acetylation to give product with molar mass 192 g $\\mathrm{mol}^{-1}$. Total number of $\\mathrm{NH}_{2}$ group in benzoid molecule $X$ is.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{z}_{1}^{3}+\\mathrm{z}_{2}^{3}=\\left(\\mathrm{z}_{1}+\\mathrm{z}_{1}\\right)\\left(\\left(\\mathrm{z}_{1}+\\mathrm{z}_{2}\\right)^{2}-3 \\mathrm{z}_{1} \\mathrm{z}_{2}\\right) \\Rightarrow 20+15 \\mathrm{i}=5\\left(25-3 \\mathrm{z}_{1} \\mathrm{z}_{2}\\right) \\Rightarrow \\mathrm{z}_{1} \\mathrm{z}_{2}=7-\\mathrm{i}$\nNow $z_{1}^{2}+z_{2}^{2}+2 z_{1} z_{1}=25 \\Rightarrow z_{1}^{2}+z_{2}^{2}=25-2(7-i) \\Rightarrow z_{1}^{2}+z_{2}^{2}=11+2 i$\nNow $z_{1}^{4}+z_{2}^{4}+2(7-i)^{2}=121-4+44 i \\Rightarrow z_{1}^{4}+z_{2}^{4}=21+72$\nSo $\\left|z_{1}^{4}+z_{2}^{4}\\right|=\\sqrt{441+(72)^{2}}=\\sqrt{5625}=75$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

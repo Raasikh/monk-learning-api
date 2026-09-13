@@ -168,7 +168,16 @@
     "unplaced": [],
     "shared_anchors": {},
     "note": "Anchors are READ OUT OF THE DRAWING: every leader's end point is the point its label names, so this set cannot disagree with the art. The four respiratory terms (lung, buccal cavity, glottis, skin) were MOVED to figure b on 2026-09-12 — they are structures of the respiration plate, not the heart, and an unplaced term sitting on the wrong figure is a term nobody can ever place.",
-    "grouping": "Proposed 2026-09-11, confirmed by Raasikh: heart 5 / arterial 4 / venous 3. MEASURED reason, not presentation: twelve labels in ONE group cannot be placed clear at 340x340, 343x236 or 495x270 — see near-anchor-placement.test.ts. Split this way every group places clear at all five gate frames."
+    "grouping": "Proposed 2026-09-11, confirmed by Raasikh: heart 5 / arterial 4 / venous 3. MEASURED reason, not presentation: twelve labels in ONE group cannot be placed clear at 340x340, 343x236 or 495x270 — see near-anchor-placement.test.ts. Split this way every group places clear at all five gate frames.",
+    "published": {
+      "version": 2,
+      "at": "2026-09-13T01:10:31Z",
+      "r2_key": "concept-assets/bio11-ch7-frog--circulatory-and-respiratory-systems--a.json",
+      "sha256": "7fb192940bfd6eb61bbaa5494b54de2826fa1ee05d67a468adaec28712407015",
+      "bytes": 3686,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11 ch7 frog heart, 3 groups, reviewed_by raasikh"
+    }
   },
   "groups": [
     {
@@ -192,5 +201,6 @@
         "hinglish": "Veins"
       }
     }
-  ]
+  ],
+  "label_set_version": 2
 }

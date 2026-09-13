@@ -1,631 +1,696 @@
 {
+ "paper_id": "jee-main-2022-s2-mathematics-2022-07-29-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-mathematics-2022-07-29-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-07-29",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Mathematics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-mathematics-2022-07-29-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-07-29",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Mathematics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/1750-29-07%20EVENING%20MATHS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
-  },
-  "probe": {
-    "sha256": "289ef636a5480e071474c2e83e1bba9bcfc1dbb32f9de759c95ab9ba68c59685",
-    "page_count": 11,
-    "text_chars": 3440,
-    "has_text_layer": true,
-    "has_question_ids": false,
-    "includes_solutions": true,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 61,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-mathematics-2022-07-29-shift-2.pdf"
-  },
-  "answer_sheet": {
-    "status": "embedded_unverified",
-    "source": "mirror_pdf_embedded",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": [
-      {
-        "qno": 2,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 3,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 5,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 7,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 9,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 10,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 11,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 12,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 13,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 14,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 15,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 16,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 17,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 18,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 19,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 20,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      }
-    ]
-  },
-  "format": "generic_mirror",
-  "status": "extracted",
-  "detected_paper_meta": {},
-  "question_count": 19,
-  "defects": [
-    "11 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [4, 1, 2, 3, 4, 5, 6, 8, 9, 7, 10]",
-    "19/19 questions carry parse_flags"
-  ],
-  "questions": [
-    {
-      "qno": 1,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "0 be a complex number such that",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "no_options_found"
-      ]
-    },
-    {
-      "qno": 2,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 3,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "– 2z) + z =  \n \n(\n– 8\n – 8 = 0 \n&   – 36 = 0 \n \n = 8,  = 36 \n(\n+",
-      "options": null,
-      "page_start": 1,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 5,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 6,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "a\na\na\na\na\n– 2an+1,  n \n.\n \na  a\n a  a\n a  a\n a  a\na\n \na\n=\na\n a\n \na\na\n=\na\n–\n \na\na =\na – a\n  \n \na\na\na – a\n \n \na\na\na – a\na\na\na\na\na\na\na\n a\na\na\n \na\na\na\na\na\na",
-      "options": null,
-      "page_start": 2,
-      "page_end": 3,
-      "parse_flags": [
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "possible_text_scramble"
-      ]
-    },
-    {
-      "qno": 7,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 3,
-      "page_end": 3,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 8,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 3,
-      "page_end": 3,
-      "parse_flags": [
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ]
-    },
-    {
-      "qno": 9,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 3,
-      "page_end": 4,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 10,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 4,
-      "page_end": 4,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 11,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 4,
-      "page_end": 5,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 12,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 5,
-      "page_end": 5,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 13,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 5,
-      "page_end": 5,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 14,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 5,
-      "page_end": 6,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 15,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": ")",
-      "options": null,
-      "page_start": 6,
-      "page_end": 6,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "stem_under_20_chars"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 16,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 6,
-      "page_end": 6,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 17,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 6,
-      "page_end": 7,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 18,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 7,
-      "page_end": 7,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 19,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 7,
-      "page_end": 8,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 20,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 8,
-      "page_end": 11,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/1750-29-07%20EVENING%20MATHS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "289ef636a5480e071474c2e83e1bba9bcfc1dbb32f9de759c95ab9ba68c59685",
+  "page_count": 11,
+  "text_chars": 3440,
+  "has_text_layer": true,
+  "has_question_ids": false,
+  "includes_solutions": true,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 61,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-mathematics-2022-07-29-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": null
     }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": null
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": null
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": null
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "16"
+    }
+   }
   ]
+ },
+ "format": "generic_mirror",
+ "status": "extracted",
+ "detected_paper_meta": {},
+ "question_count": 19,
+ "defects": [
+  "11 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [4, 1, 2, 3, 4, 5, 6, 8, 9, 7, 10]",
+  "19/19 questions carry parse_flags"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "0 be a complex number such that",
+   "options": null,
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "no_options_found"
+   ]
+  },
+  {
+   "qno": 2,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "",
+   "options": null,
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "empty_stem"
+   ],
+   "embedded_answer": {
+    "raw": null
+   }
+  },
+  {
+   "qno": 3,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "– 2z) + z =  \n \n(\n– 8\n – 8 = 0 \n&   – 36 = 0 \n \n = 8,  = 36 \n(\n+",
+   "options": {
+    "A": "10",
+    "B": "-10",
+    "C": "5",
+    "D": "-5\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $f(x)=\\left\\{\\begin{array}{cc}\\frac{\\ln (1+5 x)-\\ln (1+\\alpha x)}{x} & ; x \\neq 0 \\\\ 10 & ; x=0\\end{array}\\right.$\n$$\\lim _{x \\rightarrow 0} \\frac{\\ln (1+5 x)-\\ln (1+\\alpha x)}{x}=10$$\n\nUsing expension\n$$\\begin{array}{l}\n\\lim _{x \\rightarrow 0} \\frac{(5 x+\\ldots . .)-(\\alpha x+\\ldots \\ldots)}{x}=10 \\\\\n5-\\alpha=10 \\Rightarrow \\alpha=-5\n\\end{array}$$\n5. If [t] denotes the greatest integer $\\leq \\mathrm{t}$, then the value of $\\int_{0}^{1}\\left[2 \\mathrm{x}-\\left|3 \\mathrm{x}^{2}-5 \\mathrm{x}+2\\right|+1\\right] \\mathrm{dx}$ is:\n(A) $\\frac{\\sqrt{37}+\\sqrt{13}-4}{6}$\n(B) $\\frac{\\sqrt{37}-\\sqrt{13}-4}{6}$\n(C) $\\frac{-\\sqrt{37}-\\sqrt{13}+4}{6}$\n(D) $\\frac{-\\sqrt{37}+\\sqrt{13}+4}{6}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{I}=\\int_{0}^{\\mathrm{l}}\\left[2 \\mathrm{x}-13 \\mathrm{x}^{2}-3 \\mathrm{x}-2 \\mathrm{x}+21+1\\right] \\mathrm{dx}$\n$$\\begin{array}{l}\nI=\\int_{0}^{1}[2 x-|(3 x-2)(x-1)|] d x+\\int_{0}^{1} 1 d x \\\\\nI=\\int_{0}^{2 / 3}\\left[\\left(2 x-\\left(3 x^{2}-5 x+2\\right)\\right)\\right] d x+\\int_{2 / 3}^{1}\\left(2 x+\\left(3 x^{2}-5 x+2\\right)\\right) d x+1 \\\\\nI=\\int_{0}^{2 / 3}\\left[-3 x^{2}+7 x-2\\right] d x+\\int_{2 / 3}^{1}\\left(3 x^{2}-3 x+2\\right) d x+1\n\\end{array}$$\n$$y=-3 x^{2}+7 x-2$$\n$$\\begin{array}{l}\n\\int_{0}^{\\alpha}(-2) \\mathrm{dx}+\\int_{\\alpha}^{1 / 3}(-1) \\mathrm{dx}+\\int_{1 / 3}^{\\beta} 0 \\mathrm{dx}+\\int_{\\beta}^{2 / 3} 1 . \\mathrm{dx} \\\\\n=-2 \\alpha-\\left(\\frac{1}{3}-\\alpha\\right)+\\frac{2}{3}-\\beta=-\\alpha-\\beta+\\frac{1}{3} \\\\\n\\mathrm{y}=3 \\mathrm{x}^{2}-3 \\mathrm{x}+2\n\\end{array}$$\n\nWhen $\\mathrm{x} \\in\\left(\\frac{2}{3}, 1\\right)$\n$$\\begin{array}{l}\n3 x^{2}-3 x+2 \\in\\left(\\frac{4}{3}, 2\\right) \\\\\n{\\left[3 x^{2}-3 x+2\\right]=1} \\\\\n\\therefore \\int_{2 / 3}^{1}\\left[3 x^{2}-3 x+2\\right] d x=1\\left(1-\\frac{2}{3}\\right)=\\frac{1}{3}\n\\end{array}$$\n\nHence $\\mathrm{I}=\\left(\\frac{1}{3}-(\\alpha+\\beta)\\right)+\\left(\\frac{1}{3}\\right)+1$\n$$\\begin{array}{l}\n=\\frac{5}{3}-\\left(\\frac{7-\\sqrt{37}}{6}+\\frac{7-\\sqrt{13}}{6}\\right) \\\\\n=\\frac{-2}{3}+\\frac{\\sqrt{37}+\\sqrt{13}}{6} \\\\\n=\\frac{\\sqrt{37}+\\sqrt{13}-4}{6}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n2"
+   },
+   "page_start": 1,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   }
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "$\\frac{\\sqrt{37}+\\sqrt{13}-4}{6}$",
+    "B": "$\\frac{\\sqrt{37}-\\sqrt{13}-4}{6}$",
+    "C": "$\\frac{-\\sqrt{37}-\\sqrt{13}+4}{6}$",
+    "D": "$\\frac{-\\sqrt{37}+\\sqrt{13}+4}{6}$"
+   },
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   }
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "Let $\\left\\{a_{\\mathrm{n}}\\right\\}_{\\mathrm{n}=0}^{\\infty}$ be a sequence such that $a_{0}=a_{1}=0$ and $a_{\\mathrm{n}+2}=3 a_{\\mathrm{n}+1}-2 a_{\\mathrm{n}}+1, \\forall \\mathrm{n} \\geq 0$.\nThen $a_{25} a_{23}-2 a_{25} a_{22}-2 a_{23} a_{24}+4 a_{22} a_{24}$ is equal to:",
+   "options": {
+    "A": "483",
+    "B": "528",
+    "C": "575",
+    "D": "624"
+   },
+   "page_start": 2,
+   "page_end": 3,
+   "parse_flags": [
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "possible_text_scramble"
+   ],
+   "text_original_textlayer": "a\na\na\na\na\n– 2an+1,  n \n.\n \na  a\n a  a\n a  a\n a  a\na\n \na\n=\na\n a\n \na\na\n=\na\n–\n \na\na =\na – a\n  \n \na\na\na – a\n \n \na\na\na – a\na\na\na\na\na\na\na\n a\na\na\n \na\na\na\na\na\na",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "22! - 21!",
+    "B": "$22!-2(21!)$",
+    "C": "21 ! - 2 (20!)",
+    "D": "$21!-20!$"
+   },
+   "page_start": 3,
+   "page_end": 3,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   }
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "$3^{1010} \\mathrm{I}\\left(\\frac{\\pi}{3}\\right)-\\mathrm{I}\\left(\\frac{\\pi}{6}\\right)=0$",
+    "B": "$\\quad 3^{1010} \\mathrm{I}\\left(\\frac{\\pi}{6}\\right)-\\mathrm{I}\\left(\\frac{\\pi}{3}\\right)=0$",
+    "C": "$3^{1011} \\mathrm{I}\\left(\\frac{\\pi}{3}\\right)-\\mathrm{I}\\left(\\frac{\\pi}{6}\\right)=0$",
+    "D": "$3^{1011} \\mathrm{I}\\left(\\frac{\\pi}{6}\\right)-\\mathrm{I}\\left(\\frac{\\pi}{3}\\right)=0$"
+   },
+   "page_start": 3,
+   "page_end": 3,
+   "parse_flags": [
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ]
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "$2 \\tan ^{-1}\\left(\\frac{1}{\\mathrm{k}}\\right)=\\log _{\\mathrm{e}}\\left(\\mathrm{k}^{2}+1\\right)$",
+    "B": "$\\tan ^{-1}\\left(\\frac{1}{\\mathrm{k}}\\right)=\\log _{\\mathrm{e}}\\left(\\mathrm{k}^{2}+1\\right)$",
+    "C": "$2 \\tan ^{-1}\\left(\\frac{1}{\\mathrm{k}+1}\\right)=\\log _{\\mathrm{e}}\\left(\\mathrm{k}^{2}+2 \\mathrm{k}+2\\right)$",
+    "D": "$2 \\tan ^{-1}\\left(\\frac{1}{\\mathrm{k}}\\right)=\\log _{\\mathrm{e}}\\left(\\frac{\\mathrm{k}^{2}+1}{\\mathrm{k}^{2}}\\right)$"
+   },
+   "page_start": 3,
+   "page_end": 4,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   }
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "$\\frac{1}{2}$",
+    "B": "$\\frac{3}{2}$",
+    "C": "$\\frac{5}{2}$",
+    "D": "$\\frac{7}{2}$"
+   },
+   "page_start": 4,
+   "page_end": 4,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": null
+   }
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "119",
+    "B": "128",
+    "C": "145",
+    "D": "155"
+   },
+   "page_start": 4,
+   "page_end": 5,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   }
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "1",
+    "B": "3",
+    "C": "0",
+    "D": "infinite"
+   },
+   "page_start": 5,
+   "page_end": 5,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": null
+   }
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "ares is 24",
+    "B": "perimeter is 25",
+    "C": "circumradius is 5",
+    "D": "inradius is 2"
+   },
+   "page_start": 5,
+   "page_end": 5,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   }
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "1",
+    "B": "3",
+    "C": "0",
+    "D": "infinite\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $2 \\cos \\left(\\frac{\\mathrm{x}^{2}+\\mathrm{x}}{6}\\right)=4^{\\mathrm{x}}+4^{-\\mathrm{x}}$\nL.H.S $\\leq 2$, \\& R.H.S. $\\geq 2$\n\nHence L.H.S = 2 \\& R.H.S = 2\n$$2 \\cos \\left(\\frac{x^{2}+x}{6}\\right)=2 \\quad 4^{x}+4^{-x}=2$$\n\nCheck $\\mathrm{x}=0$ Possible hence only one solution.\n13. Let A (α, -2), B (α, 6) and C ( $\\left.\\frac{\\alpha}{4},-2\\right)$ be vertices of a $\\triangle \\mathrm{ABC}$. If $\\left(5, \\frac{\\alpha}{4}\\right)$ is the circumcentre of $\\Delta \\mathrm{ABC}$, then which of the following is NOT correct about $\\triangle \\mathrm{ABC}$ :\n(A) ares is 24\n(B) perimeter is 25\n(C) circumradius is 5\n(D) inradius is 2\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\quad \\mathrm{A}(\\alpha,-2): \\mathrm{B}(\\alpha, 6): \\mathrm{C}\\left(\\frac{\\alpha}{4},-2\\right)$ since AC is perpendicular to AB.\n\nSo, $\\Delta \\mathrm{ABC}$ is right angled at A.\n$$\\begin{array}{l}\n\\text { Circumcentre }=\\text { mid point of } \\mathrm{BC} .=\\left(\\frac{5 \\alpha}{8}, 2\\right) \\\\\n\\therefore \\frac{5 \\alpha}{8}=5 \\& \\frac{\\alpha}{4}=2 \\\\\n\\alpha=8 \\\\\n(8,6)_{\\mathrm{B}}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n5"
+   },
+   "page_start": 5,
+   "page_end": 6,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   }
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": ")",
+   "options": null,
+   "page_start": 6,
+   "page_end": 6,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "stem_under_20_chars"
+   ],
+   "embedded_answer": {
+    "raw": null
+   }
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": null,
+   "page_start": 6,
+   "page_end": 6,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   }
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": null,
+   "page_start": 6,
+   "page_end": 7,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   }
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": null,
+   "page_start": 7,
+   "page_end": 7,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem"
+   ],
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   }
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": null,
+   "page_start": 7,
+   "page_end": 8,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem"
+   ],
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   }
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": null,
+   "page_start": 8,
+   "page_end": 11,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem"
+   ],
+   "embedded_answer": {
+    "raw": "16"
+   }
+  }
+ ]
 }

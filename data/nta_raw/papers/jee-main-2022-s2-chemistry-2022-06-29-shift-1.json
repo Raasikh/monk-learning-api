@@ -1,61 +1,1021 @@
 {
+ "paper_id": "jee-main-2022-s2-chemistry-2022-06-29-shift-1",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-chemistry-2022-06-29-shift-1",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-29",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-chemistry-2022-06-29-shift-1",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-29",
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/1558-29-06%20MORNING%20CHEMISTRY%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/1558-29-06%20MORNING%20CHEMISTRY%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "22088316777e80166e8af80962b5bc70b656dfc4953628ea6c7391d0198a4ed0",
+  "page_count": 8,
+  "text_chars": 735,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-29-shift-1.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 1,
+  "xval_printed_agree": 30,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "101731",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "101732",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "101733",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "101734",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "101735",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "101736",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "101737",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "101738",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "101739",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "101740",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "101741",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "101742",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "101743",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "101744",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "101745",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "101746",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "101747",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "101748",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "101749",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "101750",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "101751",
+    "answer": {
+     "raw": "152",
+     "value": "152"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "101752",
+    "answer": {
+     "raw": "117",
+     "value": "117"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "101753",
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "101754",
+    "answer": {
+     "raw": "127",
+     "value": "127"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "101755",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "101756",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "101757",
+    "answer": {
+     "raw": "0",
+     "value": "0"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "101758",
+    "answer": {
+     "raw": "64",
+     "value": "64"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "101759",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "101760",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "101731",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Production of iron in blast furnace follows the following equation\n$\\mathrm{Fe}_{3} \\mathrm{O}_{4}(\\mathrm{~s})+4 \\mathrm{CO}(\\mathrm{g}) \\rightarrow 3 \\mathrm{Fe}(\\mathrm{l})+4 \\mathrm{CO}_{2}(\\mathrm{~g})$\nwhen 4.640 kg of $\\mathrm{Fe}_{3} \\mathrm{O}_{4}$ and 2.520 kg of CO are allowed to react then the amount of iron (in g ) produced is :\n[Given : Molar Atomic mass $\\left(\\mathrm{g} \\mathrm{mol}^{-1}\\right): \\mathrm{Fe}=56$\nMolar Atomic mass $\\left(\\mathrm{g} \\mathrm{mol}^{-1}\\right): 0=16$\nMolar Atomic mass $\\left(\\mathrm{g} \\mathrm{mol}^{-1}\\right):=\\mathrm{C}=12$",
+   "options": {
+    "A": "1400",
+    "B": "2200",
+    "C": "3360",
+    "D": "4200\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Moles of $\\mathrm{Fe}_{3} \\mathrm{O}_{4}=\\frac{4.640 \\times 10^{3}}{232}=20$\nMoles of $\\mathrm{CO}=\\frac{2.52 \\times 10^{3}}{28}=90$\nSo limiting Reagent $=\\mathrm{Fe}_{3} \\mathrm{O}_{4}$\nSo moles of Fe formed = 60\nWeight of $\\mathrm{Fe}=60 \\times 56=3360 \\mathrm{gms}$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Moles of $\\mathrm{Fe}_{3} \\mathrm{O}_{4}=\\frac{4.640 \\times 10^{3}}{232}=20$\nMoles of $\\mathrm{CO}=\\frac{2.52 \\times 10^{3}}{28}=90$\nSo limiting Reagent $=\\mathrm{Fe}_{3} \\mathrm{O}_{4}$\nSo moles of Fe formed = 60\nWeight of $\\mathrm{Fe}=60 \\times 56=3360 \\mathrm{gms}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "22088316777e80166e8af80962b5bc70b656dfc4953628ea6c7391d0198a4ed0",
-    "page_count": 8,
-    "text_chars": 735,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-29-shift-1.pdf"
+  {
+   "qno": 2,
+   "question_id": "101732",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following statements are correct ?",
+   "options": {
+    "A": "The electronic configuration of Cr is $[\\mathrm{Ar}] 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{1}$.",
+    "B": "The magnetic quantum number may have a negative value.",
+    "C": "In the ground state of an atom, the orbitals are filled in order of their increasing energies.",
+    "D": "The total number of nodes are given by $\\mathrm{n}-2$.\n\nChoose the most appropriate answer from the options given below :\n(A) (A), (C) and (D) only\n(B) (A) and (B) only\n(C) (A) and (C) only\n(D) (A), (B) and (C) only\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol. (A) $\\mathrm{Cr}=[\\mathrm{Ar}] 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{1}$\n(B) $\\mathrm{m}=-\\ell$ to $+\\ell$\n(C) According to Aufbau principle, orbitals are filled in order of their increasing energies.\n(D) Total nodes $=\\mathrm{n}-1$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "(A) $\\mathrm{Cr}=[\\mathrm{Ar}] 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{1}$\n(B) $\\mathrm{m}=-\\ell$ to $+\\ell$\n(C) According to Aufbau principle, orbitals are filled in order of their increasing energies.\n(D) Total nodes $=\\mathrm{n}-1$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "101733",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Arrange the following in the decreasing order of their covalent character :",
+   "options": {
+    "A": "LiCl",
+    "B": "NaCl",
+    "C": "KCl",
+    "D": "CsCl\n\nQuestion: Choose the most appropriate answer from the options given below :\n(A) (A)> (C) > (B) > (D)\n(B) (B) $>$ (A) $>$ (C) $>$ (D)\n(C) $(\\mathrm{A})>$ (B) $>$ (C) $>$ (D)\n(D) $(\\mathrm{A})>$ (B) $>$ (D) $>$ (C)\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{LiCl}>\\mathrm{NaCl}>\\mathrm{KCl}>\\mathrm{CsCl}$ (Covalent character)"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{LiCl}>\\mathrm{NaCl}>\\mathrm{KCl}>\\mathrm{CsCl}$ (Covalent character)"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "101734",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The solubility of AgCl will be maximum in which of the following ?",
+   "options": {
+    "A": "0.01 M KCl",
+    "B": "0.01 M HC1",
+    "C": "$0.01 \\mathrm{M} \\mathrm{AgNO}_{3}$",
+    "D": "Deionised water\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. In deionized water no common ion effect will take place so maximum solubility\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "In deionized water no common ion effect will take place so maximum solubility",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": "101735",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following is a correct statement ?",
+   "options": {
+    "A": "Brownian motion destabilises sols.",
+    "B": "Any amount of dispersed phase can be added to emulsion without destabilising it.",
+    "C": "Mixing two oppositely charged sols in equal amount neutralises charges and stabilises colloids.",
+    "D": "Presence of equal and similar charges on colloidal particles provides stability to the colloidal solution.\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. As equal \\& similar charge particle will repel each other, hence will never precipitate."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "As equal \\& similar charge particle will repel each other, hence will never precipitate."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "101736",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The electronic configuration of Pt (atomic number 78) is:",
+   "options": {
+    "A": "$[\\mathrm{Xe}] 4 \\mathrm{f}^{4} 5 \\mathrm{~d}^{9} 6 \\mathrm{~s}^{1}$",
+    "B": "$[\\mathrm{Kr}] 4 \\mathrm{f}^{44} 5 \\mathrm{~d}^{10}$",
+    "C": "$[\\mathrm{Xe}] 4 \\mathrm{f}^{4} 5 \\mathrm{~d}^{10}$",
+    "D": "$[\\mathrm{Xe}] 4 \\mathrm{f}^{4} 5 \\mathrm{~d}^{8} 6 \\mathrm{~s}^{2}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. ${ }_{78} \\mathrm{Pt}=[\\mathrm{Xe}] 4 \\mathrm{f}^{4} 5 \\mathrm{~d}^{9} 6 \\mathrm{~s}^{1}$ (Exceptional electronic configuration)"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "${ }_{78} \\mathrm{Pt}=[\\mathrm{Xe}] 4 \\mathrm{f}^{4} 5 \\mathrm{~d}^{9} 6 \\mathrm{~s}^{1}$ (Exceptional electronic configuration)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "101737",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In isolation of which one of the following metals from their ores, the use of cyanide salt is not commonly involved?",
+   "options": {
+    "A": "Zinc",
+    "B": "Gold",
+    "C": "Silver",
+    "D": "Copper\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. For ZnS, KCN is used as depressant.\nFor Gold and silver ⇒ leaching [Cyanide process]"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "For ZnS, KCN is used as depressant.\nFor Gold and silver ⇒ leaching [Cyanide process]"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": "101738",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which one of the following reactions indicates the reducing ability of hydrogen peroxide in basic medium ?",
+   "options": {
+    "A": "$\\mathrm{HOCl}+\\mathrm{H}_{2} \\mathrm{O}_{2} \\rightarrow \\mathrm{H}_{3} \\mathrm{O}^{+}+\\mathrm{Cl}^{-}+\\mathrm{O}_{2}$",
+    "B": "$\\mathrm{PbS}+4 \\mathrm{H}_{2} \\mathrm{O}_{2} \\rightarrow \\mathrm{PbSO}_{4}+4 \\mathrm{H}_{2} \\mathrm{O}$",
+    "C": "$2 \\mathrm{MnO}_{4}^{-}+3 \\mathrm{H}_{2} \\mathrm{O}_{2} \\rightarrow 2 \\mathrm{MnO}_{2}+3 \\mathrm{O}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}+2 \\mathrm{OH}^{-}$",
+    "D": "$\\mathrm{Mn}^{2+}+\\mathrm{H}_{2} \\mathrm{O}_{2} \\rightarrow \\mathrm{Mn}^{4+}+2 \\mathrm{OH}^{-}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol. In option (A) and (C) reducing action of hydrogen peroxide is shown.\n\nIn option (A) it is in acidic medium, in option (B) it is in basic medium.\nor\nFor reducing ability $\\mathrm{H}_{2} \\mathrm{O}_{2}$ changes to $\\mathrm{O}_{2}$, i.e. oxidize , so in option 'A' \\& 'C' $\\mathrm{O}_{2}$ is formed but 'A' is in acidic medium so option - C correct."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "In option (A) and (C) reducing action of hydrogen peroxide is shown.",
+     "In option (A) it is in acidic medium, in option (B) it is in basic medium.\nor\nFor reducing ability $\\mathrm{H}_{2} \\mathrm{O}_{2}$ changes to $\\mathrm{O}_{2}$, i.e. oxidize , so in option 'A' \\& 'C' $\\mathrm{O}_{2}$ is formed but 'A' is in acidic medium so option - C correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "101739",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match the List-I with List- II.\n\\begin{tabular}[t]{|l|l|}\n\\hline List-I (Metal) & List-II (Emitted light wavelength (nm)) \\\\\n\\hline",
+   "options": {
+    "A": "Li & (I) 670.8 \\\\\n\\hline",
+    "B": "Na & (II) 589.2 \\\\\n\\hline",
+    "C": "Rb & (III) 780.0 \\\\\n\\hline",
+    "D": "Cs & (IV) 455.5 \\\\\n\\hline\n\\end{tabular}\n\nChoose the most appropriate answer from the options given below:\n(A) (A)-(I), (B)-(II), (C)-(III), (D)-(IV)\n(B) (A)-(III), (B)-(II), (C)-(I), (D)-(IV)\n(C) (A)-(III), (B)-(I), (C)-(II), (D)-(IV)\n(D) (A)-(IV), (B)-(II), (C)-(I), (D)-(III)\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. NCERT Table 10.1.5\n\n\\begin{tabular}[t]{|l|l|l|l|l|l|}\n\\hline Metal & Li & Na & K & Rb & Cs \\\\\n\\hline Colour & Crimson red & Yellow & Violet & Red Violet & Blue \\\\\n\\hline $\\lambda / \\mathrm{nm}$ & 670.8 & 589.2 & 766.5 & 780.0 & 455.5 \\\\\n\\hline\n\\end{tabular}\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "NCERT Table 10.1.5",
+     "\\begin{tabular}[t]{|l|l|l|l|l|l|}\n\\hline Metal & Li & Na & K & Rb & Cs \\\\\n\\hline Colour & Crimson red & Yellow & Violet & Red Violet & Blue \\\\\n\\hline $\\lambda / \\mathrm{nm}$ & 670.8 & 589.2 & 766.5 & 780.0 & 455.5 \\\\\n\\hline\n\\end{tabular}",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "101740",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match the List-I with List- II.\n\\begin{tabular}[t]{|l|l|}\n\\hline List-I (Metal) & List-II Application \\\\\n\\hline",
+   "options": {
+    "A": "Cs & (I) High temperature thermometer \\\\\n\\hline",
+    "B": "Ga & (II) Water repellent sprays \\\\\n\\hline",
+    "C": "B & (III) Photoelectric cells \\\\\n\\hline",
+    "D": "Si & (IV) Bullet proof vest \\\\\n\\hline\n\\end{tabular}\n\nChoose the most appropriate answer from the option given below:\n(A) (A)-(III), (B)-(I), (C)-(IV), (D)-(II)\n(B) (A)-(IV), (B)-(III), (C)-(II), (D)-(I)\n(C) (A)-(II), (B)-(III), (C)-(IV), (D)-(I)\n(D) (A)-(I), (B)-(IV), (C)-(II), (D)-(III)\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Caesium is used in devising photoelectric cells.\nBoron fibres are used in making bullet-proof vest. Silicones being surrounded by non-polar alkyl groups are water repelling in nature.\n\nGallium is less toxic and has a very high boiling point, so it is used in high temperature thermometers."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Caesium is used in devising photoelectric cells.\nBoron fibres are used in making bullet-proof vest. Silicones being surrounded by non-polar alkyl groups are water repelling in nature.",
+     "Gallium is less toxic and has a very high boiling point, so it is used in high temperature thermometers."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": "101741",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The oxoacid of phosphorus that is easily obtained from a reaction of alkali and white phosphorus and has two P-H bonds, is :",
+   "options": {
+    "A": "Phosphonic acid",
+    "B": "Phosphinic acid",
+    "C": "Pyrophosphorus acid",
+    "D": "Hypophosphoric acid\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{P}_{4}+3 \\mathrm{NaOH}+3 \\mathrm{H}_{2} \\mathrm{O} \\rightarrow \\mathrm{PH}_{3}+3 \\mathrm{NaH}_{2} \\mathrm{PO}_{2}$ oxoacid $=\\mathrm{H}_{3} \\mathrm{PO}_{2}$ (hypo phosphorus acid) or (phosphinic acid)"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{P}_{4}+3 \\mathrm{NaOH}+3 \\mathrm{H}_{2} \\mathrm{O} \\rightarrow \\mathrm{PH}_{3}+3 \\mathrm{NaH}_{2} \\mathrm{PO}_{2}$ oxoacid $=\\mathrm{H}_{3} \\mathrm{PO}_{2}$ (hypo phosphorus acid) or (phosphinic acid)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": "101742",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The acid that is believed to be mainly responsible for the damage of Taj Mahal is",
+   "options": {
+    "A": "Sulfuric acid",
+    "B": "Hydrofluoric acid",
+    "C": "Phosphoric acid",
+    "D": "Hydrochloric acid\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{CaCO}_{3}+\\mathrm{H}_{2} \\mathrm{SO}_{4} \\rightarrow \\mathrm{CaSO}_{4}+\\mathrm{H}_{2} \\mathrm{O}+\\mathrm{CO}_{2}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{CaCO}_{3}+\\mathrm{H}_{2} \\mathrm{SO}_{4} \\rightarrow \\mathrm{CaSO}_{4}+\\mathrm{H}_{2} \\mathrm{O}+\\mathrm{CO}_{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "101743",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two isomers 'A' and 'B' with molecular formula $\\mathrm{C}_{4} \\mathrm{H}_{8}$ give different products on oxidation with $\\mathrm{KMnO}_{4}$ in acidic medium. Isomer 'A' on reaction with $\\mathrm{KMnO}_{4} / \\mathrm{H}^{+}$results in effervescence of a gas and gives ketone. The compound 'A' is",
+   "options": {
+    "A": "But-1-ene",
+    "B": "cis-But-2-ene",
+    "C": "trans-But-2ene",
+    "D": "2-methyl propene\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 14,
+   "question_id": "101744",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In the given conversion the compound A is:",
+   "options": {
+    "A": "<smiles>Oc1ccccc1Cl</smiles>",
+    "B": "<smiles>Clc1ccccc1Cl</smiles>",
+    "C": "<smiles>CC(C)(C)Oc1ccccc1Br</smiles>",
+    "D": "<smiles>CC(C)(C)c1ccccc1O</smiles>\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nSol."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 15,
+   "question_id": "101745",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements :\nStatement I : The esterification of carboxylic acid with an alcohol is a nucleophilic acyl substitution.\nStatement II : Electron withdrawing groups in the carboxylic acid will increase the rate of esterification reaction.\nChoose the most appropriate option :",
+   "options": {
+    "A": "Both Statement I and Statement II are correct.",
+    "B": "Both Statement I and Statement II are incorrect.",
+    "C": "Statement I is correct but Statement II is incorrect.",
+    "D": "Statement I is incorrect but Statement II is correct.\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\nelectron with drawing group on carboxylic acid will increase the rate of esterification"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "electron with drawing group on carboxylic acid will increase the rate of esterification"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "101746",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Consider the above reaction, the product A and product B respectively are",
+   "options": {
+    "A": "<smiles>Nc1ccc(Br)cc1</smiles>",
+    "B": "<smiles>Nc1c(Br)cc(Br)cc1Br</smiles>",
+    "C": "<smiles>CNc1c(Br)cc(Br)cc1Br</smiles>\n<smiles>Nc1ccc(Br)cc1</smiles>",
+    "D": "<smiles>Nc1ccc(Br)cc1</smiles>\nand\n<smiles>Nc1c(Br)cc(Br)cc1Br</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "101747",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The polymer, which can be stretched and retains its original status on releasing the force is",
+   "options": {
+    "A": "Bakelite",
+    "B": "Nylon 6,6",
+    "C": "Buna-N",
+    "D": "Terylene\n\nOfficial Ans. by NTA (C)\nAns. (C)\nBuna - N is synthetic rubber which can be stretched and retains its original status on releasing the force."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 18,
+   "question_id": "101748",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Sugar moiety in DNA and RNA molecules respectively are",
+   "options": {
+    "A": "β-D-2-deoxyribose, $\\beta$-D-deoxyribose",
+    "B": "$\\beta$-D-2-deoxyribose, $\\beta$-D-ribose",
+    "C": "$\\beta$-D-ribose, $\\beta$-D-2-deoxyribose",
+    "D": "β-D-deoxyribose, $\\beta$-D-2-deoxyribose\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. DNA contains ⇒ $\\beta-\\mathrm{D}-2$ - deoxyribose RNA contains $\\Rightarrow \\beta-\\mathrm{D}$ - ribose"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "DNA contains ⇒ $\\beta-\\mathrm{D}-2$ - deoxyribose RNA contains $\\Rightarrow \\beta-\\mathrm{D}$ - ribose"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": "101749",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following compound does not contain sulphur atom ?",
+   "options": {
+    "A": "Cimetidine",
+    "B": "Ranitidine",
+    "C": "Histamine",
+    "D": "Saccharin\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n<smiles>NCCc1cnc[nH]1</smiles>\n\nHistamine is nitrogenous compound it does not contain sulpher."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "<smiles>NCCc1cnc[nH]1</smiles>",
+     "Histamine is nitrogenous compound it does not contain sulpher."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "101750",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements.\nStatement I : Phenols are weakly acidic.\nStatement II : Therefore they are freely soluble in NaOH solution and are weaker acids than alcohols and water.\nChoose the most appropriate option:",
+   "options": {
+    "A": "Both Statement I and Statement II are correct.",
+    "B": "Both Statement I and Statement II are incorrect.",
+    "C": "Statement I is correct but Statement II is incorrect.",
+    "D": "Statement I is incorrect but Statement II is correct.\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Phenol are weakly acidic. Phenol is more acidic than alcohol \\& $\\mathrm{H}_{2} \\mathrm{O}$ statement (I) is correct. (II) is incorrect.\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Phenol are weakly acidic. Phenol is more acidic than alcohol \\& $\\mathrm{H}_{2} \\mathrm{O}$ statement (I) is correct. (II) is incorrect.",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "101751",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Geraniol, a volatile organic compound, is a component of rose oil. The density of the vapour is $0.46 \\mathrm{gL}^{-1}$ at 257°C and 100 mm Hg. The molar mass of geraniol is $\\_\\_\\_\\_$ (Nearest Integer)\n[Given $\\mathrm{R}=0.082 \\mathrm{~L} \\mathrm{~atm} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "152"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Moles of $\\mathrm{Fe}_{3} \\mathrm{O}_{4}=\\frac{4.640 \\times 10^{3}}{232}=20$\nMoles of $\\mathrm{CO}=\\frac{2.52 \\times 10^{3}}{28}=90$\nSo limiting Reagent $=\\mathrm{Fe}_{3} \\mathrm{O}_{4}$\nSo moles of Fe formed = 60\nWeight of $\\mathrm{Fe}=60 \\times 56=3360 \\mathrm{gms}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "101752",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "17.0 g of $\\mathrm{NH}_{3}$ completely vapourises at $-33.42^{\\circ} \\mathrm{C}$ and 1 bar pressure and the enthalpy change in the process is $23.4 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$. The enthalpy change for the vapourisation of 85 g of $\\mathrm{NH}_{3}$ under the same conditions is $\\_\\_\\_\\_$ kJ.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "117"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "(A) $\\mathrm{Cr}=[\\mathrm{Ar}] 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{1}$\n(B) $\\mathrm{m}=-\\ell$ to $+\\ell$\n(C) According to Aufbau principle, orbitals are filled in order of their increasing energies.\n(D) Total nodes $=\\mathrm{n}-1$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "101753",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "1.2 mL of acetic acid is dissolved in water to make 2.0 L of solution. The depression in freezing point observed for this strength of acid is $0.0198^{\\circ} \\mathrm{C}$. The percentage of dissociation of the acid is $\\_\\_\\_\\_$ .\n(Nearest integer)\n[Given : Density of acetic acid is $1.02 \\mathrm{~g} \\mathrm{~mL}^{-1}$ Molar mass of acetic acid is $60 \\mathrm{~g} \\mathrm{~mol}^{-1}$\n$\\left.\\mathrm{K}_{\\mathrm{r}}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)=1.85 \\mathrm{~K} \\mathrm{~kg} \\mathrm{~mol}^{-1}\\right]$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{LiCl}>\\mathrm{NaCl}>\\mathrm{KCl}>\\mathrm{CsCl}$ (Covalent character)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "101754",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A dilute solution of sulphuric acid is electrolysed using a current of 0.10 A for 2 hours to produce hydrogen and oxygen gas. The total volume of gases produced at STP is $\\_\\_\\_\\_$ $\\mathrm{cm}^{3}$. (Nearest integer) [Given : Faraday constant $\\mathrm{F}=96500 \\mathrm{C} \\mathrm{mol}^{-1}$ at STP, molar volume of an ideal gas is $22.7 \\mathrm{~L} \\mathrm{~mol}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "127"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "In deionized water no common ion effect will take place so maximum solubility",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": "101755",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The activation energy of one of the reactions in a biochemical process is $532611 \\mathrm{~J} \\mathrm{~mol}^{-1}$. When the temperature falls from 310 K to 300 K , the change in rate constant observed is $\\mathrm{k}_{300}=\\mathrm{x} \\times 10^{-3} \\mathrm{k}_{310}$. The value of x is $\\_\\_\\_\\_$ .\n[Given: $\\ln 10=2.3$\n$\\mathrm{R}=8.3 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "As equal \\& similar charge particle will repel each other, hence will never precipitate."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "101756",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The number of terminal oxygen atoms present in the product B obtained from the following reaction is\n$\\_\\_\\_\\_$ .\n$\\mathrm{FeCr}_{2} \\mathrm{O}_{4}+\\mathrm{Na}_{2} \\mathrm{CO}_{3}+\\mathrm{O}_{2} \\rightarrow \\mathrm{~A}+\\mathrm{Fe}_{2} \\mathrm{O}_{3}+\\mathrm{CO}_{2}$\n$\\mathrm{A}+\\mathrm{H}^{+} \\rightarrow \\mathrm{B}+\\mathrm{H}_{2} \\mathrm{O}+\\mathrm{Na}^{+}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "${ }_{78} \\mathrm{Pt}=[\\mathrm{Xe}] 4 \\mathrm{f}^{4} 5 \\mathrm{~d}^{9} 6 \\mathrm{~s}^{1}$ (Exceptional electronic configuration)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "101757",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "An acidified manganate solution undergoes disproportionation reaction. The spin-only magnetic moment value of the product having manganese in higher oxidation state is $\\_\\_\\_\\_$\nB.M. (Nearest integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "0"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "For ZnS, KCN is used as depressant.\nFor Gold and silver ⇒ leaching [Cyanide process]"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": "101758",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Kjeldahl's method was used for the estimation of nitrogen in an organic compound. The ammonia evolved from 0.55 g of the compound neutralised 12.5 mL of $1 \\mathrm{M} \\mathrm{H}_{2} \\mathrm{SO}_{4}$ solution. The percentage of nitrogen in the compound is $\\_\\_\\_\\_$ . (Nearest integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "64"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "In option (A) and (C) reducing action of hydrogen peroxide is shown.",
+     "In option (A) it is in acidic medium, in option (B) it is in basic medium.\nor\nFor reducing ability $\\mathrm{H}_{2} \\mathrm{O}_{2}$ changes to $\\mathrm{O}_{2}$, i.e. oxidize , so in option 'A' \\& 'C' $\\mathrm{O}_{2}$ is formed but 'A' is in acidic medium so option - C correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "101759",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Observe structures of the following compounds\n<smiles>CCC(C)Cl</smiles>\nThe total number of structures/compounds which possess asymmetric carbon atoms is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "NCERT Table 10.1.5",
+     "\\begin{tabular}[t]{|l|l|l|l|l|l|}\n\\hline Metal & Li & Na & K & Rb & Cs \\\\\n\\hline Colour & Crimson red & Yellow & Violet & Red Violet & Blue \\\\\n\\hline $\\lambda / \\mathrm{nm}$ & 670.8 & 589.2 & 766.5 & 780.0 & 455.5 \\\\\n\\hline\n\\end{tabular}",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "101760",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "$$\\mathrm{C}_{6} \\mathrm{H}_{12} \\mathrm{O}_{6} \\xrightarrow{\\text { Zymase }} \\mathrm{A} \\xrightarrow[\\Delta]{\\mathrm{NaOI}} \\mathrm{~B}+\\mathrm{CHI}_{3}$$\nThe number of carbon atoms present in the product B is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Caesium is used in devising photoelectric cells.\nBoron fibres are used in making bullet-proof vest. Silicones being surrounded by non-polar alkyl groups are water repelling in nature.",
+     "Gallium is less toxic and has a very high boiling point, so it is used in high temperature thermometers."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

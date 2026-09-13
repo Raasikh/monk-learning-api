@@ -1,61 +1,1027 @@
 {
+ "paper_id": "jee-main-2022-s2-chemistry-2022-06-26-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-chemistry-2022-06-26-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-26",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-chemistry-2022-06-26-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-26",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/15333-26-06%20evening%20chemistry.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/15333-26-06%20evening%20chemistry.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "6cbea64b18590dd00c9387495817533795c33227c3c5550911b1830c16104ead",
+  "page_count": 6,
+  "text_chars": 572,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-26-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "value": "A"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "value": "A"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "143",
+     "value": "143"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "38",
+     "value": "38"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "415",
+     "value": "415"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2735",
+     "value": "2735"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "983",
+     "value": "983"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "225",
+     "value": "225"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The number of radial and angular nodes in 4d orbital are. respectively",
+   "options": {
+    "A": "1 and 2",
+    "B": "3 and 2",
+    "C": "1 and 0",
+    "D": "2 and 1\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Radial node $=\\mathrm{n}-l-1$\n$$\\begin{array}{l}\n=4-2-1 \\\\\n=1\n\\end{array}$$\n\nAngular node $(l)=2$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Radial node $=\\mathrm{n}-l-1$\n$$\\begin{array}{l}\n=4-2-1 \\\\\n=1\n\\end{array}$$",
+     "Angular node $(l)=2$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "6cbea64b18590dd00c9387495817533795c33227c3c5550911b1830c16104ead",
-    "page_count": 6,
-    "text_chars": 572,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-26-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List I with List II.\n\\begin{tabular}[t]{|l|l|}\n\\hline List I Enzyme & List II Conversion of \\\\\n\\hline A. Invertase & I. Starch into maltose \\\\\n\\hline B. Zymase & II. Maltose into glucose \\\\\n\\hline C. Diastase & III. Glucose into ethanol \\\\\n\\hline D. Maltase & IV. Cane sugar into glucose \\\\\n\\hline\n\\end{tabular}\nChoose the most appropriate answer from the options given below :",
+   "options": {
+    "A": "A-III, B-IV. C-II. D-I",
+    "B": "A-III. B-II. C-I. D-IV",
+    "C": "A-IV, B-IIL C-I. D-II",
+    "D": "A-IV, B-II. C-III. D-I\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Invertase : Cane sugar → Glucose and fructose\nZymase : Glucose → Ethanol and $\\mathrm{CO}_{2}$\nDiastase : Starch → Maltose\nMaltase : Maltose → Glucose"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Invertase : Cane sugar → Glucose and fructose\nZymase : Glucose → Ethanol and $\\mathrm{CO}_{2}$\nDiastase : Starch → Maltose\nMaltase : Maltose → Glucose"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following elements in considered as a metalloid?",
+   "options": {
+    "A": "Sc",
+    "B": "Pb",
+    "C": "Bi",
+    "D": "Te\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Sc, Pb, Bi are metals\nTe is a metalloid"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Sc, Pb, Bi are metals\nTe is a metalloid"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The role of depressants in Froth Flotation method* is to",
+   "options": {
+    "A": "selectively prevent one component of the ore from coming to the froth.",
+    "B": "reduce the consumption of oil for froth formation.",
+    "C": "stabilize the froth.",
+    "D": "enhance non-wettability of the mineral particles.\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Depressant prevent one component from coming to the froth.\n\nFor eg., in Galena ore, the depressant (NaCN) prevents impurity (ZnS) from coming to the froth."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Depressant prevent one component from coming to the froth.",
+     "For eg., in Galena ore, the depressant (NaCN) prevents impurity (ZnS) from coming to the froth."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Boiling of hard water is helpful in removing the temporary hardness by converting calcium hydrogen carbonate and magnesium hydrogen carbonate to",
+   "options": {
+    "A": "$\\mathrm{CaCO}_{3}$ and $\\mathrm{Mg}(\\mathrm{OH})_{2}$",
+    "B": "$\\mathrm{CaCO}_{3}$ and $\\mathrm{M}_{2} \\mathrm{CO}_{3}$",
+    "C": "$\\mathrm{Ca}(\\mathrm{OH})_{2}$ and $\\mathrm{MgCO}_{3}$",
+    "D": "$\\mathrm{Ca}(\\mathrm{OH})_{2}$ and $\\mathrm{Mg}(\\mathrm{OH})_{2}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{Mg}\\left(\\mathrm{HCO}_{3}\\right)_{2} \\xrightarrow{\\text { Boil }} \\mathrm{Mg}(\\mathrm{OH})_{2}+2 \\mathrm{CO}_{2} \\uparrow$\n$\\mathrm{Ca}\\left(\\mathrm{HCO}_{3}\\right)_{2} \\xrightarrow{\\text { Boil }} \\mathrm{CaCO}_{3}+\\mathrm{H}_{2} \\mathrm{O}+\\mathrm{CO}_{2} \\uparrow$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{Mg}\\left(\\mathrm{HCO}_{3}\\right)_{2} \\xrightarrow{\\text { Boil }} \\mathrm{Mg}(\\mathrm{OH})_{2}+2 \\mathrm{CO}_{2} \\uparrow$\n$\\mathrm{Ca}\\left(\\mathrm{HCO}_{3}\\right)_{2} \\xrightarrow{\\text { Boil }} \\mathrm{CaCO}_{3}+\\mathrm{H}_{2} \\mathrm{O}+\\mathrm{CO}_{2} \\uparrow$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "s-block element which cannot be qualitatively confirmed by the flame test is",
+   "options": {
+    "A": "Li",
+    "B": "Na",
+    "C": "Rb",
+    "D": "Be\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Flame color\nLi Crimson Red\nNa Yellow\nRb Red violet\nBe No color\n\nJEE Exam Solution\n1\nwww.esaral.com\n\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Flame color\nLi Crimson Red\nNa Yellow\nRb Red violet\nBe No color",
+     "JEE Exam Solution\n1\nwww.esaral.com",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The oxide which contains an odd electron at the nitrogen atom is",
+   "options": {
+    "A": "$\\mathrm{N}_{2} \\mathrm{O}$",
+    "B": "$\\mathrm{NO}_{2}$",
+    "C": "$\\mathrm{N}_{2} \\mathrm{O}_{3}$",
+    "D": "$\\mathrm{N}_{2} \\mathrm{O}_{5}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol.\n<smiles>[NH]=[Nb][OH]</smiles>\n<smiles>O=NO</smiles>\n<smiles>O=N[N+](=O)[O-]</smiles>\n<smiles>O=[N+]([O-])O[N+](=O)O</smiles>"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>[NH]=[Nb][OH]</smiles>\n<smiles>O=NO</smiles>\n<smiles>O=N[N+](=O)[O-]</smiles>\n<smiles>O=[N+]([O-])O[N+](=O)O</smiles>"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which one of the following is an example of disproportionation reaction?",
+   "options": {
+    "A": "$3 \\mathrm{MnO}_{4}^{2-}+4 \\mathrm{H}^{+} \\rightarrow 2 \\mathrm{MnO}_{4}^{-}+\\mathrm{MnO}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}$",
+    "B": "$\\mathrm{MnO}_{4}^{2-}+4 \\mathrm{H}^{+}+4 \\mathrm{e}^{-} \\rightarrow \\mathrm{MnO}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}$",
+    "C": "$10 \\mathrm{I}^{-}+2 \\mathrm{MnO}_{4}^{-}+16 \\mathrm{H}^{+} \\rightarrow 2 \\mathrm{Mn}^{2+}+8 \\mathrm{H}_{2} \\mathrm{O}+5 \\mathrm{I}_{2}$",
+    "D": "$8 \\mathrm{MnO}_{4}^{-}+3 \\mathrm{~S}_{2} \\mathrm{O}_{3}^{2-}+\\mathrm{H}_{2} \\mathrm{O} \\rightarrow 8 \\mathrm{MnO}_{2}+6 \\mathrm{SO}_{4}^{2-}+2 \\mathrm{OH}^{-}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The most common oxidation state of Lanthanoid elements is +3. Which of the following is likely to deviate easily from +3 oxidation state?",
+   "options": {
+    "A": "Ce (At. No. 58)",
+    "B": "La (At. No. 57)",
+    "C": "Lu (At. No. 71)",
+    "D": "Gd (At. No. 64)\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{Ce}=[\\mathrm{Xe}] 4 \\mathrm{f}^{\\mathrm{l}} 5 \\mathrm{~d}^{1} 6 \\mathrm{~s}^{2}$\n$\\mathrm{Ce}^{3+}=[\\mathrm{Xe}] 4 \\mathrm{f}^{1} 5 \\mathrm{~d}^{0}$\n$\\mathrm{Ce}^{+4}=[\\mathrm{Xe}] 4 \\mathrm{f}^{0} 5 \\mathrm{~d}^{0}$ (Noble gas configuration)"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{Ce}=[\\mathrm{Xe}] 4 \\mathrm{f}^{\\mathrm{l}} 5 \\mathrm{~d}^{1} 6 \\mathrm{~s}^{2}$\n$\\mathrm{Ce}^{3+}=[\\mathrm{Xe}] 4 \\mathrm{f}^{1} 5 \\mathrm{~d}^{0}$\n$\\mathrm{Ce}^{+4}=[\\mathrm{Xe}] 4 \\mathrm{f}^{0} 5 \\mathrm{~d}^{0}$ (Noble gas configuration)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The measured BOD values for four different water samples (A-D) are as follows:\n$\\mathrm{A}=3 \\mathrm{ppm}: \\mathrm{B}=18 \\mathrm{ppm}: \\mathrm{C}-21 \\mathrm{ppm}: \\mathrm{D}=4 \\mathrm{ppm}$. The water samples which can be called as highly polluted with organic wastes, are",
+   "options": {
+    "A": "A and B",
+    "B": "A and D",
+    "C": "B and C",
+    "D": "B and D\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Clean water ⟶ B.O.D. < 5 ppm\nHighly polluted water ⟶ B.O.D. > 17 ppm"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Clean water ⟶ B.O.D. < 5 ppm\nHighly polluted water ⟶ B.O.D. > 17 ppm"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The correct order of nucleophilicity is",
+   "options": {
+    "A": "$\\mathrm{F}^{-}>\\mathrm{OH}^{-}$",
+    "B": "$\\mathrm{H}_{2} \\underset{. .}{\\mathrm{O}}>\\mathrm{OH}^{-}$",
+    "C": "$\\underset{\\cdots}{\\mathrm{O}} \\mathrm{H}>\\mathrm{RO}^{-}$",
+    "D": "$\\mathrm{NH}_{2}^{-}>\\mathrm{NH}_{3}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Nucleophilicity $\\propto$ electro density on donor atom\n$\\propto$ size of donor atom (in gas)\n$\\propto \\frac{1}{\\text { EN of atom }}$ (for period)"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Nucleophilicity $\\propto$ electro density on donor atom\n$\\propto$ size of donor atom (in gas)\n$\\propto \\frac{1}{\\text { EN of atom }}$ (for period)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Oxidation of toluene to Benzaldehyde can be easily carried out with which of the following reagents?",
+   "options": {
+    "A": "$\\mathrm{CrO}_{3}$ /acetic acid, $\\mathrm{H}_{3} \\mathrm{O}^{+}$",
+    "B": "$\\mathrm{CrO}_{3}$ /acetic anhydride, $\\mathrm{H}_{3} \\mathrm{O}^{+}$",
+    "C": "$\\mathrm{KMnO}_{4} / \\mathrm{HCl}, \\mathrm{H}_{3} \\mathrm{O}^{+}$",
+    "D": "$\\mathrm{CO} / \\mathrm{HCl}$, anhydrous $\\mathrm{AlCl}_{3}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol.\n<smiles>CC(=O)OC(OC(C)=O)c1ccccc1-c1cccc(C)c1</smiles>"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>CC(=O)OC(OC(C)=O)c1ccccc1-c1cccc(C)c1</smiles>"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The major product in the following reaction\n(A)\n<smiles>CC(O)C(C)(C)C</smiles>\n(B)\n<smiles>CC(=O)C(C)(C)C</smiles>\n(C)\n<smiles>CC(C)C(C)(C)O</smiles>\n(D)\n<smiles>CC(C)(C)CCO</smiles>",
+   "options": null,
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Oxymercuration - Demercuration\nAddition of $\\mathrm{H}_{2} \\mathrm{O}$\nMarkovnikov's addition without rearrangement"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Halogenation of which one of the following will yield m-substituted product with respect to methyl group as a major product?",
+   "options": {
+    "A": "<smiles>Cc1cccc(C=O)c1</smiles>",
+    "B": "<smiles>Cc1ccccc1[N+](=O)[O-]</smiles>",
+    "C": "<smiles>Cc1ccccc1O</smiles>",
+    "D": "<smiles>Cc1cccc([N+](=O)[O-])c1</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Electrophile will attack at ortho and para position with respect to better electron releasing group (ERG)\nERG : $-\\mathrm{OH}>-\\mathrm{CH}_{3}$\n\nPara position with respect to - OH (+R) group and it will be meta position with respect to $-\\mathrm{CH}_{3}$ group."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Electrophile will attack at ortho and para position with respect to better electron releasing group (ERG)\nERG : $-\\mathrm{OH}>-\\mathrm{CH}_{3}$",
+     "Para position with respect to - OH (+R) group and it will be meta position with respect to $-\\mathrm{CH}_{3}$ group."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The reagent, from the following, which converts benzoic acid to benzaldehyde in one step is",
+   "options": {
+    "A": "$\\mathrm{LiAlH}_{4}$",
+    "B": "$\\mathrm{KMnO}_{4}$",
+    "C": "MnO",
+    "D": "$\\mathrm{NaBH}_{4}$\n\nOfficial Ans. by NTA (C)\nAns. (D)\n\nSol."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The final product 'A' in the following reaction sequence\n(A)\n<smiles>CC=C(C)C(=O)O</smiles>\n(B)\n<smiles>CC=C(C)C#N</smiles>\n(C)\n<smiles>CC=C(C)C(O)(C(=O)O)C(C)C</smiles>\n(D)\n<smiles>CC=C(C)C(N)=O</smiles>",
+   "options": null,
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which statement is NOT correct for p-toluenesulphonyl chloride?",
+   "options": {
+    "A": "It is known as Hinsberg's reagent.",
+    "B": "It is used to distinguish primary and secondary amines.",
+    "C": "On treatment with secondary amine, it leads to a product, that is soluble in alkali.",
+    "D": "It doesn't react with tertiary amines.\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n\nHinsberg's reagent\n\n3\nJEE Exam Solution\nJEE Exam Solution\nwww.esaral.com\nwww.esaral.com\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n4"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Hinsberg's reagent",
+     "3\nJEE Exam Solution\nJEE Exam Solution\nwww.esaral.com\nwww.esaral.com",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP\n4"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The final product ' C ' is the following series series of reactions",
+   "options": {
+    "A": "<smiles>Oc1cc(N=Nc2ccccc2)c2ccccc2c1</smiles>",
+    "B": "<smiles>Oc1ccc2c(N=Nc3ccccc3)cccc2c1</smiles>",
+    "C": "<smiles>Oc1ccc2ccccc2c1N=Nc1ccccc1</smiles>",
+    "D": "<smiles>Oc1cccc2cc(N=Nc3ccccc3)ccc12</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (D)\n\nSol.\n<smiles>Oc1cc2c(c(O)cc3ccccc32)c(O)c1O</smiles>"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>Oc1cc2c(c(O)cc3ccccc32)c(O)c1O</smiles>"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following is NOT an example of synthetic detergent?",
+   "options": {
+    "A": "<smiles>CCCCc1ccc([Se][Se][Na]</smiles>",
+    "B": "$\\mathrm{CH}_{3}-\\left(\\mathrm{CH}_{2}\\right)_{16}-\\mathrm{COO}^{-} \\mathrm{Na}^{+}$",
+    "C": "",
+    "D": "$\\mathrm{CH}_{3}\\left(\\mathrm{CH}_{2}\\right)_{16} \\mathrm{COO}\\left(\\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{O}\\right)_{\\mathrm{n}} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{OH}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Refer NCERT (Page No. 452)"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Refer NCERT (Page No. 452)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which one of the following is a water soluble vitamin, that is not excreted easily?",
+   "options": {
+    "A": "Vitamin $\\mathrm{B}_{2}$",
+    "B": "Vitamin $\\mathrm{B}_{1}$",
+    "C": "Vitamin $\\mathrm{B}_{6}$",
+    "D": "Vitamin $\\mathrm{B}_{12}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Refer NCERT (Page No. 426)\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Refer NCERT (Page No. 426)\nSECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "CNG is an important transportation fuel. When 100 g CNG is mixed with 208 oxygen in vehicles, it leads to the formation of $\\mathrm{CO}_{2}$ and $\\mathrm{H}_{2} \\mathrm{O}$ and produces large quantity of heat during this combustion, then the amount of carbon dioxide, produced in grams is $\\_\\_\\_\\_$ . [nearest integer]\n[Assume CNG to be methane]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "143"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Radial node $=\\mathrm{n}-l-1$\n$$\\begin{array}{l}\n=4-2-1 \\\\\n=1\n\\end{array}$$",
+     "Angular node $(l)=2$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a solid AB. A atoms are in ccp arrangement and B atoms occupy all the octahedral sites. If two atoms from the opposite faces are removed, then the resultant stoichiometry of the compound is $\\mathrm{A}_{\\mathrm{x}} \\mathrm{B}_{\\mathrm{y}}$. The value of x is $\\_\\_\\_\\_$ . [nearest integer]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Invertase : Cane sugar → Glucose and fructose\nZymase : Glucose → Ethanol and $\\mathrm{CO}_{2}$\nDiastase : Starch → Maltose\nMaltase : Maltose → Glucose"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Amongst $\\mathrm{SF}_{4}, \\mathrm{XeF}_{4}, \\mathrm{CF}_{4}$ and $\\mathrm{H}_{2} \\mathrm{O}$, the number of species with two lone pairs of electrons $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Sc, Pb, Bi are metals\nTe is a metalloid"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A fish swimming in water body when taken out from the water body is covered with a film of water of weight 36 g. When it is subjected to cooking at $100^{\\circ} \\mathrm{C}$, then the internal energy for vaporization in $\\mathrm{kJ} \\mathrm{mol}^{-1}$ is $\\_\\_\\_\\_$ .\n[Assume steam to be an ideal gas. Given $\\mathrm{A}_{\\text {vap }} \\mathrm{H}^{\\ominus}$ for water at 373 K and 1 bar is $41.1 \\mathrm{~kJ} \\mathrm{~mol}^{-1} ; \\mathrm{R}= 8.31 \\mathrm{JK}^{-1} \\mathrm{~mol}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "38"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Depressant prevent one component from coming to the froth.",
+     "For eg., in Galena ore, the depressant (NaCN) prevents impurity (ZnS) from coming to the froth."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The osmotic pressure exerted by a solution prepared by dissolving 2.0 g of protein of molar mass $60 \\mathrm{~kg} \\mathrm{~mol}^{-1}$ in 200 mL of water at 27°C is\n$\\_\\_\\_\\_$ Pa. [integer value]\n(use $\\mathrm{R}=0.083 \\mathrm{~L}$ bar $\\mathrm{mol}^{-1} \\mathrm{~K}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "415"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{Mg}\\left(\\mathrm{HCO}_{3}\\right)_{2} \\xrightarrow{\\text { Boil }} \\mathrm{Mg}(\\mathrm{OH})_{2}+2 \\mathrm{CO}_{2} \\uparrow$\n$\\mathrm{Ca}\\left(\\mathrm{HCO}_{3}\\right)_{2} \\xrightarrow{\\text { Boil }} \\mathrm{CaCO}_{3}+\\mathrm{H}_{2} \\mathrm{O}+\\mathrm{CO}_{2} \\uparrow$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "40° of HI undergoes decomposition to $\\mathrm{H}_{2}$ and $\\mathrm{I}_{2}$ at 300 K. $\\Delta \\mathrm{G}^{\\ominus}$ for this decompostion reaction at one atmosphere pressure is $\\_\\_\\_\\_$ $\\mathrm{J} \\mathrm{mol}^{-1}$. [nearest integer]\n(Use $\\mathrm{R}=8.31 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$; log $2=0.3010$. In $10= 2.3, \\log 3=0.477$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2735"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Flame color\nLi Crimson Red\nNa Yellow\nRb Red violet\nBe No color",
+     "JEE Exam Solution\n1\nwww.esaral.com",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "$\\mathrm{Cu}(\\mathrm{s})+\\mathrm{Sn}^{2+}(0.001 \\mathrm{M}) \\rightarrow \\mathrm{Cu}^{2+}(0.01 \\mathrm{M})+\\mathrm{Sn}(\\mathrm{s})$\nThe Gibbs free energy change for the above reaction at 298 K is $\\mathrm{x} \\times 10^{-1} \\mathrm{~kJ} \\mathrm{~mol}^{-1}$;\nThe value of x is $\\_\\_\\_\\_$ . [nearest integer]\n$\\left[\\right.$ Given : $\\left.\\mathrm{E}_{\\mathrm{Cu}^{2+} / \\mathrm{Cu}}^{\\ominus}=0.34 \\mathrm{~V} ; \\mathrm{E}_{\\mathrm{Sn}^{2+} / \\mathrm{Sn}}^{\\circ}=-0.14 \\mathrm{~V} ; \\mathrm{F}=96500 \\mathrm{C} \\mathrm{mol}^{-1}\\right]$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "983"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "<smiles>[NH]=[Nb][OH]</smiles>\n<smiles>O=NO</smiles>\n<smiles>O=N[N+](=O)[O-]</smiles>\n<smiles>O=[N+]([O-])O[N+](=O)O</smiles>"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Catalyst A reduces the activation energy for a reaction by $10 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$ at 300 K . The ratio of rate constants, $\\frac{{ }^{\\mathrm{k}} \\mathrm{T}, \\text { Catalysed }}{{ }^{\\mathrm{k}} \\mathrm{T}, \\text { Uncatalysed }}$ is $\\mathrm{e}^{\\mathrm{x}}$. The value of x is\n$\\_\\_\\_\\_$ . [nearest integer]\n[Assume theat the pre-exponential factor is same in both the cases.\nGiven $\\mathrm{R}=8.31 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Reaction of $\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+}$ with excess ammonia and in the presence of oxygen results into a diamagnetic product. Number of electrons present in $\\mathrm{t}_{2 \\mathrm{~g}}$-orbitals of the product is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{Ce}=[\\mathrm{Xe}] 4 \\mathrm{f}^{\\mathrm{l}} 5 \\mathrm{~d}^{1} 6 \\mathrm{~s}^{2}$\n$\\mathrm{Ce}^{3+}=[\\mathrm{Xe}] 4 \\mathrm{f}^{1} 5 \\mathrm{~d}^{0}$\n$\\mathrm{Ce}^{+4}=[\\mathrm{Xe}] 4 \\mathrm{f}^{0} 5 \\mathrm{~d}^{0}$ (Noble gas configuration)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The moles of methane required to produce 81 g of water after complete combustion is $\\_\\_\\_\\_$ $\\times 10^{-2}$ mol. [nearest integer]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "225"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Clean water ⟶ B.O.D. < 5 ppm\nHighly polluted water ⟶ B.O.D. > 17 ppm"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

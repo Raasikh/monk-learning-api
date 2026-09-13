@@ -1,3252 +1,3359 @@
 {
+ "paper_id": "jee-main-2024-s1-2024-02-01-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2024-s1-2024-02-01-shift-2",
+  "exam": "jee-main",
+  "year": 2024,
+  "session": 1,
+  "exam_date": "2024-02-01",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2024-s1-2024-02-01-shift-2",
-    "exam": "jee-main",
-    "year": 2024,
-    "session": 1,
-    "exam_date": "2024-02-01",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": null,
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2024/jee-main-01-feb-2024-paper-shift-2/1072878",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/px27biA17Sr9c0aB4AZw",
-    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
-  },
-  "probe": {
-    "sha256": "744a456e300603503e4c955d7a621d1860c67e72fa05cd28f2570b3dd6824743",
-    "page_count": 26,
-    "text_chars": 42746,
-    "has_text_layer": true,
-    "has_question_ids": false,
-    "includes_solutions": true,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 92,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s1-2024-02-01-shift-2.pdf"
-  },
-  "answer_sheet": {
-    "status": "embedded_unverified",
-    "source": "mirror_pdf_embedded",
-    "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
-    "validation": "not_verified",
-    "entries": [
-      {
-        "qno": 1,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 2,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 3,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 4,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 5,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 6,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 7,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 8,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 9,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 10,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 11,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 12,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 13,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 14,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 15,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 16,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 17,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 18,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 19,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 20,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 21,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 22,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 23,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 24,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 25,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 26,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 27,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 28,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 29,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 30,
-        "question_id": null,
-        "subject": "Mathematics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 31,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 32,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 33,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 34,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 35,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 36,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 37,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 38,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 39,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 40,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 41,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 42,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 43,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 44,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 45,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 46,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 47,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 48,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 49,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 50,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 51,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 52,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 53,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 54,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 55,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 56,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 57,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 58,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 59,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 60,
-        "question_id": null,
-        "subject": "Physics",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 61,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 62,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 63,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 64,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 65,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 66,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 67,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 68,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 69,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 70,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "4",
-          "option": "D",
-          "option_index": 4
-        }
-      },
-      {
-        "qno": 71,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 72,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 73,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 74,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 75,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 76,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 77,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 78,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 79,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 80,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 81,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 82,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 83,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 84,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 85,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      },
-      {
-        "qno": 86,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 87,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "2",
-          "option": "B",
-          "option_index": 2
-        }
-      },
-      {
-        "qno": 88,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": null
-        }
-      },
-      {
-        "qno": 89,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "3",
-          "option": "C",
-          "option_index": 3
-        }
-      },
-      {
-        "qno": 90,
-        "question_id": null,
-        "subject": "Chemistry",
-        "section": null,
-        "answer": {
-          "raw": "1",
-          "option": "A",
-          "option_index": 1
-        }
-      }
-    ]
-  },
-  "format": "generic_mirror",
-  "status": "extracted",
-  "detected_paper_meta": {},
-  "question_count": 90,
-  "defects": [
-    "6 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 1, 3, 1, 1, 2]",
-    "90/90 questions carry parse_flags"
-  ],
-  "questions": [
-    {
-      "qno": 1,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let f(x) = |2x2+5|x|–3|,xR. If m and n denote the \nnumber of points where f is not continuous and not \ndifferentiable respectively, then m + n is equal to :",
-      "options": {
-        "A": "5",
-        "B": "2",
-        "C": "0",
-        "D": "3"
-      },
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 2,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let  and  be the roots of the equation px2 + qx – \nr = 0, where p  0. If p, q and r be the consecutive \nterms of a non-constant G.P and \n, then \nthe value of (– is :",
-      "options": {
-        "A": "",
-        "B": "9",
-        "C": "",
-        "D": "8"
-      },
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 3,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "The number of solutions of the equation 4 sin2x – 4 \ncos3x + 9 – 4 cosx = 0; x  [ –2, 2] is :",
-      "options": {
-        "A": "1",
-        "B": "3",
-        "C": "2",
-        "D": "0"
-      },
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 4,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "The value of \ndx is equal to:",
-      "options": {
-        "A": "0",
-        "B": "1",
-        "C": "2",
-        "D": "–1"
-      },
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 5,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let P be a point on the ellipse \n. Let the \nline passing through P and parallel to y-axis meet \nthe circle x2 + y2 = 9 at point Q such that P and Q \nare on the same side of the x-axis. Then, the \neccentricity of the locus of the point R on PQ such \nthat PR : RQ = 4 : 3 as P moves on the ellipse, is :",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "page_start": 1,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 6,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let m and n be the coefficients of seventh and \nthirteenth terms respectively in the expansion of  \n. Then \nis :",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 7,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let  be a non-zero real number. Suppose f : R   \nR is a differentiable function such that f (0) = 2 and \n\nxlim f x\n1\n\n. If f '(x) = f(x) +3, for all x  R, \nthen f (–loge2) is equal to____.",
-      "options": {
-        "A": "3",
-        "B": "5",
-        "C": "9",
-        "D": "7"
-      },
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 8,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let P and Q be the points on the line \n which are at a distance of 6 \nunits from the point R (1,2,3). If the centroid of the \ntriangle PQR is (,,), then 2+2 +2 is:",
-      "options": {
-        "A": "26",
-        "B": "36",
-        "C": "18",
-        "D": "24"
-      },
-      "page_start": 2,
-      "page_end": 3,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 9,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Consider a ABC where A(1,2,3,), B(–2,8,0) and \nC(3,6,7). If the angle bisector of BAC meets the \nline BC at D, then the length of the projection of \nthe vector \non the vector \nis:",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "page_start": 3,
-      "page_end": 3,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 10,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let Sn denote the sum of the first n terms of an \narithmetic progression. If S10 = 390 and the ratio of \nthe tenth and the fifth terms is 15 : 7, then S15 –S5 \nis equal to:",
-      "options": {
-        "A": "800",
-        "B": "890",
-        "C": "790",
-        "D": "690"
-      },
-      "page_start": 3,
-      "page_end": 3,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 11,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "If \n, where a and b are \nrational numbers, then 9a + 8b is equal to :",
-      "options": {
-        "A": "2",
-        "B": "1",
-        "C": "3",
-        "D": ""
-      },
-      "page_start": 3,
-      "page_end": 4,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 12,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "If z is a complex number such that |z|1, then the \nminimum value of \nis:",
-      "options": {
-        "A": "",
-        "B": "2",
-        "C": "3",
-        "D": ""
-      },
-      "page_start": 4,
-      "page_end": 4,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 13,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "If the domain of the function f(x) = \n+log10 (x2 + 2x – 15) is (– , ) U [,), then  \n2 + 3 is equal to :",
-      "options": {
-        "A": "140",
-        "B": "175",
-        "C": "150",
-        "D": "125"
-      },
-      "page_start": 4,
-      "page_end": 4,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 14,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Consider the relations R1 and R2 defined as aR1b \n a2 + b2 = 1 for all a , b,  R and (a, b) R2(c, d) \n a + d = b + c for all (a,b), (c,d)  N × N. Then",
-      "options": {
-        "A": "Only R1 is an equivalence relation",
-        "B": "Only R2 is an equivalence relation",
-        "C": "R1 and R2 both are equivalence relations",
-        "D": "Neither R1 nor R2 is an equivalence relation"
-      },
-      "page_start": 4,
-      "page_end": 4,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 15,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "If the mirror image of the point P(3,4,9) in the line \nis (,,), then 14 (+ + ) \nis :",
-      "options": {
-        "A": "102",
-        "B": "138",
-        "C": "108",
-        "D": "132"
-      },
-      "page_start": 4,
-      "page_end": 5,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 16,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let f(x) = \n x  N. If for some  \n \na N, f(f(f(a))) = 21, then \n \nwhere [t] denotes the greatest integer less than or \nequal to t, is equal to :",
-      "options": {
-        "A": "121",
-        "B": "144",
-        "C": "169",
-        "D": "225"
-      },
-      "page_start": 5,
-      "page_end": 5,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 17,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let the system of equations x + 2y +3z = 5, 2x + \n3y + z = 9, 4x + 3y + z =  have infinite number \nof solutions. Then  + 2is equal to :",
-      "options": {
-        "A": "28",
-        "B": "17",
-        "C": "22",
-        "D": "15"
-      },
-      "page_start": 5,
-      "page_end": 6,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 18,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Consider 10 observation x1, x2,…., x10. such that \n(xi – ) = 2 and \n(xi – )2\n = 40, where ,  \nare positive integers. Let the mean and the variance \nof the observations be \nand\nrespectively. The\nis equal to :",
-      "options": {
-        "A": "2",
-        "B": "",
-        "C": "",
-        "D": "1"
-      },
-      "page_start": 6,
-      "page_end": 6,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 19,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let Ajay will not appear in JEE exam with \nprobability p = \n, while both Ajay and Vijay will \nappear in the exam with probability q = \n. Then \nthe probability, that Ajay will appear in the exam \nand Vijay will not appear is :",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": ""
-      },
-      "page_start": 6,
-      "page_end": 6,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 20,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let the locus of the mid points  of the chords of \ncircle x2+(y–1)2 =1 drawn from the origin intersect \nthe line x+y = 1 at P and Q. Then, the length of PQ \nis :",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": "1"
-      },
-      "page_start": 6,
-      "page_end": 7,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 21,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "If three successive terms of a G.P. with common \nratio r(r > 1) are the lengths of the sides of a \ntriangle and [r] denotes the greatest integer less \nthan or equal to r, then 3[r] + [–r] is equal to :",
-      "options": null,
-      "page_start": 7,
-      "page_end": 7,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 22,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let A = I2 – MMT, where M is real matrix of order \n2 × 1 such that the relation MT M = I1 holds. If  is \na real number such that the relation AX = X holds \nfor some non-zero real matrix X of order 2 × 1, \nthen the sum of squares of all possible values of  \nis equal to :",
-      "options": null,
-      "page_start": 7,
-      "page_end": 7,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 23,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let f : (0, ) R and \n. If F(x2) = \nx4 + x5, then \n is equal to :",
-      "options": null,
-      "page_start": 7,
-      "page_end": 8,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 24,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "If \n, \nthen \n is equal to :",
-      "options": null,
-      "page_start": 8,
-      "page_end": 8,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 25,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let \n, \n \nand \n be three vectors such that \n. If the angle between the vector  \n and the vector \n is , then the greatest \ninteger less than or equal to tan2 is :",
-      "options": null,
-      "page_start": 8,
-      "page_end": 8,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 26,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "The lines L1, L2,…., I20 are distinct. For  \nn = 1, 2, 3,…., 10 all the lines L2n–1 are parallel to \neach other and all the lines L2n pass through a \ngiven point P. The maximum number of points of \nintersection of pairs of lines from the set  \n{L1, L2,…., L20} is equal to :",
-      "options": null,
-      "page_start": 8,
-      "page_end": 9,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 27,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Three points O(0,0), P(a, a2), Q(–b, b2), a > 0, b > 0, \nare on the parabola y = x2. Let S1 be the area of the \nregion bounded by the line PQ and the parabola, \nand S2 be the area of the triangle OPQ. If the \nminimum value of \n is \n, gcd(m, n) = 1, then \nm + n is equal to :",
-      "options": null,
-      "page_start": 9,
-      "page_end": 9,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 28,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "The sum of squares of all possible values of k, for \nwhich area of the region bounded by the parabolas \n2y2 = kx and ky2 = 2(y – x) is maximum, is equal \nto :",
-      "options": null,
-      "page_start": 9,
-      "page_end": 10,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 29,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "If \n, x(1) = 1, then 5x(2) is equal to :",
-      "options": null,
-      "page_start": 10,
-      "page_end": 10,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 30,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Mathematics",
-      "section": null,
-      "segment": 0,
-      "text": "Let ABC be an isosceles triangle in which A is at \n(–1, 0), \n, AB = AC and B is on the \npositive x-axis. If \n and the line BC \nintersects the line y = x + 3 at (, ), then \n is :",
-      "options": null,
-      "page_start": 10,
-      "page_end": 12,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 31,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "In an ammeter, 5% of the main current passes \nthrough the galvanometer. If resistance of the \ngalvanometer is G, the resistance of ammeter \nwill be :",
-      "options": {
-        "A": "",
-        "B": "",
-        "C": "199 G",
-        "D": "200 G"
-      },
-      "page_start": 12,
-      "page_end": 12,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 32,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "To measure the temperature coefficient of resistivity \n of a semiconductor, an electrical arrangement \nshown in the figure is prepared. The arm BC is \nmade up of the semiconductor. The experiment is \nbeing conducted at 25°C and resistance of the \nsemiconductor arm is 3 m. Arm BC is cooled at a \nconstant rate of 2°C/s. If the galvanometer G shows \nno deflection after 10s, then  is :",
-      "options": {
-        "A": "– 2 × 10–2 °C–1",
-        "B": "– 1.5 × 10–2 °C–1",
-        "C": "– 1 × 10–2 °C–1",
-        "D": "– 2.5 × 10–2 °C–1"
-      },
-      "page_start": 12,
-      "page_end": 12,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "references_figure_not_extracted"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 33,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "From the statements given below :",
-      "options": {
-        "A": "The angular momentum of an electron in nth orbit is an integral multiple of h.",
-        "B": "Nuclear forces do not obey inverse square law.",
-        "C": "Nuclear forces are spin dependent.",
-        "D": "Nuclear forces are central and charge independent. (E) Stability of nucleus is inversely proportional to the value of packing fraction. Choose the correct answer from the options given below :"
-      },
-      "page_start": 12,
-      "page_end": 13,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "duplicate_option_marker_A",
-        "duplicate_option_marker_B",
-        "duplicate_option_marker_C",
-        "duplicate_option_marker_D"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 34,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A diatomic gas ( = 1.4) does 200 J of work when \nit is expanded isobarically. The heat given to the \ngas in the process is :",
-      "options": {
-        "A": "850 J",
-        "B": "800 J",
-        "C": "600 J",
-        "D": "700 J"
-      },
-      "page_start": 13,
-      "page_end": 13,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 35,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A disc of radius R and mass M is rolling \nhorizontally without slipping with speed . It then \nmoves up an inclined smooth surface as shown in \nfigure. The maximum height that the disc can go \nup the incline is : \nh\n",
-      "options": {
-        "A": "2 g ",
-        "B": "2 3 4 g ",
-        "C": "2 1 2 g ",
-        "D": "2 2 3 g "
-      },
-      "page_start": 13,
-      "page_end": 13,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 36,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "Conductivity of a photodiode starts changing only \nif the wavelength of incident light is less than  \n660 nm. The band gap of photodiode is found to be \nX eV\n8\n\n\n\n\n\n\n. The value of X is : \n \n(Given, h = 6.6 × 10–34 Js, e = 1.6 × 10–19C)",
-      "options": {
-        "A": "15",
-        "B": "11",
-        "C": "13",
-        "D": "21"
-      },
-      "page_start": 13,
-      "page_end": 13,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 37,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A big drop is formed by coalescing 1000 small \ndroplets of water. The surface energy will become :",
-      "options": {
-        "A": "100 times",
-        "B": "10 times",
-        "C": "1 th 100",
-        "D": "1 th 10"
-      },
-      "page_start": 13,
-      "page_end": 13,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 38,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "If frequency of electromagnetic wave is 60 MHz \nand it travels in air along z direction then the \ncorresponding electric and magnetic field vectors \nwill be mutually perpendicular to each other and \nthe wavelength of the wave (in m) is :",
-      "options": {
-        "A": "2.5",
-        "B": "10",
-        "C": "5",
-        "D": "2"
-      },
-      "page_start": 13,
-      "page_end": 14,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 39,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A cricket player catches a ball of mass 120 g \nmoving with 25 m/s speed. If the catching process \nis completed in 0.1 s then the magnitude of force \nexerted by the ball on the hand of player will be  \n \n(in SI unit):",
-      "options": {
-        "A": "24",
-        "B": "12",
-        "C": "25",
-        "D": "30"
-      },
-      "page_start": 14,
-      "page_end": 14,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 40,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "Monochromatic light of frequency 6 × 1014 Hz  \nis produced by a laser. The power emitted is  \n2 × 10–3 W. How many photons per second on an \naverage, are emitted by the source ?  \n \n(Given h = 6.63 × 10–34 Js)",
-      "options": {
-        "A": "9 × 1018",
-        "B": "6 × 1015",
-        "C": "5 × 1015",
-        "D": "7 × 1016"
-      },
-      "page_start": 14,
-      "page_end": 14,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 41,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A microwave of wavelength 2.0 cm falls normally \non a slit of width 4.0 cm. The angular spread of the \ncentral maxima of the diffraction pattern obtained \non a screen 1.5 m away from the slit, will be:",
-      "options": {
-        "A": "30°",
-        "B": "15°",
-        "C": "60°",
-        "D": "45°"
-      },
-      "page_start": 14,
-      "page_end": 14,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 42,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "C1 and C2 are two hollow concentric cubes \nenclosing charges 2Q and 3Q respectively as \nshown in figure. The ratio of electric flux passing \nthrough C1 and C2 is : \n2Q\n3Q",
-      "options": {
-        "A": "2 : 5",
-        "B": "5 : 2",
-        "C": "2 : 3",
-        "D": "3 : 2"
-      },
-      "page_start": 14,
-      "page_end": 14,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 43,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "If the root mean square velocity of hydrogen \nmolecule at a given temperature and pressure is  \n2 km/s, the root mean square velocity of oxygen at \nthe same condition in km/s is :",
-      "options": {
-        "A": "2.0",
-        "B": "0.5",
-        "C": "1.5",
-        "D": "1.0"
-      },
-      "page_start": 14,
-      "page_end": 14,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 44,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "Train A is moving along two parallel rail tracks \ntowards north with speed 72 km/h and train B is \nmoving towards south with speed 108 km/h. \nVelocity of train B with respect to A and velocity \nof ground with respect to B are (in ms–1) :",
-      "options": {
-        "A": "–30 and 50",
-        "B": "–50 and –30",
-        "C": "–50 and 30",
-        "D": "50 and –30"
-      },
-      "page_start": 14,
-      "page_end": 15,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 45,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A galvanometer (G) of 2 resistance is connected \nin the given circuit. The ratio of charge stored in \nC1 and C2 is : \n6 F\n\n4 F\n\nC1\nC2\n6 \n4 \nG\n6 V",
-      "options": {
-        "A": "2 3",
-        "B": "3 2",
-        "C": "1",
-        "D": "1 2"
-      },
-      "page_start": 15,
-      "page_end": 15,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 46,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "In a metre-bridge when a resistance in the left gap \nis 2 and unknown resistance in the right gap, the \nbalance length is found to be 40 cm. On shunting \nthe unknown resistance with 2, the balance \nlength changes by :",
-      "options": {
-        "A": "22.5 cm",
-        "B": "20 cm",
-        "C": "62.5 cm",
-        "D": "65 cm"
-      },
-      "page_start": 15,
-      "page_end": 15,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 47,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "Match List - I with List - II. \n \nList - I  \nList - II \n \n(Number)  \n(Significant figure)",
-      "options": {
-        "A": "1001 (I) 3",
-        "B": "010.1 (II) 4",
-        "C": "100.100 (III) 5",
-        "D": "0.0010010 (IV) 6 Choose the correct answer from the options given below :"
-      },
-      "page_start": 15,
-      "page_end": 16,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "duplicate_option_marker_A",
-        "duplicate_option_marker_B",
-        "duplicate_option_marker_C",
-        "duplicate_option_marker_D"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 48,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A transformer has an efficiency of 80% and  \nworks at 10 V and 4 kW. If the secondary voltage \nis 240 V, then the current in the secondary coil is :",
-      "options": {
-        "A": "1.59 A",
-        "B": "13.33 A",
-        "C": "1.33 A",
-        "D": "15.1 A"
-      },
-      "page_start": 16,
-      "page_end": 16,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 49,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A light planet is revolving around a massive star in \na circular orbit of radius R with a period of \nrevolution T. If the force of attraction between \nplanet and star is proportional to \n32\nR\n\n then choose \nthe correct option :",
-      "options": {
-        "A": "T2  R5/2",
-        "B": "T2  R7/2",
-        "C": "T2  R3/2",
-        "D": "T2  R3"
-      },
-      "page_start": 16,
-      "page_end": 16,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 50,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A body of mass 4 kg experiences two forces \n1\nˆ\nˆ\nˆ\nF\n5i\n8j\n7k\n\n\n\n and \n2\nˆ\nˆ\nˆ\nF\n3i\n4j\n3k\n\n\n\n. The \nacceleration acting on the body is :",
-      "options": {
-        "A": "ˆ ˆ ˆ 2i j k  ",
-        "B": "ˆ ˆ ˆ 4i 2j 2k  ",
-        "C": "ˆ ˆ ˆ 2i j k ",
-        "D": "ˆ ˆ ˆ 2i 3j 3k  "
-      },
-      "page_start": 16,
-      "page_end": 16,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 51,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A mass m is suspended from a spring of negligible \nmass and the system oscillates with a frequency f1. The \nfrequency of oscillations if a mass 9 m is suspended \nfrom the same spring is f2. The value of \n1\n2\nf\nf  is ___.",
-      "options": null,
-      "page_start": 16,
-      "page_end": 16,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 52,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A particle initially at rest starts moving from \nreference point. x = 0 along x-axis, with velocity  \nthat varies as \n4 xm / s.\n\n The acceleration of \nthe particle is ____ms–2.",
-      "options": null,
-      "page_start": 16,
-      "page_end": 16,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 53,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A moving coil galvanometer has 100 turns and \neach turn has an area of 2.0 cm2. The magnetic \nfield produced by the magnet is 0.01 T and  \nthe deflection in the coil is 0.05 radian when a \ncurrent of 10 mA is passed through it.  \nThe torsional constant of the suspension wire is  \nx × 10–5 N-m/rad. The value of x is___.",
-      "options": null,
-      "page_start": 16,
-      "page_end": 17,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 54,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "One end of a metal wire is fixed to a ceiling and a \nload of 2 kg hangs from the other end. A similar \nwire is attached to the bottom of the load and \nanother load of 1 kg hangs from this lower wire. \nThen the ratio of longitudinal strain of upper wire \nto that of the lower wire will be___. \n \n[Area of cross section of wire = 0.005 cm2,  \nY = 2 × l011 Nm–2 and g = 10 ms–2]",
-      "options": null,
-      "page_start": 17,
-      "page_end": 17,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 55,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A particular hydrogen - like ion emits the radiation \nof frequency 3 × 1015 Hz when it makes transition \nfrom n = 2 to n = l.  The frequency of radiation \nemitted in transition from n = 3 to n = l is  \nx\n9  × 1015 Hz, when x = ______.",
-      "options": null,
-      "page_start": 17,
-      "page_end": 17,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 56,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "In an electrical circuit drawn below the amount of \ncharge stored in the capacitor is ___C. \n10 V\n+\n–\n10 F\n\n5\nR2\nR1\nR3\n6\nC\n4",
-      "options": null,
-      "page_start": 17,
-      "page_end": 18,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 57,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A coil of 200 turns and area 0.20 m2 is rotated at half \na revolution per second and is placed in uniform \nmagnetic field of 0.01 T perpendicular to axis of \nrotation of the coil.  The maximum voltage generated \nin the coil is 2\n volt. The value of  is__.",
-      "options": null,
-      "page_start": 18,
-      "page_end": 18,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 58,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "In Young's double slit experiment, monochromatic \nlight of wavelength 5000 Å is used. The slits are \n1.0 mm apart and screen is placed at 1.0 m away \nfrom slits. The distance from the centre of the \nscreen where intensity becomes half of the \nmaximum intensity for the first time is___×10–6 m.",
-      "options": null,
-      "page_start": 18,
-      "page_end": 18,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 59,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "A uniform rod AB of mass 2 kg and Length 30 cm \nat rest on a smooth horizontal surface. An impulse \nof force 0.2 Ns is applied to end B. The time taken \nby the rod to turn through at right angles will be \ns\nx\n\n, where x = ____.",
-      "options": null,
-      "page_start": 18,
-      "page_end": 19,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 60,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Physics",
-      "section": null,
-      "segment": 0,
-      "text": "Suppose a uniformly charged wall provides a \nuniform electric field of 2 × l04 N/C normally. A \ncharged particle of mass 2 g being suspended \nthrough a silk thread of length 20 cm and remain \nstayed at a distance of 10 cm from the wall. Then \nthe charge on the particle will be 1\nC\nx\n\n where  \nx =______. [use g = 10 m/s2]",
-      "options": null,
-      "page_start": 19,
-      "page_end": 20,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 61,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The transition metal having highest 3rd ionisation \nenthalpy is :",
-      "options": {
-        "A": "Cr",
-        "B": "Mn",
-        "C": "V",
-        "D": "Fe"
-      },
-      "page_start": 20,
-      "page_end": 20,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 62,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Given below are two statements : \n \nStatement (I) : A p bonding MO has lower electron \ndensity above and below the inter-nuclear asix. \n \nStatement (II) : The p* antibonding MO has a \nnode between the nuclei. \n \nIn the light of the above statements, choose the \nmost appropriate answer from the options given \nbelow:",
-      "options": {
-        "A": "Both Statement I and Statement II are false",
-        "B": "Both Statement I and Statement II are true",
-        "C": "Statement I is false but Statement II is true",
-        "D": "Statement I is true but Statement II is false"
-      },
-      "page_start": 20,
-      "page_end": 20,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 63,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Given below are two statements : one is labelled as \nAssertion (A) and the other is labelled as Reason (R). \n \nAssertion (A) : In aqueous solutions Cr2+ is \nreducing while Mn3+ is oxidising in nature. \n \nReason (R) : Extra stability to half filled electronic \nconfiguration is observed than incompletely filled \nelectronic configuration. \n \nIn the light of the above statement, choose the most \nappropriate answer from the options given below:",
-      "options": {
-        "A": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
-        "B": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
-        "C": "(A) is false but (R) is true",
-        "D": "(A) is true but (R) is false"
-      },
-      "page_start": 20,
-      "page_end": 20,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 64,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Match List - I with List - II. \n \nList-I \n      List-II \n \n(Reactants) \n      Products",
-      "options": {
-        "A": "Phenol, Zn/ (I) Salicylaldehyde",
-        "B": "Phenol, CHCl3, NaOH, HCl (II) Salicylic acid",
-        "C": "Phenol, CO2, NaOH, HCl (III) Benzene",
-        "D": "Phenol, Conc. HNO3 (IV) Picric acid Choose the correct answer from the options given below."
-      },
-      "page_start": 20,
-      "page_end": 21,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "duplicate_option_marker_A",
-        "duplicate_option_marker_B",
-        "duplicate_option_marker_C",
-        "duplicate_option_marker_D"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 65,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Given below are two statements : \n \nStatement (I) : Both metal and non-metal exist in \np and d-block elements. \n \nStatement \n(II) \n: \nNon-metals \nhave \nhigher \nionisation enthalpy and higher electronegativity \nthan the metals. \n \nIn the light of the above statements, choose the \nmost appropriate answer from the option given \nbelow:",
-      "options": {
-        "A": "Both Statement I and Statement II are false",
-        "B": "Statement I is false but Statement II is true",
-        "C": "Statement I is true but Statement II is false",
-        "D": "Both Statement I and Statement II are true"
-      },
-      "page_start": 21,
-      "page_end": 21,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 66,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The strongest reducing agent amont the following \nis:",
-      "options": {
-        "A": "NH3",
-        "B": "SbH3",
-        "C": "BiH3",
-        "D": "PH3"
-      },
-      "page_start": 21,
-      "page_end": 21,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 67,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Which of the following compounds show colour \ndue to d-d transition?",
-      "options": {
-        "A": "CuSO4.5H2O",
-        "B": "K2Cr2O7",
-        "C": "K2CrO4",
-        "D": "KMnO4"
-      },
-      "page_start": 21,
-      "page_end": 21,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 68,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The set of meta directing functional groups from \nthe following sets is:",
-      "options": {
-        "A": "–CN, –NH2, –NHR, –OCH3",
-        "B": "–NO2, –NH2, –COOH, –COOR",
-        "C": "–NO2, –CHO, –SO3H, –COR",
-        "D": "–CN, –CHO, –NHCOCH3, –COOR"
-      },
-      "page_start": 21,
-      "page_end": 21,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 69,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Select the compound from the following that will \nshow intramolecular hydrogen bonding.",
-      "options": {
-        "A": "H2O",
-        "B": "NH3",
-        "C": "C2H5OH",
-        "D": "NO2 OH"
-      },
-      "page_start": 21,
-      "page_end": 22,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 70,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Lassaigne's test is used for detection of :",
-      "options": {
-        "A": "Nitrogen and Sulphur only",
-        "B": "Nitrogen, Sulphur and Phosphorous Only",
-        "C": "Phosphorous and halogens only",
-        "D": "Nitrogen, Sulphur, phosphorous and halogens"
-      },
-      "page_start": 22,
-      "page_end": 22,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "4",
-        "option": "D",
-        "option_index": 4
-      }
-    },
-    {
-      "qno": 71,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Which among the following has highest boiling \npoint?",
-      "options": {
-        "A": "CH3CH2CH2CH3",
-        "B": "CH3CH2CH2CH2–OH",
-        "C": "CH3CH2CH2CHO",
-        "D": "H5C2 – O – C2H5"
-      },
-      "page_start": 22,
-      "page_end": 22,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 72,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "In the given reactions identify A and B. \n \nH  + A\n2\nPd/C\nCH3\nH\nC\nC\nC H\n2\n5\nH\n \n \n3\n3\n2\n3\nNa/LiquidNH\nCH\nC\nC\nCH\nH\n\"B\"\n\n\n\n\n",
-      "options": {
-        "A": "A : 2–Pentyne B : trans – 2 – butene",
-        "B": "A : n – Pentane B : trans – 2 – butene",
-        "C": "A : 2 – Pentyne B : Cis – 2 – butene",
-        "D": "A : n – Pentane B : Cis – 2 – butene"
-      },
-      "page_start": 22,
-      "page_end": 22,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 73,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The number of radial node/s for 3p orbital is:",
-      "options": {
-        "A": "1",
-        "B": "4",
-        "C": "2",
-        "D": "3"
-      },
-      "page_start": 22,
-      "page_end": 22,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 74,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Match List - I with List - II. \n \nList - I \nList - II \n \nCompound \nUse",
-      "options": {
-        "A": "Carbon tetrachloride (I) Paint remover",
-        "B": "Methylene chloride (II) Refrigerators and air conditioners",
-        "C": "DDT (III) Fire extinguisher",
-        "D": "Freons (IV) Non Biodegradable insecticide Choose the correct answer from the options given below :"
-      },
-      "page_start": 22,
-      "page_end": 22,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "duplicate_option_marker_A",
-        "duplicate_option_marker_B",
-        "duplicate_option_marker_C",
-        "duplicate_option_marker_D"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 75,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The \nfunctional \ngroup that \nshows \nnegative \nresonance effect is:",
-      "options": {
-        "A": "–NH2",
-        "B": "–OH",
-        "C": "–COOH",
-        "D": "–OR"
-      },
-      "page_start": 22,
-      "page_end": 22,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 76,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "[Co(NH3)6]3+ and [CoF6]3– are respectively known \nas:",
-      "options": {
-        "A": "Spin free Complex, Spin paired Complex",
-        "B": "Spin paired Complex, Spin free Complex",
-        "C": "Outer orbital Complex, Inner orbital Complex",
-        "D": "Inner orbital Complex, Spin paired Complex"
-      },
-      "page_start": 22,
-      "page_end": 23,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 77,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Given below are two statements : \n \nStatement (I) : SiO2 and GeO2 are acidic while \nSnO and PbO are amphoteric in nature. \n \nStatement (II) : Allotropic forms of carbon are \ndue to property of catenation and p-d bond \nformation. \n \nIn the light of the above statements, choose the \nmost appropriate answer from the options given \nbelow:",
-      "options": {
-        "A": "Both Statement I and Statement II are false",
-        "B": "Both Statement I and Statement II are true",
-        "C": "Statement I is true but Statement II is false",
-        "D": "Statement I is false but Statement II is true"
-      },
-      "page_start": 23,
-      "page_end": 23,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 78,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "C H Br\n2\n5\nalc. KOH\nA\nBr2\nCCl4\nB KCN\nExcess C\nH O\n3\n+\nExcess\nD\n \n \nAcid D formed in above reaction is :",
-      "options": {
-        "A": "Gluconic acid",
-        "B": "Succinic acid",
-        "C": "Oxalic acid",
-        "D": "Malonic acid"
-      },
-      "page_start": 23,
-      "page_end": 23,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 79,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Solubility of calcium phosphate (molecular mass, M) \nin water is Wg per 100 mL at 25° C. Its solubility \nproduct at 25°C will be approximately.",
-      "options": {
-        "A": "3 7 W 10 M      ",
-        "B": "5 7 W 10 M      ",
-        "C": "5 3 W 10 M      ",
-        "D": "5 5 W 10 M      "
-      },
-      "page_start": 23,
-      "page_end": 23,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 80,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Given below are two statements : \n \nStatement (I) : Dimethyl glyoxime forms a six-\nmembered covalent chelate when treated with \nNiCl2 solution in presence of NH4OH. \n \nStatement (II) : Prussian blue precipitate contains \niron both in (+2) and (+3) oxidation states. In the \nlight of the above statements, choose the most \nappropriate answer from the options given  below:",
-      "options": {
-        "A": "Statement I is false but Statement II is true",
-        "B": "Both Statement I and Statement II are true",
-        "C": "Both Statement I and Statement II are false",
-        "D": "Statement I is true but Statement II is false"
-      },
-      "page_start": 23,
-      "page_end": 24,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 81,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Total number of isomeric compounds (including \nstereoisomers) formed by monochlorination of  \n2-methylbutane is________.",
-      "options": null,
-      "page_start": 24,
-      "page_end": 24,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 82,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The following data were obtained during the first \norder thermal decomposition of a gas A at constant \nvolume: \n \n \nA(g) 2B(g) + C(g) \n \nS.No              Time/s          Total pressure/(atm)",
-      "options": {
-        "A": "0 0.1",
-        "B": "115 0.28 The rate constant of the reaction is______× 10–2s–1 (nearest integer)"
-      },
-      "page_start": 24,
-      "page_end": 24,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "options_count_2"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 83,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The number of tripeptides formed by three \ndifferent amino acids using each amino acid once \nis ______.",
-      "options": null,
-      "page_start": 24,
-      "page_end": 24,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 84,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Number of compounds which give reaction with \nHinsberg's reagent is_______. \n \nN Cl\n2\n+\n–\nO\nNH\nNH2\nN \nN\nNH  \n2\nNH2\nN \nH\nN \nNH  \n2\nH N \n2\nC \nNH2\nO\nNH",
-      "options": null,
-      "page_start": 24,
-      "page_end": 24,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 85,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Mass of ethylene glycol (antifreeze) to be added to \n18.6 kg of water to protect the freezing point at  \n–24°C is________ kg (Molar mass in g mol–1 for \nethylene glycol 62, Kf of water = 1.86 K kg mol–1)",
-      "options": null,
-      "page_start": 24,
-      "page_end": 25,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
-    },
-    {
-      "qno": 86,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Following Kjeldahl's method, 1g of organic \ncompound released ammonia, that neutralised 10 \nmL of 2M H2SO4. The percentage of nitrogen in \nthe compound is _______%.",
-      "options": null,
-      "page_start": 25,
-      "page_end": 25,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 87,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "The amount of electricity in Coulomb required for \nthe oxidation of 1 mol of H2O to O2 is ____×105C.",
-      "options": null,
-      "page_start": 25,
-      "page_end": 25,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "2",
-        "option": "B",
-        "option_index": 2
-      }
-    },
-    {
-      "qno": 88,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "For a certain reaction at 300K, K = 10, then G° \nfor the same reaction is –_______×10–1 kJ mol–1. \n(Given R = 8.314 JK–1 mol–1)",
-      "options": null,
-      "page_start": 25,
-      "page_end": 25,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": null
-      }
-    },
-    {
-      "qno": 89,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "Consider the following redox reaction : \n \n2\n4\n2\n2\n4\n2\n2\nMnO\nH\nH C O\nMn\nH O\nCO\n\n\n\n\n\n\n\n \n \nThe standard reduction potentials are given as \nbelow \n\nred\nE\n \n \n2\n4\nMnO /Mn\nE\n1.51V\n\n\n\n\n \n \n2\n2\n2\n4\nCO /H C O\nE\n0.49V\n\n\n \n \nIf the equilibrium constant of the above reaction is \ngiven as Keq = 10x, then the value of x = _______ \n(nearest integer)",
-      "options": null,
-      "page_start": 25,
-      "page_end": 26,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": "3",
-        "option": "C",
-        "option_index": 3
-      }
-    },
-    {
-      "qno": 90,
-      "question_id": null,
-      "question_type": null,
-      "subject": "Chemistry",
-      "section": null,
-      "segment": 0,
-      "text": "10 mL of gaseous hydrocarbon on combustion \ngives 40 mL of CO2(g) and 50 mL of water \nvapour. Total number of carbon and hydrogen \natoms in the hydrocarbon is _____.",
-      "options": null,
-      "page_start": 26,
-      "page_end": 26,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "1",
-        "option": "A",
-        "option_index": 1
-      }
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2024/jee-main-01-feb-2024-paper-shift-2/1072878",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/px27biA17Sr9c0aB4AZw",
+  "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "744a456e300603503e4c955d7a621d1860c67e72fa05cd28f2570b3dd6824743",
+  "page_count": 26,
+  "text_chars": 42746,
+  "has_text_layer": true,
+  "has_question_ids": false,
+  "includes_solutions": true,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 92,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2024-s1-2024-02-01-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://web.archive.org/web/20240212072459/https://jeemain.nta.ac.in/images/Final_Answer_Key_P1_12022024.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
     }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "BONUS",
+     "dropped": true
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "219"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "105"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "38"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "101"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "7"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "8"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "5"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": "Mathematics",
+    "section": null,
+    "answer": {
+     "raw": "36"
+    }
+   },
+   {
+    "qno": 31,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "BONUS",
+     "dropped": true
+    }
+   },
+   {
+    "qno": 32,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 33,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 34,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 35,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 36,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 37,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 38,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 39,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 40,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 41,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 42,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 43,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 44,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 45,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 46,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 47,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 48,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 49,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 50,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 51,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 52,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "8"
+    }
+   },
+   {
+    "qno": 53,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 54,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 55,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "32"
+    }
+   },
+   {
+    "qno": 56,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "60"
+    }
+   },
+   {
+    "qno": 57,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "5"
+    }
+   },
+   {
+    "qno": 58,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "125"
+    }
+   },
+   {
+    "qno": 59,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 60,
+    "question_id": null,
+    "subject": "Physics",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 61,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 62,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 63,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 64,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 65,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 66,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 67,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 68,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 69,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 70,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 71,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 72,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 73,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 74,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 75,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 76,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 77,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 78,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 79,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 80,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "1",
+     "option": "A",
+     "option_index": 1
+    }
+   },
+   {
+    "qno": 81,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "6"
+    }
+   },
+   {
+    "qno": 82,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 83,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "6"
+    }
+   },
+   {
+    "qno": 84,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "5"
+    }
+   },
+   {
+    "qno": 85,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "15"
+    }
+   },
+   {
+    "qno": 86,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "56"
+    }
+   },
+   {
+    "qno": 87,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 88,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "57"
+    }
+   },
+   {
+    "qno": 89,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "338"
+    }
+   },
+   {
+    "qno": 90,
+    "question_id": null,
+    "subject": "Chemistry",
+    "section": null,
+    "answer": {
+     "raw": "14"
+    }
+   }
   ]
+ },
+ "format": "generic_mirror",
+ "status": "extracted",
+ "detected_paper_meta": {},
+ "question_count": 90,
+ "defects": [
+  "6 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [1, 1, 3, 1, 1, 2]",
+  "90/90 questions carry parse_flags"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let f(x) = |2x2+5|x|–3|,xR. If m and n denote the \nnumber of points where f is not continuous and not \ndifferentiable respectively, then m + n is equal to :",
+   "options": {
+    "A": "5",
+    "B": "2",
+    "C": "0",
+    "D": "3"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "text_untrusted_pua",
+    "text_untrusted_pua"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "needs_manual": "text_layer_pua_unrepairable"
+  },
+  {
+   "qno": 2,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let  and  be the roots of the equation px2 + qx – \nr = 0, where p  0. If p, q and r be the consecutive \nterms of a non-constant G.P and \n, then \nthe value of (– is :",
+   "options": {
+    "A": "5",
+    "B": "2",
+    "C": "0",
+    "D": "3\n\\item[] Ans. (4)\n\\item[] Sol. $f(\\mathrm{x})=\\left|2 \\mathrm{x}^{2}+5\\right| \\mathrm{x}|-3|$ Graph of $\\mathrm{y}=\\left|2 \\mathrm{x}^{2}+5 \\mathrm{x}-3\\right|$ Graph of f(x) Number of points of discontinuity $=0=\\mathrm{m}$ Number of points of non-differentiability $=3=\\mathrm{n}$\n\\item[2.] Let $\\alpha$ and $\\beta$ be the roots of the equation $\\mathrm{px}^{2}+\\mathrm{qx}- \\mathrm{r}=0$, where $\\mathrm{p} \\neq 0$. If $\\mathrm{p}, \\mathrm{q}$ and r be the consecutive terms of a non-constant G.P and $\\frac{1}{\\alpha}+\\frac{1}{\\beta}=\\frac{3}{4}$, then the value of $(\\alpha-\\beta)^{2}$ is : (1) $\\frac{80}{9}$ (2) 9 (3) $\\frac{20}{3}$ (4) 8\n\\end{itemize}\n\\end{tabular} & \\\\\n\\hline\n\\end{tabular}"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "text_untrusted_pua",
+    "options_ocr_repaired",
+    "text_untrusted_pua"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "needs_manual": "text_layer_pua_unrepairable"
+  },
+  {
+   "qno": 3,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "The number of solutions of the equation 4 sin2x – 4 \ncos3x + 9 – 4 cosx = 0; x  [ –2, 2] is :",
+   "options": {
+    "A": "1",
+    "B": "3",
+    "C": "2",
+    "D": "0"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "text_untrusted_pua",
+    "text_untrusted_pua"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "needs_manual": "text_layer_pua_unrepairable"
+  },
+  {
+   "qno": 4,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "The value of \ndx is equal to:",
+   "options": {
+    "A": "0",
+    "B": "1",
+    "C": "2",
+    "D": "–1"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let P be a point on the ellipse \n. Let the \nline passing through P and parallel to y-axis meet \nthe circle x2 + y2 = 9 at point Q such that P and Q \nare on the same side of the x-axis. Then, the \neccentricity of the locus of the point R on PQ such \nthat PR : RQ = 4 : 3 as P moves on the ellipse, is :",
+   "options": {
+    "A": "5",
+    "B": "2",
+    "C": "0",
+    "D": "3\n\\item[] Ans. (4)\n\\item[] Sol. $f(\\mathrm{x})=\\left|2 \\mathrm{x}^{2}+5\\right| \\mathrm{x}|-3|$ Graph of $\\mathrm{y}=\\left|2 \\mathrm{x}^{2}+5 \\mathrm{x}-3\\right|$ Graph of f(x) Number of points of discontinuity $=0=\\mathrm{m}$ Number of points of non-differentiability $=3=\\mathrm{n}$\n\\item[2.] Let $\\alpha$ and $\\beta$ be the roots of the equation $\\mathrm{px}^{2}+\\mathrm{qx}- \\mathrm{r}=0$, where $\\mathrm{p} \\neq 0$. If $\\mathrm{p}, \\mathrm{q}$ and r be the consecutive terms of a non-constant G.P and $\\frac{1}{\\alpha}+\\frac{1}{\\beta}=\\frac{3}{4}$, then the value of $(\\alpha-\\beta)^{2}$ is : (1) $\\frac{80}{9}$ (2) 9 (3) $\\frac{20}{3}$ (4) 8\n\\end{itemize}\n\\end{tabular} & \\\\\n\\hline\n\\end{tabular}"
+   },
+   "page_start": 1,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   }
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let m and n be the coefficients of seventh and \nthirteenth terms respectively in the expansion of  \n. Then \nis :",
+   "options": {
+    "A": "$\\frac{4}{9}$",
+    "B": "$\\frac{1}{9}$",
+    "C": "$\\frac{1}{4}$",
+    "D": "$\\frac{9}{4}$"
+   },
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   }
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let $\\alpha$ be a non-zero real number. Suppose $f: \\mathrm{R} \\rightarrow$ R is a differentiable function such that $f(0)=2$ and $\\lim _{\\mathrm{x} \\rightarrow-\\infty} \\mathrm{f}(\\mathrm{x})=1$. If $f^{\\prime}(\\mathrm{x})=\\alpha f(x)+3$, for all $\\mathrm{x} \\in \\mathrm{R}$, then $f\\left(-\\log _{\\mathrm{e}} 2\\right)$ is equal to $\\_\\_\\_\\_$",
+   "options": {
+    "A": "3",
+    "B": "5",
+    "C": "9",
+    "D": "7"
+   },
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "Let  be a non-zero real number. Suppose f : R   \nR is a differentiable function such that f (0) = 2 and \n\nxlim f x\n1\n\n. If f '(x) = f(x) +3, for all x  R, \nthen f (–loge2) is equal to____.",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let P and Q be the points on the line $\\frac{\\mathrm{x}+3}{8}=\\frac{\\mathrm{y}-4}{2}=\\frac{\\mathrm{z}+1}{2}$ which are at a distance of 6 units from the point $\\mathrm{R}(1,2,3)$. If the centroid of the triangle PQR is $(\\alpha, \\beta, \\gamma)$, then $\\alpha^{2}+\\beta^{2}+\\gamma^{2}$ is:",
+   "options": {
+    "A": "26",
+    "B": "36",
+    "C": "18",
+    "D": "24"
+   },
+   "page_start": 2,
+   "page_end": 3,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "Let P and Q be the points on the line \n which are at a distance of 6 \nunits from the point R (1,2,3). If the centroid of the \ntriangle PQR is (,,), then 2+2 +2 is:",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Consider a $\\triangle \\mathrm{ABC}$ where A(1,2,3,), B(-2,8,0) and C(3,6,7). If the angle bisector of $\\angle \\mathrm{BAC}$ meets the line BC at D , then the length of the projection of the vector $\\overrightarrow{\\mathrm{AD}}$ on the vector $\\overrightarrow{\\mathrm{AC}}$ is:",
+   "options": {
+    "A": "$\\frac{37}{2 \\sqrt{38}}$",
+    "B": "$\\frac{\\sqrt{38}}{2}$",
+    "C": "$\\frac{39}{2 \\sqrt{38}}$",
+    "D": "$\\sqrt{19}$"
+   },
+   "page_start": 3,
+   "page_end": 3,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "text_original_textlayer": "Consider a ABC where A(1,2,3,), B(–2,8,0) and \nC(3,6,7). If the angle bisector of BAC meets the \nline BC at D, then the length of the projection of \nthe vector \non the vector \nis:",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let Sn denote the sum of the first n terms of an \narithmetic progression. If S10 = 390 and the ratio of \nthe tenth and the fifth terms is 15 : 7, then S15 –S5 \nis equal to:",
+   "options": {
+    "A": "800",
+    "B": "890",
+    "C": "790",
+    "D": "690"
+   },
+   "page_start": 3,
+   "page_end": 3,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "If \n, where a and b are \nrational numbers, then 9a + 8b is equal to :",
+   "options": {
+    "A": "26",
+    "B": "36",
+    "C": "18",
+    "D": "24"
+   },
+   "page_start": 3,
+   "page_end": 4,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "If z is a complex number such that $|\\mathrm{z}| \\geq 1$, then the minimum value of $\\left|z+\\frac{1}{2}(3+4 i)\\right|$ is:",
+   "options": {
+    "A": "$\\frac{5}{2}$",
+    "B": "2",
+    "C": "3",
+    "D": "$\\frac{3}{2}$"
+   },
+   "page_start": 4,
+   "page_end": 4,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "BONUS",
+    "dropped": true
+   },
+   "text_original_textlayer": "If z is a complex number such that |z|1, then the \nminimum value of \nis:",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "If the domain of the function $f(\\mathrm{x})=\\frac{\\sqrt{\\mathrm{x}^{2}-25}}{\\left(4-\\mathrm{x}^{2}\\right)} +\\log _{10}\\left(\\mathrm{x}^{2}+2 \\mathrm{x}-15\\right)$ is $(-\\infty, \\alpha) \\mathrm{U}[\\beta, \\infty)$, then $\\alpha^{2}+\\beta^{3}$ is equal to :",
+   "options": {
+    "A": "140",
+    "B": "175",
+    "C": "150",
+    "D": "125"
+   },
+   "page_start": 4,
+   "page_end": 4,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "If the domain of the function f(x) = \n+log10 (x2 + 2x – 15) is (– , ) U [,), then  \n2 + 3 is equal to :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Consider the relations $\\mathrm{R}_{1}$ and $\\mathrm{R}_{2}$ defined as $\\mathrm{aR}_{1} \\mathrm{~b} \\Leftrightarrow \\mathrm{a}^{2}+\\mathrm{b}^{2}=1$ for all $\\mathrm{a}, \\mathrm{b}, \\in \\mathrm{R}$ and $(\\mathrm{a}, \\mathrm{b}) \\mathrm{R}_{2}(\\mathrm{c}, \\mathrm{d}) \\Leftrightarrow \\mathrm{a}+\\mathrm{d}=\\mathrm{b}+\\mathrm{c}$ for all $(\\mathrm{a}, \\mathrm{b}),(\\mathrm{c}, \\mathrm{d}) \\in \\mathrm{N} \\times \\mathrm{N}$. Then",
+   "options": {
+    "A": "Only $R_{1}$ is an equivalence relation",
+    "B": "Only $R_{2}$ is an equivalence relation",
+    "C": "$\\mathrm{R}_{1}$ and $\\mathrm{R}_{2}$ both are equivalence relations",
+    "D": "Neither $\\mathrm{R}_{1}$ nor $\\mathrm{R}_{2}$ is an equivalence relation"
+   },
+   "page_start": 4,
+   "page_end": 4,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "text_original_textlayer": "Consider the relations R1 and R2 defined as aR1b \n a2 + b2 = 1 for all a , b,  R and (a, b) R2(c, d) \n a + d = b + c for all (a,b), (c,d)  N × N. Then",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "If the mirror image of the point $\\mathrm{P}(3,4,9)$ in the line $\\frac{\\mathrm{x}-1}{3}=\\frac{\\mathrm{y}+1}{2}=\\frac{\\mathrm{z}-2}{1}$ is $(\\alpha, \\beta, \\gamma)$, then $14(\\alpha+\\beta+\\gamma)$ is :",
+   "options": {
+    "A": "102",
+    "B": "138",
+    "C": "108",
+    "D": "132"
+   },
+   "page_start": 4,
+   "page_end": 5,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "If the mirror image of the point P(3,4,9) in the line \nis (,,), then 14 (+ + ) \nis :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let $f(\\mathrm{x})=\\left\\{\\begin{array}{cc}\\mathrm{x}-1, \\mathrm{x} \\text { is even, } \\\\ 2 \\mathrm{x}, & \\mathrm{x} \\text { is odd, }\\end{array} \\quad \\mathrm{x} \\in \\mathrm{N}\\right.$. If for some $\\mathrm{a} \\in \\mathrm{N}, f(f(f(\\mathrm{a})))=21$, then $\\lim _{\\mathrm{x} \\rightarrow \\mathrm{a}^{-}}\\left\\{\\frac{|\\mathrm{x}|^{3}}{\\mathrm{a}}-\\left[\\frac{\\mathrm{x}}{\\mathrm{a}}\\right]\\right\\}$, where [t] denotes the greatest integer less than or equal to t, is equal to :",
+   "options": {
+    "A": "121",
+    "B": "144",
+    "C": "169",
+    "D": "225"
+   },
+   "page_start": 5,
+   "page_end": 5,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "text_original_textlayer": "Let f(x) = \n x  N. If for some  \n \na N, f(f(f(a))) = 21, then \n \nwhere [t] denotes the greatest integer less than or \nequal to t, is equal to :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let the system of equations $\\mathrm{x}+2 \\mathrm{y}+3 \\mathrm{z}=5,2 \\mathrm{x}+ 3 \\mathrm{y}+\\mathrm{z}=9,4 \\mathrm{x}+3 \\mathrm{y}+\\lambda \\mathrm{z}=\\mu$ have infinite number of solutions. Then $\\lambda+2 \\mu$ is equal to :",
+   "options": {
+    "A": "28",
+    "B": "17",
+    "C": "22",
+    "D": "15"
+   },
+   "page_start": 5,
+   "page_end": 6,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "text_original_textlayer": "Let the system of equations x + 2y +3z = 5, 2x + \n3y + z = 9, 4x + 3y + z =  have infinite number \nof solutions. Then  + 2is equal to :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Consider 10 observation $\\mathrm{x}_{1}, \\mathrm{x}_{2}, \\ldots, \\mathrm{x}_{10}$. such that $\\sum_{i=1}^{10}\\left(\\mathrm{x}_{i}-\\alpha\\right)=2$ and $\\sum_{i=1}^{10}\\left(\\mathrm{x}_{i}-\\beta\\right)^{2}=40$, where $\\alpha, \\beta$ are positive integers. Let the mean and the variance of the observations be $\\frac{6}{5}$ and $\\frac{84}{25}$ respectively. The $\\frac{\\beta}{\\alpha}$ is equal to :",
+   "options": {
+    "A": "2",
+    "B": "$\\frac{3}{2}$",
+    "C": "$\\frac{5}{2}$",
+    "D": "1"
+   },
+   "page_start": 6,
+   "page_end": 6,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "text_original_textlayer": "Consider 10 observation x1, x2,…., x10. such that \n(xi – ) = 2 and \n(xi – )2\n = 40, where ,  \nare positive integers. Let the mean and the variance \nof the observations be \nand\nrespectively. The\nis equal to :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let Ajay will not appear in JEE exam with \nprobability p = \n, while both Ajay and Vijay will \nappear in the exam with probability q = \n. Then \nthe probability, that Ajay will appear in the exam \nand Vijay will not appear is :",
+   "options": {
+    "A": "$\\frac{9}{35}$",
+    "B": "$\\frac{18}{35}$",
+    "C": "$\\frac{24}{35}$",
+    "D": "$\\frac{3}{35}$"
+   },
+   "page_start": 6,
+   "page_end": 6,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let the locus of the mid points  of the chords of \ncircle x2+(y–1)2 =1 drawn from the origin intersect \nthe line x+y = 1 at P and Q. Then, the length of PQ \nis :",
+   "options": {
+    "A": "$\\frac{1}{\\sqrt{2}}$",
+    "B": "$\\sqrt{2}$",
+    "C": "$\\frac{1}{2}$",
+    "D": "1"
+   },
+   "page_start": 6,
+   "page_end": 7,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "If three successive terms of a G.P. with common \nratio r(r > 1) are the lengths of the sides of a \ntriangle and [r] denotes the greatest integer less \nthan or equal to r, then 3[r] + [–r] is equal to :",
+   "options": null,
+   "page_start": 7,
+   "page_end": 7,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let $\\mathrm{A}=\\mathrm{I}_{2}-\\mathrm{MM}^{\\mathrm{T}}$, where M is real matrix of order $2 \\times 1$ such that the relation $\\mathrm{M}^{\\mathrm{T}} \\mathrm{M}=\\mathrm{I}_{1}$ holds. If $\\lambda$ is a real number such that the relation $\\mathrm{AX}=\\lambda \\mathrm{X}$ holds for some non-zero real matrix X of order 2 × 1, then the sum of squares of all possible values of $\\lambda$ is equal to :",
+   "options": null,
+   "page_start": 7,
+   "page_end": 7,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "text_original_textlayer": "Let A = I2 – MMT, where M is real matrix of order \n2 × 1 such that the relation MT M = I1 holds. If  is \na real number such that the relation AX = X holds \nfor some non-zero real matrix X of order 2 × 1, \nthen the sum of squares of all possible values of  \nis equal to :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let $\\mathrm{f}:(0, \\infty) \\rightarrow \\mathrm{R}$ and $\\mathrm{F}(\\mathrm{x})=\\int_{0}^{\\mathrm{x}} \\mathrm{tf}(\\mathrm{t}) \\mathrm{dt}$. If $\\mathrm{F}\\left(\\mathrm{x}^{2}\\right)= \\mathrm{x}^{4}+\\mathrm{x}^{5}$, then $\\sum_{\\mathrm{r}=1}^{12} \\mathrm{f}\\left(\\mathrm{r}^{2}\\right)$ is equal to :",
+   "options": null,
+   "page_start": 7,
+   "page_end": 8,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "219"
+   },
+   "text_original_textlayer": "Let f : (0, ) R and \n. If F(x2) = \nx4 + x5, then \n is equal to :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "If $\\mathrm{y}=\\frac{(\\sqrt{\\mathrm{x}}+1)\\left(\\mathrm{x}^{2}-\\sqrt{\\mathrm{x}}\\right)}{\\mathrm{x} \\sqrt{\\mathrm{x}}+\\mathrm{x}+\\sqrt{\\mathrm{x}}}+\\frac{1}{15}\\left(3 \\cos ^{2} \\mathrm{x}-5\\right) \\cos ^{3} \\mathrm{x}$, then $96 \\mathrm{y}^{\\prime}\\left(\\frac{\\pi}{6}\\right)$ is equal to :",
+   "options": null,
+   "page_start": 8,
+   "page_end": 8,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "105"
+   },
+   "text_original_textlayer": "If \n, \nthen \n is equal to :",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let $\\vec{a}=\\hat{i}+\\hat{j}+\\hat{k}, \\quad \\vec{b}=-\\hat{i}-8 \\hat{j}+2 \\hat{k} \\quad$ and $\\overrightarrow{\\mathrm{c}}=4 \\hat{\\mathrm{i}}+\\mathrm{c}_{2} \\hat{\\mathrm{j}}+\\mathrm{c}_{3} \\hat{\\mathrm{k}}$ be three vectors such that $\\overrightarrow{\\mathrm{b}} \\times \\overrightarrow{\\mathrm{a}}=\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{a}}$. If the angle between the vector $\\overrightarrow{\\mathrm{c}}$ and the vector $3 \\hat{\\mathrm{i}}+4 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ is $\\theta$, then the greatest integer less than or equal to $\\tan ^{2} \\theta$ is :",
+   "options": null,
+   "page_start": 8,
+   "page_end": 8,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "38"
+   },
+   "text_original_textlayer": "Let \n, \n \nand \n be three vectors such that \n. If the angle between the vector  \n and the vector \n is , then the greatest \ninteger less than or equal to tan2 is :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "The lines L1, L2,…., I20 are distinct. For  \nn = 1, 2, 3,…., 10 all the lines L2n–1 are parallel to \neach other and all the lines L2n pass through a \ngiven point P. The maximum number of points of \nintersection of pairs of lines from the set  \n{L1, L2,…., L20} is equal to :",
+   "options": null,
+   "page_start": 8,
+   "page_end": 9,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "101"
+   }
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Three points O(0,0), P(a, a2), Q(–b, b2), a > 0, b > 0, \nare on the parabola y = x2. Let S1 be the area of the \nregion bounded by the line PQ and the parabola, \nand S2 be the area of the triangle OPQ. If the \nminimum value of \n is \n, gcd(m, n) = 1, then \nm + n is equal to :",
+   "options": null,
+   "page_start": 9,
+   "page_end": 9,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "7"
+   }
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "The sum of squares of all possible values of k, for \nwhich area of the region bounded by the parabolas \n2y2 = kx and ky2 = 2(y – x) is maximum, is equal \nto :",
+   "options": null,
+   "page_start": 9,
+   "page_end": 10,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "8"
+   }
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "If \n, x(1) = 1, then 5x(2) is equal to :",
+   "options": null,
+   "page_start": 10,
+   "page_end": 10,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "5"
+   }
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Mathematics",
+   "section": null,
+   "segment": 0,
+   "text": "Let ABC be an isosceles triangle in which A is at $(-1,0), \\angle \\mathrm{A}=\\frac{2 \\pi}{3}, \\mathrm{AB}=\\mathrm{AC}$ and B is on the positive x-axis. If $\\mathrm{BC}=4 \\sqrt{3}$ and the line BC intersects the line $\\mathrm{y}=\\mathrm{x}+3$ at $(\\alpha, \\beta)$, then $\\frac{\\beta^{4}}{\\alpha^{2}}$ is :",
+   "options": {
+    "A": "] $\\frac{\\mathrm{G}}{200}$\n\\item[",
+    "B": "] $\\frac{\\mathrm{G}}{199}$\n\\item[",
+    "C": "] 199 G\n\\item[",
+    "D": "] 200 G\n\\end{itemize} \\\\"
+   },
+   "page_start": 10,
+   "page_end": 12,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "36"
+   },
+   "text_original_textlayer": "Let ABC be an isosceles triangle in which A is at \n(–1, 0), \n, AB = AC and B is on the \npositive x-axis. If \n and the line BC \nintersects the line y = x + 3 at (, ), then \n is :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 31,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "In an ammeter, 5% of the main current passes \nthrough the galvanometer. If resistance of the \ngalvanometer is G, the resistance of ammeter \nwill be :",
+   "options": {
+    "A": "] $\\frac{\\mathrm{G}}{200}$\n\\item[",
+    "B": "] $\\frac{\\mathrm{G}}{199}$\n\\item[",
+    "C": "] 199 G\n\\item[",
+    "D": "] 200 G\n\\end{itemize} \\\\"
+   },
+   "page_start": 12,
+   "page_end": 12,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "BONUS",
+    "dropped": true
+   }
+  },
+  {
+   "qno": 32,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "To measure the temperature coe $\\alpha$ of a semiconductor, an ele shown in the figure is prepare made up of the semiconductor being conducted at $25^{\\circ} \\mathrm{C}$ and semiconductor arm is $3 \\mathrm{~m} \\Omega$. Arm constant rate of $2^{\\circ} \\mathrm{C} / \\mathrm{s}$. If the gal no deflection after 10s, then $\\alpha$ is\n$$\\begin{array}{l}\n\\text {",
+   "options": {
+    "A": "}-2 \\times 10^{-2}{ }^{\\circ} \\mathrm{C}^{-1} \\\\\n\\text {",
+    "B": "}-1.5 \\times 10^{-2}{ }^{\\circ} \\mathrm{C}^{-1} \\\\\n\\text {",
+    "C": "}-1 \\times 10^{-2}{ }^{\\circ} \\mathrm{C}^{-1} \\\\\n\\text {",
+    "D": "}-2.5 \\times 10^{-2}{ }^{\\circ} \\mathrm{C}^{-1}\n\\end{array}$$ \\\\"
+   },
+   "page_start": 12,
+   "page_end": 12,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "references_figure_not_extracted"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "To measure the temperature coefficient of resistivity \n of a semiconductor, an electrical arrangement \nshown in the figure is prepared. The arm BC is \nmade up of the semiconductor. The experiment is \nbeing conducted at 25°C and resistance of the \nsemiconductor arm is 3 m. Arm BC is cooled at a \nconstant rate of 2°C/s. If the galvanometer G shows \nno deflection after 10s, then  is :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 33,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "From the statements given below :",
+   "options": {
+    "A": "The angular momentum of an electron in nth orbit is an integral multiple of h.",
+    "B": "Nuclear forces do not obey inverse square law.",
+    "C": "Nuclear forces are spin dependent.",
+    "D": "Nuclear forces are central and charge independent. (E) Stability of nucleus is inversely proportional to the value of packing fraction. Choose the correct answer from the options given below :"
+   },
+   "page_start": 12,
+   "page_end": 13,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "duplicate_option_marker_A",
+    "duplicate_option_marker_B",
+    "duplicate_option_marker_C",
+    "duplicate_option_marker_D"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 34,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A diatomic gas $(\\gamma=1.4)$ does 200 J of work when it is expanded isobarically. The heat given to the gas in the process is :",
+   "options": {
+    "A": "850 J",
+    "B": "800 J",
+    "C": "600 J",
+    "D": "700 J"
+   },
+   "page_start": 13,
+   "page_end": 13,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "text_original_textlayer": "A diatomic gas ( = 1.4) does 200 J of work when \nit is expanded isobarically. The heat given to the \ngas in the process is :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 35,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A disc of radius R and mass M is rolling horizontally without slipping with speed $v$. It then moves up an inclined smooth surface as shown in figure. The maximum height that the disc can go up the incline is :",
+   "options": {
+    "A": "$\\frac{v^{2}}{\\mathrm{~g}}$",
+    "B": "$\\frac{3}{4} \\frac{v^{2}}{\\mathrm{~g}}$",
+    "C": "$\\frac{1}{2} \\frac{v^{2}}{\\mathrm{~g}}$",
+    "D": "$\\frac{2}{3} \\frac{\\mathrm{v}^{2}}{\\mathrm{~g}}$"
+   },
+   "page_start": 13,
+   "page_end": 13,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "A disc of radius R and mass M is rolling \nhorizontally without slipping with speed . It then \nmoves up an inclined smooth surface as shown in \nfigure. The maximum height that the disc can go \nup the incline is : \nh\n",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 36,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "Conductivity of a photodiode starts changing only if the wavelength of incident light is less than 660 nm . The band gap of photodiode is found to be $\\left(\\frac{\\mathrm{X}}{8}\\right) \\mathrm{eV}$. The value of X is :\n(Given, $\\mathrm{h}=6.6 \\times 10^{-34} \\mathrm{Js}, \\mathrm{e}=1.6 \\times 10^{-19} \\mathrm{C}$ )",
+   "options": {
+    "A": "15",
+    "B": "11",
+    "C": "13",
+    "D": "21"
+   },
+   "page_start": 13,
+   "page_end": 13,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "text_original_textlayer": "Conductivity of a photodiode starts changing only \nif the wavelength of incident light is less than  \n660 nm. The band gap of photodiode is found to be \nX eV\n8\n\n\n\n\n\n\n. The value of X is : \n \n(Given, h = 6.6 × 10–34 Js, e = 1.6 × 10–19C)",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 37,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A big drop is formed by coalescing 1000 small \ndroplets of water. The surface energy will become :",
+   "options": {
+    "A": "100 times",
+    "B": "10 times",
+    "C": "1 th 100",
+    "D": "1 th 10"
+   },
+   "page_start": 13,
+   "page_end": 13,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   }
+  },
+  {
+   "qno": 38,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "If frequency of electromagnetic wave is 60 MHz \nand it travels in air along z direction then the \ncorresponding electric and magnetic field vectors \nwill be mutually perpendicular to each other and \nthe wavelength of the wave (in m) is :",
+   "options": {
+    "A": "2.5",
+    "B": "10",
+    "C": "5",
+    "D": "2"
+   },
+   "page_start": 13,
+   "page_end": 14,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 39,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A cricket player catches a ball of mass 120 g \nmoving with 25 m/s speed. If the catching process \nis completed in 0.1 s then the magnitude of force \nexerted by the ball on the hand of player will be  \n \n(in SI unit):",
+   "options": {
+    "A": "24",
+    "B": "12",
+    "C": "25",
+    "D": "30"
+   },
+   "page_start": 14,
+   "page_end": 14,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   }
+  },
+  {
+   "qno": 40,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "Monochromatic light of frequency 6 × 1014 Hz  \nis produced by a laser. The power emitted is  \n2 × 10–3 W. How many photons per second on an \naverage, are emitted by the source ?  \n \n(Given h = 6.63 × 10–34 Js)",
+   "options": {
+    "A": "9 × 1018",
+    "B": "6 × 1015",
+    "C": "5 × 1015",
+    "D": "7 × 1016"
+   },
+   "page_start": 14,
+   "page_end": 14,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 41,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A microwave of wavelength 2.0 cm falls normally \non a slit of width 4.0 cm. The angular spread of the \ncentral maxima of the diffraction pattern obtained \non a screen 1.5 m away from the slit, will be:",
+   "options": {
+    "A": "30°",
+    "B": "15°",
+    "C": "60°",
+    "D": "45°"
+   },
+   "page_start": 14,
+   "page_end": 14,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 42,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "C1 and C2 are two hollow concentric cubes \nenclosing charges 2Q and 3Q respectively as \nshown in figure. The ratio of electric flux passing \nthrough C1 and C2 is : \n2Q\n3Q",
+   "options": {
+    "A": "2 : 5",
+    "B": "5 : 2",
+    "C": "2 : 3",
+    "D": "3 : 2"
+   },
+   "page_start": 14,
+   "page_end": 14,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 43,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "If the root mean square velocity of hydrogen \nmolecule at a given temperature and pressure is  \n2 km/s, the root mean square velocity of oxygen at \nthe same condition in km/s is :",
+   "options": {
+    "A": "2.0",
+    "B": "0.5",
+    "C": "1.5",
+    "D": "1.0"
+   },
+   "page_start": 14,
+   "page_end": 14,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 44,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "Train A is moving along two parallel rail tracks \ntowards north with speed 72 km/h and train B is \nmoving towards south with speed 108 km/h. \nVelocity of train B with respect to A and velocity \nof ground with respect to B are (in ms–1) :",
+   "options": {
+    "A": "–30 and 50",
+    "B": "–50 and –30",
+    "C": "–50 and 30",
+    "D": "50 and –30"
+   },
+   "page_start": 14,
+   "page_end": 15,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 45,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A galvanometer (G) of $2 \\Omega$ resistance is connected in the given circuit. The ratio of charge stored in $\\mathrm{C}_{1}$ and $\\mathrm{C}_{2}$ is :",
+   "options": {
+    "A": "$\\frac{2}{3}$",
+    "B": "$\\frac{3}{2}$",
+    "C": "1",
+    "D": "$\\frac{1}{2}$"
+   },
+   "page_start": 15,
+   "page_end": 15,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "text_original_textlayer": "A galvanometer (G) of 2 resistance is connected \nin the given circuit. The ratio of charge stored in \nC1 and C2 is : \n6 F\n\n4 F\n\nC1\nC2\n6 \n4 \nG\n6 V",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 46,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "In a metre-bridge when a resistance in the left gap is $2 \\Omega$ and unknown resistance in the right gap, the balance length is found to be 40 cm. On shunting the unknown resistance with $2 \\Omega$, the balance length changes by :",
+   "options": {
+    "A": "22.5 cm",
+    "B": "20 cm",
+    "C": "62.5 cm",
+    "D": "65 cm"
+   },
+   "page_start": 15,
+   "page_end": 15,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "text_original_textlayer": "In a metre-bridge when a resistance in the left gap \nis 2 and unknown resistance in the right gap, the \nbalance length is found to be 40 cm. On shunting \nthe unknown resistance with 2, the balance \nlength changes by :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 47,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "Match List - I with List - II. \n \nList - I  \nList - II \n \n(Number)  \n(Significant figure)",
+   "options": {
+    "A": "1001 (I) 3",
+    "B": "010.1 (II) 4",
+    "C": "100.100 (III) 5",
+    "D": "0.0010010 (IV) 6 Choose the correct answer from the options given below :"
+   },
+   "page_start": 15,
+   "page_end": 16,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "duplicate_option_marker_A",
+    "duplicate_option_marker_B",
+    "duplicate_option_marker_C",
+    "duplicate_option_marker_D"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 48,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A transformer has an efficiency of 80% and  \nworks at 10 V and 4 kW. If the secondary voltage \nis 240 V, then the current in the secondary coil is :",
+   "options": {
+    "A": "1.59 A",
+    "B": "13.33 A",
+    "C": "1.33 A",
+    "D": "15.1 A"
+   },
+   "page_start": 16,
+   "page_end": 16,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 49,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A light planet is revolving around a massive star in a circular orbit of radius R with a period of revolution T. If the force of attraction between planet and star is proportional to $\\mathrm{R}^{-3 / 2}$ then choose the correct option :",
+   "options": {
+    "A": "$\\mathrm{T}^{2} \\propto \\mathrm{R}^{5 / 2}$",
+    "B": "$\\mathrm{T}^{2} \\propto \\mathrm{R}^{7 / 2}$",
+    "C": "$\\mathrm{T}^{2} \\propto \\mathrm{R}^{3 / 2}$",
+    "D": "$\\mathrm{T}^{2} \\propto \\mathrm{R}^{3}$"
+   },
+   "page_start": 16,
+   "page_end": 16,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "text_original_textlayer": "A light planet is revolving around a massive star in \na circular orbit of radius R with a period of \nrevolution T. If the force of attraction between \nplanet and star is proportional to \n32\nR\n\n then choose \nthe correct option :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 50,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A body of mass 4 kg experiences two forces $\\overrightarrow{\\mathrm{F}}_{1}=5 \\hat{\\mathrm{i}}+8 \\hat{\\mathrm{j}}+7 \\hat{\\mathrm{k}} \\quad$ and $\\quad \\overrightarrow{\\mathrm{F}}_{2}=3 \\hat{\\mathrm{i}}-4 \\hat{\\mathrm{j}}-3 \\hat{\\mathrm{k}}$. The acceleration acting on the body is :",
+   "options": {
+    "A": "$-2 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}$",
+    "B": "$4 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$",
+    "C": "$2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$",
+    "D": "$2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}$"
+   },
+   "page_start": 16,
+   "page_end": 16,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "A body of mass 4 kg experiences two forces \n1\nˆ\nˆ\nˆ\nF\n5i\n8j\n7k\n\n\n\n and \n2\nˆ\nˆ\nˆ\nF\n3i\n4j\n3k\n\n\n\n. The \nacceleration acting on the body is :",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 51,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A mass m is suspended from a spring of negligible \nmass and the system oscillates with a frequency f1. The \nfrequency of oscillations if a mass 9 m is suspended \nfrom the same spring is f2. The value of \n1\n2\nf\nf  is ___.",
+   "options": {
+    "A": "1001\n(I) 3",
+    "B": "010.1\n(II) 4",
+    "C": "100.100\n(III) 5",
+    "D": "0.0010010\n(IV) 6\n\nChoose the correct answer from the options given below :\n(1) (A)-(III), (B)-(IV), (C)-(II), (D)-(I)\n(2) (A)-(IV), (B)-(III), (C)-(I), (D)-(II)\n(3) (A)-(II), (B)-(I), (C)-(IV), (D)-(III)\n(4) (A)-(I), (B)-(II), (C)-(III), (D)-(IV)\n\nAns. (3)\nSol. Theoretical\n48. A transformer has an efficiency of 80\\% and works at 10 V and 4 kW. If the secondary voltage is 240 V, then the current in the secondary coil is :\n(1) 1.59 A\n(2) 13.33 A\n(3) 1.33 A\n(4) 15.1 A\n\nAns. (2)\nSol. Efficiency $=\\frac{\\mathrm{E}_{\\mathrm{S}} \\mathrm{I}_{\\mathrm{S}}}{\\mathrm{E}_{\\mathrm{P}} \\mathrm{I}_{\\mathrm{P}}}$\n$$\\begin{array}{l}\n0.8=\\frac{240 \\mathrm{I}_{\\mathrm{S}}}{4000} \\\\\n\\mathrm{I}_{\\mathrm{S}}=\\frac{3200}{240}=13.33 \\mathrm{~A}\n\\end{array}$$\n49. A light planet is revolving around a massive star in a circular orbit of radius R with a period of revolution T. If the force of attraction between planet and star is proportional to $\\mathrm{R}^{-3 / 2}$ then choose the correct option :\n(1) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{5 / 2}$\n(2) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{7 / 2}$\n(3) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{3 / 2}$\n(4) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{3}$\n\nAns. (1)\nSol. $\\mathrm{F}=\\frac{\\mathrm{GMm}}{\\mathrm{R}^{3 / 2}}=\\mathrm{m} \\omega^{2} \\mathrm{R}$\n$$\\begin{array}{l}\n\\omega^{2} \\propto \\frac{1}{\\mathrm{R}^{5 / 2}} \\quad \\because \\mathrm{~T}=\\frac{2 \\pi}{\\omega} \\quad \\text { so } \\\\\n\\mathrm{T}^{2} \\propto \\mathrm{R}^{5 / 2}\n\\end{array}$$\n50. A body of mass 4 kg experiences two forces $\\overrightarrow{\\mathrm{F}}_{1}=5 \\hat{\\mathrm{i}}+8 \\hat{\\mathrm{j}}+7 \\hat{\\mathrm{k}} \\quad$ and $\\quad \\overrightarrow{\\mathrm{F}}_{2}=3 \\hat{\\mathrm{i}}-4 \\hat{\\mathrm{j}}-3 \\hat{\\mathrm{k}}$. The acceleration acting on the body is :\n(1) $-2 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}$\n(2) $4 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$\n(3) $2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$\n(4) $2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}$\n\nAns. (3)\nSol. Net force $=8 \\hat{\\mathrm{i}}+4 \\hat{\\mathrm{j}}+4 \\hat{\\mathrm{k}}$\n$$\\vec{a}=\\frac{\\vec{F}}{m}=2 \\hat{i}+\\hat{j}+\\hat{k}$$\n\nSECTION-B\n51. A mass m is suspended from a spring of negligible mass and the system oscillates with a frequency $\\mathrm{f}_{1}$. The frequency of oscillations if a mass 9 m is suspended from the same spring is $\\mathrm{f}_{2}$. The value of $\\frac{\\mathrm{f}_{1}}{\\mathrm{f}_{2}}$ is $\\_\\_\\_\\_$ .\n\nAns. (3)\nSol. $\\mathrm{f}_{1}=\\frac{1}{2 \\pi} \\sqrt{\\frac{\\mathrm{k}}{\\mathrm{m}}}$\n$$\\begin{array}{l}\n\\mathrm{f}_{2}=\\frac{1}{2 \\pi} \\sqrt{\\frac{\\mathrm{k}}{9 \\mathrm{~m}}} \\\\\n\\frac{\\mathrm{f}_{1}}{\\mathrm{f}_{2}}=\\sqrt{\\frac{9}{1}}=\\frac{3}{1}\n\\end{array}$$\n52. A particle initially at rest starts moving from reference point. $\\mathrm{x}=0$ along x -axis, with velocity v that varies as $v=4 \\sqrt{x} \\mathrm{~m} / \\mathrm{s}$. The acceleration of the particle is $\\_\\_\\_\\_$ $\\mathrm{ms}^{-2}$.\n\nAns. (8)\nSol. $\\mathrm{V}=4 \\sqrt{\\mathrm{x}}$\n$$\\begin{array}{l}\na=V \\frac{d v}{d x} \\\\\n=4 \\sqrt{x} \\times 4 \\times \\frac{1}{2} x^{-1 / 2}=8 \\mathrm{~m} / \\mathrm{s}^{2}\n\\end{array}$$"
+   },
+   "page_start": 16,
+   "page_end": 16,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 52,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A particle initially at rest starts moving from reference point. $\\mathrm{x}=0$ along x -axis, with velocity v that varies as $v=4 \\sqrt{x} \\mathrm{~m} / \\mathrm{s}$. The acceleration of the particle is $\\_\\_\\_\\_$ $\\mathrm{ms}^{-2}$.",
+   "options": {
+    "A": "1001\n(I) 3",
+    "B": "010.1\n(II) 4",
+    "C": "100.100\n(III) 5",
+    "D": "0.0010010\n(IV) 6\n\nChoose the correct answer from the options given below :\n(1) (A)-(III), (B)-(IV), (C)-(II), (D)-(I)\n(2) (A)-(IV), (B)-(III), (C)-(I), (D)-(II)\n(3) (A)-(II), (B)-(I), (C)-(IV), (D)-(III)\n(4) (A)-(I), (B)-(II), (C)-(III), (D)-(IV)\n\nAns. (3)\nSol. Theoretical\n48. A transformer has an efficiency of 80\\% and works at 10 V and 4 kW. If the secondary voltage is 240 V, then the current in the secondary coil is :\n(1) 1.59 A\n(2) 13.33 A\n(3) 1.33 A\n(4) 15.1 A\n\nAns. (2)\nSol. Efficiency $=\\frac{\\mathrm{E}_{\\mathrm{S}} \\mathrm{I}_{\\mathrm{S}}}{\\mathrm{E}_{\\mathrm{P}} \\mathrm{I}_{\\mathrm{P}}}$\n$$\\begin{array}{l}\n0.8=\\frac{240 \\mathrm{I}_{\\mathrm{S}}}{4000} \\\\\n\\mathrm{I}_{\\mathrm{S}}=\\frac{3200}{240}=13.33 \\mathrm{~A}\n\\end{array}$$\n49. A light planet is revolving around a massive star in a circular orbit of radius R with a period of revolution T. If the force of attraction between planet and star is proportional to $\\mathrm{R}^{-3 / 2}$ then choose the correct option :\n(1) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{5 / 2}$\n(2) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{7 / 2}$\n(3) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{3 / 2}$\n(4) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{3}$\n\nAns. (1)\nSol. $\\mathrm{F}=\\frac{\\mathrm{GMm}}{\\mathrm{R}^{3 / 2}}=\\mathrm{m} \\omega^{2} \\mathrm{R}$\n$$\\begin{array}{l}\n\\omega^{2} \\propto \\frac{1}{\\mathrm{R}^{5 / 2}} \\quad \\because \\mathrm{~T}=\\frac{2 \\pi}{\\omega} \\quad \\text { so } \\\\\n\\mathrm{T}^{2} \\propto \\mathrm{R}^{5 / 2}\n\\end{array}$$\n50. A body of mass 4 kg experiences two forces $\\overrightarrow{\\mathrm{F}}_{1}=5 \\hat{\\mathrm{i}}+8 \\hat{\\mathrm{j}}+7 \\hat{\\mathrm{k}} \\quad$ and $\\quad \\overrightarrow{\\mathrm{F}}_{2}=3 \\hat{\\mathrm{i}}-4 \\hat{\\mathrm{j}}-3 \\hat{\\mathrm{k}}$. The acceleration acting on the body is :\n(1) $-2 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}$\n(2) $4 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$\n(3) $2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$\n(4) $2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}$\n\nAns. (3)\nSol. Net force $=8 \\hat{\\mathrm{i}}+4 \\hat{\\mathrm{j}}+4 \\hat{\\mathrm{k}}$\n$$\\vec{a}=\\frac{\\vec{F}}{m}=2 \\hat{i}+\\hat{j}+\\hat{k}$$\n\nSECTION-B\n51. A mass m is suspended from a spring of negligible mass and the system oscillates with a frequency $\\mathrm{f}_{1}$. The frequency of oscillations if a mass 9 m is suspended from the same spring is $\\mathrm{f}_{2}$. The value of $\\frac{\\mathrm{f}_{1}}{\\mathrm{f}_{2}}$ is $\\_\\_\\_\\_$ .\n\nAns. (3)\nSol. $\\mathrm{f}_{1}=\\frac{1}{2 \\pi} \\sqrt{\\frac{\\mathrm{k}}{\\mathrm{m}}}$\n$$\\begin{array}{l}\n\\mathrm{f}_{2}=\\frac{1}{2 \\pi} \\sqrt{\\frac{\\mathrm{k}}{9 \\mathrm{~m}}} \\\\\n\\frac{\\mathrm{f}_{1}}{\\mathrm{f}_{2}}=\\sqrt{\\frac{9}{1}}=\\frac{3}{1}\n\\end{array}$$\n52. A particle initially at rest starts moving from reference point. $\\mathrm{x}=0$ along x -axis, with velocity v that varies as $v=4 \\sqrt{x} \\mathrm{~m} / \\mathrm{s}$. The acceleration of the particle is $\\_\\_\\_\\_$ $\\mathrm{ms}^{-2}$.\n\nAns. (8)\nSol. $\\mathrm{V}=4 \\sqrt{\\mathrm{x}}$\n$$\\begin{array}{l}\na=V \\frac{d v}{d x} \\\\\n=4 \\sqrt{x} \\times 4 \\times \\frac{1}{2} x^{-1 / 2}=8 \\mathrm{~m} / \\mathrm{s}^{2}\n\\end{array}$$"
+   },
+   "page_start": 16,
+   "page_end": 16,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "8"
+   },
+   "text_original_textlayer": "A particle initially at rest starts moving from \nreference point. x = 0 along x-axis, with velocity  \nthat varies as \n4 xm / s.\n\n The acceleration of \nthe particle is ____ms–2.",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 53,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A moving coil galvanometer has 100 turns and \neach turn has an area of 2.0 cm2. The magnetic \nfield produced by the magnet is 0.01 T and  \nthe deflection in the coil is 0.05 radian when a \ncurrent of 10 mA is passed through it.  \nThe torsional constant of the suspension wire is  \nx × 10–5 N-m/rad. The value of x is___.",
+   "options": {
+    "A": "1001\n(I) 3",
+    "B": "010.1\n(II) 4",
+    "C": "100.100\n(III) 5",
+    "D": "0.0010010\n(IV) 6\n\nChoose the correct answer from the options given below :\n(1) (A)-(III), (B)-(IV), (C)-(II), (D)-(I)\n(2) (A)-(IV), (B)-(III), (C)-(I), (D)-(II)\n(3) (A)-(II), (B)-(I), (C)-(IV), (D)-(III)\n(4) (A)-(I), (B)-(II), (C)-(III), (D)-(IV)\n\nAns. (3)\nSol. Theoretical\n48. A transformer has an efficiency of 80\\% and works at 10 V and 4 kW. If the secondary voltage is 240 V, then the current in the secondary coil is :\n(1) 1.59 A\n(2) 13.33 A\n(3) 1.33 A\n(4) 15.1 A\n\nAns. (2)\nSol. Efficiency $=\\frac{\\mathrm{E}_{\\mathrm{S}} \\mathrm{I}_{\\mathrm{S}}}{\\mathrm{E}_{\\mathrm{P}} \\mathrm{I}_{\\mathrm{P}}}$\n$$\\begin{array}{l}\n0.8=\\frac{240 \\mathrm{I}_{\\mathrm{S}}}{4000} \\\\\n\\mathrm{I}_{\\mathrm{S}}=\\frac{3200}{240}=13.33 \\mathrm{~A}\n\\end{array}$$\n49. A light planet is revolving around a massive star in a circular orbit of radius R with a period of revolution T. If the force of attraction between planet and star is proportional to $\\mathrm{R}^{-3 / 2}$ then choose the correct option :\n(1) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{5 / 2}$\n(2) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{7 / 2}$\n(3) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{3 / 2}$\n(4) $\\mathrm{T}^{2} \\propto \\mathrm{R}^{3}$\n\nAns. (1)\nSol. $\\mathrm{F}=\\frac{\\mathrm{GMm}}{\\mathrm{R}^{3 / 2}}=\\mathrm{m} \\omega^{2} \\mathrm{R}$\n$$\\begin{array}{l}\n\\omega^{2} \\propto \\frac{1}{\\mathrm{R}^{5 / 2}} \\quad \\because \\mathrm{~T}=\\frac{2 \\pi}{\\omega} \\quad \\text { so } \\\\\n\\mathrm{T}^{2} \\propto \\mathrm{R}^{5 / 2}\n\\end{array}$$\n50. A body of mass 4 kg experiences two forces $\\overrightarrow{\\mathrm{F}}_{1}=5 \\hat{\\mathrm{i}}+8 \\hat{\\mathrm{j}}+7 \\hat{\\mathrm{k}} \\quad$ and $\\quad \\overrightarrow{\\mathrm{F}}_{2}=3 \\hat{\\mathrm{i}}-4 \\hat{\\mathrm{j}}-3 \\hat{\\mathrm{k}}$. The acceleration acting on the body is :\n(1) $-2 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}$\n(2) $4 \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$\n(3) $2 \\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$\n(4) $2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}$\n\nAns. (3)\nSol. Net force $=8 \\hat{\\mathrm{i}}+4 \\hat{\\mathrm{j}}+4 \\hat{\\mathrm{k}}$\n$$\\vec{a}=\\frac{\\vec{F}}{m}=2 \\hat{i}+\\hat{j}+\\hat{k}$$\n\nSECTION-B\n51. A mass m is suspended from a spring of negligible mass and the system oscillates with a frequency $\\mathrm{f}_{1}$. The frequency of oscillations if a mass 9 m is suspended from the same spring is $\\mathrm{f}_{2}$. The value of $\\frac{\\mathrm{f}_{1}}{\\mathrm{f}_{2}}$ is $\\_\\_\\_\\_$ .\n\nAns. (3)\nSol. $\\mathrm{f}_{1}=\\frac{1}{2 \\pi} \\sqrt{\\frac{\\mathrm{k}}{\\mathrm{m}}}$\n$$\\begin{array}{l}\n\\mathrm{f}_{2}=\\frac{1}{2 \\pi} \\sqrt{\\frac{\\mathrm{k}}{9 \\mathrm{~m}}} \\\\\n\\frac{\\mathrm{f}_{1}}{\\mathrm{f}_{2}}=\\sqrt{\\frac{9}{1}}=\\frac{3}{1}\n\\end{array}$$\n52. A particle initially at rest starts moving from reference point. $\\mathrm{x}=0$ along x -axis, with velocity v that varies as $v=4 \\sqrt{x} \\mathrm{~m} / \\mathrm{s}$. The acceleration of the particle is $\\_\\_\\_\\_$ $\\mathrm{ms}^{-2}$.\n\nAns. (8)\nSol. $\\mathrm{V}=4 \\sqrt{\\mathrm{x}}$\n$$\\begin{array}{l}\na=V \\frac{d v}{d x} \\\\\n=4 \\sqrt{x} \\times 4 \\times \\frac{1}{2} x^{-1 / 2}=8 \\mathrm{~m} / \\mathrm{s}^{2}\n\\end{array}$$"
+   },
+   "page_start": 16,
+   "page_end": 17,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   }
+  },
+  {
+   "qno": 54,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "One end of a metal wire is fixed to a ceiling and a \nload of 2 kg hangs from the other end. A similar \nwire is attached to the bottom of the load and \nanother load of 1 kg hangs from this lower wire. \nThen the ratio of longitudinal strain of upper wire \nto that of the lower wire will be___. \n \n[Area of cross section of wire = 0.005 cm2,  \nY = 2 × l011 Nm–2 and g = 10 ms–2]",
+   "options": null,
+   "page_start": 17,
+   "page_end": 17,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 55,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A particular hydrogen - like ion emits the radiation \nof frequency 3 × 1015 Hz when it makes transition \nfrom n = 2 to n = l.  The frequency of radiation \nemitted in transition from n = 3 to n = l is  \nx\n9  × 1015 Hz, when x = ______.",
+   "options": null,
+   "page_start": 17,
+   "page_end": 17,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "32"
+   }
+  },
+  {
+   "qno": 56,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "In an electrical circuit drawn below the amount of charge stored in the capacitor is $\\_\\_\\_\\_$ $\\mu \\mathrm{C}$.",
+   "options": null,
+   "page_start": 17,
+   "page_end": 18,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "60"
+   },
+   "text_original_textlayer": "In an electrical circuit drawn below the amount of \ncharge stored in the capacitor is ___C. \n10 V\n+\n–\n10 F\n\n5\nR2\nR1\nR3\n6\nC\n4",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 57,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A coil of 200 turns and area $0.20 \\mathrm{~m}^{2}$ is rotated at half a revolution per second and is placed in uniform magnetic field of 0.01 T perpendicular to axis of rotation of the coil. The maximum voltage generated in the coil is $\\frac{2 \\pi}{\\beta}$ volt. The value of $\\beta$ is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "page_start": 18,
+   "page_end": 18,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "text_original_textlayer": "A coil of 200 turns and area 0.20 m2 is rotated at half \na revolution per second and is placed in uniform \nmagnetic field of 0.01 T perpendicular to axis of \nrotation of the coil.  The maximum voltage generated \nin the coil is 2\n volt. The value of  is__.",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 58,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "In Young's double slit experiment, monochromatic \nlight of wavelength 5000 Å is used. The slits are \n1.0 mm apart and screen is placed at 1.0 m away \nfrom slits. The distance from the centre of the \nscreen where intensity becomes half of the \nmaximum intensity for the first time is___×10–6 m.",
+   "options": null,
+   "page_start": 18,
+   "page_end": 18,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "125"
+   }
+  },
+  {
+   "qno": 59,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "A uniform rod AB of mass 2 kg and Length 30 cm at rest on a smooth horizontal surface. An impulse of force 0.2 Ns is applied to end B. The time taken by the rod to turn through at right angles will be $\\frac{\\pi}{\\mathrm{x}} \\mathrm{s}$, where $\\mathrm{x}=$ $\\_\\_\\_\\_$ .",
+   "options": null,
+   "page_start": 18,
+   "page_end": 19,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "text_original_textlayer": "A uniform rod AB of mass 2 kg and Length 30 cm \nat rest on a smooth horizontal surface. An impulse \nof force 0.2 Ns is applied to end B. The time taken \nby the rod to turn through at right angles will be \ns\nx\n\n, where x = ____.",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 60,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Physics",
+   "section": null,
+   "segment": 0,
+   "text": "Suppose a uniformly charged wall provides a uniform electric field of $2 \\times 10^{4} \\mathrm{~N} / \\mathrm{C}$ normally. A charged particle of mass 2 g being suspended through a silk thread of length 20 cm and remain stayed at a distance of 10 cm from the wall. Then the charge on the particle will be $\\frac{1}{\\sqrt{\\mathrm{x}}} \\mu \\mathrm{C}$ where $\\mathrm{x}=$ $\\_\\_\\_\\_$ . [use $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ ]",
+   "options": {
+    "A": "Cr",
+    "B": "Mn",
+    "C": "V",
+    "D": "Fe"
+   },
+   "page_start": 19,
+   "page_end": 20,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "Suppose a uniformly charged wall provides a \nuniform electric field of 2 × l04 N/C normally. A \ncharged particle of mass 2 g being suspended \nthrough a silk thread of length 20 cm and remain \nstayed at a distance of 10 cm from the wall. Then \nthe charge on the particle will be 1\nC\nx\n\n where  \nx =______. [use g = 10 m/s2]",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 61,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The transition metal having highest 3rd ionisation \nenthalpy is :",
+   "options": {
+    "A": "Cr",
+    "B": "Mn",
+    "C": "V",
+    "D": "Fe"
+   },
+   "page_start": 20,
+   "page_end": 20,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 62,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Given below are two statements : \n \nStatement (I) : A p bonding MO has lower electron \ndensity above and below the inter-nuclear asix. \n \nStatement (II) : The p* antibonding MO has a \nnode between the nuclei. \n \nIn the light of the above statements, choose the \nmost appropriate answer from the options given \nbelow:",
+   "options": {
+    "A": "Both Statement I and Statement II are false",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Statement I is false but Statement II is true",
+    "D": "Statement I is true but Statement II is false"
+   },
+   "page_start": 20,
+   "page_end": 20,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 63,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Given below are two statements : one is labelled as \nAssertion (A) and the other is labelled as Reason (R). \n \nAssertion (A) : In aqueous solutions Cr2+ is \nreducing while Mn3+ is oxidising in nature. \n \nReason (R) : Extra stability to half filled electronic \nconfiguration is observed than incompletely filled \nelectronic configuration. \n \nIn the light of the above statement, choose the most \nappropriate answer from the options given below:",
+   "options": {
+    "A": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+    "B": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+    "C": "(A) is false but (R) is true",
+    "D": "(A) is true but (R) is false"
+   },
+   "page_start": 20,
+   "page_end": 20,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 64,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Match List - I with List - II.\nList-I\n(Reactants)\nList-II\nProducts\n(I) Salicylaldehyde\n(II) Salicylic acid\n(III) Benzene\n(IV) Picric acid\nChoose the correct answer from the options given below.\n(1)",
+   "options": {
+    "A": "-(IV),",
+    "B": ", (II),",
+    "C": "-(I),",
+    "D": "-(III)\n(2) (A)-(IV), (B)-(I), (C)-(II), (D)-(III)\n(3) (A)-(III), (B)-(I), (C)-(II), (D)-(IV)\n(4) (A)-(III), (B)-(IV), (C)-(I), (D)-(II)"
+   },
+   "page_start": 20,
+   "page_end": 21,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "duplicate_option_marker_A",
+    "duplicate_option_marker_B",
+    "duplicate_option_marker_C",
+    "duplicate_option_marker_D"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "Match List - I with List - II. \n \nList-I \n      List-II \n \n(Reactants) \n      Products",
+   "ocr_repaired": "pua_options"
+  },
+  {
+   "qno": 65,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Given below are two statements : \n \nStatement (I) : Both metal and non-metal exist in \np and d-block elements. \n \nStatement \n(II) \n: \nNon-metals \nhave \nhigher \nionisation enthalpy and higher electronegativity \nthan the metals. \n \nIn the light of the above statements, choose the \nmost appropriate answer from the option given \nbelow:",
+   "options": {
+    "A": "Both Statement I and Statement II are false",
+    "B": "Statement I is false but Statement II is true",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Both Statement I and Statement II are true"
+   },
+   "page_start": 21,
+   "page_end": 21,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 66,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The strongest reducing agent amont the following \nis:",
+   "options": {
+    "A": "NH3",
+    "B": "SbH3",
+    "C": "BiH3",
+    "D": "PH3"
+   },
+   "page_start": 21,
+   "page_end": 21,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 67,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Which of the following compounds show colour \ndue to d-d transition?",
+   "options": {
+    "A": "CuSO4.5H2O",
+    "B": "K2Cr2O7",
+    "C": "K2CrO4",
+    "D": "KMnO4"
+   },
+   "page_start": 21,
+   "page_end": 21,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 68,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The set of meta directing functional groups from \nthe following sets is:",
+   "options": {
+    "A": "–CN, –NH2, –NHR, –OCH3",
+    "B": "–NO2, –NH2, –COOH, –COOR",
+    "C": "–NO2, –CHO, –SO3H, –COR",
+    "D": "–CN, –CHO, –NHCOCH3, –COOR"
+   },
+   "page_start": 21,
+   "page_end": 21,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 69,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Select the compound from the following that will \nshow intramolecular hydrogen bonding.",
+   "options": {
+    "A": "H2O",
+    "B": "NH3",
+    "C": "C2H5OH",
+    "D": "NO2 OH"
+   },
+   "page_start": 21,
+   "page_end": 22,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   }
+  },
+  {
+   "qno": 70,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Lassaigne's test is used for detection of :",
+   "options": {
+    "A": "Nitrogen and Sulphur only",
+    "B": "Nitrogen, Sulphur and Phosphorous Only",
+    "C": "Phosphorous and halogens only",
+    "D": "Nitrogen, Sulphur, phosphorous and halogens"
+   },
+   "page_start": 22,
+   "page_end": 22,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   }
+  },
+  {
+   "qno": 71,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Which among the following has highest boiling \npoint?",
+   "options": {
+    "A": "CH3CH2CH2CH3",
+    "B": "CH3CH2CH2CH2–OH",
+    "C": "CH3CH2CH2CHO",
+    "D": "H5C2 – O – C2H5"
+   },
+   "page_start": 22,
+   "page_end": 22,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 72,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "In the given reactions identify A and B .",
+   "options": {
+    "A": "A : 2-Pentyne",
+    "B": "A : n - Pentane",
+    "C": "A : 2 - Pentyne",
+    "D": "A : n - Pentane\n\nB : trans - 2 - butene\nB : trans - 2-butene\nB : Cis - 2 - butene\nB : Cis - 2 - butene"
+   },
+   "page_start": 22,
+   "page_end": 22,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "text_original_textlayer": "In the given reactions identify A and B. \n \nH  + A\n2\nPd/C\nCH3\nH\nC\nC\nC H\n2\n5\nH\n \n \n3\n3\n2\n3\nNa/LiquidNH\nCH\nC\nC\nCH\nH\n\"B\"\n\n\n\n\n",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 73,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The number of radial node/s for 3p orbital is:",
+   "options": {
+    "A": "1",
+    "B": "4",
+    "C": "2",
+    "D": "3"
+   },
+   "page_start": 22,
+   "page_end": 22,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 74,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Match List - I with List - II. \n \nList - I \nList - II \n \nCompound \nUse",
+   "options": {
+    "A": "Carbon tetrachloride (I) Paint remover",
+    "B": "Methylene chloride (II) Refrigerators and air conditioners",
+    "C": "DDT (III) Fire extinguisher",
+    "D": "Freons (IV) Non Biodegradable insecticide Choose the correct answer from the options given below :"
+   },
+   "page_start": 22,
+   "page_end": 22,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "duplicate_option_marker_A",
+    "duplicate_option_marker_B",
+    "duplicate_option_marker_C",
+    "duplicate_option_marker_D"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 75,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The \nfunctional \ngroup that \nshows \nnegative \nresonance effect is:",
+   "options": {
+    "A": "–NH2",
+    "B": "–OH",
+    "C": "–COOH",
+    "D": "–OR"
+   },
+   "page_start": 22,
+   "page_end": 22,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   }
+  },
+  {
+   "qno": 76,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "[Co(NH3)6]3+ and [CoF6]3– are respectively known \nas:",
+   "options": {
+    "A": "Spin free Complex, Spin paired Complex",
+    "B": "Spin paired Complex, Spin free Complex",
+    "C": "Outer orbital Complex, Inner orbital Complex",
+    "D": "Inner orbital Complex, Spin paired Complex"
+   },
+   "page_start": 22,
+   "page_end": 23,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 77,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Given below are two statements :\nStatement (I) : $\\mathrm{SiO}_{2}$ and $\\mathrm{GeO}_{2}$ are acidic while SnO and PbO are amphoteric in nature.\nStatement (II) : Allotropic forms of carbon are due to property of catenation and $\\mathrm{p} \\pi-\\mathrm{d} \\pi$ bond formation.\nIn the light of the above statements, choose the most appropriate answer from the options given below:",
+   "options": {
+    "A": "Both Statement I and Statement II are false",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true"
+   },
+   "page_start": 23,
+   "page_end": 23,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "text_original_textlayer": "Given below are two statements : \n \nStatement (I) : SiO2 and GeO2 are acidic while \nSnO and PbO are amphoteric in nature. \n \nStatement (II) : Allotropic forms of carbon are \ndue to property of catenation and p-d bond \nformation. \n \nIn the light of the above statements, choose the \nmost appropriate answer from the options given \nbelow:",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 78,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Acid D formed in above reaction is :",
+   "options": {
+    "A": "Gluconic acid",
+    "B": "Succinic acid",
+    "C": "Oxalic acid",
+    "D": "Malonic acid"
+   },
+   "page_start": 23,
+   "page_end": 23,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "text_original_textlayer": "C H Br\n2\n5\nalc. KOH\nA\nBr2\nCCl4\nB KCN\nExcess C\nH O\n3\n+\nExcess\nD\n \n \nAcid D formed in above reaction is :",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 79,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Solubility of calcium phosphate (molecular mass, M) in water is $\\mathrm{W}_{\\mathrm{g}}$ per 100 mL at 25° C. Its solubility product at 25°C will be approximately.",
+   "options": {
+    "A": "$10^{7}\\left(\\frac{\\mathrm{~W}}{\\mathrm{M}}\\right)^{3}$",
+    "B": "$10^{7}\\left(\\frac{\\mathrm{~W}}{\\mathrm{M}}\\right)^{5}$",
+    "C": "$10^{3}\\left(\\frac{\\mathrm{~W}}{\\mathrm{M}}\\right)^{5}$",
+    "D": "$10^{5}\\left(\\frac{\\mathrm{~W}}{\\mathrm{M}}\\right)^{5}$"
+   },
+   "page_start": 23,
+   "page_end": 23,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "text_original_textlayer": "Solubility of calcium phosphate (molecular mass, M) \nin water is Wg per 100 mL at 25° C. Its solubility \nproduct at 25°C will be approximately.",
+   "ocr_repaired": "pua_options"
+  },
+  {
+   "qno": 80,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Given below are two statements : \n \nStatement (I) : Dimethyl glyoxime forms a six-\nmembered covalent chelate when treated with \nNiCl2 solution in presence of NH4OH. \n \nStatement (II) : Prussian blue precipitate contains \niron both in (+2) and (+3) oxidation states. In the \nlight of the above statements, choose the most \nappropriate answer from the options given  below:",
+   "options": {
+    "A": "Statement I is false but Statement II is true",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Both Statement I and Statement II are false",
+    "D": "Statement I is true but Statement II is false"
+   },
+   "page_start": 23,
+   "page_end": 24,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated"
+   ],
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   }
+  },
+  {
+   "qno": 81,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Total number of isomeric compounds (including \nstereoisomers) formed by monochlorination of  \n2-methylbutane is________.",
+   "options": {
+    "A": "Statement I is false but Statement II is true",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Both Statement I and Statement II are false",
+    "D": "Statement I is true but Statement II is false"
+   },
+   "page_start": 24,
+   "page_end": 24,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "6"
+   }
+  },
+  {
+   "qno": 82,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The following data were obtained during the first order thermal decomposition of a gas A at constant volume:\n$\\mathrm{A}(\\mathrm{g}) \\rightarrow 2 \\mathrm{~B}(\\mathrm{~g})+\\mathrm{C}(\\mathrm{g})$\nS.No Time/s Total pressure/(atm)",
+   "options": {
+    "A": "Statement I is false but Statement II is true",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Both Statement I and Statement II are false",
+    "D": "Statement I is true but Statement II is false"
+   },
+   "page_start": 24,
+   "page_end": 24,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_count_2",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "text_original_textlayer": "The following data were obtained during the first \norder thermal decomposition of a gas A at constant \nvolume: \n \n \nA(g) 2B(g) + C(g) \n \nS.No              Time/s          Total pressure/(atm)",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 83,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The number of tripeptides formed by three \ndifferent amino acids using each amino acid once \nis ______.",
+   "options": {
+    "A": "Statement I is false but Statement II is true",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Both Statement I and Statement II are false",
+    "D": "Statement I is true but Statement II is false"
+   },
+   "page_start": 24,
+   "page_end": 24,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "6"
+   }
+  },
+  {
+   "qno": 84,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Number of compounds which give reaction with Hinsberg's reagent is $\\_\\_\\_\\_$ .\n<smiles>[Cl+2]=[N+]c1ccccc1</smiles>\n<smiles>O=C(NC(=O)c1ccccc1)c1ccccc1</smiles>\n<smiles>Nc1ccccc1</smiles>\n<smiles>c1ccc(N2CCCCC2)cc1</smiles>\n<smiles>CN(C)CNCc1ccccc1</smiles>\n<smiles>NCCN</smiles>\n<smiles>C1CCNCC1</smiles>\n<smiles>c1ccncc1</smiles>\n<smiles>CCCN</smiles>\n<smiles>NC(N)=O</smiles>",
+   "options": {
+    "A": "Statement I is false but Statement II is true",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Both Statement I and Statement II are false",
+    "D": "Statement I is true but Statement II is false"
+   },
+   "page_start": 24,
+   "page_end": 24,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "possible_text_scramble",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "text_original_textlayer": "Number of compounds which give reaction with \nHinsberg's reagent is_______. \n \nN Cl\n2\n+\n–\nO\nNH\nNH2\nN \nN\nNH  \n2\nNH2\nN \nH\nN \nNH  \n2\nH N \n2\nC \nNH2\nO\nNH",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 85,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Mass of ethylene glycol (antifreeze) to be added to \n18.6 kg of water to protect the freezing point at  \n–24°C is________ kg (Molar mass in g mol–1 for \nethylene glycol 62, Kf of water = 1.86 K kg mol–1)",
+   "options": {
+    "A": "Statement I is false but Statement II is true",
+    "B": "Both Statement I and Statement II are true",
+    "C": "Both Statement I and Statement II are false",
+    "D": "Statement I is true but Statement II is false"
+   },
+   "page_start": 24,
+   "page_end": 25,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "15"
+   }
+  },
+  {
+   "qno": 86,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Following Kjeldahl's method, 1g of organic \ncompound released ammonia, that neutralised 10 \nmL of 2M H2SO4. The percentage of nitrogen in \nthe compound is _______%.",
+   "options": null,
+   "page_start": 25,
+   "page_end": 25,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "56"
+   }
+  },
+  {
+   "qno": 87,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "The amount of electricity in Coulomb required for \nthe oxidation of 1 mol of H2O to O2 is ____×105C.",
+   "options": null,
+   "page_start": 25,
+   "page_end": 25,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   }
+  },
+  {
+   "qno": 88,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "For a certain reaction at 300K, $\\mathrm{K}=10$, then $\\Delta \\mathrm{G}^{\\circ}$ for the same reaction is - $\\_\\_\\_\\_$ $\\times 10^{-1} \\mathrm{~kJ} \\mathrm{~mol}^{-1}$. (Given $\\mathrm{R}=8.314 \\mathrm{JK}^{-1} \\mathrm{~mol}^{-1}$ )",
+   "options": null,
+   "page_start": 25,
+   "page_end": 25,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "57"
+   },
+   "text_original_textlayer": "For a certain reaction at 300K, K = 10, then G° \nfor the same reaction is –_______×10–1 kJ mol–1. \n(Given R = 8.314 JK–1 mol–1)",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 89,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "Consider the following redox reaction :\n$$\\mathrm{MnO}_{4}^{-}+\\mathrm{H}^{+}+\\mathrm{H}_{2} \\mathrm{C}_{2} \\mathrm{O}_{4} \\rightleftharpoons \\mathrm{Mn}^{2+}+\\mathrm{H}_{2} \\mathrm{O}+\\mathrm{CO}_{2}$$\nThe standard reduction potentials are given as below $\\left(\\mathrm{E}_{\\text {red }}^{\\circ}\\right)$\n$$\\begin{array}{l}\n\\mathrm{E}_{\\mathrm{MnO}_{4}^{-} / \\mathrm{Mn}^{2+}}^{\\circ}=+1.51 \\mathrm{~V} \\\\\n\\mathrm{E}_{\\mathrm{CO}_{2} / \\mathrm{H}_{2} \\mathrm{C}_{2} \\mathrm{O}_{4}}^{\\circ}=-0.49 \\mathrm{~V}\n\\end{array}$$\nIf the equilibrium constant of the above reaction is given as $\\mathrm{K}_{\\mathrm{eq}}=10^{\\mathrm{x}}$, then the value of $\\mathrm{x}=$ $\\_\\_\\_\\_$ (nearest integer)",
+   "options": null,
+   "page_start": 25,
+   "page_end": 26,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "338"
+   },
+   "text_original_textlayer": "Consider the following redox reaction : \n \n2\n4\n2\n2\n4\n2\n2\nMnO\nH\nH C O\nMn\nH O\nCO\n\n\n\n\n\n\n\n \n \nThe standard reduction potentials are given as \nbelow \n\nred\nE\n \n \n2\n4\nMnO /Mn\nE\n1.51V\n\n\n\n\n \n \n2\n2\n2\n4\nCO /H C O\nE\n0.49V\n\n\n \n \nIf the equilibrium constant of the above reaction is \ngiven as Keq = 10x, then the value of x = _______ \n(nearest integer)",
+   "ocr_repaired": "pua"
+  },
+  {
+   "qno": 90,
+   "question_id": null,
+   "question_type": null,
+   "subject": "Chemistry",
+   "section": null,
+   "segment": 0,
+   "text": "10 mL of gaseous hydrocarbon on combustion \ngives 40 mL of CO2(g) and 50 mL of water \nvapour. Total number of carbon and hydrogen \natoms in the hydrocarbon is _____.",
+   "options": null,
+   "page_start": 26,
+   "page_end": 26,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "14"
+   }
+  }
+ ]
 }

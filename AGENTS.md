@@ -58,3 +58,43 @@ Changing an event's shape means changing both repos in the same pass — see
 Keys in `FORBIDDEN_SSE_KEYS` / the WS equivalent must never reach the client:
 they are the answer key, rubric, and grading internals. Adding a new
 teacher-only field means adding it to that set in the same change.
+
+## Diagram-question pipeline (data/nta_raw)
+
+The raw diagram-question corpus is built by ordered passes; later passes
+overwrite earlier row-level edits, so **re-running a pass means re-running
+everything after it**:
+
+1. `extract_nta_papers.py` (harvest → probe → extract) → paper artifacts in
+   `data/nta_raw/papers/`
+2. `extract_diagram_questions.py` (scan → **materialize**) →
+   `data/nta_raw/diagram_questions.jsonl` (regenerated from scratch)
+3. `merge_diagram_regions.py` (same-text multi-region merge)
+4. `apply_classification.py` (chapter/concept/difficulty from
+   `scratch/classify_results/`, produced by subagent classification of
+   `scratch/classify_batches/`)
+5. tiny-crop quarantine + `upload_diagram_assets.py` (R2 `diagram` arrays)
+6. `repair_directive4_pass1.py` (terminal: option-leak/ExamSIDE-chrome strip,
+   option-figure detection + `option_figures` concept, residue quarantines)
+7. `enforce_pending_gate_eligibility.py` (terminal: `pending_gate` only if the
+   row could pass `is_quality_question` — 4 covered options (text or option
+   image), or numerical with numeric key, else a specific quarantine reason)
+
+Supporting passes (run before materialize to have effect): `stem_hygiene.py`,
+`repair_text_fidelity.py`, `repair_options.py`,
+`ocr_extract_scanned_papers.py`, `join_nta_answer_keys.py`,
+`positional_key_join_2022.py`, `extract_solutions_mined.py`,
+`reattribute_figures.py` (span/column/text attribution of figures to
+questions — the pipeline's hard-won lesson: NEVER pair figures to questions
+by page adjacency), then full-corpus vision verification
+(`scratch/vision_batches/` → subagent verdicts in `scratch/vision_results/`,
+fails dropped; a fresh >=50-row human-judged sample must pass 95% before any
+row ships with a figure).
+
+Proof/lint after any change: `corpus_proof_report.py` (§4 plausibility
+numbers — key distribution, self-consistency, funnel, asset integrity, text
+fidelity) and `verify_diagram_questions.py` (structural lint).
+
+Hard rules: nothing in `data/nta_raw/*.jsonl` is servable — every row carries
+`needs_manual`; never write to the live `questions` or `chapters` tables;
+`data/nta_raw/diagram_assets/` stays gitignored (assets live in R2).

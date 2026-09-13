@@ -1,61 +1,1015 @@
 {
+ "paper_id": "jee-main-2022-s2-physics-2022-06-28-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-physics-2022-06-28-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-28",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-physics-2022-06-28-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-28",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132635-28-06%20EVENING%20PHYSICS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132635-28-06%20EVENING%20PHYSICS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "8d83eb2dd322f1dfc0a7204faf9a68d32c57f3402e32c82d92b1321fde9aaf75",
+  "page_count": 10,
+  "text_chars": 899,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-28-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 0,
+  "xval_printed_agree": 29,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "101201",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "101202",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "101203",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "101204",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "101205",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "101206",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "101207",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "101208",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "101209",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "101210",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "101211",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "101212",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "101213",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "101214",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "101215",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "101216",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "101217",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "101218",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "101219",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "101220",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "101221",
+    "answer": {
+     "raw": "150",
+     "value": "150"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "101222",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "101223",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "101224",
+    "answer": {
+     "raw": "0",
+     "value": "0"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "101225",
+    "answer": {
+     "raw": "8",
+     "value": "8"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "101226",
+    "answer": {
+     "raw": "100",
+     "value": "100"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "101227",
+    "answer": {
+     "raw": "50",
+     "value": "50"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "101228",
+    "answer": {
+     "raw": "24",
+     "value": "24"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "101229",
+    "answer": {
+     "raw": "10",
+     "value": "10"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "101230",
+    "answer": {
+     "raw": "18",
+     "value": "18"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "101201",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Velocity (v) and acceleration (a) in two systems of units 1 and 2 are related as $\\mathrm{v}_{2}=\\frac{\\mathrm{n}}{\\mathrm{m}^{2}} \\mathrm{v}_{1}$ and $\\mathrm{a}_{2}=\\frac{\\mathrm{a}_{1}}{\\mathrm{mn}}$ respectively. Here m and n are constants. The relations for distance and time in two systems respectively are:",
+   "options": {
+    "A": "$\\frac{\\mathrm{n}^{3}}{\\mathrm{~m}^{3}} \\mathrm{~L}_{1}=\\mathrm{L}_{2}$ and $\\frac{\\mathrm{n}^{2}}{\\mathrm{~m}} \\mathrm{~T}_{1}=\\mathrm{T}_{2}$",
+    "B": "$\\mathrm{L}_{1}=\\frac{\\mathrm{n}^{4}}{\\mathrm{~m}^{2}} \\mathrm{~L}_{2}$ and $\\mathrm{T}_{1}=\\frac{\\mathrm{n}^{2}}{\\mathrm{~m}} \\mathrm{~T}_{2}$",
+    "C": "$\\mathrm{L}_{1}=\\frac{\\mathrm{n}^{2}}{\\mathrm{~m}} \\mathrm{~L}_{2}$ and $\\mathrm{T}_{1}=\\frac{\\mathrm{n}^{4}}{\\mathrm{~m}^{2}} \\mathrm{~T}_{2}$",
+    "D": "$\\frac{\\mathrm{n}^{2}}{\\mathrm{~m}} \\mathrm{~L}_{1}=\\mathrm{L}_{2}$ and $\\frac{\\mathrm{n}^{4}}{\\mathrm{~m}^{2}} \\mathrm{~T}_{1}=\\mathrm{T}_{2}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\frac{\\mathrm{L}_{2}}{\\mathrm{~T}_{2}}=\\frac{\\mathrm{n}}{\\mathrm{m}^{2}} \\frac{\\mathrm{~L}_{1}}{\\mathrm{~T}_{1}}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{L}_{2}}{\\mathrm{~T}_{2}^{2}}=\\frac{\\mathrm{L}_{1}}{\\mathrm{~T}_{1}^{2} \\times \\mathrm{mn}} \\\\\n\\frac{\\mathrm{n}}{\\mathrm{~m}^{2}} \\times \\frac{\\mathrm{T}_{2}}{\\mathrm{~T}_{1}}=\\frac{\\mathrm{T}_{2}^{2}}{\\mathrm{~T}_{1}^{2} \\times \\mathrm{mn}} \\\\\n\\frac{\\mathrm{n}^{2}}{\\mathrm{~m}}=\\frac{\\mathrm{T}_{2}}{\\mathrm{~T}_{1}} \\\\\n\\frac{\\mathrm{~L}_{2}}{\\mathrm{~L}_{1}}=\\frac{\\mathrm{n}^{4}}{\\mathrm{~m}^{2}} \\times \\frac{1}{\\mathrm{mn}} \\\\\n\\frac{\\mathrm{~L}_{2}}{\\mathrm{~L}_{1}}=\\frac{\\mathrm{n}^{3}}{\\mathrm{~m}^{3}}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{L}_{2}}{\\mathrm{~T}_{2}}=\\frac{\\mathrm{n}}{\\mathrm{m}^{2}} \\frac{\\mathrm{~L}_{1}}{\\mathrm{~T}_{1}}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{L}_{2}}{\\mathrm{~T}_{2}^{2}}=\\frac{\\mathrm{L}_{1}}{\\mathrm{~T}_{1}^{2} \\times \\mathrm{mn}} \\\\\n\\frac{\\mathrm{n}}{\\mathrm{~m}^{2}} \\times \\frac{\\mathrm{T}_{2}}{\\mathrm{~T}_{1}}=\\frac{\\mathrm{T}_{2}^{2}}{\\mathrm{~T}_{1}^{2} \\times \\mathrm{mn}} \\\\\n\\frac{\\mathrm{n}^{2}}{\\mathrm{~m}}=\\frac{\\mathrm{T}_{2}}{\\mathrm{~T}_{1}} \\\\\n\\frac{\\mathrm{~L}_{2}}{\\mathrm{~L}_{1}}=\\frac{\\mathrm{n}^{4}}{\\mathrm{~m}^{2}} \\times \\frac{1}{\\mathrm{mn}} \\\\\n\\frac{\\mathrm{~L}_{2}}{\\mathrm{~L}_{1}}=\\frac{\\mathrm{n}^{3}}{\\mathrm{~m}^{3}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "8d83eb2dd322f1dfc0a7204faf9a68d32c57f3402e32c82d92b1321fde9aaf75",
-    "page_count": 10,
-    "text_chars": 899,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-28-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": "101202",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A ball is spun with angular acceleration $\\alpha=6 t^{2}-2 t$ where $t$ is in second and $\\alpha$ is in $\\mathrm{rads}^{-2}$. At $\\mathrm{t}=0$, the ball has angular velocity of 10 $\\mathrm{rads}^{-1}$ and angular position of 4 rad. The most appropriate expression for the angular position of the ball is:",
+   "options": {
+    "A": "$\\frac{3}{2} \\mathrm{t}^{4}-\\mathrm{t}^{2}+10 \\mathrm{t}$",
+    "B": "$\\frac{\\mathrm{t}^{4}}{2}-\\frac{\\mathrm{t}^{3}}{3}+10 \\mathrm{t}+4$",
+    "C": "$\\frac{2 \\mathrm{t}^{4}}{3}-\\frac{\\mathrm{t}^{3}}{6}+10 \\mathrm{t}+12$",
+    "D": "$2 \\mathrm{t}^{4}-\\frac{\\mathrm{t}^{3}}{2}+5 \\mathrm{t}+4$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\frac{\\mathrm{dw}}{\\mathrm{dt}}=6 \\mathrm{t}^{2}-2 \\mathrm{t}$\n$$\\begin{array}{l}\n\\int_{10}^{w} d w=2 t^{3}-t^{2} \\\\\nw=10+2 t^{3}-t^{2} \\\\\n\\frac{d \\theta}{d t}=10+2 t^{3}-t^{2} \\\\\n\\int_{4}^{\\theta} d \\theta=10+2 t^{3}-t^{2} \\\\\n\\int_{4}^{\\theta} d \\theta=10 t+\\frac{t^{4}}{2}-\\frac{t^{3}}{3} \\\\\n\\theta=4+10 t+\\frac{t^{4}}{2}-\\frac{t^{3}}{3}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{dw}}{\\mathrm{dt}}=6 \\mathrm{t}^{2}-2 \\mathrm{t}$\n$$\\begin{array}{l}\n\\int_{10}^{w} d w=2 t^{3}-t^{2} \\\\\nw=10+2 t^{3}-t^{2} \\\\\n\\frac{d \\theta}{d t}=10+2 t^{3}-t^{2} \\\\\n\\int_{4}^{\\theta} d \\theta=10+2 t^{3}-t^{2} \\\\\n\\int_{4}^{\\theta} d \\theta=10 t+\\frac{t^{4}}{2}-\\frac{t^{3}}{3} \\\\\n\\theta=4+10 t+\\frac{t^{4}}{2}-\\frac{t^{3}}{3}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "101203",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A block of mass 2 kg moving on a horizontal surface with speed of $4 \\mathrm{~ms}^{-1}$ enters a rough surface ranging from $\\mathrm{x}=0.5 \\mathrm{~m}$ to $\\mathrm{x}=1.5 \\mathrm{~m}$. The retarding force in this range of rough surface is related to distance by $\\mathrm{F}=-\\mathrm{kx}$ where $\\mathrm{k}=12 \\mathrm{Nm}^{-1}$. The speed of the block as it just crosses the rough surface will be:",
+   "options": {
+    "A": "Zero",
+    "B": "$1.5 \\mathrm{~ms}^{-1}$",
+    "C": "$2.0 \\mathrm{~ms}^{-1}$",
+    "D": "$2.5 \\mathrm{~ms}^{-1}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{a}=\\frac{-\\mathrm{kx}}{2}=\\frac{-12 \\mathrm{x}}{2}=-6 \\mathrm{x}$\n$$\\begin{array}{l}\n\\frac{v d v}{d x}=-6 x \\\\\n\\int_{4}^{v} v d v=-\\int_{\\frac{1}{2}}^{3 / 2} 6 x d x \\\\\n\\frac{v^{2}-4^{2}}{2}=-\\frac{6}{2}\\left[\\left(\\frac{3}{2}\\right)^{2}-\\left(\\frac{1}{2}\\right)^{2}\\right] \\\\\nv^{2}-16=-6\\left(\\frac{9}{4}-\\frac{1}{4}\\right) \\\\\nv^{2}=16-6 \\times 2=4 \\\\\nV=2 \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{a}=\\frac{-\\mathrm{kx}}{2}=\\frac{-12 \\mathrm{x}}{2}=-6 \\mathrm{x}$\n$$\\begin{array}{l}\n\\frac{v d v}{d x}=-6 x \\\\\n\\int_{4}^{v} v d v=-\\int_{\\frac{1}{2}}^{3 / 2} 6 x d x \\\\\n\\frac{v^{2}-4^{2}}{2}=-\\frac{6}{2}\\left[\\left(\\frac{3}{2}\\right)^{2}-\\left(\\frac{1}{2}\\right)^{2}\\right] \\\\\nv^{2}-16=-6\\left(\\frac{9}{4}-\\frac{1}{4}\\right) \\\\\nv^{2}=16-6 \\times 2=4 \\\\\nV=2 \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "101204",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A $\\sqrt{34} \\mathrm{~m}$ long ladder weighing 10 kg leans on a frictionless wall. Its feet rest on the floor 3 m away from the wall as shown in the figure. If $\\mathrm{F}_{\\mathrm{f}}$ and $\\mathrm{F}_{\\mathrm{w}}$ are the reaction forces of the floor and the wall, then ratio of $\\mathrm{F}_{\\mathrm{w}} / \\mathrm{F}_{\\mathrm{f}}$ will be:\n(Use $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )",
+   "options": {
+    "A": "$\\frac{6}{\\sqrt{110}}$",
+    "B": "$\\frac{3}{\\sqrt{113}}$",
+    "C": "$\\frac{3}{\\sqrt{109}}$",
+    "D": "$\\frac{2}{\\sqrt{109}}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n$$\\begin{array}{l}\n\\mathrm{f}=\\mathrm{N}_{2} \\\\\n\\mathrm{~N}_{1}=\\mathrm{mg} \\\\\n\\mathrm{~N}_{2} \\times \\ell \\sin \\theta=\\mathrm{mg} \\frac{\\ell}{2} \\cos \\theta \\\\\n\\mathrm{~N}_{2}=\\frac{\\mathrm{mg}}{2} \\cot \\theta \\\\\n\\frac{\\mathrm{~F}_{\\mathrm{w}}}{\\mathrm{~F}_{\\mathrm{f}}}=\\frac{\\frac{\\mathrm{mg}}{2} \\cot \\theta}{\\sqrt{(\\mathrm{mg})^{2}+\\left(\\frac{\\mathrm{mg}}{2} \\cot \\theta\\right)^{2}}} \\\\\n=\\frac{1}{\\sqrt{1+\\frac{4}{\\cot ^{2} \\theta}}} \\\\\n=\\frac{3}{\\sqrt{109}}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{f}=\\mathrm{N}_{2} \\\\\n\\mathrm{~N}_{1}=\\mathrm{mg} \\\\\n\\mathrm{~N}_{2} \\times \\ell \\sin \\theta=\\mathrm{mg} \\frac{\\ell}{2} \\cos \\theta \\\\\n\\mathrm{~N}_{2}=\\frac{\\mathrm{mg}}{2} \\cot \\theta \\\\\n\\frac{\\mathrm{~F}_{\\mathrm{w}}}{\\mathrm{~F}_{\\mathrm{f}}}=\\frac{\\frac{\\mathrm{mg}}{2} \\cot \\theta}{\\sqrt{(\\mathrm{mg})^{2}+\\left(\\frac{\\mathrm{mg}}{2} \\cot \\theta\\right)^{2}}} \\\\\n=\\frac{1}{\\sqrt{1+\\frac{4}{\\cot ^{2} \\theta}}} \\\\\n=\\frac{3}{\\sqrt{109}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": "101205",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Water fall from a 40 m high dam at the rate of $9 \\times 10^{4} \\mathrm{~kg}$ per hour. Fifty percentage of gravitational potential energy can be converted into electrical energy. Using this hydroelectric energy number of 100 W lamps, that can be lit, is:\n(Take $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$ )",
+   "options": {
+    "A": "25",
+    "B": "50",
+    "C": "100",
+    "D": "18\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\quad \\frac{9 \\times 10^{4} \\times \\mathrm{g} \\times 40}{3600} \\times 0.5=\\mathrm{n} \\times 100$\n$$\\begin{array}{l}\n\\frac{10^{4} \\times 0.5}{100}=n \\\\\n100 \\times 0.5=n \\\\\nn=50\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\quad \\frac{9 \\times 10^{4} \\times \\mathrm{g} \\times 40}{3600} \\times 0.5=\\mathrm{n} \\times 100$\n$$\\begin{array}{l}\n\\frac{10^{4} \\times 0.5}{100}=n \\\\\n100 \\times 0.5=n \\\\\nn=50\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "101206",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two objects of equal masses placed at certain distance from each other attracts each other with a force of F. If one-third mass of one object is transferred to the other object, then the new force will be :",
+   "options": {
+    "A": "$\\frac{2}{9} \\mathrm{~F}$",
+    "B": "$\\frac{16}{9} \\mathrm{~F}$",
+    "C": "$\\frac{8}{9} \\mathrm{~F}$",
+    "D": "F\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{F}=\\frac{\\mathrm{Gm}^{2}}{\\mathrm{r}^{2}}$\n$$\\begin{aligned}\n\\mathrm{F}^{\\prime} & =\\frac{\\mathrm{G}\\left(\\frac{4 \\mathrm{~m}}{3}\\right) \\times\\left(\\frac{2 \\mathrm{~m}}{3}\\right)}{\\mathrm{r}^{2}} \\\\\n\\mathrm{~F}^{\\prime} & =\\frac{8}{9} \\mathrm{~F}\n\\end{aligned}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{F}=\\frac{\\mathrm{Gm}^{2}}{\\mathrm{r}^{2}}$\n$$\\begin{aligned}\n\\mathrm{F}^{\\prime} & =\\frac{\\mathrm{G}\\left(\\frac{4 \\mathrm{~m}}{3}\\right) \\times\\left(\\frac{2 \\mathrm{~m}}{3}\\right)}{\\mathrm{r}^{2}} \\\\\n\\mathrm{~F}^{\\prime} & =\\frac{8}{9} \\mathrm{~F}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "101207",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A water drop of radius $1 \\mu \\mathrm{~m}$ falls in a situation where the effect of buoyant force is negligible. Coefficient of viscosity of air is $1.8 \\times 10^{-5} \\mathrm{Nsm}^{-2}$ and its density is negligible as compared to that of water $10^{6} \\mathrm{gm}^{-3}$. Terminal velocity of the water drop is:\n(Take acceleration due to gravity $=10 \\mathrm{~ms}^{-2}$ )",
+   "options": {
+    "A": "$145.4 \\times 10^{-6} \\mathrm{~ms}^{-1}$",
+    "B": "$118.0 \\times 10^{-6} \\mathrm{~ms}^{-1}$",
+    "C": "$132.6 \\times 10^{-6} \\mathrm{~ms}^{-1}$",
+    "D": "$123.4 \\times 10^{-6} \\mathrm{~ms}^{-1}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 8,
+   "question_id": "101208",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A sample of an ideal gas is taken through the cyclic process ABCA as shown in figure. It absorbs, 40 J of heat during the part AB, no heat during BC and rejects 60J of heat during CA. A work 50 J is done on the gas during the part BC. The internal energy of the gas at A is 1560J. The work done by the gas during the part CA is:",
+   "options": {
+    "A": "20 J",
+    "B": "30 J",
+    "C": "-30J",
+    "D": "-60 J\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol.\n$$\\begin{array}{l}\n\\Delta Q_{\\text {cycle }}=40-60=\\Delta \\mathrm{W} \\\\\n\\Rightarrow \\Delta \\mathrm{~W}=-20 \\mathrm{~J}=\\mathrm{W}_{\\mathrm{BC}}+\\mathrm{W}_{\\mathrm{CA}} \\\\\n\\Rightarrow \\mathrm{~W}_{\\mathrm{CA}}=-20 \\mathrm{~J}-\\mathrm{W}_{\\mathrm{BC}} \\\\\n=-20-(-50) \\\\\n=30 \\mathrm{~J}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\Delta Q_{\\text {cycle }}=40-60=\\Delta \\mathrm{W} \\\\\n\\Rightarrow \\Delta \\mathrm{~W}=-20 \\mathrm{~J}=\\mathrm{W}_{\\mathrm{BC}}+\\mathrm{W}_{\\mathrm{CA}} \\\\\n\\Rightarrow \\mathrm{~W}_{\\mathrm{CA}}=-20 \\mathrm{~J}-\\mathrm{W}_{\\mathrm{BC}} \\\\\n=-20-(-50) \\\\\n=30 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "101209",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "What will be the effect on the root mean square velocity of oxygen molecules if the temperature is doubled and oxygen molecule dissociates into atomic oxygen?",
+   "options": {
+    "A": "The velocity of atomic oxygen remains same",
+    "B": "The velocity of atomic oxygen doubles",
+    "C": "The velocity of atomic oxygen becomes half",
+    "D": "The velocity of atomic oxygen becomes four times\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol.\n$$\\begin{array}{l}\n\\mathrm{V}_{\\mathrm{rms}}=\\sqrt{\\frac{3 \\mathrm{RT}}{\\mathrm{M}}} \\\\\n\\mathrm{~T} \\rightarrow 2 \\mathrm{~T} \\\\\n\\mathrm{M} \\rightarrow \\frac{\\mathrm{M}}{2} \\\\\n\\mathrm{~V}_{\\mathrm{rms}} \\propto \\sqrt{\\frac{\\mathrm{~T}}{\\mathrm{M}}}\n\\end{array}$$\n$\\Rightarrow\\left(\\mathrm{V}_{\\text {rms }}\\right)_{\\text {atomic }}=\\left(\\mathrm{V}_{\\text {rms }}\\right)_{\\text {molecular }} \\times \\sqrt{\\frac{2}{1 / 2}}=2\\left(\\mathrm{~V}_{\\text {rms }}\\right)_{\\text {molecular }}$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{V}_{\\mathrm{rms}}=\\sqrt{\\frac{3 \\mathrm{RT}}{\\mathrm{M}}} \\\\\n\\mathrm{~T} \\rightarrow 2 \\mathrm{~T} \\\\\n\\mathrm{M} \\rightarrow \\frac{\\mathrm{M}}{2} \\\\\n\\mathrm{~V}_{\\mathrm{rms}} \\propto \\sqrt{\\frac{\\mathrm{~T}}{\\mathrm{M}}}\n\\end{array}$$\n$\\Rightarrow\\left(\\mathrm{V}_{\\text {rms }}\\right)_{\\text {atomic }}=\\left(\\mathrm{V}_{\\text {rms }}\\right)_{\\text {molecular }} \\times \\sqrt{\\frac{2}{1 / 2}}=2\\left(\\mathrm{~V}_{\\text {rms }}\\right)_{\\text {molecular }}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "101210",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two point charges A and B of magnitude $+8 \\times 10^{-6} \\mathrm{C}$ and $-8 \\times 10^{-6} \\mathrm{C}$ respectively are placed at a distance d apart. The electric field at the middle point O between the charges is $6.4 \\times 10^{4} \\mathrm{NC}^{-1}$. The distance 'd' between the point charges A and B is:",
+   "options": {
+    "A": "2.0 m",
+    "B": "3.0 m",
+    "C": "1.0 m",
+    "D": "4.0 m\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol.\n$$\\begin{array}{l}\n\\mathrm{E}_{0}=2 \\times \\frac{\\mathrm{Kq}}{(\\mathrm{~d} / 2)^{2}} \\\\\n\\Rightarrow \\mathrm{E}_{0}=8 \\frac{\\mathrm{Kq}}{\\mathrm{~d}^{2}} \\\\\n\\Rightarrow \\mathrm{~d}^{2}=\\frac{8 \\times 9 \\times 10^{9} \\times 8 \\times 10^{-6}}{6.4 \\times 10^{4}} \\\\\n\\mathrm{~d}=3 \\mathrm{~m}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{E}_{0}=2 \\times \\frac{\\mathrm{Kq}}{(\\mathrm{~d} / 2)^{2}} \\\\\n\\Rightarrow \\mathrm{E}_{0}=8 \\frac{\\mathrm{Kq}}{\\mathrm{~d}^{2}} \\\\\n\\Rightarrow \\mathrm{~d}^{2}=\\frac{8 \\times 9 \\times 10^{9} \\times 8 \\times 10^{-6}}{6.4 \\times 10^{4}} \\\\\n\\mathrm{~d}=3 \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": "101211",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Resistance of the wire is measured as $2 \\Omega$ and $3 \\Omega$ at 10°C and 30°C respectively. Temperature cocoefficient of resistance of the material of the wire is :",
+   "options": {
+    "A": "$0.033^{\\circ} \\mathrm{C}^{-1}$",
+    "B": "$-0.033^{\\circ} \\mathrm{C}^{-1}$",
+    "C": "$0.011^{\\circ} \\mathrm{C}^{-1}$",
+    "D": "$0.055^{\\circ} \\mathrm{C}^{-1}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol. $\\mathrm{R}=\\mathrm{R}_{0}(1+\\alpha \\Delta \\mathrm{T})$\n$$\\begin{array}{l}\n3=\\mathrm{R}_{0}(1+\\alpha(30-0)) \\\\\n2=\\mathrm{R}_{0}(1+\\alpha(10-0)) \\\\\n\\frac{3}{2}=\\frac{1+30 \\alpha}{1+10 \\alpha} \\\\\n\\alpha=\\frac{1}{30}=0.033\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{R}=\\mathrm{R}_{0}(1+\\alpha \\Delta \\mathrm{T})$\n$$\\begin{array}{l}\n3=\\mathrm{R}_{0}(1+\\alpha(30-0)) \\\\\n2=\\mathrm{R}_{0}(1+\\alpha(10-0)) \\\\\n\\frac{3}{2}=\\frac{1+30 \\alpha}{1+10 \\alpha} \\\\\n\\alpha=\\frac{1}{30}=0.033\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": "101212",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The space inside a straight current carrying solenoid is filled with a magnetic material having magnetic susceptibility equal to $1.2 \\times 10^{-5}$. What is fractional increase in the magnetic field inside solenoid with respect to air as medium inside the solenoid?",
+   "options": {
+    "A": "$1.2 \\times 10^{-5}$",
+    "B": "$1.2 \\times 10^{-3}$",
+    "C": "$1.8 \\times 10^{-3}$",
+    "D": "$2.4 \\times 10^{-5}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol.\n$$\\begin{array}{l}\n\\chi=1.2 \\times 10^{-5} \\\\\n\\mu_{\\mathrm{r}}=1+\\chi=1+1.2 \\times 10^{-5}\n\\end{array}$$\n\nFractional Change\n$$\\begin{array}{l}\n=\\frac{\\Delta B}{B}=\\frac{\\mu_{0} \\mu_{r} n i-\\mu_{0} n i}{\\mu_{0} n i}=\\left(\\mu_{r}-1\\right) \\\\\n=1.2 \\times 10^{-5}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\chi=1.2 \\times 10^{-5} \\\\\n\\mu_{\\mathrm{r}}=1+\\chi=1+1.2 \\times 10^{-5}\n\\end{array}$$",
+     "Fractional Change\n$$\\begin{array}{l}\n=\\frac{\\Delta B}{B}=\\frac{\\mu_{0} \\mu_{r} n i-\\mu_{0} n i}{\\mu_{0} n i}=\\left(\\mu_{r}-1\\right) \\\\\n=1.2 \\times 10^{-5}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "101213",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two parallel, long wires are kept 0.20 m apart in vacuum, each carrying current of xA in the same direction. If the force of attraction per meter of each wire is $2 \\times 10^{-6} \\mathrm{~N}$, then the value of x is approximately:",
+   "options": {
+    "A": "1",
+    "B": "2.4",
+    "C": "1.4",
+    "D": "2\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol.\n$$\\begin{array}{l}\n\\text { Force per unit length }=\\frac{\\mu_{0} i_{1} i_{2}}{2 \\pi \\mathrm{~d}} \\\\\n=\\frac{\\mu_{0} \\cdot \\mathrm{x}^{2}}{2 \\pi \\times 0.2} \\\\\n\\mathrm{~F}=2 \\times 10^{-6}=\\frac{4 \\pi \\times 10^{-7} \\times \\mathrm{x}^{2}}{2 \\pi \\times 0.2} \\\\\n\\Rightarrow 10^{-6}=10^{-7} \\frac{\\mathrm{x}^{2}}{0.2} \\\\\n\\Rightarrow \\mathrm{x}^{2}=10 \\times 0.2 \\\\\n\\quad=2 \\\\\n\\Rightarrow \\mathrm{x}=\\sqrt{2} \\approx 1.4 \\mathrm{Amp}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\text { Force per unit length }=\\frac{\\mu_{0} i_{1} i_{2}}{2 \\pi \\mathrm{~d}} \\\\\n=\\frac{\\mu_{0} \\cdot \\mathrm{x}^{2}}{2 \\pi \\times 0.2} \\\\\n\\mathrm{~F}=2 \\times 10^{-6}=\\frac{4 \\pi \\times 10^{-7} \\times \\mathrm{x}^{2}}{2 \\pi \\times 0.2} \\\\\n\\Rightarrow 10^{-6}=10^{-7} \\frac{\\mathrm{x}^{2}}{0.2} \\\\\n\\Rightarrow \\mathrm{x}^{2}=10 \\times 0.2 \\\\\n\\quad=2 \\\\\n\\Rightarrow \\mathrm{x}=\\sqrt{2} \\approx 1.4 \\mathrm{Amp}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": "101214",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A coil is placed in a time varying magnetic field. If the number of turns in the coil were to be halved and the radius of wire doubled, the electrical power dissipated due to the current induced in the coil would be:\n(Assume the coil to be short circuited.)",
+   "options": {
+    "A": "Halved",
+    "B": "Quadrupled",
+    "C": "The same",
+    "D": "Doubled\n\nOfficial Ans. by NTA (B)\nAns. (D)\n\nSol.\n$$\\begin{array}{l}\nP=\\frac{\\varepsilon^{2}}{R}=\\frac{\\left(N A \\frac{d B}{d t}\\right)^{2} \\times A_{c}}{\\rho \\ell} \\\\\nP^{\\prime}=\\frac{\\left(\\frac{N A}{2} \\frac{d B}{d t}\\right)^{2} \\times 4 A_{c}}{\\rho \\ell / 2} \\\\\n\\Rightarrow P^{\\prime}=2 P\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nP=\\frac{\\varepsilon^{2}}{R}=\\frac{\\left(N A \\frac{d B}{d t}\\right)^{2} \\times A_{c}}{\\rho \\ell} \\\\\nP^{\\prime}=\\frac{\\left(\\frac{N A}{2} \\frac{d B}{d t}\\right)^{2} \\times 4 A_{c}}{\\rho \\ell / 2} \\\\\n\\Rightarrow P^{\\prime}=2 P\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": "101215",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "An EM wave propagating in x-direction has a wavelength of 8 mm. The electric field vibrating ydirection has maximum magnitude of $60 \\mathrm{Vm}^{-1}$. Choose the correct equations for electric and magnetic fields if the EM wave is propagating in vacuum :",
+   "options": {
+    "A": "$$E_{y}=60 \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(x-3 \\times 10^{8} t\\right)\\right] \\hat{j} V m^{-1}$$\n$$\\mathrm{B}_{\\mathrm{z}}=2 \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(\\mathrm{x}-3 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{k}} \\mathrm{~T}$$",
+    "B": "$$E_{y}=60 \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(x-3 \\times 10^{8} t\\right)\\right] \\hat{j} V m^{-1}$$\n$$\\mathrm{B}_{\\mathrm{z}}=2 \\times 10^{-7} \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(\\mathrm{x}-3 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{k}} \\mathrm{~T}$$",
+    "C": "$$E_{y}=2 \\times 10^{-7} \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(x-3 \\times 10^{8} t\\right)\\right] \\hat{j} V m^{-1}$$\n$$\\mathrm{B}_{\\mathrm{z}}=60 \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(\\mathrm{x}-3 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{k}} \\mathrm{~T}$$",
+    "D": "$$\\mathrm{E}_{\\mathrm{y}}=2 \\times 10^{-7} \\sin \\left[\\frac{\\pi}{4} \\times 10^{4}\\left(\\mathrm{x}-4 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{j}} \\mathrm{Vm}^{-1}$$\n$$\\mathrm{B}_{\\mathrm{z}}=60 \\sin \\left[\\frac{\\pi}{4} \\times 10^{4}\\left(\\mathrm{x}-4 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{k}} \\mathrm{~T}$$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol.\n$$B_{0}=\\frac{E_{0}}{c}=\\frac{60}{3 \\times 10^{8}}=2 \\times 10^{-7} T$$\n$\\widehat{\\mathrm{E}} \\times \\widehat{\\mathrm{B}}$ must be direction of propagation.\nSo, $\\widehat{\\mathrm{B}} \\rightarrow \\mathrm{z}$-axis\n$$\\begin{array}{l}\n\\mathrm{k}=\\frac{2 \\pi}{\\lambda}=\\frac{\\pi}{4} \\times 10^{3} \\mathrm{~m}^{-1} \\\\\n\\mathrm{E}_{\\mathrm{y}}=60 \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(\\mathrm{x}-3 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{j}} \\mathrm{Vm}^{-1} \\\\\n\\mathrm{~B}_{\\mathrm{z}}=2 \\times 10^{-7} \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(\\mathrm{x}-3 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{k}} \\mathrm{~T}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$B_{0}=\\frac{E_{0}}{c}=\\frac{60}{3 \\times 10^{8}}=2 \\times 10^{-7} T$$\n$\\widehat{\\mathrm{E}} \\times \\widehat{\\mathrm{B}}$ must be direction of propagation.\nSo, $\\widehat{\\mathrm{B}} \\rightarrow \\mathrm{z}$-axis\n$$\\begin{array}{l}\n\\mathrm{k}=\\frac{2 \\pi}{\\lambda}=\\frac{\\pi}{4} \\times 10^{3} \\mathrm{~m}^{-1} \\\\\n\\mathrm{E}_{\\mathrm{y}}=60 \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(\\mathrm{x}-3 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{j}} \\mathrm{Vm}^{-1} \\\\\n\\mathrm{~B}_{\\mathrm{z}}=2 \\times 10^{-7} \\sin \\left[\\frac{\\pi}{4} \\times 10^{3}\\left(\\mathrm{x}-3 \\times 10^{8} \\mathrm{t}\\right)\\right] \\hat{\\mathrm{k}} \\mathrm{~T}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n5",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "101216",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In young's double slit experiment performed using a monochromatic light of wavelength $\\lambda$, when a glass plate $(\\mu=1.5)$ of thickness $\\mathrm{x} \\lambda$ is introduced in the path of the one of the interfering beams, the intensity at the position where the central maximum occurred previously remains unchanged. The value of x will be:",
+   "options": {
+    "A": "3",
+    "B": "2",
+    "C": "1.5",
+    "D": "0.5\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\nPath difference at $\\mathrm{O}=(\\mu-1) \\mathrm{t}$.\nIf the intensity at O remains (maximum) unchanged, path difference must be $\\mathrm{n} \\lambda$.\n$$\\begin{array}{l}\n\\Rightarrow(\\mu-1) \\mathrm{t}=\\mathrm{n} \\lambda \\\\\n(1.5-1) \\mathrm{x} \\lambda=\\mathrm{n} \\lambda \\\\\n\\Rightarrow \\quad \\mathrm{x}=2 \\mathrm{n}\n\\end{array}$$\n\nFor $\\mathrm{n}=1, \\mathrm{x}=2$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Path difference at $\\mathrm{O}=(\\mu-1) \\mathrm{t}$.\nIf the intensity at O remains (maximum) unchanged, path difference must be $\\mathrm{n} \\lambda$.\n$$\\begin{array}{l}\n\\Rightarrow(\\mu-1) \\mathrm{t}=\\mathrm{n} \\lambda \\\\\n(1.5-1) \\mathrm{x} \\lambda=\\mathrm{n} \\lambda \\\\\n\\Rightarrow \\quad \\mathrm{x}=2 \\mathrm{n}\n\\end{array}$$",
+     "For $\\mathrm{n}=1, \\mathrm{x}=2$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "101217",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{K}_{1}$ and $\\mathrm{K}_{2}$ be the maximum kinetic energies of photo-electrons emitted when two monochromatic beams of wavelength $\\lambda_{1}$ and $\\lambda_{2}$, respectively are incident on a metallic surface. If $\\lambda_{1}=3 \\lambda_{2}$ then:",
+   "options": {
+    "A": "$\\mathrm{K}_{1}>\\frac{\\mathrm{K}_{2}}{3}$",
+    "B": "$\\mathrm{K}_{1}<\\frac{\\mathrm{K}_{2}}{3}$",
+    "C": "$\\mathrm{K}_{1}=\\frac{\\mathrm{K}_{2}}{3}$",
+    "D": "$\\mathrm{K}_{2}=\\frac{\\mathrm{K}_{1}}{3}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol. $\\frac{\\mathrm{hc}}{\\lambda_{1}}-\\phi=\\mathrm{K}_{1}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{hc}}{\\lambda_{2}}-\\phi=\\mathrm{K}_{2} \\\\\n\\lambda_{1}=3 \\lambda_{2} \\\\\n3 \\mathrm{~K}_{1}=\\frac{3 \\mathrm{hc}}{\\lambda_{1}}-3 \\phi \\\\\n3 \\mathrm{~K}_{1}=\\frac{\\mathrm{hc}}{\\lambda_{2}}-3 \\phi \\\\\n3 \\mathrm{~K}_{1}=\\mathrm{K}_{2}-2 \\phi \\\\\n3 \\mathrm{~K}_{1}<\\mathrm{K}_{2} \\\\\n\\mathrm{~K}_{1}<\\frac{\\mathrm{K}_{2}}{3}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{hc}}{\\lambda_{1}}-\\phi=\\mathrm{K}_{1}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{hc}}{\\lambda_{2}}-\\phi=\\mathrm{K}_{2} \\\\\n\\lambda_{1}=3 \\lambda_{2} \\\\\n3 \\mathrm{~K}_{1}=\\frac{3 \\mathrm{hc}}{\\lambda_{1}}-3 \\phi \\\\\n3 \\mathrm{~K}_{1}=\\frac{\\mathrm{hc}}{\\lambda_{2}}-3 \\phi \\\\\n3 \\mathrm{~K}_{1}=\\mathrm{K}_{2}-2 \\phi \\\\\n3 \\mathrm{~K}_{1}<\\mathrm{K}_{2} \\\\\n\\mathrm{~K}_{1}<\\frac{\\mathrm{K}_{2}}{3}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": "101218",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Following statements related to radioactivity are given below:",
+   "options": {
+    "A": "Radioactivity is a random and spontaneous process and is dependent on physical and chemical conditions.",
+    "B": "The number of un-decayed nuclei in the radioactive sample decays exponentially with time.",
+    "C": "Slope of the graph of $\\log _{e}$ (no. of undecayed nuclei) Vs. time represents the reciprocal of mean life time $(\\tau)$.",
+    "D": "Product of decay constant ( $\\lambda$ ) and half-life time $\\left(\\mathrm{T}_{1 / 2}\\right)$ is not constant.\n\nChoose the most appropriate answer from the options given below:\n(A) (A) and (B) only\n(B) (B) and (D) only\n(C) (B) and (C) only\n(D) (C) and (D) only\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nJEE Exam Solution\nwww.esaral.com\n6\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 19,
+   "question_id": "101219",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In the given circuit the input voltage $\\mathrm{V}_{\\text {in }}$ is shown in figure. The cut-in voltage of p-n junction diode ( $\\mathrm{D}_{1}$ or $\\mathrm{D}_{2}$ ) is 0.6 V. Which of the following output voltage $\\left(\\mathrm{V}_{0}\\right)$ waveform across the diode is correct?",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "(C)",
+    "D": "Official Ans. by NTA (D)\nAns. (D)\nSol. In +ve half cycle\n$$\\begin{array}{l}\nD_{1} \\rightarrow \\text { F.B.; } \\quad D_{2} \\rightarrow \\text { R.B. } \\\\\n0-0.6 V \\\\\nV_{\\text {out }} \\text { same as } V_{\\text {in }} \\\\\n\\text { In -ve half cycle } \\\\\nD_{2} \\rightarrow \\text { F.B.; } \\quad D_{1} \\rightarrow \\text { R.B. }\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "In +ve half cycle\n$$\\begin{array}{l}\nD_{1} \\rightarrow \\text { F.B.; } \\quad D_{2} \\rightarrow \\text { R.B. } \\\\\n0-0.6 V \\\\\nV_{\\text {out }} \\text { same as } V_{\\text {in }} \\\\\n\\text { In -ve half cycle } \\\\\nD_{2} \\rightarrow \\text { F.B.; } \\quad D_{1} \\rightarrow \\text { R.B. }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "101220",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Amplitude modulated wave is represented by\n$$\\mathrm{V}_{\\mathrm{AM}}=10\\left[1+0.4 \\cos \\left(2 \\pi \\times 10^{4} \\mathrm{t}\\right)\\right] \\cos \\left(2 \\pi \\times 10^{7} \\mathrm{t}\\right) .$$\nThe total bandwidth of the amplitude modulated wave is:",
+   "options": {
+    "A": "10 kHz",
+    "B": "20 MHz",
+    "C": "20 kHz",
+    "D": "10 MHz\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Bandwidth $=2 \\mathrm{f}_{\\mathrm{m}}$\n$$\\begin{array}{l}\n=2 \\times 10^{4} \\mathrm{~Hz}=20 \\times 10^{3} \\mathrm{~Hz} \\\\\n=20 \\mathrm{kHz}\n\\end{array}$$\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Bandwidth $=2 \\mathrm{f}_{\\mathrm{m}}$\n$$\\begin{array}{l}\n=2 \\times 10^{4} \\mathrm{~Hz}=20 \\times 10^{3} \\mathrm{~Hz} \\\\\n=20 \\mathrm{kHz}\n\\end{array}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "101221",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A student in the laboratory measures thickness of a wire using screw gauge. The readings are 1.22 mm, 1.23 mm, 1.19 mm and 1.20 mm. The percentage error is $\\frac{\\mathrm{x}}{121} \\%$. The value of x is $\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "150"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{L}_{2}}{\\mathrm{~T}_{2}}=\\frac{\\mathrm{n}}{\\mathrm{m}^{2}} \\frac{\\mathrm{~L}_{1}}{\\mathrm{~T}_{1}}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{L}_{2}}{\\mathrm{~T}_{2}^{2}}=\\frac{\\mathrm{L}_{1}}{\\mathrm{~T}_{1}^{2} \\times \\mathrm{mn}} \\\\\n\\frac{\\mathrm{n}}{\\mathrm{~m}^{2}} \\times \\frac{\\mathrm{T}_{2}}{\\mathrm{~T}_{1}}=\\frac{\\mathrm{T}_{2}^{2}}{\\mathrm{~T}_{1}^{2} \\times \\mathrm{mn}} \\\\\n\\frac{\\mathrm{n}^{2}}{\\mathrm{~m}}=\\frac{\\mathrm{T}_{2}}{\\mathrm{~T}_{1}} \\\\\n\\frac{\\mathrm{~L}_{2}}{\\mathrm{~L}_{1}}=\\frac{\\mathrm{n}^{4}}{\\mathrm{~m}^{2}} \\times \\frac{1}{\\mathrm{mn}} \\\\\n\\frac{\\mathrm{~L}_{2}}{\\mathrm{~L}_{1}}=\\frac{\\mathrm{n}^{3}}{\\mathrm{~m}^{3}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "101222",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A Zener of breakdown voltage $\\mathrm{V}_{\\mathrm{Z}}=8 \\mathrm{~V}$ and maximum zener current, $\\mathrm{I}_{\\mathrm{ZM}}=10 \\mathrm{~mA}$ is subjected to an input voltage $\\mathrm{V}_{\\mathrm{i}}=10 \\mathrm{~V}$ with series resistance $\\mathrm{R}=100 \\Omega$. In the given circuit $\\mathrm{R}_{\\mathrm{L}}$ represents the variable load resistance. The ratio of maximum and minimum value of $\\mathrm{R}_{\\mathrm{L}}$ is $\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{dw}}{\\mathrm{dt}}=6 \\mathrm{t}^{2}-2 \\mathrm{t}$\n$$\\begin{array}{l}\n\\int_{10}^{w} d w=2 t^{3}-t^{2} \\\\\nw=10+2 t^{3}-t^{2} \\\\\n\\frac{d \\theta}{d t}=10+2 t^{3}-t^{2} \\\\\n\\int_{4}^{\\theta} d \\theta=10+2 t^{3}-t^{2} \\\\\n\\int_{4}^{\\theta} d \\theta=10 t+\\frac{t^{4}}{2}-\\frac{t^{3}}{3} \\\\\n\\theta=4+10 t+\\frac{t^{4}}{2}-\\frac{t^{3}}{3}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "101223",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a Young's double slit experiment, an angular width of the fringe is $0.35^{\\circ}$ on a screen placed at 2 m away for particular wavelength of 450 nm. The angular width of the fringe, when whole system is immersed in a medium of refractive index $7 / 5$, is $\\frac{1}{\\alpha}$. The value of $\\alpha$ is $\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{a}=\\frac{-\\mathrm{kx}}{2}=\\frac{-12 \\mathrm{x}}{2}=-6 \\mathrm{x}$\n$$\\begin{array}{l}\n\\frac{v d v}{d x}=-6 x \\\\\n\\int_{4}^{v} v d v=-\\int_{\\frac{1}{2}}^{3 / 2} 6 x d x \\\\\n\\frac{v^{2}-4^{2}}{2}=-\\frac{6}{2}\\left[\\left(\\frac{3}{2}\\right)^{2}-\\left(\\frac{1}{2}\\right)^{2}\\right] \\\\\nv^{2}-16=-6\\left(\\frac{9}{4}-\\frac{1}{4}\\right) \\\\\nv^{2}=16-6 \\times 2=4 \\\\\nV=2 \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "101224",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In the given circuit, the magnitude of $\\mathrm{V}_{\\mathrm{L}}$ and $\\mathrm{V}_{\\mathrm{C}}$ are twice that of $\\mathrm{V}_{\\mathrm{R}}$. Given that $\\mathrm{f}=50 \\mathrm{~Hz}$, the inductance of the coil is $\\frac{1}{\\mathrm{~K} \\pi} \\mathrm{mH}$. The value of K is $\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "0"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{f}=\\mathrm{N}_{2} \\\\\n\\mathrm{~N}_{1}=\\mathrm{mg} \\\\\n\\mathrm{~N}_{2} \\times \\ell \\sin \\theta=\\mathrm{mg} \\frac{\\ell}{2} \\cos \\theta \\\\\n\\mathrm{~N}_{2}=\\frac{\\mathrm{mg}}{2} \\cot \\theta \\\\\n\\frac{\\mathrm{~F}_{\\mathrm{w}}}{\\mathrm{~F}_{\\mathrm{f}}}=\\frac{\\frac{\\mathrm{mg}}{2} \\cot \\theta}{\\sqrt{(\\mathrm{mg})^{2}+\\left(\\frac{\\mathrm{mg}}{2} \\cot \\theta\\right)^{2}}} \\\\\n=\\frac{1}{\\sqrt{1+\\frac{4}{\\cot ^{2} \\theta}}} \\\\\n=\\frac{3}{\\sqrt{109}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": "101225",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "All resistances in figure are $1 \\Omega$ each. The value of current ' I ' is $\\frac{\\mathrm{a}}{5} \\mathrm{~A}$. The value of a is $\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "8"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\quad \\frac{9 \\times 10^{4} \\times \\mathrm{g} \\times 40}{3600} \\times 0.5=\\mathrm{n} \\times 100$\n$$\\begin{array}{l}\n\\frac{10^{4} \\times 0.5}{100}=n \\\\\n100 \\times 0.5=n \\\\\nn=50\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "101226",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A capacitor $\\mathrm{C}_{1}$ of capacitance $5 \\mu \\mathrm{~F}$ is charged to a potential of 30 V using a battery. The battery is then removed and the charged capacitor is connected to an uncharged capacitor $\\mathrm{C}_{2}$ of capacitance $10 \\mu \\mathrm{~F}$ as shown in figure. When the switch is closed charge flows between the capacitors. At equilibrium, the charge on the capacitor $\\mathrm{C}_{2}$ is $\\_\\_\\_\\_$ $\\mu \\mathrm{C}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "100"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{F}=\\frac{\\mathrm{Gm}^{2}}{\\mathrm{r}^{2}}$\n$$\\begin{aligned}\n\\mathrm{F}^{\\prime} & =\\frac{\\mathrm{G}\\left(\\frac{4 \\mathrm{~m}}{3}\\right) \\times\\left(\\frac{2 \\mathrm{~m}}{3}\\right)}{\\mathrm{r}^{2}} \\\\\n\\mathrm{~F}^{\\prime} & =\\frac{8}{9} \\mathrm{~F}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "101227",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A tuning fork of frequency 340 Hz resonates in the fundamental mode with an air column of length 125 cm in a cylindrical tube closed at one end. When water is slowly poured in it, the minimum height of water required for observing resonance once again is $\\_\\_\\_\\_$ cm.\n(Velocity of sound in air is $340 \\mathrm{~ms}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "50"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 28,
+   "question_id": "101228",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A liquid of density $750 \\mathrm{kgm}^{-3}$ flows smoothly through a horizontal pipe that tapers in crosssectional area from $\\mathrm{A}_{1}=1.2 \\times 10^{-2} \\mathrm{~m}^{2}$ to $A_{2}=\\frac{A_{1}}{2}$. The pressure difference between the wide and narrow sections of the pipe is 4500 Pa .\nThe rate of flow of liquid is $\\_\\_\\_\\_$ $\\times 10^{-3} \\mathrm{~m}^{3} \\mathrm{~s}^{-1}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "24"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\Delta Q_{\\text {cycle }}=40-60=\\Delta \\mathrm{W} \\\\\n\\Rightarrow \\Delta \\mathrm{~W}=-20 \\mathrm{~J}=\\mathrm{W}_{\\mathrm{BC}}+\\mathrm{W}_{\\mathrm{CA}} \\\\\n\\Rightarrow \\mathrm{~W}_{\\mathrm{CA}}=-20 \\mathrm{~J}-\\mathrm{W}_{\\mathrm{BC}} \\\\\n=-20-(-50) \\\\\n=30 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "101229",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A uniform disc with mass $\\mathrm{M}=4 \\mathrm{~kg}$ and radius $\\mathrm{R}=$ 10 cm is mounted on a fixed horizontal axle as shown in figure. A block with mass $\\mathrm{m}=2 \\mathrm{~kg}$ hangs from a massless cord that is wrapped around the rim of the disc. During the fall of the block, the cord does not slip and there is no friction at the axle. The tension in the cord is $\\_\\_\\_\\_$ N.\n(Take $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "10"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{V}_{\\mathrm{rms}}=\\sqrt{\\frac{3 \\mathrm{RT}}{\\mathrm{M}}} \\\\\n\\mathrm{~T} \\rightarrow 2 \\mathrm{~T} \\\\\n\\mathrm{M} \\rightarrow \\frac{\\mathrm{M}}{2} \\\\\n\\mathrm{~V}_{\\mathrm{rms}} \\propto \\sqrt{\\frac{\\mathrm{~T}}{\\mathrm{M}}}\n\\end{array}$$\n$\\Rightarrow\\left(\\mathrm{V}_{\\text {rms }}\\right)_{\\text {atomic }}=\\left(\\mathrm{V}_{\\text {rms }}\\right)_{\\text {molecular }} \\times \\sqrt{\\frac{2}{1 / 2}}=2\\left(\\mathrm{~V}_{\\text {rms }}\\right)_{\\text {molecular }}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "101230",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A car covers AB distance with first one-third at velocity $\\mathrm{v}_{1} \\mathrm{~ms}^{-1}$, second one-third at $\\mathrm{v}_{2} \\mathrm{~ms}^{-1}$ and last one-third at $\\mathrm{v}_{3} \\mathrm{~ms}^{-1}$. If $\\mathrm{v}_{3}=3 \\mathrm{v}_{1}, \\mathrm{v}_{2}=2 \\mathrm{v}_{1}$ and $\\mathrm{v}_{1}=11 \\mathrm{~ms}^{-1}$ then the average velocity of the car is\n$\\_\\_\\_\\_$ $\\mathrm{ms}^{-1}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "18"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{E}_{0}=2 \\times \\frac{\\mathrm{Kq}}{(\\mathrm{~d} / 2)^{2}} \\\\\n\\Rightarrow \\mathrm{E}_{0}=8 \\frac{\\mathrm{Kq}}{\\mathrm{~d}^{2}} \\\\\n\\Rightarrow \\mathrm{~d}^{2}=\\frac{8 \\times 9 \\times 10^{9} \\times 8 \\times 10^{-6}}{6.4 \\times 10^{4}} \\\\\n\\mathrm{~d}=3 \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

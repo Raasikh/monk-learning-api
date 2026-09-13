@@ -381,7 +381,8 @@ def find_matching_question(artifact: dict, row: dict) -> Optional[dict]:
         page_matches = [
             q for q in questions
             if q.get("qno") == qno and row.get("page") is not None
-            and q.get("page_start") <= row["page"] <= q.get("page_end", q.get("page_start"))
+            and q.get("page_start") is not None
+            and q.get("page_start") <= row["page"] <= (q.get("page_end") or q.get("page_start"))
         ]
         if page_matches:
             return page_matches[0]
@@ -430,6 +431,14 @@ def cmd_materialize(args: argparse.Namespace) -> None:
     out_rows = []
     seen = set()
     for row in rows:
+        if row.get("hygiene_boilerplate_only"):
+            continue  # stem was pure publisher boilerplate, not a question
+        # Attribution re-derivation (DIAGRAM_DIRECTIVE_ATTRIBUTION §3.2):
+        # "this question has no figure" is a valid, common outcome. Candidates
+        # with no in-span figure are NOT diagram questions — never attach as
+        # a fallback.
+        if row.get("figure_attribution") in ("none", "stem_reference_absent"):
+            continue
         artifact = paper_artifact(row["paper_id"])
         confirmation = diagram_confirmation(row, artifact)
         if not confirmation:
@@ -467,7 +476,9 @@ def cmd_materialize(args: argparse.Namespace) -> None:
             "question_id": (question or {}).get("question_id") or (row.get("context") or {}).get("question_id"),
             "question_type": (question or {}).get("question_type"),
             "question_text": (question or {}).get("text") or row.get("ocr_text_context") or None,
-            "options": (question or {}).get("options"),
+            "options": (question or {}).get("options") or row.get("context_options"),
+            "solution": (question or {}).get("solution"),
+            "explanations": (question or {}).get("explanations"),
             "answer_sheet": answer_sheet_for(artifact, question),
             "source_tier": row.get("source_tier"),
             "source_site": row.get("source_site"),
@@ -477,10 +488,8 @@ def cmd_materialize(args: argparse.Namespace) -> None:
             "page": row.get("page"),
             "diagram_bbox": row.get("bbox"),
             "diagram_asset": row.get("asset"),
+            "figure_attribution": row.get("figure_attribution"),
             "has_figure": True,
-            # The diagram belongs to the question region that contained it; for
-            # option-grid figures the gate can refine this later from the asset.
-            "has_stem_figure": True,
             # Raw diagram questions are never servable directly; the pending_gate
             # discipline from EXTRACTION_QUALITY_SPEC.md applies at insert time.
             "needs_manual": "pending_gate",
@@ -489,6 +498,10 @@ def cmd_materialize(args: argparse.Namespace) -> None:
         }
         if not out["question_text"]:
             out["needs_ocr_text"] = True
+        # propagate quarantine from the matched artifact question (e.g.
+        # text_layer_pua_unrepairable, solution_fragment) so rows inherit it
+        if question and question.get("needs_manual"):
+            out["needs_manual"] = question["needs_manual"]
         out_rows.append(out)
     OUT_PATH = DATA_DIR / "diagram_questions.jsonl"
     OUT_PATH.write_text(

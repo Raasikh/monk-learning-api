@@ -1,61 +1,1046 @@
 {
+ "paper_id": "jee-main-2022-s2-chemistry-2022-06-27-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-chemistry-2022-06-27-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-27",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-chemistry-2022-06-27-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-27",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/1546-27-06%20EVENING%20CHEMISTRY%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/1546-27-06%20EVENING%20CHEMISTRY%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "ced497f4cd519e23225328577e2cc614b4e50be12691dc37643be52dda540883",
+  "page_count": 8,
+  "text_chars": 730,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-27-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "value": "D"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "8630",
+     "value": "8630"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "45",
+     "value": "45"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "11",
+     "value": "11"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "51",
+     "value": "51"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "59",
+     "value": "59"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "12",
+     "value": "12"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "40",
+     "value": "40"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which amongst the given plots is the correct plot for pressure (p) vs density (d) for an ideal gas ?",
+   "options": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Official Ans. by NTA (B)\nAns. (B)\nSol. P vs d :\n$$\\mathrm{P}=\\left(\\frac{\\mathrm{RT}}{\\mathrm{M}}\\right) \\mathrm{d}$$\n$$\\mathrm{T}_{3}>\\mathrm{T}_{2}>\\mathrm{T}_{1}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "P vs d :\n$$\\mathrm{P}=\\left(\\frac{\\mathrm{RT}}{\\mathrm{M}}\\right) \\mathrm{d}$$\n$$\\mathrm{T}_{3}>\\mathrm{T}_{2}>\\mathrm{T}_{1}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "ced497f4cd519e23225328577e2cc614b4e50be12691dc37643be52dda540883",
-    "page_count": 8,
-    "text_chars": 730,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-27-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Identify the incorrect statement for $\\mathrm{PCl}_{5}$ from the following.",
+   "options": {
+    "A": "In this molecule, orbitals of phosphorous are assumed to undergo $\\mathrm{sp}^{3} \\mathrm{~d}$ hybridization.",
+    "B": "The geometry of $\\mathrm{PCl}_{5}$ is trigonal bipyramidal.",
+    "C": "$\\mathrm{PCl}_{5}$ has two axial bonds stronger than three equatorial bonds.",
+    "D": "The three equatorial bonds of $\\mathrm{PCl}_{5}$ lie in a plane.\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. In $\\mathrm{PCl}_{5}$, axial bonds are weaker than equatorial."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In $\\mathrm{PCl}_{5}$, axial bonds are weaker than equatorial."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Statement I : Leaching of gold with cyanide ion in absence of air / $\\mathrm{O}_{2}$ leads to cyano complex of Au(III).\nStatement II : Zinc is oxidized during the displacement reaction carried out for gold extraction.\nIn the light of the above statements, choose the correct answer from the options given below.",
+   "options": {
+    "A": "Both Statement I and Statement II are correct",
+    "B": "Both Statement I and Statement II are incorrect",
+    "C": "Statement I is correct but Statement II is incorrect",
+    "D": "Statement I is incorrect but Statement II is correct\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Statement-1 : wrong, $\\mathrm{Au}^{+}$is correct, not $\\mathrm{Au}^{+3}$\nStatement-2 : correct\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Statement-1 : wrong, $\\mathrm{Au}^{+}$is correct, not $\\mathrm{Au}^{+3}$\nStatement-2 : correct",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The correct order of increasing intermolecular hydrogen bond strength is",
+   "options": {
+    "A": "$\\mathrm{HCN}<\\mathrm{H}_{2} \\mathrm{O}<\\mathrm{NH}_{3}$",
+    "B": "$\\mathrm{HCN}<\\mathrm{CH}_{4}<\\mathrm{NH}_{3}$",
+    "C": "$\\mathrm{CH}_{4}<\\mathrm{HCN}<\\mathrm{NH}_{3}$",
+    "D": "$\\mathrm{CH}_{4}<\\mathrm{NH}_{3}<\\mathrm{HCN}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Order of H-Bonding\n$\\mathrm{CH}_{4}<\\mathrm{HCN}<\\mathrm{NH}_{3}$\nNCH . . . NCH\n$\\mathrm{H}_{2} \\mathrm{NH} \\ldots \\mathrm{NH}_{3}$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Order of H-Bonding\n$\\mathrm{CH}_{4}<\\mathrm{HCN}<\\mathrm{NH}_{3}$\nNCH . . . NCH\n$\\mathrm{H}_{2} \\mathrm{NH} \\ldots \\mathrm{NH}_{3}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The correct order of increasing ionic radii is",
+   "options": {
+    "A": "$\\mathrm{Mg}^{2+}<\\mathrm{Na}^{+}<\\mathrm{F}^{-}<\\mathrm{O}^{2-}<\\mathrm{N}^{3-}$",
+    "B": "$\\mathrm{N}^{3-}<\\mathrm{O}^{2-}<\\mathrm{F}^{-}<\\mathrm{Na}^{+}<\\mathrm{Mg}^{2+}$",
+    "C": "$\\mathrm{F}^{-}<\\mathrm{Na}^{+}<\\mathrm{O}^{2-}<\\mathrm{Mg}^{2+}<\\mathrm{N}^{3-}$",
+    "D": "$\\mathrm{Na}^{+}<\\mathrm{F}^{-}<\\mathrm{Mg}^{2+}<\\mathrm{O}^{2-}<\\mathrm{N}^{3-}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{N}^{-3}>\\mathrm{O}^{-2}>\\mathrm{F}^{-}>\\mathrm{Na}^{+}>\\mathrm{Mg}^{+2}$ (Radii)\n(Isoelectronic species)"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{N}^{-3}>\\mathrm{O}^{-2}>\\mathrm{F}^{-}>\\mathrm{Na}^{+}>\\mathrm{Mg}^{+2}$ (Radii)\n(Isoelectronic species)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The gas produced by treating an aqueous solution of ammonium chloride with sodium nitrite is",
+   "options": {
+    "A": "$\\mathrm{NH}_{3}$",
+    "B": "$\\mathrm{N}_{2}$",
+    "C": "$\\mathrm{N}_{2} \\mathrm{O}$",
+    "D": "$\\mathrm{Cl}_{2}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{NH}_{4} \\mathrm{Cl}+\\mathrm{NaNO}_{2} \\rightarrow \\mathrm{NH}_{4} \\mathrm{NO}_{2}+\\mathrm{NaCl}$\n$$\\begin{array}{c}\n\\downarrow \\\\\n\\mathrm{N}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{NH}_{4} \\mathrm{Cl}+\\mathrm{NaNO}_{2} \\rightarrow \\mathrm{NH}_{4} \\mathrm{NO}_{2}+\\mathrm{NaCl}$\n$$\\begin{array}{c}\n\\downarrow \\\\\n\\mathrm{N}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.\nAssertion A : Flourine forms one oxoacid.\nReason R : Flourine has smallest size amongst all halogens and is highly electronegative\nIn the light of the above statements, choose the most appropriate answer from the options given below.",
+   "options": {
+    "A": "Both A and R are correct and R is the correct explanation of A.",
+    "B": "Both A and R are correct but R is NOT the correct explanation of A.",
+    "C": "A is correct but R is not correct.",
+    "D": "A is not correct but R is correct\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Both A and R are correct and R is the correct explanation of A."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Both A and R are correct and R is the correct explanation of A."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In 3d series, the metal having the highest $\\mathrm{M}^{2+} / \\mathrm{M}$ standard electrode potential is",
+   "options": {
+    "A": "Cr",
+    "B": "Fe",
+    "C": "Cu",
+    "D": "Zn\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\quad \\mathrm{Cr}^{+2} / \\mathrm{Cr} \\rightarrow-0.90 \\mathrm{~V}$\n$\\mathrm{Fe}^{+2} / \\mathrm{Fe} \\rightarrow-0.44 \\mathrm{~V}$\n$\\mathrm{Cu}^{+2} / \\mathrm{Cu} \\rightarrow+0.34 \\mathrm{~V}$\n$\\mathrm{Zn}^{+2} / \\mathrm{Zn} \\rightarrow-0.76 \\mathrm{~V}$\nSo Ans. $\\mathrm{Cu}^{+2} / \\mathrm{Cu}$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Cr}^{+2} / \\mathrm{Cr} \\rightarrow-0.90 \\mathrm{~V}$\n$\\mathrm{Fe}^{+2} / \\mathrm{Fe} \\rightarrow-0.44 \\mathrm{~V}$\n$\\mathrm{Cu}^{+2} / \\mathrm{Cu} \\rightarrow+0.34 \\mathrm{~V}$\n$\\mathrm{Zn}^{+2} / \\mathrm{Zn} \\rightarrow-0.76 \\mathrm{~V}$\nSo Ans. $\\mathrm{Cu}^{+2} / \\mathrm{Cu}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The 'f' orbitals are half and completely filled, respectively in lanthanide ions\n(Given: Atomic no. Eu, 63; Sm, 62; Tm, 69; Tb, 65; Yb, 70; Dy, 66]",
+   "options": {
+    "A": "$\\mathrm{Eu}^{2+}$ and $\\mathrm{Tm}^{2+}$",
+    "B": "$\\mathrm{Sm}^{2+}$ and $\\mathrm{Tm}^{3+}$",
+    "C": "$\\mathrm{Tb}^{4+}$ and $\\mathrm{Yb}^{2+}$",
+    "D": "$\\mathrm{Dy}^{3+}$ and $\\mathrm{Yb}^{3+}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n✓\n4\n\nSol. $\\quad \\mathrm{Tb} \\rightarrow 4 \\mathrm{f}^{9} 6 \\mathrm{~s}^{2}$\n$$\\begin{array}{l}\n\\mathrm{Tb}^{+4} \\rightarrow 4 \\mathrm{f}^{7} \\\\\n\\mathrm{Yb} \\rightarrow 4 \\mathrm{f}^{14} 6 \\mathrm{~s}^{2} \\\\\n\\mathrm{Yb}^{+2} \\rightarrow 4 \\mathrm{f}^{14}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Tb} \\rightarrow 4 \\mathrm{f}^{9} 6 \\mathrm{~s}^{2}$\n$$\\begin{array}{l}\n\\mathrm{Tb}^{+4} \\rightarrow 4 \\mathrm{f}^{7} \\\\\n\\mathrm{Yb} \\rightarrow 4 \\mathrm{f}^{14} 6 \\mathrm{~s}^{2} \\\\\n\\mathrm{Yb}^{+2} \\rightarrow 4 \\mathrm{f}^{14}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Arrange the following coordination compounds in the increasing order of magnetic moments. (Atomic numbers: $\\mathrm{Mn}=25 ; \\mathrm{Fe}=26$ )",
+   "options": {
+    "A": "$\\left[\\mathrm{FeF}_{6}\\right]^{3-}$",
+    "B": "$\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{3-}$",
+    "C": "$\\left[\\mathrm{MnCl}_{6}\\right]^{3-}$ (high spin)",
+    "D": "$\\left[\\mathrm{Mn}(\\mathrm{CN})_{6}\\right]^{3-}$\n(A) A $<$ B $<$ D $<$ C\n(B) B $<$ D $<$ C $<$ A\n(C) A $<$ C $<$ D $<$ B\n(D) B $<$ D $<$ A $<$ C\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. (A) $\\left[\\mathrm{FeF}_{6}\\right]^{3-}$\n$$\\begin{array}{l}\n\\mathrm{Fe}^{+3} \\rightarrow 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=5\n\\end{array}$$\n(B) $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{3-}$\n<smiles>CC(Br)C1CC1</smiles>\n$$\\begin{array}{l}\n\\mathrm{Fe}^{+3} \\rightarrow 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=1\n\\end{array}$$\n(C) $\\left[\\mathrm{MnCl}_{6}\\right]^{3-}$\n<smiles>C[CH]([Ga])C(C)C1CC1</smiles>\n$$\\begin{array}{l}\n\\mathrm{Mn}^{+3} \\rightarrow 3 \\mathrm{~d}^{4} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=4\n\\end{array}$$\n(D) $\\left[\\mathrm{Mn}(\\mathrm{CN})_{6}\\right]^{3-}$\n<smiles>C[CH]([Ga])C1CC1</smiles>\n$$\\begin{array}{l} \n\\mathrm{Mn}^{+3} \\rightarrow 3 \\mathrm{~d}^{4} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=2 \\\\\n\\mu \\Rightarrow \\mathrm{~A}>\\mathrm{C}>\\mathrm{D}>\\mathrm{B}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A) $\\left[\\mathrm{FeF}_{6}\\right]^{3-}$\n$$\\begin{array}{l}\n\\mathrm{Fe}^{+3} \\rightarrow 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=5\n\\end{array}$$\n(B) $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{3-}$\n<smiles>CC(Br)C1CC1</smiles>\n$$\\begin{array}{l}\n\\mathrm{Fe}^{+3} \\rightarrow 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=1\n\\end{array}$$\n(C) $\\left[\\mathrm{MnCl}_{6}\\right]^{3-}$\n<smiles>C[CH]([Ga])C(C)C1CC1</smiles>\n$$\\begin{array}{l}\n\\mathrm{Mn}^{+3} \\rightarrow 3 \\mathrm{~d}^{4} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=4\n\\end{array}$$\n(D) $\\left[\\mathrm{Mn}(\\mathrm{CN})_{6}\\right]^{3-}$\n<smiles>C[CH]([Ga])C1CC1</smiles>\n$$\\begin{array}{l} \n\\mathrm{Mn}^{+3} \\rightarrow 3 \\mathrm{~d}^{4} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=2 \\\\\n\\mu \\Rightarrow \\mathrm{~A}>\\mathrm{C}>\\mathrm{D}>\\mathrm{B}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "On the surface of polar stratospheric clouds, hydrolysis of chlorine nitrate gives A and B while its reaction with HCl produces B and C. A, B and C are, respectively",
+   "options": {
+    "A": "$\\mathrm{HOCl}, \\mathrm{HNO}_{3}, \\mathrm{Cl}_{2}$",
+    "B": "$\\mathrm{Cl}_{2}, \\mathrm{HNO}_{3}, \\mathrm{HOCl}$",
+    "C": "$\\mathrm{HClO}_{2}, \\mathrm{HNO}_{2}, \\mathrm{HOCl}$",
+    "D": "$\\mathrm{HOCl}, \\mathrm{HNO}_{2}, \\mathrm{Cl}_{2} \\mathrm{O}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n<smiles>O=N([O])O[Cl+][ClH]Cl</smiles>"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>O=N([O])O[Cl+][ClH]Cl</smiles>"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following is most stable?",
+   "options": {
+    "A": "<smiles>c1c[cH+]1</smiles>",
+    "B": "<smiles>[C+]1C=C1</smiles>",
+    "C": "<smiles>[C+]1C=CC=C1</smiles>",
+    "D": "<smiles>C1=CCCC=C1</smiles>\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\nis most stable as it is aromatic.\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "is most stable as it is aromatic.",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "What will be the major product of following sequence of reactions?\n(i) $\\mathrm{n}-\\mathrm{BuLi}$,\n$$\\mathrm{n}-\\mathrm{Bu}-\\equiv \\frac{\\mathrm{n}-\\mathrm{C}_{5} \\mathrm{H}_{11} \\mathrm{Cl}}{\\text { (ii) Lindlar cat, } \\mathrm{H}_{2}}$$",
+   "options": {
+    "A": "",
+    "B": "<smiles>CCCCCC(=CCBr)CBr</smiles>",
+    "C": "<smiles>[134H]/C=C\\[10BH2]</smiles>",
+    "D": "<smiles>CCCC=CCBr</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Product 'A' of following sequence of reactions is\nEthylbenzene $\\xrightarrow[\\substack{\\text { (b) } \\mathrm{Cl}_{2}, \\mathrm{~A} \\\\(\\mathrm{c}) \\text { alc. } \\mathrm{KOH}}]{\\text { (a) } \\mathrm{Br}_{2}, \\mathrm{Fe}}{ }^{\\prime} \\mathrm{A}^{\\prime}$ (Major product)\n<smiles>C=C(Cl)c1cccc(C(=O)c2ccc(Br)cc2)c1</smiles>\n(A)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List I with List II\n\\begin{tabular}[t]{|l|l|}\n\\hline List I & List II \\\\\n\\hline A. & I. $\\mathrm{Br}_{2}$ in $\\mathrm{CS}_{2}$ \\\\\n\\hline B. & II. $\\mathrm{Na}_{2} \\mathrm{Cr}_{2} \\mathrm{O}_{7} / \\mathrm{H}_{2} \\mathrm{SO}_{4}$ \\\\\n\\hline C. & III. Zn \\\\\n\\hline D. & IV. $\\mathrm{CHCl}_{3} / \\mathrm{NaOH}$ \\\\\n\\hline\n\\end{tabular}\nChoose the correct answer from the options given below:",
+   "options": {
+    "A": "A-IV, B-III, C-II, D-I",
+    "B": "A-IV, B-III, C-I, D-II",
+    "C": "A-II, B-III, C-I, D-IV",
+    "D": "A-IV, B-II, C-III, D-I\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. (A)\n\n(B)\n(C)\n\n(D)"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Decarboxylation of all six possible forms of diaminobenzoic acids $\\mathrm{C}_{6} \\mathrm{H}_{3}\\left(\\mathrm{NH}_{2}\\right)_{2} \\mathrm{COOH}$ yields three products $\\mathrm{A}, \\mathrm{B}$ and C . Three acids give a product 'A', two acids gives a product 'B' and one acid give a product 'C'. The melting point of product ' C ' is",
+   "options": {
+    "A": "63°C",
+    "B": "90°C",
+    "C": "$104^{\\circ} \\mathrm{C}$",
+    "D": "142°C\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol.\n<smiles>Nc1ccccc1N</smiles>\n\nB\n<smiles>Nc1cccc(N)c1</smiles>\n\nA\n<smiles>Nc1ccc(N)cc1</smiles>\n\nC\nM.P. 142°C"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>Nc1ccccc1N</smiles>",
+     "B\n<smiles>Nc1cccc(N)c1</smiles>",
+     "A\n<smiles>Nc1ccc(N)cc1</smiles>",
+     "C\nM.P. 142°C"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which is true about Buna-N?",
+   "options": {
+    "A": "It is a linear polymer of 1, 3-butadiene.",
+    "B": "It is obtained by copolymerization of 1, 3butadiene and styrene.",
+    "C": "It is obtained by copolymerization of 1, 3butadiene and acrylonitrile.",
+    "D": "The suffix N in Buna- N stands for its natural occurrence\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nSol. It is copolymerization of 1, 3-butadiene and acrylonitrile."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "It is copolymerization of 1, 3-butadiene and acrylonitrile."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements.\nStatments I: Maltose has two $\\alpha$-D-glucose units linked at $\\mathrm{C}_{1}$ and $\\mathrm{C}_{4}$ and is a reducing sugar.\nStatement II: Maltose has two monosaccharides: $\\alpha$-D-glucose and $\\beta$-D-glucose linked at $\\mathrm{C}_{1}$ and $\\mathrm{C}_{6}$ and it is a non-reducing sugar.\nIn the light of the above statements, choose the correct answer from the options given below.",
+   "options": {
+    "A": "Both Statement I and Statement II are true",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n\nMaltose"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List I with List Ii\n\\begin{tabular}[t]{|l|l|}\n\\hline List I & List II \\\\\n\\hline A. Antipyretic & I. Reduces pain \\\\\n\\hline B. Analgesic & II. Reduces stress \\\\\n\\hline C. Tranquilizer & III. Reduces fever \\\\\n\\hline D. Antacid & IV. Reduces acidity (Stomach) \\\\\n\\hline\n\\end{tabular}\nChoose the correct answer from the options given below:",
+   "options": {
+    "A": "A-III, B-I, C-II, D-IV",
+    "B": "A-III, B-I, C-IV, D-II",
+    "C": "A-I, B-IV, C-II, D-III",
+    "D": "A-I, B-III, C-II, D-IV\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n\n\\begin{tabular}[t]{|l|l|}\n\\hline A. Antipyretic & Reduces fever \\\\\n\\hline B. Analgesic & Reduces pain \\\\\n\\hline C. Tranquilizer & Reduces stress \\\\\n\\hline D. Antacid & Reduces acidity (Stomach) \\\\\n\\hline\n\\end{tabular}"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "\\begin{tabular}[t]{|l|l|}\n\\hline A. Antipyretic & Reduces fever \\\\\n\\hline B. Analgesic & Reduces pain \\\\\n\\hline C. Tranquilizer & Reduces stress \\\\\n\\hline D. Antacid & Reduces acidity (Stomach) \\\\\n\\hline\n\\end{tabular}"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List I with List II\n\\begin{tabular}[t]{|l|l|}\n\\hline List I (Anion) & List II (Gas evolved on reaction with dil. $\\mathrm{H}_{2} \\mathrm{SO}_{4}$ ) \\\\\n\\hline A. $\\mathrm{CO}_{3}{ }^{2-}$ & I. Colourless gas which turns lead acetate paper black \\\\\n\\hline B. $\\mathrm{S}^{2-}$ & II. Colourless gas which turns acidified potassium dichromate solution green. \\\\\n\\hline C. $\\mathrm{SO}_{3}{ }^{2-}$ & III. Brown fumes which turns acidified KI solution containing starch blue. \\\\\n\\hline D. $\\mathrm{NO}_{2}{ }^{-}$ & IV. Colourless gas evolved with brisk effervescence, which turns lime water milky. \\\\\n\\hline\n\\end{tabular}\nChoose the correct answer from the options given below:",
+   "options": {
+    "A": "A-III, B-I, C-II, D-IV",
+    "B": "A-II, B-I, C-IV, D-III",
+    "C": "A-IV, B-I, C-III, D-II",
+    "D": "A-IV, B-I, C-II, D-III\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{CO}_{3}{ }^{2-}$ will give $\\mathrm{CO}_{2}(\\mathrm{~g})$ which will turns lime water milky.\n$\\mathrm{S}^{2-}$ will give $\\mathrm{H}_{2} \\mathrm{~S}(\\mathrm{~g})$, will turns lead acetate paper black\n$\\mathrm{SO}_{3}{ }^{2-}$ will give $\\mathrm{SO}_{2}(\\mathrm{~g})$, which will turns acidified potassium dichromate solution green.\n$\\mathrm{NO}_{2}{ }^{-}$will give brown $\\mathrm{NO}_{2}(\\mathrm{~g})$ will turn KI solution blue.\n\nJEE Exam Solution\nwww.esaral.com\n6\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{CO}_{3}{ }^{2-}$ will give $\\mathrm{CO}_{2}(\\mathrm{~g})$ which will turns lime water milky.\n$\\mathrm{S}^{2-}$ will give $\\mathrm{H}_{2} \\mathrm{~S}(\\mathrm{~g})$, will turns lead acetate paper black\n$\\mathrm{SO}_{3}{ }^{2-}$ will give $\\mathrm{SO}_{2}(\\mathrm{~g})$, which will turns acidified potassium dichromate solution green.\n$\\mathrm{NO}_{2}{ }^{-}$will give brown $\\mathrm{NO}_{2}(\\mathrm{~g})$ will turn KI solution blue.",
+     "JEE Exam Solution\nwww.esaral.com\n6",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "single_correct",
+   "text": "116 g of a substance upon dissociation reaction, yields 7.5 g of hydrogen, 60 g of oxygen and 48.5 g of carbon. Given that the atomic masses of H, O and C are 1, 16 and 12 respectively. The data agrees with how many formulae of the following?",
+   "options": {
+    "A": "$\\mathrm{CH}_{3} \\mathrm{COOH}$",
+    "B": "HCHO",
+    "C": "$\\mathrm{CH}_{3} \\mathrm{OOCH}_{3}$",
+    "D": "$\\mathrm{CH}_{3} \\mathrm{CHO}$\n\nOfficial Ans. by NTA (2)\nAns. (2)\nSol. $\\% \\mathrm{H}=\\frac{7.5}{116} \\times 100=6.5$\n$$\\begin{array}{l}\n\\% \\mathrm{O}=\\frac{60}{116} \\times 100=51.7 \\\\\n\\% \\mathrm{C}=\\frac{48.5}{116} \\times 100=41.8\n\\end{array}$$\n\nRelative atomicities $=\\mathrm{H} \\Rightarrow 6.5$\n$$\\begin{array}{l}\n\\mathrm{O} \\Rightarrow \\frac{51.7}{16}=3.25 \\\\\n\\mathrm{C} \\Rightarrow \\frac{41.8}{12}=3.5\n\\end{array}$$\n\nEmperically formula is approx.. $\\mathrm{CH}_{2} \\mathrm{O}$\n(A) $\\mathrm{C}_{2} \\mathrm{H}_{4} \\mathrm{O}_{2}$ (B) $\\mathrm{CH}_{2} \\mathrm{O}$ relate to this formula."
+   },
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "P vs d :\n$$\\mathrm{P}=\\left(\\frac{\\mathrm{RT}}{\\mathrm{M}}\\right) \\mathrm{d}$$\n$$\\mathrm{T}_{3}>\\mathrm{T}_{2}>\\mathrm{T}_{1}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Consider the following set of quantum numbers\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline & n & 1 & $\\mathrm{m}_{1}$ \\\\\n\\hline A. & 3 & 3 & -3 \\\\\n\\hline B. & 3 & 2 & -2 \\\\\n\\hline C. & 2 & 1 & +1 \\\\\n\\hline D. & 2 & 2 & +2 \\\\\n\\hline\n\\end{tabular}\nThe number of correct sets of quantum numbers is\n$\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "In $\\mathrm{PCl}_{5}$, axial bonds are weaker than equatorial."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "BeO reacts with HF in presence of ammonia to give $[\\mathrm{A}]$ which on thermal decomposition produces [B] and ammonium fluoride. Oxidation state of Be in $[\\mathrm{A}]$ is $\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Statement-1 : wrong, $\\mathrm{Au}^{+}$is correct, not $\\mathrm{Au}^{+3}$\nStatement-2 : correct",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "When 5 moles of He gas expand isothermally and reversibly at 300 K from 10 litre to 20 litre, the magnitude of the maximum work obtained is $\\_\\_\\_\\_$\nJ. [nearest integer] (Given: $\\mathrm{R}=8.3 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ and $\\log 2=0.3010$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "8630"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Order of H-Bonding\n$\\mathrm{CH}_{4}<\\mathrm{HCN}<\\mathrm{NH}_{3}$\nNCH . . . NCH\n$\\mathrm{H}_{2} \\mathrm{NH} \\ldots \\mathrm{NH}_{3}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A solution containing $2.5 \\times 10^{-3} \\mathrm{~kg}$ of a solute dissolved in $75 \\times 10^{-3} \\mathrm{~kg}$ of water boils at 373.535\nK . The molar mass of the solute is $\\_\\_\\_\\_$ $\\mathrm{g} \\mathrm{mol}^{-1}$. [nearest integer] (Given: $\\mathrm{K}_{\\mathrm{b}}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)=0.52 \\mathrm{~K} \\mathrm{Kg} \\mathrm{mol}^{-1}$, boiling point of water $=373.15 \\mathrm{~K}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "45"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{N}^{-3}>\\mathrm{O}^{-2}>\\mathrm{F}^{-}>\\mathrm{Na}^{+}>\\mathrm{Mg}^{+2}$ (Radii)\n(Isoelectronic species)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "pH value of 0.001 M NaOH solution is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "11"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{NH}_{4} \\mathrm{Cl}+\\mathrm{NaNO}_{2} \\rightarrow \\mathrm{NH}_{4} \\mathrm{NO}_{2}+\\mathrm{NaCl}$\n$$\\begin{array}{c}\n\\downarrow \\\\\n\\mathrm{N}_{2}+2 \\mathrm{H}_{2} \\mathrm{O}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "For the reaction taking place in the cell:\n$$\\begin{array}{l}\n\\mathrm{Pt}(\\mathrm{~s})\\left|\\mathrm{H}_{2}(\\mathrm{~g})\\right| \\mathrm{H}^{+}(\\mathrm{aq})| | \\mathrm{Ag}^{+}(\\mathrm{aq}) \\mid \\mathrm{Ag}(\\mathrm{~s}) \\\\\n\\mathrm{E}_{\\text {Cell }}^{\\circ}=+0.5332 \\mathrm{~V} .\n\\end{array}$$\nThe value of $\\Delta_{\\mathrm{f}} \\mathrm{G}^{0}$ is $\\_\\_\\_\\_$ $\\mathrm{kJ} \\mathrm{mol}^{-1}$. (in nearest integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "51"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Both A and R are correct and R is the correct explanation of A."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "It has been found that for a chemical reaction with rise in temperature by 9 K the rate constant gets doubled. Assuming a reaction to be occurring at 300 K, the value of activation energy is found to be\n$\\_\\_\\_\\_$ $\\mathrm{kJ} \\mathrm{mol}^{-1}$. [nearest integer]\n(Given $\\ln 10=2.3, \\mathrm{R}=8.3 \\mathrm{JK}^{-1} \\mathrm{~mol}^{-1}, \\log 2=0.30$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "59"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Cr}^{+2} / \\mathrm{Cr} \\rightarrow-0.90 \\mathrm{~V}$\n$\\mathrm{Fe}^{+2} / \\mathrm{Fe} \\rightarrow-0.44 \\mathrm{~V}$\n$\\mathrm{Cu}^{+2} / \\mathrm{Cu} \\rightarrow+0.34 \\mathrm{~V}$\n$\\mathrm{Zn}^{+2} / \\mathrm{Zn} \\rightarrow-0.76 \\mathrm{~V}$\nSo Ans. $\\mathrm{Cu}^{+2} / \\mathrm{Cu}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If the initial pressure of a gas is 0.03 atm, the mass of the gas adsorbed per gram of the adsorbent is\n$\\_\\_\\_\\_$ $\\times 10^{-2} \\mathrm{~g}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "12"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Tb} \\rightarrow 4 \\mathrm{f}^{9} 6 \\mathrm{~s}^{2}$\n$$\\begin{array}{l}\n\\mathrm{Tb}^{+4} \\rightarrow 4 \\mathrm{f}^{7} \\\\\n\\mathrm{Yb} \\rightarrow 4 \\mathrm{f}^{14} 6 \\mathrm{~s}^{2} \\\\\n\\mathrm{Yb}^{+2} \\rightarrow 4 \\mathrm{f}^{14}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "0.25 g of an organic compound containing chlorine gave 0.40 g of silver chloride in Carius estimation. The percentage of chlorine present in the compound is $\\_\\_\\_\\_$ . [in nearest integer]\n(Given: Molar mass of Ag is $108 \\mathrm{~g} \\mathrm{~mol}^{-1}$ and that of Cl is $35.5 \\mathrm{~g} \\mathrm{~mol}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "40"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "(A) $\\left[\\mathrm{FeF}_{6}\\right]^{3-}$\n$$\\begin{array}{l}\n\\mathrm{Fe}^{+3} \\rightarrow 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=5\n\\end{array}$$\n(B) $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{3-}$\n<smiles>CC(Br)C1CC1</smiles>\n$$\\begin{array}{l}\n\\mathrm{Fe}^{+3} \\rightarrow 3 \\mathrm{~d}^{5} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=1\n\\end{array}$$\n(C) $\\left[\\mathrm{MnCl}_{6}\\right]^{3-}$\n<smiles>C[CH]([Ga])C(C)C1CC1</smiles>\n$$\\begin{array}{l}\n\\mathrm{Mn}^{+3} \\rightarrow 3 \\mathrm{~d}^{4} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=4\n\\end{array}$$\n(D) $\\left[\\mathrm{Mn}(\\mathrm{CN})_{6}\\right]^{3-}$\n<smiles>C[CH]([Ga])C1CC1</smiles>\n$$\\begin{array}{l} \n\\mathrm{Mn}^{+3} \\rightarrow 3 \\mathrm{~d}^{4} 4 \\mathrm{~s}^{0} \\\\\n\\mathrm{n}=2 \\\\\n\\mu \\Rightarrow \\mathrm{~A}>\\mathrm{C}>\\mathrm{D}>\\mathrm{B}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

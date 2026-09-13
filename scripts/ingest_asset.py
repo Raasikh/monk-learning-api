@@ -1267,13 +1267,36 @@ def _non_white_corner(data: bytes) -> Optional[Tuple[str, tuple]]:
     return None
 
 
-def upload_and_verify(key: str, data: bytes, content_type: str) -> int:
+#: Art. A master at a given key is not expected to change, and when one did
+#: (the frog heart, 2026-09-12) it was replaced as a unit and propagated only
+#: because r2.dev is uncached. See docs/r2-security-inventory.md §3: this
+#: becomes a real year-long hazard the day a custom domain goes in front of
+#: the bucket, and the fix is a content hash in the key, done in the same
+#: change as the domain swap.
+CACHE_IMMUTABLE = "public, max-age=31536000, immutable"
+
+#: Label sets. NOT immutable, and this is the one distinction that matters
+#: here. A label set is the object most likely to be rewritten at the same
+#: key: a reviewer nudges one anchor and republishes, which is the normal
+#: working loop, not an exception. Serving a year-old set from an
+#: intermediary cache would show a student arrows pointing at the wrong
+#: structures with no way to discover it. Five minutes plus revalidation
+#: costs a conditional request and a 304.
+CACHE_REVALIDATE = "public, max-age=300, must-revalidate"
+
+
+def upload_and_verify(key: str, data: bytes, content_type: str,
+                      cache_control: str = CACHE_IMMUTABLE) -> int:
     """put_object, then head_object. Returns the size R2 reports.
 
     The head is not paranoia about boto3; it is what makes the row's claim
     checked rather than optimistic. A put that returns 200 and a bucket that
     does not have the object (wrong bucket, a lifecycle rule, an eventually
     consistent overwrite) is exactly the case a row must not be written for.
+
+    `cache_control` defaults to immutable because every caller before label
+    sets was uploading art. Callers uploading a document that gets revised at
+    a fixed key must pass CACHE_REVALIDATE.
     """
     from app import storage_r2
 
@@ -1281,9 +1304,7 @@ def upload_and_verify(key: str, data: bytes, content_type: str) -> int:
     bucket = storage_r2.assets_bucket_name()
     client.put_object(
         Bucket=bucket, Key=key, Body=data, ContentType=content_type,
-        # Bundled into the app and keyed by a slug that is never reused, so the
-        # object at a given key is immutable in practice.
-        CacheControl="public, max-age=31536000, immutable",
+        CacheControl=cache_control,
     )
     head = client.head_object(Bucket=bucket, Key=key)
     stored = int(head.get("ContentLength", -1))

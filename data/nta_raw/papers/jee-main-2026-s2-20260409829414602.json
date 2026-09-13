@@ -47,6 +47,8 @@
   "status": "official_verified",
   "source": "nta_final_key",
   "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "xval_printed_agree": 0,
+  "xval_printed_disagree": 0,
   "entries": [
    {
     "qno": 1,
@@ -671,10 +673,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "16",
+    "B": "32",
+    "C": "34",
+    "D": "38"
    },
    "option_ids": [
     "6911211531",
@@ -686,7 +688,8 @@
    "page_end": 1,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -697,10 +700,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{18}$",
+    "B": "${ }^{22}$",
+    "C": "${ }^{29}$",
+    "D": "34"
    },
    "option_ids": [
     "6911211535",
@@ -712,7 +715,8 @@
    "page_end": 2,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -775,10 +779,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "256",
+    "B": "264",
+    "C": "276",
+    "D": "284"
    },
    "option_ids": [
     "6911211547",
@@ -790,7 +794,8 @@
    "page_end": 3,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -801,10 +806,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{129}$",
+    "B": "136",
+    "C": "131.50",
+    "D": "134"
    },
    "option_ids": [
     "6911211551",
@@ -816,7 +821,8 @@
    "page_end": 3,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -853,10 +859,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "0.74",
+    "B": "0.76",
+    "C": "0.72",
+    "D": "0.78"
    },
    "option_ids": [
     "6911211559",
@@ -868,7 +874,8 @@
    "page_end": 4,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -879,10 +886,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "4100",
+    "B": "4140",
+    "C": "4230",
+    "D": "4290"
    },
    "option_ids": [
     "6911211563",
@@ -894,7 +901,8 @@
    "page_end": 4,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -931,10 +939,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{10}$",
+    "B": "${ }^{20}$",
+    "C": "${ }^{25}$",
+    "D": "${ }^{5}$"
    },
    "option_ids": [
     "6911211571",
@@ -946,7 +954,8 @@
    "page_end": 5,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -957,10 +966,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{80}$",
+    "B": "160",
+    "C": "174",
+    "D": "192"
    },
    "option_ids": [
     "6911211575",
@@ -972,7 +981,8 @@
    "page_end": 5,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1035,10 +1045,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{11}$",
+    "B": "${ }^{9}$",
+    "C": "${ }^{6}$",
+    "D": "${ }^{4}$"
    },
    "option_ids": [
     "6911211587",
@@ -1050,7 +1060,8 @@
    "page_end": 6,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1113,10 +1124,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{1}{2} \\log _{\\mathrm{e}}\\left(\\frac{4}{3}\\right)$\n6911211599.",
+    "B": "$$\\frac{1}{4} \\log _{\\mathrm{e}}\\left(\\frac{4}{3}\\right)$$",
+    "C": "$$\\frac{1}{2} \\log _{e}\\left(\\frac{8}{5}\\right)$$",
+    "D": "$$\\frac{1}{4} \\log _{\\mathrm{e}}\\left(\\frac{8}{5}\\right)$$"
    },
    "option_ids": [
     "6911211599",
@@ -1128,7 +1139,8 @@
    "page_end": 8,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1139,10 +1151,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "& \\left(1+\\mathrm{e}^{\\mathrm{e}}\\right) \\\\\n6",
+    "B": "& (1+\\mathrm{e}) \\\\\n6",
+    "C": "& \\left(1+\\mathrm{e}+\\mathrm{e}^{\\mathrm{e}}\\right) \\\\\n6",
+    "D": "& 1+2 \\mathrm{e}\n\\end{array}$$"
    },
    "option_ids": [
     "6911211603",
@@ -1154,7 +1166,8 @@
    "page_end": 8,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1165,10 +1178,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "Mathematics Section B Section Id : 69112138 Section Number : 2 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112138 Question Shuffling Allowed : Yes Is Section Default? : No"
+    "A": "& 20 \\\\\n6",
+    "B": "& 40 \\\\\n6",
+    "C": "& -20 \\\\\n6",
+    "D": "& -40\n\\end{array}$$\n\nMathematics Section B\n\n\\begin{tabular}[t]{|l|l|}\n\\hline Section Id: & 69112138 \\\\\n\\hline Section Number : & 2 \\\\\n\\hline Section type : & Online \\\\\n\\hline Mandatory or Optional : & Mandatory \\\\\n\\hline Number of Questions : & 5 \\\\\n\\hline Number of Questions to be attempted : & 5 \\\\\n\\hline Section Marks : & 20 \\\\\n\\hline Maximum Instruction Time : & 0 \\\\\n\\hline Sub-Section Number : & 1 \\\\\n\\hline Sub-Section Id : & 69112138 \\\\\n\\hline Question Shuffling Allowed : & Yes \\\\\n\\hline Is Section Default? : & No \\\\\n\\hline\n\\end{tabular}"
    },
    "option_ids": [
     "6911211607",
@@ -1179,7 +1192,8 @@
    "page_start": 8,
    "page_end": 8,
    "parse_flags": [
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1263,10 +1277,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A-II, B-IV, C-I, D-III",
+    "B": "A-IV, B-II, C-I, D-III",
+    "C": "A-IV, B-I, C-II, D-III",
+    "D": "A-III, B-I, C-II, D-IV"
    },
    "option_ids": [
     "6911211616",
@@ -1278,7 +1292,8 @@
    "page_end": 10,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1315,10 +1330,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{20}$",
+    "B": "${ }^{25}$",
+    "C": "${ }^{30}$",
+    "D": "10"
    },
    "option_ids": [
     "6911211624",
@@ -1330,7 +1345,8 @@
    "page_end": 11,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1445,10 +1461,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$8 \\pi r^{2} \\mathrm{~S}$",
+    "B": "$16 \\pi r^{2} \\mathrm{~S}$",
+    "C": "$64 \\pi r^{2} \\mathrm{~S}$",
+    "D": "$4 \\pi r^{2} \\mathrm{~S}$"
    },
    "option_ids": [
     "6911211644",
@@ -1460,7 +1476,8 @@
    "page_end": 13,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1497,10 +1514,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A-III, B-I, C-IV, D-II",
+    "B": "A-II, B-I, C-III, D-IV",
+    "C": "A-III, B-II, C-IV, D-I",
+    "D": "A-II, B-I, C-IV, D-III"
    },
    "option_ids": [
     "6911211652",
@@ -1512,7 +1529,8 @@
    "page_end": 14,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1549,10 +1567,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$$0.5$$",
+    "B": "$$1.5$$",
+    "C": "$$0$$",
+    "D": "$$2$$"
    },
    "option_ids": [
     "6911211660",
@@ -1564,7 +1582,8 @@
    "page_end": 15,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1627,10 +1646,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "behaves as concave lens if $\\left|f_{\\text {convex }}\\right|>\\left|f_{\\text {concave }}\\right|$",
+    "B": "behaves as concave lens if $\\left|f_{\\text {convex }}\\right|<\\left|f_{\\text {concave }}\\right|$",
+    "C": "behaves as convex lens if $\\left|f_{\\text {convex }}\\right|>\\left|f_{\\text {concave }}\\right|$\n6",
+    "D": "Focal length of the lens system will change if the positions of two lenses are interchanged"
    },
    "option_ids": [
     "6911211672",
@@ -1642,7 +1661,8 @@
    "page_end": 16,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1653,10 +1673,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "virtual, formed at 7.5 cm right of lens Q, with a size bigger than that of $A B$",
+    "B": "real, formed at 7.5 cm right of lens Q, with a size same as that of $A B$",
+    "C": "formed at infinity.",
+    "D": "real, formed at 7 cm right of lens Q, with a size smaller than that of $A B$"
    },
    "option_ids": [
     "6911211676",
@@ -1668,7 +1688,8 @@
    "page_end": 17,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1731,10 +1752,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "127.5",
+    "B": "89.03",
+    "C": "272.0",
+    "D": "92.0"
    },
    "option_ids": [
     "6911211688",
@@ -1746,7 +1767,8 @@
    "page_end": 18,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1757,10 +1779,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "Physics Section B Section Id : 69112140 Section Number : 4 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69112140 Question Shuffling Allowed : Yes Is Section Default? : No"
+    "A": "Widths of depletion region on either side of the interface are equal\n6",
+    "B": "The depletion region width is more on p -side compared to that in n -side\n6",
+    "C": "The depletion region width is more on n-side compared to that in p-side\n6",
+    "D": "No depletion region forms because of unequal doping concentrations on p and n-sides\n\nPhysics Section B\n\n\\begin{tabular}[t]{|l|l|}\n\\hline Section Id: & 69112140 \\\\\n\\hline Section Number : & 4 \\\\\n\\hline Section type : & Online \\\\\n\\hline Mandatory or Optional : & Mandatory \\\\\n\\hline Number of Questions : & 5 \\\\\n\\hline Number of Questions to be attempted : & 5 \\\\\n\\hline Section Marks : & 20 \\\\\n\\hline Maximum Instruction Time : & 0 \\\\\n\\hline Sub-Section Number : & 1 \\\\\n\\hline Sub-Section Id : & 69112140 \\\\\n\\hline Question Shuffling Allowed : & Yes \\\\\n\\hline Is Section Default? : & No \\\\\n\\hline\n\\end"
    },
    "option_ids": [
     "6911211692",
@@ -1771,7 +1793,8 @@
    "page_start": 18,
    "page_end": 19,
    "parse_flags": [
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1855,10 +1878,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "& 5.824 \\mathrm{~L} \\\\\n6",
+    "B": "& 7.428 \\mathrm{~L} \\\\\n6",
+    "C": "& 6.892 \\mathrm{~L} \\\\\n6",
+    "D": "& 8.375 \\mathrm{~L}\n\\end{array}$$"
    },
    "option_ids": [
     "6911211701",
@@ -1870,7 +1893,8 @@
    "page_end": 20,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1907,10 +1931,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right), 2\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right)$",
+    "B": "$\\frac{1}{2}\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right),\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right)$",
+    "C": "$\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right),\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right)$",
+    "D": "$2\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right), \\frac{1}{2}\\left(\\mathrm{r}_{\\mathrm{A}}+\\mathrm{r}_{\\mathrm{B}}\\right)$"
    },
    "option_ids": [
     "6911211709",
@@ -1922,7 +1946,8 @@
    "page_end": 21,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1933,10 +1958,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "-21000",
+    "B": "-10",
+    "C": "-1000",
+    "D": "-9.012"
    },
    "option_ids": [
     "6911211713",
@@ -1948,7 +1973,8 @@
    "page_end": 22,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1959,10 +1985,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Copper(s) > Bromine(l) > Helium(g)",
+    "B": "Bromine(l) > Copper(s) > Helium(g)",
+    "C": "Helium(g) > Bromine(l) > Copper(s)",
+    "D": "Helium(g) > Bromine(l) = Copper(s)"
    },
    "option_ids": [
     "6911211717",
@@ -1974,7 +2000,8 @@
    "page_end": 22,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2011,10 +2038,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{2}{3.9}$",
+    "B": "$\\frac{\\frac{4}{5.9}}{5.5}$",
+    "C": "$\\frac{2.9}{2}$",
+    "D": "${ }^{\\frac{5.9}{4}}$"
    },
    "option_ids": [
     "6911211725",
@@ -2026,7 +2053,8 @@
    "page_end": 23,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2063,10 +2091,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911211733",
@@ -2078,7 +2106,8 @@
    "page_end": 24,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2089,10 +2118,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are correct\n6",
+    "B": "Both Statement I and Statement II are incorrect\n6",
+    "C": "Statement I is correct but Statement II is incorrect\n6",
+    "D": "Statement I is incorrect but Statement II is correct"
    },
    "option_ids": [
     "6911211737",
@@ -2104,7 +2133,8 @@
    "page_end": 24,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2115,10 +2145,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A, B, C, D and E\n6",
+    "B": "B, C and D only",
+    "C": "6",
+    "D": "A, C and E only"
    },
    "option_ids": [
     "6911211741",
@@ -2130,7 +2160,8 @@
    "page_end": 25,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2141,10 +2172,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A-II, B-III, C-I, D-IV",
+    "B": "A-II, B-IV, C-I, D-III",
+    "C": "A-II, B-IV, C-III, D-I",
+    "D": "A-IV, B-III, C-II, D-I"
    },
    "option_ids": [
     "6911211745",
@@ -2156,7 +2187,8 @@
    "page_end": 25,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2167,10 +2199,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$$C>A>B>D$$",
+    "B": "$$C>A>D>B$$",
+    "C": "$$B>D>A>C$$",
+    "D": "$$A>B>C>D$$"
    },
    "option_ids": [
     "6911211749",
@@ -2182,7 +2214,8 @@
    "page_end": 26,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2245,10 +2278,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true\n6",
+    "B": "Both Statement I and Statement II are false\n6",
+    "C": "Statement I is true but Statement II is false\n6",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911211761",
@@ -2260,7 +2293,8 @@
    "page_end": 27,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2297,10 +2331,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "They can be fibrous or globular in structure.\n6",
+    "B": "The main forces that stabilize the structure are hydrogen bonding, disulphide links, van der Waals and electrostatic forces of attraction.\n6",
+    "C": "The structure remains intact when exposed to pH changes.\n6",
+    "D": "A linear polypeptide chain will convert to a secondary structure and then further folding of the secondary structure will convert to tertiary structure."
    },
    "option_ids": [
     "6911211769",
@@ -2312,7 +2346,8 @@
    "page_end": 28,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2323,10 +2358,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true\n6",
+    "B": "Both Statement I and Statement II are false\n6",
+    "C": "Statement I is true but Statement II is false\n6",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911211773",
@@ -2338,7 +2373,8 @@
    "page_end": 29,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {

@@ -1,61 +1,423 @@
 {
+ "paper_id": "jee-main-2024-physics-182028-physics-jee-mains-2024-question-papers-with-answer-ke",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2024-physics-182028-physics-jee-mains-2024-question-papers-with-answer-ke",
+  "exam": "jee-main",
+  "year": 2024,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper_with_solutions",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL; no official key URL known for this year/session",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2024-physics-182028-physics-jee-mains-2024-question-papers-with-answer-ke",
-    "exam": "jee-main",
-    "year": 2024,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper_with_solutions",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL; no official key URL known for this year/session",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2024/2/2/182028-Physics-JEE-Mains-2024-Question-Papers-With-Answer-Key-Pdf.pdf",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-mains-2024-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2024/2/2/182028-Physics-JEE-Mains-2024-Question-Papers-With-Answer-Key-Pdf.pdf",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "9f673d66d04757a5bba11ceb75243e52d16e1d91fa35ffff0b542b094d6f0e46",
+  "page_count": 6,
+  "text_chars": 567,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2024-physics-182028-physics-jee-mains-2024-question-papers-with-answer-ke.pdf"
+ },
+ "answer_sheet": {
+  "status": "unavailable",
+  "source": null,
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": []
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A body of man 100 kg travelled 10 m before coming to rest. If $\\mu=0.4$, work done against friction is (motion is happening on horizontal surface, take $g=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )\n(1) 4500 J\n(2) 5000 J\n(3) 4200 J\n(4) 4000 J\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{v^{2}}{2 a}=s$\n$$(a=\\mu g)$$\n$$\\begin{aligned}\nv^{2} & =2 \\times \\mu g \\mathrm{~s} \\\\\nv^{2} & =2 \\times(.4) \\times 10 \\times 10 \\\\\nv^{2} & =80 \\\\\nw_{f} & =\\Delta k \\\\\n& =-\\frac{1}{2} \\times 100 \\times 80 \\\\\nw_{f} & =-4000\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "9f673d66d04757a5bba11ceb75243e52d16e1d91fa35ffff0b542b094d6f0e46",
-    "page_count": 6,
-    "text_chars": 567,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2024-physics-182028-physics-jee-mains-2024-question-papers-with-answer-ke.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If an object is having same weight at same distance above and below the surface of earth, find its distance from surface of earth.\n(1) $\\frac{R}{2}$\n(2) $(\\sqrt{5}-1) \\frac{R}{2}$\n(3) $(\\sqrt{3}-1) \\frac{R}{2}$\n(4) $(\\sqrt{5}-1) R$\nAnswer (2)\nsol. $\\frac{G M m}{(R+x)^{2}}=\\frac{G M m(R-x)}{R^{3}}$\n$$\\begin{array}{l}\n\\Rightarrow R^{3}=(R+x)^{2}(R-x) \\\\\n\\Rightarrow R^{3}=\\left(R^{2}-x^{2}\\right)(R+x) \\\\\n\\Rightarrow x^{2}+R x-R^{2}=0 \\\\\n\\therefore x=\\frac{-R \\pm \\sqrt{R+4 R^{2}}}{2} \\\\\nx=\\frac{(\\sqrt{5}-1)}{2} R\n\\end{array}$$",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{G M m}{(R+x)^{2}}=\\frac{G M m(R-x)}{R^{3}}$\n$$\\begin{array}{l}\n\\Rightarrow R^{3}=(R+x)^{2}(R-x) \\\\\n\\Rightarrow R^{3}=\\left(R^{2}-x^{2}\\right)(R+x) \\\\\n\\Rightarrow x^{2}+R x-R^{2}=0 \\\\\n\\therefore x=\\frac{-R \\pm \\sqrt{R+4 R^{2}}}{2} \\\\\nx=\\frac{(\\sqrt{5}-1)}{2} R\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Consider the two statements :\nStatement-1 : A capillary tube is first dipped in hot water and then dipped in cold water. The rise is higher in hot water.\nStatement-2 : Capillary tube is first dipped in cold water and then dipped in hot water. The rise is higher in cold water.\n(1) Statement-1 is true and statement-2 is false\n(2) Statement-1 is false and statement-2 is true\n(3) Both statements are true\n(4) Both statements are false\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$h=\\frac{2 S \\cos \\theta}{\\rho g R}$\nas $T \\uparrow, S \\downarrow$\nThe correct answer is Option (2)."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If a particle starting from rest having constant acceleration covers distance $S_{1}$ in first ( $p-1$ ) seconds and $S_{2}$ in first $p$ seconds, then determine time for which displacement is $S_{1}+S_{2}$\n(1) $\\sqrt{2 p^{2}+1-2 p}$\n(2) $\\sqrt{2 p^{2}+1+2 p}$\n(3) $\\sqrt{(p-1)^{2}-p}$\n(4) $2 p$\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nS_{1}=\\frac{1}{2} a(p-1)^{2} \\\\\nS_{2}=\\frac{1}{2} a p^{2} \\\\\nS_{1}+S_{2}=\\frac{1}{2} a\\left[(p-1)^{2}+p^{2}\\right]=\\frac{1}{2} a t^{2} \\\\\nt=\\sqrt{2 p^{2}+1-2 p}\n\\end{array}$$",
+     "JEE Mains Shift-1 Answer Key\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral App"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "de-Broglie wavelength of a proton and an electron is same. The ratio of kinetic energy of electron to that of proton is\n(1) 1\n(2) 1835\n(3) $\\frac{1}{1867}$\n(4) 933.5\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{h}{p_{1}}=\\frac{h}{p_{2}}$\n$$\\begin{array}{l}\n\\Rightarrow \\sqrt{2 m_{1} k_{1}}=\\sqrt{2 m_{2} k_{2}} \\\\\n\\Rightarrow \\frac{k_{2}}{k_{1}}=\\frac{m_{1}}{m_{2}}=1835\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If ratio of centripetal acceleration of two particles moving on the same path is 3 : 4. Find the ratio of their tangential velocities.\n(1) $2: \\sqrt{3}$\n(2) $\\sqrt{3}: 2$\n(3) $\\sqrt{3}: 1$\n(4) $\\sqrt{2}: 1$\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$a_{c}=\\frac{v^{2}}{r}, \\frac{\\left(a_{c}\\right)_{1}}{\\left(a_{c}\\right)_{2}}=\\left(\\frac{v_{1}}{v_{2}}\\right)^{2}$\n$$\\frac{3}{4}=\\left(\\frac{v_{1}}{v_{2}}\\right)^{2} \\rightarrow \\frac{v_{1}}{v_{2}}=\\sqrt{3}: 2$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A capacitor having capacitance of $100 \\mu \\mathrm{~F}$ is charged with a potential difference of 12 V is connected to an inductor of inductance 10 mH . Find the maximum current through the inductor.\n(1) 2 A\n(2) 1.6 A\n(3) 2.4 A\n(4) 1.2 A\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$I=Q_{0 . \\omega}$\n$$\\begin{array}{l}\n=\\frac{C V}{\\sqrt{L C}}=V \\sqrt{\\frac{C}{L}} \\\\\n=12 \\sqrt{\\frac{100 \\times 10^{-6}}{10 \\times 10^{-3}}} \\\\\n=1.2 \\mathrm{~A}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A square loop of resistance $16 \\Omega$ is connected with battery of 9 V and internal resistance of $1 \\Omega$. In steady state, find energy stored in capacitor of capacity $C=4 \\mu F$ as shown (at steady state current divides symmetrically)\n(1) $51.84 \\mu \\mathrm{~J}$\n(2) $12.96 \\mu \\mathrm{~J}$\n(3) $25.92 \\mu \\mathrm{~J}$\n(4) $103.68 \\mu \\mathrm{~J}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Equivalent circuit\n$$\\begin{array}{l}\ni=\\frac{9}{4+1}=1.8 \\mathrm{~A} \\\\\n\\Rightarrow \\frac{i}{2}=0.9 \\mathrm{~A}\n\\end{array}$$\n$$\\begin{array}{l}\n\\left(V_{P}-V_{Q}\\right)=0.9 \\times 6-0.9 \\times 2 \\\\\nV_{C}=3.6 \\mathrm{~V} \\\\\nU=\\frac{1}{2} C V^{2}=\\frac{1}{2} \\times 4 \\times 3.6 \\times 3.6 \\mu \\mathrm{~J} \\\\\n=25.92 \\mu \\mathrm{~J}\n\\end{array}$$",
+     "JEE Mains Shift-1 Answer Key\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral App"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A gas undergoes a cyclic process $A B C A$ as shown. Find the work done by the gas for $A \\longrightarrow B \\longrightarrow C$.\n(1) 1800 J\n(2) 1200 J\n(3) 3600 J\n(4) 600 J\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Work = Area\n$$\\begin{aligned}\n\\Rightarrow W & =\\frac{1}{2} \\times 600 \\times 4 \\\\\n& =1200 \\mathrm{~J}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If a biconvex lens of material of refractive index 1.5 has focal length 20 cm in air, then its focal length when it is submerged in a medium of refractive index 1.6 is\n(1) -160 cm\n(2) 160 cm\n(3) 1.6 cm\n(4) - 16 cm\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{1}{20}=(1.5-1)\\left(\\frac{2}{R}\\right)$\n$$\\begin{aligned}\nR & =20 \\mathrm{~cm} \\\\\n\\frac{1}{f^{\\prime}} & =\\left(\\frac{1.5}{1.6}-1\\right)\\left(\\frac{2}{R}\\right) \\\\\n& =\\frac{-1}{16} \\times \\frac{2}{20} \\\\\nf^{\\prime} & =-160 \\mathrm{~cm}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Consider a series of steps as shown. A ball is thrown from $O$. Find the minimum speed of directly jump to $5^{\\text {th }}$ step.\n(1) $5(\\sqrt{2}+1) \\mathrm{m} / \\mathrm{s}$\n(2) $5 \\sqrt{2} \\mathrm{~m} / \\mathrm{s}$\n(3) $5 \\sqrt{\\sqrt{2}+1} \\mathrm{~m} / \\mathrm{s}$\n(4) $6 \\sqrt{\\sqrt{3}+1} \\mathrm{~m} / \\mathrm{s}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$y=x \\tan \\theta-\\frac{g x^{2}}{2 v^{2} \\cos ^{2} \\theta}$\n(2.5, 2.5) must lie on this\n$$\\begin{array}{l}\n\\Rightarrow 1=\\tan \\theta-\\frac{g \\times 2.5}{2 v^{2} \\cos ^{2} \\theta} \\\\\n\\Rightarrow \\frac{25}{2 v^{2} \\cos ^{2} \\theta}=\\tan \\theta-1 \\\\\n\\Rightarrow v^{2}=\\frac{25}{2}\\left\\{\\frac{1+\\tan ^{2} \\theta}{\\tan \\theta-1}\\right\\} \\\\\n\\Rightarrow v_{\\min }=5 \\sqrt{\\sqrt{2}+1}\n\\end{array}$$\n[Happens when $\\tan \\theta=\\sqrt{2}+1$ ]",
+     "JEE Mains Shift-1 Answer Key\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral App"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "An electron is moving with speed of 1 m/s at distance of 1 m from a large sheet of charge with density $\\sigma \\mathrm{C} / \\mathrm{m}^{2}$. Find maximum value of $\\sigma$ such that electron hit the sheet after 1 sec.\n(mass of electron $9 \\times 10^{-31} \\mathrm{~kg}$, permittivity of free space $\\varepsilon_{0}=9 \\times 10^{-12} \\mathrm{C}^{2} / \\mathrm{Nm}^{2}$ )\n(1) $4.05 \\times 10^{-22} \\mathrm{C} / \\mathrm{m}^{2}$\n(2) $8.10 \\times 10^{-22} \\mathrm{C} / \\mathrm{m}^{2}$\n(3) $4.05 \\times 10^{24} \\mathrm{C} / \\mathrm{m}^{2}$\n(4) $2.02 \\times 10^{-20} \\mathrm{C} / \\mathrm{m}^{2}$\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For maximum value of $\\sigma$, initially, electron must move away from plate.\n$$\\begin{array}{l}\nu t+\\frac{1}{2} a t^{2}=s \\\\\nt=1 \\quad u=1 \\mathrm{~m} / \\mathrm{s} \\quad s=-1 \\mathrm{~m} \\\\\n1 \\times 1-\\frac{1}{2} a \\times 1^{2}=-1 \\\\\n\\Rightarrow \\quad a=4 \\mathrm{~m} / \\mathrm{s}^{2} \\\\\n\\quad \\frac{q E}{m}=4 \\\\\n\\quad \\frac{q \\sigma}{2 \\varepsilon_{0} m}=4\n\\end{array}$$\n$$\\begin{aligned}\n\\sigma & =\\frac{4 \\times 2 \\times 9 \\times 10^{-12} \\times 9 \\times 10^{-31}}{1.6 \\times 10^{-19}} \\\\\n& =\\frac{8 \\times 81}{1.6} \\times 10^{-24} \\\\\n& =4.05 \\times 10^{-22} \\mathrm{C} / \\mathrm{m}^{2}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "In the voltage regulator circuit shown below, the reverse breakdown voltage of zener diode is 3 V. Find the current through zener diode.\n(1) 7 mA\n(2) 1.5 mA\n(3) 5.5 mA\n(4) 10 mA\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "i\n$$\\begin{array}{l}\ni_{\\text {battery }}=\\frac{10-3}{1000}=7 \\mathrm{~mA} \\\\\ni_{2 \\mathrm{k} \\Omega}=\\frac{3}{2000}=1.5 \\mathrm{~mA} \\\\\ni_{z}=(7-1.5) \\mathrm{mA} \\\\\n=5.5 \\mathrm{~mA}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Consider the circuit shown. Galvanometer resistance is $10 \\Omega$ and current through galvanometer is 3 mA . Find the resistance of shunt.\n(1) $10^{-3} \\Omega$\n(2) $7.5 \\times 10^{-3} \\Omega$\n(3) $6.75 \\times 10^{-3} \\Omega$\n(4) $3.75 \\times 10^{-3} \\Omega$\nAnswer (4)\nJEE Mains Shift-1 Answer Key\n4\nSaral",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Since $G$ and $S$ are in parallel\n$$\\begin{array}{l}\n\\Rightarrow V_{\\mathrm{G}}=V_{\\mathrm{S}} \\\\\n\\Rightarrow 3 \\mathrm{~mA} \\times 10=8 \\mathrm{~A} \\times R_{\\mathrm{S}} \\\\\n\\Rightarrow R_{\\mathrm{S}}=3.75 \\mathrm{~m} \\Omega\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A particle executing simple harmonic motion along $x$-axis, with amplitude $A$, about origin. If ratio of kinetic energy and total energy at $x=\\frac{A}{3}$ is\n(1) $\\frac{8}{9}$\n(2) $\\frac{7}{8}$\n(3) $\\frac{1}{9}$\n(4) $\\frac{1}{8}$\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nK E=\\frac{1}{2} m \\omega^{2}\\left(A^{2}-n^{2}\\right) \\\\\nT E=\\frac{1}{2} m \\omega^{2} A^{2} \\\\\n\\frac{K E}{T E}=\\frac{A^{2}-n^{2}}{A^{2}}=\\frac{1-\\frac{1}{9}}{1}=\\frac{8}{9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A solid sphere of radius $4 a$ with centre at origin. Two charge, $-2 q$ at $(-5 a, 0)$ and $5 q$ at $(3 a, 0)$ is placed. Flux through sphere is $\\frac{x q}{\\varepsilon_{0}}$. Find $x$\nAnswer (5)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "From Gauss law\n$$\\phi=\\frac{q_{\\text {enclosed }}}{\\varepsilon_{0}}=\\frac{5 q}{\\varepsilon_{0}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A stationary hydrogen atom de excites from first excited state to ground state. Find recoil speed of hydrogen atom up to nearest integral value. (mass of hydrogen atom $=1.8 \\times 10^{-27} \\mathrm{~kg}$ )\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left|\\Delta E_{0}\\right|=\\left(-13.6\\left\\{1-\\frac{1}{4}\\right\\}\\right)$ ev\n$$\\begin{array}{l}\n|\\Delta E|=10.2 \\mathrm{ev} \\\\\n\\downarrow \\longleftrightarrow \\\\\n\\lambda=\\frac{12400}{10.2} \\times 10^{-10} \\mathrm{~m} \\\\\n\\rho=\\frac{h}{\\lambda}=\\frac{6.63 \\times 10^{-34} \\times 10.2}{12400 \\times 10^{-10}} \\\\\n\\because \\quad m v=\\frac{h}{\\lambda} \\\\\n\\therefore \\quad 1.8 \\times 10^{-27} \\\\\nv=\\frac{6.63 \\times 10.2 \\times 10^{-34}}{12400 \\times 10^{-10}} \\\\\nv=\\frac{6.63 \\times 10.2}{12400 \\times 1.8} \\times 10^{3} \\\\\n=\\frac{6.63 \\times 102}{124 \\times 1.8}=3.02 \\\\\n\\approx 3 \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$",
+     "JEE Mains Shift-1 Answer Key\nwww.esaral.com\n5",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral App"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a container, 1 g of hydrogen and 1 g of oxygen are taken. Find the ratio of hydrogen pressure to oxygen pressure.\nAnswer (16)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$P V=n R T$\n$$\\begin{array}{l}\n\\Rightarrow P \\propto n \\\\\n\\Rightarrow \\text { Ratio }=\\frac{32}{2}=16\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a convex mirror having radius of curvature 30 cm the height of image is half the object height. What will be the object (in cm ) distance?\nAnswer (15)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$f=15$\n$$\\begin{array}{l}\nm=-\\frac{v}{u}=+\\frac{1}{2} \\\\\nv=-\\frac{u}{2} \\\\\n\\frac{1}{v}+\\frac{1}{u}=\\frac{1}{f} \\\\\n\\frac{2}{-u}+\\frac{1}{u}=\\frac{1}{f} \\\\\nu=-f=-15 \\mathrm{~cm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A solid cylinder is placed gently over an incline plane of inclination 60°. The acceleration of cylinder when it start rolling without slipping is $\\frac{g}{\\sqrt{x}}$, where $\\mu$ is coefficient of friction. (Take $g=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\text { Since } a=\\frac{g \\sin \\theta}{1+\\frac{l}{M R^{2}}}$$\n$$\\begin{array}{l}\n\\Rightarrow a=\\frac{g \\times \\frac{\\sqrt{3}}{2}}{1+\\frac{1}{2}}=\\frac{g \\frac{\\sqrt{3}}{2}}{\\frac{3}{2}} \\\\\n\\Rightarrow a=\\frac{g}{\\sqrt{3}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Voltage and resistance for a resistor are measured as $V=200 \\pm 5$ volts and $R=20 \\pm 0.2 \\Omega$. The percentage error in current $I=\\frac{V}{R}$ is $x$. Find the value of $10 x$\nAnswer (35)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "\\% error $=\\left(\\frac{d V}{V}+\\frac{d R}{R}\\right) \\times 100$\n$$\\begin{array}{l}\n=\\left(\\frac{5}{200}+\\frac{0.2}{20}\\right) \\times 100 \\\\\n=3.5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Potential energy function corresponding to a conservative force is given as $U(x, y, z)=\\frac{3 x^{2}}{2}+5 y+6 z$, then the force at $x=6$ is $p \\mathrm{~N}$. The value of $p$ upto its nearest integral value is\nAnswer (20)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$F_{x}=\\frac{-d v}{d x}$\n$$\\begin{array}{l}\n\\vec{F}=-3 x \\hat{i}-5 \\hat{j}-6 \\hat{k} \\\\\n|\\vec{F}|_{x=6}=\\sqrt{18^{2}+5^{2}+6^{2}} \\\\\n=\\sqrt{324+25+36} \\\\\n=\\sqrt{385} \\\\\n=19.62 \\mathrm{~N}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

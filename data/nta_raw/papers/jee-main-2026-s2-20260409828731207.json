@@ -47,6 +47,8 @@
   "status": "official_verified",
   "source": "nta_final_key",
   "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "xval_printed_agree": 0,
+  "xval_printed_disagree": 0,
   "entries": [
    {
     "qno": 1,
@@ -662,10 +664,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "160 \\\\",
+    "B": "176 \\\\",
+    "C": "194 \\\\",
+    "D": "187\n\\end{array}$$"
    },
    "option_ids": [
     "6952781021",
@@ -677,7 +679,8 @@
    "page_end": 1,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -688,10 +691,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "10220 \\\\",
+    "B": "12860 \\\\",
+    "C": "15220 \\\\",
+    "D": "19780\n\\end{array}$$"
    },
    "option_ids": [
     "6952781025",
@@ -703,7 +706,8 @@
    "page_end": 2,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -714,10 +718,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "16 \\\\",
+    "B": "25 \\\\",
+    "C": "49 \\\\",
+    "D": "64\n\\end{array}$$"
    },
    "option_ids": [
     "6952781029",
@@ -729,7 +733,8 @@
    "page_end": 2,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -740,10 +745,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "is a constant function",
+    "B": "is strictly increasing on $\\mathbb{R}$",
+    "C": "is strictly decreasing on $\\mathbb{R}$",
+    "D": "has two critical points"
    },
    "option_ids": [
     "6952781033",
@@ -755,7 +760,8 @@
    "page_end": 2,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -792,10 +798,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$10+\\sqrt{10}$",
+    "B": "$10-2 \\sqrt{10}$",
+    "C": "$10-3 \\sqrt{10}$",
+    "D": "$10-\\sqrt{10}$"
    },
    "option_ids": [
     "6952781041",
@@ -807,7 +813,8 @@
    "page_end": 3,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -870,10 +877,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "12/5",
+    "B": "14/5",
+    "C": "24/5",
+    "D": "48/5"
    },
    "option_ids": [
     "6952781053",
@@ -885,7 +892,8 @@
    "page_end": 4,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -896,10 +904,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "8",
+    "B": "10",
+    "C": "12",
+    "D": "9"
    },
    "option_ids": [
     "6952781057",
@@ -911,7 +919,8 @@
    "page_end": 4,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -948,10 +957,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "-54 \\\\",
+    "B": "-60 \\\\",
+    "C": "-75 \\\\",
+    "D": "-84\n\\end{array}$$"
    },
    "option_ids": [
     "6952781065",
@@ -963,7 +972,8 @@
    "page_end": 5,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -974,10 +984,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "3 \\\\",
+    "B": "5 \\\\",
+    "C": "6 \\\\",
+    "D": "8\n\\end{array}$$"
    },
    "option_ids": [
     "6952781069",
@@ -989,7 +999,8 @@
    "page_end": 5,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1000,10 +1011,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "44 \\\\",
+    "B": "54 \\\\",
+    "C": "86 \\\\",
+    "D": "132\n\\end{array}$$"
    },
    "option_ids": [
     "6952781073",
@@ -1015,7 +1026,8 @@
    "page_end": 5,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1026,10 +1038,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "5",
+    "B": "10",
+    "C": "17",
+    "D": "26"
    },
    "option_ids": [
     "6952781077",
@@ -1041,7 +1053,8 @@
    "page_end": 6,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1078,10 +1091,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "-2",
+    "B": "1",
+    "C": "-1",
+    "D": "$\\frac{5}{4}$"
    },
    "option_ids": [
     "6952781085",
@@ -1093,7 +1106,8 @@
    "page_end": 6,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1130,10 +1144,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$3\\left(\\frac{e+1}{e}\\right)$",
+    "B": "$3\\left(\\frac{e-1}{e}\\right)$",
+    "C": "$\\frac{3-e}{e}$",
+    "D": "3e"
    },
    "option_ids": [
     "6952781093",
@@ -1145,7 +1159,8 @@
    "page_end": 7,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1156,10 +1171,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "Mathematics Section B Section Id : 69527826 Section Number : 2 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69527826 Question Shuffling Allowed : Yes Is Section Default? : No"
+    "A": "$\\frac{11}{\\sqrt{3}}$",
+    "B": "$\\frac{16}{\\sqrt{3}}$",
+    "C": "$\\frac{32}{3 \\sqrt{3}}$",
+    "D": "$\\frac{64}{3 \\sqrt{3}}$\n\nMathematics Section B\n\nSection Id :\nSection Number :\nSection type :\nMandatory or Optional :\nNumber of Questions :\nNumber of Questions to be attempted :\n\n69527826\n2\nOnline\nMandatory\n5\n5"
    },
    "option_ids": [
     "6952781097",
@@ -1170,7 +1185,8 @@
    "page_start": 7,
    "page_end": 8,
    "parse_flags": [
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1254,10 +1270,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "0.07 cm negative zero error",
+    "B": "0.7 cm negative zero error",
+    "C": "0.07 cm positive zero error",
+    "D": "0.7 cm positive zero error"
    },
    "option_ids": [
     "6952781106",
@@ -1269,7 +1285,8 @@
    "page_end": 9,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1280,10 +1297,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{R}{\\sqrt{L C}}$",
+    "B": "$\\frac{R}{L C}$",
+    "C": "$\\frac{C}{\\sqrt{L R}}$",
+    "D": "$\\frac{1}{R} \\sqrt{\\frac{L}{C}}$"
    },
    "option_ids": [
     "6952781110",
@@ -1295,7 +1312,8 @@
    "page_end": 10,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1306,10 +1324,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "0.12",
+    "B": "0.25",
+    "C": "0.50",
+    "D": "0.75"
    },
    "option_ids": [
     "6952781114",
@@ -1321,7 +1339,8 @@
    "page_end": 10,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1384,10 +1403,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "increases by two times",
+    "B": "reduces by half",
+    "C": "remains unchanged",
+    "D": "becomes one fourth"
    },
    "option_ids": [
     "6952781126",
@@ -1399,7 +1418,8 @@
    "page_end": 11,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1410,10 +1430,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both $\\mathbf{A}$ and $\\mathbf{R}$ are true and $\\mathbf{R}$ is the correct explanation of $\\mathbf{A}$",
+    "B": "Both $\\mathbf{A}$ and $\\mathbf{R}$ are true but $\\mathbf{R}$ is NOT the correct explanation of $\\mathbf{A}$",
+    "C": "A is true but R is false",
+    "D": "$\\mathbf{A}$ is false but $\\mathbf{R}$ is true"
    },
    "option_ids": [
     "6952781130",
@@ -1425,7 +1445,8 @@
    "page_end": 12,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1436,10 +1457,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "C, D and E Only",
+    "B": "A, B and C Only",
+    "C": "A, B and D Only",
+    "D": "B, C and D Only"
    },
    "option_ids": [
     "6952781134",
@@ -1451,7 +1472,8 @@
    "page_end": 12,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1488,10 +1510,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{4 \\lambda_{\\mathrm{o}}}{\\left[1-\\frac{E_{\\mathrm{o}} e}{2 m} \\frac{t}{v_{\\mathrm{o}}}\\right]}$",
+    "B": "$\\frac{4 \\lambda_{\\mathrm{o}}}{\\left[1+\\frac{E_{\\mathrm{o}} e}{2 m} \\frac{t}{v_{\\mathrm{o}}}\\right]}$",
+    "C": "$\\frac{4 \\lambda_{\\mathrm{o}}}{\\left[1+\\frac{2 E_{\\mathrm{o}} e}{m} \\frac{t}{v_{\\mathrm{o}}}\\right]}$",
+    "D": "$\\frac{4 \\lambda_{\\mathrm{o}}}{\\left[1-\\frac{2 E_{\\mathrm{o}} e}{m} \\frac{t}{v_{\\mathrm{o}}}\\right]}$"
    },
    "option_ids": [
     "6952781142",
@@ -1503,7 +1525,8 @@
    "page_end": 13,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1514,10 +1537,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "121",
+    "B": "242",
+    "C": "486",
+    "D": "974"
    },
    "option_ids": [
     "6952781146",
@@ -1529,7 +1552,8 @@
    "page_end": 14,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1540,10 +1564,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "0.58",
+    "B": "0.67",
+    "C": "0.82",
+    "D": "0.75"
    },
    "option_ids": [
     "6952781150",
@@ -1555,7 +1579,8 @@
    "page_end": 14,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1566,10 +1591,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "12.5",
+    "B": "1.25",
+    "C": "7.5",
+    "D": "5"
    },
    "option_ids": [
     "6952781154",
@@ -1581,7 +1606,8 @@
    "page_end": 15,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1592,10 +1618,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "1.2",
+    "B": "2",
+    "C": "2.4",
+    "D": "2.88"
    },
    "option_ids": [
     "6952781158",
@@ -1607,7 +1633,8 @@
    "page_end": 15,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1618,10 +1645,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "45",
+    "B": "30",
+    "C": "28",
+    "D": "58"
    },
    "option_ids": [
     "6952781162",
@@ -1633,7 +1660,8 @@
    "page_end": 15,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1644,10 +1672,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "3.68",
+    "B": "4.68",
+    "C": "5.68",
+    "D": "2.68"
    },
    "option_ids": [
     "6952781166",
@@ -1659,7 +1687,8 @@
    "page_end": 15,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1696,10 +1725,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "56",
+    "B": "38",
+    "C": "96",
+    "D": "5.6"
    },
    "option_ids": [
     "6952781174",
@@ -1711,7 +1740,8 @@
    "page_end": 16,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1748,10 +1778,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "Physics Section B Section Id : 69527828 Section Number : 4 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69527828 Question Shuffling Allowed : Yes Is Section Default? : No"
+    "A": "$$\\mathrm{A}=0, \\mathrm{~B}=1, \\mathrm{C}=1$$",
+    "B": "$$\\mathrm{A}=1, \\mathrm{~B}=0, \\mathrm{C}=0$$",
+    "C": "$$\\mathrm{A}=1, \\mathrm{~B}=0, \\mathrm{C}=1$$",
+    "D": "$$\\mathrm{A}=1, \\mathrm{~B}=1, \\mathrm{C}=0$$\n\nPhysics Section B\n\n\\begin{tabular}[t]{|l|l|}\n\\hline Section Id: & 69527828 \\\\\n\\hline Section Number : & 4 \\\\\n\\hline Section type : & Online \\\\\n\\hline Mandatory or Optional : & Mandatory \\\\\n\\hline Number of Questions : & 5 \\\\\n\\hline Number of Questions to be attempted : & 5 \\\\\n\\hline Section Marks : & 20 \\\\\n\\hline Maximum Instruction Time : & 0 \\\\\n\\hline Sub-Section Number : & 1 \\\\\n\\hline Sub-Section Id : & 69527828 \\\\\n\\hline Question Shuffling Allowed : & Yes \\\\\n\\hline Is Section Default? : & No \\\\\n\\hline\n\\end{tabular}"
    },
    "option_ids": [
     "6952781182",
@@ -1762,7 +1792,8 @@
    "page_start": 17,
    "page_end": 17,
    "parse_flags": [
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1846,10 +1877,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "1 .08 \\mathrm{~g} \\\\",
+    "B": "2 .16 \\mathrm{~g} \\\\",
+    "C": "3 .24 \\mathrm{~g} \\\\",
+    "D": "4 .32 \\mathrm{~g}\n\\end{array}$$"
    },
    "option_ids": [
     "6952781191",
@@ -1861,7 +1892,8 @@
    "page_end": 19,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1924,10 +1956,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "0.825",
+    "B": "0.032",
+    "C": "0.867",
+    "D": "0.967"
    },
    "option_ids": [
     "6952781203",
@@ -1939,7 +1971,8 @@
    "page_end": 20,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1976,10 +2009,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "B < C < A",
+    "B": "$\\mathrm{C}<\\mathrm{A}<\\mathrm{B}$",
+    "C": "$\\mathrm{C}<\\mathrm{B}<\\mathrm{A}$",
+    "D": "$\\mathrm{A}<\\mathrm{C}<\\mathrm{B}$"
    },
    "option_ids": [
     "6952781211",
@@ -1991,7 +2024,8 @@
    "page_end": 21,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2002,10 +2036,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{1}{t} \\ln \\frac{p_{i}}{2 p_{i}-p_{t}}$",
+    "B": "$\\frac{1}{t} \\ln \\frac{2 p_{i}}{p_{i}-p_{t}}$",
+    "C": "$\\frac{1}{t} \\ln \\frac{p_{i}}{3 p_{i}-2 p_{t}}$",
+    "D": "$\\frac{1}{t} \\ln \\frac{3 p_{i}}{4 p_{i}-p_{t}}$"
    },
    "option_ids": [
     "6952781215",
@@ -2017,7 +2051,8 @@
    "page_end": 21,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2028,10 +2063,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6952781219",
@@ -2043,7 +2078,8 @@
    "page_end": 22,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2054,10 +2090,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "B, C and D Only\n\n6",
+    "B": "C, D and E Only",
+    "C": "A, C and E Only",
+    "D": "A and E Only"
    },
    "option_ids": [
     "6952781223",
@@ -2069,7 +2105,8 @@
    "page_end": 22,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2106,10 +2143,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A and B Only",
+    "B": "A, C and D Only",
+    "C": "B and C Only",
+    "D": "A and D Only"
    },
    "option_ids": [
     "6952781231",
@@ -2121,7 +2158,8 @@
    "page_end": 23,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2132,10 +2170,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are correct",
+    "B": "Both Statement I and Statement II are incorrect",
+    "C": "Statement I is correct but Statement II is incorrect",
+    "D": "Statement I is incorrect but Statement II is correct"
    },
    "option_ids": [
     "6952781235",
@@ -2147,7 +2185,8 @@
    "page_end": 23,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2158,10 +2197,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are correct",
+    "B": "Both Statement I and Statement II are incorrect",
+    "C": "Statement I is correct but Statement II is incorrect",
+    "D": "Statement I is incorrect but Statement II is correct"
    },
    "option_ids": [
     "6952781239",
@@ -2173,7 +2212,8 @@
    "page_end": 24,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2236,10 +2276,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A and B Only",
+    "B": "A and C Only",
+    "C": "B and D Only",
+    "D": "D and E Only"
    },
    "option_ids": [
     "6952781251",
@@ -2251,7 +2291,8 @@
    "page_end": 26,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2288,10 +2329,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A and D Only\n6",
+    "B": "A and C Only\n6",
+    "C": "B and C Only\n6",
+    "D": "A and B Only"
    },
    "option_ids": [
     "6952781259",
@@ -2303,7 +2344,8 @@
    "page_end": 27,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2314,10 +2356,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A and B Only",
+    "B": "B and C Only",
+    "C": "A, B and D Only",
+    "D": "A, B and E Only"
    },
    "option_ids": [
     "6952781263",
@@ -2329,7 +2371,8 @@
    "page_end": 28,
    "parse_flags": [
     "options_image_only",
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2340,10 +2383,10 @@
    "section": "Section A",
    "text": "Yes",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "Chemistry Section B Section Id : 69527830 Section Number : 6 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 69527830 Question Shuffling Allowed : Yes Is Section Default? : No"
+    "A": "Both Statement I and Statement II are ture",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true\n\nChemistry Section B\n\n\\begin{tabular}[t]{|l|l|}\n\\hline Section Id: & 69527830 \\\\\n\\hline Section Number : & 6 \\\\\n\\hline Section type : & Online \\\\\n\\hline Mandatory or Optional : & Mandatory \\\\\n\\hline Number of Questions : & 5 \\\\\n\\hline Number of Questions to be attempted : & 5 \\\\\n\\hline Section Marks : & 20 \\\\\n\\hline Maximum Instruction Time : & 0 \\\\\n\\hline Sub-Section Number : & 1 \\\\\n\\hline Sub-Section Id : & 69527830 \\\\\n\\hline Question Shuffling Allowed : & Yes \\\\\n\\hline Is Section Default? : & No \\\\\n\\hline\n\\end{tabular}"
    },
    "option_ids": [
     "6952781267",
@@ -2354,7 +2397,8 @@
    "page_start": 28,
    "page_end": 28,
    "parse_flags": [
-    "stem_under_20_chars"
+    "stem_under_20_chars",
+    "options_ocr_repaired"
    ]
   },
   {

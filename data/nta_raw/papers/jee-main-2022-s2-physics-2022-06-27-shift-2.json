@@ -1,61 +1,1071 @@
 {
+ "paper_id": "jee-main-2022-s2-physics-2022-06-27-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-physics-2022-06-27-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-27",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-physics-2022-06-27-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-27",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132546-27-06%20EVENING%20PHYSICS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132546-27-06%20EVENING%20PHYSICS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "f4100bb6128add9d54596c1b11a76b735219774051b923b95b846be04c263e86",
+  "page_count": 10,
+  "text_chars": 898,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-27-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "1400",
+     "value": "1400"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "23",
+     "value": "23"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "12",
+     "value": "12"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "16",
+     "value": "16"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The SI unit of a physical quantity is pascal-second. The dimensional formula of this quantity will be",
+   "options": {
+    "A": "$\\left[\\mathrm{ML}^{-1} \\mathrm{~T}^{-1}\\right]$",
+    "B": "$\\left[\\mathrm{ML}^{-1} \\mathrm{~T}^{-2}\\right]$",
+    "C": "$\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{-1}\\right]$",
+    "D": "$\\left[\\mathrm{M}^{-1} \\mathrm{~L}^{3} \\mathrm{~T}^{0}\\right]$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Pascal second\n$$\\frac{\\mathrm{F}}{\\mathrm{~A}} \\mathrm{t}=\\frac{\\mathrm{MLT}^{-2}}{\\mathrm{~L}^{2}} \\mathrm{~T}=\\mathrm{ML}^{-1} \\mathrm{~T}^{-1}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Pascal second\n$$\\frac{\\mathrm{F}}{\\mathrm{~A}} \\mathrm{t}=\\frac{\\mathrm{MLT}^{-2}}{\\mathrm{~L}^{2}} \\mathrm{~T}=\\mathrm{ML}^{-1} \\mathrm{~T}^{-1}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "f4100bb6128add9d54596c1b11a76b735219774051b923b95b846be04c263e86",
-    "page_count": 10,
-    "text_chars": 898,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-27-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The distance of the Sun from earth is $1.5 \\times 10^{11} \\mathrm{~m}$ and its angular diameter is (2000) s when observed from the earth. The diameter of the Sun will be :",
+   "options": {
+    "A": "$2.45 \\times 10^{10} \\mathrm{~m}$",
+    "B": "$1.45 \\times 10^{10} \\mathrm{~m}$",
+    "C": "$1.45 \\times 10^{9} \\mathrm{~m}$",
+    "D": "$0.14 \\times 10^{9} \\mathrm{~m}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n$$\\begin{array}{l}\n\\theta=\\frac{d}{r} \\\\\n\\frac{2000}{60 \\times 60} \\times \\frac{\\pi}{180}=\\frac{d}{1.5 \\times 10^{\\prime \\prime}} \\\\\n\\Rightarrow d=\\frac{2000}{60 \\times 60} \\times \\frac{\\pi}{180} \\times 1.5 \\times 10^{\\prime \\prime} \\\\\n=\\frac{\\pi \\times 1.5}{3 \\times 6 \\times 18} \\times 10^{\\prime \\prime}=1.45 \\times 10^{9}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\theta=\\frac{d}{r} \\\\\n\\frac{2000}{60 \\times 60} \\times \\frac{\\pi}{180}=\\frac{d}{1.5 \\times 10^{\\prime \\prime}} \\\\\n\\Rightarrow d=\\frac{2000}{60 \\times 60} \\times \\frac{\\pi}{180} \\times 1.5 \\times 10^{\\prime \\prime} \\\\\n=\\frac{\\pi \\times 1.5}{3 \\times 6 \\times 18} \\times 10^{\\prime \\prime}=1.45 \\times 10^{9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "When a ball is dropped into a lake from a height 4.9 m above the water level, it hits the water with a velocity v and then sinks to the bottom with the constant velocity v. It reaches the bottom of the lake 4.0 s after it is dropped. The approximate depth of the lake is :",
+   "options": {
+    "A": "19.6 m",
+    "B": "29.4 m",
+    "C": "39.2 m",
+    "D": "73.5 m\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{V}^{2}=2 \\times 9.8 \\times 4.9$\n$$\\mathrm{V}=9.8 \\mathrm{~m} / \\mathrm{s}$$\n\nDepth = distance travelled in 3 seconds\n$$=9.8 \\times 3=29.4 \\mathrm{~m}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{V}^{2}=2 \\times 9.8 \\times 4.9$\n$$\\mathrm{V}=9.8 \\mathrm{~m} / \\mathrm{s}$$",
+     "Depth = distance travelled in 3 seconds\n$$=9.8 \\times 3=29.4 \\mathrm{~m}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "One end of a massless spring of spring constant k and natural length $l_{0}$ is fixed while the other end is connected to a small object of mass m lying on a frictionless table. The spring remains horizontal on the table. If the object is made to rotate at an angular velocity $\\omega$ about an axis passing through fixed end, then the elongation of the spring will be:",
+   "options": {
+    "A": "$\\frac{\\mathrm{k}-\\mathrm{m} \\omega^{2} l_{0}}{\\mathrm{~m} \\omega^{2}}$",
+    "B": "$\\frac{\\mathrm{m} \\omega^{2} l_{0}}{\\mathrm{k}+\\mathrm{m} \\omega^{2}}$",
+    "C": "$\\frac{\\mathrm{m} \\omega^{2} l_{0}}{\\mathrm{k}-\\mathrm{m} \\omega^{2}}$",
+    "D": "$\\frac{\\mathrm{k}+\\mathrm{m} \\omega^{2} l_{0}}{\\mathrm{~m} \\omega^{2}}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol.\n$$\\begin{array}{l}\n\\mathrm{K} \\Delta \\mathrm{x}=\\mathrm{m}\\left(\\ell_{0}+\\underline{\\underline{\\Delta x}}\\right) \\mathrm{w}^{2} \\\\\n\\mathrm{~K} \\Delta \\mathrm{x}=\\mathrm{m} \\ell_{0} \\mathrm{w}^{2}+\\mathrm{mw}^{2} \\Delta \\mathrm{x} \\\\\n\\Delta \\mathrm{x}=\\frac{\\mathrm{m} \\ell_{0} \\mathrm{w}^{2}}{\\mathrm{k}-\\mathrm{mw}^{2}}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{K} \\Delta \\mathrm{x}=\\mathrm{m}\\left(\\ell_{0}+\\underline{\\underline{\\Delta x}}\\right) \\mathrm{w}^{2} \\\\\n\\mathrm{~K} \\Delta \\mathrm{x}=\\mathrm{m} \\ell_{0} \\mathrm{w}^{2}+\\mathrm{mw}^{2} \\Delta \\mathrm{x} \\\\\n\\Delta \\mathrm{x}=\\frac{\\mathrm{m} \\ell_{0} \\mathrm{w}^{2}}{\\mathrm{k}-\\mathrm{mw}^{2}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A stone tide to a string of length L is whirled in a vertical circle with the other end of the string at the centre. At a certain instant of time, the stone is at its lowest position and has a speed u . The magnitude of change in its velocity, as it reaches a position where the string is horizontal, is $\\sqrt{\\mathrm{x}\\left(\\mathrm{u}^{2}-\\mathrm{gL}\\right)}$. The value of x is",
+   "options": {
+    "A": "3",
+    "B": "2",
+    "C": "1",
+    "D": "5\n\nOfficial Ans. by NTA (B)\n\nAns. (B)\n\nSol. $\\mathrm{v}=\\sqrt{\\mathrm{u}^{2}-2 \\mathrm{gL}}$\n$$\\begin{array}{l}\n\\Delta v=\\sqrt{u^{2}+v^{2}} \\\\\n\\Delta v=\\sqrt{u^{2}+v^{2}-2 g L} \\\\\n\\Delta v=\\sqrt{2 u^{2}-2 g L} \\\\\n\\Delta v=\\sqrt{2\\left(u^{2}-g L\\right)} x=2\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{v}=\\sqrt{\\mathrm{u}^{2}-2 \\mathrm{gL}}$\n$$\\begin{array}{l}\n\\Delta v=\\sqrt{u^{2}+v^{2}} \\\\\n\\Delta v=\\sqrt{u^{2}+v^{2}-2 g L} \\\\\n\\Delta v=\\sqrt{2 u^{2}-2 g L} \\\\\n\\Delta v=\\sqrt{2\\left(u^{2}-g L\\right)} x=2\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Four spheres each of mass m form a square of side d (as shown in figure). A fifth sphere of mass M is situated at the centre of square. The total gravitational potential energy of the system is :",
+   "options": {
+    "A": "$-\\frac{\\mathrm{Gm}}{\\mathrm{d}}[(4+\\sqrt{2}) \\mathrm{m}+4 \\sqrt{2} \\mathrm{M}]$",
+    "B": "$-\\frac{\\mathrm{Gm}}{\\mathrm{d}}[(4+\\sqrt{2}) \\mathrm{M}+4 \\sqrt{2} \\mathrm{~m}]$",
+    "C": "$-\\frac{G m}{d}\\left[3 m^{2}+4 \\sqrt{2} M\\right]$",
+    "D": "$-\\frac{\\mathrm{Gm}}{\\mathrm{d}}\\left[6 \\mathrm{~m}^{2}+4 \\sqrt{2} \\mathrm{M}\\right]$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n$$\\begin{array}{l}\n-\\frac{\\mathrm{Gm}^{2}}{\\mathrm{~d}} \\times 4-\\frac{\\mathrm{Gm}^{2}}{\\sqrt{2} \\mathrm{~d}} \\times 2-\\frac{\\mathrm{GMm}}{\\mathrm{~d}} \\times 4 \\sqrt{2} \\\\\n-\\frac{\\mathrm{Gm}}{\\mathrm{~d}}[(4+\\sqrt{2}) \\mathrm{m}+4 \\sqrt{2} \\mathrm{M}]\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n-\\frac{\\mathrm{Gm}^{2}}{\\mathrm{~d}} \\times 4-\\frac{\\mathrm{Gm}^{2}}{\\sqrt{2} \\mathrm{~d}} \\times 2-\\frac{\\mathrm{GMm}}{\\mathrm{~d}} \\times 4 \\sqrt{2} \\\\\n-\\frac{\\mathrm{Gm}}{\\mathrm{~d}}[(4+\\sqrt{2}) \\mathrm{m}+4 \\sqrt{2} \\mathrm{M}]\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "For a perfect gas, two pressures $\\mathrm{P}_{1}$ and $\\mathrm{P}_{2}$ are shown in figure. The graph shows:",
+   "options": {
+    "A": "$P_{1}>P_{2}$",
+    "B": "$\\mathrm{P}_{1}<\\mathrm{P}_{2}$",
+    "C": "$\\mathrm{P}_{1}=\\mathrm{P}_{2}$",
+    "D": "Insufficient data to draw any conclusion\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{PV}=\\mathrm{nRT}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{V}}{\\mathrm{~T}}=\\frac{\\mathrm{nR}}{\\mathrm{P}} \\\\\n\\frac{\\mathrm{nR}}{\\mathrm{P}_{1}}<\\frac{\\mathrm{nR}}{\\mathrm{P}_{2}} \\\\\n\\mathrm{P}_{2}<\\mathrm{P}_{1}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{PV}=\\mathrm{nRT}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{V}}{\\mathrm{~T}}=\\frac{\\mathrm{nR}}{\\mathrm{P}} \\\\\n\\frac{\\mathrm{nR}}{\\mathrm{P}_{1}}<\\frac{\\mathrm{nR}}{\\mathrm{P}_{2}} \\\\\n\\mathrm{P}_{2}<\\mathrm{P}_{1}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "According to kinetic theory of gases,\nA. The motion of the gas molecules freezes at 0°C\nB. The mean free path of gas molecules decreases if the density of molecules is increased.\nC. The mean free path of gas molecules increases if temperature is increased keeping pressure constant.\nD. Average kinetic energy per molecule per degree of freedom is $\\frac{3}{2} \\mathrm{k}_{\\mathrm{B}} \\mathrm{T}$ (for monoatomic gases)\nChoose the most appropriate answer from the options given below:",
+   "options": {
+    "A": "A and C only",
+    "B": "B and C only",
+    "C": "A and B only",
+    "D": "C and D only\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\lambda=\\frac{\\mathrm{kT}}{\\sqrt{2} \\pi \\mathrm{~d}^{2} \\mathrm{P}}$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\lambda=\\frac{\\mathrm{kT}}{\\sqrt{2} \\pi \\mathrm{~d}^{2} \\mathrm{P}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A lead bullet penetrates into a solid object and melts. Assuming that 40\\% of its kinetic energy is used to heat it, the initial speed of bullet is:\n(Given, initial temperature of the bullet $=127^{\\circ} \\mathrm{C}$, Melting point of the bullet $=327^{\\circ} \\mathrm{C}$,\nLatent heat of fusion of lead $=2.5 \\times 10^{4} \\mathrm{~J} \\mathrm{Kg}^{-1}$,\nSpecific heat capacity of lead $=125 \\mathrm{~J} / \\mathrm{kg} \\mathrm{K}$ )",
+   "options": {
+    "A": "$125 \\mathrm{~ms}^{-1}$",
+    "B": "$500 \\mathrm{~ms}^{-1}$",
+    "C": "$250 \\mathrm{~ms}^{-1}$",
+    "D": "$600 \\mathrm{~ms}^{-1}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{m} \\times 125 \\times 200+\\mathrm{m} \\times 2.5 \\times 10^{4}=\\frac{1}{2} \\mathrm{mv}^{2} \\times \\frac{40}{100}$\n$$\\mathrm{V}=500 \\mathrm{~m} / \\mathrm{s}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{m} \\times 125 \\times 200+\\mathrm{m} \\times 2.5 \\times 10^{4}=\\frac{1}{2} \\mathrm{mv}^{2} \\times \\frac{40}{100}$\n$$\\mathrm{V}=500 \\mathrm{~m} / \\mathrm{s}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The equation of a particle executing simple harmonic motion is given by $\\mathrm{x}=\\sin \\pi\\left(\\mathrm{t}+\\frac{1}{3}\\right) \\mathrm{m}$.\nAt $\\mathrm{t}=1 \\mathrm{~s}$, the speed of particle will be\n(Given : $\\pi=3.14$ )",
+   "options": {
+    "A": "$0 \\mathrm{~cm} \\mathrm{~s}^{-1}$",
+    "B": "$157 \\mathrm{~cm} \\mathrm{~s}^{-1}$",
+    "C": "$272 \\mathrm{~cm} \\mathrm{~s}^{-1}$",
+    "D": "$314 \\mathrm{~cm} \\mathrm{~s}^{-1}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{x}=\\sin \\pi\\left(\\mathrm{t}+\\frac{1}{3}\\right)$\n$$\\begin{array}{l}\n\\mathrm{X}=\\sin \\left(\\pi \\mathrm{t}+\\frac{\\pi}{3}\\right) \\\\\n\\mathrm{V}=\\frac{\\mathrm{dx}}{\\mathrm{dt}}=\\cos \\left(\\pi \\mathrm{t}+\\frac{\\pi}{3}\\right) \\pi \\\\\n=-\\pi \\times \\frac{1}{2}=157 \\mathrm{~cm} / \\mathrm{s}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{x}=\\sin \\pi\\left(\\mathrm{t}+\\frac{1}{3}\\right)$\n$$\\begin{array}{l}\n\\mathrm{X}=\\sin \\left(\\pi \\mathrm{t}+\\frac{\\pi}{3}\\right) \\\\\n\\mathrm{V}=\\frac{\\mathrm{dx}}{\\mathrm{dt}}=\\cos \\left(\\pi \\mathrm{t}+\\frac{\\pi}{3}\\right) \\pi \\\\\n=-\\pi \\times \\frac{1}{2}=157 \\mathrm{~cm} / \\mathrm{s}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If a charge q is placed at the centre of a closed hemispherical non-conducting surface, the total flux passing through the flat surface would be :",
+   "options": {
+    "A": "$\\frac{\\mathrm{q}}{\\varepsilon_{0}}$",
+    "B": "$\\frac{\\mathrm{q}}{2 \\varepsilon_{0}}$",
+    "C": "$\\frac{\\mathrm{q}}{4 \\varepsilon_{0}}$",
+    "D": "$\\frac{\\mathrm{q}}{2 \\pi \\varepsilon_{0}}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\nTotal flux through complete spherical surface is $\\frac{\\mathrm{q}}{\\varepsilon_{0}}$.\n\nSo the flux through curved surface will be $\\frac{\\mathrm{q}}{2 \\varepsilon_{0}}$. The flux through flat surface will be zero.\n\nRemark : Electric flux through flat surface is zero but no option is given, option is available for electric flux passing through curved surface."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Total flux through complete spherical surface is $\\frac{\\mathrm{q}}{\\varepsilon_{0}}$.",
+     "So the flux through curved surface will be $\\frac{\\mathrm{q}}{2 \\varepsilon_{0}}$. The flux through flat surface will be zero.",
+     "Remark : Electric flux through flat surface is zero but no option is given, option is available for electric flux passing through curved surface."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Three identical charged balls each of charge 2C are suspended from a common point P by silk threads of 2 m each (as shown in figure). They form an equilateral triangle of side 1m.\nThe ratio of net force on a charged ball to the force between any two charged balls will be :",
+   "options": {
+    "A": "$1: 1$",
+    "B": "$1: 4$",
+    "C": "$\\sqrt{3}: 2$",
+    "D": "$\\sqrt{3}: 1$\n\nOfficial Ans. by NTA (D)\n\nAns. (D)\n\nSol.\n$$\\mathrm{F}=\\frac{\\mathrm{k}(2)(2)}{(1)^{2}}$$\n(F = Force between two charges).\n$\\mathrm{F}=4 \\mathrm{k}$\n$\\mathrm{F}_{\\text {net }}=2 \\mathrm{~F} \\cos 30^{\\circ}=2 \\cdot \\mathrm{~F} \\cdot \\frac{\\sqrt{3}}{2}=\\mathrm{F} \\sqrt{3}$\n( $\\mathrm{F}_{\\text {net }}=$ Net electrostatic force on one charged ball)\n$\\frac{\\mathrm{F}_{\\text {net }}}{\\mathrm{F}}=\\frac{\\sqrt{3} \\mathrm{~F}}{\\mathrm{~F}}=(\\sqrt{3})$\n\nRemark: Net force on any one of the ball is zero.\nBut no option given in options.\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\mathrm{F}=\\frac{\\mathrm{k}(2)(2)}{(1)^{2}}$$\n(F = Force between two charges).\n$\\mathrm{F}=4 \\mathrm{k}$\n$\\mathrm{F}_{\\text {net }}=2 \\mathrm{~F} \\cos 30^{\\circ}=2 \\cdot \\mathrm{~F} \\cdot \\frac{\\sqrt{3}}{2}=\\mathrm{F} \\sqrt{3}$\n( $\\mathrm{F}_{\\text {net }}=$ Net electrostatic force on one charged ball)\n$\\frac{\\mathrm{F}_{\\text {net }}}{\\mathrm{F}}=\\frac{\\sqrt{3} \\mathrm{~F}}{\\mathrm{~F}}=(\\sqrt{3})$",
+     "Remark: Net force on any one of the ball is zero.\nBut no option given in options.",
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two long parallel conductors $\\mathrm{S}_{1}$ and $\\mathrm{S}_{2}$ are separated by a distance 10 cm and carrying currents of 4A and 2A respectively. The conductors are placed along x-axis in X-Y plane. There is a point P located between the conductors (as shown in figure).\nA charge particle of $3 \\pi$ coulomb is passing through the point P with velocity\n→\n$\\mathrm{v}=(2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}) \\mathrm{m} / \\mathrm{s}$; where $\\hat{\\mathrm{i}} \\& \\hat{\\mathrm{j}}$ represents unit vector along x \\& y axis respectively.\nThe force acting on the charge particle is $4 \\pi \\times 10^{-5}(-\\mathrm{x} \\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}) \\mathrm{N}$. The value of x is :",
+   "options": {
+    "A": "2",
+    "B": "1",
+    "C": "3",
+    "D": "-3\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n$$\\begin{array}{l}\n\\mathrm{B}_{\\text {net }}=\\mathrm{B}_{1}-\\mathrm{B}_{2}=\\frac{\\mu_{0} \\times 4}{2 \\pi[.04]}-\\frac{\\mu_{0} \\times 2}{2 \\pi[.06]} \\\\\n\\overrightarrow{\\mathrm{B}}_{\\text {net }}=\\frac{\\mu_{0}}{2 \\pi}\\left[\\frac{200}{3}\\right](-\\hat{\\mathrm{k}}) \\\\\n\\overrightarrow{\\mathrm{F}}=\\mathrm{q}[\\overrightarrow{\\mathrm{v}} \\times \\overrightarrow{\\mathrm{B}}] \\\\\n=[3 \\pi]\\left[(2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}) \\times\\left(\\frac{\\mu_{0}}{2 \\pi}\\right)\\left(\\frac{200}{3}\\right)-\\hat{\\mathrm{k}}\\right]\n\\end{array}$$\n$$\\begin{array}{l}\n=3 \\pi \\times \\frac{\\mu_{0}}{2 \\pi}\\left(\\frac{200}{3}\\right)[2 \\times \\hat{j}-3(\\hat{i})] \\\\\n=\\left(4 \\pi \\times 10^{-7}\\right)(100)(-3 \\hat{i}+2 \\hat{j}) \\\\\n=4 \\pi \\times 10^{-5} \\times[-3 \\hat{i}+2 \\hat{j}]\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{B}_{\\text {net }}=\\mathrm{B}_{1}-\\mathrm{B}_{2}=\\frac{\\mu_{0} \\times 4}{2 \\pi[.04]}-\\frac{\\mu_{0} \\times 2}{2 \\pi[.06]} \\\\\n\\overrightarrow{\\mathrm{B}}_{\\text {net }}=\\frac{\\mu_{0}}{2 \\pi}\\left[\\frac{200}{3}\\right](-\\hat{\\mathrm{k}}) \\\\\n\\overrightarrow{\\mathrm{F}}=\\mathrm{q}[\\overrightarrow{\\mathrm{v}} \\times \\overrightarrow{\\mathrm{B}}] \\\\\n=[3 \\pi]\\left[(2 \\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}) \\times\\left(\\frac{\\mu_{0}}{2 \\pi}\\right)\\left(\\frac{200}{3}\\right)-\\hat{\\mathrm{k}}\\right]\n\\end{array}$$\n$$\\begin{array}{l}\n=3 \\pi \\times \\frac{\\mu_{0}}{2 \\pi}\\left(\\frac{200}{3}\\right)[2 \\times \\hat{j}-3(\\hat{i})] \\\\\n=\\left(4 \\pi \\times 10^{-7}\\right)(100)(-3 \\hat{i}+2 \\hat{j}) \\\\\n=4 \\pi \\times 10^{-5} \\times[-3 \\hat{i}+2 \\hat{j}]\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If L, C and R are the self inductance, capacitance and resistance respectively, which of the following does not have the dimension of time ?",
+   "options": {
+    "A": "RC",
+    "B": "$\\frac{\\mathrm{L}}{\\mathrm{R}}$",
+    "C": "$\\sqrt{\\mathrm{LC}}$",
+    "D": "$\\frac{\\mathrm{L}}{\\mathrm{C}}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\left(\\frac{\\mathrm{L}}{\\mathrm{C}}\\right)$ does not have dimension of time.\nRC, $\\frac{\\mathrm{L}}{\\mathrm{R}}$ are time constant while $\\sqrt{\\mathrm{LC}}$ is reciprocal of angular frequency or having dimension of time."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left(\\frac{\\mathrm{L}}{\\mathrm{C}}\\right)$ does not have dimension of time.\nRC, $\\frac{\\mathrm{L}}{\\mathrm{R}}$ are time constant while $\\sqrt{\\mathrm{LC}}$ is reciprocal of angular frequency or having dimension of time."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements:\nStatement I : A time varying electric field is a source of changing magnetic field and vice-versa. Thus a disturbance in electric or magnetic field creates EM waves.\nStatement II : In a material medium. The EM wave travels with speed $\\mathrm{v}=\\frac{1}{\\sqrt{\\mu_{0} \\varepsilon_{0}}}$.\nIn the light of the above statements, choose the correct answer from the options given below:",
+   "options": {
+    "A": "Both statement I and statement II are true.",
+    "B": "Both statement I and statement II are false.",
+    "C": "Statement I is correct but statement II is false.",
+    "D": "Statement I is incorrect but statement II is true.\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. The statement II is wrong as the velocity of $\\varepsilon \\mathrm{m}$ wave in a medium is $\\frac{1}{\\sqrt{\\mu \\varepsilon}}=\\frac{1}{\\sqrt{\\mu_{0} \\mu_{\\mathrm{r}} \\varepsilon_{0} \\varepsilon_{\\mathrm{r}}}}$.\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "The statement II is wrong as the velocity of $\\varepsilon \\mathrm{m}$ wave in a medium is $\\frac{1}{\\sqrt{\\mu \\varepsilon}}=\\frac{1}{\\sqrt{\\mu_{0} \\mu_{\\mathrm{r}} \\varepsilon_{0} \\varepsilon_{\\mathrm{r}}}}$.",
+     "JEE Exam Solution\nwww.esaral.com\n5",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A convex lens has power P. It is cut into two halves along its principal axis. Further one piece (out of the two halves) is cut into two halves perpendicular to the principal axis (as shown in figure). Choose the incorrect option for the reported pieces.",
+   "options": {
+    "A": "Power of $\\mathrm{L}_{1}=\\frac{\\mathrm{P}}{2}$",
+    "B": "Power of $\\mathrm{L}_{2}=\\frac{\\mathrm{P}}{2}$",
+    "C": "Power of $\\mathrm{L}_{3}=\\frac{\\mathrm{P}}{2}$",
+    "D": "Power of $\\mathrm{L}_{1}=\\mathrm{P}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If a wave gets refracted into a denser medium, then which of the following is true?",
+   "options": {
+    "A": "wavelength speed and frequency decreases.",
+    "B": "wavelength increases, speed decreases and frequency remains constant.",
+    "C": "wavelength and speed decreases but frequency remains constant.",
+    "D": "wavelength, speed and frequency increases.\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n\nNo change in frequency but speed and wave-length decreases."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "No change in frequency but speed and wave-length decreases."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements:\nStatement I : In hydrogen atom, the frequency of radiation emitted when an electron jumps from lower energy orbit $\\left(\\mathrm{E}_{1}\\right)$ to higher energy orbit $\\left(\\mathrm{E}_{2}\\right)$, is given as $\\mathrm{hf}=\\mathrm{E}_{1}-\\mathrm{E}_{2}$.\nStatement-II : The jumping of electron from higher energy orbit $\\left(\\mathrm{E}_{2}\\right)$ to lower energy orbit $\\left(\\mathrm{E}_{1}\\right)$ is associated with frequency of radiation given as f $=\\left(\\mathrm{E}_{2}-\\mathrm{E}_{1}\\right) / \\mathrm{h}$\nThis condition is Bohr's frequency condition.\nIn the light of the above statements, choose the correct answer from the options given below:",
+   "options": {
+    "A": "Both statement I and statement II are true.",
+    "B": "Both statement I and statement II are false",
+    "C": "Statement I is correct but statement II is false",
+    "D": "Statement I is incorrect but statement II is true.\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. When electron jump from lower to higher energy level, energy absorbed so statement-I incorrect.\n\nWhen electron jump from higher to lower energy level, energy of emitted photon\n$$\\begin{array}{l}\n\\mathrm{E}=E_{2}-E_{1} \\\\\n\\mathrm{hf}=E_{2}-E_{1} \\Rightarrow \\mathrm{f}=\\frac{E_{2}-E_{1}}{\\mathrm{~h}}\n\\end{array}$$\nso statement-II is correct.\n\nJEE Exam Solution\nwww.esaral.com\n6\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "When electron jump from lower to higher energy level, energy absorbed so statement-I incorrect.",
+     "When electron jump from higher to lower energy level, energy of emitted photon\n$$\\begin{array}{l}\n\\mathrm{E}=E_{2}-E_{1} \\\\\n\\mathrm{hf}=E_{2}-E_{1} \\Rightarrow \\mathrm{f}=\\frac{E_{2}-E_{1}}{\\mathrm{~h}}\n\\end{array}$$\nso statement-II is correct.",
+     "JEE Exam Solution\nwww.esaral.com\n6",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "For a transistor to act as a switch, it must be operated in",
+   "options": {
+    "A": "Active region",
+    "B": "Saturation state only",
+    "C": "Cut-off state only",
+    "D": "Saturation and cut-off state\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Transistor act as a switch in saturation and cut of region."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Transistor act as a switch in saturation and cut of region."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "We do not transmit low frequency signal to long distances because\n(a) The size of the antenna should be comparable to signal wavelength which is unreal solution for a signal of longer wavelength.\n(b) Effective power radiated by a long wavelength baseband signal would be high.\n(c) We want to avoid mixing up signals transmitted by different transmitter simultaneously.\n(d) Low frequency signal can be sent to long distances by superimposing with a high frequency wave as well.\nTherefore, the most suitable options will be :",
+   "options": {
+    "A": "All statements are true",
+    "B": "(a), (b) and (c) are true only",
+    "C": "(a), (c) and (d) are true only",
+    "D": "(b), (c) and (d) are true only\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. (a) For low frequency or high wavelength size of antenna required is high.\n(b) E P R is low for longer wavelength.\n(c) yes we want to avoid mixing up signals transmitted by different transmitter simultaneously.\n(d) Low frequency signals sent to long distance by superimposing with high frequency.\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(a) For low frequency or high wavelength size of antenna required is high.\n(b) E P R is low for longer wavelength.\n(c) yes we want to avoid mixing up signals transmitted by different transmitter simultaneously.\n(d) Low frequency signals sent to long distance by superimposing with high frequency.",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A mass of 10 kg is suspended vertically by a rope of length 5m from the roof. A force of 30 N is applied at the middle point of rope in horizontal direction. The angle made by upper half of the rope with vertical is $\\theta=\\tan ^{-1}\\left(\\mathrm{x} \\times 10^{-1}\\right)$. The value of x is $\\_\\_\\_\\_$ .\n(Given $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Pascal second\n$$\\frac{\\mathrm{F}}{\\mathrm{~A}} \\mathrm{t}=\\frac{\\mathrm{MLT}^{-2}}{\\mathrm{~L}^{2}} \\mathrm{~T}=\\mathrm{ML}^{-1} \\mathrm{~T}^{-1}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A rolling wheel of 12 kg is on an inclined plane at position P and connected to a mass of 3 kg through a string of fixed length and pulley as shown in figure. Consider PR as friction free surface.\nThe velocity of centre of mass of the wheel when it reaches at the bottom Q of the inclined plane PQ will be $\\frac{1}{2} \\sqrt{\\mathrm{xgh}} \\mathrm{m} / \\mathrm{s}$. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\theta=\\frac{d}{r} \\\\\n\\frac{2000}{60 \\times 60} \\times \\frac{\\pi}{180}=\\frac{d}{1.5 \\times 10^{\\prime \\prime}} \\\\\n\\Rightarrow d=\\frac{2000}{60 \\times 60} \\times \\frac{\\pi}{180} \\times 1.5 \\times 10^{\\prime \\prime} \\\\\n=\\frac{\\pi \\times 1.5}{3 \\times 6 \\times 18} \\times 10^{\\prime \\prime}=1.45 \\times 10^{9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A diatomic gas $(\\gamma=1.4)$ does 400 J of work when it is expanded isobarically. The heat given to the gas in the process is $\\_\\_\\_\\_$ J.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1400"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{V}^{2}=2 \\times 9.8 \\times 4.9$\n$$\\mathrm{V}=9.8 \\mathrm{~m} / \\mathrm{s}$$",
+     "Depth = distance travelled in 3 seconds\n$$=9.8 \\times 3=29.4 \\mathrm{~m}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A particle executes simple harmonic motion. Its amplitude is 8 cm and time period is 6 s . The time it will take to travel from its position of maximum displacement to the point corresponding to half of its amplitude, is $\\_\\_\\_\\_$ s.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{K} \\Delta \\mathrm{x}=\\mathrm{m}\\left(\\ell_{0}+\\underline{\\underline{\\Delta x}}\\right) \\mathrm{w}^{2} \\\\\n\\mathrm{~K} \\Delta \\mathrm{x}=\\mathrm{m} \\ell_{0} \\mathrm{w}^{2}+\\mathrm{mw}^{2} \\Delta \\mathrm{x} \\\\\n\\Delta \\mathrm{x}=\\frac{\\mathrm{m} \\ell_{0} \\mathrm{w}^{2}}{\\mathrm{k}-\\mathrm{mw}^{2}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A paralle plate capacitor is made up of stair like structure with a palte area A of each stair and that is connected with a wire of length b, as shown in the figure. The capacitance of the arrangement is $\\frac{\\mathrm{x}}{15} \\frac{\\varepsilon_{0} \\mathrm{~A}}{\\mathrm{~b}}$. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "23"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{v}=\\sqrt{\\mathrm{u}^{2}-2 \\mathrm{gL}}$\n$$\\begin{array}{l}\n\\Delta v=\\sqrt{u^{2}+v^{2}} \\\\\n\\Delta v=\\sqrt{u^{2}+v^{2}-2 g L} \\\\\n\\Delta v=\\sqrt{2 u^{2}-2 g L} \\\\\n\\Delta v=\\sqrt{2\\left(u^{2}-g L\\right)} x=2\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The current density in a cylindrical wire of radius $\\mathrm{r}=4.0 \\mathrm{~mm}$ is $1.0 \\times 10^{6} \\mathrm{~A} / \\mathrm{m}^{2}$. The current through the outer portion of the wire between radial distances r/2 and r is x A; where x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "12"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n-\\frac{\\mathrm{Gm}^{2}}{\\mathrm{~d}} \\times 4-\\frac{\\mathrm{Gm}^{2}}{\\sqrt{2} \\mathrm{~d}} \\times 2-\\frac{\\mathrm{GMm}}{\\mathrm{~d}} \\times 4 \\sqrt{2} \\\\\n-\\frac{\\mathrm{Gm}}{\\mathrm{~d}}[(4+\\sqrt{2}) \\mathrm{m}+4 \\sqrt{2} \\mathrm{M}]\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In the given circuit 'a' is an arbitrary constant. The value of m for which the equivalent circuit resistance is minimum, will be $\\sqrt{\\frac{\\mathrm{x}}{2}}$. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{PV}=\\mathrm{nRT}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{V}}{\\mathrm{~T}}=\\frac{\\mathrm{nR}}{\\mathrm{P}} \\\\\n\\frac{\\mathrm{nR}}{\\mathrm{P}_{1}}<\\frac{\\mathrm{nR}}{\\mathrm{P}_{2}} \\\\\n\\mathrm{P}_{2}<\\mathrm{P}_{1}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A deuteron and a proton moving with equal kinetic energy enter into to a uniform magnetic field at right angle to the field. If $\\mathrm{r}_{\\mathrm{d}}$ and $\\mathrm{r}_{\\mathrm{p}}$ are the radii of their circular paths respectively, then the ratio $\\frac{\\mathrm{r}_{\\mathrm{d}}}{\\mathrm{r}_{\\mathrm{p}}}$ will be $\\sqrt{\\mathrm{x}}: 1$ where x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\lambda=\\frac{\\mathrm{kT}}{\\sqrt{2} \\pi \\mathrm{~d}^{2} \\mathrm{P}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A metallic rod of length 20 cm is palced in NorthSouth direction and is moved at a constant speed of 20 m/s towards East. The horizontal component of the Earth's magnetic field at that place is $4 \\times 10^{-3} \\mathrm{~T}$ and the angle of dip is 45°. The emf induced in the rod is $\\_\\_\\_\\_$ mV.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "16"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{m} \\times 125 \\times 200+\\mathrm{m} \\times 2.5 \\times 10^{4}=\\frac{1}{2} \\mathrm{mv}^{2} \\times \\frac{40}{100}$\n$$\\mathrm{V}=500 \\mathrm{~m} / \\mathrm{s}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The cut-off voltage of the diodes (shown in figure) in forward bias is 0.6 V. The current through the resister of $40 \\Omega$ is $\\_\\_\\_\\_$ mA.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{x}=\\sin \\pi\\left(\\mathrm{t}+\\frac{1}{3}\\right)$\n$$\\begin{array}{l}\n\\mathrm{X}=\\sin \\left(\\pi \\mathrm{t}+\\frac{\\pi}{3}\\right) \\\\\n\\mathrm{V}=\\frac{\\mathrm{dx}}{\\mathrm{dt}}=\\cos \\left(\\pi \\mathrm{t}+\\frac{\\pi}{3}\\right) \\pi \\\\\n=-\\pi \\times \\frac{1}{2}=157 \\mathrm{~cm} / \\mathrm{s}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

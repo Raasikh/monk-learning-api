@@ -1,61 +1,1017 @@
 {
+ "paper_id": "jee-main-2022-s2-chemistry-2022-06-28-shift-1",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-chemistry-2022-06-28-shift-1",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-28",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-chemistry-2022-06-28-shift-1",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-28",
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/15429-28-06%20MORNING%20CHEMISTRY%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/15429-28-06%20MORNING%20CHEMISTRY%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "06274503582a6c4080975a9a72d39dfd24de4b01ea6134c4ca148778623010ae",
+  "page_count": 6,
+  "text_chars": 574,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-28-shift-1.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "value": "C"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "13",
+     "value": "13"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "300",
+     "value": "300"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "0",
+     "value": "0"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "14",
+     "value": "14"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "16",
+     "value": "16"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "34",
+     "value": "34"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The incorrect statement about the imperfections in solids is :",
+   "options": {
+    "A": "Schottky defect decreases the density of the substance.",
+    "B": "Interstitial defect increases the density of the substance.",
+    "C": "Frenkel defect does not alter the density of the substance.",
+    "D": "Vacancy defect increases the density of the substance.\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Due to vacancy defect density of the substance will decrease."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Due to vacancy defect density of the substance will decrease."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "06274503582a6c4080975a9a72d39dfd24de4b01ea6134c4ca148778623010ae",
-    "page_count": 6,
-    "text_chars": 574,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-28-shift-1.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The Zeta potential is related to which property of colloids\"",
+   "options": {
+    "A": "Colour",
+    "B": "Tyndall effect",
+    "C": "Charge on the surface of colloidal particles",
+    "D": "Brownian movement\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. The potential difference between the fixed and diffused layer of charges in a colloidal particle is called zeta potential"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "The potential difference between the fixed and diffused layer of charges in a colloidal particle is called zeta potential"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Element \"E\" belongs to the period 4 and group 16 of the periodic table. The valence shell electron configuration of the element, which is just above 'E' in the group is",
+   "options": {
+    "A": "$3 \\mathrm{~s}^{2} .3 \\mathrm{p}^{4}$",
+    "B": "$3 \\mathrm{~d}^{10} .4 \\mathrm{~s}^{2}, 4 \\mathrm{p}^{4}$",
+    "C": "$4 \\mathrm{~d}^{10} .5 \\mathrm{~s}^{2}, 5 \\mathrm{p}^{4}$",
+    "D": "$2 \\mathrm{~s}^{2}, \\mathrm{p} 4$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol. $\\mathrm{E} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{10} 4 \\mathrm{~s}^{2} 4 \\mathrm{p}^{4}$\nElement above $\\mathrm{E} \\Rightarrow[\\mathrm{Ne}] 3 \\mathrm{~s}^{2} 3 \\mathrm{p}^{4}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{E} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{10} 4 \\mathrm{~s}^{2} 4 \\mathrm{p}^{4}$\nElement above $\\mathrm{E} \\Rightarrow[\\mathrm{Ne}] 3 \\mathrm{~s}^{2} 3 \\mathrm{p}^{4}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given are two statements one is labelled as Assertion A and other is labelled as Reason R. Assertion A :Magnesium can reduce $\\mathrm{Al}_{2} \\mathrm{O}_{3}$ at a temperature below $1350^{\\circ} \\mathrm{C}$, while above $1350^{\\circ} \\mathrm{C}$ aluminium can reduce MgO.\nReason R : The melting and boiling points of magnesium are lower than those of aluminium. In light of the above statements. choose most appropriate answer from the options given below:",
+   "options": {
+    "A": "Both A and R are correct. and R is correct explanation of A.",
+    "B": "Both A and R are correct. but R is NOT the correct explanation of A.",
+    "C": "A is correct R is not correct.",
+    "D": "A is not correct. R is correct.\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. From Ellingham diagram given in NCERT, it can be seen that Mg, MgO line crosses $\\mathrm{Al}, \\mathrm{Al}_{2} \\mathrm{O}_{3}$ line after 1350°C hence assertion is true.\n\nYes, Mg have lower MP and BP than aluminium but it does not explain the above fact."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "From Ellingham diagram given in NCERT, it can be seen that Mg, MgO line crosses $\\mathrm{Al}, \\mathrm{Al}_{2} \\mathrm{O}_{3}$ line after 1350°C hence assertion is true.",
+     "Yes, Mg have lower MP and BP than aluminium but it does not explain the above fact."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Dihydrogen reacts with CuO to give",
+   "options": {
+    "A": "$\\mathrm{CuH}_{2}$",
+    "B": "Cu",
+    "C": "$\\mathrm{Cu}_{2} \\mathrm{O}$",
+    "D": "$\\mathrm{Cu}(\\mathrm{OH})_{2}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{CuO}+\\mathrm{H}_{2} \\rightarrow \\mathrm{Cu}+\\mathrm{H}_{2} \\mathrm{O}$ (under hot conditions)"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{CuO}+\\mathrm{H}_{2} \\rightarrow \\mathrm{Cu}+\\mathrm{H}_{2} \\mathrm{O}$ (under hot conditions)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Nitrogen gas is obtained by thermal decomposition of",
+   "options": {
+    "A": "$\\mathrm{Ba}\\left(\\mathrm{NO}_{3}\\right)_{2}$",
+    "B": "$\\mathrm{Ba}\\left(\\mathrm{N}_{3}\\right)_{2}$",
+    "C": "$\\mathrm{NaNO}_{2}$",
+    "D": "$\\mathrm{NaNO}_{3}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\quad \\mathrm{Ba}\\left(\\mathrm{N}_{3}\\right)_{2} \\rightarrow \\mathrm{Ba}+3 \\mathrm{~N}_{2}$\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Ba}\\left(\\mathrm{N}_{3}\\right)_{2} \\rightarrow \\mathrm{Ba}+3 \\mathrm{~N}_{2}$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements :\nStatement -I :The pentavalent oxide of group- 15 element. $\\mathrm{E}_{2} \\mathrm{O}_{5}$. is less acidic than trivalent oxide. $\\mathrm{E}_{2} \\mathrm{O}_{3}$. of the same element.\nStatement -II :The acidic character of trivalent oxide of group 15 elements. $\\mathrm{E}_{2} \\mathrm{O}_{3}$. decreases down the group.\nIn light of the above statements. choose most appropriate answer from the options given below:",
+   "options": {
+    "A": "Both Statement I and Statement II are true.",
+    "B": "Both Statement I and Statement II are false.",
+    "C": "Statement I true. but statement II is false.",
+    "D": "Statement I is false but statement II is true.\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. As +ve oxidation state increases, EN of element increases hence acidic character increases. Down the group, non-metallic character decreases, acidic character decreases.\n\nAcidic character : $\\mathrm{E}_{2} \\mathrm{O}_{5}>\\mathrm{E}_{2} \\mathrm{O}_{3}$\nDown the group, acidic character of $\\mathrm{E}_{2} \\mathrm{O}_{3}$ decreases"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "As +ve oxidation state increases, EN of element increases hence acidic character increases. Down the group, non-metallic character decreases, acidic character decreases.",
+     "Acidic character : $\\mathrm{E}_{2} \\mathrm{O}_{5}>\\mathrm{E}_{2} \\mathrm{O}_{3}$\nDown the group, acidic character of $\\mathrm{E}_{2} \\mathrm{O}_{3}$ decreases"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which one of the lanthanoids given below is the most stable in divalent form?",
+   "options": {
+    "A": "Ce (Atomic Number 58)",
+    "B": "Sm (Atomic Number 62)",
+    "C": "Eu (Atomic Number 63)",
+    "D": "Yb (Atomic Number 70)\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\quad \\mathrm{E}_{\\mathrm{M}^{3+} / \\mathrm{M}^{2+}}^{\\mathrm{o}} \\Rightarrow \\quad \\begin{array}{cc}\\mathrm{EU} & \\mathrm{Yb} \\\\ -0.35 & -1.05\\end{array}$\nHence, due to more reduction potential in Eu as compared to Yb , it can concluded that $\\mathrm{Eu}^{2+}$ is more stable than $\\mathrm{Yb}^{2+}$."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{E}_{\\mathrm{M}^{3+} / \\mathrm{M}^{2+}}^{\\mathrm{o}} \\Rightarrow \\quad \\begin{array}{cc}\\mathrm{EU} & \\mathrm{Yb} \\\\ -0.35 & -1.05\\end{array}$\nHence, due to more reduction potential in Eu as compared to Yb , it can concluded that $\\mathrm{Eu}^{2+}$ is more stable than $\\mathrm{Yb}^{2+}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements :\nStatement I : $[\\mathrm{Ni}(\\mathrm{CN}) 4]^{2-}$ is square planar and diamagnetic complex. with $\\mathrm{dsp}^{2}$ hybridization for Ni but $\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]$ is tetrahedral. paramagnetic and with $\\mathrm{sp}^{3}$-hybridication for Ni.\nStatement II: $\\left[\\mathrm{NiCl}_{4}\\right]^{2-}$ and $\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]$ both have same d-electron configuration have same geometry and are paramagnetic.\nIn light the above statements. choose the correct answer form the options given below:",
+   "options": {
+    "A": "Both Statement I and Statement II are true.",
+    "B": "Both Statement I and Statement II are false.",
+    "C": "Statement I is correct but statement II is false.",
+    "D": "Statement I is incorrect but statement II is true.\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol. $\\left[\\mathrm{Ni}(\\mathrm{CN})_{4}\\right]^{2-}: \\mathrm{d}^{8}$ configuration, SFL, sq. planar splitting ( $\\mathrm{dsp}^{2}$ ), diamagnetic.\n$\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]: \\mathrm{d}^{10}$ config (after excitation), SFL, tetrahedral splitting $\\left(\\mathrm{sp}^{3}\\right)$, diamagnetic.\n$\\left[\\mathrm{NiCl}_{4}\\right]^{2-}: \\mathrm{d}^{8}$ config, WFL, tetrahedral splitting ( $\\mathrm{sp}^{3}$ ), paramagnetic( 2 unpaired $\\mathrm{e}^{-}$)."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left[\\mathrm{Ni}(\\mathrm{CN})_{4}\\right]^{2-}: \\mathrm{d}^{8}$ configuration, SFL, sq. planar splitting ( $\\mathrm{dsp}^{2}$ ), diamagnetic.\n$\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]: \\mathrm{d}^{10}$ config (after excitation), SFL, tetrahedral splitting $\\left(\\mathrm{sp}^{3}\\right)$, diamagnetic.\n$\\left[\\mathrm{NiCl}_{4}\\right]^{2-}: \\mathrm{d}^{8}$ config, WFL, tetrahedral splitting ( $\\mathrm{sp}^{3}$ ), paramagnetic( 2 unpaired $\\mathrm{e}^{-}$)."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which amongst the following is not a pesticide ?",
+   "options": {
+    "A": "DDT",
+    "B": "Organophosphates",
+    "C": "Dieldrin",
+    "D": "Sodium arsenite\n\nOfficial Ans. by NTA (D)\nAns. (D)"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which one of the following techniques is not used to spot components of a mixture separated on thin layer chromatographic plate?",
+   "options": {
+    "A": "$\\mathrm{I}_{2}$ (Solid)",
+    "B": "U.V. Light",
+    "C": "Visualisation agent as a component of mobile phase",
+    "D": "Spraying of an appropriate reagent\n\nOfficial Ans. by NTA (C)\nAns. (C)"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following structures are aromatic in nature?\n<smiles>[C-]1C=CC=C1</smiles>\nA\n<smiles>[C+]1C=CC=CC=C1</smiles>\nB\n<smiles>C1=CC=CC2C=CC=CC2C=1</smiles>\nc\n<smiles>[C+]1C=CC=CC=C1</smiles>",
+   "options": {
+    "A": "A,B,C and D",
+    "B": "Only A and B",
+    "C": "Only A and C",
+    "D": "Only B, C and D\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. A, B aromatic\nC,D is nonaromatic"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "A, B aromatic\nC,D is nonaromatic"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The major product (P) in the reaction\n<smiles>BrC(Br)(Br)Br</smiles>\n[Ph is - $\\mathrm{C}_{6} \\mathrm{H}_{5}$ ] is",
+   "options": {
+    "A": "<smiles>BrCC(Br)C(Br)c1ccccc1</smiles>",
+    "B": "<smiles>BrCC(Br)Cc1ccccc1</smiles>\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nJEE | NEET | Clas 8-10 Download eSaral APP",
+    "C": "<smiles>BrCCC(Br)c1ccccc1</smiles>",
+    "D": "<smiles>Br/C=C/C(Br)c1ccccc1</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The correct structure of product 'A' formed in the following reaction.",
+   "options": {
+    "A": "<smiles>OC(c1ccccc1)c1ccccc1</smiles>",
+    "B": "<smiles>OCc1ccccc1</smiles>",
+    "C": "<smiles>[2H]C([2H])([2H])c1ccccc1</smiles>",
+    "D": "<smiles>[2H]C([2H])([2H])c1ccccc1</smiles>\n\nOfficial Ans. by NTA (A)\n1 Ans. (A)\nSol. $\\mathrm{PhCH}=\\mathrm{O}+\\mathrm{PhCH}=\\mathrm{O}$\n$\\xrightarrow{\\mathrm{OD} / \\mathrm{D}_{2} \\mathrm{O}} \\mathrm{PhCH}_{2} \\mathrm{OD}+\\mathrm{PhCO}_{2}^{-}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{PhCH}=\\mathrm{O}+\\mathrm{PhCH}=\\mathrm{O}$\n$\\xrightarrow{\\mathrm{OD} / \\mathrm{D}_{2} \\mathrm{O}} \\mathrm{PhCH}_{2} \\mathrm{OD}+\\mathrm{PhCO}_{2}^{-}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Which one of the following compounds is inactive towards $\\mathrm{S}_{\\mathrm{N}} 1$ reaction?\n(A)\n<smiles>CC(C)(C)Cl</smiles>\n(B)\n<smiles>C=CCCl</smiles>\n(C)\n<smiles>ClC12CCC(CC1)C2</smiles>\n(D)\n<smiles>CC(Cl)c1ccccc1</smiles>",
+   "options": null,
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Sol. The carbocation fromed is very unstable.\nSo it is inactive towards $\\mathrm{S}_{\\mathrm{N}} 1$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Identify the major product formed in the following sequence of reactions :\n<smiles>Nc1ccccc1</smiles>",
+   "options": {
+    "A": "<smiles>Brc1ccccc1</smiles>",
+    "B": "<smiles>NNc1ccc(Br)cc1</smiles>",
+    "C": "<smiles>Brc1cc(Br)cc(Br)c1</smiles>",
+    "D": "<smiles>Oc1c(Br)cc(Br)cc1Br</smiles>\n\nOfficial Ans. by NTA (C)\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nAllen Ans. (C)\n\nSol."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A primary aliphatic amine on reaction with nitrous acid in cold (273 K) and there after raising temperature of reaction mixture to room temperature (298 K). Gives a/an",
+   "options": {
+    "A": "nitrile",
+    "B": "alcohol",
+    "C": "diazonium salt",
+    "D": "secondary amine\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{R}-\\mathrm{NH}_{2} \\xrightarrow[+\\mathrm{HCl}]{\\mathrm{NaNO}_{2}} \\mathrm{R}-\\mathrm{N}_{2}^{+} \\rightarrow \\mathrm{R}^{+} \\xrightarrow[\\mathrm{H}_{2} \\mathrm{O}]{ } \\mathrm{R}-\\mathrm{OH}$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{R}-\\mathrm{NH}_{2} \\xrightarrow[+\\mathrm{HCl}]{\\mathrm{NaNO}_{2}} \\mathrm{R}-\\mathrm{N}_{2}^{+} \\rightarrow \\mathrm{R}^{+} \\xrightarrow[\\mathrm{H}_{2} \\mathrm{O}]{ } \\mathrm{R}-\\mathrm{OH}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which one of the following is NOT a copolymer ?",
+   "options": {
+    "A": "Buna-S",
+    "B": "Neoprene",
+    "C": "PHBV",
+    "D": "Butadiene-styrene\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Buna-S, PHBr and Butadiene-styrene are copolymer. Only neoprene is namopolymer."
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Buna-S, PHBr and Butadiene-styrene are copolymer. Only neoprene is namopolymer."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Stability of $\\alpha$ - Helix structure of proteins depends upon",
+   "options": {
+    "A": "dipolar interaction",
+    "B": "H-bonding interaction",
+    "C": "van der Waals forces",
+    "D": "$\\pi$-stacking interaction\n\nOfficial Ans. by NTA (B)\nAns. (B)"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The formula of the purple colour formed in Laissaigne's test for sulphur using sodium nitroprusside is",
+   "options": {
+    "A": "$\\mathrm{NaFe}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$",
+    "B": "$\\mathrm{Na}\\left[\\mathrm{Cr}\\left(\\mathrm{NH}_{3}\\right)_{2}(\\mathrm{NCS})_{4}\\right]$",
+    "C": "$\\mathrm{Na}_{2}\\left[\\mathrm{Fe}(\\mathrm{CN})_{5}(\\mathrm{NO})\\right]$",
+    "D": "$\\mathrm{Na}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{5}(\\mathrm{NOS})\\right]$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\quad \\mathrm{Na}_{2} \\mathrm{~S}+\\mathrm{Na}_{2}\\left[\\mathrm{Fe}(\\mathrm{CN})_{5} \\mathrm{NO}\\right] \\rightarrow \\mathrm{Na}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{5} \\mathrm{NO}_{5}\\right]$\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Na}_{2} \\mathrm{~S}+\\mathrm{Na}_{2}\\left[\\mathrm{Fe}(\\mathrm{CN})_{5} \\mathrm{NO}\\right] \\rightarrow \\mathrm{Na}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{5} \\mathrm{NO}_{5}\\right]$\nSECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A 2.0 g sample containing $\\mathrm{MnO}_{2}$ is treated with HCl liberating $\\mathrm{Cl}_{2}$. The $\\mathrm{Cl}_{2}$ gas is passed into a solution of KI and 60.0 mL of $0.1 \\mathrm{M} \\mathrm{Na}_{2} \\mathrm{~S}_{2} \\mathrm{O}_{3}$ is required to titrate the liberated iodine. The percentage of $\\mathrm{MnO}_{2}$ in the sample is $\\_\\_\\_\\_$ .\n(Nearest integer)\n[Atomic masses (in u) $\\mathrm{Mn}=55 ; \\mathrm{Cl}=35.5 ; \\mathrm{O}=16$, $\\mathrm{I}=127, \\mathrm{Na}=23, \\mathrm{~K}=39, \\mathrm{~S}=32$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "13"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Due to vacancy defect density of the substance will decrease."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If the work function of a metal is $6.63 \\times 10^{-19} \\mathrm{~J}$, the maximum wavelength of the photon required to remove a photoelectron from the metal is $\\_\\_\\_\\_$\nnm. (Nearest integer)\n[Given : $\\mathrm{h}=6.63 \\times 10^{-34} \\mathrm{~J} \\mathrm{~s}$, and $\\mathrm{c}=3 \\times 10^{8} \\mathrm{~m} \\mathrm{~s}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "300"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "The potential difference between the fixed and diffused layer of charges in a colloidal particle is called zeta potential"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The hybridization of P exhibited in $\\mathrm{PF}_{5}$ is $\\mathrm{sp}^{\\mathrm{x}} \\mathrm{d}^{\\mathrm{y}}$. The value of y is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{E} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{10} 4 \\mathrm{~s}^{2} 4 \\mathrm{p}^{4}$\nElement above $\\mathrm{E} \\Rightarrow[\\mathrm{Ne}] 3 \\mathrm{~s}^{2} 3 \\mathrm{p}^{4}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "4.0 L of an ideal gas is allowed to expand isothermally into vacuum until the total volume is 20 L. The amount of heat absorbed in this expansion is $\\_\\_\\_\\_$ L atm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "0"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "From Ellingham diagram given in NCERT, it can be seen that Mg, MgO line crosses $\\mathrm{Al}, \\mathrm{Al}_{2} \\mathrm{O}_{3}$ line after 1350°C hence assertion is true.",
+     "Yes, Mg have lower MP and BP than aluminium but it does not explain the above fact."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The vapour pressures of two volatile liquids A and B at 25°C are 50 Torr and 100 Torr, respectively. If the liquid mixture contains 0.3 mole fraction of A, then the mole fraction of liquid B in the vapour phase is $\\frac{x}{17}$. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "14"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{CuO}+\\mathrm{H}_{2} \\rightarrow \\mathrm{Cu}+\\mathrm{H}_{2} \\mathrm{O}$ (under hot conditions)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The solubility product of a sparingly soluble salt $\\mathrm{A}_{2} \\mathrm{X}_{3}$ is $1.1 \\times 10^{-23}$. If specific conductance of the solution is $3 \\times 10^{-5} \\mathrm{~S} \\mathrm{~m}^{-1}$, the limiting molar conductivity of the solution is $\\mathrm{x} \\times 10^{-3} \\mathrm{~S} \\mathrm{~m}^{2} \\mathrm{~mol}^{-1}$. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Ba}\\left(\\mathrm{N}_{3}\\right)_{2} \\rightarrow \\mathrm{Ba}+3 \\mathrm{~N}_{2}$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The quantity of electricity in Faraday needed to reduce 1 mol of $\\mathrm{Cr}_{2} \\mathrm{O}_{7}^{2-}$ to $\\mathrm{Cr}^{3+}$ is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "As +ve oxidation state increases, EN of element increases hence acidic character increases. Down the group, non-metallic character decreases, acidic character decreases.",
+     "Acidic character : $\\mathrm{E}_{2} \\mathrm{O}_{5}>\\mathrm{E}_{2} \\mathrm{O}_{3}$\nDown the group, acidic character of $\\mathrm{E}_{2} \\mathrm{O}_{3}$ decreases"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "For a first order reaction $\\mathrm{A} \\rightarrow \\mathrm{B}$, the rate constant, $\\mathrm{k}=5.5 \\times 10^{-14} \\mathrm{~s}^{-1}$. The time required for 67\\% completion of reaction is $\\mathrm{x} \\times 10^{-1}$ times the half life of reaction. The value of x is $\\_\\_\\_\\_$ (Nearest integer)\n(Given : $\\log 3=0.4771$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "16"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{E}_{\\mathrm{M}^{3+} / \\mathrm{M}^{2+}}^{\\mathrm{o}} \\Rightarrow \\quad \\begin{array}{cc}\\mathrm{EU} & \\mathrm{Yb} \\\\ -0.35 & -1.05\\end{array}$\nHence, due to more reduction potential in Eu as compared to Yb , it can concluded that $\\mathrm{Eu}^{2+}$ is more stable than $\\mathrm{Yb}^{2+}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Number of complexes which will exhibit synergic bonding amongst, $\\left[\\mathrm{Cr}(\\mathrm{CO})_{6}\\right],\\left[\\mathrm{Mn}(\\mathrm{CO})_{5}\\right]$ and $\\left[\\mathrm{Mn}_{2}(\\mathrm{CO})_{10}\\right]$ is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\left[\\mathrm{Ni}(\\mathrm{CN})_{4}\\right]^{2-}: \\mathrm{d}^{8}$ configuration, SFL, sq. planar splitting ( $\\mathrm{dsp}^{2}$ ), diamagnetic.\n$\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]: \\mathrm{d}^{10}$ config (after excitation), SFL, tetrahedral splitting $\\left(\\mathrm{sp}^{3}\\right)$, diamagnetic.\n$\\left[\\mathrm{NiCl}_{4}\\right]^{2-}: \\mathrm{d}^{8}$ config, WFL, tetrahedral splitting ( $\\mathrm{sp}^{3}$ ), paramagnetic( 2 unpaired $\\mathrm{e}^{-}$)."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In the estimation of bromine, 0.5 g of an organic compound gave 0.40 g of silver bromide. The percentage of bromine in the given compound is\n$\\_\\_\\_\\_$ \\% (nearest integer)\n(Relative atomic masses of Ag and Br are 108u and 80 u, respectively).",
+   "options": null,
+   "embedded_answer": {
+    "raw": "34"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

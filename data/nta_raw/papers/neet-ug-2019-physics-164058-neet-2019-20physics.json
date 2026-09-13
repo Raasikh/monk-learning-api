@@ -1,61 +1,818 @@
 {
+ "paper_id": "neet-ug-2019-physics-164058-neet-2019-20physics",
+ "exam_tag": "neet-ug",
+ "tags": [
+  "neet-ug",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "neet-ug-2019-physics-164058-neet-2019-20physics",
+  "exam": "neet-ug",
+  "year": 2019,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL; no official key URL known for this year/session",
   "exam_tag": "neet-ug",
   "tags": [
-    "neet-ug",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "neet-ug",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "neet-ug-2019-physics-164058-neet-2019-20physics",
-    "exam": "neet-ug",
-    "year": 2019,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL; no official key URL known for this year/session",
-    "exam_tag": "neet-ug",
-    "tags": [
-      "neet-ug",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/neet/neet-2019-question-paper/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/27/164058-NEET_2019%20Physics.pdf",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/neet/neet-2019-question-paper/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/27/164058-NEET_2019%20Physics.pdf",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "ef287fcf19312053c5b003a15a416e8d63cfe6466a509a49eef810c586ec465a",
+  "page_count": 11,
+  "text_chars": 970,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/neet-ug-2019-physics-164058-neet-2019-20physics.pdf"
+ },
+ "answer_sheet": {
+  "status": "unavailable",
+  "source": null,
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": []
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "When a block of mass $M$ is suspended by a long wire of length L, the length of the wire becomes (L + I). The elastic potential energy stored in the extended wire is :\n(1) MgI\n(2) MgL\n(3) $\\frac{\\mathbf{1}}{\\mathbf{2}} \\mathbf{M g I}$\n(4) $\\frac{\\mathbf{1}}{\\mathbf{2}} \\mathbf{M g L}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathbf{U}=\\frac{\\mathbf{1}}{\\mathbf{2}}$ (work done by gravity)\n$\\mathrm{U}=\\frac{1}{2} \\mathrm{MgI}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "ef287fcf19312053c5b003a15a416e8d63cfe6466a509a49eef810c586ec465a",
-    "page_count": 11,
-    "text_chars": 970,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/neet-ug-2019-physics-164058-neet-2019-20physics.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A mass $m$ is attached to a thin wire and whirled in a vertical circle. The wire is most likely to break when:\n(1) the mass is at the highest point\n(2) the wire is horizontal\n(3) the mass is at the lowest point\n(4) inclined at an angle of 60° from vertical\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nT-m g=\\frac{m u^{2}}{I} \\\\\nT=m g+\\frac{m u^{2}}{I}\n\\end{array}$$",
+     "The tension is maximum at the lowest position of mass, so the chance of breaking is maximum."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Ionized hydrogen atoms and $\\alpha$-particles with same momenta enters perpendicular to a constant magnetic field, B. The ratio of their radii of their paths $\\mathrm{r}_{\\mathrm{H}}: \\mathrm{r}_{\\alpha}$ will be :\n(1) 2 : 1\n(2) 1 : 2\n(3) 4 : 1\n(4) 1 : 4\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{r}_{\\mathrm{H}}=\\frac{\\mathrm{p}}{\\mathrm{eB}}$\n$$\\begin{array}{l}\nr_{\\alpha}=\\frac{p}{2 e B} \\\\\n\\frac{r_{H}}{r_{\\alpha}}=\\frac{\\frac{p}{e B}}{\\frac{p}{2 e B}} \\\\\n\\frac{r_{H}}{r_{\\alpha}}=\\frac{2}{1}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Body A of mass 4 m moving with speed $u$ collides with another body B of mass 2m, at rest. The collision is head on and elastic in nature. After the collision the fraction of energy lost by the colliding body $A$ is :\n(1) $\\frac{1}{9}$\n(2) $\\frac{8}{9}$\n(3) $\\frac{4}{9}$\n(4) $\\frac{5}{9}$\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Fractional loss of KE of ccolliding body\n$$\\begin{aligned}\n\\frac{\\Delta K E}{K E} & =\\frac{4\\left(m_{1} m_{2}\\right)}{\\left(m_{1}+m_{2}\\right)^{2}} \\\\\n& =\\frac{4(4 m) 2 m}{(4 m+2 m)^{2}} \\\\\n& =\\frac{32 m^{2}}{36 m^{2}}=\\frac{8}{9}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In a double slit experiment, when light of wavelength 400 nm was used, the angular width of the first minima formed on a screen placed 1 m away, was found to be $0.2^{\\circ}$. What will be the angular width of the first minima, if the entire experimental apparatus is immersed in water? $\\left(\\mu_{\\text {water }}=4 / 3\\right)$\n(1) 0.266°\n(2) 0.15°\n(3) 0.05°\n(4) 0.1°\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In air angular fringe width $\\theta_{0}=\\frac{\\beta}{D}$\nAngular fringe width in water\n$$\\begin{aligned}\n\\theta_{\\mathrm{w}} & =\\frac{\\beta}{\\mu \\mathrm{D}}=\\frac{\\theta_{0}}{\\mu} \\\\\n& =\\frac{0.2^{\\circ}}{\\left(\\frac{4}{3}\\right)}=0.15^{\\circ}\n\\end{aligned}$$",
+     "NEET Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In which of the following devices, the eddy current effect is not used?\n(1) Induction furnace\n(2) Magnetic braking in train\n(3) Electromagnet\n(4) Electric heater\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Electric heater does not involve Eddy currents. It uses Joule's heating effect."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A soap bubble, having radius of 1 mm, is blown from a detergent solution having a surface tension of $2.5 \\times 10^{-2} \\mathrm{~N} / \\mathrm{m}$. The pressure inside the bubble equals at a point $\\mathbf{Z}_{0}$ below the free surface of water in a container. Taking $\\mathbf{g}=\\mathbf{1 0 ~ m} \\boldsymbol{/} \\mathbf{s}^{\\mathbf{2}}$, density of water $=\\mathbf{1 0}^{\\mathbf{3}} \\mathbf{~ k g} / \\mathbf{m}^{\\mathbf{3}}$, the value of $Z_{0}$ is :\n(1) 100 cm\n(2) 10 cm\n(3) 1 cm\n(4) 0.5 cm\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Excess pressure $=\\frac{4 \\mathrm{~T}}{\\mathrm{R}}$, Gauge pressure\n$$\\begin{array}{l}\n=\\rho g Z_{0} \\\\\nP_{0}+\\frac{4 T}{R}=P_{0}+\\rho g Z_{0} \\\\\nZ_{0}=\\frac{4 T}{R \\times \\rho g} \\\\\nZ_{0}=\\frac{4 \\times 2.5 \\times 10^{-2}}{10^{-3} \\times 1000 \\times 10} \\mathrm{~m} \\\\\nZ_{0}=1 \\mathrm{~cm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Which colour of the light has the longest wavelength?\n(1) Red\n(2) Blue\n(3) Green\n(4) Violet\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Red has the longest wavelength among the given options."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A disc of radius 2 m and mass 100 kg rolls on a horizontal floor. Its centre of mass has speed of 20 cm/s. How much work is needed to stop it?\n(1) 3 J\n(2) 30 kJ\n(3) 2 J\n(4) 1 J\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Work required = change in kinetic energy\n$$\\begin{array}{l}\n\\text { Final } K E=0 \\\\\n\\begin{aligned}\n\\text { Initial } K E & \\left.=\\frac{1}{2} m v^{2}+\\frac{1}{2} \\right\\rvert\\, \\omega^{2}=\\frac{3}{4} m v^{2} \\\\\n& =\\frac{3}{4} \\times 100 \\times\\left(20 \\times 10^{-2}\\right)^{2}=3 \\mathrm{~J}\n\\end{aligned} \\\\\n|\\triangle K E|=3 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The displacement of a particle executing simple harmonic motion is given by\n$$y=A_{0}+A \\sin \\omega t+B \\cos \\omega t$$\nThen the amplitude of its oscillation is given by :\n(1) $\\mathrm{A}_{0}+\\sqrt{\\mathrm{A}^{2}+\\mathrm{B}^{2}}$\n(2) $\\sqrt{A^{2}+B^{2}}$\n(3) $\\sqrt{\\mathbf{A}_{0}^{2}+(\\mathbf{A}+\\mathbf{B})^{2}}$\n(4) A + B\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$y=A_{0}+A \\sin \\omega t+B \\sin \\omega t$$",
+     "Equate SHM\n$$y^{\\prime}=y-A_{0}=A \\sin \\omega t+B \\cos \\omega t$$",
+     "Resultant amplitude\n$$\\begin{aligned}\nR & =\\sqrt{A^{2}+B^{2}+2 A B \\cos 90^{\\circ}} \\\\\n& =\\sqrt{A^{2}+B^{2}}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two similar thin equi-convex lenses, of focal length f each, are kept coaxially in contact with each other such that the focal length of the combination is $F_{1}$. When the space between the two lenses is filled with glycerine (which has the same refractive index $(\\mu=1.5)$ as that of glass) then the equivalent focal length is $F_{2}$. The ratio $F_{1}: F_{2}$ will be :\n(1) 2 : 1\n(2) 1 : 2\n(3) 2 : 3\n(4) 3 : 4\nAnswer (2)\nNEET Exam Solution\n2\nSaral",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Equivalent focal length in air $\\frac{1}{\\mathrm{~F}_{1}}=\\frac{1}{\\mathrm{f}}+\\frac{1}{\\mathrm{f}}=\\frac{2}{\\mathrm{f}}$\nWhen glycerin is filled inside, glycerin lens behaves like a diverging lens of focal length (-f)\n$$\\begin{aligned}\n\\frac{1}{F_{2}} & =\\frac{1}{f}+\\frac{1}{f}-\\frac{1}{f} \\\\\n& =\\frac{1}{f} \\\\\n\\frac{F_{1}}{F_{2}} & =\\frac{1}{2}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Increase in temperature of a gas filled in a container would lead to :\n(1) Increase in its mass\n(2) Increase in its kinetic energy\n(3) Decrease in its pressure\n(4) Decrease in intermolecular distance\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Increase in temperature would lead to the increase in kinetic energy of gas (assuming far as to be ideal) as $\\mathbf{U}=\\frac{\\mathbf{F}}{\\mathbf{2}} \\mathbf{n R T}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "An electron is accelerated through a potential difference of 10,000 V. Its de Broglie wavelength is, (nearly) : $\\left(\\mathrm{m}_{\\mathrm{e}}=9 \\times 10^{-31} \\mathrm{~kg}\\right)$\n(1) $\\mathbf{1 2 . 2} \\times \\mathbf{1 0}^{-\\mathbf{1 3}} \\mathbf{~ m}$\n(2) $12.2 \\times 10^{-12} \\mathrm{~m}$\n(3) $12.2 \\times 10^{-14} \\mathrm{~m}$\n(4) 12.2 nm\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For an electron accelerated through a potential V\n$$\\lambda=\\frac{12.27}{\\sqrt{\\mathrm{~V}}} \\AA=\\frac{12.27 \\times 10^{-10}}{\\sqrt{10000}}=12.27 \\times 10^{-12} \\mathrm{~m}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A copper rod of 88 cm and an aluminium rod of unknown length have their increase in length independent of increase in temperature. The length of aluminium rod is : $\\left(\\alpha_{\\mathrm{Cu}}=1.7 \\times 10^{-5} \\mathrm{~K}^{-1}\\right.$ and $\\left.\\alpha_{\\mathrm{Al}}=2.2 \\times 10^{-5} \\mathrm{~K}^{-1}\\right)$\n(1) 6.8 cm\n(2) 113.9 cm\n(3) 88 cm\n(4) 68 cm\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\alpha_{\\mathrm{Cu}} L_{\\mathrm{Cu}}=\\alpha_{\\mathrm{Al}} L_{\\mathrm{Al}} \\\\\n1.7 \\times 10^{-5} \\times 88 \\mathrm{~cm}=2.2 \\times 10^{-5} \\times L_{\\mathrm{Al}} \\\\\nL_{\\mathrm{Al}}=\\frac{1.7 \\times 88}{2.2}=68 \\mathrm{~cm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Pick the wrong answer in the context with rainbow.\n(1) When the light rays undergo two internal reflections in a water drop, a secondary rainbow is formed\n(2) The order of colours is reversed in the secondary rainbow\n(3) An observer can see a rainbow when his front is towards the sun\n(4) Rainbow is a combined effect of dispersion refraction and reflection of sunlight\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Rainbow can't be observed when observer faces towards sun."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A body weighs 200 N on the surface of the earth. How much will it weigh half way down to the centre of the earth ?\n(1) 150 N\n(2) 200 N\n(3) 250 N\n(4) 100 N\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Acceleration due to gravity at a depth d from surface of earth\n$$g^{\\prime}=g\\left(1-\\frac{d}{R}\\right)$$",
+     "Where $\\mathbf{g}=$ acceleration due to gravity at earth's surface",
+     "Multiplying by mass ' $m$ ' on both sides of (1)",
+     "NEET Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{aligned}\nm g^{\\prime} & =m g\\left(1-\\frac{d}{R}\\right) \\quad\\left(d=\\frac{R}{2}\\right) \\\\\n& =200\\left(1-\\frac{R}{2 R}\\right)=\\frac{200}{2}=100 \\mathrm{~N}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Six similar bulbs are connected as shown in the figure with a DC source of emf E and zero internal resistance.\nThe ratio of power consumption by the bulbs when (i) all are glowing and (ii) in the situation when two from section $A$ and one from section B are glowing, will be :\n(1) 4 : 9\n(2) $9: 4$\n(3) 1 : 2\n(4) 2 : 1\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(i) All bulbs are glowing\n$$\\begin{array}{l}\nR_{\\text {eq }}=\\frac{R}{3}+\\frac{R}{3}=\\frac{2 R}{3} \\\\\n\\operatorname{Power}\\left(P_{i}\\right)=\\frac{E^{2}}{R_{\\text {eq }}}=\\frac{3 E^{2}}{2 R}\n\\end{array}$$\n(ii) Two from section A and one from section B are glowing.\n$$\\begin{array}{l}\nR_{e q}=\\frac{R}{2}+R=\\frac{3 R}{2} \\\\\n\\operatorname{Power}\\left(P_{f}\\right)=\\frac{2 E^{2}}{3 R} \\quad \\ldots(2) \\\\\n\\frac{P_{i}}{P_{f}}=\\frac{3 E^{2} 3 R}{2 R 2 E^{2}}=9: 4\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "For a p-type semiconductor, which of the following statements is true ?\n(1) Electrons are the majority carriers and trivalent atoms are the dopants.\n(2) Holes are the majority carriers and trivalent atoms are the dopants.\n(3) Holes are the majority carriers and pentavalent atoms are the dopants.\n(4) Electrons are the majority carriers and pentavalent atoms are the dopants.\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In p-type semiconductor, an intrinsic semiconductor is doped with trivalent impurities, that creates deficiencies of valence electrons called holes which are majority charge carriers."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Average velocity of a particle executing SHM in one complete vibration is :\n(1) $\\frac{\\mathrm{A} \\omega}{2}$\n(2) $\\mathrm{A}_{\\omega}$\n(3) $\\frac{\\mathrm{A} \\omega^{2}}{2}$\n(4) Zero\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In one complete vibration, displacement is zero. So, average velocity in one complete vibration\n$$=\\frac{\\text { Displacement }}{\\text { Time interval }}=\\frac{y_{f}-y_{i}}{T}=0$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The unit of thermal conductivity is :\n(1) $\\mathbf{J ~ m ~ K}^{\\mathbf{- 1}}$\n(2) $\\mathrm{J} \\mathrm{m}^{-1} \\mathrm{~K}^{-1}$\n(3) $\\mathbf{W ~ m ~ K}^{\\boldsymbol{-} \\mathbf{1}}$\n(4) $\\mathbf{W ~ m}^{\\boldsymbol{-} \\mathbf{1}} \\mathbf{K}^{\\mathbf{- 1}}$\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "The heat current related to difference of temperature across the length I of a conductor of area A is\n$$\\frac{\\mathbf{d H}}{\\mathbf{d t}}=\\frac{\\mathrm{KA}}{\\ell} \\Delta \\mathrm{~T} \\quad(\\mathrm{~K}=\\text { coefficient of thermal }$$\nconductivity)\n$$\\therefore \\quad \\mathbf{K}=\\frac{\\ell \\mathbf{d H}}{\\mathbf{A d t} \\Delta \\mathbf{T}}$$",
+     "Unit of $\\mathbf{K}=\\mathbf{W m}^{\\boldsymbol{-} \\mathbf{1}} \\mathbf{K}^{\\mathbf{- 1}}$",
+     "NEET Exam Solution\nwww.esaral.com\n4",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A solid cylinder of mass 2 kg and radius 4 cm rotating about its axis at the rate of 3 rpm. The torque required to stop after $2 \\pi$ revolutions is\n(1) $\\mathbf{2} \\times \\mathbf{1 0}^{-\\mathbf{6}} \\mathbf{~ N ~ m}$\n(2) $2 \\times 10^{-3} \\mathrm{~N} \\mathrm{~m}$\n(3) $\\mathbf{1 2} \\times \\mathbf{1 0}^{-\\mathbf{4}} \\mathbf{~ N ~ m}$\n(4) $\\mathbf{2} \\boldsymbol{\\times} \\mathbf{1 0}^{\\mathbf{6}} \\mathbf{~ N ~ m}$\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Work energy theorem.\n$$\\begin{array}{l}\nW=\\frac{1}{2} l\\left(\\omega_{\\mathrm{f}}^{2}-\\omega_{\\mathrm{i}}^{2}\\right) \\quad \\begin{aligned}\n\\theta & =2 \\pi \\text { revolution } \\\\\n& =2 \\pi \\times 2 \\pi=4 \\pi^{2} \\mathrm{rad} \\\\\nW_{\\mathrm{i}} & =3 \\times \\frac{2 \\pi}{60} \\mathrm{rad} / \\mathrm{s}\n\\end{aligned} \\\\\n\\Rightarrow-\\tau \\theta=\\frac{1}{2} \\times \\frac{1}{2} \\mathrm{mr}^{2}\\left(0^{2}-\\omega_{\\mathrm{i}}^{2}\\right) \\\\\n\\Rightarrow-\\tau=\\frac{\\frac{1}{2} \\times \\frac{1}{2} \\times 2 \\times\\left(4 \\times 10^{-2}\\right)\\left(-3 \\times \\frac{2 \\pi}{60}\\right)^{2}}{4 \\pi^{2}} \\\\\n\\Rightarrow \\tau=2 \\times 10^{-6} \\mathrm{~N} \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A force $\\mathrm{F}=20+10 \\mathrm{y}$ acts on a particle in ydirection where F is in newton and y in meter. Work done by this force to move the particle from $\\mathrm{y}=0$ to $\\mathrm{y}=1 \\mathrm{~m}$ is\n(1) 30 J\n(2) 5 J\n(3) 25 J\n(4) 20 J\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Work done by variable force is\n$$W=\\int_{y_{i}}^{y_{f}} F d y$$",
+     "Here, $y_{i}=0, y_{f}=1 \\mathrm{~m}$\n$$\\therefore W=\\int_{0}^{1}(20+10 y) d y=\\left[20 y+\\frac{10 y^{2}}{2}\\right]_{0}^{1}=25 \\mathrm{~J}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Which of the following acts as a circuit protecting device?\n(1) Conductor\n(2) Inductor\n(3) Switch\n(4) Fuse\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Fuse wire has less melting point so when excess current flows, due to heat produced in it, it melts."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In the circuits shown below, the readings of voltmeters and the ammeters will be\nCircuit 1\nCircuit 2\n(1) $V_{2}>V_{1}$ and $i_{1}=i_{2}$\n(2) $V_{1}=V_{2}$ and $i_{1}>i_{2}$\n(3) $V_{1}=V_{2}$ and $i_{1}=i_{2}$\n(4) $V_{2}>V_{1}$ and $i_{1}>i_{2}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For ideal voltmeter, resistance is infinite and for the ideal ammeter, resistance is zero.\n$$\\begin{array}{l}\nV_{1}=i_{1} \\times 10=\\frac{10}{10} \\times 10=10 \\mathrm{volt} \\\\\nV_{2}=i_{2} \\times 10=\\frac{10}{10} \\times 10=10 \\mathrm{volt} \\\\\nV_{1}=V_{2} \\\\\ni_{1}=i_{2}=\\frac{10 \\mathrm{~V}}{10 \\Omega}=1 \\mathrm{~A}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A hollow metal sphere of radius $R$ is uniformly charged. The electric field due to the sphere at a distance r from the centre\n(1) Increases as r increase for r < R and for $r>R$\n(2) Zero as r increases for r < R, decreases as r increases for r > R\n(3) Zero as r increases for r < R, increases as r increases for r > R\n(4) Decreases as $r$ increases for $r<R$ and for $r>R$\nAnswer (2)\nNEET Exam Solution\n5\nSaral",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Charge $Q$ will be distributed over the surface of hollow metal sphere.\n(i) For $\\mathrm{r}<\\mathrm{R}$ (inside)",
+     "By Gauss law, $\\oint \\overrightarrow{\\mathrm{E}}_{\\text {in }} \\cdot \\overrightarrow{\\mathrm{d} \\mathbf{S}}=\\frac{\\mathrm{q}_{\\text {en }}}{\\varepsilon_{0}}=0$\n$$\\Rightarrow \\mathrm{E}_{\\text {in }}=0 \\quad\\left(\\because \\mathrm{q}_{\\text {en }}=0\\right)$$\n(ii) For $\\mathrm{r}>\\mathrm{R}$ (outside)\n$$\\begin{array}{l}\n\\oint \\vec{E}_{0} \\cdot \\overrightarrow{d S}=\\frac{q_{e n}}{\\varepsilon_{0}} \\\\\n\\text { Here, } q_{e n}=Q\\left(\\because q_{e n}=Q\\right) \\\\\n\\therefore E_{0} 4 \\pi r^{2}=\\frac{Q}{\\varepsilon_{0}} \\\\\n\\therefore E_{0} \\propto \\frac{1}{r^{2}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "At a point A on the earth's surface the angle of dip, $\\delta=+25^{\\circ}$. At a point B on the earth's surface the angle of dip, $\\delta=-25^{\\circ}$. We can interpret that:\n(1) A and B are both located in the northern hemisphere.\n(2) A is located in the southern hemisphere and B is located in the northern hemisphere.\n(3) A is located in the northern hemisphere and B is located in the southern hemisphere.\n(4) A and B are both located in the southern hemisphere.\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Angle of dip is the angle between earth's resultant magnetic field from horizontal. Dip is zero at equator and positive in northern hemisphere.",
+     "In southern hemisphere dip angle is considered as negative."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The total energy of an electron in an atom in an orbit is $\\mathbf{- 3 . 4} \\mathbf{~ e V}$. Its kinetic and potential energies are, respectively:\n(1) -3.4 eV, -3.4 eV\n(2) -3.4 eV, -6.8 eV\n(3) 3.4 eV, -6.8 eV\n(4) 3.4 eV, 3.4 eV\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In Bohr's model of H atom\n$$\\begin{array}{ll}\n\\therefore & \\text { K.E. }=\\mid \\text { TE } \\left\\lvert\\,=\\frac{|U|}{2}\\right. \\\\\n\\therefore & \\text { K.E. }=3.4 \\mathrm{eV} \\\\\n& U=-6.8 \\mathrm{eV}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In total internal reflection when the angle of incidence is equal to the critical angle for the pair of media in contact, what will be angle of refraction?\n(1) 180°\n(2) 0°\n(3) Equal to angle of incidence\n(4) 90°\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "At $\\mathrm{i}=\\mathrm{i}_{\\mathrm{c}}$, refracted ray grazes with the surface.",
+     "So angle of refraction is 90°.",
+     "NEET Exam Solution\nwww.esaral.com\n6",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The work done to raise a mass $m$ from the surface of the earth to a height $h$, which is equal to the radius of the earth, is:\n(1) mgR\n(2) 2mgR\n(3) $\\frac{1}{2} \\mathrm{mgR}$\n(4) $\\frac{3}{2} \\mathrm{mgR}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Initial potential energy at earths surface is\n$$U_{i}=\\frac{-G M m}{R}$$",
+     "Final potential energy at height $\\mathrm{h}=\\mathrm{R}$\n$$U_{f}=\\frac{-G M m}{2 R}$$",
+     "As work done = Change in PE\n$$\\begin{aligned}\n\\therefore & W=U_{f}-U_{i} \\\\\n& =\\frac{G M m}{2 R}=\\frac{g R^{2} m}{2 R}=\\frac{m g R}{2} \\quad\\left(\\because G M=g R^{2}\\right)\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "When an object is shot from the bottom of a long smooth inclined plane kept at an angle 60° with horizontal, it can travel a distance $\\times 1$ along the plane. But when the inclination is decreased to 30° and the same object is shot with the same velocity, it can travel $\\mathrm{x}_{2}$ distance. Then $\\mathrm{x}_{1}: \\mathrm{x}_{2}$ will be:\n(1) $1: \\sqrt{2}$\n(2) $\\sqrt{2}: 1$\n(3) $1: \\sqrt{3}$\n(4) $1: 2 \\sqrt{3}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(Stopping distance) $\\quad \\mathrm{x}_{1}=\\frac{\\mathrm{u}^{2}}{2 \\mathrm{~g} \\sin 60^{\\circ}}$\n(Stopping distance) $\\quad \\mathrm{x}_{2}=\\frac{\\mathrm{u}^{2}}{2 \\mathrm{~g} \\sin 30^{\\circ}}$\n$$\\Rightarrow \\frac{x_{1}}{x_{2}}=\\frac{\\sin 30^{\\circ}}{\\sin 60^{\\circ}}=\\frac{1 \\times 2}{2 \\times \\sqrt{3}}=1: \\sqrt{3}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 31,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "$\\alpha$-particle consists of :\n(1) 2 protons and 2 neutrons only\n(2) 2 electrons, 2 protons and 2 neutrons\n(3) 2 electrons and 4 protons only\n(4) 2 protons only\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\alpha$-particle is nucleus of Helium which has two protons and two neutrons."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 32,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The speed of a swimmer in still water is 20 m/s. The speed of river water is 10 m/s and is flowing due east. If he is standing on the south bank and wishes to cross the river along the shortest path the angle at which he should make his strokes w.r.t. north is given by :\n(1) 30° west\n(2) 0°\n(3) 60° west\n(4) 45° west\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nV_{S R}=20 \\mathrm{~m} / \\mathrm{s} \\\\\nV_{R G}=10 \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{V}}_{\\mathrm{SG}}=\\overrightarrow{\\mathrm{V}}_{\\mathrm{SR}}+\\overrightarrow{\\mathrm{V}}_{\\mathrm{RG}} \\\\\n\\sin \\theta=\\frac{\\left|\\overrightarrow{\\mathrm{V}}_{\\mathrm{RG}}\\right|}{\\left|\\overrightarrow{\\mathrm{V}}_{\\mathrm{SR}}\\right|} \\\\\n\\sin \\theta=\\frac{10}{20} \\\\\n\\sin \\theta=\\frac{1}{2} \\\\\n\\theta=30^{\\circ} \\text { west }\n\\end{array}$$",
+     "NEET Exam Solution\nwww.esaral.com\n7",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n4"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 33,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A particle moving with velocity $\\overrightarrow{\\mathrm{V}}$ is acted by three forces shown by the vector triangle PQR. The velocity of the particle will :\n(1) Increase\n(2) Decrease\n(3) Remain constant\n(4) Change according to the smallest force $\\overrightarrow{\\mathrm{QR}}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "As forces are forming closed loop in same order",
+     "So, $\\overrightarrow{\\mathbf{F}}_{\\text {net }}=0$\n$$\\begin{aligned}\n\\Rightarrow & m \\frac{d \\vec{v}}{d t}=0 \\\\\n\\Rightarrow \\vec{v} & =\\text { constant }\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 34,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two particles A and B are moving in uniform circular motion in concentric circles of radii $r_{A}$ and $r_{B}$ with speed $v_{A}$ and $v_{B}$ respectively. Their time period of rotation is the same. The ratio of angular speed of A to that of B will be :\n(1) $r_{A}: r_{B}$\n(2) $\\mathrm{v}_{\\mathrm{A}}: \\mathrm{v}_{\\mathrm{B}}$\n(3) $r_{B}: r_{A}$\n(4) 1 : 1\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$T_{A}=T_{B}=T$$\n$$\\begin{array}{l}\n\\omega_{A}=\\frac{2 \\pi}{T_{A}} \\\\\n\\omega_{B}=\\frac{2 \\pi}{T_{B}} \\\\\n\\frac{\\omega_{A}}{\\omega_{B}}=\\frac{T_{B}}{T_{A}}=\\frac{T}{T}=1\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 35,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A block of mass 10 kg is in contact against the inner wall of a hollow cylindrical drum of radius 1 m . The coefficient of friction between the block and the inner wall of the cylinder is 0.1. The minimum angular velocity needed for the cylinder to keep the block stationary when the cylinder is vertical and rotating about its axis, will be : $\\left(\\mathbf{g}=\\mathbf{1 0 ~ m} / \\mathbf{s}^{\\mathbf{2}}\\right)$\n(1) $\\sqrt{\\mathbf{1 0}} \\mathbf{~ r a d} \\boldsymbol{/} \\mathbf{s}$\n(2) $\\frac{10}{2 \\pi} \\mathrm{rad} / \\mathrm{s}$\n(3) 10 rad/s\n(4) $10 \\pi \\mathrm{rad} / \\mathrm{s}$\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For equilibrium of the block limiting friction\n$$\\begin{aligned}\n& f_{L} \\geq m g \\\\\n\\Rightarrow & \\mu N \\geq m g \\\\\n\\Rightarrow & \\mu m r \\omega^{2} \\geq m g \\\\\n& \\omega \\geq \\sqrt{\\frac{g}{r \\mu}} \\\\\n& \\omega_{\\min }=\\sqrt{\\frac{g}{r \\mu}} \\\\\n& \\omega_{\\min }=\\sqrt{\\frac{10}{0.1 \\times 1}}=10 \\mathrm{rad} / \\mathrm{s}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 36,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two parallel infinite line charges with linear charge densities $+\\lambda \\mathrm{C} / \\mathrm{m}$ and $-\\lambda \\mathrm{C} / \\mathrm{m}$ are placed at a distance of 2R in free space. What is the electric field mid-way between the two line charges?\n(1) Zero\n(2) $\\frac{2 \\lambda}{\\pi \\varepsilon_{0} \\mathrm{R}} \\mathrm{N} / \\mathrm{C}$\n(3) $\\frac{\\lambda}{\\pi \\varepsilon_{0} \\mathrm{R}} \\mathrm{N} / \\mathrm{C}$\n(4) $\\frac{\\lambda}{2 \\pi \\varepsilon_{0} R} N / C$\nAnswer (3)\nNEET Exam Solution\n8\nSaral",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$-x \\longleftarrow x$$",
+     "Electric field due to line charge (1)\n$$\\overrightarrow{\\mathrm{E}}_{1}=\\frac{\\lambda}{2 \\pi \\varepsilon_{0} \\mathrm{R}} \\hat{\\mathrm{i}} \\mathrm{~N} / \\mathrm{C}$$",
+     "Electric field due to line charge (2)\n$$\\begin{aligned}\n\\vec{E}_{2} & =\\frac{\\lambda}{2 \\pi \\varepsilon_{0} R} \\hat{i} N / C \\\\\n\\vec{E}_{\\text {net }} & =\\vec{E}_{1}+\\vec{E}_{2} \\\\\n& =\\frac{\\lambda}{2 \\pi \\varepsilon_{0} R} \\hat{i}+\\frac{\\lambda}{2 \\pi \\varepsilon_{0} R} \\hat{i} \\\\\n& =\\frac{\\lambda}{\\pi \\varepsilon_{0} R} \\hat{i} N / C\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 37,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "Two point charges A and B, having charges + Q and $-Q$ respectively, are placed at certain distance apart and force acting between them is $F$. If 25\\% charge of $A$ is transferred to $B$, then force between the charges becomes :\n(1) F\n(2) $\\frac{9 \\mathrm{~F}}{16}$\n(3) $\\frac{16 \\mathrm{~F}}{9}$\n(4) $\\frac{4 \\mathrm{~F}}{3}$\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "If 25\\% of charge of A transferred to B then\n$$\\begin{array}{l}\nq_{A}=Q-\\frac{Q}{4}=\\frac{3 Q}{4} \\text { and } q_{B}=-Q+\\frac{Q}{4}=\\frac{-3 Q}{4} \\\\\nq_{A} \\stackrel{ }{r} q_{B} \\\\\nF_{1}=\\frac{k q_{A} q_{B}}{r^{2}}\n\\end{array}$$\n$$\\begin{array}{l}\nF_{1}=\\frac{k\\left(\\frac{3 Q}{4}\\right)^{2}}{r^{2}} \\\\\nF_{1}=\\frac{9}{16} \\frac{k Q}{r^{2}} \\\\\nF_{1}=\\frac{9 F}{16}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 38,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A small hole of area of cross-section $2 \\mathrm{~mm}^{2}$ is present near the bottom of a fully filled open tank of height 2 m. Taking $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$, the rate of flow of water through the open hole would be nearly\n(1) $\\mathbf{1 2 . 6} \\times \\mathbf{1 0}^{-\\mathbf{6}} \\mathbf{~ m}^{\\mathbf{3}} / \\mathbf{s}$\n(2) $8.9 \\times 10^{-6} \\mathrm{~m}^{3} / \\mathrm{s}$\n(3) $2.23 \\times 10^{-6} \\mathrm{~m}^{3} / \\mathrm{s}$\n(4) $6.4 \\times 10^{-6} \\mathrm{~m}^{3} / \\mathrm{s}$\nAnswer (1)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Rate of flow liquid\n$$\\begin{aligned}\nQ & =a u=a \\sqrt{2 g h} \\\\\n& =2 \\times 10^{-6} \\mathrm{~m}^{2} \\times \\sqrt{2 \\times 10 \\times 2} \\mathrm{~m} / \\mathrm{s} \\\\\n& =2 \\times 2 \\times 3.14 \\times 10^{-6} \\mathrm{~m}^{3} / \\mathrm{s} \\\\\n& =12.56 \\times 10^{-6} \\mathrm{~m}^{3} / \\mathrm{s} \\\\\n& =12.6 \\times 10^{-6} \\mathrm{~m}^{3} / \\mathrm{s}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 39,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The correct Boolean operation represented by the circuit diagram drawn is :\n(1) AND\n(2) OR\n(3) NAND\n(4) NOR\nAnswer (3)\nNEET Exam Solution\n9\nSaral",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "From the given logic circuit LED will glow, when voltage across LED is high.",
+     "Truth Table",
+     "\\begin{tabular}[t]{|l|l|l|}\n\\hline A & B & Y \\\\\n\\hline 0 & 0 & 1 \\\\\n\\hline 0 & 1 & 1 \\\\\n\\hline 1 & 0 & 1 \\\\\n\\hline 1 & 1 & 0 \\\\\n\\hline\n\\end{tabular}",
+     "This is out put of NAND gate."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 40,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In which of the following processes, heat is neither absorbed nor released by a system?\n(1) Isothermal\n(2) Adiabatic\n(3) Isobaric\n(4) Isochoric\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In adiabatic process, there is no exchange of heat."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 41,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A 800 turn coil of effective area $0.05 \\mathrm{~m}^{2}$ is kept perpendicular to a magnetic field $5 \\times 10^{-5} \\mathrm{~T}$. When the plane of the coil is rotated by 90° around any of its coplanar axis in 0.1 s, the emf induced in the coil will be:\n(1) 2 V\n(2) 0.2 V\n(3) $2 \\times 10^{-3} \\mathrm{~V}$\n(4) 0.02 V\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Magnetic field $\\mathrm{B}=5 \\times 10^{-5} \\mathrm{~T}$\nNumber of turns in coil $\\mathbf{N} \\boldsymbol{=} \\mathbf{8 0 0}$\nArea of coil A $=0.05 \\mathrm{~m}^{2}$\nTime taken to rotate $\\Delta \\mathrm{t}=0.1 \\mathrm{~s}$\nInitial angle $\\theta_{1}=0^{\\circ}$\nFinal angle $\\theta_{2}=90^{\\circ}$\nChange in magnetic flux $\\Delta \\phi$\n$$\\begin{array}{l}\n=\\mathrm{NBAcos} 90^{\\circ}-\\mathrm{BAcos} 0^{\\circ} \\\\\n=-\\mathrm{NBA} \\\\\n=-800 \\times 5 \\times 10^{-5} \\times 0.05 \\\\\n=-2 \\times 10^{-3} \\text { weber } \\\\\n\\mathrm{e}=-\\frac{\\Delta \\phi}{\\Delta \\mathrm{t}}=\\frac{-(-) 2 \\times 10^{-3} \\mathrm{~Wb}}{0.1 \\mathrm{~s}}=0.02 \\mathrm{~V}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 42,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The radius of circle, the period of revolution, initial position and sense of revolution are indicated in the fig.\ny - projection of the radius vector of rotating particle P is :\n(1) $\\mathbf{y ( t )}=-\\mathbf{3} \\boldsymbol{\\operatorname { c o s }} 2 \\pi \\mathbf{t}$, where $\\mathbf{y}$ in $\\mathbf{m}$\n(2) $\\mathbf{y ( t )}=4 \\sin \\left(\\frac{\\pi \\mathbf{t}}{\\mathbf{2}}\\right)$, where $\\mathbf{y}$ in $\\mathbf{m}$\n(3) $y(t)=3 \\cos \\left(\\frac{3 \\pi t}{2}\\right)$, where $y$ in $m$\n(4) $\\mathrm{y}(\\mathrm{t})=3 \\cos \\left(\\frac{\\pi \\mathrm{t}}{2}\\right)$, where y in m\nAnswer (4)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "At $\\mathrm{t}=0, \\mathrm{y}$ displacement is maximum, so equation will be cosine function.\n$$\\begin{array}{l}\nT=4 \\mathrm{~s} \\\\\n\\omega=\\frac{2 \\pi}{T}=\\frac{2 \\pi}{4}=\\frac{\\pi}{2} \\mathrm{rad} / \\mathrm{s} \\\\\ny=a \\cos \\omega t \\\\\ny=3 \\cos \\frac{\\pi}{2} t\n\\end{array}$$",
+     "NEET Exam Solution\nwww.esaral.com\n10",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n4"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 43,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A parallel plate capacitor of capacitance $20 \\mu \\mathrm{~F}$ is being charged by a voltage source whose potential is changing at the rate of $3 \\mathrm{~V} / \\mathrm{s}$. The conduction current through the connecting wires, and the displacement current through the plates of the capacitor, would be, respectively.\n(1) Zero, $60 \\mu \\mathrm{~A}$\n(2) $60 \\mu \\mathrm{~A}, 60 \\mu \\mathrm{~A}$\n(3) $\\mathbf{6 0} \\mu \\mathbf{A}$, zero\n(4) Zero, zero\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Capacitance of capacitor $\\mathbf{C}=\\mathbf{2 0} \\boldsymbol{\\mu} \\mathbf{F}$\n$$=20 \\times 10^{-6} \\mathrm{~F}$$",
+     "Rate of change of potential $\\left(\\frac{\\mathbf{d V}}{\\mathbf{d t}}\\right)=\\mathbf{3 ~ v} / \\mathbf{s}$\n$$\\begin{aligned}\nq & =C V \\\\\n\\frac{d q}{d t} & =C \\frac{d V}{d t} \\\\\ni_{c} & =20 \\times 10^{-6} \\times 3 \\\\\n& =60 \\times 10^{-6} \\mathrm{~A} \\\\\n& =60 \\mu \\mathrm{~A}\n\\end{aligned}$$",
+     "As we know that $i_{d}=i_{c}=60 \\mu \\mathrm{~A}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 44,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "In an experiment, the percentage of error occurred in the measurement of physical quantities A, B, C and D are 1\\%, 2\\%, 3\\% and 4\\% respectively. Then the maximum percentage of error in the measurement $X$, where $X=\\frac{A^{2} B^{1 / 2}}{C^{1 / 3} D^{3}}$, will be\n(1) $\\left(\\frac{\\mathbf{3}}{\\mathbf{1 3}}\\right) \\%$\n(2) 16\\%\n(3) - 10\\%\n(4) 10\\%\nAnswer (2)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Given\n$$\\begin{array}{l}\nx=\\frac{A^{2} B^{\\frac{1}{2}}}{C^{\\frac{1}{3}} D^{3}} \\\\\n\\% \\text { error, } \\frac{\\Delta x}{x} \\times 100=2 \\frac{\\Delta A}{A} \\times 100+\\frac{1}{2} \\frac{\\Delta B}{B} \\times \\\\\n100+\\frac{1}{3} \\frac{\\Delta C}{C} \\times 100+3 \\frac{\\Delta D}{D} \\times 100\n\\end{array}$$\n$$\\begin{array}{l}\n=2 \\times 1 \\%+\\frac{1}{2} \\times 2 \\%+\\frac{1}{3} \\times 3 \\%+3 \\times 4 \\% \\\\\n=2 \\%+1 \\%+1 \\%+12 \\% \\\\\n=16 \\%\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 45,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "A cylindrical conductor of radius R is carrying a constant current. The plot of the magnitude of the magnetic field. B with the distance d from the centre of the conductor, is correctly represented by the figure :\n(1)\n(2)\n(3)\n(4)\nAnswer (3)",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Inside (d < R)\nMagnetic field inside conductor\n$$\\begin{array}{l}\nB=\\frac{\\mu_{0}}{2 \\pi} \\frac{\\mathrm{i}}{\\mathrm{R}^{2}} \\mathrm{~d} \\\\\n\\text { or } \\quad B=\\mathrm{Kd}\n\\end{array}$$",
+     "Straight line passing through origin\nAt surface (d = R)\n$$\\mathbf{B}=\\frac{\\mu_{0}}{2 \\pi} \\frac{\\mathbf{i}}{\\mathbf{R}}$$",
+     "Maximum at surface\nOutside (d > R)\n$$\\mathbf{B}=\\frac{\\mu_{0}}{2 \\pi} \\frac{\\mathbf{i}}{\\mathbf{d}}$$\nor $\\mathbf{B} \\propto \\frac{\\mathbf{1}}{\\mathbf{d}}$ (Hyperbolic)",
+     "NEET Exam Solution\nwww.esaral.com\n11"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

@@ -1,550 +1,644 @@
 {
+ "paper_id": "jee-main-2022-s2-mathematics-2022-07-25-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-mathematics-2022-07-25-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-07-25",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Mathematics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-mathematics-2022-07-25-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-07-25",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Mathematics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/17022-25-07%20EVENING%20MATHS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
-  },
-  "probe": {
-    "sha256": "80979e97115b6633c4d9733769c8ab82d9dd497663a73af8dc33c2eadb973c7b",
-    "page_count": 4,
-    "text_chars": 2966,
-    "has_text_layer": true,
-    "has_question_ids": false,
-    "includes_solutions": true,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 60,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-mathematics-2022-07-25-shift-2.pdf"
-  },
-  "answer_sheet": {
-    "status": "embedded_unverified",
-    "source": "mirror_pdf_embedded",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": [
-      {
-        "qno": 1,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 2,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 3,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 4,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 5,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 6,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 7,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 8,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 9,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 13,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 14,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 15,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 16,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 17,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      },
-      {
-        "qno": 18,
-        "question_id": null,
-        "subject": null,
-        "section": null,
-        "answer": {
-          "raw": "B",
-          "option": "B"
-        }
-      }
-    ]
-  },
-  "format": "generic_mirror",
-  "status": "extracted",
-  "detected_paper_meta": {},
-  "question_count": 15,
-  "defects": [
-    "13 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 1, 2, 3, 4, 5, 6, 7, 8, 3, 6, 9, 10]",
-    "15/15 questions carry parse_flags"
-  ],
-  "questions": [
-    {
-      "qno": 1,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "z\n| z\n3 2 |\n| z\np 2i |\n5 2\n7\n2\n9\n2",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 2,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 3,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "f(3)\nf(9)\nf(15)\nf(21)\n.....\nf(99)\n50!\n2",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 4,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 5,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "21\nn 1\n3\n(4n\n1)(4n",
-      "options": {
-        "C": "7 87 7 29 14 87 21 29"
-      },
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "options_count_1",
-        "stem_under_20_chars"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 6,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "7\nx\n4\n8 2\n(cosx\nsin x)\nlim\n2\n2 sin 2x\n14 2\n7 2",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 7,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "n\nn\nn\nn\nn\nn\nn\n1\n1\n1\n1\n1\nlim\n......\n2\n1\n2\n3\n2\n1\n1\n1\n1\n1\n2\n2\n2\n2\n1\n2",
-      "options": null,
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 8,
-      "question_id": null,
-      "question_type": "single_correct",
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "1\n1\nP(A)\n, P(B)\n3\n5\n1\nP(A",
-      "options": {
-        "B": "2 P(A | B ) P(B | A ) 3 4 5 8 5 4 7 8"
-      },
-      "page_start": 1,
-      "page_end": 1,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "options_count_1"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 9,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 0,
-      "text": "101\n[cos(2 x)]\n3 ([sin( x)]\ne\n)dx\n52(1 e)\ne\n52\ne\n52(2\ne)\ne\n104\ne",
-      "options": null,
-      "page_start": 1,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "no_options_found"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 13,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 14,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "2\n2\nx\ny\n1\n16\n7\n2\n2\nx\ny\n1\n144\n25\n32\n9\n18\n5\n27\n4\n27\n10",
-      "options": null,
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 15,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "3 2",
-      "options": null,
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "stem_under_20_chars"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 16,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "x\n7\ny\n6\nz\n6\n7\n7\nx\ny\n2\nz\n6\n2\n2 29\n37\n29\n29\n2",
-      "options": null,
-      "page_start": 2,
-      "page_end": 2,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 17,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "ˆ\nˆ\nˆ\na\ni\nj\n2k\nb\nˆ\nˆ\na\nb\n2i\nk\na.b\n3\nb\na\nb\n2\n21\n3\n2 7\n2\n7\n3\n3\n2\n3",
-      "options": null,
-      "page_start": 2,
-      "page_end": 3,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "possible_text_scramble"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
-    },
-    {
-      "qno": 18,
-      "question_id": null,
-      "question_type": null,
-      "subject": null,
-      "section": null,
-      "segment": 1,
-      "text": "",
-      "options": null,
-      "page_start": 3,
-      "page_end": 4,
-      "parse_flags": [
-        "embedded_answer_captured",
-        "embedded_answer_truncated",
-        "numbering_restart_segment_1",
-        "no_options_found",
-        "empty_stem"
-      ],
-      "embedded_answer": {
-        "raw": "B",
-        "option": "B"
-      }
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/17022-25-07%20EVENING%20MATHS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "80979e97115b6633c4d9733769c8ab82d9dd497663a73af8dc33c2eadb973c7b",
+  "page_count": 4,
+  "text_chars": 2966,
+  "has_text_layer": true,
+  "has_question_ids": false,
+  "includes_solutions": true,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 60,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-mathematics-2022-07-25-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
     }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   }
   ]
+ },
+ "format": "generic_mirror",
+ "status": "extracted",
+ "detected_paper_meta": {},
+ "question_count": 15,
+ "defects": [
+  "13 question markers skipped as out-of-order (text-layer reading order scrambled; likely lost questions): [3, 1, 2, 3, 4, 5, 6, 7, 8, 3, 6, 9, 10]",
+  "15/15 questions carry parse_flags"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "For $\\mathrm{z} \\in \\mathbb{C}$ if the minimum value of $(|\\mathrm{z}-3 \\sqrt{2}|+|\\mathrm{z}-\\mathrm{p} \\sqrt{2} \\mathrm{i}|)$ is $5 \\sqrt{2}$, then a value of p is $\\_\\_\\_\\_$",
+   "options": {
+    "A": "3",
+    "B": "$\\frac{7}{2}$",
+    "C": "4",
+    "D": "$\\frac{9}{2}$"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "text_original_textlayer": "z\n| z\n3 2 |\n| z\np 2i |\n5 2\n7\n2\n9\n2",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 2,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "",
+   "options": {
+    "A": "0",
+    "B": "1",
+    "C": "2",
+    "D": "4"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   }
+  },
+  {
+   "qno": 3,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "f(3)\nf(9)\nf(15)\nf(21)\n.....\nf(99)\n50!\n2",
+   "options": {
+    "A": "${ }^{50} \\mathrm{P}_{17}$",
+    "B": "${ }^{50} \\mathrm{P}_{33}$",
+    "C": "$33!\\times 17!$",
+    "D": "$\\frac{50!}{2}$"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   }
+  },
+  {
+   "qno": 4,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "",
+   "options": {
+    "A": "1",
+    "B": "4",
+    "C": "6",
+    "D": "8"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   }
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "The sum $\\sum_{n=1}^{21} \\frac{3}{(4 n-1)(4 n+3)}$ is equal to",
+   "options": {
+    "A": "$\\frac{7}{87}$",
+    "B": "$\\frac{7}{29}$",
+    "C": "$\\frac{14}{87}$",
+    "D": "$\\frac{21}{29}$"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_count_1",
+    "stem_under_20_chars"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "text_original_textlayer": "21\nn 1\n3\n(4n\n1)(4n",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "7\nx\n4\n8 2\n(cosx\nsin x)\nlim\n2\n2 sin 2x\n14 2\n7 2",
+   "options": {
+    "A": "14",
+    "B": "7",
+    "C": "$14 \\sqrt{2}$",
+    "D": "$7 \\sqrt{2}$"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   }
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "$\\lim _{\\mathrm{n} \\rightarrow \\infty} \\frac{1}{2^{\\mathrm{n}}}\\left(\\frac{1}{\\sqrt{1-\\frac{1}{2^{\\mathrm{n}}}}}+\\frac{1}{\\sqrt{1-\\frac{2}{2^{\\mathrm{n}}}}}+\\frac{1}{\\sqrt{1-\\frac{3}{2^{\\mathrm{n}}}}}+\\ldots \\ldots+\\frac{1}{\\sqrt{1-\\frac{2^{\\mathrm{n}}-1}{2^{\\mathrm{n}}}}}\\right)$\nis equal to",
+   "options": {
+    "A": "$\\frac{1}{2}$",
+    "B": "1",
+    "C": "2",
+    "D": "-2"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "text_original_textlayer": "n\nn\nn\nn\nn\nn\nn\n1\n1\n1\n1\n1\nlim\n......\n2\n1\n2\n3\n2\n1\n1\n1\n1\n1\n2\n2\n2\n2\n1\n2",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "question_type": "single_correct",
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "If A and B are two events such that $\\mathrm{P}(\\mathrm{A})=\\frac{1}{3}, \\mathrm{P}(\\mathrm{B})=\\frac{1}{5} \\quad$ and $\\quad \\mathrm{P}(\\mathrm{A} \\cup \\mathrm{B})=\\frac{1}{2}$, then $\\mathrm{P}\\left(\\mathrm{A} \\mid \\mathrm{B}^{\\prime}\\right)+\\mathrm{P}\\left(\\mathrm{B} \\mid \\mathrm{A}^{\\prime}\\right)$ is equal to",
+   "options": {
+    "A": "$\\frac{3}{4}$",
+    "B": "$\\frac{5}{8}$",
+    "C": "$\\frac{5}{4}$",
+    "D": "$\\frac{7}{8}$"
+   },
+   "page_start": 1,
+   "page_end": 1,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "options_count_1"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "text_original_textlayer": "1\n1\nP(A)\n, P(B)\n3\n5\n1\nP(A",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 0,
+   "text": "Let [t] denote the greatest integer less than or equal to $t$. Then the value of the integral $\\int_{-3}^{101}\\left([\\sin (\\pi \\mathrm{x})]+\\mathrm{e}^{[\\cos (2 \\pi \\mathrm{x})]}\\right) \\mathrm{dx}$ is equal to",
+   "options": {
+    "A": "$\\frac{52(1-\\mathrm{e})}{\\mathrm{e}}$",
+    "B": "$\\frac{52}{\\mathrm{e}}$",
+    "C": "$\\frac{52(2+\\mathrm{e})}{\\mathrm{e}}$",
+    "D": "$\\frac{104}{\\mathrm{e}}$"
+   },
+   "page_start": 1,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "no_options_found"
+   ],
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "text_original_textlayer": "101\n[cos(2 x)]\n3 ([sin( x)]\ne\n)dx\n52(1 e)\ne\n52\ne\n52(2\ne)\ne\n104\ne",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "4",
+    "B": "6",
+    "C": "7",
+    "D": "8"
+   },
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   }
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "Let the foci of the ellipse $\\frac{x^{2}}{16}+\\frac{y^{2}}{7}=1$ and the hyperbola $\\frac{x^{2}}{144}-\\frac{y^{2}}{\\alpha}=\\frac{1}{25}$ coincide. Then the length of the latus rectum of the hyperbola is:-",
+   "options": {
+    "A": "$\\frac{32}{9}$",
+    "B": "$\\frac{18}{5}$",
+    "C": "$\\frac{27}{4}$",
+    "D": "$\\frac{27}{10}$"
+   },
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "text_original_textlayer": "2\n2\nx\ny\n1\n16\n7\n2\n2\nx\ny\n1\n144\n25\n32\n9\n18\n5\n27\n4\n27\n10",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "3 2",
+   "options": {
+    "A": "9",
+    "B": "12",
+    "C": "21",
+    "D": "33"
+   },
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "stem_under_20_chars",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   }
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "The shortest distance between the lines $\\frac{\\mathrm{x}+7}{-6}=\\frac{\\mathrm{y}-6}{7}=\\mathrm{z}$ and $\\frac{7-\\mathrm{x}}{2}=\\mathrm{y}-2=\\mathrm{z}-6$ is",
+   "options": {
+    "A": "$2 \\sqrt{29}$",
+    "B": "1",
+    "C": "$\\sqrt{\\frac{37}{29}}$",
+    "D": "$\\frac{\\sqrt{29}}{2}$"
+   },
+   "page_start": 2,
+   "page_end": 2,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "text_original_textlayer": "x\n7\ny\n6\nz\n6\n7\n7\nx\ny\n2\nz\n6\n2\n2 29\n37\n29\n29\n2",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "Let $\\overrightarrow{\\mathrm{a}}=\\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$ and $\\overrightarrow{\\mathrm{b}}$ be a vector such that $\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{b}}=2 \\hat{\\mathrm{i}}-\\hat{\\mathrm{k}}$ and $\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{b}}=3$. Then the projection of $\\vec{b}$ on the vector $\\vec{a}-\\vec{b}$ is :-",
+   "options": {
+    "A": "$\\frac{2}{\\sqrt{21}}$",
+    "B": "$2 \\sqrt{\\frac{3}{7}}$",
+    "C": "$\\frac{2}{3} \\sqrt{\\frac{7}{3}}$",
+    "D": "$\\frac{2}{3}$"
+   },
+   "page_start": 2,
+   "page_end": 3,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "possible_text_scramble"
+   ],
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "text_original_textlayer": "ˆ\nˆ\nˆ\na\ni\nj\n2k\nb\nˆ\nˆ\na\nb\n2i\nk\na.b\n3\nb\na\nb\n2\n21\n3\n2 7\n2\n7\n3\n3\n2\n3",
+   "ocr_repaired": "frag"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "question_type": null,
+   "subject": null,
+   "section": null,
+   "segment": 1,
+   "text": "",
+   "options": {
+    "A": "11.5",
+    "B": "10.5",
+    "C": "12",
+    "D": "11"
+   },
+   "page_start": 3,
+   "page_end": 4,
+   "parse_flags": [
+    "embedded_answer_captured",
+    "embedded_answer_truncated",
+    "numbering_restart_segment_1",
+    "no_options_found",
+    "empty_stem",
+    "options_ocr_repaired"
+   ],
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   }
+  }
+ ]
 }

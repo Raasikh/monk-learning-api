@@ -1,61 +1,1061 @@
 {
+ "paper_id": "jee-main-2022-s2-physics-2022-06-26-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-physics-2022-06-26-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-26",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-physics-2022-06-26-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-26",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132420-26-06%20EVENING%20PHYSICS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/132420-26-06%20EVENING%20PHYSICS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "d8d397d58ca3d87fd4467e0e57bc2fd9427ffaac7d233670176f36002b0adbc6",
+  "page_count": 8,
+  "text_chars": 737,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-26-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "12",
+     "value": "12"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "36",
+     "value": "36"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "42",
+     "value": "42"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "540",
+     "value": "540"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "152",
+     "value": "152"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "9",
+     "value": "9"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "35",
+     "value": "35"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The dimension of mutual inductance is :",
+   "options": {
+    "A": "$\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{-2} \\mathrm{~A}^{-1}\\right]$",
+    "B": "$\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{-3} \\mathrm{~A}^{-1}\\right]$",
+    "C": "$\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{-2} \\mathrm{~A}^{-2}\\right]$",
+    "D": "$\\left[\\mathrm{ML}^{2} \\mathrm{~T}^{-3} \\mathrm{~A}^{-2}\\right]$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{e}_{2}$ : induced emf in secondary coil\n$\\mathrm{i}_{1}$ : Current in primary coil\nM : Mutual inductance\n$$\\begin{array}{l}\n\\mathrm{e}_{2}=-\\mathrm{M} \\frac{\\mathrm{di}_{1}}{\\mathrm{dt}} \\\\\n\\mathrm{M}=-\\frac{\\mathrm{e}_{2}}{\\frac{\\mathrm{di}_{1}}{\\mathrm{dt}}}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{e}_{2}$ : induced emf in secondary coil\n$\\mathrm{i}_{1}$ : Current in primary coil\nM : Mutual inductance\n$$\\begin{array}{l}\n\\mathrm{e}_{2}=-\\mathrm{M} \\frac{\\mathrm{di}_{1}}{\\mathrm{dt}} \\\\\n\\mathrm{M}=-\\frac{\\mathrm{e}_{2}}{\\frac{\\mathrm{di}_{1}}{\\mathrm{dt}}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "d8d397d58ca3d87fd4467e0e57bc2fd9427ffaac7d233670176f36002b0adbc6",
-    "page_count": 8,
-    "text_chars": 737,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-26-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In the arrangement shown in figure $\\mathrm{a}_{1}, \\mathrm{a}_{2}, \\mathrm{a}_{3}$ and $\\mathrm{a}_{4}$ are the accelerations of masses $\\mathrm{m}_{1}, \\mathrm{~m}_{2}, \\mathrm{~m}_{3}$ and $\\mathrm{m}_{4}$ respectively. Which of the following relation is true for this arrangement?",
+   "options": {
+    "A": "$4 \\mathrm{a}_{1}+2 \\mathrm{a}_{2}+\\mathrm{a}_{3}+\\mathrm{a}_{4}=0$",
+    "B": "$\\quad a_{1}+4 a_{2}+3 a_{3}+a_{4}=0$",
+    "C": "$a_{1}+4 a_{2}+3 a_{3}+2 a_{4}=0$",
+    "D": "$2 \\mathrm{a}_{1}+2 \\mathrm{a}_{2}+3 \\mathrm{a}_{3}+\\mathrm{a}_{4}=0$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n\nUsing costraint\n$$\\begin{array}{l}\n\\sum \\overrightarrow{\\mathrm{T}} \\cdot \\overrightarrow{\\mathrm{a}}=0 \\\\\n-4 \\mathrm{Ta}_{1}-2 \\mathrm{Ta}_{2}-\\mathrm{Ta}_{3}-\\mathrm{Ta}_{4}=0 \\\\\n4 \\mathrm{a}_{1}+2 \\mathrm{a}_{2}+\\mathrm{a}_{3}+\\mathrm{a}_{4}=0\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Using costraint\n$$\\begin{array}{l}\n\\sum \\overrightarrow{\\mathrm{T}} \\cdot \\overrightarrow{\\mathrm{a}}=0 \\\\\n-4 \\mathrm{Ta}_{1}-2 \\mathrm{Ta}_{2}-\\mathrm{Ta}_{3}-\\mathrm{Ta}_{4}=0 \\\\\n4 \\mathrm{a}_{1}+2 \\mathrm{a}_{2}+\\mathrm{a}_{3}+\\mathrm{a}_{4}=0\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Arrange the four graphs in descending order of total work done; where $\\mathrm{W}_{1}, \\mathrm{~W}_{2}, \\mathrm{~W}_{3}$ and $\\mathrm{W}_{4}$ are the work done corresponding to figure $\\mathrm{a}, \\mathrm{b}, \\mathrm{c}$ and d respectively.\nFigure-c\nFigure-d",
+   "options": {
+    "A": "$\\mathrm{W}_{3}>\\mathrm{W}_{2}>\\mathrm{W}_{1}>\\mathrm{W}_{4}$",
+    "B": "$\\quad \\mathrm{W}_{3}>\\mathrm{W}_{2}>\\mathrm{W}_{4}>\\mathrm{W}_{1}$",
+    "C": "$\\mathrm{W}_{2}>\\mathrm{W}_{3}>\\mathrm{W}_{4}>\\mathrm{W}_{1}$",
+    "D": "$\\mathrm{W}_{2}>\\mathrm{W}_{3}>\\mathrm{W}_{1}>\\mathrm{W}_{4}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol. Work done = area under F - x curve. Area below x -axis is negative \\& area above x-axis is positive.\nso\n$\\mathrm{W}_{3}>\\mathrm{W}_{2}>\\mathrm{W}_{1}>\\mathrm{W}_{4}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Work done = area under F - x curve. Area below x -axis is negative \\& area above x-axis is positive.\nso\n$\\mathrm{W}_{3}>\\mathrm{W}_{2}>\\mathrm{W}_{1}>\\mathrm{W}_{4}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Solid spherical ball is rolling on a frictionless horizontal plane surface about its axis of symmetry. The ratio of rotational kinetic energy of the ball to its total kinetic energy is :-",
+   "options": {
+    "A": "$\\frac{2}{5}$",
+    "B": "$\\frac{2}{7}$",
+    "C": "$\\frac{1}{5}$",
+    "D": "$\\frac{7}{10}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{K}_{\\text {total }}=\\mathrm{K}_{\\text {rotational }}+\\mathrm{K}_{\\text {Translational }}$\n$\\mathrm{K}_{\\text {total }}=\\frac{1}{2} \\mathrm{I}_{\\mathrm{cm}} \\omega^{2}+\\frac{1}{2} \\mathrm{mV}_{\\mathrm{cm}}^{2}$\n$\\mathrm{v}_{\\mathrm{cm}}=\\mathrm{R} \\omega$ for pure rolling\n$\\mathrm{I}_{\\mathrm{cm}}=\\frac{2}{5} \\mathrm{mR}^{2}$\n$\\mathrm{K}_{\\text {Rot }}=\\frac{1}{2} \\mathrm{I}_{\\mathrm{cm}} \\omega^{2}=\\frac{1}{2} \\times \\frac{2}{5} m R^{2} \\times \\frac{v_{\\mathrm{cm}}^{2}}{R^{2}}=\\frac{1}{5} m v_{c m}^{2}$\n$\\mathrm{K}_{\\text {Total }}=\\frac{1}{5} \\mathrm{mv}_{\\mathrm{cm}}^{2}+\\frac{1}{2} \\mathrm{mv}_{\\mathrm{cm}}^{2}=\\frac{7}{10} \\mathrm{mv}_{\\mathrm{cm}}^{2}$\n$\\frac{\\mathrm{K}_{\\text {Rot }}}{\\mathrm{K}_{\\text {Total }}} \\frac{\\frac{1}{7} m v_{\\mathrm{cm}}^{2}}{10} m v_{\\mathrm{cm}}^{2}=\\frac{2}{7}$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{K}_{\\text {total }}=\\mathrm{K}_{\\text {rotational }}+\\mathrm{K}_{\\text {Translational }}$\n$\\mathrm{K}_{\\text {total }}=\\frac{1}{2} \\mathrm{I}_{\\mathrm{cm}} \\omega^{2}+\\frac{1}{2} \\mathrm{mV}_{\\mathrm{cm}}^{2}$\n$\\mathrm{v}_{\\mathrm{cm}}=\\mathrm{R} \\omega$ for pure rolling\n$\\mathrm{I}_{\\mathrm{cm}}=\\frac{2}{5} \\mathrm{mR}^{2}$\n$\\mathrm{K}_{\\text {Rot }}=\\frac{1}{2} \\mathrm{I}_{\\mathrm{cm}} \\omega^{2}=\\frac{1}{2} \\times \\frac{2}{5} m R^{2} \\times \\frac{v_{\\mathrm{cm}}^{2}}{R^{2}}=\\frac{1}{5} m v_{c m}^{2}$\n$\\mathrm{K}_{\\text {Total }}=\\frac{1}{5} \\mathrm{mv}_{\\mathrm{cm}}^{2}+\\frac{1}{2} \\mathrm{mv}_{\\mathrm{cm}}^{2}=\\frac{7}{10} \\mathrm{mv}_{\\mathrm{cm}}^{2}$\n$\\frac{\\mathrm{K}_{\\text {Rot }}}{\\mathrm{K}_{\\text {Total }}} \\frac{\\frac{1}{7} m v_{\\mathrm{cm}}^{2}}{10} m v_{\\mathrm{cm}}^{2}=\\frac{2}{7}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements : One is labelled as Assertion A and the other is labelled as Reason R.\nAssertion A : If we move from poles to equator, the direction of acceleration due to gravity of earth always points towards the center of earth without any variation in its magnitude.\nReason R : At equator, the direction of acceleration due to the gravity is towards the center of earth.\nIn the light of above statements, choose the correct answer from the options given below :",
+   "options": {
+    "A": "Both A and R are true and R is the correct explanation of A.",
+    "B": "Both A and R are true but R is NOT the correct explanation of A.",
+    "C": "A is true but R is false",
+    "D": "A is false but R is true\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol.\n\nEffective acceleration due to gravity is the resultant of $\\mathrm{g} \\& \\mathrm{rw}^{2}$ whose direction \\& magnitude depends upon $\\theta$. Hence assertion is false.\n\nWhen $\\theta=0^{\\circ}$ (at equator), effective acceleration is radially inward."
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Effective acceleration due to gravity is the resultant of $\\mathrm{g} \\& \\mathrm{rw}^{2}$ whose direction \\& magnitude depends upon $\\theta$. Hence assertion is false.",
+     "When $\\theta=0^{\\circ}$ (at equator), effective acceleration is radially inward."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If $\\rho$ is the density and $\\eta$ is coefficient of viscosity of fluid which flows with a speed v in the pipe of diameter d, the correct formula for Reynolds number $\\mathrm{R}_{\\mathrm{e}}$ is :",
+   "options": {
+    "A": "$\\mathrm{R}_{\\mathrm{e}}=\\frac{\\eta \\mathrm{d}}{\\rho \\mathrm{v}}$",
+    "B": "$\\mathrm{R}_{\\mathrm{e}}=\\frac{\\rho \\mathrm{v}}{\\eta \\mathrm{d}}$",
+    "C": "$\\mathrm{R}_{\\mathrm{e}}=\\frac{\\rho \\mathrm{vd}}{\\eta}$",
+    "D": "$\\mathrm{R}_{\\mathrm{e}}=\\frac{\\eta}{\\rho \\mathrm{vd}}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Reynold's number is given by $\\frac{\\rho v d}{\\eta}$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Reynold's number is given by $\\frac{\\rho v d}{\\eta}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A flask contains argon and oxygen in the ratio of 3:2 in mass and the mixture is kept at 27°C. The ratio of their average kinetic energy per molecule respectively will be :",
+   "options": {
+    "A": "3 : 2",
+    "B": "$9: 4$",
+    "C": "$2: 3$",
+    "D": "$1: 1$\n\nOfficial Ans. by NTA (D)\nAns. (Bonus)\nSol. Average K.E. $/$ molecule $=\\frac{f}{2} k T$\nSo, $\\frac{K_{A r}}{K_{O_{2}}}=\\frac{\\frac{3}{2} k T}{\\frac{5}{2} k T}=\\frac{3}{5}$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Average K.E. $/$ molecule $=\\frac{f}{2} k T$\nSo, $\\frac{K_{A r}}{K_{O_{2}}}=\\frac{\\frac{3}{2} k T}{\\frac{5}{2} k T}=\\frac{3}{5}$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The charge on capacitor of capacitance $15 \\mu \\mathrm{~F}$ in the figure given below is :",
+   "options": {
+    "A": "$60 \\mu \\mathrm{c}$",
+    "B": "$130 \\mu \\mathrm{c}$",
+    "C": "$260 ~ \\mu \\mathrm{c}$",
+    "D": "$585 \\mu \\mathrm{c}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n\nCharge on each capacitor is same\n∵ they are in series."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Charge on each capacitor is same\n∵ they are in series."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A parallel plate capacitor with plate area A and plate separation $\\mathrm{d}=2 \\mathrm{~m}$ has a capacitance of $4 \\mu \\mathrm{~F}$. The new capacitance of the system if half of the space between them is filled with a dielectric material of dielectric constant $\\mathrm{K}=3$ (as shown in figure) will be :",
+   "options": {
+    "A": "$2 \\mu \\mathrm{~F}$",
+    "B": "$32 \\mu \\mathrm{~F}$",
+    "C": "$6 \\mu \\mathrm{~F}$",
+    "D": "$8 \\mu \\mathrm{~F}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol. $\\mathrm{C}_{\\text {original }}=\\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d}}$\n$$\\begin{array}{l}\n\\mathrm{C}_{1}=\\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d} / 2}=\\frac{2 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=\\mathrm{C} \\\\\n\\mathrm{C}_{2}=\\frac{\\mathrm{KA} \\varepsilon_{0}}{\\mathrm{~d} / 2}=\\frac{2 \\mathrm{KA} \\varepsilon_{0}}{\\mathrm{~d}}=\\frac{6 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=3 \\mathrm{C}\n\\end{array}$$\n$\\mathrm{C}_{1} \\& \\mathrm{C}_{2}$ are in series\n$$\\begin{aligned}\n\\mathrm{C}_{\\text {new }} & =\\frac{\\mathrm{C}_{1} \\mathrm{C}_{2}}{\\mathrm{C}_{1}+\\mathrm{C}_{2}}=\\frac{\\mathrm{C} \\times 3 \\mathrm{C}}{\\mathrm{C}+3 \\mathrm{C}}=\\frac{3 \\mathrm{C}}{4} \\\\\n& =\\frac{3}{4} \\times \\frac{2 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=\\frac{3}{2} \\times \\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d}} \\\\\n\\mathrm{C}_{\\text {new }} & =\\frac{3}{2} \\mathrm{C}_{\\text {original }} \\\\\n& =\\frac{3}{2} \\times 4=6 \\mu \\mathrm{~F}\n\\end{aligned}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{C}_{\\text {original }}=\\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d}}$\n$$\\begin{array}{l}\n\\mathrm{C}_{1}=\\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d} / 2}=\\frac{2 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=\\mathrm{C} \\\\\n\\mathrm{C}_{2}=\\frac{\\mathrm{KA} \\varepsilon_{0}}{\\mathrm{~d} / 2}=\\frac{2 \\mathrm{KA} \\varepsilon_{0}}{\\mathrm{~d}}=\\frac{6 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=3 \\mathrm{C}\n\\end{array}$$\n$\\mathrm{C}_{1} \\& \\mathrm{C}_{2}$ are in series\n$$\\begin{aligned}\n\\mathrm{C}_{\\text {new }} & =\\frac{\\mathrm{C}_{1} \\mathrm{C}_{2}}{\\mathrm{C}_{1}+\\mathrm{C}_{2}}=\\frac{\\mathrm{C} \\times 3 \\mathrm{C}}{\\mathrm{C}+3 \\mathrm{C}}=\\frac{3 \\mathrm{C}}{4} \\\\\n& =\\frac{3}{4} \\times \\frac{2 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=\\frac{3}{2} \\times \\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d}} \\\\\n\\mathrm{C}_{\\text {new }} & =\\frac{3}{2} \\mathrm{C}_{\\text {original }} \\\\\n& =\\frac{3}{2} \\times 4=6 \\mu \\mathrm{~F}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Sixty four conducting drops each of radius 0.02 m and each carrying a charge of $5 \\mu \\mathrm{C}$ are combined to form a bigger drop. The ratio of surface density of bigger drop to the smaller drop will be :",
+   "options": {
+    "A": "$1: 4$",
+    "B": "$4: 1$",
+    "C": "$1: 8$",
+    "D": "$8: 1$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Let $\\mathrm{R}=$ radius of combined drop\nr = radius of smaller drop\nVolume will remain same\n$$\\begin{array}{l}\n\\quad \\frac{4}{3} \\pi R^{3}=64 \\times \\frac{4}{3} \\pi r^{3} \\\\\n\\quad R=4 r \\\\\nQ=64 q ;\n\\end{array}$$\nq : charge of smaller drop\nQ : Charge of combined drop\n$$\\begin{array}{l}\n\\frac{\\sigma_{\\text {bigger }}}{\\sigma_{\\text {smaller }}}=\\frac{\\frac{Q}{4 \\pi R^{2}}}{\\frac{q}{4 \\pi r^{2}}}=\\frac{Q}{q} \\cdot \\frac{r^{2}}{R^{2}} \\\\\n=64 \\frac{r^{2}}{16 r^{2}}=4 \\\\\n\\frac{\\sigma_{\\text {bigger }}}{\\sigma_{\\text {smaller }}}=\\frac{4}{1}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let $\\mathrm{R}=$ radius of combined drop\nr = radius of smaller drop\nVolume will remain same\n$$\\begin{array}{l}\n\\quad \\frac{4}{3} \\pi R^{3}=64 \\times \\frac{4}{3} \\pi r^{3} \\\\\n\\quad R=4 r \\\\\nQ=64 q ;\n\\end{array}$$\nq : charge of smaller drop\nQ : Charge of combined drop\n$$\\begin{array}{l}\n\\frac{\\sigma_{\\text {bigger }}}{\\sigma_{\\text {smaller }}}=\\frac{\\frac{Q}{4 \\pi R^{2}}}{\\frac{q}{4 \\pi r^{2}}}=\\frac{Q}{q} \\cdot \\frac{r^{2}}{R^{2}} \\\\\n=64 \\frac{r^{2}}{16 r^{2}}=4 \\\\\n\\frac{\\sigma_{\\text {bigger }}}{\\sigma_{\\text {smaller }}}=\\frac{4}{1}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The equivalent resistance between points A and B in the given network is :",
+   "options": {
+    "A": "$65 \\Omega$",
+    "B": "$20 \\Omega$",
+    "C": "$5 \\Omega$",
+    "D": "$2 \\Omega$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol.\n$$\\mathrm{R}_{\\mathrm{AB}}=5 \\Omega$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\mathrm{R}_{\\mathrm{AB}}=5 \\Omega$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A bar magnet having a magnetic moment of $2.0 \\times 10^{5} \\mathrm{JT}^{-1}$, is placed along the direction of uniform magnetic field of magnitude $\\mathrm{B}=14 \\times 10^{-5} \\mathrm{~T}$. The work done in rotating the magnet slowly through 60° from the direction of field is :",
+   "options": {
+    "A": "14 J",
+    "B": "8.4 J",
+    "C": "4 J",
+    "D": "1.4 J\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Work done $=\\mathrm{MB}\\left(\\cos \\theta_{1}-\\cos \\theta_{2}\\right)$\n$$\\begin{array}{l}\n\\theta_{1}=0^{\\circ}, \\theta_{2}=60^{\\circ} \\\\\n=2 \\times 10^{5} \\times 14 \\times 10^{-5}(1-1 / 2) \\\\\n=14 \\mathrm{~J}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Work done $=\\mathrm{MB}\\left(\\cos \\theta_{1}-\\cos \\theta_{2}\\right)$\n$$\\begin{array}{l}\n\\theta_{1}=0^{\\circ}, \\theta_{2}=60^{\\circ} \\\\\n=2 \\times 10^{5} \\times 14 \\times 10^{-5}(1-1 / 2) \\\\\n=14 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two coils of self inductance $\\mathrm{L}_{1}$ and $\\mathrm{L}_{2}$ are connected in series combination having mutual inductance of the coils as M. The equivalent self inductance of the combination will be :",
+   "options": {
+    "A": "$\\frac{1}{\\mathrm{~L}_{1}}+\\frac{1}{\\mathrm{~L}_{2}}+\\frac{1}{\\mathrm{M}}$",
+    "B": "$\\mathrm{L}_{1}+\\mathrm{L}_{2}+\\mathrm{M}$",
+    "C": "$\\mathrm{L}_{1}+\\mathrm{L}_{2}+2 \\mathrm{M}$",
+    "D": "$\\mathrm{L}_{1}+\\mathrm{L}_{2}-2 \\mathrm{M}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Current on both the inductor is in opposite direction.\n\nHence :\n$\\mathrm{L}_{\\mathrm{eq}}=\\mathrm{L}_{1}+\\mathrm{L}_{2}-2 \\mathrm{M}$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Current on both the inductor is in opposite direction.",
+     "Hence :\n$\\mathrm{L}_{\\mathrm{eq}}=\\mathrm{L}_{1}+\\mathrm{L}_{2}-2 \\mathrm{M}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A metallic conductor of length 1m rotates in a vertical plane parallel to east-west direction about one of its end with angular velocity 5 rad/s. If the horizontal component of earth's magnetic field is $0.2 \\times 10^{-4} \\mathrm{~T}$, then emf induced between the two ends of the conductor is :",
+   "options": {
+    "A": "$5 \\mu \\mathrm{~V}$",
+    "B": "$50 \\mu \\mathrm{~V}$",
+    "C": "5mV",
+    "D": "50 mV\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. emf induced between the two ends $=\\frac{B_{H} \\omega l^{2}}{2} \\frac{0.2 \\times 10^{-4} \\times 5 \\times 1}{2}=0.5 \\times 10^{-4}=50 \\times 10^{-6} \\mathrm{~V}=50 \\mu \\mathrm{~V}$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "emf induced between the two ends $=\\frac{B_{H} \\omega l^{2}}{2} \\frac{0.2 \\times 10^{-4} \\times 5 \\times 1}{2}=0.5 \\times 10^{-4}=50 \\times 10^{-6} \\mathrm{~V}=50 \\mu \\mathrm{~V}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which is the correct ascending order of wavelengths?",
+   "options": {
+    "A": "$\\lambda_{\\text {visible }}<\\lambda_{\\mathrm{X} \\text {-ray }}<\\lambda_{\\text {gamma-ray }}<\\lambda_{\\text {microwave }}$",
+    "B": "$\\lambda_{\\text {gamma-ray }}<\\lambda_{\\mathrm{X} \\text {-ray }}<\\lambda_{\\text {visible }}<\\lambda_{\\text {microwave }}$",
+    "C": "$\\lambda_{\\mathrm{X} \\text {-ray }}<\\lambda_{\\text {gamma-ray }}<\\lambda_{\\text {visible }}<\\lambda_{\\text {microwave }}$",
+    "D": "$\\lambda_{\\text {microwave }}<\\lambda_{\\text {visible }}<\\lambda_{\\text {gamma-ray }}<\\lambda_{\\text {X-ray }}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol. From electromagnetic wave spectrum.\n$\\lambda$ increases ⟶\n\n\\begin{tabular}[t]{|l|l|l|l|l|l|l|}\n\\hline $\\gamma$-ray & x-rays & ultra violet & visible & infrared & microwave & Radio wave \\\\\n\\hline\n\\end{tabular}\n$$\\lambda_{\\text {gamma-ray }}<\\lambda_{\\mathrm{X} \\text {-ray }}<\\lambda_{\\text {visible }}<\\lambda_{\\text {microwave }}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "From electromagnetic wave spectrum.\n$\\lambda$ increases ⟶",
+     "\\begin{tabular}[t]{|l|l|l|l|l|l|l|}\n\\hline $\\gamma$-ray & x-rays & ultra violet & visible & infrared & microwave & Radio wave \\\\\n\\hline\n\\end{tabular}\n$$\\lambda_{\\text {gamma-ray }}<\\lambda_{\\mathrm{X} \\text {-ray }}<\\lambda_{\\text {visible }}<\\lambda_{\\text {microwave }}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "For a specific wavelength 670 nm of light coming from a galaxy moving with velocity v , the observed wavelength is 670.7 nm.\nThe value of v is :",
+   "options": {
+    "A": "$3 \\times 10^{8} \\mathrm{~ms}^{-1}$",
+    "B": "$3 \\times 10^{10} \\mathrm{~ms}^{-1}$",
+    "C": "$3.13 \\times 10^{5} \\mathrm{~ms}^{-1}$",
+    "D": "$4.48 \\times 10^{5} \\mathrm{~ms}^{-1}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\lambda_{\\text {emitted }}=670 \\mathrm{~nm}$\n$$\\begin{array}{l}\n\\lambda_{\\text {obs }}=670.7 \\mathrm{~nm} \\\\\nv=? \\\\\nc=3 \\times 10^{8} \\mathrm{~m} / \\mathrm{s} \\\\\n\\text { If } v \\ll c \\\\\n\\frac{\\lambda_{\\text {obs }}-\\lambda_{\\text {emitted }}}{\\lambda_{\\text {emitted }}}=\\frac{v}{c} \\\\\n\\frac{670.7-670}{670}=\\frac{v}{c} \\\\\nV=3.13 \\times 10^{5} \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\lambda_{\\text {emitted }}=670 \\mathrm{~nm}$\n$$\\begin{array}{l}\n\\lambda_{\\text {obs }}=670.7 \\mathrm{~nm} \\\\\nv=? \\\\\nc=3 \\times 10^{8} \\mathrm{~m} / \\mathrm{s} \\\\\n\\text { If } v \\ll c \\\\\n\\frac{\\lambda_{\\text {obs }}-\\lambda_{\\text {emitted }}}{\\lambda_{\\text {emitted }}}=\\frac{v}{c} \\\\\n\\frac{670.7-670}{670}=\\frac{v}{c} \\\\\nV=3.13 \\times 10^{5} \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A metal surface is illuminated by a radiation of wavelength $4500 \\AA$. The ejected photo-electron enters a constant magnetic field of 2 mT making an angle of 90° with the magnetic field. If it starts revolving in a circular path of radius 2 mm , the work function of the metal is approximately :",
+   "options": {
+    "A": "1.36 eV",
+    "B": "1.69 eV",
+    "C": "2.78 eV",
+    "D": "2.23 eV\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\lambda=4500 \\AA$\n$$\\begin{array}{l}\n\\mathrm{B}=2 \\mathrm{mT}, \\mathrm{R}=2 \\mathrm{~mm} \\\\\n\\mathrm{R}=\\frac{\\sqrt{2 \\mathrm{Km}}}{\\mathrm{qB}} \\\\\n\\frac{(\\mathrm{qBR})^{2}}{2 \\mathrm{~m}}=\\mathrm{K}\n\\end{array}$$\n$$\\begin{array}{l}\n\\frac{\\left(1.6 \\times 10^{-19} \\times 2 \\times 10^{-3} \\times 2 \\times 10^{-3}\\right)^{2}}{2 \\times 9.1 \\times 10^{-31}}=\\mathrm{K} \\\\\n\\frac{(6.4)^{2}}{2 \\times 9.1} \\times \\frac{10^{-50}}{10^{-31}}=\\mathrm{K} \\\\\n\\mathrm{~K}=2.25 \\times 10^{-19} \\mathrm{~J} \\\\\n=\\frac{2.25 \\times 10^{-19}}{1.6 \\times 10^{-19}} \\mathrm{eV}=1.40 \\mathrm{eV} \\\\\n\\mathrm{E}=\\frac{12400}{4500}=2.76 \\mathrm{eV} \\\\\n\\phi=\\mathrm{E}-\\mathrm{K}=(2.76-1.40) \\mathrm{eV}=1.36 \\mathrm{eV}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\lambda=4500 \\AA$\n$$\\begin{array}{l}\n\\mathrm{B}=2 \\mathrm{mT}, \\mathrm{R}=2 \\mathrm{~mm} \\\\\n\\mathrm{R}=\\frac{\\sqrt{2 \\mathrm{Km}}}{\\mathrm{qB}} \\\\\n\\frac{(\\mathrm{qBR})^{2}}{2 \\mathrm{~m}}=\\mathrm{K}\n\\end{array}$$\n$$\\begin{array}{l}\n\\frac{\\left(1.6 \\times 10^{-19} \\times 2 \\times 10^{-3} \\times 2 \\times 10^{-3}\\right)^{2}}{2 \\times 9.1 \\times 10^{-31}}=\\mathrm{K} \\\\\n\\frac{(6.4)^{2}}{2 \\times 9.1} \\times \\frac{10^{-50}}{10^{-31}}=\\mathrm{K} \\\\\n\\mathrm{~K}=2.25 \\times 10^{-19} \\mathrm{~J} \\\\\n=\\frac{2.25 \\times 10^{-19}}{1.6 \\times 10^{-19}} \\mathrm{eV}=1.40 \\mathrm{eV} \\\\\n\\mathrm{E}=\\frac{12400}{4500}=2.76 \\mathrm{eV} \\\\\n\\phi=\\mathrm{E}-\\mathrm{K}=(2.76-1.40) \\mathrm{eV}=1.36 \\mathrm{eV}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A radioactive nucleus can decay by two different processes. Half-life for the first process is 3.0 hours while it is 4.5 hours for the second process.\nThe effective half- life of the nucleus will be :",
+   "options": {
+    "A": "3.75 hours",
+    "B": "0.56 hours",
+    "C": "0.26 hours",
+    "D": "1.80 hours\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\lambda_{\\text {eq }}=\\lambda_{1}+\\lambda_{2}$\n$$\\begin{array}{l}\n\\frac{\\ln 2}{\\left(t_{1 / 2}\\right)_{\\mathrm{eq}}}=\\frac{\\ln 2}{\\left(t_{1 / 2}\\right)_{1}}+\\frac{\\ln 2}{\\left(t_{1 / 2}\\right)_{2}} \\\\\n\\left(t_{1 / 2}\\right)_{\\mathrm{eq}}=\\frac{\\left(t_{1 / 2}\\right)_{1} \\times\\left(t_{1 / 2}\\right)_{2}}{\\left(t_{1 / 2}\\right)_{1}+\\left(t_{1 / 2}\\right)_{2}} \\\\\n=\\frac{3 \\times 4.5}{3+4.5}=\\frac{3 \\times 4.5}{7.5}=\\frac{3 \\times 3}{5}=1.8 \\mathrm{hr}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\lambda_{\\text {eq }}=\\lambda_{1}+\\lambda_{2}$\n$$\\begin{array}{l}\n\\frac{\\ln 2}{\\left(t_{1 / 2}\\right)_{\\mathrm{eq}}}=\\frac{\\ln 2}{\\left(t_{1 / 2}\\right)_{1}}+\\frac{\\ln 2}{\\left(t_{1 / 2}\\right)_{2}} \\\\\n\\left(t_{1 / 2}\\right)_{\\mathrm{eq}}=\\frac{\\left(t_{1 / 2}\\right)_{1} \\times\\left(t_{1 / 2}\\right)_{2}}{\\left(t_{1 / 2}\\right)_{1}+\\left(t_{1 / 2}\\right)_{2}} \\\\\n=\\frac{3 \\times 4.5}{3+4.5}=\\frac{3 \\times 4.5}{7.5}=\\frac{3 \\times 3}{5}=1.8 \\mathrm{hr}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The positive feedback is required by an amplifier to act an oscillator. The feedback here means :",
+   "options": {
+    "A": "External input is necessary to sustain ac signal in output.",
+    "B": "A portion of the output power is returned back to the input.",
+    "C": "Feedback can be achieved by LR network.",
+    "D": "The base-collector junction must be forward biased.\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. When the amplifier connects with positive feedback, it acts as the oscillator the feedback here is positive feedback which means some amount of voltage is given to the input.\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "When the amplifier connects with positive feedback, it acts as the oscillator the feedback here is positive feedback which means some amount of voltage is given to the input.",
+     "JEE Exam Solution\nwww.esaral.com\n5",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A sinusoidal wave $\\mathrm{y}(\\mathrm{t})=40 \\sin \\left(10 \\times 10^{6} \\pi \\mathrm{t}\\right)$ is amplitude modulated by another sinusoidal wave $\\mathrm{x}(\\mathrm{t})=20 \\sin (1000 \\pi \\mathrm{t})$. The amplitude of minimum frequency component of modulated signal is :",
+   "options": {
+    "A": "0.5",
+    "B": "0.25",
+    "C": "20",
+    "D": "10\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\quad y(t)=40 \\sin \\left(10 \\times 10^{6} \\pi t\\right)$\n$$\\begin{array}{l}\n\\mathrm{x}(\\mathrm{t})=20 \\sin (1000 \\pi \\mathrm{t}) \\\\\n\\Rightarrow \\omega_{\\mathrm{c}}=10^{7} \\pi \\\\\n\\omega_{\\mathrm{m}}=10^{3} \\pi \\\\\n\\mathrm{~A}_{\\mathrm{C}}=40 \\\\\n\\mathrm{~A}_{\\mathrm{m}}=20\n\\end{array}$$\n\nEquation of modulated wave $=\\left(\\mathrm{A}_{\\mathrm{C}}+\\mathrm{A}_{\\mathrm{m}} \\sin \\omega_{\\mathrm{m}} \\mathrm{t}\\right) \\sin \\omega_{\\mathrm{c}} \\mathrm{t}$\n$$\\begin{array}{l}\n=A_{c}\\left(1+\\frac{A_{m}}{A_{c}} \\sin \\omega_{m} t\\right) \\sin \\omega_{c} t \\\\\n=A_{c}\\left(1+\\mu \\sin \\omega_{m} t\\right) \\sin \\omega_{c} t, \\quad \\mu=\\frac{A_{m}}{A_{c}}\n\\end{array}$$\n$$=A_{c} \\sin \\omega_{c} t+\\frac{\\mu A_{c}}{2}\\left[\\cos \\left(\\omega_{c}-\\omega_{m}\\right) t-\\cos \\left(\\omega_{c}+\\omega_{m}\\right) t\\right]$$\n\nAmplitude of minimum frequency = $\\frac{\\mu \\mathrm{A}_{\\mathrm{c}}}{2}=\\frac{\\mathrm{A}_{\\mathrm{m}}}{\\mathrm{A}_{\\mathrm{c}}} \\times \\frac{\\mathrm{A}_{\\mathrm{c}}}{2}=\\frac{\\mathrm{A}_{\\mathrm{m}}}{2}=10$\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad y(t)=40 \\sin \\left(10 \\times 10^{6} \\pi t\\right)$\n$$\\begin{array}{l}\n\\mathrm{x}(\\mathrm{t})=20 \\sin (1000 \\pi \\mathrm{t}) \\\\\n\\Rightarrow \\omega_{\\mathrm{c}}=10^{7} \\pi \\\\\n\\omega_{\\mathrm{m}}=10^{3} \\pi \\\\\n\\mathrm{~A}_{\\mathrm{C}}=40 \\\\\n\\mathrm{~A}_{\\mathrm{m}}=20\n\\end{array}$$",
+     "Equation of modulated wave $=\\left(\\mathrm{A}_{\\mathrm{C}}+\\mathrm{A}_{\\mathrm{m}} \\sin \\omega_{\\mathrm{m}} \\mathrm{t}\\right) \\sin \\omega_{\\mathrm{c}} \\mathrm{t}$\n$$\\begin{array}{l}\n=A_{c}\\left(1+\\frac{A_{m}}{A_{c}} \\sin \\omega_{m} t\\right) \\sin \\omega_{c} t \\\\\n=A_{c}\\left(1+\\mu \\sin \\omega_{m} t\\right) \\sin \\omega_{c} t, \\quad \\mu=\\frac{A_{m}}{A_{c}}\n\\end{array}$$\n$$=A_{c} \\sin \\omega_{c} t+\\frac{\\mu A_{c}}{2}\\left[\\cos \\left(\\omega_{c}-\\omega_{m}\\right) t-\\cos \\left(\\omega_{c}+\\omega_{m}\\right) t\\right]$$",
+     "Amplitude of minimum frequency = $\\frac{\\mu \\mathrm{A}_{\\mathrm{c}}}{2}=\\frac{\\mathrm{A}_{\\mathrm{m}}}{\\mathrm{A}_{\\mathrm{c}}} \\times \\frac{\\mathrm{A}_{\\mathrm{c}}}{2}=\\frac{\\mathrm{A}_{\\mathrm{m}}}{2}=10$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A ball is projected vertically upward with an initial velocity of $50 \\mathrm{~ms}^{-1}$ at $\\mathrm{t}=0 \\mathrm{~s}$. At $\\mathrm{t}=2 \\mathrm{~s}$. another ball is projected vertically upward with same velocity. At $\\mathrm{t}=$ $\\_\\_\\_\\_$ s, second ball will meet the first ball ( $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$ ).",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{e}_{2}$ : induced emf in secondary coil\n$\\mathrm{i}_{1}$ : Current in primary coil\nM : Mutual inductance\n$$\\begin{array}{l}\n\\mathrm{e}_{2}=-\\mathrm{M} \\frac{\\mathrm{di}_{1}}{\\mathrm{dt}} \\\\\n\\mathrm{M}=-\\frac{\\mathrm{e}_{2}}{\\frac{\\mathrm{di}_{1}}{\\mathrm{dt}}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A batsman hits back a ball of mass 0.4 kg straight in the direction of the bowler without changing its initial speed of $15 \\mathrm{~ms}^{-1}$. The impulse imparted to the ball is $\\_\\_\\_\\_$ Ns.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "12"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Using costraint\n$$\\begin{array}{l}\n\\sum \\overrightarrow{\\mathrm{T}} \\cdot \\overrightarrow{\\mathrm{a}}=0 \\\\\n-4 \\mathrm{Ta}_{1}-2 \\mathrm{Ta}_{2}-\\mathrm{Ta}_{3}-\\mathrm{Ta}_{4}=0 \\\\\n4 \\mathrm{a}_{1}+2 \\mathrm{a}_{2}+\\mathrm{a}_{3}+\\mathrm{a}_{4}=0\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A system to 10 balls each of mass 2 kg are connected via massless and unstretchable string. The system is allowed to slip over the edge of a smooth table as shown in figure. Tension on the string between the $7^{\\text {th }}$ and $8^{\\text {th }}$ ball is $\\_\\_\\_\\_$ N when $6^{\\text {th }}$ ball just leaves the table.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "36"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Work done = area under F - x curve. Area below x -axis is negative \\& area above x-axis is positive.\nso\n$\\mathrm{W}_{3}>\\mathrm{W}_{2}>\\mathrm{W}_{1}>\\mathrm{W}_{4}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A geyser heats water flowing at a rate of 2.0 kg per minute from 30°C to 70°C. If geyser operates on a gas burner, the rate of combustion of fuel will be\n$\\_\\_\\_\\_$ $\\mathrm{g} \\min ^{-1}$\n[Heat of combustion $=8 \\times 10^{3} \\mathrm{Jg}^{-1}$\nSpecific heat of water $=4.2 \\mathrm{Jg}^{-1}{ }^{\\circ} \\mathrm{C}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "42"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{K}_{\\text {total }}=\\mathrm{K}_{\\text {rotational }}+\\mathrm{K}_{\\text {Translational }}$\n$\\mathrm{K}_{\\text {total }}=\\frac{1}{2} \\mathrm{I}_{\\mathrm{cm}} \\omega^{2}+\\frac{1}{2} \\mathrm{mV}_{\\mathrm{cm}}^{2}$\n$\\mathrm{v}_{\\mathrm{cm}}=\\mathrm{R} \\omega$ for pure rolling\n$\\mathrm{I}_{\\mathrm{cm}}=\\frac{2}{5} \\mathrm{mR}^{2}$\n$\\mathrm{K}_{\\text {Rot }}=\\frac{1}{2} \\mathrm{I}_{\\mathrm{cm}} \\omega^{2}=\\frac{1}{2} \\times \\frac{2}{5} m R^{2} \\times \\frac{v_{\\mathrm{cm}}^{2}}{R^{2}}=\\frac{1}{5} m v_{c m}^{2}$\n$\\mathrm{K}_{\\text {Total }}=\\frac{1}{5} \\mathrm{mv}_{\\mathrm{cm}}^{2}+\\frac{1}{2} \\mathrm{mv}_{\\mathrm{cm}}^{2}=\\frac{7}{10} \\mathrm{mv}_{\\mathrm{cm}}^{2}$\n$\\frac{\\mathrm{K}_{\\text {Rot }}}{\\mathrm{K}_{\\text {Total }}} \\frac{\\frac{1}{7} m v_{\\mathrm{cm}}^{2}}{10} m v_{\\mathrm{cm}}^{2}=\\frac{2}{7}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A heat engine operates with the cold reservoir at temperature 324 K.\nThe minimum temperature of the hot reservoir, if the heat engine takes 300 J heat from the hot reservoir and delivers 180 J heat to the cold reservoir per cycle, is $\\_\\_\\_\\_$ K.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "540"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Effective acceleration due to gravity is the resultant of $\\mathrm{g} \\& \\mathrm{rw}^{2}$ whose direction \\& magnitude depends upon $\\theta$. Hence assertion is false.",
+     "When $\\theta=0^{\\circ}$ (at equator), effective acceleration is radially inward."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A set of 20 tuning forks is arranged in a series of increasing frequencies. If each fork gives 4 beats with respect to the preceding fork and the frequency of the last fork is twice the frequency of the first, then the frequency of last fork is $\\_\\_\\_\\_$ Hz.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "152"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Reynold's number is given by $\\frac{\\rho v d}{\\eta}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two 10 cm long, straight wires, each carrying a current of 5A are kept parallel to each other. If each wire experienced a force of $10^{-5} \\mathrm{~N}$, then separation between the wires is $\\_\\_\\_\\_$ cm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Average K.E. $/$ molecule $=\\frac{f}{2} k T$\nSo, $\\frac{K_{A r}}{K_{O_{2}}}=\\frac{\\frac{3}{2} k T}{\\frac{5}{2} k T}=\\frac{3}{5}$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A small bulb is placed at the bottom of a tank containing water to a depth of $\\sqrt{7} \\mathrm{~m}$. The refractive index of water is $\\frac{4}{3}$. The area of the surface of water through which light from the bulb can emerge out is $\\mathrm{x} \\pi \\mathrm{m}^{2}$. The value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "9"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Charge on each capacitor is same\n∵ they are in series."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A travelling microscope is used to determine the refractive index of a glass slab. If 40 divisions are there in 1 cm on main scale and 50 Vernier scale divisions are equal to 49 main scale divisions, then least count of the travelling microscope is\n$\\_\\_\\_\\_$ $\\times 10^{-6} \\mathrm{~m}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{C}_{\\text {original }}=\\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d}}$\n$$\\begin{array}{l}\n\\mathrm{C}_{1}=\\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d} / 2}=\\frac{2 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=\\mathrm{C} \\\\\n\\mathrm{C}_{2}=\\frac{\\mathrm{KA} \\varepsilon_{0}}{\\mathrm{~d} / 2}=\\frac{2 \\mathrm{KA} \\varepsilon_{0}}{\\mathrm{~d}}=\\frac{6 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=3 \\mathrm{C}\n\\end{array}$$\n$\\mathrm{C}_{1} \\& \\mathrm{C}_{2}$ are in series\n$$\\begin{aligned}\n\\mathrm{C}_{\\text {new }} & =\\frac{\\mathrm{C}_{1} \\mathrm{C}_{2}}{\\mathrm{C}_{1}+\\mathrm{C}_{2}}=\\frac{\\mathrm{C} \\times 3 \\mathrm{C}}{\\mathrm{C}+3 \\mathrm{C}}=\\frac{3 \\mathrm{C}}{4} \\\\\n& =\\frac{3}{4} \\times \\frac{2 \\mathrm{~A} \\varepsilon_{0}}{\\mathrm{~d}}=\\frac{3}{2} \\times \\frac{\\mathrm{A} \\varepsilon_{0}}{\\mathrm{~d}} \\\\\n\\mathrm{C}_{\\text {new }} & =\\frac{3}{2} \\mathrm{C}_{\\text {original }} \\\\\n& =\\frac{3}{2} \\times 4=6 \\mu \\mathrm{~F}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The stopping potential for photoelectrons emitted from a surface illuminated by light of wavelength $6630 \\AA$ is 0.42 V. If the threshold frequency is x × $10^{13} / \\mathrm{s}$, where x is $\\_\\_\\_\\_$ (nearest integer).\n(Given, speed light $=3 \\times 10^{8} \\mathrm{~m} / \\mathrm{s}$, Planck's constant $=6.63 \\times 10^{-34} \\mathrm{Js}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "35"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Let $\\mathrm{R}=$ radius of combined drop\nr = radius of smaller drop\nVolume will remain same\n$$\\begin{array}{l}\n\\quad \\frac{4}{3} \\pi R^{3}=64 \\times \\frac{4}{3} \\pi r^{3} \\\\\n\\quad R=4 r \\\\\nQ=64 q ;\n\\end{array}$$\nq : charge of smaller drop\nQ : Charge of combined drop\n$$\\begin{array}{l}\n\\frac{\\sigma_{\\text {bigger }}}{\\sigma_{\\text {smaller }}}=\\frac{\\frac{Q}{4 \\pi R^{2}}}{\\frac{q}{4 \\pi r^{2}}}=\\frac{Q}{q} \\cdot \\frac{r^{2}}{R^{2}} \\\\\n=64 \\frac{r^{2}}{16 r^{2}}=4 \\\\\n\\frac{\\sigma_{\\text {bigger }}}{\\sigma_{\\text {smaller }}}=\\frac{4}{1}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

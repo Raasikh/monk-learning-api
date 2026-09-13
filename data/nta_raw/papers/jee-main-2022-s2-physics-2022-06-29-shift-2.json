@@ -1,61 +1,1054 @@
 {
+ "paper_id": "jee-main-2022-s2-physics-2022-06-29-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-physics-2022-06-29-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-29",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-physics-2022-06-29-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-29",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/13276-29-06%20EVENING%20PHYSICS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/13276-29-06%20EVENING%20PHYSICS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "515578db890d100bdac333c41144a43359b53a40f56d81a086885417e369dc4f",
+  "page_count": 8,
+  "text_chars": 740,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-29-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "value": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "180",
+     "value": "180"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "20",
+     "value": "20"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "104",
+     "value": "104"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "8",
+     "value": "8"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "14",
+     "value": "14"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "8",
+     "value": "8"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "8",
+     "value": "8"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "20",
+     "value": "20"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "600",
+     "value": "600"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A small toy starts moving from the position of rest under a constant acceleration. If it travels a distance of 10m in t s,. the distance travelled by the toy in the next t s will be :",
+   "options": {
+    "A": "10m",
+    "B": "20 m",
+    "C": "30m",
+    "D": "40m\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{u}=0, \\quad$ Say acceleration is a\nFor $\\mathrm{t} \\mathrm{s} \\quad 10=\\frac{1}{2} \\mathrm{at}^{2}$\nFor 2t s $\\quad 10+\\mathrm{x}=\\frac{1}{2} \\mathrm{a}(2 \\mathrm{t})^{2}$\n$$\\begin{array}{l}\n\\frac{10+x}{10}=\\frac{4}{1} \\\\\nx=30 \\mathrm{~m}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{u}=0, \\quad$ Say acceleration is a\nFor $\\mathrm{t} \\mathrm{s} \\quad 10=\\frac{1}{2} \\mathrm{at}^{2}$\nFor 2t s $\\quad 10+\\mathrm{x}=\\frac{1}{2} \\mathrm{a}(2 \\mathrm{t})^{2}$\n$$\\begin{array}{l}\n\\frac{10+x}{10}=\\frac{4}{1} \\\\\nx=30 \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "515578db890d100bdac333c41144a43359b53a40f56d81a086885417e369dc4f",
-    "page_count": 8,
-    "text_chars": 740,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-06-29-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "At what temperature a gold ring of diameter 6.230 cm be heated so that it can be fitted on a wooden bangle of diameter 6.241 cm ? Both the diameters have been measured at room temperature (27°C). (Given: coefficient of linear thermal expansion of gold $\\alpha_{\\mathrm{L}}=1.4 \\times 10^{-5} \\mathrm{~K}^{-1}$ )",
+   "options": {
+    "A": "$125.7^{\\circ} \\mathrm{C}$",
+    "B": "$91.7^{\\circ} \\mathrm{C}$",
+    "C": "425.7°",
+    "D": "$152.7^{\\circ} \\mathrm{C}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\Delta \\ell=6.241-6.230=0.011 \\mathrm{~cm}$\n$$\\begin{array}{l}\n\\Delta \\ell=\\ell \\alpha \\Delta \\theta \\\\\n0.011=6.230 \\times 1.4 \\times 10^{-5}(\\theta-27) \\\\\n\\theta-27=\\frac{0.011 \\times 10^{5}}{6.230 \\times 1.4} \\\\\n\\theta \\approx 153.11 \\text { nearest is } 152.7^{\\circ} \\mathrm{C}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\Delta \\ell=6.241-6.230=0.011 \\mathrm{~cm}$\n$$\\begin{array}{l}\n\\Delta \\ell=\\ell \\alpha \\Delta \\theta \\\\\n0.011=6.230 \\times 1.4 \\times 10^{-5}(\\theta-27) \\\\\n\\theta-27=\\frac{0.011 \\times 10^{5}}{6.230 \\times 1.4} \\\\\n\\theta \\approx 153.11 \\text { nearest is } 152.7^{\\circ} \\mathrm{C}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two point charges Q each are placed at a distance d apart. A third point charge q is placed at a distance x from mid-point on the perpendicular bisector. The value of x at which charge q will experience the maximum Coulomb's force is :",
+   "options": {
+    "A": "$\\mathrm{x}=\\mathrm{d}$",
+    "B": "$\\mathrm{x}=\\frac{\\mathrm{d}}{2}$",
+    "C": "$\\mathrm{x}=\\frac{\\mathrm{d}}{\\sqrt{2}}$",
+    "D": "$\\mathrm{x}=\\frac{\\mathrm{d}}{2 \\sqrt{2}}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol.\n$$F=\\frac{K Q q}{\\left(x^{2}+\\frac{d^{2}}{4}\\right)}$$\n\nNet force on $\\mathrm{g}=2 \\mathrm{~F} \\cos \\theta$\n$$\\mathrm{F}_{\\text {net }}=\\frac{2 \\mathrm{KQqx}}{\\left(\\mathrm{x}^{2}+\\frac{\\mathrm{d}^{2}}{4}\\right)^{3 / 2}}$$\n\nFor maximum $\\mathrm{F}_{\\text {net }}$\n$$\\frac{\\mathrm{dF}_{\\mathrm{net}}}{\\mathrm{dx}}=0$$\nwe get $\\mathrm{x}=\\frac{\\mathrm{d}}{2 \\sqrt{2}}$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$F=\\frac{K Q q}{\\left(x^{2}+\\frac{d^{2}}{4}\\right)}$$",
+     "Net force on $\\mathrm{g}=2 \\mathrm{~F} \\cos \\theta$\n$$\\mathrm{F}_{\\text {net }}=\\frac{2 \\mathrm{KQqx}}{\\left(\\mathrm{x}^{2}+\\frac{\\mathrm{d}^{2}}{4}\\right)^{3 / 2}}$$",
+     "For maximum $\\mathrm{F}_{\\text {net }}$\n$$\\frac{\\mathrm{dF}_{\\mathrm{net}}}{\\mathrm{dx}}=0$$\nwe get $\\mathrm{x}=\\frac{\\mathrm{d}}{2 \\sqrt{2}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The speed of light in media 'A' and 'B' are 2.0 × $10^{10} \\mathrm{~cm} / \\mathrm{s}$ and $1.5 \\times 10^{10} \\mathrm{chm} / \\mathrm{s}$ respectively. A ray of light enters from the medium B to A at an incident angle ' $\\theta$ '. If the ray suffers total internal reflection, then",
+   "options": {
+    "A": "$\\theta=\\sin ^{-1}\\left(\\frac{3}{4}\\right)$",
+    "B": "$\\theta>\\sin ^{-1}\\left(\\frac{2}{3}\\right)$",
+    "C": "$\\theta<\\sin ^{-1}\\left(\\frac{3}{4}\\right)$",
+    "D": "$\\theta>\\sin ^{-1}\\left(\\frac{3}{4}\\right)$\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol. $\\quad \\sin \\mathrm{i}_{\\mathrm{c}}=\\frac{\\mathrm{n}_{\\mathrm{r}}}{\\mathrm{n}_{\\mathrm{d}}}=\\frac{\\mathrm{C}_{\\mathrm{d}}}{\\mathrm{C}_{\\mathrm{r}}}=\\frac{1.5 \\times 10^{10}}{2 \\times 10^{10}}$\n$$\\begin{array}{l}\n\\sin i_{c}=\\frac{3}{4} \\\\\ni_{c}=\\sin ^{-1}\\left(\\frac{3}{4}\\right)\n\\end{array}$$\nfor TIR $\\quad \\theta>\\mathrm{i}_{\\mathrm{c}}$\n$$\\theta>\\sin ^{-1}\\left(\\frac{3}{4}\\right)$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\sin \\mathrm{i}_{\\mathrm{c}}=\\frac{\\mathrm{n}_{\\mathrm{r}}}{\\mathrm{n}_{\\mathrm{d}}}=\\frac{\\mathrm{C}_{\\mathrm{d}}}{\\mathrm{C}_{\\mathrm{r}}}=\\frac{1.5 \\times 10^{10}}{2 \\times 10^{10}}$\n$$\\begin{array}{l}\n\\sin i_{c}=\\frac{3}{4} \\\\\ni_{c}=\\sin ^{-1}\\left(\\frac{3}{4}\\right)\n\\end{array}$$\nfor TIR $\\quad \\theta>\\mathrm{i}_{\\mathrm{c}}$\n$$\\theta>\\sin ^{-1}\\left(\\frac{3}{4}\\right)$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In the following nuclear rection,\n$$\\mathrm{D} \\xrightarrow{\\alpha} \\mathrm{D}_{1} \\xrightarrow{\\beta^{-}} \\mathrm{D}_{2} \\xrightarrow{\\alpha} \\mathrm{D}_{3} \\xrightarrow{\\gamma} \\mathrm{D}_{4}$$\nMass number of D is 182 and atomic number is 74. Mass number and atomic number of $\\mathrm{D}_{4}$ respectively will be $\\_\\_\\_\\_$ .",
+   "options": {
+    "A": "174 and 71",
+    "B": "174 and 69",
+    "C": "172 and 69",
+    "D": "172 and 71\n\nOfficial Ans. by NTA (A)\n. Ans. (A)\nSol. Say for $\\mathrm{D}_{4}$ Atomic No = Z\nMass Number = A\n$$\\begin{array}{l}\nA=182-4-4=174 \\\\\nZ=74-2+1-2=71\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Say for $\\mathrm{D}_{4}$ Atomic No = Z\nMass Number = A\n$$\\begin{array}{l}\nA=182-4-4=174 \\\\\nZ=74-2+1-2=71\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The electric field at the point associated with a light wave is given by\n$$\\mathrm{E}=200\\left[\\sin \\left(6 \\times 10^{15}\\right) \\mathrm{t}+\\sin \\left(9 \\times 10^{15}\\right) \\mathrm{t}\\right] \\mathrm{Vm}^{-1}$$\nGiven : $\\mathrm{h}=4.14 \\times 10^{-15} \\mathrm{eVs}$\nIf this light falls on a metal surface having a work function of 2.50 eV, the maximum kinetic energy of the photoelectrons will be :",
+   "options": {
+    "A": "1.90 eV",
+    "B": "3.27 eV",
+    "C": "3.60 eV",
+    "D": "3.42 eV\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. For maximum KE we will take\nhigher frequency $\\left(\\mathrm{f}=\\frac{9 \\times 10^{15}}{2 \\pi} \\mathrm{~Hz}\\right)$\n$$\\begin{array}{l}\n\\mathrm{K}_{\\max }=\\mathrm{hf}-\\phi \\\\\n=\\frac{9 \\times 10^{15} \\times 4.14 \\times 10^{-15}}{2 \\pi}-2.50 \\\\\n3.43 \\mathrm{eV} \\quad \\begin{array}{c}\n\\text { nearest is } 3.42 \\mathrm{eV}\n\\end{array}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For maximum KE we will take\nhigher frequency $\\left(\\mathrm{f}=\\frac{9 \\times 10^{15}}{2 \\pi} \\mathrm{~Hz}\\right)$\n$$\\begin{array}{l}\n\\mathrm{K}_{\\max }=\\mathrm{hf}-\\phi \\\\\n=\\frac{9 \\times 10^{15} \\times 4.14 \\times 10^{-15}}{2 \\pi}-2.50 \\\\\n3.43 \\mathrm{eV} \\quad \\begin{array}{c}\n\\text { nearest is } 3.42 \\mathrm{eV}\n\\end{array}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A capacitor is discharging through a resistor R. Consider in time $\\mathrm{t}_{1}$, the energy stored in the capacitor reduces to half of its initial value and in time $\\mathrm{t}_{2}$, the charge stored reduces to one eighth of its initial value. The ratio $\\mathrm{t}_{1} / \\mathrm{t}_{2}$ will be :\n(A) 1/2\n(B) $1 / 3$\n(D) 1/6",
+   "options": null,
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In $\\mathrm{t}_{1}$ time energy becomes half so charge will become $\\frac{1}{\\sqrt{2}}$ time\n$$q=Q_{0} e^{\\frac{t_{1}}{R C}}=\\frac{Q_{0}}{\\sqrt{2}}$$\nand $\\mathrm{q}=\\mathrm{Q}_{0} \\mathrm{e}^{-\\frac{\\mathrm{t}_{1}}{\\mathrm{RC}}}=\\frac{\\mathrm{Q}_{0}}{8}=\\left(\\frac{\\mathrm{Q}_{0}}{\\sqrt{2}}\\right)^{6}$\n$$\\begin{array}{l}\nt_{2}=6 t_{1} \\\\\n\\frac{t_{1}}{t_{2}}=\\frac{1}{6}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Starting with the same initial conditions, an ideal gas expands from volume $\\mathrm{V}_{1}$ to $\\mathrm{V}_{2}$ in three different ways. The work done by the gas is $\\mathrm{W}_{1}$ if the process is purely isothermal. $\\mathrm{W}_{2}$. if the process is purely adiabatic and $\\mathrm{W}_{3}$ if the process is purely isobaric. Then, choose the coned option",
+   "options": {
+    "A": "$\\mathrm{W}_{1}<\\mathrm{W}_{2}<\\mathrm{W}_{3}$",
+    "B": "$\\mathrm{W}_{2}<\\mathrm{W}_{3}<\\mathrm{W}_{1}$",
+    "C": "$\\mathrm{W}_{3}<\\mathrm{W}_{1}<\\mathrm{W}_{2}$",
+    "D": "$\\mathrm{W}_{2}<\\mathrm{W}_{1}<\\mathrm{W}_{3}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol.\n\nArea under curve is work\n$$\\mathrm{W}_{2}<\\mathrm{W}_{1}<\\mathrm{W}_{3}$$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Area under curve is work\n$$\\mathrm{W}_{2}<\\mathrm{W}_{1}<\\mathrm{W}_{3}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two long current carrying conductors are placed parallel to each other at a distance of 8 cm between them. The magnitude of magnetic field produced at mid-point between the two conductors due to current flowing in them is $300 \\mu \\mathrm{~T}$. The equal current flowing in the two conductors is :",
+   "options": {
+    "A": "30A in the same direction.",
+    "B": "30A in the opposite direction.",
+    "C": "60A in the opposite direction.",
+    "D": "300A in the opposite direction.\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\nB at $\\mathrm{O}=2 \\frac{\\mu_{0} \\mathrm{I}}{2 \\pi \\mathrm{r}}$\n$\\frac{2 \\times 4 \\pi \\times 10^{-7} \\mathrm{I}}{2 \\pi 4 \\times 10^{-2}}=3 \\times 10^{-4} \\mathrm{~T}$\n$\\mathrm{I}=30 \\mathrm{~A}$ in opp. direction"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "B at $\\mathrm{O}=2 \\frac{\\mu_{0} \\mathrm{I}}{2 \\pi \\mathrm{r}}$\n$\\frac{2 \\times 4 \\pi \\times 10^{-7} \\mathrm{I}}{2 \\pi 4 \\times 10^{-2}}=3 \\times 10^{-4} \\mathrm{~T}$\n$\\mathrm{I}=30 \\mathrm{~A}$ in opp. direction"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The time period of a satellite revolving around earth in a given orbit is 7 hours. If the radius of orbit is increased to three times its previous value, then approximate new time period of the satellite will be :",
+   "options": {
+    "A": "40 hours",
+    "B": "36 hours",
+    "C": "30 hours",
+    "D": "25 hours\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{T}=\\frac{2 \\pi}{\\sqrt{\\mathrm{GM}}} \\mathrm{r}^{3 / 2}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{T}_{1}}{\\mathrm{~T}_{2}}=\\left(\\frac{\\mathrm{r}_{1}}{\\mathrm{r}_{2}}\\right)^{3 / 2}=\\left(\\frac{1}{3}\\right)^{3 / 2} \\\\\n\\mathrm{~T}_{2}=\\mathrm{T}_{1} 3 \\sqrt{3}=21 \\sqrt{3} \\text { hours } \\\\\n\\approx 36 \\text { hours }\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{T}=\\frac{2 \\pi}{\\sqrt{\\mathrm{GM}}} \\mathrm{r}^{3 / 2}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{T}_{1}}{\\mathrm{~T}_{2}}=\\left(\\frac{\\mathrm{r}_{1}}{\\mathrm{r}_{2}}\\right)^{3 / 2}=\\left(\\frac{1}{3}\\right)^{3 / 2} \\\\\n\\mathrm{~T}_{2}=\\mathrm{T}_{1} 3 \\sqrt{3}=21 \\sqrt{3} \\text { hours } \\\\\n\\approx 36 \\text { hours }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The TV transmission tower at a particular station has a height of 125 m. For dubling the coverage of its range, the height of the tower should be increased by :",
+   "options": {
+    "A": "125 m",
+    "B": "250 m",
+    "C": "375",
+    "D": "500 m\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Range $\\mathrm{d}=\\sqrt{2 \\mathrm{Rh}}$\n$$\\begin{array}{l}\n\\mathrm{d}_{2}=2 \\mathrm{~d}_{1} \\\\\n\\sqrt{2 \\mathrm{Rh}_{2}}=2 \\sqrt{2 \\mathrm{Rh}_{1}} \\\\\n\\mathrm{~h}_{2}=4 \\mathrm{~h}_{1}=500 \\mathrm{~m} \\\\\n\\Delta \\mathrm{~h}=500 \\mathrm{~m}-125 \\mathrm{~m}=375 \\mathrm{~m}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Range $\\mathrm{d}=\\sqrt{2 \\mathrm{Rh}}$\n$$\\begin{array}{l}\n\\mathrm{d}_{2}=2 \\mathrm{~d}_{1} \\\\\n\\sqrt{2 \\mathrm{Rh}_{2}}=2 \\sqrt{2 \\mathrm{Rh}_{1}} \\\\\n\\mathrm{~h}_{2}=4 \\mathrm{~h}_{1}=500 \\mathrm{~m} \\\\\n\\Delta \\mathrm{~h}=500 \\mathrm{~m}-125 \\mathrm{~m}=375 \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The motion of a simple pendulum excuting S.H.M. is represented by following equation.\n$\\mathrm{Y}=\\mathrm{A} \\sin (\\pi \\mathrm{t}+\\phi)$, where time is measured in second.\nThe length of pendulum is :",
+   "options": {
+    "A": "97.23 cm",
+    "B": "25.3 cm",
+    "C": "99.4 cm",
+    "D": "406.1 cm\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\omega=\\sqrt{\\frac{\\mathrm{g}}{\\ell}}=\\pi$\n$$\\begin{array}{l}\n\\frac{\\mathrm{g}}{\\ell}=\\pi^{2} \\Rightarrow \\ell=\\frac{\\mathrm{g}}{\\pi^{2}} \\\\\n\\ell=\\frac{980}{\\pi^{2}} \\approx 99.4 \\mathrm{~cm}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\omega=\\sqrt{\\frac{\\mathrm{g}}{\\ell}}=\\pi$\n$$\\begin{array}{l}\n\\frac{\\mathrm{g}}{\\ell}=\\pi^{2} \\Rightarrow \\ell=\\frac{\\mathrm{g}}{\\pi^{2}} \\\\\n\\ell=\\frac{980}{\\pi^{2}} \\approx 99.4 \\mathrm{~cm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A vessel contains 16g of hydrogen and 128 g of oxygen at standard temperature and pressure. The volume of the vessel in $\\mathrm{cm}^{3}$ is :",
+   "options": {
+    "A": "$72 \\times 10^{5}$",
+    "B": "$32 \\times 10^{5}$",
+    "C": "$27 \\times 10^{4}$",
+    "D": "$54 \\times 10^{4}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. No of moles of $\\mathrm{H}_{2}=8$ moles\nNo of moles of $\\mathrm{O}_{2}=4$ moles\nTotal moles $=12$ moles\nAt STP 1 mole occupy $=22.4 \\ell=22.4 \\times 10^{3} \\mathrm{~cm}^{3}$\n12 moles will occupy $=12 \\times 22.4 \\times 10^{3} \\mathrm{~cm}^{3}$\n$\\approx 26.8 \\times 10^{4} \\mathrm{~cm}^{3}$\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "No of moles of $\\mathrm{H}_{2}=8$ moles\nNo of moles of $\\mathrm{O}_{2}=4$ moles\nTotal moles $=12$ moles\nAt STP 1 mole occupy $=22.4 \\ell=22.4 \\times 10^{3} \\mathrm{~cm}^{3}$\n12 moles will occupy $=12 \\times 22.4 \\times 10^{3} \\mathrm{~cm}^{3}$\n$\\approx 26.8 \\times 10^{4} \\mathrm{~cm}^{3}$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements :\nStatement I: The electric force changes the speed of the charged particle and hence changes its kinetic energy: whereas the magnetic force does not change the kinetic energy of the charged particle.\nStatement II: The electric force accelerates the positively charged particle perpendicular to the direction of electric field. The magnetic force accelerates the moving charged particle along the direction of magnetic field. In the light of the above statements, choose the most appropriate answer from the options given below:",
+   "options": {
+    "A": "Both Statement I and Statement II are correct.",
+    "B": "Both Statement I and Statement II are incorrect.",
+    "C": "Statement I is correct but Statement II is incorrect.",
+    "D": "Statement I is incorrect but Statement II is correct.\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Electric field can change speed and kinetic energy but magnetic field can not change speed $\\Delta \\mathrm{KE}$. Because magnetic force is always ⟂ to velocity."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Electric field can change speed and kinetic energy but magnetic field can not change speed $\\Delta \\mathrm{KE}$. Because magnetic force is always ⟂ to velocity."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A block of mass 40 kg slides over a surface, when a mass of 4 kg is suspended through an inextensible massless string passing over frictionless pulley as shown below. The coefficient of kinetic friction between the surface and block is 0.02. The acceleration of block is. (Given $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$.)",
+   "options": {
+    "A": "$1 \\mathrm{~ms}^{-2}$",
+    "B": "$1 / 5 \\mathrm{~ms}^{-2}$",
+    "C": "$4 / 5 \\mathrm{~ms}^{-2}$",
+    "D": "$8 / 11 \\mathrm{~ms}^{-2}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol. For 4 kg block\n$$4 g-T=4 a$$\n\nFor 40 kg block\n$$\\mathrm{T}-40 \\mathrm{~g} \\times 0.02=40 \\mathrm{a}$$\n\nAdding both eq.\n$$\\begin{array}{l}\n40-8=44 \\mathrm{a} \\\\\n\\mathrm{a}=\\frac{32}{44}=\\frac{8}{11} \\mathrm{~m} / \\mathrm{s}^{2}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For 4 kg block\n$$4 g-T=4 a$$",
+     "For 40 kg block\n$$\\mathrm{T}-40 \\mathrm{~g} \\times 0.02=40 \\mathrm{a}$$",
+     "Adding both eq.\n$$\\begin{array}{l}\n40-8=44 \\mathrm{a} \\\\\n\\mathrm{a}=\\frac{32}{44}=\\frac{8}{11} \\mathrm{~m} / \\mathrm{s}^{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In the given figure, the block of mass m is dropped from the point 'A'. The expression for kinetic energy of block when it reaches point ' B ' is :",
+   "options": {
+    "A": "$\\frac{1}{2} \\mathrm{mg} \\mathrm{y}_{0}^{2}$",
+    "B": "$\\frac{1}{2} \\mathrm{mgy}^{2}$",
+    "C": "$\\mathrm{mg}\\left(\\mathrm{y}-\\mathrm{y}_{0}\\right)$",
+    "D": "$\\mathrm{mgy}_{0}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Work done by gravity $=\\mathrm{K}_{\\mathrm{B}}-\\mathrm{K}_{\\mathrm{A}} \\mathrm{mgy}_{0}=\\mathrm{K}_{\\mathrm{B}}-0$\n$$\\mathrm{K}_{\\mathrm{B}}=\\mathrm{mgy}_{0}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Work done by gravity $=\\mathrm{K}_{\\mathrm{B}}-\\mathrm{K}_{\\mathrm{A}} \\mathrm{mgy}_{0}=\\mathrm{K}_{\\mathrm{B}}-0$\n$$\\mathrm{K}_{\\mathrm{B}}=\\mathrm{mgy}_{0}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A block of mass M placed inside a box descends vertically with acceleration 'a'. The block exerts a force equal to one-fourth of its weight on the floor of the box. The value of 'a' will be :",
+   "options": {
+    "A": "$\\frac{\\mathrm{g}}{4}$",
+    "B": "$\\frac{\\mathrm{g}}{2}$",
+    "C": "$\\frac{3 \\mathrm{~g}}{4}$",
+    "D": "g\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n$$\\begin{array}{l}\n\\mathrm{mg}-\\mathrm{N}=\\mathrm{ma} \\\\\n\\mathrm{a}=\\mathrm{g}-\\frac{\\mathrm{g}}{4} \\\\\n\\mathrm{a}=\\frac{3 \\mathrm{~g}}{4}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{mg}-\\mathrm{N}=\\mathrm{ma} \\\\\n\\mathrm{a}=\\mathrm{g}-\\frac{\\mathrm{g}}{4} \\\\\n\\mathrm{a}=\\frac{3 \\mathrm{~g}}{4}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If the electric potential at any point (x, y, z)m in space is given by $\\mathrm{V}=3 \\mathrm{x}^{2}$ volt. The electric field at the point (1, 0, 3) m will be :",
+   "options": {
+    "A": "$3 \\mathrm{Vm}^{-1}$, directed along positive x-axis.",
+    "B": "$3 \\mathrm{Vm}^{-1}$, directed along negative x-axis.",
+    "C": "$6 \\mathrm{Vm}^{-1}$, directed along positive x-axis.",
+    "D": "$6 \\mathrm{Vm}^{-1}$, directed along negative x-axis.\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{E}_{\\mathrm{x}}=-\\frac{\\partial \\mathrm{V}}{\\partial \\mathrm{x}}=-6 \\mathrm{x}$\nAt (1, 0, 3)\n$\\overrightarrow{\\mathrm{E}}=-6 \\mathrm{~V} / \\mathrm{m} \\hat{\\mathrm{i}}$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{E}_{\\mathrm{x}}=-\\frac{\\partial \\mathrm{V}}{\\partial \\mathrm{x}}=-6 \\mathrm{x}$\nAt (1, 0, 3)\n$\\overrightarrow{\\mathrm{E}}=-6 \\mathrm{~V} / \\mathrm{m} \\hat{\\mathrm{i}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The combination of two identical cells, whether connected in series or parallel combination provides the same current through an external resistance of $2 \\Omega$. The value of internal resistance of each cell is :",
+   "options": {
+    "A": "$2 \\Omega$",
+    "B": "$4 \\Omega$",
+    "C": "$6 \\Omega$",
+    "D": "$8 \\Omega$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n$$\\begin{array}{l}\nI_{2}=\\frac{E}{\\frac{r}{2}+2}=\\frac{2 E}{r+4} \\\\\nI_{1}=I_{2} \\\\\n2 r+2=r+4 \\\\\n2 r-r=2 \\Omega \\Rightarrow r=2 \\Omega\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nI_{2}=\\frac{E}{\\frac{r}{2}+2}=\\frac{2 E}{r+4} \\\\\nI_{1}=I_{2} \\\\\n2 r+2=r+4 \\\\\n2 r-r=2 \\Omega \\Rightarrow r=2 \\Omega\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A person can throw a ball upto a maximum range of 100 m . How high above the ground he can throw the same ball?",
+   "options": {
+    "A": "25 m",
+    "B": "50 m",
+    "C": "100 m",
+    "D": "200 m\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\quad \\mathbf{R}=\\frac{\\mathrm{u}^{2} \\sin 2 \\theta}{\\mathrm{~g}} \\quad \\mathrm{R}_{\\text {max }}=\\frac{\\mathrm{u}^{2}}{\\mathrm{~g}}=100$\n$\\mathrm{H}_{\\text {max }}=\\frac{\\mathrm{u}^{2}}{2 \\mathrm{~g}}=\\frac{100}{2}=50 \\mathrm{~m}$\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathbf{R}=\\frac{\\mathrm{u}^{2} \\sin 2 \\theta}{\\mathrm{~g}} \\quad \\mathrm{R}_{\\text {max }}=\\frac{\\mathrm{u}^{2}}{\\mathrm{~g}}=100$\n$\\mathrm{H}_{\\text {max }}=\\frac{\\mathrm{u}^{2}}{2 \\mathrm{~g}}=\\frac{100}{2}=50 \\mathrm{~m}$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The vernier constant of Vernier callipers is 0.1 mm and it has zero error of $(-0.05) \\mathrm{cm}$. While measuring diameter of a sphere, the main scale reading is 1.7 cm and coinciding vernier division is\n5. The corrected diameter will be $\\_\\_\\_\\_$ $\\times 10^{-2} \\mathrm{~cm}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "180"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{u}=0, \\quad$ Say acceleration is a\nFor $\\mathrm{t} \\mathrm{s} \\quad 10=\\frac{1}{2} \\mathrm{at}^{2}$\nFor 2t s $\\quad 10+\\mathrm{x}=\\frac{1}{2} \\mathrm{a}(2 \\mathrm{t})^{2}$\n$$\\begin{array}{l}\n\\frac{10+x}{10}=\\frac{4}{1} \\\\\nx=30 \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A small spherical ball of radius 0.1 mm and density $10^{4} \\mathrm{~kg} \\mathrm{~m}^{-3}$ falls freely under gravity through a a distance h before entering a tank of water. If after entering the water the velocity of ball does not change and it continue to fall with same constant velocity inside water, then the value of h wil be $\\_\\_\\_\\_$ m.\n(Given $\\mathrm{g}=10 \\mathrm{~ms}^{-2}$, viscosity of water $=1.0 \\times 10^{-5} \\left.\\mathrm{N}-\\mathrm{sm}^{-2}\\right)$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "20"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\Delta \\ell=6.241-6.230=0.011 \\mathrm{~cm}$\n$$\\begin{array}{l}\n\\Delta \\ell=\\ell \\alpha \\Delta \\theta \\\\\n0.011=6.230 \\times 1.4 \\times 10^{-5}(\\theta-27) \\\\\n\\theta-27=\\frac{0.011 \\times 10^{5}}{6.230 \\times 1.4} \\\\\n\\theta \\approx 153.11 \\text { nearest is } 152.7^{\\circ} \\mathrm{C}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In an experiment to determine the velocity of sound in air at room temperature using a resonance is observed when the air column has a length of 20.0 cm for a tuning fork of frequency 400 Hz is used. The velocity of the sound at room temperature is $336 \\mathrm{~ms}^{-1}$. The third resonance is observed when the air column has a length of $\\_\\_\\_\\_$ cm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "104"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$F=\\frac{K Q q}{\\left(x^{2}+\\frac{d^{2}}{4}\\right)}$$",
+     "Net force on $\\mathrm{g}=2 \\mathrm{~F} \\cos \\theta$\n$$\\mathrm{F}_{\\text {net }}=\\frac{2 \\mathrm{KQqx}}{\\left(\\mathrm{x}^{2}+\\frac{\\mathrm{d}^{2}}{4}\\right)^{3 / 2}}$$",
+     "For maximum $\\mathrm{F}_{\\text {net }}$\n$$\\frac{\\mathrm{dF}_{\\mathrm{net}}}{\\mathrm{dx}}=0$$\nwe get $\\mathrm{x}=\\frac{\\mathrm{d}}{2 \\sqrt{2}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two resistors are connected in series across a battery as shown in figure. If a voltmeter of resistance $2000 \\Omega$ is used to measure the potential difference across $500 \\Omega$ resister, the reading of the voltmeter will be $\\_\\_\\_\\_$ V.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "8"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\quad \\sin \\mathrm{i}_{\\mathrm{c}}=\\frac{\\mathrm{n}_{\\mathrm{r}}}{\\mathrm{n}_{\\mathrm{d}}}=\\frac{\\mathrm{C}_{\\mathrm{d}}}{\\mathrm{C}_{\\mathrm{r}}}=\\frac{1.5 \\times 10^{10}}{2 \\times 10^{10}}$\n$$\\begin{array}{l}\n\\sin i_{c}=\\frac{3}{4} \\\\\ni_{c}=\\sin ^{-1}\\left(\\frac{3}{4}\\right)\n\\end{array}$$\nfor TIR $\\quad \\theta>\\mathrm{i}_{\\mathrm{c}}$\n$$\\theta>\\sin ^{-1}\\left(\\frac{3}{4}\\right)$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A potential barrier of 0.4 V exists across a p-n junction. An electron enters the junction from the n-side with a speed of $6.0 \\times 10^{5} \\mathrm{~ms}^{-1}$. The speed with which electron enters the $p$ side will be $\\frac{\\mathrm{x}}{3} \\times 10^{5} \\mathrm{~ms}^{-1}$ the value of x is $\\_\\_\\_\\_$ .\n(Given mass of electron $=9 \\times 10^{-31} \\mathrm{~kg}$, charge on electron $=1.6 \\times 10^{-19} \\mathrm{C}$.)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "14"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Say for $\\mathrm{D}_{4}$ Atomic No = Z\nMass Number = A\n$$\\begin{array}{l}\nA=182-4-4=174 \\\\\nZ=74-2+1-2=71\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The displacement current of $4.425 \\mu \\mathrm{~A}$ is developed in the space between the plates of parallel plate capacitor when voltage is changing at a rate of $10^{6} \\mathrm{Vs}^{-1}$. The area of each plate of the capacitor is 40 $\\mathrm{cm}^{2}$. The distance between each plate of the capacitor is $\\mathrm{x} \\times 10^{-3} \\mathrm{~m}$. The value of x is, (Permittivity of free space, $\\mathrm{E}_{0}=8.85 \\times 10^{-12} \\mathrm{C}^{2} \\mathrm{~N}^{-1} \\mathrm{~m}^{-2}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "8"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "For maximum KE we will take\nhigher frequency $\\left(\\mathrm{f}=\\frac{9 \\times 10^{15}}{2 \\pi} \\mathrm{~Hz}\\right)$\n$$\\begin{array}{l}\n\\mathrm{K}_{\\max }=\\mathrm{hf}-\\phi \\\\\n=\\frac{9 \\times 10^{15} \\times 4.14 \\times 10^{-15}}{2 \\pi}-2.50 \\\\\n3.43 \\mathrm{eV} \\quad \\begin{array}{c}\n\\text { nearest is } 3.42 \\mathrm{eV}\n\\end{array}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The moment of inertia of a uniform thin rod about a perpendicular axis passing through one end is $\\mathrm{I}_{1}$. The same rod is bent into a ring and its moment of inertia about a diameter is $\\mathrm{I}_{2}$. If $\\frac{\\mathrm{I}_{1}}{\\mathrm{I}_{2}}$ is $\\frac{\\mathrm{x} \\pi^{2}}{3}$, then the value of x will be $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "8"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "In $\\mathrm{t}_{1}$ time energy becomes half so charge will become $\\frac{1}{\\sqrt{2}}$ time\n$$q=Q_{0} e^{\\frac{t_{1}}{R C}}=\\frac{Q_{0}}{\\sqrt{2}}$$\nand $\\mathrm{q}=\\mathrm{Q}_{0} \\mathrm{e}^{-\\frac{\\mathrm{t}_{1}}{\\mathrm{RC}}}=\\frac{\\mathrm{Q}_{0}}{8}=\\left(\\frac{\\mathrm{Q}_{0}}{\\sqrt{2}}\\right)^{6}$\n$$\\begin{array}{l}\nt_{2}=6 t_{1} \\\\\n\\frac{t_{1}}{t_{2}}=\\frac{1}{6}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The half life of a radioactive substance is 5 years. After x years a given sample of the radioactive substance gest reduced to 6.25\\% of its initial value of x is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "20"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Area under curve is work\n$$\\mathrm{W}_{2}<\\mathrm{W}_{1}<\\mathrm{W}_{3}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a double slit experiment with monochromatic light, fringes are obtained on a screen placed at some distance from the plane of slits. If the screen is moved by $5 \\times 10^{-2} \\mathrm{~m}$ towards the slits, the change in fringe width is $3 \\times 10^{-3} \\mathrm{~cm}$. If the distance between the slits is 1 mm , then the wavelength of the light will be $\\_\\_\\_\\_$ nm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "600"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "B at $\\mathrm{O}=2 \\frac{\\mu_{0} \\mathrm{I}}{2 \\pi \\mathrm{r}}$\n$\\frac{2 \\times 4 \\pi \\times 10^{-7} \\mathrm{I}}{2 \\pi 4 \\times 10^{-2}}=3 \\times 10^{-4} \\mathrm{~T}$\n$\\mathrm{I}=30 \\mathrm{~A}$ in opp. direction"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "An inductor of 0.5 mH, a capacitor of $200 \\mu \\mathrm{~F}$ and a resistor of $2 \\Omega$ are connected in series with a 220 V ac source. If the current is in phase with the emf, the frequency of ac source will be $\\_\\_\\_\\_$ $\\times 10^{2} \\mathrm{~Hz}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{T}=\\frac{2 \\pi}{\\sqrt{\\mathrm{GM}}} \\mathrm{r}^{3 / 2}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{T}_{1}}{\\mathrm{~T}_{2}}=\\left(\\frac{\\mathrm{r}_{1}}{\\mathrm{r}_{2}}\\right)^{3 / 2}=\\left(\\frac{1}{3}\\right)^{3 / 2} \\\\\n\\mathrm{~T}_{2}=\\mathrm{T}_{1} 3 \\sqrt{3}=21 \\sqrt{3} \\text { hours } \\\\\n\\approx 36 \\text { hours }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

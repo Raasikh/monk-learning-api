@@ -1,15 +1,15 @@
 # Diagram question inventory
 
-- total diagram questions: 16211
+- total diagram questions: 11591
 - target: 10000
 - remaining to target: 0
-- with options: 5189
-- with downloaded assets: 13006
-- with any image reference: 16211
+- with options: 5567
+- with downloaded assets: 8373
+- with any image reference: 11591
 
 ## By source file
 
-- diagram_questions.jsonl: 12974
+- diagram_questions.jsonl: 8354
 - neet_mathongo_questions.jsonl: 34
 - examside_diagram_questions.jsonl: 2627
 - examside_diagram_questions_jee_advanced.jsonl: 576
@@ -17,24 +17,24 @@
 ## By exam
 
 - jee-advanced: 576
-- jee-main: 12850
-- neet-ug: 2785
+- jee-main: 8607
+- neet-ug: 2408
 
 ## By subject
 
 - Biology: 99
-- Chemistry: 4708
-- Mathematics: 613
-- None: 7093
-- Physics: 3698
+- Chemistry: 3134
+- Mathematics: 388
+- None: 5043
+- Physics: 2927
 
 ## Answer-sheet status
 
-- embedded_unverified: 4751
-- official_key_pending: 3947
-- official_verified: 180
-- unavailable: 7333
+- embedded_unverified: 4175
+- official_key_pending: 1325
+- official_verified: 255
+- unavailable: 5836
 
 ## Missing required fields
 
-- question_text: 43
+- question_text: 41

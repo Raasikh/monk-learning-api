@@ -1,61 +1,1042 @@
 {
+ "paper_id": "jee-main-2022-s2-mathematics-2022-06-26-shift-1",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-mathematics-2022-06-26-shift-1",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-26",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Mathematics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-mathematics-2022-06-26-shift-1",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-26",
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Mathematics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/131236-26-06%20MORNING%20MATHS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/131236-26-06%20MORNING%20MATHS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "e1922dfcf8db0cba4b06d74c3344fdf5df9ca50667adb228ab4bc7bb97ce23b9",
+  "page_count": 11,
+  "text_chars": 979,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-mathematics-2022-06-26-shift-1.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 2,
+  "xval_printed_agree": 29,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "101061",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "101062",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "101063",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "101064",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "101065",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "101066",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "101067",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "101068",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "101069",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "101070",
+    "answer": {
+     "raw": "Drop",
+     "dropped": true
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "101071",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "101072",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "101073",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "101074",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "101075",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "101076",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "101077",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "101078",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "101079",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "101080",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "101081",
+    "answer": {
+     "raw": "36",
+     "value": "36"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "101082",
+    "answer": {
+     "raw": "1120",
+     "value": "1120"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "101083",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "101084",
+    "answer": {
+     "raw": "21",
+     "value": "21"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "101085",
+    "answer": {
+     "raw": "12",
+     "value": "12"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "101086",
+    "answer": {
+     "raw": "80",
+     "value": "80"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "101087",
+    "answer": {
+     "raw": "5264",
+     "value": "5264"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "101088",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "101089",
+    "answer": {
+     "raw": "1100",
+     "value": "1100"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "101090",
+    "answer": {
+     "raw": "42",
+     "value": "42"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "101061",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}(\\mathrm{x})=\\frac{\\mathrm{x}-1}{\\mathrm{x}+1}, \\mathrm{x} \\in \\mathrm{R}-\\{0,-1,1)$. If $\\mathrm{f}^{n+1}(\\mathrm{x})=\\mathrm{f}\\left(\\mathrm{f}^{\\mathrm{n}}(\\mathrm{x})\\right)$ for all $\\mathrm{n} \\in \\mathrm{N}$, then $\\mathrm{f}^{6}(6)+\\mathrm{f}^{7}(7)$ is equal to:",
+   "options": {
+    "A": "$\\frac{7}{6}$",
+    "B": "$-\\frac{3}{2}$",
+    "C": "$\\frac{7}{12}$",
+    "D": "$-\\frac{11}{12}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{f}(\\mathrm{x})=\\frac{\\mathrm{x}-1}{\\mathrm{x}+1}$\n$$\\begin{array}{l}\n\\Rightarrow f^{2}(x)=f(f(x))=\\frac{\\frac{x-1}{x+1}-1}{\\frac{x-1}{x+1}+1}=-\\frac{1}{x} \\\\\nf^{3}(x)=f\\left(f^{2}(x)\\right)=f\\left(-\\frac{1}{x}\\right)=\\frac{x+1}{1-x} \\\\\n\\Rightarrow f^{4}(x)=f\\left(\\frac{x+1}{1-x}\\right)=-\\frac{1}{x} \\\\\n\\Rightarrow f^{6}(x)=-\\frac{1}{x} \\Rightarrow f^{6}(6)=-\\frac{1}{8} \\\\\nf^{7}(x)=\\left(-\\frac{1}{x}\\right)=\\frac{x+1}{1-x} \\\\\n\\Rightarrow f^{7}(7)=\\frac{8}{-6}=-\\frac{4}{3} \\\\\n\\therefore-\\frac{1}{6}+-\\frac{4}{3}=-\\frac{3}{2}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{f}(\\mathrm{x})=\\frac{\\mathrm{x}-1}{\\mathrm{x}+1}$\n$$\\begin{array}{l}\n\\Rightarrow f^{2}(x)=f(f(x))=\\frac{\\frac{x-1}{x+1}-1}{\\frac{x-1}{x+1}+1}=-\\frac{1}{x} \\\\\nf^{3}(x)=f\\left(f^{2}(x)\\right)=f\\left(-\\frac{1}{x}\\right)=\\frac{x+1}{1-x} \\\\\n\\Rightarrow f^{4}(x)=f\\left(\\frac{x+1}{1-x}\\right)=-\\frac{1}{x} \\\\\n\\Rightarrow f^{6}(x)=-\\frac{1}{x} \\Rightarrow f^{6}(6)=-\\frac{1}{8} \\\\\nf^{7}(x)=\\left(-\\frac{1}{x}\\right)=\\frac{x+1}{1-x} \\\\\n\\Rightarrow f^{7}(7)=\\frac{8}{-6}=-\\frac{4}{3} \\\\\n\\therefore-\\frac{1}{6}+-\\frac{4}{3}=-\\frac{3}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "e1922dfcf8db0cba4b06d74c3344fdf5df9ca50667adb228ab4bc7bb97ce23b9",
-    "page_count": 11,
-    "text_chars": 979,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-mathematics-2022-06-26-shift-1.pdf"
+  {
+   "qno": 2,
+   "question_id": "101062",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{A}=\\left\\{\\mathrm{z} \\in \\mathrm{C}:\\left|\\frac{\\mathrm{z}+1}{\\mathrm{z}-1}<1\\right|\\right\\}$\nand $\\mathrm{B}=\\left\\{\\mathrm{z} \\in \\mathrm{C}: \\arg \\left(\\frac{\\mathrm{z}-1}{\\mathrm{z}+1}\\right)=\\frac{2 \\pi}{3}\\right\\}$.\nThen $\\mathrm{A} \\cap \\mathrm{B}$ is :",
+   "options": {
+    "A": "a portion of a circle centred at $\\left(0,-\\frac{1}{\\sqrt{3}}\\right)$ that lies in the second and third quadrants only",
+    "B": "a portion of a circle centred at $\\left(0,-\\frac{1}{\\sqrt{3}}\\right)$ that lies in the second quadrant only",
+    "C": "an empty set",
+    "D": "a portion of a circle of radius $\\frac{2}{\\sqrt{3}}$ that lies in the third quadrant only\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Set A\n$$\\begin{array}{l}\n\\Rightarrow\\left|\\frac{\\mathrm{z}+1}{\\mathrm{z}-1}\\right|<1 \\\\\n\\Rightarrow|\\mathrm{z}+1|<|\\mathrm{z}-1| \\\\\n\\Rightarrow(\\mathrm{x}+1)^{2}+\\mathrm{y}^{2}<(\\mathrm{x}-1)^{2}+\\mathrm{y}^{2} \\\\\n\\Rightarrow \\mathrm{x}<0\n\\end{array}$$\n\nSet B\n$$\\begin{array}{l}\n\\Rightarrow \\arg \\left(\\frac{\\mathrm{z}-1}{\\mathrm{z}+1}\\right)=\\frac{2 \\pi}{3} \\\\\n\\Rightarrow \\tan ^{-1}\\left(\\frac{\\mathrm{y}}{\\mathrm{x}-1}\\right)-\\tan ^{-1}\\left(\\frac{\\mathrm{y}}{\\mathrm{x}+1}\\right)=\\frac{2 \\pi}{3} \\\\\n\\Rightarrow \\mathrm{x}^{2}+\\mathrm{y}^{2}+\\frac{2 \\mathrm{y}}{\\sqrt{3}}-1=0\n\\end{array}$$\n$A \\cap B$\n⇒ Centre $\\left(0,-\\frac{1}{\\sqrt{3}}\\right)$\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Set A\n$$\\begin{array}{l}\n\\Rightarrow\\left|\\frac{\\mathrm{z}+1}{\\mathrm{z}-1}\\right|<1 \\\\\n\\Rightarrow|\\mathrm{z}+1|<|\\mathrm{z}-1| \\\\\n\\Rightarrow(\\mathrm{x}+1)^{2}+\\mathrm{y}^{2}<(\\mathrm{x}-1)^{2}+\\mathrm{y}^{2} \\\\\n\\Rightarrow \\mathrm{x}<0\n\\end{array}$$",
+     "Set B\n$$\\begin{array}{l}\n\\Rightarrow \\arg \\left(\\frac{\\mathrm{z}-1}{\\mathrm{z}+1}\\right)=\\frac{2 \\pi}{3} \\\\\n\\Rightarrow \\tan ^{-1}\\left(\\frac{\\mathrm{y}}{\\mathrm{x}-1}\\right)-\\tan ^{-1}\\left(\\frac{\\mathrm{y}}{\\mathrm{x}+1}\\right)=\\frac{2 \\pi}{3} \\\\\n\\Rightarrow \\mathrm{x}^{2}+\\mathrm{y}^{2}+\\frac{2 \\mathrm{y}}{\\sqrt{3}}-1=0\n\\end{array}$$\n$A \\cap B$\n⇒ Centre $\\left(0,-\\frac{1}{\\sqrt{3}}\\right)$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "101063",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let A be a $3 \\times 3$ invertible matrix. If $\\mid$ adj $(24 \\mathrm{~A}) \\mid= \\operatorname{adj}(3 \\operatorname{adj}(2 \\mathrm{~A})) \\mid$, then $|\\mathrm{A}|^{2}$ is equal to :",
+   "options": {
+    "A": "$6^{6}$",
+    "B": "$2^{12}$",
+    "C": "$2^{6}$",
+    "D": "1\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $|\\operatorname{adj}(24 \\mathrm{~A})|=|\\operatorname{adj} 3(\\operatorname{adj} 2 \\mathrm{~A})|$\n$$\\begin{array}{l}\n\\Rightarrow|24 \\mathrm{a}|^{2}=(3 \\operatorname{adj}(2 \\mathrm{~A}))^{2} \\\\\n\\Rightarrow\\left(24^{3} \\mid \\mathrm{Al}\\right)^{2}=\\left(3^{3}|\\operatorname{adj}(2 \\mathrm{~A})|\\right)^{2} \\\\\n=3^{6}\\left(|2 \\mathrm{~A}|^{2}\\right)^{2} \\\\\n\\Rightarrow 24^{6}|\\mathrm{~A}|^{2}=\\left(24^{3}|\\mathrm{~A}|\\right)^{2}=3^{6} \\times 2^{12}|\\mathrm{~A}|^{4} \\\\\n\\Rightarrow|\\mathrm{~A}|^{2}=\\frac{24^{6}}{3^{6} \\times 2^{12}}=64\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$|\\operatorname{adj}(24 \\mathrm{~A})|=|\\operatorname{adj} 3(\\operatorname{adj} 2 \\mathrm{~A})|$\n$$\\begin{array}{l}\n\\Rightarrow|24 \\mathrm{a}|^{2}=(3 \\operatorname{adj}(2 \\mathrm{~A}))^{2} \\\\\n\\Rightarrow\\left(24^{3} \\mid \\mathrm{Al}\\right)^{2}=\\left(3^{3}|\\operatorname{adj}(2 \\mathrm{~A})|\\right)^{2} \\\\\n=3^{6}\\left(|2 \\mathrm{~A}|^{2}\\right)^{2} \\\\\n\\Rightarrow 24^{6}|\\mathrm{~A}|^{2}=\\left(24^{3}|\\mathrm{~A}|\\right)^{2}=3^{6} \\times 2^{12}|\\mathrm{~A}|^{4} \\\\\n\\Rightarrow|\\mathrm{~A}|^{2}=\\frac{24^{6}}{3^{6} \\times 2^{12}}=64\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "101064",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The ordered pair (a, b), for which the system of linear equations\n$$\\begin{array}{l}\n3 x-2 y+z=b \\\\\n5 x-8 y+9 z=3 \\\\\n2 x+y+a z=-1\n\\end{array}$$\nhas no solution, is :",
+   "options": {
+    "A": "$\\left(3, \\frac{1}{3}\\right)$",
+    "B": "$\\left(-3, \\frac{1}{3}\\right)$",
+    "C": "$\\left(-3,-\\frac{1}{3}\\right)$",
+    "D": "$\\left(3,-\\frac{1}{3}\\right)$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\left|\\begin{array}{ccc}3 & -2 & 1 \\\\ 5 & -8 & 9 \\\\ 2 & 1 & \\mathrm{a}\\end{array}\\right|=0$\n$$\\begin{array}{l}\n3(-8 a-9)+2(5 a-18)+1(21)=0 \\\\\n\\Rightarrow a=-3\n\\end{array}$$\n\nAlso $\\Delta_{2}=\\left|\\begin{array}{ccc}3 & -2 & b \\\\ 5 & 8 & 3 \\\\ 2 & 1 & -1\\end{array}\\right|^{\\frac{1}{3}}$\nIf $\\mathrm{b}=\\frac{1}{3}$\n$\\Delta_{2}=0$\nSo b must be equal to\n$$-\\frac{1}{3}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\left|\\begin{array}{ccc}3 & -2 & 1 \\\\ 5 & -8 & 9 \\\\ 2 & 1 & \\mathrm{a}\\end{array}\\right|=0$\n$$\\begin{array}{l}\n3(-8 a-9)+2(5 a-18)+1(21)=0 \\\\\n\\Rightarrow a=-3\n\\end{array}$$",
+     "Also $\\Delta_{2}=\\left|\\begin{array}{ccc}3 & -2 & b \\\\ 5 & 8 & 3 \\\\ 2 & 1 & -1\\end{array}\\right|^{\\frac{1}{3}}$\nIf $\\mathrm{b}=\\frac{1}{3}$\n$\\Delta_{2}=0$\nSo b must be equal to\n$$-\\frac{1}{3}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": "101065",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The remainder when $(2021)^{2023}$ is divided by 7 is :",
+   "options": {
+    "A": "1",
+    "B": "2",
+    "C": "5",
+    "D": "6\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $(2021)^{2023}=(7 \\lambda-2)^{2023}$\n$$\\begin{array}{l}\n={ }^{2023} \\mathrm{C}_{0}(7 \\mathrm{~A})^{2023}-\\ldots \\ldots{ }^{2023} \\mathrm{C}_{2023} 2^{2023} \\\\\n=7 \\mathrm{t}-2^{2023} \\\\\n\\therefore-2^{2023}=-2 \\times 2^{2022} \\\\\n=-2 \\times\\left(2^{3}\\right)^{674} \\\\\n=-2(1+7 \\mu)^{674} \\\\\n=-(7 \\alpha+2) \\\\\n\\Rightarrow \\text { remainder }=-2 \\text { or }+5\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$(2021)^{2023}=(7 \\lambda-2)^{2023}$\n$$\\begin{array}{l}\n={ }^{2023} \\mathrm{C}_{0}(7 \\mathrm{~A})^{2023}-\\ldots \\ldots{ }^{2023} \\mathrm{C}_{2023} 2^{2023} \\\\\n=7 \\mathrm{t}-2^{2023} \\\\\n\\therefore-2^{2023}=-2 \\times 2^{2022} \\\\\n=-2 \\times\\left(2^{3}\\right)^{674} \\\\\n=-2(1+7 \\mu)^{674} \\\\\n=-(7 \\alpha+2) \\\\\n\\Rightarrow \\text { remainder }=-2 \\text { or }+5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "101066",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "$\\lim _{\\mathrm{x} \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sin \\left(\\cos ^{-1} \\mathrm{x}\\right)-\\mathrm{x}}{1-\\tan \\left(\\cos ^{-1} \\mathrm{x}\\right)}$ is equal to :",
+   "options": {
+    "A": "$\\sqrt{2}$",
+    "B": "$-\\sqrt{2}$",
+    "C": "$\\frac{1}{\\sqrt{2}}$",
+    "D": "$-\\frac{1}{\\sqrt{2}}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sin \\left(\\cos ^{-1} x\\right)-x}{1-\\tan \\left(\\cos ^{-1} x\\right)}$\n$$\\begin{array}{l}\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sin \\left(\\sin ^{-1} \\sqrt{1-x^{2}}\\right)-x}{1-\\tan \\left(\\tan ^{-1}\\left(\\frac{\\sqrt{1-x^{2}}}{x}\\right)\\right)} \\\\\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sqrt{1-x^{2}}-x}{1-\\left(\\frac{\\sqrt{1-x^{2}}}{x}\\right)} \\\\\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}}(-x)=-\\frac{1}{\\sqrt{2}}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sin \\left(\\cos ^{-1} x\\right)-x}{1-\\tan \\left(\\cos ^{-1} x\\right)}$\n$$\\begin{array}{l}\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sin \\left(\\sin ^{-1} \\sqrt{1-x^{2}}\\right)-x}{1-\\tan \\left(\\tan ^{-1}\\left(\\frac{\\sqrt{1-x^{2}}}{x}\\right)\\right)} \\\\\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sqrt{1-x^{2}}-x}{1-\\left(\\frac{\\sqrt{1-x^{2}}}{x}\\right)} \\\\\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}}(-x)=-\\frac{1}{\\sqrt{2}}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "101067",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}, \\mathrm{g}: \\mathrm{R} \\rightarrow \\mathrm{R}$ be two real valued functions defined as $f(x)=\\left\\{\\begin{array}{cc}-|x+3| & , \\quad x<0 \\\\ e^{x} & , \\quad x \\geq 0\\end{array}\\right.$ and $g(x)=\\left\\{\\begin{array}{ll}x^{2}+k_{1} x & , \\quad x<0 \\\\ 4 x+k_{2} & , \\quad x \\geq 0\\end{array}\\right.$, where $k_{1}$ and $k_{2}$ are real constants. If (gof) is differentiable at $\\mathrm{x}=0$, then (gof) (-4) + (gof) (4) is equal to :",
+   "options": {
+    "A": "$4\\left(\\mathrm{e}^{4}+1\\right)$",
+    "B": "$2\\left(2 \\mathrm{e}^{4}+1\\right)$",
+    "C": "$4 \\mathrm{e}^{4}$",
+    "D": "$2\\left(2 \\mathrm{e}^{4}-1\\right)$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{f}(\\mathrm{x})=\\left\\{\\begin{array}{lll}\\mathrm{x}+3 & ; & \\mathrm{x}<-3 \\\\ -(\\mathrm{x}+3) & ; & -3 \\leq \\mathrm{x}<0 \\\\ \\mathrm{e}^{\\mathrm{x}} & ; & \\mathrm{x} \\geq 0\\end{array}\\right\\}$\n$$\\begin{array}{l}\ng(x)=\\left\\{\\begin{array}{ccc}\nx^{2}+k_{1} x & ; & x<0 \\\\\n4 x+k_{2} & ; & x \\geq 0\n\\end{array}\\right\\} \\\\\ng(f(x))=\\left\\{\\begin{array}{ccc}\nf(x)^{2}+k_{1} f(x) & ; & f(x)<0 \\\\\n4 f(x)+k_{2} & ; & f(x) \\geq 0\n\\end{array}\\right\\} \\\\\ng(f(x))=\\left\\{\\begin{array}{ccc}\n(x+3)^{2}+k_{1}(x+3) & ; & x<-3 \\\\\n(x+3)^{2}-k_{1}(x+3) & ; & -3 \\leq x<0 \\\\\n4 e^{x}+k_{2} & ; & x>0\n\\end{array}\\right\\}\n\\end{array}$$\ncheck continuity at $\\mathrm{x}=0$\n$$\\begin{array}{l}\n\\operatorname{gof}(0)=g\\left(f\\left(0^{-}\\right)\\right)=g\\left(f\\left(0^{+}\\right)\\right) \\\\\n4+k_{2}=9-3 k_{1}=4+k_{2} \\\\\n3 k_{1}+k_{2}=5\n\\end{array}$$\ndifferentiate\n$$\\begin{array}{l}\n(\\mathrm{g}(\\mathrm{f}(\\mathrm{x})))^{\\prime}=\\left\\{\\begin{array}{ccc}\n2(\\mathrm{x}+3)+\\mathrm{k}_{1} & ; & \\mathrm{x}<-3 \\\\\n2(\\mathrm{x}+3)-\\mathrm{k}_{1} & ; & -3 \\leq \\mathrm{x}<0 \\\\\n4 \\mathrm{e}^{\\mathrm{x}} & ; & \\mathrm{x} \\geq 0\n\\end{array}\\right\\} \\\\\n6-\\mathrm{k}_{1}=4 \\\\\n\\mathrm{k}_{1}=2 \\\\\n\\therefore \\mathrm{k}_{1}=2, \\mathrm{k}_{2}=-1\n\\end{array}$$\n$$\\begin{array}{l}\n\\operatorname{gof}(x)=\\left\\{\\begin{array}{ccc}\n(x+3)^{2}+2(x+3) & ; & x<-3 \\\\\n(x+3)^{2}-2(x+3) & ; & -3 \\leq x<0 \\\\\n4 e^{x}-1 & ; & x \\geq 0\n\\end{array}\\right\\} \\\\\n\\operatorname{gof}(-4)+\\operatorname{gof}(4)=4 e^{4}-2 \\\\\n\\Rightarrow 2\\left(2 e^{4}-1\\right)\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{f}(\\mathrm{x})=\\left\\{\\begin{array}{lll}\\mathrm{x}+3 & ; & \\mathrm{x}<-3 \\\\ -(\\mathrm{x}+3) & ; & -3 \\leq \\mathrm{x}<0 \\\\ \\mathrm{e}^{\\mathrm{x}} & ; & \\mathrm{x} \\geq 0\\end{array}\\right\\}$\n$$\\begin{array}{l}\ng(x)=\\left\\{\\begin{array}{ccc}\nx^{2}+k_{1} x & ; & x<0 \\\\\n4 x+k_{2} & ; & x \\geq 0\n\\end{array}\\right\\} \\\\\ng(f(x))=\\left\\{\\begin{array}{ccc}\nf(x)^{2}+k_{1} f(x) & ; & f(x)<0 \\\\\n4 f(x)+k_{2} & ; & f(x) \\geq 0\n\\end{array}\\right\\} \\\\\ng(f(x))=\\left\\{\\begin{array}{ccc}\n(x+3)^{2}+k_{1}(x+3) & ; & x<-3 \\\\\n(x+3)^{2}-k_{1}(x+3) & ; & -3 \\leq x<0 \\\\\n4 e^{x}+k_{2} & ; & x>0\n\\end{array}\\right\\}\n\\end{array}$$\ncheck continuity at $\\mathrm{x}=0$\n$$\\begin{array}{l}\n\\operatorname{gof}(0)=g\\left(f\\left(0^{-}\\right)\\right)=g\\left(f\\left(0^{+}\\right)\\right) \\\\\n4+k_{2}=9-3 k_{1}=4+k_{2} \\\\\n3 k_{1}+k_{2}=5\n\\end{array}$$\ndifferentiate\n$$\\begin{array}{l}\n(\\mathrm{g}(\\mathrm{f}(\\mathrm{x})))^{\\prime}=\\left\\{\\begin{array}{ccc}\n2(\\mathrm{x}+3)+\\mathrm{k}_{1} & ; & \\mathrm{x}<-3 \\\\\n2(\\mathrm{x}+3)-\\mathrm{k}_{1} & ; & -3 \\leq \\mathrm{x}<0 \\\\\n4 \\mathrm{e}^{\\mathrm{x}} & ; & \\mathrm{x} \\geq 0\n\\end{array}\\right\\} \\\\\n6-\\mathrm{k}_{1}=4 \\\\\n\\mathrm{k}_{1}=2 \\\\\n\\therefore \\mathrm{k}_{1}=2, \\mathrm{k}_{2}=-1\n\\end{array}$$\n$$\\begin{array}{l}\n\\operatorname{gof}(x)=\\left\\{\\begin{array}{ccc}\n(x+3)^{2}+2(x+3) & ; & x<-3 \\\\\n(x+3)^{2}-2(x+3) & ; & -3 \\leq x<0 \\\\\n4 e^{x}-1 & ; & x \\geq 0\n\\end{array}\\right\\} \\\\\n\\operatorname{gof}(-4)+\\operatorname{gof}(4)=4 e^{4}-2 \\\\\n\\Rightarrow 2\\left(2 e^{4}-1\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": "101068",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The sum of the absolute minimum and the absolute maximum values of the function $\\mathrm{f}(\\mathrm{x})=\\left|3 \\mathrm{x}-\\mathrm{x}^{2}+2\\right|-\\mathrm{x}$ in the interval $[-1,2]$ is :",
+   "options": {
+    "A": "$\\frac{\\sqrt{17}+3}{2}$",
+    "B": "$\\frac{\\sqrt{17}+5}{2}$",
+    "C": "5",
+    "D": "$\\frac{9-\\sqrt{17}}{2}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $f(x)=\\left\\{\\begin{array}{ll}x^{2}-4 x-2, & \\forall x \\in\\left(-1, \\frac{3-\\sqrt{17}}{2}\\right) \\\\ -x^{2}+2 x+2, & \\forall x \\in\\left(\\frac{3-\\sqrt{17}}{2}, 2\\right)\\end{array}\\right.$\n$f^{\\prime}(\\mathrm{x})$ when $\\mathrm{x} \\in\\left(-1, \\frac{3-\\sqrt{17}}{2}\\right)$\n$f^{\\prime}(\\mathrm{x})=2 \\mathrm{x}-4=0 \\Rightarrow \\mathrm{x}=2$\n$f^{\\prime}(\\mathrm{x})=2(\\mathrm{x}-2) \\quad \\Rightarrow f^{\\prime}(\\mathrm{x})$ is always ↓\n$f(2)=2$\n$f(-1)=3$\n$f\\left(\\frac{3-\\sqrt{17}}{2}\\right)=\\frac{\\sqrt{17}-3}{2}$\n$f^{\\prime}(\\mathrm{x})$ when $\\mathrm{x} \\in\\left(\\frac{3-\\sqrt{17}}{2}, 2\\right)$\n$f^{\\prime}(\\mathrm{x})=-2 \\mathrm{x}+2$\n$f^{\\prime}(\\mathrm{x})=-2(\\mathrm{x}-1)$\n$f^{\\prime}(\\mathrm{x})=0$ when $\\mathrm{x}=1$\n$f(1)=3$\nabsolute minimum value $=\\frac{\\sqrt{17}-3}{2}$\nabsolute maximum value $=3$\n$S u m=\\frac{\\sqrt{17}-3}{2}+3=\\frac{\\sqrt{17}+3}{2}$\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$f(x)=\\left\\{\\begin{array}{ll}x^{2}-4 x-2, & \\forall x \\in\\left(-1, \\frac{3-\\sqrt{17}}{2}\\right) \\\\ -x^{2}+2 x+2, & \\forall x \\in\\left(\\frac{3-\\sqrt{17}}{2}, 2\\right)\\end{array}\\right.$\n$f^{\\prime}(\\mathrm{x})$ when $\\mathrm{x} \\in\\left(-1, \\frac{3-\\sqrt{17}}{2}\\right)$\n$f^{\\prime}(\\mathrm{x})=2 \\mathrm{x}-4=0 \\Rightarrow \\mathrm{x}=2$\n$f^{\\prime}(\\mathrm{x})=2(\\mathrm{x}-2) \\quad \\Rightarrow f^{\\prime}(\\mathrm{x})$ is always ↓\n$f(2)=2$\n$f(-1)=3$\n$f\\left(\\frac{3-\\sqrt{17}}{2}\\right)=\\frac{\\sqrt{17}-3}{2}$\n$f^{\\prime}(\\mathrm{x})$ when $\\mathrm{x} \\in\\left(\\frac{3-\\sqrt{17}}{2}, 2\\right)$\n$f^{\\prime}(\\mathrm{x})=-2 \\mathrm{x}+2$\n$f^{\\prime}(\\mathrm{x})=-2(\\mathrm{x}-1)$\n$f^{\\prime}(\\mathrm{x})=0$ when $\\mathrm{x}=1$\n$f(1)=3$\nabsolute minimum value $=\\frac{\\sqrt{17}-3}{2}$\nabsolute maximum value $=3$\n$S u m=\\frac{\\sqrt{17}-3}{2}+3=\\frac{\\sqrt{17}+3}{2}$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "101069",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let S be the set of all the natural numbers, for which the line $\\frac{\\mathrm{x}}{\\mathrm{a}}+\\frac{\\mathrm{y}}{\\mathrm{b}}=2$ is a tangent to the curve $\\left(\\frac{\\mathrm{x}}{\\mathrm{a}}\\right)^{\\mathrm{n}}+\\left(\\frac{\\mathrm{y}}{\\mathrm{b}}\\right)^{\\mathrm{n}}=2$ at the point $(\\mathrm{a}, \\mathrm{b}), \\mathrm{ab} \\neq 0$. Then:",
+   "options": {
+    "A": "$\\mathrm{S}=\\phi$",
+    "B": "$\\mathrm{n}(\\mathrm{S})=1$",
+    "C": "$\\mathrm{S}=\\{2 \\mathrm{k}: \\mathrm{k} \\in \\mathrm{N}\\}$",
+    "D": "$\\mathrm{S}=\\mathrm{N}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\left(\\frac{\\mathrm{x}}{\\mathrm{a}}\\right)^{\\mathrm{n}}+\\left(\\frac{\\mathrm{y}}{\\mathrm{b}}\\right)^{\\mathrm{n}}=2$\nSlope of tangent at (a, b)\n$n \\cdot\\left(\\frac{x}{a}\\right)^{n-1} \\cdot \\frac{1}{a}+n\\left(\\frac{x}{b}\\right)^{n-1} \\cdot \\frac{1}{b} \\frac{d y}{d x}=0$\n$\\left.\\frac{\\mathrm{dy}}{\\mathrm{dx}}\\right|_{(\\mathrm{a}, \\mathrm{b})}=-\\frac{\\mathrm{b}}{\\mathrm{a}}$\n∴ Equation of tangent\n$\\mathrm{y}-\\mathrm{b}=-\\frac{\\mathrm{b}}{\\mathrm{a}}(\\mathrm{x}-\\mathrm{a})$\n$\\frac{\\mathrm{x}}{\\mathrm{a}}+\\frac{\\mathrm{y}}{\\mathrm{b}}=2 \\forall \\mathrm{n} \\in \\mathrm{N}$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\left(\\frac{\\mathrm{x}}{\\mathrm{a}}\\right)^{\\mathrm{n}}+\\left(\\frac{\\mathrm{y}}{\\mathrm{b}}\\right)^{\\mathrm{n}}=2$\nSlope of tangent at (a, b)\n$n \\cdot\\left(\\frac{x}{a}\\right)^{n-1} \\cdot \\frac{1}{a}+n\\left(\\frac{x}{b}\\right)^{n-1} \\cdot \\frac{1}{b} \\frac{d y}{d x}=0$\n$\\left.\\frac{\\mathrm{dy}}{\\mathrm{dx}}\\right|_{(\\mathrm{a}, \\mathrm{b})}=-\\frac{\\mathrm{b}}{\\mathrm{a}}$\n∴ Equation of tangent\n$\\mathrm{y}-\\mathrm{b}=-\\frac{\\mathrm{b}}{\\mathrm{a}}(\\mathrm{x}-\\mathrm{a})$\n$\\frac{\\mathrm{x}}{\\mathrm{a}}+\\frac{\\mathrm{y}}{\\mathrm{b}}=2 \\forall \\mathrm{n} \\in \\mathrm{N}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "101070",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The area bounded by the curve $\\mathrm{y}=\\left|\\mathrm{x}^{2}-9\\right|$ and the line $\\mathrm{y}=3$ is :",
+   "options": {
+    "A": "$4(2 \\sqrt{3}+\\sqrt{6}-4)$",
+    "B": "$4(4 \\sqrt{3}+\\sqrt{6}-4)$",
+    "C": "$8(4 \\sqrt{3}+3 \\sqrt{6}-9)$",
+    "D": "$8(4 \\sqrt{3}+\\sqrt{6}-9)$\n\nOfficial Ans. by NTA (D)\nAns. (Bonus)\n\nSol.\n\nArea of shaded region\n$$\\begin{array}{l}\n=2 \\int_{0}^{3}(\\sqrt{9+\\mathrm{y}}-\\sqrt{9-\\mathrm{y}}) \\mathrm{dy}+2 \\int_{3}^{9}(\\sqrt{9-\\mathrm{y}}) \\mathrm{dy} \\\\\n=2\\left[\\int_{0}^{3}(9+\\mathrm{y})^{1 / 2} \\mathrm{dy}-\\int_{0}^{3}(9-\\mathrm{y})^{1 / 2} \\mathrm{dy}+\\int_{3}^{9}(9-\\mathrm{y})^{1 / 2} \\mathrm{dy}\\right] \\\\\n=2\\left[\\frac{2}{3}\\left[(9+\\mathrm{y})^{3 / 2}\\right]_{0}^{3}+\\frac{2}{3}\\left[(9-\\mathrm{y})^{3 / 2}\\right]_{0}^{3}-\\frac{2}{3}\\left[(9-\\mathrm{y})^{3 / 2}\\right]_{3}^{9}\\right] \\\\\n=\\frac{4}{3}[12 \\sqrt{12}-27+6 \\sqrt{6}-27-(0-6 \\sqrt{6})] \\\\\n=\\frac{4}{3}[24 \\sqrt{3}+12 \\sqrt{6}-54] \\\\\n=8(4 \\sqrt{3}+2 \\sqrt{6}-9)\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Area of shaded region\n$$\\begin{array}{l}\n=2 \\int_{0}^{3}(\\sqrt{9+\\mathrm{y}}-\\sqrt{9-\\mathrm{y}}) \\mathrm{dy}+2 \\int_{3}^{9}(\\sqrt{9-\\mathrm{y}}) \\mathrm{dy} \\\\\n=2\\left[\\int_{0}^{3}(9+\\mathrm{y})^{1 / 2} \\mathrm{dy}-\\int_{0}^{3}(9-\\mathrm{y})^{1 / 2} \\mathrm{dy}+\\int_{3}^{9}(9-\\mathrm{y})^{1 / 2} \\mathrm{dy}\\right] \\\\\n=2\\left[\\frac{2}{3}\\left[(9+\\mathrm{y})^{3 / 2}\\right]_{0}^{3}+\\frac{2}{3}\\left[(9-\\mathrm{y})^{3 / 2}\\right]_{0}^{3}-\\frac{2}{3}\\left[(9-\\mathrm{y})^{3 / 2}\\right]_{3}^{9}\\right] \\\\\n=\\frac{4}{3}[12 \\sqrt{12}-27+6 \\sqrt{6}-27-(0-6 \\sqrt{6})] \\\\\n=\\frac{4}{3}[24 \\sqrt{3}+12 \\sqrt{6}-54] \\\\\n=8(4 \\sqrt{3}+2 \\sqrt{6}-9)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": "101071",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let R be the point $(3,7)$ and let P and Q be two points on the line $\\mathrm{x}+\\mathrm{y}=5$ such that PQR is an equilateral triangle. Then the area of $\\triangle \\mathrm{PQR}$ is :",
+   "options": {
+    "A": "$\\frac{25}{4 \\sqrt{3}}$",
+    "B": "$\\frac{25 \\sqrt{3}}{2}$",
+    "C": "$\\frac{25}{\\sqrt{3}}$",
+    "D": "$\\frac{25}{2 \\sqrt{3}}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol.\n$$\\begin{array}{l}\n\\sin 60^{\\circ}=\\frac{5 / \\sqrt{2}}{a} \\\\\na=\\frac{5 \\sqrt{2}}{3}\n\\end{array}$$\n\nArea of $\\triangle \\mathrm{PQR}=\\frac{\\sqrt{3}}{4} \\mathrm{a}^{2}=\\frac{25}{2 \\sqrt{3}}$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\sin 60^{\\circ}=\\frac{5 / \\sqrt{2}}{a} \\\\\na=\\frac{5 \\sqrt{2}}{3}\n\\end{array}$$",
+     "Area of $\\triangle \\mathrm{PQR}=\\frac{\\sqrt{3}}{4} \\mathrm{a}^{2}=\\frac{25}{2 \\sqrt{3}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": "101072",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let C be a circle passing through the points $\\mathrm{A}(2,-1)$ and $\\mathrm{B}(3,4)$. The line segment AB is not a diameter of C. If r is the radius of C and its centre lies on the circle $(x-5)^{2}+(y-1)^{2}=\\frac{13}{2}$, then $r^{2}$ is equal to :",
+   "options": {
+    "A": "32",
+    "B": "$\\frac{65}{2}$",
+    "C": "$\\frac{61}{2}$",
+    "D": "30\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\n\\mathrm{AB}=\\sqrt{ } 26 \\\\\n\\mathrm{r}^{2}=\\mathrm{CM}^{2}+\\mathrm{AM}^{2} \\\\\n=\\left(2 \\times \\sqrt{\\frac{13}{2}}\\right)^{2}+\\left(\\sqrt{\\frac{13}{2}}\\right)^{2} \\\\\n\\mathrm{r}^{2}=\\frac{65}{2}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP\n$$\\begin{array}{l}\n\\mathrm{AB}=\\sqrt{ } 26 \\\\\n\\mathrm{r}^{2}=\\mathrm{CM}^{2}+\\mathrm{AM}^{2} \\\\\n=\\left(2 \\times \\sqrt{\\frac{13}{2}}\\right)^{2}+\\left(\\sqrt{\\frac{13}{2}}\\right)^{2} \\\\\n\\mathrm{r}^{2}=\\frac{65}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "101073",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let the normal at the point P on the parabola $\\mathrm{y}^{2}=$ 6x pass through the point (5, -8). If the tangent at P to the parabola intersects its directrix at the point Q, then the ordinate of the point Q is :",
+   "options": {
+    "A": "-3",
+    "B": "$-\\frac{9}{4}$",
+    "C": "$-\\frac{5}{2}$",
+    "D": "-2\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\nEquation of normal : $\\mathrm{y}=-\\mathrm{tx}+2 \\mathrm{at}+\\mathrm{at}^{3} \\quad\\left(\\mathrm{a}=\\frac{3}{2}\\right)$ since passing through (5, -8), we get $\\mathrm{t}=-2$\nCo-ordinate of $\\mathrm{Q}:(6,-6)$\nEquation of tangent at $\\mathrm{Q}: \\mathrm{x}+2 \\mathrm{y}+6=0$\nPut $x=\\frac{-3}{2}$ to get $R\\left(\\frac{-3}{2}, \\frac{-9}{4}\\right)$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Equation of normal : $\\mathrm{y}=-\\mathrm{tx}+2 \\mathrm{at}+\\mathrm{at}^{3} \\quad\\left(\\mathrm{a}=\\frac{3}{2}\\right)$ since passing through (5, -8), we get $\\mathrm{t}=-2$\nCo-ordinate of $\\mathrm{Q}:(6,-6)$\nEquation of tangent at $\\mathrm{Q}: \\mathrm{x}+2 \\mathrm{y}+6=0$\nPut $x=\\frac{-3}{2}$ to get $R\\left(\\frac{-3}{2}, \\frac{-9}{4}\\right)$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": "101074",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If the two lines $l_{1}: \\frac{\\mathrm{x}-2}{3}=\\frac{\\mathrm{y}+1}{-2}, \\mathrm{z}=2$ and $l_{2}: \\frac{\\mathrm{x}-1}{1}=\\frac{2 \\mathrm{y}+3}{\\alpha}=\\frac{\\mathrm{z}+5}{2}$ perpendicular, then an angle between the lines $l_{2}$ and $l_{3}: \\frac{1-\\mathrm{x}}{3}=\\frac{2 \\mathrm{y}-1}{-4}=\\frac{\\mathrm{z}}{4}$ is :",
+   "options": {
+    "A": "$\\cos ^{-1}\\left(\\frac{29}{4}\\right)$",
+    "B": "$\\sec ^{-1}\\left(\\frac{29}{4}\\right)$",
+    "C": "$\\cos ^{-1}\\left(\\frac{2}{29}\\right)$",
+    "D": "$\\cos ^{-1}\\left(\\frac{2}{\\sqrt{29}}\\right)$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol. $l_{1}: \\frac{\\mathrm{x}-2}{3}=\\frac{\\mathrm{y}+1}{-2}=\\frac{\\mathrm{z}-2}{0}$\n$$\\begin{array}{l}\nl_{2}: \\frac{\\mathrm{x}-1}{1}=\\frac{\\mathrm{y}+3 / 2}{\\alpha / 2}=\\frac{\\mathrm{z}+5}{2} \\\\\nl_{3}: \\frac{\\mathrm{x}-1}{-3}=\\frac{\\mathrm{y}-1 / 2}{-2}=\\frac{\\mathrm{z}-0}{4} \\\\\nl_{1} \\perp l_{2} \\Rightarrow \\frac{|3-\\alpha+0|}{\\sqrt{13} \\sqrt{1+\\frac{\\alpha^{2}}{4}+4}}=0 \\Rightarrow \\alpha=3\n\\end{array}$$\nangle between $l_{2} \\& l_{3}$\n$$\\begin{array}{l}\n\\cos \\theta=\\frac{|1 \\times(-3)+(-2)(\\alpha / 2)+2 \\times 4|}{\\sqrt{1+4+\\frac{\\alpha^{2}}{4}} \\sqrt{9+16+4}} \\\\\n\\cos \\theta=\\frac{|-3-\\alpha+8|}{\\sqrt{5+\\frac{\\alpha^{2}}{4}} \\sqrt{29}}\n\\end{array}$$\nput $\\alpha=3$\n$$\\begin{array}{l}\n\\cos \\theta=\\frac{2}{\\sqrt{\\frac{29}{4}} \\sqrt{29}}=\\frac{4}{29} \\\\\n\\theta=\\cos ^{-1}\\left(\\frac{4}{29}\\right) \\Rightarrow \\theta=\\sec ^{-1}\\left(\\frac{29}{4}\\right)\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$l_{1}: \\frac{\\mathrm{x}-2}{3}=\\frac{\\mathrm{y}+1}{-2}=\\frac{\\mathrm{z}-2}{0}$\n$$\\begin{array}{l}\nl_{2}: \\frac{\\mathrm{x}-1}{1}=\\frac{\\mathrm{y}+3 / 2}{\\alpha / 2}=\\frac{\\mathrm{z}+5}{2} \\\\\nl_{3}: \\frac{\\mathrm{x}-1}{-3}=\\frac{\\mathrm{y}-1 / 2}{-2}=\\frac{\\mathrm{z}-0}{4} \\\\\nl_{1} \\perp l_{2} \\Rightarrow \\frac{|3-\\alpha+0|}{\\sqrt{13} \\sqrt{1+\\frac{\\alpha^{2}}{4}+4}}=0 \\Rightarrow \\alpha=3\n\\end{array}$$\nangle between $l_{2} \\& l_{3}$\n$$\\begin{array}{l}\n\\cos \\theta=\\frac{|1 \\times(-3)+(-2)(\\alpha / 2)+2 \\times 4|}{\\sqrt{1+4+\\frac{\\alpha^{2}}{4}} \\sqrt{9+16+4}} \\\\\n\\cos \\theta=\\frac{|-3-\\alpha+8|}{\\sqrt{5+\\frac{\\alpha^{2}}{4}} \\sqrt{29}}\n\\end{array}$$\nput $\\alpha=3$\n$$\\begin{array}{l}\n\\cos \\theta=\\frac{2}{\\sqrt{\\frac{29}{4}} \\sqrt{29}}=\\frac{4}{29} \\\\\n\\theta=\\cos ^{-1}\\left(\\frac{4}{29}\\right) \\Rightarrow \\theta=\\sec ^{-1}\\left(\\frac{29}{4}\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": "101075",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let the plane $2 \\mathrm{x}+3 \\mathrm{y}+\\mathrm{z}+20=0$ be rotated through a right angle about its line of intersection with the plane $x-3 y+5 z=8$. If the mirror image of the point $\\left(2,-\\frac{1}{2}, 2\\right)$ in the rotated plane is B(a, b, c), then :",
+   "options": {
+    "A": "$\\frac{\\mathrm{a}}{8}=\\frac{\\mathrm{b}}{5}=\\frac{\\mathrm{c}}{-4}$",
+    "B": "$\\frac{\\mathrm{a}}{4}=\\frac{\\mathrm{b}}{5}=\\frac{\\mathrm{c}}{-2}$",
+    "C": "$\\frac{\\mathrm{a}}{8}=\\frac{\\mathrm{b}}{-5}=\\frac{\\mathrm{c}}{4}$",
+    "D": "$\\frac{\\mathrm{a}}{4}=\\frac{\\mathrm{b}}{5}=\\frac{\\mathrm{c}}{2}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol. Let equation of rotated plane be :\n$$\\begin{array}{l}\n(2 x+3 y+z+20)+\\lambda(x-3 y+5 z-8)=0 \\\\\n(2+\\lambda) x+(3-3 \\lambda) y+(1+5 \\lambda) z+20-8 \\lambda=0\n\\end{array}$$\n\nAbove plane is perpendicular to $2 \\mathrm{x}+3 \\mathrm{y}+\\mathrm{z}+20=0$\nSo, $(2+\\lambda) \\cdot 2+(3-3 \\lambda) \\cdot 3+(1+5 \\lambda) \\cdot 1=0 \\Rightarrow \\lambda=7$\n⇒ Equation of rotated plane : $\\mathrm{x}-2 \\mathrm{y}+4 \\mathrm{z}-4=0$\nMirror image of $\\mathrm{A}\\left(2, \\frac{-1}{2}, 2\\right)$ in rotated plane is B(a, b, c)\nEquation of $\\mathrm{AB}: \\frac{\\mathrm{x}-2}{1}=\\frac{\\mathrm{y}+1 / 2}{-2}=\\frac{\\mathrm{z}-2}{4}=\\mathrm{k}$\nLet coordinate of B be $\\left(2+k, \\frac{-1}{2}-2 k, 2+4 k\\right)$ midpoint of AB is $\\left(2+\\frac{\\mathrm{k}}{2}, \\frac{-1}{2}-\\mathrm{k}, 2+2 \\mathrm{k}\\right)$ which will lie on the plane $x-2 y+4 z-4=0$\nHence $\\mathrm{k}=\\frac{-2}{3}$\nTherefore B is $\\left(\\frac{4}{3}, \\frac{5}{6}, \\frac{-2}{3}\\right) \\equiv\\left(\\frac{8}{6}, \\frac{5}{6}, \\frac{-4}{6}\\right)$\nSo, $\\frac{\\mathrm{a}}{8}=\\frac{\\mathrm{b}}{5}=\\frac{\\mathrm{c}}{-4}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Let equation of rotated plane be :\n$$\\begin{array}{l}\n(2 x+3 y+z+20)+\\lambda(x-3 y+5 z-8)=0 \\\\\n(2+\\lambda) x+(3-3 \\lambda) y+(1+5 \\lambda) z+20-8 \\lambda=0\n\\end{array}$$",
+     "Above plane is perpendicular to $2 \\mathrm{x}+3 \\mathrm{y}+\\mathrm{z}+20=0$\nSo, $(2+\\lambda) \\cdot 2+(3-3 \\lambda) \\cdot 3+(1+5 \\lambda) \\cdot 1=0 \\Rightarrow \\lambda=7$\n⇒ Equation of rotated plane : $\\mathrm{x}-2 \\mathrm{y}+4 \\mathrm{z}-4=0$\nMirror image of $\\mathrm{A}\\left(2, \\frac{-1}{2}, 2\\right)$ in rotated plane is B(a, b, c)\nEquation of $\\mathrm{AB}: \\frac{\\mathrm{x}-2}{1}=\\frac{\\mathrm{y}+1 / 2}{-2}=\\frac{\\mathrm{z}-2}{4}=\\mathrm{k}$\nLet coordinate of B be $\\left(2+k, \\frac{-1}{2}-2 k, 2+4 k\\right)$ midpoint of AB is $\\left(2+\\frac{\\mathrm{k}}{2}, \\frac{-1}{2}-\\mathrm{k}, 2+2 \\mathrm{k}\\right)$ which will lie on the plane $x-2 y+4 z-4=0$\nHence $\\mathrm{k}=\\frac{-2}{3}$\nTherefore B is $\\left(\\frac{4}{3}, \\frac{5}{6}, \\frac{-2}{3}\\right) \\equiv\\left(\\frac{8}{6}, \\frac{5}{6}, \\frac{-4}{6}\\right)$\nSo, $\\frac{\\mathrm{a}}{8}=\\frac{\\mathrm{b}}{5}=\\frac{\\mathrm{c}}{-4}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "101076",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If $\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{b}}=1, \\overrightarrow{\\mathrm{~b}} \\cdot \\overrightarrow{\\mathrm{c}}=2$ and $\\overrightarrow{\\mathrm{c}} \\cdot \\overrightarrow{\\mathrm{a}}=3$, then the value of $[\\overrightarrow{\\mathrm{a}} \\times(\\overrightarrow{\\mathrm{b}} \\times \\overrightarrow{\\mathrm{c}}), \\overrightarrow{\\mathrm{b}} \\times(\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{a}}), \\overrightarrow{\\mathrm{c}} \\times(\\overrightarrow{\\mathrm{b}} \\times \\overrightarrow{\\mathrm{a}})]$ is :",
+   "options": {
+    "A": "0",
+    "B": "$-6 \\overrightarrow{\\mathrm{a}} \\cdot(\\overrightarrow{\\mathrm{b}} \\times \\overrightarrow{\\mathrm{c}})$",
+    "C": "$12 \\overrightarrow{\\mathrm{c}} \\cdot(\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{b}})$",
+    "D": "$-12 \\overrightarrow{\\mathrm{~b}} \\cdot(\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{a}})$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\quad \\vec{a} \\times(\\vec{b} \\times \\vec{c})=(\\vec{a} . \\vec{c}) \\vec{b}-(\\vec{a} . \\vec{b}) \\vec{c}=3 \\vec{b}-\\vec{c}$\n$$\\begin{array}{l}\n\\vec{b} \\times(\\vec{c} \\times \\vec{a})=(\\vec{b} \\cdot \\vec{a}) \\vec{c}-(\\vec{b} \\cdot \\vec{c}) \\vec{a}=\\vec{c}-2 \\vec{a} \\\\\n\\vec{c} \\times(\\vec{b} \\times \\vec{a})=(\\vec{c} \\cdot \\vec{a}) \\vec{b}-(\\vec{c} \\cdot \\vec{b}) \\vec{a}=3 \\vec{b}-2 \\vec{a} \\\\\n{[3 \\vec{b}-\\vec{c}, \\vec{c}-2 \\vec{a}, 3 \\vec{b}-2 \\vec{a}]} \\\\\n(3 \\vec{b}-\\vec{c}) \\cdot[(\\vec{c}-2 \\vec{a}) \\times(3 \\vec{b}-2 \\vec{a})] \\\\\n(3 \\vec{b}-\\vec{c}) \\cdot[3(\\vec{c} \\times \\vec{b})-2(\\vec{c} \\times \\vec{a})-6(\\vec{a} \\times \\vec{b})] \\\\\n-6[\\vec{b} \\vec{c} \\vec{a}]+6[\\vec{c} \\vec{a} \\vec{b}]\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\quad \\vec{a} \\times(\\vec{b} \\times \\vec{c})=(\\vec{a} . \\vec{c}) \\vec{b}-(\\vec{a} . \\vec{b}) \\vec{c}=3 \\vec{b}-\\vec{c}$\n$$\\begin{array}{l}\n\\vec{b} \\times(\\vec{c} \\times \\vec{a})=(\\vec{b} \\cdot \\vec{a}) \\vec{c}-(\\vec{b} \\cdot \\vec{c}) \\vec{a}=\\vec{c}-2 \\vec{a} \\\\\n\\vec{c} \\times(\\vec{b} \\times \\vec{a})=(\\vec{c} \\cdot \\vec{a}) \\vec{b}-(\\vec{c} \\cdot \\vec{b}) \\vec{a}=3 \\vec{b}-2 \\vec{a} \\\\\n{[3 \\vec{b}-\\vec{c}, \\vec{c}-2 \\vec{a}, 3 \\vec{b}-2 \\vec{a}]} \\\\\n(3 \\vec{b}-\\vec{c}) \\cdot[(\\vec{c}-2 \\vec{a}) \\times(3 \\vec{b}-2 \\vec{a})] \\\\\n(3 \\vec{b}-\\vec{c}) \\cdot[3(\\vec{c} \\times \\vec{b})-2(\\vec{c} \\times \\vec{a})-6(\\vec{a} \\times \\vec{b})] \\\\\n-6[\\vec{b} \\vec{c} \\vec{a}]+6[\\vec{c} \\vec{a} \\vec{b}]\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "101077",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let a biased coin be tossed 5 times. If the probability of getting 4 heads is equal to the probability of getting 5 heads, then the probability of getting atmost two heads is:",
+   "options": {
+    "A": "$\\frac{275}{6^{5}}$",
+    "B": "$\\frac{36}{5^{4}}$",
+    "C": "$\\frac{181}{5^{5}}$",
+    "D": "$\\frac{46}{6^{4}}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{P}(\\mathrm{H})=\\mathrm{x}, \\mathrm{P}(\\mathrm{T})=1-\\mathrm{x}$\n$$\\begin{array}{l}\n\\mathrm{P}(4 \\mathrm{H}, 1 \\mathrm{~T})=\\mathrm{P}(5 \\mathrm{H}) \\\\\n{ }^{5} \\mathrm{C}_{1}(\\mathrm{x})^{4}(1-\\mathrm{x})^{1}={ }^{5} \\mathrm{C}_{5} \\mathrm{x}^{5} \\\\\n5(1-\\mathrm{x})=\\mathrm{x} \\\\\n6 \\mathrm{x}=5=0 \\quad \\mathrm{x}=\\frac{5}{6}\n\\end{array}$$\n\nP(atmost 2H)\n$$\\begin{array}{l}\n=\\mathrm{P}(\\mathrm{OH}, 5 \\mathrm{~T})+\\mathrm{P}(1 \\mathrm{H}, 4 \\mathrm{~T})+\\mathrm{P}(2 \\mathrm{H}, 3 \\mathrm{~T}) \\\\\n={ }^{5} \\mathrm{C}_{0}\\left(\\frac{1}{6}\\right)^{5}+{ }^{5} \\mathrm{C}_{1} \\frac{5}{6} \\cdot\\left(\\frac{1}{6}\\right)^{4}+{ }^{5} \\mathrm{C}_{2}\\left(\\frac{5}{6}\\right)^{3}\\left(\\frac{1}{6}\\right)^{3} \\\\\n=\\frac{1}{6^{5}}(1+25+250)=\\frac{276}{6^{5}} \\\\\n=\\frac{46}{6^{4}}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{P}(\\mathrm{H})=\\mathrm{x}, \\mathrm{P}(\\mathrm{T})=1-\\mathrm{x}$\n$$\\begin{array}{l}\n\\mathrm{P}(4 \\mathrm{H}, 1 \\mathrm{~T})=\\mathrm{P}(5 \\mathrm{H}) \\\\\n{ }^{5} \\mathrm{C}_{1}(\\mathrm{x})^{4}(1-\\mathrm{x})^{1}={ }^{5} \\mathrm{C}_{5} \\mathrm{x}^{5} \\\\\n5(1-\\mathrm{x})=\\mathrm{x} \\\\\n6 \\mathrm{x}=5=0 \\quad \\mathrm{x}=\\frac{5}{6}\n\\end{array}$$",
+     "P(atmost 2H)\n$$\\begin{array}{l}\n=\\mathrm{P}(\\mathrm{OH}, 5 \\mathrm{~T})+\\mathrm{P}(1 \\mathrm{H}, 4 \\mathrm{~T})+\\mathrm{P}(2 \\mathrm{H}, 3 \\mathrm{~T}) \\\\\n={ }^{5} \\mathrm{C}_{0}\\left(\\frac{1}{6}\\right)^{5}+{ }^{5} \\mathrm{C}_{1} \\frac{5}{6} \\cdot\\left(\\frac{1}{6}\\right)^{4}+{ }^{5} \\mathrm{C}_{2}\\left(\\frac{5}{6}\\right)^{3}\\left(\\frac{1}{6}\\right)^{3} \\\\\n=\\frac{1}{6^{5}}(1+25+250)=\\frac{276}{6^{5}} \\\\\n=\\frac{46}{6^{4}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": "101078",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The mean of the numbers a, b, 8, 5, 10 is 6 and their variance is 6.8 . If $M$ is the mean deviation of the numbers about the mean, then 25 M is equal to:",
+   "options": {
+    "A": "60",
+    "B": "55",
+    "C": "50",
+    "D": "45\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nJEE Exam Solution\nwww.esaral.com\n6\n\nSaral\nJEE | NEET | Class 8-10 Download eSaral APP\n\nSol.\n$$\\sigma^{2}=\\frac{\\sum_{i=1}^{5}\\left(x_{i}-\\bar{x}\\right)^{2}}{n}$$\n\nMean = 6\n$$\\frac{a+b+8+5+10}{5}=6$$\n$\\mathrm{a}+\\mathrm{b}=7$\n$$b=7-a$$\n$6.8=\\frac{(\\mathrm{a}-6)^{2}+(\\mathrm{b}-6)^{2}+(8-6)^{2}+(5-6)^{2}+(10-6)^{2}}{5}$\n$$34=(a-6)^{2}+(7-a-6)^{2}+4+1+18$$\n$\\mathrm{a}^{2}-7 \\mathrm{a}+12=0 \\Rightarrow \\mathrm{a}=4$ or $\\mathrm{a}=3$\n$$\\begin{array}{ll}\na=4 & a=3 \\\\\nb=3 & b=4\n\\end{array}$$\n$\\mathrm{M}=\\frac{\\sum_{\\mathrm{i}=1}^{5}\\left|\\mathrm{x}_{\\mathrm{i}}-\\mathrm{x}\\right|}{\\mathrm{n}}$\n$\\mathrm{M}=\\frac{|\\mathrm{a}-6|+|\\mathrm{b}-6|+|8-6|+|5-6|+|10-6|}{5}$\nwhen $\\mathrm{a}=3, \\mathrm{~b}=4 \\quad$ when $\\mathrm{a}=4, \\mathrm{~b}=3$\nwhen $\\mathrm{a}=4, \\mathrm{~b}=3$\n$$\\mathrm{M}=\\frac{3+2+2+1+4}{5}$$\n$$\\mathrm{M}=\\frac{2+3+2+1+7}{5}$$\n$\\mathrm{M}=\\frac{12}{5}$\n$\\mathrm{M}=\\frac{12}{5}$\n$25 \\mathrm{M}=25 \\times \\frac{12}{5}=60$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\sigma^{2}=\\frac{\\sum_{i=1}^{5}\\left(x_{i}-\\bar{x}\\right)^{2}}{n}$$",
+     "Mean = 6\n$$\\frac{a+b+8+5+10}{5}=6$$\n$\\mathrm{a}+\\mathrm{b}=7$\n$$b=7-a$$\n$6.8=\\frac{(\\mathrm{a}-6)^{2}+(\\mathrm{b}-6)^{2}+(8-6)^{2}+(5-6)^{2}+(10-6)^{2}}{5}$\n$$34=(a-6)^{2}+(7-a-6)^{2}+4+1+18$$\n$\\mathrm{a}^{2}-7 \\mathrm{a}+12=0 \\Rightarrow \\mathrm{a}=4$ or $\\mathrm{a}=3$\n$$\\begin{array}{ll}\na=4 & a=3 \\\\\nb=3 & b=4\n\\end{array}$$\n$\\mathrm{M}=\\frac{\\sum_{\\mathrm{i}=1}^{5}\\left|\\mathrm{x}_{\\mathrm{i}}-\\mathrm{x}\\right|}{\\mathrm{n}}$\n$\\mathrm{M}=\\frac{|\\mathrm{a}-6|+|\\mathrm{b}-6|+|8-6|+|5-6|+|10-6|}{5}$\nwhen $\\mathrm{a}=3, \\mathrm{~b}=4 \\quad$ when $\\mathrm{a}=4, \\mathrm{~b}=3$\nwhen $\\mathrm{a}=4, \\mathrm{~b}=3$\n$$\\mathrm{M}=\\frac{3+2+2+1+4}{5}$$\n$$\\mathrm{M}=\\frac{2+3+2+1+7}{5}$$\n$\\mathrm{M}=\\frac{12}{5}$\n$\\mathrm{M}=\\frac{12}{5}$\n$25 \\mathrm{M}=25 \\times \\frac{12}{5}=60$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": "101079",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{f}(\\mathrm{x})=2 \\cos ^{-1} \\mathrm{x}+4 \\cot ^{-1} \\mathrm{x}-3 \\mathrm{x}^{2}-2 \\mathrm{x}+10, \\mathrm{x} \\in[- 1,1]$. If [a, b] is the range of the function then 4a b is equal to:",
+   "options": {
+    "A": "11",
+    "B": "$11-\\pi$",
+    "C": "$11+\\pi$",
+    "D": "$15-\\pi$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $f^{\\prime}(\\mathrm{x})=\\frac{-2}{\\sqrt{1-\\mathrm{x}^{2}}}-\\frac{4}{1+\\mathrm{x}^{2}}-6 \\mathrm{x}-2$\n$$=-2\\left[\\frac{1}{\\sqrt{1-x^{2}}}+\\frac{2}{1+x^{2}}+3 x+1\\right]$$\n$f^{\\prime}(\\mathrm{x})<0 \\Rightarrow f(\\mathrm{x})$ is a dec. function\n$$\\begin{array}{l}\nf(1)=\\pi+5 \\\\\nf(-1)=5 \\pi+5\n\\end{array}$$\n\nRange : $[\\mathrm{a}, \\mathrm{b}] \\equiv[\\pi+5,5 \\pi+5]$\n$$a=\\pi+5, b=5 \\pi+5 \\Rightarrow 4 a-b=11-\\pi .$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$f^{\\prime}(\\mathrm{x})=\\frac{-2}{\\sqrt{1-\\mathrm{x}^{2}}}-\\frac{4}{1+\\mathrm{x}^{2}}-6 \\mathrm{x}-2$\n$$=-2\\left[\\frac{1}{\\sqrt{1-x^{2}}}+\\frac{2}{1+x^{2}}+3 x+1\\right]$$\n$f^{\\prime}(\\mathrm{x})<0 \\Rightarrow f(\\mathrm{x})$ is a dec. function\n$$\\begin{array}{l}\nf(1)=\\pi+5 \\\\\nf(-1)=5 \\pi+5\n\\end{array}$$",
+     "Range : $[\\mathrm{a}, \\mathrm{b}] \\equiv[\\pi+5,5 \\pi+5]$\n$$a=\\pi+5, b=5 \\pi+5 \\Rightarrow 4 a-b=11-\\pi .$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "101080",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\Delta, \\nabla \\in\\{\\wedge, \\vee\\}$ be such that p $\\quad \\nabla \\quad \\mathrm{q} \\Rightarrow((\\mathrm{p} \\quad \\Delta \\quad \\mathrm{q}) \\quad \\nabla \\mathrm{r})$ is a tautology.\nThen $(\\mathrm{p} \\nabla \\mathrm{q}) \\Delta \\mathrm{r}$ is logically equivalent to :",
+   "options": {
+    "A": "$(\\mathrm{p} \\Delta \\mathrm{r}) \\vee \\mathrm{q}$",
+    "B": "$(\\mathrm{p} \\Delta \\mathrm{r}) \\wedge \\mathrm{q}$",
+    "C": "$(\\mathrm{p} \\wedge \\mathrm{r}) \\Delta \\mathrm{q}$",
+    "D": "$(\\mathrm{p} \\nabla \\mathrm{r}) \\wedge \\mathrm{q}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Case-I If $\\Delta \\equiv \\nabla \\equiv \\wedge$\n$$(\\mathrm{p} \\wedge \\mathrm{q}) \\rightarrow((\\mathrm{p} \\wedge \\mathrm{q}) \\wedge \\mathrm{r})$$\nit can be false if r is false,\nso not a tautology\nCase-II If $\\Delta \\equiv \\nabla \\equiv \\vee$\n$$(p \\vee q) \\rightarrow((p \\vee q) \\vee r) \\equiv \\text { tautology }$$\nthen $(\\mathrm{p} \\vee \\mathrm{q}) \\vee \\mathrm{r} \\equiv(\\mathrm{p} \\Delta \\mathrm{r}) \\vee \\mathrm{q}$\nCase-III if $\\Delta=\\vee, \\nabla=\\wedge$\n$$\\text { then }(\\mathrm{p} \\wedge \\mathrm{q}) \\rightarrow\\{(\\mathrm{p} \\vee \\mathrm{q}) \\wedge \\mathrm{r}\\}$$\n\nNot a tautology\n(Check $\\mathrm{p} \\rightarrow \\mathrm{T}, \\mathrm{q} \\rightarrow \\mathrm{T}, \\mathrm{r} \\rightarrow \\mathrm{F}$ )\nCase-IV if $\\Delta=\\wedge, \\nabla=\\vee$\n$$(\\mathrm{p} \\wedge \\mathrm{q}) \\rightarrow\\{(\\mathrm{p} \\wedge \\mathrm{q}) \\vee \\mathrm{r}\\}$$\n\nNot a tautology\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Case-I If $\\Delta \\equiv \\nabla \\equiv \\wedge$\n$$(\\mathrm{p} \\wedge \\mathrm{q}) \\rightarrow((\\mathrm{p} \\wedge \\mathrm{q}) \\wedge \\mathrm{r})$$\nit can be false if r is false,\nso not a tautology\nCase-II If $\\Delta \\equiv \\nabla \\equiv \\vee$\n$$(p \\vee q) \\rightarrow((p \\vee q) \\vee r) \\equiv \\text { tautology }$$\nthen $(\\mathrm{p} \\vee \\mathrm{q}) \\vee \\mathrm{r} \\equiv(\\mathrm{p} \\Delta \\mathrm{r}) \\vee \\mathrm{q}$\nCase-III if $\\Delta=\\vee, \\nabla=\\wedge$\n$$\\text { then }(\\mathrm{p} \\wedge \\mathrm{q}) \\rightarrow\\{(\\mathrm{p} \\vee \\mathrm{q}) \\wedge \\mathrm{r}\\}$$",
+     "Not a tautology\n(Check $\\mathrm{p} \\rightarrow \\mathrm{T}, \\mathrm{q} \\rightarrow \\mathrm{T}, \\mathrm{r} \\rightarrow \\mathrm{F}$ )\nCase-IV if $\\Delta=\\wedge, \\nabla=\\vee$\n$$(\\mathrm{p} \\wedge \\mathrm{q}) \\rightarrow\\{(\\mathrm{p} \\wedge \\mathrm{q}) \\vee \\mathrm{r}\\}$$",
+     "Not a tautology\nSECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "101081",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The sum of the cubes of all the roots of the equation $x^{4}-3 x^{3}-2 x^{2}+3 x+1=10$ is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "36"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{f}(\\mathrm{x})=\\frac{\\mathrm{x}-1}{\\mathrm{x}+1}$\n$$\\begin{array}{l}\n\\Rightarrow f^{2}(x)=f(f(x))=\\frac{\\frac{x-1}{x+1}-1}{\\frac{x-1}{x+1}+1}=-\\frac{1}{x} \\\\\nf^{3}(x)=f\\left(f^{2}(x)\\right)=f\\left(-\\frac{1}{x}\\right)=\\frac{x+1}{1-x} \\\\\n\\Rightarrow f^{4}(x)=f\\left(\\frac{x+1}{1-x}\\right)=-\\frac{1}{x} \\\\\n\\Rightarrow f^{6}(x)=-\\frac{1}{x} \\Rightarrow f^{6}(6)=-\\frac{1}{8} \\\\\nf^{7}(x)=\\left(-\\frac{1}{x}\\right)=\\frac{x+1}{1-x} \\\\\n\\Rightarrow f^{7}(7)=\\frac{8}{-6}=-\\frac{4}{3} \\\\\n\\therefore-\\frac{1}{6}+-\\frac{4}{3}=-\\frac{3}{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "101082",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "There are ten boys $\\mathrm{B}_{1}, \\mathrm{~B}_{2}, \\ldots ., \\mathrm{B}_{10}$ and five girls $\\mathrm{G}_{1}$, $\\mathrm{G}_{2}, \\ldots, \\mathrm{G}_{5}$ in a class. Then the number of ways of forming a group consisting of three boys and three girls, if both $B_{1}$ and $B_{2}$ together should not be the members of a group, is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1120"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Set A\n$$\\begin{array}{l}\n\\Rightarrow\\left|\\frac{\\mathrm{z}+1}{\\mathrm{z}-1}\\right|<1 \\\\\n\\Rightarrow|\\mathrm{z}+1|<|\\mathrm{z}-1| \\\\\n\\Rightarrow(\\mathrm{x}+1)^{2}+\\mathrm{y}^{2}<(\\mathrm{x}-1)^{2}+\\mathrm{y}^{2} \\\\\n\\Rightarrow \\mathrm{x}<0\n\\end{array}$$",
+     "Set B\n$$\\begin{array}{l}\n\\Rightarrow \\arg \\left(\\frac{\\mathrm{z}-1}{\\mathrm{z}+1}\\right)=\\frac{2 \\pi}{3} \\\\\n\\Rightarrow \\tan ^{-1}\\left(\\frac{\\mathrm{y}}{\\mathrm{x}-1}\\right)-\\tan ^{-1}\\left(\\frac{\\mathrm{y}}{\\mathrm{x}+1}\\right)=\\frac{2 \\pi}{3} \\\\\n\\Rightarrow \\mathrm{x}^{2}+\\mathrm{y}^{2}+\\frac{2 \\mathrm{y}}{\\sqrt{3}}-1=0\n\\end{array}$$\n$A \\cap B$\n⇒ Centre $\\left(0,-\\frac{1}{\\sqrt{3}}\\right)$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "101083",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let the common tangents to the curves $4\\left(\\mathrm{x}^{2}+\\mathrm{y}^{2}\\right)=$ 9 and $\\mathrm{y}^{2}=4 \\mathrm{x}$ intersect at the point Q . Let an ellipse, centered at the origin O, has lengths of semi-minor and semi-major axes equal to OQ and 6 , respectively. If e and $l$ respectively denote the eccentricity and the length of the latus rectum of this ellipse, then $\\frac{l}{\\mathrm{e}^{2}}$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$|\\operatorname{adj}(24 \\mathrm{~A})|=|\\operatorname{adj} 3(\\operatorname{adj} 2 \\mathrm{~A})|$\n$$\\begin{array}{l}\n\\Rightarrow|24 \\mathrm{a}|^{2}=(3 \\operatorname{adj}(2 \\mathrm{~A}))^{2} \\\\\n\\Rightarrow\\left(24^{3} \\mid \\mathrm{Al}\\right)^{2}=\\left(3^{3}|\\operatorname{adj}(2 \\mathrm{~A})|\\right)^{2} \\\\\n=3^{6}\\left(|2 \\mathrm{~A}|^{2}\\right)^{2} \\\\\n\\Rightarrow 24^{6}|\\mathrm{~A}|^{2}=\\left(24^{3}|\\mathrm{~A}|\\right)^{2}=3^{6} \\times 2^{12}|\\mathrm{~A}|^{4} \\\\\n\\Rightarrow|\\mathrm{~A}|^{2}=\\frac{24^{6}}{3^{6} \\times 2^{12}}=64\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "101084",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{f}(\\mathrm{x})=\\max \\{|\\mathrm{x}+1|,|\\mathrm{x}+2|, \\ldots,|\\mathrm{x}+5|\\}$. Then $\\int_{-6}^{0} f(x) d x$ is equal to $\\_\\_\\_\\_$ .\n4. Official Ans. by NTA (21)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "21"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\left|\\begin{array}{ccc}3 & -2 & 1 \\\\ 5 & -8 & 9 \\\\ 2 & 1 & \\mathrm{a}\\end{array}\\right|=0$\n$$\\begin{array}{l}\n3(-8 a-9)+2(5 a-18)+1(21)=0 \\\\\n\\Rightarrow a=-3\n\\end{array}$$",
+     "Also $\\Delta_{2}=\\left|\\begin{array}{ccc}3 & -2 & b \\\\ 5 & 8 & 3 \\\\ 2 & 1 & -1\\end{array}\\right|^{\\frac{1}{3}}$\nIf $\\mathrm{b}=\\frac{1}{3}$\n$\\Delta_{2}=0$\nSo b must be equal to\n$$-\\frac{1}{3}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": "101085",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let the solution curve $y=y(x)$ of the differential equation $\\left(4+x^{2}\\right) \\mathrm{dy}-2 \\mathrm{x}\\left(\\mathrm{x}^{2}+3 \\mathrm{y}+4\\right) \\mathrm{dx}=0$ pass through the origin. Then $\\mathrm{y}(2)$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "12"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$(2021)^{2023}=(7 \\lambda-2)^{2023}$\n$$\\begin{array}{l}\n={ }^{2023} \\mathrm{C}_{0}(7 \\mathrm{~A})^{2023}-\\ldots \\ldots{ }^{2023} \\mathrm{C}_{2023} 2^{2023} \\\\\n=7 \\mathrm{t}-2^{2023} \\\\\n\\therefore-2^{2023}=-2 \\times 2^{2022} \\\\\n=-2 \\times\\left(2^{3}\\right)^{674} \\\\\n=-2(1+7 \\mu)^{674} \\\\\n=-(7 \\alpha+2) \\\\\n\\Rightarrow \\text { remainder }=-2 \\text { or }+5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "101086",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If $\\sin ^{2}\\left(10^{\\circ}\\right) \\sin \\left(20^{\\circ}\\right) \\sin \\left(40^{\\circ}\\right) \\sin \\left(50^{\\circ}\\right) \\sin \\left(70^{\\circ}\\right)=\\alpha- \\frac{1}{16} \\sin \\left(10^{\\circ}\\right)$, then $16+\\alpha^{-1}$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "80"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sin \\left(\\cos ^{-1} x\\right)-x}{1-\\tan \\left(\\cos ^{-1} x\\right)}$\n$$\\begin{array}{l}\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sin \\left(\\sin ^{-1} \\sqrt{1-x^{2}}\\right)-x}{1-\\tan \\left(\\tan ^{-1}\\left(\\frac{\\sqrt{1-x^{2}}}{x}\\right)\\right)} \\\\\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}} \\frac{\\sqrt{1-x^{2}}-x}{1-\\left(\\frac{\\sqrt{1-x^{2}}}{x}\\right)} \\\\\n\\lim _{x \\rightarrow \\frac{1}{\\sqrt{2}}}(-x)=-\\frac{1}{\\sqrt{2}}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "101087",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{A}=\\{\\mathrm{n} \\in \\mathrm{N}: \\operatorname{H} . \\mathrm{C} . \\mathrm{F} .(\\mathrm{n}, 45)=1\\}$ and\nLet $\\mathrm{B}=\\{2 \\mathrm{k}: \\mathrm{k} \\in\\{1,2, \\ldots, 100\\}\\}$. Then the sum of all the elements of $A \\cap B$ is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5264"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{f}(\\mathrm{x})=\\left\\{\\begin{array}{lll}\\mathrm{x}+3 & ; & \\mathrm{x}<-3 \\\\ -(\\mathrm{x}+3) & ; & -3 \\leq \\mathrm{x}<0 \\\\ \\mathrm{e}^{\\mathrm{x}} & ; & \\mathrm{x} \\geq 0\\end{array}\\right\\}$\n$$\\begin{array}{l}\ng(x)=\\left\\{\\begin{array}{ccc}\nx^{2}+k_{1} x & ; & x<0 \\\\\n4 x+k_{2} & ; & x \\geq 0\n\\end{array}\\right\\} \\\\\ng(f(x))=\\left\\{\\begin{array}{ccc}\nf(x)^{2}+k_{1} f(x) & ; & f(x)<0 \\\\\n4 f(x)+k_{2} & ; & f(x) \\geq 0\n\\end{array}\\right\\} \\\\\ng(f(x))=\\left\\{\\begin{array}{ccc}\n(x+3)^{2}+k_{1}(x+3) & ; & x<-3 \\\\\n(x+3)^{2}-k_{1}(x+3) & ; & -3 \\leq x<0 \\\\\n4 e^{x}+k_{2} & ; & x>0\n\\end{array}\\right\\}\n\\end{array}$$\ncheck continuity at $\\mathrm{x}=0$\n$$\\begin{array}{l}\n\\operatorname{gof}(0)=g\\left(f\\left(0^{-}\\right)\\right)=g\\left(f\\left(0^{+}\\right)\\right) \\\\\n4+k_{2}=9-3 k_{1}=4+k_{2} \\\\\n3 k_{1}+k_{2}=5\n\\end{array}$$\ndifferentiate\n$$\\begin{array}{l}\n(\\mathrm{g}(\\mathrm{f}(\\mathrm{x})))^{\\prime}=\\left\\{\\begin{array}{ccc}\n2(\\mathrm{x}+3)+\\mathrm{k}_{1} & ; & \\mathrm{x}<-3 \\\\\n2(\\mathrm{x}+3)-\\mathrm{k}_{1} & ; & -3 \\leq \\mathrm{x}<0 \\\\\n4 \\mathrm{e}^{\\mathrm{x}} & ; & \\mathrm{x} \\geq 0\n\\end{array}\\right\\} \\\\\n6-\\mathrm{k}_{1}=4 \\\\\n\\mathrm{k}_{1}=2 \\\\\n\\therefore \\mathrm{k}_{1}=2, \\mathrm{k}_{2}=-1\n\\end{array}$$\n$$\\begin{array}{l}\n\\operatorname{gof}(x)=\\left\\{\\begin{array}{ccc}\n(x+3)^{2}+2(x+3) & ; & x<-3 \\\\\n(x+3)^{2}-2(x+3) & ; & -3 \\leq x<0 \\\\\n4 e^{x}-1 & ; & x \\geq 0\n\\end{array}\\right\\} \\\\\n\\operatorname{gof}(-4)+\\operatorname{gof}(4)=4 e^{4}-2 \\\\\n\\Rightarrow 2\\left(2 e^{4}-1\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": "101088",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The value of the integral $\\frac{48}{\\pi^{4}} \\int_{0}^{\\pi}\\left(\\frac{3 \\pi x^{2}}{2}-x^{3}\\right) \\frac{\\sin x}{1+\\cos ^{2} x} d x$ is equal to\n$\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$f(x)=\\left\\{\\begin{array}{ll}x^{2}-4 x-2, & \\forall x \\in\\left(-1, \\frac{3-\\sqrt{17}}{2}\\right) \\\\ -x^{2}+2 x+2, & \\forall x \\in\\left(\\frac{3-\\sqrt{17}}{2}, 2\\right)\\end{array}\\right.$\n$f^{\\prime}(\\mathrm{x})$ when $\\mathrm{x} \\in\\left(-1, \\frac{3-\\sqrt{17}}{2}\\right)$\n$f^{\\prime}(\\mathrm{x})=2 \\mathrm{x}-4=0 \\Rightarrow \\mathrm{x}=2$\n$f^{\\prime}(\\mathrm{x})=2(\\mathrm{x}-2) \\quad \\Rightarrow f^{\\prime}(\\mathrm{x})$ is always ↓\n$f(2)=2$\n$f(-1)=3$\n$f\\left(\\frac{3-\\sqrt{17}}{2}\\right)=\\frac{\\sqrt{17}-3}{2}$\n$f^{\\prime}(\\mathrm{x})$ when $\\mathrm{x} \\in\\left(\\frac{3-\\sqrt{17}}{2}, 2\\right)$\n$f^{\\prime}(\\mathrm{x})=-2 \\mathrm{x}+2$\n$f^{\\prime}(\\mathrm{x})=-2(\\mathrm{x}-1)$\n$f^{\\prime}(\\mathrm{x})=0$ when $\\mathrm{x}=1$\n$f(1)=3$\nabsolute minimum value $=\\frac{\\sqrt{17}-3}{2}$\nabsolute maximum value $=3$\n$S u m=\\frac{\\sqrt{17}-3}{2}+3=\\frac{\\sqrt{17}+3}{2}$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "101089",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{A}=\\sum_{\\mathrm{i}=1}^{10} \\sum_{\\mathrm{j}=1}^{10} \\min \\{\\mathrm{i}, \\mathrm{j}\\}$ and\n$$B=\\sum_{i=1}^{10} \\sum_{j=1}^{10} \\max \\{i, j\\} \\text {. Then } A+B \\text { is equal to }$$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1100"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\left(\\frac{\\mathrm{x}}{\\mathrm{a}}\\right)^{\\mathrm{n}}+\\left(\\frac{\\mathrm{y}}{\\mathrm{b}}\\right)^{\\mathrm{n}}=2$\nSlope of tangent at (a, b)\n$n \\cdot\\left(\\frac{x}{a}\\right)^{n-1} \\cdot \\frac{1}{a}+n\\left(\\frac{x}{b}\\right)^{n-1} \\cdot \\frac{1}{b} \\frac{d y}{d x}=0$\n$\\left.\\frac{\\mathrm{dy}}{\\mathrm{dx}}\\right|_{(\\mathrm{a}, \\mathrm{b})}=-\\frac{\\mathrm{b}}{\\mathrm{a}}$\n∴ Equation of tangent\n$\\mathrm{y}-\\mathrm{b}=-\\frac{\\mathrm{b}}{\\mathrm{a}}(\\mathrm{x}-\\mathrm{a})$\n$\\frac{\\mathrm{x}}{\\mathrm{a}}+\\frac{\\mathrm{y}}{\\mathrm{b}}=2 \\forall \\mathrm{n} \\in \\mathrm{N}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "101090",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{S}=(0,2 \\pi)-\\left\\{\\frac{\\pi}{2}, \\frac{3 \\pi}{4}, \\frac{3 \\pi}{2}, \\frac{7 \\pi}{4}\\right\\}$. Let $\\mathrm{y}= y(x), x \\in S$, be the solution curve of the differential equation $\\frac{\\mathrm{dy}}{\\mathrm{dx}}=\\frac{1}{1+\\sin 2 \\mathrm{x}}, \\mathrm{y}\\left(\\frac{\\pi}{4}\\right)=\\frac{1}{2}$. if the sum of abscissas of all the points of intersection of the curve $y=y(x)$ with the curve $y=\\sqrt{2} \\sin x$ is $\\frac{k \\pi}{12}$, then k is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "42"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Area of shaded region\n$$\\begin{array}{l}\n=2 \\int_{0}^{3}(\\sqrt{9+\\mathrm{y}}-\\sqrt{9-\\mathrm{y}}) \\mathrm{dy}+2 \\int_{3}^{9}(\\sqrt{9-\\mathrm{y}}) \\mathrm{dy} \\\\\n=2\\left[\\int_{0}^{3}(9+\\mathrm{y})^{1 / 2} \\mathrm{dy}-\\int_{0}^{3}(9-\\mathrm{y})^{1 / 2} \\mathrm{dy}+\\int_{3}^{9}(9-\\mathrm{y})^{1 / 2} \\mathrm{dy}\\right] \\\\\n=2\\left[\\frac{2}{3}\\left[(9+\\mathrm{y})^{3 / 2}\\right]_{0}^{3}+\\frac{2}{3}\\left[(9-\\mathrm{y})^{3 / 2}\\right]_{0}^{3}-\\frac{2}{3}\\left[(9-\\mathrm{y})^{3 / 2}\\right]_{3}^{9}\\right] \\\\\n=\\frac{4}{3}[12 \\sqrt{12}-27+6 \\sqrt{6}-27-(0-6 \\sqrt{6})] \\\\\n=\\frac{4}{3}[24 \\sqrt{3}+12 \\sqrt{6}-54] \\\\\n=8(4 \\sqrt{3}+2 \\sqrt{6}-9)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

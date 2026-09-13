@@ -40,6 +40,7 @@ from scripts import extract_nta_papers as nta  # noqa: E402
 
 QID_RE = re.compile(r"^\d{6,}$")
 VALUE_RE = re.compile(r"^\d{1,15}$")
+LETTER_RE = re.compile(r"^[A-D]$")
 VALUE_LIST_RE = re.compile(r"^\d{1,15}(,\d{1,15})*$")
 
 
@@ -69,6 +70,11 @@ def parse_key_pdf(path: Path) -> dict[str, str]:
         if QID_RE.match(tok):
             nxt = tokens[i + 1]
             if nxt.lower() == "drop":
+                pairs[tok] = nxt
+                i += 2
+                continue
+            # 2022 June key: MCQ answers are direct letters (101701 -> D)
+            if LETTER_RE.match(nxt):
                 pairs[tok] = nxt
                 i += 2
                 continue
@@ -108,6 +114,16 @@ def resolve_answer(question: dict, raw: str, key_family_hint: str | None) -> dic
     option_ids = [str(o) for o in (question.get("option_ids") or [])]
     raw_values = raw.split(",")
     if qtype == "single_correct":
+        # 2022 June key: direct letters
+        if all(v in ("A", "B", "C", "D") for v in raw_values):
+            letters = sorted(raw_values)
+            ans: dict = {"raw": raw}
+            if len(letters) == 1:
+                ans["option"] = letters[0]
+            else:
+                ans["options"] = letters
+                ans["multi_correct"] = True
+            return {"answer": ans}
         if all(v in option_ids for v in raw_values):
             letters = sorted("ABCD"[option_ids.index(v)] for v in raw_values)
             ans: dict = {"raw": raw}
@@ -146,6 +162,8 @@ def main() -> None:
     total_papers_joined = 0
     total_dropped = 0
     total_unresolved = 0
+    total_xval_agree = 0
+    total_xval_disagree = 0
     papers_with_ids = 0
 
     for url, entries in sorted(by_key_url.items()):
@@ -168,6 +186,7 @@ def main() -> None:
                 continue
             papers_with_ids += 1
             sheet_entries = []
+            xval_agree = xval_disagree = 0
             for q in with_qid:
                 qid = str(q["question_id"])
                 if qid not in key_qids:
@@ -182,26 +201,47 @@ def main() -> None:
                     total_dropped += 1
                 if resolved.get("unresolved_raw"):
                     total_unresolved += 1
+                # cross-validation: mirror-printed answer vs official key
+                emb = q.get("embedded_answer") or {}
+                official_opt = (resolved.get("answer") or {}).get("option")
+                official_raw = str((resolved.get("answer") or {}).get("raw") or "")
+                emb_opt = emb.get("option")
+                emb_raw = str(emb.get("raw") or "")
+                if official_opt and emb_opt:
+                    if official_opt == emb_opt:
+                        xval_agree += 1
+                    else:
+                        xval_disagree += 1
+                elif official_raw and emb_raw and official_raw == emb_raw:
+                    xval_agree += 1
+                elif official_raw and emb_raw:
+                    xval_disagree += 1
                 sheet_entries.append(entry)
             if not sheet_entries:
                 continue
             total_papers_joined += 1
             total_entries += len(sheet_entries)
+            total_xval_agree += xval_agree
+            total_xval_disagree += xval_disagree
             if args.write:
                 artifact["answer_sheet"] = {
                     "status": "official_verified",
                     "source": "nta_final_key",
                     "key_url": url,
+                    "xval_printed_agree": xval_agree,
+                    "xval_printed_disagree": xval_disagree,
                     "entries": sheet_entries,
                 }
                 art_path.write_text(json.dumps(artifact, ensure_ascii=False, indent=1))
             print(
                 f"  {e['paper_id']}: {len(sheet_entries)}/{len(with_qid)} questions keyed"
+                f" (xval agree={xval_agree} disagree={xval_disagree})"
             )
 
     print(
         f"[join] papers with question IDs: {papers_with_ids}; joined: {total_papers_joined}; "
-        f"entries: {total_entries}; dropped-by-NTA: {total_dropped}; unresolved: {total_unresolved}"
+        f"entries: {total_entries}; dropped-by-NTA: {total_dropped}; unresolved: {total_unresolved}; "
+        f"xval printed-vs-official: agree={total_xval_agree} disagree={total_xval_disagree}"
     )
     if not args.write:
         print("[join] dry run — pass --write to update artifacts")

@@ -1,61 +1,1049 @@
 {
+ "paper_id": "jee-main-2022-s2-physics-2022-07-25-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-physics-2022-07-25-shift-2",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-07-25",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": "Physics",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-physics-2022-07-25-shift-2",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-07-25",
-    "shift": 2,
-    "paper_type": "question_paper",
-    "subject": "Physics",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/17102-25-07%20EVENING%20PHYSICS%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/21/17102-25-07%20EVENING%20PHYSICS%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "b9798742806a50f5a22c80ed8463caf7e23d910bc1facc00ab0f82c92e2d501d",
+  "page_count": 8,
+  "text_chars": 725,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-07-25-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 1,
+  "xval_printed_agree": 30,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "1569431",
+    "answer": {
+     "raw": "4",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "1569432",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "1569433",
+    "answer": {
+     "raw": "1",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "1569434",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "1569435",
+    "answer": {
+     "raw": "1",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "1569436",
+    "answer": {
+     "raw": "1",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "1569437",
+    "answer": {
+     "raw": "4",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "1569438",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "1569439",
+    "answer": {
+     "raw": "1",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "1569440",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "1569441",
+    "answer": {
+     "raw": "3",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "1569442",
+    "answer": {
+     "raw": "4",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "1569443",
+    "answer": {
+     "raw": "4",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "1569444",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "1569445",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "1569446",
+    "answer": {
+     "raw": "1",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "1569447",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "1569448",
+    "answer": {
+     "raw": "4",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "1569449",
+    "answer": {
+     "raw": "4",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "1569450",
+    "answer": {
+     "raw": "2",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "1569451",
+    "answer": {
+     "raw": "100",
+     "value": "100"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "1569452",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "1569453",
+    "answer": {
+     "raw": "90",
+     "value": "90"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "1569454",
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "1569455",
+    "answer": {
+     "raw": "18",
+     "value": "18"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "1569456",
+    "answer": {
+     "raw": "25",
+     "value": "25"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "1569457",
+    "answer": {
+     "raw": "60",
+     "value": "60"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "1569458",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "1569459",
+    "answer": {
+     "raw": "10",
+     "value": "10"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "1569460",
+    "answer": {
+     "raw": "250",
+     "value": "250"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "1569431",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "In AM modulation, a signal is modulated on a carrier wave such that maximum and minimum amplitude are found to be 6V and 2 V respectively. The modulation index is",
+   "options": {
+    "A": "100\\%",
+    "B": "$80 \\%$",
+    "C": "60\\%",
+    "D": "50\\%\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. modulation inde $\\mathrm{x}=\\frac{\\mathrm{V}_{\\text {max }}-\\mathrm{V}_{\\text {min. }}}{\\mathrm{V}_{\\text {max }}+\\mathrm{V}_{\\text {min. }}} \\times 100 \\%$\n$$=\\frac{6-2}{6+2} \\times 100 \\%=50 \\%$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "modulation inde $\\mathrm{x}=\\frac{\\mathrm{V}_{\\text {max }}-\\mathrm{V}_{\\text {min. }}}{\\mathrm{V}_{\\text {max }}+\\mathrm{V}_{\\text {min. }}} \\times 100 \\%$\n$$=\\frac{6-2}{6+2} \\times 100 \\%=50 \\%$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "b9798742806a50f5a22c80ed8463caf7e23d910bc1facc00ab0f82c92e2d501d",
-    "page_count": 8,
-    "text_chars": 725,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-physics-2022-07-25-shift-2.pdf"
+  {
+   "qno": 2,
+   "question_id": "1569432",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The electric current in a circular coil of 2 turns produces a magnetic induction $\\mathrm{B}_{1}$ at its centre. The coil is unwound and is rewound into a circular coil of 5 turns and the same current produces a magnetic induction $\\mathrm{B}_{2}$ at its centre. The ratio of $\\frac{\\mathrm{B}_{2}}{\\mathrm{~B}_{1}}$ is :",
+   "options": {
+    "A": "$\\frac{5}{2}$",
+    "B": "$\\frac{25}{4}$",
+    "C": "$\\frac{5}{4}$",
+    "D": "$\\frac{25}{2}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $B=\\frac{N \\mu_{0} i}{2 R}$\n$$B_{1}=\\frac{N_{1} \\mu_{0} i}{2 R_{1}}$$\n\nFor $\\mathrm{N}_{2}=5$\n$$\\begin{array}{l}\n\\text { Radius of coil }=R_{2}=\\frac{N_{1} \\times R_{1}}{N_{2}} \\\\\nB_{2}=\\frac{N_{2} \\mu_{0} i}{R_{2}} \\\\\n\\frac{B_{2}}{B_{1}}=\\frac{N_{2}}{N_{1}} \\frac{R_{1}}{R_{2}}=\\frac{N_{2}}{N_{1}} \\times \\frac{N_{2}}{N_{1}} ; \\quad \\frac{B_{2}}{B_{1}}=\\frac{25}{4}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$B=\\frac{N \\mu_{0} i}{2 R}$\n$$B_{1}=\\frac{N_{1} \\mu_{0} i}{2 R_{1}}$$",
+     "For $\\mathrm{N}_{2}=5$\n$$\\begin{array}{l}\n\\text { Radius of coil }=R_{2}=\\frac{N_{1} \\times R_{1}}{N_{2}} \\\\\nB_{2}=\\frac{N_{2} \\mu_{0} i}{R_{2}} \\\\\n\\frac{B_{2}}{B_{1}}=\\frac{N_{2}}{N_{1}} \\frac{R_{1}}{R_{2}}=\\frac{N_{2}}{N_{1}} \\times \\frac{N_{2}}{N_{1}} ; \\quad \\frac{B_{2}}{B_{1}}=\\frac{25}{4}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "1569433",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A drop of liquid of density $\\rho$ is floating half immersed in a liquid of density $\\sigma$ and surface tension $7.5 \\times 10^{-4} \\mathrm{Ncm}^{-1}$. The radius of drop in cm will be : (Take : $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )",
+   "options": {
+    "A": "$\\frac{15}{\\sqrt{2 \\rho-\\sigma}}$",
+    "B": "$\\frac{15}{\\sqrt{\\rho-\\sigma}}$",
+    "C": "$\\frac{3}{2 \\sqrt{\\rho-\\sigma}}$",
+    "D": "$\\frac{3}{20 \\sqrt{2 \\rho-\\sigma}}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n\nBoyant force + surace tension = mg\n$$\\begin{array}{l}\n\\sigma \\frac{\\mathrm{V}}{2} \\mathrm{~g}+2 \\pi \\mathrm{RT}=\\rho \\mathrm{Vg} \\\\\n2 \\pi \\mathrm{RT}=\\frac{(2 \\rho-\\sigma)}{2} \\frac{4}{3} \\pi \\mathrm{R}^{3} \\mathrm{~g} ;\\left[\\mathrm{V}=\\frac{4}{3} \\pi \\mathrm{R}^{3}\\right] \\\\\n\\mathrm{R}^{3}=\\frac{3 \\mathrm{~T}}{(2 \\rho-\\sigma) \\mathrm{g}} \\Rightarrow \\mathrm{R}=\\sqrt{\\frac{3 \\times 7.5 \\times 10^{-2} \\mathrm{~N}-\\mathrm{m}^{-1}}{(2 \\rho-\\sigma) \\times 10}} \\\\\n\\mathrm{R}=\\frac{3}{20 \\sqrt{(2 \\rho-\\sigma)}} \\mathrm{m}=\\frac{15}{\\sqrt{2 \\rho-\\sigma}} \\mathrm{cm}\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Boyant force + surace tension = mg\n$$\\begin{array}{l}\n\\sigma \\frac{\\mathrm{V}}{2} \\mathrm{~g}+2 \\pi \\mathrm{RT}=\\rho \\mathrm{Vg} \\\\\n2 \\pi \\mathrm{RT}=\\frac{(2 \\rho-\\sigma)}{2} \\frac{4}{3} \\pi \\mathrm{R}^{3} \\mathrm{~g} ;\\left[\\mathrm{V}=\\frac{4}{3} \\pi \\mathrm{R}^{3}\\right] \\\\\n\\mathrm{R}^{3}=\\frac{3 \\mathrm{~T}}{(2 \\rho-\\sigma) \\mathrm{g}} \\Rightarrow \\mathrm{R}=\\sqrt{\\frac{3 \\times 7.5 \\times 10^{-2} \\mathrm{~N}-\\mathrm{m}^{-1}}{(2 \\rho-\\sigma) \\times 10}} \\\\\n\\mathrm{R}=\\frac{3}{20 \\sqrt{(2 \\rho-\\sigma)}} \\mathrm{m}=\\frac{15}{\\sqrt{2 \\rho-\\sigma}} \\mathrm{cm}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "1569434",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Two billiard balls of mass 0.05 kg each moving in opposite directions with $10 \\mathrm{~ms}^{-1}$ collide and rebound with the same speed. If the time duration of contact is $\\mathrm{t}=0.005 \\mathrm{~s}$, then what is the force exerted on the ball due to each other?",
+   "options": {
+    "A": "100 N",
+    "B": "200 N",
+    "C": "300 N",
+    "D": "400 N\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\nChange in momentum of any one ball\n$$\\begin{array}{l}\n|\\Delta \\overrightarrow{\\mathrm{P}}|=2 \\times 0.05 \\times 10 \\\\\n|\\Delta \\overrightarrow{\\mathrm{P}}|=1 \\\\\n\\left|\\overrightarrow{\\mathrm{~F}}_{\\mathrm{av}}\\right|=\\frac{|\\Delta \\overrightarrow{\\mathrm{P}}|}{\\Delta \\mathrm{t}} \\\\\n\\mathrm{~F}_{\\mathrm{av} .}=200 \\mathrm{~N}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Change in momentum of any one ball\n$$\\begin{array}{l}\n|\\Delta \\overrightarrow{\\mathrm{P}}|=2 \\times 0.05 \\times 10 \\\\\n|\\Delta \\overrightarrow{\\mathrm{P}}|=1 \\\\\n\\left|\\overrightarrow{\\mathrm{~F}}_{\\mathrm{av}}\\right|=\\frac{|\\Delta \\overrightarrow{\\mathrm{P}}|}{\\Delta \\mathrm{t}} \\\\\n\\mathrm{~F}_{\\mathrm{av} .}=200 \\mathrm{~N}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": "1569435",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "For a free body diagram shown in the figure, the four forces are applied in the 'x' and 'y' directions. What additional force must be applied and at what angle with positive x-axis so that the net acceleration of body is zero?",
+   "options": {
+    "A": "$\\sqrt{2} \\mathrm{~N}, 45^{\\circ}$",
+    "B": "$\\sqrt{2} \\mathrm{~N}, 135^{\\circ}$",
+    "C": "$\\frac{2}{\\sqrt{3}} \\mathrm{~N}, 30^{\\circ}$",
+    "D": "$2 \\mathrm{~N}, 45^{\\circ}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol. Let addition force required is $=\\overrightarrow{\\mathrm{F}}$\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{F}}+5 \\hat{\\mathrm{i}}-6 \\hat{\\mathrm{i}}+7 \\hat{\\mathrm{j}}-8 \\hat{\\mathrm{j}}=0 \\\\\n\\overrightarrow{\\mathrm{~F}}=\\hat{\\mathrm{i}}+\\hat{\\mathrm{j}},|\\overrightarrow{\\mathrm{~F}}|=\\sqrt{2}\n\\end{array}$$\n\nAngle with x-axis: $\\tan \\theta=\\frac{\\mathrm{y} \\text { component }}{\\mathrm{x} \\text { component }}=\\frac{1}{1} \\theta=45^{\\circ}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Let addition force required is $=\\overrightarrow{\\mathrm{F}}$\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{F}}+5 \\hat{\\mathrm{i}}-6 \\hat{\\mathrm{i}}+7 \\hat{\\mathrm{j}}-8 \\hat{\\mathrm{j}}=0 \\\\\n\\overrightarrow{\\mathrm{~F}}=\\hat{\\mathrm{i}}+\\hat{\\mathrm{j}},|\\overrightarrow{\\mathrm{~F}}|=\\sqrt{2}\n\\end{array}$$",
+     "Angle with x-axis: $\\tan \\theta=\\frac{\\mathrm{y} \\text { component }}{\\mathrm{x} \\text { component }}=\\frac{1}{1} \\theta=45^{\\circ}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "1569436",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Capacitance of an isolated conducting sphere of radius $\\mathrm{R}_{1}$ becomes n times when it is enclosed by a concentric conducting sphere of radius $\\mathrm{R}_{2}$ connected to earth. The ratio of their radii $\\left(\\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}\\right)$ is:",
+   "options": {
+    "A": "$\\frac{\\mathrm{n}}{\\mathrm{n}-1}$",
+    "B": "$\\frac{2 n}{2 n+1}$",
+    "C": "$\\frac{\\mathrm{n}+1}{\\mathrm{n}}$",
+    "D": "$\\frac{2 n+1}{n}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Capacitance of isolated Conducting sphere $=4 \\pi \\varepsilon_{0} \\mathrm{R}_{1}$\nBy enclosing inside another sphere of radius\n$$\\mathrm{R}_{2} \\text {, new capacitance }=\\frac{4 \\pi \\varepsilon_{0} \\mathrm{R}_{1} \\mathrm{R}_{2}}{\\left(\\mathrm{R}_{2}-\\mathrm{R}_{1}\\right)}$$\n\nGiven: $\\frac{4 \\pi \\varepsilon_{0} \\mathrm{R}_{1} \\mathrm{R}_{2}}{\\left(\\mathrm{R}_{2}-\\mathrm{R}_{1}\\right)}=\\mathrm{n} \\times 4 \\pi \\varepsilon_{0} \\mathrm{R}_{1}$\n$$\\Rightarrow \\frac{R_{2}}{\\left(R_{2}-R_{1}\\right)}=n \\Rightarrow \\frac{\\frac{R_{2}}{R_{1}}}{\\left(\\frac{R_{2}}{R_{1}}-1\\right)}=n$$\n$\\Rightarrow \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}=\\mathrm{n} \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}-\\mathrm{n} \\Rightarrow \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}=\\frac{\\mathrm{n}}{(\\mathrm{n}-1)}$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Capacitance of isolated Conducting sphere $=4 \\pi \\varepsilon_{0} \\mathrm{R}_{1}$\nBy enclosing inside another sphere of radius\n$$\\mathrm{R}_{2} \\text {, new capacitance }=\\frac{4 \\pi \\varepsilon_{0} \\mathrm{R}_{1} \\mathrm{R}_{2}}{\\left(\\mathrm{R}_{2}-\\mathrm{R}_{1}\\right)}$$",
+     "Given: $\\frac{4 \\pi \\varepsilon_{0} \\mathrm{R}_{1} \\mathrm{R}_{2}}{\\left(\\mathrm{R}_{2}-\\mathrm{R}_{1}\\right)}=\\mathrm{n} \\times 4 \\pi \\varepsilon_{0} \\mathrm{R}_{1}$\n$$\\Rightarrow \\frac{R_{2}}{\\left(R_{2}-R_{1}\\right)}=n \\Rightarrow \\frac{\\frac{R_{2}}{R_{1}}}{\\left(\\frac{R_{2}}{R_{1}}-1\\right)}=n$$\n$\\Rightarrow \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}=\\mathrm{n} \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}-\\mathrm{n} \\Rightarrow \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}=\\frac{\\mathrm{n}}{(\\mathrm{n}-1)}$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "1569437",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The ratio of wavelengths of proton and deuteron accelerated by potential $\\mathrm{V}_{\\mathrm{p}}$ and $\\mathrm{V}_{\\mathrm{d}}$ is 1: $\\sqrt{2}$. Then, the ratio of $\\mathrm{V}_{\\mathrm{p}}$ to $\\mathrm{V}_{\\mathrm{d}}$ will be",
+   "options": {
+    "A": "$1: 1$",
+    "B": "$\\sqrt{2}: 1$",
+    "C": "$2: 1$",
+    "D": "$4: 1$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Kinetic energy gained by a charged particle accelerated by a potential V is qV\n$$\\begin{array}{l}\n\\mathrm{KE}=\\mathrm{qV} \\\\\n\\Rightarrow \\frac{\\mathrm{p}^{2}}{2 \\mathrm{~m}}=\\mathrm{qV} \\Rightarrow \\mathrm{p}=\\sqrt{2 \\mathrm{mqV}} \\\\\n\\mathrm{p}=\\frac{\\mathrm{h}}{\\lambda}, \\text { thus } \\lambda=\\frac{\\mathrm{h}}{\\sqrt{2 \\mathrm{mqV}}} \\\\\n\\text { now } \\frac{\\lambda_{\\mathrm{p}}}{\\lambda_{\\mathrm{d}}}=\\sqrt{\\frac{\\mathrm{m}_{\\mathrm{d}} \\mathrm{~V}_{\\mathrm{d}}}{\\mathrm{~m}_{\\mathrm{p}} \\mathrm{~V}_{\\mathrm{p}}}} \\\\\n\\Rightarrow \\frac{1}{\\sqrt{2}}=\\sqrt{\\frac{2 \\mathrm{~V}_{\\mathrm{d}}}{\\mathrm{~V}_{\\mathrm{p}}}} \\Rightarrow \\frac{\\mathrm{~V}_{\\mathrm{p}}}{\\mathrm{~V}_{\\mathrm{d}}}=4\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Kinetic energy gained by a charged particle accelerated by a potential V is qV\n$$\\begin{array}{l}\n\\mathrm{KE}=\\mathrm{qV} \\\\\n\\Rightarrow \\frac{\\mathrm{p}^{2}}{2 \\mathrm{~m}}=\\mathrm{qV} \\Rightarrow \\mathrm{p}=\\sqrt{2 \\mathrm{mqV}} \\\\\n\\mathrm{p}=\\frac{\\mathrm{h}}{\\lambda}, \\text { thus } \\lambda=\\frac{\\mathrm{h}}{\\sqrt{2 \\mathrm{mqV}}} \\\\\n\\text { now } \\frac{\\lambda_{\\mathrm{p}}}{\\lambda_{\\mathrm{d}}}=\\sqrt{\\frac{\\mathrm{m}_{\\mathrm{d}} \\mathrm{~V}_{\\mathrm{d}}}{\\mathrm{~m}_{\\mathrm{p}} \\mathrm{~V}_{\\mathrm{p}}}} \\\\\n\\Rightarrow \\frac{1}{\\sqrt{2}}=\\sqrt{\\frac{2 \\mathrm{~V}_{\\mathrm{d}}}{\\mathrm{~V}_{\\mathrm{p}}}} \\Rightarrow \\frac{\\mathrm{~V}_{\\mathrm{p}}}{\\mathrm{~V}_{\\mathrm{d}}}=4\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": "1569438",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "For an object placed at a distance 2.4 m from a lens, a sharp focused image is observed on a screen placed at a distance 12 cm from the lens. A glass plate of refractive index 1.5 and thickness 1 cm is introduced between lens and screen such that the glass plate plane faces parallel to the screen. By what distance should the object be shifted so that a sharp focused image is observed again on the screen?",
+   "options": {
+    "A": "0.8 m",
+    "B": "3.2 m",
+    "C": "1.2 m",
+    "D": "5.6 m\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n\nApplying lens formula\n$$\\frac{1}{0.12}+\\frac{1}{2.4}=\\frac{1}{f} \\Rightarrow \\frac{1}{f}=\\frac{210}{24}$$\n\nUpon putting the glass slab, shift of image is\n$$\\Delta \\mathrm{x}=\\mathrm{t}\\left(1-\\frac{1}{\\mu}\\right)=\\frac{1}{3} \\mathrm{~cm}$$\n\nNow $\\mathrm{v}=12-\\frac{1}{3}=\\frac{35}{3} \\mathrm{~cm}$\nAgain apply lens formula\n$$\\frac{1}{0.12}+\\frac{1}{u}=\\frac{1}{f}=\\frac{210}{24}$$\n\nSolving $\\mathrm{u}=-5.6 \\mathrm{~m}$\nThus shift of object is\n$$5.6-2.4=3.2 \\mathrm{~m}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Applying lens formula\n$$\\frac{1}{0.12}+\\frac{1}{2.4}=\\frac{1}{f} \\Rightarrow \\frac{1}{f}=\\frac{210}{24}$$",
+     "Upon putting the glass slab, shift of image is\n$$\\Delta \\mathrm{x}=\\mathrm{t}\\left(1-\\frac{1}{\\mu}\\right)=\\frac{1}{3} \\mathrm{~cm}$$",
+     "Now $\\mathrm{v}=12-\\frac{1}{3}=\\frac{35}{3} \\mathrm{~cm}$\nAgain apply lens formula\n$$\\frac{1}{0.12}+\\frac{1}{u}=\\frac{1}{f}=\\frac{210}{24}$$",
+     "Solving $\\mathrm{u}=-5.6 \\mathrm{~m}$\nThus shift of object is\n$$5.6-2.4=3.2 \\mathrm{~m}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "1569439",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Light wave traveling in air along x -direction is given by $\\mathrm{E}_{\\mathrm{y}}=540 \\sin \\pi \\times 10^{4}(\\mathrm{x}-\\mathrm{ct}) \\mathrm{Vm}^{-1}$. Then, the peak value of magnetic field of wave will be (Given $\\mathrm{c}=3 \\times 10^{8} \\mathrm{~ms}^{-1}$ )",
+   "options": {
+    "A": "$18 \\times 10^{-7} \\mathrm{~T}$",
+    "B": "$54 \\times 10^{-7} \\mathrm{~T}$",
+    "C": "$54 \\times 10^{-8} \\mathrm{~T}$",
+    "D": "$18 \\times 10^{-8} \\mathrm{~T}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. $\\mathrm{E}_{\\mathrm{y}}=540 \\sin \\pi \\times 10^{4}(\\mathrm{x}-\\mathrm{ct}) \\mathrm{Vm}^{-1}$\n$$\\mathrm{E}_{0}=540 \\mathrm{Vm}^{-1}$$\n$\\mathrm{B}_{0}=\\frac{\\mathrm{E}_{0}}{\\mathrm{C}}=\\frac{540}{3 \\times 10^{8}}=18 \\times 10^{-7} \\mathrm{~T}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{E}_{\\mathrm{y}}=540 \\sin \\pi \\times 10^{4}(\\mathrm{x}-\\mathrm{ct}) \\mathrm{Vm}^{-1}$\n$$\\mathrm{E}_{0}=540 \\mathrm{Vm}^{-1}$$\n$\\mathrm{B}_{0}=\\frac{\\mathrm{E}_{0}}{\\mathrm{C}}=\\frac{540}{3 \\times 10^{8}}=18 \\times 10^{-7} \\mathrm{~T}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "1569440",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "When you walk through a metal detector carrying a metal object in your pocket, it raises an alarm. This phenomenon works on",
+   "options": {
+    "A": "Electromagnetic induction",
+    "B": "Resonance in ac circuits",
+    "C": "Mutual induction in ac circuits",
+    "D": "interference of electromagnetic waves\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Metal detector works on the principle of transmitting an electromagnetic signal and analyses a return signal from the target. So it works on the principle of resonance in AC circuit.\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Metal detector works on the principle of transmitting an electromagnetic signal and analyses a return signal from the target. So it works on the principle of resonance in AC circuit.",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": "1569441",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "An electron with energy 0.1 keV moves at right angle to the earth's magnetic field of $1 \\times 10^{-4} \\mathrm{Wbm}^{-2}$. The frequency of revolution of the electron will be\n(Take mass of electron $=9.0 \\times 10^{-31} \\mathrm{~kg}$ )",
+   "options": {
+    "A": "$1.6 \\times 10^{5} \\mathrm{~Hz}$",
+    "B": "$5.6 \\times 10^{5} \\mathrm{~Hz}$",
+    "C": "$2.8 \\times 10^{6} \\mathrm{~Hz}$",
+    "D": "$1.8 \\times 10^{6} \\mathrm{~Hz}$\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $\\mathrm{f}=\\frac{1}{\\mathrm{~T}}=\\frac{\\mathrm{eB}}{2 \\pi \\mathrm{~m}}$\n$$=\\frac{1.6 \\times 10^{-19} \\times 10^{-4}}{2 \\pi \\times 9 \\times 10^{-31}}=2.8 \\times 10^{6} \\mathrm{~Hz}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{f}=\\frac{1}{\\mathrm{~T}}=\\frac{\\mathrm{eB}}{2 \\pi \\mathrm{~m}}$\n$$=\\frac{1.6 \\times 10^{-19} \\times 10^{-4}}{2 \\pi \\times 9 \\times 10^{-31}}=2.8 \\times 10^{6} \\mathrm{~Hz}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": "1569442",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A current of 15 mA flows in the circuit as shown in figure. The value of potential difference between the points A and B will be",
+   "options": {
+    "A": "50V",
+    "B": "75 V",
+    "C": "150 V",
+    "D": "275 V\n\nOfficial Ans. by NTA\n(D)\n\nAns. (D)\nSol.\n$$\\begin{array}{l}\n\\mathrm{i}_{1}=\\frac{5}{10+5} \\times 15 \\mathrm{~mA}=5 \\mathrm{~mA} \\\\\nV_{A}-5 \\mathrm{i}-10 \\mathrm{i}_{1}-10 \\mathrm{i}=V_{B} \\\\\nV_{A}-V_{B}=75+50+150=275 \\mathrm{~V}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{i}_{1}=\\frac{5}{10+5} \\times 15 \\mathrm{~mA}=5 \\mathrm{~mA} \\\\\nV_{A}-5 \\mathrm{i}-10 \\mathrm{i}_{1}-10 \\mathrm{i}=V_{B} \\\\\nV_{A}-V_{B}=75+50+150=275 \\mathrm{~V}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "1569443",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The length of a seconds pendulum at a height $\\mathrm{h}=2 \\mathrm{R}$ from earth surface will be:\n(Given: R=Radius of earth and acceleration due to gravity at the surface of earth $\\mathrm{g}=\\pi^{2} \\mathrm{~m} / \\mathrm{s}^{-2}$ )",
+   "options": {
+    "A": "$\\frac{2}{9} \\mathrm{~m}$",
+    "B": "$\\frac{4}{9} \\mathrm{~m}$",
+    "C": "$\\frac{8}{9} \\mathrm{~m}$",
+    "D": "$\\frac{1}{9} \\mathrm{~m}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{T}=2 \\pi \\sqrt{\\frac{\\mathrm{~L}}{\\mathrm{~g}}}, \\mathrm{~g}^{\\prime}=\\frac{\\mathrm{GM}}{9 \\mathrm{R}^{2}}=\\frac{\\mathrm{g}}{9}=\\frac{\\pi^{2}}{9}$\n$$\\begin{array}{l}\n2=2 \\pi \\sqrt{\\frac{\\mathrm{~L}}{\\pi^{2}} \\times 9} \\\\\n\\Rightarrow 1=\\pi \\sqrt{\\mathrm{L}} \\times \\frac{3}{\\pi} \\Rightarrow \\mathrm{~L}=\\frac{1}{9} \\mathrm{~m}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{T}=2 \\pi \\sqrt{\\frac{\\mathrm{~L}}{\\mathrm{~g}}}, \\mathrm{~g}^{\\prime}=\\frac{\\mathrm{GM}}{9 \\mathrm{R}^{2}}=\\frac{\\mathrm{g}}{9}=\\frac{\\pi^{2}}{9}$\n$$\\begin{array}{l}\n2=2 \\pi \\sqrt{\\frac{\\mathrm{~L}}{\\pi^{2}} \\times 9} \\\\\n\\Rightarrow 1=\\pi \\sqrt{\\mathrm{L}} \\times \\frac{3}{\\pi} \\Rightarrow \\mathrm{~L}=\\frac{1}{9} \\mathrm{~m}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": "1569444",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Sound travels in a mixture of two moles of helium and n moles of hydrogen. If rms speed of gas molecules in the mixture is $\\sqrt{2}$ times the speed of sound, then the value of n will be",
+   "options": {
+    "A": "1",
+    "B": "2",
+    "C": "3",
+    "D": "4\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{v}_{\\mathrm{s}}=\\sqrt{\\frac{\\gamma \\mathrm{RT}}{\\mathrm{M}}}$\n$$\\begin{array}{l}\nv_{\\text {rms }}=\\sqrt{\\frac{3 \\text { RT }}{M}} \\\\\n\\frac{v_{s}}{v_{\\text {rms }}}=\\sqrt{\\frac{\\gamma}{3}}=\\frac{1}{\\sqrt{2}} \\Rightarrow \\frac{\\gamma}{3}=\\frac{1}{2} \\Rightarrow \\gamma=\\frac{3}{2} \\\\\n\\gamma=1+\\frac{2}{f_{\\text {mix. }}} \\\\\nf_{\\text {mix. }}=\\frac{2 \\times 3+n \\times 5}{n+2}=\\frac{6+n \\times 5}{(n+2)} \\\\\n\\gamma=1+\\frac{2(n+2)}{6+n \\times 5}=\\frac{6+5 n+2 n+4}{6+5 n} \\\\\n\\gamma=\\frac{7 n+10}{6+5 n}=\\frac{3}{2} \\\\\n14 n+20=18+15 n \\\\\nn=2\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{v}_{\\mathrm{s}}=\\sqrt{\\frac{\\gamma \\mathrm{RT}}{\\mathrm{M}}}$\n$$\\begin{array}{l}\nv_{\\text {rms }}=\\sqrt{\\frac{3 \\text { RT }}{M}} \\\\\n\\frac{v_{s}}{v_{\\text {rms }}}=\\sqrt{\\frac{\\gamma}{3}}=\\frac{1}{\\sqrt{2}} \\Rightarrow \\frac{\\gamma}{3}=\\frac{1}{2} \\Rightarrow \\gamma=\\frac{3}{2} \\\\\n\\gamma=1+\\frac{2}{f_{\\text {mix. }}} \\\\\nf_{\\text {mix. }}=\\frac{2 \\times 3+n \\times 5}{n+2}=\\frac{6+n \\times 5}{(n+2)} \\\\\n\\gamma=1+\\frac{2(n+2)}{6+n \\times 5}=\\frac{6+5 n+2 n+4}{6+5 n} \\\\\n\\gamma=\\frac{7 n+10}{6+5 n}=\\frac{3}{2} \\\\\n14 n+20=18+15 n \\\\\nn=2\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n4",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": "1569445",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Let $\\eta_{1}$ is the efficiency of an engine at $\\mathrm{T}_{1}=447^{\\circ} \\mathrm{C}$ and $\\mathrm{T}_{2}=147^{\\circ} \\mathrm{C}$ while $\\eta_{2}$ is the efficiency at $\\mathrm{T}_{1}=947^{\\circ} \\mathrm{C}$ and $\\mathrm{T}_{2}=47^{\\circ} \\mathrm{C}$. The ratio $\\frac{\\eta_{1}}{\\eta_{2}}$ will be :",
+   "options": {
+    "A": "0.41",
+    "B": "0.56",
+    "C": "0.73",
+    "D": "0.70\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Efficiency $\\eta=1-\\frac{\\mathrm{T}_{\\mathrm{L}}}{\\mathrm{T}_{\\mathrm{H}}}$\n$$\\begin{array}{l}\n\\eta_{1}=1-\\frac{147+273}{447+273}=1-\\frac{420}{720} \\\\\n\\eta_{1}=\\frac{300}{720} \\\\\n\\eta_{2}=1-\\frac{47+273}{947+273}=1-\\frac{320}{1220} \\\\\n\\eta_{2}=\\frac{900}{1220} \\\\\n\\frac{\\eta_{1}}{\\eta_{2}}=\\frac{300}{720} \\times \\frac{1220}{900}=\\frac{122}{72 \\times 3} \\\\\n\\frac{\\eta_{1}}{\\eta_{2}}=0.56\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Efficiency $\\eta=1-\\frac{\\mathrm{T}_{\\mathrm{L}}}{\\mathrm{T}_{\\mathrm{H}}}$\n$$\\begin{array}{l}\n\\eta_{1}=1-\\frac{147+273}{447+273}=1-\\frac{420}{720} \\\\\n\\eta_{1}=\\frac{300}{720} \\\\\n\\eta_{2}=1-\\frac{47+273}{947+273}=1-\\frac{320}{1220} \\\\\n\\eta_{2}=\\frac{900}{1220} \\\\\n\\frac{\\eta_{1}}{\\eta_{2}}=\\frac{300}{720} \\times \\frac{1220}{900}=\\frac{122}{72 \\times 3} \\\\\n\\frac{\\eta_{1}}{\\eta_{2}}=0.56\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "1569446",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "An object is taken to a height above the surface of earth at a distance $\\frac{5}{4} \\mathrm{R}$ from the centre of the earth. Where radius of earth, $\\mathrm{R}=6400 \\mathrm{~km}$. The percentage decrease in the weight of the object will be",
+   "options": {
+    "A": "36\\%",
+    "B": "50\\%",
+    "C": "64\\%",
+    "D": "25\\%\n\nOfficial Ans. by NTA (A)\nAns. (A)\n\nSol.\n$$g_{e f f}=\\frac{g}{\\left(1+\\frac{h}{R}\\right)^{2}} ; g_{e f f}=\\frac{g}{\\left(1+\\frac{1}{4}\\right)^{2}}=\\frac{16 g}{25}$$\n$$\\begin{aligned}\n\\text { change } & =\\frac{\\mathrm{g}_{\\text {eff }}-\\mathrm{g}}{\\mathrm{~g}} \\times 100=\\frac{\\frac{16}{25}-1}{1} \\times 100 \\\\\n& =\\frac{-9}{25} \\times 100=-36 \\%\n\\end{aligned}$$\n\nHence \\% decrease in the weight = 36\\%"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$g_{e f f}=\\frac{g}{\\left(1+\\frac{h}{R}\\right)^{2}} ; g_{e f f}=\\frac{g}{\\left(1+\\frac{1}{4}\\right)^{2}}=\\frac{16 g}{25}$$\n$$\\begin{aligned}\n\\text { change } & =\\frac{\\mathrm{g}_{\\text {eff }}-\\mathrm{g}}{\\mathrm{~g}} \\times 100=\\frac{\\frac{16}{25}-1}{1} \\times 100 \\\\\n& =\\frac{-9}{25} \\times 100=-36 \\%\n\\end{aligned}$$",
+     "Hence \\% decrease in the weight = 36\\%"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "1569447",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A bag of sand of mass 9.8 kg is suspended by a rope. A bullet of 200 g travelling with speed $10 \\mathrm{~ms}^{-1}$ gets embedded in it, then loss of kinetic energy will be",
+   "options": {
+    "A": "4.9 J",
+    "B": "9.8 J",
+    "C": "14.7",
+    "D": "19.6 J\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{P}_{\\mathrm{i}}=\\mathrm{P}_{\\mathrm{f}}$ (no any external force)\n$$\\begin{array}{l}\n0.2 \\times 10=10 \\times \\mathrm{v} \\\\\n\\mathrm{v}=0.2 \\mathrm{~m} / \\mathrm{sec}\n\\end{array}$$\n\nLoss in K.E. $=\\frac{1}{2} \\times(0.2) \\times 10^{2}-\\frac{1}{2} \\times 10(0.2)^{2}$\n$$\\begin{array}{l}\n=\\frac{1}{2} \\times 10 \\times(0.2)[10-0.2] \\\\\n=9.8 \\mathrm{~J}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{P}_{\\mathrm{i}}=\\mathrm{P}_{\\mathrm{f}}$ (no any external force)\n$$\\begin{array}{l}\n0.2 \\times 10=10 \\times \\mathrm{v} \\\\\n\\mathrm{v}=0.2 \\mathrm{~m} / \\mathrm{sec}\n\\end{array}$$",
+     "Loss in K.E. $=\\frac{1}{2} \\times(0.2) \\times 10^{2}-\\frac{1}{2} \\times 10(0.2)^{2}$\n$$\\begin{array}{l}\n=\\frac{1}{2} \\times 10 \\times(0.2)[10-0.2] \\\\\n=9.8 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": "1569448",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A ball is projected from the ground with a speed $15 \\mathrm{~ms}^{-1}$ at an angle $\\theta$ with horizontal so that its range and maximum height are equal, then'tan $\\theta^{\\prime}$ will be equal to",
+   "options": {
+    "A": "$\\frac{1}{4}$",
+    "B": "$\\frac{1}{2}$",
+    "C": "2",
+    "D": "4\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{R}=\\mathrm{H}$\n$$\\begin{array}{l}\n\\frac{2 v_{x} \\times v_{y}}{g}=\\frac{v_{y}^{2}}{2 g} \\\\\nv_{x}=\\frac{v_{y}}{4} ; u \\cos \\theta=\\frac{u \\sin \\theta}{4} \\\\\n\\tan \\theta=4\n\\end{array}$$\n\nJEE Exam Solution\nwww.esaral.com\n5\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n4"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{R}=\\mathrm{H}$\n$$\\begin{array}{l}\n\\frac{2 v_{x} \\times v_{y}}{g}=\\frac{v_{y}^{2}}{2 g} \\\\\nv_{x}=\\frac{v_{y}}{4} ; u \\cos \\theta=\\frac{u \\sin \\theta}{4} \\\\\n\\tan \\theta=4\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n5",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP\n4"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": "1569449",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The maximum error in the measurement of resistance, current and time for which current flows in an electrical circuit are 1\\%, 2\\% and 3\\% respectively. The maximum percentage error in the detection of the dissipated heat will be:",
+   "options": {
+    "A": "2",
+    "B": "4",
+    "C": "6",
+    "D": "8\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. $\\mathrm{E}_{\\mathrm{H}}=\\mathrm{I}^{2} \\mathrm{R} \\times \\mathrm{t}$\n$$\\begin{array}{l}\n\\frac{\\Delta \\mathrm{E}}{\\mathrm{E}} \\times 100=\\frac{2 \\Delta \\mathrm{I}}{\\mathrm{I}} \\times 100+\\frac{\\Delta \\mathrm{R}}{\\mathrm{R}} \\times 100+\\frac{\\Delta \\mathrm{T}}{\\mathrm{~T}} \\times 100 \\\\\n=2 \\times 2+1+3=8\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{E}_{\\mathrm{H}}=\\mathrm{I}^{2} \\mathrm{R} \\times \\mathrm{t}$\n$$\\begin{array}{l}\n\\frac{\\Delta \\mathrm{E}}{\\mathrm{E}} \\times 100=\\frac{2 \\Delta \\mathrm{I}}{\\mathrm{I}} \\times 100+\\frac{\\Delta \\mathrm{R}}{\\mathrm{R}} \\times 100+\\frac{\\Delta \\mathrm{T}}{\\mathrm{~T}} \\times 100 \\\\\n=2 \\times 2+1+3=8\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "1569450",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Hydrogen atom from excited state comes to the ground by emitting a photon of wavelength $\\lambda$. The value of principal quantum number 'n' of the excited state will be :\n(R : Rydberg constant)",
+   "options": {
+    "A": "$\\sqrt{\\frac{\\lambda \\mathrm{R}}{\\lambda-1}}$",
+    "B": "$\\sqrt{\\frac{\\lambda \\mathrm{R}}{\\lambda \\mathrm{R}-1}}$",
+    "C": "$\\sqrt{\\frac{\\lambda}{\\lambda \\mathrm{R}-1}}$",
+    "D": "$\\sqrt{\\frac{\\lambda \\mathrm{R}^{2}}{\\lambda \\mathrm{R}-1}}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\n\nSol.\n$$\\mathrm{E}_{1}=\\frac{-\\mathrm{Rch}}{(1)^{2}}(1)$$\n$$\\begin{array}{l}\n\\frac{-\\mathrm{Rch}}{(\\mathrm{n})^{2}}+\\frac{\\mathrm{Rch}}{1}=\\frac{\\mathrm{hc}}{\\lambda} \\\\\n\\frac{-\\mathrm{R}}{\\mathrm{n}^{2}}+\\mathrm{R}=\\frac{1}{\\lambda} \\\\\n\\mathrm{R}-\\frac{1}{\\lambda}=\\frac{\\mathrm{R}}{\\mathrm{n}^{2}} \\\\\n\\frac{\\lambda \\mathrm{R}-1}{\\lambda}=\\frac{\\mathrm{R}}{\\mathrm{n}^{2}} \\\\\n\\mathrm{n}^{2}=\\frac{\\lambda \\mathrm{R}}{\\lambda \\mathrm{R}-1} \\Rightarrow \\mathrm{n}=\\sqrt{\\frac{\\lambda \\mathrm{R}}{\\lambda \\mathrm{R}-1}}\n\\end{array}$$\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$$\\mathrm{E}_{1}=\\frac{-\\mathrm{Rch}}{(1)^{2}}(1)$$\n$$\\begin{array}{l}\n\\frac{-\\mathrm{Rch}}{(\\mathrm{n})^{2}}+\\frac{\\mathrm{Rch}}{1}=\\frac{\\mathrm{hc}}{\\lambda} \\\\\n\\frac{-\\mathrm{R}}{\\mathrm{n}^{2}}+\\mathrm{R}=\\frac{1}{\\lambda} \\\\\n\\mathrm{R}-\\frac{1}{\\lambda}=\\frac{\\mathrm{R}}{\\mathrm{n}^{2}} \\\\\n\\frac{\\lambda \\mathrm{R}-1}{\\lambda}=\\frac{\\mathrm{R}}{\\mathrm{n}^{2}} \\\\\n\\mathrm{n}^{2}=\\frac{\\lambda \\mathrm{R}}{\\lambda \\mathrm{R}-1} \\Rightarrow \\mathrm{n}=\\sqrt{\\frac{\\lambda \\mathrm{R}}{\\lambda \\mathrm{R}-1}}\n\\end{array}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "1569451",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A particle is moving in a straight line such that its velocity is increasing at $5 \\mathrm{~ms}^{-1}$ per meter. The acceleration of the particle is $\\_\\_\\_\\_$ $\\mathrm{ms}^{-2}$ at a point where its velocity is $20 \\mathrm{~ms}^{-1}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "100"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "modulation inde $\\mathrm{x}=\\frac{\\mathrm{V}_{\\text {max }}-\\mathrm{V}_{\\text {min. }}}{\\mathrm{V}_{\\text {max }}+\\mathrm{V}_{\\text {min. }}} \\times 100 \\%$\n$$=\\frac{6-2}{6+2} \\times 100 \\%=50 \\%$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "1569452",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Three identical spheres each of mass M are placed at the corners of a right angled triangle with mutually perpendicular sides equal to 3 m each. Taking point of intersection of mutually perpendicular sides as origin, the magnitude of position vector of centre of mass of the system will be $\\sqrt{\\mathrm{x}} \\mathrm{m}$. The value of x is",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$B=\\frac{N \\mu_{0} i}{2 R}$\n$$B_{1}=\\frac{N_{1} \\mu_{0} i}{2 R_{1}}$$",
+     "For $\\mathrm{N}_{2}=5$\n$$\\begin{array}{l}\n\\text { Radius of coil }=R_{2}=\\frac{N_{1} \\times R_{1}}{N_{2}} \\\\\nB_{2}=\\frac{N_{2} \\mu_{0} i}{R_{2}} \\\\\n\\frac{B_{2}}{B_{1}}=\\frac{N_{2}}{N_{1}} \\frac{R_{1}}{R_{2}}=\\frac{N_{2}}{N_{1}} \\times \\frac{N_{2}}{N_{1}} ; \\quad \\frac{B_{2}}{B_{1}}=\\frac{25}{4}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "1569453",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A block of ice of mass 120 g at temperature $0^{\\circ} \\mathrm{C}$ is put in 300 gm of water at $25^{\\circ} \\mathrm{C}$. The xg of ice melts as the temperature of the water reaches 0°C. The value of x is\n[Use: Specific heat capacity of water = 4200 $\\mathrm{Jkg}^{-1} \\mathrm{~K}^{-1}$, Latent heat of ice $=3.5 \\times 10^{5} \\mathrm{Jkg}^{-1}$ ]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "90"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Boyant force + surace tension = mg\n$$\\begin{array}{l}\n\\sigma \\frac{\\mathrm{V}}{2} \\mathrm{~g}+2 \\pi \\mathrm{RT}=\\rho \\mathrm{Vg} \\\\\n2 \\pi \\mathrm{RT}=\\frac{(2 \\rho-\\sigma)}{2} \\frac{4}{3} \\pi \\mathrm{R}^{3} \\mathrm{~g} ;\\left[\\mathrm{V}=\\frac{4}{3} \\pi \\mathrm{R}^{3}\\right] \\\\\n\\mathrm{R}^{3}=\\frac{3 \\mathrm{~T}}{(2 \\rho-\\sigma) \\mathrm{g}} \\Rightarrow \\mathrm{R}=\\sqrt{\\frac{3 \\times 7.5 \\times 10^{-2} \\mathrm{~N}-\\mathrm{m}^{-1}}{(2 \\rho-\\sigma) \\times 10}} \\\\\n\\mathrm{R}=\\frac{3}{20 \\sqrt{(2 \\rho-\\sigma)}} \\mathrm{m}=\\frac{15}{\\sqrt{2 \\rho-\\sigma}} \\mathrm{cm}\n\\end{array}$$",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "1569454",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "$\\frac{\\mathrm{x}}{\\mathrm{x}+4}$ is the ratio of energies of photons produced due to transition of an electron of hydrogen atom from its\n(i) third permitted energy level to the second level and\n(ii) the highest permitted energy level to the second permitted level.\nThe value of x will be",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Change in momentum of any one ball\n$$\\begin{array}{l}\n|\\Delta \\overrightarrow{\\mathrm{P}}|=2 \\times 0.05 \\times 10 \\\\\n|\\Delta \\overrightarrow{\\mathrm{P}}|=1 \\\\\n\\left|\\overrightarrow{\\mathrm{~F}}_{\\mathrm{av}}\\right|=\\frac{|\\Delta \\overrightarrow{\\mathrm{P}}|}{\\Delta \\mathrm{t}} \\\\\n\\mathrm{~F}_{\\mathrm{av} .}=200 \\mathrm{~N}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": "1569455",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a potentiometer arrangement, a cell of emf 1.20 V gives a balance point at 36 cm length of wire. This cell is now replaced by another cell of emf 1.80 V. The difference in balancing length of potentiometer wire in above conditions will be $\\_\\_\\_\\_$ cm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "18"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Let addition force required is $=\\overrightarrow{\\mathrm{F}}$\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{F}}+5 \\hat{\\mathrm{i}}-6 \\hat{\\mathrm{i}}+7 \\hat{\\mathrm{j}}-8 \\hat{\\mathrm{j}}=0 \\\\\n\\overrightarrow{\\mathrm{~F}}=\\hat{\\mathrm{i}}+\\hat{\\mathrm{j}},|\\overrightarrow{\\mathrm{~F}}|=\\sqrt{2}\n\\end{array}$$",
+     "Angle with x-axis: $\\tan \\theta=\\frac{\\mathrm{y} \\text { component }}{\\mathrm{x} \\text { component }}=\\frac{1}{1} \\theta=45^{\\circ}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "1569456",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two ideal diodes are connected in the network as shown in figure. The equivalent resistance between A and B is $\\_\\_\\_\\_$ $\\Omega$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "25"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Capacitance of isolated Conducting sphere $=4 \\pi \\varepsilon_{0} \\mathrm{R}_{1}$\nBy enclosing inside another sphere of radius\n$$\\mathrm{R}_{2} \\text {, new capacitance }=\\frac{4 \\pi \\varepsilon_{0} \\mathrm{R}_{1} \\mathrm{R}_{2}}{\\left(\\mathrm{R}_{2}-\\mathrm{R}_{1}\\right)}$$",
+     "Given: $\\frac{4 \\pi \\varepsilon_{0} \\mathrm{R}_{1} \\mathrm{R}_{2}}{\\left(\\mathrm{R}_{2}-\\mathrm{R}_{1}\\right)}=\\mathrm{n} \\times 4 \\pi \\varepsilon_{0} \\mathrm{R}_{1}$\n$$\\Rightarrow \\frac{R_{2}}{\\left(R_{2}-R_{1}\\right)}=n \\Rightarrow \\frac{\\frac{R_{2}}{R_{1}}}{\\left(\\frac{R_{2}}{R_{1}}-1\\right)}=n$$\n$\\Rightarrow \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}=\\mathrm{n} \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}-\\mathrm{n} \\Rightarrow \\frac{\\mathrm{R}_{2}}{\\mathrm{R}_{1}}=\\frac{\\mathrm{n}}{(\\mathrm{n}-1)}$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "1569457",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two waves executing simple harmonic motion travelling in the same direction with same amplitude and frequency are superimposed. The resultant amplitude is equal to the $\\sqrt{3}$ times of amplitude of individual motions. The phase difference between the two motions is $\\_\\_\\_\\_$ (degree)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "60"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Kinetic energy gained by a charged particle accelerated by a potential V is qV\n$$\\begin{array}{l}\n\\mathrm{KE}=\\mathrm{qV} \\\\\n\\Rightarrow \\frac{\\mathrm{p}^{2}}{2 \\mathrm{~m}}=\\mathrm{qV} \\Rightarrow \\mathrm{p}=\\sqrt{2 \\mathrm{mqV}} \\\\\n\\mathrm{p}=\\frac{\\mathrm{h}}{\\lambda}, \\text { thus } \\lambda=\\frac{\\mathrm{h}}{\\sqrt{2 \\mathrm{mqV}}} \\\\\n\\text { now } \\frac{\\lambda_{\\mathrm{p}}}{\\lambda_{\\mathrm{d}}}=\\sqrt{\\frac{\\mathrm{m}_{\\mathrm{d}} \\mathrm{~V}_{\\mathrm{d}}}{\\mathrm{~m}_{\\mathrm{p}} \\mathrm{~V}_{\\mathrm{p}}}} \\\\\n\\Rightarrow \\frac{1}{\\sqrt{2}}=\\sqrt{\\frac{2 \\mathrm{~V}_{\\mathrm{d}}}{\\mathrm{~V}_{\\mathrm{p}}}} \\Rightarrow \\frac{\\mathrm{~V}_{\\mathrm{p}}}{\\mathrm{~V}_{\\mathrm{d}}}=4\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": "1569458",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two parallel plate capacitors of capacity C and 3C are connected in parallel combination and charged to a potential difference 18 V . The battery is then disconnected and the space between the plates of the capacitor of capacity C is completely filled with a material of dielectric constant 9 . The final potential difference across the combination of capacitors will be $\\_\\_\\_\\_$ V",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Applying lens formula\n$$\\frac{1}{0.12}+\\frac{1}{2.4}=\\frac{1}{f} \\Rightarrow \\frac{1}{f}=\\frac{210}{24}$$",
+     "Upon putting the glass slab, shift of image is\n$$\\Delta \\mathrm{x}=\\mathrm{t}\\left(1-\\frac{1}{\\mu}\\right)=\\frac{1}{3} \\mathrm{~cm}$$",
+     "Now $\\mathrm{v}=12-\\frac{1}{3}=\\frac{35}{3} \\mathrm{~cm}$\nAgain apply lens formula\n$$\\frac{1}{0.12}+\\frac{1}{u}=\\frac{1}{f}=\\frac{210}{24}$$",
+     "Solving $\\mathrm{u}=-5.6 \\mathrm{~m}$\nThus shift of object is\n$$5.6-2.4=3.2 \\mathrm{~m}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "1569459",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A convex lens of focal length 20 cm is placed in front of convex mirror with principal axis coinciding each other. The distance between the lens and mirror is 10 cm. A point object is placed on principal axis at a distance of 60 cm from the convex lens. The image formed by combination coincides the object itself. The focal length of the convex mirror is $\\_\\_\\_\\_$ cm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "10"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{E}_{\\mathrm{y}}=540 \\sin \\pi \\times 10^{4}(\\mathrm{x}-\\mathrm{ct}) \\mathrm{Vm}^{-1}$\n$$\\mathrm{E}_{0}=540 \\mathrm{Vm}^{-1}$$\n$\\mathrm{B}_{0}=\\frac{\\mathrm{E}_{0}}{\\mathrm{C}}=\\frac{540}{3 \\times 10^{8}}=18 \\times 10^{-7} \\mathrm{~T}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "1569460",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Magnetic flux (in weber) in a closed circuit of resistance $20 \\Omega$ varies with time t(s) $\\operatorname{as} \\phi=8 \\mathrm{t}^{2}-9 \\mathrm{t}+5$. The magnitude of the induced current at $\\mathrm{t}=0.25 \\mathrm{~s}$ will be $\\_\\_\\_\\_$\nmA Official Ans. by NTA (250)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "250"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Metal detector works on the principle of transmitting an electromagnetic signal and analyses a return signal from the target. So it works on the principle of resonance in AC circuit.",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

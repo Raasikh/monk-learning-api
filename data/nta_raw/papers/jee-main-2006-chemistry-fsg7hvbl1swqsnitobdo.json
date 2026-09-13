@@ -1,61 +1,139 @@
 {
+ "paper_id": "jee-main-2006-chemistry-fsg7hvbl1swqsnitobdo",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2006-chemistry-fsg7hvbl1swqsnitobdo",
+  "exam": "jee-main",
+  "year": 2006,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2006-chemistry-fsg7hvbl1swqsnitobdo",
-    "exam": "jee-main",
-    "year": 2006,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2006/iit-jee-chemistry-paper-i/81197",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/Fsg7hVbl1sWqsNIToBdo",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2006/iit-jee-chemistry-paper-i/81197",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/Fsg7hVbl1sWqsNIToBdo",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "14f66f3eecc3e4c0719ef850dd021f19bbd45e26be3196b21dd8fea54688a35a",
+  "page_count": 9,
+  "text_chars": 69,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2006-chemistry-fsg7hvbl1swqsnitobdo.pdf"
+ },
+ "answer_sheet": {
+  "status": "unavailable",
+  "source": null,
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": []
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "$\\mathrm{B}(\\mathrm{OH})_{3}+\\mathrm{NaOH} \\rightleftharpoons \\mathrm{NaBO}_{2}+\\mathrm{Na}\\left[\\mathrm{B}(\\mathrm{OH})_{4}\\right]+\\mathrm{H}_{2} \\mathrm{O}$\nHow can this reaction is made to proceed in forward direction?",
+   "options": {
+    "A": "addition of cis 1,2 diol",
+    "B": "addition of borax",
+    "C": "addition of trans 1, 2 diol",
+    "D": "addition of $\\mathrm{Na}_{2} \\mathrm{HPO}_{4}$\n\nSol. (A)\nDue to formation of chelated complex, the reaction moves in forward direction."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nDue to formation of chelated complex, the reaction moves in forward direction."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "14f66f3eecc3e4c0719ef850dd021f19bbd45e26be3196b21dd8fea54688a35a",
-    "page_count": 9,
-    "text_chars": 69,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2006-chemistry-fsg7hvbl1swqsnitobdo.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A solution when diluted with $\\mathrm{H}_{2} \\mathrm{O}$ and boiled, it gives a white precipitate. On addition of excess $\\mathrm{NH}_{4} \\mathrm{Cl} / \\mathrm{NH}_{4} \\mathrm{OH}$. the volume of precipitate decreases leaving behind a white gelatinous precipitate. Identify the precipitate which dissolves in $\\mathrm{NH}_{4} \\mathrm{OH} / \\mathrm{NH}_{4} \\mathrm{Cl}$.",
+   "options": {
+    "A": "$\\mathrm{Zn}(\\mathrm{OH})_{2}$",
+    "B": "$\\mathrm{Al}(\\mathrm{OH})_{3}$",
+    "C": "$\\mathrm{Mg}(\\mathrm{OH})_{2}$",
+    "D": "$\\mathrm{Ca}(\\mathrm{OH})_{2}$\n\nSol. (A)\nDue to formation of tetraammine zinc (II) complex; $\\mathrm{Zn}{ }^{+2}+\\mathrm{NH}_{4} \\mathrm{OH} \\rightarrow\\left[\\mathrm{Zn}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{+2}$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nDue to formation of tetraammine zinc (II) complex; $\\mathrm{Zn}{ }^{+2}+\\mathrm{NH}_{4} \\mathrm{OH} \\rightarrow\\left[\\mathrm{Zn}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{+2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
-  },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "When benzene sulfonic acid and p-nitrophenol are treated with $\\mathrm{NaHCO}_{3}$, the gases released respectively are",
+   "options": {
+    "A": "$\\mathrm{SO}_{2}, \\mathrm{NO}_{2}$",
+    "B": "$\\mathrm{SO}_{2}, \\mathrm{NO}$",
+    "C": "$\\mathrm{SO}_{2}, \\mathrm{CO}_{2}$",
+    "D": "$\\mathrm{CO}_{2}, \\mathrm{CO}_{2}$\n\nSol. (D)\nWhat is the molar heat capacity of the gas?\n(A) $\\frac{4 \\mathrm{R}}{2}$\n(B) $\\frac{3 R}{2}$\n(C) 5R/2\n(D) 0\n\nSol. (A)\n5. (I) 1,2-dihydroxy benzene\n(II) 1,3-dihydroxy benzene\n(III) 1,4-dihydroxy benzene\n(IV) Hydroxy benzene\n\nThe increasing order of boiling points of above mentioned alcohols is\n(A) I $<$ II $<$ III $<$ IV\n(B) I $<$ II $<$ IV $<$ III\n(C) IV $<$ I $<$ II $<$ III\n(D) IV $<$ II $<$ I $<$ III\n\nSol. (C)\n\nPage 1\n\n6. $\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}_{2}+\\mathrm{NOCl} \\rightarrow \\mathrm{P}$\n\nIdentify the adduct.\n(A)\n<smiles>CC(Cl)CN=O</smiles>\n(C)\n(B)\n<smiles>CC(CCl)C(=O)N=O</smiles>\n(D)\n<smiles>O=NCCCCl</smiles>\n\nSol. (A)\nNÓ $\\mathrm{Cl}^{-} \\rightarrow$ Markonikov's Addition\n7. The IUPAC name of $\\mathrm{C}_{6} \\mathrm{H}_{5} \\mathrm{COCl}$ is\n(A) Benzoyl chloride\n(B) Benzene chloro ketone\n(C) Benzene carbonyl chloride\n(D) Chloro phenyl ketone\n\nSol. (C)\n8. $\\mathrm{Ag}^{+}+\\mathrm{NH}_{3} \\rightleftharpoons\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)^{+}\\right] ; \\mathrm{k}_{1}=3.5 \\times 10^{-3}$\n$\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)\\right]^{+}+\\mathrm{NH}_{3} \\rightleftharpoons\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+} ; \\mathrm{k}_{2}=1.7 \\times 10^{-3}$\nthen the formation constant of $\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+}$is\n(A) $6.08 \\times 10^{-6}$\n(B) $6.08 \\times 10^{6}$\n(C) $6.08 \\times 10^{-9}$\n(D) None\n\nSol. (A)\n9. $\\mathrm{CH}_{3} \\mathrm{NH}_{2}+\\mathrm{CHCl}_{3}+\\mathrm{KOH} \\rightarrow$ Nitrogen containing compound $+\\mathrm{KCl}+\\mathrm{H}_{2} \\mathrm{O}$. Nitrogen containing compound is\n(A) $\\mathrm{CH}_{3}-\\mathrm{C} \\equiv \\mathrm{N}$\n(B) $\\mathrm{CH}_{3}-\\mathrm{NH}-\\mathrm{CH}_{3}$\n(C) $\\mathrm{CH}_{3}-\\stackrel{-}{\\mathrm{N}} \\equiv \\stackrel{+}{\\mathrm{C}}$\n(D) $\\mathrm{CH}_{3} \\stackrel{+}{\\mathrm{N}} \\equiv \\stackrel{-}{\\mathrm{C}}$\n\nSol. (D)\nIsocyanide test/Carbylamine reaction\n10. $\\mathrm{CuSO}_{4}$ decolourises on addition of KCN, the product is\n(A) $\\left[\\mathrm{Cu}(\\mathrm{CN})_{4}\\right]^{2-}$\n(B) $\\mathrm{Cu}^{2+}$ get reduced to form $\\left[\\mathrm{Cu}(\\mathrm{CN})_{4}\\right]^{3-}$\n(C) $\\mathrm{Cu}(\\mathrm{CN})_{2}$\n(D) CuCN\n\nSol. (D)\n$\\mathrm{Cu}^{+2}+2 \\mathrm{CN}^{-} \\rightarrow \\mathrm{Cu}(\\mathrm{CN})_{2}$\n$2 \\mathrm{Cu}(\\mathrm{CN})_{2} \\rightarrow 2 \\mathrm{CuCN}+(\\mathrm{CN})_{2}$\n11. The direct conversion of A to B is difficult, hence it is carried out by the following shown path:\n\nGiven\n$$\\begin{aligned}\n\\Delta \\mathrm{S}_{(\\mathrm{A} \\rightarrow \\mathrm{C})} & =50 \\text { e.u. } \\\\\n\\Delta \\mathrm{S}_{(\\mathrm{C} \\rightarrow \\mathrm{D})} & =30 \\text { e.u. } \\\\\n\\Delta \\mathrm{S}_{(\\mathrm{B} \\rightarrow \\mathrm{D})} & =20 \\text { e.u. }\n\\end{aligned}$$\nwhere e.u. is entropy unit then $\\Delta \\mathrm{S}_{(\\mathrm{A} \\rightarrow \\mathrm{B})}$ is\n(A) +100 e.u.\n(B) +60 e.u.\n(C) -100 e.u.\n(D) -60 e.u.\n\nPage 2\n\nSol. (B)\n$$\\Delta \\mathrm{S}_{(\\mathrm{A} \\rightarrow \\mathrm{~B})}=\\Delta \\mathrm{S}_{(\\mathrm{A} \\rightarrow \\mathrm{C})}+\\Delta \\mathrm{S}_{(\\mathrm{C} \\rightarrow \\mathrm{D})}-\\Delta \\mathrm{S}_{(\\mathrm{B} \\rightarrow \\mathrm{D})}=50+30-20$$\n12. $\\mathrm{N}_{2}+3 \\mathrm{H}_{2} \\rightleftharpoons 2 \\mathrm{NH}_{3}$\n\nWhich is correct statement if $\\mathrm{N}_{2}$ is added at equilibrium condition?\n(A) The equilibrium will shift to forward direction because according to II ${ }^{\\mathrm{nd}}$ law of thermodynamics the entropy must increases in the direction of spontaneous reaction.\n(B) The condition for equilibrium is $\\mathrm{G}_{\\mathrm{N}_{2}}+3 \\mathrm{G}_{\\mathrm{H}_{2}}=2 \\mathrm{G}_{\\mathrm{NH}_{3}}$ where G is Gibbs free energy per mole of the gaseous species measured at that partial pressure. The condition of equilibrium is unaffected by the use of catalyst, which increases the rate of both the forward and backward reactions to the same extent.\n(C) The catalyst will increase the rate of forward reaction by $\\alpha$ and that of backward reaction by $\\beta$.\n(D) Catalyst will not alter the rate of either of the reaction.\n\nSol. (B)\n\nSection - B (May have more than one option correct)\n13. If the bond length of CO bond in carbon monoxide is $1.128 \\AA$, then what is the value of CO bond length in $\\mathrm{Fe}(\\mathrm{CO})_{5}$ ?\n(A) $1.15 \\AA$\n(B) $1.128 \\AA$\n(C) $1.72 \\AA$\n(D) $1.118 \\AA$\n\nSol. (A)\nDue to synergic bond formation between metal and CO , the bond order of CO decreases.\n14. The species present in solution when $\\mathrm{CO}_{2}$ is dissolved in water are\n(A) $\\mathrm{CO}_{2}, \\mathrm{H}_{2} \\mathrm{CO}_{3}, \\mathrm{HCO}_{3}^{-}, \\mathrm{CO}_{3}^{2-}$\n(B) $\\mathrm{H}_{2} \\mathrm{CO}_{3}, \\mathrm{CO}_{3}^{2-}$\n(C) $\\mathrm{CO}_{3}^{2-}, \\mathrm{HCO}_{3}^{-}$\n(D) $\\mathrm{CO}_{2}, \\mathrm{H}_{2} \\mathrm{CO}_{3}$\n\nSol. (A)\n$\\mathrm{CO}_{2}+\\mathrm{H}_{2} \\mathrm{O} \\rightleftharpoons \\mathrm{H}_{2} \\mathrm{CO}_{3} \\rightleftharpoons \\mathrm{H}^{+}+\\mathrm{HCO}_{3}^{-} \\rightleftharpoons \\mathrm{H}^{+}+\\mathrm{CO}_{3}^{-2}$\n15. Which of the following reactants on reaction with conc. NaOH followed by acidification gives the following lactone as the only product?\n<smiles>O=C1OCc2ccccc21</smiles>\n(A)\n<smiles>CC(=O)c1ccccc1C(=O)O</smiles>\n(B)\n<smiles>O=Cc1ccccc1C(=O)O</smiles>\n(C)\n<smiles>O=Cc1ccccc1C=O</smiles>\n(D)\n<smiles>O=C(O)c1ccccc1C(=O)O</smiles>\n\nSol. (C)\n\nPage 3\n\n16.\n\nThe major products P and Q are\n(A)\n<smiles>CCCc1ccccc1</smiles>\nand $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CHO}$\n(B)\n<smiles>CCCc1ccccc1</smiles>\nand $\\mathrm{CH}_{3} \\mathrm{COCH}_{3}$\n(C)\n<smiles>CC(C)c1ccccc1</smiles>\nand $\\mathrm{CH}_{3} \\mathrm{COCH}_{3}$\n(D)\n<smiles>CC(C)c1ccccc1</smiles>\n$\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CHO}$\n\nSol. (C)\nIt is cumene hydroperoxide rearrangement reaction.\n17. The given graph represents the variation of Z (compressibility factor $=\\frac{\\mathrm{PV}}{\\mathrm{nRT}}$ ) versus P , for three real gases A, B and C. Identify the only incorrect statement.\n(A) For the gas $\\mathrm{A}, \\mathrm{a}=0$ and its dependence on P is linear at all pressure.\n(B) For the gas $\\mathrm{B}, \\mathrm{b}=0$ and its dependence on P is linear at all pressure.\n(C) For the gas C , which is typical real gas for which neither a nor $\\mathrm{b}=0$. By knowing the minima and the point of intersection, with $\\mathrm{Z}=1, \\mathrm{a}$ and b can be calculated.\n(D) At high pressure, the slope is positive for all real gases.\n\nSol. (B)\n18. The smallest ketone and its next homologue are reacted with $\\mathrm{NH}_{2} \\mathrm{OH}$ to form oxime.\n(A) Two different oximes are formed\n(B) Three different oximes are formed\n(C) Two oximes are optically active\n(D) All oximes are optically active\n\nSol.\n<smiles>CC(C)=NO</smiles>\n<smiles>CCC(C)=N1CC1O</smiles>\n<smiles>CCC(C)=[N+](O)(O)C</smiles>\n\nPage 4\n\n19.\n\nWhat are N and M ?\n(A) 6, 6\n(B) 6, 4\n(C) 4, 4\n(D) 3, 3\n\nSol. (B)\n\nM → d, l cannot be separated by fractional distillation.\n20. $\\mathrm{MgSO}_{4}$ on reaction with $\\mathrm{NH}_{4} \\mathrm{OH}$ and $\\mathrm{Na}_{2} \\mathrm{HPO}_{4}$ forms a white crystalline precipitate. What is its formula?\n(A) $\\mathrm{Mg}\\left(\\mathrm{NH}_{4}\\right) \\mathrm{PO}_{4}$\n(B) $\\mathrm{Mg}_{3}\\left(\\mathrm{PO}_{4}\\right)_{2}$\n(C) $\\mathrm{MgCl}_{2} . \\mathrm{MgSO}_{4}$\n(D) $\\mathrm{MgSO}_{4}$\n\nSol. (A)\nTest of $\\mathrm{Mg}^{+2}$ ion\n$$\\mathrm{Mg}^{+2}+\\mathrm{NH}_{4} \\mathrm{OH}+\\mathrm{Na}_{2} \\mathrm{HPO}_{4} \\rightarrow \\mathrm{Mg}\\left(\\mathrm{NH}_{4}\\right) \\mathrm{PO}_{4}$$\n\nSection - C\n\nComprehension I\n$\\mathrm{RCONH}_{2}$ is converted into $\\mathrm{RNH}_{2}$ by means of Hofmann bromamide degradation.\n\n(i)\n\n(ii)\n\n(vi)\n\n(iii)\n<smiles>CN(C=O)c1ccc(Cl)cc1</smiles>\n<smiles>CC(C)N(C=O)c1ccc(Cl)cc1</smiles>\n\n(iv)\n\nIn this reaction, RCONHBr is formed from which this reaction has derived its name. Electron donating group at phenyl activates the reaction. Hofmann degradation reaction is an intramolecular reaction.\n21. How can the conversion of (i) to (ii) be brought about?\n(A) KBr\n(B) $\\mathrm{KBr}+\\mathrm{CH}_{3} \\mathrm{ONa}$\n(C) $\\mathrm{KBr}+\\mathrm{KOH}$\n(D) $\\mathrm{Br}_{2}+\\mathrm{KOH}$\n\nSol. (D)\n\nPage 5\n\n22. Which is the rate determining step in Hofmann bromamide degradation?\n(A) Formation of (i)\n(B) Formation of (ii)\n(C) Formation of (iii)\n(D) Formation of (iv)\n\nSol. (D)\n23. What are the constituent amines formed when the mixture of (i) and (ii) undergoes Hofmann bromamide degradation?\n<smiles>NC(=O)c1cccc(P)c1</smiles>\n\n(i)\n<smiles>NC(=O)c1ccccc1</smiles>\n\n(ii)\n\n(A)\n<smiles>Nc1cccc(P)c1</smiles>\n<smiles>[2H]c1cccc([NH])c1</smiles>\n\n,\n<smiles>Nc1ccccc1</smiles>\n\n,\n<smiles>[NH3+]c1ccccc1</smiles>\n\n(B)\n<smiles>Nc1cccc(P)c1</smiles>\n\n,\n<smiles>[NH3+]c1ccccc1</smiles>\n(C)\n<smiles>Nc1ccccc1</smiles>\n\n(D)\n<smiles>[N]c1ccccc1</smiles>\n\n,\n<smiles>c1ccccc1</smiles>\n\nSol. (B)\nComprehension II\nThe coordination number of $\\mathrm{Ni}^{2+}$ is 4 .\n$\\mathrm{NiCl}_{2}+\\mathrm{KCN}$ (excess) → A (cyano complex)\n$\\mathrm{NiCl}_{2}+$ Conc. HCl (excess) → B (chloro complex)\n24. The IUPAC name of A and B are\n(A) Potassium tetracyanonickelate (II), potassium tetrachloronickelate (II)\n(B) Tetracyanopotassiumnickelate (II), teterachlorpotassiumnickelate (II)\n(C) Tetracyanornickel (II), tetrachloronickel (II)\n(D) Potassium tetracyanonickel (II), potassium tetrachloronickel (II)\n\nSol. (A)\n25. Predict the magnetic nature of A and B.\n(A) Both are diamagnetic.\n(B) A is diamagnetic and B is paramagnetic with one unpaired electron.\n(C) A is diamagnetic and B is paramagnetic with two unpaired electrons.\n(D) Both are paramagnetic.\n\nSol. (C)\n26. The hybridization of A and B are\n(A) $\\mathrm{dsp}^{2}, \\mathrm{sp}^{3}$\n(B) $\\mathrm{sp}^{3}, \\mathrm{sp}^{3}$\n(C) $\\mathrm{dsp}^{2}, \\mathrm{dsp}^{2}$\n(D) $\\mathrm{sp}^{3} \\mathrm{~d}^{2}, \\mathrm{~d}^{2} \\mathrm{sp}^{3}$\n\nSol. (A)\n\nPage 6\n\nComprehension III\nCarbon - 14 is used to determine the age of organic material. The procedure is based on the formation of ${ }^{14} \\mathrm{C}$ by neutron capture in the upper atmosphere.\n${ }_{7}^{14} \\mathrm{~N}+{ }_{0} \\mathrm{n}^{1} \\rightarrow{ }_{6}^{14} \\mathrm{C}+{ }_{1} \\mathrm{n}^{1}$\n${ }^{14} \\mathrm{C}$ is absorbed by living organisms during photosynthesis. The ${ }^{14} \\mathrm{C}$ content is constant in living organism once the plant or animal dies, the uptake of carbon dioxide by it ceases and the level of ${ }^{14} \\mathrm{C}$ in the dead being, falls due to the decay which $\\mathrm{C}^{14}$ undergoes\n${ }_{6}^{14} \\mathrm{C} \\rightarrow{ }_{7}^{14} \\mathrm{~N}+\\beta^{-}$\nThe half life period of ${ }^{14} \\mathrm{C}$ is 5770 years. The decay constant $(\\lambda)$ can be calculated by using the following formula $\\lambda=\\frac{0.693}{\\mathrm{t}_{1 / 2}}$\nThe comparison of the $\\beta^{-}$activity of the dead matter with that of the carbon still in circulation enables measurement of the period of the isolation of the material from the living cycle. The method however, ceases to be accurate over periods longer than 30,000 years. The proportion of ${ }^{14} \\mathrm{C}$ to ${ }^{12} \\mathrm{C}$ in living matter is $1: 10^{12}$.\n27. Which of the following option is correct?\n(A) In living organisms, circulation of ${ }^{14} \\mathrm{C}$ from atmosphere is high so the carbon content is constant in organism\n(B) Carbon dating can be used to find out the age of earth crust and rocks\n(C) Radioactive absorption due to cosmic radiation is equal to the rate of radioactive decay, hence the carbon content remains constant in living organism\n(D) Carbon dating can not be used to determine concentration of ${ }^{14} \\mathrm{C}$ in dead beings\n\nSol. (C)\n28. What should be the age of fossil for meaningful determination of its age?\n(A) 6 years\n(B) 6000 years\n(C) 60,000 years\n(D) It can be used to calculate any age\n\nSol. (B)\n29. A nuclear explosion has taken place leading to increase in concentration of $\\mathrm{C}^{14}$ in nearby areas. $\\mathrm{C}^{14}$ concentration is $\\mathrm{C}_{1}$ in nearby areas and $\\mathrm{C}_{2}$ in areas far away. If the age of the fossil is determined to be $\\mathrm{T}_{1}$ and $\\mathrm{T}_{2}$ at the places respectively then\n(A) The age of the fossil will increase at the place where explosion has taken place and $\\mathrm{T}_{1}-\\mathrm{T}_{2}=\\frac{1}{\\lambda} \\ln \\frac{\\mathrm{C}_{1}}{\\mathrm{C}_{2}}$\n(B) The age of the fossil will decrease at the place where explosion has taken place and $\\mathrm{T}_{1}-\\mathrm{T}_{2}=\\frac{1}{\\lambda} \\ln \\frac{\\mathrm{C}_{1}}{\\mathrm{C}_{2}}$\n(C) The age of fossil will be determined to be same\n(D) $\\frac{\\mathrm{T}_{1}}{\\mathrm{~T}_{2}}=\\frac{\\mathrm{C}_{1}}{\\mathrm{C}_{2}}$\n\nSol. (A)\nComprehension IV\nTollen's reagent is used for the detection of aldehyde when a solution of $\\mathrm{AgNO}_{3}$ is added to glucose with $\\mathrm{NH}_{4} \\mathrm{OH}$ then gluconic acid is formed\n$\\mathrm{Ag}^{+}+\\mathrm{e}^{-} \\rightarrow \\mathrm{Ag} ; \\mathrm{E}_{\\text {red }}^{\\circ}=0.8 \\mathrm{~V}$\n$\\mathrm{C}_{6} \\mathrm{H}_{12} \\mathrm{O}_{6}+\\mathrm{H}_{2} \\mathrm{O} \\rightarrow$ Gluconic $\\operatorname{acid}\\left(\\mathrm{C}_{6} \\mathrm{H}_{12} \\mathrm{O}_{7}\\right)+2 \\mathrm{H}^{+}+2 \\mathrm{e}^{-} ; \\mathrm{E}_{\\text {oxd }}^{\\circ}=-0.05 \\mathrm{~V}$\n$\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}^{+}+\\mathrm{e}^{-} \\rightarrow \\mathrm{Ag}(\\mathrm{s})+2 \\mathrm{NH}_{3} ; \\mathrm{E}_{\\text {red }}^{\\circ}=0.337 \\mathrm{~V}$\n[Use $2.303 \\times \\frac{\\mathrm{RT}}{\\mathrm{F}}=0.0592$ and $\\frac{\\mathrm{F}}{\\mathrm{RT}}=38.92$ at 298 K]\n30. $2 \\mathrm{Ag}^{+}+\\mathrm{C}_{6} \\mathrm{H}_{12} \\mathrm{O}_{6}+\\mathrm{H}_{2} \\mathrm{O} \\rightarrow 2 \\mathrm{Ag}(\\mathrm{s})+\\mathrm{C}_{6} \\mathrm{H}_{12} \\mathrm{O}_{7}+2 \\mathrm{H}^{+}$\n\nFind $\\ln \\mathrm{K}$ of this reaction.\n(A) 66.13\n(B) 58.38\n(C) 28.30\n(D) 46.29\n\nPage 7\n\nSol. (B)\n$$\\begin{array}{l}\n\\mathrm{E}_{\\text {Cell }}^{\\circ}=\\frac{\\mathrm{RT}}{\\mathrm{nF}} \\ln \\mathrm{~K} \\\\\n(0.8-0.05)=\\frac{1}{2} \\times \\frac{0.0592}{2.303} \\ln \\mathrm{~K} \\\\\n\\ln \\mathrm{~K}=\\frac{(0.8-0.05) \\times 2 \\times 2.303}{0.0592}=58.38\n\\end{array}$$\n31. When ammonia is added to the solution, pH is raised to 11. Which half-cell reaction is affected by pH and by how much?\n(A) $\\mathrm{E}_{\\text {oxd }}$ will increase by a factor of 0.65 from $\\mathrm{E}_{\\text {oxd }}^{\\circ}$\n(B) $\\mathrm{E}_{\\text {oxd }}$ will decrease by a factor of 0.65 from $\\mathrm{E}_{\\text {oxd }}^{\\circ}$\n(C) $\\mathrm{E}_{\\text {red }}$ will increase by a factor of 0.65 from $\\mathrm{E}_{\\text {red }}^{\\circ}$\n(D) $\\mathrm{E}_{\\text {red }}$ will decrease by a factor of 0.65 from $\\mathrm{E}_{\\text {red }}^{\\circ}$\n\nSol. (A)\nOn increasing concentration of $\\mathrm{NH}_{3}$, the concentration of $\\mathrm{H}^{+}$ion decreases. Therefore, $\\mathrm{E}_{\\text {red }}$ increases.\n32. Ammonia is always is added in this reaction. Which of the following must be incorrect?\n(A) $\\mathrm{NH}_{3}$ combines with $\\mathrm{Ag}^{+}$to form a complex.\n(B) $\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}^{+}$is a stronger oxidising reagent than $\\mathrm{Ag}^{+}$.\n(C) In absence of $\\mathrm{NH}_{3}$ silver salt of gluconic acid is formed.\n(D) $\\mathrm{NH}_{3}$ has affected the standard reduction potential of glucose/gluconic acid electrode.\n\nSol. (D)\nSection - D\n33. 75.2 g of $\\mathrm{C}_{6} \\mathrm{H}_{5} \\mathrm{OH}$ (phenol) is dissolved in a solvent of $\\mathrm{K}_{\\mathrm{f}}=14$. If the depression in freezing point is 7 K then find the \\% of phenol that dimerises.\n\nSol.\n$$\\begin{array}{l}\n2 \\mathrm{C}_{6} \\mathrm{H}_{5} \\mathrm{OH} \\rightleftharpoons\\left(\\mathrm{C}_{6} \\mathrm{H}_{5} \\mathrm{OH}\\right)_{2} \\\\\n\\frac{\\mathrm{C}_{\\alpha}}{2} \\\\\n7=14 \\times 0.8\\left(\\frac{2-\\alpha}{2}\\right) \\\\\n\\alpha=0.75=\\mathbf{7 5 \\%}\n\\end{array}$$\n34. For the reaction, $2 \\mathrm{CO}+\\mathrm{O}_{2} \\longrightarrow 2 \\mathrm{CO}_{2} ; \\Delta \\mathrm{H}=-560 \\mathrm{~kJ}$. Two moles of CO and one mole of $\\mathrm{O}_{2}$ are taken in a container of volume 1 L . They completely form two moles of $\\mathrm{CO}_{2}$, the gases deviate appreciably from ideal behaviour. If the pressure in the vessel changes from 70 to 40 atm , find the magnitude (absolute value) of $\\Delta \\mathrm{U}$ at 500 K .\n$(1 \\mathrm{~L} \\mathrm{~atm}=0.1 \\mathrm{~kJ})$\nSol.\n$$\\begin{aligned}\n\\Delta H & =\\Delta U+\\Delta(P V) \\\\\n\\Delta H & =\\Delta U+V \\Delta P \\\\\n\\Delta U & =\\Delta H-V \\Delta P=-560+1 \\times 30 \\times 0.1 \\\\\n& =-557\n\\end{aligned}$$\n\nAbsolute value $=\\mathbf{5 5 7 ~ k J}$\n35. We have taken a saturated solution of $\\mathrm{AgBr} . \\mathrm{K}_{\\mathrm{sp}}$ of AgBr is $12 \\times 10^{-14}$. If $10^{-7}$ mole of $\\mathrm{AgNO}_{3}$ are added to 1 litre of this solution find conductivity (specific conductance) of this solution in terms of $10^{-7} \\mathrm{~S} \\mathrm{~m}^{-1}$ units.\nGiven, $\\lambda_{\\left(\\mathrm{Ag}^{+}\\right)}^{\\circ}=6 \\times 10^{-3} \\mathrm{Sm}^{2} \\mathrm{~mol}^{-1}, \\lambda_{\\left(\\mathrm{Br}^{-}\\right)}^{\\circ}=8 \\times 10^{-3} \\mathrm{Sm}^{2} \\mathrm{~mol}^{-1}, \\lambda_{\\left(\\mathrm{NO}_{3}^{-}\\right)}^{\\circ}=7 \\times 10^{-3} \\mathrm{Sm}^{2} \\mathrm{~mol}^{-1}$.\n\nSol. The solubility of AgBr in presence of $10^{-7}$ molar $\\mathrm{AgNO}_{3}$ is $3 \\times 10^{-7} \\mathrm{M}$.\nTherefore $\\left[\\mathrm{Br}^{-}\\right]=3 \\times 10^{-4} \\mathrm{~m}^{3},\\left[\\mathrm{Ag}^{+}\\right]=4 \\times 10^{-4} \\mathrm{~m}^{3}$ and $\\left[\\mathrm{NO}_{3}^{-}\\right]=10^{-4} \\mathrm{~m}^{3}$\nTherefore $\\kappa_{\\text {total }}=\\kappa_{\\mathrm{Br}^{-}}+\\kappa_{\\mathrm{Ag}^{+}}+\\kappa_{\\mathrm{NO}_{3}^{-}}=\\mathbf{5 5 ~ S m}^{-1}$\n\nPage 8\n\n36. The edge length of unit cell of a metal having molecular weight $75 \\mathrm{~g} / \\mathrm{mol}$ is $5 \\AA$ which crystallizes in cubic lattice. If the density is 2 g/cc then find the radius of metal atom. $\\left(\\mathrm{N}_{\\mathrm{A}}=6 \\times 10^{23}\\right)$. Give the answer in pm.\n\nSol. $\\rho=\\frac{\\mathrm{ZA}}{\\mathrm{NV}}$\n$\\mathrm{Z}=\\frac{\\rho \\mathrm{NV}}{\\mathrm{A}}=\\frac{2 \\times 6 \\times 10^{23} \\times\\left(5 \\times 10^{-8}\\right)^{3}}{75}$\n$\\mathrm{n}=2$\n$\\mathrm{r}=\\frac{\\sqrt{3}}{4} \\mathrm{a}=\\frac{\\sqrt{3}}{4} \\times 5=2.165 \\AA=\\mathbf{2 1 6 . 5 p m}$\nNote: Answer may be 216 pm or 217 pm.\nSection - E\n37. Match the extraction processes listed in Column I with metals listed in Column II:\n\nColumn I\n(A) Self reduction\n(B) Carbon reduction\n(C) Complex formation and displacement by metal\n(D) Decomposition of iodide\n\nColumn II\n(P) Lead\n(Q) Silver\n(R) Copper\n(S) Boron\n\nSol. A - P,R; B - P,R; C - Q; D - S\n38. Match the following:\n\nColumn I\n(A) $\\mathrm{Bi}^{3+} \\longrightarrow(\\mathrm{BiO})^{+}$\n(B) $\\left[\\mathrm{AlO}_{2}\\right]^{-} \\longrightarrow \\mathrm{Al}(\\mathrm{OH})_{3}$\n(C) $\\mathrm{SiO}_{4}^{4-} \\longrightarrow \\mathrm{Si}_{2} \\mathrm{O}_{7}^{6-}$\n(D) $\\left(\\mathrm{B}_{4} \\mathrm{O}_{7}^{2-}\\right) \\longrightarrow\\left[\\mathrm{B}(\\mathrm{OH})_{3}\\right]$\n\nColumn II\n(P) Heat\n(Q) Hydrolysis\n(R) Acidification\n(S) Dilution by water\n\nSol. A - Q; B - R; C - P; D - Q,R\n39. According to Bohr's theory,\n$\\mathrm{E}_{\\mathrm{n}}=$ Total energy\n$\\mathrm{K}_{\\mathrm{n}}=$ Kinetic energy\n$\\mathrm{V}_{\\mathrm{n}}=$ Potential energy\n$\\mathrm{r}_{\\mathrm{n}}=$ Radius of $\\mathrm{n}^{\\text {th }}$ orbit\nMatch the following:\n\nColumn I\n(A) $\\mathrm{V}_{\\mathrm{n}} / \\mathrm{K}_{\\mathrm{n}}=$ ?\n(B) If radius of $\\mathrm{n}^{\\text {th }}$ orbit $\\propto \\mathrm{E}_{\\mathrm{n}}^{\\mathrm{x}}, \\mathrm{x}=$ ?\n(C) Angular momentum in lowest orbital\n(D) $\\frac{1}{\\mathrm{r}^{\\mathrm{n}}} \\propto \\mathrm{Z}^{\\mathrm{y}}, \\mathrm{y}=$ ?\n\nColumn II\n(P) 0\n(Q) -1\n(R) -2\n(S) 1\n\nSol. A-R; B - Q; C - P; D - S\n40. Match the following:\n\nColumn I\n(A) $\\mathrm{CH}_{3}-\\mathrm{CHBr}-\\mathrm{CD}_{3}$ on treatment with alc. KOH gives $\\mathrm{CH}_{2}=\\mathrm{CH}-\\mathrm{CD}_{3}$ as a major product.\n(B) $\\mathrm{Ph}-\\mathrm{CHBr}-\\mathrm{CH}_{3}$ reacts faster than $\\mathrm{Ph}-\\mathrm{CHBr}-\\mathrm{CD}_{3}$.\n(C) $\\mathrm{Ph}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2} \\mathrm{Br}$ on treatment with $\\mathrm{C}_{2} \\mathrm{H}_{5} \\mathrm{OD} / \\mathrm{C}_{2} \\mathrm{H}_{5} \\mathrm{O}^{-}$ gives $\\mathrm{Ph}-\\mathrm{CD}=\\mathrm{CH}_{2}$ as the major product.\n(D) $\\mathrm{PhCH}_{2} \\mathrm{CH}_{2} \\mathrm{Br}$ and $\\mathrm{PhCD}_{2} \\mathrm{CH}_{2} \\mathrm{Br}$ react with same rate.\n\nColumn II\n(P) E1 reaction\n(Q) E2 reaction\n(R) E1cb reaction\n(S) First order reaction\n\nSol. A - Q; B - Q; C - R,S; D - P,S\n\nPage 9"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\nWhat is the molar heat capacity of the gas?\n(A) $\\frac{4 \\mathrm{R}}{2}$\n(B) $\\frac{3 R}{2}$\n(C) 5R/2\n(D) 0",
+     "Sol. (A)\n5. (I) 1,2-dihydroxy benzene\n(II) 1,3-dihydroxy benzene\n(III) 1,4-dihydroxy benzene\n(IV) Hydroxy benzene",
+     "The increasing order of boiling points of above mentioned alcohols is\n(A) I $<$ II $<$ III $<$ IV\n(B) I $<$ II $<$ IV $<$ III\n(C) IV $<$ I $<$ II $<$ III\n(D) IV $<$ II $<$ I $<$ III",
+     "Sol. (C)",
+     "Page 1",
+     "6. $\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}_{2}+\\mathrm{NOCl} \\rightarrow \\mathrm{P}$",
+     "Identify the adduct.\n(A)\n<smiles>CC(Cl)CN=O</smiles>\n(C)\n(B)\n<smiles>CC(CCl)C(=O)N=O</smiles>\n(D)\n<smiles>O=NCCCCl</smiles>",
+     "Sol. (A)\nNÓ $\\mathrm{Cl}^{-} \\rightarrow$ Markonikov's Addition\n7. The IUPAC name of $\\mathrm{C}_{6} \\mathrm{H}_{5} \\mathrm{COCl}$ is\n(A) Benzoyl chloride\n(B) Benzene chloro ketone\n(C) Benzene carbonyl chloride\n(D) Chloro phenyl ketone",
+     "Sol. (C)\n8. $\\mathrm{Ag}^{+}+\\mathrm{NH}_{3} \\rightleftharpoons\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)^{+}\\right] ; \\mathrm{k}_{1}=3.5 \\times 10^{-3}$\n$\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)\\right]^{+}+\\mathrm{NH}_{3} \\rightleftharpoons\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+} ; \\mathrm{k}_{2}=1.7 \\times 10^{-3}$\nthen the formation constant of $\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+}$is\n(A) $6.08 \\times 10^{-6}$\n(B) $6.08 \\times 10^{6}$\n(C) $6.08 \\times 10^{-9}$\n(D) None",
+     "Sol. (A)\n9. $\\mathrm{CH}_{3} \\mathrm{NH}_{2}+\\mathrm{CHCl}_{3}+\\mathrm{KOH} \\rightarrow$ Nitrogen containing compound $+\\mathrm{KCl}+\\mathrm{H}_{2} \\mathrm{O}$. Nitrogen containing compound is\n(A) $\\mathrm{CH}_{3}-\\mathrm{C} \\equiv \\mathrm{N}$\n(B) $\\mathrm{CH}_{3}-\\mathrm{NH}-\\mathrm{CH}_{3}$\n(C) $\\mathrm{CH}_{3}-\\stackrel{-}{\\mathrm{N}} \\equiv \\stackrel{+}{\\mathrm{C}}$\n(D) $\\mathrm{CH}_{3} \\stackrel{+}{\\mathrm{N}} \\equiv \\stackrel{-}{\\mathrm{C}}$",
+     "Sol. (D)\nIsocyanide test/Carbylamine reaction\n10. $\\mathrm{CuSO}_{4}$ decolourises on addition of KCN, the product is\n(A) $\\left[\\mathrm{Cu}(\\mathrm{CN})_{4}\\right]^{2-}$\n(B) $\\mathrm{Cu}^{2+}$ get reduced to form $\\left[\\mathrm{Cu}(\\mathrm{CN})_{4}\\right]^{3-}$\n(C) $\\mathrm{Cu}(\\mathrm{CN})_{2}$\n(D) CuCN",
+     "Sol. (D)\n$\\mathrm{Cu}^{+2}+2 \\mathrm{CN}^{-} \\rightarrow \\mathrm{Cu}(\\mathrm{CN})_{2}$\n$2 \\mathrm{Cu}(\\mathrm{CN})_{2} \\rightarrow 2 \\mathrm{CuCN}+(\\mathrm{CN})_{2}$\n11. The direct conversion of A to B is difficult, hence it is carried out by the following shown path:",
+     "Given\n$$\\begin{aligned}\n\\Delta \\mathrm{S}_{(\\mathrm{A} \\rightarrow \\mathrm{C})} & =50 \\text { e.u. } \\\\\n\\Delta \\mathrm{S}_{(\\mathrm{C} \\rightarrow \\mathrm{D})} & =30 \\text { e.u. } \\\\\n\\Delta \\mathrm{S}_{(\\mathrm{B} \\rightarrow \\mathrm{D})} & =20 \\text { e.u. }\n\\end{aligned}$$\nwhere e.u. is entropy unit then $\\Delta \\mathrm{S}_{(\\mathrm{A} \\rightarrow \\mathrm{B})}$ is\n(A) +100 e.u.\n(B) +60 e.u.\n(C) -100 e.u.\n(D) -60 e.u.",
+     "Page 2"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

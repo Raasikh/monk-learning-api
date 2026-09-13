@@ -1,61 +1,1177 @@
 {
+ "paper_id": "jee-main-2009-nve7y8qzf8rvkaqh2uwg",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2009-nve7y8qzf8rvkaqh2uwg",
+  "exam": "jee-main",
+  "year": 2009,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2009-nve7y8qzf8rvkaqh2uwg",
-    "exam": "jee-main",
-    "year": 2009,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
-    "subject": null,
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2009/iit-jee-paper-i/81183",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/NvE7y8qZF8RvKaQh2uWg",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2009/iit-jee-paper-i/81183",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/NvE7y8qZF8RvKaQh2uWg",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "4dc3dbf5203c31000a10b18f2dc9192f031eeecb98e907299f770a20cc753971",
+  "page_count": 24,
+  "text_chars": 0,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2009-nve7y8qzf8rvkaqh2uwg.pdf"
+ },
+ "answer_sheet": {
+  "status": "unavailable",
+  "source": null,
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": []
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "For each question in Section IV, you will be awarded 2 marks for each row in which you have darkened the bubble(s) corresponding to the correct answer. Thus, each question in this section carries a maximum of 8 marks. There is no negative marking for incorrect answer(s) for this section.\nIITJEE2009-Paper 1-CMP -2\nIITJEE 2009 (PAPER-1, CODE-1)\nPART I: CHEMISTRY\nSECTION-I\nSingle Correct Choice Type\nThis section contains 8 multiple choice questions. Each question has 4 choices",
+   "options": {
+    "A": ",",
+    "B": ",",
+    "C": "and",
+    "D": "for its answer, out which ONLY ONE is correct.\n1. The Henry's law constant for the solubility of $\\mathrm{N}_{2}$ gas in water at 298 K is $1.0 \\times 10^{5} \\mathrm{~atm}$. The mole fraction of $\\mathrm{N}_{2}$ in air is 0.8 . The number of moles of $\\mathrm{N}_{2}$ from air dissolved in 10 moles of water at 298 K and 5 atm pressure is\n(A) $4.0 \\times 10^{-4}$\n(B) $4.0 \\times 10^{-5}$\n(C) $5.0 \\times 10^{-4}$\n(D) $4.0 \\times 10^{-6}$\n\nSol. (A)\n$\\mathrm{P}=\\mathrm{K}_{\\mathrm{H}} \\chi_{\\mathrm{N}_{2}}$\n$0.8 \\times 5=1 \\times 10^{5} \\times \\chi_{\\mathrm{N}_{2}}$\n$\\chi_{\\mathrm{N}_{2}}=4 \\times 10^{-5} \\quad$ (in 10 moles of water)\n$\\Rightarrow 4 \\times 10^{-5}=\\frac{\\mathrm{n}_{\\mathrm{N}_{2}}}{\\mathrm{n}_{\\mathrm{N}_{2}}+10}$\n$\\mathrm{n}_{\\mathrm{N}_{2}} \\times 5 \\times 10^{-5}+4 \\times 10^{-4}=\\mathrm{n}_{\\mathrm{N}_{2}}$\n$\\Rightarrow \\mathrm{n}_{\\mathrm{N}_{2}}=4 \\times 10^{-4}$\n2. The correct acidity order of the following is\n<smiles>Oc1ccccc1</smiles>\n\n(I)\n<smiles>Oc1ccc(Cl)cc1</smiles>\n\n(II)\n<smiles>O=C(O)c1ccccc1</smiles>\n\n(III)\n<smiles>Cc1ccc(C(=O)O)cc1</smiles>\n\n(IV)\n(A) (III) $>$ (IV) $>$ (II) $>$ (I)\n(B) (IV) $>$ (III) $>$ (I) $>$ (II)\n(C) (III) $>$ (II) $>$ (I) $>$ (IV)\n(D) (II) $>$ (III) $>$ (IV) $>$ (I)\n\nSol. (A)\n<smiles>Oc1ccccc1</smiles>\n(I)\n$\\mathrm{pKa}=9.98$\n<smiles>Oc1ccc(Cl)cc1</smiles>\n(II)\n$\\mathrm{pKa}=9.38$\n<smiles>O=C(O)c1ccccc1</smiles>\n(III)\n$\\mathrm{pKa}=4.17$\n<smiles>Cc1ccc(C(=O)O)cc1</smiles>\n(IV)\n$\\mathrm{pKa}=4.37$\n\nDecreasing order of acidic strength: III $>$ IV $>$ II $>$ I\n\nIITJEE2009-Paper 1-CMP-3\n3. The reaction of $\\mathrm{P}_{4}$ with X leads selectively to $\\mathrm{P}_{4} \\mathrm{O}_{6}$. The X is\n(A) Dry $\\mathrm{O}_{2}$\n(B) A mixture of $\\mathrm{O}_{2}$ and $\\mathrm{N}_{2}$\n(C) Moist $\\mathrm{O}_{2}$\n(D) $\\mathrm{O}_{2}$ in the presence of aqueous NaOH\n\nSol. (B)\n$\\mathrm{P}_{4}+3 \\mathrm{O}_{2} \\xrightarrow{\\mathrm{~N}_{2}} \\mathrm{P}_{4} \\mathrm{O}_{6}$ (exclusively)\n( $\\mathrm{N}_{2}$ is used to retard the further oxidation.)\n4. Among cellulose, poly(vinyl chloride), nylon and natural rubber, the polymer in which the intermolecular force of attraction is weakest is\n(A) Nylon\n(B) Poly(vinyl chloride)\n(C) Cellulose\n(D) Natural Rubber\n\nSol. (D)\nAs chain of natural rubber involves weak van der Waal force of interaction.\n5. Given that the abundances of isotopes ${ }^{54} \\mathrm{Fe},{ }^{56} \\mathrm{Fe}$ and ${ }^{57} \\mathrm{Fe}$ are 5\\%, 90\\% and 5\\% respectively, the atomic mass of Fe is\n(A) 55.85\n(B) 55.95\n(C) 55.75\n(D) 56.05\n\nSol. (B)\n$\\overline{\\mathrm{A}}=\\frac{\\sum \\mathrm{A}_{\\mathrm{i}} \\mathrm{x}_{\\mathrm{i}}}{\\sum \\mathrm{x}_{\\mathrm{i}}}$\n$\\overline{\\mathrm{A}}=54 \\times 0.05+56 \\times 0.90+57 \\times 0.05 \\quad$ (where $\\overline{\\mathrm{A}}$ is atomic mass of Fe)\n$\\overline{\\mathrm{A}}=55.95$\n6. The IUPAC name of the following compound is\n<smiles>N#Cc1cc(O)ccc1Br</smiles>\n(A) 4-Bromo-3-cyanophenol\n(B) 2-Bromo-5-hydroxybenzonitrile\n(C) 2-Cyano-4-hydroxybromobenzene\n(D) 6-Bromo-3-hdyroxybenzonitrile\n\nSol. (B)\nPriority of CN is highest.\n7. Among the electrolytes $\\mathrm{Na}_{2} \\mathrm{SO}_{4}, \\mathrm{CaCl}_{2}, \\mathrm{Al}_{2}\\left(\\mathrm{SO}_{4}\\right)_{3}$ and $\\mathrm{NH}_{4} \\mathrm{Cl}$, the most effective coagulating agent for $\\mathrm{Sb}_{2} \\mathrm{~S}_{3}$ sol is\n(A) $\\mathrm{Na}_{2} \\mathrm{SO}_{4}$\n(B) $\\mathrm{CaCl}_{2}$\n(C) $\\mathrm{Al}_{2}\\left(\\mathrm{SO}_{4}\\right)_{3}$\n(D) $\\mathrm{NH}_{4} \\mathrm{Cl}$\n\nSol. (C)\nAs $\\mathrm{Sb}_{2} \\mathrm{~S}_{3}$ is a negative sol, so, $\\mathrm{Al}_{2}\\left(\\mathrm{SO}_{4}\\right)_{3}$ will be the most effective coagulant due to higher charge density on $\\mathrm{Al}^{3+}$ in accordance with Hardy-Schulze rule.\nOrder of effectiveness of cations: $\\mathrm{Al}^{3+}>\\mathrm{Ca}^{++}>\\mathrm{Na}^{+}>\\mathrm{NH}_{4}^{+}$\n\nIITJEE2009-Paper 1-CMP -4\n8. The term that corrects for the attractive forces present in a real gas in the van der Waals equation is\n(A) $n b$\n(B) $\\frac{a n^{2}}{V^{2}}$\n(C) $-\\frac{a n^{2}}{V^{2}}$\n(D) $-n b$\n\nSol. (B)\nThe measure of force of attraction for ' n ' moles of real gas $\\left(\\frac{\\mathrm{n}^{2} \\mathrm{a}}{\\mathrm{V}^{2}}\\right)$\n$$\\left(\\mathrm{P}+\\frac{\\mathrm{n}^{2} \\mathrm{a}}{\\mathrm{~V}^{2}}\\right)(\\mathrm{V}-\\mathrm{nb})=\\mathrm{nRT}$$\n\nSECTION-II\nMultiple Correct Choice Type\nThis section contains 4 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out which ONE OR MORE is/are correct.\n9. The compound(s) formed upon combustion of sodium metal in excess air is(are)\n(A) $\\mathrm{Na}_{2} \\mathrm{O}_{2}$\n(B) $\\mathrm{Na}_{2} \\mathrm{O}$\n(C) $\\mathrm{NaO}_{2}$\n(D) NaOH\n\nSol. (A, B) in dry air"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$\\mathrm{P}=\\mathrm{K}_{\\mathrm{H}} \\chi_{\\mathrm{N}_{2}}$\n$0.8 \\times 5=1 \\times 10^{5} \\times \\chi_{\\mathrm{N}_{2}}$\n$\\chi_{\\mathrm{N}_{2}}=4 \\times 10^{-5} \\quad$ (in 10 moles of water)\n$\\Rightarrow 4 \\times 10^{-5}=\\frac{\\mathrm{n}_{\\mathrm{N}_{2}}}{\\mathrm{n}_{\\mathrm{N}_{2}}+10}$\n$\\mathrm{n}_{\\mathrm{N}_{2}} \\times 5 \\times 10^{-5}+4 \\times 10^{-4}=\\mathrm{n}_{\\mathrm{N}_{2}}$\n$\\Rightarrow \\mathrm{n}_{\\mathrm{N}_{2}}=4 \\times 10^{-4}$\n2. The correct acidity order of the following is\n<smiles>Oc1ccccc1</smiles>",
+     "(I)\n<smiles>Oc1ccc(Cl)cc1</smiles>",
+     "(II)\n<smiles>O=C(O)c1ccccc1</smiles>",
+     "(III)\n<smiles>Cc1ccc(C(=O)O)cc1</smiles>",
+     "(IV)\n(A) (III) $>$ (IV) $>$ (II) $>$ (I)\n(B) (IV) $>$ (III) $>$ (I) $>$ (II)\n(C) (III) $>$ (II) $>$ (I) $>$ (IV)\n(D) (II) $>$ (III) $>$ (IV) $>$ (I)",
+     "Sol. (A)\n<smiles>Oc1ccccc1</smiles>\n(I)\n$\\mathrm{pKa}=9.98$\n<smiles>Oc1ccc(Cl)cc1</smiles>\n(II)\n$\\mathrm{pKa}=9.38$\n<smiles>O=C(O)c1ccccc1</smiles>\n(III)\n$\\mathrm{pKa}=4.17$\n<smiles>Cc1ccc(C(=O)O)cc1</smiles>\n(IV)\n$\\mathrm{pKa}=4.37$",
+     "Decreasing order of acidic strength: III $>$ IV $>$ II $>$ I",
+     "IITJEE2009-Paper 1-CMP-3\n3. The reaction of $\\mathrm{P}_{4}$ with X leads selectively to $\\mathrm{P}_{4} \\mathrm{O}_{6}$. The X is\n(A) Dry $\\mathrm{O}_{2}$\n(B) A mixture of $\\mathrm{O}_{2}$ and $\\mathrm{N}_{2}$\n(C) Moist $\\mathrm{O}_{2}$\n(D) $\\mathrm{O}_{2}$ in the presence of aqueous NaOH",
+     "Sol. (B)\n$\\mathrm{P}_{4}+3 \\mathrm{O}_{2} \\xrightarrow{\\mathrm{~N}_{2}} \\mathrm{P}_{4} \\mathrm{O}_{6}$ (exclusively)\n( $\\mathrm{N}_{2}$ is used to retard the further oxidation.)\n4. Among cellulose, poly(vinyl chloride), nylon and natural rubber, the polymer in which the intermolecular force of attraction is weakest is\n(A) Nylon\n(B) Poly(vinyl chloride)\n(C) Cellulose\n(D) Natural Rubber",
+     "Sol. (D)\nAs chain of natural rubber involves weak van der Waal force of interaction.\n5. Given that the abundances of isotopes ${ }^{54} \\mathrm{Fe},{ }^{56} \\mathrm{Fe}$ and ${ }^{57} \\mathrm{Fe}$ are 5\\%, 90\\% and 5\\% respectively, the atomic mass of Fe is\n(A) 55.85\n(B) 55.95\n(C) 55.75\n(D) 56.05",
+     "Sol. (B)\n$\\overline{\\mathrm{A}}=\\frac{\\sum \\mathrm{A}_{\\mathrm{i}} \\mathrm{x}_{\\mathrm{i}}}{\\sum \\mathrm{x}_{\\mathrm{i}}}$\n$\\overline{\\mathrm{A}}=54 \\times 0.05+56 \\times 0.90+57 \\times 0.05 \\quad$ (where $\\overline{\\mathrm{A}}$ is atomic mass of Fe)\n$\\overline{\\mathrm{A}}=55.95$\n6. The IUPAC name of the following compound is\n<smiles>N#Cc1cc(O)ccc1Br</smiles>\n(A) 4-Bromo-3-cyanophenol\n(B) 2-Bromo-5-hydroxybenzonitrile\n(C) 2-Cyano-4-hydroxybromobenzene\n(D) 6-Bromo-3-hdyroxybenzonitrile",
+     "Sol. (B)\nPriority of CN is highest.\n7. Among the electrolytes $\\mathrm{Na}_{2} \\mathrm{SO}_{4}, \\mathrm{CaCl}_{2}, \\mathrm{Al}_{2}\\left(\\mathrm{SO}_{4}\\right)_{3}$ and $\\mathrm{NH}_{4} \\mathrm{Cl}$, the most effective coagulating agent for $\\mathrm{Sb}_{2} \\mathrm{~S}_{3}$ sol is\n(A) $\\mathrm{Na}_{2} \\mathrm{SO}_{4}$\n(B) $\\mathrm{CaCl}_{2}$\n(C) $\\mathrm{Al}_{2}\\left(\\mathrm{SO}_{4}\\right)_{3}$\n(D) $\\mathrm{NH}_{4} \\mathrm{Cl}$",
+     "Sol. (C)\nAs $\\mathrm{Sb}_{2} \\mathrm{~S}_{3}$ is a negative sol, so, $\\mathrm{Al}_{2}\\left(\\mathrm{SO}_{4}\\right)_{3}$ will be the most effective coagulant due to higher charge density on $\\mathrm{Al}^{3+}$ in accordance with Hardy-Schulze rule.\nOrder of effectiveness of cations: $\\mathrm{Al}^{3+}>\\mathrm{Ca}^{++}>\\mathrm{Na}^{+}>\\mathrm{NH}_{4}^{+}$",
+     "IITJEE2009-Paper 1-CMP -4\n8. The term that corrects for the attractive forces present in a real gas in the van der Waals equation is\n(A) $n b$\n(B) $\\frac{a n^{2}}{V^{2}}$\n(C) $-\\frac{a n^{2}}{V^{2}}$\n(D) $-n b$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "4dc3dbf5203c31000a10b18f2dc9192f031eeecb98e907299f770a20cc753971",
-    "page_count": 24,
-    "text_chars": 0,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2009-nve7y8qzf8rvkaqh2uwg.pdf"
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The correct statement(s) about the compound $\\mathrm{H}_{3} \\mathrm{C}(\\mathrm{HO}) \\mathrm{HC}-\\mathrm{CH}=\\mathrm{CH}-\\mathrm{CH}(\\mathrm{OH}) \\mathrm{CH}_{3}(\\mathrm{X})$ is(are)",
+   "options": {
+    "A": "The total number of stereoisomers possible for X is 6",
+    "B": "The total number of diastereomers possible for X is 3",
+    "C": "If the stereochemistry about the double bond in X is trans, the number of enantiomers possible for X is 4",
+    "D": "If the stereochemistry about the double bond in X is cis, the number of enantiomers possible for X is 2\n\nSol. (A, D)"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The compound(s) that exhibit(s) geometrical isomerism is(are)",
+   "options": {
+    "A": "$\\left[\\mathrm{Pt}(\\mathrm{en}) \\mathrm{Cl}_{2}\\right]$",
+    "B": "$\\left[\\mathrm{Pt}(\\mathrm{en})_{2}\\right] \\mathrm{Cl}_{2}$",
+    "C": "$\\left[\\mathrm{Pt}(\\mathrm{en})_{2} \\mathrm{Cl}_{2}\\right] \\mathrm{Cl}_{2}$",
+    "D": "$\\left[\\mathrm{Pt}\\left(\\mathrm{NH}_{3}\\right)_{2} \\mathrm{Cl}_{2}\\right]$\n\nSol. (C, D)\n\ncis - form\n\ntrans - form\n\nTrans\n\nIITJEE2009-Paper 1-CMP-5"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C, D)",
+     "cis - form",
+     "trans - form",
+     "Trans",
+     "IITJEE2009-Paper 1-CMP-5"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The correct statement(s) regarding defects in solids is(are)",
+   "options": {
+    "A": "Frenkel defect is usually favoured by a very small difference in the sizes of cation and anion",
+    "B": "Frenkel defect is a dislocation defect",
+    "C": "Trapping of an electron in the lattice leads to the formation of F-center",
+    "D": "Schottky defects have no effect on the physical properties of solids\n\nSol. (B, C)\nSECTION-III\nComprehension Type\nThis section contains 2 groups of questions. Each group has 3 multiple choice question based on a paragraph. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct.\n\nParagraph for Question Nos. 13 to 15\nA carbonyl compound P , which gives positive iodoform test, undergoes reaction with MeMgBr followed by dehydration to give an olefin $\\mathbf{Q}$. Ozonolysis of $\\mathbf{Q}$ leads to a dicarbonyl compound $\\mathbf{R}$, which undergoes intramolecular aldol reaction to give predominantly $\\mathbf{S}$.\n$$\\mathbf{P} \\xrightarrow[\\substack{2 . \\mathrm{H}^{+} . \\mathrm{H}_{2} \\mathrm{O} \\\\ 3 . \\mathrm{H}_{2} \\mathrm{SO}_{4}, \\Delta}]{1 . \\mathrm{MgM}} \\mathbf{Q} \\xrightarrow[\\text { 2. } \\mathrm{Zn}, \\mathrm{H}_{2} \\mathrm{O}]{1 . \\mathrm{O}_{3}} \\mathbf{R} \\xrightarrow[2 . \\Delta]{1 . \\mathrm{OH}^{-}} \\mathbf{S}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B, C)\nSECTION-III\nComprehension Type\nThis section contains 2 groups of questions. Each group has 3 multiple choice question based on a paragraph. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct.",
+     "Paragraph for Question Nos. 13 to 15\nA carbonyl compound P , which gives positive iodoform test, undergoes reaction with MeMgBr followed by dehydration to give an olefin $\\mathbf{Q}$. Ozonolysis of $\\mathbf{Q}$ leads to a dicarbonyl compound $\\mathbf{R}$, which undergoes intramolecular aldol reaction to give predominantly $\\mathbf{S}$.\n$$\\mathbf{P} \\xrightarrow[\\substack{2 . \\mathrm{H}^{+} . \\mathrm{H}_{2} \\mathrm{O} \\\\ 3 . \\mathrm{H}_{2} \\mathrm{SO}_{4}, \\Delta}]{1 . \\mathrm{MgM}} \\mathbf{Q} \\xrightarrow[\\text { 2. } \\mathrm{Zn}, \\mathrm{H}_{2} \\mathrm{O}]{1 . \\mathrm{O}_{3}} \\mathbf{R} \\xrightarrow[2 . \\Delta]{1 . \\mathrm{OH}^{-}} \\mathbf{S}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The structure of the carbonyl compound $\\mathbf{P}$ is",
+   "options": {
+    "A": "<smiles>CC(=O)/C=C\\c1ccccc1</smiles>",
+    "B": "<smiles>CC(=O)/C",
+    "C": "=C\\c1ccccc1</smiles>\n\n(C)\n<smiles>CCC(=O)/C=C\\c1ccccc1</smiles>",
+    "D": "<smiles>CC=CC(=O)c1ccccc1</smiles>\n\nSol. (B)"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The structure of the products Q and R, respectively, are\n(A)\n<smiles>CC1=Cc2ccccc2C1(C)C</smiles>\n(B)\n<smiles>CC1(C)C=Cc2ccccc21</smiles>\n,\n<smiles>CC(C)(C=O)c1ccccc1C=O</smiles>\n(C)\n<smiles>CCC1(C)C=Cc2ccccc21</smiles>\n,\n<smiles>CCC(C)(C=O)c1ccccc1C=O</smiles>\n(D)\n<smiles>CC1=CC(C)c2ccccc21</smiles>\n,\n<smiles>CCC(C)(C)c1ccccc1C(C)=O</smiles>",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)",
+     "IITJEE2009-Paper 1-CMP -6"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The structure of the product $\\mathbf{S}$ is",
+   "options": {
+    "A": "<smiles>CC1C=CC(=O)c2ccccc21</smiles>",
+    "B": "<smiles>CC1",
+    "C": "C(=O)C=Cc2ccccc21</smiles>\n\n(C)\n<smiles>CC1(C)C=CC(=O)c2ccccc21</smiles>",
+    "D": "<smiles>CC1=CCc2ccccc2C1=O</smiles>\n\nSol. (B)\nSolution for the question nos. 13 to 15\n\nParagraph for Question Nos. 16 to 18\n$p$-Amino- $N, N$-dimethylaniline is added to a strongly acidic solution of X. The resulting solution is treated with a few drops of aqueous solution of Y to yield blue coloration due to the formation of methylene blue. Treatment of the aqueous solution of Y with the reagent potassium hexacyanoferrate (II) leads to the formation of an intense blue precipitate. The precipitate dissolves on excess addition of the reagent. Similarly, treatment of the solution of Y with the solution of potassium hexacyanoferrate (III) leads to a brown coloration due to the formation of Z."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nSolution for the question nos. 13 to 15",
+     "Paragraph for Question Nos. 16 to 18\n$p$-Amino- $N, N$-dimethylaniline is added to a strongly acidic solution of X. The resulting solution is treated with a few drops of aqueous solution of Y to yield blue coloration due to the formation of methylene blue. Treatment of the aqueous solution of Y with the reagent potassium hexacyanoferrate (II) leads to the formation of an intense blue precipitate. The precipitate dissolves on excess addition of the reagent. Similarly, treatment of the solution of Y with the solution of potassium hexacyanoferrate (III) leads to a brown coloration due to the formation of Z."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The compound X is",
+   "options": {
+    "A": "$\\mathrm{NaNO}_{3}$",
+    "B": "NaCl",
+    "C": "$\\mathrm{Na}_{2} \\mathrm{SO}_{4}$",
+    "D": "$\\mathrm{Na}_{2} \\mathrm{~S}$\n\nSol. (D)"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The compound Y is",
+   "options": {
+    "A": "$\\mathrm{MgCl}_{2}$",
+    "B": "$\\mathrm{FeCl}_{2}$",
+    "C": "$\\mathrm{FeCl}_{3}$",
+    "D": "$\\mathrm{ZnCl}_{2}$\n\nSol. (C)\n\nIITJEE2009-Paper 1-CMP-7"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)",
+     "IITJEE2009-Paper 1-CMP-7"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The compound Z is",
+   "options": {
+    "A": "$\\mathrm{Mg}_{2}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$",
+    "B": "$\\mathrm{Fe}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$",
+    "C": "$\\mathrm{Fe}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]_{3}$",
+    "D": "$\\mathrm{K}_{2} \\mathrm{Zn}_{3}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]_{2}$\n\nSol. (B)\nSolution for the question nos. 16 to 18\n$$\\mathrm{Na}_{2} \\mathrm{~S}+2 \\mathrm{H}^{+} \\longrightarrow \\mathrm{H}_{2} \\mathrm{~S}+2 \\mathrm{Na}^{+}$$\n(X)\n$4 \\mathrm{FeCl}_{3}+3 \\mathrm{~K}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right] \\longrightarrow \\mathrm{Fe}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]_{3}+2 \\mathrm{KCl}$\nIntense blue\n$$\\begin{aligned}\n\\mathrm{FeCl}_{3}+\\mathrm{K}_{3}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right] & \\longrightarrow \\mathrm{Fe}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]+3 \\mathrm{KCl} \\\\\n& \\text { Brown coloration }\n\\end{aligned}$$\n(X) $-\\mathrm{Na}_{2} \\mathrm{~S}$\n(Y) $-\\mathrm{FeCl}_{3}$\n$(\\mathrm{Z})-\\mathrm{Fe}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$\nSECTION - IV\nMatrix - Match Type\nThis section contains 2 questions. Each question contains statements given in two columns, which have to be matched. The statements in Column I are labelled A, B, C and D, while the statements in Column II are labelled p, q, r, s and t. Any given statement in Column I can have correct matching with ONE OR MORE statement(s) in Column II. The appropriate bubbles corresponding to the answers to these questions have to be darkened as illustrated in the following example:\nIf the correct matches are $\\mathrm{A}-\\mathrm{p}, \\mathrm{s}$ and $\\mathrm{t}, \\mathrm{B}-\\mathrm{q}$ and $\\mathrm{r} ; \\mathrm{C}-\\mathrm{p}$ and q ; and $\\mathrm{D}-\\mathrm{s}$ and t ; then the correct darkening of bubbles will look like the following:"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nSolution for the question nos. 16 to 18\n$$\\mathrm{Na}_{2} \\mathrm{~S}+2 \\mathrm{H}^{+} \\longrightarrow \\mathrm{H}_{2} \\mathrm{~S}+2 \\mathrm{Na}^{+}$$\n(X)\n$4 \\mathrm{FeCl}_{3}+3 \\mathrm{~K}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right] \\longrightarrow \\mathrm{Fe}_{4}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]_{3}+2 \\mathrm{KCl}$\nIntense blue\n$$\\begin{aligned}\n\\mathrm{FeCl}_{3}+\\mathrm{K}_{3}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right] & \\longrightarrow \\mathrm{Fe}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]+3 \\mathrm{KCl} \\\\\n& \\text { Brown coloration }\n\\end{aligned}$$\n(X) $-\\mathrm{Na}_{2} \\mathrm{~S}$\n(Y) $-\\mathrm{FeCl}_{3}$\n$(\\mathrm{Z})-\\mathrm{Fe}\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$\nSECTION - IV\nMatrix - Match Type\nThis section contains 2 questions. Each question contains statements given in two columns, which have to be matched. The statements in Column I are labelled A, B, C and D, while the statements in Column II are labelled p, q, r, s and t. Any given statement in Column I can have correct matching with ONE OR MORE statement(s) in Column II. The appropriate bubbles corresponding to the answers to these questions have to be darkened as illustrated in the following example:\nIf the correct matches are $\\mathrm{A}-\\mathrm{p}, \\mathrm{s}$ and $\\mathrm{t}, \\mathrm{B}-\\mathrm{q}$ and $\\mathrm{r} ; \\mathrm{C}-\\mathrm{p}$ and q ; and $\\mathrm{D}-\\mathrm{s}$ and t ; then the correct darkening of bubbles will look like the following:"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Match each of the compounds in Column I with its characteristic reaction(s) in Column II.\nColumn - I\nColumn - II",
+   "options": {
+    "A": "$\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CN}$\n(p) Reduction with $\\mathrm{Pd}-\\mathrm{C} / \\mathrm{H}_{2}$",
+    "B": "$\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{OCOCH}_{3}$\n(q) Reduction with $\\mathrm{SnCl}_{2} / \\mathrm{HCl}$",
+    "C": "$\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}-\\mathrm{CH}_{2} \\mathrm{OH}$\n(r) Development of foul smell on treatment with chloroform and alcoholic KOH",
+    "D": "$\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{CH}_{2} \\mathrm{NH}_{2}$\n(s) Reduction with diisobutylaluminium hydride (DIBAL-H)\n(t) Alkaline hydrolysis\n\nSol. $\\quad((\\mathrm{A}-\\mathrm{p}, \\mathrm{q}, \\mathrm{s}, \\mathrm{t})(\\mathrm{B}-\\mathrm{s}, \\mathrm{t})(\\mathrm{C}-\\mathrm{p})(\\mathrm{D}-\\mathrm{r}))$\n\nIITJEE2009-Paper 1-CMP -8"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad((\\mathrm{A}-\\mathrm{p}, \\mathrm{q}, \\mathrm{s}, \\mathrm{t})(\\mathrm{B}-\\mathrm{s}, \\mathrm{t})(\\mathrm{C}-\\mathrm{p})(\\mathrm{D}-\\mathrm{r}))$",
+     "IITJEE2009-Paper 1-CMP -8"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Match each of the diatomic molecules in Column I with its property/properties in Column II.\nColumn - I",
+   "options": {
+    "A": "$\\mathrm{B}_{2}$",
+    "B": "$\\mathrm{N}_{2}$",
+    "C": "$\\mathrm{O}_{2}^{-}$",
+    "D": "$\\mathrm{O}_{2}$\n\nColumn - II\n(p) Paramagentic\n(q) Undergoes oxidation\n(r) Undergoes reduction\n(s) Bond order $\\geq 2$\n(t) Mixing of 's' and 'p' orbitals\n\nSol. ((A-p, r, t) (B-s, t) (C-p, q) (D-p, q, s)) [Acc ording to MOT]\n\nPART II: MATHEMATICS\n\nSECTION-I\nSingle Correct Choice Type\nThis section contains 8 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "((A-p, r, t) (B-s, t) (C-p, q) (D-p, q, s)) [Acc ording to MOT]",
+     "PART II: MATHEMATICS",
+     "SECTION-I\nSingle Correct Choice Type\nThis section contains 8 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{z}=\\mathrm{x}+$ iy be a complex number where x and y are integers. Then the area of the rectangle whose vertices are the roots of the equation $\\overline{\\mathrm{zz}}{ }^{3}+\\mathrm{z} \\overline{\\mathrm{z}}^{3}=350$ is",
+   "options": {
+    "A": "48",
+    "B": "32",
+    "C": "40",
+    "D": "80\n\nSol. (A)\n$$\\begin{array}{l}\nz \\bar{z}\\left(\\bar{z}^{2}+z^{2}\\right)=350 \\\\\n\\operatorname{Put} z=x+i y \\\\\n\\left(x^{2}+y^{2}\\right)\\left(x^{2}-y^{2}\\right)=175 \\\\\n\\left(x^{2}+y^{2}\\right)\\left(x^{2}-y^{2}\\right)=5 \\cdot 5 \\cdot 7 \\\\\nx^{2}+y^{2}=25 \\\\\nx^{2}-y^{2}=7 \\\\\nx= \\pm 4, y= \\pm 3 \\\\\nx, y \\in I \\\\\n\\text { Area }=8 \\times 6=48 \\text { sq. unit. }\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$$\\begin{array}{l}\nz \\bar{z}\\left(\\bar{z}^{2}+z^{2}\\right)=350 \\\\\n\\operatorname{Put} z=x+i y \\\\\n\\left(x^{2}+y^{2}\\right)\\left(x^{2}-y^{2}\\right)=175 \\\\\n\\left(x^{2}+y^{2}\\right)\\left(x^{2}-y^{2}\\right)=5 \\cdot 5 \\cdot 7 \\\\\nx^{2}+y^{2}=25 \\\\\nx^{2}-y^{2}=7 \\\\\nx= \\pm 4, y= \\pm 3 \\\\\nx, y \\in I \\\\\n\\text { Area }=8 \\times 6=48 \\text { sq. unit. }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "If $\\overrightarrow{\\mathrm{a}}, \\overrightarrow{\\mathrm{b}}, \\overrightarrow{\\mathrm{c}}$ and $\\overrightarrow{\\mathrm{d}}$ are unit vectors such that $(\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{b}}) .(\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{d}})=1$ and $\\overrightarrow{\\mathrm{a}} \\cdot \\overrightarrow{\\mathrm{c}}=\\frac{1}{2}$, then",
+   "options": {
+    "A": "$\\overrightarrow{\\mathrm{a}}, \\overrightarrow{\\mathrm{b}}, \\overrightarrow{\\mathrm{c}}$ are non-coplanar",
+    "B": "$\\overrightarrow{\\mathrm{b}}, \\overrightarrow{\\mathrm{c}}, \\overrightarrow{\\mathrm{d}}$ are non-coplanar",
+    "C": "$\\overrightarrow{\\mathrm{b}}, \\overrightarrow{\\mathrm{d}}$ are non-parallel",
+    "D": "$\\overrightarrow{\\mathrm{a}}, \\overrightarrow{\\mathrm{d}}$ are parallel and $\\overrightarrow{\\mathrm{b}}, \\overrightarrow{\\mathrm{c}}$ are parallel\n\nSol. (C)\n$$\\begin{array}{l}\n(\\vec{a} \\times \\vec{b}) \\cdot(\\vec{c} \\times \\vec{d})=1 \\text { possible only when }|\\vec{a} \\times \\vec{b}|=|\\vec{c} \\times \\vec{d}|=1 \\\\\n\\text { and }(\\vec{a} \\times \\vec{b}) \\|(\\vec{c} \\times \\vec{d}) \\\\\n\\text { Since } \\vec{a} \\cdot \\vec{c}=1 / 2 \\text { and } \\vec{b} \\| \\vec{d} \\text {, then }|\\vec{c} \\times \\vec{d}| \\neq 1 \\text {. }\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$$\\begin{array}{l}\n(\\vec{a} \\times \\vec{b}) \\cdot(\\vec{c} \\times \\vec{d})=1 \\text { possible only when }|\\vec{a} \\times \\vec{b}|=|\\vec{c} \\times \\vec{d}|=1 \\\\\n\\text { and }(\\vec{a} \\times \\vec{b}) \\|(\\vec{c} \\times \\vec{d}) \\\\\n\\text { Since } \\vec{a} \\cdot \\vec{c}=1 / 2 \\text { and } \\vec{b} \\| \\vec{d} \\text {, then }|\\vec{c} \\times \\vec{d}| \\neq 1 \\text {. }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The line passing through the extremity A of the major axis and extremity B of the minor axis of the ellipse $\\mathrm{x}^{2}+9 \\mathrm{y}^{2}=9$ meets its auxiliary circle at the point M. Then the area of the triangle with vertices at A, M and the origin O is\nIITJEE2009-Paper 1-CMP-9",
+   "options": {
+    "A": "$\\frac{31}{10}$",
+    "B": "$\\frac{29}{10}$",
+    "C": "$\\frac{21}{10}$",
+    "D": "$\\frac{27}{10}$\n\nSol. (D)\nEquation of line AM is $\\mathrm{x}+3 \\mathrm{y}-3=0$\nPerpendicular distance of line from origin $=\\frac{3}{\\sqrt{10}}$\nLength of $\\mathrm{AM}=2 \\sqrt{9-\\frac{9}{10}}=2 \\times \\frac{9}{\\sqrt{10}}$\n⇒ Area $=\\frac{1}{2} \\times 2 \\times \\frac{9}{\\sqrt{10}} \\times \\frac{3}{\\sqrt{10}}=\\frac{27}{10}$ sq. units."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\nEquation of line AM is $\\mathrm{x}+3 \\mathrm{y}-3=0$\nPerpendicular distance of line from origin $=\\frac{3}{\\sqrt{10}}$\nLength of $\\mathrm{AM}=2 \\sqrt{9-\\frac{9}{10}}=2 \\times \\frac{9}{\\sqrt{10}}$\n⇒ Area $=\\frac{1}{2} \\times 2 \\times \\frac{9}{\\sqrt{10}} \\times \\frac{3}{\\sqrt{10}}=\\frac{27}{10}$ sq. units."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{z}=\\cos \\theta+\\mathrm{i} \\sin \\theta$. Then the value of $\\sum_{\\mathrm{m}=1}^{15} \\operatorname{Im}\\left(\\mathrm{z}^{2 \\mathrm{~m}-1}\\right)$ at $\\theta=2^{\\circ}$ is",
+   "options": {
+    "A": "$\\frac{1}{\\sin 2^{\\circ}}$",
+    "B": "$\\frac{1}{3 \\sin 2^{\\circ}}$",
+    "C": "$\\frac{1}{2 \\sin 2^{\\circ}}$",
+    "D": "$\\frac{1}{4 \\sin 2^{\\circ}}$\n\nSol. (D)\n$\\mathrm{X}=\\sin \\theta+\\sin 3 \\theta+\\ldots+\\sin 29 \\theta$\n$2(\\sin \\theta) \\mathrm{X}=1-\\cos 2 \\theta+\\cos 2 \\theta-\\cos 4 \\theta+\\ldots+\\cos 28 \\theta-\\cos 30 \\theta$\n$\\mathrm{X}=\\frac{1-\\cos 30 \\theta}{2 \\sin \\theta}=\\frac{1}{4 \\sin 2^{\\circ}}$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\n$\\mathrm{X}=\\sin \\theta+\\sin 3 \\theta+\\ldots+\\sin 29 \\theta$\n$2(\\sin \\theta) \\mathrm{X}=1-\\cos 2 \\theta+\\cos 2 \\theta-\\cos 4 \\theta+\\ldots+\\cos 28 \\theta-\\cos 30 \\theta$\n$\\mathrm{X}=\\frac{1-\\cos 30 \\theta}{2 \\sin \\theta}=\\frac{1}{4 \\sin 2^{\\circ}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let P(3, 2, 6) be a point in space and Q be a point on the line $\\vec{r}=(\\hat{i}-\\hat{j}+2 \\hat{k})+\\mu(-3 \\hat{i}+\\hat{j}+5 \\hat{k})$. Then the value of $\\mu$ for which the vector $\\overrightarrow{\\mathrm{PQ}}$ is parallel to the plane $\\mathrm{x}-4 \\mathrm{y}+3 \\mathrm{z}=1$ is",
+   "options": {
+    "A": "$\\frac{1}{4}$",
+    "B": "$-\\frac{1}{4}$",
+    "C": "$\\frac{1}{8}$",
+    "D": "$-\\frac{1}{8}$\n\nSol. (A)\nAny point on the line can be taken as\n$\\mathrm{Q} \\equiv\\{(1-3 \\mu),(\\mu-1),(5 \\mu+2)\\}$\n$\\overrightarrow{\\mathrm{PQ}}=\\{-3 \\mu-2, \\mu-3,5 \\mu-4\\}$\nNow, $1(-3 \\mu-2)-4(\\mu-3)+3(5 \\mu-4)=0$\n$\\Rightarrow-3 \\mu-2-4 \\mu+12+15 \\mu-12=0$\n$8 \\mu=2 \\Rightarrow \\mu=1 / 4$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nAny point on the line can be taken as\n$\\mathrm{Q} \\equiv\\{(1-3 \\mu),(\\mu-1),(5 \\mu+2)\\}$\n$\\overrightarrow{\\mathrm{PQ}}=\\{-3 \\mu-2, \\mu-3,5 \\mu-4\\}$\nNow, $1(-3 \\mu-2)-4(\\mu-3)+3(5 \\mu-4)=0$\n$\\Rightarrow-3 \\mu-2-4 \\mu+12+15 \\mu-12=0$\n$8 \\mu=2 \\Rightarrow \\mu=1 / 4$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The number of seven digit integers, with sum of the digits equal to 10 and formed by using the digits 1, 2 and 3 only, is",
+   "options": {
+    "A": "55",
+    "B": "66",
+    "C": "77",
+    "D": "88\n\nSol. (C)\nCoefficient of $x^{10}$ in $\\left(x+x^{2}+x^{3}\\right)^{7}$\n\nIITJEE2009-Paper 1-CMP -10\n\ncoefficient of $x^{3}$ in $\\left(1+x+x^{2}\\right)^{7}$\ncoefficient of $x^{3}$ in $\\left(1-x^{3}\\right)^{7}(1-x)^{-7}$\n$={ }^{7+3-1} \\mathrm{C}_{3}-7$\n$={ }^{9} \\mathrm{C}_{3}-7$\n$=\\frac{9 \\times 8 \\times 7}{6}-7=77$.\nAlternate:\nThe digits are 1,1,1,1,1,2,3\nor 1, 1, 1, 1, 2, 2, 2\nHence number of seven digit numbers formed\n$=\\frac{7!}{5!}+\\frac{7!}{4!3!}=77$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\nCoefficient of $x^{10}$ in $\\left(x+x^{2}+x^{3}\\right)^{7}$",
+     "IITJEE2009-Paper 1-CMP -10",
+     "coefficient of $x^{3}$ in $\\left(1+x+x^{2}\\right)^{7}$\ncoefficient of $x^{3}$ in $\\left(1-x^{3}\\right)^{7}(1-x)^{-7}$\n$={ }^{7+3-1} \\mathrm{C}_{3}-7$\n$={ }^{9} \\mathrm{C}_{3}-7$\n$=\\frac{9 \\times 8 \\times 7}{6}-7=77$.\nAlternate:\nThe digits are 1,1,1,1,1,2,3\nor 1, 1, 1, 1, 2, 2, 2\nHence number of seven digit numbers formed\n$=\\frac{7!}{5!}+\\frac{7!}{4!3!}=77$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let f be a non-negative function defined on the interval $[0,1]$. If $\\int_{0}^{\\mathrm{x}} \\sqrt{1-\\left(\\mathrm{f}^{\\prime}(\\mathrm{t})\\right)^{2}} \\mathrm{dt}=\\int_{0}^{\\mathrm{x}} \\mathrm{f}(\\mathrm{t}) \\mathrm{dt}, 0 \\leq \\mathrm{x} \\leq 1$, and $\\mathrm{f}(0)=0$, then",
+   "options": {
+    "A": "$\\mathrm{f}\\left(\\frac{1}{2}\\right)<\\frac{1}{2}$ and $\\mathrm{f}\\left(\\frac{1}{3}\\right)>\\frac{1}{3}$",
+    "B": "$\\mathrm{f}\\left(\\frac{1}{2}\\right)>\\frac{1}{2}$ and $\\mathrm{f}\\left(\\frac{1}{3}\\right)>\\frac{1}{3}$",
+    "C": "$\\mathrm{f}\\left(\\frac{1}{2}\\right)<\\frac{1}{2}$ and $\\mathrm{f}\\left(\\frac{1}{3}\\right)<\\frac{1}{3}$",
+    "D": "$\\mathrm{f}\\left(\\frac{1}{2}\\right)>\\frac{1}{2}$ and $\\mathrm{f}\\left(\\frac{1}{3}\\right)<\\frac{1}{3}$\n\nSol. (C)\n$\\mathrm{f}^{\\prime}= \\pm \\sqrt{1-\\mathrm{f}^{2}}$\n$\\Rightarrow f(x)=\\sin x$ or $f(x)=-\\sin x \\quad$ (not possible)\n$\\Rightarrow f(x)=\\sin x$\nAlso, $\\mathrm{x}>\\sin \\mathrm{x} \\forall \\mathrm{x}>0$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$\\mathrm{f}^{\\prime}= \\pm \\sqrt{1-\\mathrm{f}^{2}}$\n$\\Rightarrow f(x)=\\sin x$ or $f(x)=-\\sin x \\quad$ (not possible)\n$\\Rightarrow f(x)=\\sin x$\nAlso, $\\mathrm{x}>\\sin \\mathrm{x} \\forall \\mathrm{x}>0$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Tangents drawn from the point $P(1,8)$ to the circle $x^{2}+y^{2}-6 x-4 y-11=0$ touch the circle at the points A and B . The equation of the circumcircle of the triangle PAB is",
+   "options": {
+    "A": "$\\mathrm{x}^{2}+\\mathrm{y}^{2}+4 \\mathrm{x}-6 \\mathrm{y}+19=0$",
+    "B": "$\\mathrm{x}^{2}+\\mathrm{y}^{2}-4 \\mathrm{x}-10 \\mathrm{y}+19=0$",
+    "C": "$x^{2}+y^{2}-2 x+6 y-29=0$",
+    "D": "$\\mathrm{x}^{2}+\\mathrm{y}^{2}-6 \\mathrm{x}-4 \\mathrm{y}+19=0$\n\nSol. (B)\nThe centre of the circle is C (3, 2).\nSince CA and CB are perpendicular to PA and $\\mathrm{PB}, \\mathrm{CP}$ is the diameter of the circumcircle of triangle PAB .\nIts equation is\n$(\\mathrm{x}-3)(\\mathrm{x}-1)+(\\mathrm{y}-2)(\\mathrm{y}-8)=0$\nor $\\mathrm{x}^{2}+\\mathrm{y}^{2}-4 \\mathrm{x}-10 \\mathrm{y}+19=0$.\n\nSECTION-II\nMultiple Correct Choice Type\nThis section contains 4 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONE OR MORE is/are correct."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nThe centre of the circle is C (3, 2).\nSince CA and CB are perpendicular to PA and $\\mathrm{PB}, \\mathrm{CP}$ is the diameter of the circumcircle of triangle PAB .\nIts equation is\n$(\\mathrm{x}-3)(\\mathrm{x}-1)+(\\mathrm{y}-2)(\\mathrm{y}-8)=0$\nor $\\mathrm{x}^{2}+\\mathrm{y}^{2}-4 \\mathrm{x}-10 \\mathrm{y}+19=0$.",
+     "SECTION-II\nMultiple Correct Choice Type\nThis section contains 4 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONE OR MORE is/are correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "In a triangle ABC with fixed base BC, the vertex A moves such that $\\cos \\mathrm{B}+\\cos \\mathrm{C}=4 \\sin ^{2} \\frac{\\mathrm{~A}}{2}$. If a, b and c denote the lengths of the sides of the triangle opposite to the angles $\\mathrm{A}, \\mathrm{B}$ and C , respectively, then",
+   "options": {
+    "A": "$\\mathrm{b}+\\mathrm{c}=4 \\mathrm{a}$",
+    "B": "$\\mathrm{b}+\\mathrm{c}=2 \\mathrm{a}$",
+    "C": "locus of point A is an ellipse",
+    "D": "locus of point A is a pair of straight lines\n\nSol. (B, C)\n\nIITJEE2009-Paper 1-CMP-11\n$$\\begin{array}{l}\n2 \\cos \\left(\\frac{B+C}{2}\\right) \\cos \\left(\\frac{B-C}{2}\\right)=4 \\sin ^{2} \\frac{A}{2} \\\\\n\\cos \\left(\\frac{B-C}{2}\\right)=2 \\sin (A / 2) \\\\\n\\Rightarrow \\frac{\\cos \\left(\\frac{B-C}{2}\\right)}{\\sin A / 2}=2 \\\\\n\\Rightarrow \\frac{\\sin B+\\sin C}{\\sin A}=2 \\\\\n\\Rightarrow b+c=2 a \\text { (constant). }\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B, C)",
+     "IITJEE2009-Paper 1-CMP-11\n$$\\begin{array}{l}\n2 \\cos \\left(\\frac{B+C}{2}\\right) \\cos \\left(\\frac{B-C}{2}\\right)=4 \\sin ^{2} \\frac{A}{2} \\\\\n\\cos \\left(\\frac{B-C}{2}\\right)=2 \\sin (A / 2) \\\\\n\\Rightarrow \\frac{\\cos \\left(\\frac{B-C}{2}\\right)}{\\sin A / 2}=2 \\\\\n\\Rightarrow \\frac{\\sin B+\\sin C}{\\sin A}=2 \\\\\n\\Rightarrow b+c=2 a \\text { (constant). }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "If $\\frac{\\sin ^{4} \\mathrm{x}}{2}+\\frac{\\cos ^{4} \\mathrm{x}}{3}=\\frac{1}{5}$, then",
+   "options": {
+    "A": "$\\tan ^{2} x=\\frac{2}{3}$",
+    "B": "$\\frac{\\sin ^{8} x}{8}+\\frac{\\cos ^{8} x}{27}=\\frac{1}{125}$",
+    "C": "$\\tan ^{2} x=\\frac{1}{3}$",
+    "D": "$\\frac{\\sin ^{8} x}{8}+\\frac{\\cos ^{8} x}{27}=\\frac{2}{125}$\n\nSol. (A, B)\n$$\\begin{array}{l}\n\\frac{\\sin ^{4} x}{2}+\\frac{\\cos ^{4} x}{3}=\\frac{1}{5} \\\\\n3 \\sin ^{4} x+2\\left(1-\\sin ^{2} x\\right)^{2}=\\frac{6}{5} \\\\\n\\Rightarrow 25 \\sin ^{4} x-20 \\sin ^{2} x+4=0 \\\\\n\\Rightarrow \\sin ^{2} x=\\frac{2}{5} \\text { and } \\cos ^{2} x=\\frac{3}{5} \\\\\n\\therefore \\tan ^{2} x=\\frac{2}{3} \\text { and } \\frac{\\sin ^{8} x}{8}+\\frac{\\cos ^{8} x}{27}=\\frac{1}{125}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A, B)\n$$\\begin{array}{l}\n\\frac{\\sin ^{4} x}{2}+\\frac{\\cos ^{4} x}{3}=\\frac{1}{5} \\\\\n3 \\sin ^{4} x+2\\left(1-\\sin ^{2} x\\right)^{2}=\\frac{6}{5} \\\\\n\\Rightarrow 25 \\sin ^{4} x-20 \\sin ^{2} x+4=0 \\\\\n\\Rightarrow \\sin ^{2} x=\\frac{2}{5} \\text { and } \\cos ^{2} x=\\frac{3}{5} \\\\\n\\therefore \\tan ^{2} x=\\frac{2}{3} \\text { and } \\frac{\\sin ^{8} x}{8}+\\frac{\\cos ^{8} x}{27}=\\frac{1}{125}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 31,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Let $\\mathrm{L}=\\lim _{\\mathrm{x} \\rightarrow 0} \\frac{\\mathrm{a}-\\sqrt{\\mathrm{a}^{2}-\\mathrm{x}^{2}}-\\frac{\\mathrm{x}^{2}}{4}}{\\mathrm{x}^{4}}, \\mathrm{a}>0$. If L is finite, then",
+   "options": {
+    "A": "$\\mathrm{a}=2$",
+    "B": "$\\mathrm{a}=1$",
+    "C": "$\\mathrm{L}=\\frac{1}{64}$",
+    "D": "$\\mathrm{L}=\\frac{1}{32}$\n\nSol. (A, C)\n$$\\begin{array}{l}\nL=\\lim _{x \\rightarrow 0} \\frac{a-\\sqrt{a^{2}-x^{2}}-\\frac{x^{2}}{4}}{x^{4}}=\\lim _{x \\rightarrow 0} \\frac{1}{x^{2}\\left(a+\\sqrt{a^{2}-x^{2}}\\right)}-\\frac{1}{4 x^{2}} \\\\\n=\\lim _{x \\rightarrow 0} \\frac{(4-a)-\\sqrt{a^{2}-x^{2}}}{4 x^{2}\\left(a+\\sqrt{a^{2}-x^{2}}\\right)} \\\\\n\\text { numerator } \\rightarrow 0 \\text { if } a=2 \\text { and then } L=\\frac{1}{64}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A, C)\n$$\\begin{array}{l}\nL=\\lim _{x \\rightarrow 0} \\frac{a-\\sqrt{a^{2}-x^{2}}-\\frac{x^{2}}{4}}{x^{4}}=\\lim _{x \\rightarrow 0} \\frac{1}{x^{2}\\left(a+\\sqrt{a^{2}-x^{2}}\\right)}-\\frac{1}{4 x^{2}} \\\\\n=\\lim _{x \\rightarrow 0} \\frac{(4-a)-\\sqrt{a^{2}-x^{2}}}{4 x^{2}\\left(a+\\sqrt{a^{2}-x^{2}}\\right)} \\\\\n\\text { numerator } \\rightarrow 0 \\text { if } a=2 \\text { and then } L=\\frac{1}{64}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 32,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Area of the region bounded by the curve $\\mathrm{y}=\\mathrm{e}^{\\mathrm{x}}$ and lines $\\mathrm{x}=0$ and $\\mathrm{y}=\\mathrm{e}$ is\nIITJEE2009-Paper 1-CMP -12",
+   "options": {
+    "A": "$\\mathrm{e}-1$",
+    "B": "$\\int_{1}^{e} \\ln (e+1-y) d y$",
+    "C": "$\\mathrm{e}-\\int_{0}^{1} \\mathrm{e}^{\\mathrm{x}} \\mathrm{dx}$",
+    "D": "$\\int_{1}^{\\mathrm{e}} \\ln \\mathrm{y} \\mathrm{dy}$\n\nSol. (B, C, D)\nRequired Area $=\\int_{1}^{\\mathrm{e}} \\ln \\mathrm{y} \\mathrm{dy}$\n$=(y \\ln y-y)_{1}^{\\mathrm{e}}=(e-e)-\\{-1\\}=1$.\nAlso, $\\int_{1}^{\\mathrm{e}} \\ln \\mathrm{y} \\mathrm{dy}=\\int_{1}^{\\mathrm{e}} \\ln (\\mathrm{e}+1-\\mathrm{y}) \\mathrm{dy}$\nFurther the required area $=\\mathrm{e} \\times 1-\\int_{0}^{1} \\mathrm{e}^{\\mathrm{x}} \\mathrm{dx}$.\n\nSECTION-III\nComprehension Type\nThis section contains 2 groups of questions. Each group has 3 multiple choice questions based on a paragraph. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct.\n\nParagraph for question Nos. 33 to 35\nA fair die is tossed repeatedly until a six is obtained. Let X denote the number of tosses required."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B, C, D)\nRequired Area $=\\int_{1}^{\\mathrm{e}} \\ln \\mathrm{y} \\mathrm{dy}$\n$=(y \\ln y-y)_{1}^{\\mathrm{e}}=(e-e)-\\{-1\\}=1$.\nAlso, $\\int_{1}^{\\mathrm{e}} \\ln \\mathrm{y} \\mathrm{dy}=\\int_{1}^{\\mathrm{e}} \\ln (\\mathrm{e}+1-\\mathrm{y}) \\mathrm{dy}$\nFurther the required area $=\\mathrm{e} \\times 1-\\int_{0}^{1} \\mathrm{e}^{\\mathrm{x}} \\mathrm{dx}$.",
+     "SECTION-III\nComprehension Type\nThis section contains 2 groups of questions. Each group has 3 multiple choice questions based on a paragraph. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct.",
+     "Paragraph for question Nos. 33 to 35\nA fair die is tossed repeatedly until a six is obtained. Let X denote the number of tosses required."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 33,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The probability that $\\mathrm{X}=3$ equals",
+   "options": {
+    "A": "$\\frac{25}{216}$",
+    "B": "$\\frac{25}{36}$",
+    "C": "$\\frac{5}{36}$",
+    "D": "$\\frac{125}{216}$\n\nSol. (A)\n$\\mathrm{P}(\\mathrm{X}=3)=\\left(\\frac{5}{6}\\right)\\left(\\frac{5}{6}\\right) \\frac{1}{6}=\\frac{25}{216}$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$\\mathrm{P}(\\mathrm{X}=3)=\\left(\\frac{5}{6}\\right)\\left(\\frac{5}{6}\\right) \\frac{1}{6}=\\frac{25}{216}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 34,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The probability that $\\mathrm{X} \\geq 3$ equals",
+   "options": {
+    "A": "$\\frac{125}{216}$",
+    "B": "$\\frac{25}{36}$",
+    "C": "$\\frac{5}{36}$",
+    "D": "$\\frac{25}{216}$\n\nSol. (B)\n$\\mathrm{P}(\\mathrm{X} \\leq 2)=\\frac{1}{6}+\\frac{5}{6} \\times \\frac{1}{6}=\\frac{11}{36}$\nRequired probability $=1-\\frac{11}{36}=\\frac{25}{36}$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$\\mathrm{P}(\\mathrm{X} \\leq 2)=\\frac{1}{6}+\\frac{5}{6} \\times \\frac{1}{6}=\\frac{11}{36}$\nRequired probability $=1-\\frac{11}{36}=\\frac{25}{36}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 35,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The conditional probability that $\\mathrm{X} \\geq 6$ given $\\mathrm{X}>3$ equals\nIITJEE2009-Paper 1-CMP-13",
+   "options": {
+    "A": "$\\frac{125}{216}$",
+    "B": "$\\frac{25}{216}$",
+    "C": "$\\frac{5}{36}$",
+    "D": "$\\frac{25}{36}$\n\nSol. (D)\nFor $\\mathrm{X} \\geq 6$, the probability is\n$$\\frac{5^{5}}{6^{6}}+\\frac{5^{6}}{6^{7}}+\\ldots \\infty=\\frac{5^{5}}{6^{6}}\\left(\\frac{1}{1-5 / 6}\\right)=\\left(\\frac{5}{6}\\right)^{5}$$\n\nFor $\\mathrm{X}>3$\n$$\\frac{5^{3}}{6^{4}}+\\frac{5^{4}}{6^{5}}+\\frac{5^{5}}{6^{6}}+\\ldots \\infty=\\left(\\frac{5}{6}\\right)^{3}$$\n\nHence the conditional probability $\\frac{(5 / 6)^{6}}{(5 / 6)^{3}}=\\frac{25}{36}$.\nParagraph for question Nos. 36 to 38\nLet be the set of all 3 × 3 symmetric matrices all of whose entries are either 0 or 1. Five of these entries are 1 and four of them are 0."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\nFor $\\mathrm{X} \\geq 6$, the probability is\n$$\\frac{5^{5}}{6^{6}}+\\frac{5^{6}}{6^{7}}+\\ldots \\infty=\\frac{5^{5}}{6^{6}}\\left(\\frac{1}{1-5 / 6}\\right)=\\left(\\frac{5}{6}\\right)^{5}$$",
+     "For $\\mathrm{X}>3$\n$$\\frac{5^{3}}{6^{4}}+\\frac{5^{4}}{6^{5}}+\\frac{5^{5}}{6^{6}}+\\ldots \\infty=\\left(\\frac{5}{6}\\right)^{3}$$",
+     "Hence the conditional probability $\\frac{(5 / 6)^{6}}{(5 / 6)^{3}}=\\frac{25}{36}$.\nParagraph for question Nos. 36 to 38\nLet be the set of all 3 × 3 symmetric matrices all of whose entries are either 0 or 1. Five of these entries are 1 and four of them are 0."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 36,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The number of matrices in $\\overrightarrow{\\mathscr{D}}$ is",
+   "options": {
+    "A": "12",
+    "B": "6",
+    "C": "9",
+    "D": "3\n\nSol. (A)\nIf two zero's are the entries in the diagonal, then\n$${ }^{3} \\mathrm{C}_{2} \\times{ }^{3} \\mathrm{C}_{1}$$\n\nIf all the entries in the principle diagonal is 1 , then\n$$\\begin{array}{l}\n{ }^{3} \\mathrm{C}_{1} \\\\\n\\Rightarrow \\text { Total matrix }=12 .\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nIf two zero's are the entries in the diagonal, then\n$${ }^{3} \\mathrm{C}_{2} \\times{ }^{3} \\mathrm{C}_{1}$$",
+     "If all the entries in the principle diagonal is 1 , then\n$$\\begin{array}{l}\n{ }^{3} \\mathrm{C}_{1} \\\\\n\\Rightarrow \\text { Total matrix }=12 .\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 37,
+   "question_id": null,
+   "section": null,
+   "question_type": "numerical",
+   "text": "The number of matrices A in for which the system of linear equations $\\mathrm{A}\\left[\\begin{array}{l}\\mathrm{x} \\\\ \\mathrm{y} \\\\ \\mathrm{z}\\end{array}\\right]=\\left[\\begin{array}{l}1 \\\\ 0 \\\\ 0\\end{array}\\right]$ has a unique solution, is\n(A) less than 4\n(B) at least 4 but less than 7\n(A) atleast 7 but less than 10\n(D) at least 10",
+   "options": null,
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$$\\left[\\begin{array}{ccc}\n0 & \\mathrm{a} & \\mathrm{~b} \\\\\n\\mathrm{a} & 0 & \\mathrm{c} \\\\\n\\mathrm{~b} & \\mathrm{c} & 1\n\\end{array}\\right]$$\neither $\\mathrm{b}=0$ or $\\mathrm{c}=0 \\Rightarrow|\\mathrm{~A}| \\neq 0$\n⇒ 2 matrices\n$$\\left[\\begin{array}{ccc}\n0 & \\mathrm{a} & \\mathrm{~b} \\\\\n\\mathrm{a} & 1 & \\mathrm{c} \\\\\n\\mathrm{~b} & \\mathrm{c} & 0\n\\end{array}\\right]$$\neither $\\mathrm{a}=0$ or $\\mathrm{c}=0 \\Rightarrow|\\mathrm{~A}| \\neq 0$\n⇒ 2 matrices",
+     "IITJEE2009-Paper 1-CMP -14\n$$\\begin{array}{l}\n{\\left[\\begin{array}{ccc}\n1 & a & b \\\\\na & 0 & c \\\\\nb & c & 0\n\\end{array}\\right]} \\\\\n\\text { either } a=0 \\text { or } b=0 \\Rightarrow|A| \\neq 0 \\\\\n\\Rightarrow 2 \\text { matrices. } \\\\\n{\\left[\\begin{array}{ccc}\n1 & a & b \\\\\na & 1 & c \\\\\nb & c & 1\n\\end{array}\\right]} \\\\\n\\text { If } a=b=0 \\Rightarrow|A|=0 \\\\\n\\text { If } a=c=0 \\Rightarrow|A|=0 \\\\\n\\text { If } b=c=0 \\Rightarrow|A|=0 \\\\\n\\Rightarrow \\text { there will be only 6 matrices. }\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 38,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The number of matrices A in for which the system of linear equations $\\mathrm{A}\\left[\\begin{array}{l}\\mathrm{x} \\\\ \\mathrm{y} \\\\ \\mathrm{z}\\end{array}\\right]=\\left[\\begin{array}{l}1 \\\\ 0 \\\\ 0\\end{array}\\right]$ is inconsistent, is",
+   "options": {
+    "A": "0",
+    "B": "more than 2",
+    "C": "2",
+    "D": "1\n\nSol. (B)\nThe six matrix A for which $|A|=0$ are\n$$\\begin{array}{l}\n{\\left[\\begin{array}{lll}\n0 & 0 & 1 \\\\\n0 & 0 & 1 \\\\\n1 & 1 & 1\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n0 & 1 & 0 \\\\\n1 & 1 & 1 \\\\\n0 & 1 & 0\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 1 & 1 \\\\\n1 & 0 & 0 \\\\\n1 & 0 & 0\n\\end{array}\\right] \\Rightarrow \\text { infinite solutions. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 1 & 0 \\\\\n1 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 0 & 1 \\\\\n0 & 1 & 0 \\\\\n1 & 0 & 1\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 0 & 0 \\\\\n0 & 1 & 1 \\\\\n0 & 1 & 1\n\\end{array}\\right] \\Rightarrow \\text { infinite solutions. }}\n\\end{array}$$\n\nSECTION - IV\nMatrix - Match Type\nThis section contains 2 questions. Each question contains statements given in two columns, which have to be matched. The statement in Column I are labelled A, B, C and D, while the statements in Column II are labelled p, q, r, s and t. Any given statement in Column I can have correct matching with ONE OR MORE statement (s) in\n\nIITJEE2009-Paper 1-CMP-15\n\nColumn II. The appropriate bubbles corresponding to the answers to these questions have to be darkened as illustrated in the following example:\nIf the correct matches are A - p, s and t; B - q and r; C - p and q; and D -s and t; then the correct darkening of bubbles will look like the following."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nThe six matrix A for which $|A|=0$ are\n$$\\begin{array}{l}\n{\\left[\\begin{array}{lll}\n0 & 0 & 1 \\\\\n0 & 0 & 1 \\\\\n1 & 1 & 1\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n0 & 1 & 0 \\\\\n1 & 1 & 1 \\\\\n0 & 1 & 0\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 1 & 1 \\\\\n1 & 0 & 0 \\\\\n1 & 0 & 0\n\\end{array}\\right] \\Rightarrow \\text { infinite solutions. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 1 & 0 \\\\\n1 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 0 & 1 \\\\\n0 & 1 & 0 \\\\\n1 & 0 & 1\n\\end{array}\\right] \\Rightarrow \\text { inconsistent. }} \\\\\n{\\left[\\begin{array}{lll}\n1 & 0 & 0 \\\\\n0 & 1 & 1 \\\\\n0 & 1 & 1\n\\end{array}\\right] \\Rightarrow \\text { infinite solutions. }}\n\\end{array}$$",
+     "SECTION - IV\nMatrix - Match Type\nThis section contains 2 questions. Each question contains statements given in two columns, which have to be matched. The statement in Column I are labelled A, B, C and D, while the statements in Column II are labelled p, q, r, s and t. Any given statement in Column I can have correct matching with ONE OR MORE statement (s) in",
+     "IITJEE2009-Paper 1-CMP-15",
+     "Column II. The appropriate bubbles corresponding to the answers to these questions have to be darkened as illustrated in the following example:\nIf the correct matches are A - p, s and t; B - q and r; C - p and q; and D -s and t; then the correct darkening of bubbles will look like the following."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 39,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Match the conics in Column I with the statements/expressions in Column II.\nColumn I\nColumn II",
+   "options": {
+    "A": "Circle\n(p) The locus of the point (h, k) for which the line hx + ky = 1 touches the circle $\\mathrm{x}^{2}+\\mathrm{y}^{2}=4$",
+    "B": "parabola\n(q) Points z in the complex plane satisfying $|\\mathrm{z}+2|-|\\mathrm{z}-2|= \\pm 3$",
+    "C": "Ellipse\n(r) Points of the conic have parametric representation $\\mathrm{x}=\\sqrt{3}\\left(\\frac{1-\\mathrm{t}^{2}}{1+\\mathrm{t}^{2}}\\right)$, $\\mathrm{y}= \\frac{2 \\mathrm{t}}{1+\\mathrm{t}^{2}}$\n(s) The eccentricity of the conic lies in the interval $1 \\leq \\mathrm{x}<\\infty$\n(t) Points z in the complex plane satisfying $\\operatorname{Re}(\\mathrm{z}+1)^{2}=|\\mathrm{z}|^{2}+1$\n\nSol. (A) → (p)\n(B) → (s, t)\n(C) → (r)",
+    "D": "→ (q, s)\n(p) . $\\frac{1}{\\mathrm{k}^{2}}=4\\left(1+\\frac{\\mathrm{h}^{2}}{\\mathrm{k}^{2}}\\right)$\n$\\Rightarrow 1=4\\left(\\mathrm{k}^{2}+\\mathrm{h}^{2}\\right)$\n$\\therefore \\mathrm{h}^{2}+\\mathrm{k}^{2}=\\left(\\frac{1}{2}\\right)^{2}$ which is a circle.\n(q). If $\\left|z-z_{1}\\right|-\\left|z-z_{2}\\right|=k$ where $k<\\left|z_{1}-z_{2}\\right|$\nthe locus is a hyperbola.\n(r). Let $\\mathrm{t}=\\tan \\alpha$\n$\\Rightarrow \\mathrm{x}=\\sqrt{3} \\cos 2 \\alpha$ and $\\mathrm{y}=\\sin 2 \\alpha$\nor $\\cos 2 \\alpha=\\frac{\\mathrm{x}}{\\sqrt{3}}$ and $\\sin 2 \\alpha=\\mathrm{y}$\n$\\therefore \\frac{\\mathrm{x}^{2}}{3}+\\mathrm{y}^{2}=\\sin ^{2} 2 \\alpha+\\cos ^{2} 2 \\alpha=1$ which is an ellipse.\n(s). If eccentricity is $[1, \\infty)$, then the conic can be a parabola (if $\\mathrm{e}=1$ ) and a hyperbola if $\\mathrm{e} \\in(1, \\infty)$.\n(t). Let $\\mathrm{z}=\\mathrm{x}+\\mathrm{iy} ; \\mathrm{x}, \\mathrm{y} \\in \\mathrm{R}$\n$\\Rightarrow(\\mathrm{x}+1)^{2}-\\mathrm{y}^{2}=\\mathrm{x}^{2}+\\mathrm{y}^{2}+1$\n$\\Rightarrow \\mathrm{y}^{2}=\\mathrm{x}$; which is a parabola."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A) → (p)\n(B) → (s, t)\n(C) → (r)\n(D) → (q, s)\n(p) . $\\frac{1}{\\mathrm{k}^{2}}=4\\left(1+\\frac{\\mathrm{h}^{2}}{\\mathrm{k}^{2}}\\right)$\n$\\Rightarrow 1=4\\left(\\mathrm{k}^{2}+\\mathrm{h}^{2}\\right)$\n$\\therefore \\mathrm{h}^{2}+\\mathrm{k}^{2}=\\left(\\frac{1}{2}\\right)^{2}$ which is a circle.\n(q). If $\\left|z-z_{1}\\right|-\\left|z-z_{2}\\right|=k$ where $k<\\left|z_{1}-z_{2}\\right|$\nthe locus is a hyperbola.\n(r). Let $\\mathrm{t}=\\tan \\alpha$\n$\\Rightarrow \\mathrm{x}=\\sqrt{3} \\cos 2 \\alpha$ and $\\mathrm{y}=\\sin 2 \\alpha$\nor $\\cos 2 \\alpha=\\frac{\\mathrm{x}}{\\sqrt{3}}$ and $\\sin 2 \\alpha=\\mathrm{y}$\n$\\therefore \\frac{\\mathrm{x}^{2}}{3}+\\mathrm{y}^{2}=\\sin ^{2} 2 \\alpha+\\cos ^{2} 2 \\alpha=1$ which is an ellipse.\n(s). If eccentricity is $[1, \\infty)$, then the conic can be a parabola (if $\\mathrm{e}=1$ ) and a hyperbola if $\\mathrm{e} \\in(1, \\infty)$.\n(t). Let $\\mathrm{z}=\\mathrm{x}+\\mathrm{iy} ; \\mathrm{x}, \\mathrm{y} \\in \\mathrm{R}$\n$\\Rightarrow(\\mathrm{x}+1)^{2}-\\mathrm{y}^{2}=\\mathrm{x}^{2}+\\mathrm{y}^{2}+1$\n$\\Rightarrow \\mathrm{y}^{2}=\\mathrm{x}$; which is a parabola."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 40,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Match the statements/expressions in Column I with the open intervals in Column II.\nColumn I\nColumn II",
+   "options": {
+    "A": "Interval contained in the domain of definition of non-zero solutions of the differential equation $(x-3)^{2} y^{\\prime}+y=0$\n(p) $\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$\n\nIITJEE2009-Paper 1-CMP -16",
+    "B": "Interval containing the value of the integral\n$\\int_{1}^{5}(\\mathrm{x}-1)(\\mathrm{x}-2)(\\mathrm{x}-3)(\\mathrm{x}-4)(\\mathrm{x}-5) \\mathrm{dx}$",
+    "C": "Interval in which at least one of the points of local maximum of $\\cos ^{2} x+\\sin x$ lies",
+    "D": "Interval in which $\\tan ^{-1}(\\sin \\mathrm{x}+\\cos \\mathrm{x})$ is increasing\n(q) $\\left(0, \\frac{\\pi}{2}\\right)$\n(r) $\\quad\\left(\\frac{\\pi}{8}, \\frac{5 \\pi}{4}\\right)$\n(s) $\\left(0, \\frac{\\pi}{8}\\right)$\n(t) $(-\\pi, \\pi)$\n\nSol. $\\quad(\\mathrm{A}) \\rightarrow(\\mathrm{p}, \\mathrm{q}, \\mathrm{s})$\n(B) → (p, t)\n(C) → (p, q, r, t)\n(D) → (s)\n(A). $(\\mathrm{x}-3)^{2} \\frac{\\mathrm{dy}}{\\mathrm{dx}}+\\mathrm{y}=0$\n$\\int \\frac{\\mathrm{dx}}{(\\mathrm{x}-3)^{2}}=-\\int \\frac{\\mathrm{dy}}{\\mathrm{y}}$\n$\\Rightarrow \\frac{1}{\\mathrm{x}-3}=\\ln |\\mathrm{y}|+\\mathrm{c}$\nso domain is $\\mathrm{R}-\\{3\\}$.\n(B). Put $\\mathrm{x}=\\mathrm{t}+3$\n$\\int_{-2}^{2}(\\mathrm{t}+2)(\\mathrm{t}+1) \\mathrm{t}(\\mathrm{t}-1)(\\mathrm{t}-2) \\mathrm{dt}=\\int_{-2}^{2} \\mathrm{t}\\left(\\mathrm{t}^{2}-1\\right)\\left(\\mathrm{t}^{2}-4\\right) \\mathrm{dt}=0$ (being odd function)\n(C). $\\quad f(x)=\\frac{5}{4}-\\left(\\sin x-\\frac{1}{2}\\right)^{2}$\n\nMaximum value occurs when $\\sin \\mathrm{x}=\\frac{1}{2}$\n(D). $\\mathrm{f}^{\\prime}(\\mathrm{x})>0$ if $\\cos \\mathrm{x}>\\sin \\mathrm{x}$.\n\nPART III: PHYSICS\nSECTION - I\nSingle Correct Choice Type\nThis section contains 8 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad(\\mathrm{A}) \\rightarrow(\\mathrm{p}, \\mathrm{q}, \\mathrm{s})$\n(B) → (p, t)\n(C) → (p, q, r, t)\n(D) → (s)\n(A). $(\\mathrm{x}-3)^{2} \\frac{\\mathrm{dy}}{\\mathrm{dx}}+\\mathrm{y}=0$\n$\\int \\frac{\\mathrm{dx}}{(\\mathrm{x}-3)^{2}}=-\\int \\frac{\\mathrm{dy}}{\\mathrm{y}}$\n$\\Rightarrow \\frac{1}{\\mathrm{x}-3}=\\ln |\\mathrm{y}|+\\mathrm{c}$\nso domain is $\\mathrm{R}-\\{3\\}$.\n(B). Put $\\mathrm{x}=\\mathrm{t}+3$\n$\\int_{-2}^{2}(\\mathrm{t}+2)(\\mathrm{t}+1) \\mathrm{t}(\\mathrm{t}-1)(\\mathrm{t}-2) \\mathrm{dt}=\\int_{-2}^{2} \\mathrm{t}\\left(\\mathrm{t}^{2}-1\\right)\\left(\\mathrm{t}^{2}-4\\right) \\mathrm{dt}=0$ (being odd function)\n(C). $\\quad f(x)=\\frac{5}{4}-\\left(\\sin x-\\frac{1}{2}\\right)^{2}$",
+     "Maximum value occurs when $\\sin \\mathrm{x}=\\frac{1}{2}$\n(D). $\\mathrm{f}^{\\prime}(\\mathrm{x})>0$ if $\\cos \\mathrm{x}>\\sin \\mathrm{x}$.",
+     "PART III: PHYSICS\nSECTION - I\nSingle Correct Choice Type\nThis section contains 8 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 41,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Look at the drawing given in the figure which has been drawn with ink of uniform line-thickness. The mass of ink used to draw each of the two inner circles, and each of the two line segments is m. The mass of the ink used to draw the outer circle is 6 m . The coordinates of the centres of the different parts are: outer circle $(0,0)$ left inner circle (-a, a), right inner circle (a, a), vertical line $(0,0)$ and horizontal line (0, -a). The y -coordinate of the centre of mass of the ink in this drawing is",
+   "options": {
+    "A": "$\\frac{\\mathrm{a}}{10}$",
+    "B": "$\\frac{\\mathrm{a}}{8}$",
+    "C": "$\\frac{\\mathrm{a}}{12}$",
+    "D": "$\\frac{\\mathrm{a}}{3}$\n\nIITJEE2009-Paper 1-CMP-17\n\nSol. (A)\n$$\\begin{array}{l}\n\\mathrm{Y}_{\\mathrm{cm}}=\\frac{6 \\mathrm{~m} \\times 0+\\mathrm{m} \\times \\mathrm{a}+\\mathrm{m} \\times \\mathrm{a}+\\mathrm{m} \\times 0+\\mathrm{m} \\times(-\\mathrm{a})}{10 \\times \\mathrm{m}} \\\\\n\\mathrm{Y}_{\\mathrm{cm}}=\\frac{\\mathrm{a}}{10}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$$\\begin{array}{l}\n\\mathrm{Y}_{\\mathrm{cm}}=\\frac{6 \\mathrm{~m} \\times 0+\\mathrm{m} \\times \\mathrm{a}+\\mathrm{m} \\times \\mathrm{a}+\\mathrm{m} \\times 0+\\mathrm{m} \\times(-\\mathrm{a})}{10 \\times \\mathrm{m}} \\\\\n\\mathrm{Y}_{\\mathrm{cm}}=\\frac{\\mathrm{a}}{10}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 42,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The figure shows certain wire segments joined together to form a coplanar loop. The loop is placed in a perpendicular magnetic field in the direction going into the plane of the figure. The magnitude of the field increases with time. $\\mathrm{I}_{1}$ and $\\mathrm{I}_{2}$ are the currents in the segments ab and cd. Then,",
+   "options": {
+    "A": "$\\mathrm{I}_{1}>\\mathrm{I}_{2}$",
+    "B": "$\\mathrm{I}_{1}<\\mathrm{I}_{2}$",
+    "C": "$\\mathrm{I}_{1}$ is in the direction ba and $\\mathrm{I}_{2}$ is in the direction cd",
+    "D": "$\\mathrm{I}_{1}$ is in the direction ab and $\\mathrm{I}_{2}$ is in the direction dc\n\nSol. (D)\nAccording to Lenz's law, current will be in anticlockwise sense as magnetic field is increasing into the plane of paper."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\nAccording to Lenz's law, current will be in anticlockwise sense as magnetic field is increasing into the plane of paper."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 43,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Two small particles of equal masses start moving in opposite directions from a point A in a horizontal circular orbit. Their tangential velocities are v and 2v respectively, as shown in the figure. Between collisions, the particles move with constant speeds. After making how many elastic collisions, other than that at A, these two particles will again reach the point A ?",
+   "options": {
+    "A": "4",
+    "B": "3",
+    "C": "2",
+    "D": "1\n\nSol. (C)\nVelocity will exchange after each collision"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\nVelocity will exchange after each collision"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 44,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A disk of radius a/4 having a uniformly distributed charge 6C is placed in the $\\mathrm{x}-\\mathrm{y}$ plane with its centre at $(-\\mathrm{a} / 2,0,0)$. A rod of length a carrying a uniformly distributed charge 8C is placed on the x-axis from x=a/4 to $\\mathrm{x}=5 \\mathrm{a} / 4$. Two point charges -7C and 3C are placed at (a/4, -a/4, 0) and ( $-3 \\mathrm{a} / 4,3 \\mathrm{a} / 4,0$ ), respectively. Consider a cubical surface formed by six surfaces $\\mathrm{x}= \\pm \\mathrm{a} / 2, \\mathrm{y}= \\pm \\mathrm{a} / 2, \\mathrm{z}= \\pm \\mathrm{a} / 2$. The electric flux through this cubical surface is",
+   "options": {
+    "A": "$\\frac{-2 \\mathrm{C}}{\\varepsilon_{0}}$",
+    "B": "$\\frac{2 \\mathrm{C}}{\\varepsilon_{0}}$",
+    "C": "$\\frac{10 \\mathrm{C}}{\\varepsilon_{0}}$",
+    "D": "$\\frac{12 \\mathrm{C}}{\\varepsilon_{0}}$\n\nSol. (A)\nTotal charge enclosed by cube is -2 C . Hence electric flux through the cube is $\\frac{-2 \\mathrm{C}}{\\varepsilon_{0}}$.\n\nIITJEE2009-Paper 1-CMP -18"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nTotal charge enclosed by cube is -2 C . Hence electric flux through the cube is $\\frac{-2 \\mathrm{C}}{\\varepsilon_{0}}$.",
+     "IITJEE2009-Paper 1-CMP -18"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 45,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Three concentric metallic spherical shells of radii $\\mathrm{R}, 2 \\mathrm{R}, 3 \\mathrm{R}$, are given charges $\\mathrm{Q}_{1}, \\mathrm{Q}_{2}, \\mathrm{Q}_{3}$, respectively. It is found that the surface charge densities on the outer surfaces of the shells are equal. Then, the ratio of the charges given to the shells, $\\mathrm{Q}_{1}: \\mathrm{Q}_{2}: \\mathrm{Q}_{3}$, is",
+   "options": {
+    "A": "1 : 2 : 3",
+    "B": "$1: 3: 5$",
+    "C": "$1: 4: 9$",
+    "D": "$1: 8: 18$\n\nSol. (B)\n$$\\begin{array}{l}\n\\frac{\\mathrm{Q}_{1}}{4 \\pi \\mathrm{R}^{2}}=\\frac{\\mathrm{Q}_{1}+\\mathrm{Q}_{2}}{4 \\pi(2 \\mathrm{R})^{2}}=\\frac{\\mathrm{Q}_{1}+\\mathrm{Q}_{2}+\\mathrm{Q}_{3}}{4 \\pi(3 \\mathrm{R})^{2}} \\\\\n\\Rightarrow \\mathrm{Q}_{1}: \\mathrm{Q}_{2}: \\mathrm{Q}_{3}:: 1: 3: 5\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$$\\begin{array}{l}\n\\frac{\\mathrm{Q}_{1}}{4 \\pi \\mathrm{R}^{2}}=\\frac{\\mathrm{Q}_{1}+\\mathrm{Q}_{2}}{4 \\pi(2 \\mathrm{R})^{2}}=\\frac{\\mathrm{Q}_{1}+\\mathrm{Q}_{2}+\\mathrm{Q}_{3}}{4 \\pi(3 \\mathrm{R})^{2}} \\\\\n\\Rightarrow \\mathrm{Q}_{1}: \\mathrm{Q}_{2}: \\mathrm{Q}_{3}:: 1: 3: 5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 46,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The x-t graph of a particle undergoing simple harmonic motion is shown below. The acceleration of the particle at $\\mathrm{t}=4 / 3 \\mathrm{~s}$ is",
+   "options": {
+    "A": "$\\frac{\\sqrt{3}}{32} \\pi^{2} \\mathrm{~cm} / \\mathrm{s}^{2}$",
+    "B": "$\\frac{-\\pi^{2}}{32} \\mathrm{~cm} / \\mathrm{s}^{2}$",
+    "C": "$\\frac{\\pi^{2}}{32} \\mathrm{~cm} / \\mathrm{s}^{2}$",
+    "D": "$-\\frac{\\sqrt{3}}{32} \\pi^{2} \\mathrm{~cm} / \\mathrm{s}^{2}$\n\nSol. (D)\nThe given motion is represented by\n$$\\begin{array}{l}\n\\mathrm{x}=1 \\sin (\\pi / 4) \\mathrm{t} \\\\\n\\frac{\\mathrm{~d}^{2} \\mathrm{x}}{\\mathrm{dt}^{2}}=\\frac{-\\pi^{2}}{16} \\sin (\\pi / 4) \\mathrm{t} \\\\\n\\mathrm{At} \\mathrm{t}=4 / 3 \\mathrm{sec}, \\\\\n\\frac{\\mathrm{~d}^{2} \\mathrm{x}}{\\mathrm{dt}^{2}}=-\\frac{\\sqrt{3}}{32} \\pi^{2} \\mathrm{~cm} / \\mathrm{s}^{2} .\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\nThe given motion is represented by\n$$\\begin{array}{l}\n\\mathrm{x}=1 \\sin (\\pi / 4) \\mathrm{t} \\\\\n\\frac{\\mathrm{~d}^{2} \\mathrm{x}}{\\mathrm{dt}^{2}}=\\frac{-\\pi^{2}}{16} \\sin (\\pi / 4) \\mathrm{t} \\\\\n\\mathrm{At} \\mathrm{t}=4 / 3 \\mathrm{sec}, \\\\\n\\frac{\\mathrm{~d}^{2} \\mathrm{x}}{\\mathrm{dt}^{2}}=-\\frac{\\sqrt{3}}{32} \\pi^{2} \\mathrm{~cm} / \\mathrm{s}^{2} .\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 47,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A ball is dropped from a height of 20 m above the surface of water in a lake. The refractive index of water is 4/3. A fish inside the lake, in the line of fall of the ball, is looking at the ball. At an instant, when the ball is 12.8 m above the water surface, the fish sees the speed of ball as",
+   "options": {
+    "A": "$9 \\mathrm{~m} / \\mathrm{s}$",
+    "B": "$12 \\mathrm{~m} / \\mathrm{s}$",
+    "C": "$16 \\mathrm{~m} / \\mathrm{s}$",
+    "D": "$21.33 \\mathrm{~m} / \\mathrm{s}$\n\nSol. (C)\n$$\\begin{array}{l}\nv_{\\text {ball }}^{2}=2 \\times 10 \\times 7.2 \\\\\n\\Rightarrow v=12 \\mathrm{~m} / \\mathrm{s} \\\\\nx_{\\text {image of ball }}=\\frac{4}{3} x_{\\text {ball }} \\\\\nv_{\\text {image of ball }}=\\frac{4}{3} v_{\\text {ball }}=\\frac{4}{3} \\times 12=16 \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C)\n$$\\begin{array}{l}\nv_{\\text {ball }}^{2}=2 \\times 10 \\times 7.2 \\\\\n\\Rightarrow v=12 \\mathrm{~m} / \\mathrm{s} \\\\\nx_{\\text {image of ball }}=\\frac{4}{3} x_{\\text {ball }} \\\\\nv_{\\text {image of ball }}=\\frac{4}{3} v_{\\text {ball }}=\\frac{4}{3} \\times 12=16 \\mathrm{~m} / \\mathrm{s}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 48,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A block of base 10 cm × 10 cm and height 15 cm is kept on an inclined plane. The coefficient of friction between them is $\\sqrt{3}$. The inclination $\\theta$ of this inclined plane from the horizontal plane is gradually increased from 0°. Then",
+   "options": {
+    "A": "at $\\theta=30^{\\circ}$, the block will start sliding down the plane",
+    "B": "the block will remain at rest on the plane up to certain $\\theta$ and then it will topple",
+    "C": "at $\\theta=60^{\\circ}$, the block will start sliding down the plane and continue to do so at higher angles",
+    "D": "at $\\theta=60^{\\circ}$, the block will start sliding down the plane and on further increasing $\\theta$, it will topple at certain $\\theta$\n\nIITJEE2009-Paper 1-CMP-19\n\nSol. (B)\nFor sliding, $\\tan \\theta \\geq \\sqrt{3} \\quad(=1.732)$\nFor toppling, $\\tan \\theta \\geq \\frac{2}{3} \\quad(=0.67)$\n\nF.B.D. at just toppling condition.\n\nSECTION - II\nMultiple Correct Choice Type\nThis section contains 4 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONE OR MORE is /are correct."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\nFor sliding, $\\tan \\theta \\geq \\sqrt{3} \\quad(=1.732)$\nFor toppling, $\\tan \\theta \\geq \\frac{2}{3} \\quad(=0.67)$",
+     "F.B.D. at just toppling condition.",
+     "SECTION - II\nMultiple Correct Choice Type\nThis section contains 4 multiple choice questions. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONE OR MORE is /are correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 49,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "For the circuit shown in the figure",
+   "options": {
+    "A": "the current I through the battery is 7.5 mA",
+    "B": "the potential difference across $\\mathrm{R}_{\\mathrm{L}}$ is 18 V",
+    "C": "ratio of powers dissipated in $\\mathrm{R}_{1}$ and $\\mathrm{R}_{2}$ is 3",
+    "D": "if $\\mathrm{R}_{1}$ and $\\mathrm{R}_{2}$ are interchanged, magnitude of the power dissipated in $\\mathrm{R}_{\\mathrm{L}}$ will decrease by a factor of 9 .\n\nSol. (A \\& D)\n$$\\begin{array}{l}\n24-2 \\times 10^{3} \\mathrm{I}-6 \\times 10^{3}(\\mathrm{I}-\\mathrm{i})=0 \\\\\n24-2 \\times 10^{3} \\mathrm{I}-1.5 \\times 10^{3} \\mathrm{i}=0 \\\\\n\\text { Hence } \\mathrm{I}=7.5 \\mathrm{~mA} \\\\\n\\mathrm{i}=6 \\mathrm{~mA}\n\\end{array}$$\n$$\\begin{array}{l}\n24-6 \\times 10^{3} \\mathrm{I}^{\\prime}-2 \\times 10^{3}\\left(\\mathrm{I}^{\\prime}-\\mathrm{i}^{\\prime}\\right)=0 \\\\\n24-6 \\times 10^{3} \\mathrm{I}^{\\prime}-1.5 \\times 10^{3} \\mathrm{i}^{\\prime}=0 \\\\\n\\mathrm{I}^{\\prime}=3.5 \\mathrm{~mA} \\\\\n\\mathrm{i}^{\\prime}=2 \\mathrm{~mA} \\\\\n\\frac{\\mathrm{P}_{1}}{\\mathrm{P}_{2}}=\\frac{6^{2}}{2^{2}}=9\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A \\& D)\n$$\\begin{array}{l}\n24-2 \\times 10^{3} \\mathrm{I}-6 \\times 10^{3}(\\mathrm{I}-\\mathrm{i})=0 \\\\\n24-2 \\times 10^{3} \\mathrm{I}-1.5 \\times 10^{3} \\mathrm{i}=0 \\\\\n\\text { Hence } \\mathrm{I}=7.5 \\mathrm{~mA} \\\\\n\\mathrm{i}=6 \\mathrm{~mA}\n\\end{array}$$\n$$\\begin{array}{l}\n24-6 \\times 10^{3} \\mathrm{I}^{\\prime}-2 \\times 10^{3}\\left(\\mathrm{I}^{\\prime}-\\mathrm{i}^{\\prime}\\right)=0 \\\\\n24-6 \\times 10^{3} \\mathrm{I}^{\\prime}-1.5 \\times 10^{3} \\mathrm{i}^{\\prime}=0 \\\\\n\\mathrm{I}^{\\prime}=3.5 \\mathrm{~mA} \\\\\n\\mathrm{i}^{\\prime}=2 \\mathrm{~mA} \\\\\n\\frac{\\mathrm{P}_{1}}{\\mathrm{P}_{2}}=\\frac{6^{2}}{2^{2}}=9\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 50,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "$\\mathrm{C}_{\\mathrm{v}}$ and $\\mathrm{C}_{\\mathrm{p}}$ denote the molar specific heat capacities of a gas at constant volume and constant pressure, respectively. Then",
+   "options": {
+    "A": "$\\mathrm{C}_{\\mathrm{p}}-\\mathrm{C}_{\\mathrm{v}}$ is larger for a diatomic ideal gas than for a monoatomic ideal gas.",
+    "B": "$\\mathrm{C}_{\\mathrm{p}}+\\mathrm{C}_{\\mathrm{v}}$ is larger for a diatomic ideal gas than for a monoatomic ideal gas.",
+    "C": "$\\mathrm{C}_{\\mathrm{p}} / \\mathrm{C}_{\\mathrm{v}}$ is larger for a diatomic ideal gas than for a monoatomic ideal gas.",
+    "D": "$\\mathrm{C}_{\\mathrm{p}} . \\mathrm{C}_{\\mathrm{v}}$ is larger for a diatomic ideal gas than for a monoatomic ideal gas.\n\nIITJEE2009-Paper 1-CMP -20\n\nSol. (B \\& D)\nFor Monoatomic gas\n$$C_{v}=\\frac{3}{2} R, \\quad C_{p}=\\frac{5}{2} R$$\n\nFor diatomic gas\n$$C_{v}=\\frac{5}{2} R \\quad C_{p}=\\frac{7}{5} R$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B \\& D)\nFor Monoatomic gas\n$$C_{v}=\\frac{3}{2} R, \\quad C_{p}=\\frac{5}{2} R$$",
+     "For diatomic gas\n$$C_{v}=\\frac{5}{2} R \\quad C_{p}=\\frac{7}{5} R$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 51,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "A student performed the experiment of determination of focal length of a concave mirror by $\\mathbf{u}-\\mathbf{v}$ method using an optical bench of length 1.5 meter. The focal length of the mirror used is 24 cm . The maximum error in the location of the image can be 0.2 cm. The 5 sets of (u, v) values recorded by the student (in cm) are: (42, 56), (48, 48), (60, 40), (66, 33), (78, 39). The data set(s) that cannot come from experiment and is (are) incorrectly recorded, is (are)",
+   "options": {
+    "A": "$(42,56)$",
+    "B": "$(48,48)$",
+    "C": "$(66,33)$",
+    "D": "$(78,39)$\n\nSol. (C \\& D)\n$\\frac{1}{\\mathrm{f}}=\\frac{1}{\\mathrm{v}}+\\frac{1}{\\mathrm{u}} \\quad$ (mirror formula)\n$\\mathrm{f}=-24 \\mathrm{~cm}$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(C \\& D)\n$\\frac{1}{\\mathrm{f}}=\\frac{1}{\\mathrm{v}}+\\frac{1}{\\mathrm{u}} \\quad$ (mirror formula)\n$\\mathrm{f}=-24 \\mathrm{~cm}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 52,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "If the resultant of all the external forces acting on a system of particles is zero, then from an inertial frame, one can surely say that",
+   "options": {
+    "A": "linear momentum of the system does not change in time",
+    "B": "kinetic energy of the system does not change in time",
+    "C": "angular momentum of the system does not change in time",
+    "D": "potential energy of the system does not change in time\n\nSol. (A)\nLinear momentum remains constant if net external force on the system of particles is zero.\nSECTION-III\nComprehension Type\nThis section contains 2 groups of questions. Each group has 3 multiple choice questions based on a paragraph. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct.\n\nParagraph for Question Nos. 53 to 55\nWhen a particle is restricted to move along x -axis between $\\mathrm{x}=0$ and $\\mathrm{x}=\\mathrm{a}$, where a is of nanometer dimension, its energy can take only certain specific values. The allowed energies of the particle moving in such a restricted region, correspond to the formation of standing waves with nodes at its ends $\\mathrm{x}=0$ and $\\mathrm{x}=\\mathrm{a}$. The wavelength of this standing wave is related to the linear momentum $p$ of the particle according to the de Broglie relation. The energy of the particle of mass m is related to its linear momentum as $\\mathrm{E}=\\mathrm{p}^{2} / 2 \\mathrm{~m}$. Thus, the energy of the particle can be denoted by a quantum number 'n' taking values 1,2,3,.... (n = 1, called the ground state) corresponding to the number of loops in the standing wave.\n\nUse the model described above to answer the following three questions for a particle moving in the line $\\mathrm{x}=0$ to $\\mathrm{x}=\\mathrm{a}$. Take $\\mathrm{h}=6.6 \\times 10^{-34} \\mathrm{Js}$ and $\\mathrm{e}=1.6 \\times 10^{-19} \\mathrm{C}$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\nLinear momentum remains constant if net external force on the system of particles is zero.\nSECTION-III\nComprehension Type\nThis section contains 2 groups of questions. Each group has 3 multiple choice questions based on a paragraph. Each question has 4 choices (A), (B), (C) and (D) for its answer, out of which ONLY ONE is correct.",
+     "Paragraph for Question Nos. 53 to 55\nWhen a particle is restricted to move along x -axis between $\\mathrm{x}=0$ and $\\mathrm{x}=\\mathrm{a}$, where a is of nanometer dimension, its energy can take only certain specific values. The allowed energies of the particle moving in such a restricted region, correspond to the formation of standing waves with nodes at its ends $\\mathrm{x}=0$ and $\\mathrm{x}=\\mathrm{a}$. The wavelength of this standing wave is related to the linear momentum $p$ of the particle according to the de Broglie relation. The energy of the particle of mass m is related to its linear momentum as $\\mathrm{E}=\\mathrm{p}^{2} / 2 \\mathrm{~m}$. Thus, the energy of the particle can be denoted by a quantum number 'n' taking values 1,2,3,.... (n = 1, called the ground state) corresponding to the number of loops in the standing wave.",
+     "Use the model described above to answer the following three questions for a particle moving in the line $\\mathrm{x}=0$ to $\\mathrm{x}=\\mathrm{a}$. Take $\\mathrm{h}=6.6 \\times 10^{-34} \\mathrm{Js}$ and $\\mathrm{e}=1.6 \\times 10^{-19} \\mathrm{C}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 53,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The allowed energy for the particle for a particular value of n is proportional to",
+   "options": {
+    "A": "$\\mathrm{a}^{-2}$",
+    "B": "$\\mathrm{a}^{-3 / 2}$",
+    "C": "$\\mathrm{a}^{-1}$",
+    "D": "$\\mathrm{a}^{2}$\n\nIITJEE2009-Paper 1-CMP-21\n\nSol. (A)\n$$\\begin{array}{l}\n\\mathrm{a}=\\frac{\\mathrm{n} \\lambda}{2} \\Rightarrow \\lambda=\\frac{2 \\mathrm{a}}{\\mathrm{n}} \\\\\n\\lambda_{\\text {deBroglic }}=\\frac{\\mathrm{h}}{\\mathrm{p}} \\\\\n\\frac{2 \\mathrm{a}}{\\mathrm{n}}=\\frac{\\mathrm{h}}{\\mathrm{p}} \\Rightarrow \\mathrm{p}=\\frac{\\mathrm{nh}}{2 \\mathrm{a}} \\\\\n\\mathrm{E}=\\frac{\\mathrm{p}^{2}}{2 \\mathrm{~m}}=\\frac{\\mathrm{n}^{2} \\mathrm{~h}^{2}}{8 \\mathrm{a}^{2} \\mathrm{~m}} \\\\\n\\Rightarrow \\mathrm{E} \\propto 1 / \\mathrm{a}^{2}\n\\end{array}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$$\\begin{array}{l}\n\\mathrm{a}=\\frac{\\mathrm{n} \\lambda}{2} \\Rightarrow \\lambda=\\frac{2 \\mathrm{a}}{\\mathrm{n}} \\\\\n\\lambda_{\\text {deBroglic }}=\\frac{\\mathrm{h}}{\\mathrm{p}} \\\\\n\\frac{2 \\mathrm{a}}{\\mathrm{n}}=\\frac{\\mathrm{h}}{\\mathrm{p}} \\Rightarrow \\mathrm{p}=\\frac{\\mathrm{nh}}{2 \\mathrm{a}} \\\\\n\\mathrm{E}=\\frac{\\mathrm{p}^{2}}{2 \\mathrm{~m}}=\\frac{\\mathrm{n}^{2} \\mathrm{~h}^{2}}{8 \\mathrm{a}^{2} \\mathrm{~m}} \\\\\n\\Rightarrow \\mathrm{E} \\propto 1 / \\mathrm{a}^{2}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 54,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "If the mass of the particle is $\\mathrm{m}=1.0 \\times 10^{-30} \\mathrm{~kg}$ and $\\mathrm{a}=6.6 \\mathrm{~nm}$, the energy of the particle in its ground state is closest to",
+   "options": {
+    "A": "0.8 meV",
+    "B": "8 meV",
+    "C": "80 meV",
+    "D": "800 meV\n\nSol. (B)\n$$\\mathrm{E}=\\frac{\\mathrm{h}^{2}}{8 \\mathrm{a}^{2} \\mathrm{~m}}=\\frac{\\left(6.6 \\times 10^{-34}\\right)^{2}}{8 \\times\\left(6.6 \\times 10^{-9}\\right)^{2} \\times 10^{-30} \\times 1.6 \\times 10^{-19}}=8 \\mathrm{meV}$$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$$\\mathrm{E}=\\frac{\\mathrm{h}^{2}}{8 \\mathrm{a}^{2} \\mathrm{~m}}=\\frac{\\left(6.6 \\times 10^{-34}\\right)^{2}}{8 \\times\\left(6.6 \\times 10^{-9}\\right)^{2} \\times 10^{-30} \\times 1.6 \\times 10^{-19}}=8 \\mathrm{meV}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 55,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The speed of the particle that can take discrete values is proportional to",
+   "options": {
+    "A": "$\\mathrm{n}^{-3 / 2}$",
+    "B": "$\\mathrm{n}^{-1}$",
+    "C": "$\\mathrm{n}^{1 / 2}$",
+    "D": "n\n\nSol. (D)\n$$\\begin{array}{l}\n\\mathrm{mv}=\\frac{\\mathrm{nh}}{2 \\mathrm{a}} \\\\\n\\mathrm{v}=\\frac{\\mathrm{nh}}{2 \\mathrm{am}} \\\\\n\\mathrm{v} \\propto \\mathrm{n}\n\\end{array}$$\n\nParagraph for Question Nos. 56 to 58\nScientists are working hard to develop nuclear fusion reactor. Nuclei of heavy hydrogen, ${ }_{1}^{2} \\mathrm{H}$ known as deuteron and denoted by D can be thought of as a candidate for fusion reactor. The D-D reaction is ${ }_{1}^{2} \\mathrm{H}+{ }_{1}^{2} \\mathrm{H} \\rightarrow{ }_{2}^{3} \\mathrm{He}+\\mathrm{n}+$ energy. In the core of fusion reactor, a gas of heavy hydrogen is fully ionized into deuteron nuclei and electrons. This collection of ${ }_{1}^{2} \\mathrm{H}$ nuclei and electrons is known as plasma. The nuclei move randomly in the reactor core and occasionally come close enough for nuclear fusion to take place. Usually, the temperatures in the reactor core are too high and no material wall can be used to confine the plasma. Special techniques are used which confine the plasma for a time $\\mathrm{t}_{0}$ before the particles fly away from the core. If n is the density (number/volume) of deuterons, the product $\\mathrm{nt}_{0}$ is called Lawson number. In one of the criteria, a reactor is termed successful if Lawson number is greater than $5 \\times 10^{14} \\mathrm{~s} / \\mathrm{cm}^{3}$.\nIt may be helpful to use the following: Boltzmann constant $\\mathrm{k}=8.6 \\times 10^{-5} \\mathrm{eV} / \\mathrm{K} ; \\frac{\\mathrm{e}^{2}}{4 \\pi \\varepsilon_{0}}=1.44 \\times 10^{-9} \\mathrm{eVm}$."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)\n$$\\begin{array}{l}\n\\mathrm{mv}=\\frac{\\mathrm{nh}}{2 \\mathrm{a}} \\\\\n\\mathrm{v}=\\frac{\\mathrm{nh}}{2 \\mathrm{am}} \\\\\n\\mathrm{v} \\propto \\mathrm{n}\n\\end{array}$$",
+     "Paragraph for Question Nos. 56 to 58\nScientists are working hard to develop nuclear fusion reactor. Nuclei of heavy hydrogen, ${ }_{1}^{2} \\mathrm{H}$ known as deuteron and denoted by D can be thought of as a candidate for fusion reactor. The D-D reaction is ${ }_{1}^{2} \\mathrm{H}+{ }_{1}^{2} \\mathrm{H} \\rightarrow{ }_{2}^{3} \\mathrm{He}+\\mathrm{n}+$ energy. In the core of fusion reactor, a gas of heavy hydrogen is fully ionized into deuteron nuclei and electrons. This collection of ${ }_{1}^{2} \\mathrm{H}$ nuclei and electrons is known as plasma. The nuclei move randomly in the reactor core and occasionally come close enough for nuclear fusion to take place. Usually, the temperatures in the reactor core are too high and no material wall can be used to confine the plasma. Special techniques are used which confine the plasma for a time $\\mathrm{t}_{0}$ before the particles fly away from the core. If n is the density (number/volume) of deuterons, the product $\\mathrm{nt}_{0}$ is called Lawson number. In one of the criteria, a reactor is termed successful if Lawson number is greater than $5 \\times 10^{14} \\mathrm{~s} / \\mathrm{cm}^{3}$.\nIt may be helpful to use the following: Boltzmann constant $\\mathrm{k}=8.6 \\times 10^{-5} \\mathrm{eV} / \\mathrm{K} ; \\frac{\\mathrm{e}^{2}}{4 \\pi \\varepsilon_{0}}=1.44 \\times 10^{-9} \\mathrm{eVm}$."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 56,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "In the core of nuclear fusion reactor, the gas becomes plasma because of",
+   "options": {
+    "A": "strong nuclear force acting between the deuterons",
+    "B": "Coulomb force acting between the deuterons",
+    "C": "Coulomb force acting between deuteron-electron pairs",
+    "D": "the high temperature maintained inside the reactor core\n\nSol. (D)\n\nIITJEE2009-Paper 1-CMP -22"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(D)",
+     "IITJEE2009-Paper 1-CMP -22"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 57,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Assume that two deuteron nuclei in the core of fusion reactor at temperature T are moving towards each other, each with kinetic energy 1.5 kT, when the separation between them is large enough to neglect Coulomb potential energy. Also neglect any interaction from other particles in the core. The minimum temperature T required for them to reach a separation of $4 \\times 10^{-15} \\mathrm{~m}$ is in the range",
+   "options": {
+    "A": "$1.0 \\times 10^{9} \\mathrm{~K}<\\mathrm{T}<2.0 \\times 10^{9} \\mathrm{~K}$",
+    "B": "$2.0 \\times 10^{9} \\mathrm{~K}<\\mathrm{T}<3.0 \\times 10^{9} \\mathrm{~K}$",
+    "C": "$3.0 \\times 10^{9} \\mathrm{~K}<\\mathrm{T}<4.0 \\times 10^{9} \\mathrm{~K}$",
+    "D": "$4.0 \\times 10^{9} \\mathrm{~K}<\\mathrm{T}<5.0 \\times 10^{9} \\mathrm{~K}$\n\nSol. (A)\n$2 \\times 1.5 \\mathrm{kT}=\\frac{\\mathrm{e}^{2}}{4 \\pi \\varepsilon_{0} \\mathrm{~d}}$ (conservation of energy)\n$\\mathrm{T}=1.4 \\times 10^{9} \\mathrm{~K}$"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n$2 \\times 1.5 \\mathrm{kT}=\\frac{\\mathrm{e}^{2}}{4 \\pi \\varepsilon_{0} \\mathrm{~d}}$ (conservation of energy)\n$\\mathrm{T}=1.4 \\times 10^{9} \\mathrm{~K}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 58,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Results of calculations for four different designs of a fusion reactor using D-D reaction are given below. Which of these is most promising based on Lawson criterion?",
+   "options": {
+    "A": "deuteron density $=2.0 \\times 10^{12} \\mathrm{~cm}^{-3}$, confinement time $=5.0 \\times 10^{-3} \\mathrm{~s}$",
+    "B": "deuteron density $=8.0 \\times 10^{14} \\mathrm{~cm}^{-3}$, confinement time $=9.0 \\times 10^{-1} \\mathrm{~s}$",
+    "C": "deuteron density $=4.0 \\times 10^{23} \\mathrm{~cm}^{-3}$, confinement time $=1.0 \\times 10^{-11} \\mathrm{~s}$",
+    "D": "deuteron density $=1.0 \\times 10^{24} \\mathrm{~cm}^{-3}$, confinement time $=4.0 \\times 10^{-12} \\mathrm{~s}$\n\nSol. (B)\n$\\mathrm{nt}_{0}>5 \\times 10^{14}$ (as given)\n\nIITJEE2009-Paper 1-CMP-23\n\nSECTION - IV\nMatrix-Match Type\nThis section contains 2 questions. Each question contains statements given in two columns which have to be matched. The statements in Column I are labelled A, B, C and D, while the statements in Column II are labeled $p, q, r, s$ and $t$. Any given statement in Column I can have correct matching with ONE OR MORE statement(s) in Column II. The appropriate bubbles corresponding to the answers to these questions have to be darkened as illustrated in the following example:\nIf the correct matches are $A-p, s$ and $t ; B-q$ and $r ; C-p$ and $q$; and $D-s$ and $t$; then the correct darkening of bubbles will look like the following."
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(B)\n$\\mathrm{nt}_{0}>5 \\times 10^{14}$ (as given)",
+     "IITJEE2009-Paper 1-CMP-23",
+     "SECTION - IV\nMatrix-Match Type\nThis section contains 2 questions. Each question contains statements given in two columns which have to be matched. The statements in Column I are labelled A, B, C and D, while the statements in Column II are labeled $p, q, r, s$ and $t$. Any given statement in Column I can have correct matching with ONE OR MORE statement(s) in Column II. The appropriate bubbles corresponding to the answers to these questions have to be darkened as illustrated in the following example:\nIf the correct matches are $A-p, s$ and $t ; B-q$ and $r ; C-p$ and $q$; and $D-s$ and $t$; then the correct darkening of bubbles will look like the following."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 59,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Column II shows five systems in which two objects are labelled as X and Y . Also in each case a point P is shown. Column I gives some statements about X and/or Y. Match these statements to the appropriate system(s) from Column II.\nColumn - I",
+   "options": {
+    "A": "The force exerted by X on Y has a magnitude Mg .",
+    "B": "The gravitational potential energy of X is continuously increasing.\n\nMechanical energy of the system X + Y is continuously decreasing.\n\nThe torque of the weight of Y about point P is zero.\n(p)\n(q)\n(r)\n(s)\n(t)\n\nColumn II\nBlock Y of mass M left on a fixed inclined plane X, slides on it with a constant velocity.\n\nTwo ring magnets Y and Z , each of mass M , are kept in frictionless vertical plastic stand so that they repel each other. Y rests on the base X and Z hangs in air in equilibrium. P is the topmost point of the stand on the common axis of the two rings. The whole system is in a lift that is going up with a constant velocity.\n\nA pulley Y of mass $\\mathrm{m}_{0}$ is fixed to a table through a clamp X. A block of mass M hangs from a string that goes over the pulley and is fixed at point P of the table. The whole system is kept in a lift that is going down with a constant velocity\n\nA sphere Y of mass M is put in a nonviscous liquid X kept in a container at rest. The sphere is released and it moves down in the liquid.\nA sphere Y of mass M is falling with its terminal velocity in a viscous liquid X kept in a container.\n\nIITJEE2009-Paper 1-CMP -24\n\nSol. (A) → (p, t), (B) → (q, s, t),",
+    "C": "→ (p, r, t),",
+    "D": "→ (q)"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A) → (p, t), (B) → (q, s, t), (C) → (p, r, t), (D) → (q)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 60,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Six point charges, each of the same magnitude q, are arranged in different manners as shown in Column II. In each case, a point M and a line PQ passing through M are shown. Let E be the electric field and V be the electric potential at M (potential at infinity is zero) due to the given charge distribution when it is at rest. Now, the whole system is set into rotation with a constant angular velocity about the line PQ. Let B the magnetic field at M and $\\mu$ be the magnetic moment of the system in this condition. Assume each rotating charge to be equivalent to a steady current.\nColumn - I",
+   "options": {
+    "A": "$\\mathrm{E}=0$",
+    "B": "$\\mathrm{V} \\neq 0$",
+    "C": "$\\mathrm{B}=0$",
+    "D": "$\\mu \\neq 0$\n(p)\n(q)\n(r)\n(s)\n(t)\n\nColumn II\nCharges are at the corners of a regular hexagon. M is at the centre of the hexagon. PQ is perpendicular to the plane of the hexagon.\n\nCharges are on a line perpendicular to PQ at equal intervals. M is the mid-point between the two innermost charges.\nCharges are placed on two coplanar insulating rings at equal intervals. M is the common centre of the rings. PQ is perpendicular to the plane of the rings.\n\nCharges are placed at the corners of a rectangle of sides a and 2a and at the mid points of the longer sides. M is at the centre of the rectangle. PQ is parallel to the longer sides.\nCharges are placed on two coplanar, identical insulating rings at equal intervals. M is the mid points between the centres of the rings. PQ is perpendicular to the line joining the centers and coplanar to the rings.\n\nSol. (A) → (p, r, s), (B) → (r, s), (C) → (p, q, t), (D) → (r, s)\n\n* * * * *"
+   },
+   "embedded_answer": null,
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A) → (p, r, s), (B) → (r, s), (C) → (p, q, t), (D) → (r, s)",
+     "* * * * *"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

@@ -1,61 +1,2344 @@
 {
+ "paper_id": "jee-main-2025-s1-2025-01-29-shift-1-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2025-s1-2025-01-29-shift-1-2",
+  "exam": "jee-main",
+  "year": 2025,
+  "session": 1,
+  "exam_date": "2025-01-29",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2025-s1-2025-01-29-shift-1-2",
-    "exam": "jee-main",
-    "year": 2025,
-    "session": 1,
-    "exam_date": "2025-01-29",
-    "shift": 1,
-    "paper_type": "question_paper",
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2025/jee-main-29-jan-2025-paper-shift-1/1150904",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/aqOwgPvuEZzZ4P0889jR",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/02/2025021053.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "a17b2947a76fcab4990dc5593368d3e062d71dd6bea1f973e13e9597d2a3cc73",
+  "page_count": 22,
+  "text_chars": 0,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2025-s1-2025-01-29-shift-1-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/02/2025021053.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
     "subject": null,
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2025/jee-main-29-jan-2025-paper-shift-1/1150904",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/aqOwgPvuEZzZ4P0889jR",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/02/2025021053.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "112",
+     "value": "112"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "24",
+     "value": "24"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "1405",
+     "value": "1405"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 31,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 32,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 33,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 34,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 35,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 36,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 37,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 38,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 39,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 40,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 41,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 42,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 43,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 44,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 45,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 46,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 47,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "327",
+     "value": "327"
+    }
+   },
+   {
+    "qno": 48,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "6",
+     "value": "6"
+    }
+   },
+   {
+    "qno": 49,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "5",
+     "value": "5"
+    }
+   },
+   {
+    "qno": 50,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "2000",
+     "value": "2000"
+    }
+   },
+   {
+    "qno": 51,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 52,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 53,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 54,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 55,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 56,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 57,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 58,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "option": "D",
+     "option_index": 4
+    }
+   },
+   {
+    "qno": 59,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 60,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 61,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 62,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 63,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 64,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 65,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "value": "2"
+    }
+   },
+   {
+    "qno": 66,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 67,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "1",
+     "value": "1"
+    }
+   },
+   {
+    "qno": 68,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   },
+   {
+    "qno": 69,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "3",
+     "option": "C",
+     "option_index": 3
+    }
+   },
+   {
+    "qno": 70,
+    "question_id": null,
+    "subject": null,
+    "section": "Section A",
+    "answer": {
+     "raw": "4",
+     "value": "4"
+    }
+   },
+   {
+    "qno": 71,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "341",
+     "value": "341"
+    }
+   },
+   {
+    "qno": 72,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "160",
+     "value": "160"
+    }
+   },
+   {
+    "qno": 73,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "15",
+     "value": "15"
+    }
+   },
+   {
+    "qno": 74,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "16",
+     "value": "16"
+    }
+   },
+   {
+    "qno": 75,
+    "question_id": null,
+    "subject": null,
+    "section": "Section B",
+    "answer": {
+     "raw": "13",
+     "value": "13"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let the line $\\mathrm{x}+\\mathrm{y}=1$ meet the circle $\\mathrm{x}^{2}+\\mathrm{y}^{2}=4$ at the points A and B . If the line perpendicular to AB and passing through the mid point of the chord AB intersects the circle at C and D , then the area of the quadrilateral ADBC is equal to\n(1) $3 \\sqrt{7}$\n(2) $2 \\sqrt{14}$\n(3) $5 \\sqrt{7}$\n(4) $\\sqrt{14}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "By solving $\\mathrm{x}=\\mathrm{y}$ with circle\nWe get\n$$\\begin{array}{l}\n\\mathrm{C}(\\sqrt{2}, \\sqrt{2}) \\\\\n\\mathrm{D}(-\\sqrt{2},-\\sqrt{2})\n\\end{array}$$",
+     "By solving $\\mathrm{x}+\\mathrm{y}=1$ with circle $\\mathrm{x}^{2}+\\mathrm{y}^{2}=4$\nwe set\n$$\\begin{array}{l}\n\\mathrm{A}\\left(\\frac{1+\\sqrt{7}}{2}, \\frac{1-\\sqrt{7}}{2}\\right) \\\\\n\\& \\mathrm{~B}\\left(\\frac{1-\\sqrt{7}}{2}, \\frac{1+\\sqrt{7}}{2}\\right)\n\\end{array}$$\n∴ Area of Quadrilateral ACBD\n$=2 \\times$ Area of $\\triangle \\mathrm{BCD}$\n$$\\begin{array}{l}\n=2 \\times \\frac{1}{2}\\left|\\begin{array}{ccc}\n\\sqrt{2} & \\sqrt{2} & 1 \\\\\n\\frac{1-\\sqrt{7}}{2} & \\frac{1+\\sqrt{7}}{2} & 1 \\\\\n-\\sqrt{2} & -\\sqrt{2} & 1\n\\end{array}\\right| \\\\\n=2 \\sqrt{14}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "a17b2947a76fcab4990dc5593368d3e062d71dd6bea1f973e13e9597d2a3cc73",
-    "page_count": 22,
-    "text_chars": 0,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2025-s1-2025-01-29-shift-1-2.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let M and m respectively be the maximum and the minimum values of\n$$f(x)=\\left|\\begin{array}{ccc}\n1+\\sin ^{2} x & \\cos ^{2} x & 4 \\sin 4 x \\\\\n\\sin ^{2} x & 1+\\cos ^{2} x & 4 \\sin 4 x \\\\\n\\sin ^{2} x & \\cos ^{2} x & 1+4 \\sin 4 x\n\\end{array}\\right|, x \\in R$$\nThen $\\mathrm{M}^{4}-\\mathrm{m}^{4}$ is equal to :\n(1) 1280\n(2) 1295\n(3) 1040\n(4) 1215",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left|\\begin{array}{ccc}1+\\sin ^{2} x & \\cos ^{2} x & 4 \\sin 4 x \\\\ \\sin ^{2} x & 1+\\cos ^{2} x & 4 \\sin 4 x \\\\ \\sin ^{2} x & \\cos ^{2} x & 1+4 \\sin 4 x\\end{array}\\right|, x \\in R$\n$$\\begin{array}{l}\nR_{2} \\rightarrow R_{2}-R_{1} \\& R_{3} \\rightarrow R_{3}-R_{1} \\\\\nf(x)\\left|\\begin{array}{ccc}\n1+\\sin ^{2} x & \\cos ^{2} x & 4 \\sin 4 x \\\\\n-1 & 1 & 0 \\\\\n-1 & 0 & 1\n\\end{array}\\right|\n\\end{array}$$",
+     "Expand about $\\mathrm{R}_{1}$, we get\n$f(x)=2+4 \\sin 4 x$\n$\\therefore M=\\max$ value of $f(x)=6$\n$\\mathrm{m}=$ min value of $\\mathrm{f}(\\mathrm{x})=-2$\n$\\therefore \\mathrm{M}^{4}-\\mathrm{m}^{4}=1280$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/02/2025021053.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Two parabolas have the same focus $(4,3)$ and their directrices are the x-axis and the y-axis, respectively. If these parabolas intersects at the points A and B , then $(\\mathrm{AB})^{2}$ is equal to\n(1) 192\n(2) 384\n(3) 96\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let intersection points of these two parabolas are\n$$\\mathrm{A}\\left(\\mathrm{x}_{1}, \\mathrm{y}_{1}\\right) \\& \\mathrm{~B}\\left(\\mathrm{x}_{2}, \\mathrm{y}_{2}\\right)$$\n∵ equation of parabola I and II are given below\n$$\\begin{array}{l}\n\\therefore(\\mathrm{x}-4)^{2}+(\\mathrm{y}-3)^{2}=\\mathrm{x}^{2} \\\\\n\\&(\\mathrm{x}-4)^{2}+(\\mathrm{y}-3)^{2}=\\mathrm{y}^{2}\n\\end{array}$$",
+     "Here $\\mathrm{A}\\left(\\mathrm{x}_{1}, \\mathrm{y}_{1}\\right) \\& \\mathrm{~B}\\left(\\mathrm{x}_{2}, \\mathrm{y}_{2}\\right)$ will satisfy the equation Also from equations (1) \\& (2), we get $\\mathrm{x}=\\mathrm{y}$..(3) Put $\\mathrm{x}=\\mathrm{y}$ in equation (1)\nWe get $\\mathrm{x}^{2}-14 \\mathrm{x}+25=0$\n$$\\begin{array}{l}\n\\mathrm{x}_{1}+\\mathrm{x}_{2}=14 \\\\\n\\mathrm{x}_{1} \\mathrm{x}_{2}=25 \\\\\n\\therefore \\mathrm{AB}^{2}=\\left(\\mathrm{x}_{1}-\\mathrm{x}_{2}\\right)^{2}+\\left(\\mathrm{y}_{1}-\\mathrm{y}_{2}\\right)^{2} \\\\\n=2\\left(\\mathrm{x}_{1}-\\mathrm{x}_{2}\\right)^{2} \\\\\n=2\\left[\\left(\\mathrm{x}_{1}+\\mathrm{x}_{2}\\right)^{2}-4 \\mathrm{x}_{1} \\mathrm{x}_{2}\\right] \\\\\n=192\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let ABC be a triangle formed by the lines $7 \\mathrm{x}-6 \\mathrm{y}+3=0, \\mathrm{x}+2 \\mathrm{y}-31=0$ and $9 \\mathrm{x}-2 \\mathrm{y}-19=0$, Let the point (h,k) be the image of the centroid of $\\triangle \\mathrm{ABC}$ in the line $3 \\mathrm{x}+6 \\mathrm{y}-53=0$. Then $\\mathrm{h}^{2}+\\mathrm{k}^{2}+\\mathrm{hk}$ is equal to\n(1) 37\n(2) 47\n(3) 40\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\text { ∴ centroid of } \\begin{aligned}\n\\triangle \\mathrm{ABC} & =\\left(\\frac{9+3+5}{3}, \\frac{11+4+13}{3}\\right) \\\\\n& =\\left(\\frac{17}{3}, \\frac{28}{3}\\right)\n\\end{aligned}$$",
+     "Let image of centroid with respect to line mirror is (h,k)\n$$\\begin{array}{l}\n\\therefore\\left(\\frac{\\mathrm{k}-\\frac{28}{3}}{\\mathrm{~h}-\\frac{17}{3}}\\right)\\left(-\\frac{1}{2}\\right)=-1 \\\\\n\\& 3\\left(\\frac{\\mathrm{~h}+\\frac{17}{3}}{2}\\right)+6\\left(\\frac{\\mathrm{k}+\\frac{28}{3}}{2}\\right)=53\n\\end{array}$$",
+     "Solving (1) \\& (2) we get $\\mathrm{h}=3, \\mathrm{k}=4$\n$$\\therefore \\mathrm{h}^{2}+\\mathrm{k}^{2}+\\mathrm{hk}=37$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\overrightarrow{\\mathrm{a}}=2 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}, \\overrightarrow{\\mathrm{b}}=3 \\hat{\\mathrm{i}}-5 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ and $\\overrightarrow{\\mathrm{c}}$ be a vector such that $\\vec{a} \\times \\vec{c}=\\vec{c} \\times \\vec{b}$ and\n$$(\\overrightarrow{\\mathrm{a}}+\\overrightarrow{\\mathrm{c}}) \\cdot(\\overrightarrow{\\mathrm{b}}+\\overrightarrow{\\mathrm{c}})=168 . \\text { Then the maximum value }$$\nof $|\\overrightarrow{\\mathrm{c}}|^{2}$ is :\n(1) 77\n(2) 462\n(3) 308\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\vec{a}=2 \\hat{i}-\\hat{j}+3 \\hat{k}$\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{b}}=3 \\hat{\\mathrm{i}}-5 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}} \\\\\n\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{c}}=\\overrightarrow{\\mathrm{c}} \\times \\overrightarrow{\\mathrm{b}} \\\\\n\\overrightarrow{\\mathrm{a}} \\times \\overrightarrow{\\mathrm{c}}+\\overrightarrow{\\mathrm{b}} \\times \\overrightarrow{\\mathrm{c}}=0\n\\end{array}$$\n$$(\\overrightarrow{\\mathrm{a}}+\\overrightarrow{\\mathrm{b}}) \\times \\overrightarrow{\\mathrm{c}}=0$$\nusing equation (1)\n$$\\begin{array}{l}\n\\lambda|5 \\hat{\\mathrm{i}}-6 \\hat{\\mathrm{j}}+4 \\hat{\\mathrm{k}}|^{2}+77 \\lambda^{2}=154 \\\\\n77 \\lambda+77 \\lambda^{2}-154=0 \\\\\n\\lambda^{2}+\\lambda-2=0 \\\\\n\\lambda=-2,1\n\\end{array}$$\n∴ Maximum value of $|\\overrightarrow{\\mathrm{c}}|^{2}$ occurs when $\\lambda=-2$\n$$\\begin{array}{l}\n|\\overrightarrow{\\mathrm{c}}|^{2}=77 \\lambda^{2} \\\\\n=77 \\times 4 \\\\\n=308\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let P be the set of seven digit numbers with sum of their digits equal to 11. If the numbers in P are formed by using the digits 1,2 and 3 only, then the number of elements in the set P is :\n(1) 158\n(2) 173\n(3) 164\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(i) number of numbers created using\n$$1111133=\\frac{7!}{5!2!} \\Rightarrow 21$$\n(ii) number of numbers created using\n$$1111223=\\frac{7!}{4!2!} \\Rightarrow 105$$\n(iii) number of numbers created using\n$$\\begin{array}{l}\n1112222=\\frac{7!}{4!3!} \\Rightarrow 35 \\\\\n\\text { Total }=161\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let the area of the region $\\left\\{(x, y): 2 y \\leq x^{2}+3\\right.$,\n$$\\mathrm{y}+|\\mathrm{x}| \\leq 3, \\mathrm{y} \\geq|\\mathrm{x}-1|\\} \\text { be } \\mathrm{A} \\text {. Then } 6 \\mathrm{~A} \\text { is equal to: }$$\n(1) 16\n(2) 12\n(3) 18\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nA \\Rightarrow \\text { Rectangle ABDE - Area of region EDC } \\\\\nA \\Rightarrow 4-2 \\int_{0}^{1}(3-x)-\\left(\\frac{x^{2}+3}{2}\\right) d x \\\\\nA \\Rightarrow 4-2\\left\\{3 x-\\frac{x^{2}}{2}-\\frac{x^{3}}{6}-\\frac{3}{2} x\\right\\}_{0}^{1} \\\\\nA \\Rightarrow 4-2\\left\\{3-\\frac{1}{2}-\\frac{1}{6}-\\frac{3}{2}\\right\\}=\\frac{7}{3}\n\\end{array}$$",
+     "So 6A = 14"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The least value of n for which the number of integral terms in the Binomial expansion of $(\\sqrt[3]{7}+\\sqrt[12]{11})^{\\mathrm{n}}$ is 183 , is :\n(1) 2184\n(2) 2148\n(3) 2172\n(4) 2196",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "General term $={ }^{\\mathrm{n}} \\mathrm{C}_{\\mathrm{r}}\\left(7^{1 / 3}\\right)^{\\mathrm{n}-\\mathrm{r}}\\left(11^{1 / 12}\\right)^{\\mathrm{r}}$\n$$={ }^{n} \\mathrm{C}_{\\mathrm{r}}(7)^{\\frac{\\mathrm{n}-\\mathrm{r}}{3}}(11)^{\\mathrm{r} / 12}$$",
+     "For integral terms, r must be multiple of 12\n$$\\therefore r=12 k, k \\in W$$",
+     "Total values of $\\mathrm{r}=183$\nHence $\\max \\mathrm{r}=12(182)$\n$$=2184$$",
+     "Min value of $\\mathrm{n}=2184$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The number of solutions of the equation\n$$\\left(\\frac{9}{x}-\\frac{9}{\\sqrt{x}}+2\\right)\\left(\\frac{2}{x}-\\frac{7}{\\sqrt{x}}+3\\right)=0 \\text { is : }$$\n(1) 2\n(2) 4\n(3) 1\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Consider $\\frac{1}{\\sqrt{\\mathrm{x}}}=\\alpha \\quad \\mathrm{x}>0$\n$$\\begin{array}{l}\n\\left(9 \\alpha^{2}-9 \\alpha+2\\right)\\left(2 \\alpha^{2}-7 \\alpha+3\\right)=0 \\\\\n(3 \\alpha-2)(3 \\alpha-1)(\\alpha-3)(2 \\alpha-1)=0 \\\\\n\\alpha=\\frac{1}{3}, \\frac{1}{2}, \\frac{2}{3}, 3 \\\\\n\\mathrm{x}=9,4, \\frac{9}{4}, \\frac{1}{9}\n\\end{array}$$",
+     "So, no. of solutions $=4$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $y=y(x)$ be the solution of the differential equation $\\cos \\mathrm{x}\\left(\\log _{\\mathrm{e}}(\\cos \\mathrm{x})\\right)^{2} \\mathrm{dy}+\\left(\\sin \\mathrm{x}-3 \\mathrm{y} \\sin \\mathrm{x} \\log _{\\mathrm{e}}(\\cos \\mathrm{x})\\right) \\mathrm{dx}=0$, $\\mathrm{x} \\in\\left(0, \\frac{\\pi}{2}\\right)$. If $\\mathrm{y}\\left(\\frac{\\pi}{4}\\right)=\\frac{-1}{\\log _{\\mathrm{e}} 2}$, then $\\mathrm{y}\\left(\\frac{\\pi}{6}\\right)$ is :\n(1) $\\frac{2}{\\log _{\\mathrm{e}}(3)-\\log _{\\mathrm{e}}(4)}$\n(2) $\\frac{1}{\\log _{\\mathrm{e}}(4)-\\log _{\\mathrm{e}}(3)}$\n(3) $-\\frac{1}{\\log _{\\mathrm{e}}(4)}$\n(4) $\\frac{1}{\\log _{\\mathrm{e}}(3)-\\log _{\\mathrm{e}}(4)}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\cos x(\\ln (\\cos x))^{2} d y+(\\sin x-3 y(\\sin x) \\ln (\\cos x)) d x=0$\n$$\\begin{array}{c}\n\\cos x(\\ln (\\cos x))^{2} \\frac{d y}{d x}-3 \\sin x \\cdot \\ln (\\cos x) y=-\\sin x \\\\\n\\frac{d y}{d x}-\\frac{3 \\tan x}{\\ln (\\cos x)} y=\\frac{-\\tan x}{(\\ln (\\cos x))^{2}} \\\\\n\\frac{d y}{d x}+\\frac{3 \\tan x}{\\ln (\\sec x)} y=\\frac{-\\tan x}{(\\ln (\\sec x))^{2}} \\\\\n\\text { I.F. }=e^{\\int \\frac{3 \\tan x}{\\ln (\\sec x)} d x}=(\\ln (\\sec x))^{3} \\\\\n\\mathrm{y} \\times(\\ln (\\sec x))^{3}=-\\int \\frac{\\tan x}{(\\ln (\\sec x))^{2}}(\\ln (\\sec x))^{3} d x \\\\\n\\mathrm{y} \\times(\\ln (\\sec x))^{3}=-\\frac{1}{2}(\\ln (\\sec x))^{2}+C\n\\end{array}$$",
+     "Given : $\\mathrm{x}=\\frac{\\pi}{4}, \\mathrm{y}=-\\frac{1}{\\ln 2}$\n$$\\begin{array}{l}\n\\frac{-1}{\\ln 2} \\times(\\ln \\sqrt{2})^{3}=-\\frac{1}{2} \\times(\\ln \\sqrt{2})^{2}+C \\\\\n\\Rightarrow \\frac{-1}{8 \\ln 2} \\times(\\ln 2)^{3}=\\frac{-1}{2} \\times \\frac{1}{4}(\\ln 2)^{2}+C \\\\\n-\\frac{1}{8}(\\ln 2)^{2}=\\frac{-1}{8}(\\ln 2)^{2}+C \\\\\n\\Rightarrow C=0 \\\\\n\\therefore y(\\ln (\\sec x))^{3}=\\frac{-1}{2}(\\ln (\\sec x))^{2}+0 \\\\\ny=\\frac{-1}{2 \\ln (\\sec x)} \\\\\ny=\\frac{1}{2 \\ln (\\cos x)}\n\\end{array}$$\n$$\\begin{array}{l}\n\\therefore y\\left(\\frac{\\pi}{6}\\right)=\\frac{1}{2 \\ln \\left(\\cos \\frac{\\pi}{6}\\right)} \\\\\n=\\frac{1}{2 \\ln \\left(\\frac{\\sqrt{3}}{2}\\right)} \\\\\n=\\frac{1}{2\\left(\\frac{1}{2} \\ln 3-\\ln 2\\right)} \\\\\n=\\frac{1}{\\ln 3-\\ln 4}\n\\end{array}$$",
+     "Option (4)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Define a relation R on the interval $\\left[0, \\frac{\\pi}{2}\\right)$ by x R y if and only if $\\sec ^{2} \\mathrm{x}-\\tan ^{2} \\mathrm{y}=1$. Then R is :\n(1) an equivalence relation\n(2) both reflexive and transitive but not symmetric\n(3) both reflexive and symmetric but not transitive\n(4) reflexive but neither symmetric not transitive",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\sec ^{2} \\mathrm{x}-\\tan ^{2} \\mathrm{x}=1$ (on replacing y with x )\n⇒ Reflexive\n$$\\begin{array}{l}\n\\sec ^{2} \\mathrm{x}-\\tan ^{2} \\mathrm{y}=1 \\\\\n\\Rightarrow 1+\\tan ^{2} \\mathrm{x}+1-\\sec ^{2} \\mathrm{y}=1 \\\\\n\\Rightarrow \\sec ^{2} \\mathrm{y}-\\tan ^{2} \\mathrm{x}=1\n\\end{array}$$",
+     "⇒ symmetric\n$$\\begin{array}{l}\n\\sec ^{2} \\mathrm{x}-\\tan ^{2} \\mathrm{y}=1 \\\\\n\\sec ^{2} \\mathrm{y}-\\tan ^{2} \\mathrm{z}=1\n\\end{array}$$",
+     "Adding both\n$$\\begin{array}{l}\n\\Rightarrow \\sec ^{2} \\mathrm{x}-\\tan ^{2} \\mathrm{y}+\\sec ^{2} \\mathrm{y}-\\tan ^{2} \\mathrm{z}=1+1 \\\\\n\\sec ^{2} \\mathrm{x}+1-\\tan ^{2} \\mathrm{z}=2 \\\\\n\\sec ^{2} \\mathrm{x}-\\tan ^{2} \\mathrm{z}=1\n\\end{array}$$",
+     "⇒ Transitive\nhence equivalence relation\nOption (1)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let the ellipse, $\\mathrm{E}_{1}: \\frac{\\mathrm{x}^{2}}{\\mathrm{a}^{2}}+\\frac{\\mathrm{y}^{2}}{\\mathrm{~b}^{2}}=1, \\mathrm{a}>\\mathrm{b}$ and $\\mathrm{E}_{2}: \\frac{\\mathrm{x}^{2}}{\\mathrm{~A}^{2}}+\\frac{\\mathrm{y}^{2}}{\\mathrm{~B}^{2}}=1, \\mathrm{~A}<\\mathrm{B}$ have same eccentricity $\\frac{1}{\\sqrt{3}}$. Let the product of their lengths of latus rectums be $\\frac{32}{\\sqrt{3}}$, and the distance between the foci of $\\mathrm{E}_{1}$ be 4. If $\\mathrm{E}_{1}$ and $\\mathrm{E}_{2}$ meet at A,B,C and D, then the area of the quadrilateral ABCD equals:\n(1) $6 \\sqrt{6}$\n(2) $\\frac{18 \\sqrt{6}}{5}$\n(3) $\\frac{12 \\sqrt{6}}{5}$\n(4) $\\frac{24 \\sqrt{6}}{5}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\quad 2 a e=4 \\\\\n2 a\\left(\\frac{1}{\\sqrt{3}}\\right)=4 \\\\\n\\Rightarrow a=2 \\sqrt{3} \\\\\n\\Rightarrow 1-\\frac{b^{2}}{12}=\\frac{1}{3} \\Rightarrow b^{2}=8 \\\\\n\\text { Now } \\frac{2 b^{2}}{a} \\cdot \\frac{2 A^{2}}{B}=\\frac{32}{\\sqrt{3}} \\Rightarrow 2\\left(\\frac{8}{2 \\sqrt{3}}\\right) \\frac{2 A^{2}}{B}=\\frac{32}{\\sqrt{3}} \\\\\n\\Rightarrow A^{2}=2 B \\\\\n1-\\frac{A^{2}}{B^{2}}=\\frac{1}{3} \\Rightarrow 1-\\frac{2 B}{B^{2}}=\\frac{1}{3} \\Rightarrow B=3 \\\\\n\\Rightarrow A^{2}=6 \\\\\n\\frac{x^{2}}{12}+\\frac{y^{2}}{8}=1 \\ldots . .(1) \\\\\n\\frac{x^{2}}{6}+\\frac{y^{2}}{9}=1 \\ldots . .(2)\n\\end{array}$$",
+     "On solving (1) \\& (2) we get\n$$(\\mathrm{x}, \\mathrm{y}) \\equiv\\left(\\frac{\\sqrt{6}}{\\sqrt{5}}, \\frac{6}{\\sqrt{5}}\\right),\\left(\\frac{-\\sqrt{6}}{\\sqrt{5}}, \\frac{6}{\\sqrt{5}}\\right),\\left(\\frac{\\sqrt{6}}{\\sqrt{5}}, \\frac{-6}{\\sqrt{5}}\\right),\\left(\\frac{-\\sqrt{6}}{\\sqrt{5}}, \\frac{-6}{\\sqrt{5}}\\right)$$",
+     "The four points are vertices of rectangle and its area =\n$$\\frac{24 \\sqrt{6}}{5}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Consider an A.P. of positive integers, whose sum of the first three terms is 54 and the sum of the first twenty terms lies between 1600 and 1800. Then its $11^{\\text {th }}$ term is :\n(1) 84\n(2) 122\n(3) 90\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{S}_{3}=3 \\mathrm{a}+3 \\mathrm{~d}=54$\n$$\\begin{array}{l}\n\\Rightarrow \\mathrm{a}+\\mathrm{d}=18 \\\\\n\\mathrm{~S}_{20}=10(2 \\mathrm{a}+19 \\mathrm{~d}) \\\\\n\\Rightarrow 10(36+17 \\mathrm{~d}) \\\\\n\\Rightarrow 1600<10(36+17 \\mathrm{~d})<1800 \\\\\n\\Rightarrow 160<36+17 \\mathrm{~d}<180 \\\\\n\\Rightarrow 124<17 \\mathrm{~d}<144 \\\\\n\\Rightarrow 7 \\frac{5}{17}<\\mathrm{d}<8 \\frac{8}{17}\n\\end{array}$$",
+     "Common difference will be natural number\n$$\\begin{array}{l}\n\\Rightarrow d=8 \\Rightarrow a=10 \\\\\n\\Rightarrow a_{11}=10+10 \\times 8=90\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\overrightarrow{\\mathrm{a}}=\\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ and $\\overrightarrow{\\mathrm{b}}=2 \\hat{\\mathrm{i}}+7 \\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}$. Let\n$$\\begin{array}{l}\nL_{1}: \\vec{r}=(-\\hat{i}+2 \\hat{j}+\\hat{k})+\\lambda \\vec{a}, \\lambda \\in R \\text { and } \\\\\nL_{2}: \\vec{r}=(\\hat{j}+\\hat{k})+\\mu \\vec{b}, \\mu \\in R \\text { be two lines. If the }\n\\end{array}$$\nline $\\mathrm{L}_{3}$ passes through the point of intersection of $\\mathrm{L}_{1}$ and $\\mathrm{L}_{2}$, and is parallel to $\\overrightarrow{\\mathrm{a}}+\\overrightarrow{\\mathrm{b}}$, then $\\mathrm{L}_{3}$ passes through the point:\n(1) (8, 26, 12)\n(2) (2,8,5)\n(3) $(-1,-1,1)$\n(4) (5, 17, 4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nL_{1}: \\vec{r}=(-\\hat{i}+2 \\hat{j}+\\hat{k})+\\lambda(\\hat{i}+2 \\hat{j}+\\hat{k}) \\\\\n\\Rightarrow \\vec{r}=(\\lambda-1) \\hat{i}+2(\\lambda+1) \\hat{j}+(\\lambda+1) \\hat{k} \\\\\nL_{2}: \\vec{r}=(\\hat{j}+\\hat{k})+\\mu(2 \\hat{i}+7 \\hat{j}+3 \\hat{k}) \\\\\n\\Rightarrow \\vec{r}=2 \\mu \\hat{i}+(1+7 \\mu) \\hat{j}+(1+3 \\mu) \\hat{k}\n\\end{array}$$",
+     "For point of intersection equating respective components\n$$\\begin{array}{l}\n\\Rightarrow \\lambda-1=2 \\mu \\\\\n2(\\lambda+1)=1+7 \\mu \\\\\n\\lambda+1=1+3 \\mu\n\\end{array}$$",
+     "We get",
+     "$$\\begin{array}{l}\n\\Rightarrow \\lambda=3 \\text { and } \\mu=1 \\\\\n\\Rightarrow \\vec{a}+\\vec{b}=3 \\hat{i}+9 \\hat{j}+4 \\hat{k} \\\\\nL_{3}: \\vec{r}=2 \\hat{i}+8 \\hat{j}+4 \\hat{k}+\\alpha(3 \\hat{i}+9 \\hat{j}+4 \\hat{k}) \\\\\n\\text { For } \\alpha=2, \\vec{r}=8 \\hat{i}+26 \\hat{j}+12 \\hat{k}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The value of $\\lim _{\\mathrm{n} \\rightarrow \\infty}\\left(\\sum_{\\mathrm{K}=1}^{\\mathrm{n}} \\frac{\\mathrm{k}^{3}+6 \\mathrm{k}^{2}+11 \\mathrm{k}+5}{(\\mathrm{k}+3)!}\\right)$ is :\n(1) $\\frac{4}{3}$\n(2) 2\n(3) $\\frac{7}{3}$\n(4) $\\frac{5}{3}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\lim _{\\mathrm{n} \\rightarrow \\infty} \\sum_{\\mathrm{k}=1}^{\\mathrm{n}} \\frac{\\mathrm{k}^{3}+6 \\mathrm{k}^{2}+11 \\mathrm{k}+5}{(\\mathrm{k}+3)!}$\n$$\\begin{array}{l}\n=\\lim _{n \\rightarrow \\infty} \\sum_{k=1}^{n} \\frac{k^{3}+6 k^{2}+11 k+6-1}{(k+3)!} \\\\\n=\\lim _{n \\rightarrow \\infty} \\sum_{k=1}^{n} \\frac{(k+1)(k+2)(k+3)-1}{(k+3)!} \\\\\n=\\lim _{n \\rightarrow \\infty} \\sum_{k=1}^{n} \\frac{(k+1)(k+2)(k+3)}{(k+3)!}-\\frac{1}{(k+3)!} \\\\\n=\\lim _{n \\rightarrow \\infty} \\sum_{k=1}^{n}\\left(\\frac{1}{k!}-\\frac{1}{(k+3)!}\\right)\n\\end{array}$$\n$$\\begin{array}{l}\n=\\lim _{n \\rightarrow \\infty}\\left(\\frac{1}{1!}+\\frac{1}{2!}+\\frac{1}{3!}+\\frac{1}{4!} \\ldots+\\frac{1}{n!}-\\frac{1}{4!}-\\frac{1}{5!}-\\frac{1}{6!} \\ldots .-\\frac{1}{(n+3)!}\\right) \\\\\n\\quad=\\frac{1}{1}+\\frac{1}{2}+\\frac{1}{6}=\\frac{10}{6}=\\frac{5}{3}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The integral $80 \\int_{0}^{\\frac{\\pi}{4}}\\left(\\frac{\\sin \\theta+\\cos \\theta}{9+16 \\sin 2 \\theta}\\right) \\mathrm{d} \\theta$ is equal to :\n(1) $3 \\log _{\\mathrm{c}} 4$\n(2) $6 \\log _{\\mathrm{c}} 4$\n(3) $4 \\log _{e} 3$\n(4) $2 \\log _{e} 3$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{I}=80 \\int_{0}^{\\frac{\\pi}{4}}\\left(\\frac{\\sin \\theta+\\cos \\theta}{9+16(2 \\sin \\theta \\cdot \\cos \\theta)}\\right) \\mathrm{d} \\theta$\n$$=80 \\int_{0}^{\\frac{\\pi}{4}} \\frac{\\sin \\theta+\\cos \\theta}{9-16(1-2 \\sin \\theta \\cdot \\cos \\theta-1)} \\mathrm{d} \\theta$$\n$$=80 \\int_{0}^{\\frac{\\pi}{4}} \\frac{\\sin \\theta+\\cos \\theta}{9+16-16(\\sin \\theta-\\cos \\theta)^{2}} \\mathrm{~d} \\theta$$",
+     "Let $\\sin \\theta-\\cos \\theta=\\mathrm{t}$\n$$\\begin{array}{l}\n(\\cos \\theta+\\sin \\theta) \\mathrm{d} \\theta=\\mathrm{dt} \\\\\n=80 \\int_{-1}^{0} \\frac{\\mathrm{dt}}{25-16 \\mathrm{t}^{2}} \\\\\n=\\frac{80}{16} \\int_{-1}^{0} \\frac{\\mathrm{dt}}{\\left(\\frac{5}{4}\\right)^{2}-\\mathrm{t}^{2}} \\\\\n\\left.=\\frac{5}{2\\left(\\frac{5}{4}\\right)} \\ln \\left|\\frac{\\frac{5}{4}+\\mathrm{t}}{\\frac{5}{4}-\\mathrm{t}}\\right|\\right]_{-1}^{0} \\\\\n=2 \\ln (1)+4 \\ln 3 \\\\\n=4 \\ln 3\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{L}_{1}: \\frac{\\mathrm{x}-1}{1}=\\frac{\\mathrm{y}-2}{-1}=\\frac{\\mathrm{z}-1}{2}$ and $\\mathrm{L}_{2}: \\frac{\\mathrm{x}+1}{-1}=\\frac{\\mathrm{y}-2}{2}=\\frac{\\mathrm{z}}{1}$ be two lines.\nLet $\\mathrm{L}_{3}$ be a line passing through the point $(\\alpha, \\beta, \\gamma)$ and be perpendicular to both $\\mathrm{L}_{1}$ and $\\mathrm{L}_{2}$. If $\\mathrm{L}_{3}$ intersects $\\mathrm{L}_{1}$, then $|5 \\alpha-11 \\beta-8 \\gamma|$ equals :\n(1) 18\n(2) 16\n(3) 25\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad D R$ 's of $L_{3}=\\vec{m} \\times \\vec{n}=\\left|\\begin{array}{ccc}\\hat{i} & \\hat{j} & \\hat{k} \\\\ 1 & -1 & 2 \\\\ -1 & 2 & 1\\end{array}\\right|$\n$$\\begin{array}{l}\n=-5 \\hat{i}-3 \\hat{j}+\\hat{k} \\\\\n\\mathrm{~L}_{3}: \\frac{\\mathrm{x}-\\alpha}{-5}=\\frac{\\mathrm{y}-\\beta}{-3}=\\frac{\\mathrm{z}-\\gamma}{1}=\\lambda \\\\\n\\mathrm{A}(\\alpha-5 \\lambda, \\beta-3 \\lambda, \\gamma+\\lambda) \\\\\n\\mathrm{L}_{1}: \\frac{\\mathrm{x}-1}{1}=\\frac{\\mathrm{y}-2}{-1}=\\frac{\\mathrm{z}-1}{2}=\\mathrm{k} \\\\\n\\quad \\mathrm{~B}(\\mathrm{k}+1,-\\mathrm{k}+2,2 \\mathrm{k}+1)\n\\end{array}$$",
+     "Now\n$$\\begin{array}{l}\n\\alpha-5 \\lambda=\\mathrm{k}+1 \\Rightarrow \\alpha=5 \\lambda+\\mathrm{k}+1 \\\\\n\\beta-3 \\lambda=-\\mathrm{k}+2 \\Rightarrow \\beta=3 \\lambda-\\mathrm{k}+2 \\\\\n\\gamma+\\lambda=2 \\mathrm{k}+1 \\Rightarrow \\gamma=-\\lambda+2 \\mathrm{k}+1 \\\\\n|5 \\alpha-11 \\beta-8 \\gamma|=|-25| \\\\\n=25\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{x}_{1}, \\mathrm{x}_{2}, \\ldots \\ldots \\mathrm{x}_{10}$ be ten observations such that $\\sum_{\\mathrm{i}=1}^{10}\\left(\\mathrm{x}_{\\mathrm{i}}-2\\right)=30, \\sum_{\\mathrm{i}=1}^{10}\\left(\\mathrm{x}_{\\mathrm{i}}-\\beta\\right)^{2}=98, \\beta>2$ and their variance is $\\frac{4}{5}$. If $\\mu$ and $\\sigma^{2}$ are respectively the mean and the variance of $2\\left(\\mathrm{x}_{1}-1\\right)+4 \\beta, 2\\left(\\mathrm{x}_{2}-1\\right)+ 4 \\beta, \\ldots . ., 2\\left(\\mathrm{x}_{10}-1\\right)+4 \\beta$, then $\\frac{\\beta \\mu}{\\sigma^{2}}$ is equal to :\n(1) 100\n(2) 110\n(3) 120\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\sum_{\\mathrm{i}=1}^{10} \\mathrm{x}_{\\mathrm{i}}=50, \\quad \\therefore$ mean $=5$\n$$\\begin{array}{l}\n\\text { Variance }=\\frac{4}{5}=\\frac{\\sum x_{i}^{2}}{10}-1 \\\\\n\\frac{4}{5}=\\frac{\\sum x_{i}^{2}}{10}-25 \\\\\n\\Rightarrow \\sum x_{i}^{2}=258 \\\\\n\\text { Now } \\sum_{i=1}^{10}\\left(x_{i}-\\beta\\right)^{2}=98 \\\\\n\\sum_{i=1}^{10}\\left(x_{i}^{2}-2 \\beta . x_{i}+\\beta^{2}\\right)=98 \\\\\n258-2 \\beta(50)+10 \\beta^{2}=98 \\\\\n(\\beta-8)(\\beta-2)=0 \\\\\n\\beta=\\text { or } \\beta=2 \\quad(\\text { as } \\beta>2) \\\\\n\\therefore \\beta=8\n\\end{array}$$",
+     "Now as per the question\n$$2\\left(x_{1}-1\\right)+4 \\beta, 2\\left(x_{2}-1\\right)+4 \\beta, \\ldots .2\\left(x_{10}-1\\right)+4 \\beta$$\ncan be simplified to\n$$\\begin{array}{l}\n2 x_{1}+30,2 x_{2}+30, \\ldots . .2 x_{10}+30 \\quad \\text { using eq. (2) } \\\\\n\\mu=2(5)+30=40 \\\\\n\\sigma^{2}=2^{2}\\left(\\frac{4}{5}\\right)=\\frac{16}{5} \\\\\n\\because \\frac{\\beta \\mu}{\\sigma^{2}}=\\frac{8 \\times 40}{16 / 5}=100\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\left|\\mathrm{z}_{1}-8-2 \\mathrm{i}\\right| \\leq 1 \\quad$ and $\\quad\\left|\\mathrm{z}_{2}-2+6 \\mathrm{i}\\right| \\leq 2$, $\\mathrm{z}_{1}, \\mathrm{z}_{2} \\in \\mathrm{C}$. Then the minimum value of $\\left|\\mathrm{z}_{1}-\\mathrm{z}_{2}\\right|$ is :\n(1) 3\n(2) 7\n(3) 13\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\because \\mathrm{AB}=\\sqrt{100}=10 \\\\\n\\therefore\\left|Z_{1}-Z_{2}\\right|_{\\text {min }}=10-2-1=7\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{A}=\\left[\\mathrm{a}_{\\mathrm{ij}}\\right]=\\left[\\begin{array}{cc}\\log _{5} 128 & \\log _{4} 5 \\\\ \\log _{5} 8 & \\log _{4} 25\\end{array}\\right]$.\nIf $\\mathrm{A}_{\\mathrm{ij}}$ is the cofactor of $\\mathrm{a}_{\\mathrm{ij}}, \\mathrm{C}_{\\mathrm{ij}}=\\sum_{\\mathrm{k}=1}^{2} \\mathrm{a}_{\\mathrm{ik}} \\mathrm{A}_{\\mathrm{jk}}, 1 \\leq \\mathrm{i}$, $\\mathrm{j} \\leq 2$, and $\\mathrm{C}=\\left[\\mathrm{C}_{\\mathrm{ij}}\\right]$, then $8|\\mathrm{C}|$ is equal to :\n(1) 262\n(2) 288\n(3) 242\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 21,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{f}:(0, \\infty) \\rightarrow \\mathrm{R}$ be a twice differentiable function. If for some $\\mathrm{a} \\neq 0, \\int_{0}^{1} \\mathrm{f}(\\lambda \\mathrm{x}) \\mathrm{d} \\lambda=\\mathrm{af}(\\mathrm{x})$, $\\mathrm{f}(1)=1$ and $\\mathrm{f}(16)=\\frac{1}{8}$, then $16-\\mathrm{f}^{\\prime}\\left(\\frac{1}{16}\\right)$ is equal to $\\_\\_\\_\\_$ ,",
+   "options": null,
+   "embedded_answer": {
+    "raw": "112"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\int_{0}^{1} \\mathrm{f}(\\lambda \\mathrm{x}) \\mathrm{d} \\lambda=\\operatorname{af}(\\mathrm{x})$\n$$\\begin{array}{l}\n\\lambda x=t \\\\\nd \\lambda=\\frac{1}{x} d t \\\\\n\\frac{1}{x} \\int_{0}^{x} f(t) d t=a f(x) \\\\\n\\int_{0}^{x} f(t) d t=a x f(x) \\\\\nf(x)=a\\left(x f^{\\prime}(x)+f(x)\\right) \\\\\n(1-a) f(x)=a \\cdot x f^{\\prime}(x) \\\\\n\\frac{f^{\\prime}(x)}{f(x)}=\\frac{(1-a)}{a} \\frac{1}{x} \\\\\n\\ell n f(x)=\\frac{1-a}{a} \\ell n x+c \\\\\nx=1, f(1)=1 \\Rightarrow c=0 \\\\\nx=16, f(16)=\\frac{1}{8} \\\\\n\\frac{1}{8}=(16)^{\\frac{1-a}{a}} \\Rightarrow-3=\\frac{4-4 a}{a} \\Rightarrow a=4\n\\end{array}$$\n$$\\begin{array}{l}\nf(x)=x^{-\\frac{3}{4}} \\\\\nf^{\\prime}(x)=-\\frac{3}{4} x^{-\\frac{7}{4}} \\\\\n\\therefore 16-f^{\\prime}\\left(\\frac{1}{16}\\right) \\\\\n=16-\\left(-\\frac{3}{4}\\left(2^{-4}\\right)^{-7 / 4}\\right) \\\\\n=16+96=112\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{S}=\\mathrm{m} \\in \\mathrm{Z}: \\mathrm{A}^{\\mathrm{m}^{2}}+\\mathrm{A}^{\\mathrm{m}}=3 \\mathrm{I}-\\mathrm{A}^{-6}$, where $\\mathrm{A}=\\left[\\begin{array}{cc}2 & -1 \\\\ 1 & 0\\end{array}\\right]$. Then $\\mathrm{n}(\\mathrm{S})$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{A}=\\left[\\begin{array}{cc}2 & -1 \\\\ 1 & 0\\end{array}\\right]$\n$$A^{2}=\\left[\\begin{array}{ll}\n3 & -2 \\\\\n2 & -1\n\\end{array}\\right], A^{3}=\\left[\\begin{array}{ll}\n4 & -3 \\\\\n3 & -2\n\\end{array}\\right], A^{4}=\\left[\\begin{array}{ll}\n5 & -4 \\\\\n4 & -3\n\\end{array}\\right]$$\nand so on\n$$\\begin{array}{l}\nA^{6}=\\left[\\begin{array}{ll}\n7 & -6 \\\\\n6 & -5\n\\end{array}\\right] \\\\\nA^{m}=\\left[\\begin{array}{cc}\nm+1 & -m \\\\\nm & -m+1\n\\end{array}\\right] \\\\\nA^{m^{2}}=\\left[\\begin{array}{cc}\nm^{2}+1 & -m^{2} \\\\\nm^{2} & -\\left(m^{2}-1\\right)\n\\end{array}\\right] \\\\\nA^{m^{2}}+A^{m}=3 I-A^{-6} \\\\\n{\\left[\\begin{array}{cc}\nm^{2}+1 & -m^{2} \\\\\nm^{2} & -\\left(m^{2}-1\\right)\n\\end{array}\\right]+\\left[\\begin{array}{cc}\nm+1 & -m \\\\\nm & -m+1\n\\end{array}\\right]} \\\\\n=3\\left[\\begin{array}{ll}\n1 & 0 \\\\\n0 & 1\n\\end{array}\\right]-\\left[\\begin{array}{ll}\n-5 & 6 \\\\\n-6 & 7\n\\end{array}\\right] \\\\\n=\\left[\\begin{array}{ll}\n8 & -6 \\\\\n6 & -4\n\\end{array}\\right] \\\\\n=m^{2}+1+m+1=8 \\\\\n=m^{2}+m-6=0 \\Rightarrow m=-3,2 \\\\\nn(s)=2\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let [t] be the greatest integer less than or equal to t. Then the least value of $\\mathrm{p} \\in \\mathrm{N}$ for which\n$$\\lim _{x \\rightarrow 0^{+}}\\left(x\\left(\\left[\\frac{1}{x}\\right]+\\left[\\frac{2}{x}\\right]+\\ldots . .+\\left[\\frac{p}{x}\\right]\\right)-x^{2}\\left(\\left[\\frac{1}{x^{2}}\\right]+\\left[\\frac{2^{2}}{x^{2}}\\right]+\\ldots .+\\left[\\frac{9^{2}}{x^{2}}\\right]\\right)\\right) \\geq 1$$\nis equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "24"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\lim _{\\mathrm{x} \\rightarrow 0^{+}}\\left(\\mathrm{x}\\left(\\left[\\frac{1}{\\mathrm{x}}\\right]+\\left[\\frac{2}{\\mathrm{x}}\\right]+\\ldots \\ldots+\\left[\\frac{\\mathrm{p}}{\\mathrm{x}}\\right]\\right)-\\mathrm{x}^{2}\\left(\\left[\\frac{1}{\\mathrm{x}^{2}}\\right]+\\left[\\frac{2^{2}}{\\mathrm{x}^{2}}\\right]+\\left[\\frac{9^{2}}{\\mathrm{x}^{2}}\\right]\\right)\\right) \\geq 1$\n$$(1+2+\\ldots \\ldots+p)-\\left(1^{2}+2^{2}+\\ldots .9^{2}\\right) \\geq 1$$",
+     "$$\\begin{array}{l}\n\\frac{p p+1}{2}-\\frac{9.10 .19}{6} \\geq 1 \\\\\np(p+1) \\geq 572\n\\end{array}$$",
+     "Least natural value of p is 24"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The number of 6-letter words, with or without meaning, that can be formed using the letters of the word MATHS such that any letter that appears in the word must appear at least twice, is 4 $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1405"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(i) Single letter is used , then no. of words $=5$\n(ii) Two distinct letters are used, then no. of words\n$${ }^{5} \\mathrm{C}_{2} \\times\\left(\\frac{6!}{2!4!} \\times 2+\\frac{6!}{3!3!}\\right)=10(30+20)=500$$\n(iii) Three distinct letters are used, then no. of words\n$${ }^{5} C_{3} \\times \\frac{6!}{2!2!2!}=900$$",
+     "Total no. of words $=1405$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Let $\\mathrm{S}=\\mathrm{x}: \\cos ^{-1} \\mathrm{x}=\\pi+\\sin ^{-1} \\mathrm{x}+\\sin ^{-1} 2 \\mathrm{x}+1$.\nThen $\\sum_{\\mathrm{x} \\in \\mathrm{S}}(2 \\mathrm{x}-1)^{2}$ is equal to $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\cos ^{-1} x=\\pi+\\sin ^{-1} x+\\sin ^{-1}(2 x+1)$\n$$\\begin{array}{l}\n2 \\cos ^{-1} x-\\sin ^{-1}(2 x+1)=\\frac{3 \\pi}{2} \\\\\n2 \\alpha-\\beta=\\frac{3 \\pi}{2} \\text { where } \\cos ^{-1} x=\\alpha, \\sin ^{-1}(2 x+1)=\\beta \\\\\n2 \\alpha=\\frac{3 \\pi}{2}+\\beta \\\\\n\\cos 2 \\alpha=\\sin \\beta \\\\\n2 \\cos ^{2} \\alpha-1=\\sin \\beta \\\\\n2 x^{2}-1=2 x+1 \\\\\nx^{2}-x-1=0 \\\\\n\\Rightarrow x=\\frac{1-\\sqrt{5}}{2},\\left\\{x=\\frac{1+\\sqrt{5}}{2} \\text { rejected }\\right\\} \\\\\n\\therefore 4 x^{2}-4 x=4 \\\\\n(2 x-1)^{2}=5\n\\end{array}$$",
+     "PHYSICS",
+     "SECTION-A"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R). Assertion (A) : Choke coil is simply a coil having a large inductance but a small resistance. Choke coils are used with fluorescent mercury-tube fittings. If household electric power is directly connected to a mercury tube, the tube will be damaged.\nReason (R) : By using the choke coil, the voltage across the tube is reduced by a factor $\\left(\\mathrm{R} / \\sqrt{\\mathrm{R}^{2}+\\omega^{2} \\mathrm{~L}^{2}}\\right)$, where $\\omega$ is frequency of the supply across resistor R and inductor L. If the choke coil were not used, the voltage across the resistor would be the same as the applied voltage. In the light of the above statements, choose the most appropriate answer from the options given below:\n(1) Both (A) and (R) are true but (R) is not the correct explanation of (A).\n(2) (A) is false but (R) is true.\n(3) Both (A) and (R) are true and (R) is the correct explanation of (A).\n(4) (A) is true but (R) is false.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "A: Correct\nB : Correct with correct explanation"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Two projectiles are fired with same initial speed from same point on ground at angles of $\\left(45^{\\circ}-\\alpha\\right)$ and ( $45^{\\circ}+\\alpha$ ), respectively, with the horizontal direction. The ratio of their maximum heights attained is :\n(1) $\\frac{1-\\tan \\alpha}{1+\\tan \\alpha}$\n(2) $\\frac{1+\\sin \\alpha}{1-\\sin \\alpha}$\n(3) $\\frac{1-\\sin 2 \\alpha}{1+\\sin 2 \\alpha}$\n(4) $\\frac{1+\\sin 2 \\alpha}{1-\\sin 2 \\alpha}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{H}_{\\text {Max }}=\\frac{(\\mathrm{u} \\sin \\theta)^{2}}{2 \\mathrm{~g}}$\n$$\\begin{array}{l}\n\\frac{\\left(H_{\\max }\\right)_{1}}{\\left(H_{\\max }\\right)_{2}}=\\frac{u^{2} \\sin ^{2}(45-\\alpha)}{u^{2} \\sin ^{2}(45+\\alpha)} \\\\\n=\\frac{\\left(\\frac{1}{\\sqrt{2}} \\cos \\alpha-\\frac{1}{\\sqrt{2}} \\sin \\alpha\\right)^{2}}{\\left(\\frac{1}{\\sqrt{2}} \\cos \\alpha+\\frac{1}{\\sqrt{2}} \\sin \\alpha\\right)^{2}} \\\\\n=\\frac{1-\\sin 2 \\alpha}{1+\\sin 2 \\alpha}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "An electric dipole of mass m, charge q, and length $l$ is placed in a uniform electric field $\\overrightarrow{\\mathrm{E}}=\\mathrm{E}_{0} \\hat{\\mathrm{i}}$. When the dipole is rotated slightly from its equilibrium position and released, the time period of its oscillations will be :\n(1) $\\frac{1}{2 \\pi} \\sqrt{\\frac{2 \\mathrm{~m} l}{\\mathrm{qE}_{0}}}$\n(2) $2 \\pi \\sqrt{\\frac{\\mathrm{~m} l}{\\mathrm{qE}_{0}}}$\n(3) $\\frac{1}{2 \\pi} \\sqrt{\\frac{\\mathrm{~m} l}{2 \\mathrm{qE}_{0}}}$\n(4) $2 \\pi \\sqrt{\\frac{\\mathrm{~m} l}{2 \\mathrm{qE}_{0}}}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{I} \\omega 2 \\theta=\\mathrm{q} \\ell \\mathrm{E}_{0} \\theta$\n$$\\begin{array}{l}\n2 \\mathrm{~m}\\left(\\frac{\\ell}{2}\\right)^{2} \\omega^{2}=\\mathrm{q} \\ell \\mathrm{E}_{0} \\\\\n\\omega^{2}=\\frac{2 \\mathrm{qE}_{0}}{\\mathrm{~m} \\ell} \\\\\n\\mathrm{~T}=2 \\pi \\sqrt{\\frac{\\mathrm{~m} \\ell}{2 \\mathrm{qE}_{0}}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The pair of physical quantities not having same dimensions is :\n(1) Torque and energy\n(2) Surface tension and impulse\n(3) Angular momentum and Planck's constant\n(4) Pressure and Young's modulus",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$[\\tau]=[\\mathrm{E}]$\n$$\\begin{array}{l}\n{[\\sigma] \\neq[\\mathrm{I}]} \\\\\n{[\\mathrm{L}]=[\\mathrm{h}]} \\\\\n{[\\mathrm{P}]=[\\mathrm{Y}]}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : Time period of a simple pendulum is longer at the top of a mountain than that at the base of the mountain.\nReason (R) : Time period of a simple pendulum decreases with increasing value of acceleration due to gravity and vice-versa.\nIn the light of the above statements, choose the most appropriate answer from the options given below:\n(1) Both (A) and (R) are true but (R) is not the correct explanation of (A).\n(2) Both (A) and (R) are true and (R) is the correct explanation of (A).\n(3) (A) is true but (R) is false.\n(4) (A) is false but (R) is true.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "As h increases, g decreases, T increases\n$$\\begin{aligned}\n\\mathrm{T} & =2 \\pi \\sqrt{\\frac{\\ell}{\\mathrm{~g}}} \\\\\n\\mathrm{~g} & =\\frac{\\mathrm{g}_{0} \\mathrm{R}^{2}}{(\\mathrm{R}+\\mathrm{h})^{2}}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 31,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The expression given below shows the variation of velocity ( $v$ ) with time ( t ), $v=\\mathrm{At}^{2}+\\frac{\\mathrm{Bt}}{\\mathrm{C}+\\mathrm{t}}$. The dimension of ABC is :\n(1) $\\left[\\mathrm{M}^{0} \\mathrm{~L}^{2} \\mathrm{~T}^{-3}\\right]$\n(2) $\\left[\\mathrm{M}^{0} \\mathrm{~L}^{1} \\mathrm{~T}^{-3}\\right]$\n(3) $\\left[\\mathrm{M}^{0} \\mathrm{~L}^{1} \\mathrm{~T}^{-2}\\right]$\n(4) $\\left[\\mathrm{M}^{0} \\mathrm{~L}^{2} \\mathrm{~T}^{-2}\\right]$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left[\\mathrm{LT}^{-1}\\right]=[\\mathrm{A}]\\left[\\mathrm{T}^{2}\\right]=\\frac{[\\mathrm{B}][\\mathrm{T}]}{[\\mathrm{C}]+[\\mathrm{T}]}$\n$$\\begin{array}{l}\n{[\\mathrm{C}]=[\\mathrm{T}]} \\\\\n{[\\mathrm{A}]=\\left[\\mathrm{LT}^{-3}\\right]} \\\\\n{[\\mathrm{B}]=\\left[\\mathrm{LT}^{-1}\\right]} \\\\\n{[\\mathrm{ABC}]=\\left[\\mathrm{L}^{2} \\mathrm{~T}^{-3}\\right]}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 32,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Consider $\\mathrm{I}_{1}$ and $\\mathrm{I}_{2}$ are the currents flowing simultaneously in two nearby coils 1 \\& 2, respectively. If $\\mathrm{L}_{1}=$ self inductance of coil 1, $\\mathrm{M}_{12}=$ mutual inductance of coil 1 with respect to coil 2, then the value of induced emf in coil 1 will be\n(1) $\\varepsilon_{1}=-\\mathrm{L}_{1} \\frac{\\mathrm{dI}_{1}}{\\mathrm{dt}}+\\mathrm{M}_{12} \\frac{\\mathrm{dI}_{2}}{\\mathrm{dt}}$\n(2) $\\varepsilon_{1}=-\\mathrm{L}_{1} \\frac{\\mathrm{dI}_{1}}{\\mathrm{dt}}-\\mathrm{M}_{12} \\frac{\\mathrm{dI}_{1}}{\\mathrm{dt}}$\n(3) $\\varepsilon_{1}=-\\mathrm{L}_{1} \\frac{\\mathrm{dI}_{1}}{\\mathrm{dt}}-\\mathrm{M}_{12} \\frac{\\mathrm{dI}_{2}}{\\mathrm{dt}}$\n(4) $\\varepsilon_{1}=-\\mathrm{L}_{1} \\frac{\\mathrm{dI}_{2}}{\\mathrm{dt}}-\\mathrm{M}_{12} \\frac{\\mathrm{dI}_{1}}{\\mathrm{dt}}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\phi_{1}=\\mathrm{L}_{1} \\mathrm{I}_{1}+\\mathrm{M}_{12} \\mathrm{I}_{2}$\n$$\\varepsilon_{1}=-\\frac{\\mathrm{d} \\phi_{1}}{\\mathrm{dt}}=-\\mathrm{L}_{1} \\frac{\\mathrm{dI}_{1}}{\\mathrm{dt}}-\\mathrm{M}_{12} \\frac{\\mathrm{dI}_{2}}{\\mathrm{dt}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 33,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "At the interface between two materials having refractive indices $\\mathrm{n}_{1}$ and $\\mathrm{n}_{2}$, the critical angle for reflection of an em wave is $\\theta_{1 \\mathrm{C}}$. The $\\mathrm{n}_{2}$ material is replaced by another material having refractive index $\\mathrm{n}_{3}$, such that the critical angle at the interface between $\\mathrm{n}_{1}$ and $\\mathrm{n}_{3}$ materials is $\\theta_{2 \\mathrm{C}}$. If $\\mathrm{n}_{3}>\\mathrm{n}_{2}>\\mathrm{n}_{1}$; $\\frac{\\mathrm{n}_{2}}{\\mathrm{n}_{3}}=\\frac{2}{5}$ and $\\sin \\theta_{2 \\mathrm{C}}-\\sin \\theta_{1 \\mathrm{C}}=\\frac{1}{2}$, then $\\theta_{1 \\mathrm{C}}$ is\n(1) $\\sin ^{-1}\\left(\\frac{1}{6 n_{1}}\\right)$\n(2) $\\sin ^{-1}\\left(\\frac{2}{3 \\mathrm{n}_{1}}\\right)$\n(3) $\\sin ^{-1}\\left(\\frac{5}{6 \\mathrm{n}_{1}}\\right)$\n(4) $\\sin ^{-1}\\left(\\frac{1}{3 \\mathrm{n}_{1}}\\right)$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\sin \\theta_{1 \\mathrm{C}}=\\frac{\\mathrm{n}_{1}}{\\mathrm{n}_{2}}$\n$$\\begin{array}{l}\n\\sin \\theta_{2 \\mathrm{C}}=\\frac{\\mathrm{n}_{1}}{\\mathrm{n}_{3}} \\\\\n\\sin \\theta_{2 \\mathrm{C}}-\\sin \\theta_{1 \\mathrm{C}}=\\frac{1}{2}\n\\end{array}$$",
+     "$$\\begin{array}{l}\n\\mathrm{n}_{1} \\frac{\\mathrm{n}_{2}}{\\mathrm{n}_{3}}-\\frac{\\mathrm{n}_{1}}{\\mathrm{n}_{2}}=\\frac{1}{2} \\\\\n\\mathrm{n}_{1} \\frac{\\mathrm{n}_{2}}{\\mathrm{n}_{3}}-\\mathrm{n}_{1}=\\frac{\\mathrm{n}_{2}}{2} \\\\\n\\mathrm{n}_{1}\\left(\\frac{2}{5}-1\\right)=\\frac{\\mathrm{n}_{2}}{2} \\\\\n\\frac{\\mathrm{n}_{1}}{\\mathrm{n}_{2}}=\\frac{-5}{6} \\\\\n=\\sin ^{-1}\\left(-\\frac{5}{6}\\right)\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 34,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Consider a long straight wire of a circular cross-section (radius a) carrying a steady current I. The current is uniformly distributed across this cross-section. The distances from the centre of the wire's cross-section at which the magnetic field [inside the wire, outside the wire] is half of the maximum possible magnetic field, any where due to the wire, will be\n(1) [a/4,3a/2]\n(2) [a/2,2a]\n(3) [a/2,3a]\n(4) [a/4,2a]",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Maximum possible magnetic field is at the surface\n$$\\begin{array}{l}\n\\mathrm{B}_{\\max }=\\frac{\\mu_{0} \\mathrm{I}}{2 \\pi \\mathrm{a}} \\\\\n\\frac{\\mathrm{~B}_{\\max }}{2}=\\frac{\\mu_{0} \\mathrm{I}}{4 \\pi \\mathrm{a}}\n\\end{array}$$",
+     "It can be obtained inside as well as outside the wire For inside,\n$$\\begin{array}{l}\n\\frac{\\mu_{0} I}{4 \\pi a}=\\frac{\\mu_{0} I r}{2 \\pi a^{2}} \\\\\n\\Rightarrow r=\\frac{a}{2}\n\\end{array}$$",
+     "For outside\n$$\\begin{array}{l}\n\\frac{\\mu_{0} \\mathrm{I}}{4 \\pi \\mathrm{a}}=\\frac{\\mu_{0} \\mathrm{I}}{2 \\pi \\mathrm{r}} \\\\\n\\Rightarrow \\mathrm{r}=2 \\mathrm{a}\n\\end{array}$$",
+     "Correct answer $\\left[\\frac{\\mathrm{a}}{2}, 2 \\mathrm{a}\\right]$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 35,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "As shown below, bob A of a pendulum having massless string of length ' R ' is released from $60^{\\circ}$ to the vertical. It hits another bob B of half the mass that is at rest on a friction less table in the centre. Assuming elastic collision, the magnitude of the velocity of bob A after the collision will be (take g as acceleration due to gravity)\n(1) $\\frac{1}{3} \\sqrt{\\mathrm{Rg}}$\n(2) $\\sqrt{\\mathrm{Rg}}$\n(3) $\\frac{4}{3} \\sqrt{\\mathrm{Rg}}$\n(4) $\\frac{2}{3} \\sqrt{\\mathrm{Rg}}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Velocity of a just before hitting :\n$$\\mathrm{u}=\\sqrt{2 \\mathrm{~g} \\frac{\\mathrm{R}}{2}}=\\sqrt{\\mathrm{gR}}$$",
+     "Just after collision, let velocity of A and B are $\\mathrm{v}_{1}$ and $\\mathrm{v}_{2}$ respectively\n$$\\begin{array}{l}\n\\therefore \\text { by COM: } \\\\\nm u=m v_{1}+\\frac{m}{2} v_{2} \\\\\n2 v_{1}+v_{2}=2 u \\\\\ne=1=\\frac{v_{2}-v_{1}}{u} \\\\\n\\Rightarrow v_{2}-v_{1}=u\n\\end{array}$$",
+     "From (i) -(ii)\n$$\\Rightarrow 3 \\mathrm{v}_{1}=\\mathrm{u} \\Rightarrow \\mathrm{v}_{1}=\\frac{\\mathrm{u}}{3}=\\frac{1}{3} \\sqrt{\\mathrm{gR}}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 36,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : Emission of electrons in photoelectric effect can be suppressed by applying a sufficiently negative electron potential to the photoemissive substance.\nReason (R) : A negative electric potential, which stops the emission of electrons from the surface of a photoemissive substance, varies linearly with frequency of incident radiation.\nIn the light of the above statements, choose the most appropriate answer from the options given below:\n(1) (A) is false but (R) is true.\n(2) (A) is true but (R) is false.\n(3) Both (A) and (R) are true and (R) is the correct explanation of (A).\n(4) Both (A) and (R) are true but (R) is not the correct explanation of (A).",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A) : True\n(B) : True but not correct explanation"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 37,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A coil of area A and N turns is rotating with angular velocity $\\omega$ in a uniform magnetic field $\\overrightarrow{\\mathrm{B}}$ about an axis perpendicular to $\\overrightarrow{\\mathrm{B}}$. Magnetic flux $\\varphi$ and induced emf $\\varepsilon$ across it, at an instant when $\\overrightarrow{\\mathrm{B}}$ is parallel to the plane of coil, are :\n(1) $\\varphi=\\mathrm{AB}, \\varepsilon=0$\n(2) $\\varphi=0, \\varepsilon=\\mathrm{NAB} \\omega$\n(3) $\\varphi=0, \\varepsilon=0$\n(4) $\\varphi=\\mathrm{AB}, \\varepsilon=\\mathrm{NAB} \\omega$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{aligned}\n\\phi & =\\mathrm{BAN} \\cdot \\cos (\\omega \\mathrm{t}) \\\\\n\\varepsilon & =\\frac{-\\mathrm{d} \\phi}{\\mathrm{dt}}=\\mathrm{BA} \\omega \\mathrm{~N} \\cdot \\sin (\\omega \\mathrm{t})\n\\end{aligned}$$",
+     "When B is parallel to plane, $\\underline{\\underline{\\omega}} \\mathrm{t}=\\frac{\\pi}{2}$\n$$\\Rightarrow \\phi=0, \\varepsilon=\\mathrm{BA} \\omega \\mathrm{~N}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 38,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The fractional compression $\\left(\\frac{\\Delta \\mathrm{V}}{\\mathrm{V}}\\right)$ of water at the depth of 2.5 km below the sea level is $\\_\\_\\_\\_$ \\%. Given, the Bulk modulus of water $=2 \\times 10^{9} \\mathrm{Nm}^{-2}$, density of water $=10^{3} \\mathrm{~kg} \\mathrm{~m}^{-3}$, acceleration due to gravity $=\\mathrm{g}=10 \\mathrm{~ms}^{-2}$.\n(1) 1.75\n(2) 1.0\n(3) 1.5\n(4) 1.25",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{B}=\\frac{\\rho \\mathrm{gh}}{\\left(\\frac{\\Delta \\mathrm{v}}{\\mathrm{v}}\\right)}$\n$$\\begin{array}{l}\n\\frac{\\Delta v}{v} \\times 100=\\frac{\\rho g h}{B} \\times 100 \\\\\n\\frac{1000 \\times 10 \\times 2.5 \\times 10^{3}}{2 \\times 10^{9}} \\times 100 \\% \\\\\n=1.25 \\%\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 39,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If $\\lambda$ and K are de Broglie Wavelength and kinetic energy, respectively, of a particle with constant mass. The correct graphical representation for the particle will be :-\n(1)\n(2)\n(3)\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{aligned}\n\\lambda & =\\frac{\\mathrm{h}}{\\mathrm{mv}}=\\frac{\\mathrm{h}}{\\sqrt{2 \\mathrm{mK}}} \\\\\n\\lambda^{2} & =\\frac{\\mathrm{h}^{2}}{2 \\mathrm{~m}}\\left(\\frac{1}{\\mathrm{k}}\\right) \\\\\n\\mathrm{Y} & =\\mathrm{cx}^{2}\n\\end{aligned}$$",
+     "Upward facing parabola passing through origin."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 40,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "For the circuit shown above, equivalent GATE is :\n(1) OR gate\n(2) NOT gate\n(3) AND gate\n(4) NAND gate",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "\\begin{tabular}[t]{|l|l|l|}\n\\hline A & B & Y \\\\\n\\hline 0 & 0 & 0 \\\\\n\\hline 0 & 1 & 1 \\\\\n\\hline 1 & 0 & 1 \\\\\n\\hline 1 & 1 & 1 \\\\\n\\hline\n\\end{tabular}",
+     "⇒ OR Gate"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 41,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "A body of mass 'm' connected to a massless and unstretchable string goes in verticle circle of radius ' R ' under gravity g . The other end of the string is fixed at the center of circle. If velocity at top of circular path is $\\mathrm{n} \\sqrt{\\mathrm{gR}}$, where, $\\mathrm{n} \\geq 1$, then ratio of kinetic energy of the body at bottom to that at top of the circle is\n(1) $\\frac{\\mathrm{n}}{\\mathrm{n}+4}$\n(2) $\\frac{n+4}{n}$\n(3) $\\frac{\\mathrm{n}^{2}}{\\mathrm{n}^{2}+4}$\n(4) $\\frac{\\mathrm{n}^{2}+4}{\\mathrm{n}^{2}}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nV_{\\text {Top }}=\\sqrt{n^{2} g R} \\\\\nV_{\\text {Bottom }}=\\sqrt{n^{2} g R+4 g R} \\\\\n\\text { Ratio }=\\frac{n^{2}+4}{n^{2}}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 42,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Let u and v be the distances of the object and the image from a lens of focal length $f$. The correct graphical representation of u and v for a convex lens when $|\\mathrm{u}|>f$, is\n(1)\n(2)\n(3)\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$(\\mathrm{u}+\\mathrm{f})(\\mathrm{v}-\\mathrm{f})=\\mathrm{f}^{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 43,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List-I with List-II.\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline & List-I & & List-II \\\\\n\\hline",
+   "options": {
+    "A": "& Electric field inside (distance $\\mathrm{r}>0$ from center) of a uniformly charged spherical shell with surface charge density $\\sigma$, and radius R. & (I) & $\\sigma / \\varepsilon_{0}$ \\\\\n\\hline",
+    "B": "& Electric field at distance $\\mathrm{r}>0$ from a uniformly charged infinite plane sheet with surface charge density $\\sigma$. & (II) & $\\sigma / 2 \\varepsilon_{0}$ \\\\\n\\hline",
+    "C": "& Electric field outside (distance $\\mathrm{r}>0$ from center) of a uniformly charged spherical shell with surface charge density $\\sigma$, and radius R & (III) & 0 \\\\\n\\hline",
+    "D": "& Electric field between 2 oppositely charged infinite plane parallel sheets with uniform surface charge density $\\sigma$. & (IV) & $\\frac{\\sigma}{\\varepsilon_{0} \\mathrm{r}^{2}}$ \\\\\n\\hline\n\\end{tabular}\n\nChoose the correct answer from the options given below:\n(1) (A)-(IV), (B)-(I), (C)-(III), (D)-(II)\n(2) (A)-(IV), (B)-(II), (C)-(III), (D)-(I)\n(3) (A)-(II), (B)-(I), (C)-(IV), (D)-(III)\n(4) (A)-(III), (B)-(II), (C)-(IV), (D)-(I)\n\nAns. (4)\nSol. (A) → 0 (III)\n(B) $\\rightarrow \\frac{\\sigma}{2 \\varepsilon_{0}}$\n$(\\mathrm{C}) \\rightarrow \\frac{\\sigma \\mathrm{R}^{2}}{\\varepsilon_{0} \\mathrm{r}^{2}}$ (No row matching)\n(D) $\\rightarrow \\frac{\\sigma}{\\varepsilon_{0}}$"
+   },
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A) → 0 (III)\n(B) $\\rightarrow \\frac{\\sigma}{2 \\varepsilon_{0}}$\n$(\\mathrm{C}) \\rightarrow \\frac{\\sigma \\mathrm{R}^{2}}{\\varepsilon_{0} \\mathrm{r}^{2}}$ (No row matching)\n(D) $\\rightarrow \\frac{\\sigma}{\\varepsilon_{0}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 44,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The workdone in an adiabatic change in an ideal gas depends upon only :\n(1) change in its pressure\n(2) change in its specific heat\n(3) change in its volume\n(4) change in its temperature",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\Delta \\mathrm{W}=-\\Delta \\mathrm{U}=-\\mathrm{nC}_{\\mathrm{v}} \\Delta \\mathrm{T}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 45,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Given below are two statements : one is labelled as Assertion (A) and other is labelled as Reason (R). Assertion (A) : Electromagnetic waves carry energy but not momentum.\nReason (R) : Mass of a photon is zero.\nIn the light of the above statements, choose the most appropriate answer from the options given below :\n(1) (A) is true but (R) is false.\n(2) (A) is false but (R) is true.\n(3) Both (A) and (R) are true but (R) is not the correct explanation of (A).\n(4) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Assertion is false because em waves have momentum.",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 46,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The coordinates of a particle with respect to origin in a given reference frame is $(1,1,1)$ meters. If a force of $\\overrightarrow{\\mathrm{F}}=\\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ acts on the particle, then the magnitude of torque (with respect to origin) in z-direction is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\vec{\\tau}=\\overrightarrow{\\mathrm{r}} \\times \\overrightarrow{\\mathrm{F}}=\\left|\\begin{array}{ccc}\\hat{\\mathrm{i}} & \\hat{\\mathrm{j}} & \\hat{\\mathrm{k}} \\\\ 1 & 1 & 1 \\\\ 1 & -1 & 1\\end{array}\\right|$\n$$\\begin{array}{l}\n\\vec{\\tau}=\\hat{\\mathrm{k}}(-1-1)=-2 \\hat{\\mathrm{k}} \\\\\n|\\vec{\\tau}|=2 \\mathrm{Nm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 47,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A container of fixed volume contains a gas at $27^{\\circ} \\mathrm{C}$. To double the pressure of the gas, the temperature of gas should be raised to $\\_\\_\\_\\_$ °C.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "327"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{P}_{1}}{\\mathrm{~T}_{1}}=\\frac{\\mathrm{P}_{2}}{\\mathrm{~T}_{2}}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{P}}{300}=\\frac{2 \\mathrm{P}}{\\mathrm{~T}_{2}} \\\\\n\\mathrm{~T}_{2}=600 \\mathrm{~K} \\\\\n\\mathrm{~T}_{2}=327^{\\circ} \\mathrm{C}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 48,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Two light beams fall on a transparent material block at point 1 and 2 with angle $\\theta_{1}$ and $\\theta_{2}$, respectively, as shown in figure. After refraction, the beams intersect at point 3 which is exactly on the interface at other end of the block. Given : the distance between 1 and $2, \\mathrm{~d}=4 \\sqrt{3} \\mathrm{~cm}$ and $\\theta_{1}=\\theta_{2}=\\cos ^{-1}\\left(\\frac{\\mathrm{n}_{2}}{2 \\mathrm{n}_{1}}\\right)$, where refractive index of the block $\\mathrm{n}_{2}>$ refractive index of the outside medium $\\mathrm{n}_{1}$, then the thickness of the block is\n$\\_\\_\\_\\_$ cm.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "6"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{n}_{1} \\sin \\left(90-\\theta_{1}\\right)=\\mathrm{n}_{2} \\sin \\theta_{3} \\\\\n\\mathrm{n}_{1} \\cos \\theta_{1}=\\mathrm{n}_{2} \\sin \\theta_{3} \\\\\n\\mathrm{n}_{1} \\frac{\\mathrm{n}_{2}}{2 \\mathrm{n}_{1}}=\\mathrm{n}_{2} \\sin \\theta_{3} \\\\\n\\frac{1}{2}=\\sin \\theta_{3}, \\theta_{3}=30 \\\\\n\\tan 30=\\frac{\\mathrm{d}}{2(\\mathrm{t})} \\\\\n\\mathrm{t}=\\frac{\\mathrm{d} \\sqrt{3}}{2}=\\frac{4 \\sqrt{3} \\times \\sqrt{3}}{2} \\mathrm{~cm}=6 \\mathrm{~cm}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 49,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "In a hydraulic lift, the surface area of the input piston is $6 \\mathrm{~cm}^{2}$ and that of the output piston is $1500 \\mathrm{~cm}^{2}$. If 100 N force is applied to the input piston to raise the output piston by 20 cm, then the work done is $\\_\\_\\_\\_$ kJ.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "5"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\frac{\\mathrm{F}_{1}}{\\mathrm{~A}_{1}}=\\frac{\\mathrm{F}_{2}}{\\mathrm{~A}_{2}}, \\frac{100}{6}=\\frac{\\mathrm{F}}{1500}, \\mathrm{~F}=\\frac{50}{3} \\times 1500 \\\\\n\\mathrm{~F}=50 \\times 500=25 \\times 10^{3} \\mathrm{~N} \\\\\n\\omega=\\overrightarrow{\\mathrm{F}} . \\overrightarrow{\\mathrm{S}}=25 \\times 10^{3} \\times \\frac{20}{100} \\\\\n=5 \\times 10^{3}=5 \\mathrm{~kJ}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 50,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The maximum speed of a boat in still water is 27 km/h. Now this boat is moving downstream in a river flowing at 9 km/h. A man in the boat throws a ball vertically upwards with speed of 10 m/s. Range of the ball as observed by an observer at rest on the river bank, is $\\_\\_\\_\\_$ cm.\n(Take $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2000"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{v}}_{\\mathrm{b}}=9+27=36 \\mathrm{~km} / \\mathrm{hr} \\\\\n\\longrightarrow\n\\end{array}$$\n$$\\overrightarrow{\\mathrm{v}}_{\\mathrm{b}}=36 \\times \\frac{1000}{36000}=10 \\mathrm{~m} / \\mathrm{sec}$$",
+     "Time of flight $=\\frac{2 \\times 10}{10}=2 \\mathrm{sec}$\nRange $=10 \\times 2=20 \\mathrm{~m}=2000 \\mathrm{~cm}$",
+     "CHEMISTRY",
+     "SECTION-A"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 51,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Total number of nucleophiles from the following is :$\\mathrm{NH}_{3}, \\mathrm{PhSH},\\left(\\mathrm{H}_{3} \\mathrm{C}\\right)_{2} \\mathrm{~S}, \\mathrm{H}_{2} \\mathrm{C}=\\mathrm{CH}_{2}, \\stackrel{\\ominus}{\\mathrm{O}} \\mathrm{H}, \\mathrm{H}_{3} \\mathrm{O}^{\\oplus}$, $\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{CO}, 7=\\mathrm{NCH}_{3}$\n(1) 5\n(2) 4\n(3) 7\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Total five nucleophiles are present $\\mathrm{NH}_{3}, \\mathrm{PhSH},\\left(\\mathrm{H}_{3} \\mathrm{C}\\right)_{2} \\mathrm{~S}, \\mathrm{CH}_{2}=\\mathrm{CH}_{2}, \\stackrel{\\ominus}{\\mathrm{O}} \\mathrm{H}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 52,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The standard reduction potential values of some of the p-block ions are given below. Predict the one with the strongest oxidising capacity.\n(1) $\\mathrm{E}_{\\mathrm{Sn}^{4+} / \\mathrm{Sn}^{2+}}^{\\ominus}=+1.15 \\mathrm{~V}$\n(2) $\\mathrm{E}_{\\mathrm{T}^{3+} / \\mathrm{T} l}^{\\ominus}=+1.26 \\mathrm{~V}$\n(3) $\\mathrm{E}_{\\mathrm{Al}^{3+} / \\mathrm{Al}}^{\\ominus}=-1.66 \\mathrm{~V}$\n(4) $\\mathrm{E}_{\\mathrm{Pb}^{4+} / \\mathrm{Pb}^{2+}}^{\\ominus}=+1.67 \\mathrm{~V}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Standard reduction potential value (+ve) increases oxidising capacity increases."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 53,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The molar conductivity of a weak electrolyte when plotted against the square root of its concentration, which of the following is expected to be observed?\n(1) A small decrease in molar conductivity is observed at infinite dilution.\n(2) A small increase in molar conductivity is observed at infinite dilution.\n(3) Molar conductivity increases sharply with increase in concentration.\n(4) Molar conductivity decreases sharply with increase in concentration.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 54,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "At temperature T, compound $\\mathrm{AB}_{2(\\mathrm{~g})}$ dissociates as $\\mathrm{AB}_{2(\\mathrm{~g})} \\rightleftharpoons \\mathrm{AB}_{(\\mathrm{g})}+\\frac{1}{2} \\mathrm{~B}_{2(\\mathrm{~g})}$ having degree of dissociation x (small compared to unity). The correct expression for x in terms of $\\mathrm{K}_{\\mathrm{p}}$ and p is\n(1) $\\sqrt[3]{\\frac{2 \\mathrm{~K}_{\\mathrm{p}}}{\\mathrm{p}}}$\n(2) $\\sqrt[4]{\\frac{2 \\mathrm{~K}_{\\mathrm{p}}}{\\mathrm{p}}}$\n(3) $\\sqrt[3]{\\frac{2 \\mathrm{~K}_{\\mathrm{p}}^{2}}{\\mathrm{p}}}$\n(4) $\\sqrt{\\mathrm{K}_{\\mathrm{p}}}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{AB}_{2(\\mathrm{~g})} \\rightleftharpoons \\mathrm{AB}_{(\\mathrm{g})}+\\frac{1}{2} \\mathrm{~B}_{2(\\mathrm{~g})}$\n$t_{\\text {eq. }} \\frac{(1-x)}{1+\\frac{x}{2}} P \\frac{x P}{1+\\frac{x}{2}} \\frac{\\left(\\frac{x}{2}\\right) P}{1+\\frac{x}{2}}$\n$\\Rightarrow \\mathrm{x} \\ll 1 \\Rightarrow 1+\\frac{\\mathrm{x}}{2} \\bumpeq 1$ and $1-\\mathrm{x} \\bumpeq 1$\n$\\Rightarrow \\mathrm{k}_{\\mathrm{P}}=\\frac{(\\mathrm{xp}) \\cdot\\left(\\frac{\\mathrm{xp}}{2}\\right)^{\\frac{1}{2}}}{\\mathrm{P}}$\n$\\Rightarrow \\mathrm{k}_{\\mathrm{p}}^{2}=\\mathrm{x}^{2} . \\frac{\\mathrm{xP}}{2}$\n$\\mathrm{x}=\\sqrt[3]{\\frac{2 \\mathrm{k}_{\\mathrm{p}}^{2}}{\\mathrm{P}}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 55,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Match List-I with List-II.\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline \\multicolumn{2}{|c|}{List-I (Structure)} & \\multicolumn{2}{|c|}{List-II (IUPAC Name)} \\\\\n\\hline (A) & <smiles>CCC(C)CC(CC)CC</smiles> & (I) & 4-Methylpent-1ene \\\\\n\\hline (B) & $\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}\\left(\\mathrm{C}_{3} \\mathrm{H}_{7}\\right)_{2}$ & (II) & 3-Ethyl-5methylheptane \\\\\n\\hline (C) & <smiles>C=C(C)C=CC</smiles> & (III) & 4,4Dimethylheptane \\\\\n\\hline (D) & <smiles>C=CCC(C)C</smiles> & (IV) & 2-Methyl-1,3pentadiene \\\\\n\\hline\n\\end{tabular}\nChoose the correct answer from the options given below:\n(1) (A)-(III), (B)-(II), (C)-(IV), (D)-(I)\n(2) (A)-(III), (B)-(II), (C)-(I), (D)-(IV)\n(3) (A)-(II), (B)-(III), (C)-(IV), (D)-(I)\n(4) (A)-(II), (B)-(III), (C)-(I), (D)-(IV)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n<smiles>CCC(CC)CC(CC)C(C)CC</smiles>",
+     "3-Ethyl-5-methylheptane\n(B) $\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}\\left(\\mathrm{C}_{3} \\mathrm{H}_{7}\\right)_{2}$\n<smiles>CCC(CC)C(C)(C)C</smiles>",
+     "4, 4-Dimethylheptane\n(C)\n<smiles>CC=CC(C)=[IH]</smiles>",
+     "2-Methyl-1, 3-pentadiene\n(D)\n<smiles>CC(C)CC=[IH]</smiles>",
+     "4-Methylpent-1-ene"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 56,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Choose the correct statements.",
+   "options": {
+    "A": "Weight of a substance is the amount of matter present in it.",
+    "B": "Mass is the force exerted by gravity on an object.",
+    "C": "Volume is the amount of space occupied by a substance.",
+    "D": "Temperatures below 0°C are possible in Celsius scale, but in Kelvin scale negative temperature is not possible.\n(E) Precision refers to the closeness of various measurements for the same quantity.\n(1) (B), (C) and (D) Only\n(2) (A), (B) and (C) Only\n(3) (A), (D) and (E) Only\n(4) (C), (D) and (E) Only\n\nAns. (4)\nSol. Theory based"
+   },
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 57,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The correct increasing order of stability of the complexes based on $\\Delta_{\\mathrm{o}}$ value is :\n(I) $\\left[\\mathrm{Mn}(\\mathrm{CN})_{6}\\right]^{3-}$\n(II) $\\left[\\mathrm{Co}(\\mathrm{CN})_{6}\\right]^{4-}$\n(III) $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{4-}$\n(IV) $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{3-}$\n(1) II $<$ III $<$ I $<$ IV\n(2) IV $<$ III $<$ II $<$ I\n(3) I $<$ II $<$ IV $<$ III\n(4) III $<$ II $<$ IV $<$ I",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(I) $\\left[\\mathrm{Mn}(\\mathrm{CN})_{6}\\right]^{3-} \\quad-1.6 \\Delta_{\\mathrm{o}}$\n(II) $\\left[\\mathrm{Co}(\\mathrm{CN})_{6}\\right]^{4-}$\n$-1.8 \\Delta_{\\mathrm{o}}$\n(III) $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{4-}$\n$-2.4 \\Delta_{\\mathrm{o}}$\n(IV) $\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]^{3-}$\n$-2.0 \\Delta_{\\mathrm{o}}$\nI $<$ II $<$ IV $<$ III"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 58,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List-I with List-II.\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline \\multicolumn{2}{|c|}{List-I (Complex)} & \\multicolumn{2}{|c|}{List-II (Hybridisation \\& Magnetic characters)} \\\\\n\\hline",
+   "options": {
+    "A": "& $\\left[\\mathrm{MnBr}_{4}\\right]^{2-}$ & (I) & $\\mathrm{d}^{2} \\mathrm{sp}^{3}$ \\& diamagnetic \\\\\n\\hline",
+    "B": "& $\\left[\\mathrm{FeF}_{6}\\right]^{3-}$ & (II) & $\\mathrm{sp}^{3} \\mathrm{~d}^{2}$ \\& paramagnetic \\\\\n\\hline",
+    "C": "& $\\left[\\mathrm{Co}\\left(\\mathrm{C}_{2} \\mathrm{O}_{4}\\right)_{3}\\right]^{3-}$ & (III) & $\\mathrm{sp}^{3}$ \\& diamagnetic \\\\\n\\hline",
+    "D": "& $\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]$ & (IV) & $\\mathrm{sp}^{3}$ \\& paramagnetic \\\\\n\\hline\n\\end{tabular}\n\nChoose the correct answer from the options given below:\n(1) (A)-(III), (B)-(II), (C)-(I), (D)-(IV)\n(2) (A)-(III), (B)-(I), (C)-(II), (D)-(IV)\n(3) (A)-(IV), (B)-(I), (C)-(II), (D)-(III)\n(4) (A)-(IV), (B)-(II), (C)-(I), (D)-(III)\n\nAns. (4)\nSol. (A) $\\left[\\mathrm{MnBr}_{4}\\right]^{2-}$\n$\\mathrm{Mn}^{+2} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{5}$\nIn presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|l|l|l|l|l|}\n\\hline 1 & 1 & 1 & 1 & 1 \\\\\n\\hline\n\\end{array}$$\n□\n□ \\begin{tabular}{|l|l|}\n\\hline & \\\\\n\\hline\n\\end{tabular} □」\n$\\Rightarrow \\mathrm{sp}^{3}$ hybridization, paramagnetic in nature\n\n(B) $\\left[\\mathbf{F e F}_{\\mathbf{6}}\\right]$\n$$\\mathrm{Fe}^{+3} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{5}$$\n\nIn presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|l|l|l|l|l|}\n\\hline \\text { 1 } & 1 & 1 & 1 & 1 \\\\\n\\hline\n\\end{array} \\begin{array}{|l|l|l|l|}\n\\hline & & 3 \\mathrm{~d} \\\\\n\\hline\n\\end{array} \\begin{array}{|l|l|l|l|l|}\n\\hline & & & \\\\\n\\hline\n\\end{array}$$\n$\\Rightarrow \\mathrm{sp}^{3} \\mathrm{~d}^{2}$ hybridization, paramagnetic in nature\n$$\\begin{array}{l}\n\\text { (C) }\\left[\\mathrm{Co}\\left(\\mathrm{C}_{2} \\mathrm{O}_{4}\\right)_{3}\\right]^{3-} \\\\\n\\mathrm{Co}^{+3} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{6}\n\\end{array}$$\n\nIn presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|c|c|c|c|c|}\n\\hline \\mathbb{1} & \\mathbb{1} & \\mathbb{1} & & \\\\\n\\hline\n\\end{array} \\begin{array}{|c|c|c|}\n\\hline & & \\\\\n\\hline\n\\end{array} \\begin{array}{|l|}\n\\hline \\\\\n\\hline\n\\end{array}$$\n$\\Rightarrow \\mathrm{d}^{2} \\mathrm{sp}^{3}$ hybridization, diamagnetic in nature\n(D) $\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]$\n$$\\mathrm{Ni}^{0} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{8} 4 \\mathrm{~s}^{2}$$\n\nIn presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|c|c|c|c|c|}\n\\hline \\mathbb{1} & \\mathbb{1} & \\mathbb{1 L} & \\mathbb{1 L} & \\mathbb{1 L} \\\\\n\\hline\n\\end{array} \\begin{array}{|c|c|c|}\n\\hline & & \\\\\n\\text { 3d } & & \\\\\n\\hline 4 \\mathrm{~s} & & 4 \\mathrm{p} \\\\\n\\hline\n\\end{array}$$\n$\\Rightarrow \\mathrm{sp}^{3}$ hybridization, diamagnetic in nature"
+   },
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A) $\\left[\\mathrm{MnBr}_{4}\\right]^{2-}$\n$\\mathrm{Mn}^{+2} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{5}$\nIn presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|l|l|l|l|l|}\n\\hline 1 & 1 & 1 & 1 & 1 \\\\\n\\hline\n\\end{array}$$\n□\n□ \\begin{tabular}{|l|l|}\n\\hline & \\\\\n\\hline\n\\end{tabular} □」\n$\\Rightarrow \\mathrm{sp}^{3}$ hybridization, paramagnetic in nature",
+     "(B) $\\left[\\mathbf{F e F}_{\\mathbf{6}}\\right]$\n$$\\mathrm{Fe}^{+3} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{5}$$",
+     "In presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|l|l|l|l|l|}\n\\hline \\text { 1 } & 1 & 1 & 1 & 1 \\\\\n\\hline\n\\end{array} \\begin{array}{|l|l|l|l|}\n\\hline & & 3 \\mathrm{~d} \\\\\n\\hline\n\\end{array} \\begin{array}{|l|l|l|l|l|}\n\\hline & & & \\\\\n\\hline\n\\end{array}$$\n$\\Rightarrow \\mathrm{sp}^{3} \\mathrm{~d}^{2}$ hybridization, paramagnetic in nature\n$$\\begin{array}{l}\n\\text { (C) }\\left[\\mathrm{Co}\\left(\\mathrm{C}_{2} \\mathrm{O}_{4}\\right)_{3}\\right]^{3-} \\\\\n\\mathrm{Co}^{+3} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{6}\n\\end{array}$$",
+     "In presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|c|c|c|c|c|}\n\\hline \\mathbb{1} & \\mathbb{1} & \\mathbb{1} & & \\\\\n\\hline\n\\end{array} \\begin{array}{|c|c|c|}\n\\hline & & \\\\\n\\hline\n\\end{array} \\begin{array}{|l|}\n\\hline \\\\\n\\hline\n\\end{array}$$\n$\\Rightarrow \\mathrm{d}^{2} \\mathrm{sp}^{3}$ hybridization, diamagnetic in nature\n(D) $\\left[\\mathrm{Ni}(\\mathrm{CO})_{4}\\right]$\n$$\\mathrm{Ni}^{0} \\Rightarrow[\\mathrm{Ar}] 3 \\mathrm{~d}^{8} 4 \\mathrm{~s}^{2}$$",
+     "In presence of ligand field\n$$\\Rightarrow[\\mathrm{Ar}] \\begin{array}{|c|c|c|c|c|}\n\\hline \\mathbb{1} & \\mathbb{1} & \\mathbb{1 L} & \\mathbb{1 L} & \\mathbb{1 L} \\\\\n\\hline\n\\end{array} \\begin{array}{|c|c|c|}\n\\hline & & \\\\\n\\text { 3d } & & \\\\\n\\hline 4 \\mathrm{~s} & & 4 \\mathrm{p} \\\\\n\\hline\n\\end{array}$$\n$\\Rightarrow \\mathrm{sp}^{3}$ hybridization, diamagnetic in nature"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 59,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "In the following substitution reaction :\nProduct ' P ' formed is :\n(1)\n<smiles>CCOc1ccc([N+](=O)[O-])cc1Br</smiles>\n(2)\n<smiles>CCOc1ccc([N+](=O)[O-])cc1OCC</smiles>\n(3)\n<smiles>CCOc1cc([N+](=O)[O-])ccc1Br</smiles>\n(4)\n<smiles>CCOc1ccc(Br)c(Br)c1</smiles>",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "It is an example of nucleophillic Aromatic substitution reaction."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 60,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "For a $\\mathrm{Mg}|\\mathrm{Mg}(\\mathrm{aq}) \\| \\mathrm{Ag}(\\mathrm{aq})| \\mathrm{Ag}$ the correct Nernst Equation is :\n(1) $\\mathrm{E}_{\\text {cell }}=\\mathrm{E}_{\\text {cell }}^{\\circ}-\\frac{\\mathrm{RT}}{2 \\mathrm{~F}} \\ln \\frac{\\left[\\mathrm{Ag}^{+}\\right]}{\\left[\\mathrm{Mg}^{2+}\\right]}$\n(2) $\\mathrm{E}_{\\text {cell }}=\\mathrm{E}_{\\text {cell }}^{o}+\\frac{\\mathrm{RT}}{2 \\mathrm{~F}} \\ln \\frac{\\left[\\mathrm{Ag}^{+}\\right]^{2}}{\\left[\\mathrm{Mg}^{2+}\\right]}$\n(3) $\\mathrm{E}_{\\text {cell }}=\\mathrm{E}_{\\text {cell }}^{o}-\\frac{\\mathrm{RT}}{2 \\mathrm{~F}} \\ln \\frac{\\left[\\mathrm{Mg}^{2+}\\right]}{\\left[\\mathrm{Ag}^{+}\\right]}$\n(4) $\\mathrm{E}_{\\text {cell }}=\\mathrm{E}_{\\text {cell }}^{\\mathrm{o}}-\\frac{\\mathrm{RT}}{2 \\mathrm{~F}} \\ln \\frac{\\left[\\mathrm{Ag}^{+}\\right]^{2}}{\\left[\\mathrm{Mg}^{2+}\\right]}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "According to Nernst equation :-\n$$\\mathrm{E}=\\mathrm{E}^{\\circ}-\\frac{\\mathrm{RT}}{\\mathrm{nF}} \\ln \\mathrm{Q} .$$",
+     "Cell reaction :-\n$$\\begin{array}{l}\n\\mathrm{Mg}_{(\\mathrm{s})}+2 \\mathrm{Ag}_{(\\mathrm{aq})}^{+} \\rightleftharpoons 2 \\mathrm{Ag}_{(\\mathrm{s})}+\\mathrm{Mg}_{(\\mathrm{aq})}^{+2} \\\\\n\\Rightarrow \\mathrm{Q}=\\frac{\\left[\\mathrm{Mg}^{+2}\\right]}{\\left[\\mathrm{Ag}^{+}\\right]^{2}} \\\\\n\\Rightarrow \\mathrm{E}=\\mathrm{E}_{\\mathrm{Cell}}^{\\mathrm{o}}-\\frac{\\mathrm{RT}}{2 \\mathrm{~F}} \\ln \\left[\\frac{\\left[\\mathrm{Mg}^{+2}\\right]}{\\left[\\mathrm{Ag}^{+}\\right]^{2}}\\right]\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 61,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The correct option with order of melting points of the pairs $(\\mathrm{Mn}, \\mathrm{Fe}),(\\mathrm{Tc}, \\mathrm{Ru})$ and $(\\mathrm{Re}, \\mathrm{Os})$ is :\n(1) Fe < Mn, Ru < Tc and Re<Os\n(2) Mn < Fe, Tc < Ru and Re < Os\n(3) Mn < Fe, Tc < Ru and Os < Re\n(4) Fe < Mn, Ru < Tc and Os < Re",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "M.P. ⇒ Mn< Fe, Tc< Ru, Os< Re NCERT based"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 62,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "1.24 g of $\\mathrm{AX}_{2}$ (molar mass $124 \\mathrm{~g} \\mathrm{~mol}^{-1}$ ) is dissolved in 1 kg of water to form a solution with boiling point of $100.0156^{\\circ} \\mathrm{C}$, while 25.4 g of $\\mathrm{AY}_{2}$ (molar mass $250 \\mathrm{~g} \\mathrm{~mol}^{-1}$ ) in 2 kg of water constitutes a solution with a boiling point of $100.0260^{\\circ} \\mathrm{C}$.\n$$\\mathrm{K}_{\\mathrm{b}}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)=0.52 \\mathrm{~K} \\mathrm{~kg} \\mathrm{~mol}^{-1}$$\nWhich of the following is correct ?\n(1) $\\mathrm{AX}_{2}$ and $\\mathrm{AY}_{2}$ (both) are completely unionised.\n(2) $\\mathrm{AX}_{2}$ and $\\mathrm{AY}_{2}$ (both) are fully ionised.\n(3) $\\mathrm{AX}_{2}$ is completely unionised while $\\mathrm{AY}_{2}$ is fully ionised.\n(4) $\\mathrm{AX}_{2}$ is fully ionised while $\\mathrm{AY}_{2}$ is completely unionised.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For $\\mathrm{AX}_{2}$ :- $\\Delta \\mathrm{T}_{\\mathrm{b}}=\\mathrm{K}_{\\mathrm{b}} \\times \\mathrm{m} \\times \\mathrm{i}$\n$$0.0156=0.52 \\times \\frac{0.01}{1} \\times \\mathrm{i}_{\\mathrm{AX}_{2}}$$\n$\\Rightarrow \\mathrm{i}_{\\mathrm{AX}_{2}}=3 \\Rightarrow$ complete ionisation\nFor $\\mathrm{AY}_{2}:-\\Delta \\mathrm{T}_{\\mathrm{b}}=\\mathrm{K}_{\\mathrm{b}} \\times \\mathrm{m} \\times \\mathrm{i}$\n$0.026=0.52 \\times 0.0508 \\times \\mathrm{i}_{\\mathrm{AY}_{2}}$\n$\\Rightarrow \\mathrm{i}_{\\mathrm{AY}_{2}} \\simeq 1 \\therefore$ complete unionisation"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 63,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "500 J of energy is transferred as heat to 0.5 mol of Argon gas at 298 K and 1.00 atm. The final temperature and the change in internal energy respectively are :\nGiven : $\\mathrm{R}=8.3 \\mathrm{~J} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$\n(1) 348 K and 300 J\n(2) 378 K and 300 J\n(3) 368 K and 500 J\n(4) 378 K and 500 J",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{q}_{\\mathrm{p}}=\\mathrm{n} \\times \\mathrm{c}_{\\mathrm{p}} \\times \\Delta \\mathrm{T}$\n$$\\begin{array}{l}\n\\Rightarrow 500=0.5 \\times \\frac{5}{2} \\times 8.3\\left(\\mathrm{~T}_{\\mathrm{f}}-298\\right) \\\\\n\\Rightarrow \\mathrm{T}_{\\mathrm{f}} \\simeq 346.2 \\mathrm{~K} \\\\\n\\frac{\\Delta \\mathrm{H}}{\\Delta \\mathrm{U}}=\\frac{\\mathrm{C}_{\\mathrm{p}}}{\\mathrm{C}_{\\mathrm{v}}}=\\left(\\frac{5}{3}\\right) \\\\\n\\Rightarrow \\Delta \\mathrm{U}=\\frac{3}{5} \\times 500=300 \\mathrm{~J}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 64,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The reaction $\\mathrm{A}_{2}+\\mathrm{B}_{2} \\rightarrow 2 \\mathrm{AB}$ follows the mechanism\n$$\\begin{array}{l}\nA_{2} \\underset{k_{-1}}{\\stackrel{k_{1}}{\\rightleftharpoons}} A+A(\\text { fast }) \\\\\nA+B_{2} \\xrightarrow{k_{2}} A B+B \\text { (slow) } \\\\\nA+B \\rightarrow A B \\text { (fast) }\n\\end{array}$$\nThe overall order of the reaction is :\n(1) 1.5\n(2) 3\n(3) 2.5\n(4)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad$ rate $=\\mathrm{k}_{2}[\\mathrm{~A}]\\left[\\mathrm{B}_{2}\\right]$\n$$\\begin{array}{l}\n\\left(\\frac{k_{1}}{k_{-1}}\\right)=\\left(\\frac{[A]^{2}}{\\left[A_{2}\\right]}\\right) \\\\\n\\Rightarrow[A]=\\sqrt{\\frac{k_{1}}{k_{-1}}} \\cdot \\sqrt{\\left[A_{2}\\right]}\n\\end{array}$$",
+     "Substituting in (1) ; we get\n$$\\begin{array}{l}\n\\text { Rate }=\\mathrm{k}_{2} \\sqrt{\\frac{\\mathrm{k}_{1}}{\\mathrm{k}_{-1}}} \\cdot\\left[\\mathrm{~A}_{2}\\right]^{\\frac{1}{2}} \\cdot\\left[\\mathrm{~B}_{2}\\right] \\\\\n\\therefore \\text { order }=\\left(\\frac{3}{2}\\right)=1.5\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 65,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "If $\\mathrm{a}_{0}$ is denoted as the Bohr radius of hydrogen atom, then what is the de-Broglie wavelength $(\\lambda)$ of the electron present in the second orbit of hydrogen atom ? [n : any integer]\n(1) $\\frac{2 \\mathrm{a}_{0}}{\\mathrm{n} \\pi}$\n(2) $\\frac{8 \\pi \\mathrm{a}_{0}}{\\mathrm{n}}$\n(3) $\\frac{4 \\pi \\mathrm{a}_{0}}{\\mathrm{n}}$\n(4) $\\frac{4 \\mathrm{n}}{\\pi \\mathrm{a}_{0}}$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$2 \\pi \\mathrm{r}_{\\mathrm{n}}=\\mathrm{n} \\lambda$\n$$\\begin{array}{l}\n2 \\pi \\cdot\\left(4 a_{0}\\right)=n \\lambda \\\\\n=\\lambda=\\frac{8 \\pi a_{0}}{n}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 66,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "The product (P) formed in the following reaction is :\n(1)\n<smiles>OCCc1cc(CO)cc(CO)c1</smiles>\n(2)\n<smiles>CCOC(=O)c1cc(CO)cc(C(C)=O)c1</smiles>\n(3)\n<smiles>CCOC(=O)c1cc(C)cc(CC)c1</smiles>\n(4)\n<smiles>CCOC(=O)c1cc(CO)cc(CCO)c1</smiles>",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 67,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "An element 'E' has the ionisation enthalpy value of $374 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$. 'E' reacts with elements A, B, C and D with electron gain enthalpy values of -328, -349, -325 and $-295 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$, respectively.\nThe correct order of the products EA, EB, EC and ED in terms of ionic character is :\n(1) EB > EA > EC > ED\n(2) ED > EC > EA > EB\n(3) EA > EB > EC > ED\n(4) ED > EC > EB > EA",
+   "options": null,
+   "embedded_answer": {
+    "raw": "1",
+    "option": "A",
+    "option_index": 1
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Difference between I.E. \\& E.G.E increases, ionic character increases."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 68,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Match List - I with List - II.\nList - I\n(Carbohydrate)\nList - II\n(Linkage\nSource)",
+   "options": {
+    "A": "Amylose\n(I) $\\beta-\\mathrm{C}_{1}-\\mathrm{C}_{4}$, plant",
+    "B": "Cellulose\n(II) $\\alpha-\\mathrm{C}_{1}-\\mathrm{C}_{4}$, animal",
+    "C": "Glycogen\n(III) $\\quad \\alpha-\\mathrm{C}_{1}-\\mathrm{C}_{4}$,\n$\\alpha-\\mathrm{C}_{1}-\\mathrm{C}_{6}$, plant",
+    "D": "Amylopectin\n(IV) $\\alpha-\\mathrm{C}_{1}-\\mathrm{C}_{4}$, plant Choose the correct answer form the options given below :\n(1) (A)-(III), (B)-(II), (C)-(I), (D)-(IV)\n(2) (A)-(IV), (B)-(I), (C)-(II), (D)-(III)\n(3) (A)-(II), (B)-(III), (C)-(I), (D)-(IV)\n(4) (A)-(IV), (B)-(I), (C)-(III), (D)-(II)\n\nAns. (2)\nSol. Informative"
+   },
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 69,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The steam volatile compounds among the following are :",
+   "options": {
+    "A": "<smiles>O=[N+]([O-])c1ccccc1O</smiles>",
+    "B": "<smiles>Nc1ccccc1[N+](=O)[O-]</smiles>",
+    "C": "<smiles>Oc1ccc(O)c1</smiles>",
+    "D": "<smiles>Nc1ccc(O)cc1</smiles>\n\nChoose the correct answer from the options given below :\n(1) (B) and (D) only\n(2) (A) and (C) only\n(3) (A) and (B) only\n(4) (A),(B) and (C) only\n\nAns. (3)\n\nSol. (A)\n<smiles>O=[N+]([O-])c1ccccc1O</smiles>\n\n(B)\n<smiles>Nc1ccccc1[N+](=O)[O-]</smiles>\nare steam volatile due to intramolecular hydrogen bonding."
+   },
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(A)\n<smiles>O=[N+]([O-])c1ccccc1O</smiles>",
+     "(B)\n<smiles>Nc1ccccc1[N+](=O)[O-]</smiles>\nare steam volatile due to intramolecular hydrogen bonding."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 70,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Given below are two statements :\nStatement (I) : The radii of isoelectronic species increases in the order.\n$\\mathrm{Mg}^{2+}<\\mathrm{Na}^{+}<\\mathrm{F}^{-}<\\mathrm{O}^{2-}$\nStatement (II) : The magnitude of electron gain enthalpy of halogen decreases in the order.\n$\\mathrm{Cl}>\\mathrm{F}>\\mathrm{Br}>\\mathrm{I}$\nIn the light of the above statements, choose the most appropriate answer from the options given below :\n(1) Statement I is incorrect but Statement II is correct\n(2) Both Statement I and Statement II are incorrect\n(3) Statement I is correct but Statement II is incorrect\n(4) Both Statement I and Statement II are correct",
+   "options": null,
+   "embedded_answer": {
+    "raw": "4",
+    "option": "D",
+    "option_index": 4
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "(i) For isoelectronic species -ve charge increases, radii increases.\n(ii) Magnitude of E.G.E: $\\mathrm{Cl}>\\mathrm{F}>\\mathrm{Br}>\\mathrm{I}$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 71,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Given below are some nitrogen containing compounds.\n<smiles>CC(=O)N(C(C)=O)c1ccccc1</smiles>\nEach of them is treated with HCl separately. 1.0 g of the most basic compound will consume\n$\\_\\_\\_\\_$ mg of HCl.\n(Given molar mass in $\\mathrm{g} \\mathrm{mol}^{-1} \\mathrm{C}: 12, \\mathrm{H}: 1, \\mathrm{O}: 16$, Cl : 35.5)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "341"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Benzyl Amine is most basic due to localised lone pair.\n(Benzyl Amine)\nMole of benzyl Amine $\\Rightarrow \\frac{1}{107}=0.00934$ mole\n1 Mole of Benzyl amine consumed 1 mole of HCl So, Mole of HCl consumed → 0.00934 mole",
+     "Mass of HCl consumed → $0.00934 \\times$ molar mass of HCl\n$$\\begin{array}{l}\n=0.00934 \\times 36.5 \\\\\n=0.341 \\mathrm{gm} \\\\\n=341 \\mathrm{mg}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 72,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The molar mass of the water insoluble product formed from the fusion of chromite ore $\\left(\\mathrm{FeCr}_{2} \\mathrm{O}_{4}\\right)$ with $\\mathrm{Na}_{2} \\mathrm{CO}_{3}$ in presence of $\\mathrm{O}_{2}$ is $\\_\\_\\_\\_$ $\\mathrm{g} \\mathrm{mol}^{-1}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "160"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$4 \\mathrm{FeCr}_{2} \\mathrm{O}_{4}+8 \\mathrm{Na}_{2} \\mathrm{CO}_{3}+7 \\mathrm{O}_{2} \\rightarrow 8 \\mathrm{Na}_{2} \\mathrm{CrO}_{4}+2 \\mathrm{Fe}_{2} \\mathrm{O}_{3}+8 \\mathrm{CO}_{2} \\mathrm{Fe}_{2} \\mathrm{O}_{3}$ is water insoluble, so its molar mass\n$$\\Rightarrow[2 \\times 56+3 \\times 16] \\Rightarrow 160 \\mathrm{~g} / \\mathrm{mol}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 73,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The sum of sigma $(\\sigma)$ and $\\mathrm{pi}(\\pi)$ bonds in Hex-1,3-dien-5-yne is $\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "15"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>C#CC=CC=C</smiles>",
+     "Number of $\\sigma$ bond $=11$\nNumber of $\\pi$ bond $=4$\n$$\\sigma+\\pi=11+4=15$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 74,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "If $\\mathrm{A}_{2} \\mathrm{~B}$ is 30\\% ionised in an aqueous solution, then the value of van't Hoff factor (i) is $\\_\\_\\_\\_$ $\\times 10^{-1}$.",
+   "options": null,
+   "embedded_answer": {
+    "raw": "16"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{A}_{2} \\mathrm{~B} \\rightarrow 2 \\mathrm{~A}^{+}+\\mathrm{B}^{-2} ; \\mathrm{y}=3$\n$$\\begin{array}{l}\n\\alpha=0.3 \\\\\ni=1+(y-1) \\alpha \\\\\n=1+(3-1)(0.3)=1.6=16 \\times 10^{-1}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 75,
+   "question_id": null,
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "0.1 mole of compound 'S' will weigh $\\_\\_\\_\\_$ g.\n(Given molar mass in $\\mathrm{g} \\mathrm{mol}^{-1} \\mathrm{C}: 12, \\mathrm{H}: 1, \\mathrm{O}: 16$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "13"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "0.1 mole of compound (S) weight in gm\n$=0.1 \\times$ molar mass of compound $(\\mathrm{S})$\n$=0.1 \\times 130=13 \\mathrm{gm}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

@@ -1,61 +1,113 @@
 {
+ "paper_id": "jee-main-2026-s2-2026-04-02-shift-2",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2026-s2-2026-04-02-shift-2",
+  "exam": "jee-main",
+  "year": 2026,
+  "session": 2,
+  "exam_date": "2026-04-02",
+  "shift": 2,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2026-s2-2026-04-02-shift-2",
-    "exam": "jee-main",
-    "year": 2026,
-    "session": 2,
-    "exam_date": "2026-04-02",
-    "shift": 2,
-    "paper_type": "question_paper",
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2026/jee-main-2-april-2026-paper-shift-2/1214683",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/qi62GA4EorhhC40ZKWzq",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "71c687c2477d80de03087b52a279448912e469cefe145d95f316f75ee7ba8ad6",
+  "page_count": 25,
+  "text_chars": 0,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2026-s2-2026-04-02-shift-2.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 3,
+    "question_id": null,
     "subject": null,
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2026/jee-main-2-april-2026-paper-shift-2/1214683",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/qi62GA4EorhhC40ZKWzq",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
-  },
-  "probe": {
-    "sha256": "71c687c2477d80de03087b52a279448912e469cefe145d95f316f75ee7ba8ad6",
-    "page_count": 25,
-    "text_chars": 0,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2026-s2-2026-04-02-shift-2.pdf"
-  },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
-    "validation": "not_verified",
-    "entries": []
-  },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+    "section": "Section A",
+    "answer": {
+     "raw": "2",
+     "option": "B",
+     "option_index": 2
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 3,
+   "question_id": null,
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Solve for individual moles Using the first equation to express $\\mathrm{n}_{2}$ as $0.333-\\mathrm{n}_{1}$, we substitute this into the mass equation:\n$$\\begin{array}{l}\n44 n_{1}+32\\left(0.333-n_{1}\\right)=13.2 \\\\\n44 n_{1}+10.667-32 n_{1}=13.2 \\\\\n12 n_{1}=2.533 \\\\\nn_{1} \\approx 0.211 \\mathrm{~mol}\n\\end{array}$$\nThen, calculate $\\mathrm{n}_{2}$ :\n$$\\mathrm{n}_{2}=0.333-0.211=0.122 \\mathrm{~mol}$$\n35. If an air bubble of diameter 2 mm rises steadily through a liquid of density $2000 \\mathrm{~kg} / \\mathrm{m}^{3}$ at a rate of $0.5 \\mathrm{~cm} / \\mathrm{s}$, then the coefficient of viscosity of liquid is $\\_\\_\\_\\_$ Poise. (Take $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )\n(1) 0.88\n(2) 8.8\n(3) 88.8\n(4) 0.088",
+   "options": {
+    "A": "If concentration of A is 4 times then reaction will become 16 times.",
+    "B": "Order of reaction is 2",
+    "C": "Half-life of the reaction is independent of the concentration of the reactant for $1^{\\text {st }}$ order, not for $2^{\\text {nd }}$ order reaction.",
+    "D": "Decomposition of $\\mathrm{N}_{2} \\mathrm{O}_{5}$ is example of $1^{\\text {st }}$ order reaction\n(E) Graph of $\\ell \\frac{[R]_{0}}{[R]_{t}}$ vs $t$ is straight line for $1^{\\text {st }}$ order not for $2^{\\text {nd }}$ order reaction.\n\nSo statement (A) \\& (B) are correct\n58. The correct set that contains all kinds (basic, acidic, amphoteric and neutral) of oxides is :\n(1) $\\mathrm{Na}_{2} \\mathrm{O}, \\mathrm{K}_{2} \\mathrm{O}, \\mathrm{Al}_{2} \\mathrm{O}_{3}$ and $\\mathrm{As}_{2} \\mathrm{O}_{3}$\n(2) $\\mathrm{Al}_{2} \\mathrm{O}_{3}, \\mathrm{As}_{2} \\mathrm{O}_{3}, \\mathrm{CO}$ and NO\n(3) $\\mathrm{K}_{2} \\mathrm{O}, \\mathrm{Cl}_{2} \\mathrm{O}_{7}, \\mathrm{As}_{2} \\mathrm{O}_{3}$ and NO\n(4) $\\mathrm{Na}_{2} \\mathrm{O}, \\mathrm{N}_{2} \\mathrm{O}, \\mathrm{Al}_{2} \\mathrm{O}_{3}$ and CO\n\nAns. (3)\nSol. Basic Oxides : $\\mathrm{Na}_{2} \\mathrm{O}, \\mathrm{K}_{2} \\mathrm{O}$\nAcidic Oxides : $\\mathrm{Cl}_{2} \\mathrm{O}_{7}$\nNeutral Oxides : $\\mathrm{N}_{2} \\mathrm{O}$, NO \\& CO\nAmphoteric Oxides : $\\mathrm{Al}_{2} \\mathrm{O}_{3}, \\mathrm{As}_{2} \\mathrm{O}_{3}$\n\n59. Given below are two statements :\n\nStatement-I : The second ionization enthalpy of $\\mathrm{B}, \\mathrm{Al}$ and Ga is in the order of $\\mathrm{B}>\\mathrm{Al}>\\mathrm{Ga}$.\n\nStatement-II : The correct order in terms of first ionization enthalpy is $\\mathrm{Si}<\\mathrm{Ge}<\\mathrm{Pb}<\\mathrm{Sn}$.\n\nIn the light of the above statements, choose the correct answer from the options given below :\n(1) Both Statement-I and Statement-II are true.\n(2) Both Statement-I and Statement-II are false.\n(3) Statement-I is true but Statement-II is false.\n(4) Statement-I is false but Statement-II is true.\n\nAns. (2)\nSol. Order of II ionization energy for boron family elements is :\n$$\\underset{(2427 \\mathrm{KJ} / \\mathrm{mol})}{\\mathbf{B}}>\\underset{(1979 \\mathrm{KJ} / \\mathrm{mol})}{\\mathbf{G a}^{-}}>\\underset{(1816 \\mathrm{KJ} / \\mathrm{mol})}{\\mathbf{A l}}$$\n\nOrder of I ionization energy for carbon family elements is :\n$$\\underset{(786 \\mathrm{KJ} / \\mathrm{mol})}{\\mathrm{Si}}>\\underset{(761 \\mathrm{KJ} / \\mathrm{mol})}{\\mathrm{Ge}}>\\underset{(715 \\mathrm{KJ} / \\mathrm{mol})}{\\mathrm{Pb}}>\\underset{(708 \\mathrm{KJ} / \\mathrm{mol})}{\\mathrm{Sn}}$$\n60. Given below are two statements :\n\nStatement-I : Among Zn, Mn, Sc and Cu, the energy required to remove the third valence electron is highest for Zn and lowest for Sc.\n\nStatement-II : The correct order of the following complexes in terms of CFSE is\n$$\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+}<\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}<\\left[\\mathrm{Co}(\\mathrm{en})_{3}\\right]^{3+} .$$\n\nIn the light of the above statements, choose the correct answer from the options given below :\n(1) Both Statement-I and Statement-II are true.\n(2) Both Statement-I and Statement-II are false.\n(3) Statement-I is true but Statement-II is false.\n(4) Statement-I is false but Statement-II is true.\n\nAns. (1)\n\nSol. Statement I\n\n\\begin{tabular}[t]{|l|l|}\n\\hline & IE ${ }_{3}$ (kJ/mol) \\\\\n\\hline Sc & 2393 \\\\\n\\hline Mn & 3260 \\\\\n\\hline Cu & 3556 \\\\\n\\hline Zn & 3837 \\\\\n\\hline \\multicolumn{2}{|l|}{$\\mathrm{Sc}<\\mathrm{Mn}<\\mathrm{Cu}<\\mathrm{Zn}\\left(3^{\\mathrm{rd}} \\mathrm{IE}\\right)$} \\\\\n\\hline\n\\end{tabular}\n\nStatement II\n$$\\begin{aligned}\n\\mathrm{CFSE} \\Rightarrow & \\mathrm{SFL}>\\mathrm{WFL} \\\\\n& \\left(\\mathrm{en}>\\mathrm{H}_{2} \\mathrm{O}\\right)\n\\end{aligned}$$\n\nCFSE $\\propto$ Charge on metal\n$$\\begin{array}{c}\n\\mathrm{Co}^{+2}<\\mathrm{Co}^{+3} \\\\\n{\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{2+}<\\left[\\mathrm{Co}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{6}\\right]^{3+}<\\left[\\mathrm{Co}(\\mathrm{en})_{3}\\right]^{3+}}\n\\end{array}$$\n61. Which of the following complexes will show coordination isomerism ?\n(A) $\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]\\left[\\mathrm{Ag}(\\mathrm{CN})_{2}\\right]$\n(B) $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right]\\left[\\mathrm{Cr}(\\mathrm{CN})_{6}\\right]$\n(C) $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right]\\left[\\mathrm{Co}(\\mathrm{CN})_{6}\\right]$\n(D) $\\left[\\mathrm{Fe}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right]\\left[\\mathrm{Co}(\\mathrm{CN})_{6}\\right]$\n(E) $\\left[\\mathrm{Co}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right]\\left[\\mathrm{Fe}(\\mathrm{CN})_{6}\\right]$\n\nChoose the correct answer from the options given below:\n(1) B, C and D Only\n(2) B, D and E Only\n(3) A, C and D Only\n(4) C, D and E Only\n\nAns. (1, 2, 4)\nSol. Compound, $\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]\\left[\\mathrm{Ag}(\\mathrm{CN})_{2}\\right]$ cannot show coordination isomerism. All other complexes (B, C, D and E) will show co-ordination isomerism.\n\n62. Complete combustion of Xg of an organic compound gave 0.25 g of $\\mathrm{CO}_{2}$ and 0.12 g of $\\mathrm{H}_{2} \\mathrm{O}$. If the \\% of carbon is 25\\% and of hydrogen is $4.89 \\%$, then $\\mathrm{X}=$ $\\_\\_\\_\\_$ $\\times 10^{-3} \\mathrm{~g}$. (Nearest integer) (Molar mass of C, H and O are 12, 1 and $16 \\mathrm{~g} \\mathrm{~mol}^{-1}$ respectively.)\n(1) 273\n(2) 27\n(3) 2730\n(4) 227\n\nAns. (1)\nSol. Mass of carbon $=\\frac{0.25}{44} \\times 12$\n$$\\begin{array}{l}\n\\text { Mass } \\% \\text { of carbon }=\\frac{\\text { Mass of carbon }}{\\mathrm{x}} \\times 100 \\\\\n\\mathrm{x}=\\frac{\\frac{0.25 \\times 12}{44} \\times 100}{25} \\\\\n\\mathrm{x}=\\frac{12}{44} \\\\\n\\mathrm{x}=0.2727=272.7 \\times 10^{-3} \\\\\n\\simeq 273 \\times 10^{-3}\n\\end{array}$$\n63. Given below are two statements :\n\nStatement I : In\n<smiles>COc1ccc([C+]c2ccc([N+](=O)[O-])cc2)cc1</smiles>\n, the carbocation is stabilised by +R effect of $-\\mathrm{OCH}_{3}$ group.\nStatement II : In\n<smiles>COc1ccc([CH]c2ccc([N+](=O)[O-])cc2)cc1</smiles>\n, the carbanion is stabilised by -R effect of $-\\mathrm{NO}_{2}$ group. In the light of the above statements, choose the correct answer from the options given below :\n(1) Both Statement I and Statement II are true\n(2) Both Statement I and Statement II are false\n(3) Statement I is true but Statement II is false\n(4) Statement I is false but Statement II is true\n\nAns. (1)\nSol. Both statements are correct\n64. The compound (X) on\n(i) on heating in the presence of anhydrous $\\mathrm{AlCl}_{3}$ and HCl gas gives 2, 4-dimethyl pentane\n(ii) aromatization gives toluene and\n(iii) cyclisation gives methyl cyclohexane\n\nThe correct name of compound $(\\mathrm{X})$ is :\n(1) Hept-2-ene\n(2) Hept-1,3,5-triene\n(3) Heptane\n(4) Hept-2,4,6-triene\n\nAns. (3)\n\nSol.\n65. Correct statements regarding alkyl halides (R-X) among the following are :\n(A) Alcohol being less polar solvent as compared to water, alcoholic KOH favours elimination reaction with R-X.\n(B) Order of reactivity towards $\\mathrm{S}_{\\mathrm{N}} 1$ mechanism is $\\mathrm{C}_{6} \\mathrm{H}_{5}-\\mathrm{CH}_{2}-\\mathrm{Cl}>\\mathrm{C}_{6} \\mathrm{H}_{5}-\\mathrm{CHCl}-\\mathrm{C}_{6} \\mathrm{H}_{5}$.\n(C) Non substituted aryl halides exhibit properties similar to alkyl halides.\n(D) Vinyl chloride is an example of haloalkene and allyl chloride is an example of haloalkyne.\n(E) $\\mathrm{R}-\\mathrm{Cl}$ can be prepared by reacting $\\mathrm{R}-\\mathrm{OH}$ with $\\mathrm{SOCl}_{2}$ but Ar-Cl cannot be prepared by reacting $\\mathrm{Ar}-\\mathrm{OH}$ with $\\mathrm{SOCl}_{2}$.\n\nChoose the correct answer from the options given below:\n(1) A, B and C Only\n(2) B and D Only\n(3) A and E Only\n(4) D and E Only\n\nAns. (3)\n\nSol. Ar-Cl and R-Cl shows different chemical properties\n\nRate of $\\mathrm{S}_{\\mathrm{N}}{ }^{1} \\propto$ stability of first formed carbocation Water is more polar than alcohol\nVinyl alcohol, allyl alcohol, both are alkene unsaturated alcohols\n$$\\mathrm{R}-\\mathrm{OH} \\xrightarrow{\\mathrm{SOCl}_{2}} \\mathrm{R}-\\mathrm{Cl}$$\n\nPhenol does not give $\\mathrm{Ph}-\\mathrm{Cl}$ with $\\mathrm{SOCl}_{2}$.\n66. An organic compound \"x\" where molar ratio of C, O and H are equal, on treatment with $50 \\% \\mathrm{KOH}$ under reflux followed by acidification produced \"y\". The most likely structure of \"y\" is:\n[Molar mass of ' x ' is $58 \\mathrm{~g} \\mathrm{~mol}^{-1}$ ]\n\n(1)\n<smiles>C=CC(=O)O</smiles>\n(2) $\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}-\\mathrm{CH}=\\mathrm{O}$\n\n(3)\n<smiles>O=C(O)CO</smiles>\n\n(4)\n<smiles>CC(=O)O</smiles>\n\nAns. (3)\n\nSol.\n67. A molecule (X) with following structure under mild acidic condition is hydrolysed to produce (Y) and (Z). Identify the correct statements about (Y) and (Z).\n(A) Both (Y) and (Z) have same molar mass\n(B) (Y) and (Z) can be distinguished from each other by $\\mathrm{NaHCO}_{3}$\n(C) (Y) and (Z) react with HCN with same rates\n(D) (Y) and (Z) undergo addition reaction with 2, 4-DNP\n\nChoose the correct answer from the options given below:\n(1) A, B and C Only\n(2) B and C Only\n(3) C and D Only\n(4) A and D Only\n\nAns. (4)\nSol.\n\nY will give positive fehling's test\nMolar mass of $[\\mathrm{Z}]\\left(\\mathrm{C}_{3} \\mathrm{H}_{6} \\mathrm{O}\\right)=58$\nMolar mass of $[\\mathrm{Y}]\\left(\\mathrm{C}_{3} \\mathrm{H}_{6} \\mathrm{O}\\right)=58$\n68. Identify compounds A and E in the following reaction sequence.\n(1)\n<smiles>[CH2]c1cc(Br)c([N+](=O)[O-])cc1[I-]</smiles>\n(2)\n(3)\n<smiles>O=C(O)c1ccc[p-]1F</smiles>\n(4)\n<smiles>[CH2]C1=C(Br)C=C([N+](=O)[O-])[Te]=C1</smiles>\n<smiles>[B]c1cc(O)cc(Br)c1C(=O)O</smiles>\n\nAns. (2)\n\nSol.\n69. Identify the correct pair having amino acid (A) and the hormone (B) that is iodinated derivative of the amino acid (A).\n( T and Y represent one letter code for amino acids)\nAmino acid (A)\nHormone (B)\n(1) T\n\nInsuline\n(2) T\n\nThyroxine\n(3) Y\n\nThyroxine\n(4) Y\n\nInsuline\nAns. (3)\nSol. Thyroxine is derivative of Tyrosine and single letter symbol of Tyrosine amino acid is Y.\n70. Among $\\mathrm{Fe}^{2+}, \\mathrm{Fe}^{3+}, \\mathrm{Cr}^{2+}$ and $\\mathrm{Zn}^{2+}$, the ion that shows positive borax bead test and with highest ionisation enthalpy is:\n(1) $\\mathrm{Fe}^{2+}$\n(2) $\\mathrm{Zn}^{2+}$\n(3) $\\mathrm{Cr}^{2+}$\n(4) $\\mathrm{Fe}^{3+}$\n\nAns. (4)\nSol. $\\mathrm{Zn}^{2+}$ does not show Borax Bead Test.\nAmong remaining ions; $\\mathrm{Fe}^{3+}$ has maximum ionization energy.\n\nSECTION-B\n71. The surface of sodium metal is irradiated with radiation of wavelength x nm. The kinetic energy of ejected electrons is $2.8 \\times 10^{-20} \\mathrm{~J}$. The work function of sodium is 2.3 eV . The value of x is\n$\\_\\_\\_\\_$ $\\times 10^{2} \\mathrm{~nm}$. (Nearest integer) (Given : $\\mathrm{h}=6.6 \\times 10^{-34} \\mathrm{~J} \\mathrm{~s} ; 1 \\mathrm{eV}=1.60 \\times 10^{-19} \\mathrm{~J}$; $\\mathrm{c}=3.0 \\times 10^{8} \\mathrm{~ms}^{-1}$ )\nAns. (5)\n\nSol. for photoelectric effect :\n$$\\begin{array}{l}\n\\frac{\\mathrm{hc}}{\\lambda}=\\mathrm{W}+\\text { K.E. } \\\\\n\\frac{6.6 \\times 10^{-34} \\times 3 \\times 10^{8}}{\\mathrm{x}}=2.3 \\times 1.6 \\times 10^{-19}+2.8 \\times 10^{-20} \\\\\n\\frac{19.8 \\times 10^{-26}}{\\mathrm{x}}=3.96 \\times 10^{-19} \\\\\n\\mathrm{x}=5 \\times 10^{-7} \\\\\n\\mathrm{x}=500 \\times 10^{-9} \\mathrm{~m} \\\\\n\\mathrm{x}=5 \\times 10^{2} \\mathrm{~nm}\n\\end{array}$$\n72. Consider the following gas phase reaction being carried out in a closed vessel at 25°C.\n$$2 \\mathrm{~A}(\\mathrm{~g}) \\rightarrow 4 \\mathrm{~B}(\\mathrm{~g})+\\mathrm{C}(\\mathrm{~g})$$\n\n\\begin{tabular}[t]{|l|l|}\n\\hline $\\frac{\\text { time }}{\\text { (min) }}$ & total pressure of the $\\frac{\\text { system }}{(\\mathrm{mm} \\mathrm{Hg})}$ \\\\\n\\hline 30 & 300 \\\\\n\\hline $\\infty$ & 600 \\\\\n\\hline\n\\end{tabular}\n\nThe pressure of $\\mathrm{C}(\\mathrm{g})$ at 30 minutes time interval would be $\\_\\_\\_\\_$ mm Hg. (Nearest integer)\n\nAns. (20)\nSol.\n$$\\begin{array}{l}\n\\quad 2 A(g) \\rightarrow 4 B(g)+C(g) \\\\\n\\quad p^{\\circ} \\\\\nt=30 \\min \\quad p^{\\circ}-2 x \\quad 4 x \\quad x \\\\\nt=\\infty \\quad-\\quad 2 p^{\\circ} \\quad p^{\\circ} / 2 \\\\\np_{\\infty}=2 p^{\\circ}+p^{\\circ} / 2=600 \\\\\n5 p^{\\circ} / 2=600 \\\\\nP^{\\circ}=240 \\mathrm{~mm} \\mathrm{Hg} \\\\\n\\text { At } \\mathrm{t}=30 \\mathrm{~min}, \\mathrm{p}=300=p^{\\circ}-2 x+4 x+x \\\\\n300=240+3 x \\\\\n3 x=60 \\\\\nx=20\n\\end{array}$$\n\nPressure of $\\mathrm{C}(\\mathrm{g})=20 \\mathrm{~mm} \\mathrm{Hg}$\n\n73. Consider the following two half-cell reactions along with the standard reduction potential given :\n$$\\begin{array}{ll}\n\\mathrm{CO}_{2}+6 \\mathrm{H}^{+}+6 \\mathrm{e}^{-} \\rightarrow \\mathrm{CH}_{3} \\mathrm{OH}+\\mathrm{H}_{2} \\mathrm{O} & \\mathrm{E}_{\\text {red }}^{\\mathrm{o}}=0.02 \\mathrm{~V} \\\\\n\\frac{1}{2} \\mathrm{O}_{2}+2 \\mathrm{H}^{+}+2 \\mathrm{e}^{-} \\rightarrow \\mathrm{H}_{2} \\mathrm{O} & \\mathrm{E}_{\\text {red }}^{\\mathrm{o}}=1.23 \\mathrm{~V}\n\\end{array}$$\n\nThe fuel cell was set up using the above two reactions such that the cell operates under the standard condition of 1 bar pressure and 298 K temperature. The fuel cell works with 80\\% efficiency. If the work derived from the cell using 1 mol of $\\mathrm{CH}_{3} \\mathrm{OH}$ is used to compress an ideal gas isothermally against a constant pressure of 1kPa, then the change in the volume of the gas, $\\Delta \\mathrm{V}=$ $\\_\\_\\_\\_$ $\\mathrm{m}^{3}$. (Nearest integer)\nGiven : $\\mathrm{F}=96500 \\mathrm{C} \\mathrm{mol}^{-1}$\nAns. (560)\nSol. $\\mathrm{E}_{\\text {cell }}^{\\circ}=[1.23-0.02]=1.21 \\mathrm{~V}$\n$$\\begin{array}{l}\n\\Delta \\mathrm{G}^{\\circ}=-6 \\times 96500 \\times 1.21 \\mathrm{~J} \\\\\n\\mathrm{~W}=\\frac{80}{100} \\times \\Delta \\mathrm{G}^{\\circ}=-\\mathrm{P} \\Delta \\mathrm{~V} \\\\\n0.8 \\times 6 \\times 96500 \\times 1.21=1 \\times 10^{3}(\\Delta \\mathrm{~V}) \\\\\n\\Delta \\mathrm{V}=560.472 \\mathrm{~m}^{3}\n\\end{array}$$\n74. Number of paramagnetic ions among the following d- and f-block metal ions is $\\_\\_\\_\\_$ .\n$\\mathrm{Mn}^{2+}, \\mathrm{Cu}^{2+}, \\mathrm{Zn}^{2+}, \\mathrm{Yb}^{2+}, \\mathrm{Sc}^{3+}, \\mathrm{La}^{3+}, \\mathrm{Gd}^{3+}, \\mathrm{Lu}^{3+}, \\mathrm{Ti}^{4+}$, $\\mathrm{Ce}^{4+}$\n(Atomic number of $\\mathrm{Mn}=25, \\mathrm{Cu}=29, \\mathrm{Zn}=30$, $\\mathrm{Yb}=70, \\mathrm{Sc}=21, \\mathrm{La}=57, \\mathrm{Gd}=64, \\mathrm{Lu}=71$, $\\mathrm{Ti}=22, \\mathrm{Ce}=58$ )\n\nAns. (3)\nSol. Paramagnetic : $\\mathrm{Mn}^{+2}, \\mathrm{Cu}^{+2}, \\mathrm{Gd}^{+3}$\nDiamagnetic : $\\mathrm{Zn}^{+2}, \\mathrm{Yb}^{+2}, \\mathrm{Sc}^{+3}, \\mathrm{La}^{+3}, \\mathrm{Lu}^{+3}, \\mathrm{Ti}^{+4}$, $\\mathrm{Ce}^{+4}$\n75. Consider the following reactions sequence\n\nWhen the product (P) is subjected to Carius analysis using $\\mathrm{AgNO}_{3}, 1.0 \\mathrm{~g}$ of the product (P) will produce $\\_\\_\\_\\_$ g of the precipitate of AgBr .\n(Nearest interger)\n(Given : molar mass in $\\mathrm{g} \\mathrm{mol}^{-1} \\mathrm{C}: 12, \\mathrm{H}: 1$, O : 16, N : 14, Br : 80, $\\mathrm{Ag}: 108$ )\n\nAns. (1)\n\nSol.\n\nMolar mass of product $=186$\nMass of $\\mathrm{AgBr}=\\frac{1}{186} \\times 188 \\approx 1$"
+   },
+   "embedded_answer": {
+    "raw": "2",
+    "option": "B",
+    "option_index": 2
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For constant speed\n$$\\begin{array}{l}\n\\mathrm{F}_{\\mathrm{B}}=\\mathrm{F}_{\\mathrm{v}} \\\\\n\\Rightarrow \\rho_{\\ell} \\frac{4}{3} \\pi \\mathrm{R}^{3} \\mathrm{~g}=6 \\pi \\eta \\mathrm{Rv} \\\\\n\\frac{2}{9} \\frac{\\rho_{\\ell} \\mathrm{R}^{2} \\mathrm{~g}}{\\mathrm{v}}=\\eta \\\\\n\\Rightarrow \\frac{2}{9} \\times \\frac{2000 \\times 10^{-6} \\times 10}{5 \\times 10^{-3}}=\\eta \\\\\n\\Rightarrow \\eta=\\frac{8}{9} \\times 10 \\\\\n\\Rightarrow \\eta=\\frac{80}{9} \\text { Poise }=8.88\n\\end{array}$$",
+     "36. A spherical ball of mass 2 kg falls from a height of 10 m and is brought to rest after penetrating 10 cm into sand. The average force exerted by sand on the ball is $\\_\\_\\_\\_$ N.\n(1) 1980\n(2) 2020\n(3) 2000\n(4) 1000",
+     "Ans. (2)\nSol. $\\quad(\\text { W.D. })_{\\mathrm{g}}+(\\text { W.D. })_{\\text {sand }}=\\Delta \\mathrm{K}$\n$$\\begin{array}{l}\n2 \\times 10 \\times\\left(10+\\frac{10}{100}\\right)-\\mathrm{F}_{\\text {sand }} \\times\\left(\\frac{10}{100}\\right)=0=0 \\\\\n\\mathrm{~F}_{\\text {sand }}=2(10+0.1) \\times 100=2020\n\\end{array}$$\n37. An electromagnetic wave travels in free space along the $x$-direction. At a particular point in space and time, $\\overrightarrow{\\mathrm{B}}=2 \\times 10^{-7} \\hat{\\mathrm{j}} \\mathrm{T}$ is associated with this wave. The value of corresponding electric field $\\overrightarrow{\\mathrm{E}}$ at this point is $\\_\\_\\_\\_$ V/m.\n(1) 60 k\n(2) $-60 \\hat{\\mathrm{k}}$\n(3) $30 \\hat{\\mathrm{k}}$\n(4) -600 k",
+     "Ans. (2)\nSol.\n$$\\begin{array}{l}\n\\overrightarrow{\\mathrm{E}}=\\overrightarrow{\\mathrm{B}} \\times \\overrightarrow{\\mathrm{C}} \\\\\n=2 \\times 10^{-7} \\hat{\\mathrm{j}} \\times 3 \\times 10^{8} \\hat{\\mathrm{i}} \\\\\n\\overrightarrow{\\mathrm{E}}=-60 \\hat{\\mathrm{k}} \\mathrm{~V} / \\mathrm{m}\n\\end{array}$$\n38. Two resistors of $200 \\Omega$ and $400 \\Omega$ are connected in series with a battery of 100 V. A bulb rated at 200 V, 100 W is connected across the $400 \\Omega$ resistance. The potential drop across the bulb is $\\_\\_\\_\\_$ V.\n(1) 25\n(2) 50\n(3) 66.6\n(4) 100",
+     "Ans. (2)",
+     "Sol. For resistance of bulb\n$$\\mathrm{R}=\\frac{\\mathrm{V}^{2}}{\\mathrm{P}}=\\frac{200 \\times 200}{100}=400 \\Omega$$",
+     "Now circuit will look like this\n$\\mathrm{V}_{1} \\& \\mathrm{~V}_{2}$ will be same as resistances are same\n$$\\begin{array}{l}\nV_{1}=V_{2}=50 \\mathrm{~V} \\\\\nV_{\\text {bulb }}=V_{2}=50 \\mathrm{~V}\n\\end{array}$$\n39. Two metal plates (A,B) are kept horizontally with separation of $\\left(\\frac{12}{\\pi}\\right) \\mathrm{cm}$, with plate A on the top. An atomizer jet sprays oil (density $1.5 \\mathrm{~g} / \\mathrm{cm}^{3}$ ) droplets of radius 1mm horizontally. All oil droplets carry a charge 5 nC . The potentials $\\mathrm{V}_{\\mathrm{A}}$ and $\\mathrm{V}_{\\mathrm{B}}$ are required on plates A and B respectively in order to ensure the droplets do not descend. The values of $V_{A}$ and $V_{B}$ are $\\_\\_\\_\\_$ .\n(Neglect the air resistance to the droplets and take $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )\n(1) 100 V and 580 V\n(2) 580 V and 100 V\n(3) 60 V and 400 V\n(4) 0 V and -200 V",
+     "Ans. (1)",
+     "Sol.\n$$\\begin{array}{l}\n\\frac{\\Delta \\mathrm{V}}{(12 / \\pi) \\times 10^{-2}} \\times 5 \\times 10^{-9}=\\frac{4}{3} \\pi\\left(\\mathrm{r}^{3}\\right) \\rho(\\mathrm{g}) \\\\\n\\Delta \\mathrm{V} \\times 5 \\times 10^{-7}=16\\left(\\mathrm{r}^{3}\\right) \\rho(\\mathrm{g}) \\\\\n\\Delta \\mathrm{V}=480, \\mathrm{~V}_{\\mathrm{A}}<\\mathrm{V}_{\\mathrm{B}}\n\\end{array}$$",
+     "Plate A will be lower potential.",
+     "40. Two point charges $8 \\mu \\mathrm{C}$ and $-2 \\mu \\mathrm{C}$ are located at $\\mathrm{x}=2 \\mathrm{~cm}$ and $\\mathrm{x}=4 \\mathrm{~cm}$, respectively on the x -axis. The ratio of electric flux due to these charges through two spheres of radii 3 cm and 5 cm with their centers at the origin is $\\_\\_\\_\\_$ .\n(1) $4: 1$\n(2) 3 : 4\n(3) 4 : 3\n$(4) 4: 5$\nAns. (3)\nSol.\n$$\\begin{array}{ccc}\nx=0 & \\mathrm{q}_{1}=8 \\mu \\mathrm{C} & \\mathrm{q}_{2}=-2 \\mu \\mathrm{C} \\\\\n{ }_{\\mathrm{x}}=2 & \\mathrm{x}=4\n\\end{array}$$",
+     "For sphere with radius 3 cm and center origin\n$$\\phi_{1}=\\frac{\\mathrm{q}_{\\mathrm{en}}}{\\varepsilon_{0}}=\\frac{8 \\mu \\mathrm{C}}{\\varepsilon_{0}}$$\nfor sphere of radius 5 cm\n$$\\begin{aligned}\n\\phi_{2} & =\\frac{\\mathrm{q}_{\\mathrm{en}}}{\\varepsilon_{0}}=\\frac{(8-2) \\mu \\mathrm{C}}{\\varepsilon_{0}}=\\frac{6 \\mu \\mathrm{C}}{\\varepsilon_{0}} \\\\\n\\frac{\\phi_{1}}{\\phi_{2}} & =\\frac{8}{6}=\\frac{4}{3}=1.33 \\\\\n\\frac{\\phi_{1}}{\\phi_{2}} & =1.33\n\\end{aligned}$$\n41. One side of an equilateral prism is painted by a transparent material of refractive index $\\mathrm{n}_{2}$. The refractive index of prism is 1.6. The minimum value of $\\mathrm{n}_{2}$ required for total internal reflection from painted face is $\\_\\_\\_\\_$ .\n(1) $\\frac{3 \\sqrt{3}}{1.6}$\n(2) $\\sqrt{3}$\n(3) $\\frac{3.2}{\\sqrt{3}}$\n(4) $\\frac{4 \\sqrt{3}}{5}$",
+     "Ans. (4)",
+     "Sol."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

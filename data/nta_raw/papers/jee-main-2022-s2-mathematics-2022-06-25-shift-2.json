@@ -257,8 +257,7 @@
     "section": "Section B",
     "answer": {
      "raw": "1",
-     "option": "A",
-     "option_index": 1
+     "value": "1"
     }
    },
    {
@@ -267,7 +266,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "62"
+     "raw": "62",
+     "value": "62"
     }
    },
    {
@@ -276,7 +276,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "6"
+     "raw": "6",
+     "value": "6"
     }
    },
    {
@@ -285,7 +286,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "83"
+     "raw": "83",
+     "value": "83"
     }
    },
    {
@@ -294,7 +296,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "21"
+     "raw": "21",
+     "value": "21"
     }
    },
    {
@@ -303,7 +306,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "14"
+     "raw": "14",
+     "value": "14"
     }
    },
    {
@@ -312,7 +316,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "243"
+     "raw": "243",
+     "value": "243"
     }
    },
    {
@@ -322,8 +327,7 @@
     "section": "Section B",
     "answer": {
      "raw": "3",
-     "option": "C",
-     "option_index": 3
+     "value": "3"
     }
    },
    {
@@ -332,7 +336,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "85"
+     "raw": "85",
+     "value": "85"
     }
    },
    {
@@ -341,7 +346,8 @@
     "subject": null,
     "section": "Section B",
     "answer": {
-     "raw": "51"
+     "raw": "51",
+     "value": "51"
     }
    }
   ]
@@ -369,7 +375,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "A: $\\mathrm{x} \\in(-3,1) \\quad \\mathrm{B}: \\mathrm{x} \\in(-\\infty,-1] \\cup[3, \\infty)$\n$$\\mathrm{B}-\\mathrm{A}=(-\\infty,-3] \\cup[3, \\infty)=\\mathrm{R}-(-3,3)$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 2,
@@ -387,7 +399,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$a x^{2}-2 b x+15=0$\n$$\\begin{array}{l}\n2 \\alpha=\\frac{2 b}{a}, \\alpha^{2}=\\frac{15}{a} \\\\\n\\frac{\\alpha}{2}=\\frac{15}{2 b} \\\\\n\\alpha=\\frac{15}{b} \\\\\nx^{2}-2 b x+21=0 \\\\\n\\left(\\frac{15}{b}\\right)^{2}-2 b\\left(\\frac{15}{b}\\right)+21=0 \\\\\nb^{2}=25 \\\\\n\\alpha+\\beta=2 b, \\alpha \\beta=21 \\\\\n\\alpha^{2}+\\beta^{2}=4 b^{2}-42 \\\\\n=58\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 3,
@@ -405,7 +423,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\overline{\\mathrm{z}}_{1}=\\mathrm{iz}_{2}$\n$$\\begin{array}{l}\n\\mathrm{z}_{1}=-\\mathrm{iz}_{2} \\\\\n\\arg \\left(\\frac{\\mathrm{z}_{1}}{\\overline{\\mathrm{z}_{2}}}\\right)=\\pi\n\\end{array}$$\n$$\\arg \\left(\\mathrm{z}_{2}\\right)=\\theta$$\n$$2 \\theta=\\frac{3 \\pi}{2}$$\n$\\arg \\left(\\mathrm{z}_{2}\\right)=\\theta=\\frac{3 \\pi}{4}, \\arg \\mathrm{z}_{1}=\\frac{\\pi}{4}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 4,
@@ -423,7 +447,15 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\Delta=\\left|\\begin{array}{ccc}\n-\\mathrm{k} & 3 & -14 \\\\\n-15 & 4 & -\\mathrm{k} \\\\\n-4 & 1 & 3\n\\end{array}\\right|=121-\\mathrm{k}^{2} \\\\\n\\Delta \\neq 0 \\quad \\mathrm{k} \\in \\mathrm{R}-\\{11,-11\\} \\quad \\text { (Unique sol.) } \\\\\n\\text { If } \\mathrm{k}=11 \\\\\n\\Delta_{\\mathrm{z}}=\\left|\\begin{array}{ccc}\n-11 & 3 & 25 \\\\\n-15 & 4 & 3 \\\\\n-4 & 1 & 4\n\\end{array}\\right| \\neq 0\n\\end{array}$$",
+     "No solution\n$$\\begin{aligned}\n\\text { If } \\mathrm{k} & =-11 \\\\\n\\Delta_{\\mathrm{z}} & =\\left|\\begin{array}{ccc}\n11 & 3 & 25 \\\\\n-15 & 4 & 3 \\\\\n-4 & 1 & 4\n\\end{array}\\right| \\neq 0\n\\end{aligned}$$",
+     "No solution"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 5,
@@ -441,7 +473,13 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\lim _{x \\rightarrow \\frac{\\pi}{2}} \\tan ^{2} x\\left[\\sqrt{2 \\sin ^{2} x+3 \\sin x+4}-\\sqrt{\\sin ^{2} x+6 \\sin x+2}\\right]= \\\\\n\\lim _{x \\rightarrow \\frac{\\pi}{2}} \\frac{\\tan ^{2} x\\left[\\sin ^{2} x-3 \\sin x+2\\right]}{\\sqrt{9}+\\sqrt{9}} \\\\\n\\quad=\\lim _{x \\rightarrow \\frac{\\pi}{2}} \\frac{\\tan ^{2} x(\\sin x-1)(\\sin x-2)}{6} \\\\\n\\quad=\\frac{1}{6} \\lim _{x \\rightarrow \\frac{\\pi}{2}} \\tan ^{2} x(1-\\sin x) \\\\\n\\quad=\\frac{1}{6} \\lim _{x \\rightarrow \\frac{\\pi}{2}} \\frac{\\sin ^{2} x(1-\\sin x)}{(1-\\sin x)(1+\\sin x)}=\\frac{1}{12}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 6,
@@ -459,7 +497,13 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Required area $=2 \\int_{0}^{1}\\left(\\frac{\\mathrm{y}^{2}+3}{4}-\\frac{\\mathrm{y}^{2}+1}{2}\\right) \\mathrm{dy}$\n$$=2 \\int_{0}^{1} \\frac{1-\\mathrm{y}^{2}}{4} \\mathrm{dy}=\\frac{1}{2}\\left|\\mathrm{y}-\\frac{\\mathrm{y}^{3}}{3}\\right|_{0}^{1}=\\frac{1}{3}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 7,
@@ -477,7 +521,16 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$(5+\\mathrm{x})^{500}+\\mathrm{x}(5+\\mathrm{x})^{499}+\\mathrm{x}^{2}(5+\\mathrm{x})^{498}+\\ldots .+\\mathrm{x}^{500}$\n$$=\\frac{(5+x)^{501}-x^{501}}{(5+x)-x}=\\frac{(5+x)^{501}-x^{501}}{5}$$",
+     "⇒ coefficient $\\mathrm{x}^{101}$ in given expression\n$$=\\frac{{ }^{501} \\mathrm{C}_{101} 5^{400}}{5}={ }^{501} \\mathrm{C}_{101} 5^{399}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 8,
@@ -495,7 +548,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{S}=1 \\cdot 3^{0}+2 \\cdot 3^{1}+3 \\cdot 3^{2}+\\ldots \\ldots+10.3^{9} \\\\\n3 \\mathrm{~S}=1 \\cdot 3^{1}+2.3^{2} \\ldots \\ldots \\ldots \\ldots \\ldots \\ldots \\ldots+9 \\times 3^{9}+10 \\times 3^{10} \\\\\n-2 \\mathrm{~S}=\\left(1 \\cdot 3^{0}+3^{1}+3^{2} \\ldots . .3^{9}\\right)-10.3^{10} \\\\\n\\mathrm{~S}=5 \\times 3^{10}-\\left(\\frac{3^{10}-1}{4}\\right) \\\\\n\\mathrm{S}=\\frac{20.3^{10}-3^{10}+1}{4}=\\frac{19.3^{10}+1}{4}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 9,
@@ -513,7 +572,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nP_{1}+\\lambda P_{2}=0 \\\\\n\\Rightarrow(x+3 y-z-5)+\\lambda(2 x-y+z-3)=0\n\\end{array}$$\n(2,1,-2) lies on this plane\n$\\therefore \\lambda=1 \\Rightarrow$ plane is $3 \\mathrm{x}+2 \\mathrm{y}-8=0$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 10,
@@ -531,7 +596,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Let (h, k) is centre of circle\n$$\\begin{array}{l}\n\\left|\\frac{\\mathrm{h}-\\mathrm{k}}{\\sqrt{2}}\\right|=|\\mathrm{h}| \\\\\n\\mathrm{k}^{2}-\\mathrm{h}^{2}+2 \\mathrm{hk}=0\n\\end{array}$$\n∴ Equation of locus is $\\mathrm{y}^{2}-\\mathrm{x}^{2}+2 \\mathrm{xy}=0$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 11,
@@ -549,7 +620,18 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "From figure $\\frac{\\mathrm{r}}{\\mathrm{h}}=\\frac{7}{35} \\Rightarrow \\mathrm{~h}=5 \\mathrm{r}$",
+     "Given $\\frac{\\mathrm{dV}}{\\mathrm{dt}}=1 \\Rightarrow \\frac{\\mathrm{~d}}{\\mathrm{dt}}\\left(\\frac{\\pi \\mathrm{r}^{2} \\mathrm{~h}}{3}\\right)=1$\n$$\\Rightarrow \\frac{\\mathrm{d}}{\\mathrm{dt}}\\left(\\frac{5 \\pi}{3} \\mathrm{r}^{3}\\right)=1 \\Rightarrow \\mathrm{r}^{2} \\frac{\\mathrm{dr}}{\\mathrm{dt}}=\\frac{1}{5 \\pi}$$",
+     "Let wet conical surface area $=\\mathrm{S}$\n$$\\begin{array}{l}\n=\\pi \\mathrm{r} \\ell=\\pi \\mathrm{r} \\sqrt{\\mathrm{~h}^{2}+\\mathrm{r}^{2}} \\\\\n=\\sqrt{26} \\pi \\mathrm{r}^{2} \\Rightarrow \\frac{\\mathrm{dS}}{\\mathrm{dt}}=2 \\sqrt{26} \\pi \\mathrm{r} \\frac{\\mathrm{dr}}{\\mathrm{dt}}\n\\end{array}$$",
+     "When $\\mathrm{h}=10$ then $\\mathrm{r}=2 \\Rightarrow \\frac{\\mathrm{dS}}{\\mathrm{dt}}=\\frac{2 \\sqrt{26}}{10}$",
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 12,
@@ -567,7 +649,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{b}_{\\mathrm{n}}=\\int_{0}^{\\pi / 2} \\frac{1+\\cos 2 \\mathrm{nx}}{\\sin \\mathrm{x}} \\mathrm{dx}$\n$$\\begin{array}{l}\nb_{n+1}-b_{n}=\\int_{0}^{\\pi / 2} \\frac{\\cos ^{2}(n+1) x-\\cos ^{2} n x}{\\sin x} d x \\\\\n=\\int_{0}^{\\pi / 2} \\frac{-\\sin (2 n+1) x \\sin x}{\\sin x} d x \\\\\n=\\left(\\frac{\\cos (2 n+1) x}{2 n+1}\\right)_{0}^{\\pi / 2}=\\frac{-1}{2 n+1}\n\\end{array}$$\n$\\frac{1}{\\mathrm{~b}_{3}-\\mathrm{b}_{2}}, \\frac{1}{\\mathrm{~b}_{4}-\\mathrm{b}_{3}}, \\frac{1}{\\mathrm{~b}_{5}-\\mathrm{b}_{4}}$ are in A.P. with c.d. $=-2$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 13,
@@ -585,7 +673,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{dy}}{\\mathrm{dx}}-\\frac{\\mathrm{y}}{\\mathrm{x}}=-\\frac{3}{2}\\left(\\frac{\\mathrm{y}}{\\mathrm{x}}\\right)^{2} \\quad \\mathrm{y}=\\mathrm{vx}$\n$$\\begin{array}{l}\n\\frac{\\mathrm{dv}}{\\mathrm{v}^{2}}=-\\frac{3 \\mathrm{dx}}{2 \\mathrm{x}} \\\\\n-\\frac{1}{\\mathrm{v}}=-\\frac{3}{2} \\ln |\\mathrm{x}|+\\mathrm{C} \\\\\n-\\frac{\\mathrm{x}}{\\mathrm{y}}=\\frac{-3}{2} \\ln |\\mathrm{x}|+\\mathrm{C} \\\\\n\\mathrm{x}=\\mathrm{e}, \\mathrm{y}=\\frac{\\mathrm{e}}{3} \\\\\n\\mathrm{C}=-\\frac{3}{2} \\\\\n\\text { When } \\mathrm{x}=1, \\mathrm{y}=\\frac{2}{3}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 14,
@@ -603,7 +697,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\frac{\\mathrm{dy}}{\\mathrm{dx}}=\\frac{2(1+\\sin \\mathrm{t}) \\times \\cos \\mathrm{t}}{1+\\cos 2 \\mathrm{t}}$\n$$\\begin{array}{l}\n\\Rightarrow \\frac{2(1+\\sin t) \\cos t}{2 \\cos ^{2} t}=\\sqrt{3} \\\\\n\\Rightarrow t=\\frac{\\pi}{6}, y_{0}=27\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 15,
@@ -621,7 +721,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\sin 12^{\\circ}+\\sin 12^{\\circ}-\\sin 72^{\\circ} \\\\\n=\\sin 12^{\\circ}-2 \\cos 42^{\\circ} \\sin 30^{\\circ} \\\\\n=\\sin 12^{\\circ}-\\sin 48^{\\circ} \\\\\n=-2 \\cos 30^{\\circ} \\sin 18^{\\circ} \\\\\n=-2 \\times \\frac{\\sqrt{3}}{2} \\times \\frac{\\sqrt{5}-1}{4} \\\\\n=\\frac{\\sqrt{3}}{4}(1-\\sqrt{5})\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 16,
@@ -639,7 +745,14 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{P}(\\mathrm{n})=\\frac{1}{\\mathrm{n}} \\\\\n\\mathrm{P}(2)=\\frac{1}{2} \\quad \\mathrm{P}(8)=\\frac{1}{8} \\\\\n\\mathrm{P}(4)=\\frac{1}{4} \\quad \\mathrm{P}(16)=\\frac{1}{16} \\\\\n\\mathrm{P}(32)=\\frac{2}{32}\n\\end{array}$$",
+     "Possible cases\n16, 16, 16 and 32, 8, 8\nProbability $=\\frac{1}{16^{3}}+\\frac{2}{32} \\times \\frac{1}{8} \\times \\frac{1}{8} \\times 3=\\frac{13}{16^{3}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 17,
@@ -657,7 +770,14 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\sim \\mathrm{p} \\vee \\mathrm{q} \\equiv \\mathrm{p} \\rightarrow \\mathrm{q} \\\\\n\\sim \\mathrm{q} \\wedge \\mathrm{p} \\equiv \\sim(\\mathrm{p} \\rightarrow \\mathrm{q})\n\\end{array}$$",
+     "Negation of $\\sim(\\mathrm{p} \\rightarrow \\mathrm{q}) \\rightarrow(\\mathrm{p} \\rightarrow \\mathrm{q})$\nis $\\sim(\\mathrm{p} \\rightarrow \\mathrm{q}) \\wedge(\\sim(\\mathrm{p} \\rightarrow \\mathrm{q}))$ i.e. $\\sim(\\mathrm{p} \\rightarrow \\mathrm{q})$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 18,
@@ -675,7 +795,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Slope of tangent at $\\mathrm{P}=$ Slope of line AP\n$\\left.\\mathrm{y}\\right|_{\\mathrm{p}}=1-2 \\alpha=\\frac{\\alpha-\\alpha^{2}-4}{\\alpha}$\nSolving $\\alpha=-2 \\Rightarrow \\mathrm{P}(-2,-6)$\nSlope of $\\mathrm{PV}=\\frac{5}{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 19,
@@ -693,7 +819,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\tan ^{-1}\\left[\\frac{\\cos \\left(4 \\pi-\\frac{\\pi}{4}\\right)-1}{\\sin \\frac{\\pi}{4}}\\right] \\Rightarrow \\tan ^{-1}\\left(\\frac{\\cos \\frac{\\pi}{4}-1}{\\sin \\frac{\\pi}{4}}\\right)$\n$$\\tan ^{-1}\\left(\\frac{1-\\sqrt{2}}{1}\\right)=-\\frac{\\pi}{8}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 20,
@@ -711,7 +843,14 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Ellipse $x^{2}+2 y^{2}=4$\nLine $\\mathrm{y}=\\mathrm{x}+1$\nPoint of intersection\n$$\\begin{array}{l}\nx^{2}+2(x+1)^{2}=4 \\\\\n3 x^{2}+4 x-2=0 \\\\\n\\left|x_{1}-x_{2}\\right|=\\frac{\\sqrt{40}}{3} \\\\\nA B=2 r=\\left|x_{1}-x_{2}\\right| \\sqrt{1+m^{2}}\n\\end{array}$$\nm is slope of given line\n$$\\begin{array}{l}\n\\mathrm{AB}=\\frac{\\sqrt{40}}{3} \\sqrt{1+1} \\\\\n2 \\mathrm{r}=\\frac{\\sqrt{80}}{3} \\Rightarrow \\mathrm{r}=\\frac{\\sqrt{80}}{6} \\\\\n(3 \\mathrm{r})^{2}=\\left(3 \\times \\frac{\\sqrt{80}}{6}\\right)^{2}=\\frac{80}{4}=20\n\\end{array}$$",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 21,
@@ -727,7 +866,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 1,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "A: $\\mathrm{x} \\in(-3,1) \\quad \\mathrm{B}: \\mathrm{x} \\in(-\\infty,-1] \\cup[3, \\infty)$\n$$\\mathrm{B}-\\mathrm{A}=(-\\infty,-3] \\cup[3, \\infty)=\\mathrm{R}-(-3,3)$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 22,
@@ -741,7 +886,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 2,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$a x^{2}-2 b x+15=0$\n$$\\begin{array}{l}\n2 \\alpha=\\frac{2 b}{a}, \\alpha^{2}=\\frac{15}{a} \\\\\n\\frac{\\alpha}{2}=\\frac{15}{2 b} \\\\\n\\alpha=\\frac{15}{b} \\\\\nx^{2}-2 b x+21=0 \\\\\n\\left(\\frac{15}{b}\\right)^{2}-2 b\\left(\\frac{15}{b}\\right)+21=0 \\\\\nb^{2}=25 \\\\\n\\alpha+\\beta=2 b, \\alpha \\beta=21 \\\\\n\\alpha^{2}+\\beta^{2}=4 b^{2}-42 \\\\\n=58\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 23,
@@ -755,7 +906,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 3,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\overline{\\mathrm{z}}_{1}=\\mathrm{iz}_{2}$\n$$\\begin{array}{l}\n\\mathrm{z}_{1}=-\\mathrm{iz}_{2} \\\\\n\\arg \\left(\\frac{\\mathrm{z}_{1}}{\\overline{\\mathrm{z}_{2}}}\\right)=\\pi\n\\end{array}$$\n$$\\arg \\left(\\mathrm{z}_{2}\\right)=\\theta$$\n$$2 \\theta=\\frac{3 \\pi}{2}$$\n$\\arg \\left(\\mathrm{z}_{2}\\right)=\\theta=\\frac{3 \\pi}{4}, \\arg \\mathrm{z}_{1}=\\frac{\\pi}{4}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 24,
@@ -769,7 +926,15 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 4,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\Delta=\\left|\\begin{array}{ccc}\n-\\mathrm{k} & 3 & -14 \\\\\n-15 & 4 & -\\mathrm{k} \\\\\n-4 & 1 & 3\n\\end{array}\\right|=121-\\mathrm{k}^{2} \\\\\n\\Delta \\neq 0 \\quad \\mathrm{k} \\in \\mathrm{R}-\\{11,-11\\} \\quad \\text { (Unique sol.) } \\\\\n\\text { If } \\mathrm{k}=11 \\\\\n\\Delta_{\\mathrm{z}}=\\left|\\begin{array}{ccc}\n-11 & 3 & 25 \\\\\n-15 & 4 & 3 \\\\\n-4 & 1 & 4\n\\end{array}\\right| \\neq 0\n\\end{array}$$",
+     "No solution\n$$\\begin{aligned}\n\\text { If } \\mathrm{k} & =-11 \\\\\n\\Delta_{\\mathrm{z}} & =\\left|\\begin{array}{ccc}\n11 & 3 & 25 \\\\\n-15 & 4 & 3 \\\\\n-4 & 1 & 4\n\\end{array}\\right| \\neq 0\n\\end{aligned}$$",
+     "No solution"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 25,
@@ -783,7 +948,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 5,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\lim _{x \\rightarrow \\frac{\\pi}{2}} \\tan ^{2} x\\left[\\sqrt{2 \\sin ^{2} x+3 \\sin x+4}-\\sqrt{\\sin ^{2} x+6 \\sin x+2}\\right]= \\\\\n\\lim _{x \\rightarrow \\frac{\\pi}{2}} \\frac{\\tan ^{2} x\\left[\\sin ^{2} x-3 \\sin x+2\\right]}{\\sqrt{9}+\\sqrt{9}} \\\\\n\\quad=\\lim _{x \\rightarrow \\frac{\\pi}{2}} \\frac{\\tan ^{2} x(\\sin x-1)(\\sin x-2)}{6} \\\\\n\\quad=\\frac{1}{6} \\lim _{x \\rightarrow \\frac{\\pi}{2}} \\tan ^{2} x(1-\\sin x) \\\\\n\\quad=\\frac{1}{6} \\lim _{x \\rightarrow \\frac{\\pi}{2}} \\frac{\\sin ^{2} x(1-\\sin x)}{(1-\\sin x)(1+\\sin x)}=\\frac{1}{12}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 26,
@@ -797,7 +968,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 6,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Required area $=2 \\int_{0}^{1}\\left(\\frac{\\mathrm{y}^{2}+3}{4}-\\frac{\\mathrm{y}^{2}+1}{2}\\right) \\mathrm{dy}$\n$$=2 \\int_{0}^{1} \\frac{1-\\mathrm{y}^{2}}{4} \\mathrm{dy}=\\frac{1}{2}\\left|\\mathrm{y}-\\frac{\\mathrm{y}^{3}}{3}\\right|_{0}^{1}=\\frac{1}{3}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 27,
@@ -811,7 +988,16 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 7,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$(5+\\mathrm{x})^{500}+\\mathrm{x}(5+\\mathrm{x})^{499}+\\mathrm{x}^{2}(5+\\mathrm{x})^{498}+\\ldots .+\\mathrm{x}^{500}$\n$$=\\frac{(5+x)^{501}-x^{501}}{(5+x)-x}=\\frac{(5+x)^{501}-x^{501}}{5}$$",
+     "⇒ coefficient $\\mathrm{x}^{101}$ in given expression\n$$=\\frac{{ }^{501} \\mathrm{C}_{101} 5^{400}}{5}={ }^{501} \\mathrm{C}_{101} 5^{399}$$",
+     "JEE Exam Solution\nwww.esaral.com\n2",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 28,
@@ -827,7 +1013,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 8,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n\\mathrm{S}=1 \\cdot 3^{0}+2 \\cdot 3^{1}+3 \\cdot 3^{2}+\\ldots \\ldots+10.3^{9} \\\\\n3 \\mathrm{~S}=1 \\cdot 3^{1}+2.3^{2} \\ldots \\ldots \\ldots \\ldots \\ldots \\ldots \\ldots+9 \\times 3^{9}+10 \\times 3^{10} \\\\\n-2 \\mathrm{~S}=\\left(1 \\cdot 3^{0}+3^{1}+3^{2} \\ldots . .3^{9}\\right)-10.3^{10} \\\\\n\\mathrm{~S}=5 \\times 3^{10}-\\left(\\frac{3^{10}-1}{4}\\right) \\\\\n\\mathrm{S}=\\frac{20.3^{10}-3^{10}+1}{4}=\\frac{19.3^{10}+1}{4}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 29,
@@ -841,7 +1033,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 9,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nP_{1}+\\lambda P_{2}=0 \\\\\n\\Rightarrow(x+3 y-z-5)+\\lambda(2 x-y+z-3)=0\n\\end{array}$$\n(2,1,-2) lies on this plane\n$\\therefore \\lambda=1 \\Rightarrow$ plane is $3 \\mathrm{x}+2 \\mathrm{y}-8=0$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 30,
@@ -855,7 +1053,13 @@
    },
    "extraction": "mathpix_ocr",
    "qno_printed": 10,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Let (h, k) is centre of circle\n$$\\begin{array}{l}\n\\left|\\frac{\\mathrm{h}-\\mathrm{k}}{\\sqrt{2}}\\right|=|\\mathrm{h}| \\\\\n\\mathrm{k}^{2}-\\mathrm{h}^{2}+2 \\mathrm{hk}=0\n\\end{array}$$\n∴ Equation of locus is $\\mathrm{y}^{2}-\\mathrm{x}^{2}+2 \\mathrm{xy}=0$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   }
  ],
  "extraction_method": "mathpix_ocr"

@@ -1,61 +1,472 @@
 {
+ "paper_id": "jee-main-2011-zraf2bexxof7v84uidlm",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2011-zraf2bexxof7v84uidlm",
+  "exam": "jee-main",
+  "year": 2011,
+  "session": null,
+  "exam_date": null,
+  "shift": null,
+  "paper_type": "question_paper",
+  "subject": null,
+  "language": "English",
+  "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2011-zraf2bexxof7v84uidlm",
-    "exam": "jee-main",
-    "year": 2011,
-    "session": null,
-    "exam_date": null,
-    "shift": null,
-    "paper_type": "question_paper",
+  "source_tier": "mirror",
+  "source_site": "www.selfstudys.com",
+  "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2011/iit-jee-paper-i/81169",
+  "pdf_url": "https://www.selfstudys.com/sitepdfs/Zraf2bexxOf7V84uidlm",
+  "official_key_url": null,
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+ },
+ "probe": {
+  "sha256": "b9378b50f46b54959940f6b3404607956eff58eeca1f3cc85088bc93fa08ebb4",
+  "page_count": 30,
+  "text_chars": 1219,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 2,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2011-zraf2bexxof7v84uidlm.pdf"
+ },
+ "answer_sheet": {
+  "status": "embedded_unverified",
+  "source": "mirror_pdf_embedded",
+  "official_key_url": null,
+  "validation": "not_verified",
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": null,
     "subject": null,
-    "language": "English",
-    "notes": "exam_date not inferable from link text/URL; session inferred only if month is known; left null; shift not inferable from link text/URL",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.selfstudys.com",
-    "source_page_url": "https://www.selfstudys.com/books/jee-previous-year-paper/english/year-wise/2011/iit-jee-paper-i/81169",
-    "pdf_url": "https://www.selfstudys.com/sitepdfs/Zraf2bexxOf7V84uidlm",
-    "official_key_url": null,
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; official-key join is approximate"
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A, D"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B, C"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A, B, D"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A, B, C, D"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": null,
+    "subject": null,
+    "section": null,
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Geometrical shapes of the complexes formed by the reaction of $\\mathrm{Ni}_{2}$ with $\\mathrm{Cl} \\mathrm{CN}^{-}$, and $\\mathrm{H} \\mathrm{O}_{2}$, respectively, are",
+   "options": {
+    "A": "octahedral, tetrahedral and square",
+    "B": "tetrahedral, square planar and octahedral",
+    "C": "square planar, tetrahedral and octahedral",
+    "D": "octahedral, square planar and octahedral"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\left[\\mathrm{NiCl}_{4}\\right]^{2-}$-Tetrahedral\n$\\left[\\mathrm{Ni}(\\mathrm{CN})_{4}\\right]^{2-}$-Square planar\n$\\left[\\mathrm{Ni}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{\\kappa}\\right]^{2+}$-Octahedral"
+    ]
+   },
+   "solution_source": "mirror_printed",
+   "text_original_textlayer": "Geometrical shapes of the complexes formed by the reaction of Ni2 with Cl CN   , and H O 2 , \nrespectively, are",
+   "ocr_repaired": "pua"
   },
-  "probe": {
-    "sha256": "b9378b50f46b54959940f6b3404607956eff58eeca1f3cc85088bc93fa08ebb4",
-    "page_count": 30,
-    "text_chars": 1219,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 2,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2011-zraf2bexxof7v84uidlm.pdf"
+  {
+   "qno": 2,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "AgNO3 (aq.) was added to an aqueous KCI solution gradually and the conductivity of the \nsolution was measured. The plot of conductance (  ) versus the volume of AgNO3 is",
+   "options": {
+    "A": "(P)",
+    "B": "(Q)",
+    "C": "(R)",
+    "D": "(S)\n\nAns. (D)"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr"
   },
-  "answer_sheet": {
-    "status": "unavailable",
-    "source": null,
-    "official_key_url": null,
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 4,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Extra pure $\\mathrm{N}_{2}$ can be obtained by heating",
+   "options": {
+    "A": "$\\mathrm{NH}_{3}$ with CuO",
+    "B": "$\\mathrm{NH}_{4} \\mathrm{NO}_{3}$",
+    "C": "$\\left(\\mathrm{NH}_{4}\\right)_{2} \\mathrm{Cr}_{2} \\mathrm{O}_{7}$",
+    "D": "$\\mathrm{Ba}\\left(\\mathrm{N}_{3}\\right)_{2}$\n\nAns. (D)\n\nSol. $\\quad \\mathrm{Ba}\\left(\\mathrm{N}_{3}\\right)_{2} \\xrightarrow{\\Delta} \\mathrm{Ba}+3 \\mathrm{~N}_{2}$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{Ba}\\left(\\mathrm{N}_{3}\\right)_{2} \\xrightarrow{\\Delta} \\mathrm{Ba}+3 \\mathrm{~N}_{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 5,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Among the following compounds, the most acidic is",
+   "options": {
+    "A": "$p$-nitrophenol",
+    "B": "p-hydroxybenzoic acid",
+    "C": "$o$-hydroxybenzoic aicd",
+    "D": "$p$-toluic acid\n\nAns. (C)\n\nSol.\n<smiles>CC(=O)c1ccccc1Cl</smiles>\nbecause its carboxylate ion is stabilised due to intramolecular hydrogen bonding\nand due to ortho effect."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "<smiles>CC(=O)c1ccccc1Cl</smiles>\nbecause its carboxylate ion is stabilised due to intramolecular hydrogen bonding\nand due to ortho effect."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The major product of the following reaction is",
+   "options": {
+    "A": "<smiles>O=C1c2ccccc2C(=O)N1Cc1ccc(Br)cc1</smiles>",
+    "B": "<smiles>O=C1c2ccccc2C(=O)N1c1ccc(CCl)cc1</smiles>",
+    "C": "<smiles>O=C1N=C(OCc2ccc(Br)cc2)c2ccccc21</smiles>",
+    "D": "<smiles>O=C1N=C(Oc2ccc(CCl)cc2)c2ccccc21</smiles>\n\nAns. (A)\n\nSol."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 7,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Dissolving 120 g of urea (mol. wt. 60) in 1000 g of water gave a solutino of density 1.15 g/mL. The momlarity of the solution is",
+   "options": {
+    "A": "1.78 M",
+    "B": "2.00 M",
+    "C": "2.05 M",
+    "D": "2.22 M\n\nAns. (C)\nSol. Total mass of the solution $=1000+120=1120 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\mathrm{V}=\\frac{1120}{1.15}=0.973 \\mathrm{~L} \\\\\n\\mathrm{n}_{\\text {urea }}=\\frac{120}{60}=2 \\mathrm{~mol} \\\\\n\\mathrm{M}=\\frac{2}{0.973}=2.05 \\mathrm{M}\n\\end{array}$$\n\nSection-II\nMultiple Correct Answer Type\nThis section contains 5 multiple choice questions numbered 8 to 14 . Each question has 4 choices (A), (B), (C) and (D), out of which ONE OR MORE THAN ONE is / are correct."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Total mass of the solution $=1000+120=1120 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\mathrm{V}=\\frac{1120}{1.15}=0.973 \\mathrm{~L} \\\\\n\\mathrm{n}_{\\text {urea }}=\\frac{120}{60}=2 \\mathrm{~mol} \\\\\n\\mathrm{M}=\\frac{2}{0.973}=2.05 \\mathrm{M}\n\\end{array}$$",
+     "Section-II\nMultiple Correct Answer Type\nThis section contains 5 multiple choice questions numbered 8 to 14 . Each question has 4 choices (A), (B), (C) and (D), out of which ONE OR MORE THAN ONE is / are correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Extraction of metal from the ore casiterite involves",
+   "options": {
+    "A": "carbon reduction of an oxide ore",
+    "B": "self-reduction of a sulphide ore",
+    "C": "removal of copper",
+    "D": "removal of iron impurity\n\nAns. (A, D)\nSol. Cassiterite contains impurity of $\\mathrm{FeWO}_{4}$\n$$\\begin{array}{l}\n\\left(\\mathrm{SnO}_{2}\\right) \\\\\n\\mathrm{SnO}_{2}+2 \\mathrm{C} \\longrightarrow \\mathrm{Sn}+2 \\mathrm{CO}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "A, D"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Cassiterite contains impurity of $\\mathrm{FeWO}_{4}$\n$$\\begin{array}{l}\n\\left(\\mathrm{SnO}_{2}\\right) \\\\\n\\mathrm{SnO}_{2}+2 \\mathrm{C} \\longrightarrow \\mathrm{Sn}+2 \\mathrm{CO}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "Amongst the given options, the compound(s) in which all the atoms are in one plane in all the possible conformations (if any), is (are)",
+   "options": {
+    "A": "<smiles>C=CC=C</smiles>",
+    "B": "<smiles>C#CC=C</smiles>",
+    "C": "$\\mathrm{H}_{2} \\mathrm{C}=\\mathrm{C}=\\mathrm{O}$",
+    "D": "$\\mathrm{H}_{2} \\mathrm{C}=\\mathrm{C}=\\mathrm{CH}_{2}$\n\nAns. (B, C)"
+   },
+   "embedded_answer": {
+    "raw": "B, C"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 10,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The correct statement (s) pertaining to the adsorption of a gas on a solid surface is (are)",
+   "options": {
+    "A": "Adsorption is always exothermic",
+    "B": "Physisorption may transform into chemisorption at high",
+    "C": "Physisorption increases with increasing temperature but chemisorption decreases with increasing temperature",
+    "D": "Chemisorption is more exothermic than physisorption, however it is very slow due to higher energy of activation.\n\nAns. (A, B, D)"
+   },
+   "embedded_answer": {
+    "raw": "A, B, D"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 11,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "According to kinetic theory of gases",
+   "options": {
+    "A": "collision are always elastic",
+    "B": "heavier molecules transfer more momentum to the wall of the container",
+    "C": "only a small number of molecules have very high velocity",
+    "D": "between collision, the mmolecules mvoe in straight lines with constnat velocities.\n\nAns. (A, B, C, D)\n\nSection-III\nParagraph Type\nThis section contains 2 paragraphs. Based upon each paragraph, 3 multiple choice questions have to be answered. Each question has 4 choices (A), (B), (C) and (D), out of which ONLY ONE is correct.\n\nParagraph for Question Nos. 12 to 14\n\nWhen a metal rod $\\mathbf{M}$ is dipped into an aqueous colourless concentrated solution of compound $\\mathbf{N}$, the solution turns light blue. Addition of aqueous NaCl to the blue solution gives a white precipitate O. Addition of aqueous $\\mathrm{NH}_{3}$ dissolves O and gives an intesne blue solution."
+   },
+   "embedded_answer": {
+    "raw": "A, B, C, D"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 12,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The metal rod M is",
+   "options": {
+    "A": "Fe",
+    "B": "Cu",
+    "C": "Ni",
+    "D": "CO\n\nAns. (B)"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 13,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The compound $\\mathbf{N}$ is",
+   "options": {
+    "A": "$\\mathrm{AgNO}_{3}$",
+    "B": "$\\mathrm{Zn}\\left(\\mathrm{NO}_{3}\\right)_{2}$",
+    "C": "$\\mathrm{Al}\\left(\\mathrm{NO}_{3}\\right)_{3}$",
+    "D": "$\\mathrm{Pb}\\left(\\mathrm{NO}_{3}\\right)_{2}$\n\nAns. (A)"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr"
+  },
+  {
+   "qno": 14,
+   "question_id": null,
+   "section": null,
+   "question_type": "single_correct",
+   "text": "The final solution contains",
+   "options": {
+    "A": "$\\left[\\mathrm{Pb}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+}$ and $\\left[\\mathrm{CoCl}_{4}\\right]^{2-}$",
+    "B": "$\\left[\\mathrm{Al}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{3+}$ and $\\left[\\mathrm{Cu}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+}$",
+    "C": "$\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+}$and $\\left[\\mathrm{Cu}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+}$",
+    "D": "$\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+}$and $\\left[\\mathrm{Ni}\\left(\\mathrm{NH}_{3}\\right)_{6}\\right]^{2+}$\n\nAns. (C)\n\nSol.\n$$\\underset{\\mathrm{N}}{2 \\mathrm{AgNO}}{ }_{3}+\\underset{\\mathrm{M}}{\\mathrm{Cu}} \\longrightarrow \\underset{\\text { Light blue }}{\\mathrm{Cu}\\left(\\mathrm{NO}_{3}\\right)_{2}}+2 \\mathrm{Ag}$$\n$$\\begin{array}{l}\n\\mathrm{AgNO}_{3}+\\mathrm{NaCl} \\longrightarrow \\underset{\\substack{\\text { White ppt } \\\\\n\\mathrm{AgCl}}}{\\mathrm{AgCl}} \\mathrm{NaNO}_{3} \\\\\n\\mathrm{Cu}^{2+}+4 \\mathrm{NH}_{3} \\longrightarrow\\left[\\mathrm{Cu}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+} \\\\\n\\mathrm{AgCl}+2 \\mathrm{NH}_{3} \\longrightarrow\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+} \\mathrm{Cl}^{-}\n\\end{array}$$\n\nParagraph for Question Nos. 15 to 16\nAn acyclic hydrocrbon $\\mathbf{P}$, having molecular formula $\\mathrm{C}_{6} \\mathrm{H}_{10}$ gave acetone as the only organic product through th following sequence of reactions, in which $\\mathbf{Q}$ is an intermediate organo compoud.\n(i) conc. $\\mathrm{H}_{2} \\mathrm{SO}_{4}$ (catalytic amount)\n\n15 The structure of compound $\\mathbf{P}$ is\n(A) $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CH}_{2}-\\mathrm{C} \\equiv \\mathrm{C}-\\mathrm{H}$\n(B) $\\mathrm{H}_{3} \\mathrm{CH}_{2} \\mathrm{C}-\\mathrm{C} \\equiv \\mathrm{C}-\\mathrm{C}-\\mathrm{CH}_{2} \\mathrm{CH}_{3}$\n(C)\n<smiles>CC#CC(C)(C)C</smiles>\n(D)\n<smiles>C#CC(C)(C)C</smiles>\n16. The structure of the compound $\\mathbf{Q}$ is\n(A) S\n<smiles>CCC(O)C(C)(C)C</smiles>\n(B)\n<smiles>CC(O)C(C)(C)C</smiles>\n(C)\n<smiles>CC(C)CC(C)O</smiles>\n(D)\n<smiles>CCCC(O)CC</smiles>\n\nAns. (D, B)\n\nSol.\n\nSection - IV\nInteger Answer Type\nThis section contains 8 questions. The answer to each of the questions is a single-digit integer, ranging from 0 to 9 . The appropriate bubbles below the respective question numbers in the SORS have to be darkened.\n17. Reaction of $\\mathrm{Br}_{2}$ with $\\mathrm{Na}_{2} \\mathrm{CO}_{3}$ in aqueous solution gives sodium bromide and sodium bromate with evolution of $\\mathrm{CO}_{2}$ gas. The number of sodium bromide molecules involved in the balanced chemical euqation is\nAns. (5)\n\nSol. $3 \\mathrm{Br}_{2}+3 \\mathrm{CO}_{3}^{2-} \\longrightarrow 5 \\mathrm{Br}^{-}+\\mathrm{BrO}_{3}^{-}+3 \\mathrm{CO}_{2}$\n18. The difference in the oxidation numbers of the two types of sulphur atoms in $\\mathrm{Na}_{2} \\mathrm{~S}_{4} \\mathrm{O}_{6}$ is\n\nAns. (5)\n\nSol.\n\n19. The maximum number of electrons that can have principal quantum number, $\\mathrm{n}=3$, and spin quantum number, $\\mathrm{m}_{\\mathrm{s}}=-\\frac{1}{2}$, is\n\nAns. (9)\nSol. Number of orbital for $\\mathrm{n}=3$ is $=\\mathrm{n}^{2}=9$\nNumber of electron $\\mathrm{n}=3$ and $\\mathrm{m}_{\\mathrm{s}}=-\\frac{1}{2}=9$\n20. A decapeptide (Mol. Wt. 796) on complete hydrolysis gives glycine (Mol. Wt. 75), alanine and phenylanine. Glycine contributes $47.0 \\%$ to the total weight of the hydrolysed prdoucts. The number of glycine units present in the decapeptide is\n\nAns. (6)\nSol. Let number of glycine units $=\\mathrm{n}$\nmass of decapeptide $=796$\nmass of $\\mathrm{H}_{2} \\mathrm{O}$ needed $=162 \\mathrm{~g}$\nTotal mass $=958 \\mathrm{~g}$\n$$\\begin{array}{ll} \n& 958 \\times \\frac{47}{100}=75 \\times n \\\\\n\\therefore & n=\\frac{958 \\times 47}{100 \\times 75} \\approx 6\n\\end{array}$$\n21. To an evacuated vessel with movable piston under external pressure of 1 atm, 0.1 mol of He and 1.0 mol. of an unknown compound (vapour pressure 0.68 atm. at 0°C) are introduced. Considering the ideal gas behaviour, the total volume (in litre) of the gases at $0^{\\circ} \\mathrm{C}$ is close to\nAns. (7)\nSol. Let unknown is X.\n$$\\begin{array}{l}\n\\quad \\mathrm{p}_{\\mathrm{He}}=\\mathrm{p}_{\\text {total }}-\\mathrm{p}_{\\mathrm{x}}=(1-0.68) \\mathrm{atm} \\\\\n\\quad=0.32 \\mathrm{~atm} \\\\\n\\text { Now } \\mathrm{p}_{\\mathrm{He}}=\\mathrm{n}_{\\mathrm{He}} \\frac{\\mathrm{RT}}{\\mathrm{~V}} \\\\\n\\therefore \\quad \\mathrm{v}=\\frac{\\mathrm{RT}}{\\mathrm{p}_{\\mathrm{He}}}=\\frac{0.10 \\times 0.082 \\times 273}{0.32} \\\\\n\\quad=7\n\\end{array}$$\n\n22. The total number of alkenes possible by dehydromination of 3-bromo-3-cyclopentylhexane using alcoholic KOH is\nAns. (5)\n\nSol.\n<smiles>C/C=C(/CCC)C1CCCC1</smiles>\n\n(Cis + trans)\n<smiles>CC/C=C(/CC)C1CCCC1</smiles>\n\n(Cis + trans)\n<smiles>CCCC(CC)=C1CCCC1</smiles>\n23. The work function $(\\phi)$ of some metals is listed below. The number of metals which will show photoelectric effec when light of 300 nm wavelength falls on the metal is\n\n\\begin{tabular}[t]{|l|l|l|l|l|l|l|l|l|l|l|}\n\\hline Metal & & Li & Na & K & Mg & Cu & Ag & Fe & Pt & W \\\\\n\\hline $\\phi(\\mathrm{eV})$ & 2.4 & 2.3 & 22 & 3.7 & 4.8 & 4.3 & 4.7 & 6.3 & 4.75 & \\\\\n\\hline\n\\end{tabular}\n\nAns. (4)\nSol. For photoelectric effect to lapper.\n$$\\mathrm{E} \\geq \\phi \\Rightarrow \\phi \\leq 4.14 \\mathrm{eV}$$\n∴ Li, Na, Ka, Mg will show photoelectronic effect when light $g 300$ nm wavelength falls on the metal is (4).\n\nPart-II (Physics)\n24. 5.6 liter of helium gas at STP is adiabatically compressed to 0.7 liter. Taking the initial temperature to be $\\mathrm{T}_{1}$, the work done in the process is\n(A) $\\frac{9}{8} R T_{1}$\n(B) $\\frac{3}{2} R T_{1}$\n(C) $\\frac{15}{8} R T_{1}$\n(D) $\\frac{9}{2} R T_{1}$\n\nAns. (A)\nNo. of moles $=n=\\frac{5.6}{22.4}=\\frac{1}{4}$\n$\\mathrm{TV}^{\\gamma-1}=$ constant $\\Rightarrow \\mathrm{T}_{1}(5.6)^{2 / 3}=\\mathrm{T}_{2}(0.7)^{2 / 3} \\Rightarrow \\mathrm{~T}_{1}(8)^{2 / 3}=\\mathrm{T}_{2} \\Rightarrow 4 \\mathrm{~T}_{1}=\\mathrm{T}_{2}$\n$\\mathrm{W}=\\frac{-n R \\Delta T}{\\gamma-1}=-\\frac{1 R\\left(3 T_{1}\\right) \\times 3}{4 \\times 2}=-\\frac{9}{8} R T_{1}$. Therefore $\\mathrm{W}_{\\text {external }}=\\frac{9}{8} R T_{1}$\n25. A ball of mass (m) 0.5 kg is attached to the end of a string having length (L) 0.5 m. The ball is rotated on a horizontal circular vath about vertical axis. The maximum tension that the string can bear is 324 N . The maximum possible value of angular velocity of ball (in radian/s) $\\mathrm{i}^{-}$\n(A) 9\n(B) 18\nC) 27\n(D) 36\n\nAns. (D)\n$\\mathrm{T} \\sin \\theta=\\mathrm{m} \\omega^{2} \\mathrm{r}$\n$\\mathrm{T} \\sin \\theta=\\mathrm{m} \\omega^{2} \\mathrm{~L} \\sin \\theta$\n$\\mathrm{T}=\\mathrm{m} \\omega^{2} \\mathrm{~L}$\n$324=\\frac{1}{2}\\left(\\omega^{2}\\right) \\frac{1}{2}$\nTherefore $\\omega=36$\n26. Consider an electric field $\\overrightarrow{\\mathrm{E}}=\\mathrm{E}_{0} \\hat{\\mathrm{x}}$, where $\\mathrm{E}_{0}$ is a constant. The flux through the shaded area (as shown in the figure) due to this field is\n(A) $2 \\mathrm{E}_{0} \\mathrm{a}^{2}$\n(B) $\\sqrt{2} E_{0} a^{2}$\n(C) $\\mathrm{E}_{0} \\mathrm{a}^{2}$\n(D) $\\frac{E_{0} a^{2}}{\\sqrt{2}}$\n\nAns. (C)\n$\\phi=\\int \\bar{E} \\cdot \\overrightarrow{d S}=$ Ex projected area perpendiuclar to $\\mathrm{E}(\\mathrm{x}-\\mathrm{axis})=\\mathrm{E} \\times \\mathrm{a}^{2}$\n\n27. A police car with a siren of frequency 8 kHz is moving with uniform velocity 36 km/hr towards a tall building which reflects the sound waves. The speed of sound in air is 320 m/s. The frequency of the siren heard by the car driver is\n(A) 8.50 kHz\n(B) 8.25 kHz\n(C) 7.75 kHz\n(D) 7.50 kHz\n\nAns. (A)\n$$f^{\\prime}=\\left(\\frac{v}{v-v_{s}}\\right)\\left(\\frac{v+v_{0}}{v}\\right) f \\Rightarrow f^{\\prime}=\\left(\\frac{320}{320-10}\\right)\\left(\\frac{320+10}{320}\\right) \\times 8 \\Rightarrow f^{\\prime} \\approx 8.50 \\mathrm{kHz}$$\n28. A meter bridge is set-up as shown, to determine an unknown resistance 'X' using a standard 10 ohm resistor. The galvanometer shows null point when tapping-key is at 52 cm mark. The end-corrections are 1 cm and 2 cm respectively for the ends A and B. The determined value of 'X' is\n(A) 10.2 ohm\n(B) 10.6 ohm\n(C) 10.8 ohn\n(D) 11.1 ohm\n\nAns. (B)\nApply condition of wheatstone bridge, $\\frac{x}{52+1}=\\frac{10}{48+2} \\Rightarrow x=\\frac{10}{50} \\times 53 \\Rightarrow \\mathrm{x}=10.6 \\Omega$\n29. A $2 \\mu \\mathrm{~F}$ capacitor is charged as shown in figure. I ne percentage of its stored energy dissipated after the switch $S$ is turned to position 2 is\n(A) 0\\%\n(B) 20\\%\n(C) 75\\%\n(D) 80\\%\n\nAns. (D)\n$$\\begin{array}{l}\n\\mathrm{Q}_{1}=\\mathrm{CV}, \\mathrm{Q}_{1}=2 \\mathrm{~V}, \\frac{2 V-x}{2}=\\frac{x}{8}, x=\\frac{8 V}{5} \\Rightarrow V_{i}=\\frac{1}{2} \\times(2) V^{2}=V^{2} ; U_{f}=\\left(\\frac{8 V}{5}\\right)^{2}+\\frac{\\left(\\frac{2 V}{5}\\right)^{2}}{2 \\times 2}=\\frac{4 V^{2}}{5} \\\\\n\\text { Loss }=\\frac{4 V^{2}}{5} \\Rightarrow \\% \\text { loss }=\\frac{\\frac{4 V^{2}}{5} \\times 100}{V^{2}}=80 \\%\n\\end{array}$$\n\n30. The wavelength of the first spectral line in the Balmer series of hydrogen atom is $6561 \\AA$. The wavelength of the second spectral line in the Balmer series of singly-ionized helium atom is\n(A) $1215 \\AA$\n(B) $1640 \\AA$\n(C) $2430 \\AA$\n(D) $4687 \\AA$\n\nAns. (A)\n$\\frac{1}{\\lambda}=R z^{2}\\left(\\frac{1}{n^{2}}-\\frac{1}{m^{2}}\\right)$\nFirst line of Balmer of Hydrogen : $\\frac{1}{6561}=R(1)^{2}\\left(\\frac{1}{2^{2}}-\\frac{1}{3^{2}}\\right)$\nSecond line of Balmer of single ionized $\\mathrm{He}: \\frac{1}{\\lambda}=R\\left(z^{2}\\right)\\left(\\frac{1}{2^{2}}-\\frac{1}{4^{2}}\\right)$\nDividing : $\\lambda=6561 \\times \\frac{5}{9 \\times 3}=1215 \\AA$\nSECTION-II : (Total Marks : 16)\n(Multiple Correct Answer Type)\nThis section contains 4 multiple choice questions. Each question has four choices (A), (B), (C) and (D), out of which ONE or MORE may be correct.\n31. A spherical metal shell A of radius $\\mathrm{R}_{\\mathrm{A}}$ and a solid metal sphere B of radius $\\mathrm{R}_{\\mathrm{B}}\\left(<\\mathrm{R}_{\\mathrm{A}}\\right)$ are kept far apart and each is given charge ' $+Q$ '. Now they are connected by a thin metal wire. Then\n(A) $E_{A}^{\\text {inside }}=0$\n(B) $\\mathrm{Q}_{\\mathrm{A}}>\\mathrm{Q}_{\\mathrm{B}}$\n(C) $\\frac{\\sigma_{\\mathrm{A}}}{\\sigma_{\\mathrm{B}}}=\\frac{\\mathrm{R}_{\\mathrm{B}}}{\\mathrm{R}_{\\mathrm{A}}}$\n(D) $E_{A}^{\\text {on }}$ surface $<E_{B}^{\\text {on }}$ surface\n\nAns. (ABCD)\n$\\mathrm{E}_{\\mathrm{A}}^{\\text {mate }}=0$ (because of electrostatic condition) So, A option is true.\n$\\Rightarrow \\mathrm{v}_{\\mathrm{A}}=\\mathrm{v}_{\\mathrm{B}} \\Rightarrow \\frac{k Q_{A}}{R_{A}}=\\frac{k Q_{B}}{R_{B}} \\Rightarrow \\frac{Q_{A}}{Q_{B}}=\\frac{R_{A}}{R_{B}} \\Rightarrow \\mathrm{R}_{\\mathrm{B}}<\\mathrm{R}_{\\mathrm{A}}$ So, $\\mathrm{Q}_{\\mathrm{B}}<\\mathrm{Q}_{\\mathrm{A}}$, so B is true\n$\\Rightarrow \\frac{\\sigma_{A} 4 \\pi R_{A}^{2}}{\\sigma_{B} 4 \\pi R_{B}^{2}}=\\frac{R_{A}}{R_{B}} \\Rightarrow \\frac{\\sigma_{A}}{\\sigma_{B}}=\\frac{R_{B}}{R_{A}}$, So C is true\n$\\mathrm{E}_{\\text {near surface }}=\\sigma \\times \\frac{1}{R}$. So, D is also true\n\n32. A metal rod of length ' $L$ ' and mass ' $m$ ' is pivoted at one end. A thin disk of mass ' $M$ ' and radius ' $R$ ' (<L) is attached at its center to the free end of the rod. Consider two ways the disc is attached: (case A). The disc is not free to rotate about its center and (case B) the disc is free to rotated about its center. The rod-disc system performs SHM in vertical plane after being released from the same displaced position. Which of the following statement(s) is(are) true?\n(A) Restoring torque in case $\\mathrm{A}=$ Restoring torque in case B\n(B) Restoring torque in case $\\mathrm{A}<$ Restoring torque in case B\n(C) Angular frequency for case $\\mathrm{A}>$ Angular frequency for case B\n(D) Angular frequency for case A<Angular frequency for case B\n\nAns. (AD)\n\nTorque for both the arrangement is same.\nSince in case B disc is not rotating, there is no speed of the pendulum at equilibrium in case (B).\n33. An electron and a proton are moving on straight parallel paths with same velocity. They enter a semiinfinite region of uniform magnetic field perpendicular to the velocity. Which of the following statement(s) is/are true?\n(A) they will never come out of the magnetic field region\n(B) they will come out travelling along parallel paths\n(C) they will come out of the same time\n(D) they will come out at different times\n\nAns. (BD)\n\nBy diagram B is true\n$$T=\\frac{2 \\pi m}{q B}$$\n$\\mathrm{T} \\propto \\mathrm{m}$\n$$\\begin{array}{l}\n\\mathrm{m}_{\\mathrm{p}}>\\mathrm{m}_{\\mathrm{e}} \\\\\n\\mathrm{~T}_{\\mathrm{p}}>\\mathrm{T}_{\\mathrm{e}}\n\\end{array}$$\n\nSo, D is also true.\n34. A composite block is made of slabs A, B, C, D and E of different thermal conductivities (given in terms of a constant K) and sizes (given in terms of length, L) as shown in the figure. All slabs are of same width. Heat 'Q' flows only trom left to right through the blocks. Then in steady state\n(A) heat flow through A and E slabs are same\n(B) heat flow through slab E is maximum\n(C) temperature difference across slab E is smallest\n(D) heat flow through $\\mathrm{C}=$ heat flow through $\\mathrm{B}+$ Heat flow through D\n\nAns. (ABCD)\n- In steady state : heat in = heat out. So, A is true\n- Option B is also true because total heat is flowing through E.\n- $Q=\\frac{\\Delta T}{R}$\n\nQ = same\n$\\mathrm{R}_{\\mathrm{E}}$ is minimum. So, $\\Delta \\mathrm{T}$ is minimum\nSo option C is true\n- $Q_{B}=\\frac{\\Delta T}{4 R / 3}, Q_{C}=\\frac{\\Delta T}{4 R / 2}, Q_{D}=\\frac{\\Delta T}{4 R / 5}$, So, $\\mathrm{Q}_{\\mathrm{B}}+\\mathrm{Q}_{\\mathrm{D}}=\\mathrm{Q}_{\\mathrm{C}}$.\n\nHence D is also true.\n\nSECTION-III : (Total Marks : 15)\n(Paragraph Type)\nThis section contains 2 paragraphs. Based upon one of the paragraph, 3 multiple choice questions and based on the other paragraph 2 multiple choice questions have to be answered. Each of these questions has four choices (A), (B), (C) and (D), out of which ONLY ONE is correct.\n\nParagraph for Questions Nos. 35 to 37\nPhase space diagrams are useful tools in analyzing all kinds of dynamical problems. They are especially useful in studying the changes in motion as initial position and momentum are changed. Here we consider some simple dynamical systems in one-dimension. For such systems, phase space is a plane in which position is plotted along horizontal axis and momentum is plotted along vertical axis. The phase space diagram is x(t) vs. p(t) curve in this plane. The arrow on the curve indicates the time flow. For example, the phase space diagram for a particle moving with constant velocity is a straight line as shown in the figure. We use the sign convention in which position or momentum upwards (or to right) is positive and downwards (or to left) is negative.\n35. The phase space diagram for a ball thrown vertically up from ground is\n\n(A)\n\n(B)\n\n(C)\n\n(D)\n\nAns. (D)\nInitial momentum was postuve and final momentum negative. So option (D) is correct.\n36. The phase space diagram for simple harmonic motion is a circle centered at the origin. In the figure, the two circles represent the same oscillator but for different initial conditions, and $\\mathrm{E}_{1}$ and $\\mathrm{E}_{2}$ are the total mechanical energies respectively. Then\n(A) $\\mathrm{E}_{1}=\\sqrt{2} \\mathrm{E}_{2}$\n(B) $\\mathrm{E}_{1}=2 \\mathrm{E}_{2}$\n(C) $\\mathrm{E}_{1}=4 \\mathrm{E}_{2}$\n(D) $\\mathrm{E}_{1}=16 \\mathrm{E}_{2}$\n\nAns. (C)\n$$\\mathrm{E} \\propto \\text { (amplitude) }{ }^{2} \\Rightarrow \\text { so } \\frac{E_{2}}{E_{1}}=\\left(\\frac{a}{2 a}\\right)^{2} \\Rightarrow E_{1}=4 E_{2}$$\n37. Consider the spring-mass system, with the mass submerged in water, as shown in the figure. The phase space diagram for one cycle of this system is\n\n(A)\n\n(B)\n\n(C)\n\n(D)\n\nAns. (B)\nSince at start time position was positive\nParagraph ior Question Nos. 38 and 39\nA dense collection of equal number of electrons and positive ions is called neutral plasma. Certain solids containing fixed positive ions surrounded by free electrons can be treated as neutral plasma. Let 'N' be the number density of free electrons, each of mass ' m '. When the electrons are subjected to an electric field, they are displaced relatively away from the heavy positive ions. If the electric field becomes zero, the electrons begins to oscillate about the positive ions with a natural angular frequency ' $\\omega_{\\rho}$ ', which is called the plasma frequency. To sustain the oscillations, a time varying electric field needs to be applied that has an angular frequency $\\omega$, where a part of the energy is absorbed and a part of it is reflected. As $\\omega$ approaches $\\omega_{p}$, all the free electrons are set to resonance together and all the energy is reflected. This is the explanation of high reflectivity of metals.\n\n38. Taking the electronic charge as ' $e$ ' and the permittivity as ' $\\varepsilon_{0}$ ', use dimensional analysis to determine the correct expression for $\\omega_{\\rho}$.\n(A) $\\sqrt{\\frac{N e}{m \\varepsilon_{0}}}$\n(B) $\\sqrt{\\frac{m \\varepsilon_{0}}{N e}}$\n(C) $\\sqrt{\\frac{N e^{2}}{m \\varepsilon_{0}}}$\n(D) $\\sqrt{\\frac{m \\varepsilon_{0}}{N e^{2}}}$\n\nAns. (C)\n$$\\left[\\sqrt{\\frac{N e^{2}}{m \\epsilon_{0}}}\\right]=\\sqrt{\\frac{\\left(\\frac{1}{L^{3}}\\right)\\left(C^{2}\\right)}{(M)\\left(\\frac{C^{2} T^{2}}{L^{3} M}\\right)}}=\\frac{1}{T}=[\\omega]$$\n39. Estimate the wavelength at which plasma reflection will occur for a metai having the density of electrons $N \\approx 4 \\times 10^{27} m^{-3}$. Take $\\varepsilon_{0} \\approx 10^{-11}$ and $m \\approx 10^{-30}$, where these quantities are in proper SI units\n(A) 800 nm\n(B) 600 nm\n(C) 300 mm\n(D) 200 nm\n\nAns. (B)\n$$\\begin{array}{l}\n\\omega=2 \\pi f=\\frac{2 \\pi c}{\\lambda}=\\sqrt{\\frac{N e^{2}}{m \\epsilon_{0}}} \\Rightarrow \\lambda=2 \\pi c \\sqrt{\\frac{m \\epsilon_{0}}{N e^{2}}} \\\\\n\\lambda=\\frac{2 \\times 3.14 \\times 3 \\times 10^{8}}{1.6 \\times 10^{-19}} \\sqrt{\\frac{\\left(10^{-30}\\right)\\left(10^{-11}\\right)}{\\left(4 \\times 10^{27}\\right)}}=\\frac{9.42}{1.6} \\times 10^{27} \\times 10^{-34}=6 \\times 10^{-7} \\mathrm{~m}=600 \\mathrm{~mm}\n\\end{array}$$\n\nSECTION-IV : (Total Marks : 28)\n(Integer Answer Type)\nThis Section contains 7 questions. The answer to each of the question is a single digit integer, ranging from 0 to 9 . The bubble corresponding to the correct answer is to be darkened in the ORS.\n40. A block is moving on an inclined plane making an angle $45^{\\circ}$ with the horizontal and the coefficient of friction is $\\mu$. The force required to just push it up the inclined plane is 3 times the force required to just prevent it from sliding down. If we define $\\mathrm{N}=10 \\mu$, then N is\nAns. (5)\nForce to just prevent it from sliding $=\\mathrm{mg} \\sin \\theta-\\mu \\mathrm{mg} \\cos \\theta$\nForce to just push up the plane $=\\mathrm{mg} \\sin \\theta+\\mu \\mathrm{mg} \\cos \\theta$\n$$\\begin{array}{l}\nm g \\sin \\theta+\\mu m g \\cos \\theta=3(m g \\sin \\theta-\\mu m g \\cos \\theta) \\\\\n\\frac{1}{\\sqrt{2}}+\\mu \\frac{1}{\\sqrt{2}}=3\\left(\\frac{1}{\\sqrt{2}}-\\frac{\\mu}{\\sqrt{2}}\\right) \\Rightarrow \\mu=\\frac{1}{2} \\Rightarrow N=10 \\mu=5\n\\end{array}$$\n\n41. A boy is pushing a ring of mass 2 kg and radius 0.5 m with a stick as shown in the figure. The stick applies a force of 2 N on the ring and rolls it without slipping with an acceleration of $0.3 \\mathrm{~m} / \\mathrm{s}^{2}$. The coefficient of friction between the ground and the ring is large enough that rolling always occurs and the coefficient of friction between the stick and the ring is (P/ 10). The value of P is\n\nAns. (4)\n$$\\begin{array}{l}\n\\mathrm{N}_{1}=2 \\mathrm{~N} \\\\\n\\mathrm{~N}_{1}-\\mathrm{f}=\\mathrm{ma} \\ldots(\\mathrm{i}) \\\\\n\\left(\\mathrm{f}-\\mu \\mathrm{N}_{1}\\right) \\mathrm{R}=\\mathrm{mR}^{2} \\alpha=\\mathrm{ma}\n\\end{array}$$\n\nFrom equation (i) and (ii) we get $2(1-\\mu)=2 \\times 2 \\times 0.3$\n$1-\\mu=0.6 \\Rightarrow \\mu=0.4$\n42. Four point charges, each of $+q$, are rigidly fixed at the four corners of a square planar soap film of side ' $\\alpha$ '. The surface tension of the soap film is $\\gamma$. The system of charges and planar film are in equilibrium, and $a=k\\left[\\frac{q^{2}}{\\gamma}\\right]^{1 / N}$, where 'k' is a constant. Then N is\n\nAns. (3)\n\nLine ab divides the soap film into two equal parts.\n$\\gamma \\sqrt{2} a=\\frac{K q^{2}}{a^{2}}\\left(\\sqrt{2}+\\frac{1}{2}\\right) ; a^{3}=\\frac{K q^{2}}{\\gamma}\\left(\\sqrt{2}+\\frac{1}{2}\\right) ; a=\\left[\\frac{q^{2}}{\\gamma}\\right]^{1 / 3}\\left[K\\left(\\sqrt{2}+\\frac{1}{2}\\right)\\right]^{1 / 3} \\Rightarrow \\mathrm{~N}=3$\nwhere $\\left[K\\left(\\sqrt{2}+\\frac{1}{2}\\right)\\right]^{1 / 3}=k$\n\n43. Four solid spheres each of diameter $\\sqrt{5} \\mathrm{~cm}$ and mass 0.5 kg are placed with their centers at the corners of a square of side 4 cm . The moment of inertia of the system about the diagonal of the square is $\\mathrm{N} \\times 10^{-4} \\mathrm{~kg}-\\mathrm{m}^{2}$, then N is\nAns. (9)\n$$\\begin{array}{l}\n\\mathrm{I}=\\frac{2}{5} \\mathrm{mR}^{2}+\\frac{2}{5} \\mathrm{mR}^{2}+\\frac{2}{5} \\mathrm{mR}^{2}+m\\left(\\frac{a}{\\sqrt{2}}\\right)^{2}+\\frac{2}{5} m R^{2}+m\\left(\\frac{a}{\\sqrt{2}}\\right)^{2} \\\\\n\\mathrm{I}=\\frac{8}{5} m R^{2}+m a^{2}=\\left[\\frac{8}{5} \\times 0.5 \\times \\frac{5}{4}+0.5 \\times 4^{2}\\right] \\times 10^{-4}=(1+8) \\times 10^{-4}=\\mathrm{N} \\times 10^{-4} \\Rightarrow \\mathrm{~N}=9\n\\end{array}$$\n44. The activity of a freshly prepared radioactive sample is $10^{10}$ disintegrations per second, whose mean life is $10^{9} \\mathrm{~s}$. The mass of an atom of this radioisotope is $10^{-25} \\mathrm{~kg}$. The mass (in mg) of the radioactive sample is\nAns. (1)\n$$\\begin{array}{l}\nA=\\lambda N \\Rightarrow 10^{10}=\\lambda N \\Rightarrow N=\\frac{10^{10}}{\\lambda}=\\left(10^{10}\\right) \\tau=10^{10} \\times 10^{9}=10^{19} \\\\\nM=N \\mathrm{~m}=\\left(10^{19}\\right)\\left(10^{-25}\\right)=10^{-6} \\mathrm{~kg}=1 \\mathrm{mg}\n\\end{array}$$\n45. A long circular tube of length 10 m and radius 0.3 m carries a current I along its curved surface as shown. A wire-loop of resistance 0.005 ohm and of radius 0.1 m is placed inside the tube with its coinciding with the axis of the tube. The current varies as $\\mathrm{I}=\\mathrm{I}_{0} \\cos (300 \\mathrm{t})$ where $\\mathrm{I}_{0}$ is constant. If the magnetic moment of the loop is $N \\mu_{0} I_{0} \\sin (300 t)$, then ' N ' is\nAns. (6)\n\nAns. (6)\n$$\\begin{array}{l}\n\\phi=\\mathrm{B} \\pi \\mathrm{r}^{2}=\\left(\\frac{\\mu_{0} I}{L}\\right) \\pi r^{2}=\\mu_{\\mathrm{n}} I_{\\mathrm{n}} \\frac{\\pi r^{2}}{L} \\cos 300 t \\Rightarrow \\varepsilon_{1}=\\frac{d \\phi}{d t}=\\left(\\frac{\\mu_{0} I_{0} \\pi r^{2}}{L}\\right) 300 \\sin 300 t \\\\\n\\mathrm{i}=\\frac{\\varepsilon}{R}=\\left(\\mu_{0} I_{0} \\sin 300 t\\right)\\left[\\frac{\\pi r^{2}(300)}{L R}\\right] \\Rightarrow M=i \\pi r^{2}=\\left[\\frac{\\pi^{2} r^{4}(300)}{L R}\\right] \\mu_{0} I_{0} \\sin 300 t\n\\end{array}$$\n46. Steel wire of length ' L ' at $40^{\\circ} \\mathrm{C}$ is suspended from the ceiling and then a mass ' m ' is hung from its free end. The wire is cooled down from 40° to 30°C to regain its original length 'L'. The coefficient of linear thermal expansion of the steel is $10^{-5} /{ }^{\\circ} \\mathrm{C}$, Young's modulus of steel is $10^{11} \\mathrm{~N} / \\mathrm{m}^{2}$ and radius of the wire is 1 mm . Assume that $\\mathrm{L} \\gg$ diameter of the wire. Then the value of ' m ' in kg is nearly\n\nAns. (3)\n$$\\begin{array}{l}\n\\frac{\\Delta x}{L}=\\frac{Y A}{m g}=\\alpha \\Delta \\theta \\Rightarrow m=\\frac{Y A}{g \\alpha \\Delta \\theta} \\\\\nm=\\frac{\\left(10^{11}\\right)(3.14)\\left(10^{-6}\\right)}{(10)\\left(10^{-5}\\right)(10)} \\Rightarrow m=3.14 \\mathrm{~kg} \\Rightarrow m=3\n\\end{array}$$\n\nPART - III (MATHEMATICS)\nSECTION-I : (Total Marks : 21)\n(Single Correct Answer Type)\nThis section contains 7 multiple choice questions. Each question has four choices (A), (B), (C) and (D), out of which ONLY ONE is correct.\n47. The value of $\\int_{\\sqrt{\\ln 2}}^{\\sqrt{\\ln 3}} \\frac{x \\sin x^{2}}{\\sin x^{2}+\\sin \\left(\\ln 6-x^{2}\\right)} d x$ is\n(A) $\\frac{1}{4} \\ln \\frac{3}{2}$\n(B) $\\frac{1}{2} \\ln \\frac{3}{2}$\n(C) $\\ln \\frac{3}{2}$\n(D) $\\frac{1}{6} \\ln \\frac{3}{2}$\n47. Ans.(A)\n$$\\begin{array}{l}\nI=\\int_{\\sqrt{\\ln 2}}^{\\sqrt{\\ln 3}} \\frac{x \\sin x^{2}}{\\sin x^{2}+\\sin \\left(\\ln 6-x^{2}\\right)} d x ; p u t x^{2}=t \\Rightarrow 2 x d x=d t \\\\\n\\Rightarrow \\quad I=\\frac{1}{2} \\int_{\\ln 2}^{\\ln 3} \\frac{\\sin t}{\\sin t+\\sin (\\ln 6-t)} d t \\\\\n\\Rightarrow \\quad I=\\frac{1}{2} \\int_{\\ln 2}^{\\ln 3} \\frac{\\sin (\\ln 6-t)}{\\sin (\\ln 6-t)+\\sin t} d t \\quad \\ldots .(\\text { ii })\n\\end{array}$$\n\nAdding equation (i) \\& (ii)\n$$\\Rightarrow \\quad 2 \\mathrm{I}=\\frac{1}{2} \\int_{\\mathrm{n} 2}^{\\mathrm{n} 3} \\mathrm{dt} \\Rightarrow \\mathrm{I}=\\frac{1}{4} \\ln \\left(\\frac{3}{2}\\right)$$\n48. Let the straight line $\\mathrm{x}=\\mathrm{b}$ divide the area enclosed by $\\mathrm{y}=(1-\\mathrm{x})^{2}, \\mathrm{y}=0$ and $\\mathrm{x}=0$ into two parts $\\mathrm{R}_{1}(0 \\leq \\mathrm{x} \\leq \\mathrm{b}) \\mathrm{d}$ and $\\mathrm{R}_{2}(\\mathrm{~b} \\leq \\mathrm{x} \\leq 1)$ such that $\\mathrm{R}_{1}-\\mathrm{R}_{2}=\\frac{1}{4}$. Then b equals\n(A) $\\frac{3}{4}$\n(B) $\\frac{1}{2}$\n(C) $\\frac{1}{3}$\n(D) $\\frac{1}{4}$\n48. Ans.(B)\n$$\\begin{array}{l}\n\\because R_{1}-R_{2}=\\frac{1}{4} \\\\\n\\Rightarrow \\int_{0}^{b}(1-x)^{2} d x-\\int_{b}^{1}(1-x)^{2} d x=\\frac{1}{4} \\\\\n\\Rightarrow-\\left(\\frac{(1-x)^{3}}{3}\\right)_{0}^{b}+\\left(\\frac{(1-x)^{3}}{3}\\right)_{b}^{1}=\\frac{1}{4} \\Rightarrow-\\left\\{\\frac{(1-b)^{3}}{3}-\\frac{1}{3}\\right\\}-\\frac{(1-b)^{3}}{3}=\\frac{1}{4} \\\\\n\\Rightarrow \\frac{1}{3}-\\frac{2}{3}(1-b)^{3}=\\frac{1}{4} \\Rightarrow \\frac{2}{3}(1-b)^{3}=\\frac{1}{12} \\\\\n\\Rightarrow(1-b)^{3}=\\frac{1}{8} \\Rightarrow 1-b=\\frac{1}{2} \\Rightarrow b=\\frac{1}{2}\n\\end{array}$$\n\n49. Let $\\vec{a}=\\hat{i}+\\hat{j}+\\hat{k}, \\vec{b}=\\hat{i}-\\hat{j}+\\hat{k}$ and $\\vec{c}=\\hat{i}-\\hat{j}-\\hat{k}$ be three vectors. A vector $\\vec{v}$ in the plane of $\\vec{a}$ and $\\vec{b}$, whose projection on $\\vec{c}$ is $\\frac{1}{\\sqrt{3}}$, is given by\n(A) $\\hat{\\mathrm{i}}-3 \\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}$\n(B) $-3 \\hat{\\mathrm{i}}-3 \\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}$\n(C) $3 \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+3 \\hat{\\mathrm{k}}$\n(D) $\\hat{\\mathrm{i}}+3 \\hat{\\mathrm{j}}-3 \\hat{\\mathrm{k}}$\n49. Ans.(C)\n$$\\begin{array}{l}\n\\vec{v}=x \\vec{a}+y \\vec{b} \\\\\n=\\hat{i}(x+y)+\\hat{j}(x-y)+\\hat{k}(x+y)\n\\end{array}$$\n\nGiven, $\\overrightarrow{\\mathrm{v}} . \\hat{\\mathrm{c}}=\\frac{1}{\\sqrt{3}}$\n$$\\begin{array}{l}\n\\Rightarrow \\quad \\frac{x+y-x+y-x-y}{\\sqrt{3}}=\\frac{1}{\\sqrt{3}} \\\\\n\\Rightarrow \\quad y-x=1 \\\\\n\\Rightarrow \\quad x-y=-1\n\\end{array}$$\nusing (ii) in (i) we get $\\overrightarrow{\\mathrm{v}}=(\\mathrm{x}+\\mathrm{y}) \\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}+(\\mathrm{x}+\\mathrm{y}) \\hat{\\mathrm{k}}$\n50. Let $\\left(\\mathrm{x}_{0}, \\mathrm{y}_{0}\\right)$ be the solution of the following equations\n$$\\begin{array}{l}\n(2 x)^{\\ln 2}=(3 y)^{\\ln 3} \\\\\n3^{\\ln x}=2^{\\ln y}\n\\end{array}$$\n\nThen $\\mathrm{x}_{0}$ is\n(A) $\\frac{1}{6}$\n(B) $\\frac{1}{3}$\n(C) $\\frac{1}{2}$\n(D) 6\n50. Ans.(C)\n$$\\begin{aligned}\n& (2 x)^{(n 2}=(3 y)^{(n 3} \\\\\n\\Rightarrow & \\ln 2(\\ln 2+\\ell n x)=\\ln 3(\\ln 3+\\ell n y) \\\\\n& 3^{(n x}=2^{(n y} \\\\\n\\Rightarrow & (\\ell n x)(\\ell n 3)=(\\ell n)(\\ell n 2) \\\\\n& \\text { using (ii) in (i) } \\\\\n\\Rightarrow & \\ln 2(\\ell n 2+\\ell n x)=\\ell n 3\\left(\\ell n 3+\\frac{(\\ell n x)(\\ell n 3)}{\\ell n 2}\\right) \\\\\n\\Rightarrow & \\ell^{2} 2-\\ell n^{2} 3=\\ell n x\\left\\{\\frac{\\ell n^{2} 3}{\\ell n 2}-\\ell n 2\\right\\} \\\\\n\\Rightarrow & \\ell n x=-\\ell n 2 \\\\\n\\Rightarrow & x=\\frac{1}{2}\n\\end{aligned}$$\n51. Let $\\alpha$ and $\\beta$ be the roots of $x^{2}-6 x-2=0$, with $\\alpha>\\beta$. If $a_{n}=\\alpha^{n}-\\beta^{n}$ for $n \\geq 1$, then the value of $\\frac{\\mathrm{a}_{10}-2 \\mathrm{a}_{3}}{2 \\mathrm{a}_{9}}$ is\n(A) 1\n(B) 2\n(C) 3\n(D) 4\n\n51. Ans. (C)\n$\\alpha, \\beta$ are roots of $x^{2}-6 x-2=0$\n$$\\begin{array}{l}\n\\Rightarrow \\quad \\alpha^{2}-6 \\alpha-2=0 \\& \\beta^{2}-6 \\beta-2=0 \\\\\n\\quad \\frac{\\mathrm{a}_{0}-2 \\mathrm{a}_{8}}{2 \\mathrm{a}_{9}}=\\frac{\\alpha^{10}-\\beta^{10}-2\\left(\\alpha^{8}-\\beta^{8}\\right)}{2\\left(\\alpha^{9}-\\beta^{9}\\right)} \\\\\n=\\frac{\\alpha^{8}\\left(\\alpha^{2}-2\\right)-\\beta^{8}\\left(\\beta^{2}-2\\right)}{2\\left(\\alpha^{9}-\\beta^{9}\\right)} \\\\\n=\\frac{\\alpha^{8} \\cdot 6 \\alpha-\\beta^{8} \\cdot 6 \\beta}{2\\left(\\alpha^{9}-\\beta^{9}\\right)}=3\n\\end{array}$$\n52. A straight line L through the point $(3,-2)$ is inclined at an angle 60° to the line $\\sqrt{3} \\mathrm{x}+\\mathrm{y}=1$. If L also intersect the x-axis, then the equation of L is\n(A) $\\mathrm{y}+\\sqrt{3} \\mathrm{x}+2-3 \\sqrt{3}=0$\n(B) $\\mathrm{y}-\\sqrt{3} \\mathrm{x}+2+3 \\sqrt{3}=0$\n(C) $\\sqrt{3} \\mathrm{y}-\\mathrm{x}+3+2 \\sqrt{3}=0$\n(D) $\\sqrt{3} \\mathrm{y}+\\mathrm{x}-3+2 \\sqrt{3}=0$\n52. Ans. (B)\n\nLine L has two possible slopes with inclination; $0=\\frac{\\pi}{3}, \\theta=0$\n∴ equation of line L when $\\theta=\\frac{\\pi}{3}, \\quad \\mathrm{y}+2=\\sqrt{3}(\\mathrm{x}-3)$\n$$\\Rightarrow \\quad y-\\sqrt{3} x+2+3 \\sqrt{3}=0$$\nequation of line L when $\\theta=0, \\quad \\mathrm{y}=-2$ (rejected)\n∴ required line L is $\\mathrm{y}-\\sqrt{3} \\mathrm{x}+2+3 \\sqrt{3}=0$\n53. Let $\\mathrm{P}=\\{\\theta: \\sin \\theta-\\cos \\theta=\\sqrt{2} \\cos \\theta\\}$ and $\\mathrm{Q}=\\{\\theta: \\sin \\theta+\\cos \\theta=\\sqrt{2} \\sin \\theta\\}$ be two sets. Then\n(A) $\\mathrm{P} \\subset \\mathrm{Q}$ and $\\mathrm{Q}-\\mathrm{P} \\neq \\varnothing$\n(B) $\\mathrm{Q} \\not \\subset \\mathrm{P}$\n(C) $\\mathrm{P} \\not \\subset \\mathrm{Q}$\n(D) $P=Q$\n53. Ans.(D)\n$$\\begin{array}{l}\nP=\\{\\theta: \\sin \\theta-\\cos \\theta=\\sqrt{2} \\cos \\theta\\} \\\\\n\\Rightarrow \\quad \\tan \\theta=\\sqrt{2}+1 \\\\\nQ=\\{\\theta: \\sin \\theta+\\cos \\theta=\\sqrt{2} \\sin \\theta\\} \\\\\n\\Rightarrow \\quad \\tan \\theta=\\frac{1}{\\sqrt{2}-1}=\\sqrt{2}+1\n\\end{array}$$\nfrom (i) \\& (ii)\n$$\\Rightarrow \\quad P=Q$$\n\nSECTION-II : (Total Marks : 16)\n(Multiple Correct Answer Type)\nThis section contains 4 multiple choice questions. Each question has four choices (A), (B), (C) and (D), out of which ONE or MORE may be correct.\n54. The vector(s) which is/are coplanar with vectors $\\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+2 \\hat{\\mathrm{k}}$ and $\\hat{\\mathrm{i}}+2 \\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$, and perpendicular to the vector $\\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$ is/are\n(A) $\\hat{\\mathrm{j}}-\\hat{\\mathrm{k}}$\n(B) $-\\hat{\\mathrm{i}}+\\hat{\\mathrm{j}}$\n(C) $\\hat{\\mathrm{i}}-\\hat{\\mathrm{j}}$\n(D) $-\\hat{\\mathrm{j}}+\\hat{\\mathrm{k}}$\n\nSol. Ans. (A,D)\n$$\\begin{array}{l}\n\\vec{a}=\\hat{i}+\\hat{j}+2 \\hat{k} \\quad \\vec{b}=\\hat{i}+2 \\hat{j}+\\hat{k} \\quad \\vec{c}=\\hat{i}+\\hat{j}+\\hat{k} \\\\\n\\vec{v}=\\lambda((\\vec{a} \\times \\vec{b}) \\times \\vec{c})=\\lambda((\\vec{a} \\cdot \\vec{c}) \\vec{b}-(\\vec{b} \\cdot \\vec{c}) \\vec{a} \\\\\n\\vec{v}=\\lambda[4(\\hat{i}+2 \\hat{j}+\\hat{k})-4(\\hat{i}+\\hat{j}+2 \\hat{k})] \\\\\n\\vec{v}=4 \\lambda(\\hat{j}-\\hat{k})\n\\end{array}$$\n55. Let $f: \\mathrm{R} \\rightarrow \\mathrm{R}$ be a function such that\n$$f(\\mathrm{x}+\\mathrm{y})=f(\\mathrm{x})+f(\\mathrm{y}), \\forall \\mathrm{x}, \\mathrm{y} \\in \\mathrm{R} .$$\n\nIf $f(\\mathrm{x})$ is differentiable at $\\mathrm{x}=0$, then\n(A) $f(\\mathrm{x})$ is differentiable only in a finite interval containing zero\n(B) $f(\\mathrm{x})$ is continuous $\\forall \\mathrm{x} \\in \\mathrm{R}$\n(C) $f^{\\prime}(\\mathrm{x})$ is constant $\\forall \\mathrm{x} \\in \\mathrm{R}$\n(D) $f(\\mathrm{x})$ is differentiable except at finitely many points\n\nSol. Ans. (B,C)\n$$\\begin{array}{l}\nf(\\mathrm{x}+\\mathrm{y})=f(\\mathrm{x})+f(\\mathrm{y}) \\\\\nf(0)=0 \\\\\nf^{\\prime}(\\mathrm{x})=\\lim _{\\mathrm{h} \\rightarrow 0} \\frac{f(\\mathrm{x}+\\mathrm{h})-f(\\mathrm{x})}{\\mathrm{h}}=\\lim _{\\mathrm{h} \\rightarrow 0} \\frac{f(\\mathrm{x})+f(\\mathrm{~h})-f(\\mathrm{x})}{\\mathrm{h}} \\\\\n=\\lim _{\\mathrm{h} \\rightarrow 0} \\frac{f(\\mathrm{~h})}{\\mathrm{h}}=\\lim _{\\mathrm{h} \\rightarrow 0} \\frac{f(0+\\mathrm{h})-f(0)}{\\mathrm{h}}\n\\end{array}$$\n$f^{\\prime}(\\mathrm{x})=f^{\\prime}(0)=\\mathrm{k}$ ( k is constant)\n$\\Rightarrow f(\\mathrm{x})=\\mathrm{kx}$, hence $f(\\mathrm{x})$ is continuous and $f^{\\prime}(\\mathrm{x})$ is constant $\\forall \\mathrm{x} \\in \\mathrm{R}$\n56. Let M and N be two $3 \\times 3$ non-singular skew-symmetric matrices such that $\\mathrm{MN}=\\mathrm{NM}$. If $\\mathrm{P}^{\\mathrm{T}}$ denotes the transpose of P , then $\\mathrm{M}^{2} \\mathrm{~N}^{2}\\left(\\mathrm{M}^{\\mathrm{T}} \\mathrm{N}\\right)^{-1}\\left(\\mathrm{MN}^{-1}\\right)^{\\mathrm{T}}$ is equal to -\n(A) $\\mathrm{M}^{2}$\n(B) $-\\mathrm{N}^{2}$\n(C) $-\\mathrm{M}^{2}$\n(D) MN\n\nSol. Ans. (C)\nGiven $\\mathrm{M}^{\\mathrm{T}}=-\\mathrm{M}$\n$$\\begin{array}{l}\n\\mathrm{N}^{\\mathrm{T}}=-\\mathrm{N} \\\\\n\\mathrm{MN}=\\mathrm{NM}\n\\end{array}$$\naccording to question $\\mathrm{M}^{2} \\mathrm{~N}^{2}\\left(\\mathrm{M}^{\\mathrm{T}} \\mathrm{N}\\right)^{-1}\\left(\\mathrm{MN}^{-1}\\right)^{\\mathrm{T}}$\n$$\\begin{array}{l}\n=M^{2} N^{2} N^{-1}\\left(M^{\\mathrm{T}}\\right)^{-1}\\left(N^{-1}\\right)^{\\mathrm{T}} M^{\\mathrm{T}} \\\\\n=M^{2} N^{2} N^{-1}(-\\mathrm{M})^{-1}\\left(N^{\\mathrm{T}}\\right)^{-1}(-\\mathrm{M}) \\\\\n=-\\mathrm{M}^{2} \\mathrm{~N} \\mathrm{M}^{-1} \\mathrm{~N}^{-1} \\mathrm{M} \\\\\n=-\\mathrm{M}^{2} \\mathrm{~N} \\mathrm{~N}^{-1} \\mathrm{M}^{-1} \\mathrm{M}=-\\mathrm{M}^{2}\n\\end{array}$$\n$$\\left[\\begin{array}{l}\n\\mathrm{MN}=\\mathrm{NM} \\\\\n(\\mathrm{MN})^{-1}=(\\mathrm{NM})^{-1} \\\\\n\\mathrm{~N}^{-1} \\mathrm{M}^{-1}=\\mathrm{M}^{-1} \\mathrm{~N}^{-1}\n\\end{array}\\right.$$\n(Comment : $3 \\times 3$ skew symmetric matrices can never be non-singular )\n\n57. Let the eccentricity of the hyperbola $\\frac{x^{2}}{a^{2}}-\\frac{y^{2}}{b^{2}}=1$ be reciprocal to that of the ellipse $x^{2}+4 y^{2}=4$. If the hyperbola passes through a focus of the ellipse, then -\n(A) the equation of the hyperbola is $\\frac{x^{2}}{3}-\\frac{y^{2}}{2}=1$\n(B) a focus of the hyperbola is $(2,0)$\n(C) the eccentricity of the hyperbola is $\\sqrt{\\frac{5}{3}}$\n(D) the equation of the hyperbola is $x^{2}-3 y^{2}=3$\n\nSol. Ans. (B,D)\n\nGiven hyperbola is $\\frac{x^{2}}{a^{2}}-\\frac{y^{2}}{b^{2}}=1$\n$$\\text { ellipse is } \\frac{x^{2}}{2^{2}}+\\frac{y^{2}}{1}=1$$\neccentricity of ellipse $=\\sqrt{1-\\frac{1}{4}}=\\sqrt{\\frac{3}{4}}=\\frac{\\sqrt{3}}{2}$\neccentricity of hyperbola $=\\sqrt{1+\\frac{\\mathrm{b}^{2}}{\\mathrm{a}^{2}}}=\\sqrt{\\frac{4}{3}}$\n$$\\Rightarrow \\frac{b^{2}}{a^{2}}=\\frac{1}{3} \\Rightarrow 3 b^{2}=a^{2}$$\nalso hyperbola passes through foci of ellipse $( \\pm \\sqrt{3}, 0)$\n$$\\frac{3}{a^{2}}=1 \\quad \\Rightarrow \\quad a^{2}=3$$\nfrom (1) \\& (2)\n$$b^{2}=1$$\nequation of hyperbola is $\\frac{x^{2}}{3}-\\frac{y^{2}}{1}=1 \\quad \\Rightarrow \\quad x^{2}-3 y^{2}=3$\neccentricity of hyperbola $=\\sqrt{1+\\frac{1}{3}}=\\sqrt{\\frac{4}{3}}$\nfocus of hyperbola $=\\left( \\pm \\sqrt{3} \\cdot \\frac{2}{\\sqrt{3}}, 0\\right) \\equiv( \\pm 2,0)$\n\nSECTION-III : (Total Marks : 15)\n(Paragraph Type)\nThis section contains 2 paragraphs. Based upon one of the paragraph, 3 multiple choice questions and based on the other paragraph 2 multiple choice questions have to be answered. Each of these questions has four choices (A), (B), (C) and (D), out of which ONLY ONE is correct.\n\nParagraph for Question 58 and 60\nLet $\\mathrm{a}, \\mathrm{b}$ and c be three real numbers satisfying\n$$\\left[\\begin{array}{lll}\n\\mathrm{a} & \\mathrm{~b} & \\mathrm{c}\n\\end{array}\\right]\\left[\\begin{array}{lll}\n1 & 9 & 7 \\\\\n8 & 2 & 7 \\\\\n7 & 3 & 7\n\\end{array}\\right]=\\left[\\begin{array}{lll}\n0 & 0 & 0\n\\end{array}\\right]$$\n58. If the point $\\mathrm{P}(\\mathrm{a}, \\mathrm{b}, \\mathrm{c})$, with reference to (E), lies on the plane $2 \\mathrm{x}+\\mathrm{y}+\\mathrm{z}=1$, then the value of $7 \\mathrm{a}+\\mathrm{b}+\\mathrm{c}$ is\n(A) 0\n(B) 12\n(C) 7\n(D) 6\n59. Let $\\omega$ be a solution of $x^{3}-1=0$ with $\\operatorname{Im}(\\omega)>0$. If $a=2$ with $b$ and $c$ satisfying (E), then the value of $\\frac{3}{\\omega^{\\mathrm{a}}}+\\frac{1}{\\omega^{\\mathrm{b}}}+\\frac{3}{\\omega^{\\mathrm{c}}}$ is equal to -\n(A) -2\n(B) 2\n(C) 3\n(D) -3\n60. Let $\\mathrm{b}=6$, with a and c satisfying (E). If $\\alpha$ and $\\beta$ are the roots of the quadratic equation $\\mathrm{ax}^{2}+\\mathrm{bx}+\\mathrm{c}=0$, then $\\sum_{\\mathrm{n}=0}^{\\infty}\\left(\\frac{1}{\\alpha}+\\frac{1}{\\beta}\\right)^{\\mathrm{n}}$ is-\n(A) 6\n(B) 7\n(C) $\\frac{6}{7}$\n(D) $\\infty$\n\nSol.\nParagraph for Question 58 to 60\n$$\\begin{array}{l}\na+8 b+7 c=0 \\\\\n9 a+2 b+3 c=0 \\\\\n7 a+7 b+7 c=0 \\\\\n\\Rightarrow a=K, b=6 K, c=-7 K\n\\end{array}$$\n58. Ans. (D)\n$$\\begin{array}{l}\n(\\mathrm{K}, 6 \\mathrm{~K},-7 \\mathrm{~K}) \\\\\n2 \\mathrm{x}+\\mathrm{y}+\\mathrm{z}=1 \\\\\n2 \\mathrm{~K}+6 \\mathrm{~K}-7 \\mathrm{~K}=1 \\quad(\\because \\text { point lies on the plane }) \\\\\n\\Rightarrow \\quad \\mathrm{K}=1 \\\\\n\\Rightarrow 7 \\mathrm{a}+\\mathrm{b}+\\mathrm{c}=7 \\mathrm{~K}+6 \\mathrm{~K}-7 \\mathrm{~K}=6\n\\end{array}$$\n59. Ans. (A)\n$$\\begin{array}{l}\n\\mathrm{x}^{3}-1=0 \\\\\n\\Rightarrow \\mathrm{x}=1, \\omega, \\omega^{2} \\\\\n\\omega=-\\frac{1}{2}+\\frac{\\mathrm{i} \\sqrt{3}}{2} \\quad \\text { since } \\operatorname{Im}(\\omega)>0\n\\end{array}$$\n\nIf $\\mathrm{a}=2=\\mathrm{K} \\Rightarrow \\mathrm{b}=12$ \\& $\\mathrm{c}=-14$\n\nHence $\\frac{3}{\\omega^{\\mathrm{a}}}+\\frac{1}{\\omega^{\\mathrm{b}}}+\\frac{3}{\\omega^{\\mathrm{c}}}=\\frac{3}{\\omega^{2}}+\\frac{1}{\\omega^{12}}+\\frac{3}{\\omega^{-14}}=3 \\omega+1+3 \\omega^{2}$\n$$=-3+1=-2$$\n60. Ans. (B)\n$$\\begin{array}{l}\n\\because b=6 \\quad \\Rightarrow \\quad 6 K=6 \\Rightarrow K=1 \\\\\n\\Rightarrow \\quad a=1, \\quad b=6 \\quad \\& \\quad c=-7 \\\\\nx^{2}+6 x-7=0 \\\\\n\\Rightarrow \\quad \\alpha+\\beta=-6, \\alpha \\beta=-7 \\\\\n\\Rightarrow \\quad \\sum_{n=0}^{\\infty}\\left(\\frac{\\alpha+\\beta}{\\alpha \\beta}\\right)^{n}=\\sum_{n=0}^{\\infty}\\left(\\frac{6}{7}\\right)^{n}=\\frac{1}{1-\\frac{6}{7}}=7\n\\end{array}$$\n\nSol.\nParagraph for Question 61 and 62\nLet $\\mathrm{U}_{1}$ and $\\mathrm{U}_{2}$ be two urns such that $\\mathrm{U}_{1}$ contains 3 white and 2 red balls, and $\\mathrm{U}_{2}$ contains only 1 white ball. A fair coin is tossed. If head appears then 1 ball is drawn at random from $\\mathrm{U}_{1}$ and put into $\\mathrm{U}_{2}$. However, if tail appears then 2 balls are drawn at random from $\\mathrm{U}_{1}$ and put into $\\mathrm{U}_{2}$. Now 1 ball is drawn at random from $\\mathrm{U}_{2}$.\n61. The probability of the drawn ball from $\\mathrm{U}_{2}$ being white is -\n(A) $\\frac{13}{30}$\n(B) $\\frac{23}{30}$\n(C) $\\frac{19}{30}$\n(D) $\\frac{11}{30}$\n62. Given that the drawn ball from $\\mathrm{U}_{2}$ is white, the probability that head appeared on the coin is -\n(A) $\\frac{17}{23}$\n(B) $\\frac{11}{23}$\n(C) $\\frac{15}{23}$\n(D) $\\frac{12}{23}$\n\nParagraph for Question 61 and 62\n61. Ans. (B)\n\nRequired probability\n$$\\begin{array}{l}\n=\\frac{1}{2}\\left(\\frac{3}{5} \\cdot 1+\\frac{2}{5} \\cdot \\frac{1}{2}\\right)+\\frac{1}{2}\\left(\\frac{{ }^{3} \\mathrm{C}_{2}}{{ }^{5} \\mathrm{C}_{2}} \\cdot 1+\\frac{{ }^{2} \\mathrm{C}_{2}}{{ }^{5} \\mathrm{C}_{2}} \\cdot \\frac{1}{3}+\\frac{{ }^{3} \\mathrm{C}_{1}^{2} \\mathrm{C}_{1}}{{ }^{5} \\mathrm{C}_{2}} \\cdot \\frac{2}{3}\\right) \\\\\n=\\frac{1}{2}\\left(\\frac{4}{5}\\right)+\\frac{1}{2}\\left(\\frac{3}{10}+\\frac{1}{30}+\\frac{2}{5}\\right)=\\frac{2}{5}+\\frac{11}{30}=\\frac{23}{30}\n\\end{array}$$\n62. Ans. (D)\n\nRequired probability\n$$\\begin{array}{l}\n=\\frac{2 / 5}{2 / 5+11 / 30} \\text { (using Baye's theorem) } \\\\\n=\\frac{12}{23}\n\\end{array}$$\n\nSECTION-IV : (Total Marks : 28)\n(Integer Answer Type)\nThis Section contains 7 questions. The answer to each of the question is a single digit integer, ranging from 0 to 9 . The bubble corresponding to the correct answer is to be darkened in the ORS.\n63. Let $\\mathrm{a}_{1}, \\mathrm{a}_{2}, \\mathrm{a}_{3}, \\ldots \\ldots \\ldots, \\mathrm{a}_{100}$ be an arithmetic progression with $\\mathrm{a}_{1}=3$ and $\\mathrm{S}_{\\mathrm{p}}=\\sum_{\\mathrm{i}=1}^{\\mathrm{p}} \\mathrm{a}_{\\mathrm{i}}, 1 \\leq \\mathrm{p} \\leq 100$. For any integer n with $1 \\leq \\mathrm{n} \\leq 20$, let $\\mathrm{m}=5 \\mathrm{n}$. If $\\frac{\\mathrm{S}_{\\mathrm{m}}}{\\mathrm{S}_{\\mathrm{n}}}$ does not depend on n, then $\\mathrm{a}_{2}$ is\nSol. Ans. 9\n$$\\begin{array}{l}\na_{1} a_{2} a_{3} \\cdots \\cdots \\cdots \\cdots a_{100} \\rightarrow A P \\\\\na_{1}=3 ; \\quad S_{p}=\\sum_{i=1}^{p} a_{i} \\quad 1 \\leq n \\leq 20 \\\\\nm=5 n \\\\\n\\frac{S_{m}}{S_{n}}=\\frac{\\frac{m}{2}\\left[2 a_{1}+(m-1) d\\right]}{\\frac{n}{2}\\left[2 a_{1}+(n-1) d\\right]} \\\\\n\\frac{S_{m}}{S_{n}}=\\frac{5\\left[\\left(2 a_{1}-d\\right)+5 n d\\right]}{\\left[\\left(2 a_{1}-d\\right)+n d\\right]}\n\\end{array}$$\nfor $\\frac{\\mathrm{S}_{\\mathrm{m}}}{\\mathrm{S}_{\\mathrm{n}}}$ to be independent of n\n(i) either $2 \\mathrm{a}_{1}-\\mathrm{d}=0 \\Rightarrow \\mathrm{~d}=2 \\mathrm{a}_{1} \\Rightarrow \\mathrm{~d}=6 \\Rightarrow \\mathrm{a}_{2}=9$\n(ii) or $\\mathrm{d}=0 \\Rightarrow \\mathrm{a}_{2}=\\mathrm{a}_{1}=3$\n64. Consider the parabola $\\mathrm{y}^{2}=8 \\mathrm{x}$. Let $\\Delta_{1}$ be the area of the triangle formed by the end points of its latus rectum and the point $\\mathrm{P}\\left(\\frac{1}{2}, 2\\right)$ on the parabola, and $\\Delta_{2}$ be the area of the triangle formed by drawing tangents at P and at the end points of the latus rectum. Then $\\frac{\\Delta_{1}}{\\Delta_{2}}$ is\nSol. Ans. 2\n$$\\begin{aligned}\n\\Delta_{1} & =\\text { area of } \\Delta \\mathrm{PAA}^{\\prime} \\\\\n& =\\frac{1}{2} \\cdot 8 \\cdot \\frac{3}{2}=6 \\\\\n\\Delta_{2} & =\\frac{1}{2}\\left(\\Delta_{1}\\right)\n\\end{aligned}$$\n(Using property : Area of triangle formed by tangents is always half of original triangle)\n$$\\Rightarrow \\frac{\\Delta_{1}}{\\Delta_{2}}=2$$\n\n65. The positive integer value of $\\mathrm{n}>3$ satisfying the equation $\\frac{1}{\\sin \\left(\\frac{\\pi}{n}\\right)}=\\frac{1}{\\sin \\left(\\frac{2 \\pi}{n}\\right)}+\\frac{1}{\\sin \\left(\\frac{3 \\pi}{n}\\right)}$ is\n\nSol. Ans. 7\n$$\\begin{array}{l}\n\\frac{1}{\\sin \\frac{\\pi}{n}}=\\frac{1}{\\sin \\frac{2 \\pi}{n}}+\\frac{1}{\\sin \\frac{3 \\pi}{n}} \\Rightarrow \\frac{1}{\\sin \\frac{\\pi}{n}}-\\frac{1}{\\sin \\frac{3 \\pi}{n}}=\\frac{1}{\\sin \\frac{2 \\pi}{n}} \\\\\n\\Rightarrow \\frac{\\sin \\frac{3 \\pi}{n}-\\sin \\frac{\\pi}{n}}{\\sin \\frac{\\pi}{n} \\sin \\frac{3 \\pi}{n}}=\\frac{1}{\\sin \\frac{2 \\pi}{n}} \\Rightarrow \\frac{2 \\cos \\frac{2 \\pi}{n} \\sin \\frac{\\pi}{n}}{\\sin \\frac{\\pi}{n} \\sin \\frac{3 \\pi}{n}}=\\frac{1}{\\sin \\frac{2 \\pi}{n}} \\\\\n\\Rightarrow 2 \\cos \\frac{2 \\pi}{n} \\sin \\frac{2 \\pi}{n}=\\sin \\frac{3 \\pi}{n} \\\\\n\\Rightarrow \\sin \\frac{4 \\pi}{n}=\\sin \\frac{3 \\pi}{n} \\Rightarrow \\frac{4 \\pi}{n}=K \\pi+(-1)^{K} \\frac{3 \\pi}{n}\n\\end{array}$$\n\nIf $\\mathrm{K}=2 \\mathrm{~m} \\Rightarrow \\frac{\\pi}{\\mathrm{n}}=2 \\mathrm{~m} \\pi \\quad \\Rightarrow \\mathrm{n}=\\frac{1}{2 \\mathrm{~m}} \\Rightarrow \\mathrm{n}=\\frac{1}{2}, \\frac{1}{4}, \\frac{1}{6} \\ldots \\ldots .$.\nIf $\\mathrm{K}=2 \\mathrm{~m}+1 \\Rightarrow \\frac{7 \\pi}{\\mathrm{n}}=(2 \\mathrm{~m}+1) \\pi \\Rightarrow \\mathrm{n}=\\frac{7}{2 \\mathrm{~m}+1} \\Rightarrow \\mathrm{n}=7, \\frac{7}{3}, \\frac{7}{5} \\ldots \\ldots$\nPossible value of n is 7\n66. Let $f(\\theta)=\\sin \\left(\\tan ^{-1}\\left(\\frac{\\sin \\theta}{\\sqrt{\\cos 2 \\theta}}\\right)\\right)$, where $-\\frac{\\pi}{4}<\\theta<\\frac{\\pi}{4}$. Then the value of $\\frac{\\mathrm{d}}{\\mathrm{d}(\\tan \\theta)}(f(\\theta))$ is\n\nSol. Ans. 1\n$$\\begin{array}{l}\n\\text { Let } f(\\theta)=\\sin \\alpha \\text { where } \\alpha=\\tan ^{-1}\\left(\\frac{\\sin \\theta}{\\sqrt{\\cos 2 \\theta}}\\right) \\\\\n\\Rightarrow \\tan \\alpha=\\frac{\\sin \\theta}{\\sqrt{\\cos 2 \\theta}} \\\\\n\\Rightarrow \\sin \\alpha=\\frac{\\sin \\theta}{\\cos \\theta}=\\tan \\theta \\quad\\left(\\because \\theta \\in\\left(-\\frac{\\pi}{4}, \\frac{\\pi}{4}\\right)\\right) \\\\\n\\Rightarrow f(\\theta)=\\tan \\theta \\\\\n\\Rightarrow \\frac{\\mathrm{d}(f(\\theta))}{\\mathrm{d}(\\tan \\theta)}=1\n\\end{array}$$\n\n67. If z is any complex number satisfying $|\\mathrm{z}-3-2 \\mathrm{i}| \\leq 2$, then the minimum value of $|2 \\mathrm{z}-6+5 \\mathrm{i}|$ is\nSol. Ans. 5\nWe have to find minimum value of $2\\left|z-\\left(3-\\frac{5}{2} i\\right)\\right|$\n$=2 \\times\\left(\\right.$ minimum distance between z and point $\\left.\\left(3,-\\frac{5}{2}\\right)\\right)$\n$=2 \\times\\left(\\right.$ distance between $(3,0)$ and $\\left.\\left(3,-\\frac{5}{2}\\right)\\right)$\n$=2 \\times \\frac{5}{2}=5$ units.\n68. The minimum value of the sum of real numbers $\\mathrm{a}^{-5}, \\mathrm{a}^{-4}, 3 \\mathrm{a}^{3}, 1, \\mathrm{a}^{8}$ and $\\mathrm{a}^{10}$ with $\\mathrm{a}>0$ is\n\nSol. Ans. 8\nAs a > 0\nand all the given terms are positive\nhence considering A.M. $\\geq$ G.M. for given numbers .\n$$\\begin{array}{l}\n\\frac{a^{-5}+a^{-4}+a^{-3}+a^{-3}+a^{-3}+a^{8}+a^{10}}{7} \\geq\\left(a^{-5} \\cdot a^{-4} \\cdot a^{-3} \\cdot a^{-3} \\cdot a^{-3} \\cdot a^{8} \\cdot a^{10}\\right)^{\\frac{1}{7}} \\\\\n\\Rightarrow \\quad \\frac{a^{-5}+a^{-4}+a^{-3}+a^{-3}+a^{-3}+a^{8}+a}{7} \\geq 1 \\quad \\Rightarrow \\quad\\left(a^{-5}+a^{-4}+3 a^{-3}+a^{8}+a^{10}\\right)_{\\min }=7\n\\end{array}$$\nwhere $a^{-5}=a^{-4}=a^{-3}=a^{8}=a^{10}$ i.e. $\\quad=1$\n$\\Rightarrow\\left(\\mathrm{a}^{-5}+\\mathrm{a}^{-4}+3 \\mathrm{a}^{-3}+\\mathrm{a}^{8}+\\mathrm{a}^{10}+1{ }_{\\mathrm{n}}=8 \\quad\\right.$ when $\\mathrm{a}=1$\n69. Let $f:[1, \\infty) \\rightarrow[2, \\infty)$ be a differentiable function such that $\\mathrm{f}(1)=2$. If $6 \\int_{1}^{\\mathrm{x}} f(\\mathrm{t}) \\mathrm{dt}=3 \\mathrm{x} f(\\mathrm{x})-\\mathrm{x}^{3}$ for all $\\mathrm{x} \\geq 1$, then the value of $f(2)$ is\nSol. Ans. 6\nThe relation given in question is not an identity hence correct question should be\n$$6 \\int_{1}^{x} f(\\mathrm{t}) \\mathrm{dt}=3 \\mathrm{x} f(\\mathrm{x})-\\mathrm{x}^{3}-5, \\forall \\mathrm{x} \\geq 1$$\n\nNow applying Newton Leibnitz theorem\n$$\\begin{array}{l}\n6 f(\\mathrm{x})=3 \\mathrm{x} f^{\\prime}(\\mathrm{x})-3 \\mathrm{x}^{2}+3 f(\\mathrm{x}) \\\\\n\\Rightarrow 3 f(\\mathrm{x})=3 \\mathrm{x} f^{\\prime}(\\mathrm{x})-3 \\mathrm{x}^{2}\n\\end{array}$$\n\nLet $\\mathrm{y}=f(\\mathrm{x})$\n$$\\Rightarrow \\quad x \\frac{d y}{d x}-y=x^{2} \\Rightarrow \\frac{x d y-y d x}{x^{2}}=d x \\Rightarrow \\int d\\left(\\frac{y}{x}\\right)=\\int d x$$\n$\\Rightarrow \\frac{\\mathrm{y}}{\\mathrm{x}}=\\mathrm{x}+\\mathrm{C} \\quad$ (where C is constant)\n$$\\begin{array}{l}\n\\Rightarrow \\quad y=x^{2}+C x \\\\\n\\therefore \\quad f(x)=x^{2}+C x\n\\end{array}$$\n\nGiven $f(1)=2 \\Rightarrow \\mathrm{C}=1$\n$$\\therefore \\quad f(2)=2^{2}+2=6$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\underset{\\mathrm{N}}{2 \\mathrm{AgNO}}{ }_{3}+\\underset{\\mathrm{M}}{\\mathrm{Cu}} \\longrightarrow \\underset{\\text { Light blue }}{\\mathrm{Cu}\\left(\\mathrm{NO}_{3}\\right)_{2}}+2 \\mathrm{Ag}$$\n$$\\begin{array}{l}\n\\mathrm{AgNO}_{3}+\\mathrm{NaCl} \\longrightarrow \\underset{\\substack{\\text { White ppt } \\\\\n\\mathrm{AgCl}}}{\\mathrm{AgCl}} \\mathrm{NaNO}_{3} \\\\\n\\mathrm{Cu}^{2+}+4 \\mathrm{NH}_{3} \\longrightarrow\\left[\\mathrm{Cu}\\left(\\mathrm{NH}_{3}\\right)_{4}\\right]^{2+} \\\\\n\\mathrm{AgCl}+2 \\mathrm{NH}_{3} \\longrightarrow\\left[\\mathrm{Ag}\\left(\\mathrm{NH}_{3}\\right)_{2}\\right]^{+} \\mathrm{Cl}^{-}\n\\end{array}$$",
+     "Paragraph for Question Nos. 15 to 16\nAn acyclic hydrocrbon $\\mathbf{P}$, having molecular formula $\\mathrm{C}_{6} \\mathrm{H}_{10}$ gave acetone as the only organic product through th following sequence of reactions, in which $\\mathbf{Q}$ is an intermediate organo compoud.\n(i) conc. $\\mathrm{H}_{2} \\mathrm{SO}_{4}$ (catalytic amount)",
+     "15 The structure of compound $\\mathbf{P}$ is\n(A) $\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{CH}_{2}-\\mathrm{C} \\equiv \\mathrm{C}-\\mathrm{H}$\n(B) $\\mathrm{H}_{3} \\mathrm{CH}_{2} \\mathrm{C}-\\mathrm{C} \\equiv \\mathrm{C}-\\mathrm{C}-\\mathrm{CH}_{2} \\mathrm{CH}_{3}$\n(C)\n<smiles>CC#CC(C)(C)C</smiles>\n(D)\n<smiles>C#CC(C)(C)C</smiles>\n16. The structure of the compound $\\mathbf{Q}$ is\n(A) S\n<smiles>CCC(O)C(C)(C)C</smiles>\n(B)\n<smiles>CC(O)C(C)(C)C</smiles>\n(C)\n<smiles>CC(C)CC(C)O</smiles>\n(D)\n<smiles>CCCC(O)CC</smiles>",
+     "Ans. (D, B)",
+     "Sol.",
+     "Section - IV\nInteger Answer Type\nThis section contains 8 questions. The answer to each of the questions is a single-digit integer, ranging from 0 to 9 . The appropriate bubbles below the respective question numbers in the SORS have to be darkened.\n17. Reaction of $\\mathrm{Br}_{2}$ with $\\mathrm{Na}_{2} \\mathrm{CO}_{3}$ in aqueous solution gives sodium bromide and sodium bromate with evolution of $\\mathrm{CO}_{2}$ gas. The number of sodium bromide molecules involved in the balanced chemical euqation is\nAns. (5)",
+     "Sol. $3 \\mathrm{Br}_{2}+3 \\mathrm{CO}_{3}^{2-} \\longrightarrow 5 \\mathrm{Br}^{-}+\\mathrm{BrO}_{3}^{-}+3 \\mathrm{CO}_{2}$\n18. The difference in the oxidation numbers of the two types of sulphur atoms in $\\mathrm{Na}_{2} \\mathrm{~S}_{4} \\mathrm{O}_{6}$ is",
+     "Ans. (5)",
+     "Sol.",
+     "19. The maximum number of electrons that can have principal quantum number, $\\mathrm{n}=3$, and spin quantum number, $\\mathrm{m}_{\\mathrm{s}}=-\\frac{1}{2}$, is",
+     "Ans. (9)\nSol. Number of orbital for $\\mathrm{n}=3$ is $=\\mathrm{n}^{2}=9$\nNumber of electron $\\mathrm{n}=3$ and $\\mathrm{m}_{\\mathrm{s}}=-\\frac{1}{2}=9$\n20. A decapeptide (Mol. Wt. 796) on complete hydrolysis gives glycine (Mol. Wt. 75), alanine and phenylanine. Glycine contributes $47.0 \\%$ to the total weight of the hydrolysed prdoucts. The number of glycine units present in the decapeptide is",
+     "Ans. (6)\nSol. Let number of glycine units $=\\mathrm{n}$\nmass of decapeptide $=796$\nmass of $\\mathrm{H}_{2} \\mathrm{O}$ needed $=162 \\mathrm{~g}$\nTotal mass $=958 \\mathrm{~g}$\n$$\\begin{array}{ll} \n& 958 \\times \\frac{47}{100}=75 \\times n \\\\\n\\therefore & n=\\frac{958 \\times 47}{100 \\times 75} \\approx 6\n\\end{array}$$\n21. To an evacuated vessel with movable piston under external pressure of 1 atm, 0.1 mol of He and 1.0 mol. of an unknown compound (vapour pressure 0.68 atm. at 0°C) are introduced. Considering the ideal gas behaviour, the total volume (in litre) of the gases at $0^{\\circ} \\mathrm{C}$ is close to\nAns. (7)\nSol. Let unknown is X.\n$$\\begin{array}{l}\n\\quad \\mathrm{p}_{\\mathrm{He}}=\\mathrm{p}_{\\text {total }}-\\mathrm{p}_{\\mathrm{x}}=(1-0.68) \\mathrm{atm} \\\\\n\\quad=0.32 \\mathrm{~atm} \\\\\n\\text { Now } \\mathrm{p}_{\\mathrm{He}}=\\mathrm{n}_{\\mathrm{He}} \\frac{\\mathrm{RT}}{\\mathrm{~V}} \\\\\n\\therefore \\quad \\mathrm{v}=\\frac{\\mathrm{RT}}{\\mathrm{p}_{\\mathrm{He}}}=\\frac{0.10 \\times 0.082 \\times 273}{0.32} \\\\\n\\quad=7\n\\end{array}$$",
+     "22. The total number of alkenes possible by dehydromination of 3-bromo-3-cyclopentylhexane using alcoholic KOH is\nAns. (5)",
+     "Sol.\n<smiles>C/C=C(/CCC)C1CCCC1</smiles>"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }

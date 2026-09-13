@@ -53,16 +53,17 @@ def verify_row(row: dict) -> list[str]:
     if not (row.get("diagram_asset") or row.get("diagram_assets") or row.get("diagram_image_urls") or row.get("diagram_bbox")):
         problems.append("missing_image_ref")
     options = row.get("options")
+    option_figures_complete = (row.get("option_figures") or {}).get("status") == "complete"
     if options is not None:
         vals = [str(v).strip() for v in options.values()]
-        if len([v for v in vals if v]) < 4:
+        if len([v for v in vals if v]) < 4 and not option_figures_complete:
             problems.append("options_missing_or_incomplete")
-        norm = [re.sub(r"\W+", "", v.lower()) for v in vals if v]
+        norm = [re.sub(r"\s+", "", v.lower()) for v in vals if v]
         if len(norm) >= 4 and len(set(norm)) < len(norm):
             problems.append("duplicate_options")
         if any(any(m in v.lower() for m in META_OPTION) for v in vals):
             problems.append("option_meta_text")
-    else:
+    elif not option_figures_complete:
         problems.append("options_missing")
     sheet = row.get("answer_sheet") or {}
     for entry in sheet.get("entries") or []:

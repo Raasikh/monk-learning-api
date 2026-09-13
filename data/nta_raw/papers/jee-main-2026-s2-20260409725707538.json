@@ -47,6 +47,8 @@
   "status": "official_verified",
   "source": "nta_final_key",
   "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+  "xval_printed_agree": 0,
+  "xval_printed_disagree": 0,
   "entries": [
    {
     "qno": 1,
@@ -675,10 +677,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "both one-one and onto",
+    "B": "one-one but not onto",
+    "C": "onto but not one-one",
+    "D": "neither one-one nor onto"
    },
    "option_ids": [
     "6911214081",
@@ -690,7 +692,8 @@
    "page_end": 1,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -701,10 +704,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{61}{37}$",
+    "B": "$\\frac{121}{81}$",
+    "C": "$\\frac{364}{243}$",
+    "D": "$\\frac{1093}{729}$"
    },
    "option_ids": [
     "6911214085",
@@ -716,7 +719,8 @@
    "page_end": 2,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -727,10 +731,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "162",
+    "B": "184",
+    "C": "262",
+    "D": "324"
    },
    "option_ids": [
     "6911214089",
@@ -742,7 +746,8 @@
    "page_end": 2,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -779,10 +784,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "99",
+    "B": "199",
+    "C": "149",
+    "D": "159"
    },
    "option_ids": [
     "6911214097",
@@ -794,7 +799,8 @@
    "page_end": 3,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -805,10 +811,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "130",
+    "B": "155",
+    "C": "$\\frac{315}{2}$",
+    "D": "$\\frac{325}{2}$"
    },
    "option_ids": [
     "6911214101",
@@ -820,7 +826,8 @@
    "page_end": 3,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -857,10 +864,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$x^{2}-35 x+306=0$",
+    "B": "$x^{2}-41 x+420=0$",
+    "C": "$x^{2}-45 x+506=0$",
+    "D": "$x^{2}-37 x+342=0$"
    },
    "option_ids": [
     "6911214109",
@@ -872,7 +879,8 @@
    "page_end": 4,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -883,10 +891,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{63}{925}$",
+    "B": "$\\frac{17}{231}$",
+    "C": "$\\frac{16}{231}$",
+    "D": "$\\frac{64}{925}$"
    },
    "option_ids": [
     "6911214113",
@@ -898,7 +906,8 @@
    "page_end": 4,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -909,10 +918,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{8}$",
+    "B": "${ }^{6}$",
+    "C": "$\\quad 6 \\sqrt{2}$",
+    "D": "$\\quad 8 \\sqrt{2}$"
    },
    "option_ids": [
     "6911214117",
@@ -924,7 +933,8 @@
    "page_end": 5,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -935,10 +945,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "6911214121.",
+    "B": "$\\frac{4 \\sqrt{2}}{7}$",
+    "C": "$\\frac{4}{\\sqrt{7}}$",
+    "D": "$\\frac{8}{7}$"
    },
    "option_ids": [
     "6911214121",
@@ -950,7 +960,8 @@
    "page_end": 5,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -987,10 +998,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{\\frac{1}{2}}$",
+    "B": "${ }^{\\frac{1}{3}}$",
+    "C": "${ }^{\\frac{2}{3}}$",
+    "D": "${ }^{\\frac{5}{8}}$"
    },
    "option_ids": [
     "6911214129",
@@ -1002,7 +1013,8 @@
    "page_end": 6,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1013,10 +1025,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{5 \\sqrt{6}}{6}$",
+    "B": "$2 \\sqrt{5}$",
+    "C": "$3 \\sqrt{5}$",
+    "D": "$\\quad 4 \\sqrt{5}$"
    },
    "option_ids": [
     "6911214133",
@@ -1028,7 +1040,8 @@
    "page_end": 6,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1039,10 +1052,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "450",
+    "B": "900",
+    "C": "1800",
+    "D": "2400"
    },
    "option_ids": [
     "6911214137",
@@ -1054,7 +1067,8 @@
    "page_end": 7,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1065,10 +1079,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{11}$",
+    "B": "${ }^{13}$",
+    "C": "${ }^{17}$",
+    "D": "${ }^{21}$"
    },
    "option_ids": [
     "6911214141",
@@ -1080,7 +1094,8 @@
    "page_end": 7,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1091,10 +1106,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "64",
+    "B": "${ }^{68}$",
+    "C": "72",
+    "D": "76"
    },
    "option_ids": [
     "6911214145",
@@ -1106,7 +1121,8 @@
    "page_end": 7,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1117,10 +1133,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{\\frac{13}{8}}$",
+    "B": "${ }^{\\frac{11}{16}}$",
+    "C": "$\\frac{15}{32}$",
+    "D": "$\\frac{17}{64}$"
    },
    "option_ids": [
     "6911214149",
@@ -1132,7 +1148,8 @@
    "page_end": 8,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1143,10 +1160,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$\\frac{343}{6}$",
+    "B": "$\\frac{637}{6}$",
+    "C": "$\\frac{\\frac{437}{6}}{6}$",
+    "D": "$\\frac{523}{6}$"
    },
    "option_ids": [
     "6911214153",
@@ -1158,7 +1175,8 @@
    "page_end": 8,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1267,10 +1285,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{1}$",
+    "B": "${ }^{2}$",
+    "C": "${ }^{6}$",
+    "D": "${ }^{8}$"
    },
    "option_ids": [
     "6911214166",
@@ -1282,7 +1300,8 @@
    "page_end": 11,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1293,10 +1312,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A-I, B-II, C-III, D-IV",
+    "B": "A-IV, B-III, C-II, D-I",
+    "C": "A-III, B-IV, C-II, D-I",
+    "D": "A-II, B-I, C-IV, D-III"
    },
    "option_ids": [
     "6911214170",
@@ -1308,7 +1327,8 @@
    "page_end": 11,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1345,10 +1365,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "0",
+    "B": "250",
+    "C": "1250",
+    "D": "1000"
    },
    "option_ids": [
     "6911214178",
@@ -1360,7 +1380,8 @@
    "page_end": 12,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1371,10 +1392,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{3}$",
+    "B": "${ }^{4}$",
+    "C": "14",
+    "D": "${ }^{9}$"
    },
    "option_ids": [
     "6911214182",
@@ -1386,7 +1407,8 @@
    "page_end": 12,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1475,10 +1497,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$120 \\sqrt{2}$",
+    "B": "$140 \\sqrt{2}$",
+    "C": "$140 \\sqrt{3}$",
+    "D": "$120 \\sqrt{3}$"
    },
    "option_ids": [
     "6911214198",
@@ -1490,7 +1512,8 @@
    "page_end": 14,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1501,10 +1524,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{\\frac{5}{2} T}$",
+    "B": "$\\frac{5}{4} T$",
+    "C": "${ }^{\\frac{7}{2}} T$",
+    "D": "$\\frac{7}{4} T$"
    },
    "option_ids": [
     "6911214202",
@@ -1516,7 +1539,8 @@
    "page_end": 14,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1527,10 +1551,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$$\\frac{5 \\sqrt{50}}{\\pi} \\text { and } 8 \\times 10^{-3}$$",
+    "B": "$$\\frac{5 \\sqrt{50}}{\\pi} \\text { and } 8$$",
+    "C": "$$10 \\sqrt{50} \\text { and } 2 \\times 10^{-3}$$",
+    "D": "$$\\frac{5 \\sqrt{50}}{\\pi} \\text { and } 16 \\times 10^{-3}$$"
    },
    "option_ids": [
     "6911214206",
@@ -1542,7 +1566,8 @@
    "page_end": 15,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1553,10 +1578,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$$(-20 \\hat{i}+30 \\hat{j})$$",
+    "B": "$$(20 \\hat{i}-30 \\hat{j})$$",
+    "C": "$$(20 \\hat{i}+45 \\hat{j})$$",
+    "D": "$$(-4 \\hat{i}+6 \\hat{j})$$"
    },
    "option_ids": [
     "6911214210",
@@ -1568,7 +1593,8 @@
    "page_end": 15,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1605,10 +1631,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "${ }^{12}$",
+    "B": "${ }^{18}$",
+    "C": "${ }^{21}$",
+    "D": "${ }^{24}$"
    },
    "option_ids": [
     "6911214218",
@@ -1620,7 +1646,8 @@
    "page_end": 16,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1657,10 +1684,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "6.1",
+    "B": "24.4",
+    "C": "${ }^{26.6}$",
+    "D": "5"
    },
    "option_ids": [
     "6911214226",
@@ -1672,7 +1699,8 @@
    "page_end": 17,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1683,10 +1711,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "1.5",
+    "B": "$\\sqrt{3}$",
+    "C": "$$\\sqrt{2}$$",
+    "D": "$$1.65$$"
    },
    "option_ids": [
     "6911214230",
@@ -1698,7 +1726,8 @@
    "page_end": 17,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1761,10 +1790,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "Physics Section B Section Id : 691121100 Section Number : 4 Section type : Online Mandatory or Optional : Mandatory Number of Questions : 5 Number of Questions to be attempted : 5 Section Marks : 20 Maximum Instruction Time : 0 Sub-Section Number : 1 Sub-Section Id : 691121100 Question Shuffling Allowed : Yes Is Section Default? : No"
+    "A": "4000",
+    "B": "3000",
+    "C": "2000",
+    "D": "1000"
    },
    "option_ids": [
     "6911214242",
@@ -1775,7 +1804,8 @@
    "page_start": 18,
    "page_end": 19,
    "parse_flags": [
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1859,10 +1889,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "6",
+    "B": "B and C only\n6",
+    "C": "C and D only\n6",
+    "D": "A, C and E only"
    },
    "option_ids": [
     "6911214251",
@@ -1874,7 +1904,8 @@
    "page_end": 21,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1911,10 +1942,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911214259",
@@ -1926,7 +1957,8 @@
    "page_end": 22,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -1963,10 +1995,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true\n6",
+    "B": "Both Statement I and Statement II are false\n6",
+    "C": "Statement I is true but Statement II is false\n6",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911214267",
@@ -1978,7 +2010,8 @@
    "page_end": 23,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2015,10 +2048,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "The overall reaction can be written as $\\mathrm{n}_{2} \\operatorname{Red}_{1}+\\mathrm{n}_{1} \\mathrm{O} x_{2} \\rightleftharpoons \\mathrm{n}_{2} \\mathrm{O}_{1}^{\\mathrm{n}_{1}^{+}}+\\mathrm{n}_{1} \\operatorname{Red}_{2}^{\\mathrm{n}_{2}^{-}}$\n6",
+    "B": "The electrons do not appear in the overall reaction because electrons produced at the anode are consumed at the cathode.\n6",
+    "C": "Here n is the number of electrons transferred in redox reaction.\n6",
+    "D": "If the reaction is carried out reversibly, the electrical work done is equal to the ratio of charge and potential difference through which charge is moved."
    },
    "option_ids": [
     "6911214275",
@@ -2030,7 +2063,8 @@
    "page_end": 24,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2067,10 +2101,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true",
+    "B": "Both Statement I and Statement II are false",
+    "C": "Statement I is true but Statement II is false",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911214283",
@@ -2082,7 +2116,8 @@
    "page_end": 25,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2093,10 +2128,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "A and B only\n6",
+    "B": "B and C only\n6",
+    "C": "A and D only\n6",
+    "D": "C and D only"
    },
    "option_ids": [
     "6911214287",
@@ -2108,7 +2143,8 @@
    "page_end": 25,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2145,10 +2181,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true\n6",
+    "B": "Both Statement I and Statement II are false\n6",
+    "C": "Statement I is true but Statement II is false\n6",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911214295",
@@ -2160,7 +2196,8 @@
    "page_end": 26,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2171,10 +2208,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "$$\\alpha>\\beta>\\gamma$$",
+    "B": "$$\\alpha<\\beta<\\gamma$$",
+    "C": "$$\\alpha=\\beta=\\gamma$$",
+    "D": "$$\\alpha<\\beta=\\gamma$$"
    },
    "option_ids": [
     "6911214299",
@@ -2186,7 +2223,8 @@
    "page_end": 27,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2223,10 +2261,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Haloform test\n6",
+    "B": "Lucas test\n6",
+    "C": "Silver mirror test\n6",
+    "D": "Benedict test"
    },
    "option_ids": [
     "6911214307",
@@ -2238,7 +2276,8 @@
    "page_end": 27,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2249,10 +2288,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Both Statement I and Statement II are true\n6",
+    "B": "Both Statement I and Statement II are false\n6",
+    "C": "Statement I is true but Statement II is false\n6",
+    "D": "Statement I is false but Statement II is true"
    },
    "option_ids": [
     "6911214311",
@@ -2264,7 +2303,8 @@
    "page_end": 28,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2275,10 +2315,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "Benzene\n6",
+    "B": "Phenol\n\nPropanol",
+    "C": "6",
+    "D": "Chlorobenzene"
    },
    "option_ids": [
     "6911214315",
@@ -2290,7 +2330,8 @@
    "page_end": 28,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2301,10 +2342,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "5\n6",
+    "B": "4\n6",
+    "C": "3\n6",
+    "D": "6"
    },
    "option_ids": [
     "6911214319",
@@ -2316,7 +2357,8 @@
    "page_end": 29,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {
@@ -2327,10 +2369,10 @@
    "section": "Section A",
    "text": "",
    "options": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": ""
+    "A": "6",
+    "B": "16\n6",
+    "C": "14\n6",
+    "D": "18"
    },
    "option_ids": [
     "6911214323",
@@ -2342,7 +2384,8 @@
    "page_end": 29,
    "parse_flags": [
     "options_image_only",
-    "stem_image_only"
+    "stem_image_only",
+    "options_ocr_repaired"
    ]
   },
   {

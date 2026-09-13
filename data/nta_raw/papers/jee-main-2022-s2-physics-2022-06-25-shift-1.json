@@ -275,7 +275,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{Z}=\\frac{\\mathrm{A}^{2} \\mathrm{~B}^{3}}{\\mathrm{C}^{4}}$\nIn case of error\n$$\\begin{array}{l}\n\\frac{d Z}{Z}=\\frac{2 d A}{A}+\\frac{3 d B}{B}+\\frac{4 d C}{C} \\\\\n\\frac{\\Delta Z}{Z}=\\frac{2 \\Delta A}{A}+\\frac{3 \\Delta B}{B}+\\frac{4 \\Delta C}{C}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 2,
@@ -293,7 +299,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$|\\overrightarrow{\\mathrm{A}}| \\neq 0$\n$$\\overrightarrow{\\mathrm{A}} \\times \\overrightarrow{\\mathrm{A}}=|\\overrightarrow{\\mathrm{A}}||\\overrightarrow{\\mathrm{A}}| \\sin 0^{\\circ} \\hat{\\mathrm{n}}=0$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 3,
@@ -311,7 +323,15 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n|\\hat{\\mathrm{A}}+\\hat{\\mathrm{B}}|=\\sqrt{|\\hat{\\mathrm{A}}|^{2}+|\\hat{\\mathrm{B}}|^{2}+2|\\hat{\\mathrm{~A}} \\| \\hat{\\mathrm{B}}| \\cos \\theta} \\\\\n=\\sqrt{1+1+2 \\cos \\theta} \\\\\n=\\sqrt{2(1+\\cos \\theta)} \\\\\n=\\sqrt{2 \\times 2 \\cos ^{2} \\frac{\\theta}{2}} \\\\\n=2 \\cos \\frac{\\theta}{2} \\\\\n|\\hat{\\mathrm{~A}}-\\hat{\\mathrm{B}}|=\\sqrt{|\\hat{\\mathrm{A}}|^{2}+|\\hat{\\mathrm{B}}|^{2}-2|\\hat{\\mathrm{~A}} \\| \\hat{\\mathrm{B}}| \\cos \\theta} \\\\\n=\\sqrt{2-2 \\cos \\theta} \\\\\n=2 \\sin \\frac{\\theta}{2} \\\\\n\\frac{|\\hat{\\mathrm{~A}}+\\hat{\\mathrm{B}}|}{|\\hat{\\mathrm{A}}-\\hat{\\mathrm{B}}|}=\\cot \\frac{\\theta}{2}\n\\end{array}$$",
+     "JEE Exam Solution\n1\nwww.esaral.com",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 4,
@@ -329,7 +349,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\vec{\\tau}=\\overrightarrow{\\mathrm{r}} \\times \\overrightarrow{\\mathrm{F}}$\n$$\\begin{array}{l}\n=\\left|\\begin{array}{ccc}\n\\hat{i} & \\hat{j} & \\hat{k} \\\\\n2 & 1 & 2 \\\\\n3 & 4 & -2\n\\end{array}\\right| \\\\\n=\\hat{i}(-2-8)-\\hat{j}(-4-6)+\\hat{k}(8-3) \\\\\n=-10 \\hat{i}+10 \\hat{j}+5 \\hat{k}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 5,
@@ -347,7 +373,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{g}=\\frac{\\mathrm{Gm}}{\\mathrm{r}^{2}}$\n$$\\begin{aligned}\n\\mathrm{g}^{\\prime} & =\\frac{\\mathrm{Gm}}{(3 \\mathrm{r})^{2}} \\\\\n\\mathrm{~g}^{\\prime} & =\\frac{\\mathrm{Gm}}{9 \\mathrm{r}^{2}} \\\\\n\\mathrm{~g}^{\\prime} & =\\frac{\\mathrm{g}}{9}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 6,
@@ -365,7 +397,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{v}_{\\mathrm{t}}=\\frac{2}{9} \\frac{\\mathrm{gr}^{2}\\left(\\rho_{\\mathrm{p}}-\\rho_{1}\\right)}{\\eta} ; \\quad \\mathrm{v}_{\\mathrm{t}} \\propto \\mathrm{r}^{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 7,
@@ -383,7 +421,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{v}_{\\text {rms }}=\\sqrt{\\frac{3 \\mathrm{RT}}{\\mathrm{M}}}$ and $\\mathrm{v}_{\\mathrm{mp}}=\\sqrt{\\frac{2 \\mathrm{RT}}{\\mathrm{M}}}$\nThus $\\mathrm{v}_{\\text {rms }}=\\sqrt{\\frac{3}{2}} \\mathrm{v}_{\\text {mp }}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 8,
@@ -401,7 +445,14 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "As the sheet is very large $\\overrightarrow{\\mathrm{E}}$ is independent of distance from it.",
+     "Thus $\\mathrm{E}_{1}=\\mathrm{E}_{2}=\\frac{\\sigma}{2 \\varepsilon_{0}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 9,
@@ -419,7 +470,13 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "AC generator converts mechanical energy into electrical energy. Galvanometer shows deflection when current passes through it so it is used to show presence of current in any wire. Transformer is used to step up or step down the voltage. Metals detectors contain inductor coils and use principle of induction and resonance in AC circuit."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 10,
@@ -437,7 +494,14 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Use Ampere's law\n$$\\text { B. } 2 \\pi \\mathrm{r}=\\mu_{0} \\cdot \\frac{\\mathrm{I}}{\\pi \\mathrm{R}^{2}} \\cdot \\pi \\mathrm{r}^{2}$$",
+     "Thus $\\mathrm{B} \\propto \\mathrm{r}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 11,
@@ -455,7 +519,14 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Purely Inductive circuit\n$$\\begin{array}{l}\n\\theta=\\frac{\\pi}{2} \\\\\n\\cos \\frac{\\pi}{2}=0\n\\end{array}$$",
+     "Average power = 0"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 12,
@@ -473,7 +544,15 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\mathrm{I}=\\frac{1}{2} \\varepsilon_{0} \\mathrm{E}_{0}^{2} \\mathrm{c}$\n$$\\begin{array}{l}\n\\mathrm{I}=\\frac{1}{2} \\times\\left(8.85 \\times 10^{-12}\\right)(56.5)^{2} \\times\\left(3 \\times 10^{8}\\right) \\\\\n=4.24 \\mathrm{Wm}^{-2}\n\\end{array}$$",
+     "JEE Exam Solution\n3\nwww.esaral.com",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 13,
@@ -491,7 +570,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\nI_{P}=I+9 I+2 \\sqrt{I \\times 9 I} \\cos \\frac{\\pi}{2} \\\\\nI_{P}=10 I \\\\\nI_{Q}=I+9 I+2 \\sqrt{I \\times 9 I} \\cos \\pi \\\\\n=10 I-6 I=4 I \\\\\n\\therefore I_{P}-I_{Q}=10 I-4 I=6 I\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 14,
@@ -509,7 +594,15 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "For total internal reflection, $\\mathrm{i}>\\theta_{\\mathrm{C}}$\n$$\\begin{array}{l}\n\\Rightarrow \\sin \\mathrm{i}>\\sin \\theta_{\\mathrm{C}} \\\\\n\\Rightarrow \\sin \\mathrm{i}>\\frac{\\mu_{\\mathrm{R}}}{\\mu_{\\mathrm{D}}}\n\\end{array}$$",
+     "Also $\\mu=\\sqrt{\\mu_{\\mathrm{r}} \\epsilon_{\\mathrm{r}}}$\n$$\\frac{\\mu_{\\mathrm{R}}}{\\mu_{\\mathrm{D}}}=\\frac{\\sqrt{1 \\times 1}}{\\sqrt{4 \\times 1}}=\\frac{1}{2}$$",
+     "From (1), $\\sin \\mathrm{i}>\\frac{1}{2} \\Rightarrow \\mathrm{i}>30^{\\circ}, \\mathrm{i}=60^{\\circ}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 15,
@@ -527,7 +620,13 @@
     "raw": "A",
     "option": "A"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In Davisson-Germer experiment the electrons exhibit diffraction there by proving that electrons have wave nature. Hence both statement are correct.\nSol. Both the options are correct by concept."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 16,
@@ -545,7 +644,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{v} \\propto \\frac{\\mathrm{Z}}{\\mathrm{n}} \\propto \\mathrm{Z}(\\mathrm{n}=$ constant $)$\n$$\\Rightarrow \\frac{\\mathrm{v}_{\\mathrm{He}^{*}}}{\\mathrm{v}_{\\mathrm{H}}}=\\frac{\\mathrm{Z}_{\\mathrm{He}^{*}}}{\\mathrm{Z}_{\\mathrm{H}}}=\\frac{2}{1}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 17,
@@ -563,7 +668,13 @@
     "raw": "D",
     "option": "D"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Very small change in minority charge carriers produces high value of reverse bias current."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 18,
@@ -581,7 +692,13 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "Optical fibre frequency range is 1 THz to 1000 THz."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 19,
@@ -599,7 +716,13 @@
     "raw": "C",
     "option": "C"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{v}=\\frac{\\mathrm{c}}{\\mu}$\n$$\\begin{array}{l}\n\\Rightarrow v_{B}=\\frac{3 \\times 10^{8}}{1.47}=2.04 \\times 10^{8}=20.4 \\times 10^{7} \\mathrm{~m} / \\mathrm{s} \\\\\n\\because v_{A}-v_{B}=2.6 \\times 10^{7} \\mathrm{~m} / \\mathrm{s} \\\\\n\\therefore v_{A}=(20.4+2.6) \\times 10^{7}=23 \\times 10^{7} \\mathrm{~m} / \\mathrm{s} \\\\\n\\therefore \\frac{\\mu_{B}}{\\mu_{A}}=\\frac{v_{A}}{v_{B}}=\\frac{23 \\times 10^{7}}{20.4 \\times 10^{7}}=1.13\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 20,
@@ -617,7 +740,16 @@
     "raw": "B",
     "option": "B"
    },
-   "extraction": "mathpix_ocr"
+   "extraction": "mathpix_ocr",
+   "solution": {
+    "steps": [
+     "In galvanometer\n$$\\Rightarrow\\left(\\mathrm{I}-\\mathrm{I}_{\\mathrm{g}}\\right) \\mathrm{S}=\\mathrm{I}_{\\mathrm{g}} \\mathrm{G}$$\n$$\\begin{array}{l}\n\\frac{I_{g}}{I}=\\frac{S}{S+G} \\\\\n\\Rightarrow \\frac{1}{3}=\\frac{S}{S+G} \\Rightarrow S+G=3 S \\Rightarrow G=2 S\n\\end{array}$$",
+     "JEE Exam Solution\n5\nwww.esaral.com",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 21,
@@ -629,7 +761,13 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 1,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{Z}=\\frac{\\mathrm{A}^{2} \\mathrm{~B}^{3}}{\\mathrm{C}^{4}}$\nIn case of error\n$$\\begin{array}{l}\n\\frac{d Z}{Z}=\\frac{2 d A}{A}+\\frac{3 d B}{B}+\\frac{4 d C}{C} \\\\\n\\frac{\\Delta Z}{Z}=\\frac{2 \\Delta A}{A}+\\frac{3 \\Delta B}{B}+\\frac{4 \\Delta C}{C}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 22,
@@ -641,7 +779,13 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 2,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$|\\overrightarrow{\\mathrm{A}}| \\neq 0$\n$$\\overrightarrow{\\mathrm{A}} \\times \\overrightarrow{\\mathrm{A}}=|\\overrightarrow{\\mathrm{A}}||\\overrightarrow{\\mathrm{A}}| \\sin 0^{\\circ} \\hat{\\mathrm{n}}=0$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 23,
@@ -653,7 +797,15 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 3,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$$\\begin{array}{l}\n|\\hat{\\mathrm{A}}+\\hat{\\mathrm{B}}|=\\sqrt{|\\hat{\\mathrm{A}}|^{2}+|\\hat{\\mathrm{B}}|^{2}+2|\\hat{\\mathrm{~A}} \\| \\hat{\\mathrm{B}}| \\cos \\theta} \\\\\n=\\sqrt{1+1+2 \\cos \\theta} \\\\\n=\\sqrt{2(1+\\cos \\theta)} \\\\\n=\\sqrt{2 \\times 2 \\cos ^{2} \\frac{\\theta}{2}} \\\\\n=2 \\cos \\frac{\\theta}{2} \\\\\n|\\hat{\\mathrm{~A}}-\\hat{\\mathrm{B}}|=\\sqrt{|\\hat{\\mathrm{A}}|^{2}+|\\hat{\\mathrm{B}}|^{2}-2|\\hat{\\mathrm{~A}} \\| \\hat{\\mathrm{B}}| \\cos \\theta} \\\\\n=\\sqrt{2-2 \\cos \\theta} \\\\\n=2 \\sin \\frac{\\theta}{2} \\\\\n\\frac{|\\hat{\\mathrm{~A}}+\\hat{\\mathrm{B}}|}{|\\hat{\\mathrm{A}}-\\hat{\\mathrm{B}}|}=\\cot \\frac{\\theta}{2}\n\\end{array}$$",
+     "JEE Exam Solution\n1\nwww.esaral.com",
+     "Saral\nJEE | NEET | Class 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 24,
@@ -665,7 +817,13 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 4,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\vec{\\tau}=\\overrightarrow{\\mathrm{r}} \\times \\overrightarrow{\\mathrm{F}}$\n$$\\begin{array}{l}\n=\\left|\\begin{array}{ccc}\n\\hat{i} & \\hat{j} & \\hat{k} \\\\\n2 & 1 & 2 \\\\\n3 & 4 & -2\n\\end{array}\\right| \\\\\n=\\hat{i}(-2-8)-\\hat{j}(-4-6)+\\hat{k}(8-3) \\\\\n=-10 \\hat{i}+10 \\hat{j}+5 \\hat{k}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 25,
@@ -677,7 +835,13 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 5,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{g}=\\frac{\\mathrm{Gm}}{\\mathrm{r}^{2}}$\n$$\\begin{aligned}\n\\mathrm{g}^{\\prime} & =\\frac{\\mathrm{Gm}}{(3 \\mathrm{r})^{2}} \\\\\n\\mathrm{~g}^{\\prime} & =\\frac{\\mathrm{Gm}}{9 \\mathrm{r}^{2}} \\\\\n\\mathrm{~g}^{\\prime} & =\\frac{\\mathrm{g}}{9}\n\\end{aligned}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 26,
@@ -689,7 +853,13 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 6,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\quad \\mathrm{v}_{\\mathrm{t}}=\\frac{2}{9} \\frac{\\mathrm{gr}^{2}\\left(\\rho_{\\mathrm{p}}-\\rho_{1}\\right)}{\\eta} ; \\quad \\mathrm{v}_{\\mathrm{t}} \\propto \\mathrm{r}^{2}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 27,
@@ -701,7 +871,13 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 7,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "$\\mathrm{v}_{\\text {rms }}=\\sqrt{\\frac{3 \\mathrm{RT}}{\\mathrm{M}}}$ and $\\mathrm{v}_{\\mathrm{mp}}=\\sqrt{\\frac{2 \\mathrm{RT}}{\\mathrm{M}}}$\nThus $\\mathrm{v}_{\\text {rms }}=\\sqrt{\\frac{3}{2}} \\mathrm{v}_{\\text {mp }}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 28,
@@ -713,7 +889,14 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 8,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "As the sheet is very large $\\overrightarrow{\\mathrm{E}}$ is independent of distance from it.",
+     "Thus $\\mathrm{E}_{1}=\\mathrm{E}_{2}=\\frac{\\sigma}{2 \\varepsilon_{0}}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 29,
@@ -725,7 +908,13 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 9,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "AC generator converts mechanical energy into electrical energy. Galvanometer shows deflection when current passes through it so it is used to show presence of current in any wire. Transformer is used to step up or step down the voltage. Metals detectors contain inductor coils and use principle of induction and resonance in AC circuit."
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
   {
    "qno": 30,
@@ -737,7 +926,14 @@
    "embedded_answer": null,
    "extraction": "mathpix_ocr",
    "qno_printed": 10,
-   "qno_renumbered": true
+   "qno_renumbered": true,
+   "solution": {
+    "steps": [
+     "Use Ampere's law\n$$\\text { B. } 2 \\pi \\mathrm{r}=\\mu_{0} \\cdot \\frac{\\mathrm{I}}{\\pi \\mathrm{R}^{2}} \\cdot \\pi \\mathrm{r}^{2}$$",
+     "Thus $\\mathrm{B} \\propto \\mathrm{r}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   }
  ],
  "extraction_method": "mathpix_ocr"

@@ -1,61 +1,1009 @@
 {
+ "paper_id": "jee-main-2022-s2-chemistry-2022-06-26-shift-1",
+ "exam_tag": "jee-main",
+ "tags": [
+  "jee-main",
+  "class-11",
+  "class-12",
+  "entrance-exam"
+ ],
+ "manifest": {
   "paper_id": "jee-main-2022-s2-chemistry-2022-06-26-shift-1",
+  "exam": "jee-main",
+  "year": 2022,
+  "session": 2,
+  "exam_date": "2022-06-26",
+  "shift": 1,
+  "paper_type": "question_paper",
+  "subject": "Chemistry",
+  "language": "English",
+  "notes": "",
   "exam_tag": "jee-main",
   "tags": [
-    "jee-main",
-    "class-11",
-    "class-12",
-    "entrance-exam"
+   "jee-main",
+   "class-11",
+   "class-12",
+   "entrance-exam"
   ],
-  "manifest": {
-    "paper_id": "jee-main-2022-s2-chemistry-2022-06-26-shift-1",
-    "exam": "jee-main",
-    "year": 2022,
-    "session": 2,
-    "exam_date": "2022-06-26",
-    "shift": 1,
-    "paper_type": "question_paper",
-    "subject": "Chemistry",
-    "language": "English",
-    "notes": "",
-    "exam_tag": "jee-main",
-    "tags": [
-      "jee-main",
-      "class-11",
-      "class-12",
-      "entrance-exam"
-    ],
-    "source_tier": "mirror",
-    "source_site": "www.esaral.com",
-    "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
-    "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/15311-26-06%20MORNING%20CHEMISTRY%202022.pdf",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "key_join_strategy": "sequence_within_section",
-    "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+  "source_tier": "mirror",
+  "source_site": "www.esaral.com",
+  "source_page_url": "https://www.esaral.com/jee/jee-main-2022-question-papers/",
+  "pdf_url": "https://www.esaral.com/media/uploads/2023/9/25/15311-26-06%20MORNING%20CHEMISTRY%202022.pdf",
+  "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
+  "key_join_strategy": "sequence_within_section",
+  "key_join_notes": "mirror PDFs carry no NTA question IDs; joining to the official key by question order within subject/section is approximate and must be re-verified per paper"
+ },
+ "probe": {
+  "sha256": "29fcfac7b9855886cedc9d043f30c15de2293c9587b4e18c9d1f551c65f35874",
+  "page_count": 8,
+  "text_chars": 731,
+  "has_text_layer": false,
+  "has_question_ids": false,
+  "includes_solutions": false,
+  "solutions_heading_hits": 0,
+  "answer_marker_hits": 0,
+  "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-26-shift-1.pdf"
+ },
+ "answer_sheet": {
+  "status": "official_verified",
+  "source": "nta_final_key",
+  "key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/07/2022070665.pdf",
+  "assignment": "positional_block_validated",
+  "block_index": 1,
+  "xval_printed_agree": 29,
+  "entries": [
+   {
+    "qno": 1,
+    "question_id": "101031",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 2,
+    "question_id": "101032",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 3,
+    "question_id": "101033",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 4,
+    "question_id": "101034",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 5,
+    "question_id": "101035",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 6,
+    "question_id": "101036",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 7,
+    "question_id": "101037",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 8,
+    "question_id": "101038",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 9,
+    "question_id": "101039",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 10,
+    "question_id": "101040",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 11,
+    "question_id": "101041",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 12,
+    "question_id": "101042",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 13,
+    "question_id": "101043",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 14,
+    "question_id": "101044",
+    "answer": {
+     "raw": "D",
+     "option": "D"
+    }
+   },
+   {
+    "qno": 15,
+    "question_id": "101045",
+    "answer": {
+     "raw": "A",
+     "value": "A"
+    }
+   },
+   {
+    "qno": 16,
+    "question_id": "101046",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 17,
+    "question_id": "101047",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 18,
+    "question_id": "101048",
+    "answer": {
+     "raw": "A",
+     "option": "A"
+    }
+   },
+   {
+    "qno": 19,
+    "question_id": "101049",
+    "answer": {
+     "raw": "C",
+     "option": "C"
+    }
+   },
+   {
+    "qno": 20,
+    "question_id": "101050",
+    "answer": {
+     "raw": "B",
+     "option": "B"
+    }
+   },
+   {
+    "qno": 21,
+    "question_id": "101051",
+    "answer": {
+     "raw": "727",
+     "value": "727"
+    }
+   },
+   {
+    "qno": 22,
+    "question_id": "101052",
+    "answer": {
+     "raw": "98",
+     "value": "98"
+    }
+   },
+   {
+    "qno": 23,
+    "question_id": "101053",
+    "answer": {
+     "raw": "476",
+     "value": "476"
+    }
+   },
+   {
+    "qno": 24,
+    "question_id": "101054",
+    "answer": {
+     "raw": "200",
+     "value": "200"
+    }
+   },
+   {
+    "qno": 25,
+    "question_id": "101055",
+    "answer": {
+     "raw": "9960",
+     "value": "9960"
+    }
+   },
+   {
+    "qno": 26,
+    "question_id": "101056",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 27,
+    "question_id": "101057",
+    "answer": {
+     "raw": "3",
+     "value": "3"
+    }
+   },
+   {
+    "qno": 28,
+    "question_id": "101058",
+    "answer": {
+     "raw": "18",
+     "value": "18"
+    }
+   },
+   {
+    "qno": 29,
+    "question_id": "101059",
+    "answer": {
+     "raw": "7",
+     "value": "7"
+    }
+   },
+   {
+    "qno": 30,
+    "question_id": "101060",
+    "answer": {
+     "raw": "9",
+     "value": "9"
+    }
+   }
+  ]
+ },
+ "format": null,
+ "status": "extracted",
+ "question_count": 0,
+ "defects": [
+  "no usable text layer; OCR deferred per task scope"
+ ],
+ "questions": [
+  {
+   "qno": 1,
+   "question_id": "101031",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A commercially sold conc. HCl is $35 \\% \\mathrm{HCl}$ by mass. If the density of this commercial acid is 1.46 g/mL, the molarity of this solution is :\n(Atomic mass : $\\mathrm{Cl}=35.5 \\mathrm{amu}, \\mathrm{H}=1 \\mathrm{amu}$ )",
+   "options": {
+    "A": "10.2 M",
+    "B": "12.5 M",
+    "C": "14.0 M",
+    "D": "18.2 M\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Let total volume $=1000 \\mathrm{~mL}=1 \\mathrm{~L}$\ntotal mass of solution $=1460 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\text { mass of } \\mathrm{HCl}=\\frac{35}{100} \\times 1460 \\\\\n\\text { moles of } \\mathrm{HCl}=\\frac{35 \\times 1460}{100 \\times 36.5} \\\\\n\\text { So molarity }=\\frac{35 \\times 1460}{100 \\times 36.5}=14 \\mathrm{M}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Let total volume $=1000 \\mathrm{~mL}=1 \\mathrm{~L}$\ntotal mass of solution $=1460 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\text { mass of } \\mathrm{HCl}=\\frac{35}{100} \\times 1460 \\\\\n\\text { moles of } \\mathrm{HCl}=\\frac{35 \\times 1460}{100 \\times 36.5} \\\\\n\\text { So molarity }=\\frac{35 \\times 1460}{100 \\times 36.5}=14 \\mathrm{M}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "probe": {
-    "sha256": "29fcfac7b9855886cedc9d043f30c15de2293c9587b4e18c9d1f551c65f35874",
-    "page_count": 8,
-    "text_chars": 731,
-    "has_text_layer": false,
-    "has_question_ids": false,
-    "includes_solutions": false,
-    "solutions_heading_hits": 0,
-    "answer_marker_hits": 0,
-    "cache_path": "scratch/nta_pdf_cache/jee-main-2022-s2-chemistry-2022-06-26-shift-1.pdf"
+  {
+   "qno": 2,
+   "question_id": "101032",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "An evacuated glass vessel weighs 40.0 g when empty, 135.0 g when filled with a liquid of density $0.95 \\mathrm{~g} \\mathrm{~mL}^{-1}$ and 40.5 g when filled with an ideal gas at 0.82 atm at 250 K . The molar mass of the gas in $\\mathrm{g} \\mathrm{mol}^{-1}$ is :\n(Given : $\\mathrm{R}=0.082 \\mathrm{~L} \\mathrm{~atm} \\mathrm{~K}^{-1} \\mathrm{~mol}^{-1}$ )",
+   "options": {
+    "A": "35",
+    "B": "50",
+    "C": "75",
+    "D": "125\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Mass of liquid $=135-40=95 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\text { Volume of liquid }=\\frac{\\text { mass }}{\\text { density }}=\\frac{95}{.95} \\mathrm{~mL} \\\\\n=100 \\mathrm{~mL}=0.1 \\mathrm{~L} \\\\\n\\text { mass of ideal gas }=40.5-40 \\mathrm{~g}=0.5 \\mathrm{~g} \\\\\n\\mathrm{PV}=\\mathrm{nRT} \\\\\n0.82 \\times 0.1=\\left(\\frac{0.5}{\\mathrm{M}}\\right) \\times 0.082 \\times 250\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Mass of liquid $=135-40=95 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\text { Volume of liquid }=\\frac{\\text { mass }}{\\text { density }}=\\frac{95}{.95} \\mathrm{~mL} \\\\\n=100 \\mathrm{~mL}=0.1 \\mathrm{~L} \\\\\n\\text { mass of ideal gas }=40.5-40 \\mathrm{~g}=0.5 \\mathrm{~g} \\\\\n\\mathrm{PV}=\\mathrm{nRT} \\\\\n0.82 \\times 0.1=\\left(\\frac{0.5}{\\mathrm{M}}\\right) \\times 0.082 \\times 250\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "answer_sheet": {
-    "status": "official_key_pending",
-    "source": "official_nta_key",
-    "official_key_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080753.pdf",
-    "validation": "not_verified",
-    "entries": []
+  {
+   "qno": 3,
+   "question_id": "101033",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "If the radius of the $3^{\\text {rd }}$ Bohr's orbit of hydrogen atom is $\\mathrm{r}_{3}$ and the radius of $4{ }^{\\text {th }}$ Bohr's orbit is $\\mathrm{r}_{4}$. Then :",
+   "options": {
+    "A": "$\\mathrm{r}_{4}=\\frac{9}{16} \\mathrm{r}_{3}$",
+    "B": "$\\mathrm{r}_{4}=\\frac{16}{9} \\mathrm{r}_{3}$",
+    "C": "$\\mathrm{r}_{4}=\\frac{3}{4} \\mathrm{r}_{3}$",
+    "D": "$\\mathrm{r}_{4}=\\frac{4}{3} \\mathrm{r}_{3}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. $\\mathrm{r}=0.529 \\times \\frac{\\mathrm{n}^{2}}{\\mathrm{z}} \\AA$\n$$\\begin{array}{l}\n\\mathrm{r}_{3}=0.529 \\times \\frac{3^{2}}{1} \\\\\n\\mathrm{r}_{4}=0.529 \\times \\frac{4^{2}}{1} \\\\\n\\frac{\\mathrm{r}_{4}}{\\mathrm{r}_{3}}=\\frac{4^{2}}{3^{2}}=\\frac{16}{9} \\\\\n\\mathrm{r}_{4}=\\frac{16 \\mathrm{r}_{3}}{9}\n\\end{array}$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{r}=0.529 \\times \\frac{\\mathrm{n}^{2}}{\\mathrm{z}} \\AA$\n$$\\begin{array}{l}\n\\mathrm{r}_{3}=0.529 \\times \\frac{3^{2}}{1} \\\\\n\\mathrm{r}_{4}=0.529 \\times \\frac{4^{2}}{1} \\\\\n\\frac{\\mathrm{r}_{4}}{\\mathrm{r}_{3}}=\\frac{4^{2}}{3^{2}}=\\frac{16}{9} \\\\\n\\mathrm{r}_{4}=\\frac{16 \\mathrm{r}_{3}}{9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
   },
-  "format": null,
-  "status": "needs_ocr",
-  "question_count": 0,
-  "defects": [
-    "no usable text layer; OCR deferred per task scope"
-  ],
-  "questions": []
+  {
+   "qno": 4,
+   "question_id": "101034",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Consider the ions/molecule\n$\\mathrm{O}_{2}^{+}, \\mathrm{O}_{2}, \\mathrm{O}_{2}^{-}, \\mathrm{O}_{2}^{2-}$\nFor increasing bond order the correct option is :",
+   "options": {
+    "A": "$\\mathrm{O}_{2}^{2-}<\\mathrm{O}_{2}^{-}<\\mathrm{O}_{2}<\\mathrm{O}_{2}^{+}$",
+    "B": "$\\mathrm{O}_{2}^{-}<\\mathrm{O}_{2}^{2-}<\\mathrm{O}_{2}<\\mathrm{O}_{2}^{+}$",
+    "C": "$\\mathrm{O}_{2}^{-}<\\mathrm{O}_{2}^{2-}<\\mathrm{O}_{2}^{+}<\\mathrm{O}_{2}$",
+    "D": "$\\mathrm{O}_{2}^{-}<\\mathrm{O}_{2}^{+}<\\mathrm{O}_{2}^{2-}<\\mathrm{O}_{2}$\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol.\n\n\\begin{tabular}[t]{|l|l|l|l|}\n\\hline ion/molecule & Number of $\\mathbf{e}^{-}$in BMO & Number of $\\mathbf{e}^{-}$ in ABMO & Bond order \\\\\n\\hline $\\mathrm{O}_{2}{ }^{+}$ & 10 & 5 & 2.5 \\\\\n\\hline $\\mathrm{O}_{2}$ & 10 & 6 & 2 \\\\\n\\hline $\\mathrm{O}_{2}{ }^{-}$ & 10 & 7 & 1.5 \\\\\n\\hline\n\\end{tabular}\n\nJEE Exam Solution\nwww.esaral.com\n1\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nBond order $\\mathrm{O}_{2}{ }^{2-}<\\mathrm{O}_{2}{ }^{-}<\\mathrm{O}_{2}<\\mathrm{O}_{2}{ }^{+}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "\\begin{tabular}[t]{|l|l|l|l|}\n\\hline ion/molecule & Number of $\\mathbf{e}^{-}$in BMO & Number of $\\mathbf{e}^{-}$ in ABMO & Bond order \\\\\n\\hline $\\mathrm{O}_{2}{ }^{+}$ & 10 & 5 & 2.5 \\\\\n\\hline $\\mathrm{O}_{2}$ & 10 & 6 & 2 \\\\\n\\hline $\\mathrm{O}_{2}{ }^{-}$ & 10 & 7 & 1.5 \\\\\n\\hline\n\\end{tabular}",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP",
+     "Bond order $\\mathrm{O}_{2}{ }^{2-}<\\mathrm{O}_{2}{ }^{-}<\\mathrm{O}_{2}<\\mathrm{O}_{2}{ }^{+}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 5,
+   "question_id": "101035",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The $\\left(\\frac{\\partial \\mathrm{E}}{\\partial \\mathrm{T}}\\right)_{\\mathrm{P}}$ of different types of half cells are as follows:\nA B C D\n$1 \\times 10^{-4} \\quad 2 \\times 10^{-4} \\quad 0.1 \\times 10^{-4} \\quad 0.2 \\times 10^{-4}$\n(Where E is the electromotive force)\nWhich of the above half cells would be preferred to be used as reference electrode ?",
+   "options": {
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "D": "D\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. A cell with less variation in EMF with temperature is preferred as reference electrode because it can be used for wider range of temperature without much derivation from standard value so a cell with less $\\left(\\frac{\\partial \\mathrm{E}}{\\partial \\mathrm{T}}\\right)_{\\mathrm{P}}$ is preferred."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "A cell with less variation in EMF with temperature is preferred as reference electrode because it can be used for wider range of temperature without much derivation from standard value so a cell with less $\\left(\\frac{\\partial \\mathrm{E}}{\\partial \\mathrm{T}}\\right)_{\\mathrm{P}}$ is preferred."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 6,
+   "question_id": "101036",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Choose the correct stability order of group 13 elements in their +1 oxidation state.",
+   "options": {
+    "A": "$\\mathrm{Al}<\\mathrm{Ga}<\\mathrm{In}<\\mathrm{Tl}$",
+    "B": "$\\mathrm{Tl}<\\mathrm{In}<\\mathrm{Ga}<\\mathrm{Al}$",
+    "C": "$\\mathrm{Al}<\\mathrm{Ga}<\\mathrm{Tl}<\\mathrm{In}$",
+    "D": "$\\mathrm{Al}<\\mathrm{Tl}<\\mathrm{Ga}<$ In\n\nOfficial Ans. by NTA (A)\nAllen Ans. (A)\nSol. Moving down the group stability of lower oxidation state increases\n$\\mathrm{Al}<\\mathrm{Ga}<\\mathrm{In}<\\mathrm{Tl}$"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Moving down the group stability of lower oxidation state increases\n$\\mathrm{Al}<\\mathrm{Ga}<\\mathrm{In}<\\mathrm{Tl}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 7,
+   "question_id": "101037",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements :\nStatement I : According to the Ellingham diagram, any metal oxide with higher $\\Delta \\mathrm{G}^{\\circ}$ is more stable than the one with lower $\\Delta \\mathrm{G}^{\\circ}$.\nStatement II : The metal involved in the formation of oxide placed lower in the Ellingham diagram can reduce the oxide of a metal placed higher in the diagram.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+   "options": {
+    "A": "Both Statement I and Statement II are correct.",
+    "B": "Both Statement I and Statement II are incorrect.",
+    "C": "Statement I is correct but Statement II is incorrect.",
+    "D": "Statement I is incorrect but Statement II is correct.\nOfficial Ans. by NTA (D)\nAns. (D)\nSol. Metal oxide with lower $\\Delta \\mathrm{G}^{\\circ}$ is more stable\nStatement II is correct"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Metal oxide with lower $\\Delta \\mathrm{G}^{\\circ}$ is more stable\nStatement II is correct"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 8,
+   "question_id": "101038",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Consider the following reaction :\n$$2 \\mathrm{HSO}_{4}^{-}(\\mathrm{aq}) \\xrightarrow[\\text { (2) Hydrolysis }]{\\text { (1) Electrolysis }} 2 \\mathrm{HSO}_{4}^{-}+2 \\mathrm{H}^{+}+\\mathbf{A}$$\nThe dihedral angle in product A in its solid phase at 110 K is :",
+   "options": {
+    "A": "104°",
+    "B": "111.5°",
+    "C": "90.2°",
+    "D": "111.0°\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. $2 \\mathrm{HSO}_{4}{ }^{-}$(aq.) $\\xrightarrow[\\text { (2) Hydrolysis }]{\\text { (1) Electrolysis }} 2 \\mathrm{HSO}_{4}{ }^{-}+2 \\mathrm{H}^{+}+\\underset{\\text { (A) }}{\\mathrm{H}_{2} \\mathrm{O}_{2}}$\n(A)\n\nSolid phase."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$2 \\mathrm{HSO}_{4}{ }^{-}$(aq.) $\\xrightarrow[\\text { (2) Hydrolysis }]{\\text { (1) Electrolysis }} 2 \\mathrm{HSO}_{4}{ }^{-}+2 \\mathrm{H}^{+}+\\underset{\\text { (A) }}{\\mathrm{H}_{2} \\mathrm{O}_{2}}$\n(A)",
+     "Solid phase."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 9,
+   "question_id": "101039",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The correct order of melting point is :",
+   "options": {
+    "A": "$\\mathrm{Be}>\\mathrm{Mg}>\\mathrm{Ca}>\\mathrm{Sr}$",
+    "B": "$\\mathrm{Sr}>\\mathrm{Ca}>\\mathrm{Mg}>\\mathrm{Be}$",
+    "C": "$\\mathrm{Be}>\\mathrm{Ca}>\\mathrm{Mg}>\\mathrm{Sr}$",
+    "D": "$\\mathrm{Be}>\\mathrm{Ca}>\\mathrm{Sr}>\\mathrm{Mg}$\n\nOfficial Ans. by NTA (D)\nAns. (D)\nSol.\n\n\\begin{tabular}[t]{|l|l|}\n\\hline & M.P \\\\\n\\hline Be & 1560 K \\\\\n\\hline Mg & 924 K \\\\\n\\hline Ca & 1124 K \\\\\n\\hline Sr & 1062 K \\\\\n\\hline\n\\end{tabular}"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "\\begin{tabular}[t]{|l|l|}\n\\hline & M.P \\\\\n\\hline Be & 1560 K \\\\\n\\hline Mg & 924 K \\\\\n\\hline Ca & 1124 K \\\\\n\\hline Sr & 1062 K \\\\\n\\hline\n\\end{tabular}"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 10,
+   "question_id": "101040",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "The correct order of melting points of hydrides of group 16 elements is :",
+   "options": {
+    "A": "$\\mathrm{H}_{2} \\mathrm{~S}<\\mathrm{H}_{2} \\mathrm{Se}<\\mathrm{H}_{2} \\mathrm{Te}<\\mathrm{H}_{2} \\mathrm{O}$",
+    "B": "$\\mathrm{H}_{2} \\mathrm{O}<\\mathrm{H}_{2} \\mathrm{~S}<\\mathrm{H}_{2} \\mathrm{Se}<\\mathrm{H}_{2} \\mathrm{Te}$",
+    "C": "$\\mathrm{H}_{2} \\mathrm{~S}<\\mathrm{H}_{2} \\mathrm{Te}<\\mathrm{H}_{2} \\mathrm{Se}<\\mathrm{H}_{2} \\mathrm{O}$",
+    "D": "$\\mathrm{H}_{2} \\mathrm{Se}<\\mathrm{H}_{2} \\mathrm{~S}<\\mathrm{H}_{2} \\mathrm{Te}<\\mathrm{H}_{2} \\mathrm{O}$\n\nJEE Exam Solution\nwww.esaral.com\n2\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nOfficial Ans. by NTA (A)\nAns. (A)"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 11,
+   "question_id": "101041",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Consider the following reaction :\nA + alkali → B (Major Product)\nIf B is an oxoacid of phosphorus with no P-H bond, then A is :",
+   "options": {
+    "A": "White $\\mathrm{P}_{4}$",
+    "B": "Red $\\mathrm{P}_{4}$",
+    "C": "$\\mathrm{P}_{2} \\mathrm{O}_{3}$",
+    "D": "$\\mathrm{H}_{3} \\mathrm{PO}_{3}$\n\nOfficial Ans. by NTA (B)\nAns. (Bonus)"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated"
+  },
+  {
+   "qno": 12,
+   "question_id": "101042",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Polar stratospheric clouds facilitate the formation of:",
+   "options": {
+    "A": "$\\mathrm{CIONO}_{2}$",
+    "B": "HOCl",
+    "C": "ClO",
+    "D": "$\\mathrm{CH}_{4}$\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Polar stratospheric clouds provide surface on which hydrolysis of $\\mathrm{ClONO}_{2}$ takes place to form HOCl (Hypochlorous acid)\n$$\\mathrm{ClONO}_{2}(\\mathrm{~g})+\\mathrm{H}_{2} \\mathrm{O}(\\mathrm{~g}) \\rightarrow \\mathrm{HOCl}(\\mathrm{~g})+\\mathrm{HNO}_{3}(\\mathrm{~g})$$"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Polar stratospheric clouds provide surface on which hydrolysis of $\\mathrm{ClONO}_{2}$ takes place to form HOCl (Hypochlorous acid)\n$$\\mathrm{ClONO}_{2}(\\mathrm{~g})+\\mathrm{H}_{2} \\mathrm{O}(\\mathrm{~g}) \\rightarrow \\mathrm{HOCl}(\\mathrm{~g})+\\mathrm{HNO}_{3}(\\mathrm{~g})$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 13,
+   "question_id": "101043",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Given below are two statements :\nStatement I : In 'Lassaigne's Test, when both nitrogen and sulphur are present in an organic compound, sodium thiocyanate is formed.\nStatement II : If both nitrogen and sulphur are present in an organic compound, then the excess of sodium used in sodium fusion will decompose the sodium thiocyanate formed to give NaCN and $\\mathrm{Na}_{2} \\mathrm{~S}$.\nIn the light of the above statements, choose the most appropriate answer from the options given below:",
+   "options": {
+    "A": "Both Statement I and Statement II are correct.",
+    "B": "Both Statement I and Statement II are incorrect.",
+    "C": "Statement I is correct but Statement II is incorrect.",
+    "D": "Statement I is incorrect but Statement II is correct.\n\nOfficial Ans. by NTA (A)\nAns. (A)\nSol. Both statement I \\& statement II are correct."
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Both statement I \\& statement II are correct."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 14,
+   "question_id": "101044",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "$\\left(\\mathrm{C}_{7} \\mathrm{H}_{5} \\mathrm{O}_{2}\\right)_{2} \\xrightarrow{\\mathrm{hv}}[\\mathrm{X}]+2 \\dot{\\mathrm{C}}_{6} \\mathrm{H}_{5}+2 \\mathrm{CO}_{2}$\nConsider the above reaction and identify the intermediate 'X'",
+   "options": {
+    "A": "<smiles>O=[14cH]c1ccccc1</smiles>",
+    "B": "<smiles>O=C([O-])c1ccccc1</smiles>",
+    "C": "<smiles>[O]C(=O)c1ccccc1</smiles>",
+    "D": "<smiles>[O]=[Ge][C]1=[Te]=C=C1</smiles>\n\nOfficial Ans. by NTA (D)\nAns. (D)\n\nSol.\n\nJEE Exam Solution\nwww.esaral.com\n3\n\nJEE | NEET | Clas 8-10 Download eSaral APP"
+   },
+   "embedded_answer": {
+    "raw": "D",
+    "option": "D"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "JEE Exam Solution\nwww.esaral.com\n3",
+     "JEE | NEET | Clas 8-10 Download eSaral APP"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 15,
+   "question_id": "101045",
+   "section": "Section A",
+   "question_type": "numerical",
+   "text": "Consider the above reaction sequence and identify\nthe product B.\n(A)\n<smiles>CC1(O)CCC(C)(O)C1</smiles>\n(B)\n<smiles>OC1CCC(O)CC1</smiles>\n(C)\n<smiles>CC1C(O)CC(O)C1C</smiles>\n(D)\n<smiles>CC1C(=O)CC(=O)C1C</smiles>",
+   "options": null,
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Although Acetyl Acetone predominantly gives Acid base reaction with G.R due to Active methylene group but according to given option ans should be based on nucleophilic addition reaction (NAR)."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 16,
+   "question_id": "101046",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which will have the highest enol content ?",
+   "options": {
+    "A": "<smiles>O=C1CCCCC1=O</smiles>",
+    "B": "<smiles>O=C1CCCC(=O)C1</smiles>",
+    "C": "<smiles>O=C1CC(=O)CC(=O)C1</smiles>",
+    "D": "<smiles>O=C1CCC(=O)CC1</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nSol.\n<smiles>O=C1CC(=O)CC(=O)C1</smiles>\nis tautomer of\n<smiles>Oc1cc(O)cc(O)c1</smiles>\n, Which is aromatic in nature."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "<smiles>O=C1CC(=O)CC(=O)C1</smiles>\nis tautomer of\n<smiles>Oc1cc(O)cc(O)c1</smiles>\n, Which is aromatic in nature."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 17,
+   "question_id": "101047",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Among the following structures, which will show the most stable enamine formation?\n(Where Me is $-\\mathrm{CH}_{3}$ )",
+   "options": {
+    "A": "<smiles>CO/C=C(\\C)N1CCC[C@H]1C(=O)O</smiles>",
+    "B": "<smiles>CO/C=C(/C)C1CCC[C@H]1C(=O)O</smiles>",
+    "C": "<smiles>CO/C=C(\\C)N1CCC[C@H]1C(=O)O</smiles>",
+    "D": "<smiles>CO/C=C(/C)N1CCC[C@H]1C(=O)O</smiles>\n\nOfficial Ans. by NTA (C)\nAns. (C)\n\nJEE Exam Solution\nwww.esaral.com\n4\n\nSaral\nJEE | NEET | Clas 8-10 Download eSaral APP\n\nSol. All these enamines are interconvertible through their resonating structures. So most stable form is 'C' due to steric factor."
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "All these enamines are interconvertible through their resonating structures. So most stable form is 'C' due to steric factor."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 18,
+   "question_id": "101048",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which of the following sets are correct regarding polymer ?",
+   "options": {
+    "A": "Copolymer : Buna-S",
+    "B": "Condensation polymer : Nylon-6,6",
+    "C": "Fibre : Nylon-6,6",
+    "D": "Thermosetting polymer : Terylene\n(E) Homopolymer : Buna-N\n\nChoose the correct answer from given options below:\n(A) (A), (B) and (C) are correct\n(B) (B), (C) and (D) are correct\n(C) (A), (C) and (E) are correct\n(D) (A), (B) and (D) are correct\n\nOfficial Ans. by NTA (A)\nAns. (A,B,C)\nSol. Which of the following set are correct regarding polymer.\n\nBona - 5 is copolymer of butadiene + styrene\nNylon 6.6 is condensation polymer of adipic Acid and hexanediamine.\n\nNylon 6.6 is fiber\nTerylene is fiber not themosetting polymer\nBuna-N is copolymer nol Homopolymer"
+   },
+   "embedded_answer": {
+    "raw": "A",
+    "option": "A"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Which of the following set are correct regarding polymer.",
+     "Bona - 5 is copolymer of butadiene + styrene\nNylon 6.6 is condensation polymer of adipic Acid and hexanediamine.",
+     "Nylon 6.6 is fiber\nTerylene is fiber not themosetting polymer\nBuna-N is copolymer nol Homopolymer"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 19,
+   "question_id": "101049",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "A chemical which stimulates the secretion of pepsin is :",
+   "options": {
+    "A": "Anti histamine",
+    "B": "Cimetidine",
+    "C": "Histamine",
+    "D": "Zantac\n\nOfficial Ans. by NTA (C)\nAns. (C)\nSol. Histamine (It is use for secretion of pepsin \\& HCl in stomach)"
+   },
+   "embedded_answer": {
+    "raw": "C",
+    "option": "C"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Histamine (It is use for secretion of pepsin \\& HCl in stomach)"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 20,
+   "question_id": "101050",
+   "section": "Section A",
+   "question_type": "single_correct",
+   "text": "Which statement is not true with respect to nitrate ion test?",
+   "options": {
+    "A": "A dark brown ring is formed at the junction of two solutions.",
+    "B": "Ring is formed due to nitroferrous sulphate complex.",
+    "C": "The brown complex is $\\left[\\mathrm{Fe}\\left(\\mathrm{H}_{2} \\mathrm{O}\\right)_{5}(\\mathrm{NO})\\right] \\mathrm{SO}_{4}$.",
+    "D": "Heating the nitrate salt with conc. $\\mathrm{H}_{2} \\mathrm{SO}_{4}$, light brown fumes are evolved.\n\nOfficial Ans. by NTA (B)\nAns. (B)\nSol. Ring is formed due to formation of nitrosoferrous sulphate\n\nSECTION-B"
+   },
+   "embedded_answer": {
+    "raw": "B",
+    "option": "B"
+   },
+   "extraction": "mathpix_ocr",
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Ring is formed due to formation of nitrosoferrous sulphate",
+     "SECTION-B"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 21,
+   "question_id": "101051",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "For complete combustion of methanol\n$$\\mathrm{CH}_{3} \\mathrm{OH}(\\mathrm{l})+\\frac{3}{2} \\mathrm{O}_{2}(\\mathrm{~g}) \\rightarrow \\mathrm{CO}_{2}(\\mathrm{~g})+2 \\mathrm{H}_{2} \\mathrm{O}(1)$$\nthe amount of heat produced as measured by bomb calorimeter is $726 \\mathrm{~kJ} \\mathrm{~mol}^{-1}$ at 27°C. The enthalpy of combustion for the reaction is $-\\mathrm{x} \\mathrm{kJ} \\mathrm{mol}^{-1}$, where x is $\\_\\_\\_\\_$ . (Nearest integer)\n(Given : $\\mathrm{R}=8.3 \\mathrm{JK}^{-1} \\mathrm{~mol}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "727"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 1,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Let total volume $=1000 \\mathrm{~mL}=1 \\mathrm{~L}$\ntotal mass of solution $=1460 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\text { mass of } \\mathrm{HCl}=\\frac{35}{100} \\times 1460 \\\\\n\\text { moles of } \\mathrm{HCl}=\\frac{35 \\times 1460}{100 \\times 36.5} \\\\\n\\text { So molarity }=\\frac{35 \\times 1460}{100 \\times 36.5}=14 \\mathrm{M}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 22,
+   "question_id": "101052",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A 0.5 percent solution of potassium chloride was found to freeze at $-0.24^{\\circ} \\mathrm{C}$. The percentage dissociation of potassium chloride is $\\_\\_\\_\\_$ .\n(Nearest integer)\n(Molal depression constant for water is 1.80 K kg $\\mathrm{mol}^{-1}$ and molar mass of KCl is $74.6 \\mathrm{~g} \\mathrm{~mol}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "99 OR 98"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 2,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Mass of liquid $=135-40=95 \\mathrm{~g}$\n$$\\begin{array}{l}\n\\text { Volume of liquid }=\\frac{\\text { mass }}{\\text { density }}=\\frac{95}{.95} \\mathrm{~mL} \\\\\n=100 \\mathrm{~mL}=0.1 \\mathrm{~L} \\\\\n\\text { mass of ideal gas }=40.5-40 \\mathrm{~g}=0.5 \\mathrm{~g} \\\\\n\\mathrm{PV}=\\mathrm{nRT} \\\\\n0.82 \\times 0.1=\\left(\\frac{0.5}{\\mathrm{M}}\\right) \\times 0.082 \\times 250\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 23,
+   "question_id": "101053",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "50 mL of $0.1 \\mathrm{M} \\mathrm{CH}_{3} \\mathrm{COOH}$ is being titrated against 0.1 M NaOH . When 25 mL of NaOH has been added, the pH of the solution will be\n$\\_\\_\\_\\_$ $\\times 10^{-2}$. (Nearest integer)\n(Given : $\\mathrm{pK}_{\\mathrm{a}}\\left(\\mathrm{CH}_{3} \\mathrm{COOH}\\right)=4.76$ )\n$\\log 2=0.30$\n$$\\begin{array}{l}\n\\log 3=0.48 \\\\\n\\log 5=0.69 \\\\\n\\log 7=0.84 \\\\\n\\log 11=1.04\n\\end{array}$$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "476"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 3,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$\\mathrm{r}=0.529 \\times \\frac{\\mathrm{n}^{2}}{\\mathrm{z}} \\AA$\n$$\\begin{array}{l}\n\\mathrm{r}_{3}=0.529 \\times \\frac{3^{2}}{1} \\\\\n\\mathrm{r}_{4}=0.529 \\times \\frac{4^{2}}{1} \\\\\n\\frac{\\mathrm{r}_{4}}{\\mathrm{r}_{3}}=\\frac{4^{2}}{3^{2}}=\\frac{16}{9} \\\\\n\\mathrm{r}_{4}=\\frac{16 \\mathrm{r}_{3}}{9}\n\\end{array}$$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 24,
+   "question_id": "101054",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "A flask is filled with equal moles of A and B. The half lives of A and B are 100 s and 50 s respectively and are independent of the initial concentration. The time required for the concentration of A to be four times that of B is\n$\\_\\_\\_\\_$ s.\n(Given $: \\ln 2=0.693$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "200"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 4,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "\\begin{tabular}[t]{|l|l|l|l|}\n\\hline ion/molecule & Number of $\\mathbf{e}^{-}$in BMO & Number of $\\mathbf{e}^{-}$ in ABMO & Bond order \\\\\n\\hline $\\mathrm{O}_{2}{ }^{+}$ & 10 & 5 & 2.5 \\\\\n\\hline $\\mathrm{O}_{2}$ & 10 & 6 & 2 \\\\\n\\hline $\\mathrm{O}_{2}{ }^{-}$ & 10 & 7 & 1.5 \\\\\n\\hline\n\\end{tabular}",
+     "JEE Exam Solution\nwww.esaral.com\n1",
+     "Saral\nJEE | NEET | Clas 8-10 Download eSaral APP",
+     "Bond order $\\mathrm{O}_{2}{ }^{2-}<\\mathrm{O}_{2}{ }^{-}<\\mathrm{O}_{2}<\\mathrm{O}_{2}{ }^{+}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 25,
+   "question_id": "101055",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "2.0 g of $\\mathrm{H}_{2}$ gas is adsorbed on 2.5 g of platinum powder at 300 K and 1 bar pressure. The volume of the gas adsorbed per gram of the adsorbent is\n$\\_\\_\\_\\_$ mL.\n(Given : $\\mathrm{R}=0.083 \\mathrm{~L}$ bar $\\mathrm{K}^{-1} \\mathrm{~mol}^{-1}$ )",
+   "options": null,
+   "embedded_answer": {
+    "raw": "9960"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 5,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "A cell with less variation in EMF with temperature is preferred as reference electrode because it can be used for wider range of temperature without much derivation from standard value so a cell with less $\\left(\\frac{\\partial \\mathrm{E}}{\\partial \\mathrm{T}}\\right)_{\\mathrm{P}}$ is preferred."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 26,
+   "question_id": "101056",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The spin-only magnetic moment value of the most basic oxide of vanadium among $\\mathrm{V}_{2} \\mathrm{O}_{3}, \\mathrm{~V}_{2} \\mathrm{O}_{4}$ and $\\mathrm{V}_{2} \\mathrm{O}_{5}$ is $\\_\\_\\_\\_$ B.M. (Nearest Integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 6,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Moving down the group stability of lower oxidation state increases\n$\\mathrm{Al}<\\mathrm{Ga}<\\mathrm{In}<\\mathrm{Tl}$"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 27,
+   "question_id": "101057",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The spin-only magnetic moment value of an octahedral complex among $\\mathrm{CoCl}_{3} .4 \\mathrm{NH}_{3}$, $\\mathrm{NiCl}_{2} .6 \\mathrm{H}_{2} \\mathrm{O}$ and $\\mathrm{PtCl}_{4} .2 \\mathrm{HCl}$, which upon reaction with excess of $\\mathrm{AgNO}_{3}$ gives 2 moles of AgCl is\n$\\_\\_\\_\\_$ B.M. (Nearest Integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "3",
+    "option": "C",
+    "option_index": 3
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 7,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "Metal oxide with lower $\\Delta \\mathrm{G}^{\\circ}$ is more stable\nStatement II is correct"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 28,
+   "question_id": "101058",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "On complete combustion 0.30 g of an organic compound gave 0.20 g of carbon dioxide and 0.10 g of water. The percentage of carbon in the given organic compound is $\\_\\_\\_\\_$ (Nearest Integer)",
+   "options": null,
+   "embedded_answer": {
+    "raw": "18"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 8,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "$2 \\mathrm{HSO}_{4}{ }^{-}$(aq.) $\\xrightarrow[\\text { (2) Hydrolysis }]{\\text { (1) Electrolysis }} 2 \\mathrm{HSO}_{4}{ }^{-}+2 \\mathrm{H}^{+}+\\underset{\\text { (A) }}{\\mathrm{H}_{2} \\mathrm{O}_{2}}$\n(A)",
+     "Solid phase."
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 29,
+   "question_id": "101059",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "Compound 'P' on nitration with dil. $\\mathrm{HNO}_{3}$ yields two isomers (A) and (B). These isomers can be separated by steam distillation. Isomers (A) and (B) show the intramolecular and intermolecular hydrogen bonding respectively. Compound (P) on reaction with conc. $\\mathrm{HNO}_{3}$ yields a yellow compound 'C', a strong acid. The number of oxygen atoms is present in compound 'C'\n$\\_\\_\\_\\_$ .",
+   "options": null,
+   "embedded_answer": {
+    "raw": "7"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 9,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated",
+   "solution": {
+    "steps": [
+     "\\begin{tabular}[t]{|l|l|}\n\\hline & M.P \\\\\n\\hline Be & 1560 K \\\\\n\\hline Mg & 924 K \\\\\n\\hline Ca & 1124 K \\\\\n\\hline Sr & 1062 K \\\\\n\\hline\n\\end{tabular}"
+    ]
+   },
+   "solution_source": "mirror_printed"
+  },
+  {
+   "qno": 30,
+   "question_id": "101060",
+   "section": "Section B",
+   "question_type": "numerical",
+   "text": "The number of oxygens present in a nucleotide formed from a base, that is present only in RNA is\n$\\_\\_\\_\\_$",
+   "options": null,
+   "embedded_answer": {
+    "raw": "9"
+   },
+   "extraction": "mathpix_ocr",
+   "qno_printed": 10,
+   "qno_renumbered": true,
+   "question_id_assignment": "positional_block_validated"
+  }
+ ],
+ "extraction_method": "mathpix_ocr"
 }
