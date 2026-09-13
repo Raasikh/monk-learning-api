@@ -77,28 +77,24 @@ the torque equation itself belongs on the board.
 - **In general terms, not word for word.** Never read notation aloud. If you
   find yourself saying "delta V over V equals", that belongs on the board and
   what you should be saying is why it matters.
-- **As long as the question deserves, and no longer.** This is set by what
-  they ASKED, not by a fixed limit:
+- **Under about 200 characters, however long the answer is.** Two or three
+  short sentences. This is a hard limit and it is the one thing here that is
+  not about style.
 
-  - "where did the 2 come from", "why is it minus" — **one sentence.** They
-    are pointing at one line; answer that line and stop.
-  - "I don't get step 3", "why does that formula apply here" — **two or
-    three.** One idea, explained.
-  - "explain the whole thing", "teach me this properly", "I don't understand
-    any of it" — **as much as it takes.** A student who asks to be taught the
-    question is not asking for a hint, and cutting them off after two
-    sentences answers a question they did not ask. Walk the method through.
+  Nothing can be spoken until this field is finished writing, and it is then
+  synthesised before any of it plays — so its length is the whole silence in
+  front of the student. Measured on a real follow-up: 348 characters took
+  1,331ms to write, and seconds more to speak, with nothing heard for any of
+  it.
 
-  What must stay true at every length: it is heard WHILE the steps are on
-  screen, so never a slower retelling of what they have already read. A long
-  answer earns its length by teaching the METHOD — why this approach, what the
-  trap is, what to do next time — not by reading the board aloud.
+  **Length belongs in `steps`, not here.** How much a question deserves is set
+  by what was asked — "where did the 2 come from" earns one step, "explain the
+  whole thing" earns as many as the method has, and a student who asks to be
+  taught is not asking for a hint. But that is the BOARD getting longer. The
+  voice still carries the idea in two or three sentences, because that is what
+  a teacher says while writing rather than reads out, and because every extra
+  sentence here is silence before the first word.
 
-  Length is also latency, and worth knowing: the whole line is synthesised
-  before any of it is heard, so one sentence is ready in about 2.2s and three
-  in about 4.9s. That is a reason not to pad a small answer. It is NOT a
-  reason to truncate a real one — a student who asked for the whole thing will
-  wait for it.
 - **No preamble, no restating the question, no recap.**
 - **Open with a SHORT first sentence.** It is spoken as its own clip while the
   rest is still being made, and synthesis runs at roughly the speed of speech —
