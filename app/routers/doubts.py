@@ -8,6 +8,7 @@ Nothing fails silently. An illegible question is stored as 'illegible' with what
 the transcriber said was unclear, a failed solve is stored as 'failed' with its
 reason, and both are reported to the client with the stage that failed.
 """
+import asyncio
 import base64
 import logging
 import time
@@ -1045,28 +1046,108 @@ def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
     def event(name: str, payload: Dict[str, Any]) -> str:
         return f"event: {name}\ndata: {json.dumps(payload)}\n\n"
 
-    def stream():
+    async def stream():
         started = time.time()
         steps = 0
+        loop = asyncio.get_running_loop()
+        frames: asyncio.Queue = asyncio.Queue()
+        # Open the TTS socket NOW, while the model is still reading the
+        # context. The handshake is 1.76s measured; paid here it overlaps the
+        # model composing, paid later it is silence after the answer exists.
+        # (ask-voice already prewarms before transcription; this covers the
+        # text path, which never could — a sync endpoint has no loop to warm
+        # on. prewarm is idempotent, so the voice path paying twice costs
+        # nothing.)
+        followup_voice.prewarm()
+        # The teacher's voice, looked up while the model composes. Waiting
+        # until `spoken` arrives would put a Supabase read on the critical
+        # path this stream exists to shorten.
+        voice_task = asyncio.create_task(asyncio.to_thread(_tutor_voice_for, user_id))
+        tts_task: Optional[asyncio.Task] = None
+
+        def pump() -> None:
+            # The blocking LLM stream on a worker thread, so audio frames can
+            # interleave with steps on the loop. On a dropped connection this
+            # thread runs its stream to the end unobserved — the same tokens
+            # the old sync generator would have paid for, without a thread to
+            # interrupt.
+            try:
+                for kind, payload in stream_followup(doubt, question, history):
+                    loop.call_soon_threadsafe(frames.put_nowait, ("frame", kind, payload))
+            except Exception as err:  # noqa: BLE001 — surfaced as an SSE error frame
+                loop.call_soon_threadsafe(frames.put_nowait, ("llm_failed", err, None))
+            else:
+                loop.call_soon_threadsafe(frames.put_nowait, ("llm_done", None, None))
+
+        async def speak(text: str) -> None:
+            # Synthesis into the SAME stream the board fills from. The phone
+            # used to receive `spoken` and then make a second request to have
+            # it read — a round trip, a request setup and a voice lookup spent
+            # in silence after the words were already known. Here the first
+            # WAV is on the wire the moment Rumik produces it.
+            sent = 0
+            try:
+                voice = await voice_task
+                async for idx, total, wav in followup_voice.speak_chunks(text, voice):
+                    sent += 1
+                    frames.put_nowait(("frame", "audio", {
+                        "n": idx, "total": total,
+                        "b64": base64.b64encode(wav).decode("ascii"),
+                    }))
+            except Exception as err:  # noqa: BLE001 — a voice is an extra, not the answer
+                logger.error("[FOLLOWUP] inline TTS failed for %s: %s",
+                             doubt_id[:8], err)
+            finally:
+                frames.put_nowait(("tts_done", sent, None))
+
         if transcript is not None:
             yield event("transcript", {"text": transcript})
         logger.info("[FOLLOWUP] doubt=%s user=%s asked %r (%d prior turns)",
                     doubt_id[:8], user_id[:8], question[:80], len(history))
+        llm_task = asyncio.create_task(asyncio.to_thread(pump))
+        llm_done = False
+        tts_done = False
         try:
-            for kind, payload in stream_followup(doubt, question, history):
-                if kind == "step":
-                    steps += 1
-                yield event(kind, payload)
-        except Exception as err:
-            logger.error("[FOLLOWUP] doubt=%s failed after %dms: %s",
-                         doubt_id[:8], int((time.time() - started) * 1000), err,
-                         exc_info=True)
-            yield event("error", {
-                "message": "Monk could not answer that just now. Try again in a moment.",
-            })
-            return
-        logger.info("[FOLLOWUP] doubt=%s done in %dms, %d step(s)",
-                    doubt_id[:8], int((time.time() - started) * 1000), steps)
+            while not (llm_done and (tts_task is None or tts_done)):
+                kind, a, b = await frames.get()
+                if kind == "frame":
+                    name, payload = a, b
+                    if name == "step":
+                        steps += 1
+                    if name == "spoken" and tts_task is None:
+                        # Marked inline so the phone knows audio is coming down
+                        # THIS stream, and a second request would only buy the
+                        # same voice twice.
+                        payload = {**payload, "voice": "inline"}
+                        tts_task = asyncio.create_task(speak(payload["text"]))
+                    yield event(name, payload)
+                elif kind == "llm_failed":
+                    logger.error("[FOLLOWUP] doubt=%s failed after %dms: %s",
+                                 doubt_id[:8], int((time.time() - started) * 1000), a,
+                                 exc_info=a)
+                    yield event("error", {
+                        "message": "Monk could not answer that just now. Try again in a moment.",
+                    })
+                    return
+                elif kind == "llm_done":
+                    llm_done = True
+                    logger.info("[FOLLOWUP] doubt=%s answered in %dms, %d step(s)",
+                                doubt_id[:8], int((time.time() - started) * 1000), steps)
+                    # The ANSWER is complete; audio may still be arriving. The
+                    # screen decides its surface on this frame — holding that
+                    # decision until the voice finished would keep the sheet
+                    # shut through seconds of synthesis.
+                    yield event("answered",
+                                {"total_ms": int((time.time() - started) * 1000)})
+                elif kind == "tts_done":
+                    tts_done = True
+                    # chunks=0 says the inline voice came to nothing, so the
+                    # phone can fall back to /speak-stream rather than sit
+                    # silent.
+                    yield event("voice_done", {"chunks": a})
+        finally:
+            if tts_task is not None and not tts_task.done():
+                tts_task.cancel()
         yield event("done", {"total_ms": int((time.time() - started) * 1000)})
 
     return StreamingResponse(stream(), media_type="text/event-stream",
