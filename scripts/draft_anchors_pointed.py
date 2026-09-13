@@ -512,12 +512,32 @@ def main() -> int:
                          "hinglish": str(g["label"]).strip()}}
               for g in group_defs]
 
+    # RE-POINTING MUST NOT REWIND THE PUBLISH COUNTER.
+    # This rewrites the pointed draft from scratch, and `label_set_version` /
+    # `_draft.published` live in that file — so correcting one anchor on an
+    # already-published set silently reset it to v0, and the next publish
+    # produced "v1" for the second time. Measured 2026-09-13 on the blood
+    # plate: the bytes changed, the sha changed, and the version said the
+    # object had never been republished. The sha is what the client compares,
+    # so nothing broke — but a counter that goes backwards is a counter no
+    # one can trust, and the next reader would have believed it.
+    prior = {}
+    dest_existing = DRAFTS / f"{args.slug}.pointed.json"
+    if dest_existing.exists():
+        try:
+            prior = json.loads(dest_existing.read_text(encoding="utf-8"))
+        except Exception:
+            prior = {}
+
     out = {
         "asset_slug": args.slug,
         "image_w": iw,
         "image_h": ih,
         "schema_version": draft.get("schema_version", 1),
         "source": args.source,
+        # Carried forward, not recomputed: publication history belongs to the
+        # SET, not to this pointing run.
+        "label_set_version": int(prior.get("label_set_version") or 0),
         "groups": groups,
         "labels": labels,
         "unplaced": omitted,
@@ -527,6 +547,9 @@ def main() -> int:
             "points_file": str(args.points),
             "repointed": repointed,
             "omitted_not_visible": omitted,
+            **({"published": prior["_draft"]["published"]}
+               if isinstance(prior.get("_draft"), dict)
+               and prior["_draft"].get("published") else {}),
             "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor "
                     "proposed by a model is a guess wherever it came from, and the "
                     "resolver refuses a set without a human reviewer.",

@@ -167,6 +167,16 @@
       "uricose gland",
       "nephrocyte"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:48:52Z",
+      "r2_key": "concept-assets/bio11-ch7-cockroach--circulatory--respiratory-and-excretory-systems.json",
+      "sha256": "fc9049160889679d3e28ad8287601bff3fc5cbe0d755af8eacc7f2f970cc49cb",
+      "bytes": 3107,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-cockroach--circulatory--respiratory-and-excretory-systems, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

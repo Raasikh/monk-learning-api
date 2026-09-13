@@ -227,6 +227,16 @@
       "anus",
       "salivary gland"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:48:55Z",
+      "r2_key": "concept-assets/bio11-ch7-cockroach--morphology-and-digestive-system--a.json",
+      "sha256": "06f59dea4a13eb049d3e380f8b816adab997ab1ba2281b9892837f35e6648543",
+      "bytes": 3788,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-cockroach--morphology-and-digestive-system--a, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

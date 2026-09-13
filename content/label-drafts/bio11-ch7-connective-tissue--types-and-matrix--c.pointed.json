@@ -85,6 +85,16 @@
       "lamella",
       "canaliculus"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:10Z",
+      "r2_key": "concept-assets/bio11-ch7-connective-tissue--types-and-matrix--c.json",
+      "sha256": "07e290cd22df9609b2d441f3310d5f5038c23a595b528397543aaaea54855dc1",
+      "bytes": 1456,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-connective-tissue--types-and-matrix--c, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

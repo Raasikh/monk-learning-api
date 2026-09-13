@@ -145,6 +145,16 @@
       "tendon",
       "chondrocyte"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:17Z",
+      "r2_key": "concept-assets/bio11-ch7-connective-tissue--types-and-matrix--e.json",
+      "sha256": "46f022514e6264ae82d77f17a36dd762318855fb50d4aabdcd69658251b6445a",
+      "bytes": 2565,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-connective-tissue--types-and-matrix--e, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

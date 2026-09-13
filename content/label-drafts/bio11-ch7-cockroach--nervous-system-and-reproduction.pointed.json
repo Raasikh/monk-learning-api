@@ -251,6 +251,16 @@
       "collateral gland",
       "ootheca"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:01Z",
+      "r2_key": "concept-assets/bio11-ch7-cockroach--nervous-system-and-reproduction.json",
+      "sha256": "9a028d07cca54ae65c80d9468896be4307da5a937a85051410d0486e380eec7a",
+      "bytes": 4634,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-cockroach--nervous-system-and-reproduction, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

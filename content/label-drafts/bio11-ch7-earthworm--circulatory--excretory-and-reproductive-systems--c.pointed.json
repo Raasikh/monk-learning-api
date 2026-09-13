@@ -173,6 +173,16 @@
       "pharyngeal nephridium",
       "integumentary nephridium"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:30Z",
+      "r2_key": "concept-assets/bio11-ch7-earthworm--circulatory--excretory-and-reproductive-systems--c.json",
+      "sha256": "4c77d8a75d7cfefcc07c0d4c3cbb09cb638e469073a3966c10daba9c21b0e055",
+      "bytes": 3204,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-earthworm--circulatory--excretory-and-reproductive-systems--c, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

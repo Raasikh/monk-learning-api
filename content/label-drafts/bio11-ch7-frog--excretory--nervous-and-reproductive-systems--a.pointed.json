@@ -183,6 +183,16 @@
       "ovisac",
       "fat body"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:39Z",
+      "r2_key": "concept-assets/bio11-ch7-frog--excretory--nervous-and-reproductive-systems--a.json",
+      "sha256": "e6cd32f1a7c9dcdd5e0375af35e2853eeb6f153fc2cfa2a89da08a4400dea69c",
+      "bytes": 3286,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-frog--excretory--nervous-and-reproductive-systems--a, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

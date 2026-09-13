@@ -232,6 +232,16 @@
       "cranial nerve",
       "Bidder's canal"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:42Z",
+      "r2_key": "concept-assets/bio11-ch7-frog--excretory--nervous-and-reproductive-systems--b.json",
+      "sha256": "14c43c03a5ae645f9d24d01a850e33316c1a528403fd3768362ae0db45461659",
+      "bytes": 4125,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-frog--excretory--nervous-and-reproductive-systems--b, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

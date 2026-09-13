@@ -86,6 +86,16 @@
       "intercalated disc",
       "branching"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:49Z",
+      "r2_key": "concept-assets/bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--a.json",
+      "sha256": "87af0279b36b3980397f07aa3e236046ac1e0221fb46d9d2f028815ce78c4996",
+      "bytes": 1642,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--a, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

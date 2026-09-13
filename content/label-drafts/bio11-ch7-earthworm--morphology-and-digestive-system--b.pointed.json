@@ -237,6 +237,16 @@
       "spermathecal pore",
       "anus"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:33Z",
+      "r2_key": "concept-assets/bio11-ch7-earthworm--morphology-and-digestive-system--b.json",
+      "sha256": "34b0edc28ba4dbdc64007d50d72d7336b2d4ac6f1c16627facd0b23c633965a3",
+      "bytes": 4262,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-earthworm--morphology-and-digestive-system--b, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

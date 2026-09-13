@@ -327,6 +327,16 @@
       "spleen",
       "bile duct"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:45Z",
+      "r2_key": "concept-assets/bio11-ch7-frog--external-morphology-and-digestive-system.json",
+      "sha256": "3e1ecd203d3113ddc006bce1daf31f6e044c20c48a45579ab50a975f4ceac135",
+      "bytes": 5676,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-frog--external-morphology-and-digestive-system, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

@@ -4,6 +4,7 @@
   "image_h": 595,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 2,
   "groups": [],
   "labels": [
     {
@@ -43,8 +44,8 @@
         "hi": "platelet"
       },
       "anchor": [
-        0.333,
-        0.462
+        0.305,
+        0.469
       ],
       "side": "auto",
       "_point": {
@@ -87,7 +88,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/connective-f.json",
+    "points_file": "content/label-drafts/points/connective-f.json",
     "repointed": 4,
     "omitted_not_visible": [
       "fibroblast",
@@ -106,6 +107,15 @@
       "lamella",
       "canaliculus"
     ],
+    "published": {
+      "version": 2,
+      "at": "2026-09-13T19:59:51Z",
+      "r2_key": "concept-assets/bio11-ch7-connective-tissue--types-and-matrix--f.json",
+      "sha256": "a36db201e87ba3967174cd8d138afa5e1a07f0be08c435c1cb1ba066de55b9b2",
+      "bytes": 1746,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-connective-tissue--types-and-matrix--f, reviewed_by raasikh"
+    },
     "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
   }
 }

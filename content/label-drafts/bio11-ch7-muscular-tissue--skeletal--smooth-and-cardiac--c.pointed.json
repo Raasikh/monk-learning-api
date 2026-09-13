@@ -99,6 +99,16 @@
       "smooth muscle fibre",
       "spindle shape"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:55Z",
+      "r2_key": "concept-assets/bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--c.json",
+      "sha256": "ff56b1d3bbc3dbd810cd5a12512c96ba932e82ada653561c0d912abf0c9f15ba",
+      "bytes": 1886,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--c, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }

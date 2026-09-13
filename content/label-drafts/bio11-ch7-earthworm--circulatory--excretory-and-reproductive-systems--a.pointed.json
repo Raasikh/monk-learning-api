@@ -85,6 +85,16 @@
       "oviduct",
       "spermatheca"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-13T19:49:23Z",
+      "r2_key": "concept-assets/bio11-ch7-earthworm--circulatory--excretory-and-reproductive-systems--a.json",
+      "sha256": "2f9c525a7fb34a24d3963738bc9a5a03ecbb9f4a5ca7b7008a541610a16a5cc1",
+      "bytes": 1597,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-earthworm--circulatory--excretory-and-reproductive-systems--a, reviewed_by raasikh"
+    }
+  },
+  "label_set_version": 1
 }
