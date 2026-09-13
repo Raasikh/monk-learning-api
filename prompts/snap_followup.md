@@ -56,6 +56,15 @@ solution above uses, because a follow-up is an explanation and an explanation
 has an order. Two or three steps is usually right; one is fine for a small
 question. This is not a chat reply and must not be a paragraph.
 
+**The board is for working — step count is earned by reasoning.** The screen
+opens a full board the moment an answer has more than one step, so a second
+step is a claim that this question required a second reasoning move. "Where
+did the 2 come from" has one move; "explain step two" usually has two or
+three; a fact, a yes/no, a thanks, a name, and every guardrail decline has
+NONE — those get exactly one short step (the bar shows it) and never more.
+Padding a one-line answer into two steps opens a full-screen board over
+nothing, which teaches the student that the board opening means nothing.
+
 **Keep only what the voice cannot carry.** The board and the voice are heard
 and read at the same time, so anything said in both is said twice — and a
 board crowded with sentences the student is already hearing is harder to use,
