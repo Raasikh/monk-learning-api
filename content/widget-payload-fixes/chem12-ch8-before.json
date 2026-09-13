@@ -1,0 +1,291 @@
+{
+ "preparation-of-aldehydes-and-ketones#1": {
+  "params": {
+   "caption": "Selective routes stop at the aldehyde; strong reagents overshoot to acid or alcohol.",
+   "species": [
+    "R-CH2OH",
+    "R-CHO",
+    "R-COOH",
+    "R-CO-R'"
+   ],
+   "step_to": [
+    1,
+    2,
+    1
+   ],
+   "step_from": [
+    0,
+    1,
+    3
+   ],
+   "step_kind": [
+    "major",
+    "minor",
+    "minor"
+   ],
+   "step_reagent": [
+    "PCC / cold DIBAL-H (selective)",
+    "strong oxidant (KMnO4/HNO3)",
+    "strong hydride (LiAlH4)"
+   ],
+   "step_progress": 0.5,
+   "highlight_step": 0
+  },
+  "widget": "reaction_scheme",
+  "version": 1
+ },
+ "preparation-of-aldehydes-and-ketones#8": {
+  "params": {
+   "caption": "Preparation map: gentle reagents stop at the target — poisoned Pd/BaSO4 gives RCHO, R'2Cd gives RCOR'",
+   "species": [
+    "RCH2OH",
+    "RCHO",
+    "RCOCl",
+    "RCN",
+    "RCOR'",
+    "ArCHO",
+    "ArCOCH3"
+   ],
+   "step_to": [
+    1,
+    1,
+    1,
+    4,
+    4,
+    6
+   ],
+   "step_from": [
+    0,
+    2,
+    3,
+    3,
+    2,
+    5
+   ],
+   "step_kind": [
+    "plain",
+    "major",
+    "major",
+    "major",
+    "major",
+    "major"
+   ],
+   "step_reagent": [
+    "Cu, 573 K",
+    "Pd/BaSO4 (poisoned)",
+    "DIBAL-H, cold",
+    "R'2Cd",
+    "CH3COCl / anhyd. AlCl3",
+    "CH3COCl / anhyd. AlCl3"
+   ],
+   "step_progress": 1.0,
+   "highlight_step": 1
+  },
+  "widget": "reaction_scheme",
+  "version": 1
+ },
+ "oxidation-and-reduction-of-aldehydes-and-ketones#5": {
+  "params": {
+   "caption": "Deoxygenation: >C=O → >CH2 — Clemmensen (acidic) or Wolff-Kishner (basic)",
+   "species": [
+    "C6H5COCH3",
+    "C6H5CH2CH3",
+    "R2C=O",
+    "R2CH2"
+   ],
+   "step_to": [
+    1,
+    3
+   ],
+   "step_from": [
+    0,
+    2
+   ],
+   "step_kind": [
+    "major",
+    "major"
+   ],
+   "step_reagent": [
+    "Zn-Hg / conc. HCl  (or NH2NH2, KOH / ethylene glycol, 180-200°C)",
+    "Zn-Hg / conc. HCl  (or NH2NH2, KOH / ethylene glycol, 180-200°C)"
+   ],
+   "step_progress": 1,
+   "highlight_step": 0
+  },
+  "widget": "reaction_scheme",
+  "version": 1
+ },
+ "nucleophilic-addition-reactions-of-aldehydes-and-ketones#8": {
+  "params": {
+   "caption": "One engine, three nucleophiles: attack, rehybridise, protonate (or eliminate)",
+   "species": [
+    "CH3CH2CHO",
+    "CN-",
+    "CH3CH2CH(O-)CN",
+    "CH3CH2CH(OH)CN",
+    "CH3MgBr",
+    "CH3CH2CH(O-)CH3",
+    "CH3CH2CH(OH)CH3",
+    "NH2OH"
+   ],
+   "step_to": [
+    2,
+    3,
+    5,
+    6,
+    7
+   ],
+   "step_from": [
+    0,
+    2,
+    0,
+    5,
+    0
+   ],
+   "step_kind": [
+    "plain",
+    "plain",
+    "plain",
+    "plain",
+    "plain"
+   ],
+   "step_reagent": [
+    "CN-",
+    "H+",
+    "CH3MgBr",
+    "H3O+",
+    "NH2OH"
+   ],
+   "step_progress": 1,
+   "highlight_step": -1
+  },
+  "widget": "reaction_scheme",
+  "version": 1
+ },
+ "reactions-of-carboxylic-acids#3": {
+  "params": {
+   "caption": "Acid-catalyzed esterification: protonation → nucleophilic attack → proton transfer → loss of water gives the ester; all steps reversible.",
+   "species": [
+    "RCOOH",
+    "R-C(OH)2+ (protonated)",
+    "tetrahedral intermediate",
+    "R-C(OH)(OH2+)",
+    "RCOOR'",
+    "H2O"
+   ],
+   "step_to": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "step_from": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "step_kind": [
+    "plain",
+    "plain",
+    "plain",
+    "major",
+    "plain"
+   ],
+   "step_reagent": [
+    "H+ (H2SO4/HCl)",
+    "R'OH",
+    "proton transfer",
+    "–H2O, –H+",
+    "catalyst regenerated"
+   ],
+   "step_progress": 0.0,
+   "highlight_step": 3
+  },
+  "widget": "reaction_scheme",
+  "version": 1
+ },
+ "reactions-of-carboxylic-acids#4": {
+  "params": {
+   "caption": "Breaking the C–OH bond: SOCl2 wins for acyl chlorides, H2SO4/P2O5 for anhydrides",
+   "species": [
+    "RCOOH",
+    "RCOCl",
+    "POCl3 + HCl",
+    "H3PO3 + HCl",
+    "SO2↑ + HCl↑",
+    "(RCO)2O + H2O"
+   ],
+   "step_to": [
+    1,
+    1,
+    1,
+    1,
+    5
+   ],
+   "step_from": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "step_kind": [
+    "plain",
+    "minor",
+    "major",
+    "plain",
+    "plain"
+   ],
+   "step_reagent": [
+    "PCl5",
+    "PCl3",
+    "SOCl2",
+    "conc. H2SO4 or P2O5, Δ",
+    ""
+   ],
+   "step_progress": 1,
+   "highlight_step": 2
+  },
+  "widget": "reaction_scheme",
+  "version": 1
+ },
+ "reactions-of-carboxylic-acids#6": {
+  "params": {
+   "caption": "Decarboxylation (n → n−1 carbons) vs HVZ α-bromination (COOH kept, α-H swapped)",
+   "species": [
+    "CH3COONa",
+    "CH4",
+    "CH3CH2COONa",
+    "CH3CH2COOH",
+    "CH3CHBrCOOH"
+   ],
+   "step_to": [
+    1,
+    1,
+    4
+   ],
+   "step_from": [
+    0,
+    2,
+    3
+   ],
+   "step_kind": [
+    "major",
+    "major",
+    "major"
+   ],
+   "step_reagent": [
+    "NaOH/CaO, Δ",
+    "NaOH/CaO, Δ",
+    "Br2, red P"
+   ],
+   "step_progress": 1,
+   "highlight_step": -1
+  },
+  "widget": "reaction_scheme",
+  "version": 1
+ }
+}

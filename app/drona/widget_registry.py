@@ -184,7 +184,22 @@ WIDGET_SPECS: Dict[str, str] = {
         "a multi-step reaction as a labelled graph. params: species (max 8 "
         "labels), index-aligned step_from, step_to, step_reagent, step_kind "
         '("plain"|"major"|"minor") (max 8 steps), highlight_step (-1 none), '
-        "step_progress (0-1), caption."
+        "step_progress (0-1), caption. "
+        # THE CHARACTER CAPS WERE MISSING AND IT COST THE WHOLE CHAPTER.
+        # This said "max 8 labels" and stopped, so the model wrote
+        # "3-hydroxy-2-methylpentanal" and reagent strings 60 characters long.
+        # The server gate does not measure length, so they stored; the CLIENT
+        # refuses them, because the width budget at 343pt cannot hold more.
+        # Measured 2026-09-12: 37 of the 38 stored reaction_scheme payloads in
+        # chem12 ch8 would not draw at all.
+        "HARD LIMITS, enforced by the client and NOT by this gate: every "
+        "species label at most 10 characters, every step_reagent at most 12, "
+        "caption at most 40. Use condensed formulae, not IUPAC names — "
+        "RCOOH, RCOCl, EtCHO, PhCOCH3, (RCO)2O — and terse reagents — SOCl2, "
+        "PCl5, Zn-Hg/HCl, NaOH/CaO. If the chemistry genuinely needs longer "
+        "names than that, this is the WRONG widget for the segment: decline "
+        "rather than truncate, because a shortened name teaches a string the "
+        "exam does not print."
     ),
     "molecule_struct": (
         "2-D structure of one species — VSEPR geometry, lone pairs, bond angle. "
