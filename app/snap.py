@@ -357,6 +357,37 @@ def followup_context(doubt: Dict[str, Any]) -> str:
 _SPOKEN_RE = re.compile(r'"spoken"\s*:\s*"((?:[^"\\]|\\.)*)"')
 
 
+# The step being written RIGHT NOW, scraped from the tail of a JSON buffer
+# that is still arriving. Anchored to the END of the buffer on purpose: only
+# an UNTERMINATED "text" string can sit there, and only the step currently
+# streaming is unterminated — a finished step's closing quote stops the
+# character class short of $ and the match fails. The n is read from the same
+# object, written before its text.
+_PARTIAL_STEP_RE = re.compile(r'"n"\s*:\s*(\d+)\s*,\s*"text"\s*:\s*"((?:[^"\\]|\\.)*)$')
+
+
+def _partial_step(buffer: str) -> Optional[tuple]:
+    """(n, text-so-far) of the step mid-write at the buffer's end, or None.
+
+    A chunk boundary can cut an escape in half; the half is dropped rather
+    than shown — a truncated \\u glyph on screen is worse than a word
+    arriving one frame later.
+    """
+    m = _PARTIAL_STEP_RE.search(buffer)
+    if not m:
+        return None
+    raw = m.group(2)
+    raw = re.sub(r'\\u[0-9a-fA-F]{0,3}$', '', raw)
+    tail = re.search(r'\\+$', raw)
+    if tail and len(tail.group()) % 2 == 1:
+        raw = raw[:-1]
+    try:
+        text = json.loads(f'"{raw}"')
+    except json.JSONDecodeError:
+        return None
+    return int(m.group(1)), text
+
+
 def _complete_spoken(buffer: str) -> Optional[str]:
     """The `spoken` line once it is whole, or None while it is still arriving.
 
@@ -433,6 +464,7 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     buffer, emitted = "", set()
     pending: List[Dict[str, Any]] = []
     said = False
+    last_partial = None
     usage = None
     for chunk in stream:
         if getattr(chunk, "usage", None):
@@ -470,6 +502,20 @@ def stream_followup(doubt: Dict[str, Any], question: str,
                         lambda kind, data: pending.append(data) if kind == "step" else None)
         while pending:
             yield "step", pending.pop(0)
+        # The step mid-write, word by word as the model writes it. A completed
+        # step could not reach the phone until its last token, so the board sat
+        # on "Working it out…" while step one was being composed — the student
+        # watches a teacher WRITE, not a teacher hand over finished lines. Full
+        # text-so-far each frame rather than deltas: a replaced string cannot
+        # drift, so every frame self-heals the one before it. The final "step"
+        # frame is simply the last replacement, and old phones that only know
+        # "step" frames ignore these and behave exactly as before.
+        partial = _partial_step(buffer)
+        if partial is not None:
+            n, text = partial
+            if n not in emitted and text and (n, text) != last_partial:
+                last_partial = (n, text)
+                yield "step_partial", {"n": n, "text": text}
 
     if usage is not None:
         cached = getattr(getattr(usage, "prompt_tokens_details", None),
