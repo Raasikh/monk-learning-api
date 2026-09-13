@@ -60,6 +60,20 @@ Return ONLY valid JSON:
    If the page holds more, return the first ones in order and say so in the
    top-level `note` — the student needs to know the rest were not read.
 5. Skip page furniture: headers, watermarks, page numbers, exam names.
+    Section headings — "VI. Answer any One of the following questions",
+    "SECTION B" — are furniture too: they are never a question and their
+    numeral is never a question number.
+5b. **Sub-parts stay inside their question.** A numbered question that asks
+    for several things — "(i) the maximum height (ii) the total time",
+    "(a)…(b)…", "Calculate: 1.… 2.…" — is ONE question whose stem carries
+    every part verbatim. Never return the parts as separate questions: a
+    student who snapped Q20 with two parts must get ONE Q20 back, not a
+    Q20 split into three fragments none of which can be answered alone.
+    The test is the printed question number: everything between "20." and
+    the next PRINTED question number (or the section heading after it)
+    belongs to Q20, including every (i)/(ii)/(a)/(b) inside that span.
+    Handwritten working in the margins is not a part and not a question —
+    copy the printed text and ignore the scribbles.
 5a. **`<smiles>…</smiles>` tags are the question's molecule**, converted from a
     drawn structure. Keep the tag in `stem`, verbatim — a
     stereochemistry question without its molecule is unanswerable, and dropping

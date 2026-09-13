@@ -1072,7 +1072,10 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             f"returned, with `legible: false` and a `note`; do not silently skip "
             f"it and take a later one instead. If the page holds more, return "
             f"the first {max_questions} in page order and say so in the "
-            f"top-level `note`.{extra}"
+            f"top-level `note`. If the page holds FEWER, return only what is "
+            f"printed — one question with parts (i)/(ii) is ONE question, and "
+            f"splitting its parts up to fill the count is the one wrong "
+            f"answer.{extra}"
         )
 
     def _make_call(extra: str = ""):
