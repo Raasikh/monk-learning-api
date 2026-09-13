@@ -383,9 +383,15 @@ def _speakable_chunks(text: str) -> list:
 # (gender, language) for the same reason — and an earlier version of this
 # declared two lines and then only ever synthesised the first.
 #
-# Deliberately content-free. A filler that commits to anything ("So the answer
-# is—") is a claim made before the model has written one, and would be right
-# only by luck.
+# Deliberately content-free — a filler that commits to anything ("So the
+# answer is—") is a claim made before the model has written one, and would be
+# right only by luck.
+#
+# But NOT "hold on" or "give me a second". Announcing a wait makes the wait
+# the thing the student notices, and a teacher about to explain something does
+# not ask you to wait — they start engaging with the question. These either
+# normalise being stuck, or begin looking at it with them, so the line bridges
+# INTO the explanation instead of marking time in front of it.
 #
 # And deliberately 40-50 CHARACTERS, which is not a style choice. Rumik speaks
 # short text far more slowly per character: measured, an 18-character line ran
@@ -397,28 +403,28 @@ def _speakable_chunks(text: str) -> list:
 # looks written down.
 FILLER_LINES = {
     ("female", "english"): [
-        "Right, let me take a look at that for you.",
-        "Okay, give me just a moment to think about this.",
+        "That's worth slowing down on, actually.",
         "Sure, let's go through that one together.",
-        "Good question — let me work through it.",
+        "Let's go back through that bit properly.",
+        "Okay — that's a fair thing to get stuck on.",
     ],
     ("male", "english"): [
-        "Right, let me take a look at that for you.",
-        "Okay, give me just a moment to think about this.",
+        "That's worth slowing down on, actually.",
         "Sure, let's go through that one together.",
-        "Good question — let me work through it.",
+        "Let's go back through that bit properly.",
+        "Okay — that's a fair thing to get stuck on.",
     ],
     ("female", "hinglish"): [
-        "Haan, ek second — main isko dekh rahi hoon.",
+        "Achha sawaal hai, chalo isko dekhte hain.",
         "Theek hai, chalo isko dhyan se dekhte hain.",
-        "Achha sawaal hai — main abhi samjhati hoon.",
-        "Ruko zara, main ise theek se dekh leti hoon.",
+        "Yeh thoda dhyan se samajhna padega, chalo.",
+        "Haan, yeh wala part sabko confuse karta hai.",
     ],
     ("male", "hinglish"): [
-        "Haan, ek second — main isko dekh raha hoon.",
+        "Achha sawaal hai, chalo isko dekhte hain.",
         "Theek hai, chalo isko dhyan se dekhte hain.",
-        "Achha sawaal hai — main abhi samjhata hoon.",
-        "Ruko zara, main ise theek se dekh leta hoon.",
+        "Yeh thoda dhyan se samajhna padega, chalo.",
+        "Haan, yeh wala part sabko confuse karta hai.",
     ],
 }
 DEFAULT_LANGUAGE = "hinglish"
@@ -432,6 +438,68 @@ _filler_tasks: Dict[str, asyncio.Task] = {}
 # rather than random: random repeats, and the same line twice running is
 # precisely what makes it obvious.
 _filler_turn: Dict[str, int] = {}
+
+
+# Speech seconds per character, above which a clip is dragged rather than
+# spoken. Measured across many real syntheses: ordinary delivery lands between
+# 0.046 and 0.072, and anything past ~0.080 is audibly slow.
+NATURAL_SPEED_LIMIT = 0.075
+# How many times to re-synthesise a filler that came back dragged.
+FILLER_ATTEMPTS = 3
+
+
+def _speech_rate(pcm: bytes, text: str) -> float:
+    """Seconds of actual speech per character, ignoring edge silence."""
+    if not pcm or not text:
+        return 0.0
+    count = len(pcm) // 2
+    samples = struct.unpack(f"<{count}h", pcm[:count * 2])
+    quiet = 600
+    lead = 0
+    for value in samples:
+        if abs(value) > quiet:
+            break
+        lead += 1
+    trail = 0
+    for value in reversed(samples):
+        if abs(value) > quiet:
+            break
+        trail += 1
+    spoken = max(0, count - lead - trail)
+    return (spoken / SAMPLE_RATE) / len(text)
+
+
+async def _synthesize_natural(text: str, preset: str) -> Optional[bytes]:
+    """A take of `text` that is not dragged, or the best of a few tries.
+
+    Rumik's pacing varies BETWEEN CALLS on identical input: the same line
+    measured 0.061 s/char once and 0.103 another time. That matters here and
+    nowhere else, because a filler is synthesised once and then played to
+    every student until the process restarts — one unlucky take is not a
+    moment of odd delivery, it is the permanent sound of the app.
+
+    So the cached clip is auditioned. A few extra synthesis calls, paid once
+    per voice at boot, is a cheap price for not shipping a dragged one.
+    """
+    best: Optional[bytes] = None
+    best_rate = float("inf")
+    for attempt in range(1, FILLER_ATTEMPTS + 1):
+        pcm = await _synthesize(text, preset)
+        if not pcm:
+            continue
+        rate = _speech_rate(pcm, text)
+        if rate < best_rate:
+            best, best_rate = pcm, rate
+        if rate <= NATURAL_SPEED_LIMIT:
+            logger.info("[FOLLOWUP TTS] filler %r ok at %.3f s/char (take %d)",
+                        text[:40], rate, attempt)
+            return pcm
+        logger.info("[FOLLOWUP TTS] filler %r dragged at %.3f s/char — re-taking",
+                    text[:40], rate)
+    if best is not None:
+        logger.warning("[FOLLOWUP TTS] filler %r never came back natural; "
+                       "keeping the best take at %.3f s/char", text[:40], best_rate)
+    return best
 
 
 def _filler_key(tutor_voice: Optional[str], language: Optional[str]) -> str:
@@ -464,7 +532,7 @@ def _warm_filler(tutor_voice: Optional[str], language: Optional[str]) -> None:
         made: List[bytes] = []
         for line in lines:
             try:
-                pcm = await _synthesize(line, preset)
+                pcm = await _synthesize_natural(line, preset)
             except Exception as err:
                 logger.info("[FOLLOWUP TTS] no filler for %s (%s) — answers "
                             "simply start when they start", key, err)
@@ -513,7 +581,7 @@ async def prewarm_fillers_at_boot() -> None:
         if key in _fillers or not lines:
             continue
         try:
-            pcm = await _synthesize(lines[0], preset_for(gender))
+            pcm = await _synthesize_natural(lines[0], preset_for(gender))
         except Exception as err:
             logger.info("[FOLLOWUP TTS] boot filler for %s skipped (%s)", key, err)
             continue
