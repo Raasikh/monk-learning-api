@@ -79,3 +79,38 @@ def test_a_break_beyond_the_window_still_beats_no_split():
     assert len(pieces) == 2
     assert len(pieces[0]) < len(sentence)
     assert pieces[0].endswith("resistance,")
+
+
+def test_a_runaway_keeps_its_closing_question():
+    """The close is the LAST sentence, so trailing-first trimming deleted it.
+
+    Seen live: 343 chars trimmed to 280 at the cap, and the dropped tail was
+    "did you get that?" — the one sentence the prompt guarantees. The trim
+    now sets the close aside first and spends the budget on explanation.
+    """
+    filler = "This sentence pads the explanation out well past the cap. "
+    close = "Did you get that, or should I take it slower?"
+    runaway = (filler * 8).strip() + " " + close
+    assert len(runaway) > followup_voice.MAX_SPOKEN_CHARS
+
+    out = followup_voice.cap_spoken(runaway)
+    assert len(out) <= followup_voice.MAX_SPOKEN_CHARS
+    assert out.endswith(close)
+    assert out.startswith("This sentence")
+
+
+def test_a_runaway_without_a_close_trims_as_before():
+    filler = "This sentence pads the explanation out well past the cap. "
+    out = followup_voice.cap_spoken((filler * 8).strip())
+    assert len(out) <= followup_voice.MAX_SPOKEN_CHARS
+    assert out.endswith(".")
+
+
+def test_a_long_question_is_not_a_close():
+    """More explanation with a question mark on it gets no protection."""
+    filler = "This sentence pads the explanation out well past the cap. "
+    long_q = ("But have you considered what happens to the equilibrium when "
+              "the temperature rises and the pressure falls at the same time?")
+    assert len(long_q) > followup_voice.MAX_CLOSE_CHARS
+    out = followup_voice.cap_spoken((filler * 8).strip() + " " + long_q)
+    assert not out.endswith(long_q)

@@ -286,11 +286,18 @@ def _split_first_clip(sentence: str) -> list:
 # actually waits through. 320 sits well above an ordinary two or three sentence
 # answer, so it never trims one of those — it only catches a runaway.
 #
-# Trimmed at a SENTENCE boundary, never mid-thought. Dropping a whole trailing
-# sentence leaves an answer that still ends properly, and the part that was
-# dropped is on the board being read anyway; cutting mid-clause would leave the
-# voice sounding like it was interrupted.
-MAX_SPOKEN_CHARS = 320
+# Trimmed at a SENTENCE boundary, never mid-thought — and never the CLOSE.
+# The prompt ends every real answer with a short check-and-invite question as
+# its final sentence, and trailing-first trimming deleted exactly that: a
+# 343-char reply lost its "did you get that?" and kept its facts, which is
+# the textbook ending the close exists to prevent. When the final sentence is
+# a short question it is preserved and the cut moves forward; what gets
+# dropped is explanation, which is on the board being read anyway.
+MAX_SPOKEN_CHARS = 360
+
+# A closing question longer than this is not a close, it is more explanation
+# with a question mark on it — trimmed like anything else.
+MAX_CLOSE_CHARS = 60
 
 
 def cap_spoken(text: str) -> str:
@@ -306,19 +313,30 @@ def cap_spoken(text: str) -> str:
 
     from app.drona.voice_proxy import split_into_sentences
 
+    sentences = [x.strip() for x in (split_into_sentences(said, min_chars=0)
+                                     or [said]) if x.strip()]
+    # The teacher's close, if the reply ends on one. Set aside FIRST, so the
+    # budget below is spent on explanation and the handover survives the cut.
+    close = None
+    if (len(sentences) > 1 and sentences[-1].endswith("?")
+            and len(sentences[-1]) <= MAX_CLOSE_CHARS):
+        close = sentences.pop()
+
+    budget = MAX_SPOKEN_CHARS - (len(close) + 1 if close else 0)
     kept: list = []
-    for sentence in split_into_sentences(said, min_chars=0) or [said]:
-        sentence = sentence.strip()
-        if not sentence:
-            continue
+    for sentence in sentences:
         candidate = f"{' '.join(kept)} {sentence}".strip() if kept else sentence
-        if kept and len(candidate) > MAX_SPOKEN_CHARS:
+        if kept and len(candidate) > budget:
             break
         kept.append(sentence)
-    out = " ".join(kept).strip() or said
+    out = " ".join(kept).strip()
+    if close:
+        out = f"{out} {close}".strip() if out else close
+    out = out or said
     if len(out) < len(said):
         logger.info("[FOLLOWUP TTS] spoken trimmed %d -> %d chars at a sentence "
-                    "boundary (cap %d)", len(said), len(out), MAX_SPOKEN_CHARS)
+                    "boundary (cap %d%s)", len(said), len(out), MAX_SPOKEN_CHARS,
+                    ", close preserved" if close else "")
     return out
 
 
