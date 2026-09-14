@@ -120,12 +120,56 @@ WIDGET_SPECS: Dict[str, str] = {
         "apart, components_of (-1 or a force index; needs context incline|string), "
         "caption (<=40 chars)."
     ),
+    # Listed FOUR of the client's NINE configurations until 2026-09-14. The
+    # five missing ones are the Gaussian surfaces and the equipotential pair --
+    # precisely what a Gauss's-law chapter needs. Measured consequence: the
+    # infinite-line-charge segment was drawn as `point` and the single-sheet
+    # segment as `parallel_plates`, both with confident captions describing a
+    # figure that was not on the board. The author had not misjudged; it was
+    # never told the right configuration existed.
     "field_lines": (
-        "electric field lines and their geometry. params: configuration "
-        '("point"|"dipole"|"like_charges"|"parallel_plates"), charge_uc (4-20 — '
-        'a "how strong" magnitude; doubling it turn to turn shows the line count '
-        'scaling with charge), show_arrows (bool), annotate '
-        '(null|"neutral_point"|"termination").'
+        "electric field lines and their geometry. params: configuration, "
+        "charge_uc (4-20 — a \"how strong\" magnitude; doubling it turn to turn "
+        "shows the line count scaling with charge), show_arrows (bool), "
+        "annotate (null|\"neutral_point\"|\"termination\"), enclosed (bool, "
+        "gaussian_* only — whether the charge is inside the surface).\n"
+        "MATCH THE CONFIGURATION TO THE GEOMETRY. The nine: \"point\" (one "
+        "charge, radial 1/r^2); \"dipole\"; \"like_charges\" (has a neutral "
+        "point); \"parallel_plates\" (TWO opposite plates, field between); "
+        "\"gaussian_sphere\" (sphere/shell + spherical surface); "
+        "\"gaussian_cylinder\" (INFINITE LINE CHARGE or coaxial cable, radial "
+        "1/r); \"gaussian_pillbox\" (a SINGLE infinite sheet, field on BOTH "
+        "sides — NOT parallel_plates; sheet sigma/2e0 vs plates sigma/e0 is a "
+        "standard exam trap); \"equipotential_point\"; "
+        "\"equipotential_uniform\".\n"
+        "A point-charge starburst does NOT stand in for a line, sheet or "
+        "shell — the difference is usually the whole content of the segment. "
+        "If the objective is a SELECTION procedure across several symmetries, "
+        "or a closed surface with an EXTERNAL charge crossing it, this widget "
+        "draws none of that: decline rather than repeat a figure already on "
+        "the board."
+    ),
+    # conic_plot exists because `xy_plot` cannot draw a conic and never will:
+    # its geometry is v = f(u), ONE value per abscissa, and a circle has two y
+    # for almost every x. Every attempt to route conics through xy_plot before
+    # this produced half a circle.
+    "conic_plot": (
+        "a circle, ellipse, parabola or hyperbola with the marks a conics "
+        'question asks about. params: kind ("circle"|"ellipse"|"parabola"|'
+        '"hyperbola"), a, b (semi-axes — for an ELLIPSE a is the semi-MAJOR '
+        "axis, so a >= b is required and b > a is REFUSED, not swapped; for a "
+        "circle a == b == radius; for a parabola a is the focal distance), "
+        "cx, cy, rotate_deg (0|90|180|270 only), show (up to 6 of axes, "
+        "vertices, foci, directrix, latus_rectum, asymptotes), region "
+        '(null|"interior"|"chord"), line_c (the chord\'s x), shade (bool), '
+        "x_min/x_max/y_min/y_max, caption (<=40 chars), x_label, y_label.\n"
+        "Marks the kind does not have are refused: no foci or directrix on a "
+        "circle, no asymptotes off a hyperbola, no chord region on a parabola "
+        "or hyperbola. THE VIEW BOX MUST CONTAIN THE CONIC — this is checked, "
+        "and it is what catches a payload that renders and is still wrong.\n"
+        "Area, eccentricity, focal distance and latus rectum are COMPUTED and "
+        "shown; never state one in a label, and never assert a value the "
+        "picture contradicts."
     ),
     "xy_plot": (
         "y=f(x): area under it, the area between two curves, piecewise/"
@@ -197,10 +241,15 @@ WIDGET_SPECS: Dict[str, str] = {
         # refuses them, because the width budget at 343pt cannot hold more.
         # Measured 2026-09-12: 37 of the 38 stored reaction_scheme payloads in
         # chem12 ch8 would not draw at all.
-        "HARD CAPS: species <=10 chars, step_reagent <=12, caption <=40. "
-        "Condensed formulae only (RCOOH, RCOCl, EtCHO, PhCOCH3), terse "
-        "reagents (SOCl2, Zn-Hg/HCl). Longer names than that mean this is the "
-        "wrong widget: DECLINE rather than truncate."
+        "CAPS: species/step_reagent <=20 chars, caption <=40. But the REAL "
+        "limit is width at 343pt, and it is severe — measured: 2 species allow "
+        "12-char names, 3 species allow 7, 4 species allow 5, and 5+ species "
+        "do not fit at all. SO KEEP SCHEMES SMALL: 2-3 species, condensed "
+        "formulae (RCOOH, RCOCl, EtCHO), terse reagents (SOCl2, Zn-Hg/HCl). "
+        "Split a long synthesis across segments rather than drawing it once. "
+        "If the chemistry needs longer names than that, DECLINE — never "
+        "truncate, because a shortened name teaches a string the exam does "
+        "not print."
     ),
     "molecule_struct": (
         "2-D structure of one species — VSEPR geometry, lone pairs, bond angle. "
@@ -536,10 +585,23 @@ def _field_lines_shape_ok(params: Dict[str, Any]) -> bool:
     first time the two disagreed the server would be the one that was wrong —
     the client's `validate()` is the gate that runs against the actual renderer.
     This table exists to preserve an existing behaviour, not to be extended.
+
+    WIDENED 2026-09-14, and this is the docstring's own warning coming true.
+    The tuple held FOUR configurations; the client has shipped NINE since the
+    Gaussian surfaces landed. So the two validators disagreed and the server
+    was the wrong one: a correct `gaussian_cylinder` payload for an infinite
+    line charge was refused HERE, by a check that predates the surfaces and
+    knows nothing about them. The list is now taken from the client's own
+    `CONFIGURATIONS` in `lib/widgets/field-lines/index.tsx`. Everything past
+    the configuration name is still the client's business -- `client_can_draw`
+    runs the real `validate()` a few lines below, which did not exist when
+    this function was written.
     """
     return (
         params.get("configuration")
-        in ("point", "dipole", "like_charges", "parallel_plates")
+        in ("point", "dipole", "like_charges", "parallel_plates",
+            "gaussian_sphere", "gaussian_cylinder", "gaussian_pillbox",
+            "equipotential_point", "equipotential_uniform")
         and isinstance(params.get("charge_uc"), (int, float))
     )
 
@@ -693,7 +755,8 @@ def client_can_draw(widget: str, version: int, params: dict) -> tuple[bool, str]
 
 
 def sanitize_widget_payload(raw_payload: Any,
-                            archetype_widget: Optional[str] = None) -> Optional[Dict[str, Any]]:
+                            archetype_widget: Optional[str] = None,
+                            reason_sink: Optional[Dict[str, str]] = None) -> Optional[Dict[str, Any]]:
     """Coarse gate on a model-authored widget payload. None means DROP.
 
     Returns the BOARD-EVENT FIELDS to merge, not a bare payload:
@@ -803,6 +866,13 @@ def sanitize_widget_payload(raw_payload: Any,
         logger.warning(
             f"⚠️ [DIAGRAM DROPPED] {widget}: the client would refuse this — {why}"
         )
+        # The refusal text is MEASURED ("needs 457.7pt but only 319pt is
+        # usable at 343pt"), which makes it the one thing worth handing back
+        # to the author. `reason_sink` exists so a caller can repair rather
+        # than drop; None still means DROP and no caller is obliged to look.
+        if reason_sink is not None:
+            reason_sink["why"] = why
+            reason_sink["widget"] = widget
         return None
 
     return {

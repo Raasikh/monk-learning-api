@@ -34,12 +34,39 @@ def _scheme(species):
     }
 
 
-def test_a_fourteen_character_species_label_is_refused_at_the_server():
-    # The exact failure that cost chem12 ch8 its whole chapter: a species name
-    # four characters over the client's cap, which the server happily stored.
-    over = _scheme(["RCOOH", "fourteen-chars"])
-    assert len(over["params"]["species"][1]) == 14
+def test_a_twenty_one_character_species_label_is_refused_at_the_server():
+    # This probed 14 characters until 2026-09-12, when Raasikh raised the caps
+    # to 20/20. A 14-char name in a TWO-species scheme now genuinely fits, so
+    # the old assertion was asserting a rule that no longer exists; it is moved
+    # to the boundary rather than deleted, because the claim being made --
+    # the server refuses what the client refuses -- is unchanged.
+    over = _scheme(["RCOOH", "twentyonecharacters!!"])
+    assert len(over["params"]["species"][1]) == 21
     assert sanitize_widget_payload(over) is None
+
+
+def test_a_label_within_the_cap_that_still_does_not_FIT_is_refused():
+    # The cap is a pre-filter; WIDTH is the real gate. Three 20-char species
+    # break no cap and still cannot be drawn at 343x236, which is why raising
+    # the cap from 10 to 20 moved only two of the corpus's stored payloads.
+    # Without this test the suite would record the cap as the whole rule.
+    wide = {
+        "widget": "reaction_scheme", "version": 1,
+        "params": {
+            "caption": "three wide species",
+            "species": ["CH3CH2CH2CH2CH2CH2CH", "CH3CH2CH2CH2CH2CH2Br",
+                        "CH3CH2CH2CH2CH2CH2OH"],
+            "step_from": [0, 1], "step_to": [1, 2],
+            "step_reagent": ["Br2", "KOH"], "step_kind": ["major", "major"],
+            "step_progress": 1, "highlight_step": -1,
+        },
+    }
+    assert all(len(sp) <= 20 for sp in wide["params"]["species"])
+    sink: dict = {}
+    assert sanitize_widget_payload(wide, reason_sink=sink) is None
+    # And the refusal carries a MEASUREMENT, which is what makes the planner's
+    # one repair attempt worth making.
+    assert "pt" in sink["why"], sink
 
 
 def test_the_same_payload_within_the_cap_is_accepted():

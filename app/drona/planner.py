@@ -747,7 +747,8 @@ MAX_WIDGET_PAYLOAD_CHARS = 8000
 
 
 def _widget_precompute_messages(widget_id: str, sub_title: str,
-                                segment: Dict[str, Any]) -> List[Dict[str, str]]:
+                                segment: Dict[str, Any],
+                                repair: Optional[str] = None) -> List[Dict[str, str]]:
     """The one call. Block verbatim from the registry; envelope stated after it.
 
     `render_single_widget_block` refers to "the objective in [CURRENT SEGMENT]
@@ -786,7 +787,21 @@ def _widget_precompute_messages(widget_id: str, sub_title: str,
             f"  board_content:\n" + "\n".join(f"    - {b}" for b in board_lines) +
             f"\n\nProduce the JSON object."
         )},
-    ]
+    ] + ([] if not repair else [
+        {"role": "assistant", "content": "(previous attempt)"},
+        {"role": "user", "content": (
+            "That payload was REFUSED by the renderer, which measured it:\n\n"
+            f"  {repair}\n\n"
+            "This is a measurement of the board, not an opinion — the same "
+            "payload will be refused again. Fix the cause it names. Shorten "
+            "labels to condensed formulae if they still read correctly, or "
+            "drop a step and show the shorter scheme. Do NOT truncate a label "
+            "mid-formula, and do NOT resend the same payload. If this segment "
+            "genuinely cannot be drawn within that measurement, reply with "
+            "{\"decline\": \"<why>\"} instead — a decline is a better answer "
+            "than a picture that will not appear."
+        )},
+    ])
 
 
 def _attach_widget_payload(segment: Dict[str, Any], archetype, chap_data: Dict[str, Any],
@@ -827,82 +842,108 @@ def _attach_widget_payload(segment: Dict[str, Any], archetype, chap_data: Dict[s
 
     client = get_drona_client()
     model_name = get_model_name("tutor")
-    t0 = time.time()
-    try:
-        res = client.chat.completions.create(
-            model=model_name,
-            messages=_widget_precompute_messages(widget_id, sub_title, segment),
-            response_format={"type": "json_object"},
-            temperature=0.0,
-            max_tokens=2048,
-            timeout=PLANNER_TIMEOUT_S,
-            extra_body=_thinking_off(),
-        )
-    except Exception as exc:
-        # Booked as a failure even though nothing usable came back. This runs
-        # on the detached fill thread, which is exactly where a day of spend
-        # went untraceable on 2026-08-15.
-        record_call(model_name, "widget_payload", ok=False,
+    repair: Optional[str] = None
+    attempt = 0
+
+    # ONE repair attempt, and only for a CLIENT refusal.
+    # The renderer reports a MEASURED cause ("needs 457.7pt of width but only
+    # 319pt is usable at 343pt"), so handing it back is the same
+    # reject-and-retry-once rule api-contract.md §2 already states for schema
+    # validation. Before this loop existed the corrected spec could not land:
+    # the author was told the rule once, in general, and never told which
+    # measurement its own answer had missed.
+    #
+    # The scope is deliberately narrow. A decline does NOT retry -- a decline
+    # is an answer, and re-asking would be arguing with it. An unparseable
+    # reply and an off-archetype answer do not retry either: neither carries a
+    # measurement to repair against, so a second call is paying twice for the
+    # same guess. Only the branch with a number in its reason gets another go.
+    while True:
+        attempt += 1
+        t0 = time.time()
+        try:
+            res = client.chat.completions.create(
+                model=model_name,
+                messages=_widget_precompute_messages(widget_id, sub_title, segment,
+                                                     repair=repair),
+                response_format={"type": "json_object"},
+                temperature=0.0,
+                max_tokens=2048,
+                timeout=PLANNER_TIMEOUT_S,
+                extra_body=_thinking_off(),
+            )
+        except Exception as exc:
+            # Booked as a failure even though nothing usable came back. This runs
+            # on the detached fill thread, which is exactly where a day of spend
+            # went untraceable on 2026-08-15.
+            record_call(model_name, "widget_payload", ok=False,
+                        latency_ms=int((time.time() - t0) * 1000),
+                        chapter_id=chap_data.get("id"), plan_id=plan_id,
+                        subtopic_key=subtopic_key or sub_title, error=str(exc))
+            logger.warning(f"[WIDGET PRECOMPUTE FAILED] {widget_id}: {str(exc)[:120]}")
+            return _record("error", f"{type(exc).__name__}: {str(exc)[:120]}")
+
+        record_call(model_name, "widget_payload", ok=True, res=res,
                     latency_ms=int((time.time() - t0) * 1000),
                     chapter_id=chap_data.get("id"), plan_id=plan_id,
-                    subtopic_key=subtopic_key or sub_title, error=str(exc))
-        logger.warning(f"[WIDGET PRECOMPUTE FAILED] {widget_id}: {str(exc)[:120]}")
-        return _record("error", f"{type(exc).__name__}: {str(exc)[:120]}")
+                    subtopic_key=subtopic_key or sub_title)
 
-    record_call(model_name, "widget_payload", ok=True, res=res,
-                latency_ms=int((time.time() - t0) * 1000),
-                chapter_id=chap_data.get("id"), plan_id=plan_id,
-                subtopic_key=subtopic_key or sub_title)
+        raw = (res.choices[0].message.content or "")
+        if len(raw) > MAX_WIDGET_PAYLOAD_CHARS:
+            logger.warning(f"[WIDGET PRECOMPUTE OVERSIZE] {widget_id}: {len(raw)} chars")
+            return _record("rejected", f"response {len(raw)} chars exceeds {MAX_WIDGET_PAYLOAD_CHARS}")
+        try:
+            answer = json.loads(strip_fences(raw))
+        except Exception as exc:
+            return _record("rejected", f"unparseable JSON: {str(exc)[:100]}")
+        if not isinstance(answer, dict):
+            return _record("rejected", "response is not a JSON object")
 
-    raw = (res.choices[0].message.content or "")
-    if len(raw) > MAX_WIDGET_PAYLOAD_CHARS:
-        logger.warning(f"[WIDGET PRECOMPUTE OVERSIZE] {widget_id}: {len(raw)} chars")
-        return _record("rejected", f"response {len(raw)} chars exceeds {MAX_WIDGET_PAYLOAD_CHARS}")
-    try:
-        answer = json.loads(strip_fences(raw))
-    except Exception as exc:
-        return _record("rejected", f"unparseable JSON: {str(exc)[:100]}")
-    if not isinstance(answer, dict):
-        return _record("rejected", "response is not a JSON object")
+        # A declared decline, and the two shapes an answer can arrive in. The
+        # envelope asks for `payload` at the top level; a model that answers in
+        # the board_event shape it was shown by the reused block is still
+        # answering, and reading it is parsing, not gate-widening — whatever comes
+        # out still goes through sanitize_widget_payload untouched.
+        raw_payload = answer.get("payload")
+        if raw_payload is None:
+            for evt in (answer.get("board_events") or []):
+                if isinstance(evt, dict) and isinstance(evt.get("payload"), dict):
+                    raw_payload = evt["payload"]
+                    break
+        if raw_payload is None:
+            reason = str(answer.get("decline") or answer.get("reason") or "").strip()
+            logger.info(f"[WIDGET PRECOMPUTE DECLINED] {widget_id} on "
+                        f"'{str(segment.get('objective'))[:40]}': {reason[:80] or '(no reason given)'}")
+            return _record("declined", reason or "no payload and no reason given")
 
-    # A declared decline, and the two shapes an answer can arrive in. The
-    # envelope asks for `payload` at the top level; a model that answers in
-    # the board_event shape it was shown by the reused block is still
-    # answering, and reading it is parsing, not gate-widening — whatever comes
-    # out still goes through sanitize_widget_payload untouched.
-    raw_payload = answer.get("payload")
-    if raw_payload is None:
-        for evt in (answer.get("board_events") or []):
-            if isinstance(evt, dict) and isinstance(evt.get("payload"), dict):
-                raw_payload = evt["payload"]
-                break
-    if raw_payload is None:
-        reason = str(answer.get("decline") or answer.get("reason") or "").strip()
-        logger.info(f"[WIDGET PRECOMPUTE DECLINED] {widget_id} on "
-                    f"'{str(segment.get('objective'))[:40]}': {reason[:80] or '(no reason given)'}")
-        return _record("declined", reason or "no payload and no reason given")
+        refusal: Dict[str, str] = {}
+        gated = sanitize_widget_payload(raw_payload, archetype_widget=widget_id,
+                                        reason_sink=refusal)
+        if not gated:
+            # sanitize_widget_payload has already logged WHICH check failed.
+            if refusal.get("why") and attempt == 1:
+                repair = refusal["why"]
+                continue
+            return _record("rejected",
+                           f"client refused twice: {refusal['why'][:160]}"
+                           if refusal.get("why") else "failed sanitize_widget_payload")
+        if gated["route"] != ROUTE_ARCHETYPE_HIGH:
+            # It answered with a DIFFERENT widget than the column named. Live,
+            # that is still drawable and is kept as `model_choice`. Stored on the
+            # segment it would become a permanent, cached picture that no
+            # classification chose, served ahead of the live path on every future
+            # turn. Slot 1 stores only what path 1 actually produced.
+            logger.warning(f"[WIDGET PRECOMPUTE OFF-ARCHETYPE] asked for {widget_id}, "
+                           f"got {gated['payload']['widget']}; storing nothing")
+            return _record("rejected",
+                           f"answered with {gated['payload']['widget']}, not {widget_id}")
 
-    gated = sanitize_widget_payload(raw_payload, archetype_widget=widget_id)
-    if not gated:
-        # sanitize_widget_payload has already logged WHICH check failed.
-        return _record("rejected", "failed sanitize_widget_payload")
-    if gated["route"] != ROUTE_ARCHETYPE_HIGH:
-        # It answered with a DIFFERENT widget than the column named. Live,
-        # that is still drawable and is kept as `model_choice`. Stored on the
-        # segment it would become a permanent, cached picture that no
-        # classification chose, served ahead of the live path on every future
-        # turn. Slot 1 stores only what path 1 actually produced.
-        logger.warning(f"[WIDGET PRECOMPUTE OFF-ARCHETYPE] asked for {widget_id}, "
-                       f"got {gated['payload']['widget']}; storing nothing")
-        return _record("rejected",
-                       f"answered with {gated['payload']['widget']}, not {widget_id}")
-
-    segment[WIDGET_PAYLOAD_KEY] = gated["payload"]
-    caption = str(answer.get("caption") or "").strip()[:200]
-    logger.info(f"🧩 [WIDGET PRECOMPUTED] {widget_id} for "
-                f"'{str(segment.get('objective'))[:44]}'")
-    return _record("stored", f"high -> {widget_id}", route=gated["route"],
-                   **({"caption": caption} if caption else {}))
+        segment[WIDGET_PAYLOAD_KEY] = gated["payload"]
+        caption = str(answer.get("caption") or "").strip()[:200]
+        logger.info(f"🧩 [WIDGET PRECOMPUTED] {widget_id} for "
+                    f"'{str(segment.get('objective'))[:44]}'")
+        return _record("stored", f"high -> {widget_id}", route=gated["route"],
+                       **({"caption": caption} if caption else {}))
 
 
 

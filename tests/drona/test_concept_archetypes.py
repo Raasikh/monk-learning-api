@@ -296,8 +296,13 @@ def test_a_high_row_naming_something_the_client_cannot_draw_still_falls_through(
     for r in high:
         v = verdict(r["subject"], r["class_level"], r["chapter_order"], r["concept"])
         (named if v.widget else unroutable).append(r["archetype_v2"])
+    # 120 -> 126 on 2026-09-14: conic_plot@1 took the six HIGH maths rows it
+    # actually draws -- gap_cone_sections, gap_circle_region (x2),
+    # gap_parabola_geometry, gap_ellipse, gap_hyperbola. The `med` conic rows
+    # were deliberately NOT moved: `gap_curve_with_tangent` (x4) wants a
+    # tangent line conic_plot does not draw, and med is not a routing gate.
     assert len(high) == 501
-    assert len(named) == 120, f"the routed population moved: {len(named)}"
+    assert len(named) == 126, f"the routed population moved: {len(named)}"
     assert set(named) <= set(WIDGET_VERSIONS)
     assert "labelled_figure" in unroutable and "none_symbolic" in unroutable
 
@@ -313,14 +318,17 @@ def test_the_routed_population_is_ninety_across_fifty_one_chapters():
     free_body_forces@1 took physics 11 ch3, ch4 and ch13 (ch9's Stokes row
     routed too, but ch9 was already in the set via another widget or joins
     now — the SET is what is pinned, and it grew by three), then 54 -> 55
-    when xy_plot v4's secant took physics 11 ch2.
-    (The function name has trailed the number three times; it says what it
+    when xy_plot v4's secant took physics 11 ch2, then 60 -> 61 when conic_plot@1
+    took mathematics 11 ch10 (Conic Sections). Mathematics 12 ch8 gained a
+    conic_plot row too but was already in the set via xy_plot, so the SET grew
+    by one while six rows moved.
+    (The function name has trailed the number four times; it says what it
     asserts.)
     """
     routed = {(r["subject"], r["class_level"], r["chapter_order"])
               for r in _rows()
               if r["v2_confidence"] == "high" and r["archetype_v2"] in WIDGET_VERSIONS}
-    assert len(routed) == 60
+    assert len(routed) == 61
 
 
 def test_a_concept_the_table_does_not_know_falls_to_the_manifest_branch():
@@ -395,6 +403,13 @@ def test_maths_12_ch8_routes_exactly_the_three_regions_xy_plot_can_draw():
     Note the widget's own header claimed "5 solid + 1 partial" for this
     chapter. That header was written against concept NAMES. It is the
     name-based failure mode reappearing inside a docstring.
+
+    FOUR since 2026-09-14, and the fourth is NOT an xy_plot row. "Area of
+    Regions Bounded by Circles and Ellipses" went to `conic_plot@1`, which is
+    the whole reason that widget exists: xy_plot's geometry is v = f(u), one
+    value per abscissa, and a circle has two y for almost every x. The set
+    below is therefore no longer "what xy_plot can draw" but "what Ch8 routes";
+    the function name has trailed the claim before and does so again.
     """
     rows = [r for r in _rows()
             if r["subject"] == "mathematics" and r["class_level"] == "12"
@@ -407,7 +422,13 @@ def test_maths_12_ch8_routes_exactly_the_three_regions_xy_plot_can_draw():
         "Area Under a Simple Curve Bounded by the Axes",
         "Area Bounded by a Parabola and a Line",
         "Area of Regions Involving Modulus and Piecewise-Defined Functions",
+        "Area of Regions Bounded by Circles and Ellipses",
     }, routed
+    # ...and the fourth routes to conic_plot, not to xy_plot. Asserted
+    # explicitly: if a resync ever moved it to xy_plot the set above would
+    # still pass while the board drew half a circle.
+    by_name = {r["concept"]: r["archetype_v2"] for r in rows}
+    assert by_name["Area of Regions Bounded by Circles and Ellipses"] == "conic_plot"
 
     # The geometries xy_plot's validate() refuses must not route, whatever
     # their confidence.

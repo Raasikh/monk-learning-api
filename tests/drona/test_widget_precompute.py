@@ -310,9 +310,33 @@ def test_the_write_uses_the_same_gate_as_the_live_path_not_a_second_one():
     first time they disagreed this side would be the wrong one."""
     block = PLANNER_SRC[PLANNER_SRC.index("def _attach_widget_payload("):]
     block = block[:block.index("\ndef ")]
-    assert "sanitize_widget_payload(raw_payload, archetype_widget=widget_id)" in block
+    # Matched on the CALL, not on one line of formatting -- the call was
+    # wrapped across two lines when the repair loop landed and this assertion
+    # failed on the line break while the claim it makes was still true.
+    import re as _re
+    call = _re.search(r"sanitize_widget_payload\((.*?)\)", block, _re.S)
+    assert call, block
+    assert "raw_payload" in call.group(1)
+    assert "archetype_widget=widget_id" in call.group(1)
     # no home-grown params checking beside it
     assert "isinstance(params" not in block
+
+
+def test_a_client_refusal_is_retried_exactly_once_and_a_decline_is_not():
+    """The repair loop's budget, asserted where it can be read.
+
+    A measured refusal ("needs 457.7pt but only 319pt is usable") is worth
+    handing back once. A decline is an ANSWER -- re-asking argues with it --
+    and an unparseable reply carries no measurement to repair against, so
+    neither gets a second call. Two attempts is the ceiling, not a target.
+    """
+    block = PLANNER_SRC[PLANNER_SRC.index("def _attach_widget_payload("):]
+    block = block[:block.index("\ndef ")]
+    # exactly one place that goes round again, and it is gated on attempt 1
+    assert block.count("continue") == 1
+    assert 'refusal.get("why") and attempt == 1' in block
+    # the decline branch returns; it does not fall into the loop
+    assert '_record("declined"' in block
 
 
 def test_a_payload_naming_a_different_widget_is_not_stored(monkeypatch, stub_llm):

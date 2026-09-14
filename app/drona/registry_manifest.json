@@ -67,6 +67,16 @@
     ]
   },
   {
+    "id": "conic_plot",
+    "version": 1,
+    "animatable": [
+      "a",
+      "b",
+      "line_c",
+      "cx"
+    ]
+  },
+  {
     "id": "lines_planes_3d",
     "version": 1,
     "animatable": []

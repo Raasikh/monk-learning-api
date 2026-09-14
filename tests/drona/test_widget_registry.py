@@ -237,9 +237,27 @@ def test_the_manifest_block_stays_cheap():
     265 tokens a call against twenty payloads that now draw is a trade worth
     making, and the number is written here so the next person raising this cap
     has to justify theirs the same way.
+
+    RAISED 1700 -> 2400 on 2026-09-14. Two changes, ~650 tokens per call:
+
+      field_lines   listed FOUR of the client's NINE configurations. The five
+                    missing ones are the Gaussian surfaces and the
+                    equipotential pair -- the whole of a Gauss's-law chapter.
+                    Measured: the infinite-line-charge segment was drawn as a
+                    POINT charge and the single-sheet segment as PARALLEL
+                    PLATES, each under a confident caption describing a figure
+                    that was not on the board. sigma/2e0 vs sigma/e0 is a
+                    standard exam trap and the picture taught the wrong one.
+                    With the nine listed, the author picks gaussian_cylinder
+                    and gaussian_pillbox for those two segments unprompted.
+      conic_plot    a new widget has to be described before it can be chosen.
+
+    This one is NOT paid for by a render-rate jump -- both sheet payloads
+    rendered perfectly before and after. It is paid for in correctness that no
+    automated gate can see, which is the more expensive kind to find.
     """
     approx_tokens = len(render_manifest_block()) / 4
-    assert approx_tokens < 1700, f"manifest block is ~{approx_tokens:.0f} tokens"
+    assert approx_tokens < 2400, f"manifest block is ~{approx_tokens:.0f} tokens"
 
 
 # ── 3. the gate ─────────────────────────────────────────────────────────────
