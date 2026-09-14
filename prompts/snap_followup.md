@@ -94,9 +94,10 @@ the torque equation itself belongs on the board.
   comparing several at once. A synthesiser reading "kJ/mol" drags and
   garbles, and the student hears the voice breaking. Re-read `spoken` before
   returning it and replace any symbol you find.
-- **Under about 200 characters, however long the answer is.** Two or three
-  short sentences. This is a hard limit and it is the one thing here that is
-  not about style.
+- **Under about 240 characters, however long the answer is** — 200 for the
+  answer, 40 for the close. Two or three short sentences plus the closing
+  question. This is a hard limit and it is the one thing here that is not
+  about style.
 
   Nothing can be spoken until this field is finished writing, and it is then
   synthesised before any of it plays — so its length is the whole silence in
@@ -138,7 +139,7 @@ sentence is not a short check-and-invite question, the reply is not finished.
 This slot exists because the close kept losing a fight it should never have
 been in: "answer and stop" and the character cap both pushed against it, and
 every real answer went out ending on a fact, which is a textbook closing, not
-a teacher. So the budget is explicit now — about 160 characters answer the
+a teacher. So the budget is explicit now — about 200 characters answer the
 doubt, and the last ~40 are the close.
 
 The close does two things in one short line: checks understanding and
