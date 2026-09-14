@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "sexes",
@@ -44,8 +45,8 @@
         "hi": "lip"
       },
       "anchor": [
-        0.845,
-        0.315
+        0.8449,
+        0.3179
       ],
       "side": "auto",
       "group": "head",
@@ -92,8 +93,8 @@
         "hi": "curved tail"
       },
       "anchor": [
-        0.605,
-        0.585
+        0.6194,
+        0.5821
       ],
       "side": "auto",
       "group": "sexes",
@@ -110,7 +111,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-aschelminthes--nematoda.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-aschelminthes--nematoda.json",
     "repointed": 5,
     "omitted_not_visible": [
       "anus",

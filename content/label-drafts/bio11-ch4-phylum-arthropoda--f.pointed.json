@@ -47,6 +47,12 @@
       "wing",
       "sting"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "term_list_mismatch": {
+      "decided_by": "raasikh",
+      "on": "2026-09-13",
+      "ship": "as pointed — one label",
+      "why": "A lac insect against a term list of generic insect morphology (head, thorax, abdomen, antenna, compound eye, wing, sting). The plate draws a sac-like scale insect encrusting a resin-covered twig and has none of those as drawn, so only `exoskeleton` applies, at 0.60. Shipped rather than forced: the alternative is naming a thorax on an animal whose body the drawing does not divide."
+    }
   }
 }

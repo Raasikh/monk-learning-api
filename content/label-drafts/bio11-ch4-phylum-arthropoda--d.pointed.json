@@ -4,6 +4,7 @@
   "image_h": 860,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "head",
@@ -108,8 +109,8 @@
         "hi": "jointed appendage"
       },
       "anchor": [
-        0.485,
-        0.565
+        0.4826,
+        0.5547
       ],
       "side": "auto",
       "group": "body",
@@ -141,7 +142,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-arthropoda--d.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-arthropoda--d.json",
     "repointed": 7,
     "omitted_not_visible": [
       "wing",

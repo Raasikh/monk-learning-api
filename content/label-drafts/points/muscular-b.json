@@ -1,5 +1,22 @@
-{"points":[
- {"term":"smooth muscle fibre","x":0.40,"y":0.50,"confidence":0.90},
- {"term":"nucleus","x":0.30,"y":0.29,"confidence":0.95},
- {"term":"spindle shape","x":0.075,"y":0.615,"confidence":0.75}
-]}
+{
+ "points": [
+  {
+   "term": "smooth muscle fibre",
+   "x": 0.4,
+   "y": 0.5,
+   "confidence": 0.9
+  },
+  {
+   "term": "nucleus",
+   "x": 0.3,
+   "y": 0.29,
+   "confidence": 0.95
+  },
+  {
+   "term": "spindle shape",
+   "x": 0.0756,
+   "y": 0.6168,
+   "confidence": 0.75
+  }
+ ]
+}

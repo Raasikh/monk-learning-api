@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "aerial",
@@ -76,8 +77,8 @@
         "hi": "spore"
       },
       "anchor": [
-        0.855,
-        0.215
+        0.856,
+        0.2143
       ],
       "side": "auto",
       "group": "aerial",
@@ -92,8 +93,8 @@
         "hi": "sporangiophore"
       },
       "anchor": [
-        0.487,
-        0.395
+        0.4877,
+        0.3946
       ],
       "side": "auto",
       "group": "aerial",
@@ -141,7 +142,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--a.json",
     "repointed": 7,
     "omitted_not_visible": [
       "septum",

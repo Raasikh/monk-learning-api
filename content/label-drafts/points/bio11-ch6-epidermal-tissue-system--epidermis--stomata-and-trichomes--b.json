@@ -1,8 +1,49 @@
-{"groups":[{"id":"stoma","label":"Stoma"},{"id":"around","label":"Surrounding cells"}],
- "points":[
- {"term":"dumbbell-shaped guard cell","x":0.465,"y":0.320,"confidence":0.95,"group":"stoma"},
- {"term":"stomatal pore","x":0.505,"y":0.500,"confidence":0.95,"group":"stoma"},
- {"term":"chloroplast","x":0.555,"y":0.620,"confidence":0.85,"group":"stoma"},
- {"term":"subsidiary cell","x":0.393,"y":0.500,"confidence":0.85,"group":"around"},
- {"term":"epidermal cell","x":0.165,"y":0.300,"confidence":0.90,"group":"around"}
-]}
+{
+ "groups": [
+  {
+   "id": "stoma",
+   "label": "Stoma"
+  },
+  {
+   "id": "around",
+   "label": "Surrounding cells"
+  }
+ ],
+ "points": [
+  {
+   "term": "dumbbell-shaped guard cell",
+   "x": 0.465,
+   "y": 0.32,
+   "confidence": 0.95,
+   "group": "stoma"
+  },
+  {
+   "term": "stomatal pore",
+   "x": 0.5105,
+   "y": 0.4992,
+   "confidence": 0.95,
+   "group": "stoma"
+  },
+  {
+   "term": "chloroplast",
+   "x": 0.555,
+   "y": 0.62,
+   "confidence": 0.85,
+   "group": "stoma"
+  },
+  {
+   "term": "subsidiary cell",
+   "x": 0.393,
+   "y": 0.5,
+   "confidence": 0.85,
+   "group": "around"
+  },
+  {
+   "term": "epidermal cell",
+   "x": 0.165,
+   "y": 0.3,
+   "confidence": 0.9,
+   "group": "around"
+  }
+ ]
+}

@@ -1,7 +1,34 @@
-{"points":[
- {"term":"thallus","x":0.185,"y":0.665,"confidence":0.90},
- {"term":"gemma cup","x":0.215,"y":0.505,"confidence":0.90},
- {"term":"rhizoid","x":0.330,"y":0.790,"confidence":0.90},
- {"term":"antheridiophore","x":0.335,"y":0.200,"confidence":0.80},
- {"term":"archegoniophore","x":0.785,"y":0.185,"confidence":0.80}
-]}
+{
+ "points": [
+  {
+   "term": "thallus",
+   "x": 0.185,
+   "y": 0.665,
+   "confidence": 0.9
+  },
+  {
+   "term": "gemma cup",
+   "x": 0.215,
+   "y": 0.505,
+   "confidence": 0.9
+  },
+  {
+   "term": "rhizoid",
+   "x": 0.3259,
+   "y": 0.7821,
+   "confidence": 0.9
+  },
+  {
+   "term": "antheridiophore",
+   "x": 0.335,
+   "y": 0.2,
+   "confidence": 0.8
+  },
+  {
+   "term": "archegoniophore",
+   "x": 0.785,
+   "y": 0.185,
+   "confidence": 0.8
+  }
+ ]
+}

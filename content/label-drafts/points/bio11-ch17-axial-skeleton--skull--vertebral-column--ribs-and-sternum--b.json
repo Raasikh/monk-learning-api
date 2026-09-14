@@ -1,11 +1,63 @@
-{"groups":[{"id":"upper","label":"Cervical and thoracic"},
-           {"id":"lower","label":"Lumbar, sacrum and coccyx"}],
- "points":[
- {"term":"atlas","x":0.481,"y":0.095,"confidence":0.75,"group":"upper"},
- {"term":"cervical vertebra","x":0.495,"y":0.140,"confidence":0.90,"group":"upper"},
- {"term":"thoracic vertebra","x":0.505,"y":0.325,"confidence":0.90,"group":"upper"},
- {"term":"intervertebral disc","x":0.513,"y":0.455,"confidence":0.70,"group":"upper"},
- {"term":"lumbar vertebra","x":0.492,"y":0.615,"confidence":0.90,"group":"lower"},
- {"term":"sacrum","x":0.498,"y":0.765,"confidence":0.90,"group":"lower"},
- {"term":"coccyx","x":0.505,"y":0.875,"confidence":0.85,"group":"lower"}
-]}
+{
+ "groups": [
+  {
+   "id": "upper",
+   "label": "Cervical and thoracic"
+  },
+  {
+   "id": "lower",
+   "label": "Lumbar, sacrum and coccyx"
+  }
+ ],
+ "points": [
+  {
+   "term": "atlas",
+   "x": 0.481,
+   "y": 0.095,
+   "confidence": 0.75,
+   "group": "upper"
+  },
+  {
+   "term": "cervical vertebra",
+   "x": 0.495,
+   "y": 0.14,
+   "confidence": 0.9,
+   "group": "upper"
+  },
+  {
+   "term": "thoracic vertebra",
+   "x": 0.505,
+   "y": 0.325,
+   "confidence": 0.9,
+   "group": "upper"
+  },
+  {
+   "term": "intervertebral disc",
+   "x": 0.513,
+   "y": 0.455,
+   "confidence": 0.7,
+   "group": "upper"
+  },
+  {
+   "term": "lumbar vertebra",
+   "x": 0.492,
+   "y": 0.615,
+   "confidence": 0.9,
+   "group": "lower"
+  },
+  {
+   "term": "sacrum",
+   "x": 0.498,
+   "y": 0.765,
+   "confidence": 0.9,
+   "group": "lower"
+  },
+  {
+   "term": "coccyx",
+   "x": 0.5078,
+   "y": 0.8786,
+   "confidence": 0.85,
+   "group": "lower"
+  }
+ ]
+}

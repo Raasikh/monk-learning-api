@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [],
   "labels": [
     {
@@ -28,8 +29,8 @@
         "hi": "stipe"
       },
       "anchor": [
-        0.48,
-        0.685
+        0.4833,
+        0.6839
       ],
       "side": "auto",
       "_point": {
@@ -65,7 +66,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--d.json",
+    "points_file": "content/label-drafts/points/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--d.json",
     "repointed": 3,
     "omitted_not_visible": [
       "flagellum",

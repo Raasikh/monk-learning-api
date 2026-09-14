@@ -1,16 +1,95 @@
-{"groups":[{"id":"upper","label":"Upper respiratory tract"},
-           {"id":"airway","label":"Conducting airway"},
-           {"id":"thorax","label":"Lungs and thorax"}],
- "points":[
- {"term":"nostril","x":0.412,"y":0.272,"confidence":0.70,"group":"upper"},
- {"term":"nasal cavity","x":0.435,"y":0.225,"confidence":0.85,"group":"upper"},
- {"term":"pharynx","x":0.472,"y":0.325,"confidence":0.75,"group":"upper"},
- {"term":"larynx","x":0.478,"y":0.385,"confidence":0.75,"group":"upper"},
- {"term":"trachea","x":0.480,"y":0.455,"confidence":0.90,"group":"airway"},
- {"term":"bronchus","x":0.515,"y":0.545,"confidence":0.80,"group":"airway"},
- {"term":"bronchiole","x":0.545,"y":0.605,"confidence":0.75,"group":"airway"},
- {"term":"lung","x":0.425,"y":0.630,"confidence":0.90,"group":"thorax"},
- {"term":"pleura","x":0.390,"y":0.615,"confidence":0.60,"group":"thorax"},
- {"term":"diaphragm","x":0.470,"y":0.790,"confidence":0.85,"group":"thorax"},
- {"term":"rib","x":0.600,"y":0.545,"confidence":0.75,"group":"thorax"}
-]}
+{
+ "groups": [
+  {
+   "id": "upper",
+   "label": "Upper respiratory tract"
+  },
+  {
+   "id": "airway",
+   "label": "Conducting airway"
+  },
+  {
+   "id": "thorax",
+   "label": "Lungs and thorax"
+  }
+ ],
+ "points": [
+  {
+   "term": "nostril",
+   "x": 0.412,
+   "y": 0.272,
+   "confidence": 0.7,
+   "group": "upper"
+  },
+  {
+   "term": "nasal cavity",
+   "x": 0.435,
+   "y": 0.225,
+   "confidence": 0.85,
+   "group": "upper"
+  },
+  {
+   "term": "pharynx",
+   "x": 0.472,
+   "y": 0.325,
+   "confidence": 0.75,
+   "group": "upper"
+  },
+  {
+   "term": "larynx",
+   "x": 0.478,
+   "y": 0.385,
+   "confidence": 0.75,
+   "group": "upper"
+  },
+  {
+   "term": "trachea",
+   "x": 0.48,
+   "y": 0.455,
+   "confidence": 0.9,
+   "group": "airway"
+  },
+  {
+   "term": "bronchus",
+   "x": 0.515,
+   "y": 0.545,
+   "confidence": 0.8,
+   "group": "airway"
+  },
+  {
+   "term": "bronchiole",
+   "x": 0.545,
+   "y": 0.605,
+   "confidence": 0.75,
+   "group": "airway"
+  },
+  {
+   "term": "lung",
+   "x": 0.425,
+   "y": 0.63,
+   "confidence": 0.9,
+   "group": "thorax"
+  },
+  {
+   "term": "pleura",
+   "x": 0.3906,
+   "y": 0.6143,
+   "confidence": 0.6,
+   "group": "thorax"
+  },
+  {
+   "term": "diaphragm",
+   "x": 0.47,
+   "y": 0.79,
+   "confidence": 0.85,
+   "group": "thorax"
+  },
+  {
+   "term": "rib",
+   "x": 0.5949,
+   "y": 0.5446,
+   "confidence": 0.75,
+   "group": "thorax"
+  }
+ ]
+}

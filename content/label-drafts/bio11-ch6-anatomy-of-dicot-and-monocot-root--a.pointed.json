@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "outer",
@@ -51,8 +52,8 @@
         "hi": "root hair"
       },
       "anchor": [
-        0.275,
-        0.185
+        0.2645,
+        0.1982
       ],
       "side": "auto",
       "group": "outer",
@@ -211,7 +212,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-anatomy-of-dicot-and-monocot-root--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch6-anatomy-of-dicot-and-monocot-root--a.json",
     "repointed": 11,
     "omitted_not_visible": [
       "pith"

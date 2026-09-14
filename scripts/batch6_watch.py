@@ -39,6 +39,9 @@ TARGETS = {
     "bio11-ch7-cockroach--nervous-system-and-reproduction--b": "new",
     "bio11-ch7-cockroach--nervous-system-and-reproduction--c": "new",
     "bio11-ch7-frog--external-morphology-and-digestive-system--b": "new",
+    # Added 2026-09-13: the Taenia plate, so platyhelminthes --b (a planarian
+    # under a Taenia term list) can stay bare instead of being mislabelled.
+    "bio11-ch4-phylum-platyhelminthes--c": "new",
 }
 
 

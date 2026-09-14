@@ -1,17 +1,95 @@
-{"groups":[
-  {"id":"excretory","label":"Excretory organs"},
-  {"id":"male","label":"Male reproductive organs"},
-  {"id":"female","label":"Female reproductive organs"}],
- "points":[
- {"term":"kidney","x":0.350,"y":0.300,"confidence":0.90,"group":"excretory"},
- {"term":"adrenal gland","x":0.368,"y":0.215,"confidence":0.70,"group":"excretory"},
- {"term":"ureter","x":0.410,"y":0.490,"confidence":0.75,"group":"excretory"},
- {"term":"urinary bladder","x":0.470,"y":0.750,"confidence":0.80,"group":"excretory"},
- {"term":"cloaca","x":0.483,"y":0.812,"confidence":0.70,"group":"excretory"},
- {"term":"testis","x":0.335,"y":0.555,"confidence":0.85,"group":"male"},
- {"term":"vasa efferentia","x":0.348,"y":0.450,"confidence":0.75,"group":"male"},
- {"term":"fat body","x":0.300,"y":0.240,"confidence":0.85,"group":"male"},
- {"term":"ovary","x":0.615,"y":0.555,"confidence":0.85,"group":"female"},
- {"term":"oviduct","x":0.690,"y":0.340,"confidence":0.80,"group":"female"},
- {"term":"ovisac","x":0.712,"y":0.720,"confidence":0.65,"group":"female"}
-]}
+{
+ "groups": [
+  {
+   "id": "excretory",
+   "label": "Excretory organs"
+  },
+  {
+   "id": "male",
+   "label": "Male reproductive organs"
+  },
+  {
+   "id": "female",
+   "label": "Female reproductive organs"
+  }
+ ],
+ "points": [
+  {
+   "term": "kidney",
+   "x": 0.35,
+   "y": 0.3,
+   "confidence": 0.9,
+   "group": "excretory"
+  },
+  {
+   "term": "adrenal gland",
+   "x": 0.368,
+   "y": 0.215,
+   "confidence": 0.7,
+   "group": "excretory"
+  },
+  {
+   "term": "ureter",
+   "x": 0.4196,
+   "y": 0.4875,
+   "confidence": 0.75,
+   "group": "excretory"
+  },
+  {
+   "term": "urinary bladder",
+   "x": 0.47,
+   "y": 0.75,
+   "confidence": 0.8,
+   "group": "excretory"
+  },
+  {
+   "term": "cloaca",
+   "x": 0.483,
+   "y": 0.812,
+   "confidence": 0.7,
+   "group": "excretory"
+  },
+  {
+   "term": "testis",
+   "x": 0.335,
+   "y": 0.555,
+   "confidence": 0.85,
+   "group": "male"
+  },
+  {
+   "term": "vasa efferentia",
+   "x": 0.348,
+   "y": 0.45,
+   "confidence": 0.75,
+   "group": "male"
+  },
+  {
+   "term": "fat body",
+   "x": 0.3,
+   "y": 0.24,
+   "confidence": 0.85,
+   "group": "male"
+  },
+  {
+   "term": "ovary",
+   "x": 0.615,
+   "y": 0.555,
+   "confidence": 0.85,
+   "group": "female"
+  },
+  {
+   "term": "oviduct",
+   "x": 0.6886,
+   "y": 0.3393,
+   "confidence": 0.8,
+   "group": "female"
+  },
+  {
+   "term": "ovisac",
+   "x": 0.712,
+   "y": 0.72,
+   "confidence": 0.65,
+   "group": "female"
+  }
+ ]
+}

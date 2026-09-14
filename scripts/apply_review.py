@@ -254,6 +254,12 @@ def main() -> int:
                     help="mobile repo root, for the layout gate")
     ap.add_argument("--by", required=True, help="the reviewer, e.g. raasikh")
     ap.add_argument("--dry-run", action="store_true", help="print, write nothing")
+    ap.add_argument("--exclude", default="",
+                    help="comma-separated asset_slugs to hold back from a "
+                         "--chapter run. A chapter is confirmed as a whole with "
+                         "named exceptions, not as a list of 22 lines, and the "
+                         "exceptions have to be visible in the command rather "
+                         "than remembered.")
     ap.add_argument("--confirmation", default="",
                     help="Raasikh's own message, quoted. Required to write.")
     args = ap.parse_args()
@@ -320,6 +326,23 @@ def main() -> int:
         print(f"\n{len(blocked) + len(missing)} set(s) are not ready and will be SKIPPED. "
               f"A plate without labels is the shipped baseline, so this is a partly\n"
               f"finished chapter rather than a broken one.")
+
+    excluded = {x.strip() for x in args.exclude.split(",") if x.strip()}
+    if excluded:
+        known = {slug for slug, _, _ in ready} | set(missing)
+        known |= {b[0] if isinstance(b, (list, tuple)) else b for b in blocked}
+        unknown = excluded - known
+        if unknown:
+            # An exclude that matches nothing is the dangerous kind: it reads
+            # as "held back" and publishes anyway. Refuse rather than warn.
+            raise SystemExit(
+                f"REFUSED: --exclude names {len(unknown)} slug(s) that are not in "
+                f"this chapter: {', '.join(sorted(unknown))}"
+            )
+        before = len(ready)
+        ready = [r for r in ready if r[0] not in excluded]
+        print(f"\nexcluded {before - len(ready)} set(s) by name: "
+              f"{', '.join(sorted(excluded))}")
 
     if args.dry_run:
         for slug, path, d in ready:

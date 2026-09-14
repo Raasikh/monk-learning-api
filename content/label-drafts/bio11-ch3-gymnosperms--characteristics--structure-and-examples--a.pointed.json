@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "male",
@@ -35,8 +36,8 @@
         "hi": "needle"
       },
       "anchor": [
-        0.42,
-        0.58
+        0.4208,
+        0.5804
       ],
       "side": "auto",
       "group": "shoot",
@@ -51,8 +52,8 @@
         "hi": "dwarf shoot"
       },
       "anchor": [
-        0.752,
-        0.43
+        0.7623,
+        0.4286
       ],
       "side": "auto",
       "group": "shoot",
@@ -131,7 +132,7 @@
         "hi": "seed"
       },
       "anchor": [
-        0.765,
+        0.7656,
         0.775
       ],
       "side": "auto",
@@ -177,7 +178,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-gymnosperms--characteristics--structure-and-examples--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch3-gymnosperms--characteristics--structure-and-examples--a.json",
     "repointed": 9,
     "omitted_not_visible": [],
     "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."

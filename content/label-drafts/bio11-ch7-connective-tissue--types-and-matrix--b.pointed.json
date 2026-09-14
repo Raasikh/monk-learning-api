@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 2,
   "groups": [],
   "labels": [
     {
@@ -13,8 +14,8 @@
         "hi": "adipocyte"
       },
       "anchor": [
-        0.565,
-        0.225
+        0.5714,
+        0.2304
       ],
       "side": "auto",
       "_point": {
@@ -50,12 +51,16 @@
     "osteocyte",
     "Haversian canal",
     "lamella",
-    "canaliculus"
+    "canaliculus",
+    "erythrocyte",
+    "leucocyte",
+    "platelet",
+    "plasma"
   ],
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/connective-b.json",
+    "points_file": "content/label-drafts/points/connective-b.json",
     "repointed": 2,
     "omitted_not_visible": [
       "fibroblast",
@@ -70,18 +75,21 @@
       "osteocyte",
       "Haversian canal",
       "lamella",
-      "canaliculus"
+      "canaliculus",
+      "erythrocyte",
+      "leucocyte",
+      "platelet",
+      "plasma"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
     "published": {
-      "version": 1,
-      "at": "2026-09-13T19:49:07Z",
+      "version": 2,
+      "at": "2026-09-14T00:29:08Z",
       "r2_key": "concept-assets/bio11-ch7-connective-tissue--types-and-matrix--b.json",
-      "sha256": "5505b0cc6f35afb4c2ae3028db786d06b1a9ca3f9cd3956216e98a8cfadc2438",
-      "bytes": 1231,
+      "sha256": "9b600c6cde327cd3885bf1607c41d6314ce0ff94a39408b301c479e8b6b4e7e5",
+      "bytes": 1299,
       "reviewed_by": "raasikh",
       "confirmation": "confirmed: bio11-ch7-connective-tissue--types-and-matrix--b, reviewed_by raasikh"
-    }
-  },
-  "label_set_version": 1
+    },
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
 }

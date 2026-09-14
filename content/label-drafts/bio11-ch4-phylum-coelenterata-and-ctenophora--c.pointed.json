@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [],
   "labels": [
     {
@@ -14,11 +15,41 @@
       },
       "anchor": [
         0.155,
-        0.485
+        0.455
       ],
       "side": "auto",
       "_point": {
         "confidence": 0.95
+      }
+    },
+    {
+      "id": "nematocyst",
+      "text": {
+        "en": "nematocyst",
+        "hi": "nematocyst"
+      },
+      "anchor": [
+        0.258,
+        0.428
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "coiled-thread",
+      "text": {
+        "en": "coiled thread",
+        "hi": "coiled thread"
+      },
+      "anchor": [
+        0.262,
+        0.58
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
       }
     }
   ],
@@ -35,8 +66,8 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-coelenterata-and-ctenophora--c.json",
-    "repointed": 1,
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-coelenterata-and-ctenophora--c.json",
+    "repointed": 3,
     "omitted_not_visible": [
       "tentacle",
       "hypostome",

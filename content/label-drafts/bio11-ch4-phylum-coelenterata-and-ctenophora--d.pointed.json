@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [],
   "labels": [
     {
@@ -13,8 +14,8 @@
         "hi": "tentacle"
       },
       "anchor": [
-        0.325,
-        0.5
+        0.3527,
+        0.5196
       ],
       "side": "auto",
       "_point": {
@@ -77,7 +78,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-coelenterata-and-ctenophora--d.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-coelenterata-and-ctenophora--d.json",
     "repointed": 4,
     "omitted_not_visible": [
       "hypostome",

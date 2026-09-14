@@ -1,8 +1,49 @@
-{"groups":[{"id":"outside","label":"External features"},{"id":"bone","label":"Skeleton"}],
- "points":[
- {"term":"beak","x":0.645,"y":0.165,"confidence":0.95,"group":"outside"},
- {"term":"feather","x":0.455,"y":0.545,"confidence":0.90,"group":"outside"},
- {"term":"wing","x":0.395,"y":0.475,"confidence":0.85,"group":"outside"},
- {"term":"hollow bone","x":0.815,"y":0.300,"confidence":0.90,"group":"bone"},
- {"term":"air cavity","x":0.825,"y":0.220,"confidence":0.85,"group":"bone"}
-]}
+{
+ "groups": [
+  {
+   "id": "outside",
+   "label": "External features"
+  },
+  {
+   "id": "bone",
+   "label": "Skeleton"
+  }
+ ],
+ "points": [
+  {
+   "term": "beak",
+   "x": 0.645,
+   "y": 0.165,
+   "confidence": 0.95,
+   "group": "outside"
+  },
+  {
+   "term": "feather",
+   "x": 0.455,
+   "y": 0.545,
+   "confidence": 0.9,
+   "group": "outside"
+  },
+  {
+   "term": "wing",
+   "x": 0.395,
+   "y": 0.475,
+   "confidence": 0.85,
+   "group": "outside"
+  },
+  {
+   "term": "hollow bone",
+   "x": 0.8237,
+   "y": 0.2946,
+   "confidence": 0.9,
+   "group": "bone"
+  },
+  {
+   "term": "air cavity",
+   "x": 0.825,
+   "y": 0.22,
+   "confidence": 0.85,
+   "group": "bone"
+  }
+ ]
+}

@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 2,
   "groups": [
     {
       "id": "head-thorax",
@@ -156,8 +157,8 @@
         "hi": "tibia"
       },
       "anchor": [
-        0.352,
-        0.76
+        0.3538,
+        0.7625
       ],
       "side": "auto",
       "group": "abdomen-legs",
@@ -205,7 +206,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/cockroach-morph-a.json",
+    "points_file": "content/label-drafts/points/cockroach-morph-a.json",
     "repointed": 10,
     "omitted_not_visible": [
       "mesothorax",
@@ -227,16 +228,15 @@
       "anus",
       "salivary gland"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
     "published": {
-      "version": 1,
-      "at": "2026-09-13T19:48:55Z",
+      "version": 2,
+      "at": "2026-09-14T00:29:05Z",
       "r2_key": "concept-assets/bio11-ch7-cockroach--morphology-and-digestive-system--a.json",
-      "sha256": "06f59dea4a13eb049d3e380f8b816adab997ab1ba2281b9892837f35e6648543",
-      "bytes": 3788,
+      "sha256": "69b491a9e8d88fed6309b92333fef9edb2e6aa68ab28211d728ac055e1568539",
+      "bytes": 3791,
       "reviewed_by": "raasikh",
       "confirmation": "confirmed: bio11-ch7-cockroach--morphology-and-digestive-system--a, reviewed_by raasikh"
-    }
-  },
-  "label_set_version": 1
+    },
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
 }

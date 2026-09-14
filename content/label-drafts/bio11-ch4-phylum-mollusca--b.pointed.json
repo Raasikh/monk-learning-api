@@ -4,6 +4,7 @@
   "image_h": 860,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "mantle",
@@ -44,8 +45,8 @@
         "hi": "tentacle"
       },
       "anchor": [
-        0.665,
-        0.335
+        0.6584,
+        0.3244
       ],
       "side": "auto",
       "group": "head",
@@ -110,7 +111,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-mollusca--b.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-mollusca--b.json",
     "repointed": 5,
     "omitted_not_visible": [
       "shell",

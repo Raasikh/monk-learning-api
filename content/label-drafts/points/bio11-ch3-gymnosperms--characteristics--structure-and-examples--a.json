@@ -1,14 +1,81 @@
-{"groups":[{"id":"male","label":"Male cone"},
-           {"id":"female","label":"Female cone"},
-           {"id":"shoot","label":"Shoot and seed"}],
- "points":[
- {"term":"male cone","x":0.295,"y":0.280,"confidence":0.90,"group":"male"},
- {"term":"microsporophyll","x":0.278,"y":0.335,"confidence":0.65,"group":"male"},
- {"term":"female cone","x":0.615,"y":0.630,"confidence":0.95,"group":"female"},
- {"term":"cone scale","x":0.665,"y":0.545,"confidence":0.80,"group":"female"},
- {"term":"megasporophyll","x":0.585,"y":0.715,"confidence":0.60,"group":"female"},
- {"term":"needle","x":0.420,"y":0.580,"confidence":0.95,"group":"shoot"},
- {"term":"dwarf shoot","x":0.752,"y":0.430,"confidence":0.70,"group":"shoot"},
- {"term":"seed","x":0.765,"y":0.775,"confidence":0.85,"group":"shoot"},
- {"term":"wing","x":0.775,"y":0.645,"confidence":0.85,"group":"shoot"}
-]}
+{
+ "groups": [
+  {
+   "id": "male",
+   "label": "Male cone"
+  },
+  {
+   "id": "female",
+   "label": "Female cone"
+  },
+  {
+   "id": "shoot",
+   "label": "Shoot and seed"
+  }
+ ],
+ "points": [
+  {
+   "term": "male cone",
+   "x": 0.295,
+   "y": 0.28,
+   "confidence": 0.9,
+   "group": "male"
+  },
+  {
+   "term": "microsporophyll",
+   "x": 0.278,
+   "y": 0.335,
+   "confidence": 0.65,
+   "group": "male"
+  },
+  {
+   "term": "female cone",
+   "x": 0.615,
+   "y": 0.63,
+   "confidence": 0.95,
+   "group": "female"
+  },
+  {
+   "term": "cone scale",
+   "x": 0.665,
+   "y": 0.545,
+   "confidence": 0.8,
+   "group": "female"
+  },
+  {
+   "term": "megasporophyll",
+   "x": 0.585,
+   "y": 0.715,
+   "confidence": 0.6,
+   "group": "female"
+  },
+  {
+   "term": "needle",
+   "x": 0.4208,
+   "y": 0.5804,
+   "confidence": 0.95,
+   "group": "shoot"
+  },
+  {
+   "term": "dwarf shoot",
+   "x": 0.7623,
+   "y": 0.4286,
+   "confidence": 0.7,
+   "group": "shoot"
+  },
+  {
+   "term": "seed",
+   "x": 0.7656,
+   "y": 0.775,
+   "confidence": 0.85,
+   "group": "shoot"
+  },
+  {
+   "term": "wing",
+   "x": 0.775,
+   "y": 0.645,
+   "confidence": 0.85,
+   "group": "shoot"
+  }
+ ]
+}

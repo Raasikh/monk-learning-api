@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "oral",
@@ -44,8 +45,8 @@
         "hi": "hypostome"
       },
       "anchor": [
-        0.497,
-        0.295
+        0.4933,
+        0.2982
       ],
       "side": "auto",
       "group": "oral",
@@ -60,8 +61,8 @@
         "hi": "mouth"
       },
       "anchor": [
-        0.497,
-        0.268
+        0.4877,
+        0.2804
       ],
       "side": "auto",
       "group": "oral",
@@ -126,7 +127,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-coelenterata-and-ctenophora--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-coelenterata-and-ctenophora--a.json",
     "repointed": 6,
     "omitted_not_visible": [
       "cnidoblast",

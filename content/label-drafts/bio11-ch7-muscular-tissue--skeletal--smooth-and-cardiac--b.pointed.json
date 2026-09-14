@@ -4,6 +4,7 @@
   "image_h": 595,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 2,
   "groups": [],
   "labels": [
     {
@@ -43,8 +44,8 @@
         "hi": "spindle shape"
       },
       "anchor": [
-        0.075,
-        0.615
+        0.0756,
+        0.6168
       ],
       "side": "auto",
       "_point": {
@@ -63,7 +64,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/muscular-b.json",
+    "points_file": "content/label-drafts/points/muscular-b.json",
     "repointed": 3,
     "omitted_not_visible": [
       "skeletal muscle fibre",
@@ -73,16 +74,15 @@
       "intercalated disc",
       "branching"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
     "published": {
-      "version": 1,
-      "at": "2026-09-13T19:49:52Z",
+      "version": 2,
+      "at": "2026-09-14T00:29:22Z",
       "r2_key": "concept-assets/bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--b.json",
-      "sha256": "975cda8d23d2b6261cba5e6e16247a711ff646f7486fec5596b81db94d4b73d5",
-      "bytes": 1415,
+      "sha256": "b4ed124c43a8776ef8dcf6630da3b3651062e9a645f3c971c11bdf77e6ff9b5c",
+      "bytes": 1417,
       "reviewed_by": "raasikh",
       "confirmation": "confirmed: bio11-ch7-muscular-tissue--skeletal--smooth-and-cardiac--b, reviewed_by raasikh"
-    }
-  },
-  "label_set_version": 1
+    },
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
 }

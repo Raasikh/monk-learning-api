@@ -1,8 +1,49 @@
-{"groups":[{"id":"sexes","label":"Female and male"},{"id":"head","label":"Anterior end"}],
- "points":[
- {"term":"female","x":0.245,"y":0.295,"confidence":0.85,"group":"sexes"},
- {"term":"male","x":0.545,"y":0.400,"confidence":0.85,"group":"sexes"},
- {"term":"curved tail","x":0.605,"y":0.585,"confidence":0.90,"group":"sexes"},
- {"term":"mouth","x":0.845,"y":0.400,"confidence":0.85,"group":"head"},
- {"term":"lip","x":0.845,"y":0.315,"confidence":0.85,"group":"head"}
-]}
+{
+ "groups": [
+  {
+   "id": "sexes",
+   "label": "Female and male"
+  },
+  {
+   "id": "head",
+   "label": "Anterior end"
+  }
+ ],
+ "points": [
+  {
+   "term": "female",
+   "x": 0.245,
+   "y": 0.295,
+   "confidence": 0.85,
+   "group": "sexes"
+  },
+  {
+   "term": "male",
+   "x": 0.545,
+   "y": 0.4,
+   "confidence": 0.85,
+   "group": "sexes"
+  },
+  {
+   "term": "curved tail",
+   "x": 0.6194,
+   "y": 0.5821,
+   "confidence": 0.9,
+   "group": "sexes"
+  },
+  {
+   "term": "mouth",
+   "x": 0.845,
+   "y": 0.4,
+   "confidence": 0.85,
+   "group": "head"
+  },
+  {
+   "term": "lip",
+   "x": 0.8449,
+   "y": 0.3179,
+   "confidence": 0.85,
+   "group": "head"
+  }
+ ]
+}

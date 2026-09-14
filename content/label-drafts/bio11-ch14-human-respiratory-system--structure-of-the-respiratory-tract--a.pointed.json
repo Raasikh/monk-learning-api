@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "upper",
@@ -163,8 +164,8 @@
         "hi": "pleura"
       },
       "anchor": [
-        0.39,
-        0.615
+        0.3906,
+        0.6143
       ],
       "side": "auto",
       "group": "thorax",
@@ -195,8 +196,8 @@
         "hi": "rib"
       },
       "anchor": [
-        0.6,
-        0.545
+        0.5949,
+        0.5446
       ],
       "side": "auto",
       "group": "thorax",
@@ -214,7 +215,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--a.json",
     "repointed": 11,
     "omitted_not_visible": [
       "epiglottis",

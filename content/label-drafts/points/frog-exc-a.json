@@ -1,13 +1,70 @@
-{"groups":[
-  {"id":"forebrain","label":"Forebrain"},
-  {"id":"hindbrain","label":"Midbrain and hindbrain"}],
- "points":[
- {"term":"olfactory lobe","x":0.175,"y":0.400,"confidence":0.85,"group":"forebrain"},
- {"term":"cerebral hemisphere","x":0.320,"y":0.375,"confidence":0.90,"group":"forebrain"},
- {"term":"diencephalon","x":0.478,"y":0.500,"confidence":0.75,"group":"forebrain"},
- {"term":"optic lobe","x":0.580,"y":0.355,"confidence":0.85,"group":"hindbrain"},
- {"term":"cerebellum","x":0.680,"y":0.500,"confidence":0.65,"group":"hindbrain"},
- {"term":"medulla oblongata","x":0.755,"y":0.500,"confidence":0.80,"group":"hindbrain"},
- {"term":"spinal cord","x":0.880,"y":0.500,"confidence":0.85,"group":"hindbrain"},
- {"term":"cranial nerve","x":0.545,"y":0.275,"confidence":0.80,"group":"hindbrain"}
-]}
+{
+ "groups": [
+  {
+   "id": "forebrain",
+   "label": "Forebrain"
+  },
+  {
+   "id": "hindbrain",
+   "label": "Midbrain and hindbrain"
+  }
+ ],
+ "points": [
+  {
+   "term": "olfactory lobe",
+   "x": 0.175,
+   "y": 0.4,
+   "confidence": 0.85,
+   "group": "forebrain"
+  },
+  {
+   "term": "cerebral hemisphere",
+   "x": 0.32,
+   "y": 0.375,
+   "confidence": 0.9,
+   "group": "forebrain"
+  },
+  {
+   "term": "diencephalon",
+   "x": 0.478,
+   "y": 0.5,
+   "confidence": 0.75,
+   "group": "forebrain"
+  },
+  {
+   "term": "optic lobe",
+   "x": 0.58,
+   "y": 0.355,
+   "confidence": 0.85,
+   "group": "hindbrain"
+  },
+  {
+   "term": "cerebellum",
+   "x": 0.68,
+   "y": 0.5,
+   "confidence": 0.65,
+   "group": "hindbrain"
+  },
+  {
+   "term": "medulla oblongata",
+   "x": 0.755,
+   "y": 0.5,
+   "confidence": 0.8,
+   "group": "hindbrain"
+  },
+  {
+   "term": "spinal cord",
+   "x": 0.88,
+   "y": 0.5,
+   "confidence": 0.85,
+   "group": "hindbrain"
+  },
+  {
+   "term": "cranial nerve",
+   "x": 0.5413,
+   "y": 0.275,
+   "confidence": 0.8,
+   "group": "hindbrain"
+  }
+ ]
+}

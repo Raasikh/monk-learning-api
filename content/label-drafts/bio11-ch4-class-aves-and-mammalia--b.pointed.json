@@ -45,6 +45,12 @@
       "pouch",
       "mammary gland"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "term_list_mismatch": {
+      "decided_by": "raasikh",
+      "on": "2026-09-13",
+      "ship": "as pointed — one label",
+      "why": "A platypus. `beak` IS in the term list and the bill is the obvious thing to point at — and it is deliberately NOT labelled, because beak is a bird term and using it here would teach a student that a mammal has one. Only `fur` applies."
+    }
   }
 }

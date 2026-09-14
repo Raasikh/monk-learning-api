@@ -1,10 +1,63 @@
-{"groups":[{"id":"gameto","label":"Leafy gametophyte"},{"id":"sporo","label":"Capsule"}],
- "points":[
- {"term":"leaf","x":0.225,"y":0.420,"confidence":0.90,"group":"gameto"},
- {"term":"stem","x":0.265,"y":0.620,"confidence":0.80,"group":"gameto"},
- {"term":"rhizoid","x":0.265,"y":0.845,"confidence":0.90,"group":"gameto"},
- {"term":"seta","x":0.295,"y":0.380,"confidence":0.85,"group":"gameto"},
- {"term":"capsule","x":0.695,"y":0.600,"confidence":0.90,"group":"sporo"},
- {"term":"operculum","x":0.675,"y":0.235,"confidence":0.90,"group":"sporo"},
- {"term":"peristome","x":0.695,"y":0.415,"confidence":0.90,"group":"sporo"}
-]}
+{
+ "groups": [
+  {
+   "id": "gameto",
+   "label": "Leafy gametophyte"
+  },
+  {
+   "id": "sporo",
+   "label": "Capsule"
+  }
+ ],
+ "points": [
+  {
+   "term": "leaf",
+   "x": 0.225,
+   "y": 0.42,
+   "confidence": 0.9,
+   "group": "gameto"
+  },
+  {
+   "term": "stem",
+   "x": 0.265,
+   "y": 0.62,
+   "confidence": 0.8,
+   "group": "gameto"
+  },
+  {
+   "term": "rhizoid",
+   "x": 0.265,
+   "y": 0.845,
+   "confidence": 0.9,
+   "group": "gameto"
+  },
+  {
+   "term": "seta",
+   "x": 0.2812,
+   "y": 0.3768,
+   "confidence": 0.85,
+   "group": "gameto"
+  },
+  {
+   "term": "capsule",
+   "x": 0.695,
+   "y": 0.6,
+   "confidence": 0.9,
+   "group": "sporo"
+  },
+  {
+   "term": "operculum",
+   "x": 0.675,
+   "y": 0.235,
+   "confidence": 0.9,
+   "group": "sporo"
+  },
+  {
+   "term": "peristome",
+   "x": 0.695,
+   "y": 0.415,
+   "confidence": 0.9,
+   "group": "sporo"
+  }
+ ]
+}

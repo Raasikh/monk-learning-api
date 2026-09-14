@@ -1,14 +1,88 @@
-{"groups":[{"id":"epi","label":"Epidermis"},{"id":"meso","label":"Mesophyll"},
-           {"id":"bundle","label":"Vascular bundle"}],
- "points":[
- {"term":"upper epidermis","x":0.150,"y":0.275,"confidence":0.90,"group":"epi"},
- {"term":"lower epidermis","x":0.300,"y":0.725,"confidence":0.90,"group":"epi"},
- {"term":"bulliform cell","x":0.475,"y":0.265,"confidence":0.95,"group":"epi"},
- {"term":"stoma","x":0.235,"y":0.285,"confidence":0.85,"group":"epi"},
- {"term":"cuticle","x":0.600,"y":0.235,"confidence":0.60,"group":"epi"},
- {"term":"mesophyll","x":0.220,"y":0.420,"confidence":0.85,"group":"meso"},
- {"term":"vascular bundle","x":0.145,"y":0.530,"confidence":0.90,"group":"bundle"},
- {"term":"bundle sheath","x":0.665,"y":0.495,"confidence":0.85,"group":"bundle"},
- {"term":"xylem","x":0.565,"y":0.515,"confidence":0.80,"group":"bundle"},
- {"term":"phloem","x":0.400,"y":0.565,"confidence":0.80,"group":"bundle"}
-]}
+{
+ "groups": [
+  {
+   "id": "epi",
+   "label": "Epidermis"
+  },
+  {
+   "id": "meso",
+   "label": "Mesophyll"
+  },
+  {
+   "id": "bundle",
+   "label": "Vascular bundle"
+  }
+ ],
+ "points": [
+  {
+   "term": "upper epidermis",
+   "x": 0.15,
+   "y": 0.275,
+   "confidence": 0.9,
+   "group": "epi"
+  },
+  {
+   "term": "lower epidermis",
+   "x": 0.3,
+   "y": 0.725,
+   "confidence": 0.9,
+   "group": "epi"
+  },
+  {
+   "term": "bulliform cell",
+   "x": 0.475,
+   "y": 0.265,
+   "confidence": 0.95,
+   "group": "epi"
+  },
+  {
+   "term": "stoma",
+   "x": 0.235,
+   "y": 0.285,
+   "confidence": 0.85,
+   "group": "epi"
+  },
+  {
+   "term": "cuticle",
+   "x": 0.5982,
+   "y": 0.2357,
+   "confidence": 0.6,
+   "group": "epi"
+  },
+  {
+   "term": "mesophyll",
+   "x": 0.22,
+   "y": 0.42,
+   "confidence": 0.85,
+   "group": "meso"
+  },
+  {
+   "term": "vascular bundle",
+   "x": 0.145,
+   "y": 0.53,
+   "confidence": 0.9,
+   "group": "bundle"
+  },
+  {
+   "term": "bundle sheath",
+   "x": 0.665,
+   "y": 0.495,
+   "confidence": 0.85,
+   "group": "bundle"
+  },
+  {
+   "term": "xylem",
+   "x": 0.565,
+   "y": 0.515,
+   "confidence": 0.8,
+   "group": "bundle"
+  },
+  {
+   "term": "phloem",
+   "x": 0.4,
+   "y": 0.565,
+   "confidence": 0.8,
+   "group": "bundle"
+  }
+ ]
+}

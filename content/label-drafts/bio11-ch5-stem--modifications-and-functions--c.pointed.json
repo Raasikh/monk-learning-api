@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [],
   "labels": [
     {
@@ -58,8 +59,8 @@
         "hi": "tendril"
       },
       "anchor": [
-        0.735,
-        0.575
+        0.7411,
+        0.5804
       ],
       "side": "auto",
       "_point": {
@@ -81,7 +82,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-stem--modifications-and-functions--c.json",
+    "points_file": "content/label-drafts/points/bio11-ch5-stem--modifications-and-functions--c.json",
     "repointed": 4,
     "omitted_not_visible": [
       "tuber",

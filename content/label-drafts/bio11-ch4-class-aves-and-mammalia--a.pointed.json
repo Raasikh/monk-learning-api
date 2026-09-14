@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "outside",
@@ -76,8 +77,8 @@
         "hi": "hollow bone"
       },
       "anchor": [
-        0.815,
-        0.3
+        0.8237,
+        0.2946
       ],
       "side": "auto",
       "group": "bone",
@@ -110,7 +111,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-class-aves-and-mammalia--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-class-aves-and-mammalia--a.json",
     "repointed": 5,
     "omitted_not_visible": [
       "fur",

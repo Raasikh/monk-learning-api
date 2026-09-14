@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [],
   "labels": [
     {
@@ -43,8 +44,8 @@
         "hi": "rhizoid"
       },
       "anchor": [
-        0.33,
-        0.79
+        0.3259,
+        0.7821
       ],
       "side": "auto",
       "_point": {
@@ -93,7 +94,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch3-bryophytes--liverworts-and-mosses--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch3-bryophytes--liverworts-and-mosses--a.json",
     "repointed": 5,
     "omitted_not_visible": [
       "leaf",

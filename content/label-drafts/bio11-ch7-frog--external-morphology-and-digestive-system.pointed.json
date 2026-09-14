@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 2,
   "groups": [
     {
       "id": "head",
@@ -104,8 +105,8 @@
         "hi": "nostril"
       },
       "anchor": [
-        0.112,
-        0.168
+        0.1194,
+        0.1786
       ],
       "side": "auto",
       "group": "sense",
@@ -317,7 +318,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/frog-external.json",
+    "points_file": "content/label-drafts/points/frog-external.json",
     "repointed": 16,
     "omitted_not_visible": [
       "nictitating membrane",
@@ -327,16 +328,15 @@
       "spleen",
       "bile duct"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
     "published": {
-      "version": 1,
-      "at": "2026-09-13T19:49:45Z",
+      "version": 2,
+      "at": "2026-09-14T00:29:19Z",
       "r2_key": "concept-assets/bio11-ch7-frog--external-morphology-and-digestive-system.json",
-      "sha256": "3e1ecd203d3113ddc006bce1daf31f6e044c20c48a45579ab50a975f4ceac135",
-      "bytes": 5676,
+      "sha256": "66345b4f2c79e0598826011a9d5753612f6708d72d31c3c0424c0b72e0271f60",
+      "bytes": 5678,
       "reviewed_by": "raasikh",
       "confirmation": "confirmed: bio11-ch7-frog--external-morphology-and-digestive-system, reviewed_by raasikh"
-    }
-  },
-  "label_set_version": 1
+    },
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
 }

@@ -1,6 +1,28 @@
-{"points":[
- {"term":"spiral chloroplast","x":0.440,"y":0.155,"confidence":0.95},
- {"term":"pyrenoid","x":0.537,"y":0.310,"confidence":0.85},
- {"term":"nucleus","x":0.498,"y":0.500,"confidence":0.90},
- {"term":"cell wall","x":0.500,"y":0.437,"confidence":0.80}
-]}
+{
+ "points": [
+  {
+   "term": "spiral chloroplast",
+   "x": 0.44,
+   "y": 0.155,
+   "confidence": 0.95
+  },
+  {
+   "term": "pyrenoid",
+   "x": 0.5379,
+   "y": 0.3089,
+   "confidence": 0.85
+  },
+  {
+   "term": "nucleus",
+   "x": 0.498,
+   "y": 0.5,
+   "confidence": 0.9
+  },
+  {
+   "term": "cell wall",
+   "x": 0.5,
+   "y": 0.437,
+   "confidence": 0.8
+  }
+ ]
+}

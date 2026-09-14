@@ -4,6 +4,7 @@
   "image_h": 860,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "outer",
@@ -42,8 +43,8 @@
         "hi": "renal capsule"
       },
       "anchor": [
-        0.395,
-        0.225
+        0.3837,
+        0.2407
       ],
       "side": "auto",
       "group": "outer",
@@ -186,8 +187,8 @@
         "hi": "renal artery"
       },
       "anchor": [
-        0.145,
-        0.432
+        0.1446,
+        0.4442
       ],
       "side": "auto",
       "group": "tract",
@@ -280,7 +281,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch16-structure-of-the-human-kidney-and-urinary-tract.json",
+    "points_file": "content/label-drafts/points/bio11-ch16-structure-of-the-human-kidney-and-urinary-tract.json",
     "repointed": 15,
     "omitted_not_visible": [],
     "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."

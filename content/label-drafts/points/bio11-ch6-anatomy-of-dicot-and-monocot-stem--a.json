@@ -1,16 +1,102 @@
-{"groups":[{"id":"outer","label":"Outer layers"},{"id":"inner","label":"Inner ground tissue"},
-           {"id":"bundle","label":"Vascular bundle"}],
- "points":[
- {"term":"cuticle","x":0.500,"y":0.088,"confidence":0.70,"group":"outer"},
- {"term":"epidermis","x":0.500,"y":0.115,"confidence":0.80,"group":"outer"},
- {"term":"hypodermis","x":0.500,"y":0.145,"confidence":0.80,"group":"outer"},
- {"term":"cortex","x":0.345,"y":0.630,"confidence":0.85,"group":"outer"},
- {"term":"endodermis","x":0.362,"y":0.440,"confidence":0.65,"group":"inner"},
- {"term":"pericycle","x":0.345,"y":0.365,"confidence":0.65,"group":"inner"},
- {"term":"medullary ray","x":0.455,"y":0.310,"confidence":0.80,"group":"inner"},
- {"term":"pith","x":0.500,"y":0.500,"confidence":0.90,"group":"inner"},
- {"term":"vascular bundle","x":0.395,"y":0.300,"confidence":0.90,"group":"bundle"},
- {"term":"phloem","x":0.545,"y":0.245,"confidence":0.80,"group":"bundle"},
- {"term":"cambium","x":0.555,"y":0.290,"confidence":0.75,"group":"bundle"},
- {"term":"xylem","x":0.565,"y":0.335,"confidence":0.85,"group":"bundle"}
-]}
+{
+ "groups": [
+  {
+   "id": "outer",
+   "label": "Outer layers"
+  },
+  {
+   "id": "inner",
+   "label": "Inner ground tissue"
+  },
+  {
+   "id": "bundle",
+   "label": "Vascular bundle"
+  }
+ ],
+ "points": [
+  {
+   "term": "cuticle",
+   "x": 0.5,
+   "y": 0.1089,
+   "confidence": 0.7,
+   "group": "outer"
+  },
+  {
+   "term": "epidermis",
+   "x": 0.5,
+   "y": 0.115,
+   "confidence": 0.8,
+   "group": "outer"
+  },
+  {
+   "term": "hypodermis",
+   "x": 0.5,
+   "y": 0.145,
+   "confidence": 0.8,
+   "group": "outer"
+  },
+  {
+   "term": "cortex",
+   "x": 0.345,
+   "y": 0.63,
+   "confidence": 0.85,
+   "group": "outer"
+  },
+  {
+   "term": "endodermis",
+   "x": 0.362,
+   "y": 0.44,
+   "confidence": 0.65,
+   "group": "inner"
+  },
+  {
+   "term": "pericycle",
+   "x": 0.345,
+   "y": 0.365,
+   "confidence": 0.65,
+   "group": "inner"
+  },
+  {
+   "term": "medullary ray",
+   "x": 0.455,
+   "y": 0.31,
+   "confidence": 0.8,
+   "group": "inner"
+  },
+  {
+   "term": "pith",
+   "x": 0.5,
+   "y": 0.5,
+   "confidence": 0.9,
+   "group": "inner"
+  },
+  {
+   "term": "vascular bundle",
+   "x": 0.395,
+   "y": 0.3,
+   "confidence": 0.9,
+   "group": "bundle"
+  },
+  {
+   "term": "phloem",
+   "x": 0.545,
+   "y": 0.245,
+   "confidence": 0.8,
+   "group": "bundle"
+  },
+  {
+   "term": "cambium",
+   "x": 0.555,
+   "y": 0.29,
+   "confidence": 0.75,
+   "group": "bundle"
+  },
+  {
+   "term": "xylem",
+   "x": 0.565,
+   "y": 0.335,
+   "confidence": 0.85,
+   "group": "bundle"
+  }
+ ]
+}

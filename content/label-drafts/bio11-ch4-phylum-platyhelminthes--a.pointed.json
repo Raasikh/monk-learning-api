@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "scolex",
@@ -44,8 +45,8 @@
         "hi": "hook"
       },
       "anchor": [
-        0.735,
-        0.128
+        0.7366,
+        0.1304
       ],
       "side": "auto",
       "group": "scolex",
@@ -124,7 +125,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-platyhelminthes--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-platyhelminthes--a.json",
     "repointed": 6,
     "omitted_not_visible": [
       "gravid proglottid"

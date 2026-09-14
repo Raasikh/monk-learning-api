@@ -1,10 +1,63 @@
-{"groups":[{"id":"head","label":"Head"},{"id":"body","label":"Body and appendages"}],
- "points":[
- {"term":"antenna","x":0.415,"y":0.185,"confidence":0.95,"group":"head"},
- {"term":"compound eye","x":0.455,"y":0.305,"confidence":0.85,"group":"head"},
- {"term":"head","x":0.500,"y":0.325,"confidence":0.80,"group":"body"},
- {"term":"thorax","x":0.500,"y":0.435,"confidence":0.85,"group":"body"},
- {"term":"abdomen","x":0.500,"y":0.700,"confidence":0.90,"group":"body"},
- {"term":"wing","x":0.265,"y":0.395,"confidence":0.95,"group":"body"},
- {"term":"jointed appendage","x":0.415,"y":0.665,"confidence":0.80,"group":"body"}
-]}
+{
+ "groups": [
+  {
+   "id": "head",
+   "label": "Head"
+  },
+  {
+   "id": "body",
+   "label": "Body and appendages"
+  }
+ ],
+ "points": [
+  {
+   "term": "antenna",
+   "x": 0.4141,
+   "y": 0.1893,
+   "confidence": 0.95,
+   "group": "head"
+  },
+  {
+   "term": "compound eye",
+   "x": 0.4542,
+   "y": 0.3,
+   "confidence": 0.85,
+   "group": "head"
+  },
+  {
+   "term": "head",
+   "x": 0.5,
+   "y": 0.325,
+   "confidence": 0.8,
+   "group": "body"
+  },
+  {
+   "term": "thorax",
+   "x": 0.5,
+   "y": 0.435,
+   "confidence": 0.85,
+   "group": "body"
+  },
+  {
+   "term": "abdomen",
+   "x": 0.5,
+   "y": 0.7,
+   "confidence": 0.9,
+   "group": "body"
+  },
+  {
+   "term": "wing",
+   "x": 0.265,
+   "y": 0.395,
+   "confidence": 0.95,
+   "group": "body"
+  },
+  {
+   "term": "jointed appendage",
+   "x": 0.415,
+   "y": 0.665,
+   "confidence": 0.8,
+   "group": "body"
+  }
+ ]
+}

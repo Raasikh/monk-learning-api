@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "head",
@@ -76,8 +77,8 @@
         "hi": "antenna"
       },
       "anchor": [
-        0.415,
-        0.185
+        0.4141,
+        0.1893
       ],
       "side": "auto",
       "group": "head",
@@ -92,8 +93,8 @@
         "hi": "compound eye"
       },
       "anchor": [
-        0.455,
-        0.305
+        0.4542,
+        0.3
       ],
       "side": "auto",
       "group": "head",
@@ -141,7 +142,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch4-phylum-arthropoda--e.json",
+    "points_file": "content/label-drafts/points/bio11-ch4-phylum-arthropoda--e.json",
     "repointed": 7,
     "omitted_not_visible": [
       "exoskeleton",

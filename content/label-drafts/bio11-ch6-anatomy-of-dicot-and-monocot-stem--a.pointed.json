@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "outer",
@@ -52,7 +53,7 @@
       },
       "anchor": [
         0.5,
-        0.088
+        0.1089
       ],
       "side": "auto",
       "group": "outer",
@@ -228,7 +229,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-anatomy-of-dicot-and-monocot-stem--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch6-anatomy-of-dicot-and-monocot-stem--a.json",
     "repointed": 12,
     "omitted_not_visible": [
       "bundle sheath",

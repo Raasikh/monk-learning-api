@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "girdle",
@@ -76,8 +77,8 @@
         "hi": "humerus"
       },
       "anchor": [
-        0.478,
-        0.305
+        0.4799,
+        0.3036
       ],
       "side": "auto",
       "group": "girdle",
@@ -92,7 +93,7 @@
         "hi": "radius"
       },
       "anchor": [
-        0.472,
+        0.4766,
         0.575
       ],
       "side": "auto",
@@ -181,7 +182,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--a.json",
+    "points_file": "content/label-drafts/points/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--a.json",
     "repointed": 9,
     "omitted_not_visible": [
       "ilium",

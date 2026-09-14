@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 2,
   "groups": [
     {
       "id": "excretory",
@@ -51,8 +52,8 @@
         "hi": "ureter"
       },
       "anchor": [
-        0.41,
-        0.49
+        0.4196,
+        0.4875
       ],
       "side": "auto",
       "group": "excretory",
@@ -163,8 +164,8 @@
         "hi": "oviduct"
       },
       "anchor": [
-        0.69,
-        0.34
+        0.6886,
+        0.3393
       ],
       "side": "auto",
       "group": "female",
@@ -219,7 +220,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/frog-exc-b.json",
+    "points_file": "content/label-drafts/points/frog-exc-b.json",
     "repointed": 11,
     "omitted_not_visible": [
       "olfactory lobe",
@@ -232,16 +233,15 @@
       "cranial nerve",
       "Bidder's canal"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
     "published": {
-      "version": 1,
-      "at": "2026-09-13T19:49:42Z",
+      "version": 2,
+      "at": "2026-09-14T00:29:15Z",
       "r2_key": "concept-assets/bio11-ch7-frog--excretory--nervous-and-reproductive-systems--b.json",
-      "sha256": "14c43c03a5ae645f9d24d01a850e33316c1a528403fd3768362ae0db45461659",
-      "bytes": 4125,
+      "sha256": "119b25e9c3bb89a9004700455177105fc67fd2d0e671f533169a382fb2d02fd6",
+      "bytes": 4133,
       "reviewed_by": "raasikh",
       "confirmation": "confirmed: bio11-ch7-frog--excretory--nervous-and-reproductive-systems--b, reviewed_by raasikh"
-    }
-  },
-  "label_set_version": 1
+    },
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
 }

@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [
     {
       "id": "pelvis",
@@ -115,8 +116,8 @@
         "hi": "femur"
       },
       "anchor": [
-        0.543,
-        0.375
+        0.5569,
+        0.3929
       ],
       "side": "auto",
       "group": "leg",
@@ -163,8 +164,8 @@
         "hi": "fibula"
       },
       "anchor": [
-        0.521,
-        0.67
+        0.529,
+        0.6696
       ],
       "side": "auto",
       "group": "foot",
@@ -218,7 +219,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--b.json",
+    "points_file": "content/label-drafts/points/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--b.json",
     "repointed": 11,
     "omitted_not_visible": [
       "clavicle",

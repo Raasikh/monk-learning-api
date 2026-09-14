@@ -4,6 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [],
   "labels": [
     {
@@ -43,7 +44,7 @@
         "hi": "spore"
       },
       "anchor": [
-        0.852,
+        0.856,
         0.325
       ],
       "side": "auto",
@@ -58,8 +59,8 @@
         "hi": "sporangiophore"
       },
       "anchor": [
-        0.888,
-        0.435
+        0.8772,
+        0.3911
       ],
       "side": "auto",
       "_point": {
@@ -91,7 +92,7 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--c.json",
+    "points_file": "content/label-drafts/points/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--c.json",
     "repointed": 5,
     "omitted_not_visible": [
       "mycelium",
