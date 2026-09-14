@@ -1,201 +1,107 @@
-# D3 — the maths gap: what the plan asked for vs what the registry can draw
+# Maths 12 ch8 — what routes, what does not, and the one real gap
 
-> **CORRECTION, 2026-09-12.** The central claim below — that 16 rows were an
-> "honest refusal" in which "the model was asked, consulted the spec, and said
-> no" — is **wrong**, and the rest of the document should be read against that.
->
-> `widget_cannot_express_concept` was never the model's verdict. It is a
-> hardcoded lookup in `scripts/measure_widget_routing.py`:
-> `if rec["subtopic_key"] in CANNOT_EXPRESS`. That set was a hand-written list,
-> and two of its three entries went stale when xy_plot v3 shipped:
->
-> * `area-by-integration-along-the-y-axis` said "needs a transpose flag" —
->   `integrate_along` **is** that flag, and six test files exercise it.
-> * `area-of-regions-involving-modulus-and-piecewise` said "needs an array of
->   (breakpoint, curve, coeffs)" — `pieces` **is** that array.
->
-> So this document recommended building two capabilities that already existed,
-> on the strength of a label the harness wrote for itself. The stale entries
-> are now removed and the classifier reports `model_chose_no_widget` for those
-> rows, which is the truth: the model reaches for no widget, and why is still
-> open.
->
-> **Measured after the correction**, on the eight y-axis segments:
-> the parameter works (206 xy-plot tests pass); spelling `integrate_along` out
-> in the spec changed nothing (0/8); replacing the blunt
-> "No circles/regions/panels" with a precise one changed nothing (0/8);
-> and neither an existing example SVG nor the `conic_figure` diagram hint
-> explains it — rows **with** an example SVG fire *more* often (36.5% vs
-> 21.1%), and `conic_figure` fires 31% across the chapter.
->
-> **These eight rows are not free.** The one recommendation below that
-> survives unchanged is conics, which is still a real capability gap.
+**Rewritten 2026-09-13 from `scripts/routing_maths12_ch8_e5.jsonl` only.**
+Every earlier version of this file is superseded. The one before it was built
+on a label the measurement harness wrote for itself, and it recommended
+building two capabilities that already existed — see "What the old version got
+wrong" at the end, which is kept because the mistake is more instructive than
+the conclusion.
 
+## The measurement
 
-**No code. A decision note.** Maths 12 ch8 proposed 31 sane / 40 insane (43.7%),
-far below the 85% bar, and D3's instruction was to find out *why* before
-anyone tunes a payload. Clustered from the 71 measured rows in
-`scripts/routing_maths12_ch8.jsonl`.
+71 segments, every one reaching the model. **24 fired a widget (33.8%).**
 
----
-
-## The shape of it: this is not 40 scattered failures
-
-Routing is **all-or-nothing per subtopic**. Nine concepts, and every one is
-either fully served or not served at all:
-
-| subtopic | fired | what happened instead |
+| subtopic | fired | verdict |
 |---|---|---|
 | area-under-a-simple-curve-bounded-by-the-axes | **9/9** | — |
+| area-of-regions-involving-modulus-and-piecewise | **8/8** | — |
 | area-bounded-by-a-parabola-and-a-line | **7/7** | — |
-| area-of-regions-involving-modulus-and-piecewise | **7/8** | — |
-| area-between-two-intersecting-curves | 0/9 | svg ×9 |
-| area-bounded-by-a-curve-and-its-tangent-or-normal | 0/8 | svg ×8 |
-| area-by-integration-along-the-y-axis | 0/8 | svg ×8 |
-| area-of-regions-bounded-by-circles-and-ellipses | 0/8 | svg ×8 |
-| area-between-a-function-and-its-inverse | 0/7 | svg ×6, text ×1 |
-| area-of-regions-described-by-inequalities | 0/7 | svg ×5, text ×2 |
+| area-between-two-intersecting-curves | 0/9 | model chose no widget |
+| area-bounded-by-a-curve-and-its-tangent-or-normal | 0/8 | model chose no widget |
+| area-by-integration-along-the-y-axis | 0/8 | model chose no widget |
+| area-of-regions-bounded-by-circles-and-ellipses | 0/8 | **widget cannot express** |
+| area-of-regions-described-by-inequalities | 0/7 | model chose no widget |
+| area-between-a-function-and-its-inverse | 0/7 | model chose no widget |
 
-**23 of 71 fire; 47 of the 48 non-fires are six whole concepts.** That matters
-for the fix: this is not a tuning job on forty rows, it is six capabilities,
-and a concept either gets one or it does not. It also explains the 43.7% —
-the chapter is not badly served, it is *unevenly* served.
+**Routing is all-or-nothing per subtopic.** Nine subtopics, and every one is
+either fully served or not served at all. That has survived three
+measurements and is the most useful single fact here: this is not forty
+scattered rows to tune, it is six capabilities, and a concept either gets one
+or it does not.
 
-The three that work are exactly the three whose region is bounded by a
-function and the axes, or by a function and a straight line. Every one that
-fails needs something else to bound the region.
+The three that work are exactly those whose region is bounded by a function
+and the axes, by a function and a straight line, or by pieces of functions.
+Everything that fails needs something else to bound the region.
 
----
+## The split that matters
 
-## The registry's own account of itself
+**39 rows: `model_chose_no_widget`.** The model was shown `xy_plot`, did not
+decline it, and drew an SVG instead. No verdict was recorded because the model
+gave none.
 
-The full text the model is given for `xy_plot`:
+**8 rows: `widget_cannot_express_concept`** — all of them
+`area-of-regions-bounded-by-circles-and-ellipses`. This is now the ONLY
+subtopic carrying that label, and it is the only one where the label is the
+widget's own account of itself: `curve` offers
+`line|parabola|sine|exponential|reciprocal` and nothing conic.
 
-> y=f(x): area under it, the area between two curves, piecewise/modulus,
-> tangent/normal, secant chord … curve/curve2 (line|parabola|sine|exponential|
-> reciprocal) … integrate_along … **No circles/regions/panels.**
+## What is NOT the problem — each tested, each negative
 
-So the spec **claims** area-between-two-curves and tangent/normal, and
-**disclaims** circles and regions. Comparing that against the table above is
-where the useful split appears.
+These were measured rather than reasoned about, because the previous version
+of this document reasoned and was wrong.
 
----
+* **`integrate_along:'y'` is not missing.** It shipped with v3, it is
+  validated, six test files exercise it, and 206 xy-plot tests pass. Its
+  subtopic still fires 0/8.
+* **The spec wording is not the blocker.** Spelling `integrate_along` out in
+  the registry spec: 0/8, no change. Replacing the blunt
+  "No circles/regions/panels" with a precise statement of what the widget can
+  and cannot draw: 0/8, no change.
+* **A precomputed example SVG does not suppress the widget.** Rows that have
+  one fire *more* often — 36.5% against 21.1%.
+* **The `conic_figure` diagram hint does not suppress it either.** That hint
+  fires 31% across the chapter.
 
-## Two different failures, and only one is a missing capability
+So for those 39 rows the cause is not yet isolated, and this document does not
+pretend otherwise. **They are not free and they should not be budgeted as
+though a prompt change will recover them.**
 
-The decline *reason* separates them cleanly, and it was recorded per row:
+## The one real gap: conics
 
-**A. "widget_cannot_express_concept" — 16 rows, an honest refusal.**
-`circles-and-ellipses` (8) and `integration-along-the-y-axis` (8). The model
-was asked, consulted the spec, and said no.
+Eight rows, and the only ones the widget itself says it cannot draw. A circle
+is not a function of x: it needs upper and lower branches and segment
+arithmetic, not a difference of antiderivatives. The earlier SANE review found
+that the rows which *did* attempt one had faked it with a parabola or a
+hyperbola, which is worse than declining.
 
-- For circles the spec is right and the refusal is correct: `curve` has no
-  conic, and the earlier SANE review found the rows that *did* attempt one had
-  faked it with a parabola or a hyperbola. **A real capability gap.**
-- For the y-axis the spec says `integrate_along` exists — and the model still
-  declined all 8. That is the spec advertising a parameter the model does not
-  believe it can use. **Not a capability gap; a spec/prompt gap.**
+The proposed spec is in **`docs/conic-plot-spec.md`**. Nothing is built.
 
-**B. "model_chose_no_widget" — 31 rows, the model never engaged.**
-`intersecting-curves` (9), `tangent-or-normal` (8), `inverse` (7),
-`inequalities` (7). The spec claims two of these four outright. The model did
-not decline them — it simply did not reach for the widget, and drew an SVG.
+**Estimated recovery: 8 rows outright (11% of the chapter), plus an unknown
+part of `area-of-regions-described-by-inequalities` (7 rows) whose regions are
+often circle-bounded.** Deliberately not claimed as a range beyond that: the
+inequalities rows are `model_chose_no_widget`, and nothing above explains that
+class, so counting them would be the same error this document is correcting.
 
-That distinction is the finding. **Build-shaped work is a minority of the
-47.**
+## What the old version got wrong, and why it is recorded here
 
----
+It read `widget_cannot_express_concept` on 16 rows as "the model was asked,
+consulted the spec, and said no". The label was never the model's. It came
+from a hardcoded set in `scripts/measure_widget_routing.py`:
 
-## The three capabilities, and what each recovers
+```python
+if rec["subtopic_key"] in CANNOT_EXPRESS:
+    return "widget_cannot_express_concept"
+```
 
-Ranked by rows recovered per unit of build.
+whose own comment promised it was "copied from the widget rather than
+re-derived, so the classifier and the widget agree by construction". The
+widget moved to v3; the set did not. Two of its three entries were stale —
+`integrate_along` is the transpose flag one of them asked for, and `pieces` is
+the breakpoint array the other asked for — so this document recommended
+building both. The set now contains only circles-and-ellipses, and
+`area-of-regions-involving-modulus-and-piecewise` promptly measured **8/8**,
+which is what a capability that already exists looks like.
 
-### 1. Region bounded by two curves, with the intersections solved — ~24 rows (34% of the chapter)
-
-Covers `intersecting-curves` (9), `inverse` (7), and most of `inequalities`
-(7). `curve2` exists and `area_between` is a mode, but nothing solves for
-where the curves *meet*, so the author must supply `shade_from`/`shade_to` by
-hand — and for two intersecting curves those limits **are the answer to the
-problem being taught**. A widget that makes the teacher compute the thing the
-diagram is meant to reveal is one a model will avoid, which is exactly what
-31 "chose no widget" rows look like.
-
-The inverse case is this plus one line: `f`, `f⁻¹` and `y = x`, reflected.
-
-**Estimated recovery: 20–24 rows.** Highest return, and the least new drawing
-— the renderer already shades; it needs to be told where by solving rather
-than by being told.
-
-### 2. Conic sections — circle and ellipse — ~8–12 rows (11–17%)
-
-Covers `circles-and-ellipses` (8) outright and unlocks the circle-bounded
-members of `inequalities`. Needs a genuine new curve kind: a circle is not a
-function of x, so it cannot join the `line|parabola|sine|exponential|
-reciprocal` family without the renderer learning to draw and shade a
-non-functional boundary.
-
-**Estimated recovery: 8–12 rows.** Clean, self-contained, and the spec already
-tells the truth about not having it — so the model will start using it the day
-it exists.
-
-### 3. Tangent/normal as a *boundary* of the shaded region — ~8 rows (11%)
-
-Covers `tangent-or-normal` (8). `tangent_kind` already **draws** a tangent;
-what is missing is the tangent participating in the region — the area between
-a curve and its own tangent is bounded by both. The earlier SANE review found
-seven of these segments drawn with the tangent absent entirely, which fits: the
-model had no way to express "bounded by this line I just drew".
-
-**Estimated recovery: ~8 rows.** Smallest build of the three, and it extends a
-parameter that already exists rather than adding a new one.
-
----
-
-## The free one, and it is not a build
-
-**`integrate_along: 'y'` — 8 rows, already in the schema.**
-
-The spec lists it; the model declined all 8 y-axis segments as
-*cannot express*. Before anything is built, someone should find out which is
-true:
-
-- the parameter works and the spec describes it too thinly for the model to
-  trust — a prompt fix, an afternoon; or
-- it is in the schema and does not render correctly — a bug, and one that
-  would have shipped silently, because no row exercises it today.
-
-Either way it is **8 rows (11%) for no new capability**, and it is the first
-thing to check. It would move the chapter from 43.7% to roughly 55% on its
-own.
-
----
-
-## What this adds up to
-
-| change | rows | chapter share | shape |
-|---|---|---|---|
-| resolve `integrate_along:'y'` | 8 | +11% | prompt fix or bug fix |
-| region between two curves, intersections solved | 20–24 | +28–34% | build |
-| conics (circle, ellipse) | 8–12 | +11–17% | build |
-| tangent/normal as a boundary | 8 | +11% | small build |
-
-Doing the free one plus capability 1 is enough to clear 85% for this chapter.
-All four would take it close to complete.
-
-**Two cautions before choosing.**
-
-This is **one chapter**. Capability 1 is plainly general — area between curves
-is the whole of Application of Integrals and recurs in physics work-done
-problems. Conics may be narrower than they look: worth checking the archetype
-column for how many other concepts across maths would route to a circle before
-building one.
-
-And the 43.7% is a *proposal*. Those SANE verdicts were produced by a reviewer
-that never saw the narration — the harness does not capture speech — and they
-are not confirmed. If the split above changes anyone's mind about what to
-build, the flagged rows deserve a look first.
-
----
-
-**Stopping here, as directed. Raasikh chooses which capability to build;
-nothing in maths is built until he does.**
+The lesson is not "check the harness". It is that a derived label read as
+evidence, and nothing in the pipeline distinguished a verdict the model gave
+from a verdict the harness supplied.

@@ -87,7 +87,21 @@ from typing import Any, Dict, List, Tuple
 
 REPO = Path(__file__).resolve().parent.parent
 DRAFTS = REPO / "content" / "label-drafts"
-DEFAULT_MANIFEST = Path.home() / "Downloads" / "geminiillustrationworkorder" / "illustration-manifest.csv"
+#: ONE SOURCE OF TRUTH, and it is the one under version control.
+#:
+#: This used to default to a copy in ~/Downloads. Two copies of a term list
+#: can disagree, and twice they did: adding the blood terms and then the
+#: nematocyst terms to the repo manifest left pointing still reading the
+#: Downloads copy, so a term that WAS in the list was refused as "not in the
+#: concept's ncert_labels". The failure is silent in the worst direction — it
+#: looks like a content problem and it is a path problem.
+#:
+#: The Downloads copy is no longer reachable from here. `--manifest` still
+#: exists for a deliberate one-off, but the default cannot drift.
+DEFAULT_MANIFEST = (Path(__file__).resolve().parent.parent.parent
+                    / "monk-learning-mobile" / "monklearning-mobile"
+                    / "content" / "illustrations" / "v1"
+                    / "illustration-manifest.csv")
 DEFAULT_MOBILE = Path.home() / "Desktop" / "monk-learning-mobile" / "monklearning-mobile"
 R2_BASE = "https://pub-03eaaad7d1294d45ab6ae17beecbd799.r2.dev"
 
@@ -115,21 +129,39 @@ def terms_for(manifest: Path, concept: str) -> List[str]:
     how a figure gets the wrong term list.
     """
     rows = list(csv.DictReader(manifest.open(encoding="utf-8")))
-    exact = [r for r in rows if (r.get("asset_slug") or "").strip() == concept]
-    if not exact:
-        exact = [r for r in rows
-                 if concept.startswith((r.get("asset_slug") or "").strip())
-                 and (r.get("asset_slug") or "").strip()]
-    if not exact:
+
+    def slug_of(r):
+        return (r.get("asset_slug") or "").strip()
+
+    # THE VERSION-CONTROLLED MANIFEST KEYS ROWS BY ASSET, NOT BY CONCEPT.
+    # The old Downloads copy carried one row per concept, so an exact match
+    # was enough. The repo manifest carries one row per SUB-FIGURE
+    # (`...--a`, `...--b`), every one holding the same ncert_labels, and an
+    # exact match finds nothing at all. Switching the default to the repo copy
+    # is what surfaced this — the term list was right and unreachable.
+    exact = [r for r in rows if slug_of(r) == concept]
+    members = [r for r in rows if slug_of(r).startswith(concept + "--")]
+    # And the truncation case the docstring above describes: the column is cut
+    # at 70 characters, so a long concept slug STARTS WITH the stored one.
+    truncated = [r for r in rows if slug_of(r) and concept.startswith(slug_of(r))]
+
+    candidates = exact or members or truncated
+    if not candidates:
         raise SystemExit(f"REFUSED: no manifest row for concept {concept!r} in {manifest}")
-    if len(exact) > 1:
-        names = ", ".join((r.get("asset_slug") or "") for r in exact)
+
+    lists = {tuple(t.strip() for t in (r.get("ncert_labels") or "").split(",") if t.strip())
+             for r in candidates}
+    if len(lists) > 1:
+        # Sub-figures of one concept sharing one term list is the invariant the
+        # whole pointing step rests on. Two different lists means somebody
+        # edited one row, and guessing which is right is how a figure gets the
+        # wrong terms.
+        names = ", ".join(slug_of(r) for r in candidates)
         raise SystemExit(
-            f"REFUSED: {len(exact)} manifest rows could be {concept!r} ({names}). "
-            f"The manifest truncates asset_slug at 70 chars; disambiguate it there."
+            f"REFUSED: the rows for {concept!r} carry {len(lists)} DIFFERENT "
+            f"ncert_labels ({names}). They must agree — fix the manifest."
         )
-    raw = (exact[0].get("ncert_labels") or "").strip()
-    return [t.strip() for t in raw.split(",") if t.strip()]
+    return list(next(iter(lists)))
 
 
 def load_draft(asset_slug: str) -> Dict[str, Any]:

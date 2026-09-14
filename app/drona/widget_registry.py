@@ -61,6 +61,8 @@ nothing) and loud here.
 """
 
 import json
+import tempfile
+import subprocess
 import logging
 import os
 from functools import lru_cache
@@ -141,15 +143,11 @@ WIDGET_SPECS: Dict[str, str] = {
         # widget_cannot_express_concept — it could not know what the word
         # meant. The parameter works and is covered by tests; the spec was
         # the gap. Measured 2026-09-12.
-        "integrate_along ('x' default | 'y'): which way the strips run. "
-        "'y' means INTEGRATE WITH RESPECT TO y — horizontal strips, for a "
-        "region bounded on the LEFT and RIGHT rather than above and below. "
-        "Use it for 'area with respect to y', 'bounded by the y-axis', or a "
-        "curve given as x = g(y). With 'y', x_min/x_max and shade_from/"
-        "shade_to bound the VERTICAL variable, and curve/curve2 are read as "
-        "functions of it. Example — the area bounded by y^2 = 4ax and its "
-        "latus rectum x = a: integrate_along 'y', x_min -2a, x_max 2a, "
-        "curve the parabola as x = u^2/4a, curve2 the line x = a. "
+        "integrate_along ('x' default | 'y'): 'y' = integrate w.r.t. y, "
+        "horizontal strips, for a region bounded LEFT and RIGHT rather than "
+        "above and below ('area w.r.t. y', 'bounded by the y-axis', x = g(y)). "
+        "With 'y', x_min/x_max and shade_from/shade_to bound the VERTICAL "
+        "variable and curve/curve2 are functions of it. "
         # "No circles/regions/panels" was too blunt and it cost real rows.
         # The planner tags a parabola-and-y-axis segment diag_hint
         # 'conic_figure'; the model read that against "no circles" and
@@ -158,17 +156,24 @@ WIDGET_SPECS: Dict[str, str] = {
         # y-axis and horizontal lines using integration with respect to y",
         # which is this widget's own worked example. A parabola IS a conic
         # and xy_plot draws it. Measured 2026-09-12.
-        "CANNOT draw: circles, ellipses, closed 2-D regions, multi-panel "
-        "figures. CAN draw parabolas, including one written as a conic such "
-        "as y^2 = 4ax — a diag_hint of 'conic_figure' does NOT by itself "
-        "rule this widget out, only a circle or an ellipse does."
+        "CANNOT: circles, ellipses, closed 2-D regions, multi-panel figures. "
+        "CAN: parabolas, including y^2 = 4ax written as a conic — a "
+        "'conic_figure' hint does not rule this widget out, only a circle or "
+        "an ellipse does."
     ),
     "data_table_trend": (
         "a small table of measured values with the trend down one column called "
         'out. params: cell_kind ("numeric"|"categorical"), row_labels (2-8), '
-        "col_labels (max 4 numeric / 3 categorical), values (row-major numbers) "
-        "or text_values (row-major strings), trend_col, highlight_row (-1 none), "
-        "unit, caption."
+        "col_labels (max 4 numeric / 3 categorical), "
+        # "row-major" alone was read as "an array of rows" by every model that
+        # tried, and the client wants ONE FLAT array. Measured 2026-09-13:
+        # 14 of 14 stored data_table_trend payloads across chemistry and
+        # physics were refused for this and this alone — the widget never drew
+        # once, anywhere, and nothing noticed because nothing asked the client.
+        "values / text_values: ONE FLAT array of rows*cols entries, row-major "
+        "— NOT an array of rows. 3x2 is [r1c1,r1c2,r2c1,r2c2,r3c1,r3c2]: six "
+        "numbers, not three pairs. Finite numbers only. "
+        "trend_col, highlight_row (-1 none), unit, caption."
     ),
     "process_flow": (
         "an ordered pathway or closed cycle of named steps. params: layout "
@@ -192,14 +197,10 @@ WIDGET_SPECS: Dict[str, str] = {
         # refuses them, because the width budget at 343pt cannot hold more.
         # Measured 2026-09-12: 37 of the 38 stored reaction_scheme payloads in
         # chem12 ch8 would not draw at all.
-        "HARD LIMITS, enforced by the client and NOT by this gate: every "
-        "species label at most 10 characters, every step_reagent at most 12, "
-        "caption at most 40. Use condensed formulae, not IUPAC names — "
-        "RCOOH, RCOCl, EtCHO, PhCOCH3, (RCO)2O — and terse reagents — SOCl2, "
-        "PCl5, Zn-Hg/HCl, NaOH/CaO. If the chemistry genuinely needs longer "
-        "names than that, this is the WRONG widget for the segment: decline "
-        "rather than truncate, because a shortened name teaches a string the "
-        "exam does not print."
+        "HARD CAPS: species <=10 chars, step_reagent <=12, caption <=40. "
+        "Condensed formulae only (RCOOH, RCOCl, EtCHO, PhCOCH3), terse "
+        "reagents (SOCl2, Zn-Hg/HCl). Longer names than that mean this is the "
+        "wrong widget: DECLINE rather than truncate."
     ),
     "molecule_struct": (
         "2-D structure of one species — VSEPR geometry, lone pairs, bond angle. "
@@ -632,6 +633,65 @@ def _label_budget_problem(widget: str, params: Any) -> Optional[str]:
     return None
 
 
+#: Set by the caller when node is unavailable (a container without it, a test
+#: that does not care). `None` means "ask node"; True/False force the answer.
+_CLIENT_DRAW_OVERRIDE: Optional[bool] = None
+
+#: Where the CLI lives. One path, resolved once, so a missing checkout is a
+#: single clear failure rather than a per-call surprise.
+_VALIDATE_CLI = (Path(__file__).resolve().parent.parent.parent.parent
+                 / "monk-learning-mobile" / "monklearning-mobile"
+                 / "scripts" / "validate-payload.mjs")
+
+
+def client_can_draw(widget: str, version: int, params: dict) -> tuple[bool, str]:
+    """Would the board actually draw this? Asks the client's own validate().
+
+    THE SAME SHAPE AS THE LABEL GATE, and for the same reason: a second
+    implementation of "is this drawable" written in Python would drift from the
+    one that does the drawing, and drift is exactly what this is here to end.
+
+    FAILS OPEN, deliberately and loudly. If node is missing or the CLI is not
+    on disk, this returns True with a warning rather than dropping every
+    diagram on the floor — a validator that cannot run must not become an
+    outage. The warning names the cause so the gap is visible in logs rather
+    than inferred from a quiet drop in diagram counts.
+    """
+    if _CLIENT_DRAW_OVERRIDE is not None:
+        return _CLIENT_DRAW_OVERRIDE, "forced by _CLIENT_DRAW_OVERRIDE"
+    if not _VALIDATE_CLI.exists():
+        logger.warning(
+            f"[CLIENT VALIDATE] {_VALIDATE_CLI} is not on disk; accepting "
+            f"{widget} unchecked. The client may still refuse it."
+        )
+        return True, "validator not available"
+    payload = {"widget": widget, "version": version, "params": params}
+    try:
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+            json.dump(payload, fh)
+            tmp = fh.name
+        r = subprocess.run(["node", str(_VALIDATE_CLI), tmp, "--json"],
+                           capture_output=True, text=True, timeout=120)
+        line = next((l for l in r.stdout.splitlines() if l.startswith("{")), "")
+        if not line:
+            logger.warning(f"[CLIENT VALIDATE] no verdict for {widget}: "
+                           f"{(r.stdout + r.stderr)[-200:]}")
+            return True, "validator produced no verdict"
+        out = json.loads(line)
+        res = (out.get("results") or [{}])[0]
+        if res.get("ok") is None:          # unjudgeable, e.g. molecule_3d
+            return True, str(res.get("errors") or "")
+        return bool(res.get("ok")), "; ".join(res.get("errors") or [])
+    except Exception as exc:               # pragma: no cover
+        logger.warning(f"[CLIENT VALIDATE] could not run for {widget}: {exc}")
+        return True, f"validator error: {exc}"
+    finally:
+        try:
+            Path(tmp).unlink(missing_ok=True)
+        except Exception:
+            pass
+
+
 def sanitize_widget_payload(raw_payload: Any,
                             archetype_widget: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """Coarse gate on a model-authored widget payload. None means DROP.
@@ -727,6 +787,22 @@ def sanitize_widget_payload(raw_payload: Any,
         # something the client renders happily as a DIFFERENT WORD. See
         # `_label_budget_problem` for why the check lives here at all.
         logger.warning(f"⚠️ [DIAGRAM DROPPED] {widget}: {budget_problem}")
+        return None
+
+    # THE CLIENT'S OWN VALIDATOR IS THE LAST WORD, on the exact params about to
+    # be stored. Every check above this line is the SERVER'S idea of a valid
+    # payload, and that idea was wrong in ways nobody could see from here:
+    # reaction_scheme caps a species label at 10 characters, data_table_trend
+    # wants ONE FLAT array rather than an array of rows, and neither rule
+    # exists in this file. Measured 2026-09-13, before this call was added:
+    # 50 of 123 stored payloads across four subjects would not draw, including
+    # 14 of 14 data_table_trend — a widget that had never rendered once,
+    # anywhere, while every one of its payloads passed this gate.
+    drawable, why = client_can_draw(widget, version, params)
+    if not drawable:
+        logger.warning(
+            f"⚠️ [DIAGRAM DROPPED] {widget}: the client would refuse this — {why}"
+        )
         return None
 
     return {

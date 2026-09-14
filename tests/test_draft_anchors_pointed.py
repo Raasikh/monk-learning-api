@@ -105,9 +105,15 @@ def test_a_clean_file_is_accepted_and_writes_both_outputs(rig, capsys):
     by_id = {l["id"]: l for l in written["labels"]}
     assert by_id["nucleus"]["anchor"] == [0.4, 0.4]
     assert by_id["cell-wall"]["anchor"] == [0.55, 0.6]
-    # The unplaced one is untouched and still reported.
-    assert by_id["vacuole"]["anchor"] is None
-    assert "vacuole" in written["_draft"]["still_unplaced"]
+    # CHANGED 2026-09-12: an unpointed label is OMITTED, not kept with a null
+    # anchor. These drafts carry every term of the CONCEPT on every one of its
+    # sub-figures with placeholder anchors like (0.3, 0.3); keeping one would
+    # hand the board a round number nobody measured as though it were a located
+    # structure. A term not visible on this plate belongs in `unplaced`, where
+    # it says so plainly.
+    assert "vacuole" not in by_id
+    assert "vacuole" in written["unplaced"]
+    assert "vacuole" in written["_draft"]["omitted_not_visible"]
 
     sheet = tmp / "mobile" / "content" / "illustrations" / "v1" / "reports" / "pointed" / f"{SLUG}.png"
     assert sheet.exists()
@@ -191,7 +197,15 @@ def test_the_truncated_manifest_slug_still_resolves(rig, tmp_path):
 
 
 def test_two_manifest_rows_that_could_both_match_are_refused(rig, tmp_path):
-    """Guessing between two rows is how a figure gets the wrong term list."""
+    """Guessing between two rows is how a figure gets the wrong term list.
+
+    CHANGED 2026-09-13: the refusal now fires on DISAGREEMENT rather than on
+    plurality. The version-controlled manifest keys rows by ASSET, so a concept
+    with six sub-figures legitimately matches six rows — refusing that outright
+    would make the real manifest unusable. Every one of those rows carries the
+    same ncert_labels, and it is two DIFFERENT lists that means somebody edited
+    one row and nobody can tell which is right.
+    """
     mod, tmp, art, manifest, drafts = rig
     ambiguous = tmp / "ambiguous.csv"
     ambiguous.write_text(
@@ -202,4 +216,17 @@ def test_two_manifest_rows_that_could_both_match_are_refused(rig, tmp_path):
     )
     with pytest.raises(SystemExit) as e:
         mod.terms_for(ambiguous, CONCEPT)
-    assert "could be" in str(e.value)
+    assert "DIFFERENT" in str(e.value)
+
+
+def test_sub_figure_rows_that_agree_are_accepted(rig, tmp_path):
+    """The shape the real manifest actually has: one row per sub-figure."""
+    mod, tmp, art, manifest, drafts = rig
+    per_asset = tmp / "per-asset.csv"
+    per_asset.write_text(
+        "asset_slug,ncert_labels\n"
+        f"{CONCEPT}--a,\"nucleus, cell wall\"\n"
+        f"{CONCEPT}--b,\"nucleus, cell wall\"\n",
+        encoding="utf-8",
+    )
+    assert mod.terms_for(per_asset, CONCEPT) == ["nucleus", "cell wall"]

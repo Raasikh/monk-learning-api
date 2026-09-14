@@ -315,7 +315,7 @@ def test_the_write_uses_the_same_gate_as_the_live_path_not_a_second_one():
     assert "isinstance(params" not in block
 
 
-def test_a_payload_naming_a_different_widget_is_not_stored(stub_llm):
+def test_a_payload_naming_a_different_widget_is_not_stored(monkeypatch, stub_llm):
     """LIVE, a model that ignores the named widget still emitted something the
     client can draw, so it is kept as `model_choice` rather than dropped for
     carrying the wrong label. STORED, it is different: it would become a
@@ -323,7 +323,12 @@ def test_a_payload_naming_a_different_widget_is_not_stored(stub_llm):
     live path on every future turn of that segment. Slot 1 stores only what
     path 1 actually produced."""
     off = {"widget": "xy_plot", "version": 1, "params": {"curve": [[0, 0], [1, 1]]}}
-    # it passes the gate — this is not a gate question
+    # It passes the ARCHETYPE gate — this is not a gate question, which is why
+    # the client validator is suppressed. `curve` as a list of points is not a
+    # drawable xy_plot payload and the client refuses it on its own merits
+    # (see tests/test_client_validate_gate.py); that refusal would stop this
+    # test reaching the thing it is named for.
+    monkeypatch.setattr("app.drona.widget_registry._CLIENT_DRAW_OVERRIDE", True)
     assert sanitize_widget_payload(off, archetype_widget="process_flow") is not None
     stub_llm({"payload": off})
     seg = _segment()

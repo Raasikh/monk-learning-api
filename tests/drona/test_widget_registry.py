@@ -220,9 +220,26 @@ def test_the_manifest_block_stays_cheap():
 
     A cap, not a target: this fails if a tenth widget multiplies the block
     rather than adding a line to it.
+
+    RAISED 1500 -> 1700 on 2026-09-13, deliberately, and here is the bill.
+    Three specs gained hard constraints the client enforces and the server
+    could not see, at a cost of ~265 tokens per call:
+
+      reaction_scheme    species <=10 chars, reagent <=12, decline don't truncate
+      data_table_trend   values is ONE FLAT row-major array, not an array of rows
+      xy_plot            what integrate_along:'y' means; what "cannot draw" covers
+
+    What it bought, measured: `data_table_trend` went from **0 of 14** stored
+    payloads drawable to 11 of 14 — a widget that had never rendered once,
+    anywhere, on either subject that used it. Across four subjects the stored
+    corpus went from 73/123 drawable to 93/123.
+
+    265 tokens a call against twenty payloads that now draw is a trade worth
+    making, and the number is written here so the next person raising this cap
+    has to justify theirs the same way.
     """
     approx_tokens = len(render_manifest_block()) / 4
-    assert approx_tokens < 1500, f"manifest block is ~{approx_tokens:.0f} tokens"
+    assert approx_tokens < 1700, f"manifest block is ~{approx_tokens:.0f} tokens"
 
 
 # ── 3. the gate ─────────────────────────────────────────────────────────────
@@ -258,8 +275,21 @@ def test_the_route_is_a_sibling_of_the_payload_not_a_key_inside_it():
 
 
 @pytest.mark.parametrize("wid", sorted(WIDGET_VERSIONS))
-def test_every_registered_widget_can_reach_the_board(wid):
-    """No widget may be registered, described, and still unemittable."""
+def test_every_registered_widget_can_reach_the_board(wid, monkeypatch):
+    """No widget may be registered, described, and still unemittable.
+
+    The subject here is the REGISTRY WIRING — id known, version known, route
+    recorded — and the fixture params are deliberately meaningless
+    (`{"any": "shape"}`) because none of that depends on them.
+
+    Since 2026-09-13 `sanitize_widget_payload` also asks the CLIENT whether the
+    payload would draw, and a meaningless params dict is rightly refused for
+    every widget. That check is real and is covered by
+    `tests/test_client_validate_gate.py`; it is suppressed here so this test
+    keeps testing the one thing it is named for. Suppressing it in the test
+    that OWNS it would be the mistake.
+    """
+    monkeypatch.setattr("app.drona.widget_registry._CLIENT_DRAW_OVERRIDE", True)
     params = ({"configuration": "point", "charge_uc": 8}
               if wid == "field_lines" else {"any": "shape"})
     out = sanitize_widget_payload(
