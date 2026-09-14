@@ -1671,7 +1671,23 @@ def cmd_ingest(args) -> int:
         if ready:
             try:
                 from app.db import supabase
-                probe_bad = probe_constraints(supabase, ready[0].row or {})
+                # The probe's POSITIVE CONTROL must be a row --execute would
+                # really write, not the half-built row the validator returns.
+                # `rendition_2x_sha256` is derived at upload time, so the
+                # validator leaves it None; migration 0041 then requires it on
+                # any master under 1800px. The probe therefore failed on every
+                # narrow plate and announced "--execute would fail this way on
+                # all of them" -- which was false, because execute fills the
+                # hash in before it writes. Derived here the same deterministic
+                # way, so the control row matches the real one.
+                probe_row = dict(ready[0].row or {})
+                if int(probe_row.get("width") or 0) < RENDITION_THRESHOLD_PX:
+                    _rend = make_rendition(ready[0].data)
+                    probe_row["rendition_2x_sha256"] = (
+                        hashlib.sha256(_rend).hexdigest()
+                        if _rend is not None else None
+                    )
+                probe_bad = probe_constraints(supabase, probe_row)
             except Exception as err:
                 probe_bad = [f"could not reach the database to probe: {err}"]
             if probe_bad:

@@ -761,7 +761,13 @@ def test_every_real_slug_passes_slug_validation():
     """The double hyphen must survive. 50 double-hyphen runs across 48 rows."""
     rows = [r for r in csv.DictReader(REAL_MANIFEST.open())
             if r["status"] == ia.APPROVED_STATUS]
-    assert len(rows) == 113, "drona-illustrations-v1.1 is 113 accepted assets (112 generated + the hand-authored frog heart)"
+    # 113 -> 117 on 2026-09-14: batch 6 landed and four `pending-file` rows
+    # flipped to accepted (Taenia, cockroach male, cockroach female, frog
+    # digestive). The fifth batch-6 plate REPLACES the earthworm master by
+    # identical asset_slug, so it was already counted here -- its master_sha256
+    # moved 9c2789c4 -> e0a514d2 and the row count did not.
+    assert len(rows) == 117, ("drona-illustrations-v1.1 is 117 accepted assets "
+                              "(116 generated + the hand-authored frog heart)")
     doubles = 0
     for r in rows:
         ia.validate_slug(r["asset_slug"])          # raises on failure
