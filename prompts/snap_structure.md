@@ -72,8 +72,19 @@ Return ONLY valid JSON:
     The test is the printed question number: everything between "20." and
     the next PRINTED question number (or the section heading after it)
     belongs to Q20, including every (i)/(ii)/(a)/(b) inside that span.
+    The same holds for the labelled halves of one question: "Assertion (A):
+    … Reason (R): …" is ONE question whose stem carries both sentences, and
+    "Statement I: … Statement II: …" likewise — A/R and I/II are the parts
+    the options talk about, never questions of their own.
     Handwritten working in the margins is not a part and not a question —
     copy the printed text and ignore the scribbles.
+5c. **A shared passage travels with every question that uses it.** A case
+    study or comprehension prints one paragraph and then several NUMBERED
+    questions on it. Each numbered question is its own question — but each
+    one's stem carries the passage verbatim, because a comprehension
+    question without its passage is unanswerable, and the passage alone is
+    never a question. Yes, this repeats the paragraph; a repeated paragraph
+    is the cost of every question standing on its own.
 5a. **`<smiles>…</smiles>` tags are the question's molecule**, converted from a
     drawn structure. Keep the tag in `stem`, verbatim — a
     stereochemistry question without its molecule is unanswerable, and dropping
@@ -96,6 +107,14 @@ Return ONLY valid JSON:
     statement is correct", "match List I with List II". The test: could a
     student write the answer on a blank line with the options covered up? If
     yes, it is self-contained.
+
+6c''. **Match the following: the LISTS are the stem, the COMBINATIONS are
+    the options.** List-I and List-II — names, table, every pairing — stay
+    in `stem` verbatim; `options` holds only the lettered combinations
+    ("A-II, B-IV, C-I, D-III"). Moving the lists into the options, or
+    dropping them because they look like a table, leaves a question that
+    cannot be answered; 6c already marks these not self-contained, so the
+    solver sees the combinations it must choose between.
 
 6c'. A stem asking for several things "respectively" IS self-contained — the
     student derives each part and writes the tuple; the options are just
