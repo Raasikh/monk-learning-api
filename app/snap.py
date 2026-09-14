@@ -878,6 +878,22 @@ def printed_answer_key(ocr_text: str) -> Dict[int, str]:
     return found
 
 
+# What a structuring model writes into `printed_answer` when the page prints
+# no key at all. JSON null was asked for; the literal STRING "null" is what
+# arrived on a real page — and it then walked through every truthiness check
+# as a real key, disagreed with a correct derivation, and got the answer
+# withheld with a card reading 'the answer printed on the page is "null"'.
+_JUNK_PRINTED_KEYS = {"null", "none", "nil", "n/a", "na", "-", "–", "—", "(null)", "?"}
+
+
+def _real_printed_key(value) -> Optional[str]:
+    """`value` as a printed answer key, or None when it is nothing at all."""
+    text = (value or "").strip() if isinstance(value, str) else None
+    if not text or text.lower() in _JUNK_PRINTED_KEYS:
+        return None
+    return text
+
+
 def _strip_printed_answer(text: str) -> Tuple[str, Optional[str]]:
     """Removes a printed answer key from the question text.
 
@@ -1559,7 +1575,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
             # question read off a page is the nth key printed under it, which
             # holds whenever the counts line up and is the only thing left when
             # the page numbers its questions in a way nothing could parse.
-            "printed_answer": (
+            "printed_answer": _real_printed_key(
                 stripped_key
                 or (key_table.get(printed_number[0]) if printed_number else None)
                 or (sorted(key_table.items())[idx - 1][1]
@@ -3781,7 +3797,9 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
     # Free correctness signal: the page's own answer key, which the solver never
     # saw. A disagreement does not change what the student is shown — the key
     # itself may have been misread — but it must be countable, not invisible.
-    printed = question.get("printed_answer")
+    # Belt over the ingestion sanitiser: a junk "key" that reaches this gate
+    # withholds a correct answer, which is the worst trade available.
+    printed = _real_printed_key(question.get("printed_answer"))
     if printed:
         printed_key = _norm(printed)
         chosen_label = _norm("".join(solution.get("option_labels") or []))
