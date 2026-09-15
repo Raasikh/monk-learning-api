@@ -319,6 +319,35 @@ def start_live_diagram(chapter_id: Optional[str], subtopic_key: Optional[str],
         return None
 
 
+#: chapter_id -> {subject, class_level, name}. Read on every turn for the SANE
+#: hold-back, and a chapter's subject/level/name do not change during a
+#: session, so this is a process cache rather than a per-turn round trip —
+#: the same reasoning as _ILLUSTRATION_CACHE above it.
+_CHAPTER_CACHE: Dict[str, Dict[str, Any]] = {}
+
+
+def _chapter_of(chapter_id: Optional[str]) -> Optional[Dict[str, Any]]:
+    """The chapter row, or None. Never raises: a hold-back that cannot read
+    its chapter must not take the board down with it — the caller treats None
+    as an empty row, which reads as UNMEASURED, which withholds the widget.
+    That is the safe direction: a picture fewer, not an unreviewed one more."""
+    if not chapter_id:
+        return None
+    if chapter_id in _CHAPTER_CACHE:
+        return _CHAPTER_CACHE[chapter_id]
+    try:
+        rows = (supabase.table("chapters").select("subject,class_level,name")
+                .eq("id", chapter_id).limit(1).execute().data or [])
+    except Exception as exc:                                   # noqa: BLE001
+        logger.warning(f"[SANE] could not read chapter {chapter_id}: "
+                       f"{str(exc)[:80]} — treating as unmeasured")
+        return None
+    row = rows[0] if rows else None
+    if row:
+        _CHAPTER_CACHE[chapter_id] = row
+    return row
+
+
 def turn_works_an_example(*texts: str) -> bool:
     """Whether this turn is about to work a numerical example.
 
@@ -364,21 +393,47 @@ BOARD_SLOTS = (
 
 
 def resolve_board_slot(precomputed_widget=None, archetype_widget=None,
-                       illustration_asset=None, precomputed_svg=None) -> str:
+                       illustration_asset=None, precomputed_svg=None,
+                       widget_allowed: bool = True) -> str:
     """Which slot answers this segment. Pure, total, and the whole order.
 
-    Written as one function taking four values rather than as a chain of `if`s
-    at the call site, because the ORDER is the thing under test and a chain
+    Written as one function taking values rather than as a chain of `if`s at
+    the call site, because the ORDER is the thing under test and a chain
     spread over eighty lines of directive-building cannot be tested without a
     session, a plan and a database.
 
     Slot 5 is the floor: with nothing stored and no archetype, the answer is
     "author one now", which is what the caller then decides whether to pay for.
+
+    `widget_allowed` IS THE SANE HOLD-BACK, AND IT LIVES HERE ON PURPOSE.
+    ====================================================================
+    It was in the planner for one day, 2026-09-14, and that was the wrong
+    place twice over. It skipped AUTHORING, so a held chapter stored nothing
+    and a regenerated plan came back empty — physics 12 "Electromagnetic
+    Waves" lost 8 payloads that rendered. And because it lived in planner.py
+    it moved `planner_code_sha`, so every change to the GATE invalidated every
+    PLAN and forced a full re-author of the corpus. A policy about what may be
+    SHOWN had been wired into the identity of how plans are BUILT.
+
+    Here it is a resolution-time question, which is what it always was. The
+    payload is authored and stored for every eligible routed row whatever the
+    verdict says; a held chapter's payloads sit inert until its verdict
+    clears, and clearing it resolves to the widget with NO regeneration —
+    nothing about the plan changed, only what the board is allowed to pick.
+
+    It withholds BOTH widget slots, not just the archetype one. `inert` has to
+    mean inert: a stored precomputed payload in a held chapter is exactly the
+    unreviewed picture the bar exists to keep off the board, and it sits in the
+    highest slot of all.
+
+    This gate NEVER deletes anything. It cannot — it is a pure function of its
+    arguments and returns a string.
     """
-    if precomputed_widget:
-        return "widget_precomputed"
-    if archetype_widget:
-        return "widget_archetype"
+    if widget_allowed:
+        if precomputed_widget:
+            return "widget_precomputed"
+        if archetype_widget:
+            return "widget_archetype"
     if illustration_asset:
         return "illustration"
     if precomputed_svg:
@@ -1189,12 +1244,26 @@ async def process_tutor_turn_stream(
             _precomputed_svg = _precomputed_diagram(session.get("chapter_id"),
                                                     session.get("subtopic_key"))
 
+    # The SANE hold-back, read per turn from the chapter's verdict. A chapter
+    # below the bar (or unmeasured) shows no widget at all; its payloads stay
+    # stored and resolve again the moment the verdict clears, with no
+    # regeneration, because nothing about the plan depends on this.
+    from app.drona.sane_hold_back import widget_baking_allowed
+    _chapter_row = _chapter_of(session.get("chapter_id")) or {}
+    _widget_allowed, _sane_why = widget_baking_allowed(
+        _chapter_row.get("subject") or "",
+        int(_chapter_row.get("class_level") or 0),
+        _chapter_row.get("name") or "")
+
     _board_slot = resolve_board_slot(
         precomputed_widget=_precomputed_widget,
         archetype_widget=_archetype_widget,
         illustration_asset=_illustration_asset,
         precomputed_svg=_precomputed_svg,
+        widget_allowed=_widget_allowed,
     )
+    if not _widget_allowed and (_precomputed_widget or _archetype_widget):
+        logger.info(f"{stag} widget withheld — {_sane_why}; board_slot={_board_slot}")
 
     # The template cue. Computed on EVERY turn, including archetype turns,
     # because it is the diagnostic that says what a keyword would have picked

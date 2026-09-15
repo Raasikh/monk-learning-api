@@ -45,6 +45,18 @@ def main() -> int:
     targets = sorted((c for cid, c in chapters.items() if cid in with_plans),
                      key=lambda c: (c["subject"], c["class_level"], c["name"]))
 
+    # Slot 1 is a STORED payload on a segment. The dry run used to leave it
+    # empty and call slot 2 the honest ceiling; now that authoring is ungated
+    # the corpus really does hold them, so they are read and the table reports
+    # the slot a class would actually reach.
+    stored_payloads = {}
+    from app.drona.planner import WIDGET_PAYLOAD_KEY
+    for pl in fetch_all("lesson_plans", "chapter_id,subtopic_key,plan_json"):
+        for seg in (pl["plan_json"] or {}).get("segments") or []:
+            pay = seg.get(WIDGET_PAYLOAD_KEY)
+            if isinstance(pay, dict) and pay.get("widget"):
+                stored_payloads.setdefault((pl["chapter_id"], pl["subtopic_key"]), pay)
+
     out, moved, bugs = [], [], []
     before_tot, after_tot = Counter(), Counter()
     print(f"SANE bar {SANE_BAR_PERCENT:.0f}%   {len(targets)} chapters with authored plans\n")
@@ -63,14 +75,20 @@ def main() -> int:
             assets = tutor._illustration_set_for(ch["id"], slug)
             asset = (assets[0] or {}).get("asset_slug") if assets else None
             svg = tutor._precomputed_diagram(ch["id"], slug)
+            stored = stored_payloads.get((ch["id"], slug))
 
+            # BEFORE = no hold-back at all. AFTER = the verdict applied, which
+            # since 2026-09-15 is a `widget_allowed` flag on the resolver rather
+            # than a widget withheld by the caller. Both widget slots go, so a
+            # stored payload in a held chapter is inert rather than shown.
             before = tutor.resolve_board_slot(
-                precomputed_widget=None, archetype_widget=arch.widget,
-                illustration_asset=asset, precomputed_svg=svg)
+                precomputed_widget=stored, archetype_widget=arch.widget,
+                illustration_asset=asset, precomputed_svg=svg,
+                widget_allowed=True)
             after = tutor.resolve_board_slot(
-                precomputed_widget=None,
-                archetype_widget=(arch.widget if allowed else None),
-                illustration_asset=asset, precomputed_svg=svg)
+                precomputed_widget=stored, archetype_widget=arch.widget,
+                illustration_asset=asset, precomputed_svg=svg,
+                widget_allowed=allowed)
 
             before_tot[before] += 1
             after_tot[after] += 1

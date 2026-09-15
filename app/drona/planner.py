@@ -838,26 +838,6 @@ def _attach_widget_payload(segment: Dict[str, Any], archetype, chap_data: Dict[s
             "unresolved" if confidence in _ARCHETYPE_UNRESOLVED else "not_asked",
             why or "archetype names no registered widget")
 
-    # ── THE SANE HOLD-BACK ────────────────────────────────────────────────
-    # Checked BEFORE the model call, not after: a chapter that cannot bake a
-    # widget should not be paying for a payload to throw away. Raasikh's line,
-    # 2026-09-14: "precompute all chapters with hold-back below 85%".
-    #
-    # This gate is on BAKING only. Held back, the live path still asks per turn
-    # and the board still gets a picture; what it does not get is a permanent
-    # cached picture in the highest-precedence slot that nobody has read.
-    # Session F took every stored payload in every subject to 100% RENDER, and
-    # the two worst errors found that week rendered perfectly — a line charge
-    # drawn as a point, a single sheet drawn as parallel plates. Rendering is
-    # not the same as being right, and SANE is the only measurement that knows
-    # the difference.
-    from app.drona.sane_hold_back import widget_baking_allowed
-    _allowed, _why_sane = widget_baking_allowed(
-        chap_data.get("subject") or "", int(chap_data.get("class_level") or 0),
-        chap_data.get("name") or "")
-    if not _allowed:
-        return _record("held_back", _why_sane)
-
     from app.drona.widget_registry import sanitize_widget_payload
 
     client = get_drona_client()

@@ -1,10 +1,10 @@
 {
-  "_what": "SANE verdicts, adopted from scripts/sane_proposals.md. This file is the hold-back gate's ONLY source: a registry widget bakes into slot 1 only where its chapter's verdict is >= the bar. Below it, or absent, the widget slot is skipped and the concept resolves down the precedence chain.",
-  "_confirmation": "confirmed: adopt scripts/sane_proposals.md as SANE verdicts for the chapters it covers, verdict_by raasikh; precompute all chapters with hold-back below 85%",
+  "_what": "SANE verdicts, adopted from scripts/sane_proposals.md. The hold-back reads this and is applied ONLY in tutor.resolve_board_slot: a chapter below the bar shows no widget, and both widget slots are withheld so a stored payload stays inert rather than being shown unreviewed. Payloads are AUTHORED AND STORED regardless of the verdict, and nothing here ever deletes one. Clearing a verdict resolves to the widget with no regeneration.",
+  "_confirmation": "confirmed: adopt scripts/sane_proposals.md as SANE verdicts, verdict_by raasikh",
   "_confirmed_by": "raasikh",
-  "_confirmed_at": "2026-09-14",
+  "_confirmed_at": "2026-09-15",
   "_bar_percent": 85.0,
-  "_why_a_file_and_not_a_column": "The directive asks for SANE COLUMNS. There is no sane table or column in the database — verified against the live schema, not assumed. Creating them is a migration, and CC never applies migrations. migrations/0046_sane_verdicts.sql is written and NOT applied; Raasikh runs it, and once the columns exist this file is what backfills them. Until then the gate reads this, so the hold-back is enforceable now rather than pending.",
+  "_why_a_file_and_not_a_column": "The directive asks for SANE COLUMNS. There is no sane table or column in the database - verified against the live schema, not assumed. Creating them is a migration and CC does not apply migrations. migrations/0046_sane_verdicts.sql is written and NOT applied; this file stays the enforcement source until Raasikh runs it, and is then what backfills it. tests/drona/test_sane_hold_back.py asserts this file and sane_proposals.md agree on every value, so the two cannot drift.",
   "_unmeasured_is_not_a_pass": "A chapter absent from `verdicts` is UNMEASURED, and unmeasured is held back exactly like a failing score. The recurring defect in this project is a check that passes on absent information; treating 'no verdict' as 'fine' would be that defect wearing a policy's clothes.",
   "verdicts": [
     {
@@ -13,12 +13,12 @@
       "chapter": "Electric Charges and Fields",
       "sheet": "physics 12 ch1",
       "rows": 40,
-      "proposed_y": 30,
-      "proposed_n": 10,
-      "sane_percent": 75.0,
+      "proposed_y": 32,
+      "proposed_n": 8,
+      "sane_percent": 80.0,
       "verdict_by": "raasikh",
       "clears_bar": false,
-      "note": "Two of the ten proposed-n rows were HARD errors fixed in Session F (gauss seg3 point->gaussian_cylinder for an infinite line charge; gauss seg4 parallel_plates->gaussian_pillbox for a single sheet). Re-scoring on that alone would give 32/40 = 80.0%, still short of the bar. The verdict recorded here is the proposals' own number, as adopted — not a figure I recomputed after my own fixes."
+      "note": "30 -> 32 y on 2026-09-15: gauss seg3 (point -> gaussian_cylinder for an infinite line charge) and gauss seg4 (parallel_plates -> gaussian_pillbox for a single sheet), both fixed by monk-learning-api@e518fab. seg6 and seg7 were re-authored too and remain judgement calls, so they are not counted. Still 5 points short of the bar; needs 2 more y."
     },
     {
       "subject": "mathematics",
@@ -44,13 +44,13 @@
       "sane_percent": 83.2,
       "verdict_by": "raasikh",
       "clears_bar": false,
-      "note": "The closest any chapter comes, and it still does not clear. batch6/DIRECTIVE.md states this chapter at 89.4%; the proposals file it cites says 83.2% (94 of 113). The file is the source that was adopted, so 83.2 is the verdict. 89.4 would have cleared the bar and 83.2 does not, so the difference decides whether chem's widgets bake."
+      "note": "UNCHANGED at 94/113 = 83.2%. Session H expected 101/113 = 89.4% from seven re-authored reaction_scheme rows; measured, exactly ONE of the 19 proposed-n rows was re-authored (nucleophilic-addition seg3) and one was dropped (aldol-condensation seg5). Session F's refill fixed payloads that did not RENDER; this sheet judges whether the picture is RIGHT, and most of the 19 rendered fine. Even granting both a y unread, chem reaches exactly 85.0% on two rows nobody re-judged, so it stays held and both go on the review sheet."
     },
     {
       "subject": "biology",
       "class_level": 12,
       "chapter": "Ecosystem",
-      "sheet": "bio 12 Ecosystem",
+      "sheet": "bio 12 Ecosystem (full 70 measured)",
       "rows": 70,
       "proposed_y": 53,
       "proposed_n": 17,
@@ -59,5 +59,6 @@
       "clears_bar": false,
       "note": "The proposals give two framings: the in-sheet 40 rows at 70.0% and the full 70 measured at 75.7%. The larger sample is recorded. Both sit below the bar, so the hold-back is identical either way and the choice changes nothing."
     }
-  ]
+  ],
+  "_reconciled": "Re-adopted 2026-09-15 after reconciling the sheet with Sessions D and F. physics 30->32 y on the two Gauss rows fixed in e518fab. chem is UNCHANGED at 94/113: of its 19 proposed-n rows only one was re-authored and one dropped, because Session F's refill targeted payloads that did not RENDER while this sheet judges whether the picture is RIGHT. The expected 101/113 = 89.4% does not hold."
 }

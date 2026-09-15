@@ -22,15 +22,57 @@ wrote its own full findings, reproduced verbatim below.
 
 | sheet | rows | proposed y | proposed n | proposed sane% |
 |---|---|---|---|---|
-| physics 12 ch1 | 40 | 30 | 10 | 75.0% |
+| physics 12 ch1 | 40 | **32** | **8** | **80.0%** |
 | maths 12 ch8 | 71 | 31 | 40 | 43.7% |
 | chem 12 ch8 | 113 | 94 | 19 | 83.2% |
 | bio 12 Ecosystem (in-sheet 40) | 40 | 28 | 12 | 70.0% |
 | bio 12 Ecosystem (full 70 measured) | 70 | 53 | 17 | 75.7% |
 
-Read against the 85% hold-back bar you set, **no chapter clears it on these
-proposals**, and maths 12 ch8 is not close. Per-widget figures are computed
-only after you confirm — a proposed n is not a finding until you agree it is.
+Read against the 85% hold-back bar, **no chapter clears it**, and maths 12 ch8
+is not close.
+
+## Reconciliation, 2026-09-15 — and the chem premise did not hold
+
+Session H asked for this sheet to be reconciled with the rows corrected in
+Sessions D and F. Measured rather than assumed, by intersecting the proposed-n
+rows with what those sessions actually re-authored:
+
+**physics 12 ch1: 30 → 32 y (75.0% → 80.0%). Confirmed.**
+
+| row | was | now | fixed by |
+|---|---|---|---|
+| `gauss-s-law-and-its-applications` seg 3 | `field_lines` `configuration:"point"` for an INFINITE LINE CHARGE | `gaussian_cylinder` | `monk-learning-api@e518fab` |
+| `gauss-s-law-and-its-applications` seg 4 | `parallel_plates` for a SINGLE infinite sheet — the σ/2ε₀ vs σ/ε₀ trap | `gaussian_pillbox` | `monk-learning-api@e518fab` |
+
+Both were hard errors: a confident caption over a figure that was not there.
+The cause was that `field_lines`' spec listed four of the client's nine
+configurations, so the author was never told the right one existed. `seg 6` and
+`seg 7` are NOT counted — they were re-authored too, and both remain judgement
+calls, which is what Session F reported.
+
+**chem 12 ch8: unchanged at 94/113 = 83.2%. The expected 101/113 = 89.4% does
+not survive contact with the rows.**
+
+The directive expected seven re-authored `reaction_scheme` rows to flip to y.
+Of the **19** proposed-n rows, exactly **one** was re-authored
+(`nucleophilic-addition-reactions-of-aldehydes-and-ketones` seg 3), **one** was
+dropped (`aldol-condensation` seg 5, whose payload could not be authored within
+the width budget at all), and **17 were never touched**.
+
+The reason is structural, and it is worth keeping: **Session F's refill
+targeted payloads that did not RENDER. This sheet judges whether the picture is
+RIGHT. Those are different sets.** Most of the 19 n rows rendered perfectly —
+that was never their problem. The thirteen rows Session F re-authored were
+overwhelmingly rows this sheet had already marked **y**: they drew nothing, and
+a segment that draws nothing is not a segment that draws something wrong.
+
+Even granting both touched rows a y without re-reading them, chem reaches
+96/113 = 85.0% — exactly at the bar, on two rows nobody has re-judged. A
+re-authored payload is not automatically a correct one; the new picture has to
+be looked at. So chem stays **held**, and the two rows go on the review sheet.
+
+Per-widget figures are computed only after you confirm — a proposed n is not a
+finding until you agree it is.
 
 ---
 
