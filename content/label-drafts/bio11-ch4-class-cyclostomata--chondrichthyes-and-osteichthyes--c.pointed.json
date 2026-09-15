@@ -105,6 +105,16 @@
       "ventral mouth",
       "heterocercal tail"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:03Z",
+      "r2_key": "concept-assets/bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--c.json",
+      "sha256": "2eecab7bf0194a44fa296f268334e221e8572af532d818ac4e556f40ff58a005",
+      "bytes": 1996,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

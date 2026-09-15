@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [],
   "labels": [
     {
@@ -78,6 +78,15 @@
       "umbrella",
       "comb plate"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:29Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-coelenterata-and-ctenophora--c.json",
+      "sha256": "57b1dcc1d9e5758817f25d47c3c350c503383f69ac326573460649cb2d142447",
+      "bytes": 1395,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
   }
 }

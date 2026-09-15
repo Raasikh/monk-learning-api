@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "male",
@@ -181,6 +181,15 @@
     "points_file": "content/label-drafts/points/bio11-ch3-gymnosperms--characteristics--structure-and-examples--a.json",
     "repointed": 9,
     "omitted_not_visible": [],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:38Z",
+      "r2_key": "concept-assets/bio11-ch3-gymnosperms--characteristics--structure-and-examples--a.json",
+      "sha256": "868717dd2de565cdf477760eeb0745f6f94a2b10603b25ec2430c09a5fd39206",
+      "bytes": 3350,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch3, reviewed_by raasikh, exclude:"
+    }
   }
 }

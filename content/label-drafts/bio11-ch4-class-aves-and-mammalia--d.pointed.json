@@ -58,6 +58,16 @@
       "pouch",
       "mammary gland"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:56Z",
+      "r2_key": "concept-assets/bio11-ch4-class-aves-and-mammalia--d.json",
+      "sha256": "d685c7fcc5f9c7f1ff9f64fe64dcb41a901e486d67f0a1df7753815a44d3067b",
+      "bytes": 1047,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

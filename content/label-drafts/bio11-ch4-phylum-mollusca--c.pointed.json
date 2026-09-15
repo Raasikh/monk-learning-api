@@ -71,6 +71,16 @@
       "radula",
       "siphon"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:44Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-mollusca--c.json",
+      "sha256": "abd01b50a020673fa7eda92d7e3747046f9028de617df4a23ffc88d65ba3f706",
+      "bytes": 1278,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

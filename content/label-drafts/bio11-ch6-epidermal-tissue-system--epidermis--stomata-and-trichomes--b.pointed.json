@@ -4,7 +4,7 @@
   "image_h": 595,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "stoma",
@@ -120,6 +120,15 @@
       "root hair",
       "trichome"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:47Z",
+      "r2_key": "concept-assets/bio11-ch6-epidermal-tissue-system--epidermis--stomata-and-trichomes--b.json",
+      "sha256": "8f2d18ee619111d461751bd072225c70ffbd0c6dfbb9fd677bfecb3c9cf5d28d",
+      "bytes": 2301,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
   }
 }

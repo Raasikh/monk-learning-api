@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "head",
@@ -148,6 +148,15 @@
       "exoskeleton",
       "sting"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:19Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-arthropoda--e.json",
+      "sha256": "b208f6df1f8124c8fb57959bba13d09ef8990bafa825a08501b6a7381d7917b0",
+      "bytes": 2634,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
   }
 }

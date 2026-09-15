@@ -60,6 +60,16 @@
       "wing",
       "cone scale"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:40Z",
+      "r2_key": "concept-assets/bio11-ch3-gymnosperms--characteristics--structure-and-examples--b.json",
+      "sha256": "4a17df0c345baf15aac9c04c71eb379b617cd2615a2ec787f55b10f542f5b4bd",
+      "bytes": 1143,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch3, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

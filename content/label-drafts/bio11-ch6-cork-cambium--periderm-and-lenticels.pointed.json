@@ -157,6 +157,16 @@
     "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-cork-cambium--periderm-and-lenticels.json",
     "repointed": 8,
     "omitted_not_visible": [],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:43Z",
+      "r2_key": "concept-assets/bio11-ch6-cork-cambium--periderm-and-lenticels.json",
+      "sha256": "7b8c3168babdfe14bd63fd6a4a04b59ae9eab7a4916f3e75802693a8e2d77498",
+      "bytes": 2934,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

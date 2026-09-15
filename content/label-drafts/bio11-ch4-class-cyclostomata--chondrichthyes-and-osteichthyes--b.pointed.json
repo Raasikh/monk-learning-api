@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "head",
@@ -120,6 +120,15 @@
       "homocercal tail",
       "cycloid scale"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:01Z",
+      "r2_key": "concept-assets/bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--b.json",
+      "sha256": "6ad3506e80f536b74e6d61cf1c334c26ca54f7a46f85a7fc4ad49a9d2b6d89e6",
+      "bytes": 2283,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
   }
 }

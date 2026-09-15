@@ -117,6 +117,16 @@
       "myometrium",
       "perimetrium"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:54Z",
+      "r2_key": "concept-assets/bio12-ch2-female-reproductive-system--ovary--oviduct--uterus-and-mamma--c.json",
+      "sha256": "13706c76b1ef6d2b5c9a087eecb124c0b4dbfee5ccc6daf9ff993a54ad7defb3",
+      "bytes": 2000,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio12-ch2, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

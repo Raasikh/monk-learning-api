@@ -56,6 +56,16 @@
       "shell",
       "hood"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:48Z",
+      "r2_key": "concept-assets/bio11-ch4-class-amphibia-and-reptilia--d.json",
+      "sha256": "9e634a5681bc5c5b51613f8b2408cbcfe60882238b7ef6b6ea9863e959350f6f",
+      "bytes": 1071,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

@@ -157,6 +157,16 @@
       "penis",
       "urinary bladder"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:58Z",
+      "r2_key": "concept-assets/bio12-ch2-male-reproductive-system--testis--ducts-and-accessory-glands--b.json",
+      "sha256": "6400bd342afea16fdd1c68528800ebb8c3b204c11f21fc9712ad4e05fd21c699",
+      "bytes": 2904,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio12-ch2, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "outer",
@@ -235,6 +235,15 @@
       "bundle sheath",
       "ground tissue"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:35Z",
+      "r2_key": "concept-assets/bio11-ch6-anatomy-of-dicot-and-monocot-stem--a.json",
+      "sha256": "a6b1586a485716bd8f05a914dd11725f764f2c38ecf1992dcc1ff8b1545b22cf",
+      "bytes": 4165,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
   }
 }

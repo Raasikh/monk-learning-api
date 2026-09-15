@@ -216,6 +216,16 @@
     "omitted_not_visible": [
       "bulliform cell"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:39Z",
+      "r2_key": "concept-assets/bio11-ch6-anatomy-of-dorsiventral-and-isobilateral-leaf--a.json",
+      "sha256": "028b8ca6afc9483044f0e43f4128470efe17a4379b7e84c6830feb4e59acda35",
+      "bytes": 3958,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

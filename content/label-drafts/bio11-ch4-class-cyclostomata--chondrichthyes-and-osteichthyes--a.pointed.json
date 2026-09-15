@@ -60,6 +60,16 @@
       "homocercal tail",
       "cycloid scale"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:59Z",
+      "r2_key": "concept-assets/bio11-ch4-class-cyclostomata--chondrichthyes-and-osteichthyes--a.json",
+      "sha256": "79019453b3cc07a908a246548828c40063b722009b175184a8877e4228425b6b",
+      "bytes": 1198,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

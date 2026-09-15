@@ -153,6 +153,16 @@
       "olfactory lobe",
       "pituitary gland"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:44Z",
+      "r2_key": "concept-assets/bio11-ch18-human-brain--forebrain-structure-and-functions--b.json",
+      "sha256": "63a7439e7c94a889477941139ca46665d73fc2415f14dcccc114c02accbcb499",
+      "bytes": 2874,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch18, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

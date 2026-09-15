@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "ducts",
@@ -154,6 +154,15 @@
       "collateral gland",
       "ootheca"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T00:57:09Z",
+      "r2_key": "concept-assets/bio11-ch7-cockroach--nervous-system-and-reproduction--b.json",
+      "sha256": "30b3a9499eabd78972430df5c919195f81d0e5ba11f0201a1ef3202391bf2e69",
+      "bytes": 2777,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-cockroach--nervous-system-and-reproduction--b, reviewed_by raasikh"
+    }
   }
 }

@@ -73,6 +73,16 @@
       "cnidoblast",
       "comb plate"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:27Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-coelenterata-and-ctenophora--b.json",
+      "sha256": "edabd3047b2ce1ed553c36ef42a3803bda951da586c131f5ebe1e2ba7eebd43a",
+      "bytes": 1364,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

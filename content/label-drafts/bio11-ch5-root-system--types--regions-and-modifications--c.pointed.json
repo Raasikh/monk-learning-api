@@ -83,6 +83,16 @@
       "stilt root",
       "pneumatophore"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:13Z",
+      "r2_key": "concept-assets/bio11-ch5-root-system--types--regions-and-modifications--c.json",
+      "sha256": "8e3fdddafc5a9579dd984338a1bc6be143a0a9c895d5d02c968cabc388ea6950",
+      "bytes": 1518,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

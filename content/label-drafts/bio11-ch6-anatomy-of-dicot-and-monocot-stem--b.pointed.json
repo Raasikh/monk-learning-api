@@ -157,6 +157,16 @@
       "pith",
       "medullary ray"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:37Z",
+      "r2_key": "concept-assets/bio11-ch6-anatomy-of-dicot-and-monocot-stem--b.json",
+      "sha256": "5249eec4f27ec2dd40572a6bdaf5da1b077f92eb37ff249b19b1cb0a98b6ebe2",
+      "bytes": 2797,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

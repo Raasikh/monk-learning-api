@@ -60,6 +60,16 @@
       "dumbbell-shaped guard cell",
       "trichome"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:50Z",
+      "r2_key": "concept-assets/bio11-ch6-epidermal-tissue-system--epidermis--stomata-and-trichomes--c.json",
+      "sha256": "ab51bf40b05bf8d9d93189d81c37fe93b1dfd27a8b420864b920c2edcca941cd",
+      "bytes": 1172,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

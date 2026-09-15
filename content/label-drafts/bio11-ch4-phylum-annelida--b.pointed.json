@@ -113,6 +113,16 @@
     "omitted_not_visible": [
       "parapodium"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:08Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-annelida--b.json",
+      "sha256": "cfbb54b4b6da9114c6280bb3bb4bde2a6eb0e5ce5ec7d88c12f5f68e6d364fc4",
+      "bytes": 2088,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

@@ -73,6 +73,16 @@
       "dumbbell-shaped guard cell",
       "root hair"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:52Z",
+      "r2_key": "concept-assets/bio11-ch6-epidermal-tissue-system--epidermis--stomata-and-trichomes--d.json",
+      "sha256": "284570437b67920f6d1ceb360cf62da3f11f69f795e690b0c35b0f8ac12ef61e",
+      "bytes": 1397,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

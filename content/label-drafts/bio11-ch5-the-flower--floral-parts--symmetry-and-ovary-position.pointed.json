@@ -283,6 +283,16 @@
     "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch5-the-flower--floral-parts--symmetry-and-ovary-position.json",
     "repointed": 15,
     "omitted_not_visible": [],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:27Z",
+      "r2_key": "concept-assets/bio11-ch5-the-flower--floral-parts--symmetry-and-ovary-position.json",
+      "sha256": "85469319cbb7d78a3b2938d1bd2da48ed092e8a50c421b6b74e6ca5223534315",
+      "bytes": 4990,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

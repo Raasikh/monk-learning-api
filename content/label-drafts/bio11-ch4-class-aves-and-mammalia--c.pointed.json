@@ -58,6 +58,16 @@
       "air cavity",
       "mammary gland"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:54Z",
+      "r2_key": "concept-assets/bio11-ch4-class-aves-and-mammalia--c.json",
+      "sha256": "47e07e1947a5152514be5af1cd9b1ac4891859cea77624823a55a133e874f2e6",
+      "bytes": 1049,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

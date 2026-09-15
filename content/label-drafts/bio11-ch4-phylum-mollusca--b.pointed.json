@@ -4,7 +4,7 @@
   "image_h": 860,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "mantle",
@@ -118,6 +118,15 @@
       "foot",
       "radula"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:41Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-mollusca--b.json",
+      "sha256": "9954e4088a5a5a41c148ef228beeef6cad5df43407100217fe8bc1a7699c47a0",
+      "bytes": 2100,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
   }
 }

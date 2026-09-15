@@ -113,6 +113,16 @@
     "omitted_not_visible": [
       "clitellum"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:05Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-annelida--a.json",
+      "sha256": "2b5a01c0bda9f26cd007ed738ac6471ad76a27641f6095cf9f2d01eabe5cc4b1",
+      "bytes": 2052,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

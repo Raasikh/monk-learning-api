@@ -202,6 +202,16 @@
       "temporal lobe",
       "olfactory lobe"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:42Z",
+      "r2_key": "concept-assets/bio11-ch18-human-brain--forebrain-structure-and-functions--a.json",
+      "sha256": "bdabc9e46609bb7a059299469e4732c7a8ffb909c2797488bef6251c1979d00c",
+      "bytes": 3777,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch18, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

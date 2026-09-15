@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "upper",
@@ -162,6 +162,15 @@
       "sternum",
       "costal cartilage"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:37Z",
+      "r2_key": "concept-assets/bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--b.json",
+      "sha256": "bd7563e57ae35fbbb5ffefb724da407b51b7d522af4661f8c66d1ec6ec206b75",
+      "bytes": 2943,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch17, reviewed_by raasikh, exclude:"
+    }
   }
 }

@@ -200,6 +200,16 @@
     "omitted_not_visible": [
       "cerebral aqueduct"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:46Z",
+      "r2_key": "concept-assets/bio11-ch18-human-brain--midbrain-and-hindbrain.json",
+      "sha256": "a959ede0150d23a94c937d5ec7dab3f4003a759b4d4cd4ff7e8fd66ca04ed430",
+      "bytes": 3777,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch18, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

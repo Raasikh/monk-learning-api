@@ -179,6 +179,16 @@
       "lactiferous duct",
       "nipple"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:49Z",
+      "r2_key": "concept-assets/bio12-ch2-female-reproductive-system--ovary--oviduct--uterus-and-mamma--a.json",
+      "sha256": "fa0bdc120a70d2d94840d171132fe686a7b09e34d884d24d13b081cbfb4220aa",
+      "bytes": 3111,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio12-ch2, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

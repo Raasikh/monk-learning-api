@@ -190,6 +190,16 @@
       "micropyle",
       "cotyledon"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:19Z",
+      "r2_key": "concept-assets/bio11-ch5-seed-structure-in-dicots-and-monocots--b.json",
+      "sha256": "72282c7387b3a22ad63f7b2273f6e408c0df763e19165b5e68a28059c7047e25",
+      "bytes": 3396,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

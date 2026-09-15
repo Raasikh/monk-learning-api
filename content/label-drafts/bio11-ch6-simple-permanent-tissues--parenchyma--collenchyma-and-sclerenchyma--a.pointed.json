@@ -59,6 +59,16 @@
     "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch6-simple-permanent-tissues--parenchyma--collenchyma-and-sclerenchyma--a.json",
     "repointed": 3,
     "omitted_not_visible": [],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:56Z",
+      "r2_key": "concept-assets/bio11-ch6-simple-permanent-tissues--parenchyma--collenchyma-and-sclerenchyma--a.json",
+      "sha256": "4424697a8df14fd60c4635eff20067564e37e9e5552eae1a3b499752cf78fb45",
+      "bytes": 1301,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

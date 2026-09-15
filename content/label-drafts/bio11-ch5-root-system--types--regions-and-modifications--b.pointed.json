@@ -4,7 +4,7 @@
   "image_h": 896,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "zones",
@@ -130,6 +130,15 @@
       "stilt root",
       "pneumatophore"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:11Z",
+      "r2_key": "concept-assets/bio11-ch5-root-system--types--regions-and-modifications--b.json",
+      "sha256": "b3b60b743e4da0add590a7d1cf72adb1fa6b2810734f3ef460a01dae427372bf",
+      "bytes": 2431,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
   }
 }

@@ -103,6 +103,16 @@
       "collar",
       "trunk"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:34Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-echinodermata-and-hemichordata--a.json",
+      "sha256": "a3c9c00d073b078fcae9f3f00017382ef4edd549a141d02221aadc6b2ee8823d",
+      "bytes": 1912,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

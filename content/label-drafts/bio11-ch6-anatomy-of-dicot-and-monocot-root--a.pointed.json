@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "outer",
@@ -217,6 +217,15 @@
     "omitted_not_visible": [
       "pith"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:30Z",
+      "r2_key": "concept-assets/bio11-ch6-anatomy-of-dicot-and-monocot-root--a.json",
+      "sha256": "fcfba6d062d5ad9238d9fb6770c85196c34314cae0269a01f2f391ae35ab8133",
+      "bytes": 3908,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
   }
 }

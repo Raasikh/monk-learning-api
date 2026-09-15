@@ -85,6 +85,16 @@
       "diaphragm",
       "rib"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:08Z",
+      "r2_key": "concept-assets/bio11-ch14-human-respiratory-system--structure-of-the-respiratory-tract--b.json",
+      "sha256": "156f89ed2953e31c9370ffac3c03b6ee5a90e4641a523f90b13737c6f576aa3c",
+      "bytes": 1455,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch14, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

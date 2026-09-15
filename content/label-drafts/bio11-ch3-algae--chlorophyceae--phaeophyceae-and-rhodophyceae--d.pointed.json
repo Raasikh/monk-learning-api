@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [],
   "labels": [
     {
@@ -78,6 +78,15 @@
       "colony",
       "spiral chloroplast"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:29Z",
+      "r2_key": "concept-assets/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--d.json",
+      "sha256": "45d64bebcead70026298140351e03e0a8e110e2188bcce11759b82dadbc2d2b9",
+      "bytes": 1381,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch3, reviewed_by raasikh, exclude:"
+    }
   }
 }

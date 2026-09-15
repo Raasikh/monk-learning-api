@@ -115,6 +115,16 @@
       "fleshy thalamus",
       "edible part"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:04Z",
+      "r2_key": "concept-assets/bio11-ch5-fruit--types--pericarp-and-false-fruits--b.json",
+      "sha256": "0e6f6ddacd4c053822a0fb254750306023894d2a4852b78dc4585a4ebb19bc15",
+      "bytes": 2161,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

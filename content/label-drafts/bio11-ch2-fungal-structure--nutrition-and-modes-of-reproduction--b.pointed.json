@@ -73,6 +73,16 @@
       "rhizoid",
       "stolon"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:17Z",
+      "r2_key": "concept-assets/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--b.json",
+      "sha256": "aab2f6bcf786bc97a2dfcf13b802d63274f183c52e3547272c523244a610509a",
+      "bytes": 1356,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch2, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

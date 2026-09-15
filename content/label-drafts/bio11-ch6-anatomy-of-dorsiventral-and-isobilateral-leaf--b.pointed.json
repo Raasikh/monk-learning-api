@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "epi",
@@ -203,6 +203,15 @@
       "palisade parenchyma",
       "spongy parenchyma"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:41Z",
+      "r2_key": "concept-assets/bio11-ch6-anatomy-of-dorsiventral-and-isobilateral-leaf--b.json",
+      "sha256": "6981ff117edebf5a564ab525c7b2f1f26f1a7d00a7d824727c61c3ae27015164",
+      "bytes": 3678,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch6, reviewed_by raasikh, exclude:"
+    }
   }
 }

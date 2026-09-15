@@ -4,7 +4,7 @@
   "image_h": 860,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "outer",
@@ -284,6 +284,15 @@
     "points_file": "content/label-drafts/points/bio11-ch16-structure-of-the-human-kidney-and-urinary-tract.json",
     "repointed": 15,
     "omitted_not_visible": [],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:27Z",
+      "r2_key": "concept-assets/bio11-ch16-structure-of-the-human-kidney-and-urinary-tract.json",
+      "sha256": "852bee60310074c139d7bbb08f3775d06ce9332742c50aa29edc8d09c85b358c",
+      "bytes": 5210,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch16, reviewed_by raasikh, exclude:"
+    }
   }
 }

@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "girdle",
@@ -196,6 +196,15 @@
       "tarsal",
       "metatarsal"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:31Z",
+      "r2_key": "concept-assets/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--a.json",
+      "sha256": "7cfe28712fb861352fd7f8ff5c6b5bae8d75c66501b1a10efba70f08e6768cd8",
+      "bytes": 3347,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch17, reviewed_by raasikh, exclude:"
+    }
   }
 }

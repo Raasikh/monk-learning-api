@@ -71,6 +71,16 @@
       "madreporite",
       "ambulacral groove"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:36Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-echinodermata-and-hemichordata--b.json",
+      "sha256": "a142ae9f10a04026573c3e4530a0bcf8b78d86fa967ab4c7803c886fc03a04c4",
+      "bytes": 1311,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "pelvis",
@@ -231,6 +231,15 @@
       "carpal",
       "metacarpal"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:33Z",
+      "r2_key": "concept-assets/bio11-ch17-appendicular-skeleton--girdles-and-limb-bones--b.json",
+      "sha256": "72162360ce78755e01ef1ef7246ff66af21c00f0912353338f6a3900341afa95",
+      "bytes": 3936,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch17, reviewed_by raasikh, exclude:"
+    }
   }
 }

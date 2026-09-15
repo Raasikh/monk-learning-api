@@ -83,6 +83,16 @@
       "fusiform root",
       "napiform root"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:15Z",
+      "r2_key": "concept-assets/bio11-ch5-root-system--types--regions-and-modifications--d.json",
+      "sha256": "ebe7e2f23596199d16f52ff797d618b049210e65195175a5b9caeb265b682fb9",
+      "bytes": 1507,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

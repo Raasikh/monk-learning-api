@@ -56,6 +56,16 @@
       "shell",
       "prehensile tail"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:46Z",
+      "r2_key": "concept-assets/bio11-ch4-class-amphibia-and-reptilia--c.json",
+      "sha256": "368f4245b9baa61d197689706a43e4d58b660a43057777deb8e1f4bad391bfca",
+      "bytes": 1048,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

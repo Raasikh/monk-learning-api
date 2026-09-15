@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "aerial",
@@ -148,6 +148,15 @@
       "septum",
       "coenocytic hypha"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:15Z",
+      "r2_key": "concept-assets/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--a.json",
+      "sha256": "bd1ff2e4036fff75d1ce4f7a713fc65c089c8a1bfae0d2a4a3e514f5d2739dcf",
+      "bytes": 2756,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch2, reviewed_by raasikh, exclude:"
+    }
   }
 }

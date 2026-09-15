@@ -39,9 +39,16 @@ TARGETS = {
     "bio11-ch7-cockroach--nervous-system-and-reproduction--b": "new",
     "bio11-ch7-cockroach--nervous-system-and-reproduction--c": "new",
     "bio11-ch7-frog--external-morphology-and-digestive-system--b": "new",
-    # Added 2026-09-13: the Taenia plate, so platyhelminthes --b (a planarian
-    # under a Taenia term list) can stay bare instead of being mislabelled.
-    "bio11-ch4-phylum-platyhelminthes--c": "new",
+    # Added 2026-09-13 as "new": the Taenia plate, so platyhelminthes --b (a
+    # planarian under a Taenia term list) can stay bare instead of being
+    # mislabelled. It arrived 2026-09-14 and was INGESTED AND POINTED, then
+    # HELD: the strobila is drawn in two disconnected pieces (the upper strand
+    # ends in a closed terminal proglottid; the lower ribbon is a separate
+    # closed shape). Raasikh ruled that a defect and a replacement is coming on
+    # the same slug, so this flips to "replace" — arrival now means the bytes
+    # CHANGED against the plate that is there, not that a file exists. Left as
+    # "new" it would report ARRIVED forever against the defective plate.
+    "bio11-ch4-phylum-platyhelminthes--c": "replace",
 }
 
 

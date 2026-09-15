@@ -185,6 +185,16 @@
       "ejaculatory duct",
       "bulbourethral gland"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:56Z",
+      "r2_key": "concept-assets/bio12-ch2-male-reproductive-system--testis--ducts-and-accessory-glands--a.json",
+      "sha256": "d737d5a095eaa875fb90e7fb17e4bb426b36500d1f00313c38ffdd0fce9a2b68",
+      "bytes": 3422,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio12-ch2, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

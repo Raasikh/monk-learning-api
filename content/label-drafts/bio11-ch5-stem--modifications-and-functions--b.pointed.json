@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [],
   "labels": [
     {
@@ -95,6 +95,15 @@
       "thorn",
       "tendril"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:23Z",
+      "r2_key": "concept-assets/bio11-ch5-stem--modifications-and-functions--b.json",
+      "sha256": "4c861583d4b447bbcde8ed5732be2053d62e2a98c01a5010c5c78939f588020a",
+      "bytes": 1574,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
   }
 }

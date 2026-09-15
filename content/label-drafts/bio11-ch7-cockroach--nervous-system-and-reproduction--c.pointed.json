@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [],
   "labels": [
     {
@@ -120,6 +120,15 @@
       "gonapophysis",
       "ootheca"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T00:57:12Z",
+      "r2_key": "concept-assets/bio11-ch7-cockroach--nervous-system-and-reproduction--c.json",
+      "sha256": "039bb3f73014cccdd863f153fbe93d3c9d310aa1c6dabcc4ed3bd598da9e0ebe",
+      "bytes": 2094,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch7-cockroach--nervous-system-and-reproduction--c, reviewed_by raasikh"
+    }
   }
 }

@@ -362,6 +362,16 @@
       "aortic semilunar valve",
       "pericardium"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:13Z",
+      "r2_key": "concept-assets/bio11-ch15-structure-of-the-human-heart-and-its-chambers.json",
+      "sha256": "7bc5b140d17bdd4047a2629b301a39750d02a8da20ac1038586ee7d9d335e153",
+      "bytes": 6709,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch15, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

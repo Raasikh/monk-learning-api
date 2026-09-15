@@ -180,6 +180,16 @@
     "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/bio11-ch15-formed-elements--rbc--wbc-and-platelets.json",
     "repointed": 9,
     "omitted_not_visible": [],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:11Z",
+      "r2_key": "concept-assets/bio11-ch15-formed-elements--rbc--wbc-and-platelets.json",
+      "sha256": "3bfede1bbb2dfb6f5c0ee68d54ed8c7a38cede63e9d85d4d41974fcd469b7543",
+      "bytes": 3410,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch15, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

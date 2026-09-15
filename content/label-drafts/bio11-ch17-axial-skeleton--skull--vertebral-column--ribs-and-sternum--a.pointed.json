@@ -87,6 +87,16 @@
       "costal cartilage",
       "intervertebral disc"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:04:35Z",
+      "r2_key": "concept-assets/bio11-ch17-axial-skeleton--skull--vertebral-column--ribs-and-sternum--a.json",
+      "sha256": "fe9a733e8e7884336918135cc2379472e649aefc6ebef9dcc07ab1b62f6aa17d",
+      "bytes": 1499,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch17, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

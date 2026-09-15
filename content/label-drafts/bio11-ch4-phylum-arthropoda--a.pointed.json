@@ -161,6 +161,16 @@
     "omitted_not_visible": [
       "sting"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:02:10Z",
+      "r2_key": "concept-assets/bio11-ch4-phylum-arthropoda--a.json",
+      "sha256": "dfbf2c80e63a962e144c8ef4d73ab3f3e72ebc9e55c7cfdd07a5583a999635e3",
+      "bytes": 2892,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch4, reviewed_by raasikh, exclude: bio11-ch4-phylum-platyhelminthes--b, bio11-ch4-phylum-platyhelminthes--c"
+    }
+  },
+  "label_set_version": 1
 }

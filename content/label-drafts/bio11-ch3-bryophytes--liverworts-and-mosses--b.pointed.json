@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "gameto",
@@ -152,6 +152,15 @@
       "antheridiophore",
       "archegoniophore"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:36Z",
+      "r2_key": "concept-assets/bio11-ch3-bryophytes--liverworts-and-mosses--b.json",
+      "sha256": "e8ef6de5d4e3107298416f2e0a062ac1922dedd6f97117a25cc6da0c4cad60e0",
+      "bytes": 2675,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch3, reviewed_by raasikh, exclude:"
+    }
   }
 }

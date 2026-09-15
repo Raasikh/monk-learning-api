@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [],
   "labels": [
     {
@@ -104,6 +104,15 @@
       "operculum",
       "peristome"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:34Z",
+      "r2_key": "concept-assets/bio11-ch3-bryophytes--liverworts-and-mosses--a.json",
+      "sha256": "5b9e1c32ba7562b3083287c537d554dd7c35fc5aad69d8ba0a1c52f3ceb40544",
+      "bytes": 1839,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch3, reviewed_by raasikh, exclude:"
+    }
   }
 }

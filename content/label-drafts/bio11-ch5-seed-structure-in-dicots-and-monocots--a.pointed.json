@@ -155,6 +155,16 @@
       "coleoptile",
       "coleorhiza"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:17Z",
+      "r2_key": "concept-assets/bio11-ch5-seed-structure-in-dicots-and-monocots--a.json",
+      "sha256": "8e7cb5d480771f4675e805ab9f1f9874b4191f8aa1a2ec189ae48f331daf5602",
+      "bytes": 2736,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

@@ -82,6 +82,16 @@
       "mesocarp",
       "endocarp"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
-  }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:03:06Z",
+      "r2_key": "concept-assets/bio11-ch5-fruit--types--pericarp-and-false-fruits--c.json",
+      "sha256": "d03c31eed383dd98656152946161b44ea68eba737d9edb3cc06bfd0e56a6411f",
+      "bytes": 1539,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch5, reviewed_by raasikh, exclude:"
+    }
+  },
+  "label_set_version": 1
 }

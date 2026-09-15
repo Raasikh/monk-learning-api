@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [],
   "labels": [
     {
@@ -100,6 +100,15 @@
       "coenocytic hypha",
       "stolon"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:20Z",
+      "r2_key": "concept-assets/bio11-ch2-fungal-structure--nutrition-and-modes-of-reproduction--c.json",
+      "sha256": "02c5c153fcbbfa440eb2a7726973cba41820e9b3b0e433a28d747d01141f85c5",
+      "bytes": 1810,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch2, reviewed_by raasikh, exclude:"
+    }
   }
 }

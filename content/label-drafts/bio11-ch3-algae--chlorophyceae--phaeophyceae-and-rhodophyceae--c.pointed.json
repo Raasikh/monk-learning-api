@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [],
   "labels": [
     {
@@ -91,6 +91,15 @@
       "stipe",
       "blade"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:27Z",
+      "r2_key": "concept-assets/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--c.json",
+      "sha256": "6d3128a41ce3035f65adc2be147d70a78c5349698e0ac068dd6e583160694a99",
+      "bytes": 1637,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch3, reviewed_by raasikh, exclude:"
+    }
   }
 }

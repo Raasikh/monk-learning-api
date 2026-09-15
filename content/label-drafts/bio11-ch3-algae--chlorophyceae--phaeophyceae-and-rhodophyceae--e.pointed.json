@@ -4,7 +4,7 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
-  "label_set_version": 0,
+  "label_set_version": 1,
   "groups": [
     {
       "id": "thallus",
@@ -110,6 +110,15 @@
       "spiral chloroplast",
       "blade"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
+    "published": {
+      "version": 1,
+      "at": "2026-09-15T01:01:31Z",
+      "r2_key": "concept-assets/bio11-ch3-algae--chlorophyceae--phaeophyceae-and-rhodophyceae--e.json",
+      "sha256": "9ccaede12a21ed5f77acd9ce659a2c21d5bc3742df41e4df3ecefae5ff56e917",
+      "bytes": 1977,
+      "reviewed_by": "raasikh",
+      "confirmation": "confirmed: bio11-ch3, reviewed_by raasikh, exclude:"
+    }
   }
 }
