@@ -2219,6 +2219,13 @@ _CROP_NUMBER_RE = re.compile(r"^(\d{1,3})\s*[.)]\s+\S")
 # hundred pixels.
 _OPTION_LINE_RE = re.compile(r"^\(\s*([1-4]|[A-Da-d])\s*\)\s*\S")
 
+# A printed answer or worked solution under the options. The keyword must be
+# followed by its punctuation — "Ans.", "Sol:", "Answer —" — because a STEM
+# can open with the same words ("Solution of the equation…") and must never
+# end the crop it starts.
+_ANSWER_LINE_RE = re.compile(
+    r"^\W{0,2}(?:ans(?:wer)?s?|soln?|solution|hint)\s*[.:\-–—]", re.IGNORECASE)
+
 
 def question_spans_by_number(page: Dict[str, Any],
                              wanted: List[int]) -> Dict[int, Dict[str, Any]]:
@@ -2281,21 +2288,26 @@ def question_spans_by_number(page: Dict[str, Any],
     spans: Dict[int, Dict[str, Any]] = {}
     for i, (num, top) in enumerate(ordered):
         bottom = ordered[i + 1][1] if i + 1 < len(ordered) else page_bottom
-        # Stop at this question's first choice, so the crop is the STEM (and
-        # the figure it refers to) and not the options underneath. The app
-        # still draws those itself and marks the correct one.
-        first_option = min(
+        # The choices STAY in the crop. They used to be cut off — the app
+        # draws them itself and marks the correct one — which was fine while
+        # options were text and blinding when they were STRUCTURES: a
+        # chemistry page whose choices are four drawn molecules came back as
+        # a stem crop plus an option row reading "C, C, C", because the one
+        # thing that made the options answerable was the drawing that had
+        # been cropped away. Now the image shows the question as printed,
+        # choices included, and the row below it still carries the green.
+        #
+        # What must NOT stay in: a printed key or worked solution under the
+        # options — "Ans. (2)", "Sol: …" — which would hand the student the
+        # answer inside the question card.
+        answer_line = min(
             (float(ln["top"]) for ln in lines
              if top < float(ln["top"]) < bottom
-             and _OPTION_LINE_RE.match((ln.get("text") or "").lstrip())),
+             and _ANSWER_LINE_RE.match((ln.get("text") or "").lstrip())),
             default=None,
         )
-        # ...unless that would leave almost nothing: a question whose options
-        # ARE the question ("which of the following is NOT true") prints its
-        # choices immediately under one line of stem, and a 30px crop of that
-        # line is worse than showing the whole band.
-        if first_option is not None and first_option - top >= 40:
-            bottom = first_option
+        if answer_line is not None and answer_line - top >= 40:
+            bottom = answer_line
         if bottom - top < 8:
             continue
         spans[num] = {"top": top, "bottom": bottom}

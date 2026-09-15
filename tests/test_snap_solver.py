@@ -3078,9 +3078,9 @@ def test_question_spans_come_from_numbers_papers_actually_print():
     assert sorted(spans) == [11, 12, 13]
     assert spans[11]["bottom"] == 600, (
         "with no choices between them, a question runs to where the next begins")
-    assert spans[13]["bottom"] == 1300, (
-        "the last would run to the foot of the content, but its own first "
-        "choice at y=1300 ends it sooner — see the stem-only crop")
+    assert spans[13]["bottom"] == 1330, (
+        "the last question runs to the foot of the content — its choices "
+        "stay in the crop now, chemistry structures being the reason")
 
 
 def test_a_parenthesised_option_is_not_a_question_number():
@@ -3139,12 +3139,15 @@ def test_trimming_leaves_a_near_blank_strip_alone():
     )
 
 
-def test_the_crop_stops_where_the_choices_start():
-    """The crop is the stem and its figure, never the options.
+def test_the_crop_keeps_the_choices():
+    """The crop is the question AS PRINTED — choices included.
 
-    The app keeps drawing the options itself and marks the correct one. A crop
-    that swallowed them would either print every choice twice or cost the
-    marking to avoid it, and neither is worth the extra pixels.
+    They used to be cut off because the app draws them itself and marks the
+    correct one. That was fine while options were text and blinding when
+    they were structures: a chemistry page whose choices are four drawn
+    molecules came back as a stem crop plus an option row reading "C, C, C".
+    The row below the image still carries the green mark; the image carries
+    everything the page printed.
     """
     page = {"text_lines": [
         {"top": 100, "bottom": 130, "text": "11. As shown in the figure, a network"},
@@ -3155,10 +3158,44 @@ def test_the_crop_stops_where_the_choices_start():
     ], "diagram_spans": [{"top": 200, "bottom": 380, "left": 10, "right": 500}]}
     spans = snap.question_spans_by_number(page, [11, 12])
     print(f"  q11 -> {int(spans[11]['top'])}-{int(spans[11]['bottom'])}")
-    assert spans[11]["bottom"] == 400, "the crop must end at the first choice"
-    assert spans[11]["top"] < 200 and spans[11]["bottom"] > 380, (
-        "and must still contain the figure the stem refers to"
+    assert spans[11]["bottom"] == 600, "the crop runs to the next question"
+    assert spans[11]["top"] < 200 and spans[11]["bottom"] > 480, (
+        "figure and every printed choice inside the band"
     )
+
+
+def test_the_crop_stops_at_a_printed_answer_line():
+    """Choices in, spoilers out: a printed key under the options ends the crop.
+
+    Coaching sheets print "Ans. (2)" straight under the choices. A crop that
+    kept the options and the key would hand the student the answer inside
+    the question card.
+    """
+    page = {"text_lines": [
+        {"top": 100, "bottom": 130, "text": "11. Which structure is aromatic?"},
+        {"top": 200, "bottom": 230, "text": "(1) first drawn ring"},
+        {"top": 250, "bottom": 280, "text": "(2) second drawn ring"},
+        {"top": 500, "bottom": 520, "text": "Ans. (2)"},
+        {"top": 600, "bottom": 630, "text": "12. Two long straight wires"},
+    ], "diagram_spans": []}
+    spans = snap.question_spans_by_number(page, [11, 12])
+    assert spans[11]["bottom"] == 500, "the key line ends the crop"
+
+
+def test_a_stem_opening_with_solution_is_not_a_key_line():
+    """"Solution of the equation…" is a stem, not a printed key.
+
+    The key regex requires the marker punctuation — "Sol:", "Ans." — so a
+    maths stem that happens to open with the word does not end its own crop.
+    """
+    page = {"text_lines": [
+        {"top": 100, "bottom": 130, "text": "11. Consider the following:"},
+        {"top": 150, "bottom": 180, "text": "Solution of the equation x^2 = 4 is"},
+        {"top": 200, "bottom": 230, "text": "(1) x = 2 only"},
+        {"top": 600, "bottom": 630, "text": "12. Next question"},
+    ], "diagram_spans": []}
+    spans = snap.question_spans_by_number(page, [11, 12])
+    assert spans[11]["bottom"] == 600
 
 
 def test_a_question_that_is_its_options_keeps_the_whole_band():
