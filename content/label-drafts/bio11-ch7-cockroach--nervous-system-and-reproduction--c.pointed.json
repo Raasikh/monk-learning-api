@@ -1,0 +1,125 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--nervous-system-and-reproduction--c",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "label_set_version": 0,
+  "groups": [],
+  "labels": [
+    {
+      "id": "ovary",
+      "text": {
+        "en": "ovary",
+        "hi": "ovary"
+      },
+      "anchor": [
+        0.3795,
+        0.3232
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "ovariole",
+      "text": {
+        "en": "ovariole",
+        "hi": "ovariole"
+      },
+      "anchor": [
+        0.3237,
+        0.4125
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "oviduct",
+      "text": {
+        "en": "oviduct",
+        "hi": "oviduct"
+      },
+      "anchor": [
+        0.4397,
+        0.5393
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "spermatheca",
+      "text": {
+        "en": "spermatheca",
+        "hi": "spermatheca"
+      },
+      "anchor": [
+        0.464,
+        0.703
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "collateral-gland",
+      "text": {
+        "en": "collateral gland",
+        "hi": "collateral gland"
+      },
+      "anchor": [
+        0.4375,
+        0.6429
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "supra-oesophageal ganglion",
+    "sub-oesophageal ganglion",
+    "circum-oesophageal connective",
+    "thoracic ganglion",
+    "abdominal ganglion",
+    "ventral nerve cord",
+    "testis",
+    "vas deferens",
+    "seminal vesicle",
+    "mushroom gland",
+    "ejaculatory duct",
+    "phallic gland",
+    "gonapophysis",
+    "ootheca"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/b6/points/cockroach--c.json",
+    "repointed": 5,
+    "omitted_not_visible": [
+      "supra-oesophageal ganglion",
+      "sub-oesophageal ganglion",
+      "circum-oesophageal connective",
+      "thoracic ganglion",
+      "abdominal ganglion",
+      "ventral nerve cord",
+      "testis",
+      "vas deferens",
+      "seminal vesicle",
+      "mushroom gland",
+      "ejaculatory duct",
+      "phallic gland",
+      "gonapophysis",
+      "ootheca"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

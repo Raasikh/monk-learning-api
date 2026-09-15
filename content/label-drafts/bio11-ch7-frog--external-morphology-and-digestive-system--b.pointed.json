@@ -1,0 +1,242 @@
+{
+  "asset_slug": "bio11-ch7-frog--external-morphology-and-digestive-system--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "label_set_version": 0,
+  "groups": [
+    {
+      "id": "canal",
+      "label": {
+        "english": "Mouth to stomach",
+        "hinglish": "Mouth to stomach"
+      }
+    },
+    {
+      "id": "glands",
+      "label": {
+        "english": "Digestive glands",
+        "hinglish": "Digestive glands"
+      }
+    },
+    {
+      "id": "gut",
+      "label": {
+        "english": "Intestine to cloaca",
+        "hinglish": "Intestine to cloaca"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "buccal-cavity",
+      "text": {
+        "en": "buccal cavity",
+        "hi": "buccal cavity"
+      },
+      "anchor": [
+        0.505,
+        0.145
+      ],
+      "side": "auto",
+      "group": "canal",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "oesophagus",
+      "text": {
+        "en": "oesophagus",
+        "hi": "oesophagus"
+      },
+      "anchor": [
+        0.505,
+        0.225
+      ],
+      "side": "auto",
+      "group": "canal",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "stomach",
+      "text": {
+        "en": "stomach",
+        "hi": "stomach"
+      },
+      "anchor": [
+        0.56,
+        0.345
+      ],
+      "side": "auto",
+      "group": "canal",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "duodenum",
+      "text": {
+        "en": "duodenum",
+        "hi": "duodenum"
+      },
+      "anchor": [
+        0.455,
+        0.465
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "ileum",
+      "text": {
+        "en": "ileum",
+        "hi": "ileum"
+      },
+      "anchor": [
+        0.442,
+        0.6107
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "rectum",
+      "text": {
+        "en": "rectum",
+        "hi": "rectum"
+      },
+      "anchor": [
+        0.4989,
+        0.7732
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "cloaca",
+      "text": {
+        "en": "cloaca",
+        "hi": "cloaca"
+      },
+      "anchor": [
+        0.498,
+        0.855
+      ],
+      "side": "auto",
+      "group": "gut",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "liver",
+      "text": {
+        "en": "liver",
+        "hi": "liver"
+      },
+      "anchor": [
+        0.4353,
+        0.3214
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "gall-bladder",
+      "text": {
+        "en": "gall bladder",
+        "hi": "gall bladder"
+      },
+      "anchor": [
+        0.4453,
+        0.3804
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "pancreas",
+      "text": {
+        "en": "pancreas",
+        "hi": "pancreas"
+      },
+      "anchor": [
+        0.548,
+        0.4339
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "spleen",
+      "text": {
+        "en": "spleen",
+        "hi": "spleen"
+      },
+      "anchor": [
+        0.583,
+        0.468
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "unplaced": [
+    "head",
+    "eye",
+    "nictitating membrane",
+    "tympanum",
+    "nostril",
+    "trunk",
+    "forelimb",
+    "hindlimb",
+    "webbed digit",
+    "cloacal aperture",
+    "bile duct"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/b6/points/frog--b.json",
+    "repointed": 11,
+    "omitted_not_visible": [
+      "head",
+      "eye",
+      "nictitating membrane",
+      "tympanum",
+      "nostril",
+      "trunk",
+      "forelimb",
+      "hindlimb",
+      "webbed digit",
+      "cloacal aperture",
+      "bile duct"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

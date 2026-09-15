@@ -1,0 +1,159 @@
+{
+  "asset_slug": "bio11-ch7-cockroach--nervous-system-and-reproduction--b",
+  "image_w": 896,
+  "image_h": 560,
+  "schema_version": 1,
+  "source": "claude-pointed",
+  "label_set_version": 0,
+  "groups": [
+    {
+      "id": "ducts",
+      "label": {
+        "english": "Testes and ducts",
+        "hinglish": "Testes and ducts"
+      }
+    },
+    {
+      "id": "glands",
+      "label": {
+        "english": "Glands and genitalia",
+        "hinglish": "Glands and genitalia"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "id": "testis",
+      "text": {
+        "en": "testis",
+        "hi": "testis"
+      },
+      "anchor": [
+        0.41,
+        0.165
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "vas-deferens",
+      "text": {
+        "en": "vas deferens",
+        "hi": "vas deferens"
+      },
+      "anchor": [
+        0.375,
+        0.32
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "mushroom-gland",
+      "text": {
+        "en": "mushroom gland",
+        "hi": "mushroom gland"
+      },
+      "anchor": [
+        0.497,
+        0.34
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
+    {
+      "id": "ejaculatory-duct",
+      "text": {
+        "en": "ejaculatory duct",
+        "hi": "ejaculatory duct"
+      },
+      "anchor": [
+        0.5,
+        0.565
+      ],
+      "side": "auto",
+      "group": "ducts",
+      "_point": {
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "phallic-gland",
+      "text": {
+        "en": "phallic gland",
+        "hi": "phallic gland"
+      },
+      "anchor": [
+        0.472,
+        0.661
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.85
+      }
+    },
+    {
+      "id": "gonapophysis",
+      "text": {
+        "en": "gonapophysis",
+        "hi": "gonapophysis"
+      },
+      "anchor": [
+        0.48,
+        0.821
+      ],
+      "side": "auto",
+      "group": "glands",
+      "_point": {
+        "confidence": 0.8
+      }
+    }
+  ],
+  "unplaced": [
+    "supra-oesophageal ganglion",
+    "sub-oesophageal ganglion",
+    "circum-oesophageal connective",
+    "thoracic ganglion",
+    "abdominal ganglion",
+    "ventral nerve cord",
+    "seminal vesicle",
+    "ovary",
+    "ovariole",
+    "oviduct",
+    "spermatheca",
+    "collateral gland",
+    "ootheca"
+  ],
+  "_draft": {
+    "generated_by": "scripts/draft_anchors_pointed.py",
+    "model": "gemini (pointed in chat, outside this repo)",
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/b6/points/cockroach--b.json",
+    "repointed": 6,
+    "omitted_not_visible": [
+      "supra-oesophageal ganglion",
+      "sub-oesophageal ganglion",
+      "circum-oesophageal connective",
+      "thoracic ganglion",
+      "abdominal ganglion",
+      "ventral nerve cord",
+      "seminal vesicle",
+      "ovary",
+      "ovariole",
+      "oviduct",
+      "spermatheca",
+      "collateral gland",
+      "ootheca"
+    ],
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
+  }
+}

@@ -1929,9 +1929,22 @@ def cmd_verify(args) -> int:
         if int(r.get("width") or 0) < RENDITION_THRESHOLD_PX
     }
 
+    # LABEL SETS SHARE THE PREFIX AND ARE NOT ASSETS. `apply_review` publishes
+    # `concept-assets/<asset_slug>.json` beside the master; those objects have
+    # no row in this table and never will, because this table is the ART. Until
+    # 2026-09-14 they were reported as ORPHANED OBJECTS -- 22 of them, every
+    # published ch7 set -- so a healthy bucket printed "PROBLEMS FOUND" and the
+    # orphan list became something to scroll past. A check that cries wolf on
+    # correct state is on its way to being ignored, which is how the real
+    # orphan it exists to catch would be missed.
+    label_sets = [] if s3_error else sorted(
+        k for k in objects if k.endswith(".json"))
+
     dangling = [] if s3_error else [r for r in rows if r["r2_key"] not in objects]
     unreferenced = [] if s3_error else sorted(
-        k for k in objects if k not in by_key and k not in expected_renditions)
+        k for k in objects
+        if k not in by_key and k not in expected_renditions
+        and not k.endswith(".json"))
 
     # THE OTHER DIRECTION, and it is the one that shows a student a blank
     # board. `pickRendition` in the app chooses @2x at ALL THREE frames — 343
@@ -1963,6 +1976,13 @@ def cmd_verify(args) -> int:
               "It fails at render time, in front of a student.")
         for r in dangling:
             print(f"  {r['asset_slug']}  {r['r2_key']}")
+        print()
+
+    if label_sets:
+        # Counted, not hidden. An unexpected COUNT here is still a signal --
+        # it should equal the number of published sets.
+        print(f"published label sets alongside the masters: {len(label_sets)} "
+              f"(.json — no concept_assets row by design, not orphans)")
         print()
 
     if unreferenced:

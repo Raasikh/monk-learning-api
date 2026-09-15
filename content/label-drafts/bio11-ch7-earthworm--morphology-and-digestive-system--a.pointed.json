@@ -4,8 +4,24 @@
   "image_h": 560,
   "schema_version": 1,
   "source": "claude-pointed",
+  "label_set_version": 0,
   "groups": [],
   "labels": [
+    {
+      "id": "prostomium",
+      "text": {
+        "en": "prostomium",
+        "hi": "prostomium"
+      },
+      "anchor": [
+        0.0658,
+        0.5071
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.95
+      }
+    },
     {
       "id": "clitellum",
       "text": {
@@ -13,17 +29,31 @@
         "hi": "clitellum"
       },
       "anchor": [
-        0.565,
-        0.5
+        0.2902,
+        0.4982
       ],
       "side": "auto",
       "_point": {
         "confidence": 0.95
       }
+    },
+    {
+      "id": "anus",
+      "text": {
+        "en": "anus",
+        "hi": "anus"
+      },
+      "anchor": [
+        0.9342,
+        0.4982
+      ],
+      "side": "auto",
+      "_point": {
+        "confidence": 0.7
+      }
     }
   ],
   "unplaced": [
-    "prostomium",
     "peristomium",
     "mouth",
     "seta",
@@ -31,7 +61,6 @@
     "female genital pore",
     "male genital pore",
     "spermathecal pore",
-    "anus",
     "buccal cavity",
     "pharynx",
     "oesophagus",
@@ -45,10 +74,9 @@
   "_draft": {
     "generated_by": "scripts/draft_anchors_pointed.py",
     "model": "gemini (pointed in chat, outside this repo)",
-    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/points/earthworm-morph-a.json",
-    "repointed": 1,
+    "points_file": "/private/tmp/claude-501/-Users-raasikhnaveed-Desktop-monk-learning-mobile/1a5b89d3-c260-4a64-9e7c-dabfec1bdba1/scratchpad/b6/points/earthworm--a.json",
+    "repointed": 3,
     "omitted_not_visible": [
-      "prostomium",
       "peristomium",
       "mouth",
       "seta",
@@ -56,7 +84,6 @@
       "female genital pore",
       "male genital pore",
       "spermathecal pore",
-      "anus",
       "buccal cavity",
       "pharynx",
       "oesophagus",
@@ -67,12 +94,6 @@
       "calciferous gland",
       "intestinal caeca"
     ],
-    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer.",
-    "plate_is_insufficient": {
-      "decided_by": "raasikh",
-      "on": "2026-09-12",
-      "ship": "bare but one — clitellum only, until a replacement plate arrives",
-      "why": "The plate is a whole-body silhouette. Eighteen of its nineteen terms (prostomium, peristomium, mouth, anus, seta, genital papilla, and all three pore types) need an identifiable ANTERIOR END, and this drawing does not have one. The clitellum sits at 55-62% of body length; in Pheretima it is at segments 14-16, about 13%. Neither end of the drawing is consistent with that, so naming either one 'prostomium' is a coin flip on which end is the head — and a correct word on the wrong end is the worst thing this pipeline can ship. Raasikh regenerates the plate separately; nothing here is a placement problem to solve."
-    }
+    "note": "POINTED DRAFT. reviewed_by is deliberately absent: an anchor proposed by a model is a guess wherever it came from, and the resolver refuses a set without a human reviewer."
   }
 }
