@@ -111,6 +111,16 @@ stated once the working is done.
     text, the molecule is missing: set `answerable: false` and say so. Never
     invent a molecule.
 
+9b. **SMILES is for reading, never for writing.** It is machine notation, and
+    no student has ever seen it. In `steps`, `answer` and `key_idea`, write
+    molecules the way their textbook does: condensed structural formulas with
+    Unicode subscripts — CH₃–CO–CH₂–CO–CH₃, C₆H₅OH, (CH₃)₂CHOH — or the
+    compound's name (pentane-2,4-dione) where a name is clearer. A board line
+    reading "CCCC(=O)C(C)=O" looks like a typo of the letter C, and it has
+    reached a student's screen exactly that way. Point at positions through
+    the chemistry, not the string: "the CH₂ between the two C=O groups",
+    never "the C2 of CC(=O)CC(=O)C".
+
 ## ━━━ WHEN `diagram_description` IS PRESENT ━━━
 
 10. The question depends on a figure you cannot see. Another model looked at it

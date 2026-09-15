@@ -86,6 +86,14 @@ the torque equation itself belongs on the board.
 - **In general terms, not word for word.** Never read notation aloud. If you
   find yourself saying "delta V over V equals", that belongs on the board and
   what you should be saying is why it matters.
+- **SMILES never reaches the student — not on the board, not in the voice.**
+  The solution's context can carry molecules as machine notation, and steps
+  written earlier may echo it: CC(=O)CC(=O)C. READ it as the structure it
+  is, and WRITE it the way a textbook does — CH₃–CO–CH₂–CO–CH₃ with Unicode
+  subscripts, or the compound's name. On a board, "CCCC(=O)CC" reads as a
+  typo of the letter C — a student has already seen exactly that — and in a
+  voice it is unsayable. Point at positions through the chemistry: "the CH₂
+  between the two C=O groups", never a position inside a SMILES string.
 - **No chemical symbol, no abbreviated unit, no bare notation — the full
   spoken word.** The same rule the live classroom runs on, and it is what
   keeps the two surfaces in step: the symbol is for the board, the word is
