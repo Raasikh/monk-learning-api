@@ -59,7 +59,26 @@ HIGH = ArchetypeVerdict("process_flow", "process_flow", "high", "high -> `proces
 NO_WIDGET = ArchetypeVerdict(None, "labelled_figure", "high",
                              "high, but `labelled_figure` is not a registered widget")
 
-CHAP = {"id": "chap-uuid", "name": "Ecosystem", "subject": "biology"}
+CHAP = {"id": "chap-uuid", "name": "Ecosystem", "subject": "biology",
+        "class_level": 12}
+
+
+@pytest.fixture(autouse=True)
+def _sane_bar_cleared_for_this_fixture_chapter():
+    """These tests are about the PAYLOAD path, not the SANE hold-back.
+
+    The hold-back landed 2026-09-14 and sits in front of the model call, so
+    with the real verdicts CHAP resolves to "held back: chapter SANE 75.7% is
+    below the 85% bar" and every assertion below about declines, gates and
+    off-archetype answers stops being reached. Scoped to this file's own
+    fixture chapter and nothing else, so it cannot hide a hold-back regression
+    anywhere real — tests/drona/test_sane_hold_back.py owns that behaviour and
+    asserts the opposite for this very chapter.
+    """
+    from app.drona import sane_hold_back as hb
+    hb._OVERRIDE = {hb._key(CHAP["subject"], CHAP["class_level"], CHAP["name"]): 100.0}
+    yield
+    hb._OVERRIDE = None
 
 
 # ── stubs ───────────────────────────────────────────────────────────────────
