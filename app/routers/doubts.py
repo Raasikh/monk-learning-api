@@ -38,7 +38,8 @@ from app.snap import (
     transcribe_question,
 )
 from app import exam_scope, followup_voice
-from app.drona.persona import tutor_name
+from app.drona.persona import (tutor_name, unsupported_language_in,
+                               unsupported_language_reply)
 from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
 
@@ -1208,6 +1209,14 @@ async def ask_about_doubt_aloud(
         # simply ask again rather than showing a failure.
         raise HTTPException(status_code=422,
                             detail="Monk did not catch that — try asking again.")
+    lang_name = unsupported_language_in(question)
+    if lang_name:
+        # The classroom refuses these in code for a reason that holds here
+        # too: a Telugu transcript handed to the model becomes a question it
+        # will earnestly invent an answer to. Same guard, same kind reply,
+        # composed in the session's language.
+        raise HTTPException(status_code=422,
+                            detail=unsupported_language_reply(language, lang_name))
 
     try:
         prior = json.loads(history or "[]")
