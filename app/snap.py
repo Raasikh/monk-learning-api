@@ -2543,6 +2543,27 @@ def crop_figure(image_bytes: bytes, span: Dict[str, Any]) -> Optional[bytes]:
 _SMILES_ONLY = re.compile(r"^\s*(<smiles>[^<]*</smiles>\s*)+$", re.I)
 
 
+def _answer_text(chosen: List[Dict[str, str]]) -> str:
+    """The final-answer line for the chosen option(s), fit for a student.
+
+    For a choice question the stored answer is normally the option's own text,
+    so it reads as one of the printed choices. But an option transcribed from
+    a DRAWN STRUCTURE has SMILES for text, and the green answer pill quoted it
+    verbatim — "<smiles>CCC(=O)CC(C)=O</smiles>" presented as the final
+    answer, which is the right answer written in a language no student reads.
+    The label is the honest text there: the question crop and the green-marked
+    option card both already show the structure itself.
+    """
+    parts = []
+    for o in chosen:
+        text = (o.get("text") or "").strip()
+        if not text or _SMILES_ONLY.match(text):
+            parts.append(f"Option ({o.get('label')})")
+        else:
+            parts.append(text)
+    return " and ".join(parts)
+
+
 def options_are_pictures(options: List[Dict[str, str]]) -> bool:
     """True when every option's words are a picture rather than a statement.
 
@@ -3025,7 +3046,7 @@ def _reconcile_with_steps(solution: Dict[str, Any],
         )
         chosen = [o for o in options if o["label"] in steps_say]
         solution["option_labels"] = steps_say
-        solution["answer"] = " and ".join(o["text"] for o in chosen)
+        solution["answer"] = _answer_text(chosen)
         solution["answer_from_steps"] = True
     return elapsed_ms
 
@@ -3240,8 +3261,9 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
 
     return {
         # For a choice question the stored answer is the option text itself, so
-        # it always reads as one of the printed choices.
-        "answer": " and ".join(o["text"] for o in chosen) if chosen else answer,
+        # it always reads as one of the printed choices — unless that text is
+        # a transcribed structure, where the label stands in. See _answer_text.
+        "answer": _answer_text(chosen) if chosen else answer,
         "option_labels": [o["label"] for o in chosen],
         "steps": steps,
         "key_idea": (parsed.get("key_idea") or "").strip() or None,
@@ -3797,7 +3819,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             labels = labels[:1]
         chosen = [o for o in options if o["label"] in labels]
         solution["option_labels"] = labels
-        solution["answer"] = " and ".join(o["text"] for o in chosen) or solution["answer"]
+        solution["answer"] = _answer_text(chosen) or solution["answer"]
 
         # Now that a label exists, hold it against the derivation — the same
         # check the option-shown path runs above. It has to happen HERE rather

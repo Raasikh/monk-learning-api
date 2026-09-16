@@ -22,3 +22,23 @@ def test_real_keys_survive():
 
 def test_whitespace_is_trimmed_not_fatal():
     assert _real_printed_key("  C ") == "C"
+
+
+def test_a_structure_option_answers_by_label():
+    """The right answer in a language no student reads is not an answer.
+
+    Seen live: the green pill quoted "<smiles>CCC(=O)CC(C)=O</smiles>" as the
+    final answer. The crop and the green-marked option card both show the
+    structure; the pill's job is to point at it.
+    """
+    from app.snap import _answer_text
+
+    chosen = [{"label": "4", "text": "<smiles>CCC(=O)CC(C)=O</smiles>"}]
+    assert _answer_text(chosen) == "Option (4)"
+
+    both = [{"label": "2", "text": "<smiles>CC=O</smiles>"},
+            {"label": "4", "text": ""}]
+    assert _answer_text(both) == "Option (2) and Option (4)"
+
+    words = [{"label": "4", "text": "Alicyclic"}]
+    assert _answer_text(words) == "Alicyclic"
