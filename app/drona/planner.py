@@ -972,12 +972,34 @@ def _attach_segment_board(segment: Dict[str, Any], chap_data: Dict[str, Any],
     # example, whatever slot 1 did. Slot 1 outranks it at serve time, so a
     # segment with both loses nothing.
     _attach_example_diagram(segment, subject, sub_title)
-    if status in ("declined", "rejected", "error") and not segment.get("example_diagram_svg"):
-        # `unresolved` is deliberately NOT in that list. A concept whose column
-        # could not be read may still be a `high` concept, and burning a
-        # diagram_author call per segment on a transient socket error is paying
-        # for a failure. It regenerates: the plan is invalidated by
-        # planner_code_sha and the live path still resolves the column per turn.
+
+    # WHEN A SEGMENT NEEDS A PICTURE AUTHORED UNDERNEATH IT.
+    #
+    # This used to ask only "did slot 1 fail?", which was right for as long as
+    # `slot 1 stored` implied `slot 1 shown`. The SANE hold-back broke that
+    # implication on 2026-09-15: authoring now succeeds for every eligible row
+    # and the SHOWING is decided per turn from the chapter's verdict.
+    #
+    # Measured on chem 12 ch8 before this line existed: 38 segments held a
+    # payload, 4 of them had an SVG, and the chapter is held — so 34 segments
+    # resolved past the widget to `svg_live` with nothing stored underneath.
+    # Not a blank board, because the live path authors one, but authored at
+    # latency on every turn and only if that call succeeds.
+    #
+    # `unresolved` is still deliberately absent from the failure list. A
+    # concept whose column could not be read may still be a `high` concept, and
+    # burning a diagram_author call per segment on a transient socket error is
+    # paying for a failure.
+    from app.drona.sane_hold_back import widget_baking_allowed
+    will_show, _why = widget_baking_allowed(
+        subject, int(chap_data.get("class_level") or 0), chap_data.get("name") or "")
+    slot1_failed = status in ("declined", "rejected", "error")
+    slot1_held = (status == "stored") and not will_show
+    if (slot1_failed or slot1_held) and not segment.get("example_diagram_svg"):
+        # NOTHING IS REMOVED HERE. The payload stays exactly where it is; this
+        # only puts a picture underneath it. When the chapter's verdict clears,
+        # the widget resolves again and this goes back to being the fallback it
+        # always was.
         _attach_example_diagram(segment, subject, sub_title, force=True)
     return status
 

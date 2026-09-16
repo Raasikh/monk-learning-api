@@ -93,22 +93,37 @@ def test_the_verdicts_file_carries_the_confirmation_that_authorised_it():
 
 
 def test_the_gate_is_NOT_in_the_planner_and_authoring_is_never_skipped():
-    """This asserted the OPPOSITE until 2026-09-15.
+    """The gate must not touch AUTHORING. It may inform the FALLBACK.
 
-    The gate was in the planner, in front of the model call, so a held chapter
-    stored nothing. That skipped authoring — physics 12 "Electromagnetic Waves"
-    lost 8 payloads that rendered — and it put a policy about what may be SHOWN
-    into `planner_code_sha`, so every gate change invalidated every plan.
+    These two are different decisions and the distinction is the whole of
+    option (a):
 
-    Raasikh's option (a), 2026-09-15: author and store for every eligible row
-    whatever the verdict says; hold back only at resolution. The test is kept
-    rather than deleted, inverted, so the old placement cannot quietly return.
+      `_attach_widget_payload` must never consult the verdict. Every eligible
+      routed row gets a payload authored and stored whatever the chapter
+      scores; that is what stops a held chapter losing payloads the way
+      "Electromagnetic Waves" lost 8 on 2026-09-14.
+
+      `_attach_segment_board` MUST consult it, since 2026-09-15. A held chapter
+      will not show its widget, so something has to be authored underneath —
+      without that, 34 chem segments resolved to `svg_live` with nothing stored.
+
+    So this asserts placement, not absence.
     """
     src = Path("app/drona/planner.py").read_text()
-    assert "widget_baking_allowed" not in src
-    assert "held_back" not in src
+    author = src[src.index("def _attach_widget_payload("):]
+    author = author[:author.index("\ndef ")]
+    assert "sane" not in author.lower(), \
+        "the AUTHORING path must not consult the verdict at all"
+    assert "held_back" not in src, "a held chapter must still store its payload"
+
+    board = src[src.index("def _attach_segment_board("):]
+    board = board[:board.index("\ndef ")]
+    assert "widget_baking_allowed" in board, \
+        "the fallback decision has to know whether the widget will actually show"
+    assert "force=True" in board
+
     tut = Path("app/drona/tutor.py").read_text()
-    assert "widget_allowed" in tut, "the gate has to live in resolve_board_slot"
+    assert "widget_allowed" in tut, "the gate itself belongs in resolve_board_slot"
 
 
 def test_the_verdicts_file_and_the_proposals_sheet_AGREE_on_every_value():
