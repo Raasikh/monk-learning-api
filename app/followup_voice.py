@@ -107,33 +107,42 @@ async def _open_socket():
 # follow-up is ASKED, so the socket opens while Deepgram transcribes and the
 # model writes; by the time there is a sentence to speak it is already there.
 _WARM_TTL_S = 45.0
-_warm: Optional[Tuple[Any, float]] = None
-_warming: Optional[asyncio.Task] = None
+# TWO warm sockets, because the answer now needs two at once: speak_chunks
+# synthesises one sentence ahead, so sentence 1 takes a socket and sentence 2
+# starts on another in the same breath. With a single-slot warm pool the
+# second was always cold, hiding a ~1.7s handshake inside sentence 2's
+# synthesis time — the exact cost prewarming exists to remove.
+_WARM_DEPTH = 2
+_warm: List[Tuple[Any, float]] = []
+_warming: List[asyncio.Task] = []
 
 
 def prewarm(tutor_voice: Optional[str] = None,
             language: Optional[str] = None) -> None:
-    """Open a socket in the background, if one is not already waiting.
+    """Open sockets in the background until the pool holds `_WARM_DEPTH`.
 
     Fire and forget: a socket that fails to open costs nothing, because
     `_take_socket` falls back to opening one the usual way.
     """
-    global _warming
-    if _warm is not None or (_warming is not None and not _warming.done()):
+    _warming[:] = [t for t in _warming if not t.done()]
+    want = _WARM_DEPTH - len(_warm) - len(_warming)
+    if want <= 0:
         return
 
     async def _fill():
-        global _warm
         try:
             ws = await _open_socket()
-            _warm = (ws, time.time())
-            logger.info("[FOLLOWUP TTS] socket warmed ahead of the answer")
+            _warm.append((ws, time.time()))
+            logger.info("[FOLLOWUP TTS] socket warmed ahead of the answer "
+                        "(%d ready)", len(_warm))
         except Exception as err:
             logger.info("[FOLLOWUP TTS] could not warm a socket (%s) — the "
                         "next synthesis opens its own", err)
 
     try:
-        _warming = asyncio.get_event_loop().create_task(_fill())
+        loop = asyncio.get_event_loop()
+        for _ in range(want):
+            _warming.append(loop.create_task(_fill()))
     except RuntimeError:
         # No running loop (a sync caller). Warming is an optimisation, and
         # skipping it only costs the handshake it was meant to save.
@@ -141,11 +150,9 @@ def prewarm(tutor_voice: Optional[str] = None,
 
 
 async def _take_socket():
-    """The warmed socket if one is waiting and still fresh, else a new one."""
-    global _warm
-    if _warm is not None:
-        ws, opened = _warm
-        _warm = None
+    """A warmed socket if one is waiting and still fresh, else a new one."""
+    while _warm:
+        ws, opened = _warm.pop(0)
         if time.time() - opened < _WARM_TTL_S and not getattr(ws, "closed", False):
             return ws
         # Past its welcome: Rumik drops an idle socket, and finding that out by
@@ -202,6 +209,8 @@ async def _synthesize(text: str, voice_preset: str) -> bytes:
     # the wait and it does not have to be paid after the answer exists.
     ws = await _take_socket()
     try:
+        sent_at = time.time()
+        first_frame_ms: Optional[int] = None
         await ws.send(json.dumps({"text": text, "speaker": voice_preset}))
         buf = bytearray()
         deadline = time.time() + SYNTH_TIMEOUT_S
@@ -212,6 +221,8 @@ async def _synthesize(text: str, voice_preset: str) -> bytes:
                 break
             msg = await asyncio.wait_for(ws.recv(), timeout=remaining)
             if isinstance(msg, bytes):
+                if first_frame_ms is None and msg:
+                    first_frame_ms = int((time.time() - sent_at) * 1000)
                 buf.extend(msg)
             elif isinstance(msg, str):
                 payload = json.loads(msg)
@@ -221,6 +232,16 @@ async def _synthesize(text: str, voice_preset: str) -> bytes:
                     logger.warning("[FOLLOWUP TTS] refused: %s",
                                    payload.get("message") or payload.get("code"))
                     break
+        # The number that settles "is Rumik slow, or are we?": its first frame
+        # against its last. A fast first frame and a slow finish means the
+        # wait is OUR whole-clip collection — a streaming player's gain, per
+        # sentence, is exactly the difference between these two.
+        if buf:
+            logger.info(
+                "[FOLLOWUP TTS] first frame at %sms, complete at %dms (%d chars)",
+                first_frame_ms if first_frame_ms is not None else "?",
+                int((time.time() - sent_at) * 1000), len(text),
+            )
         return bytes(buf)
     finally:
         try:
