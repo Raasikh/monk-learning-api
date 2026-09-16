@@ -502,22 +502,44 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
     preset = preset_for(tutor_voice)
     sentences = _spoken_sentences(said)
     started = time.time()
-    for idx, sentence in enumerate(sentences, 1):
-        try:
-            pcm = await _synthesize(sentence, preset)
-        except Exception as err:
-            logger.error("[FOLLOWUP TTS] sentence %d/%d failed for %s: %s",
-                         idx, len(sentences), preset, err)
-            return
-        if not pcm:
-            logger.warning("[FOLLOWUP TTS] sentence %d/%d came back empty — "
-                           "stopping rather than skipping it", idx, len(sentences))
-            return
-        logger.info("[FOLLOWUP TTS] %s sentence %d/%d: %d chars -> %.1fs of "
-                    "audio at t+%dms", preset, idx, len(sentences), len(sentence),
-                    len(pcm) / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS),
-                    int((time.time() - started) * 1000))
-        yield idx, len(sentences), wav_from_pcm(pcm)
+
+    # ONE sentence ahead, always. Serially, sentence n+1's synthesis began
+    # only when n's finished — so the student heard a 1-2s hole between
+    # sentences whenever the next needed longer to make than the current
+    # took to play, which at Rumik's roughly half-realtime pace is most of
+    # the time. And the phone plays clips at 1.15x, ending each one 13%
+    # sooner than its nominal length: the speed-up bought pace and paid for
+    # it in exactly this gap. One ahead rather than all at once: every
+    # in-flight synthesis holds a Rumik socket, and the classroom pool
+    # competes for the same supply.
+    def begin(i: int) -> asyncio.Task:
+        return asyncio.create_task(_synthesize(sentences[i], preset))
+
+    pending = begin(0)
+    try:
+        for idx, sentence in enumerate(sentences, 1):
+            current = pending
+            pending = begin(idx) if idx < len(sentences) else None
+            try:
+                pcm = await current
+            except Exception as err:
+                logger.error("[FOLLOWUP TTS] sentence %d/%d failed for %s: %s",
+                             idx, len(sentences), preset, err)
+                return
+            if not pcm:
+                logger.warning("[FOLLOWUP TTS] sentence %d/%d came back empty — "
+                               "stopping rather than skipping it", idx, len(sentences))
+                return
+            logger.info("[FOLLOWUP TTS] %s sentence %d/%d: %d chars -> %.1fs of "
+                        "audio at t+%dms", preset, idx, len(sentences), len(sentence),
+                        len(pcm) / (SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS),
+                        int((time.time() - started) * 1000))
+            yield idx, len(sentences), wav_from_pcm(pcm)
+    finally:
+        # A student who pressed Done mid-answer cancels this generator; the
+        # sentence being made ahead must not keep a socket warm for nobody.
+        if pending is not None and not pending.done():
+            pending.cancel()
 
 
 async def speak(text: str, tutor_voice: Optional[str] = None) -> bytes:

@@ -114,3 +114,41 @@ def test_a_long_question_is_not_a_close():
     assert len(long_q) > followup_voice.MAX_CLOSE_CHARS
     out = followup_voice.cap_spoken((filler * 8).strip() + " " + long_q)
     assert not out.endswith(long_q)
+
+
+def test_the_next_sentence_is_synthesised_while_this_one_plays():
+    """Serial synthesis put a hole between sentences; one-ahead closes it.
+
+    Sentence 2's synthesis must START while sentence 1 is still being made —
+    not after it has been yielded — so the clip is ready by the time the
+    player runs dry.
+    """
+    import asyncio
+    import time as _time
+
+    starts = {}
+
+    async def slow_synth(sentence, preset):
+        starts.setdefault(sentence, _time.monotonic())
+        await asyncio.sleep(0.05)
+        return b"\x00\x00" * 2400
+
+    async def run():
+        out = []
+        real = followup_voice._synthesize
+        followup_voice._synthesize = slow_synth
+        try:
+            text = ("The first sentence stands on its own feet here. "
+                    "The second sentence is also long enough to be a clip.")
+            async for idx, total, wav in followup_voice.speak_chunks(text, "female"):
+                out.append((idx, total))
+        finally:
+            followup_voice._synthesize = real
+        return out
+
+    got = asyncio.run(run())
+    assert [g[0] for g in got] == [1, 2]
+    assert len(starts) == 2
+    times = sorted(starts.values())
+    # Started within one synthesis-length of each other: concurrent, not serial.
+    assert times[1] - times[0] < 0.04
