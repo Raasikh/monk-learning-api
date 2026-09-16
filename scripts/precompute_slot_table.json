@@ -29,7 +29,7 @@
    "class_level": 11,
    "chapter": "Plant Kingdom",
    "concept": "alternation-of-generations-and-life-cycle-patterns",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_precomputed",
    "asset": false,
    "widget": "process_flow",
@@ -389,7 +389,7 @@
    "class_level": 12,
    "chapter": "Ecosystem",
    "concept": "decomposition-and-its-steps",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "process_flow",
@@ -413,7 +413,7 @@
    "class_level": 12,
    "chapter": "Ecosystem",
    "concept": "energy-flow-and-the-ten-per-cent-law",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "process_flow",
@@ -437,7 +437,7 @@
    "class_level": 12,
    "chapter": "Ecosystem",
    "concept": "ecological-succession-primary-secondary-hydrarch-and-xerarch",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "process_flow",
@@ -449,7 +449,7 @@
    "class_level": 12,
    "chapter": "Ecosystem",
    "concept": "carbon-cycle",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "process_flow",
@@ -461,7 +461,7 @@
    "class_level": 12,
    "chapter": "Ecosystem",
    "concept": "phosphorus-cycle",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "process_flow",
@@ -797,7 +797,7 @@
    "class_level": 12,
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "preparation-of-aldehydes-and-ketones",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -809,7 +809,7 @@
    "class_level": 12,
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "nucleophilic-addition-reactions-of-aldehydes-and-ketones",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -833,7 +833,7 @@
    "class_level": 12,
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "oxidation-and-reduction-of-aldehydes-and-ketones",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -845,7 +845,7 @@
    "class_level": 12,
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "aldol-condensation",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -881,7 +881,7 @@
    "class_level": 12,
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "acidity-of-carboxylic-acids-and-substituent-effects",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "data_table_trend",
@@ -893,7 +893,7 @@
    "class_level": 12,
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "reactions-of-carboxylic-acids",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -977,7 +977,7 @@
    "class_level": 12,
    "chapter": "Amines",
    "concept": "basicity-and-comparison-of-amine-strength",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "data_table_trend",
@@ -989,7 +989,7 @@
    "class_level": 12,
    "chapter": "Amines",
    "concept": "preparation-of-amines-by-reduction-and-ammonolysis",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -1001,7 +1001,7 @@
    "class_level": 12,
    "chapter": "Amines",
    "concept": "gabriel-phthalimide-and-hofmann-bromamide-synthesis",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -1049,7 +1049,7 @@
    "class_level": 12,
    "chapter": "Amines",
    "concept": "preparation-and-structure-of-diazonium-salts",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -1061,7 +1061,7 @@
    "class_level": 12,
    "chapter": "Amines",
    "concept": "reactions-of-diazonium-salts-sandmeyer-gattermann-and-coupling",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "reaction_scheme",
@@ -1337,7 +1337,7 @@
    "class_level": 11,
    "chapter": "Sequences & Series",
    "concept": "sequences-general-term-and-recursive-definitions",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "process_flow",
@@ -1733,7 +1733,7 @@
    "class_level": 12,
    "chapter": "Application of Integrals",
    "concept": "area-under-a-simple-curve-bounded-by-the-axes",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "xy_plot",
@@ -1757,7 +1757,7 @@
    "class_level": 12,
    "chapter": "Application of Integrals",
    "concept": "area-bounded-by-a-parabola-and-a-line",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "xy_plot",
@@ -1781,7 +1781,7 @@
    "class_level": 12,
    "chapter": "Application of Integrals",
    "concept": "area-of-regions-bounded-by-circles-and-ellipses",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "conic_plot",
@@ -1817,7 +1817,7 @@
    "class_level": 12,
    "chapter": "Application of Integrals",
    "concept": "area-of-regions-involving-modulus-and-piecewise-defined-functions",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "xy_plot",
@@ -2009,7 +2009,7 @@
    "class_level": 11,
    "chapter": "Motion in a Plane",
    "concept": "vector-algebra-and-resolution",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "free_body_forces",
@@ -2057,7 +2057,7 @@
    "class_level": 11,
    "chapter": "Motion in a Plane",
    "concept": "projectile-motion",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "projectile_motion",
@@ -2129,7 +2129,7 @@
    "class_level": 11,
    "chapter": "Thermal Properties of Matter",
    "concept": "calorimetry-and-specific-heat",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "xy_plot",
@@ -2141,7 +2141,7 @@
    "class_level": 11,
    "chapter": "Thermal Properties of Matter",
    "concept": "change-of-state-and-latent-heat",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "xy_plot",
@@ -2189,7 +2189,7 @@
    "class_level": 11,
    "chapter": "Thermal Properties of Matter",
    "concept": "newton-s-law-of-cooling",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "xy_plot",
@@ -2405,7 +2405,7 @@
    "class_level": 12,
    "chapter": "Alternating Current",
    "concept": "resonance-and-q-factor",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "xy_plot",
@@ -2489,7 +2489,7 @@
    "class_level": 12,
    "chapter": "Current Electricity",
    "concept": "series-and-parallel-combination-of-resistors",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "circuit_network",
@@ -2789,7 +2789,7 @@
    "class_level": 12,
    "chapter": "Electric Charges and Fields",
    "concept": "electric-flux",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "field_lines",
@@ -2801,7 +2801,7 @@
    "class_level": 12,
    "chapter": "Electric Charges and Fields",
    "concept": "electric-dipole-and-its-field",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "field_lines",
@@ -2837,7 +2837,7 @@
    "class_level": 12,
    "chapter": "Electric Charges and Fields",
    "concept": "gauss-s-law-and-its-applications",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "field_lines",
@@ -3029,7 +3029,7 @@
    "class_level": 12,
    "chapter": "Electromagnetic Waves",
    "concept": "electromagnetic-spectrum-and-applications",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "data_table_trend",
@@ -3053,7 +3053,7 @@
    "class_level": 12,
    "chapter": "Electrostatic Potential and Capacitance",
    "concept": "equipotential-surfaces-and-electric-field-relation",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "field_lines",
@@ -3125,7 +3125,7 @@
    "class_level": 12,
    "chapter": "Electrostatic Potential and Capacitance",
    "concept": "combination-of-capacitors",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "asset": false,
    "widget": "circuit_network",
@@ -3497,7 +3497,7 @@
   {
    "chapter": "Plant Kingdom",
    "concept": "alternation-of-generations-and-life-cycle-patterns",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_precomputed",
    "widget": "process_flow",
    "why": "held back: chapter SANE is unmeasured"
@@ -3505,7 +3505,7 @@
   {
    "chapter": "Ecosystem",
    "concept": "decomposition-and-its-steps",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "process_flow",
    "why": "held back: chapter SANE 75.7% is below the 85% bar"
@@ -3513,7 +3513,7 @@
   {
    "chapter": "Ecosystem",
    "concept": "energy-flow-and-the-ten-per-cent-law",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "process_flow",
    "why": "held back: chapter SANE 75.7% is below the 85% bar"
@@ -3521,7 +3521,7 @@
   {
    "chapter": "Ecosystem",
    "concept": "ecological-succession-primary-secondary-hydrarch-and-xerarch",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "process_flow",
    "why": "held back: chapter SANE 75.7% is below the 85% bar"
@@ -3529,7 +3529,7 @@
   {
    "chapter": "Ecosystem",
    "concept": "carbon-cycle",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "process_flow",
    "why": "held back: chapter SANE 75.7% is below the 85% bar"
@@ -3537,7 +3537,7 @@
   {
    "chapter": "Ecosystem",
    "concept": "phosphorus-cycle",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "process_flow",
    "why": "held back: chapter SANE 75.7% is below the 85% bar"
@@ -3545,7 +3545,7 @@
   {
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "preparation-of-aldehydes-and-ketones",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE 83.2% is below the 85% bar"
@@ -3553,7 +3553,7 @@
   {
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "nucleophilic-addition-reactions-of-aldehydes-and-ketones",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE 83.2% is below the 85% bar"
@@ -3561,7 +3561,7 @@
   {
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "oxidation-and-reduction-of-aldehydes-and-ketones",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE 83.2% is below the 85% bar"
@@ -3569,7 +3569,7 @@
   {
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "aldol-condensation",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE 83.2% is below the 85% bar"
@@ -3577,7 +3577,7 @@
   {
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "acidity-of-carboxylic-acids-and-substituent-effects",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "data_table_trend",
    "why": "held back: chapter SANE 83.2% is below the 85% bar"
@@ -3585,7 +3585,7 @@
   {
    "chapter": "Aldehydes, Ketones & Carboxylic Acids",
    "concept": "reactions-of-carboxylic-acids",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE 83.2% is below the 85% bar"
@@ -3593,7 +3593,7 @@
   {
    "chapter": "Amines",
    "concept": "basicity-and-comparison-of-amine-strength",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "data_table_trend",
    "why": "held back: chapter SANE is unmeasured"
@@ -3601,7 +3601,7 @@
   {
    "chapter": "Amines",
    "concept": "preparation-of-amines-by-reduction-and-ammonolysis",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE is unmeasured"
@@ -3609,7 +3609,7 @@
   {
    "chapter": "Amines",
    "concept": "gabriel-phthalimide-and-hofmann-bromamide-synthesis",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE is unmeasured"
@@ -3617,7 +3617,7 @@
   {
    "chapter": "Amines",
    "concept": "preparation-and-structure-of-diazonium-salts",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE is unmeasured"
@@ -3625,7 +3625,7 @@
   {
    "chapter": "Amines",
    "concept": "reactions-of-diazonium-salts-sandmeyer-gattermann-and-coupling",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "reaction_scheme",
    "why": "held back: chapter SANE is unmeasured"
@@ -3633,7 +3633,7 @@
   {
    "chapter": "Sequences & Series",
    "concept": "sequences-general-term-and-recursive-definitions",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "process_flow",
    "why": "held back: chapter SANE is unmeasured"
@@ -3641,7 +3641,7 @@
   {
    "chapter": "Application of Integrals",
    "concept": "area-under-a-simple-curve-bounded-by-the-axes",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "xy_plot",
    "why": "held back: chapter SANE 43.7% is below the 85% bar"
@@ -3649,7 +3649,7 @@
   {
    "chapter": "Application of Integrals",
    "concept": "area-bounded-by-a-parabola-and-a-line",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "xy_plot",
    "why": "held back: chapter SANE 43.7% is below the 85% bar"
@@ -3657,7 +3657,7 @@
   {
    "chapter": "Application of Integrals",
    "concept": "area-of-regions-bounded-by-circles-and-ellipses",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "conic_plot",
    "why": "held back: chapter SANE 43.7% is below the 85% bar"
@@ -3665,7 +3665,7 @@
   {
    "chapter": "Application of Integrals",
    "concept": "area-of-regions-involving-modulus-and-piecewise-defined-functions",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "xy_plot",
    "why": "held back: chapter SANE 43.7% is below the 85% bar"
@@ -3673,7 +3673,7 @@
   {
    "chapter": "Motion in a Plane",
    "concept": "vector-algebra-and-resolution",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "free_body_forces",
    "why": "held back: chapter SANE is unmeasured"
@@ -3681,7 +3681,7 @@
   {
    "chapter": "Motion in a Plane",
    "concept": "projectile-motion",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "projectile_motion",
    "why": "held back: chapter SANE is unmeasured"
@@ -3689,7 +3689,7 @@
   {
    "chapter": "Thermal Properties of Matter",
    "concept": "calorimetry-and-specific-heat",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "xy_plot",
    "why": "held back: chapter SANE is unmeasured"
@@ -3697,7 +3697,7 @@
   {
    "chapter": "Thermal Properties of Matter",
    "concept": "change-of-state-and-latent-heat",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "xy_plot",
    "why": "held back: chapter SANE is unmeasured"
@@ -3705,7 +3705,7 @@
   {
    "chapter": "Thermal Properties of Matter",
    "concept": "newton-s-law-of-cooling",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "xy_plot",
    "why": "held back: chapter SANE is unmeasured"
@@ -3713,7 +3713,7 @@
   {
    "chapter": "Alternating Current",
    "concept": "resonance-and-q-factor",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "xy_plot",
    "why": "held back: chapter SANE is unmeasured"
@@ -3721,7 +3721,7 @@
   {
    "chapter": "Current Electricity",
    "concept": "series-and-parallel-combination-of-resistors",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "circuit_network",
    "why": "held back: chapter SANE is unmeasured"
@@ -3729,31 +3729,31 @@
   {
    "chapter": "Electric Charges and Fields",
    "concept": "electric-flux",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "field_lines",
-   "why": "held back: chapter SANE 75.0% is below the 85% bar"
+   "why": "held back: chapter SANE 80.0% is below the 85% bar"
   },
   {
    "chapter": "Electric Charges and Fields",
    "concept": "electric-dipole-and-its-field",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "field_lines",
-   "why": "held back: chapter SANE 75.0% is below the 85% bar"
+   "why": "held back: chapter SANE 80.0% is below the 85% bar"
   },
   {
    "chapter": "Electric Charges and Fields",
    "concept": "gauss-s-law-and-its-applications",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "field_lines",
-   "why": "held back: chapter SANE 75.0% is below the 85% bar"
+   "why": "held back: chapter SANE 80.0% is below the 85% bar"
   },
   {
    "chapter": "Electromagnetic Waves",
    "concept": "electromagnetic-spectrum-and-applications",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "data_table_trend",
    "why": "held back: chapter SANE is unmeasured"
@@ -3761,7 +3761,7 @@
   {
    "chapter": "Electrostatic Potential and Capacitance",
    "concept": "equipotential-surfaces-and-electric-field-relation",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "field_lines",
    "why": "held back: chapter SANE is unmeasured"
@@ -3769,7 +3769,7 @@
   {
    "chapter": "Electrostatic Potential and Capacitance",
    "concept": "combination-of-capacitors",
-   "before": "widget_archetype",
+   "before": "widget_precomputed",
    "after": "svg_live",
    "widget": "circuit_network",
    "why": "held back: chapter SANE is unmeasured"
