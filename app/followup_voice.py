@@ -563,6 +563,11 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
             pending.cancel()
 
 
+def _flush_sizes(flushed: int) -> tuple:
+    """Bytes the next PCM flush waits for: a 0.25s, 0.5s, 1s ladder."""
+    return (12000,) if flushed == 0 else (24000,) if flushed == 1 else (48000,)
+
+
 async def speak_pcm(text: str, tutor_voice: Optional[str] = None):
     """Raw PCM in flushes, yielded as Rumik produces it — nothing waits for a
     clip to finish existing before it can start playing.
