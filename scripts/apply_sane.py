@@ -60,8 +60,24 @@ def main() -> int:
         raise SystemExit(f"{ch['name']} has no adopted verdict to move from; it is "
                          f"UNMEASURED, and unmeasured is held back.")
 
-    rows = [r for r in json.loads(V2.read_text())
-            if r["sheet"] == cur["sheet"]] if V2.exists() else []
+    # The two files do not spell a sheet the same way: the verdicts file says
+    # "bio 12 Ecosystem (full 70 measured)" and the v2 rows say
+    # "biology 12 Ecosystem". An exact match returned ZERO rows for Ecosystem
+    # and printed "proposal_v2: 0 n rows classified" as though the chapter had
+    # nothing to review — for the chapter that needs seven. Matched on the
+    # chapter instead, which both files agree on.
+    all_v2 = json.loads(V2.read_text()) if V2.exists() else []
+    SHEET_CHAPTER = {"physics 12 ch1": "Electric Charges and Fields",
+                     "chem 12 ch8": "Aldehydes, Ketones & Carboxylic Acids",
+                     "maths 12 ch8": "Application of Integrals",
+                     "biology 12 Ecosystem": "Ecosystem"}
+    rows = [r for r in all_v2 if SHEET_CHAPTER.get(r["sheet"]) == ch["name"]]
+    if all_v2 and not rows:
+        raise SystemExit(
+            f"REFUSED: {ch['name']!r} has an adopted verdict but no proposal_v2 rows "
+            f"matched it. The sheets in /tmp/sane-v2.json are "
+            f"{sorted({r['sheet'] for r in all_v2})}. Reporting 0 rows as though "
+            f"there were nothing to review is how a chapter gets skipped.")
     signed = {tuple(x.rsplit(":", 1)) for x in
               filter(None, (s.strip() for s in args.confirmed_rows.split(",")))}
     signed = {(k, int(v)) for k, v in signed}
