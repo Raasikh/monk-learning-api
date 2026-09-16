@@ -385,6 +385,16 @@ def render_single_widget_block(widget_id: str) -> str:
         f"the same bar as a template: do not skip because the parameters feel "
         f"approximate. A definition, a recap or a pure checkpoint may want no "
         f"picture; explaining, deriving or working the concept does.\n"
+        # ADDED 2026-09-15 from H7. 12 of the 86 proposed-n rows are this one
+        # mistake: the objective asks to COMPARE or RANK, and a schematic got
+        # drawn anyway because the block above says emit. An arrow means
+        # "becomes"; a ranking is not a sequence, and nucleophilic-addition
+        # seg 3 draws HCHO -> CH3CHO -> CH3COCH3 for an objective that asks
+        # which is most reactive. No registered widget draws a table, so a
+        # DECLINE is the correct answer on those rows, not a worse picture.
+        f"         If the objective asks to COMPARE, RANK, DISTINGUISH or "
+        f"LIST, DECLINE — that wants a table and none of these draws one. An "
+        f"arrow means 'becomes', never an ordering.\n"
         # v5, and it is a REFERENCE, not a copy. v4 interpolated the segment's
         # objective TEXT into this block. The block lands in the system
         # message, which is the cached prefix, so every segment got its own

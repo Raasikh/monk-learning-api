@@ -504,7 +504,23 @@ def test_the_single_widget_block_is_far_cheaper_than_the_manifest():
     assert full >= 1000, f"the manifest shrank to {full}; re-measure the branch"
     for wid in WIDGET_VERSIONS:
         one = len(enc.encode(render_single_widget_block(wid)))
-        assert one <= 620, (
+        # 620 -> 640 on 2026-09-15, and here is the bill: ~30 tokens a turn for
+        # one sentence that tells the author to DECLINE when the objective asks
+        # to COMPARE, RANK, DISTINGUISH or LIST.
+        #
+        # What it buys, measured: 12 of the 86 proposed-n rows across the four
+        # SANE sheets are that single mistake — a schematic drawn for a tabular
+        # objective, because the line above this one says EMIT. The clearest is
+        # `nucleophilic-addition` seg 3, which draws
+        # HCHO -> CH3CHO -> CH3COCH3 for an objective asking WHICH IS MOST
+        # REACTIVE. An arrow means "becomes"; these do not become each other.
+        # Projected effect: physics 80.0 -> 85.0% and chem 83.2 -> 87.6%, i.e.
+        # both cross the hold-back bar on this sentence alone.
+        #
+        # Trimming was tried first and rejected: the two blocks over the old cap
+        # are xy_plot and conic_plot, and every clause in those specs is a rule
+        # something was learned from. Paying 30 tokens beats deleting a rule.
+        assert one <= 640, (
             f"{wid}: single-widget block is {one} tokens (cap 450, measured "
             f"309-419). It rides every turn on this concept."
         )
