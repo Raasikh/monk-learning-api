@@ -99,3 +99,23 @@ Everything `conic_plot@1` went through on 2026-09-14, no exceptions:
 with no `diag_hint` at all are prose-only teaching and correctly draw nothing —
 counting those would repeat exactly the error the maths gap ledger had to
 correct.
+
+## Named by the SANE sheets too (H7, 2026-09-15)
+
+The gap above was measured from the ROUTING harness — segments that declined
+every registered widget. These are a DIFFERENT measurement: proposed-n rows in
+`scripts/sane_proposals.md`, classified kind (iii) because what they need does
+not exist. The two sets overlap and are deliberately not added together; a
+segment can appear in both, and counting it twice would inflate the case for
+building this.
+
+| sheet | subtopic | seg | objective |
+|---|---|---|---|
+| biology 12 Ecosystem | `decomposition` | 6 | Identify the key factors that speed up or slow down decomposition. |
+| biology 12 Ecosystem | `phosphorus-cycle` | 2 | Identify the main reservoir of phosphorus and explain why the cycle is classified as sedimentary. |
+| biology 12 Ecosystem | `phosphorus-cycle` | 7 | Compare the phosphorus cycle with the carbon cycle, highlighting key differences in speed and reservoir. |
+| chem 12 ch8 | `distinguishing-tests-for-aldehydes-ketones-and-acids` | 7 | Apply a systematic sequence of tests to identify an unknown carbonyl compound. |
+| chem 12 ch8 | `haloform-reaction` | 6 | State the reagents and conditions for the iodoform test and list common false positives and negatives. |
+| chem 12 ch8 | `multi-step-conversions-and-reaction-maps` | 6 | Choose the correct chemical test to distinguish between given aldehydes and ketones, including Tollens', Fehling's, and iodoform tests. |
+| chem 12 ch8 | `nomenclature-and-structure-of-carbonyl-compounds` | 7 | Identify functional and chain isomers of aldehydes and ketones. |
+| chem 12 ch8 | `physical-properties-and-hydrogen-bonding-in-carbonyl-compounds` | 1 | Rank a given set of compounds (hydrocarbon, ether, aldehyde/ketone, alcohol, carboxylic acid) by boiling point using the intermolecular force ladder. |

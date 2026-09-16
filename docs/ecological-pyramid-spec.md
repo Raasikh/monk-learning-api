@@ -84,3 +84,17 @@ are different segments, and the two specs together cover 19 of the 35 that
 currently fire nothing. The remaining 16 are 6 that wanted `process_flow`
 (which exists, and the model declined it anyway — a routing question, not a gap)
 and 10 prose-only segments that correctly draw nothing.
+
+## Named by the SANE sheets too (H7, 2026-09-15)
+
+The gap above was measured from the ROUTING harness — segments that declined
+every registered widget. These are a DIFFERENT measurement: proposed-n rows in
+`scripts/sane_proposals.md`, classified kind (iii) because what they need does
+not exist. The two sets overlap and are deliberately not added together; a
+segment can appear in both, and counting it twice would inflate the case for
+building this.
+
+| sheet | subtopic | seg | objective |
+|---|---|---|---|
+| biology 12 Ecosystem | `eco-pyramids` | 4 | (no objective recorded in the sheet) |
+| biology 12 Ecosystem | `energy-flow` | 6 | Describe the three types of ecological pyramids and identify which can be inverted. |
