@@ -44,12 +44,21 @@ def main() -> int:
 
     chapters = {c["id"]: c for c in fetch_all("chapters", "id,name,subject,class_level")}
     plans = fetch_all("lesson_plans", "chapter_id,subtopic_key,plan_json")
-    stored = {}
+    stored, seg_svg = {}, {}
     for p in plans:
         for seg in (p["plan_json"] or {}).get("segments") or []:
             pay = seg.get(WIDGET_PAYLOAD_KEY)
             if isinstance(pay, dict) and pay.get("widget"):
                 stored.setdefault((p["chapter_id"], p["subtopic_key"]), pay)
+            # THE SEGMENT'S OWN FALLBACK, which is what slot 4 actually serves.
+            # This harness first asked `tutor._precomputed_diagram(chapter,
+            # subtopic)` — the CONCEPT-level diagram — and reported 9 of 12
+            # concepts as having nothing stored while every one of their
+            # segments had an `example_diagram_svg`. Measuring the wrong field
+            # and printing a clean negative is the defect this file exists to
+            # catch, committed inside the file that catches it.
+            if seg.get("example_diagram_svg"):
+                seg_svg[(p["chapter_id"], p["subtopic_key"])] = True
 
     # SELECTION IS THE WHOLE TEST. Taking the first three plans per subject gave
     # twelve concepts that had no widget and no asset, all resolving to
@@ -69,7 +78,8 @@ def main() -> int:
         assets = tutor._illustration_set_for(ch["id"], slug)
         asset = (assets[0] or {}).get("asset_slug") if assets else None
         pay = stored.get((ch["id"], slug))
-        svg = tutor._precomputed_diagram(ch["id"], slug)
+        svg = (tutor._precomputed_diagram(ch["id"], slug)
+               or seg_svg.get((ch["id"], slug)))
         kind = ("illustration" if asset else
                 "widget" if (pay or arch.widget) else
                 "svg" if svg else "bare")
