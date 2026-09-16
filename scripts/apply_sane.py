@@ -66,6 +66,47 @@ def main() -> int:
               filter(None, (s.strip() for s in args.confirmed_rows.split(",")))}
     signed = {(k, int(v)) for k, v in signed}
 
+    # A SANE ROW IS KEYED BY POSITION, AND POSITION IS NOT IDENTITY.
+    # The sheets record (subtopic, seg). A precompute re-authors the SEGMENTS,
+    # not just their payloads, so seg 3 after a sweep can be a different
+    # segment. Measured 2026-09-16 after the 29-chapter sweep: of 86 judged n
+    # rows, 14 still carry the same objective, 59 changed, and 13 no longer
+    # exist at that index. Adopting a judgement about a segment that has since
+    # been rewritten is adopting it about something nobody read.
+    import difflib
+    import re as _re
+
+    def _norm(t):
+        return _re.sub(r"\W+", " ", (t or "").lower()).strip()
+
+    from app.drona.planner import WIDGET_PAYLOAD_KEY  # noqa: F401
+    live = {}
+    for pl in fetch_all("lesson_plans", "chapter_id,subtopic_key,plan_json"):
+        if pl["chapter_id"] != ch["id"]:
+            continue
+        live[pl["subtopic_key"]] = (pl["plan_json"] or {}).get("segments") or []
+
+    stale = []
+    for r in rows:
+        if (r["key"], r["seg"]) not in signed:
+            continue
+        segs = live.get(r["key"]) or next(
+            (v for k, v in live.items()
+             if k.startswith(r["key"]) or r["key"].startswith(k)), [])
+        if not (1 <= r["seg"] <= len(segs)):
+            stale.append((r, "that segment index no longer exists"))
+            continue
+        now, was = _norm(segs[r["seg"] - 1].get("objective")), _norm(r.get("objective"))
+        if was and difflib.SequenceMatcher(None, was, now).ratio() <= 0.9:
+            stale.append((r, f"objective changed since it was judged — now: {now[:70]}"))
+    if stale:
+        print(f"\nREFUSED: {len(stale)} signed row(s) no longer describe what was judged:")
+        for r, why in stale:
+            print(f"    {r['key']} seg{r['seg']} — {why}")
+        print("\n  A SANE verdict is keyed by position, and a precompute re-authors the")
+        print("  SEGMENTS. Re-review these against the current plan before signing them.")
+        raise SystemExit(1)
+
     moved = [r for r in rows if (r["key"], r["seg"]) in signed]
     unknown = signed - {(r["key"], r["seg"]) for r in rows}
 
