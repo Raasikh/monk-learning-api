@@ -3258,6 +3258,16 @@ def _validate_solution(parsed: Dict[str, Any], stage: str = "solve",
         raise SnapError("The explanation came back without steps.", stage)
     if len(steps) > 6:
         logger.warning("[SNAP SOLVE] %d steps returned, target is 3-6", len(steps))
+    # Tripwire, not a gate: notation that should never reach a student, LOGGED
+    # at write time so the next leak announces itself in production instead of
+    # waiting for a founder to read a board aloud. The audit that motivated
+    # this found six SMILES answers and seven SMILES step sets stored silently.
+    leaked = [st.get("n") for st in steps
+              if "<smiles>" in (st.get("text") or "")
+              or "\ce{" in (st.get("text") or "")]
+    if leaked:
+        logger.warning("[SNAP LINT] steps %s carry raw structure notation "
+                       "(<smiles> or \\ce) — the prompt rule leaked", leaked)
 
     return {
         # For a choice question the stored answer is the option text itself, so
