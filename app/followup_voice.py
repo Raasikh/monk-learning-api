@@ -588,20 +588,25 @@ async def speak_pcm(text: str, tutor_voice: Optional[str] = None):
     sentences = _spoken_sentences(said)
     started = time.time()
     first_flush = True
+    flushed = 0
     for idx, sentence in enumerate(sentences, 1):
         buf = bytearray()
         got = 0
         async for piece in _synthesize_stream(sentence, preset):
             buf.extend(piece)
             got += len(piece)
-            while len(buf) >= (12000 if first_flush else 48000):
-                take = 12000 if first_flush else 48000
+            # A ladder, not a cliff: 0.25s, 0.5s, then 1s pieces. Jumping
+            # from a quarter-second first flush straight to one-second
+            # pieces drained the player at the start — the shaky first word.
+            while len(buf) >= _flush_sizes(flushed)[0]:
+                take = _flush_sizes(flushed)[0]
                 out = bytes(buf[:take])
                 del buf[:take]
                 if first_flush:
                     logger.info("[FOLLOWUP TTS] first pcm flush at t+%dms",
                                 int((time.time() - started) * 1000))
                     first_flush = False
+                flushed += 1
                 yield out
         if len(buf) % 2:
             # Int16 frames are even; a torn trailing byte is noise, not audio.
