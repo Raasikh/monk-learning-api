@@ -51,29 +51,49 @@ def main() -> int:
             if isinstance(pay, dict) and pay.get("widget"):
                 stored.setdefault((p["chapter_id"], p["subtopic_key"]), pay)
 
-    picked, by_subject = [], {}
+    # SELECTION IS THE WHOLE TEST. Taking the first three plans per subject gave
+    # twelve concepts that had no widget and no asset, all resolving to
+    # svg_live — a pass that exercised nothing and would have reported "no blank
+    # boards" without ever withholding anything. Each subject now gets, in
+    # order of preference: a concept with an ILLUSTRATION (plates draw with
+    # their published labels), one with a WIDGET that the hold-back withholds
+    # (the fall-through), and one with a PRECOMPUTED SVG (what it falls through
+    # to). A subject that has none of a kind simply contributes fewer rows.
+    scored = []
     for p in plans:
         ch = chapters.get(p["chapter_id"])
         if not ch:
-            continue
-        subj = ch["subject"]
-        if len(by_subject.get(subj, [])) >= args.per_subject:
             continue
         slug = p["subtopic_key"]
         arch = concept_archetype_for_session(ch["id"], slug)
         assets = tutor._illustration_set_for(ch["id"], slug)
         asset = (assets[0] or {}).get("asset_slug") if assets else None
-        svg = tutor._precomputed_diagram(ch["id"], slug)
         pay = stored.get((ch["id"], slug))
-        allowed, why = widget_baking_allowed(subj, ch["class_level"], ch["name"])
-        slot = tutor.resolve_board_slot(
-            precomputed_widget=pay, archetype_widget=arch.widget,
-            illustration_asset=asset, precomputed_svg=svg, widget_allowed=allowed)
-        row = {"subject": subj, "chapter": ch["name"], "concept": slug,
-               "slot": slot, "sane": why, "widget": arch.widget,
-               "payload": pay, "asset": asset, "has_svg": bool(svg)}
-        by_subject.setdefault(subj, []).append(row)
-        picked.append(row)
+        svg = tutor._precomputed_diagram(ch["id"], slug)
+        kind = ("illustration" if asset else
+                "widget" if (pay or arch.widget) else
+                "svg" if svg else "bare")
+        scored.append((ch, slug, kind, arch, asset, pay, svg))
+
+    picked, by_subject = [], {}
+    for want in ("illustration", "widget", "svg", "bare"):
+        for ch, slug, kind, arch, asset, pay, svg in scored:
+            subj = ch["subject"]
+            if kind != want or len(by_subject.get(subj, [])) >= args.per_subject:
+                continue
+            if any(r["concept"] == slug for r in picked):
+                continue
+            allowed, why = widget_baking_allowed(subj, ch["class_level"], ch["name"])
+            slot = tutor.resolve_board_slot(
+                precomputed_widget=pay, archetype_widget=arch.widget,
+                illustration_asset=asset, precomputed_svg=svg,
+                widget_allowed=allowed)
+            row = {"subject": subj, "chapter": ch["name"], "concept": slug,
+                   "slot": slot, "sane": why, "widget": arch.widget,
+                   "payload": pay, "asset": asset, "has_svg": bool(svg),
+                   "picked_for": kind}
+            by_subject.setdefault(subj, []).append(row)
+            picked.append(row)
 
     print(f"{'subject':<12}{'concept':<44}{'slot':<18}{'draws what'}")
     jobs = []
