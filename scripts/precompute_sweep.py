@@ -9,6 +9,18 @@ stored whatever its chapter's SANE verdict says. The verdict is applied later,
 in `resolve_board_slot`, so this sweep is about filling slot 1, not about
 deciding what the board will show.
 
+DO NOT EDIT A PLANNER PROMPT WHILE THIS IS RUNNING.
+`planner_prompt_hash` is computed per call, not per process, so an edit lands
+mid-chapter and the chapter ends up holding several hashes. Measured
+2026-09-15: "Amines" was swept 00:32-00:41 across two prompt commits and came
+out with THREE hashes in eleven plans — 7212ebe5 on the first concept,
+db2e1976 on the second, 5f14f5df on the remaining nine. The chapter is
+internally inconsistent and nothing in the output says so; it looks like a
+clean `complete 11/11`.
+
+If a prompt has to change, let the sweep finish and re-run the affected
+chapters, or stop the sweep first.
+
 Batches of ten with a summary per batch, because a 29-chapter run read as one
 wall of lines is a thing nobody checks. Resumable: a chapter whose plans are
 already current is skipped by `get_or_create_plan` itself, so re-running after
