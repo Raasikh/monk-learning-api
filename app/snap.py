@@ -85,6 +85,30 @@ SECOND_OPINION_TIMEOUT_S = 60.0
 FOLLOWUP_MAX_TURNS = 12
 FOLLOWUP_MAX_CHARS = 600
 
+
+def _clean_cut(text: str, limit: int) -> str:
+    """`text` within `limit`, cut where a cut can survive.
+
+    A hard slice landed mid-LaTeX — a history turn ending in a dangling
+    `$-5\\,\\text{` — and the model COMPLETED the formula instead of
+    answering: its whole reply was "{V}$ and the cathode is pulled to…",
+    unparseable, and deterministic on every retry because the phone resends
+    the same history. Cut at a sentence end, or a space; never leave an odd
+    number of $ signs; say that something was cut.
+    """
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    cut = text.rfind(". ", 0, limit)
+    if cut < limit // 2:
+        cut = text.rfind(" ", 0, limit)
+    if cut <= 0:
+        cut = limit
+    head = text[:cut + 1] if text[cut:cut + 1] == "." else text[:cut]
+    if head.count("$") % 2 == 1:
+        head = head[:head.rfind("$")]
+    return head.rstrip() + " …"
+
 TRANSCRIBE_TIMEOUT_S = 45.0
 # Pro is slower than Flash; the budget follows the planner's shape rather than
 # the tutor's, since nothing here has to feel live.
@@ -438,7 +462,7 @@ def stream_followup(doubt: Dict[str, Any], question: str,
     ]
     for turn in (history or [])[-FOLLOWUP_MAX_TURNS:]:
         role = turn.get("role")
-        content = (turn.get("content") or "").strip()[:FOLLOWUP_MAX_CHARS]
+        content = _clean_cut(turn.get("content") or "", FOLLOWUP_MAX_CHARS)
         if role in ("user", "assistant") and content:
             messages.append({"role": role, "content": content})
     messages.append({"role": "user", "content": question[:FOLLOWUP_MAX_CHARS]})
@@ -564,6 +588,40 @@ def stream_followup(doubt: Dict[str, Any], question: str,
                 "keys=%s", len(buffer),
                 sorted(parsed.keys()) if parsed else "unparseable",
             )
+            # One corrective retry before the student sees "Try again". The
+            # model has already derailed once (a LaTeX continuation instead
+            # of JSON, live); showing it its own output and demanding the
+            # object recovers the turn for the cost of one more call on a
+            # path that was otherwise a guaranteed failure.
+            try:
+                second = client.chat.completions.create(
+                    model=MODEL_FOLLOWUP,
+                    messages=messages + [
+                        {"role": "assistant", "content": buffer[-1500:]},
+                        {"role": "user", "content": (
+                            "That was not the JSON object. Return ONLY the JSON "
+                            'object — {"spoken": "…", "steps": [...]} — answering '
+                            "the question above. No other text.")},
+                    ],
+                    response_format={"type": "json_object"},
+                    temperature=0.0,
+                    max_tokens=1600,
+                    timeout=30,
+                    extra_body={"thinking": {"type": "disabled"}},
+                )
+                reparsed = json.loads(second.choices[0].message.content or "{}")
+                retry_spoken = (reparsed.get("spoken") or "").strip()
+                if retry_spoken:
+                    yield "spoken", {"text": retry_spoken}
+                for step in reparsed.get("steps") or []:
+                    yield "step", {"n": step.get("n"), "text": step.get("text") or ""}
+                logger.info(
+                    "[FOLLOWUP] corrective retry recovered %d step(s)%s",
+                    len(reparsed.get("steps") or []),
+                    " and spoken" if retry_spoken else "",
+                )
+            except Exception as retry_err:  # noqa: BLE001 — the phone shows retry
+                logger.error("[FOLLOWUP] corrective retry also failed: %s", retry_err)
 
 
 def second_opinion(system_prompt: str, payload: str, doubt_id: str,
