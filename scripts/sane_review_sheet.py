@@ -68,13 +68,39 @@ def n_rows(sheet_title: str):
         m = re.match(r"\|\s*\d+\s*\|\s*([a-z0-9\-]+)\s*\|\s*(\d+)\s*\|\s*([^|]+?)\s*\|"
                      r"\s*([^|]+?)\s*\|\s*n\s*(\([abc]\))?\s*\|", line)
         if m:
+            # group(4) is the SLOT column, group(5) the criterion. Taking the
+            # wrong one made every bio row read "widget_archetype" as its
+            # reason for being n, which is not a reason at all.
             out.append((m.group(1), int(m.group(2)), m.group(3).strip(),
-                        f"criterion {m.group(4) or '(unstated)'}".replace("criterion ", "")
-                        if False else (m.group(4) or "n")))
+                        m.group(5) or "n"))
     if not out:
         raise SystemExit(f"parsed ZERO n rows out of {sheet_title!r} — the table shape "
                          f"changed and this would have produced an empty sheet")
     return out
+
+
+#: (subtopic, seg) -> the objective AS THE REVIEWER SAW IT. Filled by
+#: full_reasons where a sheet quotes it. Preferred over the plan's current
+#: objective, because the sweep re-authors plans and a row judged against one
+#: wording must not be re-presented under another.
+OBJECTIVES: dict = {}
+
+
+def prose_for(prose: dict, key: str, seg: int):
+    """Exact key first, then prefix either way.
+
+    The four sheets do not agree on how much of a subtopic to write. bio's
+    table says `decomposition` where its own prose section says
+    `decomposition-and-its-steps`; an exact lookup returns nothing and the row
+    silently keeps its criterion letter. A prefix match in both directions is
+    unambiguous here because no two subtopics in a chapter share a prefix.
+    """
+    if (key, seg) in prose:
+        return prose[(key, seg)]
+    for (k, s2), v in prose.items():
+        if s2 == seg and (k.startswith(key) or key.startswith(k)):
+            return v
+    return None
 
 
 def full_reasons(sheet_title: str) -> dict:
@@ -99,14 +125,22 @@ def full_reasons(sheet_title: str) -> dict:
     #   bio:      grouped sections, no per-row prose at all; those keep the
     #             criterion letter from the table, which is all that exists.
     #   maths:    ### idx 0 — area-between-a-function… / seg 1 — …
+    #   bio:      #### n-1 · ROW12 · `decomposition-and-its-steps` seg 3 · slot …
+    #             (four levels deep, dot-separated, and it carries the OBJECTIVE
+    #             too — which is the version the reviewer judged, not whatever
+    #             the plan says after a regeneration)
     pat = (r"^###\s*(?:n-)?\d+\.\s*`?([a-z0-9\-]+)`?\s+seg\s*(\d+)(.*?)(?=^###|\Z)",
-           r"^###\s*idx\s*\d+\s*[—-]\s*([a-z0-9\-]+)\s*/\s*seg\s*(\d+)(.*?)(?=^###|\Z)")
+           r"^###\s*idx\s*\d+\s*[—-]\s*([a-z0-9\-]+)\s*/\s*seg\s*(\d+)(.*?)(?=^###|\Z)",
+           r"^####\s*n-\d+\s*·[^·]*·\s*`([a-z0-9\-]+)`\s*seg\s*(\d+)\s*·(.*?)(?=^####|\Z)")
     matches = []
     for pp in pat:
         matches += list(re.finditer(pp, sec, re.M | re.S))
     for m in matches:
         key, seg, body = m.group(1), int(m.group(2)), m.group(3)
         r = re.search(r"\*\*Reason\s*[—-]\s*(.+?)\*\*\s*(.*?)(?=\n\*\*|\Z)", body, re.S)
+        obj = re.search(r"\*\*Objective:?\*\*\s*[:\s]*\"?(.+?)\"?\s*\n", body)
+        if obj:
+            OBJECTIVES[(key, seg)] = re.sub(r"\s+", " ", obj.group(1)).strip()
         if r:
             prose = re.sub(r"\s+", " ", (r.group(1) + " " + r.group(2))).strip()
         else:
@@ -144,7 +178,14 @@ def main() -> int:
         prose = full_reasons(title)
         print(f"{title:<24} {len(rows)} n rows, {len(prose)} with a written reason", flush=True)
         for key, seg, widget, reason in rows:
+            # Same short-vs-full key problem as the prose: bio's table says
+            # `decomposition`, the plan row is `decomposition-and-its-steps`.
             pl = plan_idx.get((cid, key))
+            if pl is None:
+                for (c2, k2), cand in plan_idx.items():
+                    if c2 == cid and (k2.startswith(key) or key.startswith(k2)):
+                        pl = cand
+                        break
             objective, params, stored_widget = "", None, None
             if pl:
                 segs = (pl["plan_json"] or {}).get("segments") or []
@@ -159,8 +200,17 @@ def main() -> int:
                 jobs.append({"id": rid, "widget": stored_widget, "params": params})
             meta.append({"sheet": title, "chapter": chname, "id": rid, "key": key,
                          "seg": seg, "widget_sheet": widget,
-                         "widget_stored": stored_widget, "reason": reason,
-                         "objective": objective, "has_payload": bool(params)})
+                         "widget_stored": stored_widget,
+                         # keyed loosely: the bio TABLE shortens a subtopic
+                         # ("decomposition") while its prose section spells it
+                         # out ("decomposition-and-its-steps"), so an exact
+                         # lookup silently returned the criterion letter for
+                         # all 17 of its rows.
+                         "reason": prose_for(prose, key, seg) or reason,
+                         "objective": prose_for(OBJECTIVES, key, seg) or objective,
+                         "objective_source": ("the sheet"
+                                              if prose_for(OBJECTIVES, key, seg)
+                                              else "the current plan"), "has_payload": bool(params)})
 
     jobf = Path("/tmp/sane-review-job.json"); jobf.write_text(json.dumps(jobs))
     out = Path("/tmp/sane-review-svgs")

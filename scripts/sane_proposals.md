@@ -3072,3 +3072,136 @@ chapter is mostly healthy; the problems are in what gets drawn, not in what gets
 - **ROW38** eco-structure seg 6 — pond components table pairs `Water|Producers`,
   `Light|Consumers`, `Temperature|Decomposers` row-wise, implying correspondences that do not
   exist. Two independent lists in two columns is a common, generally harmless convention. y.
+
+## proposal_v2 — every n row classified (H7, 2026-09-15)
+
+The ADOPTED verdict column above is NOT modified. This is a second proposal
+beside it; Raasikh re-adopts by line, per chapter.
+
+Each n row is in exactly one kind:
+
+  **(i) wrong widget for the objective** — the objective asks to compare, rank,
+  distinguish or list, or is conceptual, and a schematic or sequence widget was
+  chosen. The fix is at the SOURCE: these objectives should DECLINE (or route to
+  a table widget once one exists). A correct decline is a sane row.
+
+  **(ii) right widget, wrong payload** — re-authorable. NOT counted as a gain
+  below, because a re-authored payload is not automatically a correct one:
+  `nucleophilic-addition` seg 3 was re-authored in Session F and its render still
+  shows the fault the proposal named (a reactivity RANKING drawn as a reaction
+  sequence). Each has to be re-judged after re-authoring.
+
+  **(iii) needs a widget that does not exist** — stays n; the segment is added to
+  the matching spec in `docs/`.
+
+| sheet | n | (i) | (ii) | (iii) | no evidence |
+|---|---|---|---|---|---|
+| biology 12 Ecosystem | 17 | 0 | 9 | 5 | 3 |
+| chem 12 ch8 | 19 | 5 | 9 | 5 | 0 |
+| maths 12 ch8 | 40 | 5 | 35 | 0 | 0 |
+| physics 12 ch1 | 10 | 2 | 7 | 1 | 0 |
+
+### Projected v2, counting (i) ONLY
+
+| sheet | adopted | + (i) | clears 85%? | (ii) still in play |
+|---|---|---|---|---|
+| biology 12 Ecosystem | 75.7% | **75.7%** | no | 9 |
+| chem 12 ch8 | 83.2% | **87.6%** | **yes** | 9 |
+| maths 12 ch8 | 43.7% | **50.7%** | no | 35 |
+| physics 12 ch1 | 80.0% | **85.0%** | **yes** | 7 |
+
+**This is a projection, not a result.** It holds only if each (i) row actually
+declines when the routing harness is re-run against the corrected spec. That
+re-run and the (ii) re-authoring both write to lesson plans, so neither could be
+done while the 29-chapter precompute sweep was still regenerating them.
+
+### Per-row classification
+
+| sheet | subtopic | seg | kind | spec | evidence |
+|---|---|---|---|---|---|
+| biology 12 Ecosystem | `decomposition` | 3 | (ii) wrong payload | — | names a parameter fault |
+| biology 12 Ecosystem | `decomposition` | 6 | (iii) no such widget | comparison_table | tabular=True no-widget-language=True |
+| biology 12 Ecosystem | `decomposition` | 8 | (ii) wrong payload | — | read by hand: the closed loop is the same loop the subtopic drew earlier — a repeat figure, which is a parameter choice, not a missing widget. |
+| biology 12 Ecosystem | `eco-pyramids` | 4 | (iii) no such widget | ecological_pyramid | read by hand: an ecological pyramid, which is the gap docs/ecological-pyramid-spec.md is written for. |
+| biology 12 Ecosystem | `energy-flow` | 6 | (iii) no such widget | ecological_pyramid | tabular=True no-widget-language=True |
+| biology 12 Ecosystem | `energy-flow` | 8 | (ii) wrong payload | — | names a parameter fault |
+| biology 12 Ecosystem | `food-chains` | 3 | (ii) wrong payload | — | names a parameter fault |
+| biology 12 Ecosystem | `food-chains` | 6 | (ii) wrong payload | — | names a parameter fault |
+| biology 12 Ecosystem | `food-chains` | 9 | (ii) wrong payload | — | names a parameter fault |
+| biology 12 Ecosystem | `phosphorus-cycle` | 2 | (iii) no such widget | comparison_table | tabular=False no-widget-language=True |
+| biology 12 Ecosystem | `phosphorus-cycle` | 4 | (ii) wrong payload | — | names a parameter fault |
+| biology 12 Ecosystem | `phosphorus-cycle` | 6 | (ii) wrong payload | — | read by hand: the chain stops at 'Locked for millions of years' and omits geological uplift — a missing node, which is a payload fault. |
+| biology 12 Ecosystem | `phosphorus-cycle` | 7 | (iii) no such widget | comparison_table | tabular=True no-widget-language=True |
+| biology 12 Ecosystem | `productivity` | 5 | (ii) wrong payload | — | names a parameter fault |
+| biology 12 Ecosystem | `succession` | 2 | (no evidence) | — | the sheet records no objective and no written reason for this row |
+| biology 12 Ecosystem | `succession` | 5 | (no evidence) | — | the sheet records no objective and no written reason for this row |
+| biology 12 Ecosystem | `succession` | 7 | (no evidence) | — | the sheet records no objective and no written reason for this row |
+| chem 12 ch8 | `aldol-condensation` | 5 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `distinguishing-tests-for-aldehydes-ketones-and-acids` | 7 | (iii) no such widget | comparison_table | tabular=False no-widget-language=True |
+| chem 12 ch8 | `distinguishing-tests-for-aldehydes-ketones-and-acids` | 8 | (i) wrong widget | — | wrong-kind-language=True tabular-objective=False |
+| chem 12 ch8 | `haloform-reaction` | 1 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `haloform-reaction` | 6 | (iii) no such widget | comparison_table | tabular=True no-widget-language=False |
+| chem 12 ch8 | `multi-step-conversions-and-reaction-maps` | 6 | (iii) no such widget | comparison_table | tabular=True no-widget-language=True |
+| chem 12 ch8 | `nomenclature-and-structure-of-carbonyl-compounds` | 7 | (iii) no such widget | comparison_table | read by hand: two isomers shown side by side. molecule_struct draws ONE structure; nothing draws two compared, and a comparison_table of text cells is |
+| chem 12 ch8 | `nucleophilic-addition-reactions-of-aldehydes-and-ketones` | 3 | (i) wrong widget | — | wrong-kind-language=False tabular-objective=True |
+| chem 12 ch8 | `nucleophilic-addition-reactions-of-aldehydes-and-ketones` | 8 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `oxidation-and-reduction-of-aldehydes-and-ketones` | 2 | (i) wrong widget | — | wrong-kind-language=False tabular-objective=True |
+| chem 12 ch8 | `oxidation-and-reduction-of-aldehydes-and-ketones` | 4 | (i) wrong widget | — | wrong-kind-language=False tabular-objective=True |
+| chem 12 ch8 | `oxidation-and-reduction-of-aldehydes-and-ketones` | 5 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `physical-properties-and-hydrogen-bonding-in-carbonyl-compounds` | 1 | (iii) no such widget | comparison_table | tabular=True no-widget-language=False |
+| chem 12 ch8 | `physical-properties-and-hydrogen-bonding-in-carbonyl-compounds` | 5 | (i) wrong widget | — | wrong-kind-language=True tabular-objective=False |
+| chem 12 ch8 | `preparation-of-aldehydes-and-ketones` | 1 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `preparation-of-aldehydes-and-ketones` | 8 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `reactions-of-carboxylic-acids` | 3 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `reactions-of-carboxylic-acids` | 4 | (ii) wrong payload | — | names a parameter fault |
+| chem 12 ch8 | `reactions-of-carboxylic-acids` | 6 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-between-a-function-and-its-inverse` | 1 | (i) wrong widget | — | wrong-kind-language=True tabular-objective=False |
+| maths 12 ch8 | `area-between-a-function-and-its-inverse` | 2 | (i) wrong widget | — | wrong-kind-language=True tabular-objective=False |
+| maths 12 ch8 | `area-between-a-function-and-its-inverse` | 5 | (i) wrong widget | — | wrong-kind-language=True tabular-objective=False |
+| maths 12 ch8 | `area-between-two-intersecting-curves` | 1 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-between-two-intersecting-curves` | 2 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-between-two-intersecting-curves` | 3 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-between-two-intersecting-curves` | 4 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-between-two-intersecting-curves` | 6 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-curve-and-its-tangent-or-normal` | 1 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-curve-and-its-tangent-or-normal` | 2 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-curve-and-its-tangent-or-normal` | 3 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-curve-and-its-tangent-or-normal` | 4 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-curve-and-its-tangent-or-normal` | 5 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-curve-and-its-tangent-or-normal` | 6 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-curve-and-its-tangent-or-normal` | 7 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-parabola-and-a-line` | 1 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-parabola-and-a-line` | 2 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-parabola-and-a-line` | 3 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-parabola-and-a-line` | 4 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-bounded-by-a-parabola-and-a-line` | 5 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-by-integration-along-the-y-axis` | 1 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-by-integration-along-the-y-axis` | 2 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-by-integration-along-the-y-axis` | 4 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-by-integration-along-the-y-axis` | 6 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-by-integration-along-the-y-axis` | 7 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-described-by-inequalities` | 1 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-described-by-inequalities` | 3 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-described-by-inequalities` | 4 | (i) wrong widget | — | wrong-kind-language=True tabular-objective=False |
+| maths 12 ch8 | `area-of-regions-described-by-inequalities` | 6 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-involving-modulus-and-piecewise-defined-functions` | 1 | (i) wrong widget | — | wrong-kind-language=False tabular-objective=True |
+| maths 12 ch8 | `area-of-regions-involving-modulus-and-piecewise-defined-functions` | 2 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-involving-modulus-and-piecewise-defined-functions` | 3 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-involving-modulus-and-piecewise-defined-functions` | 4 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-involving-modulus-and-piecewise-defined-functions` | 5 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-involving-modulus-and-piecewise-defined-functions` | 6 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-of-regions-involving-modulus-and-piecewise-defined-functions` | 7 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-under-a-simple-curve-bounded-by-the-axes` | 5 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-under-a-simple-curve-bounded-by-the-axes` | 6 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-under-a-simple-curve-bounded-by-the-axes` | 7 | (ii) wrong payload | — | names a parameter fault |
+| maths 12 ch8 | `area-under-a-simple-curve-bounded-by-the-axes` | 9 | (ii) wrong payload | — | names a parameter fault |
+| physics 12 ch1 | `electric-charge-properties-quantisation-and-charging` | 5 | (i) wrong widget | — | wrong-kind-language=True tabular-objective=False |
+| physics 12 ch1 | `electric-field` | 1 | (i) wrong widget | — | read by hand: conceptual segment about the two-stage field mechanism; a vector_resolution triangle is a computational device for a different skill. Th |
+| physics 12 ch1 | `electric-field` | 4 | (ii) wrong payload | — | names a parameter fault |
+| physics 12 ch1 | `electric-field-lines` | 4 | (ii) wrong payload | — | names a parameter fault |
+| physics 12 ch1 | `electric-field-lines` | 6 | (iii) no such widget | apparatus | read by hand: a gold-leaf electroscope is APPARATUS. There is no apparatus widget in the registry's twelve, so this cannot be drawn today; the sheet c |
+| physics 12 ch1 | `equilibrium-of-charges` | 5 | (ii) wrong payload | — | names a parameter fault |
+| physics 12 ch1 | `gauss-s-law-and-its-applications` | 3 | (ii) wrong payload | — | names a parameter fault |
+| physics 12 ch1 | `gauss-s-law-and-its-applications` | 4 | (ii) wrong payload | — | read by hand: right widget, wrong configuration: parallel_plates for a SINGLE sheet. ALREADY FIXED in e518fab -> gaussian_pillbox, and counted in the  |
+| physics 12 ch1 | `gauss-s-law-and-its-applications` | 6 | (ii) wrong payload | — | names a parameter fault |
+| physics 12 ch1 | `gauss-s-law-and-its-applications` | 7 | (ii) wrong payload | — | names a parameter fault |
