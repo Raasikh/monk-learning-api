@@ -563,6 +563,51 @@ async def speak_chunks(text: str, tutor_voice: Optional[str] = None,
             pending.cancel()
 
 
+async def speak_pcm(text: str, tutor_voice: Optional[str] = None):
+    """Raw PCM in flushes, yielded as Rumik produces it — nothing waits for a
+    clip to finish existing before it can start playing.
+
+    The whole-sentence path (`speak_chunks`) holds every clip until its last
+    frame because the phone plays FILES; measured, that wait is seconds per
+    sentence at Rumik's roughly half-realtime pace. This path hands back
+    ~0.25s of audio the moment the first frames arrive and ~1s pieces after,
+    for a phone that schedules PCM buffers directly.
+
+    Yields bare Int16LE/24kHz/mono bytes. The first flush is deliberately
+    small — the first sound is the one the student is waiting for.
+    """
+    said = cap_spoken(text)
+    if not said:
+        return
+    preset = preset_for(tutor_voice)
+    sentences = _spoken_sentences(said)
+    started = time.time()
+    first_flush = True
+    for idx, sentence in enumerate(sentences, 1):
+        buf = bytearray()
+        got = 0
+        async for piece in _synthesize_stream(sentence, preset):
+            buf.extend(piece)
+            got += len(piece)
+            while len(buf) >= (12000 if first_flush else 48000):
+                take = 12000 if first_flush else 48000
+                out = bytes(buf[:take])
+                del buf[:take]
+                if first_flush:
+                    logger.info("[FOLLOWUP TTS] first pcm flush at t+%dms",
+                                int((time.time() - started) * 1000))
+                    first_flush = False
+                yield out
+        if len(buf) % 2:
+            # Int16 frames are even; a torn trailing byte is noise, not audio.
+            del buf[-1:]
+        if buf:
+            yield bytes(buf)
+        logger.info("[FOLLOWUP TTS] %s sentence %d/%d streamed %d bytes at t+%dms",
+                    preset, idx, len(sentences), got,
+                    int((time.time() - started) * 1000))
+
+
 async def speak(text: str, tutor_voice: Optional[str] = None) -> bytes:
     """One explanation as a WAV, in the student's own teacher's voice.
 

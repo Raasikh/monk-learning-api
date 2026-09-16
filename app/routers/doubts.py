@@ -1000,6 +1000,8 @@ class FollowUpRequest(BaseModel):
     it goes when the screen does.
     """
     history: List[FollowUpTurn] = []
+    # The client can play raw PCM as it streams; old builds cannot.
+    pcm: bool = False
 
 
 def _load_doubt_for_user(doubt_id: str, user_id: str) -> Dict[str, Any]:
@@ -1040,14 +1042,16 @@ def ask_about_doubt(doubt_id: str, body: FollowUpRequest,
     return _followup_response(doubt, doubt_id, user_id, question,
                               [{"role": t.role, "content": t.content}
                                for t in body.history],
-                              tutor_voice=voice, tutor_language=language)
+                              tutor_voice=voice, tutor_language=language,
+                              use_pcm=body.pcm)
 
 
 def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
                        question: str, history: List[Dict[str, str]],
                        transcript: Optional[str] = None,
                        tutor_voice: Optional[str] = None,
-                       tutor_language: Optional[str] = None) -> StreamingResponse:
+                       tutor_language: Optional[str] = None,
+                       use_pcm: bool = False) -> StreamingResponse:
     """The reply, streamed a step at a time.
 
     `transcript` is echoed back first when the question was spoken, so the
@@ -1105,17 +1109,29 @@ def _followup_response(doubt: Dict[str, Any], doubt_id: str, user_id: str,
             # Synthesis into the SAME stream the board fills from. The phone
             # used to receive `spoken` and then make a second request to have
             # it read — a round trip, a request setup and a voice lookup spent
-            # in silence after the words were already known. Here the first
-            # WAV is on the wire the moment Rumik produces it.
+            # in silence after the words were already known.
+            #
+            # Two dialects of the same idea. A phone that can schedule raw
+            # PCM opts in and gets `pcm` frames from the FIRST BYTE Rumik
+            # produces; every other build gets one WAV per sentence, which
+            # cannot start until that sentence finishes existing.
             sent = 0
             try:
                 voice = await voice_task
-                async for idx, total, wav in followup_voice.speak_chunks(text, voice):
-                    sent += 1
-                    frames.put_nowait(("frame", "audio", {
-                        "n": idx, "total": total,
-                        "b64": base64.b64encode(wav).decode("ascii"),
-                    }))
+                if use_pcm:
+                    async for chunk in followup_voice.speak_pcm(text, voice):
+                        sent += 1
+                        frames.put_nowait(("frame", "pcm", {
+                            "n": sent,
+                            "b64": base64.b64encode(chunk).decode("ascii"),
+                        }))
+                else:
+                    async for idx, total, wav in followup_voice.speak_chunks(text, voice):
+                        sent += 1
+                        frames.put_nowait(("frame", "audio", {
+                            "n": idx, "total": total,
+                            "b64": base64.b64encode(wav).decode("ascii"),
+                        }))
             except Exception as err:  # noqa: BLE001 — a voice is an extra, not the answer
                 logger.error("[FOLLOWUP] inline TTS failed for %s: %s",
                              doubt_id[:8], err)
@@ -1182,6 +1198,7 @@ async def ask_about_doubt_aloud(
     doubt_id: str,
     audio: UploadFile = File(..., description="The held recording"),
     history: str = Form("[]"),
+    pcm: str = Form("0"),
     user_id: str = Depends(get_current_user_id),
 ):
     """POST /doubts/{id}/ask-voice — the same thing, asked out loud.
@@ -1226,7 +1243,8 @@ async def ask_about_doubt_aloud(
              for t in prior if isinstance(t, dict)]
     return _followup_response(doubt, doubt_id, user_id, question, turns,
                               transcript=question, tutor_voice=voice,
-                              tutor_language=language)
+                              tutor_language=language,
+                              use_pcm=pcm in ("1", "true", "yes"))
 
 
 class SpeakRequest(BaseModel):

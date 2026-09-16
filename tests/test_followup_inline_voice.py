@@ -164,3 +164,24 @@ def test_the_teacher_knows_their_own_name(monkeypatch):
     assert seen["language"] == "english"
     assert seen["voice"] == "female"
     assert [n for n, _ in frames][-1] == "done"
+
+
+def test_a_pcm_client_gets_raw_flushes_from_the_first_byte(monkeypatch):
+    """Opting in swaps sentence-WAVs for PCM flushes; nothing else moves."""
+    async def fake_pcm(text, voice=None):
+        yield b"\x01\x02" * 6000
+        yield b"\x03\x04" * 24000
+
+    monkeypatch.setattr(doubts, "stream_followup", _fake_llm)
+    monkeypatch.setattr(doubts.followup_voice, "speak_pcm", fake_pcm)
+    monkeypatch.setattr(doubts.followup_voice, "prewarm", lambda *a, **k: None)
+
+    frames = _frames(doubts._followup_response(
+        {"id": "d1"}, "d1", "u1", "why?", [],
+        tutor_voice="female", use_pcm=True))
+    names = [n for n, _ in frames]
+
+    assert names.count("pcm") == 2
+    assert "audio" not in names
+    assert dict(frames)["voice_done"]["chunks"] == 2
+    assert names[-1] == "done"
