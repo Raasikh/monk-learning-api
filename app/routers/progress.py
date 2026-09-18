@@ -22,6 +22,7 @@ Absence of a row = Not started (m = 0, no attempts) per spec §8.
 import logging
 import statistics
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Depends
@@ -210,18 +211,34 @@ def _pace_rows_inner(user_id: str, targets: Dict[str, int]) -> List[Dict[str, An
     }
 
     # question -> subject, since question_serves does not carry one.
+    #
+    # Chunked because `in_` has a practical URL-length ceiling, but fetched
+    # CONCURRENTLY rather than one chunk after another. This is the last thing
+    # /progress does before it answers, and serially it added a full Supabase
+    # round trip (~350ms) per 200 questions the student has ever been served —
+    # so the page got slower the more a student practised, for a card the
+    # response itself labels "Display only".
     ids = list({s["question_id"] for s in serves if s["question_id"] not in gave_up})
-    subject_of: Dict[str, str] = {}
-    for i in range(0, len(ids), 200):
-        for row in (
+    chunks = [ids[i : i + 200] for i in range(0, len(ids), 200)]
+
+    def _subjects_for(chunk: List[str]) -> List[Dict[str, Any]]:
+        return (
             supabase.table("questions")
             .select("id, subject")
-            .in_("id", ids[i : i + 200])
+            .in_("id", chunk)
             .execute()
             .data
             or []
-        ):
-            subject_of[row["id"]] = (row.get("subject") or "").strip().lower()
+        )
+
+    subject_of: Dict[str, str] = {}
+    if chunks:
+        # Capped: a student with thousands of serves should not open a thread
+        # per 200 of them out of a pool the whole process shares.
+        with ThreadPoolExecutor(max_workers=min(6, len(chunks))) as pool:
+            for rows in pool.map(_subjects_for, chunks):
+                for row in rows:
+                    subject_of[row["id"]] = (row.get("subject") or "").strip().lower()
 
     by_subject: Dict[str, List[float]] = {}
     for s in serves:

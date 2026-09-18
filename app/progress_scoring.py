@@ -22,13 +22,21 @@ import logging
 from datetime import datetime, timezone, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
-from app.db import supabase
+from app.db import supabase, fetch_all_cached
 
 logger = logging.getLogger(__name__)
 
 
 def get_active_config() -> Dict[str, Any]:
-    rows = supabase.table("progress_config").select("config").eq("active", True).limit(1).execute().data
+    """One row of tuning constants — cached, like its twin in routers/progress.py.
+
+    This is the copy apply_answer_scoring() calls, and it was the uncached one:
+    a ~350ms round trip for a row that only changes when the config is
+    deliberately swapped, paid on every single graded answer. It runs in a
+    BackgroundTask so no student waited on it, but it still held a threadpool
+    slot each time, and there are only 40 of those for the whole process.
+    """
+    rows = fetch_all_cached("progress_config", "config", active=True)
     return rows[0]["config"] if rows else {}
 
 

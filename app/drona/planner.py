@@ -1,3 +1,4 @@
+import datetime as _dt
 import json
 import logging
 import re
@@ -276,7 +277,82 @@ def _planner_prompt_hash() -> str:
     return h.hexdigest()[:16]
 
 
+#: The functions that author the BOARD for a segment — the widget payload and
+#: the tier-3 SVG. Everything else in this file authors the SEGMENTS: their
+#: structure and their objective text.
+_BOARD_FUNCS = frozenset({
+    "_attach_example_diagram",
+    "_widget_precompute_messages",
+    "_attach_widget_payload",
+    "_attach_segment_board",
+    "_attach_boards_to_authored_plan",
+})
+
+
+def _split_source() -> tuple[str, str]:
+    """planner.py, cut into the part that decides SEGMENTS and the part that
+    decides BOARDS.
+
+    One hash over the whole file made every board change a full corpus
+    re-author. Measured 2026-09-15: a three-line addition to a widget prompt
+    invalidated all 291 plans and cost a 15-hour sweep — which then re-wrote
+    the objectives, which silently voided 72 of 86 human SANE judgements,
+    because a verdict keyed by segment index follows the index onto whatever
+    question replaces it.
+
+    So the cost of that one hash was not the fifteen hours. It was the review.
+    """
+    import ast as _ast
+    from pathlib import Path as _P
+    src = _P(__file__).resolve().read_text()
+    tree = _ast.parse(src)
+    lines = src.splitlines(keepends=True)
+    board, spans = [], []
+    for node in tree.body:
+        if isinstance(node, (_ast.FunctionDef, _ast.AsyncFunctionDef)) and node.name in _BOARD_FUNCS:
+            start = (node.decorator_list[0].lineno - 1) if node.decorator_list else (node.lineno - 1)
+            spans.append((start, node.end_lineno))
+    for a, b in spans:
+        board.append("".join(lines[a:b]))
+    keep = []
+    for i, line in enumerate(lines):
+        if not any(a <= i < b for a, b in spans):
+            keep.append(line)
+    return "".join(keep), "".join(board)
+
+
+def _plan_sha() -> str:
+    """Segment structure and objective text. Changing this REGENERATES plans."""
+    import hashlib as _h
+    from pathlib import Path as _P
+    plan_src, _ = _split_source()
+    h = _h.sha256(plan_src.encode())
+    root = _P(__file__).resolve().parent.parent.parent / "prompts"
+    for name in sorted(_PLANNER_PROMPT_FILES):
+        f = root / name
+        if f.exists():
+            h.update(f.read_bytes())
+    return h.hexdigest()[:16]
+
+
+def _board_sha() -> str:
+    """Widget/SVG authoring. Changing this RE-ATTACHES boards to the existing
+    segments and leaves every objective byte-identical."""
+    import hashlib as _h
+    from pathlib import Path as _P
+    _, board_src = _split_source()
+    h = _h.sha256(board_src.encode())
+    h.update(_P(__file__).resolve().parent.joinpath("widget_registry.py").read_bytes())
+    return h.hexdigest()[:16]
+
+
 def _planner_code_sha() -> str:
+    """KEPT for the stored rows written before the split, and for the drift log.
+
+    It is no longer what decides regeneration — `plan_sha` is — because this
+    hashes the whole file and so cannot tell a board change from a segment
+    change. Rows written before 2026-09-17 carry only this.
+    """
     import hashlib as _h
     from pathlib import Path as _P
     return _h.sha256(_P(__file__).resolve().read_bytes()).hexdigest()[:16]
@@ -318,6 +394,8 @@ def plan_provenance(model_key: str = "planner") -> dict:
     return {
         "planner_prompt_hash": _planner_prompt_hash(),
         "planner_code_sha": _planner_code_sha(),
+        "plan_sha": _plan_sha(),
+        "board_sha": _board_sha(),
         "model_id": get_model_name(model_key),
         "temperature": 0.0,
         "retrieval_config": {
@@ -1225,7 +1303,7 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
         plan_json[PLAN_STATUS_KEY] = "complete"
         plan_json[PLAN_EXPECTED_KEY] = total
         supabase.table("lesson_plans").update({
-            "plan_json": plan_json, "segment_count": total,
+            "plan_json": _stamp_plan_json_provenance(plan_json), "segment_count": total,
         }).eq("id", plan_id).execute()
         # The per-plan slot-1 tally, stated rather than inferable. An absent
         # payload has three causes with three different owners and a count of
@@ -1245,6 +1323,67 @@ def _fill_remaining_segments(plan_id: str, chap_data: Dict[str, Any], sub_title:
         # the next lookup regenerates rather than serving a half lesson as cached.
         logger.error(f"❌ [BACKGROUND PLAN FILL FAILED] plan={plan_id[:8]}: {e}")
         _mark_plan_failed(plan_id, f"background fill: {type(e).__name__}: {e}")
+
+
+
+#: Where the split hashes live. `lesson_plans` has columns for
+#: `planner_code_sha` and `planner_prompt_hash` but none for these, and adding
+#: two is a migration — which CC does not apply. They ride inside `plan_json`
+#: under a reserved key instead, which needs no schema change and is written
+#: and read in one place.
+_PROV_KEY = "_provenance"
+
+
+def _plan_json_provenance(plan_row: Dict[str, Any]) -> Dict[str, Any]:
+    pj = plan_row.get("plan_json") or {}
+    return pj.get(_PROV_KEY) or {}
+
+
+def _stamp_plan_json_provenance(plan_json: Dict[str, Any]) -> Dict[str, Any]:
+    prov = plan_provenance()
+    plan_json[_PROV_KEY] = {
+        "plan_sha": prov["plan_sha"],
+        "board_sha": prov["board_sha"],
+        "stamped_at": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+    }
+    return plan_json
+
+
+def _reattach_boards_in_place(plan_row: Dict[str, Any], chapter_id: str,
+                              subtopic_key: str) -> None:
+    """Re-author the BOARDS on an existing plan. Objectives are not touched.
+
+    The guarantee this makes, and the fixture asserts: after this runs, every
+    segment's `objective` is byte-identical to what it was. Only the board keys
+    change. That is the difference between a 20-minute prompt iteration and a
+    15-hour sweep that voids the review.
+    """
+    from app.drona.concept_archetypes import concept_archetype_for_session
+
+    pj = json.loads(json.dumps(plan_row.get("plan_json") or {}))
+    segs = pj.get("segments") or []
+    if not segs:
+        return
+    chap = (supabase.table("chapters").select("id,name,subject")
+            .eq("id", chapter_id).limit(1).execute().data or [{}])[0]
+    arch = concept_archetype_for_session(chapter_id, subtopic_key)
+    before = [s.get("objective") for s in segs]
+    for seg in segs:
+        for k in (WIDGET_PAYLOAD_KEY, WIDGET_PRECOMPUTE_KEY, "example_diagram_svg"):
+            seg.pop(k, None)
+        _attach_segment_board(seg, {"id": chapter_id, "name": chap.get("name"),
+                                    "subject": chap.get("subject")},
+                              subtopic_key, arch, subtopic_key=subtopic_key,
+                              plan_id=plan_row.get("id"))
+    after = [s.get("objective") for s in segs]
+    if before != after:
+        # Stated as a refusal rather than a comment: if a board pass ever moves
+        # an objective, the verdict store silently decays and nothing else would
+        # notice until a review was already void.
+        raise RuntimeError("re-attach changed an objective; refusing to write")
+    _stamp_plan_json_provenance(pj)
+    supabase.table("lesson_plans").update({"plan_json": pj}).eq(
+        "id", plan_row["id"]).execute()
 
 
 def _attach_boards_to_authored_plan(plan_id: str, chap_data: Dict[str, Any], sub_title: str,
@@ -1297,7 +1436,7 @@ def _attach_boards_to_authored_plan(plan_id: str, chap_data: Dict[str, Any], sub
         plan_json[PLAN_STATUS_KEY] = "complete"
         plan_json[PLAN_EXPECTED_KEY] = total
         supabase.table("lesson_plans").update({
-            "plan_json": plan_json, "segment_count": total,
+            "plan_json": _stamp_plan_json_provenance(plan_json), "segment_count": total,
         }).eq("id", plan_id).execute()
 
         _tally = {s: 0 for s in WIDGET_PRECOMPUTE_STATES}
@@ -1461,11 +1600,52 @@ def get_or_create_plan(chapter_id: str, subtopic_key: str) -> Dict[str, Any]:
         # invalidating serves a stale lesson forever. At 24 plans that is free.
         # Narrow it before the corpus fills, not after.
         _prov = plan_provenance()
-        _drift = [
-            (k, cached_plan.get(k), _prov[k])
-            for k in ("planner_prompt_hash", "planner_code_sha", "model_id")
-            if cached_plan.get(k) != _prov[k]
-        ]
+
+        # TWO KINDS OF DRIFT, AND THEY COST DIFFERENT AMOUNTS.
+        #
+        # `plan_sha` covers segment structure and objective text. When it moves
+        # the plan really is stale and has to be re-authored.
+        #
+        # `board_sha` covers only the widget/SVG authoring — the board hung on
+        # a segment, not the segment. When only that moves, the segments are
+        # still correct and re-authoring them is not merely wasteful, it is
+        # DESTRUCTIVE: the 2026-09-15 sweep rewrote every objective and thereby
+        # voided 72 of 86 human SANE judgements, because a verdict keyed to a
+        # segment index follows the index onto whatever question replaces it.
+        # So a board-only change re-attaches boards in place and leaves every
+        # objective byte-identical.
+        #
+        # Rows written before the split carry neither hash. They fall back to
+        # `planner_code_sha`, which is the whole-file hash and regenerates —
+        # right, because nothing else can say which half of it moved.
+        _stored = _plan_json_provenance(cached_plan)
+        _has_split = bool(_stored.get("plan_sha"))
+        if _has_split:
+            _plan_keys = ("planner_prompt_hash", "model_id")
+            _plan_drift = [(k, cached_plan.get(k), _prov[k])
+                           for k in _plan_keys if cached_plan.get(k) != _prov[k]]
+            if _stored.get("plan_sha") != _prov["plan_sha"]:
+                _plan_drift.append(("plan_sha", _stored.get("plan_sha"), _prov["plan_sha"]))
+            _board_drift = (_stored.get("board_sha") != _prov["board_sha"])
+            if not _plan_drift and _board_drift:
+                logger.info(
+                    f"🪧 [BOARD DRIFT] '{subtopic_key}' re-attaching boards — "
+                    f"board_sha {_stored.get('board_sha')!r} -> {_prov['board_sha']!r}; "
+                    f"segments and objectives untouched")
+                try:
+                    _reattach_boards_in_place(cached_plan, chapter_id, subtopic_key)
+                    return get_or_create_plan(chapter_id, subtopic_key)
+                except Exception as reattach_err:      # noqa: BLE001
+                    logger.warning(f"[BOARD DRIFT] re-attach failed, serving as-is: "
+                                   f"{str(reattach_err)[:120]}")
+                    return cached_plan
+            _drift = _plan_drift
+        else:
+            _drift = [
+                (k, cached_plan.get(k), _prov[k])
+                for k in ("planner_prompt_hash", "planner_code_sha", "model_id")
+                if cached_plan.get(k) != _prov[k]
+            ]
         if _drift:
             logger.warning(
                 f"⚠️ [PLAN PROVENANCE DRIFT] '{subtopic_key}' regenerating — "

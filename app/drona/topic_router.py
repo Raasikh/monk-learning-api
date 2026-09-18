@@ -22,7 +22,7 @@ from typing import Any, Dict, List, Optional
 
 from openai import OpenAI
 
-from app.db import supabase
+from app.db import supabase, fetch_all_cached
 
 logger = logging.getLogger("drona.topic_router")
 
@@ -111,7 +111,11 @@ def route_topic(utterance: str, current_chapter_id: Optional[str] = None) -> Dic
     if not utterance:
         return {"status": "ambiguous", "options": [], "message": "Tell me what you'd like to learn."}
 
-    chapters = supabase.table("chapters").select("id,name,subject,class_level").execute().data or []
+    # `chapters` is syllabus — it changes when a curation job runs, never per
+    # request — and this endpoint is hit before every class. Exactly what
+    # fetch_all_cached exists for; it also pages past PostgREST's 1000-row cap,
+    # which a bare .execute() here did not.
+    chapters = fetch_all_cached("chapters", "id,name,subject,class_level")
     by_name = {(c["name"] or "").strip().lower(): c for c in chapters}
     current = next((c for c in chapters if c["id"] == current_chapter_id), None)
 

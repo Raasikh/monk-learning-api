@@ -6,7 +6,7 @@ from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
 from pydantic import BaseModel
 
 from app.auth import get_current_user_id
-from app.db import supabase, fetch_all_cached
+from app.db import supabase, fetch_all_cached, POSTGREST_PAGE
 from app.drona.persona import normalize_language, normalize_voice, tutor_name
 from app.progress_scoring import apply_answer_scoring, record_serve
 
@@ -271,15 +271,47 @@ def get_next_question(
         valid_chapter_names = [row["name"] for row in chapter_rows if row.get("name")]
 
     # 3. Fetch User Practice Attempts (for 21-attempt repeat spacing logic - GATE 8.4)
+    #
+    # The MOST RECENT page, explicitly — not an unbounded ascending read.
+    #
+    # This asked for every attempt ordered created_at ASC with no limit, and
+    # PostgREST caps a response at 1000 rows without reporting that it did (the
+    # hazard POSTGREST_PAGE in app/db.py is named after). Ascending + capped
+    # means a student past 1000 attempts was handed their OLDEST 1000 and
+    # nothing since, which broke more than the spacing:
+    #
+    #   * `used_today` counts rows newer than 24h. None of the oldest 1000 are,
+    #     so it came back 0 and the 150/day cap silently stopped applying to
+    #     exactly the heaviest users.
+    #   * `attempts_since` was measured against a frozen n_total_attempts of
+    #     1000, so nearly every wrong answer looked 21-attempts stale and Tier 1
+    #     swallowed the selection.
+    #
+    # Ordering desc and taking one page fixes both: today's attempts are always
+    # present (the daily cap is 150, so a day cannot outrun a 1000-row window),
+    # and the gap arithmetic below stays exact because it only ever asks how
+    # many attempts came AFTER a given one — which is a within-window question.
+    # Rows are reversed back to ascending so the indexing below is unchanged.
+    #
+    # Still one round trip, deliberately: the comment on `used_today` records
+    # that adding a query at the front of this handler hit an HTTP/2 GOAWAY and
+    # took the endpoint down, so this must not become two.
+    ATTEMPT_WINDOW = POSTGREST_PAGE
     attempts_res = (
         supabase.table("practice_attempts")
         .select("id, question_id, is_correct, created_at")
         .eq("user_id", user_id)
-        .order("created_at", desc=False)
+        .order("created_at", desc=True)
+        .limit(ATTEMPT_WINDOW)
         .execute()
     )
 
-    all_user_attempts = attempts_res.data or []
+    # Oldest-first again, which is what latest_attempt_map's index means.
+    all_user_attempts = list(reversed(attempts_res.data or []))
+    # Within-window total. A question whose last attempt predates the window is
+    # simply absent from latest_attempt_map and lands in Tier 2 (unseen) rather
+    # than Tier 1/3 — correct in effect, since anything 1000 attempts old is far
+    # past the 21-attempt spacing gate either way.
     n_total_attempts = len(all_user_attempts)
 
     # The day's tally, counted from the attempts already in hand.
@@ -637,16 +669,20 @@ def get_practice_stats(
     """
     Calculates lifetime practice statistics for the authenticated user.
     """
-    attempts_res = (
-        supabase.table("practice_attempts")
-        .select("id, is_correct")
-        .eq("user_id", user_id)
-        .execute()
+    # Counted by the database, not by fetching rows and calling len() on them.
+    # The old read pulled every attempt row to produce two integers, and
+    # PostgREST's silent 1000-row cap meant a student past 1000 attempts had
+    # their LIFETIME stats frozen at "1000 attempted" forever. Two counts with
+    # limit(0) return no rows at all, so this is both correct and lighter than
+    # what it replaces. (Same shape as the ledger counts in routers/progress.py.)
+    attempted_count = (
+        supabase.table("practice_attempts").select("id", count="exact")
+        .eq("user_id", user_id).limit(0).execute().count or 0
     )
-
-    attempts = attempts_res.data or []
-    attempted_count = len(attempts)
-    correct_count = sum(1 for a in attempts if a.get("is_correct"))
+    correct_count = (
+        supabase.table("practice_attempts").select("id", count="exact")
+        .eq("user_id", user_id).eq("is_correct", True).limit(0).execute().count or 0
+    )
 
     accuracy = round((correct_count / attempted_count) * 100, 1) if attempted_count > 0 else 0.0
 
