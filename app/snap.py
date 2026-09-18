@@ -2682,19 +2682,33 @@ def keep_question_figures(spans: List[Dict[str, Any]],
     if not usable or not storage_r2.is_configured():
         return []
 
-    keys: List[str] = []
+    # Crop first, then put the pieces up together. Serially this was one R2
+    # round trip per figure, back to back, on the critical path of the first
+    # answer the student sees. pool.map keeps reading order.
+    pieces: List[Tuple[str, bytes]] = []
     for position, span in enumerate(_reading_order(usable)):
         piece = crop_figure(image_bytes, span)
         if not piece:
             continue
-        key = f"doubts/{doubt_id}/q{question_index}/fig-{position}.jpg"
+        pieces.append((f"doubts/{doubt_id}/q{question_index}/fig-{position}.jpg", piece))
+
+    if not pieces:
+        logger.info("[SNAP FIGURES] doubt=%s q%d kept 0 question figure(s)",
+                    doubt_id[:8], question_index)
+        return []
+
+    def _put(item: Tuple[str, bytes]) -> Optional[str]:
+        key, blob = item
         try:
-            storage_r2.upload_image(key, piece, "image/jpeg")
+            storage_r2.upload_image(key, blob, "image/jpeg")
+            return key
         except Exception as err:
             logger.warning("[SNAP FIGURES] doubt=%s upload failed for %s: %s",
                            doubt_id[:8], key, err)
-            continue
-        keys.append(key)
+            return None
+
+    with ThreadPoolExecutor(max_workers=min(4, len(pieces))) as pool:
+        keys = [key for key in pool.map(_put, pieces) if key]
 
     logger.info("[SNAP FIGURES] doubt=%s q%d kept %d question figure(s)",
                 doubt_id[:8], question_index, len(keys))
@@ -2716,23 +2730,39 @@ def keep_option_figures(options: List[Dict[str, str]],
     if not paired or not storage_r2.is_configured():
         return options
 
-    kept = 0
-    out: List[Dict[str, str]] = []
-    for option, span in zip(options, paired):
+    # Same shape as keep_question_figures: crop serially (PIL, cheap), then put
+    # the four option figures up at once instead of one after another.
+    # `pair_figures` returns either None or exactly len(options) spans, so the
+    # index below always lines up with `options`.
+    out: List[Dict[str, str]] = list(options)
+    jobs: List[Tuple[int, str, bytes]] = []
+    for index, (option, span) in enumerate(zip(options, paired)):
         piece = crop_figure(image_bytes, span)
         if not piece:
-            out.append(option)
             continue
-        key = f"doubts/{doubt_id}/q{question_index}/opt-{option['label']}.jpg"
+        jobs.append(
+            (index, f"doubts/{doubt_id}/q{question_index}/opt-{option['label']}.jpg", piece)
+        )
+
+    def _put(job: Tuple[int, str, bytes]) -> Optional[Tuple[int, str]]:
+        index, key, blob = job
         try:
-            storage_r2.upload_image(key, piece, "image/jpeg")
+            storage_r2.upload_image(key, blob, "image/jpeg")
+            return (index, key)
         except Exception as err:
             logger.warning("[SNAP FIGURES] doubt=%s upload failed for %s: %s",
                            doubt_id[:8], key, err)
-            out.append(option)
-            continue
-        kept += 1
-        out.append({**option, "figure_key": key})
+            return None
+
+    kept = 0
+    if jobs:
+        with ThreadPoolExecutor(max_workers=min(4, len(jobs))) as pool:
+            for done in pool.map(_put, jobs):
+                if not done:
+                    continue
+                index, key = done
+                out[index] = {**options[index], "figure_key": key}
+                kept += 1
 
     logger.info("[SNAP FIGURES] doubt=%s q%d kept %d of %d option figure(s)",
                 doubt_id[:8], question_index, kept, len(options))

@@ -26,7 +26,7 @@ import re
 import time
 from typing import Any, AsyncGenerator, Dict, List
 
-from app.db import supabase
+from app.db import supabase, aexec
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.usage import record_call_bg
@@ -267,7 +267,7 @@ async def process_scoped_turn_stream(
     except Exception as e:
         logger.error(f"{stag} JSON parse failure: {e}. Retrying with a strict follow-up.")
         try:
-            retry_res = client.chat.completions.create(
+            retry_res = await aexec(lambda: client.chat.completions.create(
                 model=model_name,
                 messages=messages + [
                     {"role": "assistant", "content": raw_response_text or "{}"},
@@ -277,7 +277,7 @@ async def process_scoped_turn_stream(
                 temperature=0.0,
                 timeout=TUTOR_TIMEOUT_S,
                 extra_body={"thinking": {"type": "disabled"}},
-            )
+            ))
             parsed_json = json.loads(strip_fences(retry_res.choices[0].message.content or "{}"))
         except Exception as retry_err:
             logger.error(f"{stag} Second JSON parse failure: {retry_err}")
@@ -359,16 +359,16 @@ async def process_scoped_turn_stream(
         "completed_at": "now()" if next_phase == "complete" else None,
     }
     try:
-        supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute()
+        await aexec(lambda: supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute())
     except Exception as session_update_err:
         logger.warning(f"{stag} drona_sessions update failed, retrying once: {session_update_err}")
-        supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute()
+        await aexec(lambda: supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute())
 
     # 5. Audit row — no grade/mistake_tag concept in these modes.
     try:
-        turns_res = supabase.table("drona_turns").select("turn_index").eq("session_id", session_id).execute()
+        turns_res = await aexec(lambda: supabase.table("drona_turns").select("turn_index").eq("session_id", session_id).execute())
         turn_index = len(turns_res.data or []) + 1
-        supabase.table("drona_turns").insert([{
+        await aexec(lambda: supabase.table("drona_turns").insert([{
             "session_id": session_id,
             "turn_index": turn_index,
             "segment_index": 1,
@@ -380,17 +380,17 @@ async def process_scoped_turn_stream(
             "cache_hit_tokens": cache_hit_tokens,
             "output_tokens": output_tokens,
             "board_event_count": len(board_events),
-        }]).execute()
+        }]).execute())
     except Exception as db_ins_err:
         logger.warning(f"{stag} Insert into drona_turns warning: {db_ins_err}")
 
     if offtopic_tier == 5:
         try:
-            supabase.table("drona_wellbeing_flags").insert([{
+            await aexec(lambda: supabase.table("drona_wellbeing_flags").insert([{
                 "session_id": session_id,
                 "user_id": user_id,
                 "utterance": utterance,
-            }]).execute()
+            }]).execute())
         except Exception as e:
             logger.warning(f"{stag} Optional insert into drona_wellbeing_flags skipped: {e}")
 

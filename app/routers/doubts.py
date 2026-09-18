@@ -1261,30 +1261,6 @@ class SpeakRequest(BaseModel):
     text: str
 
 
-def _tutor_language_for(user_id: str) -> str:
-    """The language this student's classroom is running in.
-
-    Same source and same reasoning as `_tutor_voice_for`: read from their last
-    session rather than the request, so a follow-up opens in the language they
-    are being taught in. Only the cached opener uses it — the answer itself is
-    written by the model in whatever the question was asked in.
-    """
-    try:
-        res = (
-            supabase.table("drona_sessions")
-            .select("language")
-            .eq("user_id", user_id)
-            .order("created_at", desc=True)
-            .limit(1)
-            .execute()
-        )
-        if res.data and res.data[0].get("language"):
-            return res.data[0]["language"]
-    except Exception as err:
-        logger.warning("Could not read language for %s: %s", user_id[:8], err)
-    return followup_voice.DEFAULT_LANGUAGE
-
-
 def _tutor_prefs_for(user_id: str) -> tuple:
     """(tutor_voice, language) from the student's last session — ONE read.
 

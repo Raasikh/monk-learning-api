@@ -62,6 +62,53 @@ alter table public.chapters
   add constraint chapters_sane_counts_agree
     check (sane_percent is null or (sane_y + sane_n = sane_rows));
 
+-- ── per-row verdicts ────────────────────────────────────────────────────────
+-- Added 2026-09-17. A verdict used to be keyed by (subtopic_key, segment_index)
+-- and position is NOT identity: a precompute re-authors the SEGMENTS, so seg 3
+-- after a sweep can be a different question. Measured on the 29-chapter sweep —
+-- of 86 judged rows, 8 still carried the same objective, 14 were reworded, 60
+-- described a question no longer asked, and 4 never recorded their objective at
+-- all. The key is the QUESTION plus the PICTURE.
+create table if not exists public.sane_row_verdicts (
+  id               bigserial primary key,
+  objective_sha    text        not null,
+  widget_id        text        not null,
+  verdict_key      text        not null,
+  subject          text        not null,
+  class_level      smallint    not null,
+  chapter          text        not null,
+  subtopic_key     text        not null,
+  objective        text        not null,
+  verdict          text        not null,
+  bucket           text        not null,
+  reason           text,
+  verdict_by       text        not null,
+  verdict_at       timestamptz not null default now(),
+  legacy_key       text,
+  constraint sane_row_verdict_value check (verdict in ('y', 'n')),
+  constraint sane_row_bucket check (bucket in ('carried', 'reconfirm',
+                                               'superseded', 'unkeyable')),
+  -- the key is the pair, and it is derivable from its parts: a row whose
+  -- verdict_key disagrees with its own objective_sha and widget_id is a row
+  -- that was edited in one place and not the other.
+  constraint sane_row_key_agrees check (verdict_key = objective_sha || ':' || widget_id)
+);
+
+-- One live verdict per question-and-picture. `unkeyable` rows are archive and
+-- share an empty sha, so they are excluded from the constraint rather than
+-- being allowed to collide with each other.
+create unique index if not exists sane_row_verdicts_key
+  on public.sane_row_verdicts (verdict_key)
+  where bucket <> 'unkeyable';
+
+create index if not exists sane_row_verdicts_chapter
+  on public.sane_row_verdicts (subject, class_level, chapter);
+
+comment on table public.sane_row_verdicts is
+  'One judged row per (objective_sha, widget_id). Loaded from content/sane-rows.json, which stays the source of truth until this table is in use.';
+comment on column public.sane_row_verdicts.objective_sha is
+  'sha256 of the NORMALISED objective text (casefold, non-alphanumerics collapsed), first 16 hex chars. A changed word is a changed question and must not inherit a verdict.';
+
 comment on column public.chapters.sane_percent is
   'Share of measured segments a reviewer judged sane. NULL = unmeasured, which the hold-back treats exactly like a failing score. Never defaulted.';
 comment on column public.chapters.sane_source is

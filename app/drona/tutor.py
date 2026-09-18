@@ -9,7 +9,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, Any, AsyncGenerator, List, NamedTuple, Optional, Tuple
 from app import storage_r2
-from app.db import supabase
+from app.db import supabase, aexec
 from app.drona.models import get_drona_client, get_drona_async_client, get_model_name, model_echo_ok, TUTOR_TIMEOUT_S
 from app.drona.prompt_loader import load_prompt
 from app.drona.diagram_templates import TEMPLATES as DIAGRAM_TEMPLATES, render as render_diagram
@@ -700,7 +700,7 @@ async def process_tutor_turn_stream(
     stag = f"[s:{session_id[:8]}]"
 
     # 1. SELECT * FROM drona_sessions
-    sess_res = supabase.table("drona_sessions").select("*").eq("id", session_id).eq("user_id", user_id).execute()
+    sess_res = await aexec(lambda: supabase.table("drona_sessions").select("*").eq("id", session_id).eq("user_id", user_id).execute())
     if not sess_res.data:
         yield f"event: state\ndata: {json.dumps({'phase': 'complete', 'reason': 'session_not_found'})}\n\n"
         yield "event: done\ndata: {}\n\n"
@@ -734,7 +734,7 @@ async def process_tutor_turn_stream(
     # 2. SELECT plan_json FROM lesson_plans
     plan_row = None
     if plan_id:
-        plan_res = supabase.table("lesson_plans").select("*").eq("id", plan_id).execute()
+        plan_res = await aexec(lambda: supabase.table("lesson_plans").select("*").eq("id", plan_id).execute())
         if plan_res.data:
             plan_row = plan_res.data[0]
 
@@ -758,8 +758,14 @@ async def process_tutor_turn_stream(
     if plan_id and curr_seg_idx > len(segments) and curr_seg_idx <= total_segments:
         # The student has outrun the background author. Re-read once — the fill
         # runs 4-wide and normally finishes long before segment 1 is over.
-        time.sleep(3.0)
-        refetch = supabase.table("lesson_plans").select("plan_json").eq("id", plan_id).execute()
+        #
+        # asyncio.sleep, not time.sleep: this is an async generator driving a
+        # live class, and the blocking form stopped the whole event loop dead
+        # for three seconds — every other student's audio included — while this
+        # one waited. It is the same defect as a synchronous Supabase call here,
+        # just far more expensive.
+        await asyncio.sleep(3.0)
+        refetch = await aexec(lambda: supabase.table("lesson_plans").select("plan_json").eq("id", plan_id).execute())
         if refetch.data:
             plan_json = refetch.data[0].get("plan_json") or plan_json
             segments = plan_json.get("segments") or segments
@@ -788,7 +794,7 @@ async def process_tutor_turn_stream(
     incorrect_count = 0
     hints_used = 0
     try:
-        turns_res = supabase.table("drona_turns").select("segment_index, grade").eq("session_id", session_id).execute()
+        turns_res = await aexec(lambda: supabase.table("drona_turns").select("segment_index, grade").eq("session_id", session_id).execute())
         turns = turns_res.data or []
         seg_grades = {}
         for t in turns:
@@ -915,7 +921,7 @@ async def process_tutor_turn_stream(
         # t.get("utterance") was always None and prior_reteaches was always 0.
         # A re-teach turn silently consumed one of the segment's 3 quiz slots
         # instead of being excluded from the count.
-        seg_turns_res = supabase.table("drona_turns").select("raw_response, utterance").eq("session_id", session_id).eq("segment_index", curr_seg_idx).execute()
+        seg_turns_res = await aexec(lambda: supabase.table("drona_turns").select("raw_response, utterance").eq("session_id", session_id).eq("segment_index", curr_seg_idx).execute())
         turn_within_segment = len(seg_turns_res.data or []) + 1  # This will be the Nth turn in segment
         for t in (seg_turns_res.data or []):
             raw = t.get("raw_response")
@@ -973,12 +979,12 @@ async def process_tutor_turn_stream(
     # tick still sort.
     prior_payload_entries: List[Dict[str, Any]] = []
     try:
-        _prior_rows = (supabase.table("drona_turns")
+        _prior_rows = ((await aexec(lambda: supabase.table("drona_turns")
                        .select("turn_index, segment_index, raw_response")
                        .eq("session_id", session_id)
                        .order("turn_index", desc=True)
                        .limit(PRIOR_PAYLOAD_SCAN)
-                       .execute().data or [])
+                       .execute())).data or [])
         for _row in _prior_rows:
             if len(prior_payload_entries) >= PRIOR_PAYLOAD_WINDOW:
                 break
@@ -2196,7 +2202,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         logger.error(f"[RAW LLM RESPONSE PARSE FAILURE BODY] length={len(raw_response_text)} | content='{raw_response_text}' | error={e}")
         logger.warning(f"Executing LLM JSON format retry...")
         try:
-            retry_res = client.chat.completions.create(
+            retry_res = await aexec(lambda: client.chat.completions.create(
                 model=model_name,
                 messages=messages + [
                     {"role": "assistant", "content": raw_response_text or "{}"},
@@ -2206,7 +2212,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 temperature=0.0,
                 timeout=TUTOR_TIMEOUT_S,
                 extra_body={"thinking": {"type": "disabled"}}
-            )
+            ))
             parsed_json = json.loads(strip_fences(retry_res.choices[0].message.content or "{}"))
         except Exception as retry_err:
             logger.error(f"Second JSON parse failure: {retry_err}")
@@ -2282,7 +2288,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
     if parsed_json.get("check_options") and "?" not in speech_out:
         logger.warning(f"{stag}   ⚠️ [CHIPS WITHOUT A QUESTION] Speech offers options but asks nothing. Retrying turn.")
         try:
-            fix_res = client.chat.completions.create(
+            fix_res = await aexec(lambda: client.chat.completions.create(
                 model=model_name,
                 messages=messages + [
                     {"role": "assistant", "content": json.dumps(parsed_json)},
@@ -2299,7 +2305,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
                 max_tokens=2048,
                 timeout=TUTOR_TIMEOUT_S,
                 extra_body={"thinking": {"type": "disabled"}},
-            )
+            ))
             fixed = parse_tutor_json(fix_res.choices[0].message.content or "{}")
             if fixed.get("speech") and "?" in fixed["speech"]:
                 parsed_json["speech"] = fixed["speech"]
@@ -2517,13 +2523,13 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         "ended_reason": ended_reason_val
     }
     try:
-        supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute()
+        await aexec(lambda: supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute())
     except Exception as session_update_err:
         logger.warning(f"{stag}   ⚠️ drona_sessions update failed, retrying once: {session_update_err}")
-        supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute()
+        await aexec(lambda: supabase.table("drona_sessions").update(session_update).eq("id", session_id).execute())
 
     # 9. Get turn count and INSERT into drona_turns
-    turns_res = supabase.table("drona_turns").select("turn_index").eq("session_id", session_id).execute()
+    turns_res = await aexec(lambda: supabase.table("drona_turns").select("turn_index").eq("session_id", session_id).execute())
     turn_index = len(turns_res.data or []) + 1
 
     turn_data = {
@@ -2550,7 +2556,7 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         turn_data["turn_failed"] = True
 
     try:
-        supabase.table("drona_turns").insert([turn_data]).execute()
+        await aexec(lambda: supabase.table("drona_turns").insert([turn_data]).execute())
     except Exception as db_ins_err:
         logger.warning(f"Insert into drona_turns warning: {db_ins_err}")
 
@@ -2561,25 +2567,25 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
             # insert here fail its constraint, so no misconception was ever
             # recorded and the summary's mistakes_count was permanently 0.
             seeded_tags = [str(t).strip().lower() for t in (curr_segment.get("expected_misconceptions") or [])]
-            supabase.table("student_misconceptions").insert([{
+            await aexec(lambda: supabase.table("student_misconceptions").insert([{
                 "session_id": session_id,
                 "user_id": user_id,
                 "chapter_id": session.get("chapter_id"),
                 "subtopic_key": session.get("subtopic_key", "unknown"),
                 "tag_raw": str(mistake_tag),
                 "was_seeded": str(mistake_tag).strip().lower() in seeded_tags,
-            }]).execute()
+            }]).execute())
         except Exception as e:
             logger.warning(f"Optional insert into student_misconceptions skipped: {e}")
 
     # 11. INSERT into drona_wellbeing_flags if offtopic_tier == 5 (§4.1 #13)
     if offtopic_tier == 5:
         try:
-            supabase.table("drona_wellbeing_flags").insert([{
+            await aexec(lambda: supabase.table("drona_wellbeing_flags").insert([{
                 "session_id": session_id,
                 "user_id": user_id,
                 "utterance": utterance
-            }]).execute()
+            }]).execute())
         except Exception as e:
             logger.warning(f"Optional insert into drona_wellbeing_flags skipped: {e}")
 

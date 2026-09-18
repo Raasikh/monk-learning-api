@@ -8,7 +8,7 @@ import logging
 import jwt
 from typing import Any, Dict, List, Optional, Tuple
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
-from app.db import supabase
+from app.db import supabase, aexec
 from app.auth import decode_supabase_jwt
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.practice_explain import process_practice_explain_turn_stream
@@ -137,7 +137,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     # 1011, not 4004: this failure is ours, and a client that treats 4004 as
     # permanent must stay free to retry a server fault.
     try:
-        res_s = supabase.table('drona_sessions').select('*').eq('id', session_id).execute()
+        res_s = await aexec(lambda: supabase.table('drona_sessions').select('*').eq('id', session_id).execute())
     except Exception as err:
         logger.error("Could not read session %s for /live: %s",
                      str(session_id)[:8], err)
@@ -248,9 +248,9 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         _chapter_id = session_data.get("chapter_id")
         if _chapter_id:
             _keyterms = [c["name"] for c in (
-                supabase.table("concepts").select("name")
+                (await aexec(lambda: supabase.table("concepts").select("name")
                 .eq("chapter_id", _chapter_id).eq("active", True)
-                .limit(DeepgramSTTProxy.MAX_KEYTERMS).execute().data or []
+                .limit(DeepgramSTTProxy.MAX_KEYTERMS).execute())).data or []
             )]
     except Exception as kt_err:
         logger.warning(f"Keyterm lookup skipped: {kt_err}")
@@ -303,8 +303,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     # student can simply answer and continue.
     if session_data['phase'] == 'awaiting_answer':
         try:
-            last_turn_res = supabase.table('drona_turns').select('raw_response') \
-                .eq('session_id', session_id).order('turn_index', desc=True).limit(1).execute()
+            last_turn_res = await aexec(lambda: supabase.table('drona_turns').select('raw_response')
+                .eq('session_id', session_id).order('turn_index', desc=True).limit(1).execute())
             if last_turn_res.data:
                 last_parsed = json.loads(last_turn_res.data[0].get('raw_response') or '{}')
                 resume_options = last_parsed.get('check_options') or []
@@ -334,8 +334,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     # appendBoardEvent dedupes by content, so a same-tab auto-reconnect that
     # still has the board is unaffected.
     try:
-        prior_turns = supabase.table('drona_turns').select('raw_response') \
-            .eq('session_id', session_id).order('turn_index').execute()
+        prior_turns = await aexec(lambda: supabase.table('drona_turns').select('raw_response')
+            .eq('session_id', session_id).order('turn_index').execute())
         replay_events: List[Dict] = []
         seen_replay = set()
         for t in (prior_turns.data or []):
@@ -722,10 +722,10 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             })
             try:
                 # Track tts_failure_count in DB if turn exists
-                turns = supabase.table('drona_turns').select('id, tts_failure_count').eq('session_id', session_id).order('turn_index', desc=True).limit(1).execute()
+                turns = await aexec(lambda: supabase.table('drona_turns').select('id, tts_failure_count').eq('session_id', session_id).order('turn_index', desc=True).limit(1).execute())
                 if turns.data:
                     curr_fail = turns.data[0].get('tts_failure_count') or 0
-                    supabase.table('drona_turns').update({'tts_failure_count': curr_fail + 1}).eq('id', turns.data[0]['id']).execute()
+                    await aexec(lambda: supabase.table('drona_turns').update({'tts_failure_count': curr_fail + 1}).eq('id', turns.data[0]['id']).execute())
             except Exception as db_err:
                 logger.warning(f"Failed to increment tts_failure_count in drona_turns: {db_err}")
         else:
@@ -780,7 +780,7 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
             # This re-fetch is only for the post-turn_complete state frame and
             # the auto-advance decision below; selecting check_options here
             # threw (42703) on every turn, aborting before auto-advance ever ran.
-            sess_res = supabase.table('drona_sessions').select('phase, current_segment').eq('id', session_id).single().execute()
+            sess_res = await aexec(lambda: supabase.table('drona_sessions').select('phase, current_segment').eq('id', session_id).single().execute())
             if sess_res.data:
                 curr_phase = sess_res.data.get('phase')
                 curr_seg = sess_res.data.get('current_segment')
@@ -1274,14 +1274,14 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         # This is the per-student evidence for a provider limit review.
         if not superseded:
             try:
-                turn_rows = supabase.table('drona_turns').select('rumik_requests, rumik_chars') \
-                    .eq('session_id', session_id).execute().data or []
-                supabase.table('drona_sessions').update({
+                turn_rows = (await aexec(lambda: supabase.table('drona_turns').select('rumik_requests, rumik_chars')
+                    .eq('session_id', session_id).execute())).data or []
+                await aexec(lambda: supabase.table('drona_sessions').update({
                     'rumik_requests_total': sum((t.get('rumik_requests') or 0) for t in turn_rows),
                     'tts_characters': sum((t.get('rumik_chars') or 0) for t in turn_rows) or state.tts_characters,
                     'stt_seconds': round(state.stt_seconds, 1),
                     'rumik_peak_rpm': state.peak_rumik_rpm,
                     'mute_duration_sec': state.get_total_mute_sec(),
-                }).eq('id', session_id).execute()
+                }).eq('id', session_id).execute())
             except Exception as rollup_err:
                 logger.warning(f"Session usage rollup write failed: {rollup_err}")

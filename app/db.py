@@ -1,8 +1,33 @@
+import asyncio
 import os
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional, TypeVar
 from supabase import create_client, Client, ClientOptions
 from app.config import settings
+
+_T = TypeVar("_T")
+
+
+async def aexec(build: Callable[[], _T]) -> _T:
+    """Run one blocking Supabase/SDK call off the event loop.
+
+    Every client in this codebase is synchronous httpx. Called straight from an
+    `async def` — which is what the live-class WebSocket and the tutor turn
+    generators are — each call parks the entire event loop for the length of its
+    round trip, measured at ~325ms for Supabase. A turn makes about ten of them,
+    so one student's turn was freezing every other student's audio for three or
+    four seconds at a time, and there is only ONE uvicorn worker (see the note
+    in railway.toml), so that loop is the whole server.
+
+    Usage is a thunk, because the calls are chained expressions rather than
+    functions:
+
+        res = await aexec(lambda: supabase.table("x").select("*").execute())
+
+    Independent reads should go through asyncio.gather rather than one await
+    after another.
+    """
+    return await asyncio.to_thread(build)
 
 # PostgREST's own default is 120s. Nothing this API asks of Postgres is worth
 # two minutes: a query that slow has already lost the student, and the request
