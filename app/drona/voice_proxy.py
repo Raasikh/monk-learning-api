@@ -9,7 +9,7 @@ import logging
 import requests
 from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple, Any
 import websockets
-from app.db import supabase
+from app.db import supabase, aexec
 
 logger = logging.getLogger("drona.voice_proxy")
 
@@ -1669,18 +1669,35 @@ class RumikTTSProxy:
             )
 
     def _record_rate_limit_hit_async(self):
-        """Asynchronously increments rate_limit_hits in drona_sessions."""
-        try:
-            async def _update():
-                s_res = supabase.table("drona_sessions").select("rate_limit_hits").eq("id", self.session_id).execute()
+        """Asynchronously increments rate_limit_hits in drona_sessions.
+
+        Async in the sense that nobody waits for it, and now also in the sense
+        that it does not stop everyone else: both reads were plain blocking
+        Supabase calls on the event loop, and this fires precisely when Rumik is
+        already rate-limiting — so the bookkeeping for a struggling class was
+        freezing every other class for two round trips.
+        """
+        async def _update():
+            # Inside the task, not around create_task. The outer try only ever
+            # saw a scheduling failure, so a failed write — the thing the log
+            # line is about — went out as an unhandled task exception instead.
+            try:
+                s_res = await aexec(lambda: supabase.table("drona_sessions")
+                                    .select("rate_limit_hits")
+                                    .eq("id", self.session_id).execute())
                 current_hits = 0
                 if s_res.data and len(s_res.data) > 0 and s_res.data[0].get("rate_limit_hits") is not None:
                     current_hits = s_res.data[0]["rate_limit_hits"]
-                supabase.table("drona_sessions").update({
+                await aexec(lambda: supabase.table("drona_sessions").update({
                     "rate_limit_hits": current_hits + 1
-                }).eq("id", self.session_id).execute()
+                }).eq("id", self.session_id).execute())
+            except Exception as err:
+                logger.warning(f"Failed to record rate limit hit in drona_sessions: {err}")
+
+        try:
             asyncio.create_task(_update())
-        except Exception as e:
+        except RuntimeError as e:
+            # No running loop — nothing to schedule onto.
             logger.warning(f"Failed to record rate limit hit in drona_sessions: {e}")
 
     async def _synthesize_text_locked(

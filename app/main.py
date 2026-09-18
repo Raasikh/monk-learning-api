@@ -172,7 +172,7 @@ async def platform_metrics_sampler_loop():
     """
     from app.drona.voice_proxy import RumikConnectionPool, stt_requests_last_60s
     from app.drona.live_session_ws import ACTIVE_SESSION_CONNECTIONS
-    from app.db import supabase
+    from app.db import supabase, aexec
     pool = RumikConnectionPool.get_instance()
     sample_counter = 0
     while True:
@@ -193,13 +193,16 @@ async def platform_metrics_sampler_loop():
                 p95_idx = min(int(len(recent_waits_sorted) * 0.95), len(recent_waits_sorted) - 1)
                 p95_wait = int(recent_waits_sorted[p95_idx])
 
-                supabase.table("drona_platform_metrics").insert([{
+                # Threaded: this sampler runs every 30s for the life of the
+                # process, and a blocking insert here stalls the event loop —
+                # and therefore every live class — to write a metrics row.
+                await aexec(lambda: supabase.table("drona_platform_metrics").insert([{
                     "active_sessions": live_sessions,
                     "rumik_connections_open": open_conns,
                     "rumik_requests_last_60s": sends_60s,
                     "sarvam_requests_last_60s": stt_60s,
                     "p95_lease_acquisition_ms": p95_wait
-                }]).execute()
+                }]).execute())
 
                 # Log summary ONLY once every 20 samples (10 minutes)
                 if sample_counter % 20 == 0:
