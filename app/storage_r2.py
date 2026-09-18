@@ -115,7 +115,13 @@ def get_client():
         aws_secret_access_key=cfg["secret_access_key"],
         # R2 ignores regions but the SDK insists on one, and SigV4 is required.
         region_name="auto",
-        config=Config(signature_version="s3v4", retries={"max_attempts": 2}),
+        # botocore defaults to 60s connect AND 60s read, so a stalled R2 with
+        # max_attempts=2 could hold a snap on the critical path for four
+        # minutes. These are image PUTs of a few hundred KB — if they have not
+        # finished in 15s something is wrong upstream and failing fast is the
+        # kinder answer.
+        config=Config(signature_version="s3v4", retries={"max_attempts": 2},
+                      connect_timeout=5, read_timeout=15),
     )
     return _client
 

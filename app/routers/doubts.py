@@ -357,7 +357,7 @@ async def snap_doubt(
     # model call. 429 is the honest status: the request is fine, the allowance
     # is not.
     try:
-        used_today = _questions_used_today(user_id)
+        used_today = await asyncio.to_thread(_questions_used_today, user_id)
     except Exception as err:
         logger.error("Could not read the daily quota for %s: %s", user_id[:8], err)
         raise HTTPException(
@@ -366,7 +366,7 @@ async def snap_doubt(
 
     remaining = DAILY_QUESTION_LIMIT - used_today
     if remaining <= 0:
-        resets = _quota_resets_in(user_id)
+        resets = await asyncio.to_thread(_quota_resets_in, user_id)
         wait = f" Your next one unlocks in {resets['human']}." if resets else ""
         logger.info("[SNAP QUOTA] user=%s used %d/%d — refusing, next slot in %s",
                     user_id[:8], used_today, DAILY_QUESTION_LIMIT,
@@ -398,9 +398,14 @@ async def snap_doubt(
     # options ARE the stored record — a second copy of the image is redundant
     # storage that also means a student's photographed page sits on a server
     # indefinitely for no benefit the transcript does not already provide.
+    # Off the event loop: solve_snapped_image is fully synchronous (PIL, Mathpix,
+    # the solver pool) and budgeted at SOLVE_TIMEOUT_THINKING_S = 150s. Run inline
+    # on this async handler it froze every other request — HTTP, live-class
+    # WebSocket frames, even /health — for the whole solve. The streaming sibling
+    # never had this problem: its sync generator is threadpooled by Starlette.
     try:
-        result = solve_snapped_image(image_bytes, mime, submission_id,
-                                     allowed_this_submission)
+        result = await asyncio.to_thread(solve_snapped_image, image_bytes, mime,
+                                         submission_id, allowed_this_submission)
     except SnapError as err:
         # Store the failure honestly against the submission, then tell the
         # client which stage failed. The photo stays so the student can see what
@@ -421,7 +426,7 @@ async def snap_doubt(
             "failure_reason": str(err),
         }
         try:
-            _insert_doubt_rows([row])
+            await asyncio.to_thread(_insert_doubt_rows, [row])
         except Exception as db_err:
             logger.error("Failed to record failed doubt %s: %s", submission_id[:8], db_err)
         logger.warning(
@@ -533,7 +538,7 @@ async def snap_doubt(
         })
 
     try:
-        res = _insert_doubt_rows(rows)
+        res = await asyncio.to_thread(_insert_doubt_rows, rows)
     except Exception as err:
         # A missing column here means a migration has not been applied. Saying
         # so beats "Could not save that doubt", which sent me looking at the
@@ -704,10 +709,10 @@ async def snap_doubt_stream(
             detail=f"That photo is larger than {MAX_IMAGE_BYTES // (1024 * 1024)} MB.",
         )
 
-    used_today = _questions_used_today(user_id)
+    used_today = await asyncio.to_thread(_questions_used_today, user_id)
     remaining = DAILY_QUESTION_LIMIT - used_today
     if remaining <= 0:
-        resets = _quota_resets_in(user_id)
+        resets = await asyncio.to_thread(_quota_resets_in, user_id)
         raise HTTPException(status_code=429, detail={
             "message": (
                 f"You have used all {DAILY_QUESTION_LIMIT} of today's questions."
@@ -1207,18 +1212,22 @@ async def ask_about_doubt_aloud(
     the transcript and the answer come back down one connection so the screen
     can show what was heard the moment it is known.
     """
-    doubt = _load_doubt_for_user(doubt_id, user_id)
+    doubt = await asyncio.to_thread(_load_doubt_for_user, doubt_id, user_id)
     # Open the TTS socket NOW, not when there is finally something to say.
     # Measured, the handshake is 1.76s of the 2.9s before the first sound —
     # and it was being paid after the answer already existed, with the student
     # watching a finished board in silence. Transcription and the model take
     # longer than that between them, so by the time a sentence exists the
     # socket is already waiting.
-    voice, language = _tutor_prefs_for(user_id)
+    voice, language = await asyncio.to_thread(_tutor_prefs_for, user_id)
     followup_voice.prewarm(voice, language)
     raw = await audio.read()
     try:
-        question = transcribe_question(raw, audio.content_type or "audio/m4a", doubt_id)
+        # Threaded, or the prewarm above is wasted: transcribe_question is a
+        # blocking requests.post, and holding the loop through it stops the
+        # prewarmed socket from finishing its handshake concurrently.
+        question = await asyncio.to_thread(
+            transcribe_question, raw, audio.content_type or "audio/m4a", doubt_id)
     except SnapError as err:
         raise HTTPException(status_code=422, detail=str(err))
     if not question:
@@ -1340,9 +1349,10 @@ async def speak_followup(doubt_id: str, body: SpeakRequest,
     if not said:
         raise HTTPException(status_code=400, detail="Nothing to say.")
     # Ownership check: this speaks a specific student's own answer.
-    _load_doubt_for_user(doubt_id, user_id)
+    await asyncio.to_thread(_load_doubt_for_user, doubt_id, user_id)
 
-    wav = await followup_voice.speak(said, _tutor_voice_for(user_id))
+    voice = await asyncio.to_thread(_tutor_voice_for, user_id)
+    wav = await followup_voice.speak(said, voice)
     if not wav:
         # Silence is not returned as audio. The screen has the steps, and a
         # file that plays nothing is worse than no file the app can skip.
@@ -1373,8 +1383,11 @@ async def speak_followup_stream(doubt_id: str, body: SpeakRequest,
     said = (body.text or "").strip()
     if not said:
         raise HTTPException(status_code=400, detail="Nothing to say.")
-    _load_doubt_for_user(doubt_id, user_id)
-    voice = _tutor_voice_for(user_id)
+    await asyncio.to_thread(_load_doubt_for_user, doubt_id, user_id)
+    # One read for both, resolved BEFORE the generator starts. The language was
+    # being read inside stream() with a blocking call on the event loop, which
+    # stalled every other request between the first audio frame and the socket.
+    voice, language = await asyncio.to_thread(_tutor_prefs_for, user_id)
 
     def event(name: str, payload: Dict[str, Any]) -> str:
         return f"event: {name}\ndata: {json.dumps(payload)}\n\n"
@@ -1384,7 +1397,7 @@ async def speak_followup_stream(doubt_id: str, body: SpeakRequest,
         sent = 0
         try:
             async for idx, total, wav in followup_voice.speak_chunks(
-                    said, voice, _tutor_language_for(user_id)):
+                    said, voice, language):
                 sent += 1
                 yield event("audio", {
                     "n": idx, "total": total,

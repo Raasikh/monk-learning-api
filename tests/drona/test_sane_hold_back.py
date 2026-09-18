@@ -126,43 +126,30 @@ def test_the_gate_is_NOT_in_the_planner_and_authoring_is_never_skipped():
     assert "widget_allowed" in tut, "the gate itself belongs in resolve_board_slot"
 
 
-def test_the_verdicts_file_and_the_proposals_sheet_AGREE_on_every_value():
-    """Two records of the same four numbers, and nothing stops them drifting
-    except this.
+def test_the_verdicts_file_agrees_with_the_ROW_STORE():
+    """Chapter percentages vs the rows they are supposed to summarise.
 
-    `content/sane-verdicts.json` is what the gate enforces;
-    `scripts/sane_proposals.md` is what a person reads and what Raasikh's
-    confirmation line actually adopted. They were already inconsistent once at
-    one remove: batch6/DIRECTIVE.md quoted chem at 89.4% while the sheet it
-    cited said 83.2%, and that gap is the whole difference between chem's
-    widgets drawing and not drawing.
+    This used to parse the counts table out of `sane_proposals.md`, which is
+    now a generated artefact — reading it would be asserting that a renderer
+    can render. The rows themselves are the thing to check against.
+
+    It compares only the JUDGED population, which is what the percentages were
+    computed from; re-judging has not happened yet, so these must still agree.
     """
-    import re
-    md = Path("scripts/sane_proposals.md").read_text()
-    table = md[md.index("| sheet | rows | proposed y"):]
-    table = table[:table.index("\n\n")]
-    sheet_rows = {}
-    for line in table.splitlines():
-        m = re.match(r"\|\s*([^|]+?)\s*\|\s*(\d+)\s*\|\s*\**(\d+)\**\s*\|\s*\**(\d+)\**\s*\|"
-                     r"\s*\**([\d.]+)%\**\s*\|", line)
-        if m:
-            sheet_rows[m.group(1)] = (int(m.group(2)), int(m.group(3)),
-                                      int(m.group(4)), float(m.group(5)))
-    assert sheet_rows, "could not parse the counts table out of sane_proposals.md"
+    import collections
+    rows = json.loads(Path("content/sane-rows.json").read_text())
+    per = collections.Counter()
+    for bucket in ("carried", "reconfirm", "superseded", "unkeyable"):
+        for e in rows[bucket]:
+            per[(e["chapter"], e["verdict"])] += 1
 
     doc = json.loads(Path(hb._PATH).read_text())
     for v in doc["verdicts"]:
-        key = v["sheet"]
-        assert key in sheet_rows, f"{key!r} is in the verdicts file but not the sheet"
-        rows, y, n, pct = sheet_rows[key]
-        assert (v["rows"], v["proposed_y"], v["proposed_n"]) == (rows, y, n), (
-            f"{key}: verdicts file says {v['rows']}/{v['proposed_y']}/{v['proposed_n']}, "
-            f"sheet says {rows}/{y}/{n}")
-        assert abs(v["sane_percent"] - pct) < 0.05, (
-            f"{key}: verdicts file {v['sane_percent']}%, sheet {pct}%")
-        # and the percentage must be what the counts actually give
-        assert abs(v["sane_percent"] - 100.0 * y / rows) < 0.06, (
-            f"{key}: {y}/{rows} is {100.0 * y / rows:.1f}%, not {v['sane_percent']}%")
+        y, n = per[(v["chapter"], "y")], per[(v["chapter"], "n")]
+        assert (y, n) == (v["proposed_y"], v["proposed_n"]), (
+            f"{v['chapter']}: verdicts file says y={v['proposed_y']} n={v['proposed_n']}, "
+            f"the row store holds y={y} n={n}")
+        assert abs(v["sane_percent"] - 100.0 * y / (y + n)) < 0.06
 
 
 def test_the_reconciliation_left_chem_held_and_raised_physics():

@@ -2,6 +2,16 @@
 builder = "NIXPACKS"
 
 [deploy]
+# Deliberately ONE worker. --workers N looks like free concurrency and is not:
+# ACTIVE_SESSION_CONNECTIONS (app/drona/live_session_ws.py) is an in-process
+# dict, and it is what retires a session's previous socket when a student
+# reconnects. Across two workers a reconnect can land on the process that has
+# never seen the old connection, so nothing retires it and the student hears
+# two lessons at once — the exact bug the takeover logic was written to fix.
+# Raising this needs that dedupe (and the platform-metrics sampler) moved to a
+# shared store first. Concurrency comes from sync `def` handlers on Starlette's
+# threadpool instead; the blocking work in async handlers is wrapped in
+# asyncio.to_thread so the loop itself stays free.
 startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
 healthcheckPath = "/health"
 healthcheckTimeout = 100

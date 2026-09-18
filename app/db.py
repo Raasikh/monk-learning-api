@@ -1,8 +1,15 @@
 import os
 import time
 from typing import Any, Dict, List, Optional
-from supabase import create_client, Client
+from supabase import create_client, Client, ClientOptions
 from app.config import settings
+
+# PostgREST's own default is 120s. Nothing this API asks of Postgres is worth
+# two minutes: a query that slow has already lost the student, and the request
+# holding a threadpool slot that long is what turns one bad query into a stalled
+# process. Env-overridable so it can be raised during a slow migration without a
+# redeploy.
+_POSTGREST_TIMEOUT_S = int(os.getenv("POSTGREST_TIMEOUT_S", "15"))
 
 # PostgREST caps a response at 1000 rows and reports no error when it truncates.
 # `concepts` is already 1,144, so a plain .execute() silently returns two thirds
@@ -19,7 +26,8 @@ def get_supabase() -> Client:
             raise RuntimeError("SUPABASE_URL and SUPABASE_SECRET_KEY must be set in environment variables")
         _supabase_client = create_client(
             supabase_url=settings.SUPABASE_URL,
-            supabase_key=settings.SUPABASE_SECRET_KEY
+            supabase_key=settings.SUPABASE_SECRET_KEY,
+            options=ClientOptions(postgrest_client_timeout=_POSTGREST_TIMEOUT_S),
         )
     return _supabase_client
 

@@ -8,7 +8,12 @@ from app.db import supabase
 
 logger = logging.getLogger("drona.retrieval")
 
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# timeout is NOT optional here. The OpenAI SDK's default is 600s, and this
+# client serves get_embedding() on the planner and scoped-turn grounding paths —
+# a hung embeddings call with the default would hold a threadpool slot for ten
+# minutes, and there are only 40 of them for the whole process.
+openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"), timeout=30.0,
+                       max_retries=1)
 
 # Two-stage gate shortcut threshold:
 COSINE_SHORTCUT_THRESHOLD = 0.50

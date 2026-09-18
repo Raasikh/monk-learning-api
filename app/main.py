@@ -15,8 +15,11 @@ from dotenv import load_dotenv
 # regardless of the launching process's working directory.
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
+import gzip as _gzip
+
 from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.datastructures import Headers, MutableHeaders
 from app.config import settings
 from app.auth import get_current_user_id
 from app.routers import practice
@@ -34,6 +37,89 @@ app = FastAPI(
     description="FastAPI backend service for Monk Learning practice questions & auth",
     version="0.1.0"
 )
+
+class GZipCompleteResponses:
+    """gzip for whole responses only — never for a stream.
+
+    Starlette's own GZipMiddleware compresses streaming bodies too, and gzip's
+    internal buffering holds a small chunk back until enough bytes accumulate
+    to emit a block. On an SSE endpoint that means audio frames and snap
+    question events arrive late or in batches — exactly the latency the rest of
+    this codebase spends its effort removing. (See the note on /speak-stream:
+    the first sentence is meant to play at ~4s.)
+
+    So the rule is narrow and checkable rather than clever: if the response
+    arrives as more than one body chunk, it is a stream and passes through
+    untouched. Only a complete, single-chunk body is ever compressed — which is
+    every JSON endpoint, including the ones that actually hurt: /drona/catalogue
+    (1,144 concepts), /progress (~130KB of chapter tree) and /doubts.
+    """
+
+    def __init__(self, app, minimum_size: int = 1024, compresslevel: int = 6):
+        self.app = app
+        self.minimum_size = minimum_size
+        self.compresslevel = compresslevel
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+        if "gzip" not in Headers(scope=scope).get("accept-encoding", "").lower():
+            await self.app(scope, receive, send)
+            return
+
+        # The response.start message is held until the first body chunk tells us
+        # whether this is a stream; nothing can be decided before then.
+        held_start = None
+        passthrough = False
+
+        async def send_wrapper(message):
+            nonlocal held_start, passthrough
+            if passthrough:
+                await send(message)
+                return
+
+            if message["type"] == "http.response.start":
+                held_start = message
+                return
+            if message["type"] != "http.response.body":
+                await send(message)
+                return
+
+            body = message.get("body", b"")
+
+            async def release_uncompressed():
+                nonlocal passthrough
+                passthrough = True
+                await send(held_start)
+                await send(message)
+
+            if message.get("more_body", False):
+                await release_uncompressed()   # a stream: hands off for good
+                return
+
+            headers = MutableHeaders(raw=held_start["headers"])
+            if len(body) < self.minimum_size or "content-encoding" in headers:
+                await release_uncompressed()
+                return
+
+            compressed = _gzip.compress(body, compresslevel=self.compresslevel)
+            if len(compressed) >= len(body):
+                await release_uncompressed()   # already-compact bytes, e.g. a JPEG
+                return
+
+            headers["Content-Encoding"] = "gzip"
+            headers["Content-Length"] = str(len(compressed))
+            headers.add_vary_header("Accept-Encoding")
+            passthrough = True
+            await send(held_start)
+            await send({"type": "http.response.body", "body": compressed,
+                        "more_body": False})
+
+        await self.app(scope, receive, send_wrapper)
+
+
+app.add_middleware(GZipCompleteResponses, minimum_size=1024)
 
 # CORS configuration
 app.add_middleware(

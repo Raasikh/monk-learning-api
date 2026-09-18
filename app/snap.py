@@ -26,6 +26,7 @@ import json
 import logging
 import os
 import re
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Dict, List, Optional, Tuple
@@ -261,26 +262,47 @@ class SnapError(Exception):
         self.reason = reason
 
 
+# Built once, not per call. Each OpenAI(...) carries its own httpx.Client and
+# therefore its own empty connection pool, so constructing one per call threw
+# away every keep-alive and paid a fresh TLS handshake — ~150-250ms to
+# api.deepseek.com, on a path that makes several calls per snap. Both SDK
+# clients are thread-safe (httpx.Client is), which matters because the solver
+# pool calls them from a ThreadPoolExecutor.
+_client_lock = threading.Lock()
+_openai_singleton: Optional[OpenAI] = None
+_deepseek_singleton: Optional[OpenAI] = None
+
+
 def _openai_client() -> OpenAI:
+    global _openai_singleton
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise SnapError("Snap a Doubt is not configured on this server.", "config")
-    return OpenAI(api_key=api_key, timeout=TRANSCRIBE_TIMEOUT_S, max_retries=1)
+    with _client_lock:
+        if _openai_singleton is None:
+            _openai_singleton = OpenAI(api_key=api_key,
+                                       timeout=TRANSCRIBE_TIMEOUT_S, max_retries=1)
+        return _openai_singleton
 
 
 def _deepseek_client() -> OpenAI:
+    global _deepseek_singleton
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
         raise SnapError("Snap a Doubt is not configured on this server.", "config")
-    return OpenAI(
-        api_key=api_key,
-        base_url="https://api.deepseek.com",
-        # The longest budget, not the shortest: this bounds the SDK's own
-        # patience, and the wall clock inside the stream is what actually
-        # decides when a solve has gone on too long.
-        timeout=SOLVE_TIMEOUT_THINKING_S,
-        max_retries=1,
-    )
+    with _client_lock:
+        if _deepseek_singleton is not None:
+            return _deepseek_singleton
+        _deepseek_singleton = OpenAI(
+            api_key=api_key,
+            base_url="https://api.deepseek.com",
+            # The longest budget, not the shortest: this bounds the SDK's own
+            # patience, and the wall clock inside the stream is what actually
+            # decides when a solve has gone on too long.
+            timeout=SOLVE_TIMEOUT_THINKING_S,
+            max_retries=1,
+        )
+        return _deepseek_singleton
 
 
 # Deepgram nova-3, the same model the classroom listens with. One shot rather
