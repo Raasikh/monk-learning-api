@@ -43,6 +43,33 @@ TABULAR = re.compile(r"\b(compare|contrast|distinguish|differentiate|rank|list|"
 PROSE_ONLY = re.compile(r"\b(define|recall|state the|name the|list the names)\b", re.I)
 
 
+#: The objective shapes a REGISTERED widget actually draws. Used only for rule
+#: (b): no board shown, but one of these clearly fits, so the decline is a miss.
+#: Deliberately narrow — a loose pattern here turns every declined segment back
+#: into an n and undoes the point of the rule.
+_FITS = [
+    ("reaction_scheme", re.compile(r"\b(mechanism|reaction of|prepare|preparation of|"
+                                   r"converts? .* to|synthesis of)\b", re.I)),
+    ("xy_plot",         re.compile(r"\b(plot|graph of|area under|area between|sketch the "
+                                   r"curve|variation of .* with)\b", re.I)),
+    ("process_flow",    re.compile(r"\b(steps? (of|in)|stages? (of|in)|sequence of|cycle|"
+                                   r"pathway)\b", re.I)),
+    ("field_lines",     re.compile(r"\b(field (lines?|due to|of a)|flux through|gaussian "
+                                   r"surface)\b", re.I)),
+    ("circuit_network", re.compile(r"\b(circuit|in series|in parallel|resistor network|"
+                                   r"wheatstone)\b", re.I)),
+    ("conic_plot",      re.compile(r"\b(circle|ellipse|parabola|hyperbola|eccentricity|"
+                                   r"latus rectum|directrix)\b", re.I)),
+]
+
+
+def fits_a_registered_widget(objective: str) -> str | None:
+    for name, pat in _FITS:
+        if pat.search(objective or ""):
+            return name
+    return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true")
@@ -79,22 +106,39 @@ def main() -> int:
                 # was ever asked, which was true before the rule existed.
                 decline_status[status if not pay else f"drew {widget}"] += 1
 
-            if pay and tabular:
-                kind, verdict = "i", "n"
+            # RAASIKH'S RULE, 2026-09-17. A row is n only if:
+            #   (a) a widget board IS SHOWN and the picture is wrong for the
+            #       objective, or
+            #   (b) NO board is shown but a registered widget clearly fits and
+            #       the model declined it.
+            # A decline on an objective no registered widget can draw — tabular,
+            # apparatus, a multi-species mechanism — is Y. That is the widget set
+            # being honest about its own reach, not a failure, and counting it as
+            # n made the corpus look broken where it was behaving correctly.
+            # ...EXCEPT that `data_table_trend` IS the registered table widget.
+            # A ranked table on a "rank these acids by acidity" objective is the
+            # RIGHT answer, and flagging it wrong was my rule being lazy about
+            # "tabular objective + any widget". Checked before acting on it: the
+            # Amines payload ranks NH3 -> CH3NH2 -> (CH3)2NH -> (CH3)3N by alkyl
+            # count with the strongest base highlighted, which is exactly the
+            # objective. Five of the twenty-two would have been forced to decline
+            # a correct board.
+            if pay and tabular and widget == "data_table_trend":
+                kind, verdict, reason = "ii", "y", ""
+            elif pay and tabular:
+                kind, verdict = "i", "n"          # (a) — shown, and wrong
                 reason = (f"the objective asks to compare/rank/distinguish and "
                           f"`{widget}` drew a schematic anyway; an arrow means "
                           f"'becomes', not an ordering")
-            elif not pay and tabular:
-                kind, verdict = "iii", "y" if status == "declined" else "n"
-                reason = ("declined, which is correct — no registered widget draws a "
-                          "table" if status == "declined" else
-                          f"no widget drew this, but the author was never asked "
-                          f"(status={status}), so the decline is not evidence of "
-                          f"anything")
             elif pay:
                 kind, verdict, reason = "ii", "y", ""
+            elif fits_a_registered_widget(objective):
+                kind, verdict = "ii", "n"         # (b) — a widget fits, declined
+                reason = (f"no board was shown, but this objective is the shape "
+                          f"`{fits_a_registered_widget(objective)}` draws and the "
+                          f"model declined it (status={status})")
             else:
-                kind, verdict = "iii", "y" if PROSE_ONLY.search(objective) else "y"
+                kind, verdict = "iii", "y"        # nothing registered draws it
                 reason = ""
             stats[f"{verdict} ({kind})"] += 1
             proposals.append({
