@@ -151,6 +151,12 @@ async def verify_models_on_startup():
     #
     # So the follow-up simply starts when its first sentence is ready: 1.9-3.8s
     # measured, median 2.5s, of which most is Rumik's own first-byte time.
+    # Eagerly, so every deploy's logs say whether shared state is attached —
+    # a lazy first connection made "is Redis wired?" unanswerable on an idle
+    # server, which is exactly when you are reading the logs to find out.
+    from app import redis_store
+    redis_store.get_redis()
+
     asyncio.create_task(platform_metrics_sampler_loop())
 
 
