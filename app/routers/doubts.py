@@ -13,6 +13,7 @@ import base64
 import logging
 import time
 import uuid
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 
@@ -356,10 +357,22 @@ async def snap_doubt(
     # Daily quota, checked before anything is spent — no OCR, no upload, no
     # model call. 429 is the honest status: the request is fine, the allowance
     # is not.
-    try:
-        used_today = await asyncio.to_thread(_questions_used_today, user_id)
-    except Exception as err:
-        logger.error("Could not read the daily quota for %s: %s", user_id[:8], err)
+    # One retry before refusing. Measured: twelve snaps fired four-at-once
+    # and exactly one quota read flaked — a transient Supabase hiccup that a
+    # second attempt converts into a normal snap. A classroom of phones
+    # snapping in the same second is the same shape at scale, and "not
+    # available right now" on a first impression costs more than 300ms.
+    used_today = None
+    for attempt in (1, 2):
+        try:
+            used_today = await asyncio.to_thread(_questions_used_today, user_id)
+            break
+        except Exception as err:
+            logger.error("Could not read the daily quota for %s (attempt %d): %s",
+                         user_id[:8], attempt, err)
+            if attempt == 1:
+                await asyncio.sleep(0.3)
+    if used_today is None:
         raise HTTPException(
             status_code=503, detail="Snap a Doubt is not available right now."
         )
@@ -895,7 +908,26 @@ def list_doubts(
             f"question_text.ilike.%{term}%,concept.ilike.%{term}%,chapter.ilike.%{term}%"
         )
 
+    # Three reads, run as two waves instead of three round trips.
+    #
+    # Opening the Doubts tab is a tap, and this was: fetch the rows, THEN scan
+    # every doubt the student has ever saved for its subject, THEN read their
+    # target exam — ~325ms apiece, strictly one after another, for a list the
+    # first read already has. The chips and the profile are independent of each
+    # other and of the rows, so they overlap; only the row fetch has to land
+    # before the signing loop below can run.
+    subjects_future = None
+    profile_future = None
+    pool = ThreadPoolExecutor(max_workers=2)
     try:
+        subjects_future = pool.submit(
+            lambda: supabase.table("doubts").select("subject")
+            .eq("user_id", user_id).execute()
+        )
+        profile_future = pool.submit(
+            lambda: supabase.table("profiles").select("target_exam")
+            .eq("id", user_id).limit(1).execute()
+        )
         res = query.order("created_at", desc=True).limit(limit).execute()
         rows: List[Dict[str, Any]] = res.data or []
         for row in rows:
@@ -903,12 +935,11 @@ def list_doubts(
             # itself never reaches a client — same rule as the detail route.
             row["question_image_url"] = signed_url(row.pop("question_image", None))
 
-        all_subjects_res = (
-            supabase.table("doubts").select("subject").eq("user_id", user_id).execute()
-        )
+        all_subjects_res = subjects_future.result()
     except Exception as err:
         # Most likely cause: migration 0012 has not been applied, or it ran
         # against the old `doubts` stub and skipped the new columns.
+        pool.shutdown(wait=False)
         logger.error("Could not read doubts (is migration 0012 applied?): %s", err)
         raise HTTPException(
             status_code=503, detail="My Doubts is not available right now."
@@ -922,10 +953,13 @@ def list_doubts(
     # -- the subject is a best-effort label from a model, and one real
     # stereochemistry question came back tagged Biology.
     try:
-        prof = (supabase.table("profiles").select("target_exam")
-                .eq("id", user_id).limit(1).execute().data)
+        prof = profile_future.result().data
     except Exception:
         prof = None
+    finally:
+        # Both futures are resolved by here; the pool exists only to overlap
+        # them with the row fetch above.
+        pool.shutdown(wait=False)
     exam = exam_scope.resolve_exam(prof[0] if prof else None)
     on_syllabus = list(exam_scope.subjects_for(exam))
     snapped = {r.get("subject") for r in (all_subjects_res.data or []) if r.get("subject")}
