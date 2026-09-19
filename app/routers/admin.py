@@ -18,6 +18,8 @@ Shape of the thing:
     GET  /admin/api/costs        LLM spend, from llm_calls
     GET  /admin/api/users        searchable user list
     GET  /admin/api/users/{id}   one student in full
+    POST /admin/api/users/{id}/delete    soft-delete + ban sign-in
+    POST /admin/api/users/{id}/restore   undo that
 
 Every aggregate route takes `include_internal` (default false), which decides
 whether accounts on `admin_excluded_users` — founders, test rigs — are counted.
@@ -39,7 +41,7 @@ import logging
 from pathlib import Path
 from typing import Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Body, Depends, HTTPException, Query
 from fastapi.responses import FileResponse, JSONResponse
 
 from app.auth import AdminIdentity, require_admin
@@ -226,3 +228,81 @@ async def user_detail(
     if not data:
         raise HTTPException(status_code=404, detail="No such user")
     return data
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Writes.
+#
+# The only two routes here that change anything. Both are POST — a GET that
+# bans an account would be reachable from a prefetch, a link, or an image tag.
+# ─────────────────────────────────────────────────────────────────────────────
+
+@router.post("/api/users/{user_id}/delete")
+async def delete_user(
+    user_id: str,
+    payload: dict = Body(default={}),
+    admin: AdminIdentity = Depends(require_admin),
+):
+    """Soft-delete a student: hidden from every number, and banned from
+    signing in. Reversible via /restore — nothing of theirs is dropped.
+
+    Two guards that SQL cannot enforce, because the admin list lives in the
+    environment and Postgres cannot see it:
+
+      * you cannot delete yourself — one mis-click would otherwise lock the
+        person holding the mouse out of the product and out of this dashboard,
+        with no one left to undo it if they are the only admin;
+      * you cannot delete another admin, for the same reason one step removed.
+
+    Neither is paranoia about malice. They are both about the 3am mis-click.
+    """
+    target_email = None
+    try:
+        row = await _rpc("admin_user", {"p_user_id": user_id, "p_days": 1})
+        target_email = (row or {}).get("email")
+    except HTTPException:
+        raise
+    except Exception:
+        pass
+
+    if user_id == admin.user_id:
+        raise HTTPException(status_code=400, detail="You cannot delete your own account.")
+    if target_email and target_email.strip().lower() in settings.admin_emails_set:
+        raise HTTPException(
+            status_code=400,
+            detail=(f"{target_email} is on the admin allowlist. Remove it from "
+                    "ADMIN_EMAILS first if you really mean to delete it."),
+        )
+
+    reason = (payload or {}).get("reason") or ""
+    result = await _rpc("admin_delete_user",
+                        {"p_user_id": user_id, "p_actor": admin.email,
+                         "p_reason": str(reason)[:500]})
+    if not result or not result.get("ok"):
+        raise HTTPException(status_code=404,
+                            detail=(result or {}).get("error", "Could not delete that user."))
+    # Logged at warning, not info: this is the loudest thing the dashboard can
+    # do, and the one you will want to find in the logs afterwards.
+    logger.warning("[admin] %s deleted user_id=%s email=%s reason=%r",
+                   admin.email, user_id, result.get("email"), reason)
+    return result
+
+
+@router.post("/api/users/{user_id}/restore")
+async def restore_user(
+    user_id: str,
+    admin: AdminIdentity = Depends(require_admin),
+):
+    """Undo a delete: clears the ban and the deleted row.
+
+    Also clears a ban applied by hand in the Supabase dashboard, so this is
+    the way back from either.
+    """
+    result = await _rpc("admin_restore_user",
+                        {"p_user_id": user_id, "p_actor": admin.email})
+    if not result or not result.get("ok"):
+        raise HTTPException(status_code=404,
+                            detail=(result or {}).get("error", "Could not restore that user."))
+    logger.warning("[admin] %s restored user_id=%s email=%s",
+                   admin.email, user_id, result.get("email"))
+    return result

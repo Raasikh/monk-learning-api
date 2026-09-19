@@ -175,6 +175,38 @@ low, check the `LLM_PRICE_*` variables before believing it.
 
 ---
 
+## Deleting an account
+
+The per-user drawer has a delete control at the very bottom, below their whole
+history, and confirmation is typing their email — not an OK dialog, which is a
+reflex rather than a decision.
+
+Deleting is a **soft delete that actually bites**: the account is hidden from
+every number *and* `auth.users.banned_until` is pushed a century out, so GoTrue
+refuses to issue them a new session. Restore clears both. Nothing of theirs is
+dropped — doubts, notes, sessions and attempts all stay, which is what makes
+the undo real.
+
+Three things worth knowing before you use it:
+
+- **There is a one-hour window.** A ban stops a *new* session; it does not
+  invalidate an access token already on a phone. Tokens last an hour, so
+  someone mid-lesson keeps working until their refresh is refused.
+- **You cannot delete yourself, or another admin.** Enforced in
+  `app/routers/admin.py`, because Postgres cannot see `ADMIN_EMAILS`. Both
+  guards are about the 3am mis-click, not about malice.
+- **This is not erasure.** Their content stays in Postgres and their photos
+  stay in R2 under `doubts/{user_id}/`. A real deletion request — DPDP Act, or
+  a parent asking — needs a separate irreversible job that also reaches R2, and
+  it is deliberately not bolted onto a button that promises it can be undone.
+
+Every delete and restore is written to `admin_user_audit` with the actor taken
+from the signed-in admin's token, never from anything the client sent:
+
+```sql
+select action, email, actor, reason, at from public.admin_user_audit order by at desc;
+```
+
 ## What is missing
 
 **Revenue and subscriptions.** There is no billing table anywhere in this repo

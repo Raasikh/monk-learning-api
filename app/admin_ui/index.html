@@ -180,6 +180,20 @@ td.num, th.num { text-align: right; }
   border: 1px solid color-mix(in srgb, var(--series-4) 45%, transparent);
   border-radius: 10px; padding: 9px 13px; margin-top: 16px; font-size: 12.5px;
 }
+button.danger {
+  background: var(--critical); color: #fff; border: 0; border-radius: 8px;
+  padding: 8px 14px; font: inherit; font-weight: 550; cursor: pointer;
+}
+button.danger:disabled { opacity: .45; cursor: default; }
+.danger-zone {
+  border-color: color-mix(in srgb, var(--critical) 40%, transparent);
+  background: color-mix(in srgb, var(--critical) 6%, var(--surface));
+}
+.pill.deleted {
+  border-color: color-mix(in srgb, var(--critical) 55%, transparent);
+  background: color-mix(in srgb, var(--critical) 14%, transparent);
+  color: var(--critical);
+}
 .pill.internal {
   border-color: color-mix(in srgb, var(--series-4) 55%, transparent);
   background: color-mix(in srgb, var(--series-4) 16%, transparent);
@@ -269,8 +283,8 @@ td.num, th.num { text-align: right; }
         <option value="90">Last 90 days</option>
         <option value="365">Last year</option>
       </select>
-      <label class="toggle" title="Count founder and test accounts in the totals">
-        <input type="checkbox" id="internal"> internal
+      <label class="toggle" title="Count founder, test and deleted accounts as ordinary users">
+        <input type="checkbox" id="internal" checked> count admins
       </label>
       <button class="ghost" id="theme-toggle" title="Toggle theme">◐</button>
       <span class="muted" id="who" style="font-size:12.5px"></span>
@@ -671,6 +685,25 @@ async function api(path) {
   return res.json();
 }
 
+/** The write counterpart to api(). Separate rather than a flag, so every
+ *  call site that changes something reads differently from one that doesn't. */
+async function post(path, body) {
+  const { data } = await sb.auth.getSession();
+  const token = data.session?.access_token;
+  if (!token) throw Object.assign(new Error('signed out'), { code: 401 });
+  const res = await fetch(path, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body || {}),
+  });
+  if (!res.ok) {
+    let detail = res.statusText;
+    try { detail = (await res.json()).detail || detail; } catch {}
+    throw Object.assign(new Error(detail), { code: res.status });
+  }
+  return res.json();
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    Sign-in
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -769,6 +802,13 @@ async function enter() {
 let tab = 'overview';
 const days = () => +$('#range').value;
 const internal = () => $('#internal').checked;
+// Remembered per browser so the choice survives a reload. Default is ON:
+// pre-launch, the founders ARE most of the activity, and a dashboard showing
+// nine sessions is less useful than one that says whose they are.
+try {
+  const saved = localStorage.getItem('monk-admin-internal');
+  if (saved !== null) $('#internal').checked = saved === '1';
+} catch {}
 
 /** Shared query string. Every aggregate call carries both, so the toggle can
  *  never apply to some panels and not others. */
@@ -777,9 +817,11 @@ const qs = (extra = {}) => new URLSearchParams({
 });
 
 /** Shown on every tab while the totals include internal accounts. */
+// Still shown even though this is now the default state — more important
+// because of it. A screenshot travels without its settings.
 const internalNotice = () => internal()
-  ? '<div class="notice">Counting <b>founder and test accounts</b> in these totals. ' +
-    'Untick “internal” for the student-only view.</div>'
+  ? '<div class="notice">Counting <b>founder, test and deleted accounts</b> as ordinary ' +
+    'users. Untick “count admins” for the students-only view.</div>'
   : '';
 
 $('#tabs').addEventListener('click', (e) => {
@@ -792,6 +834,7 @@ $('#tabs').addEventListener('click', (e) => {
 });
 $('#range').onchange = render;
 $('#internal').onchange = () => {
+  try { localStorage.setItem('monk-admin-internal', internal() ? '1' : '0'); } catch {}
   // The user list is rebuilt from scratch: its rows and its total both change.
   $('#tab-users').dataset.built = '';
   render();
@@ -1088,6 +1131,7 @@ async function renderUsers() {
         <tr class="clickable" data-id="${esc(r.user_id)}">
           <td>
             <div><b>${esc(r.display_name || '—')}</b>
+              ${r.deleted ? '<span class="pill deleted">deleted</span>' : ''}
               ${r.internal ? '<span class="pill internal">internal</span>' : ''}
               ${r.onboarded ? '' : '<span class="pill">not onboarded</span>'}</div>
             <div class="muted" style="font-size:12px">${esc(r.email)}</div>
@@ -1136,7 +1180,8 @@ async function openUser(userId) {
   drawer.innerHTML = `
     <div class="drawer-head">
       <div style="flex:1">
-        <h1 style="font-size:18px">${esc(pr.display_name || u.email)}</h1>
+        <h1 style="font-size:18px">${esc(pr.display_name || u.email)}
+          ${u.deleted ? '<span class="pill deleted">deleted</span>' : ''}</h1>
         <div class="muted" style="font-size:12.5px">${esc(u.email)}</div>
       </div>
       <button class="ghost" id="d-close">Close</button>
@@ -1197,6 +1242,71 @@ async function openUser(userId) {
         </tbody></table>` : '<div class="empty">No doubts yet.</div>'}
       </div>
     </div>`;
+
+  // ── Delete / restore ────────────────────────────────────────────────────
+  // Deliberately at the BOTTOM, below everything about the person. You should
+  // have to scroll past their whole history to reach the button that removes
+  // them, and confirmation is typing their email — not an OK dialog, which is
+  // a reflex rather than a decision.
+  const zone = document.createElement('div');
+  zone.className = 'card danger-zone';
+  zone.innerHTML = u.deleted ? `
+    <h2>This account is deleted</h2>
+    <div class="sub">
+      Hidden from the numbers and blocked from signing in. Nothing of theirs was
+      removed — their ${num(t.doubts)} doubts, ${num(t.notes)} notes and
+      ${num(t.sessions)} sessions are all still here.
+    </div>
+    <button class="btn" id="d-restore" style="margin-top:12px">Restore this account</button>
+    <div class="msg" id="d-msg"></div>` : `
+    <h2>Delete this account</h2>
+    <div class="sub">
+      Hides them from every number and <b>blocks them from signing in</b>. Reversible —
+      nothing is erased. An access token already on their phone keeps working for up
+      to an hour.
+    </div>
+    <label style="display:block;font-size:12.5px;color:var(--ink-2);margin:12px 0 6px">
+      Type <b>${esc(u.email)}</b> to confirm
+    </label>
+    <input type="text" id="d-confirm" placeholder="${esc(u.email)}" style="width:100%">
+    <input type="text" id="d-reason" placeholder="Reason (optional, kept in the audit log)"
+           style="width:100%;margin-top:8px">
+    <button class="danger" id="d-delete" style="margin-top:12px" disabled>Delete account</button>
+    <div class="msg" id="d-msg"></div>`;
+  drawer.appendChild(zone);
+
+  const msg = (text, cls = '') => {
+    const m = $('#d-msg', zone); m.className = 'msg ' + cls; m.textContent = text;
+  };
+
+  if (u.deleted) {
+    $('#d-restore', zone).onclick = async () => {
+      $('#d-restore', zone).disabled = true; msg('Restoring…');
+      try {
+        await post(`/admin/api/users/${encodeURIComponent(userId)}/restore`);
+        msg('Restored. They can sign in again.', 'ok');
+        setTimeout(() => { close(); render(); }, 700);
+      } catch (e) {
+        $('#d-restore', zone).disabled = false; msg(e.message, 'err');
+      }
+    };
+  } else {
+    const confirmBox = $('#d-confirm', zone), btn = $('#d-delete', zone);
+    confirmBox.addEventListener('input', () => {
+      btn.disabled = confirmBox.value.trim().toLowerCase() !== (u.email || '').toLowerCase();
+    });
+    btn.onclick = async () => {
+      btn.disabled = true; msg('Deleting…');
+      try {
+        await post(`/admin/api/users/${encodeURIComponent(userId)}/delete`,
+                   { reason: $('#d-reason', zone).value.trim() });
+        msg('Deleted. They can no longer sign in.', 'ok');
+        setTimeout(() => { close(); render(); }, 700);
+      } catch (e) {
+        btn.disabled = false; msg(e.message, 'err');
+      }
+    };
+  }
 
   $('#d-close').onclick = close;
   timeChart($('#d-activity'), u.daily.map(x => ({ day: x.day, v: x.events })),

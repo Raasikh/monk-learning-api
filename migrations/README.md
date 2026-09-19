@@ -22,6 +22,7 @@ The `migrations/` directory contains all PostgreSQL database DDL migration scrip
 | `0049_admin_turns_from_drona_turns.sql` | replaces `admin_features` + `admin_user` | `drona_sessions.turn_count` is a permanent 0 — nothing has ever written to it. Turns are now counted from `drona_turns`. |
 | `0050_admin_exclude_internal.sql` | `admin_excluded_users` | Keeps founder/test accounts out of the aggregates (they were 99% of sessions, 100% of doubts). All `admin_*` functions gain `p_include_internal boolean default false`. **Drops and recreates the functions** — the re-grant block at the foot is mandatory, not decorative. |
 | `0051_admin_cost_kinds.sql` | `llm_service_kinds` | Splits LLM spend into student-serving / content authoring / offline pipeline. `cost_per_active_user` now divides **student spend only** — it was dividing lesson authoring and `quality_gate.py` runs by the student count. Unknown services default to `unclassified`, never `student`. |
+| `0053_admin_delete_user.sql` | `admin_deleted_users`, `admin_user_audit` | Soft-delete a student from /admin: hidden from every number **and banned from signing in** (`auth.users.banned_until`). Reversible — nothing is dropped. Append-only audit of who deleted whom and why. |
 
 > [!WARNING]
 > **`0012` reconciles a pre-existing `doubts` stub.** The table already existed
