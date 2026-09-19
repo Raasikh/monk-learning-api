@@ -6,6 +6,7 @@ every read is scoped to the caller's user_id rather than trusting RLS alone,
 because this service holds the service role key.
 """
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Dict, List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -142,16 +143,21 @@ def list_notes(
             f"concept.ilike.%{term}%,chapter.ilike.%{term}%,content.ilike.%{term}%"
         )
 
+    # Subject tabs are built from what the student actually has, so a tab never
+    # leads to an empty shelf. Computed over all their notes, not the filtered
+    # page — and started BEFORE the page fetch rather than after it. Opening
+    # Notes is a tap, and these two reads have nothing to say to each other, so
+    # paying for them one after the other cost a whole round trip (~325ms) for
+    # nothing.
+    pool = ThreadPoolExecutor(max_workers=1)
     try:
+        all_subjects_future = pool.submit(
+            lambda: supabase.table("notes").select("subject")
+            .eq("user_id", user_id).execute()
+        )
         res = query.order("created_at", desc=True).limit(limit).execute()
         rows: List[Dict[str, Any]] = res.data or []
-
-        # Subject tabs are built from what the student actually has, so a tab
-        # never leads to an empty shelf. Computed over all their notes, not the
-        # filtered page.
-        all_subjects_res = (
-            supabase.table("notes").select("subject").eq("user_id", user_id).execute()
-        )
+        all_subjects_res = all_subjects_future.result()
     except Exception as err:
         # Most likely cause: migration 0012 has not been applied. A bare 500
         # tells the student nothing and hides the reason from the logs.
@@ -160,6 +166,8 @@ def list_notes(
             status_code=503,
             detail="Notes are not available right now.",
         )
+    finally:
+        pool.shutdown(wait=False)
 
     subjects = sorted({
         (r.get("subject") or "").strip()
