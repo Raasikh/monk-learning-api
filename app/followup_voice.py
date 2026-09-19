@@ -163,9 +163,26 @@ def prewarm(tutor_voice: Optional[str] = None,
     async def _fill():
         try:
             ws = await _open_socket()
-            _warm.append((ws, time.time()))
+            entry = (ws, time.time())
+            _warm.append(entry)
             logger.info("[FOLLOWUP TTS] socket warmed ahead of the answer "
                         "(%d ready)", len(_warm))
+
+            async def _reap():
+                # An idle warm socket now holds an ACCOUNT-WIDE slot (the
+                # global gate counts every open connection), and nothing used
+                # to close one that was never taken — with 4 workers warming
+                # 2 each, up to 8 of the 50 slots could sit parked in dead
+                # sockets Rumik had long since dropped. Past its TTL it is
+                # unusable anyway; close it and hand the slot back.
+                await asyncio.sleep(_WARM_TTL_S + 5)
+                if entry in _warm:
+                    _warm.remove(entry)
+                    await _close_socket(entry[0])
+                    logger.info("[FOLLOWUP TTS] idle warm socket reaped — "
+                                "account slot freed")
+
+            asyncio.get_event_loop().create_task(_reap())
         except Exception as err:
             logger.info("[FOLLOWUP TTS] could not warm a socket (%s) — the "
                         "next synthesis opens its own", err)
