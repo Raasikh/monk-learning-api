@@ -30,27 +30,44 @@ def resolve_display_concept(question_id: str, raw_concept: Optional[str]) -> Opt
     name while answering and a different one on their Progress page for the
     identical question. Resolves through question_concepts (primary role) to
     the curated concepts.name; falls back to the legacy free-text tag for
-    subjects not yet curated, so nothing breaks for them."""
+    subjects not yet curated, so nothing breaks for them.
+
+    ONE round trip, with the name joined on.
+
+    This used to read `question_concepts` and then call
+    fetch_all_cached("concepts", "id, name") to look the name up in a dict —
+    1,172 rows fetched to resolve one of them. The cache made that free on a
+    warm worker and 1753ms on a cold one, measured against production, and with
+    WEB_CONCURRENCY=4 there are four workers to warm and a 600s TTL to lose it
+    to. It was the whole of a 2284ms second wave on a call whose candidate pool
+    had come from Redis, i.e. with nothing else left to blame.
+
+    PostgREST embeds the related row over the concept_id foreign key, so the
+    name arrives with the row that points at it and no table-wide fetch happens
+    at all. Same fallback as before: no row, no name, or a failure all fall
+    back to the legacy free-text tag.
+    """
     try:
-        qc = (
+        rows = (
             supabase.table("question_concepts")
-            .select("concept_id")
+            .select("concept_id, concepts(name)")
             .eq("question_id", question_id)
             .eq("role", "primary")
             .limit(1)
             .execute()
             .data
         )
-        if qc:
-            # `concepts` only changes when the syllabus is rebuilt, so this is
-            # a cache hit after the first request rather than a round trip on
-            # every served question.
-            by_id = {c["id"]: c.get("name") for c in fetch_all_cached("concepts", "id, name")}
-            name = by_id.get(qc[0]["concept_id"])
+        if rows:
+            # Embedded to-one arrives as a dict; a PostgREST version that infers
+            # to-many would hand back a list, so both are read.
+            embedded = rows[0].get("concepts")
+            if isinstance(embedded, list):
+                embedded = embedded[0] if embedded else None
+            name = (embedded or {}).get("name") if isinstance(embedded, dict) else None
             if name:
                 return name
     except Exception as e:
-        print(f"[CONCEPT RESOLVE ERROR] {e}")
+        logger.warning("[CONCEPT RESOLVE] %s: %s", question_id[:8], e)
     return raw_concept
 
 logger = logging.getLogger("practice")
