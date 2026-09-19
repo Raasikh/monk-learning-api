@@ -166,8 +166,13 @@ async def verify_models_on_startup():
     # selection seeing the whole bank, and the wrong thing to charge to whoever
     # taps first. create_task, not await: startup must not block on it, because
     # the healthcheck is what decides whether this deploy is allowed to live.
-    from app.routers.practice import warm_candidate_pools
+    from app.routers.practice import (warm_candidate_pools,
+                                      refresh_candidate_pools_loop)
     asyncio.create_task(asyncio.to_thread(warm_candidate_pools))
+    # And KEEP them warm. Filling once at startup leaves them warm for one TTL
+    # and cold for the rest of the day — measured: warmed 18:46:40, expired
+    # 18:56, a student at 19:17 paid 4206ms to refill physics.
+    asyncio.create_task(refresh_candidate_pools_loop())
 
 
 async def platform_metrics_sampler_loop():

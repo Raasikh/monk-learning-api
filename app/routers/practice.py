@@ -123,30 +123,62 @@ def _cached_pool(subject: str, discipline: Optional[str]):
     return rows, "supabase", rows
 
 
-def warm_candidate_pools() -> None:
+def warm_candidate_pools(force: bool = False) -> None:
     """Fill every unfocused pool, so that no STUDENT ever pays for a cold one.
 
     The pool stopped being truncated at 1000 rows, which made a fill three paged
     round trips (~2.3s) instead of one. That is the right cost for correctness
-    and the wrong thing to charge to whoever happens to tap first — and with a
-    600s TTL and four workers, somebody was always going to be first.
+    and the wrong thing to charge to whoever happens to tap first.
 
-    Runs off any request path, at startup. Subjects are filled one at a time
-    rather than in parallel: this is not urgent work, and four workers booting
-    together should not each open four concurrent paged reads against Supabase.
-    Redis is checked before each fetch, so the workers that lose the race read
-    what the first one shared instead of re-fetching it.
+    `force` refetches rather than accepting a cached copy, and is what the
+    refresh loop uses. Warming ONLY at startup was not enough, and production
+    said so plainly: pools warmed at 18:46:40, the TTL expired at 18:56, and a
+    student at 19:17 paid 4206ms to refill physics. At low traffic the first
+    student after every TTL window pays — which is most students.
+
+    Subjects are filled one at a time rather than in parallel: this is not
+    urgent work, and four workers should not each open four concurrent paged
+    reads against Supabase.
     """
     for subject in exam_scope.subjects_for("both"):
+        key = f"{subject}|"
         try:
-            rows, tier, share = _cached_pool(subject, None)
-            if share is not None:
-                redis_store.cache_set_json(_pool_key(f"{subject}|"), share,
-                                           int(_CANDIDATE_TTL_S))
+            if force:
+                rows = _fetch_pool(subject, None)
+                _candidate_cache[key] = (time.monotonic(), rows)
+                tier = "refetched"
+            else:
+                rows, tier, _share = _cached_pool(subject, None)
+            # Always (re)shared, and with a TTL well past the refresh interval,
+            # so an entry never expires in the gap between two refreshes.
+            redis_store.cache_set_json(_pool_key(key), rows, _POOL_SHARE_TTL_S)
             logger.info("[PRACTICE WARM] %s pool=%s rows=%d", subject, tier, len(rows))
         except Exception as err:  # noqa: BLE001 — a cold pool is slow, not broken
             logger.warning("[PRACTICE WARM] %s failed, will fill on demand: %s",
                            subject, err)
+
+
+async def refresh_candidate_pools_loop() -> None:
+    """Keeps the pools warm for as long as the process lives.
+
+    A cache that is only filled at startup is warm for one TTL and cold for the
+    rest of the day. This refetches on an interval SHORTER than the TTL, so the
+    local copy is replaced before it can expire and the Redis copy is rewritten
+    long before its own longer TTL runs out. The intended steady state is that a
+    student's read is always `pool=local`, and `pool=supabase` in the log means
+    something is wrong rather than something is normal.
+
+    The cost is four paged reads per worker per interval — at the default, about
+    one Supabase read every four seconds across the whole service, for a table
+    that is never on a student's critical path. That is the trade: a little
+    constant background load to buy a predictable tap.
+    """
+    while True:
+        await asyncio.sleep(_POOL_REFRESH_S)
+        try:
+            await asyncio.to_thread(warm_candidate_pools, True)
+        except Exception as err:  # noqa: BLE001 — never let the loop die
+            logger.warning("[PRACTICE WARM] refresh pass failed: %s", err)
 
 
 def resolve_display_concept(question_id: str, raw_concept: Optional[str]) -> Optional[str]:
@@ -307,6 +339,17 @@ _candidate_cache: Dict[str, Tuple[float, List[Dict[str, Any]]]] = {}
 # still a bound. Hitting it is logged, never silent — silence is the bug this
 # whole change exists to remove.
 _CANDIDATE_MAX_ROWS = int(os.getenv("CANDIDATE_MAX_ROWS", "20000"))
+
+# How often the pools are refetched, and how long a shared copy is allowed to
+# live. Both exist so that a pool is never expired at the moment a student asks.
+#
+#   refresh  <  local TTL      the local copy is replaced before it expires
+#   refresh  <<  share TTL     the Redis copy outlives the gap between refreshes
+#
+# Warming at startup alone left the pools warm for one TTL and cold afterwards:
+# filled 18:46:40, expired 18:56, and a student at 19:17 paid 4206ms to refill.
+_POOL_REFRESH_S = float(os.getenv("CANDIDATE_REFRESH_S", "240"))
+_POOL_SHARE_TTL_S = int(os.getenv("CANDIDATE_SHARE_TTL_S", "3600"))
 
 
 # BUMP THIS whenever what a cached pool CONTAINS changes.

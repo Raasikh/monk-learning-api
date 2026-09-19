@@ -302,3 +302,64 @@ def test_a_pool_cached_by_an_older_version_is_not_reused(monkeypatch):
         store._reset_sync_for_tests(None)
         store._sync_checked = False
         prac.clear_candidate_cache()
+
+
+def test_a_forced_warm_refetches_rather_than_trusting_its_own_cache(monkeypatch):
+    """The refresh loop exists because warming once at startup leaves the pools
+    warm for one TTL and cold for the rest of the day — measured in production:
+    warmed 18:46:40, expired 18:56, a student at 19:17 paid 4206ms to refill.
+
+    A refresh pass that accepted the cached copy would be a no-op, and the loop
+    would keep the numbers looking healthy while doing nothing."""
+    fetches = []
+
+    class Q:
+        def select(self, *_a, **_k): return self
+        def eq(self, *_a, **_k): return self
+        def is_(self, *_a, **_k): return self
+        def or_(self, *_a, **_k): return self
+        def ilike(self, *_a, **_k): return self
+        def order(self, *_a, **_k): return self
+        def range(self, *_a): return self
+        def execute(self):
+            fetches.append(1)
+            return SimpleNamespace(data=[{"id": "q1", "chapter_id": CH11,
+                                          "chapter_name": "U&M", "concept": "c",
+                                          "question_type": "single_correct",
+                                          "difficulty": 2, "target_exams": ["jee"],
+                                          "discipline": None}], count=None)
+
+    monkeypatch.setattr(prac, "supabase", SimpleNamespace(table=lambda _t: Q()))
+    client = fakeredis.FakeRedis(decode_responses=True)
+    store._reset_sync_for_tests(client)
+    prac.clear_candidate_cache()
+    try:
+        prac.warm_candidate_pools()                 # fills
+        after_first = len(fetches)
+        assert after_first > 0
+
+        prac.warm_candidate_pools()                 # unforced: cached, no work
+        assert len(fetches) == after_first, "an unforced pass refetched"
+
+        prac.warm_candidate_pools(force=True)       # forced: must refetch
+        assert len(fetches) > after_first, "a forced pass did not refetch"
+    finally:
+        store._reset_sync_for_tests(None)
+        store._sync_checked = False
+        prac.clear_candidate_cache()
+
+
+def test_the_shared_copy_outlives_the_refresh_interval(monkeypatch):
+    """If the Redis TTL were shorter than the refresh interval, the entry would
+    be gone for part of every cycle and a student would land in the gap."""
+    assert prac._POOL_SHARE_TTL_S > prac._POOL_REFRESH_S * 2, (
+        f"share TTL {prac._POOL_SHARE_TTL_S}s vs refresh {prac._POOL_REFRESH_S}s"
+    )
+
+
+def test_the_refresh_beats_the_local_ttl(monkeypatch):
+    """The local copy has to be replaced before it expires, or every cycle has a
+    window where the worker falls back to Redis for no reason."""
+    assert prac._POOL_REFRESH_S < prac._CANDIDATE_TTL_S, (
+        f"refresh {prac._POOL_REFRESH_S}s vs local TTL {prac._CANDIDATE_TTL_S}s"
+    )
