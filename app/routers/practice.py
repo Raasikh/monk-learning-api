@@ -11,6 +11,7 @@ from fastapi import (APIRouter, BackgroundTasks, Depends, File, Form, HTTPExcept
                      UploadFile, status)
 from pydantic import BaseModel
 
+from app import redis_store
 from app.auth import get_current_user_id
 from app.db import supabase, fetch_all_cached, POSTGREST_PAGE
 from app.drona.persona import normalize_language, normalize_voice, tutor_name
@@ -134,12 +135,35 @@ QUALITY_RETRIES = 5
 # Only the unfocused pools are held. A chapter-focused session reads a few rows
 # and is already fast, and caching per chapter would grow this without bound —
 # this way it is at most one entry per subject per discipline, ~8 in total.
+#
+# TWO TIERS, because one worker's memory is no longer the whole server.
+# WEB_CONCURRENCY is 4, so an in-process dict is four independent copies, each
+# cold-fetching the same 278KB — and at low traffic a worker can go a whole TTL
+# without being asked for the same subject twice, which is the case where a
+# per-process cache helps least. Tier 2 is Redis, shared by every worker:
+#
+#   tier 1  this worker's dict   free
+#   tier 2  Redis                one round trip for 278KB
+#   tier 3  Supabase             ~800ms
+#
+# With REDIS_URL unset tier 2 is skipped silently and this behaves exactly as
+# the single-worker version did — the same degradation the rest of
+# app/redis_store.py promises.
 _CANDIDATE_TTL_S = float(os.getenv("CANDIDATE_CACHE_TTL_S", "600"))
 _candidate_cache: Dict[str, Tuple[float, List[Dict[str, Any]]]] = {}
 
 
+def _pool_key(key: str) -> str:
+    return f"practice:pool:{key}"
+
+
 def clear_candidate_cache() -> None:
-    """Drop the cached pools — call after a question-bank import."""
+    """Drop this worker's cached pools — call after a question-bank import.
+
+    Deliberately local. It cannot reach the other workers' copies or Redis, so
+    a bank import still waits out the TTL; what it is for is tests, and a
+    process that knows its own copy is stale.
+    """
     _candidate_cache.clear()
 
 
@@ -382,13 +406,28 @@ def get_next_question(
             # Focused sessions read a few rows and are already cheap; caching
             # per chapter would grow the cache without bound.
             return _fetch_candidates()
+        if _CANDIDATE_TTL_S <= 0:
+            return _fetch_candidates()
+
         key = f"{chosen_subject}|{target_discipline or ''}"
-        hit = _candidate_cache.get(key)
         now = time.monotonic()
-        if hit and _CANDIDATE_TTL_S > 0 and (now - hit[0]) < _CANDIDATE_TTL_S:
+
+        # Tier 1, this worker's own copy: free.
+        hit = _candidate_cache.get(key)
+        if hit and (now - hit[0]) < _CANDIDATE_TTL_S:
             return hit[1]
+
+        # Tier 2, the copy every worker shares. One Redis round trip for 278KB
+        # beats ~800ms to Supabase, and it is what stops four workers each
+        # paying that ~800ms separately for the same rows.
+        shared = redis_store.cache_get_json(_pool_key(key))
+        if shared is not None:
+            _candidate_cache[key] = (now, shared)
+            return shared
+
         rows = _fetch_candidates()
         _candidate_cache[key] = (now, rows)
+        redis_store.cache_set_json(_pool_key(key), rows, int(_CANDIDATE_TTL_S))
         return rows
 
     # Two reads, one wave. The attempt history and the candidate pool have

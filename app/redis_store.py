@@ -21,6 +21,7 @@ running one worker behaves exactly as it always did, and the tests exercise
 the real logic against fakeredis.
 """
 import asyncio
+import json
 import logging
 import os
 import time
@@ -59,6 +60,81 @@ def _reset_for_tests(client) -> None:
     global _client, _client_checked
     _client = client
     _client_checked = True
+
+
+# ── a shared value cache, for SYNC code paths ───────────────────────────────
+#
+# The client above is redis.asyncio, and it cannot be awaited from a `def`
+# handler. /practice/next is one, and its candidate pool is the fourth piece of
+# per-process state this module exists to replace: a module-level dict in
+# app/routers/practice.py, which with WEB_CONCURRENCY=4 became four independent
+# copies, each cold-fetching the same 278KB of rows from Supabase.
+#
+# Driving the async client from a threadpool thread would mean a fresh event
+# loop per call, which throws away the connection pool it is built around. A
+# blocking client is the honest fit for blocking callers, and redis-py ships
+# both from the same package.
+#
+# Degrades exactly like the async one: no REDIS_URL, no Redis, no error — the
+# caller keeps whatever in-process fallback it had.
+
+_sync_client = None
+_sync_checked = False
+
+
+def get_redis_sync():
+    """A blocking client, for cache use inside sync request handlers."""
+    global _sync_client, _sync_checked
+    if _sync_checked:
+        return _sync_client
+    _sync_checked = True
+    url = os.getenv("REDIS_URL")
+    if not url:
+        return None
+    try:
+        import redis as sync_redis
+        _sync_client = sync_redis.Redis.from_url(
+            url, decode_responses=True,
+            socket_connect_timeout=3, socket_timeout=5,
+        )
+    except Exception as err:  # noqa: BLE001 — degrade, never block a request
+        logger.error("Sync Redis unavailable (%s) — caches run in-process only", err)
+        _sync_client = None
+    return _sync_client
+
+
+def _reset_sync_for_tests(client) -> None:
+    global _sync_client, _sync_checked
+    _sync_client = client
+    _sync_checked = True
+
+
+def cache_get_json(key: str) -> Optional[Any]:
+    """The cached value, or None for a miss AND for any Redis trouble.
+
+    A cache that raises is worse than no cache: the caller's fallback is to
+    fetch what it wanted anyway, so every failure here is a miss.
+    """
+    client = get_redis_sync()
+    if client is None:
+        return None
+    try:
+        raw = client.get(key)
+        return json.loads(raw) if raw else None
+    except Exception as err:  # noqa: BLE001
+        logger.warning("cache read failed for %s: %s", key, err)
+        return None
+
+
+def cache_set_json(key: str, value: Any, ttl_s: int) -> None:
+    """Best effort. A value that cannot be shared is still correct in-process."""
+    client = get_redis_sync()
+    if client is None or ttl_s <= 0:
+        return
+    try:
+        client.set(key, json.dumps(value), ex=ttl_s)
+    except Exception as err:  # noqa: BLE001
+        logger.warning("cache write failed for %s: %s", key, err)
 
 
 # ── 1. session takeover ─────────────────────────────────────────────────────
