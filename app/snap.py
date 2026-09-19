@@ -3124,7 +3124,8 @@ def _reconcile_with_steps(solution: Dict[str, Any],
                           options: List[Dict[str, str]],
                           doubt_id: str,
                           usage_acc: Optional[Dict[str, int]],
-                          question_n: Any = None) -> int:
+                          question_n: Any = None,
+                          stem: Optional[str] = None) -> int:
     """Make the stated answer agree with the derivation. Returns elapsed ms.
 
     When the steps conclude a different option from the one the answer names,
@@ -3144,7 +3145,8 @@ def _reconcile_with_steps(solution: Dict[str, Any],
     if not options or not solution.get("option_labels"):
         return 0
     t0 = time.time()
-    steps_say = _steps_support_label(solution, options, doubt_id, usage_acc)
+    steps_say = _steps_support_label(solution, options, doubt_id, usage_acc,
+                                     stem=stem)
     elapsed_ms = int((time.time() - t0) * 1000)
     logger.info("[SNAP STEPCHECK] doubt=%s q%s stepcheck_ms=%d steps_conclude=%s",
                 doubt_id[:8], question_n, elapsed_ms, steps_say)
@@ -3846,7 +3848,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         # their own reasoning. The blind path runs the same check after it has
         # matched — see the call at the end of that branch.
         stepcheck_ms = _reconcile_with_steps(solution, options, doubt_id,
-                                             usage_acc, question.get("n"))
+                                             usage_acc, question.get("n"),
+                                             stem=question.get("stem"))
 
     if solve_blind:
         match_t0 = time.time()
@@ -3946,7 +3949,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         # than before the match, because a blind solve has no label to check
         # until its answer text has been matched to one.
         stepcheck_ms = _reconcile_with_steps(solution, options, doubt_id,
-                                             usage_acc, question.get("n"))
+                                             usage_acc, question.get("n"),
+                                             stem=question.get("stem"))
 
     # Free correctness signal: the page's own answer key, which the solver never
     # saw. A disagreement does not change what the student is shown — the key
@@ -4019,7 +4023,8 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
 def _steps_support_label(solution: Dict[str, Any],
                          options: List[Dict[str, str]],
                          doubt_id: str,
-                         usage_acc: Optional[Dict[str, int]]) -> Optional[List[str]]:
+                         usage_acc: Optional[Dict[str, int]],
+                         stem: Optional[str] = None) -> Optional[List[str]]:
     """Which option the STEPS conclude, judged by a model that sees only them.
 
     Exists because a solver that was shown its options returned an answer
@@ -4033,15 +4038,27 @@ def _steps_support_label(solution: Dict[str, Any],
     def call(corrective: Optional[str] = None):
         messages = [
             {"role": "system", "content": (
-                "You are given the worked steps of a solution and a list of "
-                "options. Say which option the STEPS conclude. Judge only from "
-                "the steps — do not solve the question yourself, and do not "
-                "judge whether the steps are correct. Return ONLY JSON: "
-                '{"option_labels": ["B"], "clear": true}. If the steps do not '
-                'clearly conclude any option, return {"option_labels": [], '
-                '"clear": false}.'
+                "You are given a QUESTION, the worked steps of a solution, "
+                "and a list of options. Say which option the STEPS conclude. "
+                "Judge only from the steps — do not solve the question "
+                "yourself, and do not judge whether the steps are correct. "
+                "The question is there because it defines what the options "
+                "MEAN: when it asks for several things 'respectively', every "
+                "option is an ORDERED tuple in the question's own order, and "
+                "order alone decides between options that are permutations "
+                "of the same items. First map each named unknown to what the "
+                "steps derive for it, in the question's order; then pick the "
+                "option matching that exact ordered tuple, and include the "
+                "mapping so the choice is auditable. Return ONLY JSON: "
+                '{"option_labels": ["A"], "clear": true, '
+                '"mapping": {"X": "proton"}}. If the steps do not clearly '
+                "conclude an option — or the order cannot be established — "
+                'return {"option_labels": [], "clear": false}. A guessed '
+                "order has overridden a CORRECT answer before; that is the "
+                "one failure this check must never cause."
             )},
             {"role": "user", "content": json.dumps({
+                "question": (stem or "")[:1200],
                 "steps": [st["text"] for st in solution.get("steps") or []],
                 "options": options,
             }, ensure_ascii=False)},
