@@ -36,7 +36,8 @@ def get_active_config() -> Dict[str, Any]:
     BackgroundTask so no student waited on it, but it still held a threadpool
     slot each time, and there are only 40 of those for the whole process.
     """
-    rows = fetch_all_cached("progress_config", "config", active=True)
+    rows = fetch_all_cached("progress_config", "config",
+                            order_by=("version",), active=True)
     return rows[0]["config"] if rows else {}
 
 

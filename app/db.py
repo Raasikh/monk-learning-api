@@ -1,7 +1,7 @@
 import asyncio
 import os
 import time
-from typing import Any, Callable, Dict, List, Optional, TypeVar
+from typing import Any, Callable, Dict, List, Optional, Sequence, TypeVar
 from supabase import create_client, Client, ClientOptions
 from app.config import settings
 
@@ -75,19 +75,24 @@ _TAXONOMY_TTL_S = float(os.getenv("TAXONOMY_CACHE_TTL_S", "600"))
 _taxonomy_cache: Dict[str, Any] = {}
 
 
-def fetch_all_cached(table: str, columns: str, **eq: Any) -> List[Dict[str, Any]]:
+def fetch_all_cached(table: str, columns: str, order_by: Sequence[str] = ("id",),
+                     **eq: Any) -> List[Dict[str, Any]]:
     """fetch_all() for tables that only change when we rebuild the syllabus.
 
     Safe for chapters/concepts/weights/config; NEVER use it for per-user rows,
     which must reflect the answer a student just gave. Set
     TAXONOMY_CACHE_TTL_S=0 to disable while editing the taxonomy.
+
+    `order_by` is passed straight through — see fetch_all, where it is load
+    bearing rather than cosmetic. It is part of the cache key because two orders
+    are two different lists.
     """
-    key = f"{table}|{columns}|{sorted(eq.items())}"
+    key = f"{table}|{columns}|{tuple(order_by)}|{sorted(eq.items())}"
     hit = _taxonomy_cache.get(key)
     now = time.monotonic()
     if hit and _TAXONOMY_TTL_S > 0 and (now - hit[0]) < _TAXONOMY_TTL_S:
         return hit[1]
-    rows = fetch_all(table, columns, **eq)
+    rows = fetch_all(table, columns, order_by=order_by, **eq)
     _taxonomy_cache[key] = (now, rows)
     return rows
 
@@ -97,15 +102,31 @@ def clear_taxonomy_cache() -> None:
     _taxonomy_cache.clear()
 
 
-def fetch_all(table: str, columns: str, **eq: Any) -> List[Dict[str, Any]]:
+def fetch_all(table: str, columns: str, order_by: Sequence[str] = ("id",),
+              **eq: Any) -> List[Dict[str, Any]]:
     """SELECT every matching row, paging past PostgREST's 1000-row ceiling.
 
-    Use this for any table that can exceed 1000 rows — `concepts` (1,144) and
+    Use this for any table that can exceed 1000 rows — `concepts` (1,172) and
     `concept_aliases` (1,574) already do. A truncated read is invisible: no
     error, no warning, just a short list that looks plausible.
 
     `eq` applies equality filters, e.g. fetch_all("concepts", "id,name",
     chapter_id=cid).
+
+    `order_by` IS NOT COSMETIC. `.range(1000, 1999)` asks for the second window
+    of an order, and without an ORDER BY there is no defined order to take a
+    window of — Postgres may return rows in whatever order the chosen plan
+    produces, and two requests are two plans. The observable failure is not an
+    error: it is a page that repeats rows the first page already had, and
+    therefore silently omits others. That is the same shape as the truncation
+    this function exists to prevent, one layer down.
+
+    It must be UNIQUE, or ties inside it are unordered again and the window can
+    still slip. Most tables here use the primary key, but not all of them have
+    one called `id`: `progress_config` is keyed by `version` and
+    `chapter_exam_weights` by (chapter_id, exam), so both pass their own — and a
+    default of ("id",) would raise a PostgREST error on either rather than
+    degrade, which is at least loud.
     """
     out: List[Dict[str, Any]] = []
     offset = 0
@@ -113,6 +134,8 @@ def fetch_all(table: str, columns: str, **eq: Any) -> List[Dict[str, Any]]:
         q = supabase.table(table).select(columns)
         for col, val in eq.items():
             q = q.eq(col, val)
+        for col in order_by:
+            q = q.order(col)
         page = q.range(offset, offset + POSTGREST_PAGE - 1).execute().data or []
         out.extend(page)
         if len(page) < POSTGREST_PAGE:

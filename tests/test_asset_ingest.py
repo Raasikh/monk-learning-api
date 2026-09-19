@@ -293,6 +293,14 @@ class FakeTable:
     def limit(self, n):
         return self
 
+    def order(self, col, **_k):
+        # fetch_all orders every page now: .range(1000, 1999) is a window of
+        # an UNDEFINED order without one, so a second page can repeat rows the
+        # first already returned — the same silent shortfall this double exists
+        # to catch, one layer down. The rows here are already in key order, so
+        # this only has to accept the call.
+        return self
+
     def range(self, lo, hi):
         return self
 
@@ -1673,6 +1681,14 @@ class PagingTable:
         return self
 
     def limit(self, n):
+        return self
+
+    def order(self, col, **_k):
+        # fetch_all orders every page now: .range(1000, 1999) is a window of
+        # an UNDEFINED order without one, so a second page can repeat rows the
+        # first already returned — the same silent shortfall this double exists
+        # to catch, one layer down. The rows here are already in key order, so
+        # this only has to accept the call.
         return self
 
     def range(self, lo, hi):

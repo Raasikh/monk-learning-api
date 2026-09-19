@@ -107,7 +107,8 @@ def _user_bundle(user_id: str) -> Dict[str, Any]:
 def get_active_config() -> Dict[str, Any]:
     # One row of tuning constants, versioned and swapped deliberately — never
     # per request. It was costing a ~350ms round trip on every page load.
-    rows = fetch_all_cached("progress_config", "config", active=True)
+    rows = fetch_all_cached("progress_config", "config",
+                            order_by=("version",), active=True)
     return rows[0]["config"] if rows else {}
 
 
@@ -318,7 +319,8 @@ def get_progress(user_id: str = Depends(get_current_user_id), exam: Optional[str
 
     # exam-mark weights; 1.0 fallback until chapter_exam_weights is researched
     weights = {w["chapter_id"]: float(w["avg_marks"])
-               for w in fetch_all_cached("chapter_exam_weights", "chapter_id, exam, avg_marks")
+               for w in fetch_all_cached("chapter_exam_weights", "chapter_id, exam, avg_marks",
+                                         order_by=("chapter_id", "exam"))
                if w.get("exam") == exam}
 
     # the student's evidence
