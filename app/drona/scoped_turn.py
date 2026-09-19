@@ -162,6 +162,10 @@ async def process_scoped_turn_stream(
     opening_chips: Dict[str, list] | None = None,
     extra_state: Dict[str, Any] | None = None,
 ) -> AsyncGenerator[str, None]:
+    # See the note in tutor.py: these columns have been declared and unwritten
+    # since 0005. Same measurement here so the two turn paths are comparable.
+    turn_t0 = time.time()
+
     session_id = session["id"]
     phase_in = session.get("phase", "teaching")
     seed = session.get(seed_key) or {}
@@ -380,6 +384,8 @@ async def process_scoped_turn_stream(
             "cache_hit_tokens": cache_hit_tokens,
             "output_tokens": output_tokens,
             "board_event_count": len(board_events),
+            "latency_ms": int((time.time() - turn_t0) * 1000),
+            "llm_ms": int((time.time() - llm_t0) * 1000),
         }]).execute())
     except Exception as db_ins_err:
         logger.warning(f"{stag} Insert into drona_turns warning: {db_ins_err}")

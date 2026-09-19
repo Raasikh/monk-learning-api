@@ -26,6 +26,7 @@ The `migrations/` directory contains all PostgreSQL database DDL migration scrip
 | `0054_admin_voice_and_transcripts.sql` | `vendor_prices`, `admin_session()` | Rumik TTS spend on the Costs tab, computed from `drona_turns.rumik_chars` (already 100% populated). Price lives in `vendor_prices` and ships **NULL** — usage shows, money does not, until you set it. Also a per-lesson transcript: `utterance` + `raw_response.speech` were always recorded and never displayed. |
 | `0055_admin_costs_daily_one_pass.sql` | `admin_settings` | **Fixes a live 500**: `admin_costs` timed out past 30 days because its daily series ran a correlated subquery per day per measure over 82k `llm_calls` rows. Now one grouped pass. Also adds `inr_per_usd = 95`, so INR-billed vendors convert into the USD totals from one editable row. |
 | `0056_admin_user_cost_and_latency.sql` | replaces `admin_user` | Per-student cost (LLM / TTS / STT) and latency on the profile. STT reports `recorded: false` and LLM carries an attribution caveat, so a partial total cannot pass as a complete one. |
+| `0057_admin_session_turn_latency.sql` | replaces `admin_session` | Reports the turn timings `tutor.py` and `scoped_turn.py` now write. `timed_turns` distinguishes a lesson with no timings from one that was instant. |
 
 > [!WARNING]
 > **`0012` reconciles a pre-existing `doubts` stub.** The table already existed

@@ -291,10 +291,20 @@ NULL rather than erroring, which is why this needed checking against real rows.
 `admin_jsonb()` unwraps either shape and returns NULL for anything malformed,
 so one bad turn costs that turn rather than the whole transcript.
 
-**Classroom latency is not recorded.** `drona_turns` declares `latency_ms`,
-`tts_ms` and `llm_ms` and all three are 0% populated across every turn ever
-taken. The transcript panel says so explicitly rather than rendering a
-misleading 0ms. Filling them means timing in `tutor.py` / `scoped_turn.py`.
+**Classroom latency is recorded from 2026-09-19.** `tutor.py` and
+`scoped_turn.py` now write `latency_ms` (the whole turn — entry to the audit
+insert, covering the session read, context assembly, the model call and the
+state machine) and `llm_ms` (the model's share of it), so a slow lesson can be
+attributed rather than only noticed. The session panel shows p50, p95 and the
+model's percentage of the median turn.
+
+Lessons taught before that date have no timings and never will; `timed_turns`
+separates "no timings recorded" from "instant", and the panel says which.
+
+**`tts_ms` is still unwritten, deliberately.** Synthesis happens in the WS
+consumer after the turn generator has yielded its speech, so there is no TTS
+duration in scope at the insert. A zero there would make an unmeasured thing
+look instant. Filling it needs the voice path.
 
 ## What is missing
 

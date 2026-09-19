@@ -139,7 +139,19 @@ button.ghost:hover { color: var(--ink); }
   color: var(--ink-muted); font-size: 11.5px; text-transform: uppercase;
   letter-spacing: .04em; line-height: 1.35; min-height: 2.7em;
 }
-.tile .v { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.tile .v {
+  font-size: 26px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+  /* Tiles were built for numbers. One text value — a session phase like
+     "awaiting_answer" — rendered 193px wide inside an 80px tile, blew out the
+     grid, and left the whole drawer scrolling sideways. Values wrap now
+     instead of pushing, so no future value can do it either. */
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+  min-width: 0;
+}
+/* Words, not quantities: same tile, prose-sized. */
+.tile .v.text { font-size: 16px; font-weight: 550; letter-spacing: 0; }
 .tile .n { color: var(--ink-2); font-size: 12px; margin-top: 2px; }
 .tiles.wide { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
 code {
@@ -693,6 +705,16 @@ function stackedChart(mount, points, series, opts = {}) {
   mount.appendChild(leg);
 }
 
+/** snake_case is a database detail. Shown to a person it also breaks badly:
+ *  "awaiting_answer" is one unbreakable token that wraps mid-word. A space
+ *  gives the browser somewhere sensible to wrap. */
+const human = (v) => String(v ?? '').replace(/_/g, ' ');
+
+/** A tile whose value is a word rather than a number. */
+const tileText = (k, v, n) =>
+  `<div class="tile"><div class="k">${esc(k)}</div><div class="v text">${esc(v)}</div>` +
+  (n ? `<div class="n">${n}</div>` : '') + `</div>`;
+
 const tile = (k, v, n) =>
   `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${v}</div>` +
   (n ? `<div class="n">${n}</div>` : '') + `</div>`;
@@ -1018,7 +1040,8 @@ async function renderLearning() {
 
   rankedBars($('#c-mode'),  breakdown(f.drona_by_mode),     { color: css('--series-2') });
   rankedBars($('#c-lang'),  breakdown(f.drona_by_language), { color: css('--series-2') });
-  rankedBars($('#c-phase'), breakdown(f.drona_by_phase),    { color: css('--series-2') });
+  rankedBars($('#c-phase'), breakdown(f.drona_by_phase).map(r => ({ ...r, label: human(r.label) })),
+             { color: css('--series-2') });
 }
 
 /* ── Costs ─────────────────────────────────────────────────────────────── */
@@ -1293,7 +1316,7 @@ async function openUser(userId) {
         ${tile('LLM', usd6(cst.llm.cost_usd), `${num(cst.llm.calls)} calls · ${num(cst.llm.failed)} failed`)}
         ${tile('TTS', cst.tts.cost_usd === null ? '—' : usd6(cst.tts.cost_usd),
                `${num(cst.tts.characters)} chars · ${num(cst.tts.requests)} requests`)}
-        ${tile('STT', 'not recorded', 'sarvam / deepgram')}
+        ${tileText('STT', 'not recorded', 'sarvam / deepgram')}
         ${tile('Tokens', num(tt.input_tokens + tt.output_tokens),
                `${num(tt.input_tokens)} in · ${num(tt.output_tokens)} out`)}
       </div>
@@ -1477,18 +1500,25 @@ async function openSession(sessionId) {
       <button class="ghost" id="s-close">Close</button>
     </div>
 
-    <div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(110px,1fr))">
+    <div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(132px,1fr))">
       ${tile('Turns', num(t.turns), `${num(t.interruptions)} interruptions`)}
       ${tile('Graded', num(t.graded), `${num(t.correct)} correct`)}
       ${tile('Spoken', num(t.rumik_chars), `chars · ${num(t.rumik_requests)} requests`)}
       ${tile('Tokens', num(t.input_tokens + t.output_tokens), 'in + out')}
-      ${tile('Ended as', esc(se.phase), se.completed_at ? 'completed' : 'not completed')}
+      ${tileText('Ended as', human(se.phase), se.completed_at ? 'completed' : 'not completed')}
     </div>
 
     ${t.timed_turns === 0 && t.turns > 0 ? `<div class="notice">
-      <b>No timings recorded for this lesson.</b> <code>drona_turns</code> declares
-      <code>latency_ms</code>, <code>tts_ms</code> and <code>llm_ms</code>, and nothing has
-      ever written them — so classroom latency cannot be reported yet.
+      <b>No timings for this lesson.</b> Turn timing started being recorded on
+      2026-09-19; lessons taught before that have none, and never will.
+    </div>` : ''}
+    ${t.timed_turns > 0 ? `<div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(132px,1fr))">
+      ${tile('Turn, median', t.turn_p50_ms ? num(t.turn_p50_ms) + 'ms' : '—',
+             `${num(t.timed_turns)} of ${num(t.turns)} timed`)}
+      ${tile('Turn, p95', t.turn_p95_ms ? num(t.turn_p95_ms) + 'ms' : '—', 'slowest 1 in 20')}
+      ${tile('Model share', t.llm_p50_ms ? num(t.llm_p50_ms) + 'ms' : '—',
+             t.turn_p50_ms && t.llm_p50_ms
+               ? `${Math.round(100 * t.llm_p50_ms / t.turn_p50_ms)}% of the median turn` : 'median')}
     </div>` : ''}
 
     <div class="card">
@@ -1517,7 +1547,7 @@ async function openSession(sessionId) {
             ${x.is_interruption ? '<span class="pill">interruption</span>' : ''}
             ${x.turn_failed ? '<span class="pill bad">turn failed</span>' : ''}
             ${+x.offtopic_tier > 0 ? `<span class="pill bad">off-topic t${esc(x.offtopic_tier)}</span>` : ''}
-            <span class="pill">${esc(x.phase_in)}</span>
+            <span class="pill">${esc(human(x.phase_in))}</span>
             ${x.board_events ? `<span class="pill">${num(x.board_events)} board</span>` : ''}
             ${x.rumik_chars ? `<span class="pill">${num(x.rumik_chars)} chars spoken</span>` : ''}
           </div>

@@ -695,6 +695,17 @@ async def process_tutor_turn_stream(
     6. Emits sanitized SSE events (R3)
     """
 
+    # Wall clock for the whole turn, started before anything else happens.
+    #
+    # drona_turns has declared latency_ms, tts_ms and llm_ms since 0005 and all
+    # three were never written — every turn ever taken reported no timing at
+    # all, which made "avg 0.0ms" indistinguishable from "instant". This is the
+    # total: entry to the audit insert, so it covers the session read, context
+    # assembly, the model call and the state machine. The LLM's own share is
+    # recorded beside it as llm_ms, so a slow turn can be attributed rather
+    # than merely noticed.
+    turn_t0 = time.time()
+
     # Defined first thing: used in a log line as early as the reteach check
     # below, well before the "TURN START" log this originally lived next to.
     stag = f"[s:{session_id[:8]}]"
@@ -2550,7 +2561,14 @@ You MUST emit EXACTLY these {len(assigned_items)} board items in this turn — n
         # checkpoint turn and disagreed with the pool's own counter.
         "rumik_requests": max(0, len(split_into_sentences(speech_out)) - (1 if next_phase == "awaiting_answer" else 0)),
         "rumik_chars": len(speech_out),
-        "violations": rule_violations
+        "violations": rule_violations,
+        "latency_ms": int((time.time() - turn_t0) * 1000),
+        "llm_ms": int(llm_dur * 1000),
+        # tts_ms stays null here on purpose. Synthesis happens in the WS
+        # consumer (voice_proxy), after this generator has yielded its speech —
+        # there is no TTS duration in scope at this insert, and writing a zero
+        # would make an unmeasured thing look instant. It is the last of the
+        # three columns still unwritten, and it needs the voice path to fill it.
     }
     if turn_failed:
         turn_data["turn_failed"] = True
