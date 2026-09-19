@@ -1,9 +1,12 @@
 import asyncio
 import json
+import os
 import random
 import re
+import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple
 from fastapi import (APIRouter, BackgroundTasks, Depends, File, Form, HTTPException,
                      UploadFile, status)
 from pydantic import BaseModel
@@ -110,6 +113,34 @@ DAILY_QUESTION_LIMIT = 150
 # is a guard rather than a loop that runs.
 QUALITY_RETRIES = 5
 
+# ── The candidate pool, held in memory ──────────────────────────────────────
+#
+# THE POOL IS CONTENT, NOT PER-STUDENT. Every student sitting the same subject
+# scans the identical set of servable rows; only the choosing is personal.
+#
+# Measured against production 2026-09-19, that scan is what /practice/next
+# actually spends its time on. One round trip to Supabase costs ~292ms no
+# matter what it carries, and the candidate fetch costs ~800ms — so ~510ms of
+# every question served was transferring 1000 rows to pick one of them, again,
+# for every student, on every tap. Trimming columns barely moved it (797→749ms)
+# because `target_exams` and `chapter_name` are the heavy ones and the filters
+# need both.
+#
+# So it is cached exactly like the syllabus tables in app/db.py, and for the
+# same reason: it changes when the question bank is rebuilt, never per request.
+# The exam, class and discipline rules still run in Python over these rows, so
+# nothing about WHICH question a student may see moves into a cache.
+#
+# Only the unfocused pools are held. A chapter-focused session reads a few rows
+# and is already fast, and caching per chapter would grow this without bound —
+# this way it is at most one entry per subject per discipline, ~8 in total.
+_CANDIDATE_TTL_S = float(os.getenv("CANDIDATE_CACHE_TTL_S", "600"))
+_candidate_cache: Dict[str, Tuple[float, List[Dict[str, Any]]]] = {}
+
+
+def clear_candidate_cache() -> None:
+    """Drop the cached pools — call after a question-bank import."""
+    _candidate_cache.clear()
 
 
 PLACEHOLDER_OPTIONS = {'A': 'Option A', 'B': 'Option B', 'C': 'Option C', 'D': 'Option D'}
@@ -305,14 +336,70 @@ def get_next_question(
     # that adding a query at the front of this handler hit an HTTP/2 GOAWAY and
     # took the endpoint down, so this must not become two.
     ATTEMPT_WINDOW = POSTGREST_PAGE
-    attempts_res = (
-        supabase.table("practice_attempts")
-        .select("id, question_id, is_correct, created_at")
-        .eq("user_id", user_id)
-        .order("created_at", desc=True)
-        .limit(ATTEMPT_WINDOW)
-        .execute()
-    )
+
+    def _read_attempts():
+        return (
+            supabase.table("practice_attempts")
+            .select("id, question_id, is_correct, created_at")
+            .eq("user_id", user_id)
+            .order("created_at", desc=True)
+            .limit(ATTEMPT_WINDOW)
+            .execute()
+        )
+
+    def _fetch_candidates():
+        # `eq`, not `ilike`. Every one of the 15,408 rows in `questions` stores
+        # its subject in exactly the lowercase vocabulary exam_scope documents —
+        # verified against production, zero exceptions and zero NULLs — and
+        # `chosen_subject` is already in those terms. ilike on a text column
+        # cannot use a btree index; eq can, which is what the index added in
+        # migration 0052 is for.
+        q = (
+            supabase.table("questions")
+            .select("id, question_type, chapter_id, chapter_name, concept, "
+                    "difficulty, target_exams, discipline")
+            .eq("subject", chosen_subject)
+            .is_("needs_manual", "null")
+            # NOT `.neq("source", ...)`. In SQL `NULL <> 'x'` is NULL, not true,
+            # so a plain neq silently drops every row whose `source` is unset --
+            # 9,035 of the bank's 15,408 rows, 59% of it.
+            .or_("source.is.null,source.neq.extracted_master_content")
+        )
+        if req.chapter_id:
+            q = q.eq("chapter_id", req.chapter_id)
+        # Botany/Zoology is a filter the database can apply. The Python loop
+        # below did it over every row that came back, which meant transferring
+        # the half of biology this session cannot use in order to discard it.
+        # Matching `ilike` here reproduces that loop's semantics exactly,
+        # including excluding a NULL discipline.
+        if chosen_subject == "biology" and target_discipline:
+            q = q.ilike("discipline", f"%{target_discipline}%")
+        return q.execute().data or []
+
+    def _read_candidates():
+        """The servable pool for this subject — cached. See _candidate_cache."""
+        if req.chapter_id:
+            # Focused sessions read a few rows and are already cheap; caching
+            # per chapter would grow the cache without bound.
+            return _fetch_candidates()
+        key = f"{chosen_subject}|{target_discipline or ''}"
+        hit = _candidate_cache.get(key)
+        now = time.monotonic()
+        if hit and _CANDIDATE_TTL_S > 0 and (now - hit[0]) < _CANDIDATE_TTL_S:
+            return hit[1]
+        rows = _fetch_candidates()
+        _candidate_cache[key] = (now, rows)
+        return rows
+
+    # Two reads, one wave. The attempt history and the candidate pool have
+    # nothing to say to each other, and running them back to back was a whole
+    # Supabase round trip of pure waiting on the tap behind every question.
+    # `reads`, not `pool` — `pool` is the tier pool further down.
+    with ThreadPoolExecutor(max_workers=2) as reads:
+        attempts_task = reads.submit(_read_attempts)
+        candidates_task = reads.submit(_read_candidates)
+        attempts_res = attempts_task.result()
+        candidate_rows = candidates_task.result()
 
     # Oldest-first again, which is what latest_attempt_map's index means.
     all_user_attempts = list(reversed(attempts_res.data or []))
@@ -368,12 +455,12 @@ def get_next_question(
                 "attempt_index": idx + 1 # 1-based attempt sequence
             }
 
-    # 4. Fetch Candidate Questions for Chosen Subject
-    # Only what CHOOSING needs.
+    # 4. Candidate questions — fetched above, in the same wave as the attempts.
     #
-    # This used to select the full row — question_text, options and diagram
-    # included — for every candidate, to pick one. Measured against production
-    # on physics (879 servable rows), three runs each:
+    # Only what CHOOSING needs. This used to select the full row —
+    # question_text, options and diagram included — for every candidate, to pick
+    # one. Measured against production on physics (879 servable rows), three
+    # runs each:
     #
     #     full columns    1165 ms   0.76 MB
     #     these columns    348 ms   0.29 MB
@@ -383,27 +470,20 @@ def get_next_question(
     # practice, since the gate rejects 0% of servable rows in every subject —
     # measured, not assumed.
     #
-    # `source` and `needs_manual` are filters the database can apply, and were
-    # being applied in Python over every row that came back.
-    query = (
-        supabase.table("questions")
-        .select("id, question_type, chapter_id, chapter_name, concept, difficulty, target_exams, discipline")
-        .ilike("subject", chosen_subject)
-        .is_("needs_manual", "null")
-        # NOT `.neq("source", ...)`. In SQL `NULL <> 'x'` is NULL, not true, so
-        # a plain neq silently drops every row whose `source` is unset -- 9,035
-        # of the bank's 15,408 rows, 59% of it. Measured on Current Electricity:
-        # 77 servable rows became 26, and 38 JEE-eligible ones became 4.
-        .or_("source.is.null,source.neq.extracted_master_content")
-    )
-    if req.chapter_id:
-        query = query.eq("chapter_id", req.chapter_id)
+    # STILL TRUNCATED, AND KNOWINGLY SO. There are 2,628-3,092 servable rows per
+    # subject (counted against production 2026-09-19) and PostgREST caps a
+    # response at 1000 without saying so, so selection sees roughly a third of
+    # the bank. Paging it would cost the round trips this endpoint is trying to
+    # shed, and a random offset would hide the Tier-1 rows the spacing logic
+    # exists to find. The fix is to select in the database — see the note on
+    # `_read_candidates` and migration 0050.
 
-    questions_res = query.execute()
-
-    # 5. Filter Candidates by Exam, Class, Discipline, and Quality
+    # 5. Filter Candidates by Exam, Class, and Quality
     candidate_questions = []
-    for q in questions_res.data:
+    # Read-only over `candidate_rows`: these dicts may be the cached pool,
+    # shared with every other request for this subject. Nothing below mutates
+    # one — the tiers hold references and `tier.remove` only edits the tier.
+    for q in candidate_rows:
         # source and needs_manual are filtered in the query now.
         # Exam Filter
         if not matches_exam(q.get("target_exams"), exam_mode):
@@ -440,11 +520,9 @@ def get_next_question(
                 if not match_name:
                     continue
 
-        # Biology Discipline Filter (Botany / Zoology)
-        if chosen_subject == "biology" and target_discipline:
-            disc = str(q.get("discipline") or "").lower()
-            if target_discipline not in disc:
-                continue
+        # Biology's Botany/Zoology filter is applied by the query now — see
+        # `_read_candidates`. Doing it here meant transferring the half of
+        # biology this session cannot use in order to throw it away.
 
         # Quality (GATE 8.6) is checked on the chosen question, not here: it
         # reads question_text and options, which the light select above does
@@ -491,26 +569,42 @@ def get_next_question(
     # not a single read because "effectively never" is not never, and a
     # student must not be handed a corrupt row just because it was picked.
     full = None
-    for _ in range(QUALITY_RETRIES):
-        pool = tier1_wrong_eligible or tier2_unseen or tier3_fallback
-        if not pool:
-            break
-        candidate = random.choice(pool)
-        row = (
-            supabase.table("questions")
-            .select("id, question_text, question_type, options, chapter_name, concept, difficulty, diagram")
-            .eq("id", candidate["id"])
-            .limit(1)
-            .execute()
-            .data
-        )
-        if row and is_quality_question(row[0]):
-            full = row[0]
-            break
-        # Drop it from every tier so the next turn cannot pick it again.
-        for tier in (tier1_wrong_eligible, tier2_unseen, tier3_fallback):
-            if candidate in tier:
-                tier.remove(candidate)
+    concept_task = None
+    with ThreadPoolExecutor(max_workers=2) as picked:
+        for _ in range(QUALITY_RETRIES):
+            pool = tier1_wrong_eligible or tier2_unseen or tier3_fallback
+            if not pool:
+                break
+            candidate = random.choice(pool)
+            # The full row and the display concept are both keyed on this id and
+            # neither needs the other's answer, so they go out together instead
+            # of one after the other. `concept` on the candidate is the same
+            # column resolve_display_concept was being handed off the full row.
+            # The default-arg binding is deliberate: a bare closure over
+            # `candidate` in a loop would capture the variable, not this value.
+            row_task = picked.submit(
+                lambda cid=candidate["id"]: (
+                    supabase.table("questions")
+                    .select("id, question_text, question_type, options, "
+                            "chapter_name, concept, difficulty, diagram")
+                    .eq("id", cid)
+                    .limit(1)
+                    .execute()
+                    .data
+                )
+            )
+            pending_concept = picked.submit(
+                resolve_display_concept, candidate["id"], candidate.get("concept")
+            )
+            row = row_task.result()
+            if row and is_quality_question(row[0]):
+                full = row[0]
+                concept_task = pending_concept
+                break
+            # Drop it from every tier so the next turn cannot pick it again.
+            for tier in (tier1_wrong_eligible, tier2_unseen, tier3_fallback):
+                if candidate in tier:
+                    tier.remove(candidate)
 
     if full is None:
         return {
@@ -546,7 +640,8 @@ def get_next_question(
         "question_type": q_type,
         "options": options,
         "chapter_name": selected.get("chapter_name"),
-        "concept": resolve_display_concept(selected["id"], selected.get("concept")),
+        # Resolved alongside the full-row read above, not after it.
+        "concept": concept_task.result(),
         "difficulty": selected.get("difficulty"),
         "diagram": diagram,
         # So the client can show the day's remaining count without a second
