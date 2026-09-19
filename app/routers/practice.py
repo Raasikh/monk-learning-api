@@ -1,5 +1,6 @@
 import asyncio
 import json
+import logging
 import os
 import random
 import re
@@ -51,6 +52,8 @@ def resolve_display_concept(question_id: str, raw_concept: Optional[str]) -> Opt
     except Exception as e:
         print(f"[CONCEPT RESOLVE ERROR] {e}")
     return raw_concept
+
+logger = logging.getLogger("practice")
 
 router = APIRouter(prefix="/practice", tags=["practice"])
 
@@ -400,13 +403,25 @@ def get_next_question(
             q = q.ilike("discipline", f"%{target_discipline}%")
         return q.execute().data or []
 
+    # Which tier answered, and what still needs sharing. Both are reported in
+    # the log line below: this endpoint was shipped without a way to see inside
+    # it, and the first production numbers were then unreadable — a slow call
+    # could have been a cold pool, a dead Redis, or a slow Supabase, and the
+    # logs could not tell them apart.
+    pool_tier = "supabase"
+    to_share: Optional[List[Dict[str, Any]]] = None
+    share_key: Optional[str] = None
+
     def _read_candidates():
         """The servable pool for this subject — cached. See _candidate_cache."""
+        nonlocal pool_tier, to_share, share_key
         if req.chapter_id:
             # Focused sessions read a few rows and are already cheap; caching
             # per chapter would grow the cache without bound.
+            pool_tier = "focused"
             return _fetch_candidates()
         if _CANDIDATE_TTL_S <= 0:
+            pool_tier = "off"
             return _fetch_candidates()
 
         key = f"{chosen_subject}|{target_discipline or ''}"
@@ -415,6 +430,7 @@ def get_next_question(
         # Tier 1, this worker's own copy: free.
         hit = _candidate_cache.get(key)
         if hit and (now - hit[0]) < _CANDIDATE_TTL_S:
+            pool_tier = "local"
             return hit[1]
 
         # Tier 2, the copy every worker shares. One Redis round trip for 278KB
@@ -423,22 +439,35 @@ def get_next_question(
         shared = redis_store.cache_get_json(_pool_key(key))
         if shared is not None:
             _candidate_cache[key] = (now, shared)
+            pool_tier = "redis"
             return shared
 
         rows = _fetch_candidates()
         _candidate_cache[key] = (now, rows)
-        redis_store.cache_set_json(_pool_key(key), rows, int(_CANDIDATE_TTL_S))
+        # Handed to a background task rather than written here. Serialising
+        # ~278KB and PUTting it are real work, and doing both before returning
+        # made a cold call slower than it had been with no cache at all — the
+        # student paid to warm a pool they were not going to read again. This
+        # worker already has its copy; the share is for the other three.
+        pool_tier = "supabase"
+        to_share, share_key = rows, _pool_key(key)
         return rows
 
     # Two reads, one wave. The attempt history and the candidate pool have
     # nothing to say to each other, and running them back to back was a whole
     # Supabase round trip of pure waiting on the tap behind every question.
     # `reads`, not `pool` — `pool` is the tier pool further down.
+    wave1_t0 = time.perf_counter()
     with ThreadPoolExecutor(max_workers=2) as reads:
         attempts_task = reads.submit(_read_attempts)
         candidates_task = reads.submit(_read_candidates)
         attempts_res = attempts_task.result()
         candidate_rows = candidates_task.result()
+    wave1_ms = int((time.perf_counter() - wave1_t0) * 1000)
+
+    if to_share is not None and share_key:
+        background_tasks.add_task(redis_store.cache_set_json, share_key,
+                                  to_share, int(_CANDIDATE_TTL_S))
 
     # Oldest-first again, which is what latest_attempt_map's index means.
     all_user_attempts = list(reversed(attempts_res.data or []))
@@ -609,6 +638,7 @@ def get_next_question(
     # student must not be handed a corrupt row just because it was picked.
     full = None
     concept_task = None
+    wave2_t0 = time.perf_counter()
     with ThreadPoolExecutor(max_workers=2) as picked:
         for _ in range(QUALITY_RETRIES):
             pool = tier1_wrong_eligible or tier2_unseen or tier3_fallback
@@ -653,6 +683,15 @@ def get_next_question(
             "questions_used_today": used_today,
             "daily_limit": DAILY_QUESTION_LIMIT,
         }
+
+    wave2_ms = int((time.perf_counter() - wave2_t0) * 1000)
+    # The one line that makes a slow call diagnosable. `pool` says which tier
+    # answered, so "2.4s" can be read as a cold pool, a Redis miss, or a slow
+    # Supabase rather than guessed at.
+    logger.info(
+        "[PRACTICE NEXT] subject=%s pool=%s candidates=%d wave1=%dms wave2=%dms",
+        chosen_subject, pool_tier, len(candidate_rows), wave1_ms, wave2_ms,
+    )
 
     selected = full
     q_type = selected.get("question_type")

@@ -76,13 +76,22 @@ def wired(monkeypatch):
     store._reset_sync_for_tests(client)
     prac.clear_candidate_cache()
 
-    tasks = SimpleNamespace(added=[], add_task=lambda fn, *a: None)
+    tasks = SimpleNamespace(added=[])
+    tasks.add_task = lambda fn, *a: tasks.added.append((fn, a))
     body = prac.PracticeNextRequest(exam="jee", class_level="11", subject="physics")
 
-    def serve():
-        return prac.get_next_question(body, tasks, user_id=USER)
+    def serve(run_background=True):
+        """Serves, then runs whatever was deferred — which is what FastAPI does
+        after the response is sent. Tests that care about the share landing must
+        let it run; tests about the request path itself must not."""
+        out = prac.get_next_question(body, tasks, user_id=USER)
+        if run_background:
+            for fn, args in tasks.added:
+                fn(*args)
+            tasks.added.clear()
+        return out
 
-    yield serve, calls, client
+    yield serve, calls, client, tasks
     store._reset_sync_for_tests(None)
     store._sync_checked = False
     prac.clear_candidate_cache()
@@ -95,7 +104,7 @@ def _scans(calls):
 
 
 def test_a_cold_worker_reads_the_pool_from_redis_not_supabase(wired):
-    serve, calls, _client = wired
+    serve, calls, _client, _tasks = wired
     serve()
     assert len(_scans(calls)) == 1, "the first serve should fetch the pool once"
 
@@ -108,7 +117,7 @@ def test_a_cold_worker_reads_the_pool_from_redis_not_supabase(wired):
 
 
 def test_the_pool_is_actually_written_to_redis_under_a_scoped_key(wired):
-    serve, _calls, client = wired
+    serve, _calls, client, _tasks = wired
     serve()
     keys = client.keys("practice:pool:*")
     assert keys, "nothing was shared"
@@ -117,7 +126,7 @@ def test_the_pool_is_actually_written_to_redis_under_a_scoped_key(wired):
 
 
 def test_the_pool_expires_so_a_bank_import_is_picked_up(wired):
-    serve, _calls, client = wired
+    serve, _calls, client, _tasks = wired
     serve()
     key = client.keys("practice:pool:*")[0]
     ttl = client.ttl(key)
@@ -126,9 +135,24 @@ def test_the_pool_expires_so_a_bank_import_is_picked_up(wired):
 
 def test_with_no_redis_it_still_serves_from_its_own_memory(wired):
     """REDIS_URL unset is the laptop case, and the documented degradation."""
-    serve, calls, _client = wired
+    serve, calls, _client, _tasks = wired
     store._reset_sync_for_tests(None)
     serve()
     before = len(_scans(calls))
     serve()
     assert len(_scans(calls)) == before, "the in-process tier stopped working"
+
+
+def test_the_share_is_deferred_not_paid_for_by_the_student(wired):
+    """Serialising ~278KB and PUTting it are real work. Doing them before
+    returning made a cold call slower than it was with no cache at all — the
+    student paying to warm a pool they were not going to read again."""
+    serve, _calls, client, tasks = wired
+    serve(run_background=False)
+
+    assert not client.keys("practice:pool:*"), "the share happened on the request path"
+    assert tasks.added, "the share was not deferred either — it was dropped"
+
+    for fn, args in tasks.added:
+        fn(*args)
+    assert client.keys("practice:pool:*"), "the deferred share never landed"
