@@ -354,6 +354,12 @@ const usd  = (n) => (n === null || n === undefined) ? '—' : `$${(+n).toFixed(2
 const usd4 = (n) => (n === null || n === undefined) ? '—' : `$${(+n).toFixed(4)}`;
 /** Vendors do not all bill in the same currency, so the symbol travels with
  *  the number rather than being assumed. */
+/** Per-student amounts are fractions of a cent; $0.00 would read as free. */
+const usd6 = (n) => {
+  if (n === null || n === undefined) return '—';
+  const v = +n;
+  return v === 0 ? '$0' : v < 0.01 ? `$${v.toFixed(6)}` : `$${v.toFixed(2)}`;
+};
 const money = (n, cur) => {
   if (n === null || n === undefined) return '—';
   const v = (+n).toFixed(2);
@@ -1081,9 +1087,9 @@ async function renderCosts() {
         them all along. ${esc(v.covers || '')}.
       </div>
       ${v.priced ? `<div class="sub" style="margin-top:8px">
-        Rumik bills in <b>${esc(v.currency)}</b> and the model vendors bill in USD, so the two
-        totals are shown separately. Adding them needs an exchange rate, and a hardcoded one
-        goes quietly wrong — so there is no combined figure rather than a wrong one.
+        Rumik bills in <b>${esc(v.currency)}</b> at ${money(v.price_per_1m, v.currency)}/1M chars,
+        converted at <b>₹${esc(t.inr_per_usd)} = $1</b> — a planning rate, editable in
+        <code>admin_settings</code>. Every figure above is USD at that rate.
       </div>` : `<div class="notice" style="margin-top:12px">
         <b>No price set for Rumik</b>, so this is usage only, not money — deliberately blank
         rather than a guess:
@@ -1092,9 +1098,10 @@ async function renderCosts() {
       <div class="tiles" style="margin-top:12px">
         ${tile('Characters', num(v.characters), 'what Rumik bills on')}
         ${tile('Requests', num(v.requests), `${num(v.failures)} TTS failures`)}
-        ${tile('Voice spend', v.priced ? money(v.cost, v.currency) : '—',
-               v.priced ? `at ${money(v.price_per_1m, v.currency)}/1M chars` : 'price not set')}
-        ${tile('Models', usd(t.cost_usd), 'billed in USD')}
+        ${tile('Voice spend', v.priced ? usd(v.cost_usd) : '—',
+               v.priced ? `${money(v.cost_native, v.currency)} at ₹${t.inr_per_usd}/$` : 'price not set')}
+        ${tile('Models + voice', t.grand_total_usd === null ? '—' : usd(t.grand_total_usd),
+               'the true bill for this window')}
       </div>
       <div class="chart" id="c-voice"></div>
     </div>
@@ -1232,7 +1239,14 @@ async function openUser(userId) {
   }
 
   const t = u.totals, pr = u.profile || {};
+  const tt = t, cst = u.costs, lat = u.latency;
   const acc = t.attempts ? (100 * t.correct / t.attempts) : null;
+  // A latency row, or an honest dash. Never a 0 that looks like "instant".
+  const lrow = (label, m) => !m || !m.n
+    ? `<tr><td>${esc(label)}</td><td colspan="4" class="muted" style="text-align:right">none recorded</td></tr>`
+    : `<tr><td>${esc(label)}</td><td class="num">${num(m.n)}</td>
+         <td class="num">${num(m.p50)}ms</td><td class="num">${num(m.p95)}ms</td>
+         <td class="num">${num(m.max)}ms</td></tr>`;
 
   drawer.innerHTML = `
     <div class="drawer-head">
@@ -1266,6 +1280,57 @@ async function openUser(userId) {
       ${tile('Doubts', num(t.doubts), `${num(t.doubts_solved)} solved`)}
       ${tile('Notes', num(t.notes), '')}
       ${tile('Cost', usd4(t.cost_usd), 'all time')}
+    </div>
+
+    <div class="card">
+      <h2>What this student cost</h2>
+      <div class="sub">
+        Lifetime, all USD at ₹${esc(cst.inr_per_usd)} = $1.
+        ${cst.total_is_partial ? '<b>This is a floor, not the bill</b> — see the gaps below.' : ''}
+      </div>
+      <div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+        ${tile('Total', cst.total_usd === null ? '—' : usd6(cst.total_usd), 'LLM + TTS')}
+        ${tile('LLM', usd6(cst.llm.cost_usd), `${num(cst.llm.calls)} calls · ${num(cst.llm.failed)} failed`)}
+        ${tile('TTS', cst.tts.cost_usd === null ? '—' : usd6(cst.tts.cost_usd),
+               `${num(cst.tts.characters)} chars · ${num(cst.tts.requests)} requests`)}
+        ${tile('STT', 'not recorded', 'sarvam / deepgram')}
+        ${tile('Tokens', num(tt.input_tokens + tt.output_tokens),
+               `${num(tt.input_tokens)} in · ${num(tt.output_tokens)} out`)}
+      </div>
+      <div class="notice" style="margin-top:14px">
+        <b>Two gaps, so this total reads low.</b>
+        <b>STT is not recorded anywhere</b> — no table, column or counter — so Sarvam and
+        Deepgram contribute nothing to it.
+        And only model calls that recorded a <code>user_id</code> appear under LLM;
+        lesson authoring is unattributed on purpose, since a lesson is written once for
+        everyone. TTS covers ${esc(cst.tts.coverage)}.
+      </div>
+      ${cst.llm.by_service.length ? `
+        <h3 style="font-size:13px;margin-top:16px">LLM calls by service</h3>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Service</th><th class="num">Calls</th><th class="num">Cost</th><th class="num">p95</th></tr></thead>
+          <tbody>${cst.llm.by_service.map(r => `<tr>
+            <td>${esc(r.service)}</td><td class="num">${num(r.calls)}</td>
+            <td class="num">${usd6(r.cost_usd)}</td>
+            <td class="num">${r.p95_latency_ms === null ? '—' : num(r.p95_latency_ms)+'ms'}</td>
+          </tr>`).join('')}</tbody></table></div>` : ''}
+    </div>
+
+    <div class="card">
+      <h2>Latency</h2>
+      <div class="sub">What this student actually waited for.</div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Measure</th><th class="num">n</th><th class="num">p50</th><th class="num">p95</th><th class="num">worst</th></tr></thead>
+        <tbody>
+          ${lrow('Doubt, photo to answer', lat.doubt_solve_ms)}
+          ${lrow('Doubt, reading the photo', lat.doubt_transcribe_ms)}
+          ${lrow('Model call', lat.llm_call_ms)}
+          <tr><td>Classroom turn</td>
+              <td colspan="4" class="muted" style="text-align:right">
+                not recorded — <code>latency_ms</code>, <code>tts_ms</code> and
+                <code>llm_ms</code> on <code>drona_turns</code> are declared but never written
+              </td></tr>
+        </tbody></table></div>
     </div>
 
     <div class="card">

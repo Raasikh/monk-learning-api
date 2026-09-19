@@ -240,6 +240,43 @@ has no per-turn row to count — recording it needs writes on a live path.
 Sarvam, Deepgram and Mathpix have rows in `vendor_prices` but nothing counts
 their usage yet.
 
+## Per-student cost and latency
+
+Opening a profile shows what that student cost and what they waited for. Three
+kinds of number live there and the panel is built so they cannot be mistaken
+for each other:
+
+| | Coverage | Shown as |
+|---|---|---|
+| **TTS** (Rumik) | complete — `drona_turns`, 100% | a figure |
+| **Snap latency** | `doubts.latency_ms` 92%, `transcribe_ms` 96% | p50 / p95 / worst |
+| **LLM** | **~1%** of `llm_calls` carry a `user_id` | a figure **plus an attribution caveat** |
+| **STT** (Sarvam, Deepgram) | **not recorded anywhere** | `recorded: false`, in words |
+| **Classroom turn latency** | three declared columns, **0% written** | "not recorded", in words |
+
+The last two matter most. A per-user cost panel that silently omits
+speech-to-text reads as "this student cost $0.04", and someone will multiply it
+by ten thousand. So `costs.stt.recorded` is `false` in the payload,
+`costs.total_is_partial` is `true`, and the UI says both on its face.
+
+The LLM 1% is not a query problem — `user_id` has to be threaded at the call
+sites. The snap path now does; the classroom tutor already did; the planner is
+unattributed on purpose, since a lesson is authored once for everyone. Most of
+what remains unattributed is content authoring, which is exactly the spend that
+should *not* belong to a student.
+
+## Currency
+
+Everything the dashboard reports as money is **USD**, converted at
+`admin_settings.inr_per_usd` — **95** by decision, not by lookup. Rumik bills in
+rupees; the model vendors bill in dollars. The rate is returned alongside the
+figures so a number can be traced to the assumption that produced it, and
+changing it is one UPDATE with no redeploy:
+
+```sql
+update public.admin_settings set value = 88 where key = 'inr_per_usd';
+```
+
 ## Lesson transcripts
 
 Every classroom turn already stored what the student said (`utterance`, 99%
