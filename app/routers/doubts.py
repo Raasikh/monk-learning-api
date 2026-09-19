@@ -1213,6 +1213,23 @@ async def ask_about_doubt_aloud(
     can show what was heard the moment it is known.
     """
     doubt = await asyncio.to_thread(_load_doubt_for_user, doubt_id, user_id)
+    return await followup_voice_response(doubt, doubt_id, user_id, audio, history, pcm)
+
+
+async def followup_voice_response(context: Dict[str, Any], label: str, user_id: str,
+                                  audio: UploadFile, history: str, pcm: str):
+    """A spoken follow-up about whatever is already on the student's screen.
+
+    `context` is the shape `followup_context` reads — question, options, the
+    working, the answer. It is built from a stored row by the caller and never
+    accepted from the request, so a caller cannot claim a question and an answer
+    that were never given. `label` names the thing for the log only.
+
+    Lifted out of the doubts endpoint so Practice can ask a follow-up about a
+    practice question without a second copy of the prewarm, the transcription
+    and the language guard — three things that were subtle to get right and
+    would drift apart the moment there were two of them.
+    """
     # Open the TTS socket NOW, not when there is finally something to say.
     # Measured, the handshake is 1.76s of the 2.9s before the first sound —
     # and it was being paid after the answer already existed, with the student
@@ -1227,7 +1244,7 @@ async def ask_about_doubt_aloud(
         # blocking requests.post, and holding the loop through it stops the
         # prewarmed socket from finishing its handshake concurrently.
         question = await asyncio.to_thread(
-            transcribe_question, raw, audio.content_type or "audio/m4a", doubt_id)
+            transcribe_question, raw, audio.content_type or "audio/m4a", label)
     except SnapError as err:
         raise HTTPException(status_code=422, detail=str(err))
     if not question:
@@ -1250,7 +1267,7 @@ async def ask_about_doubt_aloud(
         prior = []
     turns = [{"role": t.get("role"), "content": t.get("content") or ""}
              for t in prior if isinstance(t, dict)]
-    return _followup_response(doubt, doubt_id, user_id, question, turns,
+    return _followup_response(context, label, user_id, question, turns,
                               transcript=question, tutor_voice=voice,
                               tutor_language=language,
                               use_pcm=pcm in ("1", "true", "yes"))
@@ -1360,6 +1377,20 @@ async def speak_followup_stream(doubt_id: str, body: SpeakRequest,
     if not said:
         raise HTTPException(status_code=400, detail="Nothing to say.")
     await asyncio.to_thread(_load_doubt_for_user, doubt_id, user_id)
+    return await speak_stream_response(said, doubt_id, user_id)
+
+
+async def speak_stream_response(said: str, label: str, user_id: str):
+    """The spoken answer, a sentence at a time.
+
+    Takes the text and nothing else: the ownership check belongs to the caller,
+    because what owns the text differs per surface — a doubt row for Doubts,
+    nothing beyond the signed-in student for Practice, whose text came from our
+    own follow-up stream moments earlier.
+
+    Shared so Practice is not left silent when the inline voice yields no
+    chunks. `label` names the thing for the log only.
+    """
     # One read for both, resolved BEFORE the generator starts. The language was
     # being read inside stream() with a blocking call on the event loop, which
     # stalled every other request between the first audio frame and the socket.
@@ -1380,7 +1411,7 @@ async def speak_followup_stream(doubt_id: str, body: SpeakRequest,
                     "b64": base64.b64encode(wav).decode("ascii"),
                 })
         except Exception as err:
-            logger.error("[FOLLOWUP TTS] stream failed for %s: %s", doubt_id[:8], err,
+            logger.error("[FOLLOWUP TTS] stream failed for %s: %s", label[:8], err,
                          exc_info=True)
         if not sent:
             # Nothing could be spoken. Not an error to show: the steps are on

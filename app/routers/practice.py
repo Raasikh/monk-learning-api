@@ -1,14 +1,22 @@
+import asyncio
 import json
 import random
+import re
 from datetime import datetime, timedelta, timezone
 from typing import List, Optional, Dict, Any
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
+from fastapi import (APIRouter, BackgroundTasks, Depends, File, Form, HTTPException,
+                     UploadFile, status)
 from pydantic import BaseModel
 
 from app.auth import get_current_user_id
 from app.db import supabase, fetch_all_cached, POSTGREST_PAGE
 from app.drona.persona import normalize_language, normalize_voice, tutor_name
 from app.progress_scoring import apply_answer_scoring, record_serve
+# The follow-up machinery is the doubts router's, reused rather than copied:
+# `_followup_response` takes a plain context dict and writes nothing to the
+# doubts table, so a practice question can ask the same question of it.
+from app.routers.doubts import (_followup_response, _tutor_prefs_for,
+                                followup_voice_response, speak_stream_response)
 
 
 def resolve_display_concept(question_id: str, raw_concept: Optional[str]) -> Optional[str]:
@@ -691,6 +699,138 @@ def get_practice_stats(
         "correct": correct_count,
         "accuracy": accuracy
     }
+
+
+class PracticeFollowUpTurn(BaseModel):
+    role: str
+    content: str
+
+
+class PracticeFollowUpRequest(BaseModel):
+    question: str
+    history: List[PracticeFollowUpTurn] = []
+    pcm: bool = False
+
+
+def _question_as_followup_context(question_id: str) -> Dict[str, Any]:
+    """A practice question in the shape `followup_context` reads.
+
+    Built HERE from the stored row, never accepted from the request — the same
+    rule the doubts endpoint states, for the same reason: a request that could
+    carry its own question and answer could have the model explain a solution
+    that was never given.
+
+    The two stores disagree on shape and this is where they are reconciled:
+    `questions.options` is a map {"A": "..."} where a doubt carries a list of
+    {label, text}, and `solution.steps` is a list of strings where a doubt
+    carries {n, text}.
+    """
+    res = (
+        supabase.table("questions")
+        .select("id, question_text, options, correct_option, correct_value, solution")
+        .eq("id", question_id)
+        .limit(1)
+        .execute()
+    )
+    if not res.data:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"Question with ID '{question_id}' not found.")
+    q = res.data[0]
+
+    options = q.get("options")
+    if isinstance(options, str):
+        try:
+            options = json.loads(options)
+        except json.JSONDecodeError:
+            options = None
+    opts = ([{"label": k, "text": v} for k, v in options.items()]
+            if isinstance(options, dict) else [])
+
+    solution = q.get("solution")
+    if isinstance(solution, str):
+        try:
+            solution = json.loads(solution)
+        except json.JSONDecodeError:
+            solution = None
+    raw_steps = (solution or {}).get("steps") if isinstance(solution, dict) else None
+    # Strip the rendering marks before the model sees them. A stored step is
+    # `Title.\nprose\n$maths$\nnote` — the `$` pair tells the app to draw the
+    # line as a formula and `<b>` bolds a term. To the model they are noise it
+    # would reasonably imitate, and a follow-up answer arriving full of `$`
+    # would be read literally by a client that only slabs whole lines.
+    steps = [
+        {"n": i + 1,
+         "text": re.sub(r"</?b>", "", str(t)).replace("$", "").strip()}
+        for i, t in enumerate(raw_steps or [])
+    ]
+
+    answer = q.get("correct_option")
+    if answer is None and q.get("correct_value") is not None:
+        answer = str(q["correct_value"])
+
+    return {
+        "question_text": q.get("question_text") or "",
+        "options": opts,
+        "steps": steps,
+        "answer": answer,
+    }
+
+
+@router.post("/{question_id}/ask")
+def ask_about_question(question_id: str, body: PracticeFollowUpRequest,
+                       user_id: str = Depends(get_current_user_id)):
+    """POST /practice/{id}/ask — a question about the working already on screen.
+
+    The Practice twin of `/doubts/{id}/ask`. A student who has just submitted an
+    answer and is reading the solution wants to ask about THAT, and sending them
+    into a live Drona session to do it takes away the very thing they are asking
+    about — so the solution stays on screen and the answer comes to it.
+    """
+    question = (body.question or "").strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="Ask something first.")
+    context = _question_as_followup_context(question_id)
+    voice, language = _tutor_prefs_for(user_id)
+    return _followup_response(context, question_id, user_id, question,
+                              [{"role": t.role, "content": t.content}
+                               for t in body.history],
+                              tutor_voice=voice, tutor_language=language,
+                              use_pcm=body.pcm)
+
+
+@router.post("/{question_id}/ask-voice")
+async def ask_about_question_aloud(
+    question_id: str,
+    audio: UploadFile = File(..., description="The held recording"),
+    history: str = Form("[]"),
+    pcm: str = Form("0"),
+    user_id: str = Depends(get_current_user_id),
+):
+    """POST /practice/{id}/ask-voice — the same thing, asked out loud."""
+    context = await asyncio.to_thread(_question_as_followup_context, question_id)
+    return await followup_voice_response(context, question_id, user_id,
+                                         audio, history, pcm)
+
+
+class PracticeSpeakRequest(BaseModel):
+    """The `spoken` line from a follow-up answer just given."""
+    text: str
+
+
+@router.post("/{question_id}/speak-stream")
+async def speak_practice_followup(question_id: str, body: PracticeSpeakRequest,
+                                  user_id: str = Depends(get_current_user_id)):
+    """POST /practice/{id}/speak-stream — the follow-up answer read aloud.
+
+    The fallback for when the inline voice on `/ask` produced no chunks. There
+    is no ownership row to check the way a doubt has one: the text being spoken
+    came from our own stream a moment ago, and the endpoint synthesises whatever
+    text a signed-in student hands it either way.
+    """
+    said = (body.text or "").strip()
+    if not said:
+        raise HTTPException(status_code=400, detail="Nothing to say.")
+    return await speak_stream_response(said, question_id, user_id)
 
 
 @router.post("/explain")
