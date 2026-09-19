@@ -39,7 +39,13 @@ from app.snap import (
     transcribe_question,
 )
 from app import exam_scope, followup_voice
-from app.drona.persona import (tutor_name, unsupported_language_in,
+# DEFAULT_LANGUAGE comes from persona, which is where it still lives.
+# followup_voice used to export one, and 87961f7 deleted it along with the
+# cached opener that needed it — but `_tutor_prefs_for` was still reading
+# `followup_voice.DEFAULT_LANGUAGE`, so every voice follow-up by a student
+# whose last session carried no language raised AttributeError in production.
+from app.drona.persona import (DEFAULT_LANGUAGE, tutor_name,
+                               unsupported_language_in,
                                unsupported_language_reply)
 from app.exam_scope import canonical_subject
 from app.storage_r2 import delete_image, signed_url
@@ -1331,10 +1337,10 @@ def _tutor_prefs_for(user_id: str) -> tuple:
         if res.data:
             row = res.data[0]
             return (row.get("tutor_voice") or followup_voice.DEFAULT_VOICE,
-                    row.get("language") or followup_voice.DEFAULT_LANGUAGE)
+                    row.get("language") or DEFAULT_LANGUAGE)
     except Exception as err:
         logger.warning("Could not read tutor prefs for %s: %s", user_id[:8], err)
-    return followup_voice.DEFAULT_VOICE, followup_voice.DEFAULT_LANGUAGE
+    return followup_voice.DEFAULT_VOICE, DEFAULT_LANGUAGE
 
 
 def _tutor_voice_for(user_id: str) -> str:
