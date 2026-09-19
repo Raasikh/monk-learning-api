@@ -189,6 +189,25 @@ button.danger:disabled { opacity: .45; cursor: default; }
   border-color: color-mix(in srgb, var(--critical) 40%, transparent);
   background: color-mix(in srgb, var(--critical) 6%, var(--surface));
 }
+/* Transcript. A lesson is a conversation, so it is laid out as one — the
+   student on one side, the tutor on the other — rather than as table rows,
+   which is what makes it readable at a glance rather than merely present. */
+.turn { display: grid; grid-template-columns: 34px 1fr; gap: 10px; padding: 10px 0;
+        border-bottom: 1px solid var(--grid); }
+.turn:last-child { border-bottom: 0; }
+.turn .n { color: var(--ink-muted); font-size: 11.5px; font-variant-numeric: tabular-nums;
+           padding-top: 3px; }
+.turn .said { margin-bottom: 7px; }
+.turn .who { font-size: 11px; text-transform: uppercase; letter-spacing: .05em;
+             color: var(--ink-muted); margin-bottom: 2px; }
+.turn .student { color: var(--ink); }
+.turn .tutor   { color: var(--ink-2); }
+.turn .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 5px; }
+.turn .meta .pill { font-size: 10.5px; }
+.pill.good { border-color: color-mix(in srgb, var(--good) 55%, transparent);
+             background: color-mix(in srgb, var(--good) 14%, transparent); }
+.pill.bad  { border-color: color-mix(in srgb, var(--critical) 55%, transparent);
+             background: color-mix(in srgb, var(--critical) 14%, transparent); }
 .pill.deleted {
   border-color: color-mix(in srgb, var(--critical) 55%, transparent);
   background: color-mix(in srgb, var(--critical) 14%, transparent);
@@ -333,6 +352,13 @@ const num  = (n) => (n === null || n === undefined) ? '—' : nf.format(n);
 const pct  = (n) => (n === null || n === undefined) ? '—' : `${(+n).toFixed(1)}%`;
 const usd  = (n) => (n === null || n === undefined) ? '—' : `$${(+n).toFixed(2)}`;
 const usd4 = (n) => (n === null || n === undefined) ? '—' : `$${(+n).toFixed(4)}`;
+/** Vendors do not all bill in the same currency, so the symbol travels with
+ *  the number rather than being assumed. */
+const money = (n, cur) => {
+  if (n === null || n === undefined) return '—';
+  const v = (+n).toFixed(2);
+  return cur === 'INR' ? `₹${nf.format(+v)}` : `$${v}`;
+};
 
 const dayLabel = (iso) =>
   new Date(iso + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
@@ -994,6 +1020,7 @@ async function renderCosts() {
   const root = $('#tab-costs');
   const c = await api(`/admin/api/costs?${qs()}`);
   const t = c.totals;
+  const v = c.voice || {};
   const failRate = t.calls ? (100 * t.failed / t.calls) : null;
   const share = (v) => t.cost_usd ? ` · ${Math.round(100 * v / t.cost_usd)}% of spend` : '';
 
@@ -1047,6 +1074,31 @@ async function renderCosts() {
       <div class="chart" id="c-cost"></div>
     </div>
 
+    <div class="card">
+      <h2>Voice — Rumik</h2>
+      <div class="sub">
+        Text-to-speech bills per character, and <code>drona_turns</code> has been counting
+        them all along. ${esc(v.covers || '')}.
+      </div>
+      ${v.priced ? `<div class="sub" style="margin-top:8px">
+        Rumik bills in <b>${esc(v.currency)}</b> and the model vendors bill in USD, so the two
+        totals are shown separately. Adding them needs an exchange rate, and a hardcoded one
+        goes quietly wrong — so there is no combined figure rather than a wrong one.
+      </div>` : `<div class="notice" style="margin-top:12px">
+        <b>No price set for Rumik</b>, so this is usage only, not money — deliberately blank
+        rather than a guess:
+        <code>update vendor_prices set price_per_1m_units = &lt;rate&gt;, currency = 'INR' where vendor = 'rumik';</code>
+      </div>`}
+      <div class="tiles" style="margin-top:12px">
+        ${tile('Characters', num(v.characters), 'what Rumik bills on')}
+        ${tile('Requests', num(v.requests), `${num(v.failures)} TTS failures`)}
+        ${tile('Voice spend', v.priced ? money(v.cost, v.currency) : '—',
+               v.priced ? `at ${money(v.price_per_1m, v.currency)}/1M chars` : 'price not set')}
+        ${tile('Models', usd(t.cost_usd), 'billed in USD')}
+      </div>
+      <div class="chart" id="c-voice"></div>
+    </div>
+
     <div class="grid2" style="margin-top:16px">
       <div class="card" style="margin-top:0"><h2>Spend by service</h2><div id="c-service"></div></div>
       <div class="card" style="margin-top:0"><h2>Spend by model</h2><div id="c-model"></div></div>
@@ -1069,6 +1121,11 @@ async function renderCosts() {
   })), { fmt: usd4, color: css('--series-1') });
   rankedBars($('#c-model'), c.by_model.map(r =>
     ({ label: r.model, value: +r.cost_usd, note: `${num(r.calls)} calls` })), { fmt: usd4 });
+
+  // Characters, not money — the honest unit while the rate is unset, and still
+  // the right one after, because it is what the vendor actually bills.
+  timeChart($('#c-voice'), (v.daily || []).map(x => ({ day: x.day, v: +x.characters })),
+            { kind: 'bar', color: css('--series-3'), height: 150 });
 }
 
 /* ── Users ─────────────────────────────────────────────────────────────── */
@@ -1222,7 +1279,8 @@ async function openUser(userId) {
       <div class="tablewrap">${u.recent_sessions.length ? `
         <table><thead><tr><th>When</th><th>Topic</th><th>Mode</th><th>Language</th><th>Phase</th><th class="num">Turns</th></tr></thead>
         <tbody>${u.recent_sessions.map(s => `
-          <tr><td>${esc(when(s.created_at))}</td>
+          <tr class="clickable" data-session="${esc(s.id)}">
+              <td>${esc(when(s.created_at))}</td>
               <td>${esc(s.subtopic_key || '—')}</td>
               <td>${esc(s.mode)}</td><td>${esc(s.language)}</td>
               <td>${esc(s.phase)}</td><td class="num">${num(s.turn_count)}</td></tr>`).join('')}
@@ -1309,8 +1367,99 @@ async function openUser(userId) {
   }
 
   $('#d-close').onclick = close;
+  $$('tr[data-session]', drawer).forEach(tr => {
+    tr.onclick = () => openSession(tr.dataset.session);
+  });
   timeChart($('#d-activity'), u.daily.map(x => ({ day: x.day, v: x.events })),
             { kind: 'bar', color: css('--series-1'), height: 130 });
+}
+
+/* ── One lesson, turn by turn ──────────────────────────────────────────────
+   Stacks over the user drawer rather than replacing it, so closing the
+   transcript puts you back where you were instead of at the top of the list.
+   ──────────────────────────────────────────────────────────────────────── */
+async function openSession(sessionId) {
+  const scrim = document.createElement('div');
+  scrim.className = 'scrim'; scrim.style.zIndex = 60;
+  const panel = document.createElement('div');
+  panel.className = 'drawer'; panel.style.zIndex = 70;
+  panel.style.width = 'min(680px, 100%)';
+  panel.innerHTML = '<div class="empty">Loading transcript…</div>';
+  document.body.append(scrim, panel);
+  const close = () => { scrim.remove(); panel.remove(); document.removeEventListener('keydown', onKey); };
+  const onKey = (e) => { if (e.key === 'Escape') { e.stopPropagation(); close(); } };
+  scrim.onclick = close;
+  document.addEventListener('keydown', onKey);
+
+  let d;
+  try {
+    d = await api(`/admin/api/sessions/${encodeURIComponent(sessionId)}`);
+  } catch (e) {
+    panel.innerHTML = `<div class="banner">${esc(e.message)}</div>`;
+    return;
+  }
+  const se = d.session, t = d.totals;
+
+  panel.innerHTML = `
+    <div class="drawer-head">
+      <div style="flex:1">
+        <h1 style="font-size:17px">${esc(se.subtopic_key || 'Free-text lesson')}</h1>
+        <div class="muted" style="font-size:12.5px">
+          ${esc(se.display_name || se.email || '—')} · ${esc(se.mode)} · ${esc(se.language)}
+          · ${esc(when(se.created_at))}
+        </div>
+      </div>
+      <button class="ghost" id="s-close">Close</button>
+    </div>
+
+    <div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(110px,1fr))">
+      ${tile('Turns', num(t.turns), `${num(t.interruptions)} interruptions`)}
+      ${tile('Graded', num(t.graded), `${num(t.correct)} correct`)}
+      ${tile('Spoken', num(t.rumik_chars), `chars · ${num(t.rumik_requests)} requests`)}
+      ${tile('Tokens', num(t.input_tokens + t.output_tokens), 'in + out')}
+      ${tile('Ended as', esc(se.phase), se.completed_at ? 'completed' : 'not completed')}
+    </div>
+
+    ${t.timed_turns === 0 && t.turns > 0 ? `<div class="notice">
+      <b>No timings recorded for this lesson.</b> <code>drona_turns</code> declares
+      <code>latency_ms</code>, <code>tts_ms</code> and <code>llm_ms</code>, and nothing has
+      ever written them — so classroom latency cannot be reported yet.
+    </div>` : ''}
+
+    <div class="card">
+      <h2>Transcript</h2>
+      <div class="sub">What the student said, and what Drona said back.</div>
+      <div id="s-turns" style="margin-top:6px"></div>
+    </div>`;
+
+  const grade = (g) => !g ? '' :
+    `<span class="pill ${g === 'correct' ? 'good' : 'bad'}">${esc(g)}</span>`;
+
+  $('#s-turns', panel).innerHTML = !d.turns.length
+    ? '<div class="empty">No turns recorded for this session.</div>'
+    : d.turns.map(x => `
+      <div class="turn">
+        <div class="n">${num(x.turn_index)}</div>
+        <div>
+          ${x.student ? `<div class="said"><div class="who">Student</div>
+            <div class="student">${esc(x.student)}</div></div>` : ''}
+          ${x.tutor ? `<div class="said"><div class="who">Drona</div>
+            <div class="tutor">${esc(x.tutor)}</div></div>`
+            : '<div class="muted" style="font-size:12.5px">— no tutor speech recorded —</div>'}
+          <div class="meta">
+            ${grade(x.grade)}
+            ${x.mistake_tag ? `<span class="pill">${esc(x.mistake_tag)}</span>` : ''}
+            ${x.is_interruption ? '<span class="pill">interruption</span>' : ''}
+            ${x.turn_failed ? '<span class="pill bad">turn failed</span>' : ''}
+            ${+x.offtopic_tier > 0 ? `<span class="pill bad">off-topic t${esc(x.offtopic_tier)}</span>` : ''}
+            <span class="pill">${esc(x.phase_in)}</span>
+            ${x.board_events ? `<span class="pill">${num(x.board_events)} board</span>` : ''}
+            ${x.rumik_chars ? `<span class="pill">${num(x.rumik_chars)} chars spoken</span>` : ''}
+          </div>
+        </div>
+      </div>`).join('');
+
+  $('#s-close', panel).onclick = close;
 }
 
 boot();

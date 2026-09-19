@@ -207,6 +207,58 @@ from the signed-in admin's token, never from anything the client sent:
 select action, email, actor, reason, at from public.admin_user_audit order by at desc;
 ```
 
+## Voice spend (Rumik)
+
+The Costs tab reads `llm_calls`, and only the LLM paths write there — Rumik,
+Sarvam, Deepgram and Mathpix have never recorded a row. For Rumik that turned
+out to be a display problem, not an instrumentation one:
+`drona_turns.rumik_chars` and `.rumik_requests` are 100% populated and always
+have been.
+
+TTS bills per character, so the Voice card multiplies those characters by a
+rate in `vendor_prices`, seeded with Rumik's published **Silk Mulberry** rate:
+**₹0.50 per 1,000 characters = ₹500 per 1M**. Mulberry is what the code calls —
+`RUMIK_MODEL = "mulberry"` in both `app/drona/voice_proxy.py` and
+`app/followup_voice.py`. If you move tier (Muga is ₹0.99/1k), change the row:
+
+```sql
+update public.vendor_prices set price_per_1m_units = 990, currency = 'INR' where vendor = 'rumik';
+```
+
+**Rumik bills in rupees; the model vendors bill in dollars.** The two totals are
+shown side by side in their own currencies and `grand_total_usd` stays null,
+because combining them needs an exchange rate and a hardcoded one is wrong by a
+little more every month. If a vendor is ever priced in USD the grand total
+computes automatically.
+
+Any vendor left with a NULL price shows usage and says "price not set" — the
+same rule as `LLM_PRICE_*`, that an unpriced unit records nothing rather than
+zero.
+
+Only the **classroom** is counted. Ask-a-follow-up also speaks through Rumik and
+has no per-turn row to count — recording it needs writes on a live path.
+Sarvam, Deepgram and Mathpix have rows in `vendor_prices` but nothing counts
+their usage yet.
+
+## Lesson transcripts
+
+Every classroom turn already stored what the student said (`utterance`, 99%
+populated) and what the tutor replied (`raw_response.speech`, 100%). Clicking a
+row under "Recent classes" in a user's drawer opens that lesson turn by turn,
+with grade, mistake tag, off-topic tier, board-event count and characters
+spoken.
+
+One trap: `raw_response` is declared `jsonb` but holds a jsonb **string**,
+because the writers pass `json.dumps(...)` into it. `->>'speech'` on it returns
+NULL rather than erroring, which is why this needed checking against real rows.
+`admin_jsonb()` unwraps either shape and returns NULL for anything malformed,
+so one bad turn costs that turn rather than the whole transcript.
+
+**Classroom latency is not recorded.** `drona_turns` declares `latency_ms`,
+`tts_ms` and `llm_ms` and all three are 0% populated across every turn ever
+taken. The transcript panel says so explicitly rather than rendering a
+misleading 0ms. Filling them means timing in `tutor.py` / `scoped_turn.py`.
+
 ## What is missing
 
 **Revenue and subscriptions.** There is no billing table anywhere in this repo

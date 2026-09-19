@@ -23,6 +23,7 @@ The `migrations/` directory contains all PostgreSQL database DDL migration scrip
 | `0050_admin_exclude_internal.sql` | `admin_excluded_users` | Keeps founder/test accounts out of the aggregates (they were 99% of sessions, 100% of doubts). All `admin_*` functions gain `p_include_internal boolean default false`. **Drops and recreates the functions** — the re-grant block at the foot is mandatory, not decorative. |
 | `0051_admin_cost_kinds.sql` | `llm_service_kinds` | Splits LLM spend into student-serving / content authoring / offline pipeline. `cost_per_active_user` now divides **student spend only** — it was dividing lesson authoring and `quality_gate.py` runs by the student count. Unknown services default to `unclassified`, never `student`. |
 | `0053_admin_delete_user.sql` | `admin_deleted_users`, `admin_user_audit` | Soft-delete a student from /admin: hidden from every number **and banned from signing in** (`auth.users.banned_until`). Reversible — nothing is dropped. Append-only audit of who deleted whom and why. |
+| `0054_admin_voice_and_transcripts.sql` | `vendor_prices`, `admin_session()` | Rumik TTS spend on the Costs tab, computed from `drona_turns.rumik_chars` (already 100% populated). Price lives in `vendor_prices` and ships **NULL** — usage shows, money does not, until you set it. Also a per-lesson transcript: `utterance` + `raw_response.speech` were always recorded and never displayed. |
 
 > [!WARNING]
 > **`0012` reconciles a pre-existing `doubts` stub.** The table already existed

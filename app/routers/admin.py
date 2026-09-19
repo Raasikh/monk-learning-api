@@ -20,6 +20,7 @@ Shape of the thing:
     GET  /admin/api/users/{id}   one student in full
     POST /admin/api/users/{id}/delete    soft-delete + ban sign-in
     POST /admin/api/users/{id}/restore   undo that
+    GET  /admin/api/sessions/{id}        one lesson, turn by turn
 
 Every aggregate route takes `include_internal` (default false), which decides
 whether accounts on `admin_excluded_users` — founders, test rigs — are counted.
@@ -216,6 +217,25 @@ async def users(
         {"p_q": q, "p_limit": limit, "p_offset": offset, "p_sort": sort,
          "p_include_internal": include_internal},
     )
+
+
+@router.get("/api/sessions/{session_id}")
+async def session_detail(
+    session_id: str,
+    admin: AdminIdentity = Depends(require_admin),
+):
+    """The transcript of one classroom session.
+
+    Verbatim speech from a child's lesson, so it lives behind the same 404
+    gate as everything else and behind the SQL grant under that. Nothing is
+    redacted on the way out — an admin reading a transcript is the point —
+    but note that this is the one endpoint whose response is worth treating as
+    sensitive if you ever log or forward it.
+    """
+    data = await _rpc("admin_session", {"p_session_id": session_id})
+    if not data:
+        raise HTTPException(status_code=404, detail="No such session")
+    return data
 
 
 @router.get("/api/users/{user_id}")
