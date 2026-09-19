@@ -27,6 +27,7 @@ The `migrations/` directory contains all PostgreSQL database DDL migration scrip
 | `0055_admin_costs_daily_one_pass.sql` | `admin_settings` | **Fixes a live 500**: `admin_costs` timed out past 30 days because its daily series ran a correlated subquery per day per measure over 82k `llm_calls` rows. Now one grouped pass. Also adds `inr_per_usd = 95`, so INR-billed vendors convert into the USD totals from one editable row. |
 | `0056_admin_user_cost_and_latency.sql` | replaces `admin_user` | Per-student cost (LLM / TTS / STT) and latency on the profile. STT reports `recorded: false` and LLM carries an attribution caveat, so a partial total cannot pass as a complete one. |
 | `0057_admin_session_turn_latency.sql` | replaces `admin_session` | Reports the turn timings `tutor.py` and `scoped_turn.py` now write. `timed_turns` distinguishes a lesson with no timings from one that was instant. |
+| `0058_snap_stage_timings.sql` | `doubts.timings` jsonb, `admin_snap_latency()` | Persists the snap stage breakdown app/snap.py has computed and logged all along — ocr / structure / transcribe / diagram / options / solve. Answers *why* photo-to-answer p95 is 60–110s, which `latency_ms` alone never could. |
 
 > [!WARNING]
 > **`0012` reconciles a pre-existing `doubts` stub.** The table already existed

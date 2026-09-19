@@ -987,7 +987,10 @@ async function renderOverview() {
 /* ── Learning ──────────────────────────────────────────────────────────── */
 async function renderLearning() {
   const root = $('#tab-learning');
-  const f = await api(`/admin/api/features?${qs()}`);
+  const [f, snap] = await Promise.all([
+    api(`/admin/api/features?${qs()}`),
+    api(`/admin/api/snap-latency?${qs()}`),
+  ]);
   const t = f.totals;
 
   const breakdown = (obj) => Object.entries(obj || {})
@@ -1020,6 +1023,24 @@ async function renderLearning() {
     </div>
 
     <div class="card">
+      <h2>Where the snap wait goes</h2>
+      <div class="sub">
+        Photo to answer, split into the stages that make it up.
+        ${snap.doubts_timed === 0
+          ? `<b>No doubts timed yet</b> — stage timings started recording on 2026-09-19;
+             the ${num(snap.doubts)} doubts in this window predate it.`
+          : `${num(snap.doubts_timed)} of ${num(snap.doubts)} doubts in this window have a
+             breakdown. ${esc(snap.note)}.`}
+      </div>
+      ${snap.overall && snap.overall.n ? `<div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(132px,1fr))">
+        ${tile('Median', num(snap.overall.p50) + 'ms', `${num(snap.overall.n)} doubts`)}
+        ${tile('p95', num(snap.overall.p95) + 'ms', 'slowest 1 in 20')}
+        ${tile('Worst', num(snap.overall.worst) + 'ms', 'in this window')}
+      </div>` : ''}
+      <div id="c-snap"></div>
+    </div>
+
+    <div class="card">
       <h2>Where sessions end up</h2>
       <div class="sub">
         The phase a session was last in. Anything that isn’t <code>complete</code> is a
@@ -1042,6 +1063,15 @@ async function renderLearning() {
   rankedBars($('#c-lang'),  breakdown(f.drona_by_language), { color: css('--series-2') });
   rankedBars($('#c-phase'), breakdown(f.drona_by_phase).map(r => ({ ...r, label: human(r.label) })),
              { color: css('--series-2') });
+
+  // Ranked by p50: the top bar is where to look first. latency_ms is dropped —
+  // it is the total, and leaving it in would dwarf every stage it contains.
+  const stages = (snap.by_stage || []).filter(x => x.stage !== 'latency_ms');
+  rankedBars($('#c-snap'), stages.map(x => ({
+    label: human(x.stage.replace(/_ms$/, '')),
+    value: x.p50,
+    note: `p95 ${num(x.p95)}ms${x.share_of_median_pct !== null ? ` · ${x.share_of_median_pct}% of median` : ''}`,
+  })), { fmt: (v) => num(v) + 'ms', color: css('--series-3') });
 }
 
 /* ── Costs ─────────────────────────────────────────────────────────────── */

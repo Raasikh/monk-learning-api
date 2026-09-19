@@ -4653,6 +4653,10 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         "ocr_ms": read.get("ocr_ms", 0),
         "structure_ms": read.get("structure_ms", 0),
         "diagram_ms": diagram_ms,
+        # Computed for the breakdown log ever since that log was written, and
+        # never yielded — so the caller could not persist the one line that
+        # says where the student's wait actually went.
+        "options_ms": options_ms,
         "solve_ms": solve_span_ms,
         "latency_ms": latency_ms,
         "usage": {"transcribe": tx_usage, "solve": sv_usage},
@@ -4927,6 +4931,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
         "ocr_ms": read.get("ocr_ms", 0),
         "structure_ms": read.get("structure_ms", 0),
         "diagram_ms": diagram_ms,
+        "options_ms": options_ms,
         "solve_ms": solve_span_ms,
         "latency_ms": latency_ms,
         "usage": {"transcribe": tx_usage, "solve": sv_usage},

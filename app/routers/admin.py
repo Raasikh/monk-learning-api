@@ -21,6 +21,7 @@ Shape of the thing:
     POST /admin/api/users/{id}/delete    soft-delete + ban sign-in
     POST /admin/api/users/{id}/restore   undo that
     GET  /admin/api/sessions/{id}        one lesson, turn by turn
+    GET  /admin/api/snap-latency         where the snap wait goes, by stage
 
 Every aggregate route takes `include_internal` (default false), which decides
 whether accounts on `admin_excluded_users` — founders, test rigs — are counted.
@@ -217,6 +218,17 @@ async def users(
         {"p_q": q, "p_limit": limit, "p_offset": offset, "p_sort": sort,
          "p_include_internal": include_internal},
     )
+
+
+@router.get("/api/snap-latency")
+async def snap_latency(
+    days: int = Query(30, ge=_MIN_DAYS, le=_MAX_DAYS),
+    include_internal: bool = Query(False),
+    admin: AdminIdentity = Depends(require_admin),
+):
+    """Photo-to-answer, broken into the stages that make it up."""
+    return await _rpc("admin_snap_latency",
+                      {"p_days": _days(days), "p_include_internal": include_internal})
 
 
 @router.get("/api/sessions/{session_id}")

@@ -265,6 +265,28 @@ unattributed on purpose, since a lesson is authored once for everyone. Most of
 what remains unattributed is content authoring, which is exactly the spend that
 should *not* belong to a student.
 
+## Where the snap wait goes
+
+`doubts.latency_ms` records photo-to-answer and says p95 is 60–110 seconds. It
+could never say *why*. `doubts.timings` (migration 0058) holds the stage
+breakdown — ocr, structure, transcribe, diagram, options, solve, db_insert —
+which `app/snap.py` has computed for the `[SNAP BREAKDOWN]` log line all along
+and then discarded.
+
+A jsonb column rather than six more, because stages change with the pipeline
+and a schema migration per stage is how a breakdown stops being maintained. **A
+stage that was not measured is absent, never zero.**
+
+The streamed path writes rows as each answer lands, which is before the summary
+carrying diagram/options/solve exists — so the insert stores what is known and
+one UPDATE after the last answer settles up, off the student's path and wrapped
+so telemetry can never fail a solved submission.
+
+Shown on the **Learning** tab, ranked by median with each stage's share of the
+median total. Those shares will not sum to 100: a median is not additive and
+solves run concurrently across questions. `doubts_timed` vs `doubts` separates
+instrumented submissions from ones that predate 2026-09-19.
+
 ## Currency
 
 Everything the dashboard reports as money is **USD**, converted at

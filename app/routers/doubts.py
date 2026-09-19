@@ -555,6 +555,7 @@ async def snap_doubt(
             "solver_model": result["solver_model"],
             "transcribe_ms": result["transcribe_ms"],
             "latency_ms": result["latency_ms"],
+            "timings": _timings(result),
         })
 
     try:
@@ -703,6 +704,28 @@ def _row_from_question(question: Dict[str, Any], user_id: str, submission_id: st
     }
 
 
+def _timings(src: dict, *, insert_ms: int | None = None) -> dict:
+    """The stage breakdown, as one jsonb column.
+
+    Every one of these numbers was already being computed — they have been in
+    the [SNAP BREAKDOWN] log line since it was written — and then thrown away.
+    Persisting them is what turns "the p95 is 103 seconds" into "the p95 is 103
+    seconds and 70 of them are the solve".
+
+    A jsonb column rather than six more on `doubts`: stages come and go with
+    the pipeline, and a schema change per stage is how a breakdown stops being
+    maintained. Missing keys stay missing rather than becoming zero — an
+    unmeasured stage must not read as an instant one.
+    """
+    out = {k: src[k] for k in
+           ("ocr_ms", "structure_ms", "transcribe_ms", "diagram_ms",
+            "options_ms", "solve_ms", "latency_ms")
+           if src.get(k) is not None}
+    if insert_ms is not None:
+        out["db_insert_ms"] = insert_ms
+    return out or None
+
+
 @router.post("/stream")
 async def snap_doubt_stream(
     file: UploadFile = File(..., description="Photo of up to 5 questions"),
@@ -792,6 +815,11 @@ async def snap_doubt_stream(
                 elif kind == "question":
                     row = _row_from_question(item, user_id, submission_id, meta)
                     row["latency_ms"] = int((time.time() - started_at) * 1000)
+                    # What is known NOW. The stages after transcription —
+                    # diagram, options, solve — only arrive with the "summary"
+                    # event, which is emitted after every answer has already
+                    # been written. The settle-up below fills them in.
+                    row["timings"] = _timings({**meta, "latency_ms": row["latency_ms"]})
                     remedy = row.pop("_remedy")
                     # The DB write is on the path between the answer existing
                     # and the student seeing it, so it is timed too — a slow
@@ -829,6 +857,26 @@ async def snap_doubt_stream(
                     })
                 elif kind == "summary":
                     meta.update(item)
+                    # One write, after the student already has every answer, so
+                    # it costs them nothing. Without it the streamed path would
+                    # only ever record transcription — the half of the wait
+                    # that is not the problem.
+                    full = _timings(meta)
+                    if full:
+                        try:
+                            # Called straight, not through to_thread: this
+                            # generator is SYNCHRONOUS and Starlette already
+                            # runs it on a threadpool (see the note on
+                            # solve_snapped_image above). `await` here is a
+                            # SyntaxError, and one ast.parse will not catch —
+                            # only compile() does.
+                            supabase.table("doubts") \
+                                .update({"timings": full}) \
+                                .eq("submission_id", submission_id).execute()
+                        except Exception as t_err:
+                            # Never fail a solved submission over telemetry.
+                            logger.warning("[SNAP] doubt=%s timings update failed: %s",
+                                           submission_id[:8], t_err)
         except SnapError as err:
             # Nothing could be read at all: record it and say which stage failed.
             student_fixable = err.remedy == REMEDY_RETAKE
