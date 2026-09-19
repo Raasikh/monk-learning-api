@@ -10,6 +10,7 @@ import requests
 from typing import AsyncGenerator, Callable, Dict, List, Optional, Tuple, Any
 import websockets
 from app.db import supabase, aexec
+from app import redis_store
 
 logger = logging.getLogger("drona.voice_proxy")
 
@@ -1512,6 +1513,21 @@ class RumikConnectionPool:
                 logger.error(f"❌ [RUMIK POOL EXHAUSTION] Timeout 3.0s waiting for connection slot! Active concurrent slots: {concurrent_now}/{self.max_slots}")
             return None, True
 
+        # The GLOBAL gate. The semaphore above counts THIS process only; the
+        # moment there are two workers it stops protecting the provider
+        # account. Whatever remains of the 3s budget is spent here, and a
+        # global miss walks the same exhaustion path as a local one — the
+        # student hears a filler, never a crash.
+        global_lease = await redis_store.rumik_gate_acquire(
+            timeout_s=max(0.2, 3.0 - (time.time() - t0)))
+        if global_lease is None:
+            self.semaphore.release()
+            async with self.lock:
+                self.pool_exhaustion_count += 1
+            logger.error(f"❌ [RUMIK GLOBAL EXHAUSTION] All "
+                         f"{redis_store.RUMIK_GLOBAL_SLOTS} account-wide slots busy")
+            return None, True
+
         wait_ms = round((time.time() - t0) * 1000, 2)
         async with self.lock:
             self.acquisition_wait_times.append(wait_ms)
@@ -1520,6 +1536,7 @@ class RumikConnectionPool:
         ws = await self._open_connection_with_jitter(voice_preset, model)
         if ws is None:
             self.semaphore.release()
+            await redis_store.rumik_gate_release(global_lease)
             return None, True
 
         lease = RumikTurnLease(
@@ -1529,6 +1546,9 @@ class RumikConnectionPool:
             voice_preset=voice_preset,
             model=model
         )
+        # Carried on the lease so release() can hand the account-wide slot
+        # back no matter which worker does the releasing.
+        lease.global_lease = global_lease
 
         async with self.lock:
             self.active_leases[session_id] = lease
@@ -1600,6 +1620,8 @@ class RumikConnectionPool:
                 except Exception:
                     pass
                 self.semaphore.release()
+                await redis_store.rumik_gate_release(
+                    getattr(lease, "global_lease", None))
                 concurrent_now = len(self.active_leases)
                 logger.info(f"🔓 [RUMIK POOL RELEASE] Released lease for session '{session_id[:8]}' after {dur:.2f}s. Concurrent slots: {concurrent_now}/{self.max_slots}")
 

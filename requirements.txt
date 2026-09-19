@@ -17,3 +17,5 @@ boto3>=1.34.0
 # app/image_prep.py. Pillow only: the row/column profiling that would normally
 # want numpy is done by resizing the mask to a 1px strip.
 Pillow>=10.0.0
+redis>=5.0
+fakeredis>=2.23

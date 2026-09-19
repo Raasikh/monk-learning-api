@@ -2,17 +2,20 @@
 builder = "NIXPACKS"
 
 [deploy]
-# Deliberately ONE worker. --workers N looks like free concurrency and is not:
-# ACTIVE_SESSION_CONNECTIONS (app/drona/live_session_ws.py) is an in-process
-# dict, and it is what retires a session's previous socket when a student
-# reconnects. Across two workers a reconnect can land on the process that has
-# never seen the old connection, so nothing retires it and the student hears
-# two lessons at once — the exact bug the takeover logic was written to fix.
-# Raising this needs that dedupe (and the platform-metrics sampler) moved to a
-# shared store first. Concurrency comes from sync `def` handlers on Starlette's
-# threadpool instead; the blocking work in async handlers is wrapped in
-# asyncio.to_thread so the loop itself stays free.
-startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+# Workers come from WEB_CONCURRENCY (default 1). The three pieces of state
+# that pinned this to ONE worker now live in Redis (app/redis_store.py):
+#   * session takeover — an epoch per session plus pub/sub, so a reconnect
+#     retires the old socket whichever worker holds it;
+#   * the Rumik gate — account-wide synthesis slots as a self-healing sorted
+#     set, because a per-process semaphore stops protecting the provider the
+#     moment there are two processes (follow-up sockets count against it too);
+#   * the platform-metrics sampler — per-worker samples, one leader writes
+#     the summed row.
+# With REDIS_URL unset everything degrades to the old in-process behaviour,
+# which is why the default stays 1: raise WEB_CONCURRENCY only where Redis
+# is attached. Blocking work in async handlers stays wrapped in
+# asyncio.to_thread so each worker's loop stays free.
+startCommand = "sh -c 'uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers ${WEB_CONCURRENCY:-1}'"
 healthcheckPath = "/health"
 healthcheckTimeout = 100
 restartPolicyType = "ON_FAILURE"

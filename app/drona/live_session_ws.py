@@ -9,6 +9,7 @@ import jwt
 from typing import Any, Dict, List, Optional, Tuple
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.db import supabase, aexec
+from app import redis_store
 from app.auth import decode_supabase_jwt
 from app.drona.tutor import process_tutor_turn_stream
 from app.drona.practice_explain import process_practice_explain_turn_stream
@@ -199,6 +200,26 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
     state = LiveSessionState(session_id, user_id)
     conn_record: Dict[str, Any] = {"state": state, "abort": None}
     ACTIVE_SESSION_CONNECTIONS[session_id] = conn_record
+
+    # Cross-worker takeover. The retire above only sees THIS process; the
+    # epoch bump publishes to whichever worker holds the previous socket,
+    # and the watcher below is this connection's own ear for the same event.
+    # With no Redis configured both are None and the in-process dict remains
+    # the whole story, exactly as before.
+    takeover_watch: Optional[asyncio.Task] = None
+    my_epoch = await redis_store.bump_session_epoch(session_id)
+    if my_epoch is not None:
+        async def _retired_from_another_worker():
+            state.is_active = False
+            prev_abort_cb = conn_record.get("abort")
+            if prev_abort_cb is not None:
+                try:
+                    await prev_abort_cb("session_takeover")
+                except Exception as err:
+                    logger.warning(f"Cross-worker takeover abort failed: {err}")
+
+        takeover_watch = asyncio.create_task(redis_store.watch_session_takeover(
+            session_id, my_epoch, _retired_from_another_worker))
     state.current_segment = session_data.get('current_segment') or 1
     state.current_phase = session_data.get('phase')
     skip_tts_flag = websocket.query_params.get("skip_tts") == "1"
@@ -1237,6 +1258,8 @@ async def drona_live_session_ws(websocket: WebSocket, session_id: str):
         superseded = ACTIVE_SESSION_CONNECTIONS.get(session_id) is not conn_record
         if not superseded:
             ACTIVE_SESSION_CONNECTIONS.pop(session_id, None)
+        if takeover_watch is not None and not takeover_watch.done():
+            takeover_watch.cancel()
         stt_task.cancel()
         stt_proxy.close()
         # Only stt_task was ever cancelled here — any turn still generating

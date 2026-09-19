@@ -193,16 +193,32 @@ async def platform_metrics_sampler_loop():
                 p95_idx = min(int(len(recent_waits_sorted) * 0.95), len(recent_waits_sorted) - 1)
                 p95_wait = int(recent_waits_sorted[p95_idx])
 
-                # Threaded: this sampler runs every 30s for the life of the
-                # process, and a blocking insert here stalls the event loop —
-                # and therefore every live class — to write a metrics row.
-                await aexec(lambda: supabase.table("drona_platform_metrics").insert([{
+                fields = {
                     "active_sessions": live_sessions,
                     "rumik_connections_open": open_conns,
                     "rumik_requests_last_60s": sends_60s,
                     "sarvam_requests_last_60s": stt_60s,
-                    "p95_lease_acquisition_ms": p95_wait
-                }]).execute())
+                    "p95_lease_acquisition_ms": p95_wait,
+                }
+
+                # Multi-worker: each worker reports its own 30s sample, ONE
+                # worker holds the leader lock and writes the summed row —
+                # otherwise N workers write N partial rows and every column
+                # stops meaning what its name says. Without Redis this worker
+                # is the only one, and it writes its own numbers as ever.
+                from app import redis_store
+                row = fields
+                if await redis_store.metrics_report(fields):
+                    total = await redis_store.metrics_aggregate_if_leader()
+                    if total is None:
+                        continue  # another worker is the leader this cycle
+                    row = {k: total.get(k, fields[k]) for k in fields}
+
+                # Threaded: this sampler runs every 30s for the life of the
+                # process, and a blocking insert here stalls the event loop —
+                # and therefore every live class — to write a metrics row.
+                await aexec(lambda: supabase.table("drona_platform_metrics")
+                            .insert([row]).execute())
 
                 # Log summary ONLY once every 20 samples (10 minutes)
                 if sample_counter % 20 == 0:

@@ -13,6 +13,8 @@ import asyncio
 import io
 import json
 import logging
+
+from app import redis_store
 import os
 import re
 import struct
@@ -69,14 +71,37 @@ def wav_from_pcm(pcm: bytes) -> bytes:
 FLUSH_BYTES = int(SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS * 0.25)
 
 
+# Which account-wide lease each open socket holds, so closing it — from any
+# of the several places sockets close — hands the slot back.
+_socket_leases: Dict[int, str] = {}
+
+
+async def _close_socket(ws) -> None:
+    lease = _socket_leases.pop(id(ws), None)
+    try:
+        await ws.close()
+    except Exception:
+        pass
+    await redis_store.rumik_gate_release(lease)
+
+
 async def _open_socket():
-    """A fresh Rumik socket, minted and connected."""
+    """A fresh Rumik socket, minted, connected, and counted.
+
+    Counted against the same account-wide gate as the classroom pool: these
+    sockets talk to the same Rumik account, and a follow-up rush that is
+    invisible to the pool eats the classes' headroom all the same.
+    """
     import websockets
     import requests
 
     key = os.getenv("RUMIK_API_KEY")
     if not key:
         raise RuntimeError("RUMIK_API_KEY is not set")
+
+    gate = await redis_store.rumik_gate_acquire(timeout_s=3.0)
+    if gate is None:
+        raise RuntimeError("Rumik account-wide connection slots are exhausted")
 
     def _mint():
         return requests.post(
@@ -87,13 +112,19 @@ async def _open_socket():
             timeout=8,
         ).json()
 
-    loop = asyncio.get_event_loop()
-    handshake = await loop.run_in_executor(None, _mint)
-    ws_url, token = handshake.get("ws_url"), handshake.get("token")
-    if not ws_url or not token:
-        raise RuntimeError("Rumik would not hand out a socket")
-    return await websockets.connect(f"{ws_url}?token={token}",
-                                    ping_interval=None, close_timeout=5.0)
+    try:
+        loop = asyncio.get_event_loop()
+        handshake = await loop.run_in_executor(None, _mint)
+        ws_url, token = handshake.get("ws_url"), handshake.get("token")
+        if not ws_url or not token:
+            raise RuntimeError("Rumik would not hand out a socket")
+        ws = await websockets.connect(f"{ws_url}?token={token}",
+                                      ping_interval=None, close_timeout=5.0)
+    except Exception:
+        await redis_store.rumik_gate_release(gate)
+        raise
+    _socket_leases[id(ws)] = gate
+    return ws
 
 
 # One socket, opened early and parked until there is something to say.
@@ -157,10 +188,7 @@ async def _take_socket():
             return ws
         # Past its welcome: Rumik drops an idle socket, and finding that out by
         # sending a sentence down it costs more than opening a new one.
-        try:
-            await ws.close()
-        except Exception:
-            pass
+        await _close_socket(ws)
     return await _open_socket()
 
 
@@ -198,10 +226,7 @@ async def _synthesize_stream(text: str, voice_preset: str):
                                    payload.get("message") or payload.get("code"))
                     break
     finally:
-        try:
-            await ws.close()
-        except Exception:
-            pass
+        await _close_socket(ws)
 
 
 async def _synthesize(text: str, voice_preset: str) -> bytes:
@@ -244,10 +269,7 @@ async def _synthesize(text: str, voice_preset: str) -> bytes:
             )
         return bytes(buf)
     finally:
-        try:
-            await ws.close()
-        except Exception:
-            pass
+        await _close_socket(ws)
 
 
 # Rumik stops at about 25 seconds of audio per request, whatever it was given.
