@@ -1319,12 +1319,35 @@ class SpeakRequest(BaseModel):
     text: str
 
 
-def _tutor_prefs_for(user_id: str) -> tuple:
-    """(tutor_voice, language) from the student's last session — ONE read.
+_TEACHER_TO_VOICE = {"drona": "male", "vedha": "female", "veda": "female"}
 
-    The two were fetched separately, which was two Supabase reads on the
-    critical path of every voice ask for one row's worth of data.
+
+def _tutor_prefs_for(user_id: str) -> tuple:
+    """(tutor_voice, language): the student's CHOICE, not an inference.
+
+    profiles.teacher_voice / teaching_language are the canonical persona —
+    the profile screen writes them on change, and every class start writes
+    through to them — so a follow-up matches whatever the student last chose
+    on ANY device. The last session is only the fallback for a profile row
+    from before those columns were kept current, and the measured drift this
+    replaces was real: a profile saying Drona while classes and follow-ups
+    ran Veda, because each surface trusted a different notebook.
     """
+    try:
+        prof = (
+            supabase.table("profiles")
+            .select("teacher_voice, teaching_language")
+            .eq("id", user_id)
+            .limit(1)
+            .execute()
+        )
+        if prof.data:
+            row = prof.data[0]
+            voice = _TEACHER_TO_VOICE.get((row.get("teacher_voice") or "").lower())
+            if voice:
+                return voice, (row.get("teaching_language") or DEFAULT_LANGUAGE)
+    except Exception as err:
+        logger.warning("Could not read profile persona for %s: %s", user_id[:8], err)
     try:
         res = (
             supabase.table("drona_sessions")

@@ -234,6 +234,66 @@ def check_topic_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_cur
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# The persona vocabulary bridge. profiles stores the teacher the way the app
+# names them ('drona'/'vedha'); sessions store the voice axis ('male'/
+# 'female'). Both spellings are accepted on the way in.
+_TEACHER_TO_VOICE = {"drona": "male", "vedha": "female", "veda": "female"}
+_VOICE_TO_TEACHER = {"male": "drona", "female": "vedha"}
+
+
+@router.get("/persona")
+def get_persona(user_id: str = Depends(get_current_user_id)):
+    """GET /drona/persona — the canonical teacher and language for this student.
+
+    The phone syncs its local preference FROM this on the profile screen, so
+    a choice made on one device follows the student to the next.
+    """
+    try:
+        rows = (supabase.table("profiles")
+                .select("teacher_voice, teaching_language")
+                .eq("id", user_id).limit(1).execute().data)
+    except Exception as err:
+        logger.warning(f"persona read failed for {user_id[:8]}: {err}")
+        rows = None
+    row = rows[0] if rows else {}
+    teacher = (row.get("teacher_voice") or "").lower()
+    if teacher not in _TEACHER_TO_VOICE:
+        teacher = ""
+    return {
+        "teacher": teacher or None,
+        "language": row.get("teaching_language") or None,
+        "voice": _TEACHER_TO_VOICE.get(teacher),
+    }
+
+
+@router.post("/persona")
+def set_persona(payload: Dict[str, Any], user_id: str = Depends(get_current_user_id)):
+    """POST /drona/persona — the student changed teacher or language.
+
+    Written to profiles, which is what live classes default from and what
+    Snap's follow-up reads — one notebook, whichever surface asks. Measured
+    drift before this existed: a profile saying Drona while classes and
+    follow-ups ran Veda, because the choice lived only in one device's local
+    storage.
+    """
+    updates: Dict[str, Any] = {}
+    teacher = str(payload.get("teacher") or "").lower()
+    if teacher in _TEACHER_TO_VOICE:
+        updates["teacher_voice"] = "drona" if teacher == "drona" else "vedha"
+    elif teacher in _VOICE_TO_TEACHER:
+        updates["teacher_voice"] = _VOICE_TO_TEACHER[teacher]
+    if payload.get("language"):
+        updates["teaching_language"] = normalize_language(payload["language"])
+    if not updates:
+        raise HTTPException(status_code=400, detail="Nothing to change.")
+    try:
+        supabase.table("profiles").update(updates).eq("id", user_id).execute()
+    except Exception as err:
+        logger.error(f"persona write failed for {user_id[:8]}: {err}")
+        raise HTTPException(status_code=503, detail="Could not save that just now.")
+    return {"ok": True, **updates}
+
+
 @router.post("/session/start")
 def start_session_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_current_user_id)):
     """POST /drona/session/start — initializes session and returns initial scoping speech."""
@@ -243,6 +303,19 @@ def start_session_endpoint(payload: Dict[str, Any], user_id: str = Depends(get_c
     # unknown `voice` would leave the tutor with no persona at all.
     language = normalize_language(payload.get("language"))
     voice = normalize_voice(payload.get("voice"))
+
+    # Starting a class IS the freshest statement of the student's choice, so
+    # it writes through to profiles — the canonical persona that follow-ups
+    # read. This is also what lets app builds from before /drona/persona
+    # existed converge: their first class start heals the profile row. Best
+    # effort, because a class must start even if the profile write cannot.
+    try:
+        supabase.table("profiles").update({
+            "teacher_voice": _VOICE_TO_TEACHER.get(voice, "drona"),
+            "teaching_language": language,
+        }).eq("id", user_id).execute()
+    except Exception as sync_err:
+        logger.warning(f"persona write-through failed for {user_id[:8]}: {sync_err}")
 
     valid_chap_id = None
     chapter_name = "this topic"
