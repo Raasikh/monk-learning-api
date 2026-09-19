@@ -39,10 +39,17 @@ class FakeQuery:
     def ilike(self, k, v): self.filters.append(("ilike", k, v)); return self
     def order(self, k, desc=False): self.filters.append(("order", k, desc)); return self
     def limit(self, n): self.filters.append(("limit", n)); return self
+    def range(self, lo, hi):
+        self.filters.append(("range", lo, hi)); self._window = (lo, hi); return self
 
     def execute(self):
         self.log.append((self.table, list(self.filters)))
-        return SimpleNamespace(data=self.rows(self.table, self.filters), count=None)
+        data = self.rows(self.table, self.filters)
+        window = getattr(self, "_window", None)
+        if window:
+            lo, hi = window
+            data = data[lo:hi + 1]
+        return SimpleNamespace(data=data, count=None)
 
 
 @pytest.fixture()
@@ -156,3 +163,97 @@ def test_the_share_is_deferred_not_paid_for_by_the_student(wired):
     for fn, args in tasks.added:
         fn(*args)
     assert client.keys("practice:pool:*"), "the deferred share never landed"
+
+
+def test_paging_gets_the_whole_pool_not_the_first_thousand(monkeypatch):
+    """PostgREST caps a response at 1000 rows and does not say so. There are
+    2,628-3,092 servable rows per subject, so a plain read left two thirds of
+    the bank unreachable — a question a student could never be served."""
+    import app.db as db
+    page_size = db.POSTGREST_PAGE
+    total = page_size * 2 + 137          # three pages, last one short
+    all_rows = [{"id": f"q{i:06d}", "chapter_id": CH11, "chapter_name": "U&M",
+                 "concept": "c", "question_type": "single_correct", "difficulty": 2,
+                 "target_exams": ["jee"], "discipline": None} for i in range(total)]
+    ranges = []
+
+    class Q:
+        def select(self, *_a, **_k): return self
+        def eq(self, *_a, **_k): return self
+        def is_(self, *_a, **_k): return self
+        def or_(self, *_a, **_k): return self
+        def ilike(self, *_a, **_k): return self
+        def order(self, *_a, **_k): return self
+        def range(self, lo, hi):
+            ranges.append((lo, hi)); self._slice = (lo, hi); return self
+        def execute(self):
+            lo, hi = self._slice
+            return SimpleNamespace(data=all_rows[lo:hi + 1], count=None)
+
+    monkeypatch.setattr(prac, "supabase", SimpleNamespace(table=lambda _t: Q()))
+    rows = prac._fetch_pool("physics", None)
+
+    assert len(rows) == total, f"got {len(rows)} of {total}"
+    assert len({r["id"] for r in rows}) == total, "paging repeated or skipped rows"
+    assert len(ranges) == 3, ranges
+
+
+def test_the_pool_read_is_ordered_or_paging_cannot_be_trusted(monkeypatch):
+    """`.range()` without an ORDER BY asks for 'rows 1000-1999' of an
+    unspecified order, so a different plan between pages can repeat or skip."""
+    ordered = []
+
+    class Q:
+        def select(self, *_a, **_k): return self
+        def eq(self, *_a, **_k): return self
+        def is_(self, *_a, **_k): return self
+        def or_(self, *_a, **_k): return self
+        def ilike(self, *_a, **_k): return self
+        def order(self, col, **_k): ordered.append(col); return self
+        def range(self, *_a): return self
+        def execute(self): return SimpleNamespace(data=[], count=None)
+
+    monkeypatch.setattr(prac, "supabase", SimpleNamespace(table=lambda _t: Q()))
+    prac._fetch_pool("physics", None)
+    assert ordered == ["id"], f"paged read ordered by {ordered!r}"
+
+
+def test_warming_fills_the_pools_with_no_request_involved(monkeypatch):
+    """A fill is ~2.3s now. No student should be the one to pay it."""
+    calls = []
+
+    class Q:
+        def select(self, *_a, **_k): return self
+        def eq(self, *_a, **_k): return self
+        def is_(self, *_a, **_k): return self
+        def or_(self, *_a, **_k): return self
+        def ilike(self, *_a, **_k): return self
+        def order(self, *_a, **_k): return self
+        def range(self, *_a): return self
+        def execute(self):
+            calls.append(1)
+            return SimpleNamespace(data=[{"id": "q1", "chapter_id": CH11,
+                                          "chapter_name": "U&M", "concept": "c",
+                                          "question_type": "single_correct",
+                                          "difficulty": 2, "target_exams": ["jee"],
+                                          "discipline": None}], count=None)
+
+    monkeypatch.setattr(prac, "supabase", SimpleNamespace(table=lambda _t: Q()))
+    client = fakeredis.FakeRedis(decode_responses=True)
+    store._reset_sync_for_tests(client)
+    prac.clear_candidate_cache()
+    try:
+        prac.warm_candidate_pools()
+        keys = client.keys("practice:pool:*")
+        assert len(keys) == 4, f"warmed {keys}"
+        # And a worker that never warmed finds them already there.
+        prac.clear_candidate_cache()
+        before = len(calls)
+        rows, tier, share = prac._cached_pool("physics", None)
+        assert tier == "redis", tier
+        assert len(calls) == before, "a warmed pool still went to Supabase"
+        assert share is None and rows
+    finally:
+        store._reset_sync_for_tests(None)
+        store._sync_checked = False
+        prac.clear_candidate_cache()

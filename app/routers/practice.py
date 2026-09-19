@@ -12,7 +12,7 @@ from fastapi import (APIRouter, BackgroundTasks, Depends, File, Form, HTTPExcept
                      UploadFile, status)
 from pydantic import BaseModel
 
-from app import redis_store
+from app import exam_scope, redis_store
 from app.auth import get_current_user_id
 from app.db import supabase, fetch_all_cached, POSTGREST_PAGE
 from app.drona.persona import normalize_language, normalize_voice, tutor_name
@@ -22,6 +22,131 @@ from app.progress_scoring import apply_answer_scoring, record_serve
 # doubts table, so a practice question can ask the same question of it.
 from app.routers.doubts import (_followup_response, _tutor_prefs_for,
                                 followup_voice_response, speak_stream_response)
+
+
+def _candidate_query(subject, discipline, chapter_id):
+    # `eq`, not `ilike`. Every one of the 15,408 rows in `questions` stores
+    # its subject in exactly the lowercase vocabulary exam_scope documents —
+    # verified against production, zero exceptions and zero NULLs — and
+    # `chosen_subject` is already in those terms. ilike on a text column
+    # cannot use a btree index; eq can, which is what the index added in
+    # migration 0052 is for.
+    q = (
+        supabase.table("questions")
+        .select("id, question_type, chapter_id, chapter_name, concept, "
+                "difficulty, target_exams, discipline")
+        .eq("subject", subject)
+        .is_("needs_manual", "null")
+        # NOT `.neq("source", ...)`. In SQL `NULL <> 'x'` is NULL, not true,
+        # so a plain neq silently drops every row whose `source` is unset --
+        # 9,035 of the bank's 15,408 rows, 59% of it.
+        .or_("source.is.null,source.neq.extracted_master_content")
+    )
+    if chapter_id:
+        q = q.eq("chapter_id", chapter_id)
+    # Botany/Zoology is a filter the database can apply. The Python loop
+    # below did it over every row that came back, which meant transferring
+    # the half of biology this session cannot use in order to discard it.
+    # Matching `ilike` here reproduces that loop's semantics exactly,
+    # including excluding a NULL discipline.
+    if subject == "biology" and discipline:
+        q = q.ilike("discipline", f"%{discipline}%")
+    return q
+
+def _fetch_pool(subject, discipline, chapter_id=None):
+    """EVERY servable row, not the first thousand.
+
+    PostgREST caps a response at 1000 rows and does not say that it did.
+    There are 2,628-3,092 servable rows per subject (counted against
+    production 2026-09-19), so a plain read handed selection about a third
+    of the bank and the other two thirds were unreachable — a question a
+    student could never be served, with nothing anywhere to say so.
+
+    Paging is what fixes it, and it only became affordable once the pool was
+    cached: these three round trips are paid when a pool is FILLED, roughly
+    once per subject per 600s across all workers, not on a student's tap.
+
+    `.order("id")` is load-bearing. Paging with .range() and no ORDER BY
+    asks the database for "rows 1000-1999" of an unspecified order, so a
+    different plan between pages can repeat rows or skip them. A stable,
+    unique key makes the window mean what it says.
+    """
+    rows: List[Dict[str, Any]] = []
+    offset = 0
+    while True:
+        page = (
+            _candidate_query(subject, discipline, chapter_id)
+            .order("id")
+            .range(offset, offset + POSTGREST_PAGE - 1)
+            .execute()
+            .data
+        ) or []
+        rows.extend(page)
+        if len(page) < POSTGREST_PAGE:
+            break
+        offset += POSTGREST_PAGE
+        if offset >= _CANDIDATE_MAX_ROWS:
+            # Not a silent truncation: a bank this size means the pool
+            # approach itself needs revisiting, and the log says so.
+            logger.warning(
+                "[PRACTICE NEXT] candidate pool for %s hit the %d-row ceiling "
+                "— selection is no longer seeing the whole bank",
+                subject, _CANDIDATE_MAX_ROWS,
+            )
+            break
+    return rows
+
+
+def _cached_pool(subject: str, discipline: Optional[str]):
+    """(rows, tier, rows_to_share) for an unfocused pool.
+
+    `tier` names who answered — local / redis / supabase — and is reported in
+    the per-question log line, so a slow call can be read rather than guessed
+    at. `rows_to_share` is non-None only on a Supabase fill, and is the caller's
+    cue to push it to Redis for the other workers; whether that happens inline
+    or after the response is the caller's business, not this function's.
+    """
+    key = f"{subject}|{discipline or ''}"
+    now = time.monotonic()
+
+    hit = _candidate_cache.get(key)
+    if hit and (now - hit[0]) < _CANDIDATE_TTL_S:
+        return hit[1], "local", None
+
+    shared = redis_store.cache_get_json(_pool_key(key))
+    if shared is not None:
+        _candidate_cache[key] = (now, shared)
+        return shared, "redis", None
+
+    rows = _fetch_pool(subject, discipline)
+    _candidate_cache[key] = (now, rows)
+    return rows, "supabase", rows
+
+
+def warm_candidate_pools() -> None:
+    """Fill every unfocused pool, so that no STUDENT ever pays for a cold one.
+
+    The pool stopped being truncated at 1000 rows, which made a fill three paged
+    round trips (~2.3s) instead of one. That is the right cost for correctness
+    and the wrong thing to charge to whoever happens to tap first — and with a
+    600s TTL and four workers, somebody was always going to be first.
+
+    Runs off any request path, at startup. Subjects are filled one at a time
+    rather than in parallel: this is not urgent work, and four workers booting
+    together should not each open four concurrent paged reads against Supabase.
+    Redis is checked before each fetch, so the workers that lose the race read
+    what the first one shared instead of re-fetching it.
+    """
+    for subject in exam_scope.subjects_for("both"):
+        try:
+            rows, tier, share = _cached_pool(subject, None)
+            if share is not None:
+                redis_store.cache_set_json(_pool_key(f"{subject}|"), share,
+                                           int(_CANDIDATE_TTL_S))
+            logger.info("[PRACTICE WARM] %s pool=%s rows=%d", subject, tier, len(rows))
+        except Exception as err:  # noqa: BLE001 — a cold pool is slow, not broken
+            logger.warning("[PRACTICE WARM] %s failed, will fill on demand: %s",
+                           subject, err)
 
 
 def resolve_display_concept(question_id: str, raw_concept: Optional[str]) -> Optional[str]:
@@ -163,14 +288,25 @@ QUALITY_RETRIES = 5
 # per-process cache helps least. Tier 2 is Redis, shared by every worker:
 #
 #   tier 1  this worker's dict   free
-#   tier 2  Redis                one round trip for 278KB
-#   tier 3  Supabase             ~800ms
+#   tier 2  Redis                one round trip for ~750KB
+#   tier 3  Supabase             ~2.3s, three paged round trips
+#
+# Tier 3 got more expensive when the pool stopped being truncated at 1000 rows,
+# which is precisely why no student should ever pay it: warm_candidate_pools()
+# fills all four at startup, off any request path.
 #
 # With REDIS_URL unset tier 2 is skipped silently and this behaves exactly as
 # the single-worker version did — the same degradation the rest of
 # app/redis_store.py promises.
 _CANDIDATE_TTL_S = float(os.getenv("CANDIDATE_CACHE_TTL_S", "600"))
 _candidate_cache: Dict[str, Tuple[float, List[Dict[str, Any]]]] = {}
+
+# A ceiling on the paged candidate read, so a runaway import cannot turn one
+# cache fill into an unbounded number of round trips. The largest subject is
+# ~3,100 servable rows today; 20,000 is room to grow several times over and
+# still a bound. Hitting it is logged, never silent — silence is the bug this
+# whole change exists to remove.
+_CANDIDATE_MAX_ROWS = int(os.getenv("CANDIDATE_MAX_ROWS", "20000"))
 
 
 def _pool_key(key: str) -> str:
@@ -391,35 +527,6 @@ def get_next_question(
             .execute()
         )
 
-    def _fetch_candidates():
-        # `eq`, not `ilike`. Every one of the 15,408 rows in `questions` stores
-        # its subject in exactly the lowercase vocabulary exam_scope documents —
-        # verified against production, zero exceptions and zero NULLs — and
-        # `chosen_subject` is already in those terms. ilike on a text column
-        # cannot use a btree index; eq can, which is what the index added in
-        # migration 0052 is for.
-        q = (
-            supabase.table("questions")
-            .select("id, question_type, chapter_id, chapter_name, concept, "
-                    "difficulty, target_exams, discipline")
-            .eq("subject", chosen_subject)
-            .is_("needs_manual", "null")
-            # NOT `.neq("source", ...)`. In SQL `NULL <> 'x'` is NULL, not true,
-            # so a plain neq silently drops every row whose `source` is unset --
-            # 9,035 of the bank's 15,408 rows, 59% of it.
-            .or_("source.is.null,source.neq.extracted_master_content")
-        )
-        if req.chapter_id:
-            q = q.eq("chapter_id", req.chapter_id)
-        # Botany/Zoology is a filter the database can apply. The Python loop
-        # below did it over every row that came back, which meant transferring
-        # the half of biology this session cannot use in order to discard it.
-        # Matching `ilike` here reproduces that loop's semantics exactly,
-        # including excluding a NULL discipline.
-        if chosen_subject == "biology" and target_discipline:
-            q = q.ilike("discipline", f"%{target_discipline}%")
-        return q.execute().data or []
-
     # Which tier answered, and what still needs sharing. Both are reported in
     # the log line below: this endpoint was shipped without a way to see inside
     # it, and the first production numbers were then unreadable — a slow call
@@ -436,38 +543,21 @@ def get_next_question(
             # Focused sessions read a few rows and are already cheap; caching
             # per chapter would grow the cache without bound.
             pool_tier = "focused"
-            return _fetch_candidates()
+            return _fetch_pool(chosen_subject, target_discipline, req.chapter_id)
         if _CANDIDATE_TTL_S <= 0:
             pool_tier = "off"
-            return _fetch_candidates()
+            return _fetch_pool(chosen_subject, target_discipline)
 
-        key = f"{chosen_subject}|{target_discipline or ''}"
-        now = time.monotonic()
-
-        # Tier 1, this worker's own copy: free.
-        hit = _candidate_cache.get(key)
-        if hit and (now - hit[0]) < _CANDIDATE_TTL_S:
-            pool_tier = "local"
-            return hit[1]
-
-        # Tier 2, the copy every worker shares. One Redis round trip for 278KB
-        # beats ~800ms to Supabase, and it is what stops four workers each
-        # paying that ~800ms separately for the same rows.
-        shared = redis_store.cache_get_json(_pool_key(key))
-        if shared is not None:
-            _candidate_cache[key] = (now, shared)
-            pool_tier = "redis"
-            return shared
-
-        rows = _fetch_candidates()
-        _candidate_cache[key] = (now, rows)
-        # Handed to a background task rather than written here. Serialising
-        # ~278KB and PUTting it are real work, and doing both before returning
-        # made a cold call slower than it had been with no cache at all — the
-        # student paid to warm a pool they were not going to read again. This
-        # worker already has its copy; the share is for the other three.
-        pool_tier = "supabase"
-        to_share, share_key = rows, _pool_key(key)
+        rows, pool_tier, share = _cached_pool(chosen_subject, target_discipline)
+        if share is not None:
+            # Handed to a background task rather than written here. Serialising
+            # ~750KB and PUTting it are real work, and doing both before
+            # returning made a cold call slower than it had been with no cache
+            # at all — the student paid to warm a pool they were not going to
+            # read again. This worker already has its copy; the share is for the
+            # other three.
+            to_share = share
+            share_key = _pool_key(f"{chosen_subject}|{target_discipline or ''}")
         return rows
 
     # Two reads, one wave. The attempt history and the candidate pool have

@@ -159,6 +159,16 @@ async def verify_models_on_startup():
 
     asyncio.create_task(platform_metrics_sampler_loop())
 
+    # Fill the practice candidate pools before a student asks for one.
+    #
+    # The pool is no longer truncated at PostgREST's 1000 rows, so a fill is
+    # three paged round trips (~2.3s) rather than one — the right price for
+    # selection seeing the whole bank, and the wrong thing to charge to whoever
+    # taps first. create_task, not await: startup must not block on it, because
+    # the healthcheck is what decides whether this deploy is allowed to live.
+    from app.routers.practice import warm_candidate_pools
+    asyncio.create_task(asyncio.to_thread(warm_candidate_pools))
+
 
 async def platform_metrics_sampler_loop():
     """Samples real provider load every 30s.

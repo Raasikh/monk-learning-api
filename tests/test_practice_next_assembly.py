@@ -62,9 +62,21 @@ class FakeQuery:
         self.filters.append(("limit", n))
         return self
 
+    def range(self, lo, hi):
+        # The candidate pool is read in pages now. Slicing here is what lets a
+        # short final page end the loop instead of spinning forever.
+        self.filters.append(("range", lo, hi))
+        self._window = (lo, hi)
+        return self
+
     def execute(self):
         self.log.append((self.table, list(self.filters)))
-        return SimpleNamespace(data=self.rows(self.table, self.filters), count=None)
+        data = self.rows(self.table, self.filters)
+        window = getattr(self, "_window", None)
+        if window:
+            lo, hi = window
+            data = data[lo:hi + 1]
+        return SimpleNamespace(data=data, count=None)
 
 
 @pytest.fixture
