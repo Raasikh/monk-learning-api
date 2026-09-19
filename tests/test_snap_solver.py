@@ -291,7 +291,7 @@ def test_questions_solve_concurrently(monkeypatch):
     })
 
     def fake_solve_question(question, doubt_id="-", usage_acc=None,
-                            on_event=None, figure=None):
+                            on_event=None, figure=None, **_kw):
         n = question["n"]
         entered[n].set()
         assert releases[n].wait(timeout=5), f"q{n} was never released"
@@ -712,7 +712,7 @@ def test_answers_arrive_as_they_finish_not_in_page_order(monkeypatch):
         "note": None, "ocr_confidence": 0.99, "ocr_ms": 0, "structure_ms": 0})
 
     def fake_solve(q, doubt_id="-", usage_acc=None, on_event=None,
-                   figure=None):
+                   figure=None, **_kw):
         time.sleep(delays[q["n"]])
         return {"answer": f"a{q['n']}", "option_labels": [],
                 "steps": [{"n": 1, "text": "x"}], "key_idea": None,
@@ -747,7 +747,7 @@ def test_every_question_is_delivered_exactly_once(monkeypatch):
         ], "note": None, "ocr_confidence": 0.99, "ocr_ms": 0, "structure_ms": 0})
     monkeypatch.setattr(snap, "solve_question",
                         lambda q, doubt_id="-", usage_acc=None, on_event=None,
-                               figure=None: {
+                               figure=None, **_kw: {
                             "answer": "a", "option_labels": [],
                             "steps": [{"n": 1, "text": "x"}], "key_idea": None,
                             "subject": None, "topic": None})
@@ -1170,7 +1170,7 @@ def test_background_question_already_done_skips_replay(monkeypatch):
     q2_done = threading.Event()
 
     def fake_solve_question(question, doubt_id="-", usage_acc=None,
-                            on_event=None, figure=None):
+                            on_event=None, figure=None, **_kw):
         n = question["n"]
         if n == 1:
             if on_event:

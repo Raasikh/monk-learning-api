@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monk · Admin</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<style>
+/* ───────────────────────────────────────────────────────────────────────────
+   Tokens. Light values on bare :root; dark redefined under BOTH the OS media
+   query and an explicit [data-theme="dark"] stamp, so the toggle wins either
+   way round. Series colours are the validated categorical slots 1-4 — the
+   ordering is the colour-blindness safety mechanism, so don't reshuffle them.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  color-scheme: light;
+  --plane:        #f9f9f7;
+  --surface:      #fcfcfb;
+  --ink:          #0b0b0b;
+  --ink-2:        #52514e;
+  --ink-muted:    #898781;
+  --grid:         #e1e0d9;
+  --axis:         #c3c2b7;
+  --hairline:     rgba(11,11,11,0.10);
+  --series-1:     #2a78d6;   /* blue   — signups, primary magnitude */
+  --series-2:     #eb6834;   /* orange — classroom */
+  --series-3:     #1baf7a;   /* aqua   — doubts */
+  --series-4:     #eda100;   /* yellow — notes */
+  --good:         #0ca30c;
+  --critical:     #d03b3b;
+  --success-text: #006300;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --plane:    #0d0d0d;
+    --surface:  #1a1a19;
+    --ink:      #ffffff;
+    --ink-2:    #c3c2b7;
+    --grid:     #2c2c2a;
+    --axis:     #383835;
+    --hairline: rgba(255,255,255,0.10);
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --success-text: #0ca30c;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --plane:    #0d0d0d;
+  --surface:  #1a1a19;
+  --ink:      #ffffff;
+  --ink-2:    #c3c2b7;
+  --grid:     #2c2c2a;
+  --axis:     #383835;
+  --hairline: rgba(255,255,255,0.10);
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --success-text: #0ca30c;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--plane);
+  color: var(--ink);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--series-1); }
+h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.01em; }
+
+/* ── Layout ───────────────────────────────────────────────────────────── */
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px 64px; }
+header.top {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--plane);
+  border-bottom: 1px solid var(--hairline);
+}
+.top-inner {
+  max-width: 1180px; margin: 0 auto; padding: 12px 20px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.brand { font-weight: 650; letter-spacing: -0.02em; font-size: 15px; }
+.brand span { color: var(--ink-muted); font-weight: 450; }
+.spacer { flex: 1; }
+nav.tabs { display: flex; gap: 2px; padding: 12px 0 0; flex-wrap: wrap; }
+nav.tabs button {
+  background: none; border: 0; border-bottom: 2px solid transparent;
+  padding: 8px 14px; font: inherit; color: var(--ink-2); cursor: pointer;
+  border-radius: 6px 6px 0 0;
+}
+nav.tabs button:hover { background: var(--surface); color: var(--ink); }
+nav.tabs button[aria-selected="true"] {
+  color: var(--ink); font-weight: 600; border-bottom-color: var(--series-1);
+}
+
+/* ── Controls ─────────────────────────────────────────────────────────── */
+select, input[type="text"], input[type="email"], input[type="tel"] {
+  font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--hairline); border-radius: 8px; padding: 7px 10px;
+}
+input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 2px solid var(--series-1); outline-offset: 1px;
+}
+button.btn {
+  font: inherit; font-weight: 550; cursor: pointer;
+  background: var(--series-1); color: #fff; border: 0;
+  border-radius: 8px; padding: 9px 16px;
+}
+button.btn:disabled { opacity: .5; cursor: default; }
+button.ghost {
+  background: var(--surface); color: var(--ink-2);
+  border: 1px solid var(--hairline); border-radius: 8px;
+  padding: 7px 12px; font: inherit; cursor: pointer;
+}
+button.ghost:hover { color: var(--ink); }
+
+/* ── Cards, tiles ─────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface); border: 1px solid var(--hairline);
+  border-radius: 12px; padding: 18px 20px; margin-top: 16px;
+}
+.card > h2 { font-size: 14px; }
+.card .sub { color: var(--ink-muted); font-size: 12.5px; margin-top: 3px; }
+.tiles { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 16px; }
+.tile {
+  background: var(--surface); border: 1px solid var(--hairline);
+  border-radius: 12px; padding: 14px 16px;
+  display: flex; flex-direction: column;
+}
+/* Two lines are reserved for the label whether or not it needs them, so a
+   row of tiles keeps one baseline for its numbers instead of stepping. */
+.tile .k {
+  color: var(--ink-muted); font-size: 11.5px; text-transform: uppercase;
+  letter-spacing: .04em; line-height: 1.35; min-height: 2.7em;
+}
+.tile .v { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.tile .n { color: var(--ink-2); font-size: 12px; margin-top: 2px; }
+.tiles.wide { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+code {
+  font: 12px ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+  padding: 1px 5px; border-radius: 5px;
+}
+.grid2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
+.grid4 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+/* ── Tables ───────────────────────────────────────────────────────────── */
+.tablewrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; white-space: nowrap; }
+th {
+  color: var(--ink-muted); font-weight: 550; font-size: 11.5px;
+  text-transform: uppercase; letter-spacing: .04em;
+  border-bottom: 1px solid var(--grid);
+}
+td { border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+tbody tr:hover td { background: color-mix(in srgb, var(--series-1) 6%, transparent); }
+tr.clickable { cursor: pointer; }
+td.num, th.num { text-align: right; }
+.pill {
+  display: inline-block; padding: 1px 8px; border-radius: 99px;
+  font-size: 11.5px; border: 1px solid var(--hairline); color: var(--ink-2);
+}
+.muted { color: var(--ink-muted); }
+.toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; color: var(--ink-2); cursor: pointer; user-select: none;
+}
+.toggle input { accent-color: var(--series-1); margin: 0; cursor: pointer; }
+/* A dashboard showing padded numbers must say so on its face, not in a
+   tooltip — a screenshot travels without its settings. */
+.notice {
+  background: color-mix(in srgb, var(--series-4) 16%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--series-4) 45%, transparent);
+  border-radius: 10px; padding: 9px 13px; margin-top: 16px; font-size: 12.5px;
+}
+.pill.internal {
+  border-color: color-mix(in srgb, var(--series-4) 55%, transparent);
+  background: color-mix(in srgb, var(--series-4) 16%, transparent);
+}
+
+/* ── Chart chrome ─────────────────────────────────────────────────────── */
+.chart { position: relative; margin-top: 10px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 12.5px; color: var(--ink-2); }
+.legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 6px; vertical-align: -1px; }
+.tip {
+  position: fixed; pointer-events: none; z-index: 60; opacity: 0;
+  transition: opacity .08s; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--hairline); border-radius: 8px;
+  padding: 7px 10px; font-size: 12.5px; box-shadow: 0 6px 24px rgba(0,0,0,.14);
+  font-variant-numeric: tabular-nums; max-width: 260px;
+}
+.tip b { font-weight: 600; }
+
+/* ── Sign-in ──────────────────────────────────────────────────────────── */
+.signin { max-width: 380px; margin: 14vh auto 0; padding: 0 20px; }
+.signin .card { margin-top: 20px; }
+.signin label { display: block; font-size: 12.5px; color: var(--ink-2); margin-bottom: 6px; }
+.signin input { width: 100%; }
+.signin .btn { width: 100%; margin-top: 14px; }
+.msg { margin-top: 12px; font-size: 13px; }
+.msg.err { color: var(--critical); }
+.msg.ok  { color: var(--success-text); }
+
+/* ── Drawer ───────────────────────────────────────────────────────────── */
+.scrim { position: fixed; inset: 0; background: rgba(0,0,0,.34); z-index: 40; }
+.drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(560px, 100%);
+  background: var(--plane); border-left: 1px solid var(--hairline);
+  z-index: 50; overflow-y: auto; padding: 20px 22px 60px;
+}
+.drawer .card { margin-top: 14px; }
+.drawer-head { display: flex; align-items: flex-start; gap: 12px; }
+.kv { display: grid; grid-template-columns: 130px 1fr; gap: 4px 12px; font-size: 13px; margin-top: 10px; }
+.kv dt { color: var(--ink-muted); }
+.kv dd { margin: 0; word-break: break-word; }
+
+.empty { color: var(--ink-muted); font-size: 13px; padding: 14px 0; }
+.banner {
+  background: color-mix(in srgb, var(--critical) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--critical) 35%, transparent);
+  border-radius: 10px; padding: 12px 14px; margin-top: 16px; font-size: 13px;
+}
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ── Sign-in ──────────────────────────────────────────────────────────── -->
+<section class="signin" id="signin">
+  <h1 style="font-size:19px">Monk · Admin</h1>
+  <p class="muted" style="font-size:13px;margin:6px 0 0">
+    Sign in with the same email you use in the app. We'll send a six-digit code.
+  </p>
+  <div class="card">
+    <div id="step-email">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" placeholder="you@example.com" autofocus>
+      <button class="btn" id="send-code">Send code</button>
+    </div>
+    <div id="step-code" hidden>
+      <label for="code">Six-digit code sent to <b id="code-target"></b></label>
+      <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code"
+             maxlength="6" placeholder="000000">
+      <button class="btn" id="verify-code">Verify</button>
+      <button class="ghost" id="back-to-email" style="width:100%;margin-top:8px">Use a different email</button>
+    </div>
+    <div class="msg" id="signin-msg"></div>
+  </div>
+</section>
+
+<!-- ── Dashboard ────────────────────────────────────────────────────────── -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">Monk <span>· Admin</span></div>
+      <div class="spacer"></div>
+      <label class="muted" for="range" style="font-size:12.5px">Range</label>
+      <select id="range">
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+        <option value="365">Last year</option>
+      </select>
+      <label class="toggle" title="Count founder and test accounts in the totals">
+        <input type="checkbox" id="internal"> internal
+      </label>
+      <button class="ghost" id="theme-toggle" title="Toggle theme">◐</button>
+      <span class="muted" id="who" style="font-size:12.5px"></span>
+      <button class="ghost" id="signout">Sign out</button>
+    </div>
+    <div class="top-inner" style="padding-top:0;padding-bottom:0">
+      <nav class="tabs" id="tabs" role="tablist">
+        <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+        <button role="tab" data-tab="learning" aria-selected="false">Learning</button>
+        <button role="tab" data-tab="users"    aria-selected="false">Users</button>
+        <button role="tab" data-tab="costs"    aria-selected="false">Costs</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="fatal" class="banner" hidden></div>
+    <section id="tab-overview"></section>
+    <section id="tab-learning" hidden></section>
+    <section id="tab-users"    hidden></section>
+    <section id="tab-costs"    hidden></section>
+  </main>
+</div>
+
+<div class="tip" id="tip"></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════════
+   Monk admin dashboard.
+
+   No build step and one dependency (supabase-js, for the email OTP). The page
+   holds no data and no secrets: it exchanges an emailed code for a Supabase
+   access token, then calls /admin/api/* with it. Every one of those endpoints
+   answers 404 unless the token's email is on the server's ADMIN_EMAILS
+   allowlist — so what protects this is the API, never this file.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c =>
+  ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+/* ── Formatting ────────────────────────────────────────────────────────── */
+const nf = new Intl.NumberFormat('en-IN');
+const num  = (n) => (n === null || n === undefined) ? '—' : nf.format(n);
+const pct  = (n) => (n === null || n === undefined) ? '—' : `${(+n).toFixed(1)}%`;
+const usd  = (n) => (n === null || n === undefined) ? '—' : `$${(+n).toFixed(2)}`;
+const usd4 = (n) => (n === null || n === undefined) ? '—' : `$${(+n).toFixed(4)}`;
+
+const dayLabel = (iso) =>
+  new Date(iso + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+
+const when = (iso) => {
+  if (!iso) return '—';
+  const t = new Date(iso), mins = (Date.now() - t) / 60000;
+  if (mins < 1)    return 'just now';
+  if (mins < 60)   return `${Math.floor(mins)}m ago`;
+  if (mins < 1440) return `${Math.floor(mins / 60)}h ago`;
+  if (mins < 43200) return `${Math.floor(mins / 1440)}d ago`;
+  return t.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: '2-digit' });
+};
+
+/* ── Theme toggle ──────────────────────────────────────────────────────── */
+try {
+  const saved = localStorage.getItem('monk-admin-theme');
+  if (saved) document.documentElement.dataset.theme = saved;
+} catch {}
+$('#theme-toggle').onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme
+    ? root.dataset.theme === 'dark'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('monk-admin-theme', root.dataset.theme); } catch {}
+  render();  // charts bake colours into attributes, so they must be redrawn
+};
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Charts.
+
+   Hand-rolled SVG rather than a charting library: four shapes are needed, the
+   page is served off the API box, and a 300KB dependency for a sparkline is
+   not a trade worth making. Every chart reads its colours from the CSS custom
+   properties above via getComputedStyle, so the theme toggle restyles them.
+
+   Rules being followed deliberately (see the data-viz method):
+    · One y-axis, always. Two measures of different magnitude become two
+      charts, never one chart with two scales.
+    · Single-series charts carry no legend — the title names the series.
+    · Every chart has a hover layer; a chart you cannot interrogate is a
+      picture, not an instrument.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const tip = $('#tip');
+
+function showTip(evt, html) {
+  tip.innerHTML = html;
+  tip.style.opacity = '1';
+  const pad = 14, r = tip.getBoundingClientRect();
+  let x = evt.clientX + pad, y = evt.clientY - r.height - pad;
+  if (x + r.width > innerWidth - 8) x = evt.clientX - r.width - pad;
+  if (y < 8) y = evt.clientY + pad;
+  tip.style.left = x + 'px';
+  tip.style.top  = y + 'px';
+}
+const hideTip = () => { tip.style.opacity = '0'; };
+addEventListener('scroll', hideTip, true);
+
+/** Nice round upper bound, so gridlines land on readable numbers. */
+function niceMax(v) {
+  if (v <= 0) return 1;
+  const pow = Math.pow(10, Math.floor(Math.log10(v)));
+  const n = v / pow;
+  return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * pow;
+}
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs = {}) => {
+  const n = document.createElementNS(SVG_NS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  return n;
+};
+
+/**
+ * One time-series plot. `kind` is 'line' or 'bar'.
+ *
+ * `fmt` formats the value in the tooltip and in the one direct label — the
+ * latest point is labelled and nothing else, because a number on every point
+ * is noise, and because three of the eight series colours sit below 3:1 on
+ * the light surface and owe the reader a visible label.
+ */
+function timeChart(mount, points, opts = {}) {
+  const { color = css('--series-1'), kind = 'line', fmt = num, height = 170 } = opts;
+  mount.innerHTML = '';
+  if (!points.length) { mount.innerHTML = '<div class="empty">No data in this range.</div>'; return; }
+
+  const W = Math.max(mount.clientWidth || 640, 280), H = height;
+  const m = { t: 18, r: 16, b: 24, l: 40 };
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  // The fallback applies only when the series is ALL zero — never as a floor
+  // on the real peak. Flooring at 1 silently flattened every chart whose
+  // values are fractions (daily LLM spend runs in cents) into a dead line.
+  const peak = Math.max(...points.map(p => p.v));
+  const top = niceMax(peak > 0 ? peak : 1);
+
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img' });
+  const x = (i) => m.l + (points.length === 1 ? iw / 2 : (i / (points.length - 1)) * iw);
+  const y = (v) => m.t + ih - (v / top) * ih;
+
+  // Gridlines + y labels — recessive, behind everything.
+  for (let i = 0; i <= 2; i++) {
+    const v = (top / 2) * i, yy = y(v);
+    svg.appendChild(el('line', {
+      x1: m.l, x2: W - m.r, y1: yy, y2: yy,
+      stroke: i === 0 ? css('--axis') : css('--grid'), 'stroke-width': 1,
+    }));
+    const t = el('text', {
+      x: m.l - 8, y: yy + 4, 'text-anchor': 'end',
+      fill: css('--ink-muted'), 'font-size': 10.5,
+    });
+    // Sub-dollar scales need more than one decimal or every tick reads "0.0".
+    t.textContent = Number.isInteger(v) ? String(v)
+      : top < 1 ? v.toFixed(3).replace(/0+$/, '').replace(/\.$/, '')
+      : v.toFixed(1);
+    svg.appendChild(t);
+  }
+
+  if (kind === 'bar') {
+    // 2px surface gap between adjacent bars; 4px rounded data-end.
+    const slot = iw / points.length;
+    const bw = Math.max(2, Math.min(26, slot - 2));
+    points.forEach((p, i) => {
+      const h = Math.max(p.v > 0 ? 2 : 0, (p.v / top) * ih);
+      if (!h) return;
+      const bx = m.l + slot * i + (slot - bw) / 2;
+      svg.appendChild(el('rect', {
+        x: bx, y: m.t + ih - h, width: bw, height: h,
+        rx: Math.min(4, bw / 2), fill: color,
+      }));
+    });
+  } else {
+    const d = points.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ');
+    svg.appendChild(el('path', {
+      d: `${d} L${x(points.length - 1).toFixed(1)},${m.t + ih} L${x(0).toFixed(1)},${m.t + ih} Z`,
+      fill: color, opacity: 0.10,
+    }));
+    svg.appendChild(el('path', {
+      d, fill: 'none', stroke: color, 'stroke-width': 2,
+      'stroke-linejoin': 'round', 'stroke-linecap': 'round',
+    }));
+    const last = points[points.length - 1];
+    svg.appendChild(el('circle', {
+      cx: x(points.length - 1), cy: y(last.v), r: 4,
+      fill: color, stroke: css('--surface'), 'stroke-width': 2,
+    }));
+  }
+
+  // x labels: first, middle, last only — enough to orient, never a collision.
+  [0, Math.floor(points.length / 2), points.length - 1]
+    .filter((v, i, a) => a.indexOf(v) === i && points[v])
+    .forEach(i => {
+      const t = el('text', {
+        x: x(i), y: H - 6, fill: css('--ink-muted'), 'font-size': 10.5,
+        'text-anchor': i === 0 ? 'start' : i === points.length - 1 ? 'end' : 'middle',
+      });
+      t.textContent = dayLabel(points[i].day);
+      svg.appendChild(t);
+    });
+
+  // Hover layer: a crosshair and a marker that snap to the nearest point.
+  const cross = el('line', { stroke: css('--axis'), 'stroke-width': 1, opacity: 0 });
+  const dot = el('circle', { r: 4.5, fill: color, stroke: css('--surface'), 'stroke-width': 2, opacity: 0 });
+  svg.appendChild(cross); svg.appendChild(dot);
+  const hit = el('rect', { x: m.l, y: m.t, width: iw, height: ih, fill: 'transparent' });
+  svg.appendChild(hit);
+
+  const slotW = iw / points.length;
+  const at = (evt) => {
+    const box = svg.getBoundingClientRect();
+    const px = (evt.clientX - box.left) * (W / box.width);
+    const i = kind === 'bar'
+      ? Math.max(0, Math.min(points.length - 1, Math.floor((px - m.l) / slotW)))
+      : Math.max(0, Math.min(points.length - 1, Math.round(((px - m.l) / iw) * (points.length - 1))));
+    return i;
+  };
+  hit.addEventListener('mousemove', (evt) => {
+    const i = at(evt), p = points[i], cx = kind === 'bar' ? m.l + slotW * (i + 0.5) : x(i);
+    cross.setAttribute('x1', cx); cross.setAttribute('x2', cx);
+    cross.setAttribute('y1', m.t); cross.setAttribute('y2', m.t + ih);
+    cross.setAttribute('opacity', 0.9);
+    dot.setAttribute('cx', cx); dot.setAttribute('cy', y(p.v)); dot.setAttribute('opacity', 1);
+    showTip(evt, `<b>${fmt(p.v)}</b><br>${esc(dayLabel(p.day))}`);
+  });
+  hit.addEventListener('mouseleave', () => {
+    cross.setAttribute('opacity', 0); dot.setAttribute('opacity', 0); hideTip();
+  });
+
+  mount.appendChild(svg);
+
+  // The one direct label: the latest value, beside the title.
+  if (opts.badge !== false) {
+    const b = document.createElement('div');
+    b.style.cssText = 'font-size:12.5px;color:var(--ink-2);margin-top:2px';
+    b.innerHTML = `Latest: <b style="color:var(--ink)">${fmt(points[points.length - 1].v)}</b>`;
+    mount.appendChild(b);
+  }
+}
+
+/** Horizontal ranked bars — for "by service", "by model", "by mode". */
+function rankedBars(mount, rows, opts = {}) {
+  const { fmt = num, color = css('--series-1') } = opts;
+  mount.innerHTML = '';
+  if (!rows.length) { mount.innerHTML = '<div class="empty">Nothing recorded yet.</div>'; return; }
+  // Same rule as the time charts: scale to the real peak. A floor of 1 here
+  // made every sub-dollar spend bar render at a quarter of its true length.
+  const peak = Math.max(...rows.map(r => r.value));
+  const top = peak > 0 ? peak : 1;
+  const list = document.createElement('div');
+  list.style.cssText = 'display:flex;flex-direction:column;gap:9px;margin-top:10px';
+  for (const r of rows) {
+    const row = document.createElement('div');
+    // Label (with its note) on the left, value hard right, bar underneath.
+    // The value is a real text label, not a colour: the bar carries magnitude,
+    // the number says what it is.
+    row.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:12.5px">
+        <span style="color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(r.label)}${
+          r.note ? ` <span class="muted" style="font-size:11.5px">· ${esc(r.note)}</span>` : ''}</span>
+        <b style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmt(r.value)}</b>
+      </div>
+      <div style="height:7px;background:var(--grid);border-radius:99px;margin-top:4px;overflow:hidden">
+        <div style="height:100%;width:${Math.max(2, (r.value / top) * 100)}%;background:${color};border-radius:99px"></div>
+      </div>`;
+    list.appendChild(row);
+  }
+  mount.appendChild(list);
+}
+
+/**
+ * Stacked bars over time, for parts that sum to a meaningful whole.
+ *
+ * Stacked rather than three separate charts because the total IS the number
+ * you care about (the daily bill) and the split is how it got there. A 2px
+ * surface-coloured gap separates segments so adjacent fills never read as one
+ * block, and the tooltip gives every component plus the total — which is what
+ * makes a stack interrogable rather than merely decorative.
+ */
+function stackedChart(mount, points, series, opts = {}) {
+  const { fmt = num, height = 200 } = opts;
+  mount.innerHTML = '';
+  if (!points.length) { mount.innerHTML = '<div class="empty">No data in this range.</div>'; return; }
+
+  const W = Math.max(mount.clientWidth || 640, 280), H = height;
+  const m = { t: 18, r: 16, b: 24, l: 46 };
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const totalOf = (p) => series.reduce((a, s) => a + (+p[s.key] || 0), 0);
+  const peak = Math.max(...points.map(totalOf));
+  const top = niceMax(peak > 0 ? peak : 1);
+
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img' });
+  const y = (v) => m.t + ih - (v / top) * ih;
+
+  for (let i = 0; i <= 2; i++) {
+    const v = (top / 2) * i, yy = y(v);
+    svg.appendChild(el('line', { x1: m.l, x2: W - m.r, y1: yy, y2: yy,
+      stroke: i === 0 ? css('--axis') : css('--grid'), 'stroke-width': 1 }));
+    const t = el('text', { x: m.l - 8, y: yy + 4, 'text-anchor': 'end',
+      fill: css('--ink-muted'), 'font-size': 10.5 });
+    t.textContent = Number.isInteger(v) ? String(v)
+      : top < 1 ? v.toFixed(3).replace(/0+$/, '').replace(/\.$/, '') : v.toFixed(1);
+    svg.appendChild(t);
+  }
+
+  const slot = iw / points.length;
+  const bw = Math.max(2, Math.min(26, slot - 2));
+  const GAP = 2;   // surface-coloured separation between stacked segments
+  points.forEach((p, i) => {
+    const bx = m.l + slot * i + (slot - bw) / 2;
+    let acc = 0;
+    series.forEach((sr) => {
+      const v = +p[sr.key] || 0;
+      if (v <= 0) return;
+      const yTop = y(acc + v), yBot = y(acc);
+      const h = Math.max(1, yBot - yTop - GAP);
+      svg.appendChild(el('rect', {
+        x: bx, y: yTop, width: bw, height: h,
+        rx: Math.min(3, bw / 2), fill: sr.color,
+      }));
+      acc += v;
+    });
+  });
+
+  [0, Math.floor(points.length / 2), points.length - 1]
+    .filter((v, i, a) => a.indexOf(v) === i && points[v])
+    .forEach(i => {
+      const t = el('text', {
+        x: m.l + slot * (i + 0.5), y: H - 6, fill: css('--ink-muted'), 'font-size': 10.5,
+        'text-anchor': i === 0 ? 'start' : i === points.length - 1 ? 'end' : 'middle',
+      });
+      t.textContent = dayLabel(points[i].day);
+      svg.appendChild(t);
+    });
+
+  const band = el('rect', { y: m.t, height: ih, width: slot, fill: css('--ink'),
+                            opacity: 0, 'pointer-events': 'none' });
+  svg.appendChild(band);
+  const hit = el('rect', { x: m.l, y: m.t, width: iw, height: ih, fill: 'transparent' });
+  svg.appendChild(hit);
+  hit.addEventListener('mousemove', (evt) => {
+    const box = svg.getBoundingClientRect();
+    const px = (evt.clientX - box.left) * (W / box.width);
+    const i = Math.max(0, Math.min(points.length - 1, Math.floor((px - m.l) / slot)));
+    const p = points[i];
+    band.setAttribute('x', m.l + slot * i);
+    band.setAttribute('opacity', 0.05);
+    const lines = series
+      .filter(sr => (+p[sr.key] || 0) > 0)
+      .map(sr => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;`
+               + `background:${sr.color};margin-right:6px"></span>${esc(sr.label)} `
+               + `<b>${fmt(+p[sr.key] || 0)}</b>`)
+      .join('<br>');
+    showTip(evt, `${esc(dayLabel(p.day))}<br>${lines || '<span class="muted">nothing</span>'}`
+                 + `<br><span class="muted">total ${fmt(totalOf(p))}</span>`);
+  });
+  hit.addEventListener('mouseleave', () => { band.setAttribute('opacity', 0); hideTip(); });
+
+  mount.appendChild(svg);
+
+  const leg = document.createElement('div');
+  leg.className = 'legend';
+  leg.innerHTML = series.map(sr =>
+    `<span><i style="background:${sr.color}"></i>${esc(sr.label)}</span>`).join('');
+  mount.appendChild(leg);
+}
+
+const tile = (k, v, n) =>
+  `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${v}</div>` +
+  (n ? `<div class="n">${n}</div>` : '') + `</div>`;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   API
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+let sb = null;          // supabase client
+let identity = null;    // { user_id, email }
+
+async function api(path) {
+  const { data } = await sb.auth.getSession();
+  const token = data.session?.access_token;
+  if (!token) throw Object.assign(new Error('signed out'), { code: 401 });
+  const res = await fetch(path, { headers: { Authorization: `Bearer ${token}` } });
+  if (!res.ok) {
+    let detail = res.statusText;
+    try { detail = (await res.json()).detail || detail; } catch {}
+    throw Object.assign(new Error(detail), { code: res.status });
+  }
+  return res.json();
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Sign-in
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+const say = (text, cls = '') => { const m = $('#signin-msg'); m.className = 'msg ' + cls; m.textContent = text; };
+
+/** Supabase's messages are written for developers. These are the same facts
+ *  in plain words — mirrors friendlyAuthError() in the mobile app. */
+function friendly(message) {
+  const m = (message || '').toLowerCase();
+  if (m.includes('after') && m.includes('seconds')) return 'Give it a few seconds before asking for another code.';
+  if (m.includes('expired') || m.includes('invalid')) return 'That code didn’t work. Check it, or ask for a new one.';
+  if (m.includes('rate limit') || m.includes('too many')) return 'Too many tries. Wait a minute and start again.';
+  if (m.includes('email address') && m.includes('invalid')) return 'That doesn’t look like a working email address.';
+  return 'Couldn’t reach the server. Check your connection and try again.';
+}
+
+async function boot() {
+  let cfg;
+  try {
+    const r = await fetch('/admin/config.json');
+    cfg = await r.json();
+    if (cfg.error) throw new Error(cfg.error);
+  } catch (e) {
+    say(e.message || 'Could not load configuration.', 'err');
+    $('#step-email').hidden = true;
+    return;
+  }
+  sb = window.supabase.createClient(cfg.supabase_url, cfg.supabase_key, {
+    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false },
+  });
+  const { data } = await sb.auth.getSession();
+  if (data.session) await enter();
+}
+
+$('#send-code').onclick = async () => {
+  const email = $('#email').value.trim();
+  if (!email) return say('Enter your email.', 'err');
+  $('#send-code').disabled = true; say('Sending…');
+  const { error } = await sb.auth.signInWithOtp({ email, options: { shouldCreateUser: true } });
+  $('#send-code').disabled = false;
+  if (error) return say(friendly(error.message), 'err');
+  $('#code-target').textContent = email;
+  $('#step-email').hidden = true; $('#step-code').hidden = false;
+  say('Code sent. It expires in a few minutes.', 'ok');
+  $('#code').focus();
+};
+
+$('#verify-code').onclick = async () => {
+  const email = $('#email').value.trim(), token = $('#code').value.trim();
+  if (token.length < 6) return say('Enter the six-digit code.', 'err');
+  $('#verify-code').disabled = true; say('Checking…');
+  const { error } = await sb.auth.verifyOtp({ email, token, type: 'email' });
+  $('#verify-code').disabled = false;
+  if (error) return say(friendly(error.message), 'err');
+  await enter();
+};
+
+$('#code').addEventListener('keydown', e => { if (e.key === 'Enter') $('#verify-code').click(); });
+$('#email').addEventListener('keydown', e => { if (e.key === 'Enter') $('#send-code').click(); });
+$('#back-to-email').onclick = () => {
+  $('#step-code').hidden = true; $('#step-email').hidden = false; say('');
+};
+
+$('#signout').onclick = async () => { await sb.auth.signOut(); location.reload(); };
+
+/** Signed in — but is this account allowed in? */
+async function enter() {
+  try {
+    identity = await api('/admin/api/whoami');
+  } catch (e) {
+    // Every admin route answers 404 to a non-admin, by design. Here — and only
+    // here — that is translated, because the alternative is a founder staring
+    // at a blank page with no idea why.
+    if (e.code === 404) {
+      const { data } = await sb.auth.getSession();
+      const who = data.session?.user?.email || 'this account';
+      await sb.auth.signOut();
+      say(`${who} isn’t on the admin allowlist. Add it to ADMIN_EMAILS on the API and try again.`, 'err');
+      $('#step-code').hidden = true; $('#step-email').hidden = false;
+      return;
+    }
+    say(e.message || 'Could not verify your access.', 'err');
+    return;
+  }
+  $('#signin').hidden = true;
+  $('#app').hidden = false;
+  $('#who').textContent = identity.email;
+  render();
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Tabs & rendering
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+let tab = 'overview';
+const days = () => +$('#range').value;
+const internal = () => $('#internal').checked;
+
+/** Shared query string. Every aggregate call carries both, so the toggle can
+ *  never apply to some panels and not others. */
+const qs = (extra = {}) => new URLSearchParams({
+  days: days(), include_internal: internal(), ...extra,
+});
+
+/** Shown on every tab while the totals include internal accounts. */
+const internalNotice = () => internal()
+  ? '<div class="notice">Counting <b>founder and test accounts</b> in these totals. ' +
+    'Untick “internal” for the student-only view.</div>'
+  : '';
+
+$('#tabs').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-tab]');
+  if (!b) return;
+  tab = b.dataset.tab;
+  $$('#tabs button').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+  ['overview', 'learning', 'users', 'costs'].forEach(t => { $('#tab-' + t).hidden = t !== tab; });
+  render();
+});
+$('#range').onchange = render;
+$('#internal').onchange = () => {
+  // The user list is rebuilt from scratch: its rows and its total both change.
+  $('#tab-users').dataset.built = '';
+  render();
+};
+addEventListener('resize', () => { clearTimeout(window.__rz); window.__rz = setTimeout(render, 160); });
+
+function fatal(msg) { const b = $('#fatal'); b.hidden = !msg; b.textContent = msg || ''; }
+
+async function render() {
+  if (!identity) return;
+  fatal('');
+  try {
+    if (tab === 'overview') await renderOverview();
+    if (tab === 'learning') await renderLearning();
+    if (tab === 'users')    await renderUsers();
+    if (tab === 'costs')    await renderCosts();
+  } catch (e) {
+    if (e.code === 401) return location.reload();
+    fatal(e.message || 'Something went wrong loading this page.');
+  }
+}
+
+/* ── Overview ──────────────────────────────────────────────────────────── */
+async function renderOverview() {
+  const root = $('#tab-overview');
+  const [o, ret] = await Promise.all([
+    api(`/admin/api/overview?${qs()}`),
+    api(`/admin/api/retention?${qs({ weeks: 8 })}`),
+  ]);
+  const t = o.totals;
+  const onboardRate = t.users_total ? (100 * t.users_onboarded / t.users_total) : null;
+  const stickiness = t.mau ? (100 * t.dau / t.mau) : null;
+
+  root.innerHTML = `
+    ${internalNotice()}
+    <div class="tiles">
+      ${tile('Signed up', num(t.users_total), 'all time, email verified')}
+      ${tile('Onboarded', num(t.users_onboarded),
+             onboardRate === null ? '' : `${pct(onboardRate)} of signups`)}
+      ${tile(`New · ${o.window_days}d`, num(t.users_new), 'email verified in range')}
+      ${tile('Active today', num(t.dau), 'IST day')}
+      ${tile('Active · 7d', num(t.wau), '')}
+      ${tile('Active · 30d', num(t.mau),
+             stickiness === null ? '' : `stickiness ${pct(stickiness)}`)}
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="card" style="margin-top:0">
+        <h2>New signups per day</h2>
+        <div class="sub">Accounts that verified an email. Days are IST.</div>
+        <div class="chart" id="c-signups"></div>
+      </div>
+      <div class="card" style="margin-top:0">
+        <h2>Active users per day</h2>
+        <div class="sub">Answered a question, ran a class, snapped a doubt, or saved a note.</div>
+        <div class="chart" id="c-active"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Weekly cohort retention</h2>
+      <div class="sub">
+        Share of each signup week that came back. <b>D7</b> means "returned on any day 7–13",
+        not day 7 exactly — with small cohorts, exact-day retention is mostly zeroes.
+        Percentages divide by <i>eligible</i>, so a cohort too young to have a D30 yet shows “—”
+        rather than a false collapse.
+      </div>
+      <div class="tablewrap" id="c-retention"></div>
+    </div>`;
+
+  timeChart($('#c-signups'), o.daily.map(d => ({ day: d.day, v: d.signups })),
+            { kind: 'bar', color: css('--series-1') });
+  timeChart($('#c-active'), o.daily.map(d => ({ day: d.day, v: d.active })),
+            { kind: 'line', color: css('--series-1') });
+
+  const cell = (m) => {
+    if (!m || !m.eligible) return `<td class="num muted">—</td>`;
+    const p = 100 * m.returned / m.eligible;
+    return `<td class="num"><b>${p.toFixed(0)}%</b>
+      <span class="muted" style="font-weight:400">&nbsp;${m.returned}/${m.eligible}</span></td>`;
+  };
+  $('#c-retention').innerHTML = !ret.cohorts.length
+    ? '<div class="empty">No signups yet in this window.</div>'
+    : `<table>
+        <thead><tr>
+          <th>Cohort week</th><th class="num">Size</th>
+          <th class="num">D1</th><th class="num">D7</th><th class="num">D30</th>
+        </tr></thead>
+        <tbody>${ret.cohorts.slice().reverse().map(c => `
+          <tr><td>${esc(dayLabel(c.cohort_week))}</td>
+              <td class="num">${num(c.size)}</td>
+              ${cell(c.d1)}${cell(c.d7)}${cell(c.d30)}</tr>`).join('')}
+        </tbody></table>`;
+}
+
+/* ── Learning ──────────────────────────────────────────────────────────── */
+async function renderLearning() {
+  const root = $('#tab-learning');
+  const f = await api(`/admin/api/features?${qs()}`);
+  const t = f.totals;
+
+  const breakdown = (obj) => Object.entries(obj || {})
+    .map(([label, value]) => ({ label, value }))
+    .sort((a, b) => b.value - a.value);
+
+  root.innerHTML = `
+    ${internalNotice()}
+    <div class="tiles wide">
+      ${tile('Practice answers', num(t.practice_attempts), `${num(t.practice_users)} students`)}
+      ${tile('Accuracy', pct(t.practice_accuracy), 'gave-up attempts excluded')}
+      ${tile('Gave up', pct(t.practice_gave_up_rate), 'of all attempts')}
+      ${tile('Classroom sessions', num(t.drona_sessions), `${num(t.drona_users)} students`)}
+      ${tile('Sessions completed', pct(t.drona_completion_rate), `avg ${num(t.drona_avg_turns)} turns`)}
+      ${tile('Doubts snapped', num(t.doubts), `${pct(t.doubts_solved_rate)} solved`)}
+      ${tile('Notes saved', num(t.notes), `${num(t.notes_users)} students`)}
+      ${tile('Classroom spend', usd(t.drona_cost_usd), `over ${f.window_days} days`)}
+    </div>
+
+    <div class="grid4" style="margin-top:16px">
+      <div class="card" style="margin-top:0"><h2>Practice answers</h2><div class="chart" id="c-practice"></div></div>
+      <div class="card" style="margin-top:0"><h2>Classroom sessions</h2><div class="chart" id="c-drona"></div></div>
+      <div class="card" style="margin-top:0"><h2>Doubts snapped</h2><div class="chart" id="c-doubts"></div></div>
+      <div class="card" style="margin-top:0"><h2>Notes saved</h2><div class="chart" id="c-notes"></div></div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="card" style="margin-top:0"><h2>Sessions by mode</h2><div id="c-mode"></div></div>
+      <div class="card" style="margin-top:0"><h2>Sessions by language</h2><div id="c-lang"></div></div>
+    </div>
+
+    <div class="card">
+      <h2>Where sessions end up</h2>
+      <div class="sub">
+        The phase a session was last in. Anything that isn’t <code>complete</code> is a
+        student who walked away mid-lesson — the biggest single lead in this dashboard.
+      </div>
+      <div id="c-phase"></div>
+    </div>`;
+
+  // Four single-series small multiples rather than one stacked chart: the
+  // counts differ by an order of magnitude, and a shared stack would bury the
+  // small ones. Each is its own scale, and its title names its series — so no
+  // legend, and no colour carrying meaning on its own.
+  const d = f.daily;
+  timeChart($('#c-practice'), d.map(x => ({ day: x.day, v: x.practice })), { kind: 'bar', color: css('--series-1'), height: 130 });
+  timeChart($('#c-drona'),    d.map(x => ({ day: x.day, v: x.drona    })), { kind: 'bar', color: css('--series-2'), height: 130 });
+  timeChart($('#c-doubts'),   d.map(x => ({ day: x.day, v: x.doubts   })), { kind: 'bar', color: css('--series-3'), height: 130 });
+  timeChart($('#c-notes'),    d.map(x => ({ day: x.day, v: x.notes    })), { kind: 'bar', color: css('--series-4'), height: 130 });
+
+  rankedBars($('#c-mode'),  breakdown(f.drona_by_mode),     { color: css('--series-2') });
+  rankedBars($('#c-lang'),  breakdown(f.drona_by_language), { color: css('--series-2') });
+  rankedBars($('#c-phase'), breakdown(f.drona_by_phase),    { color: css('--series-2') });
+}
+
+/* ── Costs ─────────────────────────────────────────────────────────────── */
+async function renderCosts() {
+  const root = $('#tab-costs');
+  const c = await api(`/admin/api/costs?${qs()}`);
+  const t = c.totals;
+  const failRate = t.calls ? (100 * t.failed / t.calls) : null;
+  const share = (v) => t.cost_usd ? ` · ${Math.round(100 * v / t.cost_usd)}% of spend` : '';
+
+  // Only ever three stacks plus a nag. Colours are validated categorical slots
+  // 1-3 in fixed order; the fourth is deliberately the "something is wrong"
+  // yellow rather than a fourth series colour.
+  const KINDS = [
+    { key: 'student',      label: 'Student-serving', color: css('--series-1') },
+    { key: 'content',      label: 'Content authoring', color: css('--series-2') },
+    { key: 'pipeline',     label: 'Offline pipeline', color: css('--series-3') },
+    { key: 'unclassified', label: 'Unclassified',    color: css('--series-4') },
+  ];
+  const unknown = c.unclassified_services || [];
+
+  root.innerHTML = `
+    ${internalNotice()}
+    ${unknown.length ? `<div class="notice">
+      <b>${unknown.length} unclassified service${unknown.length === 1 ? '' : 's'}</b>:
+      ${unknown.map(x => `<code>${esc(x)}</code>`).join(' ')} —
+      spend from these is excluded from the per-student figure. Add them to
+      <code>llm_service_kinds</code> to classify.
+    </div>` : ''}
+
+    <div class="tiles wide">
+      ${tile(`Total spend · ${c.window_days}d`, usd(t.cost_usd), `${num(t.calls)} model calls`)}
+      ${tile('Student-serving', usd(t.student_cost_usd), 'scales with usage' + share(t.student_cost_usd))}
+      ${tile('Content authoring', usd(t.content_cost_usd), 'authored once, reused' + share(t.content_cost_usd))}
+      ${tile('Offline pipeline', usd(t.pipeline_cost_usd), 'quality_gate.py' + share(t.pipeline_cost_usd))}
+      ${tile('Per active user', usd4(t.cost_per_active_user_usd),
+             `student-serving ÷ ${num(t.active_users)} active`)}
+      ${tile('Wasted', usd(t.wasted_usd), `${num(t.failed)} calls billed then discarded`)}
+      ${tile('Failure rate', pct(failRate), '')}
+      ${tile('p95 latency', t.p95_latency_ms ? `${num(t.p95_latency_ms)}ms` : '—', '')}
+    </div>
+
+    <div class="card">
+      <h2>What the money was for</h2>
+      <div class="sub">
+        <b>Student-serving</b> is the only bucket that scales with users — it is what one
+        more student actually costs. <b>Content authoring</b> is a lesson written once and
+        replayed to everyone who takes it; <b>offline pipeline</b> is
+        <code>quality_gate.py</code>, which a human runs from a terminal. Neither belongs
+        in a per-user figure, so the tile above divides by student-serving spend alone.
+      </div>
+      <div class="chart" id="c-kinds"></div>
+    </div>
+
+    <div class="card">
+      <h2>Spend per day</h2>
+      <div class="sub">Stacked by what the money was for. Null costs mean that model's price isn't configured — they count as $0, never as a guess.</div>
+      <div class="chart" id="c-cost"></div>
+    </div>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="card" style="margin-top:0"><h2>Spend by service</h2><div id="c-service"></div></div>
+      <div class="card" style="margin-top:0"><h2>Spend by model</h2><div id="c-model"></div></div>
+    </div>`;
+
+  const kindColor = Object.fromEntries(KINDS.map(k => [k.key, k.color]));
+  rankedBars($('#c-kinds'), (c.by_kind || []).map(k => ({
+    label: KINDS.find(x => x.key === k.kind)?.label || k.kind,
+    value: +k.cost_usd, note: `${num(k.calls)} calls`,
+  })), { fmt: usd4 });
+
+  stackedChart($('#c-cost'), c.daily, KINDS.filter(k => k.key !== 'unclassified' || unknown.length),
+               { fmt: usd4 });
+
+  // Each service is tinted by its bucket, so the table and the stack agree
+  // without the reader having to hold a mapping in their head.
+  rankedBars($('#c-service'), c.by_service.map(r => ({
+    label: r.service, value: +r.cost_usd,
+    note: `${num(r.calls)} calls · ${r.kind}`,
+  })), { fmt: usd4, color: css('--series-1') });
+  rankedBars($('#c-model'), c.by_model.map(r =>
+    ({ label: r.model, value: +r.cost_usd, note: `${num(r.calls)} calls` })), { fmt: usd4 });
+}
+
+/* ── Users ─────────────────────────────────────────────────────────────── */
+let usersState = { q: '', sort: 'active', offset: 0, limit: 50 };
+
+async function renderUsers() {
+  const root = $('#tab-users');
+  if (!root.dataset.built) {
+    root.innerHTML = `
+      <div class="card">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <input type="text" id="u-q" placeholder="Search email, name, phone or user id" style="flex:1;min-width:220px">
+          <select id="u-sort">
+            <option value="active">Last active</option>
+            <option value="recent">Newest signup</option>
+            <option value="attempts">Most practice</option>
+            <option value="cost">Most expensive</option>
+          </select>
+        </div>
+        <div class="tablewrap" id="u-table"></div>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+          <button class="ghost" id="u-prev">← Previous</button>
+          <button class="ghost" id="u-next">Next →</button>
+          <span class="muted" id="u-count" style="font-size:12.5px"></span>
+        </div>
+      </div>`;
+    root.dataset.built = '1';
+    $('#u-sort').value = usersState.sort;
+    let deb;
+    $('#u-q').addEventListener('input', () => {
+      clearTimeout(deb);
+      deb = setTimeout(() => { usersState.q = $('#u-q').value.trim(); usersState.offset = 0; renderUsers(); }, 260);
+    });
+    $('#u-sort').onchange = () => { usersState.sort = $('#u-sort').value; usersState.offset = 0; renderUsers(); };
+    $('#u-prev').onclick = () => { usersState.offset = Math.max(0, usersState.offset - usersState.limit); renderUsers(); };
+    $('#u-next').onclick = () => { usersState.offset += usersState.limit; renderUsers(); };
+  }
+
+  const p = new URLSearchParams({
+    limit: usersState.limit, offset: usersState.offset, sort: usersState.sort,
+    include_internal: internal(),
+  });
+  if (usersState.q) p.set('q', usersState.q);
+  const data = await api(`/admin/api/users?${p}`);
+
+  $('#u-count').textContent =
+    `${num(data.total)} user${data.total === 1 ? '' : 's'} · showing ${data.offset + 1}–${Math.min(data.offset + data.limit, data.total)}`;
+  $('#u-prev').disabled = data.offset === 0;
+  $('#u-next').disabled = data.offset + data.limit >= data.total;
+
+  $('#u-table').innerHTML = !data.rows.length
+    ? '<div class="empty">No users match that search.</div>'
+    : `<table><thead><tr>
+        <th>Student</th><th>Exam</th><th>Last active</th><th>Joined</th>
+        <th class="num">Practice</th><th class="num">Accuracy</th>
+        <th class="num">Classes</th><th class="num">Doubts</th>
+        <th class="num">Notes</th><th class="num">Cost</th>
+      </tr></thead><tbody>
+      ${data.rows.map(r => `
+        <tr class="clickable" data-id="${esc(r.user_id)}">
+          <td>
+            <div><b>${esc(r.display_name || '—')}</b>
+              ${r.internal ? '<span class="pill internal">internal</span>' : ''}
+              ${r.onboarded ? '' : '<span class="pill">not onboarded</span>'}</div>
+            <div class="muted" style="font-size:12px">${esc(r.email)}</div>
+          </td>
+          <td>${esc(r.target_exam || '—')}${r.enrolled_class ? ` <span class="muted">· ${esc(r.enrolled_class)}</span>` : ''}</td>
+          <td>${esc(when(r.last_active_at))}</td>
+          <td>${esc(when(r.signed_up_at))}</td>
+          <td class="num">${num(r.attempts)}</td>
+          <td class="num">${r.accuracy === null ? '—' : pct(r.accuracy)}</td>
+          <td class="num">${num(r.sessions)}</td>
+          <td class="num">${num(r.doubts)}</td>
+          <td class="num">${num(r.notes)}</td>
+          <td class="num">${usd4(r.cost_usd)}</td>
+        </tr>`).join('')}
+      </tbody></table>`;
+
+  $$('#u-table tr.clickable').forEach(tr => {
+    tr.onclick = () => openUser(tr.dataset.id);
+  });
+}
+
+/* ── One student ───────────────────────────────────────────────────────── */
+async function openUser(userId) {
+  const scrim = document.createElement('div');
+  scrim.className = 'scrim';
+  const drawer = document.createElement('div');
+  drawer.className = 'drawer';
+  drawer.innerHTML = '<div class="empty">Loading…</div>';
+  document.body.append(scrim, drawer);
+  const close = () => { scrim.remove(); drawer.remove(); document.removeEventListener('keydown', onKey); };
+  const onKey = (e) => { if (e.key === 'Escape') close(); };
+  scrim.onclick = close;
+  document.addEventListener('keydown', onKey);
+
+  let u;
+  try {
+    u = await api(`/admin/api/users/${encodeURIComponent(userId)}?days=${days()}`);
+  } catch (e) {
+    drawer.innerHTML = `<div class="banner">${esc(e.message)}</div>`;
+    return;
+  }
+
+  const t = u.totals, pr = u.profile || {};
+  const acc = t.attempts ? (100 * t.correct / t.attempts) : null;
+
+  drawer.innerHTML = `
+    <div class="drawer-head">
+      <div style="flex:1">
+        <h1 style="font-size:18px">${esc(pr.display_name || u.email)}</h1>
+        <div class="muted" style="font-size:12.5px">${esc(u.email)}</div>
+      </div>
+      <button class="ghost" id="d-close">Close</button>
+    </div>
+
+    <div class="card">
+      <h2>Account</h2>
+      <dl class="kv">
+        <dt>User id</dt><dd style="font-family:ui-monospace,monospace;font-size:12px">${esc(u.user_id)}</dd>
+        <dt>Signed up</dt><dd>${esc(when(u.signed_up_at))}</dd>
+        <dt>Last sign-in</dt><dd>${esc(when(u.last_sign_in_at))}</dd>
+        <dt>Last active</dt><dd>${esc(when(t.last_active_at))}</dd>
+        <dt>Onboarding</dt><dd>${u.profile ? 'complete' : '<span class="pill">never finished</span>'}</dd>
+        <dt>Exam</dt><dd>${esc(pr.target_exam || '—')}</dd>
+        <dt>Class</dt><dd>${esc(pr.enrolled_class || '—')}</dd>
+        <dt>Phone</dt><dd>${esc(pr.phone || '—')}${pr.phone ? (pr.phone_verified ? '' : ' <span class="pill">unverified</span>') : ''}</dd>
+      </dl>
+    </div>
+
+    <div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))">
+      ${tile('Practice', num(t.attempts), acc === null ? '' : `${pct(acc)} correct`)}
+      ${tile('Gave up', num(t.gave_up), '')}
+      ${tile('Classes', num(t.sessions), `${num(t.sessions_completed)} completed`)}
+      ${tile('Turns', num(t.turns), 'classroom exchanges')}
+      ${tile('Doubts', num(t.doubts), `${num(t.doubts_solved)} solved`)}
+      ${tile('Notes', num(t.notes), '')}
+      ${tile('Cost', usd4(t.cost_usd), 'all time')}
+    </div>
+
+    <div class="card">
+      <h2>Activity</h2>
+      <div class="sub">Recorded events per day, last ${days()} days.</div>
+      <div class="chart" id="d-activity"></div>
+    </div>
+
+    <div class="card">
+      <h2>Recent classes</h2>
+      <div class="tablewrap">${u.recent_sessions.length ? `
+        <table><thead><tr><th>When</th><th>Topic</th><th>Mode</th><th>Language</th><th>Phase</th><th class="num">Turns</th></tr></thead>
+        <tbody>${u.recent_sessions.map(s => `
+          <tr><td>${esc(when(s.created_at))}</td>
+              <td>${esc(s.subtopic_key || '—')}</td>
+              <td>${esc(s.mode)}</td><td>${esc(s.language)}</td>
+              <td>${esc(s.phase)}</td><td class="num">${num(s.turn_count)}</td></tr>`).join('')}
+        </tbody></table>` : '<div class="empty">No classes yet.</div>'}
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Recent doubts</h2>
+      <div class="tablewrap">${u.recent_doubts.length ? `
+        <table><thead><tr><th>When</th><th>Question</th><th>Chapter</th><th>Solved</th></tr></thead>
+        <tbody>${u.recent_doubts.map(d => `
+          <tr><td>${esc(when(d.created_at))}</td>
+              <td style="white-space:normal;max-width:280px">${esc((d.question_text || '—').slice(0, 140))}</td>
+              <td>${esc(d.chapter || '—')}</td>
+              <td>${d.solved ? 'yes' : `<span class="muted">${esc(d.status || 'no')}</span>`}</td></tr>`).join('')}
+        </tbody></table>` : '<div class="empty">No doubts yet.</div>'}
+      </div>
+    </div>`;
+
+  $('#d-close').onclick = close;
+  timeChart($('#d-activity'), u.daily.map(x => ({ day: x.day, v: x.events })),
+            { kind: 'bar', color: css('--series-1'), height: 130 });
+}
+
+boot();
+</script>
+</body>
+</html>
