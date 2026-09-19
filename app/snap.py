@@ -3145,12 +3145,42 @@ def _reconcile_with_steps(solution: Dict[str, Any],
     if not options or not solution.get("option_labels"):
         return 0
     t0 = time.time()
-    steps_say = _steps_support_label(solution, options, doubt_id, usage_acc,
-                                     stem=stem)
+    verdict = _steps_support_label(solution, options, doubt_id, usage_acc,
+                                   stem=stem)
+    steps_say, mapping = verdict if isinstance(verdict, tuple) else (verdict, {})
     elapsed_ms = int((time.time() - t0) * 1000)
     logger.info("[SNAP STEPCHECK] doubt=%s q%s stepcheck_ms=%d steps_conclude=%s",
                 doubt_id[:8], question_n, elapsed_ms, steps_say)
-    if steps_say and set(steps_say) != set(solution["option_labels"]):
+    stated = list(solution["option_labels"])
+    # ORDER questions get evidence, not opinions. When the stated option has
+    # permutation-siblings — other options made of the same parts in another
+    # order — a label from the checker is a coin flip: measured live, it
+    # inverted (I4, I5) on the exact swap this override exists for, answered
+    # confidently where order was unestablishable, and on another run failed
+    # to dispute a genuinely swapped answer at all. So for this family the
+    # checker's label is ignored ENTIRELY; its mapping — what each unknown
+    # IS, which small models do get right — plus the stem's own ordering
+    # decide in code, whether or not the checker thought to object.
+    if _has_permutation_siblings(options, stated):
+        resolved = _resolve_ordered_dispute(stem, mapping, options)
+        if resolved and [resolved] != stated:
+            logger.warning(
+                "[SNAP STEPCHECK] doubt=%s stated %s but the checker's own "
+                "mapping %s orders to %s — correcting from evidence",
+                doubt_id[:8], stated, mapping, resolved,
+            )
+            chosen = [o for o in options if o["label"] == resolved]
+            solution["option_labels"] = [resolved]
+            solution["answer"] = _answer_text(chosen)
+            solution["answer_from_steps"] = True
+        elif steps_say and set(steps_say) != set(stated):
+            logger.warning(
+                "[SNAP STEPCHECK] doubt=%s permutation dispute %s vs %s "
+                "unresolved from mapping %s — keeping the solver's answer",
+                doubt_id[:8], stated, steps_say, mapping,
+            )
+        return elapsed_ms
+    if steps_say and set(steps_say) != set(stated):
         logger.warning(
             "[SNAP STEPCHECK] doubt=%s answer says %s but the steps conclude "
             "%s — trusting the derivation",
@@ -3161,6 +3191,86 @@ def _reconcile_with_steps(solution: Dict[str, Any],
         solution["answer"] = _answer_text(chosen)
         solution["answer_from_steps"] = True
     return elapsed_ms
+
+
+# What separates the parts of a tuple option: "proton, neutron", "2/5 A; 8/5 A",
+# "tetrahedral and octahedral".
+_TUPLE_SPLIT_RE = re.compile(r"\s*(?:,|;|\band\b)\s*")
+
+
+def _option_parts(text: str) -> List[str]:
+    return [p for p in _TUPLE_SPLIT_RE.split((text or "").strip()) if p]
+
+
+def _has_permutation_siblings(options: List[Dict[str, str]],
+                              stated: List[str]) -> bool:
+    """True when another option is the stated one's parts, reordered.
+
+    The signal that this question's options differ by ORDER — the one axis
+    the label-based checker flips coins on, in both directions, measured.
+    """
+    if len(stated) != 1:
+        return False
+    texts = {o["label"]: o.get("text") or "" for o in options}
+    mine = sorted(_norm(p) for p in _option_parts(texts.get(stated[0], "")))
+    if len(mine) < 2:
+        return False
+    for o in options:
+        if o["label"] == stated[0]:
+            continue
+        theirs = sorted(_norm(p) for p in _option_parts(o.get("text") or ""))
+        if theirs == mine:
+            return True
+    return False
+
+
+def _is_permutation_dispute(options: List[Dict[str, str]],
+                            stated: List[str],
+                            proposed: List[str]) -> bool:
+    """True when the two disputed options are the same parts in another order.
+
+    Everywhere else the checker judges CONTENT, which it is good at. Here it
+    would be judging ORDER, which it flips coins on — measured both ways live.
+    """
+    if len(stated) != 1 or len(proposed) != 1:
+        return False
+    texts = {o["label"]: o.get("text") or "" for o in options}
+    a = [_norm(p) for p in _option_parts(texts.get(stated[0], ""))]
+    b = [_norm(p) for p in _option_parts(texts.get(proposed[0], ""))]
+    return len(a) > 1 and a != b and sorted(a) == sorted(b)
+
+
+def _resolve_ordered_dispute(stem: Optional[str],
+                             mapping: Dict[str, Any],
+                             options: List[Dict[str, str]]) -> Optional[str]:
+    """The label the checker's MAPPING supports, with code doing the ordering.
+
+    The unknowns' order is where they first appear in the STEM — that is what
+    "respectively" means — and each option part must contain the mapped value
+    for its position. Exactly one option matching is an answer; anything else
+    is None, and None means nobody overrides anybody.
+    """
+    if not stem or not mapping or len(mapping) < 2:
+        return None
+    positions = []
+    for key in mapping:
+        m = re.search(rf"(?<![A-Za-z0-9_]){re.escape(str(key))}(?![A-Za-z0-9_])",
+                      stem)
+        if not m:
+            return None
+        positions.append((m.start(), str(key)))
+    positions.sort()
+    ordered = [_norm(str(mapping[k])) for _, k in positions]
+    if any(not v for v in ordered):
+        return None
+    matches = []
+    for o in options:
+        parts = [_norm(p) for p in _option_parts(o.get("text") or "")]
+        if len(parts) != len(ordered):
+            continue
+        if all(v in p or p in v for v, p in zip(ordered, parts)):
+            matches.append(o["label"])
+    return matches[0] if len(matches) == 1 else None
 
 
 def _step_problems(steps: List[Dict[str, Any]]) -> List[str]:
@@ -4086,7 +4196,13 @@ def _steps_support_label(solution: Dict[str, Any],
     labels = [str(l).strip().strip(".)(").upper()
               for l in (parsed.get("option_labels") or [])]
     labels = [l for l in labels if l in valid]
-    return labels or None
+    if not labels:
+        return None
+    mapping = parsed.get("mapping") if isinstance(parsed.get("mapping"), dict) else {}
+    # (labels, mapping): the label is the checker's opinion, the mapping is
+    # its evidence. On permutation disputes the caller trusts only the
+    # evidence — see _resolve_ordered_dispute.
+    return labels, mapping
 
 
 # ─── The pipeline ────────────────────────────────────────────────────────────
