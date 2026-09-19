@@ -255,6 +255,11 @@ app.include_router(progress_router)
 from app.routers.doubt_of_day import router as doubt_of_day_router
 app.include_router(doubt_of_day_router)
 
+# The founders' dashboard. Every /admin/api/* route answers 404 unless the
+# caller's email is on ADMIN_EMAILS — see require_admin in app/auth.py.
+from app.routers.admin import router as admin_router
+app.include_router(admin_router)
+
 
 
 import os

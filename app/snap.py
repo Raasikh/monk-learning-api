@@ -790,11 +790,26 @@ def _usage_of(res: Any) -> Dict[str, int]:
 def _call_with_one_retry(stage: str, call, describe: str,
                          usage_acc: Optional[Dict[str, int]] = None,
                          expect_model: Optional[str] = None,
-                         service: str = "snap") -> Dict[str, Any]:
+                         service: str = "snap",
+                         *, user_id: Optional[str] = None) -> Dict[str, Any]:
     """Runs `call()` and parses its JSON, retrying once on a parse failure.
 
     Every failure is logged with the stage that produced it. After the retry the
     error is visible to the student — there is no canned answer.
+
+    `user_id` is threaded here from the router purely so `llm_calls` can answer
+    "what did serving this student cost". Every snap_* service is per-student —
+    one photo, one person — but none of them recorded it: 95% of llm_calls rows
+    carried a NULL user_id, and the /admin per-user cost figure could only see
+    the 5% that did. Keyword-only and defaulted, so a caller that has no user
+    (a script, a test) behaves exactly as before and records NULL.
+
+    Do NOT copy this into the planner. `segment` / `outline` / `widget_payload`
+    author a lesson ONCE into `lesson_plans` and replay it to everyone who
+    takes it; billing that to whichever student happened to trigger generation
+    would make one student look enormously expensive for a cost that is
+    genuinely shared. Those stay unattributed on purpose — see the `content`
+    bucket in migration 0051.
 
     Token usage accumulates into `usage_acc` including retries, so the cost of a
     snap is measured rather than estimated. Every attempt is also recorded to
@@ -815,7 +830,7 @@ def _call_with_one_retry(stage: str, call, describe: str,
         except Exception as exc:
             record_call(model, service, ok=False, attempt=attempt,
                         latency_ms=int((time.time() - t0) * 1000),
-                        subtopic_key=describe, error=str(exc))
+                        subtopic_key=describe, error=str(exc), user_id=user_id)
             raise
         latency_ms = int((time.time() - t0) * 1000)
 
@@ -823,7 +838,7 @@ def _call_with_one_retry(stage: str, call, describe: str,
                     _attempt: int = attempt) -> None:
             record_call(model, service, ok=ok, attempt=_attempt, res=res,
                         latency_ms=latency_ms, subtopic_key=describe,
-                        error=error)
+                        error=error, user_id=user_id)
 
         if usage_acc is not None:
             counted = _usage_of(res)
@@ -1075,7 +1090,8 @@ def _clean_options(raw: Any) -> List[Dict[str, str]]:
 def transcribe_questions(image_bytes: bytes, mime_type: str,
                          doubt_id: str = "-",
                          usage_acc: Optional[Dict[str, int]] = None,
-                         max_questions: int = MAX_QUESTIONS) -> Dict[str, Any]:
+                         max_questions: int = MAX_QUESTIONS,
+                         *, user_id: Optional[str] = None) -> Dict[str, Any]:
     """Reads up to MAX_QUESTIONS questions off the photo.
 
     Returns {"questions": [...], "note": str|None}. Each question carries
@@ -1209,11 +1225,11 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
     slices = _slice_by_question(page["text"], wanted_numbers) if len(wanted_numbers) > 1 else {}
     if slices and len(slices) == len(wanted_numbers):
         parsed = _structure_in_parallel(
-            client, system_prompt, slices, wanted_numbers, doubt_id, usage_acc)
+            client, system_prompt, slices, wanted_numbers, doubt_id, usage_acc, user_id=user_id)
 
     if parsed is None:
         parsed = _call_with_one_retry("transcribe", _make_call(), f"doubt={doubt_id[:8]}",
-                                      usage_acc, service="snap_transcribe")
+                                      usage_acc, service="snap_transcribe", user_id=user_id)
 
     # Verify the model returned the questions it was told to. Costs nothing when
     # it complied, and when it did not, the student otherwise silently gets the
@@ -1239,7 +1255,7 @@ def transcribe_questions(image_bytes: bytes, mime_type: str,
                     "transcribe", _make_call(retry_extra),
                     f"doubt={doubt_id[:8]} selection", usage_acc,
                     service="snap_transcribe",
-                )
+                    user_id=user_id)
                 retried_numbers = _returned_numbers(retried.get("questions"))
                 if retried_numbers == wanted_numbers:
                     parsed = retried
@@ -1892,7 +1908,8 @@ def _slice_by_question(ocr_text: str, wanted: List[int]) -> Dict[int, str]:
 
 def _structure_in_parallel(client, system_prompt: str, slices: Dict[int, str],
                            wanted: List[int], doubt_id: str,
-                           usage_acc: Optional[Dict[str, int]]) -> Optional[Dict[str, Any]]:
+                           usage_acc: Optional[Dict[str, int]],
+                           *, user_id: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """Structures each question's own slice concurrently; merges in page order.
 
     Returns None if any one of them fails, so the caller falls back to the
@@ -1929,7 +1946,7 @@ def _structure_in_parallel(client, system_prompt: str, slices: Dict[int, str],
         try:
             got = _call_with_one_retry("transcribe", call,
                                        f"doubt={doubt_id[:8]} q{num}", usages[num],
-                                       service="snap_transcribe")
+                                       service="snap_transcribe", user_id=user_id)
             qs = got.get("questions")
             if isinstance(qs, list) and qs:
                 item = qs[0]
@@ -2052,7 +2069,8 @@ def _warn_if_not_page_order(questions: List[Dict[str, Any]], ocr_text: str,
 
 def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
                      doubt_id: str = "-",
-                     usage_acc: Optional[Dict[str, int]] = None) -> Optional[str]:
+                     usage_acc: Optional[Dict[str, int]] = None,
+                     *, user_id: Optional[str] = None) -> Optional[str]:
     """Puts a figure into words so the solver can use it.
 
     The solver still never sees the image — this is transcription extended to
@@ -2090,7 +2108,7 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
     try:
         parsed = _call_with_one_retry("transcribe", call, f"diagram={doubt_id[:8]}",
                                       usage_acc, expect_model=MODEL_DIAGRAM,
-                                      service="snap_diagram")
+                                      service="snap_diagram", user_id=user_id)
     except SnapError as err:
         logger.warning("[SNAP DIAGRAM] doubt=%s describe failed: %s", doubt_id[:8], err)
         return None
@@ -2120,7 +2138,8 @@ def describe_diagram(image_bytes: bytes, mime_type: str, question_text: str,
 
 def describe_option_figures(image_bytes: bytes, mime_type: str,
                             question_text: str, doubt_id: str = "-",
-                            usage_acc: Optional[Dict[str, int]] = None
+                            usage_acc: Optional[Dict[str, int]] = None,
+                            *, user_id: Optional[str] = None
                             ) -> List[Dict[str, str]]:
     """Reads options that are DRAWN rather than written, into [{label, text}].
 
@@ -2164,7 +2183,7 @@ def describe_option_figures(image_bytes: bytes, mime_type: str,
     try:
         parsed = _call_with_one_retry("transcribe", call, f"options={doubt_id[:8]}",
                                       usage_acc, expect_model=MODEL_DIAGRAM,
-                                      service="snap_options")
+                                      service="snap_options", user_id=user_id)
     except SnapError as err:
         logger.warning("[SNAP OPTIONS] doubt=%s read failed: %s", doubt_id[:8], err)
         return []
@@ -2792,7 +2811,8 @@ def _emit_new_steps(buffer: str, emitted: set, on_event) -> None:
 
 
 def _streamed_solve(make_kwargs, on_event, doubt_id: str,
-                    usage_acc: Optional[Dict[str, int]]) -> Dict[str, Any]:
+                    usage_acc: Optional[Dict[str, int]],
+                    *, user_id: Optional[str] = None) -> Dict[str, Any]:
     """One solve, streamed: thinking ticks and steps go out live, the parsed
     JSON comes back for the same validation as the non-streamed path.
 
@@ -2946,7 +2966,7 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
                                {"input_tokens": None, "cache_hit_tokens": None,
                                 "output_tokens": None},
                         latency_ms=int((time.time() - started) * 1000),
-                        subtopic_key=f"doubt={doubt_id[:8]} stream", error=str(err))
+                        subtopic_key=f"doubt={doubt_id[:8]} stream", error=str(err), user_id=user_id)
             last_err = err
             logger.warning("[SNAP SOLVE] stream attempt %d/2 failed (%s): %s",
                            attempt, doubt_id[:8], str(err)[:160])
@@ -2960,7 +2980,7 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
             record_call(model, "snap_solve", ok=False, attempt=attempt,
                         tokens=tokens, latency_ms=latency_ms,
                         subtopic_key=f"doubt={doubt_id[:8]} stream",
-                        error=f"unparseable JSON: {err}")
+                        error=f"unparseable JSON: {err}", user_id=user_id)
             last_err = err
             logger.warning(
                 "[SNAP SOLVE] streamed JSON unparseable on attempt %d/2 (%s): %s",
@@ -3006,7 +3026,7 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
         else:
             record_call(model, "snap_solve", ok=True, attempt=attempt,
                         tokens=tokens, latency_ms=latency_ms,
-                        subtopic_key=f"doubt={doubt_id[:8]} stream")
+                        subtopic_key=f"doubt={doubt_id[:8]} stream", user_id=user_id)
             # The distribution WEDGE_NO_CONTENT_S should be tuned against. A
             # solve that starts writing at 12s and one that starts at 80s look
             # identical in latency_ms once the answer is long; they are not the
@@ -3029,7 +3049,8 @@ def _streamed_solve(make_kwargs, on_event, doubt_id: str,
 
 def match_answer_to_options(answer: str, options: List[Dict[str, str]],
                             question_type: str, doubt_id: str = "-",
-                            usage_acc: Optional[Dict[str, int]] = None) -> List[str]:
+                            usage_acc: Optional[Dict[str, int]] = None,
+                            *, user_id: Optional[str] = None) -> List[str]:
     """Which options equal `answer`. [] when none do.
 
     Runs only after a blind solve, and only ever compares — it does not solve,
@@ -3064,7 +3085,7 @@ def match_answer_to_options(answer: str, options: List[Dict[str, str]],
 
     try:
         parsed = _call_with_one_retry("transcribe", call, f"match={doubt_id[:8]}",
-                                      usage_acc, service="snap_match")
+                                      usage_acc, service="snap_match", user_id=user_id)
     except SnapError as err:
         logger.warning("[SNAP MATCH] doubt=%s matcher failed: %s", doubt_id[:8], err)
         return []
@@ -3125,7 +3146,8 @@ def _reconcile_with_steps(solution: Dict[str, Any],
                           doubt_id: str,
                           usage_acc: Optional[Dict[str, int]],
                           question_n: Any = None,
-                          stem: Optional[str] = None) -> int:
+                          stem: Optional[str] = None,
+                          *, user_id: Optional[str] = None) -> int:
     """Make the stated answer agree with the derivation. Returns elapsed ms.
 
     When the steps conclude a different option from the one the answer names,
@@ -3146,7 +3168,7 @@ def _reconcile_with_steps(solution: Dict[str, Any],
         return 0
     t0 = time.time()
     verdict = _steps_support_label(solution, options, doubt_id, usage_acc,
-                                   stem=stem)
+                                   stem=stem, user_id=user_id)
     steps_say, mapping = verdict if isinstance(verdict, tuple) else (verdict, {})
     elapsed_ms = int((time.time() - t0) * 1000)
     logger.info("[SNAP STEPCHECK] doubt=%s q%s stepcheck_ms=%d steps_conclude=%s",
@@ -3589,7 +3611,8 @@ def _answer_key_of(parsed: Dict[str, Any]) -> str:
 def _solve_with_consensus(make_call, doubt_id: str,
                           usage_acc: Optional[Dict[str, int]],
                           samples: Optional[int] = None,
-                          expect_model: Optional[str] = None) -> Dict[str, Any]:
+                          expect_model: Optional[str] = None,
+                          *, user_id: Optional[str] = None) -> Dict[str, Any]:
     """Runs N independent solves in parallel and majority-votes the answer.
 
     The winning parse is returned for validation/step-checking; losers are
@@ -3602,7 +3625,7 @@ def _solve_with_consensus(make_call, doubt_id: str,
         return _call_with_one_retry("solve", make_call(0.0),
                                     f"doubt={doubt_id[:8]}", usage_acc,
                                     expect_model=expect_model,
-                                    service="snap_solve")
+                                    service="snap_solve", user_id=user_id)
 
     temps = [0.0] + [CONSENSUS_TEMP] * (n - 1)
     results: List[Optional[Dict[str, Any]]] = [None] * n
@@ -3613,7 +3636,7 @@ def _solve_with_consensus(make_call, doubt_id: str,
             results[i] = _call_with_one_retry(
                 "solve", make_call(temps[i]), f"doubt={doubt_id[:8]} s{i + 1}",
                 usages[i], expect_model=expect_model, service="snap_solve",
-            )
+                user_id=user_id)
         except SnapError as err:
             logger.warning("[SNAP CONSENSUS] doubt=%s sample %d failed: %s",
                            doubt_id[:8], i + 1, err)
@@ -3655,7 +3678,8 @@ def _solve_with_consensus(make_call, doubt_id: str,
 def solve_question(question: Dict[str, Any], doubt_id: str = "-",
                    usage_acc: Optional[Dict[str, int]] = None,
                    on_event=None,
-                   figure: Optional[Tuple[bytes, str]] = None) -> Dict[str, Any]:
+                   figure: Optional[Tuple[bytes, str]] = None,
+                   *, user_id: Optional[str] = None) -> Dict[str, Any]:
     """Solves ONE transcribed question.
 
     The solver sees the TRANSCRIPTION, never the photograph — that is what
@@ -3845,10 +3869,10 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             # After the thinking budget is applied, never before — it is set
             # as max_tokens above and gpt-5 needs the whole thing renamed.
             return _fit_model_kwargs(kwargs)
-        parsed = _streamed_solve(make_kwargs, on_event, doubt_id, usage_acc)
+        parsed = _streamed_solve(make_kwargs, on_event, doubt_id, usage_acc, user_id=user_id)
     else:
         parsed = _solve_with_consensus(make_call, doubt_id, usage_acc,
-                                       expect_model=solve_model)
+                                       expect_model=solve_model, user_id=user_id)
     llm_ms = int((time.time() - solve_t0) * 1000)
     logger.info(
         "[SNAP SOLVE LLM] doubt=%s q%s llm_ms=%d steps=%d answerable=%s",
@@ -3907,7 +3931,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             retried = _call_with_one_retry("solve", retry_call,
                                            f"doubt={doubt_id[:8]} steps", usage_acc,
                                            expect_model=solve_model,
-                                           service="snap_solve")
+                                           service="snap_solve", user_id=user_id)
             still = _step_problems(retried.get("steps") or [])
             if len(still) < len(problems):
                 parsed = retried
@@ -3959,13 +3983,13 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         # matched — see the call at the end of that branch.
         stepcheck_ms = _reconcile_with_steps(solution, options, doubt_id,
                                              usage_acc, question.get("n"),
-                                             stem=question.get("stem"))
+                                             stem=question.get("stem"), user_id=user_id)
 
     if solve_blind:
         match_t0 = time.time()
         derived_answer = solution["answer"]
         labels = match_answer_to_options(solution["answer"], options, q_type,
-                                         doubt_id, usage_acc)
+                                         doubt_id, usage_acc, user_id=user_id)
         match_ms = int((time.time() - match_t0) * 1000)
         logger.info(
             "[SNAP MATCH] doubt=%s q%s match_ms=%d derived=%r -> labels=%s",
@@ -3981,7 +4005,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
             other = second_opinion(system_prompt, payload, doubt_id, usage_acc,
                                    figure=figure if vision_solve else None)
             second_labels = (
-                match_answer_to_options(other, options, q_type, doubt_id, usage_acc)
+                match_answer_to_options(other, options, q_type, doubt_id, usage_acc, user_id=user_id)
                 if other else []
             )
             logger.info(
@@ -4060,7 +4084,7 @@ def solve_question(question: Dict[str, Any], doubt_id: str = "-",
         # until its answer text has been matched to one.
         stepcheck_ms = _reconcile_with_steps(solution, options, doubt_id,
                                              usage_acc, question.get("n"),
-                                             stem=question.get("stem"))
+                                             stem=question.get("stem"), user_id=user_id)
 
     # Free correctness signal: the page's own answer key, which the solver never
     # saw. A disagreement does not change what the student is shown — the key
@@ -4134,7 +4158,8 @@ def _steps_support_label(solution: Dict[str, Any],
                          options: List[Dict[str, str]],
                          doubt_id: str,
                          usage_acc: Optional[Dict[str, int]],
-                         stem: Optional[str] = None) -> Optional[List[str]]:
+                         stem: Optional[str] = None,
+                         *, user_id: Optional[str] = None) -> Optional[List[str]]:
     """Which option the STEPS conclude, judged by a model that sees only them.
 
     Exists because a solver that was shown its options returned an answer
@@ -4187,7 +4212,7 @@ def _steps_support_label(solution: Dict[str, Any],
     try:
         parsed = _call_with_one_retry("transcribe", call,
                                       f"stepcheck={doubt_id[:8]}", usage_acc,
-                                      service="snap_stepcheck")
+                                      service="snap_stepcheck", user_id=user_id)
     except SnapError:
         return None
     if not parsed.get("clear"):
@@ -4209,7 +4234,8 @@ def _steps_support_label(solution: Dict[str, Any],
 
 def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                            doubt_id: str = "-",
-                           max_questions: int = MAX_QUESTIONS):
+                           max_questions: int = MAX_QUESTIONS,
+                           *, user_id: Optional[str] = None):
     """Yields each question as soon as IT is done, rather than after all of them.
 
     A solve takes ~25s. Every legible question's solve is launched CONCURRENTLY
@@ -4243,7 +4269,7 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         mime_type = "image/png"
 
     read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
-                                max_questions)
+                                max_questions, user_id=user_id)
     transcribe_ms = int((time.time() - started) * 1000)
     logger.info(
         "[SNAP PIPELINE] doubt=%s transcribe_ms=%d (ocr=%d structure=%d) "
@@ -4355,7 +4381,7 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                     close_up or image_bytes,
                     "image/jpeg" if close_up else mime_type,
                     question.get("text") or "", doubt_id, tx_usage,
-                )
+                    user_id=user_id)
             except FigureUnreadable as err:
                 description, why_figure = None, str(err)
             q_diagram_ms = int((time.time() - diagram_t0) * 1000)
@@ -4431,7 +4457,7 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
         opts_t0 = time.time()
         drawn = describe_option_figures(
             image_bytes, mime_type, question.get("stem") or "", doubt_id, tx_usage
-        )
+        , user_id=user_id)
         options_ms += int((time.time() - opts_t0) * 1000)
         if drawn:
             # Keep the pictures, not only the sentences describing them. A
@@ -4494,7 +4520,7 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
                     # Present only for a figure question when a vision solver
                     # is configured; None leaves the described path untouched.
                     figure=figure_for.get(num),
-                )
+                    user_id=user_id)
             except SnapError as err:
                 outcome["error"] = err
             finally:
@@ -4635,7 +4661,8 @@ def iter_snapped_questions(image_bytes: bytes, mime_type: str,
 
 def solve_snapped_image(image_bytes: bytes, mime_type: str,
                         doubt_id: str = "-",
-                        max_questions: int = MAX_QUESTIONS) -> Dict[str, Any]:
+                        max_questions: int = MAX_QUESTIONS,
+                        *, user_id: Optional[str] = None) -> Dict[str, Any]:
     """Transcribe, then solve every legible question CONCURRENTLY.
 
     Returns {"questions": [...], "note": str|None, ...timings}. Each entry has
@@ -4655,7 +4682,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
     if crop_note:
         mime_type = "image/png"
     read = transcribe_questions(image_bytes, mime_type, doubt_id, tx_usage,
-                                max_questions)
+                                max_questions, user_id=user_id)
     transcribe_ms = int((time.time() - started) * 1000)
 
     questions = read["questions"]
@@ -4690,7 +4717,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
                     close_up or image_bytes,
                     "image/jpeg" if close_up else mime_type,
                     question.get("text") or "", doubt_id, tx_usage,
-                )
+                    user_id=user_id)
             except FigureUnreadable as err:
                 description, why_figure = None, str(err)
             q_diagram_ms = int((time.time() - diagram_t0) * 1000)
@@ -4754,7 +4781,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
         opts_t0 = time.time()
         drawn = describe_option_figures(
             image_bytes, mime_type, question.get("stem") or "", doubt_id, tx_usage
-        )
+        , user_id=user_id)
         options_ms += int((time.time() - opts_t0) * 1000)
         if drawn:
             # Keep the pictures, not only the sentences describing them. A
@@ -4819,7 +4846,7 @@ def solve_snapped_image(image_bytes: bytes, mime_type: str,
             solve_results[i] = solve_question(
                 to_solve[i], doubt_id, solve_usages[i],
                 figure=figure_for.get(to_solve[i]["n"]),
-            )
+                user_id=user_id)
         except SnapError as err:
             solve_errors[i] = err
 

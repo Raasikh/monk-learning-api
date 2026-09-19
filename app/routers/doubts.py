@@ -418,7 +418,8 @@ async def snap_doubt(
     # never had this problem: its sync generator is threadpooled by Starlette.
     try:
         result = await asyncio.to_thread(solve_snapped_image, image_bytes, mime,
-                                         submission_id, allowed_this_submission)
+                                         submission_id, allowed_this_submission,
+                                         user_id=user_id)
     except SnapError as err:
         # Store the failure honestly against the submission, then tell the
         # client which stage failed. The photo stays so the student can see what
@@ -763,7 +764,7 @@ async def snap_doubt_stream(
         started_at = time.time()
         try:
             for kind, item in iter_snapped_questions(image_bytes, mime,
-                                                     submission_id, allowed):
+                                                     submission_id, allowed, user_id=user_id):
                 if kind == "meta":
                     meta.update(item)
                     yield event("meta", {

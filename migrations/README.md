@@ -17,6 +17,11 @@ The `migrations/` directory contains all PostgreSQL database DDL migration scrip
 | `0010_rate_limit_hits.sql` | `drona_rate_limit_hits` | Telemetry table for Rumik/Sarvam vendor rate limits |
 | `0011_drona_tutor_voice.sql` | `tutor_voice` column | Adds `female` (Veda/Ira) vs `male` (Drona/Lucas) persona choice |
 | `0012_notes_and_doubts.sql` | `drona_notes`, `doubts`, `doubt_reports` | Notes saved from sessions; Snap a Doubt results; wrong-answer reports |
+| _(0013–0047 not logged here — see the files)_ | | |
+| `0048_admin_analytics.sql` | `admin_*()` read functions | Aggregations behind `/admin`. No tables: seven SECURITY DEFINER functions over existing rows. **EXECUTE is revoked from `anon` and `authenticated` and granted only to `service_role`** — the mobile app's key cannot call them. See `docs/admin-dashboard.md`. |
+| `0049_admin_turns_from_drona_turns.sql` | replaces `admin_features` + `admin_user` | `drona_sessions.turn_count` is a permanent 0 — nothing has ever written to it. Turns are now counted from `drona_turns`. |
+| `0050_admin_exclude_internal.sql` | `admin_excluded_users` | Keeps founder/test accounts out of the aggregates (they were 99% of sessions, 100% of doubts). All `admin_*` functions gain `p_include_internal boolean default false`. **Drops and recreates the functions** — the re-grant block at the foot is mandatory, not decorative. |
+| `0051_admin_cost_kinds.sql` | `llm_service_kinds` | Splits LLM spend into student-serving / content authoring / offline pipeline. `cost_per_active_user` now divides **student spend only** — it was dividing lesson authoring and `quality_gate.py` runs by the student count. Unknown services default to `unclassified`, never `student`. |
 
 > [!WARNING]
 > **`0012` reconciles a pre-existing `doubts` stub.** The table already existed
