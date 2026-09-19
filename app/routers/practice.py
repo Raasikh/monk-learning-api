@@ -309,8 +309,24 @@ _candidate_cache: Dict[str, Tuple[float, List[Dict[str, Any]]]] = {}
 _CANDIDATE_MAX_ROWS = int(os.getenv("CANDIDATE_MAX_ROWS", "20000"))
 
 
+# BUMP THIS whenever what a cached pool CONTAINS changes.
+#
+# A TTL is not a migration. The paged read shipped without this and the warmer
+# said so immediately, in production:
+#
+#   [PRACTICE WARM] physics     pool=supabase rows=2628   <- correct
+#   [PRACTICE WARM] chemistry   pool=redis    rows=1000   <- the old deploy's
+#   [PRACTICE WARM] mathematics pool=redis    rows=1000   <- truncated pool
+#
+# The new code read the previous version's 1000-row entries, found them
+# perfectly valid JSON, and kept serving a third of the bank for as long as
+# those keys lived. A version in the key means an old entry is not a stale
+# value to be trusted — it is a different key nobody asks for.
+_POOL_CACHE_VERSION = "v2-paged"
+
+
 def _pool_key(key: str) -> str:
-    return f"practice:pool:{key}"
+    return f"practice:pool:{_POOL_CACHE_VERSION}:{key}"
 
 
 def clear_candidate_cache() -> None:

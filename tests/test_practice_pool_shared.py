@@ -257,3 +257,48 @@ def test_warming_fills_the_pools_with_no_request_involved(monkeypatch):
         store._reset_sync_for_tests(None)
         store._sync_checked = False
         prac.clear_candidate_cache()
+
+
+def test_a_pool_cached_by_an_older_version_is_not_reused(monkeypatch):
+    """This happened in production. The paged read shipped sharing a key with
+    the truncated read, so it found the previous deploy's 1000-row pools in
+    Redis, accepted them as valid, and kept serving a third of the bank:
+
+        [PRACTICE WARM] chemistry   pool=redis rows=1000
+        [PRACTICE WARM] mathematics pool=redis rows=1000
+
+    A TTL is not a migration. The version in the key is what makes an old entry
+    a key nobody asks for rather than a stale value to be trusted.
+    """
+    import json
+
+    class Q:
+        def select(self, *_a, **_k): return self
+        def eq(self, *_a, **_k): return self
+        def is_(self, *_a, **_k): return self
+        def or_(self, *_a, **_k): return self
+        def ilike(self, *_a, **_k): return self
+        def order(self, *_a, **_k): return self
+        def range(self, *_a): return self
+        def execute(self):
+            return SimpleNamespace(data=[{"id": "fresh", "chapter_id": CH11,
+                                          "chapter_name": "U&M", "concept": "c",
+                                          "question_type": "single_correct",
+                                          "difficulty": 2, "target_exams": ["jee"],
+                                          "discipline": None}], count=None)
+
+    monkeypatch.setattr(prac, "supabase", SimpleNamespace(table=lambda _t: Q()))
+    client = fakeredis.FakeRedis(decode_responses=True)
+    store._reset_sync_for_tests(client)
+    prac.clear_candidate_cache()
+    try:
+        # Exactly what the previous deploy left behind: the old unversioned key.
+        client.set("practice:pool:physics|", json.dumps([{"id": "stale"}]), ex=600)
+
+        rows, tier, _share = prac._cached_pool("physics", None)
+        assert tier == "supabase", f"served from {tier} — the old key was reused"
+        assert [r["id"] for r in rows] == ["fresh"], rows
+    finally:
+        store._reset_sync_for_tests(None)
+        store._sync_checked = False
+        prac.clear_candidate_cache()
